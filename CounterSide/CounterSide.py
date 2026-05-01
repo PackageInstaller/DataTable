@@ -401,7 +401,10 @@ def process_lua_file(filepath: Path, output_dir: Path) -> tuple[str, str]:
 
     try:
         result = subprocess.run(
-            ["unluac", str(luac_path), "--rawstring"], capture_output=True, text=True, timeout=60
+            ["unluac", str(luac_path), "--rawstring"],
+            capture_output=True,
+            text=True,
+            timeout=60,
         )
         if result.returncode == 0:
             lua_path.write_text(result.stdout, encoding="utf-8")
