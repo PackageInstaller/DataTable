@@ -156,6 +156,7 @@ def decrypt_and_convert(data):
         header_map = next(unpacker)
         header = {str(k): v for k, v in header_map}
         final_data = {}
+        missing_obkey_sids = set()
         table_names = list(header.keys())
 
         for table_name in table_names:
@@ -186,8 +187,11 @@ def decrypt_and_convert(data):
                                 **LIMITS,
                             )
                             decoded_list.append(make_json_serializable(unpacked_inner))
+                        elif ob_data and sid is not None and sid not in OB_KEYS:
+                            missing_obkey_sids.add(sid)
+                            decoded_list.append(make_json_serializable(item_map))
                         else:
-                            # 如果没有 ObfuscatedData，说明它是明文，直接算作成功
+                            # 无 ObfuscatedData 则为明文；无 ScheduleId 等有混淆数据的情况另行排查
                             decoded_list.append(make_json_serializable(item_map))
 
                     # 合并到主表
@@ -220,19 +224,24 @@ def decrypt_and_convert(data):
 
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             json.dump(final_data, f, indent=4, ensure_ascii=False)
-        print(f"导出成功: {OUTPUT_FILE}")
+
+        if missing_obkey_sids:
+            print(
+                f"缺少 OB_KEYS 的 ScheduleId:"
+            )
+            for sid in sorted(missing_obkey_sids):
+                print(sid)
     except Exception as e:
         print(f"错误: {e}")
 
 
 def download_master_data():
     url = f"https://contents.techcronoss.techcross.co.jp/master/{VERSION}/all.ebin"
-    print(f"正在从 {url} 下载加密数据表...")
+    print(f"正在下载加密数据表...")
     try:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req) as response:
             data = response.read()
-        print("下载完成！")
         return data
     except Exception as e:
         print(f"下载失败: {e}")
