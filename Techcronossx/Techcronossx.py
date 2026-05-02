@@ -2,20 +2,25 @@ import json
 import base64
 import msgpack
 import lz4.block
+import urllib.request
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
 
-# https://contents.techcronoss.techcross.co.jp/master/1.4.101.0/all.ebin
-# 1.4.101.0 是版本号，版本号，key，obkey从 rpc/ws 获取，自己抓包
-KEY_B64 = "Q98sMqj5IydFQFS+V74FTZEb/CBgEx1WuCgluE2cRSU="
+# https://contents.techcronoss.techcross.co.jp/master/1.6.2.0/all.ebin
+# 在此修改版本号，版本号，key，obkey从 rpc/ws 获取，自己抓包
+VERSION = "1.6.2.0"
+KEY_B64 = "bB4lGrX3OCpX+xj8hDgsVwQTnl8aqRSoU1I8lJsJ/cI="
 IV_B64 = "gdAHZpuTubM/VsuK14uJdA=="
-INPUT_FILE = "all.ebin"
-OUTPUT_FILE = "master.json"
+OUTPUT_FILE = "MasterData.json"
 
 OB_KEYS = {
+    1260405: 10746667144567614155,
+    1260408: 6021815182603664266,
+    1260412: 11898543589325694410,
     30000052: 5580520519231768997,
     30000053: 15683348979544441226,
     30000055: 8288736064016335018,
+    30000077: 8514926492287190850
 }
 
 
@@ -138,11 +143,9 @@ def decompress_if_needed(obj):
     return obj
 
 
-def decrypt_and_convert():
+def decrypt_and_convert(data):
     key, iv = base64.b64decode(KEY_B64), base64.b64decode(IV_B64)
     try:
-        with open(INPUT_FILE, "rb") as f:
-            data = f.read()
         cipher = AES.new(key, AES.MODE_CBC, iv)
         decrypted_data = unpad(cipher.decrypt(data), 16)
         unpacker = msgpack.Unpacker(
@@ -184,6 +187,7 @@ def decrypt_and_convert():
                             )
                             decoded_list.append(make_json_serializable(unpacked_inner))
                         else:
+                            # 如果没有 ObfuscatedData，说明它是明文，直接算作成功
                             decoded_list.append(make_json_serializable(item_map))
 
                     # 合并到主表
@@ -218,8 +222,23 @@ def decrypt_and_convert():
             json.dump(final_data, f, indent=4, ensure_ascii=False)
         print(f"导出成功: {OUTPUT_FILE}")
     except Exception as e:
-        print(f"致命错误: {e}")
+        print(f"错误: {e}")
 
+
+def download_master_data():
+    url = f"https://contents.techcronoss.techcross.co.jp/master/{VERSION}/all.ebin"
+    print(f"正在从 {url} 下载加密数据表...")
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req) as response:
+            data = response.read()
+        print("下载完成！")
+        return data
+    except Exception as e:
+        print(f"下载失败: {e}")
+        return None
 
 if __name__ == "__main__":
-    decrypt_and_convert()
+    data = download_master_data()
+    if data:
+        decrypt_and_convert(data)
