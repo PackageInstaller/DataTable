@@ -1,0 +1,186 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 11,
+    "record_size": 52,
+    "custom_id": 2020897645
+  },
+  "_fields": [
+    {
+      "name": "MissionID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "QuestIdList",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Enable",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 12,
+      "size": 1
+    },
+    {
+      "name": "\b\r\fStartDateTime",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "ime",
+      "type": "unknown",
+      "mapped_type": 97,
+      "rec_offset": 17508,
+      "size": 0
+    },
+    {
+      "name": "field_6",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "KeyQuestID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 44,
+      "size": 4
+    },
+    {
+      "name": "DarkCrystalItemId",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 48,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "MissionID": 940007,
+      "Name": "帝国一陣",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "e7570e00",
+      "field_6": "e7570e00",
+      "KeyQuestID": 0,
+      "DarkCrystalItemId": "trade_item_004000_10"
+    },
+    {
+      "MissionID": 940006,
+      "Name": "帝国二陣",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "e6570e00",
+      "field_6": "e6570e00",
+      "KeyQuestID": 7325,
+      "DarkCrystalItemId": "trade_item_004000_10"
+    },
+    {
+      "MissionID": 940005,
+      "Name": "帝国三陣",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "e5570e00",
+      "field_6": "e5570e00",
+      "KeyQuestID": 7431,
+      "DarkCrystalItemId": "trade_item_004000_10"
+    },
+    {
+      "MissionID": 940004,
+      "Name": "帝国四陣",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "e4570e00",
+      "field_6": "e4570e00",
+      "KeyQuestID": 7544,
+      "DarkCrystalItemId": "trade_item_004000_10"
+    },
+    {
+      "MissionID": 940003,
+      "Name": "帝国五陣",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "e3570e00",
+      "field_6": "e3570e00",
+      "KeyQuestID": 7694,
+      "DarkCrystalItemId": "trade_item_004000_10"
+    },
+    {
+      "MissionID": 940002,
+      "Name": "帝国六陣",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "e2570e00",
+      "field_6": "e2570e00",
+      "KeyQuestID": 7860,
+      "DarkCrystalItemId": "trade_item_004000_10"
+    },
+    {
+      "MissionID": 940001,
+      "Name": "帝国七陣",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "e1570e00",
+      "field_6": "e1570e00",
+      "KeyQuestID": 8039,
+      "DarkCrystalItemId": "trade_item_004000_10"
+    },
+    {
+      "MissionID": 940008,
+      "Name": "帝国八陣",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "e8570e00",
+      "field_6": "e8570e00",
+      "KeyQuestID": 8197,
+      "DarkCrystalItemId": "trade_item_004000_10"
+    },
+    {
+      "MissionID": 940009,
+      "Name": "帝国九陣",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "e9570e00",
+      "field_6": "e9570e00",
+      "KeyQuestID": 8350,
+      "DarkCrystalItemId": "trade_item_004000_10"
+    },
+    {
+      "MissionID": 940010,
+      "Name": "帝国十陣",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "ea570e00",
+      "field_6": "ea570e00",
+      "KeyQuestID": 8521,
+      "DarkCrystalItemId": "trade_item_004000_10"
+    },
+    {
+      "MissionID": 940011,
+      "Name": "帝国タルタロス編",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "eb570e00",
+      "field_6": "eb570e00",
+      "KeyQuestID": 0,
+      "DarkCrystalItemId": "trade_item_004000_10"
+    }
+  ]
+}

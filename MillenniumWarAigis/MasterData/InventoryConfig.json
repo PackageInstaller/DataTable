@@ -1,0 +1,259 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 19,
+    "record_size": 32,
+    "custom_id": 1668559475
+  },
+  "_fields": [
+    {
+      "name": "ConfigID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "ShopType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "TradeType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "ConsumeItemID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "IconTextureID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "CountTextNodeID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "CountTextID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "NotEnoughTextID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ConfigID": 1001,
+      "ShopType": 0,
+      "TradeType": 4,
+      "ConsumeItemID": 1939853913,
+      "IconTextureID": -1113525390,
+      "CountTextNodeID": "TX02",
+      "CountTextID": 346720794,
+      "NotEnoughTextID": -1036053318
+    },
+    {
+      "ConfigID": 1002,
+      "ShopType": 0,
+      "TradeType": 2,
+      "ConsumeItemID": -886852292,
+      "IconTextureID": -1075426005,
+      "CountTextNodeID": "TX01",
+      "CountTextID": 346720794,
+      "NotEnoughTextID": -1036053318
+    },
+    {
+      "ConfigID": 1003,
+      "ShopType": 0,
+      "TradeType": 1,
+      "ConsumeItemID": -644474158,
+      "IconTextureID": -1104926948,
+      "CountTextNodeID": "TX00",
+      "CountTextID": 346720794,
+      "NotEnoughTextID": -1036053318
+    },
+    {
+      "ConfigID": 1004,
+      "ShopType": 0,
+      "TradeType": 9,
+      "ConsumeItemID": 223446283,
+      "IconTextureID": -1192237577,
+      "CountTextNodeID": "TX03",
+      "CountTextID": 346720794,
+      "NotEnoughTextID": -1036053318
+    },
+    {
+      "ConfigID": 1005,
+      "ShopType": 0,
+      "TradeType": 9,
+      "ConsumeItemID": 1939853913,
+      "IconTextureID": -1113525390,
+      "CountTextNodeID": "TX02",
+      "CountTextID": 346720794,
+      "NotEnoughTextID": -1036053318
+    },
+    {
+      "ConfigID": 1006,
+      "ShopType": 0,
+      "TradeType": 9,
+      "ConsumeItemID": 155898881,
+      "IconTextureID": -1150602855,
+      "CountTextNodeID": "TX04",
+      "CountTextID": 346720794,
+      "NotEnoughTextID": -1036053318
+    },
+    {
+      "ConfigID": 1007,
+      "ShopType": 0,
+      "TradeType": 9,
+      "ConsumeItemID": 1888906405,
+      "IconTextureID": -1338542428,
+      "CountTextNodeID": "TX05",
+      "CountTextID": 346720794,
+      "NotEnoughTextID": -1036053318
+    },
+    {
+      "ConfigID": 1008,
+      "ShopType": 0,
+      "TradeType": 9,
+      "ConsumeItemID": -50510578,
+      "IconTextureID": -1309336429,
+      "CountTextNodeID": "TX06",
+      "CountTextID": 1504551556,
+      "NotEnoughTextID": -1036053318
+    },
+    {
+      "ConfigID": 1009,
+      "ShopType": 0,
+      "TradeType": 9,
+      "ConsumeItemID": -1946520168,
+      "IconTextureID": -1399748366,
+      "CountTextNodeID": "TX07",
+      "CountTextID": 1504551556,
+      "NotEnoughTextID": -1036053318
+    },
+    {
+      "ConfigID": 1010,
+      "ShopType": 0,
+      "TradeType": 9,
+      "ConsumeItemID": 317924386,
+      "IconTextureID": -1387011387,
+      "CountTextNodeID": "TX08",
+      "CountTextID": 1504551556,
+      "NotEnoughTextID": -1036053318
+    },
+    {
+      "ConfigID": 1011,
+      "ShopType": 0,
+      "TradeType": 9,
+      "ConsumeItemID": -744921650,
+      "IconTextureID": -1357554532,
+      "CountTextNodeID": "TX09",
+      "CountTextID": 1504551556,
+      "NotEnoughTextID": -1036053318
+    },
+    {
+      "ConfigID": 2001,
+      "ShopType": 0,
+      "TradeType": 4,
+      "ConsumeItemID": 1939853913,
+      "IconTextureID": -1113525390,
+      "CountTextNodeID": "TX02",
+      "CountTextID": 346720794,
+      "NotEnoughTextID": -1036053318
+    },
+    {
+      "ConfigID": 2002,
+      "ShopType": 0,
+      "TradeType": 2,
+      "ConsumeItemID": -886852292,
+      "IconTextureID": -1075426005,
+      "CountTextNodeID": "TX01",
+      "CountTextID": 346720794,
+      "NotEnoughTextID": -1036053318
+    },
+    {
+      "ConfigID": 2003,
+      "ShopType": 0,
+      "TradeType": 1,
+      "ConsumeItemID": -644474158,
+      "IconTextureID": -1104926948,
+      "CountTextNodeID": "TX00",
+      "CountTextID": 346720794,
+      "NotEnoughTextID": -1036053318
+    },
+    {
+      "ConfigID": 2004,
+      "ShopType": 0,
+      "TradeType": 5,
+      "ConsumeItemID": -1016865595,
+      "IconTextureID": -1134388923,
+      "CountTextNodeID": "",
+      "CountTextID": 346720794,
+      "NotEnoughTextID": -1036053318
+    },
+    {
+      "ConfigID": 2005,
+      "ShopType": 0,
+      "TradeType": 6,
+      "ConsumeItemID": -1884168010,
+      "IconTextureID": -1188196416,
+      "CountTextNodeID": "",
+      "CountTextID": 346720794,
+      "NotEnoughTextID": -1036053318
+    },
+    {
+      "ConfigID": 2006,
+      "ShopType": 0,
+      "TradeType": 7,
+      "ConsumeItemID": 0,
+      "IconTextureID": 0,
+      "CountTextNodeID": "",
+      "CountTextID": 1953301503,
+      "NotEnoughTextID": -1546674531
+    },
+    {
+      "ConfigID": 2007,
+      "ShopType": 0,
+      "TradeType": 8,
+      "ConsumeItemID": 0,
+      "IconTextureID": -985658500,
+      "CountTextNodeID": "",
+      "CountTextID": 346720794,
+      "NotEnoughTextID": -1421836484
+    },
+    {
+      "ConfigID": 3001,
+      "ShopType": 2,
+      "TradeType": 9,
+      "ConsumeItemID": 1458867589,
+      "IconTextureID": -1163306066,
+      "CountTextNodeID": "TX00",
+      "CountTextID": 346720794,
+      "NotEnoughTextID": -1036053318
+    }
+  ]
+}

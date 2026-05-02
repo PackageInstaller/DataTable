@@ -1,0 +1,989 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 103,
+    "record_size": 28,
+    "custom_id": 1717793911
+  },
+  "_fields": [
+    {
+      "name": "Type_Weather",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Type_Specialty",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "ID_Effect",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Type_Target",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "Type_Effect",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "Param_Effect",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "Param_EffectAdd",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 0,
+      "Type_Effect": 0,
+      "Param_Effect": 0,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 6,
+      "Type_Specialty": 1,
+      "ID_Effect": 6292224,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 50,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 50,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 4,
+      "Param_Effect": 150,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 5,
+      "Param_Effect": 200,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 50,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 4,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 2,
+      "Type_Specialty": 2,
+      "ID_Effect": 6292227,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 70,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 70,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 4,
+      "Param_Effect": 130,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 70,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 3,
+      "Type_Specialty": 3,
+      "ID_Effect": 6292228,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 150,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 70,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 70,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 4,
+      "Type_Specialty": 0,
+      "ID_Effect": 6292224,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 75,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 5,
+      "Type_Specialty": 3,
+      "ID_Effect": 6292229,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 70,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 70,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 1,
+      "Type_Specialty": 1,
+      "ID_Effect": 6292225,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 70,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 70,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 4,
+      "Param_Effect": 130,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 5,
+      "Param_Effect": 150,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 70,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 4,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 7,
+      "Type_Specialty": 3,
+      "ID_Effect": 6292230,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 50,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 50,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 10,
+      "Type_Specialty": 2,
+      "ID_Effect": 6292231,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 80,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 80,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 4,
+      "Param_Effect": 130,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 11,
+      "Type_Specialty": 3,
+      "ID_Effect": 6292232,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 80,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 12,
+      "Type_Specialty": 3,
+      "ID_Effect": 6292232,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 65,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 13,
+      "Type_Specialty": 3,
+      "ID_Effect": 6292232,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 50,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 14,
+      "Type_Specialty": 3,
+      "ID_Effect": 6292232,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 35,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 15,
+      "Type_Specialty": 3,
+      "ID_Effect": 6292232,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 30,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 16,
+      "Type_Specialty": 0,
+      "ID_Effect": 6292233,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 250,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 17,
+      "Type_Specialty": 3,
+      "ID_Effect": 6292232,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 25,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 18,
+      "Type_Specialty": 2,
+      "ID_Effect": 6292234,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 65,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 65,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 4,
+      "Param_Effect": 150,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 8,
+      "Type_Specialty": 2,
+      "ID_Effect": 6292235,
+      "Type_Target": 0,
+      "Type_Effect": 0,
+      "Param_Effect": 0,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 9,
+      "Type_Specialty": 2,
+      "ID_Effect": 6292236,
+      "Type_Target": 0,
+      "Type_Effect": 0,
+      "Param_Effect": 0,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 29,
+      "Type_Specialty": 2,
+      "ID_Effect": 6293508,
+      "Type_Target": 0,
+      "Type_Effect": 0,
+      "Param_Effect": 0,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 19,
+      "Type_Specialty": 0,
+      "ID_Effect": 6292237,
+      "Type_Target": 1,
+      "Type_Effect": 4,
+      "Param_Effect": 300,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 20,
+      "Type_Specialty": 3,
+      "ID_Effect": 6292238,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 60,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 4,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 200,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 21,
+      "Type_Specialty": 1,
+      "ID_Effect": 6292226,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 50,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 50,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 4,
+      "Param_Effect": 150,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 50,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 4,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 22,
+      "Type_Specialty": 3,
+      "ID_Effect": 6292239,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 60,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 4,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 200,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 23,
+      "Type_Specialty": 3,
+      "ID_Effect": 6292240,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 10,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 24,
+      "Type_Specialty": 3,
+      "ID_Effect": 6292241,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 75,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 150,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 25,
+      "Type_Specialty": 3,
+      "ID_Effect": 6292242,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 75,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 150,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 26,
+      "Type_Specialty": 3,
+      "ID_Effect": 6293505,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 80,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 4,
+      "Param_Effect": 80,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 27,
+      "Type_Specialty": 3,
+      "ID_Effect": 6293506,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 60,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 4,
+      "Param_Effect": 60,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 28,
+      "Type_Specialty": 3,
+      "ID_Effect": 6293507,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 20,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 4,
+      "Param_Effect": 20,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 30,
+      "Type_Specialty": 0,
+      "ID_Effect": 6293509,
+      "Type_Target": 1,
+      "Type_Effect": 5,
+      "Param_Effect": 250,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 31,
+      "Type_Specialty": 3,
+      "ID_Effect": 6293510,
+      "Type_Target": 2,
+      "Type_Effect": 2,
+      "Param_Effect": 15,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 2,
+      "Type_Effect": 3,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    }
+  ]
+}

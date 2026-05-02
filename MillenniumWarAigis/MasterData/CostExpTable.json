@@ -1,0 +1,134 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 8,
+    "record_size": 28,
+    "custom_id": 1685353065
+  },
+  "_fields": [
+    {
+      "name": "ConfigId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Lv0",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Lv1",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Lv2",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "Lv3",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "Lv4",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "Lv5",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ConfigId": 1,
+      "Lv0": 0,
+      "Lv1": -1,
+      "Lv2": -1,
+      "Lv3": -1,
+      "Lv4": -1,
+      "Lv5": -1
+    },
+    {
+      "ConfigId": 2,
+      "Lv0": 0,
+      "Lv1": 2,
+      "Lv2": -1,
+      "Lv3": -1,
+      "Lv4": -1,
+      "Lv5": -1
+    },
+    {
+      "ConfigId": 3,
+      "Lv0": 0,
+      "Lv1": 2,
+      "Lv2": 4,
+      "Lv3": -1,
+      "Lv4": -1,
+      "Lv5": -1
+    },
+    {
+      "ConfigId": 4,
+      "Lv0": 0,
+      "Lv1": 2,
+      "Lv2": 4,
+      "Lv3": 6,
+      "Lv4": -1,
+      "Lv5": -1
+    },
+    {
+      "ConfigId": 5,
+      "Lv0": 0,
+      "Lv1": 2,
+      "Lv2": 4,
+      "Lv3": 6,
+      "Lv4": 6,
+      "Lv5": -1
+    },
+    {
+      "ConfigId": 6,
+      "Lv0": 0,
+      "Lv1": 2,
+      "Lv2": 4,
+      "Lv3": 6,
+      "Lv4": 6,
+      "Lv5": 6
+    },
+    {
+      "ConfigId": 7,
+      "Lv0": 0,
+      "Lv1": 4,
+      "Lv2": -1,
+      "Lv3": -1,
+      "Lv4": -1,
+      "Lv5": -1
+    },
+    {
+      "ConfigId": 8,
+      "Lv0": 0,
+      "Lv1": 4,
+      "Lv2": 6,
+      "Lv3": -1,
+      "Lv4": -1,
+      "Lv5": -1
+    }
+  ]
+}

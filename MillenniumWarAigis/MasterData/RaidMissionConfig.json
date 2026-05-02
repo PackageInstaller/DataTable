@@ -1,0 +1,274 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 18,
+    "record_size": 48,
+    "custom_id": 2020897645
+  },
+  "_fields": [
+    {
+      "name": "MissionID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Enable",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "StartDateTime",
+      "type": "double",
+      "mapped_type": 9,
+      "rec_offset": 16,
+      "size": 8
+    },
+    {
+      "name": "EndDateTime",
+      "type": "double",
+      "mapped_type": 9,
+      "rec_offset": 24,
+      "size": 8
+    },
+    {
+      "name": "UseInformationButton",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "DisplayOrder",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 36,
+      "size": 4
+    },
+    {
+      "name": "TagID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 40,
+      "size": 4
+    },
+    {
+      "name": "TagIDRange",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 44,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "MissionID": 900170,
+      "Name": "神獣スフィンクス降臨",
+      "Enable": 2047,
+      "StartDateTime": 0.0,
+      "EndDateTime": 0.0,
+      "UseInformationButton": 1,
+      "DisplayOrder": 802,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900184,
+      "Name": "神獣ベヒモス降臨",
+      "Enable": 2047,
+      "StartDateTime": 0.0,
+      "EndDateTime": 0.0,
+      "UseInformationButton": 1,
+      "DisplayOrder": 803,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900198,
+      "Name": "神獣ヘカトンケイル降臨",
+      "Enable": 2047,
+      "StartDateTime": 0.0,
+      "EndDateTime": 0.0,
+      "UseInformationButton": 1,
+      "DisplayOrder": 804,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900211,
+      "Name": "神獣ガルダ降臨",
+      "Enable": 2047,
+      "StartDateTime": 0.0,
+      "EndDateTime": 0.0,
+      "UseInformationButton": 1,
+      "DisplayOrder": 805,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900225,
+      "Name": "神獣エインヘリヤル降臨",
+      "Enable": 2047,
+      "StartDateTime": 0.0,
+      "EndDateTime": 0.0,
+      "UseInformationButton": 1,
+      "DisplayOrder": 806,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900259,
+      "Name": "神獣四神降臨",
+      "Enable": 2047,
+      "StartDateTime": 0.0,
+      "EndDateTime": 0.0,
+      "UseInformationButton": 1,
+      "DisplayOrder": 807,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900296,
+      "Name": "神獣ナンディ降臨",
+      "Enable": 2047,
+      "StartDateTime": 0.0,
+      "EndDateTime": 0.0,
+      "UseInformationButton": 1,
+      "DisplayOrder": 808,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900312,
+      "Name": "神獣バハムト降臨",
+      "Enable": 2047,
+      "StartDateTime": 0.0,
+      "EndDateTime": 0.0,
+      "UseInformationButton": 1,
+      "DisplayOrder": 809,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900336,
+      "Name": "神獣ドゥン降臨",
+      "Enable": 2047,
+      "StartDateTime": 0.0,
+      "EndDateTime": 0.0,
+      "UseInformationButton": 1,
+      "DisplayOrder": 810,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900345,
+      "Name": "神獣ニーズヘッグ降臨",
+      "Enable": 2047,
+      "StartDateTime": 0.0,
+      "EndDateTime": 0.0,
+      "UseInformationButton": 1,
+      "DisplayOrder": 811,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900368,
+      "Name": "神獣ヤマタノオロチ降臨",
+      "Enable": 2047,
+      "StartDateTime": 3.157231728195e-310,
+      "EndDateTime": 3.15725075955426e-310,
+      "UseInformationButton": 1,
+      "DisplayOrder": 102,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900380,
+      "Name": "神獣玉兎降臨",
+      "Enable": 2047,
+      "StartDateTime": 3.1572087837864e-310,
+      "EndDateTime": 3.157231728195e-310,
+      "UseInformationButton": 1,
+      "DisplayOrder": 102,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900405,
+      "Name": "神獣麒麟降臨",
+      "Enable": 2047,
+      "StartDateTime": 3.1572087837864e-310,
+      "EndDateTime": 3.157231728195e-310,
+      "UseInformationButton": 1,
+      "DisplayOrder": 103,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900429,
+      "Name": "神獣俱利伽羅竜王降臨",
+      "Enable": 2047,
+      "StartDateTime": 3.1576356565044e-310,
+      "EndDateTime": 3.15769897590817e-310,
+      "UseInformationButton": 1,
+      "DisplayOrder": 103,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900456,
+      "Name": "神獣エキーオーン",
+      "Enable": 2047,
+      "StartDateTime": 3.15772956850236e-310,
+      "EndDateTime": 3.15778861917895e-310,
+      "UseInformationButton": 1,
+      "DisplayOrder": 104,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900483,
+      "Name": "神獣ケツァルコアトル",
+      "Enable": 2047,
+      "StartDateTime": 3.1561757518088e-310,
+      "EndDateTime": 3.1562348024854e-310,
+      "UseInformationButton": 1,
+      "DisplayOrder": 101,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900531,
+      "Name": "神獣フギン/ムニン降臨",
+      "Enable": 2047,
+      "StartDateTime": 3.1576570001403e-310,
+      "EndDateTime": 3.15772885699843e-310,
+      "UseInformationButton": 1,
+      "DisplayOrder": 101,
+      "TagID": 120,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 900542,
+      "Name": "神獣ヒッポカムポス降臨",
+      "Enable": 2047,
+      "StartDateTime": 3.15721892201345e-310,
+      "EndDateTime": 3.1572806406445e-310,
+      "UseInformationButton": 1,
+      "DisplayOrder": 101,
+      "TagID": 120,
+      "TagIDRange": 0
+    }
+  ]
+}

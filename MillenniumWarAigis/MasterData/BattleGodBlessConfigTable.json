@@ -1,0 +1,1277 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x04",
+    "record_count": 206,
+    "record_size": 16,
+    "custom_id": null
+  },
+  "_fields": [
+    {
+      "name": "ItemID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Category",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Description",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ItemID": "battle_god_bless_001001",
+      "Name": "ソルジャーズブレイブ",
+      "Category": 1,
+      "Description": "配置ユニット(トークン含まず)が\n3体以下で、ソルジャー系クラスの\n出撃コスト-1"
+    },
+    {
+      "ItemID": "battle_god_bless_001002",
+      "Name": "パリィングヘビーアーマー",
+      "Category": 1,
+      "Description": "ヘビーアーマー系クラスに\n敵の物理攻撃を\n10％の確率で回避を付与"
+    },
+    {
+      "ItemID": "battle_god_bless_001003",
+      "Name": "ワルキューレプロテクト",
+      "Category": 1,
+      "Description": "ワルキューレ系クラスに出撃時、\n自身に敵からのダメージを\n合計300まで防ぐバリアを付与"
+    },
+    {
+      "ItemID": "battle_god_bless_001005",
+      "Name": "プリンセスブリーズ",
+      "Category": 1,
+      "Description": "プリンセス系クラスを配置中、\n味方全体の攻撃力と防御力+2％"
+    },
+    {
+      "ItemID": "battle_god_bless_001006",
+      "Name": "バンデットメナス",
+      "Category": 1,
+      "Description": "バンデット系クラスが10％の確率で\n防御力と魔法耐性を無視する"
+    },
+    {
+      "ItemID": "battle_god_bless_001008",
+      "Name": "メイジレイダー",
+      "Category": 1,
+      "Description": "配置ユニット(トークン含まず)が\n5体以上で、メイジ系クラスの\n出撃コスト-3"
+    },
+    {
+      "ItemID": "battle_god_bless_001009",
+      "Name": "ヒーラーズブレス",
+      "Category": 1,
+      "Description": "現在HPが90％以上の\nヒーラー系クラスの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_001010",
+      "Name": "ウィッチズカース",
+      "Category": 1,
+      "Description": "ウィッチ系クラスの攻撃がヒットした\n敵の防御力を永続的に10％減少させる"
+    },
+    {
+      "ItemID": "battle_god_bless_001011",
+      "Name": "追撃のローグスタッブ",
+      "Category": 1,
+      "Description": "ローグ系クラスがHP70％以上の\n敵に対して攻撃力1.1倍"
+    },
+    {
+      "ItemID": "battle_god_bless_001012",
+      "Name": "エアロマスターアーチャー",
+      "Category": 1,
+      "Description": "アーチャー系クラスが\n飛行ユニットに対して攻撃力1.1倍"
+    },
+    {
+      "ItemID": "battle_god_bless_001013",
+      "Name": "パイレーツハイタイド",
+      "Category": 1,
+      "Description": "パイレーツ系クラスが\nHP30％未満の敵に対して攻撃力1.1倍"
+    },
+    {
+      "ItemID": "battle_god_bless_001014",
+      "Name": "サムライハート",
+      "Category": 1,
+      "Description": "サムライ系クラスがブロック中、\n攻撃力+5%"
+    },
+    {
+      "ItemID": "battle_god_bless_001015",
+      "Name": "忍者秘伝の書",
+      "Category": 1,
+      "Description": "忍者系クラスがスキル中、\n自身の攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_001016",
+      "Name": "ドラゴンシャーマンの祈り",
+      "Category": 1,
+      "Description": "ドラゴンシャーマン系クラスを配置中、\nドラゴン属性ユニットの被回復量1.1倍"
+    },
+    {
+      "ItemID": "battle_god_bless_001017",
+      "Name": "竜姫の覇気",
+      "Category": 1,
+      "Description": "ドラゴンプリンセス系クラスを配置中、\nドラゴン属性ユニットの\n攻撃力と防御力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_001018",
+      "Name": "吸血鬼狩人の夜",
+      "Category": 1,
+      "Description": "ヴァンパイアハンター系クラスを配置中、\n味方全体がアンデッド属性に\n対して攻撃力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_001019",
+      "Name": "吸血姫のお茶会",
+      "Category": 1,
+      "Description": "ヴァンパイアプリンセス系クラスの\n攻撃ヒット時、20％の確率で\nHP回復量+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_001020",
+      "Name": "天馬騎士の騎行",
+      "Category": 1,
+      "Description": "ペガサスライダー系クラスが\n敵を倒すと15%の確率で\n出撃コストが追加で回復"
+    },
+    {
+      "ItemID": "battle_god_bless_001021",
+      "Name": "暗黒騎士の渇き",
+      "Category": 1,
+      "Description": "ダークファイター系クラスのHPが\n減少すると自身の攻撃力と防御力が\n最大+10％まで上昇する"
+    },
+    {
+      "ItemID": "battle_god_bless_001022",
+      "Name": "アベンジャーズリベンジ",
+      "Category": 1,
+      "Description": "アベンジャー系クラスの\n死亡時ダメージ+20％"
+    },
+    {
+      "ItemID": "battle_god_bless_001023",
+      "Name": "ビショップの奇跡拝領",
+      "Category": 1,
+      "Description": "配置中のビショップ系クラスの現在HP\nが90％以上の場合、味方全員のHPが\n徐々に回復(毎秒20)"
+    },
+    {
+      "ItemID": "battle_god_bless_001024",
+      "Name": "前衛速攻戦術",
+      "Category": 1,
+      "Description": "前衛戦術家系クラスを配置中、\n近接ユニットの出撃コスト-1"
+    },
+    {
+      "ItemID": "battle_god_bless_001025",
+      "Name": "後衛万策戦術",
+      "Category": 1,
+      "Description": "後衛戦術家系クラスの\nスキル再使用時間を60％短縮"
+    },
+    {
+      "ItemID": "battle_god_bless_001026",
+      "Name": "魔法剣士の美学",
+      "Category": 1,
+      "Description": "魔法剣士系クラスの攻撃がヒットした\n敵への魔法ダメージが\n一定時間1.1倍になる"
+    },
+    {
+      "ItemID": "battle_god_bless_001027",
+      "Name": "陰陽師の九字印",
+      "Category": 1,
+      "Description": "陰陽師系クラスが与えたダメージの\n10％分、配置中の自身のトークンの\nHPが回復"
+    },
+    {
+      "ItemID": "battle_god_bless_001028",
+      "Name": "エンジェルソング",
+      "Category": 1,
+      "Description": "エンジェル系クラスがスキル終了時、\n味方全体のHPを20％回復する"
+    },
+    {
+      "ItemID": "battle_god_bless_001029",
+      "Name": "召喚士の律動",
+      "Category": 1,
+      "Description": "サモナー系クラスのスキル中の攻撃後の\n待ち時間をわずかに短縮"
+    },
+    {
+      "ItemID": "battle_god_bless_001030",
+      "Name": "くぐつ使いの技巧",
+      "Category": 1,
+      "Description": "くぐつ使い系クラスを配置中、\n味方全体が機械属性に\n対して攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_001031",
+      "Name": "風水五行玄妙なりて",
+      "Category": 1,
+      "Description": "風水使い系クラス配置時、悪天候の\n時間を10%短縮"
+    },
+    {
+      "ItemID": "battle_god_bless_001032",
+      "Name": "セーラーズハイウェイブ",
+      "Category": 1,
+      "Description": "セーラー系クラスを配置中、\n味方全体が魚人を含む水棲の敵に\n対して攻撃力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_001033",
+      "Name": "妖狐の幻惑",
+      "Category": 1,
+      "Description": "妖狐系クラスの\n攻撃毎のHP回復量+1％"
+    },
+    {
+      "ItemID": "battle_god_bless_001034",
+      "Name": "制圧砲術士",
+      "Category": 1,
+      "Description": "砲術士系クラスが\n地上の敵に対して攻撃力1.1倍"
+    },
+    {
+      "ItemID": "battle_god_bless_001035",
+      "Name": "パッションダンサー",
+      "Category": 1,
+      "Description": "出撃中のユニット数に応じて、\nダンサー系クラスの\n攻撃力と防御力が上昇(最大10％)"
+    },
+    {
+      "ItemID": "battle_god_bless_001036",
+      "Name": "政務官の職務",
+      "Category": 1,
+      "Description": "政務官系クラスを配置中、\n王子の攻撃力と防御力+3%"
+    },
+    {
+      "ItemID": "battle_god_bless_001037",
+      "Name": "神官戦士の戦祈祷",
+      "Category": 1,
+      "Description": "神官戦士系クラスの射程+10"
+    },
+    {
+      "ItemID": "battle_god_bless_001038",
+      "Name": "オールドネクロマンサー",
+      "Category": 1,
+      "Description": "ネクロマンサー系クラスを配置中、\nアンデッド属性の攻撃力と防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_001039",
+      "Name": "鉄壁の魔導鎧兵",
+      "Category": 1,
+      "Description": "メイジアーマー系クラスがブロック中、\n防御力+7%"
+    },
+    {
+      "ItemID": "battle_god_bless_001040",
+      "Name": "クロノウィッチーズ",
+      "Category": 1,
+      "Description": "クロノウィッチ系クラスの\n攻撃がヒットした敵の魔法耐性を\n永続的に10％減少させる"
+    },
+    {
+      "ItemID": "battle_god_bless_001041",
+      "Name": "疾風のドラゴンライド",
+      "Category": 1,
+      "Description": "ドラゴンライダー系クラスを配置中、\nドラゴン属性の攻撃後の待ち時間を\nわずかに短縮"
+    },
+    {
+      "ItemID": "battle_god_bless_001042",
+      "Name": "弓騎兵の猛射",
+      "Category": 1,
+      "Description": "ボウライダー系クラスが\n非ブロック中、攻撃力+5%"
+    },
+    {
+      "ItemID": "battle_god_bless_001043",
+      "Name": "ドルイドの祭儀",
+      "Category": 1,
+      "Description": "ドルイド系クラスを配置中、\n味方全体が植物属性に\n対して攻撃力+6％"
+    },
+    {
+      "ItemID": "battle_god_bless_001044",
+      "Name": "アルケミックメルト",
+      "Category": 1,
+      "Description": "アルケミスト系クラスの攻撃が\nヒットした敵へのダメージが\n一定時間1.05倍になる"
+    },
+    {
+      "ItemID": "battle_god_bless_001045",
+      "Name": "レンジャーズハント",
+      "Category": 1,
+      "Description": "現在HPが90％以上の\nレンジャー系クラスの攻撃力+4％"
+    },
+    {
+      "ItemID": "battle_god_bless_002001",
+      "Name": "『人間』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002002",
+      "Name": "『人間』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002003",
+      "Name": "『人間』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002004",
+      "Name": "『ドラゴン』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002005",
+      "Name": "『ドラゴン』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002006",
+      "Name": "『ドラゴン』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002007",
+      "Name": "『魔界』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002008",
+      "Name": "『魔界』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002009",
+      "Name": "『魔界』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002010",
+      "Name": "『学園』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002011",
+      "Name": "『学園』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002012",
+      "Name": "『学園』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002013",
+      "Name": "『花嫁』最大HP強化",
+      "Category": 2,
+      "Description": "ジューンブライド属性ユニットの\n最大HP+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002014",
+      "Name": "『花嫁』攻撃力強化",
+      "Category": 2,
+      "Description": "ジューンブライド属性ユニットの\n攻撃力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002015",
+      "Name": "『花嫁』防御力強化",
+      "Category": 2,
+      "Description": "ジューンブライド属性ユニットの\n防御力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002016",
+      "Name": "『吸血鬼』最大HP強化",
+      "Category": 2,
+      "Description": "ヴァンパイア属性ユニットの\n最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002017",
+      "Name": "『吸血鬼』攻撃力強化",
+      "Category": 2,
+      "Description": "ヴァンパイア属性ユニットの\n攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002018",
+      "Name": "『吸血鬼』防御力強化",
+      "Category": 2,
+      "Description": "ヴァンパイア属性ユニットの\n防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002019",
+      "Name": "『獣人』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002020",
+      "Name": "『獣人』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002021",
+      "Name": "『獣人』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002022",
+      "Name": "『チョコ』最大HP強化",
+      "Category": 2,
+      "Description": "バレンタイン属性ユニットの\n最大HP+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002023",
+      "Name": "『チョコ』攻撃力強化",
+      "Category": 2,
+      "Description": "バレンタイン属性ユニットの\n攻撃力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002024",
+      "Name": "『チョコ』防御力強化",
+      "Category": 2,
+      "Description": "バレンタイン属性ユニットの\n防御力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002025",
+      "Name": "『エルフ』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％\n※ハーフエルフ、ダークエルフも\n含みます"
+    },
+    {
+      "ItemID": "battle_god_bless_002026",
+      "Name": "『エルフ』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％\n※ハーフエルフ、ダークエルフも\n含みます"
+    },
+    {
+      "ItemID": "battle_god_bless_002027",
+      "Name": "『エルフ』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％\n※ハーフエルフ、ダークエルフも\n含みます"
+    },
+    {
+      "ItemID": "battle_god_bless_002028",
+      "Name": "『仙人』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002029",
+      "Name": "『仙人』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002030",
+      "Name": "『仙人』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002031",
+      "Name": "『聖夜』最大HP強化",
+      "Category": 2,
+      "Description": "クリスマス属性ユニットの\n最大HP+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002032",
+      "Name": "『聖夜』攻撃力強化",
+      "Category": 2,
+      "Description": "クリスマス属性ユニットの\n攻撃力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002033",
+      "Name": "『聖夜』防御力強化",
+      "Category": 2,
+      "Description": "クリスマス属性ユニットの\n防御力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002034",
+      "Name": "『天使』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002035",
+      "Name": "『天使』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002036",
+      "Name": "『天使』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002037",
+      "Name": "『弓兵』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002038",
+      "Name": "『弓兵』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002039",
+      "Name": "『弓兵』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002040",
+      "Name": "『魚人』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002041",
+      "Name": "『魚人』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002042",
+      "Name": "『魚人』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002043",
+      "Name": "『南瓜祭』最大HP強化",
+      "Category": 2,
+      "Description": "ハロウィン属性ユニットの\n最大HP+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002044",
+      "Name": "『南瓜祭』攻撃力強化",
+      "Category": 2,
+      "Description": "ハロウィン属性ユニットの\n攻撃力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002045",
+      "Name": "『南瓜祭』防御力強化",
+      "Category": 2,
+      "Description": "ハロウィン属性ユニットの\n防御力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002056",
+      "Name": "『帝国』最大HP強化",
+      "Category": 2,
+      "Description": "対象出身ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002046",
+      "Name": "『帝国』攻撃力強化",
+      "Category": 2,
+      "Description": "対象出身ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002075",
+      "Name": "『帝国』防御力強化",
+      "Category": 2,
+      "Description": "対象出身ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002088",
+      "Name": "『帝国』攻撃後時間短縮",
+      "Category": 2,
+      "Description": "対象出身ユニットの\n攻撃後の待ち時間をわずかに短縮"
+    },
+    {
+      "ItemID": "battle_god_bless_002098",
+      "Name": "『帝国』射程強化",
+      "Category": 2,
+      "Description": "対象出身ユニットの射程+5"
+    },
+    {
+      "ItemID": "battle_god_bless_002047",
+      "Name": "『神』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002048",
+      "Name": "『神』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002049",
+      "Name": "『神』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002050",
+      "Name": "『鳥人』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002051",
+      "Name": "『鳥人』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002052",
+      "Name": "『鳥人』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002053",
+      "Name": "『サマー』最大HP強化",
+      "Category": 2,
+      "Description": "サマー属性ユニットの\n最大HP+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002054",
+      "Name": "『サマー』攻撃力強化",
+      "Category": 2,
+      "Description": "サマー属性ユニットの\n攻撃力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002055",
+      "Name": "『サマー』防御力強化",
+      "Category": 2,
+      "Description": "サマー属性ユニットの\n防御力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002057",
+      "Name": "『お正月』最大HP強化",
+      "Category": 2,
+      "Description": "お正月属性ユニットの\n最大HP+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002058",
+      "Name": "『お正月』攻撃力強化",
+      "Category": 2,
+      "Description": "お正月属性ユニットの\n攻撃力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002059",
+      "Name": "『お正月』防御力強化",
+      "Category": 2,
+      "Description": "お正月属性ユニットの\n防御力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002060",
+      "Name": "『騎兵』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002061",
+      "Name": "『騎兵』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002062",
+      "Name": "『騎兵』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002063",
+      "Name": "『妖怪』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002064",
+      "Name": "『妖怪』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002065",
+      "Name": "『妖怪』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002066",
+      "Name": "『ドワーフ』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002067",
+      "Name": "『ドワーフ』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002068",
+      "Name": "『ドワーフ』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002069",
+      "Name": "『銃士』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002070",
+      "Name": "『銃士』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002071",
+      "Name": "『銃士』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002072",
+      "Name": "『温泉』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002073",
+      "Name": "『温泉』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002074",
+      "Name": "『温泉』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002076",
+      "Name": "『重装』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002077",
+      "Name": "『重装』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002078",
+      "Name": "『重装』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002079",
+      "Name": "『機械』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002080",
+      "Name": "『機械』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002081",
+      "Name": "『機械』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002082",
+      "Name": "『天界人』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002083",
+      "Name": "『天界人』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002084",
+      "Name": "『天界人』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002085",
+      "Name": "『兎祭』最大HP強化",
+      "Category": 2,
+      "Description": "エッグハント属性ユニットの\n最大HP+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002086",
+      "Name": "『兎祭』攻撃力強化",
+      "Category": 2,
+      "Description": "エッグハント属性ユニットの\n攻撃力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002087",
+      "Name": "『兎祭』防御力強化",
+      "Category": 2,
+      "Description": "エッグハント属性ユニットの\n防御力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_002089",
+      "Name": "『飛行』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002090",
+      "Name": "『飛行』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002091",
+      "Name": "『飛行』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002092",
+      "Name": "『砲兵』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002093",
+      "Name": "『砲兵』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002094",
+      "Name": "『砲兵』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002095",
+      "Name": "『深海』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002096",
+      "Name": "『深海』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002097",
+      "Name": "『深海』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_003001",
+      "Name": "竜の猛攻",
+      "Category": 3,
+      "Description": "出撃メンバーにドラゴン属性ユニットを\n8体以上含む場合、\nドラゴン属性ユニットの攻撃力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003002",
+      "Name": "鉄の戦意",
+      "Category": 3,
+      "Description": "出撃メンバーにアイアンユニットを\n3体以上含む場合、\nアイアンユニットの攻撃力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003003",
+      "Name": "青銅の戦意",
+      "Category": 3,
+      "Description": "出撃メンバーにブロンズユニットを\n3体以上含む場合、\nブロンズユニットの攻撃力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003004",
+      "Name": "銀の戦意",
+      "Category": 3,
+      "Description": "出撃メンバーにシルバーユニットを\n3体以上含む場合、\nシルバーユニットの攻撃力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003005",
+      "Name": "白金の戦意",
+      "Category": 3,
+      "Description": "出撃メンバーにプラチナユニットを\n3体以上含む場合、\nプラチナユニットの攻撃力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003006",
+      "Name": "紅一点の耀き",
+      "Category": 3,
+      "Description": "出撃メンバー内の女性ユニットが\n1体のみの場合、女性ユニットの\n最大HP、攻撃力、防御力+10％"
+    },
+    {
+      "ItemID": "battle_god_bless_003007",
+      "Name": "ふたりはベストパートナー",
+      "Category": 3,
+      "Description": "出撃メンバー内の女性ユニットが\n2体のみの場合、女性ユニットの\n最大HP、攻撃力、防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_003008",
+      "Name": "栄光の帝国軍",
+      "Category": 3,
+      "Description": "出撃メンバーに帝国出身ユニットを\n8体以上含む場合、\n帝国出身ユニットの攻撃力+3%"
+    },
+    {
+      "ItemID": "battle_god_bless_003009",
+      "Name": "華咲き日出ずる地",
+      "Category": 3,
+      "Description": "出撃メンバーの出身が「東の国」\nまたは「華の国」のみの場合、\n該当ユニットの攻撃力、防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_003010",
+      "Name": "戦略級重武装隊",
+      "Category": 3,
+      "Description": "初期コスト30以上のユニットを\n6体以上編成している場合、\n該当ユニットの出撃コスト-3"
+    },
+    {
+      "ItemID": "battle_god_bless_003011",
+      "Name": "マブダチコンビ",
+      "Category": 3,
+      "Description": "出撃メンバー内の王子以外の男性\nユニットが1体のみの場合、男性\nユニットのHP、攻撃力、防御力+7％"
+    },
+    {
+      "ItemID": "battle_god_bless_003012",
+      "Name": "魔術の求道者",
+      "Category": 3,
+      "Description": "出撃メンバーに魔術師属性ユニットを\n8体以上含む場合、\n魔術師属性のユニットの攻撃力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003013",
+      "Name": "エルフ同盟",
+      "Category": 3,
+      "Description": "出撃メンバーにエルフ属性系ユニットを\n8体以上含む場合、\nエルフ属性系ユニットの攻撃力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003014",
+      "Name": "三銃士",
+      "Category": 3,
+      "Description": "出撃メンバー内の銃士属性ユニットが\n3体のみの場合、\n銃士属性ユニットの攻撃力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003015",
+      "Name": "精鋭飛行隊",
+      "Category": 3,
+      "Description": "出撃メンバーに飛行属性ユニットを\n5体以上含む場合、\n飛行属性ユニットの攻撃力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003016",
+      "Name": "魔界連合軍",
+      "Category": 3,
+      "Description": "魔界属性を8体以上含む場合、配置中の\n魔界属性ユニットのHP攻防魔耐+7%\n※ミッション：魔界、魔界深層のみ"
+    },
+    {
+      "ItemID": "battle_god_bless_003017",
+      "Name": "砲兵連隊",
+      "Category": 3,
+      "Description": "出撃メンバーに砲兵属性ユニットを\n3体以上含む場合、砲兵属性ユニットの\n攻撃力+3％、射程+10"
+    },
+    {
+      "ItemID": "battle_god_bless_003018",
+      "Name": "騎兵突撃隊",
+      "Category": 3,
+      "Description": "出撃メンバーに騎兵属性ユニットを\n3体以上含む場合、騎兵属性ユニットの\n攻撃力、防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_003019",
+      "Name": "アンデッドパーティ",
+      "Category": 3,
+      "Description": "出撃メンバーにアンデッド属性を4体以\n上含む場合、アンデッド属性の攻撃が\nヒットした敵の攻防を永続的に10％減少"
+    },
+    {
+      "ItemID": "battle_god_bless_003020",
+      "Name": "深海の招き",
+      "Category": 3,
+      "Description": "深海属性を8体以上含む場合、配置中の\n深海属性ユニットのHP攻防魔耐+10%\n※ミッション：深海のみ"
+    },
+    {
+      "ItemID": "battle_god_bless_003021",
+      "Name": "ノーブルガーディアン",
+      "Category": 3,
+      "Description": "出撃メンバーに高貴属性ユニットを\n4体以上含む場合、重装属性ユニットの\n最大HP、防御力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003022",
+      "Name": "王国軍の進撃",
+      "Category": 3,
+      "Description": "出撃メンバーに王国出身ユニットを\n8体以上含む場合、王国属性ユニットの\n攻撃力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003023",
+      "Name": "フルメタルアーミー",
+      "Category": 3,
+      "Description": "出撃メンバーに機械属性ユニットを\n3体以上含む場合、機械属性ユニットの\n最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_003024",
+      "Name": "聖なる賛美歌",
+      "Category": 3,
+      "Description": "出撃メンバーに聖職者属性を4体以上\n含む場合、配置中の聖職者属性\nユニットのHP攻防魔耐+5%"
+    },
+    {
+      "ItemID": "battle_god_bless_003025",
+      "Name": "灼熱サマーバケーション",
+      "Category": 3,
+      "Description": "出撃メンバーにサマー属性ユニットを\n8体以上含む場合、\nサマー属性のユニットの攻撃力+5%"
+    },
+    {
+      "ItemID": "battle_god_bless_003026",
+      "Name": "王国の栄光",
+      "Category": 3,
+      "Description": "編成中の王国属性ユニット2体毎に、 \n王子の攻撃力と防御力+1％(最大10体)"
+    },
+    {
+      "ItemID": "battle_god_bless_003027",
+      "Name": "華やかなりし王国軍",
+      "Category": 3,
+      "Description": "出撃メンバー内の男性ユニットが\n王子のみの場合、\n王子の最大HP、攻撃力、防御力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003028",
+      "Name": "バードエアフォース",
+      "Category": 3,
+      "Description": "出撃メンバー内の鳥人属性ユニットが\n3体以上の場合、鳥人属性ユニットの\n攻撃力と防御力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003029",
+      "Name": "ちびっこあーみー",
+      "Category": 3,
+      "Description": "出撃メンバーにちび属性ユニットを\n3体以上含む場合、 \nちび属性ユニットの出撃コスト-1"
+    },
+    {
+      "ItemID": "battle_god_bless_003030",
+      "Name": "精鋭先遣部隊",
+      "Category": 3,
+      "Description": "初期コスト11以下のユニットを6体\n以上編成している場合、該当ユニット\nの攻撃後の待ち時間を僅かに短縮"
+    },
+    {
+      "ItemID": "battle_god_bless_003031",
+      "Name": "獣人の結束",
+      "Category": 3,
+      "Description": "出撃メンバー内の獣人が\n5人以上の場合、コスト回復速度が\n10％上昇する"
+    },
+    {
+      "ItemID": "battle_god_bless_003032",
+      "Name": "千妖夜行",
+      "Category": 3,
+      "Description": "出撃メンバー内の妖怪属性が10人以上\nの場合、妖怪の最大HPと防御力+3％\n味方全員のHPを徐々に回復(毎秒40)"
+    },
+    {
+      "ItemID": "battle_god_bless_003033",
+      "Name": "ハロウィンパレード",
+      "Category": 3,
+      "Description": "出撃メンバーにハロウィン属性ユニッ \nトを4体以上含む場合、ハロウィン属性 \nのユニットの攻撃力と防御力+3%"
+    },
+    {
+      "ItemID": "battle_god_bless_003034",
+      "Name": "実戦課外授業",
+      "Category": 3,
+      "Description": "出撃メンバーに学園属性ユニットを \n4体以上含む場合、学園属性ユニットの \n攻撃力と防御力+3%"
+    },
+    {
+      "ItemID": "battle_god_bless_003035",
+      "Name": "クリスマスパーティ",
+      "Category": 3,
+      "Description": "出撃メンバーにクリスマス属性ユニッ\nトを4体以上含む場合、クリスマス属性\nのユニットの最大HPと攻撃力+3%"
+    },
+    {
+      "ItemID": "battle_god_bless_003036",
+      "Name": "謹賀新年初詣",
+      "Category": 3,
+      "Description": "出撃メンバーにお正月属性ユニットを\n4体以上含む場合、お正月属性のユニ\nットの最大HPと攻撃力と防御力+2%"
+    },
+    {
+      "ItemID": "battle_god_bless_003037",
+      "Name": "千年の湯",
+      "Category": 3,
+      "Description": "出撃メンバーに温泉属性ユニットを\n4体以上含む場合、温泉属性のユニ\nットの攻撃力+4%と防御力+2%"
+    },
+    {
+      "ItemID": "battle_god_bless_003038",
+      "Name": "バレンタインの秘めごと",
+      "Category": 3,
+      "Description": "出撃メンバーにバレンタイン属性ユニ\nットを4体以上含む場合、バレンタイン\n属性のユニットの最大HPと攻撃力+3%"
+    },
+    {
+      "ItemID": "battle_god_bless_003039",
+      "Name": "アロースナイパーズ",
+      "Category": 3,
+      "Description": "出撃メンバーに弓兵属性ユニットを\n4体以上含む場合、\n弓兵属性ユニットの射程+10"
+    },
+    {
+      "ItemID": "battle_god_bless_003040",
+      "Name": "白の意志を継ぐ者 ",
+      "Category": 3,
+      "Description": "編成中の帝国属性ユニット2体毎に、 \n白の皇帝の攻撃力と\n防御力+1％(最大10体)"
+    },
+    {
+      "ItemID": "battle_god_bless_003041",
+      "Name": "エンジェルスカッド",
+      "Category": 3,
+      "Description": "出撃メンバーに天使属性ユニットを\n3体以上含む場合、天使属性ユニット\nの最大HPと攻撃力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003042",
+      "Name": "ぴょんぴょんたまご祭り",
+      "Category": 3,
+      "Description": "出撃メンバーにエッグハント属性ユニ\nットを3体以上含む場合、エッグハント\n属性のユニットの最大HP+6%"
+    },
+    {
+      "ItemID": "battle_god_bless_003043",
+      "Name": "エルフィンナイト",
+      "Category": 3,
+      "Description": "出撃メンバーにエルフ属性ユニットを\n8体以上含む場合、\nエルフ属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_003044",
+      "Name": "砂漠を駆ける勇士たち",
+      "Category": 3,
+      "Description": "出撃メンバーに砂漠の国出身ユニットを\n4体以上含む場合、\n砂漠の国出身ユニットの攻撃力+3%"
+    },
+    {
+      "ItemID": "battle_god_bless_003045",
+      "Name": "砲兵防衛連隊",
+      "Category": 3,
+      "Description": "出撃メンバーに砲兵属性ユニットを\n3体以上含む場合、\n砲兵属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_003046",
+      "Name": "ジューンブライドの花嫁",
+      "Category": 3,
+      "Description": "出撃メンバーにジューンブライド属性\nユニットを4体以上含む場合、対象属\n性のユニットの攻撃力と防御力+3%"
+    },
+    {
+      "ItemID": "battle_god_bless_003047",
+      "Name": "ちびっこばたりおん",
+      "Category": 3,
+      "Description": "出撃メンバーにちび属性ユニットを\n8体以上含む場合、 ちび属性ユニットの\n最大HPと攻撃力+3%"
+    },
+    {
+      "ItemID": "battle_god_bless_003048",
+      "Name": "絆で結ばれた者たち",
+      "Category": 3,
+      "Description": "出撃メンバーに好感度および信頼度\n100以上のユニットを15体以上含む\n場合、味方の攻撃力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003049",
+      "Name": "帝国多部族連合",
+      "Category": 3,
+      "Description": "出撃メンバーに帝国出身かつ人間以外\nの属性のユニットを8体以上含む場合、\n帝国出身ユニットの攻撃力+4%"
+    },
+    {
+      "ItemID": "battle_god_bless_003050",
+      "Name": "絆で支え合う者たち",
+      "Category": 3,
+      "Description": "出撃メンバーに好感度および信頼度\n100以上のユニットを15体以上含む\n場合、味方の防御力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003051",
+      "Name": "クリスマスナイト",
+      "Category": 3,
+      "Description": "出撃メンバーにクリスマス属性ユニッ\nトを4体以上含む場合、味方全員の\nHPを徐々に回復(毎秒40)"
+    },
+    {
+      "ItemID": "battle_god_bless_003052",
+      "Name": "大華絢爛",
+      "Category": 3,
+      "Description": "出撃メンバーに華の国出身ユニットを\n6体以上含む場合、\n華の国出身ユニットの攻撃力+3%"
+    },
+    {
+      "ItemID": "battle_god_bless_003053",
+      "Name": "神仙の宴",
+      "Category": 3,
+      "Description": "出撃メンバーに仙人属性ユニットを\n4体以上含む場合、\n仙人属性ユニットの最大HP+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003054",
+      "Name": "堅牢なる重装兵",
+      "Category": 3,
+      "Description": "出撃メンバーに重装属性ユニットを\n4体以上含む場合、重装属性ユニットが\nスキル発動時、自身のHPを10％回復"
+    },
+    {
+      "ItemID": "battle_god_bless_003055",
+      "Name": "ニューイヤーパーティー",
+      "Category": 3,
+      "Description": "出撃メンバーにお正月属性ユニットを\n5体以上含む場合、お正月属性\nユニットの射程+10"
+    },
+    {
+      "ItemID": "battle_god_bless_003056",
+      "Name": "温泉リフレッシュ",
+      "Category": 3,
+      "Description": "温泉属性ユニットを3体以上含む場合、\n温泉属性のユニットがスキル終了時、\n味方全体のHPを5％回復する"
+    },
+    {
+      "ItemID": "battle_god_bless_003057",
+      "Name": "先手必勝バレンタイン",
+      "Category": 3,
+      "Description": "出撃メンバーにバレンタイン属性ユニッ\nトを5体以上含む場合、該当ユニットの\nスキル初回使用の待ち時間を15％短縮"
+    },
+    {
+      "ItemID": "battle_god_bless_003058",
+      "Name": "勇猛なる帝国前線",
+      "Category": 3,
+      "Description": "出撃メンバーに帝国出身かつ近接\nユニットを6体以上含む場合、\n帝国出身ユニットの最大HP+5%"
+    },
+    {
+      "ItemID": "battle_god_bless_003059",
+      "Name": "絆で結ばれた者たち2",
+      "Category": 3,
+      "Description": "出撃メンバーに好感度および信頼度\n100以上のユニットを15体以上含む\n場合、味方のHP+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003060",
+      "Name": "実戦修学遠征",
+      "Category": 3,
+      "Description": "出撃メンバーに学園属性ユニットを \n5体以上含む場合、学園属性ユニットの \n最大HP+5%"
+    },
+    {
+      "ItemID": "battle_god_bless_003061",
+      "Name": "ぴょんぴょんバニー祭り",
+      "Category": 3,
+      "Description": "出撃メンバーにエッグハント属性ユニ\nットを4体以上含む場合、エッグハント\n属性のユニットの攻撃力と防御力+4%"
+    },
+    {
+      "ItemID": "battle_god_bless_003062",
+      "Name": "ジューンブライドパーティ",
+      "Category": 3,
+      "Description": "出撃メンバーにジューンブライド属性\nユニットを5体以上含む場合、対象属\n性のユニットの最大HP+5%"
+    },
+    {
+      "ItemID": "battle_god_bless_003063",
+      "Name": "リフレッシュサマー",
+      "Category": 3,
+      "Description": "出撃メンバー内のサマー属性が6体\n以上の場合、対象属性の最大HP+3％\n味方全員のHPを徐々に回復(毎秒20)"
+    },
+    {
+      "ItemID": "battle_god_bless_003064",
+      "Name": "ハロウィントリッカーズ",
+      "Category": 3,
+      "Description": "出撃メンバーにハロウィン属性ユニッ \nトを5体以上含む場合、ハロウィン属性 \nのユニットの被回復量1.1倍"
+    },
+    {
+      "ItemID": "battle_god_bless_003065",
+      "Name": "ちびっこぶりっつくりーく",
+      "Category": 3,
+      "Description": "出撃メンバーにちび属性ユニットを\n6体以上含む場合、 ちび属性ユニットの\nスキル再使用時間を10％短縮"
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 0,
+    "record_size": 452,
+    "custom_id": 1953719665
+  },
+  "_fields": [
+    {
+      "name": "QuestID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Idx",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "QuestTitle",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "Charisma",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "ActionPoint",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "Rank",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "Level",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "Capacity",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 36,
+      "size": 4
+    },
+    {
+      "name": "defHP",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 40,
+      "size": 4
+    },
+    {
+      "name": "defAP",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 44,
+      "size": 4
+    },
+    {
+      "name": "AppearCondition",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 48,
+      "size": 4
+    },
+    {
+      "name": "RankExp",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 52,
+      "size": 4
+    },
+    {
+      "name": "Gold",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 56,
+      "size": 4
+    },
+    {
+      "name": "MapNo",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 60,
+      "size": 4
+    },
+    {
+      "name": "EntryNo",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 64,
+      "size": 4
+    },
+    {
+      "name": "Treasure1",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 68,
+      "size": 4
+    },
+    {
+      "name": "Treasure2",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 72,
+      "size": 4
+    },
+    {
+      "name": "Treasure3",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 76,
+      "size": 4
+    },
+    {
+      "name": "Treasure4",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 80,
+      "size": 4
+    },
+    {
+      "name": "Treasure5",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 84,
+      "size": 4
+    },
+    {
+      "name": "R1",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 88,
+      "size": 4
+    },
+    {
+      "name": "R2",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 92,
+      "size": 4
+    },
+    {
+      "name": "R3",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 96,
+      "size": 4
+    },
+    {
+      "name": "R4",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 100,
+      "size": 4
+    },
+    {
+      "name": "R5",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 104,
+      "size": 4
+    },
+    {
+      "name": "UnitLevel",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 108,
+      "size": 4
+    },
+    {
+      "name": "QuestTerms",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 112,
+      "size": 4
+    },
+    {
+      "name": "LocationNo",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 116,
+      "size": 4
+    },
+    {
+      "name": "StartOpenDay",
+      "type": "int32",
+      "mapped_type": 7,
+      "rec_offset": 120,
+      "size": 4
+    },
+    {
+      "name": "EndOpenDay",
+      "type": "int32",
+      "mapped_type": 7,
+      "rec_offset": 124,
+      "size": 4
+    },
+    {
+      "name": "OpenWeek",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 128,
+      "size": 4
+    },
+    {
+      "name": "_HoldingParam",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 132,
+      "size": 4
+    },
+    {
+      "name": "BonusType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 136,
+      "size": 4
+    },
+    {
+      "name": "BonusNum",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 140,
+      "size": 4
+    },
+    {
+      "name": "ClearRewardItemID",
+      "type": "string",
+      "mapped_type": 33,
+      "rec_offset": 144,
+      "size": 4
+    },
+    {
+      "name": "ClearRewardCount",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 272,
+      "size": 4
+    },
+    {
+      "name": "UnitList",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 276,
+      "size": 4
+    },
+    {
+      "name": "_HardLevel",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 280,
+      "size": 4
+    },
+    {
+      "name": "_HardCondition",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 284,
+      "size": 4
+    },
+    {
+      "name": "_HardInfomation",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 288,
+      "size": 4
+    },
+    {
+      "name": "_DispIndex",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 292,
+      "size": 4
+    },
+    {
+      "name": "DangerArea",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 296,
+      "size": 4
+    },
+    {
+      "name": "NormalMode_RewardItemID",
+      "type": "string",
+      "mapped_type": 33,
+      "rec_offset": 300,
+      "size": 4
+    },
+    {
+      "name": "HardMode_RewardType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 332,
+      "size": 4
+    },
+    {
+      "name": "HardMode_RewardCount",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 336,
+      "size": 4
+    },
+    {
+      "name": "HardMode_RewardCardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 340,
+      "size": 4
+    },
+    {
+      "name": "HardMode_RewardItemID",
+      "type": "string",
+      "mapped_type": 33,
+      "rec_offset": 344,
+      "size": 4
+    },
+    {
+      "name": "SkinName",
+      "type": "string",
+      "mapped_type": 33,
+      "rec_offset": 376,
+      "size": 4
+    },
+    {
+      "name": "ConsignmentTicketConsumptionCount",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 408,
+      "size": 4
+    },
+    {
+      "name": "ConsignmentTicketID",
+      "type": "string",
+      "mapped_type": 33,
+      "rec_offset": 412,
+      "size": 4
+    },
+    {
+      "name": "IsUseRaidTeam",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 444,
+      "size": 4
+    },
+    {
+      "name": "DisableEntrust",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 448,
+      "size": 4
+    }
+  ],
+  "records": []
+}

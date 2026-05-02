@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 7,
+    "record_size": 12,
+    "custom_id": 1835491955
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Caption",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "ResID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 9764864,
+      "Caption": "JingleBattleBegin",
+      "ResID": 9764864
+    },
+    {
+      "ID": 9764865,
+      "Caption": "JingleClear",
+      "ResID": 9764865
+    },
+    {
+      "ID": 9764866,
+      "Caption": "JingleGachaResult0",
+      "ResID": 9764866
+    },
+    {
+      "ID": 9764867,
+      "Caption": "JingleGachaResult1",
+      "ResID": 9764867
+    },
+    {
+      "ID": 9764868,
+      "Caption": "JingleGachaResult2",
+      "ResID": 9764868
+    },
+    {
+      "ID": 9764869,
+      "Caption": "JingleGachaStart",
+      "ResID": 9764869
+    },
+    {
+      "ID": 9764870,
+      "Caption": "JingleGameOver",
+      "ResID": 9764870
+    }
+  ]
+}

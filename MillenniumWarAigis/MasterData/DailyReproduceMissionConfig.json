@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 1,
+    "record_size": 16,
+    "custom_id": 1953719665
+  },
+  "_fields": [
+    {
+      "name": "MissionID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "TitleID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "QuestID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "FaceIconID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "MissionID": 310060,
+      "TitleID": 330,
+      "QuestID": "7473,7474,7475,7476,7477",
+      "FaceIconID": "1395"
+    }
+  ]
+}

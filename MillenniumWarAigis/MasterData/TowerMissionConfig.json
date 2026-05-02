@@ -1,0 +1,129 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 3,
+    "record_size": 52,
+    "custom_id": 2020897645
+  },
+  "_fields": [
+    {
+      "name": "MissionID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Enable",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "DisplayOrder",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "StartDateTime",
+      "type": "double",
+      "mapped_type": 9,
+      "rec_offset": 16,
+      "size": 8
+    },
+    {
+      "name": "EndDateTime",
+      "type": "double",
+      "mapped_type": 9,
+      "rec_offset": 24,
+      "size": 8
+    },
+    {
+      "name": "TowerCrystalID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "ConsumeItemID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 36,
+      "size": 4
+    },
+    {
+      "name": "DailyAutoAddCount",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 40,
+      "size": 4
+    },
+    {
+      "name": "TopFloor",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 44,
+      "size": 4
+    },
+    {
+      "name": "DiscloseQuestID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 48,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "MissionID": 110001,
+      "Name": "英傑の塔",
+      "Enable": 2047,
+      "DisplayOrder": 2,
+      "StartDateTime": 0.0,
+      "EndDateTime": 0.0,
+      "TowerCrystalID": "tower_crystal_110001",
+      "ConsumeItemID": "tower_consume_item_110001",
+      "DailyAutoAddCount": 3,
+      "TopFloor": 50,
+      "DiscloseQuestID": 0
+    },
+    {
+      "MissionID": 110002,
+      "Name": "統帥の塔",
+      "Enable": 2047,
+      "DisplayOrder": 2,
+      "StartDateTime": 0.0,
+      "EndDateTime": 0.0,
+      "TowerCrystalID": "tower_crystal_110002",
+      "ConsumeItemID": "tower_consume_item_110001",
+      "DailyAutoAddCount": 0,
+      "TopFloor": 50,
+      "DiscloseQuestID": 10001
+    },
+    {
+      "MissionID": 110003,
+      "Name": "悪霊の塔",
+      "Enable": 2047,
+      "DisplayOrder": 2,
+      "StartDateTime": 0.0,
+      "EndDateTime": 0.0,
+      "TowerCrystalID": "tower_crystal_110003",
+      "ConsumeItemID": "tower_consume_item_110001",
+      "DailyAutoAddCount": 0,
+      "TopFloor": 50,
+      "DiscloseQuestID": 10001
+    }
+  ]
+}

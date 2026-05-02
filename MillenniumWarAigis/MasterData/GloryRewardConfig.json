@@ -1,0 +1,309 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x04",
+    "record_count": 24,
+    "record_size": 32,
+    "custom_id": null
+  },
+  "_fields": [
+    {
+      "name": "RewardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "RewardType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "RequiredPoint",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "CardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "SummonConfigID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "SummonTexturePatternNum",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "SummonDetailTextID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "SummonAdditionalUnitIDs",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 28,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "RewardID": 1,
+      "RewardType": 1,
+      "RequiredPoint": 100,
+      "CardID": 77,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 2,
+      "RewardType": 1,
+      "RequiredPoint": 500,
+      "CardID": 133,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 3,
+      "RewardType": 1,
+      "RequiredPoint": 1000,
+      "CardID": 383,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 4,
+      "RewardType": 1,
+      "RequiredPoint": 2000,
+      "CardID": 60,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 5,
+      "RewardType": 1,
+      "RequiredPoint": 3000,
+      "CardID": 333,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredPoint": 4000,
+      "CardID": 384,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 7,
+      "RewardType": 1,
+      "RequiredPoint": 5000,
+      "CardID": 136,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredPoint": 7000,
+      "CardID": 334,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 9,
+      "RewardType": 1,
+      "RequiredPoint": 10000,
+      "CardID": 533,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 10,
+      "RewardType": 1,
+      "RequiredPoint": 12500,
+      "CardID": 60,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 11,
+      "RewardType": 1,
+      "RequiredPoint": 15000,
+      "CardID": 384,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 12,
+      "RewardType": 1,
+      "RequiredPoint": 17500,
+      "CardID": 533,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 13,
+      "RewardType": 1,
+      "RequiredPoint": 20000,
+      "CardID": 433,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 14,
+      "RewardType": 1,
+      "RequiredPoint": 22500,
+      "CardID": 60,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 15,
+      "RewardType": 1,
+      "RequiredPoint": 25000,
+      "CardID": 335,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 16,
+      "RewardType": 1,
+      "RequiredPoint": 27500,
+      "CardID": 533,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 17,
+      "RewardType": 1,
+      "RequiredPoint": 30000,
+      "CardID": 491,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 18,
+      "RewardType": 1,
+      "RequiredPoint": 32500,
+      "CardID": 60,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 19,
+      "RewardType": 1,
+      "RequiredPoint": 35000,
+      "CardID": 250,
+      "SummonConfigID": 0,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 0,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 20,
+      "RewardType": 2,
+      "RequiredPoint": 0,
+      "CardID": 0,
+      "SummonConfigID": 20001,
+      "SummonTexturePatternNum": 0,
+      "SummonDetailTextID": 1112,
+      "SummonAdditionalUnitIDs": ""
+    },
+    {
+      "RewardID": 21,
+      "RewardType": 2,
+      "RequiredPoint": 5000,
+      "CardID": 0,
+      "SummonConfigID": 20002,
+      "SummonTexturePatternNum": 1,
+      "SummonDetailTextID": 1113,
+      "SummonAdditionalUnitIDs": "1612"
+    },
+    {
+      "RewardID": 22,
+      "RewardType": 2,
+      "RequiredPoint": 10000,
+      "CardID": 0,
+      "SummonConfigID": 20003,
+      "SummonTexturePatternNum": 2,
+      "SummonDetailTextID": 1114,
+      "SummonAdditionalUnitIDs": "1612"
+    },
+    {
+      "RewardID": 23,
+      "RewardType": 2,
+      "RequiredPoint": 20000,
+      "CardID": 0,
+      "SummonConfigID": 20004,
+      "SummonTexturePatternNum": 3,
+      "SummonDetailTextID": 1115,
+      "SummonAdditionalUnitIDs": "1612,1611"
+    },
+    {
+      "RewardID": 24,
+      "RewardType": 2,
+      "RequiredPoint": 35000,
+      "CardID": 0,
+      "SummonConfigID": 20005,
+      "SummonTexturePatternNum": 4,
+      "SummonDetailTextID": 1116,
+      "SummonAdditionalUnitIDs": "1612,1611,194"
+    }
+  ]
+}

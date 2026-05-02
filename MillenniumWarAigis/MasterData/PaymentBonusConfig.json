@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 2,
+    "record_size": 28,
+    "custom_id": 1734567780
+  },
+  "_fields": [
+    {
+      "name": "ConfigId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "OpenDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "CloseDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "RequiredAmount",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "CardId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "ResourceID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "PresentTextID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ConfigId": 1,
+      "OpenDate": "2024/06/27 11:30:00",
+      "CloseDate": "2025/05/22 11:29:59",
+      "RequiredAmount": 500,
+      "CardId": 2178,
+      "ResourceID": 0,
+      "PresentTextID": 4812
+    },
+    {
+      "ConfigId": 2,
+      "OpenDate": "2025/05/22 11:30:00",
+      "CloseDate": "",
+      "RequiredAmount": 500,
+      "CardId": 2458,
+      "ResourceID": 1,
+      "PresentTextID": 4812
+    }
+  ]
+}

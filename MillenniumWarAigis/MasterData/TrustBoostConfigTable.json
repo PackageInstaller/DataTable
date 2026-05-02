@@ -1,0 +1,209 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 14,
+    "record_size": 32,
+    "custom_id": 1835234419
+  },
+  "_fields": [
+    {
+      "name": "CfgName",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "CfgID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "TypeID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "TypeSign",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "TypeCalculate",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "TextTypeName",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "TextFormat",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "SelectingTextFormat",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "CfgName": "なし",
+      "CfgID": 1746233816,
+      "TypeID": 0,
+      "TypeSign": 0,
+      "TypeCalculate": 0,
+      "TextTypeName": 0,
+      "TextFormat": 0,
+      "SelectingTextFormat": 0
+    },
+    {
+      "CfgName": "体力上昇",
+      "CfgID": -1711442053,
+      "TypeID": 1,
+      "TypeSign": 0,
+      "TypeCalculate": 1,
+      "TextTypeName": -815297650,
+      "TextFormat": 1769392595,
+      "SelectingTextFormat": -179057626
+    },
+    {
+      "CfgName": "攻撃力上昇",
+      "CfgID": 2046729265,
+      "TypeID": 2,
+      "TypeSign": 0,
+      "TypeCalculate": 1,
+      "TextTypeName": 1450105396,
+      "TextFormat": -260073367,
+      "SelectingTextFormat": -179057626
+    },
+    {
+      "CfgName": "防御力上昇",
+      "CfgID": 816240740,
+      "TypeID": 3,
+      "TypeSign": 0,
+      "TypeCalculate": 1,
+      "TextTypeName": 560589474,
+      "TextFormat": -2022135553,
+      "SelectingTextFormat": -179057626
+    },
+    {
+      "CfgName": "射程上昇",
+      "CfgID": -20627999,
+      "TypeID": 4,
+      "TypeSign": 0,
+      "TypeCalculate": 1,
+      "TextTypeName": -1089634559,
+      "TextFormat": 421281116,
+      "SelectingTextFormat": -179057626
+    },
+    {
+      "CfgName": "魔法耐性上昇",
+      "CfgID": 1700941251,
+      "TypeID": 5,
+      "TypeSign": 0,
+      "TypeCalculate": 1,
+      "TextTypeName": -938848361,
+      "TextFormat": 1847266762,
+      "SelectingTextFormat": -179057626
+    },
+    {
+      "CfgName": "攻撃硬直短縮",
+      "CfgID": 800385126,
+      "TypeID": 6,
+      "TypeSign": 1,
+      "TypeCalculate": 2,
+      "TextTypeName": 1359158829,
+      "TextFormat": -149791632,
+      "SelectingTextFormat": 837344912
+    },
+    {
+      "CfgName": "スキル効果時間延長",
+      "CfgID": 1062377768,
+      "TypeID": 7,
+      "TypeSign": 0,
+      "TypeCalculate": 2,
+      "TextTypeName": 637808315,
+      "TextFormat": -2146079514,
+      "SelectingTextFormat": -236215091
+    },
+    {
+      "CfgName": "スキル再使用時間短縮",
+      "CfgID": -329758622,
+      "TypeID": 8,
+      "TypeSign": 1,
+      "TypeCalculate": 2,
+      "TextTypeName": -1229245654,
+      "TextFormat": 279605623,
+      "SelectingTextFormat": 837344912
+    },
+    {
+      "CfgName": "物理攻撃回避上昇",
+      "CfgID": 1898436434,
+      "TypeID": 9,
+      "TypeSign": 0,
+      "TypeCalculate": 1,
+      "TextTypeName": -1044642884,
+      "TextFormat": 1739407841,
+      "SelectingTextFormat": -236215091
+    },
+    {
+      "CfgName": "HP吸収",
+      "CfgID": -353100742,
+      "TypeID": 10,
+      "TypeSign": 0,
+      "TypeCalculate": 1,
+      "TextTypeName": -1585739175,
+      "TextFormat": 124438532,
+      "SelectingTextFormat": -236215091
+    },
+    {
+      "CfgName": "貫通攻撃",
+      "CfgID": 1497643201,
+      "TypeID": 11,
+      "TypeSign": 0,
+      "TypeCalculate": 1,
+      "TextTypeName": -696468785,
+      "TextFormat": 1886255250,
+      "SelectingTextFormat": -236215091
+    },
+    {
+      "CfgName": "バリア",
+      "CfgID": 155668862,
+      "TypeID": 12,
+      "TypeSign": 0,
+      "TypeCalculate": 1,
+      "TextTypeName": 1333128053,
+      "TextFormat": -379279064,
+      "SelectingTextFormat": -179057626
+    },
+    {
+      "CfgName": "コスト減少量",
+      "CfgID": 143781562,
+      "TypeID": 13,
+      "TypeSign": 1,
+      "TypeCalculate": 1,
+      "TextTypeName": 947051491,
+      "TextFormat": -1637639746,
+      "SelectingTextFormat": -1637226983
+    }
+  ]
+}

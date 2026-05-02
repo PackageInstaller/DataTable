@@ -1,0 +1,127 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 12,
+    "record_size": 52,
+    "custom_id": 2020897645
+  },
+  "_fields": [
+    {
+      "name": "MissionID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Enable",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 8,
+      "size": 1
+    },
+    {
+      "name": "\b\r\fStartDateTime",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "ime",
+      "type": "unknown",
+      "mapped_type": 97,
+      "rec_offset": 17508,
+      "size": 15999
+    },
+    {
+      "name": "ID",
+      "type": "unknown",
+      "mapped_type": 191,
+      "rec_offset": 33507,
+      "size": 0
+    }
+  ],
+  "records": [
+    {
+      "MissionID": 100001,
+      "Name": "ストーリーミッション1",
+      "Enable": true,
+      "\b\r\fStartDateTime": "a1860100"
+    },
+    {
+      "MissionID": 100002,
+      "Name": "ストーリーミッション2",
+      "Enable": true,
+      "\b\r\fStartDateTime": "a2860100"
+    },
+    {
+      "MissionID": 100003,
+      "Name": "ストーリーミッション3",
+      "Enable": true,
+      "\b\r\fStartDateTime": "a3860100"
+    },
+    {
+      "MissionID": 100004,
+      "Name": "ストーリーミッション4",
+      "Enable": true,
+      "\b\r\fStartDateTime": "a4860100"
+    },
+    {
+      "MissionID": 100005,
+      "Name": "ストーリーミッション5",
+      "Enable": true,
+      "\b\r\fStartDateTime": "a5860100"
+    },
+    {
+      "MissionID": 100006,
+      "Name": "ストーリーミッション6",
+      "Enable": true,
+      "\b\r\fStartDateTime": "a6860100"
+    },
+    {
+      "MissionID": 100007,
+      "Name": "ストーリーミッション7",
+      "Enable": true,
+      "\b\r\fStartDateTime": "a7860100"
+    },
+    {
+      "MissionID": 100008,
+      "Name": "ストーリーミッション8",
+      "Enable": true,
+      "\b\r\fStartDateTime": "a8860100"
+    },
+    {
+      "MissionID": 100009,
+      "Name": "ストーリーミッション9",
+      "Enable": true,
+      "\b\r\fStartDateTime": "a9860100"
+    },
+    {
+      "MissionID": 100010,
+      "Name": "ストーリーミッション10",
+      "Enable": true,
+      "\b\r\fStartDateTime": "aa860100"
+    },
+    {
+      "MissionID": 100011,
+      "Name": "ストーリーミッション11",
+      "Enable": true,
+      "\b\r\fStartDateTime": "ab860100"
+    },
+    {
+      "MissionID": 100101,
+      "Name": "ストーリーミッション外伝",
+      "Enable": true,
+      "\b\r\fStartDateTime": "05870100"
+    }
+  ]
+}

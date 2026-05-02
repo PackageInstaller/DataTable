@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 2,
+    "record_size": 16,
+    "custom_id": 1633906540
+  },
+  "_fields": [
+    {
+      "name": "ObjectID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "X",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Y",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "_Command",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ObjectID": 0,
+      "X": 615,
+      "Y": 30,
+      "_Command": "OFFSET_0"
+    },
+    {
+      "ObjectID": 200,
+      "X": 565,
+      "Y": 173,
+      "_Command": "OFFSET_0"
+    }
+  ]
+}

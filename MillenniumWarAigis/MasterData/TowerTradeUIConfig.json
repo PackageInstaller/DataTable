@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 3,
+    "record_size": 16,
+    "custom_id": 2020897645
+  },
+  "_fields": [
+    {
+      "name": "MissionID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "CrystalSpriteNode",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "CrystalNameNode",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "CrystalValueNode",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "MissionID": 110001,
+      "CrystalSpriteNode": "SP00",
+      "CrystalNameNode": "TX00",
+      "CrystalValueNode": "TX01"
+    },
+    {
+      "MissionID": 110002,
+      "CrystalSpriteNode": "SP01",
+      "CrystalNameNode": "TX02",
+      "CrystalValueNode": "TX03"
+    },
+    {
+      "MissionID": 110003,
+      "CrystalSpriteNode": "SP02",
+      "CrystalNameNode": "TX04",
+      "CrystalValueNode": "TX05"
+    }
+  ]
+}

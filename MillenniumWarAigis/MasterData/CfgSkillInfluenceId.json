@@ -1,0 +1,1374 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 268,
+    "record_size": 12,
+    "custom_id": 2020899187
+  },
+  "_fields": [
+    {
+      "name": "ConfigId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "InfluenceTypeId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "ConfigName",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ConfigId": 1746233816,
+      "InfluenceTypeId": 0,
+      "ConfigName": "なし"
+    },
+    {
+      "ConfigId": 1249429761,
+      "InfluenceTypeId": 1,
+      "ConfigName": "ダミー"
+    },
+    {
+      "ConfigId": -531828417,
+      "InfluenceTypeId": 2,
+      "ConfigName": "攻撃アップ"
+    },
+    {
+      "ConfigId": -1403789375,
+      "InfluenceTypeId": 3,
+      "ConfigName": "攻撃アップ2"
+    },
+    {
+      "ConfigId": -1458260630,
+      "InfluenceTypeId": 4,
+      "ConfigName": "防御アップ"
+    },
+    {
+      "ConfigId": -1222958338,
+      "InfluenceTypeId": 5,
+      "ConfigName": "防御アップ2"
+    },
+    {
+      "ConfigId": 1195854748,
+      "InfluenceTypeId": 6,
+      "ConfigName": "射程アップ"
+    },
+    {
+      "ConfigId": 379746007,
+      "InfluenceTypeId": 7,
+      "ConfigName": "複数回攻撃"
+    },
+    {
+      "ConfigId": 930032022,
+      "InfluenceTypeId": 8,
+      "ConfigName": "ダメージ範囲アップ"
+    },
+    {
+      "ConfigId": -1991815584,
+      "InfluenceTypeId": 9,
+      "ConfigName": "回避アップ(物理)"
+    },
+    {
+      "ConfigId": -1383639273,
+      "InfluenceTypeId": 10,
+      "ConfigName": "回避アップ(遠隔)"
+    },
+    {
+      "ConfigId": 645988528,
+      "InfluenceTypeId": 11,
+      "ConfigName": "MAXHPアップ"
+    },
+    {
+      "ConfigId": -1966713734,
+      "InfluenceTypeId": 12,
+      "ConfigName": "ブロックアップ"
+    },
+    {
+      "ConfigId": 692476726,
+      "InfluenceTypeId": 13,
+      "ConfigName": "ターゲットアップ"
+    },
+    {
+      "ConfigId": -1745354281,
+      "InfluenceTypeId": 14,
+      "ConfigName": "アタックウェイト"
+    },
+    {
+      "ConfigId": -1453486272,
+      "InfluenceTypeId": 15,
+      "ConfigName": "支援効果アップ"
+    },
+    {
+      "ConfigId": -979489012,
+      "InfluenceTypeId": 16,
+      "ConfigName": "攻撃支援(踊り子)"
+    },
+    {
+      "ConfigId": -584961178,
+      "InfluenceTypeId": 17,
+      "ConfigName": "防御支援(踊り子)"
+    },
+    {
+      "ConfigId": 1777624365,
+      "InfluenceTypeId": 18,
+      "ConfigName": "治癒力向上"
+    },
+    {
+      "ConfigId": 453219892,
+      "InfluenceTypeId": 19,
+      "ConfigName": "魔法耐性アップ"
+    },
+    {
+      "ConfigId": 997869870,
+      "InfluenceTypeId": 20,
+      "ConfigName": "魔法耐性アップ2"
+    },
+    {
+      "ConfigId": -1733452343,
+      "InfluenceTypeId": 21,
+      "ConfigName": "チェンジミサイル"
+    },
+    {
+      "ConfigId": 316565310,
+      "InfluenceTypeId": 22,
+      "ConfigName": "同時攻撃数アップ"
+    },
+    {
+      "ConfigId": 806237508,
+      "InfluenceTypeId": 23,
+      "ConfigName": "MSディレイ"
+    },
+    {
+      "ConfigId": -1401707221,
+      "InfluenceTypeId": 24,
+      "ConfigName": "MSインターバル"
+    },
+    {
+      "ConfigId": -1182252848,
+      "InfluenceTypeId": 25,
+      "ConfigName": "スキル延長"
+    },
+    {
+      "ConfigId": -1280152134,
+      "InfluenceTypeId": 26,
+      "ConfigName": "魔法攻撃化"
+    },
+    {
+      "ConfigId": -121453737,
+      "InfluenceTypeId": 27,
+      "ConfigName": "士気高揚アップ"
+    },
+    {
+      "ConfigId": 1837069726,
+      "InfluenceTypeId": 28,
+      "ConfigName": "攻撃支援(アンナ専用)"
+    },
+    {
+      "ConfigId": 613490891,
+      "InfluenceTypeId": 29,
+      "ConfigName": "防御支援(アンナ専用)"
+    },
+    {
+      "ConfigId": 88447918,
+      "InfluenceTypeId": 30,
+      "ConfigName": "暗殺効果アップ"
+    },
+    {
+      "ConfigId": 1986470197,
+      "InfluenceTypeId": 31,
+      "ConfigName": "回復"
+    },
+    {
+      "ConfigId": 1927656926,
+      "InfluenceTypeId": 32,
+      "ConfigName": "コスト回復"
+    },
+    {
+      "ConfigId": 1586584838,
+      "InfluenceTypeId": 33,
+      "ConfigName": "ダメージカット"
+    },
+    {
+      "ConfigId": -1806283402,
+      "InfluenceTypeId": 34,
+      "ConfigName": "魔法ダメージカット"
+    },
+    {
+      "ConfigId": -1638620188,
+      "InfluenceTypeId": 35,
+      "ConfigName": "ドレイン"
+    },
+    {
+      "ConfigId": 291534821,
+      "InfluenceTypeId": 36,
+      "ConfigName": "無敵"
+    },
+    {
+      "ConfigId": -498381959,
+      "InfluenceTypeId": 37,
+      "ConfigName": "攻撃ダウン"
+    },
+    {
+      "ConfigId": -1822631939,
+      "InfluenceTypeId": 38,
+      "ConfigName": "魔法属性化"
+    },
+    {
+      "ConfigId": 144659828,
+      "InfluenceTypeId": 39,
+      "ConfigName": "貫通属性化"
+    },
+    {
+      "ConfigId": 1969956721,
+      "InfluenceTypeId": 40,
+      "ConfigName": "不死鳥属性"
+    },
+    {
+      "ConfigId": -2146585654,
+      "InfluenceTypeId": 41,
+      "ConfigName": "麻痺付与"
+    },
+    {
+      "ConfigId": -2050969859,
+      "InfluenceTypeId": 42,
+      "ConfigName": "反動付与"
+    },
+    {
+      "ConfigId": 2095737981,
+      "InfluenceTypeId": 43,
+      "ConfigName": "コリジョン有効"
+    },
+    {
+      "ConfigId": -1189289519,
+      "InfluenceTypeId": 44,
+      "ConfigName": "コリジョン切り替え"
+    },
+    {
+      "ConfigId": -1177094426,
+      "InfluenceTypeId": 45,
+      "ConfigName": "ダメージ変更"
+    },
+    {
+      "ConfigId": -1005383912,
+      "InfluenceTypeId": 46,
+      "ConfigName": "状態異常治療"
+    },
+    {
+      "ConfigId": -1515883248,
+      "InfluenceTypeId": 47,
+      "ConfigName": "モーション変化"
+    },
+    {
+      "ConfigId": -1850253217,
+      "InfluenceTypeId": 48,
+      "ConfigName": "スイッチアクション"
+    },
+    {
+      "ConfigId": 2001134550,
+      "InfluenceTypeId": 49,
+      "ConfigName": "スイッチスキル"
+    },
+    {
+      "ConfigId": -1345694597,
+      "InfluenceTypeId": 50,
+      "ConfigName": "オートドライブ"
+    },
+    {
+      "ConfigId": 451829820,
+      "InfluenceTypeId": 51,
+      "ConfigName": "リジェネ効果"
+    },
+    {
+      "ConfigId": -5636266,
+      "InfluenceTypeId": 52,
+      "ConfigName": "コストボーナスアップ"
+    },
+    {
+      "ConfigId": 1801706828,
+      "InfluenceTypeId": 53,
+      "ConfigName": "範囲攻撃確率"
+    },
+    {
+      "ConfigId": 2138513100,
+      "InfluenceTypeId": 54,
+      "ConfigName": "ダメージ無効"
+    },
+    {
+      "ConfigId": -203047043,
+      "InfluenceTypeId": 55,
+      "ConfigName": "スイッチスタイル"
+    },
+    {
+      "ConfigId": -429871433,
+      "InfluenceTypeId": 56,
+      "ConfigName": "フィールド(停止)"
+    },
+    {
+      "ConfigId": -1678963319,
+      "InfluenceTypeId": 57,
+      "ConfigName": "ダメージリフレクター"
+    },
+    {
+      "ConfigId": 1214227474,
+      "InfluenceTypeId": 58,
+      "ConfigName": "フィールド(ダメージ)"
+    },
+    {
+      "ConfigId": -513413629,
+      "InfluenceTypeId": 59,
+      "ConfigName": "バリアブレイク"
+    },
+    {
+      "ConfigId": -240687573,
+      "InfluenceTypeId": 60,
+      "ConfigName": "アーマーブレイク"
+    },
+    {
+      "ConfigId": -725040987,
+      "InfluenceTypeId": 61,
+      "ConfigName": "隠密化"
+    },
+    {
+      "ConfigId": 1529809899,
+      "InfluenceTypeId": 62,
+      "ConfigName": "呪術効果アップ"
+    },
+    {
+      "ConfigId": 414511801,
+      "InfluenceTypeId": 63,
+      "ConfigName": "呪術即死アップ"
+    },
+    {
+      "ConfigId": 1276124431,
+      "InfluenceTypeId": 64,
+      "ConfigName": "回復2"
+    },
+    {
+      "ConfigId": -1366446644,
+      "InfluenceTypeId": 65,
+      "ConfigName": "コストリジェネ"
+    },
+    {
+      "ConfigId": 846684337,
+      "InfluenceTypeId": 66,
+      "ConfigName": "フィールド(対空ダメージアップ)"
+    },
+    {
+      "ConfigId": 648064028,
+      "InfluenceTypeId": 67,
+      "ConfigName": "フィールド(対地ダメージアップ)"
+    },
+    {
+      "ConfigId": 1631230926,
+      "InfluenceTypeId": 68,
+      "ConfigName": "フィールド(ミサイル)"
+    },
+    {
+      "ConfigId": -1591194260,
+      "InfluenceTypeId": 69,
+      "ConfigName": "フィールド(エフェクト)"
+    },
+    {
+      "ConfigId": -759764947,
+      "InfluenceTypeId": 70,
+      "ConfigName": "フィールド(サウンド)"
+    },
+    {
+      "ConfigId": 111969965,
+      "InfluenceTypeId": 71,
+      "ConfigName": "アブソーブ"
+    },
+    {
+      "ConfigId": -1485499244,
+      "InfluenceTypeId": 72,
+      "ConfigName": "マルチショット上昇(アビリティ)"
+    },
+    {
+      "ConfigId": -118134396,
+      "InfluenceTypeId": 73,
+      "ConfigName": "チェンジミサイル2"
+    },
+    {
+      "ConfigId": -694278420,
+      "InfluenceTypeId": 74,
+      "ConfigName": "回復(トークン)"
+    },
+    {
+      "ConfigId": 866404228,
+      "InfluenceTypeId": 75,
+      "ConfigName": "ゴールドゲット上昇(アビリティ)"
+    },
+    {
+      "ConfigId": -2014547236,
+      "InfluenceTypeId": 76,
+      "ConfigName": "強制行動の解除"
+    },
+    {
+      "ConfigId": -1725430750,
+      "InfluenceTypeId": 77,
+      "ConfigName": "クリティカル上昇(アビリティ)"
+    },
+    {
+      "ConfigId": -1895488238,
+      "InfluenceTypeId": 78,
+      "ConfigName": "ダメージ無効上昇(アビリティ)"
+    },
+    {
+      "ConfigId": -1873129159,
+      "InfluenceTypeId": 79,
+      "ConfigName": "特攻発動率上昇(アビリティ)"
+    },
+    {
+      "ConfigId": 625045796,
+      "InfluenceTypeId": 80,
+      "ConfigName": "特攻効果上昇(アビリティ)"
+    },
+    {
+      "ConfigId": 563604606,
+      "InfluenceTypeId": 81,
+      "ConfigName": "貫通発動率上昇(アビリティ)"
+    },
+    {
+      "ConfigId": 174198884,
+      "InfluenceTypeId": 82,
+      "ConfigName": "即死発動率上昇(アビリティ)"
+    },
+    {
+      "ConfigId": -778924927,
+      "InfluenceTypeId": 83,
+      "ConfigName": "MAXHPアップ2"
+    },
+    {
+      "ConfigId": 285494174,
+      "InfluenceTypeId": 84,
+      "ConfigName": "コスト変動"
+    },
+    {
+      "ConfigId": -1338033613,
+      "InfluenceTypeId": 85,
+      "ConfigName": "攻撃アップ(レア対象)"
+    },
+    {
+      "ConfigId": -114352942,
+      "InfluenceTypeId": 86,
+      "ConfigName": "反動付与(レア対象)"
+    },
+    {
+      "ConfigId": -103714970,
+      "InfluenceTypeId": 87,
+      "ConfigName": "防御アップ(レア対象)"
+    },
+    {
+      "ConfigId": 396048374,
+      "InfluenceTypeId": 88,
+      "ConfigName": "麻痺属性化"
+    },
+    {
+      "ConfigId": -615190697,
+      "InfluenceTypeId": 89,
+      "ConfigName": "攻撃アップ3"
+    },
+    {
+      "ConfigId": -1071902104,
+      "InfluenceTypeId": 90,
+      "ConfigName": "防御アップ3"
+    },
+    {
+      "ConfigId": 1309483603,
+      "InfluenceTypeId": 91,
+      "ConfigName": "回復対象にならない"
+    },
+    {
+      "ConfigId": 28791328,
+      "InfluenceTypeId": 92,
+      "ConfigName": "スキル発動不可"
+    },
+    {
+      "ConfigId": -192360496,
+      "InfluenceTypeId": 93,
+      "ConfigName": "魔法属性解除"
+    },
+    {
+      "ConfigId": 297043591,
+      "InfluenceTypeId": 94,
+      "ConfigName": "貫通属性解除"
+    },
+    {
+      "ConfigId": -616036141,
+      "InfluenceTypeId": 95,
+      "ConfigName": "HP割合ダメージ"
+    },
+    {
+      "ConfigId": -609845823,
+      "InfluenceTypeId": 96,
+      "ConfigName": "同時攻撃数アップ2"
+    },
+    {
+      "ConfigId": 1367213543,
+      "InfluenceTypeId": 97,
+      "ConfigName": "魔法属性(確率発動)"
+    },
+    {
+      "ConfigId": 1283604715,
+      "InfluenceTypeId": 98,
+      "ConfigName": "貫通属性(確率発動)"
+    },
+    {
+      "ConfigId": -1121137457,
+      "InfluenceTypeId": 99,
+      "ConfigName": "ドレイン2"
+    },
+    {
+      "ConfigId": -1376528279,
+      "InfluenceTypeId": 100,
+      "ConfigName": "ドレインブースト"
+    },
+    {
+      "ConfigId": 1756701710,
+      "InfluenceTypeId": 101,
+      "ConfigName": "スキル覚醒解除"
+    },
+    {
+      "ConfigId": -1655153580,
+      "InfluenceTypeId": 102,
+      "ConfigName": "トークン回復"
+    },
+    {
+      "ConfigId": -1715984631,
+      "InfluenceTypeId": 103,
+      "ConfigName": "攻撃変動(フィールド)"
+    },
+    {
+      "ConfigId": -799640996,
+      "InfluenceTypeId": 104,
+      "ConfigName": "防御変動(フィールド)"
+    },
+    {
+      "ConfigId": -843748066,
+      "InfluenceTypeId": 105,
+      "ConfigName": "魔耐変動(フィールド)"
+    },
+    {
+      "ConfigId": -1740635545,
+      "InfluenceTypeId": 106,
+      "ConfigName": "アテンション"
+    },
+    {
+      "ConfigId": -1706409096,
+      "InfluenceTypeId": 107,
+      "ConfigName": "スキル永続化"
+    },
+    {
+      "ConfigId": 1046736584,
+      "InfluenceTypeId": 108,
+      "ConfigName": "ライフバースト"
+    },
+    {
+      "ConfigId": -840213932,
+      "InfluenceTypeId": 109,
+      "ConfigName": "コマンド実行"
+    },
+    {
+      "ConfigId": 944464315,
+      "InfluenceTypeId": 110,
+      "ConfigName": "スキル効果時間延長を無視"
+    },
+    {
+      "ConfigId": 96431556,
+      "InfluenceTypeId": 111,
+      "ConfigName": "スキル効果時間延長を短縮にする"
+    },
+    {
+      "ConfigId": 163997604,
+      "InfluenceTypeId": 112,
+      "ConfigName": "スキル短縮"
+    },
+    {
+      "ConfigId": -234051820,
+      "InfluenceTypeId": 113,
+      "ConfigName": "特殊フィールド"
+    },
+    {
+      "ConfigId": -1261384015,
+      "InfluenceTypeId": 114,
+      "ConfigName": "空蝉の術"
+    },
+    {
+      "ConfigId": 2136618335,
+      "InfluenceTypeId": 115,
+      "ConfigName": "手加減"
+    },
+    {
+      "ConfigId": 761030557,
+      "InfluenceTypeId": 116,
+      "ConfigName": "マジックバースト"
+    },
+    {
+      "ConfigId": 913723792,
+      "InfluenceTypeId": 117,
+      "ConfigName": "基本ブロック変動"
+    },
+    {
+      "ConfigId": -323114826,
+      "InfluenceTypeId": 118,
+      "ConfigName": "基本ブロック変更(始動)"
+    },
+    {
+      "ConfigId": -992554706,
+      "InfluenceTypeId": 119,
+      "ConfigName": "基本ブロック変更(終了)"
+    },
+    {
+      "ConfigId": 1042524879,
+      "InfluenceTypeId": 120,
+      "ConfigName": "トークン生成"
+    },
+    {
+      "ConfigId": -1918875695,
+      "InfluenceTypeId": 121,
+      "ConfigName": "スキルテキスト変更"
+    },
+    {
+      "ConfigId": 477613171,
+      "InfluenceTypeId": 122,
+      "ConfigName": "アビリティ発動"
+    },
+    {
+      "ConfigId": 1062503633,
+      "InfluenceTypeId": 123,
+      "ConfigName": "状態異常軽減"
+    },
+    {
+      "ConfigId": -806695299,
+      "InfluenceTypeId": 124,
+      "ConfigName": "アフターヒールI"
+    },
+    {
+      "ConfigId": -210112010,
+      "InfluenceTypeId": 125,
+      "ConfigName": "アフターヒールII"
+    },
+    {
+      "ConfigId": -1981973190,
+      "InfluenceTypeId": 126,
+      "ConfigName": "身代わり効果"
+    },
+    {
+      "ConfigId": 1801776458,
+      "InfluenceTypeId": 127,
+      "ConfigName": "HP上昇効果"
+    },
+    {
+      "ConfigId": 1377256149,
+      "InfluenceTypeId": 128,
+      "ConfigName": "攻撃力(寄付)"
+    },
+    {
+      "ConfigId": 1416438906,
+      "InfluenceTypeId": 129,
+      "ConfigName": "攻撃力(寄付+)"
+    },
+    {
+      "ConfigId": -462805227,
+      "InfluenceTypeId": 130,
+      "ConfigName": "防御力(寄付)"
+    },
+    {
+      "ConfigId": -809526353,
+      "InfluenceTypeId": 131,
+      "ConfigName": "防御力(寄付+)"
+    },
+    {
+      "ConfigId": 123906492,
+      "InfluenceTypeId": 132,
+      "ConfigName": "死の宣告"
+    },
+    {
+      "ConfigId": -128443333,
+      "InfluenceTypeId": 133,
+      "ConfigName": "強制撤退"
+    },
+    {
+      "ConfigId": 236904330,
+      "InfluenceTypeId": 134,
+      "ConfigName": "ベルセルク"
+    },
+    {
+      "ConfigId": -580613466,
+      "InfluenceTypeId": 135,
+      "ConfigName": "呪術(攻撃)"
+    },
+    {
+      "ConfigId": -710013425,
+      "InfluenceTypeId": 136,
+      "ConfigName": "呪術(防御)"
+    },
+    {
+      "ConfigId": -1645316300,
+      "InfluenceTypeId": 137,
+      "ConfigName": "呪術(攻撃+)"
+    },
+    {
+      "ConfigId": 854370044,
+      "InfluenceTypeId": 138,
+      "ConfigName": "呪術(防御+)"
+    },
+    {
+      "ConfigId": 169574199,
+      "InfluenceTypeId": 139,
+      "ConfigName": "ファストリキャスト"
+    },
+    {
+      "ConfigId": -2093118887,
+      "InfluenceTypeId": 140,
+      "ConfigName": "バリアブレイク2"
+    },
+    {
+      "ConfigId": -1737418324,
+      "InfluenceTypeId": 141,
+      "ConfigName": "攻撃アップ(永続)"
+    },
+    {
+      "ConfigId": -2134047290,
+      "InfluenceTypeId": 142,
+      "ConfigName": "防御アップ(永続)"
+    },
+    {
+      "ConfigId": -1969575672,
+      "InfluenceTypeId": 143,
+      "ConfigName": "応援(攻撃)"
+    },
+    {
+      "ConfigId": -2108674655,
+      "InfluenceTypeId": 144,
+      "ConfigName": "応援(防御)"
+    },
+    {
+      "ConfigId": -1395193864,
+      "InfluenceTypeId": 145,
+      "ConfigName": "応援(攻撃+)"
+    },
+    {
+      "ConfigId": 64345648,
+      "InfluenceTypeId": 146,
+      "ConfigName": "応援(防御+)"
+    },
+    {
+      "ConfigId": -1484890025,
+      "InfluenceTypeId": 147,
+      "ConfigName": "反撃無効"
+    },
+    {
+      "ConfigId": 1398083026,
+      "InfluenceTypeId": 148,
+      "ConfigName": "スキル再起"
+    },
+    {
+      "ConfigId": -494559771,
+      "InfluenceTypeId": 149,
+      "ConfigName": "スキル再起無効"
+    },
+    {
+      "ConfigId": -1013255442,
+      "InfluenceTypeId": 150,
+      "ConfigName": "飛行状態フラグ"
+    },
+    {
+      "ConfigId": -702011790,
+      "InfluenceTypeId": 151,
+      "ConfigName": "リザレクション"
+    },
+    {
+      "ConfigId": 757523132,
+      "InfluenceTypeId": 152,
+      "ConfigName": "リザレクション[人数]"
+    },
+    {
+      "ConfigId": 1422936097,
+      "InfluenceTypeId": 153,
+      "ConfigName": "リザレクション[ディレイ]"
+    },
+    {
+      "ConfigId": -1396075431,
+      "InfluenceTypeId": 154,
+      "ConfigName": "ライフセーバー[基本]"
+    },
+    {
+      "ConfigId": -1068546224,
+      "InfluenceTypeId": 155,
+      "ConfigName": "ライフセーバー[上昇]"
+    },
+    {
+      "ConfigId": 1891546913,
+      "InfluenceTypeId": 156,
+      "ConfigName": "スキルコマンド"
+    },
+    {
+      "ConfigId": 878232136,
+      "InfluenceTypeId": 157,
+      "ConfigName": "スキル延長[アビリティ]"
+    },
+    {
+      "ConfigId": -972070750,
+      "InfluenceTypeId": 158,
+      "ConfigName": "スキル短縮[アビリティ]"
+    },
+    {
+      "ConfigId": -2110866342,
+      "InfluenceTypeId": 159,
+      "ConfigName": "回復(条件付き)"
+    },
+    {
+      "ConfigId": 1614810680,
+      "InfluenceTypeId": 160,
+      "ConfigName": "サルベージ"
+    },
+    {
+      "ConfigId": -208912908,
+      "InfluenceTypeId": 161,
+      "ConfigName": "エスケープ"
+    },
+    {
+      "ConfigId": 1146251000,
+      "InfluenceTypeId": 162,
+      "ConfigName": "反撃[魔法]"
+    },
+    {
+      "ConfigId": 277614426,
+      "InfluenceTypeId": 163,
+      "ConfigName": "HPが減少しない"
+    },
+    {
+      "ConfigId": -349505087,
+      "InfluenceTypeId": 164,
+      "ConfigName": "アテンションを無視する"
+    },
+    {
+      "ConfigId": -103202343,
+      "InfluenceTypeId": 165,
+      "ConfigName": "チェンジミサイル(永続)"
+    },
+    {
+      "ConfigId": 1859070987,
+      "InfluenceTypeId": 166,
+      "ConfigName": "複数回攻撃(永続)"
+    },
+    {
+      "ConfigId": -1164317119,
+      "InfluenceTypeId": 167,
+      "ConfigName": "同時攻撃数アップ(永続)"
+    },
+    {
+      "ConfigId": 703752250,
+      "InfluenceTypeId": 168,
+      "ConfigName": "ブロック数アップ(永続)"
+    },
+    {
+      "ConfigId": -1766529033,
+      "InfluenceTypeId": 169,
+      "ConfigName": "最大相手数アップ(永続)"
+    },
+    {
+      "ConfigId": 1720938525,
+      "InfluenceTypeId": 170,
+      "ConfigName": "アタックウェイト(永続)"
+    },
+    {
+      "ConfigId": -601439680,
+      "InfluenceTypeId": 171,
+      "ConfigName": "エレメンタルチェンジ(永続)"
+    },
+    {
+      "ConfigId": 1952473282,
+      "InfluenceTypeId": 172,
+      "ConfigName": "コストペナルティ"
+    },
+    {
+      "ConfigId": 799702792,
+      "InfluenceTypeId": 173,
+      "ConfigName": "占星術(攻撃力)"
+    },
+    {
+      "ConfigId": -581079282,
+      "InfluenceTypeId": 174,
+      "ConfigName": "占星術(防御力)"
+    },
+    {
+      "ConfigId": 339911423,
+      "InfluenceTypeId": 175,
+      "ConfigName": "占星術(魔耐)"
+    },
+    {
+      "ConfigId": 471681947,
+      "InfluenceTypeId": 176,
+      "ConfigName": "占星術(攻撃回数)"
+    },
+    {
+      "ConfigId": 371504976,
+      "InfluenceTypeId": 177,
+      "ConfigName": "占星術(攻撃対象数)"
+    },
+    {
+      "ConfigId": -639492255,
+      "InfluenceTypeId": 178,
+      "ConfigName": "ばけるポン！"
+    },
+    {
+      "ConfigId": 590131164,
+      "InfluenceTypeId": 179,
+      "ConfigName": "このスキルは自動発動の対象外にする"
+    },
+    {
+      "ConfigId": 537992923,
+      "InfluenceTypeId": 180,
+      "ConfigName": "料理支援(最大HP)"
+    },
+    {
+      "ConfigId": -595047811,
+      "InfluenceTypeId": 181,
+      "ConfigName": "料理支援(攻撃力)"
+    },
+    {
+      "ConfigId": 780098171,
+      "InfluenceTypeId": 182,
+      "ConfigName": "料理支援(防御力)"
+    },
+    {
+      "ConfigId": -1280897247,
+      "InfluenceTypeId": 183,
+      "ConfigName": "料理支援(最大HP+)"
+    },
+    {
+      "ConfigId": -1930522456,
+      "InfluenceTypeId": 184,
+      "ConfigName": "料理支援(攻撃力+)"
+    },
+    {
+      "ConfigId": 1702871693,
+      "InfluenceTypeId": 185,
+      "ConfigName": "料理支援(防御力+)"
+    },
+    {
+      "ConfigId": -1522223150,
+      "InfluenceTypeId": 186,
+      "ConfigName": "呪術(即死閾値)"
+    },
+    {
+      "ConfigId": -889265620,
+      "InfluenceTypeId": 187,
+      "ConfigName": "呪術(即死閾値+)"
+    },
+    {
+      "ConfigId": -981359844,
+      "InfluenceTypeId": 188,
+      "ConfigName": "離脱支援(マーカー)"
+    },
+    {
+      "ConfigId": -471457150,
+      "InfluenceTypeId": 189,
+      "ConfigName": "離脱支援(最大HP)"
+    },
+    {
+      "ConfigId": -822324207,
+      "InfluenceTypeId": 190,
+      "ConfigName": "離脱支援(攻撃力)"
+    },
+    {
+      "ConfigId": 1007371287,
+      "InfluenceTypeId": 191,
+      "ConfigName": "離脱支援(防御力)"
+    },
+    {
+      "ConfigId": -943710684,
+      "InfluenceTypeId": 192,
+      "ConfigName": "離脱支援(魔法耐性)"
+    },
+    {
+      "ConfigId": 1216035704,
+      "InfluenceTypeId": 193,
+      "ConfigName": "起爆"
+    },
+    {
+      "ConfigId": 837378012,
+      "InfluenceTypeId": 194,
+      "ConfigName": "自爆"
+    },
+    {
+      "ConfigId": -313145216,
+      "InfluenceTypeId": 195,
+      "ConfigName": "攻撃停止"
+    },
+    {
+      "ConfigId": 450840990,
+      "InfluenceTypeId": 196,
+      "ConfigName": "水圧軽減"
+    },
+    {
+      "ConfigId": -1529587354,
+      "InfluenceTypeId": 197,
+      "ConfigName": "天界抑止力軽減[攻撃]"
+    },
+    {
+      "ConfigId": -1407263281,
+      "InfluenceTypeId": 198,
+      "ConfigName": "天界抑止力軽減[防御]"
+    },
+    {
+      "ConfigId": -1393916288,
+      "InfluenceTypeId": 199,
+      "ConfigName": "天界抑止力軽減[魔耐]"
+    },
+    {
+      "ConfigId": -20627999,
+      "InfluenceTypeId": 200,
+      "ConfigName": "射程上昇"
+    },
+    {
+      "ConfigId": 65459868,
+      "InfluenceTypeId": 201,
+      "ConfigName": "チャージ：攻撃"
+    },
+    {
+      "ConfigId": -685381847,
+      "InfluenceTypeId": 202,
+      "ConfigName": "攻撃指示"
+    },
+    {
+      "ConfigId": -276395631,
+      "InfluenceTypeId": 203,
+      "ConfigName": "コスト消費"
+    },
+    {
+      "ConfigId": -1466732470,
+      "InfluenceTypeId": 204,
+      "ConfigName": "攻撃アップ(コスト消費)"
+    },
+    {
+      "ConfigId": 1117452854,
+      "InfluenceTypeId": 205,
+      "ConfigName": "防御アップ(コスト消費)"
+    },
+    {
+      "ConfigId": -975364391,
+      "InfluenceTypeId": 206,
+      "ConfigName": "魔耐アップ(コスト消費)"
+    },
+    {
+      "ConfigId": -715500224,
+      "InfluenceTypeId": 207,
+      "ConfigName": "呪術(魔耐)"
+    },
+    {
+      "ConfigId": -935005224,
+      "InfluenceTypeId": 208,
+      "ConfigName": "鼓舞(攻撃)"
+    },
+    {
+      "ConfigId": -1064405135,
+      "InfluenceTypeId": 209,
+      "ConfigName": "鼓舞(防御)"
+    },
+    {
+      "ConfigId": -1065735106,
+      "InfluenceTypeId": 210,
+      "ConfigName": "鼓舞(魔耐)"
+    },
+    {
+      "ConfigId": -894057308,
+      "InfluenceTypeId": 211,
+      "ConfigName": "激励(攻撃)"
+    },
+    {
+      "ConfigId": -1031847923,
+      "InfluenceTypeId": 212,
+      "ConfigName": "激励(防御)"
+    },
+    {
+      "ConfigId": -1031070910,
+      "InfluenceTypeId": 213,
+      "ConfigName": "激励(魔耐)"
+    },
+    {
+      "ConfigId": -1983337593,
+      "InfluenceTypeId": 214,
+      "ConfigName": "魔法ダメージ軽減"
+    },
+    {
+      "ConfigId": -663421790,
+      "InfluenceTypeId": 215,
+      "ConfigName": "貫通ダメージ軽減"
+    },
+    {
+      "ConfigId": -1602731300,
+      "InfluenceTypeId": 216,
+      "ConfigName": "物理ダメージ軽減"
+    },
+    {
+      "ConfigId": -514623702,
+      "InfluenceTypeId": 217,
+      "ConfigName": "敵の攻撃力を低下"
+    },
+    {
+      "ConfigId": 80706232,
+      "InfluenceTypeId": 218,
+      "ConfigName": "敵の物理攻撃力を低下"
+    },
+    {
+      "ConfigId": 763335651,
+      "InfluenceTypeId": 219,
+      "ConfigName": "敵の魔法攻撃力を低下"
+    },
+    {
+      "ConfigId": 2093204678,
+      "InfluenceTypeId": 220,
+      "ConfigName": "敵の貫通攻撃力を低下"
+    },
+    {
+      "ConfigId": 349631277,
+      "InfluenceTypeId": 221,
+      "ConfigName": "強制撤退遅延時間保持"
+    },
+    {
+      "ConfigId": -366389818,
+      "InfluenceTypeId": 222,
+      "ConfigName": "強制撤退還元コスト保持"
+    },
+    {
+      "ConfigId": 81962598,
+      "InfluenceTypeId": 223,
+      "ConfigName": "女神の加護[攻撃]"
+    },
+    {
+      "ConfigId": 203956943,
+      "InfluenceTypeId": 224,
+      "ConfigName": "女神の加護[防御]"
+    },
+    {
+      "ConfigId": 215775616,
+      "InfluenceTypeId": 225,
+      "ConfigName": "女神の加護[魔耐]"
+    },
+    {
+      "ConfigId": 1888382298,
+      "InfluenceTypeId": 226,
+      "ConfigName": "敵加速弱体化増幅"
+    },
+    {
+      "ConfigId": -1645467184,
+      "InfluenceTypeId": 227,
+      "ConfigName": "スキルオーラエフェクト指定"
+    },
+    {
+      "ConfigId": 1608900724,
+      "InfluenceTypeId": 228,
+      "ConfigName": "攻撃アップ(ギミック)"
+    },
+    {
+      "ConfigId": 369866017,
+      "InfluenceTypeId": 229,
+      "ConfigName": "防御アップ(ギミック)"
+    },
+    {
+      "ConfigId": -1958162634,
+      "InfluenceTypeId": 230,
+      "ConfigName": "魔法耐性アップ(ギミック)"
+    },
+    {
+      "ConfigId": 1236848095,
+      "InfluenceTypeId": 231,
+      "ConfigName": "敵撃破でスキル待ち時間短縮"
+    },
+    {
+      "ConfigId": -1351760501,
+      "InfluenceTypeId": 232,
+      "ConfigName": "敵撃破でスキル使用時間延長"
+    },
+    {
+      "ConfigId": 1062510158,
+      "InfluenceTypeId": 233,
+      "ConfigName": "被回復割合変化"
+    },
+    {
+      "ConfigId": 789779620,
+      "InfluenceTypeId": 234,
+      "ConfigName": "被回復割合変化ブースト"
+    },
+    {
+      "ConfigId": -923324741,
+      "InfluenceTypeId": 235,
+      "ConfigName": "指定攻撃属性ダメージ量上昇"
+    },
+    {
+      "ConfigId": -1654785276,
+      "InfluenceTypeId": 236,
+      "ConfigName": "指定攻撃属性ダメージ量上昇自己上書き"
+    },
+    {
+      "ConfigId": -1102367330,
+      "InfluenceTypeId": 237,
+      "ConfigName": "状態異常軽減(射程内)"
+    },
+    {
+      "ConfigId": 6004176,
+      "InfluenceTypeId": 238,
+      "ConfigName": "敵攻撃待ち時間増加"
+    },
+    {
+      "ConfigId": -1264831319,
+      "InfluenceTypeId": 239,
+      "ConfigName": "歌支援(最大HP)"
+    },
+    {
+      "ConfigId": 1645729607,
+      "InfluenceTypeId": 240,
+      "ConfigName": "歌支援(攻撃力)"
+    },
+    {
+      "ConfigId": -1864317119,
+      "InfluenceTypeId": 241,
+      "ConfigName": "歌支援(防御力)"
+    },
+    {
+      "ConfigId": -2004370190,
+      "InfluenceTypeId": 242,
+      "ConfigName": "歌支援(魔法耐性)"
+    },
+    {
+      "ConfigId": 221811227,
+      "InfluenceTypeId": 243,
+      "ConfigName": "歌支援(最大HP+)"
+    },
+    {
+      "ConfigId": 1247598215,
+      "InfluenceTypeId": 244,
+      "ConfigName": "歌支援(攻撃力+)"
+    },
+    {
+      "ConfigId": -1546812254,
+      "InfluenceTypeId": 245,
+      "ConfigName": "歌支援(防御力+)"
+    },
+    {
+      "ConfigId": -239271441,
+      "InfluenceTypeId": 246,
+      "ConfigName": "歌支援(魔法耐性+)"
+    },
+    {
+      "ConfigId": 537331635,
+      "InfluenceTypeId": 247,
+      "ConfigName": "自身のスキル中断"
+    },
+    {
+      "ConfigId": -1043861249,
+      "InfluenceTypeId": 248,
+      "ConfigName": "歌支援上限値アップ(最大HP)"
+    },
+    {
+      "ConfigId": -529893310,
+      "InfluenceTypeId": 249,
+      "ConfigName": "歌支援上限値アップ(攻撃力)"
+    },
+    {
+      "ConfigId": 312305732,
+      "InfluenceTypeId": 250,
+      "ConfigName": "歌支援上限値アップ(防御力)"
+    },
+    {
+      "ConfigId": -1989684420,
+      "InfluenceTypeId": 251,
+      "ConfigName": "歌支援上限値アップ(魔法耐性)"
+    },
+    {
+      "ConfigId": 1515916312,
+      "InfluenceTypeId": 252,
+      "ConfigName": "歌支援インターバル変動(最大HP)"
+    },
+    {
+      "ConfigId": -559967387,
+      "InfluenceTypeId": 253,
+      "ConfigName": "歌支援インターバル変動(攻撃力)"
+    },
+    {
+      "ConfigId": 745046883,
+      "InfluenceTypeId": 254,
+      "ConfigName": "歌支援インターバル変動(防御力)"
+    },
+    {
+      "ConfigId": -1002917933,
+      "InfluenceTypeId": 255,
+      "ConfigName": "歌支援インターバル変動(魔法耐性)"
+    },
+    {
+      "ConfigId": 1903002958,
+      "InfluenceTypeId": 256,
+      "ConfigName": "親ユニットにステータス加算(最大HP+)"
+    },
+    {
+      "ConfigId": 1361127147,
+      "InfluenceTypeId": 257,
+      "ConfigName": "親ユニットにステータス加算(攻撃力+)"
+    },
+    {
+      "ConfigId": -1196395314,
+      "InfluenceTypeId": 258,
+      "ConfigName": "親ユニットにステータス加算(防御力+)"
+    },
+    {
+      "ConfigId": -1971789940,
+      "InfluenceTypeId": 259,
+      "ConfigName": "親ユニットにステータス加算(魔法耐性+)"
+    },
+    {
+      "ConfigId": 789092025,
+      "InfluenceTypeId": 260,
+      "ConfigName": "自身のダメージを分散"
+    },
+    {
+      "ConfigId": -422875010,
+      "InfluenceTypeId": 261,
+      "ConfigName": "攻防力入れ替え"
+    },
+    {
+      "ConfigId": -1773524141,
+      "InfluenceTypeId": 262,
+      "ConfigName": "バリア付与"
+    },
+    {
+      "ConfigId": -1822647687,
+      "InfluenceTypeId": 263,
+      "ConfigName": "徐々にコスト減少"
+    },
+    {
+      "ConfigId": 1372939071,
+      "InfluenceTypeId": 264,
+      "ConfigName": "攻撃アップ(徐々にコスト減少用)"
+    },
+    {
+      "ConfigId": -1227431186,
+      "InfluenceTypeId": 265,
+      "ConfigName": "防御アップ(徐々にコスト減少用)"
+    },
+    {
+      "ConfigId": -1545968142,
+      "InfluenceTypeId": 266,
+      "ConfigName": "魔法耐性アップ(徐々にコスト減少用)"
+    },
+    {
+      "ConfigId": 1394709407,
+      "InfluenceTypeId": 267,
+      "ConfigName": "長押し溜め"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 1,
+    "record_size": 40,
+    "custom_id": 2020897645
+  },
+  "_fields": [
+    {
+      "name": "MissionID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Enable",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 8,
+      "size": 1
+    },
+    {
+      "name": "\b\r\fStartDateTime",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "ime",
+      "type": "unknown",
+      "mapped_type": 97,
+      "rec_offset": 17508,
+      "size": 0
+    }
+  ],
+  "records": [
+    {
+      "MissionID": 600001,
+      "Name": "交流クエスト",
+      "Enable": true,
+      "\b\r\fStartDateTime": "c1270900"
+    }
+  ]
+}

@@ -1,0 +1,814 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 156,
+    "record_size": 12,
+    "custom_id": 1835491955
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Caption",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "ResID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 9437184,
+      "Caption": "BgmBattleBoss",
+      "ResID": 9437184
+    },
+    {
+      "ID": 9437185,
+      "Caption": "BgmBattleNormal",
+      "ResID": 9437185
+    },
+    {
+      "ID": 9437186,
+      "Caption": "BgmBattleResult",
+      "ResID": 9437186
+    },
+    {
+      "ID": 9437187,
+      "Caption": "BgmHarem0",
+      "ResID": 9437187
+    },
+    {
+      "ID": 9437188,
+      "Caption": "BgmHarem1",
+      "ResID": 9437188
+    },
+    {
+      "ID": 9437189,
+      "Caption": "BgmHarem2",
+      "ResID": 9437189
+    },
+    {
+      "ID": 9437190,
+      "Caption": "BgmMenuMain",
+      "ResID": 9437190
+    },
+    {
+      "ID": 9437191,
+      "Caption": "BgmMenuSpecial",
+      "ResID": 9437191
+    },
+    {
+      "ID": 9437192,
+      "Caption": "BgmMenuUnit",
+      "ResID": 9437192
+    },
+    {
+      "ID": 9437193,
+      "Caption": "z000_BgmBattleBoss2",
+      "ResID": 9437193
+    },
+    {
+      "ID": 9437194,
+      "Caption": "z001_BgmBattleNormal2",
+      "ResID": 9437194
+    },
+    {
+      "ID": 9437195,
+      "Caption": "z002_BgmBattleDesert",
+      "ResID": 9437195
+    },
+    {
+      "ID": 9437196,
+      "Caption": "z003_BgmBattleJpn",
+      "ResID": 9437196
+    },
+    {
+      "ID": 9437197,
+      "Caption": "z004_BgmBattlejungle",
+      "ResID": 9437197
+    },
+    {
+      "ID": 9437198,
+      "Caption": "z005_BgmBattlemagic",
+      "ResID": 9437198
+    },
+    {
+      "ID": 9437199,
+      "Caption": "z006_BgmBattlehell",
+      "ResID": 9437199
+    },
+    {
+      "ID": 9437200,
+      "Caption": "z007_BgmBattleXmas",
+      "ResID": 9437200
+    },
+    {
+      "ID": 9437201,
+      "Caption": "z008_BgmBattleValley",
+      "ResID": 9437201
+    },
+    {
+      "ID": 9437202,
+      "Caption": "z009_BgmBattleAirship",
+      "ResID": 9437202
+    },
+    {
+      "ID": 9437203,
+      "Caption": "z010_BgmBattleChina",
+      "ResID": 9437203
+    },
+    {
+      "ID": 9437204,
+      "Caption": "z011_BgmBattleCountry",
+      "ResID": 9437204
+    },
+    {
+      "ID": 9437205,
+      "Caption": "z012_BgmBattleCave",
+      "ResID": 9437205
+    },
+    {
+      "ID": 9437206,
+      "Caption": "z013_BgmBattleIsland",
+      "ResID": 9437206
+    },
+    {
+      "ID": 9437207,
+      "Caption": "z014_BgmMenuMainHalloween",
+      "ResID": 9437207
+    },
+    {
+      "ID": 9437208,
+      "Caption": "z015_BgmBattleLeviathan",
+      "ResID": 9437208
+    },
+    {
+      "ID": 9437209,
+      "Caption": "z016_BgmBattleRaid",
+      "ResID": 9437209
+    },
+    {
+      "ID": 9437210,
+      "Caption": "z017_BgmBattleOshiro",
+      "ResID": 9437210
+    },
+    {
+      "ID": 9437211,
+      "Caption": "z018_BgmMenuMainXmas",
+      "ResID": 9437211
+    },
+    {
+      "ID": 9437212,
+      "Caption": "z019_BgmMenuMainNewYear",
+      "ResID": 9437212
+    },
+    {
+      "ID": 9437213,
+      "Caption": "z020_BgmBattleRance1",
+      "ResID": 9437213
+    },
+    {
+      "ID": 9437214,
+      "Caption": "z021_BgmBattleRance2",
+      "ResID": 9437214
+    },
+    {
+      "ID": 9437215,
+      "Caption": "z022_BgmSkillIdol",
+      "ResID": 9437215
+    },
+    {
+      "ID": 9437216,
+      "Caption": "z023_BgmMenuMainSchool",
+      "ResID": 9437216
+    },
+    {
+      "ID": 9437217,
+      "Caption": "z024_BgmMenuMainWedding",
+      "ResID": 9437217
+    },
+    {
+      "ID": 9437218,
+      "Caption": "z025_BgmMenuMainSummer",
+      "ResID": 9437218
+    },
+    {
+      "ID": 9437219,
+      "Caption": "z026_BgmBattleKoihimeNormal",
+      "ResID": 9437219
+    },
+    {
+      "ID": 9437220,
+      "Caption": "z027_BgmBattleKoihimeNormal2",
+      "ResID": 9437220
+    },
+    {
+      "ID": 9437221,
+      "Caption": "z028_BgmBattleWorldTree",
+      "ResID": 9437221
+    },
+    {
+      "ID": 9437222,
+      "Caption": "z029_BgmBattleFactory",
+      "ResID": 9437222
+    },
+    {
+      "ID": 9437223,
+      "Caption": "z030_BgmBattleEushully1",
+      "ResID": 9437223
+    },
+    {
+      "ID": 9437224,
+      "Caption": "z031_BgmBattleEushully2",
+      "ResID": 9437224
+    },
+    {
+      "ID": 9437225,
+      "Caption": "z032_BgmBattleAssault",
+      "ResID": 9437225
+    },
+    {
+      "ID": 9437226,
+      "Caption": "z033_BgmBattleDarkPrince",
+      "ResID": 9437226
+    },
+    {
+      "ID": 9437227,
+      "Caption": "z034_BgmSummon",
+      "ResID": 9437227
+    },
+    {
+      "ID": 9437228,
+      "Caption": "z035_BgmBattle_GBM_Normal",
+      "ResID": 9437228
+    },
+    {
+      "ID": 9437229,
+      "Caption": "z036_BgmBattle_GBM_Boss",
+      "ResID": 9437229
+    },
+    {
+      "ID": 9437230,
+      "Caption": "z037_BgmMenuTower",
+      "ResID": 9437230
+    },
+    {
+      "ID": 9437231,
+      "Caption": "z038_BgmBattleTower",
+      "ResID": 9437231
+    },
+    {
+      "ID": 9437232,
+      "Caption": "z039_BgmBattleBoss3",
+      "ResID": 9437232
+    },
+    {
+      "ID": 9437233,
+      "Caption": "z040_BgmBattleFainal",
+      "ResID": 9437233
+    },
+    {
+      "ID": 9437234,
+      "Caption": "z041_BgmBattleWorldActor1",
+      "ResID": 9437234
+    },
+    {
+      "ID": 9437235,
+      "Caption": "z042_BgmBattleWorldActor2",
+      "ResID": 9437235
+    },
+    {
+      "ID": 9437236,
+      "Caption": "z043_BgmMenu_GBM2",
+      "ResID": 9437236
+    },
+    {
+      "ID": 9437237,
+      "Caption": "z044_BgmBattle_GBM2_Normal",
+      "ResID": 9437237
+    },
+    {
+      "ID": 9437238,
+      "Caption": "z045_BgmBattle_GBM2_Boss",
+      "ResID": 9437238
+    },
+    {
+      "ID": 9437239,
+      "Caption": "z046_BgmBattleDeepSea_Normal",
+      "ResID": 9437239
+    },
+    {
+      "ID": 9437240,
+      "Caption": "z047_BgmBattleDeepSea_Boss",
+      "ResID": 9437240
+    },
+    {
+      "ID": 9437241,
+      "Caption": "z048_BgmBattleGreatSubjugation_New",
+      "ResID": 9437241
+    },
+    {
+      "ID": 9437242,
+      "Caption": "z049_BgmBattleHeaven_Normal",
+      "ResID": 9437242
+    },
+    {
+      "ID": 9437243,
+      "Caption": "z050_BgmMenu_Anniversary",
+      "ResID": 9437243
+    },
+    {
+      "ID": 9437244,
+      "Caption": "z051_BgmBattleHeaven_Boss",
+      "ResID": 9437244
+    },
+    {
+      "ID": 9437245,
+      "Caption": "z052_BgmBattle_nanarin_Normal",
+      "ResID": 9437245
+    },
+    {
+      "ID": 9437246,
+      "Caption": "z053_BgmBattle_nanarin_final",
+      "ResID": 9437246
+    },
+    {
+      "ID": 9437247,
+      "Caption": "z054_BgmMenuMainWedding",
+      "ResID": 9437247
+    },
+    {
+      "ID": 9437248,
+      "Caption": "z055_BgmMenu_EmpireWar",
+      "ResID": 9437248
+    },
+    {
+      "ID": 9437249,
+      "Caption": "z056_BgmBattle_EmpireWar",
+      "ResID": 9437249
+    },
+    {
+      "ID": 9437250,
+      "Caption": "z057_BgmBattle_Ketos",
+      "ResID": 9437250
+    },
+    {
+      "ID": 9437251,
+      "Caption": "z058_BgmMenuMainSummer2",
+      "ResID": 9437251
+    },
+    {
+      "ID": 9437252,
+      "Caption": "z059_BgmBattleOshiro_MaedaToshiie",
+      "ResID": 9437252
+    },
+    {
+      "ID": 9437253,
+      "Caption": "z060_BgmBattleOshiro_Shoryo",
+      "ResID": 9437253
+    },
+    {
+      "ID": 9437254,
+      "Caption": "z061_BgmBattleOshiro_Hell",
+      "ResID": 9437254
+    },
+    {
+      "ID": 9437255,
+      "Caption": "z062_BgmBattle_ValleyHiddenVillage",
+      "ResID": 9437255
+    },
+    {
+      "ID": 9437256,
+      "Caption": "z063_BgmMenuMainHalloween2",
+      "ResID": 9437256
+    },
+    {
+      "ID": 9437257,
+      "Caption": "z064_BgmMenuMainEncampment",
+      "ResID": 9437257
+    },
+    {
+      "ID": 9437258,
+      "Caption": "z065_BgmBattle_Commander_Tower_Normal",
+      "ResID": 9437258
+    },
+    {
+      "ID": 9437259,
+      "Caption": "z066_BgmBattle_Commander_Tower_Boss",
+      "ResID": 9437259
+    },
+    {
+      "ID": 9437260,
+      "Caption": "z067_BgmMenuMainXmas2",
+      "ResID": 9437260
+    },
+    {
+      "ID": 9437261,
+      "Caption": "z068_BgmMenuMainNewYear2",
+      "ResID": 9437261
+    },
+    {
+      "ID": 9437262,
+      "Caption": "z069_BgmBattle_Dawon",
+      "ResID": 9437262
+    },
+    {
+      "ID": 9437263,
+      "Caption": "z070_BgmMenuMainHotSpring",
+      "ResID": 9437263
+    },
+    {
+      "ID": 9437264,
+      "Caption": "z071_BgmMenuMainValentine",
+      "ResID": 9437264
+    },
+    {
+      "ID": 9437265,
+      "Caption": "z072_BgmBattle_NeedsHeg",
+      "ResID": 9437265
+    },
+    {
+      "ID": 9437266,
+      "Caption": "z073_BgmMenuMainEaster",
+      "ResID": 9437266
+    },
+    {
+      "ID": 9437267,
+      "Caption": "z074_BgmBattle_Monmus_Normal",
+      "ResID": 9437267
+    },
+    {
+      "ID": 9437268,
+      "Caption": "z075_BgmBattle_TDmatsuripv",
+      "ResID": 9437268
+    },
+    {
+      "ID": 9437269,
+      "Caption": "z076_BgmBattle_TaikoPrince",
+      "ResID": 9437269
+    },
+    {
+      "ID": 9437270,
+      "Caption": "z077_BgmBattle_Poseios",
+      "ResID": 9437270
+    },
+    {
+      "ID": 9437271,
+      "Caption": "z078_BgmMenuMainWedding",
+      "ResID": 9437271
+    },
+    {
+      "ID": 9437272,
+      "Caption": "z079_BgmMenuMainSummer3",
+      "ResID": 9437272
+    },
+    {
+      "ID": 9437273,
+      "Caption": "z080_BgmBattle_Yamata_no_Orochi",
+      "ResID": 9437273
+    },
+    {
+      "ID": 9437274,
+      "Caption": "z081_BgmBattle_Koihime_GO_ON",
+      "ResID": 9437274
+    },
+    {
+      "ID": 9437275,
+      "Caption": "z082_BgmBattle_Diaz",
+      "ResID": 9437275
+    },
+    {
+      "ID": 9437276,
+      "Caption": "z083_BgmBattle_Tdmatsuri_Arrange",
+      "ResID": 9437276
+    },
+    {
+      "ID": 9437277,
+      "Caption": "z084_BgmBattle_Gyokuto",
+      "ResID": 9437277
+    },
+    {
+      "ID": 9437278,
+      "Caption": "z085_BgmBattle_Jikenbo",
+      "ResID": 9437278
+    },
+    {
+      "ID": 9437279,
+      "Caption": "z086_BgmNewOpening",
+      "ResID": 9437279
+    },
+    {
+      "ID": 9437280,
+      "Caption": "z087_BgmBattle_IdolRino",
+      "ResID": 9437280
+    },
+    {
+      "ID": 9437281,
+      "Caption": "z088_BgmBattle_IdolESEF",
+      "ResID": 9437281
+    },
+    {
+      "ID": 9437282,
+      "Caption": "z089_BgmUnit_IdolESEF",
+      "ResID": 9437282
+    },
+    {
+      "ID": 9437283,
+      "Caption": "z090_BgmBattle_Ryugujo",
+      "ResID": 9437283
+    },
+    {
+      "ID": 9437284,
+      "Caption": "z091_BgmBattle_Hades",
+      "ResID": 9437284
+    },
+    {
+      "ID": 9437285,
+      "Caption": "z092_BgmBattle_Tougijou",
+      "ResID": 9437285
+    },
+    {
+      "ID": 9437286,
+      "Caption": "z093_BgmBattle_Chu-Boss",
+      "ResID": 9437286
+    },
+    {
+      "ID": 9437287,
+      "Caption": "z094_BgmBattle_gangan",
+      "ResID": 9437287
+    },
+    {
+      "ID": 9437288,
+      "Caption": "z095_BgmBattle_Tdmatsuri_Arrange2",
+      "ResID": 9437288
+    },
+    {
+      "ID": 9437289,
+      "Caption": "z096_BgmBattle_Devil_Final",
+      "ResID": 9437289
+    },
+    {
+      "ID": 9437290,
+      "Caption": "z097_BgmBattle_Devil_Final_Arrange",
+      "ResID": 9437290
+    },
+    {
+      "ID": 9437291,
+      "Caption": "z098_BgmBattle_Kirin",
+      "ResID": 9437291
+    },
+    {
+      "ID": 9437292,
+      "Caption": "z099_BgmBattle_Oryunposu3",
+      "ResID": 9437292
+    },
+    {
+      "ID": 9437293,
+      "Caption": "z100_BgmBattle_Taimanin1",
+      "ResID": 9437293
+    },
+    {
+      "ID": 9437294,
+      "Caption": "z101_BgmBattle_Taimanin2",
+      "ResID": 9437294
+    },
+    {
+      "ID": 9437295,
+      "Caption": "z102_BgmBattle_Seibugeki",
+      "ResID": 9437295
+    },
+    {
+      "ID": 9437296,
+      "Caption": "z103_BgmBattle_Ejiputo",
+      "ResID": 9437296
+    },
+    {
+      "ID": 9437297,
+      "Caption": "z104_BgmBattle_Meikai",
+      "ResID": 9437297
+    },
+    {
+      "ID": 9437298,
+      "Caption": "z105_BgmBattle_9th_Anniversary",
+      "ResID": 9437298
+    },
+    {
+      "ID": 9437299,
+      "Caption": "z106_BgmBattle_9th_harf_Anniversary",
+      "ResID": 9437299
+    },
+    {
+      "ID": 9437300,
+      "Caption": "z107_BgmBattle_10th_Anniversary",
+      "ResID": 9437300
+    },
+    {
+      "ID": 9437301,
+      "Caption": "z108_BgmMenu10th_Home",
+      "ResID": 9437301
+    },
+    {
+      "ID": 9437302,
+      "Caption": "z109_BgmBattle_9th_Harf_Inst_Anniversary",
+      "ResID": 9437302
+    },
+    {
+      "ID": 9437303,
+      "Caption": "z110_BgmBattle_10th_Inst_Anniversary",
+      "ResID": 9437303
+    },
+    {
+      "ID": 9437304,
+      "Caption": "z111_BgmBattle_Kurikararyuo",
+      "ResID": 9437304
+    },
+    {
+      "ID": 9437305,
+      "Caption": "z112_BgmBattle_IdolTD",
+      "ResID": 9437305
+    },
+    {
+      "ID": 9437306,
+      "Caption": "z113_BgmBattle_IdolESEF_2roop",
+      "ResID": 9437306
+    },
+    {
+      "ID": 9437307,
+      "Caption": "z114_BgmBattle_Atolantisu",
+      "ResID": 9437307
+    },
+    {
+      "ID": 9437308,
+      "Caption": "z115_BgmBattle_Ekyon",
+      "ResID": 9437308
+    },
+    {
+      "ID": 9437309,
+      "Caption": "z116_BgmMenuEnniti",
+      "ResID": 9437309
+    },
+    {
+      "ID": 9437310,
+      "Caption": "z117_BgmUnit_GoblinBard",
+      "ResID": 9437310
+    },
+    {
+      "ID": 9437311,
+      "Caption": "z118_BgmBattle_TD5",
+      "ResID": 9437311
+    },
+    {
+      "ID": 9437312,
+      "Caption": "z119_BgmBattle_Hollowcrux",
+      "ResID": 9437312
+    },
+    {
+      "ID": 9437313,
+      "Caption": "z120_BgmMenu11th_Home",
+      "ResID": 9437313
+    },
+    {
+      "ID": 9437314,
+      "Caption": "z121_BgmBattle_HormiceBard_11th",
+      "ResID": 9437314
+    },
+    {
+      "ID": 9437315,
+      "Caption": "z122_BgmBattle_Quetzalcoatl",
+      "ResID": 9437315
+    },
+    {
+      "ID": 9437316,
+      "Caption": "z123_BgmUnit_EmpireBard",
+      "ResID": 9437316
+    },
+    {
+      "ID": 9437317,
+      "Caption": "z124_BgmBattle_Mokujin",
+      "ResID": 9437317
+    },
+    {
+      "ID": 9437318,
+      "Caption": "z125_BgmBattle_TowerOfDemons",
+      "ResID": 9437318
+    },
+    {
+      "ID": 9437319,
+      "Caption": "z126_BgmBattle_TowerOfDemonsBoss",
+      "ResID": 9437319
+    },
+    {
+      "ID": 9437320,
+      "Caption": "z127_BgmBattle_Nord",
+      "ResID": 9437320
+    },
+    {
+      "ID": 9437321,
+      "Caption": "z128_BgmUnit_violinistBard",
+      "ResID": 9437321
+    },
+    {
+      "ID": 9437322,
+      "Caption": "z129_BgmBattle_Monmusu",
+      "ResID": 9437322
+    },
+    {
+      "ID": 9437323,
+      "Caption": "z130_BgmBattle_TD6",
+      "ResID": 9437323
+    },
+    {
+      "ID": 9437324,
+      "Caption": "z131_BgmBattle_TD6inst",
+      "ResID": 9437324
+    },
+    {
+      "ID": 9437325,
+      "Caption": "z132_BgmBattle_KoihimeN",
+      "ResID": 9437325
+    },
+    {
+      "ID": 9437326,
+      "Caption": "z133_BgmBattle_KoihimeB1",
+      "ResID": 9437326
+    },
+    {
+      "ID": 9437327,
+      "Caption": "z134_BgmBattle_KoihimeB2",
+      "ResID": 9437327
+    },
+    {
+      "ID": 9437328,
+      "Caption": "z135_BgmUnit_jpBard",
+      "ResID": 9437328
+    },
+    {
+      "ID": 9437329,
+      "Caption": "z136_BgmBattle_TD6_2",
+      "ResID": 9437329
+    },
+    {
+      "ID": 9437330,
+      "Caption": "z137_BgmBattle_HuginnMuninn",
+      "ResID": 9437330
+    },
+    {
+      "ID": 9437331,
+      "Caption": "z138_BgmBattle_SnowfieldBetween",
+      "ResID": 9437331
+    },
+    {
+      "ID": 9437332,
+      "Caption": "z139_BgmUnit_TristanP",
+      "ResID": 9437332
+    },
+    {
+      "ID": 9437333,
+      "Caption": "z140_BgmUnit_TristanB",
+      "ResID": 9437333
+    },
+    {
+      "ID": 9437334,
+      "Caption": "z141_BgmBattle_Gilgamesh",
+      "ResID": 9437334
+    },
+    {
+      "ID": 9437335,
+      "Caption": "z142_BgmBattle_Hippokampos",
+      "ResID": 9437335
+    },
+    {
+      "ID": 9437336,
+      "Caption": "z143_BgmUnit_SirenBard",
+      "ResID": 9437336
+    },
+    {
+      "ID": 9437337,
+      "Caption": "z144_BgmBattle_TD7",
+      "ResID": 9437337
+    },
+    {
+      "ID": 9437338,
+      "Caption": "z145_BgmBattle_TD7inst",
+      "ResID": 9437338
+    },
+    {
+      "ID": 9437339,
+      "Caption": "z146_BgmBattle_TD7oshiro",
+      "ResID": 9437339
+    }
+  ]
+}

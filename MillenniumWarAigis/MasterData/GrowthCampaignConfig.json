@@ -1,0 +1,609 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 54,
+    "record_size": 32,
+    "custom_id": 1717792115
+  },
+  "_fields": [
+    {
+      "name": "MissionID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "DateOpen",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "DateClose",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "ItemID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "QuestID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "Count",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "Ratio",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "MissionID": 700101,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 1,
+      "QuestID": 101,
+      "Count": 1,
+      "Ratio": 85
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 3,
+      "QuestID": 103,
+      "Count": 2,
+      "Ratio": 36
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 4,
+      "QuestID": 103,
+      "Count": 1,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 7,
+      "QuestID": 202,
+      "Count": 3,
+      "Ratio": 55
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 8,
+      "QuestID": 202,
+      "Count": 2,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 9,
+      "QuestID": 304,
+      "Count": 3,
+      "Ratio": 55
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 10,
+      "QuestID": 304,
+      "Count": 2,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 700104,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 11,
+      "QuestID": 111,
+      "Count": 2,
+      "Ratio": 2
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 12,
+      "QuestID": 111,
+      "Count": 1,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 13,
+      "QuestID": 113,
+      "Count": 2,
+      "Ratio": 53
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 14,
+      "QuestID": 113,
+      "Count": 1,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 17,
+      "QuestID": 212,
+      "Count": 3,
+      "Ratio": 4
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 18,
+      "QuestID": 212,
+      "Count": 2,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 19,
+      "QuestID": 314,
+      "Count": 3,
+      "Ratio": 4
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 20,
+      "QuestID": 314,
+      "Count": 2,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 700105,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 21,
+      "QuestID": 135,
+      "Count": 2,
+      "Ratio": 2
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 22,
+      "QuestID": 135,
+      "Count": 1,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 23,
+      "QuestID": 137,
+      "Count": 2,
+      "Ratio": 53
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 24,
+      "QuestID": 137,
+      "Count": 1,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 27,
+      "QuestID": 232,
+      "Count": 3,
+      "Ratio": 4
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 28,
+      "QuestID": 232,
+      "Count": 2,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 29,
+      "QuestID": 334,
+      "Count": 3,
+      "Ratio": 4
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 30,
+      "QuestID": 334,
+      "Count": 2,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 700102,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 31,
+      "QuestID": 121,
+      "Count": 1,
+      "Ratio": 51
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 33,
+      "QuestID": 123,
+      "Count": 2,
+      "Ratio": 53
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 34,
+      "QuestID": 123,
+      "Count": 1,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 37,
+      "QuestID": 222,
+      "Count": 3,
+      "Ratio": 4
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 38,
+      "QuestID": 222,
+      "Count": 2,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 39,
+      "QuestID": 324,
+      "Count": 3,
+      "Ratio": 4
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 40,
+      "QuestID": 324,
+      "Count": 2,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 700103,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 41,
+      "QuestID": 138,
+      "Count": 2,
+      "Ratio": 70
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 42,
+      "QuestID": 138,
+      "Count": 1,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 43,
+      "QuestID": 140,
+      "Count": 4,
+      "Ratio": 40
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 44,
+      "QuestID": 140,
+      "Count": 3,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 45,
+      "QuestID": 242,
+      "Count": 4,
+      "Ratio": 40
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 46,
+      "QuestID": 242,
+      "Count": 3,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 47,
+      "QuestID": 344,
+      "Count": 4,
+      "Ratio": 40
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 48,
+      "QuestID": 344,
+      "Count": 3,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 700201,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 49,
+      "QuestID": 148,
+      "Count": 2,
+      "Ratio": 53
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 50,
+      "QuestID": 148,
+      "Count": 1,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 51,
+      "QuestID": 149,
+      "Count": 2,
+      "Ratio": 53
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 52,
+      "QuestID": 149,
+      "Count": 1,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 53,
+      "QuestID": 150,
+      "Count": 2,
+      "Ratio": 53
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 54,
+      "QuestID": 150,
+      "Count": 1,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 55,
+      "QuestID": 151,
+      "Count": 2,
+      "Ratio": 53
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 56,
+      "QuestID": 151,
+      "Count": 1,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 57,
+      "QuestID": 152,
+      "Count": 2,
+      "Ratio": 53
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 58,
+      "QuestID": 152,
+      "Count": 1,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 59,
+      "QuestID": 153,
+      "Count": 2,
+      "Ratio": 53
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 60,
+      "QuestID": 153,
+      "Count": 1,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 61,
+      "QuestID": 154,
+      "Count": 2,
+      "Ratio": 53
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 62,
+      "QuestID": 154,
+      "Count": 1,
+      "Ratio": 100
+    },
+    {
+      "MissionID": 700106,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 63,
+      "QuestID": 251,
+      "Count": 2,
+      "Ratio": 53
+    },
+    {
+      "MissionID": 0,
+      "DateOpen": "2026/1/08 11:00:00",
+      "DateClose": "2026/1/15 11:00:00",
+      "ItemID": "item_consignment_ticket",
+      "ID": 64,
+      "QuestID": 251,
+      "Count": 1,
+      "Ratio": 100
+    }
+  ]
+}

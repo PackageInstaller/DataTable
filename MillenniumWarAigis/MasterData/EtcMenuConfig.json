@@ -1,0 +1,134 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 20,
+    "record_size": 12,
+    "custom_id": 1835234419
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Expression",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Trigger",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": -1869223320,
+      "Expression": "1;",
+      "Trigger": "JumpInfomation"
+    },
+    {
+      "ID": -843281122,
+      "Expression": "1;",
+      "Trigger": "JumpHelp"
+    },
+    {
+      "ID": 379010876,
+      "Expression": "1;",
+      "Trigger": "JumpStampCard"
+    },
+    {
+      "ID": 1580859836,
+      "Expression": "1;",
+      "Trigger": "JumpSugoroku"
+    },
+    {
+      "ID": -1364596602,
+      "Expression": "0;",
+      "Trigger": "JumpChangeTitle"
+    },
+    {
+      "ID": 1263677271,
+      "Expression": "IsPlatForm(\"DMM\");",
+      "Trigger": "JumpSerialCode"
+    },
+    {
+      "ID": -620665495,
+      "Expression": "1;",
+      "Trigger": "JumpSound"
+    },
+    {
+      "ID": -1023676601,
+      "Expression": "1;",
+      "Trigger": "JumpExchangeBg"
+    },
+    {
+      "ID": -385715530,
+      "Expression": "IsPlatForm(\"SMARTPHONE\");",
+      "Trigger": "JumpPrivacyPolicy"
+    },
+    {
+      "ID": -993119390,
+      "Expression": "IsPlatForm(\"SMARTPHONE\");",
+      "Trigger": "JumpRules"
+    },
+    {
+      "ID": -374966558,
+      "Expression": "IsPlatForm(\"SMARTPHONE\");",
+      "Trigger": "JumpConfirmation"
+    },
+    {
+      "ID": 2119710534,
+      "Expression": "IsPlatForm(\"SMARTPHONE\");",
+      "Trigger": "JumpFAQ"
+    },
+    {
+      "ID": 952829656,
+      "Expression": "IsPlatForm(\"SMARTPHONE\");",
+      "Trigger": "JumpOfficialSite"
+    },
+    {
+      "ID": -1235442863,
+      "Expression": "1;",
+      "Trigger": "JumpExitGame"
+    },
+    {
+      "ID": 174115567,
+      "Expression": "IsPlatForm(\"DGP\");",
+      "Trigger": "JumpInquire"
+    },
+    {
+      "ID": 347263637,
+      "Expression": "0;",
+      "Trigger": "JumpChangeName"
+    },
+    {
+      "ID": -2017508703,
+      "Expression": "0;",
+      "Trigger": "JumpServantInfomation"
+    },
+    {
+      "ID": 19260585,
+      "Expression": "0;",
+      "Trigger": "JumpLog"
+    },
+    {
+      "ID": -1483661415,
+      "Expression": "0;",
+      "Trigger": "JumpIngeritData"
+    },
+    {
+      "ID": 673410842,
+      "Expression": "0;",
+      "Trigger": "JumpTieupData"
+    }
+  ]
+}

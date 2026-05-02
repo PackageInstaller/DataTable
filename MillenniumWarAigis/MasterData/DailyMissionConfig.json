@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 7,
+    "record_size": 48,
+    "custom_id": 2020897645
+  },
+  "_fields": [
+    {
+      "name": "MissionID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Enable",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 8,
+      "size": 1
+    },
+    {
+      "name": "\b\r\fStartDateTime",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "ime",
+      "type": "unknown",
+      "mapped_type": 97,
+      "rec_offset": 17508,
+      "size": 0
+    },
+    {
+      "name": "D",
+      "type": "unknown",
+      "mapped_type": 84,
+      "rec_offset": 2053,
+      "size": 15455
+    }
+  ],
+  "records": [
+    {
+      "MissionID": 700101,
+      "Name": "黄金の鎧",
+      "Enable": true,
+      "\b\r\fStartDateTime": "c5ae0a00"
+    },
+    {
+      "MissionID": 700102,
+      "Name": "聖霊救出",
+      "Enable": true,
+      "\b\r\fStartDateTime": "c6ae0a00"
+    },
+    {
+      "MissionID": 700103,
+      "Name": "魔水晶",
+      "Enable": true,
+      "\b\r\fStartDateTime": "c7ae0a00"
+    },
+    {
+      "MissionID": 700104,
+      "Name": "空からの贈り物",
+      "Enable": true,
+      "\b\r\fStartDateTime": "c8ae0a00"
+    },
+    {
+      "MissionID": 700105,
+      "Name": "男だけの祝杯",
+      "Enable": true,
+      "\b\r\fStartDateTime": "c9ae0a00"
+    },
+    {
+      "MissionID": 700106,
+      "Name": "猛者の集い",
+      "Enable": true,
+      "\b\r\fStartDateTime": "caae0a00"
+    },
+    {
+      "MissionID": 700201,
+      "Name": "覚醒の大宝玉",
+      "Enable": true,
+      "\b\r\fStartDateTime": "29af0a00"
+    }
+  ]
+}

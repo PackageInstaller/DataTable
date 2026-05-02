@@ -1,0 +1,237 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x1E",
+    "record_count": 7,
+    "record_size": 24,
+    "custom_id": 1936026739
+  },
+  "_fields": [
+    {
+      "name": "Type",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Flag",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Power",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "PowerText",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "Crystal",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "CrystalText",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "unknown",
+      "mapped_type": 97,
+      "rec_offset": 0,
+      "size": 2
+    },
+    {
+      "name": "\u0006\u0006Effect",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 2
+    },
+    {
+      "name": "field_8",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 2,
+      "size": 2
+    },
+    {
+      "name": "Target",
+      "type": "unknown",
+      "mapped_type": 97,
+      "rec_offset": 0,
+      "size": 2
+    },
+    {
+      "name": "\n\u000fTargetType",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 2
+    },
+    {
+      "name": "field_11",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 4,
+      "size": 2
+    },
+    {
+      "name": "Target1",
+      "type": "unknown",
+      "mapped_type": 97,
+      "rec_offset": 0,
+      "size": 2
+    },
+    {
+      "name": "\u0007\tTarget2",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 2
+    },
+    {
+      "name": "field_14",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 6,
+      "size": 2
+    }
+  ],
+  "records": [
+    {
+      "Type": 0,
+      "Flag": 0,
+      "Power": 40,
+      "PowerText": "４０",
+      "Crystal": 10,
+      "CrystalText": "１０",
+      "Name": "0000",
+      "\u0006\u0006Effect": "0000",
+      "field_8": "0000",
+      "Target": "0000",
+      "\n\u000fTargetType": "0000",
+      "field_11": "0000",
+      "Target1": "0000",
+      "\u0007\tTarget2": "0000",
+      "field_14": "0000"
+    },
+    {
+      "Type": 1,
+      "Flag": 1,
+      "Power": 40,
+      "PowerText": "４０",
+      "Crystal": 10,
+      "CrystalText": "１０",
+      "Name": "0100",
+      "\u0006\u0006Effect": "0100",
+      "field_8": "0000",
+      "Target": "0100",
+      "\n\u000fTargetType": "0100",
+      "field_11": "0100",
+      "Target1": "0100",
+      "\u0007\tTarget2": "0100",
+      "field_14": "0000"
+    },
+    {
+      "Type": 2,
+      "Flag": 2,
+      "Power": -2,
+      "PowerText": "－２",
+      "Crystal": 10,
+      "CrystalText": "１０",
+      "Name": "0200",
+      "\u0006\u0006Effect": "0200",
+      "field_8": "0000",
+      "Target": "0200",
+      "\n\u000fTargetType": "0200",
+      "field_11": "0200",
+      "Target1": "0200",
+      "\u0007\tTarget2": "0200",
+      "field_14": "0000"
+    },
+    {
+      "Type": 5,
+      "Flag": 5,
+      "Power": 170,
+      "PowerText": "１．７",
+      "Crystal": 7,
+      "CrystalText": "７",
+      "Name": "0500",
+      "\u0006\u0006Effect": "0500",
+      "field_8": "0000",
+      "Target": "0500",
+      "\n\u000fTargetType": "0500",
+      "field_11": "0500",
+      "Target1": "0500",
+      "\u0007\tTarget2": "0500",
+      "field_14": "0000"
+    },
+    {
+      "Type": 10,
+      "Flag": 6,
+      "Power": 170,
+      "PowerText": "１．７",
+      "Crystal": 7,
+      "CrystalText": "７",
+      "Name": "0a00",
+      "\u0006\u0006Effect": "0a00",
+      "field_8": "0000",
+      "Target": "0a00",
+      "\n\u000fTargetType": "0a00",
+      "field_11": "0600",
+      "Target1": "0a00",
+      "\u0007\tTarget2": "0a00",
+      "field_14": "0000"
+    },
+    {
+      "Type": 12,
+      "Flag": 4,
+      "Power": 170,
+      "PowerText": "１．７",
+      "Crystal": 5,
+      "CrystalText": "５",
+      "Name": "0c00",
+      "\u0006\u0006Effect": "0c00",
+      "field_8": "0000",
+      "Target": "0c00",
+      "\n\u000fTargetType": "0c00",
+      "field_11": "0400",
+      "Target1": "0c00",
+      "\u0007\tTarget2": "0c00",
+      "field_14": "0000"
+    },
+    {
+      "Type": 3,
+      "Flag": -1,
+      "Power": 0,
+      "PowerText": "",
+      "Crystal": 40,
+      "CrystalText": "４０",
+      "Name": "0300",
+      "\u0006\u0006Effect": "0300",
+      "field_8": "0000",
+      "Target": "0300",
+      "\n\u000fTargetType": "0300",
+      "field_11": "ffff",
+      "Target1": "0300",
+      "\u0007\tTarget2": "0300",
+      "field_14": "ffff"
+    }
+  ]
+}

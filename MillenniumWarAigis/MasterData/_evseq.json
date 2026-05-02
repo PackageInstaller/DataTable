@@ -1,0 +1,246 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 12,
+    "record_size": 44,
+    "custom_id": 1903392357
+  },
+  "_fields": [
+    {
+      "name": "_SceneID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "_CommandName",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "_ObjectName",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "_AfterExpression",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "_Param1",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "_Param2",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "_Param3",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "_Param4",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "_Param5",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "_Param6",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 36,
+      "size": 4
+    },
+    {
+      "name": "_CmndParam",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 40,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "_SceneID": 1,
+      "_CommandName": "FadeOut",
+      "_ObjectName": "obj_fade",
+      "_AfterExpression": "",
+      "_Param1": "0",
+      "_Param2": "",
+      "_Param3": "",
+      "_Param4": "",
+      "_Param5": "",
+      "_Param6": "",
+      "_CmndParam": ""
+    },
+    {
+      "_SceneID": 0,
+      "_CommandName": "PreparePerson",
+      "_ObjectName": "",
+      "_AfterExpression": "",
+      "_Param1": "7",
+      "_Param2": "",
+      "_Param3": "",
+      "_Param4": "",
+      "_Param5": "-16",
+      "_Param6": "",
+      "_CmndParam": ""
+    },
+    {
+      "_SceneID": 0,
+      "_CommandName": "PlayBgm",
+      "_ObjectName": "",
+      "_AfterExpression": "",
+      "_Param1": "0x900006",
+      "_Param2": "",
+      "_Param3": "",
+      "_Param4": "",
+      "_Param5": "",
+      "_Param6": "",
+      "_CmndParam": ""
+    },
+    {
+      "_SceneID": 0,
+      "_CommandName": "WaitFade",
+      "_ObjectName": "obj_fade",
+      "_AfterExpression": "",
+      "_Param1": "",
+      "_Param2": "",
+      "_Param3": "",
+      "_Param4": "",
+      "_Param5": "",
+      "_Param6": "",
+      "_CmndParam": ""
+    },
+    {
+      "_SceneID": 0,
+      "_CommandName": "CreateSprite",
+      "_ObjectName": "obj_bg",
+      "_AfterExpression": "",
+      "_Param1": "0x4d0003",
+      "_Param2": "0",
+      "_Param3": "0",
+      "_Param4": "150",
+      "_Param5": "0",
+      "_Param6": "",
+      "_CmndParam": ""
+    },
+    {
+      "_SceneID": 0,
+      "_CommandName": "CreatePerson",
+      "_ObjectName": "obj_chr",
+      "_AfterExpression": "DoCenterBottom();",
+      "_Param1": "7",
+      "_Param2": "0",
+      "_Param3": "0",
+      "_Param4": "100",
+      "_Param5": "-1",
+      "_Param6": "",
+      "_CmndParam": ""
+    },
+    {
+      "_SceneID": 0,
+      "_CommandName": "FadeIn",
+      "_ObjectName": "obj_fade",
+      "_AfterExpression": "",
+      "_Param1": "60",
+      "_Param2": "",
+      "_Param3": "",
+      "_Param4": "",
+      "_Param5": "",
+      "_Param6": "",
+      "_CmndParam": ""
+    },
+    {
+      "_SceneID": 0,
+      "_CommandName": "WaitFade",
+      "_ObjectName": "obj_fade",
+      "_AfterExpression": "",
+      "_Param1": "",
+      "_Param2": "",
+      "_Param3": "",
+      "_Param4": "",
+      "_Param5": "",
+      "_Param6": "",
+      "_CmndParam": ""
+    },
+    {
+      "_SceneID": 0,
+      "_CommandName": "ShowText",
+      "_ObjectName": "obj_msg",
+      "_AfterExpression": "",
+      "_Param1": "0",
+      "_Param2": "7",
+      "_Param3": "",
+      "_Param4": "",
+      "_Param5": "-2",
+      "_Param6": "",
+      "_CmndParam": ""
+    },
+    {
+      "_SceneID": 0,
+      "_CommandName": "WaitFrame",
+      "_ObjectName": "",
+      "_AfterExpression": "",
+      "_Param1": "60",
+      "_Param2": "",
+      "_Param3": "",
+      "_Param4": "",
+      "_Param5": "",
+      "_Param6": "",
+      "_CmndParam": ""
+    },
+    {
+      "_SceneID": 0,
+      "_CommandName": "FadeOut",
+      "_ObjectName": "obj_fade",
+      "_AfterExpression": "",
+      "_Param1": "60",
+      "_Param2": "",
+      "_Param3": "",
+      "_Param4": "",
+      "_Param5": "",
+      "_Param6": "",
+      "_CmndParam": ""
+    },
+    {
+      "_SceneID": 0,
+      "_CommandName": "WaitFade",
+      "_ObjectName": "obj_fade",
+      "_AfterExpression": "",
+      "_Param1": "",
+      "_Param2": "",
+      "_Param3": "",
+      "_Param4": "",
+      "_Param5": "",
+      "_Param6": "",
+      "_CmndParam": ""
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 18,
+    "record_size": 20,
+    "custom_id": 2020895842
+  },
+  "_fields": [
+    {
+      "name": "_ConfigID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "_NameText",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "_InfluenceText",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "_TargetText",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "_SacleText",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 16,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "_ConfigID": 1,
+      "_NameText": "まとめて発動",
+      "_InfluenceText": "",
+      "_TargetText": "全て発動中！",
+      "_SacleText": 0.65
+    },
+    {
+      "_ConfigID": 2,
+      "_NameText": "新たなる力",
+      "_InfluenceText": "攻撃力<ATK>倍、コスト半減",
+      "_TargetText": "対象：",
+      "_SacleText": 0.6
+    },
+    {
+      "_ConfigID": 3,
+      "_NameText": "女神の盾",
+      "_InfluenceText": "出撃したユニットの受ける\n物理ダメージを<PYS_DMG>％減少！",
+      "_TargetText": "対象：全ユニット",
+      "_SacleText": 0.65
+    },
+    {
+      "_ConfigID": 4,
+      "_NameText": "神秘の護り",
+      "_InfluenceText": "出撃したユニットの受ける\n魔法ダメージを<MAG_DMG>％減少！",
+      "_TargetText": "対象：全ユニット",
+      "_SacleText": 0.65
+    },
+    {
+      "_ConfigID": 5,
+      "_NameText": "速攻陣形",
+      "_InfluenceText": "全ユニットの出撃コスト<CST>",
+      "_TargetText": "対象：全ユニット",
+      "_SacleText": 0.65
+    },
+    {
+      "_ConfigID": 6,
+      "_NameText": "祝福の鎚矛",
+      "_InfluenceText": "ヘビーアーマー系と\n神官戦士系の攻撃力<ATK>倍",
+      "_TargetText": "対象：ヘビーアーマー系\n神官戦士系",
+      "_SacleText": 0.65
+    },
+    {
+      "_ConfigID": 7,
+      "_NameText": "聖なる槍",
+      "_InfluenceText": "ワルキューレ系と\nペガサスライダー系の攻撃力<ATK>倍",
+      "_TargetText": "対象：ワルキューレ系\nペガサスライダー系",
+      "_SacleText": 0.6
+    },
+    {
+      "_ConfigID": 8,
+      "_NameText": "疾風の短剣",
+      "_InfluenceText": "ローグ系の攻撃力<ATK>倍",
+      "_TargetText": "対象：ローグ系",
+      "_SacleText": 0.65
+    },
+    {
+      "_ConfigID": 9,
+      "_NameText": "東方の刃",
+      "_InfluenceText": "忍者系、サムライ系\n前衛戦術家系の攻撃力<ATK>倍",
+      "_TargetText": "対象：忍者系\nサムライ系\n前衛戦術家系",
+      "_SacleText": 0.65
+    },
+    {
+      "_ConfigID": 10,
+      "_NameText": "光の矢",
+      "_InfluenceText": "アーチャー系、レンジャー系と\nボウライダー系の攻撃力<ATK>倍",
+      "_TargetText": "対象：アーチャー系\nボウライダー系\nレンジャー系",
+      "_SacleText": 0.6
+    },
+    {
+      "_ConfigID": 11,
+      "_NameText": "銀の弾丸",
+      "_InfluenceText": "パイレーツ系の攻撃力<ATK>倍",
+      "_TargetText": "対象：パイレーツ系",
+      "_SacleText": 0.56
+    },
+    {
+      "_ConfigID": 12,
+      "_NameText": "退魔の矢",
+      "_InfluenceText": "ヴァンパイアハンター系の\n攻撃力<ATK>倍",
+      "_TargetText": "対象：\nヴァンパイアハンター系",
+      "_SacleText": 0.56
+    },
+    {
+      "_ConfigID": 13,
+      "_NameText": "高速治癒",
+      "_InfluenceText": "ヒーラー系、ドラゴンシャーマン系\n風水使い系の回復力<ATK>倍",
+      "_TargetText": "対象：ヒーラー系\nドラゴンシャーマン系\n風水使い系",
+      "_SacleText": 0.6
+    },
+    {
+      "_ConfigID": 14,
+      "_NameText": "聖なる剣",
+      "_InfluenceText": "プリンセス系の攻撃力<ATK>倍",
+      "_TargetText": "対象：プリンセス系",
+      "_SacleText": 0.65
+    },
+    {
+      "_ConfigID": 15,
+      "_NameText": "魔法の刃",
+      "_InfluenceText": "魔法剣士系、プリンセス系の\n攻撃力<ATK>倍",
+      "_TargetText": "対象：魔法剣士系\nプリンセス系",
+      "_SacleText": 0.65
+    },
+    {
+      "_ConfigID": 16,
+      "_NameText": "魔力増大",
+      "_InfluenceText": "メイジ系の攻撃力<ATK>倍",
+      "_TargetText": "対象：メイジ系",
+      "_SacleText": 0.65
+    },
+    {
+      "_ConfigID": 17,
+      "_NameText": "竜滅印章",
+      "_InfluenceText": "竜族への攻撃力<CRI_ATK>倍",
+      "_TargetText": "対象：敵竜族",
+      "_SacleText": 0.65
+    },
+    {
+      "_ConfigID": 18,
+      "_NameText": "山賊の意地",
+      "_InfluenceText": "バンデット系の攻撃力<ATK>倍",
+      "_TargetText": "対象：バンデット系",
+      "_SacleText": 0.65
+    }
+  ]
+}

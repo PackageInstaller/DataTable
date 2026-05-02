@@ -1,0 +1,537 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 0,
+    "record_size": 1128,
+    "custom_id": 1952735587
+  },
+  "_fields": [
+    {
+      "name": "CardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "InitClassID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "ClassLV0SkillID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "ClassLV1SkillID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "EvoSkillID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "Kind",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "Rare",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "DotID0",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "DotID1",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "DotID2",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 36,
+      "size": 4
+    },
+    {
+      "name": "SellPrice",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 40,
+      "size": 4
+    },
+    {
+      "name": "FreePrize",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 44,
+      "size": 4
+    },
+    {
+      "name": "RarePrize",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 48,
+      "size": 4
+    },
+    {
+      "name": "PremiumPrize",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 52,
+      "size": 4
+    },
+    {
+      "name": "TicketPrize",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 56,
+      "size": 4
+    },
+    {
+      "name": "PremiumPrize2",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 60,
+      "size": 4
+    },
+    {
+      "name": "BuildExp",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 64,
+      "size": 4
+    },
+    {
+      "name": "LoveEv1",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 68,
+      "size": 4
+    },
+    {
+      "name": "BonusType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 72,
+      "size": 4
+    },
+    {
+      "name": "BonusNum",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 76,
+      "size": 4
+    },
+    {
+      "name": "BonusType2",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 80,
+      "size": 4
+    },
+    {
+      "name": "BonusNum2",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 84,
+      "size": 4
+    },
+    {
+      "name": "BonusType3",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 88,
+      "size": 4
+    },
+    {
+      "name": "BonusNum3",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 92,
+      "size": 4
+    },
+    {
+      "name": "DeadVoice",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 96,
+      "size": 4
+    },
+    {
+      "name": "DotScale",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 100,
+      "size": 4
+    },
+    {
+      "name": "EffectHeight",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 104,
+      "size": 4
+    },
+    {
+      "name": "CostModValue",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 108,
+      "size": 4
+    },
+    {
+      "name": "CostDecValue",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 112,
+      "size": 4
+    },
+    {
+      "name": "MaxHPMod",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 116,
+      "size": 4
+    },
+    {
+      "name": "AtkMod",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 120,
+      "size": 4
+    },
+    {
+      "name": "DefMod",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 124,
+      "size": 4
+    },
+    {
+      "name": "GachaPicture",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 128,
+      "size": 4
+    },
+    {
+      "name": "GachaStartX",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 132,
+      "size": 4
+    },
+    {
+      "name": "GachaStartY",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 136,
+      "size": 4
+    },
+    {
+      "name": "GachaEndX",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 140,
+      "size": 4
+    },
+    {
+      "name": "GachaEndY",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 144,
+      "size": 4
+    },
+    {
+      "name": "GachaScale",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 148,
+      "size": 4
+    },
+    {
+      "name": "Event1BGM",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 152,
+      "size": 4
+    },
+    {
+      "name": "Event2BGM",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 156,
+      "size": 4
+    },
+    {
+      "name": "Flavor",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 160,
+      "size": 4
+    },
+    {
+      "name": "Illust",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 164,
+      "size": 4
+    },
+    {
+      "name": "MagicResistance",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 168,
+      "size": 4
+    },
+    {
+      "name": "Ability_Default",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 172,
+      "size": 4
+    },
+    {
+      "name": "Ability",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 176,
+      "size": 4
+    },
+    {
+      "name": "FullShot1",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 180,
+      "size": 1
+    },
+    {
+      "name": "\u0001\u0005\u000fFace1",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "ル覚醒",
+      "type": "unknown",
+      "mapped_type": 185,
+      "rec_offset": 33507,
+      "size": 1446
+    },
+    {
+      "name": "��",
+      "type": "unknown",
+      "mapped_type": 227,
+      "rec_offset": 49026,
+      "size": 0
+    },
+    {
+      "name": "field_49",
+      "type": "unknown",
+      "mapped_type": 185,
+      "rec_offset": 33507,
+      "size": 1446
+    },
+    {
+      "name": "\u0001\b\t\u0007Identity2",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "2",
+      "type": "unknown",
+      "mapped_type": 185,
+      "rec_offset": 35303,
+      "size": 13723
+    },
+    {
+      "name": "\u0014\u0001!\u0004\u000b\bChildCardID",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "\u0001\b\b\u0011OriginID",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 256,
+      "size": 280
+    },
+    {
+      "name": "field_54",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "RootsID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 536,
+      "size": 4
+    },
+    {
+      "name": "Flavor2",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 540,
+      "size": 4
+    },
+    {
+      "name": "CharaImage0",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 544,
+      "size": 1
+    },
+    {
+      "name": "\u0001\n\rCharaFace0",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "��スト",
+      "type": "unknown",
+      "mapped_type": 227,
+      "rec_offset": 34953,
+      "size": 350
+    },
+    {
+      "name": "ImageEvolve0",
+      "type": "unknown",
+      "mapped_type": 104,
+      "rec_offset": 20596,
+      "size": 5376
+    },
+    {
+      "name": "mageEvolve4",
+      "type": "unknown",
+      "mapped_type": 111,
+      "rec_offset": 26704,
+      "size": 6803
+    },
+    {
+      "name": "field_62",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "ChildSkillExperience",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 580,
+      "size": 4
+    },
+    {
+      "name": "ChildSkillLevel",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 584,
+      "size": 4
+    },
+    {
+      "name": "SkillExperienceTableReferenceId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 588,
+      "size": 4
+    },
+    {
+      "name": "BuildCostExperience",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 592,
+      "size": 4
+    },
+    {
+      "name": "BuildCostLevel",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 596,
+      "size": 4
+    },
+    {
+      "name": "ChildCostExperience",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 600,
+      "size": 4
+    },
+    {
+      "name": "ChildCostLevel",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 604,
+      "size": 4
+    },
+    {
+      "name": "CostExperienceTableReferenceId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 608,
+      "size": 4
+    },
+    {
+      "name": "InLibrary",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 612,
+      "size": 1
+    },
+    {
+      "name": "\u0001\r\fInHallOfFamer",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "xtendSkin02",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 8450,
+      "size": 4
+    },
+    {
+      "name": "in03",
+      "type": "unknown",
+      "mapped_type": 110,
+      "rec_offset": 25972,
+      "size": 732
+    }
+  ],
+  "records": []
+}

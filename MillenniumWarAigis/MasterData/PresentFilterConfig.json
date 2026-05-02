@@ -1,0 +1,104 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x04",
+    "record_count": 8,
+    "record_size": 20,
+    "custom_id": null
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "名前",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "PresentTypeList",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "CategoryList",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "名前": 0,
+      "Text": "すべて表示",
+      "PresentTypeList": "",
+      "CategoryList": ""
+    },
+    {
+      "ID": 2,
+      "名前": 0,
+      "Text": "カリスマ回復",
+      "PresentTypeList": "8,21,",
+      "CategoryList": "人気投票手料理,汎用手料理"
+    },
+    {
+      "ID": 3,
+      "名前": 0,
+      "Text": "ユニット",
+      "PresentTypeList": "1,",
+      "CategoryList": ""
+    },
+    {
+      "ID": 4,
+      "名前": 0,
+      "Text": "召喚チケット",
+      "PresentTypeList": "16,20,",
+      "CategoryList": "召喚チケット"
+    },
+    {
+      "ID": 5,
+      "名前": 0,
+      "Text": "神聖結晶・結晶のカケラ",
+      "PresentTypeList": "0,14,",
+      "CategoryList": "召喚対価"
+    },
+    {
+      "ID": 6,
+      "名前": 0,
+      "Text": "好感度(信頼度)アイテム",
+      "PresentTypeList": "3,4,5,6,10,11,12,13,",
+      "CategoryList": "女性交流アイテム,男性交流アイテム,好感度上限突破,信頼度上限突破"
+    },
+    {
+      "ID": 7,
+      "名前": 0,
+      "Text": "交換所アイテム",
+      "PresentTypeList": "19,7,",
+      "CategoryList": "交換品,"
+    },
+    {
+      "ID": 8,
+      "名前": 0,
+      "Text": "ゴールド",
+      "PresentTypeList": "2,",
+      "CategoryList": ""
+    }
+  ]
+}

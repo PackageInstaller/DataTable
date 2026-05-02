@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 7,
+    "record_size": 20,
+    "custom_id": 1835234419
+  },
+  "_fields": [
+    {
+      "name": "ConfigID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "TextIDTitle",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Trigger",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Condition",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "SaveParam",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ConfigID": 1746233816,
+      "TextIDTitle": 1199369691,
+      "Trigger": "b73c292395270a38",
+      "Condition": "1;",
+      "SaveParam": 0
+    },
+    {
+      "ConfigID": -859502311,
+      "TextIDTitle": 198488161,
+      "Trigger": "b73c2c269c321d",
+      "Condition": "GetCurrentQuestClearRank() < 1;",
+      "SaveParam": 1
+    },
+    {
+      "ConfigID": -263183492,
+      "TextIDTitle": -497870555,
+      "Trigger": "ac3d0b2f8b60",
+      "Condition": "GetCurrentQuestClearRank() < 3;",
+      "SaveParam": 2
+    },
+    {
+      "ConfigID": 1848948447,
+      "TextIDTitle": 2084015238,
+      "Trigger": "ac3d0b2f8b67",
+      "Condition": "GetCurrentQuestClearRank() < 4;",
+      "SaveParam": 3
+    },
+    {
+      "ConfigID": -1848170189,
+      "TextIDTitle": -616175877,
+      "Trigger": "b73c2c259423032f8d36",
+      "Condition": "!IsCurrentQuestDropComplete();",
+      "SaveParam": 4
+    },
+    {
+      "ConfigID": 201938073,
+      "TextIDTitle": -1873746830,
+      "Trigger": "ad361c3ec8",
+      "Condition": "1;",
+      "SaveParam": 5
+    },
+    {
+      "ConfigID": -1795160797,
+      "TextIDTitle": 156874184,
+      "Trigger": "ad361c3ecb",
+      "Condition": "1;",
+      "SaveParam": 6
+    }
+  ]
+}

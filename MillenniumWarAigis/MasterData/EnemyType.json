@@ -1,0 +1,803 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 127,
+    "record_size": 16,
+    "custom_id": 1684234601
+  },
+  "_fields": [
+    {
+      "name": "_EnemyTypeID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "_EnemyTypeName",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "_EnemyTypeNote",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "_EnemyTypeDefine",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "なし",
+      "_EnemyTypeNote": "効果なし",
+      "_EnemyTypeDefine": "NONE"
+    },
+    {
+      "_EnemyTypeID": 1,
+      "_EnemyTypeName": "アーマー",
+      "_EnemyTypeNote": "アーマータイプ",
+      "_EnemyTypeDefine": "ARMOUR"
+    },
+    {
+      "_EnemyTypeID": 2,
+      "_EnemyTypeName": "ドラゴン",
+      "_EnemyTypeNote": "ドラゴンタイプ",
+      "_EnemyTypeDefine": "DRAGON"
+    },
+    {
+      "_EnemyTypeID": 3,
+      "_EnemyTypeName": "デーモン",
+      "_EnemyTypeNote": "デーモンタイプ",
+      "_EnemyTypeDefine": "DEMON"
+    },
+    {
+      "_EnemyTypeID": 4,
+      "_EnemyTypeName": "妖怪",
+      "_EnemyTypeNote": "スペクタータイプ",
+      "_EnemyTypeDefine": "SPECTOR"
+    },
+    {
+      "_EnemyTypeID": 5,
+      "_EnemyTypeName": "ゴーレム",
+      "_EnemyTypeNote": "ゴーレムタイプ",
+      "_EnemyTypeDefine": "GOLEM"
+    },
+    {
+      "_EnemyTypeID": 6,
+      "_EnemyTypeName": "天使",
+      "_EnemyTypeNote": "天使タイプ",
+      "_EnemyTypeDefine": "ANGEL"
+    },
+    {
+      "_EnemyTypeID": 7,
+      "_EnemyTypeName": "魚人",
+      "_EnemyTypeNote": "魚人タイプ",
+      "_EnemyTypeDefine": "MERMAN"
+    },
+    {
+      "_EnemyTypeID": 8,
+      "_EnemyTypeName": "オーク",
+      "_EnemyTypeNote": "オークタイプ",
+      "_EnemyTypeDefine": "ORC"
+    },
+    {
+      "_EnemyTypeID": 9,
+      "_EnemyTypeName": "ゴブリン",
+      "_EnemyTypeNote": "ゴブリンタイプ",
+      "_EnemyTypeDefine": "GOBRIN"
+    },
+    {
+      "_EnemyTypeID": 10,
+      "_EnemyTypeName": "巨人",
+      "_EnemyTypeNote": "巨人タイプ",
+      "_EnemyTypeDefine": "GIANT"
+    },
+    {
+      "_EnemyTypeID": 11,
+      "_EnemyTypeName": "獣",
+      "_EnemyTypeNote": "獣タイプ",
+      "_EnemyTypeDefine": "BEAST"
+    },
+    {
+      "_EnemyTypeID": 12,
+      "_EnemyTypeName": "獣人",
+      "_EnemyTypeNote": "獣人タイプ",
+      "_EnemyTypeDefine": "BEASTMAN"
+    },
+    {
+      "_EnemyTypeID": 13,
+      "_EnemyTypeName": "魔獣",
+      "_EnemyTypeNote": "魔獣タイプ",
+      "_EnemyTypeDefine": "DEMONBEAST"
+    },
+    {
+      "_EnemyTypeID": 14,
+      "_EnemyTypeName": "妖獣",
+      "_EnemyTypeNote": "妖獣タイプ",
+      "_EnemyTypeDefine": "SPECTORBEAST"
+    },
+    {
+      "_EnemyTypeID": 15,
+      "_EnemyTypeName": "神獣",
+      "_EnemyTypeNote": "神獣タイプ",
+      "_EnemyTypeDefine": "DIVINEBEAST"
+    },
+    {
+      "_EnemyTypeID": 16,
+      "_EnemyTypeName": "人間",
+      "_EnemyTypeNote": "人間タイプ",
+      "_EnemyTypeDefine": "HUMAN"
+    },
+    {
+      "_EnemyTypeID": 17,
+      "_EnemyTypeName": "巨神",
+      "_EnemyTypeNote": "神獣巨人タイプ",
+      "_EnemyTypeDefine": "ANGELGIANT"
+    },
+    {
+      "_EnemyTypeID": 18,
+      "_EnemyTypeName": "インセクト",
+      "_EnemyTypeNote": "虫タイプ",
+      "_EnemyTypeDefine": "INSECT"
+    },
+    {
+      "_EnemyTypeID": 19,
+      "_EnemyTypeName": "神",
+      "_EnemyTypeNote": "神タイプ",
+      "_EnemyTypeDefine": "GOD"
+    },
+    {
+      "_EnemyTypeID": 20,
+      "_EnemyTypeName": "天界人",
+      "_EnemyTypeNote": "天界人タイプ",
+      "_EnemyTypeDefine": "HEAVENMAN"
+    },
+    {
+      "_EnemyTypeID": 21,
+      "_EnemyTypeName": "冥界人",
+      "_EnemyTypeNote": "冥界人タイプ",
+      "_EnemyTypeDefine": "UNDERWORLD"
+    },
+    {
+      "_EnemyTypeID": 22,
+      "_EnemyTypeName": "半神",
+      "_EnemyTypeNote": "半神タイプ",
+      "_EnemyTypeDefine": "HAFUGOD"
+    },
+    {
+      "_EnemyTypeID": 23,
+      "_EnemyTypeName": "ゴブリンアンド巨人",
+      "_EnemyTypeNote": "ゴブリンと巨人タイプ",
+      "_EnemyTypeDefine": "GIANTGOBRIN"
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    }
+  ]
+}
