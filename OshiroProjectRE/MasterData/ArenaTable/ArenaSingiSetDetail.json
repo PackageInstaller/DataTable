@@ -1,0 +1,4901 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 810,
+    "record_size": 16,
+    "custom_id": 1685284193
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "SingiSetDetailParameter",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Explanation",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1000,
+      "SingiSetDetailParameter": 1000,
+      "Name": "城娘強化",
+      "Explanation": "城娘の耐久,攻撃,防御が最初から2倍"
+    },
+    {
+      "ID": 1001,
+      "SingiSetDetailParameter": 1001,
+      "Name": "焦熱地獄(小)",
+      "Explanation": "一定時間毎に現在耐久2％分の継続ダメージ発生\n対象：城娘/伏兵"
+    },
+    {
+      "ID": 1002,
+      "SingiSetDetailParameter": 1002,
+      "Name": "焦熱地獄(中)",
+      "Explanation": "一定時間毎に現在耐久5％分の継続ダメージ発生\n対象：城娘/伏兵"
+    },
+    {
+      "ID": 1003,
+      "SingiSetDetailParameter": 1003,
+      "Name": "極寒地獄(小)",
+      "Explanation": "遠隔武器種の射程が25％低下\n※遠近両用武器種を除く"
+    },
+    {
+      "ID": 1004,
+      "SingiSetDetailParameter": 1004,
+      "Name": "極寒地獄(中)",
+      "Explanation": "遠隔武器種の射程が50％低下\n※遠近両用武器種を除く"
+    },
+    {
+      "ID": 1005,
+      "SingiSetDetailParameter": 1005,
+      "Name": "等活地獄 一(小)",
+      "Explanation": "全ての敵に毎秒耐久回復10の効果を付与"
+    },
+    {
+      "ID": 1006,
+      "SingiSetDetailParameter": 1006,
+      "Name": "等活地獄 一(中)",
+      "Explanation": "全ての敵に毎秒耐久回復20の効果を付与"
+    },
+    {
+      "ID": 1007,
+      "SingiSetDetailParameter": 1007,
+      "Name": "等活地獄 二(小)",
+      "Explanation": "全ての敵に毎秒耐久回復30の効果を付与"
+    },
+    {
+      "ID": 1008,
+      "SingiSetDetailParameter": 1008,
+      "Name": "等活地獄 二(中)",
+      "Explanation": "全ての敵に毎秒耐久回復60の効果を付与"
+    },
+    {
+      "ID": 1009,
+      "SingiSetDetailParameter": 1009,
+      "Name": "等活地獄 三(小)",
+      "Explanation": "全ての敵に毎秒耐久回復30の効果を付与"
+    },
+    {
+      "ID": 1010,
+      "SingiSetDetailParameter": 1010,
+      "Name": "等活地獄 三(中)",
+      "Explanation": "全ての敵に毎秒耐久回復60の効果を付与"
+    },
+    {
+      "ID": 1011,
+      "SingiSetDetailParameter": 1011,
+      "Name": "等活地獄 四(小)",
+      "Explanation": "全ての敵に毎秒耐久回復50の効果を付与"
+    },
+    {
+      "ID": 1012,
+      "SingiSetDetailParameter": 1012,
+      "Name": "等活地獄 四(中)",
+      "Explanation": "全ての敵に毎秒耐久回復100の効果を付与"
+    },
+    {
+      "ID": 1013,
+      "SingiSetDetailParameter": 1013,
+      "Name": "等活地獄 五(小)",
+      "Explanation": "全ての敵に毎秒耐久回復50の効果を付与"
+    },
+    {
+      "ID": 1014,
+      "SingiSetDetailParameter": 1014,
+      "Name": "等活地獄 五(中)",
+      "Explanation": "全ての敵に毎秒耐久回復100の効果を付与"
+    },
+    {
+      "ID": 1015,
+      "SingiSetDetailParameter": 1015,
+      "Name": "等活地獄 六(小)",
+      "Explanation": "全ての敵に毎秒耐久回復50の効果を付与"
+    },
+    {
+      "ID": 1016,
+      "SingiSetDetailParameter": 1016,
+      "Name": "等活地獄 六(中)",
+      "Explanation": "全ての敵に毎秒耐久回復100の効果を付与"
+    },
+    {
+      "ID": 1017,
+      "SingiSetDetailParameter": 1017,
+      "Name": "針山地獄(小)",
+      "Explanation": "武器装備の敵の与ダメージが25％上昇"
+    },
+    {
+      "ID": 1018,
+      "SingiSetDetailParameter": 1018,
+      "Name": "針山地獄(中)",
+      "Explanation": "武器装備の敵の与ダメージが50％上昇"
+    },
+    {
+      "ID": 1019,
+      "SingiSetDetailParameter": 1019,
+      "Name": "無間地獄 一(小)",
+      "Explanation": "特定の敵および特定の敵が出現させる敵の\n被ダメージ10％軽減、与ダメージ10％上昇"
+    },
+    {
+      "ID": 1020,
+      "SingiSetDetailParameter": 1020,
+      "Name": "無間地獄 一(中)",
+      "Explanation": "特定の敵および特定の敵が出現させる敵の\n被ダメージ30％軽減、与ダメージ30％上昇"
+    },
+    {
+      "ID": 1021,
+      "SingiSetDetailParameter": 1021,
+      "Name": "無間地獄 二(小)",
+      "Explanation": "特定の敵および特定の敵が出現させる敵の\n被ダメージ10％軽減、与ダメージ10％上昇"
+    },
+    {
+      "ID": 1022,
+      "SingiSetDetailParameter": 1022,
+      "Name": "無間地獄 二(中)",
+      "Explanation": "特定の敵および特定の敵が出現させる敵の\n被ダメージ30％軽減、与ダメージ30％上昇"
+    },
+    {
+      "ID": 1023,
+      "SingiSetDetailParameter": 1023,
+      "Name": "無間地獄 三(小)",
+      "Explanation": "特定の敵および特定の敵が出現させる敵の\n被ダメージ10％軽減、与ダメージ10％上昇"
+    },
+    {
+      "ID": 1024,
+      "SingiSetDetailParameter": 1024,
+      "Name": "無間地獄 三(中)",
+      "Explanation": "特定の敵および特定の敵が出現させる敵の\n被ダメージ30％軽減、与ダメージ30％上昇"
+    },
+    {
+      "ID": 1025,
+      "SingiSetDetailParameter": 1025,
+      "Name": "無間地獄 四(小)",
+      "Explanation": "特定の敵および特定の敵が出現させる敵の\n被ダメージ10％軽減、与ダメージ10％上昇"
+    },
+    {
+      "ID": 1026,
+      "SingiSetDetailParameter": 1026,
+      "Name": "無間地獄 四(中)",
+      "Explanation": "特定の敵および特定の敵が出現させる敵の\n被ダメージ30％軽減、与ダメージ30％上昇"
+    },
+    {
+      "ID": 1027,
+      "SingiSetDetailParameter": 1027,
+      "Name": "無間地獄 五(小)",
+      "Explanation": "特定の敵および特定の敵が出現させる敵の\n被ダメージ10％軽減、与ダメージ10％上昇"
+    },
+    {
+      "ID": 1028,
+      "SingiSetDetailParameter": 1028,
+      "Name": "無間地獄 五(中)",
+      "Explanation": "特定の敵および特定の敵が出現させる敵の\n被ダメージ30％軽減、与ダメージ30％上昇"
+    },
+    {
+      "ID": 1029,
+      "SingiSetDetailParameter": 1029,
+      "Name": "無間地獄 六(小)",
+      "Explanation": "全ての敵の被ダメージ10％軽減\n与ダメージ10％上昇"
+    },
+    {
+      "ID": 1030,
+      "SingiSetDetailParameter": 1030,
+      "Name": "無間地獄 六(中)",
+      "Explanation": "全ての敵の被ダメージ30％軽減\n与ダメージ30％上昇"
+    },
+    {
+      "ID": 1031,
+      "SingiSetDetailParameter": 1031,
+      "Name": "耐久強化(小)",
+      "Explanation": "全ての敵の耐久が1.5倍"
+    },
+    {
+      "ID": 1032,
+      "SingiSetDetailParameter": 1032,
+      "Name": "攻撃強化(小)",
+      "Explanation": "全ての敵の攻撃が1.5倍"
+    },
+    {
+      "ID": 1033,
+      "SingiSetDetailParameter": 1033,
+      "Name": "防御強化(小)",
+      "Explanation": "全ての敵の防御が1.5倍"
+    },
+    {
+      "ID": 1034,
+      "SingiSetDetailParameter": 1034,
+      "Name": "耐久強化(中)",
+      "Explanation": "全ての敵の耐久が1.75倍"
+    },
+    {
+      "ID": 1035,
+      "SingiSetDetailParameter": 1035,
+      "Name": "攻撃強化(中)",
+      "Explanation": "全ての敵の攻撃が1.75倍"
+    },
+    {
+      "ID": 1036,
+      "SingiSetDetailParameter": 1036,
+      "Name": "防御強化(中)",
+      "Explanation": "全ての敵の防御が1.75倍"
+    },
+    {
+      "ID": 1037,
+      "SingiSetDetailParameter": 1037,
+      "Name": "耐久強化(大)",
+      "Explanation": "全ての敵の耐久が2倍"
+    },
+    {
+      "ID": 1038,
+      "SingiSetDetailParameter": 1038,
+      "Name": "攻撃強化(大)",
+      "Explanation": "全ての敵の攻撃が2倍"
+    },
+    {
+      "ID": 1039,
+      "SingiSetDetailParameter": 1039,
+      "Name": "防御強化(大)",
+      "Explanation": "全ての敵の防御が2倍"
+    },
+    {
+      "ID": 1040,
+      "SingiSetDetailParameter": 1040,
+      "Name": "近接以外攻撃低下",
+      "Explanation": "遠隔のみ配置可能な武器種の攻撃が50％低下"
+    },
+    {
+      "ID": 1041,
+      "SingiSetDetailParameter": 1041,
+      "Name": "大将兜強化(焦熱)",
+      "Explanation": "前田利家の攻撃,射程,与ダメージが上昇\n攻撃が防御を無視する"
+    },
+    {
+      "ID": 1043,
+      "SingiSetDetailParameter": 1043,
+      "Name": "撃破気増加無効",
+      "Explanation": "味方の敵撃破時の獲得気増加を無効"
+    },
+    {
+      "ID": 1045,
+      "SingiSetDetailParameter": 1045,
+      "Name": "牛頭(獄卒長)強化",
+      "Explanation": "牛頭(獄卒長)の後退効果を無効\n耐久,攻撃,防御,与ダメージが上昇"
+    },
+    {
+      "ID": 1047,
+      "SingiSetDetailParameter": 1047,
+      "Name": "特定武器種攻撃減",
+      "Explanation": "歌舞と祓串の攻撃が90％低下"
+    },
+    {
+      "ID": 1048,
+      "SingiSetDetailParameter": 1048,
+      "Name": "武神強化(焦熱五)",
+      "Explanation": "武神前田利家の受ける状態異常,後退効果を無効\n耐久,射程,与ダメージが上昇"
+    },
+    {
+      "ID": 1049,
+      "SingiSetDetailParameter": 1049,
+      "Name": "特定武器種軽減",
+      "Explanation": "敵が物理遠隔武器種からの被ダメージを90％軽減\n対象：弓,石弓,鉄砲,大砲,投剣,鞭,軍船"
+    },
+    {
+      "ID": 1050,
+      "SingiSetDetailParameter": 1050,
+      "Name": "巨大化気増加",
+      "Explanation": "巨大化消費気が30％増加"
+    },
+    {
+      "ID": 1051,
+      "SingiSetDetailParameter": 1051,
+      "Name": "大将兜強化(極寒)",
+      "Explanation": "黒田長政の耐久,攻撃,移動速度が上昇\n与えたダメージ分の耐久を回復"
+    },
+    {
+      "ID": 1052,
+      "SingiSetDetailParameter": 1052,
+      "Name": "与ダメージ上昇",
+      "Explanation": "敵の与ダメージが50％上昇"
+    },
+    {
+      "ID": 1053,
+      "SingiSetDetailParameter": 1053,
+      "Name": "防御無視攻撃化",
+      "Explanation": "敵の攻撃が防御を無視する"
+    },
+    {
+      "ID": 1054,
+      "SingiSetDetailParameter": 1054,
+      "Name": "馬頭(獄卒長)強化",
+      "Explanation": "馬頭(獄卒長)の後退効果を無効\n耐久,射程が上昇"
+    },
+    {
+      "ID": 1055,
+      "SingiSetDetailParameter": 1055,
+      "Name": "伏兵射程低下",
+      "Explanation": "伏兵の射程が90％低下"
+    },
+    {
+      "ID": 1056,
+      "SingiSetDetailParameter": 1056,
+      "Name": "武神強化(極寒五)",
+      "Explanation": "武神黒田長政の受ける状態異常,後退効果を無効\n耐久,防御が上昇/足止めされない"
+    },
+    {
+      "ID": 1057,
+      "SingiSetDetailParameter": 1057,
+      "Name": "攻撃射程強化無効",
+      "Explanation": "味方の攻撃,射程の上昇効果無効"
+    },
+    {
+      "ID": 1058,
+      "SingiSetDetailParameter": 1058,
+      "Name": "計略ダメージ低下",
+      "Explanation": "範囲を指定してダメージを与える計略のダメージが\n90％低下"
+    },
+    {
+      "ID": 1059,
+      "SingiSetDetailParameter": 1059,
+      "Name": "近接物理軽減",
+      "Explanation": "敵が近接物理攻撃の被ダメージを50％軽減"
+    },
+    {
+      "ID": 1060,
+      "SingiSetDetailParameter": 1060,
+      "Name": "大将兜強化(等活)",
+      "Explanation": "石田三成の攻撃,移動速度が上昇,足止め不可\n被ダメージを大幅に軽減"
+    },
+    {
+      "ID": 1061,
+      "SingiSetDetailParameter": 1061,
+      "Name": "計略消費気増加",
+      "Explanation": "計略の消費気が30に変更"
+    },
+    {
+      "ID": 1062,
+      "SingiSetDetailParameter": 1062,
+      "Name": "移動阻害無効",
+      "Explanation": "敵が受ける移動速度低下,後退効果を無効"
+    },
+    {
+      "ID": 1063,
+      "SingiSetDetailParameter": 1063,
+      "Name": "獄卒鬼強化",
+      "Explanation": "獄卒鬼の耐久,攻撃,回復が上昇\n移動速度低下を無効,足止めされない"
+    },
+    {
+      "ID": 1064,
+      "SingiSetDetailParameter": 1064,
+      "Name": "武神強化(等活五)",
+      "Explanation": "武神石田三成の受ける状態異常,移動速度低下を無効\n耐久,射程,拡散範囲,回復効果が上昇"
+    },
+    {
+      "ID": 1065,
+      "SingiSetDetailParameter": 1065,
+      "Name": "物理ダメージ軽減",
+      "Explanation": "敵が物理攻撃の被ダメージを75％軽減"
+    },
+    {
+      "ID": 1066,
+      "SingiSetDetailParameter": 1066,
+      "Name": "被ダメージ軽減",
+      "Explanation": "敵が被ダメージを25％軽減"
+    },
+    {
+      "ID": 1067,
+      "SingiSetDetailParameter": 1067,
+      "Name": "大将兜強化(針山)",
+      "Explanation": "毛利元就の耐久,攻撃,射程が上昇\n攻撃後の隙が短縮"
+    },
+    {
+      "ID": 1070,
+      "SingiSetDetailParameter": 1070,
+      "Name": "近接武器隙延長",
+      "Explanation": "近接武器種の攻撃後の隙が50％延長"
+    },
+    {
+      "ID": 1071,
+      "SingiSetDetailParameter": 1071,
+      "Name": "獄卒龍強化",
+      "Explanation": "獄卒龍の被ダメージが50％軽減\n耐久,攻撃,射程が上昇"
+    },
+    {
+      "ID": 1074,
+      "SingiSetDetailParameter": 1074,
+      "Name": "武神強化(針山五)",
+      "Explanation": "武神毛利元就の受ける状態異常,後退効果を無効\n射程,攻撃対象数が増加,被ダメージ大幅軽減"
+    },
+    {
+      "ID": 1075,
+      "SingiSetDetailParameter": 1075,
+      "Name": "攻撃対象数低下",
+      "Explanation": "味方の攻撃対象数が1に低下\n※射程内全敵攻撃を行う武器種は除く"
+    },
+    {
+      "ID": 1076,
+      "SingiSetDetailParameter": 1076,
+      "Name": "ダメージ軽減(大)",
+      "Explanation": "敵が被ダメージを50％軽減"
+    },
+    {
+      "ID": 1077,
+      "SingiSetDetailParameter": 1077,
+      "Name": "与ダメージ半減",
+      "Explanation": "味方の与ダメージが50％低下"
+    },
+    {
+      "ID": 1078,
+      "SingiSetDetailParameter": 1078,
+      "Name": "特定の敵強化",
+      "Explanation": "特定の敵【司録神・司命神】の\n耐久,防御が上昇,毎秒耐久が回復"
+    },
+    {
+      "ID": 1079,
+      "SingiSetDetailParameter": 1079,
+      "Name": "移動速度上昇",
+      "Explanation": "敵の移動速度が75％上昇"
+    },
+    {
+      "ID": 1080,
+      "SingiSetDetailParameter": 1080,
+      "Name": "閻魔庁強化",
+      "Explanation": "敵で出現する閻魔庁の\n攻撃,耐久,防御,攻撃対象数が上昇"
+    },
+    {
+      "ID": 1081,
+      "SingiSetDetailParameter": 1081,
+      "Name": "閻魔庁・伏兵強化",
+      "Explanation": "閻魔庁の耐久,防御,与ダメージが上昇,攻撃対象数が上昇\n司録神・司命神の耐久が上昇,被ダメージを50％軽減"
+    },
+    {
+      "ID": 1082,
+      "SingiSetDetailParameter": 1082,
+      "Name": "与ダメージ回復",
+      "Explanation": "敵が与えたダメージの1.5倍分の耐久を回復"
+    },
+    {
+      "ID": 1085,
+      "SingiSetDetailParameter": 1085,
+      "Name": "閻魔大王強化",
+      "Explanation": "閻魔大王の受ける状態異常,足止め,後退効果を無効\n耐久,攻撃,防御,攻撃対象数が上昇/攻撃後の隙短縮"
+    },
+    {
+      "ID": 1086,
+      "SingiSetDetailParameter": 1086,
+      "Name": "浄玻璃鏡強化",
+      "Explanation": "浄玻璃鏡に毎秒耐久回復500の効果付与\n耐久上昇,反射ダメージの割合が1.3倍に上昇"
+    },
+    {
+      "ID": 1087,
+      "SingiSetDetailParameter": 1087,
+      "Name": "巨大化阻害(獄)",
+      "Explanation": "巨大化消費気50％,自動巨大化時間大幅増加\n対象：地獄城以外"
+    },
+    {
+      "ID": 1088,
+      "SingiSetDetailParameter": 1088,
+      "Name": "地形不適合(山城)",
+      "Explanation": "山城以外の城娘に継続大ダメージ発生"
+    },
+    {
+      "ID": 1089,
+      "SingiSetDetailParameter": 1089,
+      "Name": "地形不適合(水城)",
+      "Explanation": "水城以外の城娘に継続大ダメージ発生"
+    },
+    {
+      "ID": 1090,
+      "SingiSetDetailParameter": 1090,
+      "Name": "地形不適合(平城)",
+      "Explanation": "平城以外の城娘に継続大ダメージ発生"
+    },
+    {
+      "ID": 1091,
+      "SingiSetDetailParameter": 1091,
+      "Name": "地形不適合(平山)",
+      "Explanation": "平山城以外の城娘に継続大ダメージ発生"
+    },
+    {
+      "ID": 1092,
+      "SingiSetDetailParameter": 1092,
+      "Name": "地形不適合(地獄)",
+      "Explanation": "地獄城以外の城娘の与ダメージが50％低下\n攻撃の上昇効果無効"
+    },
+    {
+      "ID": 1093,
+      "SingiSetDetailParameter": 1093,
+      "Name": "撃破気獲得制限",
+      "Explanation": "通常時の敵撃破時に獲得できる気が0になる\n※撃破時獲得気増加が付与されている場合を除く\n"
+    },
+    {
+      "ID": 1094,
+      "SingiSetDetailParameter": 1094,
+      "Name": "妖怪強化(焦熱六)",
+      "Explanation": "特定武器種からのダメージを50％軽減,後退効果を無効\n対象：弓,石弓,鉄砲,大砲,投剣"
+    },
+    {
+      "ID": 1095,
+      "SingiSetDetailParameter": 1095,
+      "Name": "武神強化(焦熱六)",
+      "Explanation": "武神前田利家の受ける状態異常,後退効果を無効\n耐久,防御,射程,与ダメージが上昇"
+    },
+    {
+      "ID": 1096,
+      "SingiSetDetailParameter": 1096,
+      "Name": "術攻撃与ダメ低下",
+      "Explanation": "城娘の術攻撃属性のダメージが50％低下"
+    },
+    {
+      "ID": 1097,
+      "SingiSetDetailParameter": 1097,
+      "Name": "特定武器種不適合",
+      "Explanation": "特定武器種の味方に継続大ダメージ発生\n対象：大砲,拳,本,投剣,鞭"
+    },
+    {
+      "ID": 1098,
+      "SingiSetDetailParameter": 1098,
+      "Name": "武神強化(極寒六)",
+      "Explanation": "武神黒田長政の受ける状態異常,後退効果を無効\n耐久が上昇,攻撃3000未満のダメージを無効化"
+    },
+    {
+      "ID": 1099,
+      "SingiSetDetailParameter": 1099,
+      "Name": "武神強化(等活六)",
+      "Explanation": "武神石田三成の受ける状態異常,後退効果を無効\n耐久,攻撃,回復,攻撃速度が上昇,攻撃後の隙短縮"
+    },
+    {
+      "ID": 1100,
+      "SingiSetDetailParameter": 1100,
+      "Name": "計略消費気倍増",
+      "Explanation": "計略の消費気が5倍に増加"
+    },
+    {
+      "ID": 1101,
+      "SingiSetDetailParameter": 1101,
+      "Name": "通常攻撃低下",
+      "Explanation": "味方の通常攻撃のダメージが90％低下"
+    },
+    {
+      "ID": 1102,
+      "SingiSetDetailParameter": 1102,
+      "Name": "武神強化(針山六)",
+      "Explanation": "武神毛利元就の受ける状態異常,後退効果を無効\n耐久,防御,移動速度,攻撃対象数が上昇"
+    },
+    {
+      "ID": 1103,
+      "SingiSetDetailParameter": 1103,
+      "Name": "与ダメ減(針山六)",
+      "Explanation": "城娘の術攻撃属性の与ダメージが90％低下\n計略の与ダメージが90％低下"
+    },
+    {
+      "ID": 1104,
+      "SingiSetDetailParameter": 1104,
+      "Name": "針式兜強化",
+      "Explanation": "攻撃,移動速度が上昇,被ダメージを50％軽減\n対象の敵：針式一ノ谷形兜,針式毛虫形兜"
+    },
+    {
+      "ID": 1105,
+      "SingiSetDetailParameter": 1105,
+      "Name": "武器種制限(計略)",
+      "Explanation": "通常攻撃を行わない武器種の計略使用不可\n対象：歌舞,本,陣貝,茶器　※妖怪への攻撃を除く"
+    },
+    {
+      "ID": 1106,
+      "SingiSetDetailParameter": 1106,
+      "Name": "敵味方被ダメ増減",
+      "Explanation": "敵の被ダメージが50％軽減\n味方の被ダメージが50％上昇"
+    },
+    {
+      "ID": 1107,
+      "SingiSetDetailParameter": 1107,
+      "Name": "近接巨大化気増加",
+      "Explanation": "近接武器種の巨大化消費気が3倍に増加"
+    },
+    {
+      "ID": 1108,
+      "SingiSetDetailParameter": 1108,
+      "Name": "妖怪強化(等活四)",
+      "Explanation": "妖怪の与ダメージが50％上昇\n被ダメージを50％軽減"
+    },
+    {
+      "ID": 1109,
+      "SingiSetDetailParameter": 1109,
+      "Name": "計略制限(針山四)",
+      "Explanation": "遠隔武器種の計略使用不可\n※通常攻撃が術攻撃の武器種除く"
+    },
+    {
+      "ID": 1110,
+      "SingiSetDetailParameter": 1110,
+      "Name": "全敵強化(極寒四)",
+      "Explanation": "敵の後退効果を無効,与ダメージが50％上昇\n術攻撃属性のダメージを75％軽減"
+    },
+    {
+      "ID": 1111,
+      "SingiSetDetailParameter": 1111,
+      "Name": "ダメージ発生(獄)",
+      "Explanation": "20秒毎に地獄城娘以外に最大耐久100％ダメージ\n※被ダメージ軽減効果有効"
+    },
+    {
+      "ID": 1112,
+      "SingiSetDetailParameter": 1112,
+      "Name": "特定武器種反射",
+      "Explanation": "敵が攻撃を受けた際に1.5倍で反射する\n条件：固定装備武器種以外の攻撃"
+    },
+    {
+      "ID": 1114,
+      "SingiSetDetailParameter": 1114,
+      "Name": "攻撃拡散範囲低下",
+      "Explanation": "味方の範囲攻撃の範囲が90％低下"
+    },
+    {
+      "ID": 1115,
+      "SingiSetDetailParameter": 1115,
+      "Name": "術攻撃反射",
+      "Explanation": "敵が術攻撃を受けた際に2倍で反射する"
+    },
+    {
+      "ID": 1116,
+      "SingiSetDetailParameter": 1116,
+      "Name": "被ダメ変動(敵)",
+      "Explanation": "敵が受ける計略のダメージが50％低下\n通常攻撃での被ダメージが50％上昇"
+    },
+    {
+      "ID": 1117,
+      "SingiSetDetailParameter": 1117,
+      "Name": "敵味方攻撃低下",
+      "Explanation": "敵味方共に攻撃が50％低下"
+    },
+    {
+      "ID": 1118,
+      "SingiSetDetailParameter": 1118,
+      "Name": "与ダメ変動(味方)",
+      "Explanation": "味方の術属性の与ダメージが75％上昇\n物理ダメージの与ダメージが75％低下"
+    },
+    {
+      "ID": 1119,
+      "SingiSetDetailParameter": 1119,
+      "Name": "全敵強化(極寒二)",
+      "Explanation": "敵の与ダメージが30％上昇\n被ダメージが30％軽減"
+    },
+    {
+      "ID": 1120,
+      "SingiSetDetailParameter": 1120,
+      "Name": "敵防衛強化",
+      "Explanation": "敵が遠隔武器種から受けるダメージを90％軽減\n防御,毎秒耐久回復の効果が250上昇"
+    },
+    {
+      "ID": 1121,
+      "SingiSetDetailParameter": 1121,
+      "Name": "獄卒強化",
+      "Explanation": "各獄卒の耐久,攻撃が上昇,毎秒耐久回復効果を付与\n対象：獄卒長(牛頭/馬頭),獄卒鬼,獄卒龍"
+    },
+    {
+      "ID": 1122,
+      "SingiSetDetailParameter": 1122,
+      "Name": "閻魔大王・影強化",
+      "Explanation": "閻魔大王とその影,[裏]大宰府の影の攻撃後の隙短縮\n与ダメージが50％上昇,被ダメージを50％軽減"
+    },
+    {
+      "ID": 1123,
+      "SingiSetDetailParameter": 1123,
+      "Name": "術攻撃看破",
+      "Explanation": "対象からの術攻撃ダメージを90％軽減,300％で反射\n対象：通常攻撃が物理攻撃の武器種"
+    },
+    {
+      "ID": 1124,
+      "SingiSetDetailParameter": 1124,
+      "Name": "兜ダメ変動倍化",
+      "Explanation": "兜の与ダメージが25％低下する代わりに\n被ダメージを50％軽減"
+    },
+    {
+      "ID": 1125,
+      "SingiSetDetailParameter": 1125,
+      "Name": "閻魔・妖怪活性",
+      "Explanation": "妖怪の耐久,攻撃,防御が25％上昇,回復250付与\n閻魔大王のみ更に耐久,攻撃が上昇,回復250付与"
+    },
+    {
+      "ID": 1126,
+      "SingiSetDetailParameter": 1126,
+      "Name": "無間地獄 七(小)",
+      "Explanation": "全ての敵の被ダメージ10％軽減\n与ダメージ10％上昇"
+    },
+    {
+      "ID": 1127,
+      "SingiSetDetailParameter": 1127,
+      "Name": "無間地獄 七(中)",
+      "Explanation": "全ての敵の被ダメージ30％軽減\n与ダメージ30％上昇"
+    },
+    {
+      "ID": 1128,
+      "SingiSetDetailParameter": 1128,
+      "Name": "近接被ダメージ増",
+      "Explanation": "近接城娘の被ダメージが50％上昇"
+    },
+    {
+      "ID": 1129,
+      "SingiSetDetailParameter": 1129,
+      "Name": "味方防御低下",
+      "Explanation": "味方の防御が70％低下"
+    },
+    {
+      "ID": 1130,
+      "SingiSetDetailParameter": 1130,
+      "Name": "遠隔巨大化阻害",
+      "Explanation": "遠隔城娘の巨大化消費気が50％増加"
+    },
+    {
+      "ID": 1131,
+      "SingiSetDetailParameter": 1131,
+      "Name": "味方耐久半減",
+      "Explanation": "味方の最大耐久が50％低下"
+    },
+    {
+      "ID": 1132,
+      "SingiSetDetailParameter": 1132,
+      "Name": "敵射程増加",
+      "Explanation": "敵の射程が1.2倍"
+    },
+    {
+      "ID": 1133,
+      "SingiSetDetailParameter": 1133,
+      "Name": "味方攻撃速度低下",
+      "Explanation": "味方の攻撃速度が50％低下"
+    },
+    {
+      "ID": 1134,
+      "SingiSetDetailParameter": 1134,
+      "Name": "兜被ダメ変動",
+      "Explanation": "敵の物理攻撃の被ダメージが75％軽減\n術攻撃による被ダメージが50％上昇"
+    },
+    {
+      "ID": 1135,
+      "SingiSetDetailParameter": 1135,
+      "Name": "海洋兜活性",
+      "Explanation": "海洋兜の射程,防御,移動速度が30％上昇"
+    },
+    {
+      "ID": 1136,
+      "SingiSetDetailParameter": 1136,
+      "Name": "術被ダメージ軽減",
+      "Explanation": "全ての敵が術攻撃による被ダメージを50％軽減"
+    },
+    {
+      "ID": 1137,
+      "SingiSetDetailParameter": 1137,
+      "Name": "全敵反撃",
+      "Explanation": "敵が攻撃を受けた際に攻撃の1.5倍で反撃を行う"
+    },
+    {
+      "ID": 1138,
+      "SingiSetDetailParameter": 1138,
+      "Name": "敵攻撃強化",
+      "Explanation": "敵の攻撃に回復の4倍の値を加算"
+    },
+    {
+      "ID": 1139,
+      "SingiSetDetailParameter": 1139,
+      "Name": "蔵優先攻撃",
+      "Explanation": "蔵が敵の優先攻撃対象になる"
+    },
+    {
+      "ID": 1140,
+      "SingiSetDetailParameter": 1140,
+      "Name": "計略消費気増加",
+      "Explanation": "計略の消費気が2倍に増加"
+    },
+    {
+      "ID": 1141,
+      "SingiSetDetailParameter": 1141,
+      "Name": "移動速度上昇",
+      "Explanation": "全ての敵の移動速度が2倍"
+    },
+    {
+      "ID": 1142,
+      "SingiSetDetailParameter": 1142,
+      "Name": "遠隔被ダメージ増",
+      "Explanation": "遠隔城娘の被ダメージが50％上昇"
+    },
+    {
+      "ID": 1143,
+      "SingiSetDetailParameter": 1143,
+      "Name": "術被ダメージ増加",
+      "Explanation": "味方が術攻撃で受けるダメージが75％増加"
+    },
+    {
+      "ID": 1144,
+      "SingiSetDetailParameter": 1144,
+      "Name": "遠隔攻撃低下",
+      "Explanation": "遠隔城娘の攻撃が50％低下"
+    },
+    {
+      "ID": 1145,
+      "SingiSetDetailParameter": 1145,
+      "Name": "動物兜活性",
+      "Explanation": "動物兜の射程が30％上昇\n攻撃後の隙が50％短縮"
+    },
+    {
+      "ID": 1146,
+      "SingiSetDetailParameter": 1146,
+      "Name": "敵味方射程減",
+      "Explanation": "敵味方共に射程が30％低下"
+    },
+    {
+      "ID": 1147,
+      "SingiSetDetailParameter": 1147,
+      "Name": "妖怪撃破気無効",
+      "Explanation": "妖怪と特定の敵が出現させる敵の\n撃破時に獲得できる気が0になる"
+    },
+    {
+      "ID": 1148,
+      "SingiSetDetailParameter": 1148,
+      "Name": "城娘性能変動",
+      "Explanation": "計略の消費気が2倍に増加\n城娘の再配置時間を20％短縮"
+    },
+    {
+      "ID": 1149,
+      "SingiSetDetailParameter": 1149,
+      "Name": "妖怪活性",
+      "Explanation": "妖怪の耐久,移動速度,与ダメージが50％上昇\n後退効果無効"
+    },
+    {
+      "ID": 1150,
+      "SingiSetDetailParameter": 1150,
+      "Name": "術ダメージ軽減",
+      "Explanation": "全ての敵が術攻撃による被ダメージを90％軽減"
+    },
+    {
+      "ID": 1151,
+      "SingiSetDetailParameter": 1151,
+      "Name": "敵味方射程変動",
+      "Explanation": "全ての敵の射程が20％上昇\n城娘の射程が20％低下"
+    },
+    {
+      "ID": 1152,
+      "SingiSetDetailParameter": 1152,
+      "Name": "敵・城娘性能変動",
+      "Explanation": "城娘の計略の効果範囲が50％低下\n全ての敵の受ける状態異常を無効"
+    },
+    {
+      "ID": 1153,
+      "SingiSetDetailParameter": 1153,
+      "Name": "攻撃隙・射程変動",
+      "Explanation": "敵の攻撃後の隙が50％短縮\n敵味方全ての射程が30％低下"
+    },
+    {
+      "ID": 1154,
+      "SingiSetDetailParameter": 1154,
+      "Name": "遠隔武器種軽減",
+      "Explanation": "敵が遠隔武器種からのダメージを90％軽減\n"
+    },
+    {
+      "ID": 1155,
+      "SingiSetDetailParameter": 1155,
+      "Name": "飛行活性",
+      "Explanation": "飛行敵の移動速度が50％上昇\n撃破時に獲得できる気が0になる"
+    },
+    {
+      "ID": 1156,
+      "SingiSetDetailParameter": 1156,
+      "Name": "城娘性能低下",
+      "Explanation": "遠隔城娘の攻撃が50％低下\n近接城娘の被ダメージが50％上昇"
+    },
+    {
+      "ID": 1157,
+      "SingiSetDetailParameter": 1157,
+      "Name": "敵城娘・兜強化",
+      "Explanation": "裏大宰府・裏大宰府(影)・兜の\n耐久,攻撃,防御が25％上昇"
+    },
+    {
+      "ID": 1158,
+      "SingiSetDetailParameter": 1158,
+      "Name": "全敵防御強化",
+      "Explanation": "全ての敵の防御が30％上昇"
+    },
+    {
+      "ID": 1159,
+      "SingiSetDetailParameter": 1159,
+      "Name": "近接攻撃上昇無効",
+      "Explanation": "近接城娘の攻撃上昇効果無効"
+    },
+    {
+      "ID": 1160,
+      "SingiSetDetailParameter": 1160,
+      "Name": "近接耐久減少",
+      "Explanation": "近接城娘の耐久が50％低下"
+    },
+    {
+      "ID": 1161,
+      "SingiSetDetailParameter": 1161,
+      "Name": "敵味方性能変動",
+      "Explanation": "近接城娘の耐久が25％低下\n全ての敵の耐久が25％上昇"
+    },
+    {
+      "ID": 1162,
+      "SingiSetDetailParameter": 1162,
+      "Name": "近接被ダメ増加",
+      "Explanation": "近接城娘の被ダメージが50％上昇"
+    },
+    {
+      "ID": 1163,
+      "SingiSetDetailParameter": 1163,
+      "Name": "計略気増加(近接)",
+      "Explanation": "近接城娘の計略消費気が2倍に増加"
+    },
+    {
+      "ID": 1165,
+      "SingiSetDetailParameter": 1165,
+      "Name": "近接攻撃隙延長",
+      "Explanation": "近接城娘の攻撃後の隙が30％延長"
+    },
+    {
+      "ID": 1171,
+      "SingiSetDetailParameter": 1171,
+      "Name": "賽の河原(小)",
+      "Explanation": "近接マスにのみ配置可能な武器種の耐久,\n攻撃が10％低下,被ダメージが10％上昇"
+    },
+    {
+      "ID": 1172,
+      "SingiSetDetailParameter": 1172,
+      "Name": "賽の河原(中)",
+      "Explanation": "近接マスにのみ配置可能な武器種の耐久,\n攻撃が20％低下,被ダメージが20％上昇"
+    },
+    {
+      "ID": 1173,
+      "SingiSetDetailParameter": 1173,
+      "Name": "武器種阻害(近接)",
+      "Explanation": "近接マスにのみ配置可能な武器種の\n巨大化消費気が30％増加"
+    },
+    {
+      "ID": 1174,
+      "SingiSetDetailParameter": 1174,
+      "Name": "近接・伏兵制限",
+      "Explanation": "近接城娘の射程が25％低下\n伏兵の射程が50％低下"
+    },
+    {
+      "ID": 1175,
+      "SingiSetDetailParameter": 1175,
+      "Name": "全敵耐久強化",
+      "Explanation": "全ての敵の耐久が100％上昇"
+    },
+    {
+      "ID": 1176,
+      "SingiSetDetailParameter": 1176,
+      "Name": "城娘性能変動",
+      "Explanation": "近接城娘の被ダメージが50％上昇,再配置時間延長\n気還元率低下,計略消費気を減少"
+    },
+    {
+      "ID": 1177,
+      "SingiSetDetailParameter": 1177,
+      "Name": "後退状態異常無効",
+      "Explanation": "全ての敵の状態異常,後退効果を無効"
+    },
+    {
+      "ID": 1178,
+      "SingiSetDetailParameter": 1178,
+      "Name": "計略弱化",
+      "Explanation": "範囲を指定してダメージを与える計略の範囲とダメ\nージが90％低下"
+    },
+    {
+      "ID": 1179,
+      "SingiSetDetailParameter": 1179,
+      "Name": "敵性能強化",
+      "Explanation": "全ての敵の攻撃と攻撃速度を50％上昇"
+    },
+    {
+      "ID": 1180,
+      "SingiSetDetailParameter": 1180,
+      "Name": "近接計略制限",
+      "Explanation": "近接城娘の計略使用時間が50％延長"
+    },
+    {
+      "ID": 1181,
+      "SingiSetDetailParameter": 1181,
+      "Name": "ボス以外強化",
+      "Explanation": "菩薩以外の敵の耐久,攻撃,防御を50％上昇\n"
+    },
+    {
+      "ID": 1182,
+      "SingiSetDetailParameter": 1182,
+      "Name": "近接弱体化",
+      "Explanation": "近接城娘の攻撃,射程が50％低下"
+    },
+    {
+      "ID": 1183,
+      "SingiSetDetailParameter": 1183,
+      "Name": "ボス強化",
+      "Explanation": "菩薩の耐久,攻撃が上昇,攻撃後の隙が短縮\n1000以下のダメージを無効,回復を300上昇"
+    },
+    {
+      "ID": 1184,
+      "SingiSetDetailParameter": 1184,
+      "Name": "焦熱地獄(大)",
+      "Explanation": "一定時間毎に現在耐久10％分の継続ダメージ発生\n対象：城娘/伏兵"
+    },
+    {
+      "ID": 1185,
+      "SingiSetDetailParameter": 1185,
+      "Name": "極寒地獄(大)",
+      "Explanation": "遠隔武器種の射程が75％低下\n※遠近両用武器種を除く"
+    },
+    {
+      "ID": 1186,
+      "SingiSetDetailParameter": 1186,
+      "Name": "等活地獄 七(大)",
+      "Explanation": "全ての敵に毎秒耐久回復200の効果を付与"
+    },
+    {
+      "ID": 1187,
+      "SingiSetDetailParameter": 1187,
+      "Name": "針山地獄(大)",
+      "Explanation": "全ての敵の与ダメージが75％上昇"
+    },
+    {
+      "ID": 1188,
+      "SingiSetDetailParameter": 1188,
+      "Name": "賽の河原(大)",
+      "Explanation": "近接マスにのみ配置可能な武器種の耐久,\n攻撃が40％低下,被ダメージが40％上昇"
+    },
+    {
+      "ID": 1189,
+      "SingiSetDetailParameter": 1189,
+      "Name": "城娘性能変動",
+      "Explanation": "通常攻撃が近接の武器種の射程上昇効果無効,再配置\n時間延長,遠隔の攻撃上昇効果無効,気還元率低下"
+    },
+    {
+      "ID": 1190,
+      "SingiSetDetailParameter": 1190,
+      "Name": "城娘弱体",
+      "Explanation": "城娘の与ダメージが25％低下,近接城娘の計略消費\n気3倍,遠隔城娘の計略再使用時間延長"
+    },
+    {
+      "ID": 1191,
+      "SingiSetDetailParameter": 1191,
+      "Name": "敵味方回復変動",
+      "Explanation": "一部を除く殿側ユニットの被回復量を50％低下\n全ての敵の回復を200上昇"
+    },
+    {
+      "ID": 1192,
+      "SingiSetDetailParameter": 1192,
+      "Name": "全敵強化",
+      "Explanation": "全ての敵の後退効果と移動速度低下効果無効\n被ダメ50％軽減,被術ダメージは75％軽減"
+    },
+    {
+      "ID": 1193,
+      "SingiSetDetailParameter": 1193,
+      "Name": "武神強化(焦熱七)",
+      "Explanation": "武神前田利家の受ける状態異常,後退,足止めを無効\n耐久,防御,射程,与ダメージが上昇"
+    },
+    {
+      "ID": 1194,
+      "SingiSetDetailParameter": 1194,
+      "Name": "地獄城以外阻害",
+      "Explanation": "地獄城以外の受ける射程上昇効果を無効"
+    },
+    {
+      "ID": 1195,
+      "SingiSetDetailParameter": 1195,
+      "Name": "継続ダメ・回復増",
+      "Explanation": "一部を除く敵味方両方の受ける回復量が2倍,城娘と\n伏兵に一定時間毎に現在耐久5％分の継続ダメージ発生"
+    },
+    {
+      "ID": 1196,
+      "SingiSetDetailParameter": 1196,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜と妖怪以外の耐久を150％上昇,後退無効"
+    },
+    {
+      "ID": 1197,
+      "SingiSetDetailParameter": 1197,
+      "Name": "気回復・消費変動",
+      "Explanation": "気の自然回復量が50％低下,城娘の射程内に自身以外\nの殿側ユニットがいない場合,巨大化消費気が2倍"
+    },
+    {
+      "ID": 1198,
+      "SingiSetDetailParameter": 1198,
+      "Name": "黒田長政強化(七)",
+      "Explanation": "【変化】黒田長政の耐久,防御が上昇,後退無効\n武神は耐久,防御,与ダメ上昇,状態異常と後退無効"
+    },
+    {
+      "ID": 1200,
+      "SingiSetDetailParameter": 1200,
+      "Name": "性能強化(小)普通",
+      "Explanation": "全ての敵の耐久,攻撃,防御が1.1倍"
+    },
+    {
+      "ID": 1201,
+      "SingiSetDetailParameter": 1201,
+      "Name": "性能強化(中)普通",
+      "Explanation": "全ての敵の耐久,攻撃,防御が1.3倍"
+    },
+    {
+      "ID": 1202,
+      "SingiSetDetailParameter": 1202,
+      "Name": "性能強化(大)普通",
+      "Explanation": "全ての敵の耐久,攻撃,防御が1.5倍"
+    },
+    {
+      "ID": 1203,
+      "SingiSetDetailParameter": 1203,
+      "Name": "性能強化(小)難",
+      "Explanation": "全ての敵の耐久,攻撃,防御が1.25倍"
+    },
+    {
+      "ID": 1204,
+      "SingiSetDetailParameter": 1204,
+      "Name": "性能強化(中)難",
+      "Explanation": "全ての敵の耐久,攻撃,防御が1.5倍"
+    },
+    {
+      "ID": 1205,
+      "SingiSetDetailParameter": 1205,
+      "Name": "性能強化(大)難",
+      "Explanation": "全ての敵の耐久,攻撃,防御が1.75倍"
+    },
+    {
+      "ID": 1206,
+      "SingiSetDetailParameter": 1206,
+      "Name": "性能強化(小)超難",
+      "Explanation": "全ての敵の耐久,攻撃,防御が1.3倍"
+    },
+    {
+      "ID": 1207,
+      "SingiSetDetailParameter": 1207,
+      "Name": "性能強化(中)超難",
+      "Explanation": "全ての敵の耐久,攻撃,防御が1.65倍"
+    },
+    {
+      "ID": 1208,
+      "SingiSetDetailParameter": 1208,
+      "Name": "性能強化(大)超難",
+      "Explanation": "全ての敵の耐久,攻撃,防御が2倍"
+    },
+    {
+      "ID": 1209,
+      "SingiSetDetailParameter": 1209,
+      "Name": "ムスペルヘイム小",
+      "Explanation": "巨大化兜の移動速度変更効果を無効"
+    },
+    {
+      "ID": 1210,
+      "SingiSetDetailParameter": 1210,
+      "Name": "ムスペルヘイム中",
+      "Explanation": "巨大化兜の移動速度変更,低下効果を無効"
+    },
+    {
+      "ID": 1211,
+      "SingiSetDetailParameter": 1211,
+      "Name": "ニヴルヘイム小",
+      "Explanation": "一定時間毎に最大耐久3％分の継続ダメージ発生\n対象：城娘"
+    },
+    {
+      "ID": 1212,
+      "SingiSetDetailParameter": 1212,
+      "Name": "ニヴルヘイム中",
+      "Explanation": "一定時間毎に最大耐久5％分の継続ダメージ発生\n対象：城娘"
+    },
+    {
+      "ID": 1213,
+      "SingiSetDetailParameter": 1213,
+      "Name": "ニザヴェッリル小",
+      "Explanation": "縮小化した敵の移動速度15％上昇"
+    },
+    {
+      "ID": 1214,
+      "SingiSetDetailParameter": 1214,
+      "Name": "ニザヴェッリル中",
+      "Explanation": "縮小化した敵の移動速度30％上昇"
+    },
+    {
+      "ID": 1215,
+      "SingiSetDetailParameter": 1215,
+      "Name": "ヴァルハラ小",
+      "Explanation": "エインヘリャルが受ける攻撃,防御低下,変更効果を無効"
+    },
+    {
+      "ID": 1216,
+      "SingiSetDetailParameter": 1216,
+      "Name": "ヴァルハラ中",
+      "Explanation": "エインヘリャルが受ける攻撃,防御低下,変更効果を無効\n全ての状態異常を無効"
+    },
+    {
+      "ID": 1217,
+      "SingiSetDetailParameter": 1217,
+      "Name": "ヘルヘイム小",
+      "Explanation": "敵味方共に与ダメージが15％低下"
+    },
+    {
+      "ID": 1218,
+      "SingiSetDetailParameter": 1218,
+      "Name": "ヘルヘイム中",
+      "Explanation": "敵味方共に与ダメージが30％低下"
+    },
+    {
+      "ID": 1219,
+      "SingiSetDetailParameter": 1219,
+      "Name": "攻撃大幅増強",
+      "Explanation": "敵の攻撃が大幅に上昇"
+    },
+    {
+      "ID": 1220,
+      "SingiSetDetailParameter": 1220,
+      "Name": "巨大化兜強化(二)",
+      "Explanation": "巨大化兜の防御が0になる代わりに\n攻撃2500未満のダメージを無効化"
+    },
+    {
+      "ID": 1221,
+      "SingiSetDetailParameter": 1221,
+      "Name": "大将兜強化",
+      "Explanation": "藤堂高虎の耐久,攻撃,防御上昇\n移動速度低下効果無効"
+    },
+    {
+      "ID": 1222,
+      "SingiSetDetailParameter": 1222,
+      "Name": "ムスペル(小)強化",
+      "Explanation": "ムスペル(小)の攻撃対象が増加,攻撃低下無効\n攻撃,防御が上昇する代わりに被ダメージが上昇"
+    },
+    {
+      "ID": 1223,
+      "SingiSetDetailParameter": 1223,
+      "Name": "伏兵不適合",
+      "Explanation": "伏兵に継続大ダメージ発生"
+    },
+    {
+      "ID": 1224,
+      "SingiSetDetailParameter": 1224,
+      "Name": "遠隔攻撃軽減",
+      "Explanation": "敵が遠隔武器種から受けるダメージを75％軽減"
+    },
+    {
+      "ID": 1225,
+      "SingiSetDetailParameter": 1225,
+      "Name": "炎熱ダメージ",
+      "Explanation": "一定時間毎に最大耐久2％分の継続ダメージ発生\n対象：城娘/伏兵"
+    },
+    {
+      "ID": 1226,
+      "SingiSetDetailParameter": 1226,
+      "Name": "ボス強化",
+      "Explanation": "ムスペルの射程,耐久が上昇,攻撃後の隙が短縮\n火傷,氷結,後退効果を無効"
+    },
+    {
+      "ID": 1227,
+      "SingiSetDetailParameter": 1227,
+      "Name": "毒蔓延",
+      "Explanation": "一定時間毎に最大耐久10％分の継続ダメージ発生\n対象：城娘"
+    },
+    {
+      "ID": 1228,
+      "SingiSetDetailParameter": 1228,
+      "Name": "猛撃強化",
+      "Explanation": "敵の与ダメージが100％上昇,攻撃後の隙が50％短縮\n攻撃が防御を無視する"
+    },
+    {
+      "ID": 1229,
+      "SingiSetDetailParameter": 1229,
+      "Name": "大将兜強化",
+      "Explanation": "山県昌景の耐久,攻撃が上昇,後退効果を無効\n与えたダメージ分の耐久を回復"
+    },
+    {
+      "ID": 1230,
+      "SingiSetDetailParameter": 1230,
+      "Name": "氷結効果",
+      "Explanation": "一定時間毎に1000ダメージ\n対象：遠隔武器種の城娘(遠近両用武器種を除く)"
+    },
+    {
+      "ID": 1231,
+      "SingiSetDetailParameter": 1231,
+      "Name": "敵味方与ダメ減少",
+      "Explanation": "敵味方ともに与ダメージが50％低下"
+    },
+    {
+      "ID": 1232,
+      "SingiSetDetailParameter": 1232,
+      "Name": "性能増強(中)",
+      "Explanation": "敵の耐久,攻撃,防御が75％上昇"
+    },
+    {
+      "ID": 1233,
+      "SingiSetDetailParameter": 1233,
+      "Name": "ボス強化",
+      "Explanation": "ニーズヘッグの耐久,攻撃が上昇\n被ダメージを軽減,猛毒,氷結を無効化"
+    },
+    {
+      "ID": 1234,
+      "SingiSetDetailParameter": 1234,
+      "Name": "トロッコ敵強化",
+      "Explanation": "トロッコ敵の被ダメージ90％軽減\n与ダメージ90％上昇,自爆時に対象の防御を無視"
+    },
+    {
+      "ID": 1235,
+      "SingiSetDetailParameter": 1235,
+      "Name": "物理ダメージ反射",
+      "Explanation": "敵が物理攻撃を受けた際に反射ダメージを与える"
+    },
+    {
+      "ID": 1236,
+      "SingiSetDetailParameter": 1236,
+      "Name": "大将兜強化",
+      "Explanation": "福島正則の耐久,攻撃が上昇\n被ダメージを軽減,移動速度が上昇"
+    },
+    {
+      "ID": 1237,
+      "SingiSetDetailParameter": 1237,
+      "Name": "敵味方貫通強化",
+      "Explanation": "敵味方共に攻撃時に対象の防御を無視する"
+    },
+    {
+      "ID": 1238,
+      "SingiSetDetailParameter": 1238,
+      "Name": "敵味方ダメ変動",
+      "Explanation": "敵が城娘から受けるダメージを75％軽減\n伏兵の敵への与ダメージが150％上昇"
+    },
+    {
+      "ID": 1239,
+      "SingiSetDetailParameter": 1239,
+      "Name": "撃破気獲得制限",
+      "Explanation": "敵撃破時に獲得できる気が0(宝石トロッコ除く)\n※撃破時獲得気増加が付与されている場合を除く\n"
+    },
+    {
+      "ID": 1240,
+      "SingiSetDetailParameter": 1240,
+      "Name": "特定外射程減少",
+      "Explanation": "敵味方ともに射程が75％低下\n※遠隔のみ配置可能な武器種/ファヴニールを除く"
+    },
+    {
+      "ID": 1241,
+      "SingiSetDetailParameter": 1241,
+      "Name": "ボス強化",
+      "Explanation": "ファヴニールの耐久,移動速度上昇,与ダメージ分回復\n通常攻撃の被ダメージ軽減/麻痺,火傷,足止め無効"
+    },
+    {
+      "ID": 1242,
+      "SingiSetDetailParameter": 1242,
+      "Name": "刀以外大幅軽減",
+      "Explanation": "敵が武器種刀を除く城娘からの被ダメージを90％軽減"
+    },
+    {
+      "ID": 1243,
+      "SingiSetDetailParameter": 1243,
+      "Name": "敵防衛強化",
+      "Explanation": "敵の防御が200％上昇,被ダメージを50％軽減"
+    },
+    {
+      "ID": 1244,
+      "SingiSetDetailParameter": 1244,
+      "Name": "大将兜強化",
+      "Explanation": "蒲生氏郷の与ダメージ上昇,攻撃対象数が1上昇\n移動速度変更,後退無効,与ダメージ半分の耐久回復"
+    },
+    {
+      "ID": 1245,
+      "SingiSetDetailParameter": 1245,
+      "Name": "遠隔射程半減",
+      "Explanation": "遠隔武器種の射程が50％低下"
+    },
+    {
+      "ID": 1246,
+      "SingiSetDetailParameter": 1246,
+      "Name": "敵被ダメ変動",
+      "Explanation": "敵が受ける計略のダメージが50％低下\n通常攻撃での被ダメージが50％上昇"
+    },
+    {
+      "ID": 1247,
+      "SingiSetDetailParameter": 1247,
+      "Name": "全兜強化",
+      "Explanation": "全ての兜が法術,杖,鈴,祓串からのダメージを90％軽減\n与ダメージ,防御上昇,西洋兜のみ防御が更に上昇"
+    },
+    {
+      "ID": 1248,
+      "SingiSetDetailParameter": 1248,
+      "Name": "防御参照攻撃",
+      "Explanation": "一部を除く城娘の攻撃が配置前の防御の値になる"
+    },
+    {
+      "ID": 1249,
+      "SingiSetDetailParameter": 1249,
+      "Name": "ボス強化",
+      "Explanation": "セーフリームニルの防御,耐久,与ダメージが上昇\n移動速度低下,変更を無効"
+    },
+    {
+      "ID": 1250,
+      "SingiSetDetailParameter": 1250,
+      "Name": "射程変動",
+      "Explanation": "遠隔武器種の射程が75％上昇\n近接武器種の射程が75％低下(遠近両用武器種は除く)"
+    },
+    {
+      "ID": 1251,
+      "SingiSetDetailParameter": 1251,
+      "Name": "性能増強(大)",
+      "Explanation": "敵の耐久,攻撃,防御が100％上昇"
+    },
+    {
+      "ID": 1252,
+      "SingiSetDetailParameter": 1252,
+      "Name": "ガルム強化(二)",
+      "Explanation": "ガルムの射程,回復,攻撃対象数が上昇\n被ダメージを軽減"
+    },
+    {
+      "ID": 1253,
+      "SingiSetDetailParameter": 1253,
+      "Name": "死神強化(三)",
+      "Explanation": "死神の防御,回復上昇/本体のみ更に上昇\n術属性のダメージを受けた際に反射ダメージを与える"
+    },
+    {
+      "ID": 1254,
+      "SingiSetDetailParameter": 1254,
+      "Name": "敵城娘強化",
+      "Explanation": "エーリューズニルの耐久,攻撃,射程上昇\n物理ダメージ反射,被ダメージを軽減,混乱を無効"
+    },
+    {
+      "ID": 1255,
+      "SingiSetDetailParameter": 1255,
+      "Name": "ガルム強化(四)",
+      "Explanation": "ガルムの耐久,攻撃,移動速度を上昇,麻痺を無効\n術属性のダメージを反射,被ダメージを軽減"
+    },
+    {
+      "ID": 1256,
+      "SingiSetDetailParameter": 1256,
+      "Name": "敵味方大回復",
+      "Explanation": "敵味方ともに毎秒耐久回復500の効果を付与\n(蔵,伏兵を除く)"
+    },
+    {
+      "ID": 1257,
+      "SingiSetDetailParameter": 1257,
+      "Name": "計略使用変動",
+      "Explanation": "計略の使用可能までの時間が40％短縮\n弓,石弓,鉄砲,大砲以外の計略使用不可"
+    },
+    {
+      "ID": 1258,
+      "SingiSetDetailParameter": 1258,
+      "Name": "巨大敵強化(五)",
+      "Explanation": "巨大化兜と巨大ムスペルの与ダメージが50％上昇\n被ダメージを50％軽減,火傷を無効"
+    },
+    {
+      "ID": 1259,
+      "SingiSetDetailParameter": 1259,
+      "Name": "武神強化",
+      "Explanation": "武神藤堂高虎の与ダメージ,耐久が上昇\n被ダメージ軽減,全ての状態異常を無効"
+    },
+    {
+      "ID": 1260,
+      "SingiSetDetailParameter": 1260,
+      "Name": "ヴァルハラ強化",
+      "Explanation": "武器種ボーナスを受けている敵と\nセーフリームニルの防御,与ダメージが上昇"
+    },
+    {
+      "ID": 1261,
+      "SingiSetDetailParameter": 1261,
+      "Name": "回復無効",
+      "Explanation": "城娘が他のユニットによる回復を受けられなくなる\n(耐久自然回復の効果は有効)"
+    },
+    {
+      "ID": 1262,
+      "SingiSetDetailParameter": 1262,
+      "Name": "武神強化",
+      "Explanation": "武神蒲生氏郷の防御上昇,与ダメージ2倍の耐久回復\n全ての状態異常,後退効果を無効"
+    },
+    {
+      "ID": 1263,
+      "SingiSetDetailParameter": 1263,
+      "Name": "回復・ダメ変動",
+      "Explanation": "攻撃を行わない武器種に継続大ダメージ発生\nその他の武器種の回復を100％上昇"
+    },
+    {
+      "ID": 1264,
+      "SingiSetDetailParameter": 1264,
+      "Name": "氷柱敵強化",
+      "Explanation": "氷柱に閉じ込められた敵が遠隔攻撃のダメージを反射\n氷解後のみ攻撃,射程上昇,通常攻撃のダメージを軽減"
+    },
+    {
+      "ID": 1265,
+      "SingiSetDetailParameter": 1265,
+      "Name": "武神強化",
+      "Explanation": "武神山県昌景の攻撃が上昇,攻撃後の隙短縮\n被ダメージ軽減,全ての状態異常を無効"
+    },
+    {
+      "ID": 1266,
+      "SingiSetDetailParameter": 1266,
+      "Name": "兜強化・ダメ変動",
+      "Explanation": "敵の耐久30％,防御200％上昇,防御低下効果を無効\n近接通常攻撃ダメ半減,遠隔通常攻撃ダメ50％増加"
+    },
+    {
+      "ID": 1267,
+      "SingiSetDetailParameter": 1267,
+      "Name": "特定武器効果変動",
+      "Explanation": "通常攻撃が遠隔攻撃属性の武器種の計略消費気半減\n近接攻撃および攻撃を行わない武器種の計略使用不可"
+    },
+    {
+      "ID": 1268,
+      "SingiSetDetailParameter": 1268,
+      "Name": "武神強化",
+      "Explanation": "武神福島正則の耐久,防御上昇\n全ての状態異常,後退効果を無効"
+    },
+    {
+      "ID": 1269,
+      "SingiSetDetailParameter": 1269,
+      "Name": "死神強化(五)",
+      "Explanation": "死神の耐久50％上昇,物理ダメージ50％軽減\n移動速度の変更効果,後退効果を無効"
+    },
+    {
+      "ID": 1270,
+      "SingiSetDetailParameter": 1270,
+      "Name": "敵味方射程減",
+      "Explanation": "敵味方共に射程が20％低下"
+    },
+    {
+      "ID": 1271,
+      "SingiSetDetailParameter": 1271,
+      "Name": "ヘル強化(五)",
+      "Explanation": "ヘルの耐久,攻撃,射程が上昇\n全ての状態異常を無効"
+    },
+    {
+      "ID": 1272,
+      "SingiSetDetailParameter": 1272,
+      "Name": "割合防御無視無効",
+      "Explanation": "割合防御無視効果を無効化する"
+    },
+    {
+      "ID": 1273,
+      "SingiSetDetailParameter": 1273,
+      "Name": "巨大化兜強化",
+      "Explanation": "巨大化兜の物理攻撃の被ダメージを50％軽減\n遠隔物理攻撃の攻撃は75％軽減,状態異常を無効"
+    },
+    {
+      "ID": 1274,
+      "SingiSetDetailParameter": 1274,
+      "Name": "武神強化",
+      "Explanation": "武神藤堂高虎の攻撃が上昇\n遠隔物理攻撃を90％軽減,状態異常を無効"
+    },
+    {
+      "ID": 1275,
+      "SingiSetDetailParameter": 1275,
+      "Name": "敵味方攻撃減",
+      "Explanation": "敵味方共に攻撃が50％低下"
+    },
+    {
+      "ID": 1276,
+      "SingiSetDetailParameter": 1276,
+      "Name": "味方与ダメ変動",
+      "Explanation": "物理ダメージの与ダメージが50％上昇\n味方の術攻撃属性の与ダメージが50％低下"
+    },
+    {
+      "ID": 1277,
+      "SingiSetDetailParameter": 1277,
+      "Name": "武神強化",
+      "Explanation": "武神山県昌景の攻撃,防御が上昇\n全ての状態異常,後退効果を無効"
+    },
+    {
+      "ID": 1278,
+      "SingiSetDetailParameter": 1278,
+      "Name": "縮小敵強化",
+      "Explanation": "縮小敵の与ダメージが50％上昇,攻撃速度が50％上昇\n攻撃後の隙が50％短縮,後退効果を無効"
+    },
+    {
+      "ID": 1279,
+      "SingiSetDetailParameter": 1279,
+      "Name": "遠隔制限",
+      "Explanation": "遠隔武器種の計略使用不可\n全ての敵が遠隔攻撃の被ダメージを90％軽減"
+    },
+    {
+      "ID": 1280,
+      "SingiSetDetailParameter": 1280,
+      "Name": "武神強化",
+      "Explanation": "武神福島正則の防御が0になる代わりに被ダメ軽減\n耐久,移動速度上昇,全ての状態異常を無効"
+    },
+    {
+      "ID": 1281,
+      "SingiSetDetailParameter": 1281,
+      "Name": "伏兵暗殺",
+      "Explanation": "伏兵が攻撃対象にならなくなる代わりに\n伏兵に一定時間毎に8000の固定ダメージ"
+    },
+    {
+      "ID": 1282,
+      "SingiSetDetailParameter": 1282,
+      "Name": "英霊・西洋兜強化",
+      "Explanation": "エインヘリャルが刀,槍,盾,槌,石弓以外からの\nダメージを50％軽減,西洋兜の防御,耐久を強化"
+    },
+    {
+      "ID": 1283,
+      "SingiSetDetailParameter": 1283,
+      "Name": "武神強化",
+      "Explanation": "武神蒲生氏郷が遠距離攻撃からの被ダメを50％軽減\n射程,耐久強化,状態異常無効,与ダメの2倍の耐久回復"
+    },
+    {
+      "ID": 1284,
+      "SingiSetDetailParameter": 1284,
+      "Name": "計略変動(獄)",
+      "Explanation": "地獄城以外計略の消費気20,計略使用時間35％延長\n地獄城の計略消費気半減,計略使用時間35％短縮"
+    },
+    {
+      "ID": 1285,
+      "SingiSetDetailParameter": 1285,
+      "Name": "全敵・祭壇強化",
+      "Explanation": "全ての敵の耐久が30％上昇,後退,移動速度変更無効\n死者の祭壇から出現した敵の回復が500上昇"
+    },
+    {
+      "ID": 1286,
+      "SingiSetDetailParameter": 1286,
+      "Name": "ヘル・死神強化",
+      "Explanation": "ヘルと全ての死神の被ダメージ軽減,攻撃後の隙短縮\nヘルのみ与ダメージ,回復上昇"
+    },
+    {
+      "ID": 1287,
+      "SingiSetDetailParameter": 1287,
+      "Name": "アスガルド(小)",
+      "Explanation": "遠隔マスのみに配置可能な武器種の\n耐久,攻撃が10％低下、被ダメが10％増加"
+    },
+    {
+      "ID": 1288,
+      "SingiSetDetailParameter": 1288,
+      "Name": "アスガルド(中)",
+      "Explanation": "遠隔マスのみに配置可能な武器種の\n耐久,攻撃が20％低下、被ダメが20％増加"
+    },
+    {
+      "ID": 1289,
+      "SingiSetDetailParameter": 1289,
+      "Name": "武器種阻害(遠隔)",
+      "Explanation": "遠隔マスのみに配置可能な武器種の\n巨大化消費気が30％増加,自動巨大化時間延長"
+    },
+    {
+      "ID": 1290,
+      "SingiSetDetailParameter": 1290,
+      "Name": "遠隔与ダメ低下",
+      "Explanation": "遠隔マスのみに配置可能な武器種の\n与ダメージが50％低下"
+    },
+    {
+      "ID": 1291,
+      "SingiSetDetailParameter": 1291,
+      "Name": "敵性能増強",
+      "Explanation": "全ての敵の耐久,攻撃,防御が100％上昇\n飛行兜は被ダメージを30％軽減,後退効果を無効"
+    },
+    {
+      "ID": 1292,
+      "SingiSetDetailParameter": 1292,
+      "Name": "特殊攻撃蓄積変動",
+      "Explanation": "城娘の攻撃が50％低下する代わりに\n特殊攻撃ゲージの蓄積量が100％上昇"
+    },
+    {
+      "ID": 1293,
+      "SingiSetDetailParameter": 1293,
+      "Name": "計略制限(遠隔)",
+      "Explanation": "遠隔マスのみに配置可能な武器種の\n計略が使用不可"
+    },
+    {
+      "ID": 1294,
+      "SingiSetDetailParameter": 1294,
+      "Name": "特定武器種弱体化",
+      "Explanation": "通常攻撃を行わない武器種の射程が50％低下\n自動巨大化時間が大幅延長"
+    },
+    {
+      "ID": 1295,
+      "SingiSetDetailParameter": 1295,
+      "Name": "城娘性能変動",
+      "Explanation": "全ての城娘の攻撃が75％低下\n伏兵の攻撃が75％増加"
+    },
+    {
+      "ID": 1296,
+      "SingiSetDetailParameter": 1296,
+      "Name": "近接攻撃低下",
+      "Explanation": "近接マスのみに配置可能な武器種の攻撃が50％低下"
+    },
+    {
+      "ID": 1297,
+      "SingiSetDetailParameter": 1297,
+      "Name": "遠隔射程低下",
+      "Explanation": "遠隔マスのみに配置可能な武器種の射程が50％低下"
+    },
+    {
+      "ID": 1299,
+      "SingiSetDetailParameter": 1299,
+      "Name": "地形不適合(地獄)",
+      "Explanation": "地獄城以外の城娘の攻撃が50％低下\n攻撃の上昇効果無効"
+    },
+    {
+      "ID": 1300,
+      "SingiSetDetailParameter": 1300,
+      "Name": "攻撃速度大幅強化",
+      "Explanation": "全ての敵の攻撃速度が100％上昇"
+    },
+    {
+      "ID": 1301,
+      "SingiSetDetailParameter": 1301,
+      "Name": "巨大化時間延長",
+      "Explanation": "自動巨大化の時間が大幅延長"
+    },
+    {
+      "ID": 1302,
+      "SingiSetDetailParameter": 1302,
+      "Name": "物理ダメージ半減",
+      "Explanation": "全ての敵の物理攻撃の被ダメージを50％軽減"
+    },
+    {
+      "ID": 1303,
+      "SingiSetDetailParameter": 1303,
+      "Name": "遠近両用攻撃低下",
+      "Explanation": "遠近両用武器種の攻撃が90％低下"
+    },
+    {
+      "ID": 1304,
+      "SingiSetDetailParameter": 1304,
+      "Name": "術攻撃反射",
+      "Explanation": "全ての敵が術攻撃ダメージを100％で反射"
+    },
+    {
+      "ID": 1305,
+      "SingiSetDetailParameter": 1305,
+      "Name": "敵状態異常無効",
+      "Explanation": "全ての敵が状態異常を無効にする"
+    },
+    {
+      "ID": 1306,
+      "SingiSetDetailParameter": 1306,
+      "Name": "城娘射程低下",
+      "Explanation": "全ての城娘の射程が50％低下"
+    },
+    {
+      "ID": 1307,
+      "SingiSetDetailParameter": 1307,
+      "Name": "攻撃性能変動",
+      "Explanation": "殿側ユニットの攻撃が半減する代わりに\n敵の防御を無視する割合が50％上昇"
+    },
+    {
+      "ID": 1308,
+      "SingiSetDetailParameter": 1308,
+      "Name": "攻撃性能変動",
+      "Explanation": "殿側ユニットの攻撃速度が低下する代わりに\n爆風と範囲攻撃の範囲が1.5倍"
+    },
+    {
+      "ID": 1310,
+      "SingiSetDetailParameter": 1310,
+      "Name": "計略消費気倍増",
+      "Explanation": "地獄城娘以外の計略の消費気が2倍に増加"
+    },
+    {
+      "ID": 1311,
+      "SingiSetDetailParameter": 1311,
+      "Name": "計略範囲低下",
+      "Explanation": "地獄城娘以外の計略の効果範囲が50％低下\n全ての伏兵の射程が50％低下"
+    },
+    {
+      "ID": 1312,
+      "SingiSetDetailParameter": 1312,
+      "Name": "全敵回復強化",
+      "Explanation": "全ての敵に毎秒耐久回復50の効果を付与"
+    },
+    {
+      "ID": 1313,
+      "SingiSetDetailParameter": 1313,
+      "Name": "計略変動(獄)・弐",
+      "Explanation": "地獄城の計略使用時間40％短縮,地獄城以外の\n計略の効果範囲と全ての伏兵の射程が70％低下"
+    },
+    {
+      "ID": 1314,
+      "SingiSetDetailParameter": 1314,
+      "Name": "敵性能強化(獄)",
+      "Explanation": "全ての敵の状態異常を無効,西洋兜のみ防御,耐久が上昇\n術攻撃の被ダメージを50％軽減,移動速度変更無効"
+    },
+    {
+      "ID": 1315,
+      "SingiSetDetailParameter": 1315,
+      "Name": "ヘル性能変動",
+      "Explanation": "ヘルの射程,攻撃が上昇、術攻撃からの被ダメージを\n90％軽減する代わりに攻撃対象数が2低下"
+    },
+    {
+      "ID": 1316,
+      "SingiSetDetailParameter": 1316,
+      "Name": "城娘被ダメ増加",
+      "Explanation": "城娘の被ダメージが20％上昇"
+    },
+    {
+      "ID": 1317,
+      "SingiSetDetailParameter": 1317,
+      "Name": "特定武器種弱体化",
+      "Explanation": "拳,歌舞,鈴,杖,本,祓串の城娘の与ダメが50％低下\n一定間隔で最大耐久10％の継続ダメージ発生"
+    },
+    {
+      "ID": 1318,
+      "SingiSetDetailParameter": 1318,
+      "Name": "遠隔制限",
+      "Explanation": "遠隔城娘の被ダメージが40％上昇\n遠隔城娘の巨大化消費気が40％上昇"
+    },
+    {
+      "ID": 1319,
+      "SingiSetDetailParameter": 1319,
+      "Name": "城娘射程変動",
+      "Explanation": "巨大化段階が4以下の城娘の射程が50％低下\n巨大化段階が5以上の城娘の射程が25％上昇"
+    },
+    {
+      "ID": 1320,
+      "SingiSetDetailParameter": 1320,
+      "Name": "妖怪強化",
+      "Explanation": "妖怪の耐久,攻撃,防御が25％上昇"
+    },
+    {
+      "ID": 1321,
+      "SingiSetDetailParameter": 1321,
+      "Name": "全敵強化",
+      "Explanation": "全ての敵の与ダメージが50％上昇,\n被ダメージを30％軽減,後退効果を無効"
+    },
+    {
+      "ID": 1322,
+      "SingiSetDetailParameter": 1322,
+      "Name": "計略制限",
+      "Explanation": "計略の与ダメージが90％低下、消費気が3倍、\n効果範囲が50％低下、伏兵の射程が50％低下"
+    },
+    {
+      "ID": 1323,
+      "SingiSetDetailParameter": 1323,
+      "Name": "消費気変動",
+      "Explanation": "計略の消費気が25％増加\n巨大化消費気が25％増加"
+    },
+    {
+      "ID": 1324,
+      "SingiSetDetailParameter": 1324,
+      "Name": "海洋兜強化",
+      "Explanation": "全ての海洋兜の耐久,攻撃,防御が1.5倍"
+    },
+    {
+      "ID": 1325,
+      "SingiSetDetailParameter": 1325,
+      "Name": "遠隔攻撃上昇無効",
+      "Explanation": "遠隔城娘の攻撃上昇効果無効"
+    },
+    {
+      "ID": 1326,
+      "SingiSetDetailParameter": 1326,
+      "Name": "遠隔隙延長",
+      "Explanation": "遠隔城娘の攻撃後の隙が50％延長"
+    },
+    {
+      "ID": 1327,
+      "SingiSetDetailParameter": 1327,
+      "Name": "全敵強化",
+      "Explanation": "全ての敵の耐久,攻撃速度,攻撃を50％上昇"
+    },
+    {
+      "ID": 1328,
+      "SingiSetDetailParameter": 1328,
+      "Name": "海洋兜強化",
+      "Explanation": "海洋兜が状態異常と後退効果を無効化\n耐久が75％,防御が25％上昇"
+    },
+    {
+      "ID": 1329,
+      "SingiSetDetailParameter": 1329,
+      "Name": "城娘性能変動",
+      "Explanation": "味方の足止め数が3低下,城娘が射程内の自身を除く\n城娘数に応じ攻撃低下(1体につき10％、最大50％)"
+    },
+    {
+      "ID": 1330,
+      "SingiSetDetailParameter": 1330,
+      "Name": "フェンリル強化",
+      "Explanation": "フェンリルの攻撃上昇,耐久,防御が大幅に上昇\n回復を強化,移動速度低下効果無効"
+    },
+    {
+      "ID": 1331,
+      "SingiSetDetailParameter": 1331,
+      "Name": "敵性能変動",
+      "Explanation": "全ての敵の射程が上昇,フェンリル以外の敵の\n与ダメージが50％上昇,被ダメージを50％軽減"
+    },
+    {
+      "ID": 1332,
+      "SingiSetDetailParameter": 1332,
+      "Name": "敵耐久強化",
+      "Explanation": "全ての敵の耐久が125％上昇"
+    },
+    {
+      "ID": 1333,
+      "SingiSetDetailParameter": 1333,
+      "Name": "妖怪・毒蛇強化",
+      "Explanation": "妖怪と毒蛇の与ダメージと防御が50％上昇\n後退効果,状態異常無効"
+    },
+    {
+      "ID": 1334,
+      "SingiSetDetailParameter": 1334,
+      "Name": "ボス強化・毒蔓延",
+      "Explanation": "種別がボスの攻撃,耐久上昇,移動速度低下効果無効\n一定時間毎に城娘に最大耐久8％の継続ダメ発生"
+    },
+    {
+      "ID": 1335,
+      "SingiSetDetailParameter": 1335,
+      "Name": "味方性能変動",
+      "Explanation": "城娘の射程と攻撃速度が50％低下\n伏兵の射程が25％上昇"
+    },
+    {
+      "ID": 1336,
+      "SingiSetDetailParameter": 1336,
+      "Name": "全敵強化",
+      "Explanation": "全ての敵の耐久,攻撃が50％上昇"
+    },
+    {
+      "ID": 1337,
+      "SingiSetDetailParameter": 1337,
+      "Name": "ムスペルヘイム大",
+      "Explanation": "巨大化敵の移動速度変更,低下効果を無効\n火傷,氷結,混乱,麻痺を無効"
+    },
+    {
+      "ID": 1338,
+      "SingiSetDetailParameter": 1338,
+      "Name": "ニヴルヘイム大",
+      "Explanation": "一定時間毎に最大耐久8％分の継続ダメージ発生\n対象：城娘"
+    },
+    {
+      "ID": 1339,
+      "SingiSetDetailParameter": 1339,
+      "Name": "ニザヴェッリル大",
+      "Explanation": "縮小化した敵の移動速度45％上昇"
+    },
+    {
+      "ID": 1340,
+      "SingiSetDetailParameter": 1340,
+      "Name": "ヴァルハラ大",
+      "Explanation": "エインヘリャルが受ける攻撃,防御低下,移動速度低下\n変更効果を無効,全ての状態異常を無効"
+    },
+    {
+      "ID": 1341,
+      "SingiSetDetailParameter": 1341,
+      "Name": "アスガルド(大)",
+      "Explanation": "遠隔マスのみに配置可能な武器種の\n耐久,攻撃が30％低下、被ダメが30％増加"
+    },
+    {
+      "ID": 1342,
+      "SingiSetDetailParameter": 1342,
+      "Name": "巨大兜増強",
+      "Explanation": "巨大化敵の耐久が250％強化,被ダメージを50％軽減"
+    },
+    {
+      "ID": 1343,
+      "SingiSetDetailParameter": 1343,
+      "Name": "敵味方増強",
+      "Explanation": "巨大化敵の耐久が350％,山城娘の耐久が150％上昇"
+    },
+    {
+      "ID": 1344,
+      "SingiSetDetailParameter": 1344,
+      "Name": "継続ダメージ発生",
+      "Explanation": "城娘と伏兵に1秒毎に最大耐久の4％継続ダメージ発生\n山城娘の耐久が与ダメの10％回復"
+    },
+    {
+      "ID": 1345,
+      "SingiSetDetailParameter": 1345,
+      "Name": "敵味方性能変動",
+      "Explanation": "敵が足止めされない。山城娘が大破せず,耐久が50％\nより高いほど与えるダメージが増加,低いほど低下"
+    },
+    {
+      "ID": 1346,
+      "SingiSetDetailParameter": 1346,
+      "Name": "武神強化",
+      "Explanation": "武神藤堂高虎の攻撃,防御,耐久が上昇\n状態異常と後退効果を無効,攻撃が不屈を無視"
+    },
+    {
+      "ID": 1347,
+      "SingiSetDetailParameter": 1347,
+      "Name": "敵移動強化",
+      "Explanation": "敵の移動速度を1.2倍\n後退,移動速度低下効果無効"
+    },
+    {
+      "ID": 1348,
+      "SingiSetDetailParameter": 1348,
+      "Name": "近接城娘性能変動",
+      "Explanation": "近接のみ配置可能な武器種の射程を75％減少\n足止め数4以上で攻撃,防御,射程を30％上昇"
+    },
+    {
+      "ID": 1349,
+      "SingiSetDetailParameter": 1349,
+      "Name": "城娘性能変動",
+      "Explanation": "巨大化段階3以下の城娘の巨大化気25％減少\n巨大化段階4以上で巨大化気150％増加"
+    },
+    {
+      "ID": 1350,
+      "SingiSetDetailParameter": 1350,
+      "Name": "ボス強化",
+      "Explanation": "ニーズヘッグの耐久,攻撃が上昇\n射程内の城娘の数に応じて回復が1000ずつ上昇"
+    },
+    {
+      "ID": 1351,
+      "SingiSetDetailParameter": 1351,
+      "Name": "武神強化",
+      "Explanation": "山県昌景の耐久,攻撃,防御,射程上昇,与ダメの30％\n回復,移動速度変更,状態異常無効,物理攻撃に対し反撃"
+    },
+    {
+      "ID": 1352,
+      "SingiSetDetailParameter": 1352,
+      "Name": "敵味方性能変動",
+      "Explanation": "近接武器種の与ダメ増加,縮小敵が術ダメ無効,射程内\nに足止め対象以外の殿側ユニット1体未満で回復上昇"
+    },
+    {
+      "ID": 1353,
+      "SingiSetDetailParameter": 1353,
+      "Name": "巨大化気変動",
+      "Explanation": "拳,戦棍,槌,盾,ランス,石弓,鉄砲,大砲の巨大化気が軽減\nその他武器種の城娘は巨大化気と自動巨大化時間上昇"
+    },
+    {
+      "ID": 1354,
+      "SingiSetDetailParameter": 1354,
+      "Name": "性能増強",
+      "Explanation": "全敵の攻撃,耐久が上昇,状態異常無効、ファヴニールの\n攻撃と耐久がさらに上昇,移動速度変更,射程低下無効"
+    },
+    {
+      "ID": 1355,
+      "SingiSetDetailParameter": 1355,
+      "Name": "特殊戦場効果",
+      "Explanation": "気の自然回復速度100％低下,トロッコ敵の耐久上昇\n縮小敵の撃破気が0になる,全城娘の足止め数が2増加"
+    },
+    {
+      "ID": 1356,
+      "SingiSetDetailParameter": 1356,
+      "Name": "武神強化",
+      "Explanation": "福島正則の耐久,攻撃,防御上昇。攻撃が不屈を無視\n移動速度低下と変更、状態異常を無効"
+    },
+    {
+      "ID": 1357,
+      "SingiSetDetailParameter": 1357,
+      "Name": "城娘・伏兵弱体化",
+      "Explanation": "城娘の再配置時間が大幅延長\n伏兵の攻撃後の隙が大幅延長"
+    },
+    {
+      "ID": 1358,
+      "SingiSetDetailParameter": 1358,
+      "Name": "敵性能増強",
+      "Explanation": "西洋兜とセーフリームニルの\n耐久,攻撃,防御が100％上昇"
+    },
+    {
+      "ID": 1359,
+      "SingiSetDetailParameter": 1359,
+      "Name": "敵味方性能変動",
+      "Explanation": "一部を除く城娘と伏兵の攻撃対象数が1に低下\n西洋兜,エインヘリャルの耐久,攻撃,防御が100％上昇"
+    },
+    {
+      "ID": 1360,
+      "SingiSetDetailParameter": 1360,
+      "Name": "攻撃依存ダメ変動",
+      "Explanation": "攻撃4000以下の城娘,伏兵の与えるダメージ0.3倍\n攻撃6000以上の城娘,伏兵の与えるダメージ1.3倍"
+    },
+    {
+      "ID": 1361,
+      "SingiSetDetailParameter": 1361,
+      "Name": "武神強化",
+      "Explanation": "武神蒲生氏郷の耐久と被回復量が大幅上昇\n移動速度低下変更,足止め,後退無効"
+    },
+    {
+      "ID": 1362,
+      "SingiSetDetailParameter": 1362,
+      "Name": "城娘弱体・気制限",
+      "Explanation": "気の自然回復量が50％低下\n城娘の射程上昇効果無効,気還元率大幅低下"
+    },
+    {
+      "ID": 1363,
+      "SingiSetDetailParameter": 1363,
+      "Name": "敵防衛強化",
+      "Explanation": "敵が遠距離攻撃から受けるダメージを80％軽減,防御\nが上昇,防御低下,変更,移動速度変更,後退効果無効"
+    },
+    {
+      "ID": 1364,
+      "SingiSetDetailParameter": 1364,
+      "Name": "毒蔓延・回復低下",
+      "Explanation": "一定時間毎に城娘と伏兵に最大耐久8％の\n継続ダメ発生,一部を除く被回復量を25％低下"
+    },
+    {
+      "ID": 1365,
+      "SingiSetDetailParameter": 1365,
+      "Name": "毒蛇強化",
+      "Explanation": "ヨルムンガンド,毒蛇の耐久攻撃上昇,射程低下効果\n無効,被ダメ50％軽減,ヨルムンガンドのみ射程上昇"
+    },
+    {
+      "ID": 1366,
+      "SingiSetDetailParameter": 1366,
+      "Name": "氷狼強化,隙延長",
+      "Explanation": "フェンリルの耐久,防御が上昇,回復を強化,攻撃低\n下効果無効,殿側ユニットの攻撃隙を100％延長"
+    },
+    {
+      "ID": 1400,
+      "SingiSetDetailParameter": 1400,
+      "Name": "ヘリオポリス小",
+      "Explanation": "全ての城娘の与ダメージを10％低下,攻撃を10％上昇"
+    },
+    {
+      "ID": 1401,
+      "SingiSetDetailParameter": 1401,
+      "Name": "ヘリオポリス中",
+      "Explanation": "全ての城娘の与ダメージを20％低下,攻撃を20％上昇"
+    },
+    {
+      "ID": 1402,
+      "SingiSetDetailParameter": 1402,
+      "Name": "ヌン(小)",
+      "Explanation": "海洋兜の与ダメージが10％上昇"
+    },
+    {
+      "ID": 1403,
+      "SingiSetDetailParameter": 1403,
+      "Name": "ヌン(中)",
+      "Explanation": "海洋兜の与ダメージが20％上昇\n全ての状態異常,後退効果を無効"
+    },
+    {
+      "ID": 1404,
+      "SingiSetDetailParameter": 1404,
+      "Name": "オンボス小",
+      "Explanation": "サンドワームの耐久,攻撃,防御が10％上昇"
+    },
+    {
+      "ID": 1405,
+      "SingiSetDetailParameter": 1405,
+      "Name": "オンボス中",
+      "Explanation": "サンドワームの耐久,攻撃,防御が30％上昇\n後退効果を無効"
+    },
+    {
+      "ID": 1406,
+      "SingiSetDetailParameter": 1406,
+      "Name": "アアル小",
+      "Explanation": "ミイラ,アアルの亡霊の耐久,攻撃,防御が10％上昇"
+    },
+    {
+      "ID": 1407,
+      "SingiSetDetailParameter": 1407,
+      "Name": "アアル中",
+      "Explanation": "ミイラ,アアルの亡霊の耐久,攻撃,防御が30％上昇\n術ダメージを30％軽減"
+    },
+    {
+      "ID": 1408,
+      "SingiSetDetailParameter": 1408,
+      "Name": "マアト小",
+      "Explanation": "全ての敵の被ダメージが15％軽減"
+    },
+    {
+      "ID": 1409,
+      "SingiSetDetailParameter": 1409,
+      "Name": "マアト中",
+      "Explanation": "全ての敵の被ダメージが30％軽減"
+    },
+    {
+      "ID": 1410,
+      "SingiSetDetailParameter": 1410,
+      "Name": "敵防衛強化",
+      "Explanation": "敵の防御が15％上昇,回復を50上昇"
+    },
+    {
+      "ID": 1411,
+      "SingiSetDetailParameter": 1411,
+      "Name": "ベンヌ強化",
+      "Explanation": "ベンヌの回復が200,攻撃と耐久が50％上昇"
+    },
+    {
+      "ID": 1412,
+      "SingiSetDetailParameter": 1412,
+      "Name": "大将兜強化",
+      "Explanation": "シュテファンの攻撃,耐久,与ダメージが上昇\n術ダメージを200％で反射,防御低下,変更無効"
+    },
+    {
+      "ID": 1413,
+      "SingiSetDetailParameter": 1413,
+      "Name": "近接通常攻撃低下",
+      "Explanation": "全ての城娘の近接通常攻撃のダメージが75％低下"
+    },
+    {
+      "ID": 1414,
+      "SingiSetDetailParameter": 1414,
+      "Name": "状態異常後退無効",
+      "Explanation": "全ての敵の状態異常,後退効果を無効"
+    },
+    {
+      "ID": 1415,
+      "SingiSetDetailParameter": 1415,
+      "Name": "敵性能強化",
+      "Explanation": "全ての敵の移動速度の低下と変更効果を無効\n攻撃,耐久が50％,防御が25％上昇"
+    },
+    {
+      "ID": 1416,
+      "SingiSetDetailParameter": 1416,
+      "Name": "計略消費気変動",
+      "Explanation": "巨大化段階が3以下の城娘の計略消費気が5倍\n巨大化段階が4以上の城娘の計略消費気が半減"
+    },
+    {
+      "ID": 1417,
+      "SingiSetDetailParameter": 1417,
+      "Name": "ボス強化",
+      "Explanation": "ラーの物理攻撃の被ダメージを75％軽減,攻撃を上昇\n遠隔物理攻撃の攻撃は90％軽減,混乱と火傷を無効"
+    },
+    {
+      "ID": 1418,
+      "SingiSetDetailParameter": 1418,
+      "Name": "攻撃対象数低下",
+      "Explanation": "味方の攻撃対象数が1に低下\n※射程内全敵攻撃を行う武器種は除く"
+    },
+    {
+      "ID": 1419,
+      "SingiSetDetailParameter": 1419,
+      "Name": "特定武器種不適合",
+      "Explanation": "特定武器種の味方に継続大ダメージ発生\n対象：法術,杖,鈴,祓串,本"
+    },
+    {
+      "ID": 1420,
+      "SingiSetDetailParameter": 1420,
+      "Name": "武神強化",
+      "Explanation": "武神シュテファンの移動速度の低下と変更効果,\n状態異常を無効,与ダメと防御が上昇,被術ダメを軽減"
+    },
+    {
+      "ID": 1421,
+      "SingiSetDetailParameter": 1421,
+      "Name": "敵性能増強",
+      "Explanation": "飛行兜の攻撃,耐久が50％上昇\n海洋兜の防御,耐久が50％上昇"
+    },
+    {
+      "ID": 1422,
+      "SingiSetDetailParameter": 1422,
+      "Name": "大将兜強化",
+      "Explanation": "明智光秀の耐久攻撃,防御が強化,被術ダメージ半減\n射程内の城娘の数に応じて防御無視割合上昇"
+    },
+    {
+      "ID": 1423,
+      "SingiSetDetailParameter": 1423,
+      "Name": "耐久性能変動",
+      "Explanation": "城娘の耐久が25％低下、海洋兜の耐久が25％上昇"
+    },
+    {
+      "ID": 1424,
+      "SingiSetDetailParameter": 1424,
+      "Name": "孤独効果",
+      "Explanation": "城娘の射程内に自身以外の殿側ユニットがいない場合\n防御,耐久が半減,他ユニットによる回復を受けられない"
+    },
+    {
+      "ID": 1425,
+      "SingiSetDetailParameter": 1425,
+      "Name": "海洋兜術反撃",
+      "Explanation": "海洋兜が術攻撃を受けた際に攻撃の1倍で反撃を行う"
+    },
+    {
+      "ID": 1426,
+      "SingiSetDetailParameter": 1426,
+      "Name": "ボス強化",
+      "Explanation": "イシス,ネフティスの被術ダメ90％減,混乱,火傷を無効\n射程内城娘数に応じ,攻撃と攻撃速度上昇(最大100％)"
+    },
+    {
+      "ID": 1427,
+      "SingiSetDetailParameter": 1427,
+      "Name": "ダメージ発生(水)",
+      "Explanation": "20秒毎に水城単属性以外の属性を持つ城娘に\n最大耐久100％ダメージ※被ダメージ軽減効果有効"
+    },
+    {
+      "ID": 1428,
+      "SingiSetDetailParameter": 1428,
+      "Name": "計略変動(水城)",
+      "Explanation": "水城単属性の城娘の計略使用時間と消費気半減,\n水城以外の城娘の計略使用時間1.5倍,消費気2.5倍"
+    },
+    {
+      "ID": 1429,
+      "SingiSetDetailParameter": 1429,
+      "Name": "武神強化",
+      "Explanation": "武神明智光秀の耐久が上昇,後退,状態異常を無効\n攻撃3000未満のダメージを無効.被ダメ25％軽減"
+    },
+    {
+      "ID": 1430,
+      "SingiSetDetailParameter": 1430,
+      "Name": "動物兜凶暴化",
+      "Explanation": "動物兜の攻撃が100％,移動速度が50％上昇\n最大耐久が半減,防御が0になる"
+    },
+    {
+      "ID": 1431,
+      "SingiSetDetailParameter": 1431,
+      "Name": "特定武器種攻撃減",
+      "Explanation": "物理攻撃を行う遠隔,遠近武器種の攻撃が60％低下\n対象：弓,石弓,鉄砲,大砲,投剣,鞭,軍船"
+    },
+    {
+      "ID": 1432,
+      "SingiSetDetailParameter": 1432,
+      "Name": "大将兜強化",
+      "Explanation": "伊達政宗,片倉小十郎の攻撃速度が100％上昇\n攻撃後の隙が50％短縮,与ダメージの50％耐久回復"
+    },
+    {
+      "ID": 1433,
+      "SingiSetDetailParameter": 1433,
+      "Name": "計略ダメージ軽減",
+      "Explanation": "範囲を指定してダメージを与える計略の\nダメージが80％低下"
+    },
+    {
+      "ID": 1435,
+      "SingiSetDetailParameter": 1435,
+      "Name": "飛行敵強化",
+      "Explanation": "飛行兜の耐久,攻撃,防御が100％上昇"
+    },
+    {
+      "ID": 1436,
+      "SingiSetDetailParameter": 1436,
+      "Name": "ボス強化",
+      "Explanation": "セトの耐久,攻撃,回復が上昇,状態異常,後退効果無効\n1000以下のダメージを無効"
+    },
+    {
+      "ID": 1437,
+      "SingiSetDetailParameter": 1437,
+      "Name": "射程変動無効",
+      "Explanation": "城娘の射程上昇効果を無効\n全ての敵の射程低下効果を無効"
+    },
+    {
+      "ID": 1438,
+      "SingiSetDetailParameter": 1438,
+      "Name": "全敵強化",
+      "Explanation": "全ての敵の耐久を上昇,状態異常と後退効果を無効\n飛行敵のみ近接と術通常攻撃のダメージを75％軽減"
+    },
+    {
+      "ID": 1439,
+      "SingiSetDetailParameter": 1439,
+      "Name": "武神強化",
+      "Explanation": "武神伊達政宗と片倉小十郎の耐久,防御,攻撃を上昇\n全ての状態異常,後退効果を無効"
+    },
+    {
+      "ID": 1440,
+      "SingiSetDetailParameter": 1440,
+      "Name": "ダメージ変動",
+      "Explanation": "範囲を指定してダメージを与える計略のダメージが\n50％上昇,城娘の通常攻撃によるダメージが50％低下"
+    },
+    {
+      "ID": 1441,
+      "SingiSetDetailParameter": 1441,
+      "Name": "特定武器種反射",
+      "Explanation": "敵がダメージを受けた際に1.5倍で反射する\n条件：固定装備武器種によるダメージ"
+    },
+    {
+      "ID": 1442,
+      "SingiSetDetailParameter": 1442,
+      "Name": "大将兜強化",
+      "Explanation": "北条氏康の耐久,攻撃が上昇,移動速度低下,後退を無効\n攻撃が対象の防御を無視"
+    },
+    {
+      "ID": 1443,
+      "SingiSetDetailParameter": 1443,
+      "Name": "全体耐久吸収",
+      "Explanation": "全ての敵と城娘が与ダメージの50％分の耐久を回復\n"
+    },
+    {
+      "ID": 1444,
+      "SingiSetDetailParameter": 1444,
+      "Name": "妖怪活性",
+      "Explanation": "妖怪の耐久,移動速度,与ダメージが50％上昇,\n足止めが無効"
+    },
+    {
+      "ID": 1445,
+      "SingiSetDetailParameter": 1445,
+      "Name": "射程低下",
+      "Explanation": "遠隔,遠近武器種の城娘の射程が25％低下\n伏兵の射程が50％低下"
+    },
+    {
+      "ID": 1446,
+      "SingiSetDetailParameter": 1446,
+      "Name": "撃破時気無効",
+      "Explanation": "妖怪,ミイラ,アアルの亡霊を撃破時の獲得気が0"
+    },
+    {
+      "ID": 1447,
+      "SingiSetDetailParameter": 1447,
+      "Name": "ボス強化",
+      "Explanation": "アヌビスの耐久.攻撃が上昇,攻撃後の隙が短縮\n防御が半減,火傷以外の状態異常無効"
+    },
+    {
+      "ID": 1448,
+      "SingiSetDetailParameter": 1448,
+      "Name": "ダメージ変動",
+      "Explanation": "城娘の被ダメージが50％増加,伏兵の被ダメージを\n50％軽減,敵が受ける計略のダメージが50％低下"
+    },
+    {
+      "ID": 1449,
+      "SingiSetDetailParameter": 1449,
+      "Name": "特定武器種弱体化",
+      "Explanation": "固定装備武器種以外の城娘の与ダメが半減,\n一定間隔で最大耐久5％の継続ダメージ発生"
+    },
+    {
+      "ID": 1450,
+      "SingiSetDetailParameter": 1450,
+      "Name": "武神強化",
+      "Explanation": "武神北条氏康の耐久を上昇,攻撃後の隙を30％短縮\n全ての状態異常,後退,移動速度変更効果を無効"
+    },
+    {
+      "ID": 1453,
+      "SingiSetDetailParameter": 1453,
+      "Name": "特定敵強化",
+      "Explanation": "アヌビスの化身の耐久,攻撃が上昇\n被ダメージを軽減,混乱を無効"
+    },
+    {
+      "ID": 1454,
+      "SingiSetDetailParameter": 1454,
+      "Name": "特定敵強化",
+      "Explanation": "アメミットとアヌビスの化身の攻撃と耐久が25％上昇"
+    },
+    {
+      "ID": 1456,
+      "SingiSetDetailParameter": 1456,
+      "Name": "地獄以外ダメ低下",
+      "Explanation": "地獄城以外の城娘の与ダメージが75％低下"
+    },
+    {
+      "ID": 1457,
+      "SingiSetDetailParameter": 1457,
+      "Name": "遠隔消費気増加",
+      "Explanation": "遠隔城娘の巨大化気が50％増加\n計略消費気が2倍に増加"
+    },
+    {
+      "ID": 1458,
+      "SingiSetDetailParameter": 1458,
+      "Name": "全体隙延長",
+      "Explanation": "全ての敵と味方の攻撃後の隙が50％延長"
+    },
+    {
+      "ID": 1459,
+      "SingiSetDetailParameter": 1459,
+      "Name": "敵被ダメ変動",
+      "Explanation": "地獄城以外の計略によるダメージと\n術攻撃のダメージが75％低下"
+    },
+    {
+      "ID": 1460,
+      "SingiSetDetailParameter": 1460,
+      "Name": "特定敵強化",
+      "Explanation": "イシス,ネフティス,アヌビスの耐久,攻撃,防御上昇\n全ての状態異常を無効,被術ダメージ75％軽減"
+    },
+    {
+      "ID": 1461,
+      "SingiSetDetailParameter": 1461,
+      "Name": "オシリス強化",
+      "Explanation": "オシリスの防御,移動速度変更効果を無効\n耐久,攻撃,防御,与ダメ上昇,全ての状態異常無効"
+    },
+    {
+      "ID": 1462,
+      "SingiSetDetailParameter": 1462,
+      "Name": "西洋兜強化",
+      "Explanation": "西洋兜の防御が上昇,固定武器種以外の近接攻撃\n武器種から攻撃を受けた際に攻撃の100％で反射"
+    },
+    {
+      "ID": 1463,
+      "SingiSetDetailParameter": 1463,
+      "Name": "ダメージ計略変動",
+      "Explanation": "範囲を指定してダメージを与える計略のダメージが\n50％上昇,全ての計略使用時間が50％延長"
+    },
+    {
+      "ID": 1464,
+      "SingiSetDetailParameter": 1464,
+      "Name": "武神強化",
+      "Explanation": "武神シュテファンの耐久と防御上昇,攻撃隙半減\n与ダメの50％耐久回復,防御低下効果と状態異常無効"
+    },
+    {
+      "ID": 1465,
+      "SingiSetDetailParameter": 1465,
+      "Name": "兜丸性能変動",
+      "Explanation": "兜丸の耐久が300％上昇する代わりに防御が0になり\n通常攻撃での被ダメージが上昇"
+    },
+    {
+      "ID": 1466,
+      "SingiSetDetailParameter": 1466,
+      "Name": "計略弱化",
+      "Explanation": "敵が受ける計略のダメージが90％低下"
+    },
+    {
+      "ID": 1467,
+      "SingiSetDetailParameter": 1467,
+      "Name": "武神強化",
+      "Explanation": "武神明智光秀の耐久,攻撃が上昇,状態異常,後退無効\n攻撃対象数が3増加,攻撃が敵の防御を無視する"
+    },
+    {
+      "ID": 1468,
+      "SingiSetDetailParameter": 1468,
+      "Name": "複合属性弱体化",
+      "Explanation": "平城単属性以外の城娘の射程上昇効果無効\n計略使用時間が3倍,消費気が30になる"
+    },
+    {
+      "ID": 1469,
+      "SingiSetDetailParameter": 1469,
+      "Name": "城娘性能変動",
+      "Explanation": "近接城娘の最大耐久が50％減少\n遠隔城娘の射程が50％低下"
+    },
+    {
+      "ID": 1470,
+      "SingiSetDetailParameter": 1470,
+      "Name": "武神強化",
+      "Explanation": "武神伊達政宗と片倉小十郎の耐久,防御,攻撃,\n攻撃速度が上昇,攻撃隙短縮,後退効果無効"
+    },
+    {
+      "ID": 1471,
+      "SingiSetDetailParameter": 1471,
+      "Name": "忍者兜強化",
+      "Explanation": "忍者桃形兜,忍者古桃形兜の耐久,攻撃,防御上昇\n移動速度低下,後退効果無効,与ダメージ上昇"
+    },
+    {
+      "ID": 1472,
+      "SingiSetDetailParameter": 1472,
+      "Name": "武神強化",
+      "Explanation": "武神の攻撃上昇,攻撃隙延長,後退と状態異常無効\n射程内殿側ユニット数が7体以下で攻撃対象数1増加"
+    },
+    {
+      "ID": 1473,
+      "SingiSetDetailParameter": 1473,
+      "Name": "撃破気獲得制限",
+      "Explanation": "通常時の敵撃破時に獲得できる気が0になる\n※撃破時獲得気増加が付与されている場合を除く"
+    },
+    {
+      "ID": 1474,
+      "SingiSetDetailParameter": 1474,
+      "Name": "敵味方性能変動",
+      "Explanation": "敵の耐久が上昇,与ダメ30％低下,状態異常無効\n城娘の射程が30％低下,伏兵の射程が30％上昇"
+    },
+    {
+      "ID": 1475,
+      "SingiSetDetailParameter": 1475,
+      "Name": "オシリス強化",
+      "Explanation": "オシリスの攻撃対象数が2増加,与ダメ上昇\n移動速度変更,低下効果,状態異常無効,攻撃隙延長"
+    },
+    {
+      "ID": 1476,
+      "SingiSetDetailParameter": 1476,
+      "Name": "計略範囲低下",
+      "Explanation": "全ての城娘の計略の効果範囲が50％低下\n全ての伏兵の射程が50％低下"
+    },
+    {
+      "ID": 1477,
+      "SingiSetDetailParameter": 1477,
+      "Name": "敵味方射程減",
+      "Explanation": "塵旋風を除く敵味方共に射程が50％低下"
+    },
+    {
+      "ID": 1478,
+      "SingiSetDetailParameter": 1478,
+      "Name": "性能変動・獄",
+      "Explanation": "地獄城以外の全計略消費気が30,再使用時間延長\n全城娘与ダメ30％低下,地獄城計略再使用時間短縮"
+    },
+    {
+      "ID": 1479,
+      "SingiSetDetailParameter": 1479,
+      "Name": "ボス強化",
+      "Explanation": "種別がボスの攻撃と耐久上昇,移動速度変更効果と\n状態異常無効。オシリスのみ更に攻撃対象数4増加"
+    },
+    {
+      "ID": 1480,
+      "SingiSetDetailParameter": 1480,
+      "Name": "ドゥアトの影強化",
+      "Explanation": "ドゥアトの影の耐久上昇,術被ダメ減,状態異常無効\n射程内に殿側ユニットがいない場合に回復量上昇"
+    },
+    {
+      "ID": 1481,
+      "SingiSetDetailParameter": 1481,
+      "Name": "城娘性能変動",
+      "Explanation": "巨大化段階が4以上のとき、1段階毎に\n射程が10％低下、計略発動までの時間を15％延長"
+    },
+    {
+      "ID": 1482,
+      "SingiSetDetailParameter": 1482,
+      "Name": "敵性能強化",
+      "Explanation": "全ての敵の攻撃速度が50％上昇,隙を50％短縮\n与ダメージが25％上昇,被ダメージを25％軽減"
+    },
+    {
+      "ID": 1483,
+      "SingiSetDetailParameter": 1483,
+      "Name": "敵性能強化",
+      "Explanation": "全ての敵の耐久が100％上昇,移動速度低下効果,\n状態異常を無効"
+    },
+    {
+      "ID": 1486,
+      "SingiSetDetailParameter": 1486,
+      "Name": "巨大化阻害(水)",
+      "Explanation": "水城単属性以外の巨大化消費気が2倍に増加\n自動巨大化時間大幅延長"
+    },
+    {
+      "ID": 1487,
+      "SingiSetDetailParameter": 1487,
+      "Name": "城娘性能変動",
+      "Explanation": "近接城娘の射程と攻撃速度が50％低下\n遠隔城娘の巨大化消費気が2倍に増加"
+    },
+    {
+      "ID": 1494,
+      "SingiSetDetailParameter": 1494,
+      "Name": "遠隔制限",
+      "Explanation": "遠隔城娘の射程と攻撃速度が50％低下\n巨大化消費気が2倍に増加"
+    },
+    {
+      "ID": 1495,
+      "SingiSetDetailParameter": 1495,
+      "Name": "巨大化阻害",
+      "Explanation": "全ての城娘の巨大化消費気が2倍に増加\n自動巨大化時間大幅延長"
+    },
+    {
+      "ID": 1496,
+      "SingiSetDetailParameter": 1496,
+      "Name": "遠隔武器種弱体化",
+      "Explanation": "遠隔城娘の被ダメージが50％上昇\n一定時間毎に最大耐久5％分の継続ダメージ発生"
+    },
+    {
+      "ID": 1497,
+      "SingiSetDetailParameter": 1497,
+      "Name": "敵性能強化",
+      "Explanation": "全ての敵の耐久を150％,攻撃を100％上昇"
+    },
+    {
+      "ID": 1498,
+      "SingiSetDetailParameter": 1498,
+      "Name": "敵性能強化",
+      "Explanation": "全ての敵の耐久を200％,攻撃を150％上昇"
+    },
+    {
+      "ID": 1499,
+      "SingiSetDetailParameter": 1499,
+      "Name": "城娘性能変動",
+      "Explanation": "城娘の巨大化消費気が3倍に増加,自動巨大化時間\n大幅延長,遠隔城娘の被ダメージが25％上昇"
+    },
+    {
+      "ID": 1500,
+      "SingiSetDetailParameter": 1500,
+      "Name": "遠隔制限",
+      "Explanation": "遠隔城娘の射程と攻撃速度が50％低下\n巨大化消費気が3倍に増加"
+    },
+    {
+      "ID": 1501,
+      "SingiSetDetailParameter": 1501,
+      "Name": "城娘性能変動",
+      "Explanation": "城娘の被ダメージが50％上昇,再配置時間延長\n気還元率低下,計略消費気を減少"
+    },
+    {
+      "ID": 1502,
+      "SingiSetDetailParameter": 1502,
+      "Name": "敵性能強化",
+      "Explanation": "全ての敵の射程,耐久,防御が25％上昇\n移動速度低下効果を無効"
+    },
+    {
+      "ID": 1503,
+      "SingiSetDetailParameter": 1503,
+      "Name": "敵味方性能変動",
+      "Explanation": "城娘の割合防御無視効果無効,射程が25％低下\n全ての敵が被ダメージを50％軽減"
+    },
+    {
+      "ID": 1510,
+      "SingiSetDetailParameter": 1510,
+      "Name": "アケト小",
+      "Explanation": "近接マスと遠隔マス両方に配置可能な武器種の\n耐久,攻撃が10％低下,被ダメージが10％増加"
+    },
+    {
+      "ID": 1511,
+      "SingiSetDetailParameter": 1511,
+      "Name": "アケト中",
+      "Explanation": "近接マスと遠隔マス両方に配置可能な武器種の\n耐久,攻撃が20％低下,被ダメージが20％増加"
+    },
+    {
+      "ID": 1512,
+      "SingiSetDetailParameter": 1512,
+      "Name": "武器種阻害(遠近)",
+      "Explanation": "近接マスと遠隔マス両方に配置可能な武器種の\n巨大化消費気が30％増加,自動巨大化時間延長"
+    },
+    {
+      "ID": 1513,
+      "SingiSetDetailParameter": 1513,
+      "Name": "敵防御低下無効",
+      "Explanation": "全ての敵の防御低下,変更効果を無効"
+    },
+    {
+      "ID": 1514,
+      "SingiSetDetailParameter": 1514,
+      "Name": "敵性能増強",
+      "Explanation": "全ての敵の耐久,防御が50％上昇"
+    },
+    {
+      "ID": 1515,
+      "SingiSetDetailParameter": 1515,
+      "Name": "城娘性能低下",
+      "Explanation": "全ての城娘の攻撃対象数が1に低下\n※射程内全敵攻撃を除く"
+    },
+    {
+      "ID": 1517,
+      "SingiSetDetailParameter": 1517,
+      "Name": "敵性能増強",
+      "Explanation": "全ての敵の攻撃と耐久が50％上昇"
+    },
+    {
+      "ID": 1518,
+      "SingiSetDetailParameter": 1518,
+      "Name": "特定武器種弱体化",
+      "Explanation": "回復を行う武器種以外の射程が50％低下\n対象：歌舞,陣貝,戦棍,祓串,茶器以外"
+    },
+    {
+      "ID": 1519,
+      "SingiSetDetailParameter": 1519,
+      "Name": "特殊攻撃蓄積低下",
+      "Explanation": "城娘の特殊攻撃ゲージの蓄積量が90％低下"
+    },
+    {
+      "ID": 1520,
+      "SingiSetDetailParameter": 1520,
+      "Name": "計略再使用延長",
+      "Explanation": "近接マスにのみ配置可能な武器種の\n計略再使用時間が大幅延長"
+    },
+    {
+      "ID": 1521,
+      "SingiSetDetailParameter": 1521,
+      "Name": "城娘性能低下",
+      "Explanation": "遠隔マスにのみ配置可能な武器種以外の\n攻撃と射程上昇,変更効果無効"
+    },
+    {
+      "ID": 1522,
+      "SingiSetDetailParameter": 1522,
+      "Name": "術攻撃反射(中)",
+      "Explanation": "全ての敵が術ダメージを50％反射"
+    },
+    {
+      "ID": 1523,
+      "SingiSetDetailParameter": 1523,
+      "Name": "飛行敵強化",
+      "Explanation": "飛行敵の後退と移動速度低下,変更効果を無効\n耐久が100％上昇"
+    },
+    {
+      "ID": 1524,
+      "SingiSetDetailParameter": 1524,
+      "Name": "敵性能増強",
+      "Explanation": "全ての敵が足止めと後退効果を無効\n敵の攻撃が50％上昇"
+    },
+    {
+      "ID": 1525,
+      "SingiSetDetailParameter": 1525,
+      "Name": "平城娘弱体化",
+      "Explanation": "平城娘の耐久と防御が50％低下"
+    },
+    {
+      "ID": 1526,
+      "SingiSetDetailParameter": 1526,
+      "Name": "山城娘弱体化",
+      "Explanation": "山城娘の耐久と防御が50％低下"
+    },
+    {
+      "ID": 1527,
+      "SingiSetDetailParameter": 1527,
+      "Name": "飛行敵強化",
+      "Explanation": "飛行敵が遠距離物理からのダメージを90％軽減\n後退効果と天候効果を無効"
+    },
+    {
+      "ID": 1528,
+      "SingiSetDetailParameter": 1528,
+      "Name": "敵性能増強",
+      "Explanation": "全ての敵の耐久,攻撃,防御が150％上昇\n被ダメージを50％軽減"
+    },
+    {
+      "ID": 1529,
+      "SingiSetDetailParameter": 1529,
+      "Name": "ホルス強化",
+      "Explanation": "ホルスの状態異常を無効\n攻撃と耐久が上昇"
+    },
+    {
+      "ID": 1530,
+      "SingiSetDetailParameter": 1530,
+      "Name": "平山、水城娘弱体",
+      "Explanation": "平山、水城娘の攻撃と射程が75％低下"
+    },
+    {
+      "ID": 1531,
+      "SingiSetDetailParameter": 1531,
+      "Name": "城娘性能変動",
+      "Explanation": "全ての城娘の攻撃上昇、割合防御無視効果を無効"
+    },
+    {
+      "ID": 1532,
+      "SingiSetDetailParameter": 1532,
+      "Name": "敵性能強化",
+      "Explanation": "敵の防御を100％上昇\n移動速度低下,変更効果,後退効果を無効"
+    },
+    {
+      "ID": 1533,
+      "SingiSetDetailParameter": 1533,
+      "Name": "ホルス強化",
+      "Explanation": "ホルスの耐久と攻撃が上昇,状態異常,攻撃低下,\n変更効果無効,術ダメを3倍で反射"
+    },
+    {
+      "ID": 1534,
+      "SingiSetDetailParameter": 1534,
+      "Name": "敵天候効果無効",
+      "Explanation": "全ての敵の受ける天候効果を無効"
+    },
+    {
+      "ID": 1535,
+      "SingiSetDetailParameter": 1535,
+      "Name": "ヘリオポリス大",
+      "Explanation": "全ての城娘の与ダメージを30％低下,攻撃を30％上昇"
+    },
+    {
+      "ID": 1536,
+      "SingiSetDetailParameter": 1536,
+      "Name": "ヌン(大)",
+      "Explanation": "海洋兜の与ダメージが30％上昇\n全ての状態異常,後退効果,移動速度変更効果を無効"
+    },
+    {
+      "ID": 1537,
+      "SingiSetDetailParameter": 1537,
+      "Name": "オンボス大",
+      "Explanation": "サンドワームの耐久,攻撃,防御が30％上昇\n後退効果,移動速度低下効果を無効"
+    },
+    {
+      "ID": 1538,
+      "SingiSetDetailParameter": 1538,
+      "Name": "アアル大",
+      "Explanation": "ミイラ,アアルの亡霊の耐久,攻撃,防御が40％上昇\n術ダメージを40％軽減,移動速度変更効果を無効"
+    },
+    {
+      "ID": 1539,
+      "SingiSetDetailParameter": 1539,
+      "Name": "アケト大",
+      "Explanation": "近接マスと遠隔マス両方に配置可能な武器種の\n耐久,攻撃が30％低下,被ダメージが30％増加"
+    },
+    {
+      "ID": 1540,
+      "SingiSetDetailParameter": 1540,
+      "Name": "全敵強化",
+      "Explanation": "全敵の耐久を150％上昇,攻撃と防御を100％上昇\n後退効果,移動速度変更効果を無効"
+    },
+    {
+      "ID": 1541,
+      "SingiSetDetailParameter": 1541,
+      "Name": "特定敵強化",
+      "Explanation": "巨大メジェドの耐久,攻撃,防御200％上昇\n移動速度低下効果,状態異常無効"
+    },
+    {
+      "ID": 1542,
+      "SingiSetDetailParameter": 1542,
+      "Name": "城娘性能低下",
+      "Explanation": "平,平山,山,水城娘の計略再使用時間を150％延長\n全城娘の再配置時間を大幅延長"
+    },
+    {
+      "ID": 1543,
+      "SingiSetDetailParameter": 1543,
+      "Name": "コンス強化",
+      "Explanation": "コンスの耐久を300％,防御を200％上昇\n被ダメージを30％軽減,移動速度低下,状態異常を無効"
+    },
+    {
+      "ID": 1544,
+      "SingiSetDetailParameter": 1544,
+      "Name": "ホルス強化",
+      "Explanation": "ホルスの耐久を500％,射程を100％上昇\n術ダメージを90％軽減,移動速度低下,状態異常を無効"
+    },
+    {
+      "ID": 1545,
+      "SingiSetDetailParameter": 1545,
+      "Name": "西洋兜強化",
+      "Explanation": "西洋兜が移動速度低下,変更効果無効\n攻撃50％上昇,被ダメージを50％軽減"
+    },
+    {
+      "ID": 1546,
+      "SingiSetDetailParameter": 1546,
+      "Name": "計略・伏兵制限",
+      "Explanation": "城娘の計略再使用時間を35％延長\n伏兵に継続大ダメージ発生"
+    },
+    {
+      "ID": 1547,
+      "SingiSetDetailParameter": 1547,
+      "Name": "敵味方性能変動",
+      "Explanation": "全敵の耐久,防御が200％上昇,状態異常無効\n城娘の気還元率上昇,再配置時間延長"
+    },
+    {
+      "ID": 1548,
+      "SingiSetDetailParameter": 1548,
+      "Name": "特定敵性能変動",
+      "Explanation": "ラーの射程,攻撃拡散範囲低下,攻撃対象数2増加\nラー,ベンヌの耐久,攻撃,防御が上昇,射程低下効果無効"
+    },
+    {
+      "ID": 1549,
+      "SingiSetDetailParameter": 1549,
+      "Name": "武神強化",
+      "Explanation": "武神シュテファンの耐久,攻撃,防御上昇,攻撃隙半減\n与ダメの50％耐久回復,防御低下効果と状態異常無効"
+    },
+    {
+      "ID": 1550,
+      "SingiSetDetailParameter": 1550,
+      "Name": "海洋兜強化",
+      "Explanation": "海洋兜の耐久が250％上昇\n移動速度低下効果無効"
+    },
+    {
+      "ID": 1551,
+      "SingiSetDetailParameter": 1551,
+      "Name": "城娘性能変動",
+      "Explanation": "大砲,軍船以外の城娘の耐久と射程が60％減少\n全城娘の再配置時間延長"
+    },
+    {
+      "ID": 1552,
+      "SingiSetDetailParameter": 1552,
+      "Name": "全敵強化",
+      "Explanation": "全敵の攻撃が150％上昇,防御が100％上昇"
+    },
+    {
+      "ID": 1553,
+      "SingiSetDetailParameter": 1553,
+      "Name": "ボス強化",
+      "Explanation": "イシスの耐久と攻撃が上昇,被ダメ50％軽減\nネフティスの耐久と射程が上昇,被ダメ50％軽減"
+    },
+    {
+      "ID": 1554,
+      "SingiSetDetailParameter": 1554,
+      "Name": "武神強化",
+      "Explanation": "武神明智光秀の耐久,攻撃,射程上昇,攻撃隙短縮\n状態異常,後退効果,移動速度変更効果無効"
+    },
+    {
+      "ID": 1555,
+      "SingiSetDetailParameter": 1555,
+      "Name": "敵性能強化",
+      "Explanation": "全敵の耐久,防御が150％,攻撃が100％上昇,移動速度\n変更と状態異常無効,サンドワームが物理攻撃を無効"
+    },
+    {
+      "ID": 1556,
+      "SingiSetDetailParameter": 1556,
+      "Name": "敵味方性能変動",
+      "Explanation": "城娘の割合防御無視効果無効、敵の射程内に足止め\n対象以外の殿側ユニットがいない場合に回復が上昇"
+    },
+    {
+      "ID": 1557,
+      "SingiSetDetailParameter": 1557,
+      "Name": "自然気減少",
+      "Explanation": "気の自然回復量が50％低下"
+    },
+    {
+      "ID": 1558,
+      "SingiSetDetailParameter": 1558,
+      "Name": "セト強化",
+      "Explanation": "セトの耐久,射程,与ダメージが上昇,物理攻撃無効\n攻撃を射程内全体攻撃に変化"
+    },
+    {
+      "ID": 1559,
+      "SingiSetDetailParameter": 1559,
+      "Name": "武神強化",
+      "Explanation": "武神伊達政宗と片倉小十郎の耐久,防御,与ダメージ上昇\n被術ダメージを90％軽減,後退効果無効"
+    },
+    {
+      "ID": 1560,
+      "SingiSetDetailParameter": 1560,
+      "Name": "全敵強化",
+      "Explanation": "全敵の耐久が100％,回復が2000上昇\n移動速度低下,後退効果無効"
+    },
+    {
+      "ID": 1561,
+      "SingiSetDetailParameter": 1561,
+      "Name": "城娘性能低下",
+      "Explanation": "計略再使用時間を40％延長\n最大耐久,攻撃が50％低下,再配置時間延長"
+    },
+    {
+      "ID": 1562,
+      "SingiSetDetailParameter": 1562,
+      "Name": "気制限",
+      "Explanation": "気の自然回復量が50％低下\n全ての敵の撃破気が0になる"
+    },
+    {
+      "ID": 1563,
+      "SingiSetDetailParameter": 1563,
+      "Name": "敵性能変動",
+      "Explanation": "兜以外の敵の耐久が500％上昇\n全ての状態異常を無効"
+    },
+    {
+      "ID": 1564,
+      "SingiSetDetailParameter": 1564,
+      "Name": "武神強化",
+      "Explanation": "武神北条氏康の耐久,攻撃上昇,後退,状態異常,\n移動速度変更無効,攻撃対象が1増加"
+    },
+    {
+      "ID": 1600,
+      "SingiSetDetailParameter": 1600,
+      "Name": "城娘性能低下",
+      "Explanation": "全ての城娘の気還元率大幅低下\n再配置時間が延長"
+    },
+    {
+      "ID": 1601,
+      "SingiSetDetailParameter": 1601,
+      "Name": "敵防御性能強化",
+      "Explanation": "全ての敵が受けるダメージを5000まで防ぐ\n1000以下のダメージを無効化"
+    },
+    {
+      "ID": 1602,
+      "SingiSetDetailParameter": 1602,
+      "Name": "自然気減少",
+      "Explanation": "気の自然回復量が50％低下\n気が5秒毎に4減少"
+    },
+    {
+      "ID": 1603,
+      "SingiSetDetailParameter": 1603,
+      "Name": "敵性能強化",
+      "Explanation": "全敵が後退,移動速度変更,足止め,状態異常無効\n術攻撃以外の被ダメージを90％軽減"
+    },
+    {
+      "ID": 1604,
+      "SingiSetDetailParameter": 1604,
+      "Name": "武神強化(等活七)",
+      "Explanation": "武神石田三成の攻撃対象数増加,与ダメが大幅に上昇\n攻撃力低下,変更無効,攻撃範囲低下無効"
+    },
+    {
+      "ID": 1605,
+      "SingiSetDetailParameter": 1605,
+      "Name": "武器種制限(射程)",
+      "Explanation": "通常攻撃を行わない武器種の射程が75％低下\n射程上昇効果を無効,対象：歌舞,本,陣貝,茶器"
+    },
+    {
+      "ID": 1606,
+      "SingiSetDetailParameter": 1606,
+      "Name": "気制限",
+      "Explanation": "城娘の気還元率を大幅低下\n計略消費気が2倍"
+    },
+    {
+      "ID": 1607,
+      "SingiSetDetailParameter": 1607,
+      "Name": "敵味方性能変動",
+      "Explanation": "城娘の被ダメが75％上昇,一部を除く被回復量が\n75％上昇,全ての敵の耐久が150％上昇"
+    },
+    {
+      "ID": 1608,
+      "SingiSetDetailParameter": 1608,
+      "Name": "針式兜強化",
+      "Explanation": "近接物理攻撃を受けたとき150％で反撃\n対象の敵：針式一ノ谷形兜,針式毛虫形兜,針千本兜"
+    },
+    {
+      "ID": 1609,
+      "SingiSetDetailParameter": 1609,
+      "Name": "武神強化(針山七)",
+      "Explanation": "武神毛利元就が状態異常,後退効果を無効\n耐久,防御,移動速度上昇,9999未満のダメージ無効"
+    },
+    {
+      "ID": 1610,
+      "SingiSetDetailParameter": 1610,
+      "Name": "敵弱体効果無効",
+      "Explanation": "ボス以外の状態異常,攻撃低下効果\n射程低下効果,移動速度変更を無効"
+    },
+    {
+      "ID": 1611,
+      "SingiSetDetailParameter": 1611,
+      "Name": "武器種阻害(七層)",
+      "Explanation": "刀,槍,双剣：射程上昇無効,槌,盾,戦棍：攻撃上昇無効\n拳,鎌：攻撃対象にならなくなり,計略再使用時間延長"
+    },
+    {
+      "ID": 1612,
+      "SingiSetDetailParameter": 1612,
+      "Name": "各地形属性弱体化",
+      "Explanation": "平城娘：攻撃上昇無効,山城娘：計略消費気4倍\n平山城娘：射程上昇無効,水城娘：攻撃75％低下"
+    },
+    {
+      "ID": 1613,
+      "SingiSetDetailParameter": 1613,
+      "Name": "気獲得制限(七層)",
+      "Explanation": "気の自然回復速度が100％低下,敵撃破時の獲得気\nが0になる※撃破気増加効果の付与時を除く"
+    },
+    {
+      "ID": 1614,
+      "SingiSetDetailParameter": 1614,
+      "Name": "ボス強化",
+      "Explanation": "菩薩(善):耐久,移動速度,射程上昇,状態異常無効\n菩薩(悪):耐久,防御無視割合上昇,状態異常無効"
+    },
+    {
+      "ID": 1615,
+      "SingiSetDetailParameter": 1615,
+      "Name": "等活地獄 七(中)",
+      "Explanation": "全ての敵に毎秒耐久回復100の効果を付与"
+    },
+    {
+      "ID": 10000,
+      "SingiSetDetailParameter": 10000,
+      "Name": "性能強化",
+      "Explanation": "敵全体の与ダメージが50％上昇、\n移動速度低下効果を無効"
+    },
+    {
+      "ID": 10001,
+      "SingiSetDetailParameter": 10001,
+      "Name": "敵術ダメ無効",
+      "Explanation": "全ての敵が術攻撃による被ダメージを無効"
+    },
+    {
+      "ID": 10002,
+      "SingiSetDetailParameter": 10002,
+      "Name": "明智光秀強化",
+      "Explanation": "明智光秀の耐久が上昇。全ての状態異常と\n後退効果を無効。武神化時は攻撃対象数が3増加"
+    },
+    {
+      "ID": 10003,
+      "SingiSetDetailParameter": 10003,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜と妖怪以外の耐久,攻撃,防御を100％上昇。"
+    },
+    {
+      "ID": 10004,
+      "SingiSetDetailParameter": 10004,
+      "Name": "妖怪性能強化",
+      "Explanation": "妖怪の耐久,攻撃,防御を100％上昇。\n被ダメージ30％軽減,与ダメージ30％上昇"
+    },
+    {
+      "ID": 10005,
+      "SingiSetDetailParameter": 10005,
+      "Name": "明智光秀強化",
+      "Explanation": "明智光秀の耐久が上昇。全ての状態異常と\n後退効果を無効。武神化時は攻撃対象数が3増加"
+    },
+    {
+      "ID": 10006,
+      "SingiSetDetailParameter": 10006,
+      "Name": "性能強化",
+      "Explanation": "全ての敵の耐久,攻撃,防御を50％上昇、\n後退効果を無効"
+    },
+    {
+      "ID": 10007,
+      "SingiSetDetailParameter": 10007,
+      "Name": "特定敵強化",
+      "Explanation": "動物兜と妖怪の与ダメ30％上昇,\n被ダメ30％軽減,全ての状態異常無効"
+    },
+    {
+      "ID": 10008,
+      "SingiSetDetailParameter": 10008,
+      "Name": "蒲生氏郷強化",
+      "Explanation": "蒲生氏郷の耐久,攻撃,防御を上昇,後退効果を無効,\n武神化時は一部を除く近接物理攻撃を全て回避"
+    },
+    {
+      "ID": 10009,
+      "SingiSetDetailParameter": 10009,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜以外の耐久を100％,攻撃を150％上昇"
+    },
+    {
+      "ID": 10010,
+      "SingiSetDetailParameter": 10010,
+      "Name": "妖怪遠物理反撃",
+      "Explanation": "妖怪が遠隔物理攻撃を受けた際に攻撃の30％で反撃"
+    },
+    {
+      "ID": 10011,
+      "SingiSetDetailParameter": 10011,
+      "Name": "蒲生氏郷強化",
+      "Explanation": "蒲生氏郷の耐久,射程,攻撃が上昇。状態異常と足止め\nを無効。武神化時は一部を除く近接物理攻撃を回避"
+    },
+    {
+      "ID": 10012,
+      "SingiSetDetailParameter": 10012,
+      "Name": "兜防衛強化",
+      "Explanation": "敵兜の防御が100％上昇,被ダメージを50％軽減,\n術攻撃は75％軽減"
+    },
+    {
+      "ID": 10013,
+      "SingiSetDetailParameter": 10013,
+      "Name": "計略制限",
+      "Explanation": "計略消費気が3倍,効果範囲が50％低下,\n伏兵の射程が50％低下"
+    },
+    {
+      "ID": 10014,
+      "SingiSetDetailParameter": 10014,
+      "Name": "片倉小十郎強化",
+      "Explanation": "片倉小十郎の耐久,攻撃,防御を上昇,後退効果を無効,\n武神化時攻撃対象の攻撃を低下,自身の攻撃隙短縮"
+    },
+    {
+      "ID": 10015,
+      "SingiSetDetailParameter": 10015,
+      "Name": "性能強化",
+      "Explanation": "大将兜以外の敵の耐久,攻撃,防御を50％上昇\n"
+    },
+    {
+      "ID": 10016,
+      "SingiSetDetailParameter": 10016,
+      "Name": "計略性能変動",
+      "Explanation": "近接城娘の計略の消費気が5に変更,\n遠距離城娘の計略の消費気が30に変更"
+    },
+    {
+      "ID": 10017,
+      "SingiSetDetailParameter": 10017,
+      "Name": "伊達政宗強化",
+      "Explanation": "伊達政宗の耐久,攻撃,防御を上昇,後退効果を無効\n武神化時射程内城娘数に応じ,攻撃が上昇"
+    },
+    {
+      "ID": 10018,
+      "SingiSetDetailParameter": 10018,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜以外の敵の攻撃,防御,耐久を100％上昇\n後退無効。妖怪のみ150％上昇"
+    },
+    {
+      "ID": 10019,
+      "SingiSetDetailParameter": 10019,
+      "Name": "敵味方性能変動",
+      "Explanation": "城娘の割合防御無視効果無効、敵の射程内に足止め\n対象以外の殿側ユニットがいない場合に回復が上昇"
+    },
+    {
+      "ID": 10020,
+      "SingiSetDetailParameter": 10020,
+      "Name": "片倉小十郎強化",
+      "Explanation": "片倉小十郎の耐久,防御,攻撃上昇,状態異常,後退無効\n武神化時攻撃対象の攻撃を低下,自身の攻撃隙短縮"
+    },
+    {
+      "ID": 10021,
+      "SingiSetDetailParameter": 10021,
+      "Name": "伊達政宗強化",
+      "Explanation": "伊達政宗の耐久,防御,攻撃上昇,状態異常と後退無効\n武神化時は射程内城娘数に応じて攻撃と射程が上昇"
+    },
+    {
+      "ID": 10022,
+      "SingiSetDetailParameter": 10022,
+      "Name": "性能強化",
+      "Explanation": "大将兜以外の敵の耐久,攻撃,防御を100％上昇\n"
+    },
+    {
+      "ID": 10023,
+      "SingiSetDetailParameter": 10023,
+      "Name": "藤堂高虎強化",
+      "Explanation": "藤堂高虎の耐久,攻撃,防御を上昇,麻痺以外の\n状態異常無効,武神化時与ダメの50％耐久を回復"
+    },
+    {
+      "ID": 10024,
+      "SingiSetDetailParameter": 10024,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜以外の敵の耐久,攻撃,防御を150％上昇"
+    },
+    {
+      "ID": 10025,
+      "SingiSetDetailParameter": 10025,
+      "Name": "妖怪強化",
+      "Explanation": "妖怪が術攻撃による被ダメージを50％軽減\n与ダメージが50％上昇"
+    },
+    {
+      "ID": 10026,
+      "SingiSetDetailParameter": 10026,
+      "Name": "近接射程変動",
+      "Explanation": "通常攻撃が近接攻撃の武器種の射程が50％低下"
+    },
+    {
+      "ID": 10027,
+      "SingiSetDetailParameter": 10027,
+      "Name": "藤堂高虎強化",
+      "Explanation": "藤堂高虎の耐久,攻撃,防御を上昇,麻痺以外の\n状態異常無効,武神化時は与ダメの50％耐久を回復"
+    },
+    {
+      "ID": 10028,
+      "SingiSetDetailParameter": 10028,
+      "Name": "敵味方射程変動",
+      "Explanation": "全ての城娘の射程上昇効果を無効\n敵味方共に射程が20％低下"
+    },
+    {
+      "ID": 10029,
+      "SingiSetDetailParameter": 10029,
+      "Name": "性能強化",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を100％上昇\n"
+    },
+    {
+      "ID": 10030,
+      "SingiSetDetailParameter": 10030,
+      "Name": "毛利元就強化",
+      "Explanation": "毛利元就の耐久,攻撃,防御が上昇,状態異常無効\n武神化時は移動速度が上昇,攻撃後の隙短縮"
+    },
+    {
+      "ID": 10031,
+      "SingiSetDetailParameter": 10031,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜以外の耐久,攻撃,防御が125％上昇\n妖怪の与ダメ25％上昇,被ダメ25％軽減"
+    },
+    {
+      "ID": 10032,
+      "SingiSetDetailParameter": 10032,
+      "Name": "城娘攻撃低下",
+      "Explanation": "城娘の射程内の自分を除く城娘の数に応じて\n攻撃が低下(1体につき10％低下、最大50％)"
+    },
+    {
+      "ID": 10033,
+      "SingiSetDetailParameter": 10033,
+      "Name": "遠近両用弱体化",
+      "Explanation": "遠近両用武器種の与ダメージが50％低下\n被ダメージが50％上昇"
+    },
+    {
+      "ID": 10034,
+      "SingiSetDetailParameter": 10034,
+      "Name": "毛利元就強化",
+      "Explanation": "毛利元就の耐久,攻撃上昇,状態異常を無効\n武神化時は移動速度上昇,攻撃後の隙短縮"
+    },
+    {
+      "ID": 10035,
+      "SingiSetDetailParameter": 10035,
+      "Name": "性能強化",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を100％上昇\n"
+    },
+    {
+      "ID": 10036,
+      "SingiSetDetailParameter": 10036,
+      "Name": "真田幸村強化",
+      "Explanation": "真田幸村の耐久,攻撃,防御が上昇,移動速度低下\n効果を無効,武神化時は防御力が大幅に上昇"
+    },
+    {
+      "ID": 10037,
+      "SingiSetDetailParameter": 10037,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜以外の攻撃,防御を上昇 \n防御低下と防御変更効果を無効"
+    },
+    {
+      "ID": 10038,
+      "SingiSetDetailParameter": 10038,
+      "Name": "城娘性能変動",
+      "Explanation": "城娘の射程内の殿側ユニットが8体未満の場合\nユニット数が少ないほど攻撃速度低下,攻撃上昇"
+    },
+    {
+      "ID": 10039,
+      "SingiSetDetailParameter": 10039,
+      "Name": "海洋兜活性",
+      "Explanation": "海洋兜が移動速度変更,低下効果,後退効果,\n状態異常を無効,移動速度が25％上昇"
+    },
+    {
+      "ID": 10040,
+      "SingiSetDetailParameter": 10040,
+      "Name": "真田幸村強化",
+      "Explanation": "真田幸村の耐久,攻撃,防御が上昇,防御低下と防御\n変更効果を無効,武神化時は防御が大幅に上昇"
+    },
+    {
+      "ID": 10041,
+      "SingiSetDetailParameter": 10041,
+      "Name": "性能強化",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を200％上昇\n"
+    },
+    {
+      "ID": 10042,
+      "SingiSetDetailParameter": 10042,
+      "Name": "兜防衛強化",
+      "Explanation": "敵兜が近接物理攻撃,術攻撃の被ダメージを50％\n軽減,回復が500上昇"
+    },
+    {
+      "ID": 10043,
+      "SingiSetDetailParameter": 10043,
+      "Name": "前田利家強化",
+      "Explanation": "前田利家の耐久,攻撃,防御が上昇,状態異常,後退,\n移動速度低下無効,武神化時射程上昇,足止め無効"
+    },
+    {
+      "ID": 10044,
+      "SingiSetDetailParameter": 10044,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を200％上昇,射程内の\n足止め対象以外の城娘の数に応じ防御無視割合上昇"
+    },
+    {
+      "ID": 10045,
+      "SingiSetDetailParameter": 10045,
+      "Name": "飛行敵被ダメ変動",
+      "Explanation": "飛行敵が術攻撃の被ダメージを無効,通常攻撃が\n近接攻撃の武器種からの被ダメージが増加"
+    },
+    {
+      "ID": 10046,
+      "SingiSetDetailParameter": 10046,
+      "Name": "計略弱化",
+      "Explanation": "範囲を指定してダメージを与える計略のダメージと\n計略の効果範囲が50％低下"
+    },
+    {
+      "ID": 10047,
+      "SingiSetDetailParameter": 10047,
+      "Name": "前田利家強化",
+      "Explanation": "前田利家の耐久,攻撃,防御が上昇,状態異常,後退,\n移動速度低下無効,武神化時射程上昇,足止め無効"
+    },
+    {
+      "ID": 10048,
+      "SingiSetDetailParameter": 10048,
+      "Name": "性能強化",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を200％上昇\n"
+    },
+    {
+      "ID": 10049,
+      "SingiSetDetailParameter": 10049,
+      "Name": "大将兜以外強化",
+      "Explanation": "大将兜以外の与ダメ50％上昇,被ダメ50％軽減\n状態異常を無効"
+    },
+    {
+      "ID": 10050,
+      "SingiSetDetailParameter": 10050,
+      "Name": "石田三成強化",
+      "Explanation": "石田三成の耐久,攻撃,防御が上昇,状態異常を無効\n武神化時は射程が大幅に上昇し拡散範囲を強化"
+    },
+    {
+      "ID": 10051,
+      "SingiSetDetailParameter": 10051,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜以外の敵の耐久を250％\n攻撃を200％上昇,防御を50％上昇"
+    },
+    {
+      "ID": 10052,
+      "SingiSetDetailParameter": 10052,
+      "Name": "石田三成強化",
+      "Explanation": "石田三成の耐久,攻撃,防御,回復上昇,状態異常,移動\n速度低下無効。武神化時は射程,拡散範囲大幅上昇"
+    },
+    {
+      "ID": 10053,
+      "SingiSetDetailParameter": 10053,
+      "Name": "性能強化",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を50％上昇\n"
+    },
+    {
+      "ID": 10054,
+      "SingiSetDetailParameter": 10054,
+      "Name": "海洋兜強化",
+      "Explanation": "海洋兜が物理攻撃の被ダメージを50％軽減,\n移動速度が25％増加"
+    },
+    {
+      "ID": 10055,
+      "SingiSetDetailParameter": 10055,
+      "Name": "島津義弘強化",
+      "Explanation": "島津義弘の耐久,攻撃が上昇,状態異常無効,武神化\n時は攻撃速度が上昇,近接物理攻撃の被ダメを軽減"
+    },
+    {
+      "ID": 10056,
+      "SingiSetDetailParameter": 10056,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を75％上昇\n後退効果を無効"
+    },
+    {
+      "ID": 10057,
+      "SingiSetDetailParameter": 10057,
+      "Name": "動物兜強化",
+      "Explanation": "動物兜の射程が25％上昇,被ダメージを25％軽減\n攻撃対象数が1増加"
+    },
+    {
+      "ID": 10058,
+      "SingiSetDetailParameter": 10058,
+      "Name": "味方与ダメ変動",
+      "Explanation": "味方の物理攻撃の与ダメージが25％上昇\n術攻撃属性の与ダメージが75％低下"
+    },
+    {
+      "ID": 10059,
+      "SingiSetDetailParameter": 10059,
+      "Name": "島津義弘強化",
+      "Explanation": "島津義弘の耐久,攻撃が上昇,状態異常無効,武神化\n時は攻撃速度が上昇,近接物理攻撃の被ダメを軽減"
+    },
+    {
+      "ID": 10060,
+      "SingiSetDetailParameter": 10060,
+      "Name": "性能強化",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を250％上昇\n"
+    },
+    {
+      "ID": 10061,
+      "SingiSetDetailParameter": 10061,
+      "Name": "城娘性能変動",
+      "Explanation": "城娘の攻撃が50％低下,防御が50％上昇"
+    },
+    {
+      "ID": 10062,
+      "SingiSetDetailParameter": 10062,
+      "Name": "山県昌景強化",
+      "Explanation": "山県昌景の耐久,攻撃,防御上昇,状態異常無効\n武神化時は被ダメ大幅軽減,与ダメの100％耐久回復"
+    },
+    {
+      "ID": 10063,
+      "SingiSetDetailParameter": 10063,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を225％上昇,攻撃速度\nが25％上昇,飛行と妖怪が被ダメ50％軽減"
+    },
+    {
+      "ID": 10064,
+      "SingiSetDetailParameter": 10064,
+      "Name": "赤備え強化",
+      "Explanation": "赤備え兜の与ダメ50％上昇,移動速度が50％上昇,\n回復を500強化"
+    },
+    {
+      "ID": 10065,
+      "SingiSetDetailParameter": 10065,
+      "Name": "特定武器種弱体化",
+      "Explanation": "遠隔,遠近武器種の最大耐久が半減,\n防御力が50％低下"
+    },
+    {
+      "ID": 10066,
+      "SingiSetDetailParameter": 10066,
+      "Name": "山県昌景強化",
+      "Explanation": "山県昌景の耐久,攻撃,防御上昇,状態異常無効\n武神化時は被ダメ大幅軽減,与ダメの100％耐久回復"
+    },
+    {
+      "ID": 10067,
+      "SingiSetDetailParameter": 10067,
+      "Name": "性能強化",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を250％上昇\n"
+    },
+    {
+      "ID": 10068,
+      "SingiSetDetailParameter": 10068,
+      "Name": "敵兜強化",
+      "Explanation": "敵兜が被ダメージを50％軽減,射程が上昇"
+    },
+    {
+      "ID": 10069,
+      "SingiSetDetailParameter": 10069,
+      "Name": "黒田長政強化",
+      "Explanation": "黒田長政の耐久,攻撃,防御上昇,状態異常と後退効\n果を無効,武神化時攻撃速度と射程が上昇"
+    },
+    {
+      "ID": 10070,
+      "SingiSetDetailParameter": 10070,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を175％上昇\n"
+    },
+    {
+      "ID": 10071,
+      "SingiSetDetailParameter": 10071,
+      "Name": "大将兜以外強化",
+      "Explanation": "大将兜以外の耐久が150％上昇\n防御力が0になる,状態異常を無効"
+    },
+    {
+      "ID": 10072,
+      "SingiSetDetailParameter": 10072,
+      "Name": "城娘性能変動",
+      "Explanation": "通常攻撃が近接の武器種の計略消費気3倍,射程上昇\n効果無効,遠隔と攻撃しない武器種の計略消費気減少"
+    },
+    {
+      "ID": 10073,
+      "SingiSetDetailParameter": 10073,
+      "Name": "黒田長政強化",
+      "Explanation": "黒田長政の耐久,攻撃,防御上昇,状態異常と後退効\n果を無効,武神化時攻撃速度と射程が上昇"
+    },
+    {
+      "ID": 10074,
+      "SingiSetDetailParameter": 10074,
+      "Name": "性能強化",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を150％上昇\n"
+    },
+    {
+      "ID": 10075,
+      "SingiSetDetailParameter": 10075,
+      "Name": "城娘射程低下",
+      "Explanation": "全ての城娘の射程が30％低下"
+    },
+    {
+      "ID": 10076,
+      "SingiSetDetailParameter": 10076,
+      "Name": "シュテファン強化",
+      "Explanation": "シュテファンの耐久攻撃上昇,氷結以外状態異常無\n効武神化時射程内殿側ユニット数に応じ防御回復変動"
+    },
+    {
+      "ID": 10077,
+      "SingiSetDetailParameter": 10077,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を125％上昇\n被ダメージを25％軽減"
+    },
+    {
+      "ID": 10078,
+      "SingiSetDetailParameter": 10078,
+      "Name": "敵防衛強化",
+      "Explanation": "大将兜以外の防御が150％上昇\n防御低下,変更効果を無効化,回復を200強化"
+    },
+    {
+      "ID": 10079,
+      "SingiSetDetailParameter": 10079,
+      "Name": "焦熱効果",
+      "Explanation": "一定時間毎に現在耐久10％分の継続ダメージ発生\n対象：城娘/伏兵"
+    },
+    {
+      "ID": 10080,
+      "SingiSetDetailParameter": 10080,
+      "Name": "シュテファン強化",
+      "Explanation": "シュテファンの耐久攻撃上昇,氷結以外状態異常無\n効武神化時射程内殿側ユニット数に応じ防御回復変動"
+    },
+    {
+      "ID": 10081,
+      "SingiSetDetailParameter": 10081,
+      "Name": "性能強化",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を250％上昇\n"
+    },
+    {
+      "ID": 10082,
+      "SingiSetDetailParameter": 10082,
+      "Name": "妖怪強化",
+      "Explanation": "妖怪の与ダメージが50％上昇,術攻撃の被ダメージ\nを50％軽減,移動速度低下効果を無効"
+    },
+    {
+      "ID": 10083,
+      "SingiSetDetailParameter": 10083,
+      "Name": "福島正則強化",
+      "Explanation": "福島正則の耐久,攻撃,防御上昇,状態異常,後退効果\n無効,武神化時術被ダメ大幅軽減,移動速度が増加"
+    },
+    {
+      "ID": 10084,
+      "SingiSetDetailParameter": 10084,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を100％上昇\n攻撃低下,変更効果を無効"
+    },
+    {
+      "ID": 10085,
+      "SingiSetDetailParameter": 10085,
+      "Name": "城娘性能変動",
+      "Explanation": "全ての城娘の被ダメージが25％上昇\n伏兵の被ダメージが50％軽減"
+    },
+    {
+      "ID": 10086,
+      "SingiSetDetailParameter": 10086,
+      "Name": "大将兜以外術軽減",
+      "Explanation": "大将兜以外の敵が術攻撃による被ダメージを75％軽減"
+    },
+    {
+      "ID": 10087,
+      "SingiSetDetailParameter": 10087,
+      "Name": "福島正則強化",
+      "Explanation": "福島正則の耐久,攻撃,防御上昇,状態異常,後退効果\n無効,武神化時術被ダメ大幅軽減,移動速度が増加"
+    },
+    {
+      "ID": 10088,
+      "SingiSetDetailParameter": 10088,
+      "Name": "性能強化",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を75％上昇\n"
+    },
+    {
+      "ID": 10089,
+      "SingiSetDetailParameter": 10089,
+      "Name": "敵防衛強化",
+      "Explanation": "大将兜以外の敵の防御力が100％上昇\n術被ダメージを25％軽減"
+    },
+    {
+      "ID": 10090,
+      "SingiSetDetailParameter": 10090,
+      "Name": "北条氏康強化",
+      "Explanation": "北条氏康の耐久,攻撃,防御上昇,状態異常無効,武神\n化時攻撃が防御を無視,1000以下のダメージを無効"
+    },
+    {
+      "ID": 10091,
+      "SingiSetDetailParameter": 10091,
+      "Name": "性能増強(超難)",
+      "Explanation": "妖怪と大将兜以外の耐久,攻撃,防御を75％上昇\n妖怪は50％上昇"
+    },
+    {
+      "ID": 10092,
+      "SingiSetDetailParameter": 10092,
+      "Name": "大将兜以外強化",
+      "Explanation": "大将兜以外の敵が射程低下無効,撃破気が0にな\nる※撃破時獲得気増加が付与されている場合を除く"
+    },
+    {
+      "ID": 10093,
+      "SingiSetDetailParameter": 10093,
+      "Name": "北条氏康強化",
+      "Explanation": "北条氏康の耐久,攻撃,防御上昇,状態異常無効,武神\n化時攻撃が防御を無視,3000以下のダメージを無効"
+    },
+    {
+      "ID": 10094,
+      "SingiSetDetailParameter": 10094,
+      "Name": "性能強化",
+      "Explanation": "大将兜以外の攻撃,防御を50％上昇"
+    },
+    {
+      "ID": 10095,
+      "SingiSetDetailParameter": 10095,
+      "Name": "特定敵強化",
+      "Explanation": "動物兜と妖怪の耐久が25％上昇\n回復が300上昇,全ての状態異常無効"
+    },
+    {
+      "ID": 10096,
+      "SingiSetDetailParameter": 10096,
+      "Name": "加藤清正強化",
+      "Explanation": "加藤清正の耐久,攻撃,防御が上昇,武神化時は\n攻撃速度と移動速度が上昇,攻撃が防御を無視する"
+    },
+    {
+      "ID": 10097,
+      "SingiSetDetailParameter": 10097,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜以外の攻撃,防御を50％上昇\n術被ダメージを25％軽減"
+    },
+    {
+      "ID": 10098,
+      "SingiSetDetailParameter": 10098,
+      "Name": "妖怪活性",
+      "Explanation": "妖怪の与ダメージが25％上昇\n状態異常,後退効果無効"
+    },
+    {
+      "ID": 10099,
+      "SingiSetDetailParameter": 10099,
+      "Name": "毒蔓延",
+      "Explanation": "一定時間毎に最大耐久20％分の継続ダメージ発生\n対象：城娘"
+    },
+    {
+      "ID": 10100,
+      "SingiSetDetailParameter": 10100,
+      "Name": "加藤清正強化",
+      "Explanation": "加藤清正の耐久,攻撃,防御が上昇,武神化時は\n攻撃速度と移動速度が上昇,攻撃が防御を無視する"
+    },
+    {
+      "ID": 10101,
+      "SingiSetDetailParameter": 10101,
+      "Name": "性能強化",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を50％上昇\n"
+    },
+    {
+      "ID": 10102,
+      "SingiSetDetailParameter": 10102,
+      "Name": "大将兜以外強化",
+      "Explanation": "大将兜以外の攻撃速度,移動速度が上昇\n回復を500強化\n"
+    },
+    {
+      "ID": 10103,
+      "SingiSetDetailParameter": 10103,
+      "Name": "直江兼続強化",
+      "Explanation": "直江兼続の耐久,攻撃,防御上昇,状態異常,移動速度\n低下無効,武神化時攻撃を大幅に強化,攻撃隙短縮"
+    },
+    {
+      "ID": 10104,
+      "SingiSetDetailParameter": 10104,
+      "Name": "性能強化",
+      "Explanation": "大将兜以外の耐久,攻撃,防御を50％上昇\n"
+    },
+    {
+      "ID": 10105,
+      "SingiSetDetailParameter": 10105,
+      "Name": "妖怪強化",
+      "Explanation": "妖怪の与ダメージが25％上昇,被ダメージを25％\n軽減,射程低下効果を無効"
+    },
+    {
+      "ID": 10106,
+      "SingiSetDetailParameter": 10106,
+      "Name": "上杉景勝強化",
+      "Explanation": "上杉景勝の耐久,攻撃,防御上昇,状態異常無効\n武神化時攻撃速度,与ダメ上昇,攻撃が防御を無視"
+    },
+    {
+      "ID": 10107,
+      "SingiSetDetailParameter": 10107,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜以外の耐久,攻撃を50％上昇\n攻撃が防御を無視"
+    },
+    {
+      "ID": 10108,
+      "SingiSetDetailParameter": 10108,
+      "Name": "敵味方性能変動",
+      "Explanation": "城娘の割合防御無視効果無効、攻撃速度低下\n大将兜以外の敵の耐久が25％上昇,後退効果無効"
+    },
+    {
+      "ID": 10109,
+      "SingiSetDetailParameter": 10109,
+      "Name": "直江兼続強化",
+      "Explanation": "直江兼続の耐久,攻撃,防御上昇,状態異常,移動速度\n低下無効,武神化時攻撃を大幅に強化,攻撃隙短縮"
+    },
+    {
+      "ID": 10110,
+      "SingiSetDetailParameter": 10110,
+      "Name": "上杉景勝強化",
+      "Explanation": "上杉景勝の耐久,攻撃,防御上昇,状態異常無効\n武神化時攻撃速度,与ダメ上昇,攻撃が防御を無視"
+    },
+    {
+      "ID": 10111,
+      "SingiSetDetailParameter": 10111,
+      "Name": "敵味方性能変動",
+      "Explanation": "大将兜以外の敵の耐久,攻撃,防御を150％上昇,遠隔\n城娘の巨大化消費気3倍,近接城娘の射程30％低下"
+    },
+    {
+      "ID": 10112,
+      "SingiSetDetailParameter": 10112,
+      "Name": "計略制限・術低下",
+      "Explanation": "計略の消費気が2倍,計略の効果範囲と伏兵の射程が\n50％低下,城娘の術攻撃の与ダメが50％低下"
+    },
+    {
+      "ID": 10113,
+      "SingiSetDetailParameter": 10113,
+      "Name": "佐竹義重強化",
+      "Explanation": "佐竹義重の耐久,防御が上昇,移動速度変更無効\n武神化時通常攻撃の被ダメ50％軽減"
+    },
+    {
+      "ID": 10114,
+      "SingiSetDetailParameter": 10114,
+      "Name": "性能増強(超難)",
+      "Explanation": "大将兜以外の敵の耐久を100％,攻撃を50％上昇\n近接物理と術の被ダメ25％軽減,氷結と火傷無効"
+    },
+    {
+      "ID": 10115,
+      "SingiSetDetailParameter": 10115,
+      "Name": "気制限・性能低下",
+      "Explanation": "気の自然回復量が低下\n城娘の射程が25％低下,味方の足止め数が3低下"
+    },
+    {
+      "ID": 10116,
+      "SingiSetDetailParameter": 10116,
+      "Name": "特定敵性能変動",
+      "Explanation": "妖怪と海洋兜が後退効果無効,与ダメが50％上昇\n飛行敵の後退,移動速度変更無効"
+    },
+    {
+      "ID": 10117,
+      "SingiSetDetailParameter": 10117,
+      "Name": "佐竹義重強化",
+      "Explanation": "佐竹義重の耐久,防御が上昇,移動速度変更無効\n武神化時通常攻撃の被ダメ半減,攻撃が不屈を無視"
+    },
+    {
+      "ID": 10118,
+      "SingiSetDetailParameter": 10118,
+      "Name": "敵味方性能変動",
+      "Explanation": "大将兜以外の兜と妖怪の攻撃,防御を50％上昇\n殿側ユニットの攻撃速度が50％低下"
+    },
+    {
+      "ID": 10119,
+      "SingiSetDetailParameter": 10119,
+      "Name": "騎馬兜・妖怪強化",
+      "Explanation": "騎馬兜と妖怪の移動速度変更無効\n耐久が100％上昇、術攻撃の被ダメを75％軽減"
+    },
+    {
+      "ID": 10200,
+      "SingiSetDetailParameter": 10200,
+      "Name": "武田信玄強化",
+      "Explanation": "武田信玄の移動速度低下無効,武神化時は攻撃が不屈\nを無視,城娘の足止め可能総数15以下で攻撃と回復上昇"
+    },
+    {
+      "ID": 10201,
+      "SingiSetDetailParameter": 10201,
+      "Name": "性能増強(超難)",
+      "Explanation": "騎馬兜と妖怪の移動速度変更効果,混乱,猛毒,氷結\nを無効、城娘が大破した数に応じて回復が500上昇"
+    },
+    {
+      "ID": 10202,
+      "SingiSetDetailParameter": 10202,
+      "Name": "気獲得変動",
+      "Explanation": "5秒ごとに気が2増加する代わりに、気の自然回復量\n75％低下、通常時の敵撃破時の獲得気が0になる"
+    },
+    {
+      "ID": 10203,
+      "SingiSetDetailParameter": 10203,
+      "Name": "足止め数依存制限",
+      "Explanation": "足止め可能な数が1以下の遠隔城娘と\n足止め可能な数が3以下の近接城娘の攻撃が90％低下"
+    },
+    {
+      "ID": 10204,
+      "SingiSetDetailParameter": 10204,
+      "Name": "武田信玄強化",
+      "Explanation": "武田信玄の移動速度低下無効,武神化時は攻撃が不屈\nを無視,城娘の足止め可能総数25以下で攻撃と回復上昇"
+    },
+    {
+      "ID": 10205,
+      "SingiSetDetailParameter": 10205,
+      "Name": "欠番",
+      "Explanation": "欠番"
+    },
+    {
+      "ID": 10206,
+      "SingiSetDetailParameter": 10206,
+      "Name": "敵性能増強",
+      "Explanation": "飛行敵と妖怪の移動速度変更無効、耐久が75％上昇\n被術ダメージを無効,弓,大砲,鉄砲からの被ダメが増加"
+    },
+    {
+      "ID": 10207,
+      "SingiSetDetailParameter": 10207,
+      "Name": "上杉謙信強化",
+      "Explanation": "上杉謙信の攻撃,移動速度の低下と変更効果を無効\n武神化後は耐久上昇,攻撃隙短縮,攻撃が不屈を無視"
+    },
+    {
+      "ID": 10208,
+      "SingiSetDetailParameter": 10208,
+      "Name": "敵性能増強(超難)",
+      "Explanation": "飛行敵と妖怪の移動速度低下無効、耐久が125％上昇\n被ダメを50％軽減,弓,大砲,鉄砲からの被ダメが増加"
+    },
+    {
+      "ID": 10209,
+      "SingiSetDetailParameter": 10209,
+      "Name": "欠番",
+      "Explanation": "欠番"
+    },
+    {
+      "ID": 10210,
+      "SingiSetDetailParameter": 10210,
+      "Name": "配置数性能変動",
+      "Explanation": "城娘の攻撃が95％低下。同じ地形属性を\n6回以上配置で攻撃が100％上昇(複合を含む)"
+    },
+    {
+      "ID": 10211,
+      "SingiSetDetailParameter": 10211,
+      "Name": "上杉謙信強化",
+      "Explanation": "上杉謙信の攻撃,移動速度の低下と変更効果を無効\n武神化後は耐久上昇,攻撃隙短縮,攻撃が不屈を無視"
+    },
+    {
+      "ID": 10212,
+      "SingiSetDetailParameter": 10212,
+      "Name": "城娘性能変動",
+      "Explanation": "城娘の与えるダメージが0.9倍、その後海外城娘の\n与えるダメージが1.1倍、計略消費気が2軽減"
+    },
+    {
+      "ID": 10213,
+      "SingiSetDetailParameter": 10213,
+      "Name": "特定敵強化",
+      "Explanation": "全敵の耐久,防御が50％上昇。\n幻想兜は耐久が50％より高いほど与えるダメージ上昇"
+    },
+    {
+      "ID": 10214,
+      "SingiSetDetailParameter": 10214,
+      "Name": "リチャード強化",
+      "Explanation": "リチャード1世の防御,耐久が上昇\n武神化後は移動速度変更効果を無効"
+    },
+    {
+      "ID": 10215,
+      "SingiSetDetailParameter": 10215,
+      "Name": "城娘性能変動",
+      "Explanation": "城娘の与えるダメージが0.7倍、その後海外城娘の\n与えるダメージが1.1倍、計略消費気が2軽減"
+    },
+    {
+      "ID": 10216,
+      "SingiSetDetailParameter": 10216,
+      "Name": "特定敵強化",
+      "Explanation": "全敵の耐久,防御が175％上昇し射程低下効果を無効。\n幻想兜は耐久が25％より高いほど与えるダメージ上昇"
+    },
+    {
+      "ID": 10217,
+      "SingiSetDetailParameter": 10217,
+      "Name": "気獲得変動",
+      "Explanation": "気の自然回復量が50％低下し気が5秒毎に4減少\n通常時の敵撃破時の獲得気が1上昇"
+    },
+    {
+      "ID": 10218,
+      "SingiSetDetailParameter": 10218,
+      "Name": "リチャード強化",
+      "Explanation": "リチャード1世の防御,耐久が上昇\n武神化後は移動速度変更効果を無効"
+    },
+    {
+      "ID": 19000,
+      "SingiSetDetailParameter": 19000,
+      "Name": "性能強化・壱",
+      "Explanation": "全ての敵の耐久,攻撃,防御が1.2倍"
+    },
+    {
+      "ID": 19002,
+      "SingiSetDetailParameter": 19002,
+      "Name": "性能強化・弐",
+      "Explanation": "全ての敵の耐久,攻撃,防御が1.6倍"
+    },
+    {
+      "ID": 19004,
+      "SingiSetDetailParameter": 19004,
+      "Name": "性能強化・参",
+      "Explanation": "全ての敵の耐久,攻撃,防御が2倍"
+    },
+    {
+      "ID": 19005,
+      "SingiSetDetailParameter": 19005,
+      "Name": "巨大化阻害(武神)",
+      "Explanation": "平城娘以外の巨大化気30％増加,自動巨大化時間\n大幅延長。再配置時間大幅延長,気還元率大幅低下"
+    },
+    {
+      "ID": 19006,
+      "SingiSetDetailParameter": 19006,
+      "Name": "巨大化阻害(武神)",
+      "Explanation": "平山城娘以外の巨大化気30％増加,自動巨大化時間\n大幅延長。再配置時間大幅延長,気還元率大幅低下"
+    },
+    {
+      "ID": 19007,
+      "SingiSetDetailParameter": 19007,
+      "Name": "巨大化阻害(武神)",
+      "Explanation": "山城娘以外の巨大化気30％増加,自動巨大化時間\n大幅延長。再配置時間大幅延長,気還元率大幅低下"
+    },
+    {
+      "ID": 19008,
+      "SingiSetDetailParameter": 19008,
+      "Name": "巨大化阻害(武神)",
+      "Explanation": "水城娘以外の巨大化気30％増加,自動巨大化時間\n大幅延長。再配置時間大幅延長,気還元率大幅低下"
+    },
+    {
+      "ID": 2000,
+      "SingiSetDetailParameter": 2000,
+      "Name": "平配置制限(4)",
+      "Explanation": "平城(複合を含む)が4回配置された場合、\n以降に配置された平城に懲罰が発生"
+    },
+    {
+      "ID": 2001,
+      "SingiSetDetailParameter": 2001,
+      "Name": "平山配置制限(1)",
+      "Explanation": "平山城(複合を含む)が1回配置された場合、 \n以降に配置された平山城に懲罰が発生"
+    },
+    {
+      "ID": 2002,
+      "SingiSetDetailParameter": 2002,
+      "Name": "水配置制限(3)",
+      "Explanation": "水城(複合を含む)が3回配置された場合、\n以降に配置された水城に懲罰が発生"
+    },
+    {
+      "ID": 2003,
+      "SingiSetDetailParameter": 2003,
+      "Name": "山配置制限(2)",
+      "Explanation": "山城(複合を含む)が2回配置された場合、\n以降に配置された山城に懲罰が発生"
+    },
+    {
+      "ID": 2004,
+      "SingiSetDetailParameter": 2004,
+      "Name": "地獄配置制限(8)",
+      "Explanation": "地獄城(複合を含む)が8回配置された場合、\n以降に配置された地獄城に懲罰が発生"
+    },
+    {
+      "ID": 2005,
+      "SingiSetDetailParameter": 2005,
+      "Name": "無属性制限(0)",
+      "Explanation": "無属性(複合を含む)が配置された場合、\n配置された無属性に懲罰が発生"
+    },
+    {
+      "ID": 2006,
+      "SingiSetDetailParameter": 2006,
+      "Name": "伏兵配置制限(8)",
+      "Explanation": "伏兵が8回配置された場合、\n以降に配置された伏兵に懲罰が発生"
+    },
+    {
+      "ID": 2007,
+      "SingiSetDetailParameter": 2007,
+      "Name": "近接配置制限(8)",
+      "Explanation": "近接城娘(遠近両用を含む)が8回配置された場合、\n以降に配置された近接城娘に懲罰が発生"
+    },
+    {
+      "ID": 2008,
+      "SingiSetDetailParameter": 2008,
+      "Name": "遠隔配置制限(4)",
+      "Explanation": "遠隔城娘(遠近両用を含む)が4回配置された場合、\n以降に配置された遠隔城娘に懲罰が発生"
+    },
+    {
+      "ID": 30005,
+      "SingiSetDetailParameter": 9,
+      "Name": "近接配置マス制限",
+      "Explanation": "特定の近接マスが3個消失する\nまた、「渡し船」が使用できない"
+    },
+    {
+      "ID": 30006,
+      "SingiSetDetailParameter": 10,
+      "Name": "遠隔配置マス制限",
+      "Explanation": "特定の遠隔マスが2個、水上マスが1個消失する\nまた、「渡し船」が使用できない"
+    },
+    {
+      "ID": 2009,
+      "SingiSetDetailParameter": 2009,
+      "Name": "気獲得制限",
+      "Explanation": "気の自然回復量が50％低下,敵撃破時の獲得気 \nが0になる※撃破気増加効果の付与時を除く"
+    },
+    {
+      "ID": 2011,
+      "SingiSetDetailParameter": 2011,
+      "Name": "全敵性能強化・壱",
+      "Explanation": "全敵の移動速度変更効果、状態異常無効\n遠隔物理攻撃による被ダメを大幅に軽減"
+    },
+    {
+      "ID": 2012,
+      "SingiSetDetailParameter": 2012,
+      "Name": "全敵性能強化・弐",
+      "Explanation": "全敵の移動速度低下効果、状態異常無効\n術攻撃による被ダメを大幅に軽減"
+    },
+    {
+      "ID": 2010,
+      "SingiSetDetailParameter": 2010,
+      "Name": "味方性能変動",
+      "Explanation": "地獄城以外の与えるダメージが0.5倍,地獄城の\n耐久30％上昇,近接限定城娘の計略消費気が低下"
+    },
+    {
+      "ID": 2013,
+      "SingiSetDetailParameter": 2013,
+      "Name": "妖怪・鏡強化",
+      "Explanation": "妖怪と浄玻璃鏡の後退無効,浄玻璃鏡は耐久上昇\n術ダメージを受けた際に3倍で反射する"
+    },
+    {
+      "ID": 2014,
+      "SingiSetDetailParameter": 2014,
+      "Name": "ボス強化",
+      "Explanation": "閻魔大王の与ダメ,耐久上昇,攻撃が不屈を無視\n射程低下効果,移動速度変更と低下,後退無効"
+    },
+    {
+      "ID": 20007,
+      "SingiSetDetailParameter": 7,
+      "Name": "城娘基礎性能低下",
+      "Explanation": "城娘の基礎射程30低下,遠隔マス限定城娘の基礎攻撃\n50低下,異伝城娘の配置気,基礎巨大化気と時間が増加"
+    },
+    {
+      "ID": 2015,
+      "SingiSetDetailParameter": 2015,
+      "Name": "平配置制限(1)",
+      "Explanation": "平城(複合を含む)が1回配置された場合、\n以降に配置された平城に懲罰が発生"
+    },
+    {
+      "ID": 2016,
+      "SingiSetDetailParameter": 2016,
+      "Name": "平山配置制限(4)",
+      "Explanation": "平山城(複合を含む)が4回配置された場合、\n以降に配置された平山城に懲罰が発生"
+    },
+    {
+      "ID": 2017,
+      "SingiSetDetailParameter": 2017,
+      "Name": "水配置制限(2)",
+      "Explanation": "水城(複合を含む)が2回配置された場合、\n以降に配置された水城に懲罰が発生"
+    },
+    {
+      "ID": 2018,
+      "SingiSetDetailParameter": 2018,
+      "Name": "山配置制限(3)",
+      "Explanation": "山城(複合を含む)が3回配置された場合、\n以降に配置された山城に懲罰が発生"
+    },
+    {
+      "ID": 2019,
+      "SingiSetDetailParameter": 2019,
+      "Name": "近接配置制限(4)",
+      "Explanation": "近接城娘(遠近両用を含む)が4回配置された場合、\n以降に配置された近接城娘に懲罰が発生"
+    },
+    {
+      "ID": 2020,
+      "SingiSetDetailParameter": 2020,
+      "Name": "遠隔配置制限(8)",
+      "Explanation": "遠隔城娘(遠近両用を含む)が8回配置された場合、\n以降に配置された遠隔城娘に懲罰が発生"
+    },
+    {
+      "ID": 30007,
+      "SingiSetDetailParameter": 5,
+      "Name": "近接配置マス制限",
+      "Explanation": "特定の近接マスが2個\n遠近マスが1個消失する"
+    },
+    {
+      "ID": 30008,
+      "SingiSetDetailParameter": 6,
+      "Name": "遠隔配置マス制限",
+      "Explanation": "特定の遠隔マスが2個\n遠近マスが1個消失する"
+    },
+    {
+      "ID": 2021,
+      "SingiSetDetailParameter": 2021,
+      "Name": "全敵性能強化・壱",
+      "Explanation": "全敵の移動速度低下効果、状態異常無効\n術攻撃による被ダメを大幅に軽減"
+    },
+    {
+      "ID": 2022,
+      "SingiSetDetailParameter": 2022,
+      "Name": "全敵性能強化・弐",
+      "Explanation": "全敵の移動速度変更効果、状態異常無効\n近接物理攻撃による被ダメを大幅に軽減"
+    },
+    {
+      "ID": 2023,
+      "SingiSetDetailParameter": 2023,
+      "Name": "味方性能変動",
+      "Explanation": "地獄城以外の与えるダメージが0.5倍,地獄城の\n耐久30％上昇,遠隔限定城娘が敵防御65％無視"
+    },
+    {
+      "ID": 2024,
+      "SingiSetDetailParameter": 2024,
+      "Name": "特定敵強化",
+      "Explanation": "死神(分身),巨大化敵の移動速度低下,変更無効\n死神(分身)は攻撃隙短縮,巨大化敵は耐久上昇"
+    },
+    {
+      "ID": 2025,
+      "SingiSetDetailParameter": 2025,
+      "Name": "ボス強化",
+      "Explanation": "ﾌｪﾝﾘﾙ,ﾖﾙﾑﾝｶﾞﾝﾄﾞ,ﾍﾙ,霜の巨人の与ダメ,耐久上昇\n攻撃が不屈を無視,ヘルのみ与ダメの100％回復"
+    },
+    {
+      "ID": 20008,
+      "SingiSetDetailParameter": 8,
+      "Name": "城娘基礎性能低下",
+      "Explanation": "城娘の基礎射程40低下,近接マス限定城娘の基礎攻撃\n30低下,異伝城娘の配置気,基礎巨大化気と時間が増加"
+    },
+    {
+      "ID": 2026,
+      "SingiSetDetailParameter": 2026,
+      "Name": "平配置制限(2)",
+      "Explanation": "平城(複合を含む)が2回配置された場合、\n以降に配置された平城に懲罰が発生"
+    },
+    {
+      "ID": 2027,
+      "SingiSetDetailParameter": 2027,
+      "Name": "平山配置制限(2)",
+      "Explanation": "平山城(複合を含む)が2回配置された場合、\n以降に配置された平山城に懲罰が発生"
+    },
+    {
+      "ID": 2028,
+      "SingiSetDetailParameter": 2028,
+      "Name": "水配置制限(3)",
+      "Explanation": "水城(複合を含む)が3回配置された場合、\n以降に配置された水城に懲罰が発生"
+    },
+    {
+      "ID": 2029,
+      "SingiSetDetailParameter": 2029,
+      "Name": "山配置制限(3)",
+      "Explanation": "山城(複合を含む)が3回配置された場合、\n以降に配置された山城に懲罰が発生"
+    },
+    {
+      "ID": 2030,
+      "SingiSetDetailParameter": 2030,
+      "Name": "近限配置制限(2)",
+      "Explanation": "近接マス限定城娘が2回配置された場合、\n以降に配置された近接マス限定城娘に懲罰が発生"
+    },
+    {
+      "ID": 2031,
+      "SingiSetDetailParameter": 2031,
+      "Name": "遠限配置制限(2)",
+      "Explanation": "遠隔マス限定城娘が2回配置された場合、\n以降に配置された遠隔マス限定城娘に懲罰が発生"
+    },
+    {
+      "ID": 2032,
+      "SingiSetDetailParameter": 2032,
+      "Name": "全敵性能強化・壱",
+      "Explanation": "全敵の移動速度低下効果、状態異常無効\n遠近両用武器種以外からのダメージを半減"
+    },
+    {
+      "ID": 2033,
+      "SingiSetDetailParameter": 2033,
+      "Name": "全敵性能強化・弐",
+      "Explanation": "全敵の移動速度変更効果、状態異常無効\n遠近両用武器種以外からのダメージを半減"
+    },
+    {
+      "ID": 2034,
+      "SingiSetDetailParameter": 2034,
+      "Name": "味方性能変動",
+      "Explanation": "地獄城以外の与えるダメージが0.5倍\n地獄城の耐久30％上昇"
+    },
+    {
+      "ID": 2035,
+      "SingiSetDetailParameter": 2035,
+      "Name": "巨大化段階効果",
+      "Explanation": "巨大化段階が多いほど計略消費気が増加する\n代わりに計略再使用時間が短縮(最大5段階)"
+    },
+    {
+      "ID": 2036,
+      "SingiSetDetailParameter": 2036,
+      "Name": "ボス強化",
+      "Explanation": "ﾗｰ,ｱﾇﾋﾞｽ,ﾎﾙｽ,ｺﾝｽ,ｵｼﾘｽの与ダメ,耐久上昇\n攻撃が不屈を無視,ｵｼﾘｽのみ防御低下,変更無効"
+    },
+    {
+      "ID": 20009,
+      "SingiSetDetailParameter": 9,
+      "Name": "基礎性能低下・壱",
+      "Explanation": "近接マスにのみ配置可能な城娘の基礎攻撃が\n40低下、配置気と基礎巨大化気が増加"
+    },
+    {
+      "ID": 20010,
+      "SingiSetDetailParameter": 10,
+      "Name": "基礎性能低下・弐",
+      "Explanation": "遠隔マスにのみ配置可能な城娘の基礎射程が\n40低下、配置気と基礎巨大化気と時間が増加"
+    },
+    {
+      "ID": 30009,
+      "SingiSetDetailParameter": 1,
+      "Name": "特定配置マス制限",
+      "Explanation": "特定の近接マスが2個\n遠隔マスが1個消失する"
+    },
+    {
+      "ID": 30010,
+      "SingiSetDetailParameter": 1,
+      "Name": "お助け使用不可",
+      "Explanation": "お助け城娘が使用できない"
+    },
+    {
+      "ID": 2037,
+      "SingiSetDetailParameter": 2037,
+      "Name": "平配置制限(3)",
+      "Explanation": "平城(複合を含む)が3回配置された場合、 \n以降に配置された平城に懲罰が発生"
+    },
+    {
+      "ID": 2038,
+      "SingiSetDetailParameter": 2038,
+      "Name": "平山配置制限(2)",
+      "Explanation": "平山城(複合を含む)が2回配置された場合、 \n以降に配置された平山城に懲罰が発生"
+    },
+    {
+      "ID": 2039,
+      "SingiSetDetailParameter": 2039,
+      "Name": "水配置制限(3)",
+      "Explanation": "水城(複合を含む)が3回配置された場合、\n以降に配置された水城に懲罰が発生"
+    },
+    {
+      "ID": 2040,
+      "SingiSetDetailParameter": 2040,
+      "Name": "山配置制限(1)",
+      "Explanation": "山城(複合を含む)が1回配置された場合、\n以降に配置された山城に懲罰が発生"
+    },
+    {
+      "ID": 2041,
+      "SingiSetDetailParameter": 2041,
+      "Name": "地獄配置制限(8)",
+      "Explanation": "地獄城(複合を含む)が8回配置された場合、\n以降に配置された地獄城に懲罰が発生"
+    },
+    {
+      "ID": 2042,
+      "SingiSetDetailParameter": 2042,
+      "Name": "無属性制限(1)",
+      "Explanation": "無属性(複合を含む)が1回配置された場合、\n以降に配置された無属性に懲罰が発生"
+    },
+    {
+      "ID": 2043,
+      "SingiSetDetailParameter": 2043,
+      "Name": "伏兵配置制限(4)",
+      "Explanation": "伏兵が4回配置された場合、\n以降に配置された伏兵に懲罰が発生"
+    },
+    {
+      "ID": 30011,
+      "SingiSetDetailParameter": 1,
+      "Name": "近接配置マス制限",
+      "Explanation": "特定の近接マスが3個消失する"
+    },
+    {
+      "ID": 30012,
+      "SingiSetDetailParameter": 2,
+      "Name": "遠隔配置マス制限",
+      "Explanation": "特定の遠隔マスが2個消失する"
+    },
+    {
+      "ID": 2044,
+      "SingiSetDetailParameter": 2044,
+      "Name": "妖怪強化",
+      "Explanation": "妖怪が後退効果を無効\n耐久が300％上昇、被物理ダメージを90％軽減"
+    },
+    {
+      "ID": 2045,
+      "SingiSetDetailParameter": 2045,
+      "Name": "兜強化",
+      "Explanation": "兜が後退効果を無効\n耐久が300％上昇、被術ダメージを90％軽減"
+    },
+    {
+      "ID": 2046,
+      "SingiSetDetailParameter": 2046,
+      "Name": "味方性能変動",
+      "Explanation": "海外城娘の与えるダメージが0.5倍、射程が50％低下\n全城娘の移動消費気が0になる"
+    },
+    {
+      "ID": 2047,
+      "SingiSetDetailParameter": 2047,
+      "Name": "気獲得制限",
+      "Explanation": "敵撃破時の獲得気が0になる \n※撃破気増加効果の付与時を除く"
+    },
+    {
+      "ID": 2048,
+      "SingiSetDetailParameter": 2048,
+      "Name": "全敵強化",
+      "Explanation": "全敵が後退、移動速度変更と低下効果、状態異常無効\n全敵の攻撃が大幅に上昇、被ダメージを軽減"
+    },
+    {
+      "ID": 20011,
+      "SingiSetDetailParameter": 11,
+      "Name": "城娘性能低下",
+      "Explanation": "全城娘の配置気、基礎巨大化気と時間が増加\n全城娘の基礎射程が50低下"
+    },
+    {
+      "ID": 2049,
+      "SingiSetDetailParameter": 2049,
+      "Name": "計略使用制限",
+      "Explanation": "城娘の計略消費気が3倍に増加\n計略再使用時間を30％延長"
+    },
+    {
+      "ID": 2050,
+      "SingiSetDetailParameter": 2050,
+      "Name": "城娘性能変動",
+      "Explanation": "城娘の最大耐久と防御が50％低下\n気還元率が大幅低下"
+    },
+    {
+      "ID": 2051,
+      "SingiSetDetailParameter": 2051,
+      "Name": "ボス強化",
+      "Explanation": "イザナギの攻撃が不屈を無視\n耐久,攻撃,与ダメが上昇、イザナミの射程が上昇"
+    },
+    {
+      "ID": 2052,
+      "SingiSetDetailParameter": 2052,
+      "Name": "平配置制限(2)",
+      "Explanation": "平城(複合を含む)が2回配置された場合、 \n以降に配置された平城に懲罰が発生"
+    },
+    {
+      "ID": 2053,
+      "SingiSetDetailParameter": 2053,
+      "Name": "平山配置制限(2)",
+      "Explanation": "平山城(複合を含む)が2回配置された場合、 \n以降に配置された平山城に懲罰が発生"
+    },
+    {
+      "ID": 2054,
+      "SingiSetDetailParameter": 2054,
+      "Name": "水配置制限(3)",
+      "Explanation": "水城(複合を含む)が3回配置された場合、\n以降に配置された水城に懲罰が発生"
+    },
+    {
+      "ID": 2055,
+      "SingiSetDetailParameter": 2055,
+      "Name": "山配置制限(2)",
+      "Explanation": "山城(複合を含む)が2回配置された場合、\n以降に配置された山城に懲罰が発生"
+    },
+    {
+      "ID": 2056,
+      "SingiSetDetailParameter": 2056,
+      "Name": "地獄配置制限(8)",
+      "Explanation": "地獄城(複合を含む)が8回配置された場合、\n以降に配置された地獄城に懲罰が発生"
+    },
+    {
+      "ID": 2057,
+      "SingiSetDetailParameter": 2057,
+      "Name": "無属性制限(1)",
+      "Explanation": "無属性(複合を含む)が1回配置された場合、\n以降に配置された無属性に懲罰が発生"
+    },
+    {
+      "ID": 2058,
+      "SingiSetDetailParameter": 2058,
+      "Name": "伏兵配置制限(6)",
+      "Explanation": "伏兵が6回配置された場合、\n以降に配置された伏兵に懲罰が発生"
+    },
+    {
+      "ID": 30013,
+      "SingiSetDetailParameter": 1,
+      "Name": "近接配置マス制限",
+      "Explanation": "特定の近接マスが2個消失する"
+    },
+    {
+      "ID": 30014,
+      "SingiSetDetailParameter": 2,
+      "Name": "遠隔配置マス制限",
+      "Explanation": "特定の遠隔マスが2個消失する"
+    },
+    {
+      "ID": 2059,
+      "SingiSetDetailParameter": 2059,
+      "Name": "西洋兜強化",
+      "Explanation": "西洋兜の耐久が上昇\n移動速度低下効果を無効、被ダメージを軽減"
+    },
+    {
+      "ID": 2060,
+      "SingiSetDetailParameter": 2060,
+      "Name": "城娘ダメ低下・壱",
+      "Explanation": "近接マス限定城娘の与えるダメージが0.9倍\n遠隔マス限定城娘の与えるダメージが0.3倍"
+    },
+    {
+      "ID": 2061,
+      "SingiSetDetailParameter": 2061,
+      "Name": "城娘ダメ低下・弐",
+      "Explanation": "近接マス限定城娘の与えるダメージが0.3倍\n遠隔マス限定城娘の与えるダメージが0.9倍"
+    },
+    {
+      "ID": 2062,
+      "SingiSetDetailParameter": 2062,
+      "Name": "全敵強化",
+      "Explanation": "全ての敵が状態異常と移動速度変更効果を無効"
+    },
+    {
+      "ID": 20012,
+      "SingiSetDetailParameter": 13,
+      "Name": "城娘性能低下・壱",
+      "Explanation": "遠隔限定城娘の基礎巨大化気と時間が増加\n基礎射程が40低下"
+    },
+    {
+      "ID": 20013,
+      "SingiSetDetailParameter": 14,
+      "Name": "城娘性能低下・弐",
+      "Explanation": "近接限定城娘の基礎巨大化気と時間が増加\n基礎射程が40低下"
+    },
+    {
+      "ID": 20014,
+      "SingiSetDetailParameter": 12,
+      "Name": "配置気増加",
+      "Explanation": "全城娘の配置気が増加\n基礎攻撃が20低下"
+    },
+    {
+      "ID": 2063,
+      "SingiSetDetailParameter": 2063,
+      "Name": "英霊強化",
+      "Explanation": "エインヘリャルの耐久と攻撃が上昇\n被ダメージを軽減"
+    },
+    {
+      "ID": 2064,
+      "SingiSetDetailParameter": 2064,
+      "Name": "ボス強化",
+      "Explanation": "オーディンの耐久と攻撃が上昇\n攻撃対象数が2に増加、被ダメージを半減"
+    },
+    {
+      "ID": 2065,
+      "SingiSetDetailParameter": 2065,
+      "Name": "平配置制限(3)",
+      "Explanation": "平城(複合を含む)が3回配置された場合、 \n以降に配置された平城に懲罰が発生"
+    },
+    {
+      "ID": 2066,
+      "SingiSetDetailParameter": 2066,
+      "Name": "平山配置制限(2)",
+      "Explanation": "平山城(複合を含む)が2回配置された場合、 \n以降に配置された平山城に懲罰が発生"
+    },
+    {
+      "ID": 2067,
+      "SingiSetDetailParameter": 2068,
+      "Name": "水配置制限(1)",
+      "Explanation": "水城(複合を含む)が1回配置された場合、\n以降に配置された水城に懲罰が発生"
+    },
+    {
+      "ID": 2068,
+      "SingiSetDetailParameter": 2067,
+      "Name": "山配置制限(3)",
+      "Explanation": "山城(複合を含む)が3回配置された場合、\n以降に配置された山城に懲罰が発生"
+    },
+    {
+      "ID": 2069,
+      "SingiSetDetailParameter": 2069,
+      "Name": "地獄配置制限(8)",
+      "Explanation": "地獄城(複合を含む)が8回配置された場合、\n以降に配置された地獄城に懲罰が発生"
+    },
+    {
+      "ID": 2070,
+      "SingiSetDetailParameter": 2070,
+      "Name": "無属性制限(1)",
+      "Explanation": "無属性(複合を含む)が1回配置された場合、\n以降に配置された無属性に懲罰が発生"
+    },
+    {
+      "ID": 2071,
+      "SingiSetDetailParameter": 2071,
+      "Name": "伏兵配置制限(3)",
+      "Explanation": "伏兵が3回配置された場合、\n以降に配置された伏兵に懲罰が発生"
+    },
+    {
+      "ID": 30015,
+      "SingiSetDetailParameter": 1,
+      "Name": "近接配置マス制限",
+      "Explanation": "特定の近接マスが2個消失する"
+    },
+    {
+      "ID": 30016,
+      "SingiSetDetailParameter": 2,
+      "Name": "遠隔配置マス制限",
+      "Explanation": "特定の遠隔マスが2個消失する"
+    },
+    {
+      "ID": 2072,
+      "SingiSetDetailParameter": 2072,
+      "Name": "全敵強化",
+      "Explanation": "全敵が後退効果と状態異常を無効\n通常攻撃によるダメージを半減"
+    },
+    {
+      "ID": 2073,
+      "SingiSetDetailParameter": 2073,
+      "Name": "特定敵強化・壱",
+      "Explanation": "インドラの矢の耐久が2倍\n全ての術ダメージを無効"
+    },
+    {
+      "ID": 2074,
+      "SingiSetDetailParameter": 2074,
+      "Name": "特定敵強化・弐",
+      "Explanation": "インドラの矢の耐久が2倍\n全ての物理ダメージを90％軽減"
+    },
+    {
+      "ID": 2075,
+      "SingiSetDetailParameter": 2075,
+      "Name": "動物兜強化",
+      "Explanation": "動物兜の耐久と攻撃が上昇"
+    },
+    {
+      "ID": 2076,
+      "SingiSetDetailParameter": 2076,
+      "Name": "敵性能変動・壱",
+      "Explanation": "全敵が移動速度変更効果を無効\n動物兜の攻撃が防御を無視し、被ダメージを半減"
+    },
+    {
+      "ID": 2077,
+      "SingiSetDetailParameter": 2077,
+      "Name": "敵性能変動・弐",
+      "Explanation": "全敵が移動速度低下を無効\n動物兜の攻撃が防御を無視し、被ダメージを半減"
+    },
+    {
+      "ID": 2078,
+      "SingiSetDetailParameter": 2078,
+      "Name": "大破毎被ダメ軽減",
+      "Explanation": "城娘が大破する毎に全敵が受けるダメージを25％軽減"
+    },
+    {
+      "ID": 20015,
+      "SingiSetDetailParameter": 15,
+      "Name": "城娘性能低下",
+      "Explanation": "全城娘の配置気が増加\n全城娘の基礎射程が50低下"
+    },
+    {
+      "ID": 2079,
+      "SingiSetDetailParameter": 2079,
+      "Name": "ボス強化",
+      "Explanation": "インドラの耐久と攻撃が上昇\n射程低下効果を無効"
+    },
+    {
+      "ID": 2088,
+      "SingiSetDetailParameter": 2088,
+      "Name": "平配置制限(3)",
+      "Explanation": "平城(複合を含む)が3回配置された場合、 \n以降に配置された平城に懲罰が発生"
+    },
+    {
+      "ID": 2089,
+      "SingiSetDetailParameter": 2089,
+      "Name": "平山配置制限(3)",
+      "Explanation": "平山城(複合を含む)が3回配置された場合、 \n以降に配置された平山城に懲罰が発生"
+    },
+    {
+      "ID": 2090,
+      "SingiSetDetailParameter": 2090,
+      "Name": "水配置制限(1)",
+      "Explanation": "水城(複合を含む)が1回配置された場合、\n以降に配置された水城に懲罰が発生"
+    },
+    {
+      "ID": 2091,
+      "SingiSetDetailParameter": 2091,
+      "Name": "山配置制限(2)",
+      "Explanation": "山城(複合を含む)が2回配置された場合、\n以降に配置された山城に懲罰が発生"
+    },
+    {
+      "ID": 2092,
+      "SingiSetDetailParameter": 2092,
+      "Name": "地獄配置制限(8)",
+      "Explanation": "地獄城(複合を含む)が8回配置された場合、\n以降に配置された地獄城に懲罰が発生"
+    },
+    {
+      "ID": 2093,
+      "SingiSetDetailParameter": 2093,
+      "Name": "無属性制限(1)",
+      "Explanation": "無属性(複合を含む)が1回配置された場合、\n以降に配置された無属性に懲罰が発生"
+    },
+    {
+      "ID": 2094,
+      "SingiSetDetailParameter": 2094,
+      "Name": "伏兵配置制限(6)",
+      "Explanation": "伏兵が6回配置された場合、\n以降に配置された伏兵に懲罰が発生"
+    },
+    {
+      "ID": 30017,
+      "SingiSetDetailParameter": 1,
+      "Name": "近接配置マス制限",
+      "Explanation": "特定の近接マスが2個消失する"
+    },
+    {
+      "ID": 30018,
+      "SingiSetDetailParameter": 2,
+      "Name": "遠隔配置マス制限",
+      "Explanation": "特定の遠隔マスが2個消失する"
+    },
+    {
+      "ID": 2080,
+      "SingiSetDetailParameter": 2080,
+      "Name": "全敵強化",
+      "Explanation": "全ての敵が後退効果と状態異常を無効\n最大耐久が50％上昇"
+    },
+    {
+      "ID": 20016,
+      "SingiSetDetailParameter": 16,
+      "Name": "城娘弱体・攻",
+      "Explanation": "全城娘の基礎攻撃と基礎射程が30減少"
+    },
+    {
+      "ID": 2081,
+      "SingiSetDetailParameter": 2081,
+      "Name": "城娘弱体・防",
+      "Explanation": "全城娘の最大耐久と防御が30％減少\n被ダメージが50％増加"
+    },
+    {
+      "ID": 2082,
+      "SingiSetDetailParameter": 2082,
+      "Name": "城娘大破時効果",
+      "Explanation": "全城娘の気還元率を大幅に低下\n城娘が大破するたびに全敵の攻撃が20％増加"
+    },
+    {
+      "ID": 2083,
+      "SingiSetDetailParameter": 2083,
+      "Name": "全敵強化・攻",
+      "Explanation": "全ての敵の攻撃が200％与ダメージが50％上昇\n移動速度低下無効"
+    },
+    {
+      "ID": 2084,
+      "SingiSetDetailParameter": 2084,
+      "Name": "全敵強化・防",
+      "Explanation": "全ての敵の防御が150％上昇、被ダメージが50％軽減\n移動速度変更無効"
+    },
+    {
+      "ID": 2085,
+      "SingiSetDetailParameter": 2085,
+      "Name": "巨大化段階効果",
+      "Explanation": "巨大化段階が3以下の城娘の計略消費気が50％増加\nさらに巨大化段階が2以下の城娘は射程が50％低下"
+    },
+    {
+      "ID": 2086,
+      "SingiSetDetailParameter": 2086,
+      "Name": "城娘性能低下",
+      "Explanation": "全城娘の巨大化気と自動巨大化時間が50％増加、\n与ダメージ30％低下"
+    },
+    {
+      "ID": 2087,
+      "SingiSetDetailParameter": 2087,
+      "Name": "ボス強化",
+      "Explanation": "アヌの耐久と攻撃と回復が上昇、与えるダメージ1.5倍\n被ダメージを80％軽減、射程低下効果を無効。"
+    },
+    {
+      "ID": 2104,
+      "SingiSetDetailParameter": 2104,
+      "Name": "平配置制限(5)",
+      "Explanation": "平城(複合を含む)が5回配置された場合、 \n以降に配置された平城に懲罰が発生"
+    },
+    {
+      "ID": 2105,
+      "SingiSetDetailParameter": 2105,
+      "Name": "平山配置制限(1)",
+      "Explanation": "平山城(複合を含む)が1回配置された場合、 \n以降に配置された平山城に懲罰が発生"
+    },
+    {
+      "ID": 2106,
+      "SingiSetDetailParameter": 2106,
+      "Name": "水配置制限(2)",
+      "Explanation": "水城(複合を含む)が2回配置された場合、\n以降に配置された水城に懲罰が発生"
+    },
+    {
+      "ID": 2107,
+      "SingiSetDetailParameter": 2107,
+      "Name": "山配置制限(1)",
+      "Explanation": "山城(複合を含む)が1回配置された場合、\n以降に配置された山城に懲罰が発生"
+    },
+    {
+      "ID": 2108,
+      "SingiSetDetailParameter": 2108,
+      "Name": "地獄配置制限(8)",
+      "Explanation": "地獄城(複合を含む)が8回配置された場合、\n以降に配置された地獄城に懲罰が発生"
+    },
+    {
+      "ID": 2109,
+      "SingiSetDetailParameter": 2109,
+      "Name": "無属性制限(1)",
+      "Explanation": "無属性(複合を含む)が1回配置された場合、\n以降に配置された無属性に懲罰が発生"
+    },
+    {
+      "ID": 2110,
+      "SingiSetDetailParameter": 2110,
+      "Name": "伏兵配置制限(4)",
+      "Explanation": "伏兵が4回配置された場合、\n以降に配置された伏兵に懲罰が発生"
+    },
+    {
+      "ID": 30019,
+      "SingiSetDetailParameter": 1,
+      "Name": "近接配置マス制限",
+      "Explanation": "特定の近接マスが1個消失する"
+    },
+    {
+      "ID": 30020,
+      "SingiSetDetailParameter": 2,
+      "Name": "遠隔配置マス制限",
+      "Explanation": "特定の遠隔マスが2個消失する"
+    },
+    {
+      "ID": 2095,
+      "SingiSetDetailParameter": 2095,
+      "Name": "大破毎回復強化",
+      "Explanation": "城娘が大破するごとに全敵の回復が1000上昇"
+    },
+    {
+      "ID": 2096,
+      "SingiSetDetailParameter": 2096,
+      "Name": "近接攻撃性能低下",
+      "Explanation": "全近接城娘(遠近城娘含む)の攻撃が70％低下\n与ダメージが50％低下"
+    },
+    {
+      "ID": 2097,
+      "SingiSetDetailParameter": 2097,
+      "Name": "遠隔攻撃性能低下",
+      "Explanation": "全遠隔城娘(遠近城娘含む)の攻撃が70％低下\n与ダメージが50％低下"
+    },
+    {
+      "ID": 2098,
+      "SingiSetDetailParameter": 2098,
+      "Name": "城娘回復低下",
+      "Explanation": "全城娘の被回復量が75％低下"
+    },
+    {
+      "ID": 2099,
+      "SingiSetDetailParameter": 2099,
+      "Name": "城娘性能変動・壱",
+      "Explanation": "全城娘の巨大化気が2減少。全城娘の耐久、\n防御が50％低下、与えるダメージが0.8倍"
+    },
+    {
+      "ID": 2100,
+      "SingiSetDetailParameter": 2100,
+      "Name": "城娘性能変動・弐",
+      "Explanation": "全城娘の巨大化気が3増加\n全城娘の耐久が50％上昇、足止め数を1増加"
+    },
+    {
+      "ID": 2101,
+      "SingiSetDetailParameter": 2101,
+      "Name": "計略使用制限",
+      "Explanation": "全城娘の計略再使用時間が50％延長\n計略の効果範囲と伏兵の射程が50％低下"
+    },
+    {
+      "ID": 2102,
+      "SingiSetDetailParameter": 2102,
+      "Name": "全敵強化",
+      "Explanation": "全敵が天候効果を受けず、被ダメージを40％軽減\n耐久と防御が150％上昇"
+    },
+    {
+      "ID": 2103,
+      "SingiSetDetailParameter": 2103,
+      "Name": "ボス強化",
+      "Explanation": "幻・佐竹義重の耐久、攻撃、防御が150％上昇\n攻撃後の隙を50％短縮、被ダメージを80％軽減"
+    },
+    {
+      "ID": 2119,
+      "SingiSetDetailParameter": 2119,
+      "Name": "平配置制限(2)",
+      "Explanation": "平城(複合を含む)が2回配置された場合、 \n以降に配置された平城に懲罰が発生"
+    },
+    {
+      "ID": 2120,
+      "SingiSetDetailParameter": 2120,
+      "Name": "平山配置制限(2)",
+      "Explanation": "平山城(複合を含む)が2回配置された場合、 \n以降に配置された平山城に懲罰が発生"
+    },
+    {
+      "ID": 2121,
+      "SingiSetDetailParameter": 2121,
+      "Name": "水配置制限(2)",
+      "Explanation": "水城(複合を含む)が2回配置された場合、\n以降に配置された水城に懲罰が発生"
+    },
+    {
+      "ID": 2122,
+      "SingiSetDetailParameter": 2122,
+      "Name": "山配置制限(3)",
+      "Explanation": "山城(複合を含む)が3回配置された場合、\n以降に配置された山城に懲罰が発生"
+    },
+    {
+      "ID": 2123,
+      "SingiSetDetailParameter": 2123,
+      "Name": "地獄配置制限(8)",
+      "Explanation": "地獄城(複合を含む)が8回配置された場合、\n以降に配置された地獄城に懲罰が発生"
+    },
+    {
+      "ID": 2124,
+      "SingiSetDetailParameter": 2124,
+      "Name": "無属性制限(1)",
+      "Explanation": "無属性(複合を含む)が1回配置された場合、\n以降に配置された無属性に懲罰が発生"
+    },
+    {
+      "ID": 2125,
+      "SingiSetDetailParameter": 2125,
+      "Name": "伏兵配置制限(30)",
+      "Explanation": "伏兵が30回配置された場合、\n以降に配置された伏兵に懲罰が発生"
+    },
+    {
+      "ID": 30021,
+      "SingiSetDetailParameter": 1,
+      "Name": "近接配置マス制限",
+      "Explanation": "特定の近接マスが2個消失する"
+    },
+    {
+      "ID": 30022,
+      "SingiSetDetailParameter": 2,
+      "Name": "遠隔配置マス制限",
+      "Explanation": "特定の遠隔マスが2個消失する"
+    },
+    {
+      "ID": 2111,
+      "SingiSetDetailParameter": 2111,
+      "Name": "城娘性能変動・壱",
+      "Explanation": "近接限定城娘の与ダメージ99％低下、攻撃100％上昇\n平山城と山城の与えるダメージ0.5倍"
+    },
+    {
+      "ID": 2112,
+      "SingiSetDetailParameter": 2112,
+      "Name": "城娘性能変動・弐",
+      "Explanation": "遠隔限定城娘の与ダメージ99％低下、攻撃100％上昇\n平城と水城の与えるダメージ0.5倍"
+    },
+    {
+      "ID": 2113,
+      "SingiSetDetailParameter": 2113,
+      "Name": "兜強化",
+      "Explanation": "兜の耐久,攻撃,防御が3倍\n伏兵以外からの被ダメージを75％軽減"
+    },
+    {
+      "ID": 2114,
+      "SingiSetDetailParameter": 2114,
+      "Name": "全敵強化・壱",
+      "Explanation": "全ての敵の移動速度変更と後退効果を無効\n遠隔物理攻撃の被ダメージを大幅に軽減"
+    },
+    {
+      "ID": 2115,
+      "SingiSetDetailParameter": 2115,
+      "Name": "全敵強化・弐",
+      "Explanation": "全ての敵の移動速度低下と後退効果を無効\n術攻撃の被ダメージを大幅に軽減"
+    },
+    {
+      "ID": 2116,
+      "SingiSetDetailParameter": 2116,
+      "Name": "城娘性能変動・参",
+      "Explanation": "射程内に殿側ユニットが8体以下の城娘の巨大化気\n100％増加、15体以上の城娘の攻撃対象数を1増加"
+    },
+    {
+      "ID": 2117,
+      "SingiSetDetailParameter": 2117,
+      "Name": "特定敵強化",
+      "Explanation": "人魂は伏兵以外からダメージを100％軽減し、\n伏兵から受けるダメージが増加、耐久が3倍"
+    },
+    {
+      "ID": 2118,
+      "SingiSetDetailParameter": 2118,
+      "Name": "ボス強化",
+      "Explanation": "覇・前田利家の耐久上昇、攻撃対象数2増加。攻撃が不\n屈を無視。射程内殿側ユニット10体以下で攻撃が上昇"
+    }
+  ]
+}

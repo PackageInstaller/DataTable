@@ -1,0 +1,98 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 28,
+    "custom_id": 1651729254
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Step",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "SummonsDefinitionType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "BonusType1",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "BonusParam1",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "BonusType2",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "BonusParam2",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 24,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "Step": 1,
+      "SummonsDefinitionType": 2,
+      "BonusType1": 5,
+      "BonusParam1": "ID:8010 Value:1",
+      "BonusType2": 0,
+      "BonusParam2": ""
+    },
+    {
+      "ID": 1,
+      "Step": 2,
+      "SummonsDefinitionType": 2,
+      "BonusType1": 5,
+      "BonusParam1": "ID:8010 Value:1",
+      "BonusType2": 0,
+      "BonusParam2": ""
+    },
+    {
+      "ID": 1,
+      "Step": 3,
+      "SummonsDefinitionType": 2,
+      "BonusType1": 5,
+      "BonusParam1": "ID:8010 Value:1",
+      "BonusType2": 0,
+      "BonusParam2": ""
+    },
+    {
+      "ID": 1,
+      "Step": 4,
+      "SummonsDefinitionType": 2,
+      "BonusType1": 5,
+      "BonusParam1": "ID:8010 Value:1",
+      "BonusType2": 0,
+      "BonusParam2": ""
+    }
+  ]
+}

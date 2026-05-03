@@ -1,0 +1,3269 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 647,
+    "record_size": 12,
+    "custom_id": 1953784175
+  },
+  "_fields": [
+    {
+      "name": "AbilityID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Description",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "AbilityID": 0,
+      "Name": "なし",
+      "Description": "なし"
+    },
+    {
+      "AbilityID": 1,
+      "Name": "毒テスト",
+      "Description": "毒、継続的に15ダメージを与える (秒間15x2=30)"
+    },
+    {
+      "AbilityID": 2,
+      "Name": "バフテスト",
+      "Description": "被ダメージを30％軽減"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3,
+      "Name": "ブロック１増加",
+      "Description": "ブロック数を1増加させる"
+    },
+    {
+      "AbilityID": 4,
+      "Name": "巨大化気20%削減",
+      "Description": "巨大化時に消費する気を２０％削減する"
+    },
+    {
+      "AbilityID": 5,
+      "Name": "耐久/攻撃20%強化",
+      "Description": "耐久力(最大)を20%強化"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 6,
+      "Name": "防御上昇50",
+      "Description": "防御が50上昇"
+    },
+    {
+      "AbilityID": 7,
+      "Name": "範囲上昇20",
+      "Description": "攻撃範囲が20上昇"
+    },
+    {
+      "AbilityID": 8,
+      "Name": "気還元率強化10%",
+      "Description": "気還元率強化10%"
+    },
+    {
+      "AbilityID": 11054,
+      "Name": "今川の居城",
+      "Description": "部隊の弓城娘の攻撃速度10%上昇\n攻撃後の隙が10%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11059,
+      "Name": "名古屋合戦記",
+      "Description": "部隊の東海城娘の耐久/防御が1.15倍\n平城娘の耐久が1000上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11076,
+      "Name": "聖城怪談録",
+      "Description": "部隊の法術城娘の攻撃が80上昇\n全ての妖怪の射程と移動速度が15%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11083,
+      "Name": "金ヶ崎崩れ",
+      "Description": "部隊の北陸城娘の射程が20上昇､攻撃が1.1倍\n全ての敵の攻撃が5%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11131,
+      "Name": "東山文化の城下",
+      "Description": "部隊の四国城娘の耐久と防御が10%上昇\n鉄砲城娘が狙われにくくなる"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 148,
+      "Name": "山鹿流築城法",
+      "Description": "部隊の九州城娘の耐久が20％上昇\n元のレアリティが★5以下の城娘が合戦中一度だけ10秒間大破しない\nレアリティが低いほど効果時間増加(最長20秒)"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11161,
+      "Name": "近江の攻防",
+      "Description": "部隊の近接城娘の攻撃が100上昇\n近畿城娘は射程が30上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11166,
+      "Name": "安東氏の統一",
+      "Description": "部隊の東北城娘の耐久500､攻撃と防御80上昇\n耐久が0になっても大破扱いにならない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 168,
+      "Name": "中条流剣術",
+      "Description": "部隊の刀、双剣城娘の射程が20、攻撃速度が20%上昇\n攻撃が敵の防御を15％無視"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11188,
+      "Name": "みちのくの古碑",
+      "Description": "[古代城柵]の計略再使用時間が15%短縮\n巨大化気が10%軽減"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11212,
+      "Name": "不落本寺",
+      "Description": "部隊の近畿城娘の防御が50､射程が15上昇\n被回復量が10%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11213,
+      "Name": "信濃支配の拠点",
+      "Description": "部隊の弓城娘の射程20上昇\n蔵が合戦中一度だけ大破しない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11220,
+      "Name": "クニの大倉",
+      "Description": "蔵の耐久が2000上昇\n合戦中一度だけ10秒大破しない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11221,
+      "Name": "蝶形の四稜堡",
+      "Description": "部隊の北海道城娘の射程が50上昇\n鉄砲､大砲城娘の攻撃と防御が25上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11222,
+      "Name": "五芒の稜堡式城郭",
+      "Description": "部隊の平城の射程が20上昇\n遠隔城娘の巨大化気が5%軽減\n配置中､大砲城娘の直撃ボーナス1.1倍"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 230,
+      "Name": "鉄人軍",
+      "Description": "全ての伏兵の攻撃/防御/耐久が10％上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 239,
+      "Name": "諏方神号旗",
+      "Description": "部隊の槌城娘の巨大化気を10%軽減\n平城の足止め数が2増加"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 264,
+      "Name": "桃山の粋",
+      "Description": "部隊の平山城娘の計略再使用時間を15％短縮"
+    },
+    {
+      "AbilityID": 304,
+      "Name": "日月星辰",
+      "Description": "部隊の城娘の攻撃と防御が80上昇\n鈴城娘の攻撃速度が25％上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11311,
+      "Name": "聖人の小島",
+      "Description": "部隊の海外城娘の巨大化気を5%軽減\n杖城娘の攻撃が20%､射程が30上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11332,
+      "Name": "シャス・ロワイヤル",
+      "Description": "部隊の近接城娘の射程が20上昇\nロワール渓谷の攻撃速度が20%上昇\n攻撃後の隙が20%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 345,
+      "Name": "洛水神亀",
+      "Description": "部隊の[中国都城]が合戦中一度だけ20秒間大破しない\n攻撃時、耐久が与ダメージの15％回復"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11349,
+      "Name": "アビラの城壁",
+      "Description": "部隊の[城塞都市]城娘の攻撃と防御が20%と100\n攻撃速度が10%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11380,
+      "Name": "最北の城柵",
+      "Description": "[古代城柵]の巨大化気を2軽減､敵撃破時の獲得気が2増加"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11415,
+      "Name": "西の大友",
+      "Description": "部隊の城娘の攻撃が40､回復が15上昇\n山城の被回復量10%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 11425,
+      "Name": "古河公方の家臣",
+      "Description": "部隊の関東城娘の攻撃15％上昇\n全ての敵の防御10％低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 439,
+      "Name": "閻魔目録",
+      "Description": "「閻魔の闘技場」への出撃時、自身の耐久/攻撃/防御が1.25倍\n配置中全ての敵の攻撃と防御が10％低下"
+    },
+    {
+      "AbilityID": 509,
+      "Name": "巫女の予言",
+      "Description": "「ヘルの遊戯場」への出撃時、自身の耐久/攻撃/防御が1.25倍\n配置中自身と自身の伏兵が射程が1.2倍\n全ての味方の攻撃が敵の防御を10%無視"
+    },
+    {
+      "AbilityID": 511,
+      "Name": "耐久強化【編成】・弐",
+      "Description": "部隊の城娘の耐久が4%上昇"
+    },
+    {
+      "AbilityID": 11518,
+      "Name": "北方鎮護の武神",
+      "Description": "[古代城柵]は合戦中一度だけ10秒間耐久が\n0にならず大破しない､攻撃後の隙20%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 522,
+      "Name": "字降松",
+      "Description": "部隊の城娘の初回計略使用までの\n時間が20%短縮。[幼き]の\n計略再使用時間が10%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 526,
+      "Name": "甲斐一円",
+      "Description": "部隊の城娘の攻撃速度が5%上昇"
+    },
+    {
+      "AbilityID": 538,
+      "Name": "防御強化【編成】・壱",
+      "Description": "部隊の城娘の防御が3%上昇"
+    },
+    {
+      "AbilityID": 542,
+      "Name": "明倫堂文庫",
+      "Description": "部隊の城娘の回復が6\n[幼き]の耐久が400上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 543,
+      "Name": "人類の精神史",
+      "Description": "部隊の城娘の射程が10上昇"
+    },
+    {
+      "AbilityID": 546,
+      "Name": "防御低下【編成】・弐",
+      "Description": "全ての敵の防御が4%低下"
+    },
+    {
+      "AbilityID": 565,
+      "Name": "攻撃速度低下【編成】・弐",
+      "Description": "全ての敵の攻撃速度が4%低下"
+    },
+    {
+      "AbilityID": 575,
+      "Name": "移動速度低下【編成】・弐",
+      "Description": "全ての敵の移動速度が4%低下"
+    },
+    {
+      "AbilityID": 580,
+      "Name": "白光の玉兎",
+      "Description": "部隊の[架空城]と[お月見]城娘の計略再使用時間が\n10%短縮、射程が20上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 583,
+      "Name": "エルミタージュの猫",
+      "Description": "部隊の城娘の攻撃後の隙が5%短縮"
+    },
+    {
+      "AbilityID": 591,
+      "Name": "ル・グラン・コンデ",
+      "Description": "部隊の城娘の耐久が150上昇"
+    },
+    {
+      "AbilityID": 592,
+      "Name": "レッドレディ",
+      "Description": "全ての敵の攻撃が30低下"
+    },
+    {
+      "AbilityID": 593,
+      "Name": "ホーンテッド・キャッスル",
+      "Description": "全ての敵の防御が15低下"
+    },
+    {
+      "AbilityID": 598,
+      "Name": "黄金の雄牛",
+      "Description": "部隊の城娘の初回計略使用までの時間が25%\n計略再使用までの時間が4%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 610,
+      "Name": "甲斐大年神",
+      "Description": "部隊の城娘の耐久が200、防御が40上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 617,
+      "Name": "フランダース評議会",
+      "Description": "全ての敵の攻撃後の隙が4%延長"
+    },
+    {
+      "AbilityID": 623,
+      "Name": "ルコンキシュタ",
+      "Description": "全ての敵の攻撃が2％と15低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 625,
+      "Name": "学問吟味",
+      "Description": "部隊の城娘の回復と射程が5上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 629,
+      "Name": "武芸上覧",
+      "Description": "全ての敵の攻撃と移動速度が4%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 631,
+      "Name": "王立図書室",
+      "Description": "部隊の城娘の射程が5上昇"
+    },
+    {
+      "AbilityID": 637,
+      "Name": "幽閉の暗室",
+      "Description": "全ての敵の防御が50低下"
+    },
+    {
+      "AbilityID": 640,
+      "Name": "イゾレ・フレグレエ",
+      "Description": "全ての敵の射程が5%低下"
+    },
+    {
+      "AbilityID": 641,
+      "Name": "アッシュールバニパルの図書館",
+      "Description": "部隊の城娘の攻撃が30上昇\n[城塞都市]の攻撃が20、射程が10上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 645,
+      "Name": "ゴッドシタイン",
+      "Description": "全ての敵の防御が25低下"
+    },
+    {
+      "AbilityID": 647,
+      "Name": "婚姻の貴石",
+      "Description": "部隊の城娘の耐久が5%上昇"
+    },
+    {
+      "AbilityID": 657,
+      "Name": "夏日山中 ",
+      "Description": "部隊の[夏]城娘の攻撃と防御が35上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 658,
+      "Name": "夏の牡牛",
+      "Description": "全ての敵の防御が35低下"
+    },
+    {
+      "AbilityID": 667,
+      "Name": "モーティマーの穴",
+      "Description": "全ての敵の防御が5%低下"
+    },
+    {
+      "AbilityID": 674,
+      "Name": "天界の火",
+      "Description": "部隊の[架空城]の攻撃が30上昇\n耐久が0になっても大破扱いにならない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 681,
+      "Name": "魔女の祝祭",
+      "Description": "全ての敵の攻撃と射程が3%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 682,
+      "Name": "灼鉄の壁",
+      "Description": "部隊の盾城娘の防御が40上昇\n｢火傷｣を無効化\n耐久が0になっても大破扱いにならない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 687,
+      "Name": "聖夜の冬宮",
+      "Description": "部隊の城娘の攻撃が30、回復が5上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 691,
+      "Name": "攻撃低下【編成】・弐",
+      "Description": "全ての敵の攻撃が4%低下"
+    },
+    {
+      "AbilityID": 712,
+      "Name": "思永斎",
+      "Description": "部隊の九州城娘の耐久が250上昇\n全ての敵の射程が3%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 714,
+      "Name": "北陸の小京都",
+      "Description": "部隊の城娘の耐久が100上昇\n北陸・東海城娘の耐久は200上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 719,
+      "Name": "坂東の学園",
+      "Description": "部隊の[学園]城娘の射程が5上昇\n初回計略使用までの時間が25%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 726,
+      "Name": "鉄環の城壁",
+      "Description": "部隊の城娘の防御が40上昇\n[アイアンリング]はさらに耐久が200、防御が40上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 732,
+      "Name": "玉暦抄伝",
+      "Description": "全ての敵の防御が4%と30低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 734,
+      "Name": "アム・ドゥアト",
+      "Description": "「オシリスの審判場」への出撃時、自身の耐久/攻撃/防御が1.25倍\n配置中全ての味方の攻撃と防御が10％上昇"
+    },
+    {
+      "AbilityID": 735,
+      "Name": "赤衣の新婦",
+      "Description": "全ての敵の攻撃と攻撃速度が2%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 736,
+      "Name": "狐の婚",
+      "Description": "部隊の[花嫁衣装]城娘の初回計略使用までの\n時間が25%短縮、巨大化気を10%軽減"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 752,
+      "Name": "アラゴンの王威",
+      "Description": "全ての敵の攻撃と防御が4%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 773,
+      "Name": "鉄環の雪壁",
+      "Description": "[アイアンリング]城娘の防御が90上昇\n[聖夜]城娘の回復が6上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 778,
+      "Name": "謹賀遊戯",
+      "Description": "全ての敵の防御と攻撃速度が4%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 348,
+      "Name": "鏡の間",
+      "Description": "部隊の[宮殿]の計略消費気を1軽減"
+    },
+    {
+      "AbilityID": 338,
+      "Name": "端麗王の宮殿",
+      "Description": "部隊の[宮殿]の巨大化気を1軽減"
+    },
+    {
+      "AbilityID": 295,
+      "Name": "未央宮",
+      "Description": "部隊の[中国都城]の攻撃が40上昇"
+    },
+    {
+      "AbilityID": 808,
+      "Name": "マルクトの教壇",
+      "Description": "全ての敵の攻撃が4%低下\n部隊の[学園]城娘の回復と射程が10上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 815,
+      "Name": "建武式目",
+      "Description": "全ての敵の射程と防御が4%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 818,
+      "Name": "月下の美姫",
+      "Description": "部隊の[架空城][お月見][花嫁衣装]城娘の初回計略使用までの\n時間が20%短縮、巨大化気を8%軽減"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 819,
+      "Name": "小笠原流礼法",
+      "Description": "全ての敵の移動速度が4%低下\n部隊の鞭城娘の特殊攻撃ゲージ蓄積量が4%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 853,
+      "Name": "怪夜の王",
+      "Description": "部隊の[ハロウィン]城娘の攻撃と射程が20上昇\n耐久が0になっても大破扱いにならない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 855,
+      "Name": "ハロウィンライブ",
+      "Description": "部隊の城娘の射程が5上昇\n[ハロウィン]城娘の防御が30上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 862,
+      "Name": "ガーデン・キー",
+      "Description": "全ての海洋兜の攻撃が5%低下"
+    },
+    {
+      "AbilityID": 867,
+      "Name": "古代城柵の政務",
+      "Description": "部隊の城娘の初回計略使用までの時間が30%短縮\n自身の伏兵の射程内の城娘が[瘴気]の影響を受けない"
+    },
+    {
+      "AbilityID": 872,
+      "Name": "初夢・黄泉平坂",
+      "Description": "部隊の近接城娘が合戦中1度だけ大破せず\n5秒間耐久が0にならない"
+    },
+    {
+      "AbilityID": 876,
+      "Name": "新年初学",
+      "Description": "部隊の[正月]城娘の射程が15上昇"
+    },
+    {
+      "AbilityID": 879,
+      "Name": "氷花の雪片",
+      "Description": "「氷結」状態の敵の移動速度、攻撃速度低下効果が上昇\n配置中、射程内の「氷結」状態の敵の被ダメージが50%\n射程外の「氷結」状態の敵の被ダメージが25%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 885,
+      "Name": "天下一のステージ",
+      "Description": "配置中、自身の攻撃の10%の値を\n自身を除く射程内の味方の攻撃と防御に加算"
+    },
+    {
+      "AbilityID": 887,
+      "Name": "防人裏歌",
+      "Description": "部隊の地獄城の攻撃が100上昇\n[絢爛]城娘の射程が20上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 914,
+      "Name": "泰山中元祭",
+      "Description": "部隊の[夏]城娘の射程が15上昇\n地獄城娘の攻撃後の隙が10%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 921,
+      "Name": "進む道に間違いなし",
+      "Description": "部隊の刀､槌､盾､戦棍､拳､双剣城娘の耐久が10%上昇\n耐久が0になっても大破扱いにならない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 922,
+      "Name": "風林火山陰雷",
+      "Description": "配置中､各城娘の足止め数に応じて､以下の効果が発動\n3:巨大化気10%軽減/6:撃破気2増加(同種効果の重複無し)\n9:攻撃対象1増加/12:攻撃と防御が50%上昇"
+    },
+    {
+      "AbilityID": 925,
+      "Name": "民の想い",
+      "Description": "部隊の城娘の回復が15上昇"
+    },
+    {
+      "AbilityID": 930,
+      "Name": "救国の英雄",
+      "Description": "全ての軍船城娘の敵撃破時の獲得気が1増加"
+    },
+    {
+      "AbilityID": 937,
+      "Name": "甲斐爛漫",
+      "Description": "部隊の[絢爛]と関東・甲信越城娘の\n初回計略使用までの時間が30%\n計略再使用までの時間が5%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 945,
+      "Name": "摩利支天の陽炎",
+      "Description": "配置中、自身が敵から狙われない\n射程内の隠密状態の近接城娘が\n攻撃で与えるダメージが1.2倍"
+    },
+    {
+      "AbilityID": 951,
+      "Name": "冬の騎士",
+      "Description": "全ての「氷結」状態の敵の被ダメージが40％上昇\n配置中、自身が射程内の蔵へのダメージを代わりに受ける"
+    },
+    {
+      "AbilityID": 959,
+      "Name": "賀寿の鯱",
+      "Description": "部隊の[正月]城娘の回復と射程が10上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 960,
+      "Name": "灼鉄の賀正門",
+      "Description": "部隊の地獄城と[正月]城娘の耐久が15％上昇\n合戦中、自身が一度だけ30秒間大破しない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 963,
+      "Name": "楽園追放",
+      "Description": "部隊の地獄城の計略再使用時間を10%短縮\n地獄城と伏兵の攻撃が50、射程が10上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 964,
+      "Name": "ステュクスの神誓",
+      "Description": "部隊の地獄城の耐久/攻撃/防御が10%上昇\n「ハデスの死闘場」への出撃時、更に自身の耐久/攻撃/防御が1.25倍\n配置中、射程内の城娘の撃破獲得気が1増加"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3003,
+      "Name": "情人節快楽",
+      "Description": "部隊の[ﾊﾞﾚﾝﾀｲﾝ]城娘の攻撃後の隙が10％短縮\n配置中、射程内の[ﾊﾞﾚﾝﾀｲﾝ]城娘1体につき自身の攻撃が50上昇"
+    },
+    {
+      "AbilityID": 3005,
+      "Name": "ドレッドノート革命",
+      "Description": "部隊の軍船城娘の耐久/防御が10%上昇\n巨大化気を2軽減"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3006,
+      "Name": "ルーヴルの至宝",
+      "Description": "全ての敵の射程が4%低下\n部隊の[宮殿]の攻撃が10%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3008,
+      "Name": "楠木の穴熊",
+      "Description": "部隊の[学園]城娘の耐久が1000上昇\n配置している自身の伏兵1体につき自身の足止め数が1増加\n術攻撃以外のダメージを7%ずつ軽減"
+    },
+    {
+      "AbilityID": 3010,
+      "Name": "EUREKA",
+      "Description": "部隊の城娘の初回計略使用までの時間を20%短縮\n城塞都市の攻撃と防御が40上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3014,
+      "Name": "アトラスの海",
+      "Description": "部隊の水城の攻撃が50、射程が20上昇\n水上マス配置時、自身の与えるダメージが1.4倍"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3016,
+      "Name": "冥府系アイドル",
+      "Description": "部隊の地獄城の攻撃後の隙が10％短縮\n配置中、自身の攻撃の10％の値を全地獄城の攻撃に加算"
+    },
+    {
+      "AbilityID": 3017,
+      "Name": "天下布武あいどる",
+      "Description": "配置中、射程内の敵の攻撃と防御が\n自身の攻撃の20%の値減少"
+    },
+    {
+      "AbilityID": 3018,
+      "Name": "桃山のアイドル",
+      "Description": "部隊の城娘の被回復量が10％上昇\n与ダメージの10%耐久が回復"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3019,
+      "Name": "稜堡式十字砲火",
+      "Description": "部隊の大砲・鉄砲城娘の巨大化気を10％軽減\n攻撃が70上昇､敵撃破時の獲得気が1増加"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": "部隊の大砲・鉄砲城娘の巨大化気を10％軽減\n攻撃が70､上昇敵撃破時の獲得気が1増加"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3022,
+      "Name": "義心の龍",
+      "Description": "部隊の刀､双剣城娘の攻撃と防御が80上昇\n自身が合戦中1度だけ大破せず､20秒間耐久が0にならない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3024,
+      "Name": "歌踊十六手",
+      "Description": "部隊の平山城の与回復量が15%上昇､攻撃後の隙を10%短縮\n合戦中､自身の射程内の城娘が[暴雨]の影響を受けない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3025,
+      "Name": "別将の器",
+      "Description": "部隊の歌舞､法術､祓串城娘の射程が20上昇\n全ての敵の攻撃と射程が4%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3029,
+      "Name": "兵庫津のおもてなし",
+      "Description": "部隊の[花嫁衣装]城娘の攻撃と防御が100\n近畿城娘の射程が30上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3032,
+      "Name": "太陽王の象徴",
+      "Description": "部隊の[夏]と[宮殿]城娘の計略再使用時間を10%短縮\n杖城娘の大魔法再使用時間10%短縮､消費気10%軽減"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3034,
+      "Name": "五角の砂城",
+      "Description": "部隊の[夏]城娘の初回計略使用までの時間が40%短縮\n耐久が0になっても大破扱いにならない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3042,
+      "Name": "奈落の警官",
+      "Description": "部隊のモンスター娘と架空城の攻撃速度20％上昇\n耐久が0になっても大破扱いにならない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3045,
+      "Name": "本所七不思議",
+      "Description": "部隊の[肝試し]城娘の攻撃後の隙が10％短縮\n配置中自身の攻撃または回復時､7回毎に4倍の攻撃で\n射程内の全ての敵､城娘を攻撃し回復する"
+    },
+    {
+      "AbilityID": 3047,
+      "Name": "平四つ目結への忠誠",
+      "Description": "部隊の城娘の防御が50上昇\n自身が合戦中1度だけ大破せず､15秒間耐久が0にならない\n近接マスに配置可能"
+    },
+    {
+      "AbilityID": 3048,
+      "Name": "無尽の渇望",
+      "Description": "部隊の鎌城娘の攻撃50上昇\n自身の撤退大破気40%上昇､再配置時間70%短縮"
+    },
+    {
+      "AbilityID": 3049,
+      "Name": "宇喜多どくどくファクトリー",
+      "Description": "部隊の歌舞､法術､祓串城娘の攻撃40上昇\n配置中､自身への全ての状態異常を無効化"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3050,
+      "Name": "神出鬼没の天空城",
+      "Description": "部隊の近接城娘の耐久が10%上昇"
+    },
+    {
+      "AbilityID": 3051,
+      "Name": "九朝古都の中秋節",
+      "Description": "部隊の[お月見]城娘の攻撃と防御が50上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3053,
+      "Name": "神君の識見",
+      "Description": "部隊の城娘の攻撃後の隙が5%短縮\n配置中､自身の伏兵の攻撃と防御に自身の100％の値を加算"
+    },
+    {
+      "AbilityID": 3055,
+      "Name": "誘いの魔境",
+      "Description": "全ての敵の移動速度が5%低下\n全ての架空城の敵撃破時の獲得気が1増加"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3058,
+      "Name": "ラッキーサンダー",
+      "Description": "配置中自身の攻撃時､2回毎に攻撃が2倍のダメージを与える\n計略効果中は常に攻撃が2倍のダメージを与え\n射程内の敵に攻撃の1倍の術ダメージを継続的に与える"
+    },
+    {
+      "AbilityID": 3059,
+      "Name": "静謐の冥府",
+      "Description": "部隊の地獄城娘の攻撃が100上昇\n自身の耐久が0になっても大破扱いにならない"
+    },
+    {
+      "AbilityID": 3061,
+      "Name": "トリック・オア・パパナシ",
+      "Description": "部隊の[ﾊﾛｳｨﾝ]城娘の回復が10上昇"
+    },
+    {
+      "AbilityID": 3062,
+      "Name": "鮮血のハロウィン",
+      "Description": "部隊の[ﾊﾛｳｨﾝ]城娘の攻撃が50上昇\n全ての敵の防御が30低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3063,
+      "Name": "仮装の珍品棚",
+      "Description": "部隊の城娘の射程が10上昇\n[ﾊﾛｳｨﾝ]城娘の射程が15上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3066,
+      "Name": "赤いドラゴンの紋章",
+      "Description": "部隊の軍船城娘の攻撃速度10%上昇\n攻撃後の隙10%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3068,
+      "Name": "海軍式割烹",
+      "Description": "部隊の水城の回復15上昇､計略再使用時間10%短縮\n軍船城娘の計略消費気が1軽減"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3070,
+      "Name": "天童会の門戸",
+      "Description": "部隊の山城の巨大化気を8%軽減"
+    },
+    {
+      "AbilityID": 3077,
+      "Name": "王の心臓",
+      "Description": "部隊の海外城娘の射程が30､耐久が15%上昇\n自身が合戦中1度だけ大破せず､20秒間耐久が0にならない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3079,
+      "Name": "北限の柵",
+      "Description": "部隊の歌舞､法術､祓串城娘の攻撃と防御が50上昇\n古代城柵の計略再使用時間10%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3082,
+      "Name": "クリスマスマーケット",
+      "Description": "部隊の城娘の攻撃と防御30上昇\n部隊の[聖夜]城娘の撃破獲得気1増加"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3086,
+      "Name": "元日節会",
+      "Description": "部隊の[正月]城娘の撃破獲得気1増加"
+    },
+    {
+      "AbilityID": 3087,
+      "Name": "獅子賀正吼",
+      "Description": "部隊の城娘の攻撃30上昇､射程20上昇\n[正月]城娘には効果1.5倍"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3091,
+      "Name": "万香園裡花壇綱目",
+      "Description": "部隊の城娘の攻撃35､回復10上昇\n平城はさらに攻撃20､被回復量10%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3096,
+      "Name": "難攻不落の海囲要塞",
+      "Description": "部隊の城塞都市の攻撃と防御が60上昇､射程10上昇\n全敵の攻撃5%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3103,
+      "Name": "王母の蟠桃会",
+      "Description": "部隊の城娘の巨大化気1軽減\n山城娘と架空城の計略再使用時間が15%短縮｡配置中自身を除く\n射程内の城娘1体につき自身の攻撃10%上昇(効果重複)"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3104,
+      "Name": "のの字式霊力内燃機関",
+      "Description": "部隊の城娘の攻撃と防御が100上昇\n初回計略使用までの時間が20%短縮､自身は100%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3105,
+      "Name": "楽が聚まる第",
+      "Description": "部隊の城娘の計略消費気1軽減\n近畿城娘が合戦中1度だけ大破せず､10秒間耐久が0にならない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3107,
+      "Name": "学術の研究機関",
+      "Description": "部隊の本城娘の自動巨大化時間が10%短縮\n配置中､自伏兵1体毎に自身の攻撃が10%ずつ上昇\n全ての自伏兵の攻撃に自身の攻撃の100%の値を加算"
+    },
+    {
+      "AbilityID": 3111,
+      "Name": "魂の裁待街",
+      "Description": "部隊の地獄城娘が1度だけ大破せず､10秒間耐久が0にならない"
+    },
+    {
+      "AbilityID": 3112,
+      "Name": "抱き杏葉紋",
+      "Description": "部隊の[絢爛]城娘の攻撃が80上昇､計略再使用時間が10%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3114,
+      "Name": "駿府の本丸",
+      "Description": "部隊の城娘の攻撃後の隙が10%短縮\n初回計略使用までの時間を30%短縮\n[絢爛]城娘は初回計略使用までの時間が60%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7701,
+      "Name": "槍の又左",
+      "Description": "部隊の近接城娘の攻撃と防御が15%上昇\n北陸・東海城娘の射程が20上昇\n攻撃と防御が20%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7703,
+      "Name": "異見会",
+      "Description": "部隊の遠隔城娘の攻撃と防御が15%上昇\n九州・沖縄城娘の耐久が500上昇\n攻撃と防御が20%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7705,
+      "Name": "三子教訓状",
+      "Description": "部隊の遠隔城娘の攻撃と防御が15%上昇\n中国・四国城娘の計略再使用までの時間が10%短縮\n攻撃と防御が20%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7707,
+      "Name": "天星の牡牛",
+      "Description": "部隊の近接城娘の攻撃と防御が15%上昇\n海外城娘の防御が70上昇\n攻撃と防御が20%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7709,
+      "Name": "鶺鴒の眼",
+      "Description": "部隊の近接城娘の攻撃と防御が20%上昇、攻撃速度が\n15％上昇。北海道・東北城娘の攻撃が70上昇\n攻撃と防御が25%上昇、攻撃速度が20％上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7711,
+      "Name": "内府違いの条々",
+      "Description": "部隊の遠隔城娘の攻撃と防御が15%上昇\n近畿城娘の耐久が400、防御が40上昇\n攻撃と防御が20%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7713,
+      "Name": "虎朱印",
+      "Description": "部隊の近接城娘の攻撃と防御が20%上昇、攻撃後の隙が15%短縮\n関東・甲信越城娘の攻撃が50、回復が15上昇\n攻撃と防御が25%上昇、攻撃後の隙が20%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7715,
+      "Name": "賤ヶ岳七本槍",
+      "Description": "部隊の遠隔城娘の攻撃と防御が15%上昇\n中国・四国城娘の攻撃と防御が40上昇\n攻撃と防御が20%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7717,
+      "Name": "鬼島津",
+      "Description": "部隊の近接城娘の耐久と攻撃と防御が20%上昇\n九州・沖縄城娘の攻撃が50、射程が15上昇\n耐久と攻撃と防御が25%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7719,
+      "Name": "智の片倉",
+      "Description": "部隊の遠隔城娘の攻撃と防御が15%上昇\n北海道・東北城娘の射程が20上昇\n攻撃と防御が20%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7721,
+      "Name": "越後中納言",
+      "Description": "部隊の遠隔城娘の攻撃と防御が15%上昇、石弓城娘の攻撃速度が\n15%上昇。関東・甲信越城娘の攻撃速度が15%上昇\n攻撃後の隙が5%短縮、攻撃と防御が20%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7723,
+      "Name": "敵は本能寺にあり",
+      "Description": "部隊の遠隔城娘の耐久と攻撃と防御が20%上昇\n近畿城娘の射程が30上昇\n耐久と攻撃と防御が25%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7725,
+      "Name": "武田の赤備え",
+      "Description": "部隊の遠隔城娘の攻撃と防御が15%上昇\n関東・甲信越城娘の攻撃が70上昇\n攻撃と防御が20%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7727,
+      "Name": "武の天下人",
+      "Description": "部隊の城娘の攻撃が20%上昇、計略再使用時間を10％短縮\n兜娘は攻撃が30%上昇、計略再使用時間を15％短縮\n近畿城娘の攻撃が100上昇、巨大化気5%軽減"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7729,
+      "Name": "天道を征く者",
+      "Description": "部隊の城娘の攻撃速度が20%上昇、巨大化気5%軽減\n兜娘の計略消費気を5軽減、敵撃破時の獲得気が1増加\n近接城娘の攻撃後の隙が15%短縮、攻撃が敵の防御を15%無視"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7731,
+      "Name": "永楽六文銭",
+      "Description": "部隊の近接城娘の耐久と攻撃と攻撃速度が20%上昇\n甲信越城娘の耐久と攻撃と攻撃速度が25%上昇\n敵を撃破する度に耐久が最大の20%回復"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7733,
+      "Name": "元和令・武家諸法度",
+      "Description": "部隊の城娘の攻撃と防御が100上昇､計略初回発動時間を\n35％短縮｡兜娘と関東城娘は合戦中一度だけ10秒間耐久が\n0にならず大破しない｡全ての敵の撃破獲得気が1増加"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7735,
+      "Name": "利休の高弟",
+      "Description": "部隊の遠隔城娘の攻撃と防御が15%上昇\n鉄砲・茶器城娘の射程が20上昇\n攻撃と防御が20%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7737,
+      "Name": "高貴なる塗輿",
+      "Description": "部隊の遠隔城娘の耐久と攻撃と防御が20%上昇\n北陸・東海城娘の射程が15上昇､攻撃後の隙が15%短縮\n耐久と攻撃と防御が25%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7739,
+      "Name": "甲州三法",
+      "Description": "部隊の城娘の攻撃と防御100上昇､与ダメージの20%耐久回復\n兜娘の攻撃と防御100上昇､巨大化気15%軽減｡近接城娘の\n耐久/攻撃/防御が20%上昇｡甲信越の耐久/攻撃/防御が25%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7741,
+      "Name": "十三夜の詩",
+      "Description": "部隊の城娘の攻撃200上昇､計略再使用時間を10%短縮\n兜娘と近接城娘の攻撃後の隙が20%短縮\n近接城娘の射程が30上昇､敵撃破時の獲得気が1増加"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7743,
+      "Name": "権威の藤堂蔦",
+      "Description": "部隊の遠隔城娘の攻撃と防御が15%上昇\n中国･四国城娘が敵の防御を10%無視する\n攻撃と防御が20%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7801,
+      "Name": "全軍出陣！",
+      "Description": "部隊の近接城娘の攻撃と防御が10%上昇\n槍城娘の巨大化気を1軽減、最大耐久が10%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7803,
+      "Name": "氷の槍先",
+      "Description": "部隊の近接城娘の攻撃と防御が10%上昇\n「氷結」状態の敵の与ダメージが20%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7805,
+      "Name": "見えぬ雑兵",
+      "Description": "部隊の近接城娘の攻撃速度が10%上昇\n投剣城娘が敵から狙われにくくなる"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7807,
+      "Name": "厄除の智杖",
+      "Description": "部隊の遠隔城娘の攻撃と耐久が10%上昇\n法術城娘の攻撃後の隙が10%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 7809,
+      "Name": "弓兵愛好の鉄帽子",
+      "Description": "部隊の遠隔城娘の攻撃と攻撃速度が10%上昇\n弓城娘の射程が20上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 990,
+      "Name": "希望の学園",
+      "Description": "部隊の「無」属性の耐久/攻撃/防御が1.2倍\n[希望ヶ峰学園]と[超高校級]と[学園]城娘の\n耐久が0になっても大破扱いにならない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9052,
+      "Name": "右脳解放",
+      "Description": "部隊の「無」属性の再出撃時間を30%短縮する"
+    },
+    {
+      "AbilityID": 993,
+      "Name": "ブリタニアの空",
+      "Description": "部隊の「無」属性の耐久/攻撃/防御が1.2倍\n全ての飛行敵の攻撃と移動速度が8%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9074,
+      "Name": "第501統合戦闘航空団司令",
+      "Description": "部隊の[魔女][JFW基地]の\n計略再使用時間を15%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 991,
+      "Name": "コロシアイ学園生活校則",
+      "Description": "「絶望」状態の[超高校級]の攻撃と攻撃速度が1.3倍\n「絶望」状態の敵の防御と移動速度が30%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9093,
+      "Name": "黄金のマカンゴ",
+      "Description": "部隊の[希望ヶ峰学園]と[ジャバウォック島]と\n[超高校級]の射程が20上昇。計略消費気を1軽減"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9111,
+      "Name": "撤退支援",
+      "Description": "部隊の近接城娘の耐久が15%上昇\n耐久が0になっても大破扱いにならない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9112,
+      "Name": "クリティカルⅢ",
+      "Description": "自身の攻撃時、40%の確率で1.5倍のダメージを与える\n(連続攻撃時は、最初の攻撃でのみ発動)"
+    },
+    {
+      "AbilityID": 9143,
+      "Name": "生命力吸収Ⅲ",
+      "Description": "自身の攻撃時、与ダメージの20%耐久が回復"
+    },
+    {
+      "AbilityID": 994,
+      "Name": "学舎の園",
+      "Description": "部隊の「無」属性の耐久/攻撃/防御が1.2倍\n元が★4以下の城娘の耐久/攻撃/防御が1.15倍"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 995,
+      "Name": "人類復興の礎",
+      "Description": "部隊の「無」属性の耐久/攻撃/防御が1.2倍\n[進撃の巨人]の攻撃が80上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9155,
+      "Name": "王家の末裔",
+      "Description": "部隊の味方の防御が50上昇、射程が10上昇\n[進撃の巨人]は更に耐久が500、攻撃が50上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9181,
+      "Name": "黒翼の魔兵",
+      "Description": "自身の攻撃が敵の防御を無視する\n耐久が0になっても大破扱いにならない"
+    },
+    {
+      "AbilityID": 9182,
+      "Name": "スタートチャージャー",
+      "Description": "自身の初回計略使用までの時間が50%短縮\n(同種効果と重複)"
+    },
+    {
+      "AbilityID": 996,
+      "Name": "だんがん☆アイランド",
+      "Description": "部隊の城娘の計略再使用時間を10%短縮\n「無」属性の耐久/攻撃/防御が1.2倍、[超高校級]は1.25倍"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9212,
+      "Name": "聖なる祈り",
+      "Description": "自身の計略効果中\n全ての城娘の回復が200上昇"
+    },
+    {
+      "AbilityID": 9222,
+      "Name": "リジェネレーションIV",
+      "Description": "配置中､自身を継続的に回復する"
+    },
+    {
+      "AbilityID": 9231,
+      "Name": "大華の神話",
+      "Description": "部隊のアイギス戦士の耐久と攻撃が5%上昇\n配置時､自身の計略が即時使用可能となり\n全ての状態異常を無効化､耐久が0になっても大破扱いにならない"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9232,
+      "Name": "MAXマッスル",
+      "Description": "自身の耐久が最大の時､攻撃で与えるダメージが1.3倍"
+    },
+    {
+      "AbilityID": 997,
+      "Name": "永代姫君の称号",
+      "Description": "部隊の「無」属性の耐久/攻撃/防御が1.2倍\n[学園都市][能力者][魔術師]の攻撃/防御が100上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9243,
+      "Name": "ミサカネットワーク",
+      "Description": "部隊の味方の攻撃と防御が80上昇\n[能力者][魔術師]の計略再使用時間が15%短縮"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9261,
+      "Name": "ヴァイセカイゼリン",
+      "Description": "部隊の近接城娘が合戦中1度だけ大破せず\n15秒間耐久が0にならない\n全ての敵の攻撃と防御が15％低下､地上敵は30%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9262,
+      "Name": "パワフルリジェネ",
+      "Description": "配置中､自身を継続的に回復する\n計略中､自身の被回復量が3倍"
+    },
+    {
+      "AbilityID": 3999,
+      "Name": "テスト(3999)編成特技：未改築",
+      "Description": "編成しているだけで全ての城娘の防御が10%上昇"
+    },
+    {
+      "AbilityID": 93999,
+      "Name": "テスト(3999)編成特技：改一",
+      "Description": "編成しているだけで全ての城娘の防御が20%上昇"
+    },
+    {
+      "AbilityID": 103999,
+      "Name": "テスト(3999)編成特技：改弐",
+      "Description": "編成しているだけで全ての城娘の防御が30%上昇"
+    }
+  ]
+}

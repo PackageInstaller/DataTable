@@ -1,0 +1,274 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 48,
+    "record_size": 12,
+    "custom_id": 1819566953
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "CastleType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Name": "無効値",
+      "CastleType": 0
+    },
+    {
+      "ID": 1,
+      "Name": "平城",
+      "CastleType": 1
+    },
+    {
+      "ID": 2,
+      "Name": "山城",
+      "CastleType": 2
+    },
+    {
+      "ID": 3,
+      "Name": "平山城",
+      "CastleType": 3
+    },
+    {
+      "ID": 4,
+      "Name": "水城",
+      "CastleType": 4
+    },
+    {
+      "ID": 5,
+      "Name": "平/水城",
+      "CastleType": 5
+    },
+    {
+      "ID": 6,
+      "Name": "山/水城",
+      "CastleType": 6
+    },
+    {
+      "ID": 7,
+      "Name": "平山/水城",
+      "CastleType": 7
+    },
+    {
+      "ID": 8,
+      "Name": "平城、山城",
+      "CastleType": 1
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 2
+    },
+    {
+      "ID": 9,
+      "Name": "平城、水城",
+      "CastleType": 1
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 4
+    },
+    {
+      "ID": 10,
+      "Name": "平を含む城",
+      "CastleType": 1
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 5
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 9
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 14
+    },
+    {
+      "ID": 11,
+      "Name": "山を含む城",
+      "CastleType": 2
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 6
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 10
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 14
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 15
+    },
+    {
+      "ID": 12,
+      "Name": "平山を含む城",
+      "CastleType": 3
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 7
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 11
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 15
+    },
+    {
+      "ID": 13,
+      "Name": "水を含む城",
+      "CastleType": 4
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 5
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 6
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 7
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 12
+    },
+    {
+      "ID": 14,
+      "Name": "地獄城",
+      "CastleType": 8
+    },
+    {
+      "ID": 15,
+      "Name": "地獄を含む城",
+      "CastleType": 8
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 9
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 10
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 11
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 12
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 13
+    },
+    {
+      "ID": 16,
+      "Name": "平と水を含む城",
+      "CastleType": 1
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 5
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 9
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 14
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 4
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 5
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 6
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 7
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 12
+    },
+    {
+      "ID": 17,
+      "Name": "無属性を含む",
+      "CastleType": 16
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "CastleType": 13
+    }
+  ]
+}

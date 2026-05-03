@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 1,
+    "record_size": 20,
+    "custom_id": 1835627635
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Wait",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "ConsumeKiRatio",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "ActivateSE",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "ActivateVoice",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "Wait": 60000,
+      "ConsumeKiRatio": 300,
+      "ActivateSE": 9437308,
+      "ActivateVoice": 10
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 4,
+    "record_size": 8,
+    "custom_id": 1885498485
+  },
+  "_fields": [
+    {
+      "name": "CardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "LimitBreakCount",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "CardID": 8022,
+      "LimitBreakCount": 4
+    },
+    {
+      "CardID": 8023,
+      "LimitBreakCount": 4
+    },
+    {
+      "CardID": 8024,
+      "LimitBreakCount": 4
+    },
+    {
+      "CardID": 8026,
+      "LimitBreakCount": 4
+    }
+  ]
+}

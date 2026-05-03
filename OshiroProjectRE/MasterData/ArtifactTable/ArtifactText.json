@@ -1,0 +1,623 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 71,
+    "record_size": 24,
+    "custom_id": 1952871009
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "TabID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "EffectDescription",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "Description",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "HowToGet",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 101,
+      "TabID": 1,
+      "Name": "汚れた蹴鞠",
+      "EffectDescription": "%c[afeeee]城娘:防御＋3％%c[ffffff]",
+      "Description": "蹴鞠は公家の嗜みであるが、\nそれがなぜ廃村にあるのかを\n知る者はいない。\nたったひとつの事実を語れば、\n持ち主はこの世に居ない\nであろうことだけだ。",
+      "HowToGet": "第1話の蔵から確率で出現"
+    },
+    {
+      "ID": 102,
+      "TabID": 1,
+      "Name": "紅花",
+      "EffectDescription": "%c[afeeee]気回収量＋8％%c[ffffff]",
+      "Description": "かつては出羽の特産品として\n都に重宝された紅の花も、\n今や無用の長物となった。\nしかし瘴気に蝕まれる\n大地の上で、彼らは懸命に\n花を咲かせている。",
+      "HowToGet": "第2話の蔵から確率で出現"
+    },
+    {
+      "ID": 103,
+      "TabID": 1,
+      "Name": "おにぎり(塩)",
+      "EffectDescription": "%c[afeeee]城娘:回復＋10%c[ffffff]",
+      "Description": "白い飯を最後に食べたのは、\nいったいいつの事だろう。\nただ塩で握っただけの\nおにぎりを無遠慮に頬張るのが、\nなによりの贅沢になろうとは。",
+      "HowToGet": "第3話の蔵から確率で出現"
+    },
+    {
+      "ID": 104,
+      "TabID": 1,
+      "Name": "空の徳利",
+      "EffectDescription": "%c[afeeee]城娘:攻撃+20%c[ffffff]",
+      "Description": "行く先の見えないこの世界だ、\n酒を飲まずにやっていられるか。\n酔いは苦痛も悲しみも和らげて\nくれるが、空の徳利に残るのは\nなみなみと注がれる虚しさ\nだけである。",
+      "HowToGet": "第4話の蔵から確率で出現"
+    },
+    {
+      "ID": 105,
+      "TabID": 1,
+      "Name": "異界の古文書",
+      "EffectDescription": "%c[afeeee]敵:攻撃-2％%c[ffffff]",
+      "Description": "この世ならざる文字で書かれた\n文書の内容を、\n理解できる者はいない。\n理解とは則ち、現世に生きる\n自分自身を捨てることである。",
+      "HowToGet": "第5話の蔵から確率で出現"
+    },
+    {
+      "ID": 106,
+      "TabID": 1,
+      "Name": "清酒「白嶺」",
+      "EffectDescription": "%c[afeeee]敵:防御-15%c[ffffff]",
+      "Description": "酒は人が飲むだけにあらず。\n八百万の神々に捧げる、\n神聖なる逸品でもある。\n霊峰に捧げられたこの徳利には、\n太平への願いが込められる。",
+      "HowToGet": "第6話の蔵から確率で出現"
+    },
+    {
+      "ID": 107,
+      "TabID": 1,
+      "Name": "直江状の贋作",
+      "EffectDescription": "%c[afeeee]城娘:防御+20%c[ffffff]",
+      "Description": "そこに認められているのは、\n愛ゆえの道理と義憤。\nたとえ贋作であろうとも、\n言葉ひとつひとつに込められた\n憤りを払拭することはできない。",
+      "HowToGet": "第7話の蔵から確率で出現"
+    },
+    {
+      "ID": 108,
+      "TabID": 1,
+      "Name": "青菜巻きおにぎり",
+      "EffectDescription": "%c[afeeee]城娘:耐久+3％%c[ffffff]",
+      "Description": "弁慶飯の愛称を持つ、\nひと握りで主食と主菜を兼ねる\n出羽の食の知恵。\nひと口頬張れば、仁王のごとき\n活力を与えてくれる。",
+      "HowToGet": "第8話の蔵から確率で出現"
+    },
+    {
+      "ID": 109,
+      "TabID": 1,
+      "Name": "曼珠沙華",
+      "EffectDescription": "%c[afeeee]気回収量+1%c[ffffff]",
+      "Description": "古戦場を埋め尽くす深紅の花は、\n失われた命たちへの手向け\nのようでもあった。\n実を結ばぬ徒花として、\n後悔と悲しみを\n後世に残さぬよう。",
+      "HowToGet": "第9話の蔵から確率で出現"
+    },
+    {
+      "ID": 110,
+      "TabID": 1,
+      "Name": "直江兼続の愛の部分",
+      "EffectDescription": "%c[afeeee]城娘:耐久+50%c[ffffff]",
+      "Description": "その言葉は、天下泰平の\nではなく、仇敵を討ち果たす\nために掲げられた。\n勝利を呼び込む八百万の神の\n加護を受けんとするがため。",
+      "HowToGet": "第9話の特別戦功"
+    },
+    {
+      "ID": 111,
+      "TabID": 2,
+      "Name": "薄汚れた瓦版",
+      "EffectDescription": "%c[afeeee]遠隔城娘:防御＋25%c[ffffff]",
+      "Description": "里同士の交流が乏しい中で、\n瓦版ばかりが外の世界を知る\n窓である。\nしかし、描き出される事柄が、\n真実かどうかを知る術はない。",
+      "HowToGet": "第1話の蔵から確率で出現"
+    },
+    {
+      "ID": 112,
+      "TabID": 2,
+      "Name": "透頂香",
+      "EffectDescription": "%c[afeeee]城娘:回復＋15%c[ffffff]",
+      "Description": "博多生まれの京育ち。\n頭痛、応急、匂い消しまで\n何でもござれの万能薬。\nそれやひと粒口にすれば、\n舌切り雀の蛙ぴょこぴょこ\nみぴょこぴょこ。",
+      "HowToGet": "第2話の蔵から確率で出現"
+    },
+    {
+      "ID": 113,
+      "TabID": 2,
+      "Name": "報刻の大太鼓",
+      "EffectDescription": "%c[afeeee]城娘:攻撃速度＋3％%c[ffffff]",
+      "Description": "明日の命も分からぬ中で、刻を\n知ることにどれほどの意味があ\nろうか。\n今日こそわが身と震えていても、\nいずれ季節は巡りゆく。\n遠江の空に響いて。",
+      "HowToGet": "第3話の蔵から確率で出現"
+    },
+    {
+      "ID": 114,
+      "TabID": 2,
+      "Name": "折れた弓",
+      "EffectDescription": "%c[afeeee]城娘:射程＋5%c[ffffff]",
+      "Description": "かの者に天下を渡してはならぬ。\nそれは『あの御方』への忠義の心\nか。それとも歴史が紡ぐ宿命か。\nならば、東海一の弓がここで手折\nれるのも、世界が定めしひとつの\n選択である。",
+      "HowToGet": "第4話の蔵から確率で出現"
+    },
+    {
+      "ID": 115,
+      "TabID": 2,
+      "Name": "桔梗の花",
+      "EffectDescription": "%c[afeeee]遠隔城娘:気回収量＋12％%c[ffffff]",
+      "Description": "桔梗とは『吉凶』――則ち、\n天の分け目を占う花。決して\n特異点と成ることを願い生まれ\n落ちたわけではない。それでも\n怨嗟の炎に囚われし者は、咎と\n向き合い続けなければならない。",
+      "HowToGet": "第5話の蔵から確率で出現"
+    },
+    {
+      "ID": 116,
+      "TabID": 2,
+      "Name": "兜丸の設計図",
+      "EffectDescription": "%c[afeeee]水城娘:防御+25%c[ffffff]",
+      "Description": "鉄甲船兜丸ニ、数多ノ玉鋼必要\n也。日ノ本各産地ノ採掘、及ビ、\n多々良場ノ総動員ヲ求ムモノ也。\n近江国琵琶湖ニオケル試ヲ終エ\nシ暁ニハ、日ノ本ヲ一重ニ結ブ海\nノ道ト也候。",
+      "HowToGet": "第6話の蔵から確率で出現"
+    },
+    {
+      "ID": 117,
+      "TabID": 2,
+      "Name": "鬼の面",
+      "EffectDescription": "%c[afeeee]敵:耐久-2％%c[ffffff]",
+      "Description": "面とは己の本心を隠す一方で、\n望む姿を演じるための装置でも\nある。この面を手にした者は、\n己にどのような役目を求むるか。\n鬼とは必ずしも、悪の象徴では\nないのだ。",
+      "HowToGet": "第7話の蔵から確率で出現"
+    },
+    {
+      "ID": 118,
+      "TabID": 2,
+      "Name": "天下布武の旗印",
+      "EffectDescription": "%c[afeeee]敵:攻撃-15%c[ffffff]",
+      "Description": "武をもって天下を布く――\n『大きな国』への願いは、\n兜の身には容易いものであった。\nかつての尾張の若殿であれば、\n天下を手に入れしこの先に、\nどのような夢を描くか。",
+      "HowToGet": "第8話の蔵から確率で出現"
+    },
+    {
+      "ID": 119,
+      "TabID": 2,
+      "Name": "茶入れ",
+      "EffectDescription": "%c[afeeee]平城娘:回復＋20%c[ffffff]",
+      "Description": "楽しきが聚まるところには、\n相応のもてなしが待っている。\n酒は飲めぬか？\nならば茶を振舞おう。\nどちらも心を写す鏡ゆえ、\n飲みすぎ注意。飲みすぎ注意。",
+      "HowToGet": "第9話の蔵から確率で出現"
+    },
+    {
+      "ID": 120,
+      "TabID": 2,
+      "Name": "天破れし蒐刀",
+      "EffectDescription": "%c[afeeee]刀城娘:攻撃＋35%c[ffffff]",
+      "Description": "狩れや、狩れや、刀を狩れや。\n刀が無ければ戦はできぬ。\n代わりに俺が守ってやろう。\n未来永劫、子々孫々に至るまで。\nそれこそ太平の世ってヤツじゃあ、\nないですかネェ？",
+      "HowToGet": "第9話の特別戦功"
+    },
+    {
+      "ID": 121,
+      "TabID": 3,
+      "Name": "残された暗器",
+      "EffectDescription": "%c[afeeee]平山城娘:攻撃＋25%c[ffffff]",
+      "Description": "世に紛れ生きる忍びなれど、\n戦場に出ればひとりの\n武士である。国と己の誇りの為、\n忍びの武技をご披露いたす。\nたとえ幾万の軍勢を相手に、\n無慈悲に踏み潰されようとも。",
+      "HowToGet": "第1話の蔵から確率で出現"
+    },
+    {
+      "ID": 122,
+      "TabID": 3,
+      "Name": "逢坂関通行証",
+      "EffectDescription": "%c[afeeee]近接城娘:気回収時間-4％%c[ffffff]",
+      "Description": "関は往く手を阻むのみならず。\n内を封ずる為にもある。\n開け放てば魔が解き放たれる\n禁忌の箱。\nならば手形は、何のために\n存在するものか。",
+      "HowToGet": "第2話の蔵から確率で出現"
+    },
+    {
+      "ID": 123,
+      "TabID": 3,
+      "Name": "包囲網計画書",
+      "EffectDescription": "%c[afeeee]大将兜:耐久-4％%c[ffffff]",
+      "Description": "第六天魔王を討て。\n時の将軍が下した命は、\n自らを担ぎ上げた大名の\n征伐を望むものであった。\n誰も信じられぬ――\n将軍すらも翻弄するが乱世。",
+      "HowToGet": "第3話の蔵から確率で出現"
+    },
+    {
+      "ID": 124,
+      "TabID": 3,
+      "Name": "八咫烏印の銃弾",
+      "EffectDescription": "%c[afeeee]鉄砲城娘:攻撃＋35%c[ffffff]",
+      "Description": "時代を変えた南蛮の筒も\n巨大なる黒鉄の兵団には、\n道端の小石ほどに無力であった。\n第六天魔王を討つには、\nどれだけの弾丸が必要か。\n知る間もなく撃ち手は失われた。",
+      "HowToGet": "第4話の蔵から確率で出現"
+    },
+    {
+      "ID": 125,
+      "TabID": 3,
+      "Name": "六文銭",
+      "EffectDescription": "%c[afeeee]平城娘:防御+5％%c[ffffff]",
+      "Description": "一文、二文、三文――\n彼岸への渡し賃はしめて六文。\n抱えて戦場に出るは、\n死を厭わぬ勇猛の証か。\nそれとも死を覚悟した\n諦念の証か。",
+      "HowToGet": "第5話の蔵から確率で出現"
+    },
+    {
+      "ID": 126,
+      "TabID": 3,
+      "Name": "牢獄に残された布切れ",
+      "EffectDescription": "%c[afeeee]妖怪:耐久-3%%c[ffffff]",
+      "Description": "恥を晒して生に縋る\n意味があるのでしょうか。\n今やもう分かりません。\nただしかし、己の心に従って\nここに無念を記すならば。\nただ、生きたい――と。",
+      "HowToGet": "第6話の蔵から確率で出現"
+    },
+    {
+      "ID": 127,
+      "TabID": 3,
+      "Name": "天下の金鯱",
+      "EffectDescription": "%c[afeeee]平城娘:攻撃＋25%c[ffffff]",
+      "Description": "天守の頂から日の本を見下ろす。\nこれが、天下の鯱だ。\n大坂城のためこの地を手に入れた\n第六天魔王は、本能寺に消えた。\n今世、この地に佇む要塞は、\n念願叶いし魔王の御城である。",
+      "HowToGet": "第7話の蔵から確率で出現"
+    },
+    {
+      "ID": 128,
+      "TabID": 3,
+      "Name": "泥足毘沙門天",
+      "EffectDescription": "%c[afeeee]山城娘:攻撃＋25%c[ffffff]",
+      "Description": "かの上杉謙信は、\n自らを武神の生まれ変わりと\n世に知らしめた。ならばその\n子孫は武神の子と成るか。\nいや、彼奴もまた乱世に生きる\n武神その人に他ならないのだ。",
+      "HowToGet": "第8話の蔵から確率で出現"
+    },
+    {
+      "ID": 129,
+      "TabID": 3,
+      "Name": "天魔の翼",
+      "EffectDescription": "%c[afeeee]遠隔城娘:気回収時間-4％%c[ffffff]",
+      "Description": "我、仏門に帰依し悟りを求むる者\n無心にて経を唱えるも、邪なる\n囁きにて我を惑わす者在り。\nそれこそが天魔――\nねはんを妨げる破戒の魔也。",
+      "HowToGet": "第9話の蔵から確率で出現"
+    },
+    {
+      "ID": 130,
+      "TabID": 3,
+      "Name": "シャガの花",
+      "EffectDescription": "%c[afeeee]遠隔城娘:気回収量＋2%c[ffffff]",
+      "Description": "反抗と友人――\n相反する言葉を持つ花に、\n越後の義士は何を思ふ。春日山に\n咲き乱れる純白の花弁に、\n裏なき心を重ねれば。\n晴れて胡蝶の夢を見ゆ。",
+      "HowToGet": "第9話の特別戦功"
+    },
+    {
+      "ID": 131,
+      "TabID": 4,
+      "Name": "穴が空いた和傘",
+      "EffectDescription": "%c[afeeee]遠隔城娘:天候[暴雨]無効%c[ffffff]",
+      "Description": "雨の都に咲く傘は、\n目にも鮮やか色さまざま、\n閉じては開く優れもの。\nくるりくるりと廻る華、\nからりからりと笑う声、\n枯れて久しくなりぬれば。",
+      "HowToGet": "第1話の蔵から確率で出現"
+    },
+    {
+      "ID": 132,
+      "TabID": 4,
+      "Name": "鬼の絵巻",
+      "EffectDescription": "%c[afeeee]妖怪：攻撃-3％(重複可)%c[ffffff]",
+      "Description": "都城の間口、羅城門に巣食う者。\n旅人が息を殺して過ぎる夜も、\n今は昔の語り草。今日もまた\n魑魅魍魎が朱雀大路を闊歩する。\n末法末世の都には、昼夜の境も、\n畏れ惑う定命の影もない。",
+      "HowToGet": "第2話の蔵から確率で出現"
+    },
+    {
+      "ID": 133,
+      "TabID": 4,
+      "Name": "宇治茶",
+      "EffectDescription": "%c[afeeee]城娘:回復＋18%c[ffffff]",
+      "Description": "茶は心……心を映す至高の\n茶の湯には、至高の茶葉が\n欠かせませんｖ　おっと、飲み\n過ぎにはご注意を。うっかり\nすると目眩でクラクラ、茶壺に\n追われて、とっぴんしゃーん♪",
+      "HowToGet": "第3話の蔵から確率で出現"
+    },
+    {
+      "ID": 134,
+      "TabID": 4,
+      "Name": "呪符木簡",
+      "EffectDescription": "%c[afeeee]敵:防御+50％(重複可)%c[ffffff]",
+      "Description": "蘇民将来之子孫也――\nかつて厄除け、無病息災を\n願われた木簡は、瘴気に侵され\nその在り様を変えてしまった。\n主亡き祈りは今、異形を守護\nする邪法に堕して。",
+      "HowToGet": "第4話の蔵から確率で出現"
+    },
+    {
+      "ID": 135,
+      "TabID": 4,
+      "Name": "京漬物",
+      "EffectDescription": "%c[afeeee]槍城娘:攻撃+25%c[ffffff]",
+      "Description": "すぐき菜、壬生菜、茄子に瓜。\nかぶらを漬けて寝かせ置く。\n明日をも知らぬ我が身でも、\n待ち遠しきは閑雅の味よ。\n音を鳴らして噛むが良し。\nともすれば、これが最後の舌鼓。",
+      "HowToGet": "第5話の蔵から確率で出現"
+    },
+    {
+      "ID": 136,
+      "TabID": 4,
+      "Name": "兜の改造築城書",
+      "EffectDescription": "%c[afeeee]敵:防御-4％%c[ffffff]",
+      "Description": "城ヲ崩シ、縄張リヲ広ゲヨ。\n脆弱矮小ナル人間ノ城ヲ、\n我ラノ拠点ニ造リ変エルノダ。\n心セヨ、是ハ単ナル改築ニ非ズ。\n日ノ本ノ覇者ガ兜デアルト、天下\nニ知ラシメル威容ヲ成サン――",
+      "HowToGet": "第6話の蔵から確率で出現"
+    },
+    {
+      "ID": 137,
+      "TabID": 4,
+      "Name": "平蜘蛛釜",
+      "EffectDescription": "%c[afeeee]山城娘:耐久+10％(重複可)%c[ffffff]",
+      "Description": "叩き割るだなんて、とんでも\nありません。松永家の家宝に\n等しき、至高の茶釜にござい\nますれば。はて、爆発？\n何を仰っているのやら、\n全く理解しかねますね。",
+      "HowToGet": "第7話の蔵から確率で出現"
+    },
+    {
+      "ID": 138,
+      "TabID": 4,
+      "Name": "敗者の墓石",
+      "EffectDescription": "%c[afeeee]敵:耐久-3％%c[ffffff]",
+      "Description": "寺院より集めた石を石垣に\n用いた転用石。支配関係を\n目に見える形で表した墓石も、\n今や路傍の苔生した瓦礫に\n過ぎぬ。盛者必衰、諸行無常。\n銘なき墓に烏の鳴ける。",
+      "HowToGet": "第8話の蔵から確率で出現"
+    },
+    {
+      "ID": 139,
+      "TabID": 4,
+      "Name": "古紙に書かれた連歌",
+      "EffectDescription": "%c[afeeee]平城娘:耐久+10％(重複可)%c[ffffff]",
+      "Description": "『ときは今\n　　あめが下知る　五月かな』\n愛宕山で詠まれた発句の\n真意を知る者は居ない。\n五月雨に耳を澄ませども、\n雨垂れが岩をうつばかり。",
+      "HowToGet": "第9話の蔵から確率で出現"
+    },
+    {
+      "ID": 140,
+      "TabID": 4,
+      "Name": "家臣の桔梗紋",
+      "EffectDescription": "%c[afeeee]敵:攻撃-4％%c[ffffff]",
+      "Description": "桔梗紋は、在るべき歴史に\nおいては『凶』を示し潰えた。\n然るに今世、彼は在り得ざる\n『吉』を咲かして散る。歪なる\n世界だからこそ、貫き通した誠実\nの花は、どこまでも鮮やかに。",
+      "HowToGet": "第9話の特別戦功"
+    },
+    {
+      "ID": 141,
+      "TabID": 5,
+      "Name": "硫黄の結晶",
+      "EffectDescription": "%c[afeeee]大砲城娘:攻撃＋50%c[ffffff]",
+      "Description": "火薬の原料として、かつて大陸\nへ輸出されていた硫黄。薩摩より\n出でしその結晶は、今なお兵庫津\nに卸され、変わらぬ活気が港を\n満たす……異形の兵団による、\n更なる破壊をもたらす為に。",
+      "HowToGet": "第1話の蔵から確率で出現"
+    },
+    {
+      "ID": 142,
+      "TabID": 5,
+      "Name": "臥牛の置物",
+      "EffectDescription": "%c[afeeee]盾城娘:攻撃＋50%c[ffffff]",
+      "Description": "臥せたる巨牛を松山の姿に見出\nし、尊んだのも今は昔。縁起物\nを作る職人も、技術も、その価値\nすらも喪われて久しい。希望なき\n明日には、担ぐ縁起も期する結果\nも、ありはしないのだから。",
+      "HowToGet": "第2話の蔵から確率で出現"
+    },
+    {
+      "ID": 143,
+      "TabID": 5,
+      "Name": "鎮痛漢方",
+      "EffectDescription": "%c[afeeee]近接城娘:回復＋30%c[ffffff]",
+      "Description": "附子の毒を恐るるは、獣の火に\n慄くが如し。塩水浸して石灰塗\nるを、天日に干さば薬と成らん。\nこれ即ち漢方は修治の法なり。\n智者の業見て猿真似すまじ、\nけだし、毒にも薬にもなる話。",
+      "HowToGet": "第3話の蔵から確率で出現"
+    },
+    {
+      "ID": 144,
+      "TabID": 5,
+      "Name": "レトルト",
+      "EffectDescription": "%c[afeeee]法術城娘:攻撃＋35%c[ffffff]",
+      "Description": "おっと、実験器具は繊細なんだ、\n丁重に取り扱ってくれ給え。\n南蛮式の蒸留装置は値千金、\nこれがなくちゃあ始まらない。\nなんの実験かって？　キハハ！\nその内分かるよ、被検体クン♪",
+      "HowToGet": "第4話の蔵から確率で出現"
+    },
+    {
+      "ID": 145,
+      "TabID": 5,
+      "Name": "金の桃瓦",
+      "EffectDescription": "%c[afeeee]石弓城娘:防御＋35%c[ffffff]",
+      "Description": "『岡山』こそ、秀家様が築きし\n宇喜多の地、宇喜多の御城。\n『石山』に刻を留め、直家様を\n騙る巨怪が、欲しいままにする\n現世なぞ……濡羽の漆黒で、\n塗りつぶして差し上げましょう。",
+      "HowToGet": "第5話の蔵から確率で出現"
+    },
+    {
+      "ID": 600,
+      "TabID": 1,
+      "Name": "[裏]長谷堂城の御城印",
+      "EffectDescription": "%c[afeeee]敵:耐久+50％(重複可)%c[ffffff]",
+      "Description": "アッハハハハハッ！なに、あなた\nまた来たの？確かに『またね』\nとは言ったけど、そんなに私の\nことが好きなの？ふぅん……\nあっそ。その愛の芽生えを、\n今すぐに刈り取ってあげるッ！",
+      "HowToGet": "交換所で影落銭と交換"
+    },
+    {
+      "ID": 601,
+      "TabID": 2,
+      "Name": "[裏]聚楽第の御城印",
+      "EffectDescription": "%c[afeeee]敵:攻撃+50％(重複可)%c[ffffff]",
+      "Description": "渡せる物など有りはせぬが、\n客人を手ぶらで返しては聚楽第\nの名が廃ろう。なれば妾は、\n妾が此処に在る証を其方に託す。\n今世では永遠に喪われし、\n楽しきが聚むる御城の名を。",
+      "HowToGet": "交換所で影落銭と交換"
+    },
+    {
+      "ID": 602,
+      "TabID": 3,
+      "Name": "[裏]真田丸の御城印",
+      "EffectDescription": "%c[afeeee]敵:防御+50％(重複可)%c[ffffff]",
+      "Description": "衝動が、拙者を駆り立てる。\nただ一つ、己が魂に欠けたる\n勝利を満たさんがため。一文、\n二文……手枷は、しめて六文。\n挑まぬならば、疾く去るがよい。\n我が内なる獣が、目覚めぬ内に。",
+      "HowToGet": "交換所で影落銭と交換"
+    },
+    {
+      "ID": 701,
+      "TabID": 7,
+      "Name": "破損した桃形兜",
+      "EffectDescription": "%c[afeeee]城娘:攻撃+3％%c[ffffff]",
+      "Description": "どんな資材であろうとも、\n明日を生き残るために、\n無駄にすることはできない。\n仮ニ、一方的ナ恨ミ辛ミデ、\n化ケル可能性ガアロウトモ。",
+      "HowToGet": "天魔大乱 EX-1-3の特別戦功"
+    },
+    {
+      "ID": 702,
+      "TabID": 7,
+      "Name": "鳴らない法螺貝",
+      "EffectDescription": "%c[afeeee]遠隔城娘:巨大化気-3％%c[ffffff]",
+      "Description": "形ある物は、朽ちるが定め。\nこの法螺貝はかつて、\n出羽の山々に木霊したものか、\n猛き戦場に轟いたものか。\nそれを知る者は、真の歴史の\n語り部たる資格を与えられる。",
+      "HowToGet": "天魔大乱 EX-1-4の特別戦功"
+    },
+    {
+      "ID": 703,
+      "TabID": 7,
+      "Name": "手紙",
+      "EffectDescription": "%c[afeeee]気回収時間-3％%c[ffffff]",
+      "Description": "恋文とも日記ともとれる、\n日々の寂しき身の上を綴った\n美しき筆跡の文。\n現世と交わらぬ世界で、\n彼女の言葉がかの者に\n届くことはない。",
+      "HowToGet": "天魔大乱 EX-1-5の特別戦功"
+    },
+    {
+      "ID": 704,
+      "TabID": 7,
+      "Name": "欠けた「王将」",
+      "EffectDescription": "%c[afeeee]近接城娘:巨大化気-3％%c[ffffff]",
+      "Description": "将棋の歴史は古く、\n平安の世まで遡るとも言われる。\nやがて貴族の遊戯から、\n庶民の遊戯へと移り代わる時、\n駒を造りし天童の名は、\n日の本中に響き渡るであろう。",
+      "HowToGet": "天魔大乱 EX-1-8の特別戦功"
+    },
+    {
+      "ID": 705,
+      "TabID": 7,
+      "Name": "宝珠の欠片[直江兼続]",
+      "EffectDescription": "%c[afeeee]城娘:防御＋3％(重複可)%c[ffffff]",
+      "Description": "いかに強大なる兜であろうとも、\n覇天の力に触れるべきでは\n無かった。\n暴走する正義は、愛するモノも、\nその心さえもすべて、\n灰燼と帰すのだから。",
+      "HowToGet": "天魔大乱 EX-1-9の特別戦功"
+    },
+    {
+      "ID": 706,
+      "TabID": 7,
+      "Name": "妖しく光る刀",
+      "EffectDescription": "%c[afeeee]敵:耐久+50％%c[ffffff]",
+      "Description": "どれだけの刻を重ねようと、\n後悔が潰えることはない。\nどうせなら希望を抱く暇すらなく、\nひと息に飲み込まれてしまえば\n良かったものを。\nあな恨めしや、あな恨めしや――",
+      "HowToGet": "天魔大乱 EX-2-3の特別戦功"
+    },
+    {
+      "ID": 707,
+      "TabID": 7,
+      "Name": "錆び付いた刀",
+      "EffectDescription": "%c[afeeee]敵:攻撃-3％%c[ffffff]",
+      "Description": "朽ちていくは玉鋼に非ず。\n玉鋼に込められた魂をば。\n武士道とは死ぬことに非ず。\n命をかける甲斐あってこそ。\nしかし全ては泡沫の錆。",
+      "HowToGet": "天魔大乱 EX-2-4の特別戦功"
+    },
+    {
+      "ID": 708,
+      "TabID": 7,
+      "Name": "桔梗紋の控書",
+      "EffectDescription": "%c[afeeee]気回収時間-4％%c[ffffff]",
+      "Description": "鳥籠の中で思ふ。自由も無く、\n生まれ落ちた意味とは何か。\n否、もとより意味など無く、\n価値を求めるは弱き霊ゆえ。\nそれでもなお我が業火の中にて、\n君、微笑み給うことを願ふ。",
+      "HowToGet": "天魔大乱 EX-2-5の特別戦功"
+    },
+    {
+      "ID": 709,
+      "TabID": 7,
+      "Name": "波旬",
+      "EffectDescription": "%c[afeeee]敵:防御-3％%c[ffffff]",
+      "Description": "盃に天下を映して飲む\n酒の味はいかほどか。\nその実、味など無いのであろう。\n全てを手に入れし後にはもう、\n飲み下す甘美なる功など\nありはしないのだから。",
+      "HowToGet": "天魔大乱 EX-2-8の特別戦功"
+    },
+    {
+      "ID": 710,
+      "TabID": 7,
+      "Name": "宝珠の欠片[豊臣秀吉]",
+      "EffectDescription": "%c[afeeee]城娘:攻撃＋3％(重複可)%c[ffffff]",
+      "Description": "主君が歴史に抗いてなお、\nかの者は野心を捨てることが\nできなかった。\n今の世をこそどう渡るべきか。\nかの天下の出世頭なら、\n少しは知恵が回ろうものを。",
+      "HowToGet": "天魔大乱 EX-2-9の特別戦功"
+    },
+    {
+      "ID": 711,
+      "TabID": 7,
+      "Name": "執念の陣旗",
+      "EffectDescription": "%c[afeeee]敵:攻撃+50％%c[ffffff]",
+      "Description": "――止められぬ。私が止めねば、\n誰があの魔王を止められる？しか\nし、無理なものは無理なのだ。\n還俗の身で浄土は望まぬ。\n我こそが次なる魔王となり、\n彼奴の天下を阻んでみせようぞ。",
+      "HowToGet": "天魔大乱 EX-3-3の特別戦功"
+    },
+    {
+      "ID": 712,
+      "TabID": 7,
+      "Name": "使い古された紀州筒",
+      "EffectDescription": "%c[afeeee]鉄砲城娘:巨大化気-7％%c[ffffff]",
+      "Description": "大坂を守れなかった。\nならばこの筒は、誰が\n為に轟くか。死肉を喰らう\n烏となっても、誇り傷つけ\nさせぬ。まだ、引き金は\n錆びついていない。",
+      "HowToGet": "天魔大乱 EX-3-4の特別戦功"
+    },
+    {
+      "ID": 713,
+      "TabID": 7,
+      "Name": "禍々しい甲冑",
+      "EffectDescription": "%c[afeeee]敵:防御+50％%c[ffffff]",
+      "Description": "――喰らえ。\n――喰らえ。\nその身の赤が鎧の朱か、\n敵の返り血か分からぬほどに。\n戦の中にこそ、我らの生は在る。\n――喰らえ。",
+      "HowToGet": "天魔大乱 EX-3-5の特別戦功"
+    },
+    {
+      "ID": 714,
+      "TabID": 7,
+      "Name": "具利天目台",
+      "EffectDescription": "%c[afeeee]遠隔城娘:天候[轟雷]無効%c[ffffff]",
+      "Description": "小さき器に心の全てが映し出る。\n茶の湯は武士の嗜みであり、\n各々方の信を問う心の戦である。\n川中島の向こうに想いを馳せれば\n茶面に赤き軍神の覚悟が見ゆる。\nああ……猛り爆ぜる炎かな。",
+      "HowToGet": "天魔大乱 EX-3-8の特別戦功"
+    },
+    {
+      "ID": 715,
+      "TabID": 7,
+      "Name": "愛克ク義勇ノ天騎の宝玉",
+      "EffectDescription": "%c[afeeee]敵:攻撃-3％(重複可)%c[ffffff]",
+      "Description": "永劫の戦を――少女が望んだ\n川中島は両雄の絆へと化身した。\n勇と義――ふたつの魂を繋ぐ\n愛こそが、真の英雄の心たれ。\n川中島に恥じぬ戦を、\nさあ始めようじゃないか。",
+      "HowToGet": "天魔大乱 EX-3-9の特別戦功"
+    },
+    {
+      "ID": 716,
+      "TabID": 7,
+      "Name": "幻の瓦",
+      "EffectDescription": "%c[afeeee]近接城娘:気回収量＋10％%c[ffffff]",
+      "Description": "豊臣の世で洛中を照らした\n金箔瓦。聚楽第に、京都新城\n……灰燼と帰してなお、その\n栄華は懐かしく偲ばれる。たと\nえ思い馳せる者が消えようと、\n在りし過日は幻に堕ちずして。",
+      "HowToGet": "天魔大乱 EX-4-3の特別戦功"
+    },
+    {
+      "ID": 717,
+      "TabID": 7,
+      "Name": "五芒星の式神",
+      "EffectDescription": "%c[afeeee]法術城娘：巨大化気-7%%c[ffffff]",
+      "Description": "我が式神は器用にて。占術、\n祈祷はもちろんのこと、お望み\nとあらば、呪詛もこなしまする。\nさても嬉しや、転ばぬ先の\n火の用心、触らぬ神に祟り\nなくとも、人を呪わば穴二つ。",
+      "HowToGet": "天魔大乱 EX-4-4の特別戦功"
+    },
+    {
+      "ID": 718,
+      "TabID": 7,
+      "Name": "宝珠の欠片[前田利家]",
+      "EffectDescription": "%c[afeeee]近接城娘:攻撃+4％(重複可)%c[ffffff]",
+      "Description": "天下布武――\n御屋形様の意を遂げんと、\n忠義の槍は猛り穿つ。\nその一閃を鈍らせたのは歪んだ\n歴史への懐疑か、それとも、\n在りし日の真なる忠節か。",
+      "HowToGet": "天魔大乱 EX-4-5の特別戦功"
+    },
+    {
+      "ID": 719,
+      "TabID": 7,
+      "Name": "呪われた石仏",
+      "EffectDescription": "%c[afeeee]城娘:回復量-80％%c[ffffff]",
+      "Description": "祈りの絶えた石仏に、\n手を合わせることなかれ。\n物の怪棲まえば怨みも宿る、\n憑かれてからでは遅いのだ。\n己が惜しくば、ゆめゆめ、\n彼らを起こすことなかれ。",
+      "HowToGet": "天魔大乱 EX-4-8の特別戦功"
+    },
+    {
+      "ID": 720,
+      "TabID": 7,
+      "Name": "宝珠の欠片[明智光秀]",
+      "EffectDescription": "%c[afeeee]遠隔城娘:攻撃+4％(重複可)%c[ffffff]",
+      "Description": "どれほど歪んでいようとも、\n今世の第六天魔王こそが、\n待ち望んだ『織田信長』なのだ。\n故に今こそ、成し遂げてみせる。\nかつて果たし得なかった、\n貴方の忠臣としての、役割を――",
+      "HowToGet": "天魔大乱 EX-4-9の特別戦功"
+    },
+    {
+      "ID": 721,
+      "TabID": 7,
+      "Name": "トリカブト",
+      "EffectDescription": "%c[afeeee]敵:耐久-4％%c[ffffff]",
+      "Description": "乱世で重宝されたる猛毒、殺し\nの道具。されど、野山に凛と咲く\nその姿に、後ろ暗い影はない。\nげに恐ろしきは毒に非ず、毒もて\n殺す人の業也――夜目利く\n梟は、花の色を忘れて久しい。",
+      "HowToGet": "天魔大乱 EX-5-3の特別戦功"
+    },
+    {
+      "ID": 722,
+      "TabID": 7,
+      "Name": "カタバミの葉",
+      "EffectDescription": "%c[afeeee]遠隔城娘:回復＋30%c[ffffff]",
+      "Description": "茂れや繁れ、耐えて芽生えよ。\n謀略が根を張り、裏切りの蔓延\nる覇道の黄昏、遂に来たれり。\n西国の垣根を越え、畿内を蝕み、\n片喰紋が、遍く天下を覆うまで。\n満たせや充たせ、絶えず栄えよ。",
+      "HowToGet": "天魔大乱 EX-5-4の特別戦功"
+    },
+    {
+      "ID": 723,
+      "TabID": 7,
+      "Name": "魔王の贈り物",
+      "EffectDescription": "%c[afeeee]刀城娘:巨大化気-7％%c[ffffff]",
+      "Description": "蒔絵の箱に入った南蛮菓子は、\n魔王を称する主の心遣いか、\n近習への寵愛の証か。冷たき\n鋼の器に虚魂を宿し、覇道を\n為し遂げた今世の姿に、人の\n世の面影など、偲ぶべくもない。",
+      "HowToGet": "天魔大乱 EX-5-5の特別戦功"
+    }
+  ]
+}

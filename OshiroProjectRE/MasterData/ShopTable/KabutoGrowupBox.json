@@ -1,0 +1,215 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 5,
+    "record_size": 60,
+    "custom_id": 1650942571
+  },
+  "_fields": [
+    {
+      "name": "TypeID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "PackID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Fixed",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 8,
+      "size": 1
+    },
+    {
+      "name": "FirstPaySpiritBead",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "FirstFreeSpiritBead",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "FirstItemType1",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "FirstItemParam1",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "Times",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "Term",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "CardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 36,
+      "size": 4
+    },
+    {
+      "name": "NewCard",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 40,
+      "size": 1
+    },
+    {
+      "name": "Regular",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 41,
+      "size": 1
+    },
+    {
+      "name": "Order",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 44,
+      "size": 4
+    },
+    {
+      "name": "ExcludeUsers",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 48,
+      "size": 1
+    },
+    {
+      "name": "StartDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 52,
+      "size": 4
+    },
+    {
+      "name": "EndDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 56,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "TypeID": 1,
+      "PackID": 1,
+      "Fixed": true,
+      "FirstPaySpiritBead": 3,
+      "FirstFreeSpiritBead": 0,
+      "FirstItemType1": 0,
+      "FirstItemParam1": "",
+      "Times": 7,
+      "Term": 30,
+      "CardID": 0,
+      "NewCard": true,
+      "Regular": false,
+      "Order": 0,
+      "ExcludeUsers": false,
+      "StartDate": "2024/08/27 13:30:00",
+      "EndDate": "2035/12/31 23:59:59"
+    },
+    {
+      "TypeID": 2,
+      "PackID": 2,
+      "Fixed": false,
+      "FirstPaySpiritBead": 5,
+      "FirstFreeSpiritBead": 0,
+      "FirstItemType1": 14,
+      "FirstItemParam1": "ID:1481 Value:1",
+      "Times": 5,
+      "Term": 10,
+      "CardID": 0,
+      "NewCard": true,
+      "Regular": true,
+      "Order": 400,
+      "ExcludeUsers": true,
+      "StartDate": "2025/12/16 13:30:00",
+      "EndDate": "2026/04/02 13:00:00"
+    },
+    {
+      "TypeID": 3,
+      "PackID": 3,
+      "Fixed": false,
+      "FirstPaySpiritBead": 75,
+      "FirstFreeSpiritBead": 0,
+      "FirstItemType1": 0,
+      "FirstItemParam1": "",
+      "Times": 6,
+      "Term": 10,
+      "CardID": 0,
+      "NewCard": true,
+      "Regular": false,
+      "Order": 300,
+      "ExcludeUsers": false,
+      "StartDate": "2026/03/24 13:30:00",
+      "EndDate": "2026/04/13 13:00:00"
+    },
+    {
+      "TypeID": 4,
+      "PackID": 4,
+      "Fixed": false,
+      "FirstPaySpiritBead": 25,
+      "FirstFreeSpiritBead": 0,
+      "FirstItemType1": 0,
+      "FirstItemParam1": "",
+      "Times": 6,
+      "Term": 10,
+      "CardID": 3116,
+      "NewCard": true,
+      "Regular": false,
+      "Order": 200,
+      "ExcludeUsers": false,
+      "StartDate": "2026/04/28 13:30:00",
+      "EndDate": "2026/05/12 13:00:00"
+    },
+    {
+      "TypeID": 5,
+      "PackID": 5,
+      "Fixed": false,
+      "FirstPaySpiritBead": 5,
+      "FirstFreeSpiritBead": 0,
+      "FirstItemType1": 14,
+      "FirstItemParam1": "ID:1481 Value:1",
+      "Times": 5,
+      "Term": 10,
+      "CardID": 0,
+      "NewCard": true,
+      "Regular": true,
+      "Order": 400,
+      "ExcludeUsers": false,
+      "StartDate": "2026/04/02 13:30:00",
+      "EndDate": "2035/12/31 23:59:59"
+    }
+  ]
+}

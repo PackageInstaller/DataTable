@@ -1,0 +1,869 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 80,
+    "record_size": 32,
+    "custom_id": 1952604514
+  },
+  "_fields": [
+    {
+      "name": "AbilityID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "AbilityAreaType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "AbilityTargetType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "AbilityEffectType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "AbilityDetailType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "AbilityDetailValue",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "EffectValue",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "LimitValue",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "AbilityID": 1,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 3009,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 99999,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 93001,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 7283,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 3021,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 8024,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 8025,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 11,
+      "AbilityEffectType": 3009,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 50,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 11,
+      "AbilityEffectType": 1103,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 50,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 1011,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 35,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 1021,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 35,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 1001,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 35,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 4041,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 20,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 2,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 3009,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 99999,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 93001,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 7283,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 3021,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 8024,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 8025,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 4,
+      "AbilityEffectType": 3009,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 50,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 11,
+      "AbilityEffectType": 1109,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 100,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 1011,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 35,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 1021,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 35,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 1001,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 35,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 4041,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 20,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 3,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 3009,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 99999,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 93001,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 7283,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 3021,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 8024,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 8025,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 1011,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 35,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 1021,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 35,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 1001,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 35,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 4041,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 20,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 4,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 3009,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 99999,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 93001,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 7283,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 3021,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 8024,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 8025,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 11,
+      "AbilityEffectType": 3009,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 50,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 11,
+      "AbilityEffectType": 1103,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 50,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 11,
+      "AbilityEffectType": 3010,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 50,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 11,
+      "AbilityEffectType": 3012,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 50,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 1011,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 35,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 1021,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 35,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 1001,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 35,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 4041,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 20,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 5,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 3009,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 99999,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 93001,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 7283,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 3021,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 8024,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 8025,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 4,
+      "AbilityEffectType": 3009,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 50,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 11,
+      "AbilityEffectType": 1109,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 100,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 11,
+      "AbilityEffectType": 3017,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 50,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 11,
+      "AbilityEffectType": 3032,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 50,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 1011,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 35,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 1021,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 35,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 1001,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 35,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 611,
+      "AbilityEffectType": 4041,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 20,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 6,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 3009,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 99999,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 93001,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 7411,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 3021,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 8024,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 8025,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 11,
+      "AbilityEffectType": 93001,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 7411,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 11,
+      "AbilityEffectType": 93002,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 7411,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 11,
+      "AbilityEffectType": 3015,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 70,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 7,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 3009,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 99999,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 93001,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 7411,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 3021,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 8024,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 8025,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 2,
+      "AbilityTargetType": 4,
+      "AbilityEffectType": 93001,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 7411,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 4,
+      "AbilityEffectType": 3015,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 70,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 8,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 3009,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 99999,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 93001,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 7411,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 3021,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 8024,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 1,
+      "AbilityTargetType": 2,
+      "AbilityEffectType": 8025,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 9,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 11,
+      "AbilityEffectType": 12008,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 5,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 0,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 11,
+      "AbilityEffectType": 12000,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 1,
+      "LimitValue": 0
+    },
+    {
+      "AbilityID": 10,
+      "AbilityAreaType": 3,
+      "AbilityTargetType": 11,
+      "AbilityEffectType": 1113,
+      "AbilityDetailType": 0,
+      "AbilityDetailValue": 0,
+      "EffectValue": 3,
+      "LimitValue": 0
+    }
+  ]
+}

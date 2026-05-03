@@ -39,3 +39,4 @@
 |    CounterSide    |     未来战     |           国际服 Lua           |
 |  TrickcalChibiGo  |     坨坨脸     |            韩服 Json            |
 | MillenniumWarAigis |    千年战争    |            Dmm Json            |
+|  OshiroProjectRE  |      御城      |            Dmm Json            |

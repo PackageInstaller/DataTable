@@ -1,0 +1,98 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 2,
+    "record_size": 36,
+    "custom_id": 1819440483
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "RentalID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Title",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "CastleUnitParam",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "AttainedLevel",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "RewardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "Caption",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "StartDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "EndDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 32,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "RentalID": 0,
+      "Title": "DMM GAMES 5周年記念",
+      "CastleUnitParam": "ID:262 Lv:1 Rental:1",
+      "AttainedLevel": 15,
+      "RewardID": 1,
+      "Caption": "DMM GAMES 5周年記念",
+      "StartDate": "2016/12/27 16:00:00",
+      "EndDate": "2017/01/10 14:00:00"
+    },
+    {
+      "ID": 1,
+      "RentalID": 0,
+      "Title": "熊本城を手に入れよう！",
+      "CastleUnitParam": "ID:262 Lv:1 Rental:1",
+      "AttainedLevel": 15,
+      "RewardID": 0,
+      "Caption": "熊本城を手に入れよう！",
+      "StartDate": "2017/03/21 16:00:00",
+      "EndDate": "2017/04/04 14:00:00"
+    }
+  ]
+}

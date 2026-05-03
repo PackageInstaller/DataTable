@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 24,
+    "custom_id": 1953655151
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Red",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Blue",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "Green",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "Comment",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "Name": "MENU_COLOR_MISSION_LIST_CELL_DAILY",
+      "Red": 30,
+      "Blue": 126,
+      "Green": 170,
+      "Comment": "任務リストセル(日次任務)"
+    },
+    {
+      "ID": 2,
+      "Name": "MENU_COLOR_MISSION_LIST_CELL_MONTHLY",
+      "Red": 61,
+      "Blue": 164,
+      "Green": 112,
+      "Comment": "任務リストセル(月次任務)"
+    },
+    {
+      "ID": 3,
+      "Name": "MENU_COLOR_MISSION_LIST_CELL_NORMAL",
+      "Red": 120,
+      "Blue": 161,
+      "Green": 33,
+      "Comment": "任務リストセル(通常任務)"
+    },
+    {
+      "ID": 4,
+      "Name": "MENU_COLOR_MISSION_LIST_CELL_LIMITED",
+      "Red": 242,
+      "Blue": 68,
+      "Green": 101,
+      "Comment": "任務リストセル(限定任務)"
+    }
+  ]
+}

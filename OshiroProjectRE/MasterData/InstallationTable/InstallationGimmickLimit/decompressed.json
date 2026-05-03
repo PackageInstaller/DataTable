@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 10,
+    "record_size": 12,
+    "custom_id": 1819567977
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "GimmickType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Name": "無効値",
+      "GimmickType": 0
+    },
+    {
+      "ID": 1,
+      "Name": "エンチャント",
+      "GimmickType": 1
+    },
+    {
+      "ID": 2,
+      "Name": "トークン",
+      "GimmickType": 2
+    },
+    {
+      "ID": 3,
+      "Name": "フィールド",
+      "GimmickType": 3
+    },
+    {
+      "ID": 4,
+      "Name": "ロケーション",
+      "GimmickType": 4
+    },
+    {
+      "ID": 5,
+      "Name": "計略あり",
+      "GimmickType": 1
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "GimmickType": 2
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "GimmickType": 3
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "GimmickType": 4
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "GimmickType": 5
+    }
+  ]
+}

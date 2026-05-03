@@ -1,0 +1,604 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 114,
+    "record_size": 12,
+    "custom_id": 1953784417
+  },
+  "_fields": [
+    {
+      "name": "AbilityID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Description",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "AbilityID": 630,
+      "Name": "播州皿屋敷",
+      "Description": "自身を撃破した敵の防御が9秒間0になり、9秒間射程が50%低下\n射程内の敵の移動速度が9秒間0になる"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9630,
+      "Name": "怨みの古井戸",
+      "Description": "自身を撃破した敵の防御が9秒間0になり、9秒間射程が55%低下\n射程内の敵の移動速度が9秒間0になる"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 650,
+      "Name": "金獅子の斧",
+      "Description": "大破時に射程内の全ての敵に攻撃の4倍のダメージを与える"
+    },
+    {
+      "AbilityID": 9650,
+      "Name": "金獅子の大斧",
+      "Description": "大破時に射程内の全ての敵に攻撃の4.5倍のダメージを与える"
+    },
+    {
+      "AbilityID": 666,
+      "Name": "悲恋のソレステ",
+      "Description": "大破時に射程内の敵の移動速度が10秒間60%低下\n敵味方問わず最も近い対象を攻撃させる"
+    },
+    {
+      "AbilityID": 671,
+      "Name": "レディ・リリーの怨念",
+      "Description": "大破時に射程内全ての敵に攻撃の1.5倍のダメージを与え\n後退させ移動速度を10秒間70％低下"
+    },
+    {
+      "AbilityID": 674,
+      "Name": "不滅のアムブロシア",
+      "Description": "大破する度に自身の攻撃と射程が25上昇\n攻撃速度が10%上昇\n(4回まで)"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9674,
+      "Name": "黄金のイーコール",
+      "Description": "大破する度に自身の攻撃と射程が30上昇\n攻撃速度が10%上昇\n(4回まで)"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 701,
+      "Name": "謀計の毒刃",
+      "Description": "大破時に射程内全ての敵に攻撃の2.5倍のダメージを与え\n15秒間「猛毒」にする"
+    },
+    {
+      "AbilityID": 9701,
+      "Name": "詭計の毒刃",
+      "Description": "大破時に射程内全ての敵に攻撃の2.5倍のダメージを与え\n20秒間「猛毒」にする"
+    },
+    {
+      "AbilityID": 9051,
+      "Name": "超高校級の絶望的おしおき",
+      "Description": "射程内の全ての敵と味方に攻撃の2倍のダメージを与え\n撃破/撤退するまで永続的に、攻撃と攻撃速度と受けるダメージが\n1.5倍になり、継続ダメージが発生する「絶望」状態にする"
+    },
+    {
+      "AbilityID": 711,
+      "Name": "エラゼムの義憤",
+      "Description": "射程内の全ての敵に攻撃の3倍のダメージを与え\n移動速度を6秒間95%低下させる。大破する度に\n耐久が600、防御が60上昇、足止め数が1増加(5回まで)"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9711,
+      "Name": "エラゼムの怨讐",
+      "Description": "射程内の全ての敵に攻撃の3倍のダメージを与え\n移動速度を6秒間95%低下させる。大破する度に\n耐久が800、防御が80上昇、足止め数が1増加(5回まで)"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 715,
+      "Name": "ホーンテッド・チリンガム",
+      "Description": "大破時に10秒間、自身を撃破した敵と\n射程内の全ての敵の防御を70%低下させ\n「暗闇」にする"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9715,
+      "Name": "幽冥のチリンガム",
+      "Description": "大破時に10秒間、自身を撃破した敵と\n射程内の全ての敵の防御を75%低下させ\n「暗闇」にする"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 729,
+      "Name": "肱川の嵐",
+      "Description": "大破時に射程内全ての敵に攻撃の2.5倍の\n術ダメージを与え、10秒間「氷結」にする"
+    },
+    {
+      "AbilityID": 9729,
+      "Name": "肱川の氷嵐",
+      "Description": "大破時に射程内全ての敵に攻撃の2.5倍の\n術ダメージを与え、15秒間「氷結」にする"
+    },
+    {
+      "AbilityID": 744,
+      "Name": "怨みの水蝶",
+      "Description": "大破時に自身を撃破した敵と射程内全ての敵に攻撃の4倍の\nダメージを与えて後退させ、移動速度を9秒間90%低下させる\n大破する度に自身の攻撃が9%上昇(同種効果重複、5回まで)"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9744,
+      "Name": "水濡の揚羽蝶",
+      "Description": "大破時に自身を撃破した敵と射程内全ての敵に攻撃の4.5倍の\nダメージを与えて後退させ、移動速度を9秒間90%低下させる\n大破する度に自身の攻撃が9%上昇(同種効果重複、5回まで)"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 759,
+      "Name": "丑の刻参り",
+      "Description": "大破時に射程内全ての敵が優先攻撃対象になり\n防御を永続で30%低下させる"
+    },
+    {
+      "AbilityID": 767,
+      "Name": "タナトスの冥手",
+      "Description": "大破時に自身を撃破した敵と射程内全ての敵に\n攻撃の4倍のダメージを与え、5秒間動きを封じる"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9767,
+      "Name": "タナトスの冥腕",
+      "Description": "大破時に自身を撃破した敵と射程内全ての敵に\n攻撃の4.5倍のダメージを与え、5秒間動きを封じる"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 796,
+      "Name": "白霊の娘",
+      "Description": "自身を撃破した敵と射程内全ての敵が優先攻撃対象に\nなり、移動速度を永続で40%低下させる"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9796,
+      "Name": "白骸の娘",
+      "Description": "自身を撃破した敵と射程内全ての敵が優先攻撃対象に\nなり、移動速度を永続で50%低下させる"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 800,
+      "Name": "湖上の宝石",
+      "Description": "大破する度に計略再使用時間が10%短縮\n計略範囲が10%上昇(4回まで)"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9800,
+      "Name": "湖上の宝玉",
+      "Description": "大破する度に計略再使用時間が12%短縮\n計略範囲が10%上昇(4回まで)"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 809,
+      "Name": "肱川の水流",
+      "Description": "大破時に射程内全ての敵に\n攻撃の3倍のダメージを与え後退させ\n移動速度を20秒間60%低下"
+    },
+    {
+      "AbilityID": 9809,
+      "Name": "肱川の大流",
+      "Description": "大破時に射程内全ての敵に\n攻撃の3倍のダメージを与え後退させ\n移動速度を20秒間70%低下"
+    },
+    {
+      "AbilityID": 851,
+      "Name": "若年嫉妬",
+      "Description": "大破時に射程内全ての敵に\n攻撃の3倍のダメージを与え\n防御を10秒間50%低下させる"
+    },
+    {
+      "AbilityID": 853,
+      "Name": "祭夜の雷",
+      "Description": "大破する度に自身の射程が20、攻撃が4%上昇\n(効果重複。5回まで)大破時に射程内全ての敵に\n攻撃の4.5倍の術ダメージを与え5秒間動きを封じる"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9853,
+      "Name": "祭夜の神雷",
+      "Description": "大破する度に自身の射程が25、攻撃が5%上昇\n(効果重複。5回まで)。大破時に射程内全ての敵に\n攻撃の5倍の術ダメージを与え5秒間動きを封じる"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 873,
+      "Name": "天晴の冥手",
+      "Description": "大破時に自身を撃破した敵と射程内全ての敵に攻撃の\n5倍のダメージを与える｡5秒間動きを封じ\n防御と移動速度を永続で50%低下させる"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9873,
+      "Name": "天晴の冥腕",
+      "Description": "大破時に自身を撃破した敵と射程内全ての敵に攻撃の\n6倍のダメージを与える｡5秒間動きを封じ\n防御と移動速度を永続で50%低下させる"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 878,
+      "Name": "彼岸の花殻",
+      "Description": "大破時に射程内全ての敵に攻撃の5倍の術ダメージを与え\n現在耐久を20%減少、5秒間移動速度を0にする"
+    },
+    {
+      "AbilityID": 9878,
+      "Name": "彼岸の徒花",
+      "Description": "大破時に射程内全ての敵に攻撃の6倍の術ダメージを与え\n現在耐久を20%減少、6秒間移動速度を0にする"
+    },
+    {
+      "AbilityID": 897,
+      "Name": "偽慧眼の士",
+      "Description": "大破時に自身を撃破した敵に攻撃の6倍のダメージを与え\n永続で優先攻撃対象にし、20秒間「暗闇」にする\n射程内全ての敵に3倍のダメージを与え15秒間「暗闇」にする"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9897,
+      "Name": "誠慧眼の士",
+      "Description": "大破時に自身を撃破した敵に攻撃の6倍のダメージを与え\n永続で優先攻撃対象にし、25秒間「暗闇」にする\n射程内全ての敵に3倍のダメージを与え20秒間「暗闇」にする"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 898,
+      "Name": "真愛のブーケトス",
+      "Description": "大破時に射程内の殿と城娘を攻撃の3倍で回復\n15秒間､自身の攻撃の0.8倍を射程内の殿と城娘に加算\n自身を撃破した敵の射程が永続で40%低下"
+    },
+    {
+      "AbilityID": 9898,
+      "Name": "祝福のブーケトス",
+      "Description": "大破時に射程内の殿と城娘を攻撃の3倍で回復\n15秒間､自身の攻撃の1倍を射程内の殿と城娘に加算\n自身を撃破した敵の射程が永続で40%低下"
+    },
+    {
+      "AbilityID": 899,
+      "Name": "夜に咲く煌花",
+      "Description": "大破時に射程内の全ての敵に攻撃の1倍のダメージを\n3連続で与え､1秒間「火傷」にする"
+    },
+    {
+      "AbilityID": 9899,
+      "Name": "夜に咲く閃花",
+      "Description": "大破時に射程内の全ての敵に攻撃の1.1倍のダメージを\n3連続で与え､1秒間「火傷」にする"
+    },
+    {
+      "AbilityID": 940,
+      "Name": "ヴァンデの反乱",
+      "Description": "自身を撃破した敵と射程内の敵に攻撃の4倍の防御無視\nダメージを与え､4秒間射程が90%､移動速度が100%低下\n更に自身を撃破した敵の射程と移動速度が永続で30%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9940,
+      "Name": "反撃の狼煙",
+      "Description": "自身を撃破した敵と射程内の敵に攻撃の4倍の防御無視\nダメージを与え､5秒間射程が90%､移動速度が100%低下\n更に自身を撃破した敵の射程と移動速度が永続で30%低下"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 951,
+      "Name": "騎士の氷風",
+      "Description": "射程内の全ての敵に攻撃の4倍の術ダメージを与え\n20秒間「氷結」にする。大破する度に計略再使用時間が\n3秒短縮、足止め数が1増加(5回まで)"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9951,
+      "Name": "騎士の絶氷嵐",
+      "Description": "射程内の全ての敵に攻撃の4倍の術ダメージを与え\n20秒間「氷結」にする。大破する度に計略再使用時間が\n5秒短縮、足止め数が1増加(5回まで)"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3034,
+      "Name": "天落のゲリラ鎌",
+      "Description": "大破時に自身を撃破した敵と射程内全ての敵に攻撃の2.5倍の\nダメージを与え、動きを5秒間封じる\n更に自身を撃破した敵に攻撃の5倍のダメージを与える"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 4034,
+      "Name": "天裂のゲリラ鎌",
+      "Description": "大破時に自身を撃破した敵と射程内全ての敵に攻撃の3倍の\nダメージを与え、動きを5秒間封じる\n更に自身を撃破した敵に攻撃の6倍のダメージを与える"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3048,
+      "Name": "天球八雷",
+      "Description": "大破時に射程内全ての敵に攻撃の8倍の術ダメージを与え\n10秒間動きを封じ､移動速度を15秒間70％低下させる"
+    },
+    {
+      "AbilityID": 4048,
+      "Name": "天球八業雷",
+      "Description": "大破時に射程内全ての敵に攻撃の9倍の術ダメージを与え\n10秒間動きを封じ､移動速度を15秒間70％低下させる"
+    },
+    {
+      "AbilityID": 3088,
+      "Name": "奇策・飛行門松",
+      "Description": "大破時に自身を撃破した敵に攻撃の9倍のダメージを与え\n10秒間動きを封じる｡射程内全ての敵に4倍のダメージを\n与え､10秒間敵味方問わず最も近い対象を攻撃させる"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 4088,
+      "Name": "華策・飛翔門松",
+      "Description": "大破時に自身を撃破した敵に攻撃の10倍のダメージを与え\n10秒間動きを封じる｡射程内全ての敵に4倍のダメージを\n与え､10秒間敵味方問わず最も近い対象を攻撃させる"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3093,
+      "Name": "捲土重来の執念",
+      "Description": "大破時に20秒間射程内の殿と城娘の攻撃に自身の攻撃の\n40%を加算､敵撃破時に獲得する気が追加で1増加\n自身の大破数9回以上で自身の攻撃が1.5倍(効果重複)"
+    },
+    {
+      "AbilityID": 7741,
+      "Name": "毘沙門ノ天雷",
+      "Description": "大破時に30秒間自身の攻撃の0.7倍を射程内の殿と城娘に加算\n自身の射程内全ての敵に攻撃の9倍の術ダメージを与え\n10秒間防御を100%低下させる"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9181,
+      "Name": "デモンハイルーン",
+      "Description": "大破する度に耐久と攻撃と防御が50%上昇\n(4回まで。特技・計略の効果と重複する)\n大破時、射程内の味方の攻撃が20秒間1.5倍"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 3999,
+      "Name": "テスト(3999)大破特技：未改築",
+      "Description": "大破時射程内の敵に攻撃の4倍のダメージ\n大破毎に攻撃速度が10%ずつ上昇(上限50%)"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 93999,
+      "Name": "テスト(3999)大破特技：改一",
+      "Description": "大破時射程内の敵に攻撃の8倍のダメージ\n大破毎に攻撃速度が20%ずつ上昇(上限100%)"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 103999,
+      "Name": "テスト(3999)大破特技：改弐",
+      "Description": "大破時射程内の敵に攻撃の12倍のダメージ\n大破毎に攻撃速度が30%ずつ上昇(上限150%)"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

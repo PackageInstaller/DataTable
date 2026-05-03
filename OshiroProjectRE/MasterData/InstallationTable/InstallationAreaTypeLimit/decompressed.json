@@ -1,0 +1,109 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 15,
+    "record_size": 12,
+    "custom_id": 1819566441
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "AreaType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Name": "無効値",
+      "AreaType": 0
+    },
+    {
+      "ID": 1,
+      "Name": "地域(北海道・東北)",
+      "AreaType": 1
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "AreaType": 2
+    },
+    {
+      "ID": 2,
+      "Name": "地域(関東・甲信越)",
+      "AreaType": 3
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "AreaType": 4
+    },
+    {
+      "ID": 3,
+      "Name": "地域(北陸・東海)",
+      "AreaType": 5
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "AreaType": 6
+    },
+    {
+      "ID": 4,
+      "Name": "地域(近畿)",
+      "AreaType": 7
+    },
+    {
+      "ID": 5,
+      "Name": "地域(中国・四国)",
+      "AreaType": 8
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "AreaType": 9
+    },
+    {
+      "ID": 6,
+      "Name": "地域(九州・沖縄)",
+      "AreaType": 10
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "AreaType": 11
+    },
+    {
+      "ID": 7,
+      "Name": "地域(海外・その他)",
+      "AreaType": 12
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "AreaType": 13
+    },
+    {
+      "ID": 8,
+      "Name": "地域(九州)",
+      "AreaType": 10
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 72,
+    "custom_id": 1634167139
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "DivNum",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "OffsetX",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "OffsetY",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "Degree",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "StepTextureID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "FrontTextureID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "BackTextureID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "ProgressTextEnabled",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 36,
+      "size": 1
+    },
+    {
+      "name": "ProgressTextScale",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 40,
+      "size": 4
+    },
+    {
+      "name": "ProgressTextWidth",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 44,
+      "size": 4
+    },
+    {
+      "name": "ProgressTextOffsetX",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 48,
+      "size": 4
+    },
+    {
+      "name": "ProgressTextOffsetY",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 52,
+      "size": 4
+    },
+    {
+      "name": "ProgressTextColorRed",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 56,
+      "size": 4
+    },
+    {
+      "name": "ProgressTextColorBlue",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 60,
+      "size": 4
+    },
+    {
+      "name": "ProgressTextColorGreen",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 64,
+      "size": 4
+    },
+    {
+      "name": "Comment",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 68,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "Name": "BATTLE_KI_GENERATE_GIMICK",
+      "DivNum": 30,
+      "OffsetX": 0,
+      "OffsetY": -20,
+      "Degree": 360,
+      "StepTextureID": 4874243,
+      "FrontTextureID": 0,
+      "BackTextureID": 0,
+      "ProgressTextEnabled": false,
+      "ProgressTextScale": 50,
+      "ProgressTextWidth": 50,
+      "ProgressTextOffsetX": 0,
+      "ProgressTextOffsetY": -5,
+      "ProgressTextColorRed": 202,
+      "ProgressTextColorBlue": 255,
+      "ProgressTextColorGreen": 89,
+      "Comment": "合戦気発生ギミックゲージ"
+    },
+    {
+      "ID": 2,
+      "Name": "BATTLE_SPECIAL_ABILITY",
+      "DivNum": 30,
+      "OffsetX": 65,
+      "OffsetY": 15,
+      "Degree": 360,
+      "StepTextureID": 4874244,
+      "FrontTextureID": 0,
+      "BackTextureID": 0,
+      "ProgressTextEnabled": false,
+      "ProgressTextScale": 0,
+      "ProgressTextWidth": 0,
+      "ProgressTextOffsetX": 0,
+      "ProgressTextOffsetY": 0,
+      "ProgressTextColorRed": 0,
+      "ProgressTextColorBlue": 0,
+      "ProgressTextColorGreen": 0,
+      "Comment": "合戦特殊能力発動時間ゲージ"
+    },
+    {
+      "ID": 3,
+      "Name": "BATTLE_MOVING_ATTACK_WAIT",
+      "DivNum": 30,
+      "OffsetX": 65,
+      "OffsetY": 15,
+      "Degree": 360,
+      "StepTextureID": 4874244,
+      "FrontTextureID": 0,
+      "BackTextureID": 0,
+      "ProgressTextEnabled": false,
+      "ProgressTextScale": 0,
+      "ProgressTextWidth": 0,
+      "ProgressTextOffsetX": 0,
+      "ProgressTextOffsetY": 0,
+      "ProgressTextColorRed": 0,
+      "ProgressTextColorBlue": 0,
+      "ProgressTextColorGreen": 0,
+      "Comment": "移動攻撃待機ゲージ"
+    },
+    {
+      "ID": 4,
+      "Name": "BATTLE_ONE_TIME_EFFECT_REACTIVE_WAIT",
+      "DivNum": 30,
+      "OffsetX": 65,
+      "OffsetY": 15,
+      "Degree": 360,
+      "StepTextureID": 4874244,
+      "FrontTextureID": 0,
+      "BackTextureID": 0,
+      "ProgressTextEnabled": false,
+      "ProgressTextScale": 0,
+      "ProgressTextWidth": 0,
+      "ProgressTextOffsetX": 0,
+      "ProgressTextOffsetY": 0,
+      "ProgressTextColorRed": 0,
+      "ProgressTextColorBlue": 0,
+      "ProgressTextColorGreen": 0,
+      "Comment": "ワンタイム効果再発動待機ゲージ"
+    }
+  ]
+}

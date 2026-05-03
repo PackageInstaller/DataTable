@@ -1,0 +1,43 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 4,
+    "record_size": 8,
+    "custom_id": 1818326388
+  },
+  "_fields": [
+    {
+      "name": "BattleID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Flag",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "BattleID": 1001,
+      "Flag": 1
+    },
+    {
+      "BattleID": 1002,
+      "Flag": 2
+    },
+    {
+      "BattleID": 1003,
+      "Flag": 3
+    },
+    {
+      "BattleID": 1005,
+      "Flag": 4
+    }
+  ]
+}

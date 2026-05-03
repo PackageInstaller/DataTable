@@ -1,0 +1,191 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 1,
+    "record_size": 88,
+    "custom_id": 1702258039
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Caption",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "ItemCaption",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "ExchangeCaption",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "ExchangeSerif",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "StartDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "EndDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "ExchangeEndDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "CardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "CardDisplayIndex",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 36,
+      "size": 4
+    },
+    {
+      "name": "BGID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 40,
+      "size": 4
+    },
+    {
+      "name": "SystemVoiceID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 44,
+      "size": 4
+    },
+    {
+      "name": "BGMID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 48,
+      "size": 4
+    },
+    {
+      "name": "PrologueEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 52,
+      "size": 4
+    },
+    {
+      "name": "TutorialEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 56,
+      "size": 4
+    },
+    {
+      "name": "OpenDifficultyQuestID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 60,
+      "size": 4
+    },
+    {
+      "name": "Epilogue1Parameter",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 64,
+      "size": 4
+    },
+    {
+      "name": "Epilogue2Parameter",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 68,
+      "size": 4
+    },
+    {
+      "name": "Epilogue3Parameter",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 72,
+      "size": 4
+    },
+    {
+      "name": "Epilogue4Parameter",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 76,
+      "size": 4
+    },
+    {
+      "name": "Epilogue5Parameter",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 80,
+      "size": 4
+    },
+    {
+      "name": "Epilogue6Parameter",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 84,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "Caption": "夢幻航海",
+      "ItemCaption": "貿易銀貨",
+      "ExchangeCaption": "黒船 サスケハナ",
+      "ExchangeSerif": "準備を怠るな。恐れることを\n忘れたものは、たちまち飲み込まれる……\nそれが海という場所だ。",
+      "StartDate": "2022/06/01 00:00:00",
+      "EndDate": "2032/06/01 00:00:00",
+      "ExchangeEndDate": "",
+      "CardID": 760,
+      "CardDisplayIndex": 3,
+      "BGID": 1,
+      "SystemVoiceID": 727,
+      "BGMID": 63,
+      "PrologueEventID": 201,
+      "TutorialEventID": 202,
+      "OpenDifficultyQuestID": 60001,
+      "Epilogue1Parameter": "3:203,6:204,10:205",
+      "Epilogue2Parameter": "2:206,6:207,9:208",
+      "Epilogue3Parameter": "2:209,3:210,6:211,9:212",
+      "Epilogue4Parameter": "3:213,5:214,7:215,9:216",
+      "Epilogue5Parameter": "0:217,5:218,9:219",
+      "Epilogue6Parameter": "0:220,5:221"
+    }
+  ]
+}

@@ -1,0 +1,335 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 17,
+    "record_size": 48,
+    "custom_id": 1953527143
+  },
+  "_fields": [
+    {
+      "name": "GrowUpID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "HealthMaximumRate",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "HealthMaximumUpType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "AttackPowerRate",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "AttackPowerUpType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "DefenseResistanceRate",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "DefenseResistanceUpType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "HealthRegenerationRate",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "HealthRegenerationUpType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "AttackRangeRate",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 36,
+      "size": 4
+    },
+    {
+      "name": "AttackRangeUpType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 40,
+      "size": 4
+    },
+    {
+      "name": "Sequence",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 44,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "GrowUpID": 0,
+      "HealthMaximumRate": 110,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 90,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 110,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 60,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 100
+    },
+    {
+      "GrowUpID": 1,
+      "HealthMaximumRate": 110,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 90,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 110,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 60,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 1
+    },
+    {
+      "GrowUpID": 2,
+      "HealthMaximumRate": 110,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 90,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 110,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 60,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 5
+    },
+    {
+      "GrowUpID": 3,
+      "HealthMaximumRate": 110,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 90,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 110,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 60,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 3
+    },
+    {
+      "GrowUpID": 4,
+      "HealthMaximumRate": 110,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 90,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 110,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 60,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 7
+    },
+    {
+      "GrowUpID": 5,
+      "HealthMaximumRate": 100,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 80,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 100,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 50,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 2
+    },
+    {
+      "GrowUpID": 6,
+      "HealthMaximumRate": 100,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 80,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 100,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 50,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 6
+    },
+    {
+      "GrowUpID": 7,
+      "HealthMaximumRate": 100,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 80,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 100,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 50,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 4
+    },
+    {
+      "GrowUpID": 8,
+      "HealthMaximumRate": 110,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 90,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 110,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 60,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 18
+    },
+    {
+      "GrowUpID": 9,
+      "HealthMaximumRate": 100,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 80,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 100,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 50,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 19
+    },
+    {
+      "GrowUpID": 10,
+      "HealthMaximumRate": 100,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 80,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 100,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 50,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 20
+    },
+    {
+      "GrowUpID": 11,
+      "HealthMaximumRate": 100,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 80,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 100,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 50,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 21
+    },
+    {
+      "GrowUpID": 12,
+      "HealthMaximumRate": 100,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 80,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 100,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 50,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 12
+    },
+    {
+      "GrowUpID": 13,
+      "HealthMaximumRate": 100,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 80,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 100,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 50,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 99
+    },
+    {
+      "GrowUpID": 14,
+      "HealthMaximumRate": 100,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 80,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 100,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 50,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 8
+    },
+    {
+      "GrowUpID": 15,
+      "HealthMaximumRate": 100,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 80,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 100,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 50,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 9
+    },
+    {
+      "GrowUpID": 16,
+      "HealthMaximumRate": 110,
+      "HealthMaximumUpType": 2,
+      "AttackPowerRate": 90,
+      "AttackPowerUpType": 2,
+      "DefenseResistanceRate": 110,
+      "DefenseResistanceUpType": 2,
+      "HealthRegenerationRate": 60,
+      "HealthRegenerationUpType": 1,
+      "AttackRangeRate": 80,
+      "AttackRangeUpType": 2,
+      "Sequence": 100
+    }
+  ]
+}

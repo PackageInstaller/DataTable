@@ -1,0 +1,151 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 1,
+    "record_size": 68,
+    "custom_id": 1986358369
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Caption",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "ExchangeCaption",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "ExchangeSerif",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "StartDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "EndDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "ExchangeEndDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "BGMID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "PrologueEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "TutorialEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 36,
+      "size": 4
+    },
+    {
+      "name": "OpenDifficultyQuestID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 40,
+      "size": 4
+    },
+    {
+      "name": "Epilogue1Parameter",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 44,
+      "size": 4
+    },
+    {
+      "name": "Epilogue2Parameter",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 48,
+      "size": 4
+    },
+    {
+      "name": "Epilogue3Parameter",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 52,
+      "size": 4
+    },
+    {
+      "name": "Epilogue4Parameter",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 56,
+      "size": 4
+    },
+    {
+      "name": "Epilogue5Parameter",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 60,
+      "size": 4
+    },
+    {
+      "name": "Epilogue6Parameter",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 64,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "Caption": "異伝（仮）",
+      "ExchangeCaption": "桃形兜",
+      "ExchangeSerif": "ナニ、貯メ込ンダ影落銭ヲ、上納シタイダト？\n見カケニ依ラズ殊勝ナ奴ダ。第六天魔王様ノ寛大サニ\n感謝シテ、好キナ褒美ヲ持ッテイケ！",
+      "StartDate": "2022/06/01 00:00:00",
+      "EndDate": "2032/06/01 00:00:00",
+      "ExchangeEndDate": "",
+      "BGMID": 85,
+      "PrologueEventID": 600,
+      "TutorialEventID": 601,
+      "OpenDifficultyQuestID": 70001,
+      "Epilogue1Parameter": "5:602,9:603",
+      "Epilogue2Parameter": "0:604,5:605,9:606",
+      "Epilogue3Parameter": "0:607,5:608,9:609",
+      "Epilogue4Parameter": "0:610,5:611,9:612",
+      "Epilogue5Parameter": "0:613,5:614",
+      "Epilogue6Parameter": ""
+    }
+  ]
+}

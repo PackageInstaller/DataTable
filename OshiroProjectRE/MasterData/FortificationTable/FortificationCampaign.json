@@ -1,0 +1,230 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 26,
+    "record_size": 20,
+    "custom_id": 1852206691
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Keystone",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Gold",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "StartDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "EndDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Keystone": 10,
+      "Gold": 5000,
+      "StartDate": "2017/03/28 16:00:00",
+      "EndDate": "2017/04/04 14:00:00"
+    },
+    {
+      "ID": 1,
+      "Keystone": 5,
+      "Gold": 1000,
+      "StartDate": "2017/04/11 16:00:00",
+      "EndDate": "2017/04/25 14:00:00"
+    },
+    {
+      "ID": 2,
+      "Keystone": 5,
+      "Gold": 1000,
+      "StartDate": "2017/05/30 16:00:00",
+      "EndDate": "2017/06/13 14:00:00"
+    },
+    {
+      "ID": 3,
+      "Keystone": 10,
+      "Gold": 5000,
+      "StartDate": "2017/07/25 16:00:00",
+      "EndDate": "2017/08/08 14:00:00"
+    },
+    {
+      "ID": 4,
+      "Keystone": 5,
+      "Gold": 1000,
+      "StartDate": "2017/08/08 16:00:00",
+      "EndDate": "2017/08/22 14:00:00"
+    },
+    {
+      "ID": 5,
+      "Keystone": 10,
+      "Gold": 5000,
+      "StartDate": "2017/12/21 16:00:00",
+      "EndDate": "2018/01/09 14:00:00"
+    },
+    {
+      "ID": 6,
+      "Keystone": 10,
+      "Gold": 5000,
+      "StartDate": "2018/03/20 16:00:00",
+      "EndDate": "2018/04/03 14:00:00"
+    },
+    {
+      "ID": 7,
+      "Keystone": 10,
+      "Gold": 5000,
+      "StartDate": "2018/05/08 15:00:00",
+      "EndDate": "2018/05/22 14:00:00"
+    },
+    {
+      "ID": 8,
+      "Keystone": 10,
+      "Gold": 5000,
+      "StartDate": "2018/06/12 15:00:00",
+      "EndDate": "2018/06/26 14:00:00"
+    },
+    {
+      "ID": 9,
+      "Keystone": 10,
+      "Gold": 5000,
+      "StartDate": "2018/08/07 11:00:00",
+      "EndDate": "2018/08/21 14:00:00"
+    },
+    {
+      "ID": 10,
+      "Keystone": 10,
+      "Gold": 5000,
+      "StartDate": "2018/09/11 14:00:00",
+      "EndDate": "2018/09/18 14:00:00"
+    },
+    {
+      "ID": 11,
+      "Keystone": 10,
+      "Gold": 5000,
+      "StartDate": "2018/10/16 11:00:00",
+      "EndDate": "2018/10/23 14:00:00"
+    },
+    {
+      "ID": 12,
+      "Keystone": 10,
+      "Gold": 1000,
+      "StartDate": "2019/01/08 14:00:00",
+      "EndDate": "2019/01/15 14:00:00"
+    },
+    {
+      "ID": 13,
+      "Keystone": 10,
+      "Gold": 1000,
+      "StartDate": "2019/03/19 11:30:00",
+      "EndDate": "2019/03/26 14:00:00"
+    },
+    {
+      "ID": 14,
+      "Keystone": 10,
+      "Gold": 1000,
+      "StartDate": "2019/05/07 14:00:00",
+      "EndDate": "2019/05/14 11:30:00"
+    },
+    {
+      "ID": 15,
+      "Keystone": 10,
+      "Gold": 1000,
+      "StartDate": "2019/07/18 14:00:00",
+      "EndDate": "2019/07/19 14:00:00"
+    },
+    {
+      "ID": 16,
+      "Keystone": 10,
+      "Gold": 1000,
+      "StartDate": "2019/09/10 11:00:00",
+      "EndDate": "2019/09/17 13:30:00"
+    },
+    {
+      "ID": 17,
+      "Keystone": 10,
+      "Gold": 1000,
+      "StartDate": "2019/11/12 13:30:00",
+      "EndDate": "2019/11/19 13:00:00"
+    },
+    {
+      "ID": 18,
+      "Keystone": 10,
+      "Gold": 1000,
+      "StartDate": "2020/01/07 13:30:00",
+      "EndDate": "2020/01/14 13:00:00"
+    },
+    {
+      "ID": 19,
+      "Keystone": 10,
+      "Gold": 1000,
+      "StartDate": "2020/03/03 13:30:00",
+      "EndDate": "2020/03/24 13:00:00"
+    },
+    {
+      "ID": 20,
+      "Keystone": 10,
+      "Gold": 1000,
+      "StartDate": "2020/04/28 13:30:00",
+      "EndDate": "2020/05/12 13:00:00"
+    },
+    {
+      "ID": 21,
+      "Keystone": 10,
+      "Gold": 1000,
+      "StartDate": "2020/06/23 13:30:00",
+      "EndDate": "2020/06/30 10:30:00"
+    },
+    {
+      "ID": 22,
+      "Keystone": 10,
+      "Gold": 1000,
+      "StartDate": "2020/09/08 13:30:00",
+      "EndDate": "2020/09/15 13:30:00"
+    },
+    {
+      "ID": 23,
+      "Keystone": 10,
+      "Gold": 1000,
+      "StartDate": "2020/11/17 13:30:00",
+      "EndDate": "2020/12/01 13:30:00"
+    },
+    {
+      "ID": 24,
+      "Keystone": 10,
+      "Gold": 1000,
+      "StartDate": "2021/01/05 13:30:00",
+      "EndDate": "2021/01/19 13:30:00"
+    },
+    {
+      "ID": 25,
+      "Keystone": 10,
+      "Gold": 1000,
+      "StartDate": "2021/03/09 13:30:00",
+      "EndDate": "2026/05/12 13:30:00"
+    }
+  ]
+}

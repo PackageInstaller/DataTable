@@ -1,0 +1,539 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 47,
+    "record_size": 32,
+    "custom_id": 1735549282
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Param",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "PuchaseNum",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "StartDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "EndDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "ConsumeType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "ConsumeNum",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 187,
+      "Type": 5,
+      "Param": "ID:8015",
+      "PuchaseNum": 3,
+      "StartDate": "2022/09/27",
+      "EndDate": "2022/10/11",
+      "ConsumeType": 1,
+      "ConsumeNum": 1500000
+    },
+    {
+      "ID": 188,
+      "Type": 5,
+      "Param": "ID:8016",
+      "PuchaseNum": 3,
+      "StartDate": "2022/09/27",
+      "EndDate": "2022/10/11",
+      "ConsumeType": 1,
+      "ConsumeNum": 1500000
+    },
+    {
+      "ID": 189,
+      "Type": 711,
+      "Param": "Value:3",
+      "PuchaseNum": 10,
+      "StartDate": "2023/01/31",
+      "EndDate": "2023/02/14",
+      "ConsumeType": 1,
+      "ConsumeNum": 0
+    },
+    {
+      "ID": 190,
+      "Type": 5,
+      "Param": "ID:8015",
+      "PuchaseNum": 1,
+      "StartDate": "2023/03/14",
+      "EndDate": "2023/03/20",
+      "ConsumeType": 1,
+      "ConsumeNum": 1500000
+    },
+    {
+      "ID": 191,
+      "Type": 5,
+      "Param": "ID:8016",
+      "PuchaseNum": 1,
+      "StartDate": "2023/03/14",
+      "EndDate": "2023/03/20",
+      "ConsumeType": 1,
+      "ConsumeNum": 1500000
+    },
+    {
+      "ID": 192,
+      "Type": 5,
+      "Param": "ID:8015",
+      "PuchaseNum": 3,
+      "StartDate": "2023/09/26",
+      "EndDate": "2023/10/10",
+      "ConsumeType": 1,
+      "ConsumeNum": 1500000
+    },
+    {
+      "ID": 193,
+      "Type": 5,
+      "Param": "ID:8016",
+      "PuchaseNum": 3,
+      "StartDate": "2023/09/26",
+      "EndDate": "2023/10/10",
+      "ConsumeType": 1,
+      "ConsumeNum": 1500000
+    },
+    {
+      "ID": 1101,
+      "Type": 19,
+      "Param": "Value:5",
+      "PuchaseNum": 6,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 2,
+      "ConsumeNum": 180
+    },
+    {
+      "ID": 1102,
+      "Type": 19,
+      "Param": "Value:5",
+      "PuchaseNum": 6,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 100000
+    },
+    {
+      "ID": 1103,
+      "Type": 19,
+      "Param": "Value:5",
+      "PuchaseNum": 10,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 2,
+      "ConsumeNum": 450
+    },
+    {
+      "ID": 1104,
+      "Type": 19,
+      "Param": "Value:5",
+      "PuchaseNum": 10,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 250000
+    },
+    {
+      "ID": 1021,
+      "Type": 651,
+      "Param": "Value:3",
+      "PuchaseNum": 99,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 10000
+    },
+    {
+      "ID": 1022,
+      "Type": 651,
+      "Param": "Value:30",
+      "PuchaseNum": 1,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 50000
+    },
+    {
+      "ID": 1034,
+      "Type": 711,
+      "Param": "Value:3",
+      "PuchaseNum": 30,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 30000
+    },
+    {
+      "ID": 1003,
+      "Type": 6,
+      "Param": "ID:100000 Plus:1",
+      "PuchaseNum": 99,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 8000
+    },
+    {
+      "ID": 1004,
+      "Type": 6,
+      "Param": "ID:100000 Plus:3",
+      "PuchaseNum": 3,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 15000
+    },
+    {
+      "ID": 1005,
+      "Type": 6,
+      "Param": "ID:100001 Plus:1",
+      "PuchaseNum": 99,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 40000
+    },
+    {
+      "ID": 1006,
+      "Type": 6,
+      "Param": "ID:100001 Plus:3",
+      "PuchaseNum": 5,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 80000
+    },
+    {
+      "ID": 1033,
+      "Type": 6,
+      "Param": "ID:100001 Plus:10",
+      "PuchaseNum": 3,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 240000
+    },
+    {
+      "ID": 1026,
+      "Type": 6,
+      "Param": "ID:100002 Plus:1",
+      "PuchaseNum": 10,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 60000
+    },
+    {
+      "ID": 1027,
+      "Type": 6,
+      "Param": "ID:100002 Plus:3",
+      "PuchaseNum": 1,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 120000
+    },
+    {
+      "ID": 1007,
+      "Type": 4,
+      "Param": "Type:1 Value:1",
+      "PuchaseNum": 99,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 2000
+    },
+    {
+      "ID": 1008,
+      "Type": 4,
+      "Param": "Type:2 Value:1",
+      "PuchaseNum": 3,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 3000
+    },
+    {
+      "ID": 1009,
+      "Type": 4,
+      "Param": "Type:4 Value:1",
+      "PuchaseNum": 99,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 2000
+    },
+    {
+      "ID": 1010,
+      "Type": 4,
+      "Param": "Type:5 Value:1",
+      "PuchaseNum": 3,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 3000
+    },
+    {
+      "ID": 1011,
+      "Type": 4,
+      "Param": "Type:7 Value:1",
+      "PuchaseNum": 99,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 2000
+    },
+    {
+      "ID": 1012,
+      "Type": 4,
+      "Param": "Type:8 Value:1",
+      "PuchaseNum": 3,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 3000
+    },
+    {
+      "ID": 1013,
+      "Type": 5,
+      "Param": "ID:8010",
+      "PuchaseNum": 30,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 60000
+    },
+    {
+      "ID": 1014,
+      "Type": 5,
+      "Param": "ID:8010",
+      "PuchaseNum": 3,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 48000
+    },
+    {
+      "ID": 1015,
+      "Type": 5,
+      "Param": "ID:8011",
+      "PuchaseNum": 5,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 500000
+    },
+    {
+      "ID": 1016,
+      "Type": 5,
+      "Param": "ID:8011",
+      "PuchaseNum": 1,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 400000
+    },
+    {
+      "ID": 1028,
+      "Type": 5,
+      "Param": "ID:8021",
+      "PuchaseNum": 5,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 500000
+    },
+    {
+      "ID": 1029,
+      "Type": 5,
+      "Param": "ID:8021",
+      "PuchaseNum": 1,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 400000
+    },
+    {
+      "ID": 1030,
+      "Type": 5,
+      "Param": "ID:8019",
+      "PuchaseNum": 30,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 15000
+    },
+    {
+      "ID": 1031,
+      "Type": 5,
+      "Param": "ID:8020",
+      "PuchaseNum": 30,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 15000
+    },
+    {
+      "ID": 1017,
+      "Type": 5,
+      "Param": "ID:8006",
+      "PuchaseNum": 5,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 600000
+    },
+    {
+      "ID": 1018,
+      "Type": 5,
+      "Param": "ID:8008",
+      "PuchaseNum": 5,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 600000
+    },
+    {
+      "ID": 1019,
+      "Type": 5,
+      "Param": "ID:8015",
+      "PuchaseNum": 1,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 3000000
+    },
+    {
+      "ID": 1020,
+      "Type": 5,
+      "Param": "ID:8016",
+      "PuchaseNum": 1,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 3000000
+    },
+    {
+      "ID": 1025,
+      "Type": 5,
+      "Param": "ID:8017",
+      "PuchaseNum": 5,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 600000
+    },
+    {
+      "ID": 1032,
+      "Type": 5,
+      "Param": "ID:8018",
+      "PuchaseNum": 1,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 1,
+      "ConsumeNum": 3000000
+    },
+    {
+      "ID": 2001,
+      "Type": 5,
+      "Param": "ID:8002",
+      "PuchaseNum": 100,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 26,
+      "ConsumeNum": 65
+    },
+    {
+      "ID": 2002,
+      "Type": 5,
+      "Param": "ID:8003",
+      "PuchaseNum": 50,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 26,
+      "ConsumeNum": 320
+    },
+    {
+      "ID": 2003,
+      "Type": 5,
+      "Param": "ID:8027",
+      "PuchaseNum": 15,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 26,
+      "ConsumeNum": 6000
+    },
+    {
+      "ID": 2004,
+      "Type": 5,
+      "Param": "ID:8011",
+      "PuchaseNum": 5,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 26,
+      "ConsumeNum": 17500
+    },
+    {
+      "ID": 1001,
+      "Type": 8,
+      "Param": "Value:2",
+      "PuchaseNum": 999,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 3,
+      "ConsumeNum": 1
+    },
+    {
+      "ID": 1002,
+      "Type": 8,
+      "Param": "Value:7",
+      "PuchaseNum": 999,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeType": 3,
+      "ConsumeNum": 3
+    }
+  ]
+}

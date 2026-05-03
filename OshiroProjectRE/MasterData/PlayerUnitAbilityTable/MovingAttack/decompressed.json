@@ -1,0 +1,167 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 5,
+    "record_size": 48,
+    "custom_id": 1952544365
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "ReuseWaitSeconds",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "MissileID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "SpreadMissileID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "EnableMissileRangeGrowup",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 16,
+      "size": 1
+    },
+    {
+      "name": "MovingAttackAbilityID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "WalkStartMotionID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "WalkMotionID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "WalkEndMotionID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "WeaponDotDisabled",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 36,
+      "size": 1
+    },
+    {
+      "name": "DispConsumeKi",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 40,
+      "size": 4
+    },
+    {
+      "name": "TextID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 44,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 6923,
+      "ReuseWaitSeconds": 5,
+      "MissileID": 4179,
+      "SpreadMissileID": 0,
+      "EnableMissileRangeGrowup": true,
+      "MovingAttackAbilityID": 100015,
+      "WalkStartMotionID": 0,
+      "WalkMotionID": 0,
+      "WalkEndMotionID": 0,
+      "WeaponDotDisabled": true,
+      "DispConsumeKi": 3,
+      "TextID": 802
+    },
+    {
+      "ID": 959,
+      "ReuseWaitSeconds": 5,
+      "MissileID": 4237,
+      "SpreadMissileID": 0,
+      "EnableMissileRangeGrowup": true,
+      "MovingAttackAbilityID": 100023,
+      "WalkStartMotionID": 307,
+      "WalkMotionID": 308,
+      "WalkEndMotionID": 309,
+      "WeaponDotDisabled": true,
+      "DispConsumeKi": 3,
+      "TextID": 802
+    },
+    {
+      "ID": 6964,
+      "ReuseWaitSeconds": 5,
+      "MissileID": 3701,
+      "SpreadMissileID": 0,
+      "EnableMissileRangeGrowup": true,
+      "MovingAttackAbilityID": 100024,
+      "WalkStartMotionID": 310,
+      "WalkMotionID": 311,
+      "WalkEndMotionID": 312,
+      "WeaponDotDisabled": true,
+      "DispConsumeKi": 3,
+      "TextID": 802
+    },
+    {
+      "ID": 3031,
+      "ReuseWaitSeconds": 5,
+      "MissileID": 4284,
+      "SpreadMissileID": 0,
+      "EnableMissileRangeGrowup": true,
+      "MovingAttackAbilityID": 110001,
+      "WalkStartMotionID": 316,
+      "WalkMotionID": 317,
+      "WalkEndMotionID": 318,
+      "WeaponDotDisabled": true,
+      "DispConsumeKi": 3,
+      "TextID": 802
+    },
+    {
+      "ID": 3104,
+      "ReuseWaitSeconds": 5,
+      "MissileID": 4382,
+      "SpreadMissileID": 0,
+      "EnableMissileRangeGrowup": true,
+      "MovingAttackAbilityID": 110002,
+      "WalkStartMotionID": 319,
+      "WalkMotionID": 320,
+      "WalkEndMotionID": 321,
+      "WeaponDotDisabled": true,
+      "DispConsumeKi": 3,
+      "TextID": 802
+    }
+  ]
+}

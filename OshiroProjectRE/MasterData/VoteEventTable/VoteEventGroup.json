@@ -1,0 +1,467 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 32,
+    "record_size": 40,
+    "custom_id": 1735681398
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Index",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "StartDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "EndDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "InterimResultStartDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "ResultStartDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "OpenFlag",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "LastQualifyingFlag",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 32,
+      "size": 1
+    },
+    {
+      "name": "EventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 36,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "Name": "グループA",
+      "Index": "1",
+      "StartDate": "2017/01/17 16:00:00",
+      "EndDate": "2017/02/07 14:00:00",
+      "InterimResultStartDate": "",
+      "ResultStartDate": "",
+      "OpenFlag": 0,
+      "LastQualifyingFlag": false,
+      "EventID": 0
+    },
+    {
+      "ID": 1,
+      "Name": "最終結果",
+      "Index": "final_result",
+      "StartDate": "2017/02/07 14:00:00",
+      "EndDate": "2017/02/14 14:00:00",
+      "InterimResultStartDate": "",
+      "ResultStartDate": "",
+      "OpenFlag": 1,
+      "LastQualifyingFlag": false,
+      "EventID": 0
+    },
+    {
+      "ID": 2,
+      "Name": "グループA",
+      "Index": "1",
+      "StartDate": "2017/08/18 16:00:00",
+      "EndDate": "2017/09/12 14:00:00",
+      "InterimResultStartDate": "",
+      "ResultStartDate": "",
+      "OpenFlag": 0,
+      "LastQualifyingFlag": false,
+      "EventID": 0
+    },
+    {
+      "ID": 2,
+      "Name": "最終結果",
+      "Index": "final_result",
+      "StartDate": "2017/09/12 14:00:00",
+      "EndDate": "2017/09/19 14:00:00",
+      "InterimResultStartDate": "",
+      "ResultStartDate": "",
+      "OpenFlag": 1,
+      "LastQualifyingFlag": false,
+      "EventID": 0
+    },
+    {
+      "ID": 3,
+      "Name": "グループA",
+      "Index": "1",
+      "StartDate": "2018/05/29 15:00:00",
+      "EndDate": "2018/06/12 14:00:00",
+      "InterimResultStartDate": "",
+      "ResultStartDate": "",
+      "OpenFlag": 0,
+      "LastQualifyingFlag": false,
+      "EventID": 0
+    },
+    {
+      "ID": 3,
+      "Name": "最終結果",
+      "Index": "final_result",
+      "StartDate": "2018/06/12 14:00:00",
+      "EndDate": "2018/06/19 14:00:00",
+      "InterimResultStartDate": "",
+      "ResultStartDate": "",
+      "OpenFlag": 1,
+      "LastQualifyingFlag": false,
+      "EventID": 0
+    },
+    {
+      "ID": 4,
+      "Name": "グループA",
+      "Index": "1",
+      "StartDate": "2019/01/22 15:00:00",
+      "EndDate": "2019/02/12 14:00:00",
+      "InterimResultStartDate": "",
+      "ResultStartDate": "",
+      "OpenFlag": 0,
+      "LastQualifyingFlag": false,
+      "EventID": 0
+    },
+    {
+      "ID": 4,
+      "Name": "最終結果",
+      "Index": "final_result",
+      "StartDate": "2019/02/12 14:00:00",
+      "EndDate": "2019/02/19 14:00:00",
+      "InterimResultStartDate": "",
+      "ResultStartDate": "",
+      "OpenFlag": 1,
+      "LastQualifyingFlag": false,
+      "EventID": 0
+    },
+    {
+      "ID": 5,
+      "Name": "西軍",
+      "Index": "1",
+      "StartDate": "2019/11/26 16:00:00",
+      "EndDate": "2019/11/29 15:59:59",
+      "InterimResultStartDate": "2019/11/27 17:00:00",
+      "ResultStartDate": "2019/11/29 17:00:00",
+      "OpenFlag": 0,
+      "LastQualifyingFlag": false,
+      "EventID": 0
+    },
+    {
+      "ID": 5,
+      "Name": "東軍",
+      "Index": "2",
+      "StartDate": "2019/11/29 16:00:00",
+      "EndDate": "2019/12/02 15:59:59",
+      "InterimResultStartDate": "2019/11/30 17:00:00",
+      "ResultStartDate": "2019/12/02 17:00:00",
+      "OpenFlag": 0,
+      "LastQualifyingFlag": false,
+      "EventID": 0
+    },
+    {
+      "ID": 5,
+      "Name": "海外",
+      "Index": "3",
+      "StartDate": "2019/12/02 16:00:00",
+      "EndDate": "2019/12/05 15:59:59",
+      "InterimResultStartDate": "2019/12/03 17:00:00",
+      "ResultStartDate": "2019/12/05 17:00:00",
+      "OpenFlag": 0,
+      "LastQualifyingFlag": true,
+      "EventID": 0
+    },
+    {
+      "ID": 5,
+      "Name": "決勝戦",
+      "Index": "final",
+      "StartDate": "2019/12/05 17:00:00",
+      "EndDate": "2019/12/10 12:59:59",
+      "InterimResultStartDate": "2019/12/06 17:00:00",
+      "ResultStartDate": "2019/12/10 17:00:00",
+      "OpenFlag": 1,
+      "LastQualifyingFlag": false,
+      "EventID": 0
+    },
+    {
+      "ID": 5,
+      "Name": "最終結果",
+      "Index": "final_result",
+      "StartDate": "2019/12/11 17:00:00",
+      "EndDate": "2019/12/17 12:59:59",
+      "InterimResultStartDate": "",
+      "ResultStartDate": "",
+      "OpenFlag": 1,
+      "LastQualifyingFlag": false,
+      "EventID": 0
+    },
+    {
+      "ID": 6,
+      "Name": "西軍",
+      "Index": "1",
+      "StartDate": "2020/07/28 11:00:00",
+      "EndDate": "2020/07/31 15:59:59",
+      "InterimResultStartDate": "2020/07/29 17:00:00",
+      "ResultStartDate": "2020/07/31 17:00:00",
+      "OpenFlag": 0,
+      "LastQualifyingFlag": false,
+      "EventID": 63
+    },
+    {
+      "ID": 6,
+      "Name": "東軍",
+      "Index": "2",
+      "StartDate": "2020/07/31 16:00:00",
+      "EndDate": "2020/08/03 15:59:59",
+      "InterimResultStartDate": "2020/08/01 17:00:00",
+      "ResultStartDate": "2020/08/03 17:00:00",
+      "OpenFlag": 0,
+      "LastQualifyingFlag": false,
+      "EventID": 64
+    },
+    {
+      "ID": 6,
+      "Name": "海外",
+      "Index": "3",
+      "StartDate": "2020/08/03 16:00:00",
+      "EndDate": "2020/08/06 15:59:59",
+      "InterimResultStartDate": "2020/08/04 17:00:00",
+      "ResultStartDate": "2020/08/06 17:00:00",
+      "OpenFlag": 0,
+      "LastQualifyingFlag": true,
+      "EventID": 65
+    },
+    {
+      "ID": 6,
+      "Name": "決勝戦",
+      "Index": "final",
+      "StartDate": "2020/08/06 17:00:00",
+      "EndDate": "2020/08/11 12:59:59",
+      "InterimResultStartDate": "2020/08/07 17:00:00",
+      "ResultStartDate": "2020/08/11 17:00:00",
+      "OpenFlag": 1,
+      "LastQualifyingFlag": false,
+      "EventID": 66
+    },
+    {
+      "ID": 6,
+      "Name": "最終結果",
+      "Index": "final_result",
+      "StartDate": "2020/08/12 17:00:00",
+      "EndDate": "2020/08/18 12:59:59",
+      "InterimResultStartDate": "",
+      "ResultStartDate": "",
+      "OpenFlag": 1,
+      "LastQualifyingFlag": false,
+      "EventID": 67
+    },
+    {
+      "ID": 7,
+      "Name": "【い】",
+      "Index": "1",
+      "StartDate": "2021/02/15 13:00:00",
+      "EndDate": "2021/02/27 12:59:59",
+      "InterimResultStartDate": "2021/02/25 14:00:00",
+      "ResultStartDate": "2021/02/27 14:00:00",
+      "OpenFlag": 0,
+      "LastQualifyingFlag": false,
+      "EventID": 73
+    },
+    {
+      "ID": 7,
+      "Name": "【ろ】",
+      "Index": "2",
+      "StartDate": "2021/02/27 13:00:00",
+      "EndDate": "2021/03/02 12:59:59",
+      "InterimResultStartDate": "2021/02/28 14:00:00",
+      "ResultStartDate": "2021/03/02 14:00:00",
+      "OpenFlag": 0,
+      "LastQualifyingFlag": false,
+      "EventID": 74
+    },
+    {
+      "ID": 7,
+      "Name": "【は】",
+      "Index": "3",
+      "StartDate": "2021/03/02 13:00:00",
+      "EndDate": "2021/03/05 12:59:59",
+      "InterimResultStartDate": "2021/03/03 14:00:00",
+      "ResultStartDate": "2021/03/05 14:00:00",
+      "OpenFlag": 0,
+      "LastQualifyingFlag": true,
+      "EventID": 75
+    },
+    {
+      "ID": 7,
+      "Name": "決勝戦",
+      "Index": "final",
+      "StartDate": "2021/03/05 16:00:00",
+      "EndDate": "2021/03/09 12:59:59",
+      "InterimResultStartDate": "2021/03/06 14:00:00",
+      "ResultStartDate": "2021/03/09 17:00:00",
+      "OpenFlag": 1,
+      "LastQualifyingFlag": false,
+      "EventID": 76
+    },
+    {
+      "ID": 7,
+      "Name": "最終結果",
+      "Index": "final_result",
+      "StartDate": "2021/03/10 17:00:00",
+      "EndDate": "2021/03/16 12:59:59",
+      "InterimResultStartDate": "",
+      "ResultStartDate": "",
+      "OpenFlag": 1,
+      "LastQualifyingFlag": false,
+      "EventID": 77
+    },
+    {
+      "ID": 8,
+      "Name": "予選",
+      "Index": "1",
+      "StartDate": "2022/02/15 13:30:00",
+      "EndDate": "2022/03/01 13:00:00",
+      "InterimResultStartDate": "2022/02/23 14:00:00",
+      "ResultStartDate": "2022/03/01 14:00:00",
+      "OpenFlag": 0,
+      "LastQualifyingFlag": true,
+      "EventID": 83
+    },
+    {
+      "ID": 8,
+      "Name": "決戦",
+      "Index": "final",
+      "StartDate": "2022/03/01 13:30:00",
+      "EndDate": "2022/03/08 13:00:00",
+      "InterimResultStartDate": "2022/03/02 14:00:00",
+      "ResultStartDate": "2022/03/08 14:00:00",
+      "OpenFlag": 1,
+      "LastQualifyingFlag": false,
+      "EventID": 84
+    },
+    {
+      "ID": 8,
+      "Name": "最終結果",
+      "Index": "final_result",
+      "StartDate": "2022/03/08 13:30:00",
+      "EndDate": "2022/03/15 13:00:00",
+      "InterimResultStartDate": "",
+      "ResultStartDate": "",
+      "OpenFlag": 1,
+      "LastQualifyingFlag": false,
+      "EventID": 85
+    },
+    {
+      "ID": 9,
+      "Name": "予選",
+      "Index": "1",
+      "StartDate": "2023/07/25 13:30:00",
+      "EndDate": "2023/08/01 13:00:00",
+      "InterimResultStartDate": "2023/07/26 14:00:00",
+      "ResultStartDate": "2023/08/01 14:00:00",
+      "OpenFlag": 0,
+      "LastQualifyingFlag": true,
+      "EventID": 133
+    },
+    {
+      "ID": 9,
+      "Name": "決戦",
+      "Index": "final",
+      "StartDate": "2023/08/01 13:30:00",
+      "EndDate": "2023/08/08 13:00:00",
+      "InterimResultStartDate": "2023/08/02 14:00:00",
+      "ResultStartDate": "2023/08/08 14:00:00",
+      "OpenFlag": 1,
+      "LastQualifyingFlag": false,
+      "EventID": 134
+    },
+    {
+      "ID": 9,
+      "Name": "最終結果",
+      "Index": "final_result",
+      "StartDate": "2023/08/08 15:30:00",
+      "EndDate": "2023/08/15 13:30:00",
+      "InterimResultStartDate": "",
+      "ResultStartDate": "",
+      "OpenFlag": 1,
+      "LastQualifyingFlag": false,
+      "EventID": 135
+    },
+    {
+      "ID": 10,
+      "Name": "予選",
+      "Index": "1",
+      "StartDate": "2025/09/16 13:30:00",
+      "EndDate": "2025/09/22 13:00:00",
+      "InterimResultStartDate": "2025/09/17 14:00:00",
+      "ResultStartDate": "2025/09/22 14:00:00",
+      "OpenFlag": 0,
+      "LastQualifyingFlag": true,
+      "EventID": 173
+    },
+    {
+      "ID": 10,
+      "Name": "決戦",
+      "Index": "final",
+      "StartDate": "2025/09/22 13:30:00",
+      "EndDate": "2025/09/30 10:30:00",
+      "InterimResultStartDate": "2025/09/23 14:00:00",
+      "ResultStartDate": "2025/09/30 14:00:00",
+      "OpenFlag": 1,
+      "LastQualifyingFlag": false,
+      "EventID": 174
+    },
+    {
+      "ID": 10,
+      "Name": "最終結果",
+      "Index": "final_result",
+      "StartDate": "2025/09/30 14:00:00",
+      "EndDate": "2025/10/07 13:30:00",
+      "InterimResultStartDate": "",
+      "ResultStartDate": "",
+      "OpenFlag": 1,
+      "LastQualifyingFlag": false,
+      "EventID": 175
+    }
+  ]
+}

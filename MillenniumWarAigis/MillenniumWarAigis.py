@@ -854,7 +854,7 @@ class AFTFormat(BaseFormat):
         return ExtractResult(data=data)
 
 
-# ALSN: 音频文件格式，提取内嵌的 OGG/MP3/WAV 或 RAW 数据
+# ALSN: 音频文件格式，提取内嵌的 OGG
 class ALSNFormat(BaseFormat):
     @classmethod
     def can_process(cls, data: bytes) -> bool:

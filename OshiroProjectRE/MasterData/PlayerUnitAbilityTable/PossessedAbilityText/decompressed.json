@@ -1,0 +1,659 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 125,
+    "record_size": 12,
+    "custom_id": 1953784176
+  },
+  "_fields": [
+    {
+      "name": "AbilityID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Description",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "AbilityID": 9001,
+      "Name": "殿の攻撃力アップ",
+      "Description": "所持しているだけで殿の攻撃が10%上昇"
+    },
+    {
+      "AbilityID": 1101,
+      "Name": "城娘経験値上昇【所持】･壱",
+      "Description": "所持しているだけで城娘の獲得経験値が10%上昇"
+    },
+    {
+      "AbilityID": 1102,
+      "Name": "城娘経験値上昇【所持】･弐",
+      "Description": "所持しているだけで城娘の獲得経験値が15%上昇"
+    },
+    {
+      "AbilityID": 1201,
+      "Name": "獲得金増加【所持】･壱",
+      "Description": "所持しているだけで獲得金が10%上昇\n(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 1202,
+      "Name": "獲得金増加【所持】･弐",
+      "Description": "所持しているだけで獲得金が15%上昇\n(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 1301,
+      "Name": "殿経験値増加【所持】･壱",
+      "Description": "所持しているだけで獲得殿EXPが5%上昇\n(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 1302,
+      "Name": "殿経験値増加【所持】･弐",
+      "Description": "所持しているだけで獲得殿EXPが10%上昇\n(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 1401,
+      "Name": "獲得・入手金増加【所持】･壱",
+      "Description": "所持しているだけで獲得金と\n蔵からの入手金が15%上昇(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 1402,
+      "Name": "獲得・入手金増加【所持】･弐",
+      "Description": "所持しているだけで獲得金と\n蔵からの入手金が20%上昇(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 98,
+      "Name": "HOU・ON・KOU",
+      "Description": "所持しているだけで城娘の獲得経験値が8%上昇"
+    },
+    {
+      "AbilityID": 11098,
+      "Name": "HON・GAN・RIKI",
+      "Description": "所持しているだけで城娘の獲得経験値が20%上昇"
+    },
+    {
+      "AbilityID": 11251,
+      "Name": "御霊紅葉の参道",
+      "Description": "所持しているだけで獲得金が30%上昇\n(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 11305,
+      "Name": "剣術の師範",
+      "Description": "所持しているだけで獲得殿EXPが20%上昇\n(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 486,
+      "Name": "結城埋蔵金",
+      "Description": "所持しているだけで獲得金と\n蔵からの入手金が5%上昇(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 9486,
+      "Name": "黄金三歌",
+      "Description": "所持しているだけで獲得金と\n蔵からの入手金が7%上昇(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 461,
+      "Name": "正倉院宝物",
+      "Description": "所持しているだけで獲得金が30%上昇\n(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 9461,
+      "Name": "正倉院天平宝物",
+      "Description": "所持しているだけで獲得金が35%上昇\n(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 10461,
+      "Name": "正倉院・天平至宝",
+      "Description": "所持しているだけで獲得金が45%上昇\n(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 530,
+      "Name": "朱の北条鱗",
+      "Description": "所持しているだけで獲得殿EXPが7%上昇\n(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 578,
+      "Name": "石取祭",
+      "Description": "所持しているだけで要石の入手数が10%増加"
+    },
+    {
+      "AbilityID": 9578,
+      "Name": "本楽・石取祭",
+      "Description": "所持しているだけで要石の入手数が15%増加"
+    },
+    {
+      "AbilityID": 599,
+      "Name": "久留米教会堂",
+      "Description": "所持しているだけで城娘合成時の獲得経験値が8%上昇"
+    },
+    {
+      "AbilityID": 9599,
+      "Name": "久留米天主堂",
+      "Description": "所持しているだけで城娘合成時の獲得経験値が10%上昇"
+    },
+    {
+      "AbilityID": 604,
+      "Name": "浪速の夢",
+      "Description": "所持しているだけで近畿城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 605,
+      "Name": "博多松囃子",
+      "Description": "所持しているだけで石弓城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 606,
+      "Name": "首据石",
+      "Description": "所持しているだけで槍城娘の最大耐久が4%上昇"
+    },
+    {
+      "AbilityID": 609,
+      "Name": "御金蔵稲荷",
+      "Description": "所持しているだけで獲得金と\n蔵からの入手金が8%上昇(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 9609,
+      "Name": "御金蔵稲荷大明神",
+      "Description": "所持しているだけで獲得金と\n蔵からの入手金が10%上昇(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 626,
+      "Name": "黄金十両",
+      "Description": "所持しているだけで獲得金と\n蔵からの入手金が25%上昇(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 9626,
+      "Name": "笠の緒文",
+      "Description": "所持しているだけで獲得金と\n蔵からの入手金が30%上昇(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 627,
+      "Name": "おあむの松",
+      "Description": "所持しているだけで獲得殿EXPが15%上昇\n(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 9627,
+      "Name": "御庵の大松",
+      "Description": "所持しているだけで獲得殿EXPが20%上昇\n(像の効果は上乗せ)"
+    },
+    {
+      "AbilityID": 642,
+      "Name": "朱地金井桁紋纏",
+      "Description": "所持しているだけで槍城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 643,
+      "Name": "百箇条の掟書",
+      "Description": "所持しているだけで四国城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 644,
+      "Name": "鉄盾一双",
+      "Description": "所持しているだけで槌城娘の防御が4%上昇"
+    },
+    {
+      "AbilityID": 660,
+      "Name": "サウルウァ",
+      "Description": "所持しているだけで全ての敵の攻撃が2%低下"
+    },
+    {
+      "AbilityID": 9660,
+      "Name": "アカ・マナフ",
+      "Description": "所持しているだけで全ての敵の攻撃が3%低下"
+    },
+    {
+      "AbilityID": 661,
+      "Name": "筑紫歌壇",
+      "Description": "所持しているだけで全ての敵の防御が3%低下"
+    },
+    {
+      "AbilityID": 682,
+      "Name": "スティージュの沼",
+      "Description": "所持しているだけで全ての敵の攻撃後の隙が2%延長"
+    },
+    {
+      "AbilityID": 9682,
+      "Name": "マーレボルジェ",
+      "Description": "所持しているだけで全ての敵の攻撃後の隙が3%延長"
+    },
+    {
+      "AbilityID": 683,
+      "Name": "水色桔梗",
+      "Description": "所持しているだけで全ての敵の攻撃速度が2%低下"
+    },
+    {
+      "AbilityID": 9683,
+      "Name": "裏陰桔梗",
+      "Description": "所持しているだけで全ての敵の攻撃速度が3%低下"
+    },
+    {
+      "AbilityID": 684,
+      "Name": "飛車山",
+      "Description": "所持しているだけで全ての敵の防御が1%低下"
+    },
+    {
+      "AbilityID": 9684,
+      "Name": "間々観音",
+      "Description": "所持しているだけで全ての敵の防御が2%低下"
+    },
+    {
+      "AbilityID": 702,
+      "Name": "清須越",
+      "Description": "所持しているだけで槌城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 703,
+      "Name": "石部桜",
+      "Description": "所持しているだけで東北城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 704,
+      "Name": "引田の港",
+      "Description": "所持しているだけで法術城娘の最大耐久が4%上昇"
+    },
+    {
+      "AbilityID": 705,
+      "Name": "百間の橋",
+      "Description": "所持しているだけで全ての敵の攻撃が1%低下"
+    },
+    {
+      "AbilityID": 9705,
+      "Name": "佐和山の黒雲",
+      "Description": "所持しているだけで全ての敵の攻撃が2%低下"
+    },
+    {
+      "AbilityID": 731,
+      "Name": "賦何船連歌",
+      "Description": "所持しているだけで城娘の合戦勝利時と\n城娘合成時の獲得経験値が15%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 9731,
+      "Name": "賦何人連歌",
+      "Description": "所持しているだけで城娘の合戦勝利時と\n城娘合成時の獲得経験値が20%上昇"
+    },
+    {
+      "AbilityID": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "AbilityID": 732,
+      "Name": "引魂幡",
+      "Description": "所持しているだけで地獄城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 733,
+      "Name": "与渡津",
+      "Description": "所持しているだけで地獄城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 734,
+      "Name": "死者の書",
+      "Description": "所持しているだけで全ての敵の攻撃後の隙が1%延長"
+    },
+    {
+      "AbilityID": 9734,
+      "Name": "ペレト・エム・ヘル",
+      "Description": "所持しているだけで全ての敵の攻撃後の隙が2%延長"
+    },
+    {
+      "AbilityID": 980,
+      "Name": "未来への投資",
+      "Description": "所持しているだけで城娘合成時の獲得経験値が5%上昇"
+    },
+    {
+      "AbilityID": 9980,
+      "Name": "未来への挑戦",
+      "Description": "所持しているだけで城娘合成時の獲得経験値が8%上昇"
+    },
+    {
+      "AbilityID": 749,
+      "Name": "五箇条の訓戒状",
+      "Description": "所持しているだけで関東城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 750,
+      "Name": "夕顔観音",
+      "Description": "所持しているだけで法術城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 751,
+      "Name": "松倉金山",
+      "Description": "所持しているだけで刀城娘の防御が4%上昇"
+    },
+    {
+      "AbilityID": 752,
+      "Name": "フンゴ・ディ・ラッコ",
+      "Description": "所持しているだけで海外城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 766,
+      "Name": "冥境・千引岩",
+      "Description": "所持しているだけで地獄城娘の防御が4%上昇"
+    },
+    {
+      "AbilityID": 767,
+      "Name": "カローンの舟",
+      "Description": "所持しているだけで[架空城]の再配置時間が4%短縮"
+    },
+    {
+      "AbilityID": 768,
+      "Name": "虎の印判",
+      "Description": "所持しているだけで全ての敵の攻撃速度が1%低下"
+    },
+    {
+      "AbilityID": 787,
+      "Name": "地黄八幡",
+      "Description": "所持しているだけで投剣城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 788,
+      "Name": "祝呪信仰",
+      "Description": "所持しているだけで地獄城娘の最大耐久が4%上昇"
+    },
+    {
+      "AbilityID": 789,
+      "Name": "南無阿弥コール",
+      "Description": "所持しているだけで祓串城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 802,
+      "Name": "水郷柳川",
+      "Description": "所持しているだけで九州城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 803,
+      "Name": "立花三日月",
+      "Description": "所持しているだけで歌舞城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 804,
+      "Name": "駿府加番",
+      "Description": "所持しているだけで東海城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 805,
+      "Name": "人魚伝説",
+      "Description": "所持しているだけで石弓城娘の耐久が4%上昇"
+    },
+    {
+      "AbilityID": 814,
+      "Name": "グラナの赤木",
+      "Description": "所持しているだけで地獄城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 815,
+      "Name": "治天の御所",
+      "Description": "所持しているだけで鞭城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 816,
+      "Name": "真田の抜け穴",
+      "Description": "所持しているだけで地獄城娘の最大耐久が3%上昇"
+    },
+    {
+      "AbilityID": 823,
+      "Name": "十王の夏休み",
+      "Description": "所持しているだけで[夏]城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 824,
+      "Name": "ヨトゥン・アイス",
+      "Description": "所持しているだけで投剣城娘の最大耐久が4%上昇"
+    },
+    {
+      "AbilityID": 825,
+      "Name": "ラーの炎陽",
+      "Description": "所持しているだけで戦棍城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 846,
+      "Name": "勘兵衛石",
+      "Description": "所持しているだけで鉄砲城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 847,
+      "Name": "甲斐姫の武勇",
+      "Description": "所持しているだけで刀城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 848,
+      "Name": "堅固城郭多気山",
+      "Description": "所持しているだけで石弓城娘の最大耐久が4%上昇"
+    },
+    {
+      "AbilityID": 856,
+      "Name": "人喰いの河",
+      "Description": "所持しているだけで[宮殿]城娘の攻撃が3%上昇"
+    },
+    {
+      "AbilityID": 857,
+      "Name": "御菩薩の種",
+      "Description": "所持しているだけで石弓城娘の防御無視効果が3%上昇"
+    },
+    {
+      "AbilityID": 858,
+      "Name": "紅き徒花",
+      "Description": "所持しているだけで地獄城娘の攻撃速度が3%上昇"
+    },
+    {
+      "AbilityID": 871,
+      "Name": "ノウルーズ",
+      "Description": "所持しているだけで[正月]城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 872,
+      "Name": "新春の神桃",
+      "Description": "所持しているだけで[正月]城娘の最大耐久が4%上昇"
+    },
+    {
+      "AbilityID": 873,
+      "Name": "新年の青銅門",
+      "Description": "所持しているだけで[正月]城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 877,
+      "Name": "ヤマ・ドゥータ",
+      "Description": "所持しているだけで弓城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 878,
+      "Name": "北の関ヶ原",
+      "Description": "所持しているだけで鎌城娘の攻撃が3%上昇"
+    },
+    {
+      "AbilityID": 887,
+      "Name": "筑紫の御楯",
+      "Description": "所持しているだけで全ての[大宰府と古代山城]城娘の攻撃が3%上昇"
+    },
+    {
+      "AbilityID": 888,
+      "Name": "佐土原灘",
+      "Description": "所持しているだけで九州城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 889,
+      "Name": "一升坂",
+      "Description": "所持しているだけで法術城娘の攻撃の隙が4%短縮"
+    },
+    {
+      "AbilityID": 890,
+      "Name": "中津のタニシ祭り",
+      "Description": "所持しているだけで鉄砲城娘の耐久が4%上昇"
+    },
+    {
+      "AbilityID": 908,
+      "Name": "咲かぬ徒桜",
+      "Description": "所持しているだけで鉄砲城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 914,
+      "Name": "夏魂幡",
+      "Description": "所持しているだけで[夏]城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 915,
+      "Name": "女王の休日",
+      "Description": "所持しているだけで[夏]城娘の攻撃が4%上昇"
+    },
+    {
+      "AbilityID": 916,
+      "Name": "公正なるバカンス",
+      "Description": "所持しているだけで[夏]城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 920,
+      "Name": "御掟五ヶ条",
+      "Description": "所持しているだけで法術城娘の攻撃が3%上昇"
+    },
+    {
+      "AbilityID": 936,
+      "Name": "津軽の誇り",
+      "Description": "所持しているだけで弓城娘の攻撃が3%上昇"
+    },
+    {
+      "AbilityID": 937,
+      "Name": "甲府の要",
+      "Description": "所持しているだけで本城娘の攻撃が3%上昇"
+    },
+    {
+      "AbilityID": 938,
+      "Name": "タケノコ狩り",
+      "Description": "所持しているだけで近畿城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 960,
+      "Name": "辺獄の春",
+      "Description": "所持しているだけで盾城娘の最大耐久が5%上昇"
+    },
+    {
+      "AbilityID": 961,
+      "Name": "新年のマントラ",
+      "Description": "所持しているだけで[正月]城娘の攻撃が4%上昇"
+    },
+    {
+      "AbilityID": 962,
+      "Name": "フィンブルヴェト",
+      "Description": "所持しているだけで軍船城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 963,
+      "Name": "ヘレル・ベン・シャハル",
+      "Description": "所持しているだけで地獄城娘の\n初回計略使用までの時間が10%短縮"
+    },
+    {
+      "AbilityID": 964,
+      "Name": "混沌の御子",
+      "Description": "所持しているだけで地獄城娘の攻撃後の隙が3%短縮"
+    },
+    {
+      "AbilityID": 3019,
+      "Name": "海律全書",
+      "Description": "所持しているだけで大砲城娘の攻撃が3%上昇"
+    },
+    {
+      "AbilityID": 3020,
+      "Name": "三大上忍・千賀地",
+      "Description": "所持しているだけで投剣城娘の\n初回計略使用までの時間が10%短縮"
+    },
+    {
+      "AbilityID": 3021,
+      "Name": "お諏訪様の加護",
+      "Description": "所持しているだけで鈴城娘の攻撃速度が3%上昇"
+    },
+    {
+      "AbilityID": 3038,
+      "Name": "清正公の本懐",
+      "Description": "所持しているだけで双剣城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 3039,
+      "Name": "悪逆非道の梟雄",
+      "Description": "所持しているだけで戦棍城娘の攻撃が3%上昇"
+    },
+    {
+      "AbilityID": 3069,
+      "Name": "王家の守護石",
+      "Description": "所持しているだけで弓城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 3070,
+      "Name": "紅花の化粧",
+      "Description": "所持しているだけで鈴城娘の攻撃が3%上昇"
+    },
+    {
+      "AbilityID": 3071,
+      "Name": "芙蓉の天府",
+      "Description": "所持しているだけで拳城娘の攻撃後の隙が4%短縮"
+    },
+    {
+      "AbilityID": 3072,
+      "Name": "三河の大喧嘩",
+      "Description": "所持しているだけで陣貝城娘の防御が4%上昇"
+    },
+    {
+      "AbilityID": 3111,
+      "Name": "邪悪滅殺の門番",
+      "Description": "所持しているだけで地獄城娘の与回復量が10%上昇"
+    },
+    {
+      "AbilityID": 3112,
+      "Name": "臼杵石仏",
+      "Description": "所持しているだけで大砲城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 3113,
+      "Name": "完璧な二重環状城壁",
+      "Description": "所持しているだけで海外城娘の回復が10%上昇"
+    },
+    {
+      "AbilityID": 3114,
+      "Name": "東照大権現",
+      "Description": "所持しているだけで祓串城娘の攻撃速度が5%上昇"
+    },
+    {
+      "AbilityID": 3115,
+      "Name": "金の弩標",
+      "Description": "所持しているだけで槌城娘の攻撃速度が4%上昇"
+    },
+    {
+      "AbilityID": 981,
+      "Name": "Dream Mill",
+      "Description": "所持しているだけで全ての「無」属性の攻撃が3%上昇"
+    },
+    {
+      "AbilityID": 3999,
+      "Name": "テスト(3999)所持特技：未改築",
+      "Description": "所持しているだけで全ての城娘の攻撃が10%上昇"
+    },
+    {
+      "AbilityID": 93999,
+      "Name": "テスト(3999)所持特技：改一",
+      "Description": "所持しているだけで全ての城娘の攻撃が20%上昇"
+    },
+    {
+      "AbilityID": 103999,
+      "Name": "テスト(3999)所持特技：改弐",
+      "Description": "所持しているだけで全ての城娘の攻撃が30%上昇"
+    }
+  ]
+}

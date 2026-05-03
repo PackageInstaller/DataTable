@@ -1,0 +1,207 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 56,
+    "custom_id": 1650876786
+  },
+  "_fields": [
+    {
+      "name": "GroupID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "TabID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Order",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "EventName",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "ExchangeCaption",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "ExchangeSerif",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "CardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "CardDisplayIndex",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "SystemVoiceID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 36,
+      "size": 4
+    },
+    {
+      "name": "PrologueEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 40,
+      "size": 4
+    },
+    {
+      "name": "NormalEpilogueEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 44,
+      "size": 4
+    },
+    {
+      "name": "HardEpilogueEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 48,
+      "size": 4
+    },
+    {
+      "name": "VeryHardEpilogueEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 52,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "GroupID": 6,
+      "TabID": 1,
+      "Order": 1,
+      "ID": 1,
+      "EventName": "絢爛晶と導かれし城娘",
+      "ExchangeCaption": "[絢爛]小谷城",
+      "ExchangeSerif": "選りすぐった品々です。ごゆるりとお選びください。\n昔から、待つのは得意なんです。\nその分殿と過ごす時間も増えますし……なんて。",
+      "CardID": 606,
+      "CardDisplayIndex": 3,
+      "SystemVoiceID": 606,
+      "PrologueEventID": 41,
+      "NormalEpilogueEventID": 43,
+      "HardEpilogueEventID": 44,
+      "VeryHardEpilogueEventID": 45
+    },
+    {
+      "GroupID": 6,
+      "TabID": 1,
+      "Order": 2,
+      "ID": 2,
+      "EventName": "絢爛晶と導かれし城娘 -弐の陣-",
+      "ExchangeCaption": "[絢爛]津山城",
+      "ExchangeSerif": "お屋形さまの喜ぶ顔が見たくて色んな品を揃えたの！\n……オススメの品？　ふふ、いっぱいあるよ♪\nえっと、ひー、ふー、みー……ん～、数え切れない！",
+      "CardID": 644,
+      "CardDisplayIndex": 3,
+      "SystemVoiceID": 644,
+      "PrologueEventID": 51,
+      "NormalEpilogueEventID": 53,
+      "HardEpilogueEventID": 54,
+      "VeryHardEpilogueEventID": 55
+    },
+    {
+      "GroupID": 6,
+      "TabID": 2,
+      "Order": 1,
+      "ID": 3,
+      "EventName": "絢爛晶と導かれし城娘 -参の陣-",
+      "ExchangeCaption": "[絢爛]引田城",
+      "ExchangeSerif": "えへへ……どの品も、自慢の逸品なんですよ。\nきっと満足してくれると思います。だ、だから……。\n少しでも長く、此処に居てくれたら嬉しい……です。",
+      "CardID": 704,
+      "CardDisplayIndex": 3,
+      "SystemVoiceID": 704,
+      "PrologueEventID": 61,
+      "NormalEpilogueEventID": 63,
+      "HardEpilogueEventID": 64,
+      "VeryHardEpilogueEventID": 65
+    },
+    {
+      "GroupID": 6,
+      "TabID": 2,
+      "Order": 2,
+      "ID": 4,
+      "EventName": "絢爛晶と導かれし城娘 -肆の陣-",
+      "ExchangeCaption": "[絢爛]松倉城",
+      "ExchangeSerif": "日頃の尽力を讃え、妾の財を進呈してやろう。\nふふ、特別じゃぞ――む、なぜ怪訝そうな顔をする？\n妾が選んだ品々じゃ、質に疑う余地はあるまい！",
+      "CardID": 751,
+      "CardDisplayIndex": 3,
+      "SystemVoiceID": 655,
+      "PrologueEventID": 91,
+      "NormalEpilogueEventID": 93,
+      "HardEpilogueEventID": 94,
+      "VeryHardEpilogueEventID": 95
+    },
+    {
+      "GroupID": 6,
+      "TabID": 3,
+      "Order": 1,
+      "ID": 5,
+      "EventName": "絢爛晶と導かれし城娘 -伍の陣-",
+      "ExchangeCaption": "[絢爛]駿府城",
+      "ExchangeSerif": "どうじゃ殿よ、我の吟味した品々は？　わはははっ！\n他ならぬお主の為に用意したのじゃ、好きなだけ\nじゃんじゃん持っていくが良いぞ、ほれ遠慮するな！",
+      "CardID": 804,
+      "CardDisplayIndex": 3,
+      "SystemVoiceID": 714,
+      "PrologueEventID": 301,
+      "NormalEpilogueEventID": 303,
+      "HardEpilogueEventID": 304,
+      "VeryHardEpilogueEventID": 305
+    },
+    {
+      "GroupID": 6,
+      "TabID": 3,
+      "Order": 2,
+      "ID": 6,
+      "EventName": "絢爛晶と導かれし城娘 -陸の陣-",
+      "ExchangeCaption": "[絢爛]多気城",
+      "ExchangeSerif": "この多気城、殿の為に関東の名物を取り揃えて\n参りました。蓮根に納豆……え、そっちではない？\nこれは失礼。お気に召す品が、あると良いのですが。",
+      "CardID": 848,
+      "CardDisplayIndex": 3,
+      "SystemVoiceID": 838,
+      "PrologueEventID": 96,
+      "NormalEpilogueEventID": 98,
+      "HardEpilogueEventID": 99,
+      "VeryHardEpilogueEventID": 100
+    }
+  ]
+}
