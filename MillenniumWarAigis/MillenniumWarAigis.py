@@ -1,3 +1,8 @@
+"""
+搞到一半才发现有https://github.com/DogReactor/AigisFuel
+重复造轮子了属于是，开摆
+"""
+
 import os
 import sys
 import struct
@@ -38,17 +43,91 @@ class ATXFormat(BaseFormat):
         return len(data) >= 16 and data[0:4] == b"ALTX"
 
     def process(self, data: bytes) -> ExtractResult:
-        # data[6] 是子贴图 UV 的数量，data[8] 是真实图片的偏移量
-        child_count = struct.unpack_from("<H", data, 6)[0]
+        import struct, json
+
+        vers = data[4]
+        form = data[5]
+        count = struct.unpack_from("<H", data, 6)[0]
         image_offset = struct.unpack_from("<I", data, 8)[0]
 
-        if image_offset == 0 or image_offset >= len(data):
+        sprites = {}
+        if count > 0:
+            block_offsets = []
+            if vers == 0:
+                # 绝对偏移数组
+                if 12 + count * 2 <= len(data):
+                    block_offsets = list(struct.unpack_from(f"<{count}H", data, 12))
+            else:
+                # 增量偏移数组
+                if 12 + count * 2 <= len(data):
+                    increments = struct.unpack_from(f"<{count}H", data, 12)
+                    curr = 0
+                    for val in increments:
+                        curr += val
+                        block_offsets.append(curr)
+
+            for off in block_offsets:
+                if off + 8 > len(data):
+                    continue
+                ptr = off
+
+                # 读取子贴图头部
+                share_id = struct.unpack_from("<I", data, ptr)[0]
+                pattern_count = struct.unpack_from("<H", data, ptr + 4)[0]
+                flags = data[ptr + 6]
+
+                name = ""
+                if flags & 1:
+                    name_ptr = ptr - 32
+                    if name_ptr >= 0:
+                        end = data.find(b"\x00", name_ptr, ptr)
+                        if end == -1:
+                            end = ptr
+                        name = data[name_ptr:end].decode("utf-8", errors="ignore")
+
+                frame_table = {"name": name, "flags": flags, "frames": []}
+
+                rects_ptr = ptr + 8
+                origins_ptr = rects_ptr + 8 * pattern_count
+
+                for j in range(pattern_count):
+                    if rects_ptr + 8 > len(data):
+                        break
+                    x, y, w, h = struct.unpack_from("<hhhh", data, rects_ptr)
+                    rects_ptr += 8
+
+                    ox, oy = 0, 0
+                    if (flags & 2) and (origins_ptr + 4 <= len(data)):
+                        ox, oy = struct.unpack_from("<hh", data, origins_ptr)
+                        origins_ptr += 4
+
+                    frame_table["frames"].append(
+                        {
+                            "X": x,
+                            "Y": y,
+                            "Width": w,
+                            "Height": h,
+                            "OriginX": ox,
+                            "OriginY": oy,
+                        }
+                    )
+
+                sprites[str(share_id)] = frame_table
+
+        image_data = data[image_offset:] if image_offset > 0 else b""
+
+        archive_files = {}
+        if image_data:
+            archive_files["atlas.alig"] = image_data
+        if sprites:
+            archive_files["atlas_frames.json"] = json.dumps(
+                sprites, indent=2, ensure_ascii=False
+            ).encode("utf-8")
+            print(f"  [ALTX] 成功提取了贴图集，包含 {len(sprites)} 个子贴图定义")
+
+        if not archive_files:
             return ExtractResult(data=data)
-
-        image_data = data[image_offset:]
-
-        print(f"  [ALTX] 识别到贴图集，包含 {child_count} 个子图切割(UV)")
-        return ExtractResult(data=image_data, ext=".bin")
+        return ExtractResult(archive_files=archive_files)
 
 
 # AOD: 场景装配树格式，包含装配节点数量和结构信息
@@ -58,63 +137,365 @@ class AODFormat(BaseFormat):
         return len(data) >= 16 and data[0:4] == b"ALOD"
 
     def process(self, data: bytes) -> ExtractResult:
-        import json
-        import struct
+        import struct, json
 
-        node_count = data[6] | (((data[7] >> 6) & 3) << 8)
-        str_count = data[7] & 0x3F
+        vers = data[4]
+        form = data[5]
+        entry_count = data[6]
+        field_count = data[7]
 
-        strings = []
-        str_off_start = 16 + node_count * 2
-        for i in range(str_count):
-            if str_off_start + i * 2 + 2 > len(data):
+        # ALOD 节点属性解析
+        ptr = 12
+        almt_offset = struct.unpack_from("<I", data, 12)[0]
+        ptr = 16
+
+        if ptr + entry_count * 2 + field_count * 2 > len(data):
+            return ExtractResult(data=data)
+
+        entry_offsets = struct.unpack_from(f"<{entry_count}H", data, ptr)
+        ptr += entry_count * 2
+        field_offsets = struct.unpack_from(f"<{field_count}H", data, ptr)
+        ptr += field_count * 2
+
+        fields = []
+        for i in range(field_count):
+            end = data.find(b"\x00", ptr)
+            if end == -1:
                 break
-            off = struct.unpack_from("<H", data, str_off_start + i * 2)[0]
-            end = data.find(b"\x00", off)
-            if end != -1:
-                strings.append(data[off:end].decode("utf-8", errors="ignore"))
+            fields.append(data[ptr:end].decode("utf-8", errors="ignore"))
+            ptr = end + 1
 
-        nodes = []
-        for i in range(node_count):
-            off = struct.unpack_from("<H", data, 16 + i * 2)[0]
-            if i < node_count - 1:
-                next_off = struct.unpack_from("<H", data, 16 + i * 2 + 2)[0]
-            else:
-                next_off = len(data)
-
-            if next_off <= off:
-                next_off = len(data)
-
-            n_data = data[off:next_off]
-            if len(n_data) < 12:
+        entries = []
+        for i in range(entry_count):
+            ptr = entry_offsets[i]
+            if ptr + 12 > len(data):
                 continue
 
-            node = {
-                "index": i,
-                "node_id": n_data[0:4].decode("ascii", errors="ignore").strip("\x00 "),
-                "type_id": n_data[4:8].decode("ascii", errors="ignore").strip("\x00 "),
-                "counts": [n_data[8], n_data[9], n_data[10]],
-                "_raw": n_data.hex(),
-            }
+            name_end = data.find(b"\x00", ptr, ptr + 8)
+            if name_end == -1:
+                name_end = ptr + 8
+            entry_name = data[ptr:name_end].decode("utf-8", errors="ignore")
+            ptr += 8
 
-            c1, c2, c3 = n_data[8], n_data[9], n_data[10]
-            child_idx_offset = 12 + 2 * c1 + 2 * c2 + 2 * c3
-            if c1 > 0 and child_idx_offset + c1 <= len(n_data):
-                node["children"] = list(
-                    n_data[child_idx_offset : child_idx_offset + c1]
-                )
+            entry_field_count = struct.unpack_from("<I", data, ptr)[0]
+            ptr += 4
 
-            nodes.append(node)
+            if ptr + entry_field_count * 3 > len(data):
+                continue
 
-        output = {
-            "_meta": {"node_count": node_count, "string_count": str_count},
-            "strings": strings,
-            "nodes": nodes,
+            entry_field_offsets = struct.unpack_from(
+                f"<{entry_field_count}H", data, ptr
+            )
+            ptr += entry_field_count * 2
+
+            entry_field_indexes = struct.unpack_from(
+                f"<{entry_field_count}B", data, ptr
+            )
+            ptr += entry_field_count
+
+            entry_fields = {}
+            for j in range(entry_field_count):
+                if entry_field_indexes[j] >= len(fields):
+                    continue
+                field_name = fields[entry_field_indexes[j]]
+                f_ptr = entry_offsets[i] + entry_field_offsets[j]
+
+                if f_ptr + 4 > len(data):
+                    continue
+
+                if field_name == "Texture0ID":
+                    entry_fields[field_name] = {
+                        "Id1": struct.unpack_from("<H", data, f_ptr)[0],
+                        "Id2": struct.unpack_from("<H", data, f_ptr + 2)[0],
+                    }
+                elif field_name == "Color":
+                    if f_ptr + 16 <= len(data):
+                        r, g, b, a = struct.unpack_from("<ffff", data, f_ptr)
+                        entry_fields[field_name] = {"R": r, "G": g, "B": b, "A": a}
+                elif field_name == "Alpha":
+                    entry_fields[field_name] = struct.unpack_from("<f", data, f_ptr)[0]
+                elif field_name == "ParentNodeID":
+                    end = data.find(b"\x00", f_ptr, f_ptr + 4)
+                    if end == -1:
+                        end = f_ptr + 4
+                    entry_fields[field_name] = data[f_ptr:end].decode(
+                        "utf-8", errors="ignore"
+                    )
+                elif field_name == "Text":
+                    end = data.find(b"\x00", f_ptr)
+                    entry_fields[field_name] = (
+                        data[f_ptr:end].decode("utf-8", errors="ignore")
+                        if end != -1
+                        else ""
+                    )
+                elif field_name in ("Scale", "Pos"):
+                    if f_ptr + 12 <= len(data):
+                        x, y, z = struct.unpack_from("<fff", data, f_ptr)
+                        entry_fields[field_name] = {"X": x, "Y": y, "Z": z}
+                elif field_name == "WidgetSize":
+                    x, y = struct.unpack_from("<HH", data, f_ptr)
+                    entry_fields[field_name] = {"X": x, "Y": y}
+
+            entries.append({"Name": entry_name, "Fields": entry_fields})
+
+        archive_files = {
+            "scene.json": json.dumps(
+                {"Entries": entries}, ensure_ascii=False, indent=2
+            ).encode("utf-8")
         }
 
+        if form == 2 and almt_offset < len(data) and almt_offset > 0:
+            archive_files["motion.almt"] = data[almt_offset:]
+
         print(
-            f"  [ALOD] 成功解析场景装配树，包含 {node_count} 个节点，{str_count} 个属性"
+            f"  [ALOD] 成功深层解析，提取 {len(entries)} 个节点"
+            + (" 及内嵌 ALMT 动画轨道" if (form == 2 and almt_offset > 0) else "")
         )
+        return ExtractResult(archive_files=archive_files)
+
+
+class ALMTFormat(BaseFormat):
+    @classmethod
+    def can_process(cls, data: bytes) -> bool:
+        return len(data) >= 12 and data[0:4] == b"ALMT"
+
+    def process(self, data: bytes) -> ExtractResult:
+        import struct, json
+
+        vers = data[4]
+
+        # 根据 ALMotionBodyAMT 和 ALMotionExporter 源码还原计数
+        if vers > 2:
+            if len(data) < 10:
+                return ExtractResult(data=data)
+            entry_count = struct.unpack_from("<H", data, 6)[0]
+            field_count = data[8]
+            motion_count = data[9]
+            header_size = 12
+        else:
+            if len(data) < 9:
+                return ExtractResult(data=data)
+            # v2 顺序可能为: field_count, entry_count, motion_count
+            field_count = data[6]
+            entry_count = data[7]
+            motion_count = data[8]
+            header_size = 12
+
+        ptr = header_size
+        # Target Node IDs (4 bytes each)
+        target_node_ids = []
+        if ptr + 4 * entry_count <= len(data):
+            target_node_ids = struct.unpack_from(f"<{entry_count}I", data, ptr)
+            ptr += 4 * entry_count
+
+        # Motion Header Offsets (4 bytes each)
+        motion_header_offsets = []
+        if ptr + 4 * motion_count <= len(data):
+            motion_header_offsets = struct.unpack_from(f"<{motion_count}I", data, ptr)
+            ptr += 4 * motion_count
+
+        # Property Name Offsets (2 bytes each)
+        prop_name_offsets = []
+        if ptr + 2 * field_count <= len(data):
+            prop_name_offsets = struct.unpack_from(f"<{field_count}H", data, ptr)
+            ptr += 2 * field_count
+
+        # 解析属性名
+        fields = []
+        for off in prop_name_offsets:
+            if off < len(data):
+                end = data.find(b"\x00", off)
+                name = (
+                    data[off:end].decode("utf-8", errors="ignore") if end != -1 else ""
+                )
+                fields.append(name)
+            else:
+                fields.append(f"Unknown_{off}")
+
+        def parse_field_value(name, f_ptr):
+            if f_ptr < 0 or f_ptr + 2 > len(data):
+                return None, 0
+            try:
+                if name in (
+                    "PatternNo",
+                    "BlendMode",
+                    "Disp",
+                    "DrawPrioOffset",
+                    "Visible",
+                ):
+                    return struct.unpack_from("<H", data, f_ptr)[0], 2
+                elif name == "Texture0ID":
+                    if f_ptr + 4 > len(data):
+                        return None, 0
+                    return {
+                        "Id1": struct.unpack_from("<H", data, f_ptr)[0],
+                        "Id2": struct.unpack_from("<H", data, f_ptr + 2)[0],
+                    }, 4
+                elif name == "Alpha":
+                    if f_ptr + 4 > len(data):
+                        return None, 0
+                    return struct.unpack_from("<f", data, f_ptr)[0], 4
+                elif name == "Pos":
+                    if f_ptr + 12 > len(data):
+                        return None, 0
+                    x, y, z = struct.unpack_from("<fff", data, f_ptr)
+                    return {"X": x, "Y": y, "Z": z}, 12
+                elif name == "Rot":
+                    if f_ptr + 4 > len(data):
+                        return None, 0
+                    return struct.unpack_from("<f", data, f_ptr)[0], 4
+                elif name in ("Scale", "Center"):
+                    if f_ptr + 12 > len(data):
+                        return None, 0
+                    x, y, z = struct.unpack_from("<fff", data, f_ptr)
+                    return {"X": x, "Y": y, "Z": z}, 12
+                elif name == "Color3":
+                    if f_ptr + 12 > len(data):
+                        return None, 0
+                    r, g, b = struct.unpack_from("<fff", data, f_ptr)
+                    return [r, g, b], 12
+                elif name == "ParentNodeID":
+                    end = data.find(b"\x00", f_ptr, f_ptr + 4)
+                    if end == -1:
+                        end = f_ptr + 4
+                    return data[f_ptr:end].decode("utf-8", errors="ignore"), 4
+            except:
+                pass
+            return None, 0
+
+        motions = []
+        for m_idx in range(len(motion_header_offsets)):
+            m_off = motion_header_offsets[m_idx]
+            if m_off < 0 or m_off >= len(data):
+                continue
+
+            try:
+                m_entries = []
+                if vers > 2:
+                    # Version 3 Header (含 MotionID)
+                    if m_off + 4 > len(data):
+                        continue
+                    motion_id = struct.unpack_from("<I", data, m_off)[0]
+                    p = m_off + 4
+                    if p + 10 > len(data):
+                        continue
+
+                    pattern = struct.unpack_from("<I", data, p)[0]
+                    length = struct.unpack_from("<H", data, p + 4)[0]
+                    rate = data[p + 6]
+                    flag1 = data[p + 7]
+                    unknown4 = struct.unpack_from("<H", data, p + 8)[0]
+                    p += 10
+
+                    # 跳过变长部分 (增加安全检查)
+                    skip1 = ((unknown4 - 0x002A) // 2) * 2 if unknown4 >= 0x002A else 0
+                    p += skip1
+                    if flag1 & 1:
+                        if p + 4 <= len(data):
+                            unknown6 = struct.unpack_from("<H", data, p + 2)[0]
+                            p += 4
+                            skip2 = (
+                                ((unknown6 - 0x0032) // 2) * 2
+                                if unknown6 >= 0x0032
+                                else 0
+                            )
+                            p += skip2
+                else:
+                    # Version 2 Header (参考 Exporter)
+                    if m_off + 8 > len(data):
+                        continue
+                    motion_id = m_idx  # v2 可能不带 ID，使用索引
+                    pattern = struct.unpack_from("<I", data, m_off)[0]
+                    length = struct.unpack_from("<H", data, m_off + 4)[0]
+                    rate = data[m_off + 6]
+                    flag1 = data[m_off + 7]
+                    p = m_off + 8
+
+                    # v2 可能在这里有 field_count 个 uint16 的偏移量
+                    if p + 2 * field_count <= len(data):
+                        p += 2 * field_count
+
+                # 解析条目
+                for e_idx in range(entry_count):
+                    if p + 2 > len(data):
+                        break
+                    entry_ptr_base = p
+                    fc_nonstream = data[p]
+                    fc_stream = data[p + 1]
+                    p += 2
+
+                    total = fc_nonstream + fc_stream
+                    if total == 0:
+                        continue
+                    if p + total > len(data):
+                        break
+                    field_descs = list(data[p : p + total])
+                    p += total
+
+                    p = (p + 1) & ~1
+                    if p + 2 * total > len(data):
+                        break
+                    stream_offsets = struct.unpack_from(f"<{total}H", data, p)
+                    p += 2 * total
+
+                    entry_fields = {}
+                    for j in range(total):
+                        f_desc = field_descs[j]
+                        f_idx = f_desc & 0x0F
+                        if f_idx >= len(fields):
+                            continue
+                        f_name = fields[f_idx]
+
+                        f_ptr = entry_ptr_base + stream_offsets[j]
+                        if f_ptr < 0 or f_ptr >= len(data):
+                            continue
+
+                        stream = []
+                        if j >= fc_nonstream:
+                            while f_ptr + 2 <= len(data):
+                                time_val = struct.unpack_from("<H", data, f_ptr)[0]
+                                f_ptr += 2
+                                if time_val == 0xFFFF:
+                                    break
+                                if time_val != 0x494C:
+                                    val, size = parse_field_value(f_name, f_ptr)
+                                    if size == 0:
+                                        break
+                                    stream.append({"Time": time_val, "Data": val})
+                                    f_ptr += size
+                        else:
+                            val, size = parse_field_value(f_name, f_ptr)
+                            if size > 0:
+                                stream.append({"Data": val})
+
+                        entry_fields[f_name] = stream
+
+                    m_entries.append(
+                        {
+                            "TargetNodeID": (
+                                target_node_ids[e_idx]
+                                if e_idx < len(target_node_ids)
+                                else e_idx
+                            ),
+                            "Fields": entry_fields,
+                        }
+                    )
+
+                motions.append(
+                    {
+                        "MotionID": motion_id,
+                        "Pattern": pattern,
+                        "Length": length,
+                        "Rate": rate,
+                        "Entries": m_entries,
+                    }
+                )
+            except Exception as e_motion:
+                print(f"  [ALMT] 跳过损坏的动作数据块 {m_idx}: {e_motion}")
+
+        output = {"Motions": motions}
+
+        print(f"  [ALMT] 成功提取动画轨道，包含 {len(motions)} 个动作")
         return ExtractResult(
             data=json.dumps(output, ensure_ascii=False, indent=2).encode("utf-8"),
             ext=".json",
@@ -441,17 +822,24 @@ class AFTFormat(BaseFormat):
     def process(self, data: bytes) -> ExtractResult:
         flags = data[5]
 
-        # 字形映射表数量
+        # 偏移 12: 字形映射表数量
         conv_count = struct.unpack_from("<H", data, 12)[0]
+
+        # 表格起始偏移 14，每个条目 6 字节
         offset = 14 + conv_count * 6
+
+        # (v9 & 8) != 0
         if flags & 8:
+            # 读取附加数据长度，跳过
             extra_len = struct.unpack_from("<H", data, offset)[0]
             offset += 2 + extra_len
 
         offset = (offset + 3) & ~3
 
+        # if (v9 & 0x40) != 0
         if flags & 0x40:
-            # 多重子字库，实际的流在 offset + 4
+            # 这是一个特殊的分支：当存在 0x40 标志时，表示使用了多重子字库。
+            # offset 此时指向的是索引表，而实际的流在 offset + 4
             offset = struct.unpack_from("<I", data, offset + 4)[0]
 
         if offset < len(data):
@@ -476,6 +864,7 @@ class ALSNFormat(BaseFormat):
         flags = data[5]
 
         payload_offset = 32
+        # ( (*(_BYTE *)(TopAddress + 5) & 4) != 0 )
         if flags & 4:
             null_idx = data.find(b"\x00", 32)
             if null_idx != -1:
@@ -732,11 +1121,136 @@ class ALIGFormat(BaseFormat):
         return ExtractResult(data=data, ext=f".{fmt}.alig")
 
 
+class BufferReader:
+    def __init__(self, data: bytes, start=0):
+        self.data = data
+        self.pos = start
+        self.bits = 0
+        self.bits_count = 0
+
+    def read_byte(self):
+        if self.pos >= len(self.data):
+            return 0
+        b = self.data[self.pos]
+        self.pos += 1
+        return b
+
+    def ensure(self, count: int):
+        while self.bits_count < count:
+            self.bits |= self.read_byte() << self.bits_count
+            self.bits_count += 8
+
+    def read_bit(self):
+        self.ensure(1)
+        r = self.bits & 1
+        self.bits >>= 1
+        self.bits_count -= 1
+        return r
+
+    def read_bits(self, count):
+        self.ensure(count)
+        r = self.bits & ((1 << count) - 1)
+        self.bits >>= count
+        self.bits_count -= count
+        return r
+
+    def read_unary(self):
+        n = 0
+        while self.read_bit() == 1:
+            n += 1
+        return n
+
+
+class ALLZFormat(BaseFormat):
+    @classmethod
+    def can_process(cls, data: bytes) -> bool:
+        return len(data) >= 16 and data[0:4] == b"ALLZ"
+
+    def process(self, data: bytes) -> ExtractResult:
+        import struct
+
+        min_bits_length = data[5]
+        min_bits_offset = data[6]
+        min_bits_literal = data[7]
+        dst_size = struct.unpack_from("<I", data, 8)[0]
+
+        br = BufferReader(data, 12)
+        dst = bytearray(dst_size)
+        dst_offset = 0
+
+        def read_control(min_bits):
+            u = br.read_unary()
+            n = br.read_bits(u + min_bits)
+            if u > 0:
+                return n + (((1 << u) - 1) << min_bits)
+            return n
+
+        def read_control_length():
+            return 3 + read_control(min_bits_length)
+
+        def read_control_offset():
+            return -1 - read_control(min_bits_offset)
+
+        def read_control_literal():
+            return 1 + read_control(min_bits_literal)
+
+        def copy_word(offset, length):
+            nonlocal dst_offset
+            true_offset = offset
+            for _ in range(length):
+                if offset < 0:
+                    true_offset = dst_offset + offset
+                if dst_offset < dst_size and true_offset < dst_size:
+                    dst[dst_offset] = dst[true_offset]
+                dst_offset += 1
+
+        def copy_literal(control):
+            nonlocal dst_offset
+            for _ in range(control):
+                if dst_offset < dst_size:
+                    dst[dst_offset] = br.read_byte()
+                dst_offset += 1
+
+        copy_literal(read_control_literal())
+        word_offset = read_control_offset()
+        word_length = read_control_length()
+        literal_length = 0
+
+        finish_flag = "overflow"
+        while br.pos <= len(data) or br.bits_count > 0:
+            if dst_offset + word_length >= dst_size:
+                finish_flag = "word"
+                break
+            if br.read_bit() == 0:
+                literal_length = read_control_literal()
+                if dst_offset + word_length + literal_length >= dst_size:
+                    finish_flag = "literal"
+                    break
+                copy_word(word_offset, word_length)
+                copy_literal(literal_length)
+                word_offset = read_control_offset()
+                word_length = read_control_length()
+            else:
+                copy_word(word_offset, word_length)
+                word_offset = read_control_offset()
+                word_length = read_control_length()
+
+        if finish_flag == "word":
+            copy_word(word_offset, word_length)
+        elif finish_flag == "literal":
+            copy_word(word_offset, word_length)
+            copy_literal(literal_length)
+
+        print(f"  [ALLZ] 成功解压自定义 ALLZ 数据，解压后大小: {dst_size} 字节")
+        return ExtractResult(archive_files={"decompressed": bytes(dst)})
+
+
 class AssetProcessor:
     def __init__(self):
         # 解析器塞这里
         self.formats = [
             ALL4Format,
+            ALLZFormat,
             ALAR2Format,
             ALAR3Format,
             ATXFormat,
@@ -746,6 +1260,7 @@ class AssetProcessor:
             ARDFormat,
             ALIGFormat,
             AODFormat,
+            ALMTFormat,
         ]
 
     def recursive_process(self, filename: str, data: bytes) -> Dict[str, Any]:
@@ -840,8 +1355,8 @@ def process_directory(input_dir: str, output_dir: str):
                 final_content.save(target_path)
             success_count += 1
 
-    print(f"\n共输出 {success_count} 个资源")
+    print(f"\n管道共输出 {success_count} 个最终资源。")
 
 
 if __name__ == "__main__":
-    process_directory(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else "./output")
+    process_directory(sys.argv[1], "./output")
