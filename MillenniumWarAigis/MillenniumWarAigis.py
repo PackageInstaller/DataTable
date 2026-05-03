@@ -1,4 +1,5 @@
 import os
+import sys
 import struct
 import lz4.frame
 from pathlib import Path
@@ -42,26 +43,12 @@ class ATXFormat(BaseFormat):
         image_offset = struct.unpack_from("<I", data, 8)[0]
 
         if image_offset == 0 or image_offset >= len(data):
-            return ExtractResult(data=data)  # 偏移异常，回退处理
+            return ExtractResult(data=data)
 
         image_data = data[image_offset:]
 
-        ext = ".bin"
-        if image_data.startswith(b"\x89PNG\r\n\x1a\n"):
-            ext = ".png"
-        elif image_data.startswith(b"PVR\x03"):
-            ext = ".pvr"
-        elif image_data.startswith(b"\xabKTX "):
-            ext = ".ktx"
-        elif image_data.startswith(b"DDS "):
-            ext = ".dds"
-        elif image_data.startswith(b"ASTC"):
-            ext = ".astc"
-
-        print(
-            f"  [ALTX] 识别到贴图集，包含 {child_count} 个子图切割(UV)。内嵌图像提取为 -> {ext}"
-        )
-        return ExtractResult(archive_files={f"atlas{ext}": image_data})
+        print(f"  [ALTX] 识别到贴图集，包含 {child_count} 个子图切割(UV)")
+        return ExtractResult(data=image_data, ext=".bin")
 
 
 # AOD: 场景装配树格式，包含装配节点数量和结构信息
@@ -71,11 +58,67 @@ class AODFormat(BaseFormat):
         return len(data) >= 16 and data[0:4] == b"ALOD"
 
     def process(self, data: bytes) -> ExtractResult:
-        # count = a3[6] | (((a3[7] >> 6) & 3) << 8)
-        count = data[6] | (((data[7] >> 6) & 3) << 8)
-        print(f"[ALOD] 识别到场景装配树(NodeTree)，包含 {count} 个装配节点。")
-        # 结束递归
-        return ExtractResult(data=data)
+        import json
+        import struct
+
+        node_count = data[6] | (((data[7] >> 6) & 3) << 8)
+        str_count = data[7] & 0x3F
+
+        strings = []
+        str_off_start = 16 + node_count * 2
+        for i in range(str_count):
+            if str_off_start + i * 2 + 2 > len(data):
+                break
+            off = struct.unpack_from("<H", data, str_off_start + i * 2)[0]
+            end = data.find(b"\x00", off)
+            if end != -1:
+                strings.append(data[off:end].decode("utf-8", errors="ignore"))
+
+        nodes = []
+        for i in range(node_count):
+            off = struct.unpack_from("<H", data, 16 + i * 2)[0]
+            if i < node_count - 1:
+                next_off = struct.unpack_from("<H", data, 16 + i * 2 + 2)[0]
+            else:
+                next_off = len(data)
+
+            if next_off <= off:
+                next_off = len(data)
+
+            n_data = data[off:next_off]
+            if len(n_data) < 12:
+                continue
+
+            node = {
+                "index": i,
+                "node_id": n_data[0:4].decode("ascii", errors="ignore").strip("\x00 "),
+                "type_id": n_data[4:8].decode("ascii", errors="ignore").strip("\x00 "),
+                "counts": [n_data[8], n_data[9], n_data[10]],
+                "_raw": n_data.hex(),
+            }
+
+            c1, c2, c3 = n_data[8], n_data[9], n_data[10]
+            child_idx_offset = 12 + 2 * c1 + 2 * c2 + 2 * c3
+            if c1 > 0 and child_idx_offset + c1 <= len(n_data):
+                node["children"] = list(
+                    n_data[child_idx_offset : child_idx_offset + c1]
+                )
+
+            nodes.append(node)
+
+        output = {
+            "_meta": {"node_count": node_count, "string_count": str_count},
+            "strings": strings,
+            "nodes": nodes,
+        }
+
+        print(
+            f"  [ALOD] 成功解析场景装配树，包含 {node_count} 个节点，{str_count} 个属性"
+        )
+        return ExtractResult(
+            data=json.dumps(output, ensure_ascii=False, indent=2).encode("utf-8"),
+            ext=".json",
+        )
 
 
 # ATB: 数据表格式，包含记录数、字段定义和可选的变长数据区
@@ -228,7 +271,10 @@ class ATBFormat(BaseFormat):
         try:
             ptr += 2  # 跳过 version 和 endian
             field_count = struct.unpack_from(f"{endian}H", data, ptr)[0]
-            ptr += 4  # 跳过 count1 和 count2
+            count1 = struct.unpack_from(f"{endian}H", data, ptr + 2)[0]
+            if record_size == 0:
+                record_size = count1
+            ptr += 4  # 跳过 field_count (2), count1 (2)
 
             for _ in range(field_count):
                 if ptr >= data_offset:
@@ -258,6 +304,7 @@ class ATBFormat(BaseFormat):
                     name1, name2 = read_str(), read_str()
                     ptr = schema_offset + ((ptr - schema_offset + 3) & ~3)
                     ptr += extra_size
+                    ptr = schema_offset + ((ptr - schema_offset + 3) & ~3)
 
                     name = name1 if name1 else name2
                     if not name:
@@ -354,6 +401,37 @@ class ATBFormat(BaseFormat):
         return rec
 
 
+# ARD: 数据表结构定义文件 (ALRD)
+class ARDFormat(BaseFormat):
+    @classmethod
+    def can_process(cls, data: bytes) -> bool:
+        return len(data) >= 8 and data[0:4] == b"ALRD"
+
+    def process(self, data: bytes) -> ExtractResult:
+        import json
+
+        version = data[4]
+        flags = data[5]
+        endian = ">" if (flags & 0x80) else "<"
+
+        atb = ATBFormat()
+        fields = atb._parse_schema(data, 0, len(data), endian, 0)
+
+        output = {
+            "_meta": {
+                "version": version,
+                "flags": f"0x{flags:02X}",
+            },
+            "_fields": fields,
+        }
+
+        print(f"  [ALRD] 提取了数据表定义，包含 {len(fields)} 个字段")
+        return ExtractResult(
+            data=json.dumps(output, ensure_ascii=False, indent=2).encode("utf-8"),
+            ext=".json",
+        )
+
+
 # ATF: 字体文件格式，包含字符映射表和内嵌纹理数据
 class AFTFormat(BaseFormat):
     @classmethod
@@ -363,37 +441,51 @@ class AFTFormat(BaseFormat):
     def process(self, data: bytes) -> ExtractResult:
         flags = data[5]
 
-        # 偏移 12: 字形映射表数量
+        # 字形映射表数量
         conv_count = struct.unpack_from("<H", data, 12)[0]
-
-        # 表格起始偏移 14，每个条目 6 字节
         offset = 14 + conv_count * 6
-
-        # (v9 & 8) != 0
         if flags & 8:
-            # 读取附加数据长度，跳过
             extra_len = struct.unpack_from("<H", data, offset)[0]
             offset += 2 + extra_len
 
         offset = (offset + 3) & ~3
 
-        # if (v9 & 0x40) != 0
         if flags & 0x40:
-            # 这是一个特殊的分支：当存在 0x40 标志时，表示使用了多重子字库。
-            # offset 此时指向的是索引表，而实际的流在 offset + 4
+            # 多重子字库，实际的流在 offset + 4
             offset = struct.unpack_from("<I", data, offset + 4)[0]
 
         if offset < len(data):
             image_data = data[offset:]
             magic = image_data[0:4]
-            # 验证提取出的数据确实是一张图 (ALIG/ALTX)
-            if magic in (b"ALTX", b"ALIG", b"\x89PN", b"DDS ", b"PVR\x03", b"\xabKT"):
+            if magic in (b"ALTX", b"ALIG"):
                 magic_str = magic.decode("ascii", "ignore").strip("\x00")
                 print(f"[ALFT] 在偏移 0x{offset:X} 提取出内嵌 {magic_str} 贴图。")
-                return ExtractResult(archive_files={"font_texture.bin": image_data})
+                return ExtractResult(data=image_data, ext=".bin")
 
         print(f"  [ALFT] 定位失败或超出文件范围，输出原文件。")
         return ExtractResult(data=data)
+
+
+# ALSN: 音频文件格式，提取内嵌的 OGG/MP3/WAV 或 RAW 数据
+class ALSNFormat(BaseFormat):
+    @classmethod
+    def can_process(cls, data: bytes) -> bool:
+        return len(data) >= 32 and data[0:4] == b"ALSN"
+
+    def process(self, data: bytes) -> ExtractResult:
+        flags = data[5]
+
+        payload_offset = 32
+        if flags & 4:
+            null_idx = data.find(b"\x00", 32)
+            if null_idx != -1:
+                payload_offset = null_idx + 1
+
+        payload = data[payload_offset:]
+
+        if not payload:
+            return ExtractResult(data=data)
+        return ExtractResult(data=payload, ext=".ogg")
 
 
 # ALL4: LZ4 压缩格式，包含压缩数据和原始大小信息
@@ -405,6 +497,43 @@ class ALL4Format(BaseFormat):
     def process(self, data: bytes) -> ExtractResult:
         expected_size = struct.unpack_from("<I", data, 8)[0]
         return ExtractResult(data=lz4.frame.decompress(b"\x04\x22\x4d\x18" + data[16:]))
+
+
+# ALAR2: 归档包格式 v2
+class ALAR2Format(BaseFormat):
+    @classmethod
+    def can_process(cls, data: bytes) -> bool:
+        return len(data) >= 16 and data[0:4] == b"ALAR" and data[4] == 2
+
+    def process(self, data: bytes) -> ExtractResult:
+        count = struct.unpack_from("<H", data, 6)[0]
+
+        print(f"  [ALAR] 成功挂载 AAR(v2) 归档包，包含 {count} 个内嵌文件。正在提取...")
+        extracted_files = {}
+        for i in range(count):
+            entry_ptr = 16 + i * 16
+            if entry_ptr + 16 > len(data):
+                break
+
+            entry_id, file_offset, file_size, info = struct.unpack_from(
+                "<IIII", data, entry_ptr
+            )
+
+            if (info & 0x80000000) != 0 and file_offset >= 34:
+                name_start = file_offset - 34
+                name_bytes = data[name_start : name_start + 32]
+                name_end = name_bytes.find(b"\x00")
+                if name_end != -1:
+                    name_bytes = name_bytes[:name_end]
+                name = name_bytes.decode("utf-8", errors="ignore")
+                if not name:
+                    name = f"unknown_{entry_id}.dat"
+            else:
+                name = f"unknown_{entry_id}.dat"
+
+            extracted_files[name] = data[file_offset : file_offset + file_size]
+
+        return ExtractResult(archive_files=extracted_files)
 
 
 # ALAR3: 归档包格式，包含内嵌文件数量、偏移表和文件数据
@@ -419,7 +548,7 @@ class ALAR3Format(BaseFormat):
         shift_amount = (flags >> 2) & 2
         offsets = struct.unpack_from(f"<{count}H", data, 18)
 
-        print(f"  [ALAR] 成功挂载 AAR 归档包，包含 {count} 个内嵌文件。正在拆解...")
+        print(f"  [ALAR] 成功挂载 AAR 归档包，包含 {count} 个内嵌文件。正在提取...")
         extracted_files = {}
         for i in range(count):
             entry_ptr = offsets[i] << shift_amount
@@ -478,7 +607,7 @@ class ALIGFormat(BaseFormat):
         pixel_data = data[data_offset:]
 
         try:
-            # 1. 16-bit ABG4 (RGBA 4444)
+            # 16-bit ABG4 (RGBA 4444)
             if fmt == "ABG4":
                 rgba = bytearray(width * height * 4)
                 for i in range(width * height):
@@ -521,6 +650,35 @@ class ALIGFormat(BaseFormat):
                         rgba[i * 4 : i * 4 + 4] = palette[idx * 4 : idx * 4 + 4]
                 return ExtractResult(
                     image=Image.frombytes("RGBA", (width, height), bytes(rgba))
+                )
+
+            # 4-bit 调色板 (PAL4)
+            elif fmt == "PAL4":
+                expanded = bytearray(width * height)
+                stride = (width + 1) // 2
+                for y in range(height):
+                    for x in range(width):
+                        byte = pixel_data[y * stride + (x // 2)]
+                        expanded[y * width + x] = (
+                            (byte >> 4) if x % 2 == 0 else (byte & 0xF)
+                        )
+
+                img = Image.frombytes("P", (width, height), bytes(expanded))
+                alpha_map = [255] * 256
+                if palette:
+                    pal_rgb, pal_count_fixed = [], min(pal_count, 16)
+                    for i in range(pal_count_fixed):
+                        r, g, b, a = palette[i * 4 : i * 4 + 4]
+                        pal_rgb.extend([r, g, b])
+                        alpha_map[i] = a
+                    img.putpalette(pal_rgb + [0] * (768 - len(pal_rgb)))
+
+                res = img.convert("RGBA")
+                data_rgba = bytearray(res.tobytes())
+                for i in range(width * height):
+                    data_rgba[i * 4 + 3] = alpha_map[expanded[i]]
+                return ExtractResult(
+                    image=Image.frombytes("RGBA", (width, height), bytes(data_rgba))
                 )
 
             # 1-bit 单色遮罩 (PAL1)
@@ -579,10 +737,13 @@ class AssetProcessor:
         # 解析器塞这里
         self.formats = [
             ALL4Format,
+            ALAR2Format,
             ALAR3Format,
             ATXFormat,
             AFTFormat,
+            ALSNFormat,
             ATBFormat,
+            ARDFormat,
             ALIGFormat,
             AODFormat,
         ]
@@ -598,7 +759,7 @@ class AssetProcessor:
                         final_output = {}
                         for sub_name, sub_data in result.archive_files.items():
                             base_name = os.path.basename(filename)
-                            archive_dir = os.path.splitext(base_name)[0] + "_unpacked"
+                            archive_dir = os.path.splitext(base_name)[0]
                             sub_path = os.path.join(
                                 os.path.dirname(filename), archive_dir, sub_name
                             )
@@ -668,11 +829,7 @@ def process_directory(input_dir: str, output_dir: str):
         for final_name, final_content in final_files.items():
             clean_name = final_name.replace("\\", "/").lstrip("/")
 
-            # 数据表提取到MasterData
-            if clean_name.endswith(".json") or clean_name.endswith(".atb"):
-                target_path = Path("MasterData") / Path(clean_name).name
-            else:
-                target_path = out_path / clean_name
+            target_path = out_path / clean_name
 
             target_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -683,8 +840,8 @@ def process_directory(input_dir: str, output_dir: str):
                 final_content.save(target_path)
             success_count += 1
 
-    print(f"\n管道共输出 {success_count} 个最终资源。")
+    print(f"\n共输出 {success_count} 个资源")
 
 
 if __name__ == "__main__":
-    process_directory("./input", "./output")
+    process_directory(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else "./output")
