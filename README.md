@@ -5,7 +5,7 @@
 |    AlchemyStars    |    白夜极光    |           国际服 Lua           |
 |    AnchorPanic    |    锚点降临    |            国服 Lua            |
 |   AngelicaAsterR   |    当归紫苑    | Dmm Json，带数据表自动检查更新 |
-|      EverSoul      |    永恒灵魂    | 国际服 + 日服 Json，会定期上传 |
+|      EverSoul      |    永恒灵魂    | 国际服 + 日服 Json，自动检查更新 |
 |   GirlsCreationR   |      草画      | Dmm Json，带全资产自动检查更新 |
 |     LostSword     |    失落之剑    | 韩服 Json，带数据表自动检查更新 |
 | MirrenStarLegends |    千年之旅    |            国服 Csv            |
