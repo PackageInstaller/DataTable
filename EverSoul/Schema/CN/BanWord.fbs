@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table BanWord {
+  no: int32;
+  kr: string;
+  en: string;
+  ja: string;
+  zh_tw: string;
+  zh_cn: string;
+}
+
+table BanWordTable {
+  json: [BanWord];
+}
+
+root_type BanWordTable;

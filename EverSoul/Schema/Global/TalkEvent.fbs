@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table TalkEvent {
+  no: int32;
+  hero_no: string;
+  distance: int32;
+  ratio: int32;
+}
+
+table TalkEventTable {
+  json: [TalkEvent];
+}
+
+root_type TalkEventTable;

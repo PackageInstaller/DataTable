@@ -1,0 +1,35 @@
+namespace Tbl;
+
+table EventRotation {
+  no: int32;
+  group: int32;
+  event_number: int32;
+  reward_path: int32;
+  table_name: string;
+  column_name_1: string;
+  value_1: float;
+  column_name_2: string;
+  value_2: float;
+  column_name_3: string;
+  value_3: float;
+  column_name_4: string;
+  value_4: float;
+  column_name_5: string;
+  value_5: float;
+  column_name_6: string;
+  value_6: float;
+  column_name_7: string;
+  value_7: float;
+  column_name_8: string;
+  value_8: float;
+  column_name_9: string;
+  value_9: float;
+  column_name_10: string;
+  value_10: float;
+}
+
+table EventRotationTable {
+  json: [EventRotation];
+}
+
+root_type EventRotationTable;

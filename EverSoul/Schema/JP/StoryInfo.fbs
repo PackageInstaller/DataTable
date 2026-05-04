@@ -1,0 +1,38 @@
+namespace Tbl;
+
+table StoryInfo {
+  no: int32;
+  story_type: int32;
+  talk_group: int32;
+  messenger_group: int64;
+  limit_type: int32;
+  episode_limit: int32;
+  episode_location: int32;
+  act: int32;
+  episode: int32;
+  ending_affinity: int32;
+  episode_name_sno: int32;
+  episode_skip_no: int32;
+  chapter: int32;
+  story_img: string;
+  story_chapter_img: string;
+  clear_reward_item1: int32;
+  clear_reward_amount1: int32;
+  clear_reward_item2: int32;
+  clear_reward_amount2: int32;
+  clear_reward_item3: int32;
+  clear_reward_amount3: int32;
+  clear_reward_item4: int32;
+  clear_reward_amount4: int32;
+  clear_reward_item5: int32;
+  clear_reward_amount5: int32;
+  reward_story_receive: int32;
+  link_sd: int32;
+  bundle_path: string;
+}
+
+table StoryInfoTable {
+  json: [StoryInfo];
+}
+
+root_type StoryInfoTable;

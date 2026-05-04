@@ -1,0 +1,37 @@
+namespace Tbl;
+
+table DungeonTrainingLevel {
+  no: int32;
+  dungeon_type: int32;
+  dungeon_no: int32;
+  level: int32;
+  stair: int32;
+  difficulty: int32;
+  level_group_no: int32;
+  formation_min: int32;
+  formation_max: int32;
+  normal_level: int32;
+  normal_equip: int32;
+  normal_signiture: int32;
+  normal_ultimate: int32;
+  normal_reward_no: int32;
+  normal_coin: int32;
+  elite_level: int32;
+  elite_equip: int32;
+  elite_signiture: int32;
+  elite_ultimate: int32;
+  elite_reward_no: int32;
+  elite_coin: int32;
+  boss_level: int32;
+  boss_equip: int32;
+  boss_signiture: int32;
+  boss_ultimate: int32;
+  boss_reward_no: int32;
+  boss_coin: int32;
+}
+
+table DungeonTrainingLevelTable {
+  json: [DungeonTrainingLevel];
+}
+
+root_type DungeonTrainingLevelTable;

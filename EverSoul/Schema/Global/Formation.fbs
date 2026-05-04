@@ -1,0 +1,24 @@
+namespace Tbl;
+
+table Formation {
+  no: int32;
+  formation_type: int32;
+  slot_no: int32;
+  attack_rate: float;
+  defence_rate: float;
+  max_hp_rate: float;
+  critical_rate: float;
+  critical_power: float;
+  hit: float;
+  dodge: float;
+  physical_resist: float;
+  magic_resist: float;
+  life_leech: float;
+  attack_speed: float;
+}
+
+table FormationTable {
+  json: [Formation];
+}
+
+root_type FormationTable;

@@ -1,0 +1,25 @@
+namespace Tbl;
+
+table EventChallengeStageRental {
+  no: int32;
+  challenge_no: int32;
+  hero_no: int32;
+  hero_grade: int32;
+  signature_no: int32;
+  signature_grade: int32;
+  signature_level: int32;
+  slot_1: int32;
+  slot_level_1: int32;
+  slot_2: int32;
+  slot_level_2: int32;
+  slot_3: int32;
+  slot_level_3: int32;
+  slot_4: int32;
+  slot_level_4: int32;
+}
+
+table EventChallengeStageRentalTable {
+  json: [EventChallengeStageRental];
+}
+
+root_type EventChallengeStageRentalTable;

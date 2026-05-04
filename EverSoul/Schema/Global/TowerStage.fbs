@@ -1,0 +1,27 @@
+namespace Tbl;
+
+table TowerStage {
+  no: int32;
+  floor: int32;
+  stage_type: int32;
+  name_sno: int32;
+  enemy_group: int32;
+  reward_1: int32;
+  amount_1: int32;
+  reward_2: int32;
+  amount_2: int32;
+  clear_story: int32;
+  map: string;
+  rental_hero: int32;
+  rental_level: int32;
+  buff: int32;
+  check_level: int32;
+  check_grade: int32;
+  battle_time: int32;
+}
+
+table TowerStageTable {
+  json: [TowerStage];
+}
+
+root_type TowerStageTable;

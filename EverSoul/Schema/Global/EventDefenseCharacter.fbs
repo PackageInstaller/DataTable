@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table EventDefenseCharacter {
+  no: int32;
+  hero_no: int32;
+  attack1: int32;
+  attack2: int32;
+  attack3: int32;
+}
+
+table EventDefenseCharacterTable {
+  json: [EventDefenseCharacter];
+}
+
+root_type EventDefenseCharacterTable;

@@ -1,0 +1,27 @@
+namespace Tbl;
+
+table DungeonRotationLevel {
+  no: int32;
+  dungeon_no: int32;
+  level: int32;
+  level_group_no: int32;
+  formation_min: int32;
+  formation_max: int32;
+  monster_type: int32;
+  monster_level: int32;
+  monster_equip: int32;
+  monster_signiture: int32;
+  monster_ultimate: int32;
+  item_no_1: int32;
+  amount_1: int32;
+  item_no_2: int32;
+  amount_2: int32;
+  item_no_3: int32;
+  amount_3: int32;
+}
+
+table DungeonRotationLevelTable {
+  json: [DungeonRotationLevel];
+}
+
+root_type DungeonRotationLevelTable;

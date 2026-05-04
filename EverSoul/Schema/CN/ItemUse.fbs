@@ -1,0 +1,18 @@
+namespace Tbl;
+
+table ItemUse {
+  index: int32;
+  no: int32;
+  type: int32;
+  type_code: string;
+  need_amount: int32;
+  value: int32;
+  value2: int32;
+  max_use_count: int32;
+}
+
+table ItemUseTable {
+  json: [ItemUse];
+}
+
+root_type ItemUseTable;

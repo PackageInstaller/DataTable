@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table EventBingo {
+  no: int32;
+  group: int32;
+  bingo_no: int32;
+  reward_type: int32;
+  reward_item: int32;
+  reward_amount: int32;
+}
+
+table EventBingoTable {
+  json: [EventBingo];
+}
+
+root_type EventBingoTable;

@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table GachaMileageReward {
+  no: int32;
+  gacha_mileage_no: int32;
+  mileage_point: int32;
+  item_no: int32;
+  item_value: int32;
+  repeat: int32;
+}
+
+table GachaMileageRewardTable {
+  json: [GachaMileageReward];
+}
+
+root_type GachaMileageRewardTable;

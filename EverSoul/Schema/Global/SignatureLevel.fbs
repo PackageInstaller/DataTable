@@ -1,0 +1,26 @@
+namespace Tbl;
+
+table SignatureLevel {
+  no: int32;
+  group: int32;
+  signature_level: int32;
+  race_group: int32;
+  attack_rate: float;
+  defence_rate: float;
+  max_hp_rate: float;
+  critical_rate: float;
+  critical_power: float;
+  hit: int32;
+  dodge: int32;
+  physical_resist: float;
+  magic_resist: float;
+  life_leech: float;
+  attack_speed: float;
+  battle_power_per: float;
+}
+
+table SignatureLevelTable {
+  json: [SignatureLevel];
+}
+
+root_type SignatureLevelTable;

@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table EdenAlliancePoint {
+  no: int32;
+  level: int32;
+  point: int32;
+}
+
+table EdenAlliancePointTable {
+  json: [EdenAlliancePoint];
+}
+
+root_type EdenAlliancePointTable;

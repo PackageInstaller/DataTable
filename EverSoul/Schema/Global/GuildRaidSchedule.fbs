@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table GuildRaidSchedule {
+  no: int32;
+  raid_no: int32;
+  server_check: int32;
+  schedule_key: string;
+}
+
+table GuildRaidScheduleTable {
+  json: [GuildRaidSchedule];
+}
+
+root_type GuildRaidScheduleTable;

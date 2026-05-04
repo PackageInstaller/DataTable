@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table CashShopHeroPass {
+  no: int32;
+  shop_no: int32;
+  hero_no: int32;
+  hero_image_position: string;
+}
+
+table CashShopHeroPassTable {
+  json: [CashShopHeroPass];
+}
+
+root_type CashShopHeroPassTable;

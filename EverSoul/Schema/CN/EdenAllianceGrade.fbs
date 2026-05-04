@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table EdenAllianceGrade {
+  no: int32;
+  level: int32;
+  grade: int32;
+}
+
+table EdenAllianceGradeTable {
+  json: [EdenAllianceGrade];
+}
+
+root_type EdenAllianceGradeTable;

@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table AchievementSubCategory {
+  no: int32;
+  category: int32;
+  sub_category: int32;
+  icon_path: string;
+}
+
+table AchievementSubCategoryTable {
+  json: [AchievementSubCategory];
+}
+
+root_type AchievementSubCategoryTable;

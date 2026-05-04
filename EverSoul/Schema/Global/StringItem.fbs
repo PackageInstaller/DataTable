@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table StringItem {
+  no: int32;
+  kr: string;
+  en: string;
+  ja: string;
+  zh_tw: string;
+  zh_cn: string;
+}
+
+table StringItemTable {
+  json: [StringItem];
+}
+
+root_type StringItemTable;

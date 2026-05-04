@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table VistaTreasure {
+  no: int32;
+  reward_group: int32;
+  normal_reward_item_1: int32;
+  normal_reward_amount_1: int32;
+  random_reward_item_1: int32;
+  random_reward_amount_min_1: int32;
+  random_reward_amount_max_1: int32;
+}
+
+table VistaTreasureTable {
+  json: [VistaTreasure];
+}
+
+root_type VistaTreasureTable;

@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table EventViewStory {
+  no: int32;
+  event_group: int32;
+  event_number: int32;
+  viewer_type: int32;
+  story_value: int32;
+  bg_path: string;
+}
+
+table EventViewStoryTable {
+  json: [EventViewStory];
+}
+
+root_type EventViewStoryTable;

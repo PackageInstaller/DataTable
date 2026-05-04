@@ -1,0 +1,22 @@
+namespace Tbl;
+
+table EdenUnionReward {
+  no: int32;
+  union_group: int32;
+  clear_level: int32;
+  tier_no: int32;
+  tier_string_no: int32;
+  tier_path: string;
+  reward_item_no_1: int32;
+  reward_item_amount_1: int32;
+  reward_item_no_2: int32;
+  reward_item_amount_2: int32;
+  reward_item_no_3: int32;
+  reward_item_amount_3: int32;
+}
+
+table EdenUnionRewardTable {
+  json: [EdenUnionReward];
+}
+
+root_type EdenUnionRewardTable;

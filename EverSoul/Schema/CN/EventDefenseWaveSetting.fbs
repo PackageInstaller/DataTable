@@ -1,0 +1,23 @@
+namespace Tbl;
+
+table EventDefenseWaveSetting {
+  no: int32;
+  event_group: int32;
+  wave_start_time: int32;
+  wave_monster_no_1: int32;
+  wave_monster_amount_1: int32;
+  wave_monster_no_2: int32;
+  wave_monster_amount_2: int32;
+  wave_monster_no_3: int32;
+  wave_monster_amount_3: int32;
+  wave_monster_no_4: int32;
+  wave_monster_amount_4: int32;
+  wave_monster_no_5: int32;
+  wave_monster_amount_5: int32;
+}
+
+table EventDefenseWaveSettingTable {
+  json: [EventDefenseWaveSetting];
+}
+
+root_type EventDefenseWaveSettingTable;

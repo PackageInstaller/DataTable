@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table VistaBossLevelGrade {
+  index: int32;
+  level: int32;
+  value: float;
+}
+
+table VistaBossLevelGradeTable {
+  json: [VistaBossLevelGrade];
+}
+
+root_type VistaBossLevelGradeTable;

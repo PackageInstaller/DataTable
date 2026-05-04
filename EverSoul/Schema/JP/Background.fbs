@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table Background {
+  no: int32;
+  icon_path: string;
+  prefab: string;
+}
+
+table BackgroundTable {
+  json: [Background];
+}
+
+root_type BackgroundTable;

@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table EventBossRushRental {
+  id: int32;
+  dungeon_level: int32;
+  rental_group: int32;
+  rental_no: int32;
+}
+
+table EventBossRushRentalTable {
+  json: [EventBossRushRental];
+}
+
+root_type EventBossRushRentalTable;

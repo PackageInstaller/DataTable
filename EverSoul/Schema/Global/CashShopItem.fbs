@@ -1,0 +1,45 @@
+namespace Tbl;
+
+table CashShopItem {
+  no: int32;
+  shop_no: int32;
+  item_sort_no: int32;
+  name_sno: int32;
+  item_info_sno: int32;
+  desc_sno: int32;
+  package_type: int32;
+  type: string;
+  type_value: string;
+  limit_hour: int32;
+  limit_buy: int32;
+  item_infos: string;
+  item_no1: int32;
+  item_amount1: int32;
+  item_no2: int32;
+  item_amount2: int32;
+  item_no3: int32;
+  item_amount3: int32;
+  item_no4: int32;
+  item_amount4: int32;
+  item_no5: int32;
+  item_amount5: int32;
+  item_no6: int32;
+  item_amount6: int32;
+  bg: string;
+  price_krw: int32;
+  price_other: string;
+  pid_google: string;
+  pid_apple: string;
+  item_img: string;
+  check_contents_limit: int32;
+  banner_name: string;
+  highlight: string;
+  item_highlight: string;
+  sale_rate: int32;
+}
+
+table CashShopItemTable {
+  json: [CashShopItem];
+}
+
+root_type CashShopItemTable;

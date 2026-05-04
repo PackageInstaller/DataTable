@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table SkillCondition {
+  no: int32;
+  condition_key: int32;
+  condition_target: int32;
+  condition_value_1: double;
+  condition_value_2: int32;
+}
+
+table SkillConditionTable {
+  json: [SkillCondition];
+}
+
+root_type SkillConditionTable;

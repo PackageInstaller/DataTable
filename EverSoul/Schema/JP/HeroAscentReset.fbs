@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table HeroAscentReset {
+  no: int32;
+  reset_race: int32;
+  reset_grade: int32;
+  memory_amount: int32;
+  material_item_no: int32;
+  material_item_amount: int32;
+}
+
+table HeroAscentResetTable {
+  json: [HeroAscentReset];
+}
+
+root_type HeroAscentResetTable;

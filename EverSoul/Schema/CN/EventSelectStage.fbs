@@ -1,0 +1,27 @@
+namespace Tbl;
+
+table EventSelectStage {
+  no: int32;
+  event_group: int32;
+  event_number: int32;
+  stage_limit_value: int32;
+  stage_limit_sno: int32;
+  buy_item_no: int32;
+  buy_item_amount: string;
+  stage_name_sno: int32;
+  hero1_path: string;
+  hero1_reverse: bool;
+  hero1_bg_path: string;
+  hero1_bg_color: string;
+  hero2_path: string;
+  hero2_reverse: bool;
+  hero2_bg_path: string;
+  hero2_bg_color: string;
+  bg_path: string;
+}
+
+table EventSelectStageTable {
+  json: [EventSelectStage];
+}
+
+root_type EventSelectStageTable;

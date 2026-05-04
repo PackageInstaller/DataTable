@@ -1,0 +1,21 @@
+namespace Tbl;
+
+table Soullink {
+  No: int32;
+  Collection: int32;
+  Group_Slot: string;
+  Group_Content: string;
+  Group_Hero1: int32;
+  Group_Hero2: int32;
+  Group_Hero3: int32;
+  Group_Hero4: int32;
+  Group_Title: int32;
+  Group_Story: int32;
+  Open_date: string;
+}
+
+table SoullinkTable {
+  json: [Soullink];
+}
+
+root_type SoullinkTable;

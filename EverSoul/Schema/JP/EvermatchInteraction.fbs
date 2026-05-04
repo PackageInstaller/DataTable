@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table EvermatchInteraction {
+  no: int32;
+  actor_no: int32;
+  action_type: int32;
+  voice: string;
+  animation: string;
+  emotion: string;
+}
+
+table EvermatchInteractionTable {
+  json: [EvermatchInteraction];
+}
+
+root_type EvermatchInteractionTable;

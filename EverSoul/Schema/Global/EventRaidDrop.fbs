@@ -1,0 +1,25 @@
+namespace Tbl;
+
+table EventRaidDrop {
+  no: int32;
+  event_stage_group: int32;
+  event_number: int32;
+  damage_value: int32;
+  drop_item_no_1: int32;
+  drop_item_amount_1: int32;
+  drop_item_no_2: int32;
+  drop_item_amount_2: int32;
+  drop_item_no_3: int32;
+  drop_item_amount_3: int32;
+  drop_item_no_4: int32;
+  drop_item_amount_4: int32;
+  drop_item_no_5: int32;
+  drop_item_amount_5: int32;
+  is_repeatable: int32;
+}
+
+table EventRaidDropTable {
+  json: [EventRaidDrop];
+}
+
+root_type EventRaidDropTable;

@@ -1,0 +1,34 @@
+namespace Tbl;
+
+table MessageMail {
+  no: int32;
+  type: int32;
+  sender_sno: int32;
+  title_sno: int32;
+  desc_sno: int32;
+  start_date: string;
+  end_date: string;
+  icon_path: string;
+  bg_path: string;
+  bg_color: string;
+  pattern_color: string;
+  deco_color: string;
+  font_color: string;
+  stamp_color: string;
+  reward_no_1: int32;
+  reward_amount_1: int32;
+  reward_no_2: int32;
+  reward_amount_2: int32;
+  reward_no_3: int32;
+  reward_amount_3: int32;
+  reward_no_4: int32;
+  reward_amount_4: int32;
+  reward_no_5: int32;
+  reward_amount_5: int32;
+}
+
+table MessageMailTable {
+  json: [MessageMail];
+}
+
+root_type MessageMailTable;

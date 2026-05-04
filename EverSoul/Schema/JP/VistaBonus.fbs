@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table VistaBonus {
+  no: int32;
+  vista_no: int32;
+  bonus_hero: int32;
+  bonus_rate: int32;
+}
+
+table VistaBonusTable {
+  json: [VistaBonus];
+}
+
+root_type VistaBonusTable;

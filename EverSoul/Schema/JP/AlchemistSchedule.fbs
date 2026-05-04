@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table AlchemistSchedule {
+  no: int32;
+  hero_check: int32;
+  server_check: int32;
+  open_date: string;
+}
+
+table AlchemistScheduleTable {
+  json: [AlchemistSchedule];
+}
+
+root_type AlchemistScheduleTable;

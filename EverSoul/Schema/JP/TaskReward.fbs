@@ -1,0 +1,19 @@
+namespace Tbl;
+
+table TaskReward {
+  no: int32;
+  type: int32;
+  point: int32;
+  item_no_1: int32;
+  amount_1: int32;
+  item_no_2: int32;
+  amount_2: int32;
+  item_no_3: int32;
+  amount_3: int32;
+}
+
+table TaskRewardTable {
+  json: [TaskReward];
+}
+
+root_type TaskRewardTable;

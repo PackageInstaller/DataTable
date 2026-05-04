@@ -1,0 +1,46 @@
+namespace Tbl;
+
+table Skill {
+  index: int32;
+  no: int32;
+  name_sno: int32;
+  tooltip_sno: int32;
+  type: int32;
+  is_ally: int32;
+  grade: int32;
+  hero_level: int32;
+  level: int32;
+  skill_condition: int32;
+  code_1: int32;
+  code_2: int32;
+  code_3: int32;
+  code_4: int32;
+  code_5: int32;
+  code_6: int32;
+  code_7: int32;
+  code_8: int32;
+  code_9: int32;
+  code_extend: string;
+  global_cooltime: float;
+  target: int32;
+  move_type: int32;
+  move_time: float;
+  move_position: int32;
+  move_position_offset: float;
+  cost: int32;
+  pre_cool_time: float;
+  cool_time: float;
+  range: float;
+  passive_use_order: int32;
+  never_miss: int32;
+  scene_target_key: int32;
+  anim_path: string;
+  icon_prefab: int32;
+  skill_string: int32;
+}
+
+table SkillTable {
+  json: [Skill];
+}
+
+root_type SkillTable;

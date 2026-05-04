@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table EverLiveAnim {
+  no: int32;
+  anim_group: int32;
+  anim_type: int32;
+  anim_path: string;
+}
+
+table EverLiveAnimTable {
+  json: [EverLiveAnim];
+}
+
+root_type EverLiveAnimTable;

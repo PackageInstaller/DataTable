@@ -1,0 +1,21 @@
+namespace Tbl;
+
+table DungeonChestRewardRotation {
+  no: int32;
+  group_no: int32;
+  dungeon_level: int32;
+  dungeon_no: int32;
+  grade: int32;
+  dropitem_no: int32;
+  first_reward_no_1: int32;
+  first_reward_amount_1: int32;
+  first_reward_no_2: int32;
+  first_reward_amount_2: int32;
+  first_reward_group: int32;
+}
+
+table DungeonChestRewardRotationTable {
+  json: [DungeonChestRewardRotation];
+}
+
+root_type DungeonChestRewardRotationTable;

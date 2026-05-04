@@ -1,0 +1,19 @@
+namespace Tbl;
+
+table SoullinkCollection {
+  no: int32;
+  collection_group: int32;
+  condition_list: int32;
+  condition: int32;
+  condition_string: int32;
+  condition_count: int32;
+  condition_get: int32;
+  contents_buff_no: int32;
+  buff_type_no: int32;
+}
+
+table SoullinkCollectionTable {
+  json: [SoullinkCollection];
+}
+
+root_type SoullinkCollectionTable;

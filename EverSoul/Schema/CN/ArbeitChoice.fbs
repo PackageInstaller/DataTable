@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table ArbeitChoice {
+  no: int32;
+  arbeit_no: int32;
+  objet_no: int32;
+  arbeit_ratio: int32;
+  daynight: string;
+}
+
+table ArbeitChoiceTable {
+  json: [ArbeitChoice];
+}
+
+root_type ArbeitChoiceTable;

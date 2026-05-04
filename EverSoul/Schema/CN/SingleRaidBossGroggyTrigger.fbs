@@ -1,0 +1,33 @@
+namespace Tbl;
+
+table SingleRaidBossGroggyTrigger {
+  single_raid_boss_no: int32;
+  groggy_skill_code_1: int32;
+  groggy_skill_code_2: int32;
+  groggy_skill_code_3: int32;
+  groggy_skill_code_4: int32;
+  groggy_skill_code_5: int32;
+  groggy_skill_code_6: int32;
+  groggy_skill_code_7: int32;
+  groggy_skill_code_8: int32;
+  groggy_skill_code_9: int32;
+  groggy_skill_code_10: int32;
+  type_1: int32;
+  value_1: float;
+  type_2: int32;
+  value_2: float;
+  type_3: int32;
+  value_3: float;
+  type_4: int32;
+  value_4: float;
+  type_5: int32;
+  value_5: float;
+  recovery_duration: int32;
+  sound_path: string;
+}
+
+table SingleRaidBossGroggyTriggerTable {
+  json: [SingleRaidBossGroggyTrigger];
+}
+
+root_type SingleRaidBossGroggyTriggerTable;

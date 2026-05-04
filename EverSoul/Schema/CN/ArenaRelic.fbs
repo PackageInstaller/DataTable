@@ -1,0 +1,19 @@
+namespace Tbl;
+
+table ArenaRelic {
+  no: int32;
+  foe: int32;
+  group: int32;
+  grade_sno: int32;
+  battlebuff_no: int32;
+  relic_type: int32;
+  icon_img: string;
+  name_sno: int32;
+  desc_sno: int32;
+}
+
+table ArenaRelicTable {
+  json: [ArenaRelic];
+}
+
+root_type ArenaRelicTable;

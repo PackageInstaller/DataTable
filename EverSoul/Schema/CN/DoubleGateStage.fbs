@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table DoubleGateStage {
+  no: int32;
+  group: int32;
+  min_step: int32;
+  max_step: int32;
+  stage_no: int32;
+  stage_bg1: int32;
+  stage_bg2: int32;
+}
+
+table DoubleGateStageTable {
+  json: [DoubleGateStage];
+}
+
+root_type DoubleGateStageTable;

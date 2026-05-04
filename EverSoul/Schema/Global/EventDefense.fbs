@@ -1,0 +1,28 @@
+namespace Tbl;
+
+table EventDefense {
+  no: int32;
+  event_group: int32;
+  game_type: int32;
+  stage_name_sno: int32;
+  mission_sno: int32;
+  bg_path: string;
+  sound_path: string;
+  playable_hero_no: int32;
+  vehicle_prefab: string;
+  transformation_hero_no: int32;
+  transformation_setting_no: int32;
+  camera_setting_no: int32;
+  playtime: int32;
+  limit_value: int32;
+  is_additional_enter: int32;
+  additional_enter_price: string;
+  limit_sno: int32;
+  map: string;
+}
+
+table EventDefenseTable {
+  json: [EventDefense];
+}
+
+root_type EventDefenseTable;

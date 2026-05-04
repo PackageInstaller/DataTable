@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table Loading {
+  no: int32;
+  template_no: int32;
+  template_title: int32;
+  template_string: int32;
+  template_img: string;
+  template_bg: string;
+}
+
+table LoadingTable {
+  json: [Loading];
+}
+
+root_type LoadingTable;

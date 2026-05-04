@@ -1,0 +1,28 @@
+namespace Tbl;
+
+table Shop {
+  no: int32;
+  name_sno: int32;
+  random_cnt: int32;
+  reset_hour: int32;
+  pay_item_no: int32;
+  pay_amount: int32;
+  reset_count: int32;
+  check_stage_no: int32;
+  tip_sno_1: int32;
+  tip_sno_2: int32;
+  tip_sno_3: int32;
+  tip2_sno_1: int32;
+  tip2_sno_2: int32;
+  tip2_sno_3: int32;
+  tip3_sno_1: int32;
+  tip3_sno_2: int32;
+  tip3_sno_3: int32;
+  shop_group: int32;
+}
+
+table ShopTable {
+  json: [Shop];
+}
+
+root_type ShopTable;

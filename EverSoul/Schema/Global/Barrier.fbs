@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table Barrier {
+  no: int32;
+  stage_type: int32;
+  text_name_sno: int32;
+  open_day: string;
+  restrictions_race_sno: int32;
+}
+
+table BarrierTable {
+  json: [Barrier];
+}
+
+root_type BarrierTable;

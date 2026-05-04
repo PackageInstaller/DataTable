@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table CashShopCustomItem {
+  no: int32;
+  shop_item_no: int32;
+  slot_no: int32;
+  type: int32;
+  group_grade: int32;
+  item_no: int32;
+  item_amount: int32;
+}
+
+table CashShopCustomItemTable {
+  json: [CashShopCustomItem];
+}
+
+root_type CashShopCustomItemTable;

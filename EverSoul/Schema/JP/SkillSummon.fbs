@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table SkillSummon {
+  no: int32;
+  summon_no: int32;
+  hero_no: int32;
+  position_no: int32;
+  is_ally: int32;
+}
+
+table SkillSummonTable {
+  json: [SkillSummon];
+}
+
+root_type SkillSummonTable;

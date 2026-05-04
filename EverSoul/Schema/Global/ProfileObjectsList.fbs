@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table ProfileObjectsList {
+  no: int32;
+  group_no: int32;
+  img_path: string;
+  item_no: int32;
+  title_visible_type: int32;
+  title_line_path: int32;
+  title_string: int32;
+}
+
+table ProfileObjectsListTable {
+  json: [ProfileObjectsList];
+}
+
+root_type ProfileObjectsListTable;

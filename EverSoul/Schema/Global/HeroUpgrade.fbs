@@ -1,0 +1,21 @@
+namespace Tbl;
+
+table HeroUpgrade {
+  no: int32;
+  grade_sno: int32;
+  race_sno: int32;
+  material_race_sno_1: int32;
+  material_grade_sno_1: int32;
+  material_race_sno_2: int32;
+  material_grade_sno_2: int32;
+  replace_hero_no_1: int32;
+  replace_hero_count_1: int32;
+  replace_hero_no_2: int32;
+  replace_hero_count_2: int32;
+}
+
+table HeroUpgradeTable {
+  json: [HeroUpgrade];
+}
+
+root_type HeroUpgradeTable;

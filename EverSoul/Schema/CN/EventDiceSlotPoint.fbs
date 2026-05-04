@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table EventDiceSlotPoint {
+  no: int32;
+  slot_point_group: int32;
+  reward_point: int32;
+  icon_path: string;
+  icon_scale: float;
+}
+
+table EventDiceSlotPointTable {
+  json: [EventDiceSlotPoint];
+}
+
+root_type EventDiceSlotPointTable;

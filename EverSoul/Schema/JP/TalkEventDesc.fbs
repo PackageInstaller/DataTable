@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table TalkEventDesc {
+  no: int32;
+  event_no: int32;
+  order: int32;
+  desc_list: string;
+}
+
+table TalkEventDescTable {
+  json: [TalkEventDesc];
+}
+
+root_type TalkEventDescTable;

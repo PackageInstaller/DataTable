@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table SpiritTree {
+  no: int32;
+  life_essence_amount: int32;
+  dia_amount: int32;
+}
+
+table SpiritTreeTable {
+  json: [SpiritTree];
+}
+
+root_type SpiritTreeTable;

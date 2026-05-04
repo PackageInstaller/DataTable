@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table HeroLevelGrade {
+  index: int32;
+  level: int32;
+  value: float;
+}
+
+table HeroLevelGradeTable {
+  json: [HeroLevelGrade];
+}
+
+root_type HeroLevelGradeTable;

@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table StorySchedule {
+  no: int32;
+  storytype: int32;
+  act: int32;
+  chapter: int32;
+  episode: int32;
+  open_date: string;
+  end_date: string;
+}
+
+table StoryScheduleTable {
+  json: [StorySchedule];
+}
+
+root_type StoryScheduleTable;

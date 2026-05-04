@@ -1,0 +1,21 @@
+namespace Tbl;
+
+table EdenAllianceMission {
+  no: int32;
+  mission_type: int32;
+  title_sno: int32;
+  content_sno: int32;
+  value_1: int32;
+  value_2: int32;
+  value_3: int32;
+  value_4: int32;
+  value_5: int32;
+  reward_item_no: int32;
+  reward_item_amount: int32;
+}
+
+table EdenAllianceMissionTable {
+  json: [EdenAllianceMission];
+}
+
+root_type EdenAllianceMissionTable;

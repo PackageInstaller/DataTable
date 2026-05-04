@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table SkillDispel {
+  no: int32;
+  dispel_group: int32;
+  buff_type: int32;
+  buff_id: int32;
+  count: int32;
+}
+
+table SkillDispelTable {
+  json: [SkillDispel];
+}
+
+root_type SkillDispelTable;

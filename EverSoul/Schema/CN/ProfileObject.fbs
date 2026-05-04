@@ -1,0 +1,21 @@
+namespace Tbl;
+
+table ProfileObject {
+  no: int32;
+  subject: int32;
+  object_name: string;
+  name_sno: int32;
+  edit_group: string;
+  place_limit: int32;
+  always_on: int32;
+  button_delete: int32;
+  button_flip: int32;
+  button_scale: int32;
+  rotate: int32;
+}
+
+table ProfileObjectTable {
+  json: [ProfileObject];
+}
+
+root_type ProfileObjectTable;

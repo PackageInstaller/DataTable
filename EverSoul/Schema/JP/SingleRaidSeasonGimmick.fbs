@@ -1,0 +1,27 @@
+namespace Tbl;
+
+table SingleRaidSeasonGimmick {
+  no: int32;
+  season_no: int32;
+  raid_no: int32;
+  level: int32;
+  icon_path: string;
+  string_no: int32;
+  string_content_no: int32;
+  gimmick_type_1: int32;
+  gimmick_value_1: int32;
+  gimmick_type_2: int32;
+  gimmick_value_2: int32;
+  gimmick_type_3: int32;
+  gimmick_value_3: int32;
+  gimmick_type_4: int32;
+  gimmick_value_4: int32;
+  gimmick_type_5: int32;
+  gimmick_value_5: int32;
+}
+
+table SingleRaidSeasonGimmickTable {
+  json: [SingleRaidSeasonGimmick];
+}
+
+root_type SingleRaidSeasonGimmickTable;

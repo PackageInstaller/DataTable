@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table Sound {
+  no: int32;
+  name: string;
+  sound_type: int8;
+  mixer_group: int8;
+  kor: string;
+  jpn: string;
+  volume: float;
+}
+
+table SoundTable {
+  json: [Sound];
+}
+
+root_type SoundTable;

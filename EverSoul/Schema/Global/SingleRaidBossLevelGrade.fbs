@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table SingleRaidBossLevelGrade {
+  index: int32;
+  level: int32;
+  value: float;
+}
+
+table SingleRaidBossLevelGradeTable {
+  json: [SingleRaidBossLevelGrade];
+}
+
+root_type SingleRaidBossLevelGradeTable;

@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table HeroGift {
+  hero_no: int32;
+  prefer_gift_items: string;
+  start_lovepoint: int32;
+  lovebuff_type: int32;
+}
+
+table HeroGiftTable {
+  json: [HeroGift];
+}
+
+root_type HeroGiftTable;

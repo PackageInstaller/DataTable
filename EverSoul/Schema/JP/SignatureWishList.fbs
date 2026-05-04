@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table SignatureWishList {
+  signature_no: int32;
+  limit_check: int32;
+  view_type: int32;
+}
+
+table SignatureWishListTable {
+  json: [SignatureWishList];
+}
+
+root_type SignatureWishListTable;

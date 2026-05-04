@@ -1,0 +1,18 @@
+namespace Tbl;
+
+table ItemSource {
+  no: int32;
+  item_no: int32;
+  item_source_sno_1: int32;
+  move_behavior_1: int32;
+  item_source_sno_2: int32;
+  move_behavior_2: int32;
+  item_source_sno_3: int32;
+  move_behavior_3: int32;
+}
+
+table ItemSourceTable {
+  json: [ItemSource];
+}
+
+root_type ItemSourceTable;

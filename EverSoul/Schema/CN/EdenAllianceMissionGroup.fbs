@@ -1,0 +1,31 @@
+namespace Tbl;
+
+table EdenAllianceMissionGroup {
+  no: int32;
+  mission_no_1: int32;
+  mission_no_2: int32;
+  mission_no_3: int32;
+  mission_no_4: int32;
+  mission_no_5: int32;
+  mission_no_6: int32;
+  mission_no_7: int32;
+  mission_no_8: int32;
+  mission_no_9: int32;
+  mission_no_10: int32;
+  mission_no_11: int32;
+  mission_no_12: int32;
+  mission_no_13: int32;
+  mission_no_14: int32;
+  mission_no_15: int32;
+  mission_no_16: int32;
+  mission_no_17: int32;
+  mission_no_18: int32;
+  mission_no_19: int32;
+  mission_no_20: int32;
+}
+
+table EdenAllianceMissionGroupTable {
+  json: [EdenAllianceMissionGroup];
+}
+
+root_type EdenAllianceMissionGroupTable;

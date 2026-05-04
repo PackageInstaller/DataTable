@@ -1,0 +1,20 @@
+namespace Tbl;
+
+table EdenAlliance {
+  no: int32;
+  battle_group: int32;
+  name_sno: int32;
+  story_no: int32;
+  bg_path: string;
+  sound_path: string;
+  emblem_path: string;
+  reward_group: int32;
+  reward_cycle: int32;
+  schedule_key: string;
+}
+
+table EdenAllianceTable {
+  json: [EdenAlliance];
+}
+
+root_type EdenAllianceTable;

@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table SkillIcon {
+  no: int32;
+  icon: string;
+  color: string;
+}
+
+table SkillIconTable {
+  json: [SkillIcon];
+}
+
+root_type SkillIconTable;

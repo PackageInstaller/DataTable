@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table PromotionMovie {
+  no: int32;
+  movie_path: string;
+  start_date: string;
+  end_date: string;
+  hero_check: int32;
+}
+
+table PromotionMovieTable {
+  json: [PromotionMovie];
+}
+
+root_type PromotionMovieTable;

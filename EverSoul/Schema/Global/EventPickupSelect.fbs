@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table EventPickupSelect {
+  no: int32;
+  group: int32;
+  gacha_no: int32;
+  hero_no: int32;
+}
+
+table EventPickupSelectTable {
+  json: [EventPickupSelect];
+}
+
+root_type EventPickupSelectTable;

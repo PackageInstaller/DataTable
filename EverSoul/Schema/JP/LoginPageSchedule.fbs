@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table LoginPageSchedule {
+  no: int32;
+  login_path: string;
+  start_date: string;
+  end_date: string;
+}
+
+table LoginPageScheduleTable {
+  json: [LoginPageSchedule];
+}
+
+root_type LoginPageScheduleTable;

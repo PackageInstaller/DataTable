@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table DoubleGateBuff {
+  no: int32;
+  buff_group: int32;
+  buff_no: int32;
+  buff_name_sno: int32;
+  buff_tooltip_sno: int32;
+}
+
+table DoubleGateBuffTable {
+  json: [DoubleGateBuff];
+}
+
+root_type DoubleGateBuffTable;

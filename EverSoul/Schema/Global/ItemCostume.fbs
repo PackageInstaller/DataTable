@@ -1,0 +1,20 @@
+namespace Tbl;
+
+table ItemCostume {
+  no: int32;
+  type_sno: int32;
+  name_sno: int32;
+  hero_no: int32;
+  prefab_path: string;
+  timeline_path: string;
+  icon_path: string;
+  portrait_path: string;
+  controller_path: string;
+  scale_set: float;
+}
+
+table ItemCostumeTable {
+  json: [ItemCostume];
+}
+
+root_type ItemCostumeTable;

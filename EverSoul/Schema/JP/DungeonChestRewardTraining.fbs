@@ -1,0 +1,23 @@
+namespace Tbl;
+
+table DungeonChestRewardTraining {
+  no: int32;
+  group_no: int32;
+  dungeon_no: int32;
+  reward_no_1: int32;
+  reward_amount_1: int32;
+  reward_no_2: int32;
+  reward_amount_2: int32;
+  reward_no_3: int32;
+  reward_amount_3: int32;
+  reward_no_4: int32;
+  reward_amount_4: int32;
+  floor_reward_no: int32;
+  difficulty: int32;
+}
+
+table DungeonChestRewardTrainingTable {
+  json: [DungeonChestRewardTraining];
+}
+
+root_type DungeonChestRewardTrainingTable;

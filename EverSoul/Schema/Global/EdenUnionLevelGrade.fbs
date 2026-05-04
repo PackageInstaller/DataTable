@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table EdenUnionLevelGrade {
+  index: int32;
+  level: int32;
+  value: float;
+}
+
+table EdenUnionLevelGradeTable {
+  json: [EdenUnionLevelGrade];
+}
+
+root_type EdenUnionLevelGradeTable;

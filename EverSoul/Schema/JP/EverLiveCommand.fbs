@@ -1,0 +1,25 @@
+namespace Tbl;
+
+table EverLiveCommand {
+  no: int32;
+  command_group: int32;
+  command_type: int32;
+  command_note: string;
+  command_trigger: int32;
+  trigger_position: string;
+  command_hit: string;
+  command_step: int32;
+  command_normalanim: int32;
+  command_specialanim: int32;
+  specialanim_cha: int32;
+  step_time: int32;
+  step_delay: int32;
+  command_delay: float;
+  command_speed: float;
+}
+
+table EverLiveCommandTable {
+  json: [EverLiveCommand];
+}
+
+root_type EverLiveCommandTable;

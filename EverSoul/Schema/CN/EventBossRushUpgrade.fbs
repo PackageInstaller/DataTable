@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table EventBossRushUpgrade {
+  id: int32;
+  contentsbuff_group: int32;
+  contentsbuff_level: int32;
+  contentsbuff_no: int32;
+  buff_effect_value: float;
+  item_amount: int32;
+}
+
+table EventBossRushUpgradeTable {
+  json: [EventBossRushUpgrade];
+}
+
+root_type EventBossRushUpgradeTable;

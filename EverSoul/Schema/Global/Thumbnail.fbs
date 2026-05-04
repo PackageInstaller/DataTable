@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table Thumbnail {
+  no: int32;
+  item_kind: string;
+  icon_path: string;
+  order: int32;
+}
+
+table ThumbnailTable {
+  json: [Thumbnail];
+}
+
+root_type ThumbnailTable;

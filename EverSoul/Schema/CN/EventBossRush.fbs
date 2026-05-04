@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table EventBossRush {
+  group_no: int32;
+  hero_no: int32;
+  hero_relic: int32;
+  daily_battle_count: int32;
+  upgrade_item_no: int32;
+  rental_group: int32;
+  dungeon_group: int32;
+}
+
+table EventBossRushTable {
+  json: [EventBossRush];
+}
+
+root_type EventBossRushTable;

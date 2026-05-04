@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table DungeonBlock {
+  no: int32;
+  dungeon_type: int32;
+  start_date: string;
+  end_date: string;
+}
+
+table DungeonBlockTable {
+  json: [DungeonBlock];
+}
+
+root_type DungeonBlockTable;

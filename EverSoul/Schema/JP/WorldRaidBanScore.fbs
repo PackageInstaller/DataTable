@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table WorldRaidBanScore {
+  no: int32;
+  raid_no: int32;
+  hero_no: int32;
+  leader_score: int32;
+}
+
+table WorldRaidBanScoreTable {
+  json: [WorldRaidBanScore];
+}
+
+root_type WorldRaidBanScoreTable;

@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table DungeonTrainingReward {
+  no: int32;
+  dungeon_no: int32;
+  level: int32;
+  reward_type: int32;
+  reward_no: int32;
+  reward_amount: int32;
+}
+
+table DungeonTrainingRewardTable {
+  json: [DungeonTrainingReward];
+}
+
+root_type DungeonTrainingRewardTable;

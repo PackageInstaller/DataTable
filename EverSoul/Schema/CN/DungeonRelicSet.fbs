@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table DungeonRelicSet {
+  no: int32;
+  set_no: int32;
+  set_count: int32;
+  battlebuff_no: int32;
+}
+
+table DungeonRelicSetTable {
+  json: [DungeonRelicSet];
+}
+
+root_type DungeonRelicSetTable;

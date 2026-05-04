@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table WorldRaidHpCare {
+  no: int32;
+  raid_no: int32;
+  step_value: int32;
+}
+
+table WorldRaidHpCareTable {
+  json: [WorldRaidHpCare];
+}
+
+root_type WorldRaidHpCareTable;

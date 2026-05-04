@@ -1,0 +1,22 @@
+namespace Tbl;
+
+table HelpGuide {
+  no: int32;
+  category_type: int32;
+  guide_name_sno: int32;
+  contents_limit_no: int32;
+  trigger: string;
+  index: int32;
+  title_sno: int32;
+  desc_sno: int32;
+  title_gpg_sno: int32;
+  desc_gpg_sno: int32;
+  image: string;
+  image_gpg: string;
+}
+
+table HelpGuideTable {
+  json: [HelpGuide];
+}
+
+root_type HelpGuideTable;

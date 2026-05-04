@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table Behavior {
+  no: int32;
+  check_contents_limit: int32;
+  flag: int32;
+}
+
+table BehaviorTable {
+  json: [Behavior];
+}
+
+root_type BehaviorTable;

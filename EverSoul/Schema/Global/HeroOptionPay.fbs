@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table HeroOptionPay {
+  no: int32;
+  type: int32;
+  value: int32;
+  pay_item_no_1: int32;
+  pay_amount_1: int32;
+  pay_item_no_2: int32;
+  pay_amount_2: int32;
+}
+
+table HeroOptionPayTable {
+  json: [HeroOptionPay];
+}
+
+root_type HeroOptionPayTable;

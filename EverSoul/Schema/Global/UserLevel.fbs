@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table UserLevel {
+  no: int32;
+  need_exp: int64;
+  sum_exp: int64;
+  item_no_1: int32;
+  amount_1: int32;
+}
+
+table UserLevelTable {
+  json: [UserLevel];
+}
+
+root_type UserLevelTable;

@@ -1,0 +1,29 @@
+namespace Tbl;
+
+table HeroDesc {
+  hero_no: int32;
+  name_sno: int32;
+  nick_name_sno: int32;
+  ment_sno: int32;
+  gacha_ment_sno: int32;
+  desc_sno: int32;
+  height: int32;
+  weight: int32;
+  birthday: int32;
+  constellation_sno: int32;
+  hobby_sno: int32;
+  speciality_sno: int32;
+  like_sno: int32;
+  dislike_sno: int32;
+  introduction_sno: int32;
+  cv_sno: int32;
+  cv_jp_sno: int32;
+  union_sno: int32;
+  zodiac_type_sno: int32;
+}
+
+table HeroDescTable {
+  json: [HeroDesc];
+}
+
+root_type HeroDescTable;

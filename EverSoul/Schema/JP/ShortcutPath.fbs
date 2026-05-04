@@ -1,0 +1,12 @@
+namespace Tbl;
+
+table ShortcutPath {
+  no: string;
+  path: string;
+}
+
+table ShortcutPathTable {
+  json: [ShortcutPath];
+}
+
+root_type ShortcutPathTable;

@@ -1,0 +1,20 @@
+namespace Tbl;
+
+table EventDailyPassItem {
+  no: int32;
+  group: int32;
+  event_number: int32;
+  day_order: int32;
+  basic_item_no: int32;
+  basic_item_amount: int32;
+  gold_item_no1: int32;
+  gold_item_amount1: int32;
+  item_highlight: string;
+  day_highlight: int32;
+}
+
+table EventDailyPassItemTable {
+  json: [EventDailyPassItem];
+}
+
+root_type EventDailyPassItemTable;

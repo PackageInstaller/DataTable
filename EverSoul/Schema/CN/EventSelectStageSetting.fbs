@@ -1,0 +1,37 @@
+namespace Tbl;
+
+table EventSelectStageSetting {
+  no: int32;
+  event_group: int32;
+  event_number: int32;
+  event_stage_group: int32;
+  event_stage_phase: int32;
+  reward_no: int32;
+  stage_name_sno: int32;
+  suggest_power: int32;
+  hero_no_1: int32;
+  hero_grade_1: int32;
+  level_1: int32;
+  hero_no_2: int32;
+  hero_grade_2: int32;
+  level_2: int32;
+  hero_no_3: int32;
+  hero_grade_3: int32;
+  level_3: int32;
+  hero_no_4: int32;
+  hero_grade_4: int32;
+  level_4: int32;
+  hero_no_5: int32;
+  hero_grade_5: int32;
+  level_5: int32;
+  map: string;
+  formation_type: int32;
+  global_volume: int32;
+  battle_time: int32;
+}
+
+table EventSelectStageSettingTable {
+  json: [EventSelectStageSetting];
+}
+
+root_type EventSelectStageSettingTable;

@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table ItemBox {
+  no: int32;
+  item_no: int32;
+  type: int32;
+  getitem_no: int32;
+  getitem_rate: int32;
+  getitem_amount: int32;
+  show_info: int32;
+}
+
+table ItemBoxTable {
+  json: [ItemBox];
+}
+
+root_type ItemBoxTable;

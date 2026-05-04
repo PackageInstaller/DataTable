@@ -1,0 +1,19 @@
+namespace Tbl;
+
+table Illust {
+  no: int32;
+  category: int32;
+  open_type: int32;
+  open_condition: int32;
+  illust_name: int32;
+  thumbnail_path: string;
+  bg_movie_path: string;
+  lobby: int32;
+  hero_check: int32;
+}
+
+table IllustTable {
+  json: [Illust];
+}
+
+root_type IllustTable;

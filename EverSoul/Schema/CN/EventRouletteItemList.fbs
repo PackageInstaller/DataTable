@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table EventRouletteItemList {
+  no: int32;
+  list_group: int32;
+  slot_no: int32;
+  item_no: int32;
+  item_amount: int32;
+  rate: int32;
+}
+
+table EventRouletteItemListTable {
+  json: [EventRouletteItemList];
+}
+
+root_type EventRouletteItemListTable;

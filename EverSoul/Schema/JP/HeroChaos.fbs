@@ -1,0 +1,12 @@
+namespace Tbl;
+
+table HeroChaos {
+  hero_no: int32;
+  base_hero_no: int32;
+}
+
+table HeroChaosTable {
+  json: [HeroChaos];
+}
+
+root_type HeroChaosTable;

@@ -1,0 +1,30 @@
+namespace Tbl;
+
+table Item {
+  no: int32;
+  category_sno: int32;
+  grade_sno: int32;
+  name_sno: int32;
+  desc_sno: int32;
+  slot_limit_sno: int32;
+  stat_limit_sno: int32;
+  set_effect_no: int32;
+  base_exp: int32;
+  level_per_add_exp: float;
+  icon_local: int32;
+  icon_path: string;
+  atlas_type: int32;
+  item_use_no: int32;
+  move_behavior: int32;
+  item_sort_no: int32;
+  set_group: int32;
+  have_limit: int32;
+  repl_item_no: int32;
+  repl_amount: int32;
+}
+
+table ItemTable {
+  json: [Item];
+}
+
+root_type ItemTable;

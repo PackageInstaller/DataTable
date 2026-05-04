@@ -1,0 +1,20 @@
+namespace Tbl;
+
+table EventRaidBuff {
+  no: int32;
+  event_group: int32;
+  title_string_no: int32;
+  content_string_no: int32;
+  icon_path: string;
+  value_1: int32;
+  value_2: int32;
+  value_3: int32;
+  value_4: int32;
+  value_5: int32;
+}
+
+table EventRaidBuffTable {
+  json: [EventRaidBuff];
+}
+
+root_type EventRaidBuffTable;

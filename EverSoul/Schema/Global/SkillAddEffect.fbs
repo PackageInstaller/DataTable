@@ -1,0 +1,21 @@
+namespace Tbl;
+
+table SkillAddEffect {
+  effect_no: int32;
+  skill_code_1: int32;
+  skill_code_2: int32;
+  skill_code_3: int32;
+  skill_code_4: int32;
+  skill_code_5: int32;
+  skill_code_6: int32;
+  skill_code_7: int32;
+  skill_code_8: int32;
+  skill_code_9: int32;
+  skill_code_10: int32;
+}
+
+table SkillAddEffectTable {
+  json: [SkillAddEffect];
+}
+
+root_type SkillAddEffectTable;

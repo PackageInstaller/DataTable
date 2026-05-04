@@ -1,0 +1,19 @@
+namespace Tbl;
+
+table BattleBGM {
+  no: int32;
+  type: int32;
+  type_value: int32;
+  grade: int32;
+  title_sno: int32;
+  arrange_sno: int32;
+  item_no: int32;
+  image_path: string;
+  bgm_name: string;
+}
+
+table BattleBGMTable {
+  json: [BattleBGM];
+}
+
+root_type BattleBGMTable;

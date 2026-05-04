@@ -1,0 +1,30 @@
+namespace Tbl;
+
+table ArbeitList {
+  no: int32;
+  rarity: int32;
+  name_sno: int32;
+  time: int32;
+  maxfairy: int32;
+  knowledge: int32;
+  conversation: int32;
+  handicraft: int32;
+  culture: int32;
+  guts: int32;
+  courage: int32;
+  stress: int32;
+  arbeit_exp: int32;
+  item1_no: int32;
+  item1_amount: int32;
+  item2_no: int32;
+  item2_amount: int32;
+  anime_01: int32;
+  anime_02: int32;
+  anime_03: int32;
+}
+
+table ArbeitListTable {
+  json: [ArbeitList];
+}
+
+root_type ArbeitListTable;

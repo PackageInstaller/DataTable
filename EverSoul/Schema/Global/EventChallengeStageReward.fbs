@@ -1,0 +1,19 @@
+namespace Tbl;
+
+table EventChallengeStageReward {
+  no: int32;
+  challenge_no: int32;
+  event_group: int32;
+  event_number: int32;
+  event_stage_phase: int32;
+  first_clear_reward_no_1: int32;
+  first_clear_reward_amount_1: int32;
+  first_clear_reward_no_2: int32;
+  first_clear_reward_amount_2: int32;
+}
+
+table EventChallengeStageRewardTable {
+  json: [EventChallengeStageReward];
+}
+
+root_type EventChallengeStageRewardTable;

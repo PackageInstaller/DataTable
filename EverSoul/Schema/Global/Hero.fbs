@@ -1,0 +1,59 @@
+namespace Tbl;
+
+table Hero {
+  no: int32;
+  hero_id: int32;
+  name_sno: int32;
+  race_sno: int32;
+  class_sno: int32;
+  sub_class_sno: int32;
+  stat_sno: int32;
+  grade_sno: int32;
+  max_grade_sno: int32;
+  global_cooltime: float;
+  base_attack: int32;
+  skill_no_1: int32;
+  skill_no_2: int32;
+  skill_no_3: int32;
+  skill_no_4: int32;
+  skill_no_5: int32;
+  skill_no_6: int32;
+  skill_no_7: int32;
+  skill_no_8: int32;
+  skill_no_9: int32;
+  skill_no_10: int32;
+  ultimate_skill_no: int32;
+  support_skill_no: int32;
+  attack: int32;
+  defence: int32;
+  max_hp: int64;
+  max_mp: int32;
+  critical_rate: float;
+  critical_power: float;
+  hit: int32;
+  dodge: int32;
+  physical_resist: float;
+  magic_resist: float;
+  life_leech: float;
+  inc_attack: int32;
+  inc_defence: int32;
+  inc_max_hp: int32;
+  inc_max_mp: int32;
+  inc_critical_rate: float;
+  inc_critical_power: float;
+  inc_hit: float;
+  inc_dodge: float;
+  hero_type: int32;
+  prefab_path: int32;
+  thumbnail_item: int32;
+  battle_power_type: int32;
+  memory_item: int32;
+  upgrade_type: int32;
+  is_collectable: int32;
+}
+
+table HeroTable {
+  json: [Hero];
+}
+
+root_type HeroTable;

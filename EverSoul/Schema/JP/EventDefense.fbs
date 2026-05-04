@@ -1,0 +1,19 @@
+namespace Tbl;
+
+table EventDefense {
+  no: int32;
+  event_group: int32;
+  stage_name_sno: int32;
+  stage_bg: string;
+  playable_hero_no: int32;
+  limit_value: int32;
+  is_additional_enter: int32;
+  limit_sno: int32;
+  map: string;
+}
+
+table EventDefenseTable {
+  json: [EventDefense];
+}
+
+root_type EventDefenseTable;

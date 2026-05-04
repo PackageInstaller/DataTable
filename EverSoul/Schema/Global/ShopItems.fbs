@@ -1,0 +1,28 @@
+namespace Tbl;
+
+table ShopItems {
+  no: int32;
+  shop_no: int32;
+  tab_no: int32;
+  order: int32;
+  reset_shop_version: int32;
+  reset_order: int32;
+  item_no: int32;
+  buy_condition: int32;
+  condition_value: int32;
+  always_pick: int32;
+  have_limit: int32;
+  sell_cnt: int32;
+  pay_item_no: int32;
+  pay_amount: int32;
+  sell_limit: int32;
+  sale_rate: int32;
+  drop_rate: int32;
+  schedule_key: string;
+}
+
+table ShopItemsTable {
+  json: [ShopItems];
+}
+
+root_type ShopItemsTable;

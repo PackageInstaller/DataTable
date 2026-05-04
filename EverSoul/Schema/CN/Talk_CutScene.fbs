@@ -1,0 +1,23 @@
+namespace Tbl;
+
+table Talk_CutScene {
+  no: int32;
+  prefab_path: string;
+  volume_type: string;
+  actor01: int32;
+  actor02: int32;
+  actor03: int32;
+  actor04: int32;
+  actor05: int32;
+  actor06: int32;
+  actor07: int32;
+  actor08: int32;
+  actor09: int32;
+  actor10: int32;
+}
+
+table Talk_CutSceneTable {
+  json: [Talk_CutScene];
+}
+
+root_type Talk_CutSceneTable;

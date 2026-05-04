@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table TowerExtend {
+  no: int32;
+  req_hero: int32;
+  bg_path: string;
+  req_clear_stage: int32;
+  req_string: int32;
+}
+
+table TowerExtendTable {
+  json: [TowerExtend];
+}
+
+root_type TowerExtendTable;

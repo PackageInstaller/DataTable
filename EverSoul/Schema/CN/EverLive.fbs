@@ -1,0 +1,27 @@
+namespace Tbl;
+
+table EverLive {
+  no: int32;
+  title_sno: int32;
+  group_no: int32;
+  event_number: int32;
+  stage_mode: int32;
+  stage_no: int32;
+  open_stage: int32;
+  map: string;
+  bg_path: string;
+  preview_path: string;
+  sound_path: string;
+  sound_sno: int32;
+  hero_no: string;
+  costume_no: string;
+  stage_step: int32;
+  command_group: int32;
+  command_fail: int32;
+}
+
+table EverLiveTable {
+  json: [EverLive];
+}
+
+root_type EverLiveTable;

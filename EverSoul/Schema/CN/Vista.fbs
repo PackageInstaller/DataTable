@@ -1,0 +1,21 @@
+namespace Tbl;
+
+table Vista {
+  vista_no: int32;
+  order: int32;
+  vista_name_sno: int32;
+  reward_group: int32;
+  treasure_group: int32;
+  buff_group: int32;
+  debuff_group: int32;
+  bg_path: string;
+  frame_path: string;
+  sound_path: string;
+  portrait_path: string;
+}
+
+table VistaTable {
+  json: [Vista];
+}
+
+root_type VistaTable;

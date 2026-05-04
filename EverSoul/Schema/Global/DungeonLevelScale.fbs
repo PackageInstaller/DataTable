@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table DungeonLevelScale {
+  no: int32;
+  group_no: int32;
+  monster_type: string;
+  monster_add_level_min: int32;
+  monster_add_level_max: int32;
+}
+
+table DungeonLevelScaleTable {
+  json: [DungeonLevelScale];
+}
+
+root_type DungeonLevelScaleTable;

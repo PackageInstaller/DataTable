@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table LocalizationSchedule {
+  index: int32;
+  schedule_key: string;
+  schedule_type: int32;
+  start_date: string;
+  end_date: string;
+  value_date_01: string;
+}
+
+table LocalizationScheduleTable {
+  json: [LocalizationSchedule];
+}
+
+root_type LocalizationScheduleTable;

@@ -1,0 +1,25 @@
+namespace Tbl;
+
+table BattleBuff {
+  no: int32;
+  ally_sno: int32;
+  race_sno: int32;
+  stat_sno: int32;
+  target: int32;
+  specific_target: int32;
+  specific_target_2: int32;
+  specific_target_3: int32;
+  specific_target_4: int32;
+  specific_target_5: int32;
+  skillcode1: int32;
+  skillcode2: int32;
+  skillcode3: int32;
+  buff_tooltip_sno: int32;
+  delay: int32;
+}
+
+table BattleBuffTable {
+  json: [BattleBuff];
+}
+
+root_type BattleBuffTable;

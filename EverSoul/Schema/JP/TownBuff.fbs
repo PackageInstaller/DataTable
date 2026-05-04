@@ -1,0 +1,18 @@
+namespace Tbl;
+
+table TownBuff {
+  no: int32;
+  buff_type: int32;
+  buff_type_no: int32;
+  amount: float;
+  tooltip_sno: int32;
+  amount_kind: int32;
+  contents_buff_no: int32;
+  icon: int32;
+}
+
+table TownBuffTable {
+  json: [TownBuff];
+}
+
+root_type TownBuffTable;

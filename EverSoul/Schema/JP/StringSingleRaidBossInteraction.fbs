@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table StringSingleRaidBossInteraction {
+  no: int32;
+  hero_no: int32;
+  sound_path: string;
+  delay: float;
+  talk_string: int32;
+}
+
+table StringSingleRaidBossInteractionTable {
+  json: [StringSingleRaidBossInteraction];
+}
+
+root_type StringSingleRaidBossInteractionTable;

@@ -1,0 +1,18 @@
+namespace Tbl;
+
+table EventChangeLobby {
+  no: int32;
+  hero_no: int32;
+  hero_scale: float;
+  background_name: string;
+  bgm_name: string;
+  start_date: string;
+  end_date: string;
+  apply_new_account: int32;
+}
+
+table EventChangeLobbyTable {
+  json: [EventChangeLobby];
+}
+
+root_type EventChangeLobbyTable;

@@ -1,0 +1,21 @@
+namespace Tbl;
+
+table Immune {
+  no: int32;
+  buff_effect_1: int32;
+  buff_effect_2: int32;
+  buff_effect_3: int32;
+  buff_effect_4: int32;
+  buff_effect_5: int32;
+  buff_effect_6: int32;
+  buff_effect_7: int32;
+  buff_effect_8: int32;
+  buff_effect_9: int32;
+  buff_effect_10: int32;
+}
+
+table ImmuneTable {
+  json: [Immune];
+}
+
+root_type ImmuneTable;

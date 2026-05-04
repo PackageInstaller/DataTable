@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table EventCollect {
+  no: int32;
+  group: int32;
+  behavior: int32;
+  value: int32;
+  item_infos: string;
+  behavior_string_sno: int32;
+  banner_path: string;
+}
+
+table EventCollectTable {
+  json: [EventCollect];
+}
+
+root_type EventCollectTable;

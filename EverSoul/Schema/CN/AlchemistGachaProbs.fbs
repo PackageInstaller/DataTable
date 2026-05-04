@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table AlchemistGachaProbs {
+  no: int32;
+  type: int32;
+  item_no: int32;
+  item_amount: int32;
+  prob: int32;
+}
+
+table AlchemistGachaProbsTable {
+  json: [AlchemistGachaProbs];
+}
+
+root_type AlchemistGachaProbsTable;

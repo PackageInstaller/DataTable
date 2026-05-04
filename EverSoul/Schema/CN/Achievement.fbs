@@ -1,0 +1,25 @@
+namespace Tbl;
+
+table Achievement {
+  no: int32;
+  group: int32;
+  category: int32;
+  sub_category: int32;
+  behavior: int32;
+  value: int64;
+  item_no_1: int32;
+  amount_1: int32;
+  item_no_2: int32;
+  amount_2: int32;
+  item_no_3: int32;
+  amount_3: int32;
+  content_string_sno: int32;
+  require_type: int32;
+  hero_reward: int32;
+}
+
+table AchievementTable {
+  json: [Achievement];
+}
+
+root_type AchievementTable;

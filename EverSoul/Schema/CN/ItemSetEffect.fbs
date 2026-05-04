@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table ItemSetEffect {
+  no: int32;
+  name: int32;
+  set2_contentsbuff: int32;
+  set4_contentsbuff: int32;
+  icon_path: string;
+}
+
+table ItemSetEffectTable {
+  json: [ItemSetEffect];
+}
+
+root_type ItemSetEffectTable;

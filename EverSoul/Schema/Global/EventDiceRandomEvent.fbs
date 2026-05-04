@@ -1,0 +1,19 @@
+namespace Tbl;
+
+table EventDiceRandomEvent {
+  no: int32;
+  type: int32;
+  title_sno: int32;
+  desc_sno: int32;
+  text_color: string;
+  rate: int32;
+  is_once: int32;
+  icon_path: string;
+  talk_group: string;
+}
+
+table EventDiceRandomEventTable {
+  json: [EventDiceRandomEvent];
+}
+
+root_type EventDiceRandomEventTable;
