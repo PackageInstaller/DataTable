@@ -8,8 +8,8 @@ from Crypto.Util.Padding import unpad
 
 # https://contents.techcronoss.techcross.co.jp/master/1.6.2.0/all.ebin
 # 在此修改版本号，版本号，key，obkey从 rpc/ws 获取，自己抓包
-VERSION = "1.6.2.0"
-KEY_B64 = "bB4lGrX3OCpX+xj8hDgsVwQTnl8aqRSoU1I8lJsJ/cI="
+VERSION = "1.6.3.0"
+KEY_B64 = "WbeoOhd60H35NVdolM5upSk09/fY50zwXf/0k73YBIw="
 IV_B64 = "gdAHZpuTubM/VsuK14uJdA=="
 OUTPUT_FILE = "MasterData.json"
 
@@ -17,9 +17,11 @@ OB_KEYS = {
     1260405: 10746667144567614155,
     1260408: 6021815182603664266,
     1260412: 11898543589325694410,
+    1260501: 12682691888073943749,
     30000052: 5580520519231768997,
     30000053: 15683348979544441226,
     30000055: 8288736064016335018,
+    30000073: 4933400004858885789,
     30000077: 8514926492287190850
 }
 
