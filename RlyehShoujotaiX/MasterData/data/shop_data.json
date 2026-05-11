@@ -2789,6 +2789,112 @@
             "stepup_max": 0
         },
         {
+            "id": 122008,
+            "sort_priority": 0,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "【補助】育成魔晶セットパック1",
+            "text": "継承メダル×60\r\n▼特典内容\r\n原石×1260【おまけ】\r\n活力の魔晶Ⅰ（翠）×1【おまけ】\r\n戦威の魔晶Ⅰ（翠）×1【おまけ】\r\n堅守の魔晶Ⅰ（翠）×1【おまけ】\r\n耐魔の魔晶Ⅰ（翠）×1【おまけ】\r\n活力の魔晶Ⅱ（翠）×1【おまけ】\r\n戦威の魔晶Ⅱ（翠）×1【おまけ】\r\n堅守の魔晶Ⅱ（翠）×1【おまけ】\r\n耐魔の魔晶Ⅱ（翠）×1【おまけ】\r\n活力の魔晶Ⅲ（翠）×1【おまけ】\r\n戦威の魔晶Ⅲ（翠）×1【おまけ】\r\n堅守の魔晶Ⅲ（翠）×1【おまけ】\r\n耐魔の魔晶Ⅲ（翠）×1【おまけ】",
+            "show_item_count": 1,
+            "price": 1200,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "weekly_equip_sherman",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 60
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 1260
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "1060",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "2060",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "3060",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "4050",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "1061",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "2061",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "3061",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "4051",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "1062",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "2062",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "3062",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "4052",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "weekly",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 1,
+            "DateTimeForReset": "",
+            "tab_category": 211,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
             "id": 123000,
             "sort_priority": 0,
             "pickup_priority": 0,
@@ -3294,8 +3400,59 @@
             "stepup_max": 0
         },
         {
-            "id": 200001,
+            "id": 123010,
             "sort_priority": 0,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "【補助】潜在結晶パック",
+            "text": "継承メダル×250\r\n▼特典内容\r\n原石×5600【おまけ】\r\n☆3潜在結晶（翠）×1【おまけ】",
+            "show_item_count": 1,
+            "price": 5000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "monthly_potential_sherman",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 250
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 5600
+                    },
+                    {
+                        "m_walletCategory": "spap",
+                        "m_walletName": "sherman_sr",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "monthly",
+            "DayOfMonthForReset": 1,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 212,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200001,
+            "sort_priority": 250,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "ウェルカム無料パック",
@@ -3346,7 +3503,7 @@
         },
         {
             "id": 200002,
-            "sort_priority": 0,
+            "sort_priority": 249,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "【1回限定】ウェルカム☆3ヴァイスパック",
@@ -3402,7 +3559,7 @@
         },
         {
             "id": 200003,
-            "sort_priority": 0,
+            "sort_priority": 248,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "【1回限定】ウェルカム☆3召喚券パック",
@@ -3453,7 +3610,7 @@
         },
         {
             "id": 200004,
-            "sort_priority": 0,
+            "sort_priority": 247,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "【1回限定】ウェルカムプレゼントパック",
@@ -3519,7 +3676,7 @@
         },
         {
             "id": 200005,
-            "sort_priority": 0,
+            "sort_priority": 246,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "【1回限定】ウェルカム強化素材パック",
@@ -3580,7 +3737,7 @@
         },
         {
             "id": 200101,
-            "sort_priority": 0,
+            "sort_priority": 195,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "リリース記念ヴァイス召喚パック1",
@@ -3631,7 +3788,7 @@
         },
         {
             "id": 200102,
-            "sort_priority": 0,
+            "sort_priority": 194,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "リリース記念ヴァイス召喚パック2",
@@ -3682,7 +3839,7 @@
         },
         {
             "id": 200103,
-            "sort_priority": 0,
+            "sort_priority": 193,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "リリース記念ヴァイス召喚パック3",
@@ -3733,7 +3890,7 @@
         },
         {
             "id": 200104,
-            "sort_priority": 0,
+            "sort_priority": 192,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "リリース記念ヴァイス召喚パック4",
@@ -3784,7 +3941,7 @@
         },
         {
             "id": 200105,
-            "sort_priority": 0,
+            "sort_priority": 191,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "リリース記念ヴァイス強化素材パック",
@@ -3845,7 +4002,7 @@
         },
         {
             "id": 200106,
-            "sort_priority": 0,
+            "sort_priority": 190,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "リリース記念【回復】育成セット",
@@ -3956,7 +4113,7 @@
         },
         {
             "id": 200107,
-            "sort_priority": 0,
+            "sort_priority": 189,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "リリース記念刻印の霊譜パック",
@@ -4077,7 +4234,7 @@
         },
         {
             "id": 200108,
-            "sort_priority": 0,
+            "sort_priority": 188,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "リリース記念エナジーコアパック",
@@ -5090,7 +5247,7 @@
         },
         {
             "id": 200310,
-            "sort_priority": 600,
+            "sort_priority": 245,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "潜在結晶お得パック【前衛】",
@@ -5156,7 +5313,7 @@
         },
         {
             "id": 200311,
-            "sort_priority": 599,
+            "sort_priority": 244,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "潜在結晶お得パック【後衛】",
@@ -5271,7 +5428,7 @@
             "tab_category": 201,
             "sold_out_hide": 0,
             "startDate": "2026/4/13 12:00:00",
-            "endDate": "",
+            "endDate": "2026/4/17 12:00:00",
             "present_box": 0,
             "sales_conditions": "",
             "sales_conditions_param": "",
@@ -5342,7 +5499,7 @@
             "tab_category": 201,
             "sold_out_hide": 0,
             "startDate": "2026/4/13 12:00:00",
-            "endDate": "",
+            "endDate": "2026/4/17 12:00:00",
             "present_box": 0,
             "sales_conditions": "",
             "sales_conditions_param": "",
@@ -5398,7 +5555,7 @@
             "tab_category": 201,
             "sold_out_hide": 0,
             "startDate": "2026/4/13 12:00:00",
-            "endDate": "",
+            "endDate": "2026/4/17 12:00:00",
             "present_box": 0,
             "sales_conditions": "",
             "sales_conditions_param": "",
@@ -5460,8 +5617,2012 @@
             "stepup_max": 0
         },
         {
-            "id": 300001,
+            "id": 200451,
             "sort_priority": 0,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "シェルン召喚パック1",
+            "text": "継承メダル×600\r\n▼特典内容\r\n原石×14200【おまけ】\r\n10連召喚券(ピックアップ)×3【おまけ】",
+            "show_item_count": 1,
+            "price": 12000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_summon_1_20260417",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 600
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 14200
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited_10",
+                        "m_count": 3
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/15 11:00:00",
+            "endDate": "2026/5/01 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200452,
+            "sort_priority": 0,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "シェルン召喚パック2",
+            "text": "継承メダル×450\r\n▼特典内容\r\n原石×10600【おまけ】\r\n10連召喚券(ピックアップ)×2【おまけ】",
+            "show_item_count": 1,
+            "price": 9000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_summon_2_20260417",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 450
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 10600
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited_10",
+                        "m_count": 2
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/15 11:00:00",
+            "endDate": "2026/5/01 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200453,
+            "sort_priority": 0,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "シェルン召喚パック3",
+            "text": "継承メダル×250\r\n▼特典内容\r\n原石×5600【おまけ】\r\n10連召喚券(ピックアップ)×1【おまけ】",
+            "show_item_count": 1,
+            "price": 5000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_summon_3_20260417",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 250
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 5600
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited_10",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/15 11:00:00",
+            "endDate": "2026/5/01 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200454,
+            "sort_priority": 0,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "シェルン召喚パック4",
+            "text": "継承メダル×150\r\n▼特典内容\r\n原石×3240【おまけ】\r\n召喚券(ピックアップ)×5【おまけ】",
+            "show_item_count": 1,
+            "price": 3000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_summon_4_20260417",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 150
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 3240
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited",
+                        "m_count": 5
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/15 11:00:00",
+            "endDate": "2026/5/01 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200455,
+            "sort_priority": 0,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "シェルン強化素材パック",
+            "text": "継承メダル×150\r\n▼特典内容\r\n原石×3240【おまけ】\r\nEXPエナジー袋(16h)×5【おまけ】\r\nコイン袋(16h)×5【おまけ】\r\nエナジー・コア袋(16h)×5【おまけ】",
+            "show_item_count": 1,
+            "price": 3000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_reinforce_20260417",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 150
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 3240
+                    },
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "unit_exp_16h",
+                        "m_count": 5
+                    },
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "gold_16h",
+                        "m_count": 5
+                    },
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "unit_threshold_16h",
+                        "m_count": 5
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/15 11:00:00",
+            "endDate": "2026/5/01 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200456,
+            "sort_priority": 0,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "シェルン刻印強化パック",
+            "text": "継承メダル×75\r\n▼特典内容\r\n原石×1580【おまけ】\r\n刻印の霊譜【会心】×1【おまけ】\r\n印章Ⅰ×50【おまけ】\r\n印章Ⅱ×25【おまけ】\r\n印章Ⅲ×15【おまけ】\r\n変異の印章×15【おまけ】\r\nロックコーティング×2【おまけ】",
+            "show_item_count": 1,
+            "price": 1500,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_engraving_20260417",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 75
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 1580
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving.critical",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_r",
+                        "m_count": 50
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_sr",
+                        "m_count": 25
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_ssr",
+                        "m_count": 15
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_mutate.common",
+                        "m_count": 15
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_mutate_lock.common",
+                        "m_count": 2
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/15 11:00:00",
+            "endDate": "2026/5/01 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200457,
+            "sort_priority": 0,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "シェルン獲得記念パック",
+            "text": "継承メダル×150\r\n▼特典内容\r\n原石×3240【おまけ】\r\nシェルン×1【おまけ】",
+            "show_item_count": 0,
+            "price": 3000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "getunit_49",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 150
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 3240
+                    },
+                    {
+                        "m_walletCategory": "unit",
+                        "m_walletName": "49",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 500,
+            "sold_out_hide": 1,
+            "startDate": "2026/4/15 11:00:00",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "ユニット初入手",
+            "sales_conditions_param": "49",
+            "targetPlatform": 0,
+            "sales_period": "72:00:00",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200501,
+            "sort_priority": 700,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "キャピノラ召喚パック1",
+            "text": "継承メダル×600\r\n▼特典内容\r\n原石×14200【おまけ】\r\n10連召喚券(ピックアップ)×3【おまけ】",
+            "show_item_count": 1,
+            "price": 12000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_summon_1_20260424",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 600
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 14200
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited_10",
+                        "m_count": 3
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/20 11:00:00",
+            "endDate": "2026/5/08 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200502,
+            "sort_priority": 699,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "キャピノラ召喚パック2",
+            "text": "継承メダル×450\r\n▼特典内容\r\n原石×10600【おまけ】\r\n10連召喚券(ピックアップ)×2【おまけ】",
+            "show_item_count": 1,
+            "price": 9000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_summon_2_20260424",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 450
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 10600
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited_10",
+                        "m_count": 2
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/20 11:00:00",
+            "endDate": "2026/5/08 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200503,
+            "sort_priority": 698,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "キャピノラ召喚パック3",
+            "text": "継承メダル×250\r\n▼特典内容\r\n原石×5600【おまけ】\r\n10連召喚券(ピックアップ)×1【おまけ】",
+            "show_item_count": 1,
+            "price": 5000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_summon_3_20260424",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 250
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 5600
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited_10",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/20 11:00:00",
+            "endDate": "2026/5/08 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200504,
+            "sort_priority": 697,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "キャピノラ召喚パック4",
+            "text": "継承メダル×150\r\n▼特典内容\r\n原石×3240【おまけ】\r\n召喚券(ピックアップ)×5【おまけ】",
+            "show_item_count": 1,
+            "price": 3000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_summon_4_20260424",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 150
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 3240
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited",
+                        "m_count": 5
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/20 11:00:00",
+            "endDate": "2026/5/08 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200505,
+            "sort_priority": 696,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "キャピノラ強化素材パック",
+            "text": "継承メダル×150\r\n▼特典内容\r\n原石×3240【おまけ】\r\nEXPエナジー袋(16h)×5【おまけ】\r\nコイン袋(16h)×5【おまけ】\r\nエナジー・コア袋(16h)×5【おまけ】",
+            "show_item_count": 1,
+            "price": 3000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_reinforce_20260424",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 150
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 3240
+                    },
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "unit_exp_16h",
+                        "m_count": 5
+                    },
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "gold_16h",
+                        "m_count": 5
+                    },
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "unit_threshold_16h",
+                        "m_count": 5
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/20 11:00:00",
+            "endDate": "2026/5/08 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200506,
+            "sort_priority": 695,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "キャピノラ刻印強化パック",
+            "text": "継承メダル×75\r\n▼特典内容\r\n原石×1580【おまけ】\r\n刻印の霊譜【破壊】×1【おまけ】\r\n印章Ⅰ×50【おまけ】\r\n印章Ⅱ×25【おまけ】\r\n印章Ⅲ×15【おまけ】\r\n変異の印章×15【おまけ】\r\nロックコーティング×2【おまけ】",
+            "show_item_count": 1,
+            "price": 1500,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_engraving_20260424",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 75
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 1580
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving.break",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_r",
+                        "m_count": 50
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_sr",
+                        "m_count": 25
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_ssr",
+                        "m_count": 15
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_mutate.common",
+                        "m_count": 15
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_mutate_lock.common",
+                        "m_count": 2
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/20 11:00:00",
+            "endDate": "2026/5/08 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200507,
+            "sort_priority": 0,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "キャピノラ獲得記念パック",
+            "text": "継承メダル×150\r\n▼特典内容\r\n原石×3240【おまけ】\r\nキャピノラ×1【おまけ】",
+            "show_item_count": 0,
+            "price": 3000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "getunit_50",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 150
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 3240
+                    },
+                    {
+                        "m_walletCategory": "unit",
+                        "m_walletName": "50",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 500,
+            "sold_out_hide": 1,
+            "startDate": "2026/4/20 11:00:00",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "ユニット初入手",
+            "sales_conditions_param": "50",
+            "targetPlatform": 0,
+            "sales_period": "72:00:00",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200508,
+            "sort_priority": 750,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "ルナリス召喚パック1",
+            "text": "継承メダル×600\r\n▼特典内容\r\n原石×14200【おまけ】\r\n10連召喚券(ピックアップ)×3【おまけ】",
+            "show_item_count": 1,
+            "price": 12000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_summon_1_20260501",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 600
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 14200
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited_10",
+                        "m_count": 3
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/15 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200509,
+            "sort_priority": 749,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "ルナリス召喚パック2",
+            "text": "継承メダル×450\r\n▼特典内容\r\n原石×10600【おまけ】\r\n10連召喚券(ピックアップ)×2【おまけ】",
+            "show_item_count": 1,
+            "price": 9000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_summon_2_20260501",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 450
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 10600
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited_10",
+                        "m_count": 2
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/15 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200510,
+            "sort_priority": 748,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "ルナリス召喚パック3",
+            "text": "継承メダル×250\r\n▼特典内容\r\n原石×5600【おまけ】\r\n10連召喚券(ピックアップ)×1【おまけ】",
+            "show_item_count": 1,
+            "price": 5000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_summon_3_20260501",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 250
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 5600
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited_10",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/15 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200511,
+            "sort_priority": 747,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "ルナリス召喚パック4",
+            "text": "継承メダル×150\r\n▼特典内容\r\n原石×3240【おまけ】\r\n召喚券(ピックアップ)×5【おまけ】",
+            "show_item_count": 1,
+            "price": 3000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_summon_4_20260501",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 150
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 3240
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited",
+                        "m_count": 5
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/15 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200512,
+            "sort_priority": 746,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "ルナリス強化素材パック",
+            "text": "継承メダル×150\r\n▼特典内容\r\n原石×3240【おまけ】\r\nEXPエナジー袋(16h)×5【おまけ】\r\nコイン袋(16h)×5【おまけ】\r\nエナジー・コア袋(16h)×5【おまけ】",
+            "show_item_count": 1,
+            "price": 3000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_reinforce_20260501",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 150
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 3240
+                    },
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "unit_exp_16h",
+                        "m_count": 5
+                    },
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "gold_16h",
+                        "m_count": 5
+                    },
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "unit_threshold_16h",
+                        "m_count": 5
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/15 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200513,
+            "sort_priority": 745,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "ルナリス刻印強化パック",
+            "text": "継承メダル×75\r\n▼特典内容\r\n原石×1580【おまけ】\r\n刻印の霊譜【魔封】×1【おまけ】\r\n印章Ⅰ×50【おまけ】\r\n印章Ⅱ×25【おまけ】\r\n印章Ⅲ×15【おまけ】\r\n変異の印章×15【おまけ】\r\nロックコーティング×2【おまけ】",
+            "show_item_count": 1,
+            "price": 1500,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_engraving_20260501",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 75
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 1580
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving.magicseal",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_r",
+                        "m_count": 50
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_sr",
+                        "m_count": 25
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_ssr",
+                        "m_count": 15
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_mutate.common",
+                        "m_count": 15
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_mutate_lock.common",
+                        "m_count": 2
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/15 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200514,
+            "sort_priority": 0,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "ルナリス獲得記念パック",
+            "text": "継承メダル×150\r\n▼特典内容\r\n原石×3240【おまけ】\r\nルナリス×1【おまけ】",
+            "show_item_count": 0,
+            "price": 3000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "getunit_51",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 150
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 3240
+                    },
+                    {
+                        "m_walletCategory": "unit",
+                        "m_walletName": "51",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 500,
+            "sold_out_hide": 1,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "ユニット初入手",
+            "sales_conditions_param": "51",
+            "targetPlatform": 0,
+            "sales_period": "72:00:00",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200515,
+            "sort_priority": 800,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "50万人突破記念パック10000",
+            "text": "継承メダル×500\r\n▼特典内容\r\n原石×11800【おまけ】\r\n10連召喚券(ピックアップ)×2【おまけ】\r\n選択★3潜在結晶BOX×1【おまけ】\r\n育成素材袋(16h)×5【おまけ】",
+            "show_item_count": 1,
+            "price": 10000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "0_5million_10000",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 500
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 11800
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited_10",
+                        "m_count": 2
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.select_potential.crystal_sr",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "growth_16h",
+                        "m_count": 5
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/15 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200516,
+            "sort_priority": 799,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "50万人突破記念パック5000",
+            "text": "継承メダル×250\r\n▼特典内容\r\n原石×5600【おまけ】\r\n選択★3潜在結晶BOX×1【おまけ】\r\n魔晶Ⅳ選択BOX×4【おまけ】",
+            "show_item_count": 1,
+            "price": 5000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "0_5million_5000",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 250
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 5600
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.select_potential.crystal_sr",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.select_equipbox.grade_4",
+                        "m_count": 4
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/15 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200517,
+            "sort_priority": 798,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "50万人突破記念パック3000",
+            "text": "継承メダル×150\r\n▼特典内容\r\n原石×3240【おまけ】\r\nスタンダード10連召喚券×1【おまけ】\r\n軟体生物のぬいぐるみ×30【おまけ】\r\n深淵の香水×30【おまけ】\r\n古代の書物×30【おまけ】",
+            "show_item_count": 1,
+            "price": 3000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "0_5million_3000",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 150
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 3240
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_common_10",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "ugift",
+                        "m_walletName": "l_f1",
+                        "m_count": 30
+                    },
+                    {
+                        "m_walletCategory": "ugift",
+                        "m_walletName": "l_f2",
+                        "m_count": 30
+                    },
+                    {
+                        "m_walletCategory": "ugift",
+                        "m_walletName": "l_f3",
+                        "m_count": 30
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/15 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200518,
+            "sort_priority": 797,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "50万人突破記念パック1000",
+            "text": "継承メダル×50\r\n▼特典内容\r\n原石×1030【おまけ】\r\n印章Ⅰ×80【おまけ】\r\n印章Ⅱ×40【おまけ】\r\n印章Ⅲ×20【おまけ】\r\n変異の印章×10【おまけ】\r\nロックコーティング×1【おまけ】",
+            "show_item_count": 1,
+            "price": 1000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "0_5million_1000",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 50
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 1030
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_r",
+                        "m_count": 80
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_sr",
+                        "m_count": 40
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_ssr",
+                        "m_count": 20
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_mutate.common",
+                        "m_count": 10
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_mutate_lock.common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/15 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200519,
+            "sort_priority": 796,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "エンチャンター登場記念育成パック",
+            "text": "継承メダル×250\r\n▼特典内容\r\n原石×5600【おまけ】\r\n☆3潜在結晶（翠）×1【おまけ】\r\n活力の魔晶Ⅰ（翠）×1【おまけ】\r\n戦威の魔晶Ⅰ（翠）×1【おまけ】\r\n堅守の魔晶Ⅰ（翠）×1【おまけ】\r\n耐魔の魔晶Ⅰ（翠）×1【おまけ】\r\n活力の魔晶Ⅱ（翠）×1【おまけ】\r\n戦威の魔晶Ⅱ（翠）×1【おまけ】\r\n堅守の魔晶Ⅱ（翠）×1【おまけ】\r\n耐魔の魔晶Ⅱ（翠）×1【おまけ】\r\n活力の魔晶Ⅲ（翠）×1【おまけ】\r\n戦威の魔晶Ⅲ（翠）×1【おまけ】\r\n堅守の魔晶Ⅲ（翠）×1【おまけ】\r\n耐魔の魔晶Ⅲ（翠）×1【おまけ】\r\n活力の魔晶Ⅳ（翠）×1【おまけ】\r\n戦威の魔晶Ⅳ（翠）×1【おまけ】\r\n堅守の魔晶Ⅳ（翠）×1【おまけ】\r\n耐魔の魔晶Ⅳ（翠）×1【おまけ】",
+            "show_item_count": 1,
+            "price": 5000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "release_reinforce_sherman",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 250
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 5600
+                    },
+                    {
+                        "m_walletCategory": "spap",
+                        "m_walletName": "sherman_sr",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "1060",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "2060",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "3060",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "4060",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "1061",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "2061",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "3061",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "4061",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "1062",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "2062",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "3062",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "4062",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "1063",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "2063",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "3063",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "4063",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/15 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200520,
+            "sort_priority": 850,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "ネア・ウルム召喚パック1",
+            "text": "継承メダル×600\r\n▼特典内容\r\n原石×14200【おまけ】\r\n10連召喚券(ピックアップ)×3【おまけ】",
+            "show_item_count": 1,
+            "price": 12000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_summon_1_20260508",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 600
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 14200
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited_10",
+                        "m_count": 3
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/22 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200521,
+            "sort_priority": 849,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "ネア・ウルム召喚パック2",
+            "text": "継承メダル×450\r\n▼特典内容\r\n原石×10600【おまけ】\r\n10連召喚券(ピックアップ)×2【おまけ】",
+            "show_item_count": 1,
+            "price": 9000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_summon_2_20260508",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 450
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 10600
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited_10",
+                        "m_count": 2
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/22 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200522,
+            "sort_priority": 848,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "ネア・ウルム召喚パック3",
+            "text": "継承メダル×250\r\n▼特典内容\r\n原石×5600【おまけ】\r\n10連召喚券(ピックアップ)×1【おまけ】",
+            "show_item_count": 1,
+            "price": 5000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_summon_3_20260508",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 250
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 5600
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited_10",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/22 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200523,
+            "sort_priority": 847,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "ネア・ウルム召喚パック4",
+            "text": "継承メダル×150\r\n▼特典内容\r\n原石×3240【おまけ】\r\n召喚券(ピックアップ)×5【おまけ】",
+            "show_item_count": 1,
+            "price": 3000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_summon_4_20260508",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 150
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 3240
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_limited",
+                        "m_count": 5
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/22 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200524,
+            "sort_priority": 846,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "ネア・ウルム強化素材パック",
+            "text": "継承メダル×150\r\n▼特典内容\r\n原石×3240【おまけ】\r\nEXPエナジー袋(16h)×5【おまけ】\r\nコイン袋(16h)×5【おまけ】\r\nエナジー・コア袋(16h)×5【おまけ】",
+            "show_item_count": 1,
+            "price": 3000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_reinforce_20260508",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 150
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 3240
+                    },
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "unit_exp_16h",
+                        "m_count": 5
+                    },
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "gold_16h",
+                        "m_count": 5
+                    },
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "unit_threshold_16h",
+                        "m_count": 5
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/22 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200525,
+            "sort_priority": 845,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "ネア・ウルム刻印強化パック",
+            "text": "継承メダル×75\r\n▼特典内容\r\n原石×1580【おまけ】\r\n刻印の霊譜【活力】×1【おまけ】\r\n印章Ⅰ×50【おまけ】\r\n印章Ⅱ×25【おまけ】\r\n印章Ⅲ×15【おまけ】\r\n変異の印章×15【おまけ】\r\nロックコーティング×2【おまけ】",
+            "show_item_count": 1,
+            "price": 1500,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "event_engraving_20260508",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 75
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 1580
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving.vitality",
+                        "m_count": 1
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_r",
+                        "m_count": 50
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_sr",
+                        "m_count": 25
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_ssr",
+                        "m_count": 15
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_mutate.common",
+                        "m_count": 15
+                    },
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_mutate_lock.common",
+                        "m_count": 2
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 201,
+            "sold_out_hide": 0,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "2026/5/22 11:00:00",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 1,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200526,
+            "sort_priority": 0,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "ネア・ウルム獲得記念パック",
+            "text": "継承メダル×150\r\n▼特典内容\r\n原石×3240【おまけ】\r\nネア・ウルム×1【おまけ】",
+            "show_item_count": 0,
+            "price": 3000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "getunit_52",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 150
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 3240
+                    },
+                    {
+                        "m_walletCategory": "unit",
+                        "m_walletName": "52",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 500,
+            "sold_out_hide": 1,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "ユニット初入手",
+            "sales_conditions_param": "52",
+            "targetPlatform": 0,
+            "sales_period": "72:00:00",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 200527,
+            "sort_priority": 0,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "フラーナ＝フリーニ獲得記念パック",
+            "text": "継承メダル×150\r\n▼特典内容\r\n原石×3240【おまけ】\r\nフラーナ＝フリーニ×1【おまけ】",
+            "show_item_count": 0,
+            "price": 3000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "getunit_53",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 150
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 3240
+                    },
+                    {
+                        "m_walletCategory": "unit",
+                        "m_walletName": "53",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 500,
+            "sold_out_hide": 1,
+            "startDate": "2026/4/28 11:00:00",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "ユニット初入手",
+            "sales_conditions_param": "53",
+            "targetPlatform": 0,
+            "sales_period": "72:00:00",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 300001,
+            "sort_priority": 900,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆3召喚券",
@@ -5502,7 +7663,7 @@
         },
         {
             "id": 300002,
-            "sort_priority": 0,
+            "sort_priority": 800,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆3潜在結晶（赤）",
@@ -5543,7 +7704,7 @@
         },
         {
             "id": 300003,
-            "sort_priority": 0,
+            "sort_priority": 799,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆3潜在結晶（橙）",
@@ -5584,7 +7745,7 @@
         },
         {
             "id": 300004,
-            "sort_priority": 0,
+            "sort_priority": 798,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆3潜在結晶（黄）",
@@ -5625,7 +7786,7 @@
         },
         {
             "id": 300005,
-            "sort_priority": 0,
+            "sort_priority": 797,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆3潜在結晶（青）",
@@ -5666,7 +7827,7 @@
         },
         {
             "id": 300006,
-            "sort_priority": 0,
+            "sort_priority": 796,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆3潜在結晶（紫）",
@@ -5707,7 +7868,7 @@
         },
         {
             "id": 300007,
-            "sort_priority": 0,
+            "sort_priority": 795,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆3潜在結晶（緑）",
@@ -5748,7 +7909,7 @@
         },
         {
             "id": 300008,
-            "sort_priority": 0,
+            "sort_priority": 700,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆2潜在結晶（赤）",
@@ -5789,7 +7950,7 @@
         },
         {
             "id": 300009,
-            "sort_priority": 0,
+            "sort_priority": 699,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆2潜在結晶（橙）",
@@ -5830,7 +7991,7 @@
         },
         {
             "id": 300010,
-            "sort_priority": 0,
+            "sort_priority": 698,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆2潜在結晶（黄）",
@@ -5871,7 +8032,7 @@
         },
         {
             "id": 300011,
-            "sort_priority": 0,
+            "sort_priority": 697,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆2潜在結晶（青）",
@@ -5912,7 +8073,7 @@
         },
         {
             "id": 300012,
-            "sort_priority": 0,
+            "sort_priority": 696,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆2潜在結晶（紫）",
@@ -5953,7 +8114,7 @@
         },
         {
             "id": 300013,
-            "sort_priority": 0,
+            "sort_priority": 695,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆2潜在結晶（緑）",
@@ -5994,7 +8155,7 @@
         },
         {
             "id": 300014,
-            "sort_priority": 0,
+            "sort_priority": 600,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆1潜在結晶（赤）",
@@ -6035,7 +8196,7 @@
         },
         {
             "id": 300015,
-            "sort_priority": 0,
+            "sort_priority": 599,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆1潜在結晶（橙）",
@@ -6076,7 +8237,7 @@
         },
         {
             "id": 300016,
-            "sort_priority": 0,
+            "sort_priority": 598,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆1潜在結晶（黄）",
@@ -6117,7 +8278,7 @@
         },
         {
             "id": 300017,
-            "sort_priority": 0,
+            "sort_priority": 597,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆1潜在結晶（青）",
@@ -6158,7 +8319,7 @@
         },
         {
             "id": 300018,
-            "sort_priority": 0,
+            "sort_priority": 596,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆1潜在結晶（紫）",
@@ -6199,7 +8360,7 @@
         },
         {
             "id": 300019,
-            "sort_priority": 0,
+            "sort_priority": 595,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆1潜在結晶（緑）",
@@ -6239,8 +8400,131 @@
             "stepup_max": 0
         },
         {
+            "id": 300020,
+            "sort_priority": 794,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "☆3潜在結晶（翠）",
+            "text": "☆3潜在結晶（翠）×1",
+            "show_item_count": 0,
+            "price": 400,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "chaos_piece",
+            "iconWalletCategory": "spap",
+            "iconWalletName": "sherman_sr",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "spap",
+                        "m_walletName": "sherman_sr",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 0,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 300,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 300021,
+            "sort_priority": 694,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "☆2潜在結晶（翠）",
+            "text": "☆2潜在結晶（翠）×1",
+            "show_item_count": 0,
+            "price": 200,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "chaos_piece",
+            "iconWalletCategory": "spap",
+            "iconWalletName": "sherman_hr",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "spap",
+                        "m_walletName": "sherman_hr",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 0,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 300,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 300022,
+            "sort_priority": 594,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "☆1潜在結晶（翠）",
+            "text": "☆1潜在結晶（翠）×1",
+            "show_item_count": 0,
+            "price": 100,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "chaos_piece",
+            "iconWalletCategory": "spap",
+            "iconWalletName": "sherman_r",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "spap",
+                        "m_walletName": "sherman_r",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 0,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 300,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
             "id": 360001,
-            "sort_priority": 0,
+            "sort_priority": 500,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "メイ＝ユル",
@@ -6281,7 +8565,7 @@
         },
         {
             "id": 360002,
-            "sort_priority": 0,
+            "sort_priority": 499,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "エカ・インティ",
@@ -6322,7 +8606,7 @@
         },
         {
             "id": 360003,
-            "sort_priority": 0,
+            "sort_priority": 498,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "☆3召喚券",
@@ -6363,7 +8647,7 @@
         },
         {
             "id": 360004,
-            "sort_priority": 0,
+            "sort_priority": 497,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "スタンダード召喚券",
@@ -6380,6 +8664,47 @@
                     {
                         "m_walletCategory": "ticket",
                         "m_walletName": "gacha_common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 0,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 302,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 360005,
+            "sort_priority": 501,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "フラーナ＝フリーニ",
+            "text": "フラーナ＝フリーニ×1",
+            "show_item_count": 0,
+            "price": 500,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "rare_pt",
+            "iconWalletCategory": "unit",
+            "iconWalletName": "53",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "unit",
+                        "m_walletName": "53",
                         "m_count": 1
                     }
                 ]
@@ -6530,7 +8855,7 @@
             "sort_priority": 900,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
-            "name": "スタンダート召喚券",
+            "name": "スタンダード召喚券",
             "text": "スタンダード召喚券×1",
             "show_item_count": 0,
             "price": 200,
@@ -6590,6 +8915,47 @@
                 ]
             },
             "buylimit": 5,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 301,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 380006,
+            "sort_priority": 600,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "スキップチケット",
+            "text": "スキップチケット×1",
+            "show_item_count": 0,
+            "price": 4,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "friend_pt",
+            "iconWalletCategory": "item",
+            "iconWalletName": "item.ticket.quest_skip",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.ticket.quest_skip",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 99,
             "LimitResetTrigger": "",
             "DayOfMonthForReset": 0,
             "DayOfWeekForReset": 0,
@@ -6785,6 +9151,52 @@
             "present_box": 0,
             "sales_conditions": "クエストクリア",
             "sales_conditions_param": "104030",
+            "targetPlatform": 0,
+            "sales_period": "24:00:00",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 500005,
+            "sort_priority": 0,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "メインクエスト5章クリア記念パック",
+            "text": "継承メダル×240\r\n▼特典内容\r\n原石×9600【おまけ】",
+            "show_item_count": 0,
+            "price": 4800,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "questclear_0530",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 240
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 9600
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 500,
+            "sold_out_hide": 1,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "クエストクリア",
+            "sales_conditions_param": "105030",
             "targetPlatform": 0,
             "sales_period": "24:00:00",
             "stepup_group_id": "",
@@ -8476,6 +10888,57 @@
             "stepup_max": 0
         },
         {
+            "id": 530004,
+            "sort_priority": 0,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "邪神ニャルラトホテプ顕現記念パック",
+            "text": "継承メダル×250\r\n▼特典内容\r\n原石×5600【おまけ】\r\n☆3召喚券×1【おまけ】",
+            "show_item_count": 0,
+            "price": 5000,
+            "discount_rate": 0,
+            "price_category": "point",
+            "price_name": "payment",
+            "iconWalletCategory": "shop",
+            "iconWalletName": "nyarlathotep",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "paid_coin",
+                        "m_count": 250
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "free_coin",
+                        "m_count": 5600
+                    },
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_special",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 500,
+            "sold_out_hide": 1,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "クエストクリア",
+            "sales_conditions_param": "105030",
+            "targetPlatform": 0,
+            "sales_period": "72:00:00",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
             "id": 540001,
             "sort_priority": 0,
             "pickup_priority": 0,
@@ -9942,7 +12405,7 @@
         },
         {
             "id": 800033,
-            "sort_priority": 20260402,
+            "sort_priority": 890,
             "pickup_priority": 0,
             "hotfix_shop_id": 0,
             "name": "ランダム☆３潜在結晶BOX",
@@ -11978,6 +14441,1318 @@
             "DayOfWeekForReset": 0,
             "DateTimeForReset": "",
             "tab_category": 8001,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802001,
+            "sort_priority": 900,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "ウロロス",
+            "text": "ウロロスが仲間になる",
+            "show_item_count": 0,
+            "price": 4000,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "unit",
+            "iconWalletName": "54",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "unit",
+                        "m_walletName": "54",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 8,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802002,
+            "sort_priority": 850,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "魔法の笛",
+            "text": "魔法の笛×1",
+            "show_item_count": 0,
+            "price": 2000,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "artifact",
+            "iconWalletName": "17",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "artifact",
+                        "m_walletName": "17",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 2,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802003,
+            "sort_priority": 840,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "黄金の蜂蜜酒",
+            "text": "黄金の蜂蜜酒×1",
+            "show_item_count": 0,
+            "price": 2000,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "artifact",
+            "iconWalletName": "20",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "artifact",
+                        "m_walletName": "20",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 2,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802004,
+            "sort_priority": 800,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "☆3全能因子",
+            "text": "☆3全能因子×1",
+            "show_item_count": 0,
+            "price": 900,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "item",
+            "iconWalletName": "item.lottery_fragment.unit_faction_SSR",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.lottery_fragment.unit_faction_SSR",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 10,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802005,
+            "sort_priority": 790,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "☆2全能因子",
+            "text": "☆2全能因子×10",
+            "show_item_count": 1,
+            "price": 1000,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "item",
+            "iconWalletName": "item.lottery_fragment.unit_faction_SR",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.lottery_fragment.unit_faction_SR",
+                        "m_count": 10
+                    }
+                ]
+            },
+            "buylimit": 6,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802006,
+            "sort_priority": 780,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "☆1全能因子",
+            "text": "☆1全能因子×10",
+            "show_item_count": 1,
+            "price": 500,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "item",
+            "iconWalletName": "item.lottery_fragment.unit_faction_R",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.lottery_fragment.unit_faction_R",
+                        "m_count": 10
+                    }
+                ]
+            },
+            "buylimit": 12,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802007,
+            "sort_priority": 700,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "刻印の霊譜【強獣】",
+            "text": "刻印の霊譜【強獣】×1",
+            "show_item_count": 0,
+            "price": 2000,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "item",
+            "iconWalletName": "item.engraving.strongbeast",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving.strongbeast",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 2,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802008,
+            "sort_priority": 690,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "刻印の霊譜【会心】",
+            "text": "刻印の霊譜【会心】×1",
+            "show_item_count": 0,
+            "price": 2000,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "item",
+            "iconWalletName": "item.engraving.critical",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving.critical",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 2,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802009,
+            "sort_priority": 680,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "刻印の霊譜【治癒】",
+            "text": "刻印の霊譜【治癒】×1",
+            "show_item_count": 0,
+            "price": 2000,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "item",
+            "iconWalletName": "item.engraving.healing",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving.healing",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 2,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802010,
+            "sort_priority": 670,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "刻印の霊譜【霊盾】",
+            "text": "刻印の霊譜【霊盾】×1",
+            "show_item_count": 0,
+            "price": 2000,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "item",
+            "iconWalletName": "item.engraving.spiritshield",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving.spiritshield",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 2,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802011,
+            "sort_priority": 600,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "変異の印章",
+            "text": "変異の印章×1",
+            "show_item_count": 0,
+            "price": 500,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "item",
+            "iconWalletName": "item.engraving_mutate.common",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_mutate.common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 30,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802012,
+            "sort_priority": 590,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "印章Ⅲ",
+            "text": "印章Ⅲ×2",
+            "show_item_count": 1,
+            "price": 500,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "item",
+            "iconWalletName": "item.engraving_exp.common_ssr",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_ssr",
+                        "m_count": 2
+                    }
+                ]
+            },
+            "buylimit": 5,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802013,
+            "sort_priority": 580,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "印章Ⅱ",
+            "text": "印章Ⅱ×4",
+            "show_item_count": 1,
+            "price": 300,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "item",
+            "iconWalletName": "item.engraving_exp.common_sr",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_sr",
+                        "m_count": 4
+                    }
+                ]
+            },
+            "buylimit": 5,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802014,
+            "sort_priority": 570,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "印章Ⅰ",
+            "text": "印章Ⅰ×10",
+            "show_item_count": 1,
+            "price": 100,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "item",
+            "iconWalletName": "item.engraving_exp.common_r",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_exp.common_r",
+                        "m_count": 10
+                    }
+                ]
+            },
+            "buylimit": 5,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802015,
+            "sort_priority": 500,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "魔晶Ⅱ選択BOX",
+            "text": "魔晶Ⅱ選択BOX×1",
+            "show_item_count": 0,
+            "price": 1200,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "item",
+            "iconWalletName": "item.select_equipbox.grade_2",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.select_equipbox.grade_2",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 4,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802016,
+            "sort_priority": 490,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "魔晶Ⅰ選択BOX",
+            "text": "魔晶Ⅰ選択BOX×1",
+            "show_item_count": 0,
+            "price": 600,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "item",
+            "iconWalletName": "item.select_equipbox.grade_1",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.select_equipbox.grade_1",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 4,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802017,
+            "sort_priority": 480,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "活力の魔晶Ⅱ（紫）",
+            "text": "活力の魔晶Ⅱ（紫）×1",
+            "show_item_count": 0,
+            "price": 600,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "equip",
+            "iconWalletName": "1041",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "1041",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802018,
+            "sort_priority": 470,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "戦威の魔晶Ⅱ（紫）",
+            "text": "戦威の魔晶Ⅱ（紫）×1",
+            "show_item_count": 0,
+            "price": 600,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "equip",
+            "iconWalletName": "2041",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "2041",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802019,
+            "sort_priority": 460,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "堅守の魔晶Ⅱ（紫）",
+            "text": "堅守の魔晶Ⅱ（紫）×1",
+            "show_item_count": 0,
+            "price": 600,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "equip",
+            "iconWalletName": "3041",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "3041",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802020,
+            "sort_priority": 450,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "耐魔の魔晶Ⅱ（紫）",
+            "text": "耐魔の魔晶Ⅱ（紫）×1",
+            "show_item_count": 0,
+            "price": 600,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "equip",
+            "iconWalletName": "4041",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "4041",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802021,
+            "sort_priority": 440,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "活力の魔晶Ⅰ（紫）",
+            "text": "活力の魔晶Ⅰ（紫）×1",
+            "show_item_count": 0,
+            "price": 300,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "equip",
+            "iconWalletName": "1040",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "1040",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802022,
+            "sort_priority": 430,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "戦威の魔晶Ⅰ（紫）",
+            "text": "戦威の魔晶Ⅰ（紫）×1",
+            "show_item_count": 0,
+            "price": 300,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "equip",
+            "iconWalletName": "2040",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "2040",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802023,
+            "sort_priority": 420,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "堅守の魔晶Ⅰ（紫）",
+            "text": "堅守の魔晶Ⅰ（紫）×1",
+            "show_item_count": 0,
+            "price": 300,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "equip",
+            "iconWalletName": "3040",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "3040",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802024,
+            "sort_priority": 410,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "耐魔の魔晶Ⅰ（紫）",
+            "text": "耐魔の魔晶Ⅰ（紫）×1",
+            "show_item_count": 0,
+            "price": 300,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "equip",
+            "iconWalletName": "4040",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "equip",
+                        "m_walletName": "4040",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 1,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802025,
+            "sort_priority": 300,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "深淵の香水",
+            "text": "深淵の香水×1",
+            "show_item_count": 0,
+            "price": 1000,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "ugift",
+            "iconWalletName": "l_f2",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ugift",
+                        "m_walletName": "l_f2",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 5,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802026,
+            "sort_priority": 290,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "旧支配者パフェ",
+            "text": "旧支配者パフェ×1",
+            "show_item_count": 0,
+            "price": 500,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "ugift",
+            "iconWalletName": "m_f",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ugift",
+                        "m_walletName": "m_f",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 10,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802027,
+            "sort_priority": 280,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "名状しがたいキャンディ",
+            "text": "名状しがたいキャンディ×1",
+            "show_item_count": 0,
+            "price": 100,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "ugift",
+            "iconWalletName": "s_f",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ugift",
+                        "m_walletName": "s_f",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 15,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802028,
+            "sort_priority": 200,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "エナジー・コア袋(8h)",
+            "text": "エナジー・コア袋(8h)×1",
+            "show_item_count": 0,
+            "price": 1000,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "material_bag",
+            "iconWalletName": "unit_threshold_8h",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "unit_threshold_8h",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 8,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802029,
+            "sort_priority": 190,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "EXPエナジー袋(8h)",
+            "text": "EXPエナジー袋(8h)×1",
+            "show_item_count": 0,
+            "price": 1000,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "material_bag",
+            "iconWalletName": "unit_exp_8h",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "unit_exp_8h",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 8,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802030,
+            "sort_priority": 180,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "コイン袋(8h)",
+            "text": "コイン袋(8h)×1",
+            "show_item_count": 0,
+            "price": 1000,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "material_bag",
+            "iconWalletName": "gold_8h",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "gold_8h",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 8,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802031,
+            "sort_priority": 100,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "労働力",
+            "text": "労働力×1000",
+            "show_item_count": 1,
+            "price": 1000,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "point",
+            "iconWalletName": "explore_pt",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "explore_pt",
+                        "m_count": 1000
+                    }
+                ]
+            },
+            "buylimit": 3,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
+            "sold_out_hide": 0,
+            "startDate": "",
+            "endDate": "",
+            "present_box": 0,
+            "sales_conditions": "",
+            "sales_conditions_param": "",
+            "targetPlatform": 0,
+            "sales_period": "",
+            "stepup_group_id": "",
+            "stepup_rank": 0,
+            "stepup_max": 0
+        },
+        {
+            "id": 802032,
+            "sort_priority": 90,
+            "pickup_priority": 0,
+            "hotfix_shop_id": 0,
+            "name": "コイン",
+            "text": "コイン×1",
+            "show_item_count": 0,
+            "price": 1,
+            "discount_rate": 0,
+            "price_category": "event",
+            "price_name": "pt_ev20260508",
+            "iconWalletCategory": "point",
+            "iconWalletName": "gold",
+            "shopItems": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "gold",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "buylimit": 0,
+            "LimitResetTrigger": "",
+            "DayOfMonthForReset": 0,
+            "DayOfWeekForReset": 0,
+            "DateTimeForReset": "",
+            "tab_category": 8002,
             "sold_out_hide": 0,
             "startDate": "",
             "endDate": "",

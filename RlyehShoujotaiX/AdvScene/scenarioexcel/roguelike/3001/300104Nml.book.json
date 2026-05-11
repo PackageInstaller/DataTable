@@ -1,0 +1,2133 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -2195584510539435343
+    },
+    "m_Name": "300104Nml.book",
+    "importVersion": 0,
+    "importGridList": [
+        {
+            "rows": [
+                {
+                    "rowIndex": 0,
+                    "strings": [
+                        "",
+                        "Command",
+                        "Arg1",
+                        "Arg2",
+                        "Arg3",
+                        "Arg4",
+                        "Arg5",
+                        "Arg6",
+                        "WaitType",
+                        "Text",
+                        "PageCtrl",
+                        "Voice",
+                        "WindowType",
+                        "Arg7"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 1,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 2,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_ルルイエの街"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 3,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.2 y=1.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 4,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt2_Ang",
+                        "layer_左",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 5,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt1_Nor",
+                        "layer_右",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 6,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2003_0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 7,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 8,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "集中線1_01",
+                        "",
+                        "レイヤー_四者四様3スプライト線1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 9,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "集中線2_01",
+                        "",
+                        "レイヤー_四者四様3スプライト線2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 10,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "集中線3_01",
+                        "",
+                        "レイヤー_四者四様3スプライト線3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 11,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線1_01",
+                        "ScaleTo",
+                        "time=0 x=1.4 y=1.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 12,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線2_01",
+                        "ScaleTo",
+                        "time=0 x=1.4 y=1.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 13,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線3_01",
+                        "ScaleTo",
+                        "time=0 x=1.4 y=1.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 14,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線1_01",
+                        "ColorTo",
+                        "time=0.1 alpha=1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 15,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線2_01",
+                        "ColorTo",
+                        "time=0.1 alpha=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 16,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線3_01",
+                        "ColorTo",
+                        "time=0.1 alpha=1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 17,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線1_01",
+                        "ColorTo",
+                        "time=0.1 alpha=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 18,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線2_01",
+                        "ColorTo",
+                        "time=0.1 alpha=1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 19,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線3_01",
+                        "ColorTo",
+                        "time=0.1 alpha=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 20,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveBy",
+                        "time=0.2 y=-5",
+                        "",
+                        "pingPong=0",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 21,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 22,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線1_01",
+                        "ColorTo",
+                        "time=0.1 alpha=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 23,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線2_01",
+                        "ColorTo",
+                        "time=0.1 alpha=1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 24,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線3_01",
+                        "ColorTo",
+                        "time=0.1 alpha=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 25,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線1_01",
+                        "ColorTo",
+                        "time=0.1 alpha=1",
+                        "",
+                        "pingPong=0",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 26,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線2_01",
+                        "ColorTo",
+                        "time=0.1 alpha=0",
+                        "",
+                        "pingPong=0",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 27,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線3_01",
+                        "ColorTo",
+                        "time=0.1 alpha=1",
+                        "",
+                        "pingPong=0",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 28,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "３つめの騎馬像が『闇』に崩れて飲み込まれていく。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 29,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あとひとつ……！\nアテナは！？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 30,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "まだ、完全には形になっていないみたいだ！\nこの調子ならどうにか間に合う……と思う！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 31,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "断言はできない――が、最善は尽くせているはずだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 32,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "少女隊も、戦場でよくシトの軍勢を押さえてくれているのだろう。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 33,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "気を抜くわけじゃないが、事態が始まった直後よりは、ずいぶん余裕が出てきたように思える。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 34,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "どうやら、そう簡単にはいかないようですね。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 35,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveBy",
+                        "time=0 y=-5",
+                        "",
+                        "pingPong=2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 36,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm,Se,Ambience",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 37,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "え――。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 38,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_魔法_特殊_レーザー"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 39,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 40,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "集中線1_01"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 41,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "集中線2_01"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 42,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "集中線3_01"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 43,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イヴに何か言葉を返すよりも先に、視界が強烈な閃光に覆われる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 44,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_魔法_爆発_強"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 45,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 46,
+                    "strings": [
+                        "",
+                        "Shake",
+                        "Graphics",
+                        "",
+                        "time=0.3 x=20 y=-16",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 47,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "次いで、大きな爆発音と振動、衝撃。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 48,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "な、なんだ……！？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 49,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "再びの爆発と衝撃に見舞われながら、俺は閃光の元をたどる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 50,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_6001_2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 51,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "これは……アテナか！？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 52,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_魔法_光_柱"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 53,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "空高く、まだ完全に形を成していないカミ・アテナ。\nそのヒトガタの光の塊から、いくつもの光弾が雨のようにルルイエに降り注ぐ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 54,
+                    "strings": [
+                        "",
+                        "Shake",
+                        "Graphics",
+                        "",
+                        "time=0.3 x=20 y=-16",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 55,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#FFFFFF66",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 56,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "結界を失ったままの街は、なすすべなく、その光にさらされていた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 57,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt8_Scr",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "まだ完全に復活してないくせに……！\nこっちが街を駆け回ってるのを何だと思ってるの！？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 58,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ネオンの言うことももっともだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 59,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt1_Nor"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 60,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "今まで手を出してこなかったことも考えると、文字通り俺たちの努力を見下され、手のひらの上で転がされているようにすら感じられる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 61,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "像はあとひとつ！\nそれさえ壊せば、巨大騎馬像を破壊して終わる……はず！\nいったいどこにあるんだ！？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 62,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt2_Ang",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……ダメ！\nネットワークに潜っても、街の中で他にシトが現れたって話はない！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 63,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt9_Ama",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "てか、攻撃のせいでそれどこじゃないって感じ！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 64,
+                    "strings": [
+                        "",
+                        "Shake",
+                        "MessageWindow",
+                        "",
+                        "time=0.3 x=20 y=-16",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 65,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "くそ……！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 66,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あとひとつなんだ。\n何か……何か方法は……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 67,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……イヴ。\n最後の騎馬像の場所を知っているか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 68,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "え！？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 69,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "驚くネオンをよそに、俺はイヴをまっすぐ見据える。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 70,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt7_Sad",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "知る由はありません。\nしかし、契約さえあれば――それは必ず履行されます。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 71,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "きっと、貴方がたを導いてさしあげましょう。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 72,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "信じていいんだな……？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 73,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "必ずや。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 74,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "臆面もなく答えた彼女に、俺は手を差し出す。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 75,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "分かった。\n契約成立だ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 76,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ちょっと、そんなこと――。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 77,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "今は、他に手段がない。\n彼女に賭けなければ、ルルイエが落ちる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 78,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt7_Sad",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "うっ……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 79,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ネオンは何か言いたげだったが、それ以上は口を噤んだ。\n俺は、イヴが差し出してきた書面に再び記名をする。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 80,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "確かに。\nそれでは――。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 81,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イヴは、静かに目を閉じて手を広げると、そのまま天を仰いだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 82,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それは、天のアテナを見上げるようでもあったが、もっと先の――宇宙の果てに意識を巡らせるような。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 83,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そういう風に、俺には感じられた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 84,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "――地下。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 85,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……え？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 86,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "最後の騎馬像は、地下のゴミ貯めの中にあります。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 87,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt2_Ang",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ゴミ貯めって――いや、考えてる時間が惜しい。\n行こう……！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 88,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ああ！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 89,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "光降り注ぐ街を、俺たちは走り抜ける。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 90,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_走り"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 91,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 92,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_走り"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 93,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 94,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm,Se,Ambience",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 95,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 96,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 97,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 98,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_汎用_遺跡"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 99,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.2 y=1.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 100,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 101,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2002_0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 102,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 103,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ルルイエの地下は、その多くが遺跡のような姿で入り組んでいる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 104,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "歴史の積み重ねにさほど興味がない街の人たちは、それをゴミ捨て場として利用したり、下水道として利用したり――ルルイエの負のライフラインを担っている。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 105,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt4_Con",
+                        "layer_左",
+                        "",
+                        "",
+                        "0.3",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 106,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt1_Nor",
+                        "layer_右",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 107,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "本当に、このゴミの中に騎馬像があるの？\n光ってるのすら見えないんだけど。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 108,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "大方、戦利品として持ち帰ったのはいいものの、やっぱり邪魔だと思い立って捨ててしまったのでしょう。\nあくまで推測ではありますが。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 109,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt2_Ang",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "誰の仕業よ……分かったら問い詰めてやる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 110,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そんなことよりも探そう！\n今は、時間が惜しい！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 111,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt2_Ang",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "分かってる……！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 112,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_移動音"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 113,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 114,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 115,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "頭上では、絶えず地上のものらしい爆発音と揺れが響いている。\nルルイエが焼け野原になる前に、像を見つけないと。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 116,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "少しでも光が漏れていれば、それでわかりそうなんだが……！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 117,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_物体動作_布類を触る"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 118,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveBy",
+                        "time=0.8 y=50",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 119,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0.8 x=1.3 y=1.3",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 120,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "うずたかく積まれたゴミの山の中には、それらしいものは見当たらない。\nだったら少しずつでも、山を崩していくしかない。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 121,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "汚れても、指先を切っても、この中にあると信じて――。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 122,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あ――。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 123,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "その時、崩れたゴミの中から一筋の光がこぼれた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 124,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "見つけた――。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 125,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そう思った瞬間に、光の中から新たな影が飛びだしてくる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 126,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_ザコ_登場"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 127,
+                    "strings": [
+                        "",
+                        "",
+                        "モブ_シト",
+                        "",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "――――。",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 128,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あ……しまった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 129,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt2_Ang",
+                        "layer_左",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "危ない……っ！！！",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 130,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "閃光で目がくらむ中、ネオンの叫びだけが耳に響いていた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 131,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "All",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 132,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 133,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 134,
+                    "strings": [
+                        "",
+                        "LayerReset",
+                        "レイヤー_マスク全画面",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                }
+            ],
+            "name": "Assets/AdvScene/ScenarioExcel/roguelike/3001/300104Nml.xlsx:300104Nml",
+            "type": 1,
+            "textLength": 3612,
+            "headerRow": 0,
+            "entityIndexTbl": [],
+            "entityDataList": []
+        }
+    ]
+}

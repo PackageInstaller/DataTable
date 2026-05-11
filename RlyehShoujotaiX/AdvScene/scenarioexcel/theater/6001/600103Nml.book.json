@@ -1,0 +1,2313 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -2195584510539435343
+    },
+    "m_Name": "600103Nml.book",
+    "importVersion": 0,
+    "importGridList": [
+        {
+            "rows": [
+                {
+                    "rowIndex": 0,
+                    "strings": [
+                        "",
+                        "Command",
+                        "Arg1",
+                        "Arg2",
+                        "Arg3",
+                        "Arg4",
+                        "Arg5",
+                        "Arg6",
+                        "WaitType",
+                        "Text",
+                        "PageCtrl",
+                        "Voice",
+                        "WindowType",
+                        "Arg7"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 1,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "IF(J5=\"\",\"\",IF(AND(C5<>\"主人公\",LEN(TRIM(C5))<>0),\"セリフ\",\"\"))",
+                        "IF(P5<>\"\",TEXT(COUNTIF($P$2:P5,\"セリフ\")+$S$2,\"000\"),\"\")",
+                        "IF(Q5=\"\",\"\",$P$2&Q5)"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 2,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "四角_01"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 3,
+                    "strings": [
+                        "",
+                        "Set",
+                        "四角_01",
+                        "Scale",
+                        "20",
+                        "20"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 4,
+                    "strings": [
+                        "",
+                        "Set",
+                        "四角_01",
+                        "Color",
+                        "#000000"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 5,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.8",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "IF(J9=\"\",\"\",IF(AND(C9<>\"主人公\",LEN(TRIM(C9))<>0),\"セリフ\",\"\"))",
+                        "IF(P9<>\"\",TEXT(COUNTIF($P$2:P9,\"セリフ\")+$S$2,\"000\"),\"\")",
+                        "IF(Q9=\"\",\"\",$P$2&Q9)"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 6,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "IF(J10=\"\",\"\",IF(AND(C10<>\"主人公\",LEN(TRIM(C10))<>0),\"セリフ\",\"\"))",
+                        "IF(P10<>\"\",TEXT(COUNTIF($P$2:P10,\"セリフ\")+$S$2,\"000\"),\"\")",
+                        "IF(Q10=\"\",\"\",$P$2&Q10)"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 7,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "その日――<interval=0.4>カルコサの街から風が消えた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 8,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "風と共にあることが当たり前であった街の住人達にとって、<interval=0.4>それはこの上ない違和感であり、邪神を傍に感じられなくなるという不安でもあった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 9,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "IF(J13=\"\",\"\",IF(AND(C13<>\"主人公\",LEN(TRIM(C13))<>0),\"セリフ\",\"\"))",
+                        "IF(P13<>\"\",TEXT(COUNTIF($P$2:P13,\"セリフ\")+$S$2,\"000\"),\"\")",
+                        "IF(Q13=\"\",\"\",$P$2&Q13)"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 10,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_カルコサの街",
+                        "",
+                        "",
+                        "",
+                        "50",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "IF(J14=\"\",\"\",IF(AND(C14<>\"主人公\",LEN(TRIM(C14))<>0),\"セリフ\",\"\"))",
+                        "IF(P14<>\"\",TEXT(COUNTIF($P$2:P14,\"セリフ\")+$S$2,\"000\"),\"\")",
+                        "IF(Q14=\"\",\"\",$P$2&Q14)"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 11,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.2 y=1.2",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 12,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "四角_01",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 13,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "IF(J17=\"\",\"\",IF(AND(C17<>\"主人公\",LEN(TRIM(C17))<>0),\"セリフ\",\"\"))",
+                        "IF(P17<>\"\",TEXT(COUNTIF($P$2:P17,\"セリフ\")+$S$2,\"000\"),\"\")",
+                        "IF(Q17=\"\",\"\",$P$2&Q17)"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 14,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "IF(J18=\"\",\"\",IF(AND(C18<>\"主人公\",LEN(TRIM(C18))<>0),\"セリフ\",\"\"))",
+                        "IF(P18<>\"\",TEXT(COUNTIF($P$2:P18,\"セリフ\")+$S$2,\"000\"),\"\")",
+                        "IF(Q18=\"\",\"\",$P$2&Q18)"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 15,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.2",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "IF(J19=\"\",\"\",IF(AND(C19<>\"主人公\",LEN(TRIM(C19))<>0),\"セリフ\",\"\"))",
+                        "IF(P19<>\"\",TEXT(COUNTIF($P$2:P19,\"セリフ\")+$S$2,\"000\"),\"\")",
+                        "IF(Q19=\"\",\"\",$P$2&Q19)"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 16,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "だからこそ「風凪ぎ」の間は、街にいつも以上に<color=#ffff00>黄色</color>のものが溢れかえる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 17,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "店で売ってる品物も、<interval=0.4>食べ物も、<interval=0.4>街の飾りつけも。<interval=0.8>\nそのすべてが黄衣の王ハスターを称える<color=#ffff00>黄一色</color>となり、いつにもまして邪神の威光をそこかしこに感じざるを得なかった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 18,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_歩き",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 19,
+                    "strings": [
+                        "",
+                        "",
+                        "トレイラ",
+                        "Emt9_Ama",
+                        "layer_中"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 20,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "トレイラ",
+                        "MoveBy",
+                        "time=0.8 x=-50",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 21,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2005_0",
+                        "",
+                        "1",
+                        "",
+                        "0",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 22,
+                    "strings": [
+                        "",
+                        "",
+                        "トレイラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "すっかり身構えてましたけど……見回りって言っても、基本は何も起きないことを願って街をぶらつくだけですよねぇ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 23,
+                    "strings": [
+                        "",
+                        "",
+                        "トレイラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そう考えたら、思ったほど大変なことではないのかも……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 24,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "トボトボと街を歩きながら視線を巡らせると、屋台の食べ物にぱくつきながらにこやかに談笑する住人たちの姿が映る。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 25,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "傍らでは、中世の吟遊詩人じみた格好をした信徒が穏やかな笛の音を奏で、街全体が暖かで安らかなハスターの眠りを称える空気に包まれている。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 26,
+                    "strings": [
+                        "",
+                        "",
+                        "トレイラ",
+                        "Emt7_Sad",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "どうしてこの空気の中で、私だけ心休まらない状態に……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 27,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "口を開けば文句しか出てこないが、むしろ文句すら言えないなんて最低の低じゃないか――トレイラは、半ば開き直ったようにそう自分に言い聞かせていた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 28,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "トレイラ",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 29,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 30,
+                    "strings": [
+                        "",
+                        "",
+                        "トレイラ",
+                        "Emt4_Con"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 31,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "トレイラ",
+                        "ShakePosition",
+                        "time=0.2 x=20",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 32,
+                    "strings": [
+                        "",
+                        "",
+                        "？？？",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ほら、ルーチェ！<interval=0.8>\nこっちのレモンタルトも美味しいであります！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 33,
+                    "strings": [
+                        "",
+                        "",
+                        "？？？",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "わっ……本当だ！<interval=0.8>\n甘くてすっぱくて、おいしい……！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 34,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 35,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 36,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 37,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯上",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 38,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯下",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 39,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "マスク黒帯上",
+                        "漫符_ブラック",
+                        "レイヤー_マスク全画面下",
+                        "3000",
+                        "880",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 40,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "マスク黒帯下",
+                        "漫符_ブラック",
+                        "レイヤー_マスク全画面下",
+                        "3000",
+                        "-820",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 41,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "ColorTo",
+                        "time=0 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 42,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "ColorTo",
+                        "time=0 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 43,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "MoveTo",
+                        "time=0 x=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 44,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "MoveTo",
+                        "time=0 x=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 45,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "レイヤー_マスク全画面下",
+                        "MoveBy",
+                        "time=0 y=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 46,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "ColorTo",
+                        "time=0 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 47,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "ColorTo",
+                        "time=0 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 48,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "MoveBy",
+                        "time=0 y=0",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 49,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "MoveBy",
+                        "time=0 y=6",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 50,
+                    "strings": [
+                        "",
+                        "",
+                        "ルーチェルト",
+                        "Emt10_Est",
+                        "layer_右",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 51,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ルーチェルト",
+                        "Color",
+                        "#000000"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 52,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ルーチェルト",
+                        "Rotate",
+                        "",
+                        "180"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 53,
+                    "strings": [
+                        "",
+                        "",
+                        "ビーネリンデ",
+                        "Emt10_Est",
+                        "layer_左",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 54,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ビーネリンデ",
+                        "Color",
+                        "#000000"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 55,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 56,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 57,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 58,
+                    "strings": [
+                        "",
+                        "",
+                        "トレイラ",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あれって確か、ムクドリ隊の……？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 59,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "トレイラが街角で見つけた凸凹な背格好のふたりは、準待機中と聞いていた魔術師団の団員――<interval=0.8>",
+                        "Next"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 60,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルーチェルト",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 61,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ビーネリンデ",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 62,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 63,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ビーネリンデとルーチェルトであった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 64,
+                    "strings": [
+                        "",
+                        "",
+                        "ルーチェルト",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それにしても、カルコサにこんな日が来るなんて……準待機で居場所さえ知らせれば、１日好きに過ごしていいお休みみたいなものだなんて……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 65,
+                    "strings": [
+                        "",
+                        "",
+                        "ルーチェルト",
+                        "Emt7_Sad",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "う、うぅ……あたしがこんな幸せを感じちゃていいのかなぁ。\n涙が出てきちゃうよ、リンデ……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 66,
+                    "strings": [
+                        "",
+                        "",
+                        "ビーネリンデ",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "まったくルーチェは、何回同じことで泣くのでありますか。\nほら、泣いている暇があったら、一分一秒でもお祭りを楽しまないと損でありますよ？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 67,
+                    "strings": [
+                        "",
+                        "",
+                        "ルーチェルト",
+                        "Emt9_Ama",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そ、そうだよね……うん。\nもし何かあったら、真っ先に出動させられるのは、あたしたちだろうし……楽しめるときに楽しんでおかないと、損……だよね。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 68,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ビーネリンデ",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 69,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルーチェルト",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 70,
+                    "strings": [
+                        "",
+                        "",
+                        "トレイラ",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "（これは、私に課せられた試練か何かですか？\n　そうなんですか、ハスター様？）"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 71,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ビーネリンデ",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 72,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルーチェルト",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 73,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 74,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "つかの間の平穏を噛みしめる魔術師団のふたりを前に、自分がヘマをすればそのささやかな幸せを台無しにしてしまうトレイラは、お腹のあたりにキリキリとした痛みを感じざるを得ない。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 75,
+                    "strings": [
+                        "",
+                        "",
+                        "ビーネリンデ",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "甘いものばっかり食べてたら、しょっぱいものも食べたくなるでありますな。\nほらルーチェ、卵のポタージュも冷めないうちに。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 76,
+                    "strings": [
+                        "",
+                        "",
+                        "ルーチェルト",
+                        "Emt3_Gla"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 77,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルーチェルト",
+                        "MoveBy",
+                        "time=0.5 y=-30",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 78,
+                    "strings": [
+                        "",
+                        "",
+                        "ルーチェルト",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "うん、ありがとう――<interval=0.8>",
+                        "Next"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 79,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_ぶつかる",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 80,
+                    "strings": [
+                        "",
+                        "",
+                        "ルーチェルト",
+                        "Emt5_Sur"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 81,
+                    "strings": [
+                        "",
+                        "",
+                        "ルーチェルト",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "わっ！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 82,
+                    "strings": [
+                        "",
+                        "",
+                        "トレイラ",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あっ！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 83,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 84,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "大きなルーチェルトが、小さなビーネリンデから器を受け取ろうと身をかがめた瞬間、突き出たお尻が後ろにいた人をドンと押し出すようになってしまった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 85,
+                    "strings": [
+                        "",
+                        "",
+                        "ルーチェルト",
+                        "Emt8_Scr",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "わっ……ごごごごご、ごめんなさいっ！\n後ろに誰かいるなんて気づいてなくって――。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 86,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あわてて振り返って平謝りするルーチェルトだったが、相手の顔を見た瞬間にさっと血の気が引く。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 87,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 88,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 89,
+                    "strings": [
+                        "",
+                        "",
+                        "ビーネリンデ",
+                        "Emt1_Nor",
+                        "layer_奥_B",
+                        "-450",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 90,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ビーネリンデ",
+                        "Scale",
+                        "0.9",
+                        "0.9"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 91,
+                    "strings": [
+                        "",
+                        "",
+                        "ルーチェルト",
+                        "Emt1_Nor",
+                        "layer_奥_A",
+                        "150",
+                        "60",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 92,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ルーチェルト",
+                        "Scale",
+                        "0.9",
+                        "0.9"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 93,
+                    "strings": [
+                        "",
+                        "",
+                        "狂信者",
+                        "Emt1_Nor",
+                        "layer_右",
+                        "100",
+                        "25",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 94,
+                    "strings": [
+                        "",
+                        "Set",
+                        "狂信者",
+                        "Scale",
+                        "0.8",
+                        "0.8"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 95,
+                    "strings": [
+                        "",
+                        "",
+                        "狂信者2",
+                        "Emt1_Nor",
+                        "layer_右2",
+                        "-100",
+                        "25",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 96,
+                    "strings": [
+                        "",
+                        "Set",
+                        "狂信者2",
+                        "Scale",
+                        "0.8",
+                        "0.8"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 97,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "同じく準待機中の、同僚の師団員たちだった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 98,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2003_0",
+                        "",
+                        "1",
+                        "",
+                        "0",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 99,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "狂信者",
+                        "ShakePosition",
+                        "time=0.2 x=20",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 100,
+                    "strings": [
+                        "",
+                        "",
+                        "高飛車な師団員",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ちょっと、あんた何してくれちゃってんの？\n私の服が、カボチャのスープまみれになっちゃったんだけど。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 101,
+                    "strings": [
+                        "",
+                        "",
+                        "狂信者2",
+                        "Emt5_Sur"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 102,
+                    "strings": [
+                        "",
+                        "",
+                        "嫌味な師団員",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それ、この間買ったばっかの服じゃないの。\nうわっ、ひど……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 103,
+                    "strings": [
+                        "",
+                        "",
+                        "ビーネリンデ",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "も、申し訳ないであります！\n自分も周りをよく見ずにルーチェに声をかけてしまったから……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 104,
+                    "strings": [
+                        " ",
+                        "Tween",
+                        "狂信者2",
+                        "MoveBy",
+                        "time=0.4 x=6",
+                        "linear",
+                        "pingPong=2",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 105,
+                    "strings": [
+                        "",
+                        "",
+                        "嫌味な師団員",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "だろうねぇ、ちっちゃくていつも足元しか見えないやつと、\nおっきくて足元が見えないやつと。\nだからいつも、こうやって誰かに迷惑ばっかり。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 106,
+                    "strings": [
+                        "",
+                        "",
+                        "狂信者",
+                        "Emt4_Con"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 107,
+                    "strings": [
+                        "",
+                        "",
+                        "高飛車な師団員",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "弁償なんかで済ませるつもりなの？\nミスはちゃんと指導しなきゃ、私たちが隊長に怒られちゃうじゃない。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 108,
+                    "strings": [
+                        "",
+                        "",
+                        "ルーチェルト",
+                        "Emt7_Sad",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そ、そんなぁ……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 109,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ビーネリンデ",
+                        "MoveBy",
+                        "time=0.3 x=50",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 110,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "ビーネリンデ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 111,
+                    "strings": [
+                        "",
+                        "",
+                        "ビーネリンデ",
+                        "Emt1_Nor",
+                        "layer_左",
+                        "300",
+                        "-20",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 112,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ビーネリンデ",
+                        "Scale",
+                        "0.8",
+                        "0.8"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 113,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ビーネリンデ",
+                        "MoveBy",
+                        "time=0.5 x=50",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 114,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "すっかりおびえ切ったルーチェルトに、ビーネリンデが庇うように前に躍り出る。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 115,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 116,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルーチェルト",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 117,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ビーネリンデ",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 118,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "狂信者",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 119,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "狂信者2",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 120,
+                    "strings": [
+                        "",
+                        "",
+                        "トレイラ",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "（ちょ……<interval=0.8><size=32>なんで一瞬で面倒事に発展してるんですか！？<interval=0.8></size>\n　これだから血の気が多い最前線のお方たちはぁ！）"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 121,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#ffffff",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 122,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルーチェルト",
+                        "ColorTo",
+                        "time=0.3 color=#ffffff",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 123,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ビーネリンデ",
+                        "ColorTo",
+                        "time=0.3 color=#ffffff",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 124,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "狂信者",
+                        "ColorTo",
+                        "time=0.3 color=#ffffff",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 125,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "狂信者2",
+                        "ColorTo",
+                        "time=0.3 color=#ffffff",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 126,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 127,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_走り",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 128,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "トレイラは、唇を噛みしめながら４人の騒動の輪に飛び込んでいった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 129,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "All",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 130,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 131,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 132,
+                    "strings": [
+                        "",
+                        "LayerReset",
+                        "レイヤー_マスク全画面",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                }
+            ],
+            "name": "Assets/AdvScene/ScenarioExcel/theater/6001/600103Nml.xlsx:600103Nml",
+            "type": 1,
+            "textLength": 5585,
+            "headerRow": 0,
+            "entityIndexTbl": [],
+            "entityDataList": []
+        }
+    ]
+}

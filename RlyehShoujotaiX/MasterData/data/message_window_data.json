@@ -2576,6 +2576,40 @@
             "option_se": 0,
             "window_width": 0,
             "prefab_path": ""
+        },
+        {
+            "id": "NEWS_BULK_READ_CONFIRM_POPUP",
+            "title": "確認",
+            "message": "NEWS_BULK_READ_CONFIRM_POPUP_MESSAGE",
+            "yes_text": "COMMON_BUTTON_YES",
+            "no_text": "COMMON_BUTTON_NO",
+            "option_text": "",
+            "option_pos": 0,
+            "is_destructive": 0,
+            "is_back_tap_close": 1,
+            "is_close_button_display": 0,
+            "is_text_auto_sizing": 0,
+            "is_text_word_wrapping": 0,
+            "option_se": 0,
+            "window_width": 0,
+            "prefab_path": ""
+        },
+        {
+            "id": "RESET_AWAKEPOTENTIAL_CONFIRM",
+            "title": "潜在能力リセット",
+            "message": "開放した潜在能力をリセットして\r\n未開放状態に戻しますか？\r\n <color=#ffa500>使用した潜在値は全て返却されます</color> ",
+            "yes_text": "リセット",
+            "no_text": "COMMON_CLOSE",
+            "option_text": "",
+            "option_pos": 0,
+            "is_destructive": 0,
+            "is_back_tap_close": 1,
+            "is_close_button_display": 1,
+            "is_text_auto_sizing": 0,
+            "is_text_word_wrapping": 0,
+            "option_se": 0,
+            "window_width": 0,
+            "prefab_path": ""
         }
     ]
 }

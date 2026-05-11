@@ -1,0 +1,3827 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -2195584510539435343
+    },
+    "m_Name": "10057A2_Nml.book",
+    "importVersion": 0,
+    "importGridList": [
+        {
+            "rows": [
+                {
+                    "rowIndex": 0,
+                    "strings": [
+                        "",
+                        "Command",
+                        "Arg1",
+                        "Arg2",
+                        "Arg3",
+                        "Arg4",
+                        "Arg5",
+                        "Arg6",
+                        "WaitType",
+                        "Text",
+                        "PageCtrl",
+                        "Voice",
+                        "WindowType",
+                        "Arg7"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 1,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 2,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_ルルイエの街",
+                        "",
+                        "layer_背景",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 3,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2001_0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 4,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯上",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 5,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯下",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 6,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "マスク黒帯上",
+                        "漫符_ブラック",
+                        "レイヤー_マスク全画面下",
+                        "3000",
+                        "880",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 7,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "マスク黒帯下",
+                        "漫符_ブラック",
+                        "レイヤー_マスク全画面下",
+                        "3000",
+                        "-820",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 8,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "ColorTo",
+                        "time=0 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 9,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "ColorTo",
+                        "time=0 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 10,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "MoveTo",
+                        "time=0 x=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 11,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "MoveTo",
+                        "time=0 x=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 12,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "レイヤー_マスク全画面下",
+                        "MoveBy",
+                        "time=0 y=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 13,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "ColorTo",
+                        "time=0 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 14,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "ColorTo",
+                        "time=0 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 15,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "MoveBy",
+                        "time=0 y=-60"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 16,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "MoveBy",
+                        "time=0 y=60"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 17,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt1_Nor",
+                        "layer_中段_中",
+                        "",
+                        "60",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 18,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルナリス",
+                        "ScaleTo",
+                        "time=0 x=0.8 y=0.8"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 19,
+                    "strings": [
+                        "",
+                        "",
+                        "ヴァイス_黒",
+                        "Emt1_Nor",
+                        "layer_中段_右",
+                        "100",
+                        "-40",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 20,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ヴァイス_黒",
+                        "Color",
+                        "#000000"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 21,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ヴァイス_黒",
+                        "Rotate",
+                        "",
+                        "180"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 22,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ヴァイス_黒",
+                        "Scale",
+                        "0.9",
+                        "0.9"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 23,
+                    "strings": [
+                        "",
+                        "",
+                        "ヴァイス_白",
+                        "Emt1_Nor",
+                        "layer_中段_左",
+                        "-100",
+                        "-40",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 24,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ヴァイス_白",
+                        "Color",
+                        "#000000"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 25,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ヴァイス_白",
+                        "Scale",
+                        "0.9",
+                        "0.9"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 26,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 27,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 28,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.2",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 29,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "（おや。ヴァイスが集まっている。<interval=0.4>\n真ん中にいるのは――ルナリスか？）"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 30,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 31,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯上",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 32,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯下"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 33,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.2 y=1.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 34,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 35,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 36,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 37,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt1_Nor",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 38,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "今日のあなたには月と星の加護がある。<interval=0.4>\nけれど、水辺に近づくと加護はなくなる。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_026"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 39,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt2_Ang",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そちらのあなたは、今日は運命の巡り合わせが良くない。<interval=0.4>\n静かに、<interval=0.4>月に祈りながら過ごさないと危険。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_027"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 40,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ルナリスの言葉にヴァイスたちは一喜一憂している。<interval=0.4>\n話の内容を聞くに、運勢を占っているようだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 41,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 42,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt1_Nor",
+                        "layer_左",
+                        "100",
+                        "",
+                        "0.3",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 43,
+                    "strings": [
+                        "",
+                        "",
+                        "ヴァイス",
+                        "Emt2_Ang",
+                        "layer_右",
+                        "-100",
+                        "",
+                        "0.3",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 44,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ヴァイス",
+                        "Rotate",
+                        "",
+                        "180"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 45,
+                    "strings": [
+                        "",
+                        "",
+                        "短気なヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "――またやってんのか、このペテン師が！",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_028"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 46,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt2_Ang",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ペテン師？<interval=0.6>\nわたしは、嘘はつかない。月のお告げは絶対だから。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_029"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 47,
+                    "strings": [
+                        "",
+                        "",
+                        "ヴァイス",
+                        "Emt5_Sur"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 48,
+                    "strings": [
+                        "",
+                        "",
+                        "短気なヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "でもお前の占いは外れたんだ！<interval=0.4>\n鉱脈があるって言った洞窟に行ったが、横穴なんて無かったぞ！",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_030"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 49,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "わたしの言った道順を辿った？<interval=0.8>\nちゃんと浜で拾った真珠は持って行った？",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_031"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 50,
+                    "strings": [
+                        "",
+                        "",
+                        "ヴァイス",
+                        "Emt2_Ang"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 51,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス",
+                        "MoveBy",
+                        "time=0.3 x=30",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 52,
+                    "strings": [
+                        "",
+                        "",
+                        "短気なヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "はあ！？<interval=0.4>　別にどうでもいいだろそんな細かいこと！<interval=0.4>\n鉱脈が動くわけないんだから、場所が合ってりゃ着くだろうが！",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_032"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 53,
+                    "strings": [
+                        "",
+                        "",
+                        "短気なヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "お前、本当は分からなかったから適当なこと言ったんだろ！<interval=0.4>\nみんなも、こんな奴の話、聞かない方がいいぞ！",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_033"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 54,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "周囲がざわめきに包まれる。<interval=0.4>\n俺はたまらず、その場に割り込んだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 55,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveBy",
+                        "time=0.4 y=-50",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 56,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス",
+                        "MoveBy",
+                        "time=0.4 x=-50 y=-50",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 57,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルナリス",
+                        "MoveBy",
+                        "time=0.4 x=-50 y=-50",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 58,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0.4 x=1.3 y=1.3",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 59,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス",
+                        "ScaleTo",
+                        "time=0.4 x=1.2 y=1.2",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 60,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルナリス",
+                        "ScaleTo",
+                        "time=0.4 x=1.2 y=1.2",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 61,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "みんな落ち着け……！\nルナリス。君の占いは、従えば当たるんだよな？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 62,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "うん。月が、導いてくれる。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_034"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 63,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "じゃあ、その鉱脈を俺が彼女の占いで見つけるよ。\nそれが出来れば、ルナリスは嘘つきにならないよな？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 64,
+                    "strings": [
+                        "",
+                        "",
+                        "ヴァイス",
+                        "Emt1_Nor"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 65,
+                    "strings": [
+                        "",
+                        "",
+                        "短気なヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "誰かと思えばただの人間かよ。\nフン。人間風情が、出来るもんならやってみな！",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_035"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 66,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 67,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 68,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 69,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 70,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_草原"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 71,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt1_Nor",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 72,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=2.2 y=2.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 73,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 74,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 75,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2002_0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 76,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ということで――<interval=0.4>ええと、勝手に話を進めてごめんな。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 77,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "別に構わない。<interval=0.4>お告げは何も言っていないから。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_036"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 78,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そうか。<interval=0.4>じゃあ、悪いが付き合ってくれ。<interval=0.4>\nそれで、鉱脈はどっちにあるって言ったんだ？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 79,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_歩き"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 80,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルナリス",
+                        "ColorTo",
+                        "time=0.4 alpha=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 81,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルナリス",
+                        "MoveBy",
+                        "time=0 y=30",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 82,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルナリス",
+                        "ScaleTo",
+                        "time=0 x=0.9 y=0.9"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 83,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 84,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveBy",
+                        "time=0.4 x=-750 y=-300"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 85,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルナリス",
+                        "ColorTo",
+                        "time=0.4 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 86,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "こっち。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_037"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 87,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ルナリスの誘導に従って歩いていく。<interval=0.4>\nしかし、ルナリスが立ち止まったのはただの平原だった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 88,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt2_Ang",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ここで30秒待つ。<interval=0.6>足元が揺れたら、離れる。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_038"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 89,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "30秒……<interval=0.4>えっ？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 90,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_魔法_地_地震"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 91,
+                    "strings": [
+                        "",
+                        "Shake",
+                        "Graphics",
+                        "",
+                        "time=0.4 x=20 y=-16"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 92,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 93,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Se",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 94,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "うわっ、本当に揺れた！？<interval=0.4>　地震！？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 95,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルナリス",
+                        "ColorTo",
+                        "time=0.4 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 96,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveBy",
+                        "time=0.4 x=-300"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 97,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_歩き"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 98,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルナリス",
+                        "ColorTo",
+                        "time=0.4 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 99,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "次はこっち。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_039"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 100,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt2_Ang",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ここで止まって、今度は1分待つ。<interval=0.4>\nそうするとまた揺れる。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_040"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 101,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_魔法_地_地震"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 102,
+                    "strings": [
+                        "",
+                        "Shake",
+                        "Graphics",
+                        "",
+                        "time=0.4 x=20 y=-16"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 103,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 104,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Se",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 105,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "これは一体どういうことなんだ？<interval=0.4>\n地下で何かが起こってるとか……？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 106,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt7_Sad",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "分からない。<interval=0.8>\nただ、月がそうしろと告げている。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_041"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 107,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 108,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルナリス",
+                        "ColorTo",
+                        "time=0 alpha=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 109,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 110,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景なし(黒)"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 111,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 112,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 113,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "次は――<interval=0.6>あの橋を走って渡って、<interval=0.4>太陽の方角へ曲がって20歩。<interval=0.8>\n40秒以内で。遅れると溺れて死ぬ。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_042"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 114,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 115,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "<size=32>えっなんて言った！？<interval=0.8>　失敗すると死ぬ！？　<interval=0.8>なんで！？</size>"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 116,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_走り",
+                        "TRUE"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 117,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "死が迫っている。<interval=0.4>走って。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_043"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 118,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "彼女の後に続いて橋を渡り切る。<interval=0.4>\n",
+                        "Next"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 119,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_魔法_地_強",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 120,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "その瞬間、ミシミシと音を立て、橋が崩落した。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 121,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Se",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 122,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 123,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_崩れ落ちる"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 124,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ほ、<interval=0.4>本当に死ぬところだった……。<interval=0.4>\nお告げって一体なんなんだ……何が見えてるんだよ……！？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 125,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "立ち止まらないで。<interval=0.4>次はこっち。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_044"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 126,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "――それからも俺はルナリスの指示で、<interval=0.4>\nシビアな秒数と歩数管理のもと、ひたすら移動を繰り返した。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 127,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 128,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 129,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 130,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_汎用_森(夕)"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 131,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.6 y=1.6"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 132,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt1_Nor",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 133,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 134,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 135,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "次は、あの洞窟に入る。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_045"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 136,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ぜえ、<interval=0.2>ぜえ……<interval=0.2>洞窟か。<interval=0.4>\nなあ、少し休憩してもいいか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 137,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt2_Ang",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "問題ない。あとはただ決められた道を進むだけ。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_046"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 138,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それは良かった……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 139,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "なあ、ルナリス。<interval=0.4>\nまさか、こういう動き、あの子に全部口頭で伝えたのか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 140,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "うん。<interval=0.4>おおむね同じ。<interval=0.8>\nでも、今回の方が、待っている時間は短い。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_047"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 141,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#ababab"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 142,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "（ルナリスへの暴言を看過するつもりはないが。<interval=0.4>\nとはいえ、これを実践するのは簡単じゃないな……）"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 143,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 144,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あと、彼女には浜で真珠を拾って、<interval=0.4>\nそれを持って向かうように言った。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_048"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 145,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "真珠？<interval=0.4>\nそういえば、俺も今持ってるな。この間拾ったやつ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 146,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "やっぱり、何か不思議な力があるのかな。<interval=0.4>\nほら……どことなく満月に見た目が似ているし。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 147,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……そうかしら。<interval=0.4>わたしには、分からない。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_049"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 148,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "まあ何にしろ、もうすぐなら頑張らないとな。<interval=0.4>\n待っててくれてありがとう。それじゃあ行こうか。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 149,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_歩き"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 150,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルナリス",
+                        "MoveBy",
+                        "time=0.6 y=60",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 151,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveBy",
+                        "time=0.6 y=50",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 152,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルナリス",
+                        "ScaleTo",
+                        "time=0.6 x=0.8 y=0.8",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 153,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0.6 x=1.2 y=1.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 154,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "俺は洞窟へ入ろうとする。<interval=0.4>\nしかし、ルナリスは外で立ち止まったままだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 155,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt2_Ang",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ここからはひとりで向かって。<interval=0.4>\n空が見えない場所は、月の声が聞こえなくて嫌い。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_050"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 156,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "えっ。俺ひとりは……少し不安だな……。<interval=0.4>\n道に迷ったりしないだろうか。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 157,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt9_Ama",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "道順はわたしが教える。<interval=0.4>\nまず入って50歩、<interval=0.4>それから左に曲がって――。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_051"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 158,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルナリス",
+                        "MoveBy",
+                        "time=0.3 y=-90",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 159,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveBy",
+                        "time=0.3 y=-100",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 160,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルナリス",
+                        "ScaleTo",
+                        "time=0.3 x=1.1 y=1.1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 161,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0.3 x=1.5 y=1.5",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 162,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あぁ、待って待って、説明はもう少しゆっくり頼む！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 163,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 164,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 165,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 166,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 167,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_汎用_洞窟"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 168,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.2 y=1.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 169,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0 alpha=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 170,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_歩き"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 171,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 172,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 173,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_環境_洞窟",
+                        "TRUE",
+                        "0.8"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 174,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "暗い洞窟を、小さなランタンを掲げて進む。<interval=0.4>\n彼女から教わった道順を呪文のように唱えながら。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 175,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.6 alpha=0.6",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 176,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "――ふと、ランタンの光が何かに反射する。<interval=0.4>\n顔を上げて見回せば、壁一面が水晶で覆われていた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 177,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.4 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 178,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……ここが言っていた鉱脈か……？<interval=0.4>\nよし。証拠に、いくつか水晶の欠片を持って帰ろう。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 179,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Se",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 180,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "壁から突き出した欠片を手折る。<interval=0.4>\nしかし……その時、足元がぐらりと揺れた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 181,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_魔法_地_地震"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 182,
+                    "strings": [
+                        "",
+                        "Shake",
+                        "Graphics",
+                        "",
+                        "time=0.6 x=20 y=-20"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 183,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 184,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ま、また地震！？<interval=0.4>\n崩落したらまずい……早く逃げよう！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 185,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_走り"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 186,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 187,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 188,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_汎用_森(夜)"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 189,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm,Se",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 190,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.6 y=1.6"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 191,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 192,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 193,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2005_0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 194,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "出口だ――って、<interval=0.8>あれ？　地響きが収まった……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 195,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt3_Gla",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "辿り着けた？",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_052",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 196,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "どうにかな。<interval=0.8>……ほら見て。水晶の欠片。<interval=0.4>\nやっぱり、ルナリスは嘘つきじゃなかったな。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 197,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "月のお告げは絶対だから。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_053"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 198,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……あなたは、月の声が聞こえないのに、お告げを信じたの？",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_054"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 199,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "いや。<interval=0.4>俺が信じているのはルナリスだ。<interval=0.4>\n単に、君がペテン師呼ばわりされたのが許せなかっただけだよ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 200,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt9_Ama",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……そう。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_055"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 201,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "さあ。<interval=0.4>早く帰って、鉱脈の場所を教えてやろう。<interval=0.4>\nあの子、きっと驚くだろうな。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 202,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 203,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 204,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 205,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt4_Con",
+                        "layer_中",
+                        "25",
+                        "-520"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 206,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ルナリス",
+                        "Scale",
+                        "2.5",
+                        "2.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 207,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 208,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_汎用_森(夜)",
+                        "",
+                        "",
+                        "",
+                        "-200"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 209,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.6 y=1.6"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 210,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯上",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 211,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯下",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 212,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "マスク黒帯上",
+                        "漫符_ブラック",
+                        "レイヤー_マスク全画面下",
+                        "3000",
+                        "880",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 213,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "マスク黒帯下",
+                        "漫符_ブラック",
+                        "レイヤー_マスク全画面下",
+                        "3000",
+                        "-820",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 214,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "ColorTo",
+                        "time=0 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 215,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "ColorTo",
+                        "time=0 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 216,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "MoveTo",
+                        "time=0 x=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 217,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "MoveTo",
+                        "time=0 x=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 218,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "レイヤー_マスク全画面下",
+                        "MoveBy",
+                        "time=0 y=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 219,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "ColorTo",
+                        "time=0 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 220,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "ColorTo",
+                        "time=0 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 221,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "MoveTo",
+                        "time=0 y=580",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 222,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "MoveBy",
+                        "time=0 y=6",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 223,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 224,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 225,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 226,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……ありがとう。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_056"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 227,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルナリス",
+                        "ColorTo",
+                        "time=0.3 color=#ababab"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 228,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ん？<interval=0.4>　今何か言ったか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 229,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ルナリス",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 230,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "MoveTo",
+                        "time=1.0 y=880",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 231,
+                    "strings": [
+                        "",
+                        "",
+                        "ルナリス",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……ううん。<interval=0.4>何も。",
+                        "",
+                        "Character/ch_10057/Event/vo_event_10057_057"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 232,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "行きとは逆に、俺がルルイエまでの道を先導して進む。<interval=0.4>\n後ろから響くルナリスの足音は、今までより少し軽く聞こえた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 233,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "All",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 234,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 235,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 236,
+                    "strings": [
+                        "",
+                        "LayerReset",
+                        "レイヤー_マスク全画面",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                }
+            ],
+            "name": "Assets/AdvScene/ScenarioExcel/character/10057/10057A2_Nml.xlsx:10057A2_Nml",
+            "type": 1,
+            "textLength": 8470,
+            "headerRow": 0,
+            "entityIndexTbl": [],
+            "entityDataList": []
+        }
+    ]
+}

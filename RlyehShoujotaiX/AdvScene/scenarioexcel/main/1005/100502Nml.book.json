@@ -1,0 +1,4727 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -2195584510539435343
+    },
+    "m_Name": "100502Nml.book",
+    "importVersion": 0,
+    "importGridList": [
+        {
+            "rows": [
+                {
+                    "rowIndex": 0,
+                    "strings": [
+                        "",
+                        "Command",
+                        "Arg1",
+                        "Arg2",
+                        "Arg3",
+                        "Arg4",
+                        "Arg5",
+                        "Arg6",
+                        "WaitType",
+                        "Text",
+                        "PageCtrl",
+                        "Voice",
+                        "WindowType",
+                        "Arg7"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 1,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 2,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_汎用_館"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 3,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.4 y=1.4",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 4,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveTo",
+                        "time=0 x=0 y=200"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 5,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2002_0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 6,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 7,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 8,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.2",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 9,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ルルイエの街に謎のヴァイスたちが現れてすぐ、俺たちの姿はメイ＝ユルが住む夢見の館にあった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 10,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "彼女たちが現れた直後に、館の使用人たちが大挙してお迎えに来たからだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 11,
+                    "strings": [
+                        "",
+                        "",
+                        "メアジェリー",
+                        "Emt3_Gla",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "お茶をどうぞー。\n粗茶ですがー。",
+                        "",
+                        "Main/1005/vo_main_1005_070",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 12,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "メアジェリー",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 13,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "layer_右",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 14,
+                    "strings": [
+                        "",
+                        "",
+                        "アリスノリス",
+                        "Emt1_Nor",
+                        "layer_左",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 15,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "どもども♪\nありがとうございます♪",
+                        "",
+                        "Main/1005/vo_main_1005_071"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 16,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ほら、アリスもお飲み～。",
+                        "",
+                        "Main/1005/vo_main_1005_072"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 17,
+                    "strings": [
+                        "",
+                        "",
+                        "鹿角の少女",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……うん。",
+                        "",
+                        "Main/1005/vo_main_1005_073"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 18,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "キャピノラに勧められるままに、鹿角の少女もお茶を受け取る。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 19,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "わっ、おいしっ！？\nこれハイパーボリアに無い味！",
+                        "",
+                        "Main/1005/vo_main_1005_074"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 20,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "これ、めっちゃキャピってるかもー！\n持って帰ったら人気出るかな？",
+                        "",
+                        "Main/1005/vo_main_1005_075"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 21,
+                    "strings": [
+                        "",
+                        "",
+                        "アリスノリス",
+                        "Emt7_Sad"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 22,
+                    "strings": [
+                        "",
+                        "",
+                        "鹿角の少女",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "後で製造元を聞いとく。",
+                        "",
+                        "Main/1005/vo_main_1005_076"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 23,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "さっすが！\nよろしくねー♪",
+                        "",
+                        "Main/1005/vo_main_1005_077"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 24,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "言いながら、彼女はニコニコとカップを傾けた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 25,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……俺たちは、なぜ呼ばれたんだろう？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 26,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "キャピノラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 27,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "アリスノリス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 28,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt4_Con",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "さあ……アーカム勢を置いて私たちだけってことは、キミに関係する何かなんじゃないの？",
+                        "",
+                        "Main/1005/vo_main_1005_078",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 29,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "なんじゃないの？　と言われてもだな。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 30,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "全く持って心当たりがない。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 31,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "初めて聞いた、ハイパーボリア王国……？\nの王女様になんか面識があるわけが無いし。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 32,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "強いて言えば、彼女たちがやって来た時のあの門――あれが銀の鍵の門に似た何かなのだとしたら。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 33,
+                    "strings": [
+                        "",
+                        "",
+                        "メイ＝ユル",
+                        "Emt3_Gla",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "この度は、遠路はるばるようこそおいでくださいました……。",
+                        "",
+                        "Main/1005/vo_main_1005_079",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 34,
+                    "strings": [
+                        "",
+                        "",
+                        "メイ＝ユル",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ルルイエにて当代の夢見の巫女をしております、メイ＝ユルと申します……どうぞ、よろしくお願いしますぅ。",
+                        "",
+                        "Main/1005/vo_main_1005_080"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 35,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "こちらこそ、ハイパーボリア王国の王位継承権第７２位。\nキャピノラです♪",
+                        "",
+                        "Main/1005/vo_main_1005_081",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 36,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ほら、アリスもご挨拶して？",
+                        "",
+                        "Main/1005/vo_main_1005_082"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 37,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "",
+                        "layer_右",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 38,
+                    "strings": [
+                        "",
+                        "",
+                        "アリスノリス",
+                        "Emt1_Nor",
+                        "layer_左",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "ほー…………。",
+                        "",
+                        "Main/1005/vo_main_1005_083",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 39,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あ、こら、お空見上げてぼーっとしないの。",
+                        "",
+                        "Main/1005/vo_main_1005_084"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 40,
+                    "strings": [
+                        "",
+                        "",
+                        "アリスノリス",
+                        "Emt9_Ama",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……え？\nああ……うん。",
+                        "",
+                        "Main/1005/vo_main_1005_085"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 41,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "キャピノラにせっつかれるようにして、アリスと呼ばれた少女も頭を下げる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 42,
+                    "strings": [
+                        "",
+                        "",
+                        "アリスノリス",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "王位継承権第１４４位……アリスノリス。\nよろしく。",
+                        "",
+                        "Main/1005/vo_main_1005_086"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 43,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "継承権……って、彼女もお姫様だったのか。\nてっきりお付きの使用人か何かだと思っていた。\nついうっかり無礼を働く前に、知れてよかった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 44,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "てか、７２位に１４４位って……いったい何人居るんだ？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 45,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "キャピノラ",
+                        "MoveTo",
+                        "time=0.4 x=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 46,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "アリスノリス",
+                        "MoveBy",
+                        "time=0.4 y=-20",
+                        "",
+                        "pingPong=4",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 47,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "はい、よくできました！\nよしよし～♪",
+                        "",
+                        "Main/1005/vo_main_1005_087"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 48,
+                    "strings": [
+                        "",
+                        "",
+                        "アリスノリス",
+                        "Emt2_Ang",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "キャピノラ……子供じゃないんだから。",
+                        "",
+                        "Main/1005/vo_main_1005_088"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 49,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "良いじゃん、スキンシップだよ～♪",
+                        "",
+                        "Main/1005/vo_main_1005_089"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 50,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "アリスノリスは、キャピノラに頭を撫でまわされながら淡々とした口調で答えた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 51,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "その言葉の抑揚の無さは、どこかエカを思わせる。\nなんというか、名前通りにキャピキャピしたキャピノラに対して、静かでおとなしい子だな。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 52,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "アリスノリス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 53,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt1_Nor",
+                        "layer_左",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 54,
+                    "strings": [
+                        "",
+                        "",
+                        "メイ＝ユル",
+                        "Emt1_Nor",
+                        "layer_右",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "それで……突然のご来訪で、いったいどのようなご用件でしょう？",
+                        "",
+                        "Main/1005/vo_main_1005_090",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 55,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ああー、そうそう、用事。\n大事な用事があるんです！",
+                        "",
+                        "Main/1005/vo_main_1005_091"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 56,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "言いながら、キャピノラの視線がまっすぐに俺を射抜く。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 57,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "キミが、銀の鍵の継承者……で、間違いないんだよね？",
+                        "",
+                        "Main/1005/vo_main_1005_092"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 58,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あ、ああ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 59,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "曇りの無い瞳で真っすぐに見つめられてドキリとする。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 60,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "俺の答えに彼女は満足げに目を細めると、わざわざ椅子から立ち上がって、恭しく一礼をしてみせた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 61,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ハイパーボリア王国を代表して、あなたの鍵の継承を歓迎します。",
+                        "",
+                        "Main/1005/vo_main_1005_093"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 62,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あ……いや、こちらこそ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 63,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "威厳のようなものに当てられて、思わずこちらも頭を下げてしまう。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 64,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt4_Con",
+                        "layer_左",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "なんでキミがへこへこしてるの。",
+                        "",
+                        "Main/1005/vo_main_1005_094",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 65,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "いや、つい……王女だし。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 66,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "えっと、どうしてハイパーボリア王国の王女様が、わざわざそれを言うためにルルイエまで？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 67,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "メイ＝ユル",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 68,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "ネオン",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 69,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "うーん、それはね、語るとながーい事情があるんだけどぉ。",
+                        "",
+                        "Main/1005/vo_main_1005_095"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 70,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "簡単に言えば、キミが持つ「銀の鍵」がハイパーボリアで作られたものだから――カナ？",
+                        "",
+                        "Main/1005/vo_main_1005_096"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 71,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "な……！？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 72,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "銀の鍵を……作った？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 73,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt9_Ama",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "まあ、作ったって言っても遠い昔の人だけどね。\n今のハイパーボリア王国を治めている王族とは、縁もゆかりも無い人たち。",
+                        "",
+                        "Main/1005/vo_main_1005_097"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 74,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "だけど私たち「ネオ・ヴァーミ族」――その王族は、邪神ツァトゥグア様の命令で、銀の鍵に関する持ちうる限りの情報を保管して、未来に残していく役目があるの。",
+                        "",
+                        "Main/1005/vo_main_1005_098"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 75,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "銀の鍵についていろいろ知ってる……のか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 76,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "知ってるよー！\nあ、ごめん！\nあたしは知らない！",
+                        "",
+                        "Main/1005/vo_main_1005_099"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 77,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あるのは、王族が守り続けてる情報だけ。\nそれは、ハイパーボリアにあるの。",
+                        "",
+                        "Main/1005/vo_main_1005_100"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 78,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "継承者ちゃんには、ハイパーボリアが持つ情報のすべてをあげる。\n銀の鍵に選ばれるっていうのはね、国民にとってはヒーローなんだ。",
+                        "",
+                        "Main/1005/vo_main_1005_101"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 79,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "だからぁ、あたしたちの国にぃ……来てくれるカナ？",
+                        "",
+                        "Main/1005/vo_main_1005_102"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 80,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そうして彼女は、笑顔で俺に向かって手を差し出す。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 81,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 82,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "キャピノラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 83,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt2_Ang",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 84,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ネオン",
+                        "Scale",
+                        "1.4",
+                        "1.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 85,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ネオン",
+                        "Pos",
+                        "",
+                        "-100"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 86,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt2_Ang",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "だ……",
+                        "Next",
+                        "Main/1005/vo_main_1005_103"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 87,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "集中線1_01",
+                        "",
+                        "レイヤー_四者四様3スプライト線1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 88,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "集中線2_01",
+                        "",
+                        "レイヤー_四者四様3スプライト線2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 89,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "集中線3_01",
+                        "",
+                        "レイヤー_四者四様3スプライト線3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 90,
+                    "strings": [
+                        "",
+                        "Set",
+                        "集中線1_01",
+                        "Scale",
+                        "1.4",
+                        "1.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 91,
+                    "strings": [
+                        "",
+                        "Set",
+                        "集中線2_01",
+                        "Scale",
+                        "1.4",
+                        "1.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 92,
+                    "strings": [
+                        "",
+                        "Set",
+                        "集中線3_01",
+                        "Scale",
+                        "1.4",
+                        "1.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 93,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線1_01",
+                        "ColorTo",
+                        "time=0.1 alpha=1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 94,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線2_01",
+                        "ColorTo",
+                        "time=0.1 alpha=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 95,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線3_01",
+                        "ColorTo",
+                        "time=0.1 alpha=1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 96,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線1_01",
+                        "ColorTo",
+                        "time=0.1 alpha=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 97,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線2_01",
+                        "ColorTo",
+                        "time=0.1 alpha=1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 98,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "集中線3_01",
+                        "ColorTo",
+                        "time=0.1 alpha=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 99,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ダメ！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 100,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "集中線1_01"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 101,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "集中線2_01"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 102,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "集中線3_01"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 103,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "不意に、ネオンが声を荒げた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 104,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "彼は、ルルイエにとっても大事な存在なの。\nハイパーボリアだかなんだか知らないけど、そんなところに渡すわけにはいかない。",
+                        "",
+                        "Main/1005/vo_main_1005_104"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 105,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ネオン……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 106,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "ネオン",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 107,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "layer_右",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 108,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt2_Ang",
+                        "layer_左",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 109,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あ、うん。\nいいよー、別に。",
+                        "",
+                        "Main/1005/vo_main_1005_105"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 110,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……え？",
+                        "",
+                        "Main/1005/vo_main_1005_106"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 111,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2005_0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 112,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あっけらかんとして答えるキャピノラに、ネオンは肩透かしを食らった様子で首をかしげる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 113,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あたしの……ってか、王国の役目は、鍵の継承者ちゃんに知っていることを伝えること。\n別に、継承者そのものを独占するつもりも、鍵を返してって言うつもりもないよ。",
+                        "",
+                        "Main/1005/vo_main_1005_107"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 114,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt7_Sad",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そもそも返して貰ったところで、鍵は正当な継承者にしか使えないんだから、意味ないしねー。",
+                        "",
+                        "Main/1005/vo_main_1005_108"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 115,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "じゃあ、本当に知ってることを教えてくれるだけ、なのか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 116,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt9_Ama",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そう言ってるじゃん。\nねえ？",
+                        "",
+                        "Main/1005/vo_main_1005_109"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 117,
+                    "strings": [
+                        "",
+                        "",
+                        "アリスノリス",
+                        "Emt7_Sad",
+                        "layer_左",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "それが王族の使命だから……ハイパーボリアはただ、この時代の継承者をお客として招きたいだけ。",
+                        "",
+                        "Main/1005/vo_main_1005_110",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 118,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "きっとお祭りになるよ～♪\n三日三晩か、もしくは１週間は寝ずの番で騒ぎ続けちゃってさ。\nハイパーボリアの民は、みーんなお祭りが大好きだから♪",
+                        "",
+                        "Main/1005/vo_main_1005_111"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 119,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それくらい嬉しいことなの、継承者ちゃんが現れるって言うのは。\nだから、難しいこと考えないで、観光のつもりで遊びに来てくれると嬉しいナ！",
+                        "",
+                        "Main/1005/vo_main_1005_112"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 120,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ほ、本当にそんなので良いんだろうか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 121,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "キャピノラの語り口のせいか、すごく大事なことを話されているような気がするのに、全く持って切実感が無い。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 122,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "銀の鍵が作られたハイパーボリアと、そんな彼女たちが持つ鍵の情報。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 123,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "知りたい……が、虫の良すぎる話に身構える自分も居る。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 124,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "メイ＝ユルは、どう思う？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 125,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "自分だけの判断じゃ選択を間違えてしまうような気がして、思わずメイ＝ユルに尋ねる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 126,
+                    "strings": [
+                        "",
+                        "",
+                        "メイ＝ユル",
+                        "Emt5_Sur",
+                        "layer_左",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "ええ～？\nクトゥルフ様からは、特にお告げはありませんので……好きにして良いと思いますよ？",
+                        "",
+                        "Main/1005/vo_main_1005_113",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 127,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そうか……君はそうだよな。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 128,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "クトゥルフは何も言わない……俺が、ルルイエを出ること自体は、特に問題が無いということなのか。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 129,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それとも、ハイパーボリアで得る情報がそれほど大事なものなのか。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 130,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ネオンは？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 131,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "メイ＝ユル",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 132,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "キャピノラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 133,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt4_Con",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "私は……心配だから、反対。\nハイパーボリアがカルコサみたいなところだって言いきれない保証も無いし。",
+                        "",
+                        "Main/1005/vo_main_1005_114",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 134,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それもそうか。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 135,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "カルコサを敵視するわけじゃないが、こちらに都合の良いことを言っているようで、本心では何を考えているのか分からないというのはその通りかもしれない。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 136,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "彼女たちを見ている限り、あまり裏はない……というか、考えてなんていなさそうな気はするが。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 137,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "ネオン",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 138,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 139,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ひとつだけ、教えて欲しいんだが。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 140,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "はいはーい。\n知ってることなら、何でも聞いて！",
+                        "",
+                        "Main/1005/vo_main_1005_115",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 141,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "もし、俺がハイパーボリアへ行きたいって言ったら、どうやって行くんだ？\nさっき、キミたちがルルイエにやってくるときに使った、あの扉を使うのか……？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 142,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt9_Ama",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あー、それね？",
+                        "",
+                        "Main/1005/vo_main_1005_116"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 143,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "彼女の視線が、何やら宙を泳ぐ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 144,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "うーん……それはねぇ、半分アタリで半分ハズレ。",
+                        "",
+                        "Main/1005/vo_main_1005_117"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 145,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "半分、というと？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 146,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ハイパーボリアにある扉はね、一方通行なんだ。\nあっちから開けることはできるけど、こっちから開けることはできないの。",
+                        "",
+                        "Main/1005/vo_main_1005_118"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 147,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "まー、だから、あたしたちもこのままじゃ王国に帰れないんだけど～♪\nあはははは♪",
+                        "",
+                        "Main/1005/vo_main_1005_119"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 148,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "彼女は、とても笑いごとじゃないことを楽しそうに語る。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 149,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "だから、半分ハズレ。\nじゃあアタリは何かって言うと――",
+                        "",
+                        "Main/1005/vo_main_1005_120"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 150,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "彼女は、真っ白な指先でトントンと机を叩く。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 151,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ルルイエにもあるよね？\nアレと同じ扉。",
+                        "",
+                        "Main/1005/vo_main_1005_121"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 152,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それを使って、ハイパーボリア王国へのポータルを開く。\n鍵の継承者であるキミなら、それができるはずだよ。",
+                        "",
+                        "Main/1005/vo_main_1005_122"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 153,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "地下の扉でポータルを……？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 154,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "キャピノラ",
+                        "MoveBy",
+                        "time=0.4 y=-20",
+                        "",
+                        "pingPong=2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 155,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "キャピノラが頷く。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 156,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "キミはかつて、あの扉を使ってどこか別の場所との空間を繋いだことはない？",
+                        "",
+                        "Main/1005/vo_main_1005_123"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 157,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……ある。\nそれも２回。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 158,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "一度目は、ルルイエが襲撃された際に戦場の少女隊を街の中へ呼び戻す時に。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 159,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "もう一度は、アスタリーゼに強要されてルルイエとカルコサを扉で繋いだ時に。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 160,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "起こった事象から、俺はあの扉は、一種のワームホールのような役割を持っているんだと考えた。\n遠く離れた場所を、扉一枚で目の前に繋いでしまうような。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 161,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "思った通りの力が、アレにはあるって言うんだな？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 162,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "うん。\n銀の鍵とその扉は、時間と空間を司るから。",
+                        "",
+                        "Main/1005/vo_main_1005_124"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 163,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "キミがそう望むなら、扉はキミの行きたい場所へと繋がるはず。",
+                        "",
+                        "Main/1005/vo_main_1005_125"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 164,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "もっとも……本当に自由自在に扱うためには、鍵の力を高めなきゃいけないんだけど。",
+                        "",
+                        "Main/1005/vo_main_1005_126"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 165,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "力を高める……？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 166,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "俺は、上着ごしに懐の鍵を握りしめる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 167,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt9_Ama",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "キミの鍵、折れてるでしょ？",
+                        "",
+                        "Main/1005/vo_main_1005_127"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 168,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "え……あ、ああ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 169,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "見せて。",
+                        "",
+                        "Main/1005/vo_main_1005_128"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 170,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "言われて、俺は鍵を取り出して机の上に置く。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 171,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "持ち手だけが残って、軸がぽっきり折れたそれは、ぱっと見は鍵と言うよりもいびつな形のペンダントか何かだと言った方がしっくりくる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 172,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "わ～、思ったよりポッキリいってるね～。\n足りるかな、これ。",
+                        "",
+                        "Main/1005/vo_main_1005_129"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 173,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "言いながら、彼女はアリスノリスに向かってちょいちょいと指で合図を送る。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 174,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "アリスノリスは無言で頷いて、ポケットから綺麗なハンカチに包まれた何かを取り出し、机の上で広げた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 175,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "layer_右",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 176,
+                    "strings": [
+                        "",
+                        "",
+                        "アリスノリス",
+                        "Emt1_Nor",
+                        "layer_左",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "……継承者誕生のお祝いに、女王からの贈り物です。",
+                        "",
+                        "Main/1005/vo_main_1005_130",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 177,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "これって……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 178,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "包みの中にあったのは、細い金属のカケラだった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 179,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それだけを見れば何か分からない。\nしかし、話の流れを鑑みれば、答えはおのずと頭の中にひらめいた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 180,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "まさか……銀の鍵の一部？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 181,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あっ、その通り！\n察しが良くて、優秀な継承者ちゃん！\nうれし～♪",
+                        "",
+                        "Main/1005/vo_main_1005_131"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 182,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "キャピノラが笑顔でパチパチと拍手を送り、アリスノリスも真顔のままでそれに続く。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 183,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "王国を信じてくれるなら、このカケラをキミにあげる。\nその代わりに王国に遊びに来て……ついでに、あたしたちを帰してくれると嬉しいなぁ。",
+                        "",
+                        "Main/1005/vo_main_1005_132"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 184,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "後半は、バツが悪そうにチラチラとこちらを覗き見ながら言う。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 185,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "俺は、自らが持つ鍵と、目の前の鍵のカケラとを見比べた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 186,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……鍵の力が完全なものになると、どうなる？\nいったい、何が起こるんだ？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 187,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt9_Ama",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "うーん……ハイパーボリアで聞くおとぎ話だと、「窮極（きゅうきょく）の門へ至り、宇宙を手にする」だったかな。",
+                        "",
+                        "Main/1005/vo_main_1005_133"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 188,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "窮極の門……？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 189,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "キャピノラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 190,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "アリスノリス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 191,
+                    "strings": [
+                        "",
+                        "ImageEffect",
+                        "SpriteCamera",
+                        "GrayScale",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 192,
+                    "strings": [
+                        "",
+                        "ImageEffect",
+                        "SpriteCamera",
+                        "Blur",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 193,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_心臓の音"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 194,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_ヨグソトースの世界"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 195,
+                    "strings": [
+                        "",
+                        "",
+                        "ネア・ウルム",
+                        "",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 196,
+                    "strings": [
+                        "",
+                        "Set",
+                        "BG",
+                        "Scale",
+                        "1",
+                        "1",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 197,
+                    "strings": [
+                        "",
+                        "Set",
+                        "BG",
+                        "Move",
+                        "0",
+                        "0",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 198,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 199,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Se"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 200,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 201,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "ネア・ウルム",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 202,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_汎用_館"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 203,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 204,
+                    "strings": [
+                        "",
+                        "ImageEffectOff",
+                        "SpriteCamera",
+                        "GrayScale"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 205,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "1.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 206,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "う……っ！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 207,
+                    "strings": [
+                        "",
+                        "ImageEffectOff",
+                        "SpriteCamera",
+                        "Blur",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 208,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt5_Sur",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "ちょ……大丈夫？",
+                        "",
+                        "Main/1005/vo_main_1005_134",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 209,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "不意に頭痛が襲って、ネオンが心配そうに背中をさすってくれる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 210,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "大丈夫だ……ただ……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 211,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "俺は、見たことがある……ような気がする。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 212,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "朧げな記憶の中、誰かに導かれるようにして……あれは、いつの記憶だ？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 213,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "覚えていない。\n分からない。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 214,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "自分の記憶のはずなのに、実感が無い。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 215,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それが、ただただ気持ちが悪い。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 216,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "ネオン",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 217,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 218,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "鍵が力を取り戻したら、門を使ってどこにでも、好きなところに行けるのか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 219,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そ……のハズ！",
+                        "",
+                        "Main/1005/vo_main_1005_135"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 220,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "その辺も含めて、王国に来てくれたらいろいろ分かると思うよ。\nあたし、興味なかったからその辺のこと何も知らないケド。",
+                        "",
+                        "Main/1005/vo_main_1005_136"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 221,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "分かった、行こう。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 222,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "彼女がどんな返事をするにも関わらず、俺の答えは決まっていた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 223,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "鍵の力を解放することがどういうことであれ、今の俺にはその力が必要だ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 224,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "崩壊したこの世界で、俺が生きて来た街に帰るため。\n約束を果たすため。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 225,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "俺は、鍵の力を俺のものにする必要がある。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 226,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ほんと～！？\nあー、良かったー！\n断られなくって！",
+                        "",
+                        "Main/1005/vo_main_1005_137"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 227,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt9_Ama",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "断られたら、もう帰れないしどうしよっかなーって思ってたとこだよー！",
+                        "",
+                        "Main/1005/vo_main_1005_138"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 228,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "layer_右",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 229,
+                    "strings": [
+                        "",
+                        "",
+                        "アリスノリス",
+                        "Emt3_Gla",
+                        "layer_左",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "着替えとお泊りセットは準備してある。",
+                        "",
+                        "Main/1005/vo_main_1005_139",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 230,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ちょ！\n用意周到なのはいいけど、それ失敗する前提のやつ？",
+                        "",
+                        "Main/1005/vo_main_1005_140"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 231,
+                    "strings": [
+                        "",
+                        "",
+                        "アリスノリス",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "寝る時にぎゅってする用の枕もある。",
+                        "",
+                        "Main/1005/vo_main_1005_141"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 232,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "準備良すぎ～！\nでも要らなかったネ♪",
+                        "",
+                        "Main/1005/vo_main_1005_142"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 233,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "安堵するふたりを余所に、俺は彼女たちが持ってきてくれたカケラを手に取る。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 234,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "どことなく、俺が持つ鍵に似たような気配を感じる……ような気がする。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 235,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "これを、どうやったらひとつになるんだ？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 236,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "えー、ごめん、わかんない！",
+                        "",
+                        "Main/1005/vo_main_1005_143"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 237,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "まー、くっつけてみたら良いんじゃない？",
+                        "",
+                        "Main/1005/vo_main_1005_144"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 238,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "接着剤か何かでくっつけるわけにもいかないだろうし、まさか一度溶かしてから再び鋳造しろとも言うまい。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 239,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "右手にカケラ、左手に鍵を持って、俺はそのふたつをそっと近づけてみる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 240,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "アリスノリス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 241,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "キャピノラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 242,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……っ！？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 243,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt4_Con",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "どうしたの？",
+                        "",
+                        "Main/1005/vo_main_1005_145",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 244,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "いや……なんか、磁石みたいに引き合った気がして。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 245,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "カチッと――勝手にくっついてしまいそうな気配がして、俺は思わず手を放してしまった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 246,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "鍵のカケラ同士が惹かれ合っているとでもいうのだろうか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 247,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "分からない……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 248,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "だが、この「分からない」もハイパーボリアにさえ行けば、いくらか「分かる」に変わるのならば。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 249,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……もう一度、やってみるぞ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 250,
+                    "strings": [
+                        "",
+                        "",
+                        "ネオン",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "うん。\n何かあったら、キミを庇うくらいすぐできる。",
+                        "",
+                        "Main/1005/vo_main_1005_146"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 251,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ネオンが、俺の手元を覗き込むようにして後ろから覆いかぶさった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 252,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "彼女の存在と熱を感じて、いくらか緊張が解けたような気がする。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 253,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……いくぞっ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 254,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "意を決して、磁力のような引力に任せて、鍵とそのカケラをひとつにする。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 255,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 256,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "1.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 257,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "瞬間――目の前に、銀色の光があふれた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 258,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "ネオン",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 259,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景なし(白)"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 260,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_現象発生_ワープ"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 261,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "な――"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 262,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それは、あっという間に俺の視界を埋め尽くして。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 263,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "やがて、何も見えなくなった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 264,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "――――"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 265,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "――"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 266,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "All",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 267,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 268,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 269,
+                    "strings": [
+                        "",
+                        "LayerReset",
+                        "レイヤー_マスク全画面",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                }
+            ],
+            "name": "Assets/AdvScene/ScenarioExcel/main/1005/100502Nml.xlsx:100502Nml",
+            "type": 1,
+            "textLength": 10177,
+            "headerRow": 0,
+            "entityIndexTbl": [],
+            "entityDataList": []
+        }
+    ]
+}

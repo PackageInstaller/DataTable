@@ -1,0 +1,2620 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -2195584510539435343
+    },
+    "m_Name": "10040A3_Nml.book",
+    "importVersion": 0,
+    "importGridList": [
+        {
+            "rows": [
+                {
+                    "rowIndex": 0,
+                    "strings": [
+                        "",
+                        "Command",
+                        "Arg1",
+                        "Arg2",
+                        "Arg3",
+                        "Arg4",
+                        "Arg5",
+                        "Arg6",
+                        "WaitType",
+                        "Text",
+                        "PageCtrl",
+                        "Voice",
+                        "WindowType",
+                        "Arg7"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 1,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 2,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_カルコサの街",
+                        "",
+                        "layer_背景"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 3,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.2 y=1.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 4,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveTo",
+                        "time=0 x=0 y=50"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 5,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2005_0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 6,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 7,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 8,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.2",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 9,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "パン屋での揉め事があった翌日。\n幸い怪我も大事には至らず、俺はいつも通りに過ごせていた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 10,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "しかし……あの店には少し行きづらいな。\nまた別の店を探すか……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 11,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "通りを見回していると、見覚えのあるローブが目に留まる。\n物陰に、シェルンが隠れていた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 12,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt5_Sur",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "あっ……！",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_058",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 13,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "シェルン。\nそんな遠くから見てないで、こっちにおいで。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 14,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ぅえぇ、っと、その――\nや、やっぱなんでもない！",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_059"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 15,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_走り",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 16,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "シェルン",
+                        "ScaleTo",
+                        "time=0.5 x=0.8 y=0.8",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 17,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "シェルン",
+                        "MoveBy",
+                        "time=0.5 y=60",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 18,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "シェルン",
+                        "ColorTo",
+                        "time=0.5 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 19,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "シェルンが背を向けて走り出した。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 20,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "えっ！？　お、おい、待てって！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 21,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_走り",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 22,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.6"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 23,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "シェルン",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 24,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 25,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_汎用_森",
+                        "",
+                        "layer_背景",
+                        "",
+                        "-50"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 26,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.2 y=1.2",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 27,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 28,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.8"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 29,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 30,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_森",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 31,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "――はあ、はあっ……！\nず、随分と走ってきたが……ここは、どこだ……？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 32,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "気づけば辺りから建物の姿は消え、\n代わりに鬱蒼と茂る木々が立ち並んでいる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 33,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "シェルン！\nあんまり街から離れると危ないんじゃないか！？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 34,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "声をかけてもシェルンは足を止める様子がない。\n……しかし、パンを盗んだ時のように俺を突き放しもしない。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 35,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 36,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "（『なんでもない』と言った以上、\n ただ逃げているわけじゃないのは間違いないが……）"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 37,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 38,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 39,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "結局、目的は聞かなければ分からない。\n何か彼女の足を止める方法はないかと考え――俺は閃いた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 40,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveBy",
+                        "time=0.3 y=50",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 41,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "<size=32>うっ！　イタタタ……！</size>\n昨日の傷が痛くて、もう走れないよ～……！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 42,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "<size=32>えっ！？</size>",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_060"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 43,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "わざとらしくうずくまったせいで、前は見えない。\nしかしシェルンの足音が止まったのは聞こえてきた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 44,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "シェルン",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 45,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt4_Con",
+                        "",
+                        "-200",
+                        "",
+                        "0.3",
+                        "",
+                        "お兄さん……だ、大丈夫……！？",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_061",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 46,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "間近でシェルンの声が聞こえる。<interval=0.8>\n彼女が俺の背中に手を置いた瞬間――<interval=0.8>",
+                        "Next"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 47,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_手_手を取る",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 48,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "その手首を捕まえた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 49,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt5_Sur"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 50,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "シェルン",
+                        "ShakePosition",
+                        "time=0.2 x=20",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 51,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "わあっ！？　そんなにいきなり動いたら、\n怪我が――あっ！　もしかして嘘！？　ひどいよ！！",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_062"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 52,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ご、ごめん。これくらいしか思いつかなくて……。\n怪我はもう大丈夫だよ。君のおかげだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 53,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt1_Nor"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 54,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……そっか。\nよかった……。",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_063"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 55,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それで……なんで突然逃げ出したんだ？\nそもそも、俺に何の用事だったんだ？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 56,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt4_Con"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 57,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……なんでもないって言ったじゃん。",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_064"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 58,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "『なんでもない』はなんでもなくないだろ。\n言いたいことがあるなら、聞かせてくれ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 59,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……それだけのために、わざわざここまで走ってきたんだ？",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_065"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 60,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それだけなんかじゃない。大事なことだ。\nシェルンが俺を呼ぶんなら、どこまでだって駆けつけるよ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 61,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "どこまでって……\nあははっ！　何それ、大げさ～！",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_066"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 62,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "とりあえずさ。起きたら？\nあっちに座れる切り株があるから、そっち行こ。",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_067"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 63,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ああ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 64,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 65,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 66,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 67,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_PvP遷移時",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 68,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveBy",
+                        "time=0.3 y=-50",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 69,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "起き上がった拍子に、”銀の鍵”のチェーンが小さく鳴る。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 70,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt10_Est",
+                        "layer_中",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ねえ……気になってたんだけど、それ、何なの？\n確か”鍵”って言われてたよね？",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_068"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 71,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "”銀の鍵”だけど……\n君も魔術師だろ？　誰かから聞いてないのか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 72,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt4_Con"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 73,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "シェルン",
+                        "RotateTo",
+                        "time=0.3 z=-5",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 74,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "んんーー……？\nノイシスさんが何か言ってたような……うーん……。\nアタシ、授業はだいたい寝ちゃってるしなー……。",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_069"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 75,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……まあ、とても凄いものなんだよ。\nでも、それと同じくらい、俺にとって大切なものだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 76,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt1_Nor"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 77,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "シェルン",
+                        "RotateTo",
+                        "time=0.3 z=0",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 78,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……ふーん。そうなんだ。\nお兄さんにも、色々あったんだね……。",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_070"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 79,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そうだな。\n本当に、色々あった……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 80,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "”銀の鍵”を手のひらで掬い上げた時。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 81,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 82,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_抜刀",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 83,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Se",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 84,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "プツン、と軽い音が鳴り、チェーンが切れた。\n――そのまま、シェルンの手のひらに”銀の鍵”が転がり落ちる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 85,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あっ！　お兄さん、これ――。",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_071"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 86,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_魔法_地_地震",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 87,
+                    "strings": [
+                        "",
+                        "Shake",
+                        "シェルン",
+                        "",
+                        "time=0.8 x=10 y=-10",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 88,
+                    "strings": [
+                        "",
+                        "Shake",
+                        "BG",
+                        "",
+                        "time=0.8 x=10 y=-10",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 89,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2003_0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 90,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "じ、地震……！？\nシェルン、こっちに――うわっ！？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 91,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_魔法_地_強",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 92,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "RotateTo",
+                        "time=0.3 z=10",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 93,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "シェルン",
+                        "RotateTo",
+                        "time=0.3 z=10",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 94,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "凄まじい音とともに、大地が割れた。\nシェルンが立つ場所が、まるで奈落へ落ちるように傾いていく。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 95,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "お、お兄さん……っ！",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_072"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 96,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "シェルン",
+                        "ScaleTo",
+                        "time=0.5 x=1.2 y=1.2",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 97,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "シェルン",
+                        "MoveBy",
+                        "time=0.5 y=-60",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 98,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0.5 x=1.4 y=1.4",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 99,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "シェルン！　手を！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 100,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "互いに伸ばした手が、\nその指先が一瞬だけ触れて――掴めずに空を切った。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 101,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt7_Sad"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 102,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "シェルン",
+                        "ScaleTo",
+                        "time=0.3 x=1.0 y=1.0",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 103,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "シェルン",
+                        "MoveBy",
+                        "time=0.3  x=-60 y=0",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 104,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "シェルン",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 105,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "<size=32>きゃあぁーーっ！？</size>",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_073"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 106,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "<size=32>シェルン――！！</size>"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 107,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 108,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 109,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 110,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_汎用_森",
+                        "",
+                        "layer_背景",
+                        "",
+                        "-50"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 111,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.2 y=1.2",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 112,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "RotateTo",
+                        "time=0 y=180",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 113,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 114,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯上",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 115,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯下",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 116,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "マスク黒帯上",
+                        "漫符_ブラック",
+                        "レイヤー_マスク全画面下",
+                        "3000",
+                        "880",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 117,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "マスク黒帯下",
+                        "漫符_ブラック",
+                        "レイヤー_マスク全画面下",
+                        "3000",
+                        "-820",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 118,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "ColorTo",
+                        "time=0 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 119,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "ColorTo",
+                        "time=0 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 120,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "MoveTo",
+                        "time=0 x=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 121,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "MoveTo",
+                        "time=0 x=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 122,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "レイヤー_マスク全画面下",
+                        "MoveBy",
+                        "time=0 y=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 123,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "ColorTo",
+                        "time=0 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 124,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "ColorTo",
+                        "time=0 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 125,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "MoveBy",
+                        "time=0 y=0",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 126,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "MoveBy",
+                        "time=0 y=6",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 127,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 128,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 129,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 130,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2001_0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 131,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt7_Sad",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "こ、ここは……？\nうぅ、木ばっかりでどこか分かんないよぉ……。",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_074",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 132,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt7_Sad",
+                        "layer_左",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 133,
+                    "strings": [
+                        "",
+                        "",
+                        "ヴァイス",
+                        "",
+                        "layer_右",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 134,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ヴァイス",
+                        "Color",
+                        "#000000"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 135,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ヴァイス",
+                        "Scale",
+                        "-1",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 136,
+                    "strings": [
+                        "",
+                        "",
+                        "老獪な使い魔",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "見事な働きでした。\n矮小な魔術師よ。",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_075"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 137,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "っ！？　あ、あなたは……！",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_076"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 138,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "――ハスター様の……御使い（みつかい）……？\nどうして、アタシなんかのところに……？",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_077"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 139,
+                    "strings": [
+                        " ",
+                        "Tween",
+                        "ヴァイス",
+                        "MoveBy",
+                        "time=0.4 y=-15",
+                        "linear",
+                        "pingPong=2",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 140,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "黄色いローブを着たその者は大きく頷く。<interval=0.8>\nそして、宝石の埋め込まれた杖で、シェルンの握る欠片を示す。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 141,
+                    "strings": [
+                        "",
+                        "",
+                        "老獪な使い魔",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それは”銀の鍵”。ハスター様が求めてやまぬもの。\nお前は、それをかの御方へ献上する大役に任ぜられたのです。",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_078"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 142,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "で、でもっ！\nこれは、お兄さんのもので……！",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_079"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 143,
+                    "strings": [
+                        "",
+                        "",
+                        "老獪な使い魔",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "役目を果たせば、褒美としてお前の望みをひとつ。\n何だって――そう、何だって叶えましょう。",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_080"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 144,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt5_Sur"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 145,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "シェルン",
+                        "ShakePosition",
+                        "time=0.2 x=20",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 146,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "えっ……！？",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_081"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 147,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "願いを、叶えてくれる？\nもし……それが、本当なら……。",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_082"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 148,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt7_Sad"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 149,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "シェルンは俯き、唇を噛む。<interval=0.8>\n……しばらくの沈黙ののち、彼女は拳を握り締めた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 150,
+                    "strings": [
+                        "",
+                        "",
+                        "シェルン",
+                        "Emt2_Ang",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……案内してください。ハスター様のところに。",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_083"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 151,
+                    "strings": [
+                        "",
+                        "",
+                        "老獪な使い魔",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ええ。それでは参りましょう。\nかの御方の眠る、神秘の湖へと――。",
+                        "",
+                        "Character/ch_10040/Event/vo_event_10040_084"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 152,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "All",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 153,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 154,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 155,
+                    "strings": [
+                        "",
+                        "LayerReset",
+                        "レイヤー_マスク全画面",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                }
+            ],
+            "name": "Assets/AdvScene/ScenarioExcel/character/10040/10040A3_Nml.xlsx:10040A3_Nml",
+            "type": 1,
+            "textLength": 5702,
+            "headerRow": 0,
+            "entityIndexTbl": [],
+            "entityDataList": []
+        }
+    ]
+}

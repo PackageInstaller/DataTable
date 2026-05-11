@@ -14659,14 +14659,14 @@
         },
         {
             "id": 25009,
-            "text": "プリズンタワーに1回挑戦する",
+            "text": "プリズンタワーの毎日報酬を受け取る",
             "separated_text": [
-                "プリズンタワーに1回挑戦する"
+                "プリズンタワーの毎日報酬を受け取る"
             ],
             "category": 2,
             "category_collective": 0,
-            "condition": 112,
-            "target": "タワー",
+            "condition": 143,
+            "target": "",
             "count": 1,
             "counterName": "25009",
             "loop": 0,
@@ -15170,6 +15170,230 @@
             "endDate": "",
             "transition": 24,
             "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_common_10",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 0
+        },
+        {
+            "id": 30101,
+            "text": "黄金の果実は誰がためにを5回クリア",
+            "separated_text": [
+                "黄金の果実は誰がためにを5回クリア"
+            ],
+            "category": 1,
+            "category_collective": 10002,
+            "condition": 123,
+            "target": "2",
+            "count": 5,
+            "counterName": "30101",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "",
+            "endDate": "",
+            "transition": 24,
+            "transition_value": 2,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "unit_threshold_1h",
+                        "m_count": 5
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 0
+        },
+        {
+            "id": 30102,
+            "text": "黄金の果実は誰がためにを10回クリア",
+            "separated_text": [
+                "黄金の果実は誰がためにを10回クリア"
+            ],
+            "category": 1,
+            "category_collective": 10002,
+            "condition": 123,
+            "target": "2",
+            "count": 10,
+            "counterName": "30102",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "",
+            "endDate": "",
+            "transition": 24,
+            "transition_value": 2,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "unit_threshold_1h",
+                        "m_count": 5
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 0
+        },
+        {
+            "id": 30103,
+            "text": "黄金の果実は誰がためにを15回クリア",
+            "separated_text": [
+                "黄金の果実は誰がためにを15回クリア"
+            ],
+            "category": 1,
+            "category_collective": 10002,
+            "condition": 123,
+            "target": "2",
+            "count": 15,
+            "counterName": "30103",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "",
+            "endDate": "",
+            "transition": 24,
+            "transition_value": 2,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "unit_threshold_1h",
+                        "m_count": 5
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 0
+        },
+        {
+            "id": 30104,
+            "text": "黄金の果実は誰がためにを20回クリア",
+            "separated_text": [
+                "黄金の果実は誰がためにを20回クリア"
+            ],
+            "category": 1,
+            "category_collective": 10002,
+            "condition": 123,
+            "target": "2",
+            "count": 20,
+            "counterName": "30104",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "",
+            "endDate": "",
+            "transition": 24,
+            "transition_value": 2,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "unit_threshold_1h",
+                        "m_count": 5
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 0
+        },
+        {
+            "id": 30105,
+            "text": "黄金の果実は誰がためにのノーマルをクリア",
+            "separated_text": [
+                "黄金の果実は誰がためにのノーマルをクリア"
+            ],
+            "category": 1,
+            "category_collective": 10002,
+            "condition": 124,
+            "target": "2",
+            "count": 1,
+            "counterName": "30105",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "",
+            "endDate": "",
+            "transition": 24,
+            "transition_value": 2,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_common_10",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 0
+        },
+        {
+            "id": 30106,
+            "text": "黄金の果実は誰がためにのハードをクリア",
+            "separated_text": [
+                "黄金の果実は誰がためにのハードをクリア"
+            ],
+            "category": 1,
+            "category_collective": 10002,
+            "condition": 125,
+            "target": "2",
+            "count": 1,
+            "counterName": "30106",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "",
+            "endDate": "",
+            "transition": 24,
+            "transition_value": 2,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_common_10",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 0
+        },
+        {
+            "id": 30107,
+            "text": "黄金の果実は誰がためにのエルドリッチをクリア",
+            "separated_text": [
+                "黄金の果実は誰がためにのエルドリッチをクリア"
+            ],
+            "category": 1,
+            "category_collective": 10002,
+            "condition": 126,
+            "target": "2",
+            "count": 1,
+            "counterName": "30107",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "",
+            "endDate": "",
+            "transition": 24,
+            "transition_value": 2,
             "rewardtable": {
                 "m_rewards": [
                     {

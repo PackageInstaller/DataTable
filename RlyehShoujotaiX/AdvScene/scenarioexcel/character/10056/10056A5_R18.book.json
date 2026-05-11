@@ -1,0 +1,4089 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -2195584510539435343
+    },
+    "m_Name": "10056A5_R18.book",
+    "importVersion": 0,
+    "importGridList": [
+        {
+            "rows": [
+                {
+                    "rowIndex": 0,
+                    "strings": [
+                        "",
+                        "Command",
+                        "Arg1",
+                        "Arg2",
+                        "Arg3",
+                        "Arg4",
+                        "Arg5",
+                        "Arg6",
+                        "WaitType",
+                        "Text",
+                        "PageCtrl",
+                        "Voice",
+                        "WindowType",
+                        "Arg7"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 1,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 2,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_ルルイエの民家(夜)",
+                        "",
+                        "layer_背景"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 3,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2005_0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 4,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "四角_01"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 5,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "四角_02"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 6,
+                    "strings": [
+                        "",
+                        "Set",
+                        "四角_01",
+                        "Move",
+                        "",
+                        "470"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 7,
+                    "strings": [
+                        "",
+                        "Set",
+                        "四角_02",
+                        "Move",
+                        "",
+                        "-470"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 8,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_01",
+                        "ScaleTo",
+                        "time=0 x=12 y=3",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 9,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_02",
+                        "ScaleTo",
+                        "time=0 x=12 y=3",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 10,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_01",
+                        "ColorTo",
+                        "time=0 alpha=0 color=#000000",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 11,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_02",
+                        "ColorTo",
+                        "time=0 alpha=0 color=#000000",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 12,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.4 y=1.4",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 13,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveBy",
+                        "time=0 x=-400"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 14,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 15,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 16,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.2",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 17,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イヴと契約を結んで以来、\n俺は忙しい毎日を送っていた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 18,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "お疲れ様でした。\nどうですか？　今日の首尾は。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_001",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 19,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "夜になりようやく戻ってこられた俺は、\nイヴの部屋で一日の報告をする。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 20,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "強引な取り立てをしなくてもいいのは助かるけど、\n代わりに向こうの話をしっかり聞かないといけないのがな……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 21,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "今日も依頼者からの相談に乗っていたら、\nあっという間に日が暮れてしまった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 22,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "十全な働きをしてもらい、感謝します。<interval=0.8>\nええ、本当に感謝していますよ、貴方には。\nふふふふふっ。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_002"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 23,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=1 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 24,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=1 x=1.6 y=1.6",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 25,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveBy",
+                        "time=1 x=-50 y=-50",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 26,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_01",
+                        "ColorTo",
+                        "time=1 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 27,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_02",
+                        "ColorTo",
+                        "time=1 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 28,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "ScaleTo",
+                        "time=1 x=1.3 y=1.3",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 29,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "MoveBy",
+                        "time=1 y=-200",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 30,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "正直なことを言うと、<interval=0.4>\n今でも貴方を不思議な人間だと思っています。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_003"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 31,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt7_Sad",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "私を助けたいなど……<interval=0.4>\n自ら望んで苦しみの中に飛び込もうとするなど、\n前代未聞でしたから。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_004"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 32,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "俺は君を悪者だとは思ってないから。\nいや、やってることは極悪非道なんだけど、\nそれは君の本能からくるものなんだろうなって。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 33,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "私は別に、善も悪も装っているつもりはありませんよ。<interval=0.8>\nただ……<interval=0.4>そうですね、本能という捉え方は正しいでしょう。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_005"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 34,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_歩き"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 35,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "ScaleTo",
+                        "time=0.6 x=1.4 y=1.4",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 36,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "MoveBy",
+                        "time=0.6 y=-30"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 37,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そのように、私の本質を見ようとするのも、\n今まで関わってきた誰とも異なる……<interval=1>\nだから私は、貴方との契約を受け入れたのかもしれません。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_006"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 38,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "助けを求めた結果、対価の支払いに追われる……\nなんて経験をしたら、本質なんて関係なくなるだろうからね。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 39,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "だからイヴは恨まれ、憎まれる。\n本人がそれを気にしていないのだとしても、\n俺の中では引っかかった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 40,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それだけのことと言えばそうだった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 41,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "貴方には感謝しているのです。<interval=0.4>\nたまには労をねぎらって差し上げようと思いまして。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_009"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 42,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "<size=32>なっ、えっ？　お、おい……っ！</size>"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 43,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_手_手を取る"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 44,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "ColorTo",
+                        "time=0.3 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 45,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "MoveBy",
+                        "time=0.3 y=-50",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 46,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "ScaleTo",
+                        "time=0.3 x=1.6 y=1.6",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 47,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.8"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 48,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 49,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 50,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 51,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景なし(黒)"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 52,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 53,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.8"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 54,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イヴに手を引かれ、ソファへと連れて行かれる。\nそのまま俺はうつ伏せにさせられた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 55,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.8"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 56,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 57,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_ルルイエの民家(夜)"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 58,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "layer_中",
+                        "",
+                        "-200",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 59,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "ScaleTo",
+                        "time=0 x=1.3 y=1.3",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 60,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.1 y=1.1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 61,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveBy",
+                        "time=0 y=300",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 62,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_01",
+                        "MoveBy",
+                        "time=0 y=-150",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 63,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_02",
+                        "MoveBy",
+                        "time=0 y=150"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 64,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 65,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.8"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 66,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "じっとなさっていてくださいね。<interval=0.8>\n……まずは上半身から始めます。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_010"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 67,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_物体動作_布類を触る"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 68,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "MoveBy",
+                        "time=0.3 y=-60",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 69,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "肩の辺りに指が置かれ、軽く押し込まれた。\nどうやらマッサージをしてくれるようだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 70,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "このところずっと街を歩き回り、だいぶお疲れでしょう。<interval=0.8>\nんっ……やはり凝ってらっしゃいますね……。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_011"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 71,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "まあ、ね……\n毎日ちゃんと休んではいるつもりなんだけど……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 72,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "知らず知らずのうちに疲労は溜まるもの。\nよろしければ、定期的にほぐして差し上げますよ。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_012"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 73,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それは……助かる、かも……んっ……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 74,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イヴのマッサージはかなり上手い。\n力加減が絶妙で、程よい痛みとともに\n疲労が溶けていくのを感じられる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 75,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ふっ、ん……っはぁ、んっ……\nどうですか？　痛すぎたりはしませんか……？",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_015"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 76,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "だ、大丈夫……気持ちいいよ……\nイヴ、マッサージ得意だったんだな。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 77,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "得意かどうかは……\nんっ、自分では分かりませんね。\n今回が初めてですから。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_016"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 78,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "え、本当に？\nいや、でもそうか……\nイヴがマッサージをするような相手は、今まで……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 79,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "誰一人としていませんでした。\nですので、貴方が最初……ということになります。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_017"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 80,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……んっ、背中はこれくらいで大丈夫でしょう。<interval=0.8>\n次は腰回りと下半身を――",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_019"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 81,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "MoveBy",
+                        "time=0.3 y=-60",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 82,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "ScaleTo",
+                        "time=0.3 x=1.5 y=1.5",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 83,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "<size=32>なっ！？</size>　い、いや待った、そこはさすがに……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 84,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "マッサージのついでです、<interval=0.4>\n“そちら”の貴方も気持ちよくして差し上げましょう。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_022"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 85,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "艷やかな唇でそう言うと、イヴはソファの上へと上がってきた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 86,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_物体動作_布類を触る"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 87,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "ColorTo",
+                        "time=0.3 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 88,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "MoveBy",
+                        "time=0.3 y=-60",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 89,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "ScaleTo",
+                        "time=0.3 x=1.7 y=1.7",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 90,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 91,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "四角_01"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 92,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "四角_02"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 93,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 94,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 95,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_ルルイエの民家(夜)"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 96,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=2 y=2",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 97,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveBy",
+                        "time=0 y=118"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 98,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 99,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 100,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 101,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "四角_01",
+                        "",
+                        "レイヤー_四者四様1スプライトクロス"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 102,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "四角_02",
+                        "",
+                        "レイヤー_四者四様3スプライトクロス"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 103,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_01",
+                        "ColorTo",
+                        "time=0 color=black",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 104,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_02",
+                        "ColorTo",
+                        "time=0 color=black",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 105,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_01",
+                        "MoveBy",
+                        "time=0 y=340",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 106,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_02",
+                        "MoveBy",
+                        "time=0 y=-340",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 107,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_01",
+                        "ScaleTo",
+                        "time=0 x=3 y=12",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 108,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_02",
+                        "ScaleTo",
+                        "time=0 x=3 y=12",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 109,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_01",
+                        "ColorTo",
+                        "time=0 color=black",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 110,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_02",
+                        "ColorTo",
+                        "time=0 color=black",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 111,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_01",
+                        "RotateTo",
+                        "time=0 z=90",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 112,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "四角_02",
+                        "RotateTo",
+                        "time=0 z=90"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 113,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "グラデ_01",
+                        "",
+                        "レイヤー_四者四様1スプライト線1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 114,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "グラデ_02",
+                        "",
+                        "レイヤー_四者四様3スプライト線1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 115,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "グラデ_01",
+                        "RotateTo",
+                        "time=0 z=-90",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 116,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "グラデ_01",
+                        "ScaleTo",
+                        "time=0 x=0.7 y=7",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 117,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "グラデ_01",
+                        "ColorTo",
+                        "time=0 color=black",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 118,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "グラデ_01",
+                        "MoveBy",
+                        "time=0 x=-70",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 119,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "グラデ_02",
+                        "RotateTo",
+                        "time=0 z=90",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 120,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "グラデ_02",
+                        "ScaleTo",
+                        "time=0 x=0.7 y=7",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 121,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "グラデ_02",
+                        "ColorTo",
+                        "time=0 color=black",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 122,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "グラデ_02",
+                        "MoveBy",
+                        "time=0 x=-70"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 123,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 124,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 125,
+                    "strings": [
+                        "",
+                        "BgVoice",
+                        "イヴ・メサイア_前戯",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Character/ch_10056/Bgv/vo_bgv_10056_001"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 126,
+                    "strings": [
+                        "",
+                        "HSe",
+                        "SE_動作_行為_キス",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 127,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "んっ、ちゅ……ん、はぁ……んんんぅ……っ。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_023"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 128,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ソファの上で抱き合いながら、俺たちはキスを繰り返す。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 129,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt7_Sad",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ちゅぅ、んっ……ぴちゅ、ちゅ、んっ……はぁ、ぁ、んんっ。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_024"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 130,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "柔らかな唇、そして押し付けられる豊かな双丘に、\n陰茎はさらなる自己主張を行っていた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 131,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "貴方のここ、もう我慢出来ないと……\nんっ、びくびく震えているのが伝わってきてますよ？",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_025"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 132,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "俺の手を掴むと、\nイヴはそのまま秘所を覆う下着へと押し付ける。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 133,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そこは既に、溢れる蜜によってぐっしょりと濡れていた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 134,
+                    "strings": [
+                        "",
+                        "StopBgVoice",
+                        "イヴ・メサイアA_前戯",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 135,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 136,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "layer_BU中",
+                        "",
+                        "-50",
+                        "",
+                        "",
+                        "さらに興奮しましたか？\nですが襲いかかるような真似をしてはいけませんよ？",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_027"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 137,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "今日は私が、貴方の労をねぎらうのですから。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_028"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 138,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_物体動作_布類を触る"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 139,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.8"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 140,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 141,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯上",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 142,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯下",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 143,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "グラデ_01",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 144,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "グラデ_02",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 145,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "四角_01"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 146,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "四角_02"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 147,
+                    "strings": [
+                        "",
+                        "BgVoice",
+                        "イヴ・メサイアA_wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Character/ch_10056/Bgv/vo_bgv_10056_002"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 148,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 149,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.8",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 150,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 151,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 152,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイアR18_1",
+                        "Wait",
+                        "layer_R18",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 153,
+                    "strings": [
+                        "",
+                        "StopBgm",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 154,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 155,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_3001_0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 156,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 157,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イヴに誘われるように、その豊かな臀部に手を添える。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 158,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "肉棒が幾度となく震え、陰唇を擦るように叩いている。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 159,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あ、はぁ……んっ、\nおちんちん、早く私の中に入りたいのですね……。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_029"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 160,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "こんなに何度もぴくぴくと……\nんっ、ぁ……かわいらしいです……。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_030"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 161,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イヴのその言葉がまた、俺の興奮を増幅させる。\nマッサージの影響だけではない身体の熱さに、\n理性が吹き飛びそうだった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 162,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ですが、許可なく挿入してはいけませんよ。\n私の言うことに……んんっ……従ってください。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_031"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 163,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "も、もどかし過ぎる……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 164,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ああ、いい表情です……。\nその顔をしっかりと見られないのが残念……。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_032"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 165,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "蕩けるような笑みを浮かべながら、イヴは腰を押し付けてくる。\nそれだけで身体が跳ねてしまいそうだった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 166,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "我慢の限界は近そうですね。\nそろそろ、おちんちんを包みこんであげましょうか。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_033"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 167,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "た、頼む……早く許可を……！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 168,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ふふふっ。分かりました。\nですが、入れただけで射精するのは許しませんよ？",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_034"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 169,
+                    "strings": [
+                        "",
+                        "StopBgVoice",
+                        "イヴ・メサイアA_wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 170,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイアR18_1",
+                        "Normal",
+                        "layer_R18",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 171,
+                    "strings": [
+                        "",
+                        "BgVoice",
+                        "イヴ・メサイアA_Normal",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Character/ch_10056/Bgv/vo_bgv_10056_003"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 172,
+                    "strings": [
+                        "",
+                        "HSe",
+                        "SE_動作_行為_後背位",
+                        "TRUE",
+                        "2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 173,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "んっ、ぁ……は、ああぁぁぁぁ……っ、\n熱いのが、きたぁ……はぁ、ああぁっ……。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_035"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 174,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "先端を膣口に押し当てて腰を押し進めると、\nいともたやすくペニスは飲み込まれた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 175,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "はぁ、あっ……ああぁ……中でおちんちんが震えてます。\nやはり、人間は快楽にあらがえないのですね……。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_036"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 176,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ほら……おちんちんをこうして擦り上げると……\nんっ……すぐにでも、出したくなりませんか？",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_037"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 177,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イヴが身体を揺らす。\n汗の混じった濃厚な匂いが鼻腔をくすぐるとともに、\n肉棒が四方からの刺激にびくりと跳ねた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 178,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "くぅっ……そ、そう簡単には……いかない……っ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 179,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "俺はなんとか射精感を堪える。\n身体中が熱く、イヴに包まれていることを強く感じていた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 180,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ふふふっ……よかったです、\nそう簡単に、命令を破られても困りますから……\nんっ、はぁ……あぁ、んんっ……。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_038"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 181,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ですが、この調子で腰を前後に動かしていれば……\nどうですか？　気持ちいいでしょう？\nんっ、んっ……もっと気持ちよくなりたいですよね……？",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_039"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 182,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あっ、あああぁっ……　くっ……い、イヴ……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 183,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ああぁ……その表情、その反応……\nすべてが、私の目には快楽を求めているように\n映っています……。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_040"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 184,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "んっ、はぁ……ああぁっ……これも契約のうち……\n私を助けたいと思うのなら……\n存分に喘ぎ、欲望と苦悩の狭間で悶えるのです……っ。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_041"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 185,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あっ……はぁ、はぁっ……気持ちよすぎる……でも……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 186,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そう、まだ出してはいけませんからね？\nん、ぁ……っ、その情けない声を、\n私にもっと……聞かせてください……。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_042"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 187,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "んくっ、貴方の……深いところで感じます……\nああぁっ、何度も何度も、奥を叩いて……はぁんっ……！",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_043"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 188,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "入り口から最奥へ、\nそしてまた入り口へと肉棒が出入りしていく。\nその度に快感の波が押し寄せ、流されてしまいそうだった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 189,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "けれど、徐々に高くなっていくイヴの嬌声をもっと聞きたい。\n無意識に、俺の手は彼女の豊満な胸に伸びていた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 190,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "はぁ、ああああ……っ、おっぱい、好きなのですか……？",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_044"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 191,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イヴのおっぱいが好き、と言っておく……"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 192,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "んっ、ぁあんっ！\nでは、そういうことにしておきましょうか……\nはぁ、ああぁぁっ……！",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_045"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 193,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イヴの言葉が、反応が脳を揺らす。\nただただ快楽のために、俺は腰を強く打ち付けていく。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 194,
+                    "strings": [
+                        "",
+                        "StopHSe",
+                        "SE_動作_行為_後背位",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 195,
+                    "strings": [
+                        "",
+                        "StopBgVoice",
+                        "イヴ・メサイアA_Normal",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 196,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイアR18_1",
+                        "Fast",
+                        "layer_R18",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 197,
+                    "strings": [
+                        "",
+                        "HSe",
+                        "SE_動作_行為_後背位_激",
+                        "TRUE",
+                        "0.8"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 198,
+                    "strings": [
+                        "",
+                        "BgVoice",
+                        "イヴ・メサイアA_Fast",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Character/ch_10056/Bgv/vo_bgv_10056_004"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 199,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "はぁんっ！　……あっ、あああぁっ……！\nそ、そこまで激しくされると……\nさすがに刺激が……ああぁんっ！",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_046"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 200,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "いいよ、もっと感じてくれ……っ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 201,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "はあぁんっ……！　で、ですが今日は私が貴方を\n……あっ、ああぁぁっ……！",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_047"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 202,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イヴを助けるのが俺との契約だ。\nだったら……君を気持ちよくして、\n仕事のことを忘れさせるのもひとつの方法なはず……！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 203,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ああぁっ！　そ、それは、なにか……おかし、いぃ……っ！",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_048"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 204,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "愛液はさらに溢れ、肉棒によってかき混ぜられていく。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 205,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "んぁ、はぁんっ！\nああぁっ、なんだか、びりびりきて……ひゃあぁんっ！",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_049"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 206,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イヴの体が小刻みに震え始めた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 207,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "彼女はもはや自分から動くことはできずに、\n快感に身を任せているようだった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 208,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "はぁん、あっ、ああっ……！\nだ、だめ……わ、私……はあぁんっ！\nこのままでは……はぁ、あああぁっ……！",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_050"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 209,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ふぁぁぁっ！　そろそろ……\nイってしまいそう……はあああぁんっ……！",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_051"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 210,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "なら、一緒にイこう……！　俺も、もう……っ！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 211,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ああんっ！　あっ、んんっ！\nそのようなこと、言われたら……私、本当に……はあぁんっ！",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_052"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 212,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ぐちゅりぐちゅりという卑猥な音に、イヴの嬌声が重なる。\n膣内はビクビクと収縮し、\n最後の瞬間が近いことを主張していた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 213,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "んっ、あっあっあっ、も、だめ、です……\nわたくし、ほんとに、イっちゃ……あああぁぁ……っ！！",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_053"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 214,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "俺も、イクっ……だから……イヴ……！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 215,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "これが最後とばかりに、俺は最奥へと肉棒を突き込んだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 216,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あっ、やぁ、だめ、イク、イク……\nんあぁぁ……イっくぅ……あああぁっ……！\nはぁああああああああああぁぁんっ……！！",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_054"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 217,
+                    "strings": [
+                        "",
+                        "StopHSe",
+                        "SE_動作_行為_後背位_激",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 218,
+                    "strings": [
+                        "",
+                        "StopBgVoice",
+                        "イヴ・メサイアA_Fast",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 219,
+                    "strings": [
+                        "",
+                        "HideMessageWindow",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 220,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイアR18_1",
+                        "Finish",
+                        "layer_R18",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "After"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 221,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.4",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 222,
+                    "strings": [
+                        "",
+                        "HSe",
+                        "SE_動作_行為_射精",
+                        "",
+                        "0.8",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 223,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "2.4",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 224,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 225,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 226,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイアR18_1",
+                        "After",
+                        "layer_R18",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 227,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 228,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 229,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "っはぁ、<interval=0.4>はぁ……ああぁ……<interval=0.4>\n熱いのが、こんなにも……ん、んんぅ……。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_055"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 230,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "さ、さすがに出しすぎた、かも……ふぅ、ふぅ……っ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 231,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "最後の一滴まで膣奥に放出すると、\n俺はイヴへ覆いかぶさるように身体を預けた。\n急に脱力感が襲ってくる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 232,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "本来、私が貴方をいいように弄ぶ……\nいえ、日頃の働きにご褒美を上げようと思っていたのですが、<interval=0.4>\nすっかりしてやられてしまいましたね。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_056"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 233,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ちょっと本音が出かかってなかったか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 234,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "だがそれも、\n彼女が普段は絶対に見せない一面を、\n俺に晒してくれていることの証でもある。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 235,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "なにをニヤニヤしているのです？",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_057"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 236,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "いや、別に？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 237,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……ふぅ。いいですか？<interval=0.4>\n今回はあえて貴方の言いなりになってあげたのです。",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_058"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 238,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "これで満足し、疲れも取れたわけですから、<interval=0.4>\n明日からも私の役に立っていただかなくては困ります。<interval=0.8>\n分かりましたね？",
+                        "",
+                        "Character/ch_10056/R18/vo_r18_10056_059"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 239,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イヴがいつもの顔になり、釘を差してくる。\nそんなイヴ・メサイアをこれからも助けたい……\nいや、守りたいと俺は思うのだった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 240,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "All",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 241,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 242,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 243,
+                    "strings": [
+                        "",
+                        "LayerReset",
+                        "レイヤー_マスク全画面",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                }
+            ],
+            "name": "Assets/AdvScene/ScenarioExcel/character/10056/10056A5_R18.xlsx:10056A5_R18",
+            "type": 1,
+            "textLength": 10234,
+            "headerRow": 0,
+            "entityIndexTbl": [],
+            "entityDataList": []
+        }
+    ]
+}

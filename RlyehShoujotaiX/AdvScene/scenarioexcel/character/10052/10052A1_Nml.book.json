@@ -1,0 +1,2370 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -2195584510539435343
+    },
+    "m_Name": "10052A1_Nml.book",
+    "importVersion": 0,
+    "importGridList": [
+        {
+            "rows": [
+                {
+                    "rowIndex": 0,
+                    "strings": [
+                        "",
+                        "Command",
+                        "Arg1",
+                        "Arg2",
+                        "Arg3",
+                        "Arg4",
+                        "Arg5",
+                        "Arg6",
+                        "WaitType",
+                        "Text",
+                        "PageCtrl",
+                        "Voice",
+                        "WindowType",
+                        "Arg7"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 1,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 2,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_高貴な部屋",
+                        "",
+                        "layer_背景",
+                        "300",
+                        "-150",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 3,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2005_0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 4,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "アーチ_01"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 5,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "アーチ_02"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 6,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "アーチ_01",
+                        "MoveBy",
+                        "time=0 y=150"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 7,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "アーチ_02",
+                        "MoveBy",
+                        "time=0 y=-150"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 8,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "アーチ_01",
+                        "ScaleTo",
+                        "time=0 y=10 x=30"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 9,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "アーチ_02",
+                        "ScaleTo",
+                        "time=0 y=10 x=30"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 10,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "アーチ_01",
+                        "ColorTo",
+                        "time=0 color=black"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 11,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "アーチ_02",
+                        "ColorTo",
+                        "time=0 color=black"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 12,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "アーチ_02",
+                        "RotateTo",
+                        "time=0 z=180"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 13,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.5 y=1.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 14,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt1_Nor",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 15,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "MoveBy",
+                        "time=0.3 x=-50",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 16,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "ColorTo",
+                        "time=0.3 alpha=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 17,
+                    "strings": [
+                        "",
+                        "ImageEffect",
+                        "SpriteCamera",
+                        "Blur",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 18,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 19,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "う……<interval=0.4>あ……？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 20,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "アーチ_01",
+                        "MoveBy",
+                        "time=0.4 y=170",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 21,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "アーチ_02",
+                        "MoveBy",
+                        "time=0.4 y=170",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 22,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "目が覚める。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 23,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ぼんやりと視界が開けていくが、頭が鉛のように重い。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 24,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ここは……<interval=0.3>どこだ？<interval=0.4>\nというか、俺は何をしていたんだっけ……？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 25,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "確か、キャピノラに呼ばれてハイパーボリアに遊びに来て、それから――。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 26,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_歩き"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 27,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 28,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "MoveBy",
+                        "time=0.3 x=50",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 29,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "ColorTo",
+                        "time=0.3 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 30,
+                    "strings": [
+                        "",
+                        "",
+                        "？？？",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あら……<interval=0.4>ようやくお目覚めになられました？",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_001"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 31,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#ffffffCC",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 32,
+                    "strings": [
+                        "",
+                        "Shake",
+                        "MessageWindow",
+                        "",
+                        "time=0.3 x=20 y=-16",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 33,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "うっ……！？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 34,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "声がして視線を向けようとすると、視界がチカチカして、目の奥に鈍い痛みが走る。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 35,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#ffffffCC",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 36,
+                    "strings": [
+                        "",
+                        "",
+                        "？？？",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "おっと、無理をしない方がよろしくてよ？<interval=0.4>\nヴァイス用の精神安定剤は、ニンゲンには効き過ぎたようですね……<interval=0.4>加減が難しい。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_002"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 37,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "アーチ_01",
+                        "MoveBy",
+                        "time=2.0 y=300",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 38,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "アーチ_02",
+                        "MoveBy",
+                        "time=2.0 y=300",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 39,
+                    "strings": [
+                        "",
+                        "ImageEffectOff",
+                        "SpriteCamera",
+                        "Blur",
+                        "",
+                        "",
+                        "",
+                        "2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 40,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "うぅ……君は……？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 41,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt11",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ごきげんよう、継承者様。\nウロロスでございます。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_003"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 42,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "横たわったままの俺の視界に、彼女がぬるりと姿を現して、微笑む。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 43,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt1_Nor"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 44,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_手_手を取る"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 45,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "MoveBy",
+                        "time=0.8 y=-50",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 46,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "ScaleTo",
+                        "time=0.8 x=1.15 y=1.15",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 47,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "彼女は、手にした薬らしい小瓶をいくつか見比べると、ひとつを俺の前に差し出した。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 48,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "これを飲めば、多少楽になるかと。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_004"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 49,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "う……<interval=0.4>ぐぅ……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 50,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt12",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ああ、自分で飲めないのですね。<interval=0.4>\nだったら飲ませて差し上げます。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_005"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 51,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_魔法_状態変化_毒"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 52,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "MoveBy",
+                        "time=0.6 y=-50",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 53,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "ScaleTo",
+                        "time=0.6 x=1.3 y=1.3",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 54,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "彼女は、動けない俺の口にじょうごの先を突っ込むと、瓶の中の液体を流し込む。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 55,
+                    "strings": [
+                        "",
+                        "Shake",
+                        "Graphics",
+                        "",
+                        "time=0.3 x=20 y=-16",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 56,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "突然のことでむせ返りながら飲み込んだところ、少しずつ、頭の重さと身体のだるさが抜けていくような気がした。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 57,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "これは……<interval=0.4>どういう状況なんだ？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 58,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "どうもこうも、見ての通り拉致――<interval=0.4>させていただきました♪",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_006"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 59,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そんな清々しい顔で罪を告白されても……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 60,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 61,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 62,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 63,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "四角_01"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 64,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "四角_02"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 65,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_コモリオム",
+                        "",
+                        "",
+                        "200"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 66,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt3_Gla",
+                        "layer_左",
+                        "400",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 67,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "ColorTo",
+                        "time=0 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 68,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "キャピノラ",
+                        "ScaleTo",
+                        "time=0 x=1.2 y=1.2",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 69,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.8 y=1.8",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 70,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "キャピノラ",
+                        "MoveBy",
+                        "time=0 y=-100"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 71,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.8"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 72,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2002_0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 73,
+                    "strings": [
+                        "",
+                        "ImageEffect",
+                        "SpriteCamera",
+                        "Sepia",
+                        "",
+                        "",
+                        "",
+                        "0.1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 74,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 75,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "キャピノラが悪いのです。<interval=0.4>\nわたくしよりも継承順位が低いくせに、国賓である鍵の継承者をひとり占めするなど……。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_007"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 76,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それほど変わらないよな？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 77,
+                    "strings": [
+                        "",
+                        "",
+                        "キャピノラ",
+                        "Emt1_Nor"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 78,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "キャピノラ",
+                        "MoveBy",
+                        "time=0.2 y=30",
+                        "linear",
+                        "pingPong=2",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 79,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "わたくしの方が上であることも変わりません。<interval=0.6>\nその辺り、彼女にはしっかり弁えていただきたいです。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_008"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 80,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 81,
+                    "strings": [
+                        "",
+                        "ImageEffectOff",
+                        "SpriteCamera",
+                        "Sepia",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 82,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "キャピノラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 83,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 84,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_高貴な部屋",
+                        "",
+                        "",
+                        "300",
+                        "-150"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 85,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt2_Ang"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 86,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "ColorTo",
+                        "time=0 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 87,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 88,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.5 y=1.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 89,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 90,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 91,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "弁える……というか、キャピノラの方はそもそも、順位を気にしていないというか。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 92,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "彼女たちの国、ハイパーボリアにおける王位継承順位とは、生まれた順ではなく、王国への貢献度をもとに上下するランキングの結果だという。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 93,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ウロロスは確か、ランキング69位。<interval=0.4>\nそしてキャピノラは、ランキング72位。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 94,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "確かに順位差はあるが、２００人近い候補者がいる中で見れば微々たる差と思ってしまうのも仕方ないだろう。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 95,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 96,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それで……<interval=0.4>君は、俺を拉致してどうしようと？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 97,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "MoveBy",
+                        "time=0.4 y=100",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 98,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "ScaleTo",
+                        "time=0.4 x=1 y=1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 99,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt12",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "さて、どうしましょう？",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_009"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 100,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "とりあえず、キャピノラの邪魔をしようと拉致ってみましたが、特にわたくし自身は用事がないのですよねぇ。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_010"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 101,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "えぇ……<interval=0.4>それなら、解放して欲しいんだが。<interval=0.4>\nキャピノラとの約束もあるし。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 102,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_移動音"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 103,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "MoveBy",
+                        "time=0.6 y=-50",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 104,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "ScaleTo",
+                        "time=0.6 x=1.15 y=1.15",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 105,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt11",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それなら問題ありません。<interval=0.4>\n継承者様は、急用ができてルルイエに帰ったことになってますので。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_011"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 106,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そういうところは用意周到なのか……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 107,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt12",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "知恵を使うことこそ、イグの申し子たるわたくしの権威ですから。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_012"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 108,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "だったらせめて意味のある拉致にしてくれ、というのは求めすぎだろうか。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 109,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveBy",
+                        "time=0.4 x=80",
+                        "linear",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 110,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "MoveBy",
+                        "time=0.4 x=80",
+                        "linear"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 111,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "俺は、部屋の中を見渡して、それから稼働中の実験器具に行きつく。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 112,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あれは、何かの実験中なのか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 113,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "MoveBy",
+                        "time=0.3 y=-30",
+                        "linear",
+                        "pingPong=2",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 114,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ええ。<interval=0.4>\n飲用薬のより効率かつ手ごろな摂取ができないかと研究中で。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_013"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 115,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_歩き"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 116,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 117,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "先ほどの継承者様のように、飲みたくても飲めない……<interval=0.4>なんてこと、往々にしてございますでしょう？<interval=0.4>\nそんな時に、他の方法で摂取できればと思ったのです。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_014"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 118,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そう語る彼女の眼差しは、生真面目な研究者そのものだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 119,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "キャピノラが関わると微妙に思考がズレてしまうだけで、本来は真面目で優秀な科学者――なんだろうけどなぁ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 120,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それって、具体的にはどんな？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 121,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt12",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "鼻――<interval=0.4>すなわち香り、です。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_015"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 122,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "香りによって精神を安定させ、薬を受け入れる催眠……<interval=0.4>もとい、身体の状態を整えます。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_016"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 123,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そこに鼻腔の粘膜摂取を行えば、例えば霧散した微量の薬品でも十分な効果を引き出せるのではと。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_017"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 124,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "なんか怪しい単語が聴こえたような気がするが、それってつまり薬品を香水みたいにするってことか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 125,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "こう、シュッと吹き付けると効能が得られると。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 126,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt11",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ええ、その通りです。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_018"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 127,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ウロロスがにこやかに笑む。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 128,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "MoveBy",
+                        "time=0.4 y=-60",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 129,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "ScaleTo",
+                        "time=0.4 x=1.2 y=1.2",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 130,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt12",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そうですね、せっかくですし継承者様に実験を手伝っていただきましょうか。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_019"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 131,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ハイパーボリアにはあいにく、ニンゲンの検体がおりませんので。<interval=0.6>\n先ほどのように効き過ぎるなんてことがあり得ます。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_020"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 132,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "今後、ルルイエやカルコサとの取引があることも考えたら、人間向けの濃度の調整は必須ですからね。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_021"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 133,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "健康を害さない程度の協力なら惜しまないが……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 134,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それで帰して貰えるというのなら、ここは従っておくか。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 135,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "わかった、それで手を打ってくれないか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 136,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt12",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "よろしいでしょう。<interval=0.6>\nこの実験が製品化に至れば、わたくしの王国への貢献度もあがるはず。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_022"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 137,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "Emt11"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 138,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_手_手を取る"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 139,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "MoveBy",
+                        "time=0.8 y=-50",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 140,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ウロロス",
+                        "ScaleTo",
+                        "time=0.8 x=1.4 y=1.4",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 141,
+                    "strings": [
+                        "",
+                        "",
+                        "ウロロス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "よろしくお願いいたします。",
+                        "",
+                        "Character/ch_10052/Event/vo_event_10052_023"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 142,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "お、お手柔らかに。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 143,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "再びの清々しい彼女の笑顔に、不安を感じたのは言うまでもない。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 144,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "All",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 145,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 146,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 147,
+                    "strings": [
+                        "",
+                        "LayerReset",
+                        "レイヤー_マスク全画面",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                }
+            ],
+            "name": "Assets/AdvScene/ScenarioExcel/character/10052/10052A1_Nml.xlsx:10052A1_Nml",
+            "type": 1,
+            "textLength": 5623,
+            "headerRow": 0,
+            "entityIndexTbl": [],
+            "entityDataList": []
+        }
+    ]
+}

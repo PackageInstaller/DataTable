@@ -1986,6 +1986,59 @@
       "removal_timing": 9,
       "stacking": 1,
       "effectId": 0
+    },
+    {
+      "id": 10004,
+      "rarity": 0,
+      "name": "被ダメ減",
+      "kana": "",
+      "text": "",
+      "restrictionForClass": 0,
+      "restrictionForTribe": 0,
+      "restrictionForElement": 0,
+      "restrictionForFamily": 0,
+      "talentList": [
+        {
+          "talentId": 1010,
+          "param": [
+            {
+              "num": [
+                30
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": [
+            {
+              "type": 10,
+              "num": [
+                0
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ]
+        }
+      ],
+      "recipeId": 0,
+      "skipend": 0,
+      "duration": 450,
+      "removal_timing": 0,
+      "stacking": 1,
+      "effectId": 300031
     }
   ]
 }

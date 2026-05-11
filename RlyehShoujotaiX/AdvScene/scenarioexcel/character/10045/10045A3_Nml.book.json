@@ -1,0 +1,4614 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -2195584510539435343
+    },
+    "m_Name": "10045A3_Nml.book",
+    "importVersion": 0,
+    "importGridList": [
+        {
+            "rows": [
+                {
+                    "rowIndex": 0,
+                    "strings": [
+                        "",
+                        "Command",
+                        "Arg1",
+                        "Arg2",
+                        "Arg3",
+                        "Arg4",
+                        "Arg5",
+                        "Arg6",
+                        "WaitType",
+                        "Text",
+                        "PageCtrl",
+                        "Voice",
+                        "WindowType",
+                        "Arg7"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 1,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 2,
+                    "strings": [
+                        "",
+                        "ImageEffect",
+                        "SpriteCamera",
+                        "GrayScale"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 3,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_汎用_洞窟"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 4,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 5,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 6,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.2",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 7,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "第三幕：穴倉",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_098"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 8,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt7_Sad",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 9,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ルルイエの地下と思われる遺跡を、男は当てもなく彷徨っていた。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_099"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 10,
+                    "strings": [
+                        "",
+                        "ImageEffectOff",
+                        "SpriteCamera",
+                        "GrayScale",
+                        "",
+                        "",
+                        "",
+                        "2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 11,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 12,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2002_0",
+                        "",
+                        "1",
+                        "",
+                        "0",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 13,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……街の道も把握していなけりゃ、地下なんて余計に分かるはずがないな。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 14,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それでも……宝石を渡すわけにもいかない。\nどうにか、自分の力で脱出しないと。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 15,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "怪我が無いのが、不幸中の幸いか……これで歩けなかったら、\n洒落にならなかったな。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 16,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "Emt8_Scr",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "とは言え――。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 17,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 18,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 19,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "男は、来た道を振り返る。\nもう随分と歩いて来た気がするが、一向に出口どころか、\n見知った場所に出ることも無い。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_100"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 20,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 21,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 22,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "Emt7_Sad",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "本当に、一生彷徨い続けるのか……？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 23,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 24,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 25,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "その心が、わずかに絶望に傾きかけた時、男は暗がりに物音を聞いた。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_101"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 26,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 27,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 28,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 29,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 30,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "何か……いや、誰かいるのか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 31,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 32,
+                    "strings": [
+                        "",
+                        "",
+                        "？？？",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ひ……！？",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_102"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 33,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 34,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 35,
+                    "strings": [
+                        "",
+                        "",
+                        "ヴァイス_黒",
+                        "Emt1_Nor",
+                        "layer_右中奥",
+                        "100",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 36,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ヴァイス_黒",
+                        "Rotate",
+                        "",
+                        "180"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 37,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt5_Sur",
+                        "layer_左中前",
+                        "-110",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 38,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "君は、ヴァイス……？\nこんなところにも、ヴァイスが住んでいるのか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 39,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "ShakePosition",
+                        "time=0.2 x=20",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 40,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ゆ、許してくんろ……おら、何も悪いことはしてねぇ！\nただ、この辺りの寝心地がよくて、住処にしてるだけだ！",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_103"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 41,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "いやいや、別に、何もしやしない！\n俺の方が、勝手に踏み入れてしまったようなもんだ！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 42,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そう……だか？",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_104"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 43,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt1_Nor"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 44,
+                    "strings": [
+                        " ",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "MoveBy",
+                        "time=0.4 y=-10",
+                        "linear",
+                        "pingPong=2",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 45,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ああ、そうだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 46,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ところで……住んでるってことは、道も詳しいのか？\n実は、迷子になっていて……地上に帰りたいんだが。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 47,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "RotateTo",
+                        "time=0.6 z=-5",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 48,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "道……？",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_105"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 49,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "道っていう道ではないけど……地上への行き方なら分かる。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_106"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 50,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt5_Sur"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 51,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ほんとか？\n教えてくれると嬉しいんだが。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 52,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt7_Sad"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 53,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ああ……えっと……あいにく、今はお礼ができるようなものが何もなくて。\nでも、地上に戻れたらご飯でもなんでも、ご馳走させてくれ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 54,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 55,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "御礼……？",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_107"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 56,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "御礼なら、おら……おめぇの一番大事なもんが欲しい。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_108"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 57,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2001_0",
+                        "",
+                        "1",
+                        "",
+                        "0",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 58,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt5_Sur"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 59,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "一番……大事なもの？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 60,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "RotateTo",
+                        "time=0.3 z=0",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 61,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "何でもいい。\nおめぇが大事に思ってるものなら、なんでも。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_109"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 62,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt7_Sad"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 63,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "どうして、そんなものを……？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 64,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "おめぇは今、困ってる。\n困って、おらに助けを求めた。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_110"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 65,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "もしもおらが断ったら、どうなる？\nおめぇは、またこの穴倉を彷徨って、彷徨って、彷徨って……最後にはどうなる？",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_111"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 66,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それは……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 67,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "おめぇは死ぬ……暗い穴倉の底で、誰に知られることも無く。\nおらは、その命を救うんだ……だったら、一番大事なものを貰うくらいの権利は、あるはずだ。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_112"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 68,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そうは言っても……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 69,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 70,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 71,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 72,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "男は、懐に仕舞っていた鍵を上着の上から握りしめる。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_113"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 73,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 74,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 75,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 76,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 77,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt8_Scr"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 78,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "これだけは、渡せないというか……渡したところで、どうなるものでもない。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 79,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ルルイエの……ひいては、この世界の命運を握る、文字通りの『鍵』なんだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 80,
+                    "strings": [
+                        " ",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "MoveBy",
+                        "time=0.4 x=6",
+                        "linear",
+                        "pingPong=2",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 81,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……流石に、それはおらには重い。\nだったら、特別に二番目でもいい。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_114"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 82,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それは……？\nその、握りしめてる宝石なら、高く売れそうだ。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_115"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 83,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt5_Sur"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 84,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "これは……これも、ダメだ。\nそもそも、俺のものじゃないんだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 85,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "MoveBy",
+                        "time=0.3 x=30",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 86,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "つまり、大事なものか？\nだったらそれがいい。\nおらに、それをくれ。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_116"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 87,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "MoveBy",
+                        "time=0.3 x=-30",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 88,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ダメだって。\n俺の一存じゃ決められないものなんだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 89,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それは、おめぇの命に代えてもいいようなものなのか？",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_117"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 90,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 91,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 92,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 93,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "男の言葉が詰まる。\n確かに、彼にとっては単なる拾い物で、落とし主を探しているだけの代物だ。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_118"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 94,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "自分の命と天秤にかけるかと言われると……\n一概に、突っぱねられるようなものでもない。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_119"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 95,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 96,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 97,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 98,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 99,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt7_Sad"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 100,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……それでも、ダメなんだ。\n落として困っている人がいるなら、ちゃんと持ち主のところに返さないと。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 101,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 102,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "MoveBy",
+                        "time=0.3 y=-20",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 103,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "2.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 104,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2001_0",
+                        "",
+                        "1",
+                        "",
+                        "0",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 105,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "MoveBy",
+                        "time=0.3 y=20",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 106,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "だったら、おらは手伝えねぇ。\n出口は自分で探すんだ。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_120"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 107,
+                    "strings": [
+                        " ",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "MoveBy",
+                        "time=0.4 y=-10",
+                        "linear",
+                        "pingPong=2",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 108,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……わかった。\n無理を言って、悪かった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 109,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 110,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 111,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 112,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 113,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_歩き",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 114,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "MoveBy",
+                        "time=0.8 x=-100",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 115,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.5 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 116,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "穴倉のヴァイスと別れて、男は再びひとりで歩き始める。\n正しい道なんて分からない。\nそれでも、信じて歩き続けるしかないのだ。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_121"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 117,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 118,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 119,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 120,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 121,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_汎用_洞窟",
+                        "",
+                        "",
+                        "",
+                        "-250"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 122,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.6 y=1.6",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 123,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt7_Sad",
+                        "layer_左中前",
+                        "",
+                        "-400",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 124,
+                    "strings": [
+                        "",
+                        "Set",
+                        "主人公_立ち絵",
+                        "Scale",
+                        "2",
+                        "2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 125,
+                    "strings": [
+                        "",
+                        "",
+                        "ヴァイス_黒",
+                        "Emt5_Sur",
+                        "layer_右中奥",
+                        "-150",
+                        "-540",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 126,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ヴァイス_黒",
+                        "Scale",
+                        "2.2",
+                        "2.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 127,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ヴァイス_黒",
+                        "Rotate",
+                        "",
+                        "180"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 128,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯上",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 129,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯下",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 130,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "マスク黒帯上",
+                        "漫符_ブラック",
+                        "レイヤー_マスク全画面下",
+                        "3000",
+                        "880",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 131,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "マスク黒帯下",
+                        "漫符_ブラック",
+                        "レイヤー_マスク全画面下",
+                        "3000",
+                        "-820",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 132,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "ColorTo",
+                        "time=0 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 133,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "ColorTo",
+                        "time=0 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 134,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "MoveTo",
+                        "time=0 x=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 135,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "MoveTo",
+                        "time=0 x=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 136,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "レイヤー_マスク全画面下",
+                        "MoveBy",
+                        "time=0 y=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 137,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "ColorTo",
+                        "time=0 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 138,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "ColorTo",
+                        "time=0 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 139,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "MoveBy",
+                        "time=0 y=0",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 140,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "MoveBy",
+                        "time=0 y=6",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 141,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 142,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 143,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 144,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そこまで言われると、やっぱり無性に欲しくなっただ。\nおらに、それくんろ。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_122"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 145,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 146,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "な……！？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 147,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2003_0",
+                        "",
+                        "1",
+                        "",
+                        "0",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 148,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 149,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 150,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 151,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 152,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_触手_締め付ける",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 153,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt8_Scr",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 154,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "MoveBy",
+                        "time=0.2 y=110",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 155,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 156,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ShakePosition",
+                        "time=0.5 x=5 y=5",
+                        "",
+                        "pingPong=0",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 157,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "突然、背後の闇から先ほどのヴァイスが襲い掛かって来た。\nすっかり油断していた男は、彼女の触手に締め上げられる。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_123"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 158,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt8_Scr",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 159,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "う……ぐぅ……！？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 160,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 161,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 162,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 163,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 164,
+                    "strings": [
+                        "",
+                        "",
+                        "ヴァイス_黒",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 165,
+                    "strings": [
+                        " ",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "MoveBy",
+                        "time=0.3 y=-20",
+                        "linear",
+                        "pingPong=2",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 166,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "男の手から零れ落ちた宝石を、ヴァイスが拾い上げて、愛おしそうに見つめた。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_124"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 167,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 168,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 169,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 170,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 171,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ああ……こいつぁいい……。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_125"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 172,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ダメだ……その宝石を、返して……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 173,
+                    "strings": [
+                        "",
+                        "",
+                        "ヴァイス_黒",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 174,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "安心しろ……無理矢理にでも大事なものを貰ったんだ。\nちゃぁんと、地上へは返してやる。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_126"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 175,
+                    "strings": [
+                        "",
+                        "",
+                        "穴倉のヴァイス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それにしても、すごい宝石だ……どこまでも吸い込まれるような黒……\nこれは、真の闇……。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_127"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 176,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "う……ぐぅ……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 177,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 178,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 179,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ヴァイス_黒",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 180,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 181,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "触手で首が締め上げられ、男の意識が遠のく。\n気を失ってはいけないと思えば思うほど、身体の方は力を失っていくばかりであった。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_128"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 182,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 183,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ShakePosition",
+                        "time=0.2 x=10 y=10",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 184,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 185,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt7_Sad",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 186,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "MoveBy",
+                        "time=0.6 y=-10",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 187,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 188,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 189,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 190,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯上",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 191,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯下",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 192,
+                    "strings": [
+                        "",
+                        "BgOff"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 193,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_汎用_洞窟",
+                        "",
+                        "",
+                        "50"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 194,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.4 y=1.4",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 195,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 196,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 197,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 198,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt7_Sad",
+                        "layer_左中前",
+                        "",
+                        "-175",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 199,
+                    "strings": [
+                        "",
+                        "Set",
+                        "主人公_立ち絵",
+                        "Rotate",
+                        "",
+                        "",
+                        "10"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 200,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "う……ここは……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 201,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_1003_2",
+                        "",
+                        "1",
+                        "",
+                        "0",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 202,
+                    "strings": [
+                        "",
+                        "",
+                        "フラーナ＝フリーニ",
+                        "Emt1_Nor",
+                        "layer_右中奥",
+                        "",
+                        "60",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 203,
+                    "strings": [
+                        "",
+                        "",
+                        "フラーナ＝フリーニ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "おや……やっと目覚めたか。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_129"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 204,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 205,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "フラーナ＝フリーニ……？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 206,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 207,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 208,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "フラーナ＝フリーニ",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 209,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "男が目覚めたのは、気を失った時と変わらず、ルルイエの深い地の底だった。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_130"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 210,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そこに穴倉のヴァイスの姿はなく、代わりに、地下の闇に溶け込むように佇む、黒ずくめの女の姿がある。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_131"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 211,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "その手には、例の宝石が握られていた。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_132"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 212,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 213,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 214,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "フラーナ＝フリーニ",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 215,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 216,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それは……！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 217,
+                    "strings": [
+                        "",
+                        "",
+                        "フラーナ＝フリーニ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "安心しろ、返してやる。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_133"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 218,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "フラーナ＝フリーニ",
+                        "MoveBy",
+                        "time=0.8 x=-50",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 219,
+                    "strings": [
+                        "",
+                        "",
+                        "フラーナ＝フリーニ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "次は、失くさないようにしろ。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_134"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 220,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あ、ああ……ありがとう。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 221,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 222,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 223,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "フラーナ＝フリーニ",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 224,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "宝石を受け取った男は、ぼんやりする頭で彼女を見上げた。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_135"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 225,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 226,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 227,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "フラーナ＝フリーニ",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 228,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 229,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt7_Sad",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 230,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "君は……なぜここに？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 231,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "フラーナ＝フリーニ",
+                        "MoveBy",
+                        "time=0.8 x=50",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 232,
+                    "strings": [
+                        "",
+                        "",
+                        "フラーナ＝フリーニ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "時間になってもカフェテリアに現れないからと、探しに来たんだ。\nそしたら、貴様が変なヴァイスに絡まれてるじゃないか。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_136"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 233,
+                    "strings": [
+                        "",
+                        "",
+                        "フラーナ＝フリーニ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "仕方なく、助けてやったというわけだ。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_137"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 234,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そうか……あのヴァイスは？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 235,
+                    "strings": [
+                        "",
+                        "",
+                        "フラーナ＝フリーニ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "どこか、穴倉の奥深くへ逃げて行ったよ。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_138"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 236,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "MoveBy",
+                        "time=0.4 y=-5",
+                        "linear",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 237,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……そうか。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 238,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 239,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "フラーナ＝フリーニ",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 240,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 241,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 242,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "MoveBy",
+                        "time=0.5 y=10",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 243,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 244,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt8_Scr"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 245,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "MoveBy",
+                        "time=0.3 y=-10"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 246,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_ぶつかる",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 247,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "男は、しばし俯いて呼吸を整えた後に、ふらつく足で立ち上がろうとする――が、すぐに尻餅をついてしまう。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_139"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 248,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 249,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 250,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "フラーナ＝フリーニ",
+                        "ColorTo",
+                        "time=0.3 color=#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 251,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 252,
+                    "strings": [
+                        "",
+                        "",
+                        "フラーナ＝フリーニ",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "おっと、無理はするな。\n人間の身体は、それほど頑丈にはできていないだろう？",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_140"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 253,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt7_Sad"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 254,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "大丈夫、歩くくらいなら問題ない。\nところで……ここまで来たってことは、帰る道も知ってるのか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 255,
+                    "strings": [
+                        "",
+                        "",
+                        "フラーナ＝フリーニ",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "もちろん。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_141"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 256,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そうか……じゃあ、案内してくれないか？\nお礼は……そうだな……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 257,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公_立ち絵",
+                        "Emt1_Nor"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 258,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "カフェテリアで、お茶をご馳走するよ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 259,
+                    "strings": [
+                        "",
+                        "",
+                        "フラーナ＝フリーニ",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Ｂｒａｖｏ．\n契約成立だ。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_142"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 260,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "主人公_立ち絵",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 261,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 262,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "フラーナ＝フリーニ",
+                        "ColorTo",
+                        "time=0.3 color=#ababab",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 263,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.3"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 264,
+                    "strings": [
+                        "",
+                        "",
+                        "フラーナ＝フリーニ",
+                        "Emt1_Nor"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 265,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "フラーナ＝フリーニ",
+                        "MoveBy",
+                        "time=0.8 x=-30 y=-30",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 266,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "女は手を差し伸べて、男が立ち上がるのを手伝う。",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_143"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 267,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm,Se",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 268,
+                    "strings": [
+                        "",
+                        "ImageEffect",
+                        "SpriteCamera",
+                        "GrayScale",
+                        "",
+                        "",
+                        "",
+                        "2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 269,
+                    "strings": [
+                        "",
+                        "",
+                        "語り部",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そうして歩き始めた道の先に、今度こそ光が続いているのであろうか……？",
+                        "",
+                        "Character/ch_10045/Event/vo_event_10045_144"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 270,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "All",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 271,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 272,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 273,
+                    "strings": [
+                        "",
+                        "LayerReset",
+                        "レイヤー_マスク全画面",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                }
+            ],
+            "name": "Assets/AdvScene/ScenarioExcel/character/10045/10045A3_Nml.xlsx:10045A3_Nml",
+            "type": 1,
+            "textLength": 10228,
+            "headerRow": 0,
+            "entityIndexTbl": [],
+            "entityDataList": []
+        }
+    ]
+}

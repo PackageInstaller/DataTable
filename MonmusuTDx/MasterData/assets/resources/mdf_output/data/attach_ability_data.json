@@ -24018,6 +24018,95 @@
       "hidden": 0,
       "category": 3,
       "start_at": ""
+    },
+    {
+      "id": 1277,
+      "rarity": 1397969457,
+      "name": "超・双角王者の討伐証",
+      "kana": "ちょう・そうかくおうじゃのとうばつしょう",
+      "text": "物理防御+40、オーブ装備クラスにセット時追加で魔法防御+60",
+      "restrictionForClass": 0,
+      "restrictionForTribe": 0,
+      "restrictionForElement": 0,
+      "restrictionForFamily": 0,
+      "talentList": [
+        {
+          "talentId": 13,
+          "param": [
+            {
+              "num": [
+                40
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 23,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 18,
+          "param": [
+            {
+              "num": [
+                60
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 23,
+          "range": 1,
+          "triggerData": [],
+          "activeData": [
+            {
+              "type": 1007,
+              "num": [
+                15021
+              ],
+              "option": [
+                ">="
+              ],
+              "target": 1,
+              "targetNum": []
+            },
+            {
+              "type": 1007,
+              "num": [
+                15029
+              ],
+              "option": [
+                "<="
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ]
+        }
+      ],
+      "recipeId": 0,
+      "skipend": 0,
+      "salePrice": 0,
+      "salable": 0,
+      "purchase": 1,
+      "ultimate": 0,
+      "hidden": 0,
+      "category": 2,
+      "start_at": ""
     }
   ]
 }

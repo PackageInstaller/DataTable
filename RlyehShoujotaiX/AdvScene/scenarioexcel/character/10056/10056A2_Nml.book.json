@@ -1,0 +1,2109 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -2195584510539435343
+    },
+    "m_Name": "10056A2_Nml.book",
+    "importVersion": 0,
+    "importGridList": [
+        {
+            "rows": [
+                {
+                    "rowIndex": 0,
+                    "strings": [
+                        "",
+                        "Command",
+                        "Arg1",
+                        "Arg2",
+                        "Arg3",
+                        "Arg4",
+                        "Arg5",
+                        "Arg6",
+                        "WaitType",
+                        "Text",
+                        "PageCtrl",
+                        "Voice",
+                        "WindowType",
+                        "Arg7"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 1,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 2,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_ルルイエの街",
+                        "",
+                        "layer_背景"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 3,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0 x=1.2 y=1.2",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 4,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveTo",
+                        "time=0 x=0 y=50"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 5,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2002_0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 6,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 7,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 8,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.2",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 9,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "勝敗は決しました。<interval=0.8>\nもうそのあたりでお止めになってはいかがでしょう。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_042",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 10,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 11,
+                    "strings": [
+                        "",
+                        "",
+                        "モブ_狂信者",
+                        "Emt5_Sur",
+                        "layer_左",
+                        "150",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 12,
+                    "strings": [
+                        "",
+                        "",
+                        "モブ_男",
+                        "Emt5_Sur",
+                        "layer_右",
+                        "-150",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 13,
+                    "strings": [
+                        "",
+                        "",
+                        "暴漢",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "なっ！？",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_043"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 14,
+                    "strings": [
+                        "",
+                        "",
+                        "小柄な男",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あなたは、さっきの……。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_044"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 15,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イヴの姿を見て、\n男は目を丸くし、暴漢は背筋をぴんと伸ばした。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 16,
+                    "strings": [
+                        "",
+                        "",
+                        "モブ_狂信者",
+                        "Emt4_Con"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 17,
+                    "strings": [
+                        "",
+                        "",
+                        "暴漢",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あ、ああぁぁ……っ、<interval=0.4>イ、<interval=0.4>イヴ様……。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_045"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 18,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 19,
+                    "strings": [
+                        "",
+                        "",
+                        "モブ_狂信者",
+                        "Emt4_Con",
+                        "layer_左中奥",
+                        "500",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 20,
+                    "strings": [
+                        "",
+                        "",
+                        "モブ_男",
+                        "Emt5_Sur",
+                        "layer_右中奥",
+                        "150",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 21,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "layer_中",
+                        "-300",
+                        "",
+                        "0.3",
+                        "",
+                        "貴方には、\nまた返済期限が近付いたときにお伺いしますので、<interval=0.4>\nこの場は引き下がっていただけますか？",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_046",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 22,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "モブ_狂信者",
+                        "ShakePosition",
+                        "time=0.3 x=-30",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 23,
+                    "strings": [
+                        "",
+                        "",
+                        "暴漢",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "へ、返済……<interval=0.4>どうかもう少しだけお待ち下さい……<interval=0.4>\n<size=32>どうか……<interval=0.4>どうか……っ！</size>",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_047"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 24,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_走り"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 25,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "モブ_狂信者",
+                        "MoveBy",
+                        "time=0.4 x=30",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 26,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "モブ_狂信者",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 27,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "暴漢は頭を抱えながら走り去っていく。\nその身体は、がたいの良さに似合わずぶるぶると震えていた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 28,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "――さて。\nひとまず、目先の問題は解決したようですね。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_048"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 29,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "モブ_男",
+                        "MoveBy",
+                        "time=0.4 x=-30",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 30,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "モブ_男",
+                        "ColorTo",
+                        "time=0.4 alpha=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 31,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "モブ_男",
+                        "MoveBy",
+                        "time=0 x=-220"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 32,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "モブ_男",
+                        "ColorTo",
+                        "time=0.4 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 33,
+                    "strings": [
+                        "",
+                        "",
+                        "小柄な男",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あ……<interval=0.4>ありがとうございます。\nあなたからいただいた力と剣で、なんとかなりました。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_049"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 34,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "いえいえ、\n大したことはしておりませんので、お礼には及びません。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_050"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 35,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "MoveBy",
+                        "time=0.4 x=30",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 36,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "ColorTo",
+                        "time=0.4 alpha=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 37,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "MoveBy",
+                        "time=0 x=150"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 38,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 39,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "ColorTo",
+                        "time=0.4 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 40,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 41,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "払うべきものさえ払っていただければ、それでよいのです。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_051"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 42,
+                    "strings": [
+                        "",
+                        "",
+                        "小柄な男",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "払うべきもの……<interval=0.4>ですか？",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_052"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 43,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_進行度ランキング遷移時"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 44,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "不思議がる男に対し、イヴは１枚の紙を渡す。\nそれを受け取った男は大きく目を見開いた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 45,
+                    "strings": [
+                        "",
+                        "",
+                        "モブ_男",
+                        "Emt5_Sur"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 46,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "モブ_男",
+                        "ShakePosition",
+                        "time=0.3 x=-30",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 47,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2001_0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 48,
+                    "strings": [
+                        "",
+                        "",
+                        "小柄な男",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "<size=32>こ、<interval=0.2>この金額は一体！？</size>",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_053"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 49,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "貴方を助けるにあたり掛かったお金ですよ。<interval=0.4>\nああ、急なご依頼でしたが、\n特別料金は上乗せしていませんのでご安心ください。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_054"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 50,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "モブ_男",
+                        "MoveBy",
+                        "time=0.4 x=-30",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 51,
+                    "strings": [
+                        "",
+                        "",
+                        "小柄な男",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "いえ、そのようなことを伺ったわけでは……。<interval=0.8>\nそもそも、対価は既にお支払いしたはずです！",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_055"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 52,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あれはあくまで、契約締結そのものへの対価。<interval=0.4>\n細かい対応にはそれぞれ別途お金がかかるのです。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_056"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 53,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "契約書にもきちんと記載されていますよ？",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_057"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 54,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イヴが書面の隅を指で示す。\nそこには確かに、読めるか読めないか絶妙な小ささで、\nイヴの言った内容が記されていた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 55,
+                    "strings": [
+                        "",
+                        "",
+                        "モブ_男",
+                        "Emt4_Con"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 56,
+                    "strings": [
+                        "",
+                        "",
+                        "小柄な男",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "うっ……<interval=0.4>し、しかしこのような高額、到底私には……。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_058"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 57,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "払える範囲で少しずつで構いません。<interval=0.8>\nただ、最終的には全額きっちりご用意いただきます。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_059"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 58,
+                    "strings": [
+                        "",
+                        "",
+                        "小柄な男",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "む、無理だ……<interval=0.4>\nいくらなんでもこの金額は払えない……。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_060"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 59,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt2_Ang"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 60,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "<size=32>……はぁ？</size><interval=0.4>　契約書にサインをしておきながら無理って、\nそれは筋が通らないんじゃないですかねぇ。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_061"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 61,
+                    "strings": [
+                        "",
+                        "",
+                        "モブ_男",
+                        "Emt5_Sur"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 62,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "モブ_男",
+                        "MoveBy",
+                        "time=0.4 x=100",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 63,
+                    "strings": [
+                        "",
+                        "",
+                        "小柄な男",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "<size=32>ひぃっ！？</size>",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_062"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 64,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "豹変した顔と声に、男が後ずさる。\nイヴはそんな彼との間合いを詰め、耳元に口を当てた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 65,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "貴方が肌見放さず大切にしている宝石、<interval=0.4>\nなかなかの価値がありそうですね。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_063"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 66,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "モブ_男",
+                        "ShakePosition",
+                        "time=0.3 x=-30",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 67,
+                    "strings": [
+                        "",
+                        "",
+                        "小柄な男",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "<size=32>なっ？</size><interval=0.4>　あ、あああ……あなた……<interval=0.4>\n最初から分かって……<interval=0.4>何者なんですか一体……！",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_064"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 68,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "しがない救済者ですよ。\n……では、お支払いお待ちしておりますね。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_065"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 69,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 70,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "元の笑みに戻ったイヴがそう告げると、<interval=0.4>\n",
+                        "Next"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 71,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_動作_足音_靴_歩き"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 72,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "モブ_男",
+                        "MoveBy",
+                        "time=0.4 x=30",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 73,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "モブ_男",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 74,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "男は青白い顔でふらふらと歩き去っていった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 75,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "残されたイヴに、俺は声を掛ける。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 76,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "MoveBy",
+                        "time=0.5 x=120 y=-60",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 77,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "ScaleTo",
+                        "time=0.5 x=1.2 y=1.2",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 78,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "ScaleTo",
+                        "time=0.5 x=1.3 y=1.3",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 79,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveBy",
+                        "time=0.5 x=50",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 80,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 81,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_1003_2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 82,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "なあ、今のは流石にひどいだろ。\n怯えてたぞ、あの人。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 83,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "MoveBy",
+                        "time=0.3 x=-5",
+                        "linear",
+                        "pingPong=2",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 84,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ひどいも何も、契約ですから。<interval=0.4>\nあのナイフを持っていた方も、\n元々私に助けを求めてきたのですよ。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_066"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 85,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ですが、対価の支払いが上手くいかず、<interval=0.4>\n最近は人々を襲って金品を奪うようになったようです。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_067"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 86,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そもそも、まともには払えない対価を\n要求しているんじゃないか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 87,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "とんでもない。<interval=0.4>\nすべて適正ですよ。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_068"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 88,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_進行度ランキング遷移時"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 89,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "先程の男性の場合、エンチャント代に剣の代金、<interval=0.4>\n万一のために見守っていたことに対する金額が上乗せされます。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_069"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 90,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それは全部「助ける行為」に含まれるだろ！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 91,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "どのように助けるかは状況によりますので。<interval=0.8>\n柔軟に対応するため、都度都度で計算を行うのです。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_070"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 92,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "一見理にかなったような物言いだが、\nイヴの裁量でいかようにも内容を追加できると\n言っているようなものだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 93,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "さらに支払いは厳守。\n契約者にとっては地獄だろう。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 94,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "今からでも遅くない。\nこんなあくどい商売、すぐやめるんだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 95,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "真面目なのですね。<interval=0.8>\nけれど、ただで得られる救済はないのですよ。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_071"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 96,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ぴしゃりと言い放ったつもりだが、\nイヴは気にする様子もなく言葉を返してくる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 97,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt6_Shy"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 98,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "MoveBy",
+                        "time=0.4 y=-60",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 99,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "ScaleTo",
+                        "time=0.4 x=1.4 y=1.4",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 100,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "何事にも対価は必要。<interval=0.4>\n皆、心のどこかでは分かっているはずです。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_072"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 101,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それでも、窮地に追い込まれれば、\n差し伸べられた手に盲目的にすがろうとする。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_073"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 102,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そんな無力な者たちが救済を求めてあえぐ、<interval=0.4>\nその混沌の様を眺めるのが、至高の愉悦なのです。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_074"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 103,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "まるで歌うように軽やかに語るイヴに対し、\n俺は怒りのみならず不安の念を覚える。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 104,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "今のままでは、関わった者から恨みを買う一方だ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 105,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "MoveBy",
+                        "time=0.4 y=60",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 106,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "イヴ・メサイア",
+                        "ScaleTo",
+                        "time=0.4 x=1.2 y=1.2",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 107,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ご理解いただけましたか？<interval=0.8>\n本来こういったことはお教えしないのですが、<interval=0.4>\n今回は特別サービスです。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_075"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 108,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "理解はした。けど……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 109,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "せっかく大いなる力を持ち、\n一時的にとはいえ困っている者の助けになっているんだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 110,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "もっと別のやりようがあってもいいんじゃないか？\n今のままじゃ……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 111,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……かわいそうだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 112,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt4_Con",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "かわいそう？<interval=0.8>\nまあ、依頼者の方はそうなのかもしれませんね。\nですが契約ですので。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_076"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 113,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そうじゃない。\n君がかわいそうって言ってるんだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 114,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ご冗談を。<interval=0.4>\n私、生まれてこの方、憐れみを受けたことなどないのですよ。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_077"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 115,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それは、そういう相手が近くにいなかったからじゃないのか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 116,
+                    "strings": [
+                        "",
+                        "",
+                        "イヴ・メサイア",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "仰る意味が分かりませんね。",
+                        "",
+                        "Character/ch_10056/Event/vo_event_10056_078"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 117,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イヴ相手に言葉の問答は無意味だと、\n今日の短い時間でよく理解した。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 118,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "だから、俺が彼女に何かしてあげられるとしたら、それは……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 119,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……さっき特別サービスって言ってたけど、\nサービスついでに１つ、俺の頼みを聞いてくれないかな？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 120,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "All",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 121,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 122,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 123,
+                    "strings": [
+                        "",
+                        "LayerReset",
+                        "レイヤー_マスク全画面",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                }
+            ],
+            "name": "Assets/AdvScene/ScenarioExcel/character/10056/10056A2_Nml.xlsx:10056A2_Nml",
+            "type": 1,
+            "textLength": 6197,
+            "headerRow": 0,
+            "entityIndexTbl": [],
+            "entityDataList": []
+        }
+    ]
+}

@@ -1021,6 +1021,16 @@
             "message": "<color=#D4D200>長押しで詳細を確認できます</color>"
         },
         {
+            "id": "COMMON_CHALLENGE_COUNT_RESET_MESSAGE",
+            "title": "",
+            "message": "回復した挑戦回数は翌日にリセットされます"
+        },
+        {
+            "id": "PVP_OUT_OF_SCHEDULE",
+            "title": "エラー",
+            "message": "シーズン期間外です"
+        },
+        {
             "id": "LOGIN_BONUS_CHECK",
             "title": "",
             "message": "原石をあと<space=1em>{0}<space=1em>使用すると\r\n<size=25>{1}</size>\r\n<line-height=60%>※原石の仕様数は当月１日午前４時から\r\n翌月１日午前３時59分までの数です。"
@@ -5173,7 +5183,7 @@
         {
             "id": "SERIAL_CODE_WARNING",
             "title": "",
-            "message": "・<indent=1em>1つのシリアルコードによる特典入手は1回限りとなります。</indent>\r\n・<indent=1em>一定時間内に無効なシリアルコードを5回連続で入力した場合、\r\n1時間入力ができなくなります。</indent>"
+            "message": "・<indent=1em>1つのシリアルコードによる特典入手は1回限りとなります。</indent>\r\n・<indent=1em>一定時間内に無効なシリアルコードを5回入力した場合、\r\n1時間入力ができなくなります。</indent>"
         },
         {
             "id": "SERIAL_CODE_INPUT_NO_VALUE",

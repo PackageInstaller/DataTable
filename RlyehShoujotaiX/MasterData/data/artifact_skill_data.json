@@ -402,7 +402,7 @@
             "rarity": 17201,
             "name": "時の砂時計",
             "kana": "",
-            "text": "攻撃速度+10%",
+            "text": "攻撃速度+10%(同効果は重複しない)",
             "maxLevel": 1,
             "recipeId": 0,
             "skipend": 0,
@@ -445,7 +445,7 @@
             "rarity": 21041,
             "name": "時の砂時計",
             "kana": "",
-            "text": "攻撃速度+15%",
+            "text": "攻撃速度+15%(同効果は重複しない)",
             "maxLevel": 1,
             "recipeId": 0,
             "skipend": 0,
@@ -488,7 +488,7 @@
             "rarity": 5460529,
             "name": "時の砂時計",
             "kana": "",
-            "text": "攻撃速度+20%",
+            "text": "攻撃速度+20%(同効果は重複しない)",
             "maxLevel": 1,
             "recipeId": 0,
             "skipend": 0,
@@ -563,7 +563,7 @@
             "restrictionForClass": 0,
             "restrictionForTribe": 0,
             "restrictionForElement": 0,
-            "category": 1,
+            "category": 2,
             "flavorText": "その由来すら定かではない、太古より伝わる笛\r\n奏でられる微かな音色が魔法への抵抗力を高める",
             "acquireLocationText": "アポカリプスモードで入手可能",
             "canBeUnknown": 0,
@@ -606,7 +606,7 @@
             "restrictionForClass": 0,
             "restrictionForTribe": 0,
             "restrictionForElement": 0,
-            "category": 1,
+            "category": 2,
             "flavorText": "その由来すら定かではない、太古より伝わる笛\r\n奏でられる微かな音色が魔法への抵抗力を高める",
             "acquireLocationText": "アポカリプスモードで入手可能",
             "canBeUnknown": 0,
@@ -649,7 +649,7 @@
             "restrictionForClass": 0,
             "restrictionForTribe": 0,
             "restrictionForElement": 0,
-            "category": 1,
+            "category": 2,
             "flavorText": "その由来すら定かではない、太古より伝わる笛\r\n奏でられる微かな音色が魔法への抵抗力を高める",
             "acquireLocationText": "アポカリプスモードで入手可能",
             "canBeUnknown": 0,
@@ -909,6 +909,225 @@
             "restrictionForElement": 0,
             "category": 2,
             "flavorText": "失われた帝国の守護者が身に着けた精鋼の鎧\r\n身を包む者の防御力を高める",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 25,
+            "rarity": 17201,
+            "name": "時蝕者の塵",
+            "kana": "",
+            "text": "5秒ごとに最大耐久の3%分の耐久を回復",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1021,
+                    "param": [
+                        {
+                            "num": [
+                                3
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                150
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 25,
+            "grade": 1,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 2,
+            "flavorText": "ある存在が消え去った後に残った塵",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 26,
+            "rarity": 21041,
+            "name": "時蝕者の塵",
+            "kana": "",
+            "text": "5秒ごとに最大耐久の4%分の耐久を回復",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1021,
+                    "param": [
+                        {
+                            "num": [
+                                4
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                150
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 25,
+            "grade": 2,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 2,
+            "flavorText": "ある存在が消え去った後に残った塵",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 27,
+            "rarity": 5460529,
+            "name": "時蝕者の塵",
+            "kana": "",
+            "text": "5秒ごとに最大耐久の5%分の耐久を回復",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1021,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                150
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 25,
+            "grade": 3,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 2,
+            "flavorText": "ある存在が消え去った後に残った塵",
             "acquireLocationText": "アポカリプスモードで入手可能",
             "canBeUnknown": 0,
             "isUnique": 0
@@ -1232,6 +1451,450 @@
             "isUnique": 0
         },
         {
+            "id": 31,
+            "rarity": 17201,
+            "name": "炎の精",
+            "kana": "",
+            "text": "火傷に対する耐性+15、火傷状態の敵に対して与ダメージ+5％",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 414,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 30,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "seriesId": 31,
+            "grade": 1,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "炎の精を瓶に閉じ込めたもの\r\nほのかに暖かく、ランタンの代わりにもなる",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 32,
+            "rarity": 21041,
+            "name": "炎の精",
+            "kana": "",
+            "text": "火傷に対する耐性+20、火傷状態の敵に対して与ダメージ+10％",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 414,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 30,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "seriesId": 31,
+            "grade": 2,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "炎の精を瓶に閉じ込めたもの\r\nほのかに暖かく、ランタンの代わりにもなる",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 33,
+            "rarity": 5460529,
+            "name": "炎の精",
+            "kana": "",
+            "text": "火傷に対する耐性+25、火傷状態の敵に対して与ダメージ+15％",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 414,
+                    "param": [
+                        {
+                            "num": [
+                                25
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 30,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "seriesId": 31,
+            "grade": 3,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "炎の精を瓶に閉じ込めたもの\r\nほのかに暖かく、ランタンの代わりにもなる",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 34,
+            "rarity": 17201,
+            "name": "腐食の毒薬",
+            "kana": "",
+            "text": "回復率-75%\r\n与ダメージ+5%(前衛のみ)",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 3,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 89,
+                    "param": [
+                        {
+                            "num": [
+                                75
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 34,
+            "grade": 1,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "どんなものでも腐食させる強力な毒",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 35,
+            "rarity": 21041,
+            "name": "腐食の毒薬",
+            "kana": "",
+            "text": "回復率-75%\r\n与ダメージ+10%(前衛のみ)",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 3,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 89,
+                    "param": [
+                        {
+                            "num": [
+                                75
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 34,
+            "grade": 2,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "どんなものでも腐食させる強力な毒",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 36,
+            "rarity": 5460529,
+            "name": "腐食の毒薬",
+            "kana": "",
+            "text": "回復率-75%\r\n与ダメージ+15%(前衛のみ)",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 3,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 89,
+                    "param": [
+                        {
+                            "num": [
+                                75
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 34,
+            "grade": 3,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "どんなものでも腐食させる強力な毒",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
             "id": 49,
             "rarity": 17201,
             "name": "クトゥルフの邪神像",
@@ -1458,7 +2121,7 @@
             "rarity": 17201,
             "name": "ハスターの邪神像",
             "kana": "",
-            "text": "攻撃速度+10%\r\n後衛が装備時ハスターの化身を付与\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
+            "text": "攻撃速度+10%(同効果は重複しない)\r\n後衛が装備時ハスターの化身を付与\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
             "maxLevel": 1,
             "recipeId": 0,
             "skipend": 0,
@@ -1532,7 +2195,7 @@
             "rarity": 21041,
             "name": "ハスターの邪神像",
             "kana": "",
-            "text": "攻撃速度+15%\r\n後衛が装備時ハスターの化身を付与\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
+            "text": "攻撃速度+15%(同効果は重複しない)\r\n後衛が装備時ハスターの化身を付与\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
             "maxLevel": 1,
             "recipeId": 0,
             "skipend": 0,
@@ -1606,7 +2269,7 @@
             "rarity": 5460529,
             "name": "ハスターの邪神像",
             "kana": "",
-            "text": "攻撃速度+20%\r\n後衛が装備時ハスターの化身を付与\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
+            "text": "攻撃速度+20%(同効果は重複しない)\r\n後衛が装備時ハスターの化身を付与\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
             "maxLevel": 1,
             "recipeId": 0,
             "skipend": 0,
@@ -1860,6 +2523,198 @@
             "restrictionForElement": 0,
             "category": 2,
             "flavorText": "淡い光を内に宿す結晶体\r\n一度だけ悪夢を打ち消し、再び立ち上がる力を得る",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 1
+        },
+        {
+            "id": 58,
+            "rarity": 17201,
+            "name": "バルザイの偃月刀",
+            "kana": "",
+            "text": "会心率+5%\r\n会心ダメージ率+10%\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 78,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 80,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 58,
+            "grade": 1,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "刀身に呪文の刻まれた剣",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 1
+        },
+        {
+            "id": 59,
+            "rarity": 21041,
+            "name": "バルザイの偃月刀",
+            "kana": "",
+            "text": "会心率+10%\r\n会心ダメージ率+15%\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 78,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 80,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 58,
+            "grade": 2,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "刀身に呪文の刻まれた剣",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 1
+        },
+        {
+            "id": 60,
+            "rarity": 5460529,
+            "name": "バルザイの偃月刀",
+            "kana": "",
+            "text": "会心率+15%\r\n会心ダメージ率+20%\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 78,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 80,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 58,
+            "grade": 3,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "刀身に呪文の刻まれた剣",
             "acquireLocationText": "アポカリプスモードで入手可能",
             "canBeUnknown": 0,
             "isUnique": 1

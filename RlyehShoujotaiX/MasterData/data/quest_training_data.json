@@ -794,7 +794,7 @@
                     "param": [
                         {
                             "num": [
-                                50
+                                -50
                             ]
                         }
                     ],
@@ -978,6 +978,27 @@
             "talentList": [
                 {
                     "talentId": 72,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 16,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 96,
                     "param": [
                         {
                             "num": [
@@ -2044,6 +2065,74 @@
             "trainingText": "ノックバック無効"
         },
         {
+            "trainingId": 162,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 96,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 16,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "オーバースキルチャージ速度2倍"
+        },
+        {
+            "trainingId": 163,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1014,
+                            "num": [
+                                2
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "trainingText": "カルコサ勢力の攻撃力20%上昇"
+        },
+        {
             "trainingId": 300,
             "start": -1,
             "duration": -1,
@@ -2148,7 +2237,15 @@
                             ]
                         }
                     ]
-                },
+                }
+            ],
+            "trainingText": "火属性の味方の与ダメージ70%ダウン"
+        },
+        {
+            "trainingId": 302,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
                     "talentId": 1004,
                     "param": [
@@ -2179,9 +2276,130 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                70
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 1002,
+                            "num": [
+                                3
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
                 }
             ],
             "trainingText": "水属性の味方の与ダメージ70%ダウン"
+        },
+        {
+            "trainingId": 303,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1002,
+                            "num": [
+                                5
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                -70
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 1002,
+                            "num": [
+                                5
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "trainingText": "土属性の味方の与ダメージ70%ダウン"
         },
         {
             "trainingId": 9999,
@@ -2268,7 +2486,7 @@
                     "activeData": []
                 }
             ],
-            "trainingText": "<color=#ed0707>ボスエネミー出現（土属性が有効）</color>"
+            "trainingText": "<color=#ed0707>ボスエネミー出現（物理攻撃が有効）</color>"
         },
         {
             "trainingId": 9996,
@@ -2327,6 +2545,35 @@
                 }
             ],
             "trainingText": "<color=#ed0707>一定時間毎に攻撃力が上昇</color>"
+        },
+        {
+            "trainingId": 9994,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 3,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 0,
+                    "range": 0,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "<color=#ed0707>ボスエネミー出現（風属性が有効）</color>"
         }
     ]
 }

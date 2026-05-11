@@ -3922,6 +3922,464 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": 48,
+            "rarity": 0,
+            "name": "イヴ・メサイア",
+            "kana": "",
+            "text": "[skilllevel,1,3,貫通率+[0,0,0]%になるが、与ダメージ-30%]",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 86,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 26,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                -30
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 49,
+            "rarity": 0,
+            "name": "シェルン",
+            "kana": "",
+            "text": "[skilllevel,1,3,常に攻撃が魔法属性となる]\r\n[skilllevel,1,3,攻撃時、2秒間敵の魔法防御-10%]",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 69,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 17,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        },
+                        {
+                            "num": [
+                                60
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "rarity": 0,
+            "name": "キャピノラ",
+            "kana": "",
+            "text": "[skilllevel,1,3,敵撃破時、5秒間攻撃速度+[0,0,0]%（同効果は重複不可）]",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 26,
+                    "param": [
+                        {
+                            "num": [
+                                80
+                            ]
+                        },
+                        {
+                            "num": [
+                                150
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 18,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 51,
+            "rarity": 0,
+            "name": "ルナリス",
+            "kana": "",
+            "text": "[skilllevel,1,3,<color=#ffa500>毎秒前衛ヴァイス全ての攻撃力+2（最大200）</color=#ffa500>]\r\n[skilllevel,1,3,<color=#ffa500>編成している後衛ヴァイスが土属性の場合は同じ効果を受ける</color=#ffa500>]",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 8,
+                    "param": [
+                        {
+                            "num": [
+                                200
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                200,
+                                3000
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 35,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 8,
+                    "param": [
+                        {
+                            "num": [
+                                200
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                200,
+                                3000
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 36,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1002,
+                            "num": [
+                                5
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 52,
+            "rarity": 0,
+            "name": "ネア・ウルム",
+            "kana": "",
+            "text": "[skilllevel,1,3,ブロック数+[0,0,0]]\r\n[skilllevel,1,3,耐久を3秒毎に最大耐久の[0,1,0]%分回復する]",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 44,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 26,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 62,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 53,
+            "rarity": 0,
+            "name": "フラーナ＝フリー二",
+            "kana": "",
+            "text": "[skilllevel,1,3,城壁の耐久を毎秒現在攻撃力の[0,0,0]%分回復させる]\r\n[skilllevel,1,3,オーバースキル発動毎に攻撃力+30%（最大150%）]",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1021,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        },
+                        {
+                            "num": [
+                                52
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 12,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                30
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 42,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 40002,
+                            "num": [
+                                5
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 54,
+            "rarity": 0,
+            "name": "ウロロス",
+            "kana": "",
+            "text": "[skilllevel,1,3,<color=yellow><link=\"蛇瓶トークン\">蛇瓶トークン</link></color>を使役する]\r\n[skilllevel,1,3,毒状態の敵への与ダメージ+[0,0,0]%]",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 29,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

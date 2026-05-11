@@ -17,7 +17,23 @@
             "seasonRewardId": 1,
             "battleRewardId": 1,
             "weeklyLoop": 5,
+            "weeklyLoopEnd": 5,
+            "weeklyLoopStartTime": "05:00:00",
+            "weeklyLoopEndTime": "05:00:00",
             "startAt": "",
+            "endAt": "2026/05/15 05:00:00"
+        },
+        {
+            "id": 2,
+            "categoryId": 1,
+            "dailyRewardId": 1,
+            "seasonRewardId": 2,
+            "battleRewardId": 1,
+            "weeklyLoop": 1,
+            "weeklyLoopEnd": 1,
+            "weeklyLoopStartTime": "10:00:00",
+            "weeklyLoopEndTime": "00:00:00",
+            "startAt": "2026/05/18 10:00:00",
             "endAt": ""
         }
     ]

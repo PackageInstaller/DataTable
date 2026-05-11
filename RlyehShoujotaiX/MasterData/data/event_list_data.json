@@ -53,6 +53,27 @@
             ]
         },
         {
+            "id": 3,
+            "tag": "TradePointEvent3",
+            "event_type": 1,
+            "name": "ポイント交換イベント",
+            "resource_id": "Event_TradePoint_3",
+            "chapter": 100002,
+            "contain_chapters": [
+                100002
+            ],
+            "need_chapter": 0,
+            "shop_id": 8002,
+            "open_time": "2026/05/08 12:00:00",
+            "close_time": "2026/05/22 12:00:00",
+            "event_dataTable_id": 0,
+            "gacha_id": "",
+            "challenge_count_id": 1,
+            "challenge_count_recovery_ids": [
+                1
+            ]
+        },
+        {
             "id": 99998,
             "tag": "BoxGachaEvent1",
             "event_type": 2,

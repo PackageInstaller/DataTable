@@ -396,6 +396,102 @@
                             ]
                         }
                     }
+                },
+                {
+                    "TierRewardData": {
+                        "Tier": 25,
+                        "Req": 105005,
+                        "Message": "",
+                        "RewardList": {
+                            "m_rewards": [
+                                {
+                                    "m_walletCategory": "material_bag",
+                                    "m_walletName": "gold_2h",
+                                    "m_count": 5
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "TierRewardData": {
+                        "Tier": 26,
+                        "Req": 105010,
+                        "Message": "",
+                        "RewardList": {
+                            "m_rewards": [
+                                {
+                                    "m_walletCategory": "material_bag",
+                                    "m_walletName": "unit_exp_2h",
+                                    "m_count": 5
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "TierRewardData": {
+                        "Tier": 27,
+                        "Req": 105015,
+                        "Message": "",
+                        "RewardList": {
+                            "m_rewards": [
+                                {
+                                    "m_walletCategory": "material_bag",
+                                    "m_walletName": "unit_threshold_2h",
+                                    "m_count": 5
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "TierRewardData": {
+                        "Tier": 28,
+                        "Req": 105020,
+                        "Message": "",
+                        "RewardList": {
+                            "m_rewards": [
+                                {
+                                    "m_walletCategory": "material_bag",
+                                    "m_walletName": "growth_2h",
+                                    "m_count": 5
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "TierRewardData": {
+                        "Tier": 29,
+                        "Req": 105025,
+                        "Message": "",
+                        "RewardList": {
+                            "m_rewards": [
+                                {
+                                    "m_walletCategory": "item",
+                                    "m_walletName": "item.select_equipbox.grade_3",
+                                    "m_count": 4
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "TierRewardData": {
+                        "Tier": 30,
+                        "Req": 105030,
+                        "Message": "",
+                        "RewardList": {
+                            "m_rewards": [
+                                {
+                                    "m_walletCategory": "point",
+                                    "m_walletName": "free_coin",
+                                    "m_count": 300
+                                }
+                            ]
+                        }
+                    }
                 }
             ]
         },
@@ -1336,6 +1432,38 @@
                         "Tier": 8,
                         "Req": 104030,
                         "Message": "サーバー内で初めてメインストーリー4-30をクリア",
+                        "RewardList": {
+                            "m_rewards": [
+                                {
+                                    "m_walletCategory": "point",
+                                    "m_walletName": "free_coin",
+                                    "m_count": 100
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "TierRewardData": {
+                        "Tier": 9,
+                        "Req": 105015,
+                        "Message": "サーバー内で初めてメインストーリー5-15をクリア",
+                        "RewardList": {
+                            "m_rewards": [
+                                {
+                                    "m_walletCategory": "point",
+                                    "m_walletName": "free_coin",
+                                    "m_count": 100
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "TierRewardData": {
+                        "Tier": 10,
+                        "Req": 105030,
+                        "Message": "サーバー内で初めてメインストーリー5-30をクリア",
                         "RewardList": {
                             "m_rewards": [
                                 {
