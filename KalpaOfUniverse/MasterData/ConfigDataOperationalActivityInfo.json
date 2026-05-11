@@ -820,6 +820,28 @@
     "TitleStrKey": "ST:189505"
   },
   {
+    "ID": 44,
+    "ActivityType": "OperationalActivityType_FaBao",
+    "ActivityClientType": "OperationalActivityType_FaBao",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "OperationalActivityParms": [
+      {}
+    ],
+    "ShowPlayerLevel": 99,
+    "TitleStrKey": "ST:189420",
+    "ContentStrKey": "ST:41024"
+  },
+  {
+    "ID": 45,
+    "ActivityType": "OperationalActivityType_WindowJump",
+    "ActivityClientType": "OperationalActivityType_FaBaoShow",
+    "ActivityBigType": "OperationalActivityBigType_Hot",
+    "SortID": 8895,
+    "PanelParam": 1,
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_ShenYouZhiChao.prefab",
+    "TitleStrKey": "ST:189505"
+  },
+  {
     "ID": 181,
     "ActivityType": "OperationalActivityType_AppointmenteActivity",
     "ActivityClientType": "OperationalActivityType_AppointmenteActivity",
@@ -28817,6 +28839,7 @@
     "ActivityClientType": "OperationalActivityType_BotGameAssistance",
     "ActivityBigType": "OperationalActivityBigType_Hot",
     "SortID": 9999,
+    "ShowPlayerLevel": 99,
     "PanelParam": 1,
     "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_66205UIPrefab.prefab",
     "TitleStrKey": "ST:250824"
@@ -30412,7 +30435,7 @@
     "SortID": 9995,
     "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_66103UIPrefab.prefab",
     "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivityPrefabNew_ABS/GotoButton_TimeJump_1.prefab",
-    "TitleStrKey": "ST:258573",
+    "TitleStrKey": "ST:258525",
     "ContentStrKey": "ST:160228"
   },
   {
@@ -30646,7 +30669,7 @@
     "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab_ABS/BannerPrefab/ActivityBanner_8106UIPrefab.prefab",
     "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab_ABS/QianWangPanel_02.prefab",
     "IsResident": true,
-    "TitleStrKey": "ST:256517",
+    "TitleStrKey": "ST:256488",
     "ContentStrKey": "ST:115039",
     "ResidentRewardStrKey": "ST:149926"
   },
@@ -30740,7 +30763,7 @@
     "SortID": 9998,
     "PanelParam": 2,
     "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab01_ABS/BannerPrefab/banner_PayLogin.prefab",
-    "TitleStrKey": "ST:256784"
+    "TitleStrKey": "ST:256721"
   },
   {
     "ID": 266625,
@@ -30879,7 +30902,7 @@
     "PanelParam": 2,
     "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab01_ABS/BannerPrefab/banner_FestivalGift_shuang11.prefab",
     "TitleStrKey": "ST:222042",
-    "ContentStrKey": "ST:258608"
+    "ContentStrKey": "ST:258739"
   },
   {
     "ID": 266631,
@@ -30896,6 +30919,430 @@
     "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_66207UIPrefab.prefab",
     "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivityPrefabNew_ABS/GotoButton_TimeJump_1.prefab",
     "TitleStrKey": "ST:234509"
+  },
+  {
+    "ID": 266701,
+    "ActivityType": "OperationalActivityType_ShareActivity",
+    "ActivityClientType": "OperationalActivityType_ShareActivity",
+    "ActivityBigType": "OperationalActivityBigType_Hot",
+    "OperationalActivityParms": [
+      {
+        "P1": 110
+      }
+    ],
+    "TitleStrKey": "ST:234504"
+  },
+  {
+    "ID": 266702,
+    "ActivityType": "OperationalActivityType_SelectCard",
+    "ActivityClientType": "OperationalActivityType_SelectCard",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "OperationalActivityParms": [
+      {
+        "P1": 379,
+        "P2": 70
+      }
+    ],
+    "SortID": 9999,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_67101UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab_ABS/TryOutPanel.prefab",
+    "TitleStrKey": "ST:258790",
+    "ContentStrKey": "ST:160228"
+  },
+  {
+    "ID": 266703,
+    "ActivityType": "OperationalActivityType_SelectCard",
+    "ActivityClientType": "OperationalActivityType_SelectCard",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "OperationalActivityParms": [
+      {
+        "P1": 380,
+        "P2": 70
+      }
+    ],
+    "SortID": 9998,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_67102UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab_ABS/TryOutPanel.prefab",
+    "TitleStrKey": "ST:258791",
+    "ContentStrKey": "ST:160228"
+  },
+  {
+    "ID": 266704,
+    "ActivityType": "OperationalActivityType_SelectCard",
+    "ActivityClientType": "OperationalActivityType_SelectCard",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "OperationalActivityParms": [
+      {
+        "P1": 381
+      }
+    ],
+    "SortID": 9997,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_60103UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivityPrefabNew_ABS/GotoButton_TimeJump_1.prefab",
+    "TitleStrKey": "ST:245099",
+    "ContentStrKey": "ST:160228"
+  },
+  {
+    "ID": 266705,
+    "ActivityType": "OperationalActivityType_SelectCard",
+    "ActivityClientType": "OperationalActivityType_SelectCard",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "OperationalActivityParms": [
+      {
+        "P1": 382
+      }
+    ],
+    "SortID": 9996,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_60104UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivityPrefabNew_ABS/GotoButton_TimeJump_1.prefab",
+    "TitleStrKey": "ST:245100",
+    "ContentStrKey": "ST:160228"
+  },
+  {
+    "ID": 266706,
+    "ActivityType": "OperationalActivityType_SelectCard",
+    "ActivityClientType": "OperationalActivityType_SelectCard",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "OperationalActivityParms": [
+      {
+        "P1": 383
+      }
+    ],
+    "SortID": 9995,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_67103UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivityPrefabNew_ABS/GotoButton_TimeJump_1.prefab",
+    "TitleStrKey": "ST:258792",
+    "ContentStrKey": "ST:160228"
+  },
+  {
+    "ID": 266707,
+    "ActivityType": "OperationalActivityType_SelectCard",
+    "ActivityClientType": "OperationalActivityType_SelectCard",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "OperationalActivityParms": [
+      {
+        "P1": 384
+      }
+    ],
+    "SortID": 9994,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_67104UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivityPrefabNew_ABS/GotoButton_TimeJump_1.prefab",
+    "TitleStrKey": "ST:258793",
+    "ContentStrKey": "ST:160228"
+  },
+  {
+    "ID": 266708,
+    "ActivityType": "OperationalActivityType_SelectCard",
+    "ActivityClientType": "OperationalActivityType_SelectCard",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "OperationalActivityParms": [
+      {
+        "P1": 385
+      }
+    ],
+    "SortID": 9993,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_35105UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivityPrefabNew_ABS/GotoButton_TimeJump_1.prefab",
+    "TitleStrKey": "ST:187920",
+    "ContentStrKey": "ST:160228"
+  },
+  {
+    "ID": 266709,
+    "ActivityType": "OperationalActivityType_SelectCard",
+    "ActivityClientType": "OperationalActivityType_SelectCard",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "OperationalActivityParms": [
+      {
+        "P1": 386
+      }
+    ],
+    "SortID": 9992,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_67105UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivityPrefabNew_ABS/GotoButton_TimeJump_1.prefab",
+    "TitleStrKey": "ST:258794",
+    "ContentStrKey": "ST:160228"
+  },
+  {
+    "ID": 266710,
+    "ActivityType": "OperationalActivityType_BattlePass",
+    "ActivityClientType": "OperationalActivityType_BattlePass",
+    "ActivityBigType": "OperationalActivityBigType_HotSale",
+    "SortID": 9999,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab01_ABS/ActivitybannerFull_BattlePass.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivityPrefabNew_ABS/GotoButton_TimeJump_1.prefab",
+    "TitleStrKey": "ST:103358"
+  },
+  {
+    "ID": 266711,
+    "ActivityType": "OperationalActivityType_RechargeRebates",
+    "ActivityClientType": "OperationalActivityType_RechargeRebates",
+    "ActivityBigType": "OperationalActivityBigType_HotSale",
+    "OperationalActivityParms": [
+      {
+        "P1": 600
+      },
+      {
+        "P1": 3600
+      },
+      {
+        "P1": 6800
+      },
+      {
+        "P1": 16800
+      },
+      {
+        "P1": 36800
+      },
+      {
+        "P1": 68800
+      },
+      {
+        "P1": 166600,
+        "P2": 1
+      }
+    ],
+    "Reward": [
+      320067101,
+      320067102,
+      320067103,
+      320067104,
+      320067105,
+      320067106,
+      320067107
+    ],
+    "SortID": 9997,
+    "PanelParam": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab01_ABS/ActivitybannerFull_Recharge.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab_ABS/LiLianAndRechargePanel.prefab",
+    "TitleStrKey": "ST:60819"
+  },
+  {
+    "ID": 266712,
+    "ActivityType": "OperationalActivityType_FateTurntableActivity",
+    "ActivityClientType": "OperationalActivityType_FateTurntableActivity",
+    "ActivityBigType": "OperationalActivityBigType_HotSale",
+    "OperationalActivityParms": [
+      {
+        "P1": 1086,
+        "P2": 1,
+        "P3": 150303
+      }
+    ],
+    "SortID": 9995,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_67202UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab01_ABS/GoTuButton_FatePanel.prefab",
+    "TitleStrKey": "ST:85189"
+  },
+  {
+    "ID": 266713,
+    "ActivityType": "OperationalActivityType_BotGame",
+    "ActivityClientType": "OperationalActivityType_BotGame",
+    "ActivityBigType": "OperationalActivityBigType_Hot",
+    "OperationalActivityParms": [
+      {
+        "P1": 5
+      }
+    ],
+    "SortID": 9998,
+    "ShowPlayerLevel": 15,
+    "PanelParam": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_67203UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivityPrefabNew_ABS/GotoButton_TimeJump_1.prefab",
+    "TitleStrKey": "ST:244712"
+  },
+  {
+    "ID": 266714,
+    "ActivityType": "OperationalActivityType_GDTribulationChallenge",
+    "ActivityClientType": "OperationalActivityType_GDTribulationChallenge",
+    "ActivityBigType": "OperationalActivityBigType_Hot",
+    "OperationalActivityParms": [
+      {
+        "P1": 6
+      }
+    ],
+    "SortID": 9996,
+    "ShowPlayerLevel": 15,
+    "PanelParam": 2,
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab01_ABS/GoTuButton_BaiChuanS2Panel.prefab",
+    "TitleStrKey": "ST:242041"
+  },
+  {
+    "ID": 266715,
+    "ActivityType": "OperationalActivityType_FaBaoAttachEnergy",
+    "ActivityClientType": "OperationalActivityType_FaBaoAttachEnergy",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "SortID": 8995,
+    "ShowPlayerLevel": 99,
+    "PanelParam": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab01_ABS/BannerPrefab/ActivityBannerFull_21108UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab01_ABS/ShenGongMiJiPanel.prefab",
+    "TitleStrKey": "ST:231170",
+    "ContentStrKey": "ST:221912"
+  },
+  {
+    "ID": 266716,
+    "ActivityType": "OperationalActivityType_FaBaoAttachEnergy",
+    "ActivityClientType": "OperationalActivityType_FaBaoAttachEnergy",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "SortID": 8995,
+    "ShowPlayerLevel": 99,
+    "PanelParam": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab01_ABS/BannerPrefab/ActivityBannerFull_21108UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab01_ABS/ShenGongMiJiPanel.prefab",
+    "TitleStrKey": "ST:231171",
+    "ContentStrKey": "ST:221912"
+  },
+  {
+    "ID": 266717,
+    "ActivityType": "OperationalActivityType_WindowJump",
+    "ActivityClientType": "OperationalActivityType_FaBaoShow",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "OperationalActivityParms": [
+      {
+        "P1": 55
+      }
+    ],
+    "SortID": 8995,
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_FaBaoJuLing.prefab",
+    "TitleStrKey": "ST:224493",
+    "ContentStrKey": "ST:224494"
+  },
+  {
+    "ID": 266718,
+    "ActivityType": "OperationalActivityType_WindowJump",
+    "ActivityClientType": "OperationalActivityType_FaBaoShow",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "OperationalActivityParms": [
+      {
+        "P1": 55
+      }
+    ],
+    "SortID": 8995,
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_FaBaoJuLing.prefab",
+    "TitleStrKey": "ST:224493",
+    "ContentStrKey": "ST:224494"
+  },
+  {
+    "ID": 266719,
+    "ActivityType": "OperationalActivityType_UnrealSea",
+    "ActivityClientType": "OperationalActivityType_UnrealSea",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "SortID": 9999,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab01_ABS/BannerPrefab/ActivityBannerFull_28101UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivityPrefabNew_ABS/GotoButton_TimeJump_2.prefab",
+    "TitleStrKey": "ST:167178"
+  },
+  {
+    "ID": 266720,
+    "ActivityType": "OperationalActivityType_JiuruCompanion",
+    "ActivityClientType": "OperationalActivityType_JiuruCompanion",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "SortID": 9999,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_46107UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivityPrefabNew_ABS/GotoButton_TimeJump_1.prefab",
+    "TitleStrKey": "ST:218139"
+  },
+  {
+    "ID": 266721,
+    "ActivityType": "OperationalActivityType_ReinforceSkill",
+    "ActivityClientType": "OperationalActivityType_ReinforceSkill",
+    "ActivityBigType": "OperationalActivityBigType_Hot",
+    "OperationalActivityParms": [
+      {
+        "P1": 100112500,
+        "P2": 100113400,
+        "P3": 100120400
+      }
+    ],
+    "SortID": 8995,
+    "PanelParam": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab01_ABS/ActivitybannerFull_Yuanxijuexue.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab01_ABS/YuanxijuexuePanel.prefab",
+    "TitleStrKey": "ST:253988",
+    "ContentStrKey": "ST:253988"
+  },
+  {
+    "ID": 266722,
+    "ActivityType": "OperationalActivityType_RelicBattle",
+    "ActivityClientType": "OperationalActivityType_RelicBattle",
+    "ActivityBigType": "OperationalActivityBigType_Hot",
+    "SortID": 9996,
+    "ShowPlayerLevel": 99,
+    "TitleStrKey": "ST:237519",
+    "ContentStrKey": "ST:237519"
+  },
+  {
+    "ID": 266723,
+    "ActivityType": "OperationalActivityType_UnrealSea",
+    "ActivityClientType": "OperationalActivityType_UnrealSea",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "SortID": 9999,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab_ABS/BannerPrefab/ActivityBanner_10105UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab_ABS/QianWangPanel_02.prefab",
+    "IsResident": true,
+    "TitleStrKey": "ST:122128",
+    "ContentStrKey": "ST:122128",
+    "ResidentRewardStrKey": "ST:149926"
+  },
+  {
+    "ID": 266724,
+    "ActivityType": "OperationalActivityType_ActivityIntegrationEntry",
+    "ActivityClientType": "OperationalActivityType_ActivityIntegrationEntry",
+    "ActivityBigType": "OperationalActivityBigType_Limit",
+    "OperationalActivityParms": [
+      {
+        "P2": 21
+      }
+    ],
+    "SortID": 10000,
+    "ShowPlayerLevel": 10,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_67201UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivityPrefabNew_ABS/GotoButton_TimeJump_1.prefab",
+    "TitleStrKey": "ST:259304"
+  },
+  {
+    "ID": 266725,
+    "ActivityType": "OperationalActivityType_CustomGift",
+    "ActivityClientType": "OperationalActivityType_CustomGift",
+    "ActivityBigType": "OperationalActivityBigType_HotSale",
+    "OperationalActivityParms": [
+      {
+        "P1": 3036,
+        "P2": 1
+      },
+      {
+        "P1": 3034,
+        "P2": 2
+      },
+      {
+        "P1": 3038,
+        "P2": 3
+      },
+      {
+        "P1": 3014,
+        "P2": 4
+      },
+      {
+        "P1": 3015,
+        "P2": 5
+      },
+      {
+        "P1": 3016,
+        "P2": 6
+      }
+    ],
+    "SortID": 9994,
+    "PanelParam": 12,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab01_ABS/BannerPrefab/ActivityBannerFull_19113UIPrefab.prefab",
+    "AdvertisingImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab_ABS/CatDiscountPanel.prefab",
+    "ResidentUnlockItem": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 25
+      }
+    ],
+    "TitleStrKey": "ST:149114"
   },
   {
     "ID": 999998,

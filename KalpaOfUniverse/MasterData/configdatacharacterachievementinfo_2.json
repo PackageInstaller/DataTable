@@ -13,37 +13,35 @@
   {
     "ID": 6514,
     "Type": "CharacterAchievementType_Footprint",
-    "CompleteType": "CharacterAchievementCompleteType_AccWayPointEventFortuitous",
-    "P2": 3,
+    "CompleteType": "CharacterAchievementCompleteType_AccDelegateMission",
+    "P2": 4,
     "Footprint": 2,
     "DropReward": 311000032,
     "SkipTicketNum": 1,
-    "NameStrKey": "ST:84221",
-    "AchieveDescStrKey": "ST:84302"
+    "NameStrKey": "ST:63761",
+    "AchieveDescStrKey": "ST:260056"
   },
   {
     "ID": 6515,
     "Type": "CharacterAchievementType_Footprint",
-    "CompleteType": "CharacterAchievementCompleteType_AccWayPointEventFortuitous",
-    "P1": 2,
-    "P2": 1,
+    "CompleteType": "CharacterAchievementCompleteType_AccDelegateMission",
+    "P2": 5,
     "Footprint": 3,
     "DropReward": 311000033,
     "SkipTicketNum": 1,
-    "NameStrKey": "ST:69761",
-    "AchieveDescStrKey": "ST:84303"
+    "NameStrKey": "ST:63761",
+    "AchieveDescStrKey": "ST:84295"
   },
   {
     "ID": 6516,
     "Type": "CharacterAchievementType_Footprint",
-    "CompleteType": "CharacterAchievementCompleteType_AccWayPointEventFortuitous",
-    "P1": 106,
-    "P2": 1,
+    "CompleteType": "CharacterAchievementCompleteType_AccDelegateMission",
+    "P2": 6,
     "Footprint": 3,
     "DropReward": 311000039,
     "SkipTicketNum": 1,
-    "NameStrKey": "ST:69763",
-    "AchieveDescStrKey": "ST:84304"
+    "NameStrKey": "ST:63761",
+    "AchieveDescStrKey": "ST:84299"
   },
   {
     "ID": 7001,
@@ -418,34 +416,32 @@
   {
     "ID": 7114,
     "Type": "CharacterAchievementType_Footprint",
-    "CompleteType": "CharacterAchievementCompleteType_AccWayPointEventFortuitous",
-    "P2": 5,
+    "CompleteType": "CharacterAchievementCompleteType_AccDelegateMission",
+    "P2": 3,
     "DropReward": 311000101,
     "SkipTicketNum": 1,
-    "NameStrKey": "ST:84221",
-    "AchieveDescStrKey": "ST:74946"
+    "NameStrKey": "ST:63761",
+    "AchieveDescStrKey": "ST:84298"
   },
   {
     "ID": 7115,
     "Type": "CharacterAchievementType_Footprint",
-    "CompleteType": "CharacterAchievementCompleteType_AccWayPointEventFortuitous",
-    "P1": 2,
-    "P2": 3,
+    "CompleteType": "CharacterAchievementCompleteType_AccDelegateMission",
+    "P2": 6,
     "DropReward": 311000102,
     "SkipTicketNum": 1,
-    "NameStrKey": "ST:69761",
-    "AchieveDescStrKey": "ST:84292"
+    "NameStrKey": "ST:63761",
+    "AchieveDescStrKey": "ST:84299"
   },
   {
     "ID": 7116,
     "Type": "CharacterAchievementType_Footprint",
-    "CompleteType": "CharacterAchievementCompleteType_AccWayPointEventFortuitous",
-    "P1": 106,
-    "P2": 2,
+    "CompleteType": "CharacterAchievementCompleteType_AccDelegateMission",
+    "P2": 1,
     "DropReward": 311000101,
     "SkipTicketNum": 1,
-    "NameStrKey": "ST:69763",
-    "AchieveDescStrKey": "ST:84293"
+    "NameStrKey": "ST:63761",
+    "AchieveDescStrKey": "ST:84300"
   },
   {
     "ID": 7117,
@@ -1279,13 +1275,24 @@
     "AchieveDescStrKey": "ST:256400"
   },
   {
+    "ID": 54057,
+    "Type": "CharacterAchievementType_Footprint",
+    "CompleteType": "CharacterAchievementCompleteType_AccUseSkill",
+    "P1": 61140470,
+    "P2": 9,
+    "DropReward": 311000101,
+    "SkipTicketNum": 1,
+    "NameStrKey": "ST:69767",
+    "AchieveDescStrKey": "ST:258968"
+  },
+  {
     "ID": 100001,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 100011,
     "P2": 100012,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 100002,
@@ -1343,9 +1350,9 @@
     "ID": 100012,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 100013,
@@ -1369,8 +1376,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 100111,
     "P2": 100112,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 100102,
@@ -1425,9 +1432,9 @@
     "ID": 100112,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 100201,
@@ -1435,8 +1442,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 100211,
     "P2": 100212,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 100202,
@@ -1486,9 +1493,9 @@
     "ID": 100212,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 100213,
@@ -1512,8 +1519,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 100711,
     "P2": 100712,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 100702,
@@ -1563,9 +1570,9 @@
     "ID": 100712,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 100713,
@@ -1589,8 +1596,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 100911,
     "P2": 100912,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 100902,
@@ -1645,9 +1652,9 @@
     "ID": 100912,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 101401,
@@ -1655,8 +1662,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 101411,
     "P2": 101412,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 101402,
@@ -1711,9 +1718,9 @@
     "ID": 101412,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 101601,
@@ -1721,8 +1728,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 101611,
     "P2": 101612,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 101602,
@@ -1777,9 +1784,9 @@
     "ID": 101612,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 101801,
@@ -1787,8 +1794,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 101811,
     "P2": 101812,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 101802,
@@ -1843,9 +1850,9 @@
     "ID": 101812,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 101901,
@@ -1853,8 +1860,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 101911,
     "P2": 101912,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 101902,
@@ -1909,9 +1916,9 @@
     "ID": 101912,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 102001,
@@ -1919,8 +1926,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 102011,
     "P2": 102012,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 102002,
@@ -1983,9 +1990,9 @@
     "ID": 102012,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 102201,
@@ -1993,8 +2000,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 110111,
     "P2": 110112,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 102202,
@@ -2049,9 +2056,9 @@
     "ID": 102212,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 102301,
@@ -2059,8 +2066,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 102311,
     "P2": 102312,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 102302,
@@ -2115,9 +2122,9 @@
     "ID": 102312,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 102401,
@@ -2125,8 +2132,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 102411,
     "P2": 102412,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 102402,
@@ -2181,9 +2188,9 @@
     "ID": 102412,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 102501,
@@ -2191,8 +2198,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 102511,
     "P2": 102512,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 102502,
@@ -2247,9 +2254,9 @@
     "ID": 102512,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 102601,
@@ -2257,8 +2264,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 102611,
     "P2": 102612,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 102602,
@@ -2313,9 +2320,9 @@
     "ID": 102612,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 102701,
@@ -2323,8 +2330,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 102711,
     "P2": 102712,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 102702,
@@ -2379,9 +2386,9 @@
     "ID": 102712,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 102801,
@@ -2389,8 +2396,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 102811,
     "P2": 102812,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 102802,
@@ -2445,9 +2452,9 @@
     "ID": 102812,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 103001,
@@ -2455,8 +2462,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 103011,
     "P2": 103012,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 103002,
@@ -2511,9 +2518,9 @@
     "ID": 103012,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 103101,
@@ -2521,8 +2528,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 103111,
     "P2": 103112,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 103102,
@@ -2577,9 +2584,9 @@
     "ID": 103112,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 103201,
@@ -2587,8 +2594,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 103211,
     "P2": 103212,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 103202,
@@ -2643,9 +2650,9 @@
     "ID": 103212,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 103301,
@@ -2653,8 +2660,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 103311,
     "P2": 103312,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 103302,
@@ -2709,9 +2716,9 @@
     "ID": 103312,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 103401,
@@ -2719,8 +2726,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 103411,
     "P2": 103412,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 103402,
@@ -2775,9 +2782,9 @@
     "ID": 103412,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 103601,
@@ -2785,8 +2792,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 103611,
     "P2": 103612,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 103602,
@@ -2841,9 +2848,9 @@
     "ID": 103612,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 103701,
@@ -2851,8 +2858,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 103711,
     "P2": 103712,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 103702,
@@ -2907,9 +2914,9 @@
     "ID": 103712,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   },
   {
     "ID": 103801,
@@ -2917,8 +2924,8 @@
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
     "P1": 103811,
     "P2": 103812,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "NameStrKey": "ST:258818",
+    "AchieveDescStrKey": "ST:258822"
   },
   {
     "ID": 103802,
@@ -2973,17 +2980,8 @@
     "ID": 103812,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 4,
-    "NameStrKey": "ST:114790",
-    "AchieveDescStrKey": "ST:114790"
-  },
-  {
-    "ID": 103901,
-    "Type": "CharacterAchievementType_DivineWeapon",
-    "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
-    "P1": 103911,
-    "P2": 103912,
-    "NameStrKey": "ST:114785",
-    "AchieveDescStrKey": "ST:118517"
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
   }
 ]

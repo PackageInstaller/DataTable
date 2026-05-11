@@ -1,5 +1,28 @@
 [
   {
+    "ID": 46201015,
+    "VersionTag": 53,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      103,
+      102
+    ],
+    "Param3": [
+      {
+        "X": 20,
+        "Y": 3
+      },
+      {
+        "X": 5,
+        "Y": 10
+      }
+    ],
+    "Param4": [
+      600,
+      600
+    ]
+  },
+  {
     "ID": 46201016,
     "VersionTag": 53,
     "ActionType": "BattleSceneActionType_Delay",
@@ -19664,13 +19687,5 @@
       4621811
     ],
     "SkipCondId": 46219041
-  },
-  {
-    "ID": 46219442,
-    "ActionType": "BattleSceneActionType_CreateTriggerAndTriggerImm",
-    "Param1": [
-      4621821
-    ],
-    "SkipCondId": 46219042
   }
 ]

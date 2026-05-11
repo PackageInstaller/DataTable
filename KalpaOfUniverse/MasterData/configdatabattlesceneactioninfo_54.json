@@ -1,5 +1,21 @@
 [
   {
+    "ID": 44211025,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      105900100
+    ],
+    "Param2": [
+      10001
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 2
+      }
+    ]
+  },
+  {
     "ID": 44211026,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
@@ -16295,23 +16311,6 @@
     "Param5": "Story_Bow_End",
     "Param6": [
       0
-    ]
-  },
-  {
-    "ID": 44445147,
-    "ActionType": "BattleSceneActionType_ActorAnimation",
-    "Param1": [
-      113
-    ],
-    "Param2": [
-      -1
-    ],
-    "Param4": [
-      600
-    ],
-    "Param5": "NormalIdle",
-    "Param6": [
-      -1
     ]
   }
 ]

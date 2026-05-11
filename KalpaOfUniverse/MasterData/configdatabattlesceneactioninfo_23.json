@@ -16278,6 +16278,13 @@
     ]
   },
   {
+    "ID": 19000000,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1
+    ]
+  },
+  {
     "ID": 19001111,
     "ActionType": "BattleSceneActionType_CameraFocusActor",
     "Param1": [
@@ -20282,18 +20289,6 @@
     "Param3": [
       {
         "Y": 15
-      }
-    ]
-  },
-  {
-    "ID": 21001044,
-    "ActionType": "BattleSceneActionType_ActorRetreatByPos",
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "Y": 16
       }
     ]
   }

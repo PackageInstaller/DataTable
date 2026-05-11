@@ -14,12 +14,14 @@
   {
     "ID": 3,
     "StoreID": "StoreId_Honor",
+    "Disable": true,
     "Type": "StoreType_Fixed",
     "StoreName": "江湖市坊"
   },
   {
     "ID": 4,
     "StoreID": "StoreId_Friendship",
+    "Disable": true,
     "Type": "StoreType_Fixed",
     "StoreName": "友情商店"
   },
@@ -56,6 +58,7 @@
   {
     "ID": 10,
     "StoreID": "StoreId_Union",
+    "Disable": true,
     "Type": "StoreType_Fixed",
     "StoreName": "公会商店"
   },
@@ -279,6 +282,7 @@
   {
     "ID": 30,
     "StoreID": "StoreId_OldRegionDiTing",
+    "Disable": true,
     "Type": "StoreType_Fixed",
     "StoreName": "旧域谛听商店",
     "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Monster/Monster810103_ABS/Monster810103_Graphic_Prefab.prefab",
@@ -733,6 +737,7 @@
   {
     "ID": 48,
     "StoreID": "StoreId_HomeJournalStore",
+    "Disable": true,
     "Type": "StoreType_Fixed",
     "StoreName": "游历币商店"
   },
@@ -2868,7 +2873,7 @@
   },
   {
     "ID": 157,
-    "StoreID": 157,
+    "StoreID": "StoreId_DianCangZiFeng",
     "Type": "StoreType_Exchange",
     "StoreName": "OB66 典藏紫枫",
     "ActivityID": 266611,
@@ -2889,6 +2894,71 @@
       }
     ],
     "SweepId": 146
+  },
+  {
+    "ID": 158,
+    "StoreID": "StoreId_OldWorldClassic",
+    "Type": "StoreType_Fixed",
+    "StoreName": "旧世经典",
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 34
+      }
+    ],
+    "SweepId": 147
+  },
+  {
+    "ID": 159,
+    "StoreID": "StoreId_BotGame",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB67 下注玩法",
+    "ActivityID": 266713,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000005,
+        "GoldRate": 1000
+      }
+    ],
+    "ItemRecycleMail": 287,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1038_ABS/Hero1038_Graphic_Prefab.prefab",
+    "NpcCharId": 103800,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000005
+      }
+    ],
+    "ShowStoreNameStrKey": "ST:245174"
+  },
+  {
+    "ID": 160,
+    "StoreID": "StoreId_MonsterAndGod2",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB67 怪物与神明",
+    "ActivityID": 266719,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020459,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 259,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1301_ABS/Hero1061_Graphic_Prefab.prefab",
+    "NpcCharId": 106100,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020459
+      }
+    ],
+    "SweepId": 160
   },
   {
     "ID": 9901,

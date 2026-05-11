@@ -16,12 +16,12 @@
       9125
     ],
     "ShowAtResult": true,
-    "EventDesc": "你出生在{0}，此地沃野千里，农业发达，你未来可期。",
-    "EffectDesc": "慧识+{0}",
     "Rarity": "Rarity_R",
     "Params": [
       1002
-    ]
+    ],
+    "EventDescStrKey": "ST:256860",
+    "EffectDescStrKey": "ST:257239"
   },
   {
     "ID": 10000002,
@@ -40,12 +40,12 @@
       9125
     ],
     "ShowAtResult": true,
-    "EventDesc": "你出生在{0}，此地民风彪悍，好勇尚武，你未来可期。",
-    "EffectDesc": "根骨+{0}",
     "Rarity": "Rarity_R",
     "Params": [
       1003
-    ]
+    ],
+    "EventDescStrKey": "ST:256861",
+    "EffectDescStrKey": "ST:257240"
   },
   {
     "ID": 10000003,
@@ -64,12 +64,12 @@
       9125
     ],
     "ShowAtResult": true,
-    "EventDesc": "你出生在{0}，此地市井林立，商贾云集，你未来可期。",
-    "EffectDesc": "魅力+{0}",
     "Rarity": "Rarity_SR",
     "Params": [
       1001
-    ]
+    ],
+    "EventDescStrKey": "ST:256862",
+    "EffectDescStrKey": "ST:257241"
   },
   {
     "ID": 10000004,
@@ -89,9 +89,9 @@
       5005
     ],
     "ShowAtResult": true,
-    "EventDesc": "你出生在深宫大院，成为皇室子弟，你的未来一片光明。",
-    "EffectDesc": "全属性+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256863",
+    "EffectDescStrKey": "ST:257242"
   },
   {
     "ID": 10110001,
@@ -108,8 +108,8 @@
     "EffectIds": [
       6003
     ],
-    "EventDesc": "你生来体质平平，算是健康。",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256864"
   },
   {
     "ID": 10110002,
@@ -127,9 +127,9 @@
       910,
       5910
     ],
-    "EventDesc": "由于早产，你生来瘦弱。",
-    "EffectDesc": "体质-{0}",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256865",
+    "EffectDescStrKey": "ST:257243"
   },
   {
     "ID": 10110003,
@@ -150,9 +150,9 @@
       1005,
       5909
     ],
-    "EventDesc": "你生下来白白胖胖，体质不错。",
-    "EffectDesc": "体质+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256866",
+    "EffectDescStrKey": "ST:257244"
   },
   {
     "ID": 10110004,
@@ -176,9 +176,9 @@
       60100
     ],
     "ShowAtResult": true,
-    "EventDesc": "你出生时紫气弥漫，头顶生光，众人啧啧称奇。",
-    "EffectDesc": "体质+3，慧识+3，魅力+3",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256867",
+    "EffectDescStrKey": "ST:257245"
   },
   {
     "ID": 10110005,
@@ -201,9 +201,9 @@
       60101
     ],
     "ShowAtResult": true,
-    "EventDesc": "你出生时星辉天落，书香满屋，众人啧啧称奇。",
-    "EffectDesc": "慧识+7，魅力+3",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256868",
+    "EffectDescStrKey": "ST:257246"
   },
   {
     "ID": 10110006,
@@ -226,9 +226,9 @@
       60102
     ],
     "ShowAtResult": true,
-    "EventDesc": "你出生时红光漫天，似有龙吟，众人啧啧称奇。",
-    "EffectDesc": "根骨+7，体质+3",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256869",
+    "EffectDescStrKey": "ST:257247"
   },
   {
     "ID": 10110007,
@@ -251,9 +251,9 @@
       60103
     ],
     "ShowAtResult": true,
-    "EventDesc": "你出生时云开雾散，仙鹤长鸣，众人啧啧称奇。",
-    "EffectDesc": "气运+7，根骨+3",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256870",
+    "EffectDescStrKey": "ST:257248"
   },
   {
     "ID": 10110008,
@@ -276,9 +276,9 @@
       60104
     ],
     "ShowAtResult": true,
-    "EventDesc": "你出生时满室幽香，月华流转，众人啧啧称奇。",
-    "EffectDesc": "魅力+7，气运+3",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256871",
+    "EffectDescStrKey": "ST:257249"
   },
   {
     "ID": 10110010,
@@ -297,9 +297,9 @@
       5909
     ],
     "ShowAtResult": true,
-    "EventDesc": "你在周岁的抓周仪式中，抓了一只木剑。",
-    "EffectDesc": "根骨+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256872",
+    "EffectDescStrKey": "ST:257250"
   },
   {
     "ID": 10110011,
@@ -318,9 +318,9 @@
       5909
     ],
     "ShowAtResult": true,
-    "EventDesc": "你在周岁的抓周仪式中，抓了一只毛笔。",
-    "EffectDesc": "慧识+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256873",
+    "EffectDescStrKey": "ST:257251"
   },
   {
     "ID": 10110012,
@@ -339,9 +339,9 @@
       5909
     ],
     "ShowAtResult": true,
-    "EventDesc": "你在周岁的抓周仪式中，抓了一只算盘。",
-    "EffectDesc": "魅力+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256874",
+    "EffectDescStrKey": "ST:257252"
   },
   {
     "ID": 10110013,
@@ -360,9 +360,9 @@
       5909
     ],
     "ShowAtResult": true,
-    "EventDesc": "你在周岁的抓周仪式中，抓了一只印章。",
-    "EffectDesc": "气运+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256875",
+    "EffectDescStrKey": "ST:257253"
   },
   {
     "ID": 10110014,
@@ -381,9 +381,9 @@
       5909
     ],
     "ShowAtResult": true,
-    "EventDesc": "你在周岁的抓周仪式中，抓了一只拨浪鼓。",
-    "EffectDesc": "体质+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256876",
+    "EffectDescStrKey": "ST:257244"
   },
   {
     "ID": 10110015,
@@ -404,9 +404,9 @@
       4005
     ],
     "ShowAtResult": true,
-    "EventDesc": "你在周岁的抓周仪式中，抓了一只不起眼的戒指。",
-    "EffectDesc": "气运+10",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256877",
+    "EffectDescStrKey": "ST:257254"
   },
   {
     "ID": 10110021,
@@ -425,9 +425,9 @@
       2003,
       5910
     ],
-    "EventDesc": "你对野外充满兴趣，常在田畔玩耍。",
-    "EffectDesc": "体质+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256878",
+    "EffectDescStrKey": "ST:257255"
   },
   {
     "ID": 10110022,
@@ -446,9 +446,9 @@
       5910,
       1190
     ],
-    "EventDesc": "在家中，母亲开始教你《三字经》，你开始接受启蒙教育。",
-    "EffectDesc": "慧识+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256879",
+    "EffectDescStrKey": "ST:257256"
   },
   {
     "ID": 10110023,
@@ -470,9 +470,9 @@
       5910,
       5190
     ],
-    "EventDesc": "你跟父母外出时，常能捡到铜钱。",
-    "EffectDesc": "气运+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256880",
+    "EffectDescStrKey": "ST:257257"
   },
   {
     "ID": 10110031,
@@ -490,9 +490,9 @@
       1997,
       5997
     ],
-    "EventDesc": "你在河边玩耍时，失足落入河中，救起后大病一场。",
-    "EffectDesc": "寿命-3，根骨-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256881",
+    "EffectDescStrKey": "ST:257258"
   },
   {
     "ID": 10110032,
@@ -513,9 +513,9 @@
       1003,
       5910
     ],
-    "EventDesc": "你在河边玩耍时，失足落入河中，但你靠着自己游了上来。",
-    "EffectDesc": "体质+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256882",
+    "EffectDescStrKey": "ST:257255"
   },
   {
     "ID": 10110033,
@@ -536,9 +536,9 @@
       4003,
       5910
     ],
-    "EventDesc": "你在河边玩耍时，失足落入河中，幸得路人相助。",
-    "EffectDesc": "气运+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256883",
+    "EffectDescStrKey": "ST:257257"
   },
   {
     "ID": 10110034,
@@ -559,9 +559,9 @@
       1003,
       5910
     ],
-    "EventDesc": "你在村中玩耍时，被大鹅追了一路，你成功逃跑了。",
-    "EffectDesc": "体质+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256884",
+    "EffectDescStrKey": "ST:257255"
   },
   {
     "ID": 10110035,
@@ -583,9 +583,9 @@
       5909,
       2190
     ],
-    "EventDesc": "你在村中玩耍时，被大鹅追击，你临危不惧一下握住了大鹅的脖子，从此大鹅见你绕着走。",
-    "EffectDesc": "根骨+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256885",
+    "EffectDescStrKey": "ST:257250"
   },
   {
     "ID": 10110036,
@@ -603,9 +603,9 @@
       1997,
       5910
     ],
-    "EventDesc": "你在村中玩耍时，被大鹅追着啄，哭着跑回了家中。",
-    "EffectDesc": "根骨-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256886",
+    "EffectDescStrKey": "ST:257259"
   },
   {
     "ID": 10110041,
@@ -628,9 +628,9 @@
       5090,
       5910
     ],
-    "EventDesc": "你随家人前往医堂，郎中为你调理了一番。",
-    "EffectDesc": "随机获得属性提升",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256887",
+    "EffectDescStrKey": "ST:257260"
   },
   {
     "ID": 10110042,
@@ -648,9 +648,9 @@
       2003,
       5910
     ],
-    "EventDesc": "你学着工匠捏制陶胚，做出了一个陶杯,可惜不甚美观。",
-    "EffectDesc": "根骨+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256888",
+    "EffectDescStrKey": "ST:257261"
   },
   {
     "ID": 10110043,
@@ -669,9 +669,9 @@
       5910,
       5190
     ],
-    "EventDesc": "你随父亲在坊市购物，见识了坊市的热闹。",
-    "EffectDesc": "魅力+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256889",
+    "EffectDescStrKey": "ST:257262"
   },
   {
     "ID": 10110044,
@@ -689,9 +689,9 @@
       3003,
       5910
     ],
-    "EventDesc": "你在田边看农民播种，心有所悟。",
-    "EffectDesc": "慧识+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256890",
+    "EffectDescStrKey": "ST:257256"
   },
   {
     "ID": 10110045,
@@ -710,9 +710,9 @@
       5003,
       5909
     ],
-    "EventDesc": "你学着工匠捏制陶胚，做出了一个陶盆，器形优美，造型典雅，众人嗟嗟称奇。",
-    "EffectDesc": "根骨+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256891",
+    "EffectDescStrKey": "ST:257250"
   },
   {
     "ID": 10110046,
@@ -735,9 +735,9 @@
       5090,
       5910
     ],
-    "EventDesc": "你从小随遇而安，只想静静。",
-    "EffectDesc": "随机获得属性提升",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256892",
+    "EffectDescStrKey": "ST:257260"
   },
   {
     "ID": 10110047,
@@ -756,9 +756,9 @@
       5909,
       1190
     ],
-    "EventDesc": "母亲请来邻居儒生教你《三字经》，你开始接受启蒙教育。",
-    "EffectDesc": "慧识+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256893",
+    "EffectDescStrKey": "ST:257251"
   },
   {
     "ID": 10110048,
@@ -783,9 +783,9 @@
       5910,
       5190
     ],
-    "EventDesc": "你在家旁玩耍时，看见一颗树下有宝光冒出，你挖到了一些钱币。",
-    "EffectDesc": "魅力+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256894",
+    "EffectDescStrKey": "ST:257262"
   },
   {
     "ID": 10110049,
@@ -806,9 +806,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "在你生日的这一天，你听戒指里传出了声音，他自称戒灵，告诉你了一些修仙法门，你顿感天地宽广，修仙问道大有可为。",
-    "EffectDesc": "气运+{0}",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256895",
+    "EffectDescStrKey": "ST:257263"
   },
   {
     "ID": 10110050,
@@ -826,9 +826,9 @@
       3092,
       11092
     ],
-    "EventDesc": "在你生日的这一天，你听戒指里传出了声音，他自称戒灵，告诉你了一些修仙法门，你嗤之以鼻，丢掉了戒指，子不语怪力乱神。",
-    "EffectDesc": "慧识+{0},",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256896",
+    "EffectDescStrKey": "ST:257264"
   },
   {
     "ID": 10110051,
@@ -846,9 +846,9 @@
       2092,
       7092
     ],
-    "EventDesc": "在你生日的这一天，你听戒指里传出了声音，他自称戒灵，告诉你了一些修仙法门，你嗤之以鼻，将戒指杂碎，你认为拳头才是真理。",
-    "EffectDesc": "根骨+{0}",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256897",
+    "EffectDescStrKey": "ST:257240"
   },
   {
     "ID": 10110052,
@@ -865,8 +865,8 @@
     "EffectIds": [
       6003
     ],
-    "EventDesc": "在你生日的这一天，你听戒指里传出了声音，他自称戒灵，告诉你了一些修仙法门，你…波澜不惊，只想静静。",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256898"
   },
   {
     "ID": 10110053,
@@ -887,9 +887,9 @@
       3091,
       1190
     ],
-    "EventDesc": "你学习很快，已经能背诵《千字文》和《三字经》周围人都夸赞你神童。",
-    "EffectDesc": "慧识+{0}",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256899",
+    "EffectDescStrKey": "ST:257239"
   },
   {
     "ID": 10110054,
@@ -912,9 +912,9 @@
       5190,
       9090
     ],
-    "EventDesc": "你对经商产生了兴趣，时常在坊市门口蹲坐，听讨价还价，观人来人往。",
-    "EffectDesc": "魅力+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256900",
+    "EffectDescStrKey": "ST:257252"
   },
   {
     "ID": 10110055,
@@ -932,9 +932,9 @@
       3003,
       5909
     ],
-    "EventDesc": "你看见大人匆匆忙忙，你只觉得生命在于静止，一本书，一杯茶坐一天。",
-    "EffectDesc": "寿命+3，慧识+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256901",
+    "EffectDescStrKey": "ST:257265"
   },
   {
     "ID": 10110056,
@@ -955,9 +955,9 @@
       5005,
       5910
     ],
-    "EventDesc": "你凭借口才与同村孩子玩成一片，成为孩子王。",
-    "EffectDesc": "魅力+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256902",
+    "EffectDescStrKey": "ST:257252"
   },
   {
     "ID": 10110057,
@@ -978,9 +978,9 @@
       2005,
       5910
     ],
-    "EventDesc": "你与同村孩子打成一片，物理意义上的。",
-    "EffectDesc": "根骨+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256903",
+    "EffectDescStrKey": "ST:257250"
   },
   {
     "ID": 10110058,
@@ -999,9 +999,9 @@
       3005,
       5910
     ],
-    "EventDesc": "你与同村孩子打成一片，但是你根骨欠佳，经常转进家中，休养期间观看了很多读物。",
-    "EffectDesc": "体质-3，慧识+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256904",
+    "EffectDescStrKey": "ST:257266"
   },
   {
     "ID": 10110059,
@@ -1021,9 +1021,9 @@
       5910,
       1190
     ],
-    "EventDesc": "你学习用功，每天之乎者也，进步很快。",
-    "EffectDesc": "慧识+5，魅力+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256905",
+    "EffectDescStrKey": "ST:257267"
   },
   {
     "ID": 10110060,
@@ -1042,9 +1042,9 @@
       4003,
       5910
     ],
-    "EventDesc": "你外出游玩时，看见县令登堂审案，你心里暗道：嚯，真是威风。",
-    "EffectDesc": "根骨+3，气运+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256906",
+    "EffectDescStrKey": "ST:257268"
   },
   {
     "ID": 10110090,
@@ -1064,12 +1064,12 @@
       99999
     ],
     "ShowAtResult": true,
-    "EventDesc": "你患上了{0}，病重不治。",
-    "EffectDesc": "结局",
     "Rarity": "Rarity_R",
     "Params": [
       2017
-    ]
+    ],
+    "EventDescStrKey": "ST:256907",
+    "EffectDescStrKey": "ST:80488"
   },
   {
     "ID": 10110091,
@@ -1094,12 +1094,12 @@
       4005,
       5999
     ],
-    "EventDesc": "你患上了{0}，幸而体质康健，转危为安。",
-    "EffectDesc": "体质-3，气运+5",
     "Rarity": "Rarity_SR",
     "Params": [
       2017
-    ]
+    ],
+    "EventDescStrKey": "ST:256908",
+    "EffectDescStrKey": "ST:257269"
   },
   {
     "ID": 10110092,
@@ -1124,12 +1124,12 @@
       2003,
       5909
     ],
-    "EventDesc": "你患上了{0}，幸而福星庇佑，病愈后身体更胜往日。",
-    "EffectDesc": "体质+3，根骨+3，",
     "Rarity": "Rarity_SR",
     "Params": [
       2017
-    ]
+    ],
+    "EventDescStrKey": "ST:256909",
+    "EffectDescStrKey": "ST:257270"
   },
   {
     "ID": 10110093,
@@ -1151,12 +1151,12 @@
       4003,
       5997
     ],
-    "EventDesc": "你患上了{0}，幸而有神秘人路过，赐道法一本，你修行后病气渐愈。",
-    "EffectDesc": "体质-3，气运+3",
     "Rarity": "Rarity_SR",
     "Params": [
       2017
-    ]
+    ],
+    "EventDescStrKey": "ST:256910",
+    "EffectDescStrKey": "ST:257271"
   },
   {
     "ID": 10110094,
@@ -1178,12 +1178,12 @@
       1997,
       5997
     ],
-    "EventDesc": "你患上了{0}，小病一场。",
-    "EffectDesc": "体质-3，根骨-3",
     "Rarity": "Rarity_R",
     "Params": [
       2017
-    ]
+    ],
+    "EventDescStrKey": "ST:256911",
+    "EffectDescStrKey": "ST:257272"
   },
   {
     "ID": 10110095,
@@ -1203,9 +1203,9 @@
       4001,
       5910
     ],
-    "EventDesc": "父母忙于事务，你在家中自由成长。",
-    "EffectDesc": "体质+1，根骨+1，气运+1",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256912",
+    "EffectDescStrKey": "ST:257273"
   },
   {
     "ID": 10670001,
@@ -1240,9 +1240,9 @@
       5909,
       9090
     ],
-    "EventDesc": "偶遇神阙宫宫主率领宫中婢女下山喝酒，你自告奋勇，誓与其大战三百回合，没三杯便醉得不省人事。宫主欣赏你的勇气，赐福予你。",
-    "EffectDesc": "魅力+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257171",
+    "EffectDescStrKey": "ST:257252"
   },
   {
     "ID": 10670002,
@@ -1276,9 +1276,9 @@
       5909,
       8090
     ],
-    "EventDesc": "你梦到一只大野狼在草原上追着一只白色的鹿，直到山无棱天地合，狼也没追上鹿。算命师傅说这是符合时序的吉兆。",
-    "EffectDesc": "气运+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257172",
+    "EffectDescStrKey": "ST:257253"
   },
   {
     "ID": 10670003,
@@ -1309,9 +1309,9 @@
       5909,
       7090
     ],
-    "EventDesc": "你游历西方时遭打劫，从天而降一只毛猴将贼人打了个落花流水，毛猴也没要你的回馈，扛起被俘的和尚便走了。你感觉自己悟了。",
-    "EffectDesc": "根骨+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257173",
+    "EffectDescStrKey": "ST:257250"
   },
   {
     "ID": 10670004,
@@ -1341,9 +1341,9 @@
       1005,
       5909
     ],
-    "EventDesc": "你在一个神秘的山洞中撞见了专心于生物科研事业的老妖怪郸阴，他正试图让一具尸体下地走路。直到你跑路，郸阴也没发现你，也可能是懒得理你。",
-    "EffectDesc": "体质+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257174",
+    "EffectDescStrKey": "ST:257244"
   },
   {
     "ID": 10670005,
@@ -1378,9 +1378,9 @@
       5909,
       8090
     ],
-    "EventDesc": "天降福祉！朱槿雪芝二神将自云端显形，见到的人能获得好运气。",
-    "EffectDesc": "气运+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257175",
+    "EffectDescStrKey": "ST:257253"
   },
   {
     "ID": 10670006,
@@ -1416,9 +1416,9 @@
       5909,
       11090
     ],
-    "EventDesc": "雨后，你家后院长出了一大堆奇妙的灵芝，你打算把灵芝取下大赚一笔，可取工具的间隙里，灵芝便被一只大耗子吃完了。耗子留下了谢礼。",
-    "EffectDesc": "慧识+3，气运+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257176",
+    "EffectDescStrKey": "ST:257398"
   },
   {
     "ID": 10670007,
@@ -1449,9 +1449,9 @@
       5909,
       9090
     ],
-    "EventDesc": "你夜中投宿山野，开门者自称韩无砂，以好吃好喝招待你。你吃饱喝足便呼呼大睡。翌日你离开这里，乡民皆讶异你能平安归来。",
-    "EffectDesc": "魅力+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257177",
+    "EffectDescStrKey": "ST:257252"
   },
   {
     "ID": 10670008,
@@ -1487,9 +1487,9 @@
       5909,
       7090
     ],
-    "EventDesc": "一自称春兰的女子嘤嘤嘤地哭着，希望你能帮她找到负心汉。你帮她指出了去向，后来你再也没见过那个负心汉。",
-    "EffectDesc": "根骨+3，体质+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257178",
+    "EffectDescStrKey": "ST:257399"
   },
   {
     "ID": 10670009,
@@ -1525,9 +1525,9 @@
       5909,
       9090
     ],
-    "EventDesc": "你在野外看到了一群绿色的狐狸！一定是妖怪！狐狸开口说：「我们不会做坏事的！我们要修行做好人！」实在是太可爱了，你放了它们一马。",
-    "EffectDesc": "魅力+3。气运+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257179",
+    "EffectDescStrKey": "ST:257400"
   },
   {
     "ID": 10670010,
@@ -1563,9 +1563,9 @@
       5909,
       10090
     ],
-    "EventDesc": "崆峒派和紫云派的江湖人士闯入客栈行不义之举，你看见一对侠侣用几个回合的功夫把他们全打趴下了，心中赞叹不已。",
-    "EffectDesc": "根骨+3，体质+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257180",
+    "EffectDescStrKey": "ST:257399"
   },
   {
     "ID": 10670011,
@@ -1601,9 +1601,9 @@
       5909,
       10090
     ],
-    "EventDesc": "有个读书人向你借了把伞，希望用来搭讪桥上的两位姑娘。你不敢告诉他，你刚才看到了两条蛇从水里钻出来变成了那两个姑娘。不过他们后来好像过得很幸福。",
-    "EffectDesc": "慧识+3，根骨+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257181",
+    "EffectDescStrKey": "ST:257401"
   },
   {
     "ID": 10670012,
@@ -1639,9 +1639,9 @@
       5909,
       11090
     ],
-    "EventDesc": "一位封姓姑娘和皇甫姓男子在柳树下相拥而泣，许下了笙申世世不分离的誓言。你大为感动，暗中祝福他们永远在一起。",
-    "EffectDesc": "魅力+3，慧识+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257182",
+    "EffectDescStrKey": "ST:257277"
   },
   {
     "ID": 10670013,
@@ -1675,9 +1675,9 @@
       5909,
       11090
     ],
-    "EventDesc": "你来河边钓鱼，一男子坐在对岸自说自话一整天，你为了观察他，连鱼的事都忘了。黄昏时，那男子面前忽然出现一女子，一会儿又消失，你大惊，鱼竿落进了水里。增长了见识。",
-    "EffectDesc": "慧识+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257183",
+    "EffectDescStrKey": "ST:257251"
   },
   {
     "ID": 10670014,
@@ -1713,9 +1713,9 @@
       5909,
       10090
     ],
-    "EventDesc": "一天半夜醒来，你听到床榻下有响动，伸手竟让你抓到了一只妖怪。妖怪大叫饶命，称自己是食梦貘，饿极了才出来找饭吃。你看它可怜便放了它，很长一段时间你都没再做过噩梦。",
-    "EffectDesc": "气运+3，体质+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257184",
+    "EffectDescStrKey": "ST:257402"
   },
   {
     "ID": 10670015,
@@ -1749,9 +1749,9 @@
       5909,
       8090
     ],
-    "EventDesc": "你在地摊上淘游仙书时翻到一本《相胤传》，一俊秀男子上前询问是否能将那本书借他小阅，你慷慨同意。男子翻看之后，满意地点点头，之后乘云而去。你大为震撼。",
-    "EffectDesc": "气运+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257185",
+    "EffectDescStrKey": "ST:257253"
   },
   {
     "ID": 10670016,
@@ -1785,9 +1785,9 @@
       5909,
       11090
     ],
-    "EventDesc": "为了预防天地劫难，江湖推出逐鹿争锋赛，各界人士齐夺魁，你也去围观了。一位参赛者召唤出了幻镜胧妖，使在场的所有人受到了五十点寒冰伤害，比赛暂时中止。你增长了见识。",
-    "EffectDesc": "慧识+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257186",
+    "EffectDescStrKey": "ST:257251"
   },
   {
     "ID": 10670017,
@@ -1823,9 +1823,9 @@
       5909,
       9090
     ],
-    "EventDesc": "夜里一只九尾狐妖来到你家，自称妲己，希望你赞助她一贯钱助她赶赴东瀛重建朝歌城。你不怒反笑，说：「你觉得我该信你是妲己还是信我是商纣王？」便把狐妖赶走了。",
-    "EffectDesc": "慧识+3，魅力+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257187",
+    "EffectDescStrKey": "ST:257294"
   },
   {
     "ID": 10670018,
@@ -1861,9 +1861,9 @@
       5909,
       10090
     ],
-    "EventDesc": "为了预防天地劫难，江湖推出逐鹿争锋赛，各界人士齐夺魁，你也去围观了。一位参赛者召唤出了黑龙解臾，解臾决定占山为王，把所有参赛者和围观者都赶出了场地。你增长了见识。",
-    "EffectDesc": "体质+3，气运+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257188",
+    "EffectDescStrKey": "ST:257353"
   },
   {
     "ID": 10670019,
@@ -1899,9 +1899,9 @@
       5909,
       7090
     ],
-    "EventDesc": "有个人踩在长剑上在空中咻咻咻地飞到了你的面前，他说自己是天上神将，名武英仲，正在寻找人间义士，看你一表人才，将来必成大器。你深受鼓舞。",
-    "EffectDesc": "体质+3，根骨+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257189",
+    "EffectDescStrKey": "ST:257363"
   },
   {
     "ID": 10670020,
@@ -1936,9 +1936,9 @@
       5909,
       11090
     ],
-    "EventDesc": "瞿家书生对一女子一见钟情，可那女子已和心上人远走高飞，他非常难过。你请他跟你一起读书，忘掉世间烦忧。他一边难过一边指导你正确地句读，你有了不少的长进。",
-    "EffectDesc": "慧识+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257190",
+    "EffectDescStrKey": "ST:257251"
   },
   {
     "ID": 10670021,
@@ -1974,9 +1974,9 @@
       5909,
       9090
     ],
-    "EventDesc": "一户邻居姓慕容，女儿喜欢研究星星，母亲总是为之烦恼，一日找上了你，希望你劝她女儿学点好的。你一拍大腿说这有啥的！应支持她，万一培养出了星官呢！慕容母深受启发。后来你总能看见慕容家小女大半夜在她家屋顶上看星星看月亮。",
-    "EffectDesc": "慧识+3，魅力+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257191",
+    "EffectDescStrKey": "ST:257294"
   },
   {
     "ID": 10670022,
@@ -2011,9 +2011,9 @@
       5091,
       7090
     ],
-    "EventDesc": "江湖上传言北边出现了一座名曰「溯念之门」的秘境，各大势力纷纷遣人前往，但你不明白为什么他们每周都要去一次。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257192",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670023,
@@ -2048,9 +2048,9 @@
       5091,
       8090
     ],
-    "EventDesc": "你在茶楼中喝茶时说书人讲述了西南「幻海魂渊」中的奇珍异兽火猪冰龙之事，你涨了一番见识，",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257193",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670024,
@@ -2085,9 +2085,9 @@
       5091,
       9090
     ],
-    "EventDesc": "你在街上看到两个装扮奇异的人在打「搜神本相」卡牌，你看他们大呼小叫一通后也没弄明白，摇头离开了。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257194",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670025,
@@ -2122,9 +2122,9 @@
       5091,
       10090
     ],
-    "EventDesc": "街市上有人在售卖魂石，说是能强身健体，名字却一个比一个邪气，你看完快步离开了。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257195",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670026,
@@ -2159,9 +2159,9 @@
       5091,
       11090
     ],
-    "EventDesc": "你听闻中原门派正在组织一场逐鹿争锋的大型比武，武林高手如云，你看了下自己的身板还是算了。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257196",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670027,
@@ -2196,9 +2196,9 @@
       5091,
       7091
     ],
-    "EventDesc": "你听闻城北的铁匠说要打造神兵，打造时突然一边丢水晶一边高声疾呼“星之晶打成啦”，状若癫狂，被府衙差役带走了。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257197",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670028,
@@ -2233,9 +2233,9 @@
       5091,
       8090
     ],
-    "EventDesc": "坊市中新开了一家商铺，你前往凑热闹时发现掌柜却是一只黑猫，还能口吐人言说自己的老猫商铺开遍五方八界，众人啧啧称奇",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257198",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670029,
@@ -2270,12 +2270,12 @@
       5090,
       9090
     ],
-    "EventDesc": "你听闻东海边有渔夫在拿石头摆祭坛祭天时，突然金光大作有异宝现世，叫什么{0}，然后石头消失了。",
-    "EffectDesc": "随机",
     "Rarity": "Rarity_SR",
     "Params": [
       2020
-    ]
+    ],
+    "EventDescStrKey": "ST:257199",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670030,
@@ -2310,12 +2310,12 @@
       5090,
       10090
     ],
-    "EventDesc": "你在茶肆之中闲聊时听说了九如塔的传说，里面妖怪众多，进入者九死一生，你不禁在想是哪个闲得慌的大能修建了此塔。",
-    "EffectDesc": "随机",
     "Rarity": "Rarity_SR",
     "Params": [
       2021
-    ]
+    ],
+    "EventDescStrKey": "ST:257200",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670031,
@@ -2350,9 +2350,9 @@
       5090,
       11090
     ],
-    "EventDesc": "你走在路上突然看见路边有一个奇奇怪怪的紫色龙形生物，还未待你仔细看清，突然消失了，你摇了摇头以为眼花。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257201",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670032,
@@ -2382,9 +2382,9 @@
       60002,
       60003
     ],
-    "EventDesc": "你的世家结交的同朝权贵拉了你一把，向圣人美言了你几句，结果如何看你造化了。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257202",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670033,
@@ -2416,9 +2416,9 @@
       5190,
       9091
     ],
-    "EventDesc": "近年来你的生意做的风生水起，赚的盆满钵满。",
-    "EffectDesc": "魅力+7，",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257203",
+    "EffectDescStrKey": "ST:257403"
   },
   {
     "ID": 10670034,
@@ -2452,12 +2452,12 @@
       9092
     ],
     "ShowAtResult": true,
-    "EventDesc": "近年来你的生意做的风生水起，还和家里其他产业联动推出了“{0}”，成为了长安爆款。",
-    "EffectDesc": "魅力+{0}，气运+5",
     "Rarity": "Rarity_SSR",
     "Params": [
       2018
-    ]
+    ],
+    "EventDescStrKey": "ST:257204",
+    "EffectDescStrKey": "ST:257404"
   },
   {
     "ID": 10670035,
@@ -2489,9 +2489,9 @@
       7091,
       9091
     ],
-    "EventDesc": "近年来你生意平平，赚的不多。",
-    "EffectDesc": "魅力+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257205",
+    "EffectDescStrKey": "ST:257252"
   },
   {
     "ID": 10670036,
@@ -2522,9 +2522,9 @@
       7091,
       9091
     ],
-    "EventDesc": "近年来你生意惨淡，勉强度日。",
-    "EffectDesc": "魅力+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257206",
+    "EffectDescStrKey": "ST:257262"
   },
   {
     "ID": 10670037,
@@ -2561,12 +2561,12 @@
       7092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你凭借家族关系，拜访了当世武学宗师，学会了{0}，武艺突飞猛进。",
-    "EffectDesc": "根骨+{0}，体质+5",
     "Rarity": "Rarity_SSR",
     "Params": [
       2019
-    ]
+    ],
+    "EventDescStrKey": "ST:257207",
+    "EffectDescStrKey": "ST:257295"
   },
   {
     "ID": 10670038,
@@ -2600,9 +2600,9 @@
       2190,
       7092
     ],
-    "EventDesc": "你每日习武，进步迅速，武学造诣越发深厚。",
-    "EffectDesc": "根骨+7",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257208",
+    "EffectDescStrKey": "ST:256853"
   },
   {
     "ID": 10670039,
@@ -2637,9 +2637,9 @@
       2190,
       7091
     ],
-    "EventDesc": "你忙于事务，练武不甚在意，武学进步了了。",
-    "EffectDesc": "根骨+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257209",
+    "EffectDescStrKey": "ST:257250"
   },
   {
     "ID": 10670040,
@@ -2671,9 +2671,9 @@
       1997,
       5910
     ],
-    "EventDesc": "你近几年没空钻研武艺，武学造诣不进反退。",
-    "EffectDesc": "根骨-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257210",
+    "EffectDescStrKey": "ST:257259"
   },
   {
     "ID": 10670041,
@@ -2705,12 +2705,12 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你听闻{0}中有古仙人洞府现世，前往探寻，果然寻获一些机缘。",
-    "EffectDesc": "运气+{0}",
     "Rarity": "Rarity_SSR",
     "Params": [
       2003
-    ]
+    ],
+    "EventDescStrKey": "ST:257211",
+    "EffectDescStrKey": "ST:257405"
   },
   {
     "ID": 10670042,
@@ -2741,11 +2741,11 @@
       4190,
       8091
     ],
-    "EventDesc": "你听闻{0}中有古仙人洞府现世，前往探寻后发现是当代仿造，你想起了天庭反诈指南。",
     "Rarity": "Rarity_SR",
     "Params": [
       2003
-    ]
+    ],
+    "EventDescStrKey": "ST:257212"
   },
   {
     "ID": 10670043,
@@ -2775,9 +2775,9 @@
       5908,
       4190
     ],
-    "EventDesc": "你近来修行不顺，遇到了瓶颈。",
-    "EffectDesc": "运气+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257213",
+    "EffectDescStrKey": "ST:257406"
   },
   {
     "ID": 10670044,
@@ -2805,9 +2805,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你的修为已达到此方天地上限，你飞升仙界了。",
-    "EffectDesc": "运气+{0}",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257214",
+    "EffectDescStrKey": "ST:257405"
   },
   {
     "ID": 10670045,
@@ -2832,8 +2832,8 @@
       8090
     ],
     "ShowAtResult": true,
-    "EventDesc": "在一起与其他修仙者争夺天地异宝的战斗中，你不幸战败，身死道消",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257215"
   },
   {
     "ID": 10670046,
@@ -2859,9 +2859,9 @@
       5908,
       4190
     ],
-    "EventDesc": "你近来修行不顺，遇到了瓶颈。",
-    "EffectDesc": "运气+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257213",
+    "EffectDescStrKey": "ST:257406"
   },
   {
     "ID": 10670047,
@@ -2889,9 +2889,9 @@
       8091
     ],
     "ShowAtResult": true,
-    "EventDesc": "修仙无岁月，你继续苦修仙法，在一日灵感迸发，天现异色，你的修为突飞猛进",
-    "EffectDesc": "气运+10",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257071",
+    "EffectDescStrKey": "ST:257254"
   },
   {
     "ID": 10670048,
@@ -2918,9 +2918,9 @@
       4190,
       8092
     ],
-    "EventDesc": "修仙无岁月，你继续苦修仙法，感悟天地之气。",
-    "EffectDesc": "气运+(0)，体质+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256989",
+    "EffectDescStrKey": "ST:257350"
   },
   {
     "ID": 10670049,
@@ -2946,9 +2946,9 @@
       4190,
       8092
     ],
-    "EventDesc": "修仙无岁月，你继续苦修仙法，不过近年感受到了瓶颈，修炼速度变慢了。",
-    "EffectDesc": "运气+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257216",
+    "EffectDescStrKey": "ST:257365"
   },
   {
     "ID": 10670050,
@@ -2976,12 +2976,12 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你听闻{0}中有古仙人洞府现世，前往探寻，果然寻获一些机缘。",
-    "EffectDesc": "运气+{0}",
     "Rarity": "Rarity_SSR",
     "Params": [
       2003
-    ]
+    ],
+    "EventDescStrKey": "ST:257211",
+    "EffectDescStrKey": "ST:257405"
   },
   {
     "ID": 10670051,
@@ -3007,11 +3007,11 @@
       6090,
       8091
     ],
-    "EventDesc": "你听闻{0}中有古仙人洞府现世，前往探寻后发现是当代仿造，你想起了天庭反诈指南。",
     "Rarity": "Rarity_SR",
     "Params": [
       2003
-    ]
+    ],
+    "EventDescStrKey": "ST:257212"
   },
   {
     "ID": 10670052,
@@ -3037,9 +3037,9 @@
       5908,
       4190
     ],
-    "EventDesc": "你近来修行不顺，遇到了瓶颈。",
-    "EffectDesc": "运气+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257213",
+    "EffectDescStrKey": "ST:257406"
   },
   {
     "ID": 10670053,
@@ -3070,9 +3070,9 @@
       11092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你讲经题字，诗词歌赋均有佳作，近年来名声日盛。",
-    "EffectDesc": "慧识+10，魅力+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257217",
+    "EffectDescStrKey": "ST:257359"
   },
   {
     "ID": 10670054,
@@ -3100,9 +3100,9 @@
       6001,
       11091
     ],
-    "EventDesc": "你近年来未有什么作品，名声日渐下降。",
-    "EffectDesc": "慧识+7",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257218",
+    "EffectDescStrKey": "ST:256854"
   },
   {
     "ID": 10670055,
@@ -3128,9 +3128,9 @@
       1190,
       10091
     ],
-    "EventDesc": "近年来不时有官员拜访你，当代官吏均以能结识你为荣。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257219",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670056,
@@ -3163,9 +3163,9 @@
       4997,
       5909
     ],
-    "EventDesc": "近年来你受到圣人冷落，百官也与你减少了来往。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257220",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670057,
@@ -3199,9 +3199,9 @@
       5910,
       8090
     ],
-    "EventDesc": "你与友人结伴出游时看到个算命先生，一见友人便神神叨叨什么时轮生变，天生异象，你们害怕的走开了。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257221",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670058,
@@ -3235,9 +3235,9 @@
       6001,
       7090
     ],
-    "EventDesc": "你在郊游时遇到几人野餐，你看他们面相不凡，非此世人，他们邀请你一起吃烤鱼和馒头，吃完后你觉得精力充沛。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257222",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670059,
@@ -3275,9 +3275,9 @@
       5910,
       9090
     ],
-    "EventDesc": "你看到商坊中有人摆了个摊放了几件稀罕物件搞抽奖，介绍说是祈念之轮，你试着抽了一次。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257223",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670060,
@@ -3300,9 +3300,9 @@
       6003,
       60105
     ],
-    "EventDesc": "你成年了，在紫微星的庇佑下，你近年来成长的不错。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257224",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670061,
@@ -3324,9 +3324,9 @@
       6003,
       60106
     ],
-    "EventDesc": "你成年了，在文昌星的庇佑下，你近年来成长的不错。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257225",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670062,
@@ -3348,9 +3348,9 @@
       6003,
       60107
     ],
-    "EventDesc": "你成年了，在武曲星的庇佑下，你近年来成长的不错。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257226",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670063,
@@ -3372,9 +3372,9 @@
       6003,
       60108
     ],
-    "EventDesc": "你成年了，在太阳星的庇佑下，你近年来成长的不错。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257227",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670064,
@@ -3396,9 +3396,9 @@
       6003,
       60109
     ],
-    "EventDesc": "你成年了，在太阴星的庇佑下，你近年来成长的不错。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257228",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670065,
@@ -3421,9 +3421,9 @@
       6003,
       60110
     ],
-    "EventDesc": "你步入中年，在紫微星的庇佑下，一片勃勃生机万物竞发的景象犹在眼前。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257229",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670066,
@@ -3445,9 +3445,9 @@
       6003,
       60111
     ],
-    "EventDesc": "你步入中年，在文昌星的庇佑下，一片勃勃生机万物竞发的景象犹在眼前。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257230",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670067,
@@ -3469,9 +3469,9 @@
       6003,
       60112
     ],
-    "EventDesc": "你步入中年，在武曲星的庇佑下，一片勃勃生机万物竞发的景象犹在眼前。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257231",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670068,
@@ -3493,9 +3493,9 @@
       6003,
       60113
     ],
-    "EventDesc": "你步入中年，在太阳星的庇佑下，一片勃勃生机万物竞发的景象犹在眼前。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257232",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670069,
@@ -3517,9 +3517,9 @@
       6003,
       60114
     ],
-    "EventDesc": "你步入中年，在太阴星的庇佑下，一片勃勃生机万物竞发的景象犹在眼前。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257233",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670070,
@@ -3541,9 +3541,9 @@
       5090,
       6003
     ],
-    "EventDesc": "你度过了60大寿，在紫微星的庇佑下，你时常仰观天象，感悟天机。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257234",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670071,
@@ -3564,9 +3564,9 @@
       5090,
       6003
     ],
-    "EventDesc": "你度过了60大寿，在文昌星的庇佑下，你时常仰观天象，感悟天机。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257235",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670072,
@@ -3587,9 +3587,9 @@
       2091,
       6003
     ],
-    "EventDesc": "你度过了60大寿，在武曲星的庇佑下，你时常仰观天象，感悟天机。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257236",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670073,
@@ -3610,9 +3610,9 @@
       4091,
       6003
     ],
-    "EventDesc": "你度过了60大寿，在太阳星的庇佑下，你时常仰观天象，感悟天机。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257237",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 10670074,
@@ -3633,9 +3633,9 @@
       5091,
       6003
     ],
-    "EventDesc": "你度过了60大寿，在太阴星的庇佑下，你时常仰观天象，感悟天机。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257238",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 11120001,
@@ -3652,9 +3652,9 @@
     "EffectIds": [
       6003
     ],
-    "EventDesc": "你依然随遇而安，最喜一人在池塘边用小竹竿钓鱼。",
-    "EffectDesc": "寿命+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256913",
+    "EffectDescStrKey": "ST:257274"
   },
   {
     "ID": 11120002,
@@ -3675,9 +3675,9 @@
       2090,
       5910
     ],
-    "EventDesc": "父亲见学习与你绝缘，开始教你剑法，你颇为感兴趣。",
-    "EffectDesc": "根骨+{0}",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256914",
+    "EffectDescStrKey": "ST:257240"
   },
   {
     "ID": 11120003,
@@ -3705,9 +3705,9 @@
       4190,
       8090
     ],
-    "EventDesc": "你几年来慢慢修炼仙法，竟真的感悟到了一丝“气”的存在。",
-    "EffectDesc": "气运+{0}",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256915",
+    "EffectDescStrKey": "ST:257263"
   },
   {
     "ID": 11120004,
@@ -3734,9 +3734,9 @@
       6001,
       4190
     ],
-    "EventDesc": "你几年来慢慢修炼仙法，但进展缓慢，不过多年修身养性还是改善了你的体质。",
-    "EffectDesc": "气运-5，体质+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256916",
+    "EffectDescStrKey": "ST:257275"
   },
   {
     "ID": 11120005,
@@ -3759,9 +3759,9 @@
       5190,
       9090
     ],
-    "EventDesc": "你将家中鸡蛋带到市集换了些铜钱，赚到了你人生第一桶金。",
-    "EffectDesc": "魅力+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256917",
+    "EffectDescStrKey": "ST:257252"
   },
   {
     "ID": 11120006,
@@ -3784,9 +3784,9 @@
       5910,
       1190
     ],
-    "EventDesc": "你经过几年的学习，已经有了一定积累，学有所成。",
-    "EffectDesc": "慧识+5，魅力+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256918",
+    "EffectDescStrKey": "ST:257267"
   },
   {
     "ID": 11120007,
@@ -3805,9 +3805,9 @@
       3003,
       5910
     ],
-    "EventDesc": "你在田中帮家里务农，积累了一定的农业知识。",
-    "EffectDesc": "根骨+3，慧识+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256919",
+    "EffectDescStrKey": "ST:257276"
   },
   {
     "ID": 11120008,
@@ -3829,9 +3829,9 @@
       5003,
       5910
     ],
-    "EventDesc": "父母带你郊游，你在山亭中看到江水流过，似有所悟。",
-    "EffectDesc": "魅力+3，慧识+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256920",
+    "EffectDescStrKey": "ST:257277"
   },
   {
     "ID": 11120009,
@@ -3851,9 +3851,9 @@
       5910,
       1190
     ],
-    "EventDesc": "听闻周边闹了山贼，父母让你不要外出，你在家规律生活了一阵子。",
-    "EffectDesc": "体质+3，慧识+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256921",
+    "EffectDescStrKey": "ST:257278"
   },
   {
     "ID": 11120010,
@@ -3874,9 +3874,9 @@
       4005,
       5909
     ],
-    "EventDesc": "你在院中栽下一颗银杏树。",
-    "EffectDesc": "气运+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256922",
+    "EffectDescStrKey": "ST:257253"
   },
   {
     "ID": 11120011,
@@ -3899,9 +3899,9 @@
       5910,
       5190
     ],
-    "EventDesc": "农闲时你进城做了一段时间短工，积累了一些经验。",
-    "EffectDesc": "魅力+3，体质+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256923",
+    "EffectDescStrKey": "ST:257279"
   },
   {
     "ID": 11120012,
@@ -3919,9 +3919,9 @@
       2003,
       5910
     ],
-    "EventDesc": "父母请一名游方道士为你做了次针灸，你感觉轻松不少。",
-    "EffectDesc": "根骨+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256924",
+    "EffectDescStrKey": "ST:257261"
   },
   {
     "ID": 11120013,
@@ -3939,9 +3939,9 @@
       1003,
       6003
     ],
-    "EventDesc": "你造访城中医庐，买了些许常用草药。",
-    "EffectDesc": "体质+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256925",
+    "EffectDescStrKey": "ST:257255"
   },
   {
     "ID": 11120014,
@@ -3967,9 +3967,9 @@
       5190,
       9090
     ],
-    "EventDesc": "你在坊市最大商号昌平号中谋了份工作，增长了待人接物的本事。",
-    "EffectDesc": "魅力+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256926",
+    "EffectDescStrKey": "ST:257262"
   },
   {
     "ID": 11120015,
@@ -3990,9 +3990,9 @@
       4003,
       5910
     ],
-    "EventDesc": "你请坊市老道算了一卦，说近日乃吉时,果然你出门捡到一块蚀之晶。",
-    "EffectDesc": "气运+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256927",
+    "EffectDescStrKey": "ST:257257"
   },
   {
     "ID": 11120016,
@@ -4011,9 +4011,9 @@
       5910,
       3191
     ],
-    "EventDesc": "你在酒楼看到墙上有人题字，笔走龙蛇，甚是精妙。",
-    "EffectDesc": "慧识+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256928",
+    "EffectDescStrKey": "ST:257256"
   },
   {
     "ID": 11120017,
@@ -4032,9 +4032,9 @@
       5910,
       2190
     ],
-    "EventDesc": "乡中田野有野猪出没，你提剑驱赶，为乡里解决了祸患。",
-    "EffectDesc": "根骨+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256929",
+    "EffectDescStrKey": "ST:257261"
   },
   {
     "ID": 11120018,
@@ -4053,9 +4053,9 @@
       5910,
       2190
     ],
-    "EventDesc": "你在闲暇之时跟好友学了一套五禽戏，强身健体。",
-    "EffectDesc": "体质+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256930",
+    "EffectDescStrKey": "ST:257255"
   },
   {
     "ID": 11120019,
@@ -4073,9 +4073,9 @@
       5003,
       5910
     ],
-    "EventDesc": "你利用所学知识设法改善了乡里田地灌溉。",
-    "EffectDesc": "魅力+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256931",
+    "EffectDescStrKey": "ST:257262"
   },
   {
     "ID": 11120020,
@@ -4097,9 +4097,9 @@
       5910,
       5190
     ],
-    "EventDesc": "你近来运气不错，在博戏中小赚一笔。",
-    "EffectDesc": "气运+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256932",
+    "EffectDescStrKey": "ST:257257"
   },
   {
     "ID": 11120021,
@@ -4128,9 +4128,9 @@
       4190,
       8090
     ],
-    "EventDesc": "你修炼仙法略有进展，感觉精神焕发。",
-    "EffectDesc": "气运+5，根骨+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256933",
+    "EffectDescStrKey": "ST:257280"
   },
   {
     "ID": 11120022,
@@ -4160,9 +4160,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你天分极高，仙法修炼一日千里，真气日渐充盈。",
-    "EffectDesc": "气运+{0}，根骨+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256934",
+    "EffectDescStrKey": "ST:257281"
   },
   {
     "ID": 11120110,
@@ -4196,9 +4196,9 @@
       10091
     ],
     "ShowAtResult": true,
-    "EventDesc": "父母没有办法送你去学校读书，你决心寒窗苦读，通过科考改变自己的命运。你凿壁偷光、头悬梁锥刺股，果真有所收获，靠着自己的努力成功进入了县学，穿上了「青衿」。",
-    "EffectDesc": "体质+5，慧识+5，魅力+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256935",
+    "EffectDescStrKey": "ST:257282"
   },
   {
     "ID": 11120111,
@@ -4223,9 +4223,9 @@
       1190
     ],
     "ShowAtResult": true,
-    "EventDesc": "父母没有办法送你去学校读书，你决心寒窗苦读，通过科考改变自己的命运。但虽然春夏秋冬眠皆不觉晓，只背下了几首诗，你决定再读几年。",
-    "EffectDesc": "慧识+5，体质+3，气运-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256936",
+    "EffectDescStrKey": "ST:257283"
   },
   {
     "ID": 11120112,
@@ -4256,9 +4256,9 @@
       151
     ],
     "ShowAtResult": true,
-    "EventDesc": "父母没有办法送你去学校读书，你决心寒窗苦读，通过科考改变自己的命运。但寒窗可能不太适合你，迫于生计，你找了家店铺成为了一名「学徒」。",
-    "EffectDesc": "慧识+5，体质-5，寿命-10",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256937",
+    "EffectDescStrKey": "ST:257284"
   },
   {
     "ID": 11120113,
@@ -4288,9 +4288,9 @@
       10092
     ],
     "ShowAtResult": true,
-    "EventDesc": "国子监招生，家里帮你找了关系。这种小事对你家来说轻而易举，你进入了国子监，穿上了「青衿」。",
-    "EffectDesc": "慧识+10，魅力+10",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256941",
+    "EffectDescStrKey": "ST:257285"
   },
   {
     "ID": 11120114,
@@ -4320,9 +4320,9 @@
       10090
     ],
     "ShowAtResult": true,
-    "EventDesc": "国子监招生，家里帮你找了关系。好像没那么容易，还是老老实实考试吧。",
-    "EffectDesc": "慧识+5，魅力+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256939",
+    "EffectDescStrKey": "ST:257267"
   },
   {
     "ID": 11120115,
@@ -4347,9 +4347,9 @@
       1190
     ],
     "ShowAtResult": true,
-    "EventDesc": "国子监招生，家里帮你找了关系。没名额，那咋了？反正将来的官还是你当。",
-    "EffectDesc": "慧识+3，魅力+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256940",
+    "EffectDescStrKey": "ST:257286"
   },
   {
     "ID": 11120116,
@@ -4379,9 +4379,9 @@
       10092
     ],
     "ShowAtResult": true,
-    "EventDesc": "官学开始招生，你积极参与，最终成功进入了官学，穿上了「青衿」。",
-    "EffectDesc": "慧识+10，魅力+10",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256938",
+    "EffectDescStrKey": "ST:257285"
   },
   {
     "ID": 11120117,
@@ -4412,9 +4412,9 @@
       10090
     ],
     "ShowAtResult": true,
-    "EventDesc": "官学开始招生，你积极参与，最终惜败，你决心通过自学打败所有人。",
-    "EffectDesc": "慧识+5，魅力+3，体质+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256942",
+    "EffectDescStrKey": "ST:257287"
   },
   {
     "ID": 11120118,
@@ -4444,9 +4444,9 @@
       7090
     ],
     "ShowAtResult": true,
-    "EventDesc": "官学开始招生，你积极参与，最终惜败，你觉得自己不是块读书的料，决定投笔从戎，成为了一名「兵卒」。",
-    "EffectDesc": "慧识+3，魅力+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256943",
+    "EffectDescStrKey": "ST:257286"
   },
   {
     "ID": 11120119,
@@ -4474,9 +4474,9 @@
       1190,
       10092
     ],
-    "EventDesc": "你学习刻苦，受到先生表扬，认为是可塑之才。",
-    "EffectDesc": "慧识+5，魅力+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256944",
+    "EffectDescStrKey": "ST:257288"
   },
   {
     "ID": 11120120,
@@ -4504,9 +4504,9 @@
       1190,
       10090
     ],
-    "EventDesc": "你学业平平，不过不失，与常人无异。",
-    "EffectDesc": "慧识+3，体质+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256945",
+    "EffectDescStrKey": "ST:257289"
   },
   {
     "ID": 11120121,
@@ -4534,9 +4534,9 @@
       1190,
       9910
     ],
-    "EventDesc": "经史子集对你来说过于高深，你学业进展缓慢，常受老师责备。",
-    "EffectDesc": "慧识+3，魅力-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256946",
+    "EffectDescStrKey": "ST:257290"
   },
   {
     "ID": 11120122,
@@ -4566,9 +4566,9 @@
       131,
       9091
     ],
-    "EventDesc": "你寒窗苦读，可惜家里没钱供你读书，好在你有几分文采，开始帮乡里写信，你成了一名「文人」。",
-    "EffectDesc": "体质+5，魅力+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256947",
+    "EffectDescStrKey": "ST:257291"
   },
   {
     "ID": 11120123,
@@ -4595,9 +4595,9 @@
       5910,
       10090
     ],
-    "EventDesc": "你寒窗苦读，但还是在县试中名落孙山。",
-    "EffectDesc": "慧识+3，魅力-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256948",
+    "EffectDescStrKey": "ST:257290"
   },
   {
     "ID": 11120131,
@@ -4629,9 +4629,9 @@
       11092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你闲暇时阅读了《世说新语》这本书，为这本书中所记载的魏晋名士生活态度深深打动，成为了一名「文人」。",
-    "EffectDesc": "慧识+{0}，魅力+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256949",
+    "EffectDescStrKey": "ST:257292"
   },
   {
     "ID": 11120132,
@@ -4660,9 +4660,9 @@
       11090
     ],
     "ShowAtResult": true,
-    "EventDesc": "你闲暇时阅读了《世说新语》这本书，完全理解不了书中的这帮人一天天的究竟在干点啥。或许还是找点正经行当、脚踏实地地过日子比较好。",
-    "EffectDesc": "慧识+10，魅力+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256950",
+    "EffectDescStrKey": "ST:257293"
   },
   {
     "ID": 11120133,
@@ -4693,9 +4693,9 @@
       131
     ],
     "ShowAtResult": true,
-    "EventDesc": "士族举办游园会，你的父母拉着你挨个拜过各位名士，名士们一致认为你气宇非凡，认同你是一名「文人」。",
-    "EffectDesc": "慧识+{0}，魅力+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256951",
+    "EffectDescStrKey": "ST:257292"
   },
   {
     "ID": 11120134,
@@ -4716,9 +4716,9 @@
       3191
     ],
     "ShowAtResult": true,
-    "EventDesc": "士族举办游园会，你的父母拉着你挨个拜过各位名士，名士们对你点头，一笑而过，你受到文化氛围的熏陶。",
-    "EffectDesc": "慧识+5，魅力+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256952",
+    "EffectDescStrKey": "ST:257288"
   },
   {
     "ID": 11120135,
@@ -4748,9 +4748,9 @@
       11092
     ],
     "ShowAtResult": true,
-    "EventDesc": "为了消遣，你写了几首诗，在乡内大获好评，声名远扬，乡里人都说你是个「文人」。",
-    "EffectDesc": "慧识+{0}，魅力+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256953",
+    "EffectDescStrKey": "ST:257292"
   },
   {
     "ID": 11120136,
@@ -4773,9 +4773,9 @@
       3191,
       11090
     ],
-    "EventDesc": "为了消遣，你写了几首诗，但好像没几个人听说了你的作品。",
-    "EffectDesc": "慧识+3，魅力+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256954",
+    "EffectDescStrKey": "ST:257294"
   },
   {
     "ID": 11120137,
@@ -4805,9 +4805,9 @@
       11092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你访问观庙，在讲经会上，你积极表达自己对世道的看法，得到了观庙中避世之人的一致好评。这些人认同你是一名「文人」。",
-    "EffectDesc": "慧识+{0}，魅力+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256955",
+    "EffectDescStrKey": "ST:257292"
   },
   {
     "ID": 11120138,
@@ -4829,9 +4829,9 @@
       11090
     ],
     "ShowAtResult": true,
-    "EventDesc": "你访问观庙，在讲经会上，你积极表达自己对世道的看法，可是你虽然来了，却是如来。到底来了没？如来如来！没能激起什么水花。",
-    "EffectDesc": "慧识+3，魅力+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256956",
+    "EffectDescStrKey": "ST:257294"
   },
   {
     "ID": 11120139,
@@ -4848,8 +4848,8 @@
       5910
     ],
     "ShowAtResult": true,
-    "EventDesc": "写文章根本不好玩，你下定决心以成为官员为自己的目标。",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256957"
   },
   {
     "ID": 11120140,
@@ -4866,8 +4866,8 @@
       5910
     ],
     "ShowAtResult": true,
-    "EventDesc": "写文章根本不好玩，你下定决心以成为官员为自己的目标。",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256957"
   },
   {
     "ID": 11120141,
@@ -4884,8 +4884,8 @@
       5910
     ],
     "ShowAtResult": true,
-    "EventDesc": "写文章根本不好玩，你下定决心以成为武者为自己的目标。",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256958"
   },
   {
     "ID": 11120142,
@@ -4902,8 +4902,8 @@
       5910
     ],
     "ShowAtResult": true,
-    "EventDesc": "写文章根本不好玩，你下定决心以成为富商为自己的目标。",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256959"
   },
   {
     "ID": 11120143,
@@ -4930,13 +4930,13 @@
       3191,
       11092
     ],
-    "EventDesc": "秋风送爽，你在乡野游玩时睹物生情，写下《{0}{1}》，乡里传咏，名动一时。",
-    "EffectDesc": "慧识+{0}，魅力+5",
     "Rarity": "Rarity_SSR",
     "Params": [
       2006,
       2007
-    ]
+    ],
+    "EventDescStrKey": "ST:256960",
+    "EffectDescStrKey": "ST:257292"
   },
   {
     "ID": 11120144,
@@ -4963,9 +4963,9 @@
       3191,
       11090
     ],
-    "EventDesc": "秋风送爽，你在乡野游玩时睹物生情，作诗一首，文采平平，不过你也怡然自乐。",
-    "EffectDesc": "慧识+5，魅力+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256961",
+    "EffectDescStrKey": "ST:257267"
   },
   {
     "ID": 11120160,
@@ -4995,9 +4995,9 @@
       7092
     ],
     "ShowAtResult": true,
-    "EventDesc": "在茶馆喝茶的功夫，竟然让你撞见江湖二大门派的争斗！你四两拨千斤，令双方势力知道你不是好惹的，成功平息了这场争端。很快，附近的酒楼茶馆都认识了你这名「游侠」。",
-    "EffectDesc": "根骨+{0}，体质+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256962",
+    "EffectDescStrKey": "ST:257295"
   },
   {
     "ID": 11120161,
@@ -5022,9 +5022,9 @@
       7091
     ],
     "ShowAtResult": true,
-    "EventDesc": "在茶馆喝茶的功夫，竟然让你撞见江湖二大门派的争斗！你废了老大劲才从茶馆中脱身，在一片混乱中你不可避免地挨了几刀。",
-    "EffectDesc": "根骨+10，体质-10",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256963",
+    "EffectDescStrKey": "ST:257296"
   },
   {
     "ID": 11120162,
@@ -5042,8 +5042,8 @@
       99999
     ],
     "ShowAtResult": true,
-    "EventDesc": "在茶馆喝茶的功夫，竟然让你撞见江湖二大门派的争斗！倒霉透顶！你被无眼乱刀砍中，终结了短暂的一生。",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256964"
   },
   {
     "ID": 11120163,
@@ -5074,9 +5074,9 @@
       7092
     ],
     "ShowAtResult": true,
-    "EventDesc": "父母为了支持你习武的梦想，送你进了天玄门。天玄门不分贵贱，只看资质，在天玄门的入门考验中，你在大雪中金鸡独立三天三夜都未曾放松，得到了天玄门掌门的高度赞赏。你成为了一名「游侠」。",
-    "EffectDesc": "根骨+{0}，体质+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256965",
+    "EffectDescStrKey": "ST:257295"
   },
   {
     "ID": 11120164,
@@ -5098,9 +5098,9 @@
       7090
     ],
     "ShowAtResult": true,
-    "EventDesc": "父母为了支持你习武的梦想，送你进了天玄门。天玄门不分贵贱，只看资质，在天玄门的入门考验中，你连保持半个时辰的清醒都没做到，在殿上呼呼大睡，不出所料被赶了出来。",
-    "EffectDesc": "根骨+5，体质-5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256966",
+    "EffectDescStrKey": "ST:257297"
   },
   {
     "ID": 11120165,
@@ -5133,9 +5133,9 @@
       7092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你参加了武举，你亮眼的表现得到了金吾卫的肯定，最终入选禁军，成为「兵卒」。",
-    "EffectDesc": "根骨+10，气运+5，体质+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256967",
+    "EffectDescStrKey": "ST:257298"
   },
   {
     "ID": 11120166,
@@ -5166,9 +5166,9 @@
       7090
     ],
     "ShowAtResult": true,
-    "EventDesc": "折冲府征募兵卒，你觉得自己应该去建功立业，报名参军，最终成为了一名「兵卒」。",
-    "EffectDesc": "根骨+5，体质+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256968",
+    "EffectDescStrKey": "ST:257299"
   },
   {
     "ID": 11120167,
@@ -5195,9 +5195,9 @@
       7091
     ],
     "ShowAtResult": true,
-    "EventDesc": "你参加了武举，武举结果一般，但你想到行侠仗义也是一种曲线报国，于是你拿上刀剑成为了一名「游侠」，从此浪迹江湖。",
-    "EffectDesc": "根骨+5，体质+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256969",
+    "EffectDescStrKey": "ST:257300"
   },
   {
     "ID": 11120168,
@@ -5223,13 +5223,13 @@
       2190,
       7092
     ],
-    "EventDesc": "一日你习武时忽有灵觉，随手一套招式行云流水，你将其命名为《{0}{1}》。",
-    "EffectDesc": "根骨+{0}",
     "Rarity": "Rarity_SR",
     "Params": [
       2001,
       2002
-    ]
+    ],
+    "EventDescStrKey": "ST:256970",
+    "EffectDescStrKey": "ST:257240"
   },
   {
     "ID": 11120169,
@@ -5255,9 +5255,9 @@
       2190,
       7091
     ],
-    "EventDesc": "你每日练习剑术，日益精进。",
-    "EffectDesc": "根骨+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256971",
+    "EffectDescStrKey": "ST:257250"
   },
   {
     "ID": 11120180,
@@ -5287,9 +5287,9 @@
       9092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你正式决定从商碰碰运气。但你的家庭不能给你提供启动资金，你得自己攒。总之先从学徒做起吧。你远走长安，在东市找到了一个招人的店铺，你成为了一名「学徒」。",
-    "EffectDesc": "魅力+{0}，体质+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256972",
+    "EffectDescStrKey": "ST:257301"
   },
   {
     "ID": 11120181,
@@ -5317,9 +5317,9 @@
       9090
     ],
     "ShowAtResult": true,
-    "EventDesc": "你正式决定从商碰碰运气。但你的家庭不能给你提供启动资金，你得自己攒。总之先从学徒做起吧。你远走长安，可花光了所有盘缠也没能找到招你的店，被当做无业游民抓进了牢房，过上了「阶下囚」的生活。",
-    "EffectDesc": "体质+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256973",
+    "EffectDescStrKey": "ST:257255"
   },
   {
     "ID": 11120182,
@@ -5351,9 +5351,9 @@
       9092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你暗中做了点小生意，不巧被你的家人发现，你寻思正好可以把你的商业天赋展示给他们。你的家人虽然气得把你逐出家门，却让老管家给了你送了启动资金。成为了「学徒」。",
-    "EffectDesc": "魅力+{0}，慧识+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256974",
+    "EffectDescStrKey": "ST:257302"
   },
   {
     "ID": 11120183,
@@ -5383,9 +5383,9 @@
       9090
     ],
     "ShowAtResult": true,
-    "EventDesc": "你暗中做了点小生意，不巧被你的家人发现，由于你完全不是从商的料，在他们的劝说之下，你老实地服从了家人的安排，读书去了。成为「青衿」。",
-    "EffectDesc": "魅力+5，体质+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256975",
+    "EffectDescStrKey": "ST:257303"
   },
   {
     "ID": 11120184,
@@ -5417,9 +5417,9 @@
       9091
     ],
     "ShowAtResult": true,
-    "EventDesc": "别人问你为何当小二？你说这是子承父业，天经地义！你成为了一名「学徒」。",
-    "EffectDesc": "魅力+{0}，慧识+3，体质+3",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256976",
+    "EffectDescStrKey": "ST:257304"
   },
   {
     "ID": 11120185,
@@ -5449,9 +5449,9 @@
       9091
     ],
     "ShowAtResult": true,
-    "EventDesc": "你爸把丝绸之路的事情告诉了你，你终于理解了为啥你和街上其他小孩儿长得不一样，作为远道而来的客人，你决定继承你爸的精神，成为你爸的「学徒」。",
-    "EffectDesc": "魅力+{0}，体质+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256977",
+    "EffectDescStrKey": "ST:257301"
   },
   {
     "ID": 11120186,
@@ -5471,7 +5471,7 @@
       99999
     ],
     "ShowAtResult": true,
-    "EventDesc": "你爸把丝绸之路的事情告诉了你，你终于理解了为啥你和街上其他小孩儿长得不一样，你爸精研风水后，他发现你的八字和大唐对冲，于是决定带着你离开这个国度回到故乡。你提前结束了在大唐的人生。"
+    "EventDescStrKey": "ST:256978"
   },
   {
     "ID": 11120200,
@@ -5501,9 +5501,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你在街上游玩，遇到一个手持五本书的老乞丐，乞丐说相逢即是缘，看你骨骼清奇，他愿意把他掌握的独家仙法传承给你，你得到这位高人的指点，你确实有点开窍，之后行为举止皆有仙风道骨。你成为了一名「道童」。",
-    "EffectDesc": "气运+{0}，根骨+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256979",
+    "EffectDescStrKey": "ST:257281"
   },
   {
     "ID": 11120201,
@@ -5532,9 +5532,9 @@
       8090
     ],
     "ShowAtResult": true,
-    "EventDesc": "你在街上游玩，遇到一个手持五本书的老乞丐，乞丐说相逢即是缘，看你骨骼清奇，他愿意把他掌握的独家仙法传承给你，可你其实并不是修仙的料。听完了老乞丐的布道，你长了很多见识，并把自己的见解说给同龄人听。你成为了一名「文人」。",
-    "EffectDesc": "慧识+{0}，",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256980",
+    "EffectDescStrKey": "ST:257305"
   },
   {
     "ID": 11120202,
@@ -5564,9 +5564,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "一个夜晚，你朦朦胧胧地从床上翻身下来，顺着一个声音的呼唤来到后山，竟然误入奇妙洞天，原来洞天中有个少女被困住了，你便搭了把手。她为了报答你，为你指了一条修行之路。你成为了一名「道童」。",
-    "EffectDesc": "气运+{0}，慧识+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256981",
+    "EffectDescStrKey": "ST:257306"
   },
   {
     "ID": 11120203,
@@ -5590,9 +5590,9 @@
       8091
     ],
     "ShowAtResult": true,
-    "EventDesc": "一个夜晚，你朦朦胧胧地从床上翻身下来，顺着一个声音的呼唤来到后山，却什么也没寻得，便在一片迷雾中倒下了。醒来之后，你发现你莫名其妙地回到了家里。",
-    "EffectDesc": "气运+{0}",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256982",
+    "EffectDescStrKey": "ST:257263"
   },
   {
     "ID": 11120204,
@@ -5609,8 +5609,8 @@
       99999
     ],
     "ShowAtResult": true,
-    "EventDesc": "一个夜晚，你朦朦胧胧地从床上翻身下来，顺着一个声音的呼唤来到后山，竟然误入奇妙洞天，却什么也没寻得，便在一片迷雾中倒下了，再也没有醒来。",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256983"
   },
   {
     "ID": 11120205,
@@ -5640,9 +5640,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你的家乡有一棵老银杏，你每日坐在树下，观察其枯荣并存的状态，心中若有所悟。阴阳相生，枯荣一体。领悟到这个道理时，你已经步入道门。你成为了一名「道童」。",
-    "EffectDesc": "气运+{0}，根骨+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256984",
+    "EffectDescStrKey": "ST:257281"
   },
   {
     "ID": 11120206,
@@ -5666,9 +5666,9 @@
       8090
     ],
     "ShowAtResult": true,
-    "EventDesc": "你的家乡有一棵老银杏，你每日坐在树下，观察其枯荣并存的状态，心中若有所悟。你知道这棵树肯定不一般！当天晚上，你把这棵树砍了下来。果然，里头住着几只偷鸡的貉子，当场跑走。附近的鸡舍一段时间都不再丢鸡了。",
-    "EffectDesc": "气运+{0}",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256985",
+    "EffectDescStrKey": "ST:257263"
   },
   {
     "ID": 12130016,
@@ -5697,9 +5697,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你天分极高，仙法修炼一日千里，真气日渐充盈。",
-    "EffectDesc": "气运+{0}，根骨+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:256934",
+    "EffectDescStrKey": "ST:257281"
   },
   {
     "ID": 12130017,
@@ -5718,9 +5718,9 @@
       5910,
       2190
     ],
-    "EventDesc": "是年胡人扣边，时局紧张，你思忖该练习下保命之法，学习了些江湖拳脚功夫。",
-    "EffectDesc": "体质+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256986",
+    "EffectDescStrKey": "ST:257255"
   },
   {
     "ID": 12130018,
@@ -5739,9 +5739,9 @@
       3997,
       5910
     ],
-    "EventDesc": "是年天降大旱，朝野内外气氛紧张。",
-    "EffectDesc": "体质-3，气运-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256987",
+    "EffectDescStrKey": "ST:257307"
   },
   {
     "ID": 12130019,
@@ -5764,9 +5764,9 @@
       5190,
       9090
     ],
-    "EventDesc": "西域商路畅通，往来商旅不断。",
-    "EffectDesc": "魅力+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256988",
+    "EffectDescStrKey": "ST:257262"
   },
   {
     "ID": 12130020,
@@ -5793,9 +5793,9 @@
       4190,
       8090
     ],
-    "EventDesc": "修仙无岁月，你继续苦修仙法，感悟天地之气。",
-    "EffectDesc": "气运+7",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256989",
+    "EffectDescStrKey": "ST:256856"
   },
   {
     "ID": 12130021,
@@ -5817,9 +5817,9 @@
       5909,
       2190
     ],
-    "EventDesc": "你拜访武馆与人交手练习，获益匪浅。",
-    "EffectDesc": "根骨+7",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256990",
+    "EffectDescStrKey": "ST:256853"
   },
   {
     "ID": 12130022,
@@ -5838,9 +5838,9 @@
       2005,
       5909
     ],
-    "EventDesc": "天下丰收，圣人颁诏庆贺。",
-    "EffectDesc": "根骨+5，体质+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256991",
+    "EffectDescStrKey": "ST:257300"
   },
   {
     "ID": 12130023,
@@ -5862,9 +5862,9 @@
       5909,
       1190
     ],
-    "EventDesc": "你文法理论日益精进，你觉得自己再学几年一定高中。",
-    "EffectDesc": "慧识+7",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256992",
+    "EffectDescStrKey": "ST:256854"
   },
   {
     "ID": 12130024,
@@ -5885,8 +5885,8 @@
       5909,
       900
     ],
-    "EventDesc": "你觉得应该趁年少外出闯荡一番，你出门远游。",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256993"
   },
   {
     "ID": 12130025,
@@ -5911,12 +5911,12 @@
       1007,
       5909
     ],
-    "EventDesc": "你登上{0}，俯瞰大地，豪迈之情油然而生。",
-    "EffectDesc": "体质+7",
     "Rarity": "Rarity_SR",
     "Params": [
       2003
-    ]
+    ],
+    "EventDescStrKey": "ST:256994",
+    "EffectDescStrKey": "ST:256852"
   },
   {
     "ID": 12130026,
@@ -5942,12 +5942,12 @@
       4003,
       5909
     ],
-    "EventDesc": "你造访{0}，随波逐流，感受到了自然之力。",
-    "EffectDesc": "根骨+5，气运+3",
     "Rarity": "Rarity_SR",
     "Params": [
       2004
-    ]
+    ],
+    "EventDescStrKey": "ST:256995",
+    "EffectDescStrKey": "ST:257308"
   },
   {
     "ID": 12130027,
@@ -5973,12 +5973,12 @@
       5007,
       5909
     ],
-    "EventDesc": "你拜访{0}，两人把酒言欢，引为知己。",
-    "EffectDesc": "慧识+3，魅力+7",
     "Rarity": "Rarity_SR",
     "Params": [
       2005
-    ]
+    ],
+    "EventDescStrKey": "ST:256996",
+    "EffectDescStrKey": "ST:257309"
   },
   {
     "ID": 12130028,
@@ -6002,9 +6002,9 @@
       5003,
       5909
     ],
-    "EventDesc": "你游毕归来，收获良多。",
-    "EffectDesc": "全属性+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256997",
+    "EffectDescStrKey": "ST:257310"
   },
   {
     "ID": 12130090,
@@ -6025,12 +6025,12 @@
       99999
     ],
     "ShowAtResult": true,
-    "EventDesc": "你患上了{0}，病重不治。",
-    "EffectDesc": "结局",
     "Rarity": "Rarity_R",
     "Params": [
       2017
-    ]
+    ],
+    "EventDescStrKey": "ST:256907",
+    "EffectDescStrKey": "ST:80488"
   },
   {
     "ID": 12130091,
@@ -6055,12 +6055,12 @@
       4005,
       5909
     ],
-    "EventDesc": "你患上了{0}，幸而体质康健，转危为安。",
-    "EffectDesc": "体质-3，气运+5",
     "Rarity": "Rarity_SR",
     "Params": [
       2017
-    ]
+    ],
+    "EventDescStrKey": "ST:256908",
+    "EffectDescStrKey": "ST:257269"
   },
   {
     "ID": 12130092,
@@ -6085,12 +6085,12 @@
       2003,
       5909
     ],
-    "EventDesc": "你患上了{0}，幸而福星庇佑，病愈后身体更胜往日。",
-    "EffectDesc": "体质+3，根骨+3，",
     "Rarity": "Rarity_SR",
     "Params": [
       2017
-    ]
+    ],
+    "EventDescStrKey": "ST:256909",
+    "EffectDescStrKey": "ST:257270"
   },
   {
     "ID": 12130093,
@@ -6112,12 +6112,12 @@
       4003,
       5909
     ],
-    "EventDesc": "你患上了{0}，幸而有神秘人路过，赐道法一本，你修行后病气渐愈。",
-    "EffectDesc": "体质-3，气运+3",
     "Rarity": "Rarity_SR",
     "Params": [
       2017
-    ]
+    ],
+    "EventDescStrKey": "ST:256910",
+    "EffectDescStrKey": "ST:257271"
   },
   {
     "ID": 12130094,
@@ -6142,12 +6142,12 @@
       1997,
       5910
     ],
-    "EventDesc": "你患上了{0}，小病一场。",
-    "EffectDesc": "体质-3，根骨-3",
     "Rarity": "Rarity_R",
     "Params": [
       2017
-    ]
+    ],
+    "EventDescStrKey": "ST:256911",
+    "EffectDescStrKey": "ST:257272"
   },
   {
     "ID": 12130110,
@@ -6175,9 +6175,9 @@
       1190,
       10091
     ],
-    "EventDesc": "你在学校中学习用功，受到先生表扬。",
-    "EffectDesc": "体质+3，慧识+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256998",
+    "EffectDescStrKey": "ST:257278"
   },
   {
     "ID": 12130111,
@@ -6204,9 +6204,9 @@
       1190,
       10090
     ],
-    "EventDesc": "你在学习一般，勉强跟上学业。",
-    "EffectDesc": "慧识+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:256999",
+    "EffectDescStrKey": "ST:257256"
   },
   {
     "ID": 12130112,
@@ -6232,9 +6232,9 @@
       5910,
       9910
     ],
-    "EventDesc": "你在学校中学习不能说是十分优秀，也只能是一塌糊涂。",
-    "EffectDesc": "慧识+1，魅力-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257000",
+    "EffectDescStrKey": "ST:257311"
   },
   {
     "ID": 12130113,
@@ -6262,9 +6262,9 @@
       2190,
       7091
     ],
-    "EventDesc": "你在学校中无心学习，却喜舞刀弄剑。",
-    "EffectDesc": "根骨+3.魅力-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257001",
+    "EffectDescStrKey": "ST:257312"
   },
   {
     "ID": 12130114,
@@ -6292,9 +6292,9 @@
       1190,
       10090
     ],
-    "EventDesc": "经史子集对你来说过于高深，你学业进展缓慢，但靠着运气侥幸通过了数次考核。",
-    "EffectDesc": "体质+3，魅力+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257002",
+    "EffectDescStrKey": "ST:257313"
   },
   {
     "ID": 12130115,
@@ -6328,9 +6328,9 @@
       10092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你的名声在名士之间广为流传，经过名士举荐，你也博得了一官半职，加入了「官吏」行列。",
-    "EffectDesc": "魅力+5，慧识+5，体质+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257003",
+    "EffectDescStrKey": "ST:257314"
   },
   {
     "ID": 12130116,
@@ -6357,9 +6357,9 @@
       9102
     ],
     "ShowAtResult": true,
-    "EventDesc": "你的名声在名士之间广为流传，但并没有人愿意举荐你。没关系，名声打出去了比啥都强。",
-    "EffectDesc": "魅力+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257004",
+    "EffectDescStrKey": "ST:257262"
   },
   {
     "ID": 12130117,
@@ -6394,9 +6394,9 @@
       10092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你来参加科考，几经努力，金榜题名，你成为了一名「官吏」，春风得意马蹄疾，就等走马上任的那一天了。",
-    "EffectDesc": "体质+5，慧识+5，气运+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257005",
+    "EffectDescStrKey": "ST:257315"
   },
   {
     "ID": 12130118,
@@ -6424,9 +6424,9 @@
       10090
     ],
     "ShowAtResult": true,
-    "EventDesc": "你来参加科考，几经努力，但天不遂人愿，你名落孙山。",
-    "EffectDesc": "气运-3，慧识+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257006",
+    "EffectDescStrKey": "ST:257316"
   },
   {
     "ID": 12130119,
@@ -6449,9 +6449,9 @@
       11091
     ],
     "ShowAtResult": true,
-    "EventDesc": "当官实在太累了，你决心辞官，以成为名士为自己的目标。",
-    "EffectDesc": "体质-3，慧识+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257007",
+    "EffectDescStrKey": "ST:257317"
   },
   {
     "ID": 12130120,
@@ -6473,9 +6473,9 @@
       5910
     ],
     "ShowAtResult": true,
-    "EventDesc": "当官实在太累了，以成为武者为自己的目标。",
-    "EffectDesc": "体质-3，根骨+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257008",
+    "EffectDescStrKey": "ST:257318"
   },
   {
     "ID": 12130121,
@@ -6497,9 +6497,9 @@
       5910
     ],
     "ShowAtResult": true,
-    "EventDesc": "当官实在太累了，以成为富商为自己的目标。",
-    "EffectDesc": "体质-3，魅力+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257009",
+    "EffectDescStrKey": "ST:257319"
   },
   {
     "ID": 12130140,
@@ -6533,13 +6533,13 @@
       3191,
       11092
     ],
-    "EventDesc": "多年的经历让你多了一些人生感悟，一日酒后诗意大发，写下一篇《{0}{1}》，众人喝彩。",
-    "EffectDesc": "慧识+{0}，魅力+5",
     "Rarity": "Rarity_SSR",
     "Params": [
       2008,
       2009
-    ]
+    ],
+    "EventDescStrKey": "ST:257010",
+    "EffectDescStrKey": "ST:257292"
   },
   {
     "ID": 12130141,
@@ -6573,9 +6573,9 @@
       9105,
       10910
     ],
-    "EventDesc": "虽然你年少立志做一名诗人，但是久未得名，一日你酒后郁郁在酒楼题下反诗，被抓入牢中关了半年。",
-    "EffectDesc": "慧识+3，魅力-5，体质-5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257011",
+    "EffectDescStrKey": "ST:257320"
   },
   {
     "ID": 12130142,
@@ -6608,9 +6608,9 @@
       3191,
       11092
     ],
-    "EventDesc": "你对当代名家作品进行了批判，作家听后发出了尖锐的爆鸣，不过众人认为你说的在理。",
-    "EffectDesc": "慧识+3，魅力+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257012",
+    "EffectDescStrKey": "ST:257286"
   },
   {
     "ID": 12130143,
@@ -6643,9 +6643,9 @@
       3191,
       11091
     ],
-    "EventDesc": "你与同乡文人坐而论诗，提高了学识。",
-    "EffectDesc": "慧识+5，魅力+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257013",
+    "EffectDescStrKey": "ST:257267"
   },
   {
     "ID": 12130144,
@@ -6678,9 +6678,9 @@
       9092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你写的一手好字，坊市商户经常请你来写牌匾，你于是干脆做起了生意，成为了一名字画铺「掌柜」。",
-    "EffectDesc": "慧识+5，气运+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257014",
+    "EffectDescStrKey": "ST:257321"
   },
   {
     "ID": 12130145,
@@ -6708,9 +6708,9 @@
       3191
     ],
     "ShowAtResult": true,
-    "EventDesc": "干谒之风盛行，你为了谋取官职写诗呈给贵人，虽然诗文在京内流传，你的前途却无人问津。",
-    "EffectDesc": "慧识+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257015",
+    "EffectDescStrKey": "ST:257256"
   },
   {
     "ID": 12130146,
@@ -6742,9 +6742,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "世间纷扰令你感到非常无趣，于是你决定试试隐居山林，以求清心明志。你在隐居的山洞发现一本修仙法门，开始修炼仙法，成为了一名「修仙者」。",
-    "EffectDesc": "根骨+5，气运+10",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257016",
+    "EffectDescStrKey": "ST:257322"
   },
   {
     "ID": 12130147,
@@ -6773,9 +6773,9 @@
       8090
     ],
     "ShowAtResult": true,
-    "EventDesc": "世间纷扰令你感到非常无趣，于是你决定试试隐居山林，以求清心明志。但人果然是社会性动物。你隐居了没两天便下了山，但你觉得有可能是此山不宜居住的缘故。",
-    "EffectDesc": "根骨-3，慧识+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257017",
+    "EffectDescStrKey": "ST:257323"
   },
   {
     "ID": 12130148,
@@ -6807,9 +6807,9 @@
       10092
     ],
     "ShowAtResult": true,
-    "EventDesc": "世间纷扰令你感到非常无趣，于是你决定试试隐居山林，以求清心明志。一日你在山林间救助了一只白猴，白猴指引你找到了一本修仙功法，你开始作为「修仙者」修行。",
-    "EffectDesc": "魅力+5，体质+5，气运+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257018",
+    "EffectDescStrKey": "ST:257324"
   },
   {
     "ID": 12130149,
@@ -6842,12 +6842,12 @@
       11092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你听说天下隐士都爱在{0}定居，准备效仿，却发现房子比京城的还难买！但那又咋了？有钱能使鬼推磨！今天开始你也是「隐士」啦！。",
-    "EffectDesc": "根骨-3，魅力+10",
     "Rarity": "Rarity_SR",
     "Params": [
       2003
-    ]
+    ],
+    "EventDescStrKey": "ST:257019",
+    "EffectDescStrKey": "ST:257325"
   },
   {
     "ID": 12130150,
@@ -6876,12 +6876,12 @@
       11091
     ],
     "ShowAtResult": true,
-    "EventDesc": "你听说天下隐士都爱在{0}定居，准备效仿，却发现房子比京城的还难买！果真买不起，但隐居的事能用钱来衡量吗？不住也罢！。",
-    "EffectDesc": "根骨+3，慧识+3",
     "Rarity": "Rarity_SR",
     "Params": [
       2003
-    ]
+    ],
+    "EventDescStrKey": "ST:257020",
+    "EffectDescStrKey": "ST:257276"
   },
   {
     "ID": 12130151,
@@ -6915,12 +6915,12 @@
       10092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你听说天下隐士都爱在{0}定居，准备效仿，却发现房子比京城的还难买！虽然买房耗尽了家财，但李白说得好，千金散尽还复来。此地人杰地灵，激发了你的创作灵感，你不久便创作出数篇佳作，成为了一名「士人」。",
-    "EffectDesc": "魅力+5，气运+5，慧识+10",
     "Rarity": "Rarity_SSR",
     "Params": [
       2003
-    ]
+    ],
+    "EventDescStrKey": "ST:257021",
+    "EffectDescStrKey": "ST:257326"
   },
   {
     "ID": 12130152,
@@ -6952,13 +6952,13 @@
       11092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你受邀参加文会，席间见景生情，写下《{0}{1}》，在县内大获好评，声名远扬，大家都说你是一名优秀的「士人」。",
-    "EffectDesc": "慧识+10，魅力+5，",
     "Rarity": "Rarity_SSR",
     "Params": [
       2014,
       2015
-    ]
+    ],
+    "EventDescStrKey": "ST:257022",
+    "EffectDescStrKey": "ST:257327"
   },
   {
     "ID": 12130153,
@@ -6986,9 +6986,9 @@
       11090
     ],
     "ShowAtResult": true,
-    "EventDesc": "你受邀参加文会，席间见景生情，吟出一首绝句，但文会过后这优秀的组诗并没有人过问。",
-    "EffectDesc": "慧识+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257023",
+    "EffectDescStrKey": "ST:257251"
   },
   {
     "ID": 12130154,
@@ -7019,9 +7019,9 @@
       11092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你花了大笔钱踏上了游历之路，造访名山大川，陶冶情操。竟然让你在路上偶遇了李白！你与李白对酒高歌，分开之后，他结合你们所讨论的内容给你写了一首诗。你因为这首诗一举成名，人们认同你是一名「士人」。",
-    "EffectDesc": "魅力+10，慧识+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257024",
+    "EffectDescStrKey": "ST:257328"
   },
   {
     "ID": 12130155,
@@ -7053,9 +7053,9 @@
       10092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你花了大笔钱踏上了游历之路，造访名山大川，陶冶情操。你沉醉在山水美景当中，竟然让你在路上偶遇了出来游玩的亲王！亲王被你的底蕴深深打动，邀请你做官，你欣然接受，成为了一名「官吏」。",
-    "EffectDesc": "气运+{0}，体质+{1}",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257025",
+    "EffectDescStrKey": "ST:257329"
   },
   {
     "ID": 12130161,
@@ -7086,9 +7086,9 @@
       2190,
       7092
     ],
-    "EventDesc": "你在军中因训练用功，战斗勇猛被任命为队正。",
-    "EffectDesc": "根骨+7",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257026",
+    "EffectDescStrKey": "ST:256853"
   },
   {
     "ID": 12130162,
@@ -7116,9 +7116,9 @@
       5910,
       7090
     ],
-    "EventDesc": "你在军中混迹多年，已然明白活下去才是硬道理成为了一名兵油子。",
-    "EffectDesc": "体质+{0}，气运+3，魅力-5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257027",
+    "EffectDescStrKey": "ST:257330"
   },
   {
     "ID": 12130163,
@@ -7152,9 +7152,9 @@
       2190,
       7091
     ],
-    "EventDesc": "在一次作战中，你冲锋在前，为流矢所伤，受到旅帅表扬。",
-    "EffectDesc": "体质-3，根骨+3，魅力+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257028",
+    "EffectDescStrKey": "ST:257331"
   },
   {
     "ID": 12130164,
@@ -7187,9 +7187,9 @@
       7092
     ],
     "ShowAtResult": true,
-    "EventDesc": "在一次作战中你表现勇猛，先登敌城，斩将夺旗，授勋三转飞骑尉。",
-    "EffectDesc": "根骨+{0}，体质+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257029",
+    "EffectDescStrKey": "ST:257295"
   },
   {
     "ID": 12130165,
@@ -7222,9 +7222,9 @@
       2190,
       7091
     ],
-    "EventDesc": "你在江湖上行侠仗义，渐渐闯出了一些名气。",
-    "EffectDesc": "根骨+{0}，魅力+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257030",
+    "EffectDescStrKey": "ST:257332"
   },
   {
     "ID": 12130166,
@@ -7256,9 +7256,9 @@
       2190,
       7091
     ],
-    "EventDesc": "你在江湖上屡次出手，虽收货了一些名气，也落得一身伤。",
-    "EffectDesc": "体质-3，根骨+7",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257031",
+    "EffectDescStrKey": "ST:257333"
   },
   {
     "ID": 12130167,
@@ -7290,9 +7290,9 @@
       2190,
       7090
     ],
-    "EventDesc": "你在帮助村落抵御盗匪不幸中箭，侥幸存活。",
-    "EffectDesc": "体质-5，气运-3,",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257032",
+    "EffectDescStrKey": "ST:257334"
   },
   {
     "ID": 12130168,
@@ -7325,9 +7325,9 @@
       5910,
       7090
     ],
-    "EventDesc": "多年的打打杀杀让你明白江湖也是人情世故。",
-    "EffectDesc": "根骨-5，慧识+5，魅力+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257033",
+    "EffectDescStrKey": "ST:257335"
   },
   {
     "ID": 12130169,
@@ -7359,9 +7359,9 @@
       7092
     ],
     "ShowAtResult": true,
-    "EventDesc": "江湖召开武林大会，每个人都能在会上一展身手。你一鸣惊人，从今往后的江湖多了一名「豪杰」。",
-    "EffectDesc": "根骨+{0}，体质+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257034",
+    "EffectDescStrKey": "ST:257295"
   },
   {
     "ID": 12130170,
@@ -7389,9 +7389,9 @@
       7091
     ],
     "ShowAtResult": true,
-    "EventDesc": "江湖召开武林大会，你的表现平平，但这并没有动摇你成为侠者的决心。",
-    "EffectDesc": "根骨+{0}，体质+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257035",
+    "EffectDescStrKey": "ST:257336"
   },
   {
     "ID": 12130171,
@@ -7417,9 +7417,9 @@
       7090
     ],
     "ShowAtResult": true,
-    "EventDesc": "江湖召开武林大会，你状态不好，躲闪不及被打成重伤。",
-    "EffectDesc": "体质-10，寿命-5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257036",
+    "EffectDescStrKey": "ST:257337"
   },
   {
     "ID": 12130172,
@@ -7452,9 +7452,9 @@
       7092
     ],
     "ShowAtResult": true,
-    "EventDesc": "天啊，那九仪天尊剑竟然又丢了！你奉师之命去寻找九仪天尊剑，聪明的你在剑气氤氲之处放下了好酒十坛，将九仪天尊剑成功勾引出来。世人皆知九仪天尊剑被你寻得，你成为了一名「豪杰」。",
-    "EffectDesc": "根骨+{0}，慧识+5，体质+7",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257037",
+    "EffectDescStrKey": "ST:257338"
   },
   {
     "ID": 12130173,
@@ -7480,9 +7480,9 @@
       7090
     ],
     "ShowAtResult": true,
-    "EventDesc": "天啊，那九仪天尊剑竟然又丢了！你奉师之命去寻找九仪天尊剑，你和其他弟子合力寻找，却在剑气氤氲处停滞，难以继续开展搜索任务。最终，九仪天尊剑被掌门师傅找到了。",
-    "EffectDesc": "根骨+{0}",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257038",
+    "EffectDescStrKey": "ST:257240"
   },
   {
     "ID": 12130174,
@@ -7514,9 +7514,9 @@
       7092
     ],
     "ShowAtResult": true,
-    "EventDesc": "军队广招人才，像你这样的江湖剑客也可以去碰碰运气。将军尤为欣赏你的能力，封你为团中「副将」。",
-    "EffectDesc": "根骨+{0}，体质+3，魅力+3",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257039",
+    "EffectDescStrKey": "ST:257339"
   },
   {
     "ID": 12130175,
@@ -7544,9 +7544,9 @@
       7091
     ],
     "ShowAtResult": true,
-    "EventDesc": "军队广招人才，像你这样的江湖剑客也可以去碰碰运气。但你运气不好，没能加入军队中。继续当个侠吧。",
-    "EffectDesc": "根骨+{0}，体质+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257040",
+    "EffectDescStrKey": "ST:257336"
   },
   {
     "ID": 12130176,
@@ -7577,9 +7577,9 @@
       7092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你所居住的地方有山贼之患，在一次山贼入侵时，你跟随军队击退了山贼并端了其老巢，你的义举传到了军官耳朵里，你被破格提拔为团中「副将」。",
-    "EffectDesc": "体质+10，根骨+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257041",
+    "EffectDescStrKey": "ST:257340"
   },
   {
     "ID": 12130177,
@@ -7610,9 +7610,9 @@
       7092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你所居住的地方有山贼之患，在一次山贼入侵时，你自忖当为民除害，仗义出手，协助官军解决了匪患。你成为了「豪杰」。",
-    "EffectDesc": "根骨+5，体质+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257042",
+    "EffectDescStrKey": "ST:257299"
   },
   {
     "ID": 12130178,
@@ -7638,9 +7638,9 @@
       7090
     ],
     "ShowAtResult": true,
-    "EventDesc": "你所居住的地方有山贼之患，在一次山贼入侵时，你被山贼乱刀杀害，结束了庸庸碌碌的一生。",
-    "EffectDesc": "结局",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257043",
+    "EffectDescStrKey": "ST:80488"
   },
   {
     "ID": 12130191,
@@ -7674,9 +7674,9 @@
       9092
     ],
     "ShowAtResult": true,
-    "EventDesc": "这些年的努力让你积累了一些财富。你找准了当下长安最有钱途的行当，买了个铺子。你成为了「掌柜」。",
-    "EffectDesc": "魅力+{0}，慧识+3，体质+3",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257044",
+    "EffectDescStrKey": "ST:257304"
   },
   {
     "ID": 12130192,
@@ -7703,9 +7703,9 @@
       8910
     ],
     "ShowAtResult": true,
-    "EventDesc": "这些年的努力让你积累了一些财富。但这些钱被你错误地投资给了没前途的行当，你的前景一片大差。",
-    "EffectDesc": "魅力+{0}",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257045",
+    "EffectDescStrKey": "ST:257241"
   },
   {
     "ID": 12130193,
@@ -7739,9 +7739,9 @@
       9092
     ],
     "ShowAtResult": true,
-    "EventDesc": "随着政策大变，市场经济也发生了重大动荡。不过再动荡都无法动摇你的运气。你趁机大赚一笔，在长安买了个铺子，成为了一名「掌柜」。",
-    "EffectDesc": "魅力+{0}，慧识+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257046",
+    "EffectDescStrKey": "ST:257341"
   },
   {
     "ID": 12130194,
@@ -7771,9 +7771,9 @@
       9091
     ],
     "ShowAtResult": true,
-    "EventDesc": "随着政策大变，市场经济也发生了重大动荡。你拼尽全力才从这次风波中挺了下来。",
-    "EffectDesc": "魅力+{0}",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257047",
+    "EffectDescStrKey": "ST:257241"
   },
   {
     "ID": 12130195,
@@ -7797,8 +7797,8 @@
       99999
     ],
     "ShowAtResult": true,
-    "EventDesc": "随着政策大变，市场经济也发生了重大动荡。动荡狠狠地波及了你和你的家庭，你无力应对，不得不变卖家产。生活落差太大，你抑郁而死。",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257048"
   },
   {
     "ID": 12130196,
@@ -7832,9 +7832,9 @@
       10092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你心中仍有做官梦。你花光了钱财，买通了上下，改去了你的市籍，你成为了一名「官吏」。",
-    "EffectDesc": "魅力+{0}，慧识+3，体质+3",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257049",
+    "EffectDescStrKey": "ST:257304"
   },
   {
     "ID": 12130197,
@@ -7864,12 +7864,12 @@
       11091
     ],
     "ShowAtResult": true,
-    "EventDesc": "你心中仍有做官梦。但是你的钱和你的梦都不足以打动官吏。你失望之余决定隐居，你用攒来的钱财在{0}脚下置办了一个院子，成为了一名「隐士」",
-    "EffectDesc": "魅力+{0}，体质+3",
     "Rarity": "Rarity_SR",
     "Params": [
       2003
-    ]
+    ],
+    "EventDescStrKey": "ST:257050",
+    "EffectDescStrKey": "ST:257342"
   },
   {
     "ID": 12130198,
@@ -7903,9 +7903,9 @@
       9092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你从你爸那学来了碧眼识珠的技能，可对货摊上的宝石主动使用，不消耗任何气力值，成功几率受你的智力水平影响。你利用这个技能从长安鬼市淘来了许多宝贝，所换得的财富使你成为了西市一家珠宝摊的「掌柜」。\n。",
-    "EffectDesc": "魅力+{0}，慧识+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257051",
+    "EffectDescStrKey": "ST:257341"
   },
   {
     "ID": 12130199,
@@ -7937,9 +7937,9 @@
       9091
     ],
     "ShowAtResult": true,
-    "EventDesc": "你从你爸那学来了碧眼识珠的技能，可对货摊上的宝石主动使用，不消耗任何气力值，成功几率受你的智力水平影响。但你可能自小就不爱学习，没能很好地运用这个技能。不过好在你运气不错，买到了一些漂亮珠宝赚了小钱。",
-    "EffectDesc": "魅力+{0}，慧识+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257052",
+    "EffectDescStrKey": "ST:257302"
   },
   {
     "ID": 12130200,
@@ -7965,8 +7965,8 @@
       9090
     ],
     "ShowAtResult": true,
-    "EventDesc": "你从你爸那学来了碧眼识珠的技能，可对货摊上的宝石主动使用，不消耗任何气力值，成功几率受你的智力水平影响。可你又没文化运气又差，这几年啥也没淘到还败光了家财。你灰溜溜地离开了这个国度，提前结束了在大唐的人生。",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257053"
   },
   {
     "ID": 12130220,
@@ -8002,9 +8002,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你觉得自己的修仙之路需要找个师傅带一带，兴许可以少走一些弯路。于是你来到了三清山，师傅见你五官端正面色如玉，又见你一身正气，对你的修仙之志颇为赞许。你拜入门下，成为了正儿八经的「修仙者」。",
-    "EffectDesc": "气运+{0}，根骨+3，慧识+3",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257054",
+    "EffectDescStrKey": "ST:257343"
   },
   {
     "ID": 12130221,
@@ -8035,9 +8035,9 @@
       8091
     ],
     "ShowAtResult": true,
-    "EventDesc": "你觉得自己的修仙之路需要找个师傅带一带，兴许可以少走一些弯路。于是你来到了三清山，但众师傅没看出你的仙骨有多清奇，拜师计划落空了。无所谓，刷个脸也好，还能当散修。",
-    "EffectDesc": "气运+{0}，根骨+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257055",
+    "EffectDescStrKey": "ST:257344"
   },
   {
     "ID": 12130222,
@@ -8072,9 +8072,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "修仙第一剑，先斩意中人！虽然不需要你真来执剑杀人，但若真想成仙，确实不好一直牵挂妻儿。不管你之前有没有老婆，踏上修仙之路以后你就没有了。你成为了一名合格的「修仙者」。",
-    "EffectDesc": "气运+{0}，根骨+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257056",
+    "EffectDescStrKey": "ST:257281"
   },
   {
     "ID": 12130223,
@@ -8102,9 +8102,9 @@
       8091
     ],
     "ShowAtResult": true,
-    "EventDesc": "修仙第一剑，先斩意中人！虽然不需要你真来执剑杀人，但若真想成仙，确实不好一直牵挂妻儿。只怪你情深义重，今后恐怕还会继续为此困扰下去。但不管怎么说，你稍微明确了自己的目标。",
-    "EffectDesc": "根骨+5，魅力+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257057",
+    "EffectDescStrKey": "ST:257345"
   },
   {
     "ID": 12130224,
@@ -8137,9 +8137,9 @@
       7092
     ],
     "ShowAtResult": true,
-    "EventDesc": "修仙第一剑，先斩意中人！虽然不需要你真来执剑杀人，但若真想成仙，确实不好一直牵挂妻儿,沉迷美色你乐意，大不了这仙不修了！提剑，下山！当大侠去！你成为了一名「豪杰」。",
-    "EffectDesc": "根骨+5，体质+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257058",
+    "EffectDescStrKey": "ST:257299"
   },
   {
     "ID": 12130225,
@@ -8176,9 +8176,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你拿到了一份丹药配方，叫什么超级历练丹。你知道这个丹药能够大大加强修为，但必须长期专注其中。经过长时间的修炼，炼丹亦炼心，你成为了一名正儿八经的「修仙者」。",
-    "EffectDesc": "气运+{0}，根骨+3，慧识+3",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257059",
+    "EffectDescStrKey": "ST:257343"
   },
   {
     "ID": 12130226,
@@ -8210,9 +8210,9 @@
       9092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你拿到了一份丹药配方，叫什么超级历练丹。你照着这份配方炼丹，奈何制丹时间太长，你实在坐不住。你试着缩短了丹药炼制时间，竟然炼出了一味效果极佳的药丹来，可用于治些小病。你从中寻得商机，开起了药铺，成为一名「掌柜」。",
-    "EffectDesc": "气运+{0}，魅力+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257060",
+    "EffectDescStrKey": "ST:257346"
   },
   {
     "ID": 12130227,
@@ -8243,9 +8243,9 @@
       8091
     ],
     "ShowAtResult": true,
-    "EventDesc": "你拿到了一份丹药配方，叫什么超级历练丹。炼丹时间长、收益小，你实在坐不住。不过你也吸收了一些丹气。",
-    "EffectDesc": "根骨+{0}，体质+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257061",
+    "EffectDescStrKey": "ST:257336"
   },
   {
     "ID": 12130228,
@@ -8281,8 +8281,8 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你听说最近总有人在某山道上失踪。为了救人你前去一探究竟，竟然让你发现了一座古墓。在古墓中你见到了一位仙姑，她邀请你留在墓中一同修道。你从此成为了一名正儿八经的「修仙者」。",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257062"
   },
   {
     "ID": 12130229,
@@ -8313,8 +8313,8 @@
       8091
     ],
     "ShowAtResult": true,
-    "EventDesc": "你听说最近总有人在某山道上失踪。为了救人你前去一探究竟，竟然让你发现了一座古墓。果然让你在山道上找到了害人的精怪！你干掉了为祸人间的妖怪。",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257063"
   },
   {
     "ID": 12130230,
@@ -8340,8 +8340,8 @@
       8090
     ],
     "ShowAtResult": true,
-    "EventDesc": "你听说最近总有人在某山道上失踪。为了救人你前去一探究竟，竟然让你发现了一座古墓。果然让你在山道上找到了害人的精怪！但你随即也被妖怪给吃了。",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257064"
   },
   {
     "ID": 13140010,
@@ -8366,9 +8366,9 @@
       3003,
       5909
     ],
-    "EventDesc": "你听闻西南有处奇山风景秀丽，决定前往游历一番。抵达后果然风景优美，你感到心旷神怡。",
-    "EffectDesc": "慧识+3，体质+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257065",
+    "EffectDescStrKey": "ST:257289"
   },
   {
     "ID": 13140011,
@@ -8386,9 +8386,9 @@
       99999
     ],
     "ShowAtResult": true,
-    "EventDesc": "你听闻西南有处奇山风景秀丽，决定前往游历一番。路遇山匪，不幸被害。",
-    "EffectDesc": "结局",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257066",
+    "EffectDescStrKey": "ST:80488"
   },
   {
     "ID": 13140012,
@@ -8416,9 +8416,9 @@
       5190,
       9091
     ],
-    "EventDesc": "西域商路畅通，往来商旅不断，你感到自己生活越来越有盼头。",
-    "EffectDesc": "寿命+3，体质+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257067",
+    "EffectDescStrKey": "ST:257347"
   },
   {
     "ID": 13140013,
@@ -8446,9 +8446,9 @@
       5090,
       5909
     ],
-    "EventDesc": "省部发求贤诏，你身怀一技之长，揭榜应诏完成任务，获得了奖励。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257068",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 13140014,
@@ -8471,9 +8471,9 @@
       3003,
       5909
     ],
-    "EventDesc": "你听闻官军大破胡人，你倍感振奋。",
-    "EffectDesc": "根骨+3，慧识+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257069",
+    "EffectDescStrKey": "ST:257276"
   },
   {
     "ID": 13140015,
@@ -8492,9 +8492,9 @@
       4997,
       5910
     ],
-    "EventDesc": "坊市上流传官军与胡人交战兵败的消息，人心惶惶。",
-    "EffectDesc": "魅力-3,，体质+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257070",
+    "EffectDescStrKey": "ST:257349"
   },
   {
     "ID": 13140016,
@@ -8520,9 +8520,9 @@
       4190,
       8091
     ],
-    "EventDesc": "修仙无岁月，你继续苦修仙法，在一日灵感迸发，天现异色，你的修为突飞猛进",
-    "EffectDesc": "气运+10",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257071",
+    "EffectDescStrKey": "ST:257254"
   },
   {
     "ID": 13140017,
@@ -8551,9 +8551,9 @@
       4190,
       8092
     ],
-    "EventDesc": "修仙无岁月，你继续苦修仙法，感悟天地之气。",
-    "EffectDesc": "气运+(0)，体质+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:256989",
+    "EffectDescStrKey": "ST:257350"
   },
   {
     "ID": 13140018,
@@ -8571,9 +8571,9 @@
       3995,
       5910
     ],
-    "EventDesc": "你在城中行走时，见到有西域胡人售卖器物，你见猎心喜，不想买到了假货。",
-    "EffectDesc": "气运-5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257072",
+    "EffectDescStrKey": "ST:257351"
   },
   {
     "ID": 13140019,
@@ -8597,9 +8597,9 @@
       2003,
       5909
     ],
-    "EventDesc": "今年天下丰收，圣人颁诏庆贺。",
-    "EffectDesc": "体质+5，根骨+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257073",
+    "EffectDescStrKey": "ST:257352"
   },
   {
     "ID": 13140020,
@@ -8622,9 +8622,9 @@
       5909,
       3191
     ],
-    "EventDesc": "你与友人坐而论道，收获颇多。",
-    "EffectDesc": "慧识+5，魅力+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257074",
+    "EffectDescStrKey": "ST:257267"
   },
   {
     "ID": 13140021,
@@ -8647,9 +8647,9 @@
       5909,
       2190
     ],
-    "EventDesc": "你拜访城中武馆，学习了一套拳法。",
-    "EffectDesc": "根骨+5，气运+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257075",
+    "EffectDescStrKey": "ST:257308"
   },
   {
     "ID": 13140022,
@@ -8666,9 +8666,9 @@
     "EffectIds": [
       6003
     ],
-    "EventDesc": "多年的事务让你身心俱疲，你觉得应该外出远游放松一下。",
-    "EffectDesc": "寿命+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257076",
+    "EffectDescStrKey": "ST:257274"
   },
   {
     "ID": 13140023,
@@ -8689,12 +8689,12 @@
       1005,
       5910
     ],
-    "EventDesc": "你登上{0}，俯瞰大地，豪迈之情油然而生。",
-    "EffectDesc": "体质+5",
     "Rarity": "Rarity_R",
     "Params": [
       2003
-    ]
+    ],
+    "EventDescStrKey": "ST:256994",
+    "EffectDescStrKey": "ST:257244"
   },
   {
     "ID": 13140024,
@@ -8716,12 +8716,12 @@
       4003,
       5910
     ],
-    "EventDesc": "你造访{0}，随波逐流，感受到了自然之力。",
-    "EffectDesc": "根骨+3，气运+3",
     "Rarity": "Rarity_R",
     "Params": [
       2004
-    ]
+    ],
+    "EventDescStrKey": "ST:256995",
+    "EffectDescStrKey": "ST:257268"
   },
   {
     "ID": 13140025,
@@ -8743,12 +8743,12 @@
       5003,
       5910
     ],
-    "EventDesc": "你拜访{0}，两人把酒言欢，引为知己。",
-    "EffectDesc": "慧识+3，魅力+3",
     "Rarity": "Rarity_R",
     "Params": [
       2005
-    ]
+    ],
+    "EventDescStrKey": "ST:256996",
+    "EffectDescStrKey": "ST:257294"
   },
   {
     "ID": 13140090,
@@ -8769,12 +8769,12 @@
       99999
     ],
     "ShowAtResult": true,
-    "EventDesc": "你出门行走在街道上突然一架马车飞驰而来把你创死了。",
-    "EffectDesc": "结局",
     "Rarity": "Rarity_R",
     "Params": [
       2017
-    ]
+    ],
+    "EventDescStrKey": "ST:257090",
+    "EffectDescStrKey": "ST:80488"
   },
   {
     "ID": 13140091,
@@ -8799,12 +8799,12 @@
       4003,
       5910
     ],
-    "EventDesc": "你患上了{0}，幸而体质康健，转危为安。",
-    "EffectDesc": "根骨-3，气运+3",
     "Rarity": "Rarity_SR",
     "Params": [
       2017
-    ]
+    ],
+    "EventDescStrKey": "ST:256908",
+    "EffectDescStrKey": "ST:257362"
   },
   {
     "ID": 13140092,
@@ -8830,12 +8830,12 @@
       2003,
       5910
     ],
-    "EventDesc": "你患上了{0}，幸而福星庇佑，病愈后身体更胜往日。",
-    "EffectDesc": "体质+3，根骨+3",
     "Rarity": "Rarity_R",
     "Params": [
       2017
-    ]
+    ],
+    "EventDescStrKey": "ST:256909",
+    "EffectDescStrKey": "ST:257363"
   },
   {
     "ID": 13140110,
@@ -8861,9 +8861,9 @@
       5910,
       9909
     ],
-    "EventDesc": "你为官以来为名利所困，考课中被评为下等，受到刑责。",
-    "EffectDesc": "体质-3，慧识+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257077",
+    "EffectDescStrKey": "ST:257266"
   },
   {
     "ID": 13140111,
@@ -8889,9 +8889,9 @@
       5909,
       10090
     ],
-    "EventDesc": "你为官以来碌碌无为，考课中取得一般评价。",
-    "EffectDesc": "体质+3，气运+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257078",
+    "EffectDescStrKey": "ST:257353"
   },
   {
     "ID": 13140112,
@@ -8922,9 +8922,9 @@
       10092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你处事公正，颇受百姓好评，考课中取得优异评价。",
-    "EffectDesc": "体质+5，慧识+5，气运+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257079",
+    "EffectDescStrKey": "ST:257315"
   },
   {
     "ID": 13140113,
@@ -8950,9 +8950,9 @@
       5910,
       9909
     ],
-    "EventDesc": "你最近处理事务时犯了错，考课被评为下等，受到上级责罚。",
-    "EffectDesc": "体质-3，魅力+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257080",
+    "EffectDescStrKey": "ST:257319"
   },
   {
     "ID": 13140140,
@@ -8984,9 +8984,9 @@
       11092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你将几年来写的诗收集编了一本诗集，传至宫中，受到圣人赞赏。",
-    "EffectDesc": "慧识+10，魅力+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257087",
+    "EffectDescStrKey": "ST:257359"
   },
   {
     "ID": 13140141,
@@ -9013,9 +9013,9 @@
       3191,
       11090
     ],
-    "EventDesc": "你这几年来灵感寥寥，没写出几首好诗。",
-    "EffectDesc": "慧识+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257088",
+    "EffectDescStrKey": "ST:257251"
   },
   {
     "ID": 13140142,
@@ -9046,9 +9046,9 @@
       3191,
       11091
     ],
-    "EventDesc": "你应官府之邀帮忙写了几篇文书，积累了一些人脉。",
-    "EffectDesc": "魅力+5，慧识+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257089",
+    "EffectDescStrKey": "ST:257360"
   },
   {
     "ID": 13140143,
@@ -9075,9 +9075,9 @@
       5910,
       11090
     ],
-    "EventDesc": "你这几年来灵感寥寥，没写出几首好诗。",
-    "EffectDesc": "魅力-3，慧识+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257088",
+    "EffectDescStrKey": "ST:257361"
   },
   {
     "ID": 13140160,
@@ -9105,9 +9105,9 @@
       2190,
       7092
     ],
-    "EventDesc": "军中操练中，你要求严格，被不少士兵畏惧。",
-    "EffectDesc": "根骨+5，魅力-5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257081",
+    "EffectDescStrKey": "ST:257354"
   },
   {
     "ID": 13140161,
@@ -9136,9 +9136,9 @@
       2190,
       7091
     ],
-    "EventDesc": "你根据自己的武学天赋编写了一本兵书，受到上级赞赏，在军中传播。",
-    "EffectDesc": "根骨+10，魅力+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257082",
+    "EffectDescStrKey": "ST:257355"
   },
   {
     "ID": 13140162,
@@ -9171,9 +9171,9 @@
       7091
     ],
     "ShowAtResult": true,
-    "EventDesc": "你在军中明白了想要成功不能只有武力，开始频繁走动。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257083",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 13140163,
@@ -9201,9 +9201,9 @@
       5910,
       6910
     ],
-    "EventDesc": "你的行为被上级视为逾矩，受到责备。",
-    "EffectDesc": "魅力-3，根骨-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257084",
+    "EffectDescStrKey": "ST:257356"
   },
   {
     "ID": 13140164,
@@ -9232,9 +9232,9 @@
       2190,
       7091
     ],
-    "EventDesc": "你在江湖中屡次出手，收获了一些名声。",
-    "EffectDesc": "魅力+3，根骨+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257085",
+    "EffectDescStrKey": "ST:257357"
   },
   {
     "ID": 13140165,
@@ -9261,9 +9261,9 @@
       5909,
       7090
     ],
-    "EventDesc": "这几年你行事谨慎，不轻易出手。",
-    "EffectDesc": "气运+3，体质+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257086",
+    "EffectDescStrKey": "ST:257358"
   },
   {
     "ID": 14150001,
@@ -9281,9 +9281,9 @@
       995,
       5910
     ],
-    "EventDesc": "你年事已高，越发感觉力不从心。",
-    "EffectDesc": "体质-5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257092",
+    "EffectDescStrKey": "ST:257364"
   },
   {
     "ID": 14150002,
@@ -9311,9 +9311,9 @@
       4190,
       8092
     ],
-    "EventDesc": "修仙无岁月，你继续苦修仙法，不过近年感受到了瓶颈，修炼速度变慢了",
-    "EffectDesc": "运气+3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257093",
+    "EffectDescStrKey": "ST:257365"
   },
   {
     "ID": 14150003,
@@ -9341,9 +9341,9 @@
       5190,
       9091
     ],
-    "EventDesc": "你用积攒下的钱财为家中购置了一座宅院。",
-    "EffectDesc": "魅力+10",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257094",
+    "EffectDescStrKey": "ST:257366"
   },
   {
     "ID": 14150004,
@@ -9367,9 +9367,9 @@
       5909,
       2190
     ],
-    "EventDesc": "你跟随名家学会了太极拳，强身健体。",
-    "EffectDesc": "体质+5，根骨+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257095",
+    "EffectDescStrKey": "ST:257367"
   },
   {
     "ID": 14150005,
@@ -9392,9 +9392,9 @@
       5909,
       4190
     ],
-    "EventDesc": "你学会了奇门遁甲，闲暇时给好友算卦。",
-    "EffectDesc": "慧识+10",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257096",
+    "EffectDescStrKey": "ST:257368"
   },
   {
     "ID": 14150006,
@@ -9416,9 +9416,9 @@
       4005,
       5909
     ],
-    "EventDesc": "你当年种下的银杏树已然长大，枝繁叶茂，你在树下感慨光阴似箭。",
-    "EffectDesc": "慧识+5，气运+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257097",
+    "EffectDescStrKey": "ST:257321"
   },
   {
     "ID": 14150007,
@@ -9446,9 +9446,9 @@
       5909,
       5190
     ],
-    "EventDesc": "你在古玩摊淘到一件古玉盘，随身携带，常伴左右。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257098",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 14150008,
@@ -9466,9 +9466,9 @@
       997,
       5910
     ],
-    "EventDesc": "你感到今年身体不支，回祖宅修养了一段时间。",
-    "EffectDesc": "体质-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257099",
+    "EffectDescStrKey": "ST:257369"
   },
   {
     "ID": 14150009,
@@ -9497,9 +9497,9 @@
       5909,
       5190
     ],
-    "EventDesc": "你在坊市中新建了一座酒楼，宾客盈门，你时常去与好友把酒言欢。",
-    "EffectDesc": "随机属性",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257100",
+    "EffectDescStrKey": "ST:92733"
   },
   {
     "ID": 14150010,
@@ -9525,9 +9525,9 @@
       5091,
       5909
     ],
-    "EventDesc": "今年风调雨顺，四境安宁，你参加了盛大的新年庆典。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257101",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 14150011,
@@ -9546,9 +9546,9 @@
       995,
       5910
     ],
-    "EventDesc": "今年边境告急，天灾不断，你潦草的庆祝了新年。",
-    "EffectDesc": "随机",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257102",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 14150012,
@@ -9570,9 +9570,9 @@
       5909,
       1190
     ],
-    "EventDesc": "年龄的增长赋予你智慧，乡里年轻人都喜向你请教问题。",
-    "EffectDesc": "魅力+{0}",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257103",
+    "EffectDescStrKey": "ST:257241"
   },
   {
     "ID": 14150013,
@@ -9593,9 +9593,9 @@
       3091,
       5909
     ],
-    "EventDesc": "你被县令延请至府衙，谈轮治县，你的学识给县令留下了深刻的印象。",
-    "EffectDesc": "慧识+{0}",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257104",
+    "EffectDescStrKey": "ST:257239"
   },
   {
     "ID": 14150014,
@@ -9616,12 +9616,12 @@
       5909,
       1190
     ],
-    "EventDesc": "你在学习书画时学会了{0}，又多了一门技艺傍身。",
-    "EffectDesc": "随机",
     "Rarity": "Rarity_SR",
     "Params": [
       2010
-    ]
+    ],
+    "EventDescStrKey": "ST:257105",
+    "EffectDescStrKey": "ST:257348"
   },
   {
     "ID": 14150090,
@@ -9642,12 +9642,12 @@
       99999
     ],
     "ShowAtResult": true,
-    "EventDesc": "你患上了{0}，病重不治。",
-    "EffectDesc": "结局",
     "Rarity": "Rarity_R",
     "Params": [
       2017
-    ]
+    ],
+    "EventDescStrKey": "ST:256907",
+    "EffectDescStrKey": "ST:80488"
   },
   {
     "ID": 14150091,
@@ -9672,12 +9672,12 @@
       4003,
       5910
     ],
-    "EventDesc": "你患上了{0}，幸而体质康健，转危为安。",
-    "EffectDesc": "根骨-3，气运+3",
     "Rarity": "Rarity_SR",
     "Params": [
       2017
-    ]
+    ],
+    "EventDescStrKey": "ST:256908",
+    "EffectDescStrKey": "ST:257362"
   },
   {
     "ID": 14150092,
@@ -9702,12 +9702,12 @@
       2003,
       5910
     ],
-    "EventDesc": "你患上了{0}，幸而福星庇佑，病愈后身体更胜往日。",
-    "EffectDesc": "体质+3，根骨+3",
     "Rarity": "Rarity_SR",
     "Params": [
       2017
-    ]
+    ],
+    "EventDescStrKey": "ST:256909",
+    "EffectDescStrKey": "ST:257363"
   },
   {
     "ID": 14150094,
@@ -9739,11 +9739,11 @@
       6001,
       5190
     ],
-    "EventDesc": "你走在路上，突然看见远处有宝光乍现，走过去发现了一块{0}",
     "Rarity": "Rarity_SSR",
     "Params": [
       2016
-    ]
+    ],
+    "EventDescStrKey": "ST:257091"
   },
   {
     "ID": 14150110,
@@ -9775,9 +9775,9 @@
       10092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你遭到了同僚的排挤。你凭一身傲骨横眉冷对千夫指，风波过后，你的坚毅大受圣人赏识，予你提拔。摇身一变，你如今也是「权臣」了。",
-    "EffectDesc": "体质+3，气运+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257106",
+    "EffectDescStrKey": "ST:257370"
   },
   {
     "ID": 14150111,
@@ -9806,9 +9806,9 @@
       10091
     ],
     "ShowAtResult": true,
-    "EventDesc": "你遭到了同僚的排挤。双拳虽然难敌四手，但你与那些闲人姑且打了个两败俱伤，朝中宛若无事发生。",
-    "EffectDesc": "根骨+3，气运+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257107",
+    "EffectDescStrKey": "ST:257371"
   },
   {
     "ID": 14150112,
@@ -9835,9 +9835,9 @@
       10090
     ],
     "ShowAtResult": true,
-    "EventDesc": "你遭到了同僚的排挤。他们在圣人面前说尽你的坏话，你被迫辞官。激流勇退，回归初心未尝不是一件好事！。",
-    "EffectDesc": "慧识+5，气运-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257108",
+    "EffectDescStrKey": "ST:257372"
   },
   {
     "ID": 14150113,
@@ -9871,9 +9871,9 @@
       10092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你爹又来帮你打点了！非常顺利，你在官场上加入了你爹的阵营，成为了一名「权臣」，以后也会是你接他的班吧。",
-    "EffectDesc": "体质+3，慧识+3，气运+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257109",
+    "EffectDescStrKey": "ST:257373"
   },
   {
     "ID": 14150114,
@@ -9904,9 +9904,9 @@
       9092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你爹又来帮你打点了！非常顺利，但是给你机会你不中用啊！不过你靠着这些关系开始经商，生意不错，你成为了「官商」。",
-    "EffectDesc": "气运-3，慧识-3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257110",
+    "EffectDescStrKey": "ST:257374"
   },
   {
     "ID": 14150115,
@@ -9941,9 +9941,9 @@
       10092
     ],
     "ShowAtResult": true,
-    "EventDesc": "大理寺秉承圣意纠察贪腐问题。他们发现你两袖清风一心国事，真真是清汤大老爷！经过举荐，你得到了提拔，成为了「权臣」。但想要贿赂你的人就大大减少了。",
-    "EffectDesc": "气运+5，体质+5，慧识+5，魅力-3",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257111",
+    "EffectDescStrKey": "ST:257375"
   },
   {
     "ID": 14150116,
@@ -9976,9 +9976,9 @@
       11092
     ],
     "ShowAtResult": true,
-    "EventDesc": "大理寺秉承圣意纠察贪腐问题，查获你名下财产，却无受贿实证，仅没收部分家产。你辞官归隐山林，凭借为官的经历和手中的财富自此成为世人口中的「名隐」。",
-    "EffectDesc": "慧识+3，魅力+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257112",
+    "EffectDescStrKey": "ST:257286"
   },
   {
     "ID": 14150117,
@@ -10004,9 +10004,9 @@
       9908
     ],
     "ShowAtResult": true,
-    "EventDesc": "大理寺秉承圣意纠察贪腐问题。他们查到了你的家产，他们查到了你的家产，还从你枕头底下摸到了记着钱财来路的账本。你被抓了，过上了从0开始的「阶下囚」生活。",
-    "EffectDesc": "结局",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257113",
+    "EffectDescStrKey": "ST:80488"
   },
   {
     "ID": 14150118,
@@ -10039,9 +10039,9 @@
       10092
     ],
     "ShowAtResult": true,
-    "EventDesc": "朝中出现两股风，你必须加入一股以求扶摇而上，你做了正确的选择，并得到了同僚的赏识，成为了一名「权臣」。",
-    "EffectDesc": "气运+5，慧识+5，魅力+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257114",
+    "EffectDescStrKey": "ST:257376"
   },
   {
     "ID": 14150119,
@@ -10068,9 +10068,9 @@
       3191,
       10091
     ],
-    "EventDesc": "朝中出现两股风，你必须加入一股以求扶摇而上。该死！你选错了，遗憾丧失机会，不过也获得了一个体面的结局，退居二线。",
-    "EffectDesc": "体质+3，气运-5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257115",
+    "EffectDescStrKey": "ST:257377"
   },
   {
     "ID": 14150140,
@@ -10103,9 +10103,9 @@
       11092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你已经习惯了隐居。然而，你的名字却为世人津津乐道。人们认为你是一位「名隐」。",
-    "EffectDesc": "慧识+10，魅力+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257116",
+    "EffectDescStrKey": "ST:257359"
   },
   {
     "ID": 14150141,
@@ -10138,9 +10138,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你已经习惯了隐居。忽然有一天，你偶遇了在山中隐居的另一个姑娘，相逢即是缘，她盛情邀请你和她一起去蓬莱创业，你与她一拍即合，即刻踏上了通往蓬莱的道路。你成为了一名「仙人」。",
-    "EffectDesc": "气运+10，魅力+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257117",
+    "EffectDescStrKey": "ST:257378"
   },
   {
     "ID": 14150142,
@@ -10171,9 +10171,9 @@
       11091
     ],
     "ShowAtResult": true,
-    "EventDesc": "你已经习惯了隐居，或许接下去的日子你也将继续隐居下去。",
-    "EffectDesc": "慧识+5，魅力+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257118",
+    "EffectDescStrKey": "ST:257288"
   },
   {
     "ID": 14150143,
@@ -10204,14 +10204,14 @@
       11092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你决心把自己毕生所学编撰成书，为此需要招收一些门徒。在你和你的门徒的共同努力之下，你的著作《{0}{1}{2}》很快完成并得到发表，经过徒弟的宣传，全国上下无人不知晓你的名字。",
-    "EffectDesc": "慧识+10，魅力+5",
     "Rarity": "Rarity_SSR",
     "Params": [
       2011,
       2012,
       2013
-    ]
+    ],
+    "EventDescStrKey": "ST:257119",
+    "EffectDescStrKey": "ST:257359"
   },
   {
     "ID": 14150144,
@@ -10241,9 +10241,9 @@
       11091
     ],
     "ShowAtResult": true,
-    "EventDesc": "你决心把自己毕生所学编撰成书，为此需要招收一些门徒。但或许是你缺乏管理经验，徒弟们没能帮上忙，还让你的著书工作成为一团乱麻。",
-    "EffectDesc": "慧识+5，魅力+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257120",
+    "EffectDescStrKey": "ST:257267"
   },
   {
     "ID": 14150145,
@@ -10276,9 +10276,9 @@
       11092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你决心把自己毕生所学编撰成书，为此需要招收一些门徒。在你和你的门徒的共同努力之下，你的著作完成后立刻传到了京城翰林院，他们邀请你进入翰林院成为一名「学士」。",
-    "EffectDesc": "慧识+10，魅力+5",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257121",
+    "EffectDescStrKey": "ST:257359"
   },
   {
     "ID": 14150146,
@@ -10311,9 +10311,9 @@
       11092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你认为你现在学富五车，才华横溢，可以讲经布道。你的演说非常成功，得到了大量文人的认可，你成为了远近闻名的「名士」。",
-    "EffectDesc": "慧识+7，魅力+10",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257122",
+    "EffectDescStrKey": "ST:257379"
   },
   {
     "ID": 14150147,
@@ -10341,9 +10341,9 @@
       11091
     ],
     "ShowAtResult": true,
-    "EventDesc": "你认为你现在学富五车，才华横溢，可以讲经布道。但世界比你想得更强大，聚集在讲经会上的文人们七嘴八舌，各自用无懈可击的理论淹没了你的声音。",
-    "EffectDesc": "慧识+5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257123",
+    "EffectDescStrKey": "ST:257251"
   },
   {
     "ID": 14150148,
@@ -10375,9 +10375,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你认为你现在学富五车，才华横溢，可以讲经布道。在你演说到一半的时候，天光乍现，从你的身体里迸发出无限力量，文字从手上的书本脱离环绕着你，众人惊叹不已。你以文入道，走上了修仙之路，成为了一名「仙人」。",
-    "EffectDesc": "慧识+7，气运+10",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257124",
+    "EffectDescStrKey": "ST:257380"
   },
   {
     "ID": 14150149,
@@ -10410,9 +10410,9 @@
       11092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你造访名寺时，看到了碑林中有诸多有名的诗人留下的作品，心想你也应该来一篇。你在碑上龙飞凤舞写下一篇文章，大家公认你的创作是最好的。你成为了远近闻名的「名士」。",
-    "EffectDesc": "慧识+7，魅力+10",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257125",
+    "EffectDescStrKey": "ST:257379"
   },
   {
     "ID": 14150150,
@@ -10442,9 +10442,9 @@
       11090
     ],
     "ShowAtResult": true,
-    "EventDesc": "你造访名寺时，看到了碑林中有诸多有名的诗人留下的作品，心想你也应该来一篇，但大家觉得你的作品平平无奇。",
-    "EffectDesc": "慧识+5，魅力+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257126",
+    "EffectDescStrKey": "ST:257267"
   },
   {
     "ID": 14150151,
@@ -10472,9 +10472,9 @@
       10909
     ],
     "ShowAtResult": true,
-    "EventDesc": "你造访名寺时，看到了碑林中有诸多有名的诗人留下的作品，心想你也应该来一篇，但有些粗浅乏味，方丈在你走后把你的诗付之一炬。",
-    "EffectDesc": "慧识+3，魅力-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257127",
+    "EffectDescStrKey": "ST:257290"
   },
   {
     "ID": 14150160,
@@ -10508,9 +10508,9 @@
       7092
     ],
     "ShowAtResult": true,
-    "EventDesc": "总有人想挑战一下当前江湖的权威。有知名豪杰向你提起了江湖决斗，并昭告天下豪杰前来共同见证此次对决的结果，不消多时，你轻而易举地做掉了他。江湖震动，你成为了一名新的「大侠」。",
-    "EffectDesc": "根骨+{0}，魅力+3，体质+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257128",
+    "EffectDescStrKey": "ST:257381"
   },
   {
     "ID": 14150161,
@@ -10539,9 +10539,9 @@
       7091
     ],
     "ShowAtResult": true,
-    "EventDesc": "总有人想挑战一下当前江湖的权威。有知名豪杰向你提起了江湖决斗，并昭告天下豪杰前来共同见证此次对决的结果，你们大战三百六十五回合不分输赢，战至大道都磨灭了，看客散尽，你们最终没分出输赢，相约来日再战。",
-    "EffectDesc": "根骨+{0}，魅力+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257129",
+    "EffectDescStrKey": "ST:257332"
   },
   {
     "ID": 14150162,
@@ -10567,9 +10567,9 @@
       7090
     ],
     "ShowAtResult": true,
-    "EventDesc": "总有人想挑战一下当前江湖的权威。有知名豪杰向你提起了江湖决斗，并昭告天下豪杰前来共同见证此次对决的结果，不消多时，他轻而易举地做掉了你。你终结了波澜壮阔的一生。",
-    "EffectDesc": "结局",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257130",
+    "EffectDescStrKey": "ST:80488"
   },
   {
     "ID": 14150163,
@@ -10602,9 +10602,9 @@
       7092
     ],
     "ShowAtResult": true,
-    "EventDesc": "怎么人人都想要九仪天尊剑！你一日夜半警醒，察觉有七八个大汉伺机埋伏于四面八方，对九仪天尊剑虎视眈眈，小意思，你抄起九仪天尊剑将他们一举拿下！你的机敏使你江湖留名，你成为了人尽皆知的「大侠」。",
-    "EffectDesc": "根骨+7，体质+{0}",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257131",
+    "EffectDescStrKey": "ST:257382"
   },
   {
     "ID": 14150164,
@@ -10630,9 +10630,9 @@
       7090
     ],
     "ShowAtResult": true,
-    "EventDesc": "怎么人人都想要九仪天尊剑！你一日夜半警醒，察觉有七八个大汉伺机埋伏于四面八方，对九仪天尊剑虎视眈眈，发现你醒了，大汉虎扑而来，你都不知道自己最后怎么断气的。你结束了波澜壮阔的一生。",
-    "EffectDesc": "结局",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257132",
+    "EffectDescStrKey": "ST:80488"
   },
   {
     "ID": 14150165,
@@ -10666,9 +10666,9 @@
       7092
     ],
     "ShowAtResult": true,
-    "EventDesc": "大事不好！军中有逆贼纠结团伙谋反！幸亏你足智多谋，预判了对方的行动，你略施小计将他们一举拿下。你得到了提拔，成为了「将军」。",
-    "EffectDesc": "根骨+{0}，气运+5，体质+3",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257133",
+    "EffectDescStrKey": "ST:257383"
   },
   {
     "ID": 14150166,
@@ -10697,9 +10697,9 @@
       7091
     ],
     "ShowAtResult": true,
-    "EventDesc": "大事不好！军中有逆贼纠结团伙谋反！你预判了对方的行动，对方却预判了你的预判。不要紧，你的武力就是自保之铁壁。叛乱息止，你在此次叛乱中保下一命。",
-    "EffectDesc": "根骨+{0}，气运+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257134",
+    "EffectDescStrKey": "ST:257384"
   },
   {
     "ID": 14150167,
@@ -10725,9 +10725,9 @@
       7090
     ],
     "ShowAtResult": true,
-    "EventDesc": "大事不好！军中有逆贼纠结团伙谋反！你预判了对方的行动，对方却预判了你的预判。你不敌叛军，败得透彻。你结束了波澜壮阔的一生。",
-    "EffectDesc": "结局",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257135",
+    "EffectDescStrKey": "ST:80488"
   },
   {
     "ID": 14150168,
@@ -10760,9 +10760,9 @@
       7092
     ],
     "ShowAtResult": true,
-    "EventDesc": "没工夫跟边境小卒闹了，胡人犯边，圣人令下，军队需要即刻出征！在这场声势浩大的战争中，你发挥了惊人的军事才能。战后，你被册封为一名「将军」。",
-    "EffectDesc": "根骨+{0}，体质+{0}",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257136",
+    "EffectDescStrKey": "ST:257385"
   },
   {
     "ID": 14150169,
@@ -10791,9 +10791,9 @@
       7091
     ],
     "ShowAtResult": true,
-    "EventDesc": "没工夫跟边境小卒闹了，胡人犯边，圣人令下，军队需要即刻出征！在这场声势浩大的战争中，你在战场上拼命砍杀，终于成功活了下来。",
-    "EffectDesc": "根骨+{0}，体质+{0}",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257137",
+    "EffectDescStrKey": "ST:257385"
   },
   {
     "ID": 14150170,
@@ -10818,7 +10818,7 @@
       7090
     ],
     "ShowAtResult": true,
-    "EventDesc": "没工夫跟边境小卒闹了，胡人犯边，圣人令下，军队需要即刻出征！在这场声势浩大的战争中，你在战场上拼命砍杀，却没能活下来。你结束了波澜壮阔的一生。"
+    "EventDescStrKey": "ST:257138"
   },
   {
     "ID": 14150190,
@@ -10851,9 +10851,9 @@
       9092
     ],
     "ShowAtResult": true,
-    "EventDesc": "随着你的铺子逐渐做大做强，你在考虑借助漕运让你的铺子更大更强。你的产品顺着河道卖向了天南地北，你的招牌逐渐家喻户晓。在全国开设了分店之后，你成为了举国知名的「巨擘」。",
-    "EffectDesc": "魅力+{0}，慧识+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257139",
+    "EffectDescStrKey": "ST:257341"
   },
   {
     "ID": 14150191,
@@ -10885,9 +10885,9 @@
       9091
     ],
     "ShowAtResult": true,
-    "EventDesc": "随着你的铺子逐渐做大做强，你在考虑借助漕运让你的铺子更大更强。但人人都想通过漕运争一口气。竞争压力太大，没能成功，但也收获了一些经验。",
-    "EffectDesc": "魅力+{0}，慧识+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257140",
+    "EffectDescStrKey": "ST:257302"
   },
   {
     "ID": 14150192,
@@ -10921,9 +10921,9 @@
       9092
     ],
     "ShowAtResult": true,
-    "EventDesc": "国内的生意已经不能满足你了，你觉得自家产品最好顺着丝绸之路卖到国外去。歪果仁每个都对你的商品爱不释手，你的名字在国外打响。成为了国际「巨擘」。",
-    "EffectDesc": "魅力+{0}，慧识+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257141",
+    "EffectDescStrKey": "ST:257341"
   },
   {
     "ID": 14150193,
@@ -10953,9 +10953,9 @@
       9091
     ],
     "ShowAtResult": true,
-    "EventDesc": "国内的生意已经不能满足你了，你觉得自家产品最好顺着丝绸之路卖到国外去。但你completely不能理解国外的语言。OK，fine。总之这生意姑且算做过了。",
-    "EffectDesc": "魅力+{0}，慧识+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257142",
+    "EffectDescStrKey": "ST:257302"
   },
   {
     "ID": 14150194,
@@ -10980,8 +10980,8 @@
       8910
     ],
     "ShowAtResult": true,
-    "EventDesc": "国内的生意已经不能满足你了，你觉得自家产品最好顺着丝绸之路卖到国外去。你在路上遇到了外国劫匪，人生地不熟，一句也听不懂，也没办法沟通。他们不知道你身价有多高，干脆利落地把你嘎了。你结束了这一生。",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257143"
   },
   {
     "ID": 14150195,
@@ -11015,9 +11015,9 @@
       9092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你接到一笔来自军队的大订单。你和官员上下核对，仔细打点，从从容容游刃有余地完成了这笔不能公之于众的交易。你成为了一名「官商」。",
-    "EffectDesc": "魅力+{0}，体质+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257144",
+    "EffectDescStrKey": "ST:257301"
   },
   {
     "ID": 14150196,
@@ -11051,9 +11051,9 @@
       10092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你接到一笔来自军队的大订单。你完成了这笔交易后，朝中群臣对你赞赏有加。几经操作，去除市籍，买通上下，不久之后，朝中多出了你这位新的「权臣」。",
-    "EffectDesc": "魅力+{0}，体质+3，慧识+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257145",
+    "EffectDescStrKey": "ST:257386"
   },
   {
     "ID": 14150197,
@@ -11080,9 +11080,9 @@
       5910
     ],
     "ShowAtResult": true,
-    "EventDesc": "随着你的产业积累，找你借钱的人越来越多，你决定索性开一个质库来存款放贷。但你经营不当，被人坑了一笔，你将经历编写了一本小说",
-    "EffectDesc": "体质+5，魅力-{0}",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257146",
+    "EffectDescStrKey": "ST:257387"
   },
   {
     "ID": 14150198,
@@ -11116,9 +11116,9 @@
       9092
     ],
     "ShowAtResult": true,
-    "EventDesc": "随着你的产业积累，找你借钱的人越来越多，你决定索性开一个质库来存款放贷。在你的精心运营之下，质库越做越大，甚至在长安之外都开出了连锁门店。你成为了举世皆知的商业「巨擘」。",
-    "EffectDesc": "魅力+{0}，慧识+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257147",
+    "EffectDescStrKey": "ST:257341"
   },
   {
     "ID": 14150210,
@@ -11152,9 +11152,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你修仙修得不知天地为何物，心中逐渐生起了心魔。就算有心魔又何妨？！我命由我不由心魔！惹毛了你连自己都能砍，一剑下去，金光射下，你竟飞升成为了「仙人」。",
-    "EffectDesc": "气运+{0}，慧识+10",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257148",
+    "EffectDescStrKey": "ST:257388"
   },
   {
     "ID": 14150211,
@@ -11188,9 +11188,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你修仙修得不知天地为何物，心中逐渐生起了心魔。在心魔的影响之下，你精神失常，在你的洞府内疯狂破坏。滚！棍！衮！鲧！你大喊着错乱的话语，堕为了「魔人」。",
-    "EffectDesc": "气运+{0}，根骨+10",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257149",
+    "EffectDescStrKey": "ST:257389"
   },
   {
     "ID": 14150212,
@@ -11216,8 +11216,8 @@
       8090
     ],
     "ShowAtResult": true,
-    "EventDesc": "你修仙修得不知天地为何物，心中逐渐生起了心魔。心魔强大，你死在了心魔狂乱的影响之下。",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257150"
   },
   {
     "ID": 14150213,
@@ -11250,9 +11250,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "终于迎来了修仙路上的最核心环节——渡劫！惊雷劈来，劈得大地为之一震，劈得山河为之开裂，但竟然没有把你劈死。云开雨霁，你飞升了，成为了「仙人」，完成了此生的目标。",
-    "EffectDesc": "气运+{0}，慧识+10",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257151",
+    "EffectDescStrKey": "ST:257388"
   },
   {
     "ID": 14150214,
@@ -11277,8 +11277,8 @@
       8090
     ],
     "ShowAtResult": true,
-    "EventDesc": "终于迎来了修仙路上的最核心环节——渡劫！还是修为不够呀，惊雷劈来，你还没搞清楚发生了什么事，就被劈死了。",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257152"
   },
   {
     "ID": 14150215,
@@ -11311,9 +11311,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "你得知东海之外有一座仙山，那里有着通往天界的道路。你准备万全之后，坐上了寻找仙山的小船。在万丈光芒中，你在海面上寻得了群山的轮廓，便知道你来对了地方。你来到了蓬莱，成为了「仙人」。",
-    "EffectDesc": "气运+{0}，慧识+10",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257153",
+    "EffectDescStrKey": "ST:257388"
   },
   {
     "ID": 14150216,
@@ -11338,8 +11338,8 @@
       8090
     ],
     "ShowAtResult": true,
-    "EventDesc": "你得知东海之外有一座仙山，那里有着通往天界的道路。你准备万全之后，坐上了寻找仙山的小船，可是你没找到仙山，还被鲛人看上，鲛人掀翻了你的船，你死了。",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257154"
   },
   {
     "ID": 14150217,
@@ -11373,9 +11373,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "为了修行你长期服用丹药，积累了不少丹毒，终于量变引起质变，质变的结果便能验证你这一生的修行是否有价值。积累的丹毒和你的修为在你的体内左右互搏，你的修为胜利了，还吞噬了丹毒的力量，让你成为了一名「仙人」。你完成了此生的目标。",
-    "EffectDesc": "气运+{0}，根骨+10",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257155",
+    "EffectDescStrKey": "ST:257389"
   },
   {
     "ID": 14150218,
@@ -11410,9 +11410,9 @@
       8092
     ],
     "ShowAtResult": true,
-    "EventDesc": "为了修行你长期服用丹药，积累了不少丹毒，终于量变引起质变，质变的结果便能验证你这一生的修行是否有价值。积累的丹毒和你的修为在你的体内左右互搏，丹毒胜利了，转化了你的修为，你成为了一名「魔人」。",
-    "EffectDesc": "气运+{0}，体质+5，根骨+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257156",
+    "EffectDescStrKey": "ST:257390"
   },
   {
     "ID": 14150219,
@@ -11438,8 +11438,8 @@
       8090
     ],
     "ShowAtResult": true,
-    "EventDesc": "为了修行你长期服用丹药，积累了不少丹毒，终于量变引起质变，质变的结果便能验证你这一生的修行是否有价值。你的身体无法容纳丹毒和修为的相互作用，最终因超过了负荷而爆炸了。你死了。",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257157"
   },
   {
     "ID": 15160001,
@@ -11461,9 +11461,9 @@
       5091,
       5909
     ],
-    "EventDesc": "你跨过了60岁，身体还算健康，可喜可贺，你为自己摆了一桌宴席。",
-    "EffectDesc": "慧识+{0}，魅力+{0}",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257158",
+    "EffectDescStrKey": "ST:257391"
   },
   {
     "ID": 15160002,
@@ -11481,9 +11481,9 @@
       997,
       5910
     ],
-    "EventDesc": "你跨过了60岁，可惜你近年身体欠佳，你想再多活两年。",
-    "EffectDesc": "体质-{0}",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257159",
+    "EffectDescStrKey": "ST:257243"
   },
   {
     "ID": 15160003,
@@ -11511,9 +11511,9 @@
       4190,
       8092
     ],
-    "EventDesc": "你近年修炼了仙法，不觉苍老，只感体内真气涌动，真元日益浑厚。",
-    "EffectDesc": "气运+{0}",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257160",
+    "EffectDescStrKey": "ST:257263"
   },
   {
     "ID": 15160004,
@@ -11539,9 +11539,9 @@
       6908
     ],
     "ShowAtResult": true,
-    "EventDesc": "你的军旅生涯中对身体造成了不小的损伤，你因疾病去世。",
-    "EffectDesc": "根骨-3，体质-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257167",
+    "EffectDescStrKey": "ST:257396"
   },
   {
     "ID": 15160005,
@@ -11570,9 +11570,9 @@
       7091
     ],
     "ShowAtResult": true,
-    "EventDesc": "你的军旅生涯结束后，因为积攒的功勋被赐予了一座大宅，安度晚年。",
-    "EffectDesc": "体质+3，根骨+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257168",
+    "EffectDescStrKey": "ST:257363"
   },
   {
     "ID": 15160006,
@@ -11602,9 +11602,9 @@
       7091
     ],
     "ShowAtResult": true,
-    "EventDesc": "你在天玄门中成为了长老，负责教授新弟子剑法，受到大家尊敬。",
-    "EffectDesc": "体质+3，根骨+3",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257169",
+    "EffectDescStrKey": "ST:257363"
   },
   {
     "ID": 15160007,
@@ -11632,9 +11632,9 @@
       7090
     ],
     "ShowAtResult": true,
-    "EventDesc": "你从天玄门离开后回到了家里，默默度日。",
-    "EffectDesc": "根骨+3，魅力-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257170",
+    "EffectDescStrKey": "ST:257397"
   },
   {
     "ID": 15160110,
@@ -11664,9 +11664,9 @@
       10091
     ],
     "ShowAtResult": true,
-    "EventDesc": "你退休后，朝廷赏你了一座宅子，你在宅中安度晚年。",
-    "EffectDesc": "气运+{0}，魅力+{0}",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257161",
+    "EffectDescStrKey": "ST:257392"
   },
   {
     "ID": 15160111,
@@ -11691,8 +11691,8 @@
       99999
     ],
     "ShowAtResult": true,
-    "EventDesc": "多年来你为官清廉，退休后在家中养老，过着清贫的生活。",
-    "Rarity": "Rarity_SR"
+    "Rarity": "Rarity_SR",
+    "EventDescStrKey": "ST:257162"
   },
   {
     "ID": 15160112,
@@ -11720,9 +11720,9 @@
       9908
     ],
     "ShowAtResult": true,
-    "EventDesc": "你退休后，之前的朋党在朝堂上一败涂地，你也受到了牵连，晚节不保。",
-    "EffectDesc": "气运-5，魅力-5",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257163",
+    "EffectDescStrKey": "ST:257393"
   },
   {
     "ID": 15160140,
@@ -11752,9 +11752,9 @@
       11092
     ],
     "ShowAtResult": true,
-    "EventDesc": "随着年龄的增加你的才华并未间衰，不时有人登门拜访，只求一字片语，终成一代名家。",
-    "EffectDesc": "慧识+10，魅力+5",
-    "Rarity": "Rarity_SSR"
+    "Rarity": "Rarity_SSR",
+    "EventDescStrKey": "ST:257164",
+    "EffectDescStrKey": "ST:257359"
   },
   {
     "ID": 15160141,
@@ -11783,9 +11783,9 @@
       10908
     ],
     "ShowAtResult": true,
-    "EventDesc": "嫉妒你才华的人将你往日诗词翻出，找出谋反的证据，你的文词被官府查封，你因年老侥幸逃过一劫，最终死在了穷困潦倒中。",
-    "EffectDesc": "根骨-3，魅力-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257165",
+    "EffectDescStrKey": "ST:257394"
   },
   {
     "ID": 15160142,
@@ -11814,8 +11814,8 @@
       10910
     ],
     "ShowAtResult": true,
-    "EventDesc": "多年的尘世生活逐渐消磨了你的才能，你的名声渐渐隐没，最终少人知晓。",
-    "EffectDesc": "慧识-3，魅力-3",
-    "Rarity": "Rarity_R"
+    "Rarity": "Rarity_R",
+    "EventDescStrKey": "ST:257166",
+    "EffectDescStrKey": "ST:257395"
   }
 ]

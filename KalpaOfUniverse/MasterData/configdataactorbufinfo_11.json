@@ -1,5 +1,58 @@
 [
   {
+    "ID": 724060155,
+    "FuncType": "BufFuncType_ChangeAllGroundImm",
+    "FuncParams": [
+      -1,
+      3,
+      323
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
+    "ID": 724060156,
+    "LifeTime": -1,
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_TotalDamageSub_D",
+        "Value": -5000
+      }
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
+    "ID": 724060157,
+    "LifeTime": -1,
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None",
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Other",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1004.png@Buff_1004",
+    "NameDescStrKey": "ST:223649",
+    "BuffDescStrKey": "ST:225281"
+  },
+  {
     "ID": 724060158,
     "LifeTime": -1,
     "ReplaceRule": "ReplaceRule_Refresh",
@@ -4327,76 +4380,6 @@
     "Categories": [
       "BufCategory_None"
     ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 724060356,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_SkillCanBeATrigerSrcFinalDamageMult",
-    "FuncParams": [
-      6500
-    ],
-    "ActiveCondIds": [
-      1102,
-      500
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 724060357,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_AttachBufBeforeCastSkill",
-    "FuncParams": [
-      0,
-      0,
-      -1,
-      724060358,
-      1
-    ],
-    "ActiveCondIds": [
-      1102,
-      500,
-      10381
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 724060358,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_StoreValueBySkillCanBeATrigerSrcFinalDamagePercent",
-    "FuncParams": [
-      3500,
-      0,
-      5000,
-      2,
-      724060362
-    ],
-    "ActiveCondIds": [
-      1102,
-      500
-    ],
-    "ReplaceRule": "ReplaceRule_Ignore",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_ChuCun"
-    ],
-    "CanBeDispersed": true,
     "CanBePreventDisperse": true,
     "TriggerBehaviorType": "TriggerBehaviorType_None"
   }

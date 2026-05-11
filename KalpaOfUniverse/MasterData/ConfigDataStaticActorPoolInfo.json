@@ -885,5 +885,67 @@
       121,
       122
     ]
+  },
+  {
+    "ID": 124,
+    "PoolType": "StaticActorPoolType_BotGame",
+    "Param1": 5
+  },
+  {
+    "ID": 125,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 71
+  },
+  {
+    "ID": 126,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 72
+  },
+  {
+    "ID": 127,
+    "PoolType": "StaticActorPoolType_Mercenary",
+    "FilterParams": [
+      824100621,
+      824100622,
+      824100623,
+      824100624,
+      824100625,
+      824100626,
+      824100627,
+      824100628,
+      824100629,
+      824100630
+    ]
+  },
+  {
+    "ID": 128,
+    "PoolType": "StaticActorPoolType_Union",
+    "FilterParams": [
+      126,
+      127
+    ]
+  },
+  {
+    "ID": 129,
+    "PoolType": "StaticActorPoolType_Mercenary",
+    "FilterParams": [
+      824100701,
+      824100702,
+      824100703,
+      824100704,
+      824100705,
+      824100706,
+      824100707,
+      824100708,
+      824100709,
+      824100710,
+      824100711,
+      824100712,
+      824100713,
+      824100714,
+      824100715,
+      824100716,
+      824100717
+    ]
   }
 ]

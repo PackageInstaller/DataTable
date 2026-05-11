@@ -375,5 +375,37 @@
     "CharExp": 120,
     "NameStrKey": "ST:256391",
     "UnlockTipStrKey": "ST:256392"
+  },
+  {
+    "ID": 147,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 40
+      }
+    ],
+    "GameFunType": "GameFunctionType_SpiritLight",
+    "UseEnergy": 20,
+    "DropId": 351679201,
+    "PlayerExp": 20,
+    "CharExp": 120,
+    "NameStrKey": "ST:5418",
+    "UnlockTipStrKey": "ST:258893"
+  },
+  {
+    "ID": 160,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 5901
+      }
+    ],
+    "GameFunType": "GameFunctionType_UnrealSea",
+    "UseEnergy": 20,
+    "DropId": 351670100,
+    "PlayerExp": 20,
+    "CharExp": 120,
+    "NameStrKey": "ST:253650",
+    "UnlockTipStrKey": "ST:258949"
   }
 ]

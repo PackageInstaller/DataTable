@@ -2603,7 +2603,7 @@
     "NameDescStrKey": "ST:92101",
     "DescDescStrKey": "ST:101509",
     "LockDesStrKey": "ST:121843",
-    "OpenTimeDescStrKey": "ST:258541"
+    "OpenTimeDescStrKey": "ST:258524"
   },
   {
     "ID": 304001,
@@ -2621,6 +2621,66 @@
     "PreviewDropId": 351020030,
     "NameDescStrKey": "ST:90125",
     "DescDescStrKey": "ST:101507",
-    "OpenTimeDescStrKey": "ST:258541"
+    "OpenTimeDescStrKey": "ST:258524"
+  },
+  {
+    "ID": 305001,
+    "CopyType": "OldRegionCopyType_Single",
+    "OpenedBgPath": "Assets/GameProject/RuntimeAssets/Scenes/ShenyuanWarScene/Maps/QiyuanGaodi_ABS/QiyuanGaodi.unity",
+    "IsOpen": true,
+    "OpenTime": [
+      "2026-05-20 10:00:00",
+      "2099-09-09 23:59:59"
+    ],
+    "LevelList": [
+      305001,
+      305002,
+      305003
+    ],
+    "Level": 68,
+    "PreviewDropId": 351010200,
+    "NameDescStrKey": "ST:90124",
+    "DescDescStrKey": "ST:101506",
+    "OpenTimeDescStrKey": "ST:259319"
+  },
+  {
+    "ID": 306001,
+    "CopyType": "OldRegionCopyType_Team",
+    "OpenedBgPath": "Assets/GameProject/RuntimeAssets/Scenes/ShenyuanWarScene/Maps/QiyuanTianQian_ABS/QiyuanTianQian.unity",
+    "IsOpen": true,
+    "OpenTime": [
+      "2026-05-20 10:00:00",
+      "2099-09-09 23:59:59"
+    ],
+    "LevelList": [
+      306001
+    ],
+    "Level": 68,
+    "PreviewDropId": 351020030,
+    "NameDescStrKey": "ST:90125",
+    "DescDescStrKey": "ST:110770",
+    "OpenTimeDescStrKey": "ST:259319"
+  },
+  {
+    "ID": 307001,
+    "CopyType": "OldRegionCopyType_Buddha",
+    "TypeParam": 44,
+    "IsOpen": true,
+    "OpenTime": [
+      "2026-05-20 10:00:00",
+      "2099-09-09 23:59:59"
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 55
+      }
+    ],
+    "Level": 68,
+    "PreviewDropId": 351030100,
+    "NameDescStrKey": "ST:92101",
+    "DescDescStrKey": "ST:101509",
+    "LockDesStrKey": "ST:121843",
+    "OpenTimeDescStrKey": "ST:259319"
   }
 ]

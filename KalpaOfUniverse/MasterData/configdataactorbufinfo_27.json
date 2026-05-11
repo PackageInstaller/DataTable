@@ -1,5 +1,83 @@
 [
   {
+    "ID": 741064005,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_SkillBatchChange",
+    "FuncParams": [
+      3
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
+    "ID": 741064006,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_SkillBatchChange",
+    "FuncParams": [
+      4
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
+    "ID": 741064010,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_ExtraSkillListActionEnd",
+    "FuncParams": [
+      0,
+      61106481
+    ],
+    "ActiveBattleStageType": "BattleStageType_ActionExec",
+    "ActiveCondIds": [
+      106401,
+      106403
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerTimesMaxEachAction": 1,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
+    "ID": 741064011,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_ExtraSkillListActionEnd",
+    "FuncParams": [
+      0,
+      61106481
+    ],
+    "ActiveBattleStageType": "BattleStageType_ActionExec",
+    "ActiveCondIds": [
+      106402,
+      106403
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerTimesMaxEachAction": 1,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 741064012,
     "LifeTime": -1,
     "FuncType": "BufFuncType_ExtraSkillListActionEnd",
@@ -4568,95 +4646,5 @@
     "TriggerBehaviorType": "TriggerBehaviorType_Skill",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Electricity_1006.png@Skill_Electricity_1006",
     "NameDescStrKey": "ST:182645"
-  },
-  {
-    "ID": 741070119,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_AttachBufAfterCastSkill",
-    "FuncParams": [
-      0,
-      1,
-      1,
-      741070120,
-      1
-    ],
-    "ActiveCondIds": [
-      1101,
-      404,
-      509
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741070120,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_Pack",
-    "FuncParams": [
-      741070121,
-      741070122,
-      741070123
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741070121,
-    "FuncType": "BufFuncType_DisperseBufBySelfImm",
-    "FuncParams": [
-      -1,
-      263,
-      -1,
-      2,
-      1
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741070122,
-    "FuncType": "BufFuncType_HealBySelfImm",
-    "FuncParams": [
-      -1,
-      263,
-      -1,
-      0,
-      0,
-      0,
-      3000,
-      0,
-      0,
-      0,
-      0
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorId": 600000021,
-    "SkillPipeline": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/Gift_140.png@Gift_140",
-    "NameDescStrKey": "ST:181149"
   }
 ]

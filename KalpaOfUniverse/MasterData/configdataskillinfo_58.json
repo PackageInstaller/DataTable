@@ -1,5 +1,2539 @@
 [
   {
+    "ID": 631095501,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Ice",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus1",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631095503
+    ],
+    "FightBackBehaviorIds": [
+      631095504
+    ],
+    "OnHitRestrainEffect": 800001012,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 111,
+    "BattlePower": 1,
+    "NameStrKey": "ST:95897"
+  },
+  {
+    "ID": 631095502,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Electricity",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus1",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631095505
+    ],
+    "FightBackBehaviorIds": [
+      631095506
+    ],
+    "OnHitRestrainEffect": 800001013,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 111,
+    "BattlePower": 1,
+    "NameStrKey": "ST:95922"
+  },
+  {
+    "ID": 631095600,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Electricity",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus1",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631095601
+    ],
+    "FightBackBehaviorIds": [
+      631095602
+    ],
+    "ChasingStrikeBehaviorIds": [
+      631095603
+    ],
+    "OnHitRestrainEffect": 800001013,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 111,
+    "BattlePower": 1,
+    "NameStrKey": "ST:95922"
+  },
+  {
+    "ID": 631095701,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_None",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus2",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631095701
+    ],
+    "FightBackBehaviorIds": [
+      631095702
+    ],
+    "OnHitRestrainEffect": 800001014,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 112,
+    "BattlePower": 1,
+    "NameStrKey": "ST:96000"
+  },
+  {
+    "ID": 631095801,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_None",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus2",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631065801
+    ],
+    "FightBackBehaviorIds": [
+      631065802
+    ],
+    "OnHitRestrainEffect": 800001014,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 112,
+    "BattlePower": 1,
+    "NameStrKey": "ST:96000"
+  },
+  {
+    "ID": 631095802,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Light",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus2",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631065801
+    ],
+    "FightBackBehaviorIds": [
+      631065802
+    ],
+    "OnHitRestrainEffect": 800001014,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 112,
+    "BattlePower": 1,
+    "NameStrKey": "ST:96000"
+  },
+  {
+    "ID": 631095810,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_SummonRandomMultiNearby",
+    "FuncParams": [
+      0,
+      0,
+      2,
+      0,
+      0,
+      10000,
+      0,
+      -1,
+      122110352,
+      0
+    ],
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_None",
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 10,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631065810
+    ],
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1005.png@GPassive_1005",
+    "SkillEffectType": "SkillEffectType_Heal",
+    "SkillCD": 3,
+    "SkillPointsCost": 1,
+    "SkillFlag": 160,
+    "SkillGroupSet": 522,
+    "BattlePower": 201,
+    "SkillTypeDescStrKey": "ST:228",
+    "NameStrKey": "ST:104107",
+    "SkillDescStrKey": "ST:105603"
+  },
+  {
+    "ID": 631095811,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Light",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 3000
+      }
+    ],
+    "BufIds4TargetAfterCastSkill": [
+      710000123
+    ],
+    "TriggerBuf4SelfAfterCastSkill": 710200341,
+    "GridSelectFormType": "SkillFormType_Rhombus4",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 30,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631065810
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1008_1.png@Skill_None_1008_1",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0015_2.png@Skill_0015_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 2208,
+    "SkillGroupSet": 312,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99931",
+    "NameStrKey": "ST:104108",
+    "SkillDescStrKey": "ST:80272"
+  },
+  {
+    "ID": 631095812,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_AttachBuf",
+    "FuncParams": [
+      760020661
+    ],
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_None",
+    "GridSelectFormType": "SkillFormType_All",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_FriendlyExceptSelf",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 20,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AITargetFlag": "AITargetFlag_FirstHpMix",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631065810
+    ],
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1017.png@Skill_None_1017",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0014_2.png@Skill_0014_2",
+    "SkillEffectType": "SkillEffectType_Heal",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 332,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99933",
+    "NameStrKey": "ST:104157",
+    "SkillDescStrKey": "ST:131847"
+  },
+  {
+    "ID": 631096100,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Light",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus2",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631096101
+    ],
+    "FightBackBehaviorIds": [
+      631096102
+    ],
+    "OnHitRestrainEffect": 800001014,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 112,
+    "BattlePower": 1,
+    "NameStrKey": "ST:96000"
+  },
+  {
+    "ID": 631096200,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Ice",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus1",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631096201
+    ],
+    "FightBackBehaviorIds": [
+      631096202
+    ],
+    "ChasingStrikeBehaviorIds": [
+      631096203
+    ],
+    "OnHitRestrainEffect": 800001012,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 111,
+    "BattlePower": 1,
+    "NameStrKey": "ST:95897"
+  },
+  {
+    "ID": 631096300,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Electricity",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus1",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631096301
+    ],
+    "FightBackBehaviorIds": [
+      631096302
+    ],
+    "ChasingStrikeBehaviorIds": [
+      631096303
+    ],
+    "OnHitRestrainEffect": 800001013,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 111,
+    "BattlePower": 1,
+    "NameStrKey": "ST:95897"
+  },
+  {
+    "ID": 631096310,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Electricity",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 15000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus2",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631096304
+    ],
+    "FightBackBehaviorIds": [
+      631096304
+    ],
+    "OnHitRestrainEffect": 800001012,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1004.png@Skill_Swordsman_1004",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0012_2.png@Skill_0012_2",
+    "SkillCD": 2,
+    "SkillPointsCost": 2,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 211,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:237",
+    "SkillDescStrKey": "ST:57923"
+  },
+  {
+    "ID": 631096500,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Fire",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus1",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631096501
+    ],
+    "FightBackBehaviorIds": [
+      631096502
+    ],
+    "OnHitRestrainEffect": 800001011,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 111,
+    "BattlePower": 1,
+    "NameStrKey": "ST:95898"
+  },
+  {
+    "ID": 631096510,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_AttachBuf",
+    "FuncParams": [
+      700000301,
+      700000551
+    ],
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_None",
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 10,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631096510
+    ],
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Guard_1002.png@Skill_Guard_1002",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0014_2.png@Skill_0014_2",
+    "SkillEffectType": "SkillEffectType_Heal",
+    "SkillCD": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 519,
+    "BattlePower": 1,
+    "SkillTypeDescStrKey": "ST:99933",
+    "NameStrKey": "ST:75183",
+    "SkillDescStrKey": "ST:128767"
+  },
+  {
+    "ID": 631096600,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Ice",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus2",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 2,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631096601
+    ],
+    "FightBackBehaviorIds": [
+      631096602
+    ],
+    "OnHitRestrainEffect": 800001012,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 112,
+    "BattlePower": 1,
+    "NameStrKey": "ST:95931"
+  },
+  {
+    "ID": 631096610,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Ice",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 15000
+      }
+    ],
+    "BufIds4TargetAfterCastSkill": [
+      700000733
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus2",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 2,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631096610
+    ],
+    "FightBackBehaviorIds": [
+      631096610
+    ],
+    "OnHitRestrainEffect": 800001012,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ice_1002.png@Skill_Ice_1002",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0014_2.png@Skill_0014_2",
+    "SkillCD": 2,
+    "SkillPointsCost": 2,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 212,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99931",
+    "NameStrKey": "ST:9140",
+    "SkillDescStrKey": "ST:127976"
+  },
+  {
+    "ID": 631096611,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_AttachBuf",
+    "FuncParams": [
+      700001012
+    ],
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_None",
+    "GridSelectFormType": "SkillFormType_Rhombus3",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Rhombus2",
+    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 25,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631096620
+    ],
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1018.png@Skill_None_1018",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0014_2.png@Skill_0014_2",
+    "SkillEffectType": "SkillEffectType_Heal",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 431,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99933",
+    "NameStrKey": "ST:5321",
+    "SkillDescStrKey": "ST:164419"
+  },
+  {
+    "ID": 631096700,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Electricity",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus2to2",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631096701
+    ],
+    "FightBackBehaviorIds": [
+      631096702
+    ],
+    "OnHitRestrainEffect": 800001013,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 111,
+    "BattlePower": 1,
+    "NameStrKey": "ST:95927",
+    "SkillDescStrKey": "ST:57902"
+  },
+  {
+    "ID": 631096710,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Electricity",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 14000
+      }
+    ],
+    "BufIds4TargetBeforeCastSkill": [
+      700003000
+    ],
+    "BufIds4SelfAfterCastSkill": [
+      700000008
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus2to2",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 10,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AITargetFlag": "AITargetFlag_AttackFly",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631096710
+    ],
+    "FightBackBehaviorIds": [
+      631096710
+    ],
+    "OnHitRestrainEffect": 800001013,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ranger_1012.png@Skill_Ranger_1012",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 2,
+    "SkillPointsCost": 2,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 211,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:99186",
+    "SkillDescStrKey": "ST:63216"
+  },
+  {
+    "ID": 631096720,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Electricity",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 5000
+      }
+    ],
+    "BufIds4TargetBeforeCastSkill": [
+      700003000
+    ],
+    "BufIds4TargetAfterCastSkill": [
+      710000181
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus3",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Rhombus2",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 20,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AITargetFlag": "AITargetFlag_AttackFly",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631096720
+    ],
+    "OnHitRestrainEffect": 800001013,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ranger_1004.png@Skill_Ranger_1004",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 411,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:12366",
+    "SkillDescStrKey": "ST:83665"
+  },
+  {
+    "ID": 631096730,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_AttachBuf",
+    "FuncParams": [
+      700001340,
+      700000004
+    ],
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_None",
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 10,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631096730
+    ],
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ranger_1002.png@Skill_Ranger_1002",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0014_2.png@Skill_0014_2",
+    "SkillEffectType": "SkillEffectType_Heal",
+    "SkillCD": 2,
+    "SkillPointsCost": 1,
+    "SkillFlag": 160,
+    "SkillGroupSet": 510,
+    "BattlePower": 201,
+    "SkillTypeDescStrKey": "ST:99933",
+    "NameStrKey": "ST:27031",
+    "SkillDescStrKey": "ST:127969"
+  },
+  {
+    "ID": 631096800,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus1",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631096801
+    ],
+    "FightBackBehaviorIds": [
+      631096802
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 111,
+    "BattlePower": 1,
+    "NameStrKey": "ST:95922"
+  },
+  {
+    "ID": 631096810,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 15000
+      }
+    ],
+    "BufIds4SelfAfterCastSkill": [
+      700000009
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus1",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 5,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631096810
+    ],
+    "FightBackBehaviorIds": [
+      631096810
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Assassin_1009.png@Skill_Assassin_1009",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0014_2.png@Skill_0014_2",
+    "SkillCD": 2,
+    "SkillPointsCost": 2,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 211,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:34031",
+    "SkillDescStrKey": "ST:63203"
+  },
+  {
+    "ID": 631096820,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 7000
+      }
+    ],
+    "BufIds4TargetAfterCastSkill": [
+      700000701,
+      700000841
+    ],
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Square2",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 20,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631096820
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1004.png@Skill_Shadow_1004",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 412,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99931",
+    "NameStrKey": "ST:88571",
+    "SkillDescStrKey": "ST:164515"
+  },
+  {
+    "ID": 631097000,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Electricity",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus1",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631097001
+    ],
+    "FightBackBehaviorIds": [
+      631097002
+    ],
+    "OnHitRestrainEffect": 800001013,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 111,
+    "BattlePower": 1,
+    "NameStrKey": "ST:95922"
+  },
+  {
+    "ID": 631097010,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_AttachBuf",
+    "FuncParams": [
+      700000301,
+      700000551
+    ],
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_None",
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 10,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631097010
+    ],
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Guard_1002.png@Skill_Guard_1002",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0014_2.png@Skill_0014_2",
+    "SkillEffectType": "SkillEffectType_Heal",
+    "SkillCD": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 519,
+    "BattlePower": 1,
+    "SkillTypeDescStrKey": "ST:99933",
+    "NameStrKey": "ST:75183",
+    "SkillDescStrKey": "ST:128767"
+  },
+  {
+    "ID": 631097020,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Electricity",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 5000
+      }
+    ],
+    "BufIds4TargetAfterCastSkill": [
+      700000701
+    ],
+    "GridSelectFormType": "SkillFormType_Dir",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Dir"
+    ],
+    "CastAreaFormType": "SkillFormType_Line4",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 10,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631097020
+    ],
+    "OnHitRestrainEffect": 800001013,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Guard_1001.png@Skill_Guard_1001",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0014_2.png@Skill_0014_2",
+    "SkillEffectType": "SkillEffectType_DirDamage",
+    "SkillCD": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 411,
+    "BattlePower": 1,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:5940",
+    "SkillDescStrKey": "ST:164370"
+  },
+  {
+    "ID": 631097100,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus2to2",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631097101
+    ],
+    "FightBackBehaviorIds": [
+      631097102
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 111,
+    "BattlePower": 1,
+    "NameStrKey": "ST:95919"
+  },
+  {
+    "ID": 631097110,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_AttachBuf",
+    "FuncParams": [
+      743109720
+    ],
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_None",
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 10,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631097110
+    ],
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ranger_1002.png@Skill_Ranger_1002",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0014_2.png@Skill_0014_2",
+    "SkillEffectType": "SkillEffectType_Heal",
+    "SkillCD": 2,
+    "SkillPointsCost": 1,
+    "SkillFlag": 160,
+    "SkillGroupSet": 510,
+    "BattlePower": 201,
+    "SkillTypeDescStrKey": "ST:99933",
+    "NameStrKey": "ST:94770",
+    "SkillDescStrKey": "ST:91918"
+  },
+  {
+    "ID": 631097120,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_SummonFacilitie",
+    "FuncParams": [
+      1005,
+      0,
+      1
+    ],
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_None",
+    "GridSelectFormType": "SkillFormType_Rhombus2",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_OpenSpace"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_OpenSpace",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 30,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631097120
+    ],
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ranger_1013.png@Skill_Ranger_1013",
+    "SkillEffectType": "SkillEffectType_Heal",
+    "SkillCD": 2,
+    "SkillPointsCost": 1,
+    "SkillFlag": 160,
+    "SkillGroupSet": 524,
+    "BattlePower": 201,
+    "SkillTypeDescStrKey": "ST:30231",
+    "NameStrKey": "ST:94771",
+    "SkillDescStrKey": "ST:242474"
+  },
+  {
+    "ID": 631097130,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "AngerSlot": 31097101,
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 14000
+      }
+    ],
+    "BufIds4SelfBeforeCastSkill": [
+      700003021
+    ],
+    "BufIds4TargetBeforeCastSkill": [
+      710000122
+    ],
+    "BufIds4SelfAfterCastSkill": [
+      700000008
+    ],
+    "TriggerBuf4SelfAfterCastSkill": 743109719,
+    "GridSelectFormType": "SkillFormType_Rhombus2to3",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 10,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AITargetFlag": "AITargetFlag_AttackFly",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631097130
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ranger_1012.png@Skill_Ranger_1012",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 211,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:94772",
+    "SkillDescStrKey": "ST:131848"
+  },
+  {
+    "ID": 631097131,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "AngerSlot": 31097101,
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 14000
+      }
+    ],
+    "BufIds4SelfBeforeCastSkill": [
+      700003021
+    ],
+    "BufIds4TargetBeforeCastSkill": [
+      710000122
+    ],
+    "BufIds4SelfAfterCastSkill": [
+      700000008
+    ],
+    "TriggerBuf4SelfAfterCastSkill": 743109719,
+    "GridSelectFormType": "SkillFormType_Rhombus2to3",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 10,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AITargetFlag": "AITargetFlag_AttackFly",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631097130
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ranger_1012.png@Skill_Ranger_1012",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 211,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:94772",
+    "SkillDescStrKey": "ST:131848"
+  },
+  {
+    "ID": 631097132,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "AngerSlot": 31097101,
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 14000
+      }
+    ],
+    "BufIds4SelfBeforeCastSkill": [
+      700003021
+    ],
+    "BufIds4TargetBeforeCastSkill": [
+      710000122
+    ],
+    "BufIds4SelfAfterCastSkill": [
+      700000008
+    ],
+    "TriggerBuf4SelfAfterCastSkill": 743109719,
+    "GridSelectFormType": "SkillFormType_Rhombus2to3",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 10,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AITargetFlag": "AITargetFlag_AttackFly",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631097130
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ranger_1012.png@Skill_Ranger_1012",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 211,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:94772",
+    "SkillDescStrKey": "ST:131848"
+  },
+  {
+    "ID": 631097700,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Fire",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus2",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631097700
+    ],
+    "FightBackBehaviorIds": [
+      631097701
+    ],
+    "SkillFlag": 2055,
+    "SkillGroupSet": 112,
+    "BattlePower": 1,
+    "SkillTypeDescStrKey": "ST:99931",
+    "NameStrKey": "ST:95900"
+  },
+  {
+    "ID": 631097710,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Fire",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 5000
+      }
+    ],
+    "BufIds4SelfBeforeCastSkill": [
+      700003010
+    ],
+    "BufIds4TargetAfterCastSkill": [
+      700000851,
+      700004090
+    ],
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Rhombus3",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 10,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631097730
+    ],
+    "OnHitRestrainEffect": 800001012,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1072.png@EXSkill_1072",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0013_2.png@Skill_0013_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 412,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99931",
+    "NameStrKey": "ST:121584",
+    "SkillDescStrKey": "ST:128261"
+  },
+  {
+    "ID": 631097720,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Fire",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 15000
+      }
+    ],
+    "BufIds4TargetAfterCastSkill": [
+      700003056
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus2",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 5,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631097710
+    ],
+    "FightBackBehaviorIds": [
+      631097710
+    ],
+    "OnHitRestrainEffect": 800001011,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Fire_1001.png@Skill_Fire_1001",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0014_2.png@Skill_0014_2",
+    "SkillCD": 2,
+    "SkillPointsCost": 2,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 212,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99931",
+    "NameStrKey": "ST:242",
+    "SkillDescStrKey": "ST:127506"
+  },
+  {
+    "ID": 631097730,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_AttachBuf",
+    "FuncParams": [
+      700001012
+    ],
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_None",
+    "GridSelectFormType": "SkillFormType_Rhombus3",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Rhombus2",
+    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 25,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631097720
+    ],
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1018.png@Skill_None_1018",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0014_2.png@Skill_0014_2",
+    "SkillEffectType": "SkillEffectType_Heal",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 431,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99933",
+    "NameStrKey": "ST:5321",
+    "SkillDescStrKey": "ST:164419"
+  },
+  {
+    "ID": 631097800,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus2",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "SkillFlag": 2055,
+    "SkillGroupSet": 112,
+    "BattlePower": 1,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:95900"
+  },
+  {
+    "ID": 631098300,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus2",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "SkillFlag": 2055,
+    "SkillGroupSet": 112,
+    "BattlePower": 1
+  },
+  {
+    "ID": 631098400,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus2to2",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631098401
+    ],
+    "FightBackBehaviorIds": [
+      631098402
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 111,
+    "BattlePower": 1,
+    "NameStrKey": "ST:95919"
+  },
+  {
+    "ID": 631098410,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Physic",
+    "AngerSlot": 31098401,
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Square2",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 35,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631098410
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1004.png@Skill_Shadow_1004",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 411,
+    "GroundBufID": 337,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:105586",
+    "SkillDescStrKey": "ST:128489"
+  },
+  {
+    "ID": 631098411,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Physic",
+    "AngerSlot": 31098401,
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Square2",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 35,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631098410
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1004.png@Skill_Shadow_1004",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 411,
+    "GroundBufID": 337,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:105586",
+    "SkillDescStrKey": "ST:128489"
+  },
+  {
+    "ID": 631098412,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Physic",
+    "AngerSlot": 31098401,
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Square2",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 35,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631098410
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1004.png@Skill_Shadow_1004",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 411,
+    "GroundBufID": 337,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:105586",
+    "SkillDescStrKey": "ST:128489"
+  },
+  {
+    "ID": 631098413,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Physic",
+    "AngerSlot": 31098401,
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Square2",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 35,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631098410
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1004.png@Skill_Shadow_1004",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 411,
+    "GroundBufID": 337,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:105586",
+    "SkillDescStrKey": "ST:128489"
+  },
+  {
+    "ID": 631098414,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Physic",
+    "AngerSlot": 31098401,
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Square2",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 35,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631098410
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1004.png@Skill_Shadow_1004",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 411,
+    "GroundBufID": 337,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:105586",
+    "SkillDescStrKey": "ST:128489"
+  },
+  {
+    "ID": 631098420,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Physic",
+    "AngerSlot": 31098402,
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 15000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Square2",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 35,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631098410
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1004.png@Skill_Shadow_1004",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 411,
+    "GroundBufID": 337,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:105586",
+    "SkillDescStrKey": "ST:128490"
+  },
+  {
+    "ID": 631098421,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Physic",
+    "AngerSlot": 31098402,
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 15000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Square2",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 50,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631098410
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1004.png@Skill_Shadow_1004",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 411,
+    "GroundBufID": 337,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:105586",
+    "SkillDescStrKey": "ST:128490"
+  },
+  {
+    "ID": 631098422,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Physic",
+    "AngerSlot": 31098402,
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 15000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Square2",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 50,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631098410
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1004.png@Skill_Shadow_1004",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 411,
+    "GroundBufID": 337,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:105586",
+    "SkillDescStrKey": "ST:128490"
+  },
+  {
+    "ID": 631098423,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Physic",
+    "AngerSlot": 31098402,
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 15000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Square2",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 50,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631098410
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1004.png@Skill_Shadow_1004",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 411,
+    "GroundBufID": 337,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:105586",
+    "SkillDescStrKey": "ST:128490"
+  },
+  {
+    "ID": 631098424,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Physic",
+    "AngerSlot": 31098402,
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 15000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Square2",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 50,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631098410
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1004.png@Skill_Shadow_1004",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 411,
+    "GroundBufID": 337,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:105586",
+    "SkillDescStrKey": "ST:128490"
+  },
+  {
+    "ID": 631098430,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Physic",
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Shadow",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 10000
+      }
+    ],
+    "BufIds4TargetAfterCastSkill": [
+      700000734,
+      710000123
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus3",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Rhombus3",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 20,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631098420
+    ],
+    "OnHitRestrainEffect": 800001015,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1019.png@Skill_Shadow_1019",
+    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
+    "SkillCD": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 411,
+    "BattlePower": 1,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:121572",
+    "SkillDescStrKey": "ST:128788"
+  },
+  {
+    "ID": 631098700,
+    "IsCommonSkill": true,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Electricity",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 10000
+      }
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus3",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 1,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631098701
+    ],
+    "FightBackBehaviorIds": [
+      631098702
+    ],
+    "OnHitRestrainEffect": 800001013,
+    "OnHitDefenseEffect": 800001001,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 112,
+    "BattlePower": 1,
+    "NameStrKey": "ST:95911"
+  },
+  {
+    "ID": 631098701,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Electricity",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 15000
+      }
+    ],
+    "BufIds4SelfBeforeCastSkill": [
+      760021500
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus3",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 2,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "IsFadeCamera": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      631098710
+    ],
+    "FightBackBehaviorIds": [
+      631098710
+    ],
+    "OnHitRestrainEffect": 800001013,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1098.png@Skill_Boss_1098",
+    "SkillCD": 2,
+    "SkillPointsCost": 2,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 212,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99931",
+    "NameStrKey": "ST:107891",
+    "SkillDescStrKey": "ST:132498"
+  },
+  {
+    "ID": 631098702,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Electricity",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 10000
+      }
+    ],
+    "BufIds4SelfBeforeCastSkill": [
+      760021501
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus3",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Rhombus2",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 3,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631098720
+    ],
+    "OnHitRestrainEffect": 800001013,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1099.png@Skill_Boss_1099",
+    "SkillCD": 5,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 412,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99931",
+    "NameStrKey": "ST:107892",
+    "SkillDescStrKey": "ST:132499"
+  },
+  {
+    "ID": 631098703,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Electricity",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 10000
+      }
+    ],
+    "BufIds4SelfAfterCastSkill": [
+      760021502,
+      760021503
+    ],
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Rhombus5",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseBufCategorySetId": 1,
+    "DisperseBufCount": 3,
+    "DisperseTargetMax": -1,
+    "CastWeight": 5,
+    "AISkillCastType": "AISkillCastType_Predict",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631098730
+    ],
+    "OnHitRestrainEffect": 800001013,
+    "OnHitDefenseEffect": 800001001,
+    "PredictTargetLockType": 1,
+    "IsCanBreakPredict": true,
+    "ContinueAfterBreakPredict": 1,
+    "IsPredictVisiable": true,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1100.png@Skill_Boss_1100",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 412,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99931",
+    "NameStrKey": "ST:107893",
+    "SkillDescStrKey": "ST:164516"
+  },
+  {
+    "ID": 631098704,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Electricity",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 10000
+      }
+    ],
+    "BufIds4SelfBeforeCastSkill": [
+      760021501
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus3",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Rhombus2",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 3,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631098720
+    ],
+    "OnHitRestrainEffect": 800001013,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1099.png@Skill_Boss_1099",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 412,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99931",
+    "NameStrKey": "ST:107892",
+    "SkillDescStrKey": "ST:132499"
+  },
+  {
+    "ID": 631098705,
+    "CanBeATrigerSrc": true,
+    "SkillFuncType": "SkillFuncType_NonNormal",
+    "SkillDamageType": "SkillDamageType_Magic",
+    "DefendSubSrc": 2,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Electricity",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam2",
+        "Value": 10000
+      }
+    ],
+    "BufIds4SelfAfterCastSkill": [
+      760021502,
+      760021504,
+      760021505
+    ],
+    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_Friendly"
+    ],
+    "CastAreaFormType": "SkillFormType_Rhombus5",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseBufCategorySetId": 1,
+    "DisperseBufCount": 3,
+    "DisperseTargetMax": -1,
+    "CastWeight": 5,
+    "AISkillCastType": "AISkillCastType_Predict",
+    "AnnounceFlag": 1,
+    "CameraFocusType": "CameraFocusType_Target",
+    "CastSkillBehaviorIds": [
+      631098730
+    ],
+    "OnHitRestrainEffect": 800001013,
+    "OnHitDefenseEffect": 800001001,
+    "PredictTargetLockType": 1,
+    "IsCanBreakPredict": true,
+    "ContinueAfterBreakPredict": 1,
+    "IsPredictVisiable": true,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1100.png@Skill_Boss_1100",
+    "SkillCD": 3,
+    "SkillPointsCost": 2,
+    "SkillFlag": 160,
+    "SkillGroupSet": 412,
+    "BattlePower": 401,
+    "SkillTypeDescStrKey": "ST:99931",
+    "NameStrKey": "ST:107893",
+    "SkillDescStrKey": "ST:142659"
+  },
+  {
     "ID": 631099000,
     "IsCommonSkill": true,
     "CanBeATrigerSrc": true,
@@ -1801,2416 +4335,5 @@
     "SkillTypeDescStrKey": "ST:228",
     "NameStrKey": "ST:148004",
     "SkillDescStrKey": "ST:146061"
-  },
-  {
-    "ID": 631110822,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_SummonRandomMultiNearby",
-    "FuncParams": [
-      0,
-      0,
-      4,
-      2,
-      1,
-      10000,
-      0,
-      -1,
-      152041331,
-      0
-    ],
-    "AngerSlot": 31110801,
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 80,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631110820
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1014.png@EXSkill_1014",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0015_2.png@Skill_0015_2",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 3,
-    "SkillFlag": 160,
-    "SkillGroupSet": 522,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:228",
-    "NameStrKey": "ST:148004",
-    "SkillDescStrKey": "ST:146061"
-  },
-  {
-    "ID": 631110823,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_SummonRandomMultiNearby",
-    "FuncParams": [
-      0,
-      0,
-      4,
-      2,
-      1,
-      10000,
-      0,
-      -1,
-      152041331,
-      0
-    ],
-    "AngerSlot": 31110801,
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 80,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631110820
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1014.png@EXSkill_1014",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0015_2.png@Skill_0015_2",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 3,
-    "SkillFlag": 160,
-    "SkillGroupSet": 522,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:228",
-    "NameStrKey": "ST:148004",
-    "SkillDescStrKey": "ST:146061"
-  },
-  {
-    "ID": 631110824,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_SummonRandomMultiNearby",
-    "FuncParams": [
-      0,
-      0,
-      4,
-      2,
-      1,
-      10000,
-      0,
-      -1,
-      152041331,
-      0
-    ],
-    "AngerSlot": 31110801,
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 80,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631110820
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1014.png@EXSkill_1014",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0015_2.png@Skill_0015_2",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 3,
-    "SkillFlag": 160,
-    "SkillGroupSet": 522,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:228",
-    "NameStrKey": "ST:148004",
-    "SkillDescStrKey": "ST:146061"
-  },
-  {
-    "ID": 631110830,
-    "IsCommonSkill": true,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Fire",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 10000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631110804
-    ],
-    "FightBackBehaviorIds": [
-      631110805
-    ],
-    "OnHitRestrainEffect": 800001011,
-    "OnHitDefenseEffect": 800001001,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 111,
-    "BattlePower": 1
-  },
-  {
-    "ID": 631110831,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_NonNormal",
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Fire",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 5000
-      }
-    ],
-    "BufIds4SelfAfterCastSkill": [
-      710000112
-    ],
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_Rhombus3",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 80,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631110830
-    ],
-    "OnHitRestrainEffect": 800001011,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1017.png@EXSkill_1017",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
-    "SkillCD": 1,
-    "SkillFlag": 160,
-    "SkillGroupSet": 411,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99932",
-    "NameStrKey": "ST:145238",
-    "SkillDescStrKey": "ST:145279"
-  },
-  {
-    "ID": 631110840,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_SummonRandomMultiNearby",
-    "FuncParams": [
-      0,
-      0,
-      3,
-      0,
-      1,
-      10000,
-      0,
-      -1,
-      830000131,
-      0,
-      830000141,
-      0,
-      830000151,
-      0
-    ],
-    "AngerSlot": 31110802,
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 80,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631110820
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1014.png@EXSkill_1014",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0015_2.png@Skill_0015_2",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 3,
-    "SkillFlag": 160,
-    "SkillGroupSet": 522,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:228",
-    "NameStrKey": "ST:152907",
-    "SkillDescStrKey": "ST:152910"
-  },
-  {
-    "ID": 631110841,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_SummonRandomMultiNearby",
-    "FuncParams": [
-      0,
-      0,
-      3,
-      0,
-      1,
-      10000,
-      0,
-      -1,
-      830000131,
-      0,
-      830000141,
-      0,
-      830000151,
-      0
-    ],
-    "AngerSlot": 31110802,
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 80,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631110820
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1014.png@EXSkill_1014",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0015_2.png@Skill_0015_2",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 3,
-    "SkillFlag": 160,
-    "SkillGroupSet": 522,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:228",
-    "NameStrKey": "ST:152907",
-    "SkillDescStrKey": "ST:152910"
-  },
-  {
-    "ID": 631110842,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_SummonRandomMultiNearby",
-    "FuncParams": [
-      0,
-      0,
-      3,
-      0,
-      1,
-      10000,
-      0,
-      -1,
-      830000131,
-      0,
-      830000141,
-      0,
-      830000151,
-      0
-    ],
-    "AngerSlot": 31110802,
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 80,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631110820
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1014.png@EXSkill_1014",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0015_2.png@Skill_0015_2",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 3,
-    "SkillFlag": 160,
-    "SkillGroupSet": 522,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:228",
-    "NameStrKey": "ST:152907",
-    "SkillDescStrKey": "ST:152910"
-  },
-  {
-    "ID": 631110843,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_SummonRandomMultiNearby",
-    "FuncParams": [
-      0,
-      0,
-      3,
-      0,
-      1,
-      10000,
-      0,
-      -1,
-      830000131,
-      0,
-      830000141,
-      0,
-      830000151,
-      0
-    ],
-    "AngerSlot": 31110802,
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 80,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631110820
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1014.png@EXSkill_1014",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0015_2.png@Skill_0015_2",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 3,
-    "SkillFlag": 160,
-    "SkillGroupSet": 522,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:228",
-    "NameStrKey": "ST:152907",
-    "SkillDescStrKey": "ST:152910"
-  },
-  {
-    "ID": 631110850,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_AttachBuf",
-    "FuncParams": [
-      700001012,
-      700001105
-    ],
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_Rhombus3",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_Rhombus3",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 40,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631110810
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1033.png@EXSkill_1033",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0014_2.png@Skill_0014_2",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 3,
-    "SkillFlag": 160,
-    "SkillGroupSet": 510,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99933",
-    "NameStrKey": "ST:152908",
-    "SkillDescStrKey": "ST:164518"
-  },
-  {
-    "ID": 631111300,
-    "IsCommonSkill": true,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Magic",
-    "DefendSubSrc": 2,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Shadow",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam2",
-        "Value": 10000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus2",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631111301
-    ],
-    "FightBackBehaviorIds": [
-      631111302
-    ],
-    "OnHitRestrainEffect": 800001015,
-    "OnHitDefenseEffect": 800001001,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 112,
-    "BattlePower": 1
-  },
-  {
-    "ID": 631111301,
-    "VersionTag": 50,
-    "IsCommonSkill": true,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Magic",
-    "DefendSubSrc": 2,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Shadow",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam2",
-        "Value": 10000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631111301
-    ],
-    "FightBackBehaviorIds": [
-      631111302
-    ],
-    "OnHitRestrainEffect": 800001015,
-    "OnHitDefenseEffect": 800001001,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 112,
-    "BattlePower": 1
-  },
-  {
-    "ID": 631111319,
-    "VersionTag": 50,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Magic",
-    "DefendSubSrc": 2,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Shadow",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam2",
-        "Value": 16000
-      }
-    ],
-    "BufIds4SelfBeforeCastSkillAndBuffTrigger": [
-      743151020
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 20,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631111301
-    ],
-    "FightBackBehaviorIds": [
-      631111301
-    ],
-    "OnHitRestrainEffect": 800001015,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1002.png@Skill_Shadow_1002",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0015_2.png@Skill_0015_2",
-    "SkillCD": 2,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 212,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99931",
-    "NameStrKey": "ST:231626",
-    "SkillDescStrKey": "ST:231808"
-  },
-  {
-    "ID": 631111329,
-    "VersionTag": 50,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_NonNormal",
-    "SkillDamageType": "SkillDamageType_Magic",
-    "DefendSubSrc": 2,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Shadow",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam2",
-        "Value": 5000
-      }
-    ],
-    "BufIds4TargetAfterCastSkill": [
-      710000192
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus3",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_Rhombus2",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 10,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631111310
-    ],
-    "OnHitRestrainEffect": 800001015,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1005.png@Skill_Shadow_1005",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0015_2.png@Skill_0015_2",
-    "SkillCD": 2,
-    "SkillFlag": 160,
-    "SkillGroupSet": 412,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99931",
-    "NameStrKey": "ST:231627",
-    "SkillDescStrKey": "ST:231809"
-  },
-  {
-    "ID": 631111700,
-    "IsCommonSkill": true,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Magic",
-    "DefendSubSrc": 2,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Fire",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam2",
-        "Value": 10000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus2",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631111701
-    ],
-    "FightBackBehaviorIds": [
-      631111702
-    ],
-    "SkillFlag": 2055,
-    "SkillGroupSet": 112,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99931",
-    "NameStrKey": "ST:95900"
-  },
-  {
-    "ID": 631111710,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_NonNormal",
-    "SkillDamageType": "SkillDamageType_Magic",
-    "DefendSubSrc": 2,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Fire",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam2",
-        "Value": 5000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus3",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_Rhombus2",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseBufCategorySetId": 1,
-    "DisperseBufCount": 1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 25,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631111710
-    ],
-    "OnHitRestrainEffect": 800001011,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Fire_1002.png@Skill_Fire_1002",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
-    "SkillCD": 3,
-    "SkillPointsCost": 2,
-    "SkillFlag": 160,
-    "SkillGroupSet": 412,
-    "BattlePower": 401,
-    "SkillTypeDescStrKey": "ST:99931",
-    "NameStrKey": "ST:245",
-    "SkillDescStrKey": "ST:63190"
-  },
-  {
-    "ID": 631111720,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_NonNormal",
-    "SkillDamageType": "SkillDamageType_Heal",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam2",
-        "Value": 7500
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus3",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_Rhombus2",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseBufCategorySetId": 2,
-    "DisperseBufCount": 1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 15,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631111720
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1006.png@Skill_None_1006",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0015_2.png@Skill_0015_2",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 1,
-    "SkillPointsCost": 2,
-    "SkillFlag": 160,
-    "SkillGroupSet": 428,
-    "BattlePower": 401,
-    "SkillTypeDescStrKey": "ST:3040",
-    "NameStrKey": "ST:276",
-    "SkillDescStrKey": "ST:75383"
-  },
-  {
-    "ID": 631111730,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_AttachBuf",
-    "FuncParams": [
-      700001011
-    ],
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_Rhombus3",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 10,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631111730
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0014_2.png@Skill_0014_2",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 2,
-    "SkillPointsCost": 1,
-    "SkillFlag": 160,
-    "SkillGroupSet": 331,
-    "BattlePower": 201,
-    "SkillTypeDescStrKey": "ST:99933",
-    "NameStrKey": "ST:191",
-    "SkillDescStrKey": "ST:164414"
-  },
-  {
-    "ID": 631111800,
-    "IsCommonSkill": true,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Shadow",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 10000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631111801
-    ],
-    "FightBackBehaviorIds": [
-      631111802
-    ],
-    "OnHitRestrainEffect": 800001015,
-    "OnHitDefenseEffect": 800001001,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 111,
-    "BattlePower": 1,
-    "NameStrKey": "ST:95923"
-  },
-  {
-    "ID": 631111810,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Shadow",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 14000
-      }
-    ],
-    "BufIds4SelfAfterCastSkill": [
-      700000008
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 50,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631111810
-    ],
-    "FightBackBehaviorIds": [
-      631111810
-    ],
-    "OnHitRestrainEffect": 800001015,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1322.png@EXSkill_1322",
-    "SkillCD": 3,
-    "SkillFlag": 2087,
-    "SkillGroupSet": 211,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99932",
-    "NameStrKey": "ST:149301",
-    "SkillDescStrKey": "ST:150418"
-  },
-  {
-    "ID": 631111811,
-    "VersionTag": 54,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Shadow",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 14000
-      }
-    ],
-    "BufIds4SelfAfterCastSkill": [
-      700000007
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 50,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631111810
-    ],
-    "FightBackBehaviorIds": [
-      631111810
-    ],
-    "OnHitRestrainEffect": 800001015,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_121004.png@EXSkill_3c_121004",
-    "SkillCD": 3,
-    "SkillFlag": 2087,
-    "SkillGroupSet": 211,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99932",
-    "NameStrKey": "ST:149301",
-    "SkillDescStrKey": "ST:234883"
-  },
-  {
-    "ID": 631111812,
-    "VersionTag": 54,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Shadow",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 15000
-      }
-    ],
-    "BufIds4SelfAfterCastSkill": [
-      700000007
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 50,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631111810
-    ],
-    "FightBackBehaviorIds": [
-      631111810
-    ],
-    "OnHitRestrainEffect": 800001015,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_121004.png@EXSkill_3c_121004",
-    "SkillCD": 3,
-    "SkillFlag": 2087,
-    "SkillGroupSet": 211,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99932",
-    "NameStrKey": "ST:149301",
-    "SkillDescStrKey": "ST:234884"
-  },
-  {
-    "ID": 631111820,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_ExchangePosition",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "BufIds4SelfBeforeCastSkillAndBuffTrigger": [
-      741210340
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus5",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_FriendlyExceptSelf"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_FriendlyExceptSelf",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 10,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631111820
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1323.png@EXSkill_1323",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 3,
-    "SkillFlag": 160,
-    "SkillGroupSet": 523,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99933",
-    "NameStrKey": "ST:149302",
-    "SkillDescStrKey": "ST:150609"
-  },
-  {
-    "ID": 631111821,
-    "VersionTag": 54,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_ExchangePosition",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "BufIds4SelfBeforeCastSkillAndBuffTrigger": [
-      741210341
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus5",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_FriendlyExceptSelf"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_FriendlyExceptSelf",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 10,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631111820
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_121005.png@EXSkill_3c_121005",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 3,
-    "SkillFlag": 160,
-    "SkillGroupSet": 523,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99933",
-    "NameStrKey": "ST:149302",
-    "SkillDescStrKey": "ST:234885"
-  },
-  {
-    "ID": 631111822,
-    "VersionTag": 54,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_ExchangePosition",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "BufIds4SelfBeforeCastSkillAndBuffTrigger": [
-      741210341
-    ],
-    "TriggerBuf4SelfAfterCastSkill": 741210344,
-    "GridSelectFormType": "SkillFormType_Rhombus5",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_FriendlyExceptSelf"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_FriendlyExceptSelf",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 10,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631111820
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_121005.png@EXSkill_3c_121005",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 3,
-    "SkillFlag": 160,
-    "SkillGroupSet": 523,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99933",
-    "NameStrKey": "ST:149302",
-    "SkillDescStrKey": "ST:234886"
-  },
-  {
-    "ID": 631112100,
-    "IsCommonSkill": true,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Electricity",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 10000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631112101
-    ],
-    "FightBackBehaviorIds": [
-      631112102
-    ],
-    "OnHitRestrainEffect": 800001013,
-    "OnHitDefenseEffect": 800001001,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 111,
-    "BattlePower": 1,
-    "NameStrKey": "ST:95922"
-  },
-  {
-    "ID": 631112101,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_HomologySkillAsParentShow",
-    "FuncParams": [
-      631112102,
-      631112103
-    ],
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 20,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Self",
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_104305.png@EXSkill_3c_104305",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_104305.png@EXSkill_3c_104305",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 2,
-    "SkillPointsCost": 2,
-    "SkillFlag": 160,
-    "SkillGroupSet": 519,
-    "BattlePower": 401,
-    "SkillTypeDescStrKey": "ST:99934",
-    "NameStrKey": "ST:153901",
-    "SkillDescStrKey": "ST:197774"
-  },
-  {
-    "ID": 631112102,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_AttachBuf",
-    "FuncParams": [
-      700000301,
-      700000941,
-      700000531
-    ],
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 25,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631112111
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_104306.png@EXSkill_3c_104306",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_104306.png@EXSkill_3c_104306",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 2,
-    "SkillFlag": 160,
-    "SkillGroupSet": 519,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99934",
-    "NameStrKey": "ST:153902",
-    "SkillDescStrKey": "ST:197775"
-  },
-  {
-    "ID": 631112103,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_AttachBuf",
-    "FuncParams": [
-      741043404,
-      700000901
-    ],
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 20,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631112112
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_104307.png@EXSkill_3c_104307",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_104307.png@EXSkill_3c_104307",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 2,
-    "SkillFlag": 160,
-    "SkillGroupSet": 510,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99934",
-    "NameStrKey": "ST:153903",
-    "SkillDescStrKey": "ST:197824"
-  },
-  {
-    "ID": 631112104,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_HomologySkillAsParentShow",
-    "FuncParams": [
-      631112105,
-      631112106
-    ],
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 20,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Self",
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_104305.png@EXSkill_3c_104305",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_104305.png@EXSkill_3c_104305",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 2,
-    "SkillPointsCost": 2,
-    "SkillFlag": 160,
-    "SkillGroupSet": 519,
-    "BattlePower": 401,
-    "SkillTypeDescStrKey": "ST:99934",
-    "NameStrKey": "ST:153901",
-    "SkillDescStrKey": "ST:197777"
-  },
-  {
-    "ID": 631112105,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_AttachBuf",
-    "FuncParams": [
-      700000305,
-      700000941,
-      700000531
-    ],
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 25,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631112111
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_104306.png@EXSkill_3c_104306",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_104306.png@EXSkill_3c_104306",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 2,
-    "SkillFlag": 160,
-    "SkillGroupSet": 519,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99934",
-    "NameStrKey": "ST:153902",
-    "SkillDescStrKey": "ST:197778"
-  },
-  {
-    "ID": 631112106,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_AttachBuf",
-    "FuncParams": [
-      741043407,
-      700000901
-    ],
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 20,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631112112
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_104307.png@EXSkill_3c_104307",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_104307.png@EXSkill_3c_104307",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 2,
-    "SkillFlag": 160,
-    "SkillGroupSet": 510,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99934",
-    "NameStrKey": "ST:153903",
-    "SkillDescStrKey": "ST:197825"
-  },
-  {
-    "ID": 631112110,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_HomologySkillAsParentShow",
-    "FuncParams": [
-      631112111,
-      631112112
-    ],
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 20,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Self",
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1352.png@EXSkill_1352",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1352.png@EXSkill_1352",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 2,
-    "SkillPointsCost": 2,
-    "SkillFlag": 160,
-    "SkillGroupSet": 519,
-    "BattlePower": 401,
-    "SkillTypeDescStrKey": "ST:99934",
-    "NameStrKey": "ST:153901",
-    "SkillDescStrKey": "ST:154193"
-  },
-  {
-    "ID": 631112111,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_AttachBuf",
-    "FuncParams": [
-      700000301,
-      700000941
-    ],
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 25,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631112111
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1353.png@EXSkill_1353",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1353.png@EXSkill_1353",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 2,
-    "SkillFlag": 160,
-    "SkillGroupSet": 519,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99934",
-    "NameStrKey": "ST:153902",
-    "SkillDescStrKey": "ST:165230"
-  },
-  {
-    "ID": 631112112,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_AttachBuf",
-    "FuncParams": [
-      741043400,
-      700000901
-    ],
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 20,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631112112
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1354.png@EXSkill_1354",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1354.png@EXSkill_1354",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 2,
-    "SkillFlag": 160,
-    "SkillGroupSet": 510,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99934",
-    "NameStrKey": "ST:153903",
-    "SkillDescStrKey": "ST:156448"
-  },
-  {
-    "ID": 631112311,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_SummonRandomMultiNearby",
-    "FuncParams": [
-      0,
-      0,
-      1,
-      0,
-      0,
-      10000,
-      0,
-      -1,
-      152042006,
-      0
-    ],
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 80,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631112310
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1012.png@Skill_None_1012",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0014_2.png@Skill_0014_2",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 3,
-    "SkillFlag": 160,
-    "SkillGroupSet": 522,
-    "SkillTypeDescStrKey": "ST:228",
-    "NameStrKey": "ST:167252",
-    "SkillDescStrKey": "ST:167253"
-  },
-  {
-    "ID": 631112312,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_SummonRandomMultiNearby",
-    "FuncParams": [
-      0,
-      0,
-      1,
-      0,
-      0,
-      10000,
-      0,
-      -1,
-      152042009,
-      0
-    ],
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 80,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631112310
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1012.png@Skill_None_1012",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0014_2.png@Skill_0014_2",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "SkillCD": 3,
-    "SkillFlag": 160,
-    "SkillGroupSet": 522,
-    "SkillTypeDescStrKey": "ST:228",
-    "NameStrKey": "ST:167252",
-    "SkillDescStrKey": "ST:167254"
-  },
-  {
-    "ID": 631112500,
-    "IsCommonSkill": true,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Electricity",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 10000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631112501
-    ],
-    "FightBackBehaviorIds": [
-      631112502
-    ],
-    "OnHitRestrainEffect": 800001013,
-    "OnHitDefenseEffect": 800001001,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 111,
-    "BattlePower": 1
-  },
-  {
-    "ID": 631112510,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Electricity",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 12000
-      }
-    ],
-    "BufIds4SelfAfterCastSkill": [
-      743110748
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 80,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631112501
-    ],
-    "FightBackBehaviorIds": [
-      631112502
-    ],
-    "OnHitRestrainEffect": 800001013,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1004.png@Skill_Swordsman_1004",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
-    "SkillCD": 2,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 211,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99932",
-    "NameStrKey": "ST:150799",
-    "SkillDescStrKey": "ST:153081"
-  },
-  {
-    "ID": 631112600,
-    "IsCommonSkill": true,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Ice",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 10000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631112601
-    ],
-    "FightBackBehaviorIds": [
-      631112602
-    ],
-    "OnHitRestrainEffect": 800001012,
-    "OnHitDefenseEffect": 800001001,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 111,
-    "BattlePower": 1
-  },
-  {
-    "ID": 631112610,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Ice",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 12000
-      }
-    ],
-    "BufIds4SelfAfterCastSkill": [
-      743110748
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 80,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631112601
-    ],
-    "FightBackBehaviorIds": [
-      631112602
-    ],
-    "OnHitRestrainEffect": 800001012,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1004.png@Skill_Swordsman_1004",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
-    "SkillCD": 2,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 211,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99932",
-    "NameStrKey": "ST:150799",
-    "SkillDescStrKey": "ST:153081"
-  },
-  {
-    "ID": 631112620,
-    "IsCommonSkill": true,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Fire",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 10000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631110804
-    ],
-    "FightBackBehaviorIds": [
-      631110805
-    ],
-    "OnHitRestrainEffect": 800001011,
-    "OnHitDefenseEffect": 800001001,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 111,
-    "BattlePower": 1
-  },
-  {
-    "ID": 631112630,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_AttachBuf",
-    "FuncParams": [
-      700000301
-    ],
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_None",
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_Friendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 10,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631110830
-    ],
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Guard_1002.png@Skill_Guard_1002",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0014_2.png@Skill_0014_2",
-    "SkillEffectType": "SkillEffectType_Heal",
-    "BufIds": [
-      700000300
-    ],
-    "SkillCD": 2,
-    "SkillFlag": 160,
-    "SkillGroupSet": 511,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99933",
-    "NameStrKey": "ST:150914",
-    "SkillDescStrKey": "ST:150930"
-  },
-  {
-    "ID": 631112640,
-    "IsCommonSkill": true,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Magic",
-    "DefendSubSrc": 2,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Light",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam2",
-        "Value": 10000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus2",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      623990401
-    ],
-    "FightBackBehaviorIds": [
-      623990402
-    ],
-    "OnHitRestrainEffect": 800001014,
-    "OnHitDefenseEffect": 800001001,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 111,
-    "BattlePower": 1
-  },
-  {
-    "ID": 631112641,
-    "IsCommonSkill": true,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Light",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 10000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      623990401
-    ],
-    "FightBackBehaviorIds": [
-      623990402
-    ],
-    "OnHitRestrainEffect": 800001014,
-    "OnHitDefenseEffect": 800001001,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 111,
-    "BattlePower": 1
-  },
-  {
-    "ID": 631112650,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_NonNormal",
-    "SkillDamageType": "SkillDamageType_Magic",
-    "DefendSubSrc": 2,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Light",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam2",
-        "Value": 5000
-      }
-    ],
-    "BufIds4SelfBeforeCastSkill": [
-      743110769
-    ],
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_Rhombus3",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 30,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      623990410
-    ],
-    "OnHitRestrainEffect": 800001014,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1173.png@EXSkill_1173",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
-    "SkillCD": 2,
-    "SkillFlag": 160,
-    "SkillGroupSet": 412,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99931",
-    "NameStrKey": "ST:150851",
-    "SkillDescStrKey": "ST:183058"
-  },
-  {
-    "ID": 631112660,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Fire",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 14000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631110804
-    ],
-    "FightBackBehaviorIds": [
-      631110805
-    ],
-    "OnHitRestrainEffect": 800001011,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "SkillCD": 2,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 211,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99932",
-    "NameStrKey": "ST:235856",
-    "SkillDescStrKey": "ST:235891"
-  },
-  {
-    "ID": 631112661,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Ice",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 14000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631112601
-    ],
-    "FightBackBehaviorIds": [
-      631112602
-    ],
-    "OnHitRestrainEffect": 800001012,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "SkillCD": 2,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 211,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99932",
-    "NameStrKey": "ST:235856",
-    "SkillDescStrKey": "ST:235891"
-  },
-  {
-    "ID": 631112662,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Electricity",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 14000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631112501
-    ],
-    "FightBackBehaviorIds": [
-      631112502
-    ],
-    "OnHitRestrainEffect": 800001013,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "SkillCD": 2,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 211,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99932",
-    "NameStrKey": "ST:235856",
-    "SkillDescStrKey": "ST:235891"
-  },
-  {
-    "ID": 631112663,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Light",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 14000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631112501
-    ],
-    "FightBackBehaviorIds": [
-      631112502
-    ],
-    "OnHitRestrainEffect": 800001014,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "SkillCD": 2,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 211,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99932",
-    "NameStrKey": "ST:235856",
-    "SkillDescStrKey": "ST:235891"
-  },
-  {
-    "ID": 631112664,
-    "IsCommonSkill": true,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Magic",
-    "DefendSubSrc": 2,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Shadow",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 14000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631112701
-    ],
-    "FightBackBehaviorIds": [
-      631112702
-    ],
-    "OnHitRestrainEffect": 800001015,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "SkillCD": 2,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 211,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99932",
-    "NameStrKey": "ST:235856",
-    "SkillDescStrKey": "ST:235891"
-  },
-  {
-    "ID": 631112665,
-    "IsCommonSkill": true,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Magic",
-    "DefendSubSrc": 2,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Dusk",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 14000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631112701
-    ],
-    "FightBackBehaviorIds": [
-      631112702
-    ],
-    "OnHitRestrainEffect": 800001015,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "SkillCD": 2,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 211,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99932",
-    "NameStrKey": "ST:235856",
-    "SkillDescStrKey": "ST:235891"
-  },
-  {
-    "ID": 631112700,
-    "IsCommonSkill": true,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Magic",
-    "DefendSubSrc": 2,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Shadow",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam2",
-        "Value": 10000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus2",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631112701
-    ],
-    "FightBackBehaviorIds": [
-      631112702
-    ],
-    "OnHitRestrainEffect": 800001015,
-    "OnHitDefenseEffect": 800001001,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 112,
-    "BattlePower": 1
-  },
-  {
-    "ID": 631112701,
-    "IsCommonSkill": true,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Shadow",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 10000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631112701
-    ],
-    "FightBackBehaviorIds": [
-      631112702
-    ],
-    "OnHitRestrainEffect": 800001015,
-    "OnHitDefenseEffect": 800001001,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 111,
-    "BattlePower": 1
-  },
-  {
-    "ID": 631112710,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Magic",
-    "DefendSubSrc": 2,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Shadow",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam2",
-        "Value": 15000
-      }
-    ],
-    "BufIds4SelfBeforeCastSkill": [
-      743110750
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus2",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 80,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      631112701
-    ],
-    "FightBackBehaviorIds": [
-      631112702
-    ],
-    "OnHitRestrainEffect": 800001015,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1009.png@Skill_Shadow_1009",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
-    "SkillCD": 2,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 212,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99931",
-    "NameStrKey": "ST:150767",
-    "SkillDescStrKey": "ST:150932"
-  },
-  {
-    "ID": 631112720,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_NonNormal",
-    "SkillDamageType": "SkillDamageType_Magic",
-    "DefendSubSrc": 2,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Shadow",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam2",
-        "Value": 5000
-      }
-    ],
-    "BufIds4TargetAfterCastSkill": [
-      710000192
-    ],
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_Rhombus3",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 80,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      631112710
-    ],
-    "OnHitRestrainEffect": 800001015,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1004.png@Skill_Shadow_1004",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/SkillIconAtlas/Skill_0005_2.png@Skill_0005_2",
-    "SkillCD": 3,
-    "SkillFlag": 160,
-    "SkillGroupSet": 412,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99931",
-    "NameStrKey": "ST:150800",
-    "SkillDescStrKey": "ST:150933"
-  },
-  {
-    "ID": 631112730,
-    "IsCommonSkill": true,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Light",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 10000
-      }
-    ],
-    "GridSelectFormType": "SkillFormType_Rhombus1",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 1,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 1,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      624110000
-    ],
-    "FightBackBehaviorIds": [
-      624110001
-    ],
-    "OnHitRestrainEffect": 800001014,
-    "OnHitDefenseEffect": 800001001,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 111,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99932"
-  },
-  {
-    "ID": 631112740,
-    "CanBeATrigerSrc": true,
-    "SkillFuncType": "SkillFuncType_NonNormal",
-    "SkillDamageType": "SkillDamageType_Physic",
-    "DefendSubSrc": 1,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Light",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam1",
-        "Value": 5000
-      }
-    ],
-    "BufIds4TargetAfterCastSkill": [
-      743110741
-    ],
-    "GridSelectFormType": "SkillFormType_SingleGridOrSelf",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_Friendly"
-    ],
-    "CastAreaFormType": "SkillFormType_All",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 20,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "CameraFocusType": "CameraFocusType_Target",
-    "CastSkillBehaviorIds": [
-      624110012
-    ],
-    "OnHitRestrainEffect": 800001014,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1018.png@EXSkill_1018",
-    "SkillCD": 3,
-    "SkillFlag": 160,
-    "SkillGroupSet": 411,
-    "BattlePower": 1,
-    "SkillTypeDescStrKey": "ST:99932",
-    "NameStrKey": "ST:150801",
-    "SkillDescStrKey": "ST:153082"
   }
 ]

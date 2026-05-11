@@ -1,5 +1,16 @@
 [
   {
+    "ID": 7149,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
+    "AssistType": "BattleAssistType_MountainAssist",
+    "AssistEffect": [
+      {
+        "BuffId": 755001490
+      }
+    ],
+    "SceneNameStrKey": "ST:94132"
+  },
+  {
     "ID": 7150,
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
     "AssistType": "BattleAssistType_MountainAssist",
@@ -978,17 +989,5 @@
     ],
     "SceneNameStrKey": "ST:48556",
     "AssistDescStrKey": "ST:128300"
-  },
-  {
-    "ID": 8012,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 753080120
-      }
-    ],
-    "SceneNameStrKey": "ST:48557",
-    "AssistDescStrKey": "ST:128301"
   }
 ]

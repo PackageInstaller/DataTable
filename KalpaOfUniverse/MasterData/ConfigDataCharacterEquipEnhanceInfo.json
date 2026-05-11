@@ -86660,6 +86660,581 @@
     "CharacterLevelLimit": 70
   },
   {
+    "ID": 32140401,
+    "EquipId": 321404,
+    "Section": 1,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021001,
+        "Count": 1
+      }
+    ],
+    "MoneyCost": 25,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 10
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 8
+      }
+    ],
+    "CharacterLevelLimit": 1
+  },
+  {
+    "ID": 32140402,
+    "EquipId": 321404,
+    "Section": 2,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021001,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 55,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 17
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 13
+      }
+    ],
+    "CharacterLevelLimit": 10
+  },
+  {
+    "ID": 32140403,
+    "EquipId": 321404,
+    "Section": 3,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021001,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021002,
+        "Count": 1
+      }
+    ],
+    "MoneyCost": 110,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 26
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 19
+      }
+    ],
+    "CharacterLevelLimit": 15
+  },
+  {
+    "ID": 32140404,
+    "EquipId": 321404,
+    "Section": 4,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021001,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021002,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 200,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 37
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 27
+      }
+    ],
+    "CharacterLevelLimit": 20
+  },
+  {
+    "ID": 32140405,
+    "EquipId": 321404,
+    "Section": 5,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021002,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021003,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 300,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 48
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 35
+      }
+    ],
+    "CharacterLevelLimit": 25
+  },
+  {
+    "ID": 32140406,
+    "EquipId": 321404,
+    "Section": 6,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021002,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021003,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025003,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 450,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 59
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 44
+      }
+    ],
+    "CharacterLevelLimit": 30
+  },
+  {
+    "ID": 32140407,
+    "EquipId": 321404,
+    "Section": 7,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021003,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021004,
+        "Count": 2
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025003,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025004,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 550,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 72
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 53
+      }
+    ],
+    "CharacterLevelLimit": 35
+  },
+  {
+    "ID": 32140408,
+    "EquipId": 321404,
+    "Section": 8,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021003,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021004,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025003,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025004,
+        "Count": 4
+      }
+    ],
+    "MoneyCost": 700,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 85
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 62
+      }
+    ],
+    "CharacterLevelLimit": 40
+  },
+  {
+    "ID": 32140409,
+    "EquipId": 321404,
+    "Section": 9,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021004,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021005,
+        "Count": 2
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025004,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025005,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 950,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 98
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 72
+      }
+    ],
+    "CharacterLevelLimit": 45
+  },
+  {
+    "ID": 32140410,
+    "EquipId": 321404,
+    "Section": 10,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021004,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021005,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025004,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025005,
+        "Count": 4
+      }
+    ],
+    "MoneyCost": 1300,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 112
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 82
+      }
+    ],
+    "CharacterLevelLimit": 50
+  },
+  {
+    "ID": 32140411,
+    "EquipId": 321404,
+    "Section": 11,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021005,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025005,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025006,
+        "Count": 4
+      }
+    ],
+    "MoneyCost": 1650,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 126
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 93
+      }
+    ],
+    "CharacterLevelLimit": 55
+  },
+  {
+    "ID": 32140412,
+    "EquipId": 321404,
+    "Section": 12,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021005,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025005,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025006,
+        "Count": 6
+      }
+    ],
+    "MoneyCost": 2100,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 142
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 104
+      }
+    ],
+    "CharacterLevelLimit": 61
+  },
+  {
+    "ID": 32140413,
+    "EquipId": 321404,
+    "Section": 13,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021007,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025006,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025007,
+        "Count": 4
+      }
+    ],
+    "MoneyCost": 2400,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 157
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 116
+      }
+    ],
+    "CharacterLevelLimit": 63
+  },
+  {
+    "ID": 32140414,
+    "EquipId": 321404,
+    "Section": 14,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021007,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025006,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025007,
+        "Count": 6
+      }
+    ],
+    "MoneyCost": 2800,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 174
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 128
+      }
+    ],
+    "CharacterLevelLimit": 65
+  },
+  {
+    "ID": 32140415,
+    "EquipId": 321404,
+    "Section": 15,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021007,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025006,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025007,
+        "Count": 8
+      }
+    ],
+    "MoneyCost": 3300,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 191
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 140
+      }
+    ],
+    "CharacterLevelLimit": 67
+  },
+  {
+    "ID": 32140416,
+    "EquipId": 321404,
+    "Section": 16,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021007,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025006,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025007,
+        "Count": 10
+      }
+    ],
+    "MoneyCost": 3900,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 208
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 153
+      }
+    ],
+    "CharacterLevelLimit": 70
+  },
+  {
+    "ID": 32140417,
+    "EquipId": 321404,
+    "Section": 17,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 226
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 166
+      }
+    ],
+    "CharacterLevelLimit": 70
+  },
+  {
     "ID": 32150001,
     "EquipId": 321500,
     "Section": 1,
@@ -192815,6 +193390,581 @@
     "CharacterLevelLimit": 70
   },
   {
+    "ID": 33140401,
+    "EquipId": 331404,
+    "Section": 1,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021001,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 35,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 13
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 8
+      }
+    ],
+    "CharacterLevelLimit": 1
+  },
+  {
+    "ID": 33140402,
+    "EquipId": 331404,
+    "Section": 2,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021001,
+        "Count": 3
+      }
+    ],
+    "MoneyCost": 85,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 21
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 14
+      }
+    ],
+    "CharacterLevelLimit": 10
+  },
+  {
+    "ID": 33140403,
+    "EquipId": 331404,
+    "Section": 3,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021001,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021002,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 170,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 32
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 21
+      }
+    ],
+    "CharacterLevelLimit": 15
+  },
+  {
+    "ID": 33140404,
+    "EquipId": 331404,
+    "Section": 4,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021001,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021002,
+        "Count": 4
+      }
+    ],
+    "MoneyCost": 300,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 45
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 29
+      }
+    ],
+    "CharacterLevelLimit": 20
+  },
+  {
+    "ID": 33140405,
+    "EquipId": 331404,
+    "Section": 5,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021002,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021003,
+        "Count": 3
+      }
+    ],
+    "MoneyCost": 450,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 59
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 37
+      }
+    ],
+    "CharacterLevelLimit": 25
+  },
+  {
+    "ID": 33140406,
+    "EquipId": 331404,
+    "Section": 6,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021002,
+        "Count": 9
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021003,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025003,
+        "Count": 1
+      }
+    ],
+    "MoneyCost": 650,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 73
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 47
+      }
+    ],
+    "CharacterLevelLimit": 30
+  },
+  {
+    "ID": 33140407,
+    "EquipId": 331404,
+    "Section": 7,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021003,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021004,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025003,
+        "Count": 2
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025004,
+        "Count": 1
+      }
+    ],
+    "MoneyCost": 850,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 88
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 56
+      }
+    ],
+    "CharacterLevelLimit": 35
+  },
+  {
+    "ID": 33140408,
+    "EquipId": 331404,
+    "Section": 8,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021003,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021004,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025003,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025004,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 1100,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 104
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 66
+      }
+    ],
+    "CharacterLevelLimit": 40
+  },
+  {
+    "ID": 33140409,
+    "EquipId": 331404,
+    "Section": 9,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021004,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021005,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025004,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025005,
+        "Count": 1
+      }
+    ],
+    "MoneyCost": 1450,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 120
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 77
+      }
+    ],
+    "CharacterLevelLimit": 45
+  },
+  {
+    "ID": 33140410,
+    "EquipId": 331404,
+    "Section": 10,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021004,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021005,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025004,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025005,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 1900,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 137
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 88
+      }
+    ],
+    "CharacterLevelLimit": 50
+  },
+  {
+    "ID": 33140411,
+    "EquipId": 331404,
+    "Section": 11,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021005,
+        "Count": 9
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025005,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025006,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 2500,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 155
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 99
+      }
+    ],
+    "CharacterLevelLimit": 55
+  },
+  {
+    "ID": 33140412,
+    "EquipId": 331404,
+    "Section": 12,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021005,
+        "Count": 12
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 9
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025005,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025006,
+        "Count": 3
+      }
+    ],
+    "MoneyCost": 3100,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 174
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 111
+      }
+    ],
+    "CharacterLevelLimit": 61
+  },
+  {
+    "ID": 33140413,
+    "EquipId": 331404,
+    "Section": 13,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 12
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021007,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025006,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025007,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 3600,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 193
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 123
+      }
+    ],
+    "CharacterLevelLimit": 63
+  },
+  {
+    "ID": 33140414,
+    "EquipId": 331404,
+    "Section": 14,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021007,
+        "Count": 9
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025006,
+        "Count": 9
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025007,
+        "Count": 3
+      }
+    ],
+    "MoneyCost": 4200,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 213
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 136
+      }
+    ],
+    "CharacterLevelLimit": 65
+  },
+  {
+    "ID": 33140415,
+    "EquipId": 331404,
+    "Section": 15,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 9
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021007,
+        "Count": 12
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025006,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025007,
+        "Count": 6
+      }
+    ],
+    "MoneyCost": 5000,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 234
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 149
+      }
+    ],
+    "CharacterLevelLimit": 67
+  },
+  {
+    "ID": 33140416,
+    "EquipId": 331404,
+    "Section": 16,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021007,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025006,
+        "Count": 2
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403025007,
+        "Count": 7
+      }
+    ],
+    "MoneyCost": 6000,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 255
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 163
+      }
+    ],
+    "CharacterLevelLimit": 70
+  },
+  {
+    "ID": 33140417,
+    "EquipId": 331404,
+    "Section": 17,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 277
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 177
+      }
+    ],
+    "CharacterLevelLimit": 70
+  },
+  {
     "ID": 33150001,
     "EquipId": 331500,
     "Section": 1,
@@ -298942,6 +300092,581 @@
       {
         "Id": "PropertiesId_PhysicDefendBase",
         "Value": 142
+      }
+    ],
+    "CharacterLevelLimit": 70
+  },
+  {
+    "ID": 34140401,
+    "EquipId": 341404,
+    "Section": 1,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021001,
+        "Count": 1
+      }
+    ],
+    "MoneyCost": 25,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 11
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 6
+      }
+    ],
+    "CharacterLevelLimit": 1
+  },
+  {
+    "ID": 34140402,
+    "EquipId": 341404,
+    "Section": 2,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021001,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 55,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 19
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 10
+      }
+    ],
+    "CharacterLevelLimit": 10
+  },
+  {
+    "ID": 34140403,
+    "EquipId": 341404,
+    "Section": 3,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021001,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021002,
+        "Count": 1
+      }
+    ],
+    "MoneyCost": 110,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 28
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 15
+      }
+    ],
+    "CharacterLevelLimit": 15
+  },
+  {
+    "ID": 34140404,
+    "EquipId": 341404,
+    "Section": 4,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021001,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021002,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 200,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 40
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 22
+      }
+    ],
+    "CharacterLevelLimit": 20
+  },
+  {
+    "ID": 34140405,
+    "EquipId": 341404,
+    "Section": 5,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021002,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021003,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 300,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 52
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 28
+      }
+    ],
+    "CharacterLevelLimit": 25
+  },
+  {
+    "ID": 34140406,
+    "EquipId": 341404,
+    "Section": 6,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021002,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021003,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022003,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 450,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 64
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 35
+      }
+    ],
+    "CharacterLevelLimit": 30
+  },
+  {
+    "ID": 34140407,
+    "EquipId": 341404,
+    "Section": 7,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021003,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021004,
+        "Count": 2
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022003,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022004,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 550,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 77
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 42
+      }
+    ],
+    "CharacterLevelLimit": 35
+  },
+  {
+    "ID": 34140408,
+    "EquipId": 341404,
+    "Section": 8,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021003,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021004,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022003,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022004,
+        "Count": 4
+      }
+    ],
+    "MoneyCost": 700,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 91
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 50
+      }
+    ],
+    "CharacterLevelLimit": 40
+  },
+  {
+    "ID": 34140409,
+    "EquipId": 341404,
+    "Section": 9,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021004,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021005,
+        "Count": 2
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022004,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022005,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 950,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 106
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 58
+      }
+    ],
+    "CharacterLevelLimit": 45
+  },
+  {
+    "ID": 34140410,
+    "EquipId": 341404,
+    "Section": 10,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021004,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021005,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022004,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022005,
+        "Count": 4
+      }
+    ],
+    "MoneyCost": 1300,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 121
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 66
+      }
+    ],
+    "CharacterLevelLimit": 50
+  },
+  {
+    "ID": 34140411,
+    "EquipId": 341404,
+    "Section": 11,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021005,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022005,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022006,
+        "Count": 4
+      }
+    ],
+    "MoneyCost": 1650,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 136
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 74
+      }
+    ],
+    "CharacterLevelLimit": 55
+  },
+  {
+    "ID": 34140412,
+    "EquipId": 341404,
+    "Section": 12,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021005,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022005,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022006,
+        "Count": 6
+      }
+    ],
+    "MoneyCost": 2100,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 153
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 83
+      }
+    ],
+    "CharacterLevelLimit": 61
+  },
+  {
+    "ID": 34140413,
+    "EquipId": 341404,
+    "Section": 13,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021007,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022006,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022007,
+        "Count": 4
+      }
+    ],
+    "MoneyCost": 2400,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 170
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 93
+      }
+    ],
+    "CharacterLevelLimit": 63
+  },
+  {
+    "ID": 34140414,
+    "EquipId": 341404,
+    "Section": 14,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021007,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022006,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022007,
+        "Count": 6
+      }
+    ],
+    "MoneyCost": 2800,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 187
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 102
+      }
+    ],
+    "CharacterLevelLimit": 65
+  },
+  {
+    "ID": 34140415,
+    "EquipId": 341404,
+    "Section": 15,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021007,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022006,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022007,
+        "Count": 8
+      }
+    ],
+    "MoneyCost": 3300,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 206
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 112
+      }
+    ],
+    "CharacterLevelLimit": 67
+  },
+  {
+    "ID": 34140416,
+    "EquipId": 341404,
+    "Section": 16,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021007,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022006,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403022007,
+        "Count": 10
+      }
+    ],
+    "MoneyCost": 3900,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 224
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 122
+      }
+    ],
+    "CharacterLevelLimit": 70
+  },
+  {
+    "ID": 34140417,
+    "EquipId": 341404,
+    "Section": 17,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 244
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 133
       }
     ],
     "CharacterLevelLimit": 70
@@ -405097,6 +406822,581 @@
       {
         "Id": "PropertiesId_AttackBase",
         "Value": 268
+      }
+    ],
+    "CharacterLevelLimit": 70
+  },
+  {
+    "ID": 35140401,
+    "EquipId": 351404,
+    "Section": 1,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021001,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 35,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 11
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 9
+      }
+    ],
+    "CharacterLevelLimit": 1
+  },
+  {
+    "ID": 35140402,
+    "EquipId": 351404,
+    "Section": 2,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021001,
+        "Count": 3
+      }
+    ],
+    "MoneyCost": 85,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 19
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 15
+      }
+    ],
+    "CharacterLevelLimit": 10
+  },
+  {
+    "ID": 35140403,
+    "EquipId": 351404,
+    "Section": 3,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021001,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021002,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 170,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 28
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 23
+      }
+    ],
+    "CharacterLevelLimit": 15
+  },
+  {
+    "ID": 35140404,
+    "EquipId": 351404,
+    "Section": 4,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021001,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021002,
+        "Count": 4
+      }
+    ],
+    "MoneyCost": 300,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 40
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 32
+      }
+    ],
+    "CharacterLevelLimit": 20
+  },
+  {
+    "ID": 35140405,
+    "EquipId": 351404,
+    "Section": 5,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021002,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021003,
+        "Count": 3
+      }
+    ],
+    "MoneyCost": 450,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 52
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 42
+      }
+    ],
+    "CharacterLevelLimit": 25
+  },
+  {
+    "ID": 35140406,
+    "EquipId": 351404,
+    "Section": 6,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021002,
+        "Count": 9
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021003,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024003,
+        "Count": 1
+      }
+    ],
+    "MoneyCost": 650,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 64
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 52
+      }
+    ],
+    "CharacterLevelLimit": 30
+  },
+  {
+    "ID": 35140407,
+    "EquipId": 351404,
+    "Section": 7,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021003,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021004,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024003,
+        "Count": 2
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024004,
+        "Count": 1
+      }
+    ],
+    "MoneyCost": 850,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 77
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 63
+      }
+    ],
+    "CharacterLevelLimit": 35
+  },
+  {
+    "ID": 35140408,
+    "EquipId": 351404,
+    "Section": 8,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021003,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021004,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024003,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024004,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 1100,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 91
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 75
+      }
+    ],
+    "CharacterLevelLimit": 40
+  },
+  {
+    "ID": 35140409,
+    "EquipId": 351404,
+    "Section": 9,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021004,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021005,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024004,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024005,
+        "Count": 1
+      }
+    ],
+    "MoneyCost": 1450,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 106
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 86
+      }
+    ],
+    "CharacterLevelLimit": 45
+  },
+  {
+    "ID": 35140410,
+    "EquipId": 351404,
+    "Section": 10,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021004,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021005,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024004,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024005,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 1900,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 121
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 99
+      }
+    ],
+    "CharacterLevelLimit": 50
+  },
+  {
+    "ID": 35140411,
+    "EquipId": 351404,
+    "Section": 11,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021005,
+        "Count": 9
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024005,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024006,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 2500,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 136
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 112
+      }
+    ],
+    "CharacterLevelLimit": 55
+  },
+  {
+    "ID": 35140412,
+    "EquipId": 351404,
+    "Section": 12,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021005,
+        "Count": 12
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 9
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024005,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024006,
+        "Count": 3
+      }
+    ],
+    "MoneyCost": 3100,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 153
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 125
+      }
+    ],
+    "CharacterLevelLimit": 61
+  },
+  {
+    "ID": 35140413,
+    "EquipId": 351404,
+    "Section": 13,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 12
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021007,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024006,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024007,
+        "Count": 2
+      }
+    ],
+    "MoneyCost": 3600,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 170
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 139
+      }
+    ],
+    "CharacterLevelLimit": 63
+  },
+  {
+    "ID": 35140414,
+    "EquipId": 351404,
+    "Section": 14,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021007,
+        "Count": 9
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024006,
+        "Count": 9
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024007,
+        "Count": 3
+      }
+    ],
+    "MoneyCost": 4200,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 187
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 153
+      }
+    ],
+    "CharacterLevelLimit": 65
+  },
+  {
+    "ID": 35140415,
+    "EquipId": 351404,
+    "Section": 15,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 9
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021007,
+        "Count": 12
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024006,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024007,
+        "Count": 6
+      }
+    ],
+    "MoneyCost": 5000,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 206
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 168
+      }
+    ],
+    "CharacterLevelLimit": 67
+  },
+  {
+    "ID": 35140416,
+    "EquipId": 351404,
+    "Section": 16,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021006,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403021007,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024006,
+        "Count": 2
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403024007,
+        "Count": 7
+      }
+    ],
+    "MoneyCost": 6000,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 224
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 184
+      }
+    ],
+    "CharacterLevelLimit": 70
+  },
+  {
+    "ID": 35140417,
+    "EquipId": 351404,
+    "Section": 17,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 244
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 200
       }
     ],
     "CharacterLevelLimit": 70

@@ -20,35 +20,33 @@
   {
     "ID": 1001,
     "MissionType": "MissionType_DailyMission",
-    "SortId": 11,
+    "SortId": 1,
     "IsActivate": 1,
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_TimeSection",
-        "P1": 25200,
+        "P1": 1,
         "P2": 86400
       }
     ],
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_DailyMissionAddScore",
-        "P1": 10
+        "P1": 30
       }
     ],
     "DropReward": 101014100,
-    "TitleStrKey": "ST:9789",
-    "DescStrKey": "ST:84787"
+    "TitleStrKey": "ST:258829",
+    "DescStrKey": "ST:258842"
   },
   {
     "ID": 1002,
     "MissionType": "MissionType_DailyMission",
     "SortId": 12,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_TimePeriod",
-        "P2": 25200,
-        "P3": 86400
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -72,12 +70,10 @@
     "ID": 1003,
     "MissionType": "MissionType_DailyMission",
     "SortId": 13,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_TimePeriod",
-        "P2": 46800,
-        "P3": 86400
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -100,7 +96,7 @@
   {
     "ID": 1004,
     "MissionType": "MissionType_DailyMission",
-    "SortId": 16,
+    "SortId": 6,
     "IsActivate": 1,
     "AcceptCondList": [
       {
@@ -118,7 +114,7 @@
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_DailyMissionAddScore",
-        "P1": 10
+        "P1": 30
       }
     ],
     "TitleStrKey": "ST:57269",
@@ -127,7 +123,7 @@
   {
     "ID": 1005,
     "MissionType": "MissionType_DailyMission",
-    "SortId": 17,
+    "SortId": 5,
     "IsActivate": 1,
     "AcceptCondList": [
       {
@@ -145,7 +141,7 @@
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_DailyMissionAddScore",
-        "P1": 10
+        "P1": 20
       }
     ],
     "TitleStrKey": "ST:24329",
@@ -155,11 +151,10 @@
     "ID": 1006,
     "MissionType": "MissionType_DailyMission",
     "SortId": 18,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 102
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -183,11 +178,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1007,
     "SortId": 19,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 380
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -211,11 +205,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1007,
     "SortId": 20,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 380
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -239,11 +232,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1007,
     "SortId": 21,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 380
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -267,11 +259,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1007,
     "SortId": 22,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 380
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -294,11 +285,10 @@
     "ID": 1011,
     "MissionType": "MissionType_DailyMission",
     "SortId": 14,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 70
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -321,11 +311,10 @@
     "ID": 1012,
     "MissionType": "MissionType_DailyMission",
     "SortId": 54,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 373
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -379,9 +368,29 @@
     "DescStrKey": "ST:80973"
   },
   {
+    "ID": 1016,
+    "MissionType": "MissionType_DailyMission",
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_MonthCardValid",
+        "P1": 2
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_TimeOut",
+        "P1": 86400
+      }
+    ],
+    "DropReward": 351679601,
+    "TitleStrKey": "ST:260076",
+    "DescStrKey": "ST:260077"
+  },
+  {
     "ID": 1021,
     "MissionType": "MissionType_DailyMission",
-    "SortId": 165,
+    "SortId": 14,
     "IsActivate": 1,
     "CompleteCondList": [
       {
@@ -393,7 +402,7 @@
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_DailyMissionAddScore",
-        "P1": 10
+        "P1": 20
       }
     ],
     "TitleStrKey": "ST:29720",
@@ -402,7 +411,7 @@
   {
     "ID": 1022,
     "MissionType": "MissionType_DailyMission",
-    "SortId": 164,
+    "SortId": 15,
     "IsActivate": 1,
     "AcceptCondList": [
       {
@@ -420,7 +429,7 @@
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_DailyMissionAddScore",
-        "P1": 10
+        "P1": 20
       }
     ],
     "TitleStrKey": "ST:209636",
@@ -429,7 +438,7 @@
   {
     "ID": 1023,
     "MissionType": "MissionType_DailyMission",
-    "SortId": 163,
+    "SortId": 16,
     "IsActivate": 1,
     "AcceptCondList": [
       {
@@ -447,7 +456,7 @@
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_DailyMissionAddScore",
-        "P1": 10
+        "P1": 20
       }
     ],
     "TitleStrKey": "ST:209637",
@@ -456,8 +465,7 @@
   {
     "ID": 1024,
     "MissionType": "MissionType_DailyMission",
-    "GroupId": 1025,
-    "SortId": 158,
+    "SortId": 17,
     "IsActivate": 1,
     "AcceptCondList": [
       {
@@ -475,7 +483,7 @@
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_DailyMissionAddScore",
-        "P1": 10
+        "P1": 20
       }
     ],
     "TitleStrKey": "ST:209638",
@@ -486,11 +494,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1025,
     "SortId": 159,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 235
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -514,11 +521,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1025,
     "SortId": 160,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 235
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -542,11 +548,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1025,
     "SortId": 161,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 235
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -570,11 +575,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1025,
     "SortId": 162,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 235
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -596,8 +600,7 @@
   {
     "ID": 1029,
     "MissionType": "MissionType_DailyMission",
-    "GroupId": 1030,
-    "SortId": 154,
+    "SortId": 11,
     "IsActivate": 1,
     "AcceptCondList": [
       {
@@ -615,7 +618,7 @@
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_DailyMissionAddScore",
-        "P1": 10
+        "P1": 20
       }
     ],
     "TitleStrKey": "ST:209639",
@@ -626,11 +629,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1030,
     "SortId": 155,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 245
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -654,11 +656,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1030,
     "SortId": 156,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 245
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -682,11 +683,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1030,
     "SortId": 157,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 245
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -708,8 +708,7 @@
   {
     "ID": 1033,
     "MissionType": "MissionType_DailyMission",
-    "GroupId": 1035,
-    "SortId": 151,
+    "SortId": 12,
     "IsActivate": 1,
     "AcceptCondList": [
       {
@@ -727,7 +726,7 @@
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_DailyMissionAddScore",
-        "P1": 10
+        "P1": 20
       }
     ],
     "TitleStrKey": "ST:119294",
@@ -738,11 +737,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1035,
     "SortId": 152,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 228
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -766,11 +764,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1035,
     "SortId": 153,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 228
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -793,7 +790,12 @@
     "ID": 1036,
     "MissionType": "MissionType_DailyMission",
     "SortId": 25,
-    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
+      }
+    ],
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_ConsumeEnergy",
@@ -812,7 +814,7 @@
   {
     "ID": 1037,
     "MissionType": "MissionType_DailyMission",
-    "SortId": 26,
+    "SortId": 7,
     "IsActivate": 1,
     "CompleteCondList": [
       {
@@ -833,7 +835,12 @@
     "ID": 1038,
     "MissionType": "MissionType_DailyMission",
     "SortId": 27,
-    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
+      }
+    ],
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_ConsumeEnergy",
@@ -852,8 +859,7 @@
   {
     "ID": 1039,
     "MissionType": "MissionType_DailyMission",
-    "GroupId": 1040,
-    "SortId": 61,
+    "SortId": 18,
     "IsActivate": 1,
     "AcceptCondList": [
       {
@@ -871,7 +877,7 @@
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_DailyMissionAddScore",
-        "P1": 10
+        "P1": 20
       }
     ],
     "TitleStrKey": "ST:209643",
@@ -882,11 +888,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1040,
     "SortId": 62,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 4
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -910,11 +915,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1040,
     "SortId": 63,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 4
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -938,11 +942,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1040,
     "SortId": 64,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 4
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -966,11 +969,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1040,
     "SortId": 65,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 4
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -992,8 +994,7 @@
   {
     "ID": 1044,
     "MissionType": "MissionType_DailyMission",
-    "GroupId": 1045,
-    "SortId": 66,
+    "SortId": 19,
     "IsActivate": 1,
     "AcceptCondList": [
       {
@@ -1012,7 +1013,7 @@
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_DailyMissionAddScore",
-        "P1": 10
+        "P1": 20
       }
     ],
     "TitleStrKey": "ST:29718",
@@ -1023,11 +1024,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1045,
     "SortId": 67,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 69
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1052,11 +1052,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1045,
     "SortId": 68,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 69
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1081,11 +1080,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1045,
     "SortId": 69,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 69
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1108,8 +1106,7 @@
   {
     "ID": 1048,
     "MissionType": "MissionType_DailyMission",
-    "GroupId": 1050,
-    "SortId": 58,
+    "SortId": 20,
     "IsActivate": 1,
     "AcceptCondList": [
       {
@@ -1128,7 +1125,7 @@
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_DailyMissionAddScore",
-        "P1": 10
+        "P1": 20
       }
     ],
     "TitleStrKey": "ST:29717",
@@ -1139,11 +1136,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1050,
     "SortId": 59,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 71
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1168,11 +1164,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1050,
     "SortId": 60,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 71
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1195,8 +1190,7 @@
   {
     "ID": 1051,
     "MissionType": "MissionType_DailyMission",
-    "GroupId": 1051,
-    "SortId": 70,
+    "SortId": 21,
     "IsActivate": 1,
     "AcceptCondList": [
       {
@@ -1215,7 +1209,7 @@
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_DailyMissionAddScore",
-        "P1": 10
+        "P1": 20
       }
     ],
     "TitleStrKey": "ST:66239",
@@ -1226,11 +1220,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1051,
     "SortId": 71,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 156
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1255,11 +1248,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1051,
     "SortId": 72,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 156
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1284,11 +1276,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1051,
     "SortId": 73,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 156
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1311,8 +1302,7 @@
   {
     "ID": 1055,
     "MissionType": "MissionType_DailyMission",
-    "GroupId": 1055,
-    "SortId": 55,
+    "SortId": 22,
     "IsActivate": 1,
     "AcceptCondList": [
       {
@@ -1330,7 +1320,7 @@
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_DailyMissionAddScore",
-        "P1": 10
+        "P1": 20
       }
     ],
     "TitleStrKey": "ST:127130",
@@ -1341,11 +1331,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1055,
     "SortId": 56,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 226
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1369,11 +1358,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1055,
     "SortId": 57,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 226
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1396,11 +1384,10 @@
     "ID": 1058,
     "MissionType": "MissionType_DailyMission",
     "SortId": 101,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 121
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1424,11 +1411,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1060,
     "SortId": 118,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 289
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1453,11 +1439,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1060,
     "SortId": 119,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 289
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1482,11 +1467,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1060,
     "SortId": 120,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 289
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1511,11 +1495,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1065,
     "SortId": 121,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 373
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1540,11 +1523,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1065,
     "SortId": 122,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 373
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1569,11 +1551,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1065,
     "SortId": 123,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 373
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1598,11 +1579,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1065,
     "SortId": 124,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 373
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1627,11 +1607,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1066,
     "SortId": 102,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 251
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1655,11 +1634,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1066,
     "SortId": 103,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 251
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1682,11 +1660,10 @@
     "ID": 1068,
     "MissionType": "MissionType_DailyMission",
     "SortId": 125,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 186
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1709,11 +1686,10 @@
     "ID": 1069,
     "MissionType": "MissionType_DailyMission",
     "SortId": 126,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 311
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1735,8 +1711,7 @@
   {
     "ID": 1070,
     "MissionType": "MissionType_DailyMission",
-    "GroupId": 1070,
-    "SortId": 104,
+    "SortId": 13,
     "IsActivate": 1,
     "AcceptCondList": [
       {
@@ -1764,11 +1739,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1070,
     "SortId": 105,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 194
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1791,11 +1765,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1070,
     "SortId": 106,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 194
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1818,11 +1791,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1070,
     "SortId": 107,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 194
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1845,11 +1817,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1075,
     "SortId": 108,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 312
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1875,11 +1846,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1075,
     "SortId": 109,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 312
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1903,8 +1873,7 @@
   {
     "ID": 1076,
     "MissionType": "MissionType_DailyMission",
-    "GroupId": 1076,
-    "SortId": 110,
+    "SortId": 10,
     "IsActivate": 1,
     "AcceptCondList": [
       {
@@ -1922,7 +1891,7 @@
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_DailyMissionAddScore",
-        "P1": 10
+        "P1": 20
       }
     ],
     "TitleStrKey": "ST:214877",
@@ -1933,11 +1902,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1076,
     "SortId": 111,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 288
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1961,11 +1929,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1076,
     "SortId": 112,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 288
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -1989,11 +1956,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1076,
     "SortId": 113,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 288
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -2063,7 +2029,12 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1080,
     "SortId": 114,
-    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
+      }
+    ],
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_CompleteSpecificWorldWayPointTimes",
@@ -2085,7 +2056,12 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1080,
     "SortId": 115,
-    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
+      }
+    ],
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_CompleteSpecificWorldWayPointTimes",
@@ -2107,7 +2083,12 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1080,
     "SortId": 116,
-    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
+      }
+    ],
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_CompleteSpecificWorldWayPointTimes",
@@ -2129,7 +2110,12 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1080,
     "SortId": 117,
-    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
+      }
+    ],
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_CompleteSpecificWorldWayPointTimes",
@@ -2150,7 +2136,12 @@
     "ID": 1094,
     "MissionType": "MissionType_DailyMission",
     "SortId": 28,
-    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
+      }
+    ],
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_ConsumeEnergy",
@@ -2170,7 +2161,12 @@
     "ID": 1095,
     "MissionType": "MissionType_DailyMission",
     "SortId": 29,
-    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
+      }
+    ],
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_ConsumeEnergy",
@@ -2189,8 +2185,7 @@
   {
     "ID": 1100,
     "MissionType": "MissionType_DailyMission",
-    "GroupId": 1081,
-    "SortId": 127,
+    "SortId": 8,
     "IsActivate": 1,
     "AcceptCondList": [
       {
@@ -2208,7 +2203,7 @@
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_DailyMissionAddScore",
-        "P1": 10
+        "P1": 20
       }
     ],
     "TitleStrKey": "ST:231230",
@@ -2219,11 +2214,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1081,
     "SortId": 128,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 429
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -2247,11 +2241,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1081,
     "SortId": 129,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 429
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -2273,8 +2266,7 @@
   {
     "ID": 1201,
     "MissionType": "MissionType_DailyMission",
-    "GroupId": 1082,
-    "SortId": 130,
+    "SortId": 9,
     "IsActivate": 1,
     "AcceptCondList": [
       {
@@ -2303,11 +2295,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1082,
     "SortId": 131,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 430
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -2331,11 +2322,10 @@
     "MissionType": "MissionType_DailyMission",
     "GroupId": 1082,
     "SortId": 132,
-    "IsActivate": 1,
     "AcceptCondList": [
       {
-        "CondType": "MissionAcceptCondType_GameFunctionOpen",
-        "P1": 430
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 99
       }
     ],
     "CompleteCondList": [
@@ -2353,6 +2343,86 @@
     ],
     "TitleStrKey": "ST:231235",
     "DescStrKey": "ST:231302"
+  },
+  {
+    "ID": 1301,
+    "MissionType": "MissionType_DailyMission",
+    "SortId": 2,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_GameFunctionOpen",
+        "P1": 479
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_OldWorldClassisWeeklyCurrencyGet",
+        "P1": 1
+      }
+    ],
+    "GoToFunction": "GameFunctionType_OldWorldClassicTruly",
+    "PostEventList": [
+      {
+        "PostEventType": "MissionPostEventType_DailyMissionAddScore",
+        "P1": 50
+      }
+    ],
+    "TitleStrKey": "ST:258830",
+    "DescStrKey": "ST:258843"
+  },
+  {
+    "ID": 1401,
+    "MissionType": "MissionType_DailyMission",
+    "SortId": 3,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_GameFunctionOpen",
+        "P1": 32
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_FriendGiveReputation",
+        "P1": 1
+      }
+    ],
+    "GoToFunction": "GameFunctionType_Friend",
+    "PostEventList": [
+      {
+        "PostEventType": "MissionPostEventType_DailyMissionAddScore",
+        "P1": 20
+      }
+    ],
+    "TitleStrKey": "ST:260078",
+    "DescStrKey": "ST:260079"
+  },
+  {
+    "ID": 1501,
+    "MissionType": "MissionType_DailyMission",
+    "SortId": 4,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_GameFunctionOpen",
+        "P1": 50
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_DelegateGuidAssist",
+        "P1": 1
+      }
+    ],
+    "PostEventList": [
+      {
+        "PostEventType": "MissionPostEventType_DailyMissionAddScore",
+        "P1": 20
+      }
+    ],
+    "TitleStrKey": "ST:259892",
+    "DescStrKey": "ST:259893"
   },
   {
     "ID": 2001,
@@ -3488,7 +3558,7 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_AccWayPointEventFortuitousTimes",
-        "P1": 3
+        "P1": 1
       }
     ],
     "PostEventList": [
@@ -3499,7 +3569,7 @@
       }
     ],
     "DropReward": 320010506,
-    "TitleStrKey": "ST:84302",
+    "TitleStrKey": "ST:259068",
     "DescStrKey": "ST:98410"
   },
   {
@@ -4147,7 +4217,7 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_AccWayPointEventFortuitousTimes",
-        "P1": 10
+        "P1": 3
       }
     ],
     "PostEventList": [
@@ -4158,7 +4228,7 @@
       }
     ],
     "DropReward": 320010806,
-    "TitleStrKey": "ST:84457",
+    "TitleStrKey": "ST:84302",
     "DescStrKey": "ST:98434"
   },
   {
@@ -4642,7 +4712,7 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_AccWayPointEventFortuitousTimes",
-        "P1": 15
+        "P1": 5
       }
     ],
     "PostEventList": [
@@ -4653,7 +4723,7 @@
       }
     ],
     "DropReward": 320011006,
-    "TitleStrKey": "ST:84466",
+    "TitleStrKey": "ST:74946",
     "DescStrKey": "ST:98452"
   },
   {
@@ -5109,7 +5179,7 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_AccWayPointEventFortuitousTimes",
-        "P1": 20
+        "P1": 8
       }
     ],
     "PostEventList": [
@@ -5120,7 +5190,7 @@
       }
     ],
     "DropReward": 320011205,
-    "TitleStrKey": "ST:58747",
+    "TitleStrKey": "ST:259069",
     "DescStrKey": "ST:98469"
   },
   {
@@ -15716,6 +15786,102 @@
     "DropReward": 351030155,
     "TitleStrKey": "ST:84565",
     "DescStrKey": "ST:110892"
+  },
+  {
+    "ID": 4451,
+    "MissionType": "MissionType_Buddha",
+    "SortId": 2,
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CompletedBuddhaWithBattleTurn",
+        "P1": 12,
+        "P2": 20,
+        "P3": 44
+      }
+    ],
+    "DropReward": 351030150,
+    "TitleStrKey": "ST:105871",
+    "DescStrKey": "ST:121099"
+  },
+  {
+    "ID": 4452,
+    "MissionType": "MissionType_Buddha",
+    "SortId": 1,
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CompletedBuddhaWithoutSpecialAffix",
+        "P1": 1051,
+        "P2": 25,
+        "P3": 44
+      }
+    ],
+    "DropReward": 351030151,
+    "TitleStrKey": "ST:99054",
+    "DescStrKey": "ST:121100"
+  },
+  {
+    "ID": 4453,
+    "MissionType": "MissionType_Buddha",
+    "SortId": 3,
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CompletedBuddhaWithSpecialAffix",
+        "P1": 1052,
+        "P2": 25,
+        "P3": 44
+      }
+    ],
+    "DropReward": 351030152,
+    "TitleStrKey": "ST:120229",
+    "DescStrKey": "ST:121403"
+  },
+  {
+    "ID": 4454,
+    "MissionType": "MissionType_Buddha",
+    "SortId": 4,
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CompletedBuddhaWithAliveCount",
+        "P1": 5,
+        "P2": 30,
+        "P3": 44
+      }
+    ],
+    "DropReward": 351030153,
+    "TitleStrKey": "ST:81505",
+    "DescStrKey": "ST:121102"
+  },
+  {
+    "ID": 4455,
+    "MissionType": "MissionType_Buddha",
+    "SortId": 5,
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CompletedBuddhaWithSpecialAffix",
+        "P1": 1053,
+        "P2": 30,
+        "P3": 44
+      }
+    ],
+    "DropReward": 351030154,
+    "TitleStrKey": "ST:28435",
+    "DescStrKey": "ST:121103"
+  },
+  {
+    "ID": 4456,
+    "MissionType": "MissionType_Buddha",
+    "SortId": 6,
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CompletedBuddhaWithSpecialAffix",
+        "P1": 1054,
+        "P2": 30,
+        "P3": 44
+      }
+    ],
+    "DropReward": 351030155,
+    "TitleStrKey": "ST:84565",
+    "DescStrKey": "ST:121104"
   },
   {
     "ID": 5009,
@@ -64668,6 +64834,809 @@
     "DescStrKey": "ST:115613"
   },
   {
+    "ID": 2078001,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 1,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_PlayerLevel",
+        "P1": 1
+      }
+    ],
+    "DropReward": 350070111,
+    "TitleStrKey": "ST:78979",
+    "DescStrKey": "ST:105704"
+  },
+  {
+    "ID": 2078002,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 4,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CompleteDelegateMissionNums",
+        "P1": 10
+      }
+    ],
+    "GoToFunction": "GameFunctionType_DelegateMission",
+    "DropReward": 350070112,
+    "TitleStrKey": "ST:258833",
+    "DescStrKey": "ST:74936"
+  },
+  {
+    "ID": 2078003,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 5,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CompleteDelegateMissionNums",
+        "P1": 30
+      }
+    ],
+    "GoToFunction": "GameFunctionType_DelegateMission",
+    "DropReward": 350070112,
+    "TitleStrKey": "ST:258834",
+    "DescStrKey": "ST:58742"
+  },
+  {
+    "ID": 2078004,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 13,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_OldWorldClassisWeeklyCurrencyGet",
+        "P1": 1
+      }
+    ],
+    "GoToFunction": "GameFunctionType_OldWorldClassicTruly",
+    "DropReward": 350070112,
+    "TitleStrKey": "ST:258835",
+    "DescStrKey": "ST:258846"
+  },
+  {
+    "ID": 2078005,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 14,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_OldWorldClassisWeeklyCurrencyGet",
+        "P1": 5
+      }
+    ],
+    "GoToFunction": "GameFunctionType_OldWorldClassicTruly",
+    "DropReward": 350070112,
+    "TitleStrKey": "ST:258836",
+    "DescStrKey": "ST:258847"
+  },
+  {
+    "ID": 2078006,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 15,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_FriendGiveReputation",
+        "P1": 30
+      }
+    ],
+    "GoToFunction": "GameFunctionType_Friend",
+    "DropReward": 350070112,
+    "TitleStrKey": "ST:258837",
+    "DescStrKey": "ST:260080"
+  },
+  {
+    "ID": 2078007,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 16,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_FriendGiveReputation",
+        "P1": 100
+      }
+    ],
+    "GoToFunction": "GameFunctionType_Friend",
+    "DropReward": 350070112,
+    "TitleStrKey": "ST:258838",
+    "DescStrKey": "ST:260081"
+  },
+  {
+    "ID": 2078008,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 17,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_DelegateGuidAssist",
+        "P1": 10
+      }
+    ],
+    "DropReward": 350070112,
+    "TitleStrKey": "ST:258839",
+    "DescStrKey": "ST:259894"
+  },
+  {
+    "ID": 2078009,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 18,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_DelegateGuidAssist",
+        "P1": 30
+      }
+    ],
+    "DropReward": 350070112,
+    "TitleStrKey": "ST:258840",
+    "DescStrKey": "ST:259895"
+  },
+  {
+    "ID": 2078010,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 7,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_JoinGuildExpeditionNums",
+        "P1": 5
+      }
+    ],
+    "DropReward": 350070112,
+    "TitleStrKey": "ST:88552",
+    "DescStrKey": "ST:102293"
+  },
+  {
+    "ID": 2078011,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 9,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_ConsumeEnergy",
+        "P1": 600
+      }
+    ],
+    "DropReward": 350070113,
+    "TitleStrKey": "ST:105692",
+    "DescStrKey": "ST:105710"
+  },
+  {
+    "ID": 2078012,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 10,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_ConsumeEnergy",
+        "P1": 1200
+      }
+    ],
+    "DropReward": 350070113,
+    "TitleStrKey": "ST:105693",
+    "DescStrKey": "ST:105711"
+  },
+  {
+    "ID": 2078013,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 11,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_ConsumeEnergy",
+        "P1": 1800
+      }
+    ],
+    "DropReward": 350070113,
+    "TitleStrKey": "ST:105694",
+    "DescStrKey": "ST:105712"
+  },
+  {
+    "ID": 2078014,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 12,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_ConsumeEnergy",
+        "P1": 2400
+      }
+    ],
+    "DropReward": 350070113,
+    "TitleStrKey": "ST:105695",
+    "DescStrKey": "ST:105713"
+  },
+  {
+    "ID": 2078015,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 6,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_SelectCard",
+        "P2": 5
+      }
+    ],
+    "GoToFunction": "GameFunctionType_Raffle",
+    "DropReward": 350070113,
+    "TitleStrKey": "ST:105696",
+    "DescStrKey": "ST:106386"
+  },
+  {
+    "ID": 2078016,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 3,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_TributeShrineNum",
+        "P1": 10
+      }
+    ],
+    "DropReward": 350070111,
+    "TitleStrKey": "ST:105697",
+    "DescStrKey": "ST:102299"
+  },
+  {
+    "ID": 2078017,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 19,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_ArenaTimes",
+        "P1": 20
+      }
+    ],
+    "GoToFunction": "GameFunctionType_Arena",
+    "DropReward": 350070112,
+    "TitleStrKey": "ST:105698",
+    "DescStrKey": "ST:115609"
+  },
+  {
+    "ID": 2078018,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 20,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CompletePeakArenaBattle",
+        "P1": 2
+      }
+    ],
+    "DropReward": 350070111,
+    "TitleStrKey": "ST:73586",
+    "DescStrKey": "ST:125692"
+  },
+  {
+    "ID": 2078019,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 29,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CondenseStarCrystal",
+        "P1": 5
+      }
+    ],
+    "DropReward": 350070111,
+    "TitleStrKey": "ST:119294",
+    "DescStrKey": "ST:119298"
+  },
+  {
+    "ID": 2078020,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 34,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_AbysslChallengeNewSweepFinish",
+        "P1": 20
+      }
+    ],
+    "GoToFunction": "GameFunctionType_AbysslChallengeNewHard",
+    "DropReward": 350070111,
+    "TitleStrKey": "ST:231249",
+    "DescStrKey": "ST:231324"
+  },
+  {
+    "ID": 2078021,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 35,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_AbysslChallengeNewSweepFinish",
+        "P1": 50
+      }
+    ],
+    "GoToFunction": "GameFunctionType_AbysslChallengeNewHard",
+    "DropReward": 350070112,
+    "TitleStrKey": "ST:231250",
+    "DescStrKey": "ST:231325"
+  },
+  {
+    "ID": 2078022,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 40,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CompleteMissionNumWhenWaitConfirm",
+        "P1": 1000,
+        "P2": 2
+      }
+    ],
+    "DropReward": 350070112,
+    "TitleStrKey": "ST:214543",
+    "DescStrKey": "ST:214546"
+  },
+  {
+    "ID": 2078023,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 41,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CompleteMissionNumWhenWaitConfirm",
+        "P1": 1000,
+        "P2": 5
+      }
+    ],
+    "DropReward": 350070112,
+    "TitleStrKey": "ST:214544",
+    "DescStrKey": "ST:214547"
+  },
+  {
+    "ID": 2078024,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 21,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CharacterUseAddExpItem",
+        "P1": 1
+      }
+    ],
+    "GoToFunction": "GameFunctionType_CharacterLevelUp",
+    "DropReward": 350070111,
+    "TitleStrKey": "ST:231239",
+    "DescStrKey": "ST:231313"
+  },
+  {
+    "ID": 2078025,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 22,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CharacterWeaponEnhanceNum",
+        "P1": 1
+      }
+    ],
+    "GoToFunction": "GameFunctionType_CharacterLevelUp",
+    "DropReward": 350070111,
+    "TitleStrKey": "ST:231240",
+    "DescStrKey": "ST:231314"
+  },
+  {
+    "ID": 2078026,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 23,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CharacterEquipEnhanceTimes",
+        "P1": 1
+      }
+    ],
+    "GoToFunction": "GameFunctionType_CharacterLevelUp",
+    "DropReward": 350070111,
+    "TitleStrKey": "ST:231241",
+    "DescStrKey": "ST:231315"
+  },
+  {
+    "ID": 2078027,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 24,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CharacterInnerLevelTimes",
+        "P2": 1
+      }
+    ],
+    "GoToFunction": "GameFunctionType_CharacterLevelUp",
+    "DropReward": 350070111,
+    "TitleStrKey": "ST:231242",
+    "DescStrKey": "ST:231316"
+  },
+  {
+    "ID": 2078028,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 25,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CharacterStargazingLevelUpTimes",
+        "P1": 1
+      }
+    ],
+    "GoToFunction": "GameFunctionType_CharacterLevelUp",
+    "DropReward": 350070111,
+    "TitleStrKey": "ST:231243",
+    "DescStrKey": "ST:231317"
+  },
+  {
+    "ID": 2078029,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 26,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CharacterWeaponGradeTimes",
+        "P1": 1
+      }
+    ],
+    "GoToFunction": "GameFunctionType_CharacterLevelUp",
+    "DropReward": 350070111,
+    "TitleStrKey": "ST:231244",
+    "DescStrKey": "ST:231318"
+  },
+  {
+    "ID": 2078030,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 27,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CharacterDivineWeaponEnhance",
+        "P1": 1
+      }
+    ],
+    "GoToFunction": "GameFunctionType_CharacterLevelUp",
+    "DropReward": 350070111,
+    "TitleStrKey": "ST:231245",
+    "DescStrKey": "ST:231319"
+  },
+  {
+    "ID": 2078031,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 28,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CharacterInnerForceRefineLightNum",
+        "P1": 1
+      }
+    ],
+    "GoToFunction": "GameFunctionType_CharacterLevelUp",
+    "DropReward": 350070111,
+    "TitleStrKey": "ST:196390",
+    "DescStrKey": "ST:231320"
+  },
+  {
+    "ID": 2078032,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 30,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_SoulRedefineCount",
+        "P1": 1
+      }
+    ],
+    "GoToFunction": "GameFunctionType_CharacterLevelUp",
+    "DropReward": 350070111,
+    "TitleStrKey": "ST:231246",
+    "DescStrKey": "ST:231321"
+  },
+  {
+    "ID": 2078033,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 31,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_SoulRemakeCount",
+        "P1": 1
+      }
+    ],
+    "GoToFunction": "GameFunctionType_CharacterLevelUp",
+    "DropReward": 350070111,
+    "TitleStrKey": "ST:231247",
+    "DescStrKey": "ST:231322"
+  },
+  {
+    "ID": 2078034,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 36,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_SuhunTimes",
+        "P3": 1
+      }
+    ],
+    "GoToFunction": "GameFunctionType_CharacterLevelUp",
+    "DropReward": 350070111,
+    "TitleStrKey": "ST:231251",
+    "DescStrKey": "ST:231300"
+  },
+  {
+    "ID": 2078035,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 37,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_SuhunTimes",
+        "P3": 3
+      }
+    ],
+    "GoToFunction": "GameFunctionType_CharacterLevelUp",
+    "DropReward": 350070112,
+    "TitleStrKey": "ST:231252",
+    "DescStrKey": "ST:231302"
+  },
+  {
+    "ID": 2078036,
+    "MissionType": "MissionType_BattlePassWeekly",
+    "SortId": 32,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_CompleteAbyssChallengeBattleTimes",
+        "P1": 5
+      }
+    ],
+    "GoToFunction": "GameFunctionType_AbysslChallenge",
+    "DropReward": 350070112,
+    "TitleStrKey": "ST:196334",
+    "DescStrKey": "ST:210069"
+  },
+  {
+    "ID": 2078101,
+    "MissionType": "MissionType_BattlePass",
+    "SortId": 1,
+    "IsActivate": 1,
+    "AcceptCondList": [
+      {
+        "CondType": "MissionAcceptCondType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_SingleCharacterStar",
+        "P1": 100140400,
+        "P2": 4
+      }
+    ],
+    "DropReward": 350070114,
+    "TitleStrKey": "ST:258841",
+    "DescStrKey": "ST:258852"
+  },
+  {
     "ID": 10003001,
     "MissionType": "MissionType_Challenge",
     "GroupId": 10011,
@@ -76482,7 +77451,7 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_AccWayPointEventFortuitousTimes",
-        "P1": 100
+        "P1": 2
       }
     ],
     "PostEventList": [
@@ -76493,7 +77462,7 @@
     ],
     "DropReward": 301024001,
     "TitleStrKey": "ST:9805",
-    "DescStrKey": "ST:73284"
+    "DescStrKey": "ST:259070"
   },
   {
     "ID": 20008002,
@@ -76508,7 +77477,7 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_AccWayPointEventFortuitousTimes",
-        "P1": 200
+        "P1": 4
       }
     ],
     "PostEventList": [
@@ -76519,7 +77488,7 @@
     ],
     "DropReward": 301024002,
     "TitleStrKey": "ST:9806",
-    "DescStrKey": "ST:50905"
+    "DescStrKey": "ST:259071"
   },
   {
     "ID": 20008003,
@@ -76534,7 +77503,7 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_AccWayPointEventFortuitousTimes",
-        "P1": 300
+        "P1": 6
       }
     ],
     "PostEventList": [
@@ -76545,7 +77514,7 @@
     ],
     "DropReward": 301024003,
     "TitleStrKey": "ST:9807",
-    "DescStrKey": "ST:50906"
+    "DescStrKey": "ST:259072"
   },
   {
     "ID": 20008004,
@@ -76560,7 +77529,7 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_AccWayPointEventFortuitousTimes",
-        "P1": 500
+        "P1": 10
       }
     ],
     "PostEventList": [
@@ -76571,7 +77540,7 @@
     ],
     "DropReward": 301024004,
     "TitleStrKey": "ST:9808",
-    "DescStrKey": "ST:50907"
+    "DescStrKey": "ST:102295"
   },
   {
     "ID": 20008005,
@@ -76586,7 +77555,7 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_AccWayPointEventFortuitousTimes",
-        "P1": 1000
+        "P1": 20
       }
     ],
     "PostEventList": [
@@ -76597,7 +77566,7 @@
     ],
     "DropReward": 301024005,
     "TitleStrKey": "ST:9809",
-    "DescStrKey": "ST:73285"
+    "DescStrKey": "ST:259073"
   },
   {
     "ID": 20008006,
@@ -76612,7 +77581,7 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_AccWayPointEventFortuitousTimes",
-        "P1": 1500
+        "P1": 30
       }
     ],
     "PostEventList": [
@@ -76623,7 +77592,7 @@
     ],
     "DropReward": 301024006,
     "TitleStrKey": "ST:50714",
-    "DescStrKey": "ST:73286"
+    "DescStrKey": "ST:259074"
   },
   {
     "ID": 20008007,
@@ -76638,7 +77607,7 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_AccWayPointEventFortuitousTimes",
-        "P1": 2000
+        "P1": 40
       }
     ],
     "PostEventList": [
@@ -76649,7 +77618,7 @@
     ],
     "DropReward": 301024007,
     "TitleStrKey": "ST:50715",
-    "DescStrKey": "ST:73287"
+    "DescStrKey": "ST:259075"
   },
   {
     "ID": 20008008,
@@ -76664,7 +77633,7 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_AccWayPointEventFortuitousTimes",
-        "P1": 3000
+        "P1": 60
       }
     ],
     "PostEventList": [
@@ -76675,7 +77644,7 @@
     ],
     "DropReward": 301024008,
     "TitleStrKey": "ST:50716",
-    "DescStrKey": "ST:73288"
+    "DescStrKey": "ST:259076"
   },
   {
     "ID": 20008009,
@@ -76690,12 +77659,12 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_AccWayPointEventFortuitousTimes",
-        "P1": 5000
+        "P1": 100
       }
     ],
     "DropReward": 301024009,
     "TitleStrKey": "ST:73237",
-    "DescStrKey": "ST:73289"
+    "DescStrKey": "ST:73284"
   },
   {
     "ID": 20008501,
@@ -87258,11 +88227,11 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_BuyItemFromFixedStoreNums",
-        "P1": 10,
+        "P1": 158,
         "P2": 2
       }
     ],
-    "GoToFunction": "GameFunctionType_GuildShop",
+    "GoToFunction": "GameFunctionType_OldWorldClassicShop",
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_NoviceLevelAddScore",
@@ -87270,8 +88239,8 @@
       }
     ],
     "DropReward": 328000105,
-    "TitleStrKey": "ST:168191",
-    "DescStrKey": "ST:168191"
+    "TitleStrKey": "ST:259632",
+    "DescStrKey": "ST:259632"
   },
   {
     "ID": 70100006,
@@ -87316,10 +88285,9 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_CompletedDangerFortuitousNum",
-        "P1": 2
+        "P1": 1
       }
     ],
-    "GoToFunction": "GameFunctionType_WorldMapFortuitous",
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_NoviceLevelAddScore",
@@ -87327,8 +88295,8 @@
       }
     ],
     "DropReward": 328000107,
-    "TitleStrKey": "ST:167288",
-    "DescStrKey": "ST:167288"
+    "TitleStrKey": "ST:102275",
+    "DescStrKey": "ST:102275"
   },
   {
     "ID": 70100008,
@@ -87400,11 +88368,11 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_BuyItemFromFixedStoreNums",
-        "P1": 3,
-        "P2": 1
+        "P1": 158,
+        "P2": 5
       }
     ],
-    "GoToFunction": "GameFunctionType_HonorShop",
+    "GoToFunction": "GameFunctionType_OldWorldClassicShop",
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_NoviceLevelAddScore",
@@ -87412,8 +88380,8 @@
       }
     ],
     "DropReward": 328000110,
-    "TitleStrKey": "ST:168255",
-    "DescStrKey": "ST:168255"
+    "TitleStrKey": "ST:259633",
+    "DescStrKey": "ST:259633"
   },
   {
     "ID": 70100011,
@@ -87595,7 +88563,7 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_CharacterHomeAchievementCompletedCount",
-        "P1": 6
+        "P1": 1
       }
     ],
     "PostEventList": [
@@ -87605,8 +88573,8 @@
       }
     ],
     "DropReward": 328000117,
-    "TitleStrKey": "ST:167518",
-    "DescStrKey": "ST:167518"
+    "TitleStrKey": "ST:189521",
+    "DescStrKey": "ST:189521"
   },
   {
     "ID": 70100018,
@@ -87622,7 +88590,7 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_HomeCharacterLevelNums",
-        "P1": 2,
+        "P1": 1,
         "P2": 2
       }
     ],
@@ -87633,8 +88601,8 @@
       }
     ],
     "DropReward": 328000118,
-    "TitleStrKey": "ST:167519",
-    "DescStrKey": "ST:167519"
+    "TitleStrKey": "ST:259634",
+    "DescStrKey": "ST:259634"
   },
   {
     "ID": 70100019,
@@ -87787,7 +88755,7 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_CharacterHomeAchievementCompletedCount",
-        "P1": 10
+        "P1": 3
       }
     ],
     "PostEventList": [
@@ -87797,8 +88765,8 @@
       }
     ],
     "DropReward": 328000124,
-    "TitleStrKey": "ST:167525",
-    "DescStrKey": "ST:167525"
+    "TitleStrKey": "ST:259635",
+    "DescStrKey": "ST:259635"
   },
   {
     "ID": 70100025,
@@ -88002,10 +88970,9 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_CompletedDangerFortuitousNum",
-        "P1": 4
+        "P1": 2
       }
     ],
-    "GoToFunction": "GameFunctionType_WorldMapFortuitous",
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_NoviceLevelAddScore",
@@ -88013,8 +88980,8 @@
       }
     ],
     "DropReward": 328000132,
-    "TitleStrKey": "ST:167311",
-    "DescStrKey": "ST:167311"
+    "TitleStrKey": "ST:167288",
+    "DescStrKey": "ST:167288"
   },
   {
     "ID": 70100033,
@@ -88136,10 +89103,11 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_BuyItemFromFixedStoreNums",
-        "P1": 47,
-        "P2": 5
+        "P1": 158,
+        "P2": 10
       }
     ],
+    "GoToFunction": "GameFunctionType_OldWorldClassicShop",
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_NoviceLevelAddScore",
@@ -88147,8 +89115,8 @@
       }
     ],
     "DropReward": 328000137,
-    "TitleStrKey": "ST:167533",
-    "DescStrKey": "ST:167533"
+    "TitleStrKey": "ST:259636",
+    "DescStrKey": "ST:259636"
   },
   {
     "ID": 70100038,
@@ -88993,10 +89961,11 @@
     "CompleteCondList": [
       {
         "CondType": "MissionCompleteCondType_BuyItemFromFixedStoreNums",
-        "P1": 30,
-        "P2": 10
+        "P1": 158,
+        "P2": 20
       }
     ],
+    "GoToFunction": "GameFunctionType_OldWorldClassicShop",
     "PostEventList": [
       {
         "PostEventType": "MissionPostEventType_NoviceLevelAddScore",
@@ -89004,8 +89973,8 @@
       }
     ],
     "DropReward": 328000169,
-    "TitleStrKey": "ST:167555",
-    "DescStrKey": "ST:167555"
+    "TitleStrKey": "ST:259637",
+    "DescStrKey": "ST:259637"
   },
   {
     "ID": 70100070,
@@ -94988,6 +95957,132 @@
     "DropReward": 351602209,
     "TitleStrKey": "ST:237304",
     "DescStrKey": "ST:237635"
+  },
+  {
+    "ID": 202450521,
+    "MissionType": "MissionType_RelicBattle",
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_RelicBattleComplete",
+        "P3": 1,
+        "P4": 70000
+      }
+    ],
+    "DropReward": 351676201,
+    "TitleStrKey": "ST:237296",
+    "DescStrKey": "ST:260220"
+  },
+  {
+    "ID": 202450522,
+    "MissionType": "MissionType_RelicBattle",
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_RelicBattleComplete",
+        "P3": 1,
+        "P4": 150000
+      }
+    ],
+    "DropReward": 351676202,
+    "TitleStrKey": "ST:237297",
+    "DescStrKey": "ST:237627"
+  },
+  {
+    "ID": 202450523,
+    "MissionType": "MissionType_RelicBattle",
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_RelicBattleComplete",
+        "P3": 1,
+        "P4": 300000
+      }
+    ],
+    "DropReward": 351676203,
+    "TitleStrKey": "ST:237298",
+    "DescStrKey": "ST:237628"
+  },
+  {
+    "ID": 202450524,
+    "MissionType": "MissionType_RelicBattle",
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_RelicBattleComplete",
+        "P3": 2,
+        "P4": 20000
+      }
+    ],
+    "DropReward": 351676204,
+    "TitleStrKey": "ST:237299",
+    "DescStrKey": "ST:260221"
+  },
+  {
+    "ID": 202450525,
+    "MissionType": "MissionType_RelicBattle",
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_RelicBattleComplete",
+        "P3": 2,
+        "P4": 50000
+      }
+    ],
+    "DropReward": 351676205,
+    "TitleStrKey": "ST:237300",
+    "DescStrKey": "ST:260222"
+  },
+  {
+    "ID": 202450526,
+    "MissionType": "MissionType_RelicBattle",
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_RelicBattleComplete",
+        "P3": 2,
+        "P4": 100000
+      }
+    ],
+    "DropReward": 351676206,
+    "TitleStrKey": "ST:237301",
+    "DescStrKey": "ST:260223"
+  },
+  {
+    "ID": 202450527,
+    "MissionType": "MissionType_RelicBattle",
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_RelicBattleComplete",
+        "P3": 3,
+        "P4": 3000
+      }
+    ],
+    "DropReward": 351676207,
+    "TitleStrKey": "ST:237302",
+    "DescStrKey": "ST:260224"
+  },
+  {
+    "ID": 202450528,
+    "MissionType": "MissionType_RelicBattle",
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_RelicBattleComplete",
+        "P3": 3,
+        "P4": 7000
+      }
+    ],
+    "DropReward": 351676208,
+    "TitleStrKey": "ST:237303",
+    "DescStrKey": "ST:260225"
+  },
+  {
+    "ID": 202450529,
+    "MissionType": "MissionType_RelicBattle",
+    "CompleteCondList": [
+      {
+        "CondType": "MissionCompleteCondType_RelicBattleComplete",
+        "P3": 3,
+        "P4": 15000
+      }
+    ],
+    "DropReward": 351676209,
+    "TitleStrKey": "ST:237304",
+    "DescStrKey": "ST:260226"
   },
   {
     "ID": 202500000,

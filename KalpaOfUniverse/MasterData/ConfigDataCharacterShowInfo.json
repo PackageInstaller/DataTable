@@ -5612,6 +5612,69 @@
     "WishCardSpineScale": 100
   },
   {
+    "ID": 10643,
+    "OwnerCharId": 111510,
+    "SkinId": 592,
+    "ResPath": "Assets/GameProject/RuntimeAssets/Characters/Monster/Monster230900_ABS/FX/Prefab/FX_NormalWeapon01_dm.prefab",
+    "TargetRadius": 0.8,
+    "MoveSpeedRatio": 1.0,
+    "EfxScale": 1.0,
+    "BodyType": "CharBodyType_Medium",
+    "WishCardSpineScale": 100
+  },
+  {
+    "ID": 10644,
+    "OwnerCharId": 111511,
+    "SkinId": 593,
+    "ResPath": "Assets/GameProject/RuntimeAssets/Characters/Monster/Monster230900_ABS/FX/Prefab/FX_NormalWeapon02_dm.prefab",
+    "TargetRadius": 0.8,
+    "MoveSpeedRatio": 1.0,
+    "EfxScale": 1.0,
+    "BodyType": "CharBodyType_Medium",
+    "WishCardSpineScale": 100
+  },
+  {
+    "ID": 10645,
+    "OwnerCharId": 111512,
+    "SkinId": 594,
+    "ResPath": "Assets/GameProject/RuntimeAssets/Characters/Monster/Monster230900_ABS/FX/Prefab/FX_NormalWeapon03_dm.prefab",
+    "TargetRadius": 0.8,
+    "MoveSpeedRatio": 1.0,
+    "EfxScale": 1.0,
+    "BodyType": "CharBodyType_Medium",
+    "WishCardSpineScale": 100
+  },
+  {
+    "ID": 10646,
+    "OwnerCharId": 111513,
+    "SkinId": 595,
+    "ResPath": "Assets/GameProject/RuntimeAssets/Characters/Monster/Monster230900_ABS/FX/Prefab/FX_NormalWeapon04_dm.prefab",
+    "TargetRadius": 0.8,
+    "MoveSpeedRatio": 1.0,
+    "EfxScale": 1.0,
+    "BodyType": "CharBodyType_Medium",
+    "WishCardSpineScale": 100
+  },
+  {
+    "ID": 10647,
+    "OwnerCharId": 111505,
+    "SkinId": 596,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1403/Prefab/playEFx_Hero1403_67.prefab",
+    "BodyType": "CharBodyType_Medium",
+    "WishCardSpineScale": 100
+  },
+  {
+    "ID": 10648,
+    "OwnerCharId": 111514,
+    "SkinId": 597,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/CommonFX/CommonFX_ABS/CautionFX/Prefab/Caution_FX.prefab",
+    "TargetRadius": 0.8,
+    "MoveSpeedRatio": 1.0,
+    "EfxScale": 1.0,
+    "BodyType": "CharBodyType_Medium",
+    "WishCardSpineScale": 100
+  },
+  {
     "ID": 10801,
     "OwnerCharId": 100801,
     "SkinId": 231,
@@ -39145,6 +39208,155 @@
     "HeroPoetryStrKey": "ST:254654"
   },
   {
+    "ID": 140400,
+    "OwnerCharId": 100140400,
+    "SkinId": 2659,
+    "Head": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Card01_ABS/Hero1404_HeadIcon_Basic.png@Hero1404_HeadIcon_Basic",
+    "CircleHead": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1404_MountainsAndRivers.png@Hero1404_MountainsAndRivers",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1404_ABS/Hero1404_Graphic_Prefab.prefab",
+    "EyesImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/HeroEye01_ABS/Hero1404_Eye.png@Hero1404_Eye",
+    "NameImgPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/HeroNamePrefab_ABS/Hero1404_Name.prefab",
+    "ResPath": "Assets/GameProject/RuntimeAssets/Characters/Hero/Hero1404_ABS/Hero1404.prefab",
+    "MotionSettingPath": "Assets/GameProject/RuntimeAssets/Characters/Hero/Hero1404_ABS/motions.asset",
+    "QuickFightAttkEffect": 800001022,
+    "TargetRadius": 0.7,
+    "MoveSpeedRatio": 1.0,
+    "EfxScale": 1.0,
+    "BodyType": "CharBodyType_Medium",
+    "PerfermanceId": 140401,
+    "BreakPerfermanceId": 140404,
+    "ResultPerfermanceId": 140402,
+    "GachaPerfermanceId": 140403,
+    "VoicePerfermanceId": 140405,
+    "HeroPainting": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/HeroPaintingPrefab_ABS/SSR/Hero1404.Prefab",
+    "SelectAnnounceVoice": "HO_1404_Voice_Line_Combat_Select",
+    "DefaultSkillVoice": "HO_1404_Voice_Line_Combat_Skill",
+    "SpecifySkillVoiceList": [
+      {
+        "SkillId": 61140492,
+        "Voice": "HO_1404_Voice_Line_Combat_Skill_2"
+      },
+      {
+        "SkillId": 61140491,
+        "Voice": "HO_1404_Voice_Line_Combat_Skill_2"
+      },
+      {
+        "SkillId": 61140490,
+        "Voice": "HO_1404_Voice_Line_Combat_Skill_2"
+      },
+      {
+        "SkillId": 61140430,
+        "Voice": "HO_1404_Voice_Line_Combat_CastSkill"
+      },
+      {
+        "SkillId": 61140431,
+        "Voice": "HO_1404_Voice_Line_Combat_CastSkill"
+      },
+      {
+        "SkillId": 61140432,
+        "Voice": "HO_1404_Voice_Line_Combat_CastSkill"
+      },
+      {
+        "SkillId": 61140411,
+        "Voice": "HO_1404_Voice_Line_Combat_Skill_3C"
+      },
+      {
+        "SkillId": 61140412,
+        "Voice": "HO_1404_Voice_Line_Combat_Skill_3C"
+      },
+      {
+        "SkillId": 61140451,
+        "Voice": "HO_1404_Voice_Line_Combat_Skill_3C"
+      },
+      {
+        "SkillId": 61140452,
+        "Voice": "HO_1404_Voice_Line_Combat_Skill_3C"
+      }
+    ],
+    "DefaultFormationVoice": "HO_1404_Voice_Line_Combat_Active",
+    "DivineWeaponEffectList": [
+      910000003
+    ],
+    "WishCardSpineScale": 72,
+    "NamePingYingStrKey": "ST:259146",
+    "CVNameStrKey": "ST:187359",
+    "HeroPoetryStrKey": "ST:259147"
+  },
+  {
+    "ID": 140401,
+    "OwnerCharId": 100140400,
+    "SkinId": 2660,
+    "Head": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Card01_ABS/Hero1404_HeadIcon_Skin01.png@Hero1404_HeadIcon_Skin01",
+    "CircleHead": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1404_Skin01_MountainsAndRivers.png@Hero1404_Skin01_MountainsAndRivers",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1404_Skin01_ABS/Hero1404_Skin01_Graphic_Prefab.prefab",
+    "EyesImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/HeroEye01_ABS/Hero1404_Skin01_Eye.png@Hero1404_Skin01_Eye",
+    "NameImgPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/HeroNamePrefab_ABS/Hero1404_Name.prefab",
+    "ResPath": "Assets/GameProject/RuntimeAssets/Characters/Hero/Hero1404_Skin01_ABS/Hero1404_Skin01.prefab",
+    "MotionSettingPath": "Assets/GameProject/RuntimeAssets/Characters/Hero/Hero1404_Skin01_ABS/motions.asset",
+    "QuickFightAttkEffect": 870000162,
+    "TargetRadius": 0.7,
+    "MoveSpeedRatio": 1.0,
+    "EfxScale": 1.0,
+    "BodyType": "CharBodyType_Medium",
+    "PerfermanceId": 140400101,
+    "BreakPerfermanceId": 140404,
+    "ResultPerfermanceId": 140400102,
+    "GachaPerfermanceId": 140403,
+    "VoicePerfermanceId": 140405,
+    "SelectAnnounceVoice": "HO_1404_Voice_Line_Combat_Select_2",
+    "DefaultSkillVoice": "HO_1404_Voice_Line_Combat_Skill",
+    "SpecifySkillVoiceList": [
+      {
+        "SkillId": 61140492,
+        "Voice": "HO_1404_Voice_Line_Combat_Skill_2"
+      },
+      {
+        "SkillId": 61140491,
+        "Voice": "HO_1404_Voice_Line_Combat_Skill_2"
+      },
+      {
+        "SkillId": 61140490,
+        "Voice": "HO_1404_Voice_Line_Combat_Skill_2"
+      },
+      {
+        "SkillId": 61140430,
+        "Voice": "HO_1404_Voice_Line_Combat_CastSkill"
+      },
+      {
+        "SkillId": 61140431,
+        "Voice": "HO_1404_Voice_Line_Combat_CastSkill"
+      },
+      {
+        "SkillId": 61140432,
+        "Voice": "HO_1404_Voice_Line_Combat_CastSkill"
+      },
+      {
+        "SkillId": 61140411,
+        "Voice": "HO_1404_Voice_Line_Combat_Skill_3C"
+      },
+      {
+        "SkillId": 61140412,
+        "Voice": "HO_1404_Voice_Line_Combat_Skill_3C"
+      },
+      {
+        "SkillId": 61140451,
+        "Voice": "HO_1404_Voice_Line_Combat_Skill_3C"
+      },
+      {
+        "SkillId": 61140452,
+        "Voice": "HO_1404_Voice_Line_Combat_Skill_3C"
+      }
+    ],
+    "DefaultFormationVoice": "HO_1404_Voice_Line_Combat_Active_2",
+    "DivineWeaponEffectList": [
+      910000003
+    ],
+    "WishCardSpineScale": 100,
+    "NamePingYingStrKey": "ST:259146",
+    "CVNameStrKey": "ST:187359",
+    "HeroPoetryStrKey": "ST:259147"
+  },
+  {
     "ID": 150000,
     "OwnerCharId": 100150000,
     "SkinId": 2562,
@@ -39774,6 +39986,83 @@
     "DoubleAttackVoice": "HO_1503_Voice_Line_Combat_DoubleHit",
     "FastAttackVoice": "HO_1503_Voice_Line_Combat_FirstHit",
     "DefaultFormationVoice": "HO_1503_Voice_Line_Combat_Active_2",
+    "DivineWeaponEffectList": [
+      910000003
+    ],
+    "WishCardSpineScale": 72,
+    "NamePingYingStrKey": "ST:240476",
+    "CVNameStrKey": "ST:168170",
+    "HeroPoetryStrKey": "ST:240477"
+  },
+  {
+    "ID": 150303,
+    "OwnerCharId": 100150300,
+    "SkinId": 2661,
+    "Head": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Card01_ABS/Hero1503_HeadIcon_Skin03.png@Hero1503_HeadIcon_Skin03",
+    "CircleHead": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1503_Skin03_MountainsAndRivers.png@Hero1503_Skin03_MountainsAndRivers",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1503_Skin03_ABS/Hero1503_Skin03_Graphic_Prefab.prefab",
+    "EyesImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/HeroEye01_ABS/Hero1503_Skin03_Eye.png@Hero1503_Skin03_Eye",
+    "NameImgPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/HeroNamePrefab_ABS/Hero1503_Name.prefab",
+    "ResPath": "Assets/GameProject/RuntimeAssets/Characters/Hero/Hero1503_Skin03_ABS/Hero1503_Skin03.prefab",
+    "MotionSettingPath": "Assets/GameProject/RuntimeAssets/Characters/Hero/Hero1503_Skin03_ABS/motions.asset",
+    "QuickFightAttkEffect": 870000001,
+    "TargetRadius": 0.7,
+    "MoveSpeedRatio": 1.0,
+    "EfxScale": 1.0,
+    "BodyType": "CharBodyType_Medium",
+    "PerfermanceId": 150300301,
+    "BreakPerfermanceId": 150304,
+    "ResultPerfermanceId": 150300302,
+    "GachaPerfermanceId": 150303,
+    "VoicePerfermanceId": 150305,
+    "SelectAnnounceVoice": "HO_1503_Voice_Line_Combat_Select",
+    "DefaultSkillVoice": "HO_1503_Voice_Line_Combat_Skill",
+    "SpecifySkillVoiceList": [
+      {
+        "SkillId": 61150340,
+        "Voice": "HO_1503_Voice_Line_Combat_CastSkill"
+      },
+      {
+        "SkillId": 61150341,
+        "Voice": "HO_1503_Voice_Line_Combat_CastSkill"
+      },
+      {
+        "SkillId": 61150342,
+        "Voice": "HO_1503_Voice_Line_Combat_CastSkill"
+      },
+      {
+        "SkillId": 61150321,
+        "Voice": "HO_1503_Voice_Line_Combat_Skill_3C"
+      },
+      {
+        "SkillId": 61150322,
+        "Voice": "HO_1503_Voice_Line_Combat_Skill_3C"
+      },
+      {
+        "SkillId": 61150311,
+        "Voice": "HO_1503_Voice_Line_Combat_Skill_3C"
+      },
+      {
+        "SkillId": 61150312,
+        "Voice": "HO_1503_Voice_Line_Combat_Skill_3C"
+      },
+      {
+        "SkillId": 61150331,
+        "Voice": "HO_1503_Voice_Line_Combat_Skill_3C"
+      },
+      {
+        "SkillId": 61150332,
+        "Voice": "HO_1503_Voice_Line_Combat_Skill_3C"
+      },
+      {
+        "SkillId": 61150390,
+        "Voice": "HO_1503_Voice_Line_Combat_Skill_2"
+      }
+    ],
+    "ChaseAttackVoice": "HO_1503_Voice_Line_Combat_ChaseHit",
+    "DoubleAttackVoice": "HO_1503_Voice_Line_Combat_DoubleHit",
+    "FastAttackVoice": "HO_1503_Voice_Line_Combat_FirstHit",
+    "DefaultFormationVoice": "HO_1503_Voice_Line_Combat_Active",
     "DivineWeaponEffectList": [
       910000003
     ],
@@ -46588,9 +46877,9 @@
     ],
     "WishCardSpineScale": 72,
     "VideoId": 306602,
-    "NamePingYingStrKey": "ST:256608",
+    "NamePingYingStrKey": "ST:256718",
     "CVNameStrKey": "ST:72933",
-    "HeroPoetryStrKey": "ST:256609"
+    "HeroPoetryStrKey": "ST:256719"
   },
   {
     "ID": 250901,
@@ -46660,9 +46949,9 @@
     ],
     "WishCardSpineScale": 72,
     "VideoId": 306603,
-    "NamePingYingStrKey": "ST:256608",
+    "NamePingYingStrKey": "ST:256718",
     "CVNameStrKey": "ST:72933",
-    "HeroPoetryStrKey": "ST:256609"
+    "HeroPoetryStrKey": "ST:256719"
   },
   {
     "ID": 999500,
@@ -51749,6 +52038,23 @@
     "ResPath": "Assets/GameProject/RuntimeAssets/Characters/Monster/Monster311230_ABS/Boss241800.prefab",
     "MotionSettingPath": "Assets/GameProject/RuntimeAssets/Characters/Monster/Monster311230_ABS/motions_Boss241800.asset",
     "QuickFightAttkEffect": 800001021,
+    "TargetRadius": 0.8,
+    "MoveSpeedRatio": 1.0,
+    "EfxScale": 1.5,
+    "BodyType": "CharBodyType_Medium",
+    "WishCardSpineScale": 100
+  },
+  {
+    "ID": 2419000,
+    "OwnerCharId": 124190000,
+    "SkinId": 6079,
+    "Head": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Boss241900_MountainsAndRivers.png@Boss241900_MountainsAndRivers",
+    "CircleHead": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Boss241900_MountainsAndRivers.png@Boss241900_MountainsAndRivers",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Monster/Monster999999_ABS/Monster999999_Graphic_Prefab.prefab",
+    "EyesImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/HeroEye01_ABS/Boss241900_Eye.png@Boss241900_Eye",
+    "ResPath": "Assets/GameProject/RuntimeAssets/Characters/Monster/Monster230900_ABS/Boss241900.prefab",
+    "MotionSettingPath": "Assets/GameProject/RuntimeAssets/Characters/Monster/Monster230900_ABS/motions_Boss241900.asset",
+    "QuickFightAttkEffect": 870000001,
     "TargetRadius": 0.8,
     "MoveSpeedRatio": 1.0,
     "EfxScale": 1.5,

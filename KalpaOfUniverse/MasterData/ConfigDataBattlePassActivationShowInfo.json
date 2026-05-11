@@ -2410,7 +2410,7 @@
     "OrginalPrice": 146,
     "LevelUpTo": 10,
     "NameStrKey": "ST:103908",
-    "TextShowStrKey": "ST:258807"
+    "TextShowStrKey": "ST:258826"
   },
   {
     "ID": 743,
@@ -2421,6 +2421,88 @@
     ],
     "LevelUpTo": 10,
     "NameStrKey": "ST:103908",
-    "TextShowStrKey": "ST:258807"
+    "TextShowStrKey": "ST:258826"
+  },
+  {
+    "ID": 751,
+    "Icon": "Assets/GameProject/RuntimeAssets/Spine/UIspine/ui_BattlePassIcon02/ui_BattlePassIcon02_Graphic_Prefab.prefab",
+    "AdvanceActivitionReward": [
+      {
+        "ItemType": "ItemType_EnchantmentScroll",
+        "ItemId": 431024010,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_CommonCharacterFrag",
+        "ItemId": 402084000,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022001,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402024901,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403011200,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 431999994,
+        "Count": 1
+      }
+    ],
+    "NameStrKey": "ST:103907",
+    "TextShowStrKey": "ST:220505"
+  },
+  {
+    "ID": 752,
+    "Icon": "Assets/GameProject/RuntimeAssets/Spine/UIspine/ui_BattlePassIcon03/ui_BattlePassIcon03_Graphic_Prefab.prefab",
+    "AdvanceActivitionReward": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 55662213,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 402011700,
+        "Count": 1000
+      }
+    ],
+    "OrginalPrice": 146,
+    "LevelUpTo": 10,
+    "NameStrKey": "ST:103908",
+    "TextShowStrKey": "ST:258826"
+  },
+  {
+    "ID": 753,
+    "Icon": "Assets/GameProject/RuntimeAssets/Spine/UIspine/ui_BattlePassIcon03/ui_BattlePassIcon03_Graphic_Prefab.prefab",
+    "AdvanceActivitionReward": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 55662213,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 402011700,
+        "Count": 1000
+      }
+    ],
+    "LevelUpTo": 10,
+    "NameStrKey": "ST:103908",
+    "TextShowStrKey": "ST:258826"
   }
 ]

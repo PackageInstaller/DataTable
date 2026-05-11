@@ -1,5 +1,22 @@
 [
   {
+    "ID": 46186311,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      492
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1000
+    ],
+    "Param5": "Combat_DeadRootMotion",
+    "Param6": [
+      -1
+    ]
+  },
+  {
     "ID": 46186312,
     "ActionType": "BattleSceneActionType_ActorRetreat",
     "Param1": [
@@ -17439,28 +17456,5 @@
       }
     ],
     "Param12": 1
-  },
-  {
-    "ID": 46201015,
-    "VersionTag": 53,
-    "ActionType": "BattleSceneActionType_ActorTurnDir",
-    "Param1": [
-      103,
-      102
-    ],
-    "Param3": [
-      {
-        "X": 20,
-        "Y": 3
-      },
-      {
-        "X": 5,
-        "Y": 10
-      }
-    ],
-    "Param4": [
-      600,
-      600
-    ]
   }
 ]

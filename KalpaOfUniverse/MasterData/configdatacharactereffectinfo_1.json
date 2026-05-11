@@ -1,5 +1,18 @@
 [
   {
+    "ID": 10000086,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/CommonFX/CommonFX65_ABS/Prefab/Fx_youjing_Buff.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot"
+  },
+  {
+    "ID": 10000124,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Monster2000/Prefab/Monster2000_NormalWeapon.prefab",
+    "CharacterSocketType": "CharacterSocketType_PrimaryWeapon01",
+    "IsFollow": true,
+    "IsLoop": true,
+    "IsBScale": true
+  },
+  {
     "ID": 10000158,
     "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1100/Prefab/playEFx_0_Hero1100_CastSkill02.prefab",
     "CharacterSocketType": "CharacterSocketType_Foot",
@@ -529,18 +542,5 @@
     "ID": 100200400,
     "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1002/Prefab/PlayEFx_0_Hero1002_CastSkill01.prefab",
     "CharacterSocketType": "CharacterSocketType_Foot"
-  },
-  {
-    "ID": 100200900,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1002/Prefab/PlayEFx_0_Hero1002_CastSkill01_3C_BUFF.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot",
-    "IsFollow": true,
-    "IsLoop": true
-  },
-  {
-    "ID": 100200901,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1002/Prefab/PlayEFx_0_Hero1002_CastSkill04.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot",
-    "IsLockRotation": true
   }
 ]

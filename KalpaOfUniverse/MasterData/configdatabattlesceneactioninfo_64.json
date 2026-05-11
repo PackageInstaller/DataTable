@@ -1,5 +1,13 @@
 [
   {
+    "ID": 46124304,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      600
+    ],
+    "SkipCondId": 46124501
+  },
+  {
     "ID": 46124305,
     "ActionType": "BattleSceneActionType_CameraFocusPosition",
     "Param1": [
@@ -15198,19 +15206,6 @@
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
       1000
-    ]
-  },
-  {
-    "ID": 46143247,
-    "ActionType": "BattleSceneActionType_ActorEffect",
-    "Param1": [
-      131
-    ],
-    "Param2": [
-      0
-    ],
-    "Param4": [
-      10001
     ]
   }
 ]

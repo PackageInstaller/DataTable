@@ -175919,6 +175919,1635 @@
     "DescStrKey": "ST:255827"
   },
   {
+    "ID": 1404011,
+    "UnitId": 140401,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "Properties": [
+      {
+        "Id": "PropertiesId_SpiritBase",
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022101,
+        "Count": 6
+      }
+    ],
+    "NameStrKey": "ST:116743",
+    "DescStrKey": "ST:116266"
+  },
+  {
+    "ID": 1404012,
+    "UnitId": 140401,
+    "Level": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "Properties": [
+      {
+        "Id": "PropertiesId_SpiritBase",
+        "Value": 9
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022101,
+        "Count": 10
+      }
+    ],
+    "NameStrKey": "ST:116743",
+    "DescStrKey": "ST:116267"
+  },
+  {
+    "ID": 1404013,
+    "UnitId": 140401,
+    "Level": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "Properties": [
+      {
+        "Id": "PropertiesId_SpiritBase",
+        "Value": 14
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022101,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022301,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022201,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022401,
+        "Count": 3
+      }
+    ],
+    "NameStrKey": "ST:116743",
+    "DescStrKey": "ST:116268"
+  },
+  {
+    "ID": 1404021,
+    "UnitId": 140402,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "Properties": [
+      {
+        "Id": "PropertiesId_CriticalRateBase_S",
+        "Value": 30
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022101,
+        "Count": 10
+      }
+    ],
+    "NameStrKey": "ST:116744",
+    "DescStrKey": "ST:116252"
+  },
+  {
+    "ID": 1404022,
+    "UnitId": 140402,
+    "Level": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "Properties": [
+      {
+        "Id": "PropertiesId_CriticalRateBase_S",
+        "Value": 75
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022102,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022301,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022201,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022401,
+        "Count": 3
+      }
+    ],
+    "NameStrKey": "ST:116744",
+    "DescStrKey": "ST:116253"
+  },
+  {
+    "ID": 1404023,
+    "UnitId": 140402,
+    "Level": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "Properties": [
+      {
+        "Id": "PropertiesId_CriticalRateBase_S",
+        "Value": 120
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022102,
+        "Count": 20
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022301,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022201,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022401,
+        "Count": 6
+      }
+    ],
+    "NameStrKey": "ST:116744",
+    "DescStrKey": "ST:116254"
+  },
+  {
+    "ID": 1404031,
+    "UnitId": 140403,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_attack.png@Icon_attack",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_01.png@Icon_01",
+    "Properties": [
+      {
+        "Id": "PropertiesId_SpiritBaseMult_S",
+        "Value": 200
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022302,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022202,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022402,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022001,
+        "Count": 1
+      }
+    ],
+    "NameStrKey": "ST:119544",
+    "DescStrKey": "ST:117503"
+  },
+  {
+    "ID": 1404041,
+    "UnitId": 140404,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "Properties": [
+      {
+        "Id": "PropertiesId_SpiritBase",
+        "Value": 7
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022302,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022202,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022402,
+        "Count": 3
+      }
+    ],
+    "NameStrKey": "ST:116746",
+    "DescStrKey": "ST:116266"
+  },
+  {
+    "ID": 1404042,
+    "UnitId": 140404,
+    "Level": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "Properties": [
+      {
+        "Id": "PropertiesId_SpiritBase",
+        "Value": 14
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022302,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022202,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022402,
+        "Count": 5
+      }
+    ],
+    "NameStrKey": "ST:116746",
+    "DescStrKey": "ST:116267"
+  },
+  {
+    "ID": 1404043,
+    "UnitId": 140404,
+    "Level": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "Properties": [
+      {
+        "Id": "PropertiesId_SpiritBase",
+        "Value": 22
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 20
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022303,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022203,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022403,
+        "Count": 6
+      }
+    ],
+    "NameStrKey": "ST:116746",
+    "DescStrKey": "ST:116268"
+  },
+  {
+    "ID": 1404051,
+    "UnitId": 140405,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_attack.png@Icon_attack",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_01.png@Icon_01",
+    "Properties": [
+      {
+        "Id": "PropertiesId_CriticalRateBaseMult_S",
+        "Value": 200
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022303,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022203,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022403,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022001,
+        "Count": 3
+      }
+    ],
+    "NameStrKey": "ST:119545",
+    "DescStrKey": "ST:117499"
+  },
+  {
+    "ID": 1404061,
+    "UnitId": 140406,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "Properties": [
+      {
+        "Id": "PropertiesId_CriticalRateBase_S",
+        "Value": 60
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022303,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022203,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022403,
+        "Count": 3
+      }
+    ],
+    "NameStrKey": "ST:116747",
+    "DescStrKey": "ST:116252"
+  },
+  {
+    "ID": 1404062,
+    "UnitId": 140406,
+    "Level": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "Properties": [
+      {
+        "Id": "PropertiesId_CriticalRateBase_S",
+        "Value": 120
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022303,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022203,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022403,
+        "Count": 5
+      }
+    ],
+    "NameStrKey": "ST:116747",
+    "DescStrKey": "ST:116253"
+  },
+  {
+    "ID": 1404063,
+    "UnitId": 140406,
+    "Level": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_red.png@Icon_red",
+    "Properties": [
+      {
+        "Id": "PropertiesId_CriticalRateBase_S",
+        "Value": 180
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 20
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022303,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022203,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022403,
+        "Count": 6
+      }
+    ],
+    "NameStrKey": "ST:116747",
+    "DescStrKey": "ST:116254"
+  },
+  {
+    "ID": 1404111,
+    "UnitId": 140411,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "Properties": [
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022101,
+        "Count": 6
+      }
+    ],
+    "NameStrKey": "ST:116748",
+    "DescStrKey": "ST:116255"
+  },
+  {
+    "ID": 1404112,
+    "UnitId": 140411,
+    "Level": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "Properties": [
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 7
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022101,
+        "Count": 10
+      }
+    ],
+    "NameStrKey": "ST:116748",
+    "DescStrKey": "ST:116256"
+  },
+  {
+    "ID": 1404113,
+    "UnitId": 140411,
+    "Level": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "Properties": [
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 12
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022101,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022301,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022201,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022401,
+        "Count": 3
+      }
+    ],
+    "NameStrKey": "ST:116748",
+    "DescStrKey": "ST:116257"
+  },
+  {
+    "ID": 1404121,
+    "UnitId": 140412,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "Properties": [
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022101,
+        "Count": 10
+      }
+    ],
+    "NameStrKey": "ST:116749",
+    "DescStrKey": "ST:116259"
+  },
+  {
+    "ID": 1404122,
+    "UnitId": 140412,
+    "Level": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "Properties": [
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 10
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022102,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022301,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022201,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022401,
+        "Count": 3
+      }
+    ],
+    "NameStrKey": "ST:116749",
+    "DescStrKey": "ST:116260"
+  },
+  {
+    "ID": 1404123,
+    "UnitId": 140412,
+    "Level": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "Properties": [
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 15
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022102,
+        "Count": 20
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022301,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022201,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022401,
+        "Count": 6
+      }
+    ],
+    "NameStrKey": "ST:116749",
+    "DescStrKey": "ST:116261"
+  },
+  {
+    "ID": 1404131,
+    "UnitId": 140413,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_defense.png@Icon_defense",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_03.png@Icon_03",
+    "Properties": [
+      {
+        "Id": "PropertiesId_PhysicDefendBaseMult_S",
+        "Value": 200
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022302,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022202,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022402,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022001,
+        "Count": 1
+      }
+    ],
+    "NameStrKey": "ST:119546",
+    "DescStrKey": "ST:117501"
+  },
+  {
+    "ID": 1404141,
+    "UnitId": 140414,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "Properties": [
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 6
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022302,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022202,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022402,
+        "Count": 3
+      }
+    ],
+    "NameStrKey": "ST:116751",
+    "DescStrKey": "ST:116255"
+  },
+  {
+    "ID": 1404142,
+    "UnitId": 140414,
+    "Level": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "Properties": [
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 12
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022302,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022202,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022402,
+        "Count": 5
+      }
+    ],
+    "NameStrKey": "ST:116751",
+    "DescStrKey": "ST:116256"
+  },
+  {
+    "ID": 1404143,
+    "UnitId": 140414,
+    "Level": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "Properties": [
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 17
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 20
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022303,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022203,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022403,
+        "Count": 6
+      }
+    ],
+    "NameStrKey": "ST:116751",
+    "DescStrKey": "ST:116257"
+  },
+  {
+    "ID": 1404151,
+    "UnitId": 140415,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_defense.png@Icon_defense",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_03.png@Icon_03",
+    "Properties": [
+      {
+        "Id": "PropertiesId_MagicDefendBaseMult_S",
+        "Value": 200
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022303,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022203,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022403,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022001,
+        "Count": 3
+      }
+    ],
+    "NameStrKey": "ST:119547",
+    "DescStrKey": "ST:117500"
+  },
+  {
+    "ID": 1404161,
+    "UnitId": 140416,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "Properties": [
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 8
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022303,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022203,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022403,
+        "Count": 3
+      }
+    ],
+    "NameStrKey": "ST:116752",
+    "DescStrKey": "ST:116259"
+  },
+  {
+    "ID": 1404162,
+    "UnitId": 140416,
+    "Level": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "Properties": [
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 15
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022303,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022203,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022403,
+        "Count": 5
+      }
+    ],
+    "NameStrKey": "ST:116752",
+    "DescStrKey": "ST:116260"
+  },
+  {
+    "ID": 1404163,
+    "UnitId": 140416,
+    "Level": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_blue.png@Icon_blue",
+    "Properties": [
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 23
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 20
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022303,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022203,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022403,
+        "Count": 6
+      }
+    ],
+    "NameStrKey": "ST:116752",
+    "DescStrKey": "ST:116261"
+  },
+  {
+    "ID": 1404211,
+    "UnitId": 140421,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022101,
+        "Count": 6
+      }
+    ],
+    "NameStrKey": "ST:116753",
+    "DescStrKey": "ST:116262"
+  },
+  {
+    "ID": 1404212,
+    "UnitId": 140421,
+    "Level": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 8
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022101,
+        "Count": 10
+      }
+    ],
+    "NameStrKey": "ST:116753",
+    "DescStrKey": "ST:116263"
+  },
+  {
+    "ID": 1404213,
+    "UnitId": 140421,
+    "Level": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 13
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022101,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022301,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022201,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022401,
+        "Count": 3
+      }
+    ],
+    "NameStrKey": "ST:116753",
+    "DescStrKey": "ST:116264"
+  },
+  {
+    "ID": 1404221,
+    "UnitId": 140422,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 8
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022101,
+        "Count": 10
+      }
+    ],
+    "NameStrKey": "ST:116754",
+    "DescStrKey": "ST:116262"
+  },
+  {
+    "ID": 1404222,
+    "UnitId": 140422,
+    "Level": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 13
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022102,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022301,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022201,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022401,
+        "Count": 3
+      }
+    ],
+    "NameStrKey": "ST:116754",
+    "DescStrKey": "ST:116263"
+  },
+  {
+    "ID": 1404223,
+    "UnitId": 140422,
+    "Level": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 18
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022102,
+        "Count": 20
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022301,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022201,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022401,
+        "Count": 6
+      }
+    ],
+    "NameStrKey": "ST:116754",
+    "DescStrKey": "ST:116264"
+  },
+  {
+    "ID": 1404231,
+    "UnitId": 140423,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_life.png@Icon_life",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_02.png@Icon_02",
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMaxMult_S",
+        "Value": 200
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022302,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022202,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022402,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022001,
+        "Count": 1
+      }
+    ],
+    "NameStrKey": "ST:119548",
+    "DescStrKey": "ST:119598"
+  },
+  {
+    "ID": 1404241,
+    "UnitId": 140424,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 13
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022302,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022202,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022402,
+        "Count": 3
+      }
+    ],
+    "NameStrKey": "ST:116756",
+    "DescStrKey": "ST:116262"
+  },
+  {
+    "ID": 1404242,
+    "UnitId": 140424,
+    "Level": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 18
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022302,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022202,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022402,
+        "Count": 5
+      }
+    ],
+    "NameStrKey": "ST:116756",
+    "DescStrKey": "ST:116263"
+  },
+  {
+    "ID": 1404243,
+    "UnitId": 140424,
+    "Level": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 24
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 20
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022303,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022203,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022403,
+        "Count": 6
+      }
+    ],
+    "NameStrKey": "ST:116756",
+    "DescStrKey": "ST:116264"
+  },
+  {
+    "ID": 1404251,
+    "UnitId": 140425,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_life.png@Icon_life",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_02.png@Icon_02",
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMaxMult_S",
+        "Value": 200
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022303,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022203,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022403,
+        "Count": 8
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022001,
+        "Count": 3
+      }
+    ],
+    "NameStrKey": "ST:119549",
+    "DescStrKey": "ST:119599"
+  },
+  {
+    "ID": 1404261,
+    "UnitId": 140426,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 18
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022303,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022203,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022403,
+        "Count": 3
+      }
+    ],
+    "NameStrKey": "ST:116757",
+    "DescStrKey": "ST:116262"
+  },
+  {
+    "ID": 1404262,
+    "UnitId": 140426,
+    "Level": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 23
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022303,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022203,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022403,
+        "Count": 5
+      }
+    ],
+    "NameStrKey": "ST:116757",
+    "DescStrKey": "ST:116263"
+  },
+  {
+    "ID": 1404263,
+    "UnitId": 140426,
+    "Level": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/GodWeaponImage_ABS/Icon_yellow.png@Icon_yellow",
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 29
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022103,
+        "Count": 20
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022303,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022203,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022403,
+        "Count": 6
+      }
+    ],
+    "NameStrKey": "ST:116757",
+    "DescStrKey": "ST:116264"
+  },
+  {
+    "ID": 1404311,
+    "VersionTag": 67,
+    "UnitId": 140431,
+    "Level": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/WeaponSkill_1404.png@WeaponSkill_1404",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/WeaponSkill_1404.png@WeaponSkill_1404",
+    "SkillBufIds": [
+      757140401
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022102,
+        "Count": 45
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022302,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022202,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022402,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022001,
+        "Count": 3
+      }
+    ],
+    "BattlePower": 100,
+    "NameStrKey": "ST:258858",
+    "UnlockDescStrKey": "ST:125941",
+    "DescStrKey": "ST:259035"
+  },
+  {
+    "ID": 1404312,
+    "VersionTag": 67,
+    "UnitId": 140431,
+    "Level": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/WeaponSkill_1404.png@WeaponSkill_1404",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/WeaponSkill_1404.png@WeaponSkill_1404",
+    "SkillBufIds": [
+      757140402
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022102,
+        "Count": 45
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022302,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022202,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022402,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022001,
+        "Count": 3
+      }
+    ],
+    "BattlePower": 200,
+    "NameStrKey": "ST:258858",
+    "UnlockDescStrKey": "ST:125942",
+    "DescStrKey": "ST:259036"
+  },
+  {
+    "ID": 1404313,
+    "VersionTag": 67,
+    "UnitId": 140431,
+    "Level": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/WeaponSkill_1404.png@WeaponSkill_1404",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/WeaponSkill_1404.png@WeaponSkill_1404",
+    "SkillBufIds": [
+      757140403
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022102,
+        "Count": 45
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022302,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022202,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022402,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022001,
+        "Count": 3
+      }
+    ],
+    "BattlePower": 300,
+    "NameStrKey": "ST:258858",
+    "UnlockDescStrKey": "ST:125943",
+    "DescStrKey": "ST:259037"
+  },
+  {
+    "ID": 1404314,
+    "VersionTag": 67,
+    "UnitId": 140431,
+    "Level": 4,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/WeaponSkill_1404.png@WeaponSkill_1404",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/WeaponSkill_1404.png@WeaponSkill_1404",
+    "SkillBufIds": [
+      757140404
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022102,
+        "Count": 45
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022302,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022202,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022402,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022001,
+        "Count": 3
+      }
+    ],
+    "BattlePower": 500,
+    "NameStrKey": "ST:258858",
+    "UnlockDescStrKey": "ST:125944",
+    "DescStrKey": "ST:259038"
+  },
+  {
+    "ID": 1404315,
+    "VersionTag": 67,
+    "UnitId": 140431,
+    "Level": 5,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/WeaponSkill_1404.png@WeaponSkill_1404",
+    "OutIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/WeaponSkill_1404.png@WeaponSkill_1404",
+    "SkillBufIds": [
+      757140405
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022102,
+        "Count": 45
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022302,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022202,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022402,
+        "Count": 15
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022001,
+        "Count": 3
+      }
+    ],
+    "BattlePower": 700,
+    "NameStrKey": "ST:258858",
+    "UnlockDescStrKey": "ST:125945",
+    "DescStrKey": "ST:259039"
+  },
+  {
     "ID": 1500011,
     "UnitId": 150001,
     "Level": 1,
@@ -219525,7 +221154,7 @@
     "BattlePower": 100,
     "NameStrKey": "ST:256365",
     "UnlockDescStrKey": "ST:125941",
-    "DescStrKey": "ST:258751"
+    "DescStrKey": "ST:258740"
   },
   {
     "ID": 2509312,
@@ -219558,7 +221187,7 @@
     "BattlePower": 200,
     "NameStrKey": "ST:256365",
     "UnlockDescStrKey": "ST:125942",
-    "DescStrKey": "ST:258752"
+    "DescStrKey": "ST:258741"
   },
   {
     "ID": 2509313,
@@ -219591,7 +221220,7 @@
     "BattlePower": 300,
     "NameStrKey": "ST:256365",
     "UnlockDescStrKey": "ST:125943",
-    "DescStrKey": "ST:258753"
+    "DescStrKey": "ST:258742"
   },
   {
     "ID": 2509314,
@@ -219624,7 +221253,7 @@
     "BattlePower": 500,
     "NameStrKey": "ST:256365",
     "UnlockDescStrKey": "ST:125944",
-    "DescStrKey": "ST:258754"
+    "DescStrKey": "ST:258743"
   },
   {
     "ID": 2509315,
@@ -219657,7 +221286,7 @@
     "BattlePower": 700,
     "NameStrKey": "ST:256365",
     "UnlockDescStrKey": "ST:125945",
-    "DescStrKey": "ST:258755"
+    "DescStrKey": "ST:258744"
   },
   {
     "ID": 31100001,

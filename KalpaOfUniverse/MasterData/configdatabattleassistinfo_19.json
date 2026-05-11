@@ -1,5 +1,18 @@
 [
   {
+    "ID": 49108,
+    "VersionTag": 55,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
+    "AssistType": "BattleAssistType_MountainAssist",
+    "AssistEffect": [
+      {
+        "BuffId": 749000038
+      }
+    ],
+    "SceneNameStrKey": "ST:220209",
+    "AssistDescStrKey": "ST:236999"
+  },
+  {
     "ID": 49109,
     "VersionTag": 55,
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
@@ -1208,21 +1221,5 @@
     ],
     "SceneNameStrKey": "ST:193681",
     "AssistDescStrKey": "ST:240593"
-  },
-  {
-    "ID": 51021,
-    "VersionTag": 57,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/BattleAsssit_024.png@BattleAsssit_024",
-    "AssistType": "BattleAssistType_PlayerAssist",
-    "EyeCharacter": 100122500,
-    "AssistActiveCondGroup": 23,
-    "AssistEffect": [
-      {
-        "BuffId": 745900140,
-        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
-      }
-    ],
-    "SceneNameStrKey": "ST:122659",
-    "AssistDescStrKey": "ST:240594"
   }
 ]

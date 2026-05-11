@@ -1,5 +1,296 @@
 [
   {
+    "ID": 741153200,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_AttachBufAfterCastSkill",
+    "FuncParams": [
+      1,
+      5,
+      -1,
+      741153201,
+      1
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
+    "ID": 741153201,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_AttachBufImm",
+    "FuncParams": [
+      0,
+      1,
+      1,
+      741153202,
+      1
+    ],
+    "ActiveCondIds": [
+      1350
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
+    "TriggerTimes": 1,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
+    "ID": 741153202,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_PropertiesModifyCombat",
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
+    "ID": 741153203,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_AttachBufAfterCastSkill",
+    "FuncParams": [
+      1,
+      115300,
+      -1,
+      700001541,
+      1
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
+    "ID": 741153204,
+    "LifeTime": 2,
+    "FuncType": "BufFuncType_Pack",
+    "FuncParams": [
+      741153205,
+      741153206
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
+    "ID": 741153205,
+    "LifeTime": 2,
+    "FuncType": "BufFuncType_DisperseBufBeforeCastSkill",
+    "FuncParams": [
+      1,
+      5,
+      -1,
+      1,
+      1
+    ],
+    "ActiveCondIds": [
+      1101,
+      500
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None",
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Other",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1637.png@EXSkill_1637",
+    "NameDescStrKey": "ST:209796",
+    "BuffDescStrKey": "ST:210872"
+  },
+  {
+    "ID": 741153206,
+    "LifeTime": 2,
+    "FuncType": "BufFuncType_AttachBufAfterCastSkill",
+    "FuncParams": [
+      1,
+      628,
+      -1,
+      700000840,
+      1
+    ],
+    "ActiveCondIds": [
+      1101,
+      500
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorId": 600000011,
+    "TriggerBehaviorType": "TriggerBehaviorType_Skill",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1637.png@EXSkill_1637",
+    "NameDescStrKey": "ST:209796"
+  },
+  {
+    "ID": 741153207,
+    "LifeTime": 1,
+    "FuncType": "BufFuncType_AttachBufAfterCastSkill",
+    "FuncParams": [
+      0,
+      1,
+      1,
+      741153204,
+      1
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerTimes": 1,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
+    "ID": 741153214,
+    "LifeTime": 2,
+    "FuncType": "BufFuncType_Pack",
+    "FuncParams": [
+      741153215,
+      741153216
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
+    "ID": 741153215,
+    "LifeTime": 2,
+    "FuncType": "BufFuncType_DisperseBufBeforeCastSkill",
+    "FuncParams": [
+      1,
+      5,
+      -1,
+      1,
+      2
+    ],
+    "ActiveCondIds": [
+      1101,
+      500
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None",
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Other",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_115303.png@EXSkill_3c_115303",
+    "NameDescStrKey": "ST:209796",
+    "BuffDescStrKey": "ST:210873"
+  },
+  {
+    "ID": 741153216,
+    "LifeTime": 2,
+    "FuncType": "BufFuncType_AttachBufAfterCastSkill",
+    "FuncParams": [
+      1,
+      628,
+      -1,
+      700000840,
+      1
+    ],
+    "ActiveCondIds": [
+      1101,
+      500
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorId": 600000011,
+    "TriggerBehaviorType": "TriggerBehaviorType_Skill",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_115303.png@EXSkill_3c_115303",
+    "NameDescStrKey": "ST:209796"
+  },
+  {
+    "ID": 741153217,
+    "LifeTime": 1,
+    "FuncType": "BufFuncType_AttachBufAfterCastSkill",
+    "FuncParams": [
+      0,
+      1,
+      1,
+      741153214,
+      1
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerTimes": 1,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
+    "ID": 741153300,
+    "LifeTime": 2,
+    "FuncType": "BufFuncType_Pack",
+    "FuncParams": [
+      741153301,
+      741153302
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None",
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Other",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1638.png@EXSkill_1638",
+    "NameDescStrKey": "ST:209797",
+    "BuffDescStrKey": "ST:211751"
+  },
+  {
     "ID": 741153301,
     "LifeTime": 2,
     "PropertiesList": [
@@ -4618,341 +4909,6 @@
       741156030,
       741156046,
       741156056
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741156004,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_Pack",
-    "FuncParams": [
-      741156014,
-      741156015,
-      741156016,
-      741156020,
-      741156045,
-      741156031,
-      741156046,
-      741156056
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741156005,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_PropertiesModifyCombat",
-    "ActiveCondIds": [
-      3301
-    ],
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_HealAdd_D",
-        "Value": 300
-      },
-      {
-        "Id": "PropertiesId_TotalDamageSub_D",
-        "Value": 300
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741156006,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_PropertiesModifyCombat",
-    "ActiveCondIds": [
-      3302
-    ],
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_HealAdd_D",
-        "Value": 300
-      },
-      {
-        "Id": "PropertiesId_TotalDamageSub_D",
-        "Value": 300
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741156007,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_PropertiesModifyCombat",
-    "ActiveCondIds": [
-      3303
-    ],
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_HealAdd_D",
-        "Value": 300
-      },
-      {
-        "Id": "PropertiesId_TotalDamageSub_D",
-        "Value": 300
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741156008,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_PropertiesModifyCombat",
-    "ActiveCondIds": [
-      3301
-    ],
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_HealAdd_D",
-        "Value": 400
-      },
-      {
-        "Id": "PropertiesId_TotalDamageSub_D",
-        "Value": 400
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741156009,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_PropertiesModifyCombat",
-    "ActiveCondIds": [
-      3302
-    ],
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_HealAdd_D",
-        "Value": 400
-      },
-      {
-        "Id": "PropertiesId_TotalDamageSub_D",
-        "Value": 400
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741156010,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_PropertiesModifyCombat",
-    "ActiveCondIds": [
-      3303
-    ],
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_HealAdd_D",
-        "Value": 400
-      },
-      {
-        "Id": "PropertiesId_TotalDamageSub_D",
-        "Value": 400
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741156011,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_PropertiesModifyCombat",
-    "ActiveCondIds": [
-      3301
-    ],
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_HealAdd_D",
-        "Value": 500
-      },
-      {
-        "Id": "PropertiesId_TotalDamageSub_D",
-        "Value": 500
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741156012,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_PropertiesModifyCombat",
-    "ActiveCondIds": [
-      3302
-    ],
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_HealAdd_D",
-        "Value": 500
-      },
-      {
-        "Id": "PropertiesId_TotalDamageSub_D",
-        "Value": 500
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741156013,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_PropertiesModifyCombat",
-    "ActiveCondIds": [
-      3303
-    ],
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_HealAdd_D",
-        "Value": 500
-      },
-      {
-        "Id": "PropertiesId_TotalDamageSub_D",
-        "Value": 500
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741156014,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_PropertiesModifyCombat",
-    "ActiveCondIds": [
-      3301
-    ],
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_HealAdd_D",
-        "Value": 600
-      },
-      {
-        "Id": "PropertiesId_TotalDamageSub_D",
-        "Value": 600
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741156015,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_PropertiesModifyCombat",
-    "ActiveCondIds": [
-      3302
-    ],
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_HealAdd_D",
-        "Value": 600
-      },
-      {
-        "Id": "PropertiesId_TotalDamageSub_D",
-        "Value": 600
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741156016,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_PropertiesModifyCombat",
-    "ActiveCondIds": [
-      3303
-    ],
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_HealAdd_D",
-        "Value": 600
-      },
-      {
-        "Id": "PropertiesId_TotalDamageSub_D",
-        "Value": 600
-      }
     ],
     "ReplaceRule": "ReplaceRule_Refresh",
     "LevelMax": 1,

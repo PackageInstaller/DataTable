@@ -13812,6 +13812,11 @@
       60
     ],
     "InnerForcePoint": 6,
+    "InnerForceSkillIdList": [
+      61107342,
+      61107352,
+      61107373
+    ],
     "InnerForcePropertiesList": [
       {
         "Id": "PropertiesId_HpAdditional_S",
@@ -32108,6 +32113,268 @@
     ]
   },
   {
+    "ID": 100122600,
+    "Level": 70,
+    "Star": 5,
+    "CurrentSkin": 122600,
+    "SkillIdList": [
+      61122620,
+      61122640,
+      61122650
+    ],
+    "EquipList": [
+      {
+        "Level": 16,
+        "ItemId": 431024018
+      },
+      {
+        "Type": "CharacterEquipType_Helmet",
+        "Level": 16,
+        "ItemId": 431035002
+      },
+      {
+        "Type": "CharacterEquipType_Hangings",
+        "Level": 16,
+        "ItemId": 431043004
+      },
+      {
+        "Type": "CharacterEquipType_Utensil",
+        "Level": 16,
+        "ItemId": 431054009
+      }
+    ],
+    "WeaponLevel": 70,
+    "WeaponGrade": 4,
+    "WeaponSoulItemList": [
+      {
+        "ID": 4331003,
+        "Level": 25,
+        "PropertiesId1": "PropertiesId_SpiritMult_S",
+        "Value1": 700,
+        "PropertiesId2": "PropertiesId_MagicDamageAdditionalAdd_S",
+        "Value2": 700,
+        "PropertiesId3": "PropertiesId_MagicDefendBreakThroughAdditional_S",
+        "Value3": 700,
+        "PropertiesId4": "PropertiesId_RealCriticalRate_D",
+        "Value4": 700
+      },
+      {
+        "ID": 4332003,
+        "Level": 25,
+        "PropertiesId1": "PropertiesId_HpMaxMult_S",
+        "Value1": 700,
+        "PropertiesId2": "PropertiesId_PhysicDamageAdditionalSub_S",
+        "Value2": 700,
+        "PropertiesId3": "PropertiesId_MagicDamageAdditionalSub_S",
+        "Value3": 700,
+        "PropertiesId4": "PropertiesId_SpiritMult_S",
+        "Value4": 300
+      },
+      {
+        "ID": 4333003,
+        "Level": 25,
+        "PropertiesId1": "PropertiesId_SpiritMult_S",
+        "Value1": 500,
+        "PropertiesId2": "PropertiesId_MagicDamageAdditionalAdd_S",
+        "Value2": 500,
+        "PropertiesId3": "PropertiesId_HpMaxMult_S",
+        "Value3": 500,
+        "PropertiesId4": "PropertiesId_RealCriticalRate_D",
+        "Value4": 500
+      }
+    ],
+    "StargazingStepInfoList": [
+      {
+        "StepId": 300,
+        "Level": 10
+      },
+      {
+        "StepId": 301,
+        "Level": 10
+      },
+      {
+        "StepId": 302,
+        "Level": 10
+      },
+      {
+        "StepId": 303,
+        "Level": 10
+      },
+      {
+        "StepId": 5001,
+        "Level": 10
+      },
+      {
+        "StepId": 5002,
+        "Level": 10
+      },
+      {
+        "StepId": 50011,
+        "Level": 1
+      }
+    ],
+    "BigStarStepInfoList": [
+      {
+        "StepId": 500101,
+        "Level": 5
+      },
+      {
+        "StepId": 500102,
+        "Level": 5
+      },
+      {
+        "StepId": 500103,
+        "Level": 5
+      },
+      {
+        "StepId": 500104,
+        "Level": 5
+      },
+      {
+        "StepId": 500105,
+        "Level": 5
+      },
+      {
+        "StepId": 500106,
+        "Level": 5
+      }
+    ],
+    "SelectBigStarStepId": 500102,
+    "InnerPower": [
+      60,
+      60,
+      60
+    ],
+    "InnerForcePoint": 6,
+    "InnerForceSkillIdList": [
+      61122632,
+      61122680,
+      61122662
+    ],
+    "InnerForcePropertiesList": [
+      {
+        "Id": "PropertiesId_HpAdditional_S",
+        "Value": 690
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendAdditional_S",
+        "Value": 180
+      },
+      {
+        "Id": "PropertiesId_MagicDefendAdditional_S",
+        "Value": 240
+      },
+      {
+        "Id": "PropertiesId_SpiritAdditional_S",
+        "Value": 390
+      }
+    ],
+    "StarCrystalInfoList": [
+      {
+        "SlotId": 122603,
+        "CrystalId": 10110
+      },
+      {
+        "SlotId": 122605,
+        "CrystalId": 10110
+      },
+      {
+        "SlotId": 122613,
+        "CrystalId": 20410
+      },
+      {
+        "SlotId": 122615,
+        "CrystalId": 20410
+      },
+      {
+        "SlotId": 122623,
+        "CrystalId": 30210
+      },
+      {
+        "SlotId": 122625,
+        "CrystalId": 30210
+      }
+    ],
+    "DivineWeaponInfoList": [
+      {
+        "UnitId": 122601,
+        "Level": 3
+      },
+      {
+        "UnitId": 122602,
+        "Level": 3
+      },
+      {
+        "UnitId": 122603,
+        "Level": 1
+      },
+      {
+        "UnitId": 122604,
+        "Level": 3
+      },
+      {
+        "UnitId": 122605,
+        "Level": 1
+      },
+      {
+        "UnitId": 122606,
+        "Level": 3
+      },
+      {
+        "UnitId": 122611,
+        "Level": 3
+      },
+      {
+        "UnitId": 122612,
+        "Level": 3
+      },
+      {
+        "UnitId": 122613,
+        "Level": 1
+      },
+      {
+        "UnitId": 122614,
+        "Level": 3
+      },
+      {
+        "UnitId": 122615,
+        "Level": 1
+      },
+      {
+        "UnitId": 122616,
+        "Level": 3
+      },
+      {
+        "UnitId": 122621,
+        "Level": 3
+      },
+      {
+        "UnitId": 122622,
+        "Level": 3
+      },
+      {
+        "UnitId": 122623,
+        "Level": 1
+      },
+      {
+        "UnitId": 122624,
+        "Level": 3
+      },
+      {
+        "UnitId": 122625,
+        "Level": 1
+      },
+      {
+        "UnitId": 122626,
+        "Level": 3
+      },
+      {
+        "UnitId": 122631,
+        "Level": 5
+      }
+    ]
+  },
+  {
     "ID": 100130100,
     "Level": 70,
     "Star": 5,
@@ -35656,6 +35923,268 @@
       },
       {
         "UnitId": 140131,
+        "Level": 5
+      }
+    ]
+  },
+  {
+    "ID": 100140200,
+    "Level": 70,
+    "Star": 5,
+    "CurrentSkin": 140200,
+    "SkillIdList": [
+      61140220,
+      61140250,
+      61140230
+    ],
+    "EquipList": [
+      {
+        "Level": 16,
+        "ItemId": 431024002
+      },
+      {
+        "Type": "CharacterEquipType_Helmet",
+        "Level": 16,
+        "ItemId": 431035002
+      },
+      {
+        "Type": "CharacterEquipType_Hangings",
+        "Level": 16,
+        "ItemId": 431044007
+      },
+      {
+        "Type": "CharacterEquipType_Utensil",
+        "Level": 16,
+        "ItemId": 431055002
+      }
+    ],
+    "WeaponLevel": 70,
+    "WeaponGrade": 4,
+    "WeaponSoulItemList": [
+      {
+        "ID": 4331007,
+        "Level": 25,
+        "PropertiesId1": "PropertiesId_AttackMult_S",
+        "Value1": 700,
+        "PropertiesId2": "PropertiesId_PhysicDamageAdditionalAdd_S",
+        "Value2": 700,
+        "PropertiesId3": "PropertiesId_PhysicDefendBreakThroughAdditional_S",
+        "Value3": 700,
+        "PropertiesId4": "PropertiesId_RealCriticalRate_D",
+        "Value4": 700
+      },
+      {
+        "ID": 4332007,
+        "Level": 25,
+        "PropertiesId1": "PropertiesId_HpMaxMult_S",
+        "Value1": 700,
+        "PropertiesId2": "PropertiesId_RealCriticalRate_D",
+        "Value2": 300,
+        "PropertiesId3": "PropertiesId_PhysicDamageAdditionalAdd_S",
+        "Value3": 300,
+        "PropertiesId4": "PropertiesId_AttackMult_S",
+        "Value4": 300
+      },
+      {
+        "ID": 4333007,
+        "Level": 25,
+        "PropertiesId1": "PropertiesId_AttackMult_S",
+        "Value1": 500,
+        "PropertiesId2": "PropertiesId_PhysicDamageAdditionalAdd_S",
+        "Value2": 500,
+        "PropertiesId3": "PropertiesId_HpMaxMult_S",
+        "Value3": 500,
+        "PropertiesId4": "PropertiesId_RealCriticalRate_D",
+        "Value4": 500
+      }
+    ],
+    "StargazingStepInfoList": [
+      {
+        "StepId": 300,
+        "Level": 10
+      },
+      {
+        "StepId": 301,
+        "Level": 10
+      },
+      {
+        "StepId": 302,
+        "Level": 10
+      },
+      {
+        "StepId": 303,
+        "Level": 10
+      },
+      {
+        "StepId": 4001,
+        "Level": 10
+      },
+      {
+        "StepId": 4002,
+        "Level": 10
+      },
+      {
+        "StepId": 40011,
+        "Level": 1
+      }
+    ],
+    "BigStarStepInfoList": [
+      {
+        "StepId": 400101,
+        "Level": 5
+      },
+      {
+        "StepId": 400102,
+        "Level": 5
+      },
+      {
+        "StepId": 400103,
+        "Level": 5
+      },
+      {
+        "StepId": 400104,
+        "Level": 5
+      },
+      {
+        "StepId": 400105,
+        "Level": 5
+      },
+      {
+        "StepId": 400106,
+        "Level": 5
+      }
+    ],
+    "SelectBigStarStepId": 400103,
+    "InnerPower": [
+      60,
+      60,
+      60
+    ],
+    "InnerForcePoint": 6,
+    "InnerForceSkillIdList": [
+      61140242,
+      61140233,
+      61140252
+    ],
+    "InnerForcePropertiesList": [
+      {
+        "Id": "PropertiesId_HpAdditional_S",
+        "Value": 750
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendAdditional_S",
+        "Value": 210
+      },
+      {
+        "Id": "PropertiesId_MagicDefendAdditional_S",
+        "Value": 150
+      },
+      {
+        "Id": "PropertiesId_AttackAdditional_S",
+        "Value": 360
+      }
+    ],
+    "StarCrystalInfoList": [
+      {
+        "SlotId": 140203,
+        "CrystalId": 10110
+      },
+      {
+        "SlotId": 140205,
+        "CrystalId": 10110
+      },
+      {
+        "SlotId": 140213,
+        "CrystalId": 20410
+      },
+      {
+        "SlotId": 140215,
+        "CrystalId": 20410
+      },
+      {
+        "SlotId": 140223,
+        "CrystalId": 30210
+      },
+      {
+        "SlotId": 140225,
+        "CrystalId": 30210
+      }
+    ],
+    "DivineWeaponInfoList": [
+      {
+        "UnitId": 140201,
+        "Level": 3
+      },
+      {
+        "UnitId": 140202,
+        "Level": 3
+      },
+      {
+        "UnitId": 140203,
+        "Level": 1
+      },
+      {
+        "UnitId": 140204,
+        "Level": 3
+      },
+      {
+        "UnitId": 140205,
+        "Level": 1
+      },
+      {
+        "UnitId": 140206,
+        "Level": 3
+      },
+      {
+        "UnitId": 140211,
+        "Level": 3
+      },
+      {
+        "UnitId": 140212,
+        "Level": 3
+      },
+      {
+        "UnitId": 140213,
+        "Level": 1
+      },
+      {
+        "UnitId": 140214,
+        "Level": 3
+      },
+      {
+        "UnitId": 140215,
+        "Level": 1
+      },
+      {
+        "UnitId": 140216,
+        "Level": 3
+      },
+      {
+        "UnitId": 140221,
+        "Level": 3
+      },
+      {
+        "UnitId": 140222,
+        "Level": 3
+      },
+      {
+        "UnitId": 140223,
+        "Level": 1
+      },
+      {
+        "UnitId": 140224,
+        "Level": 3
+      },
+      {
+        "UnitId": 140225,
+        "Level": 1
+      },
+      {
+        "UnitId": 140226,
+        "Level": 3
+      },
+      {
+        "UnitId": 140231,
         "Level": 5
       }
     ]

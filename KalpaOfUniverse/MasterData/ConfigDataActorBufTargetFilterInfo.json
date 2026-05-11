@@ -5338,6 +5338,124 @@
     "SignRestraint": -2
   },
   {
+    "ID": 140401,
+    "CastTargetFilterTypeList": [
+      "BufTargetFilterTargetType_NotFriendly",
+      "BufTargetFilterTargetType_AnySummons",
+      "BufTargetFilterTargetType_IsInSkillRange"
+    ],
+    "CastTargetFilterTypeParamList": [
+      1
+    ],
+    "SignRestraint": -2
+  },
+  {
+    "ID": 140402,
+    "IsIncludeSelf": true,
+    "ContainBufID": 741404012,
+    "SignRestraint": -2
+  },
+  {
+    "ID": 140403,
+    "IsIncludeSelf": true,
+    "ContainBufID": 741404013,
+    "SignRestraint": -2
+  },
+  {
+    "ID": 140404,
+    "IsIncludeSelf": true,
+    "ContainBufID": 741404014,
+    "SignRestraint": -2
+  },
+  {
+    "ID": 140405,
+    "CastTargetFilterTypeList": [
+      "BufTargetFilterTargetType_Friendly",
+      "BufTargetFilterTargetType_IsInSkillRange"
+    ],
+    "CastTargetFilterTypeParamList": [
+      1
+    ],
+    "SignRestraint": -2
+  },
+  {
+    "ID": 140406,
+    "CastTargetFilterTypeList": [
+      "BufTargetFilterTargetType_NotFriendly",
+      "BufTargetFilterTargetType_IsInSkillRange"
+    ],
+    "CastTargetFilterTypeParamList": [
+      1
+    ],
+    "ContainsBufCategory": [
+      1,
+      3
+    ],
+    "SignRestraint": -2
+  },
+  {
+    "ID": 140407,
+    "CastTargetFilterTypeList": [
+      "BufTargetFilterTargetType_NotFriendly",
+      "BufTargetFilterTargetType_AnySummons"
+    ],
+    "UnContainsBufCategory": [
+      77,
+      1
+    ],
+    "InCurrentContextSkillAffectTargets": 1,
+    "SignRestraint": -2
+  },
+  {
+    "ID": 140408,
+    "CastTargetFilterTypeList": [
+      "BufTargetFilterTargetType_NotFriendly",
+      "BufTargetFilterTargetType_IsInSkillRange"
+    ],
+    "CastTargetFilterTypeParamList": [
+      1
+    ],
+    "SignRestraint": -2
+  },
+  {
+    "ID": 140409,
+    "CastTargetFilterType": 2,
+    "InCurrentContextSkillAffectTargets": 1,
+    "SignRestraint": -2
+  },
+  {
+    "ID": 140410,
+    "CastTargetFilterType": 1,
+    "UnContainsBufCategory": [
+      77,
+      1
+    ],
+    "ContainBufID": 741404515,
+    "SignRestraint": -2
+  },
+  {
+    "ID": 140411,
+    "CastTargetFilterTypeList": [
+      "BufTargetFilterTargetType_NotFriendly",
+      "BufTargetFilterTargetType_AnySummons"
+    ],
+    "InCurrentContextSkillAffectTargets": 1,
+    "SignRestraint": -2
+  },
+  {
+    "ID": 140412,
+    "CastTargetFilterTypeList": [
+      "BufTargetFilterTargetType_NotFriendly",
+      "BufTargetFilterTargetType_AnySummons"
+    ],
+    "UnContainsBufCategory": [
+      77,
+      1
+    ],
+    "ContainBufID": 741404515,
+    "SignRestraint": -2
+  },
+  {
     "ID": 150301,
     "CastTargetFilterTypeList": [
       "BufTargetFilterTargetType_Friendly",
@@ -5490,6 +5608,12 @@
     "ID": 202805,
     "CastTargetFilterType": 1,
     "UnContainBufID": 757202810,
+    "SignRestraint": -2
+  },
+  {
+    "ID": 202806,
+    "CastTargetFilterType": 1,
+    "ContainBufID": 757202808,
     "SignRestraint": -2
   },
   {
@@ -10309,6 +10433,101 @@
       "BufTargetFilterTargetType_Friendly",
       "BufTargetFilterTargetType_Facilitie"
     ],
+    "SignRestraint": -2
+  },
+  {
+    "ID": 763162930,
+    "CastTargetFilterType": 1,
+    "UnContainsBufCategory": [
+      763162930,
+      1,
+      0
+    ],
+    "SignRestraint": -2
+  },
+  {
+    "ID": 763162931,
+    "CastTargetFilterType": 1,
+    "ContainsBufCategory": [
+      763162930,
+      1,
+      0
+    ],
+    "SignRestraint": -2
+  },
+  {
+    "ID": 763162990,
+    "CastTargetFilterType": 1,
+    "ContainsBufCategory": [
+      763162941,
+      1,
+      0
+    ],
+    "SignRestraint": -2
+  },
+  {
+    "ID": 763162991,
+    "CastTargetFilterType": 1,
+    "ContainsBufCategory": [
+      763162942,
+      1,
+      0
+    ],
+    "SignRestraint": -2
+  },
+  {
+    "ID": 763162992,
+    "CastTargetFilterType": 1,
+    "ContainsBufCategory": [
+      763162943,
+      1,
+      0
+    ],
+    "SignRestraint": -2
+  },
+  {
+    "ID": 763162993,
+    "CastTargetFilterType": 1,
+    "ContainsBufCategory": [
+      763162944,
+      1,
+      0
+    ],
+    "SignRestraint": -2
+  },
+  {
+    "ID": 763163041,
+    "CastTargetFilterType": 2,
+    "IsIncludeSelf": true,
+    "ActorSign": [
+      "ActorSign_Shadow",
+      "ActorSign_Dusk",
+      "ActorSign_Demon"
+    ],
+    "ContainBufID": 763163041,
+    "SignRestraint": -2
+  },
+  {
+    "ID": 763163046,
+    "CastTargetFilterType": 2,
+    "IsIncludeSelf": true,
+    "ActorSign": [
+      "ActorSign_Fire",
+      "ActorSign_Ice",
+      "ActorSign_Electricity"
+    ],
+    "ContainBufID": 763163045,
+    "SignRestraint": -2
+  },
+  {
+    "ID": 763163051,
+    "CastTargetFilterType": 2,
+    "IsIncludeSelf": true,
+    "ActorSign": [
+      "ActorSign_Light",
+      "ActorSign_God"
+    ],
+    "ContainBufID": 763163051,
     "SignRestraint": -2
   },
   {

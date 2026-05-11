@@ -1,5 +1,16 @@
 [
   {
+    "ID": 50301214,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercent",
+    "Param1": [
+      243
+    ],
+    "Param2": [
+      10000
+    ],
+    "SkipCondId": 50301709
+  },
+  {
     "ID": 50301215,
     "ActionType": "BattleSceneActionType_HurtActorHpPercent",
     "Param1": [
@@ -15779,13 +15790,6 @@
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
       300
-    ]
-  },
-  {
-    "ID": 50813259,
-    "ActionType": "BattleSceneActionType_ActorRetreat",
-    "Param1": [
-      904
     ]
   }
 ]

@@ -9532,6 +9532,25 @@
     "DescStrKey": "ST:31760"
   },
   {
+    "ID": 1058,
+    "NeedCharLevel": 35,
+    "UnitType": "InnerPowerUnitType_BattleAssist",
+    "BattleAssistId": 95,
+    "Properties": [
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 4
+      },
+      {
+        "Id": "PropertiesId_SpiritBase",
+        "Value": 17
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroWuNeiImage_ABS/Wunei-WAtttack.png@Wunei-WAtttack",
+    "NameStrKey": "ST:31760",
+    "DescStrKey": "ST:31760"
+  },
+  {
     "ID": 1060,
     "NeedCharLevel": 40,
     "DependencyUnitId": 1050,
@@ -9684,6 +9703,25 @@
     "DescStrKey": "ST:31769"
   },
   {
+    "ID": 1068,
+    "NeedCharLevel": 40,
+    "DependencyUnitId": 1058,
+    "CostPointCount": 1,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 49
+      },
+      {
+        "Id": "PropertiesId_CriticalRateBase_S",
+        "Value": 78
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroWuNeiImage_ABS/Wunei-Life.png@Wunei-Life",
+    "NameStrKey": "ST:31769",
+    "DescStrKey": "ST:31769"
+  },
+  {
     "ID": 1070,
     "NeedCharLevel": 40,
     "DependencyUnitId": 1050,
@@ -9820,6 +9858,25 @@
     "ID": 1077,
     "NeedCharLevel": 40,
     "DependencyUnitId": 1057,
+    "CostPointCount": 1,
+    "Properties": [
+      {
+        "Id": "PropertiesId_PhysicDefendBase",
+        "Value": 11
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBase",
+        "Value": 13
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroWuNeiImage_ABS/Wunei-MagicPrevention.png@Wunei-MagicPrevention",
+    "NameStrKey": "ST:32051",
+    "DescStrKey": "ST:32051"
+  },
+  {
+    "ID": 1078,
+    "NeedCharLevel": 40,
+    "DependencyUnitId": 1058,
     "CostPointCount": 1,
     "Properties": [
       {

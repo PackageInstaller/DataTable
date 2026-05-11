@@ -1,5 +1,47 @@
 [
   {
+    "ID": 700002402,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_GodDemonBatch",
+    "FuncParams": [
+      8,
+      742504050,
+      16,
+      741091070,
+      64,
+      741501022
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
+    "ID": 700002403,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_GodDemonBatch",
+    "FuncParams": [
+      1,
+      741404910,
+      2,
+      741404900,
+      4,
+      741404920
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 700002601,
     "LifeTime": -1,
     "FuncType": "BufFuncType_Pack",
@@ -4534,84 +4576,6 @@
   {
     "ID": 700004100,
     "LifeTime": 2,
-    "FuncType": "BufFuncType_DamageBySelfOnStage",
-    "FuncParams": [
-      2,
-      2,
-      -1,
-      3,
-      32,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      3000,
-      0,
-      0,
-      0
-    ],
-    "ActiveBattleStageType": "BattleStageType_AfterActionExec",
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_Weak"
-    ],
-    "CanBePreventDisperse": true,
-    "LoopEffect": 110200210,
-    "TriggerBehaviorId": 600000030,
-    "TriggerBehaviorType": "TriggerBehaviorType_Skill",
-    "SkillPipeline": true,
-    "Visible": "BuffShowType_Normal",
-    "IconBackgroundType": "IconBackgroundType_Bad",
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1019.png@Buff_1019",
-    "NameDescStrKey": "ST:24385",
-    "BuffDescStrKey": "ST:71259"
-  },
-  {
-    "ID": 700004101,
-    "LifeTime": 2,
-    "FuncType": "BufFuncType_DamageBySelfOnStage",
-    "FuncParams": [
-      2,
-      2,
-      -1,
-      3,
-      32,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      2500,
-      0,
-      0,
-      0
-    ],
-    "ActiveBattleStageType": "BattleStageType_AfterActionExec",
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_Weak"
-    ],
-    "CanBePreventDisperse": true,
-    "LoopEffect": 110200210,
-    "TriggerBehaviorId": 600000030,
-    "TriggerBehaviorType": "TriggerBehaviorType_Skill",
-    "SkillPipeline": true,
-    "Visible": "BuffShowType_Normal",
-    "IconBackgroundType": "IconBackgroundType_Bad",
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1019.png@Buff_1019",
-    "NameDescStrKey": "ST:24385",
-    "BuffDescStrKey": "ST:30346"
-  },
-  {
-    "ID": 700004102,
-    "LifeTime": 1,
     "FuncType": "BufFuncType_DamageBySelfOnStage",
     "FuncParams": [
       2,

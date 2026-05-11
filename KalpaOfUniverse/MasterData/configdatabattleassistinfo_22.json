@@ -1,5 +1,18 @@
 [
   {
+    "ID": 61014,
+    "VersionTag": 61,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
+    "AssistType": "BattleAssistType_MountainAssist",
+    "AssistEffect": [
+      {
+        "BuffId": 763200941
+      }
+    ],
+    "SceneNameStrKey": "ST:247111",
+    "AssistDescStrKey": "ST:247132"
+  },
+  {
     "ID": 61015,
     "VersionTag": 61,
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
@@ -124,8 +137,8 @@
         "BuffId": 763202125
       }
     ],
-    "SceneNameStrKey": "ST:256786",
-    "AssistDescStrKey": "ST:256787"
+    "SceneNameStrKey": "ST:256549",
+    "AssistDescStrKey": "ST:256551"
   },
   {
     "ID": 66002,
@@ -137,8 +150,34 @@
         "BuffId": 763202125
       }
     ],
-    "SceneNameStrKey": "ST:256786",
-    "AssistDescStrKey": "ST:256787"
+    "SceneNameStrKey": "ST:256549",
+    "AssistDescStrKey": "ST:256551"
+  },
+  {
+    "ID": 67001,
+    "VersionTag": 67,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
+    "AssistType": "BattleAssistType_MountainAssist",
+    "AssistEffect": [
+      {
+        "BuffId": 763202170
+      }
+    ],
+    "SceneNameStrKey": "ST:256549",
+    "AssistDescStrKey": "ST:259888"
+  },
+  {
+    "ID": 67002,
+    "VersionTag": 67,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
+    "AssistType": "BattleAssistType_MountainAssist",
+    "AssistEffect": [
+      {
+        "BuffId": 763202150
+      }
+    ],
+    "SceneNameStrKey": "ST:256549",
+    "AssistDescStrKey": "ST:259888"
   },
   {
     "ID": 90001,
@@ -240,6 +279,58 @@
     "AssistDescStrKey": "ST:254356"
   },
   {
+    "ID": 810112501,
+    "VersionTag": 67,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BackupSkill_1125@BackupSkill_1125",
+    "AssistType": "BattleAssistType_ReinforceSkill",
+    "AssistEffect": [
+      {
+        "BuffId": 880112501
+      }
+    ],
+    "SceneNameStrKey": "ST:259133",
+    "AssistDescStrKey": "ST:259145"
+  },
+  {
+    "ID": 810112502,
+    "VersionTag": 67,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BackupSkill_1125@BackupSkill_1125",
+    "AssistType": "BattleAssistType_ReinforceSkill",
+    "AssistEffect": [
+      {
+        "BuffId": 880112501
+      }
+    ],
+    "SceneNameStrKey": "ST:259133",
+    "AssistDescStrKey": "ST:259145"
+  },
+  {
+    "ID": 810113401,
+    "VersionTag": 67,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BackupSkill_1134@BackupSkill_1134",
+    "AssistType": "BattleAssistType_ReinforceSkill",
+    "AssistEffect": [
+      {
+        "BuffId": 880113401
+      }
+    ],
+    "SceneNameStrKey": "ST:259269",
+    "AssistDescStrKey": "ST:259273"
+  },
+  {
+    "ID": 810113402,
+    "VersionTag": 67,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BackupSkill_1134@BackupSkill_1134",
+    "AssistType": "BattleAssistType_ReinforceSkill",
+    "AssistEffect": [
+      {
+        "BuffId": 880113402
+      }
+    ],
+    "SceneNameStrKey": "ST:259269",
+    "AssistDescStrKey": "ST:259274"
+  },
+  {
     "ID": 810114301,
     "VersionTag": 66,
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BackupSkill_1143@BackupSkill_1143",
@@ -250,7 +341,7 @@
       }
     ],
     "SceneNameStrKey": "ST:256394",
-    "AssistDescStrKey": "ST:256446"
+    "AssistDescStrKey": "ST:256477"
   },
   {
     "ID": 810114302,
@@ -263,7 +354,33 @@
       }
     ],
     "SceneNameStrKey": "ST:256394",
-    "AssistDescStrKey": "ST:256447"
+    "AssistDescStrKey": "ST:256478"
+  },
+  {
+    "ID": 810120401,
+    "VersionTag": 67,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BackupSkill_1204@BackupSkill_1204",
+    "AssistType": "BattleAssistType_ReinforceSkill",
+    "AssistEffect": [
+      {
+        "BuffId": 880120401
+      }
+    ],
+    "SceneNameStrKey": "ST:259322",
+    "AssistDescStrKey": "ST:259323"
+  },
+  {
+    "ID": 810120402,
+    "VersionTag": 67,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BackupSkill_1204@BackupSkill_1204",
+    "AssistType": "BattleAssistType_ReinforceSkill",
+    "AssistEffect": [
+      {
+        "BuffId": 880120402
+      }
+    ],
+    "SceneNameStrKey": "ST:259322",
+    "AssistDescStrKey": "ST:259324"
   },
   {
     "ID": 810121201,
@@ -276,7 +393,7 @@
       }
     ],
     "SceneNameStrKey": "ST:256393",
-    "AssistDescStrKey": "ST:256450"
+    "AssistDescStrKey": "ST:256481"
   },
   {
     "ID": 810121202,
@@ -289,7 +406,7 @@
       }
     ],
     "SceneNameStrKey": "ST:256393",
-    "AssistDescStrKey": "ST:256451"
+    "AssistDescStrKey": "ST:256482"
   },
   {
     "ID": 810132101,
@@ -301,8 +418,8 @@
         "BuffId": 880132101
       }
     ],
-    "SceneNameStrKey": "ST:258827",
-    "AssistDescStrKey": "ST:256448"
+    "SceneNameStrKey": "ST:259041",
+    "AssistDescStrKey": "ST:256479"
   },
   {
     "ID": 810132102,
@@ -314,7 +431,7 @@
         "BuffId": 880132102
       }
     ],
-    "SceneNameStrKey": "ST:258827",
-    "AssistDescStrKey": "ST:256449"
+    "SceneNameStrKey": "ST:259041",
+    "AssistDescStrKey": "ST:256480"
   }
 ]

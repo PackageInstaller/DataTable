@@ -1,5 +1,18 @@
 [
   {
+    "ID": 40853001,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 13
+      }
+    ]
+  },
+  {
     "ID": 40853002,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
@@ -15560,13 +15573,6 @@
     ],
     "Param2": [
       800009079
-    ]
-  },
-  {
-    "ID": 40905232,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      500
     ]
   }
 ]

@@ -2221,11 +2221,11 @@
     "OpenCondition": [
       {
         "CondType": "ConditionType_PlayerLevel",
-        "P1": 30
+        "P1": 99
       }
     ],
     "NameStrKey": "ST:209607",
-    "MessageStrKey": "ST:135872"
+    "MessageStrKey": "ST:99995"
   },
   {
     "ID": 384,
@@ -2888,15 +2888,75 @@
     "MessageStrKey": "ST:144877"
   },
   {
+    "ID": 474,
+    "GameFunctionType": "GameFunctionType_OldWorldClassic",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 40
+      }
+    ],
+    "NameStrKey": "ST:256547",
+    "MessageStrKey": "ST:100018"
+  },
+  {
     "ID": 475,
     "GameFunctionType": "GameFunctionType_CharacterFastUpgrage",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      }
+    ],
+    "NameStrKey": "ST:258900",
+    "MessageStrKey": "ST:135872"
+  },
+  {
+    "ID": 476,
+    "GameFunctionType": "GameFunctionType_SimulationGame",
     "OpenCondition": [
       {
         "CondType": "ConditionType_PlayerLevel",
         "P1": 99
       }
     ],
-    "NameStrKey": "ST:256220",
+    "NameStrKey": "ST:259017",
+    "MessageStrKey": "ST:100018"
+  },
+  {
+    "ID": 477,
+    "GameFunctionType": "GameFunctionType_StorySummaryEntrance",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:254089",
     "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 478,
+    "GameFunctionType": "GameFunctionType_OldWorldClassicShop",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10201
+      }
+    ],
+    "NameStrKey": "ST:260171",
+    "MessageStrKey": "ST:99991"
+  },
+  {
+    "ID": 479,
+    "GameFunctionType": "GameFunctionType_OldWorldClassicTruly",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 40
+      }
+    ],
+    "NameStrKey": "ST:256547",
+    "MessageStrKey": "ST:100018"
   }
 ]

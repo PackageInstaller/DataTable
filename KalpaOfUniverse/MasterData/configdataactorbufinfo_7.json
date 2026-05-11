@@ -1,5 +1,45 @@
 [
   {
+    "ID": 700100012,
+    "LifeTime": -1,
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None",
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Other",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1018.png@Buff_1018",
+    "NameDescStrKey": "ST:282",
+    "BuffDescStrKey": "ST:3133"
+  },
+  {
+    "ID": 700310010,
+    "LifeTime": -1,
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_RealCriticalRate_D",
+        "Value": 3000
+      }
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None",
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Other",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1006.png@Buff_1006",
+    "NameDescStrKey": "ST:54265",
+    "BuffDescStrKey": "ST:64350"
+  },
+  {
     "ID": 700310011,
     "LifeTime": -1,
     "FuncType": "BufFuncType_Pack",
@@ -4035,52 +4075,6 @@
     "ActiveCondIds": [
       503,
       5001
-    ],
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_TotalDamageSubLevel2_NC",
-        "Value": 1000
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 710003032,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_PropertiesModifyCombat",
-    "ActiveCondIds": [
-      503,
-      5002
-    ],
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_TotalDamageSubLevel2_NC",
-        "Value": 1000
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 710003033,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_PropertiesModifyCombat",
-    "ActiveCondIds": [
-      503,
-      5003
     ],
     "PropertiesList": [
       {

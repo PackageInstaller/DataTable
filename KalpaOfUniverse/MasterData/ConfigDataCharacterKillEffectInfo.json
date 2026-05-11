@@ -199,7 +199,24 @@
     "KillEffectDurationTime": 2500,
     "ShowTimeinePath": "Assets/GameProject/RuntimeAssets/Timeline/Dead_Common/Prefab/Dead_Common19_TL.prefab",
     "IsChampion": 1,
-    "VerticalLabelStrKey": "ST:258826"
+    "VerticalLabelStrKey": "ST:259054"
+  },
+  {
+    "ID": 12,
+    "Name": "晓寒碎琼",
+    "KillEffectType": "KillEffectType_Common",
+    "UnlockItemId": 504011016,
+    "MaxSlotCount": 999,
+    "DecomposeDropId": 351508889,
+    "DecomposeMailId": 40400,
+    "UnLockDesText": "参与 问鼎夺魁 活动获得",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/HeroKillEffect01_ABS/Death_Effects_XHSQ_01.png@Death_Effects_XHSQ_01",
+    "EfxConfigId": 12,
+    "WaitTimeBeforeSceneDeadEffect": 500,
+    "WaitTimeBeforeSceneDeadActorRemove": 700,
+    "KillEffectDurationTime": 2500,
+    "ShowTimeinePath": "Assets/GameProject/RuntimeAssets/Timeline/Dead_Common/Prefab/Dead_Common21_TL.prefab",
+    "VerticalLabelStrKey": "ST:260213"
   },
   {
     "ID": 1001,
@@ -371,5 +388,21 @@
     "WaitTimeBeforeSceneDeadActorRemove": 700,
     "KillEffectDurationTime": 2500,
     "ShowTimeinePath": "Assets/GameProject/RuntimeAssets/Timeline/Dead_Common/Prefab/Dead_Common20_TL.prefab"
+  },
+  {
+    "ID": 1010,
+    "Name": "白羽游梁",
+    "KillEffectType": "KillEffectType_Common",
+    "UnlockItemId": 504011017,
+    "MaxSlotCount": 999,
+    "DecomposeDropId": 351508889,
+    "DecomposeMailId": 40400,
+    "UnLockDesText": "参与 光风霁月 活动获得",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/HeroKillEffect01_ABS/Death_Effects_BYYL_01.png@Death_Effects_BYYL_01",
+    "EfxConfigId": 1010,
+    "WaitTimeBeforeSceneDeadEffect": 500,
+    "WaitTimeBeforeSceneDeadActorRemove": 700,
+    "KillEffectDurationTime": 2500,
+    "ShowTimeinePath": "Assets/GameProject/RuntimeAssets/Timeline/Dead_Common/Prefab/Dead_Common23_TL.prefab"
   }
 ]

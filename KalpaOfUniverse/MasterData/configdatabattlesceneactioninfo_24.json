@@ -1,5 +1,17 @@
 [
   {
+    "ID": 21001044,
+    "ActionType": "BattleSceneActionType_ActorRetreatByPos",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "Y": 16
+      }
+    ]
+  },
+  {
     "ID": 21001045,
     "ActionType": "BattleSceneActionType_ActorRetreatByPos",
     "Param2": [
@@ -23038,22 +23050,6 @@
         "X": 7,
         "Y": 17
       }
-    ]
-  },
-  {
-    "ID": 23050002,
-    "ActionType": "BattleSceneActionType_TeamAIStateSet",
-    "Param1": [
-      22
-    ],
-    "Param2": [
-      1
-    ],
-    "Param4": [
-      2
-    ],
-    "Param6": [
-      0
     ]
   }
 ]

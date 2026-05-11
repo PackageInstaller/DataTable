@@ -651,10 +651,10 @@
     "BuffId3DesStrKey": "ST:100731"
   },
   {
-    "ID": 31150001,
-    "VersionTag": 52,
+    "ID": 31140401,
+    "VersionTag": 67,
     "Rarity": "Rarity_N",
-    "Next": 31150002,
+    "Next": 31140402,
     "NeedItems": [
       {
         "ItemType": "ItemType_Currency",
@@ -666,27 +666,27 @@
     "Porperties": [
       {
         "Id": "PropertiesId_HpMaxWeapon_S",
-        "Value": 45
+        "Value": 38
       },
       {
-        "Id": "PropertiesId_AttackWeapon_S",
-        "Value": 37
+        "Id": "PropertiesId_SpiritWeapon_S",
+        "Value": 32
       }
     ],
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Equip01_ABS/Weapon_150005.png@Weapon_150005",
-    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Equip01_ABS/Weapon_150005.png@Weapon_150005",
-    "NameStrKey": "ST:234618",
-    "DescStrKey": "ST:234622"
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Equip01_ABS/Weapon_140405.png@Weapon_140405",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Equip01_ABS/Weapon_140405.png@Weapon_140405",
+    "NameStrKey": "ST:259720",
+    "DescStrKey": "ST:259721"
   },
   {
-    "ID": 31150002,
-    "VersionTag": 52,
+    "ID": 31140402,
+    "VersionTag": 67,
     "Rarity": "Rarity_R",
-    "Next": 31150003,
+    "Next": 31140403,
     "NeedItems": [
       {
         "ItemType": "ItemType_Material",
-        "ItemId": 403011101,
+        "ItemId": 403011102,
         "Count": 10
       },
       {
@@ -699,19 +699,19 @@
     "Porperties": [
       {
         "Id": "PropertiesId_HpMaxWeapon_S",
-        "Value": 55
+        "Value": 47
       },
       {
-        "Id": "PropertiesId_AttackWeapon_S",
-        "Value": 46
+        "Id": "PropertiesId_SpiritWeapon_S",
+        "Value": 39
       }
     ],
-    "ActorBuffId1": 751111020,
+    "ActorBuffId1": 751116020,
     "BattlePower": 200,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Equip01_ABS/Weapon_150005.png@Weapon_150005",
-    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Equip01_ABS/Weapon_150005.png@Weapon_150005",
-    "NameStrKey": "ST:234618",
-    "DescStrKey": "ST:234622",
-    "BuffId1DesStrKey": "ST:100725"
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Equip01_ABS/Weapon_140405.png@Weapon_140405",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Equip01_ABS/Weapon_140405.png@Weapon_140405",
+    "NameStrKey": "ST:259720",
+    "DescStrKey": "ST:259721",
+    "BuffId1DesStrKey": "ST:100724"
   }
 ]

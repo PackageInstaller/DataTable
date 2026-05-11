@@ -1,5 +1,81 @@
 [
   {
+    "ID": 20101201,
+    "Strategy": 1,
+    "CharActorSetups": [
+      {
+        "ActorId": 101,
+        "X": 8,
+        "Y": 4,
+        "DirX": 8,
+        "DirY": 9,
+        "TeamType": 2,
+        "TeamId": 11,
+        "CharacterId": 100100031,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 102,
+        "X": 7,
+        "Y": 4,
+        "DirX": 7,
+        "DirY": 9,
+        "TeamType": 2,
+        "TeamId": 11,
+        "CharacterId": 100100231,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 103,
+        "X": 6,
+        "Y": 3,
+        "DirX": 7,
+        "DirY": 9,
+        "TeamType": 2,
+        "TeamId": 11,
+        "CharacterId": 100100731,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 201,
+        "X": 7,
+        "Y": 13,
+        "DirX": 7,
+        "DirY": 15,
+        "TeamType": 4,
+        "TeamId": 21,
+        "CharacterId": 131090101,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      }
+    ],
+    "BattleMapId": 1805,
+    "DefaultNpcLevel": 25,
+    "BattleMapResPath": "Cavern01Series/Maps/1805_ABS/",
+    "SceneActionGroupId": 101231,
+    "IsCanSkipSceneAction": true,
+    "SkipMessageID": 101,
+    "CameraVisions": [
+      0,
+      2
+    ],
+    "CameraDefaultPosition": [
+      7,
+      12
+    ],
+    "AttackTeamBGM": "BGM_Combat_Yang_1",
+    "DefendTeamBGM": "BGM_Combat_Yin_1",
+    "FormationBGM": "BGM_Emotion_Silent_1",
+    "MinMap": "Assets/GameProject/RuntimeAssets/UI/UIImage/MiniMap_ABS/MiniMap_1805.PNG@MiniMap_1805",
+    "CustomLoadingUI": [
+      6
+    ],
+    "SceneNameStrKey": "ST:29315"
+  },
+  {
     "ID": 20101202,
     "Strategy": 1,
     "CharActorSetups": [
@@ -14691,106 +14767,5 @@
     "SceneNameStrKey": "ST:110737",
     "AttackWinDescStrKey": "ST:110738",
     "DefendLoseDescStrKey": "ST:115508"
-  },
-  {
-    "ID": 20105201,
-    "Strategy": 1,
-    "CharActorSetups": [
-      {
-        "ActorId": 101,
-        "X": 14,
-        "Y": 16,
-        "DirX": 15,
-        "DirY": 18,
-        "TeamType": 2,
-        "TeamId": 11,
-        "CharacterId": 100100233,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 102,
-        "X": 16,
-        "Y": 16,
-        "DirX": 15,
-        "DirY": 18,
-        "TeamType": 2,
-        "TeamId": 11,
-        "CharacterId": 100101901,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 103,
-        "X": 14,
-        "Y": 19,
-        "DirX": 15,
-        "DirY": 18,
-        "TeamType": 2,
-        "TeamId": 11,
-        "CharacterId": 100100931,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 104,
-        "X": 17,
-        "Y": 18,
-        "DirX": 15,
-        "DirY": 18,
-        "TeamType": 2,
-        "TeamId": 11,
-        "CharacterId": 100100031,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 105,
-        "X": 16,
-        "Y": 20,
-        "DirX": 15,
-        "DirY": 18,
-        "TeamType": 2,
-        "TeamId": 11,
-        "CharacterId": 131099201,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      }
-    ],
-    "FaciliteActorSetups": [
-      {
-        "ActorId": 901,
-        "X": 15,
-        "Y": 18,
-        "DirX": 15,
-        "DirY": 16,
-        "TeamId": 91,
-        "FaciliteId": 739,
-        "Level": -1,
-        "HpPercent": 10000
-      }
-    ],
-    "BattleMapId": 2212,
-    "DefaultNpcLevel": 63,
-    "BattleMapResPath": "SanHuang02Series/Maps/2212_ABS/",
-    "SceneActionGroupId": 105209,
-    "IsCanSkipSceneAction": true,
-    "SkipMessageID": 101,
-    "CameraVisions": [
-      0,
-      2
-    ],
-    "CameraDefaultPosition": [
-      14,
-      17
-    ],
-    "AttackTeamBGM": "BGM_Combat_Yang_1",
-    "DefendTeamBGM": "BGM_Combat_Yin_1",
-    "FormationBGM": "BGM_Combat_Preparation_2",
-    "MinMap": "Assets/GameProject/RuntimeAssets/UI/UIImage/MiniMap05_ABS/MiniMap_2212.PNG@MiniMap_2212",
-    "CustomLoadingUI": [
-      6
-    ],
-    "SceneNameStrKey": "ST:110737"
   }
 ]

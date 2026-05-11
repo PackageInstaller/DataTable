@@ -1,5 +1,11 @@
 {
   "ID": 1,
+  "UnlockConds": [
+    {
+      "CondType": "ConditionType_PlayerLevel",
+      "P1": 99
+    }
+  ],
   "FunBless": [
     1,
     2

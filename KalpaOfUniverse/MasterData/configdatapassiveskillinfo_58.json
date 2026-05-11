@@ -1,5 +1,363 @@
 [
   {
+    "ID": 75900023,
+    "BufIds": [
+      759000041
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_044.png@Gift_044",
+    "NameStrKey": "ST:222764",
+    "DescStrKey": "ST:222828",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900024,
+    "BufIds": [
+      759000051
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_044.png@Gift_044",
+    "NameStrKey": "ST:222764",
+    "DescStrKey": "ST:222828",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900031,
+    "BufIds": [
+      759000068,
+      759000069
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_056.png@Gift_056",
+    "NameStrKey": "ST:222765",
+    "DescStrKey": "ST:222778",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900032,
+    "BufIds": [
+      759000451,
+      759000452,
+      759000453,
+      759000454,
+      759000456,
+      759000458
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_056.png@Gift_056",
+    "NameStrKey": "ST:248080",
+    "DescStrKey": "ST:248096",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900033,
+    "BufIds": [
+      759000471,
+      759000475
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_056.png@Gift_056",
+    "NameStrKey": "ST:248082",
+    "DescStrKey": "ST:248097",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900035,
+    "BufIds": [
+      742111000
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_221.png@Gift_221",
+    "NameStrKey": "ST:4839",
+    "DescStrKey": "ST:252572",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900071,
+    "BufIds": [
+      759000071,
+      759000072,
+      759000074
+    ],
+    "BattlePower": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_013.png@Gift_013",
+    "NameStrKey": "ST:222766",
+    "DescStrKey": "ST:224648",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900072,
+    "BufIds": [
+      759000410
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_207.png@Gift_207",
+    "NameStrKey": "ST:239629",
+    "DescStrKey": "ST:239652",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900073,
+    "BufIds": [
+      759001216
+    ],
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_059.png@Gift_059",
+    "NameStrKey": "ST:253620",
+    "DescStrKey": "ST:253641",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900110,
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_ElectricityDamageAdditionalSub_S",
+        "Value": 5000
+      }
+    ],
+    "BufIds": [
+      742402000,
+      759000193
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_310.png@Gift_310",
+    "NameStrKey": "ST:231845",
+    "DescStrKey": "ST:231889",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900120,
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_IceDamageAdditionalSub_S",
+        "Value": 5000
+      }
+    ],
+    "BufIds": [
+      742402010,
+      700000115
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_310.png@Gift_310",
+    "NameStrKey": "ST:231846",
+    "DescStrKey": "ST:231890",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900130,
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_FireDamageAdditionalSub_S",
+        "Value": 5000
+      }
+    ],
+    "BufIds": [
+      742402020,
+      700000115
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_310.png@Gift_310",
+    "NameStrKey": "ST:231846",
+    "DescStrKey": "ST:231891",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900140,
+    "BufIds": [
+      742401220,
+      742401000,
+      742401040
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_301.png@Gift_301",
+    "NameStrKey": "ST:258577",
+    "DescStrKey": "ST:258589",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900201,
+    "BufIds": [
+      759000201
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_314.png@Gift_314",
+    "NameStrKey": "ST:226738",
+    "DescStrKey": "ST:226740",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900202,
+    "BufIds": [
+      759000202
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_314.png@Gift_314",
+    "NameStrKey": "ST:226738",
+    "DescStrKey": "ST:226741",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900203,
+    "BufIds": [
+      759000203
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_314.png@Gift_314",
+    "NameStrKey": "ST:226738",
+    "DescStrKey": "ST:226742",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900210,
+    "BufIds": [
+      743160001,
+      743110394
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_206.png@Gift_206",
+    "NameStrKey": "ST:226739",
+    "DescStrKey": "ST:226743",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75900220,
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_233.png@Gift_233",
+    "NameStrKey": "ST:236240",
+    "DescStrKey": "ST:239653",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75910000,
+    "BufIds": [
+      759100001
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_312.png@Gift_312",
+    "NameStrKey": "ST:234991",
+    "DescStrKey": "ST:235089",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75910001,
+    "BufIds": [
+      759100100,
+      759100101
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1334.png@EXSkill_1334",
+    "NameStrKey": "ST:234992",
+    "DescStrKey": "ST:235090",
+    "SkillTypeDescStrKey": "ST:101060"
+  },
+  {
+    "ID": 75910002,
+    "BufIds": [
+      759100100,
+      759100102
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1334.png@EXSkill_1334",
+    "NameStrKey": "ST:234992",
+    "DescStrKey": "ST:235091",
+    "SkillTypeDescStrKey": "ST:101060"
+  },
+  {
+    "ID": 75910003,
+    "BufIds": [
+      759100100,
+      759100103
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1334.png@EXSkill_1334",
+    "NameStrKey": "ST:234992",
+    "DescStrKey": "ST:235092",
+    "SkillTypeDescStrKey": "ST:101060"
+  },
+  {
+    "ID": 75910004,
+    "BufIds": [
+      759100100,
+      759100104
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1334.png@EXSkill_1334",
+    "NameStrKey": "ST:234992",
+    "DescStrKey": "ST:235093",
+    "SkillTypeDescStrKey": "ST:101060"
+  },
+  {
+    "ID": 75910005,
+    "BufIds": [
+      759100100,
+      759100105
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1334.png@EXSkill_1334",
+    "NameStrKey": "ST:234992",
+    "DescStrKey": "ST:235094",
+    "SkillTypeDescStrKey": "ST:101060"
+  },
+  {
+    "ID": 75910006,
+    "BufIds": [
+      759100100,
+      759100106
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1334.png@EXSkill_1334",
+    "NameStrKey": "ST:234992",
+    "DescStrKey": "ST:235095",
+    "SkillTypeDescStrKey": "ST:101060"
+  },
+  {
+    "ID": 75910011,
+    "BufIds": [
+      759001001
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_004.png@Gift_004",
+    "NameStrKey": "ST:237370",
+    "DescStrKey": "ST:237670",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
+    "ID": 75910021,
+    "BufIds": [
+      759001001
+    ],
+    "BattlePower": 1,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_043.png@Gift_043",
+    "NameStrKey": "ST:237370",
+    "DescStrKey": "ST:237702",
+    "SkillTypeDescStrKey": "ST:21900"
+  },
+  {
     "ID": 75910031,
     "BufIds": [
       759001001
@@ -290,364 +648,5 @@
     "NameStrKey": "ST:234993",
     "DescStrKey": "ST:238179",
     "SkillTypeDescStrKey": "ST:21900"
-  },
-  {
-    "ID": 75920121,
-    "VersionTag": 56,
-    "BufIds": [
-      763157145
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1042.png@GPassive_1042",
-    "NameStrKey": "ST:238165",
-    "DescStrKey": "ST:238180",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 75920130,
-    "VersionTag": 56,
-    "BufIds": [
-      763157150,
-      763157151,
-      763157153
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_090.png@Gift_090",
-    "NameStrKey": "ST:94070",
-    "DescStrKey": "ST:240165",
-    "SkillTypeDescStrKey": "ST:21900"
-  },
-  {
-    "ID": 75920131,
-    "VersionTag": 56,
-    "BufIds": [
-      763157150,
-      763157151,
-      763157153,
-      763157163
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_090.png@Gift_090",
-    "NameStrKey": "ST:238166",
-    "DescStrKey": "ST:240166",
-    "SkillTypeDescStrKey": "ST:21900"
-  },
-  {
-    "ID": 75920141,
-    "VersionTag": 57,
-    "BufIds": [
-      763158714
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1334.png@EXSkill_1334",
-    "NameStrKey": "ST:222762",
-    "DescStrKey": "ST:240906",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 75920142,
-    "VersionTag": 57,
-    "BufIds": [
-      763158722
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1334.png@EXSkill_1334",
-    "NameStrKey": "ST:222762",
-    "DescStrKey": "ST:240907",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 75920143,
-    "VersionTag": 57,
-    "BufIds": [
-      763158726
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1334.png@EXSkill_1334",
-    "NameStrKey": "ST:222762",
-    "DescStrKey": "ST:240908",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 75920151,
-    "VersionTag": 57,
-    "BufIds": [
-      763158715
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1334.png@EXSkill_1334",
-    "NameStrKey": "ST:222762",
-    "DescStrKey": "ST:240909",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 75920152,
-    "VersionTag": 57,
-    "BufIds": [
-      763158723
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1334.png@EXSkill_1334",
-    "NameStrKey": "ST:222762",
-    "DescStrKey": "ST:240910",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 75920153,
-    "VersionTag": 57,
-    "BufIds": [
-      763158728
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1334.png@EXSkill_1334",
-    "NameStrKey": "ST:222762",
-    "DescStrKey": "ST:240911",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 75920160,
-    "VersionTag": 58,
-    "BufIds": [
-      763158910
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gskill_1006.png@Gskill_1006",
-    "NameStrKey": "ST:241380",
-    "DescStrKey": "ST:241512",
-    "SkillTypeDescStrKey": "ST:21900"
-  },
-  {
-    "ID": 75920161,
-    "VersionTag": 58,
-    "BufIds": [
-      763158924
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_210.png@Gift_210",
-    "NameStrKey": "ST:241381",
-    "DescStrKey": "ST:243379",
-    "SkillTypeDescStrKey": "ST:21900"
-  },
-  {
-    "ID": 75920162,
-    "VersionTag": 58,
-    "BufIds": [
-      763158930,
-      763158931,
-      763158935
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_201.png@Gift_201",
-    "NameStrKey": "ST:241388",
-    "DescStrKey": "ST:242561",
-    "SkillTypeDescStrKey": "ST:21900"
-  },
-  {
-    "ID": 75920163,
-    "VersionTag": 58,
-    "BufIds": [
-      763158944,
-      763158943
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_221.png@Gift_221",
-    "NameStrKey": "ST:241382",
-    "DescStrKey": "ST:242562",
-    "SkillTypeDescStrKey": "ST:21900"
-  },
-  {
-    "ID": 75920164,
-    "VersionTag": 58,
-    "BufIds": [
-      763158950
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_221.png@Gift_221",
-    "NameStrKey": "ST:241383",
-    "DescStrKey": "ST:244172",
-    "SkillTypeDescStrKey": "ST:21900"
-  },
-  {
-    "ID": 75920170,
-    "VersionTag": 59,
-    "BufIds": [
-      759200152
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_239.png@Gift_239",
-    "NameStrKey": "ST:150762",
-    "DescStrKey": "ST:243009",
-    "SkillTypeDescStrKey": "ST:21900"
-  },
-  {
-    "ID": 75920171,
-    "VersionTag": 59,
-    "BufIds": [
-      759200171
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1023.png@Skill_None_1023",
-    "NameStrKey": "ST:242781",
-    "DescStrKey": "ST:242798",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 75920172,
-    "VersionTag": 59,
-    "BufIds": [
-      759200172
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1023.png@Skill_None_1023",
-    "NameStrKey": "ST:242782",
-    "DescStrKey": "ST:242799",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 75920173,
-    "VersionTag": 59,
-    "BufIds": [
-      759200173
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1023.png@Skill_None_1023",
-    "NameStrKey": "ST:242783",
-    "DescStrKey": "ST:242800",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 75920174,
-    "VersionTag": 59,
-    "BufIds": [
-      759200174
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1023.png@Skill_None_1023",
-    "NameStrKey": "ST:242784",
-    "DescStrKey": "ST:242801",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 75920175,
-    "VersionTag": 59,
-    "BufIds": [
-      759200175
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1023.png@Skill_None_1023",
-    "NameStrKey": "ST:242785",
-    "DescStrKey": "ST:242802",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 75920176,
-    "VersionTag": 59,
-    "BufIds": [
-      759200176
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1023.png@Skill_None_1023",
-    "NameStrKey": "ST:242786",
-    "DescStrKey": "ST:242803",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 75920180,
-    "VersionTag": 59,
-    "BufIds": [
-      742410031,
-      742410032,
-      742410033
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_322.png@Gift_322",
-    "NameStrKey": "ST:242796",
-    "DescStrKey": "ST:242804",
-    "SkillTypeDescStrKey": "ST:21900"
-  },
-  {
-    "ID": 75920181,
-    "VersionTag": 59,
-    "BufIds": [
-      759200181
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1019.png@EXSkill_1019",
-    "NameStrKey": "ST:242787",
-    "DescStrKey": "ST:243010",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 75920182,
-    "BufIds": [
-      760022021
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_071.png@Gift_071",
-    "NameStrKey": "ST:243376",
-    "DescStrKey": "ST:243406",
-    "SkillTypeDescStrKey": "ST:21900"
-  },
-  {
-    "ID": 75920190,
-    "VersionTag": 59,
-    "BufIds": [
-      742223000
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_226.png@Gift_226",
-    "NameStrKey": "ST:5052",
-    "DescStrKey": "ST:243610",
-    "SkillTypeDescStrKey": "ST:21900"
-  },
-  {
-    "ID": 75920191,
-    "VersionTag": 59,
-    "BufIds": [
-      743001360
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow _1001.png@Skill_Shadow _1001",
-    "NameStrKey": "ST:243609",
-    "DescStrKey": "ST:243611",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 75920195,
-    "BufIds": [
-      759010006
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_207.png@Gift_207",
-    "NameStrKey": "ST:256669",
-    "DescStrKey": "ST:256676",
-    "SkillTypeDescStrKey": "ST:101060"
   }
 ]

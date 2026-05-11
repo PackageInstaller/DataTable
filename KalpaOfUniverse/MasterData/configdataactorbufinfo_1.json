@@ -1,5 +1,31 @@
 [
   {
+    "ID": 700000401,
+    "LifeTime": 1,
+    "FuncType": "BufFuncType_RemainMovepointTransfer2MovepointMax",
+    "FuncParams": [
+      7000
+    ],
+    "ReplaceRule": "ReplaceRule_TimeRemain",
+    "SubType": 40,
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_Enhance"
+    ],
+    "CanBeDispersed": true,
+    "CanSpread": true,
+    "CanBeDisableByNoSensation": true,
+    "CanBePreventDisperse": true,
+    "AddEffect": 10000028,
+    "TriggerBehaviorId": 600000010,
+    "TriggerBehaviorType": "TriggerBehaviorType_Skill",
+    "Visible": "BuffShowType_Normal",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1002.png@Skill_Swordsman_1002",
+    "NameDescStrKey": "ST:4867",
+    "BuffDescStrKey": "ST:4873"
+  },
+  {
     "ID": 700000402,
     "LifeTime": 1,
     "FuncType": "BufFuncType_RemainMovepointTransfer2MovepointMax",
@@ -90,7 +116,7 @@
     "IconBackgroundType": "IconBackgroundType_Bad",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1014.png@Buff_1014",
     "NameDescStrKey": "ST:3306",
-    "BuffDescStrKey": "ST:242441"
+    "BuffDescStrKey": "ST:260096"
   },
   {
     "ID": 700000411,
@@ -131,7 +157,7 @@
     "IconBackgroundType": "IconBackgroundType_Bad",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1014.png@Buff_1014",
     "NameDescStrKey": "ST:3306",
-    "BuffDescStrKey": "ST:242441"
+    "BuffDescStrKey": "ST:260096"
   },
   {
     "ID": 700000412,
@@ -172,7 +198,7 @@
     "IconBackgroundType": "IconBackgroundType_Bad",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1014.png@Buff_1014",
     "NameDescStrKey": "ST:3306",
-    "BuffDescStrKey": "ST:242441"
+    "BuffDescStrKey": "ST:260096"
   },
   {
     "ID": 700000419,
@@ -208,7 +234,7 @@
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1014.png@Buff_1014",
     "NameDescStrKey": "ST:116524",
-    "BuffDescStrKey": "ST:242441"
+    "BuffDescStrKey": "ST:260096"
   },
   {
     "ID": 700000420,
@@ -327,7 +353,7 @@
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1439.png@EXSkill_1439",
     "NameDescStrKey": "ST:164702",
-    "BuffDescStrKey": "ST:242442"
+    "BuffDescStrKey": "ST:260097"
   },
   {
     "ID": 700000424,
@@ -365,7 +391,7 @@
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1439.png@EXSkill_1439",
     "NameDescStrKey": "ST:164702",
-    "BuffDescStrKey": "ST:242442"
+    "BuffDescStrKey": "ST:260097"
   },
   {
     "ID": 700000425,
@@ -403,7 +429,7 @@
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1439.png@EXSkill_1439",
     "NameDescStrKey": "ST:164702",
-    "BuffDescStrKey": "ST:242442"
+    "BuffDescStrKey": "ST:260097"
   },
   {
     "ID": 700000426,
@@ -976,7 +1002,7 @@
     "IconBackgroundType": "IconBackgroundType_Bad",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1014.png@Buff_1014",
     "NameDescStrKey": "ST:249970",
-    "BuffDescStrKey": "ST:242441"
+    "BuffDescStrKey": "ST:260099"
   },
   {
     "ID": 700000451,
@@ -1015,7 +1041,7 @@
     "IconBackgroundType": "IconBackgroundType_Bad",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1014.png@Buff_1014",
     "NameDescStrKey": "ST:249970",
-    "BuffDescStrKey": "ST:242441"
+    "BuffDescStrKey": "ST:260099"
   },
   {
     "ID": 700000452,
@@ -1054,7 +1080,7 @@
     "IconBackgroundType": "IconBackgroundType_Bad",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1014.png@Buff_1014",
     "NameDescStrKey": "ST:249970",
-    "BuffDescStrKey": "ST:242441"
+    "BuffDescStrKey": "ST:260099"
   },
   {
     "ID": 700000510,
@@ -6113,49 +6139,6 @@
   {
     "ID": 700000861,
     "LifeTime": 2,
-    "FuncType": "BufFuncType_Damage4SelfOnStage",
-    "FuncParams": [
-      3,
-      32,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      5000,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "ActiveBattleStageType": "BattleStageType_AfterActionExec",
-    "ReplaceRule": "ReplaceRule_TimeRemain",
-    "SubType": 86,
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_Weak",
-      "BufCategory_poisoning"
-    ],
-    "CanBeDispersed": true,
-    "CanSteal": true,
-    "CanSpread": true,
-    "CanBeDisableByNoSensation": true,
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorId": 600000030,
-    "TriggerBehaviorType": "TriggerBehaviorType_Skill",
-    "SkillPipeline": true,
-    "Visible": "BuffShowType_Normal",
-    "IconBackgroundType": "IconBackgroundType_Bad",
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1018.png@Buff_1018",
-    "NameDescStrKey": "ST:4828",
-    "BuffDescStrKey": "ST:35505"
-  },
-  {
-    "ID": 700000862,
-    "LifeTime": 3,
     "FuncType": "BufFuncType_Damage4SelfOnStage",
     "FuncParams": [
       3,

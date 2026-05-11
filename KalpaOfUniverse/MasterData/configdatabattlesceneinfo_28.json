@@ -1,5 +1,144 @@
 [
   {
+    "ID": 20356056,
+    "Strategy": 1,
+    "TurnMax": 15,
+    "AttackWinCondGroupIds": [
+      4
+    ],
+    "DefendWinCondGroupIds": [
+      3
+    ],
+    "AttackTeamFormationMin": 1,
+    "AttackTeamFormationMax": 5,
+    "DefendTeamFormationMin": 1,
+    "DefendTeamFormationMax": 10,
+    "AttackTeamFormationGrids": [
+      {
+        "X": 4,
+        "Y": 8,
+        "DirX": 8,
+        "DirY": 8
+      },
+      {
+        "X": 4,
+        "Y": 7,
+        "DirX": 8,
+        "DirY": 7
+      },
+      {
+        "X": 4,
+        "Y": 6,
+        "DirX": 8,
+        "DirY": 6
+      },
+      {
+        "X": 4,
+        "Y": 5,
+        "DirX": 8,
+        "DirY": 5
+      },
+      {
+        "X": 4,
+        "Y": 4,
+        "DirX": 8,
+        "DirY": 4
+      }
+    ],
+    "CharActorSetups": [
+      {
+        "ActorId": 201,
+        "X": 11,
+        "Y": 8,
+        "DirX": 8,
+        "DirY": 8,
+        "TeamType": 4,
+        "TeamId": 21,
+        "CharacterId": 100110381,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 202,
+        "X": 11,
+        "Y": 6,
+        "DirX": 8,
+        "DirY": 6,
+        "TeamType": 4,
+        "TeamId": 21,
+        "CharacterId": 100111681,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 203,
+        "X": 11,
+        "Y": 4,
+        "DirX": 8,
+        "DirY": 4,
+        "TeamType": 4,
+        "TeamId": 21,
+        "CharacterId": 100113081,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 204,
+        "X": 12,
+        "Y": 7,
+        "DirX": 8,
+        "DirY": 7,
+        "TeamType": 4,
+        "TeamId": 21,
+        "CharacterId": 100110881,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 205,
+        "X": 12,
+        "Y": 5,
+        "DirX": 8,
+        "DirY": 5,
+        "TeamType": 4,
+        "TeamId": 21,
+        "CharacterId": 100112581,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      }
+    ],
+    "TeamAIInfo": [
+      {
+        "TeamId": 21,
+        "TeamAIType": "TeamAIType_Alert",
+        "Param1": 15
+      }
+    ],
+    "BattleMapId": 3090002,
+    "DefaultNpcLevel": 56,
+    "BattleMapResPath": "SandCastle01Series/Maps/3090002_ABS/",
+    "IsCanSkipSceneAction": true,
+    "SkipMessageID": 101,
+    "CameraVisions": [
+      0,
+      2
+    ],
+    "CameraDefaultPosition": [
+      5,
+      6
+    ],
+    "AttackTeamBGM": "BGM_Combat_Yang_1",
+    "DefendTeamBGM": "BGM_Combat_Yin_1",
+    "FormationBGM": "BGM_Combat_Preparation_1",
+    "MinMap": "Assets/GameProject/RuntimeAssets/UI/UIImage/MiniMap_ABS/MiniMap_3090002.PNG@MiniMap_3090002",
+    "CustomLoadingUI": [
+      6
+    ],
+    "SceneNameStrKey": "ST:44869",
+    "AttackWinDescStrKey": "ST:3566",
+    "DefendLoseDescStrKey": "ST:3567"
+  },
+  {
     "ID": 20356057,
     "Strategy": 1,
     "TurnMax": 15,
@@ -13882,145 +14021,6 @@
     ],
     "BattleMapId": 2101,
     "DefaultNpcLevel": 53,
-    "BattleMapResPath": "HuanHai01Series/Maps/2101_ABS/",
-    "IsCanSkipSceneAction": true,
-    "SkipMessageID": 101,
-    "CameraVisions": [
-      0,
-      2
-    ],
-    "CameraDefaultPosition": [
-      5,
-      8
-    ],
-    "AttackTeamBGM": "BGM_Combat_Crisis_2",
-    "DefendTeamBGM": "BGM_Combat_Crisis_1",
-    "FormationBGM": "BGM_Emotion_Crisis_3",
-    "MinMap": "Assets/GameProject/RuntimeAssets/UI/UIImage/MiniMap_ABS/MiniMap_2101.PNG@MiniMap_2101",
-    "CustomLoadingUI": [
-      6
-    ],
-    "SceneNameStrKey": "ST:44869",
-    "AttackWinDescStrKey": "ST:3566",
-    "DefendLoseDescStrKey": "ST:3567"
-  },
-  {
-    "ID": 20356254,
-    "Strategy": 1,
-    "TurnMax": 15,
-    "AttackWinCondGroupIds": [
-      4
-    ],
-    "DefendWinCondGroupIds": [
-      3
-    ],
-    "AttackTeamFormationMin": 1,
-    "AttackTeamFormationMax": 5,
-    "DefendTeamFormationMin": 1,
-    "DefendTeamFormationMax": 10,
-    "AttackTeamFormationGrids": [
-      {
-        "X": 4,
-        "Y": 10,
-        "DirX": 7,
-        "DirY": 10
-      },
-      {
-        "X": 4,
-        "Y": 9,
-        "DirX": 7,
-        "DirY": 9
-      },
-      {
-        "X": 4,
-        "Y": 8,
-        "DirX": 7,
-        "DirY": 8
-      },
-      {
-        "X": 4,
-        "Y": 7,
-        "DirX": 7,
-        "DirY": 7
-      },
-      {
-        "X": 4,
-        "Y": 6,
-        "DirX": 7,
-        "DirY": 6
-      }
-    ],
-    "CharActorSetups": [
-      {
-        "ActorId": 201,
-        "X": 10,
-        "Y": 10,
-        "DirX": 5,
-        "DirY": 10,
-        "TeamType": 4,
-        "TeamId": 21,
-        "CharacterId": 100110081,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 202,
-        "X": 10,
-        "Y": 6,
-        "DirX": 5,
-        "DirY": 6,
-        "TeamType": 4,
-        "TeamId": 21,
-        "CharacterId": 100113781,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 203,
-        "X": 11,
-        "Y": 9,
-        "DirX": 5,
-        "DirY": 9,
-        "TeamType": 4,
-        "TeamId": 21,
-        "CharacterId": 100110981,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 204,
-        "X": 11,
-        "Y": 7,
-        "DirX": 5,
-        "DirY": 7,
-        "TeamType": 4,
-        "TeamId": 21,
-        "CharacterId": 100110481,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 205,
-        "X": 11,
-        "Y": 5,
-        "DirX": 5,
-        "DirY": 5,
-        "TeamType": 4,
-        "TeamId": 21,
-        "CharacterId": 100113181,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      }
-    ],
-    "TeamAIInfo": [
-      {
-        "TeamId": 21,
-        "TeamAIType": "TeamAIType_Alert",
-        "Param1": 15
-      }
-    ],
-    "BattleMapId": 2101,
-    "DefaultNpcLevel": 54,
     "BattleMapResPath": "HuanHai01Series/Maps/2101_ABS/",
     "IsCanSkipSceneAction": true,
     "SkipMessageID": 101,

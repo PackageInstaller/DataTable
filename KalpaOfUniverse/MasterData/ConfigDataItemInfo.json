@@ -15,6 +15,12 @@
         "Name": 900000
       },
       {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10207,
+        "Name": 300742
+      },
+      {
         "PathType": "GetPathType_Crystal",
         "Name": 200156
       },
@@ -360,11 +366,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 209,
-        "Name": 300209
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/Icon_Hunji.png@Icon_Hunji",
@@ -677,6 +678,71 @@
     "ItemDescStrKey": "ST:247389"
   },
   {
+    "ID": 33,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Currency",
+    "Hidden": true,
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10201,
+        "Name": 300716
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 300728
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 300729
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 300730
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 300731
+      }
+    ],
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Currency33.png@Icon_Currency33",
+    "ItemNameStrKey": "ST:258926",
+    "ItemDescStrKey": "ST:259644"
+  },
+  {
+    "ID": 34,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Currency",
+    "DropGroup": [
+      10007
+    ],
+    "Hidden": true,
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 300732
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 300733
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 300734
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 300735
+      }
+    ],
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Currency34.png@Icon_Currency34",
+    "ItemNameStrKey": "ST:258927",
+    "ItemDescStrKey": "ST:259645"
+  },
+  {
     "ID": 4331001,
     "Rarity": "Rarity_SSR",
     "ItemType": "ItemType_Soul",
@@ -698,11 +764,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 1,
         "Name": 8918
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331502.png@Soul_4331502",
@@ -733,11 +794,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 2,
         "Name": 8919
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331501.png@Soul_4331501",
@@ -768,11 +824,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331513.png@Soul_4331513",
@@ -803,11 +854,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 5,
         "Name": 8922
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331506.png@Soul_4331506",
@@ -838,11 +884,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331101.png@Soul_4331101",
@@ -873,11 +914,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 3,
         "Name": 8920
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331503.png@Soul_4331503",
@@ -908,11 +944,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 2,
         "Name": 8919
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331510.png@Soul_4331510",
@@ -943,11 +974,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 3,
         "Name": 8920
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331001.png@Soul_4331001",
@@ -978,11 +1004,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 5,
         "Name": 8922
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331511.png@Soul_4331511",
@@ -1013,11 +1034,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 1,
         "Name": 8918
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331504.png@Soul_4331504",
@@ -1048,11 +1064,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331507.png@Soul_4331507",
@@ -1083,11 +1094,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 5,
         "Name": 8922
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331505.png@Soul_4331505",
@@ -1118,11 +1124,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 1,
         "Name": 8918
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331401.png@Soul_4331401",
@@ -1153,11 +1154,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 2,
         "Name": 8919
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331301.png@Soul_4331301",
@@ -1188,11 +1184,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 3,
         "Name": 8920
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331515.png@Soul_4331515",
@@ -1223,11 +1214,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331201.png@Soul_4331201",
@@ -1258,11 +1244,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 5,
         "Name": 8922
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331509.png@Soul_4331509",
@@ -1297,11 +1278,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331512.png@Soul_4331512",
@@ -1336,11 +1312,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331519.png@Soul_4331519",
@@ -1375,11 +1346,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331520.png@Soul_4331520",
@@ -1403,11 +1369,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331513.png@Soul_4331513",
@@ -1431,11 +1392,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331507.png@Soul_4331507",
@@ -1459,11 +1415,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331201.png@Soul_4331201",
@@ -1728,11 +1679,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 1,
         "Name": 8918
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331502.png@Soul_4331502",
@@ -1763,11 +1709,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 2,
         "Name": 8919
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331501.png@Soul_4331501",
@@ -1798,11 +1739,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331513.png@Soul_4331513",
@@ -1833,11 +1769,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 5,
         "Name": 8922
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331506.png@Soul_4331506",
@@ -1868,11 +1799,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331101.png@Soul_4331101",
@@ -1903,11 +1829,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 3,
         "Name": 8920
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331503.png@Soul_4331503",
@@ -1938,11 +1859,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 2,
         "Name": 8919
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331510.png@Soul_4331510",
@@ -1973,11 +1889,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 3,
         "Name": 8920
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331001.png@Soul_4331001",
@@ -2008,11 +1919,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 5,
         "Name": 8922
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331511.png@Soul_4331511",
@@ -2043,11 +1949,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 1,
         "Name": 8918
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331504.png@Soul_4331504",
@@ -2078,11 +1979,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331507.png@Soul_4331507",
@@ -2113,11 +2009,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 5,
         "Name": 8922
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331505.png@Soul_4331505",
@@ -2148,11 +2039,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 1,
         "Name": 8918
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331401.png@Soul_4331401",
@@ -2183,11 +2069,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 2,
         "Name": 8919
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331301.png@Soul_4331301",
@@ -2218,11 +2099,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 3,
         "Name": 8920
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331515.png@Soul_4331515",
@@ -2253,11 +2129,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331201.png@Soul_4331201",
@@ -2288,11 +2159,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 5,
         "Name": 8922
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331509.png@Soul_4331509",
@@ -2327,11 +2193,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331512.png@Soul_4331512",
@@ -2366,11 +2227,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331519.png@Soul_4331519",
@@ -2405,11 +2261,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331520.png@Soul_4331520",
@@ -2433,11 +2284,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331513.png@Soul_4331513",
@@ -2461,11 +2307,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331507.png@Soul_4331507",
@@ -2489,11 +2330,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331201.png@Soul_4331201",
@@ -2755,11 +2591,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 1,
         "Name": 8918
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331502.png@Soul_4331502",
@@ -2790,11 +2621,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 2,
         "Name": 8919
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331501.png@Soul_4331501",
@@ -2825,11 +2651,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331513.png@Soul_4331513",
@@ -2860,11 +2681,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 5,
         "Name": 8922
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331506.png@Soul_4331506",
@@ -2895,11 +2711,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331101.png@Soul_4331101",
@@ -2930,11 +2741,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 3,
         "Name": 8920
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331503.png@Soul_4331503",
@@ -2965,11 +2771,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 2,
         "Name": 8919
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331510.png@Soul_4331510",
@@ -3000,11 +2801,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 3,
         "Name": 8920
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331001.png@Soul_4331001",
@@ -3035,11 +2831,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 5,
         "Name": 8922
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331511.png@Soul_4331511",
@@ -3070,11 +2861,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 1,
         "Name": 8918
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331504.png@Soul_4331504",
@@ -3105,11 +2891,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331507.png@Soul_4331507",
@@ -3140,11 +2921,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 5,
         "Name": 8922
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331505.png@Soul_4331505",
@@ -3175,11 +2951,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 1,
         "Name": 8918
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331401.png@Soul_4331401",
@@ -3210,11 +2981,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 2,
         "Name": 8919
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331301.png@Soul_4331301",
@@ -3245,11 +3011,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 3,
         "Name": 8920
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331515.png@Soul_4331515",
@@ -3280,11 +3041,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331201.png@Soul_4331201",
@@ -3315,11 +3071,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 5,
         "Name": 8922
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331509.png@Soul_4331509",
@@ -3354,11 +3105,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331512.png@Soul_4331512",
@@ -3393,11 +3139,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331519.png@Soul_4331519",
@@ -3432,11 +3173,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331520.png@Soul_4331520",
@@ -3460,11 +3196,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331513.png@Soul_4331513",
@@ -3488,11 +3219,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331507.png@Soul_4331507",
@@ -3516,11 +3242,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 4,
         "Name": 8921
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331201.png@Soul_4331201",
@@ -3785,11 +3506,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341502.png@Soul_4341502",
@@ -3823,11 +3539,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341501.png@Soul_4341501",
@@ -3861,11 +3572,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341513.png@Soul_4341513",
@@ -3899,11 +3605,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341506.png@Soul_4341506",
@@ -3937,11 +3638,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341101.png@Soul_4341101",
@@ -3975,11 +3671,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341503.png@Soul_4341503",
@@ -4013,11 +3704,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341510.png@Soul_4341510",
@@ -4051,11 +3737,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341001.png@Soul_4341001",
@@ -4089,11 +3770,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341511.png@Soul_4341511",
@@ -4127,11 +3803,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341504.png@Soul_4341504",
@@ -4165,11 +3836,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341507.png@Soul_4341507",
@@ -4203,11 +3869,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341505.png@Soul_4341505",
@@ -4241,11 +3902,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341401.png@Soul_4341401",
@@ -4279,11 +3935,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341301.png@Soul_4341301",
@@ -4317,11 +3968,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341515.png@Soul_4341515",
@@ -4355,11 +4001,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341201.png@Soul_4341201",
@@ -4393,11 +4034,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341509.png@Soul_4341509",
@@ -4426,11 +4062,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341512.png@Soul_4341512",
@@ -4459,11 +4090,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341519.png@Soul_4341519",
@@ -4492,11 +4118,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341520.png@Soul_4341520",
@@ -4524,11 +4145,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341513.png@Soul_4341513",
@@ -4556,11 +4172,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341507.png@Soul_4341507",
@@ -4588,11 +4199,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341201.png@Soul_4341201",
@@ -4713,11 +4319,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341502.png@Soul_4341502",
@@ -4751,11 +4352,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341501.png@Soul_4341501",
@@ -4789,11 +4385,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341513.png@Soul_4341513",
@@ -4827,11 +4418,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341506.png@Soul_4341506",
@@ -4865,11 +4451,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341101.png@Soul_4341101",
@@ -4903,11 +4484,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341503.png@Soul_4341503",
@@ -4941,11 +4517,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341510.png@Soul_4341510",
@@ -4979,11 +4550,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341001.png@Soul_4341001",
@@ -5017,11 +4583,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341511.png@Soul_4341511",
@@ -5055,11 +4616,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341504.png@Soul_4341504",
@@ -5093,11 +4649,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341507.png@Soul_4341507",
@@ -5131,11 +4682,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341505.png@Soul_4341505",
@@ -5169,11 +4715,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341401.png@Soul_4341401",
@@ -5207,11 +4748,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341301.png@Soul_4341301",
@@ -5245,11 +4781,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341515.png@Soul_4341515",
@@ -5283,11 +4814,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341201.png@Soul_4341201",
@@ -5321,11 +4847,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341509.png@Soul_4341509",
@@ -5354,11 +4875,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341512.png@Soul_4341512",
@@ -5387,11 +4903,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341519.png@Soul_4341519",
@@ -5420,11 +4931,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341520.png@Soul_4341520",
@@ -5452,11 +4958,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341513.png@Soul_4341513",
@@ -5484,11 +4985,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341507.png@Soul_4341507",
@@ -5516,11 +5012,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341201.png@Soul_4341201",
@@ -5641,11 +5132,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341502.png@Soul_4341502",
@@ -5679,11 +5165,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341501.png@Soul_4341501",
@@ -5717,11 +5198,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341513.png@Soul_4341513",
@@ -5755,11 +5231,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341506.png@Soul_4341506",
@@ -5793,11 +5264,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341101.png@Soul_4341101",
@@ -5831,11 +5297,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341503.png@Soul_4341503",
@@ -5869,11 +5330,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341510.png@Soul_4341510",
@@ -5907,11 +5363,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341001.png@Soul_4341001",
@@ -5945,11 +5396,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341511.png@Soul_4341511",
@@ -5983,11 +5429,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341504.png@Soul_4341504",
@@ -6021,11 +5462,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341507.png@Soul_4341507",
@@ -6059,11 +5495,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341505.png@Soul_4341505",
@@ -6097,11 +5528,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341401.png@Soul_4341401",
@@ -6135,11 +5561,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341301.png@Soul_4341301",
@@ -6173,11 +5594,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341515.png@Soul_4341515",
@@ -6211,11 +5627,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341201.png@Soul_4341201",
@@ -6249,11 +5660,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341509.png@Soul_4341509",
@@ -6282,11 +5688,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341512.png@Soul_4341512",
@@ -6315,11 +5716,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341519.png@Soul_4341519",
@@ -6348,11 +5744,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341520.png@Soul_4341520",
@@ -6380,11 +5771,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341513.png@Soul_4341513",
@@ -6412,11 +5798,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341507.png@Soul_4341507",
@@ -6444,11 +5825,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341201.png@Soul_4341201",
@@ -8990,11 +8366,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 5,
         "Name": 8922
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331511.png@Soul_4331511",
@@ -9018,11 +8389,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 3,
         "Name": 8920
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331515.png@Soul_4331515",
@@ -9046,11 +8412,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 2,
         "Name": 8919
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331501.png@Soul_4331501",
@@ -9074,11 +8435,6 @@
         "PathType": "GetPathType_Delegate",
         "ID": 1,
         "Name": 8918
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4331504.png@Soul_4331504",
@@ -9106,11 +8462,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341506.png@Soul_4341506",
@@ -9138,11 +8489,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341510.png@Soul_4341510",
@@ -9170,11 +8516,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341503.png@Soul_4341503",
@@ -9202,11 +8543,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341507.png@Soul_4341507",
@@ -9234,11 +8570,6 @@
       {
         "PathType": "GetPathType_SoulStoneSelect",
         "Name": 17
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Soul_ABS/Soul_4341001.png@Soul_4341001",
@@ -13983,6 +13314,14 @@
     "FunParams": [
       5551830
     ],
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10205,
+        "Name": 300740
+      }
+    ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I5551126.png@I5551126",
     "RewardSortIndex": 40000,
     "ItemNameStrKey": "ST:125511",
@@ -14168,6 +13507,29 @@
     "ItemDescStrKey": "ST:255748"
   },
   {
+    "ID": 5551843,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Item",
+    "Stackable": true,
+    "FunType": "ItemFunType_SelfTreasureBox",
+    "FunParams": [
+      5551843
+    ],
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10110,
+        "Name": 300736
+      }
+    ],
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/StorePackage01_ABS/Icon_Package_251.png@Icon_Package_251",
+    "RewardSortIndex": 40000,
+    "BoxInfo": 1,
+    "ItemNameStrKey": "ST:244552",
+    "ItemDescStrKey": "ST:259716"
+  },
+  {
     "ID": 5552000,
     "Rarity": "Rarity_SSR",
     "ItemType": "ItemType_Item",
@@ -14288,6 +13650,14 @@
     "FunParams": [
       5552008
     ],
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10204,
+        "Name": 300739
+      }
+    ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I5551126.png@I5551126",
     "QATest": 1,
     "RewardSortIndex": 40000,
@@ -14363,6 +13733,12 @@
       {
         "PathType": "GetPathType_ActivityStore",
         "Name": 900000
+      },
+      {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10217,
+        "Name": 300745
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402023101.png@I402023101",
@@ -14386,9 +13762,9 @@
       },
       {
         "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 907,
-        "Name": 200262
+        "ID": 158,
+        "P1": 10115,
+        "Name": 300738
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402023101.png@I402023101",
@@ -14412,9 +13788,9 @@
       },
       {
         "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 916,
-        "Name": 200263
+        "ID": 158,
+        "P1": 10114,
+        "Name": 300737
       },
       {
         "PathType": "GetPathType_Store",
@@ -15684,6 +15060,12 @@
       {
         "PathType": "GetPathType_ActivityStore",
         "Name": 900000
+      },
+      {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10215,
+        "Name": 300743
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I5559017.png@I5559017",
@@ -15703,6 +15085,12 @@
       {
         "PathType": "GetPathType_ActivityStore",
         "Name": 900000
+      },
+      {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10216,
+        "Name": 300744
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I5559018.png@I5559018",
@@ -15811,7 +15199,7 @@
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/CommonImage_ABS/Icon/Icon_Box_04.PNG@Icon_Box_04",
     "RewardSortIndex": 40000,
     "ItemNameStrKey": "ST:160166",
-    "ItemDescStrKey": "ST:257472"
+    "ItemDescStrKey": "ST:258157"
   },
   {
     "ID": 5559071,
@@ -16879,7 +16267,7 @@
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/StorePackage01_ABS/Icon_Package_274.png@Icon_Package_274",
     "RewardSortIndex": 99999,
     "ItemNameStrKey": "ST:256301",
-    "ItemDescStrKey": "ST:256502"
+    "ItemDescStrKey": "ST:256490"
   },
   {
     "ID": 5559217,
@@ -16899,7 +16287,7 @@
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/StorePackage01_ABS/Icon_Package_274.png@Icon_Package_274",
     "RewardSortIndex": 99999,
     "ItemNameStrKey": "ST:256301",
-    "ItemDescStrKey": "ST:256503"
+    "ItemDescStrKey": "ST:256491"
   },
   {
     "ID": 5559218,
@@ -16919,7 +16307,7 @@
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/StorePackage01_ABS/Icon_Package_275.png@Icon_Package_275",
     "RewardSortIndex": 99999,
     "ItemNameStrKey": "ST:256302",
-    "ItemDescStrKey": "ST:256504"
+    "ItemDescStrKey": "ST:256492"
   },
   {
     "ID": 5559219,
@@ -16939,7 +16327,7 @@
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/StorePackage01_ABS/Icon_Package_275.png@Icon_Package_275",
     "RewardSortIndex": 99999,
     "ItemNameStrKey": "ST:256302",
-    "ItemDescStrKey": "ST:256505"
+    "ItemDescStrKey": "ST:256493"
   },
   {
     "ID": 5559220,
@@ -16959,7 +16347,7 @@
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/StorePackage01_ABS/Icon_Package_276.png@Icon_Package_276",
     "RewardSortIndex": 99999,
     "ItemNameStrKey": "ST:256303",
-    "ItemDescStrKey": "ST:256506"
+    "ItemDescStrKey": "ST:256494"
   },
   {
     "ID": 5559221,
@@ -16979,7 +16367,7 @@
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/StorePackage01_ABS/Icon_Package_276.png@Icon_Package_276",
     "RewardSortIndex": 99999,
     "ItemNameStrKey": "ST:256303",
-    "ItemDescStrKey": "ST:256507"
+    "ItemDescStrKey": "ST:256495"
   },
   {
     "ID": 5559222,
@@ -17007,7 +16395,7 @@
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/StorePackage01_ABS/Icon_Package_270.png@Icon_Package_270",
     "RewardSortIndex": 99998,
     "ItemNameStrKey": "ST:255725",
-    "ItemDescStrKey": "ST:256460"
+    "ItemDescStrKey": "ST:256496"
   },
   {
     "ID": 5559224,
@@ -17035,7 +16423,7 @@
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/StorePackage01_ABS/Icon_Package_272.png@Icon_Package_272",
     "RewardSortIndex": 99996,
     "ItemNameStrKey": "ST:255727",
-    "ItemDescStrKey": "ST:256461"
+    "ItemDescStrKey": "ST:256497"
   },
   {
     "ID": 5559226,
@@ -17049,7 +16437,29 @@
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/StorePackage01_ABS/Icon_Package_273.png@Icon_Package_273",
     "RewardSortIndex": 99995,
     "ItemNameStrKey": "ST:255728",
-    "ItemDescStrKey": "ST:256462"
+    "ItemDescStrKey": "ST:256498"
+  },
+  {
+    "ID": 5559227,
+    "Rarity": "Rarity_SR",
+    "ItemType": "ItemType_Item",
+    "Stackable": true,
+    "FunType": "ItemFunType_SelfTreasureBox",
+    "FunParams": [
+      5559227
+    ],
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10102,
+        "Name": 300748
+      }
+    ],
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/StorePackage01_ABS/Icon_Package_274.png@Icon_Package_274",
+    "RewardSortIndex": 99999,
+    "ItemNameStrKey": "ST:259030",
+    "ItemDescStrKey": "ST:259856"
   },
   {
     "ID": 5559299,
@@ -20520,7 +19930,7 @@
     "RewardSortIndex": 40000,
     "BoxInfo": 1,
     "ItemNameStrKey": "ST:256052",
-    "ItemDescStrKey": "ST:258806"
+    "ItemDescStrKey": "ST:258930"
   },
   {
     "ID": 55662205,
@@ -20566,8 +19976,8 @@
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/StorePackage01_ABS/Icon_Package_277.png@Icon_Package_277",
     "RewardSortIndex": 40000,
     "BoxInfo": 1,
-    "ItemNameStrKey": "ST:256829",
-    "ItemDescStrKey": "ST:258806"
+    "ItemNameStrKey": "ST:258153",
+    "ItemDescStrKey": "ST:258930"
   },
   {
     "ID": 55662208,
@@ -20582,8 +19992,8 @@
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Head_Item_0007.png@Head_Item_0007",
     "RewardSortIndex": 40000,
-    "ItemNameStrKey": "ST:258245",
-    "ItemDescStrKey": "ST:258246"
+    "ItemNameStrKey": "ST:258527",
+    "ItemDescStrKey": "ST:258529"
   },
   {
     "ID": 55662209,
@@ -20598,8 +20008,86 @@
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I555201101.PNG@I555201101",
     "RewardSortIndex": 40000,
     "BoxInfo": 1,
-    "ItemNameStrKey": "ST:258808",
-    "ItemDescStrKey": "ST:258809"
+    "ItemNameStrKey": "ST:258853",
+    "ItemDescStrKey": "ST:258855"
+  },
+  {
+    "ID": 55662210,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Item",
+    "Stackable": true,
+    "FunType": "ItemFunType_SelfSkinBox",
+    "FunParams": [
+      55662210
+    ],
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/skinselectbox.PNG@skinselectbox",
+    "RewardSortIndex": 40000,
+    "ItemNameStrKey": "ST:70740",
+    "ItemDescStrKey": "ST:149400"
+  },
+  {
+    "ID": 55662211,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Item",
+    "Stackable": true,
+    "DirectUse": true,
+    "FunType": "ItemFunType_TreasureBox",
+    "FunParams": [
+      320067109
+    ],
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/skinselectbox_Taozhuang.PNG@skinselectbox_Taozhuang",
+    "RewardSortIndex": 40001,
+    "BoxInfo": 1,
+    "ItemNameStrKey": "ST:260159",
+    "ItemDescStrKey": "ST:260160"
+  },
+  {
+    "ID": 55662212,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Item",
+    "Stackable": true,
+    "FunType": "ItemFunType_SelfSkinBox",
+    "FunParams": [
+      55662212
+    ],
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/skinselectbox.PNG@skinselectbox",
+    "RewardSortIndex": 40000,
+    "ItemNameStrKey": "ST:123790",
+    "ItemDescStrKey": "ST:149402"
+  },
+  {
+    "ID": 55662213,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Item",
+    "Stackable": true,
+    "FunType": "ItemFunType_SelfSkinBox",
+    "FunParams": [
+      55662213
+    ],
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I555201101.PNG@I555201101",
+    "RewardSortIndex": 40000,
+    "BoxInfo": 1,
+    "ItemNameStrKey": "ST:258853",
+    "ItemDescStrKey": "ST:258855"
+  },
+  {
+    "ID": 55662214,
+    "VersionTag": 54,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Item",
+    "Stackable": true,
+    "FunType": "ItemFunType_SelfTreasureBox",
+    "FunParams": [
+      55662214
+    ],
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/CommonImage_ABS/Icon/Icon_Box_04.PNG@Icon_Box_04",
+    "RewardSortIndex": 40000,
+    "ItemNameStrKey": "ST:258947",
+    "ItemDescStrKey": "ST:133370"
   },
   {
     "ID": 55670001,
@@ -24426,7 +23914,67 @@
     "Hidden": true,
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/CourseNameCard_47.png@CourseNameCard_47",
     "RewardSortIndex": 10000,
-    "ItemNameStrKey": "ST:256825",
+    "ItemNameStrKey": "ST:258154",
+    "ItemDescStrKey": "ST:84941"
+  },
+  {
+    "ID": 201200166,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Item",
+    "DirectUse": true,
+    "FunType": "ItemFunType_AddTitle",
+    "Hidden": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/CourseNameCard_48.png@CourseNameCard_48",
+    "RewardSortIndex": 10000,
+    "ItemNameStrKey": "ST:259062",
+    "ItemDescStrKey": "ST:84941"
+  },
+  {
+    "ID": 201200167,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Item",
+    "DirectUse": true,
+    "FunType": "ItemFunType_AddTitle",
+    "Hidden": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/CourseNameCard_49.png@CourseNameCard_49",
+    "RewardSortIndex": 10000,
+    "ItemNameStrKey": "ST:259063",
+    "ItemDescStrKey": "ST:84941"
+  },
+  {
+    "ID": 201200168,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Item",
+    "DirectUse": true,
+    "FunType": "ItemFunType_AddTitle",
+    "Hidden": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/CourseNameCard_50.png@CourseNameCard_50",
+    "RewardSortIndex": 10000,
+    "ItemNameStrKey": "ST:259064",
+    "ItemDescStrKey": "ST:84941"
+  },
+  {
+    "ID": 201200169,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Item",
+    "DirectUse": true,
+    "FunType": "ItemFunType_AddTitle",
+    "Hidden": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/CourseNameCard_51.png@CourseNameCard_51",
+    "RewardSortIndex": 10000,
+    "ItemNameStrKey": "ST:259065",
+    "ItemDescStrKey": "ST:84941"
+  },
+  {
+    "ID": 201200170,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Item",
+    "DirectUse": true,
+    "FunType": "ItemFunType_AddTitle",
+    "Hidden": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/CourseNameCard_52.png@CourseNameCard_52",
+    "RewardSortIndex": 10000,
+    "ItemNameStrKey": "ST:259066",
     "ItemDescStrKey": "ST:84941"
   },
   {
@@ -24455,6 +24003,12 @@
       {
         "PathType": "GetPathType_ActivityStore",
         "Name": 900000
+      },
+      {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10104,
+        "Name": 300709
       },
       {
         "PathType": "GetPathType_Store",
@@ -24490,19 +24044,10 @@
         "Name": 900000
       },
       {
-        "PathType": "GetPathType_FriendshipShop",
-        "ID": 1101,
-        "Name": 8901
-      },
-      {
-        "PathType": "GetPathType_Honor",
-        "ID": 901,
-        "Name": 8902
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1001,
-        "Name": 15
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10106,
+        "Name": 300710
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/Wunei-Yunhun2Rubao.png@Wunei-Yunhun2Rubao",
@@ -31797,8 +31342,24 @@
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Frame_head_frame259.png@Frame_head_frame259",
     "QATest": 1,
     "RewardSortIndex": 40001,
-    "ItemNameStrKey": "ST:256823",
-    "ItemDescStrKey": "ST:256827"
+    "ItemNameStrKey": "ST:258148",
+    "ItemDescStrKey": "ST:258158"
+  },
+  {
+    "ID": 400010525,
+    "Rarity": "Rarity_SR",
+    "ItemType": "ItemType_Item",
+    "Stackable": true,
+    "DirectUse": true,
+    "FunType": "ItemFunType_AddFrame",
+    "FunParams": [
+      263
+    ],
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Frame_head_frame260.png@Frame_head_frame260",
+    "QATest": 1,
+    "RewardSortIndex": 40001,
+    "ItemNameStrKey": "ST:259061",
+    "ItemDescStrKey": "ST:259067"
   },
   {
     "ID": 400011000,
@@ -33584,12 +33145,6 @@
         "Name": 200224
       },
       {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 912,
-        "Name": 200225
-      },
-      {
         "PathType": "GetPathType_TextOnly",
         "Name": 200226
       }
@@ -33610,12 +33165,6 @@
         "ID": 23,
         "P1": 131,
         "Name": 200202
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 913,
-        "Name": 200206
       },
       {
         "PathType": "GetPathType_TextOnly",
@@ -33677,12 +33226,6 @@
         "ID": 23,
         "P1": 131,
         "Name": 200202
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 915,
-        "Name": 200227
       },
       {
         "PathType": "GetPathType_TextOnly",
@@ -33864,12 +33407,6 @@
         "Name": 200202
       },
       {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 917,
-        "Name": 200247
-      },
-      {
         "PathType": "GetPathType_TextOnly",
         "Name": 200196
       },
@@ -33969,12 +33506,6 @@
         "Name": 200202
       },
       {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 918,
-        "Name": 200253
-      },
-      {
         "PathType": "GetPathType_TextOnly",
         "Name": 200196
       },
@@ -34011,12 +33542,6 @@
         "ID": 23,
         "P1": 131,
         "Name": 200266
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 919,
-        "Name": 200267
       },
       {
         "PathType": "GetPathType_TextOnly",
@@ -34174,12 +33699,6 @@
         "Name": 200286
       },
       {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 921,
-        "Name": 200287
-      },
-      {
         "PathType": "GetPathType_ActivityStore",
         "Name": 900000
       },
@@ -34205,12 +33724,6 @@
         "ID": 23,
         "P1": 131,
         "Name": 200286
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 922,
-        "Name": 200299
       },
       {
         "PathType": "GetPathType_ActivityStore",
@@ -34274,12 +33787,6 @@
         "Name": 200286
       },
       {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 923,
-        "Name": 200302
-      },
-      {
         "PathType": "GetPathType_ActivityStore",
         "Name": 900000
       },
@@ -34306,6 +33813,16 @@
     "RewardSortIndex": 30000,
     "ItemNameStrKey": "ST:145572",
     "ItemDescStrKey": "ST:105577"
+  },
+  {
+    "ID": 400020459,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Item",
+    "Stackable": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I405000069.png@I405000069",
+    "RewardSortIndex": 40000,
+    "ItemNameStrKey": "ST:167501",
+    "ItemDescStrKey": "ST:167503"
   },
   {
     "ID": 400020460,
@@ -36215,12 +35732,6 @@
         "Name": 200286
       },
       {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 924,
-        "Name": 200307
-      },
-      {
         "PathType": "GetPathType_ActivityStore",
         "Name": 900000
       },
@@ -36282,12 +35793,6 @@
         "Name": 200286
       },
       {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 925,
-        "Name": 200313
-      },
-      {
         "PathType": "GetPathType_ActivityStore",
         "Name": 900000
       },
@@ -36313,12 +35818,6 @@
         "ID": 23,
         "P1": 131,
         "Name": 200286
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 926,
-        "Name": 200317
       },
       {
         "PathType": "GetPathType_ActivityStore",
@@ -36368,12 +35867,6 @@
         "ID": 23,
         "P1": 131,
         "Name": 200286
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 927,
-        "Name": 200321
       },
       {
         "PathType": "GetPathType_ActivityStore",
@@ -38127,6 +37620,90 @@
     "RewardSortIndex": 40000,
     "ItemNameStrKey": "ST:218784",
     "ItemDescStrKey": "ST:256432"
+  },
+  {
+    "ID": 400120671,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Material",
+    "Stackable": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/Wunei-Yunhun3.png@Wunei-Yunhun3",
+    "QATest": 1,
+    "RewardSortIndex": 40000,
+    "ItemNameStrKey": "ST:218778",
+    "ItemDescStrKey": "ST:260122"
+  },
+  {
+    "ID": 400120672,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Material",
+    "Stackable": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I400020462.png@I400020462",
+    "QATest": 1,
+    "RewardSortIndex": 40000,
+    "ItemNameStrKey": "ST:218779",
+    "ItemDescStrKey": "ST:260123"
+  },
+  {
+    "ID": 400120673,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Material",
+    "Stackable": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I400020463.png@I400020463",
+    "QATest": 1,
+    "RewardSortIndex": 40000,
+    "ItemNameStrKey": "ST:218780",
+    "ItemDescStrKey": "ST:260124"
+  },
+  {
+    "ID": 400120674,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Material",
+    "Stackable": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I400020464.png@I400020464",
+    "QATest": 1,
+    "RewardSortIndex": 40000,
+    "ItemNameStrKey": "ST:218781",
+    "ItemDescStrKey": "ST:260125"
+  },
+  {
+    "ID": 400120675,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Material",
+    "Stackable": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I400020465.png@I400020465",
+    "QATest": 1,
+    "RewardSortIndex": 40000,
+    "ItemNameStrKey": "ST:218782",
+    "ItemDescStrKey": "ST:260126"
+  },
+  {
+    "ID": 400120676,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Material",
+    "Stackable": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I400020466.png@I400020466",
+    "QATest": 1,
+    "RewardSortIndex": 40000,
+    "ItemNameStrKey": "ST:218783",
+    "ItemDescStrKey": "ST:260127"
+  },
+  {
+    "ID": 400120677,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Material",
+    "Stackable": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I400020467.png@I400020467",
+    "QATest": 1,
+    "RewardSortIndex": 40000,
+    "ItemNameStrKey": "ST:218784",
+    "ItemDescStrKey": "ST:260128"
   },
   {
     "ID": 401000000,
@@ -43884,7 +43461,8 @@
     "Rarity": "Rarity_SSR",
     "ItemType": "ItemType_CharacterFragment",
     "DropGroup": [
-      102
+      102,
+      301
     ],
     "Stackable": true,
     "GetPathList": [
@@ -43915,6 +43493,44 @@
     "RewardSortIndex": 40000,
     "ItemNameStrKey": "ST:253993",
     "ItemDescStrKey": "ST:253994"
+  },
+  {
+    "ID": 401140400,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_CharacterFragment",
+    "DropGroup": [
+      102
+    ],
+    "Stackable": true,
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_Card",
+        "ID": 1,
+        "P1": 1,
+        "Name": 7
+      },
+      {
+        "PathType": "GetPathType_Delegate",
+        "ID": 1,
+        "Name": 8904
+      },
+      {
+        "PathType": "GetPathType_Delegate",
+        "ID": 2,
+        "Name": 8905
+      },
+      {
+        "PathType": "GetPathType_Delegate",
+        "ID": 3,
+        "Name": 8906
+      }
+    ],
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I401140400.png@I401140400",
+    "QATest": 1,
+    "RewardSortIndex": 40000,
+    "ItemNameStrKey": "ST:258232",
+    "ItemDescStrKey": "ST:258233"
   },
   {
     "ID": 401150000,
@@ -44039,7 +43655,8 @@
     "Rarity": "Rarity_SSR",
     "ItemType": "ItemType_CharacterFragment",
     "DropGroup": [
-      102
+      102,
+      301
     ],
     "Stackable": true,
     "GetPathList": [
@@ -45192,23 +44809,12 @@
     ],
     "GetPathList": [
       {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 914,
-        "Name": 200233
-      },
-      {
         "PathType": "GetPathType_ExpInstance",
         "Name": 200234
       },
       {
         "PathType": "GetPathType_TextOnly",
         "Name": 200153
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 101,
-        "Name": 300101
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402010001.png@I402010001",
@@ -45231,28 +44837,12 @@
     ],
     "GetPathList": [
       {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 914,
-        "Name": 200233
-      },
-      {
         "PathType": "GetPathType_ExpInstance",
         "Name": 200234
       },
       {
         "PathType": "GetPathType_TextOnly",
         "Name": 200153
-      },
-      {
-        "PathType": "GetPathType_FriendshipShop",
-        "ID": 1104,
-        "Name": 200188
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 101,
-        "Name": 300101
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402010002.png@I402010002",
@@ -45275,28 +44865,12 @@
     ],
     "GetPathList": [
       {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 914,
-        "Name": 200233
-      },
-      {
         "PathType": "GetPathType_ExpInstance",
         "Name": 200234
       },
       {
         "PathType": "GetPathType_TextOnly",
         "Name": 200153
-      },
-      {
-        "PathType": "GetPathType_FriendshipShop",
-        "ID": 1105,
-        "Name": 200189
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 101,
-        "Name": 300101
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402010003.png@I402010003",
@@ -45324,9 +44898,9 @@
       },
       {
         "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 914,
-        "Name": 200233
+        "ID": 158,
+        "P1": 10209,
+        "Name": 300720
       },
       {
         "PathType": "GetPathType_ExpInstance",
@@ -45335,16 +44909,6 @@
       {
         "PathType": "GetPathType_TextOnly",
         "Name": 200153
-      },
-      {
-        "PathType": "GetPathType_FriendshipShop",
-        "ID": 1106,
-        "Name": 200190
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 101,
-        "Name": 300101
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402010004.png@I402010004",
@@ -46534,12 +46098,6 @@
       {
         "PathType": "GetPathType_TextOnly",
         "Name": 100602
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1024,
-        "Name": 200264
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402021001.png@I402021001",
@@ -46559,12 +46117,6 @@
       {
         "PathType": "GetPathType_TextOnly",
         "Name": 100602
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 907,
-        "Name": 200260
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402021002.png@I402021002",
@@ -46584,18 +46136,6 @@
       {
         "PathType": "GetPathType_TextOnly",
         "Name": 100602
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 916,
-        "Name": 200261
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 65,
-        "P1": 1025,
-        "Name": 200265
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402021003.png@I402021003",
@@ -46615,12 +46155,6 @@
       {
         "PathType": "GetPathType_TextOnly",
         "Name": 100602
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1024,
-        "Name": 200264
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402021021.png@I402021021",
@@ -46640,12 +46174,6 @@
       {
         "PathType": "GetPathType_TextOnly",
         "Name": 100602
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 907,
-        "Name": 200260
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402021022.png@I402021022",
@@ -46665,12 +46193,6 @@
       {
         "PathType": "GetPathType_TextOnly",
         "Name": 100602
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 916,
-        "Name": 200261
       },
       {
         "PathType": "GetPathType_Store",
@@ -46696,12 +46218,6 @@
       {
         "PathType": "GetPathType_TextOnly",
         "Name": 100602
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1024,
-        "Name": 200264
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402021011.png@I402021011",
@@ -46721,12 +46237,6 @@
       {
         "PathType": "GetPathType_TextOnly",
         "Name": 100602
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 907,
-        "Name": 200260
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402021012.png@I402021012",
@@ -46746,12 +46256,6 @@
       {
         "PathType": "GetPathType_TextOnly",
         "Name": 100602
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 916,
-        "Name": 200261
       },
       {
         "PathType": "GetPathType_Store",
@@ -46777,9 +46281,9 @@
       },
       {
         "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1023,
-        "Name": 200236
+        "ID": 158,
+        "P1": 10111,
+        "Name": 300713
       },
       {
         "PathType": "GetPathType_Store",
@@ -47649,15 +47153,9 @@
       },
       {
         "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 910,
-        "Name": 100715
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1051,
-        "Name": 100718
+        "ID": 158,
+        "P1": 10203,
+        "Name": 300718
       },
       {
         "PathType": "GetPathType_JianghuPractice",
@@ -47691,21 +47189,10 @@
     "Stackable": true,
     "GetPathList": [
       {
-        "PathType": "GetPathType_FriendshipShop",
-        "ID": 1109,
-        "Name": 100710
-      },
-      {
         "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1052,
-        "Name": 100712
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 3,
-        "P1": 911,
-        "Name": 100713
+        "ID": 158,
+        "P1": 10108,
+        "Name": 300711
       },
       {
         "PathType": "GetPathType_TextOnly",
@@ -47932,6 +47419,14 @@
     "FunType": "ItemFunType_TreasureBox",
     "FunParams": [
       401031703
+    ],
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10206,
+        "Name": 300741
+      }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/Soul_CommonSSR.png@Soul_CommonSSR",
     "RewardSortIndex": 40799,
@@ -50161,8 +49656,10 @@
         "Name": 900000
       },
       {
-        "PathType": "GetPathType_TextOnly",
-        "Name": 900003
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10210,
+        "Name": 300721
       },
       {
         "PathType": "GetPathType_Rift",
@@ -50475,11 +49972,6 @@
         "ID": 1111,
         "P1": 2011110,
         "Name": 21110
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 607,
-        "Name": 300607
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402084001.png@I402084001",
@@ -50499,8 +49991,10 @@
         "Name": 900000
       },
       {
-        "PathType": "GetPathType_TextOnly",
-        "Name": 900003
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10211,
+        "Name": 300722
       },
       {
         "PathType": "GetPathType_Rift",
@@ -50813,16 +50307,6 @@
         "ID": 1111,
         "P1": 2011120,
         "Name": 21120
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 409,
-        "Name": 300407
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 507,
-        "Name": 300505
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402084002.png@I402084002",
@@ -50842,13 +50326,16 @@
         "Name": 900000
       },
       {
-        "PathType": "GetPathType_TextOnly",
-        "Name": 900003
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10212,
+        "Name": 300723
       },
       {
-        "PathType": "GetPathType_Appoint",
-        "ID": 310,
-        "Name": 300308
+        "PathType": "GetPathType_SpiritLight",
+        "ID": 1,
+        "P1": 147,
+        "Name": 300708
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402084003.png@I402084003",
@@ -50868,8 +50355,10 @@
         "Name": 900000
       },
       {
-        "PathType": "GetPathType_TextOnly",
-        "Name": 900003
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10213,
+        "Name": 300724
       },
       {
         "PathType": "GetPathType_Rift",
@@ -51182,11 +50671,6 @@
         "ID": 1111,
         "P1": 2011130,
         "Name": 21130
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 706,
-        "Name": 300706
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402084004.png@I402084004",
@@ -51204,6 +50688,12 @@
       {
         "PathType": "GetPathType_ActivityStore",
         "Name": 900000
+      },
+      {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10214,
+        "Name": 300725
       },
       {
         "PathType": "GetPathType_JiuRuTower",
@@ -52251,15 +51741,16 @@
     "Stackable": true,
     "GetPathList": [
       {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10219,
+        "Name": 300727
+      },
+      {
         "PathType": "GetPathType_Delegate",
         "ID": 6,
         "P1": 1,
         "Name": 200151
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1019,
-        "Name": 15
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/l403011101.png@l403011101",
@@ -52278,15 +51769,16 @@
     "Stackable": true,
     "GetPathList": [
       {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10219,
+        "Name": 300727
+      },
+      {
         "PathType": "GetPathType_Delegate",
         "ID": 6,
         "P1": 1,
         "Name": 200151
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1019,
-        "Name": 15
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403011102.png@I403011102",
@@ -52305,15 +51797,16 @@
     "Stackable": true,
     "GetPathList": [
       {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10219,
+        "Name": 300727
+      },
+      {
         "PathType": "GetPathType_Delegate",
         "ID": 6,
         "P1": 1,
         "Name": 200151
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1019,
-        "Name": 15
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403011103.png@I403011103",
@@ -52332,15 +51825,16 @@
     "Stackable": true,
     "GetPathList": [
       {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10219,
+        "Name": 300727
+      },
+      {
         "PathType": "GetPathType_Delegate",
         "ID": 6,
         "P1": 1,
         "Name": 200151
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1019,
-        "Name": 15
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I403011104.png@I403011104",
@@ -52373,19 +51867,16 @@
         "Name": 900000
       },
       {
-        "PathType": "GetPathType_Honor",
-        "ID": 902,
-        "Name": 8902
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10202,
+        "Name": 300717
       },
       {
         "PathType": "GetPathType_Store",
         "ID": 7,
         "P1": 118,
         "Name": 200232
-      },
-      {
-        "PathType": "GetPathType_TextOnly",
-        "Name": 900003
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403011200.png@I403011200",
@@ -52404,15 +51895,16 @@
     "Stackable": true,
     "GetPathList": [
       {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10218,
+        "Name": 300726
+      },
+      {
         "PathType": "GetPathType_Delegate",
         "ID": 6,
         "P1": 1,
         "Name": 200152
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1020,
-        "Name": 15
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/l403011201.png@l403011201",
@@ -52431,15 +51923,16 @@
     "Stackable": true,
     "GetPathList": [
       {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10218,
+        "Name": 300726
+      },
+      {
         "PathType": "GetPathType_Delegate",
         "ID": 6,
         "P1": 1,
         "Name": 200152
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1020,
-        "Name": 15
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403011204.png@I403011204",
@@ -52458,15 +51951,16 @@
     "Stackable": true,
     "GetPathList": [
       {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10218,
+        "Name": 300726
+      },
+      {
         "PathType": "GetPathType_Delegate",
         "ID": 6,
         "P1": 1,
         "Name": 200152
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1020,
-        "Name": 15
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403011205.png@I403011205",
@@ -52485,15 +51979,16 @@
     "Stackable": true,
     "GetPathList": [
       {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10218,
+        "Name": 300726
+      },
+      {
         "PathType": "GetPathType_Delegate",
         "ID": 6,
         "P1": 1,
         "Name": 200152
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1020,
-        "Name": 15
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I403011206.png@I403011206",
@@ -52561,16 +52056,6 @@
         "ID": 1101,
         "P1": 2010140,
         "Name": 20140
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1003,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 401,
-        "Name": 300401
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403021001.png@I403021001",
@@ -52640,16 +52125,6 @@
         "ID": 1102,
         "P1": 2010240,
         "Name": 20240
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1004,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 401,
-        "Name": 300402
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403021002.png@I403021002",
@@ -52767,16 +52242,6 @@
         "ID": 1103,
         "P1": 2010340,
         "Name": 20340
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1005,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 402,
-        "Name": 300403
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403021003.png@I403021003",
@@ -52918,16 +52383,6 @@
         "ID": 1104,
         "P1": 2010440,
         "Name": 20440
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1006,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 403,
-        "Name": 300404
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403021004.png@I403021004",
@@ -53033,16 +52488,6 @@
         "ID": 1105,
         "P1": 2010540,
         "Name": 20540
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1007,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 405,
-        "Name": 300405
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403021005.png@I403021005",
@@ -53112,16 +52557,6 @@
         "ID": 1107,
         "P1": 2010740,
         "Name": 20740
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1021,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 407,
-        "Name": 300406
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403021006.png@I403021006",
@@ -53155,11 +52590,6 @@
         "ID": 2102,
         "P1": 2020230,
         "Name": 22023
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1025,
-        "Name": 15
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403021007.png@I403021007",
@@ -53242,16 +52672,6 @@
         "ID": 1103,
         "P1": 2010360,
         "Name": 20360
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1005,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 501,
-        "Name": 300501
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403022003.png@I403022003",
@@ -53333,16 +52753,6 @@
         "ID": 1104,
         "P1": 2010460,
         "Name": 20460
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1006,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 501,
-        "Name": 300502
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403022004.png@I403022004",
@@ -53406,16 +52816,6 @@
         "ID": 1105,
         "P1": 2010560,
         "Name": 20560
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1007,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 503,
-        "Name": 300503
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403022005.png@I403022005",
@@ -53467,16 +52867,6 @@
         "ID": 1107,
         "P1": 2010760,
         "Name": 20760
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1021,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 505,
-        "Name": 300504
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403022006.png@I403022006",
@@ -53510,11 +52900,6 @@
         "ID": 2102,
         "P1": 2020250,
         "Name": 22025
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1025,
-        "Name": 15
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403022007.png@I403022007",
@@ -53572,16 +52957,6 @@
         "ID": 1101,
         "P1": 2010140,
         "Name": 20140
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1003,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 401,
-        "Name": 300401
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403023001.png@I403023001",
@@ -53651,16 +53026,6 @@
         "ID": 1102,
         "P1": 2010240,
         "Name": 20240
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1004,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 401,
-        "Name": 300402
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403023002.png@I403023002",
@@ -53736,16 +53101,6 @@
         "ID": 1103,
         "P1": 2010340,
         "Name": 20340
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1005,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 402,
-        "Name": 300403
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403023003.png@I403023003",
@@ -53827,16 +53182,6 @@
         "ID": 1104,
         "P1": 2010440,
         "Name": 20440
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1006,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 403,
-        "Name": 300404
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403023004.png@I403023004",
@@ -53900,16 +53245,6 @@
         "ID": 1105,
         "P1": 2010540,
         "Name": 20540
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1007,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 405,
-        "Name": 300405
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403023005.png@I403023005",
@@ -53967,16 +53302,6 @@
         "ID": 1107,
         "P1": 2010740,
         "Name": 20740
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1021,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 407,
-        "Name": 300406
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403023006.png@I403023006",
@@ -54016,11 +53341,6 @@
         "ID": 2102,
         "P1": 2020210,
         "Name": 22021
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1025,
-        "Name": 15
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403023007.png@I403023007",
@@ -54078,16 +53398,6 @@
         "ID": 1101,
         "P1": 2010150,
         "Name": 20150
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1003,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 401,
-        "Name": 300401
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403024001.png@I403024001",
@@ -54157,16 +53467,6 @@
         "ID": 1102,
         "P1": 2010250,
         "Name": 20250
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1004,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 401,
-        "Name": 300402
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403024002.png@I403024002",
@@ -54242,16 +53542,6 @@
         "ID": 1103,
         "P1": 2010350,
         "Name": 20350
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1005,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 402,
-        "Name": 300403
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403024003.png@I403024003",
@@ -54333,16 +53623,6 @@
         "ID": 1104,
         "P1": 2010450,
         "Name": 20450
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1006,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 403,
-        "Name": 300404
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403024004.png@I403024004",
@@ -54406,16 +53686,6 @@
         "ID": 1105,
         "P1": 2010550,
         "Name": 20550
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1007,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 405,
-        "Name": 300405
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403024005.png@I403024005",
@@ -54473,16 +53743,6 @@
         "ID": 1107,
         "P1": 2010750,
         "Name": 20750
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1021,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 407,
-        "Name": 300406
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403024006.png@I403024006",
@@ -54522,11 +53782,6 @@
         "ID": 2102,
         "P1": 2020220,
         "Name": 22022
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1025,
-        "Name": 15
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403024007.png@I403024007",
@@ -54609,16 +53864,6 @@
         "ID": 1103,
         "P1": 2010350,
         "Name": 20350
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1005,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 501,
-        "Name": 300501
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403025003.png@I403025003",
@@ -54700,16 +53945,6 @@
         "ID": 1104,
         "P1": 2010450,
         "Name": 20450
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1006,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 501,
-        "Name": 300502
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403025004.png@I403025004",
@@ -54773,16 +54008,6 @@
         "ID": 1105,
         "P1": 2010550,
         "Name": 20550
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1007,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 503,
-        "Name": 300503
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403025005.png@I403025005",
@@ -54834,16 +54059,6 @@
         "ID": 1107,
         "P1": 2010750,
         "Name": 20750
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1021,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 505,
-        "Name": 300504
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403025006.png@I403025006",
@@ -54877,11 +54092,6 @@
         "ID": 2102,
         "P1": 2020240,
         "Name": 22024
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1025,
-        "Name": 15
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403025007.png@I403025007",
@@ -55155,16 +54365,6 @@
         "ID": 1101,
         "P1": 2010110,
         "Name": 20110
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1008,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 601,
-        "Name": 300601
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403031001.png@I403031001",
@@ -55222,16 +54422,6 @@
         "ID": 1102,
         "P1": 2010210,
         "Name": 20210
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1009,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 601,
-        "Name": 300602
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403031002.png@I403031002",
@@ -55301,16 +54491,6 @@
         "ID": 1103,
         "P1": 2010310,
         "Name": 20310
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1010,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 601,
-        "Name": 300603
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403031003.png@I403031003",
@@ -55386,16 +54566,6 @@
         "ID": 1104,
         "P1": 2010410,
         "Name": 20410
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1011,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 603,
-        "Name": 300604
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403031004.png@I403031004",
@@ -55453,16 +54623,6 @@
         "ID": 1106,
         "P1": 2010610,
         "Name": 20610
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1012,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 604,
-        "Name": 300605
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403031005.png@I403031005",
@@ -55520,16 +54680,6 @@
         "ID": 1107,
         "P1": 2010710,
         "Name": 20710
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1013,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 605,
-        "Name": 300606
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403031006.png@I403031006",
@@ -55656,16 +54806,6 @@
         "ID": 1101,
         "P1": 2010110,
         "Name": 20110
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1008,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 601,
-        "Name": 300601
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403032001.png@I403032001",
@@ -55759,16 +54899,6 @@
         "ID": 1102,
         "P1": 2010210,
         "Name": 20210
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1009,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 601,
-        "Name": 300602
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403032002.png@I403032002",
@@ -55886,16 +55016,6 @@
         "ID": 1103,
         "P1": 2010310,
         "Name": 20310
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1010,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 601,
-        "Name": 300603
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403032003.png@I403032003",
@@ -56025,16 +55145,6 @@
         "ID": 1104,
         "P1": 2010410,
         "Name": 20410
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1011,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 603,
-        "Name": 300604
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403032004.png@I403032004",
@@ -56128,16 +55238,6 @@
         "ID": 1106,
         "P1": 2010610,
         "Name": 20610
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1012,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 604,
-        "Name": 300605
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403032005.png@I403032005",
@@ -56219,16 +55319,6 @@
         "ID": 1107,
         "P1": 2010710,
         "Name": 20710
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1013,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 605,
-        "Name": 300606
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403032006.png@I403032006",
@@ -56325,16 +55415,6 @@
         "ID": 1101,
         "P1": 2010120,
         "Name": 20120
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1008,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 601,
-        "Name": 300601
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403033001.png@I403033001",
@@ -56392,16 +55472,6 @@
         "ID": 1102,
         "P1": 2010220,
         "Name": 20220
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1009,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 601,
-        "Name": 300602
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403033002.png@I403033002",
@@ -56471,16 +55541,6 @@
         "ID": 1103,
         "P1": 2010320,
         "Name": 20320
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1010,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 601,
-        "Name": 300603
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403033003.png@I403033003",
@@ -56556,16 +55616,6 @@
         "ID": 1104,
         "P1": 2010420,
         "Name": 20420
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1011,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 603,
-        "Name": 300604
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403033004.png@I403033004",
@@ -56623,16 +55673,6 @@
         "ID": 1106,
         "P1": 2010620,
         "Name": 20620
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1012,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 604,
-        "Name": 300605
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403033005.png@I403033005",
@@ -56690,16 +55730,6 @@
         "ID": 1107,
         "P1": 2010720,
         "Name": 20720
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1013,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 605,
-        "Name": 300606
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403033006.png@I403033006",
@@ -56796,16 +55826,6 @@
         "ID": 1101,
         "P1": 2010120,
         "Name": 20120
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1008,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 601,
-        "Name": 300601
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403034001.png@I403034001",
@@ -56863,16 +55883,6 @@
         "ID": 1102,
         "P1": 2010220,
         "Name": 20220
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1009,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 601,
-        "Name": 300602
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403034002.png@I403034002",
@@ -56942,16 +55952,6 @@
         "ID": 1103,
         "P1": 2010320,
         "Name": 20320
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1010,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 601,
-        "Name": 300603
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403034003.png@I403034003",
@@ -57027,16 +56027,6 @@
         "ID": 1104,
         "P1": 2010420,
         "Name": 20420
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1011,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 603,
-        "Name": 300604
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403034004.png@I403034004",
@@ -57094,16 +56084,6 @@
         "ID": 1106,
         "P1": 2010620,
         "Name": 20620
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1012,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 604,
-        "Name": 300605
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403034005.png@I403034005",
@@ -57161,16 +56141,6 @@
         "ID": 1107,
         "P1": 2010720,
         "Name": 20720
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1013,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 605,
-        "Name": 300606
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403034006.png@I403034006",
@@ -57267,16 +56237,6 @@
         "ID": 1101,
         "P1": 2010130,
         "Name": 20130
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1008,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 601,
-        "Name": 300601
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403035001.png@I403035001",
@@ -57334,16 +56294,6 @@
         "ID": 1102,
         "P1": 2010230,
         "Name": 20230
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1009,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 601,
-        "Name": 300602
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403035002.png@I403035002",
@@ -57413,16 +56363,6 @@
         "ID": 1103,
         "P1": 2010330,
         "Name": 20330
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1010,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 601,
-        "Name": 300603
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403035003.png@I403035003",
@@ -57498,16 +56438,6 @@
         "ID": 1104,
         "P1": 2010430,
         "Name": 20430
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1011,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 603,
-        "Name": 300604
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403035004.png@I403035004",
@@ -57565,16 +56495,6 @@
         "ID": 1106,
         "P1": 2010630,
         "Name": 20630
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1012,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 604,
-        "Name": 300605
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403035005.png@I403035005",
@@ -57632,16 +56552,6 @@
         "ID": 1107,
         "P1": 2010730,
         "Name": 20730
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1013,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 605,
-        "Name": 300606
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403035006.png@I403035006",
@@ -57893,17 +56803,6 @@
         "ID": 1109,
         "P1": 2010910,
         "Name": 20910
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1041,
-        "Name": 200213
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 701,
-        "Name": 300701
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403041001.png@I403041001",
@@ -57928,17 +56827,6 @@
         "ID": 1109,
         "P1": 2010910,
         "Name": 20910
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1042,
-        "Name": 200214
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 701,
-        "Name": 300702
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403041002.png@I403041002",
@@ -57963,17 +56851,6 @@
         "ID": 1209,
         "P1": 3010910,
         "Name": 30910
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1043,
-        "Name": 200215
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 702,
-        "Name": 300703
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403041003.png@I403041003",
@@ -57998,17 +56875,6 @@
         "ID": 1110,
         "P1": 2011010,
         "Name": 21010
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1044,
-        "Name": 200216
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 704,
-        "Name": 300704
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403041004.png@I403041004",
@@ -58033,17 +56899,6 @@
         "ID": 1210,
         "P1": 3011010,
         "Name": 31010
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1045,
-        "Name": 200217
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 705,
-        "Name": 300705
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403041005.png@I403041005",
@@ -58068,17 +56923,6 @@
         "ID": 1109,
         "P1": 2010920,
         "Name": 20920
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1041,
-        "Name": 200213
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 701,
-        "Name": 300701
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403042001.png@I403042001",
@@ -58103,17 +56947,6 @@
         "ID": 1109,
         "P1": 2010920,
         "Name": 20920
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1042,
-        "Name": 200214
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 701,
-        "Name": 300702
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403042002.png@I403042002",
@@ -58138,17 +56971,6 @@
         "ID": 1209,
         "P1": 3010920,
         "Name": 30920
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1043,
-        "Name": 200215
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 702,
-        "Name": 300703
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403042003.png@I403042003",
@@ -58173,17 +56995,6 @@
         "ID": 1110,
         "P1": 2011020,
         "Name": 21020
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1044,
-        "Name": 200216
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 704,
-        "Name": 300704
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403042004.png@I403042004",
@@ -58208,17 +57019,6 @@
         "ID": 1210,
         "P1": 3011020,
         "Name": 31020
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1045,
-        "Name": 200217
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 705,
-        "Name": 300705
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403042005.png@I403042005",
@@ -58243,17 +57043,6 @@
         "ID": 1109,
         "P1": 2010930,
         "Name": 20930
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1041,
-        "Name": 200213
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 701,
-        "Name": 300701
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403043001.png@I403043001",
@@ -58278,17 +57067,6 @@
         "ID": 1109,
         "P1": 2010930,
         "Name": 20930
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1042,
-        "Name": 200214
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 701,
-        "Name": 300702
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403043002.png@I403043002",
@@ -58313,17 +57091,6 @@
         "ID": 1209,
         "P1": 3010930,
         "Name": 30930
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1043,
-        "Name": 200215
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 702,
-        "Name": 300703
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403043003.png@I403043003",
@@ -58348,17 +57115,6 @@
         "ID": 1110,
         "P1": 2011030,
         "Name": 21030
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1044,
-        "Name": 200216
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 704,
-        "Name": 300704
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403043004.png@I403043004",
@@ -58383,17 +57139,6 @@
         "ID": 1210,
         "P1": 3011030,
         "Name": 31030
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1045,
-        "Name": 200217
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 705,
-        "Name": 300705
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403043005.png@I403043005",
@@ -58418,17 +57163,6 @@
         "ID": 1109,
         "P1": 2010940,
         "Name": 20940
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1041,
-        "Name": 200213
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 701,
-        "Name": 300701
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403044001.png@I403044001",
@@ -58453,17 +57187,6 @@
         "ID": 1109,
         "P1": 2010940,
         "Name": 20940
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1042,
-        "Name": 200214
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 701,
-        "Name": 300702
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403044002.png@I403044002",
@@ -58488,17 +57211,6 @@
         "ID": 1209,
         "P1": 3010940,
         "Name": 30940
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1043,
-        "Name": 200215
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 702,
-        "Name": 300703
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403044003.png@I403044003",
@@ -58523,17 +57235,6 @@
         "ID": 1110,
         "P1": 2011040,
         "Name": 21040
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1044,
-        "Name": 200216
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 704,
-        "Name": 300704
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403044004.png@I403044004",
@@ -58558,17 +57259,6 @@
         "ID": 1210,
         "P1": 3011040,
         "Name": 31040
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1045,
-        "Name": 200217
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 705,
-        "Name": 300705
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403044005.png@I403044005",
@@ -58593,17 +57283,6 @@
         "ID": 1109,
         "P1": 2010950,
         "Name": 20950
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1041,
-        "Name": 200213
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 701,
-        "Name": 300701
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403045001.PNG@I403045001",
@@ -58628,17 +57307,6 @@
         "ID": 1109,
         "P1": 2010950,
         "Name": 20950
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1042,
-        "Name": 200214
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 701,
-        "Name": 300702
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403045002.PNG@I403045002",
@@ -58663,17 +57331,6 @@
         "ID": 1209,
         "P1": 3010950,
         "Name": 30950
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1043,
-        "Name": 200215
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 702,
-        "Name": 300703
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403045003.PNG@I403045003",
@@ -58698,17 +57355,6 @@
         "ID": 1110,
         "P1": 2011050,
         "Name": 21050
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1044,
-        "Name": 200216
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 704,
-        "Name": 300704
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403045004.PNG@I403045004",
@@ -58733,17 +57379,6 @@
         "ID": 1210,
         "P1": 3011050,
         "Name": 31050
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1045,
-        "Name": 200217
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 705,
-        "Name": 300705
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403045005.PNG@I403045005",
@@ -58768,17 +57403,6 @@
         "ID": 1109,
         "P1": 2010960,
         "Name": 20960
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1041,
-        "Name": 200213
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 701,
-        "Name": 300701
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403046001.PNG@I403046001",
@@ -58803,17 +57427,6 @@
         "ID": 1109,
         "P1": 2010960,
         "Name": 20960
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1042,
-        "Name": 200214
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 701,
-        "Name": 300702
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403046002.PNG@I403046002",
@@ -58838,17 +57451,6 @@
         "ID": 1209,
         "P1": 3010960,
         "Name": 30960
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1043,
-        "Name": 200215
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 702,
-        "Name": 300703
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403046003.PNG@I403046003",
@@ -58873,17 +57475,6 @@
         "ID": 1110,
         "P1": 2011060,
         "Name": 21060
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1044,
-        "Name": 200216
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 704,
-        "Name": 300704
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403046004.PNG@I403046004",
@@ -58908,17 +57499,6 @@
         "ID": 1210,
         "P1": 3011060,
         "Name": 31060
-      },
-      {
-        "PathType": "GetPathType_Store",
-        "ID": 10,
-        "P1": 1045,
-        "Name": 200217
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 705,
-        "Name": 300705
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403046005.PNG@I403046005",
@@ -59982,11 +58562,6 @@
       {
         "PathType": "GetPathType_Mountain",
         "Name": 13
-      },
-      {
-        "PathType": "GetPathType_FriendshipShop",
-        "ID": 1108,
-        "Name": 8903
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I403062002.png@I403062002",
@@ -60007,6 +58582,12 @@
       {
         "PathType": "GetPathType_ActivityStore",
         "Name": 900000
+      },
+      {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10220,
+        "Name": 300746
       },
       {
         "PathType": "GetPathType_SoulStoneSelect",
@@ -60053,16 +58634,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 1,
         "Name": 80115
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1014,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300301
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030001.png@I402030001",
@@ -60089,16 +58660,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 1,
         "Name": 80116
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1015,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300302
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030002.png@I402030002",
@@ -60125,16 +58686,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 1,
         "Name": 80117
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1016,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300303
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030003.png@I402030003",
@@ -60161,16 +58712,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 1,
         "Name": 80118
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1017,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 302,
-        "Name": 300304
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030005.png@I402030005",
@@ -60197,16 +58738,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 1,
         "Name": 80119
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1018,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 304,
-        "Name": 300305
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030004.png@I402030004",
@@ -60233,16 +58764,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 1,
         "Name": 80120
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1022,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 306,
-        "Name": 300306
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030006.png@I402030006",
@@ -60269,16 +58790,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 1,
         "Name": 80121
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1026,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 308,
-        "Name": 300307
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030007.png@I402030007",
@@ -60305,16 +58816,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 2,
         "Name": 80215
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1014,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300301
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030011.png@I402030011",
@@ -60341,16 +58842,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 2,
         "Name": 80216
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1015,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300302
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030012.png@I402030012",
@@ -60377,16 +58868,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 2,
         "Name": 80217
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1016,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300303
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030013.png@I402030013",
@@ -60413,16 +58894,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 2,
         "Name": 80218
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1017,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 302,
-        "Name": 300304
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030015.png@I402030015",
@@ -60449,16 +58920,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 2,
         "Name": 80219
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1018,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 304,
-        "Name": 300305
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030014.png@I402030014",
@@ -60485,16 +58946,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 2,
         "Name": 80220
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1022,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 306,
-        "Name": 300306
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030016.png@I402030016",
@@ -60521,16 +58972,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 2,
         "Name": 80221
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1026,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 308,
-        "Name": 300307
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030017.png@I402030017",
@@ -60557,16 +58998,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 3,
         "Name": 80315
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1014,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300301
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030021.png@I402030021",
@@ -60593,16 +59024,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 3,
         "Name": 80316
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1015,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300302
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030022.png@I402030022",
@@ -60629,16 +59050,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 3,
         "Name": 80317
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1016,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300303
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030023.png@I402030023",
@@ -60665,16 +59076,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 3,
         "Name": 80318
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1017,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 302,
-        "Name": 300304
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030025.png@I402030025",
@@ -60701,16 +59102,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 3,
         "Name": 80319
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1018,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 304,
-        "Name": 300305
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030024.png@I402030024",
@@ -60737,16 +59128,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 3,
         "Name": 80320
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1022,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 306,
-        "Name": 300306
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030026.png@I402030026",
@@ -60773,16 +59154,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 3,
         "Name": 80321
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1026,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 308,
-        "Name": 300307
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030027.png@I402030027",
@@ -60809,16 +59180,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 4,
         "Name": 80515
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1014,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300301
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030031.png@I402030031",
@@ -60845,16 +59206,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 4,
         "Name": 80516
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1015,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300302
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030032.png@I402030032",
@@ -60881,16 +59232,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 4,
         "Name": 80517
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1016,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300303
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030033.png@I402030033",
@@ -60917,16 +59258,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 4,
         "Name": 80518
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1017,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 302,
-        "Name": 300304
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030035.png@I402030035",
@@ -60953,16 +59284,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 4,
         "Name": 80519
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1018,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 304,
-        "Name": 300305
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030034.png@I402030034",
@@ -60989,16 +59310,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 4,
         "Name": 80520
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1022,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 306,
-        "Name": 300306
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030036.png@I402030036",
@@ -61025,16 +59336,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 4,
         "Name": 80521
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1026,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 308,
-        "Name": 300307
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030037.png@I402030037",
@@ -61061,16 +59362,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 5,
         "Name": 80415
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1014,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300301
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030041.png@I402030041",
@@ -61097,16 +59388,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 5,
         "Name": 80416
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1015,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300302
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030042.png@I402030042",
@@ -61133,16 +59414,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 5,
         "Name": 80417
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1016,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300303
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030043.png@I402030043",
@@ -61169,16 +59440,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 5,
         "Name": 80418
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1017,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 302,
-        "Name": 300304
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030045.png@I402030045",
@@ -61205,16 +59466,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 5,
         "Name": 80419
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1018,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 304,
-        "Name": 300305
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030044.png@I402030044",
@@ -61241,16 +59492,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 5,
         "Name": 80420
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1022,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 306,
-        "Name": 300306
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030046.png@I402030046",
@@ -61277,16 +59518,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 5,
         "Name": 80421
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1026,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 308,
-        "Name": 300307
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I402030047.png@I402030047",
@@ -61313,16 +59544,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 6,
         "Name": 80615
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1014,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300301
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I403076001.png@I403076001",
@@ -61349,16 +59570,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 6,
         "Name": 80616
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1015,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300302
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I403076002.png@I403076002",
@@ -61385,16 +59596,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 6,
         "Name": 80617
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1016,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 301,
-        "Name": 300303
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I403076003.png@I403076003",
@@ -61421,16 +59622,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 6,
         "Name": 80618
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1017,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 302,
-        "Name": 300304
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I403076004.png@I403076004",
@@ -61457,16 +59648,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 6,
         "Name": 80619
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1018,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 304,
-        "Name": 300305
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I403076005.png@I403076005",
@@ -61493,16 +59674,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 6,
         "Name": 80620
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1022,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 306,
-        "Name": 300306
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I403076006.png@I403076006",
@@ -61529,16 +59700,6 @@
         "PathType": "GetPathType_SpiritLight",
         "ID": 6,
         "Name": 80621
-      },
-      {
-        "PathType": "GetPathType_GuildShop",
-        "ID": 1026,
-        "Name": 15
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 308,
-        "Name": 300307
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I403076007.png@I403076007",
@@ -61749,9 +59910,9 @@
       },
       {
         "PathType": "GetPathType_Store",
-        "ID": 30,
-        "P1": 2206,
-        "Name": 200195
+        "ID": 158,
+        "P1": 10113,
+        "Name": 300715
       },
       {
         "PathType": "GetPathType_TextOnly",
@@ -61778,9 +59939,9 @@
       },
       {
         "PathType": "GetPathType_Store",
-        "ID": 30,
-        "P1": 2205,
-        "Name": 200194
+        "ID": 158,
+        "P1": 10112,
+        "Name": 300714
       },
       {
         "PathType": "GetPathType_TextOnly",
@@ -62838,11 +60999,6 @@
       {
         "PathType": "GetPathType_TextOnly",
         "Name": 200166
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 204,
-        "Name": 300204
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I404000012.png@I404000012",
@@ -62869,17 +61025,18 @@
         "Name": 900000
       },
       {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10208,
+        "Name": 300719
+      },
+      {
         "PathType": "GetPathType_CreateLife",
         "Name": 200167
       },
       {
         "PathType": "GetPathType_TextOnly",
         "Name": 200109
-      },
-      {
-        "PathType": "GetPathType_Appoint",
-        "ID": 201,
-        "Name": 300201
       }
     ],
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Item_ABS/I404000020.png@I404000020",
@@ -77037,7 +75194,7 @@
     "QATest": 1,
     "RewardSortIndex": 40750,
     "ItemNameStrKey": "ST:220694",
-    "ItemDescStrKey": "ST:221797"
+    "ItemDescStrKey": "ST:260252"
   },
   {
     "ID": 431025015,
@@ -83030,7 +81187,7 @@
     "QATest": 1,
     "RewardSortIndex": 40750,
     "ItemNameStrKey": "ST:240770",
-    "ItemDescStrKey": "ST:240785"
+    "ItemDescStrKey": "ST:260253"
   },
   {
     "ID": 431055010,
@@ -95863,8 +94020,34 @@
     "Hidden": true,
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I504011015.png@I504011015",
     "QATest": 1,
-    "ItemNameStrKey": "ST:258699",
-    "ItemDescStrKey": "ST:258700"
+    "ItemNameStrKey": "ST:258745",
+    "ItemDescStrKey": "ST:259329"
+  },
+  {
+    "ID": 504011016,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_KillEffectSkin",
+    "DirectUse": true,
+    "FunType": "ItemFunType_UnlockKillEffectSkin",
+    "Hidden": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I504011016.png@I504011016",
+    "QATest": 1,
+    "ItemNameStrKey": "ST:259328",
+    "ItemDescStrKey": "ST:259330"
+  },
+  {
+    "ID": 504011017,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_KillEffectSkin",
+    "DirectUse": true,
+    "FunType": "ItemFunType_UnlockKillEffectSkin",
+    "Hidden": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I504011017.png@I504011017",
+    "QATest": 1,
+    "ItemNameStrKey": "ST:260049",
+    "ItemDescStrKey": "ST:260050"
   },
   {
     "ID": 505010001,
@@ -98438,8 +96621,8 @@
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1092_Skin02_MountainsAndRivers.png@Hero1092_Skin02_MountainsAndRivers",
     "QATest": 1,
     "RewardSortIndex": 40000,
-    "ItemNameStrKey": "ST:256611",
-    "ItemDescStrKey": "ST:256613"
+    "ItemNameStrKey": "ST:256724",
+    "ItemDescStrKey": "ST:256726"
   },
   {
     "ID": 590110001,
@@ -100182,6 +98365,22 @@
     "ItemDescStrKey": "ST:255756"
   },
   {
+    "ID": 590140401,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_CharacterSkin",
+    "FunType": "ItemFunType_AddCharacterSkin",
+    "FunParams": [
+      140401
+    ],
+    "Hidden": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1404_Skin01_MountainsAndRivers.png@Hero1404_Skin01_MountainsAndRivers",
+    "QATest": 1,
+    "RewardSortIndex": 40000,
+    "ItemNameStrKey": "ST:259293",
+    "ItemDescStrKey": "ST:259295"
+  },
+  {
     "ID": 590150001,
     "VersionTag": 52,
     "Rarity": "Rarity_SSR",
@@ -100260,6 +98459,22 @@
     "RewardSortIndex": 40000,
     "ItemNameStrKey": "ST:239952",
     "ItemDescStrKey": "ST:239953"
+  },
+  {
+    "ID": 590150303,
+    "VersionTag": 67,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_CharacterSkin",
+    "FunType": "ItemFunType_AddCharacterSkin",
+    "FunParams": [
+      150303
+    ],
+    "Hidden": true,
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1503_Skin03_MountainsAndRivers.png@Hero1503_Skin03_MountainsAndRivers",
+    "QATest": 1,
+    "RewardSortIndex": 40000,
+    "ItemNameStrKey": "ST:259294",
+    "ItemDescStrKey": "ST:259296"
   },
   {
     "ID": 590150401,
@@ -100927,8 +99142,8 @@
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2509_Skin01_MountainsAndRivers.png@Hero2509_Skin01_MountainsAndRivers",
     "QATest": 1,
     "RewardSortIndex": 40000,
-    "ItemNameStrKey": "ST:256610",
-    "ItemDescStrKey": "ST:256612"
+    "ItemNameStrKey": "ST:256723",
+    "ItemDescStrKey": "ST:256725"
   },
   {
     "ID": 591000001,
@@ -100987,6 +99202,24 @@
   {
     "ID": 591000004,
     "VersionTag": 65,
+    "Rarity": "Rarity_SSR",
+    "ItemType": "ItemType_Item",
+    "Stackable": true,
+    "Hidden": true,
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200316
+      }
+    ],
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/XiaZhuImage_ABS/Icon_Shijinyu.png@Icon_Shijinyu",
+    "RewardSortIndex": 40000,
+    "ItemNameStrKey": "ST:243419",
+    "ItemDescStrKey": "ST:244563"
+  },
+  {
+    "ID": 591000005,
+    "VersionTag": 67,
     "Rarity": "Rarity_SSR",
     "ItemType": "ItemType_Item",
     "Stackable": true,
@@ -102299,8 +100532,8 @@
     "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I400010009.png@I400010009",
     "QATest": 1,
     "RewardSortIndex": 50000,
-    "ItemNameStrKey": "ST:256499",
-    "ItemDescStrKey": "ST:256500"
+    "ItemNameStrKey": "ST:256489",
+    "ItemDescStrKey": "ST:256499"
   },
   {
     "ID": 800250001,
@@ -102457,6 +100690,29 @@
     "RewardSortIndex": 40952,
     "ItemNameStrKey": "ST:186346",
     "ItemDescStrKey": "ST:186131"
+  },
+  {
+    "ID": 810900106,
+    "Rarity": "Rarity_SR",
+    "ItemType": "ItemType_Item",
+    "Stackable": true,
+    "FunType": "ItemFunType_SelfTreasureBox",
+    "FunParams": [
+      810900106
+    ],
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_Store",
+        "ID": 158,
+        "P1": 10221,
+        "Name": 300747
+      }
+    ],
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/I810900105.png@I810900105",
+    "QATest": 1,
+    "RewardSortIndex": 40952,
+    "ItemNameStrKey": "ST:186346",
+    "ItemDescStrKey": "ST:260073"
   },
   {
     "ID": 810900205,

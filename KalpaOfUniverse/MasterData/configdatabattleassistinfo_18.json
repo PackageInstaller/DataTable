@@ -1,5 +1,17 @@
 [
   {
+    "ID": 45844,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
+    "AssistType": "BattleAssistType_FaBaoAssist",
+    "AssistEffect": [
+      {
+        "BuffId": 751400928
+      }
+    ],
+    "SceneNameStrKey": "ST:227052",
+    "AssistDescStrKey": "ST:227056"
+  },
+  {
     "ID": 46001,
     "VersionTag": 40,
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
@@ -1175,18 +1187,5 @@
     ],
     "SceneNameStrKey": "ST:220209",
     "AssistDescStrKey": "ST:236998"
-  },
-  {
-    "ID": 49108,
-    "VersionTag": 55,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 749000038
-      }
-    ],
-    "SceneNameStrKey": "ST:220209",
-    "AssistDescStrKey": "ST:236999"
   }
 ]

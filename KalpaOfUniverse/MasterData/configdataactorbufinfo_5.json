@@ -1,5 +1,83 @@
 [
   {
+    "ID": 700004101,
+    "LifeTime": 2,
+    "FuncType": "BufFuncType_DamageBySelfOnStage",
+    "FuncParams": [
+      2,
+      2,
+      -1,
+      3,
+      32,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2500,
+      0,
+      0,
+      0
+    ],
+    "ActiveBattleStageType": "BattleStageType_AfterActionExec",
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_Weak"
+    ],
+    "CanBePreventDisperse": true,
+    "LoopEffect": 110200210,
+    "TriggerBehaviorId": 600000030,
+    "TriggerBehaviorType": "TriggerBehaviorType_Skill",
+    "SkillPipeline": true,
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Bad",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1019.png@Buff_1019",
+    "NameDescStrKey": "ST:24385",
+    "BuffDescStrKey": "ST:30346"
+  },
+  {
+    "ID": 700004102,
+    "LifeTime": 1,
+    "FuncType": "BufFuncType_DamageBySelfOnStage",
+    "FuncParams": [
+      2,
+      2,
+      -1,
+      3,
+      32,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3000,
+      0,
+      0,
+      0
+    ],
+    "ActiveBattleStageType": "BattleStageType_AfterActionExec",
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_Weak"
+    ],
+    "CanBePreventDisperse": true,
+    "LoopEffect": 110200210,
+    "TriggerBehaviorId": 600000030,
+    "TriggerBehaviorType": "TriggerBehaviorType_Skill",
+    "SkillPipeline": true,
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Bad",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1019.png@Buff_1019",
+    "NameDescStrKey": "ST:24385",
+    "BuffDescStrKey": "ST:71259"
+  },
+  {
     "ID": 700004110,
     "LifeTime": 2,
     "FuncType": "BufFuncType_AttachBufBeforeCastSkill",
@@ -5318,53 +5396,5 @@
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1005.png@Buff_1005",
     "NameDescStrKey": "ST:3045",
     "BuffDescStrKey": "ST:103104"
-  },
-  {
-    "ID": 700031176,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_AttachBufBySelfOnStage",
-    "FuncParams": [
-      -1,
-      2,
-      -1,
-      700031182,
-      1
-    ],
-    "ActiveCondIds": [
-      1020
-    ],
-    "IgnoreDead": true,
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 700031177,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_AttachBufBySelfOnStage",
-    "FuncParams": [
-      -1,
-      2,
-      -1,
-      700031183,
-      1
-    ],
-    "ActiveCondIds": [
-      1020
-    ],
-    "IgnoreDead": true,
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
   }
 ]

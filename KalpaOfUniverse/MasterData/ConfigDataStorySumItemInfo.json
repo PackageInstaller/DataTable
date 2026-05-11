@@ -1,7 +1,7 @@
 [
   {
     "ID": 10100,
-    "GameFunType": 9,
+    "GameFunType": "GameFunctionType_WorldMapChapter",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_WorldMapChapter"
@@ -21,13 +21,13 @@
         "Key": 1
       }
     ],
-    "ExcludeDropIds": [
+    "ExcludeProcessIds": [
       20000001,
       20000002,
       20000003,
       20000004
     ],
-    "ItemIds": [
+    "ExcludeDropIds": [
       350043001,
       350043002,
       350043003,
@@ -35,27 +35,27 @@
       210230402,
       210230403
     ],
-    "UnknownField9": [
+    "ItemIds": [
       400000001,
       2
     ],
     "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB_ABS/ShareBanner/SharePic_Icon_2.png@SharePic_Icon_2",
     "AdjustPos": [
       {
-        "posX": -283.0,
-        "posY": 16.0,
-        "scaleX": 1.3,
-        "scaleY": 1.1
+        "posX": -314.0,
+        "posY": -42.0,
+        "scaleX": 1.2,
+        "scaleY": 1.2
       }
     ],
     "TitleStrKey": "ST:254148",
     "TitleTagStrKey": "ST:26365",
-    "SubTitleStrKey": "ST:256358",
-    "DescStrKey": "ST:256407"
+    "SubTitleStrKey": "ST:256142",
+    "DescStrKey": "ST:256280"
   },
   {
     "ID": 10200,
-    "GameFunType": 9,
+    "GameFunType": "GameFunctionType_WorldMapChapter",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_WorldMapChapter"
@@ -72,7 +72,7 @@
         "Key": 3
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       400000001,
       2
     ],
@@ -82,17 +82,17 @@
         "posX": -154.0,
         "posY": 31.0,
         "scaleX": 1.2,
-        "scaleY": 1.1
+        "scaleY": 1.2
       }
     ],
     "TitleStrKey": "ST:254149",
     "TitleTagStrKey": "ST:26365",
-    "SubTitleStrKey": "ST:256359",
-    "DescStrKey": "ST:256408"
+    "SubTitleStrKey": "ST:256143",
+    "DescStrKey": "ST:256166"
   },
   {
     "ID": 10301,
-    "GameFunType": 436,
+    "GameFunType": "GameFunctionType_GDTribulation",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_GDTribulation",
@@ -110,7 +110,7 @@
         "Key": 1
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       400000003,
       402022001,
       402024901,
@@ -128,12 +128,12 @@
     ],
     "TitleStrKey": "ST:254150",
     "TitleTagStrKey": "ST:26365",
-    "SubTitleStrKey": "ST:256360",
-    "DescStrKey": "ST:256409"
+    "SubTitleStrKey": "ST:256144",
+    "DescStrKey": "ST:256167"
   },
   {
     "ID": 10302,
-    "GameFunType": 158,
+    "GameFunType": "GameFunctionType_UnrealSea",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_UnrealSea",
@@ -152,12 +152,13 @@
         "P1": 2
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       402022001,
       403011200,
       402011101
     ],
     "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB52_ABS/ShareBanner/SharePic_Icon_87.png@SharePic_Icon_87",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseActivityIcon_255201.png@CourseActivityIcon_255201",
     "AdjustPos": [
       {
         "posX": 92.0,
@@ -168,12 +169,95 @@
     ],
     "TitleStrKey": "ST:254151",
     "TitleTagStrKey": "ST:26365",
-    "SubTitleStrKey": "ST:256361",
-    "DescStrKey": "ST:256410"
+    "SubTitleStrKey": "ST:256145",
+    "DescStrKey": "ST:256168"
+  },
+  {
+    "ID": 10303,
+    "GameFunType": "GameFunctionType_GDTribulation",
+    "JumpGameFunType": [
+      {
+        "GameFuncType": "GameFunctionType_GDTribulation",
+        "P1": 2
+      }
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 35
+      }
+    ],
+    "FunParam": [
+      {
+        "Key": 2
+      }
+    ],
+    "ItemIds": [
+      400000003,
+      402022001,
+      402024901,
+      403062003
+    ],
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB66_ABS/ShareBanner/SharePic_Hunluohuahuang.png@SharePic_Hunluohuahuang",
+    "SubSmallBGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SingleStoryRiftImage_ABS/Danji_32.png@Danji_32",
+    "AdjustPos": [
+      {
+        "posX": -166.0,
+        "posY": -49.0,
+        "scaleX": 1.2,
+        "scaleY": 1.0
+      }
+    ],
+    "TitleStrKey": "ST:256417",
+    "TitleTagStrKey": "ST:26365",
+    "SubTitleStrKey": "ST:256418",
+    "DescStrKey": "ST:258633"
+  },
+  {
+    "ID": 10304,
+    "GameFunType": "GameFunctionType_UnrealSea",
+    "JumpGameFunType": [
+      {
+        "GameFuncType": "GameFunctionType_UnrealSea",
+        "P1": 56
+      }
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 35
+      }
+    ],
+    "FunParam": [
+      {
+        "Key": 56,
+        "P1": 2
+      }
+    ],
+    "ItemIds": [
+      2,
+      400000003,
+      402022001,
+      402024901
+    ],
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB66_ABS/ShareBanner/SharePic_Bailangzhuchao.png@SharePic_Bailangzhuchao",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseActivityIcon_bailangzhuchao.png@CourseActivityIcon_bailangzhuchao",
+    "AdjustPos": [
+      {
+        "posX": -316.0,
+        "posY": 14.0,
+        "scaleX": 1.2,
+        "scaleY": 1.1
+      }
+    ],
+    "TitleStrKey": "ST:256448",
+    "TitleTagStrKey": "ST:26365",
+    "SubTitleStrKey": "ST:256450",
+    "DescStrKey": "ST:258634"
   },
   {
     "ID": 20100,
-    "GameFunType": 4,
+    "GameFunType": "GameFunctionType_Rift",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_Rift",
@@ -191,7 +275,7 @@
         "Key": 3
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       400000001,
       2,
       403062003
@@ -207,12 +291,12 @@
     ],
     "TitleStrKey": "ST:254152",
     "TitleTagStrKey": "ST:254170",
-    "SubTitleStrKey": "ST:256362",
-    "DescStrKey": "ST:256472"
+    "SubTitleStrKey": "ST:256146",
+    "DescStrKey": "ST:256281"
   },
   {
     "ID": 20200,
-    "GameFunType": 4,
+    "GameFunType": "GameFunctionType_Rift",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_Rift",
@@ -224,7 +308,7 @@
         "Key": 1
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       400000001,
       2,
       403062003
@@ -240,12 +324,12 @@
     ],
     "TitleStrKey": "ST:254153",
     "TitleTagStrKey": "ST:254170",
-    "SubTitleStrKey": "ST:256363",
-    "DescStrKey": "ST:256412"
+    "SubTitleStrKey": "ST:256147",
+    "DescStrKey": "ST:256170"
   },
   {
     "ID": 20300,
-    "GameFunType": 4,
+    "GameFunType": "GameFunctionType_Rift",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_Rift",
@@ -263,7 +347,7 @@
         "Key": 2
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       400000001,
       2,
       403062003
@@ -271,20 +355,20 @@
     "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB7_ABS/ShareBanner/SharePic_Icon_40.png@SharePic_Icon_40",
     "AdjustPos": [
       {
-        "posX": -280.0,
-        "posY": 111.0,
-        "scaleX": 1.3,
+        "posX": -308.0,
+        "posY": 110.0,
+        "scaleX": 1.2,
         "scaleY": 1.1
       }
     ],
     "TitleStrKey": "ST:254154",
     "TitleTagStrKey": "ST:254170",
-    "SubTitleStrKey": "ST:256364",
-    "DescStrKey": "ST:256413"
+    "SubTitleStrKey": "ST:256148",
+    "DescStrKey": "ST:256171"
   },
   {
     "ID": 30100,
-    "GameFunType": 289,
+    "GameFunType": "GameFunctionType_YiJianLu",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_YiJianLu"
@@ -296,7 +380,7 @@
         "P1": 35
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       400000001,
       2,
       402024902,
@@ -313,12 +397,12 @@
     ],
     "TitleStrKey": "ST:254155",
     "TitleTagStrKey": "ST:122962",
-    "SubTitleStrKey": "ST:256365",
-    "DescStrKey": "ST:256414"
+    "SubTitleStrKey": "ST:256149",
+    "DescStrKey": "ST:256172"
   },
   {
     "ID": 30200,
-    "GameFunType": 158,
+    "GameFunType": "GameFunctionType_UnrealSea",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_TianDiCollect_XunTianJi"
@@ -342,7 +426,7 @@
         "P2": 3
       }
     ],
-    "ExcludeDropIds": [
+    "ExcludeProcessIds": [
       2822,
       2823,
       2824,
@@ -353,7 +437,7 @@
       2872,
       2882
     ],
-    "UnknownField9": [
+    "ItemIds": [
       2,
       400000003,
       402022001,
@@ -370,12 +454,12 @@
     ],
     "TitleStrKey": "ST:254156",
     "TitleTagStrKey": "ST:122962",
-    "SubTitleStrKey": "ST:256366",
-    "DescStrKey": "ST:256473"
+    "SubTitleStrKey": "ST:256150",
+    "DescStrKey": "ST:256282"
   },
   {
     "ID": 30300,
-    "GameFunType": 364,
+    "GameFunType": "GameFunctionType_SouShen",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_SouShenEntry"
@@ -395,7 +479,7 @@
         "Key": 11
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       400000003,
       402022001,
       403011200,
@@ -412,12 +496,12 @@
     ],
     "TitleStrKey": "ST:254157",
     "TitleTagStrKey": "ST:122962",
-    "SubTitleStrKey": "ST:256367",
-    "DescStrKey": "ST:256474"
+    "SubTitleStrKey": "ST:256151",
+    "DescStrKey": "ST:256283"
   },
   {
     "ID": 40101,
-    "GameFunType": 158,
+    "GameFunType": "GameFunctionType_UnrealSea",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_ULRBox",
@@ -436,7 +520,7 @@
         "P1": 2
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       2,
       403011200,
       402022001,
@@ -454,13 +538,13 @@
     ],
     "TitleStrKey": "ST:254158",
     "TitleTagStrKey": "ST:254171",
-    "SubTitleStrKey": "ST:256368",
-    "DescStrKey": "ST:256475",
+    "SubTitleStrKey": "ST:256152",
+    "DescStrKey": "ST:256284",
     "SubBottomTagStrKey": "ST:219455"
   },
   {
     "ID": 40102,
-    "GameFunType": 158,
+    "GameFunType": "GameFunctionType_UnrealSea",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_ULRBox",
@@ -479,7 +563,7 @@
         "P1": 2
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       2,
       400000003,
       402022001,
@@ -497,13 +581,13 @@
     ],
     "TitleStrKey": "ST:254159",
     "TitleTagStrKey": "ST:254171",
-    "SubTitleStrKey": "ST:256369",
-    "DescStrKey": "ST:256448",
+    "SubTitleStrKey": "ST:256153",
+    "DescStrKey": "ST:256176",
     "SubBottomTagStrKey": "ST:219455"
   },
   {
     "ID": 40103,
-    "GameFunType": 158,
+    "GameFunType": "GameFunctionType_UnrealSea",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_ULRBox",
@@ -522,7 +606,7 @@
         "P1": 2
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       2,
       400000003,
       402022001,
@@ -540,13 +624,13 @@
     ],
     "TitleStrKey": "ST:254160",
     "TitleTagStrKey": "ST:254171",
-    "SubTitleStrKey": "ST:256370",
-    "DescStrKey": "ST:256419",
+    "SubTitleStrKey": "ST:256154",
+    "DescStrKey": "ST:256177",
     "SubBottomTagStrKey": "ST:219455"
   },
   {
     "ID": 40104,
-    "GameFunType": 158,
+    "GameFunType": "GameFunctionType_UnrealSea",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_ULRBox",
@@ -565,7 +649,7 @@
         "P1": 2
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       2,
       400000003,
       402022001,
@@ -583,13 +667,13 @@
     ],
     "TitleStrKey": "ST:254161",
     "TitleTagStrKey": "ST:254171",
-    "SubTitleStrKey": "ST:256371",
-    "DescStrKey": "ST:256420",
+    "SubTitleStrKey": "ST:256155",
+    "DescStrKey": "ST:256178",
     "SubBottomTagStrKey": "ST:219455"
   },
   {
     "ID": 40105,
-    "GameFunType": 158,
+    "GameFunType": "GameFunctionType_UnrealSea",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_ULRBox",
@@ -608,7 +692,7 @@
         "P1": 2
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       2,
       400000003,
       402022001,
@@ -626,13 +710,56 @@
     ],
     "TitleStrKey": "ST:254162",
     "TitleTagStrKey": "ST:254171",
-    "SubTitleStrKey": "ST:256372",
-    "DescStrKey": "ST:256476",
+    "SubTitleStrKey": "ST:256156",
+    "DescStrKey": "ST:256285",
+    "SubBottomTagStrKey": "ST:219455"
+  },
+  {
+    "ID": 40106,
+    "GameFunType": "GameFunctionType_UnrealSea",
+    "JumpGameFunType": [
+      {
+        "GameFuncType": "GameFunctionType_ULRBox",
+        "P1": 8
+      }
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 12
+      }
+    ],
+    "FunParam": [
+      {
+        "Key": 57,
+        "P1": 2
+      }
+    ],
+    "ItemIds": [
+      2,
+      400000003,
+      402022001,
+      402024901
+    ],
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB66_ABS/ShareBanner/SharePic_Icon_100.png@SharePic_Icon_100",
+    "SubSmallBGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SingleStoryRiftImage_ABS/Danji_60.png@Danji_60",
+    "AdjustPos": [
+      {
+        "posX": -206.0,
+        "posY": -36.0,
+        "scaleX": 1.1,
+        "scaleY": 1.1
+      }
+    ],
+    "TitleStrKey": "ST:256424",
+    "TitleTagStrKey": "ST:254171",
+    "SubTitleStrKey": "ST:256425",
+    "DescStrKey": "ST:256813",
     "SubBottomTagStrKey": "ST:219455"
   },
   {
     "ID": 40201,
-    "GameFunType": 158,
+    "GameFunType": "GameFunctionType_UnrealSea",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_QianNv",
@@ -651,7 +778,7 @@
         "P1": 1
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       2
     ],
     "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB11_ABS/ShareBanner/SharePic_Icon_46.png@SharePic_Icon_46",
@@ -667,13 +794,13 @@
     ],
     "TitleStrKey": "ST:254163",
     "TitleTagStrKey": "ST:254171",
-    "SubTitleStrKey": "ST:256373",
-    "DescStrKey": "ST:256422",
+    "SubTitleStrKey": "ST:256157",
+    "DescStrKey": "ST:256180",
     "SubBottomTagStrKey": "ST:254225"
   },
   {
     "ID": 40202,
-    "GameFunType": 271,
+    "GameFunType": "GameFunctionType_BaoQingTian",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_BaoQingTian",
@@ -692,7 +819,7 @@
         "P1": 18
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       2
     ],
     "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB18_ABS/ShareBanner/SharePic_Icon_55.png@SharePic_Icon_55",
@@ -708,13 +835,13 @@
     ],
     "TitleStrKey": "ST:254164",
     "TitleTagStrKey": "ST:254171",
-    "SubTitleStrKey": "ST:256374",
-    "DescStrKey": "ST:256477",
+    "SubTitleStrKey": "ST:256158",
+    "DescStrKey": "ST:256286",
     "SubBottomTagStrKey": "ST:254225"
   },
   {
     "ID": 40203,
-    "GameFunType": 158,
+    "GameFunType": "GameFunctionType_UnrealSea",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_GreenSnake",
@@ -733,7 +860,7 @@
         "P1": 1
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       2
     ],
     "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB23_ABS/ShareBanner/SharePic_Icon_60.png@SharePic_Icon_60",
@@ -749,13 +876,13 @@
     ],
     "TitleStrKey": "ST:254165",
     "TitleTagStrKey": "ST:254171",
-    "SubTitleStrKey": "ST:256375",
-    "DescStrKey": "ST:256424",
+    "SubTitleStrKey": "ST:256159",
+    "DescStrKey": "ST:256182",
     "SubBottomTagStrKey": "ST:254225"
   },
   {
     "ID": 40204,
-    "GameFunType": 158,
+    "GameFunType": "GameFunctionType_UnrealSea",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_DunHuang",
@@ -774,7 +901,7 @@
         "P1": 1
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       2
     ],
     "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB65_ABS/ShareBanner/SharePic_Icon_96.png@SharePic_Icon_96",
@@ -790,13 +917,13 @@
     ],
     "TitleStrKey": "ST:254166",
     "TitleTagStrKey": "ST:254171",
-    "SubTitleStrKey": "ST:256376",
-    "DescStrKey": "ST:256478",
+    "SubTitleStrKey": "ST:256160",
+    "DescStrKey": "ST:256287",
     "SubBottomTagStrKey": "ST:254225"
   },
   {
     "ID": 40301,
-    "GameFunType": 158,
+    "GameFunType": "GameFunctionType_UnrealSea",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_UnrealSea",
@@ -815,7 +942,7 @@
         "P1": 1
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       2
     ],
     "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB_ABS/ShareBanner/SharePic_Icon_21.png@SharePic_Icon_21",
@@ -830,13 +957,13 @@
     ],
     "TitleStrKey": "ST:254167",
     "TitleTagStrKey": "ST:254171",
-    "SubTitleStrKey": "ST:256377",
-    "DescStrKey": "ST:256479",
+    "SubTitleStrKey": "ST:256161",
+    "DescStrKey": "ST:256288",
     "SubBottomTagStrKey": "ST:94052"
   },
   {
     "ID": 40302,
-    "GameFunType": 170,
+    "GameFunType": "GameFunctionType_Mozi",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_Mozi",
@@ -854,7 +981,7 @@
         "Key": 7
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       2,
       400000003,
       402022001
@@ -871,13 +998,13 @@
     ],
     "TitleStrKey": "ST:254168",
     "TitleTagStrKey": "ST:254171",
-    "SubTitleStrKey": "ST:256378",
-    "DescStrKey": "ST:256427",
+    "SubTitleStrKey": "ST:256162",
+    "DescStrKey": "ST:256185",
     "SubBottomTagStrKey": "ST:94052"
   },
   {
     "ID": 40303,
-    "GameFunType": 170,
+    "GameFunType": "GameFunctionType_Mozi",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_Mozi",
@@ -895,7 +1022,7 @@
         "Key": 6
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       2,
       400000003,
       402022001
@@ -912,13 +1039,13 @@
     ],
     "TitleStrKey": "ST:254169",
     "TitleTagStrKey": "ST:254171",
-    "SubTitleStrKey": "ST:256379",
-    "DescStrKey": "ST:256428",
+    "SubTitleStrKey": "ST:256163",
+    "DescStrKey": "ST:256186",
     "SubBottomTagStrKey": "ST:94052"
   },
   {
     "ID": 40304,
-    "GameFunType": 158,
+    "GameFunType": "GameFunctionType_UnrealSea",
     "JumpGameFunType": [
       {
         "GameFuncType": "GameFunctionType_UnrealSea",
@@ -937,7 +1064,7 @@
         "P1": 1
       }
     ],
-    "UnknownField9": [
+    "ItemIds": [
       2
     ],
     "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB4_ABS/ShareBanner/SharePic_Icon_33.png@SharePic_Icon_33",
@@ -950,10 +1077,94 @@
         "scaleY": 1.2
       }
     ],
-    "TitleStrKey": "ST:254633",
+    "TitleStrKey": "ST:254532",
     "TitleTagStrKey": "ST:254171",
-    "SubTitleStrKey": "ST:256380",
-    "DescStrKey": "ST:256480",
+    "SubTitleStrKey": "ST:256164",
+    "DescStrKey": "ST:256289",
+    "SubBottomTagStrKey": "ST:94052"
+  },
+  {
+    "ID": 40305,
+    "GameFunType": "GameFunctionType_UnrealSea",
+    "JumpGameFunType": [
+      {
+        "GameFuncType": "GameFunctionType_UnrealSea",
+        "P1": 58
+      }
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 17
+      }
+    ],
+    "FunParam": [
+      {
+        "Key": 58,
+        "P1": 1
+      }
+    ],
+    "ItemIds": [
+      2,
+      400000003,
+      402022001
+    ],
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB8_ABS/ShareBanner/SharePic_Icon_41.png@SharePic_Icon_41",
+    "SubSmallBGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedBanner_ABS/Mystsries_019.png@Mystsries_019",
+    "AdjustPos": [
+      {
+        "posX": -422.0,
+        "posY": -30.0,
+        "scaleX": 1.3,
+        "scaleY": 1.2
+      }
+    ],
+    "TitleStrKey": "ST:256449",
+    "TitleTagStrKey": "ST:254171",
+    "SubTitleStrKey": "ST:258267",
+    "DescStrKey": "ST:258268",
+    "SubBottomTagStrKey": "ST:94052"
+  },
+  {
+    "ID": 40306,
+    "GameFunType": "GameFunctionType_UnrealSea",
+    "JumpGameFunType": [
+      {
+        "GameFuncType": "GameFunctionType_UnrealSea",
+        "P1": 60
+      }
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 17
+      }
+    ],
+    "FunParam": [
+      {
+        "Key": 60,
+        "P1": 1
+      }
+    ],
+    "ItemIds": [
+      2,
+      400000003,
+      402022001
+    ],
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB10_ABS/ShareBanner/SharePic_Icon_45.png@SharePic_Icon_45",
+    "SubSmallBGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedBanner_ABS/Mystsries_021.png@Mystsries_021",
+    "AdjustPos": [
+      {
+        "posX": -204.0,
+        "posY": 8.0,
+        "scaleX": 1.1,
+        "scaleY": 1.0
+      }
+    ],
+    "TitleStrKey": "ST:258795",
+    "TitleTagStrKey": "ST:254171",
+    "SubTitleStrKey": "ST:259052",
+    "DescStrKey": "ST:259053",
     "SubBottomTagStrKey": "ST:94052"
   }
 ]

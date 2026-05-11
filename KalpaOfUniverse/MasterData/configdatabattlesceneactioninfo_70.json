@@ -1,5 +1,13 @@
 [
   {
+    "ID": 46227347,
+    "VersionTag": 56,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      400
+    ]
+  },
+  {
     "ID": 46227348,
     "VersionTag": 56,
     "ActionType": "BattleSceneActionType_FadeOut",
@@ -17612,22 +17620,5 @@
     "Param1": [
       1
     ]
-  },
-  {
-    "ID": 46244401,
-    "ActionType": "BattleSceneActionType_TeamAIStateSet",
-    "Param1": [
-      43
-    ],
-    "Param2": [
-      2
-    ],
-    "Param4": [
-      99
-    ],
-    "Param6": [
-      0
-    ],
-    "SkipCondId": 46244001
   }
 ]

@@ -1,5 +1,525 @@
 [
   {
+    "ID": 622140520,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02",
+    "CastEffect": [
+      221405200,
+      810601580
+    ],
+    "OnHitEffect": [
+      10000002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 622140520,
+    "AttackWeapon": [
+      "WeaponType_Mag",
+      "WeaponType_Mag",
+      "WeaponType_Mag"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None",
+      "AttackAngleType_None",
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Lit",
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 622150001,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "CastEffect": [
+      221501010,
+      221501011,
+      221501012
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      30,
+      30,
+      40
+    ],
+    "SkillSound": 622150001,
+    "AttackWeapon": [
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 622150002,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "CastEffect": [
+      221501020,
+      221501021
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 622150002,
+    "AttackWeapon": [
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 622150004,
+    "ReturnToIdle": true,
+    "Animation": "Combat_ChaseHitRootMotion",
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 622150004,
+    "AttackWeapon": [
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 622150010,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "CastEffect": [
+      810000110
+    ],
+    "OnHitEffect": [
+      10000002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 622150010,
+    "AttackWeapon": [
+      "WeaponType_BroadSword"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med"
+    ]
+  },
+  {
+    "ID": 622150101,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "CastEffect": [
+      221501010,
+      221501011,
+      221501012
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      30,
+      30,
+      40
+    ],
+    "SkillSound": 622150101,
+    "AttackWeapon": [
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 622150102,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "CastEffect": [
+      221501020,
+      221501021
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 622150102,
+    "AttackWeapon": [
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 622150104,
+    "ReturnToIdle": true,
+    "Animation": "Combat_ChaseHitRootMotion",
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 622150104,
+    "AttackWeapon": [
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 622150110,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "CastEffect": [
+      810000110
+    ],
+    "OnHitEffect": [
+      10000002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 622150110,
+    "AttackWeapon": [
+      "WeaponType_BroadSword"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med"
+    ]
+  },
+  {
+    "ID": 622150201,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "CastEffect": [
+      221502010,
+      221502011,
+      221502012
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      30,
+      30,
+      40
+    ],
+    "SkillSound": 622150201,
+    "AttackWeapon": [
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 622150202,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "CastEffect": [
+      221502020,
+      221502021
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 622150202,
+    "AttackWeapon": [
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 622150204,
+    "ReturnToIdle": true,
+    "Animation": "Combat_ChaseHitRootMotion",
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 622150204,
+    "AttackWeapon": [
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 622150210,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "CastEffect": [
+      810000110
+    ],
+    "OnHitEffect": [
+      10000002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 622150210,
+    "AttackWeapon": [
+      "WeaponType_Mag"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med"
+    ]
+  },
+  {
+    "ID": 622200001,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 622200001,
+    "AttackWeapon": [
+      "WeaponType_Mag"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med"
+    ]
+  },
+  {
+    "ID": 622200002,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 622200002,
+    "AttackWeapon": [
+      "WeaponType_Mag"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med"
+    ]
+  },
+  {
+    "ID": 622200010,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 622200010,
+    "AttackWeapon": [
+      "WeaponType_Mag"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med"
+    ]
+  },
+  {
+    "ID": 622200020,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02",
+    "CastEffect": [
+      222000200,
+      810500580
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 622200020,
+    "AttackWeapon": [
+      "WeaponType_Mag"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med"
+    ]
+  },
+  {
+    "ID": 622200030,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill03",
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 622200030,
+    "AttackWeapon": [
+      "WeaponType_Mag"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med"
+    ]
+  },
+  {
+    "ID": 622210100,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "CastEffect": [
+      810000110
+    ],
+    "OnHitEffect": [
+      10000002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 611007211,
+    "AttackWeapon": [
+      "WeaponType_None"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_None"
+    ]
+  },
+  {
     "ID": 622210101,
     "ReturnToIdle": true,
     "Animation": "Combat_AttackRootMotion",
@@ -4138,434 +4658,5 @@
       100
     ],
     "SkillSound": 623130210
-  },
-  {
-    "ID": 623130301,
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "CastEffect": [
-      231300310,
-      231300311,
-      231300312
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004,
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      20,
-      20,
-      30,
-      30
-    ],
-    "SkillSound": 623130301
-  },
-  {
-    "ID": 623130302,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "CastEffect": [
-      231300320,
-      231300321,
-      231300322
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004,
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      20,
-      20,
-      30,
-      30
-    ],
-    "SkillSound": 623130302
-  },
-  {
-    "ID": 623130303,
-    "ReturnToIdle": true,
-    "Animation": "Combat_DoubleHitRootMotion",
-    "CastEffect": [
-      231300330,
-      231300331,
-      231300332
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      30,
-      30,
-      40
-    ],
-    "SkillSound": 623130303,
-    "AttackWeapon": [
-      "WeaponType_BroadSword",
-      "WeaponType_BroadSword",
-      "WeaponType_BroadSword",
-      "WeaponType_BroadSword"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_Slash",
-      "AttackAngleType_Slash",
-      "AttackAngleType_Slash",
-      "AttackAngleType_Slash"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Med",
-      "AttackStrengthType_Hvy"
-    ]
-  },
-  {
-    "ID": 623130310,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01",
-    "CastEffect": [
-      231300040
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 623130310
-  },
-  {
-    "ID": 623130401,
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "CastEffect": [
-      231300410,
-      231300411,
-      231300412
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004,
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      20,
-      20,
-      30,
-      30
-    ],
-    "SkillSound": 623130401
-  },
-  {
-    "ID": 623130402,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "CastEffect": [
-      231300420,
-      231300421,
-      231300422
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004,
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      20,
-      20,
-      30,
-      30
-    ],
-    "SkillSound": 623130402
-  },
-  {
-    "ID": 623130403,
-    "ReturnToIdle": true,
-    "Animation": "Combat_DoubleHitRootMotion",
-    "CastEffect": [
-      231300430,
-      231300431,
-      231300432
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      30,
-      30,
-      40
-    ],
-    "SkillSound": 623130403,
-    "AttackWeapon": [
-      "WeaponType_BroadSword",
-      "WeaponType_BroadSword",
-      "WeaponType_BroadSword",
-      "WeaponType_BroadSword"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_Slash",
-      "AttackAngleType_Slash",
-      "AttackAngleType_Slash",
-      "AttackAngleType_Slash"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Med",
-      "AttackStrengthType_Hvy"
-    ]
-  },
-  {
-    "ID": 623130410,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01",
-    "CastEffect": [
-      231300040
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 623130410
-  },
-  {
-    "ID": 623130501,
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "CastEffect": [
-      231300510,
-      231300511,
-      231300512
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004,
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      20,
-      20,
-      30,
-      30
-    ],
-    "SkillSound": 623130501
-  },
-  {
-    "ID": 623130502,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "CastEffect": [
-      231300520,
-      231300521,
-      231300522
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004,
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      20,
-      20,
-      30,
-      30
-    ],
-    "SkillSound": 623130502
-  },
-  {
-    "ID": 623130503,
-    "ReturnToIdle": true,
-    "Animation": "Combat_DoubleHitRootMotion",
-    "CastEffect": [
-      231300530,
-      231300531,
-      231300532
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      30,
-      30,
-      40
-    ],
-    "SkillSound": 623130503,
-    "AttackWeapon": [
-      "WeaponType_BroadSword",
-      "WeaponType_BroadSword",
-      "WeaponType_BroadSword",
-      "WeaponType_BroadSword"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_Slash",
-      "AttackAngleType_Slash",
-      "AttackAngleType_Slash",
-      "AttackAngleType_Slash"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Med",
-      "AttackStrengthType_Hvy"
-    ]
-  },
-  {
-    "ID": 623130510,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01",
-    "CastEffect": [
-      231300040
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 623130510
-  },
-  {
-    "ID": 623140001,
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "CastEffect": [
-      231400010
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 623140001
-  },
-  {
-    "ID": 623140002,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "CastEffect": [
-      231400020,
-      231400021
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      40,
-      60
-    ],
-    "SkillSound": 623140002
-  },
-  {
-    "ID": 623140010,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01",
-    "CastEffect": [
-      231400100
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 623140010
-  },
-  {
-    "ID": 623140020,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "Combat_CastSkill01",
-    "CastEffect": [
-      231400200,
-      231400201
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      40,
-      60
-    ],
-    "SkillSound": 623140020,
-    "AttackWeapon": [
-      "WeaponType_Mag"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Med"
-    ]
-  },
-  {
-    "ID": 623140101,
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "CastEffect": [
-      231401010
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 623140101
-  },
-  {
-    "ID": 623140102,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "CastEffect": [
-      231401020,
-      231401021
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      40,
-      60
-    ],
-    "SkillSound": 623140102
-  },
-  {
-    "ID": 623140110,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01",
-    "CastEffect": [
-      231401100
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 623140110
   }
 ]

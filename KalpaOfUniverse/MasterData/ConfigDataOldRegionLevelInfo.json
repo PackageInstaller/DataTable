@@ -4027,5 +4027,96 @@
     ],
     "NameStrKey": "ST:89910",
     "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 305001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 26702200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 305002,
+    "PreLevel": 305001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 26702300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 305003,
+    "PreLevel": 305002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 26702400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 306001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 26702500,
+    "TeamBattleSceneId": 26702510,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
   }
 ]

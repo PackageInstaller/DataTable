@@ -1,5 +1,33 @@
 [
   {
+    "ID": 700001291,
+    "LifeTime": 2,
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_MagicDamageAdditionalSub_D",
+        "Value": -2000
+      }
+    ],
+    "ReplaceRule": "ReplaceRule_TimeRemain",
+    "SubType": 129,
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_Weak"
+    ],
+    "CanBeDispersed": true,
+    "CanSteal": true,
+    "CanSpread": true,
+    "CanBeDisableByNoSensation": true,
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None",
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Bad",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1013.png@Buff_1013",
+    "NameDescStrKey": "ST:35488",
+    "BuffDescStrKey": "ST:64303"
+  },
+  {
     "ID": 700001292,
     "LifeTime": 3,
     "PropertiesList": [
@@ -5137,27 +5165,6 @@
       741336022,
       4,
       741400100
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 700002402,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_GodDemonBatch",
-    "FuncParams": [
-      8,
-      742504050,
-      16,
-      741091070,
-      64,
-      741501022
     ],
     "ReplaceRule": "ReplaceRule_Refresh",
     "LevelMax": 1,

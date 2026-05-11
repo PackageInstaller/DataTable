@@ -3012,6 +3012,14 @@
       {
         "Type": "UserGuideTriggerConditionType_ScenarioNotFinished",
         "Param1": "12801"
+      },
+      {
+        "Type": "UserGuideTriggerConditionType_GuideGroupNotFinished",
+        "Param1": "423"
+      },
+      {
+        "Type": "UserGuideTriggerConditionType_PlayerLevel",
+        "Param1": "40"
       }
     ],
     "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
@@ -3040,35 +3048,28 @@
     "ID": 2504,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "UnchartedButton",
-      "4",
-      "5",
-      "1015"
+      "GotoCampButton",
+      "1"
     ],
-    "DescStrKey": "ST:185075"
+    "DescStrKey": "ST:260025"
   },
   {
     "ID": 2505,
-    "TriggerType": "UserGuideTriggerType_UIStateChanged",
-    "TriggerParamList": [
-      "UnchartedUIPrefab",
-      "Show"
-    ],
-    "TriggerActionType": "UserGuideTriggerActionType_ScrollHorizontalNormalize",
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "StageListScrollView",
+      "OldWorldButton",
       "1"
     ],
-    "DescStrKey": "ST:185076"
+    "DescStrKey": "ST:260026"
   },
   {
     "ID": 2506,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "SeaArrestButton",
+      "HaiBuLingButton",
       "4"
     ],
-    "DescStrKey": "ST:185077"
+    "DescStrKey": "ST:260027"
   },
   {
     "ID": 2507,
@@ -5394,6 +5395,14 @@
       {
         "Type": "UserGuideTriggerConditionType_ScenarioNotFinished",
         "Param1": "12103"
+      },
+      {
+        "Type": "UserGuideTriggerConditionType_GuideGroupNotFinished",
+        "Param1": "424"
+      },
+      {
+        "Type": "UserGuideTriggerConditionType_PlayerLevel",
+        "Param1": "40"
       }
     ],
     "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
@@ -5422,25 +5431,19 @@
     "ID": 6104,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "UnchartedButton",
-      "4",
-      "5",
-      "1015"
+      "GotoCampButton",
+      "1"
     ],
-    "DescStrKey": "ST:185407"
+    "DescStrKey": "ST:260233"
   },
   {
     "ID": 6105,
-    "TriggerType": "UserGuideTriggerType_UIStateChanged",
-    "TriggerParamList": [
-      "UnchartedUIPrefab",
-      "Show"
-    ],
-    "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "0.8"
+      "OldWorldButton",
+      "1"
     ],
-    "DescStrKey": "ST:185408"
+    "DescStrKey": "ST:260234"
   },
   {
     "ID": 6106,
@@ -5454,10 +5457,10 @@
     "ID": 6107,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "TenButton",
+      "SanTuChuanButton",
       "4"
     ],
-    "DescStrKey": "ST:185409"
+    "DescStrKey": "ST:260235"
   },
   {
     "ID": 6108,
@@ -6538,8 +6541,7 @@
     "ID": 8002,
     "TriggerActionType": "UserGuideTriggerActionType_ShowGraphic",
     "TriggerActionParamList": [
-      "149",
-      "150"
+      "149"
     ],
     "DescStrKey": "ST:185381"
   },
@@ -6591,6 +6593,14 @@
       {
         "Type": "UserGuideTriggerConditionType_ScenarioNotFinished",
         "Param1": "12601"
+      },
+      {
+        "Type": "UserGuideTriggerConditionType_GuideGroupNotFinished",
+        "Param1": "425"
+      },
+      {
+        "Type": "UserGuideTriggerConditionType_PlayerLevel",
+        "Param1": "40"
       }
     ],
     "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
@@ -6619,35 +6629,28 @@
     "ID": 8204,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "UnchartedButton",
-      "4",
-      "5",
-      "1015"
+      "GotoCampButton",
+      "1"
     ],
-    "DescStrKey": "ST:185125"
+    "DescStrKey": "ST:260230"
   },
   {
     "ID": 8205,
-    "TriggerType": "UserGuideTriggerType_UIStateChanged",
-    "TriggerParamList": [
-      "UnchartedUIPrefab",
-      "Show"
-    ],
-    "TriggerActionType": "UserGuideTriggerActionType_ScrollHorizontalNormalizeByBindObj",
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "StageListScrollView",
-      "SwordfightButton"
+      "OldWorldButton",
+      "1"
     ],
-    "DescStrKey": "ST:185126"
+    "DescStrKey": "ST:260231"
   },
   {
     "ID": 8206,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "SwordfightButton",
+      "JianLunButton",
       "4"
     ],
-    "DescStrKey": "ST:185127"
+    "DescStrKey": "ST:260232"
   },
   {
     "ID": 8301,
@@ -7942,7 +7945,7 @@
       },
       {
         "Type": "UserGuideTriggerConditionType_PlayerLevel",
-        "Param1": "50"
+        "Param1": "99"
       }
     ],
     "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
@@ -7963,12 +7966,19 @@
     "ID": 11203,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "OldArea",
-      "2",
-      "1",
-      "1033"
+      "OldWorldButton",
+      "1"
     ],
-    "DescStrKey": "ST:185546"
+    "DescStrKey": "ST:258626"
+  },
+  {
+    "ID": 11204,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "JiuYuButton",
+      "1"
+    ],
+    "DescStrKey": "ST:258627"
   },
   {
     "ID": 11211,
@@ -7976,7 +7986,7 @@
     "TriggerConditionList": [
       {
         "Type": "UserGuideTriggerConditionType_PlayerLevel",
-        "Param1": "50"
+        "Param1": "99"
       }
     ],
     "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
@@ -7997,16 +8007,23 @@
     "ID": 11213,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "OldArea",
-      "2",
-      "1",
-      "1033"
+      "OldWorldButton",
+      "1"
     ],
-    "DescStrKey": "ST:185549"
+    "DescStrKey": "ST:258626"
+  },
+  {
+    "ID": 11214,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "JiuYuButton",
+      "1"
+    ],
+    "DescStrKey": "ST:258627"
   },
   {
     "ID": 11221,
-    "TriggerType": "UserGuideTriggerType_EnterWorldMap",
+    "TriggerType": "UserGuideTriggerType_EnterCamp",
     "TriggerConditionList": [
       {
         "Type": "UserGuideTriggerConditionType_PlayerLevel",
@@ -8031,26 +8048,19 @@
     "ID": 11223,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "UnchartedButton",
-      "4",
-      "5",
-      "1015"
+      "OldWorldButton",
+      "1"
     ],
-    "DescStrKey": "ST:185552"
+    "DescStrKey": "ST:258626"
   },
   {
     "ID": 11224,
-    "TriggerType": "UserGuideTriggerType_UIStateChanged",
-    "TriggerParamList": [
-      "UnchartedUIPrefab",
-      "Show"
-    ],
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "MeridianToggle",
-      "4"
+      "JiuYuButton",
+      "1"
     ],
-    "DescStrKey": "ST:185553"
+    "DescStrKey": "ST:258627"
   },
   {
     "ID": 11225,
@@ -8638,7 +8648,7 @@
   },
   {
     "ID": 12501,
-    "TriggerType": "UserGuideTriggerType_EnterWorldMap",
+    "TriggerType": "UserGuideTriggerType_EnterCamp",
     "TriggerConditionList": [
       {
         "Type": "UserGuideTriggerConditionType_PlayerLevel",
@@ -8649,7 +8659,7 @@
     "TriggerActionParamList": [
       "0"
     ],
-    "DescStrKey": "ST:185632"
+    "DescStrKey": "ST:258628"
   },
   {
     "ID": 12502,
@@ -8671,15 +8681,27 @@
     "ID": 12504,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "UnchartedButton",
-      "4",
-      "5",
-      "1015"
+      "OldWorldButton",
+      "1"
     ],
-    "DescStrKey": "ST:185635"
+    "DescStrKey": "ST:258626"
   },
   {
     "ID": 12505,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "JiuRuTaButton",
+      "2"
+    ],
+    "DescStrKey": "ST:258629"
+  },
+  {
+    "ID": 12506,
+    "TriggerActionType": "UserGuideTriggerActionType_SendEnd",
+    "DescStrKey": "ST:260048"
+  },
+  {
+    "ID": 12507,
     "TriggerType": "UserGuideTriggerType_UIStateChanged",
     "TriggerParamList": [
       "UnchartedUIPrefab",
@@ -8693,7 +8715,7 @@
     "DescStrKey": "ST:185636"
   },
   {
-    "ID": 12506,
+    "ID": 12508,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
       "JiuRuTaButton",
@@ -9596,23 +9618,21 @@
   },
   {
     "ID": 14701,
-    "TriggerType": "UserGuideTriggerType_EnterCamp",
+    "TriggerType": "UserGuideTriggerType_GuideGroupFinished",
+    "TriggerParamList": [
+      "422"
+    ],
     "TriggerConditionList": [
       {
-        "Type": "UserGuideTriggerConditionType_PlayerLevel",
-        "Param1": "40"
-      },
-      {
-        "Type": "UserGuideTriggerConditionType_IsHomeBuildingLevelLessThan",
-        "Param1": "Cook",
-        "Param2": "1"
+        "Type": "UserGuideTriggerConditionType_GuideGroupFinished",
+        "Param1": "422"
       }
     ],
     "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
     "TriggerActionParamList": [
-      "0"
+      "0.5"
     ],
-    "DescStrKey": "ST:185681"
+    "DescStrKey": "ST:258260"
   },
   {
     "ID": 14702,
@@ -9628,16 +9648,16 @@
     "TriggerActionParamList": [
       "96580110"
     ],
-    "DescStrKey": "ST:185683"
+    "DescStrKey": "ST:258261"
   },
   {
     "ID": 14704,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "HomeButton",
+      "HuaJingButton",
       "1"
     ],
-    "DescStrKey": "ST:185684"
+    "DescStrKey": "ST:258256"
   },
   {
     "ID": 14705,
@@ -10292,14 +10312,6 @@
     "DescStrKey": "ST:185734"
   },
   {
-    "ID": 15111,
-    "TriggerActionType": "UserGuideTriggerActionType_ShowGraphic",
-    "TriggerActionParamList": [
-      "251"
-    ],
-    "DescStrKey": "ST:185735"
-  },
-  {
     "ID": 15201,
     "TriggerType": "UserGuideTriggerType_EnterHome",
     "TriggerConditionList": [
@@ -10866,7 +10878,7 @@
   },
   {
     "ID": 16311,
-    "TriggerType": "UserGuideTriggerType_EnterWorldMap",
+    "TriggerType": "UserGuideTriggerType_EnterCamp",
     "TriggerConditionList": [
       {
         "Type": "UserGuideTriggerConditionType_PlayerLevel",
@@ -10881,7 +10893,7 @@
     "TriggerActionParamList": [
       "0"
     ],
-    "DescStrKey": "ST:185783"
+    "DescStrKey": "ST:258630"
   },
   {
     "ID": 16312,
@@ -10908,13 +10920,22 @@
     "ID": 16315,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "OldArea",
-      "2"
+      "OldWorldButton",
+      "1"
     ],
-    "DescStrKey": "ST:185787"
+    "DescStrKey": "ST:258626"
   },
   {
     "ID": 16316,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "JiangHuButton",
+      "2"
+    ],
+    "DescStrKey": "ST:258631"
+  },
+  {
+    "ID": 16317,
     "TriggerActionType": "UserGuideTriggerActionType_EnableAll",
     "TriggerActionParamList": [
       "true"
@@ -10922,7 +10943,7 @@
     "DescStrKey": "ST:185788"
   },
   {
-    "ID": 16317,
+    "ID": 16318,
     "TriggerParamList": [
       "JianghuBGPrefab",
       "Show"
@@ -10934,7 +10955,7 @@
     "DescStrKey": "ST:185784"
   },
   {
-    "ID": 16318,
+    "ID": 16319,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
       "PanshabaoDummy",
@@ -11912,14 +11933,6 @@
   },
   {
     "ID": 18106,
-    "TriggerActionType": "UserGuideTriggerActionType_ShowGraphic",
-    "TriggerActionParamList": [
-      "269"
-    ],
-    "DescStrKey": "ST:185848"
-  },
-  {
-    "ID": 18107,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
       "BattleButton",
@@ -11928,7 +11941,7 @@
     "DescStrKey": "ST:185849"
   },
   {
-    "ID": 18108,
+    "ID": 18107,
     "TriggerType": "UserGuideTriggerType_UIStateChanged",
     "TriggerParamList": [
       "DoorWithoutTearsBoxUIPrefab",
@@ -11941,7 +11954,7 @@
     "DescStrKey": "ST:185845"
   },
   {
-    "ID": 18109,
+    "ID": 18108,
     "TriggerActionType": "UserGuideTriggerActionType_ShowGraphic",
     "TriggerActionParamList": [
       "270",
@@ -12023,14 +12036,6 @@
   },
   {
     "ID": 18206,
-    "TriggerActionType": "UserGuideTriggerActionType_ShowGraphic",
-    "TriggerActionParamList": [
-      "269"
-    ],
-    "DescStrKey": "ST:185848"
-  },
-  {
-    "ID": 18207,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
       "BattleButton",
@@ -12039,7 +12044,7 @@
     "DescStrKey": "ST:185849"
   },
   {
-    "ID": 18208,
+    "ID": 18207,
     "TriggerType": "UserGuideTriggerType_UIStateChanged",
     "TriggerParamList": [
       "DoorWithoutTearsBoxUIPrefab",
@@ -12052,7 +12057,7 @@
     "DescStrKey": "ST:185845"
   },
   {
-    "ID": 18209,
+    "ID": 18208,
     "TriggerActionType": "UserGuideTriggerActionType_ShowGraphic",
     "TriggerActionParamList": [
       "270",
@@ -12082,7 +12087,7 @@
     "TriggerConditionList": [
       {
         "Type": "UserGuideTriggerConditionType_PlayerLevel",
-        "Param1": "65"
+        "Param1": "99"
       },
       {
         "Type": "UserGuideTriggerConditionType_GuideGroupNotFinished",
@@ -12152,14 +12157,6 @@
   },
   {
     "ID": 18407,
-    "TriggerActionType": "UserGuideTriggerActionType_ShowGraphic",
-    "TriggerActionParamList": [
-      "269"
-    ],
-    "DescStrKey": "ST:185848"
-  },
-  {
-    "ID": 18408,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
       "BattleButton",
@@ -12168,7 +12165,7 @@
     "DescStrKey": "ST:185849"
   },
   {
-    "ID": 18409,
+    "ID": 18408,
     "TriggerType": "UserGuideTriggerType_UIStateChanged",
     "TriggerParamList": [
       "DoorWithoutTearsBoxUIPrefab",
@@ -12181,7 +12178,7 @@
     "DescStrKey": "ST:185845"
   },
   {
-    "ID": 18410,
+    "ID": 18409,
     "TriggerActionType": "UserGuideTriggerActionType_ShowGraphic",
     "TriggerActionParamList": [
       "270",
@@ -13039,14 +13036,6 @@
   },
   {
     "ID": 19803,
-    "TriggerActionType": "UserGuideTriggerActionType_ShowGraphic",
-    "TriggerActionParamList": [
-      "269"
-    ],
-    "DescStrKey": "ST:185848"
-  },
-  {
-    "ID": 19804,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
       "BattleButton",
@@ -13055,7 +13044,7 @@
     "DescStrKey": "ST:185849"
   },
   {
-    "ID": 19805,
+    "ID": 19804,
     "TriggerType": "UserGuideTriggerType_UIStateChanged",
     "TriggerParamList": [
       "DoorWithoutTearsBoxUIPrefab",
@@ -13068,7 +13057,7 @@
     "DescStrKey": "ST:185845"
   },
   {
-    "ID": 19806,
+    "ID": 19805,
     "TriggerActionType": "UserGuideTriggerActionType_ShowGraphic",
     "TriggerActionParamList": [
       "270",
@@ -13081,7 +13070,7 @@
   },
   {
     "ID": 19901,
-    "TriggerType": "UserGuideTriggerType_EnterWorldMap",
+    "TriggerType": "UserGuideTriggerType_EnterCamp",
     "TriggerConditionList": [
       {
         "Type": "UserGuideTriggerConditionType_PlayerLevel",
@@ -13100,7 +13089,7 @@
     "TriggerActionParamList": [
       "0"
     ],
-    "DescStrKey": "ST:191771"
+    "DescStrKey": "ST:258632"
   },
   {
     "ID": 19902,
@@ -13114,13 +13103,22 @@
     "ID": 19903,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "OldArea",
-      "2"
+      "OldWorldButton",
+      "1"
     ],
-    "DescStrKey": "ST:191773"
+    "DescStrKey": "ST:258626"
   },
   {
     "ID": 19904,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "JiangHuButton",
+      "2"
+    ],
+    "DescStrKey": "ST:258631"
+  },
+  {
+    "ID": 19905,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
       "DoorWithoutTearsDummy",
@@ -13129,7 +13127,7 @@
     "DescStrKey": "ST:191774"
   },
   {
-    "ID": 19905,
+    "ID": 19906,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
       "TearlessGateOrangeBtn",
@@ -13138,7 +13136,7 @@
     "DescStrKey": "ST:191775"
   },
   {
-    "ID": 19906,
+    "ID": 19907,
     "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
     "TriggerActionParamList": [
       "501100001"
@@ -13146,7 +13144,7 @@
     "DescStrKey": "ST:191776"
   },
   {
-    "ID": 19907,
+    "ID": 19908,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
       "QianJiXiaBtn",
@@ -13155,7 +13153,7 @@
     "DescStrKey": "ST:191777"
   },
   {
-    "ID": 19908,
+    "ID": 19909,
     "TriggerType": "UserGuideTriggerType_UIStateChanged",
     "TriggerParamList": [
       "DoorWithoutTears2MainUIPrefab",
@@ -16468,19 +16466,19 @@
     "ID": 32703,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "GotoWorldMapButton",
-      "2"
+      "OldWorldButton",
+      "1"
     ],
-    "DescStrKey": "ST:186389"
+    "DescStrKey": "ST:258626"
   },
   {
     "ID": 32704,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "OldArea",
+      "JiangHuButton",
       "2"
     ],
-    "DescStrKey": "ST:186390"
+    "DescStrKey": "ST:258631"
   },
   {
     "ID": 32705,
@@ -16505,7 +16503,7 @@
     "TriggerConditionList": [
       {
         "Type": "UserGuideTriggerConditionType_PlayerLevel",
-        "Param1": "62"
+        "Param1": "99"
       },
       {
         "Type": "UserGuideTriggerConditionType_GuideGroupNotFinished",
@@ -16798,19 +16796,19 @@
     "ID": 33003,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "GotoWorldMapButton",
-      "2"
+      "OldWorldButton",
+      "1"
     ],
-    "DescStrKey": "ST:186389"
+    "DescStrKey": "ST:258626"
   },
   {
     "ID": 33004,
     "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
     "TriggerActionParamList": [
-      "OldArea",
+      "JiangHuButton",
       "2"
     ],
-    "DescStrKey": "ST:186390"
+    "DescStrKey": "ST:258631"
   },
   {
     "ID": 33005,
@@ -16858,7 +16856,7 @@
     "TriggerConditionList": [
       {
         "Type": "UserGuideTriggerConditionType_PlayerLevel",
-        "Param1": "45"
+        "Param1": "99"
       },
       {
         "Type": "UserGuideTriggerConditionType_GuideGroupNotFinished",
@@ -19074,7 +19072,7 @@
     "TriggerConditionList": [
       {
         "Type": "UserGuideTriggerConditionType_PlayerLevel",
-        "Param1": "30",
+        "Param1": "99",
         "Param2": "0"
       }
     ],
@@ -21143,6 +21141,334 @@
       "352"
     ],
     "DescStrKey": "ST:255788"
+  },
+  {
+    "ID": 42201,
+    "TriggerType": "UserGuideTriggerType_EnterCamp",
+    "TriggerConditionList": [
+      {
+        "Type": "UserGuideTriggerConditionType_PlayerLevel",
+        "Param1": "40"
+      }
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
+    "TriggerActionParamList": [
+      "0"
+    ],
+    "DescStrKey": "ST:258262"
+  },
+  {
+    "ID": 42202,
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "660071901"
+    ],
+    "DescStrKey": "ST:258265"
+  },
+  {
+    "ID": 42203,
+    "TriggerActionType": "UserGuideTriggerActionType_NewFuncOpen",
+    "TriggerActionParamList": [
+      "OldWorldClassicTruly"
+    ],
+    "DescStrKey": "ST:258263"
+  },
+  {
+    "ID": 42204,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "OldWorldButton",
+      "1"
+    ],
+    "DescStrKey": "ST:258264"
+  },
+  {
+    "ID": 42205,
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "660071701"
+    ],
+    "DescStrKey": "ST:258265"
+  },
+  {
+    "ID": 42206,
+    "TriggerActionType": "UserGuideTriggerActionType_ShowGraphic",
+    "TriggerActionParamList": [
+      "354",
+      "355"
+    ],
+    "DescStrKey": "ST:258266"
+  },
+  {
+    "ID": 42301,
+    "TriggerType": "UserGuideTriggerType_EnterWorldMap",
+    "TriggerConditionList": [
+      {
+        "Type": "UserGuideTriggerConditionType_ScenarioFinished",
+        "Param1": "12704"
+      },
+      {
+        "Type": "UserGuideTriggerConditionType_ScenarioNotFinished",
+        "Param1": "12801"
+      },
+      {
+        "Type": "UserGuideTriggerConditionType_GuideGroupNotFinished",
+        "Param1": "25"
+      }
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
+    "TriggerActionParamList": [
+      "0"
+    ],
+    "DescStrKey": "ST:185072"
+  },
+  {
+    "ID": 42302,
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "10017100"
+    ],
+    "DescStrKey": "ST:185073"
+  },
+  {
+    "ID": 42303,
+    "TriggerActionType": "UserGuideTriggerActionType_NewFuncOpen",
+    "TriggerActionParamList": [
+      "ArrestWarrant"
+    ],
+    "DescStrKey": "ST:185074"
+  },
+  {
+    "ID": 42304,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "UnchartedButton",
+      "4",
+      "5",
+      "1015"
+    ],
+    "DescStrKey": "ST:185075"
+  },
+  {
+    "ID": 42305,
+    "TriggerType": "UserGuideTriggerType_UIStateChanged",
+    "TriggerParamList": [
+      "UnchartedUIPrefab",
+      "Show"
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_ScrollHorizontalNormalize",
+    "TriggerActionParamList": [
+      "StageListScrollView",
+      "1"
+    ],
+    "DescStrKey": "ST:185076"
+  },
+  {
+    "ID": 42306,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "SeaArrestButton",
+      "4"
+    ],
+    "DescStrKey": "ST:185077"
+  },
+  {
+    "ID": 42307,
+    "TriggerType": "UserGuideTriggerType_UIStateChanged",
+    "TriggerParamList": [
+      "SeaArrestUIPrefab",
+      "Show"
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "10017101"
+    ],
+    "DescStrKey": "ST:185073"
+  },
+  {
+    "ID": 42308,
+    "TriggerActionType": "UserGuideTriggerActionType_ShowGraphic",
+    "TriggerActionParamList": [
+      "122"
+    ],
+    "DescStrKey": "ST:185078"
+  },
+  {
+    "ID": 42401,
+    "TriggerType": "UserGuideTriggerType_EnterWorldMap",
+    "TriggerConditionList": [
+      {
+        "Type": "UserGuideTriggerConditionType_ScenarioFinished",
+        "Param1": "12102"
+      },
+      {
+        "Type": "UserGuideTriggerConditionType_ScenarioNotFinished",
+        "Param1": "12103"
+      },
+      {
+        "Type": "UserGuideTriggerConditionType_GuideGroupNotFinished",
+        "Param1": "61"
+      }
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
+    "TriggerActionParamList": [
+      "0"
+    ],
+    "DescStrKey": "ST:185404"
+  },
+  {
+    "ID": 42402,
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "40610101"
+    ],
+    "DescStrKey": "ST:185405"
+  },
+  {
+    "ID": 42403,
+    "TriggerActionType": "UserGuideTriggerActionType_NewFuncOpen",
+    "TriggerActionParamList": [
+      "Mountain"
+    ],
+    "DescStrKey": "ST:185406"
+  },
+  {
+    "ID": 42404,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "UnchartedButton",
+      "4",
+      "5",
+      "1015"
+    ],
+    "DescStrKey": "ST:185407"
+  },
+  {
+    "ID": 42405,
+    "TriggerType": "UserGuideTriggerType_UIStateChanged",
+    "TriggerParamList": [
+      "UnchartedUIPrefab",
+      "Show"
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
+    "TriggerActionParamList": [
+      "0.8"
+    ],
+    "DescStrKey": "ST:185408"
+  },
+  {
+    "ID": 42406,
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "40610104"
+    ],
+    "DescStrKey": "ST:185405"
+  },
+  {
+    "ID": 42407,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "TenButton",
+      "4"
+    ],
+    "DescStrKey": "ST:185409"
+  },
+  {
+    "ID": 42408,
+    "TriggerType": "UserGuideTriggerType_UIStateChanged",
+    "TriggerParamList": [
+      "CaveRaidSelectUIPrefab",
+      "Show"
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "40610108"
+    ],
+    "DescStrKey": "ST:185405"
+  },
+  {
+    "ID": 42409,
+    "TriggerActionType": "UserGuideTriggerActionType_ShowGraphic",
+    "TriggerActionParamList": [
+      "146",
+      "147"
+    ],
+    "DescStrKey": "ST:185410"
+  },
+  {
+    "ID": 42501,
+    "BranchGroupIdList": [
+      107
+    ],
+    "TriggerType": "UserGuideTriggerType_WayPointEventFinished",
+    "TriggerParamList": [
+      "12502"
+    ],
+    "TriggerConditionList": [
+      {
+        "Type": "UserGuideTriggerConditionType_ScenarioNotFinished",
+        "Param1": "12601"
+      },
+      {
+        "Type": "UserGuideTriggerConditionType_GuideGroupNotFinished",
+        "Param1": "82"
+      }
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
+    "TriggerActionParamList": [
+      "0"
+    ],
+    "DescStrKey": "ST:185122"
+  },
+  {
+    "ID": 42502,
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "201080201"
+    ],
+    "DescStrKey": "ST:185123"
+  },
+  {
+    "ID": 42503,
+    "TriggerActionType": "UserGuideTriggerActionType_NewFuncOpen",
+    "TriggerActionParamList": [
+      "ExpInstance"
+    ],
+    "DescStrKey": "ST:185124"
+  },
+  {
+    "ID": 42504,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "UnchartedButton",
+      "4",
+      "5",
+      "1015"
+    ],
+    "DescStrKey": "ST:185125"
+  },
+  {
+    "ID": 42505,
+    "TriggerType": "UserGuideTriggerType_UIStateChanged",
+    "TriggerParamList": [
+      "UnchartedUIPrefab",
+      "Show"
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_ScrollHorizontalNormalizeByBindObj",
+    "TriggerActionParamList": [
+      "StageListScrollView",
+      "SwordfightButton"
+    ],
+    "DescStrKey": "ST:185126"
+  },
+  {
+    "ID": 42506,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "SwordfightButton",
+      "4"
+    ],
+    "DescStrKey": "ST:185127"
   },
   {
     "ID": 999901,

@@ -4190,5 +4190,83 @@
     "RewardSpinePath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BattlePassItemImage_ABS/IconBattlePass_gf_OB66.png@IconBattlePass_gf_OB66",
     "NameStrKey": "ST:103906",
     "RewardNameStrKey": "ST:181593"
+  },
+  {
+    "ID": 67,
+    "NormalActivation": 990,
+    "AdvanceActivition": 991,
+    "DiffencePriceActivition": 992,
+    "AdvanceActivitionReward": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 55662213,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 402011700,
+        "Count": 1000
+      }
+    ],
+    "CanBuyMaxLevel": 70,
+    "LevelMax": 70,
+    "ExtraExp": 100,
+    "ExtraAdvanceReward": 352067071,
+    "ActivityId": 266710,
+    "WeekExpLimit": 3000,
+    "MissionList": [
+      2078001,
+      2078002,
+      2078003,
+      2078004,
+      2078005,
+      2078006,
+      2078007,
+      2078008,
+      2078009,
+      2078010,
+      2078011,
+      2078012,
+      2078013,
+      2078014,
+      2078015,
+      2078016,
+      2078017,
+      2078018,
+      2078019,
+      2078020,
+      2078021,
+      2078022,
+      2078023,
+      2078024,
+      2078025,
+      2078026,
+      2078027,
+      2078028,
+      2078029,
+      2078030,
+      2078031,
+      2078032,
+      2078033,
+      2078034,
+      2078035,
+      2078036,
+      2078101
+    ],
+    "RewardMailId": 236,
+    "FreeActivationIcon": "Assets/GameProject/RuntimeAssets/Spine/UIspine/ui_BattlePassIcon01/ui_BattlePassIcon01_Graphic_Prefab.prefab",
+    "NormalActivationShowID": 751,
+    "AdvanceActivationShowID": 752,
+    "DiffencePriceActivitionShowID": 753,
+    "RewardQuantShow": 9,
+    "RewardItemId": 402024902,
+    "RewardSkinItemIds": [
+      590120602,
+      590100902,
+      590103702,
+      590101603,
+      590103102
+    ],
+    "NameStrKey": "ST:103906"
   }
 ]

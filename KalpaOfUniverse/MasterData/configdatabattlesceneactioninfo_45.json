@@ -1,5 +1,12 @@
 [
   {
+    "ID": 42216001,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      2000
+    ]
+  },
+  {
     "ID": 42216002,
     "ActionType": "BattleSceneActionType_SummonNear",
     "Param1": [
@@ -16156,22 +16163,6 @@
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
       800
-    ]
-  },
-  {
-    "ID": 42715061,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      201400040
-    ],
-    "Param2": [
-      10002
-    ],
-    "Param3": [
-      {
-        "X": 13,
-        "Y": 12
-      }
     ]
   }
 ]

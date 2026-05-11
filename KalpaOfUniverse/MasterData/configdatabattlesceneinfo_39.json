@@ -1,5 +1,398 @@
 [
   {
+    "ID": 21502100,
+    "Strategy": 1,
+    "TurnMax": 15,
+    "AttackWinCondGroupIds": [
+      21502101
+    ],
+    "DefendWinCondGroupIds": [
+      21402100
+    ],
+    "AttackTeamFormationMin": 1,
+    "AttackTeamFormationMax": 5,
+    "DefendTeamFormationMin": 1,
+    "DefendTeamFormationMax": 20,
+    "AttackTeamFormationGrids": [
+      {
+        "X": 15,
+        "Y": 18,
+        "DirX": 16,
+        "DirY": 14
+      },
+      {
+        "X": 15,
+        "Y": 17,
+        "DirX": 16,
+        "DirY": 14
+      },
+      {
+        "X": 16,
+        "Y": 18,
+        "DirX": 16,
+        "DirY": 14
+      },
+      {
+        "X": 17,
+        "Y": 18,
+        "DirX": 16,
+        "DirY": 14
+      },
+      {
+        "X": 17,
+        "Y": 17,
+        "DirX": 16,
+        "DirY": 14
+      }
+    ],
+    "CharActorSetups": [
+      {
+        "ActorId": 401,
+        "X": 16,
+        "Y": 14,
+        "DirX": 16,
+        "DirY": 18,
+        "TeamType": 4,
+        "TeamId": 41,
+        "CharacterId": 122150113,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 402,
+        "X": 15,
+        "Y": 13,
+        "DirX": 16,
+        "DirY": 18,
+        "TeamType": 4,
+        "TeamId": 41,
+        "CharacterId": 122150233,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 403,
+        "X": 17,
+        "Y": 13,
+        "DirX": 16,
+        "DirY": 18,
+        "TeamType": 4,
+        "TeamId": 41,
+        "CharacterId": 122150233,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 404,
+        "X": 14,
+        "Y": 8,
+        "DirX": 16,
+        "DirY": 18,
+        "TeamType": 4,
+        "TeamId": 42,
+        "CharacterId": 122150113,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 407,
+        "X": 19,
+        "Y": 7,
+        "DirX": 16,
+        "DirY": 18,
+        "TeamType": 4,
+        "TeamId": 42,
+        "CharacterId": 122140011,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 408,
+        "X": 3,
+        "Y": 9,
+        "DirY": 10,
+        "TeamType": 4,
+        "TeamId": 43,
+        "CharacterId": 122150233,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 409,
+        "X": 6,
+        "Y": 9,
+        "DirY": 10,
+        "TeamType": 4,
+        "TeamId": 44,
+        "CharacterId": 122110013,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 410,
+        "X": 7,
+        "Y": 9,
+        "DirY": 10,
+        "TeamType": 4,
+        "TeamId": 44,
+        "CharacterId": 122140231,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 411,
+        "X": 7,
+        "Y": 2,
+        "DirX": 9,
+        "DirY": 20,
+        "TeamType": 4,
+        "TeamId": 45,
+        "CharacterId": 122110453,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 412,
+        "X": 11,
+        "Y": 2,
+        "DirX": 9,
+        "DirY": 20,
+        "TeamType": 4,
+        "TeamId": 45,
+        "CharacterId": 122110553,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 413,
+        "X": 8,
+        "Y": 1,
+        "DirX": 9,
+        "DirY": 20,
+        "TeamType": 4,
+        "TeamId": 45,
+        "CharacterId": 122120043,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 414,
+        "X": 10,
+        "Y": 1,
+        "DirX": 9,
+        "DirY": 20,
+        "TeamType": 4,
+        "TeamId": 45,
+        "CharacterId": 122140351,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 415,
+        "X": 9,
+        "Y": 1,
+        "DirX": 9,
+        "DirY": 20,
+        "TeamType": 4,
+        "TeamId": 45,
+        "CharacterId": 152040444,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 101,
+        "Y": 10,
+        "DirX": 3,
+        "DirY": 10,
+        "TeamType": 1,
+        "TeamId": 11,
+        "CharacterId": 100122505,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 405,
+        "X": 18,
+        "Y": 8,
+        "DirX": 16,
+        "DirY": 18,
+        "TeamType": 4,
+        "TeamId": 42,
+        "CharacterId": 122100023,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 406,
+        "X": 13,
+        "Y": 7,
+        "DirX": 16,
+        "DirY": 18,
+        "TeamType": 4,
+        "TeamId": 42,
+        "CharacterId": 122130123,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 431,
+        "X": 3,
+        "Y": 5,
+        "DirY": 10,
+        "TeamType": 4,
+        "TeamId": 44,
+        "CharacterId": 122110123,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 450,
+        "X": 3,
+        "Y": 3,
+        "DirX": 3,
+        "DirY": 4,
+        "TeamType": 4,
+        "TeamId": 28,
+        "CharacterId": 122200018,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      }
+    ],
+    "FaciliteActorSetups": [
+      {
+        "ActorId": 901,
+        "X": 13,
+        "Y": 12,
+        "DirX": 13,
+        "TeamId": 91,
+        "FaciliteId": 108,
+        "Level": -1,
+        "HpPercent": 10000
+      },
+      {
+        "ActorId": 902,
+        "X": 16,
+        "Y": 6,
+        "DirX": 16,
+        "TeamId": 91,
+        "FaciliteId": 109,
+        "Level": -1,
+        "HpPercent": 10000
+      },
+      {
+        "ActorId": 903,
+        "X": 14,
+        "Y": 2,
+        "DirX": 3,
+        "DirY": 20,
+        "TeamId": 91,
+        "FaciliteId": 108,
+        "Level": -1,
+        "HpPercent": 10000
+      },
+      {
+        "ActorId": 904,
+        "X": 5,
+        "Y": 6,
+        "DirY": 1,
+        "TeamId": 91,
+        "FaciliteId": 109,
+        "Level": -1,
+        "HpPercent": 10000
+      },
+      {
+        "ActorId": 905,
+        "X": 3,
+        "Y": 11,
+        "DirY": 1,
+        "TeamId": 91,
+        "FaciliteId": 109,
+        "Level": -1,
+        "HpPercent": 10000
+      }
+    ],
+    "GridBuffSetups": [
+      {
+        "ActorId": 801,
+        "X": 3,
+        "Y": 3,
+        "GridBuffId": 301
+      },
+      {
+        "ActorId": 802,
+        "X": 6,
+        "Y": 10,
+        "GridBuffId": 301
+      },
+      {
+        "ActorId": 803,
+        "X": 17,
+        "Y": 4,
+        "GridBuffId": 301
+      },
+      {
+        "ActorId": 804,
+        "X": 19,
+        "Y": 12,
+        "GridBuffId": 301
+      }
+    ],
+    "TeamAIInfo": [
+      {
+        "TeamId": 45,
+        "TeamAIType": "TeamAIType_Alert",
+        "Param1": 3
+      }
+    ],
+    "BattleMapId": 1523,
+    "DefaultNpcLevel": 64,
+    "BattleMapResPath": "LandScape01Series/Maps/1523_ABS/",
+    "BattleEventTriggerInfos": [
+      40210001,
+      40210002,
+      40210003,
+      40210004,
+      40210005,
+      40210006,
+      40210007,
+      40210008
+    ],
+    "BattleAchievementIds": [
+      1502101,
+      1502102,
+      1502103
+    ],
+    "BattleTreasureBoxIds": [
+      140212
+    ],
+    "IsNeedStarStat": true,
+    "StarTurnMax": 8,
+    "StarDeadMax": 1,
+    "IsCanSkipSceneAction": true,
+    "SkipMessageID": 101,
+    "CameraVisions": [
+      0,
+      2
+    ],
+    "CameraDefaultPosition": [
+      16,
+      17
+    ],
+    "SceneEclipse": 1,
+    "AttackTeamBGM": "BGM_Combat_Yang_1",
+    "DefendTeamBGM": "BGM_Combat_Yin_1",
+    "FormationBGM": "BGM_Combat_Preparation_1",
+    "MinMap": "Assets/GameProject/RuntimeAssets/UI/UIImage/MiniMap05_ABS/MiniMap_1523.PNG@MiniMap_1523",
+    "CustomLoadingUI": [
+      2110
+    ],
+    "CrushingBlowFlag": true,
+    "AutoBattleType": "BattleAutoPlayType_TipsTrasureBox",
+    "SceneNameStrKey": "ST:114254",
+    "AttackWinDescStrKey": "ST:111995",
+    "DefendLoseDescStrKey": "ST:83810"
+  },
+  {
     "ID": 21502200,
     "Strategy": 1,
     "TurnMax": 15,
@@ -26891,231 +27284,5 @@
       6
     ],
     "SceneNameStrKey": "ST:169168"
-  },
-  {
-    "ID": 21702110,
-    "Strategy": 1,
-    "TurnMax": 15,
-    "AttackWinCondGroupIds": [
-      4
-    ],
-    "DefendWinCondGroupIds": [
-      3
-    ],
-    "AttackStaticActorPoolId": 94,
-    "AttackTeamFormationMin": 1,
-    "AttackTeamFormationMax": 6,
-    "DefendTeamFormationMin": 1,
-    "DefendTeamFormationMax": 10,
-    "AttackTeamFormationGrids": [
-      {
-        "X": 6,
-        "Y": 5,
-        "DirX": 6,
-        "DirY": 3
-      },
-      {
-        "X": 8,
-        "Y": 5,
-        "DirX": 8,
-        "DirY": 3
-      },
-      {
-        "X": 6,
-        "Y": 4,
-        "DirX": 6,
-        "DirY": 5
-      },
-      {
-        "X": 7,
-        "Y": 4,
-        "DirX": 7,
-        "DirY": 5
-      },
-      {
-        "X": 8,
-        "Y": 4,
-        "DirX": 8,
-        "DirY": 5
-      },
-      {
-        "X": 7,
-        "Y": 3,
-        "DirX": 7,
-        "DirY": 4
-      }
-    ],
-    "CharActorSetups": [
-      {
-        "ActorId": 201,
-        "X": 7,
-        "Y": 16,
-        "DirX": 7,
-        "DirY": 5,
-        "TeamType": 4,
-        "TeamId": 21,
-        "CharacterId": 121120053,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 202,
-        "X": 8,
-        "Y": 15,
-        "DirX": 7,
-        "DirY": 5,
-        "TeamType": 4,
-        "TeamId": 21,
-        "CharacterId": 121000352,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 203,
-        "X": 2,
-        "Y": 12,
-        "DirX": 7,
-        "DirY": 5,
-        "TeamType": 4,
-        "TeamId": 22,
-        "CharacterId": 121000232,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 204,
-        "X": 7,
-        "Y": 13,
-        "DirX": 7,
-        "DirY": 5,
-        "TeamType": 4,
-        "TeamId": 21,
-        "CharacterId": 121010031,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 205,
-        "X": 8,
-        "Y": 13,
-        "DirX": 7,
-        "DirY": 5,
-        "TeamType": 4,
-        "TeamId": 21,
-        "CharacterId": 121400022,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 206,
-        "X": 1,
-        "Y": 11,
-        "DirX": 7,
-        "DirY": 5,
-        "TeamType": 4,
-        "TeamId": 22,
-        "CharacterId": 121030323,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 207,
-        "X": 2,
-        "Y": 11,
-        "DirX": 7,
-        "DirY": 5,
-        "TeamType": 4,
-        "TeamId": 22,
-        "CharacterId": 121000232,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 208,
-        "X": 7,
-        "Y": 9,
-        "DirX": 7,
-        "DirY": 5,
-        "TeamType": 4,
-        "TeamId": 23,
-        "CharacterId": 121000012,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 209,
-        "X": 8,
-        "Y": 8,
-        "DirX": 7,
-        "DirY": 5,
-        "TeamType": 4,
-        "TeamId": 23,
-        "CharacterId": 122020212,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 210,
-        "X": 5,
-        "Y": 7,
-        "DirX": 7,
-        "DirY": 5,
-        "TeamType": 4,
-        "TeamId": 23,
-        "CharacterId": 121120053,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      }
-    ],
-    "FaciliteActorSetups": [
-      {
-        "ActorId": 901,
-        "X": 3,
-        "Y": 6,
-        "DirX": 1,
-        "DirY": 1,
-        "TeamId": 91,
-        "FaciliteId": 207,
-        "Level": -1,
-        "HpPercent": 10000
-      }
-    ],
-    "TeamAIInfo": [
-      {
-        "TeamId": 21,
-        "TeamAIType": "TeamAIType_Alert",
-        "Param1": 1
-      },
-      {
-        "TeamId": 22,
-        "TeamAIType": "TeamAIType_Alert",
-        "Param1": 2
-      }
-    ],
-    "BattleMapId": 1200,
-    "DefaultNpcLevel": 61,
-    "BattleMapResPath": "LandScape01Series/Maps/1200_ABS/",
-    "PreBattleSceneId": 21702111,
-    "IsCanSkipSceneAction": true,
-    "SkipMessageID": 101,
-    "CameraVisions": [
-      0,
-      2
-    ],
-    "CameraDefaultPosition": [
-      7,
-      4
-    ],
-    "AttackTeamBGM": "BGM_Combat_Crisis_2",
-    "DefendTeamBGM": "BGM_Combat_Crisis_2",
-    "FormationBGM": "BGM_Combat_Preparation_3",
-    "MinMap": "Assets/GameProject/RuntimeAssets/UI/UIImage/MiniMap_ABS/MiniMap_1200.PNG@MiniMap_1200",
-    "CustomLoadingUI": [
-      6
-    ],
-    "CrushingBlowFlag": true,
-    "SceneNameStrKey": "ST:169169",
-    "AttackWinDescStrKey": "ST:3566",
-    "DefendLoseDescStrKey": "ST:3567"
   }
 ]

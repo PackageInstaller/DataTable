@@ -1,5 +1,99 @@
 [
   {
+    "ID": 741031152,
+    "LifeTime": 3,
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_MovePointAddMax_D",
+        "Value": 1000
+      }
+    ],
+    "_FightLogicFlags": [
+      "FightLogicFlag_QingKung"
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
+    "ID": 741031160,
+    "LifeTime": 3,
+    "FuncType": "BufFuncType_Pack",
+    "FuncParams": [
+      741031161,
+      741031162
+    ],
+    "SubType": 212,
+    "Priority": 1,
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "LoopEffect": 103100204,
+    "TriggerBehaviorType": "TriggerBehaviorType_None",
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Other",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/EXSkill_1246.png@EXSkill_1246",
+    "NameDescStrKey": "ST:133347",
+    "BuffDescStrKey": "ST:177067"
+  },
+  {
+    "ID": 741031161,
+    "LifeTime": 3,
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_AdditionalSkillSelectRange_D",
+        "Value": 1
+      },
+      {
+        "Id": "PropertiesId_AdditionalCommonSkillSelectRange_D",
+        "Value": 1
+      }
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
+    "ID": 741031162,
+    "LifeTime": 3,
+    "FuncType": "BufFuncType_AttachBufAfterCastSkill",
+    "FuncParams": [
+      0,
+      1,
+      -1,
+      700000008,
+      1
+    ],
+    "ActiveCondIds": [
+      200,
+      1101
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorId": 600000010,
+    "TriggerBehaviorType": "TriggerBehaviorType_Skill",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/EXSkill_1246.png@EXSkill_1246",
+    "NameDescStrKey": "ST:133347"
+  },
+  {
     "ID": 741031170,
     "LifeTime": 3,
     "FuncType": "BufFuncType_Pack",
@@ -4490,75 +4584,6 @@
     ],
     "CanBePreventDisperse": true,
     "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741034009,
-    "LifeTime": -1,
-    "ReplaceRule": "ReplaceRule_Accumulate",
-    "LevelMax": 14,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_LingHui"
-    ],
-    "OtherBuffFlag": true,
-    "CanBeDispersed": true,
-    "CanBePreventDisperse": true,
-    "AddEffect": 103400901,
-    "TriggerBehaviorType": "TriggerBehaviorType_None",
-    "Visible": "BuffShowType_Normal",
-    "IconBackgroundType": "IconBackgroundType_Other",
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_108.png@Gift_108",
-    "NameDescStrKey": "ST:150537",
-    "BuffDescStrKey": "ST:153863"
-  },
-  {
-    "ID": 741034010,
-    "LifeTime": -1,
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_BaAiEr"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741034011,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_Aura",
-    "FuncParams": [
-      3,
-      1,
-      -1,
-      741034012
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741034012,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_Pack",
-    "FuncParams": [
-      741034018,
-      741034020,
-      741034033
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
     "TriggerBehaviorType": "TriggerBehaviorType_None"
   }
 ]

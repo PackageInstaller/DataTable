@@ -1,5 +1,508 @@
 [
   {
+    "ID": 1504030,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100150400,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Sad",
+    "Voice": "HO_1504_Voice_Line_Interaction_3",
+    "WordStrKey": "ST:254634"
+  },
+  {
+    "ID": 1504031,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100150400,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Angry",
+    "Voice": "HO_1504_Voice_Line_Interaction_4",
+    "WordStrKey": "ST:254635"
+  },
+  {
+    "ID": 1504032,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100150400,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Angry",
+    "Voice": "HO_1504_Voice_Line_Interaction_5",
+    "WordStrKey": "ST:254636"
+  },
+  {
+    "ID": 1504033,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100150400,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Angry",
+    "Voice": "HO_1504_Voice_Line_Victory_4",
+    "WordStrKey": "ST:254637"
+  },
+  {
+    "ID": 2000001,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Surprise",
+    "Voice": "HO_2000_Voice_Line_Interaction_1",
+    "WordStrKey": "ST:104801"
+  },
+  {
+    "ID": 2000002,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Smile",
+    "Voice": "HO_2000_Voice_Line_Interaction_2",
+    "WordStrKey": "ST:104802"
+  },
+  {
+    "ID": 2000003,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Normal",
+    "Voice": "HO_2000_Voice_Line_Interaction_3",
+    "WordStrKey": "ST:104803"
+  },
+  {
+    "ID": 2000004,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Smile",
+    "Voice": "HO_2000_Voice_Line_Victory_1",
+    "WordStrKey": "ST:104804"
+  },
+  {
+    "ID": 2000005,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Angry",
+    "Voice": "HO_2000_Voice_Line_Victory_2",
+    "WordStrKey": "ST:104805"
+  },
+  {
+    "ID": 2000006,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Angry",
+    "Voice": "HO_2000_Voice_Line_Victory_3",
+    "WordStrKey": "ST:104806"
+  },
+  {
+    "ID": 2000007,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Smile",
+    "Voice": "HO_2000_Voice_Line_Summon",
+    "WordStrKey": "ST:104807"
+  },
+  {
+    "ID": 2000008,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Surprise",
+    "Voice": "HO_2000_Voice_Line_Break",
+    "WordStrKey": "ST:104808"
+  },
+  {
+    "ID": 2000009,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Sad",
+    "Voice": "HO_2000_Voice_Line_Failure_1",
+    "WordStrKey": "ST:104809"
+  },
+  {
+    "ID": 2000010,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Sad",
+    "Voice": "HO_2000_Voice_Line_Failure_2",
+    "WordStrKey": "ST:104810"
+  },
+  {
+    "ID": 2000011,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Angry",
+    "Voice": "HO_2000_Voice_Line_Failure_3",
+    "WordStrKey": "ST:104811"
+  },
+  {
+    "ID": 2000012,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Surprise",
+    "Voice": "HO_2000_Voice_Line_Interaction_1",
+    "NameStrKey": "ST:52091",
+    "WordStrKey": "ST:104801"
+  },
+  {
+    "ID": 2000013,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Smile",
+    "Voice": "HO_2000_Voice_Line_Interaction_2",
+    "NameStrKey": "ST:52091",
+    "WordStrKey": "ST:104802"
+  },
+  {
+    "ID": 2000014,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Normal",
+    "Voice": "HO_2000_Voice_Line_Interaction_3",
+    "NameStrKey": "ST:52091",
+    "WordStrKey": "ST:104803"
+  },
+  {
+    "ID": 2000015,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Smile",
+    "Voice": "HO_2000_Voice_Line_Victory_1",
+    "NameStrKey": "ST:52088",
+    "WordStrKey": "ST:104804"
+  },
+  {
+    "ID": 2000016,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Angry",
+    "Voice": "HO_2000_Voice_Line_Victory_2",
+    "NameStrKey": "ST:52088",
+    "WordStrKey": "ST:104805"
+  },
+  {
+    "ID": 2000017,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Angry",
+    "Voice": "HO_2000_Voice_Line_Victory_3",
+    "NameStrKey": "ST:52088",
+    "WordStrKey": "ST:104806"
+  },
+  {
+    "ID": 2000018,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Sad",
+    "Voice": "HO_2000_Voice_Line_Failure_1",
+    "NameStrKey": "ST:52090",
+    "WordStrKey": "ST:104809"
+  },
+  {
+    "ID": 2000019,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Sad",
+    "Voice": "HO_2000_Voice_Line_Failure_2",
+    "NameStrKey": "ST:52090",
+    "WordStrKey": "ST:104810"
+  },
+  {
+    "ID": 2000020,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Angry",
+    "Voice": "HO_2000_Voice_Line_Failure_3",
+    "NameStrKey": "ST:52090",
+    "WordStrKey": "ST:104811"
+  },
+  {
+    "ID": 2000021,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Smile",
+    "Voice": "HO_2000_Voice_Line_Summon",
+    "NameStrKey": "ST:52086",
+    "WordStrKey": "ST:104807"
+  },
+  {
+    "ID": 2000022,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Surprise",
+    "Voice": "HO_2000_Voice_Line_Break",
+    "NameStrKey": "ST:52091",
+    "WordStrKey": "ST:104808"
+  },
+  {
+    "ID": 2000023,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 10
+      }
+    ],
+    "Animation": "idle_Sad",
+    "Voice": "HO_2000_Voice_Line_Speech_1",
+    "NameStrKey": "ST:52094",
+    "WordStrKey": "ST:104812"
+  },
+  {
+    "ID": 2000024,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 15
+      }
+    ],
+    "Animation": "idle_Sad",
+    "Voice": "HO_2000_Voice_Line_Speech_2",
+    "NameStrKey": "ST:52094",
+    "WordStrKey": "ST:104813"
+  },
+  {
+    "ID": 2000025,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 20
+      }
+    ],
+    "Animation": "idle_Surprise",
+    "Voice": "HO_2000_Voice_Line_Speech_3",
+    "NameStrKey": "ST:52092",
+    "WordStrKey": "ST:104814"
+  },
+  {
+    "ID": 2000026,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 25
+      }
+    ],
+    "Animation": "idle_Smile",
+    "Voice": "HO_2000_Voice_Line_Speech_4",
+    "NameStrKey": "ST:52092",
+    "WordStrKey": "ST:104815"
+  },
+  {
+    "ID": 2000027,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 30
+      }
+    ],
+    "Animation": "idle_Angry",
+    "Voice": "HO_2000_Voice_Line_Speech_5",
+    "NameStrKey": "ST:52092",
+    "WordStrKey": "ST:104816"
+  },
+  {
+    "ID": 2000028,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 35
+      }
+    ],
+    "Animation": "idle_Smile",
+    "Voice": "HO_2000_Voice_Line_Speech_6",
+    "NameStrKey": "ST:52093",
+    "WordStrKey": "ST:104817"
+  },
+  {
+    "ID": 2000029,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 40
+      }
+    ],
+    "Animation": "idle_Smile",
+    "Voice": "HO_2000_Voice_Line_Speech_7",
+    "NameStrKey": "ST:52093",
+    "WordStrKey": "ST:104818"
+  },
+  {
+    "ID": 2000030,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 45
+      }
+    ],
+    "Animation": "idle_Normal",
+    "Voice": "HO_2000_Voice_Line_Speech_8",
+    "NameStrKey": "ST:52093",
+    "WordStrKey": "ST:103279"
+  },
+  {
+    "ID": 2000031,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 50
+      }
+    ],
+    "Animation": "idle_Angry",
+    "Voice": "HO_2000_Voice_Line_Speech_9",
+    "NameStrKey": "ST:52091",
+    "WordStrKey": "ST:106320"
+  },
+  {
+    "ID": 2000032,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 55
+      }
+    ],
+    "Animation": "idle_Normal",
+    "Voice": "HO_2000_Voice_Line_Speech_10",
+    "NameStrKey": "ST:52091",
+    "WordStrKey": "ST:104820"
+  },
+  {
+    "ID": 2000033,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200000,
+        "P2": 60
+      }
+    ],
+    "Animation": "idle_Smile",
+    "Voice": "HO_2000_Voice_Line_Speech_11",
+    "NameStrKey": "ST:52091",
+    "WordStrKey": "ST:104821"
+  },
+  {
     "ID": 2001001,
     "UnlockValue": [
       {
@@ -579,508 +1082,5 @@
     "Animation": "idle_Smile",
     "Voice": "HO_2001_Voice_Line_Victory_3",
     "WordStrKey": "ST:104852"
-  },
-  {
-    "ID": 2002007,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Shy",
-    "Voice": "HO_2001_Voice_Line_Summon",
-    "WordStrKey": "ST:104853"
-  },
-  {
-    "ID": 2002008,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Smile",
-    "Voice": "HO_2001_Voice_Line_Break",
-    "WordStrKey": "ST:104854"
-  },
-  {
-    "ID": 2002009,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Angry",
-    "Voice": "HO_2001_Voice_Line_Failure_1",
-    "WordStrKey": "ST:104855"
-  },
-  {
-    "ID": 2002010,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Sad",
-    "Voice": "HO_2001_Voice_Line_Failure_2",
-    "WordStrKey": "ST:104856"
-  },
-  {
-    "ID": 2002011,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Sad",
-    "Voice": "HO_2001_Voice_Line_Failure_3",
-    "WordStrKey": "ST:104857"
-  },
-  {
-    "ID": 2002012,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Smile",
-    "Voice": "HO_2001_Voice_Line_Interaction_1",
-    "NameStrKey": "ST:52091",
-    "WordStrKey": "ST:104847"
-  },
-  {
-    "ID": 2002013,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_surprise",
-    "Voice": "HO_2001_Voice_Line_Interaction_2",
-    "NameStrKey": "ST:52091",
-    "WordStrKey": "ST:104848"
-  },
-  {
-    "ID": 2002014,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Shy",
-    "Voice": "HO_2001_Voice_Line_Interaction_3",
-    "NameStrKey": "ST:52091",
-    "WordStrKey": "ST:104849"
-  },
-  {
-    "ID": 2002015,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Angry",
-    "Voice": "HO_2001_Voice_Line_Victory_1",
-    "NameStrKey": "ST:52088",
-    "WordStrKey": "ST:104850"
-  },
-  {
-    "ID": 2002016,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Angry",
-    "Voice": "HO_2001_Voice_Line_Victory_2",
-    "NameStrKey": "ST:52088",
-    "WordStrKey": "ST:104851"
-  },
-  {
-    "ID": 2002017,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Smile",
-    "Voice": "HO_2001_Voice_Line_Victory_3",
-    "NameStrKey": "ST:52088",
-    "WordStrKey": "ST:104852"
-  },
-  {
-    "ID": 2002018,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Angry",
-    "Voice": "HO_2001_Voice_Line_Failure_1",
-    "NameStrKey": "ST:52090",
-    "WordStrKey": "ST:104855"
-  },
-  {
-    "ID": 2002019,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Sad",
-    "Voice": "HO_2001_Voice_Line_Failure_2",
-    "NameStrKey": "ST:52090",
-    "WordStrKey": "ST:104856"
-  },
-  {
-    "ID": 2002020,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Sad",
-    "Voice": "HO_2001_Voice_Line_Failure_3",
-    "NameStrKey": "ST:52090",
-    "WordStrKey": "ST:104857"
-  },
-  {
-    "ID": 2002021,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Shy",
-    "Voice": "HO_2001_Voice_Line_Summon",
-    "NameStrKey": "ST:52086",
-    "WordStrKey": "ST:104853"
-  },
-  {
-    "ID": 2002022,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Smile",
-    "Voice": "HO_2001_Voice_Line_Break",
-    "NameStrKey": "ST:52091",
-    "WordStrKey": "ST:104854"
-  },
-  {
-    "ID": 2002023,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 10
-      }
-    ],
-    "Animation": "idle_Sad",
-    "Voice": "HO_2001_Voice_Line_Speech_1",
-    "NameStrKey": "ST:52094",
-    "WordStrKey": "ST:104858"
-  },
-  {
-    "ID": 2002024,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 15
-      }
-    ],
-    "Animation": "idle_Sad",
-    "Voice": "HO_2001_Voice_Line_Speech_2",
-    "NameStrKey": "ST:52094",
-    "WordStrKey": "ST:104859"
-  },
-  {
-    "ID": 2002025,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 20
-      }
-    ],
-    "Animation": "idle_Smile",
-    "Voice": "HO_2001_Voice_Line_Speech_3",
-    "NameStrKey": "ST:52092",
-    "WordStrKey": "ST:104860"
-  },
-  {
-    "ID": 2002026,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 25
-      }
-    ],
-    "Animation": "idle_Smile",
-    "Voice": "HO_2001_Voice_Line_Speech_4",
-    "NameStrKey": "ST:52092",
-    "WordStrKey": "ST:104847"
-  },
-  {
-    "ID": 2002027,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 30
-      }
-    ],
-    "Animation": "idle_Shy",
-    "Voice": "HO_2001_Voice_Line_Speech_5",
-    "NameStrKey": "ST:52092",
-    "WordStrKey": "ST:104861"
-  },
-  {
-    "ID": 2002028,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 35
-      }
-    ],
-    "Animation": "idle_Angry",
-    "Voice": "HO_2001_Voice_Line_Speech_6",
-    "NameStrKey": "ST:52093",
-    "WordStrKey": "ST:104862"
-  },
-  {
-    "ID": 2002029,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 40
-      }
-    ],
-    "Animation": "idle_Shy",
-    "Voice": "HO_2001_Voice_Line_Speech_7",
-    "NameStrKey": "ST:52093",
-    "WordStrKey": "ST:104863"
-  },
-  {
-    "ID": 2002030,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 45
-      }
-    ],
-    "Animation": "idle_Smile",
-    "Voice": "HO_2001_Voice_Line_Speech_8",
-    "NameStrKey": "ST:52093",
-    "WordStrKey": "ST:104864"
-  },
-  {
-    "ID": 2002031,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 50
-      }
-    ],
-    "Animation": "idle_Sad",
-    "Voice": "HO_2001_Voice_Line_Speech_9",
-    "NameStrKey": "ST:52091",
-    "WordStrKey": "ST:104865"
-  },
-  {
-    "ID": 2002032,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 55
-      }
-    ],
-    "Animation": "idle_Sad",
-    "Voice": "HO_2001_Voice_Line_Speech_10",
-    "NameStrKey": "ST:52091",
-    "WordStrKey": "ST:104866"
-  },
-  {
-    "ID": 2002033,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 60
-      }
-    ],
-    "Animation": "idle_Shy",
-    "Voice": "HO_2001_Voice_Line_Speech_11",
-    "NameStrKey": "ST:52091",
-    "WordStrKey": "ST:104867"
-  },
-  {
-    "ID": 2002034,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Smile",
-    "Voice": "HO_2001_Voice_Line_Interaction_4",
-    "WordStrKey": "ST:104868"
-  },
-  {
-    "ID": 2002035,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Angry",
-    "Voice": "HO_2001_Voice_Line_Interaction_5",
-    "WordStrKey": "ST:104869"
-  },
-  {
-    "ID": 2002036,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Smile",
-    "Voice": "HO_2001_Voice_Line_Interaction_6",
-    "WordStrKey": "ST:104870"
-  },
-  {
-    "ID": 2002037,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200200,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Smile",
-    "Voice": "HO_2001_Voice_Line_Victory_4",
-    "WordStrKey": "ST:104871"
-  },
-  {
-    "ID": 2003001,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200300,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Shy",
-    "Voice": "HO_2003_Voice_Line_Interaction_1",
-    "WordStrKey": "ST:106406"
-  },
-  {
-    "ID": 2003002,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200300,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Surprise",
-    "Voice": "HO_2003_Voice_Line_Interaction_2",
-    "WordStrKey": "ST:106407"
-  },
-  {
-    "ID": 2003003,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200300,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Sad",
-    "Voice": "HO_2003_Voice_Line_Interaction_3",
-    "WordStrKey": "ST:106408"
-  },
-  {
-    "ID": 2003004,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200300,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Smile",
-    "Voice": "HO_2003_Voice_Line_Victory_1",
-    "WordStrKey": "ST:106409"
-  },
-  {
-    "ID": 2003005,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200300,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Smile",
-    "Voice": "HO_2003_Voice_Line_Victory_2",
-    "WordStrKey": "ST:106410"
-  },
-  {
-    "ID": 2003006,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200300,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Shy",
-    "Voice": "HO_2003_Voice_Line_Victory_3",
-    "WordStrKey": "ST:106411"
   }
 ]

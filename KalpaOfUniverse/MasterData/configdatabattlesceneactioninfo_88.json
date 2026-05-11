@@ -1,5 +1,12 @@
 [
   {
+    "ID": 65007104,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
     "ID": 65007105,
     "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
     "Param1": [
@@ -16665,23 +16672,6 @@
       {
         "X": 9,
         "Y": 10
-      }
-    ]
-  },
-  {
-    "ID": 65010814,
-    "VersionTag": 65,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      10000030
-    ],
-    "Param2": [
-      10921
-    ],
-    "Param3": [
-      {
-        "X": 10,
-        "Y": 9
       }
     ]
   }

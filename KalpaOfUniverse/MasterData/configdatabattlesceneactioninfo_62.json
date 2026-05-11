@@ -1,5 +1,24 @@
 [
   {
+    "ID": 46006012,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 8
+      }
+    ],
+    "Param4": [
+      300
+    ]
+  },
+  {
     "ID": 46006013,
     "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
     "Param1": [
@@ -16456,19 +16475,5 @@
     "Param6": [
       0
     ]
-  },
-  {
-    "ID": 46114080,
-    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
-    "Param1": [
-      600
-    ],
-    "Param3": [
-      {
-        "X": 8,
-        "Y": 5
-      }
-    ],
-    "Param12": 1
   }
 ]

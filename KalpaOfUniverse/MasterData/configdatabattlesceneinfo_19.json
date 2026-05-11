@@ -1,5 +1,137 @@
 [
   {
+    "ID": 20351623,
+    "Strategy": 1,
+    "TurnMax": 10,
+    "AttackWinCondGroupIds": [
+      4
+    ],
+    "DefendWinCondGroupIds": [
+      3
+    ],
+    "AttackTeamFormationMin": 1,
+    "AttackTeamFormationMax": 5,
+    "DefendTeamFormationMin": 1,
+    "DefendTeamFormationMax": 10,
+    "AttackTeamFormationGrids": [
+      {
+        "X": 7,
+        "Y": 6,
+        "DirX": 4,
+        "DirY": 6
+      },
+      {
+        "X": 7,
+        "Y": 5,
+        "DirX": 4,
+        "DirY": 5
+      },
+      {
+        "X": 8,
+        "Y": 6,
+        "DirX": 4,
+        "DirY": 6
+      },
+      {
+        "X": 9,
+        "Y": 7,
+        "DirX": 4,
+        "DirY": 7
+      },
+      {
+        "X": 9,
+        "Y": 6,
+        "DirX": 4,
+        "DirY": 6
+      }
+    ],
+    "CharActorSetups": [
+      {
+        "ActorId": 201,
+        "X": 2,
+        "Y": 5,
+        "DirX": 7,
+        "DirY": 5,
+        "TeamType": 4,
+        "TeamId": 21,
+        "CharacterId": 122120252,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 202,
+        "X": 3,
+        "Y": 4,
+        "DirX": 7,
+        "DirY": 5,
+        "TeamType": 4,
+        "TeamId": 21,
+        "CharacterId": 122110352,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 203,
+        "X": 5,
+        "Y": 9,
+        "DirX": 8,
+        "DirY": 6,
+        "TeamType": 4,
+        "TeamId": 22,
+        "CharacterId": 122110352,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 204,
+        "X": 7,
+        "Y": 10,
+        "DirX": 8,
+        "DirY": 6,
+        "TeamType": 4,
+        "TeamId": 22,
+        "CharacterId": 122010122,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 206,
+        "X": 6,
+        "Y": 12,
+        "DirX": 9,
+        "DirY": 7,
+        "TeamType": 4,
+        "TeamId": 23,
+        "CharacterId": 122010123,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      }
+    ],
+    "BattleMapId": 1810,
+    "DefaultNpcLevel": 23,
+    "BattleMapResPath": "Cavern01Series/Maps/1810_ABS/",
+    "IsCanSkipSceneAction": true,
+    "SkipMessageID": 101,
+    "CameraVisions": [
+      0,
+      2
+    ],
+    "CameraDefaultPosition": [
+      8,
+      6
+    ],
+    "AttackTeamBGM": "BGM_Combat_Yang_1",
+    "DefendTeamBGM": "BGM_Combat_Yin_1",
+    "FormationBGM": "BGM_Combat_Preparation_1",
+    "MinMap": "Assets/GameProject/RuntimeAssets/UI/UIImage/MiniMap_ABS/MiniMap_1810.PNG@MiniMap_1810",
+    "CustomLoadingUI": [
+      6
+    ],
+    "SceneNameStrKey": "ST:44868",
+    "AttackWinDescStrKey": "ST:3566",
+    "DefendLoseDescStrKey": "ST:3567"
+  },
+  {
     "ID": 20351624,
     "Strategy": 1,
     "TurnMax": 10,
@@ -14281,150 +14413,6 @@
     ],
     "BattleMapId": 1802,
     "DefaultNpcLevel": 20,
-    "BattleMapResPath": "Cavern01Series/Maps/1802_ABS/",
-    "IsCanSkipSceneAction": true,
-    "SkipMessageID": 101,
-    "CameraVisions": [
-      0,
-      2
-    ],
-    "CameraDefaultPosition": [
-      8,
-      6
-    ],
-    "AttackTeamBGM": "BGM_Combat_Crisis_2",
-    "DefendTeamBGM": "BGM_Combat_Crisis_1",
-    "FormationBGM": "BGM_Emotion_Crisis_3",
-    "MinMap": "Assets/GameProject/RuntimeAssets/UI/UIImage/MiniMap_ABS/MiniMap_1802.PNG@MiniMap_1802",
-    "CustomLoadingUI": [
-      6
-    ],
-    "SceneNameStrKey": "ST:44868",
-    "AttackWinDescStrKey": "ST:3566",
-    "DefendLoseDescStrKey": "ST:3567"
-  },
-  {
-    "ID": 20351821,
-    "Strategy": 1,
-    "TurnMax": 10,
-    "AttackWinCondGroupIds": [
-      4
-    ],
-    "DefendWinCondGroupIds": [
-      3
-    ],
-    "AttackTeamFormationMin": 1,
-    "AttackTeamFormationMax": 5,
-    "DefendTeamFormationMin": 1,
-    "DefendTeamFormationMax": 10,
-    "AttackTeamFormationGrids": [
-      {
-        "X": 7,
-        "Y": 6,
-        "DirX": 7,
-        "DirY": 10
-      },
-      {
-        "X": 8,
-        "Y": 6,
-        "DirX": 8,
-        "DirY": 10
-      },
-      {
-        "X": 9,
-        "Y": 6,
-        "DirX": 9,
-        "DirY": 10
-      },
-      {
-        "X": 8,
-        "Y": 5,
-        "DirX": 8,
-        "DirY": 10
-      },
-      {
-        "X": 9,
-        "Y": 5,
-        "DirX": 9,
-        "DirY": 10
-      }
-    ],
-    "CharActorSetups": [
-      {
-        "ActorId": 201,
-        "X": 3,
-        "Y": 9,
-        "DirX": 7,
-        "DirY": 5,
-        "TeamType": 4,
-        "TeamId": 21,
-        "CharacterId": 121120052,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 202,
-        "X": 4,
-        "Y": 8,
-        "DirX": 7,
-        "DirY": 5,
-        "TeamType": 4,
-        "TeamId": 21,
-        "CharacterId": 122210302,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 203,
-        "X": 10,
-        "Y": 10,
-        "DirX": 8,
-        "DirY": 6,
-        "TeamType": 4,
-        "TeamId": 22,
-        "CharacterId": 122210102,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 204,
-        "X": 11,
-        "Y": 9,
-        "DirX": 9,
-        "DirY": 6,
-        "TeamType": 4,
-        "TeamId": 22,
-        "CharacterId": 122210202,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 205,
-        "X": 10,
-        "Y": 13,
-        "DirX": 8,
-        "DirY": 6,
-        "TeamType": 4,
-        "TeamId": 23,
-        "CharacterId": 122210202,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 206,
-        "X": 12,
-        "Y": 14,
-        "DirX": 9,
-        "DirY": 6,
-        "TeamType": 4,
-        "TeamId": 23,
-        "CharacterId": 121120052,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      }
-    ],
-    "BattleMapId": 1802,
-    "DefaultNpcLevel": 21,
     "BattleMapResPath": "Cavern01Series/Maps/1802_ABS/",
     "IsCanSkipSceneAction": true,
     "SkipMessageID": 101,

@@ -1,0 +1,392 @@
+[
+  {
+    "ID": 3102,
+    "RootName": "1_2_3",
+    "LevelIds": [
+      6601,
+      6602,
+      6603
+    ],
+    "GroupId": 4,
+    "CompleteCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6603
+      }
+    ],
+    "NextLevelCompeletCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6604
+      }
+    ],
+    "NameStrKey": "ST:256473",
+    "Desc1StrKey": "ST:256453"
+  },
+  {
+    "ID": 3103,
+    "RootName": "4_5_6",
+    "LevelIds": [
+      6604,
+      6605,
+      6606
+    ],
+    "GroupId": 4,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6603
+      }
+    ],
+    "CompleteCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6606
+      }
+    ],
+    "NextLevelCompeletCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6607
+      }
+    ],
+    "NameStrKey": "ST:256474",
+    "Desc1StrKey": "ST:256454"
+  },
+  {
+    "ID": 3104,
+    "RootName": "7_8_9",
+    "LevelIds": [
+      6607,
+      6608,
+      6609
+    ],
+    "GroupId": 4,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6606
+      }
+    ],
+    "CompleteCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6609
+      }
+    ],
+    "NextLevelCompeletCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6610
+      }
+    ],
+    "NameStrKey": "ST:256475",
+    "Desc1StrKey": "ST:256455"
+  },
+  {
+    "ID": 3105,
+    "RootName": "10",
+    "LevelIds": [
+      6610
+    ],
+    "GroupId": 4,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6609
+      }
+    ],
+    "CompleteCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6610
+      }
+    ],
+    "NextLevelCompeletCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6701
+      }
+    ],
+    "NameStrKey": "ST:256476",
+    "Desc1StrKey": "ST:242487"
+  },
+  {
+    "ID": 3106,
+    "RootName": "guangqiao",
+    "GroupId": 4,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6610
+      },
+      {
+        "CondType": "ConditionType_GDTribulationTimeUnlock",
+        "P1": 4,
+        "P2": 4
+      }
+    ],
+    "NextLevelCompeletCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6702
+      }
+    ]
+  },
+  {
+    "ID": 3107,
+    "RootName": "11_12_13",
+    "LevelIds": [
+      6701,
+      6702,
+      6703
+    ],
+    "GroupId": 4,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6610
+      },
+      {
+        "CondType": "ConditionType_GDTribulationTimeUnlock",
+        "P1": 4,
+        "P2": 4
+      }
+    ],
+    "CompleteCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6703
+      }
+    ],
+    "NextLevelCompeletCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6704
+      }
+    ],
+    "NameStrKey": "ST:260364",
+    "Desc1StrKey": "ST:259649"
+  },
+  {
+    "ID": 3108,
+    "RootName": "14_15_16",
+    "LevelIds": [
+      6704,
+      6705,
+      6706
+    ],
+    "GroupId": 4,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6703
+      }
+    ],
+    "CompleteCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6706
+      }
+    ],
+    "NextLevelCompeletCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6707
+      }
+    ],
+    "NameStrKey": "ST:260365",
+    "Desc1StrKey": "ST:259650"
+  },
+  {
+    "ID": 3109,
+    "RootName": "17_18_19",
+    "LevelIds": [
+      6707,
+      6708,
+      6709
+    ],
+    "GroupId": 4,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6706
+      }
+    ],
+    "CompleteCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6709
+      }
+    ],
+    "NextLevelCompeletCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6710
+      }
+    ],
+    "NameStrKey": "ST:260366",
+    "Desc1StrKey": "ST:259651"
+  },
+  {
+    "ID": 3110,
+    "RootName": "20",
+    "LevelIds": [
+      6710
+    ],
+    "GroupId": 4,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6709
+      }
+    ],
+    "CompleteCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6710
+      }
+    ],
+    "NextLevelCompeletCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6801
+      }
+    ],
+    "NameStrKey": "ST:259277",
+    "Desc1StrKey": "ST:242487"
+  },
+  {
+    "ID": 3111,
+    "RootName": "BOSS_entry",
+    "GroupId": 4,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6710
+      },
+      {
+        "CondType": "ConditionType_GDTribulationTimeUnlock",
+        "P1": 4,
+        "P2": 8
+      }
+    ],
+    "NextLevelCompeletCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6801
+      }
+    ]
+  },
+  {
+    "ID": 3112,
+    "RootName": "BOSSTL",
+    "GroupId": 4,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6710
+      },
+      {
+        "CondType": "ConditionType_GDTribulationTimeUnlock",
+        "P1": 4,
+        "P2": 8
+      }
+    ],
+    "NextLevelCompeletCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6801
+      }
+    ]
+  },
+  {
+    "ID": 3113,
+    "RootName": "BOSS_1",
+    "LevelIds": [
+      6801
+    ],
+    "GroupId": 4,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6710
+      },
+      {
+        "CondType": "ConditionType_GDTribulationTimeUnlock",
+        "P1": 4,
+        "P2": 8
+      }
+    ]
+  },
+  {
+    "ID": 3114,
+    "RootName": "BOSS_2",
+    "LevelIds": [
+      6802
+    ],
+    "GroupId": 4,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6710
+      },
+      {
+        "CondType": "ConditionType_GDTribulationTimeUnlock",
+        "P1": 4,
+        "P2": 8
+      }
+    ]
+  },
+  {
+    "ID": 3115,
+    "RootName": "BOSS_3",
+    "LevelIds": [
+      6803
+    ],
+    "GroupId": 4,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 4,
+        "P2": 6710
+      },
+      {
+        "CondType": "ConditionType_GDTribulationTimeUnlock",
+        "P1": 4,
+        "P2": 8
+      }
+    ]
+  }
+]

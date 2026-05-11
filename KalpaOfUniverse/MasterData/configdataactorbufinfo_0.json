@@ -1082,6 +1082,23 @@
     "BuffDescStrKey": "ST:237684"
   },
   {
+    "ID": 600000106,
+    "LifeTime": -1,
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "OtherBuffFlag": true,
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None",
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Other",
+    "NameDescStrKey": "ST:260034",
+    "BuffDescStrKey": "ST:259079"
+  },
+  {
     "ID": 624000010,
     "LifeTime": -1,
     "PropertiesList": [
@@ -4343,31 +4360,5 @@
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1002.png@Skill_Swordsman_1002",
     "NameDescStrKey": "ST:4867",
     "BuffDescStrKey": "ST:4872"
-  },
-  {
-    "ID": 700000401,
-    "LifeTime": 1,
-    "FuncType": "BufFuncType_RemainMovepointTransfer2MovepointMax",
-    "FuncParams": [
-      7000
-    ],
-    "ReplaceRule": "ReplaceRule_TimeRemain",
-    "SubType": 40,
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_Enhance"
-    ],
-    "CanBeDispersed": true,
-    "CanSpread": true,
-    "CanBeDisableByNoSensation": true,
-    "CanBePreventDisperse": true,
-    "AddEffect": 10000028,
-    "TriggerBehaviorId": 600000010,
-    "TriggerBehaviorType": "TriggerBehaviorType_Skill",
-    "Visible": "BuffShowType_Normal",
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1002.png@Skill_Swordsman_1002",
-    "NameDescStrKey": "ST:4867",
-    "BuffDescStrKey": "ST:4873"
   }
 ]

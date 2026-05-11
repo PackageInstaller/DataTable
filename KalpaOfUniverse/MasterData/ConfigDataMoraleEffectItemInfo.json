@@ -533,30 +533,75 @@
   },
   {
     "ID": 76,
-    "Condition": "MoraleCondition_HighEqual",
+    "Point": 30,
+    "Condition": "MoraleCondition_LowEqual",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/EXSkill_1249.png@EXSkill_1249",
-    "DisplayInfoStrKey": "ST:257460",
-    "TitleStrKey": "ST:258811"
+    "DisplayInfoStrKey": "ST:257472",
+    "TitleStrKey": "ST:258903"
   },
   {
     "ID": 77,
-    "Condition": "MoraleCondition_HighEqual",
+    "Point": 30,
+    "Condition": "MoraleCondition_High",
+    "Point2": 70,
+    "Condition2": "MoraleCondition_Low",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_jiurujiban.png@Buff_jiurujiban",
-    "DisplayInfoStrKey": "ST:258655",
-    "TitleStrKey": "ST:258750"
+    "DisplayInfoStrKey": "ST:258683",
+    "TitleStrKey": "ST:258684"
   },
   {
     "ID": 78,
     "Condition": "MoraleCondition_HighEqual",
+    "Point2": 50,
+    "Condition2": "MoraleCondition_HighEqual",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_jiurujiban.png@Buff_jiurujiban",
-    "DisplayInfoStrKey": "ST:258655",
-    "TitleStrKey": "ST:258780"
+    "DisplayInfoStrKey": "ST:258683",
+    "TitleStrKey": "ST:258904"
   },
   {
     "ID": 79,
+    "Point": 70,
     "Condition": "MoraleCondition_HighEqual",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Buf01_ABS/Buff_wansheng.png@Buff_wansheng",
-    "DisplayInfoStrKey": "ST:257462",
-    "TitleStrKey": "ST:258812"
+    "DisplayInfoStrKey": "ST:257474",
+    "TitleStrKey": "ST:258905"
+  },
+  {
+    "ID": 80,
+    "Point": -50,
+    "Condition": "MoraleCondition_Equal",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1018.png@Buff_1018",
+    "DisplayInfoStrKey": "ST:259868",
+    "TitleStrKey": "ST:259870"
+  },
+  {
+    "ID": 81,
+    "Condition": "MoraleCondition_Low",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/EXSkill_1249.png@EXSkill_1249",
+    "DisplayInfoStrKey": "ST:257472",
+    "TitleStrKey": "ST:259871"
+  },
+  {
+    "ID": 82,
+    "Condition": "MoraleCondition_High",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Buf01_ABS/Buff_wansheng.png@Buff_wansheng",
+    "DisplayInfoStrKey": "ST:257474",
+    "TitleStrKey": "ST:259872"
+  },
+  {
+    "ID": 83,
+    "Point": 50,
+    "Condition": "MoraleCondition_Equal",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1018.png@Buff_1018",
+    "DisplayInfoStrKey": "ST:259869",
+    "TitleStrKey": "ST:259870"
+  },
+  {
+    "ID": 84,
+    "Point": -50,
+    "Condition": "MoraleCondition_HighEqual",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1018.png@Buff_1018",
+    "DisplayInfoStrKey": "ST:260416",
+    "TitleStrKey": "ST:260417"
   }
 ]

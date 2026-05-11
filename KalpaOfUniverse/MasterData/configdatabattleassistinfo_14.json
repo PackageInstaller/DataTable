@@ -1,5 +1,18 @@
 [
   {
+    "ID": 42080,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
+    "AssistType": "BattleAssistType_MountainAssist",
+    "AssistEffect": [
+      {
+        "BuffId": 756004190,
+        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
+      }
+    ],
+    "SceneNameStrKey": "ST:152366",
+    "AssistDescStrKey": "ST:152690"
+  },
+  {
     "ID": 42081,
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
     "AssistType": "BattleAssistType_MountainAssist",
@@ -1106,17 +1119,5 @@
     ],
     "SceneNameStrKey": "ST:170204",
     "AssistDescStrKey": "ST:170210"
-  },
-  {
-    "ID": 44306,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_TearlessGateAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 760030006
-      }
-    ],
-    "SceneNameStrKey": "ST:170204",
-    "AssistDescStrKey": "ST:170211"
   }
 ]

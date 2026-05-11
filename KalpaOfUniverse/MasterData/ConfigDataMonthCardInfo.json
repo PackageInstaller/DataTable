@@ -11,6 +11,10 @@
       {
         "Type": "MonthCardEffectType_DelegateReduceTime",
         "P1": 20
+      },
+      {
+        "Type": "MonthCardEffectType_BackFlowSignRewardMultiple",
+        "P1": 1
       }
     ],
     "Spine": "Assets/GameProject/RuntimeAssets/Spine/UIspine/ui_yueka2/ui_yueka2_Graphic_Prefab.prefab",
@@ -20,71 +24,16 @@
   {
     "ID": 2,
     "Name": "独享光阴",
+    "DailyMissionId": 1016,
     "EffectInfoList": [
       {
-        "Type": "MonthCardEffectType_SecretsDailySweepTime",
-        "P1": 8
-      },
-      {
-        "Type": "MonthCardEffectType_SpiritLightRewardTimes",
-        "P1": 1
-      },
-      {
-        "Type": "MonthCardEffectType_CreateLifeRewardTimes",
-        "P1": 1
-      },
-      {
-        "Type": "MonthCardEffectType_JiuruTowerMainTowerSweepTimes",
-        "P1": 2
-      },
-      {
-        "Type": "MonthCardEffectType_JiuruTowerPropertyTowerSweepTimes",
-        "P1": 2
-      },
-      {
-        "Type": "MonthCardEffectType_CliqueChallengeCollectMaxTimes",
-        "P1": 2
-      },
-      {
-        "Type": "MonthCardEffectType_CliqueChallengeCollectDailyRecoverTimes",
-        "P1": 1
-      },
-      {
-        "Type": "MonthCardEffectType_CliqueChallengeSweepMaxTimes",
-        "P1": 2
-      },
-      {
-        "Type": "MonthCardEffectType_CliqueChallengeSweepDailyRecoverTimes",
-        "P1": 1
-      },
-      {
-        "Type": "MonthCardEffectType_AbyssChallengeSweepMaxTimes",
-        "P1": 7
-      },
-      {
-        "Type": "MonthCardEffectType_AbyssChallengeSweepDailyRecoverTimes",
-        "P1": 1
-      },
-      {
-        "Type": "MonthCardEffectType_ExpInstanceRewardTimes",
-        "P1": 2
-      },
-      {
         "Type": "MonthCardEffectType_AbysslChallengeNewSweepExtDrop",
-        "P1": 1
-      },
-      {
-        "Type": "MonthCardEffectType_HomeDailyGiftMaxTimes",
-        "P1": 10
-      },
-      {
-        "Type": "MonthCardEffectType_ArrestWarrantDailyTaskInc",
         "P1": 1
       }
     ],
     "Spine": "Assets/GameProject/RuntimeAssets/Spine/UIspine/ui_yueka3/ui_yueka3_Graphic_Prefab.prefab",
-    "DescStrKey": "ST:234312",
-    "SimpleDescStrKey": "ST:202057"
+    "DescStrKey": "ST:259717",
+    "SimpleDescStrKey": "ST:260087"
   },
   {
     "ID": 3,

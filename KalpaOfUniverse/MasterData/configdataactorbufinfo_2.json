@@ -1,5 +1,48 @@
 [
   {
+    "ID": 700000862,
+    "LifeTime": 3,
+    "FuncType": "BufFuncType_Damage4SelfOnStage",
+    "FuncParams": [
+      3,
+      32,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5000,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ActiveBattleStageType": "BattleStageType_AfterActionExec",
+    "ReplaceRule": "ReplaceRule_TimeRemain",
+    "SubType": 86,
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_Weak",
+      "BufCategory_poisoning"
+    ],
+    "CanBeDispersed": true,
+    "CanSteal": true,
+    "CanSpread": true,
+    "CanBeDisableByNoSensation": true,
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorId": 600000030,
+    "TriggerBehaviorType": "TriggerBehaviorType_Skill",
+    "SkillPipeline": true,
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Bad",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1018.png@Buff_1018",
+    "NameDescStrKey": "ST:4828",
+    "BuffDescStrKey": "ST:35505"
+  },
+  {
     "ID": 700000870,
     "LifeTime": 1,
     "ActiveCondIds": [
@@ -6166,34 +6209,6 @@
   {
     "ID": 700001290,
     "LifeTime": 1,
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_MagicDamageAdditionalSub_D",
-        "Value": -2000
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_TimeRemain",
-    "SubType": 129,
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_Weak"
-    ],
-    "CanBeDispersed": true,
-    "CanSteal": true,
-    "CanSpread": true,
-    "CanBeDisableByNoSensation": true,
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None",
-    "Visible": "BuffShowType_Normal",
-    "IconBackgroundType": "IconBackgroundType_Bad",
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1013.png@Buff_1013",
-    "NameDescStrKey": "ST:35488",
-    "BuffDescStrKey": "ST:64303"
-  },
-  {
-    "ID": 700001291,
-    "LifeTime": 2,
     "PropertiesList": [
       {
         "Id": "PropertiesId_MagicDamageAdditionalSub_D",

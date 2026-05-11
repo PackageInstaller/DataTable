@@ -1,5 +1,17 @@
 [
   {
+    "ID": 44306,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
+    "AssistType": "BattleAssistType_TearlessGateAssist",
+    "AssistEffect": [
+      {
+        "BuffId": 760030006
+      }
+    ],
+    "SceneNameStrKey": "ST:170204",
+    "AssistDescStrKey": "ST:170211"
+  },
+  {
     "ID": 44307,
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
     "AssistType": "BattleAssistType_TearlessGateAssist",
@@ -1066,17 +1078,5 @@
     ],
     "SceneNameStrKey": "ST:173172",
     "AssistDescStrKey": "ST:173183"
-  },
-  {
-    "ID": 44423,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_TearlessGateAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 760030173
-      }
-    ],
-    "SceneNameStrKey": "ST:172701",
-    "AssistDescStrKey": "ST:172706"
   }
 ]

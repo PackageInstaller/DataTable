@@ -1,5 +1,23 @@
 [
   {
+    "ID": 42101573,
+    "ActionType": "BattleSceneActionType_SummonFacilitie",
+    "Param1": [
+      91,
+      970,
+      10000,
+      9971,
+      -1,
+      0
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 7
+      }
+    ]
+  },
+  {
     "ID": 42101574,
     "ActionType": "BattleSceneActionType_SummonFacilitie",
     "Param1": [
@@ -20474,12 +20492,5 @@
     "ActionType": "BattleSceneActionType_Music",
     "Param5": "BGM_Emotion_Uncertain_3",
     "SkipCondId": 24191100
-  },
-  {
-    "ID": 42216001,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      2000
-    ]
   }
 ]

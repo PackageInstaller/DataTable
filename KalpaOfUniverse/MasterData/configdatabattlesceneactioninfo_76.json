@@ -1,5 +1,21 @@
 [
   {
+    "ID": 50202644,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      216003101
+    ],
+    "Param2": [
+      10211
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ]
+  },
+  {
     "ID": 50202645,
     "ActionType": "BattleSceneActionType_HurtActorHpPercentByGridPosition",
     "Param1": [
@@ -17418,16 +17434,5 @@
     "Param1": [
       50301712
     ]
-  },
-  {
-    "ID": 50301214,
-    "ActionType": "BattleSceneActionType_HurtActorHpPercent",
-    "Param1": [
-      243
-    ],
-    "Param2": [
-      10000
-    ],
-    "SkipCondId": 50301709
   }
 ]

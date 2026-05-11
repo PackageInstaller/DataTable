@@ -75,7 +75,8 @@
       }
     ],
     "MapResPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/ShenMoJieQiPrefab_ABS/ShenMoJieQiMainUIPrefab.prefab",
-    "BossMapResPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/ShenMoJieQiPrefab_ABS/ShenMoJieQiUltimateUIPrefab.prefab"
+    "BossMapResPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/ShenMoJieQiPrefab_ABS/ShenMoJieQiUltimateUIPrefab.prefab",
+    "NameStrKey": "ST:235416"
   },
   {
     "ID": 2,
@@ -133,7 +134,7 @@
     "BossCreditGroupId": 2,
     "SeaonRankRewardGroupID": 2,
     "BossBattleRankType": "RankingListType_GDTribulationLS",
-    "ESType": 67,
+    "ESType": "EquipSeparatorType_GDTribulationRS02",
     "TianDiJourneyIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/Licheng_SJ03.png@Licheng_SJ03",
     "TianDiJourneyIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseActivityIcon_255801.png@CourseActivityIcon_255801",
     "CloudUnlockInfoList": [
@@ -147,7 +148,8 @@
       }
     ],
     "MapResPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/ShenMoJieQiPrefab_ABS/ShenMoJieQiMain02UIPrefab.prefab",
-    "BossMapResPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/ShenMoJieQiPrefab_ABS/ShenMoJieQiUltimate02UIPrefab.prefab"
+    "BossMapResPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/ShenMoJieQiPrefab_ABS/ShenMoJieQiUltimate02UIPrefab.prefab",
+    "NameStrKey": "ST:241830"
   },
   {
     "ID": 3,
@@ -226,7 +228,8 @@
     "BossMapResPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/ShenMoJieQiPrefab_ABS/ShenMoJieQiUltimate03UIPrefab.prefab",
     "Type": 1,
     "MapFxGroupId": 3,
-    "BossChallengeFxGroupId": 64
+    "BossChallengeFxGroupId": 64,
+    "NameStrKey": "ST:247598"
   },
   {
     "ID": 4,
@@ -242,7 +245,19 @@
       6608,
       6609,
       6610,
-      6701
+      6701,
+      6702,
+      6703,
+      6704,
+      6705,
+      6706,
+      6707,
+      6708,
+      6709,
+      6710,
+      6801,
+      6802,
+      6803
     ],
     "FaBaoSetup": 4,
     "SPItemID": 581000009,
@@ -263,16 +278,20 @@
       25,
       26,
       27,
-      28
+      28,
+      29
     ],
     "BossCreditGroupId": 4,
     "SeaonRankRewardGroupID": 4,
     "BossBattleRankType": "RankingListType_GDTribulationLS",
-    "ESType": 68,
+    "ESType": "EquipSeparatorType_GDTribulation4",
     "TianDiJourneyIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/Licheng_SJ05.png@Licheng_SJ05",
     "TianDiJourneyIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseActivityIcon_266616.png@CourseActivityIcon_266616",
     "MapResPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/ShenMoJieQiPrefab_ABS/ShenMoJieQiMain04UIPrefab.prefab",
     "BossMapResPath": "Assets/GameProject/RuntimeAssets/Scenes/QianNv01Series/Maps/Camp_SJ03B_ABS/Camp_SJ03B.unity",
-    "Type": 2
+    "Type": 2,
+    "Scene3DItemGroupId": 4,
+    "DialogBeforeId": 660091701,
+    "NameStrKey": "ST:256444"
   }
 ]

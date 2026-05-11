@@ -1,5 +1,105 @@
 [
   {
+    "ID": 24256017,
+    "Strategy": 1,
+    "TurnMax": 15,
+    "AttackWinCondGroupIds": [
+      24020611
+    ],
+    "DefendWinCondGroupIds": [
+      3
+    ],
+    "AttackTeamFormationMin": 1,
+    "AttackTeamFormationMax": 5,
+    "DefendTeamFormationMin": 1,
+    "DefendTeamFormationMax": 10,
+    "AttackTeamFormationGrids": [
+      {
+        "X": 8,
+        "Y": 11,
+        "DirX": 1,
+        "DirY": 11
+      },
+      {
+        "X": 8,
+        "Y": 10,
+        "DirX": 1,
+        "DirY": 10
+      },
+      {
+        "X": 8,
+        "Y": 9,
+        "DirX": 1,
+        "DirY": 9
+      },
+      {
+        "X": 9,
+        "Y": 11,
+        "DirX": 1,
+        "DirY": 11
+      },
+      {
+        "X": 9,
+        "Y": 10,
+        "DirX": 1,
+        "DirY": 10
+      },
+      {
+        "X": 9,
+        "Y": 9,
+        "DirX": 1,
+        "DirY": 9
+      }
+    ],
+    "CharActorSetups": [
+      {
+        "ActorId": 201,
+        "X": 4,
+        "Y": 10,
+        "DirX": 20,
+        "DirY": 10,
+        "TeamType": 4,
+        "TeamId": 21,
+        "CharacterId": 124136017,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      }
+    ],
+    "BattleMapId": 2207,
+    "DefaultNpcLevel": 60,
+    "BattleMapResPath": "SanHuang02Series/Maps/2207_ABS/",
+    "BattleEventTriggerInfos": [
+      4133217,
+      4133267,
+      4133417
+    ],
+    "BattleAchievementIds": [
+      4253105,
+      4253106,
+      4253107
+    ],
+    "IsCanSkipSceneAction": true,
+    "SkipMessageID": 101,
+    "CameraVisions": [
+      0,
+      2
+    ],
+    "CameraDefaultPosition": [
+      7,
+      10
+    ],
+    "AttackTeamBGM": "BGM_Combat_Boss_6",
+    "DefendTeamBGM": "BGM_Combat_Boss_6",
+    "FormationBGM": "BGM_Combat_Burn",
+    "MinMap": "Assets/GameProject/RuntimeAssets/UI/UIImage/MiniMap02_ABS/MiniMap_2202.PNG@MiniMap_2202",
+    "CustomLoadingUI": [
+      6
+    ],
+    "SceneNameStrKey": "ST:126497",
+    "AttackWinDescStrKey": "ST:126498",
+    "DefendLoseDescStrKey": "ST:3567"
+  },
+  {
     "ID": 24256018,
     "Strategy": 1,
     "TurnMax": 15,
@@ -12897,103 +12997,5 @@
     "SceneNameStrKey": "ST:155299",
     "AttackWinDescStrKey": "ST:157011",
     "DefendLoseDescStrKey": "ST:156455"
-  },
-  {
-    "ID": 24272301,
-    "Strategy": 1,
-    "CharActorSetups": [
-      {
-        "ActorId": 101,
-        "X": 1,
-        "Y": 5,
-        "DirX": 1,
-        "DirY": 6,
-        "TeamType": 1,
-        "TeamId": 11,
-        "CharacterId": 152041625,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 102,
-        "X": 1,
-        "Y": 6,
-        "DirX": 1,
-        "DirY": 7,
-        "TeamType": 1,
-        "TeamId": 11,
-        "CharacterId": 152041626,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      }
-    ],
-    "FaciliteActorSetups": [
-      {
-        "ActorId": 901,
-        "X": 12,
-        "Y": 14,
-        "DirX": 12,
-        "DirY": 13,
-        "TeamId": 91,
-        "FaciliteId": 1032,
-        "Level": -1,
-        "HpPercent": 10000
-      },
-      {
-        "ActorId": 902,
-        "X": 4,
-        "Y": 10,
-        "DirX": 4,
-        "DirY": 9,
-        "TeamId": 91,
-        "FaciliteId": 207,
-        "Level": -1,
-        "HpPercent": 10000
-      },
-      {
-        "ActorId": 903,
-        "X": 2,
-        "Y": 13,
-        "DirX": 2,
-        "DirY": 12,
-        "TeamId": 91,
-        "FaciliteId": 207,
-        "Level": -1,
-        "HpPercent": 10000
-      },
-      {
-        "ActorId": 904,
-        "X": 10,
-        "Y": 13,
-        "DirX": 10,
-        "DirY": 12,
-        "TeamId": 91,
-        "FaciliteId": 207,
-        "Level": -1,
-        "HpPercent": 10000
-      }
-    ],
-    "BattleMapId": 1203,
-    "DefaultNpcLevel": 60,
-    "BattleMapResPath": "LandScape01Series/Maps/1203_ABS/",
-    "SceneActionGroupId": 4272301,
-    "IsCanSkipSceneAction": true,
-    "SkipMessageID": 101,
-    "CameraVisions": [
-      0,
-      2
-    ],
-    "CameraDefaultPosition": [
-      1,
-      5
-    ],
-    "AttackTeamBGM": "BGM_Combat_Yang_1",
-    "DefendTeamBGM": "BGM_Combat_Yin_1",
-    "FormationBGM": "BGM_Combat_Preparation_2",
-    "MinMap": "Assets/GameProject/RuntimeAssets/UI/UIImage/MiniMap_ABS/MiniMap_1203.PNG@MiniMap_1203",
-    "CustomLoadingUI": [
-      6
-    ],
-    "SceneNameStrKey": "ST:155299"
   }
 ]

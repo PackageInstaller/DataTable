@@ -1,5 +1,72 @@
 [
   {
+    "ID": 1910,
+    "Strategy": 1,
+    "TurnMax": 10,
+    "AttackWinCondGroupIds": [
+      4
+    ],
+    "DefendWinCondGroupIds": [
+      3
+    ],
+    "AttackTeamFormationMin": 1,
+    "AttackTeamFormationMax": 1,
+    "DefendTeamFormationMin": 1,
+    "DefendTeamFormationMax": 1,
+    "AttackTeamFormationGrids": [
+      {
+        "X": 7,
+        "Y": 5,
+        "DirX": 7,
+        "DirY": 9
+      }
+    ],
+    "CharActorSetups": [
+      {
+        "ActorId": 101,
+        "X": 8,
+        "Y": 18,
+        "DirX": 8,
+        "DirY": 1,
+        "TeamType": 4,
+        "TeamId": 21,
+        "CharacterId": 131010011,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      }
+    ],
+    "TeamAIInfo": [
+      {
+        "TeamId": 21,
+        "TeamAIType": "TeamAIType_Alert",
+        "Param1": 10
+      }
+    ],
+    "BattleMapId": 1910,
+    "DefaultNpcLevel": 60,
+    "BattleMapResPath": "SandCastle01Series/Maps/1910_ABS/",
+    "IsCanSkipSceneAction": true,
+    "SkipMessageID": 101,
+    "CameraVisions": [
+      0,
+      2
+    ],
+    "CameraDefaultPosition": [
+      7,
+      5
+    ],
+    "AttackTeamBGM": "BGM_Combat_Yang_1",
+    "DefendTeamBGM": "BGM_Combat_Yin_1",
+    "FormationBGM": "BGM_Combat_Preparation_2",
+    "MinMap": "Assets/GameProject/RuntimeAssets/UI/UIImage/MiniMap_ABS/MiniMap_1910.PNG@MiniMap_1910",
+    "CustomLoadingUI": [
+      6
+    ],
+    "SceneNameStrKey": "ST:98666",
+    "AttackWinDescStrKey": "ST:3566",
+    "DefendLoseDescStrKey": "ST:3567"
+  },
+  {
     "ID": 1911,
     "Strategy": 1,
     "TurnMax": 10,
@@ -8206,73 +8273,6 @@
       6
     ],
     "SceneNameStrKey": "ST:127194",
-    "AttackWinDescStrKey": "ST:3566",
-    "DefendLoseDescStrKey": "ST:3567"
-  },
-  {
-    "ID": 2603,
-    "Strategy": 1,
-    "TurnMax": 10,
-    "AttackWinCondGroupIds": [
-      4
-    ],
-    "DefendWinCondGroupIds": [
-      3
-    ],
-    "AttackTeamFormationMin": 1,
-    "AttackTeamFormationMax": 1,
-    "DefendTeamFormationMin": 1,
-    "DefendTeamFormationMax": 1,
-    "AttackTeamFormationGrids": [
-      {
-        "X": 5,
-        "Y": 9,
-        "DirX": 5,
-        "DirY": 10
-      }
-    ],
-    "CharActorSetups": [
-      {
-        "ActorId": 101,
-        "X": 7,
-        "Y": 12,
-        "DirX": 7,
-        "DirY": 16,
-        "TeamType": 4,
-        "TeamId": 21,
-        "CharacterId": 131010011,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      }
-    ],
-    "TeamAIInfo": [
-      {
-        "TeamId": 21,
-        "TeamAIType": "TeamAIType_Alert",
-        "Param1": 10
-      }
-    ],
-    "BattleMapId": 2603,
-    "DefaultNpcLevel": 60,
-    "BattleMapResPath": "TouMingSeries/Maps/2603_ABS/",
-    "IsCanSkipSceneAction": true,
-    "SkipMessageID": 101,
-    "CameraVisions": [
-      0,
-      2
-    ],
-    "CameraDefaultPosition": [
-      5,
-      9
-    ],
-    "AttackTeamBGM": "BGM_Combat_Yang_1",
-    "DefendTeamBGM": "BGM_Combat_Yin_1",
-    "FormationBGM": "BGM_Combat_Preparation_2",
-    "MinMap": "Assets/GameProject/RuntimeAssets/UI/UIImage/MiniMap05_ABS/MiniMap_1606.PNG@MiniMap_1606",
-    "CustomLoadingUI": [
-      6
-    ],
-    "SceneNameStrKey": "ST:127195",
     "AttackWinDescStrKey": "ST:3566",
     "DefendLoseDescStrKey": "ST:3567"
   }

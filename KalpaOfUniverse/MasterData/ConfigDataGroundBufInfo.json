@@ -4778,6 +4778,35 @@
     "BuffDescStrKey": "ST:233906"
   },
   {
+    "ID": 499,
+    "TriggerFuncTp": "TriggerFuncType_StayImm",
+    "ValidTarget": 5,
+    "Priority": 5,
+    "Category": 1,
+    "ElapseTurn": 2,
+    "CharacterID": 100206,
+    "SizeX": 1,
+    "SizeY": 1,
+    "ValidGridTypes": [
+      1,
+      2,
+      3,
+      4,
+      7,
+      8,
+      11,
+      13,
+      14,
+      15,
+      20
+    ],
+    "BuffList": [
+      763162850
+    ],
+    "NameDescStrKey": "ST:258812",
+    "BuffDescStrKey": "ST:258813"
+  },
+  {
     "ID": 500,
     "TriggerFuncTp": "TriggerFuncType_StayImm",
     "ValidTarget": 5,
@@ -4806,6 +4835,36 @@
     ],
     "NameDescStrKey": "ST:6677",
     "BuffDescStrKey": "ST:77098"
+  },
+  {
+    "ID": 501,
+    "TriggerFuncTp": "TriggerFuncType_StayImm",
+    "ValidTarget": 5,
+    "Priority": 5,
+    "Category": 1,
+    "ElapseTurn": 2,
+    "CharacterID": 100207,
+    "SizeX": 1,
+    "SizeY": 1,
+    "ValidGridTypes": [
+      1,
+      2,
+      3,
+      4,
+      7,
+      8,
+      11,
+      13,
+      14,
+      15,
+      20
+    ],
+    "BuffList": [
+      700320231,
+      700320233
+    ],
+    "NameDescStrKey": "ST:233899",
+    "BuffDescStrKey": "ST:233903"
   },
   {
     "ID": 510,
@@ -5386,7 +5445,7 @@
       700000120
     ],
     "NameDescStrKey": "ST:254472",
-    "BuffDescStrKey": "ST:256466"
+    "BuffDescStrKey": "ST:256487"
   },
   {
     "ID": 537,
@@ -5424,5 +5483,20 @@
     ],
     "NameDescStrKey": "ST:103672",
     "BuffDescStrKey": "ST:256073"
+  },
+  {
+    "ID": 538,
+    "ValidCamp": [
+      1
+    ],
+    "ValidTarget": 1,
+    "Priority": 8,
+    "Category": 1,
+    "ElapseTurn": -1,
+    "CharacterID": 111514,
+    "SizeX": 1,
+    "SizeY": 1,
+    "NameDescStrKey": "ST:30225",
+    "BuffDescStrKey": "ST:259978"
   }
 ]

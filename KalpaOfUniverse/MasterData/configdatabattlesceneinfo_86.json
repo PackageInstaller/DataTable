@@ -1,5 +1,68 @@
 [
   {
+    "ID": 24430102,
+    "Strategy": 1,
+    "CharActorSetups": [
+      {
+        "ActorId": 101,
+        "X": 10,
+        "Y": 15,
+        "DirX": 10,
+        "DirY": 18,
+        "TeamType": 1,
+        "TeamId": 11,
+        "CharacterId": 100100003,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 102,
+        "X": 12,
+        "Y": 15,
+        "DirX": 11,
+        "DirY": 17,
+        "TeamType": 1,
+        "TeamId": 11,
+        "CharacterId": 250911126,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 103,
+        "X": 10,
+        "Y": 17,
+        "DirX": 10,
+        "DirY": 20,
+        "TeamType": 1,
+        "TeamId": 11,
+        "CharacterId": 152042606,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      }
+    ],
+    "BattleMapId": 2603,
+    "DefaultNpcLevel": 30,
+    "BattleMapResPath": "TouMingSeries/Maps/2603_ABS/",
+    "SceneActionGroupId": 430102,
+    "IsCanSkipSceneAction": true,
+    "SkipMessageID": 101,
+    "CameraVisions": [
+      0,
+      2
+    ],
+    "CameraDefaultPosition": [
+      3,
+      9
+    ],
+    "AttackTeamBGM": "BGM_Combat_Yang_1",
+    "DefendTeamBGM": "BGM_Combat_Yin_1",
+    "FormationBGM": "BGM_Combat_Preparation_2",
+    "CustomLoadingUI": [
+      6
+    ],
+    "SceneNameStrKey": "ST:181871"
+  },
+  {
     "ID": 24430110,
     "Strategy": 1,
     "TurnMax": 10,
@@ -11875,8 +11938,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 902,
@@ -11887,8 +11949,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 903,
@@ -11899,8 +11960,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 905,
@@ -11911,8 +11971,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 906,
@@ -11923,8 +11982,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 907,
@@ -11935,8 +11993,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 908,
@@ -11947,8 +12004,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 909,
@@ -11959,8 +12015,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 910,
@@ -11971,8 +12026,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 911,
@@ -11983,8 +12037,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 912,
@@ -11995,8 +12048,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 913,
@@ -12007,8 +12059,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 914,
@@ -12019,8 +12070,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 915,
@@ -12031,8 +12081,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 921,
@@ -12043,8 +12092,7 @@
         "TeamId": 91,
         "FaciliteId": 1195,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 922,
@@ -12055,8 +12103,7 @@
         "TeamId": 91,
         "FaciliteId": 1195,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 923,
@@ -12067,8 +12114,7 @@
         "TeamId": 91,
         "FaciliteId": 1195,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 924,
@@ -12079,8 +12125,7 @@
         "TeamId": 91,
         "FaciliteId": 1195,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 925,
@@ -12091,8 +12136,7 @@
         "TeamId": 91,
         "FaciliteId": 1195,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 926,
@@ -12103,8 +12147,7 @@
         "TeamId": 91,
         "FaciliteId": 1195,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 927,
@@ -12115,8 +12158,7 @@
         "TeamId": 91,
         "FaciliteId": 1195,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 928,
@@ -12127,8 +12169,7 @@
         "TeamId": 91,
         "FaciliteId": 1195,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 941,
@@ -12139,8 +12180,7 @@
         "TeamId": 91,
         "FaciliteId": 1198,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 942,
@@ -12151,8 +12191,7 @@
         "TeamId": 91,
         "FaciliteId": 1198,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 943,
@@ -12163,8 +12202,7 @@
         "TeamId": 91,
         "FaciliteId": 1199,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 945,
@@ -12175,8 +12213,7 @@
         "TeamId": 91,
         "FaciliteId": 1199,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 946,
@@ -12187,8 +12224,7 @@
         "TeamId": 91,
         "FaciliteId": 1198,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 947,
@@ -12199,8 +12235,7 @@
         "TeamId": 91,
         "FaciliteId": 1198,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 948,
@@ -12211,8 +12246,7 @@
         "TeamId": 91,
         "FaciliteId": 1199,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 951,
@@ -12223,8 +12257,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 952,
@@ -12235,8 +12268,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 953,
@@ -12247,8 +12279,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 954,
@@ -12259,8 +12290,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 955,
@@ -12271,8 +12301,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 956,
@@ -12283,8 +12312,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 957,
@@ -12295,8 +12323,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 958,
@@ -12307,8 +12334,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 959,
@@ -12319,8 +12345,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 960,
@@ -12331,8 +12356,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 961,
@@ -12343,8 +12367,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 962,
@@ -12355,8 +12378,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 963,
@@ -12367,8 +12389,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 964,
@@ -12379,8 +12400,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 965,
@@ -12391,8 +12411,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 966,
@@ -12403,8 +12422,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 967,
@@ -12414,8 +12432,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 968,
@@ -12425,8 +12442,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 969,
@@ -12436,8 +12452,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 970,
@@ -12447,8 +12462,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 971,
@@ -12459,8 +12473,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 972,
@@ -12471,8 +12484,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 973,
@@ -12483,8 +12495,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 974,
@@ -12495,8 +12506,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 975,
@@ -12506,8 +12516,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 976,
@@ -12517,8 +12526,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 977,
@@ -12528,8 +12536,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 978,
@@ -12539,8 +12546,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 979,
@@ -12551,8 +12557,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 980,
@@ -12563,8 +12568,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 981,
@@ -12575,8 +12579,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 982,
@@ -12587,8 +12590,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 983,
@@ -12599,8 +12601,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 984,
@@ -12611,8 +12612,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 985,
@@ -12623,8 +12623,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 986,
@@ -12635,8 +12634,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 931,
@@ -12647,8 +12645,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 932,
@@ -12659,8 +12656,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 933,
@@ -12671,8 +12667,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 934,
@@ -12683,8 +12678,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 935,
@@ -12695,8 +12689,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 991,
@@ -12707,8 +12700,7 @@
         "TeamId": 91,
         "FaciliteId": 1202,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 992,
@@ -12719,8 +12711,7 @@
         "TeamId": 91,
         "FaciliteId": 1202,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 993,
@@ -12731,8 +12722,7 @@
         "TeamId": 91,
         "FaciliteId": 1202,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 995,
@@ -12743,8 +12733,7 @@
         "TeamId": 91,
         "FaciliteId": 1202,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 996,
@@ -12755,8 +12744,7 @@
         "TeamId": 91,
         "FaciliteId": 1202,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 997,
@@ -12767,8 +12755,7 @@
         "TeamId": 91,
         "FaciliteId": 1202,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       }
     ],
     "BattleMapId": 1804,
@@ -12878,8 +12865,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 902,
@@ -12890,8 +12876,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 903,
@@ -12902,8 +12887,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 905,
@@ -12914,8 +12898,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 906,
@@ -12926,8 +12909,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 907,
@@ -12938,8 +12920,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 908,
@@ -12950,8 +12931,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 909,
@@ -12962,8 +12942,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 910,
@@ -12974,8 +12953,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 911,
@@ -12986,8 +12964,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 912,
@@ -12998,8 +12975,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 913,
@@ -13010,8 +12986,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 914,
@@ -13022,8 +12997,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 915,
@@ -13034,8 +13008,7 @@
         "TeamId": 91,
         "FaciliteId": 1194,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 921,
@@ -13046,8 +13019,7 @@
         "TeamId": 91,
         "FaciliteId": 1195,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 922,
@@ -13058,8 +13030,7 @@
         "TeamId": 91,
         "FaciliteId": 1195,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 923,
@@ -13070,8 +13041,7 @@
         "TeamId": 91,
         "FaciliteId": 1195,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 924,
@@ -13082,8 +13052,7 @@
         "TeamId": 91,
         "FaciliteId": 1195,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 925,
@@ -13094,8 +13063,7 @@
         "TeamId": 91,
         "FaciliteId": 1195,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 926,
@@ -13106,8 +13074,7 @@
         "TeamId": 91,
         "FaciliteId": 1195,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 927,
@@ -13118,8 +13085,7 @@
         "TeamId": 91,
         "FaciliteId": 1195,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 928,
@@ -13130,8 +13096,7 @@
         "TeamId": 91,
         "FaciliteId": 1195,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 941,
@@ -13142,8 +13107,7 @@
         "TeamId": 91,
         "FaciliteId": 1198,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 942,
@@ -13154,8 +13118,7 @@
         "TeamId": 91,
         "FaciliteId": 1198,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 943,
@@ -13166,8 +13129,7 @@
         "TeamId": 91,
         "FaciliteId": 1199,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 945,
@@ -13178,8 +13140,7 @@
         "TeamId": 91,
         "FaciliteId": 1199,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 946,
@@ -13190,8 +13151,7 @@
         "TeamId": 91,
         "FaciliteId": 1198,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 947,
@@ -13202,8 +13162,7 @@
         "TeamId": 91,
         "FaciliteId": 1198,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 948,
@@ -13214,8 +13173,7 @@
         "TeamId": 91,
         "FaciliteId": 1199,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 951,
@@ -13226,8 +13184,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 952,
@@ -13238,8 +13195,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 953,
@@ -13250,8 +13206,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 954,
@@ -13262,8 +13217,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 955,
@@ -13274,8 +13228,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 956,
@@ -13286,8 +13239,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 957,
@@ -13298,8 +13250,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 958,
@@ -13310,8 +13261,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 959,
@@ -13322,8 +13272,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 960,
@@ -13334,8 +13283,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 961,
@@ -13346,8 +13294,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 962,
@@ -13358,8 +13305,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 963,
@@ -13370,8 +13316,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 964,
@@ -13382,8 +13327,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 965,
@@ -13394,8 +13338,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 966,
@@ -13406,8 +13349,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 967,
@@ -13417,8 +13359,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 968,
@@ -13428,8 +13369,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 969,
@@ -13439,8 +13379,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 970,
@@ -13450,8 +13389,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 971,
@@ -13462,8 +13400,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 972,
@@ -13474,8 +13411,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 973,
@@ -13486,8 +13422,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 974,
@@ -13498,8 +13433,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 975,
@@ -13509,8 +13443,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 976,
@@ -13520,8 +13453,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 977,
@@ -13531,8 +13463,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 978,
@@ -13542,8 +13473,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 979,
@@ -13554,8 +13484,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 980,
@@ -13566,8 +13495,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 981,
@@ -13578,8 +13506,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 982,
@@ -13590,8 +13517,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 983,
@@ -13602,8 +13528,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 984,
@@ -13614,8 +13539,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 985,
@@ -13626,8 +13550,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 986,
@@ -13638,8 +13561,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 931,
@@ -13650,8 +13572,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 932,
@@ -13662,8 +13583,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 933,
@@ -13674,8 +13594,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 934,
@@ -13686,8 +13605,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 935,
@@ -13698,8 +13616,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 991,
@@ -13710,8 +13627,7 @@
         "TeamId": 91,
         "FaciliteId": 1202,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 992,
@@ -13722,8 +13638,7 @@
         "TeamId": 91,
         "FaciliteId": 1202,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 993,
@@ -13734,8 +13649,7 @@
         "TeamId": 91,
         "FaciliteId": 1202,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 995,
@@ -13746,8 +13660,7 @@
         "TeamId": 91,
         "FaciliteId": 1202,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 996,
@@ -13758,8 +13671,7 @@
         "TeamId": 91,
         "FaciliteId": 1202,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 997,
@@ -13770,8 +13682,7 @@
         "TeamId": 91,
         "FaciliteId": 1202,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       }
     ],
     "BattleMapId": 1804,
@@ -16680,8 +16591,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 902,
@@ -16692,8 +16602,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 903,
@@ -16704,8 +16613,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 904,
@@ -16716,8 +16624,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 905,
@@ -16728,8 +16635,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 906,
@@ -16740,8 +16646,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 907,
@@ -16752,8 +16657,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 908,
@@ -16763,8 +16667,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 909,
@@ -16775,8 +16678,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 910,
@@ -16787,8 +16689,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 911,
@@ -16799,8 +16700,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 912,
@@ -16811,8 +16711,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 913,
@@ -16823,8 +16722,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 914,
@@ -16835,8 +16733,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 915,
@@ -16847,8 +16744,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 916,
@@ -16859,8 +16755,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 917,
@@ -16871,8 +16766,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 918,
@@ -16883,8 +16777,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 919,
@@ -16895,8 +16788,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 920,
@@ -16907,8 +16799,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 921,
@@ -16919,8 +16810,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 922,
@@ -16931,8 +16821,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 923,
@@ -16943,8 +16832,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 924,
@@ -16955,8 +16843,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 925,
@@ -16967,8 +16854,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 926,
@@ -16979,8 +16865,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 927,
@@ -16991,8 +16876,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 928,
@@ -17003,8 +16887,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 929,
@@ -17015,8 +16898,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 930,
@@ -17027,8 +16909,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 931,
@@ -17039,8 +16920,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 932,
@@ -17051,8 +16931,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 933,
@@ -17062,8 +16941,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 934,
@@ -17073,8 +16951,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 935,
@@ -17084,8 +16961,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 936,
@@ -17095,8 +16971,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 937,
@@ -17106,8 +16981,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 938,
@@ -17117,8 +16991,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 939,
@@ -17128,8 +17001,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 940,
@@ -17139,8 +17011,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 941,
@@ -17151,8 +17022,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 942,
@@ -17163,8 +17033,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 943,
@@ -17175,8 +17044,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 944,
@@ -17187,8 +17055,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 945,
@@ -17198,8 +17065,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 946,
@@ -17210,8 +17076,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 947,
@@ -17222,8 +17087,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 948,
@@ -17234,8 +17098,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 949,
@@ -17246,8 +17109,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 950,
@@ -17258,8 +17120,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 951,
@@ -17270,8 +17131,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 952,
@@ -17282,8 +17142,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 953,
@@ -17294,8 +17153,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 954,
@@ -17306,8 +17164,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 955,
@@ -17318,8 +17175,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 956,
@@ -17330,8 +17186,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 957,
@@ -17342,8 +17197,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 958,
@@ -17354,8 +17208,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 959,
@@ -17366,8 +17219,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 960,
@@ -17378,8 +17230,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 961,
@@ -17390,8 +17241,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 962,
@@ -17402,8 +17252,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 963,
@@ -17414,8 +17263,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 964,
@@ -17426,8 +17274,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 971,
@@ -17438,8 +17285,7 @@
         "TeamId": 91,
         "FaciliteId": 167,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 973,
@@ -17450,8 +17296,7 @@
         "TeamId": 91,
         "FaciliteId": 207,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 991,
@@ -17462,8 +17307,7 @@
         "TeamId": 91,
         "FaciliteId": 766,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 992,
@@ -17474,8 +17318,7 @@
         "TeamId": 91,
         "FaciliteId": 766,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 993,
@@ -17486,8 +17329,7 @@
         "TeamId": 91,
         "FaciliteId": 766,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 994,
@@ -17498,8 +17340,7 @@
         "TeamId": 91,
         "FaciliteId": 766,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       }
     ],
     "TeamAIInfo": [
@@ -17640,8 +17481,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 902,
@@ -17652,8 +17492,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 903,
@@ -17664,8 +17503,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 904,
@@ -17676,8 +17514,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 905,
@@ -17688,8 +17525,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 906,
@@ -17700,8 +17536,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 907,
@@ -17712,8 +17547,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 908,
@@ -17723,8 +17557,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 909,
@@ -17735,8 +17568,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 910,
@@ -17747,8 +17579,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 911,
@@ -17759,8 +17590,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 912,
@@ -17771,8 +17601,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 913,
@@ -17783,8 +17612,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 914,
@@ -17795,8 +17623,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 915,
@@ -17807,8 +17634,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 916,
@@ -17819,8 +17645,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 917,
@@ -17831,8 +17656,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 918,
@@ -17843,8 +17667,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 919,
@@ -17855,8 +17678,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 920,
@@ -17867,8 +17689,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 921,
@@ -17879,8 +17700,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 922,
@@ -17891,8 +17711,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 923,
@@ -17903,8 +17722,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 924,
@@ -17915,8 +17733,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 925,
@@ -17927,8 +17744,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 926,
@@ -17939,8 +17755,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 927,
@@ -17951,8 +17766,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 928,
@@ -17963,8 +17777,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 929,
@@ -17975,8 +17788,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 930,
@@ -17987,8 +17799,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 931,
@@ -17999,8 +17810,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 932,
@@ -18011,8 +17821,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 933,
@@ -18022,8 +17831,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 934,
@@ -18033,8 +17841,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 935,
@@ -18044,8 +17851,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 936,
@@ -18055,8 +17861,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 937,
@@ -18066,8 +17871,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 938,
@@ -18077,8 +17881,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 939,
@@ -18088,8 +17891,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 940,
@@ -18099,8 +17901,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 941,
@@ -18111,8 +17912,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 942,
@@ -18123,8 +17923,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 943,
@@ -18135,8 +17934,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 944,
@@ -18147,8 +17945,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 945,
@@ -18158,8 +17955,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 946,
@@ -18170,8 +17966,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 947,
@@ -18182,8 +17977,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 948,
@@ -18194,8 +17988,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 949,
@@ -18206,8 +17999,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 950,
@@ -18218,8 +18010,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 951,
@@ -18230,8 +18021,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 952,
@@ -18242,8 +18032,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 953,
@@ -18254,8 +18043,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 954,
@@ -18266,8 +18054,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 955,
@@ -18278,8 +18065,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 956,
@@ -18290,8 +18076,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 957,
@@ -18302,8 +18087,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 958,
@@ -18314,8 +18098,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 959,
@@ -18326,8 +18109,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 960,
@@ -18338,8 +18120,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 961,
@@ -18350,8 +18131,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 962,
@@ -18362,8 +18142,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 963,
@@ -18374,8 +18153,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 964,
@@ -18386,8 +18164,7 @@
         "TeamId": 91,
         "FaciliteId": 1197,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 971,
@@ -18398,8 +18175,7 @@
         "TeamId": 91,
         "FaciliteId": 167,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 973,
@@ -18410,8 +18186,7 @@
         "TeamId": 91,
         "FaciliteId": 207,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 991,
@@ -18422,8 +18197,7 @@
         "TeamId": 91,
         "FaciliteId": 766,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 992,
@@ -18434,8 +18208,7 @@
         "TeamId": 91,
         "FaciliteId": 766,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 993,
@@ -18446,8 +18219,7 @@
         "TeamId": 91,
         "FaciliteId": 766,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       },
       {
         "ActorId": 994,
@@ -18458,8 +18230,7 @@
         "TeamId": 91,
         "FaciliteId": 766,
         "Level": -1,
-        "HpPercent": 10000,
-        "CanChangePose": 7
+        "HpPercent": 10000
       }
     ],
     "BattleMapId": 1903,
@@ -20335,154 +20106,6 @@
     "CameraDefaultPosition": [
       7,
       13
-    ],
-    "AttackTeamBGM": "BGM_XuanYuanJianYS_ZuiZhongZhiZhan",
-    "DefendTeamBGM": "BGM_XuanYuanJianYS_ZuiZhongZhiZhan",
-    "FormationBGM": "BGM_Combat_Preparation_1",
-    "CustomLoadingUI": [
-      6
-    ],
-    "SceneNameStrKey": "ST:187871"
-  },
-  {
-    "ID": 24444602,
-    "Strategy": 1,
-    "AttackStaticActorPoolId": 9,
-    "CharActorSetups": [
-      {
-        "ActorId": 101,
-        "X": 7,
-        "Y": 13,
-        "DirX": 7,
-        "DirY": 17,
-        "TeamType": 1,
-        "TeamId": 11,
-        "CharacterId": 100201910,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 102,
-        "X": 6,
-        "Y": 13,
-        "DirX": 7,
-        "DirY": 17,
-        "TeamType": 1,
-        "TeamId": 11,
-        "CharacterId": 100201703,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 103,
-        "X": 8,
-        "Y": 14,
-        "DirX": 7,
-        "DirY": 17,
-        "TeamType": 1,
-        "TeamId": 11,
-        "CharacterId": 100201803,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 104,
-        "X": 8,
-        "Y": 13,
-        "DirX": 7,
-        "DirY": 17,
-        "TeamType": 1,
-        "TeamId": 11,
-        "CharacterId": 100113703,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 105,
-        "X": 5,
-        "Y": 13,
-        "DirX": 7,
-        "DirY": 17,
-        "TeamType": 1,
-        "TeamId": 11,
-        "CharacterId": 100113103,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 106,
-        "X": 9,
-        "Y": 13,
-        "DirX": 7,
-        "DirY": 17,
-        "TeamType": 1,
-        "TeamId": 11,
-        "CharacterId": 100114803,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 107,
-        "X": 6,
-        "Y": 14,
-        "DirX": 7,
-        "DirY": 17,
-        "TeamType": 1,
-        "TeamId": 11,
-        "CharacterId": 152100020,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 108,
-        "X": 10,
-        "Y": 15,
-        "DirX": 7,
-        "DirY": 17,
-        "TeamType": 1,
-        "TeamId": 11,
-        "CharacterId": 100113031,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 201,
-        "X": 7,
-        "Y": 17,
-        "DirX": 7,
-        "DirY": 1,
-        "TeamType": 4,
-        "TeamId": 21,
-        "CharacterId": 152100052,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      },
-      {
-        "ActorId": 202,
-        "X": 9,
-        "Y": 17,
-        "DirX": 9,
-        "DirY": 1,
-        "TeamType": 4,
-        "TeamId": 21,
-        "CharacterId": 152050041,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      }
-    ],
-    "BattleMapId": 2229,
-    "DefaultNpcLevel": 28,
-    "BattleMapResPath": "Snow01Series/Maps/2229_ABS/",
-    "SceneActionGroupId": 4444602,
-    "IsCanSkipSceneAction": true,
-    "SkipMessageID": 101,
-    "CameraVisions": [
-      0,
-      2
-    ],
-    "CameraDefaultPosition": [
-      7,
-      18
     ],
     "AttackTeamBGM": "BGM_XuanYuanJianYS_ZuiZhongZhiZhan",
     "DefendTeamBGM": "BGM_XuanYuanJianYS_ZuiZhongZhiZhan",

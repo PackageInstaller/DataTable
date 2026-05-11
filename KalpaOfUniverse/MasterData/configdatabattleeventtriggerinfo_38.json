@@ -1,5 +1,1456 @@
 [
   {
+    "ID": 52059016,
+    "TriggerType": "BattleEventTriggerType_BattleCampStart",
+    "Param1": [
+      14
+    ],
+    "Param2": [
+      1
+    ],
+    "SceneActionGroupIdLst": [
+      52059016
+    ]
+  },
+  {
+    "ID": 52059017,
+    "TriggerType": "BattleEventTriggerType_ActorHpLess",
+    "Param1": [
+      211
+    ],
+    "Param2": [
+      100
+    ],
+    "SceneActionGroupIdLst": [
+      52059017
+    ]
+  },
+  {
+    "ID": 52059018,
+    "TriggerType": "BattleEventTriggerType_Win",
+    "SceneActionGroupIdLst": [
+      52059018
+    ]
+  },
+  {
+    "ID": 52059019,
+    "TriggerType": "BattleEventTriggerType_ActorDieCount",
+    "Param1": [
+      221,
+      222,
+      223,
+      224
+    ],
+    "Param2": [
+      4
+    ]
+  },
+  {
+    "ID": 52060001,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      52060001
+    ]
+  },
+  {
+    "ID": 52060002,
+    "TriggerType": "BattleEventTriggerType_Win",
+    "SceneActionGroupIdLst": [
+      52060002
+    ]
+  },
+  {
+    "ID": 52060010,
+    "TriggerType": "BattleEventTriggerType_ActorDie",
+    "Param1": [
+      415
+    ],
+    "SceneActionGroupIdLst": [
+      52060010
+    ]
+  },
+  {
+    "ID": 52060011,
+    "TriggerType": "BattleEventTriggerType_ActorDie",
+    "Param1": [
+      416
+    ],
+    "SceneActionGroupIdLst": [
+      52060011
+    ]
+  },
+  {
+    "ID": 52062001,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      52062001
+    ]
+  },
+  {
+    "ID": 52062002,
+    "TriggerType": "BattleEventTriggerType_ActorHpLess",
+    "Param2": [
+      8000
+    ],
+    "Param4": [
+      743110834
+    ],
+    "SceneActionGroupIdLst": [
+      52062002
+    ]
+  },
+  {
+    "ID": 52062003,
+    "TriggerType": "BattleEventTriggerType_ActorHpLess",
+    "Param2": [
+      6000
+    ],
+    "Param4": [
+      743110834
+    ],
+    "SceneActionGroupIdLst": [
+      52062003
+    ]
+  },
+  {
+    "ID": 52062004,
+    "TriggerType": "BattleEventTriggerType_ActorHpLess",
+    "Param2": [
+      110
+    ],
+    "Param4": [
+      743110834
+    ],
+    "SceneActionGroupIdLst": [
+      52062004
+    ]
+  },
+  {
+    "ID": 52062101,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      52062101
+    ]
+  },
+  {
+    "ID": 52062102,
+    "TriggerType": "BattleEventTriggerType_Win",
+    "SceneActionGroupIdLst": [
+      52062102
+    ]
+  },
+  {
+    "ID": 52062202,
+    "TriggerType": "BattleEventTriggerType_ActorHpLess",
+    "Param2": [
+      8000
+    ],
+    "Param4": [
+      743110834
+    ],
+    "SceneActionGroupIdLst": [
+      52062202
+    ]
+  },
+  {
+    "ID": 52062203,
+    "TriggerType": "BattleEventTriggerType_ActorHpLess",
+    "Param2": [
+      6000
+    ],
+    "Param4": [
+      743110834
+    ],
+    "SceneActionGroupIdLst": [
+      52062203
+    ]
+  },
+  {
+    "ID": 52064001,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      52064001
+    ]
+  },
+  {
+    "ID": 52064002,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      1
+    ],
+    "SceneActionGroupIdLst": [
+      52064002
+    ]
+  },
+  {
+    "ID": 52064003,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      2
+    ],
+    "SceneActionGroupIdLst": [
+      52064003
+    ]
+  },
+  {
+    "ID": 52064004,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      3
+    ],
+    "SceneActionGroupIdLst": [
+      52064004
+    ]
+  },
+  {
+    "ID": 52064005,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      4
+    ],
+    "SceneActionGroupIdLst": [
+      52064005
+    ]
+  },
+  {
+    "ID": 52064006,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      5
+    ],
+    "SceneActionGroupIdLst": [
+      52064006
+    ]
+  },
+  {
+    "ID": 52064007,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      6
+    ],
+    "SceneActionGroupIdLst": [
+      52064007
+    ]
+  },
+  {
+    "ID": 52064008,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      7
+    ],
+    "SceneActionGroupIdLst": [
+      52064008
+    ]
+  },
+  {
+    "ID": 52064009,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      8
+    ],
+    "SceneActionGroupIdLst": [
+      52064009
+    ]
+  },
+  {
+    "ID": 52064010,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      9
+    ],
+    "SceneActionGroupIdLst": [
+      52064010
+    ]
+  },
+  {
+    "ID": 52064011,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      10
+    ],
+    "SceneActionGroupIdLst": [
+      52064011
+    ]
+  },
+  {
+    "ID": 52064012,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      11
+    ],
+    "SceneActionGroupIdLst": [
+      52064012
+    ]
+  },
+  {
+    "ID": 52064013,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      12
+    ],
+    "SceneActionGroupIdLst": [
+      52064013
+    ]
+  },
+  {
+    "ID": 52064014,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      13
+    ],
+    "SceneActionGroupIdLst": [
+      52064014
+    ]
+  },
+  {
+    "ID": 52064015,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      14
+    ],
+    "SceneActionGroupIdLst": [
+      52064015
+    ]
+  },
+  {
+    "ID": 52064101,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      52064101
+    ]
+  },
+  {
+    "ID": 52064203,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      2
+    ],
+    "SceneActionGroupIdLst": [
+      52064203
+    ]
+  },
+  {
+    "ID": 52064204,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      3
+    ],
+    "SceneActionGroupIdLst": [
+      52064204
+    ]
+  },
+  {
+    "ID": 52064205,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      4
+    ],
+    "SceneActionGroupIdLst": [
+      52064205
+    ]
+  },
+  {
+    "ID": 52064206,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      5
+    ],
+    "SceneActionGroupIdLst": [
+      52064206
+    ]
+  },
+  {
+    "ID": 52064701,
+    "TriggerType": "BattleEventTriggerType_Win",
+    "SceneActionGroupIdLst": [
+      52064701
+    ]
+  },
+  {
+    "ID": 52066101,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      52066101
+    ]
+  },
+  {
+    "ID": 52066102,
+    "TriggerType": "BattleEventTriggerType_TeamTypeGetBuff",
+    "Param1": [
+      1
+    ],
+    "Param2": [
+      743110852
+    ],
+    "Param4": [
+      1
+    ],
+    "SceneActionGroupIdLst": [
+      52066102
+    ]
+  },
+  {
+    "ID": 52066103,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      1
+    ],
+    "SceneActionGroupIdLst": [
+      52066103
+    ]
+  },
+  {
+    "ID": 52066104,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      3
+    ],
+    "SceneActionGroupIdLst": [
+      52066104
+    ]
+  },
+  {
+    "ID": 52066701,
+    "TriggerType": "BattleEventTriggerType_Win",
+    "SceneActionGroupIdLst": [
+      52066701
+    ]
+  },
+  {
+    "ID": 52068101,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      52068101
+    ]
+  },
+  {
+    "ID": 52068102,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      2
+    ],
+    "SceneActionGroupIdLst": [
+      52068102
+    ]
+  },
+  {
+    "ID": 52068202,
+    "TriggerType": "BattleEventTriggerType_BattleCampStart",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "SceneActionGroupIdLst": [
+      52068102
+    ]
+  },
+  {
+    "ID": 52068701,
+    "TriggerType": "BattleEventTriggerType_Win",
+    "SceneActionGroupIdLst": [
+      52068701
+    ]
+  },
+  {
+    "ID": 52070001,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      52070001
+    ]
+  },
+  {
+    "ID": 52070002,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      1
+    ],
+    "SceneActionGroupIdLst": [
+      52070002
+    ]
+  },
+  {
+    "ID": 52070003,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      2
+    ],
+    "SceneActionGroupIdLst": [
+      52070003
+    ]
+  },
+  {
+    "ID": 52070004,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      3
+    ],
+    "SceneActionGroupIdLst": [
+      52070004
+    ]
+  },
+  {
+    "ID": 52070005,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      4
+    ],
+    "SceneActionGroupIdLst": [
+      52070005
+    ]
+  },
+  {
+    "ID": 52070006,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      5
+    ],
+    "SceneActionGroupIdLst": [
+      52070006
+    ]
+  },
+  {
+    "ID": 52070007,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      6
+    ],
+    "SceneActionGroupIdLst": [
+      52070007
+    ]
+  },
+  {
+    "ID": 52070008,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      7
+    ],
+    "SceneActionGroupIdLst": [
+      52070008
+    ]
+  },
+  {
+    "ID": 52070009,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      8
+    ],
+    "SceneActionGroupIdLst": [
+      52070009
+    ]
+  },
+  {
+    "ID": 52070010,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      9
+    ],
+    "SceneActionGroupIdLst": [
+      52070010
+    ]
+  },
+  {
+    "ID": 52070011,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      10
+    ],
+    "SceneActionGroupIdLst": [
+      52070011
+    ]
+  },
+  {
+    "ID": 52070012,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      11
+    ],
+    "SceneActionGroupIdLst": [
+      52070012
+    ]
+  },
+  {
+    "ID": 52070013,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      12
+    ],
+    "SceneActionGroupIdLst": [
+      52070013
+    ]
+  },
+  {
+    "ID": 52070014,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      13
+    ],
+    "SceneActionGroupIdLst": [
+      52070014
+    ]
+  },
+  {
+    "ID": 52070015,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      14
+    ],
+    "SceneActionGroupIdLst": [
+      52070015
+    ]
+  },
+  {
+    "ID": 52070016,
+    "TriggerType": "BattleEventTriggerType_Win",
+    "SceneActionGroupIdLst": [
+      52070016
+    ]
+  },
+  {
+    "ID": 52070017,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 2,
+        "Y": 5
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52070017
+    ]
+  },
+  {
+    "ID": 52070018,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 8
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52070018
+    ]
+  },
+  {
+    "ID": 52070019,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 9
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52070019
+    ]
+  },
+  {
+    "ID": 52070020,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 9
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52070020
+    ]
+  },
+  {
+    "ID": 52070021,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 11
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52070021
+    ]
+  },
+  {
+    "ID": 52070022,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 11
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52070022
+    ]
+  },
+  {
+    "ID": 52070023,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 14,
+        "Y": 14
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52070023
+    ]
+  },
+  {
+    "ID": 52070024,
+    "TriggerType": "BattleEventTriggerType_ActorHpLess",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      5000
+    ],
+    "SceneActionGroupIdLst": [
+      52070024
+    ]
+  },
+  {
+    "ID": 52070025,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      52070025
+    ]
+  },
+  {
+    "ID": 52070051,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      52070051
+    ]
+  },
+  {
+    "ID": 52072001,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      52072001
+    ]
+  },
+  {
+    "ID": 52072002,
+    "TriggerType": "BattleEventTriggerType_Win",
+    "SceneActionGroupIdLst": [
+      52072002
+    ]
+  },
+  {
+    "ID": 52072003,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      3
+    ],
+    "SceneActionGroupIdLst": [
+      52072003
+    ]
+  },
+  {
+    "ID": 52072004,
+    "TriggerType": "BattleEventTriggerType_TeamDie",
+    "Param1": [
+      21
+    ],
+    "SceneActionGroupIdLst": [
+      52072004
+    ]
+  },
+  {
+    "ID": 52072005,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 15,
+        "Y": 2
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072005
+    ]
+  },
+  {
+    "ID": 52072006,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 4
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072006
+    ]
+  },
+  {
+    "ID": 52072007,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 15,
+        "Y": 6
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072007
+    ]
+  },
+  {
+    "ID": 52072008,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 12,
+        "Y": 8
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072008
+    ]
+  },
+  {
+    "ID": 52072009,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 14,
+        "Y": 2
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072009
+    ]
+  },
+  {
+    "ID": 52072010,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 16,
+        "Y": 2
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072010
+    ]
+  },
+  {
+    "ID": 52072011,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 12
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072011
+    ]
+  },
+  {
+    "ID": 52072012,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 3
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072012
+    ]
+  },
+  {
+    "ID": 52072013,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 3
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072013
+    ]
+  },
+  {
+    "ID": 52072014,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 3
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072014
+    ]
+  },
+  {
+    "ID": 52072015,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 1
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072015
+    ]
+  },
+  {
+    "ID": 52072016,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 1
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072016
+    ]
+  },
+  {
+    "ID": 52072017,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 2
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072017
+    ]
+  },
+  {
+    "ID": 52072018,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 9
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072018
+    ]
+  },
+  {
+    "ID": 52072019,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      2
+    ],
+    "SceneActionGroupIdLst": [
+      52072019
+    ]
+  },
+  {
+    "ID": 52072020,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      5
+    ],
+    "SceneActionGroupIdLst": [
+      52072020
+    ]
+  },
+  {
+    "ID": 52072021,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      8
+    ],
+    "SceneActionGroupIdLst": [
+      52072021
+    ]
+  },
+  {
+    "ID": 52072022,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      11
+    ],
+    "SceneActionGroupIdLst": [
+      52072022
+    ]
+  },
+  {
+    "ID": 52072023,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      14
+    ],
+    "SceneActionGroupIdLst": [
+      52072023
+    ]
+  },
+  {
+    "ID": 52072024,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      52072024
+    ]
+  },
+  {
+    "ID": 52072025,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 10
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072025
+    ]
+  },
+  {
+    "ID": 52072026,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 10
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072026
+    ]
+  },
+  {
+    "ID": 52072027,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 10
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072027
+    ]
+  },
+  {
+    "ID": 52072028,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 11
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072028
+    ]
+  },
+  {
+    "ID": 52072029,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072029
+    ]
+  },
+  {
+    "ID": 52072030,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 12
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072030
+    ]
+  },
+  {
+    "ID": 52072031,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 12
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072031
+    ]
+  },
+  {
+    "ID": 52072032,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 12
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52072032
+    ]
+  },
+  {
+    "ID": 52074001,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      52074001
+    ]
+  },
+  {
+    "ID": 52074002,
+    "TriggerType": "BattleEventTriggerType_Win",
+    "SceneActionGroupIdLst": [
+      52074002
+    ]
+  },
+  {
+    "ID": 52074003,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      3
+    ],
+    "SceneActionGroupIdLst": [
+      52074003
+    ]
+  },
+  {
+    "ID": 52074004,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 3
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52074004
+    ]
+  },
+  {
+    "ID": 52074005,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 6
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52074005
+    ]
+  },
+  {
+    "ID": 52074006,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 9
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52074006
+    ]
+  },
+  {
+    "ID": 52074007,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 13,
+        "Y": 4
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52074007
+    ]
+  },
+  {
+    "ID": 52074008,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 13,
+        "Y": 8
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52074008
+    ]
+  },
+  {
+    "ID": 52074009,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      4
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 3
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52074009
+    ]
+  },
+  {
+    "ID": 52074010,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      4
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 6
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52074010
+    ]
+  },
+  {
+    "ID": 52074011,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      4
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 9
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52074011
+    ]
+  },
+  {
+    "ID": 52074012,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      4
+    ],
+    "Param3": [
+      {
+        "X": 13,
+        "Y": 4
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52074012
+    ]
+  },
+  {
+    "ID": 52074013,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      4
+    ],
+    "Param3": [
+      {
+        "X": 13,
+        "Y": 8
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      52074013
+    ]
+  },
+  {
+    "ID": 52074014,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      1
+    ],
+    "SceneActionGroupIdLst": [
+      52074014
+    ]
+  },
+  {
+    "ID": 52074015,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      52074015
+    ]
+  },
+  {
+    "ID": 52074016,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      2
+    ],
+    "SceneActionGroupIdLst": [
+      52074016
+    ]
+  },
+  {
+    "ID": 52074017,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      3
+    ],
+    "SceneActionGroupIdLst": [
+      52074017
+    ]
+  },
+  {
     "ID": 52074018,
     "TriggerType": "BattleEventTriggerType_BattleTurnStart",
     "Param1": [
@@ -6308,1449 +7759,6 @@
     ],
     "SceneActionGroupIdLst": [
       52099029
-    ]
-  },
-  {
-    "ID": 52099030,
-    "TriggerType": "BattleEventTriggerType_TeamTypeGetBuff",
-    "Param1": [
-      1
-    ],
-    "Param2": [
-      742412570
-    ],
-    "Param4": [
-      1
-    ],
-    "Param5": [
-      3
-    ]
-  },
-  {
-    "ID": 52100001,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      52100002
-    ]
-  },
-  {
-    "ID": 52100002,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      201
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52100003
-    ]
-  },
-  {
-    "ID": 52100003,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      202
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52100004
-    ]
-  },
-  {
-    "ID": 52100004,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      203
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52100005
-    ]
-  },
-  {
-    "ID": 52100005,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      211
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52100006
-    ]
-  },
-  {
-    "ID": 52100006,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      212
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52100007
-    ]
-  },
-  {
-    "ID": 52100007,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      213
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52100008
-    ]
-  },
-  {
-    "ID": 52100008,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      221
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52100009
-    ]
-  },
-  {
-    "ID": 52100009,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      222
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52100010
-    ]
-  },
-  {
-    "ID": 52100010,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      231
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52100011
-    ]
-  },
-  {
-    "ID": 52100011,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      232
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52100012
-    ]
-  },
-  {
-    "ID": 52100012,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      233
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52100013
-    ]
-  },
-  {
-    "ID": 52100013,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param1": [
-      101
-    ],
-    "Param3": [
-      {
-        "X": 14,
-        "Y": 10
-      },
-      {
-        "X": 14,
-        "Y": 11
-      },
-      {
-        "X": 14,
-        "Y": 12
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      52100014
-    ]
-  },
-  {
-    "ID": 52101001,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      201
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52101001
-    ]
-  },
-  {
-    "ID": 52101002,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      202
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52101002
-    ]
-  },
-  {
-    "ID": 52101003,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      203
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52101003
-    ]
-  },
-  {
-    "ID": 52101004,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      211
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52101004
-    ]
-  },
-  {
-    "ID": 52101005,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      212
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52101005
-    ]
-  },
-  {
-    "ID": 52101006,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      213
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52101006
-    ]
-  },
-  {
-    "ID": 52101007,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      221
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52101007
-    ]
-  },
-  {
-    "ID": 52101008,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      222
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52101008
-    ]
-  },
-  {
-    "ID": 52101009,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      231
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52101009
-    ]
-  },
-  {
-    "ID": 52101010,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      232
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52101010
-    ]
-  },
-  {
-    "ID": 52101011,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      233
-    ],
-    "Param2": [
-      500
-    ],
-    "SceneActionGroupIdLst": [
-      52101011
-    ]
-  },
-  {
-    "ID": 52101012,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param1": [
-      101
-    ],
-    "Param3": [
-      {
-        "X": 14,
-        "Y": 10
-      },
-      {
-        "X": 14,
-        "Y": 11
-      },
-      {
-        "X": 14,
-        "Y": 12
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      52101012
-    ]
-  },
-  {
-    "ID": 52104001,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      52104001
-    ]
-  },
-  {
-    "ID": 52104002,
-    "TriggerType": "BattleEventTriggerType_Win",
-    "SceneActionGroupIdLst": [
-      52104002
-    ]
-  },
-  {
-    "ID": 52106001,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      52106001
-    ]
-  },
-  {
-    "ID": 52108001,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      52108001
-    ]
-  },
-  {
-    "ID": 52108002,
-    "TriggerType": "BattleEventTriggerType_Win",
-    "SceneActionGroupIdLst": [
-      52108002
-    ]
-  },
-  {
-    "ID": 52108003,
-    "TriggerType": "BattleEventTriggerType_ActorDie",
-    "Param1": [
-      201
-    ],
-    "SceneActionGroupIdLst": [
-      52108003
-    ]
-  },
-  {
-    "ID": 52108004,
-    "TriggerType": "BattleEventTriggerType_ActorDie",
-    "Param1": [
-      202
-    ],
-    "SceneActionGroupIdLst": [
-      52108004
-    ]
-  },
-  {
-    "ID": 52108005,
-    "TriggerType": "BattleEventTriggerType_ActorDie",
-    "Param1": [
-      203
-    ],
-    "SceneActionGroupIdLst": [
-      52108005
-    ]
-  },
-  {
-    "ID": 52108006,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      2
-    ],
-    "SceneActionGroupIdLst": [
-      52108006
-    ]
-  },
-  {
-    "ID": 52108007,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      4
-    ],
-    "SceneActionGroupIdLst": [
-      52108007
-    ]
-  },
-  {
-    "ID": 52108008,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      7
-    ],
-    "SceneActionGroupIdLst": [
-      52108008
-    ]
-  },
-  {
-    "ID": 52108009,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      9
-    ],
-    "SceneActionGroupIdLst": [
-      52108009
-    ]
-  },
-  {
-    "ID": 52108010,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      11
-    ],
-    "SceneActionGroupIdLst": [
-      52108010
-    ]
-  },
-  {
-    "ID": 52110001,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      52110001
-    ]
-  },
-  {
-    "ID": 52110002,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      3
-    ],
-    "SceneActionGroupIdLst": [
-      52110002
-    ]
-  },
-  {
-    "ID": 52110003,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      5
-    ],
-    "SceneActionGroupIdLst": [
-      52110003
-    ]
-  },
-  {
-    "ID": 60150001,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      60150001
-    ]
-  },
-  {
-    "ID": 60150002,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param1": [
-      201
-    ],
-    "Param3": [
-      {
-        "X": 4,
-        "Y": 13
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60150002
-    ]
-  },
-  {
-    "ID": 60150003,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param1": [
-      206
-    ],
-    "Param3": [
-      {
-        "X": 11,
-        "Y": 14
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60150003
-    ]
-  },
-  {
-    "ID": 60150004,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param1": [
-      101
-    ],
-    "Param3": [
-      {
-        "X": 4,
-        "Y": 13
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60150004
-    ]
-  },
-  {
-    "ID": 60150005,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param1": [
-      102
-    ],
-    "Param3": [
-      {
-        "X": 4,
-        "Y": 13
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60150005
-    ]
-  },
-  {
-    "ID": 60150006,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param1": [
-      103
-    ],
-    "Param3": [
-      {
-        "X": 11,
-        "Y": 14
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60150006
-    ]
-  },
-  {
-    "ID": 60150007,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param1": [
-      209
-    ],
-    "Param3": [
-      {
-        "X": 4,
-        "Y": 13
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60150007
-    ]
-  },
-  {
-    "ID": 60210001,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      60210001
-    ]
-  },
-  {
-    "ID": 60210002,
-    "TriggerType": "BattleEventTriggerType_ActorGetBuff",
-    "Param1": [
-      101
-    ],
-    "Param2": [
-      760021861
-    ],
-    "Param4": [
-      1
-    ],
-    "SceneActionGroupIdLst": [
-      60210002
-    ]
-  },
-  {
-    "ID": 60210003,
-    "TriggerType": "BattleEventTriggerType_ActorGetBuff",
-    "Param1": [
-      102
-    ],
-    "Param2": [
-      760021861
-    ],
-    "Param4": [
-      1
-    ],
-    "SceneActionGroupIdLst": [
-      60210003
-    ]
-  },
-  {
-    "ID": 60210004,
-    "TriggerType": "BattleEventTriggerType_ActorGetBuff",
-    "Param1": [
-      103
-    ],
-    "Param2": [
-      760021861
-    ],
-    "Param4": [
-      1
-    ],
-    "SceneActionGroupIdLst": [
-      60210004
-    ]
-  },
-  {
-    "ID": 60210005,
-    "TriggerType": "BattleEventTriggerType_ActorGetBuff",
-    "Param1": [
-      104
-    ],
-    "Param2": [
-      760021861
-    ],
-    "Param4": [
-      1
-    ],
-    "SceneActionGroupIdLst": [
-      60210005
-    ]
-  },
-  {
-    "ID": 60220001,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "X": 7,
-        "Y": 1
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60220001
-    ]
-  },
-  {
-    "ID": 60220002,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "Y": 10
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60220002
-    ]
-  },
-  {
-    "ID": 60220003,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "X": 10,
-        "Y": 13
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60220003
-    ]
-  },
-  {
-    "ID": 60240001,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      60240001
-    ]
-  },
-  {
-    "ID": 60240002,
-    "TriggerType": "BattleEventTriggerType_ActorDie",
-    "Param1": [
-      103
-    ],
-    "SceneActionGroupIdLst": [
-      60240002
-    ]
-  },
-  {
-    "ID": 60250001,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "X": 2,
-        "Y": 9
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60250001
-    ]
-  },
-  {
-    "ID": 60250002,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "X": 18,
-        "Y": 9
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60250002
-    ]
-  },
-  {
-    "ID": 60360202,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "X": 18,
-        "Y": 8
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60360202
-    ]
-  },
-  {
-    "ID": 60360203,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "X": 5,
-        "Y": 12
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60360203
-    ]
-  },
-  {
-    "ID": 60360205,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "X": 10,
-        "Y": 9
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60360205
-    ]
-  },
-  {
-    "ID": 60360206,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "X": 2,
-        "Y": 10
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60360206
-    ]
-  },
-  {
-    "ID": 60360207,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      60360207
-    ]
-  },
-  {
-    "ID": 60420001,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      60420001
-    ]
-  },
-  {
-    "ID": 60420002,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      2
-    ],
-    "SceneActionGroupIdLst": [
-      60420002
-    ]
-  },
-  {
-    "ID": 60430001,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      60430001
-    ]
-  },
-  {
-    "ID": 60430002,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      1
-    ],
-    "SceneActionGroupIdLst": [
-      60430002
-    ]
-  },
-  {
-    "ID": 60440001,
-    "TriggerType": "BattleEventTriggerType_BattleCampStart",
-    "Param1": [
-      0
-    ],
-    "Param2": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      60440001
-    ]
-  },
-  {
-    "ID": 60450001,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      60450001
-    ]
-  },
-  {
-    "ID": 60450002,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "X": 13,
-        "Y": 14
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60450002
-    ]
-  },
-  {
-    "ID": 60460002,
-    "TriggerType": "BattleEventTriggerType_MultiTrigger",
-    "Param1": [
-      60460051,
-      60460052
-    ],
-    "SceneActionGroupIdLst": [
-      60460002
-    ]
-  },
-  {
-    "ID": 60460003,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      60460003
-    ]
-  },
-  {
-    "ID": 60460004,
-    "TriggerType": "BattleEventTriggerType_Win",
-    "SceneActionGroupIdLst": [
-      60460004
-    ]
-  },
-  {
-    "ID": 60460051,
-    "TriggerType": "BattleEventTriggerType_ActorDie",
-    "Param1": [
-      250
-    ],
-    "SceneActionGroupIdLst": [
-      60460051
-    ]
-  },
-  {
-    "ID": 60460052,
-    "TriggerType": "BattleEventTriggerType_ActorDie",
-    "Param1": [
-      251
-    ],
-    "SceneActionGroupIdLst": [
-      60460052
-    ]
-  },
-  {
-    "ID": 60510001,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      60510001
-    ]
-  },
-  {
-    "ID": 60510002,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param1": [
-      101
-    ],
-    "Param3": [
-      {
-        "X": 10,
-        "Y": 20
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60510002
-    ]
-  },
-  {
-    "ID": 60510003,
-    "TriggerType": "BattleEventTriggerType_BattleCampStart",
-    "Param1": [
-      2
-    ],
-    "Param2": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      60510003
-    ]
-  },
-  {
-    "ID": 60510004,
-    "TriggerType": "BattleEventTriggerType_BattleCampStart",
-    "Param1": [
-      3
-    ],
-    "Param2": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      60510004
-    ]
-  },
-  {
-    "ID": 60510005,
-    "TriggerType": "BattleEventTriggerType_BattleCampStart",
-    "Param1": [
-      4
-    ],
-    "Param2": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      60510005
-    ]
-  },
-  {
-    "ID": 60520001,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      60520001
-    ]
-  },
-  {
-    "ID": 60520002,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param1": [
-      101
-    ],
-    "Param3": [
-      {
-        "X": 7,
-        "Y": 20
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      60520002
-    ]
-  },
-  {
-    "ID": 60520003,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      1
-    ],
-    "SceneActionGroupIdLst": [
-      60520003
-    ]
-  },
-  {
-    "ID": 60520004,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      2
-    ],
-    "SceneActionGroupIdLst": [
-      60520004
-    ]
-  },
-  {
-    "ID": 60520005,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      3
-    ],
-    "SceneActionGroupIdLst": [
-      60520005
-    ]
-  },
-  {
-    "ID": 60520006,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      4
-    ],
-    "SceneActionGroupIdLst": [
-      60520006
-    ]
-  },
-  {
-    "ID": 60520007,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      5
-    ],
-    "SceneActionGroupIdLst": [
-      60520007
-    ]
-  },
-  {
-    "ID": 60520008,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      6
-    ],
-    "SceneActionGroupIdLst": [
-      60520008
-    ]
-  },
-  {
-    "ID": 60520009,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      7
-    ],
-    "SceneActionGroupIdLst": [
-      60520009
-    ]
-  },
-  {
-    "ID": 60520010,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      8
-    ],
-    "SceneActionGroupIdLst": [
-      60520010
-    ]
-  },
-  {
-    "ID": 60520011,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      9
-    ],
-    "SceneActionGroupIdLst": [
-      60520011
-    ]
-  },
-  {
-    "ID": 60520012,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      10
-    ],
-    "SceneActionGroupIdLst": [
-      60520012
-    ]
-  },
-  {
-    "ID": 60520013,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      11
-    ],
-    "SceneActionGroupIdLst": [
-      60520013
-    ]
-  },
-  {
-    "ID": 60520014,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      12
-    ],
-    "SceneActionGroupIdLst": [
-      60520014
-    ]
-  },
-  {
-    "ID": 60520015,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      13
-    ],
-    "SceneActionGroupIdLst": [
-      60520015
-    ]
-  },
-  {
-    "ID": 60520016,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      14
-    ],
-    "SceneActionGroupIdLst": [
-      60520016
-    ]
-  },
-  {
-    "ID": 60520017,
-    "TriggerType": "BattleEventTriggerType_Win",
-    "SceneActionGroupIdLst": [
-      60520017
-    ]
-  },
-  {
-    "ID": 60530001,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      60530001
-    ]
-  },
-  {
-    "ID": 60530002,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      1
-    ],
-    "SceneActionGroupIdLst": [
-      40530002
-    ]
-  },
-  {
-    "ID": 60530003,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      2
-    ],
-    "SceneActionGroupIdLst": [
-      40530002
-    ]
-  },
-  {
-    "ID": 60530004,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      3
-    ],
-    "SceneActionGroupIdLst": [
-      40530002
-    ]
-  },
-  {
-    "ID": 60530005,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      4
-    ],
-    "SceneActionGroupIdLst": [
-      40530002
-    ]
-  },
-  {
-    "ID": 60530006,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      5
-    ],
-    "SceneActionGroupIdLst": [
-      40530002
-    ]
-  },
-  {
-    "ID": 60530007,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      6
-    ],
-    "SceneActionGroupIdLst": [
-      40530002
-    ]
-  },
-  {
-    "ID": 60530008,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      7
-    ],
-    "SceneActionGroupIdLst": [
-      40530002
-    ]
-  },
-  {
-    "ID": 60530009,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      8
-    ],
-    "SceneActionGroupIdLst": [
-      40530002
-    ]
-  },
-  {
-    "ID": 60530010,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      9
-    ],
-    "SceneActionGroupIdLst": [
-      40530002
-    ]
-  },
-  {
-    "ID": 60530011,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      10
-    ],
-    "SceneActionGroupIdLst": [
-      40530002
-    ]
-  },
-  {
-    "ID": 60530012,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      11
-    ],
-    "SceneActionGroupIdLst": [
-      40530002
-    ]
-  },
-  {
-    "ID": 60530013,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      12
-    ],
-    "SceneActionGroupIdLst": [
-      40530002
-    ]
-  },
-  {
-    "ID": 60530014,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      13
-    ],
-    "SceneActionGroupIdLst": [
-      40530002
-    ]
-  },
-  {
-    "ID": 60530015,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      14
-    ],
-    "SceneActionGroupIdLst": [
-      40530002
-    ]
-  },
-  {
-    "ID": 60530016,
-    "TriggerType": "BattleEventTriggerType_TeamDie",
-    "Param1": [
-      42
-    ],
-    "SceneActionGroupIdLst": [
-      40530003
-    ]
-  },
-  {
-    "ID": 60530017,
-    "TriggerType": "BattleEventTriggerType_TeamDie",
-    "Param1": [
-      43
-    ],
-    "SceneActionGroupIdLst": [
-      40530003
-    ]
-  },
-  {
-    "ID": 60530018,
-    "TriggerType": "BattleEventTriggerType_MultiTrigger",
-    "Param1": [
-      60530016,
-      60530017
-    ],
-    "SceneActionGroupIdLst": [
-      60530018
-    ]
-  },
-  {
-    "ID": 60541001,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      60541001
-    ]
-  },
-  {
-    "ID": 60541002,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      1
-    ],
-    "SceneActionGroupIdLst": [
-      60541002
-    ]
-  },
-  {
-    "ID": 60541003,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      2
-    ],
-    "SceneActionGroupIdLst": [
-      60541002
     ]
   }
 ]
