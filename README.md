@@ -41,3 +41,4 @@
 | MillenniumWarAigis |     千年战争     |             Dmm Json             |
 |  OshiroProjectRE  |    我去没r18    |             Dmm Json             |
 |    MementoMori    |      妹妹头      |           国际服 Json           |
+|  CuisineDimension  |     料理次元     |             国服 Lua             |

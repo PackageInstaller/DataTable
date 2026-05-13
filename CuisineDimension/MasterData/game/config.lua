@@ -1,0 +1,10 @@
+DEBUG = 0
+SKIP_GUIDE = false
+SKIP_MUSIC = false
+SKIP_UPDATE = false
+DISABLE_DEPRECATED_WARNING = true
+CC_USE_FRAMEWORK = true
+DEBUG_FPS = false
+CC_DISABLE_GLOBAL = false
+LOAD_SHORTCODES_API = true
+ANDROID_CLASSNAME = "org.cocos2dx.lua.AppActivity"

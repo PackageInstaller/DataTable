@@ -1,0 +1,52 @@
+return {
+  [1] = {
+    [1] = {
+      phase = 1,
+      id = 1,
+      xOffset = 13,
+      unitType = 40016,
+      beBoss = 1,
+      quality = 1,
+      skillOrder = "0 0 1 0",
+      attackQueue = "",
+      hp = 1800,
+      atk = 50,
+      phyDef = 0,
+      miss = 10,
+      hit = 10000,
+      crit = 0,
+      tenacity = 0,
+      critHurt = 150,
+      resist = 0,
+      scale = 130,
+      AI = 0,
+      zorder = 1,
+      randomTaste = 1,
+      battleTag = 2
+    },
+    [2] = {
+      phase = 1,
+      id = 2,
+      xOffset = 13,
+      unitType = 40017,
+      beBoss = 0,
+      quality = 1,
+      skillOrder = "0 0 1 0",
+      attackQueue = "",
+      hp = 500,
+      atk = 50,
+      phyDef = 0,
+      miss = 10,
+      hit = 10000,
+      crit = 0,
+      tenacity = 0,
+      critHurt = 150,
+      resist = 0,
+      scale = 130,
+      AI = 0,
+      zorder = 1,
+      randomTaste = 1,
+      battleTag = 2
+    }
+  }
+}
