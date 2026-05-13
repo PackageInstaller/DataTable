@@ -1,0 +1,2775 @@
+[
+    {
+        "Id": 100,
+        "IsIgnore": null,
+        "Memo": "マイページ - プレイヤー情報DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine100]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText100]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 200,
+        "IsIgnore": null,
+        "Memo": "マイページ - プレゼントボックスDLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine200]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText200]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 400,
+        "IsIgnore": null,
+        "Memo": "マイページ - プレイヤーランキングDLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine400]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText400]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine401]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText401]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 410,
+        "IsIgnore": null,
+        "Memo": "マイページ - プレイヤーランキングDLG(属性の塔解放後)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine410]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText410]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine401]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText401]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 500,
+        "IsIgnore": null,
+        "Memo": "マイページ - ギルドランキングDLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine500]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText500]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 510,
+        "IsIgnore": null,
+        "Memo": "マイページ - ギルドランキングDLG(属性の塔解放後)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine500]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText500]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 600,
+        "IsIgnore": null,
+        "Memo": "マイページ - VIP特典DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine600]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText600]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 700,
+        "IsIgnore": null,
+        "Memo": "マイページ - ミッションDLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine700]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText700]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 800,
+        "IsIgnore": null,
+        "Memo": "マイページ - ログインボーナスDLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine800]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText800]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 900,
+        "IsIgnore": null,
+        "Memo": "マイページ - お気に入りDLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine900]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText900]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 21,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1000,
+        "IsIgnore": null,
+        "Memo": "プレミアギフト画面 - プラチナボーナスDLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1000]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1000]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1010,
+        "IsIgnore": null,
+        "Memo": "プレミアギフト画面（BOI版用）",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1010]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1010]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": [
+            4,
+            7
+        ]
+    },
+    {
+        "Id": 1020,
+        "IsIgnore": null,
+        "Memo": "プレミアギフト画面(Steam版のみ表示)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1020]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1020]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": [
+            6
+        ]
+    },
+    {
+        "Id": 1100,
+        "IsIgnore": null,
+        "Memo": "プレミアギフト画面 - 月間ブーストDLG(購入前)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1100]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1100]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1200,
+        "IsIgnore": null,
+        "Memo": "プレミアギフト画面 - 月間ブーストDLG(購入後)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1100]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1100]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1300,
+        "IsIgnore": null,
+        "Memo": "プレミアギフト画面 - 魔女の贈り物DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1300]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1300]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1400,
+        "IsIgnore": null,
+        "Memo": "プレミアギフト画面 - 盟約特権DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1400]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1400]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1410,
+        "IsIgnore": null,
+        "Memo": "プレミアギフト画面 - 盟約特権DLG（DMM専用）",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1410]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1410]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1420,
+        "IsIgnore": null,
+        "Memo": "プレミアギフト画面 - 盟約特権DLG（Stripe専用）",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1420]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1420]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1430,
+        "IsIgnore": null,
+        "Memo": "プレミアギフト画面 - 盟約特権DLG（Steam専用）",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1430]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1430]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": [
+            6
+        ]
+    },
+    {
+        "Id": 1500,
+        "IsIgnore": null,
+        "Memo": "ショップ画面(アダマントボックス枠追加前)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1500]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1500]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1501,
+        "IsIgnore": null,
+        "Memo": "ショップ画面(アダマントボックス枠追加後)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1501]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1501]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1600,
+        "IsIgnore": null,
+        "Memo": "フレンド画面-フレンドタブ、ブロックタブ(フレンド数上限解放前)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1600]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1600]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1601,
+        "IsIgnore": null,
+        "Memo": "フレンド画面-フレンドタブ、ブロックタブ(フレンド数上限解放後)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1601]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1601]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1610,
+        "IsIgnore": null,
+        "Memo": "フレンド画面 - 模擬戦タブ",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1610]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1610]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 34,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1800,
+        "IsIgnore": null,
+        "Memo": "キャラ画面 - 所持キャラタブ",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": null,
+                "MainTextList": [
+                    {
+                        "MainText": null
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": null,
+        "IsDisplayed": false,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1810,
+        "IsIgnore": null,
+        "Memo": "キャラ画面 - 進化タブ",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1810]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1810]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 13,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1811,
+        "IsIgnore": null,
+        "Memo": "キャラ画面 - 進化タブ(アルカナ解放後)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1811]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1811]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 13,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1820,
+        "IsIgnore": null,
+        "Memo": "キャラ画面 - レベルリンクタブ(パーティレベル解放前）",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1820]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1820]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 6,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1830,
+        "IsIgnore": null,
+        "Memo": "キャラ画面 - レベルリンクタブ(パーティレベル解放前）",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1830]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1830]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine1831]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1831]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 17,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1840,
+        "IsIgnore": null,
+        "Memo": "装備固定",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1840]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1840]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 26,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1850,
+        "IsIgnore": null,
+        "Memo": "キャラ画面 - 進化タブ - 進化解放",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1850]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1850]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 33,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 1900,
+        "IsIgnore": null,
+        "Memo": "キャラ画面 - 所持キャラタブ - アルカナDLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine1900]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText1900]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 20,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2000,
+        "IsIgnore": null,
+        "Memo": "キャラ画面 - 進化タブ - 心片回帰DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2000]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2000]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2100,
+        "IsIgnore": null,
+        "Memo": "キャラ画面 - 進化タブ - リリースDLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2100]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2100]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2200,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2200]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2200]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2210,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面 - 簡易DLG（スキル）",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2210]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2210]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine2219]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2219]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine2220]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2220]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine2211]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2211]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine2212]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2212]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine2218]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2218]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine2213]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2213]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine2217]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2217]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine2214]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText_Skill_IncreasedStat]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_IncreasedDamageDealing]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_DecreasedDamageTaken]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_IncreasedIncomingHealingPotency]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Invulnerable]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_MultiBarrier]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Shield]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_ForceField]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_DebuffImmunity]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Unhindered]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_SilenceImmunity​]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Taunt]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Stealth]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Invisibility]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_CounterXX]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Regeneration]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Immortality]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_CounterShift]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Devotion]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_BuffCover]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Hasten]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Character-SpecificBuffs]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine2215]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText_Skill_DecreasedStat]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Enfeeble]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_DecreasedDamageDealing]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_IncreasedDamageTaken]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_DecreasedIncomingHealingPotency]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Delay]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_ActionHinderingDebuffs]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Silence]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Fainted]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Sleep]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Confusion]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_ContinuousDamageDebuffs]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Poison]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Burn]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Bleed]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Erosion]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Aggravation]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Blight]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_BuffImmunity]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Bind]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Resonance]"
+                    },
+                    {
+                        "MainText": "[HelpMainText_Skill_Character-SpecificDebuffs]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine2216]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2216]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 2,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2300,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面 - 武具DLG - 装備タブ",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2300]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2300]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2310,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面 - 武具DLG - 強化タブ",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2310]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2310]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 10,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2320,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面 - 武具DLG - 研磨タブ",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2320]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2320]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 23,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2321,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面 - 武具DLG - 研磨タブ(一括研磨機能解放後)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2321]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2321]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 35,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2330,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面 - 武具DLG - 神装強化タブ",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2330]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2330]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 22,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2331,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面 - 武具DLG - 神装強化タブ(一括選択機能解放後)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2331]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2331]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 29,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2340,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面 - 武具DLG - 進化タブ",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2340]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2340]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine2341]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2341]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2341,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面 - 武具DLG - 進化タブ(武具進化リセット解放後)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2340]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2340]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine2341]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2341]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine2342]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2342]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2350,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面 - 武具DLG - スフィアタブ",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2350]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2350]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 11,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2400,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面 - 武具DLG - 装備タブ - 武具継承DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2400]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2400]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2410,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面 - 武具DLG - 装備タブ - 装備変更DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": null,
+                "MainTextList": [
+                    {
+                        "MainText": null
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": null,
+        "IsDisplayed": false,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2500,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面 - 武具DLG - スフィアタブ - スフィア装着DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2350]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2350]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 11,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2510,
+        "IsIgnore": null,
+        "Memo": "装着ルーン一覧表示DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2510]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2510]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 32,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2600,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面 - 武具DLG - スフィアタブ - スフィア合成DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2600]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2600]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 12,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2700,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面 - ステータス詳細DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2700]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2700]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine2701]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2701]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2800,
+        "IsIgnore": null,
+        "Memo": "キャラ育成画面 - リセットDLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2800]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2800]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 2900,
+        "IsIgnore": null,
+        "Memo": "アイテムボックス画面 - 武具タブ - 精練DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2900]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2900]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 9,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 3000,
+        "IsIgnore": null,
+        "Memo": "アイテムボックス画面 - 武具タブ - 一括精練DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2900]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2900]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 9,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 3100,
+        "IsIgnore": null,
+        "Memo": "アイテムボックス画面 - スフィアタブ - 一括合成DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine2600]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText2600]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 12,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 3200,
+        "IsIgnore": null,
+        "Memo": "オートバトル画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": null,
+                "MainTextList": [
+                    {
+                        "MainText": null
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": null,
+        "IsDisplayed": false,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 3300,
+        "IsIgnore": null,
+        "Memo": "放置バトル画面 - クエストDLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": null,
+                "MainTextList": [
+                    {
+                        "MainText": null
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": null,
+        "IsDisplayed": false,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 3400,
+        "IsIgnore": null,
+        "Memo": "放置バトル画面 - 高速バトルDLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine3400]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText3400]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 3500,
+        "IsIgnore": null,
+        "Memo": "放置バトル画面 - 統計情報DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine3500]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText3500]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine3501]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText3501]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine3502]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText3502]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 3600,
+        "IsIgnore": null,
+        "Memo": "試練画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": null,
+                "MainTextList": [
+                    {
+                        "MainText": null
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": null,
+        "IsDisplayed": false,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 3700,
+        "IsIgnore": null,
+        "Memo": "試練画面 - バトルリーグ画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine3700]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText3700]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 7,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 3800,
+        "IsIgnore": null,
+        "Memo": "試練画面 - レジェンドリーグ画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine3800]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText3800]"
+                    }
+                ],
+                "HelpParameterType": 1
+            },
+            {
+                "HeadLine": "[HelpHeadLine3801]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText3801]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 8,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 3810,
+        "IsIgnore": null,
+        "Memo": "試練画面 - レジェンドリーグ画面 - 報酬一覧ダイアログ",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine3810]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText3810]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine3811]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText3811]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 3900,
+        "IsIgnore": null,
+        "Memo": "試練画面 - 時空の洞窟画面（ハードモード解放前）",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine3900]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText3900]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine4020]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4020]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 1,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 3910,
+        "IsIgnore": null,
+        "Memo": "試練画面 - 時空の洞窟画面_イベント（ハードモード解放前）",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine3910]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText3910]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine3900]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText3900]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine4020]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4020]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 1,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 4000,
+        "IsIgnore": null,
+        "Memo": "試練画面 - 時空の洞窟画面（ハードモード解放後）",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine4000]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4000]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine4020]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4020]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine4001]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4001]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 24,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 4010,
+        "IsIgnore": null,
+        "Memo": "試練画面 - 時空の洞窟画面_イベント（ハードモード解放後）",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine4010]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4010]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine4000]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4000]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine4020]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4020]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine4001]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4001]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 24,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 4020,
+        "IsIgnore": null,
+        "Memo": "試練画面 - 時空の洞窟画面_見逃し補填DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine4020]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4020]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 4100,
+        "IsIgnore": null,
+        "Memo": "試練画面 - 祈りの泉画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine4100]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4100]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 4,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 4200,
+        "IsIgnore": null,
+        "Memo": "試練画面 - 幻影の神殿画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine4200]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4200]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 5,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 4210,
+        "IsIgnore": null,
+        "Memo": "試練画面 - 幻影の神殿画面_イベント",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine4210]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4210]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine4200]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4200]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 5,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 4300,
+        "IsIgnore": null,
+        "Memo": "試練画面 - 無窮の塔画面(塔選択)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": null,
+                "MainTextList": [
+                    {
+                        "MainText": null
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": null,
+        "IsDisplayed": false,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 4400,
+        "IsIgnore": null,
+        "Memo": "試練画面 - 無窮の塔画面(塔選択) - 無窮の塔画面(階層選択)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine4400]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4400]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 2,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 4500,
+        "IsIgnore": null,
+        "Memo": "試練画面 - 無窮の塔画面(塔選択) - 属性の塔画面(階層選択)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine4500]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4500]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 19,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 4600,
+        "IsIgnore": null,
+        "Memo": "ガチャ画面 - セレクトリストDLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine4600]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4600]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 4700,
+        "IsIgnore": null,
+        "Memo": "ガチャ画面 - 属性ガチャ解放DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine4700]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4700]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 4800,
+        "IsIgnore": null,
+        "Memo": "ギルド未加入者画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine4800]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4800]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 3,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 4900,
+        "IsIgnore": null,
+        "Memo": "ギルド情報画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine4800]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4800]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 3,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 4901,
+        "IsIgnore": null,
+        "Memo": "ギルド情報画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine4901]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText4901]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 5000,
+        "IsIgnore": null,
+        "Memo": "ギルドレイド画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine5000]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5000]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 16,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 5010,
+        "IsIgnore": null,
+        "Memo": "ギルドレイド画面_イベント",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine5010]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5010]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine5000]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5000]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 16,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 5100,
+        "IsIgnore": null,
+        "Memo": "ギルドバトル画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine5100]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5100]"
+                    }
+                ],
+                "HelpParameterType": 2
+            },
+            {
+                "HeadLine": "[HelpHeadLine5101]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5101]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 14,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 5200,
+        "IsIgnore": null,
+        "Memo": "グランドバトル画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine5200]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5200]"
+                    }
+                ],
+                "HelpParameterType": 1
+            },
+            {
+                "HeadLine": "[HelpHeadLine5203]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5203]"
+                    }
+                ],
+                "HelpParameterType": 5
+            },
+            {
+                "HeadLine": "[HelpHeadLine5201]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5201]"
+                    }
+                ],
+                "HelpParameterType": 3
+            },
+            {
+                "HeadLine": "[HelpHeadLine5202]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5202]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 15,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 5300,
+        "IsIgnore": null,
+        "Memo": "チャット画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine5300]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5300]"
+                    }
+                ],
+                "HelpParameterType": 1
+            },
+            {
+                "HeadLine": "[HelpHeadLine5301]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5301]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine5302]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5302]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine5303]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5303]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 5400,
+        "IsIgnore": null,
+        "Memo": "友達招待",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine5400]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5400]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 5500,
+        "IsIgnore": null,
+        "Memo": "バトル結果画面 - バトルレポートDLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine5500]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5500]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 5600,
+        "IsIgnore": null,
+        "Memo": "パネルミッション",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine5600]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5600]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 27,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 5700,
+        "IsIgnore": null,
+        "Memo": "楽曲再生",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine5700]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5700]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 5800,
+        "IsIgnore": null,
+        "Memo": "マイページ - 属性の塔ランキングDLG(属性の塔解放後)",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine410]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText410]"
+                    }
+                ],
+                "HelpParameterType": 0
+            },
+            {
+                "HeadLine": "[HelpHeadLine401]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText401]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 5900,
+        "IsIgnore": null,
+        "Memo": "ギルドツリー",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine5900]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5900]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 28,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 5910,
+        "IsIgnore": null,
+        "Memo": "ギルドツリー - 開花ボーナス強化",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine5910]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5910]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 5920,
+        "IsIgnore": null,
+        "Memo": "ギルドツリー - キャラ登録",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine5920]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText5920]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 6000,
+        "IsIgnore": null,
+        "Memo": "ギルドミッション",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine6000]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText6000]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 6100,
+        "IsIgnore": null,
+        "Memo": "期間限定ログインボーナス",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine6100]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText6100]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 6300,
+        "IsIgnore": null,
+        "Memo": "ゴールド交換",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine6300]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText6300]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 30,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 6500,
+        "IsIgnore": null,
+        "Memo": "マイページ - 週間トピックスDLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine6500]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText6500]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 6600,
+        "IsIgnore": null,
+        "Memo": "人気投票画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine6600]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText6603]"
+                    }
+                ],
+                "HelpParameterType": 4
+            },
+            {
+                "HeadLine": "[HelpHeadLine6601]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText6604]"
+                    }
+                ],
+                "HelpParameterType": 4
+            },
+            {
+                "HeadLine": "[HelpHeadLine6602]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText6605]"
+                    }
+                ],
+                "HelpParameterType": 4
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 31,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 6700,
+        "IsIgnore": null,
+        "Memo": "BOI版シリアルコード入力画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine6700]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText6700]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": [
+            4,
+            7
+        ]
+    },
+    {
+        "Id": 6800,
+        "IsIgnore": null,
+        "Memo": "まとめ買い",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine6800]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText6800]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 6900,
+        "IsIgnore": null,
+        "Memo": "魔女の書庫整理(複数マスアイテム確認前）",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine6900]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText6900]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 36,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 6910,
+        "IsIgnore": null,
+        "Memo": "魔女の書庫整理(複数マスアイテム確認後）",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine6900]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText6900]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 37,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 6920,
+        "IsIgnore": null,
+        "Memo": "魔女の書庫整理 - お手伝い派遣DLG",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine6920]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText6920]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 7000,
+        "IsIgnore": null,
+        "Memo": "アイテムボックス画面 - 消費タブ",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine7000]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText7000]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 7100,
+        "IsIgnore": null,
+        "Memo": "図鑑画面",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine7100]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText7100]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 7200,
+        "IsIgnore": null,
+        "Memo": "人形たちのお遊戯会",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine7200]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText7200]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 39,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 7300,
+        "IsIgnore": null,
+        "Memo": "キャラ画面 - 武器シンクロタブ",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine7300]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText7300]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 40,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    },
+    {
+        "Id": 7400,
+        "IsIgnore": null,
+        "Memo": "カスタム音楽設定",
+        "HelpPartInfoList": [
+            {
+                "HeadLine": "[HelpHeadLine7400]",
+                "MainTextList": [
+                    {
+                        "MainText": "[HelpMainText7400]"
+                    }
+                ],
+                "HelpParameterType": 0
+            }
+        ],
+        "HelpTitle": "[HelpTitleKey]",
+        "IsDisplayed": true,
+        "TutorialDescriptionId": 0,
+        "DialogType": 1,
+        "DisplayDeviceTypes": null
+    }
+]

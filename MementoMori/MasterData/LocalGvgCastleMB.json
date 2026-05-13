@@ -1,0 +1,635 @@
+[
+    {
+        "Id": 1,
+        "IsIgnore": null,
+        "Memo": "神殿",
+        "AdjacentCastleIds": [
+            2,
+            3,
+            4,
+            5
+        ],
+        "CastleType": 2,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 1000000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 200,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 3000,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 1,
+        "NameKey": "[LocalGvgCastleName1]"
+    },
+    {
+        "Id": 2,
+        "IsIgnore": null,
+        "Memo": "教会1",
+        "AdjacentCastleIds": [
+            1,
+            6,
+            8,
+            10
+        ],
+        "CastleType": 1,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 500000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 100,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 1500,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 2,
+        "NameKey": "[LocalGvgCastleName2]"
+    },
+    {
+        "Id": 3,
+        "IsIgnore": null,
+        "Memo": "教会2",
+        "AdjacentCastleIds": [
+            1,
+            10,
+            12,
+            15
+        ],
+        "CastleType": 1,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 500000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 100,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 1500,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 3,
+        "NameKey": "[LocalGvgCastleName3]"
+    },
+    {
+        "Id": 4,
+        "IsIgnore": null,
+        "Memo": "教会3",
+        "AdjacentCastleIds": [
+            1,
+            15,
+            16,
+            19
+        ],
+        "CastleType": 1,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 500000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 100,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 1500,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 4,
+        "NameKey": "[LocalGvgCastleName4]"
+    },
+    {
+        "Id": 5,
+        "IsIgnore": null,
+        "Memo": "教会4",
+        "AdjacentCastleIds": [
+            1,
+            6,
+            19,
+            20
+        ],
+        "CastleType": 1,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 500000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 100,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 1500,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 5,
+        "NameKey": "[LocalGvgCastleName5]"
+    },
+    {
+        "Id": 6,
+        "IsIgnore": null,
+        "Memo": "城1",
+        "AdjacentCastleIds": [
+            2,
+            5,
+            7,
+            11,
+            21
+        ],
+        "CastleType": 0,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 150000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 40,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 300,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 6,
+        "NameKey": "[LocalGvgCastleName6]"
+    },
+    {
+        "Id": 7,
+        "IsIgnore": null,
+        "Memo": "城2",
+        "AdjacentCastleIds": [
+            6,
+            8,
+            11
+        ],
+        "CastleType": 0,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 150000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 40,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 300,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 7,
+        "NameKey": "[LocalGvgCastleName7]"
+    },
+    {
+        "Id": 8,
+        "IsIgnore": null,
+        "Memo": "城3",
+        "AdjacentCastleIds": [
+            2,
+            7,
+            9
+        ],
+        "CastleType": 0,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 150000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 40,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 300,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 8,
+        "NameKey": "[LocalGvgCastleName8]"
+    },
+    {
+        "Id": 9,
+        "IsIgnore": null,
+        "Memo": "城4",
+        "AdjacentCastleIds": [
+            8,
+            10
+        ],
+        "CastleType": 0,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 150000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 40,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 300,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 9,
+        "NameKey": "[LocalGvgCastleName9]"
+    },
+    {
+        "Id": 10,
+        "IsIgnore": null,
+        "Memo": "城5",
+        "AdjacentCastleIds": [
+            2,
+            3,
+            9
+        ],
+        "CastleType": 0,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 150000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 40,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 300,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 10,
+        "NameKey": "[LocalGvgCastleName10]"
+    },
+    {
+        "Id": 11,
+        "IsIgnore": null,
+        "Memo": "城6",
+        "AdjacentCastleIds": [
+            6,
+            7
+        ],
+        "CastleType": 0,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 150000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 40,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 300,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 11,
+        "NameKey": "[LocalGvgCastleName11]"
+    },
+    {
+        "Id": 12,
+        "IsIgnore": null,
+        "Memo": "城7",
+        "AdjacentCastleIds": [
+            3,
+            13,
+            14
+        ],
+        "CastleType": 0,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 150000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 40,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 300,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 12,
+        "NameKey": "[LocalGvgCastleName12]"
+    },
+    {
+        "Id": 13,
+        "IsIgnore": null,
+        "Memo": "城8",
+        "AdjacentCastleIds": [
+            12,
+            14
+        ],
+        "CastleType": 0,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 150000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 40,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 300,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 13,
+        "NameKey": "[LocalGvgCastleName13]"
+    },
+    {
+        "Id": 14,
+        "IsIgnore": null,
+        "Memo": "城9",
+        "AdjacentCastleIds": [
+            12,
+            13,
+            15,
+            16
+        ],
+        "CastleType": 0,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 150000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 40,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 300,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 14,
+        "NameKey": "[LocalGvgCastleName14]"
+    },
+    {
+        "Id": 15,
+        "IsIgnore": null,
+        "Memo": "城10",
+        "AdjacentCastleIds": [
+            3,
+            4,
+            14,
+            16
+        ],
+        "CastleType": 0,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 150000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 40,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 300,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 15,
+        "NameKey": "[LocalGvgCastleName15]"
+    },
+    {
+        "Id": 16,
+        "IsIgnore": null,
+        "Memo": "城11",
+        "AdjacentCastleIds": [
+            4,
+            14,
+            15,
+            17
+        ],
+        "CastleType": 0,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 150000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 40,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 300,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 16,
+        "NameKey": "[LocalGvgCastleName16]"
+    },
+    {
+        "Id": 17,
+        "IsIgnore": null,
+        "Memo": "城12",
+        "AdjacentCastleIds": [
+            16,
+            18
+        ],
+        "CastleType": 0,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 150000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 40,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 300,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 17,
+        "NameKey": "[LocalGvgCastleName17]"
+    },
+    {
+        "Id": 18,
+        "IsIgnore": null,
+        "Memo": "城13",
+        "AdjacentCastleIds": [
+            17,
+            19
+        ],
+        "CastleType": 0,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 150000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 40,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 300,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 18,
+        "NameKey": "[LocalGvgCastleName18]"
+    },
+    {
+        "Id": 19,
+        "IsIgnore": null,
+        "Memo": "城14",
+        "AdjacentCastleIds": [
+            4,
+            5,
+            18
+        ],
+        "CastleType": 0,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 150000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 40,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 300,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 19,
+        "NameKey": "[LocalGvgCastleName19]"
+    },
+    {
+        "Id": 20,
+        "IsIgnore": null,
+        "Memo": "城15",
+        "AdjacentCastleIds": [
+            5,
+            21
+        ],
+        "CastleType": 0,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 150000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 40,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 300,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 20,
+        "NameKey": "[LocalGvgCastleName20]"
+    },
+    {
+        "Id": 21,
+        "IsIgnore": null,
+        "Memo": "城16",
+        "AdjacentCastleIds": [
+            6,
+            20
+        ],
+        "CastleType": 0,
+        "LocalGvgFixedRewards": [
+            {
+                "ItemCount": 150000,
+                "ItemId": 1,
+                "ItemType": 3
+            },
+            {
+                "ItemCount": 40,
+                "ItemId": 1,
+                "ItemType": 12
+            },
+            {
+                "ItemCount": 300,
+                "ItemId": 12,
+                "ItemType": 13
+            }
+        ],
+        "LotteryRewardId": 21,
+        "NameKey": "[LocalGvgCastleName21]"
+    }
+]

@@ -1,0 +1,128 @@
+[
+    {
+        "Id": 1,
+        "IsIgnore": null,
+        "Memo": "ご質問ボタン　　　　　　　：問い合わせダイアログ閉じずに、メーラーを起動する",
+        "ButtonTextKey": "[ButtonTextKey1]",
+        "ButtonType": 2,
+        "MailBodyKey": "[MailBody1]",
+        "MailSubjectKey": "[MailSubject1]",
+        "TimeServerIds": null,
+        "TransferUrl": null,
+        "DeviceTypes": null
+    },
+    {
+        "Id": 2,
+        "IsIgnore": null,
+        "Memo": "不具合関連ボタン　　　　　：問い合わせダイアログ閉じずに、メーラーを起動する",
+        "ButtonTextKey": "[ButtonTextKey2]",
+        "ButtonType": 2,
+        "MailBodyKey": "[MailBody2]",
+        "MailSubjectKey": "[MailSubject2]",
+        "TimeServerIds": null,
+        "TransferUrl": null,
+        "DeviceTypes": null
+    },
+    {
+        "Id": 3,
+        "IsIgnore": null,
+        "Memo": "通報ボタン　　　　　　　　：問い合わせダイアログ閉じずに、メーラーを起動する",
+        "ButtonTextKey": "[ButtonTextKey3]",
+        "ButtonType": 2,
+        "MailBodyKey": "[MailBody3]",
+        "MailSubjectKey": "[MailSubject3]",
+        "TimeServerIds": null,
+        "TransferUrl": null,
+        "DeviceTypes": null
+    },
+    {
+        "Id": 4,
+        "IsIgnore": null,
+        "Memo": "データ引き継ぎボタン　　　：問い合わせダイアログ閉じずに、メーラーを起動する",
+        "ButtonTextKey": "[ButtonTextKey4]",
+        "ButtonType": 2,
+        "MailBodyKey": "[MailBody4]",
+        "MailSubjectKey": "[MailSubject4]",
+        "TimeServerIds": null,
+        "TransferUrl": null,
+        "DeviceTypes": [
+            1,
+            2,
+            3,
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 5,
+        "IsIgnore": null,
+        "Memo": "APK用_データ引継ぎボタン",
+        "ButtonTextKey": "[ButtonTextKey4]",
+        "ButtonType": 2,
+        "MailBodyKey": "[MailBody4Apk]",
+        "MailSubjectKey": "[MailSubject4]",
+        "TimeServerIds": null,
+        "TransferUrl": null,
+        "DeviceTypes": [
+            4,
+            7
+        ]
+    },
+    {
+        "Id": 6,
+        "IsIgnore": null,
+        "Memo": "購入・決済ボタン　　　　　：問い合わせダイアログ閉じずに、メーラーを起動する",
+        "ButtonTextKey": "[ButtonTextKey5]",
+        "ButtonType": 2,
+        "MailBodyKey": "[MailBody5]",
+        "MailSubjectKey": "[MailSubject5]",
+        "TimeServerIds": null,
+        "TransferUrl": null,
+        "DeviceTypes": [
+            1,
+            2,
+            3,
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 7,
+        "IsIgnore": null,
+        "Memo": "APK用_購入・決済ボタン",
+        "ButtonTextKey": "[ButtonTextKey5]",
+        "ButtonType": 2,
+        "MailBodyKey": "[MailBody5Apk]",
+        "MailSubjectKey": "[MailSubject5]",
+        "TimeServerIds": null,
+        "TransferUrl": null,
+        "DeviceTypes": [
+            4,
+            7
+        ]
+    },
+    {
+        "Id": 8,
+        "IsIgnore": null,
+        "Memo": "ご意見・ご要望ボタン　　　：問い合わせダイアログ閉じずに、メーラーを起動する",
+        "ButtonTextKey": "[ButtonTextKey6]",
+        "ButtonType": 2,
+        "MailBodyKey": "[MailBody6]",
+        "MailSubjectKey": "[MailSubject6]",
+        "TimeServerIds": null,
+        "TransferUrl": null,
+        "DeviceTypes": null
+    },
+    {
+        "Id": 9,
+        "IsIgnore": null,
+        "Memo": null,
+        "ButtonTextKey": "[MenuAccountDeleteButton]",
+        "ButtonType": 3,
+        "MailBodyKey": null,
+        "MailSubjectKey": null,
+        "TimeServerIds": null,
+        "TransferUrl": null,
+        "DeviceTypes": null
+    }
+]
