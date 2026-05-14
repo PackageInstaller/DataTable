@@ -12,7 +12,7 @@ class SpriteAtlasExtractor:
     def __init__(self, bundle_dir: str):
         self.bundle_dir = Path(bundle_dir).resolve()
         self.script_dir = Path(os.path.dirname(os.path.abspath(__file__)))
-        self.output_dir = self.script_dir / "Output"
+        self.output_dir = self.script_dir / "Stand"
         self.assets_json_path = self.script_dir / "assets.json"
 
         if not self.assets_json_path.exists():
@@ -153,22 +153,22 @@ class SpriteAtlasExtractor:
         print(f"导出表情拼图: {self.stats['expression_exported']}")
 
     def _extract_face_layout(self, env):
-        """从 Prefab 的 RectTransform 层级中提取 FaceContent 相对于 Body 的坐标和尺寸。
+        """从 Prefab 的 RectTransform 层级中提取 FaceContent 相对于 Body 的坐标和尺寸
 
         层级结构一般为:
-          Body (m_AnchoredPosition, m_SizeDelta)
+        Body (m_AnchoredPosition, m_SizeDelta)
             └── FaceContent (m_AnchoredPosition, m_SizeDelta)
-                  ├── Normal (stretch fill)
-                  ├── Anger (stretch fill) ...
+                ├── Normal (stretch fill)
+                ├── Anger (stretch fill)
 
         Returns:
             dict: {
                 "face_anchor_x": float,  # FaceContent 相对 Body 中心的 X 偏移
-                "face_anchor_y": float,  # FaceContent 相对 Body 中心的 Y 偏移
-                "face_w": float,         # FaceContent 尺寸宽
-                "face_h": float,         # FaceContent 尺寸高
-                "body_w": float,         # Body RectTransform 宽
-                "body_h": float,         # Body RectTransform 高
+                "face_anchor_y": float,   # FaceContent 相对 Body 中心的 Y 偏移
+                "face_w": float,      # FaceContent 尺寸宽
+                "face_h": float,      # FaceContent 尺寸高
+                "body_w": float,      # Body RectTransform 宽
+                "body_h": float,      # Body RectTransform 高
             } 或 None
         """
         # 收集所有对象按 path_id 索引
@@ -196,7 +196,7 @@ class SpriteAtlasExtractor:
                     go_ref = getattr(rt, "m_GameObject", None)
                     go_id = None
                     if hasattr(go_ref, "m_PathID"):
-                        go_id = go_ref.m_PathID
+                        go_id = go_ref.m_PathID  # type: ignore
                     elif isinstance(go_ref, dict):
                         go_id = go_ref.get("m_PathID", 0)
 
@@ -235,7 +235,7 @@ class SpriteAtlasExtractor:
                                 father_go_ref = getattr(father_rt, "m_GameObject", None)
                                 father_go_id = None
                                 if hasattr(father_go_ref, "m_PathID"):
-                                    father_go_id = father_go_ref.m_PathID
+                                    father_go_id = father_go_ref.m_PathID  # type: ignore
                                 elif isinstance(father_go_ref, dict):
                                     father_go_id = father_go_ref.get("m_PathID")
                                 parent_name = go_names.get(father_go_id, "")
@@ -282,12 +282,10 @@ class SpriteAtlasExtractor:
             if not primary_key:
                 primary_key = best_primary_key
 
-            export_rel_dir = (
-                self._path_to_dir(primary_key) if primary_key else "Uncategorized"
-            )
-            output_path = self.output_dir / export_rel_dir
+            # 使用图集名字作为子文件夹
+            output_path = self.output_dir / atlas_name
             output_path.mkdir(parents=True, exist_ok=True)
-            self.stats["exported_dirs"].add(str(export_rel_dir))
+            self.stats["exported_dirs"].add(atlas_name)
 
             # 收集该图集下包含的所有精灵图
             sprites_in_atlas = []
@@ -304,7 +302,7 @@ class SpriteAtlasExtractor:
             if not sprites_in_atlas:
                 return
 
-            print(f"处理图集: {atlas_name} -> {export_rel_dir}")
+            print(f"处理图集: {atlas_name}")
 
             # 解析所有 Sprite 信息
             sprite_map = {}  # name -> {sprite data}
@@ -480,7 +478,7 @@ class SpriteAtlasExtractor:
                 target_fh = int(round(face_pixel_h))
                 if target_fw > 0 and target_fh > 0:
                     expr_resized = expr_full.resize(
-                        (target_fw, target_fh), Image.LANCZOS
+                        (target_fw, target_fh), Image.Resampling.LANCZOS
                     )
                 else:
                     expr_resized = expr_full
@@ -496,8 +494,8 @@ class SpriteAtlasExtractor:
                 # 将 expr_resized 直接以 Alpha 混合模式贴到 canvas 的 (paste_x, paste_y) 处
                 canvas.alpha_composite(expr_resized, dest=(paste_x, paste_y))
 
-                # 命名格式: SpriteAtlas名字_表情名.png
-                expr_save_name = f"{atlas_name}_{expr_data['name']}.png"
+                # 命名格式: 表情名.png
+                expr_save_name = f"{expr_data['name']}.png"
                 canvas.save(output_path / expr_save_name)
                 self.stats["expression_exported"] += 1
                 print(f"  └─ [表情合成] {expr_save_name}")

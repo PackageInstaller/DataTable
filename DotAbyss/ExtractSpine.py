@@ -13,7 +13,7 @@ class SpineAssetExtractor:
     def __init__(self, bundle_dir: str):
         self.bundle_dir = Path(bundle_dir).resolve()
         self.script_dir = Path(os.path.dirname(os.path.abspath(__file__)))
-        self.output_dir = self.script_dir / "Output"
+        self.output_dir = self.script_dir / "Spine"
         self.assets_json_path = self.script_dir / "assets.json"
         self.image_pattern = re.compile(r"([^#\r\n]+)\.png")
         self.size_pattern = re.compile(r"size:\s*(\d+),\s*(\d+)")
@@ -61,6 +61,21 @@ class SpineAssetExtractor:
         if "." in path:
             return path.split(".")[0]
         return path
+
+    def _extract_folder_name(self, path: str) -> str:
+        """从路径中提取文件夹名，优先查找 Chara/Unit + 数字格式的目录名"""
+        parts = Path(path).parts
+        skip_names = {'prefabs', 'assets', 'project', 'lazyassets', 'general', 'spine', 'chara'}
+        
+        pattern = re.compile(r'^(Chara|Unit)\d+\w*$', re.IGNORECASE)
+        for part in reversed(parts):
+            if pattern.match(part):
+                return part
+        for part in reversed(parts):
+            if part.lower() not in skip_names and not part.endswith(('.atlas', '.skel', '.json', '.png')):
+                return part
+        
+        return "Uncategorized"
 
     def _find_primary_key(self, container: str) -> Optional[str]:
         if not container:
@@ -161,11 +176,11 @@ class SpineAssetExtractor:
                 if not primary_key:
                     continue
 
-                export_rel_dir = self._path_to_dir(primary_key)
-                output_path = self.output_dir / export_rel_dir
+                folder_name = self._extract_folder_name(primary_key) if primary_key else "Uncategorized"
+                output_path = self.output_dir / folder_name
                 output_path.mkdir(parents=True, exist_ok=True)
 
-                self.stats["exported_dirs"].add(str(export_rel_dir))
+                self.stats["exported_dirs"].add(folder_name)
 
                 try:
                     data = obj.read()
@@ -182,7 +197,7 @@ class SpineAssetExtractor:
                         f.write(script_bytes)
 
                     self.stats["atlas"] += 1
-                    print(f"{export_rel_dir}/{name}")
+                    print(f"{folder_name}/{name}")
                     base_name = name.rsplit(".atlas", 1)[0]
                     for ext in [".json", ".skel"]:
                         linked_name = base_name + ext
