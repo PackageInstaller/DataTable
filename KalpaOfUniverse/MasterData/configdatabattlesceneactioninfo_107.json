@@ -1,5 +1,13 @@
 [
   {
+    "ID": 80316239,
+    "VersionTag": 63,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
     "ID": 80316240,
     "VersionTag": 63,
     "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
@@ -15700,19 +15708,5 @@
     "Param1": [
       600
     ]
-  },
-  {
-    "ID": 80322582,
-    "ActionType": "BattleSceneActionType_CameraShake",
-    "Param1": [
-      4000
-    ],
-    "Param2": [
-      3000
-    ],
-    "Param4": [
-      10000
-    ],
-    "ActionSoundName": "EFT_Camera_Vibration"
   }
 ]

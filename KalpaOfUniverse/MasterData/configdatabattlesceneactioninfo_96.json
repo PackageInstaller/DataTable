@@ -1,5 +1,16 @@
 [
   {
+    "ID": 70810136,
+    "ActionType": "BattleSceneActionType_SetTriggerStatus",
+    "Param1": [
+      7080164
+    ],
+    "Param2": [
+      0
+    ],
+    "SkipCondId": 7080101
+  },
+  {
     "ID": 70810137,
     "ActionType": "BattleSceneActionType_SetTriggerStatus",
     "Param1": [
@@ -17031,29 +17042,5 @@
       1
     ],
     "SkipCondId": 28010201
-  },
-  {
-    "ID": 80102174,
-    "ActionType": "BattleSceneActionType_ActorAISet",
-    "Param1": [
-      423
-    ],
-    "Param2": [
-      2
-    ],
-    "Param4": [
-      28010202
-    ],
-    "Param5": "1",
-    "Param6": [
-      1
-    ],
-    "Param8": [
-      0
-    ],
-    "Param9": [
-      0
-    ],
-    "SkipCondId": 28010203
   }
 ]

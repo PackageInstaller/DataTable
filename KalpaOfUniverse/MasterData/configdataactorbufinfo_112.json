@@ -1,5 +1,22 @@
 [
   {
+    "ID": 751343110,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_Pack",
+    "FuncParams": [
+      751343111,
+      751343112
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 751343111,
     "LifeTime": -1,
     "PropertiesList": [
@@ -4200,24 +4217,6 @@
         "Id": "PropertiesId_HealAddLevel2_NC",
         "Value": 3000
       }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 751353160,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_Pack",
-    "FuncParams": [
-      751353161,
-      751353162,
-      751353163
     ],
     "ReplaceRule": "ReplaceRule_Refresh",
     "LevelMax": 1,

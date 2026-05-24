@@ -1,5 +1,28 @@
 [
   {
+    "ID": 70291132,
+    "VersionTag": 61,
+    "ActionType": "BattleSceneActionType_SummonFacilitie",
+    "Param1": [
+      91,
+      1585,
+      10000,
+      999,
+      -1,
+      0
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 11
+      },
+      {
+        "X": 9,
+        "Y": 10
+      }
+    ]
+  },
+  {
     "ID": 70291133,
     "VersionTag": 61,
     "ActionType": "BattleSceneActionType_SummonFacilitie",
@@ -25484,19 +25507,5 @@
     "Param1": [
       704121305
     ]
-  },
-  {
-    "ID": 70412021,
-    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
-    "Param1": [
-      1000
-    ],
-    "Param3": [
-      {
-        "X": 2,
-        "Y": 9
-      }
-    ],
-    "SkipCondId": 27041200
   }
 ]

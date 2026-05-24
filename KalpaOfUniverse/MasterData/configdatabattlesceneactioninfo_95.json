@@ -1,5 +1,19 @@
 [
   {
+    "ID": 70412021,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 2,
+        "Y": 9
+      }
+    ],
+    "SkipCondId": 27041200
+  },
+  {
     "ID": 70412022,
     "ActionType": "BattleSceneActionType_SummonNear",
     "Param1": [
@@ -20219,17 +20233,6 @@
     "ActionType": "BattleSceneActionType_SetTriggerStatus",
     "Param1": [
       7080144
-    ],
-    "Param2": [
-      0
-    ],
-    "SkipCondId": 7080101
-  },
-  {
-    "ID": 70810136,
-    "ActionType": "BattleSceneActionType_SetTriggerStatus",
-    "Param1": [
-      7080164
     ],
     "Param2": [
       0

@@ -1,5 +1,29 @@
 [
   {
+    "ID": 80102174,
+    "ActionType": "BattleSceneActionType_ActorAISet",
+    "Param1": [
+      423
+    ],
+    "Param2": [
+      2
+    ],
+    "Param4": [
+      28010202
+    ],
+    "Param5": "1",
+    "Param6": [
+      1
+    ],
+    "Param8": [
+      0
+    ],
+    "Param9": [
+      0
+    ],
+    "SkipCondId": 28010203
+  },
+  {
     "ID": 80102175,
     "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
     "Param1": [
@@ -16695,14 +16719,6 @@
         "X": 8,
         "Y": 12
       }
-    ]
-  },
-  {
-    "ID": 80110739,
-    "VersionTag": 54,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      300
     ]
   }
 ]

@@ -1,5 +1,32 @@
 [
   {
+    "ID": 760021284,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_AttachBufAfterCastSkill",
+    "FuncParams": [
+      0,
+      1,
+      1,
+      760021286,
+      1
+    ],
+    "ActiveCondIds": [
+      1872,
+      404,
+      1101
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorId": 600000011,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_065.png@Gift_065",
+    "NameDescStrKey": "ST:105833"
+  },
+  {
     "ID": 760021285,
     "LifeTime": 1,
     "FuncType": "BufFuncType_DisperseBufImm",
@@ -4556,23 +4583,5 @@
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_bixieyujian2.png@weapon_bixieyujian2",
     "NameDescStrKey": "ST:34735",
     "BuffDescStrKey": "ST:110361"
-  },
-  {
-    "ID": 760021701,
-    "LifeTime": -1,
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_HpAdditional_D",
-        "Value": 3
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
   }
 ]

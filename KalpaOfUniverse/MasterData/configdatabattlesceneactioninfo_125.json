@@ -1,5 +1,21 @@
 [
   {
+    "ID": 131040337,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10030
+    ],
+    "Param3": [
+      {
+        "X": 4,
+        "Y": 12
+      }
+    ]
+  },
+  {
     "ID": 131040338,
     "ActionType": "BattleSceneActionType_TerrainEffect",
     "Param1": [
@@ -15943,23 +15959,6 @@
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
       600
-    ]
-  },
-  {
-    "ID": 140150009,
-    "ActionType": "BattleSceneActionType_ActorAnimation",
-    "Param1": [
-      211
-    ],
-    "Param2": [
-      -1
-    ],
-    "Param4": [
-      1800
-    ],
-    "Param5": "SelectAnnounce",
-    "Param6": [
-      0
     ]
   }
 ]

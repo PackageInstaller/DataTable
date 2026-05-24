@@ -1,5 +1,43 @@
 [
   {
+    "ID": 755011110,
+    "LifeTime": -1,
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_D",
+        "Value": 2200
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_D",
+        "Value": 2200
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_D",
+        "Value": 2200
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_D",
+        "Value": 2200
+      },
+      {
+        "Id": "PropertiesId_CriticalRateMult_D",
+        "Value": 2200
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_D",
+        "Value": 2200
+      }
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 755011120,
     "LifeTime": -1,
     "PropertiesList": [
@@ -5531,40 +5569,6 @@
       {
         "Id": "PropertiesId_HpMaxMult_D",
         "Value": 1200
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 756000013,
-    "LifeTime": -1,
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_AttackMult_D",
-        "Value": 1300
-      },
-      {
-        "Id": "PropertiesId_SpiritMult_D",
-        "Value": 1300
-      },
-      {
-        "Id": "PropertiesId_PhysicDefendMult_D",
-        "Value": 1300
-      },
-      {
-        "Id": "PropertiesId_MagicDefendMult_D",
-        "Value": 1300
-      },
-      {
-        "Id": "PropertiesId_HpMaxMult_D",
-        "Value": 1300
       }
     ],
     "ReplaceRule": "ReplaceRule_Refresh",

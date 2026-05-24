@@ -1,5 +1,41 @@
 [
   {
+    "ID": 743150682,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_PropertiesModifyCombatByOtherCharacter",
+    "FuncParams": [
+      -1,
+      106404,
+      -1
+    ],
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_D",
+        "Value": 4000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_D",
+        "Value": 4000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_D",
+        "Value": 4000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_D",
+        "Value": 4000
+      }
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 743150683,
     "LifeTime": -1,
     "FuncType": "BufFuncType_Pack",
@@ -4325,32 +4361,5 @@
     "TriggerBehaviorId": 623160003,
     "TriggerBehaviorType": "TriggerBehaviorType_None",
     "SkillPipeline": true
-  },
-  {
-    "ID": 743160007,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_PassiveGuardAttack",
-    "FuncParams": [
-      743160008,
-      0,
-      0,
-      0,
-      3
-    ],
-    "ActiveCondIds": [
-      9114,
-      23152
-    ],
-    "_FightLogicFlags": [
-      "FightLogicFlag_IsGuardAttack"
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
   }
 ]

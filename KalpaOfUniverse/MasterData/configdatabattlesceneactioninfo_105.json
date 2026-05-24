@@ -1,5 +1,13 @@
 [
   {
+    "ID": 80304838,
+    "VersionTag": 62,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      200
+    ]
+  },
+  {
     "ID": 80304839,
     "VersionTag": 62,
     "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
@@ -16679,22 +16687,6 @@
     "ActionType": "BattleSceneActionType_Dialog",
     "Param1": [
       803111201
-    ]
-  },
-  {
-    "ID": 80311703,
-    "ActionType": "BattleSceneActionType_ActorTurnDir",
-    "Param1": [
-      481
-    ],
-    "Param3": [
-      {
-        "X": 8,
-        "Y": 17
-      }
-    ],
-    "Param4": [
-      500
     ]
   }
 ]

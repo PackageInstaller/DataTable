@@ -11754,7 +11754,7 @@
     "Param11": [
       1
     ],
-    "SkipCondId": 67009003
+    "SkipCondId": 67009007
   },
   {
     "ID": 67009135,
@@ -11792,7 +11792,7 @@
     "Param11": [
       1
     ],
-    "SkipCondId": 67009003
+    "SkipCondId": 67009007
   },
   {
     "ID": 67009136,
@@ -11830,7 +11830,69 @@
     "Param11": [
       1
     ],
-    "SkipCondId": 67009003
+    "SkipCondId": 67009007
+  },
+  {
+    "ID": 67009137,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      1,
+      1,
+      1
+    ],
+    "Param2": [
+      1,
+      1,
+      1
+    ],
+    "Param3": [
+      {
+        "X": 2,
+        "Y": 9
+      },
+      {
+        "X": 2,
+        "Y": 8
+      },
+      {
+        "X": 2,
+        "Y": 7
+      }
+    ],
+    "Param4": [
+      152132146,
+      152132146,
+      152132146
+    ],
+    "Param6": [
+      0,
+      0,
+      0
+    ],
+    "Param7": [
+      {},
+      {},
+      {}
+    ],
+    "Param8": [
+      10000,
+      10000,
+      10000
+    ],
+    "Param9": [
+      1,
+      1,
+      1
+    ],
+    "Param10": [
+      481
+    ],
+    "Param11": [
+      1,
+      1,
+      1
+    ],
+    "SkipCondId": 67009006
   },
   {
     "ID": 67009150,
@@ -12341,10 +12403,6 @@
     "ActionType": "BattleSceneActionType_NpcChangeTeamType",
     "Param1": [
       441,
-      451,
-      452,
-      453,
-      454,
       461,
       462,
       471,
@@ -12357,15 +12415,87 @@
   },
   {
     "ID": 67009310,
-    "ActionType": "BattleSceneActionType_Delay",
+    "ActionType": "BattleSceneActionType_ActorRetreat",
     "Param1": [
-      1
+      451,
+      452,
+      453,
+      454
     ]
   },
   {
     "ID": 67009311,
-    "ActionType": "BattleSceneActionType_Delay",
+    "ActionType": "BattleSceneActionType_SummonNear",
     "Param1": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "Param2": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 12
+      },
+      {
+        "X": 7,
+        "Y": 4
+      },
+      {
+        "X": 3,
+        "Y": 11
+      },
+      {
+        "X": 3,
+        "Y": 5
+      }
+    ],
+    "Param4": [
+      152132147,
+      152132147,
+      152132147,
+      152132147
+    ],
+    "Param6": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Param7": [
+      {},
+      {},
+      {},
+      {}
+    ],
+    "Param8": [
+      10000,
+      10000,
+      10000,
+      10000
+    ],
+    "Param9": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "Param10": [
+      451,
+      452,
+      453,
+      454
+    ],
+    "Param11": [
+      1,
+      1,
+      1,
       1
     ]
   },
@@ -15310,14 +15440,6 @@
         "X": 11,
         "Y": 6
       }
-    ]
-  },
-  {
-    "ID": 67010239,
-    "ActionType": "BattleSceneActionType_FadeIn",
-    "Param1": [
-      421,
-      422
     ]
   }
 ]

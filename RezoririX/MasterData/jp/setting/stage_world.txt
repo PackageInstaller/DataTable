@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<root>
+	<stage_world/>
+	<stage_world id="1" world_type="活動_普通" name="プロローグ"/>
+	<stage_world/>
+	<stage_world/>
+	<stage_world id="1001" world_type="主線_普通" opposite_stage_world_id1="1101" name="序章" world_bg="DialogBackground/bg1000201/bg1000201" pos_x="0" pos_y="0"/>
+	<stage_world id="1002" world_type="主線_普通" opposite_stage_world_id1="1102" name="第1章" world_bg="DialogBackground/bg1002101/bg1002101" pos_x="0" pos_y="0"/>
+	<stage_world id="1003" world_type="主線_普通" opposite_stage_world_id1="1103" name="第2章" world_bg="DialogBackground/bg1001201/bg1001201" pos_x="0" pos_y="0"/>
+	<stage_world/>
+	<stage_world id="1101" world_type="主線_困難" opposite_stage_world_id1="1001" name="序章（Hard）" world_bg="DialogBackground/bg1000201/bg1000201" pos_x="0" pos_y="0"/>
+	<stage_world id="1102" world_type="主線_困難" opposite_stage_world_id1="1002" name="第1章（Hard）" world_bg="DialogBackground/bg1002101/bg1002101" pos_x="0" pos_y="0"/>
+	<stage_world id="1103" world_type="主線_困難" opposite_stage_world_id1="1003" name="第2章（Hard）" world_bg="DialogBackground/bg1001201/bg1001201" pos_x="0" pos_y="0"/>
+	<stage_world/>
+	<stage_world/>
+	<stage_world/>
+	<stage_world id="2001" world_type="遺跡關卡" name="辺境貿易" world_bg="area1006/100601" pos_x="0" pos_y="0"/>
+	<stage_world/>
+	<stage_world id="3001" world_type="素材回收" name="輸送任務" world_bg="area1009/100901" pos_x="0" pos_y="0"/>
+	<stage_world/>
+	<stage_world/>
+	<stage_world/>
+	<stage_world id="9001" world_type="活動_普通" arrive_id="900001" name="【魔女は忙しい】" world_bg="DialogBackground/bg1001201/bg1001201"/>
+</root>

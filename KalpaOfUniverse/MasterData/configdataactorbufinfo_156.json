@@ -1,5 +1,28 @@
 [
   {
+    "ID": 763150861,
+    "FuncType": "BufFuncType_AttachBufImm",
+    "FuncParams": [
+      -1,
+      10,
+      1,
+      763150863,
+      1
+    ],
+    "ActiveCondIds": [
+      763150785
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 763150862,
     "LifeTime": -1,
     "FuncType": "BufFuncType_Batch",
@@ -4425,28 +4448,6 @@
     ],
     "ActiveCondIds": [
       763151322
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 763151323,
-    "FuncType": "BufFuncType_AttachBufImm",
-    "FuncParams": [
-      0,
-      1,
-      1,
-      763151314,
-      1
-    ],
-    "ActiveCondIds": [
-      763151323
     ],
     "ReplaceRule": "ReplaceRule_Refresh",
     "LevelMax": 1,

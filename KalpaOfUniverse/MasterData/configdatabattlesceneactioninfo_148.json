@@ -1,5 +1,24 @@
 [
   {
+    "ID": 434111138,
+    "ActionType": "BattleSceneActionType_MultiActorBackMove",
+    "Param1": [
+      101
+    ],
+    "Param3": [
+      {
+        "X": 16,
+        "Y": 7
+      }
+    ],
+    "Param7": [
+      {
+        "X": 16,
+        "Y": 10
+      }
+    ]
+  },
+  {
     "ID": 434111139,
     "ActionType": "BattleSceneActionType_ActorAnimation",
     "Param1": [
@@ -16008,19 +16027,6 @@
     "ActionType": "BattleSceneActionType_Dialog",
     "Param1": [
       444433133
-    ]
-  },
-  {
-    "ID": 444433179,
-    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
-    "Param1": [
-      1
-    ],
-    "Param3": [
-      {
-        "X": 8,
-        "Y": 5
-      }
     ]
   }
 ]

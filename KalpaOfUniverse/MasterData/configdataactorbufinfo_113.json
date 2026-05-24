@@ -1,5 +1,23 @@
 [
   {
+    "ID": 751353160,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_Pack",
+    "FuncParams": [
+      751353161,
+      751353162,
+      751353163
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 751353161,
     "LifeTime": -1,
     "PropertiesList": [
@@ -4275,33 +4293,5 @@
     "SkillPipeline": true,
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Equip01_ABS/Equip_huanguangjianyu.png@Equip_huanguangjianyu",
     "NameDescStrKey": "ST:111996"
-  },
-  {
-    "ID": 751360190,
-    "LifeTime": -1,
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_AttackMult_D",
-        "Value": 300
-      },
-      {
-        "Id": "PropertiesId_PhysicDefendMult_D",
-        "Value": 300
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Accumulate",
-    "LevelMax": 5,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_JianYi"
-    ],
-    "CanBeDispersed": true,
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None",
-    "Visible": "BuffShowType_Normal",
-    "IconBackgroundType": "IconBackgroundType_Other",
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Equip01_ABS/Equip_huanguangjianyu.png@Equip_huanguangjianyu",
-    "NameDescStrKey": "ST:111996",
-    "BuffDescStrKey": "ST:177268"
   }
 ]

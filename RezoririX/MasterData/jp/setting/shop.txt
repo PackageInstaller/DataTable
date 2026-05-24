@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<root>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop shop_type="神秘商店" order="2" name="神秘ショップ" open="true" random_shop_item_cnt="5" random_shop_item_group_id="1032" can_multiple_buy="true" auto_refresh_type="每小時刷新" auto_refresh_val="1" show_cost_type1="遊戲幣" show_cost_type2="商城幣">
+		<multiple_buy_cost_type>遊戲幣</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop shop_type="一般商店" order="1001" name="一般ショップ" open="true" can_multiple_buy="true" auto_refresh_type="每日刷新" show_cost_type1="遊戲幣" show_cost_type2="商城幣">
+		<multiple_buy_cost_type>遊戲幣</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop shop_type="一般商店" order="3004" name="ギルドコイン" open="true" open_condition="公會解鎖" can_multiple_buy="true" auto_refresh_type="每月刷新" show_cost_type1="道具" show_cost_val1="6">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>6</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="3003" shop_type="一般商店" order="3003" name="信用ポイント(対戦)" open="true" open_condition="競技場解鎖" can_multiple_buy="true" auto_refresh_type="每月刷新" show_cost_type1="道具" show_cost_val1="4">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>4</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="3002" shop_type="一般商店" order="3002" name="信用ポイント(訓練)" open="true" open_condition="空之塔解鎖" can_multiple_buy="true" auto_refresh_type="每月刷新" show_cost_type1="道具" show_cost_val1="7">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>7</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="3001" shop_type="一般商店" order="3001" name="古代の金貨" open="true" open_condition="無" can_multiple_buy="true" auto_refresh_type="每月刷新" show_cost_type1="道具" show_cost_val1="9">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>9</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="7001" shop_type="素材商店" order="7001" name="書素材交換" open="true" open_condition="無" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="507">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>507</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="7002" shop_type="素材商店" order="7002" name="ポーション素材" open="true" open_condition="無" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="508">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>508</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="7003" shop_type="素材商店" order="7003" name="クエスト素材" open="true" open_condition="無" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="509">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>509</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop shop_type="素材商店" order="7004" name="アーチザンコイン" open="true" open_condition="無" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="116">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>116</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="8001" shop_type="Ultima" order="8001" name="クリスタルSSR" open="true" open_condition="無" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="12">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>12</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="8002" shop_type="Ultima" order="8002" name="クリスタルSR" open="true" open_condition="無" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="12">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>12</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="8003" shop_type="Ultima" order="8003" name="クリスタルR" open="true" open_condition="無" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="12">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>12</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="99999" shop_type="一般商店" order="1" name="専属ショップ" open="true" open_condition="無" can_multiple_buy="true" auto_refresh_type="每周一刷新" show_cost_type1="商城幣" show_cost_type2="有償商城幣">
+		<multiple_buy_cost_type>商城幣</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>有償商城幣</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop shop_type="一般商店" order="3005" name="シーズンパス限定聖騎士" open="true" open_condition="無" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="24">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>72</multiple_buy_cost_target>
+		<multiple_buy_cost_type>有償商城幣</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop shop_type="一般商店" order="3004" name="同盟コイン" open="true" open_condition="公會解鎖" open_time="2025-09-01 03:00:00" can_multiple_buy="true" auto_refresh_type="每月刷新" show_cost_type1="道具" show_cost_val1="6">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>6</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop shop_type="一般商店" order="3003" name="金貨" open="true" open_condition="競技場解鎖" open_time="2025-09-01 03:00:00" can_multiple_buy="true" auto_refresh_type="每月刷新" show_cost_type1="道具" show_cost_val1="4">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>4</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop shop_type="一般商店" order="3002" name="迷宮コイン" open="true" open_condition="空之塔解鎖" open_time="2025-09-01 03:00:00" can_multiple_buy="true" auto_refresh_type="每月刷新" show_cost_type1="道具" show_cost_val1="7">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>7</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop shop_type="一般商店" order="3001" name="救援コイン" open="true" open_condition="無" open_time="2025-09-01 03:00:00" can_multiple_buy="true" auto_refresh_type="每月刷新" show_cost_type1="道具" show_cost_val1="9">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>9</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop shop_type="召喚商店" order="6097" name="ウルティマコイン" open="true" open_time="2025-09-01 03:00:00" can_multiple_buy="true" auto_refresh_type="每月刷新" show_cost_type1="道具" show_cost_val1="11">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>11</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="700001" shop_type="召喚商店" order="1002" name="出入検査章" open="true" open_condition="無" can_multiple_buy="true" show_cost_type1="道具" show_cost_val1="503">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>503</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="700002" shop_type="召喚商店" order="1003" name="後方支援ポイント" open="true" open_condition="無" can_multiple_buy="true" show_cost_type1="道具" show_cost_val1="504">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>504</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="700003" shop_type="一般商店" order="5001" name="サブスクPT" open="true" open_condition="無" can_multiple_buy="true" auto_refresh_type="每月刷新" show_cost_type1="道具" show_cost_val1="506">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>506</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="700004" shop_type="召喚商店" order="1004" name="祭壇の鈴" open="true" open_condition="無" can_multiple_buy="true" show_cost_type1="道具" show_cost_val1="11">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>11</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="900101" shop_type="活動商店" order="1" name="魔女は忙しい・前半周回交換所" open="true" open_condition="無" close_time="2026-06-09 11:00:00" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="20009">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>20009</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="900102" shop_type="召喚商店" order="1001" name="魔女は忙しい・前半" open="true" open_condition="無" close_time="2026-06-09 11:00:00" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="20006">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>20006</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop shop_type="新手回歸招集" name="招集商店" open="true" can_multiple_buy="false" auto_refresh_type="無">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop shop_type="新手回歸招集" name="新手商店" open="true" can_multiple_buy="false" auto_refresh_type="無">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop shop_type="新手回歸招集" name="回歸商店" open="true" can_multiple_buy="false" auto_refresh_type="無">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop open="false" can_multiple_buy="false">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="200001" shop_type="活動商店" name="調達許可証【赤】交換" open="false" close_time="2025-02-06 11:00:00" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="1514">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>1514</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="200002" shop_type="活動商店" name="調達許可証【緑】交換" open="false" close_time="2025-02-06 11:00:00" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="1515">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>1515</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="200003" shop_type="活動商店" name="調達許可証【青】交換" open="false" close_time="2025-02-06 11:00:00" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="1516">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>1516</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="5001" shop_type="活動商店" name="巨乳徽章交換" open="false" can_multiple_buy="true" auto_refresh_type="巨乳日刷新" show_cost_type1="道具" show_cost_val1="18">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>18</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="6995" shop_type="召喚商店" name="競撃的寶玉・聖交換" open="false" close_time="2024-06-12 12:00:00" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="10984">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>10984</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="6994" shop_type="召喚商店" name="競技的寶玉・火交換" open="false" close_time="2024-06-26 12:00:00" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="10983">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>10983</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="6993" shop_type="召喚商店" name="競撃的寶玉・風交換" open="false" close_time="2024-07-10 12:00:00" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="10982">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>10982</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="6899" shop_type="召喚商店" name="競撃的寶玉・水交換" open="false" close_time="2024-12-11 12:00:00" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="19999">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>19999</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="20000" shop_type="召喚商店" name="揉胸好運籤交換" open="false" open_time="2024-12-31 00:00:00" close_time="2025-01-08 12:00:00" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="20000">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>20000</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="6996" shop_type="召喚商店" name="回歸獎牌交換" open="false" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="10985">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>10985</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+	<shop id="6997" shop_type="召喚商店" name="回歸獎牌交換" open="false" can_multiple_buy="true" auto_refresh_type="無" show_cost_type1="道具" show_cost_val1="10986">
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>10986</multiple_buy_cost_target>
+		<multiple_buy_cost_type>道具</multiple_buy_cost_type>
+		<multiple_buy_cost_target>0</multiple_buy_cost_target>
+	</shop>
+</root>

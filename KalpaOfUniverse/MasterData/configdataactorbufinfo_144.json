@@ -1,5 +1,28 @@
 [
   {
+    "ID": 760010482,
+    "LifeTime": -1,
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SpiritMult_D",
+        "Value": 2000
+      }
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None",
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Other",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1006.png@Buff_1006",
+    "NameDescStrKey": "ST:71410",
+    "BuffDescStrKey": "ST:71435"
+  },
+  {
     "ID": 760010483,
     "LifeTime": -1,
     "PropertiesList": [
@@ -4748,32 +4771,6 @@
     ],
     "ActiveCondIds": [
       1833
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 760020248,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_AttachBufImm",
-    "FuncParams": [
-      0,
-      1,
-      1,
-      760020242,
-      1
-    ],
-    "ActiveCondIds": [
-      1834
-    ],
-    "AttachChildBuffs": [
-      760020252
     ],
     "ReplaceRule": "ReplaceRule_Refresh",
     "LevelMax": 1,

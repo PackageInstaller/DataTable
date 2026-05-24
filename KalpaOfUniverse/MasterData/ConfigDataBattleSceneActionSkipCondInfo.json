@@ -13182,6 +13182,30 @@
     ]
   },
   {
+    "ID": 67009005,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 6,
+    "Param2": [
+      0
+    ]
+  },
+  {
+    "ID": 67009006,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_Or",
+    "Param2": [
+      67009003,
+      67009001
+    ]
+  },
+  {
+    "ID": 67009007,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_Or",
+    "Param2": [
+      67009003,
+      67009005
+    ]
+  },
+  {
     "ID": 67010701,
     "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
     "Param1": 5,

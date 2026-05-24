@@ -1,5 +1,43 @@
 [
   {
+    "ID": 752011897,
+    "LifeTime": -1,
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_PhysicDefendMult_D",
+        "Value": 100
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_D",
+        "Value": 100
+      },
+      {
+        "Id": "PropertiesId_AttackMult_D",
+        "Value": 100
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_D",
+        "Value": 100
+      },
+      {
+        "Id": "PropertiesId_CriticalRateMult_D",
+        "Value": 100
+      }
+    ],
+    "ReplaceRule": "ReplaceRule_Accumulate",
+    "LevelMax": 10,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None",
+    "Visible": "BuffShowType_Normal",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/XuanYuanJianImage_ABS/Icon/Touxiang22.png@Touxiang22",
+    "NameDescStrKey": "ST:186953",
+    "BuffDescStrKey": "ST:188545"
+  },
+  {
     "ID": 752011900,
     "LifeTime": -1,
     "FuncType": "BufFuncType_Pack",
@@ -4259,24 +4297,5 @@
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_2001.png@Buff_2001",
     "NameDescStrKey": "ST:48556",
     "BuffDescStrKey": "ST:39799"
-  },
-  {
-    "ID": 753081650,
-    "FuncType": "BufFuncType_AttachBufImm",
-    "FuncParams": [
-      0,
-      1,
-      -1,
-      753081651,
-      1
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
   }
 ]

@@ -1,5 +1,19 @@
 [
   {
+    "ID": 760022553,
+    "LifeTime": -1,
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_XuanMoKeYing"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None",
+    "NameDescStrKey": "ST:118048",
+    "BuffDescStrKey": "ST:118049"
+  },
+  {
     "ID": 760022554,
     "LifeTime": 2,
     "PropertiesList": [
@@ -5005,35 +5019,5 @@
     "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
     "TriggerTimes": 1,
     "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 760022904,
-    "LifeTime": 1,
-    "FuncType": "BufFuncType_CanGuardAttack",
-    "FuncParams": [
-      760022905,
-      760022906,
-      1,
-      3
-    ],
-    "ActiveCondIds": [
-      9111
-    ],
-    "_FightLogicFlags": [
-      "FightLogicFlag_IsGuardAttack"
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_XuanYuJingJie"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None",
-    "Visible": "BuffShowType_Normal",
-    "IconBackgroundType": "IconBackgroundType_Other",
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1185.png@EXSkill_1185",
-    "NameDescStrKey": "ST:122022",
-    "BuffDescStrKey": "ST:136624"
   }
 ]

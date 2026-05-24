@@ -1,5 +1,27 @@
 [
   {
+    "ID": 754083090,
+    "LifeTime": -1,
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_D",
+        "Value": 500
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_D",
+        "Value": 500
+      }
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 754083100,
     "LifeTime": -1,
     "PropertiesList": [
@@ -4433,35 +4455,5 @@
     "TriggerBehaviorType": "TriggerBehaviorType_None",
     "NameDescStrKey": "ST:247162",
     "BuffDescStrKey": "ST:247184"
-  },
-  {
-    "ID": 754087419,
-    "LifeTime": 3,
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_AttackMult_D",
-        "Value": 2500
-      },
-      {
-        "Id": "PropertiesId_SpiritMult_D",
-        "Value": 2500
-      }
-    ],
-    "SubType": 141,
-    "Priority": 2,
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_Enhance",
-      "BufCategory_ShenRui",
-      "BufCategory_GoodForAttack"
-    ],
-    "CanBePreventDisperse": true,
-    "AddEffect": 10000017,
-    "TriggerBehaviorType": "TriggerBehaviorType_None",
-    "Visible": "BuffShowType_Normal",
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_1001.png@Buff_1001",
-    "NameDescStrKey": "ST:164625",
-    "BuffDescStrKey": "ST:164642"
   }
 ]

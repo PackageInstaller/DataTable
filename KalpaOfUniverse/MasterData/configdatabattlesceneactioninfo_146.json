@@ -1,5 +1,17 @@
 [
   {
+    "ID": 406526558,
+    "ActionType": "BattleSceneActionType_ActorEffect",
+    "Param1": [
+      101,
+      102
+    ],
+    "Param2": [
+      800009001,
+      800009001
+    ]
+  },
+  {
     "ID": 406526559,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
@@ -15635,28 +15647,6 @@
     "ActionType": "BattleSceneActionType_Dialog",
     "Param1": [
       414191116
-    ]
-  },
-  {
-    "ID": 414193142,
-    "ActionType": "BattleSceneActionType_ActorTurnDir",
-    "Param1": [
-      102,
-      103
-    ],
-    "Param3": [
-      {
-        "X": 7,
-        "Y": 12
-      },
-      {
-        "X": 9,
-        "Y": 12
-      }
-    ],
-    "Param4": [
-      300,
-      300
     ]
   }
 ]

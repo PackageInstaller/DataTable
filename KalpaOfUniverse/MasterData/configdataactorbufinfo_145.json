@@ -1,5 +1,31 @@
 [
   {
+    "ID": 760020248,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_AttachBufImm",
+    "FuncParams": [
+      0,
+      1,
+      1,
+      760020242,
+      1
+    ],
+    "ActiveCondIds": [
+      1834
+    ],
+    "AttachChildBuffs": [
+      760020252
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 760020249,
     "LifeTime": -1,
     "FuncType": "BufFuncType_Pack",
@@ -5099,31 +5125,5 @@
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_043.png@Gift_043",
     "NameDescStrKey": "ST:43663",
     "BuffDescStrKey": "ST:106584"
-  },
-  {
-    "ID": 760020880,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_AttachBufAfterCastSkill",
-    "FuncParams": [
-      0,
-      1,
-      1,
-      700001281,
-      1
-    ],
-    "ActiveCondIds": [
-      1008
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerTimes": 1,
-    "TriggerBehaviorId": 600000011,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_246.png@Gift_246",
-    "NameDescStrKey": "ST:30029"
   }
 ]

@@ -1,5 +1,27 @@
 [
   {
+    "ID": 745000390,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_Pack",
+    "FuncParams": [
+      745000391,
+      745000392
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None",
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Other",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/BattleAsssit_039.png@BattleAsssit_039",
+    "NameDescStrKey": "ST:159859",
+    "BuffDescStrKey": "ST:160613"
+  },
+  {
     "ID": 745000391,
     "LifeTime": -1,
     "PropertiesList": [
@@ -3823,7 +3845,7 @@
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BattleAsssit_082.png@BattleAsssit_082",
     "NameDescStrKey": "ST:244233",
-    "BuffDescStrKey": "ST:244252"
+    "BuffDescStrKey": "ST:260434"
   },
   {
     "ID": 745000811,
@@ -5044,28 +5066,6 @@
       {
         "Id": "PropertiesId_MagicDefendMult_D",
         "Value": 1500
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 745900022,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_PropertiesModifyCombat",
-    "ActiveCondIds": [
-      5042
-    ],
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_TotalDamageAdd_NC",
-        "Value": 2000
       }
     ],
     "ReplaceRule": "ReplaceRule_Refresh",

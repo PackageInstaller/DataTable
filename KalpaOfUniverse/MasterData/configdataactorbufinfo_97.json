@@ -1,5 +1,25 @@
 [
   {
+    "ID": 743140021,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_PropertiesModifyCombat",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_CriticalRateSub_D",
+        "Value": -100000
+      }
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 743140022,
     "LifeTime": -1,
     "FuncType": "BufFuncType_AttachBufImm",
@@ -4633,28 +4653,5 @@
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_qixinglongyuanjian.png@weapon_qixinglongyuanjian",
     "NameDescStrKey": "ST:122371",
     "BuffDescStrKey": "ST:211782"
-  },
-  {
-    "ID": 743144003,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_Bloodsuck",
-    "FuncParams": [
-      10000
-    ],
-    "ActiveCondIds": [
-      200,
-      2200
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorId": 600000020,
-    "TriggerBehaviorType": "TriggerBehaviorType_Skill",
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_qixinglongyuanjian.png@weapon_qixinglongyuanjian",
-    "NameDescStrKey": "ST:122371"
   }
 ]

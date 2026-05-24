@@ -1,5 +1,21 @@
 [
   {
+    "ID": 759000312,
+    "FuncType": "BufFuncType_AttachBuf4Self",
+    "FuncParams": [
+      759000311,
+      1
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 759000321,
     "LifeTime": -1,
     "PropertiesList": [
@@ -5488,28 +5504,5 @@
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_207.png@Gift_207",
     "NameDescStrKey": "ST:237371",
     "BuffDescStrKey": "ST:237416"
-  },
-  {
-    "ID": 759100074,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_MovementLimitToSpecialActor",
-    "FuncParams": [
-      34,
-      1,
-      1
-    ],
-    "ActiveCondIds": [
-      150101
-    ],
-    "ReplaceRule": "ReplaceRule_Overlap",
-    "OverlapMax": 99,
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "ChainEffect": 800009491,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
   }
 ]

@@ -1,5 +1,28 @@
 [
   {
+    "ID": 758000711,
+    "LifeTime": -1,
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_PhysicDefendMult_D",
+        "Value": 2000
+      }
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None",
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Other",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_guildwar.png@Buff_guildwar",
+    "NameDescStrKey": "ST:127641",
+    "BuffDescStrKey": "ST:136522"
+  },
+  {
     "ID": 758000720,
     "FuncType": "BufFuncType_AttachBufImm",
     "FuncParams": [
@@ -4800,22 +4823,6 @@
     "FuncType": "BufFuncType_Immune",
     "FuncParams": [
       4
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 759000025,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_Immune",
-    "FuncParams": [
-      74
     ],
     "ReplaceRule": "ReplaceRule_Refresh",
     "LevelMax": 1,

@@ -1,5 +1,27 @@
 [
   {
+    "ID": 755001601,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_Pack",
+    "FuncParams": [
+      755001602,
+      755001603
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None",
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Other",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_fututa.png@Buff_fututa",
+    "NameDescStrKey": "ST:166323",
+    "BuffDescStrKey": "ST:96452"
+  },
+  {
     "ID": 755001602,
     "LifeTime": -1,
     "PropertiesList": [
@@ -5149,44 +5171,6 @@
       {
         "Id": "PropertiesId_HpMaxMult_D",
         "Value": 2000
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 755011110,
-    "LifeTime": -1,
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_AttackMult_D",
-        "Value": 2200
-      },
-      {
-        "Id": "PropertiesId_SpiritMult_D",
-        "Value": 2200
-      },
-      {
-        "Id": "PropertiesId_PhysicDefendMult_D",
-        "Value": 2200
-      },
-      {
-        "Id": "PropertiesId_MagicDefendMult_D",
-        "Value": 2200
-      },
-      {
-        "Id": "PropertiesId_CriticalRateMult_D",
-        "Value": 2200
-      },
-      {
-        "Id": "PropertiesId_HpMaxMult_D",
-        "Value": 2200
       }
     ],
     "ReplaceRule": "ReplaceRule_Refresh",

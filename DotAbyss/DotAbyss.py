@@ -25,16 +25,18 @@ from rich.progress import (
 
 from UnityCatalogReader import UnityCatalogReader
 
-
 APP_KEY_B64 = "b5RHgCQ66Glhlru9WV5Koc5SulPDiWZ44K0+dCeVTn0="
 APP_KEY_BYTES = base64.b64decode(APP_KEY_B64)
 VERSION_URL = "https://preregist.abyss-prod-r18.dotabyss.dmmgames.com/uuid"
 SECURE_LINK_KEY = "ulTn7l2O7kctUTYkI0qsM9YuEnrj6isy"
-MASTER_BASE_URL = "https://preregist.abyss-prod-r18.dotabyss.dmmgames.com/data/preregist/"
+MASTER_BASE_URL = (
+    "https://preregist.abyss-prod-r18.dotabyss.dmmgames.com/data/preregist/"
+)
 MAX_THREADS = 16
 RETRY_COUNT = 5
 
 console = Console()
+
 
 class AbyssDecryptor:
     @staticmethod
@@ -42,11 +44,11 @@ class AbyssDecryptor:
         try:
             decoded_json = base64.b64decode(urllib.parse.unquote(encrypted_str))
             payload = json.loads(decoded_json)
-            iv = base64.b64decode(payload['iv'])
-            value = base64.b64decode(payload['value'])
+            iv = base64.b64decode(payload["iv"])
+            value = base64.b64decode(payload["value"])
             cipher = AES.new(APP_KEY_BYTES, AES.MODE_CBC, iv)
             decrypted = unpad(cipher.decrypt(value), AES.block_size)
-            res_str = decrypted.decode('utf-8')
+            res_str = decrypted.decode("utf-8")
             if ':"' in res_str:
                 return res_str.split(':"')[1].split('"')[0]
             return res_str
@@ -57,7 +59,9 @@ class AbyssDecryptor:
     @staticmethod
     def decrypt_api_body(binary_body: bytes, session_id: str) -> Optional[bytes]:
         try:
-            derived_key = hmac.new(APP_KEY_BYTES, session_id.encode('utf-8'), hashlib.sha256).digest()
+            derived_key = hmac.new(
+                APP_KEY_BYTES, session_id.encode("utf-8"), hashlib.sha256
+            ).digest()
             iv = binary_body[:16]
             ciphertext = binary_body[16:]
             cipher = AES.new(derived_key, AES.MODE_CBC, iv)
@@ -67,37 +71,45 @@ class AbyssDecryptor:
             return None
 
     @staticmethod
-    def decrypt_master_data(data: bytes, decrypt_key_str: str = "abyss") -> Optional[bytes]:
+    def decrypt_master_data(
+        data: bytes, decrypt_key_str: str = "abyss"
+    ) -> Optional[bytes]:
         """解密数据表逻辑"""
         try:
-            actual_key = hmac.new(APP_KEY_BYTES, decrypt_key_str.encode('utf-8'), hashlib.sha256).digest()
-            
+            actual_key = hmac.new(
+                APP_KEY_BYTES, decrypt_key_str.encode("utf-8"), hashlib.sha256
+            ).digest()
+
             iv = data[:16]
             ciphertext = data[16:]
             cipher = AES.new(actual_key, AES.MODE_CBC, iv)
-            decrypted = unpad(cipher.decrypt(ciphertext), AES.block_size)
-            return decrypted
+            return unpad(cipher.decrypt(ciphertext), AES.block_size)
         except Exception as e:
             console.print(f"[red][-] 数据表解密失败: {e}[/red]")
             return None
 
-def create_secure_url(base_url: str, path: str, secret: str, expire_seconds: int = 600) -> str:
+
+def create_secure_url(
+    base_url: str, path: str, secret: str, expire_seconds: int = 600
+) -> str:
     """Absf::Api::SecureLinkUtil::CreateSecureUrl"""
     t = int(time.time()) + expire_seconds
     raw_str = f"{secret}{path}{t}"
-    md5_hash = hashlib.md5(raw_str.encode('utf-8')).digest()
-    s = base64.b64encode(md5_hash).decode('utf-8')
-    s = s.replace('+', '-').replace('/', '_').replace('=', '')
-    parsed_domain = urllib.parse.urlparse(base_url).netloc
-    return f"https://{parsed_domain}{path}?s={s}&t={t}"
+    md5_hash = hashlib.md5(raw_str.encode("utf-8")).digest()
+    s = base64.b64encode(md5_hash).decode("utf-8")
+    s = s.replace("+", "-").replace("/", "_").replace("=", "")
+    return f"https://{urllib.parse.urlparse(base_url).netloc}{path}?s={s}&t={t}"
+
 
 class AbyssDownloader:
     def __init__(self, threads: int = MAX_THREADS):
         self.session = requests.Session()
-        self.session.headers.update({
-            "User-Agent": "UnityPlayer/6000.0.43f1 (UnityWebRequest/1.0, libcurl/7.84.0-DEV)",
-            "X-Unity-Version": "6000.0.43f1"
-        })
+        self.session.headers.update(
+            {
+                "User-Agent": "UnityPlayer/6000.0.43f1 (UnityWebRequest/1.0, libcurl/7.84.0-DEV)",
+                "X-Unity-Version": "6000.0.43f1",
+            }
+        )
         self.threads = threads
         self.base_url = ""
         self.asset_ver = ""
@@ -121,22 +133,22 @@ class AbyssDownloader:
         try:
             resp = self.session.get(VERSION_URL, timeout=15)
             resp.raise_for_status()
-            
-            enc_session = resp.headers.get('X-Olg-Session')
+
+            enc_session = resp.headers.get("X-Olg-Session")
             if not enc_session:
                 console.print("[red][-] 未能获取 X-Olg-Session[/red]")
                 return None
-                
+
             session_id = AbyssDecryptor.decrypt_laravel_session(enc_session)
             if not session_id:
                 return None
-            
+
             console.print(f"[green][+] 成功获取 SessionID: {session_id}[/green]")
             decrypted_body = AbyssDecryptor.decrypt_api_body(resp.content, session_id)
             if not decrypted_body:
                 return None
-                
-            return json.loads(decrypted_body.decode('utf-8'))
+
+            return json.loads(decrypted_body.decode("utf-8"))
         except Exception as e:
             console.print(f"[red][-] 获取版本信息失败: {e}[/red]")
             return None
@@ -145,7 +157,7 @@ class AbyssDownloader:
         dir_name = os.path.dirname(dest_path)
         if dir_name:
             os.makedirs(dir_name, exist_ok=True)
-        
+
         for attempt in range(RETRY_COUNT):
             try:
                 headers = {}
@@ -158,14 +170,14 @@ class AbyssDownloader:
                         else:
                             os.remove(dest_path)
                             initial_pos = 0
-                    
+
                     if initial_pos > 0:
                         headers["Range"] = f"bytes={initial_pos}-"
                 else:
                     initial_pos = 0
 
                 resp = self.session.get(url, headers=headers, stream=True, timeout=20)
-                
+
                 if resp.status_code == 206:
                     mode = "ab"
                 elif resp.status_code == 200:
@@ -179,10 +191,12 @@ class AbyssDownloader:
                     for chunk in resp.iter_content(chunk_size=8192):
                         if chunk:
                             f.write(chunk)
-                
+
                 if expected_size > 0 and os.path.getsize(dest_path) != expected_size:
-                    raise ValueError(f"文件大小校验失败: {os.path.getsize(dest_path)} != {expected_size}")
-                
+                    raise ValueError(
+                        f"文件大小校验失败: {os.path.getsize(dest_path)} != {expected_size}"
+                    )
+
                 return True
             except Exception as e:
                 if attempt == RETRY_COUNT - 1:
@@ -195,22 +209,22 @@ class AbyssDownloader:
         """处理数据表下载、解密与解析"""
         path = f"/data/preregist/{self.master_ver}"
         secure_url = create_secure_url(MASTER_BASE_URL, path, SECURE_LINK_KEY)
-        
+
         console.print(f"[*] 正在获取 Master Data: {secure_url}")
         try:
             resp = self.session.get(secure_url, timeout=30)
             resp.raise_for_status()
-            
+
             enc_data = resp.content
             dec_data = AbyssDecryptor.decrypt_master_data(enc_data, "abyss")
             if not dec_data:
                 return False
-                
+
             master_obj = msgpack.unpackb(dec_data)
             output_file = "MasterData.json"
             with open(output_file, "w", encoding="utf-8") as f:
                 json.dump(master_obj, f, ensure_ascii=False, indent=2)
-            
+
             console.print(f"[green][+] Master Data 已保存至 {output_file}[/green]")
             return True
         except Exception as e:
@@ -222,9 +236,9 @@ class AbyssDownloader:
             item = self.download_queue.get()
             if item is None:
                 break
-            
+
             internal_id, primary_key, size = item
-            
+
             remote_path_key = "{Absf.Asset.AddressableAssets.AddressablesProfileDefine.RemoteLoadPath}"
             if remote_path_key in internal_id:
                 url = internal_id.replace(remote_path_key, self.base_url)
@@ -234,14 +248,14 @@ class AbyssDownloader:
                 self.progress.advance(task_id)
                 self.download_queue.task_done()
                 continue
-                
+
             file_name = primary_key
             for ext in [".usm", ".awb"]:
                 if ext in file_name:
                     file_name = file_name.split(ext)[0] + ext
                     break
             dest_path = os.path.join("downloads", file_name)
-            
+
             try:
                 ok = self.download_file(url, dest_path, expected_size=size)
                 if ok:
@@ -252,27 +266,31 @@ class AbyssDownloader:
             except Exception as e:
                 console.print(f"[red][!] 下载失败 ({primary_key}): {e}[/red]")
                 self.progress.advance(task_id)
-                
+
             self.download_queue.task_done()
 
     def run(self):
         info = self.get_version_info()
         if not info:
             return
-            
+
         versions = info.get("versions", {})
         self.asset_ver = versions.get("AssetVersionWebDmmR18Preregist")
         self.master_ver = versions.get("resourcePreregist", "4")
         client_ver = versions.get("ClientVersionWebDmmR18Preregist", "1.0.0")
-        self.client_ver_prefix = client_ver.split('.')[0]
-        console.print(f"[blue][*] 资产版本: {self.asset_ver}, 数据表版本: {self.master_ver}, 客户端前缀: {self.client_ver_prefix}[/blue]")
+        self.client_ver_prefix = client_ver.split(".")[0]
+        console.print(
+            f"[blue][*] 资产版本: {self.asset_ver}, 数据表版本: {self.master_ver}, 客户端前缀: {self.client_ver_prefix}[/blue]"
+        )
         if not self.handle_master_data():
-            console.print("[yellow][!] Master Data 处理失败，将跳过数据表任务。[/yellow]")
+            console.print(
+                "[yellow][!] Master Data 处理失败，将跳过数据表任务。[/yellow]"
+            )
 
         self.base_url = f"https://preregist.abyss-prod-r18.dotabyss.dmmgames.com/resources/webgl_preregist/r18/aas/{self.asset_ver}/aa"
         hash_url = f"{self.base_url}/catalog_{self.client_ver_prefix}.hash"
         bin_url = f"{self.base_url}/catalog_{self.client_ver_prefix}.bin"
-        
+
         console.print(f"[*] 检查 Catalog Hash: {hash_url}")
         resp = self.session.get(hash_url)
         if resp.status_code != 200:
@@ -280,7 +298,7 @@ class AbyssDownloader:
             return
         current_hash = resp.text.strip()
         console.print(f"[green][+] 当前 Hash: {current_hash}[/green]")
-        
+
         hash_file = "catalog.hash"
         updated = True
         if os.path.exists(hash_file):
@@ -290,7 +308,7 @@ class AbyssDownloader:
                     console.print("[yellow][*] Catalog 已经是最新，跳过。[/yellow]")
                     updated = False
                     return
-        
+
         bin_path = f"catalog_{self.client_ver_prefix}.bin"
         if not os.path.exists(bin_path) or updated:
             console.print(f"[*] 正在下载 Catalog Bin: {bin_url}")
@@ -311,12 +329,12 @@ class AbyssDownloader:
 
         download_tasks = []
         seen_dest_paths = set()
-        
+
         for asset in assets:
-            internal_id = asset['internal_id']
-            primary_key = asset['primary_key']
-            size = asset['bundle_size']
-            
+            internal_id = asset["internal_id"]
+            primary_key = asset["primary_key"]
+            size = asset["bundle_size"]
+
             # 提前计算目标路径用于去重
             file_name = primary_key
             for ext in [".usm", ".awb"]:
@@ -324,32 +342,35 @@ class AbyssDownloader:
                     file_name = file_name.split(ext)[0] + ext
                     break
             dest_path = os.path.join("downloads", file_name)
-            
+
             if dest_path not in seen_dest_paths:
                 seen_dest_paths.add(dest_path)
                 download_tasks.append((internal_id, primary_key, size))
-            
+
         total_tasks = len(download_tasks)
         for task in download_tasks:
             self.download_queue.put(task)
-            
+
         with self.progress:
-            task_id = self.progress.add_task("[cyan]正在同步资源...[/cyan]", total=total_tasks)
-            
+            task_id = self.progress.add_task(
+                "[cyan]正在同步资源...[/cyan]", total=total_tasks
+            )
+
             threads = []
             for _ in range(self.threads):
                 t = threading.Thread(target=self.worker, args=(task_id,), daemon=True)
                 t.start()
                 threads.append(t)
-                
+
             self.download_queue.join()
-            
+
             for _ in range(self.threads):
                 self.download_queue.put(None)
             for t in threads:
                 t.join()
 
         console.print("[bold green][✓] 所有任务处理完成！[/bold green]")
+
 
 if __name__ == "__main__":
     downloader = AbyssDownloader()

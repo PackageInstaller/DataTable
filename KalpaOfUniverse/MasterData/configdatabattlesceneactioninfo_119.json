@@ -1,5 +1,24 @@
 [
   {
+    "ID": 111020124,
+    "ActionType": "BattleSceneActionType_AttachBuff",
+    "Param1": [
+      201,
+      202,
+      203,
+      204,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211
+    ],
+    "Param2": [
+      760000015
+    ]
+  },
+  {
     "ID": 111020125,
     "ActionType": "BattleSceneActionType_Music",
     "Param5": "BGM_None"
@@ -15759,25 +15778,6 @@
     "ID": 111072163,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
-      300
-    ]
-  },
-  {
-    "ID": 111072164,
-    "ActionType": "BattleSceneActionType_ActorTurnDir",
-    "Param1": [
-      401
-    ],
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "X": 7,
-        "Y": 15
-      }
-    ],
-    "Param4": [
       300
     ]
   }

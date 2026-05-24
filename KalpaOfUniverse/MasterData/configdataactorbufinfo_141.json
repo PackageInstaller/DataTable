@@ -1,5 +1,21 @@
 [
   {
+    "ID": 759000025,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_Immune",
+    "FuncParams": [
+      74
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 759000026,
     "LifeTime": -1,
     "FuncType": "BufFuncType_Heal4SelfAfterCastSkill",
@@ -4399,21 +4415,5 @@
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Buf_ABS/Buff_fututadebuff.png@Buff_fututadebuff",
     "NameDescStrKey": "ST:166323",
     "BuffDescStrKey": "ST:235295"
-  },
-  {
-    "ID": 759000312,
-    "FuncType": "BufFuncType_AttachBuf4Self",
-    "FuncParams": [
-      759000311,
-      1
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
   }
 ]

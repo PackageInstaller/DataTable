@@ -1,5 +1,21 @@
 [
   {
+    "ID": 752000511,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_Immune",
+    "FuncParams": [
+      6
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 752000512,
     "LifeTime": -1,
     "PropertiesList": [
@@ -4555,43 +4571,5 @@
     "TriggerBehaviorType": "TriggerBehaviorType_Soul",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/XuanYuanJianImage_ABS/Icon/Touxiang22.png@Touxiang22",
     "NameDescStrKey": "ST:186953"
-  },
-  {
-    "ID": 752011897,
-    "LifeTime": -1,
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_PhysicDefendMult_D",
-        "Value": 100
-      },
-      {
-        "Id": "PropertiesId_MagicDefendMult_D",
-        "Value": 100
-      },
-      {
-        "Id": "PropertiesId_AttackMult_D",
-        "Value": 100
-      },
-      {
-        "Id": "PropertiesId_SpiritMult_D",
-        "Value": 100
-      },
-      {
-        "Id": "PropertiesId_CriticalRateMult_D",
-        "Value": 100
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Accumulate",
-    "LevelMax": 10,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None",
-    "Visible": "BuffShowType_Normal",
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/XuanYuanJianImage_ABS/Icon/Touxiang22.png@Touxiang22",
-    "NameDescStrKey": "ST:186953",
-    "BuffDescStrKey": "ST:188545"
   }
 ]
