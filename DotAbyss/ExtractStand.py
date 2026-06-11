@@ -2,7 +2,7 @@ import os
 import sys
 import json
 from pathlib import Path
-from typing import Optional
+from typing import Any, Dict, List, Optional, Tuple
 from PIL import Image
 import UnityPy
 from UnityPy.enums import ClassIDType
@@ -77,6 +77,199 @@ class SpriteAtlasExtractor:
 
         return None
 
+    def _is_sub_prefab(self, primary_key: Optional[str]) -> bool:
+        """判断是否是 sub 图层"""
+        if not primary_key:
+            return False
+        normalized = primary_key.lower().replace("\\", "/")
+        return "prefabs/sub/" in normalized or "prefabs_sub" in normalized
+
+    def _collect_rt_layout(self, env) -> Dict[str, Dict[str, Any]]:
+        objects_by_id = {obj.path_id: obj for obj in env.objects}
+        go_names: Dict[int, str] = {}
+        for obj in env.objects:
+            if obj.type == ClassIDType.GameObject:
+                try:
+                    go = obj.read()
+                    go_names[obj.path_id] = getattr(go, "m_Name", "")
+                except:
+                    pass
+
+        rt_data: Dict[str, Dict[str, Any]] = {}
+        for obj in env.objects:
+            type_id = obj.type.value if hasattr(obj.type, "value") else obj.type
+            if obj.type != ClassIDType.RectTransform and type_id != 224:
+                continue
+            try:
+                rt = obj.read()
+                go_ref = getattr(rt, "m_GameObject", None)
+                go_id = None
+                if hasattr(go_ref, "m_PathID"):
+                    go_id = go_ref.m_PathID  # type: ignore
+                elif isinstance(go_ref, dict):
+                    go_id = go_ref.get("m_PathID", 0)
+
+                go_name = go_names.get(go_id, "")
+                if not go_name:
+                    continue
+
+                anchored_pos = getattr(rt, "m_AnchoredPosition", None)
+                size_delta = getattr(rt, "m_SizeDelta", None)
+                parent_name = ""
+                father = getattr(rt, "m_Father", None)
+                if father:
+                    father_id = None
+                    if hasattr(father, "m_PathID"):
+                        father_id = father.m_PathID
+                    elif isinstance(father, dict):
+                        father_id = father.get("m_PathID")
+                    if father_id and father_id in objects_by_id:
+                        try:
+                            father_rt = objects_by_id[father_id].read()
+                            father_go_ref = getattr(father_rt, "m_GameObject", None)
+                            father_go_id = None
+                            if hasattr(father_go_ref, "m_PathID"):
+                                father_go_id = father_go_ref.m_PathID  # type: ignore
+                            elif isinstance(father_go_ref, dict):
+                                father_go_id = father_go_ref.get("m_PathID")
+                            parent_name = go_names.get(father_go_id, "")
+                        except:
+                            pass
+
+                rt_data[go_name] = {
+                    "ax": (
+                        anchored_pos.x
+                        if anchored_pos and hasattr(anchored_pos, "x")
+                        else 0
+                    ),
+                    "ay": (
+                        anchored_pos.y
+                        if anchored_pos and hasattr(anchored_pos, "y")
+                        else 0
+                    ),
+                    "sw": (
+                        size_delta.x
+                        if size_delta and hasattr(size_delta, "x")
+                        else 0
+                    ),
+                    "sh": (
+                        size_delta.y
+                        if size_delta and hasattr(size_delta, "y")
+                        else 0
+                    ),
+                    "parent": parent_name,
+                }
+            except:
+                pass
+        return rt_data
+
+    def _extract_sub_layout(self, env) -> Optional[Dict[str, Any]]:
+        rt_data = self._collect_rt_layout(env)
+        face = rt_data.get("FaceContent")
+        body = rt_data.get("Body")
+        front = rt_data.get("FrontContent")
+
+        if not face or not body or face.get("parent") != "Body":
+            return None
+
+        result: Dict[str, Any] = {
+            "face_anchor_x": face["ax"],
+            "face_anchor_y": face["ay"],
+            "face_w": face["sw"],
+            "face_h": face["sh"],
+            "body_w": body["sw"],
+            "body_h": body["sh"],
+            "body_pose_x": body["ax"],
+            "body_pose_y": body["ay"],
+        }
+
+        if front and front.get("parent") == "Pose":
+            result["front_anchor_x"] = front["ax"]
+            result["front_anchor_y"] = front["ay"]
+            result["front_w"] = front["sw"]
+            result["front_h"] = front["sh"]
+
+        return result
+
+    def _compute_content_slot(
+        self,
+        anchor_x: float,
+        anchor_y: float,
+        slot_w: float,
+        slot_h: float,
+        canvas_w: int,
+        canvas_h: int,
+        body_rt_w: float,
+        body_rt_h: float,
+    ) -> Tuple[float, float, float, float]:
+        scale_x = canvas_w / body_rt_w if body_rt_w > 0 else 1.0
+        scale_y = canvas_h / body_rt_h if body_rt_h > 0 else 1.0
+
+        face_pixel_w = slot_w * scale_x
+        face_pixel_h = slot_h * scale_y
+        face_center_px = canvas_w / 2 + anchor_x * scale_x
+        face_center_py = canvas_h / 2 - anchor_y * scale_y
+        face_left = face_center_px - face_pixel_w / 2
+        face_top = face_center_py - face_pixel_h / 2
+        return face_left, face_top, face_pixel_w, face_pixel_h
+
+    def _prepare_sprite_layer(
+        self, expr_data: Dict[str, Any], target_w: int, target_h: int
+    ) -> Image.Image:
+        expr_rect_w = (
+            expr_data["rect_w"] if expr_data["rect_w"] > 0 else expr_data["img_w"]
+        )
+        expr_rect_h = (
+            expr_data["rect_h"] if expr_data["rect_h"] > 0 else expr_data["img_h"]
+        )
+
+        expr_full = Image.new("RGBA", (expr_rect_w, expr_rect_h), (0, 0, 0, 0))
+        tro_x = int(round(expr_data["tro_x"]))
+        tro_y_flipped = (
+            expr_rect_h - int(round(expr_data["tro_y"])) - expr_data["img_h"]
+        )
+        tro_y_flipped = max(0, tro_y_flipped)
+        tro_x = max(0, tro_x)
+        expr_full.alpha_composite(expr_data["img"], dest=(tro_x, tro_y_flipped))
+
+        if target_w > 0 and target_h > 0:
+            return expr_full.resize((target_w, target_h), Image.Resampling.LANCZOS)
+        return expr_full
+
+    def _composite_with_overflow(
+        self,
+        body_img: Image.Image,
+        overlays: List[Tuple[Image.Image, int, int]],
+    ) -> Image.Image:
+        canvas_w, canvas_h = body_img.size
+        min_x = 0
+        min_y = 0
+        max_x = canvas_w
+        max_y = canvas_h
+
+        for overlay, paste_x, paste_y in overlays:
+            min_x = min(min_x, paste_x)
+            min_y = min(min_y, paste_y)
+            max_x = max(max_x, paste_x + overlay.size[0])
+            max_y = max(max_y, paste_y + overlay.size[1])
+
+        offset_x = -min_x if min_x < 0 else 0
+        offset_y = -min_y if min_y < 0 else 0
+        out_w = max_x - min_x
+        out_h = max_y - min_y
+
+        canvas = Image.new("RGBA", (out_w, out_h), (0, 0, 0, 0))
+        canvas.alpha_composite(body_img, dest=(offset_x, offset_y))
+        for overlay, paste_x, paste_y in overlays:
+            canvas.alpha_composite(
+                overlay, dest=(paste_x + offset_x, paste_y + offset_y)
+            )
+        return canvas
+
+    def _is_front_overlay_sprite(self, name: str) -> bool:
+        name_lower = name.lower()
+        return name_lower.startswith("glasses")
+
     def export_assets(self):
         self.output_dir.mkdir(exist_ok=True)
         bundles = []
@@ -137,14 +330,20 @@ class SpriteAtlasExtractor:
                     except:
                         pass
 
-            # 从 Prefab 的 RectTransform 层级提取 FaceContent 的位置信息
+            # 从 Prefab 的 RectTransform 层级提取布局信息
             face_info = self._extract_face_layout(env)
+            sub_layout = self._extract_sub_layout(env)
 
             # 读取 SpriteAtlas, 提取里面的信息
             for obj in env.objects:
                 if obj.type == ClassIDType.SpriteAtlas:
                     self._process_sprite_atlas(
-                        obj, env, all_sprites, best_primary_key, face_info
+                        obj,
+                        env,
+                        all_sprites,
+                        best_primary_key,
+                        face_info,
+                        sub_layout,
                     )
 
         print(f"\n导出全部完成！")
@@ -171,93 +370,12 @@ class SpriteAtlasExtractor:
                 "body_h": float,      # Body RectTransform 高
             } 或 None
         """
-        # 收集所有对象按 path_id 索引
-        objects_by_id = {}
-        for obj in env.objects:
-            objects_by_id[obj.path_id] = obj
-
-        # 收集 GameObject name -> path_id 映射
-        go_names = {}
-        for obj in env.objects:
-            if obj.type == ClassIDType.GameObject:
-                try:
-                    go = obj.read()
-                    go_names[obj.path_id] = getattr(go, "m_Name", "")
-                except:
-                    pass
-
-        # 遍历所有 RectTransform，找到 FaceContent 和 Body
-        rt_data = {}  # go_name -> {go_id, anchored_pos, size_delta, parent_go_name}
-        for obj in env.objects:
-            type_id = obj.type.value if hasattr(obj.type, "value") else obj.type
-            if obj.type == ClassIDType.RectTransform or type_id == 224:
-                try:
-                    rt = obj.read()
-                    go_ref = getattr(rt, "m_GameObject", None)
-                    go_id = None
-                    if hasattr(go_ref, "m_PathID"):
-                        go_id = go_ref.m_PathID  # type: ignore
-                    elif isinstance(go_ref, dict):
-                        go_id = go_ref.get("m_PathID", 0)
-
-                    go_name = go_names.get(go_id, "")
-                    if not go_name:
-                        continue
-
-                    anchored_pos = getattr(rt, "m_AnchoredPosition", None)
-                    size_delta = getattr(rt, "m_SizeDelta", None)
-
-                    ax = (
-                        anchored_pos.x
-                        if anchored_pos and hasattr(anchored_pos, "x")
-                        else 0
-                    )
-                    ay = (
-                        anchored_pos.y
-                        if anchored_pos and hasattr(anchored_pos, "y")
-                        else 0
-                    )
-                    sw = size_delta.x if size_delta and hasattr(size_delta, "x") else 0
-                    sh = size_delta.y if size_delta and hasattr(size_delta, "y") else 0
-
-                    # 获取父节点名称
-                    parent_name = ""
-                    father = getattr(rt, "m_Father", None)
-                    if father:
-                        father_id = None
-                        if hasattr(father, "m_PathID"):
-                            father_id = father.m_PathID
-                        elif isinstance(father, dict):
-                            father_id = father.get("m_PathID")
-                        if father_id and father_id in objects_by_id:
-                            try:
-                                father_rt = objects_by_id[father_id].read()
-                                father_go_ref = getattr(father_rt, "m_GameObject", None)
-                                father_go_id = None
-                                if hasattr(father_go_ref, "m_PathID"):
-                                    father_go_id = father_go_ref.m_PathID  # type: ignore
-                                elif isinstance(father_go_ref, dict):
-                                    father_go_id = father_go_ref.get("m_PathID")
-                                parent_name = go_names.get(father_go_id, "")
-                            except:
-                                pass
-
-                    rt_data[go_name] = {
-                        "ax": ax,
-                        "ay": ay,
-                        "sw": sw,
-                        "sh": sh,
-                        "parent": parent_name,
-                    }
-                except:
-                    pass
-
-        # 提取关键信息：找 FaceContent（父节点是 Body）
+        rt_data = self._collect_rt_layout(env)
         face = rt_data.get("FaceContent")
         body = rt_data.get("Body")
 
         if face and body and face["parent"] == "Body":
-            result = {
+            return {
                 "face_anchor_x": face["ax"],
                 "face_anchor_y": face["ay"],
                 "face_w": face["sw"],
@@ -265,11 +383,12 @@ class SpriteAtlasExtractor:
                 "body_w": body["sw"],
                 "body_h": body["sh"],
             }
-            return result
 
         return None
 
-    def _process_sprite_atlas(self, obj, env, all_sprites, best_primary_key, face_info):
+    def _process_sprite_atlas(
+        self, obj, env, all_sprites, best_primary_key, face_info, sub_layout
+    ):
         try:
             atlas = obj.read()
             atlas_name = getattr(atlas, "m_Name", "UnknownAtlas")
@@ -301,8 +420,6 @@ class SpriteAtlasExtractor:
 
             if not sprites_in_atlas:
                 return
-
-            print(f"处理图集: {atlas_name}")
 
             # 解析所有 Sprite 信息
             sprite_map = {}  # name -> {sprite data}
@@ -367,6 +484,18 @@ class SpriteAtlasExtractor:
             if not body_data:
                 print(f"未找到 Body 图层，跳过")
                 return
+
+            if self._is_sub_prefab(primary_key) and sub_layout:
+                self._export_sub_stand(
+                    atlas_name,
+                    output_path,
+                    body_data,
+                    sprite_map,
+                    sub_layout,
+                )
+                return
+
+            print(f"处理图集: {atlas_name}")
 
             # Body 图像就是画布底图
             body_img = body_data["img"]
@@ -507,6 +636,158 @@ class SpriteAtlasExtractor:
 
             print(f"处理 SpriteAtlas 失败: {e}")
             traceback.print_exc()
+
+    def _export_sub_stand(
+        self,
+        atlas_name: str,
+        output_path: Path,
+        body_data: Dict[str, Any],
+        sprite_map: Dict[str, Dict[str, Any]],
+        sub_layout: Dict[str, Any],
+    ):
+        """导出 sub 图层
+        参数:
+        atlas_name: 图集名字
+        output_path: 输出路径
+        body_data: Body 数据
+        sprite_map: Sprite 数据
+        sub_layout: Sub 布局数据
+
+        需要拓展画布，然后分槽合成
+        """
+        body_img = body_data["img"]
+        canvas_w, canvas_h = body_img.size
+        body_rt_w = sub_layout["body_w"]
+        body_rt_h = sub_layout["body_h"]
+
+        face_w = sub_layout["face_w"]
+        face_h = sub_layout["face_h"]
+        if face_w <= 0 or face_h <= 0:
+            sample = next(
+                (
+                    data
+                    for name, data in sprite_map.items()
+                    if not self._is_front_overlay_sprite(name)
+                    and "body" not in name.lower()
+                ),
+                None,
+            )
+            if sample:
+                face_w = sample["rect_w"] or sample["img_w"]
+                face_h = sample["rect_h"] or sample["img_h"]
+
+        face_left, face_top, face_pixel_w, face_pixel_h = self._compute_content_slot(
+            sub_layout["face_anchor_x"],
+            sub_layout["face_anchor_y"],
+            face_w,
+            face_h,
+            canvas_w,
+            canvas_h,
+            body_rt_w,
+            body_rt_h,
+        )
+
+        front_slot = None
+        if "front_anchor_x" in sub_layout:
+            front_w = sub_layout.get("front_w") or face_w
+            front_h = sub_layout.get("front_h") or face_h
+            front_rel_x = sub_layout["front_anchor_x"] - sub_layout["body_pose_x"]
+            front_rel_y = sub_layout["front_anchor_y"] - sub_layout["body_pose_y"]
+            front_left, front_top, front_pixel_w, front_pixel_h = (
+                self._compute_content_slot(
+                    front_rel_x,
+                    front_rel_y,
+                    front_w,
+                    front_h,
+                    canvas_w,
+                    canvas_h,
+                    body_rt_w,
+                    body_rt_h,
+                )
+            )
+            front_slot = {
+                "left": front_left,
+                "top": front_top,
+                "width": front_pixel_w,
+                "height": front_pixel_h,
+            }
+
+        print(f"[sub] 处理图集: {atlas_name}")
+        print(f"Body 图像尺寸: {canvas_w}x{canvas_h}")
+        print(
+            f"FaceContent 锚点: ({sub_layout['face_anchor_x']}, {sub_layout['face_anchor_y']}), "
+            f"尺寸: {face_w}x{face_h}"
+        )
+        print(
+            f"FaceContent 像素位置: 左上({face_left:.1f}, {face_top:.1f}), "
+            f"尺寸({face_pixel_w:.1f}x{face_pixel_h:.1f})"
+        )
+        if front_slot:
+            print(
+                f"FrontContent 像素位置: 左上({front_slot['left']:.1f}, {front_slot['top']:.1f}), "
+                f"尺寸({front_slot['width']:.1f}x{front_slot['height']:.1f})"
+            )
+
+        expression_list: List[Dict[str, Any]] = []
+        front_overlay_list: List[Dict[str, Any]] = []
+        for name, data in sprite_map.items():
+            if name == body_data["name"]:
+                continue
+            if self._is_front_overlay_sprite(name):
+                front_overlay_list.append(data)
+            else:
+                expression_list.append(data)
+
+        if not expression_list and not front_overlay_list:
+            print("未找到任何可导出的 sub 图层")
+            return
+
+        target_fw = int(round(face_pixel_w))
+        target_fh = int(round(face_pixel_h))
+        face_paste_x = int(round(face_left))
+        face_paste_y = int(round(face_top))
+
+        base_face = sprite_map.get("Normal")
+
+        for expr_data in expression_list:
+            expr_resized = self._prepare_sprite_layer(expr_data, target_fw, target_fh)
+            canvas = self._composite_with_overflow(
+                body_img,
+                [(expr_resized, face_paste_x, face_paste_y)],
+            )
+            expr_save_name = f"{expr_data['name']}.png"
+            canvas.save(output_path / expr_save_name)
+            self.stats["expression_exported"] += 1
+            print(f"  └─ [sub 表情合成] {expr_save_name}")
+
+        if front_slot and front_overlay_list:
+            front_target_w = int(round(front_slot["width"]))
+            front_target_h = int(round(front_slot["height"]))
+            front_paste_x = int(round(front_slot["left"]))
+            front_paste_y = int(round(front_slot["top"]))
+
+            for overlay_data in front_overlay_list:
+                overlays: List[Tuple[Image.Image, int, int]] = []
+                if base_face:
+                    base_face_layer = self._prepare_sprite_layer(
+                        base_face, target_fw, target_fh
+                    )
+                    overlays.append(
+                        (base_face_layer, face_paste_x, face_paste_y)
+                    )
+                overlay_layer = self._prepare_sprite_layer(
+                    overlay_data, front_target_w, front_target_h
+                )
+                overlays.append(
+                    (overlay_layer, front_paste_x, front_paste_y)
+                )
+                canvas = self._composite_with_overflow(body_img, overlays)
+                expr_save_name = f"{overlay_data['name']}.png"
+                canvas.save(output_path / expr_save_name)
+                self.stats["expression_exported"] += 1
+                print(f"  └─ [sub 前景合成] {expr_save_name}")
+
+        self.stats["atlas_processed"] += 1
 
 
 def main():

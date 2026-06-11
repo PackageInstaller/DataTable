@@ -1,5 +1,4 @@
 import os
-import sys
 import time
 import json
 import base64
@@ -8,7 +7,7 @@ import hashlib
 import urllib.parse
 import threading
 from queue import Queue
-from typing import Dict, List, Any, Optional, Tuple
+from typing import Dict, Any, Optional
 import requests
 import msgpack
 from Crypto.Cipher import AES
@@ -22,15 +21,15 @@ from rich.progress import (
     MofNCompleteColumn,
     TimeRemainingColumn,
 )
-
+from AbyssSchema import DATABASE_SCHEMA
 from UnityCatalogReader import UnityCatalogReader
 
 APP_KEY_B64 = "b5RHgCQ66Glhlru9WV5Koc5SulPDiWZ44K0+dCeVTn0="
 APP_KEY_BYTES = base64.b64decode(APP_KEY_B64)
-VERSION_URL = "https://preregist.abyss-prod-r18.dotabyss.dmmgames.com/uuid"
+VERSION_URL = "https://api.abyss-prod-r18.dotabyss.dmmgames.com/version"
 SECURE_LINK_KEY = "ulTn7l2O7kctUTYkI0qsM9YuEnrj6isy"
 MASTER_BASE_URL = (
-    "https://preregist.abyss-prod-r18.dotabyss.dmmgames.com/data/preregist/"
+    "https://api.abyss-prod-r18.dotabyss.dmmgames.com/data/"
 )
 MAX_THREADS = 16
 RETRY_COUNT = 5
@@ -94,11 +93,20 @@ def create_secure_url(
 ) -> str:
     """Absf::Api::SecureLinkUtil::CreateSecureUrl"""
     t = int(time.time()) + expire_seconds
-    raw_str = f"{secret}{path}{t}"
+    
+    parsed = urllib.parse.urlparse(base_url)
+    host = parsed.netloc
+    base_path = parsed.path.rstrip('/')
+    if not path.startswith('/'):
+        path = '/' + path
+    full_path = (base_path + path).replace('//', '/')
+
+    raw_str = f"{secret}{full_path}{t}"
     md5_hash = hashlib.md5(raw_str.encode("utf-8")).digest()
     s = base64.b64encode(md5_hash).decode("utf-8")
     s = s.replace("+", "-").replace("/", "_").replace("=", "")
-    return f"https://{urllib.parse.urlparse(base_url).netloc}{path}?s={s}&t={t}"
+
+    return f"https://{host}{full_path}?s={s}&t={t}"
 
 
 class AbyssDownloader:
@@ -127,6 +135,25 @@ class AbyssDownloader:
             transient=False,
         )
 
+    def _pick_version(
+        self, versions: Dict[str, Any], *keys: str, default: Optional[Any] = None
+    ) -> Optional[str]:
+        """从可能的键中选取第一个非空版本值，支持列表值和带/不带方括号的键名。"""
+        for key in keys:
+            for candidate in (key, f"[{key}]"):
+                if candidate in versions:
+                    val = versions[candidate]
+                    if isinstance(val, list):
+                        if len(val) > 0:
+                            return str(val[0])
+                        else:
+                            continue
+                    if val is None:
+                        continue
+                    return str(val)
+        return default
+    
+
     def get_version_info(self) -> Optional[Dict[str, Any]]:
         """获取并解密版本信息"""
         console.print(f"[*] 正在请求版本 URL: {VERSION_URL}")
@@ -135,6 +162,8 @@ class AbyssDownloader:
             resp.raise_for_status()
 
             enc_session = resp.headers.get("X-Olg-Session")
+
+            
             if not enc_session:
                 console.print("[red][-] 未能获取 X-Olg-Session[/red]")
                 return None
@@ -205,27 +234,60 @@ class AbyssDownloader:
                     time.sleep(1)
         return False
 
+    
+    def _apply_database_schema(self, raw_db: Dict[str, Any]) -> Dict[str, Any]:
+        """将原始无键数组数据库数据重新还原为带有完整字段名的字典结构"""
+        if not DATABASE_SCHEMA:
+            return raw_db
+
+        restored_db = {}
+        for table_name, raw_table in raw_db.items():
+            if table_name in DATABASE_SCHEMA:
+                fields = DATABASE_SCHEMA[table_name]
+                items = raw_table
+                
+                if isinstance(items, dict) and "elements" in items:
+                    items = items["elements"]
+                elif isinstance(items, list) and len(items) == 1 and isinstance(items[0], list):
+                    if all(isinstance(sub, list) for sub in items[0]):
+                        items = items[0]
+                
+                restored_table = []
+                for item in items:
+                    if isinstance(item, list):
+                        record = {}
+                        for idx, field_name in enumerate(fields):
+                            if idx < len(item):
+                                record[field_name] = item[idx]
+                        restored_table.append(record)
+                    else:
+                        restored_table.append(item)
+                restored_db[table_name] = restored_table
+            else:
+                restored_db[table_name] = raw_table
+        return restored_db
+
     def handle_master_data(self):
-        """处理数据表下载、解密与解析"""
-        path = f"/data/preregist/{self.master_ver}"
-        secure_url = create_secure_url(MASTER_BASE_URL, path, SECURE_LINK_KEY)
+        """处理数据表下载与反序列化字段填充"""
+        secure_url = create_secure_url(MASTER_BASE_URL, f"/{self.master_ver}", SECURE_LINK_KEY)
 
         console.print(f"[*] 正在获取 Master Data: {secure_url}")
         try:
             resp = self.session.get(secure_url, timeout=30)
             resp.raise_for_status()
 
-            enc_data = resp.content
-            dec_data = AbyssDecryptor.decrypt_master_data(enc_data, "abyss")
-            if not dec_data:
-                return False
+            raw_data = resp.content
+            console.print(f"[blue][*] 成功下载数据表，大小: {len(raw_data)} 字节，正在解析并补全字段名...[/blue]")
 
-            master_obj = msgpack.unpackb(dec_data)
+            master_raw_obj = msgpack.unpackb(raw_data)
+            
+            master_json_obj = self._apply_database_schema(master_raw_obj)
+            
             output_file = "MasterData.json"
             with open(output_file, "w", encoding="utf-8") as f:
-                json.dump(master_obj, f, ensure_ascii=False, indent=2)
+                json.dump(master_json_obj, f, ensure_ascii=False, indent=2)
 
-            console.print(f"[green][+] Master Data 已保存至 {output_file}[/green]")
+            console.print(f"[green][+] 字段补全成功！Master Data 已保存至 {output_file}[/green]")
             return True
         except Exception as e:
             console.print(f"[red][-] 处理 Master Data 时发生错误: {e}[/red]")
@@ -275,10 +337,23 @@ class AbyssDownloader:
             return
 
         versions = info.get("versions", {})
-        self.asset_ver = versions.get("AssetVersionWebDmmR18Preregist")
-        self.master_ver = versions.get("resourcePreregist", "4")
-        client_ver = versions.get("ClientVersionWebDmmR18Preregist", "1.0.0")
-        self.client_ver_prefix = client_ver.split(".")[0]
+        print(versions)
+        self.asset_ver = self._pick_version(
+            versions,
+            "AssetVersionWebDmmR18",
+            default=None,
+        )
+        self.master_ver = self._pick_version(
+            versions, "resource", "resource", default="4"
+        )
+        client_ver = self._pick_version(
+            versions,
+            "ClientVersionWebDmmR18",
+            default="1.0.0",
+        )
+        if client_ver is None:
+            client_ver = "1.0.0"
+        self.client_ver_prefix = str(client_ver).split(".")[0] if client_ver else "1"
         console.print(
             f"[blue][*] 资产版本: {self.asset_ver}, 数据表版本: {self.master_ver}, 客户端前缀: {self.client_ver_prefix}[/blue]"
         )
@@ -287,7 +362,7 @@ class AbyssDownloader:
                 "[yellow][!] Master Data 处理失败，将跳过数据表任务。[/yellow]"
             )
 
-        self.base_url = f"https://preregist.abyss-prod-r18.dotabyss.dmmgames.com/resources/webgl_preregist/r18/aas/{self.asset_ver}/aa"
+        self.base_url = f"https://api.abyss-prod-r18.dotabyss.dmmgames.com/resources/webgl/r18/aas/{self.asset_ver}/aa"
         hash_url = f"{self.base_url}/catalog_{self.client_ver_prefix}.hash"
         bin_url = f"{self.base_url}/catalog_{self.client_ver_prefix}.bin"
 
