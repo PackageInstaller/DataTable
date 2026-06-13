@@ -22,7 +22,8 @@ local NEW_INDEX_MT_T = {
   end
 }
 local CHAR_TYPE = {OWNED = 1, HELP_FIGHT = 2}
-local _after_set_data_func = function(item_obj, data)
+
+local function _after_set_data_func(item_obj, data)
   local ExtraTag = item_obj:get_uiobject("ExtraTag")
   local ChanceTag = item_obj:get_uiobject("ChanceTag")
   if data.award_type == AWARD_TYPE.NOMAL then
@@ -36,7 +37,8 @@ local _after_set_data_func = function(item_obj, data)
     ChanceTag:SetActive(true)
   end
 end
-local _sort_fun = function(a, b)
+
+local function _sort_fun(a, b)
   if a.award_type ~= b.award_type then
     return a.award_type > b.award_type
   else
@@ -240,15 +242,17 @@ function ui:on_click_dispatch_btn()
       end)
     end
   else
-    local cb = function(ignore_select_clue_map)
+    local function cb(ignore_select_clue_map)
       BuildingMgr:requst_adventure_accept_task(self.v_task_type, self.v_task_index, buddy_list, using_clue_ids, self.v_select_clue_id, function()
         self:ui_hide()
+        
         UIMgr:try_call_ui_func("building_adventrue_main", "show_dispatch_tips")
       end)
       if not ignore_select_clue_map then
         BuildingMgr:set_select_clue_map()
       end
     end
+    
     if self.v_task_type == BUILDING_CONFIG.BUILDING_DISPATCH_TASK_TYPE.BOX and self.v_is_need_show_box_all_finish_tips then
       local misc_cfg = ShareRes.get_building_misc_cfg()
       local award_id = misc_cfg.DefaultBoxAwardGroup
@@ -613,26 +617,30 @@ function ui:refresh_char_adventrue_info()
 end
 
 function ui:_get_normal_award_info(data_list)
-  local normal_award_func = function(award_cfg, index)
+  local function normal_award_func(award_cfg, index)
     return {
       id = award_cfg.ItemId,
+      
       count = award_cfg.Num,
       award_type = AWARD_TYPE.NOMAL
     }
   end
+  
   ShareRes.get_item_obj_use_award_list(self.v_task_cfg.AwardGroup, data_list, normal_award_func)
 end
 
 function ui:_get_clue_add_award_info(data_list)
   if self.v_select_clue_count_map then
     local cfg
-    local clue_award_func = function(award_cfg, index)
+    
+    local function clue_award_func(award_cfg, index)
       return {
         id = award_cfg.ItemId,
         count = award_cfg.Num * self.v_temp_clue_count,
         award_type = AWARD_TYPE.CLUE_ADD_AWARD
       }
     end
+    
     for clue_id, count in ipairs(self.v_select_clue_count_map) do
       if count > 0 then
         cfg = ShareRes.get_building_clue_cfg(clue_id)

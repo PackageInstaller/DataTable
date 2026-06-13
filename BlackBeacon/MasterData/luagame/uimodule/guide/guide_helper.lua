@@ -63,7 +63,8 @@ function helper.adjust_frame_rect(ui, copy_obj, old_obj, adjust_rect)
   edge_width, edge_hight = ui.v_parent_ui:get_safearea_width_height()
   edge_width = edge_width / 2
   edge_hight = edge_hight / 2
-  local clampFunc = function(value, min, max)
+  
+  local function clampFunc(value, min, max)
     if value < min then
       value = min
     elseif max < value then
@@ -71,6 +72,7 @@ function helper.adjust_frame_rect(ui, copy_obj, old_obj, adjust_rect)
     end
     return value
   end
+  
   adjust_rect:SetPositionA(origin_pos.x, origin_pos.y, origin_pos.z)
   adjust_rect:SetAnchoredPositionA(clampFunc(adjust_rect.anchoredPosition.x + pivot_offset_x, -edge_width, edge_width), clampFunc(adjust_rect.anchoredPosition.y + pivot_offset_y, -edge_hight, edge_hight), adjust_rect.anchoredPosition.z)
   if ui.v_guider then

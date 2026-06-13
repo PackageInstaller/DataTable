@@ -70,9 +70,11 @@ end
 
 function M:enter_room()
   self.v_on_enter_room = true
-  local preload_res_cb = function()
+  
+  local function preload_res_cb()
     self:_preload_res_done_cb()
   end
+  
   self:preload_res(preload_res_cb)
 end
 

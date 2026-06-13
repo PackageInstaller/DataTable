@@ -9,7 +9,7 @@ function ui:on_click_BtnAllGet()
   self.v_get_task_id_list = {}
   for task_id in pairs(task_list) do
     local task_data = TaskMgr:get_task_by_id(task_id)
-    if task_data and task_data.state == TASK_STATE.receive then
+    if task_data and task_data.state == TASK_STATE.Complete then
       table.insert(self.v_get_task_id_list, task_id)
     end
   end
@@ -61,28 +61,11 @@ function ui:ui_on_destroy()
 end
 
 function ui:refresh_task(task_group_id)
-  self.v_task_group_id = task_group_id
-  self:clear_item()
-  local task_list = ShareRes.get_task_group_cfg(self.v_task_group_id)
-  local task_id_list = {}
-  local is_have_task_receive = false
-  local all_task_got = true
-  for task_id in pairs(task_list) do
-    local task_state = TaskMgr:get_task_state(task_id)
-    if task_state ~= TASK_STATE.GotAward then
-      all_task_got = false
-    end
-    if task_state == TASK_STATE.Complete then
-      is_have_task_receive = true
-    end
-    task_id_list[#task_id_list + 1] = task_id
+  if task_group_id then
+    self.v_task_group_id = task_group_id
   end
-  table.sort(task_id_list, function(a, b)
-    if a ~= b then
-      return a < b
-    end
-    return false
-  end)
+  self:clear_item()
+  local task_id_list, all_task_got, is_have_task_receive = TaskMgr:get_sort_task_list(self.v_task_group_id)
   self.v_uiobjects.BtnAllGet:SetActive(is_have_task_receive)
   self.v_uiobjects.AllGot:SetActive(all_task_got)
   for i = 1, #task_id_list do

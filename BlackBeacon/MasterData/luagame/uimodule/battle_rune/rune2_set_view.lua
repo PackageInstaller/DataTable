@@ -319,10 +319,12 @@ function ui:sell_rune_item()
   if self.v_be_selling then
     return
   end
-  local cb = function()
+  
+  local function cb()
     self.v_be_selling = false
     self:ui_hide()
   end
+  
   local sell_param = {
     uuid = self.v_uuid,
     npc_id = self.v_npc_id,
@@ -603,7 +605,8 @@ function ui:_click_relive_hero_btn()
       return
     end
     local desc = Util.format_str("是否花费{1}钻石立即复活该角色", reborn_cost_num)
-    local cb = function()
+    
+    local function cb()
       local cur_num = BagMgr:get_item_num(reborn_cost_id)
       if cur_num < reborn_cost_num then
         Util.show_message_tip(2115)
@@ -615,6 +618,7 @@ function ui:_click_relive_hero_btn()
         self:refresh_action_btn()
       end)
     end
+    
     Util.show_conform_tip(desc, nil, nil, nil, cb)
   else
     Util.show_message_tip(2121)

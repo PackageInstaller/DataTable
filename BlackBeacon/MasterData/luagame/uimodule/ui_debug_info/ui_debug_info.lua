@@ -91,7 +91,10 @@ function ui:ui_finish_load()
     self:click_writer_log_btn()
   end)
   self:set_button("UploadLog_Abroad", function()
-    self:upload_log()
+    Log.upload_log()
+  end)
+  self:set_button("UploadLog_Inner", function()
+    Log.upload_log()
   end)
   self:set_button("WriteRpcLog", function()
     self:click_rpc_log_btn()
@@ -211,7 +214,7 @@ function ui:ui_on_update(delta_time)
   self:show_debug_value()
 end
 
-local _set_str = function(go, key, value)
+local function _set_str(go, key, value)
   local k = Util.get_text("k", go)
   local v = Util.get_text("v", go)
   k.text = key
@@ -310,39 +313,6 @@ function ui:_refresh_enable_corner_ui_text()
 end
 
 function ui:upload_log()
-  local log_path = PathDefine.updown_log_dir
-  local log_txt = "无log信息"
-  local contextHead = {}
-  local form = CSUnityEngine.WWWForm()
-  local platform = PathDefine.platform
-  local account = Account:get_account() or ""
-  local uuid = Global.player_uuid or ""
-  table.insert(contextHead, "account = " .. account)
-  table.insert(contextHead, "uuid = " .. uuid)
-  table.insert(contextHead, "platform = " .. platform)
-  table.insert(contextHead, "deviceModel = " .. CSUnityEngine.SystemInfo.deviceModel)
-  table.insert(contextHead, "deviceName = " .. CSUnityEngine.SystemInfo.deviceName)
-  table.insert(contextHead, "deviceUniqueIdentifier = " .. CSUnityEngine.SystemInfo.deviceUniqueIdentifier)
-  table.insert(contextHead, "graphicsDeviceID = " .. CSUnityEngine.SystemInfo.graphicsDeviceID)
-  table.insert(contextHead, "graphicsDeviceName = " .. CSUnityEngine.SystemInfo.graphicsDeviceName)
-  table.insert(contextHead, "graphicsMemorySize = " .. CSUnityEngine.SystemInfo.graphicsMemorySize)
-  table.insert(contextHead, "systemMemorySize = " .. CSUnityEngine.SystemInfo.systemMemorySize)
-  form:AddField("classID", "Log")
-  form:AddField("localTime", os.date("%Y-%m-%d_%H-%M-%S", os.time()))
-  form:AddField("roleID", os.date("%Y-%m-%d_%H-%M-%S", os.time()) .. "--Log.txt")
-  local err_key = "**Log**" .. CSUnityEngine.SystemInfo.deviceModel .. "_" .. platform .. "_" .. account .. "_" .. uuid
-  form:AddField("errorKey", err_key)
-  local file1 = io.input(log_path)
-  if not file1 then
-    Log.Error("log not exist, path = " .. log_path)
-    return
-  end
-  log_txt = io.read("*a")
-  io.close()
-  local content = ""
-  content = table.concat(contextHead, "\n") .. "\n" .. log_txt
-  form:AddField("content", content)
-  CSHelper.PostWWWForm("http://dbug-error-log.mz/collectlog.php", form)
 end
 
 function ui:start_record_performance()

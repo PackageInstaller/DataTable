@@ -1,7 +1,7 @@
 return {
   {
     BuddyId = 1001001,
-    Duration = 180,
+    Duration = 600,
     Foods = {
       101,
       105,
@@ -18,7 +18,7 @@ return {
   },
   {
     BuddyId = 1001017,
-    Duration = 180,
+    Duration = 600,
     Foods = {102, 108},
     FoodsCount = {1, 2},
     Icon = "ActivitySummer/Xyxt/js_qqr_nanna",
@@ -27,7 +27,7 @@ return {
   },
   {
     BuddyId = 1001014,
-    Duration = 180,
+    Duration = 600,
     Foods = {104},
     FoodsCount = {1},
     Icon = "ActivitySummer/Xyxt/js_qqr_logos",
@@ -173,7 +173,11 @@ return {
       102,
       107
     },
-    FoodsCount = {1, 1},
+    FoodsCount = {
+      1,
+      1,
+      2
+    },
     Icon = "ActivitySummer/Xyxt/js_qqr_ereshan",
     Id = 15,
     Type = 1
@@ -698,22 +702,22 @@ return {
     Type = 1
   },
   {
-    AnyFoodsCount = 3,
     BuddyId = 1001001,
     Duration = 30,
+    Foods = {101, 103},
+    FoodsCount = {2, 2},
     Icon = "ActivitySummer/Xyxt/js_qqr_zero",
     Id = 60,
     IsSpecial = 1,
-    Materials = {1},
     StoryId = 10060104,
-    Type = 2
+    Type = 1
   },
   {
     BuddyId = 1001027,
     Duration = 50,
     Foods = {109},
-    FoodsCount = {10},
-    Icon = "ActivitySummer/Xyxt/js_qqr_xin",
+    FoodsCount = {3},
+    Icon = "ActivitySummer/Xyxt/js_qqr_ariadne",
     Id = 61,
     IsSpecial = 1,
     StoryId = 10060105,

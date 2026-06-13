@@ -141,9 +141,10 @@ function ui:on_click_item()
     }
     UIMgr:get_ui("ui_rune_set"):ui_show(rune_item_data, RUNE2_SOURCE.CURSE_SHOP_RUNE, self.v_npc_data)
   elseif self.v_type == CURSE_CARD_TYPE.SHOP_ORNAMENTS then
-    local confirm_cb = function()
+    local function confirm_cb()
       self.v_parent_ui:click_btn_ornament_pay(true, self.v_good_data.id, self.v_index)
     end
+    
     UIMgr:get_ui("uinotice_tips"):ui_show(confirm_cb, nil, "是否购买该商品")
   end
 end

@@ -7,16 +7,16 @@ local Scale_ratio = 0.6
 function M:init_sys()
   Base.init_sys(self)
   self.v_reference_count = 0
+  self.v_loaded_prefabs = {}
   self.v_vgc_map = {}
   self.v_pov_go_list = {}
   self.v_input_provider_list = {}
   self.v_activated_pov_index = -1
+  self.v_activated_npc_id = -1
   self.v_rt_map = {}
   self.v_screenshot_rt = nil
   self.v_pos_buffer = {}
   self.v_capture_system_data = nil
-  self:sys_mq_bind(Const.MSG_ON_INTERACT_QUANTUM_CAMERA_NPC, self._response_interact_succ_event, self)
-  self:sys_mq_bind(Const.MSG_LOGIN_FAILED, self.on_login_game_server_failed, self)
 end
 
 function M:on_destroy()
@@ -36,6 +36,7 @@ function M:init_manager()
     table.insert(self.v_pov_go_list, pov_go)
     table.insert(self.v_input_provider_list, input_provider)
   end
+  self.v_interact_pov_hd = self:sys_mq_bind(Const.MSG_ON_INTERACT_QUANTUM_CAMERA_NPC, self._response_interact_succ_event, self)
 end
 
 function M:release_manager()
@@ -51,10 +52,15 @@ function M:release_manager()
   end
   self.v_screenshot_rt = nil
   self.v_activated_pov_index = -1
+  self.v_activated_npc_id = -1
   self.v_reference_count = 0
   UtilTable.clear_map(self.v_pos_buffer)
   if self.v_capture_system_data then
     M:close_capture_system()
+  end
+  if self.v_interact_pov_hd then
+    self:sys_mq_unbind(self.v_interact_pov_hd)
+    self.v_interact_pov_hd = nil
   end
 end
 
@@ -91,7 +97,14 @@ function M:get_capture_system_data()
   return self.v_capture_system_data
 end
 
-function M:activate_pov_camera(index)
+function M:get_activated_pov_index()
+  return self.v_activated_pov_index
+end
+
+function M:activate_pov_camera(index, npc_id)
+  if not self.v_capture_system_data then
+    return
+  end
   if not self.v_pov_go_list[index] or self.v_activated_pov_index == index then
     return
   end
@@ -104,6 +117,7 @@ function M:activate_pov_camera(index)
   end
   self.v_pov_go_list[index]:SetActiveEx(true)
   self.v_activated_pov_index = index
+  self.v_activated_npc_id = npc_id
   NextFrameMgr:add_next_update(function()
     local ui_pov = UIMgr:try_get_visible_ui("ui_quantum_main")
     if not ui_pov then
@@ -115,11 +129,15 @@ function M:activate_pov_camera(index)
 end
 
 function M:deactivate_pov_camera()
+  if not self.v_capture_system_data then
+    return
+  end
   if -1 == self.v_activated_pov_index then
     return
   end
   self.v_pov_go_list[self.v_activated_pov_index]:SetActiveEx(false)
   self.v_activated_pov_index = -1
+  self.v_activated_npc_id = -1
   local ui_pov = UIMgr:try_get_visible_ui("ui_quantum_main")
   if ui_pov then
     ui_pov:ui_hide()
@@ -157,6 +175,9 @@ function M:screenshot(callback)
   local global_camera_rt = Global.camera.v_camera.targetTexture
   local width = math.floor(global_camera_rt.width * Scale_ratio)
   local height = math.floor(global_camera_rt.height * Scale_ratio)
+  if self.v_screenshot_rt then
+    UnityEngine.RenderTexture.ReleaseTemporary(self.v_screenshot_rt)
+  end
   self.v_screenshot_rt = CompExtensions.GetUIRT(width, height, string.format("POV_CAPTURE_%u", pov_index))
   Graphic.Blit(global_camera_rt, self.v_screenshot_rt)
   if callback then
@@ -177,12 +198,14 @@ function M:capture()
   local msg = MsgGame:mq_publish2(Const.MSG_QUANTUM_CAPTURE)
   msg.mm_x = pov_index
   msg.mm_y = true
+  BehaviorMgr:call_scene_logic_event_fun("on_func_npc_interact_end", self.v_activated_npc_id)
 end
 
 function M:remove_capture(pov_index)
   for _, vgc in pairs(self.v_vgc_map) do
     vgc:get_vgc_com():RemoveCapture(pov_index)
   end
+  UnityEngine.RenderTexture.ReleaseTemporary(self.v_rt_map[pov_index])
   self.v_rt_map[pov_index] = nil
   local msg = MsgGame:mq_publish2(Const.MSG_QUANTUM_CAPTURE)
   msg.mm_x = pov_index
@@ -199,12 +222,46 @@ function M:update_visible_state()
   end
 end
 
-function M:_response_interact_succ_event(msg)
-  local pov_id = msg.mm_x
-  self:activate_pov_camera(pov_id)
+function M:set_visual_prefabs_visible(visible)
+  if self.v_loaded_prefabs == nil or UtilTable.is_empty(self.v_loaded_prefabs) then
+    return
+  end
+  for i, prefab in pairs(self.v_loaded_prefabs) do
+    prefab:SetActive(visible)
+  end
 end
 
-function M:on_login_game_server_failed()
+function M:save_loaded_prefab(prefab)
+  self:cleanup_destroyed_prefabs()
+  table.insert(self.v_loaded_prefabs, prefab)
+end
+
+function M:cleanup_destroyed_prefabs()
+  if self.v_loaded_prefabs == nil then
+    return
+  end
+  local valid_prefabs = {}
+  for i, prefab in pairs(self.v_loaded_prefabs) do
+    if not self:IsNil(prefab) then
+      table.insert(valid_prefabs, prefab)
+    end
+  end
+  self.v_loaded_prefabs = valid_prefabs
+end
+
+function M:IsNil(uobj)
+  return nil == uobj or uobj:IsNull()
+end
+
+function M:clear_loaded_prefabs()
+  UtilTable.clear_map(self.v_loaded_prefabs)
+  self.v_loaded_prefabs = {}
+end
+
+function M:_response_interact_succ_event(msg)
+  local pov_id = msg.mm_x
+  local npc_id = msg.mm_y
+  self:activate_pov_camera(pov_id, npc_id)
 end
 
 return M

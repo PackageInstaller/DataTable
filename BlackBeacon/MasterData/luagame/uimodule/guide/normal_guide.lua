@@ -3,7 +3,7 @@ local GuideHelper = require("uimodule.guide.guide_helper")
 local Vec3 = require("base.vec3")
 local Quat = require("base.quat")
 local ui = Util.create_child_mt(Base)
-local UnityDestroy = UnityDestroy
+local UnityDestroy = _ENV.UnityDestroy
 local TouchManager = CS.TouchManager
 local CTL_TYPE = {
   AREA_ACT = 1,
@@ -24,7 +24,7 @@ function ui:ui_on_show(guider, param, ...)
   UtilTable.clear_map(self.v_input_mask)
   self:_copy_ui_control(param.ui_name, param.control_path, param.hide_frame, param.ignore_act)
   TouchManager.Instance.ArrowActivated = false
-  if UNITY_EDITOR or SDKManager:is_google_play_games() then
+  if UNITY_EDITOR or SDKManager:is_google_play_games() or UNITY_STANDALONE_WIN then
     self:bind_auto_mq(Const.MSG_KEY_DOWN, self._response_key_down, self)
     self:bind_auto_mq(Const.MSG_KEY_UP, self._response_key_up, self)
   end

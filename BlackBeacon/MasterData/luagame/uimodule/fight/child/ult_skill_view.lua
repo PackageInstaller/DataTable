@@ -67,7 +67,6 @@ function ui:on_game_pase(msg)
 end
 
 function ui:init_data()
-  self:init_skill_link_duration()
   self:init_skill_link_effect()
   self:change_cur_show_stage()
 end
@@ -162,7 +161,6 @@ end
 function ui:ui_on_show()
   self.v_slider2_visible = self.v_uiobjects.StageSlider2.activeSelf
   self.v_state_change_value = {}
-  self:init_skill_link_duration()
   self:init_skill_link_effect()
   self:_regist_client_event()
   self:set_damage_visible()
@@ -218,16 +216,7 @@ function ui:damage_text_shake()
   end
 end
 
-function ui:init_skill_link_duration()
-  self.v_skill_link_duration_list = UtilTable.copy_table(TimingOfLinkSystemsCheck)
-end
-
-function ui:change_skill_link_duration(stage, delta)
-  if not (self.v_skill_link_duration_list[stage] and delta) or 0 == delta then
-    return
-  end
-  local limit = TimingOfLinkSystemsCheckLimit[stage]
-  self.v_skill_link_duration_list[stage] = Math.Clamp(self.v_skill_link_duration_list[stage] + delta, 0, limit)
+function ui:set_duration_change()
   self.v_duration_change = true
 end
 
@@ -324,7 +313,7 @@ function ui:refresh_energy_slider()
   end
 end
 
-local _get_angle_by_percent = function(percent)
+local function _get_angle_by_percent(percent)
   local half = 0.5
   local dif = percent - half
   local sign = dif >= 0 and -1 or 1
@@ -409,7 +398,8 @@ end
 
 function ui:_get_cur_stage_timer_percent()
   local stage = self.v_ult_stage
-  local time = stage and self.v_skill_link_duration_list[stage] or self.v_skill_link_duration_list[1]
+  local duration_list = FightDataMgr:get_link_duration_list()
+  local time = stage and duration_list[stage] or duration_list[1]
   local percent = 1 == stage and 0.66 or 1
   return percent, time
 end

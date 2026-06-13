@@ -179,9 +179,10 @@ function ui:_onclick_refuse_btn()
 end
 
 function ui:_onclick_invite_btn()
-  local cb = function()
+  local function cb()
     self:_pop_next_invite()
   end
+  
   OnlineHelper.invite_operate(self, cb, self.v_invited_list[1].info)
 end
 

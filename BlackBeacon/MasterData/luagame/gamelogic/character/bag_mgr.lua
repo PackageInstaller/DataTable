@@ -19,11 +19,13 @@ local is_need_show_item_remain_time_tips = true
 local M = Util.create_child_mt(Base)
 local RES_ENUM = {}
 M.RES_ENUM = RES_ENUM
-local _sub_insert = function(id_lists, id, item)
+
+local function _sub_insert(id_lists, id, item)
   id_lists[id] = id_lists[id] or {}
   _tinsert(id_lists[id], item)
 end
-local _sub_replace = function(id_lists, id, item)
+
+local function _sub_replace(id_lists, id, item)
   if id_lists[id] then
     local list = id_lists[id]
     local is_new = true
@@ -404,7 +406,7 @@ function M:show_reward_list(award_data)
     spetial_process(self.award_list)
   else
     local tower = TowerMgr:get_tower()
-    if tower and TowerMgr:get_fight_type() == CommonDefine.CHALLENGE_TYPE.LONG_CHAPTER or award_data.source_system_id == Config.CommonDefine.SYSTEM_TYPE.CHAPTER then
+    if tower and TowerMgr:get_fight_type() == CommonDefine.CHALLENGE_TYPE.LONG_CHAPTER or award_data.source_system_id == Config.CommonDefine.SYSTEM_TYPE.CHAPTER or award_data.source_system_id == Config.CommonDefine.SYSTEM_TYPE.VERSION_EPISODE then
       TowerMgr:record_long_chapter_award(self.award_list)
     elseif not M.check_new_char(self.award_list) then
       UIMgr:add_ui_queue(Config.UI_QUEUE_GROUP.Common_Reward, "award_show_panel", self.award_list)
@@ -437,12 +439,14 @@ function M.check_new_char(award_list, include_old)
   end
   local uimain = UIMgr:try_get_ui("uimain")
   if uimain and uimain:prepare_fo_draw_movie_panel() then
-    local hide_cb = function()
+    local function hide_cb()
       local _uimain = UIMgr:try_get_ui("uimain")
+      
       if _uimain then
         _uimain:reset_after_draw_movie_panel()
       end
     end
+    
     UIMgr:get_ui("uidrawcard_movie_panel"):ui_show(new_char_list, false, award_list, nil, hide_cb)
     return true
   end
@@ -465,12 +469,14 @@ function M.weapon_activity_get_award(award_list)
   end
   local uimain = UIMgr:try_get_ui("uimain")
   if uimain and uimain:prepare_fo_draw_movie_panel() then
-    local hide_cb = function()
+    local function hide_cb()
       local _uimain = UIMgr:try_get_ui("uimain")
+      
       if _uimain then
         _uimain:reset_after_draw_movie_panel()
       end
     end
+    
     UIMgr:get_ui("uidrawcard_movie_panel"):ui_show(new_char_list, false, award_list, nil, hide_cb)
     return true
   end

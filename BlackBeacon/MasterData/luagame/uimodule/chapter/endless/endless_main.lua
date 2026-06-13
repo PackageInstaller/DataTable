@@ -16,21 +16,24 @@ local AWARD_COLOR = {
   [AWARD_STATE.COMPLATE] = "FFFFFF",
   [AWARD_STATE.COMPLATED] = "AE9577"
 }
-local sort_func = function(a, b)
+
+local function sort_func(a, b)
   if a.Priority ~= b.Priority then
     return a.Priority < b.Priority
   else
     return false
   end
 end
-local sort_func2 = function(a_cfg, b_cfg)
+
+local function sort_func2(a_cfg, b_cfg)
   if a_cfg.Id ~= b_cfg.Id then
     return a_cfg.Id < b_cfg.Id
   else
     return false
   end
 end
-local sort_func3 = function(a, b)
+
+local function sort_func3(a, b)
   local a_score = ChapterEndlessMgr:get_endless_score(a.Id)
   local b_score = ChapterEndlessMgr:get_endless_score(b.Id)
   if a_score > 0 and b_score <= 0 then
@@ -114,6 +117,10 @@ function ui:on_click_fight_btn()
   if TowerMgr:check_fight_progress() then
     return
   end
+  local infinite_cfg = ShareRes.get_inf_chapter_cfg(self.v_infinite_id)
+  if infinite_cfg and infinite_cfg.Id == 1005 and not Util.get_res_is_integrity() then
+    return
+  end
   ChapterEndlessMgr:set_last_select_infinite_id(self.v_infinite_id)
   UIMgr:get_ui("endless_prewar"):ui_show(self.v_infinite_id)
 end
@@ -122,9 +129,11 @@ function ui:on_click_quick_fight_btn()
   if not self:check_can_quick_fight(true) then
     return
   end
-  local sure_callback = function()
+  
+  local function sure_callback()
     local infinite_id = self.v_infinite_id
-    local cb = function(resp)
+    
+    local function cb(resp)
       local param = {
         score = resp.score,
         reward_list = resp.reward_list,
@@ -136,8 +145,10 @@ function ui:on_click_quick_fight_btn()
         self:refresh_all_score()
       end
     end
+    
     ChapterEndlessMgr:infinite_sweep_episode(self.v_infinite_id, cb)
   end
+  
   local srt = "是否使用历史最高分的%d%%（%d分）作为本次挑战结果？"
   local disc = ShareRes.get_endless_sweep_discount() or 0
   local data = ChapterMgr:get_inf_chapter_data(self.v_infinite_id)
@@ -166,13 +177,15 @@ function ui:on_click_recive_btn()
   if not self:check_can_get_award() then
     return
   end
-  local cb = function()
+  
+  local function cb()
     if self.v_uiobjects.AwardObj.activeInHierarchy then
       self:clear_award_item()
       self:refresh_award_info()
       self:refresh_score_award_redpoint()
     end
   end
+  
   BagMgr:request_infinite_gain_score_reward(cb)
 end
 
@@ -591,7 +604,8 @@ function ui:change_bg(path)
         self.v_sequence = nil
       end
       self.v_sequence = Util.create_sequence()
-      local set_bg_cb1 = function()
+      
+      local function set_bg_cb1()
         Util.change_component_alpha2(self.v_uicompents.FullBg_img, 1)
         if self.v_hide_tween then
           self.v_hide_tween:Kill(false)
@@ -600,10 +614,12 @@ function ui:change_bg(path)
         self.v_sequence:Join(self.v_uicompents.FullBg_img:DOFade(0, 0.25))
         self.v_sequence:Join(self.v_uicompents.AfterBg_img:DOFade(1, 0.25))
         self.v_sequence:OnComplete(function()
-          local set_bg_cb2 = function()
+          local function set_bg_cb2()
             Util.change_component_alpha2(self.v_uicompents.FullBg_img, 1)
+            
             Util.change_component_alpha2(self.v_uicompents.AfterBg_img, 0)
           end
+          
           ResMgr:load_set_icon(self.v_uicompents.FullBg_img, self.v_cur_bg_path, set_bg_cb2, true, self)
           if self.v_sequence then
             self.v_sequence:Kill(false)
@@ -611,6 +627,7 @@ function ui:change_bg(path)
           end
         end)
       end
+      
       Util.change_component_alpha2(self.v_uicompents.AfterBg_img, 0)
       ResMgr:load_set_icon(self.v_uicompents.AfterBg_img, self.v_cur_bg_path, set_bg_cb1, true, self)
     else

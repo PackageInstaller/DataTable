@@ -1095,7 +1095,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
     BgRes = "Weekly_bg_pvppic_stage4",
     BuffDesc = {
-      "角色派生伤害提升10%，被派生伤害命中后怪物火，雷光属性伤害抗性削弱30%。",
+      "角色派生伤害提升10%，被派生伤害命中后怪物火，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1109,7 +1109,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
     BgRes = "Weekly_bg_pvppic_stage2",
     BuffDesc = {
-      "角色派生伤害提升10%，被派生伤害命中后怪物火，雷光属性伤害抗性削弱30%。",
+      "角色派生伤害提升10%，被派生伤害命中后怪物火，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1123,7 +1123,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
     BgRes = "Weekly_bg_pvppic_stage6",
     BuffDesc = {
-      "角色派生伤害提升10%，被派生伤害命中后怪物火，雷光属性伤害抗性削弱30%。",
+      "角色派生伤害提升10%，被派生伤害命中后怪物火，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1137,7 +1137,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
     BgRes = "Weekly_bg_pvppic_stage6",
     BuffDesc = {
-      "角色派生伤害提升10%，被派生伤害命中后怪物火，雷光属性伤害抗性削弱30%。",
+      "角色派生伤害提升10%，被派生伤害命中后怪物火，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1151,7 +1151,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
     BgRes = "Weekly_bg_pvppic_stage6",
     BuffDesc = {
-      "角色派生伤害提升10%，被派生伤害命中后怪物火，雷光属性伤害抗性削弱30%。",
+      "角色派生伤害提升10%，被派生伤害命中后怪物火，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1165,7 +1165,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd4",
     BgRes = "Weekly_bg_pvppic_stage6",
     BuffDesc = {
-      "角色派生伤害提升10%，被派生伤害命中后怪物火，雷光属性伤害抗性削弱30%。",
+      "角色派生伤害提升10%，被派生伤害命中后怪物火，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1263,7 +1263,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
     BgRes = "Weekly_bg_pvppic_stage4",
     BuffDesc = {
-      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷光属性伤害抗性削弱30%。",
+      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1277,7 +1277,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
     BgRes = "Weekly_bg_pvppic_stage2",
     BuffDesc = {
-      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷光属性伤害抗性削弱30%。",
+      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1291,7 +1291,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
     BgRes = "Weekly_bg_pvppic_stage6",
     BuffDesc = {
-      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷光属性伤害抗性削弱30%。",
+      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1305,7 +1305,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
     BgRes = "Weekly_bg_pvppic_stage6",
     BuffDesc = {
-      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷光属性伤害抗性削弱30%。",
+      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1319,7 +1319,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
     BgRes = "Weekly_bg_pvppic_stage6",
     BuffDesc = {
-      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷光属性伤害抗性削弱30%。",
+      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1333,7 +1333,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd4",
     BgRes = "Weekly_bg_pvppic_stage6",
     BuffDesc = {
-      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷光属性伤害抗性削弱30%。",
+      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1347,7 +1347,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
     BgRes = "Weekly_bg_pvppic_stage6",
     BuffDesc = {
-      "光异常下，怪物光属性伤害抗性削弱30%，在完全破韧状态下触发光异常则怪物光属性伤害抗性削弱50%。",
+      "怪物光属性伤害抗性减少10%，角色光属性、火属性伤害提升10%，处于连携状态下，光属性、火属性伤害额外提升30%。",
       ""
     },
     EffectJoint = 2,
@@ -1361,7 +1361,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
     BgRes = "Weekly_bg_pvppic_stage1",
     BuffDesc = {
-      "光异常下，怪物光属性伤害抗性削弱30%，在完全破韧状态下触发光异常则怪物光属性伤害抗性削弱50%。",
+      "怪物光属性伤害抗性减少10%，角色光属性、火属性伤害提升10%，处于连携状态下，光属性、火属性伤害额外提升30%。",
       ""
     },
     EffectJoint = 2,
@@ -1375,7 +1375,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
     BgRes = "Weekly_bg_pvppic_stage3",
     BuffDesc = {
-      "光异常下，怪物光属性伤害抗性削弱30%，在完全破韧状态下触发光异常则怪物光属性伤害抗性削弱50%。",
+      "怪物光属性伤害抗性减少10%，角色光属性、火属性伤害提升10%，处于连携状态下，光属性、火属性伤害额外提升30%。",
       ""
     },
     EffectJoint = 2,
@@ -1389,7 +1389,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
     BgRes = "Weekly_bg_pvppic_stage3",
     BuffDesc = {
-      "光异常下，怪物光属性伤害抗性削弱30%，在完全破韧状态下触发光异常则怪物光属性伤害抗性削弱50%。",
+      "怪物光属性伤害抗性减少10%，角色光属性、火属性伤害提升10%，处于连携状态下，光属性、火属性伤害额外提升30%。",
       ""
     },
     EffectJoint = 2,
@@ -1403,7 +1403,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
     BgRes = "Weekly_bg_pvppic_stage3",
     BuffDesc = {
-      "光异常下，怪物光属性伤害抗性削弱30%，在完全破韧状态下触发光异常则怪物光属性伤害抗性削弱50%。",
+      "怪物光属性伤害抗性减少10%，角色光属性、火属性伤害提升10%，处于连携状态下，光属性、火属性伤害额外提升30%。",
       ""
     },
     EffectJoint = 2,
@@ -1417,7 +1417,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd2",
     BgRes = "Weekly_bg_pvppic_stage5",
     BuffDesc = {
-      "光异常下，怪物光属性伤害抗性削弱30%，在完全破韧状态下触发光异常则怪物光属性伤害抗性削弱50%。",
+      "怪物光属性伤害抗性减少10%，角色光属性、火属性伤害提升10%，处于连携状态下，光属性、火属性伤害额外提升30%。",
       ""
     },
     EffectJoint = 2,
@@ -1431,7 +1431,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
     BgRes = "Weekly_bg_pvppic_stage4",
     BuffDesc = {
-      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷光属性伤害抗性削弱30%。",
+      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1445,7 +1445,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
     BgRes = "Weekly_bg_pvppic_stage2",
     BuffDesc = {
-      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷光属性伤害抗性削弱31%。",
+      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1459,7 +1459,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
     BgRes = "Weekly_bg_pvppic_stage6",
     BuffDesc = {
-      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷光属性伤害抗性削弱32%。",
+      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1473,7 +1473,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
     BgRes = "Weekly_bg_pvppic_stage6",
     BuffDesc = {
-      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷光属性伤害抗性削弱33%。",
+      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1487,7 +1487,7 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
     BgRes = "Weekly_bg_pvppic_stage6",
     BuffDesc = {
-      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷光属性伤害抗性削弱34%。",
+      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
@@ -1501,13 +1501,517 @@ return {
     BgENter = "StageIcon/Endlessfield_bg_gqxx_zd4",
     BgRes = "Weekly_bg_pvppic_stage6",
     BuffDesc = {
-      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷光属性伤害抗性削弱35%。",
+      "角色强化伤害提升10%，被强化伤害命中后怪物水，雷属性伤害抗性削弱30%。",
       ""
     },
     EffectJoint = 2,
     ElementIcon = "UIWeekact1/Weekly_icon_Normal",
     EpiName = "终层",
     Id = 20100117,
+    LineColor = "B9B9B9",
+    RuneGroupId = 1
+  },
+  [20100118] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
+    BgRes = "Weekly_bg_pvppic_stage6",
+    BuffDesc = {
+      "任意成员登场后，释放普攻、重击、强化普攻拥有30%伤害增幅，生效5次或成员离场后失去此效果",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_Normal",
+    EpiName = "第一层",
+    Id = 20100118,
+    LineColor = "B9B9B9",
+    RuneGroupId = 1
+  },
+  [20100119] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
+    BgRes = "Weekly_bg_pvppic_stage1",
+    BuffDesc = {
+      "任意成员登场后，释放普攻、重击、强化普攻拥有30%伤害增幅，生效5次或成员离场后失去此效果",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_shui",
+    EpiName = "第二层",
+    Id = 20100119,
+    LineColor = "A0E8FF",
+    RuneGroupId = 1
+  },
+  [20100120] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
+    BgRes = "Weekly_bg_pvppic_stage3",
+    BuffDesc = {
+      "任意成员登场后，释放普攻、重击、强化普攻拥有30%伤害增幅，生效5次或成员离场后失去此效果",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_huo",
+    EpiName = "第三层",
+    Id = 20100120,
+    LineColor = "FFA0A0",
+    RuneGroupId = 1
+  },
+  [20100121] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
+    BgRes = "Weekly_bg_pvppic_stage3",
+    BuffDesc = {
+      "任意成员登场后，释放普攻、重击、强化普攻拥有30%伤害增幅，生效5次或成员离场后失去此效果",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_huo",
+    EpiName = "第四层",
+    Id = 20100121,
+    LineColor = "FFA0A0",
+    RuneGroupId = 1
+  },
+  [20100122] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
+    BgRes = "Weekly_bg_pvppic_stage3",
+    BuffDesc = {
+      "任意成员登场后，释放普攻、重击、强化普攻拥有30%伤害增幅，生效5次或成员离场后失去此效果",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_huo",
+    EpiName = "第五层",
+    Id = 20100122,
+    LineColor = "FFA0A0",
+    RuneGroupId = 1
+  },
+  [20100123] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd2",
+    BgRes = "Weekly_bg_pvppic_stage5",
+    BuffDesc = {
+      "任意成员登场后，释放普攻、重击、强化普攻拥有30%伤害增幅，生效5次或成员离场后失去此效果",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_thunder",
+    EpiName = "终层",
+    Id = 20100123,
+    LineColor = "A0FFFE",
+    RuneGroupId = 1
+  },
+  [20100124] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
+    BgRes = "Weekly_bg_pvppic_stage4",
+    BuffDesc = {
+      "怪物光属性伤害抗性减少10%，角色光属性、火属性伤害提升10%，处于连携状态下，光属性、火属性伤害额外提升30%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_guang",
+    EpiName = "第一层",
+    Id = 20100124,
+    LineColor = "FFEAA0",
+    RuneGroupId = 1
+  },
+  [20100125] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
+    BgRes = "Weekly_bg_pvppic_stage2",
+    BuffDesc = {
+      "怪物光属性伤害抗性减少10%，角色光属性、火属性伤害提升10%，处于连携状态下，光属性、火属性伤害额外提升30%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_an",
+    EpiName = "第二层",
+    Id = 20100125,
+    LineColor = "EBA0FF",
+    RuneGroupId = 1
+  },
+  [20100126] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
+    BgRes = "Weekly_bg_pvppic_stage6",
+    BuffDesc = {
+      "怪物光属性伤害抗性减少10%，角色光属性、火属性伤害提升10%，处于连携状态下，光属性、火属性伤害额外提升30%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_Normal",
+    EpiName = "第三层",
+    Id = 20100126,
+    LineColor = "B9B9B9",
+    RuneGroupId = 1
+  },
+  [20100127] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
+    BgRes = "Weekly_bg_pvppic_stage6",
+    BuffDesc = {
+      "怪物光属性伤害抗性减少10%，角色光属性、火属性伤害提升10%，处于连携状态下，光属性、火属性伤害额外提升30%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_Normal",
+    EpiName = "第四层",
+    Id = 20100127,
+    LineColor = "B9B9B9",
+    RuneGroupId = 1
+  },
+  [20100128] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
+    BgRes = "Weekly_bg_pvppic_stage6",
+    BuffDesc = {
+      "怪物光属性伤害抗性减少10%，角色光属性、火属性伤害提升10%，处于连携状态下，光属性、火属性伤害额外提升30%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_Normal",
+    EpiName = "第五层",
+    Id = 20100128,
+    LineColor = "B9B9B9",
+    RuneGroupId = 1
+  },
+  [20100129] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd4",
+    BgRes = "Weekly_bg_pvppic_stage6",
+    BuffDesc = {
+      "怪物光属性伤害抗性减少10%，角色光属性、火属性伤害提升10%，处于连携状态下，光属性、火属性伤害额外提升30%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_Normal",
+    EpiName = "终层",
+    Id = 20100129,
+    LineColor = "B9B9B9",
+    RuneGroupId = 1
+  },
+  [20100130] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
+    BgRes = "Weekly_bg_pvppic_stage6",
+    BuffDesc = {
+      "角色获得15%派生伤害增幅，对处于灼烧状态下的敌人伤害额外提高15%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_Normal",
+    EpiName = "第一层",
+    Id = 20100130,
+    LineColor = "B9B9B9",
+    RuneGroupId = 1
+  },
+  [20100131] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
+    BgRes = "Weekly_bg_pvppic_stage1",
+    BuffDesc = {
+      "角色获得15%派生伤害增幅，对处于灼烧状态下的敌人伤害额外提高15%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_shui",
+    EpiName = "第二层",
+    Id = 20100131,
+    LineColor = "A0E8FF",
+    RuneGroupId = 1
+  },
+  [20100132] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
+    BgRes = "Weekly_bg_pvppic_stage3",
+    BuffDesc = {
+      "角色获得15%派生伤害增幅，对处于灼烧状态下的敌人伤害额外提高15%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_huo",
+    EpiName = "第三层",
+    Id = 20100132,
+    LineColor = "FFA0A0",
+    RuneGroupId = 1
+  },
+  [20100133] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
+    BgRes = "Weekly_bg_pvppic_stage3",
+    BuffDesc = {
+      "角色获得15%派生伤害增幅，对处于灼烧状态下的敌人伤害额外提高15%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_huo",
+    EpiName = "第四层",
+    Id = 20100133,
+    LineColor = "FFA0A0",
+    RuneGroupId = 1
+  },
+  [20100134] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
+    BgRes = "Weekly_bg_pvppic_stage3",
+    BuffDesc = {
+      "角色获得15%派生伤害增幅，对处于灼烧状态下的敌人伤害额外提高15%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_huo",
+    EpiName = "第五层",
+    Id = 20100134,
+    LineColor = "FFA0A0",
+    RuneGroupId = 1
+  },
+  [20100135] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd2",
+    BgRes = "Weekly_bg_pvppic_stage5",
+    BuffDesc = {
+      "角色获得15%派生伤害增幅，对处于灼烧状态下的敌人伤害额外提高15%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_thunder",
+    EpiName = "终层",
+    Id = 20100135,
+    LineColor = "A0FFFE",
+    RuneGroupId = 1
+  },
+  [20100136] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
+    BgRes = "Weekly_bg_pvppic_stage4",
+    BuffDesc = {
+      "处于凝滞状态的敌人，每秒流失0.7%最大生命的生命值;受到元素超载伤害时，流失5%的最大生命值。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_guang",
+    EpiName = "第一层",
+    Id = 20100136,
+    LineColor = "FFEAA0",
+    RuneGroupId = 1
+  },
+  [20100137] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
+    BgRes = "Weekly_bg_pvppic_stage2",
+    BuffDesc = {
+      "处于凝滞状态的敌人，每秒流失0.7%最大生命的生命值;受到元素超载伤害时，流失5%的最大生命值。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_an",
+    EpiName = "第二层",
+    Id = 20100137,
+    LineColor = "EBA0FF",
+    RuneGroupId = 1
+  },
+  [20100138] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
+    BgRes = "Weekly_bg_pvppic_stage6",
+    BuffDesc = {
+      "处于凝滞状态的敌人，每秒流失0.7%最大生命的生命值;受到元素超载伤害时，流失5%的最大生命值。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_Normal",
+    EpiName = "第三层",
+    Id = 20100138,
+    LineColor = "B9B9B9",
+    RuneGroupId = 1
+  },
+  [20100139] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
+    BgRes = "Weekly_bg_pvppic_stage6",
+    BuffDesc = {
+      "处于凝滞状态的敌人，每秒流失0.7%最大生命的生命值;受到元素超载伤害时，流失5%的最大生命值。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_Normal",
+    EpiName = "第四层",
+    Id = 20100139,
+    LineColor = "B9B9B9",
+    RuneGroupId = 1
+  },
+  [20100140] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
+    BgRes = "Weekly_bg_pvppic_stage6",
+    BuffDesc = {
+      "处于凝滞状态的敌人，每秒流失0.7%最大生命的生命值;受到元素超载伤害时，流失5%的最大生命值。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_Normal",
+    EpiName = "第五层",
+    Id = 20100140,
+    LineColor = "B9B9B9",
+    RuneGroupId = 1
+  },
+  [20100141] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd4",
+    BgRes = "Weekly_bg_pvppic_stage6",
+    BuffDesc = {
+      "处于凝滞状态的敌人，每秒流失0.7%最大生命的生命值;受到元素超载伤害时，流失5%的最大生命值。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_Normal",
+    EpiName = "终层",
+    Id = 20100141,
+    LineColor = "B9B9B9",
+    RuneGroupId = 1
+  },
+  [20100142] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
+    BgRes = "Weekly_bg_pvppic_stage6",
+    BuffDesc = {
+      "成员处于离场状态时，获得20%追击伤害增幅，造成伤害时若敌人处于元素异常状态，则伤害额外提升20%",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_Normal",
+    EpiName = "第一层",
+    Id = 20100142,
+    LineColor = "B9B9B9",
+    RuneGroupId = 1
+  },
+  [20100143] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
+    BgRes = "Weekly_bg_pvppic_stage1",
+    BuffDesc = {
+      "成员处于离场状态时，获得20%追击伤害增幅，造成伤害时若敌人处于元素异常状态，则伤害额外提升20%",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_shui",
+    EpiName = "第二层",
+    Id = 20100143,
+    LineColor = "A0E8FF",
+    RuneGroupId = 1
+  },
+  [20100144] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
+    BgRes = "Weekly_bg_pvppic_stage3",
+    BuffDesc = {
+      "成员处于离场状态时，获得20%追击伤害增幅，造成伤害时若敌人处于元素异常状态，则伤害额外提升20%",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_huo",
+    EpiName = "第三层",
+    Id = 20100144,
+    LineColor = "FFA0A0",
+    RuneGroupId = 1
+  },
+  [20100145] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
+    BgRes = "Weekly_bg_pvppic_stage3",
+    BuffDesc = {
+      "成员处于离场状态时，获得20%追击伤害增幅，造成伤害时若敌人处于元素异常状态，则伤害额外提升20%",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_huo",
+    EpiName = "第四层",
+    Id = 20100145,
+    LineColor = "FFA0A0",
+    RuneGroupId = 1
+  },
+  [20100146] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd1",
+    BgRes = "Weekly_bg_pvppic_stage3",
+    BuffDesc = {
+      "成员处于离场状态时，获得20%追击伤害增幅，造成伤害时若敌人处于元素异常状态，则伤害额外提升20%",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_huo",
+    EpiName = "第五层",
+    Id = 20100146,
+    LineColor = "FFA0A0",
+    RuneGroupId = 1
+  },
+  [20100147] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd2",
+    BgRes = "Weekly_bg_pvppic_stage5",
+    BuffDesc = {
+      "成员处于离场状态时，获得20%追击伤害增幅，造成伤害时若敌人处于元素异常状态，则伤害额外提升20%",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_thunder",
+    EpiName = "终层",
+    Id = 20100147,
+    LineColor = "A0FFFE",
+    RuneGroupId = 1
+  },
+  [20100148] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
+    BgRes = "Weekly_bg_pvppic_stage4",
+    BuffDesc = {
+      "触发元素异常，或积累满元素异常叠层时，以场上成员为中心造成一次1000%范围伤害；若在10秒内多次触发，每次造成的伤害还会提高8%，最多提高24%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_guang",
+    EpiName = "第一层",
+    Id = 20100148,
+    LineColor = "FFEAA0",
+    RuneGroupId = 1
+  },
+  [20100149] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
+    BgRes = "Weekly_bg_pvppic_stage2",
+    BuffDesc = {
+      "触发元素异常，或积累满元素异常叠层时，以场上成员为中心造成一次1000%范围伤害；若在10秒内多次触发，每次造成的伤害还会提高8%，最多提高24%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_an",
+    EpiName = "第二层",
+    Id = 20100149,
+    LineColor = "EBA0FF",
+    RuneGroupId = 1
+  },
+  [20100150] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
+    BgRes = "Weekly_bg_pvppic_stage6",
+    BuffDesc = {
+      "触发元素异常，或积累满元素异常叠层时，以场上成员为中心造成一次1000%范围伤害；若在10秒内多次触发，每次造成的伤害还会提高8%，最多提高24%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_Normal",
+    EpiName = "第三层",
+    Id = 20100150,
+    LineColor = "B9B9B9",
+    RuneGroupId = 1
+  },
+  [20100151] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
+    BgRes = "Weekly_bg_pvppic_stage6",
+    BuffDesc = {
+      "触发元素异常，或积累满元素异常叠层时，以场上成员为中心造成一次1000%范围伤害；若在10秒内多次触发，每次造成的伤害还会提高8%，最多提高24%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_Normal",
+    EpiName = "第四层",
+    Id = 20100151,
+    LineColor = "B9B9B9",
+    RuneGroupId = 1
+  },
+  [20100152] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd3",
+    BgRes = "Weekly_bg_pvppic_stage6",
+    BuffDesc = {
+      "触发元素异常，或积累满元素异常叠层时，以场上成员为中心造成一次1000%范围伤害；若在10秒内多次触发，每次造成的伤害还会提高8%，最多提高24%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_Normal",
+    EpiName = "第五层",
+    Id = 20100152,
+    LineColor = "B9B9B9",
+    RuneGroupId = 1
+  },
+  [20100153] = {
+    BgENter = "StageIcon/Endlessfield_bg_gqxx_zd4",
+    BgRes = "Weekly_bg_pvppic_stage6",
+    BuffDesc = {
+      "触发元素异常，或积累满元素异常叠层时，以场上成员为中心造成一次1000%范围伤害；若在10秒内多次触发，每次造成的伤害还会提高8%，最多提高24%。",
+      ""
+    },
+    EffectJoint = 2,
+    ElementIcon = "UIWeekact1/Weekly_icon_Normal",
+    EpiName = "终层",
+    Id = 20100153,
     LineColor = "B9B9B9",
     RuneGroupId = 1
   }

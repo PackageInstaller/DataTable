@@ -51,7 +51,8 @@ M.ITEM_STATE = {
   PAUSE = 6
 }
 local ITEM_STATE = M.ITEM_STATE
-local set_to_state = function(item, state, force)
+
+local function set_to_state(item, state, force)
   if item.state + 1 == state or force then
     item.state = state
   end
@@ -59,8 +60,10 @@ local set_to_state = function(item, state, force)
     item.item_obj:SetActive(false)
   end
 end
+
 local IDX = 0
-local get_idx = function()
+
+local function get_idx()
   IDX = IDX + 1
   return IDX
 end
@@ -510,12 +513,14 @@ end
 
 function M:force_pick_up_all(complete_cb)
   local count = 0
-  local counter = function()
+  
+  local function counter()
     count = count - 1
     if 0 == count then
       complete_cb()
     end
   end
+  
   for _, data in pairs(self.v_item_infos) do
     if data.state <= ITEM_STATE.FLYING then
       count = count + 1
@@ -657,6 +662,7 @@ function M:_item_update(infos, scene_item_type, dt, target_x, target_y, target_z
   if next(temp_need_remove_list) and (Util.is_client_only() and true or self.v_cur_room) then
     self[GET_ITEM_CB[scene_item_type]](self, temp_need_remove_list)
   end
+  UtilTable.clear_map(temp_need_remove_list)
 end
 
 function M:on_breakable_item_almost_zero(item)
@@ -676,12 +682,14 @@ end
 
 function M:get_item(item, callback)
   set_to_state(item, ITEM_STATE.GETTING)
-  local cb = function()
+  
+  local function cb()
     set_to_state(item, ITEM_STATE.END, true)
     if callback then
       callback()
     end
   end
+  
   if item.need_sell then
     if item.is_ornament then
       local npc_data = item.npc_data
@@ -723,12 +731,14 @@ end
 
 function M:npc_get_item(item, callback)
   set_to_state(item, ITEM_STATE.GETTING)
-  local cb = function()
+  
+  local function cb()
     set_to_state(item, ITEM_STATE.END, true)
     if callback then
       callback()
     end
   end
+  
   FunctionalNpcMgr:interact_reawrd_npc_item_get(item.npc_data, item.uuid, cb, item)
 end
 

@@ -14,7 +14,8 @@ local Jump_Helper = require("gamelogic.sys_open.jump_helper")
 local MAX_CHAR_ITEM_COUNT = Config.MAX_CHAR_ITEM_COUNT
 local Condition_Type = Config.Condition_Type
 local check_function_btn_time = ShareRes.get_comm_value("SettlementWinCheckFunctionBtnTime") or 5
-local sort = function(a, b)
+
+local function sort(a, b)
   if a.pos ~= b.pos then
     return a.pos < b.pos
   else
@@ -55,6 +56,11 @@ function ui:ui_finish_load()
       return
     end
     if self:is_need_show_left_btn_with_fight_type() then
+      if not self:check_fight_cost() then
+        self.v_is_can_click_btn = true
+        self:remove_click_btn_timer()
+        return
+      end
       TowerMgr:restart_tower(self.next_epi_id, self.next_epi_param, self.v_is_need_refresh_red)
     elseif self:is_buddy_teach_need_tp_next_floor() then
       SceneMgr:check_continue_tp_room()
@@ -127,14 +133,28 @@ function ui:ui_finish_load()
   }
 end
 
+function ui:check_fight_cost()
+  local is_enough = true
+  if self.v_fight_type == CommonDef.CHALLENGE_TYPE.VERSION_EPISODE then
+    local fight_cost = TimeLimitedActMgr:get_fight_cost(self.v_episode_id)
+    is_enough = BagMgr:get_cost_enough(Config.PLAYER_SP_ITEMID, fight_cost)
+  end
+  if not is_enough then
+    Util.show_message_tip("明度不足")
+  end
+  return is_enough
+end
+
 function ui:on_click_synthesis_btn()
   if self.v_is_sweep_mode or self.v_fight_type == CommonDef.CHALLENGE_TYPE.NEW_MATERIAL then
     AssistMgr:try_hide_add_assist_friend_tips()
     local lack_id, lack_count = ChapterMaterialMgr:try_get_lack_item()
-    local cb = function()
-      local exit_cb = function()
+    
+    local function cb()
+      local function exit_cb()
         if SceneMgr:check_main_scene() then
           Jump_Helper.jump_to_new_ui_item_synthesis(lack_id, lack_count, true)
+          
           return
         end
         local combine_id = BagMgr:get_item_combine_id(lack_id)
@@ -142,8 +162,10 @@ function ui:on_click_synthesis_btn()
         Global.scene_mgr:on_enter_main_scene()
         UIMgr:revert_cache_ui()
       end
+      
       TowerMgr:on_exit_tower(exit_cb)
     end
+    
     self:check_after_story(cb)
   end
 end
@@ -221,29 +243,33 @@ function ui:_on_main_scene_click_continue()
 end
 
 function ui:on_click_continue_button()
-  local cb = function()
+  local function cb()
     if self.v_is_node_save == true then
       if SceneMgr:check_main_scene() and TowerMgr then
         self:ui_hide()
+        
         self:_on_main_scene_click_continue()
       else
         self:_on_fight_scene_click_continue()
         self:ui_hide()
       end
     elseif self.v_is_node_save == CHAPTER_CONFIG.POINTSTATE.complete and self.v_next_node_cfg then
-      local story_cb = function()
+      local function story_cb()
         self:on_click_left_btn(true)
       end
+      
       StoryMgr:play_behind_story_node(self.v_next_node_cfg.Id, story_cb)
     else
-      local exit_cb = function()
+      local function exit_cb()
         if SceneMgr:check_main_scene() then
           self:ui_hide()
+          
           return
         end
         Global.scene_mgr:on_enter_main_scene()
         UIMgr:revert_cache_ui()
       end
+      
       if not self.v_is_get_award and self.v_is_buddy_teach then
         TowerMgr:on_exit_tower(exit_cb)
       else
@@ -251,12 +277,13 @@ function ui:on_click_continue_button()
       end
     end
   end
+  
   self:check_after_story(cb)
 end
 
 function ui:on_click_left_btn(skip_story)
-  local cb = function()
-    local exit_cb = function()
+  local function cb()
+    local function exit_cb()
       if SceneMgr:check_main_scene() then
         self:ui_hide()
       end
@@ -267,12 +294,14 @@ function ui:on_click_left_btn(skip_story)
       Global.scene_mgr:on_enter_main_scene()
       UIMgr:revert_cache_ui()
     end
+    
     if self.v_is_long_chapter then
       TowerMgr:long_chapter_exit(true, exit_cb, true)
     else
       TowerMgr:on_exit_tower(exit_cb)
     end
   end
+  
   self:check_after_story(cb, skip_story)
 end
 
@@ -480,11 +509,15 @@ function ui:refresh_view(is_node_save, result_list, cur_save_node_cfg, skip_get_
   self:refresh_data()
 end
 
-function ui:ui_on_hide()
+function ui:remove_click_btn_timer()
   if self.v_click_btn_timer then
     Timer:remove_timer(self.v_click_btn_timer)
     self.v_click_btn_timer = nil
   end
+end
+
+function ui:ui_on_hide()
+  self:remove_click_btn_timer()
   self.v_uiobjects.Black:SetActive(false)
   if self.v_hide_follow_bar then
     self:set_follow_bar_show_state(true)
@@ -588,6 +621,9 @@ function ui:refresh_button_new()
     btn_left:SetActive(true)
     if 0 == next_epi_id then
       left_text.text = "重新挑战"
+      if self.v_fight_type == CommonDefine.CHALLENGE_TYPE.VERSION_EPISODE then
+        left_text.text = "再次挑战"
+      end
     else
       self.v_is_need_refresh_red = true
       left_text.text = "挑战下一关"
@@ -719,6 +755,9 @@ function ui:is_need_show_left_btn_with_fight_type()
       is_need_show_left_btn = true
       next_epi_id = next_id
     end
+  elseif self.v_fight_type == CommonDefine.CHALLENGE_TYPE.VERSION_EPISODE then
+    is_need_show_left_btn = true
+    next_epi_id = 0
   end
   return is_need_show_left_btn, next_epi_id, next_epi_param
 end

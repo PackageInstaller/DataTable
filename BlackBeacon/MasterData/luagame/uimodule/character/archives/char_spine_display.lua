@@ -162,12 +162,14 @@ function ui:refresh_ui()
   self.v_uicompents.TxtChange_txt.text = self.v_show_break_chang_txt and (self.v_is_showing_big_spine and "突破映像" or "初始") or "切换"
   if not data.is_spine then
     local offset = data.offset
-    local cb = function(img)
+    
+    local function cb(img)
       img.gameObject:SetActive(true)
       img:SetNativeSize()
       img.transform:SetLocalPositionA(offset[1], offset[2], 0)
       img.transform:SetLocalScaleA(offset[3], offset[3], offset[3])
     end
+    
     ResMgr:load_set_icon(self.v_uicompents.HeroIcon_img, data.val, cb, true)
     return
   end

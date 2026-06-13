@@ -425,9 +425,10 @@ function M:tower_settle()
 end
 
 function M:quit_scene()
-  local cb = function()
+  local function cb()
     Global.scene_mgr:on_enter_main_scene()
   end
+  
   if TowerMgr then
     TowerMgr:on_exit_tower(cb)
   end

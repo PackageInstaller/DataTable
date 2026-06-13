@@ -78,7 +78,8 @@ function ui:ui_update(delta_time)
 end
 
 local MEGABYTE = 1048576
-local format_size = function(size)
+
+local function format_size(size)
   if size < MEGABYTE then
     return string.format("%.2fK", size / 1024)
   else

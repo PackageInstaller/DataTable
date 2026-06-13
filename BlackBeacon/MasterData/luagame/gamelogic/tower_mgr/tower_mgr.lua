@@ -151,7 +151,8 @@ function M:on_enter_tower(tower_id, tower_type, is_need_reload_same_scene)
   if self.v_tower then
     return
   end
-  local cb = function(ok, resp)
+  
+  local function cb(ok, resp)
     if ok then
       print("on_enter_tower ret ")
       local tower_info = resp.tower_info
@@ -173,6 +174,7 @@ function M:on_enter_tower(tower_id, tower_type, is_need_reload_same_scene)
       self.v_tower.v_is_first_enter_floor = true
     end
   end
+  
   self:req_tower_info(tower_id, cb)
   return self.v_tower
 end
@@ -626,7 +628,7 @@ function M:destroy_flag_reward_list()
 end
 
 function M:get_fight_reward(callback, is_again_challenge, minesweeper_is_settlement)
-  local cb = function()
+  local function cb()
     if not self.v_tower then
       return
     end
@@ -642,9 +644,11 @@ function M:get_fight_reward(callback, is_again_challenge, minesweeper_is_settlem
     self.v_existing = false
     Network:quit_fs()
   end
+  
   self.v_existing = true
   ScreenMaskMgr:open_one_tag("c2gs_slated_settlement", math.huge)
-  local settle_func = function()
+  
+  local function settle_func()
     Network:call("c2gs_tower_settlement", {is_again_challenge = is_again_challenge, minesweeper_is_settlement = minesweeper_is_settlement}, function(ok, resp)
       ScreenMaskMgr:close_one_tag("c2gs_slated_settlement")
       if ok then
@@ -652,6 +656,7 @@ function M:get_fight_reward(callback, is_again_challenge, minesweeper_is_settlem
       end
     end)
   end
+  
   if not SceneMgr:check_main_scene() then
     Network:call("c2gs_slated_settlement", {}, function(is_ok, _resp)
       if is_ok then
@@ -668,9 +673,11 @@ function M:long_chapter_exit(need_exit_tower, quit_cb, is_player_exit)
   is_player_exit = is_player_exit or false
   self:reset_node_result_list()
   ScreenMaskMgr:open_one_tag("c2gs_slated_settlement", math.huge)
-  local settle_func = function()
-    local cb = function(ok)
+  
+  local function settle_func()
+    local function cb(ok)
       ScreenMaskMgr:close_one_tag("c2gs_slated_settlement")
+      
       if ok then
         if need_exit_tower and self.v_tower then
           self:on_long_chapter_exit_tower(quit_cb)
@@ -679,6 +686,7 @@ function M:long_chapter_exit(need_exit_tower, quit_cb, is_player_exit)
         end
       end
     end
+    
     if self.v_tower and not SceneMgr:check_main_scene() then
       Network:call("c2gs_chapter_quit", {is_player_exit = is_player_exit}, function(ok, resp)
         cb(ok)
@@ -687,6 +695,7 @@ function M:long_chapter_exit(need_exit_tower, quit_cb, is_player_exit)
       cb(true)
     end
   end
+  
   if not SceneMgr:check_main_scene() and self.v_tower then
     Network:call("c2gs_slated_settlement", {}, function(is_ok, _resp)
       if is_ok then
@@ -1077,23 +1086,28 @@ function M:check_fight_progress()
   if 0 == point_id and 0 == tower_id then
     return
   end
-  local sure_callback = function()
+  
+  local function sure_callback()
     if TowerMgr then
       TowerMgr:continue_challenge_tower(fight_progress.challenge_type, point_id, fight_progress.param, tower_id, node_id)
     end
   end
+  
   local ring_is_clear = false
-  local cancel_callback = function()
+  
+  local function cancel_callback()
     if fight_progress and fight_progress.challenge_type == CommonDefine.CHALLENGE_TYPE.CHALLENGE_RING then
       UIMgr:get_ui("fight_settlement"):ui_show(CHAPTER_CONFIG.POINTSTATE.quit)
     elseif fight_progress and fight_progress.challenge_type == CommonDefine.CHALLENGE_TYPE.CUT_GRASS then
       self:entry_choose_award_new(true)
       UIMgr:try_hide_ui("gecao_stage_info")
     elseif fight_progress and fight_progress.challenge_type == CommonDefine.CHALLENGE_TYPE.CURSE_CIRCLE then
-      local cb = function(ok, resp)
+      local function cb(ok, resp)
         ChallengeRingPlusMgr:update_settlement_info(resp.tower_info)
+        
         ChallengeRingPlusMgr:show_sellte_ui()
       end
+      
       self:req_tower_info(tower_id, cb)
     elseif NOT_PROGRESS_BATTLE_TYPE[fight_progress.challenge_type] then
       if tower_pass then
@@ -1102,14 +1116,16 @@ function M:check_fight_progress()
         UIMgr:get_ui("not_progress_battle_def_settle"):ui_show()
       end
     elseif fight_progress and fight_progress.challenge_type == CommonDefine.CHALLENGE_TYPE.INFINITE then
-      local cb = function(ok, resp)
+      local function cb(ok, resp)
         UIMgr:get_ui("endless_settle"):ui_show(CHAPTER_CONFIG.POINTSTATE.quit)
       end
+      
       self:req_tower_info(tower_id, cb)
     else
       UIMgr:get_ui("fight_settlement"):ui_show(CHAPTER_CONFIG.POINTSTATE.quit)
     end
   end
+  
   local point_cfg = ShareRes.get_chapter_point_cfg(point_id)
   if not point_cfg then
     return
@@ -1300,11 +1316,13 @@ function M:request_entry_choose_award(callback)
         self.v_tower_progress.is_choose_status = true
         self.v_tower_progress.choose_reward = resp.choose_reward_list
       end
-      local cb = function()
+      
+      local function cb()
         if callback then
           callback(resp.choose_reward_list)
         end
       end
+      
       if self.v_tower then
         self:on_exit_tower(cb)
       else
@@ -1319,9 +1337,11 @@ function M:entry_choose_award_new(is_fight)
   local cache_data = self:get_cache_data_before_exit()
   local tower_progress = cache_data.tower_progress
   local fight_info = cache_data.fight_info
-  local cb = function(choose_reward_list)
+  
+  local function cb(choose_reward_list)
     self:show_choose_award_view(is_fight, false, choose_reward_list, tower_progress, fight_info)
   end
+  
   if not self.v_tower_progress or self.v_tower_progress.is_choose_status then
     cb(self.v_tower_progress.choose_reward)
   else
@@ -1414,7 +1434,7 @@ function M:trace_pick_item(item_id)
   SDKTrack:trace_pick_item(trace_data)
 end
 
-local get_str_key = function(id)
+local function get_str_key(id)
   return "key" .. id
 end
 
@@ -1491,14 +1511,16 @@ function M:send_node_save_req(node_id, cb)
 end
 
 function M:req_chapter_node_save(node_id, cb)
-  local req_cb = function(ok, resp)
+  local function req_cb(ok, resp)
     if ok then
       self:after_save_node(node_id, resp.result_list)
+      
       if cb then
         cb(ok, resp)
       end
     end
   end
+  
   self:send_node_save_req(node_id, req_cb)
 end
 
@@ -1626,14 +1648,17 @@ function M:tower_settle()
   NewbieTowerMgr:set_newbie_tower_pass()
   local chapter_id = ShareRes.get_comm_value("GuideTowerFightId")
   local chapter_cfg = ShareRes.create("chapter.chapter_point", chapter_id)
-  local story_end_cb = function()
-    local cb = function()
+  
+  local function story_end_cb()
+    local function cb()
       Global.scene_mgr:on_enter_main_scene()
     end
+    
     if TowerMgr then
       TowerMgr:get_fight_reward(cb)
     end
   end
+  
   local fight_end_story_id = chapter_cfg.FightStoryId[2]
   if Util.is_more_than_zero(fight_end_story_id) then
     StoryMgr:set_story_end_cb(fight_end_story_id, story_end_cb)
@@ -1710,7 +1735,8 @@ function M:on_chapter_node_save(data)
     ChapterMgr:record_suc_node(node_id)
   end
   local ui_name = "ui_chapter_detail_info"
-  local cb = function()
+  
+  local function cb()
     local chapter_cfg = ChapterMgr:get_chapter_by_node_id(node_id)
     local ui_chapter_detail_info = UIMgr:get_ui(ui_name)
     local settle_param = {result_list = result_list}
@@ -1723,6 +1749,7 @@ function M:on_chapter_node_save(data)
       GuideMgr:check_sys_guide(ui_chapter_detail_info)
     end
   end
+  
   if self.v_tower then
     local room = self.v_tower:get_room()
     room:send_hero_born_pos(true)
@@ -1895,7 +1922,7 @@ function M:is_need_show_re_fight_btn(is_fail)
   end
   if fight_type == CommonDefine.CHALLENGE_TYPE.LONG_CHAPTER then
     return not is_fail
-  elseif fight_type == CommonDefine.CHALLENGE_TYPE.WEEK_ACTY_PERPARE_EPI or fight_type == CommonDefine.CHALLENGE_TYPE.WEEK_ACTY_PVP_EPI or fight_type == CommonDefine.CHALLENGE_TYPE.NEW_MATERIAL or fight_type == CommonDefine.CHALLENGE_TYPE.INFINITE or fight_type == CommonDefine.CHALLENGE_TYPE.CHAPTER or fight_type == CommonDefine.CHALLENGE_TYPE.BOSS or fight_type == CommonDefine.CHALLENGE_TYPE.LINEAR or fight_type == CommonDefine.CHALLENGE_TYPE.CLIMBING_TOWER or fight_type == CommonDefine.CHALLENGE_TYPE.ACTIVITY_MINESWEEPER or fight_type == CommonDefine.CHALLENGE_TYPE.VERSION_EPISODE then
+  elseif fight_type == CommonDefine.CHALLENGE_TYPE.WEEK_ACTY_PERPARE_EPI or fight_type == CommonDefine.CHALLENGE_TYPE.WEEK_ACTY_PVP_EPI or fight_type == CommonDefine.CHALLENGE_TYPE.NEW_MATERIAL or fight_type == CommonDefine.CHALLENGE_TYPE.INFINITE or fight_type == CommonDefine.CHALLENGE_TYPE.CHAPTER or fight_type == CommonDefine.CHALLENGE_TYPE.BOSS or fight_type == CommonDefine.CHALLENGE_TYPE.LINEAR or fight_type == CommonDefine.CHALLENGE_TYPE.CLIMBING_TOWER or fight_type == CommonDefine.CHALLENGE_TYPE.ACTIVITY_MINESWEEPER or fight_type == CommonDefine.CHALLENGE_TYPE.VERSION_EPISODE or fight_type == CommonDefine.CHALLENGE_TYPE.ACTIVITY_PONDER then
     return true
   end
   return false

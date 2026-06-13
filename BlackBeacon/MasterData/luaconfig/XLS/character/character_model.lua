@@ -51,6 +51,19 @@ return {
     ModelPath = "Fx_H1001025_weapon_rj",
     Scale_UI_Model = 1
   },
+  Fx_H1001025_weapon_rj_ui = {
+    ControllerPath = "H1001025_Show.overrideController",
+    EffectScale = 1,
+    ExtraControllerPath = {
+      "",
+      "",
+      ""
+    },
+    LowModelPath = "",
+    ModelId = "Fx_H1001025_weapon_rj_ui",
+    ModelPath = "Fx_H1001025_weapon_rj_ui",
+    Scale_UI_Model = 1
+  },
   H1001001 = {
     ControllerPath = "H1001001.overrideController",
     EffectScale = 1,
@@ -2572,7 +2585,7 @@ return {
     Scale_UI_Model = 1
   },
   H1001028_Weapon_1 = {
-    ControllerPath = "H1001027_Weapon_1_2.overrideController",
+    ControllerPath = "H1001028_Weapon_1.overrideController",
     EffectScale = 1,
     ExtraControllerPath = {
       "",
@@ -2585,7 +2598,7 @@ return {
     Scale_UI_Model = 1
   },
   H1001028_Weapon_1_2 = {
-    ControllerPath = "H1001027_Weapon_1_2.overrideController",
+    ControllerPath = "H1001028_Weapon_1.overrideController",
     EffectScale = 1,
     ExtraControllerPath = {
       "",
@@ -2598,7 +2611,7 @@ return {
     Scale_UI_Model = 1
   },
   H1001028_Weapon_1_2_UI = {
-    ControllerPath = "H1001027_Weapon_1_2Show.overrideController",
+    ControllerPath = "H1001028_Weapon_1_Show.overrideController",
     EffectScale = 1,
     ExtraControllerPath = {
       "",
@@ -2607,12 +2620,12 @@ return {
     },
     LowModelPath = "",
     ModelId = "H1001028_Weapon_1_2_UI",
-    ModelPath = "H1001028_Weapon_1_2",
-    MotionPath = "H1001027_Weapon_1_2Show",
+    ModelPath = "H1001028_Weapon_1_2_UI",
+    MotionPath = "H1001028_Weapon_1_Show",
     Scale_UI_Model = 1
   },
   H1001028_Weapon_1_UI = {
-    ControllerPath = "H1001027_Weapon_1_2Show.overrideController",
+    ControllerPath = "H1001028_Weapon_1_Show.overrideController",
     EffectScale = 1,
     ExtraControllerPath = {
       "",
@@ -2621,12 +2634,12 @@ return {
     },
     LowModelPath = "",
     ModelId = "H1001028_Weapon_1_UI",
-    ModelPath = "H1001028_Weapon_1",
-    MotionPath = "H1001027_Weapon_1_2Show",
+    ModelPath = "H1001028_Weapon_1_UI",
+    MotionPath = "H1001028_Weapon_1_Show",
     Scale_UI_Model = 1
   },
   H1001028_Weapon_2 = {
-    ControllerPath = "H1001027_Weapon_1_2.overrideController",
+    ControllerPath = "H1001028_Weapon_1.overrideController",
     EffectScale = 1,
     ExtraControllerPath = {
       "",
@@ -2636,47 +2649,6 @@ return {
     LowModelPath = "",
     ModelId = "H1001028_Weapon_2",
     ModelPath = "H1001028_Weapon_1",
-    Scale_UI_Model = 1
-  },
-  H1001028_Weapon_2_2 = {
-    ControllerPath = "H1001027_Weapon_1_2.overrideController",
-    EffectScale = 1,
-    ExtraControllerPath = {
-      "",
-      "",
-      ""
-    },
-    LowModelPath = "",
-    ModelId = "H1001028_Weapon_2_2",
-    ModelPath = "H1001028_Weapon_1_2",
-    Scale_UI_Model = 1
-  },
-  H1001028_Weapon_2_2_UI = {
-    ControllerPath = "H1001027_Weapon_1_2Show.overrideController",
-    EffectScale = 1,
-    ExtraControllerPath = {
-      "",
-      "",
-      ""
-    },
-    LowModelPath = "",
-    ModelId = "H1001028_Weapon_2_2_UI",
-    ModelPath = "H1001028_Weapon_1_2",
-    MotionPath = "H1001027_Weapon_1_2Show",
-    Scale_UI_Model = 1
-  },
-  H1001028_Weapon_2_UI = {
-    ControllerPath = "H1001027_Weapon_1_2Show.overrideController",
-    EffectScale = 1,
-    ExtraControllerPath = {
-      "",
-      "",
-      ""
-    },
-    LowModelPath = "",
-    ModelId = "H1001028_Weapon_2_UI",
-    ModelPath = "H1001028_Weapon_1",
-    MotionPath = "H1001027_Weapon_1_2Show",
     Scale_UI_Model = 1
   },
   H1001029 = {
@@ -2729,7 +2701,7 @@ return {
     },
     LowModelPath = "",
     ModelId = "H1001029_Weapon_1_2",
-    ModelPath = "H1001029_Weapon_1",
+    ModelPath = "H1001029_Weapon_1_2",
     Scale_UI_Model = 1
   },
   H1001029_Weapon_1_2_UI = {
@@ -2742,7 +2714,7 @@ return {
     },
     LowModelPath = "",
     ModelId = "H1001029_Weapon_1_2_UI",
-    ModelPath = "H1001029_Weapon_1",
+    ModelPath = "H1001029_Weapon_1_2_UI",
     MotionPath = "H1001029_Weapon_1_Show",
     Scale_UI_Model = 1
   },
@@ -2756,7 +2728,7 @@ return {
     },
     LowModelPath = "",
     ModelId = "H1001029_Weapon_1_UI",
-    ModelPath = "H1001029_Weapon_1",
+    ModelPath = "H1001029_Weapon_1_UI",
     MotionPath = "H1001029_Weapon_1_Show",
     Scale_UI_Model = 1
   },
@@ -2810,7 +2782,7 @@ return {
     },
     LowModelPath = "",
     ModelId = "H1001030_Weapon_1",
-    ModelPath = "H1001030_Weapon_1_2",
+    ModelPath = "H1001030_Weapon_1",
     Scale_UI_Model = 1
   },
   H1001030_Weapon_1_2 = {
@@ -2827,7 +2799,7 @@ return {
     Scale_UI_Model = 1
   },
   H1001030_Weapon_1_2_UI = {
-    ControllerPath = "H1001030_Weapon_1_2_Show.overrideController",
+    ControllerPath = "H1001030_Weapon_1_2Show.overrideController",
     EffectScale = 1,
     ExtraControllerPath = {
       "",
@@ -2836,12 +2808,12 @@ return {
     },
     LowModelPath = "",
     ModelId = "H1001030_Weapon_1_2_UI",
-    ModelPath = "H1001030_Weapon_1_2",
-    MotionPath = "H1001010_Weapon_1_Show",
+    ModelPath = "H1001030_Weapon_1_2_UI",
+    MotionPath = "H1001030_Weapon_1_2Show",
     Scale_UI_Model = 1
   },
   H1001030_Weapon_1_UI = {
-    ControllerPath = "H1001030_Weapon_1_2_Show.overrideController",
+    ControllerPath = "H1001030_Weapon_1_2Show.overrideController",
     EffectScale = 1,
     ExtraControllerPath = {
       "",
@@ -2850,8 +2822,8 @@ return {
     },
     LowModelPath = "",
     ModelId = "H1001030_Weapon_1_UI",
-    ModelPath = "H1001030_Weapon_1_2",
-    MotionPath = "H1001010_Weapon_1_Show",
+    ModelPath = "H1001030_Weapon_1_UI",
+    MotionPath = "H1001030_Weapon_1_2Show",
     Scale_UI_Model = 1
   },
   H1001099 = {
@@ -4764,6 +4736,19 @@ return {
     ModelPath = "M201063",
     Scale_UI_Model = 1
   },
+  M201064 = {
+    ControllerPath = "M201064.overrideController",
+    EffectScale = 1,
+    ExtraControllerPath = {
+      "",
+      "",
+      ""
+    },
+    LowModelPath = "",
+    ModelId = "M201064",
+    ModelPath = "M201064",
+    Scale_UI_Model = 1
+  },
   M201065 = {
     ControllerPath = "M201065.overrideController",
     EffectScale = 1,
@@ -4775,6 +4760,19 @@ return {
     LowModelPath = "",
     ModelId = "M201065",
     ModelPath = "M201065",
+    Scale_UI_Model = 1
+  },
+  M201071 = {
+    ControllerPath = "M201071.overrideController",
+    EffectScale = 1,
+    ExtraControllerPath = {
+      "",
+      "",
+      ""
+    },
+    LowModelPath = "",
+    ModelId = "M201071",
+    ModelPath = "M201071",
     Scale_UI_Model = 1
   },
   M202005 = {
@@ -6038,6 +6036,58 @@ return {
     ModelPath = "T3001033",
     Scale_UI_Model = 1
   },
+  T3001035 = {
+    ControllerPath = "T3001035.overrideController",
+    EffectScale = 1,
+    ExtraControllerPath = {
+      "",
+      "",
+      ""
+    },
+    LowModelPath = "",
+    ModelId = "T3001035",
+    ModelPath = "T3001035",
+    Scale_UI_Model = 1
+  },
+  T3001036 = {
+    ControllerPath = "T3001036.overrideController",
+    EffectScale = 1,
+    ExtraControllerPath = {
+      "",
+      "",
+      ""
+    },
+    LowModelPath = "",
+    ModelId = "T3001036",
+    ModelPath = "T3001036",
+    Scale_UI_Model = 1
+  },
+  T3001037 = {
+    ControllerPath = "T3001037.overrideController",
+    EffectScale = 1,
+    ExtraControllerPath = {
+      "",
+      "",
+      ""
+    },
+    LowModelPath = "",
+    ModelId = "T3001037",
+    ModelPath = "T3001037",
+    Scale_UI_Model = 1
+  },
+  T3001038 = {
+    ControllerPath = "T3001038.overrideController",
+    EffectScale = 1,
+    ExtraControllerPath = {
+      "",
+      "",
+      ""
+    },
+    LowModelPath = "",
+    ModelId = "T3001038",
+    ModelPath = "T3001038",
+    Scale_UI_Model = 1
+  },
   T3001039 = {
     ControllerPath = "T3001027.overrideController",
     EffectScale = 1,
@@ -6049,6 +6099,19 @@ return {
     LowModelPath = "",
     ModelId = "T3001039",
     ModelPath = "T3001039",
+    Scale_UI_Model = 1
+  },
+  T3001040 = {
+    ControllerPath = "T3001027.overrideController",
+    EffectScale = 1,
+    ExtraControllerPath = {
+      "",
+      "",
+      ""
+    },
+    LowModelPath = "",
+    ModelId = "T3001040",
+    ModelPath = "T3001040",
     Scale_UI_Model = 1
   },
   T3002001 = {

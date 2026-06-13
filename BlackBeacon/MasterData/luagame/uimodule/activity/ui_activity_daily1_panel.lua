@@ -188,6 +188,7 @@ function ui:ui_finish_load()
   self.v_moveSpeed = 0.05
   self.v_minDistance = 10
   self.v_targetPos = self:GetRandomPositionInRect()
+  self.v_shoot_ani_timer = {}
 end
 
 function ui:ui_on_show()
@@ -219,14 +220,17 @@ end
 
 function ui:ui_on_hide()
   self.v_static_sv:clear()
-  if self.v_shoot_ani_timer then
-    Timer:remove_timer(self.v_shoot_ani_timer)
-    self.v_shoot_ani_timer = nil
+  if not UtilTable.is_empty(self.v_shoot_ani_timer) then
+    for _, timer in pairs(self.v_shoot_ani_timer) do
+      Timer:remove_timer(timer)
+    end
+    UtilTable.clear_map(self.v_shoot_ani_timer)
   end
 end
 
 function ui:ui_on_destroy()
   self.v_static_sv = nil
+  self.v_shoot_ani_timer = nil
 end
 
 function ui:GetRandomPositionInRect()
@@ -531,7 +535,7 @@ function ui:play_shoot_ani(target_list)
         self.v_uiobjects.RandomCrosshairs:SetActive(false)
         item.v_uiobjects.BirdBreak:SetActive(true)
         item.v_uiobjects.Crosshairs:SetActive(true)
-        self.v_shoot_ani_timer = Timer:add_timer("target_out_ani", 1.2, function()
+        local timer = Timer:add_timer("target_out_ani", 1.2, function()
           item.v_uiobjects.Crosshairs:SetActive(false)
           item.v_uiobjects.NotClaimed:SetActive(false)
           item.v_uiobjects.Claimed:SetActive(true)
@@ -539,6 +543,7 @@ function ui:play_shoot_ani(target_list)
           item.v_uiobjects.Ani_Claimed_Break:SetActive(true)
           self.v_uiobjects.RandomCrosshairs:SetActive(false)
         end)
+        _tinsert(self.v_shoot_ani_timer, timer)
       else
         item.v_uiobjects.Crosshairs:SetActive(false)
       end
@@ -577,6 +582,24 @@ function ui:sort_award_items_by_quality(items)
     end
     return a_quality >= b_quality
   end)
+end
+
+function ui:on_shooting_game_partly_update()
+  local ui_activity = UIMgr:try_get_visible_ui("ui_activity")
+  local timer = Timer:add_timer("shooting_game_partial_ani", 2.1, function()
+    ui_activity:set_full_mask_active(false)
+    self:set_allow_shoot()
+    self:refresh_target_list()
+  end)
+  _tinsert(self.v_shoot_ani_timer, timer)
+end
+
+function ui:on_shooting_game_update()
+  local timer = Timer:add_timer("shooting_game_ani", 2, function()
+    self:set_allow_shoot()
+    self:refresh_target_list()
+  end)
+  _tinsert(self.v_shoot_ani_timer, timer)
 end
 
 return ui

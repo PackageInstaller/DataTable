@@ -168,13 +168,15 @@ return {
     WeaponResAttachPoint = {}
   },
   [3250001] = {
+    BindToHero = 1,
     Id = 3250001,
     ModelRes = {
-      "Fx_H1001025_weapon_rj"
+      "Fx_H1001025_weapon_rj_ui"
     },
     ResAttachPoint = {
       "Bip001 Prop1"
     },
+    UseSelfAnim = 1,
     WeaponResAttachPoint = {}
   }
 }

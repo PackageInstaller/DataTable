@@ -18,12 +18,15 @@ end
 
 function ui:on_click_jump()
   local choose_config, curr_count, max_count, select_buddy_id, group_id, pool_id = self.v_parent_ui:get_cache_data()
-  local show_cb = function()
+  
+  local function show_cb()
     self.v_parent_ui:ui_hide()
   end
-  local return_cb = function()
+  
+  local function return_cb()
     UIMgr:get_ui("uidrawcard_choose_award"):ui_show(choose_config, curr_count, max_count, select_buddy_id, group_id, pool_id)
   end
+  
   Player_Hero_Helper.build_fake_buddy(self.v_buddy_id)
   UIMgr:get_ui("player_hero"):ui_show(nil, show_cb, return_cb)
 end

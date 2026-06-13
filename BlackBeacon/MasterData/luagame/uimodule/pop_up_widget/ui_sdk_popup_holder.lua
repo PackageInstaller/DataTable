@@ -16,10 +16,12 @@ function ui:ui_on_show(widget_id)
     Base:manual_close()
     return
   end
-  local on_closed = function()
+  
+  local function on_closed()
     PopUpWindowMgr:pop_widget_up(widget_id)
     Base:manual_close()
   end
+  
   if arg[1] == SDK_POP_TYPE.Banner then
     if SDKManager.display_banner then
       SDKManager:display_banner(on_closed)

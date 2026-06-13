@@ -1,6 +1,6 @@
 local Base = require("uimodule.story.step_base")
 local M = Util.create_child_mt(Base)
-local TypeEffectStatus = TypeEffectStatus
+local TypeEffectStatus = _ENV.TypeEffectStatus
 local TypeCSPlayableDirector = typeof(UnityEngine.Playables.PlayableDirector)
 local TextMeshProType = typeof(CS.TMPro.TextMeshProUGUI)
 local STORY_CONFIG = require("uimodule.story.story_config")

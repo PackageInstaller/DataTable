@@ -2,7 +2,8 @@ local Util = require("utils.util")
 local M = Util.create_class()
 local LUA_TBL_COUNT = 0
 local LUA_TBLS = {}
-local pop_lua_tbl = function()
+
+local function pop_lua_tbl()
   if LUA_TBL_COUNT <= 0 then
     return {}
   end
@@ -11,7 +12,8 @@ local pop_lua_tbl = function()
   LUA_TBL_COUNT = LUA_TBL_COUNT - 1
   return tbl
 end
-local push_lua_tbl = function(tbl)
+
+local function push_lua_tbl(tbl)
   if LUA_TBL_COUNT >= 50 then
     return
   end

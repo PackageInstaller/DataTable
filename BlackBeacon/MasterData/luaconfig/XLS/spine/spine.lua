@@ -216,6 +216,30 @@ return {
     SpineGroupID = 0,
     SpineRes = "SP_1001027"
   },
+  [116] = {
+    DefaultAnim = "idle",
+    Id = 116,
+    Pos = {
+      0,
+      -0.4,
+      4.2,
+      1
+    },
+    SpineGroupID = 0,
+    SpineRes = "SP_1001025"
+  },
+  [117] = {
+    DefaultAnim = "idle",
+    Id = 117,
+    Pos = {
+      0,
+      -0.4,
+      4.2,
+      1
+    },
+    SpineGroupID = 0,
+    SpineRes = "SP_1001030"
+  },
   [201] = {
     DefaultAnim = "Loop",
     Id = 201,
@@ -2485,6 +2509,18 @@ return {
     SpineGroupID = 0,
     SpineRes = "SP_1001024"
   },
+  [1001025] = {
+    DefaultAnim = "idle",
+    Id = 1001025,
+    Pos = {
+      0,
+      0.3,
+      4.5,
+      1
+    },
+    SpineGroupID = 0,
+    SpineRes = "SP_1001025"
+  },
   [1001026] = {
     DefaultAnim = "idle",
     Id = 1001026,
@@ -2509,6 +2545,18 @@ return {
     SpineGroupID = 0,
     SpineRes = "SP_1001027"
   },
+  [1001030] = {
+    DefaultAnim = "idle",
+    Id = 1001030,
+    Pos = {
+      0,
+      0.3,
+      4.5,
+      1
+    },
+    SpineGroupID = 0,
+    SpineRes = "SP_1001030"
+  },
   [1002220] = {
     DefaultAnim = "idle",
     Id = 1002220,
@@ -2532,6 +2580,30 @@ return {
     },
     SpineGroupID = 0,
     SpineRes = "SP_1001009a"
+  },
+  [3001025] = {
+    DefaultAnim = "idle",
+    Id = 3001025,
+    Pos = {
+      0.16,
+      0.4,
+      0,
+      1
+    },
+    SpineGroupID = 525,
+    SpineRes = "SP_1001025"
+  },
+  [3001030] = {
+    DefaultAnim = "idle",
+    Id = 3001030,
+    Pos = {
+      0.16,
+      0.4,
+      0,
+      1
+    },
+    SpineGroupID = 530,
+    SpineRes = "SP_1001030"
   },
   [11001008] = {
     AnimGroup3 = {110010081},
@@ -2821,10 +2893,10 @@ return {
     DefaultAnim = "floop",
     Id = 11011026,
     Pos = {
-      0.5,
-      0.55,
+      -0.21,
+      -0.64,
       0,
-      0.22
+      0.28
     },
     SpineGroupID = 0,
     SpineRes = "FCP_1001026"
@@ -2833,10 +2905,10 @@ return {
     DefaultAnim = "floop",
     Id = 11011027,
     Pos = {
-      0.5,
-      0.55,
+      -0.09,
+      -0.31,
       0,
-      0.22
+      0.23
     },
     SpineGroupID = 0,
     SpineRes = "FCP_1001027"
@@ -3042,6 +3114,18 @@ return {
     SpineGroupID = 0,
     SpineRes = "FCP_1001016a"
   },
+  [21001026] = {
+    DefaultAnim = "loop",
+    Id = 21001026,
+    Pos = {
+      0,
+      0.3,
+      0,
+      0.25
+    },
+    SpineGroupID = 0,
+    SpineRes = "FCP_1001026a"
+  },
   [21011001] = {
     AnimGroup1 = {210110011},
     DefaultAnim = "loop",
@@ -3085,6 +3169,21 @@ return {
     },
     SpineGroupID = 0,
     SpineRes = "FCP_1001016a",
+    Wight1 = {50}
+  },
+  [21011026] = {
+    AnimGroup1 = {210110261},
+    DefaultAnim = "loop",
+    Id = 21011026,
+    OpenStyle1 = 1,
+    Pos = {
+      0,
+      0.3,
+      0,
+      0.25
+    },
+    SpineGroupID = 0,
+    SpineRes = "FCP_1001026a",
     Wight1 = {50}
   }
 }

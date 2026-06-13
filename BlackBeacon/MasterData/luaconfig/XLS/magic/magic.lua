@@ -7212,7 +7212,6 @@ local t = {
       DirType = 1,
       Duration = 1,
       Id = 102310,
-      Limit = 10,
       Speed = 18,
       type = 10
     }, nil)
@@ -7228,7 +7227,6 @@ local t = {
       DirType = 1,
       Duration = 1,
       Id = 102311,
-      Limit = 10,
       Speed = 18,
       type = 10
     }, nil)
@@ -9656,7 +9654,7 @@ local t = {
       Effect = "Fx_H1001026_passive_dingguang"
     }, nil),
     logic = setmetatable({
-      Duration = 1.5,
+      Duration = 3.3,
       Id = 102610,
       IsTimeScale = 4,
       type = 9
@@ -48809,21 +48807,21 @@ local t = {
       7,
       5,
       {
-        15950,
-        17400,
-        18850,
-        20300,
-        21750,
-        23200,
-        24650,
-        26100,
-        27550,
-        29000,
-        30450,
-        31900,
-        33350,
-        34800,
-        36250
+        16500,
+        18000,
+        19500,
+        21000,
+        22500,
+        24000,
+        25500,
+        27000,
+        28500,
+        30000,
+        31500,
+        33000,
+        34500,
+        36000,
+        37500
       },
       20,
       0,
@@ -53440,21 +53438,21 @@ local t = {
       7,
       4,
       {
-        13750,
-        15000,
-        16250,
-        17500,
-        18750,
-        20000,
-        21250,
-        22500,
-        23750,
-        25000,
-        26250,
-        27500,
-        28750,
-        30000,
-        31250
+        14850,
+        16200,
+        17550,
+        18900,
+        20250,
+        21600,
+        22950,
+        24300,
+        25650,
+        27000,
+        28350,
+        29700,
+        31050,
+        32400,
+        33750
       },
       20,
       0,
@@ -53471,21 +53469,21 @@ local t = {
       7,
       4,
       {
-        13750,
-        15000,
-        16250,
-        17500,
-        18750,
-        20000,
-        21250,
-        22500,
-        23750,
-        25000,
-        26250,
-        27500,
-        28750,
-        30000,
-        31250
+        14850,
+        16200,
+        17550,
+        18900,
+        20250,
+        21600,
+        22950,
+        24300,
+        25650,
+        27000,
+        28350,
+        29700,
+        31050,
+        32400,
+        33750
       },
       20,
       0,
@@ -54443,21 +54441,21 @@ local t = {
       7,
       6,
       {
-        11000,
-        12000,
-        13000,
-        14000,
-        15000,
-        16000,
-        17000,
-        18000,
-        19000,
-        20000,
-        21000,
-        22000,
-        23000,
-        24000,
-        25000
+        14850,
+        16200,
+        17550,
+        18900,
+        20250,
+        21600,
+        22950,
+        24300,
+        25650,
+        27000,
+        28350,
+        29700,
+        31050,
+        32400,
+        33750
       },
       20,
       0,
@@ -64890,7 +64888,7 @@ local t = {
   [1023123] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
-      3,
+      7,
       2,
       {
         13750,
@@ -68866,6 +68864,23 @@ local t = {
       type = 9
     }, nil)
   }, nil),
+  [1025037] = setmetatable({
+    DyingRemove = false,
+    PartEffectType = 1,
+    logic = setmetatable({
+      0,
+      39,
+      0,
+      0,
+      3,
+      0,
+      0,
+      0,
+      Duration = 1.3,
+      Id = 1025037,
+      type = 1
+    }, nil)
+  }, nil),
   [1025040] = setmetatable({
     PartEffectType = 1,
     effect = setmetatable({
@@ -68948,7 +68963,7 @@ local t = {
     }, nil),
     logic = setmetatable({
       0.05,
-      45,
+      42,
       0,
       3,
       2,
@@ -70636,16 +70651,14 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       [2] = {
-        2000,
-        4000,
+        3000,
         6000,
-        8000,
-        10000,
+        9000,
         12000,
-        14000,
-        16000,
+        15000,
         18000,
-        20000
+        21000,
+        24000
       },
       [3] = 0,
       [4] = 0,
@@ -70672,13 +70685,13 @@ local t = {
   [1026205] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
-      {"25"},
-      {-1500},
+      {"76"},
+      {10000},
       1,
       1,
       {0, 0},
       {0, 0},
-      Duration = 15,
+      Duration = 0.3,
       Id = 1026205,
       type = 2
     }, nil)
@@ -70705,6 +70718,21 @@ local t = {
       {0, 0},
       Id = 1026208,
       type = 14
+    }, nil)
+  }, nil),
+  [1026209] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"78"},
+      {6000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 20,
+      Id = 1026209,
+      UpdateType = 2,
+      type = 2
     }, nil)
   }, nil),
   [1026210] = setmetatable({
@@ -70819,16 +70847,14 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       [2] = {
-        1500,
-        3000,
-        4500,
+        2000,
+        4000,
         6000,
-        7500,
-        9000,
-        10500,
+        8000,
+        10000,
         12000,
-        13500,
-        15000
+        14000,
+        16000
       },
       [3] = 0,
       [4] = 0,
@@ -70980,7 +71006,7 @@ local t = {
       0,
       0,
       0,
-      Duration = 8.3,
+      Duration = 7,
       Id = 1027010,
       type = 5
     }, nil)
@@ -71037,28 +71063,55 @@ local t = {
   [1027015] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
-      Duration = 0.1,
+      Duration = 0.42,
       Id = 1027015,
-      IsReceive = 3,
+      IsReceive = 2,
       type = 9
     }, nil)
   }, nil),
   [1027016] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
-      Duration = 0.1,
+      Duration = 0.42,
       Id = 1027016,
-      IsReceive = 3,
+      IsReceive = 2,
       type = 9
     }, nil)
   }, nil),
   [1027017] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
-      Duration = 0.1,
+      Duration = 0.42,
       Id = 1027017,
-      IsReceive = 3,
+      IsReceive = 2,
       type = 9
+    }, nil)
+  }, nil),
+  [1027018] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = 0.42,
+      Id = 1027018,
+      IsReceive = 2,
+      type = 9
+    }, nil)
+  }, nil),
+  [1027019] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1.4,
+      51,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      Duration = 2,
+      Id = 1027019,
+      IsReceive = 1,
+      each_frame_update = true,
+      type = 1
     }, nil)
   }, nil),
   [1027101] = setmetatable({
@@ -71068,7 +71121,7 @@ local t = {
       EffectJoint = "Camera"
     }, nil),
     logic = setmetatable({
-      Duration = 7,
+      Duration = 10,
       Id = 1027101,
       type = 9
     }, nil)
@@ -71080,7 +71133,7 @@ local t = {
       EffectJoint = "HitCase"
     }, nil),
     logic = setmetatable({
-      Duration = 5,
+      Duration = 10,
       Id = 1027102,
       type = 9
     }, nil)
@@ -71141,7 +71194,7 @@ local t = {
       EffectJoint = "Camera&TimelineRoot"
     }, nil),
     logic = setmetatable({
-      0.03,
+      0,
       60,
       0,
       0,
@@ -71324,11 +71377,27 @@ local t = {
     logic = setmetatable({
       2,
       5,
-      {10450},
+      {
+        27500,
+        30000,
+        32500,
+        35000,
+        37500,
+        40000,
+        42500,
+        45000,
+        47500,
+        50000,
+        52500,
+        55000,
+        57500,
+        60000,
+        62500
+      },
       20,
       0,
-      8,
-      3,
+      36,
+      120,
       false,
       Id = 1027201,
       type = 17
@@ -71355,26 +71424,26 @@ local t = {
       2,
       5,
       {
-        11550,
-        12600,
-        13650,
-        14700,
-        15750,
-        16800,
-        17850,
-        18900,
-        19950,
-        21000,
-        22050,
-        23100,
-        24150,
-        25200,
-        26250
+        49500,
+        54000,
+        58500,
+        63000,
+        67500,
+        72000,
+        76500,
+        81000,
+        85500,
+        90000,
+        94500,
+        99000,
+        103500,
+        108000,
+        112500
       },
       20,
       0,
-      5,
-      86,
+      63,
+      210,
       false,
       Id = 1027203,
       type = 17
@@ -71386,26 +71455,26 @@ local t = {
       2,
       5,
       {
-        138600,
-        151200,
-        163800,
-        176400,
+        99000,
+        108000,
+        117000,
+        126000,
+        135000,
+        144000,
+        153000,
+        162000,
+        171000,
+        180000,
         189000,
-        201600,
-        214200,
-        226800,
-        239400,
-        252000,
-        264600,
-        277200,
-        289800,
-        302400,
-        315000
+        198000,
+        207000,
+        216000,
+        225000
       },
       20,
       0,
-      53,
-      247,
+      100,
+      500,
       false,
       Id = 1027204,
       type = 17
@@ -71416,11 +71485,27 @@ local t = {
     logic = setmetatable({
       2,
       5,
-      {10450},
+      {
+        19800,
+        21600,
+        23400,
+        25200,
+        27000,
+        28800,
+        30600,
+        32400,
+        34200,
+        36000,
+        37800,
+        39600,
+        41400,
+        43200,
+        45000
+      },
       20,
       0,
-      8,
-      3,
+      18,
+      60,
       false,
       Id = 1027205,
       type = 17
@@ -71432,26 +71517,26 @@ local t = {
       2,
       5,
       {
-        26950,
-        29400,
-        31850,
-        34300,
-        36750,
-        39200,
-        41650,
-        44100,
-        46550,
-        49000,
-        51450,
-        53900,
-        56350,
-        58800,
-        61250
+        22000,
+        24000,
+        26000,
+        28000,
+        30000,
+        32000,
+        34000,
+        36000,
+        38000,
+        40000,
+        42000,
+        44000,
+        46000,
+        48000,
+        50000
       },
       20,
       0,
-      11,
-      183,
+      39,
+      130,
       false,
       Id = 1027206,
       type = 17
@@ -71463,25 +71548,25 @@ local t = {
       1,
       5,
       {
-        2200,
-        2400,
-        2600,
-        2800,
-        3000,
-        3200,
-        3400,
-        3600,
-        3800,
-        4000,
-        4200,
-        4400,
-        4600,
-        4800,
-        5000
+        8800,
+        9600,
+        10400,
+        11200,
+        12000,
+        12800,
+        13600,
+        14400,
+        15200,
+        16000,
+        16800,
+        17600,
+        18400,
+        19200,
+        20000
       },
       20,
       0,
-      1,
+      3.6,
       6,
       false,
       Id = 1027207,
@@ -71489,68 +71574,6 @@ local t = {
     }, nil)
   }, nil),
   [1027208] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      1,
-      5,
-      {
-        2750,
-        3000,
-        3250,
-        3500,
-        3750,
-        4000,
-        4250,
-        4500,
-        4750,
-        5000,
-        5250,
-        5500,
-        5750,
-        6000,
-        6250
-      },
-      20,
-      0,
-      1,
-      6,
-      false,
-      Id = 1027208,
-      type = 17
-    }, nil)
-  }, nil),
-  [1027209] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      1,
-      5,
-      {
-        7150,
-        7800,
-        8450,
-        9100,
-        9750,
-        10400,
-        11050,
-        11700,
-        12350,
-        13000,
-        13650,
-        14300,
-        14950,
-        15600,
-        16250
-      },
-      20,
-      0,
-      3,
-      15,
-      false,
-      Id = 1027209,
-      type = 17
-    }, nil)
-  }, nil),
-  [1027210] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
       1,
@@ -71574,8 +71597,70 @@ local t = {
       },
       20,
       0,
+      1.2,
       2,
-      9,
+      false,
+      Id = 1027208,
+      type = 17
+    }, nil)
+  }, nil),
+  [1027209] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      5,
+      {
+        6600,
+        7200,
+        7800,
+        8400,
+        9000,
+        9600,
+        10200,
+        10800,
+        11400,
+        12000,
+        12600,
+        13200,
+        13800,
+        14400,
+        15000
+      },
+      20,
+      0,
+      3,
+      5,
+      false,
+      Id = 1027209,
+      type = 17
+    }, nil)
+  }, nil),
+  [1027210] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      5,
+      {
+        3850,
+        4200,
+        4550,
+        4900,
+        5250,
+        5600,
+        5950,
+        6300,
+        6650,
+        7000,
+        7350,
+        7700,
+        8050,
+        8400,
+        8750
+      },
+      20,
+      0,
+      5,
+      8,
       false,
       Id = 1027210,
       type = 17
@@ -71587,26 +71672,26 @@ local t = {
       1,
       5,
       {
-        6050,
-        6600,
-        7150,
-        7700,
-        8250,
-        8800,
-        9350,
-        9900,
-        10450,
-        11000,
-        11550,
-        12100,
-        12650,
-        13200,
-        13750
+        16500,
+        18000,
+        19500,
+        21000,
+        22500,
+        24000,
+        25500,
+        27000,
+        28500,
+        30000,
+        31500,
+        33000,
+        34500,
+        36000,
+        37500
       },
       20,
       0,
-      2,
-      9,
+      3.6,
+      6,
       false,
       Id = 1027211,
       type = 17
@@ -71618,26 +71703,26 @@ local t = {
       1,
       5,
       {
-        4180,
-        4560,
-        4940,
-        5320,
-        5700,
-        6080,
-        6460,
-        6840,
-        7220,
-        7600,
-        7980,
-        8360,
-        8740,
-        9120,
-        9500
+        30800,
+        33600,
+        36400,
+        39200,
+        42000,
+        44800,
+        47600,
+        50400,
+        53200,
+        56000,
+        58800,
+        61600,
+        64400,
+        67200,
+        70000
       },
       20,
       0,
-      2,
-      9.6,
+      13.2,
+      22,
       false,
       Id = 1027212,
       type = 17
@@ -71649,26 +71734,26 @@ local t = {
       1,
       5,
       {
-        6820,
-        7440,
-        8060,
-        8680,
-        9300,
-        9920,
-        10540,
-        11160,
-        11780,
-        12400,
-        13020,
-        13640,
-        14260,
-        14880,
-        15500
+        33000,
+        36000,
+        39000,
+        42000,
+        45000,
+        48000,
+        51000,
+        54000,
+        57000,
+        60000,
+        63000,
+        66000,
+        69000,
+        72000,
+        75000
       },
       20,
       0,
-      3.2,
-      14,
+      15,
+      25,
       false,
       Id = 1027213,
       type = 17
@@ -71680,26 +71765,26 @@ local t = {
       2,
       5,
       {
-        26950,
-        29400,
-        31850,
-        34300,
-        36750,
-        39200,
-        41650,
-        44100,
-        46550,
-        49000,
-        51450,
-        53900,
-        56350,
-        58800,
-        61250
+        27500,
+        30000,
+        32500,
+        35000,
+        37500,
+        40000,
+        42500,
+        45000,
+        47500,
+        50000,
+        52500,
+        55000,
+        57500,
+        60000,
+        62500
       },
       20,
       0,
-      11,
-      183,
+      45,
+      150,
       false,
       Id = 1027214,
       type = 17
@@ -71726,26 +71811,26 @@ local t = {
       2,
       5,
       {
-        10120,
-        11040,
-        11960,
-        12880,
-        13800,
-        14720,
-        15640,
-        16560,
-        17480,
-        18400,
-        19320,
-        20240,
-        21160,
-        22080,
-        23000
+        27500,
+        30000,
+        32500,
+        35000,
+        37500,
+        40000,
+        42500,
+        45000,
+        47500,
+        50000,
+        52500,
+        55000,
+        57500,
+        60000,
+        62500
       },
       20,
       0,
-      4,
-      18.8,
+      12,
+      20,
       false,
       Id = 1027216,
       type = 17
@@ -71756,11 +71841,27 @@ local t = {
     logic = setmetatable({
       2,
       5,
-      {10450},
+      {
+        5500,
+        6000,
+        6500,
+        7000,
+        7500,
+        8000,
+        8500,
+        9000,
+        9500,
+        10000,
+        10500,
+        11000,
+        11500,
+        12000,
+        12500
+      },
       20,
       0,
-      8,
-      3,
+      15,
+      50,
       false,
       Id = 1027217,
       type = 17
@@ -71771,11 +71872,27 @@ local t = {
     logic = setmetatable({
       2,
       5,
-      {10450},
+      {
+        16500,
+        18000,
+        19500,
+        21000,
+        22500,
+        24000,
+        25500,
+        27000,
+        28500,
+        30000,
+        31500,
+        33000,
+        34500,
+        36000,
+        37500
+      },
       20,
       0,
-      8,
-      3,
+      30,
+      100,
       false,
       Id = 1027218,
       type = 17
@@ -71802,26 +71919,26 @@ local t = {
       2,
       5,
       {
-        3300,
-        3600,
-        3900,
-        4200,
-        4500,
-        4800,
-        5100,
-        5400,
-        5700,
-        6000,
-        6300,
-        6600,
-        6900,
-        7200,
-        7500
+        27500,
+        30000,
+        32500,
+        35000,
+        37500,
+        40000,
+        42500,
+        45000,
+        47500,
+        50000,
+        52500,
+        55000,
+        57500,
+        60000,
+        62500
       },
       20,
       0,
-      2,
-      9.6,
+      10.8,
+      18,
       false,
       Id = 1027220,
       type = 17
@@ -71833,26 +71950,26 @@ local t = {
       2,
       5,
       {
-        4400,
-        4800,
-        5200,
-        5600,
-        6000,
-        6400,
-        6800,
+        6600,
         7200,
-        7600,
-        8000,
+        7800,
         8400,
-        8800,
-        9200,
+        9000,
         9600,
-        10000
+        10200,
+        10800,
+        11400,
+        12000,
+        12600,
+        13200,
+        13800,
+        14400,
+        15000
       },
       20,
       0,
-      3,
-      12,
+      2.4,
+      4,
       false,
       Id = 1027221,
       type = 17
@@ -71864,28 +71981,121 @@ local t = {
       2,
       5,
       {
-        6050,
         6600,
-        7150,
-        7700,
-        8250,
-        8800,
-        9350,
-        9900,
-        10450,
-        11000,
-        11550,
-        12100,
-        12650,
+        7200,
+        7800,
+        8400,
+        9000,
+        9600,
+        10200,
+        10800,
+        11400,
+        12000,
+        12600,
         13200,
-        13750
+        13800,
+        14400,
+        15000
       },
       20,
       0,
-      3,
-      12,
+      2.4,
+      4,
       false,
       Id = 1027222,
+      type = 17
+    }, nil)
+  }, nil),
+  [1027223] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      5,
+      {
+        2750,
+        3000,
+        3250,
+        3500,
+        3750,
+        4000,
+        4250,
+        4500,
+        4750,
+        5000,
+        5250,
+        5500,
+        5750,
+        6000,
+        6250
+      },
+      20,
+      0,
+      1,
+      6,
+      false,
+      Id = 1027223,
+      type = 17
+    }, nil)
+  }, nil),
+  [1027224] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      5,
+      {
+        19800,
+        21600,
+        23400,
+        25200,
+        27000,
+        28800,
+        30600,
+        32400,
+        34200,
+        36000,
+        37800,
+        39600,
+        41400,
+        43200,
+        45000
+      },
+      20,
+      0,
+      21,
+      70,
+      false,
+      Id = 1027224,
+      type = 17
+    }, nil)
+  }, nil),
+  [1027225] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      5,
+      {
+        22000,
+        24000,
+        26000,
+        28000,
+        30000,
+        32000,
+        34000,
+        36000,
+        38000,
+        40000,
+        42000,
+        44000,
+        46000,
+        48000,
+        50000
+      },
+      20,
+      0,
+      39,
+      130,
+      false,
+      Id = 1027225,
       type = 17
     }, nil)
   }, nil),
@@ -71997,7 +72207,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"24"},
-      {-3000},
+      {-7000},
       1,
       1,
       {0, 0},
@@ -72077,7 +72287,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"26"},
-      {1000, 3000},
+      {1000, 1600},
       1,
       1,
       {0, 0},
@@ -72091,7 +72301,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"26"},
-      {4000},
+      {2000},
       1,
       1,
       {0, 0},
@@ -72104,11 +72314,12 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {10},
+      {50},
       1,
       1,
       {0, 0},
       {0, 0},
+      Duration = 1,
       Id = 1027403,
       type = 14
     }, nil)
@@ -72157,7 +72368,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       2,
-      {14},
+      {8},
       1,
       2,
       0,
@@ -72169,7 +72380,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       2,
-      {14},
+      {3},
       1,
       2,
       0,
@@ -72181,7 +72392,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       2,
-      {14},
+      {10},
       1,
       2,
       0,
@@ -72193,7 +72404,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       2,
-      {14},
+      {28},
       1,
       2,
       0,
@@ -72205,7 +72416,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       2,
-      {14},
+      {35},
       1,
       2,
       0,
@@ -72217,7 +72428,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       2,
-      {14},
+      {25},
       1,
       2,
       0,
@@ -72229,7 +72440,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       2,
-      {14},
+      {25},
       1,
       2,
       0,
@@ -72264,7 +72475,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"33"},
-      {1000, 3000},
+      {1000, 2000},
       1,
       1,
       {0, 0},
@@ -72278,7 +72489,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {2.04},
+      {1},
       1,
       1,
       {0, 0},
@@ -72291,7 +72502,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {1.79},
+      {0.6},
       1,
       1,
       {0, 0},
@@ -72304,7 +72515,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {2.04},
+      {1},
       1,
       1,
       {0, 0},
@@ -72317,7 +72528,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {2.69},
+      {4.4},
       1,
       1,
       {0, 0},
@@ -72330,7 +72541,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {3.07},
+      {6},
       1,
       1,
       {0, 0},
@@ -72343,7 +72554,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {10},
+      {3.8},
       1,
       1,
       {0, 0},
@@ -72356,7 +72567,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {5.71},
+      {1.5},
       1,
       1,
       {0, 0},
@@ -72369,7 +72580,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {5.95},
+      {8},
       1,
       1,
       {0, 0},
@@ -72382,7 +72593,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {3.38},
+      {0},
       1,
       1,
       {0, 0},
@@ -72395,7 +72606,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {3.38},
+      {15},
       1,
       1,
       {0, 0},
@@ -72408,7 +72619,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {3.38},
+      {12},
       1,
       1,
       {0, 0},
@@ -72421,7 +72632,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {3.36},
+      {5},
       1,
       1,
       {0, 0},
@@ -72434,7 +72645,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {3.36},
+      {10},
       1,
       1,
       {0, 0},
@@ -72447,7 +72658,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {20},
+      {30},
       1,
       1,
       {0, 0},
@@ -72460,7 +72671,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.42},
+      {0.8},
       1,
       1,
       {0, 0},
@@ -72473,7 +72684,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.42},
+      {0.5},
       1,
       1,
       {0, 0},
@@ -72486,7 +72697,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.42},
+      {0.8},
       1,
       1,
       {0, 0},
@@ -72499,7 +72710,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.42},
+      {1.5},
       1,
       1,
       {0, 0},
@@ -72512,7 +72723,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.42},
+      {2.4},
       1,
       1,
       {0, 0},
@@ -72525,7 +72736,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.42},
+      {3},
       1,
       1,
       {0, 0},
@@ -72538,7 +72749,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.01},
+      {1.2},
       1,
       1,
       {0, 0},
@@ -72551,7 +72762,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {2.59},
+      {6.4},
       1,
       1,
       {0, 0},
@@ -72564,7 +72775,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.42},
+      {0},
       1,
       1,
       {0, 0},
@@ -72577,7 +72788,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.42},
+      {12},
       1,
       1,
       {0, 0},
@@ -72590,7 +72801,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.42},
+      {9.6},
       1,
       1,
       {0, 0},
@@ -72603,7 +72814,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.42},
+      {2.4},
       1,
       1,
       {0, 0},
@@ -72616,7 +72827,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.42},
+      {7.2},
       1,
       1,
       {0, 0},
@@ -72629,7 +72840,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.42},
+      {1.6},
       1,
       1,
       {0, 0},
@@ -72652,8 +72863,660 @@ local t = {
       1,
       {0, 0},
       {0, 0},
+      Duration = 10,
       Id = 1027449,
       type = 2
+    }, nil)
+  }, nil),
+  [1027450] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = 2.4,
+      Id = 1027450,
+      IsReceive = 1,
+      each_frame_update = true,
+      type = 9
+    }, nil)
+  }, nil),
+  [1027451] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = 2.4,
+      Id = 1027451,
+      IsReceive = 1,
+      each_frame_update = true,
+      type = 9
+    }, nil)
+  }, nil),
+  [1027452] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1.8,
+      20,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      Duration = 5,
+      Id = 1027452,
+      type = 1
+    }, nil)
+  }, nil),
+  [1027453] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      0,
+      Duration = 5,
+      Id = 1027453,
+      type = 6
+    }, nil)
+  }, nil),
+  [1027454] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      0,
+      0,
+      Duration = 5,
+      Id = 1027454,
+      type = 6
+    }, nil)
+  }, nil),
+  [1027455] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      3,
+      0,
+      0,
+      Duration = 5,
+      Id = 1027455,
+      type = 6
+    }, nil)
+  }, nil),
+  [1027456] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      0,
+      78.0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      [10] = 1,
+      Duration = 2.6,
+      Id = 1027456,
+      IsTimeScale = 4,
+      type = 1
+    }, nil)
+  }, nil),
+  [1027457] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      74,
+      {25},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1027457,
+      type = 14
+    }, nil)
+  }, nil),
+  [1027458] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      74,
+      {34},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1027458,
+      type = 14
+    }, nil)
+  }, nil),
+  [1027459] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      74,
+      {-100},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1027459,
+      type = 14
+    }, nil)
+  }, nil),
+  [1027460] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      74,
+      {50},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1027460,
+      type = 14
+    }, nil)
+  }, nil),
+  [1027461] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"30"},
+      {
+        8250,
+        9000,
+        9750,
+        10500,
+        11250,
+        12000,
+        12750,
+        13500,
+        14250,
+        15000,
+        15750,
+        16500,
+        17250,
+        18000,
+        18750
+      },
+      1,
+      1,
+      {33, 1},
+      {0, 0},
+      Duration = 20,
+      Id = 1027461,
+      type = 2
+    }, nil)
+  }, nil),
+  [1027462] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"31"},
+      {
+        8250,
+        9000,
+        9750,
+        10500,
+        11250,
+        12000,
+        12750,
+        13500,
+        14250,
+        15000,
+        15750,
+        16500,
+        17250,
+        18000,
+        18750
+      },
+      1,
+      1,
+      {33, 1},
+      {0, 0},
+      Duration = 20,
+      Id = 1027462,
+      type = 2
+    }, nil)
+  }, nil),
+  [1027463] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"32"},
+      {
+        8250,
+        9000,
+        9750,
+        10500,
+        11250,
+        12000,
+        12750,
+        13500,
+        14250,
+        15000,
+        15750,
+        16500,
+        17250,
+        18000,
+        18750
+      },
+      1,
+      1,
+      {33, 1},
+      {0, 0},
+      Duration = 20,
+      Id = 1027463,
+      type = 2
+    }, nil)
+  }, nil),
+  [1027464] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"33"},
+      {
+        8250,
+        9000,
+        9750,
+        10500,
+        11250,
+        12000,
+        12750,
+        13500,
+        14250,
+        15000,
+        15750,
+        16500,
+        17250,
+        18000,
+        18750
+      },
+      1,
+      1,
+      {33, 1},
+      {0, 0},
+      Duration = 20,
+      Id = 1027464,
+      type = 2
+    }, nil)
+  }, nil),
+  [1027465] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"34"},
+      {
+        8250,
+        9000,
+        9750,
+        10500,
+        11250,
+        12000,
+        12750,
+        13500,
+        14250,
+        15000,
+        15750,
+        16500,
+        17250,
+        18000,
+        18750
+      },
+      1,
+      1,
+      {33, 1},
+      {0, 0},
+      Duration = 20,
+      Id = 1027465,
+      type = 2
+    }, nil)
+  }, nil),
+  [1027466] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"122"},
+      {0},
+      1,
+      1,
+      {122, 1},
+      {0, 0},
+      Duration = 20,
+      Id = 1027466,
+      type = 2
+    }, nil)
+  }, nil),
+  [1027467] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"130"},
+      {
+        8250,
+        9000,
+        9750,
+        10500,
+        11250,
+        12000,
+        12750,
+        13500,
+        14250,
+        15000,
+        15750,
+        16500,
+        17250,
+        18000,
+        18750
+      },
+      1,
+      1,
+      {123, 1},
+      {0, 0},
+      Duration = 20,
+      Id = 1027467,
+      type = 2
+    }, nil)
+  }, nil),
+  [1027468] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"131"},
+      {
+        8250,
+        9000,
+        9750,
+        10500,
+        11250,
+        12000,
+        12750,
+        13500,
+        14250,
+        15000,
+        15750,
+        16500,
+        17250,
+        18000,
+        18750
+      },
+      1,
+      1,
+      {124, 1},
+      {0, 0},
+      Duration = 20,
+      Id = 1027468,
+      type = 2
+    }, nil)
+  }, nil),
+  [1027469] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"125"},
+      {
+        16500,
+        18000,
+        19500,
+        21000,
+        22500,
+        24000,
+        25500,
+        27000,
+        28500,
+        30000,
+        31500,
+        33000,
+        34500,
+        36000,
+        37500
+      },
+      1,
+      1,
+      {125, 1},
+      {0, 0},
+      Duration = 20,
+      Id = 1027469,
+      type = 2
+    }, nil)
+  }, nil),
+  [1027470] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"126"},
+      {
+        16500,
+        18000,
+        19500,
+        21000,
+        22500,
+        24000,
+        25500,
+        27000,
+        28500,
+        30000,
+        31500,
+        33000,
+        34500,
+        36000,
+        37500
+      },
+      1,
+      1,
+      {126, 1},
+      {0, 0},
+      Duration = 20,
+      Id = 1027470,
+      type = 2
+    }, nil)
+  }, nil),
+  [1027471] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"127"},
+      {
+        16500,
+        18000,
+        19500,
+        21000,
+        22500,
+        24000,
+        25500,
+        27000,
+        28500,
+        30000,
+        31500,
+        33000,
+        34500,
+        36000,
+        37500
+      },
+      1,
+      1,
+      {127, 1},
+      {0, 0},
+      Duration = 20,
+      Id = 1027471,
+      type = 2
+    }, nil)
+  }, nil),
+  [1027472] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"128"},
+      {
+        8250,
+        9000,
+        9750,
+        10500,
+        11250,
+        12000,
+        12750,
+        13500,
+        14250,
+        15000,
+        15750,
+        16500,
+        17250,
+        18000,
+        18750
+      },
+      1,
+      1,
+      {128, 1},
+      {0, 0},
+      Duration = 20,
+      Id = 1027472,
+      type = 2
+    }, nil)
+  }, nil),
+  [1027473] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"129"},
+      {0},
+      1,
+      1,
+      {129, 1},
+      {0, 0},
+      Duration = 20,
+      Id = 1027473,
+      type = 2
+    }, nil)
+  }, nil),
+  [1027480] = setmetatable({
+    FloatingIconParam = {
+      "item/UI_Common_DamageUp",
+      "元素伤害增幅",
+      [4] = 1
+    },
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = 20,
+      Icon = "Item/UI_Common_DamageUp",
+      Id = 1027480,
+      type = 9
+    }, nil)
+  }, nil),
+  [1027481] = setmetatable({
+    FloatingIconParam = {
+      "item/UI_Common_DamageUp",
+      "技能伤害增幅",
+      [4] = 1
+    },
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = 20,
+      Icon = "Item/UI_Common_DamageUp",
+      Id = 1027481,
+      type = 9
+    }, nil)
+  }, nil),
+  [1027482] = setmetatable({
+    FloatingIconParam = {
+      "item/UI_Common_DamageUp",
+      "技能伤害增幅",
+      [4] = 1
+    },
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = -1,
+      Icon = "Item/UI_Common_DamageUp",
+      Id = 1027482,
+      type = 9
+    }, nil)
+  }, nil),
+  [1027500] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {50},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 1,
+      Id = 1027500,
+      type = 14
+    }, nil)
+  }, nil),
+  [1027501] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {400},
+      2,
+      0,
+      0,
+      Duration = 1,
+      Id = 1027501,
+      type = 23
+    }, nil)
+  }, nil),
+  [1027502] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"25"},
+      {
+        -1700,
+        -2125,
+        -2550,
+        -2975,
+        -3400
+      },
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 20,
+      Id = 1027502,
+      type = 2
+    }, nil)
+  }, nil),
+  [1027503] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"25"},
+      {
+        -2500,
+        -3125,
+        -3750,
+        -4375,
+        -5000
+      },
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 20,
+      Id = 1027503,
+      type = 2
+    }, nil)
+  }, nil),
+  [1027504] = setmetatable({
+    FloatingIconParam = {
+      "Item/UI_Common_DamageUp",
+      "伤害提升",
+      [4] = 1
+    },
+    OneLayerFloat = true,
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"20"},
+      {3000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 10,
+      Id = 1027504,
+      type = 2
+    }, nil)
+  }, nil),
+  [1027505] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {50},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 1,
+      Id = 1027505,
+      type = 14
+    }, nil)
+  }, nil),
+  [1027506] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      [2] = {5000},
+      [3] = 0,
+      [4] = 0,
+      Duration = 0.001,
+      Id = 1027506,
+      type = 21
     }, nil)
   }, nil),
   [1029001] = setmetatable({
@@ -72939,15 +73802,15 @@ local t = {
   [1030003] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
-      1.5,
-      20,
+      1.8,
+      29,
       5,
       0,
       0,
       0,
       0,
       0,
-      Duration = 2,
+      Duration = 2.1,
       Id = 1030003,
       type = 1
     }, nil)
@@ -72967,6 +73830,22 @@ local t = {
       type = 17
     }, nil)
   }, nil),
+  [1030005] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1.2,
+      29,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      Duration = 1.4,
+      Id = 1030005,
+      type = 1
+    }, nil)
+  }, nil),
   [1030101] = setmetatable({
     PartEffectType = 1,
     effect = setmetatable({
@@ -72983,12 +73862,12 @@ local t = {
   [1030102] = setmetatable({
     PartEffectType = 1,
     effect = setmetatable({
-      Effect = "Fx_rogue_build_4_5_3",
+      Effect = "Fx_1001030_Fish_Buff",
       EffectJoint = "Bip001 Chest",
       EffectWorld = 0
     }, nil),
     logic = setmetatable({
-      Duration = 10,
+      Duration = 6,
       Id = 1030102,
       IsReceive = 3,
       type = 9
@@ -72997,12 +73876,12 @@ local t = {
   [1030103] = setmetatable({
     PartEffectType = 1,
     effect = setmetatable({
-      Effect = "Fx_rogue_build_3_2_2",
+      Effect = "Fx_1001030_Fish_Buff",
       EffectJoint = "Bip001 Chest",
       EffectWorld = 0
     }, nil),
     logic = setmetatable({
-      Duration = 10,
+      Duration = 6,
       Id = 1030103,
       IsReceive = 3,
       type = 9
@@ -73011,7 +73890,7 @@ local t = {
   [1030104] = setmetatable({
     PartEffectType = 1,
     effect = setmetatable({
-      Effect = "Fx_rogue_build_4_3",
+      Effect = "Fx_1001030_Fish_Buff",
       EffectJoint = "Bip001 Chest",
       EffectWorld = 0
     }, nil),
@@ -73020,7 +73899,719 @@ local t = {
       Id = 1030104,
       ImmunitType = 1,
       Immunitions = {1030102, 1030103},
+      IsReceive = 3,
       type = 9
+    }, nil)
+  }, nil),
+  [1030105] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = 8,
+      Id = 1030105,
+      IsReceive = 2,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030106] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = 8,
+      Id = 1030106,
+      IsReceive = 2,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030107] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = 2,
+      Id = 1030107,
+      IsReceive = 2,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030108] = setmetatable({
+    PartEffectType = 1,
+    effect = setmetatable({
+      Effect = "Fx_1001030_Buff"
+    }, nil),
+    logic = setmetatable({
+      {
+        8250,
+        9000,
+        9750,
+        10500,
+        11250,
+        12000,
+        12750,
+        13500,
+        14250,
+        15000,
+        15750,
+        16500,
+        17250,
+        18000,
+        18750
+      },
+      2,
+      20,
+      Duration = 8,
+      Id = 1030108,
+      IsReceive = 2,
+      type = 25
+    }, nil)
+  }, nil),
+  [1030109] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"31"},
+      {
+        5500,
+        6000,
+        6500,
+        7000,
+        7500,
+        8000,
+        8500,
+        9000,
+        9500,
+        10000,
+        10500,
+        11000,
+        11500,
+        12000,
+        12500
+      },
+      1,
+      1,
+      {33, 1},
+      {0, 0},
+      Duration = 8,
+      Id = 1030109,
+      IsReceive = 2,
+      type = 2
+    }, nil)
+  }, nil),
+  [1030110] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"24"},
+      {3000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 8,
+      Id = 1030110,
+      IsReceive = 2,
+      type = 2
+    }, nil)
+  }, nil),
+  [1030181] = setmetatable({
+    DyingRemove = false,
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = -1,
+      Id = 1030181,
+      IsReceive = 1,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030182] = setmetatable({
+    DyingRemove = false,
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = -1,
+      Id = 1030182,
+      IsReceive = 1,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030183] = setmetatable({
+    DyingRemove = false,
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = -1,
+      Id = 1030183,
+      IsReceive = 1,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030184] = setmetatable({
+    DyingRemove = false,
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = -1,
+      Id = 1030184,
+      IsReceive = 1,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030185] = setmetatable({
+    DyingRemove = false,
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = -1,
+      Id = 1030185,
+      IsReceive = 1,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030200] = setmetatable({
+    DyingRemove = false,
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = -1,
+      Id = 1030200,
+      IsReceive = 1,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = 2.4,
+      Id = 1030201,
+      IsReceive = 2,
+      each_frame_update = true,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030202] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = 5,
+      Id = 1030202,
+      IsReceive = 2,
+      each_frame_update = true,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030203] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = 2.4,
+      Id = 1030203,
+      IsReceive = 2,
+      each_frame_update = true,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030204] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = 5,
+      Id = 1030204,
+      IsReceive = 2,
+      each_frame_update = true,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030205] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = 1.6,
+      Id = 1030205,
+      IsReceive = 2,
+      each_frame_update = true,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030206] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = 6,
+      Id = 1030206,
+      IsReceive = 2,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030207] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1.48,
+      10,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      Duration = 2,
+      Id = 1030207,
+      type = 1
+    }, nil)
+  }, nil),
+  [1030208] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1.48,
+      10,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      Duration = 2,
+      Id = 1030208,
+      type = 1
+    }, nil)
+  }, nil),
+  [1030281] = setmetatable({
+    DyingRemove = false,
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = -1,
+      Id = 1030281,
+      IsReceive = 1,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030282] = setmetatable({
+    DyingRemove = false,
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = -1,
+      Id = 1030282,
+      IsReceive = 1,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030283] = setmetatable({
+    DyingRemove = false,
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = -1,
+      Id = 1030283,
+      IsReceive = 1,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030284] = setmetatable({
+    DyingRemove = false,
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = -1,
+      Id = 1030284,
+      IsReceive = 1,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030285] = setmetatable({
+    DyingRemove = false,
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = -1,
+      Id = 1030285,
+      IsReceive = 1,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030286] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"20"},
+      {
+        500,
+        750,
+        1000
+      },
+      1,
+      1,
+      {20, 0},
+      {0, 0},
+      Duration = 5,
+      Id = 1030286,
+      IsReceive = 1,
+      Limit = 3,
+      type = 2
+    }, nil)
+  }, nil),
+  [1030287] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({Id = 1030287, type = 9}, nil)
+  }, nil),
+  [1030288] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"26"},
+      {3000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 1030288,
+      type = 2
+    }, nil)
+  }, nil),
+  [1030289] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({Id = 1030289, type = 9}, nil)
+  }, nil),
+  [1030301] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      "Cam_H1001030_finish",
+      0,
+      0,
+      0,
+      0,
+      Duration = 4.56,
+      Id = 1030301,
+      type = 5
+    }, nil)
+  }, nil),
+  [1030302] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      "Cam_H1001030_born",
+      0,
+      0,
+      0,
+      0,
+      Duration = 6.46,
+      Id = 1030302,
+      type = 5
+    }, nil)
+  }, nil),
+  [1030303] = setmetatable({
+    PartEffectType = 1,
+    effect = setmetatable({
+      Effect = "Test291001030",
+      EffectJoint = "Camera&TimelineRoot"
+    }, nil),
+    logic = setmetatable({
+      Duration = 2,
+      Id = 1030303,
+      IsReceive = 2,
+      IsTimeScale = 5,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030304] = setmetatable({
+    PartEffectType = 1,
+    effect = setmetatable({
+      Effect = "Test291001030",
+      EffectJoint = "Camera&TimelineRoot"
+    }, nil),
+    logic = setmetatable({
+      0,
+      60,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      Duration = 2,
+      Id = 1030304,
+      IsReceive = 2,
+      IsTimeScale = 5,
+      type = 1
+    }, nil)
+  }, nil),
+  [1030305] = setmetatable({
+    PartEffectType = 1,
+    effect = setmetatable({
+      Effect = "Fx_H1001030_ult_fire_1",
+      EffectJoint = "Bip001 Prop1"
+    }, nil),
+    logic = setmetatable({
+      Duration = 2,
+      Id = 1030305,
+      IsReceive = 2,
+      IsTimeScale = 5,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030306] = setmetatable({
+    PartEffectType = 1,
+    effect = setmetatable({
+      Effect = "Fx_H1001030_ult_fire_2",
+      EffectJoint = "Bip001 Prop1"
+    }, nil),
+    logic = setmetatable({
+      Duration = 2,
+      Id = 1030306,
+      IsReceive = 2,
+      IsTimeScale = 5,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030307] = setmetatable({
+    PartEffectType = 1,
+    effect = setmetatable({
+      Effect = "Fx_H1001030_ult_weapon",
+      EffectJoint = "Bip001 Prop1"
+    }, nil),
+    logic = setmetatable({
+      Duration = 2,
+      Id = 1030307,
+      IsReceive = 2,
+      IsTimeScale = 5,
+      type = 9
+    }, nil)
+  }, nil),
+  [1030308] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      0,
+      69,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      [10] = 1,
+      Duration = 2.3,
+      Id = 1030308,
+      IsTimeScale = 4,
+      type = 1
+    }, nil)
+  }, nil),
+  [1030309] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      8,
+      {
+        0.3,
+        -1,
+        10,
+        0.2
+      },
+      {
+        1,
+        1,
+        1,
+        1
+      },
+      3,
+      Duration = 0.3,
+      Id = 1030309,
+      type = 4
+    }, nil)
+  }, nil),
+  [1030310] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      {
+        0.5,
+        -0.5,
+        15,
+        0.3
+      },
+      {
+        1,
+        1,
+        1,
+        1
+      },
+      5,
+      Duration = 0.3,
+      Id = 1030310,
+      type = 4
+    }, nil)
+  }, nil),
+  [1030311] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      8,
+      {
+        0.3,
+        -1,
+        10,
+        0.2
+      },
+      {
+        1,
+        1,
+        1,
+        1
+      },
+      3,
+      Duration = 0.3,
+      Id = 1030311,
+      type = 4
+    }, nil)
+  }, nil),
+  [1030312] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      0,
+      0,
+      -1.8,
+      0,
+      0,
+      0,
+      0.4,
+      0.2,
+      1,
+      1,
+      0,
+      1,
+      0,
+      Duration = 1.3,
+      Id = 1030312,
+      type = 12
+    }, nil)
+  }, nil),
+  [1030412] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      "Bip001",
+      0,
+      Duration = 0.2,
+      Id = 1030412,
+      type = 7
+    }, nil)
+  }, nil),
+  [1030413] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      Id = 1030413,
+      ImmunitType = 1,
+      Immunitions = {1030412},
+      type = 9
+    }, nil)
+  }, nil),
+  [1030500] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"25"},
+      {
+        -1375,
+        -1500,
+        -1625,
+        -1750,
+        -1875,
+        -2000,
+        -2125,
+        -2250,
+        -2375,
+        -2500,
+        -2625,
+        -2750,
+        -2875,
+        -3000,
+        -3125
+      },
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 6,
+      Id = 1030500,
+      type = 2
+    }, nil)
+  }, nil),
+  [1030501] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"24"},
+      {-5000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 6,
+      Id = 1030501,
+      type = 2
+    }, nil)
+  }, nil),
+  [1030502] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        33000,
+        36000,
+        39000,
+        42000,
+        45000,
+        48000,
+        51000,
+        54000,
+        57000,
+        60000,
+        63000,
+        66000,
+        69000,
+        72000,
+        75000
+      },
+      20,
+      0,
+      39,
+      130,
+      false,
+      Duration = 1,
+      Id = 1030502,
+      type = 17
+    }, nil)
+  }, nil),
+  [1030503] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"43"},
+      {-2000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 6,
+      Id = 1030503,
+      type = 2
+    }, nil)
+  }, nil),
+  [1030504] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        52800,
+        57600,
+        62400,
+        67200,
+        72000,
+        76800,
+        81600,
+        86400,
+        91200,
+        96000,
+        100800,
+        105600,
+        110400,
+        115200,
+        120000
+      },
+      20,
+      0,
+      39,
+      130,
+      false,
+      Duration = 1,
+      Id = 1030504,
+      type = 17
+    }, nil)
+  }, nil),
+  [1030505] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"43"},
+      {-4000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 6,
+      Id = 1030505,
+      type = 2
     }, nil)
   }, nil),
   [1067041] = setmetatable({
@@ -73151,6 +74742,15 @@ local t = {
       "spell.level.1071502",
       Duration = -1,
       Id = 1071502,
+      type = 3
+    }, nil)
+  }, nil),
+  [1080102] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      "spell.level.1080102",
+      Duration = -1,
+      Id = 1080102,
       type = 3
     }, nil)
   }, nil),
@@ -77859,6 +79459,76 @@ local t = {
       {0, 0},
       Duration = -1,
       Id = 1999357,
+      type = 14
+    }, nil)
+  }, nil),
+  [1999358] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      66,
+      {-1500},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 1999358,
+      type = 14
+    }, nil)
+  }, nil),
+  [1999359] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      67,
+      {-1500},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 1999359,
+      type = 14
+    }, nil)
+  }, nil),
+  [1999360] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      68,
+      {-1500},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 1999360,
+      type = 14
+    }, nil)
+  }, nil),
+  [1999361] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      69,
+      {-1500},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 1999361,
+      type = 14
+    }, nil)
+  }, nil),
+  [1999362] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      70,
+      {-1500},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 1999362,
       type = 14
     }, nil)
   }, nil),
@@ -83959,6 +85629,15 @@ local t = {
       type = 3
     }, nil)
   }, nil),
+  [4032251] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      "spell.level.4032251",
+      Duration = -1,
+      Id = 4032251,
+      type = 3
+    }, nil)
+  }, nil),
   [4032261] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
@@ -87285,7 +88964,7 @@ local t = {
     logic = setmetatable({
       25,
       {-2000},
-      2,
+      1,
       1,
       {0, 0},
       {0, 0},
@@ -87599,6 +89278,202 @@ local t = {
       {0, 0},
       Duration = -1,
       Id = 6032037,
+      type = 14
+    }, nil)
+  }, nil),
+  [6032040] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {40000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 6032040,
+      type = 14
+    }, nil)
+  }, nil),
+  [6032041] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {45000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 6032041,
+      type = 14
+    }, nil)
+  }, nil),
+  [6032042] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {50000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 6032042,
+      type = 14
+    }, nil)
+  }, nil),
+  [6032043] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {55000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 6032043,
+      type = 14
+    }, nil)
+  }, nil),
+  [6032044] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {60000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 6032044,
+      type = 14
+    }, nil)
+  }, nil),
+  [6032045] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {65000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 6032045,
+      type = 14
+    }, nil)
+  }, nil),
+  [6032046] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {70000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 6032046,
+      type = 14
+    }, nil)
+  }, nil),
+  [6032047] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {80000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 6032047,
+      type = 14
+    }, nil)
+  }, nil),
+  [6032048] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {100000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 6032048,
+      type = 14
+    }, nil)
+  }, nil),
+  [6032049] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {110000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 6032049,
+      type = 14
+    }, nil)
+  }, nil),
+  [6032050] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {120000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 6032050,
+      type = 14
+    }, nil)
+  }, nil),
+  [6032051] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {130000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 6032051,
+      type = 14
+    }, nil)
+  }, nil),
+  [6032052] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {140000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 6032052,
+      type = 14
+    }, nil)
+  }, nil),
+  [6032053] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {150000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 6032053,
       type = 14
     }, nil)
   }, nil),
@@ -99011,8 +100886,10 @@ local t = {
     }, nil),
     logic = setmetatable({
       Duration = 15,
+      Icon = "Skill/UI_H1001025_passive",
       Id = 10250051,
       IsReceive = 1,
+      each_frame_update = true,
       type = 9
     }, nil)
   }, nil),
@@ -99028,7 +100905,7 @@ local t = {
   [10250062] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
-      Duration = 1.2,
+      Duration = 0.2,
       Id = 10250062,
       IsReceive = 1,
       IsTimeScale = 1,
@@ -99173,9 +101050,9 @@ local t = {
     logic = setmetatable({
       0,
       0,
-      -3,
+      2,
       0.1,
-      0.5,
+      1,
       1,
       1,
       999,
@@ -99269,6 +101146,19 @@ local t = {
       true,
       Id = 10250411,
       type = 17
+    }, nil)
+  }, nil),
+  [10250601] = setmetatable({
+    PartEffectType = 1,
+    effect = setmetatable({
+      Effect = "Fx_H1001025_qteshow_pass",
+      EffectJoint = "Camera&TimelineRoot",
+      IsRemoveSelfOnCompleted = false
+    }, nil),
+    logic = setmetatable({
+      Id = 10250601,
+      IsTimeScale = 4,
+      type = 9
     }, nil)
   }, nil),
   [10250611] = setmetatable({
@@ -99563,6 +101453,16 @@ local t = {
     logic = setmetatable({
       Duration = -1,
       Id = 10250805,
+      IsReceive = 1,
+      type = 9
+    }, nil)
+  }, nil),
+  [10250806] = setmetatable({
+    DyingRemove = false,
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = -1,
+      Id = 10250806,
       IsReceive = 1,
       type = 9
     }, nil)
@@ -99883,8 +101783,8 @@ local t = {
       },
       0,
       0,
-      1,
-      4,
+      23,
+      33,
       false,
       Id = 10251502,
       type = 17
@@ -99896,21 +101796,21 @@ local t = {
       2,
       3,
       {
-        9900,
-        10800,
-        11700,
-        12600,
-        13500,
-        14400,
-        15300,
-        16200,
-        17100,
-        18000,
-        18900,
+        12100,
+        13200,
+        14300,
+        15400,
+        16500,
+        17600,
+        18700,
         19800,
-        20700,
-        21600,
-        22500
+        20900,
+        22000,
+        23100,
+        24200,
+        25300,
+        26400,
+        27500
       },
       0,
       0,
@@ -99927,21 +101827,21 @@ local t = {
       2,
       3,
       {
-        14850,
-        16200,
-        17550,
-        18900,
-        20250,
-        21600,
-        22950,
-        24300,
-        25650,
+        16500,
+        18000,
+        19500,
+        21000,
+        22500,
+        24000,
+        25500,
         27000,
-        28350,
-        29700,
-        31050,
-        32400,
-        33750
+        28500,
+        30000,
+        31500,
+        33000,
+        34500,
+        36000,
+        37500
       },
       0,
       0,
@@ -99989,21 +101889,21 @@ local t = {
       2,
       3,
       {
-        7150,
-        7800,
-        8450,
-        9100,
-        9750,
-        10400,
-        11050,
-        11700,
-        12350,
+        11000,
+        12000,
         13000,
-        13650,
-        14300,
-        14950,
-        15600,
-        16250
+        14000,
+        15000,
+        16000,
+        17000,
+        18000,
+        19000,
+        20000,
+        21000,
+        22000,
+        23000,
+        24000,
+        25000
       },
       0,
       0,
@@ -100015,6 +101915,192 @@ local t = {
     }, nil)
   }, nil),
   [10254102] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        13750,
+        15000,
+        16250,
+        17500,
+        18750,
+        20000,
+        21250,
+        22500,
+        23750,
+        25000,
+        26250,
+        27500,
+        28750,
+        30000,
+        31250
+      },
+      0,
+      0,
+      25,
+      36,
+      false,
+      Id = 10254102,
+      type = 17
+    }, nil)
+  }, nil),
+  [10254201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        22000,
+        24000,
+        26000,
+        28000,
+        30000,
+        32000,
+        34000,
+        36000,
+        38000,
+        40000,
+        42000,
+        44000,
+        46000,
+        48000,
+        50000
+      },
+      0,
+      0,
+      10,
+      20,
+      false,
+      Id = 10254201,
+      type = 17
+    }, nil)
+  }, nil),
+  [10254202] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        30250,
+        33000,
+        35750,
+        38500,
+        41250,
+        44000,
+        46750,
+        49500,
+        52250,
+        55000,
+        57750,
+        60500,
+        63250,
+        66000,
+        68750
+      },
+      0,
+      0,
+      10,
+      20,
+      false,
+      Id = 10254202,
+      type = 17
+    }, nil)
+  }, nil),
+  [10254203] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        38500,
+        42000,
+        45500,
+        49000,
+        52500,
+        56000,
+        59500,
+        63000,
+        66500,
+        70000,
+        73500,
+        77000,
+        80500,
+        84000,
+        87500
+      },
+      0,
+      0,
+      10,
+      20,
+      false,
+      Id = 10254203,
+      type = 17
+    }, nil)
+  }, nil),
+  [10254301] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        46750,
+        51000,
+        55250,
+        59500,
+        63750,
+        68000,
+        72250,
+        76500,
+        80750,
+        85000,
+        89250,
+        93500,
+        97750,
+        102000,
+        106250
+      },
+      0,
+      0,
+      8,
+      50,
+      false,
+      Id = 10254301,
+      type = 17
+    }, nil)
+  }, nil),
+  [10254302] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        66000,
+        72000,
+        78000,
+        84000,
+        90000,
+        96000,
+        102000,
+        108000,
+        114000,
+        120000,
+        126000,
+        132000,
+        138000,
+        144000,
+        150000
+      },
+      0,
+      0,
+      8,
+      50,
+      false,
+      Id = 10254302,
+      type = 17
+    }, nil)
+  }, nil),
+  [10255101] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
       2,
@@ -100038,192 +102124,6 @@ local t = {
       },
       0,
       0,
-      25,
-      36,
-      false,
-      Id = 10254102,
-      type = 17
-    }, nil)
-  }, nil),
-  [10254201] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      2,
-      3,
-      {
-        1650,
-        1800,
-        1950,
-        2100,
-        2250,
-        2400,
-        2550,
-        2700,
-        2850,
-        3000,
-        3150,
-        3300,
-        3450,
-        3600,
-        3750
-      },
-      0,
-      0,
-      1,
-      4,
-      false,
-      Id = 10254201,
-      type = 17
-    }, nil)
-  }, nil),
-  [10254202] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      2,
-      3,
-      {
-        1650,
-        1800,
-        1950,
-        2100,
-        2250,
-        2400,
-        2550,
-        2700,
-        2850,
-        3000,
-        3150,
-        3300,
-        3450,
-        3600,
-        3750
-      },
-      0,
-      0,
-      1,
-      4,
-      false,
-      Id = 10254202,
-      type = 17
-    }, nil)
-  }, nil),
-  [10254203] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      2,
-      3,
-      {
-        1650,
-        1800,
-        1950,
-        2100,
-        2250,
-        2400,
-        2550,
-        2700,
-        2850,
-        3000,
-        3150,
-        3300,
-        3450,
-        3600,
-        3750
-      },
-      0,
-      0,
-      1,
-      4,
-      false,
-      Id = 10254203,
-      type = 17
-    }, nil)
-  }, nil),
-  [10254301] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      2,
-      3,
-      {
-        1650,
-        1800,
-        1950,
-        2100,
-        2250,
-        2400,
-        2550,
-        2700,
-        2850,
-        3000,
-        3150,
-        3300,
-        3450,
-        3600,
-        3750
-      },
-      0,
-      0,
-      1,
-      4,
-      false,
-      Id = 10254301,
-      type = 17
-    }, nil)
-  }, nil),
-  [10254302] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      2,
-      3,
-      {
-        1650,
-        1800,
-        1950,
-        2100,
-        2250,
-        2400,
-        2550,
-        2700,
-        2850,
-        3000,
-        3150,
-        3300,
-        3450,
-        3600,
-        3750
-      },
-      0,
-      0,
-      1,
-      4,
-      false,
-      Id = 10254302,
-      type = 17
-    }, nil)
-  }, nil),
-  [10255101] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      2,
-      3,
-      {
-        9350,
-        10200,
-        11050,
-        11900,
-        12750,
-        13600,
-        14450,
-        15300,
-        16150,
-        17000,
-        17850,
-        18700,
-        19550,
-        20400,
-        21250
-      },
-      0,
-      0,
       14,
       25,
       false,
@@ -100237,21 +102137,21 @@ local t = {
       4,
       3,
       {
-        18700,
-        20400,
-        22100,
-        23800,
-        25500,
-        27200,
-        28900,
-        30600,
-        32300,
-        34000,
-        35700,
-        37400,
-        39100,
-        40800,
-        42500
+        13750,
+        15000,
+        16250,
+        17500,
+        18750,
+        20000,
+        21250,
+        22500,
+        23750,
+        25000,
+        26250,
+        27500,
+        28750,
+        30000,
+        31250
       },
       0,
       0,
@@ -100263,6 +102163,192 @@ local t = {
     }, nil)
   }, nil),
   [10255112] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      3,
+      {
+        16500,
+        18000,
+        19500,
+        21000,
+        22500,
+        24000,
+        25500,
+        27000,
+        28500,
+        30000,
+        31500,
+        33000,
+        34500,
+        36000,
+        37500
+      },
+      0,
+      0,
+      14,
+      15,
+      false,
+      Id = 10255112,
+      type = 17
+    }, nil)
+  }, nil),
+  [10256101] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        23100,
+        25200,
+        27300,
+        29400,
+        31500,
+        33600,
+        35700,
+        37800,
+        39900,
+        42000,
+        44100,
+        46200,
+        48300,
+        50400,
+        52500
+      },
+      0,
+      0,
+      14,
+      33,
+      false,
+      Id = 10256101,
+      type = 17
+    }, nil)
+  }, nil),
+  [10256111] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      3,
+      {
+        29150,
+        31800,
+        34450,
+        37100,
+        39750,
+        42400,
+        45050,
+        47700,
+        50350,
+        53000,
+        55650,
+        58300,
+        60950,
+        63600,
+        66250
+      },
+      0,
+      0,
+      14,
+      33,
+      false,
+      Id = 10256111,
+      type = 17
+    }, nil)
+  }, nil),
+  [10257101] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      3,
+      {
+        30250,
+        33000,
+        35750,
+        38500,
+        41250,
+        44000,
+        46750,
+        49500,
+        52250,
+        55000,
+        57750,
+        60500,
+        63250,
+        66000,
+        68750
+      },
+      0,
+      0,
+      5,
+      43,
+      false,
+      Id = 10257101,
+      type = 17
+    }, nil)
+  }, nil),
+  [10257102] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      7,
+      3,
+      {
+        88000,
+        96000,
+        104000,
+        112000,
+        120000,
+        128000,
+        136000,
+        144000,
+        152000,
+        160000,
+        168000,
+        176000,
+        184000,
+        192000,
+        200000
+      },
+      0,
+      0,
+      23,
+      130,
+      false,
+      Id = 10257102,
+      type = 17
+    }, nil)
+  }, nil),
+  [10257103] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      7,
+      3,
+      {
+        88000,
+        96000,
+        104000,
+        112000,
+        120000,
+        128000,
+        136000,
+        144000,
+        152000,
+        160000,
+        168000,
+        176000,
+        184000,
+        192000,
+        200000
+      },
+      0,
+      0,
+      23,
+      130,
+      false,
+      Id = 10257103,
+      type = 17
+    }, nil)
+  }, nil),
+  [10257111] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
       4,
@@ -100283,192 +102369,6 @@ local t = {
         49450,
         51600,
         53750
-      },
-      0,
-      0,
-      14,
-      15,
-      false,
-      Id = 10255112,
-      type = 17
-    }, nil)
-  }, nil),
-  [10256101] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      2,
-      3,
-      {
-        33000,
-        36000,
-        39000,
-        42000,
-        45000,
-        48000,
-        51000,
-        54000,
-        57000,
-        60000,
-        63000,
-        66000,
-        69000,
-        72000,
-        75000
-      },
-      0,
-      0,
-      14,
-      33,
-      false,
-      Id = 10256101,
-      type = 17
-    }, nil)
-  }, nil),
-  [10256111] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      4,
-      3,
-      {
-        65450,
-        71400,
-        77350,
-        83300,
-        89250,
-        95200,
-        101150,
-        107100,
-        113050,
-        119000,
-        124950,
-        130900,
-        136850,
-        142800,
-        148750
-      },
-      0,
-      0,
-      14,
-      33,
-      false,
-      Id = 10256111,
-      type = 17
-    }, nil)
-  }, nil),
-  [10257101] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      4,
-      3,
-      {
-        37400,
-        40800,
-        44200,
-        47600,
-        51000,
-        54400,
-        57800,
-        61200,
-        64600,
-        68000,
-        71400,
-        74800,
-        78200,
-        81600,
-        85000
-      },
-      0,
-      0,
-      5,
-      43,
-      false,
-      Id = 10257101,
-      type = 17
-    }, nil)
-  }, nil),
-  [10257102] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      7,
-      3,
-      {
-        25850,
-        28200,
-        30550,
-        32900,
-        35250,
-        37600,
-        39950,
-        42300,
-        44650,
-        47000,
-        49350,
-        51700,
-        54050,
-        56400,
-        58750
-      },
-      0,
-      0,
-      23,
-      130,
-      false,
-      Id = 10257102,
-      type = 17
-    }, nil)
-  }, nil),
-  [10257103] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      7,
-      3,
-      {
-        1650,
-        1800,
-        1950,
-        2100,
-        2250,
-        2400,
-        2550,
-        2700,
-        2850,
-        3000,
-        3150,
-        3300,
-        3450,
-        3600,
-        3750
-      },
-      0,
-      0,
-      1,
-      4,
-      false,
-      Id = 10257103,
-      type = 17
-    }, nil)
-  }, nil),
-  [10257111] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      4,
-      3,
-      {
-        28050,
-        30600,
-        33150,
-        35700,
-        38250,
-        40800,
-        43350,
-        45900,
-        48450,
-        51000,
-        53550,
-        56100,
-        58650,
-        61200,
-        63750
       },
       0,
       0,
@@ -100516,21 +102416,21 @@ local t = {
       3,
       3,
       {
-        16500,
-        18000,
-        19500,
-        21000,
-        22500,
+        22000,
         24000,
-        25500,
-        27000,
-        28500,
+        26000,
+        28000,
         30000,
-        31500,
-        33000,
-        34500,
+        32000,
+        34000,
         36000,
-        37500
+        38000,
+        40000,
+        42000,
+        44000,
+        46000,
+        48000,
+        50000
       },
       0,
       0,
@@ -100547,21 +102447,21 @@ local t = {
       3,
       3,
       {
-        24750,
-        27000,
-        29250,
-        31500,
-        33750,
-        36000,
-        38250,
-        40500,
-        42750,
-        45000,
-        47250,
+        30250,
+        33000,
+        35750,
+        38500,
+        41250,
+        44000,
+        46750,
         49500,
-        51750,
-        54000,
-        56250
+        52250,
+        55000,
+        57750,
+        60500,
+        63250,
+        66000,
+        68750
       },
       0,
       0,
@@ -100578,21 +102478,21 @@ local t = {
       3,
       3,
       {
-        33550,
-        36600,
-        39650,
-        42700,
-        45750,
-        48800,
-        51850,
-        54900,
-        57950,
-        61000,
-        64050,
-        67100,
-        70150,
-        73200,
-        76250
+        37400,
+        40800,
+        44200,
+        47600,
+        51000,
+        54400,
+        57800,
+        61200,
+        64600,
+        68000,
+        71400,
+        74800,
+        78200,
+        81600,
+        85000
       },
       0,
       0,
@@ -100604,37 +102504,6 @@ local t = {
     }, nil)
   }, nil),
   [10258104] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      3,
-      3,
-      {
-        41800,
-        45600,
-        49400,
-        53200,
-        57000,
-        60800,
-        64600,
-        68400,
-        72200,
-        76000,
-        79800,
-        83600,
-        87400,
-        91200,
-        95000
-      },
-      0,
-      0,
-      11,
-      78,
-      false,
-      Id = 10258104,
-      type = 17
-    }, nil)
-  }, nil),
-  [10258105] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
       3,
@@ -100655,6 +102524,37 @@ local t = {
         104650,
         109200,
         113750
+      },
+      0,
+      0,
+      11,
+      78,
+      false,
+      Id = 10258104,
+      type = 17
+    }, nil)
+  }, nil),
+  [10258105] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      3,
+      3,
+      {
+        60500,
+        66000,
+        71500,
+        77000,
+        82500,
+        88000,
+        93500,
+        99000,
+        104500,
+        110000,
+        115500,
+        121000,
+        126500,
+        132000,
+        137500
       },
       0,
       0,
@@ -100944,6 +102844,1287 @@ local t = {
       false,
       Id = 10291602,
       type = 17
+    }, nil)
+  }, nil),
+  [10300101] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      3,
+      {
+        11550,
+        12600,
+        13650,
+        14700,
+        15750,
+        16800,
+        17850,
+        18900,
+        19950,
+        21000,
+        22050,
+        23100,
+        24150,
+        25200,
+        26250
+      },
+      20,
+      0,
+      8,
+      10,
+      false,
+      Id = 10300101,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300102] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      3,
+      {
+        6600,
+        7200,
+        7800,
+        8400,
+        9000,
+        9600,
+        10200,
+        10800,
+        11400,
+        12000,
+        12600,
+        13200,
+        13800,
+        14400,
+        15000
+      },
+      20,
+      0,
+      4,
+      15,
+      false,
+      Id = 10300102,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300103] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      3,
+      {
+        7150,
+        7800,
+        8450,
+        9100,
+        9750,
+        10400,
+        11050,
+        11700,
+        12350,
+        13000,
+        13650,
+        14300,
+        14950,
+        15600,
+        16250
+      },
+      20,
+      0,
+      4,
+      8,
+      false,
+      Id = 10300103,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300104] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      3,
+      {
+        13200,
+        14400,
+        15600,
+        16800,
+        18000,
+        19200,
+        20400,
+        21600,
+        22800,
+        24000,
+        25200,
+        26400,
+        27600,
+        28800,
+        30000
+      },
+      20,
+      0,
+      4,
+      12,
+      false,
+      Id = 10300104,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300105] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      3,
+      {
+        9350,
+        10200,
+        11050,
+        11900,
+        12750,
+        13600,
+        14450,
+        15300,
+        16150,
+        17000,
+        17850,
+        18700,
+        19550,
+        20400,
+        21250
+      },
+      20,
+      0,
+      4,
+      10,
+      false,
+      Id = 10300105,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300106] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      3,
+      {
+        17600,
+        19200,
+        20800,
+        22400,
+        24000,
+        25600,
+        27200,
+        28800,
+        30400,
+        32000,
+        33600,
+        35200,
+        36800,
+        38400,
+        40000
+      },
+      20,
+      0,
+      4,
+      15,
+      false,
+      Id = 10300106,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300107] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      3,
+      {
+        34100,
+        37200,
+        40300,
+        43400,
+        46500,
+        49600,
+        52700,
+        55800,
+        58900,
+        62000,
+        65100,
+        68200,
+        71300,
+        74400,
+        77500
+      },
+      20,
+      0,
+      4,
+      20,
+      false,
+      Id = 10300107,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300108] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      3,
+      {
+        1100,
+        1200,
+        1300,
+        1400,
+        1500,
+        1600,
+        1700,
+        1800,
+        1900,
+        2000,
+        2100,
+        2200,
+        2300,
+        2400,
+        2500
+      },
+      20,
+      0,
+      10,
+      13,
+      false,
+      Id = 10300108,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300109] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      3,
+      {
+        3300,
+        3600,
+        3900,
+        4200,
+        4500,
+        4800,
+        5100,
+        5400,
+        5700,
+        6000,
+        6300,
+        6600,
+        6900,
+        7200,
+        7500
+      },
+      20,
+      0,
+      4,
+      3,
+      false,
+      Id = 10300109,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300110] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        6600,
+        7200,
+        7800,
+        8400,
+        9000,
+        9600,
+        10200,
+        10800,
+        11400,
+        12000,
+        12600,
+        13200,
+        13800,
+        14400,
+        15000
+      },
+      20,
+      0,
+      6,
+      7,
+      false,
+      Id = 10300110,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300111] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        13200,
+        14400,
+        15600,
+        16800,
+        18000,
+        19200,
+        20400,
+        21600,
+        22800,
+        24000,
+        25200,
+        26400,
+        27600,
+        28800,
+        30000
+      },
+      20,
+      0,
+      6,
+      7,
+      false,
+      Id = 10300111,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300112] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        8250,
+        9000,
+        9750,
+        10500,
+        11250,
+        12000,
+        12750,
+        13500,
+        14250,
+        15000,
+        15750,
+        16500,
+        17250,
+        18000,
+        18750
+      },
+      20,
+      0,
+      6,
+      10,
+      false,
+      Id = 10300112,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300113] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        19250,
+        21000,
+        22750,
+        24500,
+        26250,
+        28000,
+        29750,
+        31500,
+        33250,
+        35000,
+        36750,
+        38500,
+        40250,
+        42000,
+        43750
+      },
+      20,
+      0,
+      14,
+      10,
+      false,
+      Id = 10300113,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300121] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        24200,
+        26400,
+        28600,
+        30800,
+        33000,
+        35200,
+        37400,
+        39600,
+        41800,
+        44000,
+        46200,
+        48400,
+        50600,
+        52800,
+        55000
+      },
+      20,
+      0,
+      33,
+      110,
+      false,
+      Id = 10300121,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300122] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        28600,
+        31200,
+        33800,
+        36400,
+        39000,
+        41600,
+        44200,
+        46800,
+        49400,
+        52000,
+        54600,
+        57200,
+        59800,
+        62400,
+        65000
+      },
+      20,
+      0,
+      24,
+      80,
+      false,
+      Id = 10300122,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300123] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        18700,
+        20400,
+        22100,
+        23800,
+        25500,
+        27200,
+        28900,
+        30600,
+        32300,
+        34000,
+        35700,
+        37400,
+        39100,
+        40800,
+        42500
+      },
+      20,
+      0,
+      18,
+      60,
+      false,
+      Id = 10300123,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300131] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        36300,
+        39600,
+        42900,
+        46200,
+        49500,
+        52800,
+        56100,
+        59400,
+        62700,
+        66000,
+        69300,
+        72600,
+        75900,
+        79200,
+        82500
+      },
+      20,
+      0,
+      36,
+      120,
+      false,
+      Id = 10300131,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300132] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        29700,
+        32400,
+        35100,
+        37800,
+        40500,
+        43200,
+        45900,
+        48600,
+        51300,
+        54000,
+        56700,
+        59400,
+        62100,
+        64800,
+        67500
+      },
+      20,
+      0,
+      18,
+      60,
+      false,
+      Id = 10300132,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300136] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        24200,
+        26400,
+        28600,
+        30800,
+        33000,
+        35200,
+        37400,
+        39600,
+        41800,
+        44000,
+        46200,
+        48400,
+        50600,
+        52800,
+        55000
+      },
+      20,
+      0,
+      15,
+      50,
+      false,
+      Id = 10300136,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300140] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      3,
+      {
+        66000,
+        72000,
+        78000,
+        84000,
+        90000,
+        96000,
+        102000,
+        108000,
+        114000,
+        120000,
+        126000,
+        132000,
+        138000,
+        144000,
+        150000
+      },
+      20,
+      0,
+      12,
+      20,
+      false,
+      Id = 10300140,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300141] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      3,
+      {
+        34650,
+        37800,
+        40950,
+        44100,
+        47250,
+        50400,
+        53550,
+        56700,
+        59850,
+        63000,
+        66150,
+        69300,
+        72450,
+        75600,
+        78750
+      },
+      20,
+      0,
+      8.4,
+      14,
+      false,
+      Id = 10300141,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300142] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      3,
+      {
+        34650,
+        37800,
+        40950,
+        44100,
+        47250,
+        50400,
+        53550,
+        56700,
+        59850,
+        63000,
+        66150,
+        69300,
+        72450,
+        75600,
+        78750
+      },
+      20,
+      0,
+      8.4,
+      14,
+      false,
+      Id = 10300142,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300151] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        2750,
+        3000,
+        3250,
+        3500,
+        3750,
+        4000,
+        4250,
+        4500,
+        4750,
+        5000,
+        5250,
+        5500,
+        5750,
+        6000,
+        6250
+      },
+      20,
+      0,
+      4.8,
+      8,
+      false,
+      Id = 10300151,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300152] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        4950,
+        5400,
+        5850,
+        6300,
+        6750,
+        7200,
+        7650,
+        8100,
+        8550,
+        9000,
+        9450,
+        9900,
+        10350,
+        10800,
+        11250
+      },
+      20,
+      0,
+      4.8,
+      8,
+      false,
+      Id = 10300152,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300153] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        6600,
+        7200,
+        7800,
+        8400,
+        9000,
+        9600,
+        10200,
+        10800,
+        11400,
+        12000,
+        12600,
+        13200,
+        13800,
+        14400,
+        15000
+      },
+      20,
+      0,
+      22,
+      18,
+      false,
+      Id = 10300153,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300154] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      3,
+      {
+        14025,
+        15300,
+        16575,
+        17850,
+        19125,
+        20400,
+        21675,
+        22950,
+        24225,
+        25500,
+        26775,
+        28050,
+        29325,
+        30600,
+        31875
+      },
+      20,
+      0,
+      22,
+      63,
+      false,
+      Id = 10300154,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300161] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      3,
+      {
+        55000,
+        60000,
+        65000,
+        70000,
+        75000,
+        80000,
+        85000,
+        90000,
+        95000,
+        100000,
+        105000,
+        110000,
+        115000,
+        120000,
+        125000
+      },
+      20,
+      0,
+      45,
+      150,
+      false,
+      Id = 10300161,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300162] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      3,
+      {
+        30250,
+        33000,
+        35750,
+        38500,
+        41250,
+        44000,
+        46750,
+        49500,
+        52250,
+        55000,
+        57750,
+        60500,
+        63250,
+        66000,
+        68750
+      },
+      20,
+      0,
+      30,
+      100,
+      false,
+      Id = 10300162,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300171] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      3,
+      3,
+      {
+        11550,
+        12600,
+        13650,
+        14700,
+        15750,
+        16800,
+        17850,
+        18900,
+        19950,
+        21000,
+        22050,
+        23100,
+        24150,
+        25200,
+        26250
+      },
+      20,
+      0,
+      10,
+      60,
+      false,
+      Id = 10300171,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300172] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      3,
+      3,
+      {
+        12650,
+        13800,
+        14950,
+        16100,
+        17250,
+        18400,
+        19550,
+        20700,
+        21850,
+        23000,
+        24150,
+        25300,
+        26450,
+        27600,
+        28750
+      },
+      20,
+      0,
+      10,
+      60,
+      false,
+      Id = 10300172,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300173] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      3,
+      3,
+      {
+        13750,
+        15000,
+        16250,
+        17500,
+        18750,
+        20000,
+        21250,
+        22500,
+        23750,
+        25000,
+        26250,
+        27500,
+        28750,
+        30000,
+        31250
+      },
+      20,
+      0,
+      10,
+      60,
+      false,
+      Id = 10300173,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300174] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      3,
+      3,
+      {
+        14300,
+        15600,
+        16900,
+        18200,
+        19500,
+        20800,
+        22100,
+        23400,
+        24700,
+        26000,
+        27300,
+        28600,
+        29900,
+        31200,
+        32500
+      },
+      20,
+      0,
+      10,
+      60,
+      false,
+      Id = 10300174,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300175] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      3,
+      3,
+      {
+        14850,
+        16200,
+        17550,
+        18900,
+        20250,
+        21600,
+        22950,
+        24300,
+        25650,
+        27000,
+        28350,
+        29700,
+        31050,
+        32400,
+        33750
+      },
+      20,
+      0,
+      10,
+      60,
+      false,
+      Id = 10300175,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300176] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      3,
+      3,
+      {
+        15400,
+        16800,
+        18200,
+        19600,
+        21000,
+        22400,
+        23800,
+        25200,
+        26600,
+        28000,
+        29400,
+        30800,
+        32200,
+        33600,
+        35000
+      },
+      20,
+      0,
+      10,
+      60,
+      false,
+      Id = 10300176,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300177] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      3,
+      3,
+      {
+        15950,
+        17400,
+        18850,
+        20300,
+        21750,
+        23200,
+        24650,
+        26100,
+        27550,
+        29000,
+        30450,
+        31900,
+        33350,
+        34800,
+        36250
+      },
+      20,
+      0,
+      20,
+      60,
+      false,
+      Id = 10300177,
+      type = 17
+    }, nil)
+  }, nil),
+  [10300178] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      3,
+      3,
+      {
+        20900,
+        22800,
+        24700,
+        26600,
+        28500,
+        30400,
+        32300,
+        34200,
+        36100,
+        38000,
+        39900,
+        41800,
+        43700,
+        45600,
+        47500
+      },
+      20,
+      0,
+      20,
+      60,
+      false,
+      Id = 10300178,
+      type = 17
+    }, nil)
+  }, nil),
+  [10301041] = setmetatable({
+    PartEffectType = 1,
+    effect = setmetatable({
+      Effect = "Fx_1001030_Fish_Buff",
+      EffectJoint = "Bip001 Chest",
+      EffectWorld = 0
+    }, nil),
+    logic = setmetatable({
+      Duration = 18,
+      Id = 10301041,
+      ImmunitType = 1,
+      Immunitions = {1030102, 1030103},
+      IsReceive = 3,
+      type = 9
+    }, nil)
+  }, nil),
+  [10301081] = setmetatable({
+    PartEffectType = 1,
+    effect = setmetatable({
+      Effect = "Fx_1001030_Buff"
+    }, nil),
+    logic = setmetatable({
+      {
+        8250,
+        9000,
+        9750,
+        10500,
+        11250,
+        12000,
+        12750,
+        13500,
+        14250,
+        15000,
+        15750,
+        16500,
+        17250,
+        18000,
+        18750
+      },
+      2,
+      20,
+      Duration = 8,
+      Id = 10301081,
+      IsReceive = 2,
+      type = 25
+    }, nil)
+  }, nil),
+  [10302001] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"128"},
+      {
+        3000,
+        3000,
+        3000,
+        3000,
+        3000
+      },
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 20,
+      Id = 10302001,
+      ImmunitType = 3,
+      Immunitions = {1023208},
+      UpdateType = 2,
+      type = 2
+    }, nil)
+  }, nil),
+  [10302002] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"31"},
+      {3000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 10,
+      Id = 10302002,
+      type = 2
+    }, nil)
+  }, nil),
+  [10302003] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      [2] = {4000},
+      [3] = 0,
+      [4] = 0,
+      Duration = 0.001,
+      Id = 10302003,
+      type = 21
+    }, nil)
+  }, nil),
+  [10302004] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      [2] = {3000},
+      [3] = 0,
+      [4] = 0,
+      Duration = 0.001,
+      Id = 10302004,
+      type = 21
+    }, nil)
+  }, nil),
+  [10302005] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      [2] = {3000},
+      [3] = 0,
+      [4] = 0,
+      Duration = 0.001,
+      Id = 10302005,
+      type = 21
+    }, nil)
+  }, nil),
+  [10302006] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"76"},
+      {2500},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 10,
+      Id = 10302006,
+      type = 2
+    }, nil)
+  }, nil),
+  [10302007] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"78"},
+      {6000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 10,
+      Id = 10302007,
+      type = 2
+    }, nil)
+  }, nil),
+  [10302008] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"26"},
+      {
+        2500,
+        3125,
+        3750,
+        4375,
+        5000
+      },
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 10,
+      Id = 10302008,
+      type = 2
     }, nil)
   }, nil),
   [10440101] = setmetatable({
@@ -101986,7 +105167,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       4,
-      {114480.0},
+      {114480},
       2,
       1,
       {0, 0},
@@ -102056,7 +105237,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       4,
-      {112860.0},
+      {112860},
       2,
       1,
       {0, 0},
@@ -103079,7 +106260,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       4,
-      {-5000},
+      {4000},
       2,
       1,
       {0, 0},
@@ -103093,7 +106274,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       20,
-      {5000},
+      {2500},
       2,
       1,
       {0, 0},
@@ -103106,8 +106287,8 @@ local t = {
   [22010303] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
-      20,
-      {5000},
+      4,
+      {3000},
       2,
       1,
       {0, 0},
@@ -103121,7 +106302,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       4,
-      {10000},
+      {4000},
       2,
       1,
       {0, 0},
@@ -103134,8 +106315,8 @@ local t = {
   [22010305] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
-      20,
-      {5000},
+      4,
+      {15000},
       2,
       1,
       {0, 0},
@@ -103156,6 +106337,230 @@ local t = {
       {0, 0},
       Duration = -1,
       Id = 22010306,
+      type = 14
+    }, nil)
+  }, nil),
+  [22010307] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {18000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 22010307,
+      type = 14
+    }, nil)
+  }, nil),
+  [22010308] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {30000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 22010308,
+      type = 14
+    }, nil)
+  }, nil),
+  [22010401] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"42"},
+      {1000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 22010401,
+      type = 2
+    }, nil)
+  }, nil),
+  [22010402] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"43"},
+      {1000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 22010402,
+      type = 2
+    }, nil)
+  }, nil),
+  [22010403] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"44"},
+      {1000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 22010403,
+      type = 2
+    }, nil)
+  }, nil),
+  [22010404] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"46"},
+      {1000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 22010404,
+      type = 2
+    }, nil)
+  }, nil),
+  [22010405] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"45"},
+      {1000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 22010405,
+      type = 2
+    }, nil)
+  }, nil),
+  [22010406] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {130000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 22010406,
+      type = 14
+    }, nil)
+  }, nil),
+  [22010407] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {150000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 22010407,
+      type = 14
+    }, nil)
+  }, nil),
+  [22010408] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {170000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 22010408,
+      type = 14
+    }, nil)
+  }, nil),
+  [22010409] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {190000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 22010409,
+      type = 14
+    }, nil)
+  }, nil),
+  [22010410] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {210000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 22010410,
+      type = 14
+    }, nil)
+  }, nil),
+  [22010411] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {160000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 22010411,
+      type = 14
+    }, nil)
+  }, nil),
+  [22011101] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {60000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 22011101,
+      type = 14
+    }, nil)
+  }, nil),
+  [22011102] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {120000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 22011102,
+      type = 14
+    }, nil)
+  }, nil),
+  [22011103] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      4,
+      {130000},
+      2,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 22011103,
       type = 14
     }, nil)
   }, nil),
@@ -118007,6 +121412,15 @@ local t = {
       type = 3
     }, nil)
   }, nil),
+  [70000216] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      "spell.ball.70000216",
+      Duration = -1,
+      Id = 70000216,
+      type = 3
+    }, nil)
+  }, nil),
   [100010101] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
@@ -129104,7 +132518,7 @@ local t = {
   [102507011] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
-      Duration = 0.9,
+      Duration = 0.2,
       Id = 102507011,
       IsReceive = 1,
       IsTimeScale = 1,
@@ -129209,7 +132623,7 @@ local t = {
       1,
       {20, 0},
       {0, 0},
-      Duration = 15,
+      Duration = 20,
       Id = 102508011,
       type = 2
     }, nil)
@@ -129223,7 +132637,7 @@ local t = {
       1,
       {20, 0},
       {0, 0},
-      Duration = 15,
+      Duration = 20,
       Id = 102508031,
       type = 2
     }, nil)
@@ -129237,7 +132651,7 @@ local t = {
       1,
       {20, 0},
       {0, 0},
-      Duration = 15,
+      Duration = 20,
       Id = 102508032,
       type = 2
     }, nil)
@@ -129251,11 +132665,29 @@ local t = {
       1,
       {0, 0},
       {0, 0},
-      Duration = 10,
+      Duration = 20,
       Id = 102508041,
       Limit = 5,
       UpdateType = 3,
       type = 2
+    }, nil)
+  }, nil),
+  [102508061] = setmetatable({
+    DyingRemove = false,
+    PartEffectType = 1,
+    logic = setmetatable({
+      [2] = {
+        2800,
+        3500,
+        4200,
+        4900,
+        5600
+      },
+      [3] = 0,
+      [4] = 0,
+      Duration = 0.001,
+      Id = 102508061,
+      type = 21
     }, nil)
   }, nil),
   [102511011] = setmetatable({
@@ -129379,7 +132811,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.35},
+      {0.4},
       1,
       1,
       {0, 0},
@@ -129392,7 +132824,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {5.2},
+      {5.4},
       1,
       1,
       {0, 0},
@@ -129418,7 +132850,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.35},
+      {0.4},
       1,
       1,
       {0, 0},
@@ -129431,7 +132863,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {5.2},
+      {5.4},
       1,
       1,
       {0, 0},
@@ -129613,7 +133045,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.35},
+      {0.8},
       1,
       1,
       {0, 0},
@@ -129626,7 +133058,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {5.38},
+      {2},
       1,
       1,
       {0, 0},
@@ -129652,7 +133084,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.35},
+      {1.2},
       1,
       1,
       {0, 0},
@@ -129665,7 +133097,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {5.38},
+      {3},
       1,
       1,
       {0, 0},
@@ -129696,7 +133128,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.35},
+      {1},
       1,
       1,
       {0, 0},
@@ -129709,7 +133141,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {5.5},
+      {1.7},
       1,
       1,
       {0, 0},
@@ -129735,7 +133167,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.35},
+      {2},
       1,
       1,
       {0, 0},
@@ -129748,7 +133180,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {1.42},
+      {3.4},
       1,
       1,
       {0, 0},
@@ -129761,7 +133193,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.35},
+      {0.7},
       1,
       1,
       {0, 0},
@@ -129774,7 +133206,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {1.42},
+      {1.2},
       1,
       1,
       {0, 0},
@@ -129787,7 +133219,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.35},
+      {1.2},
       1,
       1,
       {0, 0},
@@ -129800,7 +133232,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {1.42},
+      {3.5},
       1,
       1,
       {0, 0},
@@ -129813,7 +133245,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.35},
+      {1.3},
       1,
       1,
       {0, 0},
@@ -129826,7 +133258,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {1.42},
+      {3.6},
       1,
       1,
       {0, 0},
@@ -129839,7 +133271,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.35},
+      {0.8},
       1,
       1,
       {0, 0},
@@ -129852,7 +133284,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {1.42},
+      {1.8},
       1,
       1,
       {0, 0},
@@ -129865,7 +133297,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.35},
+      {2.9},
       1,
       1,
       {0, 0},
@@ -129878,7 +133310,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {1.42},
+      {6.4},
       1,
       1,
       {0, 0},
@@ -129891,7 +133323,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.35},
+      {0.6},
       1,
       1,
       {0, 0},
@@ -129904,7 +133336,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {1.42},
+      {1.3},
       1,
       1,
       {0, 0},
@@ -129917,7 +133349,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.57},
+      {1.1},
       1,
       1,
       {0, 0},
@@ -129930,7 +133362,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {0.76},
+      {2.4},
       1,
       1,
       {0, 0},
@@ -129943,7 +133375,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.57},
+      {1.2},
       1,
       1,
       {0, 0},
@@ -129956,7 +133388,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {0.76},
+      {3},
       1,
       1,
       {0, 0},
@@ -129969,7 +133401,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.57},
+      {1.2},
       1,
       1,
       {0, 0},
@@ -129982,7 +133414,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {0.76},
+      {4},
       1,
       1,
       {0, 0},
@@ -129995,7 +133427,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.57},
+      {1.6},
       1,
       1,
       {0, 0},
@@ -130008,7 +133440,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {0.79},
+      {4},
       1,
       1,
       {0, 0},
@@ -130021,7 +133453,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.59},
+      {4.5},
       1,
       1,
       {0, 0},
@@ -130034,7 +133466,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {0.79},
+      {9.9},
       1,
       1,
       {0, 0},
@@ -130047,7 +133479,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {3.93},
+      {2.5},
       1,
       1,
       {0, 0},
@@ -130060,7 +133492,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {5.29},
+      {13},
       1,
       1,
       {0, 0},
@@ -130073,7 +133505,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {3.93},
+      {6},
       1,
       1,
       {0, 0},
@@ -130082,11 +133514,24 @@ local t = {
       type = 14
     }, nil)
   }, nil),
+  [102571032] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {13},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 102571032,
+      type = 14
+    }, nil)
+  }, nil),
   [102571111] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.77},
+      {1.5},
       1,
       1,
       {0, 0},
@@ -130099,7 +133544,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {1.04},
+      {10},
       1,
       1,
       {0, 0},
@@ -130112,7 +133557,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       108,
-      {0.77},
+      {1.5},
       1,
       1,
       {0, 0},
@@ -130125,7 +133570,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       159,
-      {1.04},
+      {15},
       1,
       1,
       {0, 0},
@@ -135095,6 +138540,12 @@ local t = {
       {0, 0},
       Duration = 0.1,
       Id = 300205601,
+      ImmunitType = 1,
+      Immunitions = {
+        2010050111,
+        2010050114,
+        2010050115
+      },
       IsReceive = 1,
       Limit = 100,
       UpdateType = 3,
@@ -135321,7 +138772,7 @@ local t = {
     FloatingIconParam = {
       "UIFight/Fight_pz_bg_xyxpt",
       "2贯穿，+1",
-      "UI_Float_Icon2",
+      "UI_Float_Icon_FruitNinja1",
       1.2,
       "Bip001 Head"
     },
@@ -135338,7 +138789,7 @@ local t = {
     FloatingIconParam = {
       "UIFight/Fight_pz_bg_xyxpt",
       "3贯穿，+2",
-      "UI_Float_Icon2",
+      "UI_Float_Icon_FruitNinja1",
       1.2,
       "Bip001 Head"
     },
@@ -135355,7 +138806,7 @@ local t = {
     FloatingIconParam = {
       "UIFight/Fight_pz_bg_xyxpt",
       "4贯穿，+4",
-      "UI_Float_Icon2",
+      "UI_Float_Icon_FruitNinja1",
       1.2,
       "Bip001 Head"
     },
@@ -135372,7 +138823,7 @@ local t = {
     FloatingIconParam = {
       "UIFight/Fight_pz_bg_xyxpt",
       "<color=#FFF68F>5贯穿！</color>+8",
-      "UI_Float_Icon2",
+      "UI_Float_Icon_FruitNinja1",
       1.4,
       "Bip001 Head"
     },
@@ -135389,7 +138840,7 @@ local t = {
     FloatingIconParam = {
       "UIFight/Fight_pz_bg_xyxgf",
       "<color=#FFF68F>6贯穿！！+16</color>",
-      "UI_Float_Icon2",
+      "UI_Float_Icon_FruitNinja1",
       1.6,
       "Bip001 Head"
     },
@@ -135406,7 +138857,7 @@ local t = {
     FloatingIconParam = {
       "UIFight/Fight_pz_bg_xyxpt",
       "击败，+1",
-      "UI_Float_Icon2",
+      "UI_Float_Icon_FruitNinja1",
       1.2,
       "effectpoint_head"
     },
@@ -135423,7 +138874,7 @@ local t = {
     FloatingIconParam = {
       "UIFight/Fight_pz_bg_xyxpt",
       "击败，+2",
-      "UI_Float_Icon2",
+      "UI_Float_Icon_FruitNinja1",
       1.2,
       "effectpoint_head"
     },
@@ -135440,7 +138891,7 @@ local t = {
     FloatingIconParam = {
       "UIFight/Fight_pz_bg_xyxpt",
       "击败，+3",
-      "UI_Float_Icon2",
+      "UI_Float_Icon_FruitNinja1",
       1.4,
       "effectpoint_head"
     },
@@ -135457,7 +138908,7 @@ local t = {
     FloatingIconParam = {
       "UIFight/Fight_pz_bg_xyxpt",
       "<color=#FFF68F>引爆！-10</color>",
-      "UI_Float_Icon3",
+      "UI_Float_Icon_FruitNinja2",
       1.6,
       "Bip001 Chest"
     },
@@ -135474,7 +138925,7 @@ local t = {
     FloatingIconParam = {
       "UIFight/Fight_pz_bg_xyxpt",
       "2连击，+1",
-      "UI_Float_Icon2",
+      "UI_Float_Icon_FruitNinja1",
       1.2,
       "effectpoint_head"
     },
@@ -135491,7 +138942,7 @@ local t = {
     FloatingIconParam = {
       "UIFight/Fight_pz_bg_xyxpt",
       "3连击，+2",
-      "UI_Float_Icon2",
+      "UI_Float_Icon_FruitNinja1",
       1.2,
       "effectpoint_head"
     },
@@ -135508,7 +138959,7 @@ local t = {
     FloatingIconParam = {
       "UIFight/Fight_pz_bg_xyxpt",
       "4连击，+4",
-      "UI_Float_Icon2",
+      "UI_Float_Icon_FruitNinja1",
       1.2,
       "effectpoint_head"
     },
@@ -135525,7 +138976,7 @@ local t = {
     FloatingIconParam = {
       "UIFight/Fight_pz_bg_xyxpt",
       "<color=#FFF68F>5连击！</color>+8",
-      "UI_Float_Icon2",
+      "UI_Float_Icon_FruitNinja1",
       1.4,
       "effectpoint_head"
     },
@@ -135591,6 +139042,7 @@ local t = {
       {0, 0},
       Duration = 3,
       Id = 300207108,
+      IsReceive = 1,
       UpdateType = 2,
       type = 2
     }, nil)
@@ -135608,7 +139060,6 @@ local t = {
       Duration = 2,
       Icon = "item/UI_Common_Slowdown",
       Id = 300207109,
-      each_frame_update = true,
       type = 9
     }, nil)
   }, nil),
@@ -135617,8 +139068,7 @@ local t = {
     effect = setmetatable({
       Effect = "Fx_Skill_Warning",
       EffectJoint = "middlepoint",
-      EffectScale = 2,
-      EffectTimeScale = 1.5
+      EffectScale = 2
     }, nil),
     logic = setmetatable({
       Duration = 1,
@@ -135876,7 +139326,6 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       "spell.prologue.prologueSpSkill",
-      Duration = -1,
       Id = 403210038,
       type = 3
     }, nil)
@@ -135892,6 +139341,27 @@ local t = {
       {0, 0},
       Id = 403210039,
       type = 14
+    }, nil)
+  }, nil),
+  [403210040] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {0},
+      1,
+      2,
+      {109, 0},
+      {0, 0},
+      Id = 403210040,
+      type = 14
+    }, nil)
+  }, nil),
+  [403210041] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      "spell.prologue.clearEnergy",
+      Id = 403210041,
+      type = 3
     }, nil)
   }, nil),
   [403211911] = setmetatable({
@@ -138131,7 +141601,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"161"},
-      {10000},
+      {5000},
       1,
       1,
       {0, 0},
@@ -138221,7 +141691,14 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"20"},
-      {2000},
+      {
+        600,
+        1200,
+        1800,
+        2400,
+        3000,
+        3600
+      },
       2,
       1,
       {0, 0},
@@ -138236,7 +141713,14 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"4"},
-      {2000},
+      {
+        800,
+        1600,
+        2400,
+        3200,
+        4000,
+        4800
+      },
       2,
       1,
       {0, 0},
@@ -138251,7 +141735,14 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"147"},
-      {2500},
+      {
+        1000,
+        2000,
+        3000,
+        4000,
+        5000,
+        6000
+      },
       1,
       1,
       {0, 0},
@@ -138266,7 +141757,14 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"28"},
-      {3000},
+      {
+        1000,
+        2000,
+        3000,
+        4000,
+        5000,
+        6000
+      },
       1,
       1,
       {0, 0},
@@ -138281,7 +141779,14 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"161"},
-      {3000},
+      {
+        1000,
+        2000,
+        3000,
+        4000,
+        5000,
+        6000
+      },
       1,
       1,
       {0, 0},
@@ -138296,7 +141801,14 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"122"},
-      {5000},
+      {
+        700,
+        1400,
+        2100,
+        2800,
+        3500,
+        4200
+      },
       1,
       1,
       {0, 0},
@@ -138311,7 +141823,14 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"123"},
-      {5000},
+      {
+        700,
+        1400,
+        2100,
+        2800,
+        3500,
+        4200
+      },
       1,
       1,
       {0, 0},
@@ -138326,7 +141845,14 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"124"},
-      {5000},
+      {
+        1000,
+        2000,
+        3000,
+        4000,
+        5000,
+        6000
+      },
       1,
       1,
       {0, 0},
@@ -138341,7 +141867,14 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"125"},
-      {5000},
+      {
+        700,
+        1400,
+        2100,
+        2800,
+        3500,
+        4200
+      },
       1,
       1,
       {0, 0},
@@ -138356,7 +141889,14 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"126"},
-      {5000},
+      {
+        700,
+        1400,
+        2100,
+        2800,
+        3500,
+        4200
+      },
       1,
       1,
       {0, 0},
@@ -138371,7 +141911,14 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"127"},
-      {5000},
+      {
+        700,
+        1400,
+        2100,
+        2800,
+        3500,
+        4200
+      },
       1,
       1,
       {0, 0},
@@ -138386,7 +141933,14 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"128"},
-      {5000},
+      {
+        700,
+        1400,
+        2100,
+        2800,
+        3500,
+        4200
+      },
       1,
       1,
       {0, 0},
@@ -138446,7 +142000,14 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"26"},
-      {5000},
+      {
+        800,
+        1600,
+        2400,
+        3200,
+        4000,
+        4800
+      },
       1,
       1,
       {0, 0},
@@ -138566,7 +142127,14 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"25"},
-      {-2500},
+      {
+        -1500,
+        -3000,
+        -4500,
+        -6000,
+        -7500,
+        -9000
+      },
       1,
       1,
       {0, 0},
@@ -140093,11 +143661,40 @@ local t = {
       type = 2
     }, nil)
   }, nil),
+  [651130071] = setmetatable({
+    DyingRemove = false,
+    PartEffectType = 1,
+    logic = setmetatable({
+      "spell.equip.Plugins.651130071",
+      Duration = -1,
+      Id = 651130071,
+      type = 3
+    }, nil)
+  }, nil),
+  [651130072] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"26"},
+      {
+        960,
+        1280,
+        1600
+      },
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 7,
+      Id = 651130072,
+      UpdateType = 2,
+      type = 2
+    }, nil)
+  }, nil),
   [651210011] = setmetatable({
     DyingRemove = false,
     PartEffectType = 1,
     logic = setmetatable({
-      {"125"},
+      125,
       {
         300,
         400,
@@ -140109,14 +143706,14 @@ local t = {
       {0, 0},
       Duration = -1,
       Id = 651210011,
-      type = 2
+      type = 14
     }, nil)
   }, nil),
   [651210021] = setmetatable({
     DyingRemove = false,
     PartEffectType = 1,
     logic = setmetatable({
-      {"127"},
+      127,
       {
         300,
         400,
@@ -140128,14 +143725,14 @@ local t = {
       {0, 0},
       Duration = -1,
       Id = 651210021,
-      type = 2
+      type = 14
     }, nil)
   }, nil),
   [651210031] = setmetatable({
     DyingRemove = false,
     PartEffectType = 1,
     logic = setmetatable({
-      {"126"},
+      126,
       {
         300,
         400,
@@ -140147,14 +143744,14 @@ local t = {
       {0, 0},
       Duration = -1,
       Id = 651210031,
-      type = 2
+      type = 14
     }, nil)
   }, nil),
   [651210041] = setmetatable({
     DyingRemove = false,
     PartEffectType = 1,
     logic = setmetatable({
-      {"124"},
+      124,
       {
         300,
         400,
@@ -140166,7 +143763,7 @@ local t = {
       {0, 0},
       Duration = -1,
       Id = 651210041,
-      type = 2
+      type = 14
     }, nil)
   }, nil),
   [651210051] = setmetatable({
@@ -140268,7 +143865,7 @@ local t = {
     DyingRemove = false,
     PartEffectType = 1,
     logic = setmetatable({
-      {"128"},
+      128,
       {
         720,
         960,
@@ -140280,14 +143877,14 @@ local t = {
       {0, 0},
       Duration = -1,
       Id = 651220041,
-      type = 2
+      type = 14
     }, nil)
   }, nil),
   [651220051] = setmetatable({
     DyingRemove = false,
     PartEffectType = 1,
     logic = setmetatable({
-      {"130"},
+      130,
       {
         600,
         800,
@@ -140299,7 +143896,7 @@ local t = {
       {0, 0},
       Duration = -1,
       Id = 651220051,
-      type = 2
+      type = 14
     }, nil)
   }, nil),
   [651220061] = setmetatable({
@@ -140316,7 +143913,7 @@ local t = {
     DyingRemove = false,
     PartEffectType = 1,
     logic = setmetatable({
-      {"131"},
+      131,
       {
         1200,
         1500,
@@ -140328,7 +143925,7 @@ local t = {
       {0, 0},
       Duration = -1,
       Id = 651220062,
-      type = 2
+      type = 14
     }, nil)
   }, nil),
   [651220071] = setmetatable({
@@ -141256,6 +144853,1099 @@ local t = {
       type = 14
     }, nil)
   }, nil),
+  [1030010101] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {1.3},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010101,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010102] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {2},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010102,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010103] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      {20},
+      1,
+      2,
+      0,
+      Id = 1030010103,
+      type = 34
+    }, nil)
+  }, nil),
+  [1030010201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {1.3},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010201,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010202] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {2},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010202,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010203] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      {10},
+      1,
+      2,
+      0,
+      Id = 1030010203,
+      type = 34
+    }, nil)
+  }, nil),
+  [1030010301] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {1.3},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010301,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010302] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {2},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010302,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010303] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      {10},
+      1,
+      2,
+      0,
+      Id = 1030010303,
+      type = 34
+    }, nil)
+  }, nil),
+  [1030010401] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {1.3},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010401,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010402] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {2},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010402,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010403] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      {10},
+      1,
+      2,
+      0,
+      Id = 1030010403,
+      type = 34
+    }, nil)
+  }, nil),
+  [1030010501] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {1.3},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010501,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010502] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {3},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010502,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010503] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      {8},
+      1,
+      2,
+      0,
+      Id = 1030010503,
+      type = 34
+    }, nil)
+  }, nil),
+  [1030010601] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {1.3},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010601,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010602] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {3},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010602,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010603] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      {8},
+      1,
+      2,
+      0,
+      Id = 1030010603,
+      type = 34
+    }, nil)
+  }, nil),
+  [1030010701] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {2},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010701,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010702] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {6},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010702,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010703] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      {8},
+      1,
+      2,
+      0,
+      Id = 1030010703,
+      type = 34
+    }, nil)
+  }, nil),
+  [1030010801] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {2},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010801,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010802] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {4},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010802,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010803] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      {18},
+      1,
+      2,
+      0,
+      Id = 1030010803,
+      type = 34
+    }, nil)
+  }, nil),
+  [1030010901] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {2},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010901,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010902] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {4},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030010902,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030010903] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      {18},
+      1,
+      2,
+      0,
+      Id = 1030010903,
+      type = 34
+    }, nil)
+  }, nil),
+  [1030011001] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {2},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030011001,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030011002] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {1.6},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030011002,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030011003] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      {18},
+      1,
+      2,
+      0,
+      Id = 1030011003,
+      type = 34
+    }, nil)
+  }, nil),
+  [1030011101] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {2},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030011101,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030011102] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {1.6},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030011102,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030011103] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      {18},
+      1,
+      2,
+      0,
+      Id = 1030011103,
+      type = 34
+    }, nil)
+  }, nil),
+  [1030011201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {3},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030011201,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030011202] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {3.8},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030011202,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030011203] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      {18},
+      1,
+      2,
+      0,
+      Id = 1030011203,
+      type = 34
+    }, nil)
+  }, nil),
+  [1030011301] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {3},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030011301,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030011302] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {3.8},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030011302,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030011303] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      2,
+      {18},
+      1,
+      2,
+      0,
+      Id = 1030011303,
+      type = 34
+    }, nil)
+  }, nil),
+  [1030012101] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {6.4},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030012101,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030012102] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {8},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030012102,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030012201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {4},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030012201,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030012202] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {5},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030012202,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030012301] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {3},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030012301,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030012302] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {10},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030012302,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030013101] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {9.6},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030013101,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030013102] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {12},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030013102,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030013201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {4},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030013201,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030013202] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {3},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030013202,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030013601] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {7.2},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030013601,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030013602] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {9},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030013602,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030014001] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {4},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030014001,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030014002] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {3},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030014002,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030014101] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {1.6},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030014101,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030014102] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {5},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030014102,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030014201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {1.6},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030014201,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030014202] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {5},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030014202,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030015101] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {1.2},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030015101,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030015102] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {1.5},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030015102,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030015201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {1.2},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030015201,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030015202] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {1.5},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030015202,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030015301] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {0},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Icon = "Sound_H1001023_cast_magic102313301",
+      Id = 1030015301,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030015302] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {0},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030015302,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030015401] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {0},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030015401,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030015402] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {0},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030015402,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030016101] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {6},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030016101,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030016102] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {8},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030016102,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030016201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {8},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030016201,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030016202] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {10},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030016202,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030017101] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {0},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030017101,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030017102] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {5},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030017102,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030017201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {0},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030017201,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030017202] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {5},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030017202,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030017301] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {0},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030017301,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030017302] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {5},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030017302,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030017401] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {0},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030017401,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030017402] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {5},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030017402,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030017501] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {0},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030017501,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030017502] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {5},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030017502,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030017601] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {0},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030017601,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030017602] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {5},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030017602,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030017701] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {0},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030017701,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030017702] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {5},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030017702,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030017801] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      108,
+      {0},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030017801,
+      type = 14
+    }, nil)
+  }, nil),
+  [1030017802] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      159,
+      {5},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Id = 1030017802,
+      type = 14
+    }, nil)
+  }, nil),
   [1033010101] = setmetatable({
     PartEffectType = 1,
     effect = setmetatable({
@@ -141533,15 +146223,13 @@ local t = {
     DyingRemove = false,
     PartEffectType = 1,
     effect = setmetatable({
-      Effect = "Fx_Common_warning_ring_s",
+      Effect = "Fx_10804_warning_ring",
       EffectJoint = "qipao_gd",
-      EffectScale = 0.54,
       EffectWorld = 2
     }, nil),
     logic = setmetatable({
       Duration = -1,
       Id = 1080410201,
-      Limit = 5,
       type = 9
     }, nil)
   }, nil),
@@ -147049,136 +151737,6 @@ local t = {
       type = 1
     }, nil)
   }, nil),
-  [2010640101] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      Duration = 0.1,
-      Id = 2010640101,
-      IsReceive = 1,
-      type = 9
-    }, nil)
-  }, nil),
-  [2010640102] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      Duration = 0.1,
-      Id = 2010640102,
-      IsReceive = 1,
-      type = 9
-    }, nil)
-  }, nil),
-  [2010640103] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      Duration = 0.1,
-      Id = 2010640103,
-      IsReceive = 1,
-      type = 9
-    }, nil)
-  }, nil),
-  [2010640104] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      Duration = 15,
-      Id = 2010640104,
-      IsReceive = 1,
-      type = 9
-    }, nil)
-  }, nil),
-  [2010640105] = setmetatable({
-    PartEffectType = 1,
-    effect = setmetatable({
-      Effect = "Fx_N3001005_blade_2",
-      EffectWorld = 2
-    }, nil),
-    logic = setmetatable({
-      Duration = 2,
-      Id = 2010640105,
-      IsReceive = 1,
-      type = 9
-    }, nil)
-  }, nil),
-  [2010640106] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      Duration = 0.1,
-      Id = 2010640106,
-      IsReceive = 1,
-      type = 9
-    }, nil)
-  }, nil),
-  [2010640107] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      Duration = 0.1,
-      Id = 2010640107,
-      IsReceive = 1,
-      type = 9
-    }, nil)
-  }, nil),
-  [2010640108] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      Duration = 0.1,
-      Id = 2010640108,
-      IsReceive = 1,
-      type = 9
-    }, nil)
-  }, nil),
-  [2010640109] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      Duration = 0.1,
-      Id = 2010640109,
-      IsReceive = 1,
-      type = 9
-    }, nil)
-  }, nil),
-  [2010640110] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      Duration = 8,
-      Id = 2010640110,
-      IsReceive = 1,
-      type = 9
-    }, nil)
-  }, nil),
-  [2010640111] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      Duration = 0.1,
-      Id = 2010640111,
-      IsReceive = 1,
-      type = 9
-    }, nil)
-  }, nil),
-  [2010640112] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      Duration = 0.1,
-      Id = 2010640112,
-      IsReceive = 1,
-      type = 9
-    }, nil)
-  }, nil),
-  [2010640113] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      Duration = 0.1,
-      Id = 2010640113,
-      IsReceive = 1,
-      type = 9
-    }, nil)
-  }, nil),
-  [2010640114] = setmetatable({
-    PartEffectType = 1,
-    logic = setmetatable({
-      Duration = 0.1,
-      Id = 2010640114,
-      IsReceive = 1,
-      type = 9
-    }, nil)
-  }, nil),
   [2020430101] = setmetatable({
     PartEffectType = 1,
     effect = setmetatable({
@@ -151660,7 +156218,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"4"},
-      {5000},
+      {10000},
       2,
       1,
       {0, 0},
@@ -151674,7 +156232,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"4"},
-      {7000},
+      {20000},
       2,
       1,
       {0, 0},
@@ -151688,7 +156246,7 @@ local t = {
     PartEffectType = 1,
     logic = setmetatable({
       {"4"},
-      {10000},
+      {30000},
       2,
       1,
       {0, 0},
@@ -153081,11 +157639,11 @@ local t = {
   [4033710301] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
-      {"66"},
+      {"42"},
       {
-        4000,
-        5000,
-        7000
+        2000,
+        3000,
+        4000
       },
       1,
       1,
@@ -153099,11 +157657,11 @@ local t = {
   [4033710302] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
-      {"67"},
+      {"43"},
       {
-        4000,
-        5000,
-        7000
+        2000,
+        3000,
+        4000
       },
       1,
       1,
@@ -153117,11 +157675,11 @@ local t = {
   [4033710303] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
-      {"68"},
+      {"44"},
       {
-        4000,
-        5000,
-        7000
+        2000,
+        3000,
+        4000
       },
       1,
       1,
@@ -153135,11 +157693,11 @@ local t = {
   [4033710304] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
-      {"69"},
+      {"45"},
       {
-        4000,
-        5000,
-        7000
+        2000,
+        3000,
+        4000
       },
       1,
       1,
@@ -153153,11 +157711,11 @@ local t = {
   [4033710305] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
-      {"70"},
+      {"46"},
       {
-        4000,
-        5000,
-        7000
+        2000,
+        3000,
+        4000
       },
       1,
       1,
@@ -153204,8 +157762,8 @@ local t = {
   [4033730101] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
-      {"125"},
-      {3000},
+      {"127"},
+      {2000},
       1,
       1,
       {0, 0},
@@ -153226,7 +157784,7 @@ local t = {
       0,
       4,
       false,
-      6000,
+      4000,
       false,
       0,
       4,
@@ -153869,6 +158427,62 @@ local t = {
       {0, 0},
       Duration = 10,
       Id = 7000021503,
+      type = 2
+    }, nil)
+  }, nil),
+  [7000021601] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"33"},
+      {1000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 7000021601,
+      type = 2
+    }, nil)
+  }, nil),
+  [7000021602] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"31"},
+      {1000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = -1,
+      Id = 7000021602,
+      type = 2
+    }, nil)
+  }, nil),
+  [7000021603] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"33"},
+      {3000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 20,
+      Id = 7000021603,
+      type = 2
+    }, nil)
+  }, nil),
+  [7000021604] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"31"},
+      {3000},
+      1,
+      1,
+      {0, 0},
+      {0, 0},
+      Duration = 20,
+      Id = 7000021604,
       type = 2
     }, nil)
   }, nil),
@@ -164404,6 +169018,36 @@ local t = {
       type = 2
     }, nil)
   }, nil),
+  [20105801201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {4000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 20105801201,
+      type = 17
+    }, nil)
+  }, nil),
+  [20105801202] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {4000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 20105801202,
+      type = 17
+    }, nil)
+  }, nil),
   [20105901101] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
@@ -164429,6 +169073,96 @@ local t = {
       type = 6
     }, nil)
   }, nil),
+  [20105901201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {4000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 20105901201,
+      type = 17
+    }, nil)
+  }, nil),
+  [20105901202] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {4000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 20105901202,
+      type = 17
+    }, nil)
+  }, nil),
+  [20106001201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {4000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 20106001201,
+      type = 17
+    }, nil)
+  }, nil),
+  [20106001202] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {4000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 20106001202,
+      type = 17
+    }, nil)
+  }, nil),
+  [20106101201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {4000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 20106101201,
+      type = 17
+    }, nil)
+  }, nil),
+  [20106101202] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {4000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 20106101202,
+      type = 17
+    }, nil)
+  }, nil),
   [20106201001] = setmetatable({
     PartEffectType = 1,
     effect = setmetatable({
@@ -164440,6 +169174,36 @@ local t = {
       Duration = 3,
       Id = 20106201001,
       type = 9
+    }, nil)
+  }, nil),
+  [20106201201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {4000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 20106201201,
+      type = 17
+    }, nil)
+  }, nil),
+  [20106201202] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {4000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 20106201202,
+      type = 17
     }, nil)
   }, nil),
   [20111401001] = setmetatable({
@@ -165927,6 +170691,133 @@ local t = {
       type = 37
     }, nil)
   }, nil),
+  [30020560101] = setmetatable({
+    CanNotExceededLimit = true,
+    PartEffectType = 1,
+    effect = setmetatable({
+      Effect = "Fx_Minigame_03",
+      EffectJoint = "qipao_gd",
+      EffectWorld = 2,
+      OneLayerEffect = true
+    }, nil),
+    logic = setmetatable({
+      Duration = -1,
+      Id = 30020560101,
+      type = 9
+    }, nil)
+  }, nil),
+  [30020570101] = setmetatable({
+    CanNotExceededLimit = true,
+    PartEffectType = 1,
+    effect = setmetatable({
+      Effect = "Fx_Minigame_04",
+      EffectJoint = "qipao_gd",
+      EffectWorld = 2,
+      OneLayerEffect = true
+    }, nil),
+    logic = setmetatable({
+      Duration = -1,
+      Id = 30020570101,
+      type = 9
+    }, nil)
+  }, nil),
+  [30020610101] = setmetatable({
+    CanNotExceededLimit = true,
+    PartEffectType = 1,
+    effect = setmetatable({
+      Effect = "Fx_Minigame_06",
+      EffectJoint = "qipao_gd",
+      EffectWorld = 2,
+      OneLayerEffect = true
+    }, nil),
+    logic = setmetatable({
+      Duration = -1,
+      Id = 30020610101,
+      type = 9
+    }, nil)
+  }, nil),
+  [30020610201] = setmetatable({
+    CanNotExceededLimit = true,
+    PartEffectType = 1,
+    effect = setmetatable({
+      Effect = "Fx_Minigame_05",
+      EffectJoint = "qipao_gd",
+      EffectWorld = 2,
+      OneLayerEffect = true
+    }, nil),
+    logic = setmetatable({
+      Duration = -1,
+      Id = 30020610201,
+      type = 9
+    }, nil)
+  }, nil),
+  [30020620101] = setmetatable({
+    CanNotExceededLimit = true,
+    PartEffectType = 1,
+    logic = setmetatable({
+      "T3001023",
+      0,
+      Duration = -1,
+      Id = 30020620101,
+      type = 7
+    }, nil)
+  }, nil),
+  [30020640101] = setmetatable({
+    CanNotExceededLimit = true,
+    PartEffectType = 1,
+    logic = setmetatable({
+      "sc06_prop_19_mod",
+      0,
+      Duration = -1,
+      Id = 30020640101,
+      type = 7
+    }, nil)
+  }, nil),
+  [30020650101] = setmetatable({
+    CanNotExceededLimit = true,
+    PartEffectType = 1,
+    logic = setmetatable({
+      "T3001036m",
+      0,
+      Duration = -1,
+      Id = 30020650101,
+      type = 7
+    }, nil)
+  }, nil),
+  [108041010102] = setmetatable({
+    CanNotExceededLimit = true,
+    DyingRemove = false,
+    PartEffectType = 1,
+    effect = setmetatable({
+      Effect = "Fx_ceshiquan",
+      EffectJoint = "qipao_gd",
+      EffectScale = 2,
+      EffectWorld = 2,
+      OneLayerEffect = true
+    }, nil),
+    logic = setmetatable({
+      Duration = -1,
+      Id = 108041010102,
+      type = 9
+    }, nil)
+  }, nil),
+  [108042010102] = setmetatable({
+    CanNotExceededLimit = true,
+    DyingRemove = false,
+    PartEffectType = 1,
+    effect = setmetatable({
+      Effect = "Fx_ceshiquan",
+      EffectJoint = "qipao_gd",
+      EffectScale = 2.67,
+      EffectWorld = 2,
+      OneLayerEffect = true
+    }, nil),
+    logic = setmetatable({
+      Duration = -1,
+      Id = 108042010102,
+      type = 9
+    }, nil)
+  }, nil),
   [201011010011] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
@@ -167022,7 +171913,7 @@ local t = {
     logic = setmetatable({
       1,
       0,
-      {16200.0},
+      {16200},
       20,
       1,
       0,
@@ -169671,6 +174562,69 @@ local t = {
       type = 17
     }, nil)
   }, nil),
+  [201064010101] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      "M201064_3a_01",
+      0,
+      Duration = -1,
+      Id = 201064010101,
+      type = 7
+    }, nil)
+  }, nil),
+  [201064010102] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      "Target",
+      0,
+      Duration = -1,
+      Id = 201064010102,
+      type = 7
+    }, nil)
+  }, nil),
+  [201064010103] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      3,
+      0,
+      0,
+      Duration = -1,
+      Id = 201064010103,
+      type = 6
+    }, nil)
+  }, nil),
+  [201064010104] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      0,
+      Duration = -1,
+      Id = 201064010104,
+      type = 6
+    }, nil)
+  }, nil),
+  [201064010105] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      Duration = 0.1,
+      Id = 201064010105,
+      ImmunitType = 1,
+      Immunitions = {201064010101},
+      IsReceive = 1,
+      type = 9
+    }, nil)
+  }, nil),
+  [201064010106] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      "Bone055",
+      0,
+      Duration = -1,
+      Id = 201064010106,
+      type = 7
+    }, nil)
+  }, nil),
   [201065010101] = setmetatable({
     PartEffectType = 1,
     logic = setmetatable({
@@ -169960,7 +174914,7 @@ local t = {
     logic = setmetatable({
       1,
       0,
-      {8000},
+      {10000},
       0,
       0,
       0,
@@ -169990,7 +174944,7 @@ local t = {
     logic = setmetatable({
       1,
       0,
-      {3000},
+      {6500},
       0,
       0,
       0,
@@ -170020,7 +174974,7 @@ local t = {
     logic = setmetatable({
       1,
       0,
-      {6000},
+      {8000},
       0,
       0,
       0,
@@ -170035,7 +174989,7 @@ local t = {
     logic = setmetatable({
       1,
       0,
-      {8000},
+      {9000},
       0,
       0,
       0,
@@ -170065,7 +175019,7 @@ local t = {
     logic = setmetatable({
       1,
       0,
-      {3000},
+      {5000},
       0,
       0,
       0,
@@ -170080,7 +175034,7 @@ local t = {
     logic = setmetatable({
       1,
       0,
-      {20000},
+      {13000},
       0,
       0,
       0,
@@ -170095,7 +175049,7 @@ local t = {
     logic = setmetatable({
       1,
       0,
-      {4000},
+      {5000},
       0,
       0,
       0,
@@ -170110,7 +175064,7 @@ local t = {
     logic = setmetatable({
       1,
       0,
-      {2000},
+      {3000},
       0,
       0,
       0,
@@ -170118,6 +175072,68 @@ local t = {
       false,
       Id = 201065010413,
       type = 17
+    }, nil)
+  }, nil),
+  [201071010101] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      1,
+      {5000},
+      20,
+      0,
+      0,
+      0,
+      false,
+      Id = 201071010101,
+      type = 17
+    }, nil)
+  }, nil),
+  [201071010201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      1,
+      {3000},
+      20,
+      0,
+      0,
+      0,
+      false,
+      Id = 201071010201,
+      type = 17
+    }, nil)
+  }, nil),
+  [201071011301] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      5,
+      {10000},
+      20,
+      0,
+      0,
+      0,
+      false,
+      Id = 201071011301,
+      type = 17
+    }, nil)
+  }, nil),
+  [201071011302] = setmetatable({
+    CanNotExceededLimit = true,
+    PartEffectType = 1,
+    logic = setmetatable({
+      {"24"},
+      {-4000},
+      2,
+      1,
+      {24, 0},
+      {0, 0},
+      Duration = 3,
+      Id = 201071011302,
+      IsReceive = 1,
+      UpdateType = 2,
+      type = 2
     }, nil)
   }, nil),
   [202049010101] = setmetatable({
@@ -170372,6 +175388,156 @@ local t = {
       0,
       false,
       Id = 202052010103,
+      type = 17
+    }, nil)
+  }, nil),
+  [202063010101] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {2000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 202063010101,
+      type = 17
+    }, nil)
+  }, nil),
+  [202063010102] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {2000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 202063010102,
+      type = 17
+    }, nil)
+  }, nil),
+  [202063010201] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {2000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 202063010201,
+      type = 17
+    }, nil)
+  }, nil),
+  [202063010301] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {2000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 202063010301,
+      type = 17
+    }, nil)
+  }, nil),
+  [202063010302] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {2000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 202063010302,
+      type = 17
+    }, nil)
+  }, nil),
+  [202063010401] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {2000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 202063010401,
+      type = 17
+    }, nil)
+  }, nil),
+  [202063010501] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {2000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 202063010501,
+      type = 17
+    }, nil)
+  }, nil),
+  [202063010601] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {2000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 202063010601,
+      type = 17
+    }, nil)
+  }, nil),
+  [202063010602] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {2000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 202063010602,
+      type = 17
+    }, nil)
+  }, nil),
+  [202063010701] = setmetatable({
+    PartEffectType = 1,
+    logic = setmetatable({
+      1,
+      0,
+      {2000},
+      0,
+      0,
+      0,
+      0,
+      false,
+      Id = 202063010701,
       type = 17
     }, nil)
   }, nil),
@@ -179546,6 +184712,8 @@ setmetatable(t[1025033].effect, getmetatable(t[1004070].effect))
 setmetatable(t[1025033].logic, getmetatable(t[1004001].logic))
 setmetatable(t[1025034], getmetatable(t[1004001]))
 setmetatable(t[1025034].logic, getmetatable(t[1004001].logic))
+setmetatable(t[1025037], getmetatable(t[1004001]))
+setmetatable(t[1025037].logic, getmetatable(t[1004001].logic))
 setmetatable(t[1025040], getmetatable(t[1004001]))
 setmetatable(t[1025040].effect, getmetatable(t[1004070].effect))
 setmetatable(t[1025040].logic, getmetatable(t[1004001].logic))
@@ -179713,6 +184881,8 @@ setmetatable(t[1026207], getmetatable(t[100000]))
 setmetatable(t[1026207].logic, getmetatable(t[100000].logic))
 setmetatable(t[1026208], getmetatable(t[100000]))
 setmetatable(t[1026208].logic, getmetatable(t[100000].logic))
+setmetatable(t[1026209], getmetatable(t[100000]))
+setmetatable(t[1026209].logic, getmetatable(t[100000].logic))
 setmetatable(t[1026210], getmetatable(t[100000]))
 setmetatable(t[1026210].logic, getmetatable(t[100000].logic))
 setmetatable(t[1026281], getmetatable(t[100000]))
@@ -179775,6 +184945,10 @@ setmetatable(t[1027016], getmetatable(t[1003001]))
 setmetatable(t[1027016].logic, getmetatable(t[1003001].logic))
 setmetatable(t[1027017], getmetatable(t[1003001]))
 setmetatable(t[1027017].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027018], getmetatable(t[1003001]))
+setmetatable(t[1027018].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027019], getmetatable(t[1003001]))
+setmetatable(t[1027019].logic, getmetatable(t[1003001].logic))
 setmetatable(t[1027101], getmetatable(t[1003001]))
 setmetatable(t[1027101].effect, getmetatable(t[1003018].effect))
 setmetatable(t[1027101].logic, getmetatable(t[1003001].logic))
@@ -179863,6 +185037,12 @@ setmetatable(t[1027221], getmetatable(t[1003001]))
 setmetatable(t[1027221].logic, getmetatable(t[1003001].logic))
 setmetatable(t[1027222], getmetatable(t[1003001]))
 setmetatable(t[1027222].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027223], getmetatable(t[1003001]))
+setmetatable(t[1027223].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027224], getmetatable(t[1003001]))
+setmetatable(t[1027224].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027225], getmetatable(t[1003001]))
+setmetatable(t[1027225].logic, getmetatable(t[1003001].logic))
 setmetatable(t[1027301], getmetatable(t[1003001]))
 setmetatable(t[1027301].logic, getmetatable(t[1003001].logic))
 setmetatable(t[1027302], getmetatable(t[1003001]))
@@ -179977,6 +185157,74 @@ setmetatable(t[1027448], getmetatable(t[1003001]))
 setmetatable(t[1027448].logic, getmetatable(t[1003001].logic))
 setmetatable(t[1027449], getmetatable(t[1003001]))
 setmetatable(t[1027449].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027450], getmetatable(t[1003001]))
+setmetatable(t[1027450].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027451], getmetatable(t[1003001]))
+setmetatable(t[1027451].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027452], getmetatable(t[1003001]))
+setmetatable(t[1027452].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027453], getmetatable(t[1003001]))
+setmetatable(t[1027453].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027454], getmetatable(t[1003001]))
+setmetatable(t[1027454].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027455], getmetatable(t[1003001]))
+setmetatable(t[1027455].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027456], getmetatable(t[1003001]))
+setmetatable(t[1027456].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027457], getmetatable(t[1003001]))
+setmetatable(t[1027457].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027458], getmetatable(t[1003001]))
+setmetatable(t[1027458].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027459], getmetatable(t[1003001]))
+setmetatable(t[1027459].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027460], getmetatable(t[1003001]))
+setmetatable(t[1027460].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027461], getmetatable(t[1003001]))
+setmetatable(t[1027461].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027462], getmetatable(t[1003001]))
+setmetatable(t[1027462].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027463], getmetatable(t[1003001]))
+setmetatable(t[1027463].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027464], getmetatable(t[1003001]))
+setmetatable(t[1027464].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027465], getmetatable(t[1003001]))
+setmetatable(t[1027465].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027466], getmetatable(t[1003001]))
+setmetatable(t[1027466].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027467], getmetatable(t[1003001]))
+setmetatable(t[1027467].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027468], getmetatable(t[1003001]))
+setmetatable(t[1027468].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027469], getmetatable(t[1003001]))
+setmetatable(t[1027469].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027470], getmetatable(t[1003001]))
+setmetatable(t[1027470].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027471], getmetatable(t[1003001]))
+setmetatable(t[1027471].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027472], getmetatable(t[1003001]))
+setmetatable(t[1027472].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027473], getmetatable(t[1003001]))
+setmetatable(t[1027473].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027480], getmetatable(t[1003001]))
+setmetatable(t[1027480].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027481], getmetatable(t[1003001]))
+setmetatable(t[1027481].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027482], getmetatable(t[1003001]))
+setmetatable(t[1027482].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027500], getmetatable(t[1003001]))
+setmetatable(t[1027500].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027501], getmetatable(t[1003001]))
+setmetatable(t[1027501].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027502], getmetatable(t[1003001]))
+setmetatable(t[1027502].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027503], getmetatable(t[1003001]))
+setmetatable(t[1027503].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027504], getmetatable(t[1003001]))
+setmetatable(t[1027504].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027505], getmetatable(t[1003001]))
+setmetatable(t[1027505].logic, getmetatable(t[1003001].logic))
+setmetatable(t[1027506], getmetatable(t[1003001]))
+setmetatable(t[1027506].logic, getmetatable(t[1003001].logic))
 setmetatable(t[1029002], getmetatable(t[1029001]))
 setmetatable(t[1029002].effect, getmetatable(t[1029001].effect))
 setmetatable(t[1029002].logic, getmetatable(t[1029001].logic))
@@ -180020,6 +185268,8 @@ setmetatable(t[1030003], getmetatable(t[100001]))
 setmetatable(t[1030003].logic, getmetatable(t[100001].logic))
 setmetatable(t[1030004], getmetatable(t[100001]))
 setmetatable(t[1030004].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030005], getmetatable(t[100001]))
+setmetatable(t[1030005].logic, getmetatable(t[100001].logic))
 setmetatable(t[1030101], getmetatable(t[100001]))
 setmetatable(t[1030101].effect, getmetatable(t[100022].effect))
 setmetatable(t[1030101].logic, getmetatable(t[100001].logic))
@@ -180032,6 +185282,110 @@ setmetatable(t[1030103].logic, getmetatable(t[100001].logic))
 setmetatable(t[1030104], getmetatable(t[100001]))
 setmetatable(t[1030104].effect, getmetatable(t[100022].effect))
 setmetatable(t[1030104].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030105], getmetatable(t[100001]))
+setmetatable(t[1030105].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030106], getmetatable(t[100001]))
+setmetatable(t[1030106].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030107], getmetatable(t[100001]))
+setmetatable(t[1030107].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030108], getmetatable(t[100001]))
+setmetatable(t[1030108].effect, getmetatable(t[100022].effect))
+setmetatable(t[1030108].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030109], getmetatable(t[100001]))
+setmetatable(t[1030109].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030110], getmetatable(t[100001]))
+setmetatable(t[1030110].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030181], getmetatable(t[100001]))
+setmetatable(t[1030181].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030182], getmetatable(t[100001]))
+setmetatable(t[1030182].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030183], getmetatable(t[100001]))
+setmetatable(t[1030183].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030184], getmetatable(t[100001]))
+setmetatable(t[1030184].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030185], getmetatable(t[100001]))
+setmetatable(t[1030185].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030200], getmetatable(t[100001]))
+setmetatable(t[1030200].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030201], getmetatable(t[100001]))
+setmetatable(t[1030201].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030202], getmetatable(t[100001]))
+setmetatable(t[1030202].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030203], getmetatable(t[100001]))
+setmetatable(t[1030203].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030204], getmetatable(t[100001]))
+setmetatable(t[1030204].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030205], getmetatable(t[100001]))
+setmetatable(t[1030205].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030206], getmetatable(t[100001]))
+setmetatable(t[1030206].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030207], getmetatable(t[100001]))
+setmetatable(t[1030207].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030208], getmetatable(t[100001]))
+setmetatable(t[1030208].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030281], getmetatable(t[100001]))
+setmetatable(t[1030281].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030282], getmetatable(t[100001]))
+setmetatable(t[1030282].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030283], getmetatable(t[100001]))
+setmetatable(t[1030283].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030284], getmetatable(t[100001]))
+setmetatable(t[1030284].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030285], getmetatable(t[100001]))
+setmetatable(t[1030285].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030286], getmetatable(t[100001]))
+setmetatable(t[1030286].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030287], getmetatable(t[100001]))
+setmetatable(t[1030287].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030288], getmetatable(t[100001]))
+setmetatable(t[1030288].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030289], getmetatable(t[100001]))
+setmetatable(t[1030289].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030301], getmetatable(t[100001]))
+setmetatable(t[1030301].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030302], getmetatable(t[100001]))
+setmetatable(t[1030302].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030303], getmetatable(t[100001]))
+setmetatable(t[1030303].effect, getmetatable(t[100022].effect))
+setmetatable(t[1030303].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030304], getmetatable(t[100001]))
+setmetatable(t[1030304].effect, getmetatable(t[100022].effect))
+setmetatable(t[1030304].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030305], getmetatable(t[100001]))
+setmetatable(t[1030305].effect, getmetatable(t[100022].effect))
+setmetatable(t[1030305].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030306], getmetatable(t[100001]))
+setmetatable(t[1030306].effect, getmetatable(t[100022].effect))
+setmetatable(t[1030306].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030307], getmetatable(t[100001]))
+setmetatable(t[1030307].effect, getmetatable(t[100022].effect))
+setmetatable(t[1030307].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030308], getmetatable(t[100001]))
+setmetatable(t[1030308].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030309], getmetatable(t[100001]))
+setmetatable(t[1030309].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030310], getmetatable(t[100001]))
+setmetatable(t[1030310].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030311], getmetatable(t[100001]))
+setmetatable(t[1030311].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030312], getmetatable(t[100001]))
+setmetatable(t[1030312].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030412], getmetatable(t[100001]))
+setmetatable(t[1030412].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030413], getmetatable(t[100001]))
+setmetatable(t[1030413].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030500], getmetatable(t[100001]))
+setmetatable(t[1030500].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030501], getmetatable(t[100001]))
+setmetatable(t[1030501].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030502], getmetatable(t[100001]))
+setmetatable(t[1030502].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030503], getmetatable(t[100001]))
+setmetatable(t[1030503].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030504], getmetatable(t[100001]))
+setmetatable(t[1030504].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030505], getmetatable(t[100001]))
+setmetatable(t[1030505].logic, getmetatable(t[100001].logic))
 setmetatable(t[1067041], getmetatable(t[30502]))
 setmetatable(t[1067041].logic, getmetatable(t[30502].logic))
 setmetatable(t[1067042], getmetatable(t[30502]))
@@ -180057,6 +185411,8 @@ setmetatable(t[1071501], getmetatable(t[30502]))
 setmetatable(t[1071501].logic, getmetatable(t[30502].logic))
 setmetatable(t[1071502], getmetatable(t[30502]))
 setmetatable(t[1071502].logic, getmetatable(t[30502].logic))
+setmetatable(t[1080102], getmetatable(t[100501]))
+setmetatable(t[1080102].logic, getmetatable(t[100501].logic))
 setmetatable(t[1080401], getmetatable(t[30502]))
 setmetatable(t[1080401].logic, getmetatable(t[30502].logic))
 setmetatable(t[1080402], getmetatable(t[30502]))
@@ -180661,6 +186017,16 @@ setmetatable(t[1999356], getmetatable(t[100101]))
 setmetatable(t[1999356].logic, getmetatable(t[100101].logic))
 setmetatable(t[1999357], getmetatable(t[100101]))
 setmetatable(t[1999357].logic, getmetatable(t[100101].logic))
+setmetatable(t[1999358], getmetatable(t[100101]))
+setmetatable(t[1999358].logic, getmetatable(t[100101].logic))
+setmetatable(t[1999359], getmetatable(t[100101]))
+setmetatable(t[1999359].logic, getmetatable(t[100101].logic))
+setmetatable(t[1999360], getmetatable(t[100101]))
+setmetatable(t[1999360].logic, getmetatable(t[100101].logic))
+setmetatable(t[1999361], getmetatable(t[100101]))
+setmetatable(t[1999361].logic, getmetatable(t[100101].logic))
+setmetatable(t[1999362], getmetatable(t[100101]))
+setmetatable(t[1999362].logic, getmetatable(t[100101].logic))
 setmetatable(t[1999400], getmetatable(t[100101]))
 setmetatable(t[1999400].logic, getmetatable(t[100101].logic))
 setmetatable(t[1999401], getmetatable(t[100101]))
@@ -181688,6 +187054,8 @@ setmetatable(t[4032232], getmetatable(t[100501]))
 setmetatable(t[4032232].logic, getmetatable(t[100501].logic))
 setmetatable(t[4032241], getmetatable(t[100501]))
 setmetatable(t[4032241].logic, getmetatable(t[100501].logic))
+setmetatable(t[4032251], getmetatable(t[100501]))
+setmetatable(t[4032251].logic, getmetatable(t[100501].logic))
 setmetatable(t[4032261], getmetatable(t[100501]))
 setmetatable(t[4032261].logic, getmetatable(t[100501].logic))
 setmetatable(t[4032271], getmetatable(t[100501]))
@@ -182266,6 +187634,34 @@ setmetatable(t[6032036], getmetatable(t[6030001]))
 setmetatable(t[6032036].logic, getmetatable(t[6030001].logic))
 setmetatable(t[6032037], getmetatable(t[6030001]))
 setmetatable(t[6032037].logic, getmetatable(t[6030001].logic))
+setmetatable(t[6032040], getmetatable(t[100501]))
+setmetatable(t[6032040].logic, getmetatable(t[100501].logic))
+setmetatable(t[6032041], getmetatable(t[100501]))
+setmetatable(t[6032041].logic, getmetatable(t[100501].logic))
+setmetatable(t[6032042], getmetatable(t[100501]))
+setmetatable(t[6032042].logic, getmetatable(t[100501].logic))
+setmetatable(t[6032043], getmetatable(t[100501]))
+setmetatable(t[6032043].logic, getmetatable(t[100501].logic))
+setmetatable(t[6032044], getmetatable(t[100501]))
+setmetatable(t[6032044].logic, getmetatable(t[100501].logic))
+setmetatable(t[6032045], getmetatable(t[100501]))
+setmetatable(t[6032045].logic, getmetatable(t[100501].logic))
+setmetatable(t[6032046], getmetatable(t[100501]))
+setmetatable(t[6032046].logic, getmetatable(t[100501].logic))
+setmetatable(t[6032047], getmetatable(t[100501]))
+setmetatable(t[6032047].logic, getmetatable(t[100501].logic))
+setmetatable(t[6032048], getmetatable(t[100501]))
+setmetatable(t[6032048].logic, getmetatable(t[100501].logic))
+setmetatable(t[6032049], getmetatable(t[100501]))
+setmetatable(t[6032049].logic, getmetatable(t[100501].logic))
+setmetatable(t[6032050], getmetatable(t[100501]))
+setmetatable(t[6032050].logic, getmetatable(t[100501].logic))
+setmetatable(t[6032051], getmetatable(t[100501]))
+setmetatable(t[6032051].logic, getmetatable(t[100501].logic))
+setmetatable(t[6032052], getmetatable(t[100501]))
+setmetatable(t[6032052].logic, getmetatable(t[100501].logic))
+setmetatable(t[6032053], getmetatable(t[100501]))
+setmetatable(t[6032053].logic, getmetatable(t[100501].logic))
 setmetatable(t[6040011], getmetatable(t[6040010]))
 setmetatable(t[6040011].logic, getmetatable(t[6040010].logic))
 setmetatable(t[6040020], getmetatable(t[6040010]))
@@ -183943,6 +189339,9 @@ setmetatable(t[10250201], getmetatable(t[1004001]))
 setmetatable(t[10250201].logic, getmetatable(t[1004001].logic))
 setmetatable(t[10250411], getmetatable(t[1004001]))
 setmetatable(t[10250411].logic, getmetatable(t[1004001].logic))
+setmetatable(t[10250601], getmetatable(t[1004001]))
+setmetatable(t[10250601].effect, getmetatable(t[1004070].effect))
+setmetatable(t[10250601].logic, getmetatable(t[1004001].logic))
 setmetatable(t[10250611], getmetatable(t[1004001]))
 setmetatable(t[10250611].logic, getmetatable(t[1004001].logic))
 setmetatable(t[10250612], getmetatable(t[1004001]))
@@ -183989,6 +189388,8 @@ setmetatable(t[10250804], getmetatable(t[1004001]))
 setmetatable(t[10250804].logic, getmetatable(t[1004001].logic))
 setmetatable(t[10250805], getmetatable(t[1004001]))
 setmetatable(t[10250805].logic, getmetatable(t[1004001].logic))
+setmetatable(t[10250806], getmetatable(t[1004001]))
+setmetatable(t[10250806].logic, getmetatable(t[1004001].logic))
 setmetatable(t[10250931], getmetatable(t[1004001]))
 setmetatable(t[10250931].logic, getmetatable(t[1004001].logic))
 setmetatable(t[10250941], getmetatable(t[1004001]))
@@ -184101,6 +189502,100 @@ setmetatable(t[10291601], getmetatable(t[1029001]))
 setmetatable(t[10291601].logic, getmetatable(t[1029001].logic))
 setmetatable(t[10291602], getmetatable(t[1029001]))
 setmetatable(t[10291602].logic, getmetatable(t[1029001].logic))
+setmetatable(t[10300101], getmetatable(t[100001]))
+setmetatable(t[10300101].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300102], getmetatable(t[100001]))
+setmetatable(t[10300102].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300103], getmetatable(t[100001]))
+setmetatable(t[10300103].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300104], getmetatable(t[100001]))
+setmetatable(t[10300104].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300105], getmetatable(t[100001]))
+setmetatable(t[10300105].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300106], getmetatable(t[100001]))
+setmetatable(t[10300106].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300107], getmetatable(t[100001]))
+setmetatable(t[10300107].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300108], getmetatable(t[100001]))
+setmetatable(t[10300108].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300109], getmetatable(t[100001]))
+setmetatable(t[10300109].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300110], getmetatable(t[100001]))
+setmetatable(t[10300110].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300111], getmetatable(t[100001]))
+setmetatable(t[10300111].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300112], getmetatable(t[100001]))
+setmetatable(t[10300112].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300113], getmetatable(t[100001]))
+setmetatable(t[10300113].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300121], getmetatable(t[100001]))
+setmetatable(t[10300121].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300122], getmetatable(t[100001]))
+setmetatable(t[10300122].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300123], getmetatable(t[100001]))
+setmetatable(t[10300123].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300131], getmetatable(t[100001]))
+setmetatable(t[10300131].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300132], getmetatable(t[100001]))
+setmetatable(t[10300132].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300136], getmetatable(t[100001]))
+setmetatable(t[10300136].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300140], getmetatable(t[100001]))
+setmetatable(t[10300140].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300141], getmetatable(t[100001]))
+setmetatable(t[10300141].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300142], getmetatable(t[100001]))
+setmetatable(t[10300142].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300151], getmetatable(t[100001]))
+setmetatable(t[10300151].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300152], getmetatable(t[100001]))
+setmetatable(t[10300152].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300153], getmetatable(t[100001]))
+setmetatable(t[10300153].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300154], getmetatable(t[100001]))
+setmetatable(t[10300154].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300161], getmetatable(t[100001]))
+setmetatable(t[10300161].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300162], getmetatable(t[100001]))
+setmetatable(t[10300162].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300171], getmetatable(t[100001]))
+setmetatable(t[10300171].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300172], getmetatable(t[100001]))
+setmetatable(t[10300172].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300173], getmetatable(t[100001]))
+setmetatable(t[10300173].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300174], getmetatable(t[100001]))
+setmetatable(t[10300174].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300175], getmetatable(t[100001]))
+setmetatable(t[10300175].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300176], getmetatable(t[100001]))
+setmetatable(t[10300176].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300177], getmetatable(t[100001]))
+setmetatable(t[10300177].logic, getmetatable(t[100001].logic))
+setmetatable(t[10300178], getmetatable(t[100001]))
+setmetatable(t[10300178].logic, getmetatable(t[100001].logic))
+setmetatable(t[10301041], getmetatable(t[100001]))
+setmetatable(t[10301041].effect, getmetatable(t[100022].effect))
+setmetatable(t[10301041].logic, getmetatable(t[100001].logic))
+setmetatable(t[10301081], getmetatable(t[100001]))
+setmetatable(t[10301081].effect, getmetatable(t[100022].effect))
+setmetatable(t[10301081].logic, getmetatable(t[100001].logic))
+setmetatable(t[10302001], getmetatable(t[100001]))
+setmetatable(t[10302001].logic, getmetatable(t[100001].logic))
+setmetatable(t[10302002], getmetatable(t[100001]))
+setmetatable(t[10302002].logic, getmetatable(t[100001].logic))
+setmetatable(t[10302003], getmetatable(t[100001]))
+setmetatable(t[10302003].logic, getmetatable(t[100001].logic))
+setmetatable(t[10302004], getmetatable(t[100001]))
+setmetatable(t[10302004].logic, getmetatable(t[100001].logic))
+setmetatable(t[10302005], getmetatable(t[100001]))
+setmetatable(t[10302005].logic, getmetatable(t[100001].logic))
+setmetatable(t[10302006], getmetatable(t[100001]))
+setmetatable(t[10302006].logic, getmetatable(t[100001].logic))
+setmetatable(t[10302007], getmetatable(t[100001]))
+setmetatable(t[10302007].logic, getmetatable(t[100001].logic))
+setmetatable(t[10302008], getmetatable(t[100001]))
+setmetatable(t[10302008].logic, getmetatable(t[100001].logic))
 setmetatable(t[10440301], getmetatable(t[10440101]))
 setmetatable(t[10440301].logic, getmetatable(t[10440101].logic))
 setmetatable(t[10440302], getmetatable(t[10440101]))
@@ -184410,6 +189905,38 @@ setmetatable(t[22010305], getmetatable(t[100501]))
 setmetatable(t[22010305].logic, getmetatable(t[100501].logic))
 setmetatable(t[22010306], getmetatable(t[100501]))
 setmetatable(t[22010306].logic, getmetatable(t[100501].logic))
+setmetatable(t[22010307], getmetatable(t[100501]))
+setmetatable(t[22010307].logic, getmetatable(t[100501].logic))
+setmetatable(t[22010308], getmetatable(t[100501]))
+setmetatable(t[22010308].logic, getmetatable(t[100501].logic))
+setmetatable(t[22010401], getmetatable(t[100501]))
+setmetatable(t[22010401].logic, getmetatable(t[100501].logic))
+setmetatable(t[22010402], getmetatable(t[100501]))
+setmetatable(t[22010402].logic, getmetatable(t[100501].logic))
+setmetatable(t[22010403], getmetatable(t[100501]))
+setmetatable(t[22010403].logic, getmetatable(t[100501].logic))
+setmetatable(t[22010404], getmetatable(t[100501]))
+setmetatable(t[22010404].logic, getmetatable(t[100501].logic))
+setmetatable(t[22010405], getmetatable(t[100501]))
+setmetatable(t[22010405].logic, getmetatable(t[100501].logic))
+setmetatable(t[22010406], getmetatable(t[100501]))
+setmetatable(t[22010406].logic, getmetatable(t[100501].logic))
+setmetatable(t[22010407], getmetatable(t[100501]))
+setmetatable(t[22010407].logic, getmetatable(t[100501].logic))
+setmetatable(t[22010408], getmetatable(t[100501]))
+setmetatable(t[22010408].logic, getmetatable(t[100501].logic))
+setmetatable(t[22010409], getmetatable(t[100501]))
+setmetatable(t[22010409].logic, getmetatable(t[100501].logic))
+setmetatable(t[22010410], getmetatable(t[100501]))
+setmetatable(t[22010410].logic, getmetatable(t[100501].logic))
+setmetatable(t[22010411], getmetatable(t[100501]))
+setmetatable(t[22010411].logic, getmetatable(t[100501].logic))
+setmetatable(t[22011101], getmetatable(t[100501]))
+setmetatable(t[22011101].logic, getmetatable(t[100501].logic))
+setmetatable(t[22011102], getmetatable(t[100501]))
+setmetatable(t[22011102].logic, getmetatable(t[100501].logic))
+setmetatable(t[22011103], getmetatable(t[100501]))
+setmetatable(t[22011103].logic, getmetatable(t[100501].logic))
 setmetatable(t[29999999], getmetatable(t[100101]))
 setmetatable(t[29999999].logic, getmetatable(t[100101].logic))
 setmetatable(t[30701021], getmetatable(t[100501]))
@@ -186311,6 +191838,8 @@ setmetatable(t[70000214], getmetatable(t[607101]))
 setmetatable(t[70000214].logic, getmetatable(t[607101].logic))
 setmetatable(t[70000215], getmetatable(t[607101]))
 setmetatable(t[70000215].logic, getmetatable(t[607101].logic))
+setmetatable(t[70000216], getmetatable(t[607101]))
+setmetatable(t[70000216].logic, getmetatable(t[607101].logic))
 setmetatable(t[100010101], getmetatable(t[30502]))
 setmetatable(t[100010101].logic, getmetatable(t[30502].logic))
 setmetatable(t[100010102], getmetatable(t[30502]))
@@ -188016,6 +193545,8 @@ setmetatable(t[102508032], getmetatable(t[1004001]))
 setmetatable(t[102508032].logic, getmetatable(t[1004001].logic))
 setmetatable(t[102508041], getmetatable(t[1004001]))
 setmetatable(t[102508041].logic, getmetatable(t[1004001].logic))
+setmetatable(t[102508061], getmetatable(t[1004001]))
+setmetatable(t[102508061].logic, getmetatable(t[1004001].logic))
 setmetatable(t[102511011], getmetatable(t[1004001]))
 setmetatable(t[102511011].logic, getmetatable(t[1004001].logic))
 setmetatable(t[102511012], getmetatable(t[1004001]))
@@ -188144,6 +193675,8 @@ setmetatable(t[102571022], getmetatable(t[1004001]))
 setmetatable(t[102571022].logic, getmetatable(t[1004001].logic))
 setmetatable(t[102571031], getmetatable(t[1004001]))
 setmetatable(t[102571031].logic, getmetatable(t[1004001].logic))
+setmetatable(t[102571032], getmetatable(t[1004001]))
+setmetatable(t[102571032].logic, getmetatable(t[1004001].logic))
 setmetatable(t[102571111], getmetatable(t[1004001]))
 setmetatable(t[102571111].logic, getmetatable(t[1004001].logic))
 setmetatable(t[102571112], getmetatable(t[1004001]))
@@ -188978,6 +194511,10 @@ setmetatable(t[403210038], getmetatable(t[100501]))
 setmetatable(t[403210038].logic, getmetatable(t[100501].logic))
 setmetatable(t[403210039], getmetatable(t[100501]))
 setmetatable(t[403210039].logic, getmetatable(t[100501].logic))
+setmetatable(t[403210040], getmetatable(t[100501]))
+setmetatable(t[403210040].logic, getmetatable(t[100501].logic))
+setmetatable(t[403210041], getmetatable(t[100501]))
+setmetatable(t[403210041].logic, getmetatable(t[100501].logic))
 setmetatable(t[403211911], getmetatable(t[100501]))
 setmetatable(t[403211911].logic, getmetatable(t[100501].logic))
 setmetatable(t[403211912], getmetatable(t[100501]))
@@ -189543,6 +195080,10 @@ setmetatable(t[651130062], getmetatable(t[65111]))
 setmetatable(t[651130062].logic, getmetatable(t[65111].logic))
 setmetatable(t[651130063], getmetatable(t[65111]))
 setmetatable(t[651130063].logic, getmetatable(t[65111].logic))
+setmetatable(t[651130071], getmetatable(t[65111]))
+setmetatable(t[651130071].logic, getmetatable(t[65111].logic))
+setmetatable(t[651130072], getmetatable(t[65111]))
+setmetatable(t[651130072].logic, getmetatable(t[65111].logic))
 setmetatable(t[651210011], getmetatable(t[65111]))
 setmetatable(t[651210011].logic, getmetatable(t[65111].logic))
 setmetatable(t[651210021], getmetatable(t[65111]))
@@ -189709,6 +195250,176 @@ setmetatable(t[1022029402], getmetatable(t[1004001]))
 setmetatable(t[1022029402].logic, getmetatable(t[1004001].logic))
 setmetatable(t[1022029502], getmetatable(t[1004001]))
 setmetatable(t[1022029502].logic, getmetatable(t[1004001].logic))
+setmetatable(t[1030010101], getmetatable(t[100001]))
+setmetatable(t[1030010101].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010102], getmetatable(t[100001]))
+setmetatable(t[1030010102].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010103], getmetatable(t[100001]))
+setmetatable(t[1030010103].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010201], getmetatable(t[100001]))
+setmetatable(t[1030010201].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010202], getmetatable(t[100001]))
+setmetatable(t[1030010202].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010203], getmetatable(t[100001]))
+setmetatable(t[1030010203].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010301], getmetatable(t[100001]))
+setmetatable(t[1030010301].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010302], getmetatable(t[100001]))
+setmetatable(t[1030010302].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010303], getmetatable(t[100001]))
+setmetatable(t[1030010303].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010401], getmetatable(t[100001]))
+setmetatable(t[1030010401].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010402], getmetatable(t[100001]))
+setmetatable(t[1030010402].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010403], getmetatable(t[100001]))
+setmetatable(t[1030010403].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010501], getmetatable(t[100001]))
+setmetatable(t[1030010501].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010502], getmetatable(t[100001]))
+setmetatable(t[1030010502].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010503], getmetatable(t[100001]))
+setmetatable(t[1030010503].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010601], getmetatable(t[100001]))
+setmetatable(t[1030010601].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010602], getmetatable(t[100001]))
+setmetatable(t[1030010602].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010603], getmetatable(t[100001]))
+setmetatable(t[1030010603].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010701], getmetatable(t[100001]))
+setmetatable(t[1030010701].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010702], getmetatable(t[100001]))
+setmetatable(t[1030010702].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010703], getmetatable(t[100001]))
+setmetatable(t[1030010703].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010801], getmetatable(t[100001]))
+setmetatable(t[1030010801].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010802], getmetatable(t[100001]))
+setmetatable(t[1030010802].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010803], getmetatable(t[100001]))
+setmetatable(t[1030010803].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010901], getmetatable(t[100001]))
+setmetatable(t[1030010901].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010902], getmetatable(t[100001]))
+setmetatable(t[1030010902].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030010903], getmetatable(t[100001]))
+setmetatable(t[1030010903].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030011001], getmetatable(t[100001]))
+setmetatable(t[1030011001].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030011002], getmetatable(t[100001]))
+setmetatable(t[1030011002].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030011003], getmetatable(t[100001]))
+setmetatable(t[1030011003].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030011101], getmetatable(t[100001]))
+setmetatable(t[1030011101].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030011102], getmetatable(t[100001]))
+setmetatable(t[1030011102].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030011103], getmetatable(t[100001]))
+setmetatable(t[1030011103].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030011201], getmetatable(t[100001]))
+setmetatable(t[1030011201].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030011202], getmetatable(t[100001]))
+setmetatable(t[1030011202].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030011203], getmetatable(t[100001]))
+setmetatable(t[1030011203].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030011301], getmetatable(t[100001]))
+setmetatable(t[1030011301].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030011302], getmetatable(t[100001]))
+setmetatable(t[1030011302].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030011303], getmetatable(t[100001]))
+setmetatable(t[1030011303].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030012101], getmetatable(t[100001]))
+setmetatable(t[1030012101].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030012102], getmetatable(t[100001]))
+setmetatable(t[1030012102].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030012201], getmetatable(t[100001]))
+setmetatable(t[1030012201].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030012202], getmetatable(t[100001]))
+setmetatable(t[1030012202].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030012301], getmetatable(t[100001]))
+setmetatable(t[1030012301].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030012302], getmetatable(t[100001]))
+setmetatable(t[1030012302].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030013101], getmetatable(t[100001]))
+setmetatable(t[1030013101].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030013102], getmetatable(t[100001]))
+setmetatable(t[1030013102].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030013201], getmetatable(t[100001]))
+setmetatable(t[1030013201].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030013202], getmetatable(t[100001]))
+setmetatable(t[1030013202].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030013601], getmetatable(t[100001]))
+setmetatable(t[1030013601].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030013602], getmetatable(t[100001]))
+setmetatable(t[1030013602].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030014001], getmetatable(t[100001]))
+setmetatable(t[1030014001].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030014002], getmetatable(t[100001]))
+setmetatable(t[1030014002].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030014101], getmetatable(t[100001]))
+setmetatable(t[1030014101].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030014102], getmetatable(t[100001]))
+setmetatable(t[1030014102].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030014201], getmetatable(t[100001]))
+setmetatable(t[1030014201].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030014202], getmetatable(t[100001]))
+setmetatable(t[1030014202].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030015101], getmetatable(t[100001]))
+setmetatable(t[1030015101].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030015102], getmetatable(t[100001]))
+setmetatable(t[1030015102].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030015201], getmetatable(t[100001]))
+setmetatable(t[1030015201].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030015202], getmetatable(t[100001]))
+setmetatable(t[1030015202].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030015301], getmetatable(t[100001]))
+setmetatable(t[1030015301].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030015302], getmetatable(t[100001]))
+setmetatable(t[1030015302].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030015401], getmetatable(t[100001]))
+setmetatable(t[1030015401].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030015402], getmetatable(t[100001]))
+setmetatable(t[1030015402].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030016101], getmetatable(t[100001]))
+setmetatable(t[1030016101].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030016102], getmetatable(t[100001]))
+setmetatable(t[1030016102].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030016201], getmetatable(t[100001]))
+setmetatable(t[1030016201].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030016202], getmetatable(t[100001]))
+setmetatable(t[1030016202].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030017101], getmetatable(t[100001]))
+setmetatable(t[1030017101].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030017102], getmetatable(t[100001]))
+setmetatable(t[1030017102].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030017201], getmetatable(t[100001]))
+setmetatable(t[1030017201].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030017202], getmetatable(t[100001]))
+setmetatable(t[1030017202].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030017301], getmetatable(t[100001]))
+setmetatable(t[1030017301].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030017302], getmetatable(t[100001]))
+setmetatable(t[1030017302].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030017401], getmetatable(t[100001]))
+setmetatable(t[1030017401].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030017402], getmetatable(t[100001]))
+setmetatable(t[1030017402].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030017501], getmetatable(t[100001]))
+setmetatable(t[1030017501].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030017502], getmetatable(t[100001]))
+setmetatable(t[1030017502].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030017601], getmetatable(t[100001]))
+setmetatable(t[1030017601].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030017602], getmetatable(t[100001]))
+setmetatable(t[1030017602].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030017701], getmetatable(t[100001]))
+setmetatable(t[1030017701].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030017702], getmetatable(t[100001]))
+setmetatable(t[1030017702].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030017801], getmetatable(t[100001]))
+setmetatable(t[1030017801].logic, getmetatable(t[100001].logic))
+setmetatable(t[1030017802], getmetatable(t[100001]))
+setmetatable(t[1030017802].logic, getmetatable(t[100001].logic))
 setmetatable(t[1033010101], getmetatable(t[320101]))
 setmetatable(t[1033010101].effect, getmetatable(t[320202].effect))
 setmetatable(t[1033010101].logic, getmetatable(t[320101].logic))
@@ -190694,35 +196405,6 @@ setmetatable(t[2010540828], getmetatable(t[20120301]))
 setmetatable(t[2010540828].logic, getmetatable(t[20120301].logic))
 setmetatable(t[2010630101], getmetatable(t[201083001]))
 setmetatable(t[2010630101].logic, getmetatable(t[201083001].logic))
-setmetatable(t[2010640101], getmetatable(t[201083001]))
-setmetatable(t[2010640101].logic, getmetatable(t[201083001].logic))
-setmetatable(t[2010640102], getmetatable(t[201083001]))
-setmetatable(t[2010640102].logic, getmetatable(t[201083001].logic))
-setmetatable(t[2010640103], getmetatable(t[201083001]))
-setmetatable(t[2010640103].logic, getmetatable(t[201083001].logic))
-setmetatable(t[2010640104], getmetatable(t[201083001]))
-setmetatable(t[2010640104].logic, getmetatable(t[201083001].logic))
-setmetatable(t[2010640105], getmetatable(t[201083001]))
-setmetatable(t[2010640105].effect, getmetatable(t[201083005].effect))
-setmetatable(t[2010640105].logic, getmetatable(t[201083001].logic))
-setmetatable(t[2010640106], getmetatable(t[201083001]))
-setmetatable(t[2010640106].logic, getmetatable(t[201083001].logic))
-setmetatable(t[2010640107], getmetatable(t[201083001]))
-setmetatable(t[2010640107].logic, getmetatable(t[201083001].logic))
-setmetatable(t[2010640108], getmetatable(t[201083001]))
-setmetatable(t[2010640108].logic, getmetatable(t[201083001].logic))
-setmetatable(t[2010640109], getmetatable(t[201083001]))
-setmetatable(t[2010640109].logic, getmetatable(t[201083001].logic))
-setmetatable(t[2010640110], getmetatable(t[201083001]))
-setmetatable(t[2010640110].logic, getmetatable(t[201083001].logic))
-setmetatable(t[2010640111], getmetatable(t[201083001]))
-setmetatable(t[2010640111].logic, getmetatable(t[201083001].logic))
-setmetatable(t[2010640112], getmetatable(t[201083001]))
-setmetatable(t[2010640112].logic, getmetatable(t[201083001].logic))
-setmetatable(t[2010640113], getmetatable(t[201083001]))
-setmetatable(t[2010640113].logic, getmetatable(t[201083001].logic))
-setmetatable(t[2010640114], getmetatable(t[201083001]))
-setmetatable(t[2010640114].logic, getmetatable(t[201083001].logic))
 setmetatable(t[2020430101], getmetatable(t[20120301]))
 setmetatable(t[2020430101].effect, getmetatable(t[2010050114].effect))
 setmetatable(t[2020430101].logic, getmetatable(t[20120301].logic))
@@ -191713,6 +197395,14 @@ setmetatable(t[7000021502], getmetatable(t[607101]))
 setmetatable(t[7000021502].logic, getmetatable(t[607101].logic))
 setmetatable(t[7000021503], getmetatable(t[607101]))
 setmetatable(t[7000021503].logic, getmetatable(t[607101].logic))
+setmetatable(t[7000021601], getmetatable(t[607101]))
+setmetatable(t[7000021601].logic, getmetatable(t[607101].logic))
+setmetatable(t[7000021602], getmetatable(t[607101]))
+setmetatable(t[7000021602].logic, getmetatable(t[607101].logic))
+setmetatable(t[7000021603], getmetatable(t[607101]))
+setmetatable(t[7000021603].logic, getmetatable(t[607101].logic))
+setmetatable(t[7000021604], getmetatable(t[607101]))
+setmetatable(t[7000021604].logic, getmetatable(t[607101].logic))
 setmetatable(t[10090261002], getmetatable(t[1009001]))
 setmetatable(t[10090261002].logic, getmetatable(t[1009001].logic))
 setmetatable(t[10090261102], getmetatable(t[1009001]))
@@ -193468,13 +199158,33 @@ setmetatable(t[20105801102], getmetatable(t[10440101]))
 setmetatable(t[20105801102].logic, getmetatable(t[10440101].logic))
 setmetatable(t[20105801103], getmetatable(t[10440101]))
 setmetatable(t[20105801103].logic, getmetatable(t[10440101].logic))
+setmetatable(t[20105801201], getmetatable(t[10440101]))
+setmetatable(t[20105801201].logic, getmetatable(t[10440101].logic))
+setmetatable(t[20105801202], getmetatable(t[10440101]))
+setmetatable(t[20105801202].logic, getmetatable(t[10440101].logic))
 setmetatable(t[20105901101], getmetatable(t[10440101]))
 setmetatable(t[20105901101].logic, getmetatable(t[10440101].logic))
 setmetatable(t[20105901102], getmetatable(t[10440101]))
 setmetatable(t[20105901102].logic, getmetatable(t[10440101].logic))
+setmetatable(t[20105901201], getmetatable(t[10440101]))
+setmetatable(t[20105901201].logic, getmetatable(t[10440101].logic))
+setmetatable(t[20105901202], getmetatable(t[10440101]))
+setmetatable(t[20105901202].logic, getmetatable(t[10440101].logic))
+setmetatable(t[20106001201], getmetatable(t[10440101]))
+setmetatable(t[20106001201].logic, getmetatable(t[10440101].logic))
+setmetatable(t[20106001202], getmetatable(t[10440101]))
+setmetatable(t[20106001202].logic, getmetatable(t[10440101].logic))
+setmetatable(t[20106101201], getmetatable(t[10440101]))
+setmetatable(t[20106101201].logic, getmetatable(t[10440101].logic))
+setmetatable(t[20106101202], getmetatable(t[10440101]))
+setmetatable(t[20106101202].logic, getmetatable(t[10440101].logic))
 setmetatable(t[20106201001], getmetatable(t[10440101]))
 setmetatable(t[20106201001].effect, getmetatable(t[10440101].effect))
 setmetatable(t[20106201001].logic, getmetatable(t[10440101].logic))
+setmetatable(t[20106201201], getmetatable(t[10440101]))
+setmetatable(t[20106201201].logic, getmetatable(t[10440101].logic))
+setmetatable(t[20106201202], getmetatable(t[10440101]))
+setmetatable(t[20106201202].logic, getmetatable(t[10440101].logic))
 setmetatable(t[20111401001], getmetatable(t[201083001]))
 setmetatable(t[20111401001].logic, getmetatable(t[201083001].logic))
 setmetatable(t[20203502001], getmetatable(t[201083001]))
@@ -193734,6 +199444,30 @@ setmetatable(t[30010680401], getmetatable(t[320101]))
 setmetatable(t[30010680401].logic, getmetatable(t[320101].logic))
 setmetatable(t[30010890101], getmetatable(t[320101]))
 setmetatable(t[30010890101].logic, getmetatable(t[320101].logic))
+setmetatable(t[30020560101], getmetatable(t[30502]))
+setmetatable(t[30020560101].effect, getmetatable(t[103310].effect))
+setmetatable(t[30020560101].logic, getmetatable(t[30502].logic))
+setmetatable(t[30020570101], getmetatable(t[30502]))
+setmetatable(t[30020570101].effect, getmetatable(t[103310].effect))
+setmetatable(t[30020570101].logic, getmetatable(t[30502].logic))
+setmetatable(t[30020610101], getmetatable(t[30502]))
+setmetatable(t[30020610101].effect, getmetatable(t[103310].effect))
+setmetatable(t[30020610101].logic, getmetatable(t[30502].logic))
+setmetatable(t[30020610201], getmetatable(t[30502]))
+setmetatable(t[30020610201].effect, getmetatable(t[103310].effect))
+setmetatable(t[30020610201].logic, getmetatable(t[30502].logic))
+setmetatable(t[30020620101], getmetatable(t[30502]))
+setmetatable(t[30020620101].logic, getmetatable(t[30502].logic))
+setmetatable(t[30020640101], getmetatable(t[30502]))
+setmetatable(t[30020640101].logic, getmetatable(t[30502].logic))
+setmetatable(t[30020650101], getmetatable(t[30502]))
+setmetatable(t[30020650101].logic, getmetatable(t[30502].logic))
+setmetatable(t[108041010102], getmetatable(t[30502]))
+setmetatable(t[108041010102].effect, getmetatable(t[103310].effect))
+setmetatable(t[108041010102].logic, getmetatable(t[30502].logic))
+setmetatable(t[108042010102], getmetatable(t[30502]))
+setmetatable(t[108042010102].effect, getmetatable(t[103310].effect))
+setmetatable(t[108042010102].logic, getmetatable(t[30502].logic))
 setmetatable(t[201011010011], getmetatable(t[1009001]))
 setmetatable(t[201011010011].logic, getmetatable(t[1009001].logic))
 setmetatable(t[201011010031], getmetatable(t[1009001]))
@@ -194338,6 +200072,18 @@ setmetatable(t[201056012009], getmetatable(t[201049010101]))
 setmetatable(t[201056012009].logic, getmetatable(t[201049010101].logic))
 setmetatable(t[201056012010], getmetatable(t[201049010101]))
 setmetatable(t[201056012010].logic, getmetatable(t[201049010101].logic))
+setmetatable(t[201064010101], getmetatable(t[201083001]))
+setmetatable(t[201064010101].logic, getmetatable(t[201083001].logic))
+setmetatable(t[201064010102], getmetatable(t[201083001]))
+setmetatable(t[201064010102].logic, getmetatable(t[201083001].logic))
+setmetatable(t[201064010103], getmetatable(t[201083001]))
+setmetatable(t[201064010103].logic, getmetatable(t[201083001].logic))
+setmetatable(t[201064010104], getmetatable(t[201083001]))
+setmetatable(t[201064010104].logic, getmetatable(t[201083001].logic))
+setmetatable(t[201064010105], getmetatable(t[201083001]))
+setmetatable(t[201064010105].logic, getmetatable(t[201083001].logic))
+setmetatable(t[201064010106], getmetatable(t[201083001]))
+setmetatable(t[201064010106].logic, getmetatable(t[201083001].logic))
 setmetatable(t[201065010101], getmetatable(t[201049010101]))
 setmetatable(t[201065010101].logic, getmetatable(t[201049010101].logic))
 setmetatable(t[201065010102], getmetatable(t[201049010101]))
@@ -194419,6 +200165,14 @@ setmetatable(t[201065010412], getmetatable(t[201049010101]))
 setmetatable(t[201065010412].logic, getmetatable(t[201049010101].logic))
 setmetatable(t[201065010413], getmetatable(t[201049010101]))
 setmetatable(t[201065010413].logic, getmetatable(t[201049010101].logic))
+setmetatable(t[201071010101], getmetatable(t[20106701]))
+setmetatable(t[201071010101].logic, getmetatable(t[20106701].logic))
+setmetatable(t[201071010201], getmetatable(t[20106701]))
+setmetatable(t[201071010201].logic, getmetatable(t[20106701].logic))
+setmetatable(t[201071011301], getmetatable(t[20106701]))
+setmetatable(t[201071011301].logic, getmetatable(t[20106701].logic))
+setmetatable(t[201071011302], getmetatable(t[20106701]))
+setmetatable(t[201071011302].logic, getmetatable(t[20106701].logic))
 setmetatable(t[202049010101], getmetatable(t[201049010101]))
 setmetatable(t[202049010101].logic, getmetatable(t[201049010101].logic))
 setmetatable(t[202049010102], getmetatable(t[201049010101]))
@@ -194453,6 +200207,26 @@ setmetatable(t[202052010102], getmetatable(t[201049010101]))
 setmetatable(t[202052010102].logic, getmetatable(t[201049010101].logic))
 setmetatable(t[202052010103], getmetatable(t[201049010101]))
 setmetatable(t[202052010103].logic, getmetatable(t[201049010101].logic))
+setmetatable(t[202063010101], getmetatable(t[201049010101]))
+setmetatable(t[202063010101].logic, getmetatable(t[201049010101].logic))
+setmetatable(t[202063010102], getmetatable(t[201049010101]))
+setmetatable(t[202063010102].logic, getmetatable(t[201049010101].logic))
+setmetatable(t[202063010201], getmetatable(t[201049010101]))
+setmetatable(t[202063010201].logic, getmetatable(t[201049010101].logic))
+setmetatable(t[202063010301], getmetatable(t[201049010101]))
+setmetatable(t[202063010301].logic, getmetatable(t[201049010101].logic))
+setmetatable(t[202063010302], getmetatable(t[201049010101]))
+setmetatable(t[202063010302].logic, getmetatable(t[201049010101].logic))
+setmetatable(t[202063010401], getmetatable(t[201049010101]))
+setmetatable(t[202063010401].logic, getmetatable(t[201049010101].logic))
+setmetatable(t[202063010501], getmetatable(t[201049010101]))
+setmetatable(t[202063010501].logic, getmetatable(t[201049010101].logic))
+setmetatable(t[202063010601], getmetatable(t[201049010101]))
+setmetatable(t[202063010601].logic, getmetatable(t[201049010101].logic))
+setmetatable(t[202063010602], getmetatable(t[201049010101]))
+setmetatable(t[202063010602].logic, getmetatable(t[201049010101].logic))
+setmetatable(t[202063010701], getmetatable(t[201049010101]))
+setmetatable(t[202063010701].logic, getmetatable(t[201049010101].logic))
 setmetatable(t[300100501012], getmetatable(t[20120301]))
 setmetatable(t[300100501012].logic, getmetatable(t[20120301].logic))
 setmetatable(t[300100501013], getmetatable(t[20120301]))

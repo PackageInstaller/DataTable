@@ -266,6 +266,73 @@ return {
     OutFocusMaxDistance = 20,
     OutFocusMinDistance = 0.1
   },
+  {
+    AimedAngleX = {20, -20},
+    AimedAngleY = {180, -180},
+    AimedLerpVal = 0.1,
+    AimedOffset = {
+      0.7,
+      1.55,
+      -2.3
+    },
+    AimedSpeed = 0.5,
+    AtkCorrectVal = {
+      4.5,
+      0.005,
+      0.5,
+      3
+    },
+    BattleCamDistLimit = {
+      1,
+      1,
+      1,
+      1
+    },
+    CamSpeedLimit = 10,
+    CameraPinchType = 2,
+    CameraViewType = 3,
+    CheckCollider = 1,
+    CheckFocusHit = 1,
+    CoordinateType = 2,
+    DefalutFOV = 55,
+    DefaultCorrectVal = {
+      0.05,
+      1.25,
+      10
+    },
+    DefaultDistance = 0.01,
+    DefaultHeight = 0.001,
+    DefaultToFocusDuration = 3.5,
+    DefaultYPOs = 1.7,
+    DragParam = {
+      0.25,
+      0.25,
+      -49,
+      40,
+      15
+    },
+    DragType = 1,
+    FocusHeight = 1.5,
+    FocusHeroLerpVal = 5,
+    FocusMaxAngle = 30,
+    FocusMaxDistance = 20,
+    FocusMinDistance = 8,
+    FocusPositionLerp = 3,
+    FocusRotationLerp = 10,
+    FocusToDefaultDuration = 3.5,
+    GearCameraVal = {
+      0.01,
+      0.001,
+      0.01,
+      0.001
+    },
+    Id = 6,
+    MoveCorrectVal = 0.005,
+    MoveCorrectYLerp = 0.5,
+    Name = "第一人称镜头-跟随角色出生朝向",
+    OutFocusMaxDistance = 20,
+    OutFocusMinDistance = 0.1
+  },
   [9] = {
     AimedAngleX = {20, -20},
     AimedAngleY = {180, -180},
@@ -3521,6 +3588,73 @@ return {
     OutFocusMaxDistance = 8,
     OutFocusMinDistance = 0.1,
     SetCameraDuration = 0.5
+  },
+  [10801] = {
+    AimedAngleX = {20, -20},
+    AimedAngleY = {180, -180},
+    AimedLerpVal = 0.1,
+    AimedOffset = {
+      0.7,
+      1.55,
+      -2.3
+    },
+    AimedSpeed = 0.5,
+    AtkCorrectVal = {
+      4.5,
+      0.005,
+      0.5,
+      3
+    },
+    BattleCamDistLimit = {
+      1,
+      1,
+      1,
+      1
+    },
+    CamSpeedLimit = 10,
+    CameraPinchType = 2,
+    CameraViewType = 3,
+    CheckCollider = 1,
+    CheckFocusHit = 1,
+    CoordinateType = 2,
+    DefalutFOV = 55,
+    DefaultCorrectVal = {
+      0.05,
+      1.25,
+      10
+    },
+    DefaultDistance = 0.01,
+    DefaultHeight = 0.001,
+    DefaultToFocusDuration = 3.5,
+    DefaultYPOs = 1.7,
+    DragParam = {
+      0.25,
+      0.25,
+      -49,
+      40,
+      15
+    },
+    DragType = 1,
+    FocusHeight = 1.5,
+    FocusHeroLerpVal = 5,
+    FocusMaxAngle = 30,
+    FocusMaxDistance = 20,
+    FocusMinDistance = 8,
+    FocusPositionLerp = 3,
+    FocusRotationLerp = 10,
+    FocusToDefaultDuration = 3.5,
+    GearCameraVal = {
+      0.01,
+      0.001,
+      0.01,
+      0.001
+    },
+    Id = 10801,
+    MoveCorrectVal = 0.005,
+    MoveCorrectYLerp = 0.5,
+    Name = "第八章第一人称镜头",
+    OutFocusMaxDistance = 20,
+    OutFocusMinDistance = 0.1
   },
   [32103] = {
     AimedAngleX = {20, -20},

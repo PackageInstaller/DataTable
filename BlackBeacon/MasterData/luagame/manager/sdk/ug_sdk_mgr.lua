@@ -23,19 +23,22 @@ function M:_init()
   self:_init_default_products()
 end
 
-local _log = function(log, ...)
+local function _log(log, ...)
   if GAME_DEBUG then
     Log.Info("[Lua_SDK] " .. log, ...)
   else
     Log.Info("[Lua_SDK] " .. log)
   end
 end
-local _is_success = function(code)
+
+local function _is_success(code)
   return code == CODE.SUCCESS
 end
-local _key = function(module, func)
+
+local function _key(module, func)
   return module .. func
 end
+
 local PROCESS_TYPE = {AUTO = 1, CUSTOM = 2}
 local PROCCESS_FUNC = {
   [SDKConst.Login] = {

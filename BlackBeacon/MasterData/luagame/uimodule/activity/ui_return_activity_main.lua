@@ -39,23 +39,6 @@ function ui:ui_finish_load()
       activity_ui:ui_show()
     end)
   end)
-  self:set_button("Activity4Btn", function()
-    NoviceMgr:clear_ret_act_red()
-    self.v_new_red_dot:SetActive(NoviceMgr:get_red_state())
-    local cfg = ShareRes.get_return_activity_new_cfg()
-    local check_time = false
-    for idx, data in ipairs(cfg) do
-      if self:check_time_condition(data.ActStartTime, data.ActEndTime) then
-        check_time = true
-      end
-    end
-    if not check_time then
-      Util.show_message_tip("活动已结束")
-      return
-    end
-    local activity_ui = UIMgr:get_ui(RETURN_ACTIVITY.NEW_CNT_ACT)
-    activity_ui:ui_show(self)
-  end)
   self.v_act_new_img = Util.get_image(nil, self.v_uiobjects.Activity4Btn)
 end
 
@@ -84,6 +67,8 @@ function ui:ui_on_show(id, polt_id)
   self:bind_auto_mq(Const.ON_RET_ACT_SIGN_AWARD, self.refresh_red, self)
   local cfg_main_view = ShareRes.get_return_activity_main_view_cfg(RETURN_ACTIVITY_CFG_ID.NEW_CNT_ACT)
   ResMgr:load_set_icon(self.v_act_new_img, cfg_main_view.TitleIcon)
+  self.v_uiobjects.ActivityNameImage:SetActive(false)
+  self.v_uicompents.Activity4Btn_btn.interactable = false
 end
 
 function ui:refresh_red()

@@ -70,13 +70,15 @@ function ui:ui_finish_load()
     end
     Global.sound_mgr:play_lvup_sound()
     local is_show_lv_up = self:check_show_lv_up()
-    local callback = function()
+    
+    local function callback()
       if self.v_forcus_lvup_ani then
         self.v_forcus_lvup_ani:SetActive(true)
       end
       self:play_up_lv_effect(is_show_lv_up)
       Util.show_message_tip(2141)
     end
+    
     CharacterMgr:char_advance(self.v_buddy_info.id, callback)
   end)
   self:set_button("CostItem", function()

@@ -171,8 +171,8 @@ return {
     Condition = {2100102502},
     GraphID = {3},
     Id = 1001025,
-    RecommendID = {},
-    RecommendSuitID = {}
+    RecommendID = {22},
+    RecommendSuitID = {22}
   },
   [1001026] = {
     Condition = {2100102602},
@@ -185,14 +185,14 @@ return {
     Condition = {2100102702},
     GraphID = {3},
     Id = 1001027,
-    RecommendID = {},
-    RecommendSuitID = {}
+    RecommendID = {21},
+    RecommendSuitID = {21}
   },
-  [1010000] = {
-    Condition = {2101000002},
+  [1001030] = {
+    Condition = {2100103002},
     GraphID = {3},
-    Id = 1010000,
-    RecommendID = {},
-    RecommendSuitID = {}
+    Id = 1001030,
+    RecommendID = {23},
+    RecommendSuitID = {23}
   }
 }

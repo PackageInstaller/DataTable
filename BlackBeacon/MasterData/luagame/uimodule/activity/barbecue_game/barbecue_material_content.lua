@@ -24,6 +24,7 @@ function ui:set_data(material_cfg)
   self.v_material_id = material_cfg.Id
   self.v_cfg = material_cfg
   self.v_limit_sys_id = material_cfg.LimitSysId
+  self.v_output_sys_id = material_cfg.OutputSysId
   self:reset_ui()
 end
 
@@ -117,8 +118,8 @@ function ui:on_click()
   end
 end
 
-function ui:on_upgrade(msg)
-  if not self.v_limit_sys_id or self.v_cfg.LimitSysId ~= msg.mm_x then
+function ui:on_upgrade()
+  if not self.v_limit_sys_id then
     return
   end
   self:reset_limit_num()
@@ -132,7 +133,8 @@ function ui:on_try_move_mat_to_content(msg)
   if not self.v_current_num or self.v_current_num >= self.v_max_num then
     return false
   end
-  self.v_current_num = self.v_current_num + 1
+  local current_num = self.v_current_num + BarbecueGameMgr:get_val_by_sys_id(self.v_output_sys_id)
+  self.v_current_num = current_num > self.v_max_num and self.v_max_num or current_num
   self:refresh_child_objs()
   local _msg = MsgGame:mq_publish2(Const.MSG_BBQ_MATERIAL_MOVE_TO_CONTENT)
   _msg.mm_x = self.v_material_id

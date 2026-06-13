@@ -693,13 +693,15 @@ function ui:update_model_view(buddy_id, fashion_id, equip_fashion)
   end
   model_fashion_id = model_fashion_id or FashionMgr:get_fashion_model_id(buddy_id)
   local model_idx
-  local load_npc_cb = function()
+  
+  local function load_npc_cb()
     self:load_npc_cb()
     if self.v_model_view and self.v_model_view.set_npc_pos_rot_euler then
       self.v_model_view:set_npc_pos_rot_euler()
     end
     CharacterMgr:play_hero_approach_anim(buddy_id, 1, self.v_model_view)
   end
+  
   local use_weapon_res
   if equip_fashion then
     local cfg = ShareRes.get_weapon_fashion_cfg(equip_fashion)
@@ -943,9 +945,11 @@ function ui:change_aid_info(is_remove)
     end
     buddy_id = 0
   end
-  local cb = function()
+  
+  local function cb()
     self:ui_hide()
   end
+  
   CharacterMgr:req_set_assist_buddy(pos, buddy_id, cb)
 end
 

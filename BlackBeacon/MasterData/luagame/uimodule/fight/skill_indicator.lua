@@ -1,6 +1,6 @@
 local M = {}
 local CSInput = UnityEngine.Input
-local CSHelper = CSHelper
+local CSHelper = _ENV.CSHelper
 local RectTransformUtility = UnityEngine.RectTransformUtility
 local UnityCamera = typeof(UnityEngine.Camera)
 local JoystickType = typeof(CS.Game.SkillJoyStick)
@@ -38,7 +38,8 @@ local INDICATOR_COLOR_TYPE = {
 local cancle_r2 = 0
 local distance_cancle_r2 = 90000
 local AREA_TYPE = {CIRCLE = 1, SECTOR = 2}
-local reduce_distance = function(center_x, center_y, distance, x, y)
+
+local function reduce_distance(center_x, center_y, distance, x, y)
   local dir_x, dir_y = x - center_x, y - center_y
   local len = math.sqrt(dir_x * dir_x + dir_y * dir_y)
   if distance > len then
@@ -47,7 +48,8 @@ local reduce_distance = function(center_x, center_y, distance, x, y)
   local offsetx, offsety = dir_x / len * distance, dir_y / len * distance
   return center_x + offsetx, center_y + offsety
 end
-local get_nearest_tar = function(x, z, range, tar_camp)
+
+local function get_nearest_tar(x, z, range, tar_camp)
   local all_char = SceneMgr:get_all_char()
   local tar
   for _, char in pairs(all_char) do
@@ -63,9 +65,11 @@ local get_nearest_tar = function(x, z, range, tar_camp)
   end
   return tar
 end
-local is_null_obj = function(obj)
+
+local function is_null_obj(obj)
   return not obj or obj:IsNull()
 end
+
 local AREA_ON_UPDATE = {
   [AREA_TYPE.CIRCLE] = function(area, hero_pos, rx, ry)
     local obj = area.effect.gameobj
@@ -100,7 +104,8 @@ local INDICATOR_ON_ENABLE = {
 local NO_RED_TYEP = {
   [INDI_TYPE.SCREEN_CIRCLE] = true
 }
-local _ARROW_UPDATE_FUNC = function(indi, hero_pos, rx, ry, area_r, key, obj)
+
+local function _ARROW_UPDATE_FUNC(indi, hero_pos, rx, ry, area_r, key, obj)
   obj = obj or indi.effect.gameobj
   if is_null_obj(obj) then
     return
@@ -135,6 +140,7 @@ local _ARROW_UPDATE_FUNC = function(indi, hero_pos, rx, ry, area_r, key, obj)
   end
   M.set_skill_indi_in_camera(target_pos, hero_pos, nil, key)
 end
+
 local INDI_ON_UPDATE = {
   [INDI_TYPE.CIRCLE] = function(indi, hero_pos, rx, ry, area_r, key)
     local obj = indi.effect.gameobj
@@ -301,7 +307,8 @@ local INDI_ON_UPDATE = {
 local SPECAIL_KEYS = {
   [Config.INPUT_CODE.AIM_JOYSTICK] = true
 }
-local change_effect_obj = function(effect, color_type)
+
+local function change_effect_obj(effect, color_type)
   if not effect then
     return
   end
@@ -328,7 +335,8 @@ local change_effect_obj = function(effect, color_type)
   effect.gameobj:SetActive(false)
   effect.gameobj:SetActive(true)
 end
-local create_effect = function(path, indi_type)
+
+local function create_effect(path, indi_type)
   local effect = {}
   effect.path_cache = path
   effect.gameobj = ResPoolMgr:get_effect_res(path, true)
@@ -345,7 +353,8 @@ local create_effect = function(path, indi_type)
   change_effect_obj(effect, INDICATOR_COLOR_TYPE.BLUE)
   return effect
 end
-local destory_effect = function(cfg)
+
+local function destory_effect(cfg)
   if not cfg or not cfg.effect then
     return
   end
@@ -444,7 +453,7 @@ function M.on_key_up(key_code)
   M.set_indicator_enable(key_code, false)
 end
 
-local process_cfg = function(cfg, key)
+local function process_cfg(cfg, key)
   if not cfg or cfg.res == FX_text_kong then
     return
   end
@@ -576,7 +585,7 @@ function M.set_ui_show(key_code, enable, reset_to_last_drag)
   M.on_update()
 end
 
-local set_key_cancled = function(cancled, key)
+local function set_key_cancled(cancled, key)
   local area = key.area
   local indi = key.indi
   local color, alpha, color_type
@@ -592,7 +601,8 @@ local set_key_cancled = function(cancled, key)
   change_effect_obj(indi.effect, color_type)
   change_effect_obj(area.effect, color_type)
 end
-local set_effect_acitve = function(info, enable)
+
+local function set_effect_acitve(info, enable)
   if info and info.effect then
     local obj = info.effect.gameobj
     if obj and not obj:IsNull() then
@@ -803,6 +813,8 @@ function M.on_uifight_delete()
   M.v_extra_pos_vec3 = nil
   M.parent_ui = nil
   UtilTable.clear_map(SkillKeys)
+  SkillKeys = {}
+  cancle_btn = nil
 end
 
 function M.set_is_force_red(key_code, is_force_red)

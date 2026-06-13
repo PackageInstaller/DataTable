@@ -21,14 +21,16 @@ local SELECT_BG_COLOR = {
   [true] = "FFFFFF",
   [false] = "FFFFFF"
 }
-local sort = function(a, b)
+
+local function sort(a, b)
   if a.Serial ~= b.Serial then
     return a.Serial < b.Serial
   else
     return false
   end
 end
-local sort2 = function(a, b)
+
+local function sort2(a, b)
   local a_group_cfg = ShareRes.get_infinite_entry_group_cfg(a.OwnerEntryGroup)
   local b_group_cfg = ShareRes.get_infinite_entry_group_cfg(b.OwnerEntryGroup)
   if a_group_cfg.Serial ~= b_group_cfg.Serial then

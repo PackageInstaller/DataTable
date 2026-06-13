@@ -139,9 +139,11 @@ function ui:divide_into_groups(data, cur_page)
       _tinsert(target_table.item_info, ornament_cfg)
     end
   end
-  local sort_func = function(a, b)
+  
+  local function sort_func(a, b)
     return a.group_info.Priority < b.group_info.Priority
   end
+  
   local arrange_res = {}
   for _, info in pairs(res) do
     if next(info.item_info) then

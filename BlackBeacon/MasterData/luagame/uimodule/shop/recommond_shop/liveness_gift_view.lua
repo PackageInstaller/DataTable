@@ -22,9 +22,10 @@ end
 function ui:on_click_get_free_award()
   local free_award_group_id = self.v_gift_cfg and self.v_gift_cfg.FreeAwardGroupId
   if free_award_group_id then
-    local recive_func = function()
+    local function recive_func()
       LivenessGiftMgr:req_get_free_award(self.v_id)
     end
+    
     local data = LivenessGiftMgr:get_liveness_gift_data(self.v_id)
     local state
     if not data then
@@ -72,6 +73,7 @@ function ui:ui_on_show(id)
   self.v_gift_cfg = ShareRes.get_liveness_gift_cfg(id)
   self.v_uicompents.Tips1_txt.text = self.v_gift_cfg.Tips1
   self.v_uicompents.Tips2_txt.text = self.v_gift_cfg.Tips2
+  self.v_uicompents.CurrNum_txt.text = RechargeMgr:get_product_show_price_str(self.v_gift_cfg)
   self:bind_auto_mq(Const.MSG_ON_LIVENESS_GIFT_UPDATE, self.refresh_view, self)
   self:refresh_view()
 end
@@ -163,7 +165,14 @@ function ui:refresh_btn()
   local can_get = data and data.buyed_sign_day > data.buyed_gained_day and day_num > data.buyed_gained_day
   self.v_uiobjects.BtnBuy:SetActiveEx(not_buy)
   self.v_uiobjects.BtnRecive:SetActiveEx(not not_buy and can_get)
-  self.v_uiobjects.Recived:SetActiveEx(not not_buy and not can_get)
+  local is_recive = not not_buy and not can_get
+  local day_list = ShareRes.create("recharge.liveness_day_award", self.v_id)
+  local is_all_recive = is_recive and data and #day_list <= data.buyed_gained_day
+  self.v_uiobjects.Recived:SetActiveEx(is_recive)
+  if self.v_uiobjects.RecivedText then
+    self.v_uiobjects.RecivedText:SetActiveEx(is_recive and not is_all_recive)
+    self.v_uiobjects.AllRecivedText:SetActiveEx(is_all_recive)
+  end
 end
 
 return ui

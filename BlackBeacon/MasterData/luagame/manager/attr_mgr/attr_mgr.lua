@@ -44,6 +44,14 @@ function M:_init(char)
   self.v_change_attrs = {}
 end
 
+function M:on_before_destroy()
+  self.v_char = nil
+  self.v_costom_listener_attr_map = nil
+  self.v_magic_attr_limit = nil
+  self.v_attr_type_cfg = nil
+  self.v_change_attrs = nil
+end
+
 function M:inc_behitfly_count(count)
   if not count then
     return
@@ -252,10 +260,12 @@ end
 
 local ATTR_DEBUG = false
 local DEBUG_ATTR = {}
-local calibrationValue = function(value, valueDecimalPlaces)
+
+local function calibrationValue(value, valueDecimalPlaces)
   local mult = 10 ^ (valueDecimalPlaces or 0)
   return _mfloor(value * mult + 0.5) / mult
 end
+
 local ATTR_FIXED_CHANGE_FUNC = {
   [SET_TYPE.REPLACE] = function(cur, value)
     cur.FIXED = value
@@ -876,7 +886,7 @@ function M:on_before_destroy()
   self:release_all_single_attr()
 end
 
-local release_single_attr = function(single_attrs)
+local function release_single_attr(single_attrs)
   for _, single_attr in pairs(single_attrs) do
     FightDefine.push_single_attr_temp(single_attr)
   end

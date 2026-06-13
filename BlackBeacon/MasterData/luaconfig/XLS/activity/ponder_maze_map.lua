@@ -5,11 +5,7 @@ local t = {
     Id = 101,
     MapSize = {1920, 1080},
     NodeLibraryID = 101,
-    TargetClue = {
-      1,
-      2,
-      3
-    },
+    TargetClue = {1, 3},
     TargetPonder = 1,
     Thought = {
       1,
@@ -17,9 +13,9 @@ local t = {
       3
     },
     ThoughtNum = {
-      3,
-      3,
-      3
+      2,
+      2,
+      2
     }
   },
   [102] = {
@@ -27,12 +23,8 @@ local t = {
     DefPonder = 9,
     Id = 102,
     MapSize = nil,
-    NodeLibraryID = 101,
-    TargetClue = {
-      1,
-      2,
-      3
-    },
+    NodeLibraryID = 102,
+    TargetClue = {3, 1},
     TargetPonder = 2,
     Thought = {
       1,
@@ -50,12 +42,8 @@ local t = {
     DefPonder = 9,
     Id = 103,
     MapSize = nil,
-    NodeLibraryID = 101,
-    TargetClue = {
-      1,
-      2,
-      3
-    },
+    NodeLibraryID = 103,
+    TargetClue = {3, 2},
     TargetPonder = 3,
     Thought = {
       1,
@@ -69,11 +57,15 @@ local t = {
     }
   },
   [104] = {
-    ClueCount = {1, 1},
+    ClueCount = {
+      1,
+      1,
+      1
+    },
     DefPonder = 9,
     Id = 104,
     MapSize = nil,
-    NodeLibraryID = 101,
+    NodeLibraryID = 104,
     TargetClue = {
       1,
       2,
@@ -92,11 +84,15 @@ local t = {
     }
   },
   [105] = {
-    ClueCount = {1, 1},
+    ClueCount = {
+      1,
+      1,
+      2
+    },
     DefPonder = 9,
     Id = 105,
     MapSize = nil,
-    NodeLibraryID = 101,
+    NodeLibraryID = 105,
     TargetClue = {
       1,
       2,
@@ -115,11 +111,15 @@ local t = {
     }
   },
   [106] = {
-    ClueCount = {1, 1},
+    ClueCount = {
+      1,
+      2,
+      1
+    },
     DefPonder = 9,
     Id = 106,
     MapSize = nil,
-    NodeLibraryID = 101,
+    NodeLibraryID = 106,
     TargetClue = {
       1,
       2,
@@ -132,17 +132,21 @@ local t = {
       3
     },
     ThoughtNum = {
-      3,
-      3,
-      3
+      4,
+      4,
+      4
     }
   },
   [107] = {
-    ClueCount = {1, 1},
+    ClueCount = {
+      1,
+      1,
+      2
+    },
     DefPonder = 9,
     Id = 107,
     MapSize = nil,
-    NodeLibraryID = 101,
+    NodeLibraryID = 107,
     TargetClue = {
       1,
       2,
@@ -155,17 +159,21 @@ local t = {
       3
     },
     ThoughtNum = {
-      3,
-      3,
-      3
+      4,
+      4,
+      4
     }
   },
   [108] = {
-    ClueCount = {1, 1},
+    ClueCount = {
+      1,
+      1,
+      1
+    },
     DefPonder = 9,
     Id = 108,
     MapSize = nil,
-    NodeLibraryID = 101,
+    NodeLibraryID = 108,
     TargetClue = {
       1,
       2,
@@ -178,9 +186,9 @@ local t = {
       3
     },
     ThoughtNum = {
-      3,
-      3,
-      3
+      1,
+      1,
+      1
     }
   }
 }

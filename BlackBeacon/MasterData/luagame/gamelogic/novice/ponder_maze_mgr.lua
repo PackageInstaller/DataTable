@@ -16,12 +16,24 @@ function M:on_fight_end(msg)
   local point_id = TowerMgr:get_cur_point_id()
   if self.v_battle_point_id == point_id then
     self.v_battle_result = msg.mm_x
+    if self.v_battle_result then
+      local option_cfg = ShareRes.get_ponder_maze_node_option_cfg(self.v_battle_option_id)
+      if option_cfg.Param[2] then
+        self.v_battle_event_id = option_cfg.Param[2]
+        UIMgr:clear_main_scene_after_load_ui()
+        UIMgr:set_main_scene_after_load_ui("ui_maze_game_event", self.v_activity_id, self.v_battle_point_id, self.v_battle_node_id, self.v_battle_event_id, self.v_battle_option_id, true)
+      else
+        self:try_comp_node(self.v_battle_node_id)
+        self:clear_battle_node_param()
+      end
+    end
   end
 end
 
 function M:start_game(activity_id, point_id)
   self:sys_mq_bind(Const.MSG_ON_FIGHT_END, self.on_fight_end, self)
   self:init_game_data(activity_id, point_id)
+  UIMgr:try_show_ui("ui_maze_game_view")
 end
 
 function M:restart_game()
@@ -51,9 +63,12 @@ function M:init_game_data(activity_id, point_id)
         is_active = is_type1
       }
     end
-    for _, pre_node in pairs(node_cfg.PreNode) do
-      self.v_node_state_map[node_id].pre_node = pre_node
+    local pre_node
+    for key, pre_node_id in pairs(node_cfg.PreNode) do
+      pre_node = pre_node or {}
+      pre_node[pre_node_id] = pre_node_id
     end
+    self.v_node_state_map[node_id].pre_node = pre_node
   end
   self.v_thought_count_map = {}
   for index, thought_id in pairs(map_cfg.Thought) do
@@ -73,15 +88,20 @@ end
 
 function M:check_node_active(node_id)
   local node_data = self.v_node_state_map[node_id]
-  if not node_data then
+  if not node_data or node_data.is_active then
     return
   end
   local is_active = false
-  if not node_data.pre_node then
-    is_active = true
-  end
-  local pre_node_data = self.v_node_state_map[node_data.pre_node]
-  if not pre_node_data or pre_node_data.is_comp then
+  local pre_node_map = node_data.pre_node
+  if pre_node_map then
+    for pre_node_id in pairs(pre_node_map) do
+      local pre_node_data = self.v_node_state_map[pre_node_id]
+      if pre_node_data and pre_node_data.is_comp then
+        is_active = true
+        break
+      end
+    end
+  else
     is_active = true
   end
   node_data.is_active = is_active
@@ -202,21 +222,17 @@ function M:try_comp_node(node_id)
 end
 
 function M:enter_option_battle(node_id, event_id, option_id)
-  if self.v_is_game_stop then
-    return
-  end
   local option_cfg = ShareRes.get_ponder_maze_node_option_cfg(option_id)
   local battle_point_id = option_cfg.Param[1]
-  local battle_param = self:get_battle_pass_id(battle_point_id, node_id)
-  if NoviceMgr:get_ponder_maze_node_battle_pass(self.v_activity_id, battle_param) then
-    return false
-  end
   self.v_battle_node_id = node_id
   self.v_battle_option_id = option_id
   self.v_battle_point_id = battle_point_id
   self.v_battle_event_id = event_id
   UIMgr:try_show_ui("ui_maze_game_battle_tips", nil, node_id, option_id)
-  return true
+end
+
+function M:is_game_stop()
+  return self.v_is_game_stop
 end
 
 function M:get_battle_pass_id(point_id, node_id)
@@ -248,10 +264,13 @@ function M:game_victory()
   end
   self.v_is_victory = true
   self.v_is_game_stop = true
+  local ponder_id = self:get_ponder_result()
   NoviceMgr:request_activity_ponder_report_pass_point(self.v_activity_id, self.v_point_id, true, function()
-    self:open_settle_tips()
+    NoviceMgr:set_is_need_show_maze_game_settle_tips(true)
+    NoviceMgr:set_maze_game_settle_tips_ponder_id(ponder_id)
   end)
-  self:open_settle_tips()
+  NoviceMgr:set_is_need_show_maze_game_settle_tips(true)
+  NoviceMgr:set_maze_game_settle_tips_ponder_id(ponder_id)
 end
 
 function M:game_defeated()
@@ -266,9 +285,9 @@ function M:game_defeated()
   self:open_settle_tips()
 end
 
-function M:open_settle_tips()
+function M:open_settle_tips(close_callback)
   UIMgr:try_destory_ui("ui_maze_game_settle_tips")
-  UIMgr:try_show_ui("ui_maze_game_settle_tips")
+  UIMgr:get_ui("ui_maze_game_settle_tips"):ui_show(nil, close_callback)
 end
 
 function M:get_ponder_result()
@@ -278,6 +297,13 @@ end
 
 function M:is_game_victory()
   return self.v_is_victory
+end
+
+function M:start_battle()
+  local battle_param = self:get_battle_pass_id(self.v_battle_point_id, self.v_battle_node_id)
+  local activity_id = self.v_activity_id
+  UIMgr:get_ui("team"):ui_show(nil, self.v_battle_point_id, Config.CommonDefine.CHALLENGE_TYPE.ACTIVITY_PONDER, nil, nil, nil, {activity_id, battle_param})
+  UIMgr:set_main_scene_after_load_ui("ui_maze_game_view")
 end
 
 return M

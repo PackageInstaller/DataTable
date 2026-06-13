@@ -425,6 +425,9 @@ function M:on_destroy_gameobj()
   if self.v_simple_shadow and not self.v_simple_shadow:IsNull() then
     ResPoolMgr:release(self.v_simple_shadow)
   end
+  self.v_simple_shadow_go = nil
+  self.v_simple_shadow = nil
+  self.v_simple_shadow_transform = nil
   self:clear_attach_point_move_info()
   Base.on_destroy_gameobj(self)
 end
@@ -1159,7 +1162,8 @@ function M:enter_stun_state(before_lv, clear_tough)
   end
   local enter_stun = false
   self.skill_mgr:abort()
-  local enter_cb = function()
+  
+  local function enter_cb()
     local info = self.v_toughness_info
     local stun_time = clear_tough and info.force_recover_time or self.character_cfg.TimeOfStunState
     if stun_time >= 0 then
@@ -1167,6 +1171,7 @@ function M:enter_stun_state(before_lv, clear_tough)
       enter_stun = true
     end
   end
+  
   self:check_motion_config(Config.ACT_DEFINE.Stun, enter_cb)
   return enter_stun
 end

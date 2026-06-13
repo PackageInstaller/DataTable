@@ -2655,5 +2655,13 @@ return {
     },
     Id = 210110161,
     TotalTime = 16
+  },
+  [210110261] = {
+    BodyAnim = {"action"},
+    BodyAnimTime = {
+      {0, 0}
+    },
+    Id = 210110261,
+    TotalTime = 8
   }
 }

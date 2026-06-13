@@ -18,16 +18,19 @@ function ShopTemClass:ui_finish_load()
       local param = {
         shop_grid_index = self.v_parent_ui.shop_grid_index,
         id = self.v_id,
-        bless_id = self.v_bless_id
+        bless_id = self.v_bless_id,
+        cost = self.v_cost
       }
       UIMgr:get_ui("ui_minesweeper_buff"):ui_show(MineSweeperBuffUI.Type.Shop, param)
     else
-      local args = {
-        self.v_id
-      }
-      MineSweeperMgr:use_grid(self.v_parent_ui.shop_grid_index, args, function()
-        self.v_parent_ui:refresh()
-      end)
+      Util.show_notify_popup_message(function()
+        local args = {
+          self.v_id
+        }
+        MineSweeperMgr:use_grid(self.v_parent_ui.shop_grid_index, args, function()
+          self.v_parent_ui:refresh()
+        end)
+      end, "是否购买该物品", nil, "是", "否", nil, nil, nil, true)
     end
   end)
 end
@@ -39,6 +42,7 @@ function ShopTemClass:set_data(data)
   local id = data.Id
   self.v_id = id
   self.v_award_type = award_type
+  self.v_cost = data.ConsumeCount
   if award_type == AwardType.Bless then
     local args = grid_info.args
     local bless_id
@@ -63,6 +67,9 @@ function ShopTemClass:set_data(data)
     self.v_uicompents.GoldNum_txt.text = data.ConsumeCount
     ResMgr:load_set_icon(self.v_uicompents.Icon_img, data.Icon)
   end
+  local minesweeper_info = MineSweeperMgr:get_minesweeper_chapter_info()
+  local gold_count = minesweeper_info.gold_count
+  Util.set_color(self.v_uicompents.GoldNum_txt, gold_count >= data.ConsumeCount and 16117218 or 16735838)
   local purchased
   for _, v in ipairs(bought_shop_id_list) do
     if v == id then
@@ -93,7 +100,6 @@ end
 
 function ui:ui_on_show(grid_index)
   self:refresh(grid_index)
-  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.ui_minesweeper_shop_UI_SOUND)
 end
 
 function ui:ui_on_hide()

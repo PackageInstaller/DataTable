@@ -433,9 +433,11 @@ end
 
 function ui:_on_click_award(index, award_id, state, episode_id)
   local str = Util.format_str(_sformat("第%d层奖励", index))
-  local get_award_func = function()
+  
+  local function get_award_func()
     ChallengeRingPlusMgr:get_ring_box_award(episode_id, index)
   end
+  
   UIMgr:get_ui("ui_award_tips_com"):ui_show(str, award_id, state, get_award_func)
 end
 
@@ -526,10 +528,12 @@ function ui:reset_treasure_progress(episode_id)
     UIMgr:get_ui("uimessagetip"):ui_show(content)
     return
   end
-  local sure_cb = function()
+  
+  local function sure_cb()
     self.v_btn_resetaward.enabled = false
     ChallengeRingPlusMgr:reset_box_progress(episode_id)
   end
+  
   local tip = Util.format_str(string.format("将消耗【%s*%d】重置本难度的进度奖励，未领取的奖励不予返还，是否确认？", item_name, need_num))
   UIMgr:get_ui("uinotice_tips"):ui_show(sure_cb, nil, tip, Util.format_str("确定"), Util.format_str("取消"))
 end

@@ -67,7 +67,6 @@ function ui:release_hp_item(item)
   if not item then
     return
   end
-  item:set_destroy_type(true)
   self:_push_item(self.s_hp_pool, item)
 end
 
@@ -176,6 +175,10 @@ function ui:ui_on_destroy()
     end
     self.v_follow_debug_info_tem = nil
   end
+  self.s_hp_pool = nil
+  self.v_navigation_hud_pool = nil
+  self.v_float_icon_pool = nil
+  self.v_navigation_fight_hud_pool = nil
 end
 
 function ui:show_message(msg)

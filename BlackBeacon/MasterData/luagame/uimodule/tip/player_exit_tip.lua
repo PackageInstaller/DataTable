@@ -7,15 +7,17 @@ function ui:ui_finish_load()
     self:ui_hide()
   end)
   self:set_button_listener(ui_compents.BtnExitToLogin_btn, function()
-    SDKManager:logout()
+    self:ui_hide()
+    local login_ui = UIMgr:try_get_visible_ui("uilogin")
+    if Global.gamemode:gmode_is_login() and login_ui and not SDKManager:is_use_sdk() then
+      login_ui:show_logout_popup()
+    else
+      SDKManager:logout()
+    end
   end)
   self:set_button_listener(ui_compents.BtnExitToDesktop_btn, function()
     CSHelper.QuitApplication()
   end)
-end
-
-function ui:ui_on_show()
-  self.v_uiobjects.BtnExitToLogin:SetActive(not Global.gamemode:gmode_is_login())
 end
 
 return ui

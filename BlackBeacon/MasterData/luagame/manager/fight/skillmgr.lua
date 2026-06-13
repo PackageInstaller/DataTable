@@ -60,7 +60,6 @@ end
 function M:_init(char)
   Base._init(self)
   self.v_char = char
-  self.v_skill_tbl = {}
   self.v_cur_skill = nil
   self.missile_task_pool = LuaObjPoolMgr.get_pool("mssile_task_pool") or LuaObjPoolMgr.register("mssile_task_pool", 50, MissileTask)
   self.v_missile_cache = {}
@@ -70,7 +69,6 @@ function M:_init(char)
     [0] = {}
   }
   self:load_skill()
-  self.v_fight_skill_map = nil
   self.v_change_effect_energy_id = {}
   self.v_add_library_skill_list = {}
   self.v_skill_correct_data = {}
@@ -79,6 +77,24 @@ function M:_init(char)
   self.v_keyframe_status = {}
   self.v_magic_armor_atk_lv = 0
   self.v_magic_armor_def_lv = 0
+end
+
+function M:on_before_destroy()
+  self.v_char = nil
+  for _, skill in pairs(self.v_skill_tbl) do
+    skill:on_destroy()
+  end
+  self.v_skill_tbl = nil
+  self.v_cur_skill = nil
+  self.v_missile_cache = nil
+  self.v_magic_level = nil
+  self.v_change_effect_energy_id = nil
+  self.v_add_library_skill_list = nil
+  self.v_correct_skill = nil
+  self.v_skill_correct_data = nil
+  self.v_effect_skill_magic = nil
+  self.v_keyframe_status = nil
+  self.v_skill_tag2keyframe = nil
 end
 
 function M:set_keyframe_by_tag(skill_id, tag, enable, force)

@@ -5,7 +5,8 @@ local QUICK_GENRES_TEMP = "QUICK_GENRES_TEMP"
 local EQUATION_HORI_ITEM = require("uimodule.stage_activity.fate_book.equation_hori_item")
 local ccd = require("uimodule.stage_activity.challenge_ring_plus.curse_common_define")
 local EQUATION_OPERATION_TYPE = ccd.EQUATION_OPERATION_TYPE
-local out_pd_stopped_cb = function(self)
+
+local function out_pd_stopped_cb(self)
   self:give_back_auto_cache(QUICK_GENRES_TEMP)
   self:clear_equation_hori_item_map()
   self.v_uiobjects.QuickViewContent:SetActive(self.v_show_panel)
@@ -99,7 +100,8 @@ end
 
 function ui:refresh_content()
   local genres_map = GenresMgr:get_genres_map()
-  local genres_click_cb = function(genres_id)
+  
+  local function genres_click_cb(genres_id)
     self:change_show_state(false, true)
     local battle_bag4 = UIMgr:get_ui("battle_bag4")
     battle_bag4:ui_show()
@@ -107,6 +109,7 @@ function ui:refresh_content()
     local ability_view = battle_bag4:get_panel("ability_view")
     ability_view:force_select_genres(genres_id)
   end
+  
   for genres_id, genres_data in pairs(genres_map) do
     local obj = self:get_auto_cache(QUICK_GENRES_TEMP)
     local icon_img = self:get_image("Icon", obj)
@@ -123,9 +126,11 @@ function ui:refresh_content()
   end
   local equation_data_map = FateBookMgr:get_equation_data_map()
   local build_data
-  local click_cb = function()
+  
+  local function click_cb()
     UIMgr:try_show_ui("equation_show_tips")
   end
+  
   for equation_id, equation_data in pairs(equation_data_map) do
     local obj = self:get_auto_cache(QUICK_EQUATION_TEMP)
     build_data = {

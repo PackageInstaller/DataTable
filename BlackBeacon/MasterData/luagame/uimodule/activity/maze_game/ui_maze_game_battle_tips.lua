@@ -2,12 +2,8 @@ local Base = require("ui.uibase")
 local ui = Util.create_child_mt(Base)
 
 function ui:on_click_BtnStart()
-  local battle_param = NoviceMgr.ponder_maze_mgr:get_battle_pass_id(self.v_point_id, self.v_node_id)
-  local activity_id = NoviceMgr.ponder_maze_mgr:get_game_param()
-  local point_id, node_id, event_id, option_id = NoviceMgr.ponder_maze_mgr:get_battke_param()
-  UIMgr:get_ui("team"):ui_show(nil, self.v_point_id, Config.CommonDefine.CHALLENGE_TYPE.ACTIVITY_PONDER, nil, nil, nil, {activity_id, battle_param})
-  UIMgr:set_main_scene_after_load_ui("ui_maze_game_event", activity_id, point_id, node_id, event_id, option_id, true)
   self:ui_hide()
+  NoviceMgr.ponder_maze_mgr:start_battle()
 end
 
 function ui:ui_finish_load()

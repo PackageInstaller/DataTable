@@ -26,6 +26,35 @@ function M:_init(char)
   self.v_loaded_weapon_count = 0
 end
 
+function M:on_before_destroy()
+  self.v_char = nil
+end
+
+function M:on_destroy_gameobj()
+  if self.v_weapon_animator then
+    for _, animator_info in pairs(self.v_weapon_animator) do
+      ResPool:release_res(animator_info)
+    end
+    self.v_weapon_animator = nil
+  end
+  for _, gameobj in pairs(self.gameobjs) do
+    if not gameobj:IsNull() then
+      ResPool:release(gameobj)
+    end
+  end
+  self.gameobjs = nil
+  self.v_cid_to_go = nil
+  self.v_cid_to_res_id = nil
+  self.v_change_attach_go = nil
+  self.v_weapon_animator = nil
+  self.runtime_animator = nil
+  self.animator = nil
+  self.v_weapon_res_id = nil
+  self.v_weapon_res_attch = nil
+  self.v_weapon_res_name = nil
+  self.cache_ani_data = nil
+end
+
 function M:init_weapon()
   local weapon_fashion_id = self.v_char:get_weapon_fashion()
   if weapon_fashion_id then
@@ -139,7 +168,8 @@ function M:load_model_animator(weapon_res_cfg, index, weapon_res_id)
   else
     sync_load = false
   end
-  local load_cb = function(_, animator_info)
+  
+  local function load_cb(_, animator_info)
     if self.v_char:is_destroy() or not self.v_weapon_animator then
       ResPool:release_res(animator_info)
       return
@@ -152,6 +182,7 @@ function M:load_model_animator(weapon_res_cfg, index, weapon_res_id)
     self.v_weapon_animator[index] = animator_info
     self:load_weapon(weapon_res_cfg, attach_point, index, weapon_res_id)
   end
+  
   if sync_load then
     local animator_info = ResPool:get_animator(animator_cfg.ControllerPath)
     load_cb(nil, animator_info)
@@ -174,7 +205,8 @@ function M:load_weapon(weapon_cfg, attach_point, index, weapon_res_id)
   else
     sync_load = false
   end
-  local load_cb = function(go)
+  
+  local function load_cb(go)
     local cid = go:GetInstanceID()
     if self.v_char:is_destroy() then
       ResPoolMgr:release(go)
@@ -209,6 +241,7 @@ function M:load_weapon(weapon_cfg, attach_point, index, weapon_res_id)
       UtilTable.clear_map(self.cache_ani_data)
     end
   end
+  
   if sync_load then
     local go = ResPoolMgr:get_weapon(weapon_cfg.ModelPath)
     load_cb(go)
@@ -271,28 +304,6 @@ function M:reset_weapon_pos(animator)
     animator.gameObject:ResetAttr()
     animator.gameObject:SetActive(true)
   end
-end
-
-function M:on_destroy_gameobj()
-  if self.v_weapon_animator then
-    for _, animator_info in pairs(self.v_weapon_animator) do
-      ResPool:release_res(animator_info)
-    end
-    self.v_weapon_animator = nil
-  end
-  for _, gameobj in pairs(self.gameobjs) do
-    if not gameobj:IsNull() then
-      ResPool:release(gameobj)
-    end
-  end
-  self.gameobjs = {}
-  self.v_cid_to_go = {}
-  self.v_cid_to_res_id = {}
-  self.v_change_attach_go = {}
-  self.v_weapon_res_id = {}
-  self.v_weapon_res_attch = {}
-  self.v_weapon_res_name = {}
-  self.cache_ani_data = {}
 end
 
 function M:get_attach_point_obj(point_name)

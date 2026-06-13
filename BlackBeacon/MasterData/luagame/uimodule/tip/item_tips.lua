@@ -27,9 +27,11 @@ local default_config = {
     const_event = Const.MSG_ON_PLAYER_SP_UPDATE
   }
 }
-local BUILD_FUNCTIONS = function(single_item_exchange, item_count)
+
+local function BUILD_FUNCTIONS(single_item_exchange, item_count)
   local ret_item = {}
-  local get_item_base_info = function(item_id)
+  
+  local function get_item_base_info(item_id)
     local item_cfg = ShareRes.create("item.item", item_id)
     local ret_table = {}
     ret_table.id = item_id
@@ -39,6 +41,7 @@ local BUILD_FUNCTIONS = function(single_item_exchange, item_count)
     ret_table.icon = item_cfg.Icon
     return ret_table
   end
+  
   ret_item.targetInfo = {}
   local targetInfo = get_item_base_info(single_item_exchange.TargetId)
   targetInfo.Id = single_item_exchange.Id
@@ -59,6 +62,7 @@ local BUILD_FUNCTIONS = function(single_item_exchange, item_count)
   ret_item.IgnoreAwardMsg = single_item_exchange.IgnoreAwardMsg
   return ret_item
 end
+
 local MODEL = {
   v_item_quality = {
     "Icon_Bg",
@@ -382,7 +386,17 @@ function ui:_refresh_right_view()
     return
   end
   self.v_item_desc.text = self.v_item_cfg.Desc or self.v_item_cfg.Describe
-  self.v_item_world_desc.text = self.v_item_cfg.WorldDesc
+  local item_id = self.v_item_cfg.Id
+  local type_config = ShareRes.get_award_type_cfg(item_id)
+  if type_config.AwardType == Config.AWARD_TYPE.PUZZLE then
+    local puzzle_cfg = ShareRes.get_buddy_puzzle_cfg(item_id)
+    if puzzle_cfg.EntryId then
+      local entry_cfg = ShareRes.get_buddy_puzzle_entry_cfg(puzzle_cfg.EntryId, 3)
+      self.v_item_world_desc.text = entry_cfg.Desc
+    end
+  else
+    self.v_item_world_desc.text = self.v_item_cfg.WorldDesc
+  end
   local has_source = false
   if self.v_item_cfg.Jump then
     for _, jump_id in pairs(self.v_item_cfg.Jump) do

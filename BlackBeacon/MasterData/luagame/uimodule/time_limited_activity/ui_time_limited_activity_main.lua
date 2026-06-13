@@ -140,6 +140,9 @@ end
 
 function ui:on_click_btn(node_index)
   local cfg = self.v_activity_detail_cfg[node_index]
+  if cfg and cfg.Type == TimeLimitedActMgr.Type.MineSweeper and not Util.get_res_is_integrity() then
+    return
+  end
   local is_open, tips, is_time_check_fail, open_time_tip = TimeLimitedActMgr:is_activity_open(cfg.Id)
   if is_open then
     self:get_jump_table(cfg.Type)(cfg.Param)

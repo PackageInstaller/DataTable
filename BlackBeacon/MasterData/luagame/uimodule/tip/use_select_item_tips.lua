@@ -193,10 +193,12 @@ function ui:use_item()
     Util.show_message_tip(2224)
     return
   end
-  local callback = function()
+  
+  local function callback()
     UIMgr:try_hide_ui("itemTip")
     self:ui_hide()
   end
+  
   local consume_list = {
     bag_type = BagCfg.ITEM_TYPE.COMSUME,
     item_list = {}

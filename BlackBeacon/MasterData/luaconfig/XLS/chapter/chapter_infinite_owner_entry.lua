@@ -3,8 +3,8 @@ return {
     [101] = {
       BuffId = 40330101,
       Condition = 0,
-      Desc = "敌方生命值提升为<color=#E77902>1.5</color>倍",
-      DifficultyCeof = 1,
+      Desc = "敌方生命值提升为<color=#E77902>1.1</color>倍",
+      DifficultyCeof = 0.4,
       Icon = "Skill/EndLessBuff/Endless_icon_debuff_01",
       Id = 101,
       Name = "词条1",
@@ -16,8 +16,8 @@ return {
     [102] = {
       BuffId = 40330102,
       Condition = 0,
-      Desc = "敌方生命值提升为<color=#E77902>1.7</color>倍",
-      DifficultyCeof = 1.5,
+      Desc = "敌方生命值提升为<color=#E77902>1.2</color>倍",
+      DifficultyCeof = 0.8,
       Icon = "Skill/EndLessBuff/Endless_icon_debuff_01",
       Id = 102,
       Name = "词条1",
@@ -29,8 +29,8 @@ return {
     [103] = {
       BuffId = 40330103,
       Condition = 0,
-      Desc = "敌方生命值提升为<color=#E77902>2</color>倍",
-      DifficultyCeof = 2,
+      Desc = "敌方生命值提升为<color=#E77902>1.3</color>倍",
+      DifficultyCeof = 1.2,
       Icon = "Skill/EndLessBuff/Endless_icon_debuff_01",
       Id = 103,
       Name = "词条1",
@@ -128,7 +128,7 @@ return {
     [502] = {
       BuffId = 40330602,
       Condition = 0,
-      Desc = "己方生命上限降低<color=#E77902>35%</color>",
+      Desc = "己方生命上限降低<color=#E77902>20%</color>",
       DifficultyCeof = 0.4,
       Icon = "Skill/EndLessBuff/Endless_icon_debuff_06",
       Id = 502,
@@ -1059,13 +1059,13 @@ return {
     [6001] = {
       BuffId = 40337301,
       Condition = 0,
-      Desc = "释放1技能后，XX伤害提升20%，持续3秒，可叠加三层",
+      Desc = "释放1技能后，充能伤害提升20%，持续3秒，可叠加三层",
       DifficultyCeof = -0.3,
       Icon = "Skill/EndLessBuff/Endless_icon_debuff_02",
       Id = 6001,
       Name = "词条10",
       OwnerEntryGroup = 55,
-      Quality = 3,
+      Quality = 2,
       Serial = 1,
       Type = 0
     }
@@ -1074,13 +1074,13 @@ return {
     [6002] = {
       BuffId = 40337401,
       Condition = 0,
-      Desc = "触发红技弹反时，对敌人造成最大生命值60%的伤害",
+      Desc = "识破敌人技能时，对敌人造成最大生命值40%的伤害",
       DifficultyCeof = -0.3,
       Icon = "Skill/EndLessBuff/Endless_icon_debuff_02",
       Id = 6002,
       Name = "词条11",
       OwnerEntryGroup = 56,
-      Quality = 3,
+      Quality = 2,
       Serial = 1,
       Type = 0
     }
@@ -1108,7 +1108,7 @@ return {
       Id = 6004,
       Name = "词条12",
       OwnerEntryGroup = 57,
-      Quality = 3,
+      Quality = 4,
       Serial = 1,
       Type = 1
     },
@@ -1121,7 +1121,7 @@ return {
       Id = 6005,
       Name = "词条12",
       OwnerEntryGroup = 57,
-      Quality = 3,
+      Quality = 5,
       Serial = 1,
       Type = 1
     }
@@ -1164,7 +1164,7 @@ return {
       Id = 6008,
       Name = "词条14",
       OwnerEntryGroup = 59,
-      Quality = 3,
+      Quality = 4,
       Serial = 1,
       Type = 1
     },
@@ -1177,7 +1177,7 @@ return {
       Id = 6009,
       Name = "词条14",
       OwnerEntryGroup = 59,
-      Quality = 3,
+      Quality = 5,
       Serial = 1,
       Type = 1
     }
@@ -1186,7 +1186,7 @@ return {
     [6010] = {
       BuffId = 40337101,
       Condition = 0,
-      Desc = "所有敌人的所有元素伤害抗性提升<color=#E77902>40%</color>，触发元素异常后移除对应元素的抗性",
+      Desc = "所有敌人的所有元素伤害抗性提升<color=#E77902>20%</color>，触发元素异常后移除对应元素的抗性",
       DifficultyCeof = 0.3,
       Icon = "Skill/EndLessBuff/Endless_icon_debuff_03",
       Id = 6010,
@@ -1199,26 +1199,26 @@ return {
     [6011] = {
       BuffId = 40337102,
       Condition = 0,
-      Desc = "所有敌人的所有元素伤害抗性提升<color=#E77902>50%</color>，触发元素异常后移除对应元素的抗性",
+      Desc = "所有敌人的所有元素伤害抗性提升<color=#E77902>30%</color>，触发元素异常后移除对应元素的抗性",
       DifficultyCeof = 0.5,
       Icon = "Skill/EndLessBuff/Endless_icon_debuff_03",
       Id = 6011,
       Name = "词条15",
       OwnerEntryGroup = 60,
-      Quality = 3,
+      Quality = 4,
       Serial = 1,
       Type = 1
     },
     [6012] = {
       BuffId = 40337103,
       Condition = 0,
-      Desc = "所有敌人的所有元素伤害抗性提升<color=#E77902>70%</color>，触发元素异常后移除对应元素的抗性",
+      Desc = "所有敌人的所有元素伤害抗性提升<color=#E77902>40%</color>，触发元素异常后移除对应元素的抗性",
       DifficultyCeof = 0.7,
       Icon = "Skill/EndLessBuff/Endless_icon_debuff_03",
       Id = 6012,
       Name = "词条15",
       OwnerEntryGroup = 60,
-      Quality = 3,
+      Quality = 5,
       Serial = 1,
       Type = 1
     }
@@ -1228,7 +1228,7 @@ return {
       BuffId = 40337201,
       Condition = 0,
       Desc = "敌人出生时获得<color=#E77902>5</color>层伤害免疫效果，敌人被拖拽时移除该效果",
-      DifficultyCeof = 0.3,
+      DifficultyCeof = 0.2,
       Icon = "Skill/EndLessBuff/Endless_icon_debuff_01",
       Id = 6013,
       Name = "词条16",
@@ -1241,12 +1241,12 @@ return {
       BuffId = 40337202,
       Condition = 0,
       Desc = "敌人出生时获得<color=#E77902>10</color>层伤害免疫效果，敌人被拖拽时移除该效果",
-      DifficultyCeof = 0.5,
+      DifficultyCeof = 0.3,
       Icon = "Skill/EndLessBuff/Endless_icon_debuff_01",
       Id = 6014,
       Name = "词条16",
       OwnerEntryGroup = 61,
-      Quality = 3,
+      Quality = 4,
       Serial = 1,
       Type = 1
     },
@@ -1254,12 +1254,12 @@ return {
       BuffId = 40337203,
       Condition = 0,
       Desc = "敌人出生时获得<color=#E77902>20</color>层伤害免疫效果，敌人被拖拽时移除该效果",
-      DifficultyCeof = 0.7,
+      DifficultyCeof = 0.5,
       Icon = "Skill/EndLessBuff/Endless_icon_debuff_01",
       Id = 6015,
       Name = "词条16",
       OwnerEntryGroup = 61,
-      Quality = 3,
+      Quality = 5,
       Serial = 1,
       Type = 1
     }

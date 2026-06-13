@@ -51,6 +51,12 @@ function ui:update_enemyitem_list()
     local headIcon = string.format(UIArchivePath, enemy_cfg.HeadIcon)
     local enemy_image = Util.get_image("EnemyIcon/EnemyIcon_", obj)
     ResMgr:load_set_icon(enemy_image, headIcon, nil, true)
+    local enemy_image_rect = Util.get_rect_transform("EnemyIcon/EnemyIcon_", obj)
+    if enemy_cfg.IconOffset ~= nil then
+      enemy_image_rect:SetAnchoredPositionA(enemy_cfg.IconOffset[1], enemy_cfg.IconOffset[2] - 40)
+    else
+      enemy_image_rect:SetAnchoredPositionA(0, -40)
+    end
     local enemy_character_cfg = ShareRes.get_character_cfg(enemyID)
     if enemy_character_cfg.ElementWeakList then
       for index, elementID in ipairs(enemy_character_cfg.ElementWeakList) do

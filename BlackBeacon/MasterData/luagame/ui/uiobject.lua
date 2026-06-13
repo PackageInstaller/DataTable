@@ -638,7 +638,10 @@ end
 
 function ui:give_back_auto_cache(template_key, change_parent)
   assert(template_key)
-  assert(self.v_auto_cache_list[template_key], template_key)
+  if not self.v_auto_cache_list[template_key] then
+    Log.Error("give_back_auto_cache fail, no such cache by key:", template_key, debug.traceback())
+    return
+  end
   local cache_list = self.v_auto_cache_list[template_key]
   for i = #cache_list, 1, -1 do
     self.v_auto_cache_to_key[cache_list[i]] = nil
@@ -675,7 +678,7 @@ function ui:give_back_all_auto_cache(change_parent)
   self.v_auto_cache_to_key = {}
 end
 
-local _do_destroy_all_cache = function(self, is_force)
+local function _do_destroy_all_cache(self, is_force)
   for template_key, cache_list in pairs(self.v_auto_cache_list) do
     CacheMgr:clear_cache(template_key)
     if is_force then
@@ -937,9 +940,11 @@ end
 
 function ui:set_close_button(btnname)
   local btn = self:get_uiobject(btnname, BIND_TYPE.BUTTON)
-  local hide = function()
+  
+  local function hide()
     self:ui_hide()
   end
+  
   Global.listener_mgr:add_listener(self.v_object, btn.onClick, hide)
 end
 

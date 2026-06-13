@@ -279,11 +279,16 @@ function M:on_get_routine_activity(data)
   self.v_novice_activity_map = {}
   for _, info in pairs(data.activitys) do
     self.v_novice_activity_list[info.id] = info
-    local type = All_Activity_Cfg[info.id].Type
-    if not self.v_novice_activity_map[type] then
-      self.v_novice_activity_map[type] = {}
+    local activity_cfg = All_Activity_Cfg[info.id]
+    if activity_cfg then
+      local type = activity_cfg.Type
+      if not self.v_novice_activity_map[type] then
+        self.v_novice_activity_map[type] = {}
+      end
+      self.v_novice_activity_map[type][info.id] = info
+    else
+      Log.Error("活动总表中未找到活动id", info.id)
     end
-    self.v_novice_activity_map[type][info.id] = info
   end
   self.v_ban_activity_map = {}
   if data.ban_activity_list then
@@ -466,7 +471,12 @@ function M:update_skin_tryout_redpoint(activity_id)
   if 0 == redpoint_status then
     RedPointMgr:enable_redpoint(UI_NAME_TO_REDPOINT_ENUM[activity_cfg.UiName], true)
   else
-    RedPointMgr:enable_redpoint(UI_NAME_TO_REDPOINT_ENUM[activity_cfg.UiName], 1 == self.v_fashion_probation_data[activity_id].state or 1 == self.v_fashion_probation_data[activity_id].second_award_state)
+    local is_need_red = 1 == self.v_fashion_probation_data[activity_id].state
+    local skin_cfg = ShareRes.get_skin_tryout_cfg(activity_id)
+    if skin_cfg.SecondAwardGroupId and skin_cfg.SecondAwardGroupId > 0 then
+      is_need_red = is_need_red or false
+    end
+    RedPointMgr:enable_redpoint(UI_NAME_TO_REDPOINT_ENUM[activity_cfg.UiName], is_need_red)
   end
 end
 
@@ -1054,13 +1064,14 @@ function M:check_close_activity_ui(activity_id, ui_name, force_close, go_to_main
         end
       end)
     else
-      local confirmCb = function()
+      local function confirmCb()
         if go_to_main then
           UIMgr:go_to_main()
         else
           UIMgr:try_hide_ui(ui_name)
         end
       end
+      
       Util.show_notify_popup_message(confirmCb, "活动已结束", nil, "确定", nil, nil, true)
     end
     return true
@@ -1318,6 +1329,7 @@ function M:on_activity_ponder_list(data)
   activity_data.ponder_points = data.ponder_points
   activity_data.pass_fight_nodes = UtilTable.list2map(data.pass_fight_nodes)
   activity_data.ponder_id_list = UtilTable.list2map(data.ponder_id_list)
+  self:refresh_maze_point_red(data.activity_id)
 end
 
 function M:on_activity_ponder_update(data)
@@ -1347,6 +1359,7 @@ function M:close_maze_point_click_red(activity_id, point_id)
   if point_data then
     point_data.is_red = false
   end
+  self:refresh_maze_point_red(activity_id)
 end
 
 function M:get_ponder_maze_point_is_comp(activity_id, point_id)
@@ -1369,7 +1382,7 @@ function M:get_ponder_maze_node_battle_pass(activity_id, battle_param)
   local data_list = self.v_maze_activity_data_list
   local activity_data = data_list[activity_id]
   if activity_data then
-    return activity_data.ponder_points and activity_data.ponder_points[battle_param] == true or false
+    return activity_data.pass_fight_nodes and activity_data.pass_fight_nodes[battle_param] ~= nil
   end
   return false
 end
@@ -1381,29 +1394,24 @@ function M:get_ponder_is_unlock(activity_id, ponder_id)
   local data_list = self.v_maze_activity_data_list
   local activity_data = data_list[activity_id]
   if activity_data then
-    return activity_data.ponder_id_list and activity_data.ponder_id_list[ponder_id] == true or false
+    return activity_data.ponder_id_list and activity_data.ponder_id_list[ponder_id] ~= nil
   end
   return false
 end
 
-function M:refresh_ponder_maze_red(activity_id)
+function M:refresh_maze_point_red(activity_id)
   local is_red = false
-  local maze_activity_cfg = ShareRes.get_ponder_maze_activity_cfg(self.v_activity_id)
-  if maze_activity_cfg and Util.is_more_than_zero(maze_activity_cfg.TaskGroup) and TaskMgr:get_task_group_red(maze_activity_cfg.TaskGroup) then
-    is_red = true
-  end
-  if not is_red then
-    local point_list = ShareRes.get_ponder_maze_point_cfg(activity_id)
-    if point_list then
-      for _, point_cfg in pairs(point_list) do
-        if self:is_ponder_maze_point_red(activity_id, point_cfg.Id) then
-          is_red = true
-          break
-        end
+  local maze_activity_cfg = ShareRes.get_ponder_maze_activity_cfg(activity_id)
+  local point_list = maze_activity_cfg.Point
+  if point_list then
+    for _, point_id in pairs(point_list) do
+      if self:is_ponder_maze_point_red(activity_id, point_id) then
+        is_red = true
+        break
       end
     end
   end
-  RedPointMgr:enable_redpoint(RedEnum.MAZE_ACT, is_red)
+  RedPointMgr:enable_dynamic_redpoint(RedEnum.MAZE_ACT, RedEnum.TIME_LIMITED_ACTIVITY_BTN_5_1_2, is_red)
 end
 
 function M:is_ponder_maze_point_red(activity_id, point_id)
@@ -1424,7 +1432,6 @@ function M:start_ponder_maze_game(activity_id, point_id)
   local script = require("gamelogic.novice.ponder_maze_mgr")
   self.ponder_maze_mgr = script:new()
   self.ponder_maze_mgr:start_game(activity_id, point_id)
-  UIMgr:try_show_ui("ui_maze_game_view")
 end
 
 function M:stop_ponder_maze_game()
@@ -1432,6 +1439,71 @@ function M:stop_ponder_maze_game()
     self.ponder_maze_mgr:on_destroy()
     self.ponder_maze_mgr = nil
   end
+end
+
+function M:set_maze_game_story_state(story_id, state)
+  LocalStorage:save_int("NEED_PLAY_MAZE_GAME_STORY" .. story_id, state, true)
+end
+
+function M:get_maze_game_story_state(story_id)
+  local state = LocalStorage:load_int("NEED_PLAY_MAZE_GAME_STORY" .. story_id, CommonDef.MAZE_GAME_STORY_STATE.NO_PLAY, true)
+  return state
+end
+
+function M:check_maze_game_story()
+  local cfg_list = ShareRes.get_ponder_maze_story_cfg()
+  local is_need_play = false
+  local need_play_story_list = {}
+  for story_id, cfg in pairs(cfg_list) do
+    if cfg.StoryType == CommonDef.MAZE_GAME_TRIGGER_TYPE.DEFAULT_UNLOCK and NoviceMgr:get_maze_game_story_state(story_id) == CommonDef.MAZE_GAME_STORY_STATE.NO_PLAY or NoviceMgr:get_maze_game_story_state(story_id) == CommonDef.MAZE_GAME_STORY_STATE.NEED_PLAY then
+      table.insert(need_play_story_list, cfg)
+    end
+  end
+  table.sort(need_play_story_list, function(a, b)
+    return a.Priority < b.Priority
+  end)
+  if #need_play_story_list > 0 then
+    local cb
+    if #need_play_story_list > 1 then
+      function cb()
+        self:check_maze_game_story()
+      end
+    end
+    self:play_maze_game_story(need_play_story_list[1].Id, cb)
+  end
+end
+
+function M:play_maze_game_story(story_id, finish_cb)
+  NoviceMgr:set_maze_game_story_state(story_id, CommonDef.MAZE_GAME_STORY_STATE.PLAY_FINISH)
+  StoryMgr:on_start(story_id, nil, nil, nil, nil, finish_cb)
+end
+
+function M:check_maze_game_tips_and_story(activity_id)
+  local function cb()
+    NoviceMgr:check_maze_game_story()
+  end
+  
+  if NoviceMgr:get_is_need_show_maze_game_settle_tips() then
+    UIMgr:get_ui("ui_maze_game_settle_tips"):ui_show(nil, activity_id, cb)
+  else
+    cb()
+  end
+end
+
+function M:get_is_need_show_maze_game_settle_tips()
+  return 1 == LocalStorage:load_int("IS_NEED_OPEN_SETTLE_TIPS", 0, true)
+end
+
+function M:set_is_need_show_maze_game_settle_tips(value)
+  LocalStorage:save_int("IS_NEED_OPEN_SETTLE_TIPS", true == value and 1 or 0, true)
+end
+
+function M:set_maze_game_settle_tips_ponder_id(value)
+  LocalStorage:save_int("MAZE_GAME_SETTLE_TIPS_PONDER_ID", value, true)
+end
+
+function M:get_maze_game_settle_tips_ponder_id()
+  return LocalStorage:load_int("MAZE_GAME_SETTLE_TIPS_PONDER_ID", 0, true)
 end
 
 local PONDER_MAZE_ACTIVITY_ILL_RED = "PONDER_MAZE_ACTIVITY_ILL_RED"

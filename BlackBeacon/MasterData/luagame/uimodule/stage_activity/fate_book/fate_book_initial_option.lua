@@ -24,9 +24,10 @@ function ui:on_click_option_btn(option_id)
 end
 
 function ui:on_click_confirm_btn()
-  local cb = function()
+  local function cb()
     self:ui_hide()
   end
+  
   FateBookMgr:request_set_options_id(self.v_select_option_id, cb)
 end
 

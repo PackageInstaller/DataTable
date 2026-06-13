@@ -64,12 +64,14 @@ function M:player_anim(anim_type, end_cb, ignore_effect)
     local len = self.v_clip_list[anim_type]
     self:play_effect(CHALLENGE_EFFECT.FIRST_EFFECT)
     if len then
-      local first_cb = function()
+      local function first_cb()
         self:play_effect(CHALLENGE_EFFECT.SECOND_EFFECT)
+        
         self:play_scene_effect(CHALLENGE_EFFECT.THIRD_EFFECT)
         self:remove_effect(CHALLENGE_EFFECT.FIRST_EFFECT)
         Timer:remove_timer(self.v_effect_timer[CHALLENGE_EFFECT.FIRST_EFFECT])
       end
+      
       self.v_effect_timer[CHALLENGE_EFFECT.FIRST_EFFECT] = Timer:add_timer("play_challenge_effect", len * 0.895, first_cb)
     end
   end

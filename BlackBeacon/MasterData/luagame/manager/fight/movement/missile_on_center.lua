@@ -23,7 +23,7 @@ function M:should_stop()
   return not self.v_target or self.v_target:is_destroy() or not self.v_char or self.v_char:is_destroy()
 end
 
-local _get_point_pos = function(char, attach_point)
+local function _get_point_pos(char, attach_point)
   if nil == attach_point then
     return char.transform:GetPositionA()
   end

@@ -44,7 +44,7 @@ function ui:ui_on_show(activity_id)
   self.v_stage_view:refresh_data(self.v_stage_list_cfg)
   self:bind_auto_mq(Const.ON_FISH_GAME_REFRESH, self.refresh_epi, self)
   self:bind_auto_mq(Const.MSG_ON_TASK_UPDATE, self.refresh_task_red, self)
-  self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close, self)
+  self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close2, self)
   self:refresh_task_red()
 end
 
@@ -88,15 +88,7 @@ function ui:_set_time()
       self:update_red_state()
     else
       self.v_is_end = true
-      if self:visible() then
-        self:clear_reset_timer()
-        local confirmCb = function()
-          if self:visible() then
-            self:ui_hide()
-          end
-        end
-        Util.show_notify_popup_message(confirmCb, "活动已结束", nil, "确定", nil, nil, true)
-      end
+      self:clear_reset_timer()
     end
   end)
 end
@@ -137,6 +129,13 @@ function ui:refresh_task_red()
 end
 
 function ui:check_close()
+  NoviceMgr:check_close_activity_ui(self.v_activity_id, self.v_ui_name, false, true)
+end
+
+function ui:check_close2()
+  if UIMgr:try_get_visible_ui("fish_game_battle") then
+    return
+  end
   NoviceMgr:check_close_activity_ui(self.v_activity_id, self.v_ui_name, false, true)
 end
 

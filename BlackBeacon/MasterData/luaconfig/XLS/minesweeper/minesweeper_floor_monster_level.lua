@@ -8,10 +8,10 @@ return {
         ChapterId = 1,
         FloorIdx = 1,
         Id = 1,
-        MonLevel1 = 400,
-        MonLevel2 = 400,
-        MonLevel3 = 400,
-        MonLevel4 = 400,
+        MonLevel1 = 500,
+        MonLevel2 = 500,
+        MonLevel3 = 500,
+        MonLevel4 = 500,
         TowerId = 211000101
       },
       [211001101] = {
@@ -21,10 +21,10 @@ return {
         ChapterId = 1,
         FloorIdx = 1,
         Id = 2,
-        MonLevel1 = 400,
-        MonLevel2 = 400,
-        MonLevel3 = 400,
-        MonLevel4 = 400,
+        MonLevel1 = 500,
+        MonLevel2 = 500,
+        MonLevel3 = 500,
+        MonLevel4 = 500,
         TowerId = 211001101
       },
       [211001102] = {
@@ -34,10 +34,10 @@ return {
         ChapterId = 1,
         FloorIdx = 1,
         Id = 3,
-        MonLevel1 = 400,
-        MonLevel2 = 400,
-        MonLevel3 = 400,
-        MonLevel4 = 400,
+        MonLevel1 = 500,
+        MonLevel2 = 500,
+        MonLevel3 = 500,
+        MonLevel4 = 500,
         TowerId = 211001102
       },
       [211001103] = {
@@ -47,10 +47,10 @@ return {
         ChapterId = 1,
         FloorIdx = 1,
         Id = 4,
-        MonLevel1 = 400,
-        MonLevel2 = 400,
-        MonLevel3 = 400,
-        MonLevel4 = 400,
+        MonLevel1 = 500,
+        MonLevel2 = 500,
+        MonLevel3 = 500,
+        MonLevel4 = 500,
         TowerId = 211001103
       },
       [211002201] = {
@@ -60,10 +60,10 @@ return {
         ChapterId = 1,
         FloorIdx = 1,
         Id = 6,
-        MonLevel1 = 400,
-        MonLevel2 = 400,
-        MonLevel3 = 400,
-        MonLevel4 = 400,
+        MonLevel1 = 500,
+        MonLevel2 = 500,
+        MonLevel3 = 500,
+        MonLevel4 = 500,
         TowerId = 211002201
       },
       [211002202] = {
@@ -73,10 +73,10 @@ return {
         ChapterId = 1,
         FloorIdx = 1,
         Id = 7,
-        MonLevel1 = 400,
-        MonLevel2 = 400,
-        MonLevel3 = 400,
-        MonLevel4 = 400,
+        MonLevel1 = 500,
+        MonLevel2 = 500,
+        MonLevel3 = 500,
+        MonLevel4 = 500,
         TowerId = 211002202
       },
       [211003101] = {
@@ -86,10 +86,10 @@ return {
         ChapterId = 1,
         FloorIdx = 1,
         Id = 5,
-        MonLevel1 = 400,
-        MonLevel2 = 400,
-        MonLevel3 = 400,
-        MonLevel4 = 400,
+        MonLevel1 = 500,
+        MonLevel2 = 500,
+        MonLevel3 = 500,
+        MonLevel4 = 500,
         TowerId = 211003101
       }
     },
@@ -101,10 +101,10 @@ return {
         ChapterId = 1,
         FloorIdx = 2,
         Id = 8,
-        MonLevel1 = 500,
-        MonLevel2 = 500,
-        MonLevel3 = 500,
-        MonLevel4 = 500,
+        MonLevel1 = 700,
+        MonLevel2 = 700,
+        MonLevel3 = 700,
+        MonLevel4 = 700,
         TowerId = 211000101
       },
       [211001101] = {
@@ -114,10 +114,10 @@ return {
         ChapterId = 1,
         FloorIdx = 2,
         Id = 9,
-        MonLevel1 = 500,
-        MonLevel2 = 500,
-        MonLevel3 = 500,
-        MonLevel4 = 500,
+        MonLevel1 = 700,
+        MonLevel2 = 700,
+        MonLevel3 = 700,
+        MonLevel4 = 700,
         TowerId = 211001101
       },
       [211001102] = {
@@ -127,10 +127,10 @@ return {
         ChapterId = 1,
         FloorIdx = 2,
         Id = 10,
-        MonLevel1 = 500,
-        MonLevel2 = 500,
-        MonLevel3 = 500,
-        MonLevel4 = 500,
+        MonLevel1 = 700,
+        MonLevel2 = 700,
+        MonLevel3 = 700,
+        MonLevel4 = 700,
         TowerId = 211001102
       },
       [211001103] = {
@@ -140,10 +140,10 @@ return {
         ChapterId = 1,
         FloorIdx = 2,
         Id = 11,
-        MonLevel1 = 500,
-        MonLevel2 = 500,
-        MonLevel3 = 500,
-        MonLevel4 = 500,
+        MonLevel1 = 700,
+        MonLevel2 = 700,
+        MonLevel3 = 700,
+        MonLevel4 = 700,
         TowerId = 211001103
       },
       [211002201] = {
@@ -153,10 +153,10 @@ return {
         ChapterId = 1,
         FloorIdx = 2,
         Id = 13,
-        MonLevel1 = 500,
-        MonLevel2 = 500,
-        MonLevel3 = 500,
-        MonLevel4 = 500,
+        MonLevel1 = 700,
+        MonLevel2 = 700,
+        MonLevel3 = 700,
+        MonLevel4 = 700,
         TowerId = 211002201
       },
       [211002202] = {
@@ -166,10 +166,10 @@ return {
         ChapterId = 1,
         FloorIdx = 2,
         Id = 14,
-        MonLevel1 = 500,
-        MonLevel2 = 500,
-        MonLevel3 = 500,
-        MonLevel4 = 500,
+        MonLevel1 = 700,
+        MonLevel2 = 700,
+        MonLevel3 = 700,
+        MonLevel4 = 700,
         TowerId = 211002202
       },
       [211003101] = {
@@ -179,10 +179,10 @@ return {
         ChapterId = 1,
         FloorIdx = 2,
         Id = 12,
-        MonLevel1 = 500,
-        MonLevel2 = 500,
-        MonLevel3 = 500,
-        MonLevel4 = 500,
+        MonLevel1 = 700,
+        MonLevel2 = 700,
+        MonLevel3 = 700,
+        MonLevel4 = 700,
         TowerId = 211003101
       }
     },
@@ -194,10 +194,10 @@ return {
         ChapterId = 1,
         FloorIdx = 3,
         Id = 15,
-        MonLevel1 = 600,
-        MonLevel2 = 600,
-        MonLevel3 = 600,
-        MonLevel4 = 600,
+        MonLevel1 = 900,
+        MonLevel2 = 900,
+        MonLevel3 = 900,
+        MonLevel4 = 900,
         TowerId = 211000101
       },
       [211001101] = {
@@ -207,10 +207,10 @@ return {
         ChapterId = 1,
         FloorIdx = 3,
         Id = 16,
-        MonLevel1 = 600,
-        MonLevel2 = 600,
-        MonLevel3 = 600,
-        MonLevel4 = 600,
+        MonLevel1 = 900,
+        MonLevel2 = 900,
+        MonLevel3 = 900,
+        MonLevel4 = 900,
         TowerId = 211001101
       },
       [211001102] = {
@@ -220,10 +220,10 @@ return {
         ChapterId = 1,
         FloorIdx = 3,
         Id = 17,
-        MonLevel1 = 600,
-        MonLevel2 = 600,
-        MonLevel3 = 600,
-        MonLevel4 = 600,
+        MonLevel1 = 900,
+        MonLevel2 = 900,
+        MonLevel3 = 900,
+        MonLevel4 = 900,
         TowerId = 211001102
       },
       [211001103] = {
@@ -233,10 +233,10 @@ return {
         ChapterId = 1,
         FloorIdx = 3,
         Id = 18,
-        MonLevel1 = 600,
-        MonLevel2 = 600,
-        MonLevel3 = 600,
-        MonLevel4 = 600,
+        MonLevel1 = 900,
+        MonLevel2 = 900,
+        MonLevel3 = 900,
+        MonLevel4 = 900,
         TowerId = 211001103
       },
       [211002201] = {
@@ -246,10 +246,10 @@ return {
         ChapterId = 1,
         FloorIdx = 3,
         Id = 20,
-        MonLevel1 = 600,
-        MonLevel2 = 600,
-        MonLevel3 = 600,
-        MonLevel4 = 600,
+        MonLevel1 = 900,
+        MonLevel2 = 900,
+        MonLevel3 = 900,
+        MonLevel4 = 900,
         TowerId = 211002201
       },
       [211002202] = {
@@ -259,10 +259,10 @@ return {
         ChapterId = 1,
         FloorIdx = 3,
         Id = 21,
-        MonLevel1 = 600,
-        MonLevel2 = 600,
-        MonLevel3 = 600,
-        MonLevel4 = 600,
+        MonLevel1 = 900,
+        MonLevel2 = 900,
+        MonLevel3 = 900,
+        MonLevel4 = 900,
         TowerId = 211002202
       },
       [211003101] = {
@@ -272,10 +272,10 @@ return {
         ChapterId = 1,
         FloorIdx = 3,
         Id = 19,
-        MonLevel1 = 600,
-        MonLevel2 = 600,
-        MonLevel3 = 600,
-        MonLevel4 = 600,
+        MonLevel1 = 900,
+        MonLevel2 = 900,
+        MonLevel3 = 900,
+        MonLevel4 = 900,
         TowerId = 211003101
       }
     },
@@ -287,10 +287,10 @@ return {
         ChapterId = 1,
         FloorIdx = 4,
         Id = 22,
-        MonLevel1 = 750,
-        MonLevel2 = 750,
-        MonLevel3 = 750,
-        MonLevel4 = 750,
+        MonLevel1 = 1100,
+        MonLevel2 = 1100,
+        MonLevel3 = 1100,
+        MonLevel4 = 1100,
         TowerId = 211000101
       },
       [211001101] = {
@@ -300,10 +300,10 @@ return {
         ChapterId = 1,
         FloorIdx = 4,
         Id = 23,
-        MonLevel1 = 750,
-        MonLevel2 = 750,
-        MonLevel3 = 750,
-        MonLevel4 = 750,
+        MonLevel1 = 1100,
+        MonLevel2 = 1100,
+        MonLevel3 = 1100,
+        MonLevel4 = 1100,
         TowerId = 211001101
       },
       [211001102] = {
@@ -313,10 +313,10 @@ return {
         ChapterId = 1,
         FloorIdx = 4,
         Id = 24,
-        MonLevel1 = 750,
-        MonLevel2 = 750,
-        MonLevel3 = 750,
-        MonLevel4 = 750,
+        MonLevel1 = 1100,
+        MonLevel2 = 1100,
+        MonLevel3 = 1100,
+        MonLevel4 = 1100,
         TowerId = 211001102
       },
       [211001103] = {
@@ -326,10 +326,10 @@ return {
         ChapterId = 1,
         FloorIdx = 4,
         Id = 25,
-        MonLevel1 = 750,
-        MonLevel2 = 750,
-        MonLevel3 = 750,
-        MonLevel4 = 750,
+        MonLevel1 = 1100,
+        MonLevel2 = 1100,
+        MonLevel3 = 1100,
+        MonLevel4 = 1100,
         TowerId = 211001103
       },
       [211002201] = {
@@ -339,10 +339,10 @@ return {
         ChapterId = 1,
         FloorIdx = 4,
         Id = 27,
-        MonLevel1 = 750,
-        MonLevel2 = 750,
-        MonLevel3 = 750,
-        MonLevel4 = 750,
+        MonLevel1 = 1100,
+        MonLevel2 = 1100,
+        MonLevel3 = 1100,
+        MonLevel4 = 1100,
         TowerId = 211002201
       },
       [211002202] = {
@@ -352,10 +352,10 @@ return {
         ChapterId = 1,
         FloorIdx = 4,
         Id = 28,
-        MonLevel1 = 750,
-        MonLevel2 = 750,
-        MonLevel3 = 750,
-        MonLevel4 = 750,
+        MonLevel1 = 1100,
+        MonLevel2 = 1100,
+        MonLevel3 = 1100,
+        MonLevel4 = 1100,
         TowerId = 211002202
       },
       [211003101] = {
@@ -365,10 +365,10 @@ return {
         ChapterId = 1,
         FloorIdx = 4,
         Id = 26,
-        MonLevel1 = 750,
-        MonLevel2 = 750,
-        MonLevel3 = 750,
-        MonLevel4 = 750,
+        MonLevel1 = 1100,
+        MonLevel2 = 1100,
+        MonLevel3 = 1100,
+        MonLevel4 = 1100,
         TowerId = 211003101
       }
     },
@@ -380,10 +380,10 @@ return {
         ChapterId = 1,
         FloorIdx = 5,
         Id = 29,
-        MonLevel1 = 800,
-        MonLevel2 = 800,
-        MonLevel3 = 800,
-        MonLevel4 = 800,
+        MonLevel1 = 1200,
+        MonLevel2 = 1200,
+        MonLevel3 = 1200,
+        MonLevel4 = 1200,
         TowerId = 211000101
       },
       [211000401] = {
@@ -393,10 +393,10 @@ return {
         ChapterId = 1,
         FloorIdx = 5,
         Id = 36,
-        MonLevel1 = 800,
-        MonLevel2 = 800,
-        MonLevel3 = 800,
-        MonLevel4 = 800,
+        MonLevel1 = 1200,
+        MonLevel2 = 1200,
+        MonLevel3 = 1200,
+        MonLevel4 = 1200,
         TowerId = 211000401
       },
       [211001101] = {
@@ -406,10 +406,10 @@ return {
         ChapterId = 1,
         FloorIdx = 5,
         Id = 30,
-        MonLevel1 = 800,
-        MonLevel2 = 800,
-        MonLevel3 = 800,
-        MonLevel4 = 800,
+        MonLevel1 = 1200,
+        MonLevel2 = 1200,
+        MonLevel3 = 1200,
+        MonLevel4 = 1200,
         TowerId = 211001101
       },
       [211001102] = {
@@ -419,10 +419,10 @@ return {
         ChapterId = 1,
         FloorIdx = 5,
         Id = 31,
-        MonLevel1 = 800,
-        MonLevel2 = 800,
-        MonLevel3 = 800,
-        MonLevel4 = 800,
+        MonLevel1 = 1200,
+        MonLevel2 = 1200,
+        MonLevel3 = 1200,
+        MonLevel4 = 1200,
         TowerId = 211001102
       },
       [211001103] = {
@@ -432,10 +432,10 @@ return {
         ChapterId = 1,
         FloorIdx = 5,
         Id = 32,
-        MonLevel1 = 800,
-        MonLevel2 = 800,
-        MonLevel3 = 800,
-        MonLevel4 = 800,
+        MonLevel1 = 1200,
+        MonLevel2 = 1200,
+        MonLevel3 = 1200,
+        MonLevel4 = 1200,
         TowerId = 211001103
       },
       [211002201] = {
@@ -445,10 +445,10 @@ return {
         ChapterId = 1,
         FloorIdx = 5,
         Id = 34,
-        MonLevel1 = 800,
-        MonLevel2 = 800,
-        MonLevel3 = 800,
-        MonLevel4 = 800,
+        MonLevel1 = 1200,
+        MonLevel2 = 1200,
+        MonLevel3 = 1200,
+        MonLevel4 = 1200,
         TowerId = 211002201
       },
       [211002202] = {
@@ -458,10 +458,10 @@ return {
         ChapterId = 1,
         FloorIdx = 5,
         Id = 35,
-        MonLevel1 = 800,
-        MonLevel2 = 800,
-        MonLevel3 = 800,
-        MonLevel4 = 800,
+        MonLevel1 = 1200,
+        MonLevel2 = 1200,
+        MonLevel3 = 1200,
+        MonLevel4 = 1200,
         TowerId = 211002202
       },
       [211003101] = {
@@ -471,10 +471,10 @@ return {
         ChapterId = 1,
         FloorIdx = 5,
         Id = 33,
-        MonLevel1 = 800,
-        MonLevel2 = 800,
-        MonLevel3 = 800,
-        MonLevel4 = 800,
+        MonLevel1 = 1200,
+        MonLevel2 = 1200,
+        MonLevel3 = 1200,
+        MonLevel4 = 1200,
         TowerId = 211003101
       }
     },
@@ -486,10 +486,10 @@ return {
         ChapterId = 1,
         FloorIdx = 6,
         Id = 37,
-        MonLevel1 = 1050,
-        MonLevel2 = 1050,
-        MonLevel3 = 1050,
-        MonLevel4 = 1050,
+        MonLevel1 = 1300,
+        MonLevel2 = 1300,
+        MonLevel3 = 1300,
+        MonLevel4 = 1300,
         TowerId = 211000101
       },
       [211001101] = {
@@ -499,10 +499,10 @@ return {
         ChapterId = 1,
         FloorIdx = 6,
         Id = 38,
-        MonLevel1 = 1050,
-        MonLevel2 = 1050,
-        MonLevel3 = 1050,
-        MonLevel4 = 1050,
+        MonLevel1 = 1300,
+        MonLevel2 = 1300,
+        MonLevel3 = 1300,
+        MonLevel4 = 1300,
         TowerId = 211001101
       },
       [211001102] = {
@@ -512,10 +512,10 @@ return {
         ChapterId = 1,
         FloorIdx = 6,
         Id = 39,
-        MonLevel1 = 1050,
-        MonLevel2 = 1050,
-        MonLevel3 = 1050,
-        MonLevel4 = 1050,
+        MonLevel1 = 1300,
+        MonLevel2 = 1300,
+        MonLevel3 = 1300,
+        MonLevel4 = 1300,
         TowerId = 211001102
       },
       [211001103] = {
@@ -525,10 +525,10 @@ return {
         ChapterId = 1,
         FloorIdx = 6,
         Id = 40,
-        MonLevel1 = 1050,
-        MonLevel2 = 1050,
-        MonLevel3 = 1050,
-        MonLevel4 = 1050,
+        MonLevel1 = 1300,
+        MonLevel2 = 1300,
+        MonLevel3 = 1300,
+        MonLevel4 = 1300,
         TowerId = 211001103
       },
       [211002201] = {
@@ -538,10 +538,10 @@ return {
         ChapterId = 1,
         FloorIdx = 6,
         Id = 42,
-        MonLevel1 = 1050,
-        MonLevel2 = 1050,
-        MonLevel3 = 1050,
-        MonLevel4 = 1050,
+        MonLevel1 = 1300,
+        MonLevel2 = 1300,
+        MonLevel3 = 1300,
+        MonLevel4 = 1300,
         TowerId = 211002201
       },
       [211002202] = {
@@ -551,10 +551,10 @@ return {
         ChapterId = 1,
         FloorIdx = 6,
         Id = 43,
-        MonLevel1 = 1050,
-        MonLevel2 = 1050,
-        MonLevel3 = 1050,
-        MonLevel4 = 1050,
+        MonLevel1 = 1300,
+        MonLevel2 = 1300,
+        MonLevel3 = 1300,
+        MonLevel4 = 1300,
         TowerId = 211002202
       },
       [211003101] = {
@@ -564,10 +564,10 @@ return {
         ChapterId = 1,
         FloorIdx = 6,
         Id = 41,
-        MonLevel1 = 1050,
-        MonLevel2 = 1050,
-        MonLevel3 = 1050,
-        MonLevel4 = 1050,
+        MonLevel1 = 1300,
+        MonLevel2 = 1300,
+        MonLevel3 = 1300,
+        MonLevel4 = 1300,
         TowerId = 211003101
       }
     },
@@ -579,10 +579,10 @@ return {
         ChapterId = 1,
         FloorIdx = 7,
         Id = 44,
-        MonLevel1 = 1200,
-        MonLevel2 = 1200,
-        MonLevel3 = 1200,
-        MonLevel4 = 1200,
+        MonLevel1 = 1500,
+        MonLevel2 = 1500,
+        MonLevel3 = 1500,
+        MonLevel4 = 1500,
         TowerId = 211000101
       },
       [211001101] = {
@@ -592,10 +592,10 @@ return {
         ChapterId = 1,
         FloorIdx = 7,
         Id = 45,
-        MonLevel1 = 1200,
-        MonLevel2 = 1200,
-        MonLevel3 = 1200,
-        MonLevel4 = 1200,
+        MonLevel1 = 1500,
+        MonLevel2 = 1500,
+        MonLevel3 = 1500,
+        MonLevel4 = 1500,
         TowerId = 211001101
       },
       [211001102] = {
@@ -605,10 +605,10 @@ return {
         ChapterId = 1,
         FloorIdx = 7,
         Id = 46,
-        MonLevel1 = 1200,
-        MonLevel2 = 1200,
-        MonLevel3 = 1200,
-        MonLevel4 = 1200,
+        MonLevel1 = 1500,
+        MonLevel2 = 1500,
+        MonLevel3 = 1500,
+        MonLevel4 = 1500,
         TowerId = 211001102
       },
       [211001103] = {
@@ -618,10 +618,10 @@ return {
         ChapterId = 1,
         FloorIdx = 7,
         Id = 47,
-        MonLevel1 = 1200,
-        MonLevel2 = 1200,
-        MonLevel3 = 1200,
-        MonLevel4 = 1200,
+        MonLevel1 = 1500,
+        MonLevel2 = 1500,
+        MonLevel3 = 1500,
+        MonLevel4 = 1500,
         TowerId = 211001103
       },
       [211002201] = {
@@ -631,10 +631,10 @@ return {
         ChapterId = 1,
         FloorIdx = 7,
         Id = 49,
-        MonLevel1 = 1200,
-        MonLevel2 = 1200,
-        MonLevel3 = 1200,
-        MonLevel4 = 1200,
+        MonLevel1 = 1500,
+        MonLevel2 = 1500,
+        MonLevel3 = 1500,
+        MonLevel4 = 1500,
         TowerId = 211002201
       },
       [211002202] = {
@@ -644,10 +644,10 @@ return {
         ChapterId = 1,
         FloorIdx = 7,
         Id = 50,
-        MonLevel1 = 1200,
-        MonLevel2 = 1200,
-        MonLevel3 = 1200,
-        MonLevel4 = 1200,
+        MonLevel1 = 1500,
+        MonLevel2 = 1500,
+        MonLevel3 = 1500,
+        MonLevel4 = 1500,
         TowerId = 211002202
       },
       [211003101] = {
@@ -657,10 +657,10 @@ return {
         ChapterId = 1,
         FloorIdx = 7,
         Id = 48,
-        MonLevel1 = 1200,
-        MonLevel2 = 1200,
-        MonLevel3 = 1200,
-        MonLevel4 = 1200,
+        MonLevel1 = 1500,
+        MonLevel2 = 1500,
+        MonLevel3 = 1500,
+        MonLevel4 = 1500,
         TowerId = 211003101
       }
     },
@@ -672,10 +672,10 @@ return {
         ChapterId = 1,
         FloorIdx = 8,
         Id = 51,
-        MonLevel1 = 1350,
-        MonLevel2 = 1350,
-        MonLevel3 = 1350,
-        MonLevel4 = 1350,
+        MonLevel1 = 1700,
+        MonLevel2 = 1700,
+        MonLevel3 = 1700,
+        MonLevel4 = 1700,
         TowerId = 211000101
       },
       [211001101] = {
@@ -685,10 +685,10 @@ return {
         ChapterId = 1,
         FloorIdx = 8,
         Id = 52,
-        MonLevel1 = 1350,
-        MonLevel2 = 1350,
-        MonLevel3 = 1350,
-        MonLevel4 = 1350,
+        MonLevel1 = 1700,
+        MonLevel2 = 1700,
+        MonLevel3 = 1700,
+        MonLevel4 = 1700,
         TowerId = 211001101
       },
       [211001102] = {
@@ -698,10 +698,10 @@ return {
         ChapterId = 1,
         FloorIdx = 8,
         Id = 53,
-        MonLevel1 = 1350,
-        MonLevel2 = 1350,
-        MonLevel3 = 1350,
-        MonLevel4 = 1350,
+        MonLevel1 = 1700,
+        MonLevel2 = 1700,
+        MonLevel3 = 1700,
+        MonLevel4 = 1700,
         TowerId = 211001102
       },
       [211001103] = {
@@ -711,10 +711,10 @@ return {
         ChapterId = 1,
         FloorIdx = 8,
         Id = 54,
-        MonLevel1 = 1350,
-        MonLevel2 = 1350,
-        MonLevel3 = 1350,
-        MonLevel4 = 1350,
+        MonLevel1 = 1700,
+        MonLevel2 = 1700,
+        MonLevel3 = 1700,
+        MonLevel4 = 1700,
         TowerId = 211001103
       },
       [211002201] = {
@@ -724,10 +724,10 @@ return {
         ChapterId = 1,
         FloorIdx = 8,
         Id = 56,
-        MonLevel1 = 1350,
-        MonLevel2 = 1350,
-        MonLevel3 = 1350,
-        MonLevel4 = 1350,
+        MonLevel1 = 1700,
+        MonLevel2 = 1700,
+        MonLevel3 = 1700,
+        MonLevel4 = 1700,
         TowerId = 211002201
       },
       [211002202] = {
@@ -737,10 +737,10 @@ return {
         ChapterId = 1,
         FloorIdx = 8,
         Id = 57,
-        MonLevel1 = 1350,
-        MonLevel2 = 1350,
-        MonLevel3 = 1350,
-        MonLevel4 = 1350,
+        MonLevel1 = 1700,
+        MonLevel2 = 1700,
+        MonLevel3 = 1700,
+        MonLevel4 = 1700,
         TowerId = 211002202
       },
       [211003101] = {
@@ -750,10 +750,10 @@ return {
         ChapterId = 1,
         FloorIdx = 8,
         Id = 55,
-        MonLevel1 = 1350,
-        MonLevel2 = 1350,
-        MonLevel3 = 1350,
-        MonLevel4 = 1350,
+        MonLevel1 = 1700,
+        MonLevel2 = 1700,
+        MonLevel3 = 1700,
+        MonLevel4 = 1700,
         TowerId = 211003101
       }
     },
@@ -765,10 +765,10 @@ return {
         ChapterId = 1,
         FloorIdx = 9,
         Id = 58,
-        MonLevel1 = 1500,
-        MonLevel2 = 1500,
-        MonLevel3 = 1500,
-        MonLevel4 = 1500,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211000101
       },
       [211001101] = {
@@ -778,10 +778,10 @@ return {
         ChapterId = 1,
         FloorIdx = 9,
         Id = 59,
-        MonLevel1 = 1500,
-        MonLevel2 = 1500,
-        MonLevel3 = 1500,
-        MonLevel4 = 1500,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211001101
       },
       [211001102] = {
@@ -791,10 +791,10 @@ return {
         ChapterId = 1,
         FloorIdx = 9,
         Id = 60,
-        MonLevel1 = 1500,
-        MonLevel2 = 1500,
-        MonLevel3 = 1500,
-        MonLevel4 = 1500,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211001102
       },
       [211001103] = {
@@ -804,10 +804,10 @@ return {
         ChapterId = 1,
         FloorIdx = 9,
         Id = 61,
-        MonLevel1 = 1500,
-        MonLevel2 = 1500,
-        MonLevel3 = 1500,
-        MonLevel4 = 1500,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211001103
       },
       [211002201] = {
@@ -817,10 +817,10 @@ return {
         ChapterId = 1,
         FloorIdx = 9,
         Id = 63,
-        MonLevel1 = 1500,
-        MonLevel2 = 1500,
-        MonLevel3 = 1500,
-        MonLevel4 = 1500,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211002201
       },
       [211002202] = {
@@ -830,10 +830,10 @@ return {
         ChapterId = 1,
         FloorIdx = 9,
         Id = 64,
-        MonLevel1 = 1500,
-        MonLevel2 = 1500,
-        MonLevel3 = 1500,
-        MonLevel4 = 1500,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211002202
       },
       [211003101] = {
@@ -843,10 +843,10 @@ return {
         ChapterId = 1,
         FloorIdx = 9,
         Id = 62,
-        MonLevel1 = 1500,
-        MonLevel2 = 1500,
-        MonLevel3 = 1500,
-        MonLevel4 = 1500,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211003101
       }
     },
@@ -858,10 +858,10 @@ return {
         ChapterId = 1,
         FloorIdx = 10,
         Id = 65,
-        MonLevel1 = 1700,
-        MonLevel2 = 1700,
-        MonLevel3 = 1700,
-        MonLevel4 = 1700,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211000101
       },
       [211001101] = {
@@ -871,10 +871,10 @@ return {
         ChapterId = 1,
         FloorIdx = 10,
         Id = 66,
-        MonLevel1 = 1700,
-        MonLevel2 = 1700,
-        MonLevel3 = 1700,
-        MonLevel4 = 1700,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211001101
       },
       [211001102] = {
@@ -884,10 +884,10 @@ return {
         ChapterId = 1,
         FloorIdx = 10,
         Id = 67,
-        MonLevel1 = 1700,
-        MonLevel2 = 1700,
-        MonLevel3 = 1700,
-        MonLevel4 = 1700,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211001102
       },
       [211001103] = {
@@ -897,10 +897,10 @@ return {
         ChapterId = 1,
         FloorIdx = 10,
         Id = 68,
-        MonLevel1 = 1700,
-        MonLevel2 = 1700,
-        MonLevel3 = 1700,
-        MonLevel4 = 1700,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211001103
       },
       [211002201] = {
@@ -910,10 +910,10 @@ return {
         ChapterId = 1,
         FloorIdx = 10,
         Id = 70,
-        MonLevel1 = 1700,
-        MonLevel2 = 1700,
-        MonLevel3 = 1700,
-        MonLevel4 = 1700,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211002201
       },
       [211002202] = {
@@ -923,10 +923,10 @@ return {
         ChapterId = 1,
         FloorIdx = 10,
         Id = 71,
-        MonLevel1 = 1700,
-        MonLevel2 = 1700,
-        MonLevel3 = 1700,
-        MonLevel4 = 1700,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211002202
       },
       [211003101] = {
@@ -936,10 +936,10 @@ return {
         ChapterId = 1,
         FloorIdx = 10,
         Id = 69,
-        MonLevel1 = 1700,
-        MonLevel2 = 1700,
-        MonLevel3 = 1700,
-        MonLevel4 = 1700,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211003101
       },
       [211003501] = {
@@ -949,10 +949,10 @@ return {
         ChapterId = 1,
         FloorIdx = 10,
         Id = 72,
-        MonLevel1 = 1700,
-        MonLevel2 = 1700,
-        MonLevel3 = 1700,
-        MonLevel4 = 1700,
+        MonLevel1 = 1500,
+        MonLevel2 = 1500,
+        MonLevel3 = 1500,
+        MonLevel4 = 1500,
         TowerId = 211003501
       }
     },
@@ -964,10 +964,10 @@ return {
         ChapterId = 1,
         FloorIdx = 11,
         Id = 73,
-        MonLevel1 = 1900,
-        MonLevel2 = 1900,
-        MonLevel3 = 1900,
-        MonLevel4 = 1900,
+        MonLevel1 = 2100,
+        MonLevel2 = 2100,
+        MonLevel3 = 2100,
+        MonLevel4 = 2100,
         TowerId = 211000101
       },
       [211001101] = {
@@ -977,10 +977,10 @@ return {
         ChapterId = 1,
         FloorIdx = 11,
         Id = 74,
-        MonLevel1 = 1900,
-        MonLevel2 = 1900,
-        MonLevel3 = 1900,
-        MonLevel4 = 1900,
+        MonLevel1 = 2100,
+        MonLevel2 = 2100,
+        MonLevel3 = 2100,
+        MonLevel4 = 2100,
         TowerId = 211001101
       },
       [211001102] = {
@@ -990,10 +990,10 @@ return {
         ChapterId = 1,
         FloorIdx = 11,
         Id = 75,
-        MonLevel1 = 1900,
-        MonLevel2 = 1900,
-        MonLevel3 = 1900,
-        MonLevel4 = 1900,
+        MonLevel1 = 2100,
+        MonLevel2 = 2100,
+        MonLevel3 = 2100,
+        MonLevel4 = 2100,
         TowerId = 211001102
       },
       [211001103] = {
@@ -1003,10 +1003,10 @@ return {
         ChapterId = 1,
         FloorIdx = 11,
         Id = 76,
-        MonLevel1 = 1900,
-        MonLevel2 = 1900,
-        MonLevel3 = 1900,
-        MonLevel4 = 1900,
+        MonLevel1 = 2100,
+        MonLevel2 = 2100,
+        MonLevel3 = 2100,
+        MonLevel4 = 2100,
         TowerId = 211001103
       },
       [211002201] = {
@@ -1016,10 +1016,10 @@ return {
         ChapterId = 1,
         FloorIdx = 11,
         Id = 78,
-        MonLevel1 = 1900,
-        MonLevel2 = 1900,
-        MonLevel3 = 1900,
-        MonLevel4 = 1900,
+        MonLevel1 = 2100,
+        MonLevel2 = 2100,
+        MonLevel3 = 2100,
+        MonLevel4 = 2100,
         TowerId = 211002201
       },
       [211002202] = {
@@ -1029,10 +1029,10 @@ return {
         ChapterId = 1,
         FloorIdx = 11,
         Id = 79,
-        MonLevel1 = 1900,
-        MonLevel2 = 1900,
-        MonLevel3 = 1900,
-        MonLevel4 = 1900,
+        MonLevel1 = 2100,
+        MonLevel2 = 2100,
+        MonLevel3 = 2100,
+        MonLevel4 = 2100,
         TowerId = 211002202
       },
       [211003101] = {
@@ -1042,10 +1042,10 @@ return {
         ChapterId = 1,
         FloorIdx = 11,
         Id = 77,
-        MonLevel1 = 1900,
-        MonLevel2 = 1900,
-        MonLevel3 = 1900,
-        MonLevel4 = 1900,
+        MonLevel1 = 2100,
+        MonLevel2 = 2100,
+        MonLevel3 = 2100,
+        MonLevel4 = 2100,
         TowerId = 211003101
       }
     },
@@ -1057,10 +1057,10 @@ return {
         ChapterId = 1,
         FloorIdx = 12,
         Id = 80,
-        MonLevel1 = 2100,
-        MonLevel2 = 2100,
-        MonLevel3 = 2100,
-        MonLevel4 = 2100,
+        MonLevel1 = 2200,
+        MonLevel2 = 2200,
+        MonLevel3 = 2200,
+        MonLevel4 = 2200,
         TowerId = 211000101
       },
       [211001101] = {
@@ -1070,10 +1070,10 @@ return {
         ChapterId = 1,
         FloorIdx = 12,
         Id = 81,
-        MonLevel1 = 2100,
-        MonLevel2 = 2100,
-        MonLevel3 = 2100,
-        MonLevel4 = 2100,
+        MonLevel1 = 2200,
+        MonLevel2 = 2200,
+        MonLevel3 = 2200,
+        MonLevel4 = 2200,
         TowerId = 211001101
       },
       [211001102] = {
@@ -1083,10 +1083,10 @@ return {
         ChapterId = 1,
         FloorIdx = 12,
         Id = 82,
-        MonLevel1 = 2100,
-        MonLevel2 = 2100,
-        MonLevel3 = 2100,
-        MonLevel4 = 2100,
+        MonLevel1 = 2200,
+        MonLevel2 = 2200,
+        MonLevel3 = 2200,
+        MonLevel4 = 2200,
         TowerId = 211001102
       },
       [211001103] = {
@@ -1096,10 +1096,10 @@ return {
         ChapterId = 1,
         FloorIdx = 12,
         Id = 83,
-        MonLevel1 = 2100,
-        MonLevel2 = 2100,
-        MonLevel3 = 2100,
-        MonLevel4 = 2100,
+        MonLevel1 = 2200,
+        MonLevel2 = 2200,
+        MonLevel3 = 2200,
+        MonLevel4 = 2200,
         TowerId = 211001103
       },
       [211002201] = {
@@ -1109,10 +1109,10 @@ return {
         ChapterId = 1,
         FloorIdx = 12,
         Id = 85,
-        MonLevel1 = 2100,
-        MonLevel2 = 2100,
-        MonLevel3 = 2100,
-        MonLevel4 = 2100,
+        MonLevel1 = 2200,
+        MonLevel2 = 2200,
+        MonLevel3 = 2200,
+        MonLevel4 = 2200,
         TowerId = 211002201
       },
       [211002202] = {
@@ -1122,10 +1122,10 @@ return {
         ChapterId = 1,
         FloorIdx = 12,
         Id = 86,
-        MonLevel1 = 2100,
-        MonLevel2 = 2100,
-        MonLevel3 = 2100,
-        MonLevel4 = 2100,
+        MonLevel1 = 2200,
+        MonLevel2 = 2200,
+        MonLevel3 = 2200,
+        MonLevel4 = 2200,
         TowerId = 211002202
       },
       [211003101] = {
@@ -1135,10 +1135,10 @@ return {
         ChapterId = 1,
         FloorIdx = 12,
         Id = 84,
-        MonLevel1 = 2100,
-        MonLevel2 = 2100,
-        MonLevel3 = 2100,
-        MonLevel4 = 2100,
+        MonLevel1 = 2200,
+        MonLevel2 = 2200,
+        MonLevel3 = 2200,
+        MonLevel4 = 2200,
         TowerId = 211003101
       }
     },
@@ -2772,10 +2772,10 @@ return {
         ChapterId = 2,
         FloorIdx = 10,
         Id = 209,
-        MonLevel1 = 2500,
-        MonLevel2 = 2500,
-        MonLevel3 = 2500,
-        MonLevel4 = 2500,
+        MonLevel1 = 2300,
+        MonLevel2 = 2300,
+        MonLevel3 = 2300,
+        MonLevel4 = 2300,
         TowerId = 211000101
       },
       [211001101] = {
@@ -2863,10 +2863,10 @@ return {
         ChapterId = 2,
         FloorIdx = 10,
         Id = 216,
-        MonLevel1 = 2500,
-        MonLevel2 = 2500,
-        MonLevel3 = 2500,
-        MonLevel4 = 2500,
+        MonLevel1 = 2300,
+        MonLevel2 = 2300,
+        MonLevel3 = 2300,
+        MonLevel4 = 2300,
         TowerId = 211003501
       }
     },
@@ -2971,10 +2971,10 @@ return {
         ChapterId = 2,
         FloorIdx = 12,
         Id = 224,
-        MonLevel1 = 2900,
-        MonLevel2 = 2900,
-        MonLevel3 = 2900,
-        MonLevel4 = 2900,
+        MonLevel1 = 3000,
+        MonLevel2 = 3000,
+        MonLevel3 = 3000,
+        MonLevel4 = 3000,
         TowerId = 211000101
       },
       [211001101] = {
@@ -2984,10 +2984,10 @@ return {
         ChapterId = 2,
         FloorIdx = 12,
         Id = 225,
-        MonLevel1 = 2900,
-        MonLevel2 = 2900,
-        MonLevel3 = 2900,
-        MonLevel4 = 2900,
+        MonLevel1 = 3000,
+        MonLevel2 = 3000,
+        MonLevel3 = 3000,
+        MonLevel4 = 3000,
         TowerId = 211001101
       },
       [211001102] = {
@@ -2997,10 +2997,10 @@ return {
         ChapterId = 2,
         FloorIdx = 12,
         Id = 226,
-        MonLevel1 = 2900,
-        MonLevel2 = 2900,
-        MonLevel3 = 2900,
-        MonLevel4 = 2900,
+        MonLevel1 = 3000,
+        MonLevel2 = 3000,
+        MonLevel3 = 3000,
+        MonLevel4 = 3000,
         TowerId = 211001102
       },
       [211001103] = {
@@ -3010,10 +3010,10 @@ return {
         ChapterId = 2,
         FloorIdx = 12,
         Id = 227,
-        MonLevel1 = 2900,
-        MonLevel2 = 2900,
-        MonLevel3 = 2900,
-        MonLevel4 = 2900,
+        MonLevel1 = 3000,
+        MonLevel2 = 3000,
+        MonLevel3 = 3000,
+        MonLevel4 = 3000,
         TowerId = 211001103
       },
       [211002201] = {
@@ -3023,10 +3023,10 @@ return {
         ChapterId = 2,
         FloorIdx = 12,
         Id = 229,
-        MonLevel1 = 2900,
-        MonLevel2 = 2900,
-        MonLevel3 = 2900,
-        MonLevel4 = 2900,
+        MonLevel1 = 3000,
+        MonLevel2 = 3000,
+        MonLevel3 = 3000,
+        MonLevel4 = 3000,
         TowerId = 211002201
       },
       [211002202] = {
@@ -3036,10 +3036,10 @@ return {
         ChapterId = 2,
         FloorIdx = 12,
         Id = 230,
-        MonLevel1 = 2900,
-        MonLevel2 = 2900,
-        MonLevel3 = 2900,
-        MonLevel4 = 2900,
+        MonLevel1 = 3000,
+        MonLevel2 = 3000,
+        MonLevel3 = 3000,
+        MonLevel4 = 3000,
         TowerId = 211002202
       },
       [211003101] = {
@@ -3049,10 +3049,10 @@ return {
         ChapterId = 2,
         FloorIdx = 12,
         Id = 228,
-        MonLevel1 = 2900,
-        MonLevel2 = 2900,
-        MonLevel3 = 2900,
-        MonLevel4 = 2900,
+        MonLevel1 = 3000,
+        MonLevel2 = 3000,
+        MonLevel3 = 3000,
+        MonLevel4 = 3000,
         TowerId = 211003101
       }
     },
@@ -3064,10 +3064,10 @@ return {
         ChapterId = 2,
         FloorIdx = 13,
         Id = 231,
-        MonLevel1 = 3100,
-        MonLevel2 = 3100,
-        MonLevel3 = 3100,
-        MonLevel4 = 3100,
+        MonLevel1 = 3300,
+        MonLevel2 = 3300,
+        MonLevel3 = 3300,
+        MonLevel4 = 3300,
         TowerId = 211000101
       },
       [211001101] = {
@@ -3077,10 +3077,10 @@ return {
         ChapterId = 2,
         FloorIdx = 13,
         Id = 232,
-        MonLevel1 = 3100,
-        MonLevel2 = 3100,
-        MonLevel3 = 3100,
-        MonLevel4 = 3100,
+        MonLevel1 = 3300,
+        MonLevel2 = 3300,
+        MonLevel3 = 3300,
+        MonLevel4 = 3300,
         TowerId = 211001101
       },
       [211001102] = {
@@ -3090,10 +3090,10 @@ return {
         ChapterId = 2,
         FloorIdx = 13,
         Id = 233,
-        MonLevel1 = 3100,
-        MonLevel2 = 3100,
-        MonLevel3 = 3100,
-        MonLevel4 = 3100,
+        MonLevel1 = 3300,
+        MonLevel2 = 3300,
+        MonLevel3 = 3300,
+        MonLevel4 = 3300,
         TowerId = 211001102
       },
       [211001103] = {
@@ -3103,10 +3103,10 @@ return {
         ChapterId = 2,
         FloorIdx = 13,
         Id = 234,
-        MonLevel1 = 3100,
-        MonLevel2 = 3100,
-        MonLevel3 = 3100,
-        MonLevel4 = 3100,
+        MonLevel1 = 3300,
+        MonLevel2 = 3300,
+        MonLevel3 = 3300,
+        MonLevel4 = 3300,
         TowerId = 211001103
       },
       [211002201] = {
@@ -3116,10 +3116,10 @@ return {
         ChapterId = 2,
         FloorIdx = 13,
         Id = 236,
-        MonLevel1 = 3100,
-        MonLevel2 = 3100,
-        MonLevel3 = 3100,
-        MonLevel4 = 3100,
+        MonLevel1 = 3300,
+        MonLevel2 = 3300,
+        MonLevel3 = 3300,
+        MonLevel4 = 3300,
         TowerId = 211002201
       },
       [211002202] = {
@@ -3129,10 +3129,10 @@ return {
         ChapterId = 2,
         FloorIdx = 13,
         Id = 237,
-        MonLevel1 = 3100,
-        MonLevel2 = 3100,
-        MonLevel3 = 3100,
-        MonLevel4 = 3100,
+        MonLevel1 = 3300,
+        MonLevel2 = 3300,
+        MonLevel3 = 3300,
+        MonLevel4 = 3300,
         TowerId = 211002202
       },
       [211003101] = {
@@ -3142,10 +3142,10 @@ return {
         ChapterId = 2,
         FloorIdx = 13,
         Id = 235,
-        MonLevel1 = 3100,
-        MonLevel2 = 3100,
-        MonLevel3 = 3100,
-        MonLevel4 = 3100,
+        MonLevel1 = 3300,
+        MonLevel2 = 3300,
+        MonLevel3 = 3300,
+        MonLevel4 = 3300,
         TowerId = 211003101
       }
     },
@@ -3157,10 +3157,10 @@ return {
         ChapterId = 2,
         FloorIdx = 14,
         Id = 238,
-        MonLevel1 = 3300,
-        MonLevel2 = 3300,
-        MonLevel3 = 3300,
-        MonLevel4 = 3300,
+        MonLevel1 = 3600,
+        MonLevel2 = 3600,
+        MonLevel3 = 3600,
+        MonLevel4 = 3600,
         TowerId = 211000101
       },
       [211001101] = {
@@ -3170,10 +3170,10 @@ return {
         ChapterId = 2,
         FloorIdx = 14,
         Id = 239,
-        MonLevel1 = 3300,
-        MonLevel2 = 3300,
-        MonLevel3 = 3300,
-        MonLevel4 = 3300,
+        MonLevel1 = 3600,
+        MonLevel2 = 3600,
+        MonLevel3 = 3600,
+        MonLevel4 = 3600,
         TowerId = 211001101
       },
       [211001102] = {
@@ -3183,10 +3183,10 @@ return {
         ChapterId = 2,
         FloorIdx = 14,
         Id = 240,
-        MonLevel1 = 3300,
-        MonLevel2 = 3300,
-        MonLevel3 = 3300,
-        MonLevel4 = 3300,
+        MonLevel1 = 3600,
+        MonLevel2 = 3600,
+        MonLevel3 = 3600,
+        MonLevel4 = 3600,
         TowerId = 211001102
       },
       [211001103] = {
@@ -3196,10 +3196,10 @@ return {
         ChapterId = 2,
         FloorIdx = 14,
         Id = 241,
-        MonLevel1 = 3300,
-        MonLevel2 = 3300,
-        MonLevel3 = 3300,
-        MonLevel4 = 3300,
+        MonLevel1 = 3600,
+        MonLevel2 = 3600,
+        MonLevel3 = 3600,
+        MonLevel4 = 3600,
         TowerId = 211001103
       },
       [211002201] = {
@@ -3209,10 +3209,10 @@ return {
         ChapterId = 2,
         FloorIdx = 14,
         Id = 243,
-        MonLevel1 = 3300,
-        MonLevel2 = 3300,
-        MonLevel3 = 3300,
-        MonLevel4 = 3300,
+        MonLevel1 = 3600,
+        MonLevel2 = 3600,
+        MonLevel3 = 3600,
+        MonLevel4 = 3600,
         TowerId = 211002201
       },
       [211002202] = {
@@ -3222,10 +3222,10 @@ return {
         ChapterId = 2,
         FloorIdx = 14,
         Id = 244,
-        MonLevel1 = 3300,
-        MonLevel2 = 3300,
-        MonLevel3 = 3300,
-        MonLevel4 = 3300,
+        MonLevel1 = 3600,
+        MonLevel2 = 3600,
+        MonLevel3 = 3600,
+        MonLevel4 = 3600,
         TowerId = 211002202
       },
       [211003101] = {
@@ -3235,10 +3235,10 @@ return {
         ChapterId = 2,
         FloorIdx = 14,
         Id = 242,
-        MonLevel1 = 3300,
-        MonLevel2 = 3300,
-        MonLevel3 = 3300,
-        MonLevel4 = 3300,
+        MonLevel1 = 3600,
+        MonLevel2 = 3600,
+        MonLevel3 = 3600,
+        MonLevel4 = 3600,
         TowerId = 211003101
       }
     },
@@ -3250,10 +3250,10 @@ return {
         ChapterId = 2,
         FloorIdx = 15,
         Id = 245,
-        MonLevel1 = 3500,
-        MonLevel2 = 3500,
-        MonLevel3 = 3500,
-        MonLevel4 = 3500,
+        MonLevel1 = 4000,
+        MonLevel2 = 4000,
+        MonLevel3 = 4000,
+        MonLevel4 = 4000,
         TowerId = 211000101
       },
       [211001101] = {
@@ -3263,10 +3263,10 @@ return {
         ChapterId = 2,
         FloorIdx = 15,
         Id = 246,
-        MonLevel1 = 3500,
-        MonLevel2 = 3500,
-        MonLevel3 = 3500,
-        MonLevel4 = 3500,
+        MonLevel1 = 4000,
+        MonLevel2 = 4000,
+        MonLevel3 = 4000,
+        MonLevel4 = 4000,
         TowerId = 211001101
       },
       [211001102] = {
@@ -3276,10 +3276,10 @@ return {
         ChapterId = 2,
         FloorIdx = 15,
         Id = 247,
-        MonLevel1 = 3500,
-        MonLevel2 = 3500,
-        MonLevel3 = 3500,
-        MonLevel4 = 3500,
+        MonLevel1 = 4000,
+        MonLevel2 = 4000,
+        MonLevel3 = 4000,
+        MonLevel4 = 4000,
         TowerId = 211001102
       },
       [211001103] = {
@@ -3289,10 +3289,10 @@ return {
         ChapterId = 2,
         FloorIdx = 15,
         Id = 248,
-        MonLevel1 = 3500,
-        MonLevel2 = 3500,
-        MonLevel3 = 3500,
-        MonLevel4 = 3500,
+        MonLevel1 = 4000,
+        MonLevel2 = 4000,
+        MonLevel3 = 4000,
+        MonLevel4 = 4000,
         TowerId = 211001103
       },
       [211001401] = {
@@ -3302,10 +3302,10 @@ return {
         ChapterId = 2,
         FloorIdx = 15,
         Id = 252,
-        MonLevel1 = 3500,
-        MonLevel2 = 3500,
-        MonLevel3 = 3500,
-        MonLevel4 = 3500,
+        MonLevel1 = 3700,
+        MonLevel2 = 3700,
+        MonLevel3 = 3700,
+        MonLevel4 = 3700,
         TowerId = 211001401
       },
       [211002201] = {
@@ -3315,10 +3315,10 @@ return {
         ChapterId = 2,
         FloorIdx = 15,
         Id = 250,
-        MonLevel1 = 3500,
-        MonLevel2 = 3500,
-        MonLevel3 = 3500,
-        MonLevel4 = 3500,
+        MonLevel1 = 4000,
+        MonLevel2 = 4000,
+        MonLevel3 = 4000,
+        MonLevel4 = 4000,
         TowerId = 211002201
       },
       [211002202] = {
@@ -3328,10 +3328,10 @@ return {
         ChapterId = 2,
         FloorIdx = 15,
         Id = 251,
-        MonLevel1 = 3500,
-        MonLevel2 = 3500,
-        MonLevel3 = 3500,
-        MonLevel4 = 3500,
+        MonLevel1 = 4000,
+        MonLevel2 = 4000,
+        MonLevel3 = 4000,
+        MonLevel4 = 4000,
         TowerId = 211002202
       },
       [211003101] = {
@@ -3341,10 +3341,10 @@ return {
         ChapterId = 2,
         FloorIdx = 15,
         Id = 249,
-        MonLevel1 = 3500,
-        MonLevel2 = 3500,
-        MonLevel3 = 3500,
-        MonLevel4 = 3500,
+        MonLevel1 = 4000,
+        MonLevel2 = 4000,
+        MonLevel3 = 4000,
+        MonLevel4 = 4000,
         TowerId = 211003101
       }
     },
@@ -3356,10 +3356,10 @@ return {
         ChapterId = 2,
         FloorIdx = 16,
         Id = 253,
-        MonLevel1 = 3700,
-        MonLevel2 = 3700,
-        MonLevel3 = 3700,
-        MonLevel4 = 3700,
+        MonLevel1 = 4400,
+        MonLevel2 = 4400,
+        MonLevel3 = 4400,
+        MonLevel4 = 4400,
         TowerId = 211000101
       },
       [211001101] = {
@@ -3369,10 +3369,10 @@ return {
         ChapterId = 2,
         FloorIdx = 16,
         Id = 254,
-        MonLevel1 = 3700,
-        MonLevel2 = 3700,
-        MonLevel3 = 3700,
-        MonLevel4 = 3700,
+        MonLevel1 = 4400,
+        MonLevel2 = 4400,
+        MonLevel3 = 4400,
+        MonLevel4 = 4400,
         TowerId = 211001101
       },
       [211001102] = {
@@ -3382,10 +3382,10 @@ return {
         ChapterId = 2,
         FloorIdx = 16,
         Id = 255,
-        MonLevel1 = 3700,
-        MonLevel2 = 3700,
-        MonLevel3 = 3700,
-        MonLevel4 = 3700,
+        MonLevel1 = 4400,
+        MonLevel2 = 4400,
+        MonLevel3 = 4400,
+        MonLevel4 = 4400,
         TowerId = 211001102
       },
       [211001103] = {
@@ -3395,10 +3395,10 @@ return {
         ChapterId = 2,
         FloorIdx = 16,
         Id = 256,
-        MonLevel1 = 3700,
-        MonLevel2 = 3700,
-        MonLevel3 = 3700,
-        MonLevel4 = 3700,
+        MonLevel1 = 4400,
+        MonLevel2 = 4400,
+        MonLevel3 = 4400,
+        MonLevel4 = 4400,
         TowerId = 211001103
       },
       [211002201] = {
@@ -3408,10 +3408,10 @@ return {
         ChapterId = 2,
         FloorIdx = 16,
         Id = 258,
-        MonLevel1 = 3700,
-        MonLevel2 = 3700,
-        MonLevel3 = 3700,
-        MonLevel4 = 3700,
+        MonLevel1 = 4400,
+        MonLevel2 = 4400,
+        MonLevel3 = 4400,
+        MonLevel4 = 4400,
         TowerId = 211002201
       },
       [211002202] = {
@@ -3421,10 +3421,10 @@ return {
         ChapterId = 2,
         FloorIdx = 16,
         Id = 259,
-        MonLevel1 = 3700,
-        MonLevel2 = 3700,
-        MonLevel3 = 3700,
-        MonLevel4 = 3700,
+        MonLevel1 = 4400,
+        MonLevel2 = 4400,
+        MonLevel3 = 4400,
+        MonLevel4 = 4400,
         TowerId = 211002202
       },
       [211003101] = {
@@ -3434,10 +3434,10 @@ return {
         ChapterId = 2,
         FloorIdx = 16,
         Id = 257,
-        MonLevel1 = 3700,
-        MonLevel2 = 3700,
-        MonLevel3 = 3700,
-        MonLevel4 = 3700,
+        MonLevel1 = 4400,
+        MonLevel2 = 4400,
+        MonLevel3 = 4400,
+        MonLevel4 = 4400,
         TowerId = 211003101
       }
     },
@@ -3449,10 +3449,10 @@ return {
         ChapterId = 2,
         FloorIdx = 17,
         Id = 260,
-        MonLevel1 = 4000,
-        MonLevel2 = 4000,
-        MonLevel3 = 4000,
-        MonLevel4 = 4000,
+        MonLevel1 = 4800,
+        MonLevel2 = 4800,
+        MonLevel3 = 4800,
+        MonLevel4 = 4800,
         TowerId = 211000101
       },
       [211001101] = {
@@ -3462,10 +3462,10 @@ return {
         ChapterId = 2,
         FloorIdx = 17,
         Id = 261,
-        MonLevel1 = 4000,
-        MonLevel2 = 4000,
-        MonLevel3 = 4000,
-        MonLevel4 = 4000,
+        MonLevel1 = 4800,
+        MonLevel2 = 4800,
+        MonLevel3 = 4800,
+        MonLevel4 = 4800,
         TowerId = 211001101
       },
       [211001102] = {
@@ -3475,10 +3475,10 @@ return {
         ChapterId = 2,
         FloorIdx = 17,
         Id = 262,
-        MonLevel1 = 4000,
-        MonLevel2 = 4000,
-        MonLevel3 = 4000,
-        MonLevel4 = 4000,
+        MonLevel1 = 4800,
+        MonLevel2 = 4800,
+        MonLevel3 = 4800,
+        MonLevel4 = 4800,
         TowerId = 211001102
       },
       [211001103] = {
@@ -3488,10 +3488,10 @@ return {
         ChapterId = 2,
         FloorIdx = 17,
         Id = 263,
-        MonLevel1 = 4000,
-        MonLevel2 = 4000,
-        MonLevel3 = 4000,
-        MonLevel4 = 4000,
+        MonLevel1 = 4800,
+        MonLevel2 = 4800,
+        MonLevel3 = 4800,
+        MonLevel4 = 4800,
         TowerId = 211001103
       },
       [211002201] = {
@@ -3501,10 +3501,10 @@ return {
         ChapterId = 2,
         FloorIdx = 17,
         Id = 265,
-        MonLevel1 = 4000,
-        MonLevel2 = 4000,
-        MonLevel3 = 4000,
-        MonLevel4 = 4000,
+        MonLevel1 = 4800,
+        MonLevel2 = 4800,
+        MonLevel3 = 4800,
+        MonLevel4 = 4800,
         TowerId = 211002201
       },
       [211002202] = {
@@ -3514,10 +3514,10 @@ return {
         ChapterId = 2,
         FloorIdx = 17,
         Id = 266,
-        MonLevel1 = 4000,
-        MonLevel2 = 4000,
-        MonLevel3 = 4000,
-        MonLevel4 = 4000,
+        MonLevel1 = 4800,
+        MonLevel2 = 4800,
+        MonLevel3 = 4800,
+        MonLevel4 = 4800,
         TowerId = 211002202
       },
       [211003101] = {
@@ -3527,10 +3527,10 @@ return {
         ChapterId = 2,
         FloorIdx = 17,
         Id = 264,
-        MonLevel1 = 4000,
-        MonLevel2 = 4000,
-        MonLevel3 = 4000,
-        MonLevel4 = 4000,
+        MonLevel1 = 4800,
+        MonLevel2 = 4800,
+        MonLevel3 = 4800,
+        MonLevel4 = 4800,
         TowerId = 211003101
       }
     },
@@ -3542,10 +3542,10 @@ return {
         ChapterId = 2,
         FloorIdx = 18,
         Id = 267,
-        MonLevel1 = 4300,
-        MonLevel2 = 4300,
-        MonLevel3 = 4300,
-        MonLevel4 = 4300,
+        MonLevel1 = 5200,
+        MonLevel2 = 5200,
+        MonLevel3 = 5200,
+        MonLevel4 = 5200,
         TowerId = 211000101
       },
       [211001101] = {
@@ -3555,10 +3555,10 @@ return {
         ChapterId = 2,
         FloorIdx = 18,
         Id = 268,
-        MonLevel1 = 4300,
-        MonLevel2 = 4300,
-        MonLevel3 = 4300,
-        MonLevel4 = 4300,
+        MonLevel1 = 5200,
+        MonLevel2 = 5200,
+        MonLevel3 = 5200,
+        MonLevel4 = 5200,
         TowerId = 211001101
       },
       [211001102] = {
@@ -3568,10 +3568,10 @@ return {
         ChapterId = 2,
         FloorIdx = 18,
         Id = 269,
-        MonLevel1 = 4300,
-        MonLevel2 = 4300,
-        MonLevel3 = 4300,
-        MonLevel4 = 4300,
+        MonLevel1 = 5200,
+        MonLevel2 = 5200,
+        MonLevel3 = 5200,
+        MonLevel4 = 5200,
         TowerId = 211001102
       },
       [211001103] = {
@@ -3581,10 +3581,10 @@ return {
         ChapterId = 2,
         FloorIdx = 18,
         Id = 270,
-        MonLevel1 = 4300,
-        MonLevel2 = 4300,
-        MonLevel3 = 4300,
-        MonLevel4 = 4300,
+        MonLevel1 = 5200,
+        MonLevel2 = 5200,
+        MonLevel3 = 5200,
+        MonLevel4 = 5200,
         TowerId = 211001103
       },
       [211002201] = {
@@ -3594,10 +3594,10 @@ return {
         ChapterId = 2,
         FloorIdx = 18,
         Id = 272,
-        MonLevel1 = 4300,
-        MonLevel2 = 4300,
-        MonLevel3 = 4300,
-        MonLevel4 = 4300,
+        MonLevel1 = 5200,
+        MonLevel2 = 5200,
+        MonLevel3 = 5200,
+        MonLevel4 = 5200,
         TowerId = 211002201
       },
       [211002202] = {
@@ -3607,10 +3607,10 @@ return {
         ChapterId = 2,
         FloorIdx = 18,
         Id = 273,
-        MonLevel1 = 4300,
-        MonLevel2 = 4300,
-        MonLevel3 = 4300,
-        MonLevel4 = 4300,
+        MonLevel1 = 5200,
+        MonLevel2 = 5200,
+        MonLevel3 = 5200,
+        MonLevel4 = 5200,
         TowerId = 211002202
       },
       [211003101] = {
@@ -3620,10 +3620,10 @@ return {
         ChapterId = 2,
         FloorIdx = 18,
         Id = 271,
-        MonLevel1 = 4300,
-        MonLevel2 = 4300,
-        MonLevel3 = 4300,
-        MonLevel4 = 4300,
+        MonLevel1 = 5200,
+        MonLevel2 = 5200,
+        MonLevel3 = 5200,
+        MonLevel4 = 5200,
         TowerId = 211003101
       }
     },
@@ -3635,10 +3635,10 @@ return {
         ChapterId = 2,
         FloorIdx = 19,
         Id = 274,
-        MonLevel1 = 4600,
-        MonLevel2 = 4600,
-        MonLevel3 = 4600,
-        MonLevel4 = 4600,
+        MonLevel1 = 5600,
+        MonLevel2 = 5600,
+        MonLevel3 = 5600,
+        MonLevel4 = 5600,
         TowerId = 211000101
       },
       [211001101] = {
@@ -3648,10 +3648,10 @@ return {
         ChapterId = 2,
         FloorIdx = 19,
         Id = 275,
-        MonLevel1 = 4600,
-        MonLevel2 = 4600,
-        MonLevel3 = 4600,
-        MonLevel4 = 4600,
+        MonLevel1 = 5600,
+        MonLevel2 = 5600,
+        MonLevel3 = 5600,
+        MonLevel4 = 5600,
         TowerId = 211001101
       },
       [211001102] = {
@@ -3661,10 +3661,10 @@ return {
         ChapterId = 2,
         FloorIdx = 19,
         Id = 276,
-        MonLevel1 = 4600,
-        MonLevel2 = 4600,
-        MonLevel3 = 4600,
-        MonLevel4 = 4600,
+        MonLevel1 = 5600,
+        MonLevel2 = 5600,
+        MonLevel3 = 5600,
+        MonLevel4 = 5600,
         TowerId = 211001102
       },
       [211001103] = {
@@ -3674,10 +3674,10 @@ return {
         ChapterId = 2,
         FloorIdx = 19,
         Id = 277,
-        MonLevel1 = 4600,
-        MonLevel2 = 4600,
-        MonLevel3 = 4600,
-        MonLevel4 = 4600,
+        MonLevel1 = 5600,
+        MonLevel2 = 5600,
+        MonLevel3 = 5600,
+        MonLevel4 = 5600,
         TowerId = 211001103
       },
       [211002201] = {
@@ -3687,10 +3687,10 @@ return {
         ChapterId = 2,
         FloorIdx = 19,
         Id = 279,
-        MonLevel1 = 4600,
-        MonLevel2 = 4600,
-        MonLevel3 = 4600,
-        MonLevel4 = 4600,
+        MonLevel1 = 5600,
+        MonLevel2 = 5600,
+        MonLevel3 = 5600,
+        MonLevel4 = 5600,
         TowerId = 211002201
       },
       [211002202] = {
@@ -3700,10 +3700,10 @@ return {
         ChapterId = 2,
         FloorIdx = 19,
         Id = 280,
-        MonLevel1 = 4600,
-        MonLevel2 = 4600,
-        MonLevel3 = 4600,
-        MonLevel4 = 4600,
+        MonLevel1 = 5600,
+        MonLevel2 = 5600,
+        MonLevel3 = 5600,
+        MonLevel4 = 5600,
         TowerId = 211002202
       },
       [211003101] = {
@@ -3713,10 +3713,10 @@ return {
         ChapterId = 2,
         FloorIdx = 19,
         Id = 278,
-        MonLevel1 = 4600,
-        MonLevel2 = 4600,
-        MonLevel3 = 4600,
-        MonLevel4 = 4600,
+        MonLevel1 = 5600,
+        MonLevel2 = 5600,
+        MonLevel3 = 5600,
+        MonLevel4 = 5600,
         TowerId = 211003101
       }
     },
@@ -3728,10 +3728,10 @@ return {
         ChapterId = 2,
         FloorIdx = 20,
         Id = 281,
-        MonLevel1 = 5000,
-        MonLevel2 = 5000,
-        MonLevel3 = 5000,
-        MonLevel4 = 5000,
+        MonLevel1 = 6000,
+        MonLevel2 = 6000,
+        MonLevel3 = 6000,
+        MonLevel4 = 6000,
         TowerId = 211000101
       },
       [211001101] = {
@@ -3741,10 +3741,10 @@ return {
         ChapterId = 2,
         FloorIdx = 20,
         Id = 282,
-        MonLevel1 = 5000,
-        MonLevel2 = 5000,
-        MonLevel3 = 5000,
-        MonLevel4 = 5000,
+        MonLevel1 = 6000,
+        MonLevel2 = 6000,
+        MonLevel3 = 6000,
+        MonLevel4 = 6000,
         TowerId = 211001101
       },
       [211001102] = {
@@ -3754,10 +3754,10 @@ return {
         ChapterId = 2,
         FloorIdx = 20,
         Id = 283,
-        MonLevel1 = 5000,
-        MonLevel2 = 5000,
-        MonLevel3 = 5000,
-        MonLevel4 = 5000,
+        MonLevel1 = 6000,
+        MonLevel2 = 6000,
+        MonLevel3 = 6000,
+        MonLevel4 = 6000,
         TowerId = 211001102
       },
       [211001103] = {
@@ -3767,10 +3767,10 @@ return {
         ChapterId = 2,
         FloorIdx = 20,
         Id = 284,
-        MonLevel1 = 5000,
-        MonLevel2 = 5000,
-        MonLevel3 = 5000,
-        MonLevel4 = 5000,
+        MonLevel1 = 6000,
+        MonLevel2 = 6000,
+        MonLevel3 = 6000,
+        MonLevel4 = 6000,
         TowerId = 211001103
       },
       [211002201] = {
@@ -3780,10 +3780,10 @@ return {
         ChapterId = 2,
         FloorIdx = 20,
         Id = 286,
-        MonLevel1 = 5000,
-        MonLevel2 = 5000,
-        MonLevel3 = 5000,
-        MonLevel4 = 5000,
+        MonLevel1 = 6000,
+        MonLevel2 = 6000,
+        MonLevel3 = 6000,
+        MonLevel4 = 6000,
         TowerId = 211002201
       },
       [211002202] = {
@@ -3793,10 +3793,10 @@ return {
         ChapterId = 2,
         FloorIdx = 20,
         Id = 287,
-        MonLevel1 = 5000,
-        MonLevel2 = 5000,
-        MonLevel3 = 5000,
-        MonLevel4 = 5000,
+        MonLevel1 = 6000,
+        MonLevel2 = 6000,
+        MonLevel3 = 6000,
+        MonLevel4 = 6000,
         TowerId = 211002202
       },
       [211002401] = {
@@ -3806,10 +3806,10 @@ return {
         ChapterId = 2,
         FloorIdx = 20,
         Id = 288,
-        MonLevel1 = 5000,
-        MonLevel2 = 5000,
-        MonLevel3 = 5000,
-        MonLevel4 = 5000,
+        MonLevel1 = 5600,
+        MonLevel2 = 5600,
+        MonLevel3 = 5600,
+        MonLevel4 = 5600,
         TowerId = 211002401
       },
       [211003101] = {
@@ -3819,10 +3819,10 @@ return {
         ChapterId = 2,
         FloorIdx = 20,
         Id = 285,
-        MonLevel1 = 5000,
-        MonLevel2 = 5000,
-        MonLevel3 = 5000,
-        MonLevel4 = 5000,
+        MonLevel1 = 6000,
+        MonLevel2 = 6000,
+        MonLevel3 = 6000,
+        MonLevel4 = 6000,
         TowerId = 211003101
       }
     }
@@ -3836,10 +3836,10 @@ return {
         ChapterId = 3,
         FloorIdx = 1,
         Id = 289,
-        MonLevel1 = 400,
-        MonLevel2 = 400,
-        MonLevel3 = 400,
-        MonLevel4 = 400,
+        MonLevel1 = 500,
+        MonLevel2 = 500,
+        MonLevel3 = 500,
+        MonLevel4 = 500,
         TowerId = 211052201
       },
       [211052202] = {
@@ -3849,10 +3849,10 @@ return {
         ChapterId = 3,
         FloorIdx = 1,
         Id = 290,
-        MonLevel1 = 400,
-        MonLevel2 = 400,
-        MonLevel3 = 400,
-        MonLevel4 = 400,
+        MonLevel1 = 500,
+        MonLevel2 = 500,
+        MonLevel3 = 500,
+        MonLevel4 = 500,
         TowerId = 211052202
       },
       [211061101] = {
@@ -3862,10 +3862,10 @@ return {
         ChapterId = 3,
         FloorIdx = 1,
         Id = 291,
-        MonLevel1 = 400,
-        MonLevel2 = 400,
-        MonLevel3 = 400,
-        MonLevel4 = 400,
+        MonLevel1 = 500,
+        MonLevel2 = 500,
+        MonLevel3 = 500,
+        MonLevel4 = 500,
         TowerId = 211061101
       },
       [211061102] = {
@@ -3875,10 +3875,10 @@ return {
         ChapterId = 3,
         FloorIdx = 1,
         Id = 292,
-        MonLevel1 = 400,
-        MonLevel2 = 400,
-        MonLevel3 = 400,
-        MonLevel4 = 400,
+        MonLevel1 = 500,
+        MonLevel2 = 500,
+        MonLevel3 = 500,
+        MonLevel4 = 500,
         TowerId = 211061102
       },
       [211062101] = {
@@ -3888,10 +3888,10 @@ return {
         ChapterId = 3,
         FloorIdx = 1,
         Id = 293,
-        MonLevel1 = 400,
-        MonLevel2 = 400,
-        MonLevel3 = 400,
-        MonLevel4 = 400,
+        MonLevel1 = 500,
+        MonLevel2 = 500,
+        MonLevel3 = 500,
+        MonLevel4 = 500,
         TowerId = 211062101
       },
       [211062201] = {
@@ -3901,10 +3901,10 @@ return {
         ChapterId = 3,
         FloorIdx = 1,
         Id = 294,
-        MonLevel1 = 400,
-        MonLevel2 = 400,
-        MonLevel3 = 400,
-        MonLevel4 = 400,
+        MonLevel1 = 500,
+        MonLevel2 = 500,
+        MonLevel3 = 500,
+        MonLevel4 = 500,
         TowerId = 211062201
       },
       [211064201] = {
@@ -3914,10 +3914,10 @@ return {
         ChapterId = 3,
         FloorIdx = 1,
         Id = 295,
-        MonLevel1 = 400,
-        MonLevel2 = 400,
-        MonLevel3 = 400,
-        MonLevel4 = 400,
+        MonLevel1 = 500,
+        MonLevel2 = 500,
+        MonLevel3 = 500,
+        MonLevel4 = 500,
         TowerId = 211064201
       }
     },
@@ -3929,10 +3929,10 @@ return {
         ChapterId = 3,
         FloorIdx = 2,
         Id = 296,
-        MonLevel1 = 500,
-        MonLevel2 = 500,
-        MonLevel3 = 500,
-        MonLevel4 = 500,
+        MonLevel1 = 700,
+        MonLevel2 = 700,
+        MonLevel3 = 700,
+        MonLevel4 = 700,
         TowerId = 211052201
       },
       [211052202] = {
@@ -3942,10 +3942,10 @@ return {
         ChapterId = 3,
         FloorIdx = 2,
         Id = 297,
-        MonLevel1 = 500,
-        MonLevel2 = 500,
-        MonLevel3 = 500,
-        MonLevel4 = 500,
+        MonLevel1 = 700,
+        MonLevel2 = 700,
+        MonLevel3 = 700,
+        MonLevel4 = 700,
         TowerId = 211052202
       },
       [211061101] = {
@@ -3955,10 +3955,10 @@ return {
         ChapterId = 3,
         FloorIdx = 2,
         Id = 298,
-        MonLevel1 = 500,
-        MonLevel2 = 500,
-        MonLevel3 = 500,
-        MonLevel4 = 500,
+        MonLevel1 = 700,
+        MonLevel2 = 700,
+        MonLevel3 = 700,
+        MonLevel4 = 700,
         TowerId = 211061101
       },
       [211061102] = {
@@ -3968,10 +3968,10 @@ return {
         ChapterId = 3,
         FloorIdx = 2,
         Id = 299,
-        MonLevel1 = 500,
-        MonLevel2 = 500,
-        MonLevel3 = 500,
-        MonLevel4 = 500,
+        MonLevel1 = 700,
+        MonLevel2 = 700,
+        MonLevel3 = 700,
+        MonLevel4 = 700,
         TowerId = 211061102
       },
       [211062101] = {
@@ -3981,10 +3981,10 @@ return {
         ChapterId = 3,
         FloorIdx = 2,
         Id = 300,
-        MonLevel1 = 500,
-        MonLevel2 = 500,
-        MonLevel3 = 500,
-        MonLevel4 = 500,
+        MonLevel1 = 700,
+        MonLevel2 = 700,
+        MonLevel3 = 700,
+        MonLevel4 = 700,
         TowerId = 211062101
       },
       [211062201] = {
@@ -3994,10 +3994,10 @@ return {
         ChapterId = 3,
         FloorIdx = 2,
         Id = 301,
-        MonLevel1 = 500,
-        MonLevel2 = 500,
-        MonLevel3 = 500,
-        MonLevel4 = 500,
+        MonLevel1 = 700,
+        MonLevel2 = 700,
+        MonLevel3 = 700,
+        MonLevel4 = 700,
         TowerId = 211062201
       },
       [211064201] = {
@@ -4007,10 +4007,10 @@ return {
         ChapterId = 3,
         FloorIdx = 2,
         Id = 302,
-        MonLevel1 = 500,
-        MonLevel2 = 500,
-        MonLevel3 = 500,
-        MonLevel4 = 500,
+        MonLevel1 = 700,
+        MonLevel2 = 700,
+        MonLevel3 = 700,
+        MonLevel4 = 700,
         TowerId = 211064201
       }
     },
@@ -4022,10 +4022,10 @@ return {
         ChapterId = 3,
         FloorIdx = 3,
         Id = 303,
-        MonLevel1 = 600,
-        MonLevel2 = 600,
-        MonLevel3 = 600,
-        MonLevel4 = 600,
+        MonLevel1 = 900,
+        MonLevel2 = 900,
+        MonLevel3 = 900,
+        MonLevel4 = 900,
         TowerId = 211052201
       },
       [211052202] = {
@@ -4035,10 +4035,10 @@ return {
         ChapterId = 3,
         FloorIdx = 3,
         Id = 304,
-        MonLevel1 = 600,
-        MonLevel2 = 600,
-        MonLevel3 = 600,
-        MonLevel4 = 600,
+        MonLevel1 = 900,
+        MonLevel2 = 900,
+        MonLevel3 = 900,
+        MonLevel4 = 900,
         TowerId = 211052202
       },
       [211061101] = {
@@ -4048,10 +4048,10 @@ return {
         ChapterId = 3,
         FloorIdx = 3,
         Id = 305,
-        MonLevel1 = 600,
-        MonLevel2 = 600,
-        MonLevel3 = 600,
-        MonLevel4 = 600,
+        MonLevel1 = 900,
+        MonLevel2 = 900,
+        MonLevel3 = 900,
+        MonLevel4 = 900,
         TowerId = 211061101
       },
       [211061102] = {
@@ -4061,10 +4061,10 @@ return {
         ChapterId = 3,
         FloorIdx = 3,
         Id = 306,
-        MonLevel1 = 600,
-        MonLevel2 = 600,
-        MonLevel3 = 600,
-        MonLevel4 = 600,
+        MonLevel1 = 900,
+        MonLevel2 = 900,
+        MonLevel3 = 900,
+        MonLevel4 = 900,
         TowerId = 211061102
       },
       [211062101] = {
@@ -4074,10 +4074,10 @@ return {
         ChapterId = 3,
         FloorIdx = 3,
         Id = 307,
-        MonLevel1 = 600,
-        MonLevel2 = 600,
-        MonLevel3 = 600,
-        MonLevel4 = 600,
+        MonLevel1 = 900,
+        MonLevel2 = 900,
+        MonLevel3 = 900,
+        MonLevel4 = 900,
         TowerId = 211062101
       },
       [211062201] = {
@@ -4087,10 +4087,10 @@ return {
         ChapterId = 3,
         FloorIdx = 3,
         Id = 308,
-        MonLevel1 = 600,
-        MonLevel2 = 600,
-        MonLevel3 = 600,
-        MonLevel4 = 600,
+        MonLevel1 = 900,
+        MonLevel2 = 900,
+        MonLevel3 = 900,
+        MonLevel4 = 900,
         TowerId = 211062201
       },
       [211064201] = {
@@ -4100,10 +4100,10 @@ return {
         ChapterId = 3,
         FloorIdx = 3,
         Id = 309,
-        MonLevel1 = 600,
-        MonLevel2 = 600,
-        MonLevel3 = 600,
-        MonLevel4 = 600,
+        MonLevel1 = 900,
+        MonLevel2 = 900,
+        MonLevel3 = 900,
+        MonLevel4 = 900,
         TowerId = 211064201
       }
     },
@@ -4115,10 +4115,10 @@ return {
         ChapterId = 3,
         FloorIdx = 4,
         Id = 310,
-        MonLevel1 = 750,
-        MonLevel2 = 750,
-        MonLevel3 = 750,
-        MonLevel4 = 750,
+        MonLevel1 = 1100,
+        MonLevel2 = 1100,
+        MonLevel3 = 1100,
+        MonLevel4 = 1100,
         TowerId = 211052201
       },
       [211052202] = {
@@ -4128,10 +4128,10 @@ return {
         ChapterId = 3,
         FloorIdx = 4,
         Id = 311,
-        MonLevel1 = 750,
-        MonLevel2 = 750,
-        MonLevel3 = 750,
-        MonLevel4 = 750,
+        MonLevel1 = 1100,
+        MonLevel2 = 1100,
+        MonLevel3 = 1100,
+        MonLevel4 = 1100,
         TowerId = 211052202
       },
       [211061101] = {
@@ -4141,10 +4141,10 @@ return {
         ChapterId = 3,
         FloorIdx = 4,
         Id = 312,
-        MonLevel1 = 750,
-        MonLevel2 = 750,
-        MonLevel3 = 750,
-        MonLevel4 = 750,
+        MonLevel1 = 1100,
+        MonLevel2 = 1100,
+        MonLevel3 = 1100,
+        MonLevel4 = 1100,
         TowerId = 211061101
       },
       [211061102] = {
@@ -4154,10 +4154,10 @@ return {
         ChapterId = 3,
         FloorIdx = 4,
         Id = 313,
-        MonLevel1 = 750,
-        MonLevel2 = 750,
-        MonLevel3 = 750,
-        MonLevel4 = 750,
+        MonLevel1 = 1100,
+        MonLevel2 = 1100,
+        MonLevel3 = 1100,
+        MonLevel4 = 1100,
         TowerId = 211061102
       },
       [211062101] = {
@@ -4167,10 +4167,10 @@ return {
         ChapterId = 3,
         FloorIdx = 4,
         Id = 314,
-        MonLevel1 = 750,
-        MonLevel2 = 750,
-        MonLevel3 = 750,
-        MonLevel4 = 750,
+        MonLevel1 = 1100,
+        MonLevel2 = 1100,
+        MonLevel3 = 1100,
+        MonLevel4 = 1100,
         TowerId = 211062101
       },
       [211062201] = {
@@ -4180,10 +4180,10 @@ return {
         ChapterId = 3,
         FloorIdx = 4,
         Id = 315,
-        MonLevel1 = 750,
-        MonLevel2 = 750,
-        MonLevel3 = 750,
-        MonLevel4 = 750,
+        MonLevel1 = 1100,
+        MonLevel2 = 1100,
+        MonLevel3 = 1100,
+        MonLevel4 = 1100,
         TowerId = 211062201
       },
       [211064201] = {
@@ -4193,10 +4193,10 @@ return {
         ChapterId = 3,
         FloorIdx = 4,
         Id = 316,
-        MonLevel1 = 750,
-        MonLevel2 = 750,
-        MonLevel3 = 750,
-        MonLevel4 = 750,
+        MonLevel1 = 1100,
+        MonLevel2 = 1100,
+        MonLevel3 = 1100,
+        MonLevel4 = 1100,
         TowerId = 211064201
       }
     },
@@ -4208,10 +4208,10 @@ return {
         ChapterId = 3,
         FloorIdx = 5,
         Id = 317,
-        MonLevel1 = 800,
-        MonLevel2 = 800,
-        MonLevel3 = 800,
-        MonLevel4 = 800,
+        MonLevel1 = 1200,
+        MonLevel2 = 1200,
+        MonLevel3 = 1200,
+        MonLevel4 = 1200,
         TowerId = 211052201
       },
       [211052202] = {
@@ -4221,10 +4221,10 @@ return {
         ChapterId = 3,
         FloorIdx = 5,
         Id = 318,
-        MonLevel1 = 800,
-        MonLevel2 = 800,
-        MonLevel3 = 800,
-        MonLevel4 = 800,
+        MonLevel1 = 1200,
+        MonLevel2 = 1200,
+        MonLevel3 = 1200,
+        MonLevel4 = 1200,
         TowerId = 211052202
       },
       [211061101] = {
@@ -4234,10 +4234,10 @@ return {
         ChapterId = 3,
         FloorIdx = 5,
         Id = 319,
-        MonLevel1 = 800,
-        MonLevel2 = 800,
-        MonLevel3 = 800,
-        MonLevel4 = 800,
+        MonLevel1 = 1200,
+        MonLevel2 = 1200,
+        MonLevel3 = 1200,
+        MonLevel4 = 1200,
         TowerId = 211061101
       },
       [211061102] = {
@@ -4247,10 +4247,10 @@ return {
         ChapterId = 3,
         FloorIdx = 5,
         Id = 320,
-        MonLevel1 = 800,
-        MonLevel2 = 800,
-        MonLevel3 = 800,
-        MonLevel4 = 800,
+        MonLevel1 = 1200,
+        MonLevel2 = 1200,
+        MonLevel3 = 1200,
+        MonLevel4 = 1200,
         TowerId = 211061102
       },
       [211062101] = {
@@ -4260,10 +4260,10 @@ return {
         ChapterId = 3,
         FloorIdx = 5,
         Id = 321,
-        MonLevel1 = 800,
-        MonLevel2 = 800,
-        MonLevel3 = 800,
-        MonLevel4 = 800,
+        MonLevel1 = 1200,
+        MonLevel2 = 1200,
+        MonLevel3 = 1200,
+        MonLevel4 = 1200,
         TowerId = 211062101
       },
       [211062201] = {
@@ -4273,10 +4273,10 @@ return {
         ChapterId = 3,
         FloorIdx = 5,
         Id = 322,
-        MonLevel1 = 800,
-        MonLevel2 = 800,
-        MonLevel3 = 800,
-        MonLevel4 = 800,
+        MonLevel1 = 1200,
+        MonLevel2 = 1200,
+        MonLevel3 = 1200,
+        MonLevel4 = 1200,
         TowerId = 211062201
       },
       [211064201] = {
@@ -4286,10 +4286,10 @@ return {
         ChapterId = 3,
         FloorIdx = 5,
         Id = 323,
-        MonLevel1 = 800,
-        MonLevel2 = 800,
-        MonLevel3 = 800,
-        MonLevel4 = 800,
+        MonLevel1 = 1200,
+        MonLevel2 = 1200,
+        MonLevel3 = 1200,
+        MonLevel4 = 1200,
         TowerId = 211064201
       },
       [211065401] = {
@@ -4299,10 +4299,10 @@ return {
         ChapterId = 3,
         FloorIdx = 5,
         Id = 324,
-        MonLevel1 = 800,
-        MonLevel2 = 800,
-        MonLevel3 = 800,
-        MonLevel4 = 800,
+        MonLevel1 = 1200,
+        MonLevel2 = 1200,
+        MonLevel3 = 1200,
+        MonLevel4 = 1200,
         TowerId = 211065401
       }
     },
@@ -4314,10 +4314,10 @@ return {
         ChapterId = 3,
         FloorIdx = 6,
         Id = 325,
-        MonLevel1 = 1050,
-        MonLevel2 = 1050,
-        MonLevel3 = 1050,
-        MonLevel4 = 1050,
+        MonLevel1 = 1300,
+        MonLevel2 = 1300,
+        MonLevel3 = 1300,
+        MonLevel4 = 1300,
         TowerId = 211052201
       },
       [211052202] = {
@@ -4327,10 +4327,10 @@ return {
         ChapterId = 3,
         FloorIdx = 6,
         Id = 326,
-        MonLevel1 = 1050,
-        MonLevel2 = 1050,
-        MonLevel3 = 1050,
-        MonLevel4 = 1050,
+        MonLevel1 = 1300,
+        MonLevel2 = 1300,
+        MonLevel3 = 1300,
+        MonLevel4 = 1300,
         TowerId = 211052202
       },
       [211061101] = {
@@ -4340,10 +4340,10 @@ return {
         ChapterId = 3,
         FloorIdx = 6,
         Id = 327,
-        MonLevel1 = 1050,
-        MonLevel2 = 1050,
-        MonLevel3 = 1050,
-        MonLevel4 = 1050,
+        MonLevel1 = 1300,
+        MonLevel2 = 1300,
+        MonLevel3 = 1300,
+        MonLevel4 = 1300,
         TowerId = 211061101
       },
       [211061102] = {
@@ -4353,10 +4353,10 @@ return {
         ChapterId = 3,
         FloorIdx = 6,
         Id = 328,
-        MonLevel1 = 1050,
-        MonLevel2 = 1050,
-        MonLevel3 = 1050,
-        MonLevel4 = 1050,
+        MonLevel1 = 1300,
+        MonLevel2 = 1300,
+        MonLevel3 = 1300,
+        MonLevel4 = 1300,
         TowerId = 211061102
       },
       [211062101] = {
@@ -4366,10 +4366,10 @@ return {
         ChapterId = 3,
         FloorIdx = 6,
         Id = 329,
-        MonLevel1 = 1050,
-        MonLevel2 = 1050,
-        MonLevel3 = 1050,
-        MonLevel4 = 1050,
+        MonLevel1 = 1300,
+        MonLevel2 = 1300,
+        MonLevel3 = 1300,
+        MonLevel4 = 1300,
         TowerId = 211062101
       },
       [211062201] = {
@@ -4379,10 +4379,10 @@ return {
         ChapterId = 3,
         FloorIdx = 6,
         Id = 330,
-        MonLevel1 = 1050,
-        MonLevel2 = 1050,
-        MonLevel3 = 1050,
-        MonLevel4 = 1050,
+        MonLevel1 = 1300,
+        MonLevel2 = 1300,
+        MonLevel3 = 1300,
+        MonLevel4 = 1300,
         TowerId = 211062201
       },
       [211064201] = {
@@ -4392,10 +4392,10 @@ return {
         ChapterId = 3,
         FloorIdx = 6,
         Id = 331,
-        MonLevel1 = 1050,
-        MonLevel2 = 1050,
-        MonLevel3 = 1050,
-        MonLevel4 = 1050,
+        MonLevel1 = 1300,
+        MonLevel2 = 1300,
+        MonLevel3 = 1300,
+        MonLevel4 = 1300,
         TowerId = 211064201
       }
     },
@@ -4407,10 +4407,10 @@ return {
         ChapterId = 3,
         FloorIdx = 7,
         Id = 332,
-        MonLevel1 = 1200,
-        MonLevel2 = 1200,
-        MonLevel3 = 1200,
-        MonLevel4 = 1200,
+        MonLevel1 = 1500,
+        MonLevel2 = 1500,
+        MonLevel3 = 1500,
+        MonLevel4 = 1500,
         TowerId = 211052201
       },
       [211052202] = {
@@ -4420,10 +4420,10 @@ return {
         ChapterId = 3,
         FloorIdx = 7,
         Id = 333,
-        MonLevel1 = 1200,
-        MonLevel2 = 1200,
-        MonLevel3 = 1200,
-        MonLevel4 = 1200,
+        MonLevel1 = 1500,
+        MonLevel2 = 1500,
+        MonLevel3 = 1500,
+        MonLevel4 = 1500,
         TowerId = 211052202
       },
       [211061101] = {
@@ -4433,10 +4433,10 @@ return {
         ChapterId = 3,
         FloorIdx = 7,
         Id = 334,
-        MonLevel1 = 1200,
-        MonLevel2 = 1200,
-        MonLevel3 = 1200,
-        MonLevel4 = 1200,
+        MonLevel1 = 1500,
+        MonLevel2 = 1500,
+        MonLevel3 = 1500,
+        MonLevel4 = 1500,
         TowerId = 211061101
       },
       [211061102] = {
@@ -4446,10 +4446,10 @@ return {
         ChapterId = 3,
         FloorIdx = 7,
         Id = 335,
-        MonLevel1 = 1200,
-        MonLevel2 = 1200,
-        MonLevel3 = 1200,
-        MonLevel4 = 1200,
+        MonLevel1 = 1500,
+        MonLevel2 = 1500,
+        MonLevel3 = 1500,
+        MonLevel4 = 1500,
         TowerId = 211061102
       },
       [211062101] = {
@@ -4459,10 +4459,10 @@ return {
         ChapterId = 3,
         FloorIdx = 7,
         Id = 336,
-        MonLevel1 = 1200,
-        MonLevel2 = 1200,
-        MonLevel3 = 1200,
-        MonLevel4 = 1200,
+        MonLevel1 = 1500,
+        MonLevel2 = 1500,
+        MonLevel3 = 1500,
+        MonLevel4 = 1500,
         TowerId = 211062101
       },
       [211062201] = {
@@ -4472,10 +4472,10 @@ return {
         ChapterId = 3,
         FloorIdx = 7,
         Id = 337,
-        MonLevel1 = 1200,
-        MonLevel2 = 1200,
-        MonLevel3 = 1200,
-        MonLevel4 = 1200,
+        MonLevel1 = 1500,
+        MonLevel2 = 1500,
+        MonLevel3 = 1500,
+        MonLevel4 = 1500,
         TowerId = 211062201
       },
       [211064201] = {
@@ -4485,10 +4485,10 @@ return {
         ChapterId = 3,
         FloorIdx = 7,
         Id = 338,
-        MonLevel1 = 1200,
-        MonLevel2 = 1200,
-        MonLevel3 = 1200,
-        MonLevel4 = 1200,
+        MonLevel1 = 1500,
+        MonLevel2 = 1500,
+        MonLevel3 = 1500,
+        MonLevel4 = 1500,
         TowerId = 211064201
       }
     },
@@ -4500,10 +4500,10 @@ return {
         ChapterId = 3,
         FloorIdx = 8,
         Id = 339,
-        MonLevel1 = 1350,
-        MonLevel2 = 1350,
-        MonLevel3 = 1350,
-        MonLevel4 = 1350,
+        MonLevel1 = 1700,
+        MonLevel2 = 1700,
+        MonLevel3 = 1700,
+        MonLevel4 = 1700,
         TowerId = 211052201
       },
       [211052202] = {
@@ -4513,10 +4513,10 @@ return {
         ChapterId = 3,
         FloorIdx = 8,
         Id = 340,
-        MonLevel1 = 1350,
-        MonLevel2 = 1350,
-        MonLevel3 = 1350,
-        MonLevel4 = 1350,
+        MonLevel1 = 1700,
+        MonLevel2 = 1700,
+        MonLevel3 = 1700,
+        MonLevel4 = 1700,
         TowerId = 211052202
       },
       [211061101] = {
@@ -4526,10 +4526,10 @@ return {
         ChapterId = 3,
         FloorIdx = 8,
         Id = 341,
-        MonLevel1 = 1350,
-        MonLevel2 = 1350,
-        MonLevel3 = 1350,
-        MonLevel4 = 1350,
+        MonLevel1 = 1700,
+        MonLevel2 = 1700,
+        MonLevel3 = 1700,
+        MonLevel4 = 1700,
         TowerId = 211061101
       },
       [211061102] = {
@@ -4539,10 +4539,10 @@ return {
         ChapterId = 3,
         FloorIdx = 8,
         Id = 342,
-        MonLevel1 = 1350,
-        MonLevel2 = 1350,
-        MonLevel3 = 1350,
-        MonLevel4 = 1350,
+        MonLevel1 = 1700,
+        MonLevel2 = 1700,
+        MonLevel3 = 1700,
+        MonLevel4 = 1700,
         TowerId = 211061102
       },
       [211062101] = {
@@ -4552,10 +4552,10 @@ return {
         ChapterId = 3,
         FloorIdx = 8,
         Id = 343,
-        MonLevel1 = 1350,
-        MonLevel2 = 1350,
-        MonLevel3 = 1350,
-        MonLevel4 = 1350,
+        MonLevel1 = 1700,
+        MonLevel2 = 1700,
+        MonLevel3 = 1700,
+        MonLevel4 = 1700,
         TowerId = 211062101
       },
       [211062201] = {
@@ -4565,10 +4565,10 @@ return {
         ChapterId = 3,
         FloorIdx = 8,
         Id = 344,
-        MonLevel1 = 1350,
-        MonLevel2 = 1350,
-        MonLevel3 = 1350,
-        MonLevel4 = 1350,
+        MonLevel1 = 1700,
+        MonLevel2 = 1700,
+        MonLevel3 = 1700,
+        MonLevel4 = 1700,
         TowerId = 211062201
       },
       [211064201] = {
@@ -4578,10 +4578,10 @@ return {
         ChapterId = 3,
         FloorIdx = 8,
         Id = 345,
-        MonLevel1 = 1350,
-        MonLevel2 = 1350,
-        MonLevel3 = 1350,
-        MonLevel4 = 1350,
+        MonLevel1 = 1700,
+        MonLevel2 = 1700,
+        MonLevel3 = 1700,
+        MonLevel4 = 1700,
         TowerId = 211064201
       }
     },
@@ -4593,10 +4593,10 @@ return {
         ChapterId = 3,
         FloorIdx = 9,
         Id = 346,
-        MonLevel1 = 1500,
-        MonLevel2 = 1500,
-        MonLevel3 = 1500,
-        MonLevel4 = 1500,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211052201
       },
       [211052202] = {
@@ -4606,10 +4606,10 @@ return {
         ChapterId = 3,
         FloorIdx = 9,
         Id = 347,
-        MonLevel1 = 1500,
-        MonLevel2 = 1500,
-        MonLevel3 = 1500,
-        MonLevel4 = 1500,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211052202
       },
       [211061101] = {
@@ -4619,10 +4619,10 @@ return {
         ChapterId = 3,
         FloorIdx = 9,
         Id = 348,
-        MonLevel1 = 1500,
-        MonLevel2 = 1500,
-        MonLevel3 = 1500,
-        MonLevel4 = 1500,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211061101
       },
       [211061102] = {
@@ -4632,10 +4632,10 @@ return {
         ChapterId = 3,
         FloorIdx = 9,
         Id = 349,
-        MonLevel1 = 1500,
-        MonLevel2 = 1500,
-        MonLevel3 = 1500,
-        MonLevel4 = 1500,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211061102
       },
       [211062101] = {
@@ -4645,10 +4645,10 @@ return {
         ChapterId = 3,
         FloorIdx = 9,
         Id = 350,
-        MonLevel1 = 1500,
-        MonLevel2 = 1500,
-        MonLevel3 = 1500,
-        MonLevel4 = 1500,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211062101
       },
       [211062201] = {
@@ -4658,10 +4658,10 @@ return {
         ChapterId = 3,
         FloorIdx = 9,
         Id = 351,
-        MonLevel1 = 1500,
-        MonLevel2 = 1500,
-        MonLevel3 = 1500,
-        MonLevel4 = 1500,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211062201
       },
       [211064201] = {
@@ -4671,10 +4671,10 @@ return {
         ChapterId = 3,
         FloorIdx = 9,
         Id = 352,
-        MonLevel1 = 1500,
-        MonLevel2 = 1500,
-        MonLevel3 = 1500,
-        MonLevel4 = 1500,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211064201
       }
     },
@@ -4686,10 +4686,10 @@ return {
         ChapterId = 3,
         FloorIdx = 10,
         Id = 353,
-        MonLevel1 = 1700,
-        MonLevel2 = 1700,
-        MonLevel3 = 1700,
-        MonLevel4 = 1700,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211052201
       },
       [211052202] = {
@@ -4699,10 +4699,10 @@ return {
         ChapterId = 3,
         FloorIdx = 10,
         Id = 354,
-        MonLevel1 = 1700,
-        MonLevel2 = 1700,
-        MonLevel3 = 1700,
-        MonLevel4 = 1700,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211052202
       },
       [211052501] = {
@@ -4712,10 +4712,10 @@ return {
         ChapterId = 3,
         FloorIdx = 10,
         Id = 360,
-        MonLevel1 = 1700,
-        MonLevel2 = 1700,
-        MonLevel3 = 1700,
-        MonLevel4 = 1700,
+        MonLevel1 = 1500,
+        MonLevel2 = 1500,
+        MonLevel3 = 1500,
+        MonLevel4 = 1500,
         TowerId = 211052501
       },
       [211061101] = {
@@ -4725,10 +4725,10 @@ return {
         ChapterId = 3,
         FloorIdx = 10,
         Id = 355,
-        MonLevel1 = 1700,
-        MonLevel2 = 1700,
-        MonLevel3 = 1700,
-        MonLevel4 = 1700,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211061101
       },
       [211061102] = {
@@ -4738,10 +4738,10 @@ return {
         ChapterId = 3,
         FloorIdx = 10,
         Id = 356,
-        MonLevel1 = 1700,
-        MonLevel2 = 1700,
-        MonLevel3 = 1700,
-        MonLevel4 = 1700,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211061102
       },
       [211062101] = {
@@ -4751,10 +4751,10 @@ return {
         ChapterId = 3,
         FloorIdx = 10,
         Id = 357,
-        MonLevel1 = 1700,
-        MonLevel2 = 1700,
-        MonLevel3 = 1700,
-        MonLevel4 = 1700,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211062101
       },
       [211062201] = {
@@ -4764,10 +4764,10 @@ return {
         ChapterId = 3,
         FloorIdx = 10,
         Id = 358,
-        MonLevel1 = 1700,
-        MonLevel2 = 1700,
-        MonLevel3 = 1700,
-        MonLevel4 = 1700,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211062201
       },
       [211064201] = {
@@ -4777,10 +4777,10 @@ return {
         ChapterId = 3,
         FloorIdx = 10,
         Id = 359,
-        MonLevel1 = 1700,
-        MonLevel2 = 1700,
-        MonLevel3 = 1700,
-        MonLevel4 = 1700,
+        MonLevel1 = 1900,
+        MonLevel2 = 1900,
+        MonLevel3 = 1900,
+        MonLevel4 = 1900,
         TowerId = 211064201
       }
     },
@@ -4792,10 +4792,10 @@ return {
         ChapterId = 3,
         FloorIdx = 11,
         Id = 361,
-        MonLevel1 = 1900,
-        MonLevel2 = 1900,
-        MonLevel3 = 1900,
-        MonLevel4 = 1900,
+        MonLevel1 = 2100,
+        MonLevel2 = 2100,
+        MonLevel3 = 2100,
+        MonLevel4 = 2100,
         TowerId = 211052201
       },
       [211052202] = {
@@ -4805,10 +4805,10 @@ return {
         ChapterId = 3,
         FloorIdx = 11,
         Id = 362,
-        MonLevel1 = 1900,
-        MonLevel2 = 1900,
-        MonLevel3 = 1900,
-        MonLevel4 = 1900,
+        MonLevel1 = 2100,
+        MonLevel2 = 2100,
+        MonLevel3 = 2100,
+        MonLevel4 = 2100,
         TowerId = 211052202
       },
       [211061101] = {
@@ -4818,10 +4818,10 @@ return {
         ChapterId = 3,
         FloorIdx = 11,
         Id = 363,
-        MonLevel1 = 1900,
-        MonLevel2 = 1900,
-        MonLevel3 = 1900,
-        MonLevel4 = 1900,
+        MonLevel1 = 2100,
+        MonLevel2 = 2100,
+        MonLevel3 = 2100,
+        MonLevel4 = 2100,
         TowerId = 211061101
       },
       [211061102] = {
@@ -4831,10 +4831,10 @@ return {
         ChapterId = 3,
         FloorIdx = 11,
         Id = 364,
-        MonLevel1 = 1900,
-        MonLevel2 = 1900,
-        MonLevel3 = 1900,
-        MonLevel4 = 1900,
+        MonLevel1 = 2100,
+        MonLevel2 = 2100,
+        MonLevel3 = 2100,
+        MonLevel4 = 2100,
         TowerId = 211061102
       },
       [211062101] = {
@@ -4844,10 +4844,10 @@ return {
         ChapterId = 3,
         FloorIdx = 11,
         Id = 365,
-        MonLevel1 = 1900,
-        MonLevel2 = 1900,
-        MonLevel3 = 1900,
-        MonLevel4 = 1900,
+        MonLevel1 = 2100,
+        MonLevel2 = 2100,
+        MonLevel3 = 2100,
+        MonLevel4 = 2100,
         TowerId = 211062101
       },
       [211062201] = {
@@ -4857,10 +4857,10 @@ return {
         ChapterId = 3,
         FloorIdx = 11,
         Id = 366,
-        MonLevel1 = 1900,
-        MonLevel2 = 1900,
-        MonLevel3 = 1900,
-        MonLevel4 = 1900,
+        MonLevel1 = 2100,
+        MonLevel2 = 2100,
+        MonLevel3 = 2100,
+        MonLevel4 = 2100,
         TowerId = 211062201
       },
       [211064201] = {
@@ -4870,10 +4870,10 @@ return {
         ChapterId = 3,
         FloorIdx = 11,
         Id = 367,
-        MonLevel1 = 1900,
-        MonLevel2 = 1900,
-        MonLevel3 = 1900,
-        MonLevel4 = 1900,
+        MonLevel1 = 2100,
+        MonLevel2 = 2100,
+        MonLevel3 = 2100,
+        MonLevel4 = 2100,
         TowerId = 211064201
       }
     },
@@ -4885,10 +4885,10 @@ return {
         ChapterId = 3,
         FloorIdx = 12,
         Id = 368,
-        MonLevel1 = 2100,
-        MonLevel2 = 2100,
-        MonLevel3 = 2100,
-        MonLevel4 = 2100,
+        MonLevel1 = 2200,
+        MonLevel2 = 2200,
+        MonLevel3 = 2200,
+        MonLevel4 = 2200,
         TowerId = 211052201
       },
       [211052202] = {
@@ -4898,10 +4898,10 @@ return {
         ChapterId = 3,
         FloorIdx = 12,
         Id = 369,
-        MonLevel1 = 2100,
-        MonLevel2 = 2100,
-        MonLevel3 = 2100,
-        MonLevel4 = 2100,
+        MonLevel1 = 2200,
+        MonLevel2 = 2200,
+        MonLevel3 = 2200,
+        MonLevel4 = 2200,
         TowerId = 211052202
       },
       [211061101] = {
@@ -4911,10 +4911,10 @@ return {
         ChapterId = 3,
         FloorIdx = 12,
         Id = 370,
-        MonLevel1 = 2100,
-        MonLevel2 = 2100,
-        MonLevel3 = 2100,
-        MonLevel4 = 2100,
+        MonLevel1 = 2200,
+        MonLevel2 = 2200,
+        MonLevel3 = 2200,
+        MonLevel4 = 2200,
         TowerId = 211061101
       },
       [211061102] = {
@@ -4924,10 +4924,10 @@ return {
         ChapterId = 3,
         FloorIdx = 12,
         Id = 371,
-        MonLevel1 = 2100,
-        MonLevel2 = 2100,
-        MonLevel3 = 2100,
-        MonLevel4 = 2100,
+        MonLevel1 = 2200,
+        MonLevel2 = 2200,
+        MonLevel3 = 2200,
+        MonLevel4 = 2200,
         TowerId = 211061102
       },
       [211062101] = {
@@ -4937,10 +4937,10 @@ return {
         ChapterId = 3,
         FloorIdx = 12,
         Id = 372,
-        MonLevel1 = 2100,
-        MonLevel2 = 2100,
-        MonLevel3 = 2100,
-        MonLevel4 = 2100,
+        MonLevel1 = 2200,
+        MonLevel2 = 2200,
+        MonLevel3 = 2200,
+        MonLevel4 = 2200,
         TowerId = 211062101
       },
       [211062201] = {
@@ -4950,10 +4950,10 @@ return {
         ChapterId = 3,
         FloorIdx = 12,
         Id = 373,
-        MonLevel1 = 2100,
-        MonLevel2 = 2100,
-        MonLevel3 = 2100,
-        MonLevel4 = 2100,
+        MonLevel1 = 2200,
+        MonLevel2 = 2200,
+        MonLevel3 = 2200,
+        MonLevel4 = 2200,
         TowerId = 211062201
       },
       [211064201] = {
@@ -4963,10 +4963,10 @@ return {
         ChapterId = 3,
         FloorIdx = 12,
         Id = 374,
-        MonLevel1 = 2100,
-        MonLevel2 = 2100,
-        MonLevel3 = 2100,
-        MonLevel4 = 2100,
+        MonLevel1 = 2200,
+        MonLevel2 = 2200,
+        MonLevel3 = 2200,
+        MonLevel4 = 2200,
         TowerId = 211064201
       }
     },
@@ -6600,10 +6600,10 @@ return {
         ChapterId = 4,
         FloorIdx = 10,
         Id = 497,
-        MonLevel1 = 2500,
-        MonLevel2 = 2500,
-        MonLevel3 = 2500,
-        MonLevel4 = 2500,
+        MonLevel1 = 2300,
+        MonLevel2 = 2300,
+        MonLevel3 = 2300,
+        MonLevel4 = 2300,
         TowerId = 211052201
       },
       [211052202] = {
@@ -6626,10 +6626,10 @@ return {
         ChapterId = 4,
         FloorIdx = 10,
         Id = 504,
-        MonLevel1 = 2500,
-        MonLevel2 = 2500,
-        MonLevel3 = 2500,
-        MonLevel4 = 2500,
+        MonLevel1 = 2300,
+        MonLevel2 = 2300,
+        MonLevel3 = 2300,
+        MonLevel4 = 2300,
         TowerId = 211052501
       },
       [211061101] = {
@@ -6799,10 +6799,10 @@ return {
         ChapterId = 4,
         FloorIdx = 12,
         Id = 512,
-        MonLevel1 = 2900,
-        MonLevel2 = 2900,
-        MonLevel3 = 2900,
-        MonLevel4 = 2900,
+        MonLevel1 = 3000,
+        MonLevel2 = 3000,
+        MonLevel3 = 3000,
+        MonLevel4 = 3000,
         TowerId = 211052201
       },
       [211052202] = {
@@ -6812,10 +6812,10 @@ return {
         ChapterId = 4,
         FloorIdx = 12,
         Id = 513,
-        MonLevel1 = 2900,
-        MonLevel2 = 2900,
-        MonLevel3 = 2900,
-        MonLevel4 = 2900,
+        MonLevel1 = 3000,
+        MonLevel2 = 3000,
+        MonLevel3 = 3000,
+        MonLevel4 = 3000,
         TowerId = 211052202
       },
       [211061101] = {
@@ -6825,10 +6825,10 @@ return {
         ChapterId = 4,
         FloorIdx = 12,
         Id = 514,
-        MonLevel1 = 2900,
-        MonLevel2 = 2900,
-        MonLevel3 = 2900,
-        MonLevel4 = 2900,
+        MonLevel1 = 3000,
+        MonLevel2 = 3000,
+        MonLevel3 = 3000,
+        MonLevel4 = 3000,
         TowerId = 211061101
       },
       [211061102] = {
@@ -6838,10 +6838,10 @@ return {
         ChapterId = 4,
         FloorIdx = 12,
         Id = 515,
-        MonLevel1 = 2900,
-        MonLevel2 = 2900,
-        MonLevel3 = 2900,
-        MonLevel4 = 2900,
+        MonLevel1 = 3000,
+        MonLevel2 = 3000,
+        MonLevel3 = 3000,
+        MonLevel4 = 3000,
         TowerId = 211061102
       },
       [211062101] = {
@@ -6851,10 +6851,10 @@ return {
         ChapterId = 4,
         FloorIdx = 12,
         Id = 516,
-        MonLevel1 = 2900,
-        MonLevel2 = 2900,
-        MonLevel3 = 2900,
-        MonLevel4 = 2900,
+        MonLevel1 = 3000,
+        MonLevel2 = 3000,
+        MonLevel3 = 3000,
+        MonLevel4 = 3000,
         TowerId = 211062101
       },
       [211062201] = {
@@ -6864,10 +6864,10 @@ return {
         ChapterId = 4,
         FloorIdx = 12,
         Id = 517,
-        MonLevel1 = 2900,
-        MonLevel2 = 2900,
-        MonLevel3 = 2900,
-        MonLevel4 = 2900,
+        MonLevel1 = 3000,
+        MonLevel2 = 3000,
+        MonLevel3 = 3000,
+        MonLevel4 = 3000,
         TowerId = 211062201
       },
       [211064201] = {
@@ -6877,10 +6877,10 @@ return {
         ChapterId = 4,
         FloorIdx = 12,
         Id = 518,
-        MonLevel1 = 2900,
-        MonLevel2 = 2900,
-        MonLevel3 = 2900,
-        MonLevel4 = 2900,
+        MonLevel1 = 3000,
+        MonLevel2 = 3000,
+        MonLevel3 = 3000,
+        MonLevel4 = 3000,
         TowerId = 211064201
       }
     },
@@ -6892,10 +6892,10 @@ return {
         ChapterId = 4,
         FloorIdx = 13,
         Id = 519,
-        MonLevel1 = 3100,
-        MonLevel2 = 3100,
-        MonLevel3 = 3100,
-        MonLevel4 = 3100,
+        MonLevel1 = 3300,
+        MonLevel2 = 3300,
+        MonLevel3 = 3300,
+        MonLevel4 = 3300,
         TowerId = 211052201
       },
       [211052202] = {
@@ -6905,10 +6905,10 @@ return {
         ChapterId = 4,
         FloorIdx = 13,
         Id = 520,
-        MonLevel1 = 3100,
-        MonLevel2 = 3100,
-        MonLevel3 = 3100,
-        MonLevel4 = 3100,
+        MonLevel1 = 3300,
+        MonLevel2 = 3300,
+        MonLevel3 = 3300,
+        MonLevel4 = 3300,
         TowerId = 211052202
       },
       [211061101] = {
@@ -6918,10 +6918,10 @@ return {
         ChapterId = 4,
         FloorIdx = 13,
         Id = 521,
-        MonLevel1 = 3100,
-        MonLevel2 = 3100,
-        MonLevel3 = 3100,
-        MonLevel4 = 3100,
+        MonLevel1 = 3300,
+        MonLevel2 = 3300,
+        MonLevel3 = 3300,
+        MonLevel4 = 3300,
         TowerId = 211061101
       },
       [211061102] = {
@@ -6931,10 +6931,10 @@ return {
         ChapterId = 4,
         FloorIdx = 13,
         Id = 522,
-        MonLevel1 = 3100,
-        MonLevel2 = 3100,
-        MonLevel3 = 3100,
-        MonLevel4 = 3100,
+        MonLevel1 = 3300,
+        MonLevel2 = 3300,
+        MonLevel3 = 3300,
+        MonLevel4 = 3300,
         TowerId = 211061102
       },
       [211062101] = {
@@ -6944,10 +6944,10 @@ return {
         ChapterId = 4,
         FloorIdx = 13,
         Id = 523,
-        MonLevel1 = 3100,
-        MonLevel2 = 3100,
-        MonLevel3 = 3100,
-        MonLevel4 = 3100,
+        MonLevel1 = 3300,
+        MonLevel2 = 3300,
+        MonLevel3 = 3300,
+        MonLevel4 = 3300,
         TowerId = 211062101
       },
       [211062201] = {
@@ -6957,10 +6957,10 @@ return {
         ChapterId = 4,
         FloorIdx = 13,
         Id = 524,
-        MonLevel1 = 3100,
-        MonLevel2 = 3100,
-        MonLevel3 = 3100,
-        MonLevel4 = 3100,
+        MonLevel1 = 3300,
+        MonLevel2 = 3300,
+        MonLevel3 = 3300,
+        MonLevel4 = 3300,
         TowerId = 211062201
       },
       [211064201] = {
@@ -6970,10 +6970,10 @@ return {
         ChapterId = 4,
         FloorIdx = 13,
         Id = 525,
-        MonLevel1 = 3100,
-        MonLevel2 = 3100,
-        MonLevel3 = 3100,
-        MonLevel4 = 3100,
+        MonLevel1 = 3300,
+        MonLevel2 = 3300,
+        MonLevel3 = 3300,
+        MonLevel4 = 3300,
         TowerId = 211064201
       }
     },
@@ -6985,10 +6985,10 @@ return {
         ChapterId = 4,
         FloorIdx = 14,
         Id = 526,
-        MonLevel1 = 3300,
-        MonLevel2 = 3300,
-        MonLevel3 = 3300,
-        MonLevel4 = 3300,
+        MonLevel1 = 3600,
+        MonLevel2 = 3600,
+        MonLevel3 = 3600,
+        MonLevel4 = 3600,
         TowerId = 211052201
       },
       [211052202] = {
@@ -6998,10 +6998,10 @@ return {
         ChapterId = 4,
         FloorIdx = 14,
         Id = 527,
-        MonLevel1 = 3300,
-        MonLevel2 = 3300,
-        MonLevel3 = 3300,
-        MonLevel4 = 3300,
+        MonLevel1 = 3600,
+        MonLevel2 = 3600,
+        MonLevel3 = 3600,
+        MonLevel4 = 3600,
         TowerId = 211052202
       },
       [211061101] = {
@@ -7011,10 +7011,10 @@ return {
         ChapterId = 4,
         FloorIdx = 14,
         Id = 528,
-        MonLevel1 = 3300,
-        MonLevel2 = 3300,
-        MonLevel3 = 3300,
-        MonLevel4 = 3300,
+        MonLevel1 = 3600,
+        MonLevel2 = 3600,
+        MonLevel3 = 3600,
+        MonLevel4 = 3600,
         TowerId = 211061101
       },
       [211061102] = {
@@ -7024,10 +7024,10 @@ return {
         ChapterId = 4,
         FloorIdx = 14,
         Id = 529,
-        MonLevel1 = 3300,
-        MonLevel2 = 3300,
-        MonLevel3 = 3300,
-        MonLevel4 = 3300,
+        MonLevel1 = 3600,
+        MonLevel2 = 3600,
+        MonLevel3 = 3600,
+        MonLevel4 = 3600,
         TowerId = 211061102
       },
       [211062101] = {
@@ -7037,10 +7037,10 @@ return {
         ChapterId = 4,
         FloorIdx = 14,
         Id = 530,
-        MonLevel1 = 3300,
-        MonLevel2 = 3300,
-        MonLevel3 = 3300,
-        MonLevel4 = 3300,
+        MonLevel1 = 3600,
+        MonLevel2 = 3600,
+        MonLevel3 = 3600,
+        MonLevel4 = 3600,
         TowerId = 211062101
       },
       [211062201] = {
@@ -7050,10 +7050,10 @@ return {
         ChapterId = 4,
         FloorIdx = 14,
         Id = 531,
-        MonLevel1 = 3300,
-        MonLevel2 = 3300,
-        MonLevel3 = 3300,
-        MonLevel4 = 3300,
+        MonLevel1 = 3600,
+        MonLevel2 = 3600,
+        MonLevel3 = 3600,
+        MonLevel4 = 3600,
         TowerId = 211062201
       },
       [211064201] = {
@@ -7063,10 +7063,10 @@ return {
         ChapterId = 4,
         FloorIdx = 14,
         Id = 532,
-        MonLevel1 = 3300,
-        MonLevel2 = 3300,
-        MonLevel3 = 3300,
-        MonLevel4 = 3300,
+        MonLevel1 = 3600,
+        MonLevel2 = 3600,
+        MonLevel3 = 3600,
+        MonLevel4 = 3600,
         TowerId = 211064201
       }
     },
@@ -7078,10 +7078,10 @@ return {
         ChapterId = 4,
         FloorIdx = 15,
         Id = 533,
-        MonLevel1 = 3500,
-        MonLevel2 = 3500,
-        MonLevel3 = 3500,
-        MonLevel4 = 3500,
+        MonLevel1 = 4000,
+        MonLevel2 = 4000,
+        MonLevel3 = 4000,
+        MonLevel4 = 4000,
         TowerId = 211052201
       },
       [211052202] = {
@@ -7091,10 +7091,10 @@ return {
         ChapterId = 4,
         FloorIdx = 15,
         Id = 534,
-        MonLevel1 = 3500,
-        MonLevel2 = 3500,
-        MonLevel3 = 3500,
-        MonLevel4 = 3500,
+        MonLevel1 = 4000,
+        MonLevel2 = 4000,
+        MonLevel3 = 4000,
+        MonLevel4 = 4000,
         TowerId = 211052202
       },
       [211061101] = {
@@ -7104,10 +7104,10 @@ return {
         ChapterId = 4,
         FloorIdx = 15,
         Id = 535,
-        MonLevel1 = 3500,
-        MonLevel2 = 3500,
-        MonLevel3 = 3500,
-        MonLevel4 = 3500,
+        MonLevel1 = 4000,
+        MonLevel2 = 4000,
+        MonLevel3 = 4000,
+        MonLevel4 = 4000,
         TowerId = 211061101
       },
       [211061102] = {
@@ -7117,10 +7117,10 @@ return {
         ChapterId = 4,
         FloorIdx = 15,
         Id = 536,
-        MonLevel1 = 3500,
-        MonLevel2 = 3500,
-        MonLevel3 = 3500,
-        MonLevel4 = 3500,
+        MonLevel1 = 4000,
+        MonLevel2 = 4000,
+        MonLevel3 = 4000,
+        MonLevel4 = 4000,
         TowerId = 211061102
       },
       [211062101] = {
@@ -7130,10 +7130,10 @@ return {
         ChapterId = 4,
         FloorIdx = 15,
         Id = 537,
-        MonLevel1 = 3500,
-        MonLevel2 = 3500,
-        MonLevel3 = 3500,
-        MonLevel4 = 3500,
+        MonLevel1 = 4000,
+        MonLevel2 = 4000,
+        MonLevel3 = 4000,
+        MonLevel4 = 4000,
         TowerId = 211062101
       },
       [211062201] = {
@@ -7143,10 +7143,10 @@ return {
         ChapterId = 4,
         FloorIdx = 15,
         Id = 538,
-        MonLevel1 = 3500,
-        MonLevel2 = 3500,
-        MonLevel3 = 3500,
-        MonLevel4 = 3500,
+        MonLevel1 = 4000,
+        MonLevel2 = 4000,
+        MonLevel3 = 4000,
+        MonLevel4 = 4000,
         TowerId = 211062201
       },
       [211062401] = {
@@ -7156,10 +7156,10 @@ return {
         ChapterId = 4,
         FloorIdx = 15,
         Id = 540,
-        MonLevel1 = 3500,
-        MonLevel2 = 3500,
-        MonLevel3 = 3500,
-        MonLevel4 = 3500,
+        MonLevel1 = 3700,
+        MonLevel2 = 3700,
+        MonLevel3 = 3700,
+        MonLevel4 = 3700,
         TowerId = 211062401
       },
       [211064201] = {
@@ -7169,10 +7169,10 @@ return {
         ChapterId = 4,
         FloorIdx = 15,
         Id = 539,
-        MonLevel1 = 3500,
-        MonLevel2 = 3500,
-        MonLevel3 = 3500,
-        MonLevel4 = 3500,
+        MonLevel1 = 4000,
+        MonLevel2 = 4000,
+        MonLevel3 = 4000,
+        MonLevel4 = 4000,
         TowerId = 211064201
       }
     },
@@ -7184,10 +7184,10 @@ return {
         ChapterId = 4,
         FloorIdx = 16,
         Id = 541,
-        MonLevel1 = 3700,
-        MonLevel2 = 3700,
-        MonLevel3 = 3700,
-        MonLevel4 = 3700,
+        MonLevel1 = 4400,
+        MonLevel2 = 4400,
+        MonLevel3 = 4400,
+        MonLevel4 = 4400,
         TowerId = 211052201
       },
       [211052202] = {
@@ -7197,10 +7197,10 @@ return {
         ChapterId = 4,
         FloorIdx = 16,
         Id = 542,
-        MonLevel1 = 3700,
-        MonLevel2 = 3700,
-        MonLevel3 = 3700,
-        MonLevel4 = 3700,
+        MonLevel1 = 4400,
+        MonLevel2 = 4400,
+        MonLevel3 = 4400,
+        MonLevel4 = 4400,
         TowerId = 211052202
       },
       [211061101] = {
@@ -7210,10 +7210,10 @@ return {
         ChapterId = 4,
         FloorIdx = 16,
         Id = 543,
-        MonLevel1 = 3700,
-        MonLevel2 = 3700,
-        MonLevel3 = 3700,
-        MonLevel4 = 3700,
+        MonLevel1 = 4400,
+        MonLevel2 = 4400,
+        MonLevel3 = 4400,
+        MonLevel4 = 4400,
         TowerId = 211061101
       },
       [211061102] = {
@@ -7223,10 +7223,10 @@ return {
         ChapterId = 4,
         FloorIdx = 16,
         Id = 544,
-        MonLevel1 = 3700,
-        MonLevel2 = 3700,
-        MonLevel3 = 3700,
-        MonLevel4 = 3700,
+        MonLevel1 = 4400,
+        MonLevel2 = 4400,
+        MonLevel3 = 4400,
+        MonLevel4 = 4400,
         TowerId = 211061102
       },
       [211062101] = {
@@ -7236,10 +7236,10 @@ return {
         ChapterId = 4,
         FloorIdx = 16,
         Id = 545,
-        MonLevel1 = 3700,
-        MonLevel2 = 3700,
-        MonLevel3 = 3700,
-        MonLevel4 = 3700,
+        MonLevel1 = 4400,
+        MonLevel2 = 4400,
+        MonLevel3 = 4400,
+        MonLevel4 = 4400,
         TowerId = 211062101
       },
       [211062201] = {
@@ -7249,10 +7249,10 @@ return {
         ChapterId = 4,
         FloorIdx = 16,
         Id = 546,
-        MonLevel1 = 3700,
-        MonLevel2 = 3700,
-        MonLevel3 = 3700,
-        MonLevel4 = 3700,
+        MonLevel1 = 4400,
+        MonLevel2 = 4400,
+        MonLevel3 = 4400,
+        MonLevel4 = 4400,
         TowerId = 211062201
       },
       [211064201] = {
@@ -7262,10 +7262,10 @@ return {
         ChapterId = 4,
         FloorIdx = 16,
         Id = 547,
-        MonLevel1 = 3700,
-        MonLevel2 = 3700,
-        MonLevel3 = 3700,
-        MonLevel4 = 3700,
+        MonLevel1 = 4400,
+        MonLevel2 = 4400,
+        MonLevel3 = 4400,
+        MonLevel4 = 4400,
         TowerId = 211064201
       }
     },
@@ -7277,10 +7277,10 @@ return {
         ChapterId = 4,
         FloorIdx = 17,
         Id = 548,
-        MonLevel1 = 4000,
-        MonLevel2 = 4000,
-        MonLevel3 = 4000,
-        MonLevel4 = 4000,
+        MonLevel1 = 4800,
+        MonLevel2 = 4800,
+        MonLevel3 = 4800,
+        MonLevel4 = 4800,
         TowerId = 211052201
       },
       [211052202] = {
@@ -7290,10 +7290,10 @@ return {
         ChapterId = 4,
         FloorIdx = 17,
         Id = 549,
-        MonLevel1 = 4000,
-        MonLevel2 = 4000,
-        MonLevel3 = 4000,
-        MonLevel4 = 4000,
+        MonLevel1 = 4800,
+        MonLevel2 = 4800,
+        MonLevel3 = 4800,
+        MonLevel4 = 4800,
         TowerId = 211052202
       },
       [211061101] = {
@@ -7303,10 +7303,10 @@ return {
         ChapterId = 4,
         FloorIdx = 17,
         Id = 550,
-        MonLevel1 = 4000,
-        MonLevel2 = 4000,
-        MonLevel3 = 4000,
-        MonLevel4 = 4000,
+        MonLevel1 = 4800,
+        MonLevel2 = 4800,
+        MonLevel3 = 4800,
+        MonLevel4 = 4800,
         TowerId = 211061101
       },
       [211061102] = {
@@ -7316,10 +7316,10 @@ return {
         ChapterId = 4,
         FloorIdx = 17,
         Id = 551,
-        MonLevel1 = 4000,
-        MonLevel2 = 4000,
-        MonLevel3 = 4000,
-        MonLevel4 = 4000,
+        MonLevel1 = 4800,
+        MonLevel2 = 4800,
+        MonLevel3 = 4800,
+        MonLevel4 = 4800,
         TowerId = 211061102
       },
       [211062101] = {
@@ -7329,10 +7329,10 @@ return {
         ChapterId = 4,
         FloorIdx = 17,
         Id = 552,
-        MonLevel1 = 4000,
-        MonLevel2 = 4000,
-        MonLevel3 = 4000,
-        MonLevel4 = 4000,
+        MonLevel1 = 4800,
+        MonLevel2 = 4800,
+        MonLevel3 = 4800,
+        MonLevel4 = 4800,
         TowerId = 211062101
       },
       [211062201] = {
@@ -7342,10 +7342,10 @@ return {
         ChapterId = 4,
         FloorIdx = 17,
         Id = 553,
-        MonLevel1 = 4000,
-        MonLevel2 = 4000,
-        MonLevel3 = 4000,
-        MonLevel4 = 4000,
+        MonLevel1 = 4800,
+        MonLevel2 = 4800,
+        MonLevel3 = 4800,
+        MonLevel4 = 4800,
         TowerId = 211062201
       },
       [211064201] = {
@@ -7355,10 +7355,10 @@ return {
         ChapterId = 4,
         FloorIdx = 17,
         Id = 554,
-        MonLevel1 = 4000,
-        MonLevel2 = 4000,
-        MonLevel3 = 4000,
-        MonLevel4 = 4000,
+        MonLevel1 = 4800,
+        MonLevel2 = 4800,
+        MonLevel3 = 4800,
+        MonLevel4 = 4800,
         TowerId = 211064201
       }
     },
@@ -7370,10 +7370,10 @@ return {
         ChapterId = 4,
         FloorIdx = 18,
         Id = 555,
-        MonLevel1 = 4300,
-        MonLevel2 = 4300,
-        MonLevel3 = 4300,
-        MonLevel4 = 4300,
+        MonLevel1 = 5200,
+        MonLevel2 = 5200,
+        MonLevel3 = 5200,
+        MonLevel4 = 5200,
         TowerId = 211052201
       },
       [211052202] = {
@@ -7383,10 +7383,10 @@ return {
         ChapterId = 4,
         FloorIdx = 18,
         Id = 556,
-        MonLevel1 = 4300,
-        MonLevel2 = 4300,
-        MonLevel3 = 4300,
-        MonLevel4 = 4300,
+        MonLevel1 = 5200,
+        MonLevel2 = 5200,
+        MonLevel3 = 5200,
+        MonLevel4 = 5200,
         TowerId = 211052202
       },
       [211061101] = {
@@ -7396,10 +7396,10 @@ return {
         ChapterId = 4,
         FloorIdx = 18,
         Id = 557,
-        MonLevel1 = 4300,
-        MonLevel2 = 4300,
-        MonLevel3 = 4300,
-        MonLevel4 = 4300,
+        MonLevel1 = 5200,
+        MonLevel2 = 5200,
+        MonLevel3 = 5200,
+        MonLevel4 = 5200,
         TowerId = 211061101
       },
       [211061102] = {
@@ -7409,10 +7409,10 @@ return {
         ChapterId = 4,
         FloorIdx = 18,
         Id = 558,
-        MonLevel1 = 4300,
-        MonLevel2 = 4300,
-        MonLevel3 = 4300,
-        MonLevel4 = 4300,
+        MonLevel1 = 5200,
+        MonLevel2 = 5200,
+        MonLevel3 = 5200,
+        MonLevel4 = 5200,
         TowerId = 211061102
       },
       [211062101] = {
@@ -7422,10 +7422,10 @@ return {
         ChapterId = 4,
         FloorIdx = 18,
         Id = 559,
-        MonLevel1 = 4300,
-        MonLevel2 = 4300,
-        MonLevel3 = 4300,
-        MonLevel4 = 4300,
+        MonLevel1 = 5200,
+        MonLevel2 = 5200,
+        MonLevel3 = 5200,
+        MonLevel4 = 5200,
         TowerId = 211062101
       },
       [211062201] = {
@@ -7435,10 +7435,10 @@ return {
         ChapterId = 4,
         FloorIdx = 18,
         Id = 560,
-        MonLevel1 = 4300,
-        MonLevel2 = 4300,
-        MonLevel3 = 4300,
-        MonLevel4 = 4300,
+        MonLevel1 = 5200,
+        MonLevel2 = 5200,
+        MonLevel3 = 5200,
+        MonLevel4 = 5200,
         TowerId = 211062201
       },
       [211064201] = {
@@ -7448,10 +7448,10 @@ return {
         ChapterId = 4,
         FloorIdx = 18,
         Id = 561,
-        MonLevel1 = 4300,
-        MonLevel2 = 4300,
-        MonLevel3 = 4300,
-        MonLevel4 = 4300,
+        MonLevel1 = 5200,
+        MonLevel2 = 5200,
+        MonLevel3 = 5200,
+        MonLevel4 = 5200,
         TowerId = 211064201
       }
     },
@@ -7463,10 +7463,10 @@ return {
         ChapterId = 4,
         FloorIdx = 19,
         Id = 562,
-        MonLevel1 = 4600,
-        MonLevel2 = 4600,
-        MonLevel3 = 4600,
-        MonLevel4 = 4600,
+        MonLevel1 = 5600,
+        MonLevel2 = 5600,
+        MonLevel3 = 5600,
+        MonLevel4 = 5600,
         TowerId = 211052201
       },
       [211052202] = {
@@ -7476,10 +7476,10 @@ return {
         ChapterId = 4,
         FloorIdx = 19,
         Id = 563,
-        MonLevel1 = 4600,
-        MonLevel2 = 4600,
-        MonLevel3 = 4600,
-        MonLevel4 = 4600,
+        MonLevel1 = 5600,
+        MonLevel2 = 5600,
+        MonLevel3 = 5600,
+        MonLevel4 = 5600,
         TowerId = 211052202
       },
       [211061101] = {
@@ -7489,10 +7489,10 @@ return {
         ChapterId = 4,
         FloorIdx = 19,
         Id = 564,
-        MonLevel1 = 4600,
-        MonLevel2 = 4600,
-        MonLevel3 = 4600,
-        MonLevel4 = 4600,
+        MonLevel1 = 5600,
+        MonLevel2 = 5600,
+        MonLevel3 = 5600,
+        MonLevel4 = 5600,
         TowerId = 211061101
       },
       [211061102] = {
@@ -7502,10 +7502,10 @@ return {
         ChapterId = 4,
         FloorIdx = 19,
         Id = 565,
-        MonLevel1 = 4600,
-        MonLevel2 = 4600,
-        MonLevel3 = 4600,
-        MonLevel4 = 4600,
+        MonLevel1 = 5600,
+        MonLevel2 = 5600,
+        MonLevel3 = 5600,
+        MonLevel4 = 5600,
         TowerId = 211061102
       },
       [211062101] = {
@@ -7515,10 +7515,10 @@ return {
         ChapterId = 4,
         FloorIdx = 19,
         Id = 566,
-        MonLevel1 = 4600,
-        MonLevel2 = 4600,
-        MonLevel3 = 4600,
-        MonLevel4 = 4600,
+        MonLevel1 = 5600,
+        MonLevel2 = 5600,
+        MonLevel3 = 5600,
+        MonLevel4 = 5600,
         TowerId = 211062101
       },
       [211062201] = {
@@ -7528,10 +7528,10 @@ return {
         ChapterId = 4,
         FloorIdx = 19,
         Id = 567,
-        MonLevel1 = 4600,
-        MonLevel2 = 4600,
-        MonLevel3 = 4600,
-        MonLevel4 = 4600,
+        MonLevel1 = 5600,
+        MonLevel2 = 5600,
+        MonLevel3 = 5600,
+        MonLevel4 = 5600,
         TowerId = 211062201
       },
       [211064201] = {
@@ -7541,10 +7541,10 @@ return {
         ChapterId = 4,
         FloorIdx = 19,
         Id = 568,
-        MonLevel1 = 4600,
-        MonLevel2 = 4600,
-        MonLevel3 = 4600,
-        MonLevel4 = 4600,
+        MonLevel1 = 5600,
+        MonLevel2 = 5600,
+        MonLevel3 = 5600,
+        MonLevel4 = 5600,
         TowerId = 211064201
       }
     },
@@ -7556,10 +7556,10 @@ return {
         ChapterId = 4,
         FloorIdx = 20,
         Id = 569,
-        MonLevel1 = 5000,
-        MonLevel2 = 5000,
-        MonLevel3 = 5000,
-        MonLevel4 = 5000,
+        MonLevel1 = 6000,
+        MonLevel2 = 6000,
+        MonLevel3 = 6000,
+        MonLevel4 = 6000,
         TowerId = 211052201
       },
       [211052202] = {
@@ -7569,10 +7569,10 @@ return {
         ChapterId = 4,
         FloorIdx = 20,
         Id = 570,
-        MonLevel1 = 5000,
-        MonLevel2 = 5000,
-        MonLevel3 = 5000,
-        MonLevel4 = 5000,
+        MonLevel1 = 6000,
+        MonLevel2 = 6000,
+        MonLevel3 = 6000,
+        MonLevel4 = 6000,
         TowerId = 211052202
       },
       [211052401] = {
@@ -7582,10 +7582,10 @@ return {
         ChapterId = 4,
         FloorIdx = 20,
         Id = 576,
-        MonLevel1 = 5000,
-        MonLevel2 = 5000,
-        MonLevel3 = 5000,
-        MonLevel4 = 5000,
+        MonLevel1 = 5600,
+        MonLevel2 = 5600,
+        MonLevel3 = 5600,
+        MonLevel4 = 5600,
         TowerId = 211052401
       },
       [211061101] = {
@@ -7595,10 +7595,10 @@ return {
         ChapterId = 4,
         FloorIdx = 20,
         Id = 571,
-        MonLevel1 = 5000,
-        MonLevel2 = 5000,
-        MonLevel3 = 5000,
-        MonLevel4 = 5000,
+        MonLevel1 = 6000,
+        MonLevel2 = 6000,
+        MonLevel3 = 6000,
+        MonLevel4 = 6000,
         TowerId = 211061101
       },
       [211061102] = {
@@ -7608,10 +7608,10 @@ return {
         ChapterId = 4,
         FloorIdx = 20,
         Id = 572,
-        MonLevel1 = 5000,
-        MonLevel2 = 5000,
-        MonLevel3 = 5000,
-        MonLevel4 = 5000,
+        MonLevel1 = 6000,
+        MonLevel2 = 6000,
+        MonLevel3 = 6000,
+        MonLevel4 = 6000,
         TowerId = 211061102
       },
       [211062101] = {
@@ -7621,10 +7621,10 @@ return {
         ChapterId = 4,
         FloorIdx = 20,
         Id = 573,
-        MonLevel1 = 5000,
-        MonLevel2 = 5000,
-        MonLevel3 = 5000,
-        MonLevel4 = 5000,
+        MonLevel1 = 6000,
+        MonLevel2 = 6000,
+        MonLevel3 = 6000,
+        MonLevel4 = 6000,
         TowerId = 211062101
       },
       [211062201] = {
@@ -7634,10 +7634,10 @@ return {
         ChapterId = 4,
         FloorIdx = 20,
         Id = 574,
-        MonLevel1 = 5000,
-        MonLevel2 = 5000,
-        MonLevel3 = 5000,
-        MonLevel4 = 5000,
+        MonLevel1 = 6000,
+        MonLevel2 = 6000,
+        MonLevel3 = 6000,
+        MonLevel4 = 6000,
         TowerId = 211062201
       },
       [211064201] = {
@@ -7647,10 +7647,10 @@ return {
         ChapterId = 4,
         FloorIdx = 20,
         Id = 575,
-        MonLevel1 = 5000,
-        MonLevel2 = 5000,
-        MonLevel3 = 5000,
-        MonLevel4 = 5000,
+        MonLevel1 = 6000,
+        MonLevel2 = 6000,
+        MonLevel3 = 6000,
+        MonLevel4 = 6000,
         TowerId = 211064201
       }
     }

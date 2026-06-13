@@ -85,11 +85,13 @@ function ui:refresh_info()
     pd.gameObject:SetActive(true)
     pd:Stop()
     pd:Play()
-    local stopped = function()
+    
+    local function stopped()
       self.v_effect_timer = nil
       pd:Stop()
       pd.gameObject:SetActive(false)
     end
+    
     self.v_effect_timer = Timer:add_timer(nil, 0.7, stopped)
   end
   if self.v_bless_next_lv_cfg then

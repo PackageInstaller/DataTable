@@ -286,10 +286,12 @@ end
 
 function M:_onclick_replace_btn()
   local after_click_hold_ui = false
-  local get_callback = function(is_need)
+  
+  local function get_callback(is_need)
     self.v_item.is_need_equip = is_need
     SceneMgr:get_scene_item_mgr():pick_item(self.v_item)
   end
+  
   if self.v_is_rune then
     local npc_data = self.v_item.npc_data
     local source_type = npc_data and RUNE2_SOURCE.NPC_DROP or RUNE2_SOURCE.DROP

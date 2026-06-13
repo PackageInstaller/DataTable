@@ -20,7 +20,8 @@ local ASSET_BAR_CONFIG = {
   }
 }
 local DELAY_MOVE_TIME = 0.03
-local sort = function(a, b)
+
+local function sort(a, b)
   local _, a1 = next(a)
   local _, b1 = next(b)
   if a1 and b1 and a1.PosGroup ~= b1.PosGroup then
@@ -29,7 +30,8 @@ local sort = function(a, b)
     return false
   end
 end
-local sort2 = function(a, b)
+
+local function sort2(a, b)
   if a.type ~= b.type then
     return a.type < b.type
   else
@@ -62,10 +64,12 @@ function ui:on_click_unlock_btn()
     return
   end
   local unlock_id = self.v_select_bless_id
-  local cb = function()
+  
+  local function cb()
     self:refresh_skill_tree()
     self:play_unlock_effect(unlock_id)
   end
+  
   local cfg = ShareRes.get_curse_ring_bless_cfg(unlock_id)
   if not Util.check_item_cost_enough(cfg.CostItem, cfg.CostCnt) then
     Util.show_message_tip(1027)
@@ -154,10 +158,12 @@ function ui:refresh_skill_tree(is_first)
   self:refresh_total_num(count)
   local target_item = self.v_skill_tree_item_map[self.v_select_bless_id or first_can_unlock_id or final_id]
   if target_item then
-    local cb = function()
+    local function cb()
       local rect = target_item:get_rect_transform()
+      
       Util.move_to_target_point_pos(rect, self.v_uicompents.ScrollView_rect, self.v_uicompents.SkillGroupContent_rect, true)
     end
+    
     if is_first then
       self.v_move_timer = Timer:add_timer("move_timer", DELAY_MOVE_TIME, cb)
     end

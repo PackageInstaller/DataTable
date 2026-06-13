@@ -13,7 +13,8 @@ local BUTTON_ENABLED_MAP = {
 local OPERATION_REFRESH_FUNC_NAME = {
   [EQUATION_OPERATION_TYPE.ILLUSTATED] = "refresh_equation_illustated_data"
 }
-local get_obj_map = function(uicontainer)
+
+local function get_obj_map(uicontainer)
   local obj_map = {}
   local list_name = uicontainer.ListName
   local list_objects = uicontainer.ListObj

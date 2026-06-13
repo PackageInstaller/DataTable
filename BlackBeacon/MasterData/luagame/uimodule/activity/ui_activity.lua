@@ -339,9 +339,11 @@ function ui:build_toggle_list()
     end
   end
   self:check_activity_finish(TOGGLE_LIST)
-  local sort_func = function(a, b)
+  
+  local function sort_func(a, b)
     return a.Priority < b.Priority
   end
+  
   _tsort(TOGGLE_LIST, sort_func)
   for index, activity in pairs(TOGGLE_LIST) do
     UI_NAME_TO_TOGGLE[activity.ui_name] = index

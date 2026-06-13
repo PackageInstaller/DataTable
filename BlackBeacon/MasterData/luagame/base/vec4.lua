@@ -3,8 +3,8 @@ local clamp = Math.Clamp
 local sqrt = math.sqrt
 local min = math.min
 local max = math.max
-local setmetatable = setmetatable
-local rawget = rawget
+local setmetatable = _ENV.setmetatable
+local rawget = _ENV.rawget
 local vec4 = {}
 vec4.__index = vec4
 

@@ -388,9 +388,11 @@ function M:request_use_item(hero, item_data, num, callback, skipFloatTxt)
       if skipFloatTxt then
         BloodHelper.ignore(true)
       end
-      local cb = function(hero, item_id, num)
+      
+      local function cb(hero, item_id, num)
         self:_calc_blood_item_add_list(hero, item_id, num)
       end
+      
       local param = {hero = hero, cb = cb}
       Fight_Item_Helper.add_use_effect(item_data.id, num, param)
       if skipFloatTxt then

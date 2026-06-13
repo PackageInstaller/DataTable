@@ -70,10 +70,12 @@ function ui:select_treasure_box_item(msg)
     self:_on_select_treasure()
     return
   end
-  local callback = function(is_need)
+  
+  local function callback(is_need)
     self.select_item_data = msg.mm_obj
     self:_on_select_equip_treasure(is_need)
   end
+  
   local has_equip = FightBagMgr:has_same_type_equip(msg.mm_obj.item_id)
   if not has_equip then
     callback(true)

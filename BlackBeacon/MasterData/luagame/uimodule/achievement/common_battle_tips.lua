@@ -165,11 +165,13 @@ function ui:task_complete_ui_on_show(task_complete_tip)
   if task_complete_tip then
     self.v_uicompents.TaskCompleteTipsText_txt.text = task_complete_tip
     self.v_uiobjects.TaskCompleteTips:SetActive(true)
-    local callback = function()
+    
+    local function callback()
       self.v_task_complete_tips_timer = nil
       self.v_uiobjects.TaskCompleteTips:SetActive(false)
       self:check_next()
     end
+    
     self.v_task_complete_tips_timer = Timer:add_timer(nil, 2.5, callback)
   end
 end
@@ -196,7 +198,8 @@ function ui:show_save_suc_tips(node_data)
     local pd = self.v_uicompents.SavePointTIpsAnima_pd
     pd:Play()
     self.v_uiobjects.SavePointTIps:SetActive(true)
-    local callback = function()
+    
+    local function callback()
       self.v_show_save_suc_tips_timer = nil
       self.v_uiobjects.SavePointTIps:SetActive(false)
       pd:Stop()
@@ -205,6 +208,7 @@ function ui:show_save_suc_tips(node_data)
       end
       self:check_next()
     end
+    
     self.v_show_save_suc_tips_timer = Timer:add_timer(nil, pd.duration, callback)
   end
 end
@@ -221,12 +225,14 @@ function ui:on_chapter_drop_count_change(data)
     self.v_uicompents.StageProgressMax_txt.text = max_count
   end
   local pd = self.v_uicompents.StageProgressTipsAnima_pd
-  local callback = function()
+  
+  local function callback()
     self.v_drop_count_change_timer = nil
     self.v_uiobjects.StageProgressTips:SetActive(false)
     pd:Stop()
     self:check_next()
   end
+  
   pd:Play()
   self.v_uiobjects.StageProgressTips:SetActive(true)
   self.v_drop_count_change_timer = Timer:add_timer(nil, pd.duration, callback)
@@ -410,12 +416,14 @@ function ui:refresh_orn_damage_info(damage_orn_id)
     Timer:remove_timer(self.v_orn_damage_timer)
     self.v_orn_damage_timer = nil
   end
-  local callback = function()
+  
+  local function callback()
     self.v_orn_damage_timer = nil
     self.v_uiobjects.OrnBrokenTips:SetActive(false)
     pd:Stop()
     self:check_next()
   end
+  
   self.v_orn_damage_timer = Timer:add_timer("orn_damage_timer", pd.duration, callback)
   pd:Stop()
   pd:Play()

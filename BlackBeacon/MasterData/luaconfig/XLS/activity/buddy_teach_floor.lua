@@ -237,6 +237,17 @@ return {
       PointName = "郁离"
     }
   },
+  [10032501] = {
+    {
+      AwardId = {33000, 0},
+      ComboId = {},
+      FightCost = {0, 0},
+      FloorIdx = 1,
+      Id = 10032501,
+      PointBgPath = "UIChapter/StageIcon/MainLineIcon1001",
+      PointName = "巴拉莱卡"
+    }
+  },
   [10032601] = {
     {
       AwardId = {33000, 0},

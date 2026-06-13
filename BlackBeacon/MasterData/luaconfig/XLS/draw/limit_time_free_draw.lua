@@ -22,5 +22,13 @@ return {
     Id = 3,
     RuleId = 7,
     StartTime = 10011
+  },
+  {
+    DailyRefresh = true,
+    EndTime = 188006,
+    FreeCount = {1, 0},
+    Id = 4,
+    RuleId = 7,
+    StartTime = 188005
   }
 }

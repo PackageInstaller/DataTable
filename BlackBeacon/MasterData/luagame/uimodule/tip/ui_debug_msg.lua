@@ -19,11 +19,12 @@ function ui:ui_on_show()
 end
 
 function ui:update_msg_list(grep_str)
-  local callback = function(info)
+  local function callback(info)
     if not grep_str or string.find(info.msg, grep_str) then
       return true
     end
   end
+  
   local msg_list = Global.debug_msg_list:filter_back_list(callback)
   self.v_msg_list:refresh_data(msg_list)
 end

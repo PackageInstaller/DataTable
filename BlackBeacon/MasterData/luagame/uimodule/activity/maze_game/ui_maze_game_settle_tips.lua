@@ -30,65 +30,62 @@ function ui:ui_finish_load()
   end)
 end
 
-function ui:ui_on_show(ponder_id)
+function ui:ui_on_show(ponder_id, activity_id, close_callback)
   self.v_only_show = nil ~= ponder_id
+  self.v_activity_id = activity_id
+  if not ponder_id then
+    local temp_ponder_id = NoviceMgr:get_maze_game_settle_tips_ponder_id()
+    ponder_id = 0 ~= temp_ponder_id and temp_ponder_id or nil
+  end
+  if not ponder_id and NoviceMgr.ponder_maze_mgr then
+    ponder_id = NoviceMgr.ponder_maze_mgr:get_ponder_result()
+  end
   self:refresh_view(ponder_id)
+  self.v_close_callback = close_callback
+  NoviceMgr:set_is_need_show_maze_game_settle_tips(false)
+  NoviceMgr:set_maze_game_settle_tips_ponder_id(0)
 end
 
 function ui:ui_on_hide()
   self.v_only_show = false
+  if self.v_close_callback then
+    self.v_close_callback()
+    self.v_close_callback = nil
+  end
 end
 
 function ui:ui_on_destroy()
 end
 
-local TRIGGER_TYPE = {
-  DEFAULT_UNLOCK = 1,
-  PONDER_UNLOCK = 2,
-  POINT_UNLOCK = 3
-}
-local TYPE2_STORY_FIRST_PLAY_KEY = "TYPE2_STORY_FIRST_PLAY_KEY"
-local LocalStorage = require("utils.localstorage")
-
 function ui:refresh_view(ponder_id)
-  ponder_id = self.v_only_show and ponder_id or NoviceMgr.ponder_maze_mgr and NoviceMgr.ponder_maze_mgr:get_ponder_result()
   if ponder_id then
     local ponder_cfg = ShareRes.get_ponder_cfg(ponder_id)
     self.v_uicompents.AnswerDesc_txt.text = ponder_cfg.Desc
     self.v_uicompents.AnswerName_txt.text = ponder_cfg.Name
     ResMgr:load_set_icon(self.v_uicompents.AnswerIcon_img, ponder_cfg.IconPath)
-    if self.v_only_show then
-      self.v_uiobjects.TitleDef:SetActive(false)
-      self.v_uiobjects.TitleSuc:SetActive(false)
-    else
-      local is_victory = NoviceMgr.ponder_maze_mgr:is_game_victory()
-      self.v_uiobjects.BtnReStart:SetActive(not is_victory)
-      self.v_uiobjects.TitleDef:SetActive(not is_victory)
-      self.v_uiobjects.TitleSuc:SetActive(is_victory)
-    end
-    self.v_uiobjects.Button:SetActive(not self.v_only_show)
+    self.v_uiobjects.BtnReStart:SetActive(false)
+    self.v_uiobjects.TitleDef:SetActive(false)
+    self.v_uiobjects.Button:SetActive(false)
+    self.v_uiobjects.TitleSuc:SetActive(not self.v_only_show)
   end
   if not self.v_only_show then
-    local cfgs = ShareRes.get_ponder_maze_story_cfg()
-    for story_id, cfg in pairs(cfgs) do
-      if 0 == LocalStorage:load_int(TYPE2_STORY_FIRST_PLAY_KEY .. story_id, 0, true) then
-        if cfg.StoryType == TRIGGER_TYPE.PONDER_UNLOCK and cfg.Param[1] == ponder_id then
-          StoryMgr:on_start(story_id)
-          LocalStorage:save_int(TYPE2_STORY_FIRST_PLAY_KEY .. story_id, 1, true)
-          break
-        elseif cfg.StoryType == TRIGGER_TYPE.POINT_UNLOCK then
+    local cfg_list = ShareRes.get_ponder_maze_story_cfg()
+    for story_id, cfg in pairs(cfg_list) do
+      if NoviceMgr:get_maze_game_story_state(story_id) == Config.CommonDefine.MAZE_GAME_STORY_STATE.NO_PLAY then
+        if cfg.StoryType == Config.CommonDefine.MAZE_GAME_TRIGGER_TYPE.PONDER_UNLOCK and cfg.Param[1] == ponder_id then
+          NoviceMgr:set_maze_game_story_state(story_id, Config.CommonDefine.MAZE_GAME_STORY_STATE.NEED_PLAY)
+        elseif cfg.StoryType == Config.CommonDefine.MAZE_GAME_TRIGGER_TYPE.POINT_UNLOCK then
           local pass_all_point = true
-          local activity_id = NoviceMgr.ponder_maze_mgr:get_game_param()
+          if not self.v_activity_id then
+            self.v_activity_id = NoviceMgr.ponder_maze_mgr:get_game_param()
+          end
           for key, point_id in pairs(cfg.Param) do
-            if not NoviceMgr:get_ponder_maze_point_is_comp(activity_id, point_id) then
+            if not NoviceMgr:get_ponder_maze_point_is_comp(self.v_activity_id, point_id) then
               pass_all_point = false
-              break
             end
           end
           if pass_all_point then
-            StoryMgr:on_start(story_id)
-            LocalStorage:save_int(TYPE2_STORY_FIRST_PLAY_KEY .. story_id, 1, true)
-            break
+            NoviceMgr:set_maze_game_story_state(story_id, Config.CommonDefine.MAZE_GAME_STORY_STATE.NEED_PLAY)
           end
         end
       end

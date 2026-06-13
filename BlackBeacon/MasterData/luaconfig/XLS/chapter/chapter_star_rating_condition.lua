@@ -1098,74 +1098,74 @@ return {
     Id = 8002061
   },
   [8003011] = {
-    Arg = {10, 0},
-    ConditionDesc = "累计获得10积分",
+    Arg = {20, 0},
+    ConditionDesc = "累计获得20积分",
     ConditionType = 5,
     Id = 8003011
   },
   [8003012] = {
-    Arg = {20, 0},
-    ConditionDesc = "累计获得20积分",
+    Arg = {30, 0},
+    ConditionDesc = "累计获得30积分",
     ConditionType = 5,
     Id = 8003012
   },
   [8003013] = {
-    Arg = {30, 0},
-    ConditionDesc = "累计获得30积分",
+    Arg = {50, 0},
+    ConditionDesc = "累计获得50积分",
     ConditionType = 5,
     Id = 8003013
   },
   [8003021] = {
-    Arg = {10, 0},
-    ConditionDesc = "累计获得10积分",
+    Arg = {20, 0},
+    ConditionDesc = "累计获得20积分",
     ConditionType = 5,
     Id = 8003021
   },
   [8003022] = {
-    Arg = {20, 0},
-    ConditionDesc = "累计获得20积分",
+    Arg = {40, 0},
+    ConditionDesc = "累计获得40积分",
     ConditionType = 5,
     Id = 8003022
   },
   [8003023] = {
-    Arg = {30, 0},
-    ConditionDesc = "累计获得30积分",
+    Arg = {60, 0},
+    ConditionDesc = "累计获得60积分",
     ConditionType = 5,
     Id = 8003023
   },
   [8003031] = {
-    Arg = {10, 0},
-    ConditionDesc = "累计获得10积分",
+    Arg = {20, 0},
+    ConditionDesc = "累计获得20积分",
     ConditionType = 5,
     Id = 8003031
   },
   [8003032] = {
-    Arg = {20, 0},
-    ConditionDesc = "累计获得20积分",
+    Arg = {40, 0},
+    ConditionDesc = "累计获得40积分",
     ConditionType = 5,
     Id = 8003032
   },
   [8003033] = {
-    Arg = {30, 0},
-    ConditionDesc = "累计获得30积分",
+    Arg = {60, 0},
+    ConditionDesc = "累计获得60积分",
     ConditionType = 5,
     Id = 8003033
   },
   [8003041] = {
-    Arg = {10, 0},
-    ConditionDesc = "累计获得10积分",
+    Arg = {20, 0},
+    ConditionDesc = "累计获得20积分",
     ConditionType = 5,
     Id = 8003041
   },
   [8003042] = {
-    Arg = {20, 0},
-    ConditionDesc = "累计获得20积分",
+    Arg = {40, 0},
+    ConditionDesc = "累计获得40积分",
     ConditionType = 5,
     Id = 8003042
   },
   [8003043] = {
-    Arg = {30, 0},
-    ConditionDesc = "累计获得30积分",
+    Arg = {60, 0},
+    ConditionDesc = "累计获得60积分",
     ConditionType = 5,
     Id = 8003043
   },
@@ -1176,68 +1176,68 @@ return {
     Id = 8004011
   },
   [8004012] = {
-    Arg = {30, 0},
-    ConditionDesc = "累计获得30积分",
+    Arg = {40, 0},
+    ConditionDesc = "累计获得40积分",
     ConditionType = 5,
     Id = 8004012
   },
   [8004013] = {
-    Arg = {40, 0},
-    ConditionDesc = "累计获得40积分",
+    Arg = {60, 0},
+    ConditionDesc = "累计获得60积分",
     ConditionType = 5,
     Id = 8004013
   },
   [8004021] = {
-    Arg = {20, 0},
-    ConditionDesc = "累计获得20积分",
+    Arg = {30, 0},
+    ConditionDesc = "累计获得30积分",
     ConditionType = 5,
     Id = 8004021
   },
   [8004022] = {
-    Arg = {30, 0},
-    ConditionDesc = "累计获得30积分",
+    Arg = {60, 0},
+    ConditionDesc = "累计获得60积分",
     ConditionType = 5,
     Id = 8004022
   },
   [8004023] = {
-    Arg = {40, 0},
-    ConditionDesc = "累计获得40积分",
+    Arg = {90, 0},
+    ConditionDesc = "累计获得90积分",
     ConditionType = 5,
     Id = 8004023
   },
   [8004031] = {
-    Arg = {20, 0},
-    ConditionDesc = "累计获得20积分",
+    Arg = {30, 0},
+    ConditionDesc = "累计获得30积分",
     ConditionType = 5,
     Id = 8004031
   },
   [8004032] = {
-    Arg = {30, 0},
-    ConditionDesc = "累计获得30积分",
+    Arg = {60, 0},
+    ConditionDesc = "累计获得60积分",
     ConditionType = 5,
     Id = 8004032
   },
   [8004033] = {
-    Arg = {40, 0},
-    ConditionDesc = "累计获得40积分",
+    Arg = {90, 0},
+    ConditionDesc = "累计获得90积分",
     ConditionType = 5,
     Id = 8004033
   },
   [8004041] = {
-    Arg = {20, 0},
-    ConditionDesc = "累计获得20积分",
+    Arg = {60, 0},
+    ConditionDesc = "累计获得60积分",
     ConditionType = 5,
     Id = 8004041
   },
   [8004042] = {
-    Arg = {30, 0},
-    ConditionDesc = "累计获得30积分",
+    Arg = {90, 0},
+    ConditionDesc = "累计获得90积分",
     ConditionType = 5,
     Id = 8004042
   },
   [8004043] = {
-    Arg = {40, 0},
-    ConditionDesc = "累计获得40积分",
+    Arg = {120, 0},
+    ConditionDesc = "累计获得120积分",
     ConditionType = 5,
     Id = 8004043
   },
@@ -1336,5 +1336,11 @@ return {
     ConditionDesc = "累计造成2次元素异常",
     ConditionType = 5,
     Id = 24003051
+  },
+  [24003052] = {
+    Arg = {1, 0},
+    ConditionDesc = "通关关卡<color=#FFFFFF00>{1}</color>",
+    ConditionType = 1,
+    Id = 24003052
   }
 }

@@ -457,5 +457,22 @@ return {
       1060102703,
       0
     }
+  },
+  [1001030] = {
+    Classify = 1,
+    Condition = 1001100103001,
+    DetaillPhoto = "Hero/1001030_half",
+    EnName = "Z H A N T A N",
+    Id = 1001030,
+    IsRoutine = 2,
+    Name = "旃檀",
+    Photo = "Hero/1001030_half",
+    Priority = 1,
+    ProgressTask = {
+      1060103001,
+      1060103002,
+      1060103003,
+      0
+    }
   }
 }

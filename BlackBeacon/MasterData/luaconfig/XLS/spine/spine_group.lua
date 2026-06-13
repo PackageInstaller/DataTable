@@ -219,17 +219,19 @@ return {
       SpineRes = "SP_1001019"
     },
     {
-      DefaultAnim = "Loop",
-      Id = 301,
-      IfFitScreen = 1,
+      AnimGroup1 = {210110261},
+      DefaultAnim = "loop",
+      Id = 21011026,
+      OpenStyle1 = 1,
       Pos = {
         0,
+        0.3,
         0,
-        0,
-        0.6
+        0.25
       },
       SpineGroupID = 0,
-      SpineRes = "SP_loadingZeroSpine"
+      SpineRes = "FCP_1001026a",
+      Wight1 = {50}
     },
     {
       DefaultAnim = "idle",
@@ -392,22 +394,6 @@ return {
       Wight3 = {50}
     },
     {
-      AnimGroup3 = {110010231},
-      DefaultAnim = "loop",
-      Id = 11001023,
-      OpenStyle3 = 1,
-      Param3 = 0,
-      Pos = {
-        0,
-        0.3,
-        0,
-        0.25
-      },
-      SpineGroupID = 0,
-      SpineRes = "FCP_1001023",
-      Wight3 = {50}
-    },
-    {
       AnimGroup1 = {
         1011,
         1012,
@@ -560,6 +546,30 @@ return {
     },
     {
       DefaultAnim = "idle",
+      Id = 113,
+      Pos = {
+        -0.18,
+        -0.4,
+        4.2,
+        1
+      },
+      SpineGroupID = 0,
+      SpineRes = "SP_1001024"
+    },
+    {
+      DefaultAnim = "floop",
+      Id = 11011014,
+      Pos = {
+        -0.7,
+        0.3,
+        0,
+        0.25
+      },
+      SpineGroupID = 0,
+      SpineRes = "FCP_1001014"
+    },
+    {
+      DefaultAnim = "idle",
       Id = 115,
       Pos = {
         0,
@@ -593,6 +603,56 @@ return {
       },
       SpineGroupID = 0,
       SpineRes = "FCP_1001017"
+    },
+    {
+      AnimGroup1 = {
+        1011,
+        1012,
+        1013
+      },
+      DefaultAnim = "bird",
+      Id = 50001,
+      OpenStyle1 = 1,
+      Pos = {
+        -0.4,
+        -0.15,
+        5,
+        1
+      },
+      SpineGroupID = 0,
+      SpineRes = "SP_1001001",
+      Wight1 = {
+        50,
+        50,
+        50
+      }
+    },
+    {
+      AnimGroup1 = {5002101},
+      DefaultAnim = "idle",
+      Id = 50021,
+      OpenStyle1 = 1,
+      Pos = {
+        -0.04,
+        0.23,
+        0,
+        0.29
+      },
+      SpineGroupID = 0,
+      SpineRes = "SP_yueka",
+      Wight1 = {50}
+    },
+    {
+      DefaultAnim = "idle",
+      Id = 1001001,
+      Pos = {
+        0,
+        0.3,
+        4.5,
+        1
+      },
+      SpineGroupID = 0,
+      SpineRes = "SP_1001001"
     },
     {
       DefaultAnim = "floop",
@@ -631,13 +691,25 @@ return {
       SpineRes = "FCP_1001024"
     },
     {
+      DefaultAnim = "idle",
+      Id = 50033,
+      Pos = {
+        -0.4,
+        -0.15,
+        5,
+        1
+      },
+      SpineGroupID = 0,
+      SpineRes = "SP_1001027"
+    },
+    {
       DefaultAnim = "floop",
       Id = 11011026,
       Pos = {
-        0.5,
-        0.55,
+        -0.21,
+        -0.64,
         0,
-        0.22
+        0.28
       },
       SpineGroupID = 0,
       SpineRes = "FCP_1001026"
@@ -646,10 +718,10 @@ return {
       DefaultAnim = "floop",
       Id = 11011027,
       Pos = {
-        0.5,
-        0.55,
+        -0.09,
+        -0.31,
         0,
-        0.22
+        0.23
       },
       SpineGroupID = 0,
       SpineRes = "FCP_1001027"
@@ -668,15 +740,39 @@ return {
     },
     {
       DefaultAnim = "idle",
-      Id = 1001001,
+      Id = 50028,
       Pos = {
-        0,
-        0.3,
-        4.5,
+        -0.4,
+        -0.15,
+        5,
         1
       },
       SpineGroupID = 0,
-      SpineRes = "SP_1001001"
+      SpineRes = "SP_1001011"
+    },
+    {
+      DefaultAnim = "idle",
+      Id = 50027,
+      Pos = {
+        -0.4,
+        -0.15,
+        5,
+        1
+      },
+      SpineGroupID = 0,
+      SpineRes = "SP_1001021"
+    },
+    {
+      DefaultAnim = "idle",
+      Id = 50026,
+      Pos = {
+        -0.4,
+        -0.15,
+        5,
+        1
+      },
+      SpineGroupID = 0,
+      SpineRes = "SP_1001015"
     },
     {
       DefaultAnim = "idle",
@@ -884,15 +980,15 @@ return {
     },
     {
       DefaultAnim = "idle",
-      Id = 50033,
+      Id = 1001025,
       Pos = {
-        -0.4,
-        -0.15,
-        5,
+        0,
+        0.3,
+        4.5,
         1
       },
       SpineGroupID = 0,
-      SpineRes = "SP_1001027"
+      SpineRes = "SP_1001025"
     },
     {
       DefaultAnim = "idle",
@@ -917,57 +1013,6 @@ return {
       },
       SpineGroupID = 0,
       SpineRes = "SP_1001027"
-    },
-    {
-      DefaultAnim = "idle",
-      Id = 50028,
-      Pos = {
-        -0.4,
-        -0.15,
-        5,
-        1
-      },
-      SpineGroupID = 0,
-      SpineRes = "SP_1001011"
-    },
-    {
-      DefaultAnim = "idle",
-      Id = 50027,
-      Pos = {
-        -0.4,
-        -0.15,
-        5,
-        1
-      },
-      SpineGroupID = 0,
-      SpineRes = "SP_1001021"
-    },
-    {
-      DefaultAnim = "idle",
-      Id = 50026,
-      Pos = {
-        -0.4,
-        -0.15,
-        5,
-        1
-      },
-      SpineGroupID = 0,
-      SpineRes = "SP_1001015"
-    },
-    {
-      AnimGroup1 = {5002101},
-      DefaultAnim = "idle",
-      Id = 50021,
-      OpenStyle1 = 1,
-      Pos = {
-        -0.04,
-        0.23,
-        0,
-        0.29
-      },
-      SpineGroupID = 0,
-      SpineRes = "SP_yueka",
-      Wight1 = {50}
     },
     {
       DefaultAnim = "idle",
@@ -997,27 +1042,16 @@ return {
       Wight1 = {50}
     },
     {
-      AnimGroup1 = {
-        1011,
-        1012,
-        1013
-      },
-      DefaultAnim = "bird",
-      Id = 50001,
-      OpenStyle1 = 1,
+      DefaultAnim = "idle",
+      Id = 1001030,
       Pos = {
-        -0.4,
-        -0.15,
-        5,
+        0,
+        0.3,
+        4.5,
         1
       },
       SpineGroupID = 0,
-      SpineRes = "SP_1001001",
-      Wight1 = {
-        50,
-        50,
-        50
-      }
+      SpineRes = "SP_1001030"
     },
     {
       AnimGroup1 = {110010081},
@@ -1063,6 +1097,18 @@ return {
       SpineGroupID = 0,
       SpineRes = "FCP_1001012",
       Wight1 = {50}
+    },
+    {
+      DefaultAnim = "idle",
+      Id = 1002220,
+      Pos = {
+        0,
+        0.3,
+        4.5,
+        1
+      },
+      SpineGroupID = 0,
+      SpineRes = "SP_1001020a"
     },
     {
       AnimGroup1 = {110010141},
@@ -1195,30 +1241,6 @@ return {
       },
       SpineGroupID = 0,
       SpineRes = "SP_SpCg_023"
-    },
-    {
-      DefaultAnim = "idle",
-      Id = 1002220,
-      Pos = {
-        0,
-        0.3,
-        4.5,
-        1
-      },
-      SpineGroupID = 0,
-      SpineRes = "SP_1001020a"
-    },
-    {
-      DefaultAnim = "CF4",
-      Id = 3022,
-      Pos = {
-        0,
-        0,
-        0,
-        0.8
-      },
-      SpineGroupID = 0,
-      SpineRes = "SP_SpCg_029"
     },
     {
       DefaultAnim = "animation",
@@ -1477,20 +1499,16 @@ return {
       SpineRes = "SP_SpCg_028"
     },
     {
-      AnimGroup2 = {200102},
-      DefaultAnim = "idle",
-      Id = 2002,
-      OpenStyle2 = 1,
-      Param2 = 0,
+      DefaultAnim = "CF4",
+      Id = 3022,
       Pos = {
         0,
         0,
         0,
-        2
+        0.8
       },
       SpineGroupID = 0,
-      SpineRes = "SP_1001001_1",
-      Wight2 = {100}
+      SpineRes = "SP_SpCg_029"
     },
     {
       DefaultAnim = "CF5",
@@ -1621,6 +1639,18 @@ return {
       SpineRes = "SP_1001026"
     },
     {
+      DefaultAnim = "idle",
+      Id = 117,
+      Pos = {
+        0,
+        -0.4,
+        4.2,
+        1
+      },
+      SpineGroupID = 0,
+      SpineRes = "SP_1001030"
+    },
+    {
       AnimGroup2 = {200101},
       DefaultAnim = "idle",
       Id = 2001,
@@ -1653,6 +1683,18 @@ return {
       Wight1 = {100}
     },
     {
+      DefaultAnim = "idle",
+      Id = 116,
+      Pos = {
+        0,
+        -0.4,
+        4.2,
+        1
+      },
+      SpineGroupID = 0,
+      SpineRes = "SP_1001025"
+    },
+    {
       DefaultAnim = "loop",
       Id = 52000,
       Pos = {
@@ -1675,18 +1717,6 @@ return {
       },
       SpineGroupID = 0,
       SpineRes = "FCP_1001016a"
-    },
-    {
-      DefaultAnim = "idle",
-      Id = 113,
-      Pos = {
-        -0.18,
-        -0.4,
-        4.2,
-        1
-      },
-      SpineGroupID = 0,
-      SpineRes = "SP_1001024"
     },
     {
       DefaultAnim = "idle",
@@ -1771,6 +1801,22 @@ return {
       Wight2 = {100}
     },
     {
+      AnimGroup2 = {200102},
+      DefaultAnim = "idle",
+      Id = 2002,
+      OpenStyle2 = 1,
+      Param2 = 0,
+      Pos = {
+        0,
+        0,
+        0,
+        2
+      },
+      SpineGroupID = 0,
+      SpineRes = "SP_1001001_1",
+      Wight2 = {100}
+    },
+    {
       DefaultAnim = "3",
       Id = 3008,
       Pos = {
@@ -1795,6 +1841,18 @@ return {
       SpineRes = "SP_SpCg_023"
     },
     {
+      DefaultAnim = "loop",
+      Id = 21001026,
+      Pos = {
+        0,
+        0.3,
+        0,
+        0.25
+      },
+      SpineGroupID = 0,
+      SpineRes = "FCP_1001026a"
+    },
+    {
       DefaultAnim = "floop",
       Id = 11011012,
       Pos = {
@@ -1807,16 +1865,17 @@ return {
       SpineRes = "FCP_1001012"
     },
     {
-      DefaultAnim = "floop",
-      Id = 11011014,
+      DefaultAnim = "Loop",
+      Id = 301,
+      IfFitScreen = 1,
       Pos = {
-        -0.7,
-        0.3,
         0,
-        0.25
+        0,
+        0,
+        0.6
       },
       SpineGroupID = 0,
-      SpineRes = "FCP_1001014"
+      SpineRes = "SP_loadingZeroSpine"
     },
     {
       AnimGroup3 = {110010271},
@@ -1865,6 +1924,22 @@ return {
       SpineGroupID = 0,
       SpineRes = "FCP_1001024",
       Wight3 = {50}
+    },
+    {
+      AnimGroup3 = {110010231},
+      DefaultAnim = "loop",
+      Id = 11001023,
+      OpenStyle3 = 1,
+      Param3 = 0,
+      Pos = {
+        0,
+        0.3,
+        0,
+        0.25
+      },
+      SpineGroupID = 0,
+      SpineRes = "FCP_1001023",
+      Wight3 = {50}
     }
   },
   [401] = {
@@ -1893,6 +1968,36 @@ return {
         50,
         50
       }
+    },
+    {
+      AnimGroup1 = {
+        4010201,
+        4010202,
+        4010203,
+        4010204
+      },
+      AnimGroup3 = {4010206},
+      DefaultAnim = "idle",
+      Id = 40103,
+      OpenStyle1 = 1,
+      OpenStyle3 = 1,
+      Param3 = 0,
+      Pos = {
+        0.16,
+        0.62,
+        0,
+        1
+      },
+      SpineGroupID = 401,
+      SpineRes = "SP_1001001",
+      Wight1 = {
+        50,
+        50,
+        50,
+        50,
+        50
+      },
+      Wight3 = {50}
     },
     {
       AnimGroup1 = {
@@ -2007,36 +2112,6 @@ return {
         50
       },
       Wight3 = {50}
-    },
-    {
-      AnimGroup1 = {
-        4010201,
-        4010202,
-        4010203,
-        4010204
-      },
-      AnimGroup3 = {4010206},
-      DefaultAnim = "idle",
-      Id = 40103,
-      OpenStyle1 = 1,
-      OpenStyle3 = 1,
-      Param3 = 0,
-      Pos = {
-        0.16,
-        0.62,
-        0,
-        1
-      },
-      SpineGroupID = 401,
-      SpineRes = "SP_1001001",
-      Wight1 = {
-        50,
-        50,
-        50,
-        50,
-        50
-      },
-      Wight3 = {50}
     }
   },
   [404] = {
@@ -2089,20 +2164,6 @@ return {
       Wight3 = {50}
     },
     {
-      AnimGroup1 = {4040301},
-      DefaultAnim = "eat",
-      Id = 40403,
-      Pos = {
-        0.16,
-        0.4,
-        0,
-        1
-      },
-      SpineGroupID = 404,
-      SpineRes = "SP_1001004",
-      Wight1 = {50}
-    },
-    {
       AnimGroup3 = {4040401},
       DefaultAnim = "weapon",
       Id = 40404,
@@ -2117,6 +2178,20 @@ return {
       SpineGroupID = 404,
       SpineRes = "SP_1001004",
       Wight3 = {50}
+    },
+    {
+      AnimGroup1 = {4040301},
+      DefaultAnim = "eat",
+      Id = 40403,
+      Pos = {
+        0.16,
+        0.4,
+        0,
+        1
+      },
+      SpineGroupID = 404,
+      SpineRes = "SP_1001004",
+      Wight1 = {50}
     }
   },
   [408] = {
@@ -2187,6 +2262,37 @@ return {
   },
   [409] = {
     {
+      AnimGroup1 = {
+        4090101,
+        4090102,
+        4090103,
+        4090104,
+        4090105,
+        4090106,
+        4090107
+      },
+      DefaultAnim = "idle",
+      Id = 40901,
+      OpenStyle1 = 1,
+      Pos = {
+        0.16,
+        0.4,
+        0,
+        1
+      },
+      SpineGroupID = 409,
+      SpineRes = "SP_1001009",
+      Wight1 = {
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      }
+    },
+    {
       AnimGroup3 = {4090301},
       DefaultAnim = "weapon",
       Id = 40903,
@@ -2217,67 +2323,9 @@ return {
       SpineGroupID = 409,
       SpineRes = "SP_1001009",
       Wight3 = {50}
-    },
-    {
-      AnimGroup1 = {
-        4090101,
-        4090102,
-        4090103,
-        4090104,
-        4090105,
-        4090106,
-        4090107
-      },
-      DefaultAnim = "idle",
-      Id = 40901,
-      OpenStyle1 = 1,
-      Pos = {
-        0.16,
-        0.4,
-        0,
-        1
-      },
-      SpineGroupID = 409,
-      SpineRes = "SP_1001009",
-      Wight1 = {
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50
-      }
     }
   },
   [410] = {
-    {
-      AnimGroup1 = {
-        4100101,
-        4100102,
-        4100103,
-        4100104
-      },
-      DefaultAnim = "idle",
-      Id = 41001,
-      OpenStyle1 = 1,
-      Pos = {
-        0.16,
-        0.4,
-        0,
-        1
-      },
-      SpineGroupID = 410,
-      SpineRes = "SP_1001010",
-      Wight1 = {
-        50,
-        50,
-        50,
-        50,
-        50,
-        50
-      }
-    },
     {
       AnimGroup3 = {4100301},
       DefaultAnim = "idle",
@@ -2309,6 +2357,33 @@ return {
       SpineGroupID = 410,
       SpineRes = "SP_1001010",
       Wight3 = {50}
+    },
+    {
+      AnimGroup1 = {
+        4100101,
+        4100102,
+        4100103,
+        4100104
+      },
+      DefaultAnim = "idle",
+      Id = 41001,
+      OpenStyle1 = 1,
+      Pos = {
+        0.16,
+        0.4,
+        0,
+        1
+      },
+      SpineGroupID = 410,
+      SpineRes = "SP_1001010",
+      Wight1 = {
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      }
     }
   },
   [411] = {
@@ -2700,25 +2775,6 @@ return {
   },
   [420] = {
     {
-      AnimGroup1 = {4200102, 4200103},
-      AnimGroup3 = {4200101},
-      DefaultAnim = "mask",
-      Id = 42001,
-      OpenStyle1 = 1,
-      OpenStyle3 = 1,
-      Param3 = 0,
-      Pos = {
-        0.16,
-        0.08,
-        0,
-        1
-      },
-      SpineGroupID = 420,
-      SpineRes = "SP_1001020",
-      Wight1 = {50, 50},
-      Wight3 = {50}
-    },
-    {
       AnimGroup1 = {4200203},
       AnimGroup3 = {4200201, 4200202},
       DefaultAnim = "idle",
@@ -2736,6 +2792,25 @@ return {
       SpineRes = "SP_1001020",
       Wight1 = {50},
       Wight3 = {50, 50}
+    },
+    {
+      AnimGroup1 = {4200102, 4200103},
+      AnimGroup3 = {4200101},
+      DefaultAnim = "mask",
+      Id = 42001,
+      OpenStyle1 = 1,
+      OpenStyle3 = 1,
+      Param3 = 0,
+      Pos = {
+        0.16,
+        0.08,
+        0,
+        1
+      },
+      SpineGroupID = 420,
+      SpineRes = "SP_1001020",
+      Wight1 = {50, 50},
+      Wight3 = {50}
     },
     {
       AnimGroup1 = {4200302},
@@ -3098,6 +3173,34 @@ return {
         50,
         50
       }
+    }
+  },
+  [525] = {
+    {
+      DefaultAnim = "idle",
+      Id = 3001025,
+      Pos = {
+        0.16,
+        0.4,
+        0,
+        1
+      },
+      SpineGroupID = 525,
+      SpineRes = "SP_1001025"
+    }
+  },
+  [530] = {
+    {
+      DefaultAnim = "idle",
+      Id = 3001030,
+      Pos = {
+        0.16,
+        0.4,
+        0,
+        1
+      },
+      SpineGroupID = 530,
+      SpineRes = "SP_1001030"
     }
   },
   [4091] = {

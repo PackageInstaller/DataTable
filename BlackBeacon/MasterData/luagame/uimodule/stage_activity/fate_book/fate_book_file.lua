@@ -65,7 +65,8 @@ function ui:on_click_BtnSaveFile()
   if not Util.is_empty(file_name) and file_name ~= main_cfg.NewFileName then
     change_temp_name = file_name
   end
-  local confirm_cb = function()
+  
+  local function confirm_cb()
     FateBookMgr:request_activity_curse_set_save_data(self.v_save_id, self.v_file_index, function(ok)
       if ok then
         if change_temp_name then
@@ -80,6 +81,7 @@ function ui:on_click_BtnSaveFile()
       end
     end)
   end
+  
   if FateBookMgr:get_fate_book_file_data(self.v_save_id, self.v_file_index) then
     Util.show_conform_tip("是否保存存档", nil, nil, nil, confirm_cb)
   else
@@ -541,6 +543,14 @@ function ui:check_vit_is_enough(pop_exchange_view)
         if item_maxnum < item_num + lack_cnt then
           Util.show_message_tip(2103)
           return
+        end
+        local fateExchange = UIMgr:try_get_visible_ui("fate_exchange")
+        if fateExchange and fateExchange:check_can_exchange() then
+          local cur_lack_cnt = fateExchange:get_cur_lack_cnt()
+          if cur_lack_cnt ~= lack_cnt then
+            fateExchange:response_click_confirm_btn()
+            return
+          end
         end
         if exchange_cost_cnt > material_cur_count then
           UIMgr:get_ui("uiforcerecharg"):ui_show(nil, exchange_cost_cnt - material_cur_count)

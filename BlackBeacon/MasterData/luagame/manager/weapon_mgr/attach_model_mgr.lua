@@ -93,7 +93,9 @@ function M:try_load_attach_model(res_id_list, done_cb)
       if not self.v_id_to_gameObject[model_id] then
         local attach_point = attach_model_cfg.ResAttachPoint and attach_model_cfg.ResAttachPoint[i]
         local weapon_attach_point = attach_model_cfg.WeaponResAttachPoint and attach_model_cfg.WeaponResAttachPoint[i]
-        self:load_model_animator(model_id, attach_point, weapon_attach_point, session_done_cb)
+        local bind_to_hero = attach_model_cfg.BindToHero
+        local use_self_animator = attach_model_cfg.UseSelfAnim
+        self:load_model_animator(model_id, attach_point, weapon_attach_point, session_done_cb, bind_to_hero, use_self_animator)
       end
     end
   end
@@ -111,7 +113,7 @@ function M:set_loaded_model_visiable(model_res)
   end
 end
 
-function M:load_model_animator(model_id, attach_point, weapon_attach_point, done_cb)
+function M:load_model_animator(model_id, attach_point, weapon_attach_point, done_cb, bind_to_hero, use_self_animator)
   local parent
   if attach_point then
     parent = self.v_char:get_setting_point(attach_point)
@@ -135,7 +137,7 @@ function M:load_model_animator(model_id, attach_point, weapon_attach_point, done
     return
   end
   if not animator_cfg.ControllerPath then
-    self:load_gameobj(model_id, animator_cfg.ModelPath, parent, done_cb)
+    self:load_gameobj(model_id, animator_cfg.ModelPath, parent, done_cb, bind_to_hero, use_self_animator)
     return
   end
   ResPool:get_animator_async(animator_cfg.ControllerPath, function(_, animator_info)
@@ -148,11 +150,11 @@ function M:load_model_animator(model_id, attach_point, weapon_attach_point, done
       ResPool:release_res(old_animator_info)
     end
     self.v_id_to_animator_info[model_id] = animator_info
-    self:load_gameobj(model_id, animator_cfg.ModelPath, parent, done_cb)
+    self:load_gameobj(model_id, animator_cfg.ModelPath, parent, done_cb, bind_to_hero, use_self_animator)
   end)
 end
 
-function M:load_gameobj(model_id, prefab_name, parent, done_cb)
+function M:load_gameobj(model_id, prefab_name, parent, done_cb, bind_to_hero, use_self_animator)
   ResPoolMgr:get_weapon_async(prefab_name, function(go)
     if self.v_char:is_destroy() then
       ResPoolMgr:release(go)
@@ -169,18 +171,27 @@ function M:load_gameobj(model_id, prefab_name, parent, done_cb)
     end
     go.transform:SetParent(parent)
     go:ResetAttr()
+    if nil ~= bind_to_hero and SceneMgr:check_main_scene() then
+      local has_component, effect_status_com = go:TryGetComponent(TypeEffectStatus)
+      if has_component then
+        local effect_owner = self.v_char.gameobj.gameObject
+        effect_status_com:SetupOwner(effect_owner, true)
+      end
+    end
     self.v_id_to_gameObject[model_id] = go
-    self:init_animator(model_id)
+    self:init_animator(model_id, use_self_animator)
     if done_cb then
       done_cb()
     end
   end)
 end
 
-function M:init_animator(model_id)
+function M:init_animator(model_id, use_self_animator)
   if self.v_id_to_animator_info[model_id] and self.v_id_to_animator_info[model_id].res and self.v_id_to_gameObject[model_id] then
     local animator = self.v_id_to_gameObject[model_id]:GetComponent(TypeUnityAnimator)
-    animator.runtimeAnimatorController = self.v_id_to_animator_info[model_id].res
+    if not use_self_animator then
+      animator.runtimeAnimatorController = self.v_id_to_animator_info[model_id].res
+    end
     self.v_animator[model_id] = animator
   end
 end

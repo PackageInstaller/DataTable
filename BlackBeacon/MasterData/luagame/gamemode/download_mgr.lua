@@ -102,7 +102,7 @@ function M:_on_error(file_path, err_msg)
   end
 end
 
-local _list_delete_by_value = function(list, value)
+local function _list_delete_by_value(list, value)
   for i = #list, 1, -1 do
     if list[i] == value then
       table.remove(list, i)
@@ -156,7 +156,8 @@ function M:_add_new_task()
 end
 
 local _uid = 0
-local _next_uid = function()
+
+local function _next_uid()
   _uid = _uid + 1
   return _uid
 end

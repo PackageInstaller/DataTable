@@ -108,13 +108,15 @@ function ui:ui_on_show(data)
     info.other_info = other_info
     _tinsert(self.v_titles, info)
   end
-  local sort_func = function(a, b)
+  
+  local function sort_func(a, b)
     if a.other_info.status == b.other_info.status then
       return a.cfg.Id < b.cfg.Id
     else
       return b.other_info.status < a.other_info.status
     end
   end
+  
   _tsort(self.v_titles, sort_func)
   self.v_title_info:SetActive(next(self.v_titles) ~= nil)
   self.v_title_loop_list:refresh_data(self.v_titles)

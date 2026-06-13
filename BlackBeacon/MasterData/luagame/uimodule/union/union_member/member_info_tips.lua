@@ -78,23 +78,27 @@ end
 
 function ui:_onclick_kickout_btn()
   local desc = Util.format_str("是否请离该玩家？")
-  local conform_callback = function()
+  
+  local function conform_callback()
     UnionMgr:request_kickout_member(self.v_member_info.uuid, function()
       Util.show_message_tip(2306)
     end)
     self:ui_hide()
   end
+  
   Util.show_conform_tip(desc, nil, nil, nil, conform_callback)
 end
 
 function ui:_onclick_transfer_leader_btn()
   local desc = Util.format_str("是否确认转让会长？")
-  local conform_callback = function()
+  
+  local function conform_callback()
     UnionMgr:request_transfer_leader(self.v_member_info.uuid, function()
       Util.show_message_tip(2307)
     end)
     self:ui_hide()
   end
+  
   Util.show_conform_tip(desc, nil, nil, nil, conform_callback)
 end
 
@@ -111,9 +115,10 @@ function ui:_onclick_check_btn()
 end
 
 function ui:_onclick_friend_btn()
-  local callback = function(ok)
+  local function callback(ok)
     if not ok then
       Util.show_message_tip(2308)
+      
       return
     end
     local is_friend = FriendMgr:is_in_friend(self.v_member_info.uuid)
@@ -135,6 +140,7 @@ function ui:_onclick_friend_btn()
       Util.show_message_tip(2310)
     end)
   end
+  
   UnionMgr:request_check_member(self.v_member_info.uuid, callback)
 end
 

@@ -48,7 +48,8 @@ local PANEL_TYPE = {CHARACTER = 1, WEAPON = 2}
 local ITEM_INTERVAL_X = 287
 local CONTENT_START_X = 287
 local tsort = table.sort
-local fashion_cmp = function(a, b)
+
+local function fashion_cmp(a, b)
   local a_has_bought = FashionMgr:check_has_bought_fashion(a.Id)
   local b_has_bought = FashionMgr:check_has_bought_fashion(b.Id)
   local a_show_priority = a.ShowPriority
@@ -59,6 +60,7 @@ local fashion_cmp = function(a, b)
     return a_has_bought
   end
 end
+
 local MIN_CONTENT_Y = 0
 local MAX_CONTENT_Y = 0.7
 local CHANGE_BUDDY_TYPE = {LAST = 1, NEXT = 2}
@@ -287,12 +289,15 @@ function ui:set_scrollrect_cb()
     self.v_skin_rect_list[index] = self:get_rect_transform(nil, tf).component
   end
   local scroll_rect = self.v_uiobjects.Skin_Selector:GetComponent(typeof(CS.Game.ScrollRectEx))
-  local scroll_cb = function()
+  
+  local function scroll_cb()
     self:on_scroll()
   end
-  local scroll_end_cb = function()
+  
+  local function scroll_end_cb()
     self:on_scroll_end()
   end
+  
   self:set_scrollrect_ex_listener(scroll_rect, nil, nil, scroll_end_cb, scroll_cb)
 end
 
@@ -620,7 +625,7 @@ function ui:init_fashion_model()
 end
 
 function ui:refresh_fashion_model()
-  local load_npc_done_cb = function(npc_index)
+  local function load_npc_done_cb(npc_index)
     if not self:visible() or not self:has_inited() then
       return
     end
@@ -634,6 +639,7 @@ function ui:refresh_fashion_model()
     self.v_current_model_view:play_act_effect(npc_index, SWTICH_EFFECT_NAME, nil, nil, true)
     self:update_scene_model(true)
   end
+  
   local cfg = all_fashionable_info[self.v_current_select_fashion_id]
   local weapon_id = CharacterMgr:get_weapon_id(self.v_current_buddy_id)
   local weapon_cfg = ShareRes.create("equip.equip", weapon_id)

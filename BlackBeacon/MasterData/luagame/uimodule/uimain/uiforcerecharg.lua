@@ -67,7 +67,8 @@ local TOGGLE_TYPE = {
 local DIA_ID = Config.DIAMOND_ITEMID
 local SP_ID = Config.PLAYER_SP_ITEMID
 local BSP_ID = BagMgr.RES_ENUM.BUILDING_STAMINA
-local medicament_cmp = function(medicament_item_a, medicament_item_b)
+
+local function medicament_cmp(medicament_item_a, medicament_item_b)
   local a_m_item = medicament_item_a
   local b_m_item = medicament_item_b
   local a_end_time = a_m_item.item_info.end_time or 0

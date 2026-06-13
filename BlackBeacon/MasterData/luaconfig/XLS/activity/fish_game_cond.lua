@@ -105,147 +105,147 @@ return {
     Type = 2
   },
   [301] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task2",
     Id = 301,
     Param = {1, 1},
     Type = 3
   },
   [302] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task3",
     Id = 302,
     Param = {2, 1},
     Type = 3
   },
   [303] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task4",
     Id = 303,
     Param = {3, 1},
     Type = 3
   },
   [304] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task5",
     Id = 304,
     Param = {4, 1},
     Type = 3
   },
   [305] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task6",
     Id = 305,
     Param = {5, 1},
     Type = 3
   },
   [306] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task7",
     Id = 306,
     Param = {6, 1},
     Type = 3
   },
   [307] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task8",
     Id = 307,
     Param = {7, 1},
     Type = 3
   },
   [308] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task2",
     Id = 308,
     Param = {1, 2},
     Type = 3
   },
   [309] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task3",
     Id = 309,
     Param = {2, 2},
     Type = 3
   },
   [310] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task4",
     Id = 310,
     Param = {3, 2},
     Type = 3
   },
   [311] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task5",
     Id = 311,
     Param = {4, 2},
     Type = 3
   },
   [312] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task6",
     Id = 312,
     Param = {5, 2},
     Type = 3
   },
   [313] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task7",
     Id = 313,
     Param = {6, 2},
     Type = 3
   },
   [314] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task8",
     Id = 314,
     Param = {7, 2},
     Type = 3
   },
   [315] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task2",
     Id = 315,
     Param = {1, 3},
     Type = 3
   },
   [316] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task3",
     Id = 316,
     Param = {2, 3},
     Type = 3
   },
   [317] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task4",
     Id = 317,
     Param = {3, 3},
     Type = 3
   },
   [318] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task5",
     Id = 318,
     Param = {4, 3},
     Type = 3
   },
   [319] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task6",
     Id = 319,
     Param = {5, 3},
     Type = 3
   },
   [320] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task7",
     Id = 320,
     Param = {6, 3},
     Type = 3
   },
   [321] = {
-    Desc = "获取的数量达到",
+    Desc = "目标数量达到",
     Icon = "ActivitySummer/Yxgy/yxgy_wfjm_icon_task8",
     Id = 321,
     Param = {7, 3},

@@ -1482,6 +1482,7 @@ return {
     },
     [600019] = {
       AreaId = 619,
+      BossIconPath = "UIChapter2/20230906/Stage_jd_bg_pt",
       Chapter = 10061,
       FrontConnectPoint = 0,
       IconType = 3,
@@ -1703,9 +1704,10 @@ return {
     },
     [700022] = {
       AreaId = 722,
+      BossIconPath = "UIChapter2/20230906/Stage_jd_bg_pt",
       Chapter = 10071,
       FrontConnectPoint = 0,
-      IconType = 1,
+      IconType = 3,
       Id = 700022,
       ModuleParam = 700022,
       ModuleType = 1
@@ -1829,9 +1831,10 @@ return {
     },
     [750010] = {
       AreaId = 7510,
+      BossIconPath = "UIChapter2/20230906/Stage_jd_bg_pt",
       Chapter = 10075,
       FrontConnectPoint = 0,
-      IconType = 1,
+      IconType = 3,
       Id = 750010,
       ModuleParam = 750010,
       ModuleType = 1,
@@ -1850,6 +1853,180 @@ return {
       PreOpenAreaId = 997511,
       PreOpenId = 9750011,
       PreOpenModuleParam = 9750011
+    },
+    [800001] = {
+      AreaId = 801,
+      Chapter = 10081,
+      FrontConnectPoint = 0,
+      IconType = 2,
+      Id = 80001,
+      ModuleParam = 800001,
+      ModuleType = 1
+    },
+    [800002] = {
+      AreaId = 802,
+      Chapter = 10081,
+      FrontConnectPoint = 0,
+      IconType = 2,
+      Id = 80002,
+      ModuleParam = 800002,
+      ModuleType = 1
+    },
+    [800003] = {
+      AreaId = 803,
+      Chapter = 10081,
+      FrontConnectPoint = 0,
+      IconType = 1,
+      Id = 80003,
+      ModuleParam = 800003,
+      ModuleType = 1
+    },
+    [800004] = {
+      AreaId = 804,
+      Chapter = 10081,
+      FrontConnectPoint = 0,
+      IconType = 1,
+      Id = 80004,
+      ModuleParam = 800004,
+      ModuleType = 1
+    },
+    [800005] = {
+      AreaId = 805,
+      Chapter = 10081,
+      FrontConnectPoint = 0,
+      IconType = 2,
+      Id = 80005,
+      ModuleParam = 800005,
+      ModuleType = 1
+    },
+    [800006] = {
+      AreaId = 806,
+      Chapter = 10081,
+      FrontConnectPoint = 0,
+      IconType = 1,
+      Id = 80006,
+      ModuleParam = 800006,
+      ModuleType = 1
+    },
+    [800007] = {
+      AreaId = 807,
+      Chapter = 10081,
+      FrontConnectPoint = -1,
+      IconType = 2,
+      Id = 80007,
+      ModuleParam = 800007,
+      ModuleType = 1,
+      Offset = {0, 250}
+    },
+    [800008] = {
+      AreaId = 808,
+      Chapter = 10081,
+      FrontConnectPoint = 0,
+      IconType = 1,
+      Id = 80008,
+      ModuleParam = 800008,
+      ModuleType = 1
+    },
+    [800009] = {
+      AreaId = 809,
+      Chapter = 10081,
+      FrontConnectPoint = -1,
+      IconType = 2,
+      Id = 80009,
+      ModuleParam = 800009,
+      ModuleType = 1,
+      Offset = {0, 250}
+    },
+    [800010] = {
+      AreaId = 810,
+      Chapter = 10081,
+      FrontConnectPoint = 0,
+      IconType = 1,
+      Id = 80010,
+      ModuleParam = 800010,
+      ModuleType = 1
+    },
+    [800011] = {
+      AreaId = 811,
+      Chapter = 10081,
+      FrontConnectPoint = 0,
+      IconType = 1,
+      Id = 80011,
+      ModuleParam = 800011,
+      ModuleType = 1
+    },
+    [800012] = {
+      AreaId = 812,
+      Chapter = 10081,
+      FrontConnectPoint = 0,
+      IconType = 1,
+      Id = 80012,
+      ModuleParam = 800012,
+      ModuleType = 1
+    },
+    [800013] = {
+      AreaId = 813,
+      Chapter = 10081,
+      FrontConnectPoint = 0,
+      IconType = 1,
+      Id = 80013,
+      ModuleParam = 800013,
+      ModuleType = 1
+    },
+    [800014] = {
+      AreaId = 814,
+      Chapter = 10081,
+      FrontConnectPoint = 0,
+      IconType = 1,
+      Id = 80014,
+      ModuleParam = 800014,
+      ModuleType = 1
+    },
+    [800015] = {
+      AreaId = 815,
+      Chapter = 10081,
+      FrontConnectPoint = -1,
+      IconType = 2,
+      Id = 80015,
+      ModuleParam = 800015,
+      ModuleType = 1,
+      Offset = {0, 250}
+    },
+    [800016] = {
+      AreaId = 816,
+      Chapter = 10081,
+      FrontConnectPoint = 0,
+      IconType = 1,
+      Id = 80016,
+      ModuleParam = 800016,
+      ModuleType = 1
+    },
+    [800017] = {
+      AreaId = 817,
+      Chapter = 10081,
+      FrontConnectPoint = 0,
+      IconType = 1,
+      Id = 80017,
+      ModuleParam = 800017,
+      ModuleType = 1
+    },
+    [800018] = {
+      AreaId = 818,
+      Chapter = 10081,
+      FrontConnectPoint = 0,
+      IconType = 3,
+      Id = 80018,
+      ModuleParam = 800018,
+      ModuleType = 1
+    },
+    [800019] = {
+      AreaId = 819,
+      Chapter = 10081,
+      FrontConnectPoint = 0,
+      IconType = 2,
+      Id = 80019,
+      ModuleParam = 800019,
+      ModuleType = 1
     },
     [910001] = {
       AreaId = 110001,
@@ -1992,9 +2169,10 @@ return {
     },
     [910016] = {
       AreaId = 110016,
+      BossIconPath = "UIChapter2/20230906/Stage_jd_bg_pt",
       Chapter = 11001,
       FrontConnectPoint = 0,
-      IconType = 1,
+      IconType = 3,
       Id = 9110016,
       ModuleParam = 910016,
       ModuleType = 1
@@ -2244,6 +2422,7 @@ return {
     },
     [9600019] = {
       AreaId = 99619,
+      BossIconPath = "UIChapter2/20230906/Stage_jd_bg_pt",
       Chapter = 9910061,
       FrontConnectPoint = 0,
       IconType = 3,
@@ -2378,9 +2557,10 @@ return {
     },
     [9750010] = {
       AreaId = 997510,
+      BossIconPath = "UIChapter2/20230906/Stage_jd_bg_pt",
       Chapter = 9910075,
       FrontConnectPoint = 0,
-      IconType = 1,
+      IconType = 3,
       Id = 9750010,
       ModuleParam = 9750010,
       ModuleType = 1,
@@ -2559,6 +2739,7 @@ return {
     },
     [3003106] = {
       AreaId = 3003106,
+      BossIconPath = "UIChapter2/20230906/Stage_jd_bg_kn",
       Chapter = 30031,
       FrontConnectPoint = 0,
       IconType = 3,
@@ -2613,6 +2794,7 @@ return {
     },
     [3004106] = {
       AreaId = 3004106,
+      BossIconPath = "UIChapter2/20230906/Stage_jd_bg_kn",
       Chapter = 30041,
       FrontConnectPoint = 0,
       IconType = 3,
@@ -2667,6 +2849,7 @@ return {
     },
     [3005106] = {
       AreaId = 3005106,
+      BossIconPath = "UIChapter2/20230906/Stage_jd_bg_kn",
       Chapter = 30051,
       FrontConnectPoint = 0,
       IconType = 3,
@@ -2721,6 +2904,7 @@ return {
     },
     [3006106] = {
       AreaId = 3006106,
+      BossIconPath = "UIChapter2/20230906/Stage_jd_bg_kn",
       Chapter = 30061,
       FrontConnectPoint = 0,
       IconType = 3,
@@ -2775,11 +2959,67 @@ return {
     },
     [3007106] = {
       AreaId = 3007106,
+      BossIconPath = "UIChapter2/20230906/Stage_jd_bg_kn",
       Chapter = 30071,
       FrontConnectPoint = 0,
       IconType = 3,
       Id = 7006,
       ModuleParam = 3007106,
+      ModuleType = 2
+    },
+    [3008101] = {
+      AreaId = 3008101,
+      Chapter = 30081,
+      FrontConnectPoint = -1,
+      IconType = 1,
+      Id = 8001,
+      ModuleParam = 3008101,
+      ModuleType = 2
+    },
+    [3008102] = {
+      AreaId = 3008102,
+      Chapter = 30081,
+      FrontConnectPoint = 0,
+      IconType = 1,
+      Id = 8002,
+      ModuleParam = 3008102,
+      ModuleType = 2
+    },
+    [3008103] = {
+      AreaId = 3008103,
+      Chapter = 30081,
+      FrontConnectPoint = 0,
+      IconType = 1,
+      Id = 8003,
+      ModuleParam = 3008103,
+      ModuleType = 2
+    },
+    [3008104] = {
+      AreaId = 3008104,
+      Chapter = 30081,
+      FrontConnectPoint = 0,
+      IconType = 1,
+      Id = 8004,
+      ModuleParam = 3008104,
+      ModuleType = 2
+    },
+    [3008105] = {
+      AreaId = 3008105,
+      Chapter = 30081,
+      FrontConnectPoint = 0,
+      IconType = 1,
+      Id = 8005,
+      ModuleParam = 3008105,
+      ModuleType = 2
+    },
+    [3008106] = {
+      AreaId = 3008106,
+      BossIconPath = "UIChapter2/20230906/Stage_jd_bg_kn",
+      Chapter = 30081,
+      FrontConnectPoint = 0,
+      IconType = 3,
+      Id = 8006,
+      ModuleParam = 3008106,
       ModuleType = 2
     },
     [3009101] = {
@@ -2829,6 +3069,7 @@ return {
     },
     [3009106] = {
       AreaId = 3009106,
+      BossIconPath = "UIChapter2/20230906/Stage_jd_bg_kn",
       Chapter = 30091,
       FrontConnectPoint = 0,
       IconType = 3,
@@ -2913,6 +3154,16 @@ return {
       IconType = 3,
       Id = 700024,
       ModuleParam = 10070111,
+      ModuleType = 2
+    },
+    [10080111] = {
+      AreaId = 820,
+      BossIconPath = "UIChapter2/20230906/Stage_jd_bg_kn",
+      Chapter = 20081,
+      FrontConnectPoint = -1,
+      IconType = 3,
+      Id = 80020,
+      ModuleParam = 10080111,
       ModuleType = 2
     },
     [10090111] = {

@@ -24,7 +24,8 @@ function ui:ui_finish_load()
       return
     end
     local desc = Util.format_str("是否花费{1}钻石立即复活该角色", reborn_cost_num)
-    local cb = function()
+    
+    local function cb()
       local cur_num = BagMgr:get_item_num(reborn_cost_id)
       if cur_num < reborn_cost_num then
         Util.show_message_tip(2115)
@@ -37,6 +38,7 @@ function ui:ui_finish_load()
         self.v_hero_item_list[tog_idx]:reborn()
       end)
     end
+    
     Util.show_conform_tip(desc, nil, nil, nil, cb)
   end)
   self:set_button("BtnRet1", function()

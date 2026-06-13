@@ -5,9 +5,9 @@ local Layer = require("utils.layer")
 local TypeSpeedSceneTimeline = typeof(CS.Game.SpeedSceneTimeline)
 local CSInput = UnityEngine.Input
 local TouchPhase = UnityEngine.TouchPhase
-local UnityVector2 = UnityVector2
-local CSHelper = CSHelper
-local UnityFind = UnityFind
+local UnityVector2 = _ENV.UnityVector2
+local CSHelper = _ENV.CSHelper
+local UnityFind = _ENV.UnityFind
 local _abs = math.abs
 local _floor = math.floor
 local Vec2 = require("base.vec2")
@@ -50,8 +50,9 @@ function M:init_sys()
 end
 
 function M:on_scene_journey_event_list_init(data)
-  if self.model_view and self.curr_model_index > 0 then
-    self.model_view:remove_npc_by_index(self.curr_model_index)
+  local model_view = self:try_get_model_view()
+  if model_view and self.curr_model_index > 0 then
+    model_view:remove_npc_by_index(self.curr_model_index)
   end
   self:reset()
   if not self.event_list then
@@ -223,28 +224,28 @@ function M:get_sorted_event_list()
 end
 
 function M:refresh_journey_event_model()
-  self.model_view = TaskMgr:get_ui_main_model_view()
-  if not self.model_view then
+  local model_view = self:try_get_model_view()
+  if not model_view then
+    Log.Error("refresh_journey_event_model: model_view is nil")
     return
   end
   if self.curr_model_index ~= nil and self.curr_model_index > 0 then
-    local obj = self.model_view:get_model_with_index(self.curr_model_index)
+    local obj = model_view:get_model_with_index(self.curr_model_index)
     local is_finish = self:check_event_is_finish(true)
     if obj then
       if not is_finish then
         return
       else
-        self.model_view:remove_npc_by_index(self.curr_model_index)
+        model_view:remove_npc_by_index(self.curr_model_index)
         self:send_msg()
       end
     elseif is_finish then
       self:send_msg()
     else
-      self.model_view:remove_npc_by_index(self.curr_model_index)
+      model_view:remove_npc_by_index(self.curr_model_index)
       self:reset()
     end
   end
-  self.v_uimain = UIMgr:try_get_visible_ui("uimain")
   self:refresh_curr_event()
   if not self.curr_event_cfg or not self.curr_event_info then
     return
@@ -258,13 +259,13 @@ function M:remove_model()
   if self.curr_event_cfg and 1 == self.curr_event_cfg.Compulsory then
     return false
   end
-  self.model_view = TaskMgr:get_ui_main_model_view()
-  if not self.model_view then
+  local model_view = self:try_get_model_view()
+  if not model_view then
     return true
   end
   if self.curr_model_index ~= nil and self.curr_model_index > 0 then
     UIMainBubbleMgr:release_bubble_obj_state(self.curr_npc_id)
-    self.model_view:remove_npc_by_index(self.curr_model_index)
+    model_view:remove_npc_by_index(self.curr_model_index)
   end
   self:reset()
   return true
@@ -498,7 +499,9 @@ function M:hide_clock()
 end
 
 function M:create_npc(action_id, params, cb)
-  if not self.model_view then
+  local model_view = self:try_get_model_view()
+  if not model_view then
+    Log.Error("create_npc: model_view is nil")
     return
   end
   local board_id = params[1]
@@ -512,10 +515,10 @@ function M:create_npc(action_id, params, cb)
   local buddy_param_cfg = total_buddy_param_cfg[board_id]
   local npc_id = buddy_param_cfg.BuddyId
   self.curr_npc_id = npc_id
-  self.curr_model_index = TaskMgr:load_npc(self.model_view, npc_id, board_id, true, function(model_index)
-    self.model_trans = self.model_view:get_model_with_index(model_index).transform
+  self.curr_model_index = TaskMgr:load_npc(model_view, npc_id, board_id, true, function(model_index)
+    self.model_trans = model_view:get_model_with_index(model_index).transform
     if self.is_need_run_force_journey_event then
-      self.model_view:hide_other_model(npc_id)
+      model_view:hide_other_model(npc_id)
     end
     if is_need_effect then
       self:refresh_effect(board_id)
@@ -585,7 +588,9 @@ function M:reset_effect()
 end
 
 function M:play_story(action_id, params, cb)
-  if not self.model_view then
+  local model_view = self:try_get_model_view()
+  if not model_view then
+    Log.Error("play_story: model_view is nil")
     return
   end
   local story_id = params[1]
@@ -650,7 +655,9 @@ function M:on_npc_click()
 end
 
 function M:remove_npc()
-  if not self.model_view then
+  local model_view = self:try_get_model_view()
+  if not model_view then
+    Log.Error("remove_npc: model_view is nil")
     return
   end
   if not Util.is_nil(self.idle_effect) then
@@ -659,9 +666,9 @@ function M:remove_npc()
   if not Util.is_nil(self.interact_effect) then
     self:set_effect_visible(self.interact_effect, true)
   end
-  TaskMgr:play_buddy_event_delivery_anim(self.curr_npc_id, self.model_view, self.curr_model_index, function()
+  TaskMgr:play_buddy_event_delivery_anim(self.curr_npc_id, model_view, self.curr_model_index, function()
     self:reset_effect()
-    self.model_view:remove_npc_by_index(self.curr_model_index)
+    model_view:remove_npc_by_index(self.curr_model_index)
     self:on_action_run_finish()
   end)
 end
@@ -686,12 +693,17 @@ function M:show_ui_black_fade(action_id, params)
   if not params[4] or "1" == params[4] then
     is_fade_in_cb = true
   end
-  if self.model_view then
-    self.model_view:refresh_camera_root_visible(false)
+  local model_view = self:try_get_model_view()
+  if not model_view then
+    Log.Error("show_ui_black_fade: model_view is nil")
+    return
+  end
+  if model_view then
+    model_view:refresh_camera_root_visible(false)
   end
   Timer:add_timer("delay_show_ui_black_fade", 0.3, function()
-    if self.model_view then
-      self.model_view:refresh_camera_root_visible(true)
+    if model_view then
+      model_view:refresh_camera_root_visible(true)
     end
     local ui_main = UIMgr:try_get_ui("uimain")
     if ui_main then
@@ -756,7 +768,11 @@ function M:play_performance_timeline(action_id, params)
       return
     end
     self.v_camera_track_obj = ui_main:get_camera_track_obj()
-    local model_view = TaskMgr:get_ui_main_model_view()
+    local model_view = self:try_get_model_view()
+    if not model_view then
+      Log.Error("play_performance_timeline: model_view is nil")
+      return
+    end
     local trans = model_view:get_content_root_trans()
     go.transform:SetParent(trans)
     go:ResetAttr()
@@ -1099,10 +1115,12 @@ function M:set_main_ui_function_state(visible)
 end
 
 function M:set_board_npc_visible(visible)
-  if not self.model_view then
+  local model_view = self:try_get_model_view()
+  if not model_view then
+    Log.Error("set_board_npc_visible: model_view is nil")
     return
   end
-  self.model_view:set_model_visible(visible)
+  model_view:set_model_visible(visible)
   self:on_action_run_finish()
 end
 
@@ -1117,9 +1135,11 @@ end
 
 function M:play_video(action_id, params)
   local video_name = params[1]
-  local end_cb = function()
+  
+  local function end_cb()
     self:on_action_run_finish()
   end
+  
   local aspect_ratio
   if params[2] then
     aspect_ratio = tonumber(params[2])
@@ -1163,8 +1183,8 @@ function M:refresh_main_clock_video_state(action_id, params)
 end
 
 function M:listener_clock_pointer_rotate(action_id, params)
-  self.v_uimain = UIMgr:try_get_visible_ui("uimain")
-  if not self.v_uimain then
+  local ui_main = self:try_get_ui_main()
+  if not ui_main then
     return
   end
   SignBoardGirlMgr:set_clock_update(false)
@@ -1183,7 +1203,7 @@ function M:listener_clock_pointer_rotate(action_id, params)
     end
   end
   self.v_is_rotate_forward = "1" == params[3]
-  self.v_hour_hand, self.v_minute_hand = self.v_uimain:get_hour_minute_hand()
+  self.v_hour_hand, self.v_minute_hand = ui_main:get_hour_minute_hand()
   self.v_listener_clock_pointer_rotate = true
   self.v_touch_pos = Vec2.New()
   self.v_angle_count = 0
@@ -1221,7 +1241,12 @@ function M:check_touch_obj(position)
   position = UtilUI.convert_to_resolution_pos(position)
   self.v_touch_pos.x = position.x
   self.v_touch_pos.y = position.y
-  local ray = self.v_uimain:screen_point_to_ray(self.v_touch_pos)
+  local ui_main = self:try_get_ui_main()
+  if not ui_main then
+    Log.Error("check_touch_obj: ui_main is nil")
+    return
+  end
+  local ray = ui_main:screen_point_to_ray(self.v_touch_pos)
   if not ray then
     return
   end
@@ -1232,9 +1257,9 @@ function M:check_touch_obj(position)
   local is_hit, obj = CSHelper.RayCastGameObject(org.x, org.y, org.z, dir.x, dir.y, dir.z, max_ray_len, layer)
   if is_hit and nil ~= obj and obj.name == "MinuteHand_" then
     self.v_is_need_update_clock_video_duration = true
-    self.v_uimain:set_video_player_state(true)
+    ui_main:set_video_player_state(true)
     local x, y, z = self.v_minute_hand:GetPositionA()
-    local screen_pos_x, screen_pos_y = self.v_uimain:world_to_screen_pos(x, y, z, true)
+    local screen_pos_x, screen_pos_y = ui_main:world_to_screen_pos(x, y, z, true)
     self.v_center_pos = Vec2.New(screen_pos_x, screen_pos_y)
     self.v_is_dragging = true
     local _, _, hour_angle_z = self.v_hour_hand:GetLocalEulerAnglesA3()
@@ -1326,7 +1351,12 @@ function M:check_move_end()
   if self.v_is_dragging then
     self.v_is_need_update_clock_video_duration = false
     if self.v_interactive_pd.time < self.v_auto_play_pd_time then
-      self.v_uimain:set_video_player_state(false)
+      local ui_main = self:try_get_ui_main()
+      if ui_main then
+        ui_main:set_video_player_state(false)
+      else
+        Log.Error("check_move_end: ui_main is nil")
+      end
     end
     self.v_is_dragging = false
     self.v_touch_protect = true
@@ -1357,7 +1387,12 @@ function M:refresh_interactive_pd_progress_with_rotate()
   self.v_interactive_pd:Evaluate()
   if self.v_interactive_pd.time >= self.v_auto_play_pd_time then
     self.v_is_refresh_progress_with_update = true
-    self.v_uimain:set_video_player_state(true)
+    local ui_main = self:try_get_ui_main()
+    if ui_main then
+      ui_main:set_video_player_state(true)
+    else
+      Log.Error("refresh_interactive_pd_progress_with_rotate: ui_main is nil")
+    end
     Global.sound_mgr:stop_sound_by_id("Sound_LC_Chapter_05_pluck")
     Global.sound_mgr:play_sound_by_id("Sound_LC_Chapter_05_end")
   end
@@ -1446,7 +1481,8 @@ function M:play_performance_timeline_with_path(action_id, params)
       end
     end
   end
-  local reset_cb = function()
+  
+  local function reset_cb()
     model_view:play_anim(Config.ACT_DEFINE.UIMainIdle, self.curr_model_index, nil, true)
     performance_timeline_obj.transform:SetParent(self.v_performance_timeline_parent)
     performance_timeline_obj:ResetAttr()
@@ -1526,7 +1562,12 @@ function M:change_rain_state(action_id, params)
 end
 
 function M:set_main_clock_time_to_zero(action_id, params)
-  self.v_hour_hand, self.v_minute_hand = self.v_uimain:get_hour_minute_hand()
+  local ui_main = self:try_get_ui_main()
+  if not ui_main then
+    Log.Error("set_main_clock_time_to_zero: ui_main is nil")
+    return
+  end
+  self.v_hour_hand, self.v_minute_hand = ui_main:get_hour_minute_hand()
   self.v_minute_hand:SetEuler(0, 0, 0)
   self.v_hour_hand:SetEuler(0, 0, 0)
   self:on_action_run_finish()
@@ -1718,6 +1759,14 @@ function M:call_server_ignore_journey_event(event_id, callback)
   if event_id == CommonDefine.JOURNEY_EVENT_ID.BIRTHDAY_TIPS and callback then
     callback()
   end
+end
+
+function M:try_get_ui_main()
+  return UIMgr:try_get_visible_ui("uimain")
+end
+
+function M:try_get_model_view()
+  return TaskMgr:get_ui_main_model_view()
 end
 
 return M

@@ -5674,6 +5674,124 @@ return {
       0
     },
     ContentRootPosition = {
+      0.1,
+      0,
+      0.1
+    },
+    EffectPosition = {
+      0,
+      0,
+      0
+    },
+    Id = 145,
+    IsRectifyAngle = 1,
+    ModelId = "H1001030",
+    ModelPosition = {
+      0,
+      0,
+      0
+    },
+    ModelRotation = {
+      0,
+      180,
+      0
+    },
+    Scene = "ui_fashionable_dress",
+    Type = 1
+  },
+  {
+    CameraClipping = {7, 1000},
+    CameraFOV = 7,
+    CameraPosition = {
+      0.087,
+      0.85,
+      -16
+    },
+    CameraRotation = {
+      0,
+      0,
+      0
+    },
+    ContentRootPosition = {
+      0,
+      0,
+      0
+    },
+    EffectPosition = {
+      0,
+      0,
+      0
+    },
+    Id = 146,
+    IsRectifyAngle = 1,
+    ModelId = "H1001030",
+    ModelPosition = {
+      0,
+      0,
+      0
+    },
+    ModelRotation = {
+      0,
+      180,
+      0
+    },
+    Scene = "ui_fashionable_dress",
+    Type = 2
+  },
+  {
+    CameraClipping = {0.3, 1000},
+    CameraFOV = 7,
+    CameraPosition = {
+      0.04,
+      1.16,
+      -9.76
+    },
+    CameraRotation = {
+      0,
+      0,
+      0
+    },
+    ContentRootPosition = {
+      0,
+      0,
+      0
+    },
+    EffectPosition = {
+      0,
+      0,
+      0
+    },
+    FashionSliderMaxY = 0.68,
+    Id = 147,
+    IsRectifyAngle = 1,
+    ModelId = "H1001030",
+    ModelPosition = {
+      0,
+      0,
+      0
+    },
+    ModelRotation = {
+      0,
+      180,
+      0
+    },
+    Scene = "ui_fashionable_dress",
+    Type = 3
+  },
+  {
+    CameraClipping = {7, 1000},
+    CameraFOV = 7,
+    CameraPosition = {
+      0.7,
+      0.9,
+      -17
+    },
+    CameraRotation = {
+      0,
+      0,
+      0
+    },
+    ContentRootPosition = {
       0.05,
       0,
       0
@@ -5683,7 +5801,7 @@ return {
       0,
       0
     },
-    Id = 145,
+    Id = 148,
     IsRectifyAngle = 1,
     ModelPosition = {
       0,
@@ -5721,7 +5839,7 @@ return {
       0,
       0
     },
-    Id = 146,
+    Id = 149,
     IsRectifyAngle = 1,
     ModelId = "M201031",
     ModelPosition = {
@@ -5760,7 +5878,7 @@ return {
       0,
       0
     },
-    Id = 147,
+    Id = 150,
     IsRectifyAngle = 1,
     ModelId = "M201034",
     ModelPosition = {
@@ -5799,7 +5917,7 @@ return {
       0,
       0
     },
-    Id = 148,
+    Id = 151,
     IsRectifyAngle = 1,
     ModelId = "M201026",
     ModelPosition = {
@@ -5838,7 +5956,7 @@ return {
       0,
       0
     },
-    Id = 149,
+    Id = 152,
     IsRectifyAngle = 1,
     ModelId = "M201047",
     ModelPosition = {
@@ -5877,7 +5995,7 @@ return {
       0,
       0
     },
-    Id = 150,
+    Id = 153,
     IsRectifyAngle = 1,
     ModelId = "N3001005",
     ModelPosition = {
@@ -5916,7 +6034,7 @@ return {
       0,
       0
     },
-    Id = 151,
+    Id = 154,
     IsRectifyAngle = 1,
     ModelId = "M201048",
     ModelPosition = {
@@ -5955,7 +6073,7 @@ return {
       0,
       0
     },
-    Id = 152,
+    Id = 155,
     IsRectifyAngle = 1,
     ModelId = "M201053",
     ModelPosition = {

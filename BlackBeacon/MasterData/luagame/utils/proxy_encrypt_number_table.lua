@@ -1,6 +1,7 @@
 local M = {}
 local _mfloor = math.floor
-local calibrationValue = function(value, valueDecimalPlaces)
+
+local function calibrationValue(value, valueDecimalPlaces)
   local mult = 10 ^ (valueDecimalPlaces or 0)
   return _mfloor(value * mult + 0.5) / mult
 end
@@ -10,7 +11,8 @@ function M.create_encrypted_table()
   local attr_proxy_table = {}
   math.randomseed(os.time())
   local dynamic_key = math.random(0, 4294967295)
-  local encrypt_value = function(value)
+  
+  local function encrypt_value(value)
     if nil == value or value == math.huge then
       return value
     end
@@ -18,13 +20,15 @@ function M.create_encrypted_table()
     local encrypted = int_value ~ dynamic_key
     return encrypted
   end
-  local decrypt_value = function(value)
+  
+  local function decrypt_value(value)
     if nil == value or value == math.huge then
       return value
     end
     local decrypted = (value ~ dynamic_key) / 100
     return decrypted
   end
+  
   local mt = {
     __index = function(tbl, key)
       local value = rawget(attr_proxy_table, key)
@@ -36,19 +40,22 @@ function M.create_encrypted_table()
       rawset(attr_proxy_table, key, encrypted_val)
     end,
     __pairs = function(tbl)
-      local iterator = function(t_internal, k)
+      local function iterator(t_internal, k)
         local key, encrypted_value = next(t_internal, k)
+        
         if nil ~= key then
           local decrypted_value = decrypt_value(encrypted_value)
           return key, decrypted_value
         end
         return nil
       end
+      
       return iterator, attr_proxy_table, nil
     end,
     __ipairs = function(tbl)
       local i = 0
-      local iterator = function(t_internal, index)
+      
+      local function iterator(t_internal, index)
         i = i + 1
         local encrypted_value = t_internal[i]
         if nil ~= encrypted_value then
@@ -58,6 +65,7 @@ function M.create_encrypted_table()
           return nil
         end
       end
+      
       return iterator, attr_proxy_table, 0
     end
   }

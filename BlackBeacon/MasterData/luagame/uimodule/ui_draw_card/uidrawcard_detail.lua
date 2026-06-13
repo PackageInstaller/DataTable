@@ -112,11 +112,12 @@ end
 function ui:_draw(idx)
   self.v_parent_panel:enable_mask(true)
   DrawCardMgr:send_draw(self.v_group_id, self.v_pool_id, idx, function()
-    local stopped_func = function()
+    local function stopped_func()
       if self.v_parent_panel then
         self.v_parent_panel:enable_mask(false)
       end
     end
+    
     UIMgr:get_ui("uidrawcard_trigger_panel"):ui_show()
     Global.sound_mgr:play_sound_by_id(Config.ENTER_DRAWCARD_AUDIO_ID1)
     Global.sound_mgr:play_sound_by_id(Config.ENTER_DRAWCARD_AUDIO_ID2)

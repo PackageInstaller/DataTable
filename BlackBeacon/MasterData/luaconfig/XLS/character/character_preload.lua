@@ -284,7 +284,7 @@ return {
       "1,0",
       "2,0",
       "1,1",
-      "3,1,360",
+      "3,0,360",
       "2,1",
       "3,0,180",
       "3,1,180",
@@ -313,10 +313,14 @@ return {
       "3,0,180"
     },
     [1001030] = {
+      "3,1,180",
+      "3,1,225",
+      "1,1",
+      "3,1,135",
       "2,1",
       "2,0",
-      "1,1",
-      "1,0"
+      "3,1,90",
+      "3,1,270"
     },
     [1001099] = {"3,0,135", "2,0"},
     [1001901] = {"2,0", "2,1"},
@@ -385,6 +389,14 @@ return {
     [3001096] = {"2,0"},
     [3001097] = {"2,0"},
     [3001098] = {"2,0"},
+    [3001099] = {"2,0", "4,0,true"},
+    [3001101] = {"2,0"},
+    [3001103] = {
+      "3,0,225",
+      "3,0,90",
+      "1,0",
+      "3,0,135"
+    },
     [3002001] = {"2,0", "2,1"},
     [3002002] = {"2,0"},
     [3002003] = {"2,1"},
@@ -501,6 +513,7 @@ return {
     },
     [10210103] = {"2,0"},
     [10804101] = {"2,0", "3,0,360"},
+    [10804102] = {"2,0", "3,0,360"},
     [10804201] = {"3,0,360", "2,0"},
     [10804202] = {"1,0"},
     [10804203] = {"1,0"},
@@ -690,8 +703,8 @@ return {
     [20102908] = {
       "3,1,135",
       "3,0,135",
-      "1,1",
       "1,0",
+      "1,1",
       "3,0,180",
       "3,1,180"
     },
@@ -699,8 +712,8 @@ return {
     [20102910] = {
       "3,1,135",
       "3,0,135",
-      "1,1",
       "1,0",
+      "1,1",
       "3,0,180",
       "3,1,180"
     },
@@ -1082,13 +1095,12 @@ return {
       "2,0"
     },
     [20106401] = {
+      "3,0,180",
       "1,0",
-      "3,1,360",
       "2,0",
-      "2,1",
-      "3,1,180"
+      "3,0,135",
+      "1,1"
     },
-    [20106402] = {"3,1,360"},
     [20106501] = {
       "4,1,true",
       "1,0",
@@ -1097,6 +1109,7 @@ return {
       "3,0,360",
       "4,0,true"
     },
+    [20107101] = {"3,0,90", "1,0"},
     [20111401] = {
       "1,0",
       "1,1",
@@ -1208,6 +1221,13 @@ return {
       "3,0,90"
     },
     [20205601] = {"1,0", "3,1,360"},
+    [20206301] = {
+      "3,0,90",
+      "3,0,135",
+      "2,0",
+      "3,0,180",
+      "1,0"
+    },
     [20304301] = {
       "2,1",
       "3,1,180",
@@ -2438,8 +2458,8 @@ return {
       "Fx_H1001017_atk04_2",
       "Fx_H1001017_atk04_3",
       "Fx_H1001017_exatk01_1",
-      "Fx_H1001017_exatk02_2",
       "Fx_H1001017_exatk02_1",
+      "Fx_H1001017_exatk02_2",
       "Fx_H1001017_exatk03_2",
       "Fx_H1001017_exatk03_trail",
       "Fx_H1001017_exatk03_1",
@@ -2847,10 +2867,10 @@ return {
       "Fx_H1001023_skill1_counter_1",
       "Fx_H1001023_skill2",
       "Fx_H1001023_skill2_4",
-      "Fx_H1001023_skill2_3",
-      "Fx_H1001023_skill2_2_2",
-      "Fx_H1001023_skill2_2_1",
       "Fx_H1001023_skill2_1_2",
+      "Fx_H1001023_skill2_2_1",
+      "Fx_H1001023_skill2_2_2",
+      "Fx_H1001023_skill2_3",
       "Fx_H1001023_skill2_1_1",
       "Fx_H1001023_skill3_4_1",
       "Fx_M201022_Bj",
@@ -2907,8 +2927,8 @@ return {
       "Fx_H1001024_skill8_1_3",
       "Fx_H1001024_skill03_3_4_New",
       "Fx_H1001024_skill4_1_3",
-      "Fx_H1001024_atk01_1_trail",
       "Fx_H1001024_atk01_1",
+      "Fx_H1001024_atk01_1_trail",
       "Fx_H1001024_atk02_1",
       "Fx_H1001024_atk02_1_trail",
       "Fx_H1001024_atk02_2",
@@ -3031,7 +3051,6 @@ return {
       "Fx_H1001025_skill3_2_1",
       "Fx_H1001025_skill3_2_4",
       "Fx_H1001025_skill3_3_4",
-      "Fx_H1001025_skill3_3_2",
       "Fx_H1001025_Level_3_1",
       "Fx_H1001025_skill3_3_1",
       "Fx_H1001025_skill3_3_3",
@@ -3041,6 +3060,7 @@ return {
       "Fx_H1001025_AttackQte_3_1",
       "Fx_H1001025_AttackQte_4",
       "Fx_H1001025_AttackQte_1",
+      "Fx_H1001025_skill3_3_2",
       "Fx_H1001025_born_10",
       "Fx_H1001025_born_8",
       "Fx_H1001025_born_9",
@@ -3061,7 +3081,8 @@ return {
       "Fx_H1001025_skill8_3_5",
       "Fx_H1001025_skill8_3_6",
       "Fx_H1001025_skill8_1_2",
-      "Test291001025"
+      "Test291001025",
+      "Fx_H1001025_qteshow_pass"
     },
     [1001026] = {
       "Fx_H1001026_passive_xingqiu1",
@@ -3129,15 +3150,15 @@ return {
       "Fx_H1001026_skill2_3_1",
       "Fx_H1001026_skill2_3_2",
       "Fx_H1001026_skill2_3_3",
+      "Fx_H1001026_shanxian_RJ",
+      "Fx_H1001026_shanxian",
       "Fx_H1001026_skill3_1_Slash_2",
       "Fx_H1001026_skill3_Hit",
       "Fx_H1001026_skill3_Weapon_test",
       "Fx_H1001026_skill3_1_Trail_R",
       "Fx_H1001026_passive3",
       "Fx_H1001026_skill3_Portal",
-      "Fx_H1001026_shanxian",
       "Fx_H1001011_skill3_2_1",
-      "Fx_H1001026_shanxian_RJ",
       "Fx_H1001026_skill_8_2_Trail",
       "Fx_H1001026_qteshow_pass",
       "Fx_H1001026_skill_8_yinshen",
@@ -3161,6 +3182,7 @@ return {
       "Fx_H1001027_skill2_4",
       "Fx_H1001027_skill3_1_mg_2",
       "Fx_H1001027_skill2_0",
+      "Fx_H1001027_skill3_1_mg_2_1",
       "Fx_H1001027_weaTrail",
       "Fx_H1001027_atk01_1_bullet",
       "Fx_H1001027_atk01_1",
@@ -3289,35 +3311,55 @@ return {
     },
     [1001030] = {
       "Fx_H1001004_mark_2",
-      "Fx_rogue_build_4_5_3",
-      "Fx_rogue_build_3_2_2",
-      "Fx_rogue_build_4_3",
-      "Fx_M201033_atk01_2",
-      "Fx_H1001012_atk04_1_3",
-      "Fx_H1001012_atk04_1_4",
-      "Fx_H1001022_atk04_3",
-      "Fx_M201033_skill1_2",
-      "Fx_H1001001_atk01_1_S",
-      "Fx_H1001001_atk02_2",
-      "Fx_H1001027_atk01_1_bullet",
-      "Fx_H1001023_exatk01_2",
-      "Fx_M201033_atk02_2",
-      "Fx_H1001001_atk03_2",
-      "Fx_H1001027_skill_counter_2",
-      "Fx_H1001027_skill_counter_1",
-      "Fx_M201057_skill3_1_2",
-      "Fx_H1001020_atk1_2",
-      "Fx_H1001021_atk05_1_3",
-      "Fx_H1001016_skill1_counter_3",
-      "Fx_H1001022_skill3_1_1",
-      "Fx_H1001020_skill2_2_2",
-      "Fx_H1001020_skill2_1_1",
-      "Fx_H1001022_skill3_3_2",
+      "Fx_1001030_Fish_Buff",
+      "Fx_1001030_Buff",
+      "Fx_H1001030_skill8_3",
+      "Fx_H1001030_atk01_1_1",
+      "Fx_H1001030_atk02_1_1",
+      "Fx_H1001030_atk02_1_2",
+      "Fx_H1001030_atk03_1_1",
+      "Fx_H1001030_atk03_1_2",
+      "Fx_H1001030_atk03_1_3",
+      "Fx_H1001030_atk03_1_4",
+      "Fx_H1001030_atk03_1_5",
+      "Fx_H1001030_atk03_1_6",
+      "Fx_H1001030_atk04_1_1",
+      "Fx_H1001030_atk04_1_2",
+      "Fx_H1001030_skill1_counter_3_2",
+      "Fx_H1001030_skill1_counter_3_1",
+      "Fx_H1001030_ex_atk_1_1",
+      "Fx_H1001030_ex_atk_1_2",
+      "Fx_H1001030_skill8_1_2",
+      "Test291001030",
+      "Fx_H1001030_skill8_4",
+      "Fx_H1001030_skill8_2",
+      "Fx_H1001030_skill8_1_3",
+      "Fx_H1001030_skill8_1_1",
+      "FX_H1001030_born_Trail_1",
+      "FX_H1001030_Weapon_1",
+      "Cam_H1001030_finish_bao",
+      "Cam_H1001030_finish_shanlizi",
+      "Cam_H1001030_finish_Wuqirim",
+      "H1001030_Weapon_1_2_bian",
+      "Fx_H1001030_skill_counter_2",
+      "Fx_H1001030_skill_counter_1",
+      "Fx_H1001030_skill2_1_3",
+      "Fx_H1001030_skill2_1_1",
+      "Fx_H1001030_skill2_1_2",
+      "Fx_H1001030_skill2_3_1",
+      "Fx_H1001030_skill2_3_2",
+      "Fx_H1001030_skill2_4_1",
+      "Fx_H1001030_skill2_4_3",
+      "Fx_H1001030_skill2_4_2",
+      "Fx_H1001030_skill2_5_1",
+      "Fx_H1001030_skill2_6_1",
       "Fx_H1001001_energy_skill2_2_3",
       "Fx_H1001013_skill1_counter_3_1",
       "Fx_H1001001_energy_skill2_2_4",
-      "Fx_H1001013_skill2_2",
-      "Fx_H1001011_skill5_3_1"
+      "Fx_H1001030_skill3_3_3",
+      "Fx_H1001030_skill3_3_Weapon",
+      "Fx_H1001030_skill3_3_2",
+      "Fx_H1001030_skill3_3_1"
     },
     [1001099] = {
       "Fx_H1001012_skill2_1_3",
@@ -3386,8 +3428,8 @@ return {
       "Fx_Jianqi"
     },
     [3001009] = {
-      "Fx_atk01_warning",
       "Fx_atk01_boom",
+      "Fx_atk01_warning",
       "Fx_M201009_atk01_hit",
       "Fx_Jianqi"
     },
@@ -3682,6 +3724,40 @@ return {
     [3001098] = {
       "Fx_Transmit3_idel_lock"
     },
+    [3001099] = {
+      "Fx_RavenSonar",
+      "Fx_EchoNormal",
+      "Fx_EchoWeak",
+      "Fx_EchoDisorder",
+      "Fx_EchoStrong_Full",
+      "Fx_EchoNormal_Full",
+      "Fx_EchoWeak_Full",
+      "Fx_EchoStrong"
+    },
+    [3001101] = {
+      "Fx_Transmit3_idel_lock",
+      "Fx_Common_BoxGuide"
+    },
+    [3001103] = {
+      "Fx_Stone_s",
+      "Fx_Stone_b",
+      "Fx_Common_Death",
+      "Fx_M201051_hit1_1",
+      "Fx_Skill_Warning",
+      "Fx_M201051_skill01_2_2",
+      "Fx_M201051_skill01_2_3",
+      "Fx_M201051_hit1_3",
+      "Fx_M201051_skill02_1_2",
+      "Fx_M201051_skill02_1_3",
+      "Fx_M201051_skill02_2_2_dg",
+      "Fx_M201051_skill02_2_3",
+      "Fx_M201051_hit1_2",
+      "Fx_M201051_skill01_1_1",
+      "Fx_M201051_skill01_1_2",
+      "Fx_M201051_skill01_1_3",
+      "Fx_M201051_skill03_1_2",
+      "Fx_M201051_skill03_1_1"
+    },
     [3002001] = {
       "Fx_T3001003_idle",
       "Fx_Common_warning_ring",
@@ -3826,6 +3902,12 @@ return {
       "Fx_M201045_skill1_4",
       "Fx_Common_monster_superarmor"
     },
+    [3002056] = {
+      "Fx_Minigame_03"
+    },
+    [3002057] = {
+      "Fx_Minigame_04"
+    },
     [3002059] = {
       "Fx_Common_Death"
     },
@@ -3836,25 +3918,26 @@ return {
       "Fx_Common_Death"
     },
     [3002061] = {
-      "Fx_Transmit3_idel",
-      "Fx_Transmit2",
-      "FX_Sc0601_PressurePlate"
+      "FX_T3001037_PressurePlate",
+      "FX_T3001036_PressurePlate",
+      "FX_T3001035_PressurePlate"
     },
     [3002062] = {
-      "Fx_Transmit3_idel",
-      "Fx_Transmit2",
-      "FX_Sc0601_PressurePlate"
+      "FX_T3001037_PressurePlate",
+      "FX_T3001036_PressurePlate",
+      "FX_T3001035_PressurePlate"
     },
     [3002063] = {
-      "Fx_Transmit3_idel",
-      "Fx_Transmit2",
-      "FX_Sc0601_PressurePlate"
+      "FX_T3001037_PressurePlate",
+      "FX_T3001036_PressurePlate",
+      "FX_T3001035_PressurePlate"
     },
     [3002064] = {
       "FX_bianzhong_music_2_1MiniGame",
       "FX_gu_music_2_1MiniGame",
       "FX_bianqing_music_2_1MiniGame",
-      "Fx_H1001016_skill2_1_ks01",
+      "FX_T3001035_wave",
+      "FX_T3001036_wave",
       "Fx_H1001016_skill2_1_ks02",
       "Fx_H1001016_skill_hit"
     },
@@ -3862,7 +3945,8 @@ return {
       "FX_bianzhong_music_2_1MiniGame",
       "FX_gu_music_2_1MiniGame",
       "FX_bianqing_music_2_1MiniGame",
-      "Fx_H1001016_skill2_1_ks01",
+      "FX_T3001035_wave",
+      "FX_T3001036_wave",
       "Fx_H1001016_skill2_1_ks02",
       "Fx_H1001016_skill_hit"
     },
@@ -3870,9 +3954,16 @@ return {
       "FX_bianzhong_music_2_1MiniGame",
       "FX_gu_music_2_1MiniGame",
       "FX_bianqing_music_2_1MiniGame",
-      "Fx_H1001016_skill2_1_ks01",
+      "FX_T3001035_wave",
+      "FX_T3001036_wave",
       "Fx_H1001016_skill2_1_ks02",
       "Fx_H1001016_skill_hit"
+    },
+    [3002067] = {
+      "Fx_Minigame_06"
+    },
+    [3002068] = {
+      "Fx_Minigame_05"
     },
     [3002070] = {
       "Fx_Water_s",
@@ -4239,6 +4330,9 @@ return {
       "FX_bianqing_music_3_1"
     },
     [10804101] = {
+      "Fx_ceshiquan"
+    },
+    [10804102] = {
       "Fx_ceshiquan"
     },
     [10804201] = {
@@ -5230,11 +5324,11 @@ return {
       "Fx_Ancient_s",
       "Fx_Ancient_b",
       "Fx_Common_Death",
+      "FX_M201029_atk01_1_2",
       "Fx_M201009_atk01_hit",
       "Fx_Skill_Warning",
       "Fx_M201029_atk01_1_1",
       "FX_M201029_atk01_1_3",
-      "FX_M201029_atk01_1_2",
       "Fx_M201029_atk02_1_3",
       "Fx_M201029_atk02_1_1",
       "Fx_M201029_atk02_1_2",
@@ -5319,11 +5413,11 @@ return {
       "Fx_Ancient_s",
       "Fx_Ancient_b",
       "Fx_Common_Death",
+      "FX_M201029_atk01_1_3",
       "Fx_common_RedSkillWarning3",
       "Fx_M201009_atk01_hit",
       "Fx_common_RedSkillWarning5",
       "Fx_common_RedSkillWarning4",
-      "FX_M201029_atk01_1_3",
       "Fx_M201029_atk01_1_1",
       "FX_M201029_atk01_1_2",
       "Fx_Skill_Warning",
@@ -5351,11 +5445,11 @@ return {
       "Fx_Ancient_b",
       "Fx_elite_monster_common",
       "Fx_Common_Death",
+      "FX_M201029_atk01_1_3",
       "Fx_common_RedSkillWarning3",
       "Fx_M201009_atk01_hit",
       "Fx_common_RedSkillWarning5",
       "Fx_common_RedSkillWarning4",
-      "FX_M201029_atk01_1_3",
       "Fx_M201029_atk01_1_1",
       "FX_M201029_atk01_1_2",
       "Fx_Skill_Warning",
@@ -5573,10 +5667,10 @@ return {
       "Fx_Common_warning_ring",
       "Fx_M201022_skill3_2_7_1",
       "Fx_M201034_skill6_2_5_2",
+      "Fx_M201034_skill7_1_2",
       "Fx_M201034_skill2_1_1",
       "Fx_M201034_skill2_1_2",
       "Fx_M201012_skill1_1_warning02",
-      "Fx_M201034_skill7_1_2",
       "Fx_M201034_skill3_1_1",
       "Fx_M201034_skill3_2_1",
       "Fx_M201034_skill3_2_2",
@@ -5657,10 +5751,10 @@ return {
       "Fx_Common_warning_ring",
       "Fx_M201022_skill3_2_7_1",
       "Fx_M201034_skill6_2_5_2",
+      "Fx_M201034_skill7_1_2",
       "Fx_M201034_skill2_1_1",
       "Fx_M201034_skill2_1_2",
       "Fx_M201012_skill1_1_warning02",
-      "Fx_M201034_skill7_1_2",
       "Fx_M201034_skill3_1_1",
       "Fx_M201034_skill3_2_1",
       "Fx_M201034_skill3_2_2",
@@ -5720,9 +5814,9 @@ return {
       "Fx_Skill_Warning",
       "Fx_M201035_atk03_1",
       "Fx_M201035_skill1_1_2",
-      "Fx_M201035_skill1_1_2_1",
       "Fx_M201035_skill1_1_2_2",
-      "Fx_M201012_skill1_1_warning02"
+      "Fx_M201012_skill1_1_warning02",
+      "Fx_M201035_skill1_1_2_1"
     },
     [20103503] = {
       "Fx_Common_s",
@@ -5752,11 +5846,11 @@ return {
       "Fx_Common_b",
       "Fx_Common_Death",
       "Fx_M201035_skill1_1_2",
-      "Fx_M201035_skill1_1_2_1",
-      "Fx_M201035_hit",
       "Fx_M201035_skill1_1_2_2",
       "Fx_Skill_Warning",
-      "Fx_M201012_skill1_1_warning02"
+      "Fx_M201012_skill1_1_warning02",
+      "Fx_M201035_skill1_1_2_1",
+      "Fx_M201035_hit"
     },
     [20103601] = {
       "Fx_Future_s",
@@ -5906,13 +6000,13 @@ return {
     [20103802] = {
       "Fx_Common_Death",
       "Fx_M201022_Bj",
-      "Fx_M201038_skill3_1_3",
-      "Fx_M201038_skill5_1_2",
-      "Fx_M201038_skill4_1",
-      "Fx_M201038_skill3_1_2",
-      "Fx_M201038_skill2_6",
-      "Fx_M201022_skill3_1_4",
       "Fx_M201022_skill2_1_5",
+      "Fx_M201022_skill3_1_4",
+      "Fx_M201038_skill2_6",
+      "Fx_M201038_skill3_1_2",
+      "Fx_M201038_skill4_1",
+      "Fx_M201038_skill5_1_2",
+      "Fx_M201038_skill3_1_3",
       "Fx_M201038_skill2_1_7",
       "Fx_M201038_skill2_1_2_hit",
       "Fx_M201038_skill2_1_6_2",
@@ -6010,9 +6104,9 @@ return {
       "Fx_M201034_skill6_1_1",
       "Fx_M201034_skill6_1_2",
       "Fx_M201034_skill6_1_3",
-      "Fx_M201041_effectrim01",
       "FX_M201035_boss_shadow_2",
       "FX_M201035_boss_shadow",
+      "Fx_M201041_effectrim01",
       "Fx_M201041_skill1_2"
     },
     [20104102] = {
@@ -6042,8 +6136,8 @@ return {
       "Fx_M201037_hit1",
       "Fx_M201041_atk02_1",
       "Fx_M201041_atk02_1_2",
-      "Fx_common_RedSkillWarning4",
       "Fx_common_RedSkillWarning3",
+      "Fx_common_RedSkillWarning4",
       "Fx_M201041_skill1_1",
       "Fx_M201041_skill1_2",
       "Fx_M201041_skill1_4",
@@ -6059,8 +6153,8 @@ return {
       "Fx_M201037_hit1",
       "Fx_M201041_atk02_1",
       "Fx_M201041_atk02_1_2",
-      "Fx_common_RedSkillWarning4",
       "Fx_common_RedSkillWarning3",
+      "Fx_common_RedSkillWarning4",
       "Fx_M201041_skill1_1",
       "Fx_M201041_skill1_2",
       "Fx_M201041_skill1_4",
@@ -7416,28 +7510,63 @@ return {
     },
     [20106401] = {
       "Fx_Common_Death",
-      "Fx_M201048_skill4_3_1",
-      "Fx_M201048_skill9_1_1",
-      "Fx_M201048_skill9_1_6",
-      "Fx_M201048_skill9_1_hit_1",
-      "Fx_M201048_skill9_1_2",
-      "Fx_M201048_skill9_1_3",
-      "Fx_M201026_skill2_2",
-      "Fx_M201048_skill6_1_1_hit",
-      "Fx_M201048_skill6_2_1_hit",
-      "Fx_M201054_Skill_10_4",
-      "Fx_M201026_hit",
-      "Fx_M201048_skill6_4_2_hit",
-      "Fx_N3001005_blade_2",
-      "Fx_Common_step_wave"
+      "Fx_M201051_hit1_3",
+      "Fx_M201064_atk01_1",
+      "Fx_M201064_atk01_2",
+      "Fx_M201064_atk02_1",
+      "Fx_M201064_atk02_2",
+      "Fx_M201064_exatk01_1",
+      "Fx_M201064_exatk01_2",
+      "Fx_M201064_skill1_1",
+      "Fx_M201064_skill1_2",
+      "Fx_M201064_skill1_3",
+      "Fx_M201064_skill1_4",
+      "Fx_common_RedSkillWarning3",
+      "Fx_common_RedSkillWarning5",
+      "Fx_common_RedSkillWarning4",
+      "Fx_M201064_skill2_1_1",
+      "Fx_M201064_skill2_1_0",
+      "Fx_M201064_skill2_1_2",
+      "Fx_M201064_skill2_1_3",
+      "Fx_Common_warning_ring",
+      "Fx_M201064_skill2_2_2",
+      "Fx_M201064_skill2_2_1",
+      "Fx_M201064_skill2_3_1",
+      "Fx_M201064_skill2_3_2",
+      "Fx_M201064_skill4_1_4",
+      "Fx_M201064_skill4_1_3",
+      "Fx_M201064_skill4_1_2",
+      "Fx_M201064_skill4_1_1",
+      "Fx_M201064_skill5_1_1",
+      "Fx_M201064_skill5_2_1",
+      "Fx_M201064_skill5_3_1",
+      "Fx_M201064_skill5_4_1",
+      "Fx_M201064_skill6_1_3",
+      "Fx_M201064_skill6_1_2",
+      "Fx_M201064_skill6_1_1",
+      "Fx_M201064_skill6_1_4",
+      "Fx_M201064_skill6_2_2",
+      "Fx_M201064_skill6_2_1",
+      "Fx_M201064_exskill_1",
+      "Fx_M201064_Mat_1_3",
+      "Fx_M201064_Mat_1_2",
+      "Fx_M201064_Mat_1_1",
+      "Fx_M201064_Mat_2_1",
+      "Fx_M201064_Mat_2_3",
+      "Fx_M201064_Mat_2_2",
+      "Fx_Common_warning_square_aten",
+      "Fx_M201064_exskill_2_1",
+      "Fx_M201064_exskill_2_2",
+      "Fx_M201064_exskill_2_3",
+      "Fx_M201064_exskill_2_4",
+      "Fx_common_RedSkill1",
+      "Fx_common_RedSkill2",
+      "Fx_common_RedSkill4",
+      "Fx_common_RedSkill5",
+      "Fx_common_RedSkillCounter"
     },
     [20106402] = {
-      "Fx_M201036_stele_1",
-      "Fx_M201048_skill9_1_hit_1",
-      "Fx_M201048_skill9_1_2",
-      "Fx_M201048_skill9_1_3",
-      "Fx_M201048_skill9_1_1",
-      "Fx_M201048_skill9_1_6"
+      "Fx_M201036_stele_1"
     },
     [20106501] = {
       "Fx_M201065_skill_6_1_heidong_3_rongjie",
@@ -7516,6 +7645,12 @@ return {
       "Fx_M201065_skill_6_2_weapon",
       "Fx_M201065_skill5_2_ci",
       "Fx_M201065_atk02_1"
+    },
+    [20107101] = {
+      "Fx_M201033_hit1",
+      "Fx_common_RedSkillWarning5",
+      "Fx_common_RedSkillWarning4",
+      "Fx_common_RedSkillWarning3"
     },
     [20111401] = {
       "Fx_Common_Death",
@@ -8113,7 +8248,8 @@ return {
     [20206301] = {
       "Fx_Punish_s",
       "Fx_Punish_b",
-      "Fx_Common_Death"
+      "Fx_Common_Death",
+      "Fx_M201051_hit1_3"
     },
     [20304301] = {
       "Fx_Water_s",
@@ -9036,9 +9172,6 @@ return {
       "Fx_common_RedSkillCounter",
       "Fx_1001009_buffed2"
     },
-    [3002010] = {
-      "Fx_1001009_buffed"
-    },
     [2010340100] = {
       "Fx_M201034_skill6_2_5_1",
       "Fx_M201034_skill6_2_6",
@@ -9092,6 +9225,9 @@ return {
     [3002041] = {
       "Fx_skillarea_BattingBoomer"
     },
+    [3002010] = {
+      "Fx_1001009_buffed"
+    },
     [3001050] = {
       "Fx_MonsterEntry_Forcefield"
     }
@@ -9144,10 +9280,10 @@ return {
       "Fx_H101008_skill1_counter_4_hit_1",
       "Fx_H101008_atk04_1_hit_1",
       "Fx_H101008_skill4_2_1",
+      "Fx_H101008_skill3_1_2_hit",
       "Fx_H101008_atk01_1_hit_2",
       "Fx_H101008_atk02_1_hit_2",
       "Fx_H101008_atk02_2_hit_2",
-      "Fx_H101008_skill3_1_2_hit",
       "Fx_M201022_hit"
     },
     [1001009] = {
@@ -9341,10 +9477,19 @@ return {
       "Fx_H101008_skill1_counter_2_hit_1"
     },
     [1001030] = {
+      "Fx_H1001030_skill2_4_1_hit",
+      "Fx_H1001030_skill2_4_2_hit",
+      "Fx_H1001030_atk01_1_hit",
+      "Fx_H1001030_atk02_1_hit",
+      "Fx_H1001030_atk03_1_hit",
+      "Fx_H1001030_atk03_2_hit",
+      "Fx_H1001030_atk03_3_hit",
+      "Fx_1001030_Fish_Buff",
+      "Fx_H1001030_atk04_1_hit",
+      "Fx_H1001030_skill3_3_hit",
       "Fx_H1001013_Atk_Hit",
-      "Fx_H1001004_mark_2",
-      "Fx_rogue_build_4_5_3",
-      "Fx_rogue_build_3_2_2"
+      "Fx_H1001030_skill2_4_3_hit",
+      "Fx_H1001004_mark_2"
     },
     [1001099] = {
       "Fx_M201009_atk01_hit",
@@ -9391,9 +9536,9 @@ return {
       "Fx_skillarea_N2"
     },
     [1001012] = {
+      "Fx_skillarea_semicircle_1",
       "Fx_skillarea_circle_1",
-      "Fx_skillarea_sector_2",
-      "Fx_skillarea_semicircle_1"
+      "Fx_skillarea_sector_2"
     },
     [1001013] = {
       "Fx_skillarea_N1",
@@ -9423,9 +9568,9 @@ return {
       "Fx_skill_maxrange"
     },
     [1001020] = {
-      "Fx_skillarea_N1",
+      "Fx_skillarea_N2",
       "Fx_skill_maxrange",
-      "Fx_skillarea_N2"
+      "Fx_skillarea_N1"
     },
     [1001021] = {
       "Fx_skillarea_N1",
@@ -9446,8 +9591,8 @@ return {
     },
     [1001026] = empty,
     [1001027] = {
-      "Fx_H1001027_skill2area_sector",
-      "Fx_H1001027_skill1area_sector"
+      "Fx_H1001027_skill1area_sector",
+      "Fx_H1001027_skill2area_sector"
     },
     [1001028] = empty,
     [1001029] = {
@@ -9456,9 +9601,9 @@ return {
       "Fx_skill_maxrange"
     },
     [1001030] = {
+      "Fx_skillarea_N2",
       "Fx_skillarea_N1",
-      "Fx_skill_maxrange",
-      "Fx_skillarea_N2"
+      "Fx_skill_maxrange"
     },
     [3001000] = empty
   },
@@ -9685,15 +9830,15 @@ return {
       "Fx_jingcu_break_sound_7m",
       "Fx_jingcu_warning_loop_7m"
     },
-    [3310203] = {
-      "FX_SC05_jingcusi_2"
-    },
     [30010195] = {
       "FX_SC05_jingcusi_1",
       "FX_SC05_jingcusi_2",
       "FX_SC05_jingcusi_3",
       "FX_SC05_jingcusi_4",
       "FX_SC05_jingcusi_5"
+    },
+    [3310203] = {
+      "FX_SC05_jingcusi_2"
     },
     [20204705] = {
       "Fx_M201047_Fog",
@@ -9707,11 +9852,8 @@ return {
       "Fx_jingcu_break_sound_7m",
       "FX_SC05_jingcusi_2"
     },
-    [3002010] = {
-      "Fx_T3001010_05"
-    },
-    [3002058] = {
-      "Fx_Common_Death"
+    [3002009] = {
+      "Fx_H1001001_skill_weapon"
     },
     [3002050] = {
       "fx_common_monster_born"
@@ -9751,6 +9893,9 @@ return {
     [3002059] = {
       "fx_common_monster_born"
     },
+    [3002058] = {
+      "Fx_Common_Death"
+    },
     [20120302] = {
       "Fx_jingcu_warning_9m",
       "Fx_jingcu_break_sound_9m",
@@ -9764,8 +9909,8 @@ return {
     [3002044] = {
       "Fx_Common_Death"
     },
-    [3002009] = {
-      "Fx_H1001001_skill_weapon"
+    [3002010] = {
+      "Fx_T3001010_05"
     },
     [3002008] = {
       "Fx_T3001010_05"

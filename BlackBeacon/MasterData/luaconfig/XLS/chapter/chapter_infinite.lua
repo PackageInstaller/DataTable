@@ -140,7 +140,7 @@ return {
     IsOpenRank = true,
     Name = "演算单元·悖论",
     NegativeEntryLimit = 5,
-    OptionGroup = {1, 4},
+    OptionGroup = {1, 5},
     PointPath = "",
     Priority = 4,
     PrivilegePointPath = "",

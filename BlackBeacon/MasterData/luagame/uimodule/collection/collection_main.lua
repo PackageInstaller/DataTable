@@ -155,14 +155,16 @@ function ui:on_click_item_tog(item_id, is_lock)
   local data = self.v_cur_select_data.CollectionIds
   local idx = self.v_cur_select_idx
   if self:get_collection_net_data(data.id) then
-    local call_back = function()
+    local function call_back()
       self.v_tog_red_point_list[idx]:SetActive(false)
+      
       for _, id in pairs(data) do
         if self:get_collection_net_data(id) then
           self.v_tog_red_point_list[idx]:SetActive(true)
         end
       end
     end
+    
     ChapterMgr:click_collection_item(item_id, call_back)
   end
   self.v_red_status[item_id] = item_id

@@ -9,7 +9,8 @@ local ITEM_OBJ_COM = require("uimodule.item.item_obj_com")
 local NODE_TYPE = {MAIN_NODE = 1, BRANCH_NODE = 2}
 local TASK_CONFIG = require("gamelogic.task.task_config")
 local TASK_STATE = TASK_CONFIG.TASK_STATE
-local sort = function(a, b)
+
+local function sort(a, b)
   if a.Priority ~= b.Priority then
     return a.Priority < b.Priority
   elseif a.Id ~= b.Id then
@@ -191,7 +192,8 @@ function ui:anima_refresh_node_list(temp_list)
   self.v_cur_count = 1
   self.v_max_count = #branch_node_list
   self:clear_anima_timer()
-  local cycle_cb = function()
+  
+  local function cycle_cb()
     obj = self:get_auto_cache(COURSE_NODE_ITEM_TEMP)
     local cfg = branch_node_list[self.v_cur_count]
     item = FATE_BOOK_COURSE_ITEM:ui_wrap_ex(self, obj, true)
@@ -204,6 +206,7 @@ function ui:anima_refresh_node_list(temp_list)
     self.v_cur_count = self.v_cur_count + 1
     return true
   end
+  
   self.v_anima_timer = Timer:add_timer("anima_refresh_node_list", 0.5, cycle_cb, nil, nil, 0.5)
 end
 

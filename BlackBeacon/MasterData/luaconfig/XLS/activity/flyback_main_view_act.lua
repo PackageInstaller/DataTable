@@ -5,6 +5,6 @@ return {
   {
     AwardTotal = 0,
     Id = 4,
-    TitleIcon = "ActReturn/ReturnMain/hghd_btn_main_zxhd_jdtt"
+    TitleIcon = "ActReturn/ReturnMain/hghd_btn_main_zxhd_qxnnzs"
   }
 }

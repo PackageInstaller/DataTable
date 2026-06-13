@@ -2,10 +2,12 @@ local Util = require("utils.util")
 local M = Util.create_class()
 local Local_Storage = require("utils.localstorage")
 local Setting_Key = Global.config.START_SETTING_KEY
-local int2bool = function(val)
+
+local function int2bool(val)
   return 1 == val and true or false
 end
-local bool2int = function(boolval)
+
+local function bool2int(boolval)
   return boolval and 1 or 0
 end
 

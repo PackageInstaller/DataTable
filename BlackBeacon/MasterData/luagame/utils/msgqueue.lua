@@ -1,3 +1,4 @@
+local ENABLE_DEBUG = false
 local MSG_HANDLE_COUNT = 5000
 local OP_BIND = 1
 local OP_UNBIND = 2
@@ -11,6 +12,9 @@ function mq_mt:mq_init()
   self.v_mq = {}
   self.v_sz = 0
   self.v_msg_handler = {}
+  if ENABLE_DEBUG then
+    self.v_debug_idx_to_trace = {}
+  end
   self.v_unhandled_handler = {}
   self.v_unhandled_ud = {}
   self.v_freelist = {}
@@ -77,7 +81,8 @@ local Freqs = {}
 local FreqTimes = {}
 local StatInterval = 10
 local StatCount = 10
-local check_msg_freq = function(msgtype)
+
+local function check_msg_freq(msgtype)
   local now = os.time()
   local freq_time = FreqTimes[msgtype]
   if not freq_time then
@@ -149,6 +154,15 @@ function mq_mt:_mq_bind_aux(msgtype, handler, ud, handle)
     list[3 * idx + 1] = handle
     list[1] = idx
     self.v_handle_to_index[handle] = idx
+    if ENABLE_DEBUG then
+      if not self.v_debug_idx_to_trace[msgtype] then
+        self.v_debug_idx_to_trace[msgtype] = {}
+      end
+      local record = {}
+      record.trace = debug.traceback()
+      record.is_in_game = TowerMgr and TowerMgr:get_tower() ~= nil
+      self.v_debug_idx_to_trace[msgtype][handle] = record
+    end
   else
     error("[MSGQUEUE] bind failed! msgtype:" .. tostring(msgtype))
   end
@@ -208,6 +222,9 @@ function mq_mt:_mq_unbind(msgtype, handle)
   list[last_index] = nil
   list[1] = count - 1
   self.v_bind_count = self.v_bind_count - 1
+  if ENABLE_DEBUG and self.v_debug_idx_to_trace[msgtype] then
+    self.v_debug_idx_to_trace[msgtype][handle] = nil
+  end
   if self.v_const_name_set then
     local name = self.v_const_name_set[msgtype]
     if name and self.v_debug_name[name] then
@@ -302,70 +319,10 @@ function M.mq_create_ex(entries, name_set)
   return mq
 end
 
-function mq_mt:pre_snapshot()
-  self.v_pre_snapshot = {}
-  for msgtype, list in pairs(self.v_msg_handler) do
-    local count = list[1]
-    if count > 0 then
-      self.v_pre_snapshot[msgtype] = count
-    end
-  end
-  Log.Info("pre snapshop")
-end
-
-local FormatDateTimeNow = function()
+local function FormatDateTimeNow()
   local cDateTime = os.date("*t")
   local strDateTime = string.format("%04d%02d%02d-%02d%02d%02d", tostring(cDateTime.year), tostring(cDateTime.month), tostring(cDateTime.day), tostring(cDateTime.hour), tostring(cDateTime.min), tostring(cDateTime.sec))
   return strDateTime
-end
-
-function mq_mt:post_snapshot()
-  self.v_post_snapshot = {}
-  for msgtype, list in pairs(self.v_msg_handler) do
-    local count = list[1]
-    if count > 0 then
-      self.v_post_snapshot[msgtype] = count
-    end
-  end
-  local save_path = "./unbind_msgs_" .. FormatDateTimeNow() .. ".txt"
-  local fs = io.open(save_path, "w")
-  for msgtype, count in pairs(self.v_post_snapshot) do
-    local pre_count = self.v_pre_snapshot[msgtype]
-    if nil == pre_count or pre_count ~= count then
-      local msg_name = Const.get_type_name(msgtype)
-      fs:write("msg_name: " .. msg_name .. ", msgtype: " .. tostring(msgtype) .. ", precount: " .. tostring(pre_count or 0) .. ", postcount: " .. tostring(count) .. "\n")
-      local list = self.v_msg_handler[msgtype]
-      for i = 1, list[1] do
-        local ud = list[3 * i]
-        if ud then
-          Log.Info("msg leak:" .. msg_name .. ", ud: ", ud)
-        end
-      end
-    end
-  end
-  fs:close()
-  Log.Info("debug info saved in: ", save_path)
-end
-
-function mq_mt:debug_info()
-  local tbl = {}
-  for name, count in pairs(self.v_debug_name) do
-    table.insert(tbl, {name = name, count = count})
-  end
-  table.sort(tbl, function(v1, v2)
-    if v1.count ~= v2.count then
-      return v1.count > v2.count
-    else
-      return v1.name < v2.name
-    end
-  end)
-  local save_path = "./unbind_msgs.txt"
-  local fs = io.open(save_path, "w")
-  for k, v in pairs(tbl) do
-    fs:write(v.name .. " " .. v.count .. "\n")
-  end
-  fs:close()
-  Log.Info("debug info saved in: ", save_path)
 end
 
 function mq_mt:print_curr()
@@ -380,6 +337,53 @@ function mq_mt:print_curr()
     msg_str = msg_str .. Const.get_type_name(msgtype) .. "\n"
   end
   Global.log.Warning(msg_str)
+end
+
+function mq_mt:debug_presnapshot()
+  if not ENABLE_DEBUG then
+    Log.Error("debug_presnapshot: ENABLE_DEBUG is false")
+    return
+  end
+  self.v_presnapshot = UtilTable.copy_table(self.v_debug_idx_to_trace)
+end
+
+function mq_mt:debug_postsnapshot()
+  if not ENABLE_DEBUG then
+    Log.Error("debug_postsnapshot: ENABLE_DEBUG is false")
+    return
+  end
+  local save_path = "./leak_msgs.txt"
+  local fs = io.open(save_path, "w")
+  for msgtype, records in pairs(self.v_debug_idx_to_trace) do
+    local msg_name = Const.get_type_name(msgtype)
+    for handle, record in pairs(records) do
+      if not self.v_presnapshot[msgtype] or not self.v_presnapshot[msgtype][handle] then
+        local log_msg = "leak msg_name: " .. msg_name .. ", msgtype: " .. tostring(msgtype) .. ", handle: " .. handle .. ", is_in_game: " .. tostring(record.is_in_game) .. ", trace: " .. record.trace
+        Log.Info(log_msg)
+        fs:write(log_msg .. "\n")
+      end
+    end
+  end
+  fs:close()
+  Log.Info("leak msgs saved in: ", save_path)
+end
+
+function mq_mt:print_debug_msg_handler(target_type, target_idx)
+  if not ENABLE_DEBUG then
+    Log.Error("print_debug_msg_handler: ENABLE_DEBUG is false")
+    return
+  end
+  for msgtype, list in pairs(self.v_msg_handler) do
+    local count = list[1]
+    local msg_name = Const.get_type_name(msgtype)
+    if (nil == target_type or target_type == msg_name) and self.v_debug_idx_to_trace[msgtype] then
+      for handle, record in pairs(self.v_debug_idx_to_trace[msgtype]) do
+        if nil == target_idx or target_idx == handle then
+          Log.Info("msg_name: " .. msg_name .. ", msgtype: " .. tostring(msgtype) .. ", handle: " .. handle .. ", is_in_game: " .. tostring(record.is_in_game) .. ", trace: " .. record.trace)
+        end
+      end
+    end
+  end
 end
 
 function M.mq_create(const_name_set)

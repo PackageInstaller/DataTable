@@ -3,7 +3,8 @@ local ui = Util.create_child_mt(Base)
 local MAX_NUM = 50
 local PAGE_COUNT = 5
 local INFO_ITEM_TEMP = "INFO_ITEM_TEMP"
-local srot = function(a, b)
+
+local function srot(a, b)
   if a.id ~= b.id then
     return a.id < b.id
   elseif a.missile_id ~= b.missile_id then

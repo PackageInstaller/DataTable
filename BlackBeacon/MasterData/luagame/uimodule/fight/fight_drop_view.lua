@@ -99,19 +99,22 @@ function ui:_set_data(obj, data)
   item_desc.text = text .. "*" .. data.count
   ResMgr:load_set_icon(quality_img, string.format(ITEM_QUALITY_PATH, data.cfg.Quality))
   if self.v_drop_count <= MAX_COUNT then
-    local timer_callback = function(index)
+    local function timer_callback(index)
       self:_just_exit(index)
     end
+    
     self:_set_obj_tween_end_with_timer(true, count, timer_callback, 2, self.v_drop_count, true)
   elseif 1 == count then
-    local timer_callback = function(index)
+    local function timer_callback(index)
       self:_timer_out_one_by_one(index)
     end
+    
     self:_set_obj_tween_end_with_timer(true, count, timer_callback, 1, count)
   elseif self.v_drop_count == count then
-    local callback = function(index)
+    local function callback(index)
       self:_last_three_callback(index)
     end
+    
     self:_set_drop_obj_tween(true, count, callback, count)
   else
     self:_set_drop_obj_tween(true, count)
@@ -175,11 +178,13 @@ function ui:_last_three_callback(index)
       self:set_enable(false)
       return
     end
-    local func = function(idx)
+    
+    local function func(idx)
       self:_set_drop_obj_tween(false, idx, function()
         self:_refresh_drop_queue()
       end)
     end
+    
     self.v_drop_show_list[i].timer = Timer:add_timer("drop_show_timer", 2, func, i)
   end
 end
@@ -227,7 +232,8 @@ function ui:_set_obj_tween_end_with_timer(is_enter, index, timer_callback, time_
   if nil ~= self.v_drop_show_list[index].timer then
     return
   end
-  local callback = function()
+  
+  local function callback()
     if not self.v_drop_show_list or self.v_drop_show_list[index] == nil then
       if timer_callback then
         timer_callback(param)
@@ -236,6 +242,7 @@ function ui:_set_obj_tween_end_with_timer(is_enter, index, timer_callback, time_
     end
     self.v_drop_show_list[index].timer = Timer:add_timer("drop_show_timer", time_lengh, timer_callback, param)
   end
+  
   self:_set_drop_obj_tween(is_enter, index, callback, nil, kill_tween)
 end
 

@@ -32,7 +32,8 @@ local NO_CONTINUE_TYPE = {
   [CommonDef.CHALLENGE_TYPE.BOSS] = true,
   [CommonDef.CHALLENGE_TYPE.ACTIVITY_MINI_GAME] = true,
   [CommonDef.CHALLENGE_TYPE.ACTIVITY_MINESWEEPER] = true,
-  [CommonDef.CHALLENGE_TYPE.VERSION_EPISODE] = true
+  [CommonDef.CHALLENGE_TYPE.VERSION_EPISODE] = true,
+  [CommonDef.CHALLENGE_TYPE.ACTIVITY_PONDER] = true
 }
 local TOG_OPEN_FUNC = {
   [TOG_INDEX.STAGE_SKILL] = function()
@@ -95,7 +96,8 @@ function ui:ui_finish_load()
     if not self:get_is_can_back() then
       return
     end
-    local sure_callback = function()
+    
+    local function sure_callback()
       self.v_is_can_back = false
       local fight_type = TowerMgr:get_fight_type()
       local fight_info = TowerMgr:get_fight_info()
@@ -113,19 +115,22 @@ function ui:ui_finish_load()
         end, true)
       end
     end
+    
     UIMgr:get_ui("uinotice_tips"):ui_show(sure_callback, nil, "是否重新挑战？")
   end)
   self:set_button("BtnOutOfStuck", function()
     if not self:get_is_can_back() then
       return
     end
-    local sure_callback = function()
+    
+    local function sure_callback()
       self.v_is_can_back = false
       SceneMgr:global_hero_out_of_stuck()
       if self:visible() then
         self:ui_hide()
       end
     end
+    
     UIMgr:get_ui("uinotice_tips"):ui_show(sure_callback, nil, "是否需要脱离卡死？")
   end)
   self.v_tog_panels = {
@@ -318,10 +323,12 @@ end
 function ui:_exit_top_ver_tower()
   local tip = Util.format_str("是否立即退出关卡")
   local sure_btn = Util.format_str("退出")
-  local sure_callback = function()
+  
+  local function sure_callback()
     self.v_is_can_back = false
     UIMgr:get_ui("top_ver_settlement"):ui_show()
   end
+  
   UIMgr:get_ui("uinotice_tips"):ui_show(sure_callback, nil, tip, sure_btn)
   UIMgr:get_ui("uinotice_tips"):enable_bg_click(true)
 end
@@ -351,7 +358,8 @@ function ui:_exit_tower(fight_type)
     sure_btn = Util.format_str("中继保存")
     cancel_btn = Util.format_str("直接结算")
   end
-  local sure_callback = function()
+  
+  local function sure_callback()
     self.v_is_can_back = false
     local is_long_chapter = fight_type == Config.CommonDefine.CHALLENGE_TYPE.LONG_CHAPTER
     local is_chapter = fight_type == Config.CommonDefine.CHALLENGE_TYPE.CHAPTER
@@ -367,7 +375,8 @@ function ui:_exit_tower(fight_type)
       self[fun](self)
     end
   end
-  local cancel_callback = function()
+  
+  local function cancel_callback()
     if cancal_return then
       return
     elseif NOT_PROGRESS_BATTLE_TYPE[fight_type] then
@@ -387,6 +396,7 @@ function ui:_exit_tower(fight_type)
       UIMgr:get_ui("not_progress_battle_def_settle"):ui_show(CHAPTER_CONFIG.POINTSTATE.quit)
     end
   end
+  
   if fight_type == CommonDef.CHALLENGE_TYPE.WEEK_ACTY_PERPARE_EPI or fight_type == CommonDef.CHALLENGE_TYPE.WEEK_ACTY_PVP_EPI then
     sure_btn = Util.format_str("是")
     cancel_btn = Util.format_str("否")
@@ -423,20 +433,24 @@ function ui:check_weekly_fight(fight_type)
 end
 
 function ui:common_exit()
-  local cb = function()
+  local function cb()
     Global.scene_mgr:on_enter_main_scene()
+    
     UIMgr:revert_cache_ui()
   end
+  
   if TowerMgr then
     TowerMgr:on_exit_tower(cb)
   end
 end
 
 function ui:long_chapter_exit()
-  local cb = function()
+  local function cb()
     Global.scene_mgr:on_enter_main_scene()
+    
     UIMgr:revert_cache_ui()
   end
+  
   TowerMgr:long_chapter_exit(true, cb, true)
 end
 

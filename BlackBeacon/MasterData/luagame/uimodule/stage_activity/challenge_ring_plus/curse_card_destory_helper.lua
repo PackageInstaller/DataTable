@@ -31,23 +31,27 @@ function helper.confirm_quit_ui(parent_ui, tips_str)
   end
   local type = helper.get_card_type()
   if ChallengeRingPlusMgr:is_notify_card(type) then
-    local cb = function()
+    local function cb()
       if parent_ui then
         parent_ui:ui_hide()
       end
     end
+    
     ChallengeRingPlusMgr:req_remove_card(cb)
     return
   end
   local tip = Util.format_str(tips_str or "是否退出，不可返回")
-  local sure_cb = function()
-    local cb = function()
+  
+  local function sure_cb()
+    local function cb()
       if parent_ui then
         parent_ui:ui_hide()
       end
     end
+    
     ChallengeRingPlusMgr:req_remove_card(cb)
   end
+  
   UIMgr:get_ui("uinotice_tips"):ui_show(sure_cb, nil, tip, Util.format_str("确定"), Util.format_str("取消"), nil, nil, nil, nil, nil, true)
 end
 

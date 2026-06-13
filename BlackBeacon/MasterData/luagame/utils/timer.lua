@@ -1,5 +1,6 @@
 local Util = require("utils.util")
 local M = Util.create_class()
+local ENABLE_DEBUG = false
 local SECOND_PER_FRAME = 0.1
 local FRAME_RATE = 1 / SECOND_PER_FRAME
 local WHEEL_SIZE_1 = 200
@@ -13,7 +14,8 @@ local WHEEL_SIZE_MUL1234 = WHEEL_SIZE_1 * WHEEL_SIZE_2 * WHEEL_SIZE_3 * WHEEL_SI
 local WHEEL_SIZE_MUL12345 = WHEEL_SIZE_1 * WHEEL_SIZE_2 * WHEEL_SIZE_3 * WHEEL_SIZE_4 * WHEEL_SIZE_5
 local TIMER_COUNTER = 1
 local INNER_BARRIER = false
-local _create_wheel = function(scale)
+
+local function _create_wheel(scale)
   local wheel = {}
   for i = 1, scale do
     wheel[i - 1] = {}
@@ -44,6 +46,9 @@ function M:_init()
     _create_wheel(WHEEL_SIZE_5)
   }
   self.v_unscaled_index_slot_map = {}
+  if ENABLE_DEBUG then
+    self.v_debug_counter_to_trace = {}
+  end
 end
 
 function M:_internal_add_timer(wheels, current_frame_idx, index_slot_map, timer)
@@ -79,6 +84,9 @@ function M:_internal_add_timer(wheels, current_frame_idx, index_slot_map, timer)
   end
   slot[timer.id] = timer
   index_slot_map[timer.id] = slot
+  if ENABLE_DEBUG then
+    self.v_debug_counter_to_trace[timer.id] = debug.traceback()
+  end
 end
 
 function M:add_timer(desc, expires, cb, arg1, arg2, cycle, is_unscaled)
@@ -123,6 +131,9 @@ function M:remove_timer(index)
     slot[index] = nil
     self.v_unscaled_index_slot_map[index] = nil
     remove_suc = true
+  end
+  if ENABLE_DEBUG then
+    self.v_debug_counter_to_trace[index] = nil
   end
   return remove_suc
 end
@@ -209,6 +220,18 @@ end
 
 function M:clear()
   self:_init()
+end
+
+function M:print_debug_counter_to_trace(timer_idx)
+  if ENABLE_DEBUG then
+    for idx, trace in pairs(self.v_debug_counter_to_trace) do
+      if nil == timer_idx or timer_idx == idx then
+        Log.Info("idx: " .. idx .. ", trace: " .. trace)
+      end
+    end
+  else
+    Log.Error("print_debug_counter_to_trace: ENABLE_DEBUG is false")
+  end
 end
 
 return M

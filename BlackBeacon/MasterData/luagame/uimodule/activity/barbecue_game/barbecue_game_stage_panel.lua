@@ -33,8 +33,8 @@ function ui:ui_on_show()
   self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close, self)
 end
 
-function ui:check_close(force_close)
-  NoviceMgr:check_close_activity_ui(self.v_activity_id, self.v_ui_name, true == force_close)
+function ui:check_close()
+  NoviceMgr:check_close_activity_ui(self.v_activity_id, self.v_ui_name, true)
 end
 
 function ui:ui_on_hide()

@@ -26,5 +26,6 @@ return {
   {BuffList = 70000212, Id = 22},
   {BuffList = 70000213, Id = 23},
   {BuffList = 70000214, Id = 24},
-  {BuffList = 70000215, Id = 25}
+  {BuffList = 70000215, Id = 25},
+  {BuffList = 70000216, Id = 26}
 }

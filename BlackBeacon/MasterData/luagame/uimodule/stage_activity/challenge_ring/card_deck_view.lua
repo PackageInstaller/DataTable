@@ -67,7 +67,8 @@ local CAN_OPERATE_STATE = {
   [CARD_DECK_STATE.SELECTTING] = true,
   [CARD_DECK_STATE.CONTINUE_SELECTING] = true
 }
-local limit_range = function(now_angle)
+
+local function limit_range(now_angle)
   if now_angle > 360 then
     return now_angle - 360
   elseif now_angle < 0 then
@@ -572,10 +573,12 @@ function ui:card_shrink_and_disable(card_obj, list_idx, card_id)
   local seq = Util.create_sequence()
   _tinsert(self.v_card_shrink_seq, seq)
   self:add_anim_counter()
-  local cb = function()
+  
+  local function cb()
     self:remove_card_item(list_idx, card_id)
     self:reduce_anim_counter()
   end
+  
   lua_obj:play_shrink_effect()
   seq:Append(go.transform:DOScale(Vec3.New(0.5, 0.5, 0.5), 0.7))
   seq:OnComplete(cb)
@@ -901,9 +904,11 @@ function ui:response_select_card_end()
   local select_card_info = ChallengeRingMgr:get_select_card_info()
   local card_list_idx = select_card_info.card_list_idx
   local card_obj = self.v_card_item_list[card_list_idx].lua_obj
-  local cb = function()
+  
+  local function cb()
     self:change_state(CARD_DECK_STATE.SELECTTING)
   end
+  
   card_obj:enlarge_card(cb)
 end
 

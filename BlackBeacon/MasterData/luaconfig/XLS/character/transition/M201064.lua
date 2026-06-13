@@ -1,5 +1,9 @@
 return {
   [0] = {
+    skill5_6 = 0.1,
+    skill5_8 = 0.1,
+    skill5_5 = 0.1,
+    skill5_4 = 0.1,
     born = 0.0,
     arder_idle = 0.1,
     idle = 0.1,

@@ -439,9 +439,10 @@ end
 function ui:update_player_data()
   local pvp_player_data = WeeklyMgr:get_player_pvp_data()
   if self.v_pvp_player_data and pvp_player_data.periods > self.v_pvp_player_data.periods then
-    local confirmCb = function()
+    local function confirmCb()
       UIMgr:go_to_main()
     end
+    
     UIMgr:get_ui("uinotice_tips"):ui_show(confirmCb, nil, "当前活动已结束，请返回主界面", nil, nil, nil, true)
   end
   self.v_pvp_player_data = pvp_player_data

@@ -1,9 +1,9 @@
 local reload = {}
 local sandbox = {}
-local table = table
-local debug = debug
+local table = _ENV.table
+local debug = _ENV.debug
 do
-  local findloader = function(name)
+  local function findloader(name)
     if reload.postfix then
       name = name .. reload.postfix
     end
@@ -19,6 +19,7 @@ do
     end
     error(string.format("module '%s' not found:%s", name, table.concat(msg)))
   end
+  
   local global_mt = {
     __newindex = error,
     __pairs = error,
@@ -36,7 +37,8 @@ do
       return dummy_module_cache[self]
     end
   }
-  local make_dummy_module = function(name)
+  
+  local function make_dummy_module(name)
     local name = "[" .. name .. "]"
     if dummy_module_cache[name] then
       return dummy_module_cache[name]
@@ -62,7 +64,7 @@ do
     end
   end
   
-  local make_sandbox = function()
+  local function make_sandbox()
     return setmetatable({}, global_mt)
   end
   
@@ -94,7 +96,8 @@ do
     __newindex = error,
     __pairs = error
   }
-  local make_dummy = function(k)
+  
+  local function make_dummy(k)
     if dummy_cache[k] then
       return dummy_cache[k]
     else
@@ -130,7 +133,7 @@ do
     end
   end
   
-  local get_G = function(obj)
+  local function get_G(obj)
     local k = dummy_cache[obj]
     local G = _G
     for w in string.gmatch(k, "[_%a]%w*") do
@@ -141,7 +144,8 @@ do
     end
     return G
   end
-  local get_M = function(obj)
+  
+  local function get_M(obj)
     local k = dummy_module_cache[obj]
     local M = debug.getregistry()._LOADED
     local from, to, name = string.find(k, "^%[([_%w]+)%]")
@@ -218,7 +222,8 @@ local accept_key_type = {
   string = true,
   boolean = true
 }
-local enum_object = function(value)
+
+local function enum_object(value)
   local print = reload.print
   local all = {}
   local path = {}
@@ -254,25 +259,26 @@ local enum_object = function(value)
     local depth = #path + 1
     if "function" == t then
       local i = 1
-      while true do
+      ::lbl_72::
+      do
         local name, v = debug.getupvalue(value, i)
-        if nil == name then
-          break
-        end
-        if not name:find("^[_%w]") then
-          error("Invalid upvalue : " .. table.concat(path, "."))
-        end
-        do
-          local vt = type(v)
-          if "function" == vt or "table" == vt then
-            path[depth] = name
-            path[depth + 1] = i
-            iterate(v)
-            path[depth] = nil
-            path[depth + 1] = nil
+        if nil ~= name then
+          if not name:find("^[_%w]") then
+            error("Invalid upvalue : " .. table.concat(path, "."))
           end
+          do
+            local vt = type(v)
+            if "function" == vt or "table" == vt then
+              path[depth] = name
+              path[depth + 1] = i
+              iterate(v)
+              path[depth] = nil
+              path[depth + 1] = nil
+            end
+          end
+          i = i + 1
+          goto lbl_72
         end
-        i = i + 1
       end
     else
       for k, v in pairs(value) do
@@ -313,7 +319,7 @@ local function find_object(mod, name, id, ...)
   end
 end
 
-local match_objects = function(objects, old_module, map, globals)
+local function match_objects(objects, old_module, map, globals)
   local print = reload.print
   for _, item in ipairs(objects) do
     local obj = item[1]
@@ -348,7 +354,8 @@ local match_objects = function(objects, old_module, map, globals)
     end
   end
 end
-local find_upvalue = function(func, name)
+
+local function find_upvalue(func, name)
   if not func then
     return
   end
@@ -364,7 +371,8 @@ local find_upvalue = function(func, name)
     i = i + 1
   end
 end
-local match_upvalues = function(map, upvalues)
+
+local function match_upvalues(map, upvalues)
   for new_one, old_one in pairs(map) do
     if type(new_one) == "function" then
       local i = 1
@@ -392,7 +400,8 @@ local match_upvalues = function(map, upvalues)
     end
   end
 end
-local reload_list = function(list)
+
+local function reload_list(list)
   local _LOADED = debug.getregistry()._LOADED
   local all = {}
   for _, mod in ipairs(list) do
@@ -444,7 +453,7 @@ local function set_object(v, mod, name, tmore, fmore, ...)
   end
 end
 
-local patch_funcs = function(upvalues, map)
+local function patch_funcs(upvalues, map)
   local print = reload.print
   for value in pairs(map) do
     if type(value) == "function" then
@@ -467,7 +476,8 @@ local patch_funcs = function(upvalues, map)
     end
   end
 end
-local merge_objects = function(all)
+
+local function merge_objects(all)
   local REG = debug.getregistry()
   local _LOADED = REG._LOADED
   local print = reload.print
@@ -501,7 +511,8 @@ local merge_objects = function(all)
     end
   end
 end
-local slove_globals = function(all)
+
+local function slove_globals(all)
   local _LOADED = debug.getregistry()._LOADED
   local print = reload.print
   local i = 0
@@ -578,9 +589,9 @@ local function update_funcs(map)
   local setupvalue = debug.setupvalue
   local getuservalue = debug.getuservalue
   local setuservalue = debug.setuservalue
-  local type = type
-  local next = next
-  local rawset = rawset
+  local type = _ENV.type
+  local next = _ENV.next
+  local rawset = _ENV.rawset
   exclude[exclude] = true
   local update_funcs_
   

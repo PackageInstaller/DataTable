@@ -10,7 +10,7 @@ function M:gen_handle(...)
   return self.handle_counter
 end
 
-local deal_result = function(self, handle)
+local function deal_result(self, handle)
   return function(...)
     local task = assert(self.tasks[handle], handle)
     if task.status == STATUS_NEW then

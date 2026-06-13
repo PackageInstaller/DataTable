@@ -1434,7 +1434,7 @@ function M:on_collide_wall(dx, dz, collider_info, collider_type)
   end
 end
 
-local _on_collider_border = function(self, collider_type)
+local function _on_collider_border(self, collider_type)
   local cur_dir = self:get_dir()
   local collider_x = 1 == collider_type % 2
   local dir = math.ceil(cur_dir)
@@ -1483,7 +1483,8 @@ local _on_collider_border = function(self, collider_type)
     end
   end
 end
-local _on_collider_emptywall = function(self, collider_info)
+
+local function _on_collider_emptywall(self, collider_info)
   local cur_dir = self:get_dir()
   local box_transform = collider_info.box_collider.transform
   local x, _, z = box_transform:GetInverseTransformPointA(self:get_pos())
@@ -1513,7 +1514,8 @@ local _on_collider_emptywall = function(self, collider_info)
   end
   self.collide_move_rate = math.abs(angle / 90)
 end
-local _on_collider_other = function(self)
+
+local function _on_collider_other(self)
   local cur_dir = self:get_dir()
   Vec3.GetRotatedVector(0, cur_dir, 0, Vec3.forward, Util.VEC3_TEMP)
   local x, y, z = self:get_pos()
@@ -1570,7 +1572,8 @@ function M:play_interact_effect(dx, dz, collider_info, collider_type)
   if self.v_play_wall_effect then
     return
   end
-  local create_callback = function(effect_info)
+  
+  local function create_callback(effect_info)
     if collider_type == BOUNDARY_COLLISION_TYPE.RIGHT_X or collider_type == BOUNDARY_COLLISION_TYPE.LEFT_X then
       local y = 90
       effect_info.gameobject.transform:SetEulerY(y)
@@ -1587,9 +1590,11 @@ function M:play_interact_effect(dx, dz, collider_info, collider_type)
       effect_info.gameobject.transform:SetEuler(ex, ey, ez)
     end
   end
-  local remove_callback = function()
+  
+  local function remove_callback()
     self.v_play_wall_effect = nil
   end
+  
   self.v_play_wall_effect = true
   local distance = 0.8
   local dir_pos = Vec2.Normalize(Vec2.New(dx, dz)) * distance
@@ -1598,21 +1603,23 @@ function M:play_interact_effect(dx, dz, collider_info, collider_type)
 end
 
 function M:play_interact_anim()
-  local pass_cb = function()
+  local function pass_cb()
     self.act_ctrl:try_action(Config.ACT_DEFINE.Interact, 0, function()
       self.act_ctrl:try_action(Config.ACT_DEFINE.Idle2, 0, nil)
     end, nil, false)
   end
+  
   self:check_motion_config(Config.ACT_DEFINE.Interact, pass_cb)
 end
 
 function M:play_finish_loop_anim()
-  local pass_cb = function()
+  local function pass_cb()
     if SceneMgr then
       SceneMgr:set_player_control_off()
     end
     self.act_ctrl:try_action(Config.ACT_DEFINE.FinishLoop, 0, nil, nil, true)
   end
+  
   self:check_motion_config(Config.ACT_DEFINE.FinishLoop, pass_cb)
 end
 
@@ -1814,7 +1821,7 @@ function M:set_navigate_is_continue(is_continue)
   end
 end
 
-local navigator_cb = function(self, is_success, points)
+local function navigator_cb(self, is_success, points)
   if is_success then
     self:clear_navigator_effect()
     for _, data in pairs(points) do
@@ -1829,7 +1836,8 @@ local navigator_cb = function(self, is_success, points)
   end
   self:change_navigator_effect_show_state(is_success)
 end
-local no_effect_navigator_cb = function(self, is_success, points)
+
+local function no_effect_navigator_cb(self, is_success, points)
   self.v_path_finding_success = is_success
   self.v_vectorPath = points
   if not is_success then

@@ -225,7 +225,7 @@ return {
   },
   [1022012] = {
     Id = 1022012,
-    attack = 3.37,
+    attack = 2.7,
     defense = 0,
     hp = 810,
     mvspeed = 0,
@@ -289,7 +289,7 @@ return {
   },
   [1022020] = {
     Id = 1022020,
-    attack = 3.37,
+    attack = 2.36,
     defense = 0,
     hp = 304,
     mvspeed = 0,
@@ -299,13 +299,13 @@ return {
     Id = 1022021,
     attack = 3.37,
     defense = 0,
-    hp = 405,
+    hp = 325,
     mvspeed = 0,
     penetrate = 0
   },
   [1022022] = {
     Id = 1022022,
-    attack = 3.37,
+    attack = 2.7,
     defense = 0,
     hp = 810,
     mvspeed = 0,
@@ -316,6 +316,14 @@ return {
     attack = 3.37,
     defense = 0,
     hp = 405,
+    mvspeed = 0,
+    penetrate = 0
+  },
+  [1022025] = {
+    Id = 1022025,
+    attack = 2.7,
+    defense = 0,
+    hp = 648,
     mvspeed = 0,
     penetrate = 0
   },

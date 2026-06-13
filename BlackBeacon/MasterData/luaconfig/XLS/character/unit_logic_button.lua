@@ -38,25 +38,31 @@ local t = {
       IndicatorSensitivity = 0.5,
       IndicatorViscous = true,
       SearchAngleWeight = {
-        5,
-        -0.05,
-        0,
-        0,
-        8,
-        -0.1
+        {5, -0.05},
+        {0, 0},
+        {8, -0.1}
       },
       SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0,
-        5,
-        -1,
-        0
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        },
+        {
+          5,
+          -1,
+          0
+        }
       },
-      SearchViscousWeight = {3, 2},
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       UiChargeIsReduce = true,
       UiSkill = "atk1"
     },
@@ -385,25 +391,31 @@ local t = {
       IndicatorSensitivity = 0.5,
       IndicatorViscous = true,
       SearchAngleWeight = {
-        5,
-        -0.05,
-        0,
-        0,
-        8,
-        -0.1
+        {5, -0.05},
+        {0, 0},
+        {8, -0.1}
       },
       SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0,
-        5,
-        -1,
-        0
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        },
+        {
+          5,
+          -1,
+          0
+        }
       },
-      SearchViscousWeight = {3, 2},
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       UiChargeIsReduce = true,
       UiSkill = "atk1"
     },
@@ -694,30 +706,36 @@ local t = {
       IndicatorMaskType = 0,
       IndicatorMaxDist = 10,
       IndicatorSecAngle = 60,
-      IndicatorSecRadius = 5,
+      IndicatorSecRadius = 10,
       IndicatorSensitivity = 0.5,
       IndicatorSlomo = true,
       IndicatorViscous = true,
       SearchAngleWeight = {
-        5,
-        -0.05,
-        0,
-        0,
-        8,
-        -0.1
+        {5, -0.05},
+        {0, 0},
+        {8, -0.1}
       },
       SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0,
-        5,
-        -1,
-        0
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        },
+        {
+          5,
+          -1,
+          0
+        }
       },
-      SearchViscousWeight = {3, 2},
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       UiChargeIsReduce = true,
       UiSkill = "arashi"
     },
@@ -887,9 +905,9 @@ local t = {
       IndicatorFineSizeY = 3,
       IndicatorFineType = 1,
       IndicatorMaskType = 0,
-      IndicatorMaxDist = 10,
+      IndicatorMaxDist = 16,
       IndicatorSecAngle = 60,
-      IndicatorSecRadius = 5,
+      IndicatorSecRadius = 16,
       IndicatorSensitivity = 0.5,
       IndicatorSlomo = true,
       IndicatorViscous = true,
@@ -1011,25 +1029,31 @@ local t = {
       IndicatorSensitivity = 0.5,
       IndicatorViscous = true,
       SearchAngleWeight = {
-        5,
-        -0.05,
-        0,
-        0,
-        8,
-        -0.1
+        {5, -0.05},
+        {0, 0},
+        {8, -0.1}
       },
       SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0,
-        5,
-        -1,
-        0
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        },
+        {
+          5,
+          -1,
+          0
+        }
       },
-      SearchViscousWeight = {3, 2},
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       UiChargeIsReduce = true,
       UiSkill = "atk1"
     },
@@ -1206,37 +1230,46 @@ local t = {
       IndicatorSensitivity = 0.5,
       IndicatorViscous = true,
       SearchAngleWeight = {
-        5,
-        -0.05,
-        0,
-        0,
-        8,
-        -0.1
+        {5, -0.05},
+        {0, 0},
+        {8, -0.1}
       },
       SearchDensityWeight = {
-        5,
-        -0.02,
-        90,
-        4,
-        10,
-        -0.02,
-        90,
-        4,
-        0,
-        0,
-        0,
-        0
+        {
+          5,
+          -0.02,
+          90,
+          4
+        },
+        {
+          10,
+          -0.02,
+          90,
+          4
+        },
+        {
+          0,
+          0,
+          0,
+          0
+        }
       },
       SearchDistWeight = {
-        0,
-        0,
-        0,
-        5,
-        -1,
-        0,
-        5,
-        -1,
-        0
+        {
+          0,
+          0,
+          0
+        },
+        {
+          5,
+          -1,
+          0
+        },
+        {
+          5,
+          -1,
+          0
+        }
       },
       SearchViscousWeight = nil,
       UiChargeIsReduce = true,
@@ -1381,25 +1414,31 @@ local t = {
       IndicatorSensitivity = 0.5,
       IndicatorViscous = true,
       SearchAngleWeight = {
-        5,
-        -0.05,
-        0,
-        0,
-        8,
-        -0.1
+        {5, -0.05},
+        {0, 0},
+        {8, -0.1}
       },
       SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0,
-        5,
-        -1,
-        0
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        },
+        {
+          5,
+          -1,
+          0
+        }
       },
-      SearchViscousWeight = {3, 2},
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       UiChargeIsReduce = true,
       UiSkill = "atk1"
     },
@@ -1615,25 +1654,31 @@ local t = {
       IndicatorSensitivity = 0.5,
       IndicatorViscous = true,
       SearchAngleWeight = {
-        5,
-        -0.05,
-        0,
-        0,
-        8,
-        -0.1
+        {5, -0.05},
+        {0, 0},
+        {8, -0.1}
       },
       SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0,
-        5,
-        -1,
-        0
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        },
+        {
+          5,
+          -1,
+          0
+        }
       },
-      SearchViscousWeight = {3, 2},
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       UiChargeIsReduce = true,
       UiSkill = "atk1"
     },
@@ -2249,15 +2294,35 @@ local t = {
       IndicatorSecRadius = 5,
       IndicatorSensitivity = 0.5,
       IndicatorViscous = true,
-      SearchAngleWeight = {5, 0},
+      SearchAngleWeight = {
+        {5},
+        {0}
+      },
       SearchDensityWeight = {
-        10,
-        -0.02,
-        90,
-        4
+        {
+          10,
+          -0.2,
+          90,
+          4
+        },
+        {
+          10,
+          -0.2,
+          90,
+          4
+        },
+        {
+          10,
+          -0.2,
+          90,
+          4
+        }
       },
       SearchDistWeight = nil,
-      SearchViscousWeight = {2, 2},
+      SearchViscousWeight = {
+        {2},
+        {2}
+      },
       UiChargeIsReduce = true,
       UiChargeMagic = 1012067,
       UiChargeType = 2,
@@ -2295,15 +2360,35 @@ local t = {
       IndicatorSecRadius = 5,
       IndicatorSensitivity = 0.5,
       IndicatorViscous = true,
-      SearchAngleWeight = {5, 0},
+      SearchAngleWeight = {
+        {5},
+        {0}
+      },
       SearchDensityWeight = {
-        10,
-        -0.02,
-        90,
-        4
+        {
+          10,
+          -0.2,
+          90,
+          4
+        },
+        {
+          10,
+          -0.2,
+          90,
+          4
+        },
+        {
+          10,
+          -0.2,
+          90,
+          4
+        }
       },
       SearchDistWeight = nil,
-      SearchViscousWeight = {2, 2},
+      SearchViscousWeight = {
+        {2},
+        {2}
+      },
       UiChargeIsReduce = true,
       UiSkill = "ultStart"
     }
@@ -2345,25 +2430,31 @@ local t = {
       IndicatorSensitivity = 0.5,
       IndicatorViscous = true,
       SearchAngleWeight = {
-        5,
-        -0.05,
-        0,
-        0,
-        8,
-        -0.1
+        {5, -0.05},
+        {0, 0},
+        {8, -0.1}
       },
       SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0,
-        5,
-        -1,
-        0
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        },
+        {
+          5,
+          -1,
+          0
+        }
       },
-      SearchViscousWeight = {3, 2},
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       UiChargeIsReduce = true,
       UiSkill = "atk1"
     },
@@ -5759,9 +5850,13 @@ local t = {
       IndicatorSecRadius = 5,
       IndicatorSensitivity = 0.5,
       IndicatorViscous = true,
-      NeedCull = true,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
+      SearchOcclusWeight = {
+        {-100},
+        {-100},
+        {-100}
+      },
       SearchViscousWeight = nil,
       UiChargeIsReduce = true,
       UiChargeMagic = 102388,
@@ -6330,7 +6425,11 @@ local t = {
       IndicatorViscous = true,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {15},
+      SearchViscousWeight = {
+        {15},
+        {15},
+        {10}
+      },
       UiChargeIsReduce = true,
       UiSkill = "atk1"
     },
@@ -6394,7 +6493,11 @@ local t = {
       IndicatorViscous = true,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {20},
+      SearchViscousWeight = {
+        {20},
+        {20},
+        {15}
+      },
       UiChargeIsReduce = true,
       UiEnhance = true,
       UiSkill = "kickAss"
@@ -6534,7 +6637,11 @@ local t = {
       IndicatorViscous = true,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {20},
+      SearchViscousWeight = {
+        {20},
+        {20},
+        {15}
+      },
       UiChargeIsReduce = true,
       UiEnhance = true,
       UiSkill = "spiralPrick"
@@ -7293,6 +7400,7 @@ local t = {
       SearchDistWeight = nil,
       SearchViscousWeight = nil,
       UiChargeIsReduce = true,
+      UiEnhance = true,
       UiSkill = "skill2_2"
     },
     skill3_1 = {
@@ -7360,6 +7468,7 @@ local t = {
       SearchDistWeight = nil,
       SearchViscousWeight = nil,
       UiChargeIsReduce = true,
+      UiEnhance = true,
       UiSkill = "skill3_2"
     },
     ult = {
@@ -8005,26 +8114,35 @@ local t = {
       IndicatorSensitivity = 0.5,
       IndicatorViscous = true,
       SearchAngleWeight = {
-        5,
-        -0.05,
-        0,
-        0,
-        8,
-        -0.1
+        {5, -0.05},
+        {0, 0},
+        {8, -0.1}
       },
       SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0,
-        5,
-        -1,
-        0
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        },
+        {
+          5,
+          -1,
+          0
+        }
       },
-      SearchViscousWeight = {3, 2},
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       UiChargeIsReduce = true,
+      UiChargeMagic = 1030204,
+      UiChargeType = 2,
+      UiEnhance = true,
       UiSkill = "air_sprint"
     },
     atk = {
@@ -8134,6 +8252,9 @@ local t = {
       SearchDistWeight = nil,
       SearchViscousWeight = nil,
       UiChargeIsReduce = true,
+      UiChargeMagic = 1030205,
+      UiChargeType = 2,
+      UiEnhance = true,
       UiSkill = "fish_drop2"
     },
     linkQte = {
@@ -8170,70 +8291,6 @@ local t = {
       UiEnhance = true,
       UiSkill = "linkQte"
     },
-    skill3_1 = {
-      CancelUpSkActs = nil,
-      CharId = 1001030,
-      HitCacheTime = 0.4,
-      HitSkActs = {"skill3_1"},
-      HitUpCacheTime = 0.2,
-      HitUpSkActs = {"skill3_1"},
-      HoldCacheTime = 0.4,
-      HoldSkActs = nil,
-      HoldTimeThreshold = 0.2,
-      HoldUpCacheTime = 0.2,
-      HoldUpSkActs = {"skill3_1"},
-      IconName = "skill3_1",
-      Id = 9,
-      IndicatorAutoLock = true,
-      IndicatorCoarseSizeX = 3,
-      IndicatorCoarseType = 1,
-      IndicatorFineSizeX = 3,
-      IndicatorFineSizeY = 3,
-      IndicatorFineType = 2,
-      IndicatorMaskType = 0,
-      IndicatorMaxDist = 10,
-      IndicatorSecAngle = 60,
-      IndicatorSecRadius = 5,
-      IndicatorSensitivity = 0.5,
-      IndicatorViscous = true,
-      SearchAngleWeight = nil,
-      SearchDistWeight = nil,
-      SearchViscousWeight = nil,
-      UiChargeIsReduce = true,
-      UiSkill = "skill3_1"
-    },
-    skill3_2 = {
-      CancelUpSkActs = nil,
-      CharId = 1001030,
-      HitCacheTime = 0.4,
-      HitSkActs = {"skill3_2"},
-      HitUpCacheTime = 0.2,
-      HitUpSkActs = {"skill3_2"},
-      HoldCacheTime = 0.4,
-      HoldSkActs = nil,
-      HoldTimeThreshold = 0.2,
-      HoldUpCacheTime = 0.2,
-      HoldUpSkActs = {"skill3_2"},
-      IconName = "skill3_2",
-      Id = 10,
-      IndicatorAutoLock = true,
-      IndicatorCoarseSizeX = 3,
-      IndicatorCoarseType = 1,
-      IndicatorFineSizeX = 3,
-      IndicatorFineSizeY = 3,
-      IndicatorFineType = 2,
-      IndicatorMaskType = 0,
-      IndicatorMaxDist = 10,
-      IndicatorSecAngle = 60,
-      IndicatorSecRadius = 5,
-      IndicatorSensitivity = 0.5,
-      IndicatorViscous = true,
-      SearchAngleWeight = nil,
-      SearchDistWeight = nil,
-      SearchViscousWeight = nil,
-      UiChargeIsReduce = true,
-      UiSkill = "skill3_2"
-    },
     sprint = {
       CancelUpSkActs = nil,
       CharId = 1001030,
@@ -8264,6 +8321,9 @@ local t = {
       SearchDistWeight = nil,
       SearchViscousWeight = nil,
       UiChargeIsReduce = true,
+      UiChargeMagic = 1030201,
+      UiChargeType = 2,
+      UiEnhance = true,
       UiSkill = "sprint"
     },
     stab = {
@@ -8328,13 +8388,15 @@ local t = {
       SearchDistWeight = nil,
       SearchViscousWeight = nil,
       UiChargeIsReduce = true,
+      UiChargeMagic = 1030202,
+      UiChargeType = 2,
       UiSkill = "sweep"
     },
     throw_fan = {
       CancelUpSkActs = nil,
       CharId = 1001030,
       HitCacheTime = 0.4,
-      HitSkActs = {"throw_fan"},
+      HitSkActs = nil,
       HitUpCacheTime = 0.2,
       HitUpSkActs = {"throw_fan"},
       HoldCacheTime = 0.4,
@@ -8352,7 +8414,7 @@ local t = {
       IndicatorFineSizeX = 3,
       IndicatorFineSizeY = 8.2,
       IndicatorFineType = 2,
-      IndicatorMaskType = 0,
+      IndicatorMaskType = 1,
       IndicatorMaxDist = 10,
       IndicatorSecAngle = 60,
       IndicatorSecRadius = 5,
@@ -8436,6 +8498,9 @@ local t = {
       SearchDistWeight = nil,
       SearchViscousWeight = nil,
       UiChargeIsReduce = true,
+      UiChargeMagic = 1030203,
+      UiChargeType = 2,
+      UiEnhance = true,
       UiSkill = "xiuyouyanji"
     }
   },
@@ -8467,25 +8532,31 @@ local t = {
       IndicatorSensitivity = 0.5,
       IndicatorViscous = true,
       SearchAngleWeight = {
-        5,
-        -0.05,
-        0,
-        0,
-        8,
-        -0.1
+        {5, -0.05},
+        {0, 0},
+        {8, -0.1}
       },
       SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0,
-        5,
-        -1,
-        0
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        },
+        {
+          5,
+          -1,
+          0
+        }
       },
-      SearchViscousWeight = {3, 2},
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       UiChargeIsReduce = true,
       UiEnable = true,
       UiSkill = "turnOver"
@@ -9861,16 +9932,6 @@ t[1001030].linkQte.HoldUpSkActs = t[1001001].atk.CancelUpSkActs
 t[1001030].linkQte.SearchAngleWeight = t[1001030].air_sprint.SearchAngleWeight
 t[1001030].linkQte.SearchDistWeight = t[1001030].air_sprint.SearchDistWeight
 t[1001030].linkQte.SearchViscousWeight = t[1001030].air_sprint.SearchViscousWeight
-t[1001030].skill3_1.CancelUpSkActs = t[1001001].atk.CancelUpSkActs
-t[1001030].skill3_1.HoldSkActs = t[1001001].atk.CancelUpSkActs
-t[1001030].skill3_1.SearchAngleWeight = t[1001030].air_sprint.SearchAngleWeight
-t[1001030].skill3_1.SearchDistWeight = t[1001030].air_sprint.SearchDistWeight
-t[1001030].skill3_1.SearchViscousWeight = t[1001030].air_sprint.SearchViscousWeight
-t[1001030].skill3_2.CancelUpSkActs = t[1001001].atk.CancelUpSkActs
-t[1001030].skill3_2.HoldSkActs = t[1001001].atk.CancelUpSkActs
-t[1001030].skill3_2.SearchAngleWeight = t[1001030].air_sprint.SearchAngleWeight
-t[1001030].skill3_2.SearchDistWeight = t[1001030].air_sprint.SearchDistWeight
-t[1001030].skill3_2.SearchViscousWeight = t[1001030].air_sprint.SearchViscousWeight
 t[1001030].sprint.CancelUpSkActs = t[1001001].atk.CancelUpSkActs
 t[1001030].sprint.HoldSkActs = t[1001001].atk.CancelUpSkActs
 t[1001030].sprint.SearchAngleWeight = t[1001030].air_sprint.SearchAngleWeight
@@ -9887,6 +9948,7 @@ t[1001030].sweep.SearchAngleWeight = t[1001030].air_sprint.SearchAngleWeight
 t[1001030].sweep.SearchDistWeight = t[1001030].air_sprint.SearchDistWeight
 t[1001030].sweep.SearchViscousWeight = t[1001030].air_sprint.SearchViscousWeight
 t[1001030].throw_fan.CancelUpSkActs = t[1001001].atk.CancelUpSkActs
+t[1001030].throw_fan.HitSkActs = t[1001001].atk.CancelUpSkActs
 t[1001030].throw_fan.HoldSkActs = t[1001001].atk.CancelUpSkActs
 t[1001030].throw_fan.SearchAngleWeight = t[1001030].air_sprint.SearchAngleWeight
 t[1001030].throw_fan.SearchDistWeight = t[1001030].air_sprint.SearchDistWeight

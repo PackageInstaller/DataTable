@@ -1,10 +1,10 @@
-local assert = assert
-local error = error
-local pairs = pairs
-local pcall = pcall
-local setmetatable = setmetatable
-local tostring = tostring
-local type = type
+local assert = _ENV.assert
+local error = _ENV.error
+local pairs = _ENV.pairs
+local pcall = _ENV.pcall
+local setmetatable = _ENV.setmetatable
+local tostring = _ENV.tostring
+local type = _ENV.type
 local char = require("string").char
 local math_type = require("math").type
 local tointeger = require("math").tointeger
@@ -13,17 +13,21 @@ local pack = require("string").pack
 local unpack = require("string").unpack
 local _ENV
 local m = {}
-local argerror = function(caller, narg, extramsg)
+
+local function argerror(caller, narg, extramsg)
   error("bad argument #" .. tostring(narg) .. " to " .. caller .. " (" .. extramsg .. ")")
 end
-local typeerror = function(caller, narg, arg, tname)
+
+local function typeerror(caller, narg, arg, tname)
   argerror(caller, narg, tname .. " expected, got " .. type(arg))
 end
-local checktype = function(caller, narg, arg, tname)
+
+local function checktype(caller, narg, arg, tname)
   if type(arg) ~= tname then
     typeerror(caller, narg, arg, tname)
   end
 end
+
 local packers = setmetatable({}, {
   __index = function(t, k)
     error("pack '" .. k .. "' is unimplemented")
@@ -92,7 +96,7 @@ function packers.binary(buffer, str)
   buffer[#buffer + 1] = str
 end
 
-local set_string = function(str)
+local function set_string(str)
   if "string_compat" == str then
     packers.string = packers.string_compat
   elseif "string" == str then
@@ -103,6 +107,7 @@ local set_string = function(str)
     argerror("set_string", 1, "invalid option '" .. str .. "'")
   end
 end
+
 m.set_string = set_string
 
 function packers.map(buffer, tbl, n)
@@ -141,7 +146,7 @@ function packers.array(buffer, tbl, n)
   end
 end
 
-local set_array = function(array)
+local function set_array(array)
   if "without_hole" == array then
     function packers._table(buffer, tbl)
       local is_map, n, max = false, 0, 0
@@ -198,6 +203,7 @@ local set_array = function(array)
     argerror("set_array", 1, "invalid option '" .. array .. "'")
   end
 end
+
 m.set_array = set_array
 
 function packers.table(buffer, tbl)
@@ -268,7 +274,7 @@ function packers.signed(buffer, n)
   end
 end
 
-local set_integer = function(integer)
+local function set_integer(integer)
   if "unsigned" == integer then
     packers.integer = packers.unsigned
   elseif "signed" == integer then
@@ -277,6 +283,7 @@ local set_integer = function(integer)
     argerror("set_integer", 1, "invalid option '" .. integer .. "'")
   end
 end
+
 m.set_integer = set_integer
 
 function packers.float(buffer, n)
@@ -289,7 +296,7 @@ function packers.double(buffer, n)
   buffer[#buffer + 1] = pack(">d", n)
 end
 
-local set_number = function(number)
+local function set_number(number)
   if "integer" == number then
     packers.number = packers.signed
   elseif "float" == number then
@@ -312,6 +319,7 @@ local set_number = function(number)
     argerror("set_number", 1, "invalid option '" .. number .. "'")
   end
 end
+
 m.set_number = set_number
 for k = 0, 4 do
   local n = tointeger(2 ^ k)
@@ -407,7 +415,8 @@ local unpackers = setmetatable({}, {
   end
 })
 m.unpackers = unpackers
-local unpack_array = function(c, n)
+
+local function unpack_array(c, n)
   local t = {}
   local decode = unpackers.any
   for i = 1, n do
@@ -415,7 +424,8 @@ local unpack_array = function(c, n)
   end
   return t
 end
-local unpack_map = function(c, n)
+
+local function unpack_map(c, n)
   local t = {}
   local decode = unpackers.any
   for i = 1, n do
@@ -790,7 +800,7 @@ function unpackers.ext32(c)
   return m.build_ext(tag, s:sub(i, e))
 end
 
-local cursor_string = function(str)
+local function cursor_string(str)
   return {
     s = str,
     i = 1,
@@ -800,7 +810,8 @@ local cursor_string = function(str)
     end
   }
 end
-local cursor_loader = function(ld)
+
+local function cursor_loader(ld)
   return {
     s = "",
     i = 1,

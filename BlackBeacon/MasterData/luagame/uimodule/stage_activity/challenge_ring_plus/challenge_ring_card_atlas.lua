@@ -5,7 +5,8 @@ local TEMPLATE_RING_CARD_TYPE = "TEMPLATE_RING_CARD_TYPE"
 local TEMPLATE_RING_PAGE = "TEMPLATE_RING_PAGE"
 local CARD_OBJ = require("uimodule.stage_activity.challenge_ring_plus.card_obj")
 local CARD_TYPE_OBJ = require("uimodule.stage_activity.challenge_ring_plus.card_type_obj")
-local _sort_func = function(a, b)
+
+local function _sort_func(a, b)
   if a.Id ~= b.Id then
     return a.Id < b.Id
   else

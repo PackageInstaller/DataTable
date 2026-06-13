@@ -16,7 +16,8 @@ local TOWER_TASK_COLOR = {
   [TASK_STATUS.UNCOMPLETED] = "F5EDE2",
   [TASK_STATUS.FAILED] = "909090"
 }
-local _get_task_status = function(completed, uncompleted)
+
+local function _get_task_status(completed, uncompleted)
   local status
   if completed then
     status = TASK_STATUS.COMPLETED

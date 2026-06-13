@@ -2,7 +2,8 @@ local UnityPlayerPrefs = UnityEngine.PlayerPrefs
 local Application = UnityEngine.Application
 local M = {}
 local KEY = "TMP_ACCOUNT_" .. Application.dataPath
-local generate_account = function()
+
+local function generate_account()
   local t = os.time() / 1.0E8 % 1 * 1.0E8
   return math.floor(t)
 end
@@ -33,6 +34,8 @@ function M:_init_device_type()
     device_type = 1
   elseif UNITY_ANDROID then
     device_type = 2
+  elseif UNITY_STANDALONE_WIN then
+    device_type = 3
   end
   return device_type
 end

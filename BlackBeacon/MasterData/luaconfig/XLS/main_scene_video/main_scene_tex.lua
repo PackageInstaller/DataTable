@@ -40,6 +40,13 @@ return {
       PosType = 1,
       Priority = 6,
       TexTarget = "9"
+    },
+    {
+      Condition = 110802,
+      Id = 9,
+      PosType = 1,
+      Priority = 7,
+      TexTarget = "11"
     }
   },
   [3] = {

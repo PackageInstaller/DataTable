@@ -82,7 +82,8 @@ function ui:ui_finish_load(...)
   self:init_model(MODEL)
   self.v_tips = {}
   self.v_pos_to_txt_icon = {}
-  local findObj = function(obj)
+  
+  local function findObj(obj)
     local tb = {}
     tb.rect = self:get_rect_transform(nil, obj)
     tb.short = self:get_child_gameobj("Short", obj)
@@ -90,6 +91,7 @@ function ui:ui_finish_load(...)
     tb.long = self:get_child_gameobj("Long", obj)
     return tb
   end
+  
   for i = 1, 4 do
     self.v_tips[i] = (1 == i or 4 == i) and findObj(self.v_right_tips) or findObj(self.v_left_tips)
   end
@@ -611,7 +613,8 @@ end
 function ui:_onclick_jump()
   self.v_jump_count_down_EF = false
   local tip = Util.format_str("是否确定跳过引导？")
-  local sure_callback = function()
+  
+  local function sure_callback()
     if self.v_guider:is_jump_auto_click_guide() and self.v_cur_view ~= nil then
       local click_cb = self.v_cur_view:get_click_event()
       if click_cb then
@@ -620,9 +623,11 @@ function ui:_onclick_jump()
     end
     GuideMgr:jump_guide(self.v_guider.guide_id, true)
   end
-  local cancel_callback = function()
+  
+  local function cancel_callback()
     self.v_jump_count_down_EF = true
   end
+  
   UIMgr:get_ui("uinotice_tips"):ui_show(sure_callback, cancel_callback, tip)
 end
 

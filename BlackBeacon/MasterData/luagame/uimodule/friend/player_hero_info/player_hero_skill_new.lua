@@ -199,9 +199,7 @@ function ui:set_skill_item(idx)
   skill_item.select_obj:SetActiveEx(false)
   Util.load_skill_icon(skill_detail_cfg.Icon, skill_item.icon)
   self:set_button_listener(skill_item.btn, function()
-    if Player_Hero_Helper.is_fake then
-      self:on_selected(idx, Select_Type.Skill)
-    end
+    self:on_selected(idx, Select_Type.Skill)
   end)
   skill_item.red_obj:SetActiveEx(false)
 end
@@ -240,9 +238,7 @@ function ui:set_talent_item(idx)
   talent_item.select_obj:SetActiveEx(false)
   Util.load_talent_icon(talent_detail_cfg.Icon, talent_item.icon)
   self:set_button_listener(talent_item.btn, function()
-    if Player_Hero_Helper.is_fake then
-      self:on_selected(idx, Select_Type.Talent)
-    end
+    self:on_selected(idx, Select_Type.Talent)
   end)
   local red = false
   talent_item.red_obj:SetActiveEx(red)

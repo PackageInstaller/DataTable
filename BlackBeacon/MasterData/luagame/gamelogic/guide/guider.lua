@@ -37,7 +37,7 @@ function M:_init(guide_id, step)
   self.v_finish_init = true
 end
 
-local _trace_step = function(self)
+local function _trace_step(self)
   if 0 ~= self.v_cur_step then
     local cost_time = math.max(0, Global.real_time - self.v_cur_step_start_time)
     local id = self.v_cur_step_cfg.id

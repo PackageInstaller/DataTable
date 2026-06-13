@@ -78,9 +78,10 @@ function ui:ui_finish_load()
     RelicMgr:req_take_off_relic(self.v_uuid)
   end)
   self:set_button("BtnReplace", function()
-    local confirm_cb = function()
+    local function confirm_cb()
       RelicMgr:req_wear_relic(self.v_uuid, self.v_buddy_id)
     end
+    
     local owner_id = self.v_relic_data.buddy_id or 0
     if 0 ~= owner_id then
       Util.show_notify_popup_message(confirm_cb, "已被其他角色装备，是否替换？")

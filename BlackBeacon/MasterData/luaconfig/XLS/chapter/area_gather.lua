@@ -1619,6 +1619,206 @@ return {
       PreOpenId = 997511
     }
   },
+  [10081] = {
+    [801] = {
+      AreaBgPath = "UIChapter/MainLineBg8001",
+      AreaWidth = 700,
+      Chapter = 10081,
+      Id = 801,
+      IsEmptyArea = false,
+      LineLength = 0,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [802] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      EmptyPointOffset = {-192, 0},
+      Id = 802,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [803] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      EmptyPointOffset = {-192, 0},
+      Id = 803,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [804] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      EmptyPointOffset = {-192, 0},
+      Id = 804,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [805] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      EmptyPointOffset = {-192, 0},
+      Id = 805,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [806] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      EmptyPointOffset = {-192, 0},
+      Id = 806,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [807] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      Id = 807,
+      IsEmptyArea = false,
+      LineLength = 0,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [808] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      EmptyPointOffset = {-549, 0},
+      Id = 808,
+      IsEmptyArea = false,
+      LineLength = 508,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [809] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      Id = 809,
+      IsEmptyArea = false,
+      LineLength = 0,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [810] = {
+      AreaBgPath = "UIChapter/MainLineBg8001",
+      AreaWidth = 700,
+      Chapter = 10081,
+      EmptyPointOffset = {-549, 0},
+      Id = 810,
+      IsEmptyArea = false,
+      LineLength = 508,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [811] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      EmptyPointOffset = {-192, 0},
+      Id = 811,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [812] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      EmptyPointOffset = {-192, 0},
+      Id = 812,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [813] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      EmptyPointOffset = {-192, 0},
+      Id = 813,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [814] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      EmptyPointOffset = {-192, 0},
+      Id = 814,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [815] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      Id = 815,
+      IsEmptyArea = false,
+      LineLength = 0,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [816] = {
+      AreaBgPath = "UIChapter/MainLineBg8001",
+      AreaWidth = 700,
+      Chapter = 10081,
+      EmptyPointOffset = {-549, 0},
+      Id = 816,
+      IsEmptyArea = false,
+      LineLength = 508,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [817] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      EmptyPointOffset = {-192, 0},
+      Id = 817,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [818] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      EmptyPointOffset = {-192, 0},
+      Id = 818,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [819] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      EmptyPointOffset = {-192, 0},
+      Id = 819,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {},
+      StageGroup = 1
+    },
+    [820] = {
+      AreaWidth = 700,
+      Chapter = 10081,
+      Id = 820,
+      IsEmptyArea = false,
+      LineLength = 0,
+      LongitudeParams = {},
+      StageGroup = 1
+    }
+  },
   [11001] = {
     [110001] = {
       AreaBgPath = "UIChapter/SideStoryBg1001",
@@ -2168,6 +2368,62 @@ return {
       Chapter = 30071,
       EmptyPointOffset = {-192, 0},
       Id = 3007106,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {}
+    }
+  },
+  [30081] = {
+    [3008101] = {
+      AreaBgPath = "UIChapter/MainLineBg7001",
+      AreaWidth = 700,
+      Chapter = 30081,
+      Id = 3008101,
+      IsEmptyArea = false,
+      LineLength = 0,
+      LongitudeParams = {}
+    },
+    [3008102] = {
+      AreaWidth = 700,
+      Chapter = 30081,
+      EmptyPointOffset = {-192, 0},
+      Id = 3008102,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {}
+    },
+    [3008103] = {
+      AreaWidth = 700,
+      Chapter = 30081,
+      EmptyPointOffset = {-192, 0},
+      Id = 3008103,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {}
+    },
+    [3008104] = {
+      AreaWidth = 700,
+      Chapter = 30081,
+      EmptyPointOffset = {-192, 0},
+      Id = 3008104,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {}
+    },
+    [3008105] = {
+      AreaWidth = 700,
+      Chapter = 30081,
+      EmptyPointOffset = {-192, 0},
+      Id = 3008105,
+      IsEmptyArea = false,
+      LineLength = 160,
+      LongitudeParams = {}
+    },
+    [3008106] = {
+      AreaWidth = 700,
+      Chapter = 30081,
+      EmptyPointOffset = {-192, 0},
+      Id = 3008106,
       IsEmptyArea = false,
       LineLength = 160,
       LongitudeParams = {}

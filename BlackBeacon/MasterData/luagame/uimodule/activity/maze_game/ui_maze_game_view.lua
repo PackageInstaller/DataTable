@@ -14,16 +14,22 @@ function ui:on_click_node(node_id)
 end
 
 function ui:on_click_BtnRet1()
-  local sure_cb = function()
+  local function sure_cb()
     self:ui_hide()
+    
     NoviceMgr:stop_ponder_maze_game()
     UIMgr:try_show_ui("ui_maze_game_main", nil, self.v_activity_id)
+  end
+  
+  if self.v_all_finish then
+    sure_cb()
+    return
   end
   Util.show_conform_tip("退出后当前进度将重制，是否退出？", "取消", "确定", nil, sure_cb)
 end
 
 function ui:on_click_BtnMain()
-  local sure_cb = function()
+  local function sure_cb()
     if not SceneMgr:check_main_scene() then
       UIMgr:get_ui("uimessagetip"):ui_show(Util.format_str("当前场景不可回到主界面"))
     else
@@ -31,6 +37,11 @@ function ui:on_click_BtnMain()
       UIMgr:clear_all_cache_ui_custom_data()
     end
     NoviceMgr:stop_ponder_maze_game()
+  end
+  
+  if self.v_all_finish then
+    sure_cb()
+    return
   end
   Util.show_conform_tip("退出后当前进度将重制，是否退出？", "取消", "确定", nil, sure_cb)
 end
@@ -64,13 +75,21 @@ function ui:ui_finish_load()
 end
 
 function ui:ui_on_show()
-  self:bind_auto_mq(Const.ON_PONDER_MAZE_NODE_UPDATE, self.on_ponder_maze_game_node_update, self)
-  self:bind_auto_mq(Const.ON_PONDER_MAZE_ITEM_UPDATE, self.on_ponder_maze_game_thought_update, self)
-  self:bind_auto_mq(Const.ON_PONDER_MAZE_RESTART, self.on_ponder_maze_restart, self)
+  UIMgr:remove_stace_by_ui_name("ui_maze_game_event")
   self.v_activity_id, self.v_point_id = NoviceMgr.ponder_maze_mgr:get_game_param()
+  local is_active = NoviceMgr:get_novice_activity_active(self.v_activity_id)
+  if not is_active then
+    UIMgr:go_to_main()
+    return
+  end
   self.v_point_cfg = ShareRes.get_ponder_maze_point_cfg(self.v_point_id)
   self.v_map_id = self.v_point_cfg.MapID
   self:refresh_view()
+  NoviceMgr:check_maze_game_tips_and_story(self.v_activity_id)
+  self:bind_auto_mq(Const.ON_PONDER_MAZE_NODE_UPDATE, self.on_ponder_maze_game_node_update, self)
+  self:bind_auto_mq(Const.ON_PONDER_MAZE_ITEM_UPDATE, self.on_ponder_maze_game_thought_update, self)
+  self:bind_auto_mq(Const.ON_PONDER_MAZE_RESTART, self.on_ponder_maze_restart, self)
+  self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close, self)
 end
 
 function ui:ui_on_hide()
@@ -87,6 +106,7 @@ end
 function ui:refresh_thought_and_clue()
   local map_cfg = ShareRes.get_ponder_maze_map_cfg(self.v_map_id)
   self.v_uicompents.Content_rect:SetSizeDeltaA(map_cfg.MapSize[1], map_cfg.MapSize[2])
+  self.v_all_finish = true
   for i = 1, 3 do
     local clue_obj = self.v_uiobjects["Clue" .. i]
     local clue_id = map_cfg.TargetClue[i]
@@ -96,7 +116,12 @@ function ui:refresh_thought_and_clue()
       local clue_num_txt = self:get_text("NumText", clue_obj)
       local clue_cfg = ShareRes.get_ponder_maze_clue_cfg(clue_id)
       clue_txt.text = clue_cfg.Name
-      clue_num_txt.text = NoviceMgr.ponder_maze_mgr:get_clue_count(clue_id) .. "/" .. (map_cfg.ClueCount[i] or 0)
+      local curr_count = NoviceMgr.ponder_maze_mgr:get_clue_count(clue_id)
+      local total_count = map_cfg.ClueCount[i] or 0
+      clue_num_txt.text = curr_count .. "/" .. total_count
+      if self.v_all_finish and curr_count < total_count then
+        self.v_all_finish = false
+      end
     else
       clue_obj:SetActive(false)
     end
@@ -117,7 +142,7 @@ function ui:refresh_thought_and_clue()
   end
 end
 
-local calculateAngleBetweenUpAndAB = function(x1, z1, x2, z2)
+local function calculateAngleBetweenUpAndAB(x1, z1, x2, z2)
   local abX = x2 - x1
   local abY = z2 - z1
   local upX, upY = 0, 1
@@ -131,11 +156,15 @@ end
 function ui:create_line(node_id, pre_node_id, is_active)
   local temp_key = node_id .. pre_node_id
   if self.v_line_obj_temp[temp_key] then
-    Log.Errorf("存在重复连线节点，请检查解锁关系是否正确 当前节点：%s 后置节点： %s", node_id, pre_node_id, debug.traceback())
+    if is_active then
+      self.v_line_obj_temp[temp_key]:SetActive(is_active)
+      local active_obj = self:get_child_gameobj("Active", self.v_line_obj_temp[temp_key])
+      if active_obj then
+        active_obj:SetActive(true == is_active)
+      end
+    end
     return
   end
-  self.v_line_obj_temp[temp_key] = true
-  self.v_line_obj_temp[pre_node_id .. node_id] = true
   local node_cfg = ShareRes.get_ponder_maze_node_cfg(node_id)
   local pre_node_cfg = ShareRes.get_ponder_maze_node_cfg(pre_node_id)
   local node_pos = node_cfg.Position
@@ -166,6 +195,8 @@ function ui:create_line(node_id, pre_node_id, is_active)
   if active_obj then
     active_obj:SetActive(true == is_active)
   end
+  self.v_line_obj_temp[temp_key] = line_obj
+  self.v_line_obj_temp[pre_node_id .. node_id] = line_obj
 end
 
 function ui:create_node(node_id)
@@ -177,6 +208,7 @@ function ui:create_node(node_id)
   local event_cfg = ShareRes.get_ponder_maze_node_event_cfg(node_cfg.Event)
   local icon_path, event_icon_path
   local is_active = NoviceMgr.ponder_maze_mgr:get_node_active_state(node_id)
+  local is_comp = NoviceMgr.ponder_maze_mgr:get_node_comp_state(node_id)
   if 1 == node_cfg.NodeType then
     node_obj = self.v_uiobjects.Start
   elseif 2 == node_cfg.NodeType then
@@ -191,6 +223,8 @@ function ui:create_node(node_id)
     local name_txt = self:get_text("ClueName_", node_obj)
     local clue_cfg = ShareRes.get_ponder_maze_clue_cfg(node_cfg.RelevantClue)
     name_txt.text = clue_cfg.Name
+    local color_str = is_active and "EDDA84" or "AE9577"
+    Util.set_color(name_txt, color_str)
     local active = self:get_child_gameobj("Active", node_obj)
     active:SetActive(is_active)
   end
@@ -214,7 +248,7 @@ function ui:create_node(node_id)
     end)
   end
   if mask then
-    mask:SetActive(not is_active)
+    mask:SetActive(not is_comp)
   end
 end
 
@@ -241,6 +275,10 @@ end
 
 function ui:cache_ui()
   return true
+end
+
+function ui:check_close()
+  NoviceMgr:check_close_activity_ui(self.v_activity_id, self.v_ui_name, false, true)
 end
 
 return ui

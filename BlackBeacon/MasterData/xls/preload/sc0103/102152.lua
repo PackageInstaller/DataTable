@@ -1,0 +1,10 @@
+return
+{
+  functional_npc = {
+    [ 101111 ] = 3
+  },
+  story_id_list = {
+    [ 1 ] = 202002,
+    [ 2 ] = 201318
+  }
+}

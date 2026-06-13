@@ -40,10 +40,12 @@ function ui:add_pop_task(string)
     table.insert(self.v_pop_task_list, string)
     return
   end
-  local cb = function()
+  
+  local function cb()
     self:pop_text(string)
     self.v_uiobjects.SeniorItemRoot:SetActive(false)
   end
+  
   if self.v_visible then
     cb()
   else
@@ -132,11 +134,13 @@ function ui:senior_pop_task()
   local config = show_data.cfg
   self.v_uicompents.ItemName_txt.text = config.Name
   self.v_uicompents.ItemDesc_txt.text = config.Desc
-  local click_cb = function()
+  
+  local function click_cb()
     if TowerMgr then
       TowerMgr:open_fight_bag_panel()
     end
   end
+  
   local item_param = {
     show_num = show_data.count,
     is_show_new_tag = true,

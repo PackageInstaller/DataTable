@@ -8,9 +8,10 @@ local HorizontalLayoutGroup = typeof(UnityEngine.UI.HorizontalLayoutGroup)
 local LayoutRebuilder = UnityEngine.UI.LayoutRebuilder
 
 function ui:on_click_BtnReset()
-  local cb = function()
+  local function cb()
     self:start_new(self.v_stage_cfg)
   end
+  
   Util.show_conform_tip("是否重新开始", nil, nil, nil, cb)
 end
 

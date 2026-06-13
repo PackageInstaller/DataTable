@@ -294,9 +294,10 @@ function ui:update_enemy_model_show()
     end
   end
   if not self.v_model_view then
-    local load_npc_done_cb = function()
+    local function load_npc_done_cb()
       self.v_model_view:update_scene_model_type(self.v_ui_name, 4, true)
     end
+    
     self.v_model_view = ModelRtView:new(MODEL_PARAM.BG_NAME)
     local params = {
       model_id = model_id,

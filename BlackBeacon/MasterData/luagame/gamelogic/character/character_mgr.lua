@@ -73,7 +73,7 @@ function M:reset_data()
   self.v_new_buddy_map = {}
 end
 
-local get_attr_value = function(base_attr, upgrade_attr, lv, key, advance_cfg)
+local function get_attr_value(base_attr, upgrade_attr, lv, key, advance_cfg)
   local advance_val = advance_cfg and advance_cfg[key] or 0
   local base_val = base_attr[key] or 0
   if not upgrade_attr[key] then
@@ -83,12 +83,15 @@ local get_attr_value = function(base_attr, upgrade_attr, lv, key, advance_cfg)
   attr_val = attr_val + advance_val
   return attr_val
 end
-local _refresh_buddy_attr = function(buddy_info)
+
+local function _refresh_buddy_attr(buddy_info)
   buddy_info.attrs = M.cal_buddy_attr(buddy_info.id, buddy_info.break_lv, buddy_info.lv, buddy_info.advance, buddy_info.talent_lv)
 end
-local _refresh_equip_attr = function(equip_info)
+
+local function _refresh_equip_attr(equip_info)
   equip_info.attrs = M.cal_equip_attr(equip_info.id, equip_info.break_lv, equip_info.lv)
 end
+
 local sort_list = {
   [CHARACTER_CONFIG.ESORT_TYPE.lv] = {
     "sort_index",
@@ -109,7 +112,8 @@ local sort_list = {
     "quality"
   }
 }
-local sort_buddy_list = function(type, a, b, dec_sort)
+
+local function sort_buddy_list(type, a, b, dec_sort)
   local sort_data = sort_list[type]
   for _, sort_key in ipairs(sort_data) do
     if a[sort_key] ~= b[sort_key] then
@@ -157,7 +161,7 @@ function M.cal_equip_attr(id, break_lv, lv)
   return attr_key_tab
 end
 
-local get_attr_value_no_floor = function(base_attr, upgrade_attr, lv, key)
+local function get_attr_value_no_floor(base_attr, upgrade_attr, lv, key)
   if not upgrade_attr[key] then
     return base_attr[key]
   end

@@ -23,11 +23,13 @@ function ui:do_buy()
     self:ui_hide()
     return
   end
-  local cb = function(ok)
+  
+  local function cb(ok)
     self.v_timer = Timer:add_timer("ui_buy_fashion_tips", 0.5, function()
       self:ui_hide()
     end)
   end
+  
   self.v_uicompents.BtnBuy_btn.interactable = false
   RechargeMgr:request_buy_gift(self.v_id, cb)
 end

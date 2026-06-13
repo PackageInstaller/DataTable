@@ -116,7 +116,8 @@ function M:extrabg_show_anim(step_cfg, bg)
     self:check_complete()
     return
   end
-  local load_cb = function()
+  
+  local function load_cb()
     local sequence = self:get_new_sequence("extrabg_show_anim")
     sequence:Join(self.v_storybg_rect:DOAnchorPosY(0, step_cfg.ExtraBgAnimHoldTime))
     sequence:Join(self.v_extrabg_rect:DOAnchorPosY(step_cfg.ExtraBgPosY, step_cfg.ExtraBgAnimHoldTime))
@@ -126,6 +127,7 @@ function M:extrabg_show_anim(step_cfg, bg)
       self:check_complete()
     end)
   end
+  
   ResMgr:load_set_icon(self.v_uicompents.ExtraBg_img, step_cfg.ExtraBg, load_cb, true, self.v_lua_obj)
 end
 
@@ -164,11 +166,13 @@ function M:shake_anim(step_cfg)
     return
   end
   local shake_cfg = step_cfg.ShakeData
-  local shake_cb = function()
+  
+  local function shake_cb()
     self.v_complete_data.is_shake = true
     self.v_lua_obj:stop_storybg_shake()
     self:check_complete()
   end
+  
   local time = shake_cfg[1]
   local force = shake_cfg[2]
   local shake_times = shake_cfg[3]
@@ -227,7 +231,8 @@ function M:load_bg_res(step_cfg)
   local bg_res = step_cfg.Image
   local bg_img = self.v_uicompents["StoryBg" .. use_bg_layer .. "_img"]
   self:fade_out_bg(use_bg_layer, fade_out_time)
-  local load_cb = function()
+  
+  local function load_cb()
     if self.v_lua_obj.v_visible then
       self:fade_in_bg(use_bg_layer, fade_in_time)
       self:shake_anim(step_cfg)
@@ -236,6 +241,7 @@ function M:load_bg_res(step_cfg)
       self.v_uiobjects.BlackBg:SetActive(false)
     end
   end
+  
   ResMgr:load_set_icon(bg_img, bg_res, load_cb, true, self.v_lua_obj)
   local rect = Util.get_rect_transform(nil, bg_img.gameObject)
   rect:SetAnchoredPositionA(0, 0)
@@ -258,7 +264,8 @@ function M:load_spine_bg()
     scale = scale * (CSScreen.width * 1080 / (CSScreen.height * 1920))
   end
   self:fade_out_bg(use_bg_layer, fade_out_time)
-  local cb = function(obj)
+  
+  local function cb(obj)
     self.v_uiobjects.BlackBg:SetActive(false)
     obj:ResetAttr()
     obj.transform:SetLocalScaleA(scale, scale, scale)
@@ -271,6 +278,7 @@ function M:load_spine_bg()
     end
     self:update_bg_anim(img_obj)
   end
+  
   if not step_cfg.IsNoSwitchBgIdx then
     self.v_lua_obj:load_bg_spine_res(img_obj, res_name, cb)
   else
@@ -312,10 +320,12 @@ end
 function M:bg_hide_sequence(key, bg_obj, fade_out_time)
   fade_out_time = fade_out_time or 0
   local canvs_grp = bg_obj:GetComponent("CanvasGroup")
-  local cb = function()
+  
+  local function cb()
     self.v_complete_data.is_hide_bg = true
     self:check_complete()
   end
+  
   if 0 == fade_out_time then
     canvs_grp.alpha = 0
     cb()
@@ -349,7 +359,8 @@ end
 function M:bg_show_sequence(key, bg_obj, fade_in_time)
   fade_in_time = fade_in_time or 0
   local canvas_grp = bg_obj:GetComponent("CanvasGroup")
-  local cb = function()
+  
+  local function cb()
     self.v_complete_data.is_show_bg = true
     self:check_complete()
     local camera = Global.camera
@@ -358,6 +369,7 @@ function M:bg_show_sequence(key, bg_obj, fade_in_time)
       camera:set_enable_camera(enable_camera)
     end
   end
+  
   if 0 == fade_in_time then
     canvas_grp.alpha = 1
     cb()

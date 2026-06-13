@@ -91,12 +91,15 @@ function ui:init_event()
   self:set_button("Auto", function()
     self:click_auto_btn()
   end)
-  local on_button_down = function()
+  
+  local function on_button_down()
     self:click_btn(true)
   end
-  local on_button_up = function()
+  
+  local function on_button_up()
     self:click_btn(false)
   end
+  
   local btn = self:get_uiobject("BgBtn", BIND_TYPE.BUTTON_EX)
   self:set_button_ex_listener(btn, on_button_down, on_button_up, nil, nil)
   self:set_button("Skip", function()
@@ -204,9 +207,11 @@ function ui:click_review_btn()
   end
   self:stop_auto_play()
   local review_pnl = self:get_panel("story_review")
-  local cb = function()
+  
+  local function cb()
     self.v_uiobjects.Up:SetActive(true)
   end
+  
   review_pnl:set_enable(true, cb)
   self.v_uiobjects.Up:SetActive(false)
 end
@@ -250,13 +255,16 @@ function ui:check_must_select_step()
     return 0
   end
   local tips = "当前对话存在交互选项，是否跳转到相应步骤？"
-  local confirm_cb = function()
+  
+  local function confirm_cb()
     self:end_step(must_select_step)
     return 1
   end
-  local cancel_cb = function()
+  
+  local function cancel_cb()
     return 2
   end
+  
   Util.show_notify_popup_message(confirm_cb, tips, nil, nil, nil, cancel_cb, false)
 end
 
@@ -483,7 +491,7 @@ function ui:stop_story()
   self:play_story_end_anim()
 end
 
-local _play_next_story = function(self, story_id)
+local function _play_next_story(self, story_id)
   local pre_story_id = self.v_story_id
   local cur_story_cfg = self.v_story_step_cfg
   self:init_story_cfg(story_id)
@@ -898,11 +906,16 @@ function ui:play_story_end_anim(cb, is_skip)
   end
 end
 
+function ui:set_finish_cb(finish_cb)
+  ui.finish_cb = finish_cb
+end
+
 function ui:story_end_fun(is_skip)
   UIMgr:check_enable_camera()
   self.v_is_skip = is_skip
   local not_reset_bgm = self.v_story_cfg.NotResetBgm
-  local cb = function()
+  
+  local function cb()
     self.v_is_play_next_story = nil
     if self.finish_cb then
       self.finish_cb(self.role_event_type)
@@ -962,6 +975,7 @@ function ui:story_end_fun(is_skip)
       self:ui_destroy()
     end
   end
+  
   local stop_arg_params
   if SceneMgr:check_main_scene() then
     if not self.v_story_cfg.AlphaEffectEnd then
@@ -1181,7 +1195,7 @@ function ui:init_fight_ui_visiability()
   end
 end
 
-local set_cur_use_bg_layer = function(step_data)
+local function set_cur_use_bg_layer(step_data)
   if not CUR_USE_BG_LAYER then
     CUR_USE_BG_LAYER = 1
     return CUR_USE_BG_LAYER
@@ -1344,9 +1358,11 @@ function ui:check_step_all_complete(step_auto)
       no_complete_list[type] = true
     end
   end
-  local cb = function()
+  
+  local function cb()
     self:check_play_change_anim()
   end
+  
   local len = UtilTable.hash_lenth(no_complete_list)
   if 0 ~= len then
     if len <= 1 then
@@ -1469,6 +1485,19 @@ function ui:add_effect_obj(res_name, obj, layer, parent, flip_type)
     effect_state:SetActive(true)
   end
   self.v_effec_obj_list[res_name] = {parent = gameobj, obj = obj}
+end
+
+function ui:add_effect_obj_for_title_effect(res_name, obj, parent)
+  local effect_data = self.v_effec_obj_list[res_name]
+  if effect_data then
+    ResPoolMgr:release(effect_data.obj)
+    ResMgr:destroy_gameobj(effect_data.parent)
+  end
+  obj.transform:SetParent(parent.transform)
+  obj.transform:SetAsLastSibling()
+  local rect_obj = Util.get_rect_transform(nil, obj)
+  rect_obj:SetOffsetMinMax(0, 0, 0, 0)
+  self.v_effec_obj_list[res_name] = {parent = obj, obj = obj}
 end
 
 function ui:get_effect_obj(res_name)
@@ -1688,10 +1717,12 @@ function ui:insert_step_complete(step_type)
     Timer:remove_timer(self.v_insert_tick)
     self.v_insert_tick = nil
   end
-  local cb = function()
+  
+  local function cb()
     self.v_insert_step_id = self.v_insert_step_id + 1
     self:init_insert_step_lua_obj()
   end
+  
   local cd = self.v_insert_step_data.StepCD or 1
   if cd > 0 then
     cd = cd / self.v_story_speed

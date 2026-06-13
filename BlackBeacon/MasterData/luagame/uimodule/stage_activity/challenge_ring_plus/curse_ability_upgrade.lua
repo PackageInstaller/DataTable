@@ -183,7 +183,8 @@ function ui:on_click_BtnRebuild()
   end
   local ability_cfg = ShareRes.get_ability_cfg(self.v_select_ability_id)
   local genres_id = ability_cfg.Sect
-  local comform_cb = function()
+  
+  local function comform_cb()
     FateBookMgr:request_battle_curse_repeat_ability({
       self.v_select_ability_id
     }, function(ok, resp)
@@ -195,6 +196,7 @@ function ui:on_click_BtnRebuild()
       end
     end)
   end
+  
   local check_pass, equation_id = self:check_rebuild_make_equation_level_down(genres_id)
   if check_pass then
     local equation_cfg = ShareRes.get_curse_equation_cfg(equation_id)

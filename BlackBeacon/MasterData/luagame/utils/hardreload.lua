@@ -1,6 +1,7 @@
 local clonefunc = require("clonefunc")
 local hardreload = {}
-local same_proto = function(f1, f2)
+
+local function same_proto(f1, f2)
   local uv = {}
   local i = 1
   while true do
@@ -31,7 +32,8 @@ function hardreload.diff(m1, m2)
   local clone = clonefunc.clone
   local proto = clonefunc.proto
   local diff = {}
-  local funcinfo = function(f)
+  
+  local function funcinfo(f)
     local info = debug.getinfo(f, "S")
     return string.format("%s(%d-%d)", info.short_src, info.linedefined, info.lastlinedefined)
   end
@@ -59,7 +61,7 @@ function hardreload.diff(m1, m2)
   end
 end
 
-local findloader = function(name)
+local function findloader(name)
   local msg = {}
   for _, loader in ipairs(package.searchers) do
     local f, extra = loader(name)
@@ -72,6 +74,7 @@ local findloader = function(name)
   end
   error(string.format("module '%s' not found:%s", name, table.concat(msg)))
 end
+
 local loaders = {}
 
 function hardreload.require(name)
@@ -104,14 +107,15 @@ local function update_funcs(proto_map)
   local getuservalue = debug.getuservalue
   local setuservalue = debug.setuservalue
   local upvaluejoin = debug.upvaluejoin
-  local type = type
-  local next = next
-  local rawset = rawset
+  local type = _ENV.type
+  local next = _ENV.next
+  local rawset = _ENV.rawset
   local proto = clonefunc.proto
   local clone = clonefunc.clone
   local print = hardreload.print
   local update_funcs_
-  local copy_function = function(f, nf)
+  
+  local function copy_function(f, nf)
     local i = 1
     while true do
       local name = getupvalue(f, i)
@@ -138,6 +142,7 @@ local function update_funcs(proto_map)
       setupvalue(nf, 1, _ENV)
     end
   end
+  
   local map = setmetatable({}, {
     __index = function(self, f)
       local nf = proto_map[proto(f)]

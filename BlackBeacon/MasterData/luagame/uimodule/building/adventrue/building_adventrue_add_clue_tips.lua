@@ -150,12 +150,14 @@ function ui:refresh_clue_award_info()
   end
   local data_list = {}
   local cfg
-  local build_data_func = function(award_cfg, index)
+  
+  local function build_data_func(award_cfg, index)
     return {
       id = award_cfg.ItemId,
       count = award_cfg.Num * self.v_temp_clue_count
     }
   end
+  
   for clue_id, count in pairs(self.v_select_clue_count_map) do
     if count > 0 then
       cfg = ShareRes.get_building_clue_cfg(clue_id)

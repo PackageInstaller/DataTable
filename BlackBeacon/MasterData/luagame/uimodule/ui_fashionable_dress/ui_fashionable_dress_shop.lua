@@ -371,7 +371,7 @@ function ui:clear_all_rt_view()
 end
 
 function ui:load_fashion_model()
-  local load_npc_done_cb = function(npc_index)
+  local function load_npc_done_cb(npc_index)
     if not self:visible() or not self:has_inited() then
       return
     end
@@ -385,6 +385,7 @@ function ui:load_fashion_model()
     self.v_current_model_view:play_act_effect(npc_index, EFFECT_NAME, nil, nil, true, pos)
     self.v_current_model_view:play_act_effect(npc_index, SWTICH_EFFECT_NAME, nil, nil, true)
   end
+  
   local fashion_cfg = ShareRes.get_fashion_cfg(self.v_buddy_fashion_id)
   local buddy_id = fashion_cfg.BuddyId
   local model_id = fashion_cfg.ModelId

@@ -47,7 +47,8 @@ local get_time_by_type = {
     return start_timestamp, end_timestamp
   end
 }
-local tmp_fun = function(cfg)
+
+local function tmp_fun(cfg)
   local activity_id = tonumber(cfg.Param[1])
   local activity_cfg = ShareRes.create("activity.routine_activity")[activity_id]
   local condition_id = activity_cfg.Condition
@@ -78,6 +79,7 @@ local tmp_fun = function(cfg)
     return false, ShareRes.get_condition_desc(condition_id), nil, nil, left_time
   end
 end
+
 local check_activity_open_fun = {
   [M.Type.MainLine] = function(cfg)
     local condition_check = Condition:check_condition(cfg.Condition)
@@ -158,25 +160,29 @@ local check_activity_open_fun = {
   [M.Type.MineSweeper] = tmp_fun,
   [M.Type.MazeGame] = tmp_fun
 }
-local activity_param_fun = function(param)
+
+local function activity_param_fun(param)
   Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.ui_activity_main_btn_UI_SOUND)
   local activity_id = tonumber(param[1])
   local activity_cfg = ShareRes.create("activity.routine_activity")[activity_id]
   UIMgr:get_ui(activity_cfg.UiName):ui_show(activity_id)
 end
-local activity_no_param_fun = function(param)
+
+local function activity_no_param_fun(param)
   Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.ui_activity_main_btn_UI_SOUND)
   local activity_id = tonumber(param[1])
   local activity_cfg = ShareRes.create("activity.routine_activity")[activity_id]
   UIMgr:get_ui(activity_cfg.UiName):ui_show()
 end
-local activity_shop_fun = function(param)
+
+local function activity_shop_fun(param)
   Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.ui_activity_main_btn_UI_SOUND)
   local activity_id = tonumber(param[1])
   local shop_id = tonumber(param[2])
   local activity_cfg = ShareRes.create("activity.routine_activity")[activity_id]
   UIMgr:get_ui(activity_cfg.UiName):ui_show(activity_id, shop_id)
 end
+
 local jump_table = {
   [M.Type.MainLine] = function(param)
     local chapter_id = tonumber(param[1])
@@ -213,6 +219,9 @@ function M:init_sys()
   self:sys_mq_bind(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.on_novice_activity_update, self)
   self:sys_mq_bind(Const.MSG_ON_BUDDY_TRYOUT_DATA_UPDATE, self.on_buddytryout_activity_update, self)
   self:sys_mq_bind(Const.MSG_ON_EXCHANGE_GOODS_UPDATE, self.on_exchange_goods_update, self)
+  self:sys_mq_bind(Const.MSG_ROLE_RES_CHANGE, self.on_exchange_goods_update, self)
+  self:sys_mq_bind(Const.MSG_CHAPTER_NODE_COMPLETE, self.refresh_redpoint, self)
+  self:sys_mq_bind(Const.MSG_ON_CHAPTER_UPDATE, self.refresh_redpoint, self)
 end
 
 function M:on_destroy()
@@ -252,7 +261,7 @@ function M:get_version_activity_detail_cfg()
 end
 
 function M:minigame_award_redpoint_update(activity_id)
-  local temp_fun = function(activity_id, pre_open_map)
+  local function temp_fun(activity_id, pre_open_map)
     if not pre_open_map then
       RedPointMgr:enable_redpoint(RedEnum.MINIGAME_COMPILATION_MAIN_UI, true)
     else
@@ -277,6 +286,7 @@ function M:minigame_award_redpoint_update(activity_id)
     end
     RedPointMgr:enable_redpoint(RedEnum.MINIGAME_COMPILATION_AWARD_UI, false)
   end
+  
   if activity_id then
     local t = self:get_store_state(self.MINIGAME_ACTIVITY_KEY)
     local pre_open_map = t and t[activity_id]
@@ -441,6 +451,7 @@ function M:on_novice_activity_update()
   self:refresh_version_child_activity_type_list()
   self:refresh_version_child_activity()
   self:refresh_summer_shop_red()
+  TaskMgr:refresh_maze_game_red_point()
 end
 
 function M:refresh_version_child_activity_type_list()
@@ -524,7 +535,7 @@ function M:on_summer_stage_info_init(data)
     self.v_summer_stage_info_list[info.id] = info
   end
   self.v_id_summer_stage_red = data.is_red
-  RedPointMgr:enable_redpoint(RedEnum.SUMMER_EPISODE_UPDATE_RED, self.v_id_summer_stage_red)
+  self:on_summer_stage_red_refresh()
   self:refresh_summer_stage_task_group_id()
   TaskMgr:refresh_summer_epi_redpoint()
 end
@@ -540,11 +551,20 @@ function M:get_summer_stage_list()
   return self.v_summer_stage_info_list
 end
 
-function M:on_summer_stage_open()
+function M:get_is_need_show_summer_stage_red()
+  return self.v_id_summer_stage_red
+end
+
+function M:on_summer_stage_red_refresh()
+  RedPointMgr:enable_redpoint(RedEnum.SUMMER_EPISODE_UPDATE_RED, self.v_id_summer_stage_red)
+end
+
+function M:hide_summer_stage_red()
   if not self.v_id_summer_stage_red then
     return
   end
   self.v_id_summer_stage_red = false
+  self:on_summer_stage_red_refresh()
   Network:call("c2gs_version_episode_red_status_update", {})
 end
 
@@ -554,6 +574,14 @@ end
 
 function M:get_fight_challenge_multiple()
   return self.v_fight_challenge_multiple or 1
+end
+
+function M:get_fight_cost(episode_id)
+  local episode_cfg = ShareRes.get_chapter_point_cfg(episode_id)
+  local cost = episode_cfg.FightCost[1] or episode_cfg.FightCost[2]
+  local fight_multiple = TimeLimitedActMgr:get_fight_challenge_multiple()
+  local fight_cost = fight_multiple * cost
+  return fight_cost
 end
 
 function M:refresh_summer_stage_task_group_id()

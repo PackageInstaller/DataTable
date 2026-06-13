@@ -21,10 +21,12 @@ function M:init_ui()
 end
 
 function M:open_write_name_pnl()
-  local cb = function()
+  local function cb()
     self:on_complete()
+    
     self.v_uiobjects.Up:SetActive(true)
   end
+  
   local change_name_num = PlayerMgr:get_player_rename_num()
   if change_name_num and change_name_num > 0 then
     cb()

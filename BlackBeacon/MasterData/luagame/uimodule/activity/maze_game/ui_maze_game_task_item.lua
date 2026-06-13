@@ -1,6 +1,7 @@
 local Base = require("ui.uiobject")
 local ui = Util.create_child_mt(Base)
 local TASK_CONFIG = require("gamelogic.task.task_config")
+local TaskState = Config.CommonDefine.TaskState
 local TASK_STATE = TASK_CONFIG.TASK_STATE
 local Math = require("base.mathx")
 
@@ -40,11 +41,9 @@ function ui:refresh_task_item()
   local objs = self.v_uiobjects
   local name_txt = coms.CtTitle_txt
   name_txt.text = task_cfg.Name
-  local is_receive = task_data.state == TASK_STATE.receive
+  local is_receive = task_data.state == TaskState.Complete
   local desc_txt = coms.CtContent_txt
   desc_txt.text = task_cfg.Desc
-  local color = STATE_TO_COLOR[is_receive]
-  Util.set_color(desc_txt, color)
   local progress_list = task_data.progress
   local progress = progress_list and #progress_list > 0 and progress_list[1].progress or 0
   local max = condition_cfg.Value
@@ -96,26 +95,26 @@ function ui:refresh_task_get_state()
   slider_img.fillAmount = (condition_progress or 0) / condition_cfg.Value
   local get_state = task_data.state
   local btn_obj = objs.CtGet
-  btn_obj:SetActive(get_state == TASK_STATE.receive)
+  btn_obj:SetActive(get_state == TaskState.Complete)
   local mask = objs.FinishMask
-  mask:SetActive(get_state == TASK_STATE.received)
+  mask:SetActive(get_state == TaskState.GotAward)
   local now_obj = objs.NowText
-  now_obj:SetActive(get_state == TASK_STATE.none and not show_jump)
+  now_obj:SetActive(get_state == TaskState.Accept and not show_jump)
   local jump_btn_obj = objs.CtJump
   if jump_btn_obj then
-    jump_btn_obj:SetActive(get_state == TASK_STATE.none and show_jump)
+    jump_btn_obj:SetActive(get_state == TaskState.Accept and show_jump)
   end
   local suc_obj = objs.FinishText
-  suc_obj:SetActive(get_state == TASK_STATE.received)
+  suc_obj:SetActive(get_state == TaskState.GotAward)
   local bg = objs.Bg
-  bg:SetActive(get_state == TASK_STATE.none or get_state == TASK_STATE.received)
+  bg:SetActive(get_state == TaskState.Accept)
   local BgComplete_ = objs.BgComplete
-  BgComplete_:SetActive(get_state == TASK_STATE.none or get_state == TASK_STATE.received)
+  BgComplete_:SetActive(get_state == TaskState.Accept or get_state == TaskState.Complete)
   local complete_img = objs.TaskComplete
-  complete_img:SetActive(get_state == TASK_STATE.received)
+  complete_img:SetActive(get_state == TaskState.GotAward)
   local finish = objs.FinishMask
   finish:SetActive(false)
-  if get_state == TASK_STATE.received then
+  if get_state == TaskState.GotAward then
     finish:SetActive(true)
     btn_obj:SetActive(false)
   end
@@ -141,7 +140,7 @@ function ui:refresh_award(award_group_id)
     local icon = Util.get_image("CiItemIcon", award_ui.transform)
     self:update_item_img(icon, icon_path)
     local mask = self:get_child_gameobj("Mask_", award_ui)
-    mask.gameObject:SetActive(state == TASK_STATE.received)
+    mask.gameObject:SetActive(state == TaskState.GotAward)
     local amount_txt = Util.get_text("AmoBg/CiItemAmount", award_ui)
     amount_txt.text = data[2]
     self:set_button_listener(Util.get_button(nil, award_ui), function()

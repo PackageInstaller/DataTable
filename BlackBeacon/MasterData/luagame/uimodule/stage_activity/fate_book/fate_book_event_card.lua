@@ -263,7 +263,8 @@ function ui:confirm_select_option(option_index, option_id)
       return
     end
   end
-  local cb = function(ok, resp)
+  
+  local function cb(ok, resp)
     self.v_uiobjects.NoClick:SetActive(false)
     if not ok then
       return
@@ -276,6 +277,7 @@ function ui:confirm_select_option(option_index, option_id)
       self:after_confirm_select_option(resp)
     end
   end
+  
   ChallengeRingPlusMgr:request_select_event_option(self.v_index, self.v_select_option_index, cb)
 end
 
@@ -317,14 +319,16 @@ function ui:move_to_pos(obj)
 end
 
 function ui:do_hide()
-  local cb = function()
+  local function cb()
     self:reset_data()
+    
     self.v_is_click_pause = false
     self.v_stop = true
     self:ui_hide()
     self.v_stop = false
     self.v_have_get_award_buff_type = nil
   end
+  
   ChallengeRingPlusMgr:req_remove_card(cb)
 end
 

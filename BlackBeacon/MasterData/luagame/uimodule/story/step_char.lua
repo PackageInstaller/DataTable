@@ -194,7 +194,8 @@ function M:load_char_spine_res(char_data)
   local loop_anim_name1 = char_data.LoopAnimName1
   local pos_info = char_data.PosInfo
   local scale = 0 ~= pos_info[4] and pos_info[4] or 1
-  local load_cb = function(obj)
+  
+  local function load_cb(obj)
     local spine_component = obj:GetComponent(SpineController)
     if char_data.IsReset and spine_component and not spine_component:IsNull() then
       spine_component:ClearBodyTrack(true)
@@ -221,6 +222,7 @@ function M:load_char_spine_res(char_data)
       self:update_effect(char_data)
     end
   end
+  
   self.v_lua_obj:load_spine_res(role_res, role_pos, load_cb)
 end
 
@@ -237,11 +239,13 @@ function M:load_char_img_res(char_data)
   if 0 ~= char_data.Grey then
     self:image_grey(char_img_obj, char_data.Grey)
   end
-  local callback = function()
+  
+  local function callback()
     if self.v_lua_obj.v_visible then
       self:update_effect(char_data)
     end
   end
+  
   local path = CHAR_PATH .. role_img
   ResMgr:load_set_icon(char_img_obj, path, callback, true, self.v_lua_obj)
 end
@@ -331,7 +335,8 @@ function M:show_effect(char_data)
     canvas.alpha = 1
     bg_obj.transform:SetSizeDeltaA(HIDE_BG_POS.x, HIDE_BG_POS.y)
     frame_obj.transform:SetSizeDeltaA(HIDE_FRAME_POS.x, HIDE_FRAME_POS.y)
-    local sequence_cb = function()
+    
+    local function sequence_cb()
       local seqence = self:get_new_sequence("char_show_effect_extend" .. role_pos)
       seqence:Append(mask_obj.transform:DOSizeDelta(SHOW_EFFECT_POS, EXTEND_SHOW_TIME))
       seqence:Insert(bg_obj.transform:DOSizeDelta(SHOW_BG_POS, EXTEND_SHOW_TIME))
@@ -340,14 +345,17 @@ function M:show_effect(char_data)
         self:spine_show_effect_complete(char_data.RolePos)
       end)
     end
+    
     local bg_res = char_data.ShowBgRes
     if not Util.is_empty(bg_res) then
       local img_obj = self.v_uicompents["SpineBg" .. role_pos .. "_img"]
-      local cb = function()
+      
+      local function cb()
         self.v_uiobjects["SpineBg" .. role_pos]:SetActive(true)
         img_obj.transform:SetLocalPositionA(char_data.ShowBgPosX, char_data.ShowBgPosY, char_data.ShowBgPosZ)
         sequence_cb()
       end
+      
       ResMgr:load_set_icon(img_obj, bg_res, cb, true)
     else
       sequence_cb()

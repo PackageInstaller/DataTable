@@ -1,5 +1,5 @@
 local UnityShader = UnityEngine.Shader
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local TypeSceneContainer = typeof(CS.Game.SceneContainer)
 local UnitySkinnedMeshRenderer = typeof(UnityEngine.SkinnedMeshRenderer)
 local TypeTimeLineRenderHelper = typeof(CS.Game.TimeLineRenderHelper)
@@ -129,6 +129,7 @@ function ui:reset_info_view()
 end
 
 function ui:ui_on_show(data_list, do_skip, show_extra_when_end, show_white_mask, hide_cb)
+  FashionMgr:refresh_main_scene_fashion(0)
   self:reset_info_view()
   self.v_hide_cb = hide_cb
   self.v_uiobjects.WhiteMask:SetActive(true == show_white_mask)
@@ -156,7 +157,6 @@ function ui:ui_on_show(data_list, do_skip, show_extra_when_end, show_white_mask,
     self.v_cur_idx = 1
     self:do_load_next()
   end
-  FashionMgr:refresh_main_scene_fashion(0)
 end
 
 function ui:ui_on_hide()

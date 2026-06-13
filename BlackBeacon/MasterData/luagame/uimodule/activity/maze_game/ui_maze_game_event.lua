@@ -27,17 +27,39 @@ function ui:on_click_option(option_id)
     ponder_maze_mgr:add_thought_count(thought_id, add_count)
     hide_on_comp = true
   elseif option_cfg.OptionType == OPTION_TYPE.BATTLE then
-    local enter_battle = ponder_maze_mgr:enter_option_battle(self.v_node_id, self.v_event_id, option_id)
-    if not enter_battle then
-      is_comp = true
-      hide_on_comp = true
-    end
+    self:on_battle_click(option_id)
   elseif option_cfg.OptionType == OPTION_TYPE.EVENT_JUMP then
     local event_id = option_cfg.Param[1]
     self:set_event(event_id)
   end
-  if is_comp and ponder_maze_mgr:try_comp_node(self.v_node_id) and hide_on_comp then
+  if option_cfg.OptionType ~= OPTION_TYPE.BATTLE and is_comp and ponder_maze_mgr:try_comp_node(self.v_node_id) and hide_on_comp then
     self:ui_hide()
+  end
+end
+
+function ui:on_battle_click(option_id)
+  local ponder_maze_mgr = NoviceMgr.ponder_maze_mgr
+  local is_can_skip = ponder_maze_mgr:is_game_stop()
+  if not is_can_skip then
+    local option_cfg = ShareRes.get_ponder_maze_node_option_cfg(option_id)
+    local battle_point_id = option_cfg.Param[1]
+    local battle_param = ponder_maze_mgr:get_battle_pass_id(battle_point_id, self.v_node_id)
+    is_can_skip = NoviceMgr:get_ponder_maze_node_battle_pass(self.v_activity_id, battle_param)
+  end
+  if is_can_skip then
+    local function sure_cb()
+      if ponder_maze_mgr:try_comp_node(self.v_node_id) then
+        self:ui_hide()
+      end
+    end
+    
+    local function cancel_cb()
+      ponder_maze_mgr:enter_option_battle(self.v_node_id, self.v_event_id, option_id)
+    end
+    
+    Util.show_conform_tip("当前选项可跳过", "取消", "确定", cancel_cb, sure_cb)
+  else
+    ponder_maze_mgr:enter_option_battle(self.v_node_id, self.v_event_id, option_id)
   end
 end
 
@@ -48,11 +70,14 @@ end
 function ui:ui_on_show(activity_id, point_id, node_id, event_id, option_id, battle_return)
   if battle_return and option_id then
     local option_cfg = ShareRes.get_ponder_maze_node_option_cfg(option_id)
-    event_id = NoviceMgr.ponder_maze_mgr:is_battle_pass() and option_cfg.Param[2] or option_cfg.Param[1]
+    if NoviceMgr.ponder_maze_mgr:is_battle_pass() then
+      event_id = option_cfg.Param[2]
+    end
     NoviceMgr.ponder_maze_mgr:clear_battle_node_param()
   end
   if not event_id then
     self:ui_hide()
+    return
   end
   self:refresh_view(activity_id, point_id, node_id, event_id, option_id)
 end
@@ -100,7 +125,8 @@ function ui:create_option(option_id)
   local tips_desc_txt = self:get_text("TipsDesc", obj)
   local bg1 = self:get_child_gameobj("Bg1", obj)
   local bg2 = self:get_child_gameobj("Bg2", obj)
-  local uiparticle = 0 == option_cfg.OptionDescType and self.v_uiobjects.Fx_Bg1_Select or 1 == option_cfg.OptionDescType and self.v_uiobjects.Fx_Bg2_Select
+  local select_effect = 0 == option_cfg.OptionDescType and self:get_child_gameobj("Fx_Bg1_Select_", bg1) or 1 == option_cfg.OptionDescType and self:get_child_gameobj("Fx_Bg2_Select_", bg2)
+  select_effect:SetActive(false)
   bg1:SetActive(0 == option_cfg.OptionDescType)
   bg2:SetActive(1 == option_cfg.OptionDescType)
   desc_txt.text = option_cfg.OptionDescUp
@@ -117,9 +143,9 @@ function ui:create_option(option_id)
     if self.v_particle_timer then
       return
     end
-    if uiparticle then
-      uiparticle:SetActive(false)
-      uiparticle:SetActive(true)
+    if select_effect then
+      select_effect:SetActive(false)
+      select_effect:SetActive(true)
     end
     self.v_particle_timer = Timer:add_timer(nil, 0.7, self.on_click_option, self, option_id)
   end)

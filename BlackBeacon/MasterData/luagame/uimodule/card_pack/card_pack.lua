@@ -7,7 +7,8 @@ local TreasureChestCfg = require("uimodule.treasure_chest.treasure_chest_configs
 local AnimaCard = require("uimodule.card_pack.anima_card")
 local type_playable_director = typeof(UnityEngine.Playables.PlayableDirector)
 local MODEL = {}
-local _sort_func = function(a, b)
+
+local function _sort_func(a, b)
   local x = 0
   local y = 0
   if a[1].Priority then
@@ -257,7 +258,8 @@ function ui:set_anima_card(is_delete, card_pos, img_name, quality, drag_card_z, 
   local index = anima_card.v_index
   self.v_on_show_card_list[index] = anima_card
   self.v_anima_card_list[index] = nil
-  local cb = function()
+  
+  local function cb()
     anima_card:set_activate(false)
     self.v_on_show_card_list[anima_card.v_index] = nil
     self.v_anima_card_list[anima_card.v_index] = anima_card
@@ -268,6 +270,7 @@ function ui:set_anima_card(is_delete, card_pos, img_name, quality, drag_card_z, 
       anima_end_cb()
     end
   end
+  
   if is_delete then
     anima_card:play_delete_anima(cb)
   else

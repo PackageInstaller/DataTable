@@ -12,7 +12,7 @@ local FightDefine = require("cs_share.fight_define")
 local spline_bezier = require("gamelogic.splines.spline_bezier")
 local ColorBlack = UnityEngine.Color.black
 local MagicDef = require("cs_share.magic_def")
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local TypeCamDist = typeof(CS.CameraDistance)
 local UnityLineCast = UnityEngine.Physics.Linecast
 local CSCameraRayCast = CSHelper.CameraRayCast
@@ -57,12 +57,14 @@ local NEW_SHAKE_TYPE = {
   [2] = 2,
   [3] = 3
 }
-local get_zero_vec3 = function()
+
+local function get_zero_vec3()
   _vec3.x = 0
   _vec3.y = 0
   _vec3.z = 0
   return _vec3
 end
+
 local CORD_TYPE = {
   WORLD = 0,
   SELF = 1,
@@ -298,6 +300,7 @@ function M:_init(char, camera_obj)
   self.v_dbm_timestamp = math.mininteger
   self.v_temp_focal_pos_vec3 = Vec3.New()
   self.v_temp_camera_pos_vec3 = Vec3.New()
+  self.v_move_correct_Lerp_y = 2
   self:_apply_rotation_and_distance()
   self.v_allow_rotation = false
   self.v_allow_zoom = false
@@ -333,14 +336,13 @@ function M:_init(char, camera_obj)
   self.v_camera_enable = 0 ~= self.v_camera.cullingMask
   self:reset_shadoe_camara_enable()
   Util.bind_msg(self, Const.MSG_RESOLUTION_CHANGE, self.set_ui_rt, self)
-  self.v_is_low_memory_device = Global.render_mgr:is_low_memory_device()
+  local is_low_memory_device = Global.render_mgr:is_low_memory_device()
   local streaming_controller = self.v_camera_obj:GetComponent(typeof(UnityEngine.StreamingController))
-  if self.v_is_low_memory_device then
+  if is_low_memory_device then
     streaming_controller.enabled = true
   else
     streaming_controller.enabled = false
   end
-  self:enable_camera_occlusion_culling(false)
 end
 
 function M:set_ui_rt(msg)
@@ -357,7 +359,7 @@ function M:set_ui_rt(msg)
   local screen_width, screen_height = UnityEngine.Screen.width, UnityEngine.Screen.height
   local height = math.min(screen_height, resolution_height)
   local org_down_rate = screen_height / height
-  local width = math.floor(screen_width / org_down_rate)
+  local width = _floor(screen_width / org_down_rate)
   self.v_rt_img = CompExtensions.GetUIRT(width, height, "CameraRawRT")
   local raw_img = UIMgr:get_game_raw_img()
   UIMgr:set_game_raw_img_active(true)
@@ -381,6 +383,7 @@ function M:on_destroy()
   self:release_ui_rt()
   self:remove_role_effect_on_destroy()
   Util.unbind_all_msg(self)
+  Global.render_mgr:on_destroy_camera()
 end
 
 function M:release_ui_rt()
@@ -616,6 +619,12 @@ function M:init_camera_info(forbid_camera_blend, on_pre_set_camera_cfg)
   MsgGame:mq_publish2(Const.MSG_ON_CHANGE_CAMERA)
   self:reset_attach_point(Global.hero)
   self.v_move_correct_Lerp_y = self.v_camera_cfg.MoveCorrectYLerp or 2
+  if self.v_follow_target_param then
+    local default_distance = self.v_camera_cfg.DefaultDistance
+    local max_add_val = _min(self.v_follow_target_param[2], self.v_gear_distance_max_val - default_distance)
+    local add_val = _floor(max_add_val / self.v_follow_target_param[5])
+    self.v_char_to_focal_max_distance = (self.v_follow_target_param[1] + add_val * self.v_follow_target_param[4]) / 2
+  end
   self:init_camera_effect_lua_cfg()
 end
 
@@ -1395,12 +1404,15 @@ function M:change_follow_target(follow_target_type, npc, param, is_from_editor)
   self.v_is_in_change_follow_target = true
   self.v_correct_state = CORRECT_TYPE.CHANGE_FOCUS
   self.v_is_change_follow_target_new = false
-  self.v_char_to_target_max_distance = nil
   self.v_lerp_correct_val = self.v_pinch_distance
   if 4 ~= self.v_follow_target_type then
     self.v_follow_target = npc
     self.v_follow_target_param = param
   end
+  local default_distance = self.v_camera_cfg.DefaultDistance
+  local max_add_val = _min(self.v_follow_target_param[2], self.v_gear_distance_max_val - default_distance)
+  local add_val = _floor(max_add_val / self.v_follow_target_param[5])
+  self.v_char_to_focal_max_distance = (self.v_follow_target_param[1] + add_val * self.v_follow_target_param[4]) / 2
   self:_follow_target()
 end
 
@@ -1448,12 +1460,15 @@ function M:change_follow_target_new(follow_target_type, npc, param)
   self.v_correct_state = CORRECT_TYPE.CHANGE_FOCUS
   self.v_lerp_correct_val = self.v_pinch_distance
   self.v_is_in_change_follow_target = true
-  self.v_char_to_target_max_distance = nil
   self.v_is_change_follow_target_new = true
   if 4 ~= self.v_follow_target_type then
     self.v_follow_target = npc
     self.v_follow_target_param = param
   end
+  local default_distance = self.v_camera_cfg.DefaultDistance
+  local max_add_val = _min(self.v_follow_target_param[2], self.v_gear_distance_max_val - default_distance)
+  local add_val = _floor(max_add_val / self.v_follow_target_param[5])
+  self.v_char_to_focal_max_distance = (self.v_follow_target_param[1] + add_val * self.v_follow_target_param[4]) / 2
   self:_follow_target()
 end
 
@@ -1567,13 +1582,14 @@ function M:_follow_target_by_target_pos()
   local target_pos = self.v_focal_target_pos
   local char_pos = Global.hero:get_pos_vec3()
   temp_vec3_01:SetA(target_pos)
-  temp_vec3_00:SetA(Global.hero:get_pos_vec3())
+  temp_vec3_00:SetA(char_pos)
   temp_vec3_01:Sub(temp_vec3_00)
   local follow_type
   if not self.camera_style or 0 == self.camera_style then
     if type(focus_type) == "number" then
       if 0 == focus_type then
         temp_vec3_01:Mul(0.5)
+        temp_vec3_00:Add(temp_vec3_01)
         follow_type = FOLLOW_TYPE.MIDDLE
       elseif 1 == focus_type then
         temp_vec3_00:SetA(target_pos)
@@ -1581,6 +1597,7 @@ function M:_follow_target_by_target_pos()
       end
     else
       temp_vec3_01:Mul(0.5)
+      temp_vec3_00:Add(temp_vec3_01)
       follow_type = FOLLOW_TYPE.MIDDLE
     end
   else
@@ -1593,7 +1610,7 @@ function M:_follow_target_by_target_pos()
   local max_distance = defaule_distance + max_add_val
   local max_height = defaule_height + max_add_val
   if check_distance < distance then
-    local val = math.floor((distance - check_distance) / calculate_val)
+    local val = _floor((distance - check_distance) / calculate_val)
     local add_val = _min(val * param_add_val, max_add_val)
     self.v_target_val = _min(max_distance, defaule_distance + add_val)
     self.v_target_height = _min(max_height, defaule_height + add_val)
@@ -1604,11 +1621,9 @@ function M:_follow_target_by_target_pos()
   if self.v_gear_distance_max_val then
     self.v_target_val = Math.Clamp(self.v_target_val, self.v_gear_distance_min_val, self.v_gear_distance_max_val)
   end
-  if follow_type == FOLLOW_TYPE.MIDDLE then
-    if self.v_gear_distance_max_val and self.v_target_val >= math.min(max_distance, self.v_gear_distance_max_val) and not self.v_char_to_target_max_distance then
-      self.v_char_to_target_max_distance = temp_vec3_01:Magnitude()
-    end
-    temp_vec3_00:Add(temp_vec3_01:ClampMagnitude(self.v_char_to_target_max_distance or 100))
+  if follow_type == FOLLOW_TYPE.MIDDLE and self.v_gear_distance_max_val and self.v_target_val >= math.min(max_distance, self.v_gear_distance_max_val) then
+    temp_vec3_00:SetA(char_pos)
+    temp_vec3_00:Add(temp_vec3_01:ClampMagnitude(self.v_char_to_focal_max_distance or 100))
   end
   if not self.v_camera_cfg.DontAddDefaultOffset then
     temp_vec3_00.x = temp_vec3_00.x + (self.v_camera_cfg.DefaultXPOs or 0)
@@ -1761,7 +1776,7 @@ function M:_update_magic_vcam()
   end
 end
 
-local help_init_timer = function(ease_in, duration, ease_out, vcam)
+local function help_init_timer(ease_in, duration, ease_out, vcam)
   duration = -1 == duration and 1.0E8 or duration + ease_out
   vcam.duration = duration
   vcam.ease_in = ease_in
@@ -2658,10 +2673,10 @@ function M:on_pinch(delta)
   if 0 == delta then
     delta = 0
   elseif delta < self.v_pinch_limit_min and delta > -self.v_pinch_limit_min then
-    delta = delta / math.abs(delta) * self.v_pinch_limit_min
+    delta = delta / _abs(delta) * self.v_pinch_limit_min
   elseif delta < self.v_pinch_limit_max and delta > -self.v_pinch_limit_max then
   else
-    delta = delta / math.abs(delta) * self.v_pinch_limit_max
+    delta = delta / _abs(delta) * self.v_pinch_limit_max
   end
   self.v_delta = self.v_delta + delta * self.v_pinch_distance
   self.v_delta = _clamp(self.v_delta, self.v_min_delta, self.v_max_delta)
@@ -2865,7 +2880,7 @@ function M:switch_camera_gear(is_add, is_init)
   self:update_cache_camera_info(self.v_target_height, self.v_target_val)
 end
 
-local set_old_shake_data = function(t, type, amplitude, atten, freq, now_time, duration, mutual)
+local function set_old_shake_data(t, type, amplitude, atten, freq, now_time, duration, mutual)
   t.type = type
   t.amplitude = amplitude
   t.atten = atten
@@ -2878,7 +2893,8 @@ local set_old_shake_data = function(t, type, amplitude, atten, freq, now_time, d
   t.life_time = duration
   t.duration = 0
 end
-local copy_shake_preset_data = function(preset, cfg)
+
+local function copy_shake_preset_data(preset, cfg)
   for key, value in pairs(cfg) do
     if type(value) == "table" then
       for key2, param in pairs(value) do
@@ -3950,13 +3966,15 @@ function M:change_switch_scene_processing_bg(node_id)
   if self.v_default_texture_path == path then
     return
   end
-  local callback = function(image)
+  
+  local function callback(image)
     if image.overrideSprite == nil then
       return
     end
     local comp = self.v_camera_obj:GetComponent(typeof(CS.SwitchSceneProcessing))
     comp.defaultTex = image.overrideSprite.texture
   end
+  
   fight:load_temp_sprite(true, path, callback)
   self.v_default_texture_path = path
 end

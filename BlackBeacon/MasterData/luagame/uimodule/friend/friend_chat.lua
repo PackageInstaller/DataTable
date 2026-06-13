@@ -66,13 +66,16 @@ function ui:ui_finish_load()
   self.v_send_msg = ""
   self.v_input_max_len = ShareRes.get_game_const("ChatMsgLenLimit") or 200
   self.v_msg_input.placeholder.text = Util.format_str("（不超过{1}个字）", self.v_input_max_len)
-  local top_cb = function()
+  
+  local function top_cb()
     self:_on_slider_to_top()
   end
-  local buttom_cb = function()
+  
+  local function buttom_cb()
     self.v_unread_msg_num = 0
     self.v_new_msg_btn.gameObject:SetActive(false)
   end
+  
   self.v_chat_list = LoopListClass:new(self, self.v_uiobjects.ChatScrollView, ChatItemClass, top_cb, buttom_cb)
 end
 

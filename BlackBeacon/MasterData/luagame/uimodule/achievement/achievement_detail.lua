@@ -376,7 +376,8 @@ function ui:classify_achievements()
       end
     end
   end
-  local sort_func = function(a, b)
+  
+  local function sort_func(a, b)
     if a.sort_index == b.sort_index and a.Priority == b.Priority then
       return a.Id < b.Id
     elseif a.sort_index == b.sort_index then
@@ -385,6 +386,7 @@ function ui:classify_achievements()
       return a.sort_index < b.sort_index
     end
   end
+  
   _tsort(self.v_now_achievement_all, sort_func)
   _tsort(self.v_now_achievement_receive, sort_func)
   _tsort(self.v_now_achievement_received, sort_func)

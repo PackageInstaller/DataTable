@@ -25,10 +25,12 @@ local JOYSTICK_POS = Vec3.New(0, 0, 0)
 local NO_NPC_JOYSTICK_POS = Vec3.New(0, 0, 0)
 local CHANGE_STATE_TYPE = {CUR_SKILL = 1, LIBRARY = 2}
 local fight_ui_objs = {}
-local check_npc = function(npc)
+
+local function check_npc(npc)
   return npc and not npc:is_destroy()
 end
-local get_behavior_scope_table = function(table_name)
+
+local function get_behavior_scope_table(table_name)
   BehaviorMgr.SCOPE_GLOBAL[table_name] = BehaviorMgr.SCOPE_GLOBAL[table_name] or {}
   return BehaviorMgr.SCOPE_GLOBAL[table_name]
 end
@@ -251,12 +253,13 @@ end
 
 function M.cast_skill(npc, target, skill_id, targetx, targetz, skill_action_info, start_frame)
   if UNITY_EDITOR then
-    local callback = function()
+    local function callback()
       if not check_npc(npc) then
         return
       end
       npc.skill_mgr:cast_skill(skill_id, target, targetx, nil, targetz, skill_action_info, start_frame)
     end
+    
     return Global.util_fun:call_event_fun(CICLE_FUN_TYPE.CAST_SKILL, callback)
   else
     if not check_npc(npc) then
@@ -290,12 +293,13 @@ function M.cast_missile(npc, target, posx, posz, missile_id, missile_level, look
     born_pos = target_pos
   end
   if UNITY_EDITOR then
-    local callback = function()
+    local function callback()
       if not check_npc(npc) then
         return
       end
       return npc.skill_mgr:add_missile_task(missile_id, target, target_pos, missile_level, lookat_pos, born_pos, nil, skill_action_info, true, true)
     end
+    
     return Global.util_fun:call_event_fun(CICLE_FUN_TYPE.CAST_MISSILE, callback)
   else
     if not check_npc(npc) then
@@ -334,12 +338,13 @@ function M.cast_missile3(npc, target, posx, posz, missile_id, missile_level, loo
     born_pos = target_pos
   end
   if UNITY_EDITOR then
-    local callback = function()
+    local function callback()
       if not check_npc(npc) then
         return
       end
       return npc.skill_mgr:add_missile_task(missile_id, target, target_pos, missile_level, lookat_pos, born_pos, true, skill_action_info, true)
     end
+    
     return Global.util_fun:call_event_fun(CICLE_FUN_TYPE.CAST_MISSILE, callback)
   else
     if not check_npc(npc) then
@@ -373,12 +378,13 @@ function M.cast_missile_new(npc, target, posx, posz, missile_id, missile_level, 
     born_pos = target_pos
   end
   if UNITY_EDITOR then
-    local callback = function()
+    local function callback()
       if not check_npc(npc) then
         return
       end
       return npc.skill_mgr:add_missile_task(missile_id, target, target_pos, missile_level, lookat_pos, born_pos, nil, skill_action_info, true)
     end
+    
     return Global.util_fun:call_event_fun(CICLE_FUN_TYPE.CAST_MISSILE, callback)
   else
     if not check_npc(npc) then
@@ -416,9 +422,10 @@ function M.cast_magic(npc, target, magic_id, level, add_count)
     add_count = math.floor(add_count)
   end
   if UNITY_EDITOR then
-    local callback = function()
+    local function callback()
       return target.magic_mgr:add_magic(npc, magic_id, nil, nil, level, nil, nil, add_count)
     end
+    
     return Global.util_fun:call_event_fun(CICLE_FUN_TYPE.CAST_MAGIC, callback)
   else
     return target.magic_mgr:add_magic(npc, magic_id, nil, nil, level, nil, nil, add_count)
@@ -672,7 +679,14 @@ function M.get_npc_shield(npc)
   return npc:get_shield_num()
 end
 
-local get_camp = function(self_camp, relationship)
+function M.get_hero_job_id(hero)
+  if not hero:is_hero() then
+    return
+  end
+  return hero.buddy_cfg.Job
+end
+
+local function get_camp(self_camp, relationship)
   local npc_camp
   if self_camp == CAMPS.FRIEND and relationship == RELATIONSHIP.SIMILAR or self_camp == CAMPS.ENEMY and relationship == RELATIONSHIP.OPPOSED then
     npc_camp = CAMPS.FRIEND
@@ -2143,11 +2157,11 @@ function M.stop_effect(char, fx_id)
   ctrl:stop_effect(fx_id)
 end
 
-function M.flash_to_pos(npc, x, z, y, only_check_boundar)
+function M.flash_to_pos(npc, x, z, y, only_check_boundar, trigger_area_event)
   if not check_npc(npc) then
     return
   end
-  npc.role_move_ctrl:flash_to_pos(x, z, y, only_check_boundar)
+  npc.role_move_ctrl:flash_to_pos(x, z, y, only_check_boundar, trigger_area_event)
 end
 
 function M.set_face_skill_indicator_pos(npc, is_open, dev_val, move_speed, back_speed)
@@ -2477,7 +2491,7 @@ function M.set_npc_floating_text_hud_visible(npc, is_show)
 end
 
 function M.get_missile_uuid(missile)
-  local uuid = missile.uuid
+  local uuid = missile.id
   return uuid
 end
 
@@ -3043,12 +3057,8 @@ function M.set_link_stage_state(stage)
   end
 end
 
-function M.change_skill_link_duration(state, delta)
-  local fight = UIMgr:try_get_loaded_ui(UIMgr.FIGHT_UI_NAME)
-  if fight then
-    local ult_skill_view = fight:get_panel("ult_skill_view")
-    ult_skill_view:change_skill_link_duration(state, delta)
-  end
+function M.change_skill_link_duration(stage, delta)
+  FightDataMgr:change_skill_link_duration(stage, delta)
 end
 
 function M.change_ult_effect(npc, state)
@@ -3592,6 +3602,12 @@ function M.get_role_job(role)
     return
   end
   return role:get_role_job()
+end
+
+function M.decrease_closeup_camera_priority()
+  if Cinemachine then
+    Cinemachine:decrease_closeup_camera_priority()
+  end
 end
 
 return M

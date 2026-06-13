@@ -6333,6 +6333,246 @@ return {
     Level = 1,
     Type = 52
   },
+  [40336801] = {
+    Arg = {
+      40336801,
+      0,
+      0,
+      0,
+      0
+    },
+    Desc = "进行闪避时，降低<color=#E77902>30%</color>伤害增幅和伤害抗性，持续5秒，触发完美闪避时立刻移除该效果",
+    Id = 40336801,
+    IsCover = 0,
+    IsDeadExpired = 0,
+    IsFightEndEffect = false,
+    Level = 1,
+    Type = 52
+  },
+  [40336802] = {
+    Arg = {
+      40336802,
+      0,
+      0,
+      0,
+      0
+    },
+    Desc = "进行闪避时，降低<color=#E77902>50%</color>伤害增幅和伤害抗性，持续5秒，触发完美闪避时立刻移除该效果",
+    Id = 40336802,
+    IsCover = 0,
+    IsDeadExpired = 0,
+    IsFightEndEffect = false,
+    Level = 1,
+    Type = 52
+  },
+  [40336803] = {
+    Arg = {
+      40336803,
+      0,
+      0,
+      0,
+      0
+    },
+    Desc = "进行闪避时，降低<color=#E77902>70%</color>伤害增幅和伤害抗性，持续5秒，触发完美闪避时立刻移除该效果",
+    Id = 40336803,
+    IsCover = 0,
+    IsDeadExpired = 0,
+    IsFightEndEffect = false,
+    Level = 1,
+    Type = 52
+  },
+  [40336901] = {
+    Arg = {
+      40336901,
+      0,
+      0,
+      0,
+      0
+    },
+    Desc = "闪避1次后立刻进入冷却，触发完美闪避会重置闪避冷却",
+    Id = 40336901,
+    IsCover = 0,
+    IsDeadExpired = 0,
+    IsFightEndEffect = false,
+    Level = 1,
+    Type = 52
+  },
+  [40337001] = {
+    Arg = {
+      40337001,
+      0,
+      0,
+      0,
+      0
+    },
+    Desc = "连携充能效率降低<color=#E77902>20%</color>",
+    Id = 40337001,
+    IsCover = 0,
+    IsDeadExpired = 0,
+    IsFightEndEffect = false,
+    Level = 1,
+    Type = 52
+  },
+  [40337002] = {
+    Arg = {
+      40337002,
+      0,
+      0,
+      0,
+      0
+    },
+    Desc = "连携充能效率降低<color=#E77902>30%</color>",
+    Id = 40337002,
+    IsCover = 0,
+    IsDeadExpired = 0,
+    IsFightEndEffect = false,
+    Level = 1,
+    Type = 52
+  },
+  [40337003] = {
+    Arg = {
+      40337003,
+      0,
+      0,
+      0,
+      0
+    },
+    Desc = "连携充能效率降低<color=#E77902>40%</color>",
+    Id = 40337003,
+    IsCover = 0,
+    IsDeadExpired = 0,
+    IsFightEndEffect = false,
+    Level = 1,
+    Type = 52
+  },
+  [40337101] = {
+    Arg = {
+      40337101,
+      0,
+      0,
+      0,
+      0
+    },
+    Desc = "所有敌人的所有元素伤害抗性提升<color=#E77902>40%</color>，触发元素异常后移除对应元素的抗性",
+    Id = 40337101,
+    IsCover = 0,
+    IsDeadExpired = 0,
+    IsFightEndEffect = false,
+    Level = 1,
+    Type = 52
+  },
+  [40337102] = {
+    Arg = {
+      40337102,
+      0,
+      0,
+      0,
+      0
+    },
+    Desc = "所有敌人的所有元素伤害抗性提升<color=#E77902>50%</color>，触发元素异常后移除对应元素的抗性",
+    Id = 40337102,
+    IsCover = 0,
+    IsDeadExpired = 0,
+    IsFightEndEffect = false,
+    Level = 1,
+    Type = 52
+  },
+  [40337103] = {
+    Arg = {
+      40337103,
+      0,
+      0,
+      0,
+      0
+    },
+    Desc = "所有敌人的所有元素伤害抗性提升<color=#E77902>70%</color>，触发元素异常后移除对应元素的抗性",
+    Id = 40337103,
+    IsCover = 0,
+    IsDeadExpired = 0,
+    IsFightEndEffect = false,
+    Level = 1,
+    Type = 52
+  },
+  [40337201] = {
+    Arg = {
+      40337201,
+      0,
+      0,
+      0,
+      0
+    },
+    Desc = "敌人出生时获得<color=#E77902>5</color>层伤害免疫效果，敌人被拖拽时移除该效果",
+    Id = 40337201,
+    IsCover = 0,
+    IsDeadExpired = 0,
+    IsFightEndEffect = false,
+    Level = 1,
+    Type = 52
+  },
+  [40337202] = {
+    Arg = {
+      40337202,
+      0,
+      0,
+      0,
+      0
+    },
+    Desc = "敌人出生时获得<color=#E77902>10</color>层伤害免疫效果，敌人被拖拽时移除该效果",
+    Id = 40337202,
+    IsCover = 0,
+    IsDeadExpired = 0,
+    IsFightEndEffect = false,
+    Level = 1,
+    Type = 52
+  },
+  [40337203] = {
+    Arg = {
+      40337203,
+      0,
+      0,
+      0,
+      0
+    },
+    Desc = "敌人出生时获得<color=#E77902>20</color>层伤害免疫效果，敌人被拖拽时移除该效果",
+    Id = 40337203,
+    IsCover = 0,
+    IsDeadExpired = 0,
+    IsFightEndEffect = false,
+    Level = 1,
+    Type = 52
+  },
+  [40337301] = {
+    Arg = {
+      40337301,
+      0,
+      0,
+      0,
+      0
+    },
+    Desc = "释放1技能后，充能伤害提升20%，持续3秒，可叠加三层",
+    Id = 40337301,
+    IsCover = 0,
+    IsDeadExpired = 0,
+    IsFightEndEffect = false,
+    Level = 1,
+    Type = 52
+  },
+  [40337401] = {
+    Arg = {
+      40337401,
+      0,
+      0,
+      0,
+      0
+    },
+    Desc = "识破敌人技能时，对敌人造成最大生命值40%的伤害",
+    Id = 40337401,
+    IsCover = 0,
+    IsDeadExpired = 0,
+    IsFightEndEffect = false,
+    Level = 1,
+    Type = 52
+  },
   [40339101] = {
     Arg = {
       3,
@@ -6599,6 +6839,22 @@ return {
     },
     Desc = "角色强化伤害提升10%，被强化伤害命中后怪物水，雷光属性伤害抗性削弱30%。",
     Id = 70000215,
+    IsCover = 0,
+    IsDeadExpired = 0,
+    IsFightEndEffect = false,
+    Level = 1,
+    Type = 52
+  },
+  [70000216] = {
+    Arg = {
+      70000216,
+      0,
+      0,
+      0,
+      0
+    },
+    Desc = "角色光属性、火属性伤害提升10%，处于连携状态下，光属性、火属性伤害额外提升30%",
+    Id = 70000216,
     IsCover = 0,
     IsDeadExpired = 0,
     IsFightEndEffect = false,

@@ -357,7 +357,7 @@ function ui:_get_is_face(msg)
   end
 end
 
-local callback = function(player_data)
+local function callback(player_data)
   UIMgr:get_ui("ui_player_info"):ui_show(player_data)
 end
 

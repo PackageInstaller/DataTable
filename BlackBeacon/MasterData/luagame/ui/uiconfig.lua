@@ -4770,6 +4770,28 @@ config.ui = {
     group = group_cfg.GROUP_NORMAL,
     sync_load = true
   },
+  ui_capture_main = {
+    resource = "prefab/UIQuantum/UIQuantumMain.prefab",
+    class = "capture.ui_capture_main",
+    sort_order = order_cfg.System,
+    group = group_cfg.GROUP_NORMAL,
+    sync_load = true,
+    high_update = true
+  },
+  ui_capture = {
+    resource = "prefab/UIQuantum/UIQuantumPhotograph.prefab",
+    class = "capture.ui_capture",
+    sort_order = order_cfg.System,
+    group = group_cfg.GROUP_NORMAL,
+    sync_load = true
+  },
+  ui_capture_list = {
+    resource = "prefab/UIQuantum/UIQuantumPhotographList.prefab",
+    class = "capture.ui_capture_list",
+    sort_order = order_cfg.System,
+    group = group_cfg.GROUP_NORMAL,
+    sync_load = true
+  },
   ui_main_clock_guide = {
     resource = "prefab/Tips/UIMainClockGuide.prefab",
     class = "uimain.ui_main_clock_guide",
@@ -5058,7 +5080,8 @@ config.ui = {
     class = "activity.maze_game.ui_maze_game_main",
     sort_order = order_cfg.System,
     group = group_cfg.GROUP_NORMAL,
-    sync_load = false
+    sync_load = false,
+    normal_update = true
   },
   ui_maze_game_task = {
     resource = "prefab/activity/actmaze/uiactmazetask.prefab",
@@ -5109,6 +5132,12 @@ config.ui = {
     sort_order = order_cfg.System,
     group = group_cfg.GROUP_NORMAL,
     sync_load = false
+  },
+  ui_user_agreement_tips = {
+    resource = "prefab/tips/UserAgreementTips.prefab",
+    class = "tip.ui_user_agreement_tips",
+    sort_order = order_cfg.Tip,
+    group = group_cfg.GROUP_NORMAL
   }
 }
 config.prefab_to_ui = {

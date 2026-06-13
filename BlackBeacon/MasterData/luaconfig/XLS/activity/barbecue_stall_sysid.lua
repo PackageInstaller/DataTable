@@ -144,19 +144,19 @@ return {
       Desc = "杯子产出时间（秒）",
       Id = 108,
       Lv = 1,
-      Param = 5
-    },
-    {
-      Desc = "杯子产出时间（秒）",
-      Id = 108,
-      Lv = 2,
       Param = 4
     },
     {
       Desc = "杯子产出时间（秒）",
       Id = 108,
-      Lv = 3,
+      Lv = 2,
       Param = 3
+    },
+    {
+      Desc = "杯子产出时间（秒）",
+      Id = 108,
+      Lv = 3,
+      Param = 2
     }
   },
   [109] = {
@@ -170,13 +170,13 @@ return {
       Desc = "杯子存货上限",
       Id = 109,
       Lv = 2,
-      Param = 8
+      Param = 6
     },
     {
       Desc = "杯子存货上限",
       Id = 109,
       Lv = 3,
-      Param = 10
+      Param = 7
     }
   },
   [110] = {
@@ -184,7 +184,7 @@ return {
       Desc = "客人耐心时间加成（百分比）",
       Id = 110,
       Lv = 1,
-      Param = 10
+      Param = 0
     },
     {
       Desc = "客人耐心时间加成（百分比）",
@@ -196,7 +196,7 @@ return {
       Desc = "客人耐心时间加成（百分比）",
       Id = 110,
       Lv = 3,
-      Param = 30
+      Param = 40
     }
   }
 }

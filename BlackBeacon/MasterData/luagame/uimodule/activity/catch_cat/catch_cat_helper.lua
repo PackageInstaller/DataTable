@@ -1,10 +1,12 @@
 local CatchCatNode = require("uimodule.activity.catch_cat.catch_cat_node")
 local all_activity_cfg = ShareRes.create("activity.kitten_escape")
 local all_grid_cfg = ShareRes.create("activity.kitten_escape_grid")
-local calculateHeuristic = function(node, goal_pos)
+
+local function calculateHeuristic(node, goal_pos)
   return math.abs(node.x - goal_pos[1]) + math.abs(node.y - goal_pos[2])
 end
-local calculateMinHeuristic = function(node, goals)
+
+local function calculateMinHeuristic(node, goals)
   local minHeuristic = math.huge
   for _, goal_pos in ipairs(goals) do
     local heuristic = calculateHeuristic(node, goal_pos)
@@ -14,6 +16,7 @@ local calculateMinHeuristic = function(node, goals)
   end
   return minHeuristic
 end
+
 local odd_direction = {
   {1, 0},
   {-1, 0},
@@ -30,7 +33,8 @@ local even_direction = {
   {-1, -1},
   {1, -1}
 }
-local getNeighbors = function(node, grid)
+
+local function getNeighbors(node, grid)
   local neighbors = {}
   local directions = 1 == node.x % 2 and odd_direction or even_direction
   for _, dir in ipairs(directions) do
@@ -42,7 +46,8 @@ local getNeighbors = function(node, grid)
   end
   return neighbors
 end
-local astar = function(grid, start, goals)
+
+local function astar(grid, start, goals)
   local startNode = grid[start[1]][start[2]]
   local openSet = {}
   local closedSet = {}
@@ -106,7 +111,8 @@ local astar = function(grid, start, goals)
   end
   return nil
 end
-local createGrid = function(n, m, default_cfg)
+
+local function createGrid(n, m, default_cfg)
   local grid = {}
   for row = 1, n do
     grid[row] = {}
@@ -116,6 +122,7 @@ local createGrid = function(n, m, default_cfg)
   end
   return grid
 end
+
 local helper = {}
 
 function helper.create_grid(stage_cfg)

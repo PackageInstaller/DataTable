@@ -707,33 +707,31 @@ function ui:refresh_task_panel(type, play_ui_effect)
       self.v_tasks_need_to_update_time[index] = nil
       time_obj:SetActive(false)
     end
-    do
-      local award_id_list = award_group[task_item_config.Award]
-      for index, value in ipairs(award_id_list) do
-        if 0 == value then
-          break
-        end
-        if type ~= TASK_TYPE.PASSPORT and 2 ~= index then
-        else
-          local temp_config = award_config[value]
-          local temp_award = self:get_auto_cache(TASK_AWARD_TEM)
-          temp_award.transform:SetParent(Util.get_child_gameobj("Group/CtRewardList_/Viewport/AwardContent_", task_item).transform, false)
-          local item_quality = Util.get_image("CiPz_", temp_award)
-          local icon_img = Util.get_image("CiItemIcon_", temp_award)
-          local item_txt = Util.get_text("AmoBg/CiItemAmount_", temp_award)
-          local mask_obj = Util.get_child_gameobj("Mask_", temp_award)
-          item_txt.text = temp_config.Num
-          local item_id = temp_config.ItemId
-          local item_cfg = ShareRes.get_item_cfg(item_id)
-          local icon_path = string.format(icon_path_prefix, item_cfg.Icon)
-          ResMgr:load_set_icon(item_quality, Quality_Img[item_cfg.Quality])
-          ResMgr:load_set_icon(icon_img, icon_path)
-          mask_obj:SetActive(task_state == TASK_STATE.received)
-          local btn = temp_award:GetComponent(TypeUnityUIButton)
-          self:set_button_listener(btn, function()
-            UIMgr:get_ui("itemTip"):ui_show({item_id = item_id})
-          end)
-        end
+    local award_id_list = award_group[task_item_config.Award]
+    for index, value in ipairs(award_id_list) do
+      if 0 == value then
+        break
+      end
+      if type ~= TASK_TYPE.PASSPORT and 2 ~= index then
+      else
+        local temp_config = award_config[value]
+        local temp_award = self:get_auto_cache(TASK_AWARD_TEM)
+        temp_award.transform:SetParent(Util.get_child_gameobj("Group/CtRewardList_/Viewport/AwardContent_", task_item).transform, false)
+        local item_quality = Util.get_image("CiPz_", temp_award)
+        local icon_img = Util.get_image("CiItemIcon_", temp_award)
+        local item_txt = Util.get_text("AmoBg/CiItemAmount_", temp_award)
+        local mask_obj = Util.get_child_gameobj("Mask_", temp_award)
+        item_txt.text = temp_config.Num
+        local item_id = temp_config.ItemId
+        local item_cfg = ShareRes.get_item_cfg(item_id)
+        local icon_path = string.format(icon_path_prefix, item_cfg.Icon)
+        ResMgr:load_set_icon(item_quality, Quality_Img[item_cfg.Quality])
+        ResMgr:load_set_icon(icon_img, icon_path)
+        mask_obj:SetActive(task_state == TASK_STATE.received)
+        local btn = temp_award:GetComponent(TypeUnityUIButton)
+        self:set_button_listener(btn, function()
+          UIMgr:get_ui("itemTip"):ui_show({item_id = item_id})
+        end)
       end
     end
   end

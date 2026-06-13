@@ -27,12 +27,14 @@ function ui:play_delete_anima(cb)
   local duration = pd.duration
   pd:Play()
   self.v_uiobjects["Particle" .. self.v_quality]:SetActive(true)
-  local play_delete_anima_cb = function()
+  
+  local function play_delete_anima_cb()
     pd:Stop()
     if cb then
       cb()
     end
   end
+  
   self:add_timer("play_delete_anima_cb", duration, play_delete_anima_cb)
 end
 
@@ -54,12 +56,14 @@ function ui:play_pull_anima(cb)
   local pd = self.v_pd_list.pull_card
   local duration = pd.duration
   pd:Play()
-  local play_pull_anima_cb = function()
+  
+  local function play_pull_anima_cb()
     pd:Stop()
     if cb then
       cb()
     end
   end
+  
   self:add_timer("play_pull_anima_cb", duration, play_pull_anima_cb)
 end
 

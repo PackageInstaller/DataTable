@@ -6,7 +6,7 @@ local CSVideoPlayer = typeof(UnityEngine.Video.VideoPlayer)
 local RenderTexture = UnityEngine.RenderTexture
 local _insert = table.insert
 local _remove = table.remove
-local CSHelper = CSHelper
+local CSHelper = _ENV.CSHelper
 local scale_x = Global.screen_width / 1920
 local scale_y = Global.screen_height / 1080
 local CriManaMovieControllerForUI = typeof(CS.CriWare.CriManaMovieControllerForUI)
@@ -81,13 +81,15 @@ function M:load_img_res()
   local pos_data = step_cfg.ImgPos
   local img_rect = self.v_uicompents.InsertImg_rect
   img_rect:SetAnchoredPositionA(pos_data[1], pos_data[2])
-  local load_cb = function()
+  
+  local function load_cb()
     if self.v_lua_obj.v_visible then
       self.v_time = UnityTime.realtimeSinceStartup
       self.v_uicompents.InsertImg_img:SetNativeSize()
       self:update_img_view()
     end
   end
+  
   local image = self.v_uicompents.InsertImg_img
   ResMgr:load_set_icon(image, res_name, load_cb, true, self.v_lua_obj)
   return true
@@ -176,7 +178,8 @@ function M:check_insert_cg()
     return
   end
   self.v_need_complete_num = self.v_need_complete_num + 1
-  local on_step_callback = function()
+  
+  local function on_step_callback()
     if not Util.is_nil(self.v_cri_video_player) then
       Util.remove_cri_subtitle_event(self.v_cri_video_player)
       self.v_cri_video_player:Stop()
@@ -190,6 +193,7 @@ function M:check_insert_cg()
       self.v_lua_obj:check_step_all_complete()
     end
   end
+  
   self.v_uiobjects.Video:SetActive(true)
   self.v_uiobjects.BtnSkip:SetActive(false)
   self:set_up_collect_status()
@@ -211,9 +215,11 @@ function M:check_insert_cg()
   raw_img.color = Util.ColorWhite
   local start_color = Util.ColorWhite
   self.v_raw_img = raw_img
-  local set_value_func = function(v)
+  
+  local function set_value_func(v)
     raw_img.color = start_color * v
   end
+  
   local sequence = self:get_new_sequence("step_insert_movie_effect")
   if self.v_step_cfg.AnimShow then
     sequence:Append(CSHelper.WrapTweenTo(0, 1, fade_or_show_time, set_value_func))
@@ -283,9 +289,11 @@ function M:play_insert_talk_step()
   if not insert_talk_step or #insert_talk_step <= 0 then
     return
   end
-  local cb = function()
+  
+  local function cb()
     self:check_complete()
   end
+  
   self.v_is_insert = true
   local step_idx_list = {}
   for _, jump_id in ipairs(insert_talk_step) do

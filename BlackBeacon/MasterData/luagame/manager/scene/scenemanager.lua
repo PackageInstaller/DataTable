@@ -1,5 +1,5 @@
 local UnityQualitySetting = UnityEngine.QualitySettings
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local CSCopyLens = CSHelper.CopyLens
 local CSGameMgr = CS.Game.GameMgr
 local CSGrassRenderer = CS.Game.GrassRenderer
@@ -8,8 +8,8 @@ local MsgGame = Global.mq_game
 local CAMPS = Global.config.CAMPS
 local UnityTime = UnityEngine.Time
 local CSShadow = CS.Game.Shadow
-local UnityDestroy = UnityDestroy
-local CompExtensions = CompExtensions
+local UnityDestroy = _ENV.UnityDestroy
+local CompExtensions = _ENV.CompExtensions
 local SyncTransforms = UnityEngine.Physics.SyncTransforms
 local BehaviorLoader = require("utils.behavior_loader")
 local FightHudMgr = require("uimodule.fight.fight_hud_mgr")
@@ -71,6 +71,7 @@ local LOCK_OUTLINE_WIDTH_ID = UnityShader.PropertyToID("_LockWidthInViewByCode")
 local OPEN_PCF_SFOT = UnityShader.PropertyToID("_OPEN_PCF_SFOT")
 local APPLY_CUSTOM_DIST_FOG = UnityShader.PropertyToID("_APPLY_CUSTOM_DIST_FOG")
 local CustomShadowIntensity = UnityShader.PropertyToID("_CustomShadowIntensity")
+local CUSTOM_POINT_LIGHT_FOR_SCENE = UnityShader.PropertyToID("_CUSTOM_POINT_LIGHT_FOR_SCENE")
 local JOYSTICK_DIR = Vec3.New(0, 0, 0)
 local JOYSTICK_TARGET_DIR = Vec3.New(0, 0, 0)
 local MAIN_SCENE_ID = Config.MAIN_SCENE_ID
@@ -84,6 +85,7 @@ local SKYBOX_ROOT_NAME = "SkyBox"
 local CSLight = UnityEngine.Light
 local TypeSceneContainer = typeof(CS.Game.SceneContainer)
 local TYPE_EFFECT_STATUS = TypeEffectStatus
+local search_target_param = {}
 local M = Util.create_class()
 local CollideInfo = Util.create_class()
 local reversible_scene_timeline_dic
@@ -130,13 +132,13 @@ function M:_init()
   self.v_player_control = true
   self.v_our_camp_betarget = false
   self.v_temp_our_camp_betarget = false
-  MsgGame:mq_bind(Const.MSG_ADD_TRANSPARENT_OBJ, self._on_add_transparent_obj, self)
-  MsgGame:mq_bind(Const.MSG_DEL_TRANSPARENT_OBJ, self._on_del_transparent_obj, self)
-  MsgGame:mq_bind(Const.MSG_NETWORK_RCT_SUC, self._on_reconnect, self)
-  MsgGame:mq_bind(Const.MSG_NETWORK_FIGHT_RCT_SUC, self._on_fight_reconnect, self)
-  MsgGame:mq_bind(Const.MSG_CG_TIMELINE_START, self.hide_npc_hp_obj, self)
-  MsgGame:mq_bind(Const.MSG_CG_TIMELINE_END, self.show_npc_hp_obj, self)
-  MsgGame:mq_bind(Const.MSG_ON_FIGHT_OVER_WIN_OPEN, self.on_fight_over_win_open, self)
+  Util.bind_msg(self, Const.MSG_ADD_TRANSPARENT_OBJ, self._on_add_transparent_obj, self)
+  Util.bind_msg(self, Const.MSG_DEL_TRANSPARENT_OBJ, self._on_del_transparent_obj, self)
+  Util.bind_msg(self, Const.MSG_NETWORK_RCT_SUC, self._on_reconnect, self)
+  Util.bind_msg(self, Const.MSG_NETWORK_FIGHT_RCT_SUC, self._on_fight_reconnect, self)
+  Util.bind_msg(self, Const.MSG_CG_TIMELINE_START, self.hide_npc_hp_obj, self)
+  Util.bind_msg(self, Const.MSG_CG_TIMELINE_END, self.show_npc_hp_obj, self)
+  Util.bind_msg(self, Const.MSG_ON_FIGHT_OVER_WIN_OPEN, self.on_fight_over_win_open, self)
   self.v_limited_missiles = {}
   self.v_jump_floor_ui = false
   self:clear_recreate_hero_count()
@@ -541,6 +543,7 @@ function M:on_load_scene()
     Global.sound_mgr:clear_bgm_setting()
   end
   UnityShader.SetGlobalFloat(CustomShadowIntensity, 1)
+  UnityShader.SetGlobalFloat(CUSTOM_POINT_LIGHT_FOR_SCENE, 0)
   if self.is_main_scene then
     self:_on_load_main_scene()
     if UIMgr then
@@ -609,13 +612,15 @@ function M:on_load_scene()
 end
 
 function M:check_on_load_scene_story()
-  local cb = function()
+  local function cb()
     MsgGame:mq_publish2(Const.MSG_SCENE_LOAD)
+    
     local cur_room = TowerMgr:get_cur_room()
     if cur_room then
       cur_room:enter_room(true)
     end
   end
+  
   if TowerMgr and TowerMgr:check_play_fight_story(true, cb) then
     return true
   end
@@ -676,22 +681,7 @@ function M:_on_load_main_scene()
   CSGameMgr.OnEnterMainScene()
 end
 
-function M:destroy_camera()
-  if Global.camera then
-    Global.camera:on_destroy()
-  end
-  if self.v_camera then
-    if self.v_crilisten_obj then
-      self.v_crilisten_obj.transform:SetPositionA(0, 0, 0)
-    end
-    ResMgr:destroy_gameobj(self.v_camera)
-  end
-  self.v_camera = nil
-  self.v_vcam = nil
-  Global.camera = nil
-end
-
-function M:clear_scene(not_clear_all)
+function M:clear_scene(is_clear_all)
   Global.scene_loader:clear()
   if TimeLineMgr then
     TimeLineMgr:clear_curr_scene_preload_timeline()
@@ -712,8 +702,11 @@ function M:clear_scene(not_clear_all)
     self.v_skill_link_mgr:on_destroy()
     self.v_skill_link_mgr = nil
   end
-  self:clear_scene_data(not not_clear_all)
-  Global.share_state_report = nil
+  self:clear_scene_data(is_clear_all)
+  if Global.share_state_report then
+    Global.share_state_report:clear()
+    Global.share_state_report = nil
+  end
   self.v_scene_config = nil
   self.v_scene_id = nil
   if TowerMgr and not TowerMgr:get_tower() then
@@ -727,6 +720,9 @@ function M:before_enter_next_room()
 end
 
 function M:clear_scene_data(is_clear_all)
+  self.v_cur_ill = nil
+  self.v_main_light = nil
+  search_target_param = {}
   self.v_be_cleaning_up_scene_data = true
   self:_clear_collide_info()
   self:clear_missile(true)
@@ -757,6 +753,10 @@ function M:clear_scene_data(is_clear_all)
   if self.v_scene_plat_mgr then
     self.v_scene_plat_mgr:clear()
   end
+  if is_clear_all then
+    self.v_scene_plat_mgr = nil
+    self.v_limited_missiles = nil
+  end
   if self.v_time_keeper_mgr then
     self.v_time_keeper_mgr:clear()
   end
@@ -777,22 +777,31 @@ function M:clear_scene_data(is_clear_all)
   self.v_collide_info_pool:release_active_objs()
   self.v_remove_missile_pool:release_active_objs()
   self:set_game_pause(false)
-  if self.v_operate_chars and not is_clear_all then
+  if self.v_operate_chars then
     for uuid, hero in pairs(self.v_operate_chars) do
-      self.v_cid_map[hero.cid] = hero
-      self:add_obj_to_uuid_map(uuid, hero)
-      hero.act_effect_ctrl:stop_all(true)
-      hero.skill_mgr:clear_missile_cache()
+      if not is_clear_all then
+        self.v_cid_map[hero.cid] = hero
+        self:add_obj_to_uuid_map(uuid, hero)
+        hero.act_effect_ctrl:stop_all(true)
+        hero.skill_mgr:clear_missile_cache()
+      else
+        self:_destroy_luaobj(hero)
+        self.v_operate_chars[uuid] = nil
+      end
     end
   end
-  if self.v_god_npc and not is_clear_all then
-    local god_uuid = self.v_god_npc.uuid
-    self:add_obj_to_uuid_map(god_uuid, self.v_god_npc)
+  if self.v_god_npc then
+    if not is_clear_all then
+      local god_uuid = self.v_god_npc.uuid
+      self:add_obj_to_uuid_map(god_uuid, self.v_god_npc)
+    else
+      self:clear_god_npc()
+    end
   end
   if self.v_scene_logic then
     self.v_scene_logic:release()
-    self.v_scene_logic = nil
   end
+  self.v_scene_logic = nil
   self.v_scene_map = nil
   if self.v_transparent_dict then
     for transparent in pairs(self.v_transparent_dict) do
@@ -821,6 +830,7 @@ function M:clear_scene_data(is_clear_all)
   end
   self.v_be_cleaning_up_scene_data = false
   Config.FightDefine.release_single_attr_temp()
+  self.m_scene_timeline_animator_list = nil
 end
 
 function M:clear_missile(force)
@@ -1117,14 +1127,16 @@ function M:replace_team_pos_data(new_data)
     end
   end
   if not is_go_back then
-    local load_done_callback = function()
+    local function load_done_callback()
       new_hero:on_enter_room(self.v_scene_logic)
+      
       if not hero_in_team then
         new_hero:setup_born_behavior()
       end
       BattleSkillBookMgr:init_single_hero_btn_skill(new_hero.uuid, new_hero)
       self:on_new_hero_done(Global.hero)
     end
+    
     new_hero = self:new_hero(hero_data)
     if not new_hero:is_real_finish_init() then
       new_hero:set_finish_init_gameobj_cb(load_done_callback)
@@ -1375,6 +1387,7 @@ function M:mark_limited_missile(missile_id, max_count)
     Log.Error("可以同时存在的missile数量超过20个")
     return
   end
+  self.v_limited_missiles = self.v_limited_missiles or {}
   local info = self.v_limited_missiles[missile_id]
   if not info then
     info = {
@@ -1471,11 +1484,29 @@ function M:create_camera(is_preload)
   local vcam = vcamera_obj:AddComponent(TypeCinemaVirtalCamera)
   self.v_vcam = vcam
   Global.camera = require("obj.camera"):new(Global.hero, self.v_camera)
-  vcamera_brain:AddListener(function(incoming_camera, outgoing_camera)
+  Global.listener_mgr:add_listener(Global.camera, vcamera_brain, function(incoming_camera, outgoing_camera)
     Global.camera:camera_activated_event(incoming_camera, outgoing_camera)
   end)
   MsgGame:mq_publish2(Const.MSG_CREATE_CAMERA)
   return Global.camera
+end
+
+function M:destroy_camera()
+  if Global.camera then
+    Global.camera:on_destroy()
+    Global.listener_mgr:remove_listener(Global.camera, self.v_camera:GetComponent(TypeCinemachineBrain))
+  end
+  if self.v_camera then
+    if self.v_crilisten_obj then
+      self.v_crilisten_obj.transform:SetPositionA(0, 0, 0)
+    end
+    ResMgr:destroy_gameobj(self.v_camera)
+  end
+  self.v_camera = nil
+  self.v_vcam = nil
+  Global.camera = nil
+  self.v_crilisten_obj = nil
+  self.v_crilisten_pos = nil
 end
 
 function M:fight_reconnect()
@@ -2064,7 +2095,8 @@ function M:load_gameobj_async(luaobj, callback)
   else
     sync_load = false
   end
-  local load_cb = function(gameobj)
+  
+  local function load_cb(gameobj)
     local on_recreate = luaobj:is_on_recreate_gameobj()
     local died_on_recreate = luaobj:is_die() and on_recreate
     if died_on_recreate or luaobj:is_destroy() or not luaobj:will_init_gameobj() then
@@ -2086,6 +2118,7 @@ function M:load_gameobj_async(luaobj, callback)
       luaobj:on_recreate_go_suc()
     end
   end
+  
   if sync_load then
     local gameobj = ResPool:get_model(model_id)
     load_cb(gameobj)
@@ -2108,7 +2141,8 @@ function M:load_model_animator(luaobj, callback)
   else
     sync_load = false
   end
-  local load_cb = function(_, animator_info)
+  
+  local function load_cb(_, animator_info)
     local on_recreate = luaobj:is_on_recreate_gameobj()
     local died_on_recreate = luaobj:is_die() and on_recreate
     if died_on_recreate or luaobj:is_destroy() or not luaobj:will_init_gameobj() then
@@ -2122,6 +2156,7 @@ function M:load_model_animator(luaobj, callback)
     luaobj.animator_info = animator_info
     self:on_load_animator_done(luaobj, callback)
   end
+  
   if sync_load then
     local _, animator_info
     animator_info = ResPool:get_animator(luaobj.model_cfg.ControllerPath)
@@ -2357,11 +2392,13 @@ function M:_update_collider()
     table.sort(temp_info_list, collide_sort_func)
     for i = 1, info_count do
       local info = temp_info_list[i]
-      if info.part_cid and not self:_part_collide_valid(info, 1 == i) then
-      else
-        self:_on_missile_collide(info.missile, info.cid, info.part_cid, info.fixed_frame)
+      if nil ~= info then
+        if info.part_cid and not self:_part_collide_valid(info, 1 == i) then
+        else
+          self:_on_missile_collide(info.missile, info.cid, info.part_cid, info.fixed_frame)
+        end
+        self.v_collide_info_pool:destroy_obj(info)
       end
-      self.v_collide_info_pool:destroy_obj(info)
       temp_info_list[i] = nil
     end
   end
@@ -2383,7 +2420,7 @@ function M:_part_collide_valid(info, is_nearst)
   return true
 end
 
-local _dodge_check_atkcd = function(dodge_missile, other)
+local function _dodge_check_atkcd(dodge_missile, other)
   local owner = dodge_missile:get_owner()
   if not Util.is_destroy(owner) and not other:can_collide_other_missile(owner) then
     return true
@@ -2450,13 +2487,13 @@ function M:_on_missile_collide(missile, b_cid, part_cid, collide_fixed_frame)
   end
 end
 
-local search_target_param = {}
-local _check_obj_can_be_search = function(char, obj)
+local function _check_obj_can_be_search(char, obj)
   local target_type = search_target_param.target_type
   local result = obj and obj:can_update() and char.uuid ~= obj.uuid and obj:is_can_searched() and not Util.is_destroy(obj) and obj.magic_mgr and Util.is_target_camp(char, obj, target_type)
   return result
 end
-local _check_obj_can_be_target_by_limit = function(obj, target_magic_map, target_npc_id_map, target_kind_map)
+
+local function _check_obj_can_be_target_by_limit(obj, target_magic_map, target_npc_id_map, target_kind_map)
   local need_check_magic = search_target_param.need_check_magic
   local need_check_npc_id = search_target_param.need_check_npc_id
   local need_check_kind = search_target_param.need_check_kind
@@ -2488,7 +2525,8 @@ local _check_obj_can_be_target_by_limit = function(obj, target_magic_map, target
   result = true
   return result
 end
-local _check_obj_can_be_target_by_joystick_dir = function(obj)
+
+local function _check_obj_can_be_target_by_joystick_dir(obj)
   local result = true
   local joystick_dir = JOYSTICK_DIR
   local target_dir = JOYSTICK_TARGET_DIR
@@ -2505,6 +2543,7 @@ local _check_obj_can_be_target_by_joystick_dir = function(obj)
   end
   return result
 end
+
 local _tmp_search_list = setmetatable({}, Config.VALUE_WEAK_METATABLE)
 local _tmp_search_cnt = 0
 
@@ -2631,7 +2670,7 @@ function M:release_emptyobj(luaobj)
   self.v_cid_map[cid] = nil
 end
 
-local on_load_obj = function(self, luaobj, obj)
+local function on_load_obj(self, luaobj, obj)
   if not luaobj then
     return
   end
@@ -2725,10 +2764,11 @@ end
 
 function M:clear_god_npc()
   if self.v_god_npc then
-    self.v_god_npc:on_destroy()
+    self:_destroy_luaobj(self.v_god_npc)
   end
   self.v_god_npc = nil
   self.v_god_npc_id = nil
+  self.v_god_attr = nil
 end
 
 function M:clear_all_npc()
@@ -3143,13 +3183,15 @@ function M:set_scene_show(param, cb, dir, duration)
   end
   local msg1 = MsgGame:mq_publish2(Const.MSG_ON_BATTLE_LOADING_START)
   msg1.mm_x = param
-  local msg_cb = function()
+  
+  local function msg_cb()
     if cb then
       cb()
     end
     local msg2 = MsgGame:mq_publish2(Const.MSG_ON_BATTLE_LOADING_END)
     msg2.mm_x = param
   end
+  
   if duration then
     trans:SetCamShowByDuration(param, msg_cb, duration, dir)
   else
@@ -3385,7 +3427,8 @@ do
     OBSTACLE = 4
   }
   local _tmp_dis_vec = Vec3.New(0, 0, 0)
-  local _calc_dir = function(target_dir_type, npc)
+  
+  local function _calc_dir(target_dir_type, npc)
     local add_deg = (target_dir_type - 1) * 90
     local deg = add_deg + npc:get_dir()
     local rad = deg * MathX.Deg2Rad
@@ -3393,6 +3436,7 @@ do
     local z = _cos(rad)
     _tmp_dis_vec.x, _tmp_dis_vec.z = x, z
   end
+  
   local GET_DIS_FUNC = {
     [GET_DIS_TYPE.NPC] = function(npc, target, include_body)
       if not target then
@@ -3485,7 +3529,7 @@ function M:get_terrain_list()
   return self.v_gm_terrain_list
 end
 
-local _find_scene_obj = function(root_name, object_name)
+local function _find_scene_obj(root_name, object_name)
   local root = UnityFind(root_name)
   if not root or root:IsNull() then
     Log.Info("场景中找不到 ", root_name, object_name)
@@ -3581,7 +3625,7 @@ function M:revert_main_light_dir()
   self.v_main_light_dir = nil
 end
 
-local _active_child_but = function(root_trans, index)
+local function _active_child_but(root_trans, index)
   if not root_trans then
     return
   end

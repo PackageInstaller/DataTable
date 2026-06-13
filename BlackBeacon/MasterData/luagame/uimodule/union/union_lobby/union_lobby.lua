@@ -234,21 +234,25 @@ function ui:_leader_quit_union()
     return
   end
   local desc = Util.format_str("是否确认解散公会？")
-  local conform_callback = function()
+  
+  local function conform_callback()
     UnionMgr:request_quit_union(function()
       UIMgr:try_hide_ui("union_main")
     end)
   end
+  
   Util.show_conform_tip(desc, nil, nil, nil, conform_callback)
 end
 
 function ui:_member_quit_union()
   local desc = Util.format_str("是否确认退出公会？")
-  local conform_callback = function()
+  
+  local function conform_callback()
     UnionMgr:request_quit_union(function()
       UIMgr:try_hide_ui("union_main")
     end)
   end
+  
   Util.show_conform_tip(desc, nil, nil, nil, conform_callback)
 end
 

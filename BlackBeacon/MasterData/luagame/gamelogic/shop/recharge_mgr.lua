@@ -99,8 +99,8 @@ function M:is_fobidden_buy_product(sdkkey)
 end
 
 function M:request_buy_product(config, cb)
-  if UNITY_EDITOR then
-    Log.Error("can't buy product in unity!")
+  if UNITY_EDITOR or UNITY_STANDALONE_WIN then
+    Util.show_notify_popup_message(nil, "模拟器暂不支持充值，请前往移动端充值", nil, "确定", nil, nil, true)
     if cb then
       cb(false)
     end

@@ -96,9 +96,11 @@ function ui:refresh_clue_info()
   local data_list = self:get_clue_data_list()
   if UtilTable.is_empty(data_list) then
     self.v_uiobjects.NoClue:SetActive(true)
+    self.v_uiobjects.ClueContent:SetActive(false)
     return
   else
     self.v_uiobjects.NoClue:SetActive(false)
+    self.v_uiobjects.ClueContent:SetActive(true)
   end
   self.v_clue_loop_list:refresh_data(data_list)
 end

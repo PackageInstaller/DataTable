@@ -153,7 +153,8 @@ end
 function ui:refresh_buddy_list()
   self:give_back_auto_cache(character_voice_language_item_key)
   local list = 1 == self.v_type and self.v_element_buddy_list[self.v_child_type] or self.v_job_buddy_list[self.v_child_type]
-  local sort_func = function(a, b)
+  
+  local function sort_func(a, b)
     if a.own ~= b.own then
       return a.own
     elseif a.quality ~= b.quality then
@@ -162,6 +163,7 @@ function ui:refresh_buddy_list()
       return a.id < b.id
     end
   end
+  
   table.sort(list, sort_func)
   local need_select_voice_buddy_item
   for _, data in pairs(list) do
@@ -285,13 +287,15 @@ function ui:play_voice(language_index)
 end
 
 function ui:change_cv_language(buddy_id, language_str)
-  local cb = function()
+  local function cb()
     CharacterMgr:refresh_buddy_cv_language(buddy_id, language_str)
+    
     Global.sound_mgr:remove_cache_voice_sound()
     self.v_select_item:refresh_language()
     self:refresh_right_language_count_info()
     Util.show_message_tip("切换成功")
   end
+  
   if Game_AssetBundle then
     local format_size = CS.VoiceCheckManager.Instance:GetNeedDownloadSoundSize(language_str)
     if "" == format_size then

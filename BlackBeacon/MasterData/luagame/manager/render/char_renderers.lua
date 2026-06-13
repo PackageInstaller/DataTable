@@ -39,6 +39,10 @@ function M:_init(char)
   self:check_hero_shadow()
 end
 
+function M:on_before_destroy()
+  self.v_char = nil
+end
+
 function M:on_destroy_gameobj()
   if self.v_has_setup then
     self.v_add_material:RemoveAll()
@@ -190,6 +194,9 @@ end
 
 function M:before_fight()
   local trans = self.v_char.transform
+  if not trans then
+    return
+  end
   trans:SetKeyWordAll("_SHADOW_RECEIVE", false)
   Util.set_all_mat(trans, function(mat)
     local name = mat.name

@@ -2,7 +2,8 @@ local M = Util.create_class()
 local ccd = require("uimodule.stage_activity.challenge_ring_plus.curse_common_define")
 local FX_AWARD_POINT = ccd.WORLD_EFFECT_NAME.FX_BAOSHI
 local CSFollower = CS.Game.MoveFollower
-local get_random_dir_and_index = function(get_count)
+
+local function get_random_dir_and_index(get_count)
   local param = ShareRes.get_comm_string_value("RandomDropSplineParam")
   local max_random_count = #param
   local result_dir_list = {}
@@ -65,7 +66,8 @@ local get_random_dir_and_index = function(get_count)
   end
   return result_dir_list, result_index_list
 end
-local get_rota_offset = function(param, dir)
+
+local function get_rota_offset(param, dir)
   local magnitude
   Util.QuatTemp:SetEuler(0, dir, 0)
   Util.VEC3_TEMP:Set(param[1], param[2], param[3])
@@ -88,6 +90,7 @@ local get_rota_offset = function(param, dir)
   local offset_x3, offset_y3, offset_z3 = Util.VEC3_TEMP:Get()
   return offset_x1, offset_y1, offset_z1, offset_x2, offset_y2, offset_z2, offset_x3, offset_y3, offset_z3
 end
+
 local mathx = require("base.mathx")
 local Vec3 = require("base.vec3")
 local Quat = require("base.quat")

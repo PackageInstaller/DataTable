@@ -68,9 +68,11 @@ function ui:ui_on_show(point_id, ...)
     Log.Error("lack buddy_skill_tips cfg, ", tips_id)
   end
   self.v_uicompents.TecInfo_txt.text = cfg.Detail_Desc
-  local cb = function()
+  
+  local function cb()
     self.v_uicompents.Detail_Img_img:SetNativeSize()
   end
+  
   ResMgr:load_set_icon(self.v_uicompents.Detail_Img_img, "UIHeroTeaching/" .. cfg.Detail_Img, cb, true)
   self.v_uicompents.SkillTitle_txt.text = cfg.Detail_Name
 end
@@ -82,10 +84,12 @@ function ui:_onclick_quit_btn()
   local tip = Util.format_str("是否立即退出关卡")
   local sure_btn = Util.format_str("退出")
   local cancle_btn = Util.format_str("返回")
-  local sure_callback = function()
+  
+  local function sure_callback()
     self:ui_hide()
     UIMgr:get_ui("not_progress_battle_def_settle"):ui_show()
   end
+  
   UIMgr:get_ui("uinotice_tips"):ui_show(sure_callback, nil, tip, sure_btn, cancle_btn)
 end
 

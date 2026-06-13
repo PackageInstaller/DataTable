@@ -1231,7 +1231,6 @@ return {
       Name = "初始时装",
       Painter = "——",
       Quality = 3,
-      ReleaseTime = 10007,
       ShopBgType = 1,
       ShowPriority = 2,
       SpriteId = "Hero/Skin/1001023_F_1",
@@ -1261,7 +1260,6 @@ return {
       Name = "缤纷色彩",
       Painter = "——",
       Quality = 4,
-      ReleaseTime = 10007,
       ShopBgType = 1,
       ShowPriority = 1,
       SpriteId = "Hero/Skin/1001023_F_2",
@@ -1284,7 +1282,6 @@ return {
       Name = "初始时装",
       Painter = "——",
       Quality = 3,
-      ReleaseTime = 10009,
       ShopBgType = 1,
       ShowPriority = 2,
       SpriteId = "Hero/Skin/1001024_F_1",
@@ -1314,7 +1311,6 @@ return {
       Name = "缤纷色彩",
       Painter = "——",
       Quality = 4,
-      ReleaseTime = 10009,
       ShopBgType = 1,
       ShowPriority = 1,
       SpriteId = "Hero/Skin/1001024_F_2",
@@ -1366,6 +1362,7 @@ return {
       Name = "缤纷色彩",
       Painter = "——",
       Quality = 4,
+      ReleaseTime = 997,
       ShopBgType = 1,
       ShowPriority = 1,
       SpriteId = "Hero/Skin/1001025_F_2",
@@ -1399,16 +1396,24 @@ return {
       Batch = 1,
       BuddyId = 1001026,
       Describe = "曾有许多会士好奇，为何菲娜米娜会对大海情有独钟。是误把涅柔斯海当作了星辰的倒影？还是在月球潮汐中听到了宇宙的韵律？答案始终成谜，但有一点无人置疑——这颗星星，总能在海边玩得很开心。\n",
-      DisplayViewOffset2 = {
-        0,
-        0,
-        0.8
+      DisplayViewOffset1 = {
+        1,
+        -70,
+        1.08
       },
+      FashionShowOffset = {
+        0,
+        0,
+        0,
+        1
+      },
+      FullSprite = "Hero/1001026_Skin02",
       GetDesc = "未解锁",
       Icon = {
         [2] = "tx_l3_26",
         [3] = "Hero/1001026_half3",
-        [5] = "Hero/1001026_Skin02"
+        [7] = "Hero/1001026_Skin02",
+        [8] = "21011026"
       },
       Id = 3003026,
       ItemIcon = "tx_f3_26_",
@@ -1417,15 +1422,24 @@ return {
       Painter = "——",
       Quality = 5,
       SettleViewOffset = {
-        -300,
+        -225,
+        -110,
+        1.35
+      },
+      SettleViewSpine = 21001026,
+      ShopBgType = 1,
+      ShopItemOffset = {
+        -71.4,
+        -118,
         0,
         0.9
       },
-      ShopBgType = 1,
+      ShowEffectName = "PosTL_3003026",
       ShowPriority = 2,
       SpriteId = "Hero/Skin/1001026_F_3",
       Tag = 0,
       Type = 4,
+      WeaponRes = {20102631},
       Year = 1
     },
     {
@@ -1644,6 +1658,7 @@ return {
       Name = "缤纷色彩",
       Painter = "——",
       Quality = 4,
+      ReleaseTime = 997,
       ShopBgType = 1,
       ShowPriority = 1,
       SpriteId = "Hero/Skin/1001030_F_2",

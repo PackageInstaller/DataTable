@@ -20,9 +20,11 @@ local default_config = {
     const_event = Const.MSG_ON_PLAYER_SP_UPDATE
   }
 }
-local BUILD_FUNCTIONS = function(single_item_exchange)
+
+local function BUILD_FUNCTIONS(single_item_exchange)
   local ret_item = {}
-  local get_item_base_info = function(item_id)
+  
+  local function get_item_base_info(item_id)
     local item_cfg = ShareRes.create("item.item", item_id)
     local ret_table = {}
     ret_table.item_id = item_id
@@ -32,6 +34,7 @@ local BUILD_FUNCTIONS = function(single_item_exchange)
     ret_table.icon = item_cfg.Icon
     return ret_table
   end
+  
   ret_item.targetInfo = get_item_base_info(single_item_exchange.TargetId)
   ret_item.targetInfo.Id = single_item_exchange.Id
   ret_item.targetInfo.Count = single_item_exchange.Count

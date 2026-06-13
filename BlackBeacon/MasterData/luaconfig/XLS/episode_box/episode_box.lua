@@ -3266,6 +3266,76 @@ return {
     TowerVariable = {},
     TreasureChestType = 1
   },
+  [10801] = {
+    AwardID = 10180,
+    BodyRadius = 1,
+    BoxGroup = 10804,
+    BuildingExtraBoxId = {},
+    Effect = {
+      "FX_T3001027",
+      "27FX_treasure_box_open",
+      "FX_treasure_box_open_1"
+    },
+    Id = 10801,
+    InteractRange = 2.5,
+    IsPlayInteractAnima = 1,
+    ModelId = "T3001040",
+    TowerVariable = {"10801"},
+    TreasureChestType = 1
+  },
+  [10802] = {
+    AwardID = 10180,
+    BodyRadius = 1,
+    BoxGroup = 10805,
+    BuildingExtraBoxId = {},
+    Effect = {
+      "FX_T3001027",
+      "27FX_treasure_box_open",
+      "FX_treasure_box_open_1"
+    },
+    Id = 10802,
+    InteractRange = 2.5,
+    IsPlayInteractAnima = 1,
+    ModelId = "T3001040",
+    TowerVariable = {"10802"},
+    TreasureChestType = 1
+  },
+  [10803] = {
+    AwardID = 10180,
+    BodyRadius = 1,
+    BoxGroup = 10809,
+    BuildingExtraBoxId = {},
+    CanNotInteractTips = "战斗结束方可开启",
+    Effect = {
+      "FX_T3001027",
+      "27FX_treasure_box_open",
+      "FX_treasure_box_open_1"
+    },
+    Id = 10803,
+    InteractRange = 2.5,
+    IsPlayInteractAnima = 1,
+    ModelId = "T3001040",
+    TowerVariable = {"10803"},
+    TreasureChestType = 1
+  },
+  [10804] = {
+    AwardID = 10180,
+    BodyRadius = 1,
+    BoxGroup = 10812,
+    BuildingExtraBoxId = {},
+    CanNotInteractTips = "战斗结束方可开启",
+    Effect = {
+      "FX_T3001027",
+      "27FX_treasure_box_open",
+      "FX_treasure_box_open_1"
+    },
+    Id = 10804,
+    InteractRange = 2.5,
+    IsPlayInteractAnima = 1,
+    ModelId = "T3001040",
+    TowerVariable = {"10804"},
+    TreasureChestType = 1
+  },
   [10901] = {
     AwardID = 10180,
     BodyRadius = 1,

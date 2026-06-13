@@ -7,12 +7,14 @@ local Proto = require("cs_share.proto")
 local RPC_TIMEOUT = 60003
 local PRINT_PROTO_FILTER = {gs2c_call_scene = true}
 local M = {}
-local network_not_ready = function()
+
+local function network_not_ready()
   if Util.is_client_only() then
     return
   end
   Log.Info("network not ready")
 end
+
 local LOST_BATTLE = 1049
 local ERRORCODE_FUNCS = {
   [LOST_BATTLE] = function(error_info)
@@ -175,12 +177,14 @@ function M:protect_call(proto_name, body, callback, timeout, timeout_tips)
     timeout_tips = true
   end
   ScreenMaskMgr:open_one_tag(proto_name, timeout, nil, nil, timeout_tips, true)
-  local cb = function(...)
+  
+  local function cb(...)
     if callback then
       callback(...)
     end
     ScreenMaskMgr:close_one_tag(proto_name)
   end
+  
   self:call(proto_name, body, cb, timeout)
 end
 
@@ -223,6 +227,10 @@ function M:call(proto_name, body, callback, timeout, need_wait)
   end
 end
 
+function M:is_can_c2gs_call_scene()
+  return Network:is_connected() and Network:is_fs_connected() and Network:is_fs_connected():get_is_forward()
+end
+
 function M:register_cb(proto_name, callback, is_show_debug)
   self.v_notify_pool[proto_name] = callback
   if nil == is_show_debug or true == is_show_debug then
@@ -259,7 +267,7 @@ function M:_response(session, body, ud)
 end
 
 function M:_request(proto_name, req_table, resp_func, ud, is_fs_msg)
-  if GAME_DEBUG then
+  if UNITY_EDITOR then
     if UNITY_EDITOR and not PRINT_PROTO_FILTER[proto_name] and "gs2c_task_info" ~= proto_name then
       Log.Info("recv : ", proto_name, req_table)
     end

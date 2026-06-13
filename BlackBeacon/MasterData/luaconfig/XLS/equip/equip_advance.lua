@@ -3440,126 +3440,126 @@ return {
   [2010300] = {
     {
       CostCommonId = 0,
-      CostEquipId = 2010270,
+      CostEquipId = 2010300,
       Id = 2010300,
       Lv = 1,
-      SkillId = 201027001
+      SkillId = 201030001
     },
     {
       CostCommonId = 0,
-      CostEquipId = 2010270,
+      CostEquipId = 2010300,
       Id = 2010300,
       Lv = 2,
       QualityChange = {
         {1, 4}
       },
-      SkillId = 201027002
+      SkillId = 201030002
     },
     {
       CostCommonId = 0,
-      CostEquipId = 2010270,
+      CostEquipId = 2010300,
       Id = 2010300,
       Lv = 3,
       QualityChange = {
         {1, 5}
       },
-      SkillId = 201027003
+      SkillId = 201030003
     }
   },
   [2010301] = {
     {
       CostCommonId = 32,
-      CostEquipId = 2010271,
+      CostEquipId = 2010301,
       Id = 2010301,
       Lv = 1,
-      SkillId = 201027101
+      SkillId = 201030101
     },
     {
       CostCommonId = 32,
-      CostEquipId = 2010271,
+      CostEquipId = 2010301,
       Id = 2010301,
       Lv = 2,
       QualityChange = {
         {1, 4}
       },
-      SkillId = 201027102
+      SkillId = 201030102
     },
     {
       CostCommonId = 32,
-      CostEquipId = 2010271,
+      CostEquipId = 2010301,
       Id = 2010301,
       Lv = 3,
       QualityChange = {
         {1, 5}
       },
-      SkillId = 201027103
+      SkillId = 201030103
     },
     {
       CostCommonId = 32,
-      CostEquipId = 2010271,
+      CostEquipId = 2010301,
       Id = 2010301,
       Lv = 4,
-      SkillId = 201027104,
+      SkillId = 201030104,
       UnlockGemstoneSlotId = 2
     },
     {
       CostCommonId = 32,
-      CostEquipId = 2010271,
+      CostEquipId = 2010301,
       Id = 2010301,
       Lv = 5,
       QualityChange = {
         {2, 4}
       },
-      SkillId = 201027105
+      SkillId = 201030105
     }
   },
   [2010302] = {
     {
       BirthGemstoneLevelChange = 1,
       CostCommonId = 33,
-      CostEquipId = 2010272,
+      CostEquipId = 2010302,
       Id = 2010302,
       Lv = 1,
-      SkillId = 201027201
+      SkillId = 201030201
     },
     {
       BirthGemstoneLevelChange = 2,
       CostCommonId = 33,
-      CostEquipId = 2010272,
+      CostEquipId = 2010302,
       Id = 2010302,
       Lv = 2,
       QualityChange = {
         {1, 5}
       },
-      SkillId = 201027202
+      SkillId = 201030202
     },
     {
       BirthGemstoneLevelChange = 3,
       CostCommonId = 33,
-      CostEquipId = 2010272,
+      CostEquipId = 2010302,
       Id = 2010302,
       Lv = 3,
-      SkillId = 201027203,
+      SkillId = 201030203,
       UnlockGemstoneSlotId = 2
     },
     {
       BirthGemstoneLevelChange = 4,
       CostCommonId = 33,
-      CostEquipId = 2010272,
+      CostEquipId = 2010302,
       Id = 2010302,
       Lv = 4,
       QualityChange = {
         {2, 4}
       },
-      SkillId = 201027204
+      SkillId = 201030204
     },
     {
       BirthGemstoneLevelChange = 5,
       CostCommonId = 33,
-      CostEquipId = 2010272,
+      CostEquipId = 2010302,
       Id = 2010302,
       Lv = 5,
-      SkillId = 201027205,
+      SkillId = 201030205,
       UnlockGemstoneSlotId = 3
     }
   }

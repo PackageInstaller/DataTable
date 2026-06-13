@@ -1,5 +1,5 @@
 local core = require("sproto.core")
-local assert = assert
+local assert = _ENV.assert
 local sproto = {}
 local host = {}
 local weak_mt = {__mode = "kv"}
@@ -46,7 +46,7 @@ function sproto:host(packagename)
   return setmetatable(obj, host_mt)
 end
 
-local querytype = function(self, typename)
+local function querytype(self, typename)
   local v = self.__tcache[typename]
   if not v then
     v = assert(core.querytype(self.__cobj, typename), "type not found")
@@ -84,7 +84,7 @@ function sproto:pdecode(typename, ...)
   return core.decode(st, core.unpack(...))
 end
 
-local queryproto = function(self, pname)
+local function queryproto(self, pname)
   local v = self.__pcache[pname]
   if not v then
     local tag, req, resp = core.protocol(self.__cobj, pname)
@@ -189,7 +189,8 @@ function sproto:default(typename, type)
 end
 
 local header_tmp = {}
-local gen_response = function(self, response, session)
+
+local function gen_response(self, response, session)
   return function(args, ud)
     header_tmp.type = nil
     header_tmp.session = session

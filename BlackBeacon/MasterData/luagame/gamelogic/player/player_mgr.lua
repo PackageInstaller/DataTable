@@ -17,7 +17,8 @@ local DEFAULT_POS = {
 }
 local LocalStorage = require("utils.localstorage")
 local Seri = require("seri")
-local avatar_sort = function(a, b)
+
+local function avatar_sort(a, b)
   local a_priority = a.avatar_cfg.Priority
   local b_priority = b.avatar_cfg.Priority
   local a_id = a.avatar_cfg.Id
@@ -76,7 +77,8 @@ local EXP_UP_HANDLE_WAY = {
   [CommDefine.CHALLENGE_TYPE.BUDDY_TEACH] = EXP_UP_HANDLE_TYPE.HOLD_PARAM,
   [CommDefine.CHALLENGE_TYPE.CHAPTER] = EXP_UP_HANDLE_TYPE.HOLD_PARAM,
   [CommDefine.CHALLENGE_TYPE.LONG_CHAPTER] = EXP_UP_HANDLE_TYPE.HOLD_PARAM,
-  [CommDefine.CHALLENGE_TYPE.NEW_MATERIAL] = EXP_UP_HANDLE_TYPE.HOLD_PARAM
+  [CommDefine.CHALLENGE_TYPE.NEW_MATERIAL] = EXP_UP_HANDLE_TYPE.HOLD_PARAM,
+  [CommDefine.CHALLENGE_TYPE.VERSION_EPISODE] = EXP_UP_HANDLE_TYPE.HOLD_PARAM
 }
 
 function M:on_get_role_base_info(base_info)

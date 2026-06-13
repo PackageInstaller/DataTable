@@ -644,6 +644,37 @@ return {
     Survive = 2,
     Tips = {102401}
   },
+  [1001025] = {
+    Abnormal = 5,
+    Auxiliary = 4,
+    Bg_Pos = {
+      0,
+      -398.8,
+      0
+    },
+    BuddyID = 1001025,
+    Damage = 2,
+    Detail_Bg_Pos = {
+      288,
+      -5,
+      0
+    },
+    Detail_Hero_Bg = "UIHeroTeaching/HeroTeaching_db_js01",
+    Difficulty = 1,
+    EndTime = 999,
+    EpisodeId = 10032501,
+    Hero_Bg = "HeroTeaching_db_js04",
+    Icon = "Act01_EnterBg",
+    Id = 23,
+    IsShow = true,
+    Lock_Notice = "暂未获取该角色",
+    Motor = 3,
+    Sort = 989,
+    StageName = "巴拉莱卡",
+    StartTime = 998,
+    Survive = 3,
+    Tips = {102501}
+  },
   [1001026] = {
     Abnormal = 2,
     Auxiliary = 1,

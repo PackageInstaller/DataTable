@@ -3,7 +3,7 @@ local ui = Util.create_child_mt(Base)
 local SIGNBOARD_PARAM = Config.SIGNBOARD_PARAM
 local NORMAL_PARAM_ID = 0
 local UnityShader = UnityEngine.Shader
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local TypeSceneContainer = typeof(CS.Game.SceneContainer)
 local MAIN_SCENE_SHOW_ID = UnityShader.PropertyToID("_MAIN_SCENE_SHOW")
 local SCENE_LIGHT_REV = UnityShader.PropertyToID("_SCENE_LIGHT_REV")
@@ -371,9 +371,10 @@ end
 function ui:get_favor_award()
   local has_award = CharacterMgr:check_favor_award(self.v_cur_buddy_id)
   if has_award then
-    local refresh_cb = function()
+    local function refresh_cb()
       self:check_favor_award()
     end
+    
     CharacterMgr:get_favor_award(self.v_cur_buddy_id, refresh_cb)
   end
 end

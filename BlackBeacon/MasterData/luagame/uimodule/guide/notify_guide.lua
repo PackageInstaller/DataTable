@@ -1,7 +1,7 @@
 local Base = require("ui.uiobject")
 local GuideHelper = require("uimodule.guide.guide_helper")
 local ui = Util.create_child_mt(Base)
-local UnityDestroy = UnityDestroy
+local UnityDestroy = _ENV.UnityDestroy
 local CTL_TYPE = {
   AREA_ACT = 1,
   AREA_NO_ACT = 2,

@@ -482,6 +482,48 @@ return {
     Id = 126,
     Type = 2
   },
+  [127] = {
+    DropCells = {
+      {
+        CellId = 4100252,
+        DropCount = 1,
+        Probability = 150
+      },
+      {
+        CellId = 1001251,
+        DropCount = 1,
+        Probability = 1080
+      },
+      {
+        CellId = 1000012,
+        DropCount = 1,
+        Probability = 8770
+      }
+    },
+    Id = 127,
+    Type = 2
+  },
+  [128] = {
+    DropCells = {
+      {
+        CellId = 4100302,
+        DropCount = 1,
+        Probability = 150
+      },
+      {
+        CellId = 1001301,
+        DropCount = 1,
+        Probability = 1080
+      },
+      {
+        CellId = 1000013,
+        DropCount = 1,
+        Probability = 8770
+      }
+    },
+    Id = 128,
+    Type = 2
+  },
   [1000] = {
     DropCells = {
       {
@@ -606,6 +648,48 @@ return {
       }
     },
     Id = 1005,
+    Type = 2
+  },
+  [1006] = {
+    DropCells = {
+      {
+        CellId = 1010060,
+        DropCount = 1,
+        Probability = 100
+      },
+      {
+        CellId = 1010061,
+        DropCount = 1,
+        Probability = 1080
+      },
+      {
+        CellId = 1000012,
+        DropCount = 1,
+        Probability = 8820
+      }
+    },
+    Id = 1006,
+    Type = 2
+  },
+  [1007] = {
+    DropCells = {
+      {
+        CellId = 1010070,
+        DropCount = 1,
+        Probability = 100
+      },
+      {
+        CellId = 1010071,
+        DropCount = 1,
+        Probability = 1080
+      },
+      {
+        CellId = 1000013,
+        DropCount = 1,
+        Probability = 8820
+      }
+    },
+    Id = 1007,
     Type = 2
   },
   [2000] = {
@@ -991,6 +1075,69 @@ return {
     Id = 16612,
     Type = 1
   },
+  [16613] = {
+    DropCells = {
+      {
+        CellId = 4166200,
+        DropCount = 1,
+        Probability = 10000
+      },
+      {
+        CellId = 4166101,
+        DropCount = 1,
+        Probability = 10000
+      },
+      {
+        CellId = 4166001,
+        DropCount = 1,
+        Probability = 5000
+      }
+    },
+    Id = 16613,
+    Type = 1
+  },
+  [16614] = {
+    DropCells = {
+      {
+        CellId = 4166200,
+        DropCount = 1,
+        Probability = 10000
+      },
+      {
+        CellId = 4166102,
+        DropCount = 1,
+        Probability = 10000
+      },
+      {
+        CellId = 4166001,
+        DropCount = 1,
+        Probability = 5000
+      }
+    },
+    Id = 16614,
+    Type = 1
+  },
+  [16615] = {
+    DropCells = {
+      {
+        CellId = 4166200,
+        DropCount = 1,
+        Probability = 10000
+      },
+      {
+        CellId = 4166103,
+        DropCount = 1,
+        Probability = 10000
+      },
+      {
+        CellId = 4166001,
+        DropCount = 1,
+        Probability = 5000
+      }
+    },
+    Id = 16615,
+    Type = 1
+  },
   [16701] = {
     DropCells = {
       {
@@ -1053,6 +1200,38 @@ return {
       }
     },
     Id = 16704,
+    Type = 2
+  },
+  [16705] = {
+    DropCells = {
+      {
+        CellId = 4167030,
+        DropCount = 1,
+        Probability = 4500
+      },
+      {
+        CellId = 4167012,
+        DropCount = 1,
+        Probability = 5500
+      }
+    },
+    Id = 16705,
+    Type = 2
+  },
+  [16706] = {
+    DropCells = {
+      {
+        CellId = 4167040,
+        DropCount = 1,
+        Probability = 4500
+      },
+      {
+        CellId = 4167012,
+        DropCount = 1,
+        Probability = 5500
+      }
+    },
+    Id = 16706,
     Type = 2
   },
   [18001] = {
@@ -3224,6 +3403,178 @@ return {
     Id = 1000011,
     Type = 2
   },
+  [1000012] = {
+    DropCells = {
+      {
+        CellId = 4100010,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100040,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100080,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100100,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100110,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100130,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100140,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100150,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100160,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100170,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100180,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100190,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100200,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100210,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100220,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100250,
+        DropCount = 1,
+        Probability = 1000
+      }
+    },
+    Id = 1000012,
+    Type = 2
+  },
+  [1000013] = {
+    DropCells = {
+      {
+        CellId = 4100010,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100040,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100080,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100100,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100110,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100130,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100140,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100150,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100160,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100170,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100180,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100190,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100200,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100210,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100220,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4100300,
+        DropCount = 1,
+        Probability = 1000
+      }
+    },
+    Id = 1000013,
+    Type = 2
+  },
   [1001011] = {
     DropCells = {
       {
@@ -3528,6 +3879,22 @@ return {
     Id = 1001241,
     Type = 2
   },
+  [1001251] = {
+    DropCells = {
+      {
+        CellId = 4100251,
+        DropCount = 1,
+        Probability = 7000
+      },
+      {
+        CellId = 2001000,
+        DropCount = 1,
+        Probability = 3000
+      }
+    },
+    Id = 1001251,
+    Type = 2
+  },
   [1001261] = {
     DropCells = {
       {
@@ -3558,6 +3925,22 @@ return {
       }
     },
     Id = 1001271,
+    Type = 2
+  },
+  [1001301] = {
+    DropCells = {
+      {
+        CellId = 4100301,
+        DropCount = 1,
+        Probability = 7000
+      },
+      {
+        CellId = 2001000,
+        DropCount = 1,
+        Probability = 3000
+      }
+    },
+    Id = 1001301,
     Type = 2
   },
   [1010000] = {
@@ -3750,6 +4133,70 @@ return {
       }
     },
     Id = 1010051,
+    Type = 2
+  },
+  [1010060] = {
+    DropCells = {
+      {
+        CellId = 4000025,
+        DropCount = 1,
+        Probability = 7000
+      },
+      {
+        CellId = 2010000,
+        DropCount = 1,
+        Probability = 3000
+      }
+    },
+    Id = 1010060,
+    Type = 2
+  },
+  [1010061] = {
+    DropCells = {
+      {
+        CellId = 2010061,
+        DropCount = 1,
+        Probability = 7000
+      },
+      {
+        CellId = 2010062,
+        DropCount = 1,
+        Probability = 3000
+      }
+    },
+    Id = 1010061,
+    Type = 2
+  },
+  [1010070] = {
+    DropCells = {
+      {
+        CellId = 4000030,
+        DropCount = 1,
+        Probability = 7000
+      },
+      {
+        CellId = 2010000,
+        DropCount = 1,
+        Probability = 3000
+      }
+    },
+    Id = 1010070,
+    Type = 2
+  },
+  [1010071] = {
+    DropCells = {
+      {
+        CellId = 2010071,
+        DropCount = 1,
+        Probability = 7000
+      },
+      {
+        CellId = 2010072,
+        DropCount = 1,
+        Probability = 3000
+      }
+    },
+    Id = 1010071,
     Type = 2
   },
   [1020000] = {
@@ -5767,6 +6214,120 @@ return {
       }
     },
     Id = 2010052,
+    Type = 2
+  },
+  [2010061] = {
+    DropCells = {
+      {
+        CellId = 4000011,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4000020,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4000013,
+        DropCount = 1,
+        Probability = 1000
+      }
+    },
+    Id = 2010061,
+    Type = 2
+  },
+  [2010062] = {
+    DropCells = {
+      {
+        CellId = 4000004,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4000010,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4000015,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4000018,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4000019,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4000021,
+        DropCount = 1,
+        Probability = 1000
+      }
+    },
+    Id = 2010062,
+    Type = 2
+  },
+  [2010071] = {
+    DropCells = {
+      {
+        CellId = 4000021,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4000015,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4000019,
+        DropCount = 1,
+        Probability = 1000
+      }
+    },
+    Id = 2010071,
+    Type = 2
+  },
+  [2010072] = {
+    DropCells = {
+      {
+        CellId = 4000004,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4000010,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4000011,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4000013,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4000018,
+        DropCount = 1,
+        Probability = 1000
+      },
+      {
+        CellId = 4000020,
+        DropCount = 1,
+        Probability = 1000
+      }
+    },
+    Id = 2010072,
     Type = 2
   },
   [2020000] = {

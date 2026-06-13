@@ -254,9 +254,11 @@ end
 function ui:check_story_and_play_next(new_question_cfg)
   local story_id = new_question_cfg.PreStoryId
   local new_question_id = new_question_cfg.QuestionId
-  local play_next_func = function()
+  
+  local function play_next_func()
     UIMgr:get_ui("monkey_typer_question_tips"):ui_show(self.v_activity_id, new_question_id, false)
   end
+  
   if story_id then
     StoryMgr:set_story_end_cb(story_id, play_next_func)
     StoryMgr:on_start(story_id)

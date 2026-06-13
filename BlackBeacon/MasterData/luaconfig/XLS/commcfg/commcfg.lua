@@ -43,7 +43,7 @@ return {
   },
   BBQGuideParam = {
     key = "BBQGuideParam",
-    stringvalue = {1300, 13},
+    stringvalue = {1300, 999},
     value = 0
   },
   BaheviorAiId = {
@@ -405,7 +405,7 @@ return {
   },
   FightPauseResumeTime = {
     key = "FightPauseResumeTime",
-    value = 10
+    value = 20
   },
   FightTaskAnimCD = {
     key = "FightTaskAnimCD",
@@ -733,6 +733,10 @@ return {
   PlotLineSpaceNote = {
     key = "PlotLineSpaceNote",
     value = 1.3
+  },
+  PuzzlePlanLimit = {
+    key = "PuzzlePlanLimit",
+    value = 5
   },
   QiannnengProgressImgFill = {
     key = "QiannnengProgressImgFill",

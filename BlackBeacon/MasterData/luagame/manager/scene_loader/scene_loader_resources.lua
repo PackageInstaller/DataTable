@@ -5,8 +5,8 @@ local UnityLoadSceneAsync = CS.UnitySceneManager.LoadSceneAsync
 local UnityUnloadScene = CS.UnitySceneManager.UnloadScene
 local UnityLoad = UnityEngine.Resources.Load
 local UnityUnLoad = UnityEngine.Resources.UnloadAsset
-local UnityDestroy = UnityDestroy
-local UnityFind = UnityFind
+local UnityDestroy = _ENV.UnityDestroy
+local UnityFind = _ENV.UnityFind
 local RuntimeMeshCombinener = CS.RuntimeMeshCombinener
 local CSSceneIllumination = CS.SceneIllumination
 local CSHelper = CS.Game.CSHelper
@@ -29,7 +29,7 @@ function M:load_scene(scene_cfg)
   self.v_need_load = true
 end
 
-local _init_scene_diff_light = function()
+local function _init_scene_diff_light()
   local scene_effect_obj = UnityFind("SceneEffect")
   if not scene_effect_obj then
     return
@@ -48,7 +48,8 @@ local _init_scene_diff_light = function()
   scene_illumination.curLightDataIndex = index
   scene_illumination:ApplySceneEffect()
 end
-local _init_static_batching = function()
+
+local function _init_static_batching()
   if Global.scene_mgr and Global.scene_mgr:check_main_scene() then
     return
   end

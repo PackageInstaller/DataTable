@@ -12,7 +12,8 @@ local Vec3 = require("base.vec3")
 local Zero_Euler = Quat.Euler(0, 0, 0)
 local UnityCamera = typeof(UnityEngine.Camera)
 local DEBUG = false
-local pos_sort = function(a, b)
+
+local function pos_sort(a, b)
   return a.dis > b.dis
 end
 

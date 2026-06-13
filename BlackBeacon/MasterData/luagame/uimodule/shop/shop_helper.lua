@@ -217,9 +217,10 @@ function helper.check_cost_enough(item_id, need)
 end
 
 function helper.jump_to_recharge()
-  local sure_cb = function()
+  local function sure_cb()
     SysOpenMgr:jump_to_sys(12106, true)
   end
+  
   local cfg = Item_Helper.get_item_cfg(Config.GILTGOLD_ITEMID)
   local desc = Util.format_str("{1}不足，是否前往{2}", cfg.Name, ShopCfg.SHOP_NAME[ShopCfg.SHOP_TYPE.Recharge])
   UIMgr:get_ui("uinotice_tips"):ui_show(sure_cb, nil, desc)

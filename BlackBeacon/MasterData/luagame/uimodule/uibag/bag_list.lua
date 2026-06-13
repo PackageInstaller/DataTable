@@ -16,7 +16,8 @@ local WEAPEN_IDX = BagCfg.WEAPEN_IDX
 local ITEM_IDX = BagCfg.ITEM_IDX
 local QUALITYS = BagCfg.QUALITYS
 local MAX_DURATION = BagCfg.MAX_ITEM_DURATION
-local _build_equip_gem_list = function(gemstone_slot)
+
+local function _build_equip_gem_list(gemstone_slot)
   if not gemstone_slot then
     return nil
   end
@@ -28,6 +29,7 @@ local _build_equip_gem_list = function(gemstone_slot)
   end
   return list
 end
+
 local BUILD_FUNCTIONS = {
   [WEAPEN_IDX] = function(weapon)
     local ret_weapon = {}
@@ -285,7 +287,8 @@ local DEC_SORT = {
   [SORT_TYPE.WEAPON_BY_LEVEL] = "lv",
   [SORT_TYPE.WEAPON_BY_RECENT] = TIME_TAG
 }
-local _camp_func = function(w1, w2, sort_type, dec_sort)
+
+local function _camp_func(w1, w2, sort_type, dec_sort)
   local key
   local order = SORT_ORDER[sort_type]
   local need_dec_key = DEC_SORT[sort_type]

@@ -597,26 +597,33 @@ return {
   },
   [25] = {
     ArrowDesc = {
-      "附加标记",
-      "消耗标记"
+      "派生",
+      "强化",
+      "蓄满枪焰"
     },
-    ComboDesc = "技能1【疾刺】：投出雷枪，命中敌人会施加【流电】印记，击中有印记的目标会刷新印记的持续时间；\n技能2【踏电】：向前进行位移突刺，击中有印记的敌人将会刷新技能CD，同时可以叠加一层被动【奔雷】能量，至多叠加三层；\n强化普攻【绝影连刺】：【奔雷】积攒至3层时可以使用，造成大量分支技伤害",
+    ComboDesc = "技能1【膝击】解锁技能1派生【攻歼】，【攻歼】强化技能2变为【近身突袭】；\n技能2、强化技能1【攻歼】、强化技能2【近身突袭】，均可蓄积【枪焰】;\n3层枪焰解锁强化普攻【破障】；\n使用【破障】后将角色切换至后台，会自动召唤3次【枪焰威势】，帮助场上角色战斗；再次将女仆召唤回场，发动强化入场攻击【女仆已就位】",
     ComboIcon = {
-      "Skill/UI_H1001004_skill2",
-      "Skill/UI_H1001004_skill3",
-      "Skill/UI_H1001004_passive"
+      "Skill/UI_H1001025_skill1_1",
+      "Skill/UI_H1001025_skill1_2",
+      "Skill/UI_H1001025_skill2_2",
+      "Skill/UI_H1001025_skill2_3"
     },
     ComboId = 25,
     ComboName = "巴拉莱卡",
     ShowArrow = {
       true,
       true,
-      false,
+      true,
       false,
       false,
       false
     },
-    SkillType = {}
+    SkillType = {
+      "技能1",
+      "技能1",
+      "技能2",
+      "强化普攻"
+    }
   },
   [26] = {
     ArrowDesc = {
@@ -792,6 +799,82 @@ return {
       "技能1",
       "技能2",
       "普攻"
+    }
+  },
+  [2501] = {
+    ArrowDesc = {
+      "触发",
+      "衔接",
+      [4] = "衔接"
+    },
+    ComboDesc = "重击、闪避反击后的普攻均变为普攻第3段；普攻第3段命中可蓄积【枪焰】",
+    ComboIcon = {
+      "Skill/UI_skill_counter_1",
+      "Skill/UI_H1001025_atk",
+      "Skill/UI_H1001025_atk",
+      "Skill/UI_H1001025_atk",
+      "Skill/UI_H1001025_atk"
+    },
+    ComboId = 2501,
+    ComboName = "巴拉莱卡-1",
+    ShowArrow = {
+      true,
+      true,
+      false,
+      true,
+      false,
+      false
+    },
+    SkillType = {
+      "完美闪避",
+      "闪避反击",
+      "普攻第3段",
+      "重击",
+      "普攻第3段"
+    }
+  },
+  [2502] = {
+    ArrowDesc = {"派生", "强化"},
+    ComboDesc = "技能1【膝击】解锁技能1派生【攻歼】，【攻歼】强化技能2变为【近身突袭】；技能2、强化技能1【攻歼】、强化技能2【近身突袭】，均可蓄积【枪焰】",
+    ComboIcon = {
+      "Skill/UI_H1001025_skill1_1",
+      "Skill/UI_H1001025_skill1_2",
+      "Skill/UI_H1001025_skill2_2"
+    },
+    ComboId = 2502,
+    ComboName = "巴拉莱卡-2",
+    ShowArrow = {
+      true,
+      true,
+      false,
+      false,
+      false,
+      false
+    },
+    SkillType = {
+      "技能1",
+      "技能1",
+      "技能2"
+    }
+  },
+  [2503] = {
+    ArrowDesc = {},
+    ComboDesc = "3层枪焰解锁强化普攻【破障】；\n使用【破障】后将角色切换至后台，会自动召唤3次【枪焰威势】，帮助场上角色战斗；再次将女仆召唤回场，发动强化入场攻击【女仆已就位】",
+    ComboIcon = {
+      "Skill/UI_H1001025_skill2_3"
+    },
+    ComboId = 2503,
+    ComboName = "巴拉莱卡-3",
+    ShowArrow = {
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    },
+    SkillType = {
+      "强化普攻"
     }
   },
   [2702] = {

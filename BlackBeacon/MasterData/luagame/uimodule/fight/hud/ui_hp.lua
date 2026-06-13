@@ -373,9 +373,9 @@ function M:_update_hp_val(percent, hp, hp_max)
   end
 end
 
-function M:clear_hp_obj(destroy_by_role)
+function M:clear_hp_obj()
   self:clear_seq()
-  if not destroy_by_role and self.v_hp_obj then
+  if self.v_hp_obj then
     local hp_rect = self.v_use_hp_bg
     hp_rect:SetSizeDeltaWidthA(self.v_hp_width)
     ResPoolMgr:release(self.v_hp_obj)
@@ -398,28 +398,19 @@ end
 
 local DESTROY_TYPE = {BY_ROLE = 1, BY_POOL = 2}
 
-function M:set_destroy_type(is_destroy_by_role)
-  self.v_destroy_type = is_destroy_by_role and DESTROY_TYPE.BY_ROLE or DESTROY_TYPE.BY_POOL
-end
-
 function M:on_destroy()
-  local destroy_by_role = self.v_destroy_type == DESTROY_TYPE.BY_ROLE
   Util.unbind_all_msg(self)
   for key, item in pairs(self.v_weak_item_list) do
     item:ui_hide()
-    if not destroy_by_role then
-      item:ui_destroy()
-      self.v_weak_item_list[key] = nil
-    end
+    item:ui_destroy()
   end
-  if not destroy_by_role then
-    self.v_weak_item_obj_list = {}
-  end
+  self.v_weak_item_obj_list = nil
+  self.v_weak_item_list = nil
   self:clear_all_buff_obj()
   self:release_dynamic_effect()
   self:set_effect_bar_show(false)
   self:set_visible(false)
-  self:clear_hp_obj(destroy_by_role)
+  self:clear_hp_obj()
   self.v_dynamic_ui = nil
   self.v_char = nil
   self.v_attach_trans = nil

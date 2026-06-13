@@ -55,7 +55,7 @@ function ui:ui_finish_load()
   self.v_object:SetActive(true)
 end
 
-local _set_naitive_size = function(img)
+local function _set_naitive_size(img)
   img:SetNativeSize()
 end
 

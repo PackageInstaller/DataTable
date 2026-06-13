@@ -1,5 +1,6 @@
 local LuaObjPoolMgr = require("manager.res.lua_obj_pool_mgr")
-local _limit = function(new_value, config, limit_attr_name, index)
+
+local function _limit(new_value, config, limit_attr_name, index)
   if nil == index then
     if nil == config[limit_attr_name] then
       return new_value
@@ -15,6 +16,7 @@ local _limit = function(new_value, config, limit_attr_name, index)
   end
   return math.min(new_value, limit_arr[index])
 end
+
 local LIMIT_FILTER = {
   LiveTime = {
     "LiveTimeLimit"
@@ -60,7 +62,8 @@ local ALLOW_FILTER = {
   BornPosition = true
 }
 local CHANGE_MODE = {REPLACE = 0, ALTER = 1}
-local _limit_dynamic_attr = function(config, attr_name, new_value)
+
+local function _limit_dynamic_attr(config, attr_name, new_value)
   local filter = LIMIT_FILTER[attr_name]
   if filter then
     return _limit(new_value, config, filter[1], filter[2])
@@ -68,8 +71,10 @@ local _limit_dynamic_attr = function(config, attr_name, new_value)
     return new_value
   end
 end
+
 local ReplacedMissileConfig = Util.create_class()
-local _replace_new_value = function(self, replace_data, k, v, config)
+
+local function _replace_new_value(self, replace_data, k, v, config)
   local new_value = replace_data[k]
   if new_value then
     if replace_data.__CHANGE_MODE__ == CHANGE_MODE.ALTER then

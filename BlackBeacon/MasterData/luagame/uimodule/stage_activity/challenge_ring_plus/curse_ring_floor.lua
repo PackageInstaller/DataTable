@@ -53,10 +53,12 @@ end
 function ui:set_timer()
   local duration = self.v_uicompents.Ani_ChalRingFloor_IN_pd.duration
   if duration >= detween_total_time then
-    local cb = function()
+    local function cb()
       ChallengeRingPlusMgr:req_enter_door()
+      
       self.v_timer = nil
     end
+    
     self.v_timer = Timer:add_timer(nil, duration, cb)
   end
 end

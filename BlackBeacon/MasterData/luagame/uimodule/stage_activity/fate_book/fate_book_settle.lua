@@ -10,7 +10,8 @@ local AssetBarView = require("ui.asset_bar.asset_bar")
 local ASSET_ITEM = {4, 11}
 local SHOP_HELPER = require("uimodule.shop.shop_helper")
 local curse_com_def = require("uimodule.stage_activity.challenge_ring_plus.curse_common_define")
-local sort = function(a, b)
+
+local function sort(a, b)
   if a.pos ~= b.pos then
     return a.pos < b.pos
   else
@@ -35,8 +36,9 @@ function ui:on_click_BtnSaveFile()
 end
 
 function ui:on_click_settle_btn()
-  local confirm_cb = function()
+  local function confirm_cb()
     local callback
+    
     self.v_progress = nil
     if SceneMgr:check_main_scene() then
       self:ui_hide()
@@ -55,6 +57,7 @@ function ui:on_click_settle_btn()
       TowerMgr:get_fight_reward(callback)
     end
   end
+  
   local save_id = self.v_ring_cfg and self.v_ring_cfg.SaveId
   local has_temp_data = nil ~= save_id and nil ~= FateBookMgr:get_fate_book_temp_save_data(save_id)
   if has_temp_data and not FateBookMgr:check_fate_book_has_file_data(save_id) then
@@ -188,7 +191,8 @@ function ui:refresh_award()
   end
   self.v_is_refresh_award = true
   local has_tower = TowerMgr:get_tower() ~= nil
-  local refresh_cb = function(ok, resp, tower_info)
+  
+  local function refresh_cb(ok, resp, tower_info)
     tower_info = tower_info or resp.tower_info
     local curse_data = tower_info.curse_tower_data
     if curse_data then
@@ -211,6 +215,7 @@ function ui:refresh_award()
       self:refresh_hero_item(curse_data)
     end
   end
+  
   local point_id = self.v_progress.episode_id
   local point_cfg = ShareRes.get_chapter_point_cfg(point_id)
   self.v_uiobjects.Item29:SetActive(false)

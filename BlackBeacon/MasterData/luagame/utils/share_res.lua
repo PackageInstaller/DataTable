@@ -9,20 +9,21 @@ function M.is_exist_config(path)
   return CSLuaService.isExistConfig("XLS." .. path)
 end
 
-local load_config_file = function(file)
+local function load_config_file(file)
   local data = CSLuaService.loadConfig(file)
   if not data then
     Log.Error("load file error", file, debug.traceback())
     return
   end
-  local cfg = load(data, file, "bt")
+  local cfg, err = load(data, file, "bt")
   if not cfg then
-    Log.Error("load cfg error", file)
+    Log.Error("load cfg error", file, err)
     return
   end
   return cfg()
 end
-local get_bundle_ref_config = function(path)
+
+local function get_bundle_ref_config(path)
   local tbl = global_res_tbl[path]
   if not tbl then
     tbl = load_config_file("BundleRef." .. path)
@@ -30,7 +31,8 @@ local get_bundle_ref_config = function(path)
   end
   return tbl
 end
-local get_tbl = function(path)
+
+local function get_tbl(path)
   local tbl = global_res_tbl[path]
   if not tbl then
     tbl = load_config_file("XLS." .. path)
@@ -2440,7 +2442,8 @@ function M.get_chapter_node_award2(node_id, data_list, cal_force_exchange_ex)
     type = -1,
     fight_cost = fight_cost
   }
-  local build_data_func = function(award_cfg, index)
+  
+  local function build_data_func(award_cfg, index)
     local data = {
       id = award_cfg.ItemId,
       count = award_cfg.Num,
@@ -2457,6 +2460,7 @@ function M.get_chapter_node_award2(node_id, data_list, cal_force_exchange_ex)
     end
     return data
   end
+  
   if award_id and award_id > 0 then
     M.get_item_obj_use_award_list(award_id, data_list, build_data_func)
   end
@@ -2490,7 +2494,8 @@ function M.get_point_award2(point_id, data_list, cal_force_exchange_ex)
     type = -1,
     fight_cost = fight_cost
   }
-  local build_data_func = function(award_cfg)
+  
+  local function build_data_func(award_cfg)
     local data = {
       id = award_cfg.ItemId,
       count = award_cfg.Num,
@@ -2505,6 +2510,7 @@ function M.get_point_award2(point_id, data_list, cal_force_exchange_ex)
     end
     return data
   end
+  
   if first_award and first_award > 0 then
     M.get_item_obj_use_award_list(first_award, data_list, build_data_func)
   end
@@ -2545,7 +2551,8 @@ function M.get_point_star_award2(point_id, data_list)
   end
   local award_list = star_rating_cfg.RewardGroupId
   local temp_arg = {star = 0}
-  local build_data_func = function(award_cfg)
+  
+  local function build_data_func(award_cfg)
     return {
       id = award_cfg.ItemId,
       count = award_cfg.Num,
@@ -2554,6 +2561,7 @@ function M.get_point_star_award2(point_id, data_list)
       type = -1
     }
   end
+  
   for star, award_id in pairs(award_list) do
     if award_id > 0 then
       temp_arg.star = star

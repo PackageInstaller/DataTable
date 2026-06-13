@@ -2660,12 +2660,12 @@ return {
   [20102801] = {
     AttachPoint = "Bip001 Prop1",
     Id = 20102801,
-    ModelPath = "H1001028_Weapon_1_2",
+    ModelPath = "H1001028_Weapon_1",
     Name = "塞西莉娅0级-右",
     PlayAnim = 1,
     RootPosition = {
       -0.28,
-      0.58,
+      0.63,
       0.69
     },
     SimpleViewOffset = {-0.42, 0},
@@ -2683,12 +2683,12 @@ return {
   [20102802] = {
     AttachPoint = "Bip001 Prop2",
     Id = 20102802,
-    ModelPath = "H1001028_Weapon_1_2",
+    ModelPath = "H1001028_Weapon_1",
     Name = "塞西莉娅0级-左",
     PlayAnim = 1,
     RootPosition = {
       -0.28,
-      0.58,
+      0.63,
       0.69
     },
     SimpleViewOffset = {-0.42, -211},
@@ -2706,12 +2706,12 @@ return {
   [20102811] = {
     AttachPoint = "Bip001 Prop1",
     Id = 20102811,
-    ModelPath = "H1001028_Weapon_1_2",
+    ModelPath = "H1001028_Weapon_1",
     Name = "塞西莉娅1级-右",
     PlayAnim = 1,
     RootPosition = {
       -0.28,
-      0.58,
+      0.63,
       0.69
     },
     SimpleViewOffset = {-0.42, 0},
@@ -2729,12 +2729,12 @@ return {
   [20102812] = {
     AttachPoint = "Bip001 Prop2",
     Id = 20102812,
-    ModelPath = "H1001028_Weapon_1_2",
+    ModelPath = "H1001028_Weapon_1",
     Name = "塞西莉娅1级-左",
     PlayAnim = 1,
     RootPosition = {
       -0.28,
-      0.58,
+      0.63,
       0.69
     },
     SimpleViewOffset = {-0.42, -211},
@@ -2757,7 +2757,7 @@ return {
     PlayAnim = 1,
     RootPosition = {
       -0.28,
-      0.58,
+      0.63,
       0.69
     },
     SimpleViewOffset = {-0.42, 0},
@@ -2780,7 +2780,7 @@ return {
     PlayAnim = 1,
     RootPosition = {
       -0.28,
-      0.58,
+      0.63,
       0.69
     },
     SimpleViewOffset = {-0.42, -211},
@@ -2844,7 +2844,7 @@ return {
   [20102921] = {
     AttachPoint = "Bip001 Prop1",
     Id = 20102921,
-    ModelPath = "H1001029_Weapon_1",
+    ModelPath = "H1001029_Weapon_1_2",
     Name = "黑铂鸢2级",
     PlayAnim = 1,
     RootPosition = {
@@ -2867,7 +2867,7 @@ return {
   [20103001] = {
     AttachPoint = "Bip001 Prop1",
     Id = 20103001,
-    ModelPath = "H1001030_Weapon_1_2",
+    ModelPath = "H1001030_Weapon_1",
     Name = "旃檀0级",
     PlayAnim = 1,
     RootPosition = {
@@ -2877,9 +2877,9 @@ return {
     },
     SimpleViewOffset = {-0.79, -211},
     UIPosition = {
-      -0.33,
-      1.13,
-      1.4
+      0.06,
+      1.1,
+      -0.5
     },
     UIRotation = {
       0,
@@ -2890,7 +2890,7 @@ return {
   [20103011] = {
     AttachPoint = "Bip001 Prop1",
     Id = 20103011,
-    ModelPath = "H1001030_Weapon_1_2",
+    ModelPath = "H1001030_Weapon_1",
     Name = "旃檀1级",
     PlayAnim = 1,
     RootPosition = {
@@ -2900,9 +2900,9 @@ return {
     },
     SimpleViewOffset = {-0.79, -211},
     UIPosition = {
-      -0.33,
-      1.13,
-      1.4
+      0.06,
+      1.1,
+      -0.5
     },
     UIRotation = {
       0,
@@ -2923,9 +2923,9 @@ return {
     },
     SimpleViewOffset = {-0.79, -211},
     UIPosition = {
-      -0.33,
-      1.13,
-      1.4
+      0.06,
+      1.1,
+      -0.5
     },
     UIRotation = {
       0,

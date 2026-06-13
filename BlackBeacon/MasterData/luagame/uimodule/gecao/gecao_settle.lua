@@ -13,7 +13,8 @@ local Item_Helper = require("utils.item_helper")
 local _sort = table.sort
 local _insert = table.insert
 local commonDef = require("cs_share.common_define")
-local _sort_func = function(a, b)
+
+local function _sort_func(a, b)
   local x = 0
   local y = 0
   if a.Priority then
@@ -101,13 +102,14 @@ function M:ui_on_destroy()
   self.v_task_sv = nil
 end
 
-local _get_item_data = function(data, state)
+local function _get_item_data(data, state)
   data.state = state
   local item_cfg = Item_Helper.get_item_cfg(data.id)
   data.qulity = item_cfg.Quality
   data.priority = item_cfg.Priority
 end
-local _set_item_data = function(self, data)
+
+local function _set_item_data(self, data)
   local item = self:get_auto_cache(GECAO_SETTLEMENT_ITEM_KEY .. self.v_ui_name)
   self:set_item_data(item, data)
   table.insert(self.v_show_item_list, item)
@@ -166,12 +168,14 @@ end
 
 function M:set_item_data(item, data)
   local com_item = Util.get_child_gameobj("ItemObjCom", item)
-  local click_cb = function()
+  
+  local function click_cb()
     UIMgr:get_ui("itemTip"):ui_show({
       item_id = data.id,
       is_in_fight = true
     })
   end
+  
   self:create_item_obj(nil, com_item.gameObject, nil, {
     item_id = data.id,
     click_cb = click_cb

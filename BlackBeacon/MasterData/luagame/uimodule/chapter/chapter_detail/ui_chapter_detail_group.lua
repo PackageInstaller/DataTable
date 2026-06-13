@@ -447,12 +447,14 @@ function ui:do_unlock_anima(start_pos_id, end_pos_id, need_refresh_detail, cb)
   local target_point_cfg = target_item:get_area_point_cfg()
   local obj_name, _ = self:get_line_name(start_pos_id, end_pos_id)
   local line_data = self.v_line_obj_name_map[obj_name]
-  local done_cb = function()
+  
+  local function done_cb()
     self.v_parent_ui:on_unlock_anima_end()
     target_item:set_enable(true)
     target_item:play_unlock_pd(cb)
     self:clear_sequence()
   end
+  
   target_item:set_lock_state(true, true)
   local show_time
   if not line_data or not line_data.hori and not line_data.vert then

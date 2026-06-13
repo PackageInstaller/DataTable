@@ -1,8 +1,6 @@
 local Base = require("gamelogic.base_system")
 local M = Util.create_child_mt(Base)
 local TASK_STATE = Config.TASK_STATE
-local Timer = Global.timer
-local LocalStorage = require("utils.localstorage")
 
 function M:init_sys()
   Base.init_sys(self)
@@ -37,11 +35,7 @@ function M:on_gs2c_activity_shooting_game_update(data)
   if ui_activity_daily1 and ui_activity then
     ui_activity:set_full_mask_active(true)
     ui_activity_daily1:play_shoot_ani(data.shooting_target_list)
-    Timer:add_timer("shooting_game_ani", 2.1, function()
-      ui_activity:set_full_mask_active(false)
-      ui_activity_daily1:set_allow_shoot()
-      ui_activity_daily1:refresh_target_list()
-    end)
+    ui_activity_daily1:on_shooting_game_partly_update()
   end
 end
 
@@ -59,10 +53,7 @@ function M:on_gs2c_activity_shooting_game_info(data)
   self:check_activity_task()
   local ui_activity_daily1 = UIMgr:try_get_visible_ui("ui_activity_daily1")
   if ui_activity_daily1 then
-    Timer:add_timer("shooting_game_ani", 2, function()
-      ui_activity_daily1:set_allow_shoot()
-      ui_activity_daily1:refresh_target_list()
-    end)
+    ui_activity_daily1:on_shooting_game_update()
   end
 end
 

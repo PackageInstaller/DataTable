@@ -52,7 +52,7 @@ function M.connect_map(des_map, scr_map)
   end
 end
 
-local _clone = function(root)
+local function _clone(root)
   local lookup_table = {}
   
   local function _copy(object)
@@ -77,7 +77,7 @@ function M.copy_table(scr)
   return _clone(scr)
 end
 
-local _fill = function(srcRoot, tarRoot)
+local function _fill(srcRoot, tarRoot)
   local lookup_table = {}
   local objType
   
@@ -312,6 +312,24 @@ function M.format_table(node, ignore_function)
   table.insert(output, output_str)
   output_str = table.concat(output)
   return output_str
+end
+
+function M.binary_search(list, target_index, need_mach, compare_index_func)
+  local start_index, end_index = 1, #list
+  while start_index <= end_index do
+    local mid = math.floor((start_index + end_index) / 2)
+    local current = list[mid]
+    local current_index = compare_index_func and compare_index_func(current) or current
+    if need_mach and current_index == target_index then
+      start_index = mid
+      break
+    elseif target_index > current_index then
+      start_index = mid + 1
+    else
+      end_index = mid - 1
+    end
+  end
+  return start_index
 end
 
 return M

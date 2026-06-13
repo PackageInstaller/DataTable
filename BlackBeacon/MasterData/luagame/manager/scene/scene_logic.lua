@@ -1,6 +1,6 @@
 local M = Util.create_class()
-local UnityFind = UnityFind
-local UnityDestroy = UnityDestroy
+local UnityFind = _ENV.UnityFind
+local UnityDestroy = _ENV.UnityDestroy
 local CSResLoader = CS.ResLoader
 local CSFollower = CS.Game.MoveFollower
 local TypeReversibleTimeLinePlayer = typeof(CS.Game.ReversibleTimeLinePlayer)
@@ -157,6 +157,7 @@ function M:release()
   if self.v_scene_logic_runner then
     self.v_scene_logic_runner:release()
   end
+  Global.last_room_random_ctx = nil
 end
 
 function M:register_event()
@@ -171,13 +172,14 @@ function M:register_event()
   Util.bind_msg(self, Const.MSG_TREASURE_CHEST_OPEN_FINISH, self.on_treasure_chest_open_finish, self)
 end
 
-local reduce_distance_from_y_angle = function(x, y, y_angle)
+local function reduce_distance_from_y_angle(x, y, y_angle)
   local distance = ShareRes.get_comm_value("TPReduceDistance")
   local dir_vec3 = Quat.AngleAxis(y_angle, Vec3.up) * Vec3.forward
   local offsetx, offsety = dir_vec3.x * distance, dir_vec3.z * distance
   return x + offsetx, y + offsety
 end
-local reduce_distance_from_center = function(center_x, center_y, x, y)
+
+local function reduce_distance_from_center(center_x, center_y, x, y)
   local distance = ShareRes.get_comm_value("TPReduceDistance")
   local dir_x, dir_y = center_x - x, center_y - y
   local len = math.sqrt(dir_x * dir_x + dir_y * dir_y)
@@ -318,6 +320,10 @@ function M:check_area_mask(mask, position)
   return self.v_scene_map:check_area_mask(mask, position)
 end
 
+function M:trigger_area_event_on_path(baseobj, mask, start_pos, end_pos)
+  self.v_scene_map:trigger_area_event_on_path(baseobj, mask, start_pos, end_pos)
+end
+
 function M:is_in_tp_area(mask, position)
   return self.v_scene_map:is_in_tp_area(mask, position)
 end
@@ -383,7 +389,7 @@ end
 
 function M:is_need_open_fail_win()
   local fight_type = TowerMgr:get_fight_type()
-  if fight_type == CommonDefine.CHALLENGE_TYPE.WEEK_ACTY_PERPARE_EPI or fight_type == CommonDefine.CHALLENGE_TYPE.WEEK_ACTY_PVP_EPI then
+  if fight_type == CommonDefine.CHALLENGE_TYPE.WEEK_ACTY_PERPARE_EPI or fight_type == CommonDefine.CHALLENGE_TYPE.WEEK_ACTY_PVP_EPI or fight_type == CommonDefine.CHALLENGE_TYPE.ACTIVITY_PONDER then
     return true
   end
   return false
@@ -454,21 +460,20 @@ function M:continue_tp_room(tp_index, fight_type, tp_point)
     self.v_continue_tp_room_params = nil
   end
   if self.v_tower:is_end_room(tp_index) then
-    local callback = function()
+    local function callback()
       local effect_data = Global.hero.act_effect_ctrl.create_effect_param()
+      
       effect_data.prefab_name = Path.get_res_path("Fx_Common_BianShen")
       effect_data.parent = Global.hero.transform
       
       function effect_data.callback()
         self.v_tping = false
-        SceneMgr:set_scene_show(true, function()
-          Log.Info("set_scene_show true end")
-          return self.v_tower:on_tp_room(tp_index)
-        end, 1)
+        return self.v_tower:on_tp_room(tp_index)
       end
       
       Global.hero.act_effect_ctrl:play_effect(effect_data)
     end
+    
     if self.v_tower:get_tower_pass() then
       callback()
     else
@@ -509,13 +514,15 @@ function M:continue_tp_room(tp_index, fight_type, tp_point)
       end
     end
   else
-    local cb = function()
+    local function cb()
       SceneMgr:set_scene_show(false, function()
         SceneMgr:set_player_control_on()
+        
         Log.Info("set_scene_show false end")
         return self.v_tower:on_tp_room(tp_index)
       end, 0)
     end
+    
     SceneMgr:set_player_control_off()
     Joystick.on_joystick("end")
     Log.Info("tp point transmit")
@@ -1287,7 +1294,7 @@ function M:update_functional_npc_interaction_status(npc_id, is_get)
   end
 end
 
-local _find_scene_obj = function(root_name, object_name)
+local function _find_scene_obj(root_name, object_name)
   local root = UnityFind(root_name)
   if not root or root:IsNull() then
     return
@@ -1344,7 +1351,9 @@ function M:play_scene_timeline(timeline_name)
     self.v_scene_normal_timeline_list[timeline_name] = scene_timeline_player
     scene_timeline_player:PlayTimeline(timeline_name, function(timeline_path)
       self.v_scene_normal_timeline_list[timeline_name] = nil
-      SceneMgr:c2gs_call_scene(BehaviorMgr.EVENTS.ON_TIMELINE_END, timeline_path)
+      if Network:is_can_c2gs_call_scene() then
+        SceneMgr:c2gs_call_scene(BehaviorMgr.EVENTS.ON_TIMELINE_END, timeline_path)
+      end
       BehaviorMgr:call_scene_logic_event_fun(BehaviorMgr.EVENTS.ON_TIMELINE_END, timeline_path)
     end)
     if self.v_cache_timeline_speed[timeline_name] then

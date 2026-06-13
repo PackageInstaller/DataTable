@@ -66,19 +66,24 @@ function ui:_exit_tower(fight_type)
   local tip = Util.format_str("是否立即退出关卡")
   local sure_btn = Util.format_str("中继保存")
   local cancel_btn = Util.format_str("直接结算")
-  local sure_callback = function()
+  
+  local function sure_callback()
     self:ui_hide()
-    local cb = function()
+    
+    local function cb()
       Global.scene_mgr:on_enter_main_scene()
       UIMgr:revert_cache_ui()
     end
+    
     if TowerMgr then
       TowerMgr:on_exit_tower(cb)
     end
   end
-  local cancel_callback = function()
+  
+  local function cancel_callback()
     UIMgr:get_ui("endless_settle"):ui_show(CHAPTER_CONFIG.POINTSTATE.quit)
   end
+  
   local uinotice_tips = UIMgr:get_ui("uinotice_tips")
   uinotice_tips:ui_show(sure_callback, cancel_callback, tip, sure_btn, cancel_btn)
   uinotice_tips:enable_bg_click(true)

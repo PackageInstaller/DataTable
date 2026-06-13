@@ -113,7 +113,7 @@ return {
     RefineItemCount = 3,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者释放技能命中敌人后，3秒内下一次普攻获得7.2%伤害增幅"
+    WorldDesc = ""
   },
   [980011] = {
     ArchiveDesc = "战乱不止，纷争不休，于是沙漠中的先民定下律法——它当如天上的太阳般运行，东升西落，既予恩惠，亦降严苛，永不偏移。",
@@ -137,7 +137,7 @@ return {
     RefineItemCount = 3,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者普攻造成伤害后，提升3%暴击率，最多叠加3层；释放技能时，失去此效果。"
+    WorldDesc = ""
   },
   [980012] = {
     ArchiveDesc = "旗帜早已褪色，锋刃早已破碎，只有这永不停止的脚步，能够证明这支军队不曾死去。",
@@ -161,7 +161,7 @@ return {
     RefineItemCount = 3,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者每次消耗精力后，获得2.1%穿透，持续5秒，最多叠加5层。"
+    WorldDesc = ""
   },
   [980013] = {
     ArchiveDesc = "从那座书馆中所投射出来的阴影，人们将其视作神秘，艾弥安们则将其称之为预言。",
@@ -185,7 +185,7 @@ return {
     RefineItemCount = 3,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者造成充能伤害后，获得6%强化伤害增幅，持续3秒；造成强化伤害后，提高6%充能伤害增幅，持续3秒。"
+    WorldDesc = ""
   },
   [980014] = {
     ArchiveDesc = "黎君既殁，殡葬之际，仍有赤蝶盈庭，经宿不去。族人异之，乃以蝶为祖灵，镂骨为纹，谓其翅振则四时行，鳞落而万物生。",
@@ -209,7 +209,7 @@ return {
     RefineItemCount = 3,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者生命值降低时，暴击率提高3%，可叠加3层，离场后失效。"
+    WorldDesc = ""
   },
   [980020] = {
     ArchiveDesc = "夏末之时，诸侯裂土，虎贲禁军孤守青御、死战不降。城破之日，三百甲胄皆没于烽烟，而其名却得以流传。尔后千年，凡骁勇无畏者，史官朱笔不书其姓，只言“虎贲”。",
@@ -233,7 +233,7 @@ return {
     RefineItemCount = 2,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者获得3%强化伤害增幅（同类效果无法叠加）"
+    WorldDesc = ""
   },
   [980021] = {
     ArchiveDesc = "客游瀚泽，行至湖中，问蛟鼉之患。渔者摇桨徐行，答曰，“蛟鼉噬人，尚可周旋；怒涛作时，身寄何方？”客悚然，方知——世人虽言蛟鼍之形，实畏川渎之性。",
@@ -257,7 +257,7 @@ return {
     RefineItemCount = 2,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者获得3%充能伤害增幅（同类效果无法叠加）"
+    WorldDesc = ""
   },
   [980022] = {
     ArchiveDesc = "青鸟赤尾，其羽朱红，每隔百年翔于世间。盛世之时，帝王见之，只道天命所归。乱世之秋，群雄见之，却言天意易主。",
@@ -281,7 +281,7 @@ return {
     RefineItemCount = 2,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者获得3%派生伤害增幅（同类效果无法叠加）"
+    WorldDesc = ""
   },
   [980023] = {
     ArchiveDesc = "初帝立国之际，有奇鹤降至天阙山。历代帝王皆命巧匠仿其形，或鎏金为饰，或镂玉成器，穷极工巧，以为可得永世其昌。然王朝更迭如四时轮转，兴衰不过弹指。待笙歌散尽，空留玉鹤孤影。",
@@ -305,7 +305,7 @@ return {
     RefineItemCount = 2,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者获得3%终结伤害增幅（同类效果无法叠加）"
+    WorldDesc = ""
   },
   [980024] = {
     ArchiveDesc = "熔炉不是毁灭，而是让金属回归本源。当矿石在烈焰中熔化，铁与杂质也于此分离——余下的，才是它应有的模样。",
@@ -329,7 +329,7 @@ return {
     RefineItemCount = 2,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者获得9%伤害抗性（同类效果无法叠加）"
+    WorldDesc = ""
   },
   [980025] = {
     ArchiveDesc = "药物之于医者，犹如圣盏中的蛇。蛇毒既是致死的毒药，亦可被处理成救人的灵药。生与死的界限，皆在于掌握这种致命的精准。",
@@ -353,7 +353,7 @@ return {
     RefineItemCount = 2,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者获得9%治疗增幅（同类效果无法叠加）"
+    WorldDesc = ""
   },
   [980030] = {
     ArchiveDesc = "它由最纯净的黄金铸就，却沉淀着一个帝国的血泪；它镶嵌着最璀璨的宝石，却映照过最阴暗的权谋；它被戴至圣者的额前，却将戴冠者的本心锁进这座囚笼。",
@@ -377,7 +377,7 @@ return {
     RefineItemCount = 3,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者不在场时造成伤害，依据自身元素类型获得7.2%元素伤害增幅，持续3秒。"
+    WorldDesc = ""
   },
   [980031] = {
     ArchiveDesc = "所谓龙，兴云布雨而为神，潜跃变化而成象，或为祥瑞，或彰天命。传说几许，则龙形几迁。至于腾渊者真形若何？圣人不言，存其神可矣。",
@@ -401,7 +401,7 @@ return {
     RefineItemCount = 3,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者不在场时造成伤害，获得9%异常伤害增幅，持续3秒。"
+    WorldDesc = ""
   },
   [980040] = {
     ArchiveDesc = "枝头的绿焰，树冠的囚徒；寒冬的泪滴，夏日的遗孤；诸神的盲点，黄昏的终途。",
@@ -425,7 +425,7 @@ return {
     RefineItemCount = 2,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者获得6%异常积累增幅（同类效果无法叠加）"
+    WorldDesc = ""
   },
   [980041] = {
     ArchiveDesc = "他合上双眼，敲下最后一锤，又是那一幕——战场之上，友人推开自己孤身迎敌，带着断刃的脆响一同坠地。尔后，老者的子嗣继承了这铁砧，可虽有匠神之名，却再无人能用它锻出那举世的锋刃。",
@@ -449,7 +449,7 @@ return {
     RefineItemCount = 2,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者获得9%护盾增幅（同类效果无法叠加）"
+    WorldDesc = ""
   },
   [980042] = {
     ArchiveDesc = "许多神话的深处，都流淌着一条隔绝生死、阻断记忆的大河。基因通过血脉延续，可为何记忆必须断裂？但也许正是个体遗忘的必然，才迫使人类发明了语言和文字，以此催生了文明的基石。",
@@ -473,7 +473,7 @@ return {
     RefineItemCount = 2,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者获得6%异常伤害增幅（同类效果无法叠加）"
+    WorldDesc = ""
   },
   [980043] = {
     AttrCount = 1,
@@ -518,7 +518,7 @@ return {
     RefineItemCount = 2,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者获得12%终结技额外充能（同类效果无法叠加）"
+    WorldDesc = ""
   },
   [980045] = {
     ArchiveDesc = "姬鸿，姬氏支裔，猿臂狼腰，力开三石。随帝征伐时，身无片甲，单衣陷阵，戟折则弃，以拳脚格杀，敌不敢近。天下初定，拜大将军，加九锡。然天下遂乱，鸿不知所踪。世人传其化入将俑，永镇帝陵。",
@@ -542,7 +542,7 @@ return {
     RefineItemCount = 2,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者获得7.2%追击伤害增幅（同类效果无法叠加）"
+    WorldDesc = ""
   },
   [980046] = {
     AttrCount = 1,
@@ -587,7 +587,7 @@ return {
     RefineItemCount = 3,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者精力由不满回复至满时，立即使队伍中精力不为满的成员提升7.2%攻击力，装备者消耗精力后失效。"
+    WorldDesc = ""
   },
   [980051] = {
     ArchiveDesc = "医者很强大，他能放缓死亡的步伐，让垂死的将士重回战场，让卧榻的君王再登殿堂。可医者也很弱小，穷尽其力，也没有一人可以阻拦死亡的到来……他挽不住渐渐冰冷的孩童，救不活怀中喃喃的至亲。",
@@ -611,7 +611,7 @@ return {
     RefineItemCount = 3,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者为自身以外的角色提供治疗后，使受治疗目标获得12%受治疗增幅和6%伤害增幅，持续5秒。"
+    WorldDesc = ""
   },
   [980052] = {
     ArchiveDesc = "智慧并非给予你问题的答案，而是给予你寻找答案的动力，即思考本身——关于这一点，人们总是忘记。",
@@ -635,7 +635,7 @@ return {
     RefineItemCount = 3,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者施加护盾后，立即使队伍中其他成员提高7.2%防御力和4.8%攻击力，持续20秒。"
+    WorldDesc = ""
   },
   [980053] = {
     ArchiveDesc = "相传初帝云游，有玉盏常伴左右。方士言其贮灵药，可愈沉疴；诗家谓其盛琼露，甘胜玉醴；有野老传之，曾有夜窃者饮之，其味甚寡，淡若江水。然盏中之物，终莫能辨。",
@@ -659,7 +659,7 @@ return {
     RefineItemCount = 3,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "角色持续1.8秒未对敌人造成伤害，立即获得10.8%穿透，对敌人造成伤害1秒后失效。"
+    WorldDesc = ""
   },
   [980054] = {
     ArchiveDesc = "大寻有灵木，天师敕令而居，木盛则民安，木茂则邦兴。然天地有常，岂有长青不凋之理？及秋声起，万木摇落。大寻之祚，亦如草木一秋，同归尘土。",
@@ -683,7 +683,7 @@ return {
     RefineItemCount = 3,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "每当场上有敌人触发雷噪或超载，装备者获得6.6%雷异常效果增幅，持续15秒，可叠加3层。"
+    WorldDesc = ""
   },
   [980055] = {
     ArchiveDesc = "远在众神陨去的时代，德尔菲人就已经开始仰望星空，他们绘制星图、编织传说、记录预兆，人们始终认为那些划过夜空的璀璨必定承载着某种意义——直至那颗星星落到他们身边。",
@@ -707,7 +707,7 @@ return {
     RefineItemCount = 3,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者每次释放技能，获得2.4%充能伤害增幅，持续7秒，可叠加4层；叠加满4层时，装备者额外提高4.2%暴击率。"
+    WorldDesc = ""
   },
   [980056] = {
     ArchiveDesc = "思考就像是在浅滩上拾取贝壳——那些斑驳的碎片足以让过客驻足欢喜。可真正的思考者终将发现，手中的贝壳不过是大海投下的一滴水。若要触碰真理……你必须沉入那片无光的深邃。",
@@ -731,7 +731,7 @@ return {
     RefineItemCount = 3,
     RefineItemId = 37,
     ShowInArchive = 1,
-    WorldDesc = "装备者小队处于连携爆发状态时，全队获得10%伤害增幅、异常触发伤害增幅、异常持续伤害增幅。（非正式）"
+    WorldDesc = ""
   },
   [980060] = {
     AttrCount = 1,

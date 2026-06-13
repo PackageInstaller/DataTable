@@ -2,8 +2,8 @@ local MaskComponent = require("ui.uibase_mask")
 local GraphicRaycaster = typeof(UnityEngine.UI.GraphicRaycaster)
 local Base = require("ui.uiobject")
 local ui = Util.create_child_mt(Base)
-local Coroutine = Coroutine
-local coroutine = coroutine
+local Coroutine = _ENV.Coroutine
+local coroutine = _ENV.coroutine
 local wait_for_seconds = UnityEngine.WaitForSeconds
 local ScreenSpaceCameraRenderMode = UnityEngine.RenderMode.ScreenSpaceCamera
 local DESIGN_RATIO = 1.7777777777777777
@@ -470,7 +470,7 @@ function ui:ui_destroy()
     self.v_parent_panel = nil
   end
   self:_call_sub_panels_function("ui_destroy")
-  self.v_sub_panels = {}
+  self.v_sub_panels = nil
   self.v_safe_panel_rect = nil
   res_path_map = nil
 end

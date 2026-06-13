@@ -4,7 +4,7 @@ local M = Util.create_class()
 function M:_init()
   self.v_spine_list = {}
   self.v_last_loop_anim_name = {}
-  MsgGame:mq_bind(Const.MSG_ON_SET_STORY_SPEED, self.set_anim_speed, self)
+  Util.bind_msg(self, Const.MSG_ON_SET_STORY_SPEED, self.set_anim_speed, self)
 end
 
 function M:on_destory()
@@ -13,7 +13,9 @@ function M:on_destory()
       ResPoolMgr:release(obj)
     end
   end
+  self.v_spine_list = {}
   self.v_last_loop_anim_name = {}
+  Util.unbind_all_msg(self)
 end
 
 function M:release_spine_obj(res_name)
@@ -28,7 +30,8 @@ end
 
 function M:load_spine_res(res_name, callback, is_sync_load)
   res_name = Path.get_spine_name(res_name)
-  local load_cb = function(obj)
+  
+  local function load_cb(obj)
     self.v_spine_list[res_name] = obj
     local spine_component = obj:GetComponent(SpineController)
     if spine_component and not spine_component:IsNull() then
@@ -38,6 +41,7 @@ function M:load_spine_res(res_name, callback, is_sync_load)
       callback(obj)
     end
   end
+  
   if is_sync_load then
     local obj = ResPoolMgr:get_spine(res_name)
     load_cb(obj)

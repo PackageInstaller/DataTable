@@ -5,7 +5,8 @@ local behavior_config = require("common.lua_behavior_const")
 if UNITY_EDITOR and GAME_DEBUG then
   local BehaviorDesc = require("manager.fight.behaviordesc")
   local BEHAVIOR_FUNC_INFO = {}
-  local get_func_info = function(func)
+  
+  local function get_func_info(func)
     local info = BEHAVIOR_FUNC_INFO[func]
     if not info then
       info = debug.getinfo(func, "nu")
@@ -13,7 +14,8 @@ if UNITY_EDITOR and GAME_DEBUG then
     end
     return info
   end
-  local behavior_func_wrapper = function(key, func)
+  
+  local function behavior_func_wrapper(key, func)
     return function(...)
       local info = get_func_info(func)
       local args = {
@@ -66,7 +68,8 @@ else
   end
 end
 local behavior_importer, behevior_injector
-local get_behavior_env = function(file)
+
+local function get_behavior_env(file)
   return setmetatable({
     __file__ = file,
     import = behavior_importer,
@@ -74,6 +77,7 @@ local get_behavior_env = function(file)
     Const = behavior_config
   }, {__index = index_func})
 end
+
 local CSLuaService = CS.Game.LuaService
 
 function M.load_behavior_file(file)
@@ -114,7 +118,8 @@ function behavior_importer(file_name)
 end
 
 local CANT_INJECT_KEYS = {"__index", "__newindex"}
-local try_inject = function(meta, k, v)
+
+local function try_inject(meta, k, v)
   if UtilTable.contains(CANT_INJECT_KEYS, k) then
     return
   end

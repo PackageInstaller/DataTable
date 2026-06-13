@@ -177,13 +177,15 @@ end
 function M:desc_effect_default()
   self.v_txt_obj.text = self.v_desc
   local fade_text = self.v_txt_obj.gameObject:GetComponent(FadeText)
-  local cb = function()
+  
+  local function cb()
     TALK_PHASE = TALK_PHASE + 1
     fade_text.enabled = false
     fade_text.OnPlayEnd = nil
     self:check_auto_next_desc()
     self.v_cur_fade_complete = true
   end
+  
   fade_text.OnPlayEnd = cb
   fade_text.enabled = true
   local string_len = Util.get_string_len(self.v_desc)
@@ -214,11 +216,13 @@ function M:desc_effect_default()
 end
 
 function M:desc_effect_garbled()
-  local cb = function()
+  local function cb()
     TALK_PHASE = TALK_PHASE + 1
+    
     self:check_auto_next_desc()
     self.v_cur_fade_complete = true
   end
+  
   local string_len = Util.get_string_len(self.v_desc)
   local sequence = self:get_new_sequence("desc_bg_effect_garbled")
   local time = string_len / TIME_GARBLED_LEN

@@ -11,9 +11,10 @@ function ui:ui_finish_load()
   self:set_button("BtnRet1", function()
     local card_info = ChallengeRingPlusMgr:get_cur_card_info()
     if card_info.restore_cnt and card_info.restore_cnt > 0 then
-      local cb = function()
+      local function cb()
         self:ui_hide()
       end
+      
       ChallengeRingPlusMgr:req_remove_card(cb)
     else
       Card_Destory_Help.confirm_quit_ui(self)
@@ -101,11 +102,13 @@ function ui:click_curse_btn()
     Util.show_message_tip(2115)
     return
   end
-  local cb = function()
+  
+  local function cb()
     self:add_magic()
     self:update_hero_info()
     self:update_restore_info()
   end
+  
   ChallengeRingPlusMgr:record_fight_add_curse_value(ADD_CURSE_TYPE.SHOP_BUY, self.v_heal_card_cfg.CostCnt)
   ChallengeRingPlusMgr:req_restore_hp(cb)
 end

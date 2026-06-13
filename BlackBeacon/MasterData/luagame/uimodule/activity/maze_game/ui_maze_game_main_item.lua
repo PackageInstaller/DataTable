@@ -3,7 +3,7 @@ local ui = Util.create_child_mt(Base)
 
 function ui:on_click_btn()
   if self.v_unlock_str then
-    Util.show_message_tip(self.v_unlock_str .. "后解锁")
+    Util.show_message_tip(self.v_uicompents.Time_txt.text .. "后解锁")
     return
   end
   self:close_red()
@@ -20,6 +20,7 @@ function ui:ui_on_show()
 end
 
 function ui:set_data(activity_id, point_id)
+  self:clear_timer()
   self.v_activity_id = activity_id
   self.v_point_id = point_id
   self:refresh_data()
@@ -40,7 +41,8 @@ function ui:refresh_data()
     remain_lock_time = unlock_time and unlock_time - server_time
     self.v_unlock_str = nil
     if in_lock_time then
-      self.v_unlock_str = Date.get_time_desc2(remain_lock_time)
+      self.v_unlock_str = Date.get_time_format_7(remain_lock_time)
+      self:add_timer(remain_lock_time)
     elseif is_lock then
       local pre_point_cfg = ShareRes.get_ponder_maze_point_cfg(point_cfg.PrePoint)
       self.v_unlock_str = "通关" .. pre_point_cfg.Name
@@ -64,6 +66,25 @@ function ui:close_red()
 end
 
 function ui:ui_on_hide()
+  self:clear_timer()
+end
+
+function ui:add_timer(remain_lock_time)
+  self.v_timer = Global.ct_timer:add_timer("ui_maze_game_main_item_timer_" .. self.v_point_id, remain_lock_time, function(result_time)
+    self.v_uicompents.Time_txt.text = Date.get_time_format_7(result_time)
+    if result_time <= 0 then
+      self:clear_timer()
+      self.v_parent_ui:refresh_view()
+    end
+  end)
+end
+
+function ui:clear_timer()
+  if not self.v_timer then
+    return
+  end
+  Global.ct_timer:remove_timer(self.v_timer)
+  self.v_timer = nil
 end
 
 function ui:ui_on_destroy()

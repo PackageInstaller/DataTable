@@ -61,6 +61,33 @@ function M.get_bundle_exist(bundle)
   return false
 end
 
+function M.get_video_path(file)
+  local result_file
+  local str_array = Util.split_str(file, ".")
+  local language = string.lower(Global.curr_text_language)
+  local platform = "phone"
+  if not str_array or 2 ~= #str_array then
+  else
+    result_file = Util.format_str("{1}_{2}.{3}", str_array[1], language, str_array[2])
+    if M.get_bundle_exist(result_file) then
+    else
+      if UNITY_EDITOR or UNITY_STANDALONE_WIN then
+        platform = "pc"
+      end
+      result_file = Util.format_str("{1}_{2}.{3}", str_array[1], platform, str_array[2])
+      if M.get_bundle_exist(result_file) then
+      else
+        result_file = Util.format_str("{1}_{2}_{3}.{4}", str_array[1], platform, language, str_array[2])
+        if not M.get_bundle_exist(result_file) then
+          result_file = nil
+        end
+      end
+    end
+  end
+  result_file = result_file or file
+  return M.get_bundle_path(result_file)
+end
+
 function M.get_sound_path(bundle, cue_name)
   local update_dir_bundle = PathDefine.update_dir .. bundle
   local package_dir_bundle = PathDefine.package_sound_dir .. bundle

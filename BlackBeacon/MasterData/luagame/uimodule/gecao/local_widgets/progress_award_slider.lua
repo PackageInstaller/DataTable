@@ -15,13 +15,14 @@ function M:_init(parent_ui, self_gameobj, ITEM_CLASS, template_key)
   self.v_items = {}
 end
 
-local _get_item = function(self)
+local function _get_item(self)
   local obj = self.v_parent_ui:get_auto_cache(self.v_item_template_key)
   local item = self.v_item_class:ui_wrap_ex(nil, obj)
   item.go = obj
   return item
 end
-local _add_item = function(self, data, index, length)
+
+local function _add_item(self, data, index, length)
   local item = _get_item(self)
   local item_gameobj = item.go
   local item_trans = item_gameobj.transform

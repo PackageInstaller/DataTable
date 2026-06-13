@@ -11,11 +11,11 @@ local Transform_state = require("utils.transform_state")
 local CSUnityEngine = UnityEngine
 local CSChangeLayer = CSHelper.ChangeLayerRecursively
 local Gyro = CSUnityEngine.Input.gyro
-local SignBoardGirlMgr = SignBoardGirlMgr
+local SignBoardGirlMgr = _ENV.SignBoardGirlMgr
 local CSInput = CSUnityEngine.Input
 local TouchPhase = CSUnityEngine.TouchPhase
-local UnityVector2 = UnityVector2
-local UnityVector3 = UnityVector3
+local UnityVector2 = _ENV.UnityVector2
+local UnityVector3 = _ENV.UnityVector3
 local ACT_DEFINE = Config.ACT_DEFINE
 local Base = require("ui.model_rt_view.model_rt_view_new")
 local M = Util.create_child_mt(Base)
@@ -31,10 +31,12 @@ local TOUCH_SCALE_SPEED = ShareRes.get_comm_value("CharRtViewScaleSpeed")
 local TOUCH_ROTATE_SPEED_M = ShareRes.get_comm_value("CharRtViewRotateSpeedM")
 local TOUCH_SCALE_SPEED_M = ShareRes.get_comm_value("CharRtViewScaleSpeedM")
 local TOUCH_ROTATE_SPEED_MAX = ShareRes.get_comm_value("CharRtViewRotateSpeedMax")
-local almost_zero = function(a, b)
+
+local function almost_zero(a, b)
   return _abs(a - b) < 0.01
 end
-local almost_zero_angle = function(a, b)
+
+local function almost_zero_angle(a, b)
   local diff = _abs(a - b)
   return diff < 0.01 or diff > 359.99
 end

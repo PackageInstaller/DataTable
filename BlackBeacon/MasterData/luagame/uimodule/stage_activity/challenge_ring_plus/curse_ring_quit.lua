@@ -100,11 +100,13 @@ end
 
 function ui:set_item_data(item, data)
   local com_item = Util.get_child_gameobj("ItemObjCom", item)
-  local click_cb = function()
+  
+  local function click_cb()
     UIMgr:get_ui("itemTip"):ui_show({
       item_id = data.id
     })
   end
+  
   self:create_item_obj(nil, com_item.gameObject, nil, {
     item_id = data.id,
     click_cb = click_cb
@@ -170,10 +172,12 @@ end
 
 function ui:save_and_exit()
   self:ui_hide()
-  local cb = function()
+  
+  local function cb()
     Global.scene_mgr:on_enter_main_scene()
     UIMgr:revert_cache_ui()
   end
+  
   if TowerMgr then
     TowerMgr:on_exit_tower(cb)
   end
@@ -189,19 +193,23 @@ function ui:exit()
       hero.magic_mgr:remove_magic_by_id(k)
     end
   end
-  local clear_fun = function()
+  
+  local function clear_fun()
     TowerMgr:entry_choose_reward(true, ChallengeRingPlusMgr:is_end_ring(), false)
     self.v_timer = nil
   end
+  
   self.v_uiobjects.NoClickBg:SetActive(true)
   self.v_timer = Timer:add_timer(nil, 0.3, clear_fun)
 end
 
 function ui:settlement()
-  local callback = function()
+  local function callback()
     Global.scene_mgr:on_enter_main_scene()
+    
     UIMgr:revert_cache_ui()
   end
+  
   if TowerMgr then
     TowerMgr:get_fight_reward(callback)
   end

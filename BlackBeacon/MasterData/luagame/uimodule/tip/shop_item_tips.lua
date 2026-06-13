@@ -290,7 +290,17 @@ function ui:_refresh_right_view()
   self.v_getway:SetActive(self.v_show_type == SHOW_TYPE.SOURCE)
   if self.v_show_type == SHOW_TYPE.DETAIL then
     self.v_item_desc.text = self.v_item_cfg.Desc
-    self.v_item_w_desc.text = self.v_item_cfg.WorldDesc
+    local item_id = self.v_item_cfg.Id
+    local type_config = ShareRes.get_award_type_cfg(item_id)
+    if type_config.AwardType == Config.AWARD_TYPE.PUZZLE then
+      local puzzle_cfg = ShareRes.get_buddy_puzzle_cfg(item_id)
+      if puzzle_cfg.EntryId then
+        local entry_cfg = ShareRes.get_buddy_puzzle_entry_cfg(puzzle_cfg.EntryId, 3)
+        self.v_item_w_desc.text = entry_cfg.Desc
+      end
+    else
+      self.v_item_w_desc.text = self.v_item_cfg.WorldDesc
+    end
   else
     self:_refresh_source_view()
   end

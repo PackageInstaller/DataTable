@@ -13,10 +13,12 @@ local USAGE_FUNC = {
   [USAGE_TYPE.ATTR] = "_update_attr"
 }
 local _ticket = 1
-local _next_ticket = function()
+
+local function _next_ticket()
   _ticket = _ticket + 1
   return _ticket
 end
+
 local HudItem = Util.create_class()
 
 function HudItem:_init(config, attach_point, comp, txt)
@@ -247,6 +249,19 @@ function HudItemWorldSpace:_init(config, attach_point, comp, x, y, z)
   self:_load()
 end
 
+function HudItemWorldSpace:on_destroy()
+  self.v_config = nil
+  self.v_comp = nil
+  self.v_char = nil
+  self.v_attach_name = nil
+  self.v_ticket = nil
+  self.v_is_destroy = true
+  self.v_obj = nil
+  self.v_tf = nil
+  self.v_rect_tf = nil
+  self.v_attach_tf = nil
+end
+
 function HudItemWorldSpace:_check_valid(ticket)
   local is_valid = self.v_ticket == ticket and not self.v_is_destroy
   local attach_tf
@@ -397,6 +412,21 @@ function M:_init(char)
   self:mgr_bind_auto_mq(Const.MSG_REMOVE_MAGIC, self._handle_magic_change, self)
 end
 
+function M:on_before_destroy()
+  self.v_char = nil
+end
+
+function M:on_destroy_gameobj()
+  for _, item in pairs(self.v_hud_dic) do
+    M._push_item(item)
+  end
+  for _, hud_world in pairs(self.v_hud_dic_world) do
+    M._push_item_worldspace(hud_world)
+  end
+  self.v_hud_dic = nil
+  self.v_hud_dic_world = nil
+end
+
 function M._init_pool()
   if M.s_pool then
     return
@@ -436,18 +466,6 @@ function M:_handle_magic_change(msg)
       hud:check_update_magic_num(magic_id)
     end
   end
-end
-
-function M:on_destroy_gameobj()
-  for _, item in pairs(self.v_hud_dic) do
-    M._push_item(item)
-  end
-  for _, hud_world in pairs(self.v_hud_dic_world) do
-    M._push_item_worldspace(hud_world)
-  end
-  self.v_hud_dic = nil
-  self.v_hud_dic_world = nil
-  self.v_char = nil
 end
 
 function M:update()
@@ -497,7 +515,7 @@ do
     s_config_dic = {}
   end
   
-  local _push_handle_map = function(handle_map, param, name, hud)
+  local function _push_handle_map(handle_map, param, name, hud)
     if handle_map and param then
       handle_map[param] = handle_map[param] or {}
       if handle_map[param][name] then
@@ -506,7 +524,8 @@ do
       handle_map[param][name] = hud
     end
   end
-  local _check_push_hud_handle = function(self, name, hud)
+  
+  local function _check_push_hud_handle(self, name, hud)
     local config = hud.v_config
     local usage_type = config.usage_type
     local handle_map
@@ -523,12 +542,14 @@ do
       end
     end
   end
-  local _pop_handle_map = function(handle_map, param, name)
+  
+  local function _pop_handle_map(handle_map, param, name)
     if handle_map and param and handle_map[param] and handle_map[param][name] then
       handle_map[param][name] = nil
     end
   end
-  local _check_pop_handle_map = function(self, name, hud)
+  
+  local function _check_pop_handle_map(self, name, hud)
     local config = hud.v_config
     local usage_type = config.usage_type
     local handle_map

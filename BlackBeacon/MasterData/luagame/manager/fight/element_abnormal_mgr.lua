@@ -23,7 +23,8 @@ local ELEMENT_ABNIRMAL_FLAG_MAGIC = {
 local FightConfig = require("uimodule.fight.fight_config")
 local VALUE_TYPE = FightConfig.VALUE_TYPE
 local Math = require("base.mathx")
-local abnormal_attack_sort = function(a_uuid, b_uuid)
+
+local function abnormal_attack_sort(a_uuid, b_uuid)
   local a = SceneMgr:pick_by_uuid(a_uuid)
   local b = SceneMgr:pick_by_uuid(b_uuid)
   local a_pure_essence = a:get_attr_value(ATTR_TYPE.ABNORMAL_PURE_ESSENCE)
@@ -41,7 +42,8 @@ local abnormal_attack_sort = function(a_uuid, b_uuid)
     return false
   end
 end
-local cal_light_damage = function(self, magic)
+
+local function cal_light_damage(self, magic)
   local flag_count = magic:get_flag_count()
   local element_id, attacker, level_param, cfg_index, is_sustain = magic.element_id, magic.magic_info.attacker, magic.level_param, DURATION_DAMAGE_CFG_INDEX, true
   local abnor_pure_essen, new_attacker, new_level_param
@@ -53,7 +55,8 @@ local cal_light_damage = function(self, magic)
   new_level_param = new_level_param or level_param
   return self:cal_abnormal_damage(element_id, new_attacker, new_level_param, abnor_pure_essen, cfg_index, is_sustain, flag_count)
 end
-local cal_dark_damage = function(self, magic)
+
+local function cal_dark_damage(self, magic)
   local flag_count = magic:get_flag_count()
   local total_hurt = self.v_owner:get_dark_abnormal_total_hurt()
   local element_id, attacker, level_param = magic.element_id, magic.magic_info.attacker, magic.level_param
@@ -78,6 +81,7 @@ local cal_dark_damage = function(self, magic)
   local hurt = FightCalc.CalcDarkSettleDamage(element_id, new_level_param, pure_essence_param, dark_default_pure_essence_param, cal_total_hurt, FightDefine.DMG_TYPE.AB_SUS_DMG, atk_attrs, def_attrs, element_count, multiple)
   return hurt
 end
+
 local EXECUTE_CHEKC_FUNC = {
   [ELEMENT_TYPE.LIGHT] = cal_light_damage,
   [ELEMENT_TYPE.DARK] = cal_dark_damage
@@ -113,7 +117,20 @@ function M:_init(owner)
   self:reset_data()
 end
 
-local get_abnor_magic_param = function(self, magic_rtid)
+function M:on_before_destroy()
+  self.v_owner = nil
+  self.v_duration_damage_data = nil
+  self.v_abnor_magic_info = nil
+  self.v_element_abnormal_flag_map = nil
+  self.v_element_abnormal_caster_map = nil
+  self.v_abnormal_effect_magic = nil
+  self.v_additional_damage_data = nil
+  self.v_element_delay_effect = nil
+  self.v_effect_cfg = nil
+  self.v_flag_max_count_map = nil
+end
+
+local function get_abnor_magic_param(self, magic_rtid)
   local abnor_count, add_time, total_time
   local abnor_magic = self.v_owner.magic_mgr:get_magic_by_rtid(magic_rtid)
   if not abnor_magic then
@@ -509,7 +526,8 @@ function M:trigger_damage(element_id, attacker, level_param, magic, cfg_index, i
   end
   local is_building = MagicReporter:is_building_report()
   MagicReporter:push_action_start(is_building, CommonDef.MAGIC_ACTION_TYPE.on_before_element_abnormal_effect)
-  BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.BEFORE_ABNORMAL_DAMAGE, magic.magic_info.attacker, new_attacker, self.v_owner, magic.magic_id)
+  local magic_info = magic.magic_info
+  BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.BEFORE_ABNORMAL_DAMAGE, magic_info.attacker, new_attacker, self.v_owner, magic.magic_id)
   MagicReporter:push_action_end(is_building, CommonDef.MAGIC_ACTION_TYPE.on_before_element_abnormal_effect)
   local hurt
   local damage_type = is_sustain and FightDefine.DMG_TYPE.AB_SUS_DMG or FightDefine.DMG_TYPE.AB_TRI_DMG
@@ -523,7 +541,7 @@ function M:trigger_damage(element_id, attacker, level_param, magic, cfg_index, i
   end
   self.v_owner.attr_mgr:change_attr(ATTR_GROUP_TYPE.BASE, Config.CHAR_ATTR_TYPE.CHAR_HP, hurt)
   MagicReporter:push_action_start(is_building, CommonDef.MAGIC_ACTION_TYPE.on_after_element_abnormal_effect)
-  BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.AFTER_ABNORMAL_DAMAGE, magic.magic_info.attacker, new_attacker, self.v_owner, magic.magic_id)
+  BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.AFTER_ABNORMAL_DAMAGE, magic_info.attacker, new_attacker, self.v_owner, magic.magic_id)
   MagicReporter:push_action_end(is_building, CommonDef.MAGIC_ACTION_TYPE.on_after_element_abnormal_effect)
   if is_sustain then
     Global.BloodHelper.play_abnor_hurt_dmg(self.v_owner, -hurt, element_id)
@@ -551,7 +569,8 @@ function M:trigger_dark_remove_damage(attacker, element_id, level_param, total_h
   local multiple = self:get_element_parameter(element_id, 4, abnor_pure_essen, flag_count)
   local is_building = MagicReporter:is_building_report()
   MagicReporter:push_action_start(is_building, CommonDef.MAGIC_ACTION_TYPE.on_before_element_abnormal_effect)
-  BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.BEFORE_ABNORMAL_DAMAGE, magic.magic_info.attacker, new_attacker, self.v_owner, magic.magic_id)
+  local magic_info = magic.magic_info
+  BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.BEFORE_ABNORMAL_DAMAGE, magic_info.attacker, new_attacker, self.v_owner, magic.magic_id)
   MagicReporter:push_action_end(is_building, CommonDef.MAGIC_ACTION_TYPE.on_before_element_abnormal_effect)
   local limit = self:get_element_parameter(element_id, 5, abnor_pure_essen, flag_count) * new_level_param
   local cal_total_hurt = math.min(limit, -total_hurt)
@@ -566,7 +585,7 @@ function M:trigger_dark_remove_damage(attacker, element_id, level_param, total_h
   end
   self.v_owner.attr_mgr:change_attr(Config.ATTR_GROUP_TYPE.BASE, Config.CHAR_ATTR_TYPE.CHAR_HP, hurt)
   MagicReporter:push_action_start(is_building, CommonDef.MAGIC_ACTION_TYPE.on_after_element_abnormal_effect)
-  BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.AFTER_ABNORMAL_DAMAGE, magic.magic_info.attacker, new_attacker, self.v_owner, magic.magic_id)
+  BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.AFTER_ABNORMAL_DAMAGE, magic_info.attacker, new_attacker, self.v_owner, magic.magic_id)
   MagicReporter:push_action_end(is_building, CommonDef.MAGIC_ACTION_TYPE.on_after_element_abnormal_effect)
   Global.BloodHelper.play_abnor_hurt_dmg(self.v_owner, -hurt, element_id)
 end
@@ -832,7 +851,7 @@ function M:get_element_abnormal_flag_count(element_id)
   return Math.Clamp(flag_count, 0, self.v_flag_max_count_map[element_id] or 0)
 end
 
-local _can_execute_owner = function(self, element_id, cal_func)
+local function _can_execute_owner(self, element_id, cal_func)
   local magic
   if self.v_element_magic_map[element_id] then
     for magic_rtid in pairs(self.v_element_magic_map[element_id]) do

@@ -98,11 +98,13 @@ function ui:_refresh_reward_item(reward_list_config)
         local award_item_config = award_config[award_id]
         local quality_img_path = string_format("Award/Reward%s_/ItemQuality_", i)
         local quality_img = Util.get_image(quality_img_path, reward_item)
-        local callback = function()
+        
+        local function callback()
           UIMgr:get_ui("itemTip"):ui_show({
             item_id = award_item_config.ItemId
           })
         end
+        
         self:create_item_obj(nil, quality_img.gameObject, LOOP_TASK_REWARD_ITEM_KEY, {
           item_id = award_item_config.ItemId,
           click_cb = callback

@@ -234,9 +234,11 @@ function ui:_onclick_change_hero_btn()
       ActivityMgr:invoke(Act_ID, "request_change_roomstate", ROOM_CHANGE_TYPE.PLAYER_STATE, ROOM_ABOUT_MAP.STATE_MAP.CHOICE_ROLE)
       self.v_open_character = true
     end
-    local cb = function()
+    
+    local function cb()
       self.v_parent_ui:set_model_disable()
     end
+    
     UIMgr:get_ui("character_enter"):ui_show(team_data, cb, Config.TEAM_TYPE.ONLINE_BATTLE)
   else
     self:_refresh_operate_btns()
@@ -271,9 +273,10 @@ function ui:_refresh_operate_btns()
 end
 
 function ui:_onclick_add_friend_btn()
-  local apply_callback = function()
+  local function apply_callback()
     Util.show_message_tip(2194)
   end
+  
   FriendMgr:apply_add_friend(self.v_member_info.uuid, apply_callback)
 end
 

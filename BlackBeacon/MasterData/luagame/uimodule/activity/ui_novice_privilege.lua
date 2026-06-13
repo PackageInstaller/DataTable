@@ -52,11 +52,13 @@ end
 
 function ui:on_receive_click()
   if self.v_give_energy_value_privilege_cfg and NewbieTowerMgr:check_in_get_give_energy_value(self.v_give_energy_value_privilege_cfg.Id, true) then
-    local cb = function()
+    local function cb()
       self:refresh()
+      
       self:refresh_left_time()
       self:play_spine_anim()
     end
+    
     NewbieTowerMgr:req_get_privilege_award(self.v_give_energy_value_privilege_cfg.Id, cb)
   end
 end

@@ -8,6 +8,47 @@ local INIT_EFFECT_ROOT_SCALE = 0.575
 local CT_Timer = Global.ct_timer
 local Base = require("ui.uibase")
 local ui = Util.create_child_mt(Base)
+local UI_TYPE = {
+  GREEN = 1,
+  BLUE = 2,
+  YELLOW = 3,
+  PURPLE = 4
+}
+local BG_EFFECT = {
+  [UI_TYPE.GREEN] = "GreenBg",
+  [UI_TYPE.BLUE] = "BlueBg",
+  [UI_TYPE.YELLOW] = "CommonBg",
+  [UI_TYPE.PURPLE] = "purpleBg"
+}
+local LINE_EFFECT = {
+  [UI_TYPE.GREEN] = "Fx_UIBattleGame2_Wenli_Green",
+  [UI_TYPE.BLUE] = "Fx_UIBattleGame2_Wenli_Blue",
+  [UI_TYPE.YELLOW] = "Fx_UIBattleGame2_Wenli_Com",
+  [UI_TYPE.PURPLE] = "Fx_UIBattleGame2_Wenli_Pur"
+}
+local END_EFFECT = {
+  [UI_TYPE.GREEN] = "Fx_UIBattleGame2_End_Green",
+  [UI_TYPE.BLUE] = "Fx_UIBattleGame2_End_Blue",
+  [UI_TYPE.YELLOW] = "Fx_UIBattleGame2_End_Com",
+  [UI_TYPE.PURPLE] = "Fx_UIBattleGame2_End_Pur"
+}
+local MISS_EFFECT = {
+  [UI_TYPE.GREEN] = "Fx_UI_UIBattleGame2_Miss_Green",
+  [UI_TYPE.BLUE] = "Fx_UI_UIBattleGame2_Miss_Blue",
+  [UI_TYPE.YELLOW] = "Fx_UI_UIBattleGame2_Miss_Comm"
+}
+local COOL_EFFECT = {
+  [UI_TYPE.GREEN] = "Ani_UIBattleGame2_Handle_Miss",
+  [UI_TYPE.BLUE] = "Ani_UIBattleGame2_Handle_Miss",
+  [UI_TYPE.YELLOW] = "Ani_UIBattleGame2_Handle_Miss",
+  [UI_TYPE.PURPLE] = "Ani_UIBattleGame2_Handle_UnClick"
+}
+local OUT_EFFECT = {
+  [UI_TYPE.GREEN] = "Ani_UIBattleGame2_Out",
+  [UI_TYPE.BLUE] = "Ani_UIBattleGame2_Out",
+  [UI_TYPE.YELLOW] = "Ani_GameType3_Out",
+  [UI_TYPE.PURPLE] = "Ani_UIBattleGame2_Out"
+}
 
 function ui:ui_finish_load()
   self:set_button("BtnRet1", function()
@@ -20,28 +61,7 @@ function ui:ui_finish_load()
     self:do_judge(self.v_nodes_B)
   end)
   self:register_exist_auto_template(INSERT_NEEDLE_NODE_ITEM_TEMP_KEY, self.v_uiobjects.DecisionPoint, self.v_uiobjects.Content)
-  self.v_timeline_out2 = Util.get_child_gameobj("Animation/Ani_UIBattleGame2_Out", self.v_object)
-  self.v_timeline_out1 = self.v_timeline_out2
-  self.v_timeline_out4 = self.v_timeline_out2
-  self.v_timeline_out3 = Util.get_child_gameobj("Animation/Ani_GameType3_Out", self.v_object)
-  self.v_bg_effect1 = self:get_child_gameobj("FullScreenBackground/GreenBg", self.v_object)
-  self.v_bg_effect2 = self:get_child_gameobj("FullScreenBackground/BlueBg", self.v_object)
-  self.v_bg_effect3 = self:get_child_gameobj("FullScreenBackground/CommonBg", self.v_object)
-  self.v_bg_effect4 = self:get_child_gameobj("FullScreenBackground/purpleBg", self.v_object)
-  self.v_wl_effect1 = self:get_child_gameobj("FullScreenBackground/Fx_UIBattleGame2_Wenli_Green", self.v_object)
-  self.v_wl_effect2 = self:get_child_gameobj("FullScreenBackground/Fx_UIBattleGame2_Wenli_Blue", self.v_object)
-  self.v_wl_effect3 = self:get_child_gameobj("FullScreenBackground/Fx_UIBattleGame2_Wenli_Com", self.v_object)
-  self.v_wl_effect4 = self:get_child_gameobj("FullScreenBackground/Fx_UIBattleGame2_Wenli_Pur", self.v_object)
-  self.v_end_effect1 = self:get_child_gameobj("FullScreenBackground/Fx_UIBattleGame2_End_Green", self.v_object)
-  self.v_end_effect2 = self:get_child_gameobj("FullScreenBackground/Fx_UIBattleGame2_End_Blue", self.v_object)
-  self.v_end_effect3 = self:get_child_gameobj("FullScreenBackground/Fx_UIBattleGame2_End_Com", self.v_object)
-  self.v_end_effect4 = self:get_child_gameobj("FullScreenBackground/Fx_UIBattleGame2_End_Pur", self.v_object)
-  self.v_miss_effect1 = self:get_child_gameobj("Fx_UI_UIBattleGame2_Miss_Green", self.v_uiobjects.Handle)
-  self.v_miss_effect2 = self:get_child_gameobj("Fx_UI_UIBattleGame2_Miss_Blue", self.v_uiobjects.Handle)
-  self.v_miss_effect3 = self:get_child_gameobj("Fx_UI_UIBattleGame2_Miss_Comm", self.v_uiobjects.Handle)
-  self.v_cool_effect1 = self:get_child_gameobj("Ani_UIBattleGame2_Handle_Miss", self.v_uiobjects.Handle)
-  self.v_cool_effect4 = self:get_child_gameobj("Ani_UIBattleGame2_Handle_UnClick", self.v_uiobjects.Handle)
-  self.v_click_effect = self:get_child_gameobj("Ani_UIBattleGame2_Handle_Click", self.v_uiobjects.Handle)
+  self.v_click_effect = self.v_uiobjects.Ani_UIBattleGame2_Handle_Click
 end
 
 function ui:do_out()
@@ -125,6 +145,7 @@ function ui:play_next()
   self.v_end_point = self.v_game_cfg.isLeftStart and right_point or left_point
   self.v_speed = self.v_unit_length * self.v_game_cfg.speed
   self.v_ui_type = self.v_game_cfg.uiType
+  self.v_effect_type = self.v_game_cfg.uiTypeEffect or self.v_ui_type
   if 3 == self.v_ui_type then
     local icon_path = self.v_game_cfg.uiTypeIcon
     if type(icon_path) ~= "string" or "" == icon_path then
@@ -134,48 +155,47 @@ function ui:play_next()
     ResMgr:load_set_icon(img, icon_path)
     img:SetNativeSize()
   end
-  self.v_uiobjects.GameType1:SetActive(false)
-  self.v_uiobjects.GameType2:SetActive(false)
-  self.v_uiobjects.GameType3:SetActive(false)
-  self.v_uiobjects.GameType4:SetActive(false)
-  self.v_uiobjects["GameType" .. self.v_ui_type]:SetActive(true)
-  local temp_bg_type = 4 == self.v_ui_type and 4 or 3
-  self.v_timeline_out2:SetActiveEx(false)
-  self.v_timeline_out3:SetActiveEx(false)
-  self.v_timeline_out = self["v_timeline_out" .. self.v_ui_type]
-  self.v_bg_effect1:SetActiveEx(false)
-  self.v_bg_effect2:SetActiveEx(false)
-  self.v_bg_effect3:SetActiveEx(false)
-  self.v_bg_effect4:SetActiveEx(false)
-  self.v_bg_effect = self["v_bg_effect" .. temp_bg_type]
+  local objs = self.v_uiobjects
+  objs.GameType1:SetActiveEx(false)
+  objs.GameType2:SetActiveEx(false)
+  objs.GameType3:SetActiveEx(false)
+  objs.GameType4:SetActiveEx(false)
+  objs["GameType" .. self.v_ui_type]:SetActiveEx(true)
+  for _, v in pairs(BG_EFFECT) do
+    objs[v]:SetActiveEx(false)
+  end
+  for _, v in pairs(LINE_EFFECT) do
+    objs[v]:SetActiveEx(false)
+  end
+  for _, v in pairs(END_EFFECT) do
+    objs[v]:SetActiveEx(false)
+  end
+  for _, v in pairs(MISS_EFFECT) do
+    objs[v]:SetActiveEx(false)
+  end
+  for _, v in pairs(COOL_EFFECT) do
+    objs[v]:SetActiveEx(false)
+  end
+  for _, v in pairs(OUT_EFFECT) do
+    objs[v]:SetActiveEx(false)
+  end
+  self.v_bg_effect = objs[BG_EFFECT[self.v_effect_type]]
   self.v_bg_effect:SetActiveEx(true)
-  self.v_wl_effect1:SetActiveEx(false)
-  self.v_wl_effect2:SetActiveEx(false)
-  self.v_wl_effect3:SetActiveEx(false)
-  self.v_wl_effect4:SetActiveEx(false)
-  self.v_wl_effect = self["v_wl_effect" .. temp_bg_type]
-  self.v_end_effect1:SetActiveEx(false)
-  self.v_end_effect2:SetActiveEx(false)
-  self.v_end_effect3:SetActiveEx(false)
-  self.v_end_effect4:SetActiveEx(false)
-  self.v_end_effect = self["v_end_effect" .. temp_bg_type]
-  self.v_miss_effect1:SetActiveEx(false)
-  self.v_miss_effect2:SetActiveEx(false)
-  self.v_miss_effect3:SetActiveEx(false)
-  self.v_miss_effect = self["v_miss_effect" .. temp_bg_type]
-  self.v_uiobjects.Handle:SetActiveEx(false)
-  self.v_uiobjects.Handle1:SetActiveEx(4 ~= self.v_ui_type)
-  self.v_uiobjects.Handle2:SetActiveEx(4 == self.v_ui_type)
-  self.v_handle_obj = 4 == self.v_ui_type and self.v_uiobjects.Handle2 or self.v_uiobjects.Handle1
+  self.v_wl_effect = objs[LINE_EFFECT[self.v_effect_type]]
+  self.v_end_effect = objs[END_EFFECT[self.v_effect_type]]
+  self.v_miss_effect = objs[MISS_EFFECT[self.v_effect_type]]
+  self.v_cool_effect = objs[COOL_EFFECT[self.v_effect_type]]
+  self.v_timeline_out = objs[OUT_EFFECT[self.v_effect_type]]
+  objs.Handle:SetActiveEx(false)
+  objs.Handle1:SetActiveEx(4 ~= self.v_ui_type)
+  objs.Handle2:SetActiveEx(4 == self.v_ui_type)
+  self.v_handle_obj = 4 == self.v_ui_type and objs.Handle2 or objs.Handle1
   Util.set_color(self.v_uicompents.Handle1_img, "FFFFFF")
   Util.set_color(self.v_uicompents.Handle2_img, "FFFFFF")
-  self.v_cool_effect1:SetActiveEx(false)
-  self.v_cool_effect4:SetActiveEx(false)
-  self.v_cool_effect = 4 == self.v_ui_type and self.v_cool_effect4 or self.v_cool_effect1
   self.v_click_effect:SetActiveEx(false)
-  self.v_uiobjects.BtnB:SetActive(self.v_game_cfg.isDubbleBtn == true)
-  self.v_uiobjects.TipText:SetActive(4 ~= self.v_ui_type)
-  self.v_uiobjects.TipText4:SetActive(4 == self.v_ui_type)
+  objs.BtnB:SetActive(self.v_game_cfg.isDubbleBtn == true)
+  objs.TipText:SetActive(4 ~= self.v_ui_type)
+  objs.TipText4:SetActive(4 == self.v_ui_type)
   self.v_end_point_cache = self.v_end_point
   self.v_is_cooling = false
   self.v_wait_order = 1
@@ -314,6 +334,7 @@ function ui:build_node(begin_pos, end_pos, node_type, order, icon)
     order = order,
     icon = icon,
     ui_type = self.v_ui_type,
+    effect_type = self.v_effect_type,
     is_dead_node = 1 == node_type,
     is_dead_node_highlight = false
   }
@@ -485,7 +506,7 @@ function ui:do_judge(nodes)
     end
     self.v_cool_effect:SetActiveEx(false)
     self.v_click_effect:SetActiveEx(false)
-    self.v_click_effect:SetActiveEx(true)
+    self.v_click_effect:SetActive(true)
     for _, node_data in ipairs(self.v_nodes) do
       if node_data.begin_pos == hit_node.begin_pos then
         node_data.node_item:do_judge_success()

@@ -40,7 +40,8 @@ local SHOW_HERO_ATTR = {
   [5] = FightDefine.ATTR_TYPE.CHAR_DEFENSE
 }
 local SHOW_RES_TYPE = CHAPTER_CONFIG.FIGHT_RES_TYPE
-local skill_sort = function(a, b)
+
+local function skill_sort(a, b)
   if a.pos_id == b.pos_id then
     return a.idx > b.idx
   else
@@ -456,9 +457,11 @@ end
 function ui:_exit_top_ver_tower()
   local tip = Util.format_str("是否立即退出关卡")
   local sure_btn = Util.format_str("直接结算")
-  local sure_callback = function()
+  
+  local function sure_callback()
     UIMgr:get_ui("top_ver_settlement"):ui_show()
   end
+  
   UIMgr:get_ui("uinotice_tips"):ui_show(sure_callback, nil, tip, sure_btn)
 end
 
@@ -466,23 +469,28 @@ function ui:_exit_tower(fight_info)
   local tip = Util.format_str("是否立即退出关卡")
   local sure_btn = Util.format_str("中继保存")
   local cancel_btn = Util.format_str("直接结算")
-  local sure_callback = function()
+  
+  local function sure_callback()
     self:close_ui()
-    local cb = function()
+    
+    local function cb()
       Global.scene_mgr:on_enter_main_scene()
       UIMgr:revert_cache_ui()
     end
+    
     if TowerMgr then
       TowerMgr:on_exit_tower(cb)
     end
   end
-  local cancel_callback = function()
+  
+  local function cancel_callback()
     if fight_info and NOT_PROGRESS_BATTLE_TYPE[fight_info.type] then
       UIMgr:get_ui("not_progress_battle_def_settle"):ui_show()
     else
       UIMgr:get_ui("fight_settlement"):ui_show(CHAPTER_CONFIG.POINTSTATE.quit)
     end
   end
+  
   UIMgr:get_ui("uinotice_tips"):ui_show(sure_callback, cancel_callback, tip, sure_btn, cancel_btn)
 end
 

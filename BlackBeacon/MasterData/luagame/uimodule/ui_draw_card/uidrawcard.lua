@@ -3,7 +3,7 @@ local TagList = require("uimodule.ui_draw_card.drawcard_tag_list")
 local group_cfg = require("config").UI_GROUPS
 local type_cfg = require("config").UI_VIEW_LEVEL
 local order_cfg = require("config").UI_SORT_ORDER
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local TypeSceneContainer = typeof(CS.Game.SceneContainer)
 local _tinsert = table.insert
 local _tsort = table.sort
@@ -66,14 +66,14 @@ function ui:init_container()
   self.v_container = root_gameobj:GetComponent(TypeSceneContainer)
   self.v_video_player = self.v_container:Get("Video")
   self.v_vcamera_control = self.v_container:Get("VirtualCamera_Control")
-  self.v_drawcard_focus_on_clock_pd = Util.get_playabledirector("Drawcard_PD/FocusOnClock", self.v_vcamera_control)
-  self.v_drawcard_close_to_clock_pd = Util.get_playabledirector("Drawcard_PD/CloseToClock", self.v_vcamera_control)
-  local shuttle_pd = Util.get_playabledirector("Drawcard_PD/Shuttle", self.v_vcamera_control)
+  local draw_card_pd_name = FashionMgr:get_curr_fashion_draw_card_pd_name()
+  FashionMgr:show_fashion_draw_card_pd(draw_card_pd_name, self.v_vcamera_control)
+  local draw_card_pd_go = Util.get_child_gameobj(draw_card_pd_name, self.v_vcamera_control)
+  self.v_drawcard_focus_on_clock_pd = Util.get_playabledirector("FocusOnClock", draw_card_pd_go)
+  self.v_drawcard_close_to_clock_pd = Util.get_playabledirector("CloseToClock", draw_card_pd_go)
+  local shuttle_pd = Util.get_playabledirector("Shuttle", draw_card_pd_go)
   shuttle_pd.time = 0
   shuttle_pd:Evaluate()
-  self.v_drawcard_close_to_clock_pd:Stop()
-  self.v_drawcard_focus_on_clock_pd.time = 0
-  self.v_drawcard_focus_on_clock_pd:Evaluate()
   self.v_drawcard_close_to_clock_pd:Stop()
   self.v_drawcard_focus_on_clock_pd.time = 0
   self.v_drawcard_focus_on_clock_pd:Evaluate()
@@ -118,13 +118,14 @@ function ui:_handle_group_list_update()
   end
 end
 
-local _tag_sorter = function(a, b)
+local function _tag_sorter(a, b)
   if a.sort_value ~= b.sort_value then
     return a.sort_value > b.sort_value
   end
   return a.tag_id > b.tag_id
 end
-local _sub_tag_sorter = function(a, b)
+
+local function _sub_tag_sorter(a, b)
   if a.sort_value ~= b.sort_value then
     return a.sort_value > b.sort_value
   end
@@ -180,7 +181,7 @@ function ui:_check_add_ui_config(ui_name, pool_type)
     ui_config[ui_name] = {
       resource = path,
       class = "ui_draw_card.uidrawcard_detail",
-      sort_order = order_cfg.System,
+      sort_order = order_cfg.MainView,
       group = group_cfg.GROUP_NORMAL,
       sync_load = true,
       parent_ui = "uidrawcard",

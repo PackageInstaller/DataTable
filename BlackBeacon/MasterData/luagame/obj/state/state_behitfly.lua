@@ -6,7 +6,8 @@ local Rad2Deg = math.deg(1)
 local _floor = math.floor
 local _atan = math.atan
 local NO_HIT_WALL = -1
-local do_behitfly = function(self, missile, is_first, be_hit_type)
+
+local function do_behitfly(self, missile, is_first, be_hit_type)
   self.v_missile_owner = missile:get_owner()
   local cfg = missile.missile_cfg
   local angle_cfg = cfg.BeHitFlyRandomAngle
@@ -45,13 +46,15 @@ local do_behitfly = function(self, missile, is_first, be_hit_type)
     self.hitfly_caster = missile:get_owner()
   end
 end
+
 local STAND_CAN_TRANSIT_STATE = {
   [STATE_NAME.move] = true,
   [STATE_NAME.run] = true,
   [STATE_NAME.jump] = true,
   [STATE_NAME.attack] = true
 }
-local _check_can_transit_for_stand_state = function(self, state_name)
+
+local function _check_can_transit_for_stand_state(self, state_name)
   if self.v_action == ACT_DEFINE.Standup and STAND_CAN_TRANSIT_STATE[state_name] then
     local cur_time = self.v_owner.time_mgr:get_time()
     if cur_time > self.v_turn_over_timeout then

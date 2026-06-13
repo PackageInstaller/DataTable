@@ -111,18 +111,21 @@ function ui:play_story_on_ui_show(story_id)
     self.v_play_story_id = story_id
     local node_id = self.v_pass_param.pass_id
     self:set_black_bg_active(true)
-    local story_real_start_cb = function()
+    
+    local function story_real_start_cb()
       self.v_play_story_id = nil
       self:set_black_bg_active(false)
     end
+    
     StoryMgr:set_story_real_start_cb(story_id, story_real_start_cb)
     ChapterMgr:chapter_node_play_story(self.v_chapter_id, node_id, nil, true)
     StoryMgr:on_start(story_id)
     local detail_info = UIMgr:get_ui("ui_chapter_detail_info")
     if detail_info then
-      local cb = function()
+      local function cb()
         TowerMgr:show_long_chapter_award(true)
       end
+      
       detail_info:set_click_settle_cb(cb)
     end
   end
@@ -211,10 +214,12 @@ end
 
 function ui:delay_enable_scr()
   self:set_scr_rect_enabled(false)
-  local cb = function()
+  
+  local function cb()
     self:set_scr_rect_enabled(true)
     self.v_delay_enable_scr_timer = nil
   end
+  
   self.v_delay_enable_scr_timer = Timer:add_timer("delay_enable_scr_timer", 0.1, cb)
 end
 
@@ -305,7 +310,8 @@ function ui:dot_change_bg(is_first)
   if is_first then
     self:set_black_bg_active(true)
   end
-  local load_done_cb = function()
+  
+  local function load_done_cb()
     if not self:visible() or self:is_destroy() or Util.is_nil(self.v_object) then
       return
     end
@@ -331,6 +337,7 @@ function ui:dot_change_bg(is_first)
       end)
     end
   end
+  
   ResMgr:load_set_icon(self.v_uicompents.ChangeBg_img, self.v_cur_bg_path, load_done_cb, true, self)
 end
 
@@ -834,7 +841,8 @@ function ui:on_pass_node()
     next_area_group:set_empty_point_visible_on_pass_node()
     next_area_group:refresh_longitude_show_state()
   end
-  local cb = function()
+  
+  local function cb()
     self:scroll_to_item_pos(tf, nil, false, true)
     if not not_show_anima then
       self:set_scr_rect_enabled(false)
@@ -846,6 +854,7 @@ function ui:on_pass_node()
     end
     self.v_on_pass_node_timer = nil
   end
+  
   self:remove_pass_node_timer()
   self.v_on_pass_node_timer = Timer:add_timer("on_pass_node", DELAY_MOVE_TIME, cb)
 end
@@ -987,9 +996,11 @@ function ui:on_click_arrow(is_right)
     self.v_left_click_cd = self.CLICK_CD
   end
   local tf = target_item:get_award_tf()
-  local cb = function()
+  
+  local function cb()
     self:check_award_obj_in_screen()
   end
+  
   self:before_scroll_to_item_pos(false, cb)
   self:scroll_to_item_pos(tf, self.v_sequence, false, false)
 end

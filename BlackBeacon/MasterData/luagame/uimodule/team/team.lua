@@ -48,9 +48,10 @@ function ui:ui_finish_load()
   end
   self:set_button("StartFight", function()
     if self.v_is_exit then
-      local cb = function()
+      local function cb()
         self:click_return_btn()
       end
+      
       Util.show_notify_popup_message(cb, "活动已结束", nil, "确定", nil, nil, true)
       return
     end
@@ -89,10 +90,12 @@ function ui:on_go_main()
   FormationMgr:send_save_fight_team(self.v_fight_team_id, nil, true)
   AssistMgr:clear_assist_buddy_info()
   if SceneMgr:check_main_scene() then
-    local sure_cb = function()
+    local function sure_cb()
       UIMgr:go_to_main()
+      
       UIMgr:clear_all_cache_ui_custom_data()
     end
+    
     if self.v_fight_type == CommonDefine.CHALLENGE_TYPE.ACTIVITY_PONDER then
       Util.show_conform_tip("退出后当前进度将重制，是否退出？", "取消", "确定", nil, sure_cb)
     else
@@ -104,12 +107,13 @@ function ui:on_go_main()
 end
 
 function ui:do_exit_tower(back_to_main)
-  local exit_cb = function()
+  local function exit_cb()
     if back_to_main then
       UIMgr:clear_ui_stack()
     end
     Global.scene_mgr:on_enter_main_scene()
   end
+  
   TowerMgr:on_exit_tower(exit_cb)
 end
 
@@ -183,9 +187,10 @@ function ui:click_hero_btn(pos, is_assist)
     UIMgr:get_ui("char_assist"):ui_show(team_data, true, self.v_ban_buddys, nil, nil, nil, nil, true)
     self:set_model_disable()
   else
-    local cb = function()
+    local function cb()
       self:set_model_disable()
     end
+    
     UIMgr:remove_stace_by_ui_name("character")
     UIMgr:remove_stace_by_ui_name("character_enter")
     UIMgr:get_ui("character_enter"):ui_show(team_data, cb)
@@ -290,9 +295,10 @@ function ui:is_can_fight()
     back_type = TimeLimitedActMgr:get_is_can_fight(self.v_chapter_id, self.v_point_id)
   end
   if back_type == Config.BACK_TYPE.GO_TO_MAIN then
-    local confirmCb = function()
+    local function confirmCb()
       UIMgr:go_to_main()
     end
+    
     Util.show_notify_popup_message(confirmCb, "活动已结束", nil, "确定", nil, nil, true)
   elseif back_type == Config.BACK_TYPE.GO_TO_BACK then
     Util.show_message_tip("关卡已刷新，请返回活动主界面重置")
@@ -302,7 +308,8 @@ end
 
 function ui:start_fight()
   local tower_type = FIGHT_TYPE2TOWER[self.v_fight_type]
-  local callback = function(ok)
+  
+  local function callback(ok)
     if not ok then
       return
     end
@@ -311,6 +318,7 @@ function ui:start_fight()
       TowerMgr:on_new_enter_tower(self.v_fight_type, self.v_point_id, self.v_chapter_id or self.v_floor_num, tower_type, fight_team_send_data, self.v_node_id, nil, self.v_args)
     end
   end
+  
   FormationMgr:change_fight_team(self.v_fight_team_id, self.v_pos_data, self.v_cur_starting_pos)
   FormationMgr:send_save_fight_team(self.v_fight_team_id, callback)
   UIMgr:remove_stace_by_ui_name("weekly_battle_detail")
@@ -321,13 +329,15 @@ end
 
 function ui:start_fight_with_weekly()
   local rune_info = WeeklyMgr:get_weekly_buddy_list(self.v_fight_type, self.v_point_id, true)
-  local save_cb = function(ok)
+  
+  local function save_cb(ok)
     if not ok then
       return
     end
     self:ui_hide()
     UIMgr:get_ui("weekly_pvp_stage"):ui_show()
   end
+  
   WeeklyMgr:request_set_week_acty_pvp_formation(rune_info, save_cb)
 end
 
@@ -389,7 +399,8 @@ function ui:buy_challenge_num()
   local cost_id = point_cfg.BuyFightNumCost[1]
   local cost_num = point_cfg.BuyFightNumCost[2]
   local item_cfg = ShareRes.get_item_cfg(cost_id)
-  local sure_callback = function()
+  
+  local function sure_callback()
     local item_num = BagMgr:get_item_num(cost_id)
     if item_num < cost_num then
       Util.show_message_tip(2115)
@@ -397,6 +408,7 @@ function ui:buy_challenge_num()
     end
     ChapterMgr:buy_challenge_num(self.v_chapter_id, self.v_point_id)
   end
+  
   local tip = string.format("是否使用%s增加1次挑战次数", item_cfg.Name .. "：" .. cost_num)
   UIMgr:get_ui("uinotice_tips"):ui_show(sure_callback, nil, tip)
 end
@@ -537,7 +549,6 @@ function ui:load_fight_team_to_view()
     end
   elseif self:check_is_minesweeper() then
     pos_data = {}
-    starting_pos = FormationMgr:get_fight_team_start_pos(self.v_fight_team_id)
   else
     local _pos_data, replaced_by_fixed, remove_by_pos_ban, remove_by_id_ban = FormationMgr:get_correct_fight_team(self.v_point_id, self.v_node_id, self.v_floor_num)
     if replaced_by_fixed or remove_by_pos_ban or remove_by_id_ban then
@@ -918,7 +929,7 @@ end
 
 function ui:_refresh_btns()
   self.v_uiobjects.Cost:SetActive(self.v_node_id == nil)
-  self.v_uiobjects.TeamNow:SetActive(self:check_is_weekly() == false)
+  self.v_uiobjects.TeamNow:SetActive(not self:check_is_weekly() and not self:check_is_minesweeper())
 end
 
 function ui:ui_on_update()
@@ -1023,13 +1034,14 @@ function ui:update_fight_val()
 end
 
 function ui:load_char_model(model_id, npc_id, is_reload, npc_param, hide_weapon, cb, team_pos, robot_id, fashion_id)
-  local load_cb = function()
+  local function load_cb()
     if cb then
       cb()
     end
     self.v_model_view:hide_model_node(false)
     self.v_model_view:set_view_param(npc_id, team_pos, fashion_id)
   end
+  
   local use_weapon_res, use_weapon_id = self:get_boddy_assist_weapon(npc_id)
   local params = {
     model_id = model_id,
@@ -1145,9 +1157,10 @@ function ui:check_is_long_chapter()
 end
 
 function ui:tp_next_floor()
-  local callback = function(ok)
+  local function callback(ok)
     if not ok then
       Log.Error("进入塔失败")
+      
       return
     end
     local fight_team_send_data = FormationMgr:get_fight_team_send_data(self.v_fight_team_id, nil, true)
@@ -1158,6 +1171,7 @@ function ui:tp_next_floor()
       Log.Error("塔不存在")
     end
   end
+  
   local fight_team_send_data = FormationMgr:get_fight_team_send_data(self.v_fight_team_id, nil, true)
   FormationMgr:change_fight_team(self.v_fight_team_id, fight_team_send_data.buddys, self.v_cur_starting_pos)
   FormationMgr:send_save_fight_team(self.v_fight_team_id, callback)

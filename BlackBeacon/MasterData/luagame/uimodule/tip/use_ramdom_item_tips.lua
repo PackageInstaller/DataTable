@@ -4,7 +4,8 @@ local ui = Util.create_child_mt(Base)
 local USE_RAMDOM_ITEM_TEMPLATE = "USE_RAMDOM_ITEM_TEMPLATE"
 local Item_Helper = require("utils.item_helper")
 local BagCfg = require("uimodule.uibag.uibag_configs")
-local func = function(award_cfg)
+
+local function func(award_cfg)
   return {
     ItemId = award_cfg.ItemId,
     Num = award_cfg.Num,
@@ -209,10 +210,12 @@ function ui:use_item()
     Util.show_message_tip(2224)
     return
   end
-  local callback = function()
+  
+  local function callback()
     UIMgr:try_hide_ui("itemTip")
     self:ui_hide()
   end
+  
   local consume_list = {
     bag_type = BagCfg.ITEM_TYPE.COMSUME,
     item_list = {}

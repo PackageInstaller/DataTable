@@ -9,7 +9,8 @@ local FORCE_UPDATE_CENTER = {
   MISSILE_PROJECTION_FORWARD = 5,
   BEHAVIOR_DEFINED = 6
 }
-local _get_missile_projection_pos = function(attacker, owner, center_type, missile)
+
+local function _get_missile_projection_pos(attacker, owner, center_type, missile)
   local missile_trans = missile.transform
   local projectio_dir = center_type == FORCE_UPDATE_CENTER.MISSILE_PROJECTION_RIGHT and missile_trans.right or missile_trans.forward
   local begin_pos
@@ -24,7 +25,8 @@ local _get_missile_projection_pos = function(attacker, owner, center_type, missi
   begin_pos = missile_pos + projection
   return begin_pos
 end
-local _get_pos_and_dir = function(attacker, owner, center_type, missile, magic_id)
+
+local function _get_pos_and_dir(attacker, owner, center_type, missile, magic_id)
   local begin_pos, force_dir
   if center_type == FORCE_UPDATE_CENTER.MISSILE then
     begin_pos = missile:get_pos_vec3()

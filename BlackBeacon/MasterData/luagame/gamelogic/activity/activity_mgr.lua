@@ -42,9 +42,7 @@ function M:sync_update_acty_open(data)
     else
       Log.Error("repeat create activity! activity_id=", data.acty_type)
     end
-  elseif not activity then
-    Log.Error("get activity failure! activity_id=", data.acty_type)
-  else
+  elseif activity then
     self:_close_activity(data.acty_type)
   end
 end

@@ -304,13 +304,15 @@ function ui:on_remove_card_done(is_right, not_additional)
 end
 
 function ui:remove_card_particle_move(is_right)
-  local cb = function()
+  local function cb()
     self.v_curse_view:set_curse_val(true, function()
       self:set_pnl_not_click(false)
+      
       self.v_ring_card_view:set_is_play_anim(false)
     end)
     ChallengeRingPlusMgr:set_is_first_max_value(false)
   end
+  
   if nil == is_right then
     return
   end
@@ -395,7 +397,8 @@ function ui:play_key_anima(init_pos, cb)
   local coms = self.v_uicompents
   self:open_unlock_icon(false)
   local duration = coms.KeyRotationPd_pd.duration
-  local rotation_cb = function()
+  
+  local function rotation_cb()
     objs.KeyAnima:SetActive(false)
     Global.sound_mgr:play_common_sound("Sound_nextlayer_unlock")
     coms.KeyUnLockPd_pd:ResetPD()
@@ -409,6 +412,7 @@ function ui:play_key_anima(init_pos, cb)
     end
     self.v_rotation_timer = nil
   end
+  
   if self.v_rotation_timer then
     Timer:remove_timer(self.v_rotation_timer)
     self.v_rotation_timer = nil
@@ -439,7 +443,8 @@ function ui:on_click_next_floor_btn()
   end
   if ChallengeRingPlusMgr:is_door_open() then
     local num = ChallengeRingPlusMgr:get_show_card_index_list_num()
-    local sure_func = function()
+    
+    local function sure_func()
       if self.v_rotation_timer then
         Timer:remove_timer(self.v_rotation_timer)
         self.v_rotation_timer = nil
@@ -447,6 +452,7 @@ function ui:on_click_next_floor_btn()
       end
       ChallengeRingPlusMgr:select_door_card()
     end
+    
     if Util.is_more_than_zero(num) then
       local str = ChallengeRingPlusMgr:is_end_ring() and "是否进行通关结算" or "是否进入下一层"
       UIMgr:get_ui("uinotice_tips"):ui_show(sure_func, nil, str)
@@ -463,12 +469,15 @@ function ui:on_click_quit_btn()
   if not self.v_ring_card_view:is_play_anim() then
     local sure_btn = Util.format_str("中继保存")
     local cancel_btn = Util.format_str("直接结算")
-    local sure_func = function()
+    
+    local function sure_func()
       self:save_and_exit()
     end
-    local cancel_func = function()
+    
+    local function cancel_func()
       self:exit()
     end
+    
     Util.show_conform_tip("是否立即退出关卡", cancel_btn, sure_btn, cancel_func, sure_func)
   end
 end
@@ -480,19 +489,23 @@ function ui:exit()
       hero.magic_mgr:remove_magic_by_id(k)
     end
   end
-  local clear_fun = function()
+  
+  local function clear_fun()
     TowerMgr:entry_choose_reward(true, ChallengeRingPlusMgr:is_end_ring(), false)
     self.v_timer = nil
   end
+  
   self.v_timer = Timer:add_timer(nil, 0.3, clear_fun)
 end
 
 function ui:save_and_exit()
   self:ui_hide()
-  local cb = function()
+  
+  local function cb()
     Global.scene_mgr:on_enter_main_scene()
     UIMgr:revert_cache_ui()
   end
+  
   if TowerMgr then
     TowerMgr:on_exit_tower(cb)
   end

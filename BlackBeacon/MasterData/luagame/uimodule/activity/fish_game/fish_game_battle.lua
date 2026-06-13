@@ -235,6 +235,10 @@ function ui:switch_fsm(fsm, cur_fsm_name, target_fsm_name, not_into)
 end
 
 function ui:ui_on_hide()
+  local stage_ui = UIMgr:try_get_visible_ui("fish_game_stage")
+  if stage_ui then
+    stage_ui:check_close()
+  end
 end
 
 function ui:ui_on_destroy()
@@ -684,8 +688,8 @@ function ui:update_items(delta_time)
 end
 
 function ui:update_normalstate_item(data, delta_time)
-  CSHelper.SetRectTransLocalRot(data.cur_item_rect, 0, 0, 0)
-  CSHelper.SetRectTransLocalRot(data.cur_use_item_rect, 0, 0, 0)
+  CSHelper.SetRectTransLocalRot(data.cur_item_rect.component, 0, 0, 0)
+  CSHelper.SetRectTransLocalRot(data.cur_use_item_rect.component, 0, 0, 0)
   if data.item_detail.MoveSpeed <= 0 then
     return
   end

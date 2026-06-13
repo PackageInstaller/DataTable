@@ -271,13 +271,13 @@ return {
     Condition = {100102},
     DailyRepeatPop = false,
     DailyResetPop = false,
-    EndTime = 10,
+    EndTime = 10014,
     Id = 22,
     Limit = 23103,
     PopOpportunity = 1,
     Priority = 997,
     RepeatPop = true,
-    StartTime = 9,
+    StartTime = 10013,
     UIConfig = "ui_normal_popup_4"
   }
 }

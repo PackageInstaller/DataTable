@@ -8,7 +8,7 @@ return {
       Id = 1,
       Interval = 3,
       Name = "第1天",
-      Order = 1,
+      Order = 2,
       RandomCustomerList = {
         4,
         5,
@@ -41,7 +41,7 @@ return {
       Id = 2,
       Interval = 3,
       Name = "第2天",
-      Order = 2,
+      Order = 3,
       RandomCustomerList = {
         5,
         6,
@@ -75,7 +75,7 @@ return {
       Id = 3,
       Interval = 2,
       Name = "第3天",
-      Order = 3,
+      Order = 4,
       RandomCustomerList = {
         6,
         8,
@@ -112,7 +112,7 @@ return {
       Id = 4,
       Interval = 2,
       Name = "第4天",
-      Order = 4,
+      Order = 5,
       RandomCustomerList = {
         6,
         8,
@@ -149,7 +149,7 @@ return {
       Id = 5,
       Interval = 2,
       Name = "第5天",
-      Order = 5,
+      Order = 6,
       RandomCustomerList = {
         6,
         8,
@@ -186,7 +186,7 @@ return {
       Id = 6,
       Interval = 2,
       Name = "第6天",
-      Order = 6,
+      Order = 7,
       RandomCustomerList = {
         6,
         8,
@@ -223,7 +223,7 @@ return {
       Id = 7,
       Interval = 2,
       Name = "第7天",
-      Order = 7,
+      Order = 8,
       RandomCustomerList = {
         6,
         8,
@@ -260,7 +260,7 @@ return {
       Id = 8,
       Interval = 2,
       Name = "第8天",
-      Order = 8,
+      Order = 9,
       RandomCustomerList = {
         6,
         8,
@@ -297,7 +297,7 @@ return {
       Id = 9,
       Interval = 1,
       Name = "第9天",
-      Order = 9,
+      Order = 10,
       RandomCustomerList = {
         6,
         8,
@@ -334,7 +334,7 @@ return {
       Id = 10,
       Interval = 1,
       Name = "第10天",
-      Order = 10,
+      Order = 11,
       RandomCustomerList = {
         6,
         8,
@@ -371,7 +371,7 @@ return {
       Id = 11,
       Interval = 1,
       Name = "第11天",
-      Order = 11,
+      Order = 12,
       RandomCustomerList = {
         6,
         8,
@@ -408,7 +408,7 @@ return {
       Id = 12,
       Interval = 1,
       Name = "挑战关",
-      Order = 12,
+      Order = 13,
       RandomCustomerList = {
         6,
         8,
@@ -435,9 +435,11 @@ return {
         52
       },
       StartTime = 92030
-    },
-    {
-      ActivityId = 36,
+    }
+  },
+  [999] = {
+    [999] = {
+      ActivityId = 999,
       Duration = 600,
       FixCustomerList = {
         1,
@@ -445,10 +447,10 @@ return {
         3
       },
       FrontEpisodeId = 0,
-      Id = 13,
+      Id = 999,
       Interval = 0,
       Name = "引导关",
-      Order = 13,
+      Order = 1,
       StartTime = 92031,
       TargetScore = 850
     }

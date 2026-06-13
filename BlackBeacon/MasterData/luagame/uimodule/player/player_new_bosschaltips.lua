@@ -20,37 +20,50 @@ function ui:ui_finish_load()
 end
 
 function ui:ui_on_show(data_list, select_id)
-  self.v_static_sv:update_list(data_list)
-  local togs = {}
-  local items = self.v_static_sv:get_items()
-  local defualt_index
-  for index, item in ipairs(items) do
-    local tog = item.v_uicompents.BossBg_tog
-    if item.v_boss_id == select_id then
-      defualt_index = index
-    end
-    _tinsert(togs, tog)
-  end
-  local init_cb = function()
+  local dataList = data_list or {}
+  if UtilTable.is_empty(dataList) then
+    _tinsert(dataList, {
+      Id = -1,
+      Score = 0,
+      Name = nil,
+      Rank = -1
+    })
+    self.v_static_sv:update_list(dataList)
+  else
+    self.v_static_sv:update_list(dataList)
+    local togs = {}
     local items = self.v_static_sv:get_items()
-    for i, v in ipairs(items) do
-      if v.boss_id == select_id then
-        v.v_uiobjects.BossActive:SetActive(true)
-        goto lbl_21
+    local defualt_index
+    for index, item in ipairs(items) do
+      local tog = item.v_uicompents.BossBg_tog
+      if item.v_boss_id == select_id then
+        defualt_index = index
       end
+      _tinsert(togs, tog)
     end
-    ::lbl_21::
+    
+    local function init_cb()
+      local items = self.v_static_sv:get_items()
+      for i, v in ipairs(items) do
+        if v.boss_id == select_id and -1 ~= v.boss_id then
+          v.v_uiobjects.BossActive:SetActive(true)
+          goto lbl_24
+        end
+      end
+      ::lbl_24::
+    end
+    
+    self.v_toggle_tab:init_by_toggles(togs, function(index)
+      self:refresh_select_view(index)
+    end, defualt_index, nil, init_cb)
   end
-  self.v_toggle_tab:init_by_toggles(togs, function(index)
-    self:refresh_select_view(index)
-  end, defualt_index, nil, init_cb)
 end
 
 function ui:refresh_select_view(index)
   local items = self.v_static_sv:get_items()
   for idx, item in ipairs(items) do
     if idx == index then
-      item.v_uiobjects.BossActive:SetActive(true)
+      item.v_uiobjects.BossActive:SetActive(-1 ~= item.v_boss_id)
       self.v_select_boss = item.v_boss_id
       print(item.v_boss_id)
     else

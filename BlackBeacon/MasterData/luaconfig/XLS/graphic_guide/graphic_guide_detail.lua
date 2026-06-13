@@ -1412,32 +1412,32 @@ return {
   [8003021] = {
     group = 800302,
     id = 8003021,
-    picture = "10804_guide",
+    picture = "",
     sort = 1,
     text = "攻击蚊子能获得3分！\n要确保足够近的情况下再攻击，不然蚊子会闪避逃走哦",
     title = "蚊子",
+    use_res = "video",
+    video = "800302_guide1"
+  },
+  [8003022] = {
+    group = 800302,
+    id = 8003022,
+    picture = "800302_guide",
+    sort = 2,
+    text = "本场游戏中，你有机会见到道具--风卷残云。\n攻击、拾取风卷残云，你将获得“风卷残云”能力",
+    title = "道具--风卷残云1",
     use_res = "picture",
     video = ""
   },
   [8003023] = {
     group = 800302,
     id = 8003023,
-    picture = "10804_guide",
-    sort = 3,
-    text = "本场游戏中，你有机会见到道具--风卷残云。\n攻击、拾取风卷残云，你将获得“风卷残云”能力",
-    title = "道具--风卷残云1",
-    use_res = "picture",
-    video = ""
-  },
-  [8003024] = {
-    group = 800302,
-    id = 8003024,
     picture = "",
-    sort = 4,
+    sort = 3,
     text = "“风卷残云”状态下，你将获得大范围的吸力，将鸟和蚊子吸附到身边",
     title = "道具--风卷残云2",
     use_res = "video",
-    video = "800101_guide"
+    video = "800302_guide2"
   },
   [8003031] = {
     group = 800303,
@@ -1447,7 +1447,7 @@ return {
     text = "青化水会使得玩家减速\n鸟、蚊子遇到青化水会停止飞行，开始饮水",
     title = "青化水1",
     use_res = "video",
-    video = "800101_guide"
+    video = "800303_guide1"
   },
   [8003032] = {
     group = 800303,
@@ -1457,37 +1457,47 @@ return {
     text = "鸟饮水结束后会进化，需要更多次的攻击才能将其击败\n相应地，你能获得更高得分",
     title = "青化水2",
     use_res = "video",
-    video = "800101_guide"
+    video = "800303_guide2"
   },
   [8003033] = {
     group = 800303,
     id = 8003033,
-    picture = "10804_guide",
-    sort = 4,
-    text = "本场游戏中，你有机会见到道具--健步如飞。\n攻击、拾取健步如飞，你将获得“健步如飞”能力",
-    title = "道具-健步如飞1",
+    picture = "800303_guide1",
+    sort = 3,
+    text = "蚊子同样会吸饮青化水\n喝了青化水的蚊子，颜色变暗，移速变慢，分值下降为2",
+    title = "青化水3",
     use_res = "picture",
     video = ""
   },
   [8003034] = {
     group = 800303,
     id = 8003034,
+    picture = "800303_guide2",
+    sort = 4,
+    text = "本场游戏中，你有机会见到道具--健步如飞。\n攻击、拾取健步如飞，你将获得“健步如飞”能力",
+    title = "道具-健步如飞1",
+    use_res = "picture",
+    video = ""
+  },
+  [8003035] = {
+    group = 800303,
+    id = 8003035,
     picture = "",
     sort = 5,
-    text = "“健步如飞”持续10秒。10秒内，玩家速度提升",
+    text = "“健步如飞”持续10秒。10秒内，玩家速度提升，免疫青化水的减速",
     title = "道具-健步如飞2",
     use_res = "video",
-    video = "800101_guide"
+    video = "800303_guide3"
   },
   [8004011] = {
     group = 800401,
     id = 8004011,
-    picture = "10804_guide",
+    picture = "",
     sort = 1,
-    text = "踩上踏板，乐器就会发起声波攻击。踏板有2秒的响应冷却时间。\n用声波攻击击败木偶获得积分！",
+    text = "踩上踏板，乐器就会发起声波攻击。踏板有3秒的响应冷却时间。\n用声波攻击击败木偶获得积分！",
     title = "踏板与乐器",
-    use_res = "picture",
-    video = ""
+    use_res = "video",
+    video = "800401_guide"
   },
   [8004021] = {
     group = 800402,
@@ -1497,12 +1507,12 @@ return {
     text = "注意踏板的光色和乐器的光环颜色！踩上踏板，只有对应颜色的乐器才会发起声波攻击。",
     title = "踏板与乐器",
     use_res = "video",
-    video = "800101_guide"
+    video = "800402_guide1"
   },
   [8004022] = {
     group = 800402,
     id = 8004022,
-    picture = "10804_guide",
+    picture = "800402_guide",
     sort = 2,
     text = "本场游戏中，你有机会见到道具-和弦。\n声波击中和弦，你将获得“和弦”能力",
     title = "道具-和弦1",
@@ -1517,7 +1527,7 @@ return {
     text = "“和弦”状态下，踩下任意颜色踏板，所有乐器都会发起声波攻击\n和弦能力只有5次",
     title = "道具-和弦2",
     use_res = "video",
-    video = "800101_guide"
+    video = "800402_guide2"
   },
   [8004031] = {
     group = 800403,
@@ -1527,12 +1537,12 @@ return {
     text = "小木偶移动速度很快，但是击中它就能获得3分！\n抓住机会，小木偶出现后一段时间内会自我销毁",
     title = "小木偶",
     use_res = "video",
-    video = "800101_guide"
+    video = "800403_guide1"
   },
   [8004032] = {
     group = 800403,
     id = 8004032,
-    picture = "10804_guide",
+    picture = "800403_guide",
     sort = 2,
     text = "本场游戏中，你有机会见到道具-快板。\n声波击中快板，你将获得“快板”能力",
     title = "道具-快板1",
@@ -1547,7 +1557,7 @@ return {
     text = "“快板”持续7秒。7秒内，踏板没有响应冷却时间",
     title = "道具-快板2",
     use_res = "video",
-    video = "800101_guide"
+    video = "800403_guide2"
   },
   [8006011] = {
     group = 800601,
@@ -1557,7 +1567,7 @@ return {
     text = "每次用【疾刺】贯穿的怪物越多，就能获得更多的奖励分数",
     title = "贯穿",
     use_res = "video",
-    video = "800101_guide"
+    video = "800601_guide1"
   },
   [8006012] = {
     group = 800601,
@@ -1567,7 +1577,7 @@ return {
     text = "击败怪物同样能获得积分",
     title = "击败",
     use_res = "video",
-    video = "800101_guide"
+    video = "800601_guide2"
   },
   [8006021] = {
     group = 800602,
@@ -1577,12 +1587,12 @@ return {
     text = "玩家经过虫卵附近，会引爆虫卵",
     title = "虫卵炸弹",
     use_res = "video",
-    video = "800101_guide"
+    video = "800602_guide1"
   },
   [8006022] = {
     group = 800602,
     id = 8006022,
-    picture = "10804_guide",
+    picture = "800602_guide",
     sort = 2,
     text = "玩家攻击虫卵，不但会引爆虫卵，还会影响通关评分",
     title = "虫卵炸弹",
@@ -1597,7 +1607,7 @@ return {
     text = "虫卵在一定时间后会自然消失，孵出蚊子。\n击败蚊子，能获得3分",
     title = "虫卵炸弹",
     use_res = "video",
-    video = "800101_guide"
+    video = "800602_guide2"
   },
   [8006031] = {
     group = 800603,
@@ -1607,17 +1617,17 @@ return {
     text = "连续攻击乌龟就能获得【连击】奖励积分",
     title = "石榴乌龟1",
     use_res = "video",
-    video = "800101_guide"
+    video = "800603_guide1"
   },
   [8006032] = {
     group = 800603,
     id = 8006032,
     picture = "",
     sort = 2,
-    text = "未能在进度条消失前击败乌龟，会被乌龟诅咒减速哦",
+    text = "未能在进度条消失前击败乌龟，会被乌龟诅咒哦\n诅咒状态下减速30%且无法使用闪现",
     title = "石榴乌龟2",
     use_res = "video",
-    video = "800101_guide"
+    video = "800603_guide2"
   },
   [10010101] = {
     group = 100001,
@@ -1713,7 +1723,7 @@ return {
     group = 101104,
     id = 10110401,
     picture = "101104_guide_1",
-    picture_pc = "101104_guide_1",
+    picture_pc = "101104_guide_1_PC",
     show_pc = 1,
     sort = 1,
     text = "任何房间内<color=#FEC66B>非战斗状态下</color>，\n都可使用<color=#87CEFA>双指缩放</color>来切换视角",
@@ -1731,13 +1741,13 @@ return {
     show_pc = 1,
     sort = 2,
     text = "双指<color=#87CEFA>放大</color>画面可以切换为自由视角",
-    text_pc = "滚轮<color=#87CEFA>放大</color>画面可以切换为自由视角",
+    text_pc = "ALT + 滚轮<color=#87CEFA>放大</color>画面可以切换为自由视角",
     title = "切换视角",
     title_pc = "切换视角",
     use_res = "video",
     use_res_pc = "video",
     video = "101104_guide_x264",
-    video_pc = "101104_guide_x264"
+    video_pc = "101104_guide_x264_PC"
   },
   [10110403] = {
     group = 101104,
@@ -1746,13 +1756,13 @@ return {
     show_pc = 1,
     sort = 3,
     text = "双指<color=#87CEFA>缩小</color>画面可以切换为俯视角",
-    text_pc = "滚轮<color=#87CEFA>缩小</color>画面可以切换为俯视角",
+    text_pc = "ALT + 滚轮<color=#87CEFA>缩小</color>画面可以切换为俯视角",
     title = "切换视角",
     title_pc = "切换视角",
     use_res = "video",
     use_res_pc = "video",
     video = "101104_guide_x264_2",
-    video_pc = "101104_guide_x264_2"
+    video_pc = "101104_guide_x264_2_PC"
   },
   [10150101] = {
     group = 101501,
@@ -1879,8 +1889,8 @@ return {
     id = 10808011,
     picture = "",
     sort = 1,
-    text = "当奇异雕塑被<color=#FECF80>持续观测</color>时，其形态保持稳定。\n当奇异雕塑<color=#FECF80>脱离观测</color>时，其形态将发生改变。",
-    title = "博纳罗蒂的奇异雕塑（一）",
+    text = "当奇异雕塑被<color=#FECF80>持续观测</color>时，其形态和位置保持稳定。\n当奇异雕塑<color=#FECF80>脱离观测</color>时，其形态或位置将发生改变。",
+    title = "博纳罗蒂的奇异雕塑",
     use_res = "video",
     video = "1080801_guide"
   },
@@ -1889,10 +1899,70 @@ return {
     id = 10809011,
     picture = "",
     sort = 1,
-    text = "当奇异雕塑被<color=#FECF80>持续观测</color>时，其位置保持稳定。\n当奇异雕塑<color=#FECF80>脱离观测</color>时，其位置将发生改变。",
-    title = "博纳罗蒂的奇异雕塑（二）",
+    text = "当奇异雕塑被<color=#FECF80>持续观测</color>时，其形态和位置保持稳定。\n当奇异雕塑<color=#FECF80>脱离观测</color>时，其形态或位置将发生改变。",
+    title = "博纳罗蒂的奇异雕塑",
     use_res = "video",
     video = "1080901_guide"
+  },
+  [10810011] = {
+    group = 1081001,
+    id = 10810011,
+    picture = "",
+    sort = 1,
+    text = "当奇异雕塑位于<color=#FECF80>闪亮的雕塑底座</color>上时，连通的门扉随之开启。",
+    title = "雕塑底座",
+    use_res = "video",
+    video = "1081001_guide"
+  },
+  [10810021] = {
+    group = 1081002,
+    id = 10810021,
+    picture = "",
+    sort = 1,
+    text = "当奇异雕塑被<color=#FECF80>持续观测</color>时，其形态和位置保持稳定。\n当奇异雕塑<color=#FECF80>脱离观测</color>时，其形态或位置将发生改变。",
+    title = "博纳罗蒂的奇异雕塑",
+    use_res = "video",
+    video = "1081002_guide"
+  },
+  [10810031] = {
+    group = 1081003,
+    id = 10810031,
+    picture = "",
+    sort = 1,
+    text = "使用博物馆照相机可将所见画面<color=#FECF80>拍成照片</color>，但每个照相机同时最多只可存储<color=#FECF80>一张照片</color>。\n当<color=#FECF80>奇异雕塑</color>被拍成照片后，其将处于<color=#FECF80>被持续观测</color>状态，其形态和位置稳定不变。",
+    title = "博物馆照相机",
+    use_res = "video",
+    video = "1081003_guide"
+  },
+  [10810041] = {
+    group = 1081004,
+    id = 10810041,
+    picture = "",
+    sort = 1,
+    text = "使用相机为<color=#FECF80>奇异雕塑</color>拍照，令其处于<color=#FECF80>持续观测</color>状态，稳定其位置。",
+    title = "博物馆照相机",
+    use_res = "video",
+    video = "1081004_guide"
+  },
+  [10811011] = {
+    group = 1081101,
+    id = 10811011,
+    picture = "1081101_guide",
+    sort = 1,
+    text = "当奇异雕塑全部位于<color=#FECF80>闪亮的雕塑底座</color>上时，即可拉动拉杆。",
+    title = "雕塑底座",
+    use_res = "picture",
+    video = ""
+  },
+  [10811012] = {
+    group = 1081101,
+    id = 10811012,
+    picture = "",
+    sort = 2,
+    text = "使用博物馆照相机可将所见画面<color=#FECF80>拍成照片</color>，但每个照相机同时最多只可存储<color=#FECF80>一张照片</color>。\n当<color=#FECF80>奇异雕塑</color>被拍成照片后，其将处于<color=#FECF80>被持续观测</color>状态，其形态和位置稳定不变。",
+    title = "博物馆照相机",
+    use_res = "video",
+    video = "1081003_guide"
   },
   [10901021] = {
     group = 10901021,

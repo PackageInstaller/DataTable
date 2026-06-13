@@ -884,6 +884,19 @@ return {
     title = "检索",
     ui_name = "uidrawcard"
   },
+  [15113] = {
+    Id = 15113,
+    func_id = 1,
+    param = {
+      "https://www.wjx.cn/vm/OQy2dKg.aspx?sojumpparm=%s",
+      "https://www.wjx.cn/vm/Yx1vteh.aspx?sojumpparm=%s",
+      ""
+    },
+    source_desc = "",
+    sys_id = 38,
+    title = "",
+    ui_name = "web_view"
+  },
   [16101] = {
     Id = 16101,
     func_id = 1,
@@ -3858,6 +3871,19 @@ return {
     title = "时装跳转",
     ui_name = "ui_fashionable_dress_shop"
   },
+  [25003] = {
+    Id = 25003,
+    func_id = 1,
+    param = {
+      "3003026",
+      "",
+      ""
+    },
+    source_desc = "推荐商店用",
+    sys_id = 5,
+    title = "时装跳转",
+    ui_name = "ui_fashionable_dress_shop"
+  },
   [26002] = {
     Id = 26002,
     func_id = 1,
@@ -4059,22 +4085,9 @@ return {
     title = "幽思的边界",
     ui_name = "uidrawcard"
   },
-  [26115] = {
-    Id = 26115,
-    condition = 200171,
-    func_id = 1,
-    param = {
-      "",
-      "",
-      ""
-    },
-    source_desc = "群星呢喃之时",
-    sys_id = 20,
-    title = "活动",
-    ui_name = "ui_time_limited_activity_main_1_2"
-  },
   [27001] = {
     Id = 27001,
+    condition = 1006044,
     func_id = 1,
     param = {
       "38",
@@ -4088,6 +4101,7 @@ return {
   },
   [27002] = {
     Id = 27002,
+    condition = 1006043,
     func_id = 1,
     param = {
       "37",
@@ -4101,6 +4115,7 @@ return {
   },
   [27003] = {
     Id = 27003,
+    condition = 1006040,
     func_id = 1,
     param = {
       "34",
@@ -4114,6 +4129,7 @@ return {
   },
   [27004] = {
     Id = 27004,
+    condition = 1006041,
     func_id = 1,
     param = {
       "35",
@@ -4127,6 +4143,7 @@ return {
   },
   [27005] = {
     Id = 27005,
+    condition = 1006042,
     func_id = 1,
     param = {
       "36",
@@ -4140,6 +4157,7 @@ return {
   },
   [27006] = {
     Id = 27006,
+    condition = 1006045,
     func_id = 1,
     param = {
       "39",
@@ -4153,6 +4171,7 @@ return {
   },
   [27007] = {
     Id = 27007,
+    condition = 1006046,
     func_id = 1,
     param = {
       "41",
@@ -4163,6 +4182,20 @@ return {
     sys_id = 0,
     title = "幽思与时日",
     ui_name = "ui_maze_game_main"
+  },
+  [27008] = {
+    Id = 27008,
+    condition = 200171,
+    func_id = 1,
+    param = {
+      "46",
+      "",
+      ""
+    },
+    source_desc = "盛装试行",
+    sys_id = 20,
+    title = "活动",
+    ui_name = "ui_activity"
   },
   [30001] = {
     Id = 30001,
@@ -4361,5 +4394,103 @@ return {
     sys_id = 5,
     title = "累计消耗1500宿命之印",
     ui_name = "shop"
+  },
+  [501502302] = {
+    Id = 501502302,
+    condition = 200171,
+    func_id = 1,
+    param = {
+      "",
+      "",
+      ""
+    },
+    source_desc = "金色武器活动任务",
+    sys_id = 17,
+    title = "累计检索30次",
+    ui_name = "uidrawcard"
+  },
+  [501502303] = {
+    Id = 501502303,
+    condition = 100102,
+    func_id = 1,
+    param = {
+      "11001",
+      "",
+      "1"
+    },
+    source_desc = "金色武器活动任务",
+    sys_id = 0,
+    title = "完成外篇【ER-17】",
+    ui_name = "ui_chapter_detail"
+  },
+  [501502304] = {
+    Id = 501502304,
+    condition = 100702,
+    func_id = 1,
+    param = {
+      "92071",
+      "",
+      ""
+    },
+    source_desc = "金色武器活动任务",
+    sys_id = 0,
+    title = "完成角色轶事【事古作刀铭】",
+    ui_name = "ui_chapter_detail"
+  },
+  [501502305] = {
+    Id = 501502305,
+    condition = 1006043,
+    func_id = 1,
+    param = {
+      "37",
+      "",
+      ""
+    },
+    source_desc = "金色武器活动任务",
+    sys_id = 0,
+    title = "累计获得3500星愿币",
+    ui_name = "ui_activity_summer_stage"
+  },
+  [501502306] = {
+    Id = 501502306,
+    condition = 1006041,
+    func_id = 1,
+    param = {
+      "35",
+      "",
+      ""
+    },
+    source_desc = "金色武器活动任务",
+    sys_id = 0,
+    title = "在与星共渔中通关【关卡10】",
+    ui_name = "fish_game_stage"
+  },
+  [501502307] = {
+    Id = 501502307,
+    condition = 1006042,
+    func_id = 1,
+    param = {
+      "36",
+      "",
+      ""
+    },
+    source_desc = "金色武器活动任务",
+    sys_id = 0,
+    title = "【夏宴小摊】累计营业额达到70000",
+    ui_name = "barbecue_game_main_panel"
+  },
+  [501502308] = {
+    Id = 501502308,
+    condition = 200171,
+    func_id = 1,
+    param = {
+      "",
+      "",
+      ""
+    },
+    source_desc = "金色武器活动任务",
+    sys_id = 20,
+    title = "【幽思与时日】中，通关第6关【世俗哲人王】",
+    ui_name = "ui_time_limited_activity_main"
   }
 }

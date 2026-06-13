@@ -5,6 +5,6 @@ return {
     ChapterGroupId = {101, 102},
     EndTime = {10, 12},
     Id = 39,
-    MailId = {}
+    MailId = {220013, 220013}
   }
 }

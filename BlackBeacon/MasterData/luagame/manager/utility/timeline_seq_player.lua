@@ -3,7 +3,8 @@ local TYPE_PLAY_DIRECTOR = typeof(UnityEngine.Playables.PlayableDirector)
 local temp_list = {}
 local name2act = {}
 local UIConfig = require("ui.uiconfig")
-local set_act = function(out_put_array, pd)
+
+local function set_act(out_put_array, pd)
   local size = UtilTable.hash_lenth(name2act)
   for i = 1, size do
     local sobj = out_put_array[i + 1].sourceObject
@@ -13,6 +14,7 @@ local set_act = function(out_put_array, pd)
     end
   end
 end
+
 Global.is_fixed_timeline = true
 M.IS_PLAY_TIMELINE = false
 M.PLAYING_TIMLINE = {}
@@ -57,7 +59,8 @@ function M.play_time_line_seq(data)
   for i = 1, act_size do
     table.insert(act_list, SceneMgr:pick_by_uuid(uuid_list[i]))
   end
-  local do_play = function()
+  
+  local function do_play()
     UtilTable.clear_map(temp_list)
     UtilTable.clear_map(name2act)
     for i = 1, #act_list do
@@ -103,9 +106,10 @@ function M.play_time_line_seq(data)
     end
     
     function M.stop_func(is_skip, force)
-      local cb = function()
+      local function cb()
         M.close_camera_transparent = false
-        local fade_out_cb = function()
+        
+        local function fade_out_cb()
           if root_trans and not root_trans:IsNull() then
             M.PLAYING_TIMLINE[obj.name] = nil
             ResPoolMgr:release(obj)
@@ -118,6 +122,7 @@ function M.play_time_line_seq(data)
             UIMgr:try_hide_ui("ui_timeline")
           end
         end
+        
         root_trans.gameObject:SetActive(false)
         M.stop_func = nil
         if M.need_fade_out and not is_skip then
@@ -134,6 +139,7 @@ function M.play_time_line_seq(data)
         BehaviorMgr:call_scene_logic_event_fun(BehaviorMgr.EVENTS.ON_TIMELINE_END, name)
         BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.ON_TIMELINE_END, name)
       end
+      
       if black_fade_in > 0 and black_fade_out > 0 then
         UIMgr:get_ui("ui_blackfade"):ui_show(black_fade_in, black_hold, black_fade_out, cb, true, is_white)
       else
@@ -147,16 +153,19 @@ function M.play_time_line_seq(data)
     end
     root_trans:PlayTimeLineSeq(M.stop)
   end
+  
   if 0 == act_size then
     M.execution_do_play(do_play, before_black_fade_in, before_black_fade_out, before_black_hold, is_white)
   else
     local load_count = 0
-    local add_load_count = function()
+    
+    local function add_load_count()
       load_count = load_count + 1
       if load_count == act_size then
         M.execution_do_play(do_play, before_black_fade_in, before_black_fade_out, before_black_hold, is_white)
       end
     end
+    
     for _, lua_obj in pairs(act_list) do
       lua_obj:set_playing_cg(true, add_load_count)
     end

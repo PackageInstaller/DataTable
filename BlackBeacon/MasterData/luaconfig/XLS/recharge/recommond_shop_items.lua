@@ -22,6 +22,23 @@ return {
   {
     {
       ChangeTime = 5,
+      Id = 4,
+      Image = {
+        "UIShop/shop_bg_bn_lb5"
+      },
+      NodeName = "RecommondPage4_",
+      Priority = 1,
+      RecEndTime = 10014,
+      RecIndex = {3003026},
+      RecJumpGroupID = {25003},
+      RecPageActivity = 1,
+      RecPageID = 2,
+      RecStartTime = 10013,
+      TimeLimitType = 1,
+      txt = {}
+    },
+    {
+      ChangeTime = 5,
       Id = 3,
       Image = {
         "UIShop/shop_bg_bn_lb4"

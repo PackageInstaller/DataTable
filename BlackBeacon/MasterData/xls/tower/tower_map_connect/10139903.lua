@@ -1,0 +1,23 @@
+local empty = {}
+return
+{
+  Row = 0,
+  Column = 0,
+  MapID = 10139903,
+  RoomCount = 0,
+  Desc = "地图描述",
+  RoomDic = {
+    [ 1 ] = {
+      WindowPos = { 0.0, 0.0 },
+      RoomNum = 1,
+      uuid = 0,
+      StartDir = 2,
+      EndDir = 4,
+      RoomType = 1,
+      RowNum = 1,
+      ColumnNum = 1,
+      LogicNum = 10139903,
+      RoomConnectDic = empty,
+    }
+  }
+}

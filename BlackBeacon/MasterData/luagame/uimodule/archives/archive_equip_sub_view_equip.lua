@@ -55,7 +55,8 @@ function ui:build_data()
       all_num = all_num + 1
     end
   end
-  local sort_func = function(a, b)
+  
+  local function sort_func(a, b)
     if a.weapon_isunlock ~= b.weapon_isunlock then
       return a.weapon_isunlock
     end
@@ -67,6 +68,7 @@ function ui:build_data()
     end
     return false
   end
+  
   _tsort(temp, sort_func)
   return temp, get_num, all_num, any_red
 end

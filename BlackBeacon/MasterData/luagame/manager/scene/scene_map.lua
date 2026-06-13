@@ -3,11 +3,11 @@ local SceneObstacle = require("manager.scene.scene_obstacle")
 local LuaObjPoolMgr = require("manager.res.lua_obj_pool_mgr")
 local MathX = require("base.mathx")
 local Navigator = require("manager.role_mgr.role_move_navigator")
-local CompExtensions = CompExtensions
+local CompExtensions = _ENV.CompExtensions
 local SyncTransforms = UnityEngine.Physics.SyncTransforms
 local TypeSceneContainer = typeof(CS.Game.SceneContainer)
-local CSHelper = CSHelper
-local UnityFind = UnityFind
+local CSHelper = _ENV.CSHelper
+local UnityFind = _ENV.UnityFind
 local TypeUnityCollider = typeof(UnityEngine.Collider)
 local CSResLoader = CS.ResLoader
 local AstarHelper = CS.Game.AstarHelper
@@ -317,6 +317,7 @@ function M:release()
   if self.v_base_region then
     self.v_base_region:release()
   end
+  self.v_base_region = nil
   for obstacle in pairs(self.v_obstacle_map) do
     obstacle:release()
   end
@@ -544,6 +545,13 @@ do
     return cur_mask, is_dirty, enter_list, out_list
   end
   
+  function M:trigger_area_event_on_path(baseobj, mask, start_pos, end_pos)
+    for _, region in pairs(self.v_plat_regions) do
+      region:trigger_area_event_on_path(baseobj, mask, self.v_area_dic, start_pos, end_pos)
+    end
+    self.v_base_region:trigger_area_event_on_path(baseobj, mask, self.v_area_dic, start_pos, end_pos)
+  end
+  
   function M:is_in_tp_area(cur_mask, position)
     for _, region in pairs(self.v_plat_regions) do
       local temp_is_in, is_released = region:is_in_tp_area(cur_mask, self.v_area_dic, position)
@@ -580,7 +588,7 @@ do
     self.v_obstacle_map[obstacle] = nil
   end
   
-  local _on_path_complete = function(path)
+  local function _on_path_complete(path)
     if not SceneMgr then
       return
     end

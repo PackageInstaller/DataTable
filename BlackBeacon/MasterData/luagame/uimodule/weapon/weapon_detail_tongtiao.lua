@@ -58,13 +58,15 @@ function ui:click_btn_tong_tiao()
       send_list[#send_list + 1] = v
     end
   end
-  local cb = function()
+  
+  local function cb()
     CharacterMgr:advance_equip_new(self.v_equip_uuid, send_list, self.v_cost_item_num, function()
       UIMgr:get_ui("weapon_tongtiao_finish"):ui_show(equip_info.advance, self.v_equip_uuid)
       self:un_select_all()
       self:set_left_list_visiable(false)
     end)
   end
+  
   if not is_lock then
     cb()
   else
@@ -548,7 +550,7 @@ function ui:auto_add()
   local counter = need_count
   local need_select_list = {}
   for i, equip_info in pairs(new_equip_list) do
-    if 0 == equip_info.lock then
+    if 0 ~= equip_info.uuid then
       if counter <= 0 then
         break
       end
@@ -577,21 +579,6 @@ function ui:auto_add()
       local selected_obj = Util.get_child_gameobj("Select_", equip_ui)
       self:change_select_list_with_id(uuid, selected_obj)
       suc = true
-    end
-  end
-  if counter > 0 and self.v_cost_item_id then
-    local own_item_num = BagMgr:get_item_num(self.v_cost_item_id)
-    if own_item_num > 0 then
-      local use_num = counter < own_item_num and counter or own_item_num
-      if use_num > 0 and self.v_equip_list[0] then
-        local equip_ui = self.v_equip_list[0].object
-        local selected_obj = Util.get_child_gameobj("Select_", equip_ui)
-        for i = 1, use_num do
-          self:change_select_list_with_id(0, selected_obj)
-        end
-        self:response_refresh_equip_view({mm_x = 0})
-        suc = true
-      end
     end
   end
   if not suc then
@@ -683,7 +670,8 @@ function ui:on_click_equip(uuid, is_delect)
       return
     end
   end
-  local cb = function()
+  
+  local function cb()
     for _, equip in pairs(self.v_equip_list) do
       if equip.equip_data.uuid == uuid then
         local selected_obj = Util.get_child_gameobj("Select_", equip.object)
@@ -692,6 +680,7 @@ function ui:on_click_equip(uuid, is_delect)
       end
     end
   end
+  
   if is_going_overflow then
     Util.show_notify_popup_message(cb, "选中材料已达到最大值，是否选为消耗材料？")
   else
@@ -749,6 +738,7 @@ function ui:_refresh_equip_ui(equip_uuid, object)
 end
 
 function ui:ui_on_hide()
+  self:set_left_list_visiable(false)
   self.v_last_uuid = nil
   if self.v_weapon_model_rt then
     self.v_weapon_model_rt:on_destroy()

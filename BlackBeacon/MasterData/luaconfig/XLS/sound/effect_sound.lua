@@ -9400,6 +9400,482 @@ return {
     FadeTime = 6,
     IsTripleEffect = false
   },
+  Fx_H1002326_atk01 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_atk01",
+    EffectSoundName = {
+      "Sound_H3003026_cast_atk01",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_atk02_4 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_atk02_4",
+    EffectSoundName = {
+      "Sound_H3003026_cast_atk02_4",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_atk02_line = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_atk02_line",
+    EffectSoundName = {
+      "Sound_H3003026_cast_atk02_line",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_atk03_1 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_atk03_1",
+    EffectSoundName = {
+      "Sound_H3003026_cast_atk03_1",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_atk03_2 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_atk03_2",
+    EffectSoundName = {
+      "Sound_H3003026_cast_atk03_2",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_atk03_3 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_atk03_3",
+    EffectSoundName = {
+      "Sound_H3003026_cast_atk03_3",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_atk04_1 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_atk04_1",
+    EffectSoundName = {
+      "Sound_H3003026_cast_atk04_1",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_atk04_2 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_atk04_2",
+    EffectSoundName = {
+      "Sound_H3003026_cast_atk04_2",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_atk04_3 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_atk04_3",
+    EffectSoundName = {
+      "Sound_H3003026_cast_atk04_3",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_passive_state1 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_passive_state1",
+    EffectSoundName = {
+      "Sound_H3003026_cast_passive_state1",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_shanxian = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_shanxian",
+    EffectSoundName = {
+      "Sound_H3003026_cast_shanxian",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill1_counter_1 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill1_counter_1",
+    EffectSoundName = {
+      "Sound_H3003026_cast_skill1_counter_1",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill1_counter_2 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill1_counter_2",
+    EffectSoundName = {
+      "Sound_H3003026_cast_skill1_counter_2",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill1_counter_3 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill1_counter_3",
+    EffectSoundName = {
+      "Sound_H3003026_cast_skill1_counter_3",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill2_1_4_trail = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill2_1_4_trail",
+    EffectSoundName = {
+      "Sound_H3003026_cast_skill2_1_4_trail",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill2_2_2 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill2_2_2",
+    EffectSoundName = {
+      "Sound_H3003026_cast_skill2_2_2",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill2_2_3_trail = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill2_2_3_trail",
+    EffectSoundName = {
+      "Sound_H3003026_cast_skill2_2_3_trail",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill2_3_1 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill2_3_1",
+    EffectSoundName = {
+      "Sound_H3003026_cast_skill2_3_1",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill2_3_2 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill2_3_2",
+    EffectSoundName = {
+      "Sound_H3003026_cast_skill2_3_2",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill2_3_3 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill2_3_3",
+    EffectSoundName = {
+      "Sound_H3003026_cast_skill2_3_3",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill3_1_Slash = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill3_1_Slash",
+    EffectSoundName = {
+      "Sound_H3003026_cast_skill3_1_Slash",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill3_1_Slash_2 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill3_1_Slash_2",
+    EffectSoundName = {
+      "Sound_H3003026_cast_skill3_1_Slash_2",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill3_2_sword = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill3_2_sword",
+    EffectSoundName = {
+      "Sound_H3003026_cast_skill3_2_sword",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill3_2_trail01 = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill3_2_trail01",
+    EffectSoundName = {
+      "Sound_H3003026_cast_skill3_2_trail01",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill3_Weapon_test = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill3_Weapon_test",
+    EffectSoundName = {
+      "Sound_H3003026_cast_skill3_Weapon_test",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill_8_Crack = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill_8_Crack",
+    EffectSoundName = {
+      "Sound_H3003026_cast_ult_skill_8_Crack",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill_8_Env = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill_8_Env",
+    EffectSoundName = {
+      "Sound_H3003026_cast_ult_skill_8_Env",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_H1002326_skill_8_Sword = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_H1002326_skill_8_Sword",
+    EffectSoundName = {
+      "Sound_H3003026_cast_ult_skill_8_Sword",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
   Fx_H101008_atk01_1 = {
     AnimEnd = "",
     ByTimeScale = {
@@ -15449,6 +15925,23 @@ return {
     FadeTime = 6,
     IsTripleEffect = false
   },
+  Fx_M201065_skill5_2_ci = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_M201065_skill5_2_ci",
+    EffectSoundName = {
+      "Sound_M201065_cast_skill5_2_ci",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
   Fx_M201065_skill5_2_dajianyu = {
     AnimEnd = "",
     ByTimeScale = {
@@ -15460,6 +15953,23 @@ return {
     EffectName = "Fx_M201065_skill5_2_dajianyu",
     EffectSoundName = {
       "Sound_M201065_cast_skill5_2_dajianyu",
+      "",
+      ""
+    },
+    FadeTime = 6,
+    IsTripleEffect = false
+  },
+  Fx_M201065_skill5_2_jianyu = {
+    AnimEnd = "",
+    ByTimeScale = {
+      1,
+      1,
+      1
+    },
+    DelayPlay = {},
+    EffectName = "Fx_M201065_skill5_2_jianyu",
+    EffectSoundName = {
+      "Sound_M201065_cast_skill5_2_jianyu",
       "",
       ""
     },

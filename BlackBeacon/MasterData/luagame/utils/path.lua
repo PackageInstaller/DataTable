@@ -136,10 +136,20 @@ function M.get_mat_path(mat)
 end
 
 function M.get_editor_sound_path(file, cue_name)
-  return M.get_editor_sound_language_path(file, cue_name)
+  local split = Util.split_str(file, ".")
+  local is_usm = split and 2 == #split and "usm" == split[2]
+  local path = M.get_editor_sound_language_path(file, cue_name, is_usm)
+  if is_usm and not path then
+    local platform = "phone"
+    if UNITY_EDITOR or UNITY_STANDALONE_WIN then
+      platform = "pc"
+    end
+    path = M.get_editor_sound_language_path(Util.format_str("{1}_{2}.{3}", split[1], platform, split[2]), cue_name, false)
+  end
+  return path
 end
 
-function M.get_editor_sound_language_path(file_name, cue_name)
+function M.get_editor_sound_language_path(file_name, cue_name, ignore_log)
   local result_path
   local sound_cfg = ShareRes.get_sound_cfg(cue_name)
   local is_story_voice = false
@@ -178,7 +188,9 @@ function M.get_editor_sound_language_path(file_name, cue_name)
   if CSHelper.IsFileExist(sound_path) then
     return sound_path
   end
-  Log.Error(language, "Sound文件夹下未找到文件：", language_file_name, "也没有找到", file_name, debug.traceback())
+  if not ignore_log then
+    Log.Error(language, "Sound文件夹下未找到文件：", language_file_name, "也没有找到", file_name, debug.traceback())
+  end
   return nil
 end
 

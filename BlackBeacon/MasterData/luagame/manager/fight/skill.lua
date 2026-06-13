@@ -16,6 +16,8 @@ local _clamp = Mathx.Clamp
 local M = Util.create_class()
 local SKILL_FX_ABORT_TYPE = SkillDefine.SKILL_FX_ABORT_TYPE
 local SKILL_MOVE_TYPE = SkillDefine.SKILL_MOVE_TYPE
+local TURN_TYPE = SkillDefine.TURN_TYPE
+local NOTIFY_TYPE = SkillDefine.NOTIFY_TYPE
 local MAGIC_TURN_DIR_TYPE = SkillDefine.MAGIC_TURN_DIR_TYPE
 local SKILL_FACE_TYPE = SkillDefine.SKILL_FACE_TYPE
 local SOUND_ABORT_TYPE = SkillDefine.SOUND_ABORT_TYPE
@@ -47,6 +49,7 @@ function M:_init(skill_id, char)
   self.v_shift_speed = 0
   self.v_duration = 0
   self.v_shift_time = 0
+  self.v_shift_start_time = self.v_char.time_mgr:get_time()
   self.v_last_touch_terrain = 0
   self.v_touch_terrain_interval = skill_cfg.LandIntTime or Config.A_LARGE_NUM
   self.v_shift_acc = 0
@@ -63,7 +66,15 @@ function M:_init(skill_id, char)
   self:check_need_init_energy()
 end
 
-local _get_tag2actions = function(keys, ret, all_actions_container)
+function M:on_destroy()
+  self.v_char = nil
+  self.v_keyframes = nil
+  self.v_skill_cfg = nil
+  self.v_effects = nil
+  self.v_cast_missile_map = nil
+end
+
+local function _get_tag2actions(keys, ret, all_actions_container)
   for _, keyframe_action in pairs(keys) do
     local temp_tag = keyframe_action.Tag or 0
     ret[temp_tag] = ret[temp_tag] or {}
@@ -275,10 +286,11 @@ function M:start_turn_dir(deg, time, type, acc, stop_type)
   self.v_turn_dir_stop_type = stop_type
 end
 
-local update_skill_speed = function(skill, dt)
+local function update_skill_speed(skill, dt)
   skill.v_turn_dir_deg_speed = skill.v_turn_dir_deg_speed + dt * skill.v_trun_acc
   skill.v_abs_turn_speed = _abs(skill.v_turn_dir_deg_speed)
 end
+
 local DirHelper = {
   [MAGIC_TURN_DIR_TYPE.BY_ARGS] = function(skill, cur_deg, dt)
     update_skill_speed(skill, dt)
@@ -311,6 +323,9 @@ local DirHelper = {
 }
 
 function M:_update_turn_dir()
+  if self.v_pause_turn_dir then
+    return
+  end
   if self.v_turn_dir_time and self.v_turn_dir_time > 0 then
     local dt = self.v_char.time_mgr:get_dt_time()
     self.v_turn_dir_time = self.v_turn_dir_time - dt
@@ -517,7 +532,7 @@ function M:play_skill_fixed_time_shift(start_speed, acc_time, redu_time)
   self.v_char.role_move_ctrl:set_fixed_time_shift_data(self.fixed_time_shift_data)
 end
 
-function M:play_skill_shift(start_speed, duration, acc, deg, break_config)
+function M:play_skill_shift(start_speed, duration, acc, deg, break_config, turn_type, notify_type)
   if not break_config then
     if self.v_skill_move_type == SKILL_MOVE_TYPE.DONT_MOVE then
       return
@@ -536,6 +551,8 @@ function M:play_skill_shift(start_speed, duration, acc, deg, break_config)
   self.v_shift_time = 0
   self.v_shift_deg = nil
   self.v_shift_trace = false
+  self.v_shift_turn_type = turn_type
+  self.v_shift_notify_type = notify_type
   local x, z = self.v_char:get_pos2()
   local tpos = self:get_target_pos()
   self.v_break_x, self.v_break_z = Mathx.normalize2(x - tpos.x, z - tpos.z)
@@ -543,7 +560,12 @@ function M:play_skill_shift(start_speed, duration, acc, deg, break_config)
     self.v_shift_deg = deg
   end
   local target
-  if not break_config and (self.v_skill_move_type == SKILL_MOVE_TYPE.TO_TARGET_TRACK_ALWAYS or self.v_skill_move_type == SKILL_MOVE_TYPE.TO_TARGET_TRACK_ALWAYS_WITHOUT_BODY) then
+  if break_config then
+    if break_config and turn_type == TURN_TYPE.TO_TARGET_TRACK_ALWAYS then
+      target = self.v_target
+      self.v_shift_trace = true
+    end
+  elseif self.v_skill_move_type == SKILL_MOVE_TYPE.TO_TARGET_TRACK_ALWAYS or self.v_skill_move_type == SKILL_MOVE_TYPE.TO_TARGET_TRACK_ALWAYS_WITHOUT_BODY then
     target = self.v_target
     self.v_shift_trace = true
   end
@@ -612,6 +634,10 @@ function M:update_skill_shift()
   end
 end
 
+function M:get_skill_shift_remain_time()
+  return math.max(self.v_char.time_mgr:get_time() - self.v_shift_start_time, 0)
+end
+
 function M:update_fixed_time_shift()
   if not self.fixed_time_shift_data then
     return
@@ -649,8 +675,30 @@ function M:update_fixed_time_shift()
   self.v_char.role_move_ctrl:update_fixed_time_shift()
 end
 
+function M:pause_skill_shift(is_pause)
+  if is_pause then
+    if self.v_shift_turn_type == TURN_TYPE.PAUSE_ROTATE_ON_MOVE_PAUSE then
+      self.v_pause_turn_dir = true
+    end
+    if self.v_shift_notify_type == NOTIFY_TYPE.ON_PAUSE_AND_STOP then
+      BehaviorMgr:call_behavior_fun(self.v_char, BehaviorMgr.EVENTS.ON_SKILL_SHIFT_PAUSE, self.skill_id, false)
+    end
+  else
+    self.v_pause_turn_dir = nil
+  end
+end
+
 function M:stop_skill_shift()
   self.v_shift = false
+  if self.v_shift_turn_type == TURN_TYPE.STOP_ROTATE_ON_MOVE_STOP or self.v_shift_turn_type == TURN_TYPE.PAUSE_ROTATE_ON_MOVE_PAUSE then
+    self:clear_turn_dir()
+  end
+  if self.v_shift_notify_type == NOTIFY_TYPE.ON_STOP or self.v_shift_notify_type == NOTIFY_TYPE.ON_PAUSE_AND_STOP then
+    BehaviorMgr:call_behavior_fun(self.v_char, BehaviorMgr.EVENTS.ON_SKILL_SHIFT_PAUSE, self.skill_id, true)
+  end
+  self.v_shift_turn_type = nil
+  self.v_shift_notify_type = nil
+  self.v_pause_turn_dir = nil
   self.v_char.role_move_ctrl:set_move_by_skill(false)
 end
 
@@ -1032,6 +1080,9 @@ function M:add_bind_skill_missile(missile_uuid)
 end
 
 function M:remove_bind_skill_missile(missile_uuid)
+  if not self.v_cast_missile_map then
+    return
+  end
   self.v_cast_missile_map[missile_uuid] = nil
 end
 

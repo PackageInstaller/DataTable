@@ -46,12 +46,14 @@ local _floor = math.floor
 local _tconcat = table.concat
 local _spack = string.pack
 local ENCODE_TBL = {}
-local pack_udp_data = function(uuid, proto_type, data)
+
+local function pack_udp_data(uuid, proto_type, data)
   ENCODE_TBL[1] = _spack(">I8", uuid)
   ENCODE_TBL[2] = _spack("B", proto_type)
   ENCODE_TBL[3] = data
   return _tconcat(ENCODE_TBL, "")
 end
+
 local kcp_obj_mt = {}
 kcp_obj_mt.__index = kcp_obj_mt
 
@@ -494,7 +496,7 @@ function conn_mt:get_proto_cache()
   return self.v_proto_cache
 end
 
-local connect = function(info)
+local function connect(info)
   local c = conn_mt.new(info)
   local host, port = string.match(info.fs_addr, "(%g+):(%g+)")
   print("connect fsconn: ", host, port)
@@ -505,4 +507,5 @@ local connect = function(info)
   end
   return c
 end
+
 return {connect_host = connect}

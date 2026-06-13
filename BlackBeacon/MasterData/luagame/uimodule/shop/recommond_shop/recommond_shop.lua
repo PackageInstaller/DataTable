@@ -153,6 +153,7 @@ function ui:ui_on_show(shelves_type)
     default_select = SHOP_TYPE.ORDER
   end
   self:_refresh_liveness_gift_tog(true)
+  self:check_first_charge_tog_show()
   if self:_check_toggle_valid(default_select) then
     self.v_tog_list[default_select].isOn = true
     self:_on_click_tog(default_select, true)

@@ -84,7 +84,8 @@ function ui:_on_trigger_treasure_chest(msg)
       icon_name = treasure_chest_cfg.InteractIcon
     end
     self.v_fight:refresh_interact_btn_icon(icon_name)
-    local callback = function()
+    
+    local function callback()
       if not data.is_can_open then
         if treasure_chest_cfg.CanNotInteractTips and treasure_chest_cfg.CanNotInteractTips ~= "" then
           local ui_fight = UIMgr:try_get_ui("fight")
@@ -125,6 +126,7 @@ function ui:_on_trigger_treasure_chest(msg)
         end)
       end
     end
+    
     local btn_interact = self.v_fight_components.Btn_Interact_btn
     Util.remove_longpress(nil, btn_interact.gameObject, self.v_ui_root)
     Util.remove_point_up(nil, btn_interact.gameObject, self.v_ui_root)
@@ -282,10 +284,12 @@ function ui:check_interact_btn_show(npc_data, is_in)
       icon_name = npc_cfg.InteractIcon
     end
     self.v_fight:refresh_interact_btn_icon(icon_name)
-    local callback = function()
+    
+    local function callback()
       if npc_data.npc_cfg.Type == CommonDefind.FUNCTIONAL_NPC_TYPE.QUANTUM_CAMERA_NPC then
         local msg = MsgGame:mq_publish2(Const.MSG_ON_INTERACT_QUANTUM_CAMERA_NPC)
         msg.mm_x = tonumber(npc_data.npc_cfg.Arg[1])
+        msg.mm_y = npc_data.npc_id
         return
       end
       local scene_logic = SceneMgr:get_scene_logic()
@@ -323,6 +327,7 @@ function ui:check_interact_btn_show(npc_data, is_in)
         scene_logic:recheck_hero_contact_npc()
       end
     end
+    
     Util.remove_longpress(nil, btn_interact.gameObject, self.v_ui_root)
     Util.remove_point_up(nil, btn_interact.gameObject, self.v_ui_root)
     Util.remove_point_down(nil, btn_interact.gameObject, self.v_ui_root)
@@ -424,7 +429,8 @@ function ui:_trigger_dialog_npc(npc_data)
     return
   end
   local npc_id = npc_data.npc_id
-  local cb = function()
+  
+  local function cb()
     local scene_logic = SceneMgr:get_scene_logic()
     local npc_obj = scene_logic:get_func_npc(npc_id)
     npc_obj:create_drop_item(function()
@@ -432,6 +438,7 @@ function ui:_trigger_dialog_npc(npc_data)
       BehaviorMgr:call_scene_logic_event_fun("on_func_npc_interact_end", npc_id)
     end)
   end
+  
   FunctionalNpcMgr:interact_with_reawrd_npc(npc_data, cb)
 end
 
@@ -444,7 +451,8 @@ function ui:_trigger_reward_npc(npc_data)
   if not scene_logic then
     return
   end
-  local cb = function()
+  
+  local function cb()
     local npc = scene_logic:get_func_npc(npc_data.npc_id)
     if npc then
       npc:player_anim("interact")
@@ -452,6 +460,7 @@ function ui:_trigger_reward_npc(npc_data)
       Log.Error("get functional npc failure! npc_id=", npc_data.npc_id)
     end
   end
+  
   FunctionalNpcMgr:interact_with_reawrd_npc(npc_data, cb)
 end
 

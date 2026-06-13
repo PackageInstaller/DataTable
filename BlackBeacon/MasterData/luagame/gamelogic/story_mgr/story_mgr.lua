@@ -88,7 +88,15 @@ function M:on_start(story_id, next_no_anim, is_delay_destroy, can_be_zero, no_sk
   end
   local story_ui = UIMgr:get_ui("uistory")
   if story_ui:visible() then
+    local path = "story." .. story_id
+    local story_cfg = ShareRes.create(path)
+    if story_cfg.HideGlobalHero == true then
+      Global.hero:set_obj_enable(false)
+    end
     story_ui:play_next(story_id, true, no_skip_story)
+    if finish_cb then
+      story_ui:set_finish_cb(finish_cb)
+    end
   else
     self.v_cur_step_id = 0
     if TowerMgr then

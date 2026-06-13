@@ -42,14 +42,17 @@ return {
   },
   ["com.bb.aos.1800liveness1"] = {
     Name = "秘盟特派",
+    ShowPrice = 18,
     sdkkey = "com.bb.aos.1800liveness1"
   },
   ["com.bb.aos.1800liveness2"] = {
     Name = "秘盟特派",
+    ShowPrice = 18,
     sdkkey = "com.bb.aos.1800liveness2"
   },
   ["com.bb.aos.1800liveness3"] = {
     Name = "夏海巡礼",
+    ShowPrice = 18,
     sdkkey = "com.bb.aos.1800liveness3"
   },
   ["com.bb.aos.1800package1"] = {
@@ -256,14 +259,17 @@ return {
   },
   ["com.bb.ios.1800liveness1"] = {
     Name = "秘盟特派",
+    ShowPrice = 18,
     sdkkey = "com.bb.ios.1800liveness1"
   },
   ["com.bb.ios.1800liveness2"] = {
     Name = "秘盟特派",
+    ShowPrice = 18,
     sdkkey = "com.bb.ios.1800liveness2"
   },
   ["com.bb.ios.1800liveness3"] = {
     Name = "夏海巡礼",
+    ShowPrice = 18,
     sdkkey = "com.bb.ios.1800liveness3"
   },
   ["com.bb.ios.1800package1"] = {
@@ -470,14 +476,17 @@ return {
   },
   ["tc.bb.1800liveness1"] = {
     Name = "秘盟特派",
+    ShowPrice = 18,
     sdkkey = "tc.bb.1800liveness1"
   },
   ["tc.bb.1800liveness2"] = {
     Name = "秘盟特派",
+    ShowPrice = 18,
     sdkkey = "tc.bb.1800liveness2"
   },
   ["tc.bb.1800liveness3"] = {
     Name = "夏海巡礼",
+    ShowPrice = 18,
     sdkkey = "tc.bb.1800liveness3"
   },
   ["tc.bb.1800package1"] = {

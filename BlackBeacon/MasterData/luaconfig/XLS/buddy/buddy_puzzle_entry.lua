@@ -769,32 +769,32 @@ return {
   },
   [10056] = {
     [3] = {
-      Desc = "金缕词条效果",
+      Desc = "装备者造成眩光后，下一次连携爆发状态期间，全队获得9.6%伤害增幅。",
       GraphID = 113,
       IconPath = "Char/Plugins/js_bg_cj_31_1",
       Id = 10056,
       Lv = 1,
-      MagicId = 651130051,
+      MagicId = 651130071,
       Name = "哲思迷径",
       Quality = 3
     },
     [4] = {
-      Desc = "金缕词条效果",
+      Desc = "装备者造成眩光后，下一次连携爆发状态期间，全队获得12.8%伤害增幅。",
       GraphID = 113,
       IconPath = "Char/Plugins/js_bg_cj_31_2",
       Id = 10056,
       Lv = 2,
-      MagicId = 651130051,
+      MagicId = 651130071,
       Name = "哲思迷径",
       Quality = 4
     },
     [5] = {
-      Desc = "金缕词条效果",
+      Desc = "装备者造成眩光后，下一次连携爆发状态期间，全队获得16%伤害增幅。",
       GraphID = 113,
       IconPath = "Char/Plugins/js_bg_cj_31_3",
       Id = 10056,
       Lv = 3,
-      MagicId = 651130051,
+      MagicId = 651130071,
       Name = "哲思迷径",
       Quality = 5
     }

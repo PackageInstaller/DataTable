@@ -5,6 +5,11 @@ function M:_init(char)
   self.v_char = char
 end
 
+function M:on_destroy()
+  self.v_char = nil
+  Util.unbind_all_msg(self)
+end
+
 function M:check_collider(target)
   return false
 end

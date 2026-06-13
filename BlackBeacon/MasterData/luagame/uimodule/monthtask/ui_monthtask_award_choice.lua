@@ -41,9 +41,11 @@ function ui:ui_on_show(only_show, award_group_id, lv, is_senior)
   self.v_is_senior = is_senior
   local award_list = ShareRes.get_awards(award_group_id)
   self:give_back_auto_cache(MONTHTASK_AWARD_CHOICE_ITEM_KEY)
-  local reshow_cb = function()
+  
+  local function reshow_cb()
     UIMgr:get_ui("ui_monthtask_award_choice"):ui_show(only_show, award_group_id, lv, is_senior)
   end
+  
   for index, award_cfg in ipairs(award_list) do
     local item = self:get_auto_cache(MONTHTASK_AWARD_CHOICE_ITEM_KEY)
     local weapon_id = award_cfg.ItemId

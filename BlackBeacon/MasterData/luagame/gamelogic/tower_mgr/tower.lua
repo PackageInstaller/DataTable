@@ -4,8 +4,8 @@ local Behavior = require("manager.fight.behavior")
 local Seri = require("seri")
 local _max = math.max
 local _min = math.min
-local Coroutine = Coroutine
-local coroutine = coroutine
+local Coroutine = _ENV.Coroutine
+local coroutine = _ENV.coroutine
 local M = Util.create_class()
 local ROOM_STATE_PASS = 1
 local CHAPTER_CONFIG = require("uimodule.chapter.chapter_config")
@@ -464,9 +464,10 @@ function M:on_tp_room(src_tp_index)
     end
   end
   if tp_room_num > 0 then
-    local cb = function()
+    local function cb()
       self:enter_room(tp_room_num, tp_index)
     end
+    
     self:check_tp_room_play_story(tp_room_num)
     if not self:check_play_story(cb, true) then
       cb()
@@ -524,7 +525,8 @@ function M:enter_room(room_num, tp_index, is_first, by_map, callback)
       end
       local mask_tag_key = "c2gs_enter_room_cb"
       ScreenMaskMgr:open_one_tag(mask_tag_key, 5, nil, nil, true, true)
-      local login_cb = function(is_reconnect, errcode)
+      
+      local function login_cb(is_reconnect, errcode)
         ScreenMaskMgr:close_one_tag(mask_tag_key)
         if 0 ~= errcode then
           self:_re_enter_failed(errcode)
@@ -542,7 +544,8 @@ function M:enter_room(room_num, tp_index, is_first, by_map, callback)
           end
         end
       end
-      local reconnect_cb = function()
+      
+      local function reconnect_cb()
         ScreenMaskMgr:close_one_tag(mask_tag_key)
         if TowerMgr and TowerMgr:get_has_exist() then
           return false
@@ -555,6 +558,7 @@ function M:enter_room(room_num, tp_index, is_first, by_map, callback)
         Network:lock_fs_call(false)
         return true
       end
+      
       Network:login_fs(resp, login_cb, reconnect_cb)
     end)
   else
@@ -595,11 +599,13 @@ end
 function M:start_tp_timer()
   self:release_tp_timer()
   self.tp_timer = Timer:add_timer("start_tp_timer", 6, function()
-    local cb = function()
+    local function cb()
       Global.scene_mgr:on_enter_main_scene()
+      
       UIMgr:revert_cache_ui()
       Util.show_message_tip("传送超时，即将返回主界面")
     end
+    
     if TowerMgr then
       TowerMgr:on_exit_tower(cb)
     end
@@ -818,9 +824,10 @@ end
 
 function M:normal_death_event()
   if DebugSetting and not DebugSetting:is_enter_chapter() then
-    local cb = function()
+    local function cb()
       Global.scene_mgr:on_enter_main_scene()
     end
+    
     TowerMgr:on_exit_tower(cb)
     return
   end
@@ -842,11 +849,13 @@ function M:normal_death_event()
       ui_name = Settlement_List[progress.challenge_type]
     end
     ui_name = ui_name or "not_progress_battle_suc_settle"
-    local cb = function()
+    
+    local function cb()
       local param = self:build_settle_ui_show_data(ui_name, progress, CHAPTER_CONFIG.POINTSTATE.all_die)
       UIMgr:get_ui(ui_name):ui_show(table.unpack(param))
       SceneMgr:set_game_pause(true)
     end
+    
     if self:check_weekly_fight(progress.challenge_type) then
       WeeklyMgr:request_weekly_prepare_score(cb)
     else
@@ -1076,9 +1085,10 @@ function M:check_play_pass_anim()
 end
 
 function M:_play_screen_black_ing()
-  local callback = function()
+  local function callback()
     self:_play_screen_black_out()
   end
+  
   local ui_fight = UIMgr:get_ui("fight")
   local SafeArea = ui_fight:get_child_gameobj("SafeArea")
   if SafeArea then
@@ -1094,10 +1104,12 @@ end
 
 function M:_do_after_play_screen_black_out()
   if DebugSetting and not DebugSetting:is_enter_chapter() then
-    local cb = function()
+    local function cb()
       Global.scene_mgr:on_enter_main_scene()
+      
       UIMgr:revert_cache_ui()
     end
+    
     if TowerMgr then
       TowerMgr:on_exit_tower(cb)
     end
@@ -1207,13 +1219,15 @@ function M:_play_screen_black_out()
 end
 
 function M:active_play_end_skill()
-  local done_cb = function()
+  local function done_cb()
     self.v_active_play_end_skill_done = true
+    
     if self.v_active_play_end_skill_cb then
       self:v_active_play_end_skill_cb()
     end
   end
-  local callback = function()
+  
+  local function callback()
     UIMgr:hide_other_uis("fight")
     local ui_fight = UIMgr:get_ui("fight")
     ui_fight:screen_fade(1, 0, 3, nil, 1)
@@ -1235,6 +1249,7 @@ function M:active_play_end_skill()
       done_cb()
     end
   end
+  
   Joystick.on_joystick("end")
   SceneMgr:set_player_control_off()
   Behavior.set_ui_object_visible("fight", "Main", false)

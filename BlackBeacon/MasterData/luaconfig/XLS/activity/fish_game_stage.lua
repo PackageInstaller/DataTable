@@ -34,9 +34,9 @@ return {
     Name = "关卡3",
     PosIdList = 1,
     StarScore = {
-      103,
+      104,
       312,
-      307
+      314
     },
     StartTime = 92003
   },
@@ -49,7 +49,7 @@ return {
     PosIdList = 1,
     StarScore = {
       103,
-      306,
+      313,
       307
     },
     StartTime = 92004
@@ -64,7 +64,7 @@ return {
     StarScore = {
       104,
       307,
-      313
+      320
     },
     StartTime = 92005
   },
@@ -91,7 +91,7 @@ return {
     PosIdList = 1,
     StarScore = {
       104,
-      311,
+      314,
       306
     },
     StartTime = 92007
@@ -160,9 +160,9 @@ return {
     Name = "关卡12",
     PosIdList = 1,
     StarScore = {
-      105,
-      106,
-      107
+      107,
+      108,
+      109
     },
     StartTime = 92012
   }

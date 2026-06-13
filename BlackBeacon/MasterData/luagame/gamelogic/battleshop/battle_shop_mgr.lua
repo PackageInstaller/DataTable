@@ -94,12 +94,14 @@ function M:buy_battle_shop_item(item_index, callback)
 end
 
 function M:buy_battle_shop_equip_item(item_index, is_need, callback)
-  local cb = function(resp)
+  local function cb(resp)
     Util.show_message_tip(2048)
+    
     self.v_grid_list[resp.index].buy = true
     self.v_first_discount_cnt = self.v_first_discount_cnt - 1
     callback()
   end
+  
   FightBagMgr:request_operate_equip_item("c2gs_battle_shop_buy", {index = item_index}, is_need, cb)
 end
 
@@ -119,12 +121,14 @@ function M:sell_battle_shop_item(item_data, callback)
 end
 
 function M:sell_battle_shop_equip_item(item_data, is_need, callback)
-  local cb = function(resp)
+  local function cb(resp)
     Util.show_message_tip(2049)
+    
     if callback then
       callback()
     end
   end
+  
   local send_data = {
     uuid = item_data.uuid,
     id = item_data.id,

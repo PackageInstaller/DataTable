@@ -1,5 +1,5 @@
 local BehaviorDef = require("utils.behavior_def")
-local table = table
+local table = _ENV.table
 local Parser = {}
 local Node = {}
 local BT_SUCCESS = BehaviorDef.BT_SUCCESS

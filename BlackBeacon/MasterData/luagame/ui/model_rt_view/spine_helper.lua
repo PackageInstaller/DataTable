@@ -36,7 +36,8 @@ function helper.load_char_spine_res(rt_view, spine_id, img_obj, is_sync_load)
   if 1 == spine_cfg.IfFitScreen and CSScreen.width / CSScreen.height > DESIGN_RATIO then
     scale = scale * (CSScreen.width * 1080 / (CSScreen.height * 1920))
   end
-  local load_cb = function(obj)
+  
+  local function load_cb(obj)
     if img_obj and not img_obj:IsNull() then
       img_obj:SetActive(true)
       obj:ResetAttr()
@@ -51,6 +52,7 @@ function helper.load_char_spine_res(rt_view, spine_id, img_obj, is_sync_load)
       end
     end
   end
+  
   rt_view:load_spine_res(role_res, load_cb, is_sync_load)
 end
 

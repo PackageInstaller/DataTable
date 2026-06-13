@@ -27,6 +27,7 @@ function ui:ui_on_show(activity_id, point_id)
   self.v_point_cfg = ShareRes.get_ponder_maze_point_cfg(self.v_point_id)
   self.v_map_id = self.v_point_cfg.MapID
   self:refresh_view()
+  self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close, self)
 end
 
 function ui:ui_on_hide()
@@ -55,6 +56,10 @@ end
 
 function ui:get_cache_data()
   return self.v_activity_id, self.v_point_id
+end
+
+function ui:check_close()
+  NoviceMgr:check_close_activity_ui(self.v_activity_id, self.v_ui_name, false, true)
 end
 
 return ui

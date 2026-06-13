@@ -20,6 +20,38 @@ return {
     SoundName = "",
     UiName = "bag_item_refresh_UI_SOUND"
   },
+  barbecue_game_main_panel_UI_SOUND = {
+    SoundName = "Sound_UI_barbecue_game_main_panel",
+    UiName = "barbecue_game_main_panel_UI_SOUND"
+  },
+  barbecue_game_result_tips_UI_SOUND = {
+    SoundName = "Sound_UI_catch_cat_success",
+    UiName = "barbecue_game_result_tips_UI_SOUND"
+  },
+  barbecue_game_start_tips_UI_SOUND = {
+    SoundName = "Sound_UI_barbecue_game_start_tips",
+    UiName = "barbecue_game_start_tips_UI_SOUND"
+  },
+  barbecue_game_task_UI_SOUND = {
+    SoundName = "Sound_UI_barbecue_game_task",
+    UiName = "barbecue_game_task_UI_SOUND"
+  },
+  barbecue_game_upgrade_UI_SOUND = {
+    SoundName = "Sound_UI_barbecue_game_task",
+    UiName = "barbecue_game_upgrade_UI_SOUND"
+  },
+  barbeque_game_get_score_UI_SOUND = {
+    SoundName = "Sound_UI_barbeque_game_get_score",
+    UiName = "barbeque_game_get_score_UI_SOUND"
+  },
+  barbeque_game_put_cup_UI_SOUND = {
+    SoundName = "Sound_UI_barbeque_game_put_cup",
+    UiName = "barbeque_game_put_cup_UI_SOUND"
+  },
+  barbeque_game_put_plate_UI_SOUND = {
+    SoundName = "Sound_UI_barbeque_game_put_plate",
+    UiName = "barbeque_game_put_plate_UI_SOUND"
+  },
   battle_award_show_panel_UI_SOUND = {
     SoundName = "Sound_UI_battle_award_show_panel",
     UiName = "battle_award_show_panel_UI_SOUND"
@@ -155,6 +187,10 @@ return {
     SoundName = "sound_upgrade_skill",
     UiName = "char_skill_suc_pnl"
   },
+  char_spine_display_UI_SOUND = {
+    SoundName = "Sound_UI_char_spine_display",
+    UiName = "char_spine_display_UI_SOUND"
+  },
   choose_equation_view_UI_SOUND = {
     SoundName = "Sound_UI_choose_equation_view",
     UiName = "choose_equation_view_UI_SOUND"
@@ -236,6 +272,18 @@ return {
     SoundName = "Sound_UI_fate_book_tog",
     UiName = "fate_book_tog_UI_SOUND"
   },
+  fish_game_battle_settle_fail_UI_SOUND = {
+    SoundName = "Sound_UI_catch_cat_fail",
+    UiName = "fish_game_battle_settle_fail_UI_SOUND"
+  },
+  fish_game_battle_settle_suc_UI_SOUND = {
+    SoundName = "Sound_UI_catch_cat_success",
+    UiName = "fish_game_battle_settle_suc_UI_SOUND"
+  },
+  fish_game_stage_UI_SOUND = {
+    SoundName = "Sound_UI_fish_game_stage",
+    UiName = "fish_game_stage_UI_SOUND"
+  },
   gift_UI_SOUND = {
     SoundName = "Sound_UI_gift",
     UiName = "gift_UI_SOUND"
@@ -275,6 +323,26 @@ return {
   material_stage_info_UI_SOUND = {
     SoundName = "Sound_UI_ui_chapter_detail_info",
     UiName = "material_stage_info_UI_SOUND"
+  },
+  minesweeper_allbeat_SOUND = {
+    SoundName = "Sound_UI_minesweeper_allbeat",
+    UiName = "minesweeper_allbeat_SOUND"
+  },
+  minesweeper_grid_flip_SOUND = {
+    SoundName = "Sound_UI_minesweeper_grid_flip",
+    UiName = "minesweeper_grid_flip_SOUND"
+  },
+  minesweeper_grid_out_SOUND = {
+    SoundName = "Sound_UI_minesweeper_grid_out",
+    UiName = "minesweeper_grid_out_SOUND"
+  },
+  minesweeper_grid_refresh_SOUND = {
+    SoundName = "Sound_UI_minesweeper_grid_refresh",
+    UiName = "minesweeper_grid_refresh_SOUND"
+  },
+  minesweeper_grid_show_SOUND = {
+    SoundName = "Sound_UI_minesweeper_grid_show",
+    UiName = "minesweeper_grid_show_SOUND"
   },
   monkey_typer_click_machine_UI_SOUND = {
     SoundName = "Sound_UI_monkey_typer_click_machine",
@@ -400,6 +468,10 @@ return {
     SoundName = "Sound_UI_puzzle_synthesis",
     UiName = "puzzle_synthesis_UI_SOUND"
   },
+  puzzle_up_grade_tips_UI_SOUND = {
+    SoundName = "Sound_UI_puzzle_up_grade_tips",
+    UiName = "puzzle_up_grade_tips_UI_SOUND"
+  },
   quality_setting_tog_UI_SOUND = {
     SoundName = "Sound_UI_quality_setting_tog",
     UiName = "quality_setting_tog_UI_SOUND"
@@ -461,9 +533,45 @@ return {
     SoundName = "Sound_UI_ui_act_battle_game",
     UiName = "ui_act_battle_game_UI_SOUND"
   },
+  ui_act_bird_shoot_UI_SOUND = {
+    SoundName = "Sound_UI_ui_act_bird_shoot",
+    UiName = "ui_act_bird_shoot_UI_SOUND"
+  },
+  ui_act_minesweeper = {
+    SoundName = "storybgm_075",
+    UiName = "ui_act_minesweeper"
+  },
+  ui_act_minesweeper_UI_SOUND = {
+    SoundName = "Sound_UI_ui_act_minesweeper",
+    UiName = "ui_act_minesweeper_UI_SOUND"
+  },
+  ui_act_minesweeper_handbook_UI_SOUND = {
+    SoundName = "Sound_UI_ui_act_minesweeper_handbook",
+    UiName = "ui_act_minesweeper_handbook_UI_SOUND"
+  },
+  ui_act_minesweeper_rank_UI_SOUND = {
+    SoundName = "Sound_UI_ui_act_minesweeper_rank",
+    UiName = "ui_act_minesweeper_rank_UI_SOUND"
+  },
+  ui_activity_daily1_UI_SOUND = {
+    SoundName = "Sound_UI_ui_activity_daily1",
+    UiName = "ui_activity_daily1_UI_SOUND"
+  },
   ui_activity_main_btn_UI_SOUND = {
     SoundName = "Sound_UI_ui_activity_main_btn",
     UiName = "ui_activity_main_btn_UI_SOUND"
+  },
+  ui_activity_summer_main = {
+    SoundName = "storybgm_063",
+    UiName = "ui_activity_summer_main"
+  },
+  ui_activity_summer_stage = {
+    SoundName = "storybgm_063",
+    UiName = "ui_activity_summer_stage"
+  },
+  ui_activity_summer_stage_UI_SOUND = {
+    SoundName = "Sound_UI_ui_activity_summer_stage",
+    UiName = "ui_activity_summer_stage_UI_SOUND"
   },
   ui_buddy_draw_activity_UI_SOUND = {
     SoundName = "Sound_UI_ui_buddy_draw_activity",
@@ -472,6 +580,10 @@ return {
   ui_buddy_tryout_UI_SOUND = {
     SoundName = "Sound_UI_ui_buddy_tryout",
     UiName = "ui_buddy_tryout_UI_SOUND"
+  },
+  ui_build_btnharvest_UI_SOUND = {
+    SoundName = "Sound_UI_ui_build_btnharvest",
+    UiName = "ui_build_btnharvest_UI_SOUND"
   },
   ui_catch_cat_activity = {
     SoundName = "",
@@ -505,6 +617,26 @@ return {
     SoundName = "Sound_UI_recommond_shop",
     UiName = "ui_first_charge_popup_UI_SOUND"
   },
+  ui_fish_game_down_UI_SOUND = {
+    SoundName = "Sound_UI_ui_fish_game_down",
+    UiName = "ui_fish_game_down_UI_SOUND"
+  },
+  ui_fish_game_explode_UI_SOUND = {
+    SoundName = "Sound_UI_ui_fish_game_explode",
+    UiName = "ui_fish_game_explode_UI_SOUND"
+  },
+  ui_fish_game_get_UI_SOUND = {
+    SoundName = "Sound_UI_ui_fish_game_get",
+    UiName = "ui_fish_game_get_UI_SOUND"
+  },
+  ui_fish_game_get_sorce_UI_SOUND = {
+    SoundName = "Sound_UI_ui_fish_game_get_sorce",
+    UiName = "ui_fish_game_get_sorce_UI_SOUND"
+  },
+  ui_fish_game_stage_item_UI_SOUND = {
+    SoundName = "Sound_UI_ui_fish_game_stage_item",
+    UiName = "ui_fish_game_stage_item_UI_SOUND"
+  },
   ui_introduce_UI_SOUND = {
     SoundName = "Sound_UI_graphic_guide",
     UiName = "ui_introduce_UI_SOUND"
@@ -536,6 +668,46 @@ return {
   ui_material_double_activity_UI_SOUND = {
     SoundName = "Sound_UI_ui_material_double_activity",
     UiName = "ui_material_double_activity_UI_SOUND"
+  },
+  ui_maze_game_illustrated_UI_SOUND = {
+    SoundName = "Sound_UI_ui_maze_game_illustrated",
+    UiName = "ui_maze_game_illustrated_UI_SOUND"
+  },
+  ui_maze_game_main_UI_SOUND = {
+    SoundName = "Sound_UI_ui_maze_game_main",
+    UiName = "ui_maze_game_main_UI_SOUND"
+  },
+  ui_maze_game_start_UI_SOUND = {
+    SoundName = "Sound_UI_ui_maze_game_start",
+    UiName = "ui_maze_game_start_UI_SOUND"
+  },
+  ui_maze_game_view_click_UI_SOUND = {
+    SoundName = "Sound_UI_ui_maze_game_view_click",
+    UiName = "ui_maze_game_view_click_UI_SOUND"
+  },
+  ui_minesweeper_battle_UI_SOUND = {
+    SoundName = "Sound_UI_ui_minesweeper_battle",
+    UiName = "ui_minesweeper_battle_UI_SOUND"
+  },
+  ui_minesweeper_battle_suc_UI_SOUND = {
+    SoundName = "Sound_UI_ui_minesweeper_battle_suc",
+    UiName = "ui_minesweeper_battle_suc_UI_SOUND"
+  },
+  ui_minesweeper_buff_UI_SOUND = {
+    SoundName = "Sound_UI_ui_minesweeper_buff",
+    UiName = "ui_minesweeper_buff_UI_SOUND"
+  },
+  ui_minesweeper_settle_fail_UI_SOUND = {
+    SoundName = "Sound_UI_ui_minesweeper_settle_fail",
+    UiName = "ui_minesweeper_settle_fail_UI_SOUND"
+  },
+  ui_minesweeper_settle_suc_UI_SOUND = {
+    SoundName = "Sound_UI_ui_minesweeper_settle_sus",
+    UiName = "ui_minesweeper_settle_suc_UI_SOUND"
+  },
+  ui_minesweeper_shop_UI_SOUND = {
+    SoundName = "Sound_UI_ui_minesweeper_shop",
+    UiName = "ui_minesweeper_shop_UI_SOUND"
   },
   ui_monkey_typer_activity_UI_SOUND = {
     SoundName = "Sound_UI_ui_monkey_typer_activity",
@@ -589,6 +761,10 @@ return {
     SoundName = "Sound_UI_ui_novice_task2",
     UiName = "ui_novice_task2_UI_SOUND"
   },
+  ui_puzzle_refine_btn_UI_SOUND = {
+    SoundName = "Sound_UI_ui_puzzle_refine_btn",
+    UiName = "ui_puzzle_refine_btn_UI_SOUND"
+  },
   ui_recharge_welfare_UI_SOUND = {
     SoundName = "Sound_UI_ui_recharge_welfare",
     UiName = "ui_recharge_welfare_UI_SOUND"
@@ -621,6 +797,10 @@ return {
     SoundName = "Sound_UI_ui_normal_popup_2",
     UiName = "ui_skin_tryout_UI_SOUND"
   },
+  ui_summer_act_icon_UI_SOUND = {
+    SoundName = "Sound_UI_ui_summer_act_icon",
+    UiName = "ui_summer_act_icon_UI_SOUND"
+  },
   ui_task_activity_1_UI_SOUND = {
     SoundName = "Sound_UI_ui_task_activity_1",
     UiName = "ui_task_activity_1_UI_SOUND"
@@ -632,6 +812,14 @@ return {
   ui_time_limited_activity_main = {
     SoundName = "storybgm_076",
     UiName = "ui_time_limited_activity_main"
+  },
+  ui_time_limited_activity_main_1_2 = {
+    SoundName = "storybgm_078",
+    UiName = "ui_time_limited_activity_main_1_2"
+  },
+  ui_time_limited_activity_main_1_2_UI_SOUND = {
+    SoundName = "Sound_UI_ui_time_limited_activity_main_1_2",
+    UiName = "ui_time_limited_activity_main_1_2_UI_SOUND"
   },
   ui_time_limited_activity_main_UI_SOUND = {
     SoundName = "Sound_UI_ui_time_limited_activity_main",

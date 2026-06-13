@@ -31,15 +31,19 @@ function ui:ui_finish_load()
     magic_item = "magic_item_" .. self.v_object.name
   }
   self.v_scroll = self.v_uiobjects.ScrollView:GetComponent(typeof(CS.Game.ScrollRectEx))
-  local start_cb = function(offset)
+  
+  local function start_cb(offset)
     self:_on_start_drag(offset)
   end
-  local end_cb = function(offset)
+  
+  local function end_cb(offset)
     self:_on_end_drag(offset)
   end
-  local change_cb = function(offset)
+  
+  local function change_cb(offset)
     self:_on_change_cb(offset)
   end
+  
   self:set_scrollrect_ex_listener(self.v_scroll, start_cb, nil, end_cb)
   self.v_content_rect = self:get_rect_transform(nil, self.v_uiobjects.Content)
   self:register_exist_auto_template(self.v_template_key.magic_item, self.v_uiobjects.Magic_Item, self.v_uiobjects.Content)

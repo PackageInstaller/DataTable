@@ -5471,6 +5471,132 @@ return {
     SortOrder = 10,
     Title = "感谢"
   },
+  [100102616] = {
+    Condition = 0,
+    HeroId = 1001026,
+    Id = 100102616,
+    NeedHide = 0,
+    Page = 1,
+    SortOrder = 16,
+    Title = "待机"
+  },
+  [100102617] = {
+    Condition = 0,
+    HeroId = 1001026,
+    Id = 100102617,
+    NeedHide = 0,
+    Page = 1,
+    SortOrder = 15,
+    Title = "登录问候"
+  },
+  [100102618] = {
+    Condition = 0,
+    HeroId = 1001026,
+    Id = 100102618,
+    NeedHide = 0,
+    Page = 1,
+    SortOrder = 14,
+    Title = "快速点击"
+  },
+  [100102619] = {
+    Condition = 0,
+    HeroId = 1001026,
+    Id = 100102619,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 2,
+    Title = "胜利结算"
+  },
+  [100102620] = {
+    Condition = 0,
+    HeroId = 1001026,
+    Id = 100102620,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 1,
+    Title = "失败结算"
+  },
+  [100102621] = {
+    Condition = 0,
+    HeroId = 1001026,
+    Id = 100102621,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 11,
+    Title = "战斗语音1"
+  },
+  [100102622] = {
+    Condition = 0,
+    HeroId = 1001026,
+    Id = 100102622,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 10,
+    Title = "战斗语音2"
+  },
+  [100102623] = {
+    Condition = 0,
+    HeroId = 1001026,
+    Id = 100102623,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 9,
+    Title = "回避"
+  },
+  [100102624] = {
+    Condition = 0,
+    HeroId = 1001026,
+    Id = 100102624,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 8,
+    Title = "受伤"
+  },
+  [100102625] = {
+    Condition = 0,
+    HeroId = 1001026,
+    Id = 100102625,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 7,
+    Title = "重伤"
+  },
+  [100102626] = {
+    Condition = 0,
+    HeroId = 1001026,
+    Id = 100102626,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 6,
+    Title = "阵亡"
+  },
+  [100102627] = {
+    Condition = 0,
+    HeroId = 1001026,
+    Id = 100102627,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 5,
+    Title = "终结技"
+  },
+  [100102628] = {
+    Condition = 0,
+    HeroId = 1001026,
+    Id = 100102628,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 4,
+    Title = "战斗入场"
+  },
+  [100102629] = {
+    Condition = 0,
+    HeroId = 1001026,
+    Id = 100102629,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 3,
+    Title = "战斗结算"
+  },
   [100102701] = {
     Condition = 0,
     HeroId = 1001027,
@@ -5605,6 +5731,132 @@ return {
     Page = 1,
     SortOrder = 10,
     Title = "感谢"
+  },
+  [100102716] = {
+    Condition = 0,
+    HeroId = 1001027,
+    Id = 100102716,
+    NeedHide = 0,
+    Page = 1,
+    SortOrder = 16,
+    Title = "待机"
+  },
+  [100102717] = {
+    Condition = 0,
+    HeroId = 1001027,
+    Id = 100102717,
+    NeedHide = 0,
+    Page = 1,
+    SortOrder = 15,
+    Title = "登录问候"
+  },
+  [100102718] = {
+    Condition = 0,
+    HeroId = 1001027,
+    Id = 100102718,
+    NeedHide = 0,
+    Page = 1,
+    SortOrder = 14,
+    Title = "快速点击"
+  },
+  [100102719] = {
+    Condition = 0,
+    HeroId = 1001027,
+    Id = 100102719,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 2,
+    Title = "胜利结算"
+  },
+  [100102720] = {
+    Condition = 0,
+    HeroId = 1001027,
+    Id = 100102720,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 1,
+    Title = "失败结算"
+  },
+  [100102721] = {
+    Condition = 0,
+    HeroId = 1001027,
+    Id = 100102721,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 11,
+    Title = "战斗语音1"
+  },
+  [100102722] = {
+    Condition = 0,
+    HeroId = 1001027,
+    Id = 100102722,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 10,
+    Title = "战斗语音2"
+  },
+  [100102723] = {
+    Condition = 0,
+    HeroId = 1001027,
+    Id = 100102723,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 9,
+    Title = "回避"
+  },
+  [100102724] = {
+    Condition = 0,
+    HeroId = 1001027,
+    Id = 100102724,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 8,
+    Title = "受伤"
+  },
+  [100102725] = {
+    Condition = 0,
+    HeroId = 1001027,
+    Id = 100102725,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 7,
+    Title = "重伤"
+  },
+  [100102726] = {
+    Condition = 0,
+    HeroId = 1001027,
+    Id = 100102726,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 5,
+    Title = "终结技"
+  },
+  [100102727] = {
+    Condition = 0,
+    HeroId = 1001027,
+    Id = 100102727,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 6,
+    Title = "阵亡"
+  },
+  [100102728] = {
+    Condition = 0,
+    HeroId = 1001027,
+    Id = 100102728,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 4,
+    Title = "战斗入场"
+  },
+  [100102729] = {
+    Condition = 0,
+    HeroId = 1001027,
+    Id = 100102729,
+    NeedHide = 0,
+    Page = 2,
+    SortOrder = 3,
+    Title = "战斗结算"
   },
   [100102801] = {
     Condition = 0,
@@ -5940,7 +6192,7 @@ return {
     Title = "交流3"
   },
   [100103008] = {
-    Condition = 1044100100102,
+    Condition = 0,
     HeroId = 1001030,
     Id = 100103008,
     NeedHide = 0,
@@ -5949,7 +6201,7 @@ return {
     Title = "交流4"
   },
   [100103009] = {
-    Condition = 1044100100103,
+    Condition = 0,
     HeroId = 1001030,
     Id = 100103009,
     NeedHide = 0,
@@ -5958,7 +6210,7 @@ return {
     Title = "交流5"
   },
   [100103010] = {
-    Condition = 1044100100105,
+    Condition = 0,
     HeroId = 1001030,
     Id = 100103010,
     NeedHide = 0,
@@ -5976,7 +6228,7 @@ return {
     Title = "感谢"
   },
   [100103012] = {
-    Condition = 1044100100102,
+    Condition = 0,
     HeroId = 1001030,
     Id = 100103012,
     NeedHide = 0,
@@ -5985,7 +6237,7 @@ return {
     Title = "好感提升1"
   },
   [100103013] = {
-    Condition = 1044100100103,
+    Condition = 0,
     HeroId = 1001030,
     Id = 100103013,
     NeedHide = 0,
@@ -5994,7 +6246,7 @@ return {
     Title = "好感提升2"
   },
   [100103014] = {
-    Condition = 1044100100104,
+    Condition = 0,
     HeroId = 1001030,
     Id = 100103014,
     NeedHide = 0,
@@ -6003,7 +6255,7 @@ return {
     Title = "好感提升3"
   },
   [100103015] = {
-    Condition = 1044100100105,
+    Condition = 0,
     HeroId = 1001030,
     Id = 100103015,
     NeedHide = 0,

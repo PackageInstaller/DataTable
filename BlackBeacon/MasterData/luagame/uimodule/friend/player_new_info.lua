@@ -34,12 +34,14 @@ function ui:ui_finish_load()
   self:on_click_tog(TOG_TYPE.ASSIST)
   self.v_uiobjects.BtnLogout:SetActive(false)
   self.v_uiobjects.PlayerFunctionList:SetActive(false)
+  self.v_uiobjects.InfoFunctionList:SetActive(false)
   self.quotation_input_field = self:get_inputfield(nil, self.v_uiobjects.QuotationField)
   self.v_uiobjects.BtnLayout:SetActive(false)
   self.v_uiobjects.Slider:SetActive(false)
   self.v_uiobjects.BtnClose:SetActive(false)
   self.v_uiobjects.BtnSavePos:SetActive(false)
   self.v_uiobjects.BtnPosReset:SetActive(false)
+  self.v_uiobjects.EditTitle:SetActive(false)
   self:set_button("BtnReturn", function()
     self:ui_hide()
     self:reset_data()
@@ -50,10 +52,12 @@ function ui:ui_finish_load()
     self.v_uiobjects.InfoFunctionList:SetActive(false)
   end)
   self:set_button("BtnAddFriend", function()
-    local apply_callback = function()
+    local function apply_callback()
       Util.show_message_tip(2194)
+      
       self:update_btn_state()
     end
+    
     FriendMgr:apply_add_friend(self.v_player_data.uuid, apply_callback)
   end)
   self:set_button("BtnFunction", function()
@@ -70,9 +74,11 @@ function ui:ui_finish_load()
   end)
   self:set_button("BtnDeleteFriend", function()
     self.v_uiobjects.InfoFunctionList:SetActive(false)
-    local conform_callback = function()
+    
+    local function conform_callback()
       FriendMgr:delete_friend(self.v_player_data.uuid)
     end
+    
     local desc = Util.get_i18n("确认删除该好友")
     Util.show_conform_tip(desc, nil, nil, nil, conform_callback)
   end)
@@ -107,6 +113,7 @@ function ui:ui_on_show(player_data)
     FriendMgr:set_show_player_info(player_data)
   else
     self.v_player_data = FriendMgr:get_show_player_info()
+    self.v_uuid = self.v_player_data.uuid
   end
   self:init_event()
   self:update_player_info()
@@ -389,9 +396,10 @@ function ui:refresh_spine_view(info)
   self.v_uiobjects.HeroRawImg:SetActiveEx(true == data.is_spine)
   self.v_uiobjects.BtnSpine:SetActive(true == data.is_spine and not self.v_is_break)
   if not data.is_spine then
-    local cb = function(img)
+    local function cb(img)
       img.gameObject:SetActive(true)
     end
+    
     ResMgr:load_set_icon(self.v_uicompents.HeroIcon_img, data.val, cb, true)
   end
   px = px or DEFAULT_POS.x
@@ -527,10 +535,12 @@ function ui:set_player_aid_char_info(item, data)
       UIMgr:get_ui("player_hero"):ui_show()
       return
     end
-    local cb = function(cbdata)
+    
+    local function cb(cbdata)
       Player_Hero_Helper.set_hero_data(cbdata)
       UIMgr:get_ui("player_hero"):ui_show()
     end
+    
     FriendMgr:c2gs_get_role_buddy_info(self.v_uuid, data.id, cb)
   end)
 end

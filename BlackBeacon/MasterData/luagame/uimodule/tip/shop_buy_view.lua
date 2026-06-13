@@ -243,18 +243,22 @@ function ui:_onclick_buy_btn()
   end
   local shop_id = self.v_goods_id
   local buy_amount = self.v_buy_amount
-  local buy_cb = function()
+  
+  local function buy_cb()
     ScreenMaskMgr:open_one_tag(self.v_object.name, math.huge)
     ShopMgr:request_buy_ex_shop_goods(shop_id, buy_amount, function()
       ScreenMaskMgr:close_one_tag(self.v_object.name)
       UIMgr:try_hide_ui("shop_item_tips")
     end)
   end
+  
   if self.v_break_mat_enough == true then
     local tip = Util.format_str("{1}道具已经溢出，是否继续购买？", self.v_item_cfg.Name)
-    local sure_callback = function()
+    
+    local function sure_callback()
       buy_cb()
     end
+    
     UIMgr:get_ui("uinotice_tips"):ui_show(sure_callback, nil, tip)
   else
     buy_cb()

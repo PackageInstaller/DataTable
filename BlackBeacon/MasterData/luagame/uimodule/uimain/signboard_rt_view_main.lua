@@ -3,7 +3,7 @@ local M = Util.create_child_mt(Base)
 local CSShadow = CS.Game.Shadow
 local CSUnityEngine = UnityEngine
 local Gyro = CSUnityEngine.Input.gyro
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local SceneIlluminationInfo = CS.SceneIlluminationInfo
 local TypeSceneContainer = typeof(CS.Game.SceneContainer)
 local TypePlayableDirector = typeof(UnityEngine.Playables.PlayableDirector)
@@ -14,11 +14,13 @@ local _slower = string.lower
 local Model_Rotate_Anim_Time = 0.5
 local Vec3 = require("base.vec3")
 local DESIGN_RATIO = 1.7777777777777777
-local SignBoardGirlMgr = SignBoardGirlMgr
-local almost_zero_angle = function(a, b)
+local SignBoardGirlMgr = _ENV.SignBoardGirlMgr
+
+local function almost_zero_angle(a, b)
   local diff = _abs(a - b)
   return diff < 0.01 or diff > 359.99
 end
+
 local UI_WORLD_CONNNECT = {
   {
     ui_name = "BtnMainLine",

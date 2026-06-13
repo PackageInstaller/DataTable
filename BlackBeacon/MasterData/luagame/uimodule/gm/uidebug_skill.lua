@@ -112,12 +112,14 @@ function ui:click_cast_btn(is_hero)
     Log.Error("填写正确的技能id")
     return
   end
-  local callback = function()
+  
+  local function callback()
     local SKILL_ABORT_TYPE = Config.SKILL_ABORT_TYPE
     local abort_type = SKILL_ABORT_TYPE.FOECE | SKILL_ABORT_TYPE.BEHIT_ABORT | SKILL_ABORT_TYPE.BREAK_ABORT
     cast_npc.skill_mgr:abort(abort_type)
     cast_npc.skill_mgr:cast_skill(skill_id)
   end
+  
   return Global.util_fun:call_event_fun(CICLE_FUN_TYPE.CAST_SKILL, callback)
 end
 
@@ -128,10 +130,12 @@ function ui:click_cast_action_btn(is_tow)
     return
   end
   local input = is_tow and self.v_action_input2 or self.v_action_input
-  local callback = function()
+  
+  local function callback()
     local behavior = cast_npc:get_behavior()
     behavior:gm_cast_skill_action(input.text)
   end
+  
   return Global.util_fun:call_event_fun(CICLE_FUN_TYPE.CAST_SKILL, callback)
 end
 
@@ -141,10 +145,12 @@ function ui:click_stop_action_btn(is_tow)
     Log.Error("当前选择npc不存在，请重新选择")
     return
   end
-  local callback = function()
+  
+  local function callback()
     local behavior = cast_npc:get_behavior()
     behavior:gm_cast_skill_action("gm_stopAction")
   end
+  
   return Global.util_fun:call_event_fun(CICLE_FUN_TYPE.CAST_SKILL, callback)
 end
 

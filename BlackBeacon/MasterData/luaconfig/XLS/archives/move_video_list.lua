@@ -2249,12 +2249,15 @@ return {
       0,
       0
     },
+    Floor = 6,
     Id = 34011201,
     Name = "ER-12-1",
     PoltId = 34011201,
+    RoomID = 1090601,
     ShowPriority = 1,
     SmallGroupId = 912,
     StoryBg = "ExStoryBg1_06_3b",
+    TowerID = 109,
     groupId = 10
   },
   [34011306] = {
@@ -5635,11 +5638,14 @@ return {
       0,
       0
     },
+    Floor = 5,
     Id = 1003010902,
     Name = "ER-9-1",
     PoltId = 1003010902,
+    RoomID = 1090503,
     ShowPriority = 1,
     SmallGroupId = 909,
+    TowerID = 109,
     groupId = 10
   },
   [1003011001] = {
@@ -5674,12 +5680,15 @@ return {
       0,
       0
     },
+    Floor = 7,
     Id = 1003011301,
     Name = "ER-13-1",
     PoltId = 1003011301,
+    RoomID = 1090702,
     ShowPriority = 3,
     SmallGroupId = 913,
     StoryBg = "ExStoryBg1_06_9b",
+    TowerID = 109,
     groupId = 10
   },
   [1003011401] = {

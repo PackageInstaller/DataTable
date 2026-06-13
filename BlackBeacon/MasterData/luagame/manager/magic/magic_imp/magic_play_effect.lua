@@ -5,7 +5,7 @@ function M:_init(owner, magic_info)
   Base._init(self, owner, magic_info)
 end
 
-local _get_owner_auto_scale = function(owner)
+local function _get_owner_auto_scale(owner)
   local model_cfg = owner.model_cfg
   if not model_cfg then
     return

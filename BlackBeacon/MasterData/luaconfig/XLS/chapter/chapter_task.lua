@@ -181,6 +181,32 @@ return {
       TaskType = 1
     }
   },
+  [10081] = {
+    [100800] = {
+      GroupId = 10081,
+      IconName = "Stage_bg_black_04",
+      Id = 100800,
+      StageGroup = 1,
+      TaskName = "完成主线【8-6】",
+      TaskType = 1
+    },
+    [100801] = {
+      GroupId = 10081,
+      IconName = "Stage_bg_black_04",
+      Id = 100801,
+      StageGroup = 2,
+      TaskName = "完成主线【8-12】",
+      TaskType = 1
+    },
+    [100802] = {
+      GroupId = 10081,
+      IconName = "Stage_bg_black_04",
+      Id = 100802,
+      StageGroup = 3,
+      TaskName = "完成主线【8-18】",
+      TaskType = 1
+    }
+  },
   [11001] = {
     [110000] = {
       GroupId = 11001,

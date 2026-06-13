@@ -202,10 +202,12 @@ end
 
 function ui:exit_settlement()
   self:ui_destroy()
-  local callback = function()
+  
+  local function callback()
     Global.scene_mgr:on_enter_main_scene()
     UIMgr:revert_cache_ui()
   end
+  
   if TowerMgr then
     TowerMgr:get_fight_reward(callback)
   end

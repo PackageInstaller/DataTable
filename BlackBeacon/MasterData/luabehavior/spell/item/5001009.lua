@@ -1,0 +1,34 @@
+local M = Util.create_class()
+
+function M:_init()
+  self.magic_set = 0
+end
+
+function M:on_frame()
+  local teammate1 = get_scene_hero_by_poskey(21)
+  local teammate2 = get_scene_hero_by_poskey(22)
+  if 0 == self.magic_set then
+    cast_magic(self.npc, self.npc, 50010091, 1)
+    cast_magic(self.npc, self.npc, 50010092, 1)
+    cast_magic(self.npc, self.npc, 50010093, 1)
+    cast_magic(self.npc, self.npc, 50010094, 1)
+    cast_magic(self.npc, self.npc, 50010095, 1)
+    if teammate1 then
+      cast_magic(self.npc, teammate1, 50010091, 1)
+      cast_magic(self.npc, teammate1, 50010092, 1)
+      cast_magic(self.npc, teammate1, 50010093, 1)
+      cast_magic(self.npc, teammate1, 50010094, 1)
+      cast_magic(self.npc, teammate1, 50010095, 1)
+    end
+    if teammate2 then
+      cast_magic(self.npc, teammate2, 50010091, 1)
+      cast_magic(self.npc, teammate2, 50010092, 1)
+      cast_magic(self.npc, teammate2, 50010093, 1)
+      cast_magic(self.npc, teammate2, 50010094, 1)
+      cast_magic(self.npc, teammate2, 50010095, 1)
+    end
+    self.magic_set = 1
+  end
+end
+
+return M

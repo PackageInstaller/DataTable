@@ -277,9 +277,11 @@ function ui:sell_rune_item()
     uuid = item.uuid,
     count = item.count
   }
-  local cb = function()
+  
+  local function cb()
     self:ui_hide()
   end
+  
   Rune2Mgr:sell_rune_item(submit_data, cb)
 end
 
@@ -409,7 +411,8 @@ function ui:click_revive_btn()
       return
     end
     local desc = Util.format_str("是否花费{1}钻石立即复活该角色", reborn_cost_num)
-    local cb = function()
+    
+    local function cb()
       local cur_num = BagMgr:get_item_num(reborn_cost_id)
       if cur_num < reborn_cost_num then
         Util.show_message_tip(2115)
@@ -417,6 +420,7 @@ function ui:click_revive_btn()
       end
       ChapterMgr:request_reborn()
     end
+    
     Util.show_conform_tip(desc, nil, nil, nil, cb)
   end
 end

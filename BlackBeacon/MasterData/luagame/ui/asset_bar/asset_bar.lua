@@ -135,7 +135,7 @@ function M:get_state()
 end
 
 function M:_register_exist_auto_template()
-  self.template_key = string.format("ASSET_BAR_%s", self.v_ui)
+  self.template_key = string.format("ASSET_BAR_%s_%s", self.v_ui, self.v_ui.v_ui_name or "")
   self.v_ui:register_exist_auto_template(self.template_key, self.asset_item, self.v_asset_bar)
 end
 

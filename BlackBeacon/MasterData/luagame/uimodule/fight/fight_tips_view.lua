@@ -70,7 +70,7 @@ function ui:on_set_scene_tips(msg)
     Log.Error("not find tips_id " .. tips_id)
     return
   end
-  if tip_cfg.GuideID then
+  if tip_cfg.GuideID or not UtilTable.is_empty(tip_cfg.ComboIdList or E) then
     self.v_uiobjects.BtnRePlay8:SetActive(true)
     if visible then
       self:set_button("BtnRePlay8", function()
@@ -130,9 +130,10 @@ function ui:_set_common_tips(msg)
     self.v_uicompents[player_comp].text = tip_cfg.Player
   end
   if tip_cfg.SoundId and tip_cfg.SoundId > 0 then
-    local callback = function(time)
+    local function callback(time)
       tip_info.end_time = Global.real_time + time / 1000
     end
+    
     Global.sound_mgr:play_sound_by_id(tip_cfg.SoundId, nil, callback)
   end
   local RoleIcon = "RoleIcon" .. type .. "_img"
@@ -366,6 +367,10 @@ function ui:update_counttips_rect_pos_byui(msg)
   if "fight" == ui_name then
     self:update_tips_height()
   end
+end
+
+function ui:get_uicompents()
+  return self.v_uicompents
 end
 
 return ui

@@ -29,13 +29,16 @@ function ui:ui_on_update()
       local tip = Util.format_str(string.format("此按钮已被[%s]使用，是否继续使用？", Setting_Cfg.BTNNAME_INFO[old_btn_name].desc))
       local sure_text = Util.format_str("确认")
       local cancel_text = Util.format_str("取消")
-      local sure_callback = function()
+      
+      local function sure_callback()
         self:confirm()
       end
-      local cancel_callback = function()
+      
+      local function cancel_callback()
         local msg = MsgGame:mq_publish2(Const.MSG_CUSTOM_KEY_SETTING_END)
         msg.mm_x = self.v_btn_name
       end
+      
       self.v_block_event_flag = true
       self:ui_hide()
       local ui_notice_tips = UIMgr:get_ui("uinotice_tips")

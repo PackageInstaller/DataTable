@@ -80,9 +80,11 @@ function ui:_timer_out()
   end
   Network:close()
   self:unbind_all_auto_mq()
-  local callback = function()
+  
+  local function callback()
     Global.gamemode:gmode_set_mode(Global.const.MODE_CHECK_UPDATE)
   end
+  
   local sure_lab = Util.format_str("确定")
   Util.show_notify_popup_message(callback, "网络连接异常，请检查网络！", nil, sure_lab, nil, nil, true)
   UIMgr:try_hide_ui("ui_reconnect_panel")

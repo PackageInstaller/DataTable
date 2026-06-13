@@ -57,7 +57,7 @@ function M:_set_npc_info(npc, npc_info)
   end
 end
 
-local _get_npc_class_name = function(npc_id, npc_class)
+local function _get_npc_class_name(npc_id, npc_class)
   local character_cfg = ShareRes.get_character_cfg(npc_id)
   assert(character_cfg, "can't find character config: " .. npc_id)
   return character_cfg.NpcClass and "obj." .. character_cfg.NpcClass or npc_class or "obj.npc"
@@ -160,7 +160,8 @@ function M:preload_npc(npc_id, callback)
   if not npc:is_setup() then
     self:_setup_cobj(npc)
   end
-  local cb = function()
+  
+  local function cb()
     npc:set_pos(0, 0, 0)
     npc:set_enable(false)
     local trans = npc:get_transform()
@@ -173,6 +174,7 @@ function M:preload_npc(npc_id, callback)
       callback()
     end
   end
+  
   if not npc:will_init_gameobj() then
     if model_cfg and model_cfg.ControllerPath then
       SceneMgr:load_model_animator(npc, cb)

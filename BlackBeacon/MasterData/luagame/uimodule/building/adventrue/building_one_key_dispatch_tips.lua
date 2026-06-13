@@ -14,12 +14,14 @@ function ui:on_click_BtnDispatch()
   if self.v_can_dispatch_count <= 0 then
     return
   end
-  local conform_cb = function()
+  
+  local function conform_cb()
     BuildingMgr:requst_building_adventure_batch_accept_task(self.v_can_dispatch_task_list, function()
       self:ui_hide()
       UIMgr:try_call_ui_func("building_adventrue_main", "show_dispatch_tips")
     end)
   end
+  
   local tips_str
   if self.v_can_dispatch_count <= 0 then
     tips_str = "派遣记录已更改，请重新派遣"
@@ -80,7 +82,7 @@ end
 function ui:ui_on_destroy()
 end
 
-local sort_func = function(a, b)
+local function sort_func(a, b)
   local a_task_cfg, b_task_cfg = ShareRes.get_adventrue_task_cfg(a.id), ShareRes.get_adventrue_task_cfg(b.id)
   if a_task_cfg and b_task_cfg and a_task_cfg.Quality ~= b_task_cfg.Quality then
     return a_task_cfg.Quality > b_task_cfg.Quality
@@ -206,7 +208,7 @@ function ui:fill_slot_data(slot_data, temp_select_map, limit_info, element_limit
   end
 end
 
-local _check_limit_table = function(limit_table, check_map, key)
+local function _check_limit_table(limit_table, check_map, key)
   if not limit_table then
     return true
   end
@@ -246,7 +248,7 @@ function ui:check_buddy_can_select(buddy_id, fixed_char_id, limit_info, element_
   return limit_result
 end
 
-local _get_all_task_data = function(task_map, all_task_data, max_count)
+local function _get_all_task_data(task_map, all_task_data, max_count)
   for _, task_data in pairs(task_map) do
     if task_data.state == ADVENTURE_TASK_STATE.INIT then
       all_task_data[#all_task_data + 1] = task_data

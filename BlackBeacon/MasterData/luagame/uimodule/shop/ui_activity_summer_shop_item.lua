@@ -41,6 +41,7 @@ function M:set_data(go, data_list, index)
   self:refresh_time()
   self:refresh_condition()
   self:refresh_count()
+  self:refresh_red()
   Global.listener_mgr:add_listener(self.v_object, self.v_uicompents.BuyBtn_btn.onClick, function()
     self:on_item_click()
   end)
@@ -52,6 +53,9 @@ function M:set_data(go, data_list, index)
     if condition and condition.Desc then
       Util.show_message_tip(condition.Desc)
     end
+    UIMgr:get_ui("itemTip"):ui_show({
+      item_id = self.v_item_cfg.Id
+    })
   end)
 end
 
@@ -170,6 +174,15 @@ end
 
 function M:refresh_count()
   self.v_uicompents.ItemNmu_txt.text = self.v_goods_data.ItemCnt
+end
+
+function M:refresh_red()
+  if not self.v_goods_data.RedDotShow or 0 == self.v_goods_data.RedDotShow then
+    self.v_uiobjects.redpoint:SetActiveEx(false)
+    return
+  end
+  local is_can_buy = ShopMgr:get_is_can_buy_goods_red(self.v_goods_data, SHOP_TYPE.COOMMON_SHOP)
+  self.v_uiobjects.redpoint:SetActiveEx(is_can_buy)
 end
 
 function M:on_item_click()

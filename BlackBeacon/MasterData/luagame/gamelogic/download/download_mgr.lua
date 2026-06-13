@@ -155,13 +155,15 @@ function M:on_begin_download_with_setting(chapter_index)
       end
     end
     need_download_chapter_list[chapter_index] = 1
-    local cb = function()
+    
+    local function cb()
       for i, v in pairs(checkDownloadParams.ChapterResInfos) do
         if 1 == need_download_chapter_list[v.ChapterIndex] then
           v.Confirm()
         end
       end
     end
+    
     if is_need_tips then
       local msg = Util.format_str("需要先下载前置章节资源，是否进行下载")
       Util.show_notify_popup_message(function()
@@ -244,7 +246,7 @@ function M:check_chapter_other_res(cb)
   self:download_other_res(cb)
 end
 
-function M:is_can_fight(chapter_index, is_show_tip)
+function M:is_can_fight(chapter_index, is_show_tip, use_new_tips)
   if curr_type == download_type.DownloadFinish then
     return true
   end
@@ -263,7 +265,12 @@ function M:is_can_fight(chapter_index, is_show_tip)
   end
   if not is_download_finish and is_show_tip then
     local size = string.format("%.2f", need_download_size / 1024 / 1024)
-    local msg = Util.format_str("当前章节资源未下载，请下载当前及前置章节资源后可进入章节（资源大小：{1}M）", size)
+    local msg
+    if use_new_tips then
+      msg = Util.format_str("当前游戏资源未下载，请下载对应游戏资源后可进入（资源大小：{1}M）", size)
+    else
+      msg = Util.format_str("当前章节资源未下载，请下载当前及前置章节资源后可进入章节（资源大小：{1}M）", size)
+    end
     Util.show_notify_popup_message(function()
       UIMgr:get_ui("battle_setting"):ui_show(Setting_Cfg.PageTag.Download)
       for _, index in ipairs(need_download_chapter_list) do

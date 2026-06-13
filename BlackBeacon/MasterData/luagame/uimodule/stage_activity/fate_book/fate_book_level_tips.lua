@@ -288,9 +288,11 @@ end
 function ui:get_award_item_list(award_group_id)
   local a_item_cfg, b_item_cfg
   local award_list = {}
-  local jump_callback = function()
+  
+  local function jump_callback()
     self:ui_hide()
   end
+  
   ShareRes.get_item_obj_use_award_list(award_group_id, award_list, function(award_cfg, index)
     local temp = {
       ItemId = award_cfg.ItemId,
@@ -400,12 +402,13 @@ function ui:get_destiny_level()
 end
 
 function ui:get_curse_desnity_level_award(count)
-  local cb = function()
+  local function cb()
     if not self:visible() then
       return
     end
     self:refresh_view()
   end
+  
   if not SceneMgr:check_main_scene() and not self.v_get_new_ring_data_suc then
     Log.Error("提示：释放等级时，尚未接收到服务器更新数据")
   end

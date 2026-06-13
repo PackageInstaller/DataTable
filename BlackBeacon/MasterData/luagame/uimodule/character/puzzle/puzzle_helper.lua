@@ -36,7 +36,7 @@ function helper.get_garph_hex_list(graph_id, rotate, start_hex)
   return helper.move_hex_node_group_to_target(hex_pos_list, start_hex)
 end
 
-local get_distance_square = function(point1, point2)
+local function get_distance_square(point1, point2)
   local dx = point2.x - point1.x
   local dy = point2.y - point1.y
   return dx * dx + dy * dy

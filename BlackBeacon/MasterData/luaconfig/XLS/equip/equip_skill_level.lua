@@ -3520,60 +3520,60 @@ return {
     AttrType = 0,
     AttrValue = 720,
     BattleId = 0,
-    Desc = "每次消除【流电】，或【绝影连刺】期间命中敌人均会产生一次落雷，攻击小范围敌人，造成20%<color=#ec7f00>常规伤害</color>，每0.5秒可触发一次。",
+    Desc = "【枪焰威势】与【枪焰】伤害提高<color=#D56D2E>28%</color>。",
     EffectId = 1004125,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_01",
     Id = 201025201,
     Lv = 1,
-    Name = "巴拉莱卡专武技能1"
+    Name = "炽热的清扫者"
   },
   [201025202] = {
     AttrId = 31,
     AttrType = 0,
     AttrValue = 900,
     BattleId = 0,
-    Desc = "每次消除【流电】，或【绝影连刺】期间命中敌人均会产生一次落雷，攻击小范围敌人，造成25%<color=#ec7f00>常规伤害</color>，每0.5秒可触发一次。",
+    Desc = "【枪焰威势】与【枪焰】伤害提高<color=#D56D2E>35%</color>。",
     EffectId = 1004125,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_02",
     Id = 201025202,
     Lv = 2,
-    Name = "巴拉莱卡专武技能2"
+    Name = "炽热的清扫者"
   },
   [201025203] = {
     AttrId = 31,
     AttrType = 0,
     AttrValue = 1080,
     BattleId = 0,
-    Desc = "每次消除【流电】，或【绝影连刺】期间命中敌人均会产生一次落雷，攻击小范围敌人，造成30%<color=#ec7f00>常规伤害</color>，每0.5秒可触发一次。",
+    Desc = "【枪焰威势】与【枪焰】伤害提高<color=#D56D2E>42%</color>。",
     EffectId = 1004125,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_03",
     Id = 201025203,
     Lv = 3,
-    Name = "巴拉莱卡专武技能3"
+    Name = "炽热的清扫者"
   },
   [201025204] = {
     AttrId = 31,
     AttrType = 0,
     AttrValue = 1260,
     BattleId = 0,
-    Desc = "每次消除【流电】，或【绝影连刺】期间命中敌人均会产生一次落雷，攻击小范围敌人，造成35%<color=#ec7f00>常规伤害</color>，每0.5秒可触发一次。",
+    Desc = "【枪焰威势】与【枪焰】伤害提高<color=#D56D2E>49%</color>。",
     EffectId = 1004125,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_04",
     Id = 201025204,
     Lv = 4,
-    Name = "巴拉莱卡专武技能4"
+    Name = "炽热的清扫者"
   },
   [201025205] = {
     AttrId = 31,
     AttrType = 0,
     AttrValue = 1440,
     BattleId = 0,
-    Desc = "每次消除【流电】，或【绝影连刺】期间命中敌人均会产生一次落雷，攻击小范围敌人，造成40%<color=#ec7f00>常规伤害</color>，每0.5秒可触发一次。",
+    Desc = "【枪焰威势】与【枪焰】伤害提高<color=#D56D2E>56%</color>。",
     EffectId = 1004125,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_05",
     Id = 201025205,
     Lv = 5,
-    Name = "巴拉莱卡专武技能5"
+    Name = "炽热的清扫者"
   },
   [201026001] = {
     AttrId = 76,
@@ -3676,7 +3676,7 @@ return {
     AttrType = 0,
     AttrValue = 960,
     BattleId = 0,
-    Desc = "<color=#476DBB>【伴星】</color>每一次发生位移时，菲娜米娜提高12%光伤害增幅，可叠加2次，持续20秒。",
+    Desc = "<color=#476DBB>【伴星】</color>每一次发生位移时，菲娜米娜提高<color=#D56D2E>12%</color>光伤害增幅，可叠加2次，持续20秒。",
     EffectId = 1014200,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_01",
     Id = 201026201,
@@ -3688,7 +3688,7 @@ return {
     AttrType = 0,
     AttrValue = 1200,
     BattleId = 0,
-    Desc = "<color=#476DBB>【伴星】</color>每一次发生位移时，菲娜米娜提高15%光伤害增幅，可叠加2次，持续20秒。",
+    Desc = "<color=#476DBB>【伴星】</color>每一次发生位移时，菲娜米娜提高<color=#D56D2E>15%</color>光伤害增幅，可叠加2次，持续20秒。",
     EffectId = 1014200,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_02",
     Id = 201026202,
@@ -3700,7 +3700,7 @@ return {
     AttrType = 0,
     AttrValue = 1440,
     BattleId = 0,
-    Desc = "<color=#476DBB>【伴星】</color>每一次发生位移时，菲娜米娜提高18%光伤害增幅，可叠加2次，持续20秒。",
+    Desc = "<color=#476DBB>【伴星】</color>每一次发生位移时，菲娜米娜提高<color=#D56D2E>18%</color>光伤害增幅，可叠加2次，持续20秒。",
     EffectId = 1014200,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_03",
     Id = 201026203,
@@ -3712,7 +3712,7 @@ return {
     AttrType = 0,
     AttrValue = 1680,
     BattleId = 0,
-    Desc = "<color=#476DBB>【伴星】</color>每一次发生位移时，菲娜米娜提高21%光伤害增幅，可叠加2次，持续20秒。",
+    Desc = "<color=#476DBB>【伴星】</color>每一次发生位移时，菲娜米娜提高<color=#D56D2E>21%</color>光伤害增幅，可叠加2次，持续20秒。",
     EffectId = 1014200,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_04",
     Id = 201026204,
@@ -3724,7 +3724,7 @@ return {
     AttrType = 0,
     AttrValue = 1920,
     BattleId = 0,
-    Desc = "<color=#476DBB>【伴星】</color>每一次发生位移时，菲娜米娜提高24%光伤害增幅，可叠加2次，持续20秒。",
+    Desc = "<color=#476DBB>【伴星】</color>每一次发生位移时，菲娜米娜提高<color=#D56D2E>24%</color>光伤害增幅，可叠加2次，持续20秒。",
     EffectId = 1014200,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_05",
     Id = 201026205,
@@ -3832,60 +3832,60 @@ return {
     AttrType = 0,
     AttrValue = 720,
     BattleId = 0,
-    Desc = "薇奥拉激活【余音】时，每次扩散后会使【余音】伤害提高12%，可叠加2层，持续2秒。",
+    Desc = "<color=#D56D2E>[技能1]</color>【探寻前路】、<color=#D56D2E>[技能2]</color>【迂折回环】产生的迷宫回廊收束时对命中的敌人施加标记，使其伤害抗性降低<color=#D56D2E>17%</color>，持续20秒；若队伍中包含3种不同职业的成员，伤害抗性额外降低<color=#D56D2E>8%</color>。",
     EffectId = 1016191,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_01",
     Id = 201027201,
     Lv = 1,
-    Name = "金缕专武技能1"
+    Name = "混沌之绪"
   },
   [201027202] = {
     AttrId = 33,
     AttrType = 0,
     AttrValue = 900,
     BattleId = 0,
-    Desc = "薇奥拉激活【余音】时，每次扩散后会使【余音】伤害提高15%，可叠加2层，持续2秒。",
+    Desc = "<color=#D56D2E>[技能1]</color>【探寻前路】、<color=#D56D2E>[技能2]</color>【迂折回环】产生的迷宫回廊收束时对命中的敌人施加标记，使其伤害抗性降低<color=#D56D2E>21.25%</color>，持续20秒；若队伍中包含3种不同职业的成员，伤害抗性额外降低<color=#D56D2E>10%</color>。",
     EffectId = 1016191,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_02",
     Id = 201027202,
     Lv = 2,
-    Name = "金缕专武技能2"
+    Name = "混沌之绪"
   },
   [201027203] = {
     AttrId = 33,
     AttrType = 0,
     AttrValue = 1080,
     BattleId = 0,
-    Desc = "薇奥拉激活【余音】时，每次扩散后会使【余音】伤害提高18%，可叠加2层，持续2秒。",
+    Desc = "<color=#D56D2E>[技能1]</color>【探寻前路】、<color=#D56D2E>[技能2]</color>【迂折回环】产生的迷宫回廊收束时对命中的敌人施加标记，使其伤害抗性降低<color=#D56D2E>25.5%</color>，持续20秒；若队伍中包含3种不同职业的成员，伤害抗性额外降低<color=#D56D2E>12%</color>。",
     EffectId = 1016191,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_03",
     Id = 201027203,
     Lv = 3,
-    Name = "金缕专武技能3"
+    Name = "混沌之绪"
   },
   [201027204] = {
     AttrId = 33,
     AttrType = 0,
     AttrValue = 1260,
     BattleId = 0,
-    Desc = "薇奥拉激活【余音】时，每次扩散后会使【余音】伤害提高21%，可叠加2层，持续2秒。",
+    Desc = "<color=#D56D2E>[技能1]</color>【探寻前路】、<color=#D56D2E>[技能2]</color>【迂折回环】产生的迷宫回廊收束时对命中的敌人施加标记，使其伤害抗性降低<color=#D56D2E>29.75%</color>，持续20秒；若队伍中包含3种不同职业的成员，伤害抗性额外降低<color=#D56D2E>14%</color>。",
     EffectId = 1016191,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_04",
     Id = 201027204,
     Lv = 4,
-    Name = "金缕专武技能4"
+    Name = "混沌之绪"
   },
   [201027205] = {
     AttrId = 33,
     AttrType = 0,
     AttrValue = 1440,
     BattleId = 0,
-    Desc = "薇奥拉激活【余音】时，每次扩散后会使【余音】伤害提高24%，可叠加2层，持续2秒。",
+    Desc = "<color=#D56D2E>[技能1]</color>【探寻前路】、<color=#D56D2E>[技能2]</color>【迂折回环】产生的迷宫回廊收束时对命中的敌人施加标记，使其伤害抗性降低<color=#D56D2E>34%</color>，持续20秒；若队伍中包含3种不同职业的成员，伤害抗性额外降低<color=#D56D2E>16%</color>。",
     EffectId = 1016191,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_05",
     Id = 201027205,
     Lv = 5,
-    Name = "金缕专武技能5"
+    Name = "混沌之绪"
   },
   [201028001] = {
     AttrId = 21,
@@ -4200,9 +4200,9 @@ return {
     Name = "金缕专武技能5"
   },
   [201030001] = {
-    AttrId = 21,
+    AttrId = 31,
     AttrType = 0,
-    AttrValue = 240,
+    AttrValue = 216,
     BattleId = 0,
     Desc = "",
     EffectId = 0,
@@ -4212,9 +4212,9 @@ return {
     Name = ""
   },
   [201030002] = {
-    AttrId = 21,
+    AttrId = 31,
     AttrType = 0,
-    AttrValue = 360,
+    AttrValue = 288,
     BattleId = 0,
     Desc = "",
     EffectId = 0,
@@ -4224,9 +4224,9 @@ return {
     Name = ""
   },
   [201030003] = {
-    AttrId = 21,
+    AttrId = 31,
     AttrType = 0,
-    AttrValue = 480,
+    AttrValue = 360,
     BattleId = 0,
     Desc = "",
     EffectId = 0,
@@ -4236,9 +4236,9 @@ return {
     Name = ""
   },
   [201030101] = {
-    AttrId = 21,
+    AttrId = 31,
     AttrType = 0,
-    AttrValue = 480,
+    AttrValue = 360,
     BattleId = 0,
     Desc = "",
     EffectId = 0,
@@ -4248,9 +4248,9 @@ return {
     Name = ""
   },
   [201030102] = {
-    AttrId = 21,
+    AttrId = 31,
     AttrType = 0,
-    AttrValue = 600,
+    AttrValue = 450,
     BattleId = 0,
     Desc = "",
     EffectId = 0,
@@ -4260,9 +4260,9 @@ return {
     Name = ""
   },
   [201030103] = {
-    AttrId = 21,
+    AttrId = 31,
     AttrType = 0,
-    AttrValue = 720,
+    AttrValue = 540,
     BattleId = 0,
     Desc = "",
     EffectId = 0,
@@ -4272,9 +4272,9 @@ return {
     Name = ""
   },
   [201030104] = {
-    AttrId = 21,
+    AttrId = 31,
     AttrType = 0,
-    AttrValue = 840,
+    AttrValue = 630,
     BattleId = 0,
     Desc = "",
     EffectId = 0,
@@ -4284,9 +4284,9 @@ return {
     Name = ""
   },
   [201030105] = {
-    AttrId = 21,
+    AttrId = 31,
     AttrType = 0,
-    AttrValue = 960,
+    AttrValue = 720,
     BattleId = 0,
     Desc = "",
     EffectId = 0,
@@ -4296,63 +4296,63 @@ return {
     Name = ""
   },
   [201030201] = {
-    AttrId = 21,
+    AttrId = 31,
     AttrType = 0,
-    AttrValue = 960,
+    AttrValue = 720,
     BattleId = 0,
-    Desc = "薇奥拉激活【余音】时，每次扩散后会使【余音】伤害提高12%，可叠加2层，持续2秒。",
-    EffectId = 1016191,
+    Desc = "身上带有【金鳞浴火】的目标被击杀时，使全队伤害提升25%，持续10秒。",
+    EffectId = 10302008,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_01",
     Id = 201030201,
     Lv = 1,
-    Name = "金缕专武技能1"
+    Name = "火烧连营"
   },
   [201030202] = {
-    AttrId = 21,
+    AttrId = 31,
     AttrType = 0,
-    AttrValue = 1200,
+    AttrValue = 900,
     BattleId = 0,
-    Desc = "薇奥拉激活【余音】时，每次扩散后会使【余音】伤害提高15%，可叠加2层，持续2秒。",
-    EffectId = 1016191,
+    Desc = "身上带有【金鳞浴火】的目标被击杀时，使全队伤害提升31.25%，持续10秒。",
+    EffectId = 10302008,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_02",
     Id = 201030202,
     Lv = 2,
-    Name = "金缕专武技能2"
+    Name = "火烧连营"
   },
   [201030203] = {
-    AttrId = 21,
+    AttrId = 31,
     AttrType = 0,
-    AttrValue = 1440,
+    AttrValue = 1080,
     BattleId = 0,
-    Desc = "薇奥拉激活【余音】时，每次扩散后会使【余音】伤害提高18%，可叠加2层，持续2秒。",
-    EffectId = 1016191,
+    Desc = "身上带有【金鳞浴火】的目标被击杀时，使全队伤害提升37.5%，持续10秒。",
+    EffectId = 10302008,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_03",
     Id = 201030203,
     Lv = 3,
-    Name = "金缕专武技能3"
+    Name = "火烧连营"
   },
   [201030204] = {
-    AttrId = 21,
+    AttrId = 31,
     AttrType = 0,
-    AttrValue = 1680,
+    AttrValue = 1260,
     BattleId = 0,
-    Desc = "薇奥拉激活【余音】时，每次扩散后会使【余音】伤害提高21%，可叠加2层，持续2秒。",
-    EffectId = 1016191,
+    Desc = "身上带有【金鳞浴火】的目标被击杀时，使全队伤害提升43.75%，持续10秒。",
+    EffectId = 10302008,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_04",
     Id = 201030204,
     Lv = 4,
-    Name = "金缕专武技能4"
+    Name = "火烧连营"
   },
   [201030205] = {
-    AttrId = 21,
+    AttrId = 31,
     AttrType = 0,
-    AttrValue = 1920,
+    AttrValue = 1440,
     BattleId = 0,
-    Desc = "薇奥拉激活【余音】时，每次扩散后会使【余音】伤害提高24%，可叠加2层，持续2秒。",
-    EffectId = 1016191,
+    Desc = "身上带有【金鳞浴火】的目标被击杀时，使全队伤害提升50%，持续10秒。",
+    EffectId = 10302008,
     Icon_path = "UIChar/new/Char_weapon/Char_icon_potential_05",
     Id = 201030205,
     Lv = 5,
-    Name = "金缕专武技能5"
+    Name = "火烧连营"
   }
 }

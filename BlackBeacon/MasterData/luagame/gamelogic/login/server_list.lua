@@ -17,10 +17,8 @@ function M:_init_server_list_by_local_config()
       end
     elseif GAME_RELEASE then
       show = 1 == server_info.tag
-    elseif PUBLISH_GM then
-      show = 2 == server_info.DebugTag
     else
-      show = server_info.DebugTag ~= nil
+      show = 1 == server_info.DebugTag
     end
     if show then
       table.insert(self.server_list, server_info)
@@ -38,10 +36,8 @@ function M:init_server_list_by_net_data(data)
       end
     elseif GAME_RELEASE then
       show = 1 == server_info.tag
-    elseif PUBLISH_GM then
-      show = 2 == server_info.DebugTag
     else
-      show = server_info.DebugTag ~= nil
+      show = 1 == server_info.DebugTag
     end
     if show then
       table.insert(self.server_list, server_info)

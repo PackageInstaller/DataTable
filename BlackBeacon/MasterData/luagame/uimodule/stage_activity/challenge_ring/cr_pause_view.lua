@@ -77,10 +77,12 @@ end
 
 function ui:save_and_exit()
   self:ui_hide()
-  local cb = function()
+  
+  local function cb()
     Global.scene_mgr:on_enter_main_scene()
     UIMgr:revert_cache_ui()
   end
+  
   if TowerMgr then
     TowerMgr:on_exit_tower(cb)
   end

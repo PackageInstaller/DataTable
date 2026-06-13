@@ -34,9 +34,26 @@ end
 function M:initialize(profile_name)
   self.v_profile_path = Path.get_res_path(profile_name .. ".asset")
   local profile = ResMgr:load_res(self.v_profile_path, TypeVisualGameProfile)
+  self:load_visual_profile_visible_prefab(profile)
   self.v_vgc_com:Initialize(profile)
   self.v_vgc_obj.name = profile_name
   self.v_visible_object_count = self.v_vgc_com.VisibleObjectCount
+end
+
+function M:load_visual_profile_visible_prefab(profile)
+  local visual_prefab_paths = profile.VisiblePrefabPaths
+  local visual_prefabs = profile.VisiblePrefab
+  local len = visual_prefab_paths.Length
+  for i = 0, len - 1 do
+    local res_path = visual_prefab_paths[i]
+    local prefab = ResMgr:load_gameobj(res_path)
+    self:save_loaded_prefab(prefab.gameObject)
+    visual_prefabs[i] = prefab.gameObject
+  end
+end
+
+function M:save_loaded_prefab(visual_prefabs)
+  VisualGameManager:save_loaded_prefab(visual_prefabs)
 end
 
 function M:apply_camera(camera)

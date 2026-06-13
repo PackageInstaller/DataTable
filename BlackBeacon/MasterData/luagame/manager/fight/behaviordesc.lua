@@ -279,7 +279,8 @@ local M = {
   },
   flash_to_pos = {
     [4] = true,
-    [5] = true
+    [5] = true,
+    [6] = true
   },
   get_develop_level = {
     [3] = true

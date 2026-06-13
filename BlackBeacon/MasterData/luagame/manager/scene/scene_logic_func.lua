@@ -435,6 +435,15 @@ local LOGIC_ACTION_FUNCTION = {
   end,
   [LOGIC_ACTION.SURVIVORS_UNIT_SPAWNER] = function(behavior, config)
     behavior:add_spawner_behavior(config)
+  end,
+  [LOGIC_ACTION.OPEN_CAPTURE_SYSTEM] = function(behavior, config)
+    behavior:open_capture_system(config)
+  end,
+  [LOGIC_ACTION.CLOSE_CAPTURE_SYSTEM] = function(behavior, config)
+    behavior:close_capture_system()
+  end,
+  [LOGIC_ACTION.SET_VISUAL_PREFABS_VISIBLE] = function(behavior, config)
+    behavior:set_visual_prefabs_visible(config)
   end
 }
 

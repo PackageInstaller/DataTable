@@ -44,7 +44,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "测试角色",
     powerMax = 100
   },
@@ -90,7 +89,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "Hero",
     powerMax = 100
   },
@@ -144,7 +142,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "monster",
     powerMax = 100
   },
@@ -216,7 +213,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "ATEN",
     powerMax = 100
   },
@@ -272,7 +268,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "左手",
     powerMax = 100
   },
@@ -328,7 +323,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "右手",
     powerMax = 100
   },
@@ -378,7 +372,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "迷失者",
     powerMax = 100
   },
@@ -446,7 +439,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "书馆守卫者",
     powerMax = 100
   },
@@ -513,7 +505,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "勇敢牛牛",
     powerMax = 100
   },
@@ -570,7 +561,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "位移突刺怪",
     powerMax = 100
   },
@@ -627,7 +617,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "三连落雷怪",
     powerMax = 100
   },
@@ -684,7 +673,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "环绕三火球怪",
     powerMax = 100
   },
@@ -741,7 +729,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "流毒自爆怪",
     powerMax = 100
   },
@@ -798,7 +785,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "死了叫儿子怪",
     powerMax = 100
   },
@@ -855,7 +841,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "儿子怪",
     powerMax = 100
   },
@@ -912,7 +897,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "后撤分裂散弹怪",
     powerMax = 100
   },
@@ -969,7 +953,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "锁头怪",
     powerMax = 100
   },
@@ -1036,7 +1019,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "石头人也开始加速了！",
     powerMax = 100
   },
@@ -1093,7 +1075,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "直线流毒怪",
     powerMax = 100
   },
@@ -1150,7 +1131,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "矩形流毒怪",
     powerMax = 100
   },
@@ -1217,7 +1197,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "反弹·v<石头人",
     powerMax = 100
   },
@@ -1275,7 +1254,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "葫芦娃高血量无霸体",
     powerMax = 100
   },
@@ -1333,7 +1311,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "葫芦娃高霸体",
     powerMax = 100
   },
@@ -1404,7 +1381,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "白龙boss",
     powerMax = 100
   },
@@ -1463,7 +1439,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "只会投弹的投弹人",
     powerMax = 100
   },
@@ -1516,7 +1491,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "光之巨人迪迦空模型",
     powerMax = 100
   },
@@ -1592,7 +1566,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "新生之形",
     powerMax = 100
   },
@@ -1642,7 +1615,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "隐形怪",
     powerMax = 100
   },
@@ -1692,7 +1664,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "爸爸防护罩怪",
     powerMax = 100
   },
@@ -1781,7 +1752,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "红技测试突刺怪",
     powerMax = 100
   },
@@ -1867,7 +1837,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "完美闪避测试怪",
     powerMax = 100
   },
@@ -1966,8 +1935,66 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者-高血量",
+    powerMax = 100
+  },
+  [201064] = {
+    AttribId = 9999999,
+    BodyRadius = 0.5,
+    BoneShakeRatio = {
+      0.3,
+      0.3,
+      0.3
+    },
+    BornMagic = {
+      "character.monster.201064",
+      399931,
+      399932,
+      399933
+    },
+    CanHitBackOnStun = true,
+    CanNotHitFly = true,
+    CollisionPriority = 5,
+    DeadEffect = {},
+    DeadEffectRotation = 0,
+    DefaultSAAtkLevel = 25,
+    DefaultSADefLevel = 999,
+    EnergyLimited = 5,
+    ExSkillEnergyMax = 100,
+    ForceRecoverToughTime = 3,
+    ForceRemoveTime = 10,
+    HitBackRatio = {
+      0,
+      0,
+      0
+    },
+    HitDownTime = 0.2,
+    IsHitOnCollidePos = 0,
+    Kind = 2,
+    LockVelocity = 2,
+    MissileScale = 0,
+    ModelId = "T3001003a",
+    ModelScale = 1,
+    NpcId = 201064,
+    OutFightRecoverToughSpeed = 1000,
+    OutFightRecoverToughTime = 60,
+    PlayCommonBeHit = 1,
+    PromotedId = 1,
+    Protect = 100,
+    Rebound = {0.7, 0.3},
+    RobotBornMagic = {0},
+    ShowSmallHpType = 0,
+    Speed = {
+      9,
+      9,
+      -10,
+      7
+    },
+    SpeedBuffer = 0,
+    SuperArmorBreakTime = 8,
+    TimeOfStunState = 0,
+    TriggerBeHit = true,
+    name = "技能位移测试怪",
     powerMax = 100
   },
   [201066] = {
@@ -1987,13 +2014,6 @@ return {
     DeadEffectRotation = 1,
     DefaultSAAtkLevel = 2,
     DefaultSADefLevel = 99,
-    ElementWeakList = {
-      2,
-      3,
-      4,
-      5,
-      6
-    },
     EnergyLimited = 5,
     ExSkillEnergyMax = 100,
     ForceRecoverToughTime = 10,
@@ -2076,7 +2096,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "木桩怪",
     powerMax = 100
   },
@@ -2097,13 +2116,6 @@ return {
     DeadEffectRotation = 1,
     DefaultSAAtkLevel = 2,
     DefaultSADefLevel = 1,
-    ElementWeakList = {
-      2,
-      3,
-      4,
-      5,
-      6
-    },
     EnergyLimited = 5,
     ExSkillEnergyMax = 100,
     ForceRecoverToughTime = 10,
@@ -2181,7 +2193,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "木桩怪",
     powerMax = 100
   },
@@ -2279,7 +2290,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "部位单位测试怪",
     powerMax = 100
   },
@@ -2377,7 +2387,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "打桩怪",
     powerMax = 100
   },
@@ -2442,7 +2451,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "萨尔维斯",
     powerMax = 100
   },
@@ -2491,7 +2499,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "虚弱长生军(IDLE)",
     powerMax = 100
   },
@@ -2541,7 +2548,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "光之巨人迪迦空模型左手",
     powerMax = 100
   },
@@ -2591,7 +2597,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "光之巨人迪迦空模型右手",
     powerMax = 100
   },
@@ -2638,7 +2643,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "障碍物",
     powerMax = 100
   },
@@ -2696,7 +2700,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "馆长权限-定时虫卵",
     powerMax = 100
   },
@@ -2758,7 +2761,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第三章困难关时空切换",
     powerMax = 100
   },
@@ -2808,8 +2810,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltCloseUp = 1001904,
-    UltWorldFreezeTime = 4.3,
     name = "Zero",
     powerMax = 100
   },
@@ -2856,7 +2856,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "Hero",
     powerMax = 100
   },
@@ -2903,7 +2902,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "道格拉斯",
     powerMax = 100
   },
@@ -2958,8 +2956,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltCloseUp = 1004114,
-    UltWorldFreezeTime = 3.37,
     name = "薪",
     powerMax = 100
   },
@@ -3006,7 +3002,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "冈斯特",
     powerMax = 100
   },
@@ -3053,7 +3048,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "Daifu",
     powerMax = 100
   },
@@ -3099,7 +3093,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "Hero7",
     powerMax = 100
   },
@@ -3155,7 +3148,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3.25,
     name = "伊蕾什安",
     powerMax = 100
   },
@@ -3209,8 +3201,6 @@ return {
     SuperArmorBreakTime = 7,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltCloseUp = 1009908,
-    UltWorldFreezeTime = 6.97,
     name = "铂鸢",
     powerMax = 100
   },
@@ -3262,7 +3252,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 2.43,
     name = "阿斯蒂",
     powerMax = 100
   },
@@ -3314,8 +3303,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltCloseUp = 1011194,
-    UltWorldFreezeTime = 4,
     name = "小灯",
     powerMax = 300
   },
@@ -3369,7 +3356,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3.85,
     name = "青",
     powerMax = 100
   },
@@ -3421,7 +3407,6 @@ return {
     SuperArmorBreakTime = 7,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "赫菲",
     powerMax = 100
   },
@@ -3469,8 +3454,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltCloseUp = 1014194,
-    UltWorldFreezeTime = 4,
     name = "琴心剑",
     powerMax = 300
   },
@@ -3523,8 +3506,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltCloseUp = 1015100,
-    UltWorldFreezeTime = 3.3,
     name = "沙玛什",
     powerMax = 300
   },
@@ -3577,7 +3558,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3.15,
     name = "薇奥拉",
     powerMax = 100
   },
@@ -3629,8 +3609,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltCloseUp = 1017100,
-    UltWorldFreezeTime = 3.67,
     name = "南娜",
     powerMax = 300
   },
@@ -3684,7 +3662,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 5.8,
     name = "恩基",
     powerMax = 100
   },
@@ -3743,8 +3720,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltCloseUp = 1019100,
-    UltWorldFreezeTime = 5.86,
     name = "宁莎",
     powerMax = 100
   },
@@ -3796,8 +3771,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltCloseUp = 1020100,
-    UltWorldFreezeTime = 5.4,
     name = "无实",
     powerMax = 300
   },
@@ -3849,7 +3822,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 4.13,
     name = "阿紫",
     powerMax = 100
   },
@@ -3898,7 +3870,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "黎蚩",
     powerMax = 100
   },
@@ -3950,8 +3921,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltCloseUp = 1023100,
-    UltWorldFreezeTime = 5.4,
     name = "姬夏",
     powerMax = 300
   },
@@ -4007,8 +3976,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltCloseUp = 1024100,
-    UltWorldFreezeTime = 5.4,
     name = "郁离",
     powerMax = 300
   },
@@ -4063,8 +4030,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltCloseUp = 1004114,
-    UltWorldFreezeTime = 3.37,
     name = "巴拉莱卡",
     powerMax = 100
   },
@@ -4117,7 +4082,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 5.4,
     name = "菲娜米娜",
     powerMax = 300
   },
@@ -4155,7 +4119,7 @@ return {
     Rebound = {0.7, 0.3},
     RobotBornMagic = {0},
     ShowSmallHpType = 0,
-    SpBarPointNum = 2,
+    SpBarPointNum = 0,
     Speed = {
       1,
       2,
@@ -4166,7 +4130,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3.15,
     name = "金缕",
     powerMax = 100
   },
@@ -4219,7 +4182,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 5.4,
     name = "塞西莉娅",
     powerMax = 300
   },
@@ -4276,8 +4238,6 @@ return {
     SuperArmorBreakTime = 7,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltCloseUp = 1009908,
-    UltWorldFreezeTime = 6.97,
     name = "神.铂鸢",
     powerMax = 100
   },
@@ -4290,7 +4250,6 @@ return {
     CanHitBackOnStun = true,
     CanNotHitFly = false,
     CollisionPriority = 2,
-    CounterSound = 1016134,
     DeadEffect = {},
     DeadEffectRotation = 0,
     DefaultSAAtkLevel = 10,
@@ -4325,9 +4284,8 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3.15,
     name = "旃檀",
-    powerMax = 100
+    powerMax = 200
   },
   [1001099] = {
     AttribId = 1012110,
@@ -4377,7 +4335,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "机器人",
     powerMax = 100
   },
@@ -4424,7 +4381,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "通用技能工具人",
     powerMax = 100
   },
@@ -4475,7 +4431,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "神.铂鸢石碑",
     powerMax = 100
   },
@@ -4527,7 +4482,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "God",
     powerMax = 100
   },
@@ -4590,7 +4544,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "地刺",
     powerMax = 100
   },
@@ -4650,7 +4603,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "激光",
     powerMax = 100
   },
@@ -4709,7 +4661,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "炸弹",
     powerMax = 100
   },
@@ -4770,7 +4721,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "火球",
     powerMax = 100
   },
@@ -4831,7 +4781,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "散射火球",
     powerMax = 100
   },
@@ -4886,7 +4835,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "蓄力重拳",
     powerMax = 100
   },
@@ -4942,7 +4890,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "略有问题的地刺",
     powerMax = 100
   },
@@ -4997,7 +4944,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "辐射炸弹",
     powerMax = 100
   },
@@ -5052,7 +4998,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "毒液炸弹",
     powerMax = 100
   },
@@ -5107,7 +5052,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "滚动漂移炸弹",
     powerMax = 100
   },
@@ -5162,7 +5106,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "滚动震爆弹",
     powerMax = 100
   },
@@ -5215,7 +5158,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "障碍物",
     powerMax = 100
   },
@@ -5273,7 +5215,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "召唤器",
     powerMax = 100
   },
@@ -5329,7 +5270,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "波纹击退球",
     powerMax = 100
   },
@@ -5384,7 +5324,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "小范围伤害炸弹",
     powerMax = 100
   },
@@ -5441,7 +5380,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "激光神之左手",
     powerMax = 100
   },
@@ -5512,7 +5450,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "射箭机关",
     powerMax = 100
   },
@@ -5583,7 +5520,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "射箭机关",
     powerMax = 100
   },
@@ -5654,7 +5590,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "射箭机关",
     powerMax = 100
   },
@@ -5725,7 +5660,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "射箭机关",
     powerMax = 100
   },
@@ -5796,7 +5730,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "射箭机关",
     powerMax = 100
   },
@@ -5853,7 +5786,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "地雷",
     powerMax = 100
   },
@@ -5910,7 +5842,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "神之左手",
     powerMax = 100
   },
@@ -5968,7 +5899,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "透明无逻辑木桩",
     powerMax = 100
   },
@@ -6024,7 +5954,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "八方大喷菇",
     powerMax = 100
   },
@@ -6080,7 +6009,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "友军浮游炮",
     powerMax = 100
   },
@@ -6148,7 +6076,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "躲火球",
     powerMax = 100
   },
@@ -6200,7 +6127,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "TPS普通近战",
     powerMax = 100
   },
@@ -6269,7 +6195,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "光屏怪",
     powerMax = 100
   },
@@ -6321,7 +6246,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "TPS高速低血怪",
     powerMax = 100
   },
@@ -6373,7 +6297,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "TPS低速厚血怪",
     powerMax = 100
   },
@@ -6429,7 +6352,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "倒转地刺Trap1",
     powerMax = 100
   },
@@ -6481,7 +6403,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "斯库拉A",
     powerMax = 100
   },
@@ -6533,7 +6454,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "斯库拉B",
     powerMax = 100
   },
@@ -6585,7 +6505,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "斯库拉C",
     powerMax = 100
   },
@@ -6638,7 +6557,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "增生物",
     powerMax = 100
   },
@@ -6690,7 +6608,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "增生物关卡技能载体",
     powerMax = 100
   },
@@ -6748,7 +6665,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "维修小手",
     powerMax = 100
   },
@@ -6800,7 +6716,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "时停球",
     powerMax = 100
   },
@@ -6862,7 +6777,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "喷灌装置",
     powerMax = 100
   },
@@ -6914,7 +6828,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "乾关卡技能载体",
     powerMax = 100
   },
@@ -6967,7 +6880,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "技能",
     powerMax = 100
   },
@@ -7023,7 +6935,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "泡泡",
     powerMax = 100
   },
@@ -7077,7 +6988,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "激光炮",
     powerMax = 100
   },
@@ -7130,7 +7040,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "散射炮",
     powerMax = 100
   },
@@ -7183,7 +7092,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "散射炮",
     powerMax = 100
   },
@@ -7240,7 +7148,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "乾解救npc",
     powerMax = 100
   },
@@ -7302,7 +7209,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "喷灌装置",
     powerMax = 100
   },
@@ -7364,7 +7270,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "喷灌装置",
     powerMax = 100
   },
@@ -7426,7 +7331,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "喷灌装置",
     powerMax = 100
   },
@@ -7488,7 +7392,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "喷灌装置",
     powerMax = 100
   },
@@ -7541,7 +7444,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "一次性增生物",
     powerMax = 100
   },
@@ -7599,7 +7501,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "斥力球-推推",
     powerMax = 100
   },
@@ -7659,7 +7560,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "引力球",
     powerMax = 100
   },
@@ -7719,7 +7619,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "转换球",
     powerMax = 100
   },
@@ -7778,7 +7677,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "无实诡雷刀",
     powerMax = 100
   },
@@ -7835,7 +7733,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "闪灵照相机",
     powerMax = 100
   },
@@ -7892,7 +7789,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第一章支线_残像",
     powerMax = 100
   },
@@ -7949,7 +7845,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "拂雾青灯",
     powerMax = 100
   },
@@ -8010,7 +7905,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = false,
-    UltWorldFreezeTime = 3,
     name = "青化雾",
     powerMax = 100
   },
@@ -8068,7 +7962,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "虫卵小",
     powerMax = 100
   },
@@ -8126,7 +8019,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "虫卵大",
     powerMax = 100
   },
@@ -8183,7 +8075,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "虫卵小（不收缩）",
     powerMax = 100
   },
@@ -8240,7 +8131,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "虫卵大（不收缩）",
     powerMax = 100
   },
@@ -8301,7 +8191,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = false,
-    UltWorldFreezeTime = 3,
     name = "浓缩青化雾",
     powerMax = 100
   },
@@ -8359,7 +8248,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "大青灯",
     powerMax = 100
   },
@@ -8416,7 +8304,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "镇守青灯",
     powerMax = 100
   },
@@ -8477,7 +8364,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "栈道落石",
     powerMax = 100
   },
@@ -8538,7 +8424,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "栈道大落石",
     powerMax = 100
   },
@@ -8596,7 +8481,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第六章-压力板重物",
     powerMax = 100
   },
@@ -8657,7 +8541,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = false,
-    UltWorldFreezeTime = 3,
     name = "第七章地宫—一次性浓缩青化雾",
     powerMax = 100
   },
@@ -8715,7 +8598,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第七章地宫—浓缩青化雾核心",
     powerMax = 100
   },
@@ -8775,7 +8657,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第七章地宫—大晶簇暗",
     powerMax = 100
   },
@@ -8836,7 +8717,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "单个落石",
     powerMax = 100
   },
@@ -8889,7 +8769,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "测试用量子雕塑",
     powerMax = 100
   },
@@ -8949,7 +8828,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "有预警的闪现激光",
     powerMax = 100
   },
@@ -9009,7 +8887,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "旋转激光",
     powerMax = 100
   },
@@ -9067,7 +8944,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "陷阱地鼠",
     powerMax = 100
   },
@@ -9125,7 +9001,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "炸弹地鼠",
     powerMax = 100
   },
@@ -9182,7 +9057,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-能量球-通用",
     powerMax = 100
   },
@@ -9239,7 +9113,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-电网",
     powerMax = 100
   },
@@ -9296,7 +9169,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-目标点-单目标",
     powerMax = 100
   },
@@ -9353,7 +9225,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-传送器R组",
     powerMax = 100
   },
@@ -9416,7 +9287,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "栈道大落石2",
     powerMax = 100
   },
@@ -9475,7 +9345,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "无实诡雷刀(友军版)",
     powerMax = 100
   },
@@ -9533,7 +9402,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "抢运货物_全局脚本",
     powerMax = 100
   },
@@ -9592,7 +9460,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "抢运货物_货物刷新点",
     powerMax = 100
   },
@@ -9649,7 +9516,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "抢运货物_货物_轻",
     powerMax = 100
   },
@@ -9706,7 +9572,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "抢运货物_货物_重",
     powerMax = 100
   },
@@ -9764,7 +9629,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "抢运货物_货物_贵",
     powerMax = 100
   },
@@ -9823,7 +9687,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = false,
-    UltWorldFreezeTime = 3,
     name = "抢运货物_干扰木桩",
     powerMax = 100
   },
@@ -9883,7 +9746,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "抢运货物_道具_时停",
     powerMax = 100
   },
@@ -9943,7 +9805,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "抢运货物_道具_强壮",
     powerMax = 100
   },
@@ -10003,8 +9864,301 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "抢运货物_道具_传送",
+    powerMax = 100
+  },
+  [3001099] = {
+    AttribId = 1012001,
+    BodyRadius = 0.3,
+    BornMagic = {
+      "character.trap.3001099"
+    },
+    CanHitBackOnStun = true,
+    CanNotHitFly = false,
+    CollisionPriority = 5,
+    DeadEffect = {},
+    DeadEffectRotation = 0,
+    DefaultSAAtkLevel = 25,
+    DefaultSADefLevel = 999,
+    EnergyLimited = 5,
+    ExSkillEnergyMax = 100,
+    ForceRecoverToughTime = 3,
+    ForceRemoveTime = 10,
+    HitBackRatio = {
+      0,
+      0,
+      0
+    },
+    HitDownTime = 0.2,
+    IsHitOnCollidePos = 0,
+    Kind = 7,
+    LockVelocity = 0,
+    MissileScale = 0,
+    ModelId = "T3001003",
+    ModelScale = 1,
+    NpcClass = "simple_npc1",
+    NpcId = 3001099,
+    OutFightRecoverToughSpeed = 1000,
+    OutFightRecoverToughTime = 60,
+    PlayCommonBeHit = 1,
+    PromotedId = 1,
+    Protect = 100,
+    Rebound = {0.7, 0.3},
+    RobotBornMagic = {0},
+    ShowSmallHpType = 0,
+    Speed = {
+      1,
+      1,
+      5,
+      7
+    },
+    SpeedBuffer = 0,
+    SuperArmorBreakTime = 8,
+    TimeOfStunState = 0,
+    TriggerBeHit = true,
+    name = "探索声纳",
+    powerMax = 100
+  },
+  [3001100] = {
+    AttribId = 1012001,
+    BodyRadius = 0,
+    BornMagic = {
+      "character.trap.3001100",
+      399931,
+      399932,
+      399969,
+      3001022003,
+      399930
+    },
+    CanHitBackOnStun = true,
+    CanNotHitFly = false,
+    CollisionPriority = 5,
+    DeadEffect = {},
+    DeadEffectRotation = 0,
+    DefaultSAAtkLevel = 25,
+    DefaultSADefLevel = 999,
+    EnergyLimited = 5,
+    ExSkillEnergyMax = 100,
+    ForceRecoverToughTime = 3,
+    ForceRemoveTime = 10,
+    HitBackRatio = {
+      0,
+      0,
+      0
+    },
+    HitDownTime = 0.2,
+    IsHitOnCollidePos = 0,
+    Kind = 5,
+    LockVelocity = 0,
+    MissileScale = 0,
+    ModelId = "T3001003",
+    ModelScale = 1,
+    NpcClass = "simple_npc1",
+    NpcId = 3001100,
+    OutFightRecoverToughSpeed = 1000,
+    OutFightRecoverToughTime = 60,
+    PlayCommonBeHit = 1,
+    PromotedId = 1,
+    Protect = 100,
+    Rebound = {0.7, 0.3},
+    RobotBornMagic = {0},
+    ShowSmallHpType = 0,
+    Speed = {
+      1,
+      1,
+      5,
+      7
+    },
+    SpeedBuffer = 0,
+    SuperArmorBreakTime = 8,
+    TimeOfStunState = 0,
+    TriggerBeHit = true,
+    name = "线索(声纳目标)",
+    powerMax = 100
+  },
+  [3001101] = {
+    AttribId = 1012001,
+    BodyRadius = 0,
+    BornMagic = {
+      "character.trap.3001101",
+      399931,
+      399932,
+      399930,
+      399933,
+      399969,
+      3001022003,
+      300800508
+    },
+    CanHitBackOnStun = true,
+    CanNotHitFly = false,
+    CollisionPriority = 5,
+    DeadEffect = {},
+    DeadEffectRotation = 0,
+    DefaultSAAtkLevel = 25,
+    DefaultSADefLevel = 999,
+    EnergyLimited = 5,
+    ExSkillEnergyMax = 100,
+    ForceRecoverToughTime = 3,
+    ForceRemoveTime = 10,
+    HitBackRatio = {
+      0,
+      0,
+      0
+    },
+    HitDownTime = 0.2,
+    IsHitOnCollidePos = 0,
+    Kind = 5,
+    LockVelocity = 0,
+    MissileScale = 0,
+    ModelId = "T3001003",
+    ModelScale = 1,
+    NpcClass = "simple_npc1",
+    NpcId = 3001101,
+    OutFightRecoverToughSpeed = 1000,
+    OutFightRecoverToughTime = 60,
+    PlayCommonBeHit = 1,
+    PromotedId = 1,
+    Protect = 100,
+    Rebound = {0.7, 0.3},
+    RobotBornMagic = {0},
+    ShowSmallHpType = 0,
+    Speed = {
+      1,
+      1,
+      5,
+      7
+    },
+    SpeedBuffer = 0,
+    SuperArmorBreakTime = 8,
+    TimeOfStunState = 0,
+    TriggerBeHit = true,
+    name = "戍卫找茬-解锁玩家技能",
+    powerMax = 100
+  },
+  [3001102] = {
+    AttribId = 1012001,
+    BodyRadius = 0.3,
+    BornMagic = {
+      "character.trap.3001102",
+      399931,
+      399932,
+      399969,
+      [6] = 399930
+    },
+    CanHitBackOnStun = true,
+    CanNotHitFly = false,
+    CollisionPriority = 5,
+    DeadEffect = {},
+    DeadEffectRotation = 0,
+    DefaultSAAtkLevel = 25,
+    DefaultSADefLevel = 999,
+    EnergyLimited = 5,
+    ExSkillEnergyMax = 100,
+    ForceRecoverToughTime = 3,
+    ForceRemoveTime = 10,
+    HitBackRatio = {
+      0,
+      0,
+      0
+    },
+    HitDownTime = 0.2,
+    IsHitOnCollidePos = 0,
+    Kind = 7,
+    LockVelocity = 0,
+    MissileScale = 0,
+    ModelId = "T3001003",
+    ModelScale = 1,
+    NpcClass = "simple_npc1",
+    NpcId = 3001102,
+    OutFightRecoverToughSpeed = 1000,
+    OutFightRecoverToughTime = 60,
+    PlayCommonBeHit = 1,
+    PromotedId = 1,
+    Protect = 100,
+    Rebound = {0.7, 0.3},
+    RobotBornMagic = {0},
+    ShowSmallHpType = 0,
+    Speed = {
+      1,
+      1,
+      5,
+      7
+    },
+    SpeedBuffer = 0,
+    SuperArmorBreakTime = 8,
+    TimeOfStunState = 0,
+    TriggerBeHit = true,
+    name = "戍卫找茬-指向隐藏戍卫",
+    powerMax = 100
+  },
+  [3001103] = {
+    AttribId = 1002001,
+    BodyRadius = 0.8,
+    BoneShakeRatio = {
+      0.2,
+      0.2,
+      0.2
+    },
+    BornMagic = {
+      "character.trap.3001103",
+      201051010203,
+      3001064001
+    },
+    CanHitBackOnStun = true,
+    CanNotHitFly = true,
+    CollisionPriority = 99,
+    CreateBallAfterDead = {1, 0},
+    DeadEffect = {
+      "Fx_Common_Death"
+    },
+    DeadEffectRotation = 0,
+    DefaultSAAtkLevel = 25,
+    DefaultSADefLevel = 15,
+    EnergyLimited = 5,
+    ExSkillEnergyMax = 100,
+    ForceRecoverToughTime = 10,
+    ForceRemoveTime = 10,
+    HitBackRatio = {
+      0,
+      0,
+      0
+    },
+    HitDownTime = 1.2,
+    HitEffect = {
+      {"Fx_Stone_s", -90},
+      {"Fx_Stone_s", 90},
+      {"Fx_Stone_s", 0},
+      {"Fx_Stone_b", -90},
+      {"Fx_Stone_b", 90},
+      {"Fx_Stone_b", 0}
+    },
+    HitPos = "HitPos",
+    IsHitOnCollidePos = 0,
+    Kind = 2,
+    LockVelocity = 2,
+    MissileScale = 0,
+    ModelId = "M202051",
+    ModelScale = 1.2,
+    NpcId = 3001103,
+    OutFightRecoverToughSpeed = 1000,
+    OutFightRecoverToughTime = 60,
+    PlayCommonBeHit = 1,
+    PromotedId = 1,
+    Protect = 100,
+    Rebound = {0.7, 0.3},
+    RobotBornMagic = {0},
+    ShowSmallHpType = 1,
+    Speed = {
+      0.3,
+      0.3,
+      3,
+      6
+    },
+    SpeedBuffer = 0,
+    SuperArmorBreakTime = 8,
+    TimeOfStunState = 0,
+    TriggerBeHit = true,
+    name = "戍卫找茬-青铜戍卫",
     powerMax = 100
   },
   [3001104] = {
@@ -10055,8 +10209,292 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "乾God",
+    powerMax = 100
+  },
+  [3001105] = {
+    AttribId = 1012001,
+    BodyRadius = 0,
+    BornMagic = {
+      "character.trap.3001100",
+      399931,
+      399932,
+      399969,
+      3001022003,
+      399930
+    },
+    CanHitBackOnStun = true,
+    CanNotHitFly = false,
+    CollisionPriority = 5,
+    DeadEffect = {},
+    DeadEffectRotation = 0,
+    DefaultSAAtkLevel = 25,
+    DefaultSADefLevel = 999,
+    EnergyLimited = 5,
+    ExSkillEnergyMax = 100,
+    ForceRecoverToughTime = 3,
+    ForceRemoveTime = 10,
+    HitBackRatio = {
+      0,
+      0,
+      0
+    },
+    HitDownTime = 0.2,
+    IsHitOnCollidePos = 0,
+    Kind = 5,
+    LockVelocity = 0,
+    MissileScale = 0,
+    ModelId = "T3001003",
+    ModelScale = 1,
+    NpcClass = "simple_npc1",
+    NpcId = 3001105,
+    OutFightRecoverToughSpeed = 1000,
+    OutFightRecoverToughTime = 60,
+    PlayCommonBeHit = 1,
+    PromotedId = 1,
+    Protect = 100,
+    Rebound = {0.7, 0.3},
+    RobotBornMagic = {0},
+    ShowSmallHpType = 0,
+    Speed = {
+      1,
+      1,
+      5,
+      7
+    },
+    SpeedBuffer = 0,
+    SuperArmorBreakTime = 8,
+    TimeOfStunState = 0,
+    TriggerBeHit = true,
+    name = "错误线索(声纳目标)",
+    powerMax = 100
+  },
+  [3001106] = {
+    AttribId = 1012001,
+    BodyRadius = 0,
+    BornMagic = {
+      "character.trap.3001100",
+      399931,
+      399932,
+      399969,
+      3001022003,
+      399930
+    },
+    CanHitBackOnStun = true,
+    CanNotHitFly = false,
+    CollisionPriority = 5,
+    DeadEffect = {},
+    DeadEffectRotation = 0,
+    DefaultSAAtkLevel = 25,
+    DefaultSADefLevel = 999,
+    EnergyLimited = 5,
+    ExSkillEnergyMax = 100,
+    ForceRecoverToughTime = 3,
+    ForceRemoveTime = 10,
+    HitBackRatio = {
+      0,
+      0,
+      0
+    },
+    HitDownTime = 0.2,
+    IsHitOnCollidePos = 0,
+    Kind = 5,
+    LockVelocity = 0,
+    MissileScale = 0,
+    ModelId = "T3001003",
+    ModelScale = 1,
+    NpcClass = "simple_npc1",
+    NpcId = 3001106,
+    OutFightRecoverToughSpeed = 1000,
+    OutFightRecoverToughTime = 60,
+    PlayCommonBeHit = 1,
+    PromotedId = 1,
+    Protect = 100,
+    Rebound = {0.7, 0.3},
+    RobotBornMagic = {0},
+    ShowSmallHpType = 0,
+    Speed = {
+      1,
+      1,
+      5,
+      7
+    },
+    SpeedBuffer = 0,
+    SuperArmorBreakTime = 8,
+    TimeOfStunState = 0,
+    TriggerBeHit = true,
+    name = "隐藏线索M1(声纳目标)",
+    powerMax = 100
+  },
+  [3001107] = {
+    AttribId = 1012001,
+    BodyRadius = 0,
+    BornMagic = {
+      "character.trap.3001100",
+      399931,
+      399932,
+      399969,
+      3001022003,
+      399930
+    },
+    CanHitBackOnStun = true,
+    CanNotHitFly = false,
+    CollisionPriority = 5,
+    DeadEffect = {},
+    DeadEffectRotation = 0,
+    DefaultSAAtkLevel = 25,
+    DefaultSADefLevel = 999,
+    EnergyLimited = 5,
+    ExSkillEnergyMax = 100,
+    ForceRecoverToughTime = 3,
+    ForceRemoveTime = 10,
+    HitBackRatio = {
+      0,
+      0,
+      0
+    },
+    HitDownTime = 0.2,
+    IsHitOnCollidePos = 0,
+    Kind = 5,
+    LockVelocity = 0,
+    MissileScale = 0,
+    ModelId = "T3001003",
+    ModelScale = 1,
+    NpcClass = "simple_npc1",
+    NpcId = 3001107,
+    OutFightRecoverToughSpeed = 1000,
+    OutFightRecoverToughTime = 60,
+    PlayCommonBeHit = 1,
+    PromotedId = 1,
+    Protect = 100,
+    Rebound = {0.7, 0.3},
+    RobotBornMagic = {0},
+    ShowSmallHpType = 0,
+    Speed = {
+      1,
+      1,
+      5,
+      7
+    },
+    SpeedBuffer = 0,
+    SuperArmorBreakTime = 8,
+    TimeOfStunState = 0,
+    TriggerBeHit = true,
+    name = "隐藏线索M2(声纳目标)",
+    powerMax = 100
+  },
+  [3001108] = {
+    AttribId = 1012001,
+    BodyRadius = 0,
+    BornMagic = {
+      "character.trap.3001100",
+      399931,
+      399932,
+      399969,
+      3001022003,
+      399930
+    },
+    CanHitBackOnStun = true,
+    CanNotHitFly = false,
+    CollisionPriority = 5,
+    DeadEffect = {},
+    DeadEffectRotation = 0,
+    DefaultSAAtkLevel = 25,
+    DefaultSADefLevel = 999,
+    EnergyLimited = 5,
+    ExSkillEnergyMax = 100,
+    ForceRecoverToughTime = 3,
+    ForceRemoveTime = 10,
+    HitBackRatio = {
+      0,
+      0,
+      0
+    },
+    HitDownTime = 0.2,
+    IsHitOnCollidePos = 0,
+    Kind = 5,
+    LockVelocity = 0,
+    MissileScale = 0,
+    ModelId = "T3001003",
+    ModelScale = 1,
+    NpcClass = "simple_npc1",
+    NpcId = 3001108,
+    OutFightRecoverToughSpeed = 1000,
+    OutFightRecoverToughTime = 60,
+    PlayCommonBeHit = 1,
+    PromotedId = 1,
+    Protect = 100,
+    Rebound = {0.7, 0.3},
+    RobotBornMagic = {0},
+    ShowSmallHpType = 0,
+    Speed = {
+      1,
+      1,
+      5,
+      7
+    },
+    SpeedBuffer = 0,
+    SuperArmorBreakTime = 8,
+    TimeOfStunState = 0,
+    TriggerBeHit = true,
+    name = "隐藏线索M3(声纳目标)",
+    powerMax = 100
+  },
+  [3001109] = {
+    AttribId = 1012001,
+    BodyRadius = 0,
+    BornMagic = {
+      "character.trap.3001100",
+      399931,
+      399932,
+      399969,
+      3001022003,
+      399930
+    },
+    CanHitBackOnStun = true,
+    CanNotHitFly = false,
+    CollisionPriority = 5,
+    DeadEffect = {},
+    DeadEffectRotation = 0,
+    DefaultSAAtkLevel = 25,
+    DefaultSADefLevel = 999,
+    EnergyLimited = 5,
+    ExSkillEnergyMax = 100,
+    ForceRecoverToughTime = 3,
+    ForceRemoveTime = 10,
+    HitBackRatio = {
+      0,
+      0,
+      0
+    },
+    HitDownTime = 0.2,
+    IsHitOnCollidePos = 0,
+    Kind = 5,
+    LockVelocity = 0,
+    MissileScale = 0,
+    ModelId = "T3001003",
+    ModelScale = 1,
+    NpcClass = "simple_npc1",
+    NpcId = 3001109,
+    OutFightRecoverToughSpeed = 1000,
+    OutFightRecoverToughTime = 60,
+    PlayCommonBeHit = 1,
+    PromotedId = 1,
+    Protect = 100,
+    Rebound = {0.7, 0.3},
+    RobotBornMagic = {0},
+    ShowSmallHpType = 0,
+    Speed = {
+      1,
+      1,
+      5,
+      7
+    },
+    SpeedBuffer = 0,
+    SuperArmorBreakTime = 8,
+    TimeOfStunState = 0,
+    TriggerBeHit = true,
+    name = "隐藏线索M4(声纳目标)",
     powerMax = 100
   },
   [3002001] = {
@@ -10113,7 +10551,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "挑战之环-炸弹",
     powerMax = 100
   },
@@ -10172,7 +10609,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "挑战之环-时停",
     powerMax = 100
   },
@@ -10234,7 +10670,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "挑战之环-时停2",
     powerMax = 100
   },
@@ -10292,7 +10727,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "挑战之环-追踪可破坏炮台",
     powerMax = 100
   },
@@ -10350,7 +10784,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "挑战之环-自转射台",
     powerMax = 100
   },
@@ -10409,7 +10842,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "挑战之环-聚怪",
     powerMax = 100
   },
@@ -10462,7 +10894,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "挑战之环-自转弹幕发射",
     powerMax = 100
   },
@@ -10515,7 +10946,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "挑战之环-激光小车",
     powerMax = 100
   },
@@ -10568,7 +10998,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "挑战之环-上护盾",
     powerMax = 100
   },
@@ -10621,7 +11050,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "挑战之环-ygygwdpy",
     powerMax = 100
   },
@@ -10685,7 +11113,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "挑战之环-金币关怪物",
     powerMax = 100
   },
@@ -10750,7 +11177,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "挑战之环-金币关怪物2",
     powerMax = 100
   },
@@ -10813,7 +11239,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "持续激光",
     powerMax = 100
   },
@@ -10866,7 +11291,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "穷举模式-怪物词条专用子弹",
     powerMax = 100
   },
@@ -10928,7 +11352,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）弹幕炮台-纯躲避",
     powerMax = 100
   },
@@ -10990,7 +11413,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）弹幕炮台-带战斗",
     powerMax = 100
   },
@@ -11048,7 +11470,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）方块危机核心",
     powerMax = 100
   },
@@ -11106,7 +11527,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）地刺浪潮-小（不主动触发）",
     powerMax = 100
   },
@@ -11167,7 +11587,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）地刺浪潮-小（常驻触发）",
     powerMax = 100
   },
@@ -11229,7 +11648,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）地刺浪潮-大",
     powerMax = 100
   },
@@ -11292,7 +11710,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）旋转激光",
     powerMax = 100
   },
@@ -11350,7 +11767,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）靶子炮台",
     powerMax = 100
   },
@@ -11410,7 +11826,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）地鼠靶子",
     powerMax = 100
   },
@@ -11468,7 +11883,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）地鼠核心",
     powerMax = 100
   },
@@ -11527,7 +11941,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）棒球炸弹_基础",
     powerMax = 100
   },
@@ -11589,7 +12002,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）炸弹生成器",
     powerMax = 100
   },
@@ -11647,7 +12059,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）金币怪核心",
     powerMax = 100
   },
@@ -11711,7 +12122,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）金币怪-伪随机",
     powerMax = 100
   },
@@ -11769,7 +12179,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）黄金矿工刷怪脚本",
     powerMax = 100
   },
@@ -11828,7 +12237,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）棒球炸弹_大号",
     powerMax = 100
   },
@@ -11887,7 +12295,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）棒球炸弹_加速",
     powerMax = 100
   },
@@ -11951,7 +12358,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）乱跑怪物_基础",
     powerMax = 100
   },
@@ -12016,7 +12422,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）乱跑怪物_大号",
     powerMax = 100
   },
@@ -12081,7 +12486,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）乱跑怪物_缩小",
     powerMax = 100
   },
@@ -12142,7 +12546,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）棒球炸弹_大号道具",
     powerMax = 100
   },
@@ -12203,7 +12606,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）棒球炸弹_加速道具",
     powerMax = 100
   },
@@ -12261,7 +12663,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）抓鸟_怪物召唤",
     powerMax = 100
   },
@@ -12325,7 +12726,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）抓鸟_鸟",
     powerMax = 100
   },
@@ -12383,7 +12783,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）抓鸟_蚊子",
     powerMax = 100
   },
@@ -12396,7 +12795,9 @@ return {
       0.3
     },
     BornMagic = {
-      "character.trap.3002056"
+      "character.trap.3002056",
+      30020560101,
+      30020620101
     },
     CanHitBackOnStun = true,
     CanNotHitFly = false,
@@ -12419,7 +12820,7 @@ return {
     Kind = 5,
     LockVelocity = 0,
     MissileScale = 0,
-    ModelId = "T3001021",
+    ModelId = "T3001023",
     ModelScale = 1,
     NpcId = 3002056,
     OutFightRecoverToughSpeed = 99,
@@ -12431,16 +12832,15 @@ return {
     RobotBornMagic = {0},
     ShowSmallHpType = 0,
     Speed = {
-      1,
-      1,
-      5,
-      7
+      0,
+      0,
+      0,
+      0
     },
     SpeedBuffer = 0,
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）抓鸟_加速5秒",
     powerMax = 100
   },
@@ -12453,7 +12853,9 @@ return {
       0.3
     },
     BornMagic = {
-      "character.trap.3002056"
+      "character.trap.3002056",
+      30020570101,
+      30020620101
     },
     CanHitBackOnStun = true,
     CanNotHitFly = false,
@@ -12488,16 +12890,15 @@ return {
     RobotBornMagic = {0},
     ShowSmallHpType = 0,
     Speed = {
-      1,
-      1,
-      5,
-      7
+      0,
+      0,
+      0,
+      0
     },
     SpeedBuffer = 0,
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）抓鸟_吸附",
     powerMax = 100
   },
@@ -12555,13 +12956,12 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）跳舞机_召唤",
     powerMax = 100
   },
   [3002059] = {
     AttribId = 1002001,
-    BodyRadius = 0.8,
+    BodyRadius = 0.5,
     BoneShakeRatio = {
       0.2,
       0.2,
@@ -12614,7 +13014,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）跳舞机_大傀儡",
     powerMax = 100
   },
@@ -12690,7 +13089,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）跳舞机_小傀儡",
     powerMax = 100
   },
@@ -12717,8 +13115,8 @@ return {
     Kind = 5,
     LockVelocity = 0,
     MissileScale = 0,
-    ModelId = "T3001003",
-    ModelScale = 1,
+    ModelId = "T3001038",
+    ModelScale = 0.8,
     NpcClass = "simple_npc1",
     NpcId = 3002061,
     OutFightRecoverToughSpeed = 99,
@@ -12739,7 +13137,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）跳舞机_红踏板",
     powerMax = 100
   },
@@ -12766,8 +13163,8 @@ return {
     Kind = 5,
     LockVelocity = 0,
     MissileScale = 0,
-    ModelId = "T3001003",
-    ModelScale = 1,
+    ModelId = "T3001038",
+    ModelScale = 0.8,
     NpcClass = "simple_npc1",
     NpcId = 3002062,
     OutFightRecoverToughSpeed = 99,
@@ -12788,7 +13185,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）跳舞机_蓝踏板",
     powerMax = 100
   },
@@ -12815,8 +13211,8 @@ return {
     Kind = 5,
     LockVelocity = 0,
     MissileScale = 0,
-    ModelId = "T3001003",
-    ModelScale = 1,
+    ModelId = "T3001038",
+    ModelScale = 0.8,
     NpcClass = "simple_npc1",
     NpcId = 3002063,
     OutFightRecoverToughSpeed = 99,
@@ -12837,7 +13233,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）跳舞机_绿踏板",
     powerMax = 100
   },
@@ -12864,8 +13259,8 @@ return {
     Kind = 5,
     LockVelocity = 0,
     MissileScale = 0,
-    ModelId = "T3001003",
-    ModelScale = 1,
+    ModelId = "T3001037",
+    ModelScale = 1.5,
     NpcClass = "simple_npc1",
     NpcId = 3002064,
     OutFightRecoverToughSpeed = 99,
@@ -12886,7 +13281,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）跳舞机_鼓",
     powerMax = 100
   },
@@ -12913,7 +13307,7 @@ return {
     Kind = 5,
     LockVelocity = 0,
     MissileScale = 0,
-    ModelId = "T3001003",
+    ModelId = "T3001036",
     ModelScale = 1,
     NpcClass = "simple_npc1",
     NpcId = 3002065,
@@ -12935,7 +13329,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）跳舞机_磬",
     powerMax = 100
   },
@@ -12962,7 +13355,7 @@ return {
     Kind = 5,
     LockVelocity = 0,
     MissileScale = 0,
-    ModelId = "T3001003",
+    ModelId = "T3001035",
     ModelScale = 1,
     NpcClass = "simple_npc1",
     NpcId = 3002066,
@@ -12984,7 +13377,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）跳舞机_钟",
     powerMax = 100
   },
@@ -12992,15 +13384,17 @@ return {
     AttribId = 1002015,
     BodyRadius = 0.5,
     BornMagic = {
-      "character.trap.3002056"
+      "character.trap.3002056",
+      30020610101,
+      30020620101
     },
     CanHitBackOnStun = true,
     CanNotHitFly = false,
-    CollisionPriority = 999,
+    CollisionPriority = 1,
     DeadEffect = {},
     DeadEffectRotation = 0,
-    DefaultSAAtkLevel = 1,
-    DefaultSADefLevel = 1,
+    DefaultSAAtkLevel = 25,
+    DefaultSADefLevel = 999,
     EnergyLimited = 5,
     ExSkillEnergyMax = 100,
     ForceRecoverToughTime = 99,
@@ -13010,9 +13404,8 @@ return {
     Kind = 5,
     LockVelocity = 0,
     MissileScale = 0,
-    ModelId = "T3001004",
+    ModelId = "T3001023",
     ModelScale = 1,
-    NpcClass = "simple_npc1",
     NpcId = 3002067,
     OutFightRecoverToughSpeed = 99,
     OutFightRecoverToughTime = 99,
@@ -13032,7 +13425,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）跳舞机道具_无CD",
     powerMax = 100
   },
@@ -13040,15 +13432,17 @@ return {
     AttribId = 1002015,
     BodyRadius = 0.5,
     BornMagic = {
-      "character.trap.3002056"
+      "character.trap.3002056",
+      30020610201,
+      30020620101
     },
     CanHitBackOnStun = true,
     CanNotHitFly = false,
-    CollisionPriority = 999,
+    CollisionPriority = 1,
     DeadEffect = {},
     DeadEffectRotation = 0,
-    DefaultSAAtkLevel = 1,
-    DefaultSADefLevel = 1,
+    DefaultSAAtkLevel = 25,
+    DefaultSADefLevel = 999,
     EnergyLimited = 5,
     ExSkillEnergyMax = 100,
     ForceRecoverToughTime = 99,
@@ -13058,9 +13452,8 @@ return {
     Kind = 5,
     LockVelocity = 0,
     MissileScale = 0,
-    ModelId = "T3001018",
+    ModelId = "T3001023",
     ModelScale = 1,
-    NpcClass = "simple_npc1",
     NpcId = 3002068,
     OutFightRecoverToughSpeed = 99,
     OutFightRecoverToughTime = 99,
@@ -13080,7 +13473,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）跳舞机道具_全体响应",
     powerMax = 100
   },
@@ -13098,7 +13490,7 @@ return {
     },
     DeadEffectRotation = 1,
     DefaultSAAtkLevel = 25,
-    DefaultSADefLevel = 999,
+    DefaultSADefLevel = 998,
     EnergyLimited = 5,
     ExSkillEnergyMax = 100,
     ForceRecoverToughTime = 3,
@@ -13139,7 +13531,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）水果忍者_小牛",
     powerMax = 100
   },
@@ -13198,7 +13589,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）水果忍者_旋转龟",
     powerMax = 100
   },
@@ -13255,7 +13645,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（小游戏）水果忍者_陷阱",
     powerMax = 100
   },
@@ -13308,7 +13697,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "尾随玩法怪",
     powerMax = 100
   },
@@ -13360,7 +13748,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "尾随玩法怪（表演）1",
     powerMax = 100
   },
@@ -13412,7 +13799,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "尾随玩法怪（表演）2",
     powerMax = 100
   },
@@ -13466,7 +13852,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "潜行模板怪-单向",
     powerMax = 100
   },
@@ -13518,7 +13903,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "提丰与桑丘表演怪",
     powerMax = 100
   },
@@ -13570,7 +13954,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "上下求索阿顿表演怪",
     powerMax = 100
   },
@@ -13622,7 +14005,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "TowerSkill1",
     powerMax = 100
   },
@@ -13674,7 +14056,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "TowerSkill2",
     powerMax = 100
   },
@@ -13726,7 +14107,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "TowerSkill3",
     powerMax = 100
   },
@@ -13779,7 +14159,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "(支线)探路者",
     powerMax = 100
   },
@@ -13836,7 +14215,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（支线）机关大师激光",
     powerMax = 100
   },
@@ -13893,7 +14271,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（支线）机关大师旋转激光",
     powerMax = 100
   },
@@ -13950,7 +14327,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（支线）机关大师激光",
     powerMax = 100
   },
@@ -14007,7 +14383,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（支线）机关大师小旋激光",
     powerMax = 100
   },
@@ -14070,7 +14445,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（支线）战斗长生军",
     powerMax = 100
   },
@@ -14143,7 +14517,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（支线）引路长生军",
     powerMax = 100
   },
@@ -14216,7 +14589,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（支线）引路疲惫长生军",
     powerMax = 100
   },
@@ -14279,7 +14651,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外-薪）爆破专家",
     powerMax = 100
   },
@@ -14336,7 +14707,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "飞簇射击（第一人称）",
     powerMax = 100
   },
@@ -14395,7 +14765,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "劫匪（阿紫番外）",
     powerMax = 100
   },
@@ -14453,7 +14822,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "木桩机关（阿紫番外）",
     powerMax = 100
   },
@@ -14511,7 +14879,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "移动标靶（阿紫番外）",
     powerMax = 100
   },
@@ -14568,7 +14935,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外-暝）机关核心",
     powerMax = 100
   },
@@ -14627,7 +14993,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外-暝）表演青灯",
     powerMax = 100
   },
@@ -14682,7 +15047,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "刺无法收回的地刺",
     powerMax = 100
   },
@@ -14734,7 +15098,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "挑战之环开启装置",
     powerMax = 100
   },
@@ -14791,7 +15154,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外-南娜）自动节奏炮台",
     powerMax = 100
   },
@@ -14848,7 +15210,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外-南娜）平移瞄准炮台",
     powerMax = 100
   },
@@ -14905,7 +15266,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外-南娜）旋转瞄准炮台",
     powerMax = 100
   },
@@ -14963,7 +15323,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = false,
-    UltWorldFreezeTime = 3,
     name = "（番外-无实）干扰木桩（六向）",
     powerMax = 100
   },
@@ -15021,7 +15380,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = false,
-    UltWorldFreezeTime = 3,
     name = "（番外-无实）干扰木桩（单向）",
     powerMax = 100
   },
@@ -15079,7 +15437,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = false,
-    UltWorldFreezeTime = 3,
     name = "（番外-无实）干扰木桩（双向-正反）",
     powerMax = 100
   },
@@ -15137,7 +15494,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = false,
-    UltWorldFreezeTime = 3,
     name = "（番外-无实）干扰木桩（三向-正面）",
     powerMax = 100
   },
@@ -15194,7 +15550,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = false,
-    UltWorldFreezeTime = 3,
     name = "（番外-无实）阻挡木箱",
     powerMax = 100
   },
@@ -15252,7 +15607,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外-无实）特殊木桩",
     powerMax = 100
   },
@@ -15312,7 +15666,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "圣遗物护盾套",
     powerMax = 100
   },
@@ -15375,7 +15728,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "扫雷肉鸽",
     powerMax = 100
   },
@@ -15435,7 +15787,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（支线）论心不论迹-钓鱼佬",
     powerMax = 100
   },
@@ -15502,7 +15853,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（支线）藏锋-木桩（免疫元素反应）",
     powerMax = 100
   },
@@ -15566,7 +15916,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = false,
-    UltWorldFreezeTime = 3,
     name = "（支线）327-白雾（没有冻结）",
     powerMax = 100
   },
@@ -15625,7 +15974,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（支线）烟花守卫",
     powerMax = 100
   },
@@ -15683,7 +16031,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（支线）钓鱼佬",
     powerMax = 100
   },
@@ -15741,7 +16088,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（支线）钓鱼佬_折返版",
     powerMax = 100
   },
@@ -15798,7 +16144,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外-郁离）越跑越快",
     powerMax = 100
   },
@@ -15858,7 +16203,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "郁离2傀儡师傅",
     powerMax = 100
   },
@@ -15917,7 +16261,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外-郁离）路人1",
     powerMax = 100
   },
@@ -15976,7 +16319,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外-郁离）路人2",
     powerMax = 100
   },
@@ -16035,7 +16377,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外-郁离）路人3",
     powerMax = 100
   },
@@ -16094,7 +16435,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外-郁离）路人4",
     powerMax = 100
   },
@@ -16153,7 +16493,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外-郁离）路人移动1",
     powerMax = 100
   },
@@ -16212,7 +16551,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外-郁离）路人移动2",
     powerMax = 100
   },
@@ -16275,7 +16613,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（支线）直播PK值脚本",
     powerMax = 100
   },
@@ -16335,7 +16672,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外—黎蚩）硬晶簇",
     powerMax = 100
   },
@@ -16393,7 +16729,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外—黎蚩）脆晶簇",
     powerMax = 100
   },
@@ -16451,7 +16786,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（番外—黎蚩）中晶簇",
     powerMax = 100
   },
@@ -16510,7 +16844,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "词条用隐形怪",
     powerMax = 100
   },
@@ -16569,7 +16902,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "词条用隐形怪【护盾】",
     powerMax = 100
   },
@@ -16628,7 +16960,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "词条用隐形怪【控制】",
     powerMax = 100
   },
@@ -16687,7 +17018,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "词条用隐形怪【回血】",
     powerMax = 100
   },
@@ -16746,7 +17076,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "词条用隐形怪【强攻】",
     powerMax = 100
   },
@@ -16805,7 +17134,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "词条用隐形怪【围剿】",
     powerMax = 100
   },
@@ -16864,7 +17192,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "词条用隐形怪【异常】",
     powerMax = 100
   },
@@ -16921,7 +17248,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "时停球",
     powerMax = 100
   },
@@ -16978,7 +17304,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "巨企关卡技能",
     powerMax = 100
   },
@@ -17035,7 +17360,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "铸雷关卡技能",
     powerMax = 100
   },
@@ -17093,7 +17417,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "铸雷炮台",
     powerMax = 100
   },
@@ -17151,7 +17474,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "铸雷旋转激光",
     powerMax = 100
   },
@@ -17215,7 +17537,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "铸雷地刺",
     powerMax = 100
   },
@@ -17272,7 +17593,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "铸雷青灯",
     powerMax = 100
   },
@@ -17329,7 +17649,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）铸雷流派鹤机关",
     powerMax = 100
   },
@@ -17386,7 +17705,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "永夏法阵",
     powerMax = 100
   },
@@ -17436,7 +17754,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "永夏青化水",
     powerMax = 100
   },
@@ -17488,7 +17805,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "神谕飞升",
     powerMax = 100
   },
@@ -17540,7 +17856,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）圣誓流派关卡技能",
     powerMax = 100
   },
@@ -17592,7 +17907,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）999流派关卡技能",
     powerMax = 100
   },
@@ -17644,7 +17958,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "（肉鸽）换热流派关卡技能",
     powerMax = 100
   },
@@ -17703,7 +18016,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "深渊玩法相关专用",
     powerMax = 100
   },
@@ -17752,7 +18064,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "Zero_鸟",
     powerMax = 100
   },
@@ -17796,7 +18107,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "系统NPC",
     powerMax = 100
   },
@@ -17849,7 +18159,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "透明人1",
     powerMax = 300
   },
@@ -17899,7 +18208,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "透明人1",
     powerMax = 300
   },
@@ -17955,7 +18263,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "石像",
     powerMax = 100
   },
@@ -18002,8 +18309,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltCloseUp = 1020100,
-    UltWorldFreezeTime = 5.4,
     name = "傀儡",
     powerMax = 300
   },
@@ -18064,7 +18369,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "关卡物体破坏怪1",
     powerMax = 100
   },
@@ -18125,7 +18429,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "关卡物体破坏怪2",
     powerMax = 100
   },
@@ -18186,7 +18489,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "关卡物体破坏怪3",
     powerMax = 100
   },
@@ -18245,7 +18547,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "提示npc",
     powerMax = 100
   },
@@ -18306,7 +18607,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "关卡物体破坏怪4",
     powerMax = 100
   },
@@ -18367,7 +18667,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "关卡物体破坏怪5",
     powerMax = 100
   },
@@ -18428,7 +18727,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第二章-关卡物体破坏怪1",
     powerMax = 100
   },
@@ -18489,7 +18787,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第二章-关卡物体破坏怪2",
     powerMax = 100
   },
@@ -18546,7 +18843,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第二章-SKL炮",
     powerMax = 100
   },
@@ -18604,7 +18900,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第二章-旋转激光",
     powerMax = 100
   },
@@ -18663,7 +18958,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "cd npc",
     powerMax = 100
   },
@@ -18722,7 +19016,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "cd npc（电源 需要青灯技能开关）",
     powerMax = 100
   },
@@ -18781,7 +19074,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "cd npc（电源 需要青灯技能冻结，任意技能打破冻结）",
     powerMax = 100
   },
@@ -18844,7 +19136,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第二章-塔3关卡物体破坏怪",
     powerMax = 100
   },
@@ -18903,7 +19194,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "提示npc",
     powerMax = 100
   },
@@ -18965,7 +19255,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第三章-塔2时空切换",
     powerMax = 100
   },
@@ -19025,7 +19314,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第三章-SKL炮（群楷特供）",
     powerMax = 100
   },
@@ -19087,7 +19375,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第三章困难模式时空切换",
     powerMax = 100
   },
@@ -19144,7 +19431,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "场景切换npc1",
     powerMax = 100
   },
@@ -19205,7 +19491,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "关卡物体破坏怪6",
     powerMax = 100
   },
@@ -19266,7 +19551,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "关卡物体破坏怪7",
     powerMax = 100
   },
@@ -19327,7 +19611,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "关卡物体破坏怪8",
     powerMax = 100
   },
@@ -19388,7 +19671,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第六章-木门",
     powerMax = 100
   },
@@ -19445,7 +19727,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第七章上-温泉（小）",
     powerMax = 100
   },
@@ -19502,7 +19783,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第七章上-温泉（大）",
     powerMax = 100
   },
@@ -19559,7 +19839,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第七章上-拒马",
     powerMax = 100
   },
@@ -19617,7 +19896,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第七章上-能量子弹检测器",
     powerMax = 100
   },
@@ -19675,7 +19953,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第七章上-能量子弹检测器(放大版)",
     powerMax = 100
   },
@@ -19735,7 +20012,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第七章上-编钟",
     powerMax = 100
   },
@@ -19795,7 +20071,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第七章上-编磬",
     powerMax = 100
   },
@@ -19853,7 +20128,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第七章上-电源",
     powerMax = 100
   },
@@ -19913,7 +20187,65 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = false,
-    UltWorldFreezeTime = 3,
+    name = "第八章4-人群阵（静止）",
+    powerMax = 100
+  },
+  [10804102] = {
+    AttribId = 1002015,
+    BodyRadius = 0.2,
+    BoneShakeRatio = {
+      0.3,
+      0.3,
+      0.3
+    },
+    BornMagic = {
+      "character.trap.10804101",
+      399930,
+      [5] = 399933,
+      [7] = 3001022003
+    },
+    CanHitBackOnStun = true,
+    CanNotHitFly = false,
+    CollisionPriority = 1,
+    DeadEffect = {},
+    DeadEffectRotation = 0,
+    DefaultSAAtkLevel = 25,
+    DefaultSADefLevel = 999,
+    EnergyLimited = 5,
+    ExSkillEnergyMax = 100,
+    ForceRecoverToughTime = 99,
+    ForceRemoveTime = 10,
+    HitBackRatio = {
+      0,
+      0,
+      0
+    },
+    HitDownTime = 0.2,
+    IsHitOnCollidePos = 0,
+    Kind = 5,
+    LockVelocity = 0,
+    MissileScale = 0,
+    ModelId = "T3001022",
+    ModelScale = 0.5,
+    NpcId = 10804102,
+    OutFightRecoverToughSpeed = 99,
+    OutFightRecoverToughTime = 99,
+    PlayCommonBeHit = 1,
+    PromotedId = 1,
+    Protect = 100,
+    Rebound = {0.7, 0.3},
+    RobotBornMagic = {0},
+    ShowSmallHpType = 0,
+    Speed = {
+      1.4,
+      1.4,
+      5,
+      7
+    },
+    SpeedBuffer = 0,
+    SuperArmorBreakTime = 8,
+    TimeOfStunState = 0,
+    TriggerBeHit = false,
     name = "第八章4-人群阵（静止）",
     powerMax = 100
   },
@@ -19973,7 +20305,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = false,
-    UltWorldFreezeTime = 3,
     name = "第八章4-人群阵（移动1）",
     powerMax = 100
   },
@@ -20025,7 +20356,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第八章4-人（移动1位置1）女",
     powerMax = 100
   },
@@ -20077,7 +20407,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第八章4-人（移动1位置2）男",
     powerMax = 100
   },
@@ -20129,7 +20458,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第八章4-人（移动1位置3）女",
     powerMax = 100
   },
@@ -20189,7 +20517,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = false,
-    UltWorldFreezeTime = 3,
     name = "第八章4-人群阵（移动2）",
     powerMax = 100
   },
@@ -20241,7 +20568,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第八章4-人（移动2位置1）女",
     powerMax = 100
   },
@@ -20293,7 +20619,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第八章4-人（移动2位置2）男",
     powerMax = 100
   },
@@ -20365,7 +20690,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "ATEN",
     powerMax = 100
   },
@@ -20415,7 +20739,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "水池",
     powerMax = 100
   },
@@ -20465,7 +20788,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "水池-初始关闭",
     powerMax = 100
   },
@@ -20515,7 +20837,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "透明水池",
     powerMax = 100
   },
@@ -20565,7 +20886,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "巨大水池-初始关闭",
     powerMax = 100
   },
@@ -20615,7 +20935,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "超巨大水池-初始关闭",
     powerMax = 100
   },
@@ -20665,7 +20984,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "巨大水池",
     powerMax = 100
   },
@@ -20715,7 +21033,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "超巨大水池",
     powerMax = 100
   },
@@ -20765,7 +21082,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "水池",
     powerMax = 100
   },
@@ -20815,7 +21131,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "水池",
     powerMax = 100
   },
@@ -20864,7 +21179,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青化水（未启用模组版）",
     powerMax = 100
   },
@@ -20914,7 +21228,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "新生之形",
     powerMax = 100
   },
@@ -20974,7 +21287,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "深潜者",
     powerMax = 100
   },
@@ -21034,7 +21346,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "深潜者",
     powerMax = 100
   },
@@ -21109,7 +21420,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "狂暴深潜者",
     powerMax = 100
   },
@@ -21169,7 +21479,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "大漩涡之齿",
     powerMax = 100
   },
@@ -21229,7 +21538,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "大漩涡之齿",
     powerMax = 100
   },
@@ -21304,7 +21612,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "巨型大漩涡之齿",
     powerMax = 100
   },
@@ -21397,7 +21704,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "斩刃之形",
     powerMax = 100
   },
@@ -21490,7 +21796,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "斩刃之形",
     powerMax = 100
   },
@@ -21584,7 +21889,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "斩刃之形",
     powerMax = 100
   },
@@ -21645,7 +21949,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "锐利之型教学关",
     powerMax = 100
   },
@@ -21732,7 +22035,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "斩刃之形",
     powerMax = 100
   },
@@ -21820,7 +22122,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "重击之形",
     powerMax = 100
   },
@@ -21908,7 +22209,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "重击之形",
     powerMax = 100
   },
@@ -21997,7 +22297,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "重击之形",
     powerMax = 100
   },
@@ -22090,7 +22389,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "慈悲之形",
     powerMax = 100
   },
@@ -22178,7 +22476,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "慈悲之形",
     powerMax = 100
   },
@@ -22267,7 +22564,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "慈悲之形",
     powerMax = 100
   },
@@ -22344,7 +22640,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "新生之形",
     powerMax = 100
   },
@@ -22421,7 +22716,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "新生之形",
     powerMax = 100
   },
@@ -22499,7 +22793,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "追击之形",
     powerMax = 100
   },
@@ -22577,7 +22870,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "追击之形（无群组）",
     powerMax = 100
   },
@@ -22655,7 +22947,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "追击之形（序章属性）",
     powerMax = 100
   },
@@ -22733,7 +23024,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求之形",
     powerMax = 100
   },
@@ -22820,7 +23110,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者教学关",
     powerMax = 100
   },
@@ -22906,7 +23195,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者教学关",
     powerMax = 100
   },
@@ -22984,7 +23272,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求之形（无群组）",
     powerMax = 100
   },
@@ -23062,7 +23349,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求之形（序章属性）",
     powerMax = 100
   },
@@ -23130,7 +23416,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "斯库拉",
     powerMax = 100
   },
@@ -23204,7 +23489,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "斯库拉",
     powerMax = 100
   },
@@ -23271,7 +23555,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "Scylla-tantacle",
     powerMax = 100
   },
@@ -23350,7 +23633,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "伊蕾什安",
     powerMax = 100
   },
@@ -23400,7 +23682,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "伊蕾什安_剧情",
     powerMax = 100
   },
@@ -23472,7 +23753,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "伊蕾bosstest",
     powerMax = 100
   },
@@ -23530,7 +23810,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "伊蕾什安1_5友军",
     powerMax = 100
   },
@@ -23609,7 +23888,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "阿顿",
     powerMax = 100
   },
@@ -23682,7 +23960,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "阿顿",
     powerMax = 100
   },
@@ -23760,7 +24037,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "寻知智形",
     powerMax = 100
   },
@@ -23838,7 +24114,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "寻知智形",
     powerMax = 100
   },
@@ -23944,7 +24219,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "远古戮骸",
     powerMax = 100
   },
@@ -24042,7 +24316,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "往日之念教学关",
     powerMax = 100
   },
@@ -24154,7 +24427,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "远古戮骸",
     powerMax = 100
   },
@@ -24261,7 +24533,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "远古戮骸",
     powerMax = 100
   },
@@ -24338,7 +24609,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "哀时者",
     powerMax = 100
   },
@@ -24414,7 +24684,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "近代图书馆斧头怪(光)",
     powerMax = 100
   },
@@ -24490,7 +24759,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "近代图书馆斧头怪(暗)",
     powerMax = 100
   },
@@ -24566,7 +24834,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "近代图书馆斧头怪(火)",
     powerMax = 100
   },
@@ -24642,7 +24909,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "近代图书馆斧头怪(水)",
     powerMax = 100
   },
@@ -24718,7 +24984,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "近代图书馆斧头怪(雷)",
     powerMax = 100
   },
@@ -24795,7 +25060,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "哀时者",
     powerMax = 100
   },
@@ -24888,7 +25152,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "恸时者",
     powerMax = 100
   },
@@ -24981,7 +25244,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "恸时者",
     powerMax = 100
   },
@@ -25075,7 +25337,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "恸时者",
     powerMax = 100
   },
@@ -25153,7 +25414,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "遗尘亡影",
     powerMax = 100
   },
@@ -25231,7 +25491,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "遗尘亡影",
     powerMax = 100
   },
@@ -25307,7 +25566,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "猫咪摇篮？",
     powerMax = 100
   },
@@ -25397,7 +25655,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "演算单元·拟形",
     powerMax = 100
   },
@@ -25502,7 +25759,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "演算单元·不定拟形",
     powerMax = 100
   },
@@ -25608,7 +25864,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "演算单元·不定拟形",
     powerMax = 100
   },
@@ -25685,7 +25940,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "真红",
     powerMax = 100
   },
@@ -25798,7 +26052,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "大利乌",
     powerMax = 100
   },
@@ -25906,7 +26159,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "大利乌",
     powerMax = 100
   },
@@ -25965,7 +26217,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "大利乌的石碑",
     powerMax = 100
   },
@@ -26024,7 +26275,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "大利乌的石碑(内圈)",
     powerMax = 100
   },
@@ -26083,7 +26333,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "大利乌的石碑(中圈)",
     powerMax = 100
   },
@@ -26142,7 +26391,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "大利乌的石碑(外圈)",
     powerMax = 100
   },
@@ -26250,7 +26498,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "大利乌",
     powerMax = 100
   },
@@ -26327,7 +26574,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "持盾长生军",
     powerMax = 100
   },
@@ -26404,7 +26650,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "掷矛长生军",
     powerMax = 100
   },
@@ -26481,7 +26726,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "持矛长生军",
     powerMax = 100
   },
@@ -26530,7 +26774,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "突刺长生军 友军",
     powerMax = 100
   },
@@ -26579,7 +26822,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "投矛长生军 友军",
     powerMax = 100
   },
@@ -26628,7 +26870,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "盾立场长生军 友军",
     powerMax = 100
   },
@@ -26705,7 +26946,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "投矛长生军（普通版）",
     powerMax = 100
   },
@@ -26783,7 +27023,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "演算单元·乱数",
     powerMax = 100
   },
@@ -26876,7 +27115,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "演算单元·无序乱数",
     powerMax = 100
   },
@@ -26970,7 +27208,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "演算单元·无序乱数",
     powerMax = 100
   },
@@ -27047,7 +27284,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "雅弗刀兵",
     powerMax = 100
   },
@@ -27124,7 +27360,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "雅弗刀兵",
     powerMax = 100
   },
@@ -27201,7 +27436,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "雅弗刀兵",
     powerMax = 100
   },
@@ -27278,7 +27512,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "雅弗刀兵",
     powerMax = 100
   },
@@ -27327,7 +27560,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鹰骑-刀兵a  友军",
     powerMax = 100
   },
@@ -27404,7 +27636,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "人偶",
     powerMax = 100
   },
@@ -27493,7 +27724,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "光之巨人迪迦",
     powerMax = 100
   },
@@ -27597,7 +27827,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "无名暴君",
     powerMax = 100
   },
@@ -27647,7 +27876,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "虚弱长生军",
     powerMax = 100
   },
@@ -27725,7 +27953,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "窥星者",
     powerMax = 100
   },
@@ -27802,7 +28029,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "窥星者",
     powerMax = 100
   },
@@ -27895,7 +28121,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "沉星者",
     powerMax = 100
   },
@@ -27989,7 +28214,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "沉星者",
     powerMax = 100
   },
@@ -28066,7 +28290,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "雅弗旗兵",
     powerMax = 100
   },
@@ -28116,7 +28339,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鹰骑-旗兵（只会落雷）",
     powerMax = 100
   },
@@ -28165,7 +28387,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鹰骑-旗兵    友军",
     powerMax = 100
   },
@@ -28257,7 +28478,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鹰旗百夫长",
     powerMax = 100
   },
@@ -28350,7 +28570,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鹰旗百夫长",
     powerMax = 100
   },
@@ -28428,7 +28647,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "演算单元·变量",
     powerMax = 100
   },
@@ -28522,7 +28740,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "演算单元·混沌变量",
     powerMax = 100
   },
@@ -28617,7 +28834,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "演算单元·混沌变量",
     powerMax = 100
   },
@@ -28712,7 +28928,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "演算单元·混沌变量",
     powerMax = 100
   },
@@ -28773,7 +28988,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鯥",
     powerMax = 100
   },
@@ -28834,7 +29048,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鯥",
     powerMax = 100
   },
@@ -28895,7 +29108,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鯥",
     powerMax = 100
   },
@@ -28956,7 +29168,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "兕",
     powerMax = 100
   },
@@ -29016,7 +29227,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青蚨",
     powerMax = 100
   },
@@ -29076,7 +29286,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青蚨",
     powerMax = 100
   },
@@ -29136,7 +29345,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青蚨",
     powerMax = 100
   },
@@ -29197,7 +29405,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鴢",
     powerMax = 100
   },
@@ -29256,7 +29463,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鴢",
     powerMax = 100
   },
@@ -29317,7 +29523,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鴢",
     powerMax = 100
   },
@@ -29378,7 +29583,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鴢",
     powerMax = 100
   },
@@ -29437,7 +29641,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鴢",
     powerMax = 100
   },
@@ -29520,7 +29723,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "罴",
     powerMax = 100
   },
@@ -29603,7 +29805,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "恶熊",
     powerMax = 100
   },
@@ -29686,7 +29887,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "毕方",
     powerMax = 100
   },
@@ -29769,7 +29969,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "毕方",
     powerMax = 100
   },
@@ -29844,7 +30043,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青化虺",
     powerMax = 100
   },
@@ -29919,7 +30117,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青化虺",
     powerMax = 100
   },
@@ -29995,7 +30192,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青化狌",
     powerMax = 100
   },
@@ -30071,7 +30267,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青化狌",
     powerMax = 100
   },
@@ -30156,7 +30351,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青铜戍卫统领",
     powerMax = 100
   },
@@ -30232,7 +30426,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "关卡测试怪",
     powerMax = 100
   },
@@ -30316,7 +30509,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青铜戍卫统领",
     powerMax = 100
   },
@@ -30401,7 +30593,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青铜戍卫统领",
     powerMax = 100
   },
@@ -30476,7 +30667,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "木造傀儡",
     powerMax = 100
   },
@@ -30550,7 +30740,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青化蛫",
     powerMax = 100
   },
@@ -30624,7 +30813,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青化蛫",
     powerMax = 100
   },
@@ -30713,7 +30901,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "大将军 姬鸿",
     powerMax = 100
   },
@@ -30786,7 +30973,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "大将军 姬鸿",
     powerMax = 100
   },
@@ -30880,7 +31066,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "大将军 姬鸿",
     powerMax = 100
   },
@@ -31009,7 +31194,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青之龙",
     powerMax = 100
   },
@@ -31065,7 +31249,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "龙头",
     powerMax = 100
   },
@@ -31121,7 +31304,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "龙爪子",
     powerMax = 100
   },
@@ -31169,7 +31351,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "龙_聚焦用",
     powerMax = 100
   },
@@ -31267,7 +31448,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "应惩之戒（刀哥)",
     powerMax = 100
   },
@@ -31359,8 +31539,7 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
-    name = "枪兵",
+    name = "白枪兵",
     powerMax = 100
   },
   [20105701] = {
@@ -31436,7 +31615,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "应惩之戒（弟弟哥）",
     powerMax = 100
   },
@@ -31487,7 +31665,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "水人",
     powerMax = 100
   },
@@ -31539,7 +31716,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "火人",
     powerMax = 100
   },
@@ -31590,7 +31766,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "雷人",
     powerMax = 100
   },
@@ -31641,7 +31816,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "光人",
     powerMax = 100
   },
@@ -31692,7 +31866,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "暗人",
     powerMax = 100
   },
@@ -31783,7 +31956,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "大胖子",
     powerMax = 100
   },
@@ -31825,7 +31997,7 @@ return {
     Kind = 4,
     LockVelocity = 0,
     MissileScale = 0,
-    ModelId = "M201048",
+    ModelId = "M201064",
     ModelScale = 1,
     NpcId = 20106401,
     OutFightRecoverToughSpeed = 1000,
@@ -31866,8 +32038,7 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
-    name = "殉道者",
+    name = "西斯廷",
     powerMax = 100
   },
   [20106402] = {
@@ -31949,12 +32120,11 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "殉道者(石柱）",
     powerMax = 100
   },
   [20106501] = {
-    AttribId = 1022022,
+    AttribId = 1022025,
     BodyRadius = 1,
     BornMagic = {
       "character.monster.20106501"
@@ -32019,8 +32189,81 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "菲娜米娜",
+    powerMax = 100
+  },
+  [20107101] = {
+    AttribId = 1022002,
+    BeHitFlyHeightLimit = 1,
+    BodyRadius = 0.3,
+    BornMagic = {
+      "character.monster.20107101"
+    },
+    CanHitBackOnStun = true,
+    CanNotHitFly = false,
+    CollisionPriority = 3,
+    CreateBallAfterDead = {2, 1},
+    DeadEffect = {},
+    DeadEffectRotation = 0,
+    DefaultSAAtkLevel = 25,
+    DefaultSADefLevel = 35,
+    ElementWeakList = {3, 4},
+    EnergyLimited = 5,
+    ExSkillEnergyMax = 100,
+    ForceRecoverToughTime = 15,
+    ForceRemoveTime = 10,
+    HitBackRatio = {
+      0,
+      0,
+      0
+    },
+    HitDownTime = 2,
+    IsHitOnCollidePos = 0,
+    Kind = 4,
+    LockVelocity = 0,
+    MissileScale = 0,
+    ModelId = "M201071",
+    ModelScale = 1.25,
+    NpcId = 20107101,
+    OutFightRecoverToughSpeed = 1000,
+    OutFightRecoverToughTime = 60,
+    PlayCommonBeHit = 1,
+    PromotedId = 1,
+    Protect = 100,
+    Rebound = {0.7, 0.3},
+    RobotBornMagic = {0},
+    ShowSmallHpType = 4,
+    Speed = {
+      3,
+      3,
+      6,
+      5
+    },
+    SpeedBuffer = 0.1,
+    SuperArmorBreakTime = 8,
+    TimeOfStunState = 0,
+    ToughnessInfo = {
+      {
+        700,
+        1,
+        0,
+        1
+      },
+      {
+        700,
+        1,
+        0,
+        1
+      },
+      {
+        700,
+        1,
+        0,
+        1
+      }
+    },
+    TriggerBeHit = true,
+    name = "六翼女",
     powerMax = 100
   },
   [20111401] = {
@@ -32084,7 +32327,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "萨尔维斯(新模板）",
     powerMax = 100
   },
@@ -32131,7 +32373,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "障碍物",
     powerMax = 100
   },
@@ -32178,7 +32419,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "障碍物",
     powerMax = 100
   },
@@ -32225,7 +32465,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "障碍物",
     powerMax = 100
   },
@@ -32315,7 +32554,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "突刺长生军 BOSS",
     powerMax = 100
   },
@@ -32405,7 +32643,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "投矛长生军 BOSS",
     powerMax = 100
   },
@@ -32494,7 +32731,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "盾立场长生军 BOSS",
     powerMax = 100
   },
@@ -32544,7 +32780,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "持盾长生军·残影",
     powerMax = 100
   },
@@ -32594,7 +32829,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "远程长生军·残影",
     powerMax = 100
   },
@@ -32644,7 +32878,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "持矛长生军·残影",
     powerMax = 100
   },
@@ -32705,7 +32938,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鯥",
     powerMax = 100
   },
@@ -32766,7 +32998,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "兕",
     powerMax = 100
   },
@@ -32827,7 +33058,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "兕",
     powerMax = 100
   },
@@ -32888,7 +33118,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鴢",
     powerMax = 100
   },
@@ -32970,7 +33199,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "罴",
     powerMax = 100
   },
@@ -33032,7 +33260,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "罴",
     powerMax = 100
   },
@@ -33108,7 +33335,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "罴",
     powerMax = 100
   },
@@ -33191,7 +33417,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "罴",
     powerMax = 100
   },
@@ -33250,7 +33475,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "虺",
     powerMax = 100
   },
@@ -33310,7 +33534,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "狌",
     powerMax = 100
   },
@@ -33381,7 +33604,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青铜戍卫",
     powerMax = 100
   },
@@ -33452,7 +33674,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青铜戍卫",
     powerMax = 100
   },
@@ -33523,7 +33744,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青铜戍卫",
     powerMax = 100
   },
@@ -33582,7 +33802,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "蛫",
     powerMax = 100
   },
@@ -33665,7 +33884,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "应惩之戒（小刀哥)",
     powerMax = 100
   },
@@ -33723,7 +33941,7 @@ return {
     LockVelocity = 0,
     MissileScale = 0,
     ModelId = "M201056",
-    ModelScale = 1,
+    ModelScale = 0.7,
     NpcId = 20205601,
     OutFightRecoverToughSpeed = 1000,
     OutFightRecoverToughTime = 60,
@@ -33743,7 +33961,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "枪兵",
     powerMax = 100
   },
@@ -33800,7 +34017,7 @@ return {
     LockVelocity = 0,
     MissileScale = 0,
     ModelId = "M201063",
-    ModelScale = 1,
+    ModelScale = 0.7,
     NpcId = 20206301,
     OutFightRecoverToughSpeed = 1000,
     OutFightRecoverToughTime = 60,
@@ -33834,7 +34051,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "小胖子",
     powerMax = 100
   },
@@ -33894,7 +34110,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鯥",
     powerMax = 100
   },
@@ -33969,7 +34184,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青化鯥",
     powerMax = 100
   },
@@ -34044,7 +34258,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青化鯥",
     powerMax = 100
   },
@@ -34104,7 +34317,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青化兕",
     powerMax = 100
   },
@@ -34179,7 +34391,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青化兕",
     powerMax = 100
   },
@@ -34254,7 +34465,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青化兕",
     powerMax = 100
   },
@@ -34314,7 +34524,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青化鴢",
     powerMax = 100
   },
@@ -34389,7 +34598,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青化鴢",
     powerMax = 100
   },
@@ -34464,7 +34672,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青化鴢",
     powerMax = 100
   },
@@ -34526,7 +34733,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第三章挑战关时空切换",
     powerMax = 100
   },
@@ -34623,7 +34829,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "刀哥红技测试怪",
     powerMax = 100
   },
@@ -34681,7 +34886,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "晶簇亮e",
     powerMax = 100
   },
@@ -34741,7 +34945,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "晶簇暗a",
     powerMax = 100
   },
@@ -34801,7 +35004,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "晶簇暗b",
     powerMax = 100
   },
@@ -34861,7 +35063,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "晶簇暗c",
     powerMax = 100
   },
@@ -34921,7 +35122,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "晶簇暗d",
     powerMax = 100
   },
@@ -34981,7 +35181,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "晶簇暗e",
     powerMax = 100
   },
@@ -35039,7 +35238,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "晶簇亮a",
     powerMax = 100
   },
@@ -35097,7 +35295,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "晶簇亮b",
     powerMax = 100
   },
@@ -35155,7 +35352,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "晶簇亮c",
     powerMax = 100
   },
@@ -35213,7 +35409,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "晶簇亮d",
     powerMax = 100
   },
@@ -35271,7 +35466,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "晶簇-新版a",
     powerMax = 100
   },
@@ -35329,7 +35523,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "晶簇-新版b",
     powerMax = 100
   },
@@ -35387,7 +35580,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "晶簇-新版c",
     powerMax = 100
   },
@@ -35445,7 +35637,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "晶簇-新版d",
     powerMax = 100
   },
@@ -35503,7 +35694,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "晶簇-新版e",
     powerMax = 100
   },
@@ -35560,7 +35750,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-能量球-月球",
     powerMax = 100
   },
@@ -35617,7 +35806,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-能量球-地球",
     powerMax = 100
   },
@@ -35674,7 +35862,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-能量球-太阳",
     powerMax = 100
   },
@@ -35731,7 +35918,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-能量球-白矮星",
     powerMax = 100
   },
@@ -35788,7 +35974,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-能量球-海王星",
     powerMax = 100
   },
@@ -35845,7 +36030,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-能量球-木星",
     powerMax = 100
   },
@@ -35902,7 +36086,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-能量球-启明星（金）",
     powerMax = 100
   },
@@ -35959,7 +36142,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-能量球-天王星",
     powerMax = 100
   },
@@ -36016,7 +36198,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-教学用能量球-通用",
     powerMax = 100
   },
@@ -36073,7 +36254,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-目标点太阳（无序A）",
     powerMax = 100
   },
@@ -36130,7 +36310,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-目标点地球（无序B）",
     powerMax = 100
   },
@@ -36187,7 +36366,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-目标点无序C",
     powerMax = 100
   },
@@ -36244,7 +36422,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-传送器G组",
     powerMax = 100
   },
@@ -36301,7 +36478,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "第九章-传送器B组",
     powerMax = 100
   },
@@ -36364,7 +36540,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "地刺（trap1）",
     powerMax = 100
   },
@@ -36427,7 +36602,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "地刺1",
     powerMax = 100
   },
@@ -36490,7 +36664,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "地刺2",
     powerMax = 100
   },
@@ -36553,7 +36726,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "地刺3",
     powerMax = 100
   },
@@ -36616,7 +36788,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "地刺（trap1）",
     powerMax = 100
   },
@@ -36676,7 +36847,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "激光",
     powerMax = 100
   },
@@ -36736,7 +36906,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "激光",
     powerMax = 100
   },
@@ -36796,7 +36965,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "激光",
     powerMax = 100
   },
@@ -36856,7 +37024,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "激光",
     powerMax = 100
   },
@@ -36916,7 +37083,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "激光",
     powerMax = 100
   },
@@ -36976,7 +37142,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "激光",
     powerMax = 100
   },
@@ -37035,7 +37200,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "地雷",
     powerMax = 100
   },
@@ -37094,7 +37258,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "地雷",
     powerMax = 100
   },
@@ -37153,7 +37316,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "地雷",
     powerMax = 100
   },
@@ -37212,7 +37374,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "地雷",
     powerMax = 100
   },
@@ -37271,7 +37432,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "地雷",
     powerMax = 100
   },
@@ -37330,7 +37490,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "地雷",
     powerMax = 100
   },
@@ -37388,7 +37547,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "搬箱子NPC",
     powerMax = 100
   },
@@ -37439,7 +37597,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青",
     powerMax = 100
   },
@@ -37490,7 +37647,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "青",
     powerMax = 100
   },
@@ -37568,7 +37724,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "无实",
     powerMax = 100
   },
@@ -37640,7 +37795,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "无实",
     powerMax = 100
   },
@@ -37698,7 +37852,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "无实",
     powerMax = 100
   },
@@ -37771,7 +37924,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "无实",
     powerMax = 100
   },
@@ -37824,7 +37976,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "增生物1",
     powerMax = 100
   },
@@ -37877,7 +38028,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "增生物2",
     powerMax = 100
   },
@@ -37930,7 +38080,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "增生物3",
     powerMax = 100
   },
@@ -37988,7 +38137,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "维修小车",
     powerMax = 100
   },
@@ -38048,7 +38196,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鱼人",
     powerMax = 100
   },
@@ -38108,7 +38255,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鱼人",
     powerMax = 100
   },
@@ -38168,7 +38314,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鱼人",
     powerMax = 100
   },
@@ -38228,7 +38373,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鱼人",
     powerMax = 100
   },
@@ -38288,7 +38432,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鱼人",
     powerMax = 100
   },
@@ -38363,7 +38506,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鱼人精英",
     powerMax = 100
   },
@@ -38423,7 +38565,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鱼",
     powerMax = 100
   },
@@ -38483,7 +38624,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鱼",
     powerMax = 100
   },
@@ -38543,7 +38683,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鱼",
     powerMax = 100
   },
@@ -38603,7 +38742,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鱼",
     powerMax = 100
   },
@@ -38663,7 +38801,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鱼",
     powerMax = 100
   },
@@ -38738,7 +38875,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鳐鱼精英",
     powerMax = 100
   },
@@ -38831,7 +38967,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "锐利之型",
     powerMax = 100
   },
@@ -38924,7 +39059,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "锐利之型",
     powerMax = 100
   },
@@ -39017,7 +39151,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "锐利之型",
     powerMax = 100
   },
@@ -39110,7 +39243,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "锐利之型",
     powerMax = 100
   },
@@ -39203,7 +39335,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "锐利之型",
     powerMax = 100
   },
@@ -39296,7 +39427,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "锐利之型",
     powerMax = 100
   },
@@ -39389,7 +39519,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "锐利之型",
     powerMax = 100
   },
@@ -39482,7 +39611,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "锐利之型",
     powerMax = 100
   },
@@ -39575,7 +39703,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "锐利之型",
     powerMax = 100
   },
@@ -39663,7 +39790,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "重击之型",
     powerMax = 100
   },
@@ -39751,7 +39877,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "重击之型",
     powerMax = 100
   },
@@ -39839,7 +39964,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "重击之型",
     powerMax = 100
   },
@@ -39927,7 +40051,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "重击之型",
     powerMax = 100
   },
@@ -40015,7 +40138,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "重击之型",
     powerMax = 100
   },
@@ -40103,7 +40225,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "重击之型",
     powerMax = 100
   },
@@ -40191,7 +40312,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "重击之型",
     powerMax = 100
   },
@@ -40279,7 +40399,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "重击之型",
     powerMax = 100
   },
@@ -40372,7 +40491,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "仁慈之型",
     powerMax = 100
   },
@@ -40465,7 +40583,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "仁慈之型",
     powerMax = 100
   },
@@ -40558,7 +40675,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "仁慈之型",
     powerMax = 100
   },
@@ -40651,7 +40767,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "仁慈之型",
     powerMax = 100
   },
@@ -40744,7 +40859,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "仁慈之型",
     powerMax = 100
   },
@@ -40837,7 +40951,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "仁慈之型",
     powerMax = 100
   },
@@ -40930,7 +41043,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "仁慈之型",
     powerMax = 100
   },
@@ -41023,7 +41135,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "仁慈之型",
     powerMax = 100
   },
@@ -41116,7 +41227,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "仁慈之型",
     powerMax = 100
   },
@@ -41209,7 +41319,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "仁慈之型",
     powerMax = 100
   },
@@ -41287,7 +41396,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "追击者-新手关",
     powerMax = 100
   },
@@ -41365,7 +41473,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "追击者",
     powerMax = 100
   },
@@ -41443,7 +41550,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "追击者",
     powerMax = 100
   },
@@ -41521,7 +41627,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "追击者",
     powerMax = 100
   },
@@ -41599,7 +41704,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "追击者",
     powerMax = 100
   },
@@ -41677,7 +41781,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "追击者",
     powerMax = 100
   },
@@ -41755,7 +41858,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "追击者",
     powerMax = 100
   },
@@ -41833,7 +41935,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "追击者",
     powerMax = 100
   },
@@ -41911,7 +42012,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "追击者",
     powerMax = 100
   },
@@ -41989,7 +42089,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "追击者",
     powerMax = 100
   },
@@ -42067,7 +42166,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "追击者",
     powerMax = 100
   },
@@ -42145,7 +42243,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "追击者",
     powerMax = 100
   },
@@ -42223,7 +42320,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者-新手关",
     powerMax = 100
   },
@@ -42301,7 +42397,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者",
     powerMax = 100
   },
@@ -42379,7 +42474,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者",
     powerMax = 100
   },
@@ -42457,7 +42551,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者",
     powerMax = 100
   },
@@ -42535,7 +42628,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者",
     powerMax = 100
   },
@@ -42613,7 +42705,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者",
     powerMax = 100
   },
@@ -42691,7 +42782,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者",
     powerMax = 100
   },
@@ -42769,7 +42859,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者",
     powerMax = 100
   },
@@ -42847,7 +42936,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者",
     powerMax = 100
   },
@@ -42925,7 +43013,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者",
     powerMax = 100
   },
@@ -43003,7 +43090,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者",
     powerMax = 100
   },
@@ -43081,7 +43167,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者",
     powerMax = 100
   },
@@ -43159,7 +43244,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者",
     powerMax = 100
   },
@@ -43237,7 +43321,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者-序章",
     powerMax = 100
   },
@@ -43315,7 +43398,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者2-序章",
     powerMax = 100
   },
@@ -43393,7 +43475,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "渴求者-教学关",
     powerMax = 100
   },
@@ -43461,7 +43542,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "斯库拉",
     powerMax = 100
   },
@@ -43529,7 +43609,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "斯库拉",
     powerMax = 100
   },
@@ -43597,7 +43676,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "斯库拉",
     powerMax = 100
   },
@@ -43665,7 +43743,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "斯库拉",
     powerMax = 100
   },
@@ -43744,7 +43821,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "伊蕾什安",
     powerMax = 100
   },
@@ -43823,7 +43899,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "伊蕾什安",
     powerMax = 100
   },
@@ -43902,7 +43977,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "伊蕾什安",
     powerMax = 100
   },
@@ -43981,7 +44055,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "伊蕾什安",
     powerMax = 100
   },
@@ -44060,7 +44133,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "阿顿",
     powerMax = 100
   },
@@ -44139,7 +44211,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "阿顿",
     powerMax = 100
   },
@@ -44218,7 +44289,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "阿顿",
     powerMax = 100
   },
@@ -44297,7 +44367,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "阿顿",
     powerMax = 100
   },
@@ -44403,7 +44472,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "古代盾兵",
     powerMax = 100
   },
@@ -44509,7 +44577,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "教学关闪避怪",
     powerMax = 100
   },
@@ -44585,7 +44652,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "安息灵钟",
     powerMax = 100
   },
@@ -44675,7 +44741,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "未来盾兵",
     powerMax = 100
   },
@@ -44752,7 +44817,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "真红",
     powerMax = 100
   },
@@ -44829,7 +44893,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "徒花",
     powerMax = 100
   },
@@ -44942,7 +45005,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "大利乌",
     powerMax = 100
   },
@@ -45019,7 +45081,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "罗马士兵",
     powerMax = 100
   },
@@ -45096,7 +45157,6 @@ return {
     SuperArmorBreakTime = 8,
     TimeOfStunState = 0,
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "罗马执旗手",
     powerMax = 100
   },
@@ -45171,7 +45231,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鱼人精英",
     powerMax = 100
   },
@@ -45246,7 +45305,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "鳐鱼精英",
     powerMax = 100
   },
@@ -45339,7 +45397,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "锐利之型",
     powerMax = 100
   },
@@ -45427,7 +45484,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "重击之型",
     powerMax = 100
   },
@@ -45520,7 +45576,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "慈悲之型",
     powerMax = 100
   },
@@ -45588,7 +45643,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "斯库拉",
     powerMax = 100
   },
@@ -45667,7 +45721,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "伊蕾什安",
     powerMax = 100
   },
@@ -45746,7 +45799,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "阿顿",
     powerMax = 100
   },
@@ -45822,7 +45874,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "安息灵钟",
     powerMax = 100
   },
@@ -45899,7 +45950,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "真红",
     powerMax = 100
   },
@@ -46012,7 +46062,6 @@ return {
       }
     },
     TriggerBeHit = true,
-    UltWorldFreezeTime = 3,
     name = "大利乌",
     powerMax = 100
   }

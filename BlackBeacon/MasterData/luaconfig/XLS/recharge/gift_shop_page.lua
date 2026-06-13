@@ -37,6 +37,6 @@ return {
     Limit = 0,
     Name = "特惠补给",
     Priority = 6,
-    RedId = 56
+    RedId = 58
   }
 }

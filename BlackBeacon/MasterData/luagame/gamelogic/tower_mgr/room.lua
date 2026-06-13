@@ -1,7 +1,7 @@
 local M = Util.create_class()
 local BREAKABLE_OBJ_CLASEE = require("obj.breakable_obj")
 local ROOM_STATE_PASS = 1
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local PathDefine = require("utils.path_define")
 local TypeSceneContainer = typeof(CS.Game.SceneContainer)
 local DROP_TYPE = Config.DROP_TYPE
@@ -239,10 +239,12 @@ function M:_preload_res_done_cb(on_load_scene)
       scene_logic:create_random_door()
     end
   end
-  local scene_ready_cb = function(_, resp)
+  
+  local function scene_ready_cb(_, resp)
     self:record_scene_ready_respon(resp)
     self:_play_pre_fight_story()
   end
+  
   self:_send_ready_scene_msg(scene_ready_cb)
 end
 
@@ -258,9 +260,11 @@ function M:enter_room(on_load_scene)
   TimeLineSeqPlayer.on_enter_room()
   self:clear_view_before_enter_room()
   self.v_on_enter_room = true
-  local preload_res_cb = function()
+  
+  local function preload_res_cb()
     self:_preload_res_done_cb(on_load_scene)
   end
+  
   if Util.is_client_only() then
     preload_res_cb()
   else
@@ -289,9 +293,11 @@ end
 function M:_on_reconnect()
   if self.v_rec_scene_ready then
     self.v_rec_scene_ready = false
-    local cb = function(ok, resp)
+    
+    local function cb(ok, resp)
       self:scene_ready_end_logic(resp)
     end
+    
     self:_send_ready_scene_msg(cb)
   end
 end
@@ -414,10 +420,12 @@ function M:check_auto_tp_next_floor()
     local max_floor_num = self.v_tower:get_max_floor()
     local cur_floor_num = math.max(self.v_tower:get_floor_num(), 1)
     if max_floor_num > cur_floor_num then
-      local tp_cb = function()
+      local function tp_cb()
         self.v_tower:on_enter_floor(cur_floor_num + 1, false, true, false)
+        
         self.v_auto_tp_next_floor_timer = nil
       end
+      
       if fight_type == CommonDefine.CHALLENGE_TYPE.BUDDY_TEACH then
         self.v_continue_tp_next_floor_cb = tp_cb
         TowerMgr:buddy_teach_floor_settle()
@@ -437,9 +445,10 @@ function M:check_need_send_save_req()
       if self.v_room_id == node_cfg.LastRoomId then
         local is_first_save = ChapterMgr:check_node_is_first_save_suc(node_id)
         if is_first_save then
-          local cb = function(is_success, resp)
+          local function cb(is_success, resp)
             if not StoryMgr:is_playing_full_screen_story() and is_first_save and resp.result_list and not StoryMgr:is_playing_full_screen_story() then
               local is_save = node_cfg.BehindNodeId ~= nil and node_cfg.BehindNodeId > 0
+              
               local not_progress_battle_suc_settle = UIMgr:get_ui("not_progress_battle_suc_settle")
               if not_progress_battle_suc_settle:visible() then
                 not_progress_battle_suc_settle:refresh_view(is_save, resp.result_list, node_cfg)
@@ -455,6 +464,7 @@ function M:check_need_send_save_req()
               Util.show_message_tip(2075)
             end
           end
+          
           TowerMgr:req_chapter_node_save(node_id, cb)
         else
           TowerMgr:change_to_next_node_id(nil, node_cfg)

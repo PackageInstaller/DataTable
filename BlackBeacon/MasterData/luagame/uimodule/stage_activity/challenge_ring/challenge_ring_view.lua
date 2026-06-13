@@ -218,14 +218,16 @@ local TEMP_NOT_SHOW_ATTR = {
   [103] = true,
   [104] = true
 }
-local card_type_sort = function(card_a, card_b)
+
+local function card_type_sort(card_a, card_b)
   local a_cfg = card_a.cfg
   local b_cfg = card_b.cfg
   local a_card_show_priority = a_cfg.ShowPriority
   local b_card_show_priority = b_cfg.ShowPriority
   return a_card_show_priority > b_card_show_priority
 end
-local talent_sort = function(talent_a, talent_b)
+
+local function talent_sort(talent_a, talent_b)
   local a_attr_idx = talent_a.attr_idx
   local b_attr_idx = talent_b.attr_idx
   return a_attr_idx < b_attr_idx

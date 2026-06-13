@@ -16,10 +16,12 @@ function M:_init(...)
   Base._init(self, ...)
   self.v_delay_time = nil
   self.v_is_play_anim = false
+  self.v_exist = true
 end
 
 function M:on_destroy()
   Base.on_destroy(self)
+  self.v_exist = nil
 end
 
 function M:update()
@@ -93,7 +95,8 @@ function M:play_anim(effect_type, is_close)
   canvas.alpha = is_close and 0 or 1
   local target_alpha = is_close and 1 or 0
   local delay_time = is_close and self.v_step_cfg.CloseDelay or self.v_step_cfg.OpenDelay
-  local callback = function()
+  
+  local function callback()
     self.v_is_play_anim = false
     if is_close then
       self:complete()
@@ -102,6 +105,7 @@ function M:play_anim(effect_type, is_close)
       self:complete()
     end
   end
+  
   local key = is_close and "close" or "open"
   local content = LanguageMgr:get_story_text(self.v_step_cfg.Content)
   local is_content_black = not is_close and nil ~= content and "" ~= content and effect_type == EFFECT_TYPE.CONTENT_BLACK
@@ -133,37 +137,67 @@ function M:tile_anim()
   local target_title_obj = self.v_uiobjects.StoryTitleObj
   local target_title_nametxt = self.v_uicompents.StoryTitleName_txt
   local target_title_parttxt = self.v_uicompents.StoryStagePart_txt
-  if self.v_step_cfg.OpenEffectStyle == "StoryTitleObj1" then
-    target_title_obj = self.v_uiobjects.StoryTitleObj1
-    target_title_nametxt = self.v_uicompents.StoryTitleName1_txt
-    target_title_parttxt = self.v_uicompents.StoryStagePart1_txt
-  elseif "StoryTitleObj" == self.v_step_cfg.OpenEffectStyle then
-    target_title_obj = self.v_uiobjects.StoryTitleObj
-    target_title_nametxt = self.v_uicompents.StoryTitleName_txt
-    target_title_parttxt = self.v_uicompents.StoryStagePart_txt
-  elseif self.v_step_cfg.OpenEffectStyle == "StoryTitleCom" then
-    target_title_obj = self.v_uiobjects.StoryTitleCom
-    target_title_nametxt = self.v_uicompents.StoryTitleNameCom_txt
-    target_title_parttxt = self.v_uicompents.StoryStagePartCom_txt
-  elseif self.v_step_cfg.OpenEffectStyle == "AniBookOneL" then
-    target_title_obj = self.v_uiobjects.AniBookOneL
-  elseif self.v_step_cfg.OpenEffectStyle == "AniBookOneR" then
-    target_title_obj = self.v_uiobjects.AniBookOneR
-  elseif self.v_step_cfg.OpenEffectStyle ~= nil then
-    local index_str = string.sub(self.v_step_cfg.OpenEffectStyle, -1)
-    if index_str then
-      local target_str1 = "StoryTitleObj" .. index_str
-      local target_str2 = "StoryTitleName" .. index_str .. "_txt"
-      local target_str3 = "StoryStagePart" .. index_str .. "_txt"
-      if self.v_uiobjects[target_str1] ~= nil and self.v_uicompents[target_str2] ~= nil and self.v_uicompents[target_str3] ~= nil then
-        target_title_obj = self.v_uiobjects[target_str1]
-        target_title_nametxt = self.v_uicompents[target_str2]
-        target_title_parttxt = self.v_uicompents[target_str3]
+  if self.v_step_cfg.OpenEffectStyleLoad ~= nil and self.v_step_cfg.OpenEffectStyleLoad ~= "" then
+    local res_name = self.v_step_cfg.OpenEffectStyleLoad
+    
+    local function callback_load(obj)
+      if self.v_exist == nil then
+        if not Util.is_nil(obj) then
+          ResPoolMgr:release(obj)
+          ResMgr:destroy_gameobj(obj)
+        end
+        return
+      end
+      local effect_parent = self.v_lua_obj.v_object
+      self.v_lua_obj:add_effect_obj_for_title_effect(res_name, obj, effect_parent)
+      obj.gameObject:SetActive(false)
+      obj.gameObject:ResetAttr()
+      obj.gameObject:SetActive(true)
+      target_title_obj = obj.gameObject
+      target_title_nametxt = Util.get_text("StoryTitleName1/Layout/StoryTitleName1_", obj.gameObject)
+      target_title_parttxt = Util.get_text("StoryStagePart1_", obj.gameObject)
+      self:normal_title(target_title_obj, target_title_nametxt, target_title_parttxt)
+    end
+    
+    ResPoolMgr:get_ui_effect_async(res_name, callback_load)
+  else
+    if self.v_step_cfg.OpenEffectStyle == "StoryTitleObj1" then
+      target_title_obj = self.v_uiobjects.StoryTitleObj1
+      target_title_nametxt = self.v_uicompents.StoryTitleName1_txt
+      target_title_parttxt = self.v_uicompents.StoryStagePart1_txt
+    elseif "StoryTitleObj" == self.v_step_cfg.OpenEffectStyle then
+      target_title_obj = self.v_uiobjects.StoryTitleObj
+      target_title_nametxt = self.v_uicompents.StoryTitleName_txt
+      target_title_parttxt = self.v_uicompents.StoryStagePart_txt
+    elseif self.v_step_cfg.OpenEffectStyle == "StoryTitleCom" then
+      target_title_obj = self.v_uiobjects.StoryTitleCom
+      target_title_nametxt = self.v_uicompents.StoryTitleNameCom_txt
+      target_title_parttxt = self.v_uicompents.StoryStagePartCom_txt
+    elseif self.v_step_cfg.OpenEffectStyle == "AniBookOneL" then
+      target_title_obj = self.v_uiobjects.AniBookOneL
+    elseif self.v_step_cfg.OpenEffectStyle == "AniBookOneR" then
+      target_title_obj = self.v_uiobjects.AniBookOneR
+    elseif self.v_step_cfg.OpenEffectStyle ~= nil then
+      local index_str = string.sub(self.v_step_cfg.OpenEffectStyle, -1)
+      if index_str then
+        local target_str1 = "StoryTitleObj" .. index_str
+        local target_str2 = "StoryTitleName" .. index_str .. "_txt"
+        local target_str3 = "StoryStagePart" .. index_str .. "_txt"
+        if self.v_uiobjects[target_str1] ~= nil and self.v_uicompents[target_str2] ~= nil and self.v_uicompents[target_str3] ~= nil then
+          target_title_obj = self.v_uiobjects[target_str1]
+          target_title_nametxt = self.v_uicompents[target_str2]
+          target_title_parttxt = self.v_uicompents[target_str3]
+        end
       end
     end
+    self:normal_title(target_title_obj, target_title_nametxt, target_title_parttxt)
   end
-  local callback = function()
+end
+
+function M:normal_title(target_title_obj, target_title_nametxt, target_title_parttxt)
+  local function callback()
     self.v_is_play_anim = false
+    
     target_title_obj:SetActive(false)
     local set_val = self.v_uiobjects.UpCollect.gameObject.activeSelf
     self.v_uiobjects.UpCollect:SetActive(false)
@@ -172,6 +206,7 @@ function M:tile_anim()
       self:complete()
     end
   end
+  
   local anim_time = self.v_step_cfg.OpenAnimTime
   local Title = LanguageMgr:get_story_text(self.v_step_cfg.Title)
   local LittleTitle = LanguageMgr:get_story_text(self.v_step_cfg.LittleTitle)

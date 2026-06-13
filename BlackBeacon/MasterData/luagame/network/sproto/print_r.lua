@@ -1,12 +1,13 @@
-local print = print
+local print = _ENV.print
 local tconcat = table.concat
 local tinsert = table.insert
 local srep = string.rep
-local type = type
-local pairs = pairs
-local tostring = tostring
-local next = next
-local print_r = function(root)
+local type = _ENV.type
+local pairs = _ENV.pairs
+local tostring = _ENV.tostring
+local next = _ENV.next
+
+local function print_r(root)
   local cache = {
     [root] = "."
   }
@@ -30,4 +31,5 @@ local print_r = function(root)
   
   print(_dump(root, "", ""))
 end
+
 return print_r

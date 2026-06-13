@@ -2,7 +2,8 @@ local Base = require("obj.base_component")
 local _tinsert = table.insert
 local _tremove = table.remove
 local TimeScale = Util.create_child_mt(Base)
-local _sort_time_scale_func = function(a, b)
+
+local function _sort_time_scale_func(a, b)
   local a_effect_type, b_effect_type = a:get_effect_type(), b:get_effect_type()
   local a_add_order_num, b_add_order_num = a:get_effect_type(), b:get_effect_type()
   if a_effect_type ~= b_effect_type then
@@ -112,7 +113,7 @@ function TimeScale:on_destroy()
   self.v_global_scale_index = nil
 end
 
-local get_scale_info_uri = function(scale_info)
+local function get_scale_info_uri(scale_info)
   if not scale_info then
     return "nil|nil"
   end
@@ -122,6 +123,7 @@ local get_scale_info_uri = function(scale_info)
   local ret = magic .. "|" .. scale
   return string.format("%-20s", ret)
 end
+
 local M = Util.create_child_mt(Base)
 local GLOBAL_STATE = {
   NONE = 1,
@@ -145,6 +147,15 @@ function M:_init(char)
   self.v_global_cnt = 0
   self.v_global_state = GLOBAL_STATE.NONE
   self.v_last_effect_scale = nil
+end
+
+function M:on_before_destroy()
+end
+
+function M:on_destroy()
+  Base.on_destroy(self)
+  self:clear_rejoin_timer_on_remove()
+  self:remove_all_time_scale()
 end
 
 function M:update()
@@ -328,6 +339,9 @@ function M:remove_time_scale_by_index(index)
 end
 
 function M:pause_time(pause)
+  if not self.v_char then
+    return
+  end
   if pause then
     self.v_char:on_time_scale(0, pause)
   else
@@ -466,12 +480,6 @@ function M:remove_all_time_scale()
   for index = #self.v_scales, 0, -1 do
     self:remove_time_scale_by_index(index)
   end
-end
-
-function M:on_destroy()
-  Base.on_destroy(self)
-  self:clear_rejoin_timer_on_remove()
-  self:remove_all_time_scale()
 end
 
 function M:on_role_exit_control()

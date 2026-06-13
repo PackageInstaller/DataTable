@@ -74,11 +74,13 @@ end
 
 function ui:_set_item(obj, index, data)
   local quality = self:get_image("ItemPz", obj)
-  local click_cb = function()
+  
+  local function click_cb()
     UIMgr:get_ui("itemTip"):ui_show({
       item_id = data.itemId[index]
     })
   end
+  
   self:create_item_obj(nil, quality.gameObject, nil, {
     item_id = data.itemId[index],
     click_cb = click_cb

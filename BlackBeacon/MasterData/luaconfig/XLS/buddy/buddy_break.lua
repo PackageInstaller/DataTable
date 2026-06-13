@@ -1600,7 +1600,7 @@ return {
       Coin = 2700,
       Condition = 15010,
       Id = 1001030,
-      Item = {1020, 1064},
+      Item = {1020, 1062},
       ItemCount = {6, 3},
       Lv = 1
     },
@@ -1609,7 +1609,7 @@ return {
       Coin = 8100,
       Condition = 15020,
       Id = 1001030,
-      Item = {1020, 1064},
+      Item = {1020, 1062},
       ItemCount = {18, 9},
       Lv = 2
     },
@@ -1618,7 +1618,7 @@ return {
       Coin = 16200,
       Condition = 15030,
       Id = 1001030,
-      Item = {1021, 1069},
+      Item = {1021, 1067},
       ItemCount = {12, 6},
       Lv = 3
     },
@@ -1627,7 +1627,7 @@ return {
       Coin = 27000,
       Condition = 15040,
       Id = 1001030,
-      Item = {1021, 1069},
+      Item = {1021, 1067},
       ItemCount = {18, 9},
       Lv = 4
     },
@@ -1636,7 +1636,7 @@ return {
       Coin = 36000,
       Condition = 15050,
       Id = 1001030,
-      Item = {1022, 1074},
+      Item = {1022, 1072},
       ItemCount = {8, 4},
       Lv = 5
     },

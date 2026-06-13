@@ -74,9 +74,11 @@ function ui:update_hurdle_info(is_right)
   self:set_button("BtnReset", function()
     local cancel_btn = Util.format_str("取消")
     local sure_btn = Util.format_str("确认")
-    local sure_fun = function()
+    
+    local function sure_fun()
       WeeklyMgr:request_week_acty_pvp_epi_reset(stage)
     end
+    
     UIMgr:get_ui("uinotice_tips"):ui_show(sure_fun, nil, WEEKLY_CFG.pvp_reset_tips, sure_btn, cancel_btn)
   end)
 end

@@ -269,6 +269,24 @@ return {
       },
       id = 20106201,
       priority = 935
+    },
+    {
+      ConditionID = {
+        0,
+        0,
+        0
+      },
+      id = 20205501,
+      priority = 934
+    },
+    {
+      ConditionID = {
+        0,
+        0,
+        0
+      },
+      id = 20205601,
+      priority = 933
     }
   },
   {

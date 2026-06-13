@@ -77,23 +77,32 @@ function conn_mt:update()
 end
 
 function conn_mt:on_update(state)
-  if state == Defines.STATE_FORWARD and Global.real_time - self.v_last_ping_send >= HEARTBEAT_INTERVAL then
-    self.v_last_ping_send = Global.real_time
-    self.v_latency_obj:start()
-    Network:call("c2gs_heartbeat_fs", E, function(ok, resp)
-      if not ok then
-        return
-      end
-      self.v_latency_obj:stop()
-      if 0 == resp.errcode then
-        Network:call("c2gs_heartbeat_fs_ack", E)
-      end
-    end)
+  if state == Defines.STATE_FORWARD then
+    if Global.real_time - self.v_last_ping_send >= HEARTBEAT_INTERVAL then
+      self.v_is_forward = true
+      self.v_last_ping_send = Global.real_time
+      self.v_latency_obj:start()
+      Network:call("c2gs_heartbeat_fs", E, function(ok, resp)
+        if not ok then
+          return
+        end
+        self.v_latency_obj:stop()
+        if 0 == resp.errcode then
+          Network:call("c2gs_heartbeat_fs_ack", E)
+        end
+      end)
+    end
+  else
+    self.v_is_forward = false
   end
 end
 
 function conn_mt:send_msg(data, proto_id)
   self.v_sconn:send_msg(data, proto_id)
+end
+
+function conn_mt:get_is_forward()
+  return self.v_is_forward
 end
 
 function conn_mt:close()
@@ -111,7 +120,7 @@ function conn_mt:latency_dump()
   self.v_latency_obj:dump()
 end
 
-local connect = function(info)
+local function connect(info)
   local c = conn_mt.new(info)
   local host, port = string.match(info.fs_addr, "(%g+):(%g+)")
   local ipv6_addr = info.ipv6_addr
@@ -123,4 +132,5 @@ local connect = function(info)
   end
   return c
 end
+
 return {connect_host = connect}

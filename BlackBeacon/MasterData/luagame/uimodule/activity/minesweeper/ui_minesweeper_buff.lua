@@ -81,7 +81,7 @@ function BuffTemClass:ui_finish_load()
           end)
         end
       end
-    end, "是否删除该谋略", nil, "是", "否", nil, nil, nil, true)
+    end, "是否中止该谋略", nil, "是", "否", nil, nil, nil, true)
   end)
 end
 
@@ -91,6 +91,12 @@ function BuffTemClass:set_data(data)
   local bless_quality_cfg = ShareRes.get_minesweeper_bless_quality_cfg(bless_cfg.Quality)
   self.v_uicompents.BuffName_txt.text = bless_cfg.Name
   self.v_uicompents.BuffDesc_txt.text = bless_cfg.Desc
+  if self.v_data.cost then
+    self.v_uicompents.GoldNum_txt.text = self.v_data.cost
+    local minesweeper_info = MineSweeperMgr:get_minesweeper_chapter_info()
+    local gold_count = minesweeper_info.gold_count
+    Util.set_color(self.v_uicompents.GoldNum_txt, gold_count >= self.v_data.cost and 16117218 or 16735838)
+  end
   ResMgr:load_set_icon(self.v_uicompents.BuffIcon_img, bless_cfg.Icon)
   ResMgr:load_set_icon(self.v_uicompents.QualityIcon_img, bless_quality_cfg.Icon)
   local ui_type = self.v_parent_ui:get_type()
@@ -129,17 +135,12 @@ end
 
 function ui:ui_on_show(type, param)
   self:refresh(type, param)
-  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.ui_minesweeper_buff_UI_SOUND)
 end
 
 function ui:ui_on_hide()
-  if self.v_bufftem_list then
-    self:remove_wrap_ui_list(self.v_bufftem_list)
-    self.v_bufftem_list = nil
-  end
-  if self.v_new_bless_tem then
-    self:remove_wrap_ui(self.v_new_bless_tem)
-    self.v_new_bless_tem = nil
+  local wrap_uis = self:get_wraps()
+  for wrap_ui, _ in pairs(wrap_uis) do
+    self:remove_wrap_ui(wrap_ui)
   end
 end
 
@@ -176,14 +177,12 @@ function ui:refresh_bag()
   self.v_uiobjects.BuffLayout:SetActiveEx(#bless_list <= 3)
   self.v_uiobjects.NoBuff:SetActiveEx(0 == #bless_list)
   self:give_back_auto_cache(BuffTemKey)
-  self.v_bufftem_list = {}
   for i, data in ipairs(bless_list) do
     local buff_obj = self:get_auto_cache(BuffTemKey)
     local parent = #bless_list > 3 and self.v_uiobjects.BuffSVContent or self.v_uiobjects.BuffLayout
     buff_obj.transform:SetParent(parent.transform, false)
     local buff_tem = BuffTemClass:ui_wrap_ex(self, buff_obj, true)
     buff_tem:set_data(data)
-    self.v_bufftem_list[i] = buff_tem
   end
 end
 
@@ -205,7 +204,6 @@ function ui:refresh_remove(grid_index)
   self.v_uiobjects.BuffScrollView:SetActiveEx(#bless_list > 3)
   self.v_uiobjects.BuffLayout:SetActiveEx(#bless_list <= 3)
   self.v_uiobjects.NoBuff:SetActiveEx(0 == #bless_list)
-  self.v_bufftem_list = {}
   self:give_back_auto_cache(BuffTemKey)
   for i, data in ipairs(bless_list) do
     local buff_obj = self:get_auto_cache(BuffTemKey)
@@ -213,7 +211,6 @@ function ui:refresh_remove(grid_index)
     buff_obj.transform:SetParent(parent.transform, false)
     local buff_tem = BuffTemClass:ui_wrap_ex(self, buff_obj, true)
     buff_tem:set_data(data)
-    self.v_bufftem_list[i] = buff_tem
   end
 end
 
@@ -241,14 +238,15 @@ function ui:refresh_shop(param)
   self.shop_grid_index = param.shop_grid_index
   self.id = param.id
   self.bless_id = param.bless_id
+  self.cost = param.cost
   bless_list = {
     {
-      bless_id = self.bless_id
+      bless_id = self.bless_id,
+      cost = self.cost
     }
   }
   self.v_uiobjects.BuffScrollView:SetActiveEx(#bless_list > 3)
   self.v_uiobjects.BuffLayout:SetActiveEx(#bless_list <= 3)
-  self.v_bufftem_list = {}
   self:give_back_auto_cache(BuffTemKey)
   for i, data in ipairs(bless_list) do
     local buff_obj = self:get_auto_cache(BuffTemKey)
@@ -256,7 +254,6 @@ function ui:refresh_shop(param)
     buff_obj.transform:SetParent(parent.transform, false)
     local buff_tem = BuffTemClass:ui_wrap_ex(self, buff_obj, true)
     buff_tem:set_data(data)
-    self.v_bufftem_list[i] = buff_tem
   end
 end
 
@@ -291,14 +288,12 @@ function ui:refresh_item(grid_index)
   self.v_uiobjects.BuffScrollView:SetActiveEx(#bless_list > 3)
   self.v_uiobjects.BuffLayout:SetActiveEx(#bless_list <= 3)
   self:give_back_auto_cache(BuffTemKey)
-  self.v_bufftem_list = {}
   for i, data in ipairs(bless_list) do
     local buff_obj = self:get_auto_cache(BuffTemKey)
     local parent = #bless_list > 3 and self.v_uiobjects.BuffSVContent or self.v_uiobjects.BuffLayout
     buff_obj.transform:SetParent(parent.transform, false)
     local buff_tem = BuffTemClass:ui_wrap_ex(self, buff_obj, true)
     buff_tem:set_data(data)
-    self.v_bufftem_list[i] = buff_tem
   end
 end
 
@@ -334,9 +329,9 @@ function ui:refresh_replace(param)
     end
   end
   local new_bless_obj = #temp_list >= 3 and self.v_uiobjects.ReplaceBuff1 or self.v_uiobjects.ReplaceBuff2
-  self.v_new_bless_tem = BuffTemClass:ui_wrap_ex(self, new_bless_obj, true)
-  self.v_new_bless_tem:set_data({bless_id = new_bless_id})
-  self.v_new_bless_tem:hide_all_button()
+  local new_bless_tem = BuffTemClass:ui_wrap_ex(self, new_bless_obj, true)
+  new_bless_tem:set_data({bless_id = new_bless_id})
+  new_bless_tem:hide_all_button()
   self:give_back_auto_cache(BuffTemKey1)
   self:give_back_auto_cache(BuffTemKey2)
   if #temp_list >= 3 then
@@ -355,6 +350,13 @@ function ui:refresh_replace(param)
       local buff_tem = BuffTemClass:ui_wrap_ex(self, buff_obj, true)
       buff_tem:set_data(data)
     end
+  end
+  new_bless_tem.v_uiobjects.BtnBuy:SetActiveEx(self.shop_grid_index and true or false)
+  if self.shop_grid_index then
+    local grid_info = MineSweeperMgr:get_minesweeper_grid(self.shop_grid_index)
+    local grid_cfg = ShareRes.get_minesweeper_grid_cfg(grid_info.grid_id)
+    local shop_id = grid_cfg.Args[1]
+    new_bless_tem.v_uicompents.GoldNum_txt.text = ShareRes.create("minesweeper.minesweeper_shop")[shop_id][self.id].ConsumeCount
   end
 end
 

@@ -36,18 +36,18 @@ function MemberTemClass:ui_finish_load()
 end
 
 function MemberTemClass:set_data(item_obj, data_list, index)
-  if index > 3 then
+  local data_info = data_list[index]
+  if data_info.ranking > 3 then
     self.v_uiobjects.RankNumBgList:SetActiveEx(false)
     self.v_uiobjects.RankNum:SetActiveEx(true)
-    self.v_uicompents.RankNum_txt.text = index
+    self.v_uicompents.RankNum_txt.text = data_info.ranking
   else
     self.v_uiobjects.RankNumBgList:SetActiveEx(true)
     self.v_uiobjects.RankNum:SetActiveEx(false)
     for idx, bg_name in ipairs(index_to_bgname_map) do
-      self.v_uiobjects[bg_name]:SetActiveEx(idx == index)
+      self.v_uiobjects[bg_name]:SetActiveEx(idx == data_info.ranking)
     end
   end
-  local data_info = data_list[index]
   local snapinfo = data_info.snapinfo
   self.v_uicompents.PlayerName_txt.text = snapinfo.name
   self.v_uicompents.Score_txt.text = data_info.value
@@ -72,7 +72,8 @@ end
 
 function ui:ui_on_show(level_range_index)
   self:refresh(level_range_index)
-  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.ui_act_minesweeper_rank_UI_SOUND)
+  self:bind_auto_mq(Const.MSG_ON_UPDATE_MINESWEEPER_INFO, self.on_update_minesweeper_info, self)
+  self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close, self)
 end
 
 function ui:ui_on_hide()
@@ -91,6 +92,39 @@ function ui:refresh(level_range_index)
   self.v_uicompents.Lv_txt.text = minesweeper_chapter_cfg.LevelRangeText
   local rank_list = MineSweeperMgr.minesweeper_rank_list
   local my_rank = rank_list.my_rank
+  local preranking = 0
+  local prevalue = -1
+  local samevaluecount = 1
+  local onthelist = false
+  local insert_index, remove_index
+  for index, rank_data in ipairs(rank_list.rank_list) do
+    if rank_data.value == prevalue then
+      rank_data.ranking = preranking
+      samevaluecount = samevaluecount + 1
+    else
+      preranking = preranking + samevaluecount
+      rank_data.ranking = preranking
+      prevalue = rank_data.value
+      samevaluecount = 1
+    end
+    if not onthelist and rank_data.value == my_rank.value then
+      insert_index = index
+      onthelist = true
+      my_rank.ranking = preranking
+    end
+    if rank_data.snapinfo.uuid == my_rank.snapinfo.uuid then
+      remove_index = index
+    end
+  end
+  if onthelist then
+    if remove_index then
+      table.remove(rank_list.rank_list, remove_index)
+    end
+    table.insert(rank_list.rank_list, insert_index, my_rank)
+    if #rank_list.rank_list > MineSweeperMgr.minesweeper_rank_user_count then
+      table.remove(rank_list.rank_list)
+    end
+  end
   self.v_uiobjects.BestRecord:SetActiveEx(-1 ~= my_rank.rank)
   self.v_uiobjects.NoRecord:SetActiveEx(-1 == my_rank.rank)
   self.v_uiobjects.RankNum:SetActiveEx(-1 ~= my_rank.rank)
@@ -98,12 +132,13 @@ function ui:refresh(level_range_index)
   if -1 ~= my_rank.rank then
     self.v_uicompents.ScoreNum_txt.text = my_rank.value
     self.v_uicompents.DifficultyNum_txt.text = my_rank.floor_idx
-    self.v_uicompents.RankNum_txt.text = my_rank.rank
+    self.v_uicompents.RankNum_txt.text = my_rank.ranking or my_rank.rank
   end
   local player_snapinfo = my_rank.snapinfo
   local avatar_cfg = ShareRes.create("player.player_avatar", player_snapinfo.face_id)
   ResMgr:load_set_icon(self.v_uicompents.Profile_img, string.format(HERO_ICON_PATH, avatar_cfg.Icon))
   self.v_uicompents.PlayerName_txt.text = player_snapinfo.name
+  self.v_uiobjects.MemberEmptyTip:SetActiveEx(UtilTable.is_empty(rank_list.rank_list))
   self.v_rank_loop_list:refresh_data(rank_list.rank_list)
 end
 
@@ -118,6 +153,14 @@ function ui:select_rank_list(index)
   MineSweeperMgr:request_rank_list(chapter_id, function()
     self:refresh()
   end)
+end
+
+function ui:on_update_minesweeper_info()
+  self:refresh()
+end
+
+function ui:check_close()
+  NoviceMgr:check_close_activity_ui(MineSweeperMgr.activity_id, self.v_ui_name, nil, true)
 end
 
 return ui

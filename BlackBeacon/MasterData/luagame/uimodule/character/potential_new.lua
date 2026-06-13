@@ -39,9 +39,11 @@ function ui:ui_finish_load()
       return
     end
     Global.sound_mgr:play_lvup_sound()
-    local callback = function()
+    
+    local function callback()
       self:play_up_lv_effect()
     end
+    
     CharacterMgr:char_advance(self.v_buddy_id, callback)
   end)
   self:set_button("CostItem", function()

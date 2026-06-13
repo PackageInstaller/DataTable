@@ -603,4 +603,9 @@ function M.cond_check_ring_challenge_red(params, value)
   return not ChallengeRingPlusMgr:get_challenge_red()
 end
 
+function M.cond_climbing_tower_max_star(params, value)
+  local _, curr, max = ClimbingTowerMgr:get_main_btn_info()
+  return max <= curr
+end
+
 return M

@@ -164,7 +164,8 @@ function M:logout(logout_sdk_withoutt_tip, on_sdk_logout_success)
     end, "退出登录", "登出", "确定", "取消", nil, false)
     return
   end
-  local do_sdk_logout = function()
+  
+  local function do_sdk_logout()
     CSHiveSDKManager.Logout(function(result, hive_player_info)
       self:on_sdk_logout_success(hive_player_info)
       if on_sdk_logout_success then
@@ -172,6 +173,7 @@ function M:logout(logout_sdk_withoutt_tip, on_sdk_logout_success)
       end
     end)
   end
+  
   if logout_sdk_withoutt_tip then
     do_sdk_logout()
   elseif self:is_guest_account() then
@@ -254,12 +256,14 @@ function M:buy_product(config, cb)
   local price = config.ShowPrice
   local product_id = self:get_sdkkey(config)
   ScreenMaskMgr:open_one_tag(buy_product_tag, math.huge, false)
-  local callback = function(result)
+  
+  local function callback(result)
     ScreenMaskMgr:close_one_tag(buy_product_tag)
     if cb then
       cb(result)
     end
   end
+  
   if not self:_check_valid() then
     callback(false)
     return
@@ -272,16 +276,19 @@ function M:buy_product(config, cb)
   Network:call("c2gs_new_recharge_order", send_data, function(ok, resp)
     if ok then
       local order_id = resp.order_id
-      local pay_failed_cb = function(result)
+      
+      local function pay_failed_cb(result)
         Network:call("c2gs_recharge_failed", {order_id = order_id})
         Log.Error("hive pay failed! ", result.errorCode, result.errorMessage)
         callback(false)
       end
-      local pay_cancel_cb = function(result)
+      
+      local function pay_cancel_cb(result)
         Network:call("c2gs_cancel_recharge", {order_id = order_id})
         Log.Info("hive pay canceld! ", result.errorCode, result.errorMessage)
         callback(false)
       end
+      
       local iapPayload = order_id .. "|" .. product_id
       CSHiveSDKManager.Purchase(product_id, iapPayload, function(result, receipt)
         if result:isSuccess() then

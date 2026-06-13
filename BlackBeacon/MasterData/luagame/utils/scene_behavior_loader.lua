@@ -1,5 +1,6 @@
 local M = {}
-local index_func = function(tbl, key)
+
+local function index_func(tbl, key)
   local value = _G[key]
   if not value then
     local file = rawget(tbl, "__file__")
@@ -8,8 +9,10 @@ local index_func = function(tbl, key)
     return value
   end
 end
+
 local BEHAVIOR_IMPORTED_FILES = {}
-local behavior_importer = function(file_name)
+
+local function behavior_importer(file_name)
   local data = BEHAVIOR_IMPORTED_FILES[file_name]
   if data then
     return data
@@ -21,9 +24,11 @@ local behavior_importer = function(file_name)
   end
   return data
 end
-local get_behavior_env = function(file)
+
+local function get_behavior_env(file)
   return setmetatable({__file__ = file, import = behavior_importer}, {__index = index_func})
 end
+
 local CSLuaService = CS.Game.LuaService
 
 function M.load_behavior_file(file)

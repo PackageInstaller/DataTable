@@ -161,14 +161,17 @@ function ui:_onclick_start_match_btn()
     Util.show_message_tip(2216)
     return
   end
-  local return_cb = function()
+  
+  local function return_cb()
     self.v_uiobjects.NormalState:SetActive(false)
     self.v_uiobjects.MatchingState:SetActive(true)
     UIMgr:get_ui("online_battle_match_tips"):ui_show(OnlineConfig.Quick_TIPS_TYPE.MATCH)
   end
-  local match_cb = function()
+  
+  local function match_cb()
     ActivityMgr:invoke(Act_ID, "request_join_match", self.v_point_id, return_cb)
   end
+  
   local wait_match = ActivityMgr:invoke(Act_ID, "get_in_matching")
   if wait_match then
     local match_op = ActivityMgr:invoke(Act_ID, "get_cur_match_point") == self.v_point_id and OnlineConfig.MATCH_OPERATE.BREAK or OnlineConfig.MATCH_OPERATE.RESTART
@@ -187,9 +190,11 @@ function ui:_onclick_create_room_btn()
     Util.show_message_tip(2216)
     return
   end
-  local cb = function()
+  
+  local function cb()
     UIMgr:get_ui("online_create_room_tips"):ui_show(self.v_point_id)
   end
+  
   local wait_match = ActivityMgr:invoke(Act_ID, "get_in_matching")
   if wait_match then
     OnlineHelper.quit_match(self, cb)

@@ -324,7 +324,7 @@ function ui:try_add_show_attr_list(params, attr_id, name)
   end
 end
 
-local get_attr_value_func = function(npc, attr_id)
+local function get_attr_value_func(npc, attr_id)
   if npc:is_npc() then
     local element_id = FightDefine.AB_ATTR_TO_ELEMENT[attr_id]
     if element_id then

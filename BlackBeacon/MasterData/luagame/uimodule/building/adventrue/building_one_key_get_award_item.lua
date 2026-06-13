@@ -26,9 +26,10 @@ function ui:ui_on_destroy()
 end
 
 function ui:set_data(task_data)
-  local jump_cb = function()
+  local function jump_cb()
     self.v_parent_ui:ui_hide()
   end
+  
   local task_id = task_data.id
   local task_cfg = ShareRes.get_adventrue_task_cfg(task_id)
   local quality_cfg = ShareRes.get_adventrue_task_quality_cfg(task_cfg.Quality)

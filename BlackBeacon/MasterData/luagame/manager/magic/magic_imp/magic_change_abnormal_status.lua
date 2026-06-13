@@ -1,7 +1,8 @@
 local FightDefine = require("cs_share.fight_define")
 local char_abnormal_map = FightDefine.CHAR_ABNORMAL_MAP
 local ABNORMAL_STATUS = FightDefine.ABNORMAL_STATUS
-local check_need_skip_operation = function(new_state, cur_states, action_open_state)
+
+local function check_need_skip_operation(new_state, cur_states, action_open_state)
   if new_state == cur_states then
     return true
   elseif cur_states == ABNORMAL_STATUS.CLOSE and new_state == ABNORMAL_STATUS.IMMUNITY then
@@ -11,6 +12,7 @@ local check_need_skip_operation = function(new_state, cur_states, action_open_st
   end
   return false
 end
+
 local Base = require("manager.magic.magic_imp.magic_base")
 local M = Util.create_child_mt(Base)
 

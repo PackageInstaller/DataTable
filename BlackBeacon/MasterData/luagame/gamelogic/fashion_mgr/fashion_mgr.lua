@@ -309,6 +309,8 @@ function M:init_all_fashion()
       self.v_all_main_scene_fashion[id] = {}
       self.v_all_main_scene_fashion[id].id = id
       self.v_all_main_scene_fashion[id].name = cfg.AtmosphereName
+      self.v_all_main_scene_fashion[id].pd_name = cfg.DrawcardPDName
+      self.v_all_main_scene_fashion[id].anim_name = cfg.ClockAnimName
       self.v_all_main_scene_fashion[id].state = Config.CommonDefine.MAIN_SCENE_FASHION_STATE.None
     end
   end
@@ -447,6 +449,37 @@ end
 
 function M:set_scene_illumination_index(index)
   self.v_scene_illumination_index = index
+end
+
+function M:get_curr_fashion_draw_card_pd_name()
+  if self.v_use_main_scene_fashion then
+    return self.v_use_main_scene_fashion.pd_name
+  end
+  return "Drawcard_PD"
+end
+
+function M:get_curr_fashion_clock_anim_name()
+  if self.v_use_main_scene_fashion then
+    return self.v_use_main_scene_fashion.anim_name
+  end
+  return "FocusOnClock_clock"
+end
+
+function M:show_fashion_draw_card_pd(pd_name, camera_control)
+  local tarns = camera_control.transform
+  for i = 0, tarns.childCount - 1 do
+    local child_trans = tarns:GetChild(i)
+    local name = child_trans.name
+    if name == pd_name then
+      child_trans.gameObject:SetActive(true)
+    elseif "CM_vcam" ~= name then
+      child_trans.gameObject:SetActive(false)
+    end
+    local shuttle = Util.get_child_gameobj("Shuttle", child_trans.gameObject)
+    if shuttle then
+      shuttle:SetActive(false)
+    end
+  end
 end
 
 return M

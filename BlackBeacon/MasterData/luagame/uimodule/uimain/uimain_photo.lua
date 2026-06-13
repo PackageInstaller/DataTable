@@ -409,9 +409,11 @@ function ui:ui_finish_load()
     self:refresh_3d_frame_mat()
     self:ani_out()
   end)
-  local confirm_cb = function()
+  
+  local function confirm_cb()
     self:show_photo_list()
   end
+  
   self:set_button("BtnConfirm", function()
     self:do_save(true, confirm_cb)
     if self.v_is_photo_page then
@@ -466,7 +468,7 @@ function ui:on_back_click(cb)
   self:save_temp_data()
   local need_save_photo = PhotoMgr:if_need_save_temp_data()
   if need_save_photo or need_save_scene then
-    local cancel_cb = function()
+    local function cancel_cb()
       if need_save_photo then
         PhotoMgr:init_temp_data()
       end
@@ -482,7 +484,8 @@ function ui:on_back_click(cb)
         self:ui_hide()
       end
     end
-    local confirm_cb = function()
+    
+    local function confirm_cb()
       if need_save_photo then
         self:save_photo()
       end
@@ -498,6 +501,7 @@ function ui:on_back_click(cb)
         self:ui_hide()
       end
     end
+    
     Util.show_notify_popup_message(confirm_cb, "直接退出将丢失未保存改动，\n是否确认退出？", nil, "保存后退出", "直接退出", cancel_cb, nil, nil, true)
   else
     if self.v_is_photo_page then
@@ -531,7 +535,8 @@ function ui:save_photo(just_show_tips)
   self:save_temp_data()
   self:refresh_3d_frame_mat()
   self.v_uiobjects.Blocker:SetActive(true)
-  local cb = function()
+  
+  local function cb()
     self.v_uiobjects.Blocker:SetActive(false)
     if just_show_tips then
       Util.show_message_tip(2172)
@@ -544,16 +549,19 @@ function ui:save_photo(just_show_tips)
       self:ui_hide()
     end
   end
+  
   PhotoMgr:req_save_photo(cb)
 end
 
 function ui:save_scene(just_show_tips, save_scene_cb)
-  local cb = function()
+  local function cb()
     Util.show_message_tip(2172)
+    
     if save_scene_cb then
       save_scene_cb()
     end
   end
+  
   if not FashionMgr:check_is_own_fashion(self.v_selected_scene) then
     FashionMgr:reset_main_scene_fashion()
     return
@@ -596,9 +604,11 @@ function ui:on_jump_click()
   if not cfg or not cfg.JumpId then
     return
   end
-  local cb = function()
+  
+  local function cb()
     SysOpenMgr:jump_to_sys(cfg.JumpId, true)
   end
+  
   self:on_back_click(cb)
 end
 
@@ -950,8 +960,9 @@ function ui:on_photo_item_click(photo_id)
     local frame_id = click_photo_frame_data and click_photo_frame_data.frame_id or 0
     local is_occupy = 0 ~= frame_id and self.v_selected_frame_id ~= frame_id
     if is_occupy then
-      local confirm_cb = function()
+      local function confirm_cb()
         self.v_selected_photo = photo_id
+        
         self.v_using_photo = photo_id
         self.v_uiobjects.PictureParam:SetActive(true)
         self:save_temp_data()
@@ -965,6 +976,7 @@ function ui:on_photo_item_click(photo_id)
           item:update_selected()
         end
       end
+      
       Util.show_notify_popup_message(confirm_cb, "是否将所选内容替换到当前画框中？", nil, nil, nil, nil, nil, nil, true)
       return
     end
@@ -1063,7 +1075,8 @@ end
 
 local normal_color = Util.get_unity_color_by_hex(tonumber("f5ede2", 16))
 local modify_color = Util.get_unity_color_by_hex(tonumber("a0c0ff", 16))
-local func_compare_num = function(num1, num2)
+
+local function func_compare_num(num1, num2)
   return math.floor(num1 * 100) == math.floor(num2 * 100)
 end
 

@@ -32,11 +32,12 @@ end
 
 function ui:auto_set()
   if self.v_auto_set_tbl and #self.v_auto_set_tbl > 0 then
-    local install_puzzle = function()
+    local function install_puzzle()
       PuzzleMgr:batch_install_puzzle(self.v_auto_set_tbl, self.v_buddy_id, function()
         self:ui_hide()
       end)
     end
+    
     if #self.v_auto_set_tbl < #self.v_base_recommend_puzzles then
       Util.show_notify_popup_message(install_puzzle, "当前方案存在未获得古痕，是否进行装配？", nil, "确定", "取消")
     else

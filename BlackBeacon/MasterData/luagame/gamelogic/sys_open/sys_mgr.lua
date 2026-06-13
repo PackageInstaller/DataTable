@@ -129,7 +129,7 @@ function M:jump_to_sys(jump_id, need_notice, ...)
     return
   end
   local activity_id = ActivityCfg.SYSID_TO_ACTY_TYPE[sys_id]
-  if nil ~= activity_id and activity_id ~= CommonDef.ACTY_TYPE.BUDDY_TEACH and not ActivityMgr:get_activity_is_open(activity_id) then
+  if nil ~= activity_id and activity_id ~= CommonDef.ACTY_TYPE.BUDDY_TEACH and activity_id ~= CommonDef.ACTY_TYPE.CLIMBING_TOWER and not ActivityMgr:get_activity_is_open(activity_id) then
     Util.show_message_tip(2096)
     return
   end

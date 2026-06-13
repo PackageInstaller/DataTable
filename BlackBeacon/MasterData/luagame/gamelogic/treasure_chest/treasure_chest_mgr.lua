@@ -12,7 +12,8 @@ local commonDef = require("cs_share.common_define")
 local _tinsert = table.insert
 local _tsort = table.sort
 local _tremove = table.remove
-local treasure_chest_sort = function(a, b)
+
+local function treasure_chest_sort(a, b)
   local a_is_show = a.is_show
   local b_is_show = b.is_show
   local a_quality = a.item_cfg.Quality
@@ -70,7 +71,7 @@ function M:exit_tower()
   self.card_total_count = 0
 end
 
-local _sort_func = function(a, b)
+local function _sort_func(a, b)
   local x = 0
   local y = 0
   if a.Priority then
@@ -129,7 +130,7 @@ function M:set_treasure_chest_list()
   self.v_treasure_chest_list = treasure_chest_list
 end
 
-local _update_tb = function(uuid, count, tb)
+local function _update_tb(uuid, count, tb)
   for index, data in pairs(tb) do
     if data.info.uuid == uuid then
       data.info.count = data.info.count - count
@@ -267,11 +268,12 @@ end
 
 function M:flip_card(data)
   if data and data[1] then
-    local callback = function(ok)
+    local function callback(ok)
       if ok then
         UIMgr:get_ui("flip_card"):ui_show(data[1], BagMgr.flip_card_award_list)
       end
     end
+    
     local consume_list = {
       bag_type = TreasureChestCfg.TREASURE_CHEST_TYPE,
       item_list = {
@@ -651,8 +653,8 @@ end
 function M:get_all_chapter_treasure_chest_can_open()
   local chapter_cfg_list = {}
   for _, chapter_cfg in pairs(ShareRes.get_chapter_cfg()) do
-    if chapter_cfg.ChapterPage == Config.Chapter_Mode.NORMAL and chapter_cfg.ChapterMode == Config.Chapter_Mode.NORMAL and not chapter_cfg_list[chapter_cfg.Order] then
-      chapter_cfg_list[chapter_cfg.Order] = chapter_cfg
+    if chapter_cfg.ChapterPage == Config.Chapter_Mode.NORMAL and chapter_cfg.ChapterMode == Config.Chapter_Mode.NORMAL and not chapter_cfg_list[chapter_cfg.SerialNum] then
+      chapter_cfg_list[chapter_cfg.SerialNum] = chapter_cfg
     end
   end
   for _, chapter_cfg in pairs(chapter_cfg_list) do
@@ -702,11 +704,18 @@ end
 
 function M:get_all_box_chapter_cfg_list()
   local chapter_cfg_list = {}
+  local temp_chapter_cfg_list = {}
   for _, chapter_cfg in pairs(ShareRes.get_chapter_cfg()) do
-    if self:is_contains_box(chapter_cfg) and chapter_cfg.ChapterMode == Config.Chapter_Mode.NORMAL and not chapter_cfg_list[chapter_cfg.Order] then
-      chapter_cfg_list[chapter_cfg.Order] = chapter_cfg
+    if self:is_contains_box(chapter_cfg) and chapter_cfg.ChapterMode == Config.Chapter_Mode.NORMAL and not chapter_cfg_list[chapter_cfg.SerialNum] and not temp_chapter_cfg_list[chapter_cfg.SerialNum] then
+      temp_chapter_cfg_list[chapter_cfg.SerialNum] = chapter_cfg
     end
   end
+  for _, cfg in pairs(temp_chapter_cfg_list) do
+    table.insert(chapter_cfg_list, cfg)
+  end
+  table.sort(chapter_cfg_list, function(a, b)
+    return a.SerialNum < b.SerialNum
+  end)
   return chapter_cfg_list
 end
 
@@ -751,53 +760,32 @@ end
 
 function M:get_need_open_chapter_info()
   local chapter_cfg_list = self:get_all_box_chapter_cfg_list()
-  local chapter_id = 0
   local total_count = 0
   local opened_count = 0
-  local last_chapter_id = 0
   for _, chapter_cfg in pairs(chapter_cfg_list) do
     local node_cfg_list = ShareRes.get_chapter_all_node_id_by_chapter_id(chapter_cfg.Id)
-    local is_need_break = false
     local chapter_data = ChapterMgr:get_chapter_data_by_chapter_id(chapter_cfg.Id)
     if not chapter_data then
-      chapter_id = last_chapter_id
-      break
-    end
-    last_chapter_id = chapter_cfg.Id
-    for _, node_cfg in pairs(node_cfg_list) do
-      local state = ChapterMgr:get_node_state(chapter_cfg.Id, node_cfg.Id)
-      local is_finished = state == Config.CommonDefine.CHAPTER_NODE_STATE.FINISHED
-      if not is_finished then
-        is_need_break = true
-        break
-      end
-      local box_group_id = node_cfg.BoxGroupId
-      if box_group_id and box_group_id > 0 then
-        local box_cfg_list = group_box_cfg_list[box_group_id]
-        for _, box_cfg in pairs(box_cfg_list) do
-          total_count = total_count + 1
-          if scene_treasure_chest_list[box_cfg.Id] then
-            opened_count = opened_count + 1
-          end
-          if total_count ~= opened_count and 0 == chapter_id then
-            chapter_id = chapter_cfg.Id
+    else
+      for _, node_cfg in pairs(node_cfg_list) do
+        local state = ChapterMgr:get_node_state(chapter_cfg.Id, node_cfg.Id)
+        local is_finished = state == Config.CommonDefine.CHAPTER_NODE_STATE.FINISHED
+        if is_finished then
+          local box_group_id = node_cfg.BoxGroupId
+          if box_group_id and box_group_id > 0 then
+            local box_cfg_list = group_box_cfg_list[box_group_id]
+            for _, box_cfg in pairs(box_cfg_list) do
+              total_count = total_count + 1
+              if scene_treasure_chest_list[box_cfg.Id] then
+                opened_count = opened_count + 1
+              end
+            end
           end
         end
       end
     end
-    if is_need_break then
-      if 0 == chapter_id then
-        chapter_id = chapter_cfg.Id
-      end
-      break
-    end
   end
-  if 0 == chapter_id then
-    for _, chapter_cfg in pairs(chapter_cfg_list) do
-      chapter_id = chapter_cfg.Id
-    end
-  end
-  return chapter_id, total_count, opened_count
+  return nil, total_count, opened_count
 end
 
 return M

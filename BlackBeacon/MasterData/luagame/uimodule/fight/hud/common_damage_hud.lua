@@ -19,16 +19,46 @@ local LANGUAGE_INDEX = Config.CommonDefine.LANGUAGE_INDEX
 local BLOOD_ATTACH = Global.BloodHelper.BLOOD_ATTACH
 local LIVE_TIME = ShareRes.get_comm_value("DamageNumLifeTime") or 1
 local BLOOD_CONFIG = {
-  [M.BLOOD_TYPE.NORMAL] = {dotween_id = 1001001, color = "#FFFFFF"},
-  [M.BLOOD_TYPE.NORMAL_HERO] = {dotween_id = 1002001, color = "#EF2832"},
-  [M.BLOOD_TYPE.NORMAL_HEAL] = {dotween_id = 1003001, color = "#2CF07E"},
-  [M.BLOOD_TYPE.NORMAL_CRIT] = {dotween_id = 1003001, color = "#FFFFFF"},
-  [M.BLOOD_TYPE.NORMAL_HERO_CRIT] = {dotween_id = 1003001, color = "#FFFFFF"},
-  [M.BLOOD_TYPE.SHILED_BLOCK_RED] = {dotween_id = 1003001, color = "#FFFFFF"},
-  [M.BLOOD_TYPE.SHILED_BLOCK_WHITE] = {dotween_id = 1003001, color = "#FFFFFF"},
-  [M.BLOOD_TYPE.ABNOR_TRI_HURT] = {dotween_id = 1001001, color = "#FFFFFF"},
-  [M.BLOOD_TYPE.ABNOR_DMG_HURT] = {dotween_id = 1001001, color = "#FFFFFF"},
-  [M.BLOOD_TYPE.ABNOR_FONT] = {dotween_id = 1001001, color = "#FFFFFF"}
+  [M.BLOOD_TYPE.NORMAL] = {
+    dotween_id = 1001001,
+    color = tonumber("FFFFFF", 16)
+  },
+  [M.BLOOD_TYPE.NORMAL_HERO] = {
+    dotween_id = 1002001,
+    color = tonumber("EF2832", 16)
+  },
+  [M.BLOOD_TYPE.NORMAL_HEAL] = {
+    dotween_id = 1003001,
+    color = tonumber("2CF07E", 16)
+  },
+  [M.BLOOD_TYPE.NORMAL_CRIT] = {
+    dotween_id = 1003001,
+    color = tonumber("FFFFFF", 16)
+  },
+  [M.BLOOD_TYPE.NORMAL_HERO_CRIT] = {
+    dotween_id = 1003001,
+    color = tonumber("FFFFFF", 16)
+  },
+  [M.BLOOD_TYPE.SHILED_BLOCK_RED] = {
+    dotween_id = 1003001,
+    color = tonumber("FFFFFF", 16)
+  },
+  [M.BLOOD_TYPE.SHILED_BLOCK_WHITE] = {
+    dotween_id = 1003001,
+    color = tonumber("FFFFFF", 16)
+  },
+  [M.BLOOD_TYPE.ABNOR_TRI_HURT] = {
+    dotween_id = 1001001,
+    color = tonumber("FFFFFF", 16)
+  },
+  [M.BLOOD_TYPE.ABNOR_DMG_HURT] = {
+    dotween_id = 1001001,
+    color = tonumber("FFFFFF", 16)
+  },
+  [M.BLOOD_TYPE.ABNOR_FONT] = {
+    dotween_id = 1001001,
+    color = tonumber("FFFFFF", 16)
+  }
 }
 local ABNOR_TYPE_COUNT = UtilTable.hash_lenth(Config.FightDefine.ELEMENT_TYPE)
 local ABNOR_ICON_INDEX_OFFSET = -1
@@ -47,36 +77,32 @@ function M:_init(...)
 end
 
 function M:get_tmp_string(exhartype, damage, color)
-  local str = EMPTY_STR
-  str = str .. FightDataMgr:get_color_tmp_string(damage, color, 6)
-  return str
+  local offset = 6
+  return offset
 end
 
 function M:get_abnor_hurt_tmp_string(element_id, damage)
-  local str = EMPTY_STR
+  local offset
   if ABNORMAL_TYPE_DESC[element_id] then
     local index = element_id + ABNOR_ICON_INDEX_OFFSET
-    local offset = ABNOR_FONT_INDEX_ADD_OFFSET + index * ABNOR_FONT_INDEX_MULT_OFFSET
-    str = FightDataMgr:get_tmp_string(damage, offset)
+    offset = ABNOR_FONT_INDEX_ADD_OFFSET + index * ABNOR_FONT_INDEX_MULT_OFFSET
   end
-  return str
+  return offset
 end
 
 function M:get_abnor_font_tmp_string(element_id)
-  local str = EMPTY_STR
+  local offset
   if ABNORMAL_TYPE_DESC[element_id] then
     local index = element_id + ABNOR_ICON_INDEX_OFFSET
     local text_offset = (LANGUAGE_INDEX[Global.curr_text_language] + ABNOR_ICON_INDEX_OFFSET) * ABNOR_TYPE_COUNT
-    local n = index + ABNOR_FONT_INDEX_SPECIAL_OFFSET + text_offset
-    str = string.format(TMP_Sprite_Template, n)
+    offset = index + ABNOR_FONT_INDEX_SPECIAL_OFFSET + text_offset
   end
-  return str
+  return offset
 end
 
 function M:get_shield_block_tmp_string(damage)
   local offset = SHIELD_DMG_INDEX_ADD_OFFSET
-  local str = FightDataMgr:get_tmp_string(damage, offset)
-  return str
+  return offset
 end
 
 function M:load_gameobj(is_main_hurt, is_crit, callback, blood_type)
@@ -148,21 +174,31 @@ end
 
 function M:set_text(exhartype, damage, blood_info, is_crit, blood_type)
   damage = math.abs(damage)
-  local tmp_str
+  local offset, color
   if blood_type == BLOOD_TYPE.ABNOR_TRI_HURT or blood_type == BLOOD_TYPE.ABNOR_DMG_HURT then
-    tmp_str = self:get_abnor_hurt_tmp_string(exhartype, damage)
+    offset = self:get_abnor_hurt_tmp_string(exhartype, damage)
   elseif blood_type == BLOOD_TYPE.NORMAL_HERO or blood_type == BLOOD_TYPE.NORMAL_HERO_CRIT then
-    tmp_str = self:get_tmp_string(exhartype, damage, blood_info.color)
+    offset = self:get_tmp_string(exhartype, damage, blood_info.color)
+    color = blood_info.color
   elseif blood_type == BLOOD_TYPE.ABNOR_FONT then
-    tmp_str = self:get_abnor_font_tmp_string(exhartype)
+    offset = self:get_abnor_font_tmp_string(exhartype)
+    damage = 0
   elseif blood_type == BLOOD_TYPE.SHILED_BLOCK_RED or blood_type == BLOOD_TYPE.SHILED_BLOCK_WHITE then
-    tmp_str = self:get_shield_block_tmp_string(damage)
+    offset = self:get_shield_block_tmp_string(damage)
   elseif exhartype and exhartype <= PHYSICS then
-    tmp_str = self:get_tmp_string(exhartype, damage, blood_info.color)
+    offset = self:get_tmp_string(exhartype, damage, blood_info.color)
+    color = blood_info.color
   else
-    tmp_str = self:get_abnor_hurt_tmp_string(exhartype, damage)
+    offset = self:get_abnor_hurt_tmp_string(exhartype, damage)
   end
-  self.v_damage_tmp:SetText(tmp_str)
+  if not offset then
+    return
+  end
+  if color then
+    self.v_damage_tmp:SetCommonDamageHudText(damage, offset, color)
+  else
+    self.v_damage_tmp:SetCommonDamageHudText(damage, offset)
+  end
 end
 
 function M:play_anim(is_main_hurt, is_crit, position, blood_type)

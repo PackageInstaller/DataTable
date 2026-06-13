@@ -27,7 +27,8 @@ function ui:click_curse_tem(select_index)
   local debuff_cfg = ShareRes.create("activity.curse_effect", self.v_debuff_list[select_index])
   local pos_x, pos_y = 480 + select_index * 100, 170
   local content_pos = {pos_x = pos_x, pos_y = pos_y}
-  local callback = function()
+  
+  local function callback()
     if self:is_destroy() then
       return
     end
@@ -35,6 +36,7 @@ function ui:click_curse_tem(select_index)
       self.v_uiobjects["Select" .. index]:SetActive(false)
     end
   end
+  
   local show_info = {
     name = debuff_cfg.Name,
     desc = debuff_cfg.WorldDesc,
@@ -146,7 +148,8 @@ function ui:set_curse_val(is_remove_card, anima_cb)
   if not self.v_last_curse_val then
     self.v_last_curse_val = last_curse
   end
-  local callback = function()
+  
+  local function callback()
     self.v_uicompents.CurseNow_txt.text = cur_curse_val
     self.v_uicompents.CurseMax_txt.text = cur_curse_val_limit
     if anima_cb then
@@ -154,6 +157,7 @@ function ui:set_curse_val(is_remove_card, anima_cb)
     end
     self.v_is_play_set_curse_value_anima = false
   end
+  
   if self.v_change_sequence then
     self.v_change_sequence:Kill(false)
     self.v_change_sequence = nil

@@ -7,7 +7,8 @@ session_mt.__index = session_mt
 local OK = 0
 local EINTR = socket.EINTR
 local EAGAIN = socket.EAGAIN
-local new = function(host, port)
+
+local function new(host, port)
   if nil == port and type(host) == "number" then
     port = host
     host = "127.0.0.1"
@@ -48,13 +49,14 @@ function mt:register_handle(type, func)
   self.v_handle[type] = func
 end
 
-local on_handle = function(self, type, ...)
+local function on_handle(self, type, ...)
   local func = self.v_handle[type]
   if func then
     return func(...)
   end
 end
-local new_session = function(self, csock)
+
+local function new_session(self, csock)
   self.v_session_idx = self.v_session_idx + 1
   local session = {
     o_idx = self.v_session_idx,

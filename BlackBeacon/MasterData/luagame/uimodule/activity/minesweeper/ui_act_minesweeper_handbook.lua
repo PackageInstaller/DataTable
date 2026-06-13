@@ -66,7 +66,7 @@ end
 
 function ui:ui_on_show()
   self:refresh()
-  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.ui_act_minesweeper_handbook_UI_SOUND)
+  self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close, self)
 end
 
 function ui:ui_on_hide()
@@ -123,6 +123,10 @@ function ui:set_item_info(index)
   ResMgr:load_set_icon(self.v_uicompents.QualityIcon_img, quality_cfg.Icon)
   self.v_uicompents.ItemName_txt.text = bless_cfg.Name
   self.v_uicompents.ItemDesc_txt.text = bless_cfg.Desc
+end
+
+function ui:check_close()
+  NoviceMgr:check_close_activity_ui(MineSweeperMgr.activity_id, self.v_ui_name, nil, true)
 end
 
 return ui

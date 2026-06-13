@@ -24,7 +24,7 @@ local CAM_CLIP_DIST = QualityCfg.CLIP_CFG
 local RENDER_FRAME = QualityCfg.RENDER_FRAME
 local RESOLUTION = QualityCfg.RESOLUTION
 local MAX_MOBILE_UNITY_QUALITY = QUALITY.VERY_HIGH
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local MAX_FPS = 60
 local TextureStreamingReduction = 3
 local TextureStremingBudget = 200
@@ -97,7 +97,11 @@ function M:_on_create_camera()
   UtilTable.clear_map(self.v_cam_created_cbs)
 end
 
-local enable_shadow_camera = function(enable)
+function M:on_destroy_camera()
+  self.v_postprocessing = nil
+end
+
+local function enable_shadow_camera(enable)
   local shadow_camera = CSShadow.ShadowCamera
   if shadow_camera and not shadow_camera:IsNull() then
     shadow_camera:SetActive(enable)
@@ -221,13 +225,15 @@ function M:_on_quality_change(msg)
   self:set_graphic_info(quality_level - 1)
   self:set_shadow(Global.quality_cfg.shadow)
   self.v_quality_fps = Global.quality_cfg.fps
-  local set_cam_clip_dist = function()
+  
+  local function set_cam_clip_dist()
     local cur_clip_factor = Global.quality_cfg.cam_dist
     local clip_dist_component = Global.camera.clip_dist
     for layer, dist in pairs(CAM_CLIP_DIST) do
       clip_dist_component:SetDistance(layer, dist * cur_clip_factor)
     end
   end
+  
   if Global.camera then
     set_cam_clip_dist()
   else
@@ -328,7 +334,7 @@ function M:set_unity_antiAliasing(val)
   UnityEngine.QualitySettings.antiAliasing = val
 end
 
-local find_longest_prefix_match = function(tb, target)
+local function find_longest_prefix_match(tb, target)
   local longest_match = ""
   local quality
   for k, v in pairs(tb) do
@@ -479,7 +485,7 @@ function M:set_post_process_bloom_param(threshold, filterScaler)
 end
 
 function M:set_texture_streaming()
-  if UNITY_EDITOR or UNITY_STANDALONE_WIN or Global.enable_texture_streaming == false then
+  if UNITY_IOS then
     UnityQualitySetting.streamingMipmapsActive = false
     CSUnityEngine.Texture.streamingTextureDiscardUnusedMips = false
     return
@@ -648,7 +654,6 @@ function M:get_resolution_by_windowssetting()
 end
 
 function M:set_optimize_particle_system_sorting(enable)
-  CSEffectStatus.IsEnableOptimizeParticleSystemSorting = enable
 end
 
 return M

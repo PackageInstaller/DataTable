@@ -136,9 +136,11 @@ function M:insert_hurt_journal(atk_attr_mgr, atk_attrs, def_attr_mgr, def_attrs,
   local element_cal_types = ATK2DEF_TYPES[pre_caculate_data.element_type]
   local base_hurt_src = pre_caculate_data.base_hurt_src
   local element_hurt_src = pre_caculate_data.element_hurt_src
-  local get_info = function(src, cal_types)
+  
+  local function get_info(src, cal_types)
     return cal_types and src and 0 ~= src and "攻击属性" .. src .. " 值" .. atk_attrs[src]
   end
+  
   local atk_dmg_increase, def_dmg_resi
   local skilltypes = SKILLTYPE2TYPES[pre_caculate_data.skill_type]
   if not skilltypes then

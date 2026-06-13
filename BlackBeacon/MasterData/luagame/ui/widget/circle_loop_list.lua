@@ -4,12 +4,14 @@ local event_system = UnityEngine.EventSystems
 local event_trigger = event_system.EventTrigger
 local event_entry = event_trigger.Entry
 local _mfloor = math.floor
-local cal_start_y = function(len, cell_size_y, mid_y)
+
+local function cal_start_y(len, cell_size_y, mid_y)
   local create_num = _mfloor(len / 2)
   local start_pos = mid_y + create_num * cell_size_y
   return start_pos
 end
-local cal_content_y = function(len, cell_size_y, content_mid_y)
+
+local function cal_content_y(len, cell_size_y, content_mid_y)
   local create_num = _mfloor(len / 2)
   local content_start_pos = content_mid_y - create_num * cell_size_y
   return content_start_pos

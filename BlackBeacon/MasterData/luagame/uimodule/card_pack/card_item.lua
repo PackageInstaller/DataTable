@@ -4,7 +4,8 @@ local ui = Util.create_child_mt(Base)
 local commonDef = require("cs_share.common_define")
 local Math = require("base.mathx")
 local MODEL = {}
-local _flip_card = function(self)
+
+local function _flip_card(self)
   local award_data = self.award_data
   if BagMgr:get_item_num(award_data.treasure_chest_cfg.itemID) < award_data.treasure_chest_cfg.itemCount then
     local item_cfg = ShareRes.create("item.item", award_data.treasure_chest_cfg.itemID)
@@ -20,7 +21,8 @@ local _flip_card = function(self)
       local data = self.award_data
       local id = data.id or data.item_cfg.Id
       local data_list = {id = id, count = 1}
-      local cb = function(resp)
+      
+      local function cb(resp)
         UIMgr:get_ui("flip_card"):ui_show(data, resp.reward_list, parent_ui:get_award_tf())
         parent_ui:on_flip_card_end(id)
         if resp.reward_list then
@@ -30,6 +32,7 @@ local _flip_card = function(self)
         end
         TreasureChestMgr:record_history_choose_award(resp.history_choose_reward)
       end
+      
       TreasureChestMgr:on_oper_card(id)
       TowerMgr:choose_reward({data_list}, commonDef.CHOOSE_ITEM_STATUS.USE, cb)
     else
@@ -38,7 +41,8 @@ local _flip_card = function(self)
     end
   end
 end
-local _is_in_arae = function(cur_pos, arae)
+
+local function _is_in_arae(cur_pos, arae)
   return cur_pos.x > arae.left_boundary and cur_pos.x < arae.right_boundary and cur_pos.y < arae.up_boundary and cur_pos.y > arae.bottom_boundary
 end
 
@@ -144,7 +148,8 @@ function ui:add_drag_event()
   local count = self.award_data.count or self.award_data.info.count
   local drag_card_go = self.v_uiobjects.Drag_Card
   local id = self.award_data.id or self.award_data.info.id
-  local drag_start_cb = function()
+  
+  local function drag_start_cb()
     TreasureChestMgr:set_crad_drag_state(id, true)
     local parent_ui = self.v_parent_ui
     if parent_ui.on_drag_card_start then
@@ -166,18 +171,21 @@ function ui:add_drag_event()
       parent_ui:on_card_up()
     end
   end
-  local drag_cb = function()
+  
+  local function drag_cb()
     local temp_pos = UnityVector3(Input.mousePosition.x, Input.mousePosition.y, self.v_drag_card_z)
     local click_pos = UIMgr.root_camera:ScreenToWorldPoint(temp_pos)
     drag_card_go.transform.position = click_pos
   end
-  local drag_end_cb = function()
+  
+  local function drag_end_cb()
     TreasureChestMgr:set_crad_drag_state(id, false)
     local award_arae = self.v_parent_ui.v_card_box_area
     local delect_area = self.v_parent_ui.v_delect_area
     local parent_ui = self.v_parent_ui
     local card_pos = Input.mousePosition
-    local play_anima_cb = function(cb)
+    
+    local function play_anima_cb(cb)
       local cur_count = self.award_data.count or self.award_data.info.count or 0
       local max_count = Math.Clamp(cur_count, 0, 4)
       for index = 1, max_count do
@@ -194,6 +202,7 @@ function ui:add_drag_event()
       end
       parent_ui:set_anima_state(false)
     end
+    
     if parent_ui.hide_delete_area then
       parent_ui:hide_delete_area()
     end
@@ -212,6 +221,7 @@ function ui:add_drag_event()
     end
     play_anima_cb()
   end
+  
   Util.set_start_drag(self:get_object(), self.v_parent_ui, drag_start_cb)
   Util.set_drag(self:get_object(), self.v_parent_ui, drag_cb)
   Util.set_end_drag(self:get_object(), self.v_parent_ui, drag_end_cb)
@@ -227,12 +237,15 @@ end
 
 function ui:discard_card(card_pos, play_anima_cb)
   self.v_parent_ui:set_anima_state(true)
-  local discard_cb = function(ok, errcode)
-    local anima_end_cb = function()
+  
+  local function discard_cb(ok, errcode)
+    local function anima_end_cb()
       self.v_parent_ui:on_discarde_card_end()
     end
+    
     self:play_card_drag_end_anima(true, card_pos, play_anima_cb, anima_end_cb)
   end
+  
   local card_data = TreasureChestMgr:get_treasure_chest(self.award_data.id or self.award_data.info.id)
   if card_data then
     TreasureChestMgr:discard_card(card_data, discard_cb)
@@ -243,9 +256,11 @@ function ui:pop_notice()
   local tip = Util.format_str("模因之匣容量已达上限，是否前往查看？")
   local cancel_btn = Util.format_str("取消")
   local sure_btn = Util.format_str("确认")
-  local srue_cb = function()
+  
+  local function srue_cb()
     self.v_parent_ui:open_card_box_tips_view()
   end
+  
   UIMgr:get_ui("uinotice_tips"):ui_show(srue_cb, nil, tip, sure_btn, cancel_btn)
 end
 
@@ -261,13 +276,15 @@ function ui:save_card(card_pos, play_anima_cb)
     local id = self.award_data.id or self.award_data.item_cfg.Id
     parent_ui:on_save_card_start()
     local data_list = {id = id, count = 1}
-    local cb = function(resp)
+    
+    local function cb(resp)
       parent_ui:insert_reward_list(data_list)
       parent_ui:on_save_card_end(id)
       TreasureChestMgr:record_history_choose_award(resp.history_choose_reward)
       play_anima_cb()
       self:play_card_drag_end_anima(false, card_pos)
     end
+    
     TreasureChestMgr:on_oper_card(id)
     TowerMgr:choose_reward({data_list}, commonDef.CHOOSE_ITEM_STATUS.IN_BAG, cb)
   end

@@ -52,13 +52,15 @@ function ui:on_click_close()
     return
   end
   if self.v_parent_ui:check_quick_change_team(self.v_pos_data) then
-    local confirm_cb = function()
+    local function confirm_cb()
       self:do_close()
     end
-    local cancel_cb = function()
+    
+    local function cancel_cb()
       self.v_parent_ui:quick_change_team(self.v_pos_data)
       self:do_close()
     end
+    
     Util.show_conform_tip("是否保存编队", nil, nil, confirm_cb, cancel_cb)
   else
     self:do_close()

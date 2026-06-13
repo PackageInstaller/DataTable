@@ -1,11 +1,13 @@
 local Base = require("gamelogic.base_system")
 local UpgradeCfg = ShareRes.create("activity.barbecue_stall_sys_update")
+local AllStageCfg = ShareRes.create("activity.barbecue_stall_episode")
 local LocalStorage = require("utils.localstorage")
 local M = Util.create_child_mt(Base)
 local BASE_STAGE_READ_RECOED_STORAGE_KEY = "BBQ_STAGE_READ_RECOED_STORAGE_KEY"
 
 function M:init_sys()
   Base.init_sys(self)
+  self:sys_mq_bind(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.update_new_stage_red, self)
 end
 
 function M:on_reconnect()
@@ -127,7 +129,8 @@ function M:update_new_stage_red()
   local history = LocalStorage:load_table(self.STAGE_READ_RECOED_STORAGE_KEY, true) or {}
   if self.v_stage_datas then
     for _, data in pairs(self.v_stage_datas) do
-      if data.is_challenge and not data.is_lock and 0 == data.score and not history[data.episode_id] then
+      local act_data = AllStageCfg[data.episode_id]
+      if act_data and act_data.ActivityId == self.v_activity_id and data.is_challenge and not data.is_lock and 0 == data.score and not history[data.episode_id] then
         any_new = true
         break
       end
@@ -148,27 +151,18 @@ function M:is_stage_new(stage_id)
 end
 
 function M:read_stage(stage_id)
+  local is_new = false
   local data = self:get_stage_data(stage_id)
   if data and data.is_challenge and not data.is_lock and 0 == data.score then
     local history = LocalStorage:load_table(self.STAGE_READ_RECOED_STORAGE_KEY, true) or {}
     if not history[data.episode_id] then
       history[data.episode_id] = 1
       LocalStorage:save_table(self.STAGE_READ_RECOED_STORAGE_KEY, history, true)
-      local is_active = NoviceMgr:get_novice_activity_active(self.v_activity_id)
-      if not is_active then
-        RedPointMgr:enable_redpoint(RedEnum.BBQ_GAME_NEW_STAGE, false)
-        return true
-      end
-      local any_new = false
-      for _, _data in pairs(self.v_stage_datas) do
-        if _data.is_challenge and not _data.is_lock and 0 == _data.score and not history[_data.episode_id] then
-          RedPointMgr:enable_redpoint(RedEnum.BBQ_GAME_NEW_STAGE, any_new)
-          return true
-        end
-      end
-      return true
+      is_new = true
     end
   end
+  self:update_new_stage_red()
+  return is_new
 end
 
 function M:is_any_upgrade()

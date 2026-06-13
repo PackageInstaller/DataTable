@@ -149,6 +149,7 @@ return {
     follow_id = {1132, 1},
     guide_type = 1,
     id = 1054,
+    jump_condition = 102410010105,
     jump_id = 1054,
     sort = 975,
     ui_name = "ui_chapter_detail"
@@ -158,6 +159,7 @@ return {
     condition = {311312},
     guide_type = 1,
     id = 1055,
+    jump_condition = 102410010105,
     jump_id = 1055,
     sort = 975,
     ui_name = "ui_chapter_detail"
@@ -2128,6 +2130,14 @@ return {
     id = 1071101,
     jump_id = 0,
     sort = 994,
+    ui_name = "fight"
+  },
+  [1080211] = {
+    condition = {},
+    guide_type = 2,
+    id = 1080211,
+    jump_id = 0,
+    sort = 996,
     ui_name = "fight"
   },
   [3050202] = {
@@ -4126,6 +4136,142 @@ return {
     condition = {},
     guide_type = 2,
     id = 100102416,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102501] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102501,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102502] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102502,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102503] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102503,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102504] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102504,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102505] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102505,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102506] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102506,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102507] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102507,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102508] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102508,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102509] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102509,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102510] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102510,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102511] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102511,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102512] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102512,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102513] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102513,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102514] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102514,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102515] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102515,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102516] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102516,
+    jump_id = 0,
+    sort = 996,
+    ui_name = "fight"
+  },
+  [100102517] = {
+    condition = {},
+    guide_type = 2,
+    id = 100102517,
     jump_id = 0,
     sort = 996,
     ui_name = "fight"

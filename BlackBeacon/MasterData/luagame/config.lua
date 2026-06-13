@@ -884,6 +884,11 @@ config.system_modules = {
     is_init_client_only = true
   },
   {
+    global_name = "CaptureMgr",
+    class = "capture.capture_mgr",
+    is_init_client_only = true
+  },
+  {
     global_name = "CompensateMgr",
     class = "compensate.compensate_mgr",
     is_init_client_only = false
@@ -1430,15 +1435,8 @@ config.UI_SOUND_CFG = {
   ui_maze_game_start_click_UI_SOUND = "ui_maze_game_start_click_UI_SOUND",
   ui_maze_game_view_click_UI_SOUND = "ui_maze_game_view_click_UI_SOUND",
   ui_maze_game_illustrated_UI_SOUND = "ui_maze_game_illustrated_UI_SOUND",
-  ui_act_minesweeper_UI_SOUND = "ui_act_minesweeper_UI_SOUND",
-  ui_act_minesweeper_rank_UI_SOUND = "ui_act_minesweeper_rank_UI_SOUND",
-  ui_act_minesweeper_handbook_UI_SOUND = "ui_act_minesweeper_handbook_UI_SOUND",
   ui_minesweeper_settle_suc_UI_SOUND = "ui_minesweeper_settle_suc_UI_SOUND",
   ui_minesweeper_settle_fail_UI_SOUND = "ui_minesweeper_settle_fail_UI_SOUND",
-  ui_minesweeper_battle_suc_UI_SOUND = "ui_minesweeper_battle_suc_UI_SOUND",
-  ui_minesweeper_buff_UI_SOUND = "ui_minesweeper_buff_UI_SOUND",
-  ui_minesweeper_shop_UI_SOUND = "ui_minesweeper_shop_UI_SOUND",
-  ui_minesweeper_battle_UI_SOUND = "ui_minesweeper_battle_UI_SOUND",
   minesweeper_grid_flip_SOUND = "minesweeper_grid_flip_SOUND",
   minesweeper_grid_in_SOUND = "minesweeper_grid_in_SOUND",
   minesweeper_grid_out_SOUND = "minesweeper_grid_out_SOUND",
@@ -1706,7 +1704,8 @@ config.PAUSE_FUN_TOG_SHOW_LIST = {
     6,
     9,
     10
-  }
+  },
+  [CommonDef.CHALLENGE_TYPE.ACTIVITY_MINESWEEPER] = {3, 10}
 }
 config.NUMBER_TO_CHINESE = {
   [1] = "一",

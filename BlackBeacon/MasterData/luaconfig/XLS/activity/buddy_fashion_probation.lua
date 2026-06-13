@@ -24,5 +24,16 @@ return {
     RuleTextId = 5,
     SecondAwardGroupId = 33119,
     SkinId = 3003009
+  },
+  [46] = {
+    ActivityId = 46,
+    AwardGroupId = 33118,
+    BuddyId = 1001026,
+    Condition = 24003,
+    EpisodeId = 360026,
+    ErrorCode = 2363,
+    GiftId = 3003026,
+    MailId = 220001,
+    SkinId = 3003026
   }
 }

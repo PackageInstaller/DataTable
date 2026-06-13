@@ -36,6 +36,7 @@ function ui:ui_finish_load()
 end
 
 function ui:ui_on_show(activity_id)
+  activity_id = activity_id or TimeLimitedActMgr:get_summer_activity_id()
   self.v_activity_id = activity_id
   local is_active = NoviceMgr:get_novice_activity_active(activity_id)
   if is_active then
@@ -128,6 +129,9 @@ end
 
 function ui:on_click_btn(index)
   local cfg = self.v_activities_detail_cfg[index]
+  if cfg and cfg.Type == TimeLimitedActMgr.Type.SummerFight and not Util.get_res_is_integrity() then
+    return
+  end
   local fun = TimeLimitedActMgr:get_btn_jump_fun(cfg.Type)
   local is_open, tips, is_time_check_fail, open_time_tip = TimeLimitedActMgr:is_activity_open(cfg.Id)
   if is_open then

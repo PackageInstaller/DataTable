@@ -1,11 +1,11 @@
-local assert = assert
-local error = error
+local assert = _ENV.assert
+local error = _ENV.error
 local tconcat = table.concat
 local tinsert = table.insert
-local type = type
-local pairs = pairs
-local tostring = tostring
-local next = next
+local type = _ENV.type
+local pairs = _ENV.pairs
+local tostring = _ENV.tostring
+local next = _ENV.next
 local UnityLog = UnityEngine.Debug.Log
 local UnityWarning = UnityEngine.Debug.LogWarning
 local UnityError = UnityEngine.Debug.LogError
@@ -31,7 +31,8 @@ local log_level_desc = {
   [60] = "F",
   [70] = "J"
 }
-local log_to_disk = function(name, modename, level, timestamp, msg, src)
+
+local function log_to_disk(name, modename, level, timestamp, msg, src)
   local s = string.format("[%s %s *%s*]%s %s", timestamp, log_level_desc[level], name, src, msg)
   if 70 == level then
     if is_debug_enviroment() then
@@ -47,18 +48,22 @@ local log_to_disk = function(name, modename, level, timestamp, msg, src)
     UnityError(s)
   end
 end
-local dump_log_to_disk = function(t)
+
+local function dump_log_to_disk(t)
   for i = 1, #t do
     log_to_disk(table.unpack(t[i]))
   end
 end
-local get_log_src = function(level)
+
+local function get_log_src(level)
   local info = debug.getinfo(level + 1, "Sl")
   local src = info.source
   return src .. ":" .. info.currentline .. ":"
 end
+
 local starttime = Date.now()
-local log_timestamp = function(timestamp)
+
+local function log_timestamp(timestamp)
   timestamp = timestamp + starttime
   local sec = math.floor(timestamp)
   local ms = math.floor((timestamp - sec) * 100)
@@ -66,14 +71,16 @@ local log_timestamp = function(timestamp)
   f = string.format("%s.%02d [%d]", f, ms, Global.frame_id)
   return f
 end
-local tokey = function(key)
+
+local function tokey(key)
   if "number" == type(key) then
     return string.format("[%s]", tostring(key))
   else
     return string.format("%s", tostring(key))
   end
 end
-local tovalue = function(v)
+
+local function tovalue(v)
   if "number" == type(v) then
     return string.format("%s", tostring(v))
   elseif "boolean" == type(v) then
@@ -82,7 +89,8 @@ local tovalue = function(v)
     return string.format("\"%s\"", tostring(v))
   end
 end
-local table_serialize = function(root)
+
+local function table_serialize(root)
   local cache = {
     [root] = "."
   }
@@ -113,7 +121,8 @@ local table_serialize = function(root)
 
 }]]
 end
-local log_format = function(level, ...)
+
+local function log_format(level, ...)
   local t = {
     ...
   }
@@ -142,7 +151,8 @@ local log_format = function(level, ...)
   end
   return out
 end
-local tag_table_to_tags = function(tag_table)
+
+local function tag_table_to_tags(tag_table)
   if tag_table and next(tag_table) then
     local tags = {}
     for k, v in pairs(tag_table) do
@@ -151,27 +161,32 @@ local tag_table_to_tags = function(tag_table)
     return tags
   end
 end
-local _lnew = function(n)
+
+local function _lnew(n)
   local l = {}
   l.tail = 1
   l.len = n
   return l
 end
-local _lreset = function(l)
+
+local function _lreset(l)
   l.tail = 1
   return l
 end
-local _lpush = function(l, ...)
+
+local function _lpush(l, ...)
   l[l.tail] = {
     ...
   }
   l[l.tail - l.len] = nil
   l.tail = l.tail + 1
 end
-local _lempty = function(l)
+
+local function _lempty(l)
   return 1 == l.tail
 end
-local _lrange = function(l)
+
+local function _lrange(l)
   if l.tail <= l.len then
     return 1, l.tail - 1
   end

@@ -3,7 +3,8 @@ local ui = Util.create_child_mt(Base)
 local BATTLE_DROP_TIPS_TEMPLATE = "BATTLE_DROP_TIPS_TEMPLATE"
 local ITEM_ICON_PATH = "Icon/Item/"
 local CommonDefine = require("cs_share.common_define")
-local _sort_func = function(a, b)
+
+local function _sort_func(a, b)
   local x = 0
   local y = 0
   if a.Priority then

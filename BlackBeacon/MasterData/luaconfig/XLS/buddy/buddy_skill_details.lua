@@ -1155,7 +1155,7 @@ return {
     SortIndex = 0
   },
   [102302] = {
-    Desc = "切换上场时连斩，造成<color=#D56D2E>常规伤害</color>。\n连携充能完成时，点按连携技立即释放<color=#D56D2E>[技能2]</color>【太一生水（连携）】，涟漪攻击到敌人时自动产生<color=#476DBB>【湍刃】</color>；爆发状态期间，场上形成雨天环境，可手动点击技能2按钮产生<color=#476DBB>【湍刃】</color>攻击敌人。",
+    Desc = "切换上场时连斩，造成<color=#D56D2E>常规伤害</color>。\n连携充能完成时，点按连携技立即释放<color=#D56D2E>[技能2]</color>【太一生水（连携）】，涟漪攻击到敌人时自动产生<color=#476DBB>【湍刃】</color>；爆发状态期间，场上形成雨天环境，可手动点击技能2按钮产生<color=#476DBB>【湍刃（连携）】</color>攻击敌人。",
     Icon = "UI_skill_switch_1",
     Id = 102302,
     Keywords = {2302},
@@ -1250,56 +1250,78 @@ return {
     SortIndex = 0
   },
   [102501] = {
-    Desc = "普攻：巴拉莱卡使用骑枪和腿技打出五段攻击造成<color=#D56D2E>普攻伤害</color>，普攻第三段命中敌人可获得一层【枪焰】效果。\n重击：长按普攻可发动重击，巴拉莱卡使用骑枪打出两次连续的横扫造成<color=#D56D2E>常规伤害</color>。长按更长时间后，会自动打出普攻第三段，获得一层【枪焰】效果。\n闪避：完美闪避后可使用普攻追击，造成<color=#ec7f00>常规伤害</color>，继续衔接普攻可直接打出第三段。",
-    Icon = "UI_H1001004_atk",
+    Desc = "普攻：巴拉莱卡使用骑枪和腿技打出五段攻击造成<color=#D56D2E>普攻伤害</color>，普攻第三段命中敌人可获得一层<color=#476DBB>【枪焰】</color>效果。\n重击：长按普攻可发动重击，巴拉莱卡使用骑枪打出两次连续的横扫造成<color=#D56D2E>常规伤害</color>。长按更长时间后，会自动打出普攻第三段，获得一层<color=#476DBB>【枪焰】</color>效果。\n闪避：完美闪避后可使用普攻追击，造成<color=#ec7f00>常规伤害</color>，继续衔接普攻可直接打出第三段。",
+    Icon = "UI_H1001025_atk",
     Id = 102501,
-    Name = "普攻",
+    Keywords = {2501},
+    Name = "骑枪格斗术",
     SkillTypeName = "[普攻]",
     SortIndex = 0
   },
   [102502] = {
-    Desc = "巴拉莱卡出场蓄力重砸地面，造成<color=#D56D2E>常规伤害</color>，进入【火枪过载】状态。\n连携状态下，巴拉莱卡每次释放强化普攻后，会延迟0.3s后落下【火焰骑枪】攻击敌人命中后获得少量连携能量，同时获得一层【枪焰】效果。\n【火焰骑枪】命中敌人后会立刻获得一次强化普攻；\n获得的强化普攻根据上一次打出的强化普攻会产生变化，若上次打出【膝击】强化普攻，则获得【投枪】强化普攻",
+    Desc = "巴拉莱卡出场蓄力重砸地面，造成<color=#D56D2E>常规伤害</color>，进入<color=#476DBB>【枪焰过载】</color>状态。\n连携状态下，巴拉莱卡每次释放强化普攻后，会延迟0.3秒后落下<color=#476DBB>【枪焰威势】</color>攻击敌人，造成<color=#D56D2E>追击伤害</color>，命中后获得少量连携能量，同时获得一层<color=#476DBB>【枪焰】</color>效果。\n<color=#476DBB>【枪焰威势】</color>命中敌人后会立刻获得一次强化普攻；\n获得的强化普攻根据上一次打出的技能会产生变化，若上次打出<color=#476DBB>【攻歼】</color>，则获得<color=#476DBB>【破障】</color>。",
     Icon = "UI_skill_switch_1",
     Id = 102502,
-    Name = "换人连携",
+    Keywords = {
+      2501,
+      2506,
+      2502,
+      2503,
+      2505
+    },
+    Name = "肃清行动",
     SkillTypeName = "[连携]",
     SortIndex = 0
   },
   [102503] = {
-    Desc = "向前冲刺并使用膝撞攻击敌人造成伤害，获得强化普攻【膝击派生】，造成<color=#D56D2E>强化伤害</color>。\n短时间内可点按普攻键释放【膝击派生】，戳刺前方敌人，命中敌人可获得一层【枪焰】效果。",
-    Icon = "UI_H1001004_skill2",
+    Desc = "向前冲刺并使用膝撞攻击敌人造成伤害，并解锁下一段技能<color=#476DBB>【攻歼】</color>，造成<color=#D56D2E>常规伤害</color>。\n短时间内可点按释放<color=#476DBB>【攻歼】</color>，戳刺前方敌人，造成<color=#D56D2E>强化伤害</color>，命中敌人可获得一层<color=#476DBB>【枪焰】</color>效果。",
+    Icon = "UI_H1001025_skill1_1",
     Id = 102503,
-    Name = "技能1",
+    Keywords = {2501, 2503},
+    Name = "膝击",
     SkillTypeName = "[技能1]",
     SortIndex = 0
   },
   [102504] = {
-    Desc = "向前方划地大力投枪，命中敌人后获得强化普攻【投枪派生】，造成<color=#D56D2E>强化伤害</color>。\n短时间内可点按普攻键释放【投枪派生】，对目标敌人进行飞踢，命中敌人可命中敌人可获得一层【枪焰】效果。",
-    Icon = "UI_H1001004_skill3",
+    Desc = "向前方划地大力投枪，攻击直线路径上的所有敌人，造成<color=#D56D2E>常规伤害</color>，命中敌人可获得一层<color=#476DBB>【枪焰】</color>效果；\n<color=#476DBB>【攻歼】</color>命中后，该技能短时间内变为<color=#476DBB>【近身突袭】</color>，冲向敌人大力飞踹，造成<color=#D56D2E>强化伤害</color>，命中敌人可获得一层<color=#476DBB>【枪焰】</color>效果。",
+    Icon = "UI_H1001025_skill2_1",
     Id = 102504,
-    Name = "技能2",
+    Keywords = {
+      2501,
+      2503,
+      2504
+    },
+    Name = "远距突击",
     SkillTypeName = "[技能2]",
     SortIndex = 0
   },
   [102505] = {
-    Desc = "通过普攻3和强化普攻可获得【枪焰】效果；\n【枪焰】：巴拉莱卡的每次攻击可在打击后多打出一段伤害，该效果拥有1秒的冷却，该伤害会根据【枪焰】的层数依次提升；\n【枪焰】满层时，会解锁【空中下戳】，对敌人造成大量伤害，释放结束后消耗所有层【枪焰】，同时进入【火枪过载】状态；\n消耗三层【枪焰】后，巴拉莱卡切至后台会落下三次【火焰骑枪】，并在最后一次落下后，获得【强化QTE】；\n【火枪过载】：处于该状态下巴拉莱卡无法获得【枪焰】，连携状态下可解锁该限制；\n【强化QTE】：角色头像会燃起火焰，并在换人后触发一次强力俯冲攻击。",
-    Icon = "UI_H1001004_passive",
+    Desc = "通过普攻第三段、<color=#476DBB>【攻歼】</color>和<color=#476DBB>【女仆已就位】</color>可获得<color=#476DBB>【枪焰】</color>效果；\n<color=#476DBB>【枪焰】</color>：巴拉莱卡的每次攻击可在打击后多打出一段<color=#D56D2E>强化伤害</color>，该伤害会根据<color=#476DBB>【枪焰】</color>的层数依次提升25%，最多提升50%；\n<color=#476DBB>【枪焰】</color>满层时，会解锁强化普攻<color=#476DBB>【破障】</color>，对敌人造成大量<color=#D56D2E>强化伤害</color>，释放结束后消耗所有<color=#476DBB>【枪焰】</color>层数，同时进入<color=#476DBB>【枪焰过载】</color>状态；\n进入<color=#476DBB>【枪焰过载】</color>状态后，巴拉莱卡切至后台会落下三次<color=#476DBB>【枪焰威势】</color>，造成<color=#D56D2E>追击伤害</color>，并在最后一次落下后，获得<color=#476DBB>【女仆已就位】</color>；<color=#476DBB>【女仆已就位】</color>造成<color=#D56D2E>常规伤害</color>。",
+    Icon = "UI_H1001025_passive",
     Id = 102505,
-    Name = "被动",
+    Keywords = {
+      2501,
+      2503,
+      2502,
+      2505,
+      2506,
+      2507
+    },
+    Name = "女仆行动准则",
     SkillTypeName = "[被动]",
     SortIndex = 0
   },
   [102506] = {
-    Desc = "连续打击敌人后，跳起至空中，对面前的人投出蓄力一枪，产生二段爆炸，造成<color=#D56D2E>终结伤害</color>。",
-    Icon = "UI_H1001004_exskill",
+    Desc = "连续打击敌人造成三段<color=#D56D2E>终结伤害</color>，再跳起至空中，对面前的人投出蓄力一枪，产生二段爆炸，造成<color=#D56D2E>终结伤害</color>。",
+    Icon = "UI_H1001025_exskill",
     Id = 102506,
-    Name = "终结技",
+    Name = "致命制服",
     SkillTypeName = "[终结技]",
     SortIndex = 0
   },
   [102601] = {
     Desc = "普攻四段，使用伴星的力量打击敌人，造成<color=#ec7f00>普攻伤害</color>。\n长按普攻可发动重击，造成<color=#ec7f00>常规伤害</color>\n完美闪避后点按普攻可进行追击，造成<color=#ec7f00>常规伤害</color>。",
-    Icon = "UI_H1001014_atk_1",
+    Icon = "UI_H1001026_atk",
     Id = 102601,
     Name = "律动",
     SkillTypeName = "[普攻]",
@@ -1316,7 +1338,7 @@ return {
   },
   [102603] = {
     Desc = "使用星剑斩击敌人，造成<color=#ec7f00>常规伤害</color>。\n释放重击后，本技能可连续点按，释放两段攻击，其中第二段对敌人造成较高的<color=#ec7f00>派生伤害</color>。\n释放普攻第四段、闪避反击、<color=#D56D2E>[技能2]</color>【星瀑】后，本技能可连续点按，释放三段攻击，其中第三段对敌人造成高额的<color=#ec7f00>派生伤害</color>；若在释放<color=#D56D2E>[技能2]</color>【星瀑】后立即释放，连段立即从第二段开始。\n释放本技能任意一段攻击后，<color=#476DBB>【伴星】</color>顺时针运行至下一个宙域。",
-    Icon = "UI_H1001014_skill03_1",
+    Icon = "UI_H1001026_skill02",
     Id = 102603,
     Name = "耀芒",
     SkillTypeName = "[技能1]",
@@ -1324,7 +1346,7 @@ return {
   },
   [102604] = {
     Desc = "<color=#476DBB>【伴星】</color>处于<color=#476DBB>【共鸣宙域】</color>时，解锁本技能。\n跃起至空中，使用巨大星之芒斩击敌人，造成<color=#ec7f00>充能伤害</color>。\n进入战斗后，每次释放本技能，<color=#476DBB>【伴星】</color>依次跃迁至<color=#476DBB>【共鸣宙域】</color>的逆时针邻位、对位、顺时针邻位的宙域，释放后菲娜米娜获得<color=#476DBB>【共鸣之声】</color>。",
-    Icon = "UI_H1001014_passive_4",
+    Icon = "UI_H1001026_skill03",
     Id = 102604,
     Keywords = {
       2601,
@@ -1337,7 +1359,7 @@ return {
   },
   [102605] = {
     Desc = "菲娜米娜脚下的星盘指示<color=#476DBB>【伴星】</color>和<color=#476DBB>【共鸣宙域】</color>的位置。进入战斗时，<color=#476DBB>【伴星】</color>处于<color=#476DBB>【共鸣宙域】</color>的顺时针邻位宙域。当<color=#476DBB>【伴星】</color>处于<color=#476DBB>【共鸣宙域】</color>时，即可聚集星辰之力，解锁<color=#D56D2E>[技能2]</color>【星瀑】。\n解锁<color=#D56D2E>[技能2]</color>【星瀑】时，若<color=#476DBB>【共鸣之声】</color>已满，则【星瀑】替换为<color=#476DBB>【星瀑余晖】</color>，可释放5次。\n<color=#476DBB>【星瀑余晖】</color>：使用星之芒斩击敌人，造成<color=#ec7f00>充能伤害</color>。",
-    Icon = "UI_H1001014_passive_1",
+    Icon = "UI_H1001026_passive",
     Id = 102605,
     Keywords = {
       2601,
@@ -1350,57 +1372,57 @@ return {
   },
   [102606] = {
     Desc = "凝聚星辰之力形成巨剑，对敌人造成<color=#ec7f00>终结伤害</color>。",
-    Icon = "UI_H1001014_skill02",
+    Icon = "UI_H1001026_skill08",
     Id = 102606,
     Name = "银心咏叹",
     SkillTypeName = "[终结技]",
     SortIndex = 0
   },
   [102701] = {
-    Desc = "向前甩笔，制造线形文字做追踪弹轨迹攻击敌人造成造成<color=#D56D2E>普攻伤害</color>。\n长按普攻可发动重击，造成<color=#D56D2E>常规伤害</color>。\n完美闪避后可点按普攻反击，造成<color=#D56D2E>常规伤害</color>。",
-    Icon = "UI_H1001016_atk",
+    Desc = "普攻五段，并将来自幽思迷宫的能量通过笔尖释放，追踪攻击敌人，造成<color=#ec7f00>普攻伤害</color>。\n长按普攻可发动重击，造成<color=#ec7f00>常规伤害</color>\n完美闪避后点按普攻可进行追击，造成<color=#ec7f00>常规伤害</color>。",
+    Icon = "UI_H1001027_atk",
     Id = 102701,
-    Name = "普攻",
+    Name = "构筑",
     SkillTypeName = "[普攻]",
     SortIndex = 0
   },
   [102702] = {
-    Desc = "切换上场造成<color=#D56D2E>常规伤害</color>。\n连携完成时，两个技能会被替换为连携技能，使用所有迷宫会立刻收缩。",
+    Desc = "切换上场时打击附近的敌人，造成<color=#D56D2E>常规伤害</color>。\n连携充能完成时，点按连携技，构造圆形幽思迷宫，对范围内的敌人造成<color=#D56D2E>常规伤害</color>；爆发状态期间，<color=#D56D2E>[技能1]</color>【探寻前路】可以构造十字型迷宫区域，<color=#D56D2E>[技能1]</color>【探寻前路】、<color=#D56D2E>[技能2]</color>【迂折回环】完成构造后，迷宫回廊会立刻自动收束。",
     Icon = "UI_skill_switch_1",
     Id = 102702,
-    Name = "换人连携",
+    Name = "幽思环阵",
     SkillTypeName = "[连携]",
     SortIndex = 0
   },
   [102703] = {
-    Desc = "前戳，生成直线迷宫路径，一定时间内解锁二段技能，使用二段技能后会向左上右的任一方向延申迷宫，然后快速合并，造成<color=#D56D2E>常规伤害</color>并聚怪，优先往怪物密度较大的方向延申。",
-    Icon = "UI_H1001016_skill2_1",
+    Desc = "在指定方向上生成直线迷宫路径，造成<color=#D56D2E>常规伤害</color>。短时间内解锁二段技能，再次点按使路径向敌人较多的垂直方向延申，随后迅速收束，吸附范围内的敌人，造成<color=#D56D2E>强化伤害</color>。",
+    Icon = "UI_H1001027_skill1_1",
     Id = 102703,
-    Name = "技能1",
+    Name = "探寻前路",
     SkillTypeName = "[技能1]",
     SortIndex = 0
   },
   [102704] = {
-    Desc = "横挥，生成方形迷宫路径，一定时间内解锁二段技能，激活两个点位，触碰到任意点位后触发迷宫合并，造成<color=#D56D2E>常规伤害</color>并聚怪。",
-    Icon = "UI_H1001016_skill3_2",
+    Desc = "生成无尽回廊，造成<color=#D56D2E>常规伤害</color>。短时间内解锁二段技能，点按后金缕瞬移至回廊节点，并使回廊向内收束聚集敌人，造成<color=#D56D2E>强化伤害</color>。\n回廊生成后，队内任意成员移动至回廊节点时，回廊也会自动收束。",
+    Icon = "UI_H1001027_skill2_1",
     Id = 102704,
-    Name = "技能2",
+    Name = "迂折回环",
     SkillTypeName = "[技能2]",
     SortIndex = 0
   },
   [102705] = {
-    Desc = "当触发迷宫合并时，迷宫内敌方单位伤害抗性降低40%，全队获取额外的连携能量。",
-    Icon = "UI_H1001016_skill3_3",
+    Desc = "<color=#D56D2E>[技能1]</color>【探寻前路】产生的迷宫收束时，基于金缕的光伤害增幅，按一定比例提高队内其他成员自身所属元素伤害增幅，持续20秒；<color=#D56D2E>[技能2]</color>【迂折回环】产生的回廊收束时，基于金缕的强化/充能/派生/追击/异常伤害增幅，按一定比例提高队内其他成员的这些属性值，持续20秒；此外，累计收束4次后，下一次队伍连携爆发状态的持续时间延长3秒。",
+    Icon = "UI_H1001027_passive",
     Id = 102705,
-    Name = "被动",
+    Name = "引领之人",
     SkillTypeName = "[被动]",
     SortIndex = 0
   },
   [102706] = {
-    Desc = "人物瞬移到目标上空，呈蜷缩为睡觉状后溶解，同时周围的空间开始扭曲，地面逐渐显现出一个巨大的、呼吸光闪烁的大脑状迷宫图案。大脑状迷宫图案开始向内收束，每次构成都会造成<color=#D56D2E>终结伤害</color>，当图案完全构成，触发爆炸，爆炸过后，烟雾逐渐散去，在爆炸点附近优雅地转身出现。",
-    Icon = "UI_H1001016_ultimate",
+    Desc = "金缕思绪深潜，逐渐构筑巨大的幽思迷宫，构筑完成后使其收束，产生大范围爆炸，造成<color=#D56D2E>终结伤害</color>。",
+    Icon = "UI_H1001027_exskill",
     Id = 102706,
-    Name = "终结技",
+    Name = "始末终焉之思",
     SkillTypeName = "[终结技]",
     SortIndex = 0
   },
@@ -1501,50 +1523,58 @@ return {
     SortIndex = 0
   },
   [103001] = {
-    Desc = "占位占位",
-    Icon = "UI_H1001014_atk_1",
+    Desc = "普攻：旃檀舞动扇子，与锦鲤一同攻击敌人，共造成四段<color=#ec7f00>普攻伤害</color>，普攻第四段会为敌人添加一层<color=#476DBB>【添绒】</color>；\n重击：长按普攻可发动重击，旃檀向敌人甩出扇子，在扇子回手时戳击敌人并将其击飞，造成<color=#ec7f00>常规伤害</color>；重击后可衔接第二段普攻；\n闪避反击：旃檀完美闪避后冲向敌人，用扇子发动一次挥击；反击后可衔接第四段普攻；\n强化普攻：旃檀挥舞扇子跃起，锦鲤随旃檀向上跃起后砸向敌人，造成<color=#ec7f00>强化伤害</color>。",
+    Icon = "UI_H1001030_atk",
     Id = 103001,
-    Name = "四音琴剑",
+    Keywords = {3002},
+    Name = "游鱼",
     SkillTypeName = "[普攻]",
     SortIndex = 0
   },
   [103002] = {
-    Desc = "占位占位",
+    Desc = "旃檀出场向敌人甩出扇子，在扇子回手时戳击敌人并将其击飞，造成<color=#ec7f00>常规伤害</color>；\n连携状态下，旃檀舞动扇子，随后甩出一圈火焰，后续可连续释放强化普攻，造成<color=#ec7f00>强化伤害</color>。",
     Icon = "UI_skill_switch_1",
     Id = 103002,
-    Name = "即兴迭奏",
+    Name = "定策",
     SkillTypeName = "[连携]",
     SortIndex = 0
   },
   [103003] = {
-    Desc = "占位占位",
-    Icon = "UI_H1001014_skill03_1",
+    Desc = "旃檀甩出扇子标记命中的敌人，造成<color=#ec7f00>常规伤害</color>，命中敌人后该技能变为向前突进；\n突进到标记的敌人向其发动顶膝攻击，造成<color=#ec7f00>常规伤害</color>，并为敌人添加1层<color=#476DBB>【引焰】</color>。",
+    Icon = "UI_H1001030_skill1_1",
     Id = 103003,
-    Name = "推演变奏",
+    Keywords = {3001},
+    Name = "急火长驱",
     SkillTypeName = "[技能1]",
     SortIndex = 0
   },
   [103004] = {
-    Desc = "占位占位",
-    Icon = "UI_H1001014_passive_4",
+    Desc = "旃檀舞动扇子旋转横扫一圈造成 2 段<color=#ec7f00>常规伤害</color>，第一圈如果命中带有<color=#476DBB>【引焰】</color>效果的敌人，横扫会额外增加 1 段<color=#ec7f00>常规伤害</color>，并为命中的敌人添加 1 层<color=#476DBB>【引焰】</color>；\n横扫命中敌人时该技能变为后空翻跃起，命中后为敌人添加 1 层<color=#476DBB>【添绒】</color>并造成<color=#ec7f00>常规伤害</color>。",
+    Icon = "UI_H1001030_skill2_1",
     Id = 103004,
-    Name = "多重协奏",
+    Keywords = {3001, 3002},
+    Name = "煽风转焰",
     SkillTypeName = "[技能2]",
     SortIndex = 0
   },
   [103005] = {
-    Desc = "占位占位",
-    Icon = "UI_H1001014_passive_1",
+    Desc = "旃檀的技能与普攻会为自己与敌人添加<color=#476DBB>【引焰】</color>与<color=#476DBB>【添绒】</color>；\n<color=#476DBB>【引焰】</color>与<color=#476DBB>【添绒】</color>凑齐时会触发<color=#476DBB>【金鳞浴火】</color>；\n\n<color=#476DBB>【引焰】</color>对敌人：降低全抗性\n<color=#476DBB>【添绒】</color>对敌人：降低50%移动速度\n\n<color=#476DBB>【引焰】</color>对旃檀：增加火属性伤害增幅\n<color=#476DBB>【添绒】</color>对旃檀：增加30%移动速度\n\n<color=#476DBB>【金鳞浴火】</color>对敌人效果：添加印记时造成一次伤害并降低敌人20% 的火属性抗性持续 15 秒；\n<color=#476DBB>【金鳞浴火】</color>对旃檀效果：为自己添加一层反伤护盾，护盾值取决于攻击力加成，并解锁强化普攻召唤锦鲤攻击；护盾换人时依然生效",
+    Icon = "UI_H1001030_passive",
     Id = 103005,
-    Name = "诸天旋律",
+    Keywords = {
+      3001,
+      3002,
+      3003
+    },
+    Name = "焚天之计",
     SkillTypeName = "[被动]",
     SortIndex = 0
   },
   [103006] = {
-    Desc = "占位占位",
-    Icon = "UI_H1001014_skill02",
+    Desc = "旃檀舞动扇子召唤锦鲤游动，并向面前扇击三下造成大范围扇形<color=#D56D2E>终结伤害</color>。",
+    Icon = "UI_H1001030_ultimate",
     Id = 103006,
-    Name = "黄金分割进行曲",
+    Name = "纨扇燎原",
     SkillTypeName = "[终结技]",
     SortIndex = 0
   }

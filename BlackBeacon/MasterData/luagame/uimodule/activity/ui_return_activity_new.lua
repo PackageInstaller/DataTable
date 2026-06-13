@@ -144,6 +144,7 @@ function ui:set_simple_act_info(data_param)
   if data_param.SpineID ~= nil and nil ~= data_param.TitleIcon then
     ResMgr:load_set_icon(self.v_new_act_bg_img, data_param.SpineID)
     ResMgr:load_set_icon(self.v_uicompents.Title_img, data_param.TitleIcon)
+    self.v_uicompents.Title_img:SetNativeSize()
   end
 end
 
@@ -157,6 +158,7 @@ function ui:set_role_act_info(data_param)
   self.v_spine_offset = data_param.DisplayViewOffset
   self:set_show_buddy_info(self.v_uiobjects.BtnCharInfoMajor, self.v_select_buddy_id)
   ResMgr:load_set_icon(self.v_uicompents.CharTitle_img, data_param.TitleIcon, nil, true)
+  self.v_uicompents.CharTitle_img:SetNativeSize()
 end
 
 function ui:ui_on_update()

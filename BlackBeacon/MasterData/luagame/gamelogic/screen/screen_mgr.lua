@@ -89,6 +89,14 @@ function M:set_graphic_resolution_for_pc(width, height)
   CSGameMgr.SetCurResolution(width, height, 4)
   self.v_cur_resolution_width = width
   self.v_cur_resolution_height = height
+  Global.screen_width = self.v_cur_resolution_width
+  Global.screen_height = self.v_cur_resolution_height
+  Global.screen_factor = math.max(Global.screen_width / 1920, Global.screen_height / 1080)
+  Global.screen_ratio = Global.screen_width / Global.screen_height
+  local target_ui = UIMgr:try_get_visible_ui("uimain")
+  if target_ui then
+    target_ui:bind_uimain_to_signboard_view()
+  end
 end
 
 function M:get_cur_graphic_resolution()

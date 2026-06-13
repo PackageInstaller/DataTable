@@ -62,15 +62,19 @@ function ui:on_click_BtnChoose()
   if NoviceMgr:get_weapon_select_count(self.v_activity_id) <= 0 then
     return
   end
-  local suc_cb = function()
-    local request_cb = function()
+  
+  local function suc_cb()
+    local function request_cb()
       local remain_count = NoviceMgr:get_weapon_select_count(self.v_activity_id)
+      
       if remain_count <= 0 then
         UIMgr:remove_stace_by_ui_name(self.v_cfg.name)
       end
     end
+    
     NoviceMgr:request_activity_gold_equip_gain(self.v_activity_id, self.v_select_index, self.v_select_weapon_id, request_cb)
   end
+  
   Util.show_conform_tip("是否选择武器", nil, nil, nil, suc_cb)
 end
 

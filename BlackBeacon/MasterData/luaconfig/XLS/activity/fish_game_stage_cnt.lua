@@ -610,7 +610,7 @@ return {
     EpisodeId = 6,
     IconId = 310,
     Id = 87,
-    Interval = 10,
+    Interval = 8,
     PosIdList = {0, -104},
     StarTime = 0
   },
@@ -618,7 +618,7 @@ return {
     EpisodeId = 6,
     IconId = 310,
     Id = 88,
-    Interval = 10,
+    Interval = 8,
     PosIdList = {0, -171},
     StarTime = 5
   },
@@ -1842,7 +1842,7 @@ return {
     EpisodeId = 12,
     IconId = 487,
     Id = 263,
-    PosIdList = {0, -225},
+    PosIdList = {0, -218},
     StarTime = 0
   },
   [264] = {

@@ -504,7 +504,7 @@ function ui:on_click_relic_consume(uuid)
     local need_unlock = 1 == temp_relic_data.lock
     local need_unwear = 0 ~= owner_id
     if need_unlock or need_unwear then
-      local confirm_cb = function()
+      local function confirm_cb()
         if need_unlock then
           RelicMgr:req_unlock_relic(uuid, function()
             if not need_unwear then
@@ -518,6 +518,7 @@ function ui:on_click_relic_consume(uuid)
           end)
         end
       end
+      
       Util.show_notify_popup_message(confirm_cb, "物品已锁定/已装备，是否解锁/卸下并选中作为消耗？")
       return
     end
@@ -619,9 +620,10 @@ function ui:get_relic_main_entry_attr_id(relic_data)
 end
 
 function ui:on_click_clear_entry(entry_uid)
-  local confirm_cb = function()
+  local function confirm_cb()
     RelicMgr:req_c2gs_relic_remove_temp_entry(self.v_operate_relic_uuid, entry_uid)
   end
+  
   Util.show_notify_popup_message(confirm_cb, "移除后无法复原，是否继续？")
 end
 
@@ -630,12 +632,14 @@ function ui:on_click_apply()
   if 0 == new_entry_id then
     return
   end
-  local confirm_cb = function()
+  
+  local function confirm_cb()
     RelicMgr:req_c2gs_relic_repeat_entry(self.v_operate_relic_uuid, entry_uid, function()
       self.v_apply_suc_ani:SetActive(false)
       self.v_apply_suc_ani:SetActive(true)
     end)
   end
+  
   if now_entry_id ~= new_entry_id then
     Util.show_notify_popup_message(confirm_cb, "是否将新属性覆盖原属性？")
   else
@@ -652,7 +656,8 @@ function ui:on_click_roll()
     return
   end
   local now_entry_id, new_entry_id, entry_uid = self:get_selected_entry_id()
-  local confirm_cb = function()
+  
+  local function confirm_cb()
     RelicMgr:req_c2gs_relic_reflush_entry(self.v_operate_relic_uuid, entry_uid, {
       self.v_consume_relic_uuid
     }, function()
@@ -662,6 +667,7 @@ function ui:on_click_roll()
       Util.show_message_tip(2266)
     end)
   end
+  
   local relic_data = RelicMgr:get_relic_data_by_uuid(self.v_consume_relic_uuid)
   if relic_data.lv > 1 then
     Util.show_notify_popup_message(confirm_cb, "消耗后不返还养成材料，是否继续？")

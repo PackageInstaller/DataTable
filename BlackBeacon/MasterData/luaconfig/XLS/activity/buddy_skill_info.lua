@@ -2220,6 +2220,92 @@ return {
       Step_Type = 1
     }
   },
+  [102501] = {
+    {
+      Icon = "UI_H1001025_atk",
+      Id = 10250101,
+      Skill_Id = 102501,
+      Skill_Step = 1,
+      Step_Type = 1
+    },
+    {
+      Icon = "UI_H1001025_atk",
+      Id = 10250102,
+      Skill_Id = 102501,
+      Skill_Step = 2,
+      Step_Type = 1
+    },
+    {
+      Icon = "UI_H1001025_atk",
+      Id = 10250103,
+      Skill_Id = 102501,
+      Skill_Step = 3,
+      Step_Type = 1
+    }
+  },
+  [102502] = {
+    {
+      Icon = "UI_skill_counter_1",
+      Id = 10250201,
+      Skill_Id = 102502,
+      Skill_Step = 1,
+      Step_Type = 1
+    },
+    {
+      Icon = "UI_H1001025_atk",
+      Id = 10250202,
+      Skill_Id = 102502,
+      Skill_Step = 2,
+      Step_Type = 1
+    },
+    {
+      Icon = "UI_H1001025_atk",
+      Id = 10250203,
+      Skill_Id = 102502,
+      Skill_Step = 3,
+      Step_Type = 1
+    }
+  },
+  [102503] = {
+    {
+      Icon = "UI_H1001025_skill1_1",
+      Id = 10250301,
+      Skill_Id = 102503,
+      Skill_Step = 1,
+      Step_Type = 1
+    },
+    {
+      Icon = "UI_H1001025_skill1_2",
+      Id = 10250302,
+      Skill_Id = 102503,
+      Skill_Step = 2,
+      Step_Type = 1
+    },
+    {
+      Icon = "UI_H1001025_skill2_2",
+      Id = 10250303,
+      Skill_Id = 102503,
+      Skill_Step = 3,
+      Step_Type = 1
+    }
+  },
+  [102504] = {
+    {
+      Click_Time = 0.15,
+      Icon = "UI_H1001025_atk",
+      Id = 10250401,
+      Skill_Id = 102504,
+      Skill_Step = 1,
+      Step_Type = 1
+    },
+    {
+      Icon = "UI_H1001025_atk",
+      Id = 10250402,
+      Skill_Id = 102504,
+      Skill_Step = 2,
+      Step_Type = 1
+    }
+  },
   [102601] = {
     {
       Icon = "UI_H1001026_skill02",

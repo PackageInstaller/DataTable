@@ -77,11 +77,12 @@ function ui:ui_finish_load()
 end
 
 function ui:on_choose()
-  local confirm_cb = function()
+  local function confirm_cb()
     DrawCardMgr:send_draw_choose_id(self.v_group_id, self.v_pool_id, self.v_new_choose_id, function()
       self:ui_hide()
     end)
   end
+  
   local is_max = CharacterMgr:is_equip_advance_max(self.v_new_choose_equip_id)
   if is_max then
     Util.show_notify_popup_message(confirm_cb, "该武器已经可以达到最高同调等级，是否继续选择")

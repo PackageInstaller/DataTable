@@ -8,7 +8,7 @@ local CSShader = CSUnityEngine.Shader
 local CSErrorUpLoad = CS.Game.ErrorUpLoad
 local UnityPlayerPrefs = UnityEngine.PlayerPrefs
 local Application = UnityEngine.Application
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local ui = Util.create_child_mt(Base)
 local _tinsert = table.insert
 local GM_TAG_KEY = "GM_TAG_LIST"
@@ -232,9 +232,10 @@ function ui:set_quality_level(item_info, quality_level)
   Global.render_mgr:set_quality_level(quality_level)
 end
 
-local get_toggle_desc = function(enable)
+local function get_toggle_desc(enable)
   return enable and "开" or "关"
 end
+
 local transparent_clip = true
 
 function ui:toggle_transparent_clip(item_info)
@@ -875,8 +876,12 @@ function ui:play_catch_cat(_, id)
   Log.Error("未找到关卡配置：", id)
 end
 
-function ui:play_puzzle_game()
-  UIMgr:get_ui("puzzle_game_stage_panel"):ui_show()
+function ui:play_puzzle_game(_, stage_id)
+  if not stage_id then
+    UIMgr:get_ui("puzzle_game_stage_panel"):ui_show()
+  else
+    UIMgr:get_ui("puzzle_game_battle_panel"):ui_show(stage_id)
+  end
 end
 
 function ui:play_music_game(_, chapter_id, stage_id)
@@ -924,64 +929,103 @@ function ui:add_battle_ornament_list(_, uuid, ornament_list_str)
   end
 end
 
-local is_cull = false
+local org_mask
+local cull_type = 0
+local CULL_SCENE = 1
+local CULL_CHARACTER = 2
+local CULL_DEFAULT = 3
+local CULL_SCENE_CHARACTER = 4
+local CULL_ALL = 5
 
-function ui:camera_cull_defualt()
-  is_cull = not is_cull
-  local mask
-  if is_cull then
-    mask = UnityEngine.LayerMask.GetMask("Character", "NPC")
-  else
-    mask = UnityEngine.LayerMask.GetMask("Character", "NPC", "Default")
+function ui:camera_cull(item_info)
+  cull_type = cull_type + 1
+  if cull_type > CULL_ALL then
+    cull_type = 0
   end
-  local camera = Global.camera and Global.camera.v_camera
+  local camera = Global.camera and Global.camera:get_camera()
   if not camera then
     local camera_obj = UIMgr:get_wcanvas_transform().gameObject
     camera = camera_obj:GetComponentInChildren(typeof(UnityEngine.Camera))
   end
+  if not org_mask then
+    org_mask = camera.cullingMask
+  end
+  local mask
+  local cull_type_name = ""
+  if cull_type == CULL_SCENE then
+    mask = UnityEngine.LayerMask.GetMask("Character", "NPC", "Default")
+    cull_type_name = "场景"
+  elseif cull_type == CULL_CHARACTER then
+    mask = UnityEngine.LayerMask.GetMask("Default", "Terrain")
+    cull_type_name = "角色"
+  elseif cull_type == CULL_DEFAULT then
+    mask = UnityEngine.LayerMask.GetMask("Character", "NPC", "Terrain")
+    cull_type_name = "默认"
+  elseif cull_type == CULL_SCENE_CHARACTER then
+    cull_type_name = "场景和角色"
+    mask = UnityEngine.LayerMask.GetMask("Default")
+  elseif cull_type == CULL_ALL then
+    mask = UnityEngine.LayerMask.GetMask("")
+    cull_type_name = "所有"
+  else
+    cull_type_name = "不剔除"
+    mask = org_mask
+  end
   camera.cullingMask = mask
   camera.clearFlags = UnityEngine.CameraClearFlags.SolidColor
   camera.backgroundColor = UnityEngine.Color.black
+  item_info.Tips = item_info.name .. ", " .. cull_type_name
+  self:refresh_tips(item_info.Tips)
 end
 
-local is_cull_character = false
+local is_cull_default = false
 
-function ui:camera_cull_character()
-  is_cull_character = not is_cull_character
-  local mask
-  if is_cull_character then
-    mask = UnityEngine.LayerMask.GetMask("NPC", "Default")
-  else
-    mask = UnityEngine.LayerMask.GetMask("Character", "NPC", "Default")
-  end
-  local camera = Global.camera and Global.camera.v_camera
+function ui:camera_cull_default(item_info)
+  is_cull_default = not is_cull_default
+  local camera = Global.camera and Global.camera:get_camera()
   if not camera then
     local camera_obj = UIMgr:get_wcanvas_transform().gameObject
     camera = camera_obj:GetComponentInChildren(typeof(UnityEngine.Camera))
   end
+  if not org_mask then
+    org_mask = camera.cullingMask
+  end
+  local mask
+  if is_cull_default then
+    mask = UnityEngine.LayerMask.GetMask("Character", "NPC", "Terrain")
+  else
+    mask = org_mask
+  end
   camera.cullingMask = mask
   camera.clearFlags = UnityEngine.CameraClearFlags.SolidColor
   camera.backgroundColor = UnityEngine.Color.black
+  item_info.Tips = item_info.name .. ", " .. get_toggle_desc(is_cull_default)
+  self:refresh_tips(item_info.Tips)
 end
 
 local is_cull_all = false
 
-function ui:cull_all()
+function ui:cull_all(item_info)
   is_cull_all = not is_cull_all
-  local mask
-  if is_cull_all then
-    mask = UnityEngine.LayerMask.GetMask("")
-  else
-    mask = UnityEngine.LayerMask.GetMask("Character", "NPC", "Default")
-  end
   local camera = Global.camera and Global.camera.v_camera
   if not camera then
     local camera_obj = UIMgr:get_wcanvas_transform().gameObject
     camera = camera_obj:GetComponentInChildren(typeof(UnityEngine.Camera))
   end
+  if not org_mask then
+    org_mask = camera.cullingMask
+  end
+  local mask
+  if is_cull_all then
+    mask = UnityEngine.LayerMask.GetMask("")
+  else
+    mask = org_mask
+  end
   camera.cullingMask = mask
   camera.clearFlags = UnityEngine.CameraClearFlags.SolidColor
   camera.backgroundColor = UnityEngine.Color.black
+  item_info.Tips = item_info.name .. ", " .. get_toggle_desc(is_cull_all)
+  self:refresh_tips(item_info.Tips)
 end
 
 function ui:set_obj_visible(item_info, name)
@@ -1160,24 +1204,6 @@ function ui:log_uesless_preload_fx()
     end
   end
   Global.debug_preload = {}
-end
-
-local org_mask
-local is_cull_scene = false
-
-function ui:cull_scene()
-  local camera = Global.camera:get_camera()
-  if not org_mask then
-    org_mask = camera.cullingMask
-  end
-  is_cull_scene = not is_cull_scene
-  if is_cull_scene then
-    camera.cullingMask = UnityEngine.LayerMask.GetMask("Character")
-  else
-    camera.cullingMask = org_mask
-  end
-  item_info.Tips = item_info.name .. ", " .. get_toggle_desc(is_cull_scene)
-  self:refresh_tips(item_info.Tips)
 end
 
 function ui:set_grass_draw_distance(item_info, distance)
@@ -1378,7 +1404,7 @@ function ui:cull_ui(item_info)
   ui_camera.cullingMask = mask
 end
 
-local get_ip = function()
+local function get_ip()
   local ip_addresses = CS.System.Net.Dns.GetHostAddresses(CS.System.Net.Dns.GetHostName())
   for index = 0, ip_addresses.Length - 1 do
     local ip = ip_addresses[index]
@@ -1520,14 +1546,6 @@ function ui:start_uwa()
   CS.UWAEngine.StaticInit()
 end
 
-function ui:play_ponder_maze_game(item_info, activity_id)
-  UIMgr:get_ui("ui_maze_game_main"):ui_show(activity_id)
-end
-
-function ui:play_fish_game()
-  UIMgr:get_ui("fish_game_stage"):ui_show()
-end
-
 function ui:restart_game()
   Util.show_notify_popup_message(function()
     CS.Game.CSHelper.RestartApplication()
@@ -1538,6 +1556,58 @@ function ui:quit_game()
   Util.show_notify_popup_message(function()
     CS.Game.CSHelper.QuitApplication()
   end, "退出游戏", nil, "确定", "取消")
+end
+
+function ui:request_url_content(url)
+  CSHelper.RequestContent(url, function(content)
+    if not content or "" == content then
+      Log.Error("request.error：", url)
+      return
+    end
+    Util.show_notify_popup_message(nil, content)
+    Log.Error("request url: " .. url)
+    Log.Error("request content: " .. content)
+  end)
+end
+
+local function get_platform_str()
+  if UNITY_EDITOR then
+    return "Editor"
+  elseif UNITY_ANDROID then
+    return "Android"
+  elseif UNITY_IOS then
+    return "iOS"
+  else
+    return "Unknown"
+  end
+end
+
+function ui:request_tsi_update_md5()
+  local platform = get_platform_str()
+  local url = "https://cdnblackbeacon.mtiancity.com/10e909e7-8fbb-41e6-9afd-5aac80b44caa/release/" .. platform .. "/update_version_md5.md5"
+  self:request_url_content(url)
+end
+
+function ui:request_tsi_live_server_list()
+  local url = "https://cdnblackbeacon.mtiancity.com/sliebiao/live/server_list.json"
+  self:request_url_content(url)
+end
+
+function ui:request_tsi_live_qd_server_list()
+  local url = "https://cdnblackbeacon.mtiancity.com/sliebiao/live-qd/server_list.json"
+  self:request_url_content(url)
+end
+
+function ui:show_patch_version_info()
+  local major_version = Util.get_patch_major_version()
+  local res_version = Util.get_patch_res_version()
+  Util.show_notify_popup_message(nil, "patch版本信息: " .. major_version .. "." .. res_version)
+end
+
+function ui:show_build_version_info()
+  local build_version_info = Util.get_bundle_version()
+  local build_res_version_info = Util.get_build_res_version()
+  Util.show_notify_popup_message(nil, "build版本信息: " .. build_version_info .. "." .. build_res_version_info)
 end
 
 function ui:set_window_mode(item_info, width, height)
@@ -1562,6 +1632,14 @@ function ui:set_windows_scroll_rect_sensitivity(item_info, sensitivity)
   UnityUIScrollRect.SCROLL_SENSITIVITY_MULTIPLIER = sensitivity
   item_info.Tips = item_info.name .. ", " .. "设置Windows滚动条灵敏度: " .. sensitivity
   self:refresh_tips(item_info.Tips)
+end
+
+function ui:play_fish_game()
+  UIMgr:get_ui("fish_game_stage"):ui_show()
+end
+
+function ui:play_ponder_maze_game(item_info, activity_id)
+  UIMgr:get_ui("ui_maze_game_main"):ui_show(activity_id)
 end
 
 return ui

@@ -178,5 +178,32 @@ return {
       78
     },
     RecommendEffects = {10055, 10021}
+  },
+  {
+    Id = 21,
+    RecommendAttrs = {
+      33,
+      23,
+      4
+    },
+    RecommendEffects = {10056, 10020}
+  },
+  {
+    Id = 22,
+    RecommendAttrs = {
+      20,
+      76,
+      78
+    },
+    RecommendEffects = {10030, 10053}
+  },
+  {
+    Id = 23,
+    RecommendAttrs = {
+      31,
+      23,
+      20
+    },
+    RecommendEffects = {10052, 10042}
   }
 }

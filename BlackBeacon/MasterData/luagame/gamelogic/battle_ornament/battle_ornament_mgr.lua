@@ -294,7 +294,8 @@ function M:inlaid_ornament(item, source_type, cb)
     UIMgr:get_ui("uimessagetip"):ui_show(Util.format_str("槽位已满，请选择需替换的奇珍"))
     return
   end
-  local callback = function(ok, resp)
+  
+  local function callback(ok, resp)
     if ok then
       UIMgr:get_ui("uimessagetip"):ui_show(Util.format_str("穿戴成功"))
       if cb then
@@ -304,6 +305,7 @@ function M:inlaid_ornament(item, source_type, cb)
       UIMgr:get_ui("uimessagetip"):ui_show(Util.format_str("穿戴失败"))
     end
   end
+  
   Network:protect_call("c2gs_inlaid_ornaments", {
     pos = pos,
     uuid = uuid,
@@ -404,12 +406,13 @@ function M:on_buff_round_count_zero(msg)
     local buff = msg.mm_x
     local temp = Util.split_str(buff.source, "-", false)
     if temp[1] == Config.BUFF_SOURCE_TYPE.ornaments and temp[3] then
-      local next_refresh_callback = function()
+      local function next_refresh_callback()
         local data = {
           damage_orn_id = tonumber(temp[3])
         }
         UIMgr:get_ui("common_battle_tips"):ui_show(data)
       end
+      
       local curse_get_award_tips = UIMgr:try_get_visible_ui("curse_get_award_tips")
       if curse_get_award_tips and curse_get_award_tips:is_show_ornament_award() then
         curse_get_award_tips:set_next_refresh_callback(next_refresh_callback, curse_com_def.CURSE_GET_AWARD_TIP_TYPE.GET_ORNAMENT)

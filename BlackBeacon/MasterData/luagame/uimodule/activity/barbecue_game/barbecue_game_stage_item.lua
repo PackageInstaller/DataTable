@@ -59,8 +59,11 @@ function ui:refresh_view()
     local remain_time = start_time - now_time
     if remain_time > 86400 then
       self.v_uicompents.LockTipsTxt_txt.text = string.format("%s天后解锁", math.ceil(remain_time / 86400))
+    elseif remain_time > 3600 then
+      self.v_uicompents.LockTipsTxt_txt.text = string.format("%s时后解锁", math.ceil(remain_time / 3600))
     else
-      self.v_uicompents.LockTipsTxt_txt.text = string.format("%s小时后解锁", math.ceil(remain_time / 3600))
+      remain_time = remain_time > 0 and remain_time or 1
+      self.v_uicompents.LockTipsTxt_txt.text = string.format("%s分后解锁", math.ceil(remain_time / 60))
     end
   elseif not condition_open then
     self.v_uicompents.LockTipsTxt_txt.text = "通关前置关卡后解锁"

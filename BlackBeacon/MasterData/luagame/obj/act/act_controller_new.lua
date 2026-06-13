@@ -26,11 +26,15 @@ function M:_init(char, motion_cfg, transition_cfg)
   self.v_offsets_multiplier = 1
   self.v_real_offset = Vec3.New(0, 0, 0)
   self.v_offset_diff = Vec2.New(0, 0)
-  self.v_offset_x, self.v_offset_z = 0, 0
+  self.v_last_offset_x, self.v_last_offset_z = 0, 0
   self.v_offset_cfg = nil
   self.v_motion_cache_pos = Vec3.New()
   self.v_action_sound = nil
   self.v_action_sound_playstate = nil
+end
+
+function M:on_before_destroy()
+  self.v_char = nil
 end
 
 function M:can_npc_play_act(action)
@@ -71,8 +75,6 @@ function M:try_action(action, layer, callback, cbdata, is_loop, follow_move_spee
   self.v_offset_cfg = cfg
   self.v_offset_x_list = cfg.OffsetX or {}
   self.v_offset_z_list = cfg.OffsetZ or {}
-  self.v_offset_x = self.v_offset_x_list[start_frame or 0] or 0
-  self.v_offset_z = self.v_offset_z_list[start_frame or 0] or 0
   if 0 == #self.v_offset_x_list and 0 == #self.v_offset_z_list then
     self.v_has_offset = false
   else
@@ -190,7 +192,7 @@ function M:get_transition_time(layer, cur_action, animation, show_log)
         transition_time = layer_cfg[animation]
       end
       local cur_time = self.v_char.time_mgr and self.v_char.time_mgr:get_time()
-      Log.Error("动画融合配置 尝试获取key：", c2n_name, c2a_name, n_name, "最终使用key :", final_name, cur_action and "动画时间" .. self:get_anima_total_time(cur_action), "间隔时间：", cur_time and cur_time - (self.v_last_try_action_time or cur_time), "npc_id", self.v_char.id, "uuid", self.v_char.uuid, debug.traceback())
+      Log.Error("动画融合配置 尝试获取key：", c2n_name, c2a_name, n_name, "最终使用key :", final_name, "融合时间 :", transition_time or 0, cur_action and "动画时间" .. self:get_anima_total_time(cur_action), "间隔时间：", cur_time and cur_time - (self.v_last_try_action_time or cur_time), "npc_id", self.v_char.id, "uuid", self.v_char.uuid, debug.traceback())
     end
   end
   self.v_fade_config_name = nil
@@ -275,25 +277,26 @@ function M:set_keep_end(layer, keep_end)
   self.v_keep_end = keep_end
 end
 
-local get_offset_helper = function(offsets, frame, dt, multi_map)
+local function get_offset_helper(offsets, frame, dt, multi_map)
   if not offsets or 0 == #offsets then
     return 0
   end
-  local s = offsets[frame]
-  local e = offsets[frame + 1]
-  local scale = multi_map and multi_map[frame]
-  local base = (e - s) * dt
-  return scale and scale * base or base
+  local scale = multi_map and multi_map[frame] or 1
+  local s = offsets[frame] * scale
+  local e = offsets[frame + 1] * scale
+  local base = s + (e - s) * dt
+  return base
 end
-local get_tail_offset = function(offsets, frame, dt, multi_map)
-  if not offsets or 0 == #offsets then
+
+local function get_tail_offset(offsets, frame, dt, multi_map)
+  if not offsets or #offsets < frame + 1 then
     return 0
   end
-  local s = offsets[frame]
-  local e = offsets[frame + 1]
-  local scale = multi_map and multi_map[frame]
-  local base = (e - s) * dt
-  return scale and scale * base or base
+  local scale = multi_map and multi_map[frame] or 1
+  local s = offsets[frame] * scale
+  local e = offsets[frame + 1] * scale
+  local base = s + (e - s) * dt
+  return base
 end
 
 function M:_update_anim_offset()
@@ -302,8 +305,9 @@ function M:_update_anim_offset()
     return
   end
   self.v_old_action = self.v_cur_action
-  local dt = self.v_anim_delta_time / Config.LOGIC_FRAME
   local frame = _floor(self.v_anim_time / Config.LOGIC_FRAME) + 1
+  local frame_fraction = self.v_anim_time - (frame - 1) * Config.LOGIC_FRAME
+  local t = frame_fraction / Config.LOGIC_FRAME
   self.v_last_frame = self.v_last_frame or frame
   local x_multi_map, z_multi_map
   if self.v_offsets_multi_map and self.v_offsets_multi_map[self.v_cur_action] then
@@ -313,33 +317,30 @@ function M:_update_anim_offset()
   end
   local dx, dz
   if frame + 1 <= self.v_total_frame then
-    dx = get_offset_helper(self.v_offset_x_list, frame, dt, x_multi_map)
-    dz = get_offset_helper(self.v_offset_z_list, frame, dt, z_multi_map)
+    dx = get_offset_helper(self.v_offset_x_list, frame, t, x_multi_map)
+    dz = get_offset_helper(self.v_offset_z_list, frame, t, z_multi_map)
   else
     frame = self.v_total_frame
-    if self.v_tail_length > 0 and self.v_offset_x_list[frame] then
-      dx = get_tail_offset(self.v_offset_x_list, frame, dt, x_multi_map)
-      dz = get_tail_offset(self.v_offset_z_list, frame, dt, z_multi_map)
+    if self.v_tail_length > 0 then
+      dx = get_tail_offset(self.v_offset_x_list, frame, t, x_multi_map)
+      dz = get_tail_offset(self.v_offset_z_list, frame, t, z_multi_map)
     else
       frame = self.v_total_frame
-      dx = 0
-      dz = 0
+      dx = self.v_last_offset_x
+      dz = self.v_last_offset_z
     end
   end
-  self.v_offset_diff.x = dx
-  self.v_offset_diff.y = dz
   local rotate
   if not Global.camera or not Global.camera:check_camera_aimed() then
     rotate = -Math.Deg2Rad * self.v_char:get_dir()
   elseif Global.camera and Global.camera:check_camera_aimed() then
     rotate = Math.Deg2Rad * ((Math.get_angle2A(Global.camera_joystick_x, Global.camera_joystick_y) or 0) - 90)
   end
+  self.v_offset_diff:Set(dx - self.v_last_offset_x, dz - self.v_last_offset_z)
   self.v_offset_diff:SetRotate(rotate)
   self.v_offset_diff:Mul(self.v_char.model_scale or 1)
   self.v_offset_diff:Mul(self.v_offsets_multiplier)
   self.v_char:move(self.v_offset_diff.x, self.v_offset_diff.y)
-  self.v_offset_x = self.v_offset_x + dx
-  self.v_offset_z = self.v_offset_z + dz
   if self.v_old_action and COUNTER_ANIMA[self.v_old_action] then
     if self.v_last_frame ~= frame then
       self.v_last_counter_move_speed = self.v_counter_move_speed
@@ -350,6 +351,8 @@ function M:_update_anim_offset()
       Behavior.log_on_npc(self.v_char, "帧：" .. frame .. "速度: " .. self.v_counter_move_speed, true)
     end
   end
+  self.v_last_offset_x = dx
+  self.v_last_offset_z = dz
   self.v_last_frame = frame
 end
 
@@ -364,8 +367,8 @@ end
 function M:_on_new_action()
   self.v_real_offset.x = 0
   self.v_real_offset.z = 0
-  self.v_offset_x = 0
-  self.v_offset_z = 0
+  self.v_last_offset_x = 0
+  self.v_last_offset_z = 0
   self.v_offset_x_list = nil
   self.v_offset_z_list = nil
   self.v_keep_end = false

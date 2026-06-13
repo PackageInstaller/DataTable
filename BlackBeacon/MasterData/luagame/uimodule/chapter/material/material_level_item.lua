@@ -10,7 +10,8 @@ local Stars = {
   "Star2",
   "Star3"
 }
-local _set_star = function(self)
+
+local function _set_star(self)
   local star_num = ChapterMaterialMgr:get_material_epi_star_num(self.v_data.Id)
   local uobj = self.v_uiobjects
   for i = 1, 3 do
@@ -18,7 +19,8 @@ local _set_star = function(self)
     star_obj:SetActive(i <= star_num)
   end
 end
-local _play_anim = function(self)
+
+local function _play_anim(self)
   local uobj = self.v_uiobjects
   local main_bg_canvas_group = self:get_canvas_group(nil, uobj.MainBg)
   local main_text_canvas_group = self:get_canvas_group(nil, uobj.MainText)

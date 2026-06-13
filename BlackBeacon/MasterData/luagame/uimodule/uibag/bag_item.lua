@@ -50,11 +50,13 @@ local ITEM_COMPONENTS = {
   ItemNumTag_rect = true,
   ItemName_txt = true
 }
-local _activate_elements = function(components, cfg)
+
+local function _activate_elements(components, cfg)
   for name, acitive in pairs(cfg) do
     components[name].gameObject:SetActive(acitive)
   end
 end
+
 local InitHelper = {
   [TYPE_EQUIP] = function(self, components)
     _activate_elements(components, EQUIP_COMPONENTS)

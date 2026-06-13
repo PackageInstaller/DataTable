@@ -16,13 +16,15 @@ local asset_bar_config = {
     bg_click = false
   }
 }
-local sort_func = function(a, b)
+
+local function sort_func(a, b)
   if a.id ~= b.id then
     return a.id < b.id
   else
     return false
   end
 end
+
 local TYPE_FUNC_NAME = {
   [RECUPERATION_TYPE.RANDOM_UPDAGRADE_ABILITY] = "use_random_updagrade_ability_func",
   [RECUPERATION_TYPE.CHOOSE_ABILITY_UPGRADE] = "use_choose_ability_upgrade_func",
@@ -249,14 +251,17 @@ function ui:on_click_pay_btn(pay_type, recuperate_data)
 end
 
 function ui:close_view(click_complete)
-  local cb = function()
+  local function cb()
     ChallengeRingPlusMgr:set_choose_recuperation_id(nil)
+    
     self:ui_hide()
   end
-  local sure_cb = function()
+  
+  local function sure_cb()
     self.v_recuperation_data = nil
     ChallengeRingPlusMgr:req_remove_card(cb)
   end
+  
   if click_complete then
     sure_cb()
   else
@@ -274,11 +279,13 @@ function ui:get_cache_data()
 end
 
 function ui:common_use_recuperation_func(cfg, recuperate_data, use_curse_value)
-  local cb = function(resp)
+  local function cb(resp)
     self:refresh_recuperation_data()
+    
     self:refresh_view()
     self:after_use_recuperation_func()
   end
+  
   if cfg.Type == RECUPERATION_TYPE.DEC_CURSE_VALUE then
     ChallengeRingPlusMgr:record_fight_add_curse_value(ADD_CURSE_TYPE.SHOP_BUY, -cfg.Arg[1])
   end
@@ -288,9 +295,11 @@ end
 function ui:use_choose_ability_upgrade_func(cfg, recuperate_data, use_curse_value)
   local curse_ability_upgrade = UIMgr:get_ui("curse_ability_upgrade")
   curse_ability_upgrade:ui_show(recuperate_data)
-  local hide_cb = function()
+  
+  local function hide_cb()
     self:after_use_recuperation_func()
   end
+  
   curse_ability_upgrade:set_hide_cb(hide_cb)
 end
 
@@ -316,20 +325,24 @@ function ui:use_random_updagrade_ability_func(cfg, recuperate_data, use_curse_va
   end
   ChallengeRingPlusMgr:drop_award_data_enqueue(data)
   ChallengeRingPlusMgr:try_choose_drop_award()
-  local hide_cb = function()
+  
+  local function hide_cb()
     self:after_use_recuperation_func()
   end
+  
   local choose_ability_view = UIMgr:get_ui("choose_ability_view")
   choose_ability_view:set_hide_cb(hide_cb)
 end
 
 function ui:use_add_magic_func(cfg, recuperate_data, use_curse_value)
-  local cb = function()
+  local function cb()
     ChallengeRingPlusMgr:add_recuperation_magic(cfg.Arg[1], cfg.Arg[2])
+    
     self:refresh_recuperation_data()
     self:refresh_view(true)
     self:after_use_recuperation_func()
   end
+  
   ChallengeRingPlusMgr:request_use_recuperation_func(recuperate_data.id, nil, use_curse_value, cb)
 end
 
@@ -355,9 +368,10 @@ function ui:use_get_ornament_func(cfg, recuperate_data, use_curse_value, pay_typ
 end
 
 function ui:exit_func(cfg, recuperate_data, use_curse_value)
-  local cb = function()
+  local function cb()
     self:close_view(true)
   end
+  
   ChallengeRingPlusMgr:request_use_recuperation_func(recuperate_data.id, nil, use_curse_value, cb)
 end
 

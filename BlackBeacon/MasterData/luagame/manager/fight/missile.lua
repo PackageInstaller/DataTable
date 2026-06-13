@@ -200,6 +200,9 @@ function M:_init(owner, missile_id, target, parent, level, skill_id, target_pos,
   else
     self.v_born_pos = born_pos or Vec3.zero
   end
+  if not target_pos then
+    Log.Error("target_pos为空, missile_id: " .. missile_id, debug.traceback())
+  end
   self.v_target_pos = target_pos:Clone()
   self.v_target_pos.y = self.v_owner:get_pos_height()
   self.v_start_time = GlobalTimeMgr:get_time()
@@ -266,7 +269,7 @@ function M:bind_missile_survival_msg()
   end
 end
 
-local _remove_self = function(self)
+local function _remove_self(self)
   self:on_missile_end()
 end
 
@@ -934,7 +937,7 @@ function M:try_attack(target, target_part_id)
   end
 end
 
-local _add_atk_cd = function(self, cd_uuid, cd)
+local function _add_atk_cd(self, cd_uuid, cd)
   cd = cd or 0
   local atkcd
   if self.v_atk_cd > 0 then
@@ -951,7 +954,8 @@ local _add_atk_cd = function(self, cd_uuid, cd)
     self:record_missile_atk_cd_group(cd_uuid)
   end
 end
-local _check_add_atk_cd = function(self, target, cd_uuid, cd_part_id, cd)
+
+local function _check_add_atk_cd(self, target, cd_uuid, cd_part_id, cd)
   _add_atk_cd(self, cd_uuid)
   local all_part_cd = true
   if cd_part_id then
@@ -1190,7 +1194,7 @@ function M:can_attack(target, target_part_id)
   return Util.has_special_tag(self.v_owner, target, self.missile_cfg.TargetTag)
 end
 
-local _target_can_attack = function(self, target, target_part_id)
+local function _target_can_attack(self, target, target_part_id)
   if not self.v_ignore_hitcount and self.v_hitcount <= 0 then
     return false
   end
@@ -2352,10 +2356,12 @@ function M:remove_all_bounded_objs()
 end
 
 function M:change_linetype(line_type, lineparams)
-  if Util.is_more_than_zero(self.missile_cfg.BindLauncher) then
-    self.v_movement:on_destroy()
-  else
-    Global.missile_movement_pool_mgr:release(self.v_real_line_type, self.v_movement)
+  if self.v_movement then
+    if Util.is_more_than_zero(self.missile_cfg.BindLauncher) then
+      self.v_movement:on_destroy()
+    else
+      Global.missile_movement_pool_mgr:release(self.v_real_line_type, self.v_movement)
+    end
   end
   self.v_real_line_type = line_type
   self.v_movement = Global.missile_movement_pool_mgr:new_obj(line_type, self, lineparams)

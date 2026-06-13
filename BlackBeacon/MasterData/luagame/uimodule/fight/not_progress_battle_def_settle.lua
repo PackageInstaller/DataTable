@@ -26,13 +26,20 @@ function ui:ui_finish_load()
 end
 
 function ui:on_click_quit_button()
-  local cb = function()
+  local function cb()
     self:try_record_select_param()
+    
     Global.scene_mgr:on_enter_main_scene()
     UIMgr:revert_cache_ui()
   end
+  
   if SceneMgr:check_main_scene() then
     self:ui_hide()
+  end
+  if TowerMgr:get_has_exist() then
+    Global.scene_mgr:on_enter_main_scene()
+    UIMgr:clear_ui_stack()
+    return
   end
   if not self.v_is_get_award then
     TowerMgr:get_fight_reward(cb)
@@ -49,7 +56,8 @@ function ui:on_click_relive_button()
   end
   local name = UtilUI.get_item_name(self.v_reborn_cost_id)
   local desc = Util.format_str("是否花费{1}{2}立即复活该角色", self.v_reborn_cost_num, name)
-  local cb = function()
+  
+  local function cb()
     local cur_num = BagMgr:get_item_num(self.v_reborn_cost_id)
     if cur_num < self.v_reborn_cost_num then
       Util.show_message_tip(2115)
@@ -58,17 +66,20 @@ function ui:on_click_relive_button()
       self:ui_hide()
     end
   end
+  
   Util.show_conform_tip(desc, nil, nil, nil, cb)
 end
 
 function ui:click_archieve_born_btn()
-  local callback = function()
+  local function callback()
     local node_id
+    
     local progress = self.v_tower_progress
     node_id = progress.node_id
     TowerMgr:restart_tower(nil, nil, nil, node_id, true)
     self:ui_hide()
   end
+  
   if not self.v_is_get_award then
     TowerMgr:get_fight_reward(callback, true)
   else

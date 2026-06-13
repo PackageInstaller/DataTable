@@ -21,7 +21,7 @@ function M:_init(pool_name, long_keep_count, max_count, is_effect, is_res, resou
     self.v_effect_pools = {}
     self.v_owners = {}
   end
-  self.v_active_objs = {}
+  self.v_active_objs = setmetatable({}, {__mode = "k"})
   if DEBU_POOL then
     self.DEBUG_RELEASE_OBJ = {}
     self.DEBUG_USE_OBJ = {}
@@ -129,6 +129,7 @@ function M:clear()
     self.v_owners = {}
   end
   self:clear_extra_long_count()
+  self.v_active_objs = setmetatable({}, Global.config.KEY_WEAK_METATABLE)
 end
 
 function M:release_obj(obj, path)

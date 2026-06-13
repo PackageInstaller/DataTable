@@ -26,7 +26,8 @@ function ui:on_click_play_story_btn()
   local unlock_index = self.v_select_index + 1
   local unlock_id = preheat_id_list[unlock_index]
   local need_request_unlock = Util.is_more_than_zero(unlock_id) and not ChapterMgr:get_preheat_is_unlock(unlock_id)
-  local request_cb = function()
+  
+  local function request_cb()
     if self.v_select_preheat_cfg and Util.is_more_than_zero(self.v_select_preheat_cfg.PoltId) then
       if need_request_unlock then
         StoryMgr:set_story_end_cb(self.v_select_preheat_cfg.PoltId, function()
@@ -38,6 +39,7 @@ function ui:on_click_play_story_btn()
       StoryMgr:on_start(self.v_select_preheat_cfg.PoltId)
     end
   end
+  
   if need_request_unlock then
     ChapterMgr:request_preheat_unlock(unlock_id, request_cb)
   else
@@ -142,7 +144,8 @@ function ui:refresh_select_info()
         self.v_sequence = nil
       end
       self.v_sequence = Util.create_sequence()
-      local set_bg_cb1 = function()
+      
+      local function set_bg_cb1()
         Util.change_component_alpha2(self.v_uicompents.StageImage_img, 1)
         if self.v_hide_tween then
           self.v_hide_tween:Kill(false)
@@ -151,10 +154,12 @@ function ui:refresh_select_info()
         self.v_sequence:Join(self.v_uicompents.StageImage_img:DOFade(0, 0.2))
         self.v_sequence:Join(self.v_uicompents.StageImage1_img:DOFade(1, 0.2))
         self.v_sequence:OnComplete(function()
-          local set_bg_cb2 = function()
+          local function set_bg_cb2()
             Util.change_component_alpha2(self.v_uicompents.StageImage_img, 1)
+            
             Util.change_component_alpha2(self.v_uicompents.StageImage1_img, 0)
           end
+          
           ResMgr:load_set_icon(self.v_uicompents.StageImage_img, self.v_cur_bg_path, set_bg_cb2, true, self)
           if self.v_sequence then
             self.v_sequence:Kill(false)
@@ -162,6 +167,7 @@ function ui:refresh_select_info()
           end
         end)
       end
+      
       Util.change_component_alpha2(self.v_uicompents.StageImage1_img, 0)
       ResMgr:load_set_icon(self.v_uicompents.StageImage1_img, self.v_cur_bg_path, set_bg_cb1, true, self)
     else

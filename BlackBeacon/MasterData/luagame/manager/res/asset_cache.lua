@@ -181,9 +181,11 @@ function M:log_asset_cache()
     init_base_refs = true
   end
   local content = ""
-  local on_add_ref_content = function(name, count)
+  
+  local function on_add_ref_content(name, count)
     content = content .. "name: " .. name .. " count: " .. count .. " \n"
   end
+  
   local record_add_refs = {}
   local ref_count = 0
   content = "ref_count           --------" .. ref_count .. " \n"

@@ -7,7 +7,7 @@ return {
       IsNoUse = false,
       IsLookAtRole = true,
       Camp = 4,
-      UnitID = 20205601,
+      UnitID = 20205501,
       InitPos = "M1",
       OffSetX = 0.0,
       OffSetZ = 0.0,
@@ -41,9 +41,9 @@ return {
       Delay = 0.0,
       MagicId = 0,
       BornPos = {
-        127.53109,
-        0.488237619,
-        -31.1875
+        118.6551,
+        -1.99516129,
+        -37.55442
       }
     },
     {
@@ -53,7 +53,7 @@ return {
       IsNoUse = false,
       IsLookAtRole = true,
       Camp = 4,
-      UnitID = 20205601,
+      UnitID = 20105601,
       InitPos = "M1",
       OffSetX = 0.0,
       OffSetZ = 0.0,
@@ -76,14 +76,14 @@ return {
       IsNoUse = false,
       IsLookAtRole = true,
       Camp = 4,
-      UnitID = 20105501,
+      UnitID = 20205501,
       InitPos = "M1",
       OffSetX = 0.0,
       OffSetZ = 0.0,
       Level = 0,
       IsChange = false,
       UnitKey = "0_10802203_3",
-      AutoLevel = 1,
+      AutoLevel = 2,
       Delay = 0.0,
       MagicId = 0,
       BornPos = {

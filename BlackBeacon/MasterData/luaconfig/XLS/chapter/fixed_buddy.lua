@@ -839,6 +839,48 @@ local t = {
     Relic = {},
     TalentLv = 5
   },
+  [10000025] = {
+    AdvanceLv = 1,
+    AttrList = {
+      nil,
+      nil,
+      nil,
+      nil,
+      nil,
+      nil
+    },
+    BreakLv = 1,
+    BuddyId = 1001025,
+    EquipAdvanceLv = 1,
+    EquipBreakLv = 1,
+    EquipId = 2010250,
+    EquipLv = 1,
+    FashionId = 3001025,
+    Gemstone = {},
+    Id = 10000025,
+    InitNormalSkill = {
+      3,
+      4,
+      5
+    },
+    Lv = 1,
+    Magic = {},
+    OutSkillLv = 1,
+    OutSkillMask = {},
+    Power = 1188,
+    PuzzleId = {},
+    PuzzleQuality = {
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    },
+    RefineLv = 0,
+    Relic = {},
+    TalentLv = 5
+  },
   [10000026] = {
     AdvanceLv = 1,
     AttrList = {
@@ -1961,7 +2003,7 @@ local t = {
     Magic = {},
     OutSkillLv = 10,
     OutSkillMask = {},
-    Power = 0,
+    Power = 5835,
     PuzzleId = {},
     PuzzleQuality = {
       0,
@@ -1975,6 +2017,248 @@ local t = {
     Relic = {},
     TalentLv = 5,
     WeaponFashionId = 50012601
+  },
+  [10003009] = {
+    AdvanceLv = 1,
+    AttrList = {
+      {
+        302,
+        306,
+        304
+      },
+      {
+        202,
+        206,
+        204
+      },
+      {
+        202,
+        206,
+        204
+      },
+      nil,
+      nil,
+      nil
+    },
+    BreakLv = 6,
+    BuddyId = 1001009,
+    EquipAdvanceLv = 1,
+    EquipBreakLv = 5,
+    EquipId = 2010091,
+    EquipLv = 80,
+    FashionId = 3004009,
+    Gemstone = {},
+    Id = 10003009,
+    InitNormalSkill = {
+      3,
+      4,
+      5
+    },
+    Lv = 80,
+    Magic = {},
+    OutSkillLv = 6,
+    OutSkillMask = {},
+    Power = 7500,
+    PuzzleId = {
+      980012,
+      980022,
+      980044
+    },
+    PuzzleQuality = {
+      4,
+      4,
+      4,
+      0,
+      0,
+      0
+    },
+    RefineLv = 0,
+    Relic = {},
+    TalentLv = 5
+  },
+  [10003014] = {
+    AdvanceLv = 1,
+    AttrList = {
+      {310, 311},
+      {210, 211},
+      nil,
+      nil,
+      nil,
+      nil
+    },
+    BreakLv = 3,
+    BuddyId = 1001014,
+    EquipAdvanceLv = 1,
+    EquipBreakLv = 3,
+    EquipId = 2010142,
+    EquipLv = 60,
+    FashionId = 3001014,
+    Gemstone = {},
+    Id = 10003014,
+    InitNormalSkill = {
+      3,
+      4,
+      5
+    },
+    Lv = 60,
+    Magic = {},
+    OutSkillLv = 6,
+    OutSkillMask = {},
+    Power = 4029,
+    PuzzleId = {980030, 980045},
+    PuzzleQuality = {
+      4,
+      4,
+      0,
+      0,
+      0,
+      0
+    },
+    RefineLv = 0,
+    Relic = {},
+    TalentLv = 2
+  },
+  [10003016] = {
+    AdvanceLv = 1,
+    AttrList = {
+      {307, 304},
+      {207, 204},
+      nil,
+      nil,
+      nil,
+      nil
+    },
+    BreakLv = 3,
+    BuddyId = 1001016,
+    EquipAdvanceLv = 1,
+    EquipBreakLv = 3,
+    EquipId = 2010162,
+    EquipLv = 60,
+    FashionId = 3001016,
+    Gemstone = {},
+    Id = 10003016,
+    InitNormalSkill = {
+      3,
+      4,
+      5
+    },
+    Lv = 60,
+    Magic = {},
+    OutSkillLv = 6,
+    OutSkillMask = {},
+    Power = 4108,
+    PuzzleId = {980030, 980045},
+    PuzzleQuality = {
+      4,
+      4,
+      0,
+      0,
+      0,
+      0
+    },
+    RefineLv = 0,
+    Relic = {},
+    TalentLv = 2
+  },
+  [10003025] = {
+    AdvanceLv = 1,
+    AttrList = {
+      {
+        312,
+        310,
+        311
+      },
+      {
+        212,
+        210,
+        211
+      },
+      {
+        212,
+        210,
+        211
+      },
+      nil,
+      nil,
+      nil
+    },
+    BreakLv = 6,
+    BuddyId = 1001025,
+    EquipAdvanceLv = 1,
+    EquipBreakLv = 5,
+    EquipId = 2010251,
+    EquipLv = 80,
+    FashionId = 3001025,
+    Gemstone = {},
+    Id = 10003025,
+    InitNormalSkill = {
+      3,
+      4,
+      5
+    },
+    Lv = 80,
+    Magic = {},
+    OutSkillLv = 6,
+    OutSkillMask = {},
+    Power = 7300,
+    PuzzleId = {
+      980030,
+      980045,
+      980044
+    },
+    PuzzleQuality = {
+      4,
+      4,
+      4,
+      0,
+      0,
+      0
+    },
+    RefineLv = 0,
+    Relic = {},
+    TalentLv = 5
+  },
+  [10003026] = {
+    AdvanceLv = 1,
+    AttrList = {
+      {310, 311},
+      {210, 211},
+      nil,
+      nil,
+      nil,
+      nil
+    },
+    BreakLv = 3,
+    BuddyId = 1001026,
+    EquipAdvanceLv = 1,
+    EquipBreakLv = 3,
+    EquipId = 2010262,
+    EquipLv = 60,
+    FashionId = 3001026,
+    Gemstone = {},
+    Id = 10003026,
+    InitNormalSkill = {
+      3,
+      4,
+      5
+    },
+    Lv = 60,
+    Magic = {},
+    OutSkillLv = 6,
+    OutSkillMask = {},
+    Power = 4202,
+    PuzzleId = {980055, 980021},
+    PuzzleQuality = {
+      4,
+      4,
+      0,
+      0,
+      0,
+      0
+    },
+    RefineLv = 0,
+    Relic = {},
+    TalentLv = 2
   },
   [11000000] = {
     AdvanceLv = 1,
@@ -3399,12 +3683,12 @@ local t = {
   [11000031] = {
     AdvanceLv = 1,
     AttrList = {
-      {302},
-      {202},
-      {202},
-      {102},
-      {102},
-      {102}
+      {301, 310},
+      {201, 211},
+      {201},
+      {101},
+      {101},
+      {101}
     },
     BreakLv = 6,
     BuddyId = 1001022,
@@ -3424,7 +3708,7 @@ local t = {
     Magic = {},
     OutSkillLv = 8,
     OutSkillMask = {},
-    Power = 6219,
+    Power = 7276,
     PuzzleId = {
       980072,
       980071,
@@ -3434,8 +3718,8 @@ local t = {
       980067
     },
     PuzzleQuality = {
-      3,
-      3,
+      4,
+      4,
       3,
       3,
       3,
@@ -3446,10 +3730,10 @@ local t = {
     TalentLv = 5
   },
   [11000032] = {
-    AdvanceLv = 5,
+    AdvanceLv = 6,
     AttrList = {
-      {312},
-      {212},
+      {312, 302},
+      {212, 202},
       {212},
       {112},
       {112},
@@ -3458,8 +3742,8 @@ local t = {
     BreakLv = 6,
     BuddyId = 1001001,
     EquipAdvanceLv = 1,
-    EquipBreakLv = 6,
-    EquipId = 2010012,
+    EquipBreakLv = 5,
+    EquipId = 2010011,
     EquipLv = 80,
     FashionId = 3003001,
     Gemstone = {},
@@ -3467,9 +3751,9 @@ local t = {
     InitNormalSkill = {},
     Lv = 80,
     Magic = {},
-    OutSkillLv = 12,
+    OutSkillLv = 8,
     OutSkillMask = {},
-    Power = 6687,
+    Power = 6712,
     PuzzleId = {
       980072,
       980071,
@@ -3479,8 +3763,8 @@ local t = {
       980067
     },
     PuzzleQuality = {
-      3,
-      3,
+      4,
+      4,
       3,
       3,
       3,
@@ -3492,10 +3776,10 @@ local t = {
     WeaponFashionId = 50010101
   },
   [11000033] = {
-    AdvanceLv = 5,
+    AdvanceLv = 6,
     AttrList = {
-      {302},
-      {202},
+      {302, 310},
+      {202, 211},
       {202},
       {102},
       {102},
@@ -3504,8 +3788,8 @@ local t = {
     BreakLv = 6,
     BuddyId = 1001004,
     EquipAdvanceLv = 1,
-    EquipBreakLv = 6,
-    EquipId = 2010042,
+    EquipBreakLv = 5,
+    EquipId = 2010041,
     EquipLv = 80,
     FashionId = 3001004,
     Gemstone = {},
@@ -3513,9 +3797,9 @@ local t = {
     InitNormalSkill = {},
     Lv = 80,
     Magic = {},
-    OutSkillLv = 12,
+    OutSkillLv = 8,
     OutSkillMask = {},
-    Power = 6894,
+    Power = 6638,
     PuzzleId = {
       980072,
       980071,
@@ -3525,8 +3809,8 @@ local t = {
       980067
     },
     PuzzleQuality = {
-      3,
-      3,
+      4,
+      4,
       3,
       3,
       3,
@@ -3539,7 +3823,7 @@ local t = {
   [11000034] = {
     AdvanceLv = 1,
     AttrList = {
-      {312},
+      {312, 302},
       {212},
       {212},
       {112},
@@ -3558,9 +3842,9 @@ local t = {
     InitNormalSkill = {},
     Lv = 80,
     Magic = {},
-    OutSkillLv = 10,
+    OutSkillLv = 8,
     OutSkillMask = {},
-    Power = 7102,
+    Power = 7400,
     PuzzleId = {
       980072,
       980071,
@@ -3570,12 +3854,12 @@ local t = {
       980067
     },
     PuzzleQuality = {
-      5,
-      5,
-      5,
-      5,
-      5,
-      5
+      4,
+      4,
+      3,
+      3,
+      3,
+      3
     },
     RefineLv = 0,
     Relic = {},
@@ -3584,12 +3868,12 @@ local t = {
   [11000035] = {
     AdvanceLv = 1,
     AttrList = {
-      {302},
-      {202},
-      {202},
-      {102},
-      {102},
-      {102}
+      {301, 310},
+      {201, 211},
+      {201},
+      {101},
+      {101},
+      {101}
     },
     BreakLv = 6,
     BuddyId = 1001022,
@@ -3607,9 +3891,9 @@ local t = {
     },
     Lv = 80,
     Magic = {},
-    OutSkillLv = 10,
+    OutSkillLv = 8,
     OutSkillMask = {},
-    Power = 7011,
+    Power = 7276,
     PuzzleId = {
       980072,
       980071,
@@ -3619,8 +3903,102 @@ local t = {
       980067
     },
     PuzzleQuality = {
+      4,
+      4,
       3,
       3,
+      3,
+      3
+    },
+    RefineLv = 0,
+    Relic = {},
+    TalentLv = 5
+  },
+  [11000036] = {
+    AdvanceLv = 6,
+    AttrList = {
+      {312, 302},
+      {212, 202},
+      {212},
+      {112},
+      {112},
+      {112}
+    },
+    BreakLv = 6,
+    BuddyId = 1001001,
+    EquipAdvanceLv = 1,
+    EquipBreakLv = 5,
+    EquipId = 2010011,
+    EquipLv = 80,
+    FashionId = 3001001,
+    Gemstone = {},
+    Id = 11000036,
+    InitNormalSkill = {},
+    Lv = 80,
+    Magic = {},
+    OutSkillLv = 8,
+    OutSkillMask = {},
+    Power = 6712,
+    PuzzleId = {
+      980072,
+      980071,
+      980070,
+      980069,
+      980068,
+      980067
+    },
+    PuzzleQuality = {
+      4,
+      4,
+      3,
+      3,
+      3,
+      3
+    },
+    RefineLv = 0,
+    Relic = {},
+    TalentLv = 5
+  },
+  [11000037] = {
+    AdvanceLv = 1,
+    AttrList = {
+      {312, 310},
+      {212, 211},
+      {212},
+      {112},
+      {112},
+      {112}
+    },
+    BreakLv = 6,
+    BuddyId = 1001014,
+    EquipAdvanceLv = 1,
+    EquipBreakLv = 5,
+    EquipId = 2010141,
+    EquipLv = 80,
+    FashionId = 3001014,
+    Gemstone = {},
+    Id = 11000037,
+    InitNormalSkill = {
+      3,
+      4,
+      5
+    },
+    Lv = 80,
+    Magic = {},
+    OutSkillLv = 8,
+    OutSkillMask = {},
+    Power = 7066,
+    PuzzleId = {
+      980030,
+      980045,
+      980044,
+      980069,
+      980068,
+      980067
+    },
+    PuzzleQuality = {
+      4,
+      4,
       3,
       3,
       3,
@@ -6413,34 +6791,34 @@ local t = {
     AdvanceLv = 2,
     AttrList = {
       {
-        302,
-        312,
-        308
+        301,
+        308,
+        312
       },
       {
-        202,
-        212,
-        208
+        201,
+        208,
+        212
       },
       {
-        202,
-        212,
-        208
+        201,
+        208,
+        212
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       }
     },
     BreakLv = 6,
@@ -6463,7 +6841,80 @@ local t = {
     OutSkillMask = {},
     Power = 0,
     PuzzleId = {
-      980050,
+      980056,
+      980021,
+      980045,
+      980069,
+      980068,
+      980067
+    },
+    PuzzleQuality = {
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    },
+    RefineLv = 0,
+    Relic = {},
+    TalentLv = 5
+  },
+  [99999230] = {
+    AdvanceLv = 2,
+    AttrList = {
+      {
+        302,
+        306,
+        312
+      },
+      {
+        202,
+        206,
+        212
+      },
+      {
+        202,
+        206,
+        212
+      },
+      {
+        102,
+        106,
+        112
+      },
+      {
+        102,
+        106,
+        112
+      },
+      {
+        102,
+        106,
+        112
+      }
+    },
+    BreakLv = 6,
+    BuddyId = 1001030,
+    EquipAdvanceLv = 1,
+    EquipBreakLv = 6,
+    EquipId = 2010302,
+    EquipLv = 90,
+    FashionId = 3001030,
+    Gemstone = {},
+    Id = 99999230,
+    InitNormalSkill = {
+      3,
+      4,
+      5
+    },
+    Lv = 90,
+    Magic = {},
+    OutSkillLv = 10,
+    OutSkillMask = {},
+    Power = 0,
+    PuzzleId = {
+      980052,
       980042,
       980044,
       980069,
@@ -8019,34 +8470,34 @@ local t = {
     AdvanceLv = 4,
     AttrList = {
       {
-        302,
-        312,
-        308
+        301,
+        308,
+        312
       },
       {
-        202,
-        212,
-        208
+        201,
+        208,
+        212
       },
       {
-        202,
-        212,
-        208
+        201,
+        208,
+        212
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       }
     },
     BreakLv = 6,
@@ -8069,7 +8520,80 @@ local t = {
     OutSkillMask = {},
     Power = 0,
     PuzzleId = {
-      980050,
+      980056,
+      980021,
+      980045,
+      980069,
+      980068,
+      980067
+    },
+    PuzzleQuality = {
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    },
+    RefineLv = 0,
+    Relic = {},
+    TalentLv = 5
+  },
+  [99999330] = {
+    AdvanceLv = 4,
+    AttrList = {
+      {
+        302,
+        306,
+        312
+      },
+      {
+        202,
+        206,
+        212
+      },
+      {
+        202,
+        206,
+        212
+      },
+      {
+        102,
+        106,
+        112
+      },
+      {
+        102,
+        106,
+        112
+      },
+      {
+        102,
+        106,
+        112
+      }
+    },
+    BreakLv = 6,
+    BuddyId = 1001030,
+    EquipAdvanceLv = 1,
+    EquipBreakLv = 6,
+    EquipId = 2010302,
+    EquipLv = 90,
+    FashionId = 3001030,
+    Gemstone = {},
+    Id = 99999330,
+    InitNormalSkill = {
+      3,
+      4,
+      5
+    },
+    Lv = 90,
+    Magic = {},
+    OutSkillLv = 10,
+    OutSkillMask = {},
+    Power = 0,
+    PuzzleId = {
+      980052,
       980042,
       980044,
       980069,
@@ -9625,34 +10149,34 @@ local t = {
     AdvanceLv = 1,
     AttrList = {
       {
-        302,
-        312,
-        308
+        301,
+        308,
+        312
       },
       {
-        202,
-        212,
-        208
+        201,
+        208,
+        212
       },
       {
-        202,
-        212,
-        208
+        201,
+        208,
+        212
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       }
     },
     BreakLv = 6,
@@ -9675,7 +10199,80 @@ local t = {
     OutSkillMask = {},
     Power = 0,
     PuzzleId = {
-      980050,
+      980056,
+      980021,
+      980045,
+      980069,
+      980068,
+      980067
+    },
+    PuzzleQuality = {
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    },
+    RefineLv = 0,
+    Relic = {},
+    TalentLv = 5
+  },
+  [99999430] = {
+    AdvanceLv = 1,
+    AttrList = {
+      {
+        302,
+        306,
+        312
+      },
+      {
+        202,
+        206,
+        212
+      },
+      {
+        202,
+        206,
+        212
+      },
+      {
+        102,
+        106,
+        112
+      },
+      {
+        102,
+        106,
+        112
+      },
+      {
+        102,
+        106,
+        112
+      }
+    },
+    BreakLv = 6,
+    BuddyId = 1001030,
+    EquipAdvanceLv = 1,
+    EquipBreakLv = 5,
+    EquipId = 2010301,
+    EquipLv = 80,
+    FashionId = 3001030,
+    Gemstone = {},
+    Id = 99999430,
+    InitNormalSkill = {
+      3,
+      4,
+      5
+    },
+    Lv = 90,
+    Magic = {},
+    OutSkillLv = 10,
+    OutSkillMask = {},
+    Power = 0,
+    PuzzleId = {
+      980052,
       980042,
       980044,
       980069,
@@ -11231,34 +11828,34 @@ local t = {
     AdvanceLv = 7,
     AttrList = {
       {
-        302,
-        312,
-        308
+        301,
+        308,
+        312
       },
       {
-        202,
-        212,
-        208
+        201,
+        208,
+        212
       },
       {
-        202,
-        212,
-        208
+        201,
+        208,
+        212
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       }
     },
     BreakLv = 6,
@@ -11281,7 +11878,80 @@ local t = {
     OutSkillMask = {},
     Power = 0,
     PuzzleId = {
-      980050,
+      980056,
+      980021,
+      980045,
+      980069,
+      980068,
+      980067
+    },
+    PuzzleQuality = {
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    },
+    RefineLv = 0,
+    Relic = {},
+    TalentLv = 5
+  },
+  [99999530] = {
+    AdvanceLv = 7,
+    AttrList = {
+      {
+        302,
+        306,
+        312
+      },
+      {
+        202,
+        206,
+        212
+      },
+      {
+        202,
+        206,
+        212
+      },
+      {
+        102,
+        106,
+        112
+      },
+      {
+        102,
+        106,
+        112
+      },
+      {
+        102,
+        106,
+        112
+      }
+    },
+    BreakLv = 6,
+    BuddyId = 1001030,
+    EquipAdvanceLv = 1,
+    EquipBreakLv = 5,
+    EquipId = 2010301,
+    EquipLv = 80,
+    FashionId = 3001030,
+    Gemstone = {},
+    Id = 99999530,
+    InitNormalSkill = {
+      3,
+      4,
+      5
+    },
+    Lv = 90,
+    Magic = {},
+    OutSkillLv = 12,
+    OutSkillMask = {},
+    Power = 0,
+    PuzzleId = {
+      980052,
       980042,
       980044,
       980069,
@@ -12837,34 +13507,34 @@ local t = {
     AdvanceLv = 1,
     AttrList = {
       {
-        302,
-        312,
-        308
+        301,
+        308,
+        312
       },
       {
-        202,
-        212,
-        208
+        201,
+        208,
+        212
       },
       {
-        202,
-        212,
-        208
+        201,
+        208,
+        212
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       }
     },
     BreakLv = 6,
@@ -12887,7 +13557,80 @@ local t = {
     OutSkillMask = {},
     Power = 0,
     PuzzleId = {
-      980050,
+      980056,
+      980021,
+      980045,
+      980069,
+      980068,
+      980067
+    },
+    PuzzleQuality = {
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    },
+    RefineLv = 0,
+    Relic = {},
+    TalentLv = 5
+  },
+  [99999630] = {
+    AdvanceLv = 1,
+    AttrList = {
+      {
+        302,
+        306,
+        312
+      },
+      {
+        202,
+        206,
+        212
+      },
+      {
+        202,
+        206,
+        212
+      },
+      {
+        102,
+        106,
+        112
+      },
+      {
+        102,
+        106,
+        112
+      },
+      {
+        102,
+        106,
+        112
+      }
+    },
+    BreakLv = 6,
+    BuddyId = 1001030,
+    EquipAdvanceLv = 1,
+    EquipBreakLv = 6,
+    EquipId = 2010302,
+    EquipLv = 90,
+    FashionId = 3001030,
+    Gemstone = {},
+    Id = 99999630,
+    InitNormalSkill = {
+      3,
+      4,
+      5
+    },
+    Lv = 90,
+    Magic = {},
+    OutSkillLv = 10,
+    OutSkillMask = {},
+    Power = 0,
+    PuzzleId = {
+      980052,
       980042,
       980044,
       980069,
@@ -14443,34 +15186,34 @@ local t = {
     AdvanceLv = 7,
     AttrList = {
       {
-        302,
-        312,
-        308
+        301,
+        308,
+        312
       },
       {
-        202,
-        212,
-        208
+        201,
+        208,
+        212
       },
       {
-        202,
-        212,
-        208
+        201,
+        208,
+        212
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       }
     },
     BreakLv = 6,
@@ -14493,7 +15236,80 @@ local t = {
     OutSkillMask = {},
     Power = 0,
     PuzzleId = {
-      980050,
+      980056,
+      980021,
+      980045,
+      980069,
+      980068,
+      980067
+    },
+    PuzzleQuality = {
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    },
+    RefineLv = 0,
+    Relic = {},
+    TalentLv = 5
+  },
+  [99999730] = {
+    AdvanceLv = 7,
+    AttrList = {
+      {
+        302,
+        306,
+        312
+      },
+      {
+        202,
+        206,
+        212
+      },
+      {
+        202,
+        206,
+        212
+      },
+      {
+        102,
+        106,
+        112
+      },
+      {
+        102,
+        106,
+        112
+      },
+      {
+        102,
+        106,
+        112
+      }
+    },
+    BreakLv = 6,
+    BuddyId = 1001030,
+    EquipAdvanceLv = 1,
+    EquipBreakLv = 6,
+    EquipId = 2010302,
+    EquipLv = 90,
+    FashionId = 3001030,
+    Gemstone = {},
+    Id = 99999730,
+    InitNormalSkill = {
+      3,
+      4,
+      5
+    },
+    Lv = 90,
+    Magic = {},
+    OutSkillLv = 12,
+    OutSkillMask = {},
+    Power = 0,
+    PuzzleId = {
+      980052,
       980042,
       980044,
       980069,
@@ -16049,34 +16865,34 @@ local t = {
     AdvanceLv = 7,
     AttrList = {
       {
-        302,
-        312,
-        308
+        301,
+        308,
+        312
       },
       {
-        202,
-        212,
-        208
+        201,
+        208,
+        212
       },
       {
-        202,
-        212,
-        208
+        201,
+        208,
+        212
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       },
       {
-        102,
-        112,
-        108
+        101,
+        108,
+        112
       }
     },
     BreakLv = 6,
@@ -16099,7 +16915,80 @@ local t = {
     OutSkillMask = {},
     Power = 0,
     PuzzleId = {
-      980050,
+      980056,
+      980021,
+      980045,
+      980069,
+      980068,
+      980067
+    },
+    PuzzleQuality = {
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    },
+    RefineLv = 0,
+    Relic = {},
+    TalentLv = 5
+  },
+  [99999830] = {
+    AdvanceLv = 7,
+    AttrList = {
+      {
+        302,
+        306,
+        312
+      },
+      {
+        202,
+        206,
+        212
+      },
+      {
+        202,
+        206,
+        212
+      },
+      {
+        102,
+        106,
+        112
+      },
+      {
+        102,
+        106,
+        112
+      },
+      {
+        102,
+        106,
+        112
+      }
+    },
+    BreakLv = 6,
+    BuddyId = 1001030,
+    EquipAdvanceLv = 5,
+    EquipBreakLv = 6,
+    EquipId = 2010302,
+    EquipLv = 90,
+    FashionId = 3001030,
+    Gemstone = {},
+    Id = 99999830,
+    InitNormalSkill = {
+      3,
+      4,
+      5
+    },
+    Lv = 90,
+    Magic = {},
+    OutSkillLv = 12,
+    OutSkillMask = {},
+    Power = 0,
+    PuzzleId = {
+      980052,
       980042,
       980044,
       980069,
@@ -17041,6 +17930,44 @@ local t = {
     RefineLv = 0,
     Relic = {},
     TalentLv = 5
+  },
+  [99999930] = {
+    AdvanceLv = 1,
+    AttrList = {
+      nil,
+      nil,
+      nil,
+      nil,
+      nil,
+      nil
+    },
+    BreakLv = 6,
+    BuddyId = 1001030,
+    EquipAdvanceLv = 1,
+    EquipBreakLv = 5,
+    EquipId = 2010301,
+    EquipLv = 80,
+    FashionId = 3001030,
+    Gemstone = {},
+    Id = 99999930,
+    InitNormalSkill = {},
+    Lv = 90,
+    Magic = {},
+    OutSkillLv = 10,
+    OutSkillMask = {},
+    Power = 0,
+    PuzzleId = {},
+    PuzzleQuality = {
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    },
+    RefineLv = 0,
+    Relic = {},
+    TalentLv = 5
   }
 }
 t[10000000].AttrList[2] = t[10000000].AttrList[1]
@@ -17162,6 +18089,12 @@ t[10000024].AttrList[3] = t[10000000].AttrList[1]
 t[10000024].AttrList[4] = t[10000000].AttrList[1]
 t[10000024].AttrList[5] = t[10000000].AttrList[1]
 t[10000024].AttrList[6] = t[10000000].AttrList[1]
+t[10000025].AttrList[1] = t[10000000].AttrList[1]
+t[10000025].AttrList[2] = t[10000000].AttrList[1]
+t[10000025].AttrList[3] = t[10000000].AttrList[1]
+t[10000025].AttrList[4] = t[10000000].AttrList[1]
+t[10000025].AttrList[5] = t[10000000].AttrList[1]
+t[10000025].AttrList[6] = t[10000000].AttrList[1]
 t[10000026].AttrList[1] = t[10000000].AttrList[1]
 t[10000026].AttrList[2] = t[10000000].AttrList[1]
 t[10000026].AttrList[3] = t[10000000].AttrList[1]
@@ -17324,6 +18257,24 @@ t[10002026].AttrList[3] = t[10000000].AttrList[1]
 t[10002026].AttrList[4] = t[10000000].AttrList[1]
 t[10002026].AttrList[5] = t[10000000].AttrList[1]
 t[10002026].AttrList[6] = t[10000000].AttrList[1]
+t[10003009].AttrList[4] = t[10000000].AttrList[1]
+t[10003009].AttrList[5] = t[10000000].AttrList[1]
+t[10003009].AttrList[6] = t[10000000].AttrList[1]
+t[10003014].AttrList[3] = t[10000000].AttrList[1]
+t[10003014].AttrList[4] = t[10000000].AttrList[1]
+t[10003014].AttrList[5] = t[10000000].AttrList[1]
+t[10003014].AttrList[6] = t[10000000].AttrList[1]
+t[10003016].AttrList[3] = t[10000000].AttrList[1]
+t[10003016].AttrList[4] = t[10000000].AttrList[1]
+t[10003016].AttrList[5] = t[10000000].AttrList[1]
+t[10003016].AttrList[6] = t[10000000].AttrList[1]
+t[10003025].AttrList[4] = t[10000000].AttrList[1]
+t[10003025].AttrList[5] = t[10000000].AttrList[1]
+t[10003025].AttrList[6] = t[10000000].AttrList[1]
+t[10003026].AttrList[3] = t[10000000].AttrList[1]
+t[10003026].AttrList[4] = t[10000000].AttrList[1]
+t[10003026].AttrList[5] = t[10000000].AttrList[1]
+t[10003026].AttrList[6] = t[10000000].AttrList[1]
 t[11000000].AttrList[1] = t[10000000].AttrList[1]
 t[11000000].AttrList[2] = t[10000000].AttrList[1]
 t[11000000].AttrList[3] = t[10000000].AttrList[1]
@@ -17705,4 +18656,10 @@ t[99999927].AttrList[3] = t[10000000].AttrList[1]
 t[99999927].AttrList[4] = t[10000000].AttrList[1]
 t[99999927].AttrList[5] = t[10000000].AttrList[1]
 t[99999927].AttrList[6] = t[10000000].AttrList[1]
+t[99999930].AttrList[1] = t[10000000].AttrList[1]
+t[99999930].AttrList[2] = t[10000000].AttrList[1]
+t[99999930].AttrList[3] = t[10000000].AttrList[1]
+t[99999930].AttrList[4] = t[10000000].AttrList[1]
+t[99999930].AttrList[5] = t[10000000].AttrList[1]
+t[99999930].AttrList[6] = t[10000000].AttrList[1]
 return t

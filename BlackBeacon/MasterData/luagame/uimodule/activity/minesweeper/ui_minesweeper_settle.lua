@@ -53,13 +53,10 @@ function ui:refresh()
   local cur_knowledge_level = MineSweeperMgr.knowledge_level
   self.v_uicompents.LvNum_txt.text = cur_knowledge_level
   local next_score = minesweeper_chapter_info.knowledge_level_score + minesweeper_chapter_info.cur_score
-  local next_knowledge_level = MineSweeperMgr:calc_minesweeper_knowledge_level(next_score, minesweeper_chapter_info.chapter_id)
-  local diff = next_knowledge_level - cur_knowledge_level
+  local next_knowledge_level, _, level_range_end = MineSweeperMgr:calc_minesweeper_knowledge_level(next_score, minesweeper_chapter_info.chapter_id, true)
+  local diff = level_range_end and next_knowledge_level - cur_knowledge_level or 0
   self.v_uicompents.LvNumAdd_txt.text = "+" .. diff
-  local minesweeper_chapter_cfg = ShareRes.create("minesweeper.minesweeper_chapter")[minesweeper_chapter_info.chapter_id]
-  local knowledge_level_id = minesweeper_chapter_cfg.KnowledgeLevelId
-  local max_knowledge_level = #ShareRes.create("minesweeper.minesweeper_level")[knowledge_level_id]
-  self.v_uiobjects.Max:SetActiveEx(max_knowledge_level == next_knowledge_level)
+  self.v_uiobjects.Max:SetActiveEx(not level_range_end)
 end
 
 return ui

@@ -20,7 +20,8 @@ local EFFECT_IDX_STATUS = 4
 local EFFECT_NAME = 14
 local _tinsert = table.insert
 local _tremove = table.remove
-local get_resouce_path = function(file, is_not_lower)
+
+local function get_resouce_path(file, is_not_lower)
   if not is_not_lower then
     file = string.lower(file)
   end
@@ -42,7 +43,7 @@ function M:_init(char)
   Util.bind_msg(self, Const.MSG_ON_GAME_PAUSE, self.pause_scene_fade, self)
 end
 
-function M:on_destroy()
+function M:on_before_destroy()
   if Global.sound_mgr then
     for effgo, effflag in pairs(self.v_effect_go) do
       if effflag then
@@ -90,12 +91,14 @@ function M:remove_effect_obj(obj_key)
   if obj and not obj:IsNull() then
     if fade_time and fade_time > 0 then
       cri_obj.gameObject.transform.parent = nil
-      local callback = function()
+      
+      local function callback()
         if obj and not obj:IsNull() then
           UnityDestroy(obj)
         end
         self.v_fade_data = nil
       end
+      
       local fade_data = {
         cri_obj = cri_obj,
         cri_obj_loop = cri_obj_loop,
@@ -180,12 +183,14 @@ function M:play_sound(cue_sheet, cue_name, obj_key, source_type, eff_sound_type)
   local sound_info = self.v_cache_sound_info[cue_sheet]
   if sound_info and sound_info.load_state == LOAD_STATE.LOADING then
     self.v_loaded_callback_sound = self.v_loaded_callback_sound or {}
-    local sound_loaded_callback = function()
+    
+    local function sound_loaded_callback()
       if Util.is_nil(self.v_criware_obj_list[obj_key].obj) then
         return
       end
       self:play_sound(cue_sheet, cue_name, obj_key, source_type, eff_sound_type)
     end
+    
     self.v_loaded_callback_sound[cue_sheet] = self.v_loaded_callback_sound[cue_sheet] or {}
     _tinsert(self.v_loaded_callback_sound[cue_sheet], sound_loaded_callback)
     if #self.v_loaded_callback_sound[cue_sheet] > 1000 then
@@ -205,11 +210,13 @@ function M:play_sound(cue_sheet, cue_name, obj_key, source_type, eff_sound_type)
     return
   end
   local cue_sheet_path = get_resouce_path(cue_sheet .. ".acb")
-  local callback = function()
+  
+  local function callback()
     self.v_cache_sound_info[cue_sheet].load_state = LOAD_STATE.LOADED
     self:_play_sound(self.v_cache_sound_info[cue_sheet], obj_key, source_type, eff_sound_type)
     self:check_play_loading_sound(cue_sheet)
   end
+  
   CompExtensions.LoadSound(callback, cue_sheet, cue_sheet_path, cue_name)
 end
 

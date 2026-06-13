@@ -30,7 +30,7 @@ function M:init()
   self.v_shader_bundle = Global.assetbundle_mgr:load_bundle("shader.ab")
 end
 
-local get_shader_variant_collection_path = function(name)
+local function get_shader_variant_collection_path(name)
   return "assets/product/common/shadervariant/" .. name .. ".shadervariants"
 end
 
@@ -86,42 +86,41 @@ function M:_update_bundle_loads()
   if self.v_loading_bundle_count > MAX_LOADING_BUNDLE_COUNT then
     return
   end
-  while true do
-    if not (self.v_loading_bundle_count < MAX_LOADING_BUNDLE_COUNT) then
-      goto lbl_104
-    end
-    local bundle_path, file, session = self.v_need_load_bundles:pop()
-    if not bundle_path then
-      break
-    end
-    if AssetCache:get_cache_res(file, CACHE_ASSET_TYPE) then
-      AssetCache:add_ref(file, CACHE_ASSET_TYPE)
-      self:_on_bundle_loaded(bundle_path, file, session)
-    else
-      local loading_bundle = self.v_loading_bundles[bundle_path]
-      if loading_bundle then
-        AssetCache:add_ref(file, CACHE_ASSET_TYPE)
-        self.v_need_check_bundle_loads:push(bundle_path, file, session)
-      else
-        loading_bundle = UnityAssetBundle.LoadFromFileAsync(bundle_path)
-        if loading_bundle.isDone then
-          AssetCache:cache_res(file, CACHE_ASSET_TYPE, loading_bundle.assetBundle)
+  ::lbl_29::
+  if self.v_loading_bundle_count < MAX_LOADING_BUNDLE_COUNT then
+    do
+      local bundle_path, file, session = self.v_need_load_bundles:pop()
+      if bundle_path then
+        if AssetCache:get_cache_res(file, CACHE_ASSET_TYPE) then
+          AssetCache:add_ref(file, CACHE_ASSET_TYPE)
           self:_on_bundle_loaded(bundle_path, file, session)
         else
-          self.v_loading_bundles[bundle_path] = loading_bundle
-          self.v_loading_bundle_count = self.v_loading_bundle_count + 1
-          Coroutine.start(function()
-            coroutine.yield(loading_bundle.isDone)
-            AssetCache:cache_res(file, CACHE_ASSET_TYPE, loading_bundle.assetBundle)
-            self.v_loading_bundles[bundle_path] = nil
-            self.v_loading_bundle_count = self.v_loading_bundle_count - 1
-            self:_on_bundle_loaded(bundle_path, file, session)
-          end)
+          local loading_bundle = self.v_loading_bundles[bundle_path]
+          if loading_bundle then
+            AssetCache:add_ref(file, CACHE_ASSET_TYPE)
+            self.v_need_check_bundle_loads:push(bundle_path, file, session)
+          else
+            loading_bundle = UnityAssetBundle.LoadFromFileAsync(bundle_path)
+            if loading_bundle.isDone then
+              AssetCache:cache_res(file, CACHE_ASSET_TYPE, loading_bundle.assetBundle)
+              self:_on_bundle_loaded(bundle_path, file, session)
+            else
+              self.v_loading_bundles[bundle_path] = loading_bundle
+              self.v_loading_bundle_count = self.v_loading_bundle_count + 1
+              Coroutine.start(function()
+                coroutine.yield(loading_bundle.isDone)
+                AssetCache:cache_res(file, CACHE_ASSET_TYPE, loading_bundle.assetBundle)
+                self.v_loading_bundles[bundle_path] = nil
+                self.v_loading_bundle_count = self.v_loading_bundle_count - 1
+                self:_on_bundle_loaded(bundle_path, file, session)
+              end)
+            end
+          end
         end
+        goto lbl_29
       end
     end
   end
-  ::lbl_104::
 end
 
 function M:_update_asset_loads()

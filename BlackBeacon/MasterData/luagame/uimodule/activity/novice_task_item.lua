@@ -126,7 +126,8 @@ end
 function ui:play_finish_anima()
   self.v_parent_ui:set_is_play_get_award_anima(true)
   self.v_parent_ui:animate_spine()
-  local cb = function()
+  
+  local function cb()
     self.v_uicompents.OnFinshDone_pd:Play()
     self.v_parent_ui:set_is_play_get_award_anima(false)
     local ui_activity = UIMgr:try_get_visible_ui("ui_activity")
@@ -135,6 +136,7 @@ function ui:play_finish_anima()
     end
     self.v_timer = nil
   end
+  
   local pd = self.v_uicompents.OnFinsh_pd
   if not pd:IsNull() then
     self.v_timer = Timer:add_timer("play_finish_anima", pd.duration, cb)

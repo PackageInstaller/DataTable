@@ -1,8 +1,8 @@
 local always_try_using_lpeg = true
 local register_global_module_table = false
 local global_module_name = "json"
-local pairs, type, tostring, tonumber, getmetatable, setmetatable, rawset = pairs, type, tostring, tonumber, getmetatable, setmetatable, rawset
-local error, require, pcall, select = error, require, pcall, select
+local pairs, type, tostring, tonumber, getmetatable, setmetatable, rawset = pairs, type, tostring, tonumber, getmetatable, setmetatable, _ENV.rawset
+local error, require, pcall, select = error, require, pcall, _ENV.select
 local floor = math.floor
 local huge = math.huge
 local strrep = string.rep
@@ -31,7 +31,8 @@ json.null = setmetatable({}, {
     return "null"
   end
 })
-local isarray = function(tbl)
+
+local function isarray(tbl)
   local max, n, arraylen = 0, 0, 0
   for k, v in pairs(tbl) do
     if "n" == k and "number" == type(v) then
@@ -54,6 +55,7 @@ local isarray = function(tbl)
   end
   return true, max
 end
+
 local escapecodes = {
   ["\""] = "\\\"",
   ["\\"] = "\\\\",
@@ -63,7 +65,8 @@ local escapecodes = {
   ["\r"] = "\\r",
   ["\t"] = "\\t"
 }
-local escapeutf8 = function(uchar)
+
+local function escapeutf8(uchar)
   local value = escapecodes[uchar]
   if value then
     return value
@@ -91,14 +94,16 @@ local escapeutf8 = function(uchar)
     return ""
   end
 end
-local fsub = function(str, pattern, repl)
+
+local function fsub(str, pattern, repl)
   if strfind(str, pattern) then
     return gsub(str, pattern, repl)
   else
     return str
   end
 end
-local quotestring = function(value)
+
+local function quotestring(value)
   value = fsub(value, "[%z\001-\031\"\\\127]", escapeutf8)
   if strfind(value, "[¬ÿ‹·‚Ô]") then
     value = fsub(value, "¬[Ä-ü≠]", escapeutf8)
@@ -112,8 +117,10 @@ local quotestring = function(value)
   end
   return "\"" .. value .. "\""
 end
+
 json.quotestring = quotestring
-local replace = function(str, o, n)
+
+local function replace(str, o, n)
   local i, j = strfind(str, o, 1, true)
   if i then
     return strsub(str, 1, i - 1) .. n .. strsub(str, j + 1, -1)
@@ -121,16 +128,21 @@ local replace = function(str, o, n)
     return str
   end
 end
+
 local decpoint, numfilter
-local updatedecpoint = function()
+
+local function updatedecpoint()
   decpoint = strmatch(tostring(0.5), "([^05+])")
   numfilter = "[^0-9%-%+eE" .. gsub(decpoint, "[%^%$%(%)%%%.%[%]%*%+%-%?]", "%%%0") .. "]+"
 end
+
 updatedecpoint()
-local num2str = function(num)
+
+local function num2str(num)
   return replace(fsub(tostring(num), numfilter, ""), decpoint, ".")
 end
-local str2num = function(str)
+
+local function str2num(str)
   local num = tonumber(replace(str, ".", decpoint))
   if not num then
     updatedecpoint()
@@ -138,7 +150,8 @@ local str2num = function(str)
   end
   return num
 end
-local addnewline2 = function(level, buffer, buflen)
+
+local function addnewline2(level, buffer, buflen)
   buffer[buflen + 1] = "\n"
   buffer[buflen + 2] = strrep("  ", level)
   buflen = buflen + 2
@@ -152,7 +165,8 @@ function json.addnewline(state)
 end
 
 local encode2
-local addpair = function(key, value, prev, indent, level, buffer, buflen, tables, globalorder)
+
+local function addpair(key, value, prev, indent, level, buffer, buflen, tables, globalorder)
   local kt = type(key)
   if "string" ~= kt and "number" ~= kt then
     return nil, "type '" .. kt .. "' is not supported as a key by JSON."
@@ -305,7 +319,7 @@ function json.encode(value, state)
   end
 end
 
-local loc = function(str, where)
+local function loc(str, where)
   local line, pos, linepos = 1, 1, 0
   while true do
     pos = strfind(str, "\n", pos, true)
@@ -319,10 +333,12 @@ local loc = function(str, where)
   end
   return "line " .. line .. ", column " .. where - linepos
 end
-local unterminated = function(str, what, where)
+
+local function unterminated(str, what, where)
   return nil, strlen(str) + 1, "unterminated " .. what .. " at " .. loc(str, where)
 end
-local scanwhite = function(str, pos)
+
+local function scanwhite(str, pos)
   while true do
     pos = strfind(str, "%S", pos)
     if not pos then
@@ -335,6 +351,7 @@ local scanwhite = function(str, pos)
     end
   end
 end
+
 local escapechars = {
   ["\""] = "\"",
   ["\\"] = "\\",
@@ -345,7 +362,8 @@ local escapechars = {
   r = "\r",
   t = "\t"
 }
-local unichar = function(value)
+
+local function unichar(value)
   if value < 0 then
     return nil
   elseif value <= 127 then
@@ -360,7 +378,8 @@ local unichar = function(value)
     return nil
   end
 end
-local scanstring = function(str, pos)
+
+local function scanstring(str, pos)
   local lastpos = pos + 1
   local buffer, n = {}, 0
   while true do
@@ -416,8 +435,10 @@ local scanstring = function(str, pos)
     return "", lastpos
   end
 end
+
 local scanvalue
-local scantable = function(what, closechar, str, startpos, nullval, objectmeta, arraymeta)
+
+local function scantable(what, closechar, str, startpos, nullval, objectmeta, arraymeta)
   local len = strlen(str)
   local tbl, n = {}, 0
   local pos = startpos + 1
@@ -510,7 +531,7 @@ function scanvalue(str, pos, nullval, objectmeta, arraymeta)
   end
 end
 
-local optionalmetatables = function(...)
+local function optionalmetatables(...)
   if select("#", ...) > 0 then
     return ...
   else
@@ -530,21 +551,25 @@ function json.use_lpeg()
   end
   local pegmatch = g.match
   local P, S, R = g.P, g.S, g.R
-  local ErrorCall = function(str, pos, msg, state)
+  
+  local function ErrorCall(str, pos, msg, state)
     if not state.msg then
       state.msg = msg .. " at " .. loc(str, pos)
       state.pos = pos
     end
     return false
   end
-  local Err = function(msg)
+  
+  local function Err(msg)
     return g.Cmt(g.Cc(msg) * g.Carg(2), ErrorCall)
   end
+  
   local Space = (S(" \n\r\t") + P("Ôªø")) ^ 0
   local PlainChar = 1 - S("\"\\\n\r")
   local EscapeSequence = P("\\") * g.C(S("\"\\/bfnrt") + Err("unsupported escape sequence")) / escapechars
   local HexDigit = R("09", "af", "AF")
-  local UTF16Surrogate = function(match, pos, high, low)
+  
+  local function UTF16Surrogate(match, pos, high, low)
     high, low = tonumber(high, 16), tonumber(low, 16)
     if high >= 55296 and high <= 56319 and low >= 56320 and low <= 57343 then
       return true, unichar((high - 55296) * 1024 + (low - 56320) + 65536)
@@ -552,9 +577,11 @@ function json.use_lpeg()
       return false
     end
   end
-  local UTF16BMP = function(hex)
+  
+  local function UTF16BMP(hex)
     return unichar(tonumber(hex, 16))
   end
+  
   local U16Sequence = P("\\u") * g.C(HexDigit * HexDigit * HexDigit * HexDigit)
   local UnicodeEscape = g.Cmt(U16Sequence * U16Sequence, UTF16Surrogate) + U16Sequence / UTF16BMP
   local Char = UnicodeEscape + EscapeSequence + PlainChar
@@ -566,7 +593,8 @@ function json.use_lpeg()
   local Constant = P("true") * g.Cc(true) + P("false") * g.Cc(false) + P("null") * g.Carg(1)
   local SimpleValue = Number + String + Constant
   local ArrayContent, ObjectContent
-  local parsearray = function(str, pos, nullval, state)
+  
+  local function parsearray(str, pos, nullval, state)
     local obj, cont, npos
     local t, nt = {}, 0
     repeat
@@ -580,7 +608,8 @@ function json.use_lpeg()
     until "last" == cont
     return pos, setmetatable(t, state.arraymeta)
   end
-  local parseobject = function(str, pos, nullval, state)
+  
+  local function parseobject(str, pos, nullval, state)
     local obj, key, cont, npos
     local t = {}
     repeat
@@ -593,6 +622,7 @@ function json.use_lpeg()
     until "last" == cont
     return pos, setmetatable(t, state.objectmeta)
   end
+  
   local Array = P("[") * g.Cmt(g.Carg(1) * g.Carg(2), parsearray) * Space * (P("]") + Err("']' expected"))
   local Object = P("{") * g.Cmt(g.Carg(1) * g.Carg(2), parseobject) * Space * (P("}") + Err("'}' expected"))
   local Value = Space * (Array + Object + SimpleValue)

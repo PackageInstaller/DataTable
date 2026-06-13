@@ -150,7 +150,8 @@ end
 function ui:set_toggle()
   local bag_list = self.v_parent_ui.v_parent_ui.bag_list
   local common_tog_to_quality = self:get_toggle_list()
-  local comm_tog_func = function(is_on, tog)
+  
+  local function comm_tog_func(is_on, tog)
     self.v_select_quality_list[common_tog_to_quality[tog]] = is_on
     if self.v_dont_callback then
       self.v_dont_callback = false
@@ -165,6 +166,7 @@ function ui:set_toggle()
     end
     bag_list:update_source_filt(self.v_select_quality_list, nil, need_select_count)
   end
+  
   for tog, _ in pairs(common_tog_to_quality) do
     self.set_toggle_listener(self, tog, function(is_on)
       if true == is_on then

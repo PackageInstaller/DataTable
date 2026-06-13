@@ -67,6 +67,11 @@ function M:_init(char)
   self:mgr_bind_auto_mq(Const.MSG_OBJ_LEAVE, self.on_obj_leave, self)
 end
 
+function M:on_before_destroy()
+  self.v_char = nil
+  self.v_navigator = nil
+end
+
 function M:start_move_inertial(state, stop_cb, cb_self)
   self.v_inertial = true
   self.v_inertial_state = state
@@ -370,7 +375,7 @@ function M:update_fixed_time_shift()
   end
 end
 
-local _get_next_pos2 = function(self, face_vec, skill_move_speed, dt)
+local function _get_next_pos2(self, face_vec, skill_move_speed, dt)
   local move_step = skill_move_speed * dt
   local cx, cz = self.v_char:get_pos2()
   local dx, dz = face_vec.x * move_step, face_vec.z * move_step
@@ -400,48 +405,50 @@ function M:_check_skill_stop_by_break_config(skill, face_vec, move_step)
     BreakDist = math.max(BreakDist - target_radius, target_radius)
   end
   local cur_x, cur_y, cur_z = self.v_char:get_pos()
+  local role_face_vec = self.v_char:get_dir_vec()
+  local face_x, face_z = role_face_vec.x, role_face_vec.z
+  local offset_x, offset_z = break_config.OffsetX, break_config.OffsetZ
+  local dx, dz = face_x * offset_z, face_z * offset_z
+  local rx, rz = face_z * offset_x, -face_x * offset_x
+  cur_x = cur_x + dx + rx
+  cur_z = cur_z + dz + rz
   local act_ctrl = self.v_char.act_ctrl
   if act_ctrl then
     local anim_x, anim_z = act_ctrl:get_cur_frame_offset()
     cur_x, cur_z = cur_x + anim_x, cur_z + anim_z
   end
   local tx, _, tz = skill:get_target_pos():Get()
-  local dist, is_range
+  local dist
   local tp_dir_x, tp_dir_z = tx - cur_x, tz - cur_z
   local face_x, face_z = face_vec.x, face_vec.z
+  local isApproach = Direction == DIRECTION_TYPE.CLOSE
+  local breakDist = BreakDist + self_radius + target_radius
+  local isInRange
   if Dist_type == DISTANCE_TYPE.LINE then
     dist = vec3.DistanceA(cur_x, 0, cur_z, tx, 0, tz)
-  else
-    dist = vec3.ProjectLen(face_x, 0, face_z, tp_dir_x, 0, tp_dir_z)
-  end
-  is_range = dist - self_radius <= BreakDist + target_radius
-  if Direction == DIRECTION_TYPE.CLOSE then
-    if not is_range then
-      can_shift = CAN_SHIFT_TYPE.CONTINUE
-      return can_shift
+    isInRange = breakDist > dist
+    if not (not isApproach or isInRange) or not isApproach and isInRange then
+      return CAN_SHIFT_TYPE.CONTINUE
     end
-  elseif Direction == DIRECTION_TYPE.AWAY_FROM and is_range then
-    can_shift = CAN_SHIFT_TYPE.CONTINUE
-    return can_shift
+  else
+    dist = vec3.SignedProjectLen(face_x, 0, face_z, tp_dir_x, 0, tp_dir_z)
+    if not isApproach then
+      breakDist = -breakDist
+    end
+    isInRange = dist < breakDist
+    if not isInRange then
+      return CAN_SHIFT_TYPE.CONTINUE
+    end
   end
-  local rota_x, rota_z = Mathx.rotate_vec2(face_x, face_z, ReferAngle)
+  local role_face_vec = self.v_char:get_dir_vec()
+  local rota_x, rota_z = Mathx.rotate_vec2(role_face_vec.x, role_face_vec.z, ReferAngle)
   local angle = Mathx.get_positibe_angle(Mathx.get_vec2_angle(cur_x, cur_z, tx, tz, cur_x + rota_x, cur_z + rota_z))
   if AngleRange >= angle then
     can_shift = ContinueMove and CAN_SHIFT_TYPE.PAUSE or CAN_SHIFT_TYPE.END_SETP
     end_step = 1
-    local foot_x, _, foot_z = Util.get_point_nearest_vector_pos_and_len(tx, 0, tz, cur_x, 0, cur_z, cur_x + rota_x, 0, cur_z + rota_z)
-    local f_dist = vec3.DistanceA(foot_x, 0, foot_z, tx, 0, tz)
-    if ReferAngle > 0 then
-      rota_x, rota_z = Mathx.rotate_vec2(face_x, face_z, AngleRange)
-    elseif ReferAngle < 0 then
-      rota_x, rota_z = Mathx.rotate_vec2(face_x, face_z, -AngleRange)
-    end
-    angle = Mathx.get_positibe_angle(Mathx.get_vec2_angle(cur_x, cur_z, cur_x + face_x, cur_z + face_z, cur_x + rota_x, cur_z + rota_z))
-    move_step = f_dist / math.sin(angle * Mathx.Deg2Rad) * move_step
-    local nx, nz = face_x * move_step, face_z * move_step
-    return can_shift, end_step, nx, nz
+    return can_shift, end_step, 0, 0
   else
-    return true
+    return CAN_SHIFT_TYPE.CONTINUE
   end
 end
 
@@ -541,11 +548,13 @@ function M:_update_skill_shift()
   end
   local shift_type, end_step, nx, nz = self:_before_update_skill_shift(skill, face_vec)
   if shift_type == CAN_SHIFT_TYPE.PAUSE then
+    skill:pause_skill_shift(true)
     return
   elseif shift_type == CAN_SHIFT_TYPE.STOP then
     skill:stop_skill_shift()
     return
   end
+  skill:pause_skill_shift(false)
   local move_step = self.v_skill_move_speed * self.v_char.time_mgr:get_dt_time()
   if 0 == move_step then
     return
@@ -676,12 +685,14 @@ function M:stop_force_shift()
     end
     local force_shift_magic_id = self.v_force_shift_magic_id
     local has_force_shift = self.v_has_force_shift
-    local next_frame_cb = function(event_name, force_shift_caster, char, magic_id, force_shift)
+    
+    local function next_frame_cb(event_name, force_shift_caster, char, magic_id, force_shift)
       if SceneMgr:check_main_scene() then
         return
       end
       BehaviorMgr:call_event_fun(event_name, force_shift_caster, char, magic_id, force_shift)
     end
+    
     NextFrameMgr:add(next_frame_cb, BehaviorMgr.EVENTS.ON_FORCE_SHIFT_END, caster, self.v_char, force_shift_magic_id, has_force_shift)
   end
   self.v_force_shift = false
@@ -755,11 +766,23 @@ function M:update()
     local Behavior = require("manager.fight.behavior")
     Behavior.log_on_npc(self.v_char, run_speed, true)
   end
-  local move_step = run_speed * self.v_char.time_mgr:get_dt_time()
+  local delta_time = self.v_char.time_mgr:get_dt_time()
+  local move_step = run_speed * delta_time
   local dx, dz = self:_cacul_move_dt(move_step)
   self:incline_move()
   if self.v_char.state_manager and self.v_char.state_manager:check_correct_dir() and not Util.almost_zero(dx) and not Util.almost_zero(dz) then
     dx, dz = self.v_char.state_manager:get_after_correct_dir_x_y(dx, dz)
+  end
+  local rvo_controller = self.v_char.rvo_controller
+  local rvo_controller_enabled = self.v_char.rvo_controller_enabled
+  if rvo_controller and rvo_controller_enabled then
+    local posx, posy, posz = self.v_char:get_pos()
+    rvo_controller:SetTargetA(posx + dx * 100, posy, posz + dz * 100, run_speed, run_speed)
+    if self.v_char:is_monster() then
+      local delta_x, _, delta_z = rvo_controller:CalculateMovementDeltaA(posx, posy, posz, delta_time)
+      self.v_char:move(delta_x, delta_z)
+      return
+    end
   end
   self.v_char:move(dx, dz)
 end
@@ -1023,37 +1046,56 @@ function M:incline_move()
   self.v_char:refresh_run_angle(result)
 end
 
-function M:_try_flash_to_pos(x, y, z, check_layer)
+function M:_try_flash_to_pos(x, y, z, check_layer, trigger_area_event)
   local has_terrain, height = Util.raycast(x, z, LAND_LAYER, y + 2, 4)
   if not has_terrain then
     return false
   end
   local ty = height + self.v_char:get_collider_offset_y()
   local is_collided = SceneMgr:check_wall_collision(self.v_char, x, z, ty)
+  local is_success = false
   if not is_collided then
     if self.v_char:is_super_ghost() then
-      self.v_char:set_pos(x, height, z)
-      return true
-    end
-    local cur_x, cur_y, cur_z = self.v_char:get_pos()
-    Util.VEC3_TEMP:Set(x - cur_x, y - cur_y, z - cur_z)
-    Util.VEC3_TEMP:SetNormalize()
-    local dir = Util.VEC3_TEMP
-    local distance = self.v_flash_distance
-    local is_hit, hit_x, hit_y, hit_z = CSHelper.RayCast2(cur_x, cur_y, cur_z, dir.x, dir.y, dir.z, distance, check_layer)
-    if not is_hit then
-      self.v_char:set_pos(x, height, z)
-      return true
+      is_success = true
     else
-      self.v_flash_distance = vec3.DistanceA(hit_x, hit_y, hit_z, cur_x, cur_y, cur_z) + 0.1
+      local cur_x, cur_y, cur_z = self.v_char:get_pos()
+      Util.VEC3_TEMP:Set(x - cur_x, y - cur_y, z - cur_z)
+      Util.VEC3_TEMP:SetNormalize()
+      local dir = Util.VEC3_TEMP
+      local distance = self.v_flash_distance
+      local is_hit, hit_x, hit_y, hit_z = CSHelper.RayCast2(cur_x, cur_y, cur_z, dir.x, dir.y, dir.z, distance, check_layer)
+      if not is_hit then
+        is_success = true
+        goto lbl_83
+      else
+        self.v_flash_distance = vec3.DistanceA(hit_x, hit_y, hit_z, cur_x, cur_y, cur_z) + 0.1
+      end
     end
   end
-  return false
+  ::lbl_83::
+  if is_success then
+    if not self.v_temp_vec3_0 then
+      self.v_temp_vec3_0 = vec3.New()
+      self.v_temp_vec3_1 = vec3.New()
+    end
+    self.v_temp_vec3_0:SetA(self.v_char:get_pos_vec3())
+    self.v_temp_vec3_1:Set(x, height, z)
+    self.v_char:set_pos(x, height, z)
+    if trigger_area_event then
+      local scene_logic = SceneMgr:get_scene_logic()
+      if scene_logic then
+        scene_logic:trigger_area_event_on_path(self.v_char, self.v_char.v_area_mask, self.v_temp_vec3_0, self.v_temp_vec3_1)
+      end
+    end
+    return true
+  else
+    return false
+  end
 end
 
 local FLASH_STEP = 0.5
 
-function M:flash_to_pos(target_x, target_z, target_y, only_check_boundar)
+function M:flash_to_pos(target_x, target_z, target_y, only_check_boundar, trigger_area_event)
   local cur_x, cur_y, cur_z = self.v_char:get_pos()
   local dist = vec3.DistanceA(target_x, target_y or cur_y, target_z, cur_x, cur_y, cur_z)
   if Util.almost_zero(dist) then
@@ -1070,7 +1112,7 @@ function M:flash_to_pos(target_x, target_z, target_y, only_check_boundar)
   local time = 10
   local check_layer = only_check_boundar and Layer.LayerMask.BoundaryBlock or Layer.obstacle_mask
   while time > 0 do
-    local is_valid = self:_try_flash_to_pos(new_x, new_y, new_z, check_layer)
+    local is_valid = self:_try_flash_to_pos(new_x, new_y, new_z, check_layer, trigger_area_event)
     if is_valid or Util.almost_zero(self.v_flash_distance) then
       self.v_flash_distance = nil
       return
@@ -1090,10 +1132,12 @@ function M:skill_move_by_joystick(max_speed, fade_in_time, fade_out_time, durati
   self:set_move_by_skill_joystick(true)
   self:set_skill_joystick_speed_val(max_speed, fade_in_time, fade_out_time)
   if duration > 0 then
-    local cb = function()
+    local function cb()
       self:forced_reduce_skill_joystick_speed()
+      
       self.joystick_move_timer = nil
     end
+    
     if self.joystick_move_timer then
       Timer:remove_timer(self.joystick_move_timer)
       self.joystick_move_timer = nil

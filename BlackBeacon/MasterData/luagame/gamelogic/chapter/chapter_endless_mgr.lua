@@ -121,7 +121,7 @@ function M:infinite_sweep_episode(infinite_id, cb)
   end)
 end
 
-local sort_func = function(a, b)
+local function sort_func(a, b)
   if a.Priority ~= b.Priority then
     return a.Priority < b.Priority
   else

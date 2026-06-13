@@ -26,6 +26,10 @@ function UpdateGraphAction:excute()
 end
 
 function UpdateGraphAction:on_destroy()
+  self.v_type = nil
+  self.v_point1 = nil
+  self.v_point2 = nil
+  self.v_dis = nil
 end
 
 local M = Util.create_class()
@@ -55,10 +59,16 @@ function M:clear()
   for _, plat in pairs(self.v_plat_dic) do
     plat:clear()
   end
+  if self.time_mgr then
+    self.time_mgr:on_destroy()
+  end
   self.v_plat_dic = {}
   self.v_cid_dic = {}
   self.v_pg_action_list.n = 0
-  self.v_pg_action_pool:release_active_objs()
+  if self.v_pg_action_pool then
+    self.v_pg_action_pool:release_active_objs()
+  end
+  self.v_pg_action_pool = nil
 end
 
 function M:on_time_scale(time_scale, pause, is_global_scale, impact_sound_type, impact_sound_volume)
@@ -95,7 +105,9 @@ function M:check_overlap_plats(collider, old_dic, on_remove, on_add, obstacle)
 end
 
 function M:update()
-  self.time_mgr:update()
+  if self.time_mgr then
+    self.time_mgr:update()
+  end
   for _, plat in pairs(self.v_plat_dic) do
     plat:update()
   end
@@ -251,6 +263,14 @@ do
     if link1 == link2 then
       return
     end
+    if not self.v_pg_action_pool then
+      Log.Warning("_check_link_connection: v_pg_action_pool is nil, trying to reinitialize")
+      self:_ensure_action_pool()
+      if not self.v_pg_action_pool then
+        Log.Error("_check_link_connection: failed to reinitialize v_pg_action_pool")
+        return
+      end
+    end
     local p1, p2
     if is_origin1 then
       p1 = link1:get_start_point()
@@ -306,6 +326,14 @@ do
   end
   
   function M:init_plat_link_connections()
+    if not self.v_pg_action_pool then
+      Log.Warning("init_plat_link_connections: v_pg_action_pool is nil, trying to reinitialize")
+      self:_ensure_action_pool()
+      if not self.v_pg_action_pool then
+        Log.Error("init_plat_link_connections: failed to reinitialize v_pg_action_pool")
+        return
+      end
+    end
     for _, plat in pairs(self.v_plat_dic) do
       local region = plat:get_region()
       local origin_link_list = region.origin_link_list
@@ -348,6 +376,17 @@ function M:set_plat_time_scale(plat_name, time_scale)
     return
   end
   plat:set_time_scale(time_scale)
+end
+
+function M:_ensure_action_pool()
+  if not self.v_pg_action_pool then
+    self.v_pg_action_pool = LuaObjPoolMgr.get_pool("pg_update_action_pool") or LuaObjPoolMgr.register("pg_update_action_pool", 300, UpdateGraphAction)
+    if self.v_pg_action_pool then
+      Log.Warning("_ensure_action_pool: reinitialized v_pg_action_pool successfully")
+    else
+      Log.Error("_ensure_action_pool: failed to reinitialize v_pg_action_pool")
+    end
+  end
 end
 
 return M

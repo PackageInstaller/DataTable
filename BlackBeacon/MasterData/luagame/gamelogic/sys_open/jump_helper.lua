@@ -90,6 +90,9 @@ local jump_func = {
   },
   ui_activity_summer_shop = {
     [1] = "_ui_activity_summer_shop"
+  },
+  ui_maze_game_main = {
+    [1] = "_ui_maze_game_main"
   }
 }
 local helper = {}
@@ -424,12 +427,14 @@ function helper._jump_to_drawcard_after_uimain(jump_cfg, ...)
   if not SceneMgr:check_main_scene() then
     UIMgr:get_ui("uimessagetip"):ui_show(Util.format_str("当前场景不可回到主界面"))
   else
-    local after_show_callback = function()
+    local function after_show_callback()
       local uimain = UIMgr:try_get_visible_ui("uimain")
+      
       if uimain then
         uimain:delay_enter_draw(pool_id)
       end
     end
+    
     if UIMgr:get_cur_show_ui_name() == "uimain" then
       after_show_callback()
     else
@@ -443,12 +448,14 @@ function helper._jump_to_uimainclose(jump_cfg, ...)
   if not SceneMgr:check_main_scene() then
     UIMgr:get_ui("uimessagetip"):ui_show(Util.format_str("当前场景不可回到主界面"))
   else
-    local after_show_callback = function()
+    local function after_show_callback()
       local uimain = UIMgr:try_get_visible_ui("uimain")
+      
       if uimain then
         uimain:open_ui_main_close_win_with_cb()
       end
     end
+    
     UIMgr:go_to_main(after_show_callback)
   end
   return true
@@ -633,6 +640,12 @@ function helper._ui_activity_summer_shop(jump_cfg, ...)
   local activity_id = tonumber(jump_cfg.param[1])
   local shop_id = tonumber(jump_cfg.param[2])
   UIMgr:get_ui("ui_activity_summer_shop"):ui_show(activity_id, shop_id)
+  return true
+end
+
+function helper._ui_maze_game_main(jump_cfg, ...)
+  local activity_id = tonumber(jump_cfg.param[1])
+  UIMgr:get_ui("ui_maze_game_main"):ui_show(activity_id)
   return true
 end
 

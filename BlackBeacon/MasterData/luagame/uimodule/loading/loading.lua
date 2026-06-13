@@ -127,6 +127,14 @@ function ui:get_random_index()
   return 1
 end
 
+function ui:ui_on_destroy()
+  bird_obj_list = nil
+  if self.v_end_cb_timer then
+    Timer:remove_timer(self.v_end_cb_timer)
+    self.v_end_cb_timer = nil
+  end
+end
+
 function ui:ui_on_hide()
   if Global.sound_mgr then
     local SOURCE_TYPE = Config.SOURCE_TYPE
@@ -251,7 +259,7 @@ function ui:load_end(end_back)
     self.v_time_index = nil
   end
   self.v_end_cb = end_back
-  Timer:add_timer("v_end_cb", 0.3, function()
+  self.v_end_cb_timer = Timer:add_timer("v_end_cb", 0.3, function()
     if self.v_end_cb then
       self.v_end_cb()
       self.v_end_cb = nil

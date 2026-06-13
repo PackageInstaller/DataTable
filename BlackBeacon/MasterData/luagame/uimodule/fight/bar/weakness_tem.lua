@@ -140,7 +140,8 @@ function ui:init_element_effect()
   if not active_effect or active_effect:IsNull() then
     local root = self.v_uiobjects.Effect.transform
     local parent_ui = self.v_parent_ui or self.v_ui_hp
-    local cb = function(go)
+    
+    local function cb(go)
       if Util.is_nil(go) then
         return
       end
@@ -160,6 +161,7 @@ function ui:init_element_effect()
       self.v_hit_effect_list[self.v_element_id] = hit_praticle
       self.v_effect_obj_list[go] = true
     end
+    
     parent_ui:get_element_effect(self.v_element_id, cb)
   end
 end

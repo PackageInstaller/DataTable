@@ -70,7 +70,8 @@ local MODEL = {
     BIND_TYPE.BUTTON
   }
 }
-local _subtitle_color = function(mail_item, is_select, is_read)
+
+local function _subtitle_color(mail_item, is_select, is_read)
   local txtTile_txt = Util.get_text("txtTile", mail_item)
   local txtDeadLineTime_txt = Util.get_text("txtDeadLineTime", mail_item)
   local deadLineIcon_img = Util.get_image("txtDeadLineTime/DeadLineIcon", mail_item)
@@ -103,7 +104,8 @@ local _subtitle_color = function(mail_item, is_select, is_read)
   choose_obj:SetActive(is_select)
   red_obj:SetActive(not is_read)
 end
-local mailCmp = function(mail_a, mail_b)
+
+local function mailCmp(mail_a, mail_b)
   if mail_a.read == mail_b.read then
     if mail_a.create_time ~= mail_b.create_time then
       return mail_a.create_time > mail_b.create_time

@@ -11,10 +11,12 @@ function ui:on_click_Confirm()
   if not self.v_target_id then
     return
   end
-  local confirm_cb = function()
-    local callback = function()
+  
+  local function confirm_cb()
+    local function callback()
       self:ui_hide()
     end
+    
     local consume_list = {
       bag_type = BagCfg.ITEM_TYPE.COMSUME,
       item_list = {
@@ -27,6 +29,7 @@ function ui:on_click_Confirm()
     }
     BagMgr:request_use_item(consume_list, callback)
   end
+  
   local msg
   if self.v_is_weapon then
     local equip_data = CharacterMgr:get_equip_info(self.v_weapon_uuid)
@@ -472,6 +475,15 @@ function ui:get_char_skill_item_list()
   return list
 end
 
+local skill_order = {
+  1,
+  5,
+  3,
+  4,
+  2,
+  6
+}
+
 function ui:set_skill_info_view()
   if self.v_is_showing_skill then
     self.v_uiobjects.SkillLayout:SetActiveEx(true)
@@ -495,7 +507,8 @@ function ui:set_skill_info_view()
   end
   self:give_back_auto_cache(RECULTIVATE_TIPS_SKILL_TEMP_KEY)
   local all_skill_id_list = ShareRes.get_buddy_skill_list_cfg(self.v_buddy_id).Skill
-  for _, skill_id in ipairs(all_skill_id_list) do
+  for _, idx in ipairs(skill_order) do
+    local skill_id = all_skill_id_list[idx]
     local obj = self:get_auto_cache(RECULTIVATE_TIPS_SKILL_TEMP_KEY)
     local detail_cfg = ShareRes.get_buddy_skill_details_cfg(skill_id)
     Util.get_text("TittleBg/SkillText", obj).text = detail_cfg.Name

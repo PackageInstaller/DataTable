@@ -10,6 +10,7 @@ local LowUpdateImage = require("uimodule.fight.in_game.low_update_image")
 local LowUpdateSlider = require("uimodule.fight.in_game.low_update_slider")
 local Fight_Layout_Cfg = require("uimodule.fight.custom_button.fight_layout_cfg")
 local LowUpdateText = require("uimodule.fight.in_game.low_update_text")
+local QuantumView = require("uimodule.fight.fight_quantum_view")
 local ImgLowUpdateInterval = 2
 local TxtLowUpdateInterval = 5
 local LowUpdateInterval = 0.04
@@ -732,6 +733,7 @@ function ui:init_event()
   self:bind_auto_mq(Const.MSG_ON_STORY_START, self.reset_task_guid_time, self)
   self:bind_auto_mq(Const.MSG_ENERGY_BALL_HAS_BEEN_PICKED, self.play_pick_ball_effect, self)
   self:bind_auto_mq(Const.MSG_QUANTUM_CAPTURE_SYSTEM, self._response_quantum_capture_system, self)
+  self:bind_auto_mq(Const.MSG_CAMERA_CAPTURE_SYSTEM, self._response_camera_capture_system, self)
   if SDKManager:is_google_play_games() or UNITY_EDITOR or UNITY_STANDALONE_WIN then
     self:bind_auto_mq(Const.MSG_UPDATE_INPUT_SETTING, self.update_input_setting_view, self)
   end
@@ -2348,9 +2350,10 @@ function ui:update_tower_skill(force_show)
 end
 
 function ui:on_scene_skill_lv_up()
-  local cb = function()
+  local function cb()
     self.v_scene_lv_up_timer = nil
   end
+  
   if self.v_scene_lv_up_timer then
     Timer:remove_timer(self.v_scene_lv_up_timer)
     self.v_scene_lv_up_timer = nil
@@ -3544,7 +3547,12 @@ end
 
 function ui:_response_quantum_capture_system(msg)
   local enable = msg.mm_x
-  self.v_panels.fight_quantum:set_enable(enable)
+  self.v_panels.fight_quantum:set_enable(enable, QuantumView.Type.Quantum)
+end
+
+function ui:_response_camera_capture_system(msg)
+  local enable = msg.mm_x
+  self.v_panels.fight_quantum:set_enable(enable, QuantumView.Type.Capture)
 end
 
 function ui:get_fight_canvas()

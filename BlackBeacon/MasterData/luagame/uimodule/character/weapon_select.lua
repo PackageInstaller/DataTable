@@ -81,7 +81,8 @@ function ui:select_weapon()
   end
   local equip_info = CharacterMgr:get_equip_info(self.v_last_uuid)
   local has_develop = equip_info.lv > 1 or equip_info.break_lv > 1 or equip_info.advance > 1
-  local confirm_cb = function()
+  
+  local function confirm_cb()
     if self.v_callback then
       local is_lock = CHAR_HELPER.is_equip_lock(self.v_last_uuid)
       if is_lock then
@@ -93,6 +94,7 @@ function ui:select_weapon()
     end
     self:ui_hide()
   end
+  
   if has_develop then
     Util.show_notify_popup_message(confirm_cb, "当前武器已进行过培养，是否确认？")
   else

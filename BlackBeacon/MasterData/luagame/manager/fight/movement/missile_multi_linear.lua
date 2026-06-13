@@ -41,7 +41,7 @@ function M:_get_speed(left)
   return (self:_get_base_speed(left) + self:_get_acc(left) * self.v_missile:get_time()) * self.v_time_scale * self.v_missile:get_owner_time_scale()
 end
 
-local decode_param = function(param, left)
+local function decode_param(param, left)
   if not next or not next(param) then
     return 0
   end

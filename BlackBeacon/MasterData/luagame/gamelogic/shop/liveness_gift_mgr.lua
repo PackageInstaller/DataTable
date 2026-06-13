@@ -42,8 +42,10 @@ function M:get_id_list()
   local list = {}
   for id, _ in pairs(self.v_liveness_gifts) do
     local cfg = ShareRes.get_liveness_gift_cfg(id)
-    local order = cfg.Order
-    list[#list + 1] = {id = id, order = order}
+    if RechargeMgr:is_product_valid(cfg) then
+      local order = cfg.Order
+      list[#list + 1] = {id = id, order = order}
+    end
   end
   table.sort(list, function(a, b)
     return a.order < b.order
@@ -56,8 +58,10 @@ M.red_prefix = "liveness_gifts"
 function M:update_red()
   local is_red = false
   if self.v_liveness_gifts then
-    for _, data in pairs(self.v_liveness_gifts) do
-      is_red = data.can_gain_day_free_award or data.buyed_sign_day > data.buyed_gained_day
+    for id, data in pairs(self.v_liveness_gifts) do
+      local free_award_id = ShareRes.get_liveness_gift_cfg(id).FreeAwardGroupId
+      local day_num = #ShareRes.create("recharge.liveness_day_award", id)
+      is_red = free_award_id and data.can_gain_day_free_award or data.buyed_sign_day > data.buyed_gained_day and day_num > data.buyed_gained_day
       if is_red then
         break
       end

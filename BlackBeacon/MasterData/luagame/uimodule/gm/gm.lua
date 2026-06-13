@@ -1,5 +1,6 @@
 local ui = {}
-local reload_model = function(name)
+
+local function reload_model(name)
   local suc, msg = pcall(function()
     name = string.lower(name)
     local pre_module = require(name)

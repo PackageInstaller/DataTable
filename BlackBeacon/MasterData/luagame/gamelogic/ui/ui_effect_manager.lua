@@ -1,10 +1,12 @@
 local Base = require("gamelogic.base_system")
 local M = Util.create_child_mt(Base)
 local UI_EFFECT_ID = 0
-local get_ui_effect_id = function()
+
+local function get_ui_effect_id()
   UI_EFFECT_ID = UI_EFFECT_ID + 1
   return UI_EFFECT_ID
 end
+
 local EFFECT_PARAM_KEY = {
   "prefab_name",
   "ui_object",
@@ -27,12 +29,14 @@ for index = 1, #EFFECT_PARAM_KEY do
 end
 EFFECT_PARAM_INDEX.___destroy_in_pool = true
 local param_count = #EFFECT_PARAM_KEY
-local CHECK_NEW_INDEX = function(tb, k, v)
+
+local function CHECK_NEW_INDEX(tb, k, v)
   if not EFFECT_PARAM_INDEX[k] then
     Log.Error("不能对EffectParam对象的任意字段赋值，你尝试去赋值", k, "请先在param_key与param_index中定义字段名", debug.traceback())
   end
   rawset(tb, k, v)
 end
+
 local UIEffectData = Util.create_class()
 UIEffectData.__newindex = CHECK_NEW_INDEX
 

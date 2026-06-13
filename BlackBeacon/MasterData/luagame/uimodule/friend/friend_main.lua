@@ -79,7 +79,8 @@ local FRIEND_LIST_REDPOINT = 7
 local FRIEND_ADD_REDPOINT = 8
 local SHOW_TYPE = {NORMAL = 1, INVITE = 2}
 local Act_ID = CommonDefind.ACTY_TYPE.ONLINE_BATTLE
-local sort_list = function(type, a, b)
+
+local function sort_list(type, a, b)
   local sort_key = SORT_KEY[type]
   for index, sort_data in ipairs(sort_key) do
     local key = sort_data[1]
@@ -113,11 +114,13 @@ function ui:ui_finish_load()
     if not self.v_select_uuid then
       return
     end
-    local conform_callback = function()
+    
+    local function conform_callback()
       FriendMgr:delete_friend(self.v_select_uuid)
       self.v_uiobjects.BtnCloseFrendContent:SetActive(false)
       self.v_select_uuid = nil
     end
+    
     local desc = Util.get_i18n("确认删除该好友")
     Util.show_conform_tip(desc, nil, nil, nil, conform_callback)
   end)
@@ -130,10 +133,12 @@ function ui:ui_finish_load()
     if #self.v_player_obj_list <= 0 then
       return
     end
-    local conform_callback = function()
+    
+    local function conform_callback()
       self.v_apply_list = {}
       FriendMgr:refuse_all_friend_apply()
     end
+    
     local desc = Util.get_i18n("是否拒绝全部好友申请？")
     Util.show_conform_tip(desc, nil, nil, nil, conform_callback)
   end)
@@ -270,10 +275,12 @@ function ui:refresh_list()
   if not self.v_last_page then
     self.v_last_page = PAGE_TYPE.FRIEND_LIST
   end
-  local callback = function()
+  
+  local function callback()
     self:set_default_sub_page()
     self:_on_click_page(self.v_last_page, true)
   end
+  
   FriendMgr:request_get_friend_list(callback)
   FriendMgr:request_get_apply_list()
 end
@@ -758,10 +765,12 @@ function ui:set_player_aid_char_info(item, data, uuid)
   local btn = Util.get_button(nil, item)
   if btn then
     self:set_button_listener(btn, function()
-      local cb = function(data)
+      local function cb(data)
         Player_Hero_Helper.set_hero_data(data)
+        
         UIMgr:get_ui("player_hero"):ui_show()
       end
+      
       FriendMgr:c2gs_get_role_buddy_info(uuid, data.id, cb)
     end)
   end
@@ -782,9 +791,10 @@ function ui:set_assistant_roles(item, data)
 end
 
 function ui:on_apply_add_friend(player_data)
-  local apply_callback = function(uuid, type)
+  local function apply_callback(uuid, type)
     Util.show_message_tip(2194)
   end
+  
   local player_friend_num = player_data.friend_num
   local self_friend_num = FriendMgr:get_friend_num()
   if player_friend_num >= FRIEND_MAX_NUM then

@@ -1,6 +1,7 @@
 local Base = require("gamelogic.base_system")
 local M = Util.create_child_mt(Base)
 local CommonDefine = require("cs_share.common_define")
+local LocalStorage = require("utils.localstorage")
 M.GRID_STATE = {
   NOTSHOW = 0,
   SHOW = 1,
@@ -34,6 +35,7 @@ M.ITEM_TYPE = {
   HEALTH = 2,
   SCORE = 3
 }
+M.MINESWEEPER_KEY = "MINESWEEPER_KEY"
 
 function M:init_sys()
   Base.init_sys(self)
@@ -47,6 +49,9 @@ function M:on_reconnect()
 end
 
 function M:on_gs2c_activity_minesweeper_info(data)
+  if not data.minesweeper_chapter[1] then
+    return
+  end
   self.activity_id = data.activity_id
   local pre_grids = self.v_minesweeper_chapter_info and self.v_minesweeper_chapter_info.grids
   self.v_minesweeper_chapter_info = data.minesweeper_chapter[1]
@@ -78,6 +83,7 @@ function M:on_gs2c_activity_minesweeper_info(data)
   else
     self.exit_grid_unlocked = false
   end
+  self:refresh_redpoint()
   MsgGame:mq_publish2(Const.MSG_ON_UPDATE_MINESWEEPER_INFO)
 end
 
@@ -117,7 +123,7 @@ function M:request_flip_grid(grid_index)
   if grid_info.grid_type == M.GRID_TYPE.MONSTER or grid_info.grid_type == M.GRID_TYPE.BOSS then
     self.exit_grid_unlocked = false
   end
-  Network:protect_call("c2gs_activity_minesweeper_open_grid", {
+  Network:call("c2gs_activity_minesweeper_open_grid", {
     activity_id = self.activity_id,
     chapter_group_id = self.chapter_group_id,
     grid_index = grid_index
@@ -147,6 +153,7 @@ function M:request_rank_list(minesweeper_chapter_id, callback)
   Network:protect_call("c2gs_get_rank_list", body, function(ok, resp)
     if ok and 0 == resp.errcode then
       self.minesweeper_rank_list = resp.rank_list
+      self.minesweeper_rank_user_count = body.count
       if callback then
         callback()
       end
@@ -154,7 +161,7 @@ function M:request_rank_list(minesweeper_chapter_id, callback)
   end)
 end
 
-function M:request_reset_floor(callback)
+function M:request_reset_floor(callback, fall_callback)
   local body = {
     activity_id = self.activity_id,
     chapter_group_id = self.chapter_group_id
@@ -164,7 +171,10 @@ function M:request_reset_floor(callback)
       if callback then
         callback()
       end
+      self.cool_down_time = Global.real_time + 20
       MsgGame:mq_publish2(Const.MSG_ON_MINESWEEPER_RESET_FLOOR)
+    elseif fall_callback then
+      fall_callback()
     end
   end)
 end
@@ -265,15 +275,28 @@ function M:use_grid(grid_index, args, callback)
   if grid_info.grid_type == M.GRID_TYPE.EXIT or grid_info.grid_type == M.GRID_TYPE.ITEM or grid_info.grid_type == M.GRID_TYPE.BLESS or grid_info.grid_type == M.GRID_TYPE.SHOP then
     self:request_use_grid(grid_index, args, callback)
   elseif grid_info.grid_type == M.GRID_TYPE.MONSTER or grid_info.grid_type == M.GRID_TYPE.BOSS then
-    if TowerMgr:check_fight_progress() then
-      return
+    if not DebugSetting:is_enter_chapter() then
+      local function confirm_cb()
+        local tower_id = DebugSetting:get_tower_id()
+        
+        if tower_id and tower_id > 0 then
+          TowerMgr:on_gm_enter_tower(tower_id)
+        end
+      end
+      
+      Util.show_notify_popup_message(confirm_cb, "GM进塔", "GM进塔")
+    else
+      if TowerMgr:check_fight_progress() then
+        return
+      end
+      local temp = {
+        self.activity_id,
+        self.chapter_group_id,
+        grid_info.index
+      }
+      self.battle_grid_id = grid_info.grid_id
+      UIMgr:get_ui("team"):ui_show(nil, grid_info.args[1], CommonDefine.CHALLENGE_TYPE.ACTIVITY_MINESWEEPER, nil, nil, nil, temp)
     end
-    local temp = {
-      self.activity_id,
-      self.chapter_group_id,
-      grid_info.index
-    }
-    UIMgr:get_ui("team"):ui_show(nil, grid_info.args[1], CommonDefine.CHALLENGE_TYPE.ACTIVITY_MINESWEEPER, nil, nil, nil, temp)
   end
 end
 
@@ -294,6 +317,32 @@ function M:update_exit_grid_state()
     end
   else
     self.exit_grid_unlocked = false
+  end
+end
+
+function M:refresh_redpoint()
+  local t = LocalStorage:load_table(M.MINESWEEPER_KEY, true)
+  local redpoint_enable = t and t[self.chapter_group_id]
+  if not redpoint_enable then
+    RedPointMgr:enable_redpoint(RedEnum.MINESWEEPER_AWARD, true)
+  else
+    local minesweep_chapter_id = self:get_minesweeper_chapter_id()
+    local minesweeper_chapter_cfg = ShareRes.create("minesweeper.minesweeper_chapter")[minesweep_chapter_id]
+    local score_award_id = minesweeper_chapter_cfg.ScoreAwardId
+    local award_list = ShareRes.create("minesweeper.minesweeper_score_award")[score_award_id]
+    local record_scroe = self:get_minesweeper_record_score()
+    local enable_redpoint = false
+    for _, data in ipairs(award_list) do
+      if record_scroe >= data.NeedScore then
+        if not self.gained_score_award_id_map[data.KeyId] then
+          enable_redpoint = true
+          break
+        end
+      else
+        break
+      end
+    end
+    RedPointMgr:enable_redpoint(RedEnum.MINESWEEPER_AWARD, enable_redpoint)
   end
 end
 

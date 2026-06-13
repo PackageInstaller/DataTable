@@ -11,7 +11,7 @@ function M:init_sys()
   self.treasure_skill_list = {}
 end
 
-local skill_cmp = function(a, b)
+local function skill_cmp(a, b)
   local a_is_have = a.is_have == true
   local b_is_have = b.is_have == true
   if a_is_have ~= b_is_have then
@@ -39,8 +39,10 @@ function M:cal_max_refresh_count()
     elseif not is_fixed or not is_robot then
       skill_cfg = CharacterMgr:get_buddy_skill_by_id(buddy_id)
     else
-      local buddy_info = FixedBuddyMgr:get_buddy_info_by_point_id(point_id, team_pos, buddy_id)
-      skill_cfg = buddy_info.lSkill
+      do
+        local buddy_info = FixedBuddyMgr:get_buddy_info_by_point_id(point_id, team_pos, buddy_id)
+        skill_cfg = buddy_info.lSkill
+      end
     end
     for _, skill_data in pairs(skill_cfg) do
       local skill_lv_cfg = ShareRes.create("buddy.buddy_skill_level", skill_data.id)

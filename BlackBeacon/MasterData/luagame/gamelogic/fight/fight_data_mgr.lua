@@ -5,6 +5,9 @@ local M = Util.create_child_mt(Base)
 local TMP_Sprite_Color_Template = "<sprite index=%s color=%s>"
 local TMP_Sprite_Template = "<sprite=%s>"
 local TOWER_TASK_TYPE = Config.CommonDefine.TOWER_TASK_TYPE
+local TimingOfLinkSystemsCheck = ShareRes.get_comm_string_value("TimingOfLinkSystemsCheck")
+local TimingOfLinkSystemsCheckLimit = ShareRes.get_comm_string_value("TimingOfLinkSystemsCheckLimit")
+local Math = require("base.mathx")
 M.FIGHT_UI_DATA_NAME = {
   v_skill_id_gray_params = "gray_params",
   v_skill_charged_data = "skill_charged_data",
@@ -57,6 +60,8 @@ function M:exit_tower()
   self.v_last_monster_dead_pos = nil
   self.v_monster_born_magic_list = nil
   self.v_pause_start_time = nil
+  self.v_link_duration_list = nil
+  self.v_link_dura_over_list = nil
   self:unbind_battle_event()
   self:stop_fight_timer()
   self:release_all_magic_sub_list()
@@ -65,6 +70,7 @@ function M:exit_tower()
 end
 
 function M:enter_tower()
+  self:init_skill_link_duration()
   self:create_latest_hero_pos()
   self:bind_battle_event()
 end
@@ -87,9 +93,13 @@ function M:init_sys()
   self.v_use_time = 0
   self.v_pause_total_time = 0
   self.v_sub_magic_list_pool = LuaObjPoolMgr.get_pool("sub_magic_list_pool") or LuaObjPoolMgr.register("sub_magic_list_pool", 100, SubMagicList)
+  self:enter_tower()
 end
 
 function M:on_hero_attr_change(msg)
+  if not TowerMgr then
+    return
+  end
   local attr_type = msg.mm_x
   if not Config.HP_ATTR_TYPE[attr_type] then
     return
@@ -359,12 +369,14 @@ function M:reset_damage_hud_random_angle(blood_type)
   random_data.random_angle = {}
 end
 
-local UPDATE_ADDITION_FUNC = function(self, task_type, value)
+local function UPDATE_ADDITION_FUNC(self, task_type, value)
   self.v_tower_task_data[task_type] = self.v_tower_task_data[task_type] + value
 end
-local UPDATE_ASSIGNMENT_FUNC = function(self, task_type, value)
+
+local function UPDATE_ASSIGNMENT_FUNC(self, task_type, value)
   self.v_tower_task_data[task_type] = value
 end
+
 local UPDATE_TOWER_TASK_FUNC = {
   [TOWER_TASK_TYPE.PASS_FLOOR_NUM] = UPDATE_ASSIGNMENT_FUNC,
   [TOWER_TASK_TYPE.TOWER_BLOW_CNT] = UPDATE_ADDITION_FUNC,
@@ -644,7 +656,7 @@ function M:add_invalid_magic(magic_id)
   self.v_invalid_sub_magic[magic_id] = true
 end
 
-local _check_sub_magic = function(self, magic_id, sub_magic_id)
+local function _check_sub_magic(self, magic_id, sub_magic_id)
   if magic_id == sub_magic_id then
     Log.Error(string.format("Magic: %s 不可作为自己的子Magic", sub_magic_id), debug.traceback())
     return false
@@ -722,7 +734,7 @@ function M:release_all_magic_sub_list()
   self.v_invalid_sub_magic = nil
 end
 
-local _get_cache_keyframe_cfg = function(keys, keyframe_cfg)
+local function _get_cache_keyframe_cfg(keys, keyframe_cfg)
   for _, key in ipairs(keys) do
     local frame = key[1]
     local data = keyframe_cfg[frame]
@@ -774,6 +786,59 @@ end
 
 function M:create_latest_hero_pos()
   self.latest_hero_pos = self.latest_hero_pos or Util.VEC3_TEMP.New()
+end
+
+function M:init_skill_link_duration()
+  self.v_link_duration_list = {}
+  self.v_link_dura_over_list = {}
+  for key, value in pairs(TimingOfLinkSystemsCheck) do
+    self.v_link_dura_over_list[key] = 0
+    self.v_link_duration_list[key] = value
+  end
+end
+
+function M:change_skill_link_duration(stage, delta)
+  if not (self.v_link_duration_list and self.v_link_duration_list[stage] and delta) or 0 == delta then
+    return
+  end
+  local limit = TimingOfLinkSystemsCheckLimit[stage]
+  local cur_duration = self.v_link_duration_list[stage]
+  if delta > 0 then
+    local result = cur_duration + delta
+    if limit < result then
+      self.v_link_dura_over_list[stage] = result - limit
+      delta = limit - self.v_link_duration_list[stage]
+      Log.Error("change_skill_link_duration 设置时间超出上限", debug.traceback())
+    end
+  elseif delta < 0 then
+    if self.v_link_dura_over_list[stage] then
+      local result = self.v_link_dura_over_list[stage] + delta
+      if result < 0 then
+        self.v_link_dura_over_list[stage] = 0
+        delta = result
+      else
+        delta = 0
+      end
+    end
+    local result = cur_duration + delta
+    if result <= 0 then
+      Log.Error("change_skill_link_duration 设置时间超出上限", debug.traceback())
+      self.v_link_duration_list[stage] = 0
+      return
+    end
+  end
+  self.v_link_duration_list[stage] = Math.Clamp(self.v_link_duration_list[stage] + delta, 0, limit)
+  if cur_duration ~= self.v_link_duration_list[stage] then
+    local fight = UIMgr:try_get_loaded_ui(UIMgr.FIGHT_UI_NAME)
+    if fight then
+      local ult_skill_view = fight:get_panel("ult_skill_view")
+      ult_skill_view:set_duration_change()
+    end
+  end
+end
+
+function M:get_link_duration_list()
+  return self.v_link_duration_list
 end
 
 return M

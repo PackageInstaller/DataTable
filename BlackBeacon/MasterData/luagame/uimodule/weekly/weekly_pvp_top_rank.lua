@@ -24,8 +24,10 @@ function ui:ui_finish_load()
   self:set_button("BtnSort", function()
     self:click_sort_btn()
   end)
-  local cb = function()
+  
+  local function cb()
   end
+  
   self.v_rank_view = LoopListClass:new(self, self.v_uiobjects.RankingList, RankItemClass, cb)
 end
 

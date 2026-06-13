@@ -45,7 +45,7 @@ function M:gd_on_leave(new_mode)
   UIMgr:try_destory_ui("fight")
   UIMgr:cache_hide_ui()
   local swtich_login_mode = new_mode == Const.MODE_CHECK_UPDATE or new_mode == Const.MODE_LOGIN
-  SceneMgr:clear_scene(not swtich_login_mode)
+  SceneMgr:clear_scene(swtich_login_mode or SceneMgr:check_main_scene())
   if swtich_login_mode then
     UIMgr:on_switch_to_login_mode()
   end

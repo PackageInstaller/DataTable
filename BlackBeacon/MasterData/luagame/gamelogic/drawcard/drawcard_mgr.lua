@@ -109,14 +109,16 @@ function GroupVO:_check_is_cnt_limited(pool_vo)
   return false
 end
 
-local _history_sorter = function(a, b)
+local function _history_sorter(a, b)
   if a.time ~= b.time then
     return a.time < b.time
   end
   return a.sort_value < b.sort_value
 end
+
 local _resocrd_sort_cnt = 0
-local _next_sort_cnt = function()
+
+local function _next_sort_cnt()
   _resocrd_sort_cnt = _resocrd_sort_cnt + 1
   return _resocrd_sort_cnt
 end

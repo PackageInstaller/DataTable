@@ -238,24 +238,34 @@ return {
     }
   },
   {
+    {
+      Desc = "敌方生命值提升为<color=#E77902>1.1/1.2/1.3</color>倍",
+      Icon = "Skill/EndLessBuff/Endless_icon_debuff_01",
+      Id = 1,
+      Must = false,
+      OwnerOptionGroup = 5,
+      Quality = 1,
+      Serial = 21,
+      Type = 1
+    },
     [55] = {
-      Desc = "释放1技能后，XX伤害提升20%，持续3秒，可叠加三层",
+      Desc = "释放1技能后，充能伤害提升20%，持续3秒，可叠加三层",
       Icon = "Skill/EndLessBuff/Endless_icon_debuff_02",
       Id = 55,
       Must = false,
       OwnerOptionGroup = 5,
       Quality = 1,
-      Serial = 50,
+      Serial = 1,
       Type = 0
     },
     [56] = {
-      Desc = "触发红技弹反时，对敌人造成最大生命值60%的伤害",
+      Desc = "识破敌人技能时，对敌人造成最大生命值40%的伤害",
       Icon = "Skill/EndLessBuff/Endless_icon_debuff_02",
       Id = 56,
       Must = false,
       OwnerOptionGroup = 5,
       Quality = 1,
-      Serial = 51,
+      Serial = 2,
       Type = 0
     },
     [57] = {
@@ -265,7 +275,7 @@ return {
       Must = false,
       OwnerOptionGroup = 5,
       Quality = 1,
-      Serial = 52,
+      Serial = 11,
       Type = 1
     },
     [58] = {
@@ -275,7 +285,7 @@ return {
       Must = false,
       OwnerOptionGroup = 5,
       Quality = 1,
-      Serial = 55,
+      Serial = 12,
       Type = 1
     },
     [59] = {
@@ -285,17 +295,17 @@ return {
       Must = false,
       OwnerOptionGroup = 5,
       Quality = 1,
-      Serial = 56,
+      Serial = 13,
       Type = 1
     },
     [60] = {
-      Desc = "所有敌人的所有元素伤害抗性提升<color=#E77902>40%/50%/70%</color>，触发元素异常后移除对应元素的抗性",
+      Desc = "所有敌人的所有元素伤害抗性提升<color=#E77902>20%/30%/40%</color>，触发元素异常后移除对应元素的抗性",
       Icon = "Skill/EndLessBuff/Endless_icon_debuff_03",
       Id = 60,
       Must = false,
       OwnerOptionGroup = 5,
       Quality = 1,
-      Serial = 59,
+      Serial = 14,
       Type = 1
     },
     [61] = {
@@ -305,21 +315,11 @@ return {
       Must = false,
       OwnerOptionGroup = 5,
       Quality = 1,
-      Serial = 62,
+      Serial = 15,
       Type = 1
     }
   },
   [10] = {
-    {
-      Desc = "敌方生命值提升为<color=#E77902>1.5/1.7/2</color>倍",
-      Icon = "Skill/EndLessBuff/Endless_icon_debuff_01",
-      Id = 1,
-      Must = false,
-      OwnerOptionGroup = 10,
-      Quality = 1,
-      Serial = 21,
-      Type = 1
-    },
     [5] = {
       Desc = "己方生命上限降低<color=#E77902>20%/35%/50%</color>",
       Icon = "Skill/EndLessBuff/Endless_icon_debuff_06",

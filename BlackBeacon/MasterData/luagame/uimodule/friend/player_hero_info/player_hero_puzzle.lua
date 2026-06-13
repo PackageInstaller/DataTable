@@ -35,6 +35,9 @@ end
 
 function ui:ui_on_show()
   self.v_buddy_info = Player_Hero_Helper.get_hero_data()
+  if not self:check_puzzle_unlock() then
+    return
+  end
   self.v_uicompents.PageAttr_tog.isOn = true
   self.v_uiobjects.BtnEquip:SetActive(false)
   if self.v_uiobjects.DragEndReciver then
@@ -42,6 +45,22 @@ function ui:ui_on_show()
   end
   self:refresh_graph()
   self:refresh_map_nodes_occupy()
+end
+
+function ui:check_puzzle_unlock()
+  local hero_data = self.v_buddy_info
+  local is_map_unlock = false
+  local condition_id = ShareRes.get_buddy_puzzle_map_unlock_cond(self.v_buddy_info.id)
+  local condition = ShareRes.create("condition.condition", condition_id)
+  if hero_data and condition.Type == 1071 and condition.Param then
+    local break_lv = condition.Param[2]
+    local buddy_lv = condition.Param[3]
+    is_map_unlock = break_lv <= hero_data.break_lv and buddy_lv <= hero_data.lv
+  else
+    Log.Error("插件地图解锁条件配置错误，请检查condition_id=", condition_id, debug.traceback())
+  end
+  local show_tog = hero_data.uuid ~= nil and hero_data and nil ~= hero_data.puzzle_graph
+  return show_tog and is_map_unlock
 end
 
 function ui:clear_node_objs()

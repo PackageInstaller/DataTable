@@ -16,7 +16,7 @@ function M:release()
   self:remove_all_timer()
 end
 
-local get_key = function()
+local function get_key()
   return tostring(Date.server_time)
 end
 
@@ -485,9 +485,10 @@ function M:tower_settle()
 end
 
 function M:quit_scene()
-  local cb = function()
+  local function cb()
     Global.scene_mgr:on_enter_main_scene()
   end
+  
   if TowerMgr then
     TowerMgr:on_exit_tower(cb)
   end
@@ -1203,9 +1204,7 @@ function M:set_empty_wall_visible(tag, is_visible)
     return
   end
   scene_map:set_empty_wall_visible(tag, is_visible)
-  Log.Info("开启空气墙", tag, is_visible)
   scene_map:set_empty_wall_group_visible(tag, is_visible)
-  Log.Info("关闭空气墙组", tag, is_visible)
 end
 
 function M:close_fight_air_wave_group(group_id)
@@ -1214,7 +1213,6 @@ function M:close_fight_air_wave_group(group_id)
     return
   end
   scene_map:set_empty_wall_group_visible(group_id, false)
-  Log.Info("关闭空气墙组", group_id, false)
 end
 
 function M:open_fight_air_wave_group(group_id)
@@ -1223,7 +1221,6 @@ function M:open_fight_air_wave_group(group_id)
     return
   end
   scene_map:set_empty_wall_group_visible(group_id, true)
-  Log.Info("关闭空气墙组", group_id, true)
 end
 
 function M:set_cd_npc_can_hit(npc_name, cant_be_hit)
@@ -1596,7 +1593,7 @@ function M:create_scene_npc(configs)
   end
 end
 
-local get_tower_drop_cfg = function()
+local function get_tower_drop_cfg()
   local progress = TowerMgr and TowerMgr:get_tower_progress()
   if not progress then
     return
@@ -1723,9 +1720,10 @@ function M:switch_the_atmosphere(index)
 end
 
 function M:open_mini_game(game_type, game_id)
-  local finish_cb = function()
+  local function finish_cb()
     BehaviorMgr:call_scene_logic_event_fun("on_mini_game_finish", game_type, game_id)
   end
+  
   if game_type == Config.MINI_GAME_TYPE.WATER_PIPE then
     if game_id and 0 ~= game_id then
       local game_cfg = ShareRes.create("minigame.waterpipe." .. game_id)
@@ -1752,6 +1750,18 @@ function M:add_spawner_behavior(config)
       logic_runner:add_spawner_behavior(config)
     end
   end
+end
+
+function M:open_capture_system(config)
+  CaptureMgr:open_capture_system(config.CfgId)
+end
+
+function M:close_capture_system(config)
+  CaptureMgr:close_capture_system()
+end
+
+function M:set_visual_prefabs_visible(config)
+  VisualGameManager:set_visual_prefabs_visible(config.Visible)
 end
 
 return M

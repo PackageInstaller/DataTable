@@ -3,7 +3,8 @@ local Base = require("ui.uibase")
 local ui = Util.create_child_mt(Base)
 local USE_ITEM_PREVIEW_KEY = "USE_ITEM_PREVIEW_KEY"
 local Item_Helper = require("utils.item_helper")
-local func = function(award_cfg)
+
+local function func(award_cfg)
   return {
     ItemId = award_cfg.ItemId,
     Num = award_cfg.Num,

@@ -78,7 +78,8 @@ local RATIO_IN = 1.0E-4
 local _mmin = math.min
 local _mceil = math.ceil
 local _mmax = math.max
-local correction_magic_val = function(base_val, magic_type, magic_target)
+
+local function correction_magic_val(base_val, magic_type, magic_target)
   local cost_magic_val = 0
   if magic_target:is_hero() then
     base_val = -base_val
@@ -143,7 +144,8 @@ local correction_magic_val = function(base_val, magic_type, magic_target)
   end
   return -base_val, cost_magic_val
 end
-local _damage_sharing = function(magic_target, total_hurt, attacker, magic_info)
+
+local function _damage_sharing(magic_target, total_hurt, attacker, magic_info)
   local magic_list = magic_target.magic_mgr:get_magics_by_type(MAGIC_TYPE.DamageSharing)
   if not magic_list or not next(magic_list) then
     return total_hurt
@@ -163,7 +165,8 @@ local _damage_sharing = function(magic_target, total_hurt, attacker, magic_info)
   end
   return total_hurt
 end
-local get_kill_dmg_correction = function(magic_mgr)
+
+local function get_kill_dmg_correction(magic_mgr)
   local kill_dmg_correction = 0
   local magic_map = magic_mgr:get_magics_by_type(MAGIC_TYPE.KILL_LEVEL)
   if not magic_map then
@@ -239,12 +242,14 @@ function magic_fun.on_ui_object_visble(magic_target, logic_cfg)
 end
 
 local HURT_CTX = {}
-local _clear_hurt_ctx = function()
+
+local function _clear_hurt_ctx()
   for k, _ in pairs(HURT_CTX) do
     HURT_CTX[k] = nil
   end
 end
-local get_factor_by_magiclevel = function(level_cfg, magic_level)
+
+local function get_factor_by_magiclevel(level_cfg, magic_level)
   if not level_cfg then
     return 0
   end
@@ -254,7 +259,8 @@ local get_factor_by_magiclevel = function(level_cfg, magic_level)
   local factor = level_cfg[magic_level]
   return factor and factor or level_cfg[#level_cfg]
 end
-local _get_random_ctx = function(attacker, magic_info)
+
+local function _get_random_ctx(attacker, magic_info)
   local scene_logic = SceneMgr:get_scene_logic()
   local random_ctx = Global.last_room_random_ctx
   if scene_logic then
@@ -266,7 +272,8 @@ local _get_random_ctx = function(attacker, magic_info)
   end
   return random_ctx
 end
-local _correction_damage_by_lock_hp = function(is_lock_hp, def_attr_mgr, total_hurt)
+
+local function _correction_damage_by_lock_hp(is_lock_hp, def_attr_mgr, total_hurt)
   if not is_lock_hp then
     return total_hurt
   end
@@ -277,7 +284,8 @@ local _correction_damage_by_lock_hp = function(is_lock_hp, def_attr_mgr, total_h
   end
   return total_hurt
 end
-local _processing_dmg = function(base_hurt, element_hurt, base_sp_armor_hurt, element_sp_armor_hurt)
+
+local function _processing_dmg(base_hurt, element_hurt, base_sp_armor_hurt, element_sp_armor_hurt)
   local attacker = HURT_CTX.attacker
   local magic_target = HURT_CTX.magic_target
   local report = HURT_CTX.report
@@ -386,7 +394,8 @@ local _processing_dmg = function(base_hurt, element_hurt, base_sp_armor_hurt, el
     TowerMgr:add_hurt_record_val(magic_target, attacker, total_hurt)
   end
 end
-local _cal_crit = function(attacker, magic_target, logic_cfg, magic_info, report)
+
+local function _cal_crit(attacker, magic_target, logic_cfg, magic_info, report)
   local random_ctx = _get_random_ctx(attacker, magic_info)
   local crit_cfg = logic_cfg[9]
   if crit_cfg and #crit_cfg <= 1 and 1 == crit_cfg[1] then
@@ -691,7 +700,8 @@ function magic_fun._do_abnor_damage(magic_target, magic_info, skill_type, elemen
 end
 
 local _mfloor = math.floor
-local calibrationValue = function(value, valueDecimalPlaces)
+
+local function calibrationValue(value, valueDecimalPlaces)
   local mult = 10 ^ (valueDecimalPlaces or 0)
   return _mfloor(value * mult) / mult
 end

@@ -326,7 +326,7 @@ function M:update_camer_focal_pos()
     local dir = camera_pos:Sub(char_pos):SetNormalize()
     local collision_effect = self.v_camera:get_camera_collision_effect()
     local collision_component = collision_effect:get_camera_collision_component()
-    local hit_distance = collision_component:GetClosestCollidedDistance(char_pos, dir, len, SceneMgr:check_obstacle_missile() or false, self.v_camera.v_camera_mode == Config.CAMERA_VIEW_TYPE.SHOULDER)
+    local hit_distance = collision_component:GetClosestCollidedDistance(char_pos.x, char_pos.y, char_pos.z, dir.x, dir.y, dir.z, len, SceneMgr:check_obstacle_missile() or false, self.v_camera.v_camera_mode == Config.CAMERA_VIEW_TYPE.SHOULDER)
     if len > hit_distance then
       dir:Mul(hit_distance)
       char_pos:Add(dir)

@@ -1,7 +1,8 @@
 local C = {
   Id2Name = {}
 }
-local def_enum_from_tbl = function(typename, descname, tbl)
+
+local function def_enum_from_tbl(typename, descname, tbl)
   local enum_members = {}
   for i = 1, #tbl do
     local name = tbl[i]
@@ -584,6 +585,8 @@ local E_GAME_MSG_NAMES = {
   "MSG_QUANTUM_CAPTURE_SYSTEM",
   "MSG_QUANTUM_CAPTURE",
   "MSG_ON_INTERACT_QUANTUM_CAMERA_NPC",
+  "MSG_CAMERA_CAPTURE_SYSTEM",
+  "MSG_CAMERA_CAPTURE",
   "MSG_CUSTOM_KEY_SETTING",
   "MSG_CUSTOM_KEY_SETTING_END",
   "MSG_UPDATE_INPUT_SETTING",
@@ -607,18 +610,20 @@ local E_GAME_MSG_NAMES = {
   "ON_PONDER_MAZE_RESTART"
 }
 def_enum_from_tbl("E_GAME_MSG", "E_GAME_MSG_NAMES", E_GAME_MSG_NAMES)
-local define_enum = function(tbl, descname)
+
+local function define_enum(tbl, descname)
   local enum = {}
   for i = 1, #tbl do
     enum[tbl[i]] = i
   end
   C[descname] = enum
 end
+
 do return setmetatable({}, {
   __index = function(table, key)
     return assert(C[key], "no " .. key .. " in const")
   end
 }) end
-goto lbl_632
+goto lbl_634
 do return C end
-::lbl_632::
+::lbl_634::

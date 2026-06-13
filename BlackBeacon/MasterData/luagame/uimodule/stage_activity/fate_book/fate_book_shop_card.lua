@@ -46,7 +46,8 @@ function ui:on_click_refresh_btn()
   if not self:check_can_refresh() then
     return
   end
-  local suc_cb = function()
+  
+  local function suc_cb()
     if not self:visible() then
       return
     end
@@ -55,6 +56,7 @@ function ui:on_click_refresh_btn()
     self:refresh_select_slot_info()
     ChallengeRingPlusMgr:record_before_fight_view_info()
   end
+  
   ChallengeRingPlusMgr:request_curse_refresh_shop_good(self.v_card_index, suc_cb)
 end
 
@@ -65,7 +67,8 @@ function ui:on_click_buy_btn()
   if not self:check_can_buy(true) then
     return
   end
-  local suc_cb = function()
+  
+  local function suc_cb()
     if not self:visible() then
       return
     end
@@ -73,6 +76,7 @@ function ui:on_click_buy_btn()
     self:refresh_view()
     self:refresh_select_slot_info()
   end
+  
   ChallengeRingPlusMgr:request_curse_buy_shop_good(self.v_card_index, self.v_select_slot_id, suc_cb)
 end
 

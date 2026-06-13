@@ -14,7 +14,8 @@ local POS2KEYCODE = {
 }
 local ATTR_TYPE = FightDefine.ATTR_TYPE
 local HERO_HEAD_PREFIX = "Icon/Profile/%s"
-local _get_number_in_str = function(str)
+
+local function _get_number_in_str(str)
   local num
   string.gsub(str, "([%d.]+)", function(a)
     num = tonumber(a)

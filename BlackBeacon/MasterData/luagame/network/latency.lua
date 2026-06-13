@@ -1,6 +1,7 @@
 local _floor = math.floor
 local _sformat = string.format
-local generate_histogram = function(latencies, slowest, fastest)
+
+local function generate_histogram(latencies, slowest, fastest)
   if 0 == #latencies then
     return {}
   end
@@ -35,7 +36,8 @@ local generate_histogram = function(latencies, slowest, fastest)
   end
   return latencyBuckets
 end
-local generate_latencies = function(latencies)
+
+local function generate_latencies(latencies)
   local len = #latencies
   if 0 == len then
     return {}
@@ -68,9 +70,11 @@ local generate_latencies = function(latencies)
   end
   return latencyDistribution
 end
-local get_ms = function()
+
+local function get_ms()
   return _floor(Global.real_time * 1000)
 end
+
 local latency_obj_mt = {}
 latency_obj_mt.__index = latency_obj_mt
 

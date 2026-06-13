@@ -439,11 +439,13 @@ function ui:_sold_item_in_bag()
     uuid = self.v_item_data.uuid,
     count = self.v_use_num
   }
-  local cb = function()
+  
+  local function cb()
     local msg = MsgGame:mq_publish2(Const.MSG_ON_SHOP_ITEM_SELL)
     msg.mm_x = self.v_item_data.uuid
     self:_onclick_close_btn()
   end
+  
   if self.v_is_equip_collect then
     BattleShopMgr:sell_battle_shop_equip_item(submit_data, true, cb)
   else
@@ -457,11 +459,13 @@ function ui:_onclick_buy()
     self:_onclick_close_btn()
     return
   end
-  local cb = function()
+  
+  local function cb()
     local msg = MsgGame:mq_publish2(Const.MSG_ON_SHOP_ITEM_BUY)
     msg.mm_x = self.v_param.buy_idx
     self:_onclick_close_btn()
   end
+  
   if self.v_is_equip_collect then
     BattleShopMgr:buy_battle_shop_equip_item(self.v_param.buy_idx, true, cb)
   else

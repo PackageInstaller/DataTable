@@ -11,10 +11,10 @@ function M:_init(logic_runner, action_cfg)
   self.v_group_config = ShareRes.get_monster_group_config(self.v_unit_group_id)
   self.v_max_unit_index = #self.v_group_config.unitList
   self.v_cur_unit_index = 0
-  self:spawne_unit()
+  self:spawn_unit()
 end
 
-function M:spawne_unit()
+function M:spawn_unit()
   local create_npc_count = math.min(self.v_max_active_unit_count - self.v_cur_active_count, self.v_total_spawn_count - self.v_cur_active_count)
   if create_npc_count > 0 then
     local index = self.v_cur_unit_index

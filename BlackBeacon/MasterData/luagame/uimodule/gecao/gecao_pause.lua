@@ -55,10 +55,12 @@ function M:settle()
 end
 
 function M:save_and_quit()
-  local cb = function()
+  local function cb()
     Global.scene_mgr:on_enter_main_scene()
+    
     UIMgr:revert_cache_ui()
   end
+  
   if TowerMgr then
     TowerMgr:on_exit_tower(cb)
   end

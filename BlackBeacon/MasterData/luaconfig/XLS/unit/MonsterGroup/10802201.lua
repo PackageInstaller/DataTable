@@ -7,7 +7,7 @@ return {
       IsNoUse = false,
       IsLookAtRole = true,
       Camp = 4,
-      UnitID = 20105701,
+      UnitID = 20205501,
       InitPos = "M1",
       OffSetX = 0.0,
       OffSetZ = 0.0,

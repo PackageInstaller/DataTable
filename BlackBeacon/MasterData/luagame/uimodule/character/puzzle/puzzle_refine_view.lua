@@ -146,13 +146,15 @@ function ui:on_click_refine()
     Util.show_message_tip(2350)
     return
   end
-  local confirm_cb = function()
+  
+  local function confirm_cb()
     PuzzleMgr:refine_puzzle(self.v_operate_uuid, attr_list, function()
       Util.show_message_tip(2351)
       self:change_operate_item(self.v_operate_uuid, true)
     end)
     Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.ui_puzzle_refine_btn_UI_SOUND)
   end
+  
   Util.show_notify_popup_message(confirm_cb, "是否进行重刻？")
 end
 

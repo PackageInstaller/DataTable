@@ -321,7 +321,8 @@ function ui:refresh_title_list()
       end
     end
   end
-  local sort_func = function(a, b)
+  
+  local function sort_func(a, b)
     if a.other_info.status == b.other_info.status and a.other_info.is_get == b.other_info.is_get then
       if a.cfg.Id == NO_TITLE_ID then
         return false
@@ -335,6 +336,7 @@ function ui:refresh_title_list()
       return b.other_info.status < a.other_info.status
     end
   end
+  
   _tsort(self.v_all_titles, sort_func)
   _tsort(self.v_get_titles, sort_func)
   _tsort(self.v_no_get_titles, sort_func)

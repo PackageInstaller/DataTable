@@ -290,7 +290,8 @@ end
 
 function ui:play_unlock_pd(cb)
   local tiemr_name = "play_unlock_pd"
-  local unlock_cb = function(item)
+  
+  local function unlock_cb(item)
     if cb then
       cb()
     end
@@ -298,18 +299,21 @@ function ui:play_unlock_pd(cb)
     item:stop_timer(tiemr_name)
     self:set_lock_state(false, false)
   end
+  
   self:play_pd(unlock_cb, self.v_uicompents.UnLockPd_pd, tiemr_name)
 end
 
 function ui:play_clear_pd(cb)
   local tiemr_name = "play_clear_pd"
-  local clear_cb = function(item)
+  
+  local function clear_cb(item)
     if cb then
       cb()
     end
     item.v_uicompents.ClearPd_pd:ResetPD()
     item:stop_timer(tiemr_name)
   end
+  
   self:play_pd(clear_cb, self.v_uicompents.ClearPd_pd, tiemr_name)
 end
 

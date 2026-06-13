@@ -268,10 +268,12 @@ function ui:_set_reward()
 end
 
 function ui:_set_reward_item(item, id, num)
-  local click_cb = function()
+  local function click_cb()
     UIMgr:try_hide_ui("gift_shop_tips")
+    
     UIMgr:get_ui("itemTip"):ui_show({item_id = id})
   end
+  
   self:create_item_obj(nil, self:get_child_gameobj("ItemBg", item), nil, {item_id = id, click_cb = click_cb})
   local cfg = Item_Helper.get_item_cfg(id)
   local item_name = self:get_text("ItemName", item)

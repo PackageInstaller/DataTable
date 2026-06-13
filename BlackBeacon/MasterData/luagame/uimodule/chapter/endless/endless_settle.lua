@@ -5,7 +5,8 @@ local Char_Helper = require("uimodule.character.char_helper")
 local MAX_CHAR_ITEM_COUNT = Config.MAX_CHAR_ITEM_COUNT
 local SPINE_RT_VIEW = require("ui.model_rt_view.spine_rt_view")
 local SpineHelper = require("ui.model_rt_view.spine_helper")
-local sort = function(a, b)
+
+local function sort(a, b)
   if a.pos ~= b.pos then
     return a.pos < b.pos
   else

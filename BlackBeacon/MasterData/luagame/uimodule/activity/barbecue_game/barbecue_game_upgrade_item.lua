@@ -45,7 +45,7 @@ function ui:set_data(data)
   Util.set_color(self.v_uicompents.Now_txt, color)
   Util.set_color(self.v_uicompents.split_txt, color)
   Util.set_color(self.v_uicompents.Need_txt, color)
-  self.v_uicompents.CtTaskDone_img.fillAmount = own_num / cfg.CostCount
+  self.v_uicompents.CtTaskDone_img.fillAmount = data.is_finish and 1 or own_num / cfg.CostCount
   local icon_path = UtilUI.get_item_images(cfg.CostItem)
   ResMgr:load_set_icon(self.v_uicompents.UpgradeItem_img, icon_path)
 end

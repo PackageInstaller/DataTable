@@ -1309,5 +1309,53 @@ return {
     ShowLevel = 1,
     Type = 1,
     UnlockingMethod = "累计完成“大传谕者”系列成就获得"
+  },
+  [913001] = {
+    BaseMap = "Icon/Title/C100102701",
+    BaseMapPreview = "Icon/Title/C100102701",
+    BuddyID = 1001030,
+    Describe = "与旃檀共同经历的象征。",
+    GroupId = 1001030,
+    Id = 913001,
+    Jump = 1,
+    Level = 1,
+    Name = "百谋之师",
+    Priority = 1,
+    Quality = 1,
+    ShowLevel = 1,
+    Type = 1,
+    UnlockingMethod = "累计完成“百谋之师”系列成就获得"
+  },
+  [913002] = {
+    BaseMap = "Icon/Title/C100102701",
+    BaseMapPreview = "Icon/Title/C100102701",
+    BuddyID = 1001030,
+    Describe = "与旃檀共同经历的象征。",
+    GroupId = 1001030,
+    Id = 913002,
+    Jump = 1,
+    Level = 2,
+    Name = "百谋之师",
+    Priority = 1,
+    Quality = 2,
+    ShowLevel = 1,
+    Type = 1,
+    UnlockingMethod = "累计完成“百谋之师”系列成就获得"
+  },
+  [913003] = {
+    BaseMap = "Icon/Title/C100102701",
+    BaseMapPreview = "Icon/Title/C100102701",
+    BuddyID = 1001030,
+    Describe = "与旃檀共同经历的象征。",
+    GroupId = 1001030,
+    Id = 913003,
+    Jump = 1,
+    Level = 3,
+    Name = "百谋之师",
+    Priority = 1,
+    Quality = 3,
+    ShowLevel = 1,
+    Type = 1,
+    UnlockingMethod = "累计完成“百谋之师”系列成就获得"
   }
 }

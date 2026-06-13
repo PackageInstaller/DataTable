@@ -1,6 +1,7 @@
 return {
   [41] = {
     ActivityID = 41,
+    MailId = 220014,
     Point = {
       101,
       102,

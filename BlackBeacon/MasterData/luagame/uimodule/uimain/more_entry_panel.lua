@@ -6,6 +6,7 @@ local NOTICE_SYS_ID = 24
 local icon_color = Util.get_unity_color_by_hex(tonumber("FFF3DE", 16))
 local lock_color = Util.get_unity_color_by_hex(tonumber("7A7A78", 16))
 local unlock_color = Util.get_unity_color_by_hex(tonumber("FFFFFF", 16))
+local CSTSISDKManager = CS.Game.TSISDKManager
 local BTN_SYS_LIST = {
   [1] = {
     btn_name = "Btn_Achievement",
@@ -82,7 +83,7 @@ function ui:ui_finish_load()
   end)
   self.v_uiobjects.BtnScanQRCode:SetActive(SDKManager:is_enable_qrcode_login() and not Util.is_windows_plat() and not SDKManager:is_google_play_games() and not SDKManager:is_simulator())
   self:set_button_listener(self.v_uicompents.BtnScanQRCode_btn, function()
-    CSSDKManager.ScanOrCode()
+    CSTSISDKManager.ScanOrCode()
   end)
   self:set_button("Btn_Achievement", function()
     if SysOpenMgr:get_sys_is_open(ACHIEVEMENT_SYS_ID) then

@@ -1,6 +1,6 @@
 local M = Util.create_class()
 local CSResLoader = CS.ResLoader
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local UnityDontDestroyOnLoad = UnityGameObject.DontDestroyOnLoad
 local TypeGlobalClock = typeof(CS.Chronos.GlobalClock)
 

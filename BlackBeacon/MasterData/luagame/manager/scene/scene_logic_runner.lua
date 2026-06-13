@@ -891,6 +891,9 @@ function M:release()
   if TowerMgr and TowerMgr:get_tower() then
     self:on_leave()
   end
+  if CaptureMgr:is_initialized() then
+    CaptureMgr:release_manager()
+  end
   self.v_wait_check_add_monster_params = nil
   self:remove_all_spawner_behavior()
 end
@@ -1006,7 +1009,7 @@ function M:on_frame()
   end
 end
 
-local _check_story_end = function(condition_action_config, story_id)
+local function _check_story_end(condition_action_config, story_id)
   return story_id and condition_action_config.StoryId == story_id
 end
 
@@ -1015,7 +1018,7 @@ function M:on_story_end(story_id)
   self:_run_condition_event(LOGIC_EVENT.STORY_END, _check_story_end, story_id)
 end
 
-local _check_timeline_end = function(condition_action_config, name)
+local function _check_timeline_end(condition_action_config, name)
   return condition_action_config.TimelineName == name
 end
 
@@ -1024,7 +1027,7 @@ function M:on_timeline_end(timeline_name)
   self:_run_condition_event(LOGIC_EVENT.PLAY_TIMELINE_END, _check_timeline_end, timeline_name)
 end
 
-local _check_timeline_start = function(condition_action_config, name)
+local function _check_timeline_start(condition_action_config, name)
   return condition_action_config.TimelineName == name
 end
 
@@ -1032,7 +1035,7 @@ function M:on_timeline_start(timeline_name)
   self:_run_condition_event(LOGIC_EVENT.ON_TIMELINE_START, _check_timeline_start, timeline_name)
 end
 
-local _check_texture_guide_finish = function(condition_action_config, group_id)
+local function _check_texture_guide_finish(condition_action_config, group_id)
   return condition_action_config.GroupId == group_id
 end
 
@@ -1070,7 +1073,7 @@ function M:on_enter_area(npc, area)
   end
 end
 
-local _check_leave_area = function(condition_action_config, area_key)
+local function _check_leave_area(condition_action_config, area_key)
   local key = condition_action_config.Key
   return not key or "" == key or key == area_key
 end
@@ -1082,11 +1085,12 @@ function M:on_leave_area(npc, area)
   self:_run_condition_event(LOGIC_EVENT.LEAVE_AREA, _check_leave_area, area.Key)
 end
 
-local _check_func_npc_interact_end = function(condition_action_config, npc_id)
+local function _check_func_npc_interact_end(condition_action_config, npc_id)
   local result = condition_action_config.NPCId == npc_id or 0 == condition_action_config.NPCId
   return result
 end
-local _check_muilt_func_npc_interact_end = function(condition_action_config, npc_name, interaction_end_func_npc)
+
+local function _check_muilt_func_npc_interact_end(condition_action_config, npc_name, interaction_end_func_npc)
   local list = condition_action_config.FuncNpcList
   local is_finish = true
   local is_have = false
@@ -1112,7 +1116,7 @@ function M:on_func_npc_interact_end(npc_id)
   end
 end
 
-local _check_desc_story_end = function(condition_action_config, desc_story_id)
+local function _check_desc_story_end(condition_action_config, desc_story_id)
   return condition_action_config.descStoryId == desc_story_id or 0 == condition_action_config.descStoryId
 end
 
@@ -1130,7 +1134,8 @@ function M:fight_end(is_win, isPopConfirmTips, tipsValue)
   if nil == is_win then
     is_win = true
   end
-  local confirm_cb = function()
+  
+  local function confirm_cb()
     if FightDataMgr:is_use_default_end_timer() and not self.mSendStopFightTimerRpc then
       self.mSendStopFightTimerRpc = true
       local func = ActionFunc.GetActionFunc(LOGIC_ACTION.STOP_FIGHT_TIMING)
@@ -1140,6 +1145,7 @@ function M:fight_end(is_win, isPopConfirmTips, tipsValue)
     end
     Base.fight_end(self, is_win)
   end
+  
   if isPopConfirmTips then
     Util.show_conform_tip(tipsValue, nil, nil, nil, confirm_cb)
   else
@@ -1159,7 +1165,7 @@ function M:get_fight_end_event_name()
   return LOGIC_EVENT.FIGHT_END
 end
 
-local _check_story_begin = function(condition_action_config, story_id, step_id)
+local function _check_story_begin(condition_action_config, story_id, step_id)
   local _story_id = condition_action_config.StoryId
   local _step_id = condition_action_config.StepId
   return (0 == _story_id or _story_id == story_id) and (0 == _step_id or _step_id == step_id)
@@ -1174,7 +1180,7 @@ function M:on_leave()
   self:_run_action_event(LOGIC_EVENT.ON_LEAVE)
 end
 
-local _check_task_finish = function(condition_action_config, task_id)
+local function _check_task_finish(condition_action_config, task_id)
   return 0 == task_id or condition_action_config.TaskId == task_id
 end
 
@@ -1182,7 +1188,7 @@ function M:on_task_finish(taskid)
   self:_run_condition_event(LOGIC_EVENT.FINISH_TASH, _check_task_finish, taskid)
 end
 
-local _check_guide_finish = function(condition_action_config, guide_id)
+local function _check_guide_finish(condition_action_config, guide_id)
   return 0 == guide_id or condition_action_config.GuideID == guide_id
 end
 
@@ -1202,7 +1208,7 @@ function M:on_hero_born_anim_finish()
   self:_run_action_event(LOGIC_EVENT.ON_HERO_BORN_ANIM_FINISH)
 end
 
-local _check_cd_npc_hit = function(condition_action_config, npc_name, hit_count)
+local function _check_cd_npc_hit(condition_action_config, npc_name, hit_count)
   local _npc_name = condition_action_config.NPCName
   local is_name_equal = "" == _npc_name or _npc_name == npc_name
   local hit_type = condition_action_config.HitType
@@ -1227,7 +1233,7 @@ function M:on_cd_npc_hit(npc_name, hit_count)
   self:_run_condition_event(LOGIC_EVENT.ON_HIT_NPC, _check_cd_npc_hit, npc_name, hit_count)
 end
 
-local _check_pick_func_npc_all_reward = function(condition_action_config, npc_id)
+local function _check_pick_func_npc_all_reward(condition_action_config, npc_id)
   local _npc_id = condition_action_config.NPCId
   return 0 == _npc_id or _npc_id == npc_id
 end
@@ -1262,7 +1268,7 @@ function M:on_npc_choose(chooseId, sEventPath)
   end
 end
 
-local _check_reversible_timeline_end = function(condition_action_config, timeline_name)
+local function _check_reversible_timeline_end(condition_action_config, timeline_name)
   return condition_action_config.TimelineName == timeline_name
 end
 
@@ -1270,7 +1276,7 @@ function M:on_reversible_timeline_end(timeline_name)
   self:_run_condition_event(LOGIC_EVENT.ON_REVERSIBLE_TIMELINE_END, _check_reversible_timeline_end, timeline_name)
 end
 
-local _check_play_video_end = function(condition_action_config, video_name)
+local function _check_play_video_end(condition_action_config, video_name)
   return condition_action_config.VideoName == video_name
 end
 
@@ -1278,7 +1284,7 @@ function M:in_play_video_end(video_name)
   self:_run_condition_event(LOGIC_EVENT.IN_PLAY_VIDEO_END, _check_play_video_end, video_name)
 end
 
-local _check_scene_timeline_end = function(condition_action_config, timeline_name)
+local function _check_scene_timeline_end(condition_action_config, timeline_name)
   return condition_action_config.TimelineName == timeline_name
 end
 
@@ -1286,7 +1292,7 @@ function M:on_scene_timeline_end(timeline_name)
   self:_run_condition_event(LOGIC_EVENT.PLAY_SCENE_TIMELINE_END, _check_scene_timeline_end, timeline_name)
 end
 
-local _check_tp_revive_room = function(condition_action_config, archive_num)
+local function _check_tp_revive_room(condition_action_config, archive_num)
   return not archive_num or condition_action_config.ArchiveNumber == archive_num
 end
 
@@ -1338,7 +1344,7 @@ function M:on_display_progress_end()
   self.m_progress_display = nil
 end
 
-local _check_collection_close = function(condition_action_config, collection_id)
+local function _check_collection_close(condition_action_config, collection_id)
   return condition_action_config.CollectionId == collection_id
 end
 
@@ -1346,7 +1352,7 @@ function M:on_collection_close(collection_id)
   self:_run_condition_event(LOGIC_EVENT.ON_COLLECTION_CLOSE, _check_collection_close, collection_id)
 end
 
-local _check_npc_dead_event = function(condition_action_config, npc_name)
+local function _check_npc_dead_event(condition_action_config, npc_name)
   return condition_action_config.NPCName == npc_name
 end
 
@@ -1354,7 +1360,7 @@ function M:on_npc_dead_event(sName)
   self:_run_condition_event(LOGIC_EVENT.ON_NPC_DEAD, _check_npc_dead_event, sName)
 end
 
-local _check_set_variable_condition = function(condition_action_config)
+local function _check_set_variable_condition(condition_action_config)
 end
 
 function M:on_set_variable_event()
@@ -1446,7 +1452,7 @@ function M:on_ct_timer_end(event_name)
   self:RunFuncModule(event_name)
 end
 
-local _check_task_condition_reach_event = function(condition_action_config, condition_id)
+local function _check_task_condition_reach_event(condition_action_config, condition_id)
   return condition_action_config.ConditionId == condition_id
 end
 
@@ -1474,7 +1480,7 @@ function M:play_pre_fight_story()
   return play_story_suc
 end
 
-local _custom_death_event = function(action_config, death_type, has_match_type)
+local function _custom_death_event(action_config, death_type, has_match_type)
   local CUSTOM_DEATH_EVENT_TYPE = CommDefine.CUSTOM_DEATH_EVENT_TYPE
   if not has_match_type and action_config.DeathType == CUSTOM_DEATH_EVENT_TYPE.DEFAULT then
     death_type = CUSTOM_DEATH_EVENT_TYPE.DEFAULT
@@ -1532,7 +1538,7 @@ function M:on_treasure_chest_guide_state_update(state)
   self:_run_action_event(event_type)
 end
 
-local check_mini_game_finish = function(action_config, game_type, game_id)
+local function check_mini_game_finish(action_config, game_type, game_id)
   return action_config.GameType == game_type and action_config.GameID == game_id
 end
 
@@ -1545,10 +1551,15 @@ function M:on_spawner_unit_clear(event_name)
   self:RunFuncModule(event_name)
 end
 
-local SpawnType = {Cyclic = 1, AssignKind = 2}
+local SpawnType = {
+  Cyclic = 1,
+  AssignKind = 2,
+  TimeInterval = 3
+}
 local SpawnerBehaviorPath = {
   [SpawnType.Cyclic] = "manager.scene.spawner.unit_spawner_cyclic",
-  [SpawnType.AssignKind] = "manager.scene.spawner.unit_spawner_assign_kind"
+  [SpawnType.AssignKind] = "manager.scene.spawner.unit_spawner_assign_kind",
+  [SpawnType.TimeInterval] = "manager.scene.spawner.unit_spawner_time_interval"
 }
 
 function M:add_spawner_behavior(config)

@@ -142,9 +142,11 @@ function ui:onclick_buy_btn()
     Util.show_message_tip(2326, self.v_notice_desc)
     return
   end
-  local callback = function()
+  
+  local function callback()
     UIMgr:try_hide_ui("chal_ring_plus_contri_shop_item_tips")
   end
+  
   ChallengeRingPlusMgr:request_buy_contribution_shop_goods(self.v_shop_cfg.Id, self.v_buy_amount, callback)
 end
 

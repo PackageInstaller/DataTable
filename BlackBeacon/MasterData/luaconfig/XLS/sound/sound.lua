@@ -137293,6 +137293,38 @@ return {
     SoundName = "Sound_H1001027_ui_idle",
     SourceType = 2
   },
+  Sound_H1001028_ui_idle = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H1001028_ui_idle",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_character_ui_idle",
+    SoundName = "Sound_H1001028_ui_idle",
+    SourceType = 2
+  },
+  Sound_H1001030_ui_idle = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H1001030_ui_idle",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_character_ui_idle",
+    SoundName = "Sound_H1001030_ui_idle",
+    SourceType = 2
+  },
   Sound_H1002309_cast_atk01_1 = {
     BusLevel = 1,
     ForceTimes = 0,
@@ -138331,6 +138363,806 @@ return {
     },
     SoundACDName = "Sound_H1001020_Combat",
     SoundName = "Sound_H101020_rush",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_atk01 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_atk01",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_atk01",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_atk02_4 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_atk02_4",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_atk02_4",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_atk02_line = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_atk02_line",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_atk02_line",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_atk03_1 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_atk03_1",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_atk03_1",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_atk03_2 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_atk03_2",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_atk03_2",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_atk03_3 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_atk03_3",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_atk03_3",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_atk04_1 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_atk04_1",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_atk04_1",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_atk04_2 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_atk04_2",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_atk04_2",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_atk04_3 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_atk04_3",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_atk04_3",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_heavy_post_1 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_heavy_post_1",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_heavy_post_1",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_heavy_post_2 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_heavy_post_2",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_heavy_post_2",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_heavy_post_3 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_heavy_post_3",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_heavy_post_3",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_light_post_1 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_light_post_1",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_light_post_1",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_light_post_2 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_light_post_2",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_light_post_2",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_light_post_3 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_light_post_3",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_light_post_3",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_passive_state1 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_passive_state1",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_passive_state1",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_shanxian = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_shanxian",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_shanxian",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_skill1_counter_1 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_skill1_counter_1",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_skill1_counter_1",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_skill1_counter_2 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_skill1_counter_2",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_skill1_counter_2",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_skill1_counter_3 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_skill1_counter_3",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_skill1_counter_3",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_skill2_1_4_trail = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_skill2_1_4_trail",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_skill2_1_4_trail",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_skill2_2_2 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_skill2_2_2",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_skill2_2_2",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_skill2_2_3_trail = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_skill2_2_3_trail",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_skill2_2_3_trail",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_skill2_3_1 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_skill2_3_1",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_skill2_3_1",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_skill2_3_2 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_skill2_3_2",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_skill2_3_2",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_skill2_3_3 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_skill2_3_3",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_skill2_3_3",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_skill3_1_Slash = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_skill3_1_Slash",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_skill3_1_Slash",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_skill3_1_Slash_2 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_skill3_1_Slash_2",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_skill3_1_Slash_2",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_skill3_2_sword = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_skill3_2_sword",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_skill3_2_sword",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_skill3_2_trail01 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_skill3_2_trail01",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_skill3_2_trail01",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_skill3_Weapon_test = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_skill3_Weapon_test",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_skill3_Weapon_test",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_ult_skill_8_Crack = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_ult_skill_8_Crack",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_ult_skill_8_Crack",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_ult_skill_8_Crack_post = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_ult_skill_8_Crack_post",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_ult_skill_8_Crack_post",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_ult_skill_8_Env = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_ult_skill_8_Env",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_ult_skill_8_Env",
+    SourceType = 2
+  },
+  Sound_H3003026_cast_ult_skill_8_Sword = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_cast_ult_skill_8_Sword",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_cast_ult_skill_8_Sword",
+    SourceType = 2
+  },
+  Sound_H3003026_hit_atk01 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_hit_atk01",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_hit_atk01",
+    SourceType = 2
+  },
+  Sound_H3003026_hit_atk02 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_hit_atk02",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_hit_atk02",
+    SourceType = 2
+  },
+  Sound_H3003026_hit_atk03 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_hit_atk03",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_hit_atk03",
+    SourceType = 2
+  },
+  Sound_H3003026_hit_atk04 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_hit_atk04",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_hit_atk04",
+    SourceType = 2
+  },
+  Sound_H3003026_hit_skill1_counter_3 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_hit_skill1_counter_3",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_hit_skill1_counter_3",
+    SourceType = 2
+  },
+  Sound_H3003026_hit_skill2_1_2 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_hit_skill2_1_2",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_hit_skill2_1_2",
+    SourceType = 2
+  },
+  Sound_H3003026_hit_skill2_1_3 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_hit_skill2_1_3",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_hit_skill2_1_3",
+    SourceType = 2
+  },
+  Sound_H3003026_hit_skill2_2_2 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_hit_skill2_2_2",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_hit_skill2_2_2",
+    SourceType = 2
+  },
+  Sound_H3003026_hit_skill2_3_2 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_hit_skill2_3_2",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_hit_skill2_3_2",
+    SourceType = 2
+  },
+  Sound_H3003026_hit_skill2_3_3 = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_hit_skill2_3_3",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_hit_skill2_3_3",
+    SourceType = 2
+  },
+  Sound_H3003026_hit_ult_8_Env = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_hit_ult_8_Env",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_hit_ult_8_Env",
+    SourceType = 2
+  },
+  Sound_H3003026_show_born = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_show_born",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_show_born",
+    SourceType = 2
+  },
+  Sound_H3003026_show_finish = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_show_finish",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_show_finish",
+    SourceType = 2
+  },
+  Sound_H3003026_show_ult = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_show_ult",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_show_ult",
+    SourceType = 2
+  },
+  Sound_H3003026_show_ult_pass = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_H3003026_show_ult_pass",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_H1001026to3003026_Combat",
+    SoundName = "Sound_H3003026_show_ult_pass",
     SourceType = 2
   },
   Sound_Huoba = {
@@ -151357,6 +152189,22 @@ return {
     SoundName = "Sound_M201065_cast_skill4_1_trail01",
     SourceType = 2
   },
+  Sound_M201065_cast_skill5_2_ci = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_M201065_cast_skill5_2_ci",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_M201065_Combat",
+    SoundName = "Sound_M201065_cast_skill5_2_ci",
+    SourceType = 2
+  },
   Sound_M201065_cast_skill5_2_dajianyu = {
     BusLevel = 1,
     ForceTimes = 0,
@@ -151371,6 +152219,22 @@ return {
     },
     SoundACDName = "Sound_M201065_Combat",
     SoundName = "Sound_M201065_cast_skill5_2_dajianyu",
+    SourceType = 2
+  },
+  Sound_M201065_cast_skill5_2_jianyu = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_M201065_cast_skill5_2_jianyu",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_M201065_Combat",
+    SoundName = "Sound_M201065_cast_skill5_2_jianyu",
     SourceType = 2
   },
   Sound_M201065_cast_skill_6_1 = {
@@ -154285,6 +155149,38 @@ return {
     SoundName = "Sound_TIMELINE7_3_1_0",
     SourceType = 2
   },
+  Sound_TIMELINE8_1_1_0 = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_TIMELINE8_1_1_0",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_Sc08",
+    SoundName = "Sound_TIMELINE8_1_1_0",
+    SourceType = 2
+  },
+  Sound_TIMELINE8_1_2_0 = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_TIMELINE8_1_2_0",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_Sc08",
+    SoundName = "Sound_TIMELINE8_1_2_0",
+    SourceType = 2
+  },
   Sound_TIMELINE9_1_1_0 = {
     BusLevel = 0,
     ForceTimes = 0,
@@ -154621,6 +155517,102 @@ return {
     SoundName = "Sound_UI_archive_enter",
     SourceType = 9
   },
+  Sound_UI_barbecue_game_main_panel = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_barbecue_game_main_panel",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_barbecue_game_main_panel",
+    SourceType = 9
+  },
+  Sound_UI_barbecue_game_start_tips = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_barbecue_game_start_tips",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_barbecue_game_start_tips",
+    SourceType = 9
+  },
+  Sound_UI_barbecue_game_task = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_barbecue_game_task",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_barbecue_game_task",
+    SourceType = 9
+  },
+  Sound_UI_barbeque_game_get_score = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_barbeque_game_get_score",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_barbeque_game_get_score",
+    SourceType = 9
+  },
+  Sound_UI_barbeque_game_put_cup = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_barbeque_game_put_cup",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_barbeque_game_put_cup",
+    SourceType = 9
+  },
+  Sound_UI_barbeque_game_put_plate = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_barbeque_game_put_plate",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_barbeque_game_put_plate",
+    SourceType = 9
+  },
   Sound_UI_battle_award_show_panel = {
     BusLevel = 0,
     ForceTimes = 0,
@@ -154925,6 +155917,22 @@ return {
     SoundName = "Sound_UI_chapter_story_preheat",
     SourceType = 9
   },
+  Sound_UI_char_spine_display = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_char_spine_display",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_char_spine_display",
+    SourceType = 9
+  },
   Sound_UI_choose_equation_view = {
     BusLevel = 0,
     ForceTimes = 0,
@@ -155117,6 +156125,22 @@ return {
     SoundName = "Sound_UI_fate_book_tog",
     SourceType = 9
   },
+  Sound_UI_fish_game_stage = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_fish_game_stage",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_fish_game_stage",
+    SourceType = 9
+  },
   Sound_UI_gift = {
     BusLevel = 0,
     ForceTimes = 0,
@@ -155227,6 +156251,86 @@ return {
     },
     SoundACDName = "UI_SFX",
     SoundName = "Sound_UI_material_stage",
+    SourceType = 9
+  },
+  Sound_UI_minesweeper_allbeat = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_minesweeper_allbeat",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_minesweeper_allbeat",
+    SourceType = 9
+  },
+  Sound_UI_minesweeper_grid_flip = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_minesweeper_grid_flip",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_minesweeper_grid_flip",
+    SourceType = 9
+  },
+  Sound_UI_minesweeper_grid_out = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_minesweeper_grid_out",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_minesweeper_grid_out",
+    SourceType = 9
+  },
+  Sound_UI_minesweeper_grid_refresh = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_minesweeper_grid_refresh",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_minesweeper_grid_refresh",
+    SourceType = 9
+  },
+  Sound_UI_minesweeper_grid_show = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_minesweeper_grid_show",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_minesweeper_grid_show",
     SourceType = 9
   },
   Sound_UI_monkey_typer_click_machine = {
@@ -155597,6 +156701,22 @@ return {
     SoundName = "Sound_UI_puzzle_synthesis",
     SourceType = 9
   },
+  Sound_UI_puzzle_up_grade_tips = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_puzzle_up_grade_tips",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_puzzle_up_grade_tips",
+    SourceType = 9
+  },
   Sound_UI_quality_setting_tog = {
     BusLevel = 0,
     ForceTimes = 0,
@@ -155741,6 +156861,86 @@ return {
     SoundName = "Sound_UI_ui_act_battle_game",
     SourceType = 9
   },
+  Sound_UI_ui_act_bird_shoot = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_act_bird_shoot",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_act_bird_shoot",
+    SourceType = 9
+  },
+  Sound_UI_ui_act_minesweeper = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_act_minesweeper",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_act_minesweeper",
+    SourceType = 9
+  },
+  Sound_UI_ui_act_minesweeper_handbook = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_act_minesweeper_handbook",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_act_minesweeper_handbook",
+    SourceType = 9
+  },
+  Sound_UI_ui_act_minesweeper_rank = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_act_minesweeper_rank",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_act_minesweeper_rank",
+    SourceType = 9
+  },
+  Sound_UI_ui_activity_daily1 = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_activity_daily1",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_activity_daily1",
+    SourceType = 9
+  },
   Sound_UI_ui_activity_main_btn = {
     BusLevel = 0,
     ForceTimes = 0,
@@ -155755,6 +156955,22 @@ return {
     },
     SoundACDName = "UI_SFX1-1",
     SoundName = "Sound_UI_ui_activity_main_btn",
+    SourceType = 9
+  },
+  Sound_UI_ui_activity_summer_stage = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_activity_summer_stage",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_activity_summer_stage",
     SourceType = 9
   },
   Sound_UI_ui_buddy_draw_activity = {
@@ -155787,6 +157003,22 @@ return {
     },
     SoundACDName = "UI_SFX",
     SoundName = "Sound_UI_ui_buddy_tryout",
+    SourceType = 9
+  },
+  Sound_UI_ui_build_btnharvest = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_build_btnharvest",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_build_btnharvest",
     SourceType = 9
   },
   Sound_UI_ui_catch_cat_activity = {
@@ -155869,6 +157101,86 @@ return {
     SoundName = "Sound_UI_ui_fatebook_double_activity",
     SourceType = 9
   },
+  Sound_UI_ui_fish_game_down = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_fish_game_down",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_fish_game_down",
+    SourceType = 9
+  },
+  Sound_UI_ui_fish_game_explode = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_fish_game_explode",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_fish_game_explode",
+    SourceType = 9
+  },
+  Sound_UI_ui_fish_game_get = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_fish_game_get",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_fish_game_get",
+    SourceType = 9
+  },
+  Sound_UI_ui_fish_game_get_sorce = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_fish_game_get_sorce",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_fish_game_get_sorce",
+    SourceType = 9
+  },
+  Sound_UI_ui_fish_game_stage_item = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_fish_game_stage_item",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_fish_game_stage_item",
+    SourceType = 9
+  },
   Sound_UI_ui_level_welfare = {
     BusLevel = 0,
     ForceTimes = 0,
@@ -155931,6 +157243,166 @@ return {
     },
     SoundACDName = "UI_SFX",
     SoundName = "Sound_UI_ui_material_double_activity",
+    SourceType = 9
+  },
+  Sound_UI_ui_maze_game_illustrated = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_maze_game_illustrated",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_maze_game_illustrated",
+    SourceType = 9
+  },
+  Sound_UI_ui_maze_game_main = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_maze_game_main",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_maze_game_main",
+    SourceType = 9
+  },
+  Sound_UI_ui_maze_game_start = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_maze_game_start",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_maze_game_start",
+    SourceType = 9
+  },
+  Sound_UI_ui_maze_game_view_click = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_maze_game_view_click",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_maze_game_view_click",
+    SourceType = 9
+  },
+  Sound_UI_ui_minesweeper_battle = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_minesweeper_battle",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_minesweeper_battle",
+    SourceType = 9
+  },
+  Sound_UI_ui_minesweeper_battle_suc = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_minesweeper_battle_suc",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_minesweeper_battle_suc",
+    SourceType = 9
+  },
+  Sound_UI_ui_minesweeper_buff = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_minesweeper_buff",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_minesweeper_buff",
+    SourceType = 9
+  },
+  Sound_UI_ui_minesweeper_settle_fail = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_minesweeper_settle_fail",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_minesweeper_settle_fail",
+    SourceType = 9
+  },
+  Sound_UI_ui_minesweeper_settle_sus = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_minesweeper_settle_sus",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_minesweeper_settle_sus",
+    SourceType = 9
+  },
+  Sound_UI_ui_minesweeper_shop = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_minesweeper_shop",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_minesweeper_shop",
     SourceType = 9
   },
   Sound_UI_ui_monkey_typer_activity = {
@@ -156109,6 +157581,22 @@ return {
     SoundName = "Sound_UI_ui_novice_task2",
     SourceType = 9
   },
+  Sound_UI_ui_puzzle_refine_btn = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_puzzle_refine_btn",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_puzzle_refine_btn",
+    SourceType = 9
+  },
   Sound_UI_ui_recharge_welfare = {
     BusLevel = 0,
     ForceTimes = 0,
@@ -156189,6 +157677,22 @@ return {
     SoundName = "Sound_UI_ui_return_activity_task",
     SourceType = 9
   },
+  Sound_UI_ui_summer_act_icon = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_summer_act_icon",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_summer_act_icon",
+    SourceType = 9
+  },
   Sound_UI_ui_task_activity_1 = {
     BusLevel = 0,
     ForceTimes = 0,
@@ -156235,6 +157739,22 @@ return {
     },
     SoundACDName = "UI_SFX1-1",
     SoundName = "Sound_UI_ui_time_limited_activity_main",
+    SourceType = 9
+  },
+  Sound_UI_ui_time_limited_activity_main_1_2 = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_UI_ui_time_limited_activity_main_1_2",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "UI_SFX1-2",
+    SoundName = "Sound_UI_ui_time_limited_activity_main_1_2",
     SourceType = 9
   },
   Sound_UI_ui_weapon_activity = {
@@ -157851,7 +159371,7 @@ return {
     },
     SoundACDName = "Sound_Sc08",
     SoundName = "Sound_prologue_dim1_1_10804",
-    SourceType = 2
+    SourceType = 6
   },
   Sound_qinghua_stop2 = {
     BusLevel = 1,
@@ -158651,6 +160171,38 @@ return {
     },
     SoundACDName = "Sound_Sc08",
     SoundName = "Sound_scene_timeline_1081001_door_open",
+    SourceType = 2
+  },
+  Sound_scene_timeline_1081002_door_close = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_scene_timeline_1081002_door_close",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_Sc08",
+    SoundName = "Sound_scene_timeline_1081002_door_close",
+    SourceType = 2
+  },
+  Sound_scene_timeline_1081002_door_open = {
+    BusLevel = 1,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Sound_scene_timeline_1081002_door_open",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Sound_Sc08",
+    SoundName = "Sound_scene_timeline_1081002_door_open",
     SourceType = 2
   },
   Sound_scene_timeline_1081101_doorOpen = {
@@ -166165,6 +167717,159 @@ return {
     SoundName = "Voice_H1001026_show_ult_RTL",
     SourceType = 5
   },
+  Voice_H1001027_1_Skill01 = {
+    BuddyId = 1001027,
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Voice_H1001027_1_Skill01",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "card_jinlv",
+    SoundName = "Voice_H1001027_1_Skill01",
+    SourceType = 5
+  },
+  Voice_H1001027_2_Skill02 = {
+    BuddyId = 1001027,
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Voice_H1001027_2_Skill02",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "card_jinlv",
+    SoundName = "Voice_H1001027_2_Skill02",
+    SourceType = 5
+  },
+  Voice_H1001027_3_Evasion = {
+    BuddyId = 1001027,
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Voice_H1001027_3_Evasion",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "card_jinlv",
+    SoundName = "Voice_H1001027_3_Evasion",
+    SourceType = 5
+  },
+  Voice_H1001027_4_MinorWound = {
+    BuddyId = 1001027,
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Voice_H1001027_4_MinorWound",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "card_jinlv",
+    SoundName = "Voice_H1001027_4_MinorWound",
+    SourceType = 5
+  },
+  Voice_H1001027_5_SeriousInjury = {
+    BuddyId = 1001027,
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Voice_H1001027_5_SeriousInjury",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "card_jinlv",
+    SoundName = "Voice_H1001027_5_SeriousInjury",
+    SourceType = 5
+  },
+  Voice_H1001027_6_Death = {
+    BuddyId = 1001027,
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Voice_H1001027_6_Death",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "card_jinlv",
+    SoundName = "Voice_H1001027_6_Death",
+    SourceType = 5
+  },
+  Voice_H1001027_7_Ult = {
+    BuddyId = 1001027,
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Voice_H1001027_7_Ult",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "card_jinlv",
+    SoundName = "Voice_H1001027_7_Ult",
+    SourceType = 5
+  },
+  Voice_H1001027_8_Born = {
+    BuddyId = 1001027,
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Voice_H1001027_8_Born",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "card_jinlv",
+    SoundName = "Voice_H1001027_8_Born",
+    SourceType = 5
+  },
+  Voice_H1001027_9_Finish = {
+    BuddyId = 1001027,
+    BusLevel = 0,
+    ForceTimes = 0,
+    PlaySoundName = {
+      "Voice_H1001027_9_Finish",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "card_jinlv",
+    SoundName = "Voice_H1001027_9_Finish",
+    SourceType = 5
+  },
   Voice_H1001027_show_born = {
     BuddyId = 1001027,
     BusLevel = 0,
@@ -168720,6 +170425,24 @@ return {
     SoundName = "bgm_chapter7_common",
     SourceType = 1
   },
+  bgm_chapter8_elite = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    IsStreaming = 1,
+    No_Loop = 1,
+    PlaySoundName = {
+      "bgm_chapter8_elite",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Battlebgm_02",
+    SoundName = "bgm_chapter8_elite",
+    SourceType = 1
+  },
   bgm_chapterEX1_common = {
     BusLevel = 0,
     ForceTimes = 0,
@@ -168737,6 +170460,25 @@ return {
     },
     SoundACDName = "bgm_chapterEX1_common",
     SoundName = "bgm_chapterEX1_common",
+    SourceType = 1
+  },
+  bgm_chapter_ex1_boss = {
+    BlockNum = 1,
+    BusLevel = 0,
+    ForceTimes = 0,
+    IsStreaming = 1,
+    No_Loop = 1,
+    PlaySoundName = {
+      "bgm_chapter_ex1_boss",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "Battlebgm_02",
+    SoundName = "bgm_chapter_ex1_boss",
     SourceType = 1
   },
   bgm_chapter_ex1_elite = {
@@ -203265,6 +205007,43 @@ return {
     },
     SoundACDName = "storybgm_02",
     SoundName = "storybgm_083",
+    SourceType = 1
+  },
+  storybgm_084 = {
+    BlockNum = 1,
+    BusLevel = 0,
+    ForceTimes = 0,
+    IsStreaming = 1,
+    No_Loop = 1,
+    PlaySoundName = {
+      "storybgm_084",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "storybgm_02",
+    SoundName = "storybgm_084",
+    SourceType = 1
+  },
+  storybgm_085 = {
+    BusLevel = 0,
+    ForceTimes = 0,
+    IsStreaming = 1,
+    No_Loop = 1,
+    PlaySoundName = {
+      "storybgm_085",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    },
+    SoundACDName = "storybgm_02",
+    SoundName = "storybgm_085",
     SourceType = 1
   },
   timeline0_2down = {

@@ -11,7 +11,8 @@ local UnityTime = CSUnityEngine.Time
 local _slower = string.lower
 local game_world = {}
 game_world.debug_camera_data = {}
-local init_unity_type = function()
+
+local function init_unity_type()
   _G.UnityEngine = CSUnityEngine
   _G.UnityAnimator = CSUnityEngine.Animator
   _G.TypeUnityAnimator = typeof(CSUnityEngine.Animator)
@@ -218,7 +219,6 @@ function game_world:init()
   BattleSettingMgr = require("gamelogic.battle_setting.battle_setting_mgr"):new()
   BattleSettingMgr:use_player_setting_info()
   DownloadMgr = require("gamelogic.download.download_mgr"):new()
-  CS.EffectStatus.IsEnableOptimizeParticleSystemSorting = false
 end
 
 function game_world.on_update(elapsed)
@@ -558,7 +558,7 @@ end
 function game_world.on_low_memory()
 end
 
-local _destroy_reload_camera = function()
+local function _destroy_reload_camera()
   local root_obj = CS.UnityEngine.GameObject.Find("ReloadCamera")
   if root_obj then
     CS.UnityEngine.GameObject.Destroy(root_obj)
@@ -585,5 +585,8 @@ function main()
   CS.GameToLua.CheckUpdate.OnLeave()
   game_world:init()
   Global.game_world = game_world
+  if UNITY_EDITOR or UNITY_STANDALONE_WIN then
+    UnityUIScrollRect.SCROLL_SENSITIVITY_MULTIPLIER = ShareRes.get_comm_value("WindowsScrollRectSensitivity")
+  end
   return game_world
 end

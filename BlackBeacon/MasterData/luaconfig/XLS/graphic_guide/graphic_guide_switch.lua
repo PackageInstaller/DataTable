@@ -23,6 +23,14 @@ return {
     GroupId = {100000042},
     PrefabName = "ActivitySummerStage(Clone)"
   },
+  ["UIActMazeInGame(Clone)"] = {
+    GroupId = {100000044},
+    PrefabName = "UIActMazeInGame(Clone)"
+  },
+  ["UIActMazeMain(Clone)"] = {
+    GroupId = {100000044},
+    PrefabName = "UIActMazeMain(Clone)"
+  },
   ["UIActivityDaily1Panel(Clone)"] = {
     GroupId = {100000043},
     PrefabName = "UIActivityDaily1Panel(Clone)"

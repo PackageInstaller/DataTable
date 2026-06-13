@@ -1,0 +1,161 @@
+local M = Util.create_class()
+
+function M:_init(npc)
+  set_npc_floating_text_hud_visible(npc, false)
+  self.point_count = math.floor(get_sync_var("point_count"))
+  self.gap_time = get_sync_var("gap_time")
+  self.max_target_num = get_sync_var("max_target_num")
+  self.max_time = get_sync_var("max_time")
+  self.control = 1
+  self.start_target_num = get_sync_var("start_target_num")
+  self.current_target_num = self.start_target_num
+  self.random_list = {}
+  self.over = false
+  self.start_time = get_npc_time(npc)
+  self.last_increase = get_npc_time(npc)
+  self.target_id = 3002011
+  if get_sync_var("monster_type") and get_sync_var("monster_type") == "fake" then
+    self.target_id = 3002043
+  end
+  self.normal_level = 1
+  self.group_id = get_npc_group_id(npc)
+  self.monster_list = {}
+  self:create_init_monster(self.start_target_num)
+  self.random_counter = 1
+end
+
+function M:create_init_monster(target_num)
+  local random_list = {}
+  local first_pos = {}
+  if get_cur_room_id() == 6661201 then
+    first_pos = {
+      31,
+      32,
+      33,
+      39,
+      40,
+      46,
+      47,
+      48
+    }
+  elseif get_cur_room_id() == 6661301 then
+    first_pos = {
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    }
+  else
+    for l = 1, self.start_target_num do
+      table.insert(first_pos, l)
+    end
+  end
+  math.randomseed(tostring(os.time()):reverse():sub(1, 7))
+  for i = 1, target_num do
+    local same = true
+    local p
+    while same do
+      same = false
+      p = first_pos[math.random(#first_pos)]
+      for j = 1, i - 1 do
+        if p == random_list[j] then
+          same = true
+          break
+        end
+      end
+    end
+    table.insert(random_list, p)
+  end
+  for k = 1, #random_list do
+    local m = add_npc_by_pos_key(2, self.target_id, "M" .. tostring(random_list[k]), 0, 0, "M" .. tostring(random_list[k]), 0, 0, 2, self.normal_level)
+    table.insert(self.monster_list, m)
+  end
+end
+
+function M:on_frame()
+  if self.over then
+    return
+  end
+  self:end_check()
+  self:skill_main_logic()
+end
+
+function M:random_target_up(target_num)
+  local random_list = {}
+  for i = 1, target_num do
+    local same = true
+    local p
+    while same do
+      same = false
+      math.randomseed(tostring(os.time() * self.random_counter):reverse():sub(1, 7))
+      self.random_counter = self.random_counter + 1
+      p = math.random(self.point_count)
+      for j = 1, i - 1 do
+        if p == random_list[j] then
+          same = true
+          break
+        end
+      end
+    end
+    table.insert(random_list, p)
+  end
+  return random_list
+end
+
+function M:end_check()
+  if get_npc_time(self.npc) >= self.start_time + self.max_time then
+    self.control = -1
+    self.over = true
+    for i = 1, #self.monster_list do
+      remove_npc(self.monster_list[i])
+    end
+    self.monster_list = {}
+  end
+end
+
+function M:skill_main_logic()
+  if self.over then
+    return
+  end
+  if get_npc_time(self.npc) >= self.last_increase + self.gap_time then
+    if self.current_target_num == self.max_target_num then
+      return
+    end
+    self.last_increase = get_npc_time(self.npc)
+    self.random_list = self:random_target_up(1)
+    for i = 1, #self.random_list do
+      local m = add_npc_by_pos_key(2, self.target_id, "M" .. tostring(self.random_list[i]), 0, 0, "M" .. tostring(self.random_list[i]), 0, 0, 2, self.normal_level)
+      table.insert(self.monster_list, m)
+    end
+    if self.current_target_num < self.max_target_num then
+      self.current_target_num = self.current_target_num + 1
+    end
+  end
+end
+
+function M:on_npc_removed(npc)
+  if self.over then
+    return
+  end
+  for i = 1, #self.monster_list do
+    if self.monster_list[i] == npc then
+      table.remove(self.monster_list, i)
+      local random_list = self:random_target_up(1)
+      for j = 1, #random_list do
+        local m = add_npc_by_pos_key(2, self.target_id, "M" .. tostring(random_list[j]), 0, 0, "M" .. tostring(random_list[j]), 0, 0, 2, self.normal_level)
+        table.insert(self.monster_list, m)
+      end
+    end
+  end
+end
+
+function M:on_room_pass(room_id)
+  self.over = true
+end
+
+return M

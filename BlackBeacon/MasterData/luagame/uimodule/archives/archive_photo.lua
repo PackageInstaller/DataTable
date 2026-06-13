@@ -84,7 +84,8 @@ function ui:update_photo_list(id)
   self.v_cur_photo_list = nil
   self.v_cur_photo_list = UtilTable.copy_table(ShareRes.get_archive_photo_title_cfg(group_id))
   self.v_cur_red_list = {}
-  local sort_insert = function(temp_table, insert_data, compare_func)
+  
+  local function sort_insert(temp_table, insert_data, compare_func)
     local insert_index = 1
     for _, info in ipairs(temp_table) do
       if compare_func(info, insert_data) then
@@ -95,18 +96,21 @@ function ui:update_photo_list(id)
     end
     _tinsert(temp_table, insert_index, insert_data)
   end
-  local photo_sort_compare = function(a, b)
+  
+  local function photo_sort_compare(a, b)
     if a.ShowPriority ~= b.ShowPriority then
       return a.ShowPriority > b.ShowPriority
     end
     return a.Id < b.Id
   end
-  local photo_group_sort_compare = function(a, b)
+  
+  local function photo_group_sort_compare(a, b)
     if a.cfg.ShowPriority ~= b.cfg.ShowPriority then
       return a.cfg.ShowPriority > b.cfg.ShowPriority
     end
     return a.cfg.Id < b.cfg.Id
   end
+  
   local temp = {}
   local temp_sort = {}
   for _, data in pairs(self.v_cur_photo_list) do
@@ -380,9 +384,10 @@ function ui:clear_spine_rt()
 end
 
 function ui:load_spine_photo(rt_view, spine_res)
-  local load_cb = function(obj)
+  local function load_cb(obj)
     obj:ResetAttr()
   end
+  
   rt_view:load_spine_res(spine_res, load_cb)
 end
 

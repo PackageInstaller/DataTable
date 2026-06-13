@@ -15,7 +15,8 @@ local M = Util.create_class()
 local LOCATION_TYPE = {WORLD = 0, LOCAL = 1}
 local ATTACH_POINT = "Bip001"
 local Fog
-local temp_show_fog = function(show)
+
+local function temp_show_fog(show)
   if not Fog or Fog:IsNull() then
     Fog = UnityFind("Fog")
   end
@@ -250,6 +251,12 @@ function M:_set_location(ct, location_type, char)
     ct_transform:SetPositionA(pos.x, pos.y, pos.z)
   end
   ct_transform:SetEulerY(char:get_dir())
+end
+
+function M:decrease_closeup_camera_priority()
+  if self.v_now_ct and self.v_now_ct.vcamera then
+    self.v_now_ct.vcamera.Priority = 50
+  end
 end
 
 return M

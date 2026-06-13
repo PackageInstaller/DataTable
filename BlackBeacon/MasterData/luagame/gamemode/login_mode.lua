@@ -9,7 +9,7 @@ local UnityWebRequest = UnityEngine.Networking.UnityWebRequest
 local UnityApplication = UnityEngine.Application
 local CSErrorUpLoad = CS.Game.ErrorUpLoad
 local UnityPlayerPrefs = UnityEngine.PlayerPrefs
-local UnityEngine = UnityEngine
+local UnityEngine = _ENV.UnityEngine
 local UnityTime = UnityEngine.Time
 local LOGIN_STATE = {
   NONE = 0,
@@ -19,7 +19,8 @@ local LOGIN_STATE = {
 local M = setmetatable({}, Base)
 M.__index = M
 local MAX_SYSTEM_INIT_TIME = 10
-local _client_only_create_obj = function()
+
+local function _client_only_create_obj()
   if Util.is_client_only() then
     local temp_team = {}
     local count = 0
@@ -53,12 +54,14 @@ local _client_only_create_obj = function()
     SceneMgr:create_god_npc_in_client()
   end
 end
-local _to_check_update_mode = function()
+
+local function _to_check_update_mode()
   MsgGame:mq_publish2(Const.MSG_LOGIN_FAILED)
   Network:close()
   Global.gamemode:gmode_set_mode(Const.MODE_CHECK_UPDATE)
 end
-local _connect_failed = function(msg, is_reconnect)
+
+local function _connect_failed(msg, is_reconnect)
   UIMgr:try_hide_ui("ui_login_wait")
   UIMgr:try_hide_ui("reconnecting")
   Util.show_notify_popup_message(_to_check_update_mode, msg, "网络连接失败", "确定", nil, nil, true)
@@ -187,7 +190,7 @@ function M:_shader_variant_warmup()
   end
 end
 
-local init_error_upload_info = function()
+local function init_error_upload_info()
   local contextHead = {}
   table.insert(contextHead, "deviceModel = " .. UnityEngine.SystemInfo.deviceModel)
   table.insert(contextHead, "deviceName = " .. UnityEngine.SystemInfo.deviceName)
@@ -209,7 +212,8 @@ local init_error_upload_info = function()
   end
   CSErrorUpLoad.Instance:SetIsPostError(1 == cur_is_upload)
 end
-local _on_login_callbck = function(self, ok, rep, is_reconnect)
+
+local function _on_login_callbck(self, ok, rep, is_reconnect)
   Log.Info("is_reconnect = ", is_reconnect, " is_in_login = ", Global.gamemode:gmode_is_login(), "player_uuid = ", rep.uuid, "rep.fpid = ", rep.fpid, "ok = ", ok, "errcode = ", rep.errcode)
   if false == ok and true == is_reconnect then
     local msg
@@ -263,7 +267,8 @@ local _on_login_callbck = function(self, ok, rep, is_reconnect)
   end
   self:gd_next_task()
 end
-local _on_system_complete = function(self)
+
+local function _on_system_complete(self)
   self.v_init_sys_count = self.v_init_sys_count + 1
   if self.v_init_sys_count == self.v_sum_system_count then
     self.dummy_cnt = self.dummy_cnt + 1
@@ -273,8 +278,8 @@ local _on_system_complete = function(self)
 end
 
 function M:_init_systems()
-  Global.MagicPool = require("manager.magic.magic_pool"):new()
   if Util.is_client_only() then
+    Global.MagicPool = require("manager.magic.magic_pool"):new()
     for _, sys_info in ipairs(Config.system_modules) do
       if sys_info.is_init_client_only == true or sys_info.global_name == "CharacterMgr" then
         local clz = "gamelogic." .. sys_info.class
@@ -290,6 +295,7 @@ function M:_init_systems()
     return true
   end
   if 0 == self.dummy_cnt then
+    Global.MagicPool = require("manager.magic.magic_pool"):new()
     self.dummy_cnt = self.dummy_cnt + 1
     self.v_sum_system_count = #Config.system_modules
     self.v_init_sys_count = 0
@@ -346,7 +352,7 @@ function M:_start_receive_gs2c()
 end
 
 function M:_check_del_player_timer()
-  if not SDKManager:is_enable_del_player_timer_check() then
+  if not SDKManager:is_enable_del_player_timer_check() or not PlayerMgr then
     return true
   end
   if 0 == self.dummy_cnt then

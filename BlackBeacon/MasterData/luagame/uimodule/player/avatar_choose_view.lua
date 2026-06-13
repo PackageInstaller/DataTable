@@ -146,7 +146,8 @@ function ui:refresh_card_item()
       end
     end
   end
-  local sort_func = function(a, b)
+  
+  local function sort_func(a, b)
     if a.is_unlock == b.is_unlock and a.cfg.Priority == b.cfg.Priority then
       return a.cfg.Id < b.cfg.Id
     elseif a.is_unlock == b.is_unlock then
@@ -155,6 +156,7 @@ function ui:refresh_card_item()
       return a.is_unlock
     end
   end
+  
   _tsort(self.v_card_data, sort_func)
   self.v_card_child_list:refresh_data(self.v_card_data)
   self:initselect_card_item()
@@ -162,7 +164,8 @@ end
 
 function ui:refresh_reward_item()
   local avatar_data = self.v_avatar_data
-  local sort_func = function(a, b)
+  
+  local function sort_func(a, b)
     if a.un_get == b.un_get and a.avatar_cfg.Priority == b.avatar_cfg.Priority then
       return a.avatar_cfg.Id < b.avatar_cfg.Id
     elseif a.un_get == b.un_get then
@@ -171,6 +174,7 @@ function ui:refresh_reward_item()
       return b.un_get
     end
   end
+  
   _tsort(avatar_data, sort_func)
   self.v_child_list:update_list(avatar_data)
   self:_location_current_item(avatar_data, 4, self.v_uiobjects.Card_Scroll)

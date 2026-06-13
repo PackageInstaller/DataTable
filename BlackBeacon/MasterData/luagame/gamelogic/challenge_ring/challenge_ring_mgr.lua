@@ -122,17 +122,19 @@ function M:on_receive_heal_card(is_done, card_cfg)
 end
 
 function M:on_heal_card_cb()
-  local cb = function()
+  local function cb()
     MsgGame:mq_publish2(Const.MSG_ON_HEAL_CARD_REFRESH)
   end
+  
   self:on_ring_card_end(cb)
 end
 
 function M:on_receive_reward_card(is_done)
   if is_done then
-    local cb = function()
+    local function cb()
       MsgGame:mq_publish2(Const.MSG_ON_REWARD_CARD_REFRESH)
     end
+    
     self:on_ring_card_end(cb)
   else
     local card_data = self:get_selecting_card()
@@ -162,9 +164,10 @@ end
 function M:on_reward_card_exec_logic(is_use_col)
   Network:call("c2gs_chal_ring_exec_logic", {is_use_col = is_use_col}, function(ok)
     if ok then
-      local cb = function()
+      local function cb()
         MsgGame:mq_publish2(Const.MSG_ON_REWARD_CARD_REFRESH)
       end
+      
       self:on_ring_card_end(cb)
     end
   end)

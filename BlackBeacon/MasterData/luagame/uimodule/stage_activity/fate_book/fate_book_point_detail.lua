@@ -579,11 +579,14 @@ function ui:reset_treasure_progress()
     UIMgr:get_ui("uimessagetip"):ui_show(content)
     return
   end
-  local first_sure_cb = function()
-    local second_sure_cb = function()
+  
+  local function first_sure_cb()
+    local function second_sure_cb()
       self.v_uicompents.Btn_ResetAward_btn.enabled = false
+      
       ChallengeRingPlusMgr:reset_box_progress(self.v_point_id)
     end
+    
     local data = ChallengeRingPlusMgr:get_ring_data(self.v_config_id)
     if data.pass_flooridx < 1 then
       local tip = Util.format_str("检测到所有宝箱均未达成领取条件\n是否确认重置")
@@ -592,6 +595,7 @@ function ui:reset_treasure_progress()
       second_sure_cb()
     end
   end
+  
   local tip = Util.format_str(string.format("【%s*%d】重置本难度的进度奖励，是否确认？", item_name, need_num))
   UIMgr:get_ui("uinotice_tips"):ui_show(first_sure_cb, nil, tip, Util.format_str("确定"), Util.format_str("取消"))
 end
@@ -635,9 +639,11 @@ function ui:refresh_box_state()
     local award_btn = self:get_button(nil, box_item)
     self:set_button_listener(award_btn, function()
       local str = Util.format_str(string.format("第%d层奖励", index))
-      local get_award_func = function()
+      
+      local function get_award_func()
         ChallengeRingPlusMgr:get_ring_box_award(episode_id, index)
       end
+      
       UIMgr:get_ui("ui_award_tips_com"):ui_show(str, cfg.RingReward[index], state, get_award_func)
     end)
     local complete_obj = self:get_child_gameobj("Complete", box_item)

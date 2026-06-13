@@ -625,6 +625,7 @@ end
 
 function M:on_destroy_gameobj()
   self:exit_state(STATE_NAME.jump)
+  Base.on_destroy_gameobj(self)
 end
 
 function M:on_destroy()

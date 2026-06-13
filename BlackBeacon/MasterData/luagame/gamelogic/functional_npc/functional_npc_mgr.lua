@@ -185,10 +185,12 @@ function M:interact_game_npc(npc_data)
   end
   local game_type = arg3[1][1]
   local game_id = arg3[1][2]
-  local finish_cb = function()
+  
+  local function finish_cb()
     self:on_interact_with_npc(npc_data)
     BehaviorMgr:call_scene_logic_event_fun("on_mini_game_finish", game_type, game_id)
   end
+  
   local arg2 = npc_data.npc_cfg.Arg[2]
   if arg2 then
     if tonumber(arg2[1]) < #arg3[1] - 1 then
@@ -256,7 +258,7 @@ function M:show_collection_tip(drop_list)
   end
 end
 
-local _show_challenge_ring_plus_shop_room = function(self, shop_type)
+local function _show_challenge_ring_plus_shop_room(self, shop_type)
   local challenge_ring_plus_shop_room = UIMgr:get_ui("challenge_ring_plus_shop_room")
   if challenge_ring_plus_shop_room:visible() then
     challenge_ring_plus_shop_room:refresh_data(self.shop_data.shop_data, shop_type, self.cur_npc_data)

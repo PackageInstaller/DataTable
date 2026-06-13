@@ -66,7 +66,7 @@ return {
     Desc = "愿这缕金色的线团，也能在未来照亮您的梦境。",
     IconPath = "UIActMaze/HandBook/ysysr_icon_ys1",
     Id = 8,
-    IllustrateShow = true,
+    IllustrateShow = false,
     Name = "迷宫的终点",
     UnlockDesc = "通过关卡【迷宫的终点】后解锁",
     UsePosUp = true
@@ -75,7 +75,7 @@ return {
     Desc = "混乱的思绪，最终一无所获。",
     IconPath = "UIActMaze/HandBook/ysysr_icon_ys1",
     Id = 9,
-    IllustrateShow = true,
+    IllustrateShow = false,
     Name = "混乱的思绪",
     UnlockDesc = "通过关卡【迷宫的终点】后解锁",
     UsePosUp = false

@@ -63,9 +63,10 @@ function ui:ui_finish_load()
     Card_Destory_Help.confirm_quit_ui(self)
   end)
   self:set_button("BtnReceiveTask", function()
-    local sure_cb = function()
+    local function sure_cb()
       self:confirm_task()
     end
+    
     local tip = Util.format_str("仅能接取一个目标，是否接取？")
     UIMgr:get_ui("uinotice_tips"):ui_show(sure_cb, nil, tip, Util.format_str("确定"), Util.format_str("取消"))
   end)

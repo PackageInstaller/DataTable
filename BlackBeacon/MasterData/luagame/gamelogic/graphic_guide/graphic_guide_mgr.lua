@@ -58,7 +58,7 @@ function M:init(group_id)
   end
 end
 
-local _sorter = function(a, b)
+local function _sorter(a, b)
   if a.sort == b.sort then
     return a.id < b.id
   end

@@ -26,7 +26,8 @@ local ON_MAGIC_BEGIN_MSG_STR = "on_magic_begin_msg"
 local ON_MAGIC_END_MSG_STR = "on_magic_end_msg"
 local LUA_TBL_COUNT = 0
 local LUA_TBLS = {}
-local pop_lua_tbl = function()
+
+local function pop_lua_tbl()
   if LUA_TBL_COUNT <= 0 then
     return {}
   end
@@ -35,13 +36,16 @@ local pop_lua_tbl = function()
   LUA_TBL_COUNT = LUA_TBL_COUNT - 1
   return tbl
 end
-local push_lua_tbl = function(tbl)
+
+local function push_lua_tbl(tbl)
   if LUA_TBL_COUNT >= 50 then
     return
   end
   LUA_TBL_COUNT = LUA_TBL_COUNT + 1
   LUA_TBLS[LUA_TBL_COUNT] = tbl
 end
+
+local default_remove_map = {}
 local DelayMagic = require("manager.magic.delay_magic")
 local MagicParam = require("manager.magic.magic_param")
 local M = Util.create_child_mt(Base)
@@ -75,6 +79,47 @@ function M:_init(char)
   self.v_delay_magic_map = {}
   self.v_magic_param_pool = LuaObjPoolMgr.get_pool("magic_param_pool") or LuaObjPoolMgr.register("magic_param_pool", 50, MagicParam)
   self.v_magic_count_map = {}
+end
+
+function M:on_before_destroy()
+  for _, magic_map in pairs(self.v_magic_id_map) do
+    for _, magic in pairs(magic_map) do
+      if magic.magic_type == MAGIC_TYPE.ShakeCamera then
+        magic:on_remove(default_remove_map)
+      elseif magic.magic_type == MAGIC_TYPE.AddBehavior then
+        magic:on_remove(default_remove_map)
+      end
+      self.v_magic_param_pool:destroy_obj(magic.magic_info)
+      Global.MagicPool:destroy_magic(magic)
+    end
+  end
+  local dynamic_ui = Global.ui_dynamic_canvas
+  if dynamic_ui then
+    for index, float_icon in pairs(self.v_float_icon_map) do
+      dynamic_ui:release_float_icon_item(float_icon)
+      self.v_float_icon_map[index] = nil
+    end
+  end
+  self.v_char = nil
+  self.v_visible_magic_list = nil
+  self.v_magic_id_map = nil
+  self.v_update_magic_mark = nil
+  self.v_magic_type_map = nil
+  self.v_magic_kind_id_map = nil
+  self.v_immunity_type_map = nil
+  self.v_magic_linked_list = nil
+  self.v_magic_rtid_map = nil
+  self.v_need_remove_magics = nil
+  self.v_remove_magic_update_type = nil
+  self.v_magic_effect_info = nil
+  self.v_immune_list = nil
+  self.v_float_icon_map = nil
+  self.v_magic_cd_map = nil
+  self.v_skill_magic_id_map = nil
+  self.v_dying_remove_magic_id_map = nil
+  self.v_switch_abort_magic_id_map = nil
+  self.v_delay_magic_map = nil
+  self.v_magic_count_map = nil
 end
 
 local DEBUG_ALL_MAGIC = false
@@ -410,6 +455,9 @@ function M:check_float_icon_param(magic_cfg, magic_id, rtid)
 end
 
 function M:check_visible_magic(magic, logic_cfg)
+  if not magic or not magic.cfg then
+    return false
+  end
   local is_visible = false
   if not Util.is_empty(magic.cfg.Icon) then
     is_visible = true
@@ -759,8 +807,6 @@ function M:_mark_remove_magic(magic, update_type)
   end
 end
 
-local default_remove_map = {}
-
 function M:_do_remove_magic(magic, not_break)
   if magic.is_mark_remove then
     return
@@ -956,34 +1002,7 @@ function M:on_settle()
   self:_update_remove_magics()
 end
 
-function M:on_destroy()
-  for _, magic_map in pairs(self.v_magic_id_map) do
-    for _, magic in pairs(magic_map) do
-      if magic.magic_type == MAGIC_TYPE.ShakeCamera then
-        magic:on_remove(default_remove_map)
-      elseif magic.magic_type == MAGIC_TYPE.AddBehavior then
-        magic:on_remove(default_remove_map)
-      end
-      self.v_magic_param_pool:destroy_obj(magic.magic_info)
-      Global.MagicPool:destroy_magic(magic)
-    end
-  end
-  local dynamic_ui = Global.ui_dynamic_canvas
-  if dynamic_ui then
-    for index, float_icon in pairs(self.v_float_icon_map) do
-      dynamic_ui:release_float_icon_item(float_icon)
-      self.v_float_icon_map[index] = nil
-    end
-  end
-  self.v_update_delay_magic_list = nil
-  self.v_next_inteval = 0
-  self.v_magic_id_map = {}
-  self.v_magic_type_map = {}
-  self.v_magic_kind_id_map = {}
-  self.v_visible_magic_list = {}
-end
-
-local _get_update_inteval = function(self, magic)
+local function _get_update_inteval(self, magic)
   local time_scale_type = magic:get_timescale_type()
   if time_scale_type == MagicDef.TIME_SCELE_TYPE.UNSCALE then
     return self.v_untimescale_inteval
@@ -993,7 +1012,8 @@ local _get_update_inteval = function(self, magic)
     return self.v_timescale_inteval
   end
 end
-local _get_each_update_inteval = function(self, magic)
+
+local function _get_each_update_inteval(self, magic)
   local time_scale_type = magic:get_timescale_type()
   if time_scale_type == MagicDef.TIME_SCELE_TYPE.UNSCALE then
     return Global.delta_time
@@ -1003,7 +1023,8 @@ local _get_each_update_inteval = function(self, magic)
     return self.v_char:get_dt()
   end
 end
-local _update_magic_duration = function(self, magic, each_frame_update, is_refresh_duration, upadte_dura)
+
+local function _update_magic_duration(self, magic, each_frame_update, is_refresh_duration, upadte_dura)
   if not each_frame_update and is_refresh_duration then
     local inteval = _get_update_inteval(self, magic)
     magic.left_duration = magic.left_duration - inteval
@@ -1015,8 +1036,10 @@ local _update_magic_duration = function(self, magic, each_frame_update, is_refre
     magic.left_duration = magic.left_duration - inteval
   end
 end
+
 local is_update_remove
-local _update_magic = function(self, magic, is_refresh_duration, upadte_dura)
+
+local function _update_magic(self, magic, is_refresh_duration, upadte_dura)
   local cfg = magic.cfg
   if magic.duration >= 0 then
     _update_magic_duration(self, magic, cfg.each_frame_update, is_refresh_duration, upadte_dura)
@@ -1162,7 +1185,7 @@ function M:get_magic_count_by_magic_id(magic_id)
   return self.v_magic_count_map[magic_id] or 0
 end
 
-local _add_immune_magic_by_element_type = function(self, skill_type, element_type, magic_obj)
+local function _add_immune_magic_by_element_type(self, skill_type, element_type, magic_obj)
   local list = self.v_immune_list[skill_type]
   if not list[element_type] then
     list[element_type] = {}
@@ -1181,7 +1204,8 @@ local _add_immune_magic_by_element_type = function(self, skill_type, element_typ
   insert_index = insert_index or #magic_list + 1
   table.insert(magic_list, insert_index, magic_obj)
 end
-local _add_immune_magic_by_skill_type = function(self, skill_type, param2, magic_obj)
+
+local function _add_immune_magic_by_skill_type(self, skill_type, param2, magic_obj)
   if not self.v_immune_list[skill_type] then
     self.v_immune_list[skill_type] = {}
   end

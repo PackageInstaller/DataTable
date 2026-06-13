@@ -89,7 +89,8 @@ function ui:click_search()
     Util.show_message_tip(2336)
     return
   end
-  local search_back = function()
+  
+  local function search_back()
     local search_list = FriendMgr:get_search_role_list()
     if #search_list <= 0 then
       Util.show_message_tip(2198)
@@ -98,6 +99,7 @@ function ui:click_search()
       self.v_uicompents.BtnRefresh_btn.gameObject:SetActive(false)
     end
   end
+  
   if type(input_txt) == "string" then
     FriendMgr:request_search_role(nil, input_txt, search_back)
   elseif type(input_txt) == "number" then
@@ -218,10 +220,12 @@ function ui:update_player_info(obj, player_data, index)
 end
 
 function ui:on_apply_add_friend(player_data)
-  local apply_callback = function(uuid, type)
+  local function apply_callback(uuid, type)
     Util.show_message_tip(2194)
+    
     self:update_player_state(uuid, type)
   end
+  
   local player_friend_num = player_data.friend_num
   local self_friend_num = FriendMgr:get_friend_num()
   if player_friend_num >= FRIEND_MAX_NUM then

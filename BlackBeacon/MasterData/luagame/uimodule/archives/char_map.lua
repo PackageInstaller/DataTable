@@ -89,7 +89,8 @@ function ui:filter_and_sort_buddy(original_data, filter_func)
       _tinsert(ret_data, data)
     end
   end
-  local sort_func = function(a, b)
+  
+  local function sort_func(a, b)
     if a.own ~= b.own then
       return a.own
     elseif a.quality ~= b.quality then
@@ -98,6 +99,7 @@ function ui:filter_and_sort_buddy(original_data, filter_func)
       return a.id < b.id
     end
   end
+  
   _tsort(ret_data, sort_func)
   return ret_data
 end
@@ -335,7 +337,8 @@ function ui:update_model_view(buddy_id)
   self.v_cur_model = buddy_id
   local model_fashion_id = FashionMgr:get_init_fashion_model_id(buddy_id)
   local model_idx
-  local load_npc_cb = function()
+  
+  local function load_npc_cb()
     if self.v_model_view then
       self.v_model_view:hide_model_node(false)
       self.v_model_view:signboard_set_dynamic_bone_enable(true)
@@ -345,6 +348,7 @@ function ui:update_model_view(buddy_id)
     end
     CharacterMgr:play_hero_approach_anim(buddy_id, 2, self.v_model_view, true)
   end
+  
   local params = {
     model_id = model_fashion_id,
     npc_id = buddy_id,

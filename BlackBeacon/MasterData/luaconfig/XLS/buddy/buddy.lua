@@ -98,7 +98,6 @@ return {
     Painter = "Painter",
     Priority = 98,
     Quality = 5,
-    ReleaseTime = 997,
     ResAttrId = 86,
     RuneColor = {"b14646", "ffd07b"},
     RuneIcon = {
@@ -150,7 +149,6 @@ return {
     Painter = "dada",
     Priority = 97,
     Quality = 4,
-    ReleaseTime = 997,
     ResAttrId = 86,
     RuneColor = {"6f97ed", "b14646"},
     RuneIcon = {
@@ -264,7 +262,6 @@ return {
     Painter = "2k",
     Priority = 95,
     Quality = 4,
-    ReleaseTime = 997,
     ResAttrId = 86,
     RuneColor = {"6f97ed", "ffd07b"},
     RuneIcon = {
@@ -316,7 +313,6 @@ return {
     Painter = "2k",
     Priority = 94,
     Quality = 4,
-    ReleaseTime = 997,
     ResAttrId = 86,
     RuneColor = {"b14646", "ffd07b"},
     RuneIcon = {
@@ -368,7 +364,6 @@ return {
     Painter = "小树",
     Priority = 93,
     Quality = 4,
-    ReleaseTime = 997,
     ResAttrId = 86,
     RuneColor = {"b14646", "6f97ed"},
     RuneIcon = {
@@ -1561,14 +1556,14 @@ return {
     CV_EN = "Hayley",
     CV_JP = "",
     ChargePointCount = 6,
-    ComboId = {},
+    ComboId = {25},
     Desc = "巴拉莱卡",
     DisplayViewOffset2 = {
       22,
       67,
       0.58
     },
-    Element = 4,
+    Element = 3,
     ExchangeCount = 15,
     ExchangeId = 24,
     FashionInitId = 3001025,
@@ -1584,19 +1579,20 @@ return {
         1
       },
       "Hero/1001025",
-      "Hero/1001025"
+      "Hero/1001025",
+      [8] = "1001025"
     },
     Id = 1001025,
     IsChargedRes = 0,
     IsShow = 0,
-    Job = 1,
+    Job = 2,
     ModelId = 1001025,
     Name = "巴拉莱卡",
     NoFightId = 1001025,
     Painter = "Painter",
     Priority = 89,
     Quality = 5,
-    ReleaseTime = 997,
+    ReleaseTime = 52001,
     ResAttrId = 86,
     RuneColor = {"ffd07b", "6f97ed"},
     RuneIcon = {
@@ -1605,13 +1601,19 @@ return {
     },
     RuneName = {"进攻", "辅助"},
     RuneType = {2, 3},
+    SettleViewOffset1 = {
+      -226,
+      -283,
+      1.4
+    },
     SettleViewOffset2 = {
       -226,
       -283,
       1.4
     },
+    SettleViewSpine1 = 1001025,
     ShowFightResType = 2,
-    SpineId = 1001004,
+    SpineId = 1001025,
     Tag = {2, 12},
     WeaponInitId = 2010250,
     WeaponSubType = 25,
@@ -1734,7 +1736,7 @@ return {
     Id = 1001027,
     IsChargedRes = 0,
     IsShow = 0,
-    Job = 2,
+    Job = 3,
     ModelId = 1001027,
     Name = "金缕",
     NoFightId = 1001027,
@@ -1762,14 +1764,14 @@ return {
     SettleViewSpine1 = 11001027,
     ShowFightResType = 2,
     SpineId = 1001027,
-    Tag = {16, 9},
+    Tag = {12, 9},
     WeaponInitId = 2010270,
     WeaponSubType = 27,
     WorldDesc = "五星级角色"
   },
   [1001028] = {
     AdvanceItem = 20028,
-    ArchiveIsShow = 0,
+    ArchiveIsShow = 1,
     CV = "暂无",
     CV_EN = "",
     CV_JP = "",
@@ -1801,7 +1803,7 @@ return {
     },
     Id = 1001028,
     IsChargedRes = 0,
-    IsShow = 0,
+    IsShow = 1,
     Job = 3,
     ModelId = 1001028,
     Name = "薇丝珀",
@@ -1809,7 +1811,6 @@ return {
     Painter = "oldren",
     Priority = 99,
     Quality = 5,
-    ReleaseTime = 997,
     ResAttrId = 86,
     RuneColor = {"b14646", "6f97ed"},
     RuneIcon = {
@@ -1832,7 +1833,7 @@ return {
   },
   [1001029] = {
     AdvanceItem = 20029,
-    ArchiveIsShow = 0,
+    ArchiveIsShow = 1,
     CV = "暂无",
     CV_EN = "",
     CV_JP = "",
@@ -1864,7 +1865,7 @@ return {
     },
     Id = 1001029,
     IsChargedRes = 0,
-    IsShow = 0,
+    IsShow = 1,
     Job = 1,
     ModelId = 1001029,
     Name = "黑铂鸢",
@@ -1872,7 +1873,6 @@ return {
     Painter = "oldren",
     Priority = 91,
     Quality = 5,
-    ReleaseTime = 997,
     ResAttrId = 86,
     RuneColor = {"b14646", "6f97ed"},
     RuneIcon = {
@@ -1923,7 +1923,8 @@ return {
         1
       },
       "Hero/1001030",
-      "Hero/1001030"
+      "Hero/1001030",
+      [8] = "1001030"
     },
     Id = 1001030,
     IsChargedRes = 0,
@@ -1935,7 +1936,7 @@ return {
     Painter = "oldren",
     Priority = 99,
     Quality = 5,
-    ReleaseTime = 997,
+    ReleaseTime = 54001,
     ResAttrId = 86,
     RuneColor = {"b14646", "6f97ed"},
     RuneIcon = {
@@ -1944,13 +1945,19 @@ return {
     },
     RuneName = {"进攻", "辅助"},
     RuneType = {1, 3},
+    SettleViewOffset1 = {
+      -226,
+      -283,
+      1.4
+    },
     SettleViewOffset2 = {
       -226,
       -283,
       1.4
     },
+    SettleViewSpine1 = 1001030,
     ShowFightResType = 2,
-    SpineId = 1001001,
+    SpineId = 1001030,
     Tag = {9, 11},
     WeaponInitId = 2010300,
     WeaponSubType = 30,

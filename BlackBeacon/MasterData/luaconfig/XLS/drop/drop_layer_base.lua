@@ -287,6 +287,18 @@ return {
     MinCount = 1,
     Name = "郁离"
   },
+  [4000025] = {
+    Arg = {
+      0,
+      0,
+      0
+    },
+    ID = 4000025,
+    ItemId = 1001025,
+    MaxCount = 1,
+    MinCount = 1,
+    Name = "巴拉莱卡"
+  },
   [4000026] = {
     Arg = {
       0,
@@ -310,6 +322,18 @@ return {
     MaxCount = 1,
     MinCount = 1,
     Name = "金缕"
+  },
+  [4000030] = {
+    Arg = {
+      0,
+      0,
+      0
+    },
+    ID = 4000030,
+    ItemId = 1001030,
+    MaxCount = 1,
+    MinCount = 1,
+    Name = "旃檀"
   },
   [4100010] = {
     Arg = {
@@ -1175,6 +1199,42 @@ return {
     MinCount = 1,
     Name = "纤云弄巧"
   },
+  [4100250] = {
+    Arg = {
+      0,
+      0,
+      0
+    },
+    ID = 4100250,
+    ItemId = 2010250,
+    MaxCount = 1,
+    MinCount = 1,
+    Name = "雅弗改制长枪"
+  },
+  [4100251] = {
+    Arg = {
+      0,
+      0,
+      0
+    },
+    ID = 4100251,
+    ItemId = 2010251,
+    MaxCount = 1,
+    MinCount = 1,
+    Name = "雅弗改制长枪·改良"
+  },
+  [4100252] = {
+    Arg = {
+      0,
+      0,
+      0
+    },
+    ID = 4100252,
+    ItemId = 2010252,
+    MaxCount = 1,
+    MinCount = 1,
+    Name = "斯文托维特"
+  },
   [4100260] = {
     Arg = {
       0,
@@ -1246,6 +1306,42 @@ return {
     MaxCount = 1,
     MinCount = 1,
     Name = "幽思凝影"
+  },
+  [4100300] = {
+    Arg = {
+      0,
+      0,
+      0
+    },
+    ID = 4100300,
+    ItemId = 2010300,
+    MaxCount = 1,
+    MinCount = 1,
+    Name = "旃檀普武"
+  },
+  [4100301] = {
+    Arg = {
+      0,
+      0,
+      0
+    },
+    ID = 4100301,
+    ItemId = 2010301,
+    MaxCount = 1,
+    MinCount = 1,
+    Name = "旃檀普武·改良"
+  },
+  [4100302] = {
+    Arg = {
+      0,
+      0,
+      0
+    },
+    ID = 4100302,
+    ItemId = 2010302,
+    MaxCount = 1,
+    MinCount = 1,
+    Name = "旃檀专武"
   },
   [4110000] = {
     Arg = {
@@ -1535,6 +1631,18 @@ return {
     MinCount = 1,
     Name = "曲径"
   },
+  [4166200] = {
+    Arg = {
+      0,
+      0,
+      0
+    },
+    ID = 4166200,
+    ItemId = 28,
+    MaxCount = 240,
+    MinCount = 240,
+    Name = "宿命之印"
+  },
   [4167010] = {
     Arg = {
       0,
@@ -1557,6 +1665,18 @@ return {
     ItemId = 28,
     MaxCount = 260,
     MinCount = 260,
+    Name = "宿命之印"
+  },
+  [4167012] = {
+    Arg = {
+      0,
+      0,
+      0
+    },
+    ID = 4167012,
+    ItemId = 28,
+    MaxCount = 300,
+    MinCount = 300,
     Name = "宿命之印"
   },
   [4167020] = {

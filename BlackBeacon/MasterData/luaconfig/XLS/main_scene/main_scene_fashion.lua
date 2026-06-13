@@ -1,10 +1,13 @@
 return {
   [50020001] = {
     AtmosphereName = "Change_Ocean",
+    ClockAnimName = "FocusOnClock_clock_xiari",
     Desc = "用于解锁主题场景-静海之间，解锁后可在装饰中更换主界面场景。",
+    DrawcardPDName = "Drawcard_PD_Ocean",
     Icon = "zjmpf_1",
     Id = 50020001,
     Jump = {27001},
+    JumpId = 27001,
     LockDesc = "可在星海映夏活动中，通过星愿兑换处获取。",
     MaxWidth = 600,
     Name = "静海之间",

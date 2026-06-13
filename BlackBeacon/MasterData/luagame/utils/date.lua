@@ -386,9 +386,10 @@ function M.is_daily_first(last_timestamp)
 end
 
 function M.is_in_time(time_table, last_receive_time)
-  local compare = function(a, b)
+  local function compare(a, b)
     return a[1][1] * 60 + a[1][2] < b[1][1] * 60 + b[1][2]
   end
+  
   table.sort(time_table, compare)
   local server_time = Date.server_time()
   local tb = os.date("!*t", server_time)

@@ -197,7 +197,8 @@ end
 function ui:dfs(start, connect_list)
   connect_list[start] = true
   local pipe_data = self.v_pipe_list[start]
-  local check_can_connect = function(direction)
+  
+  local function check_can_connect(direction)
     local index
     if 0 == direction then
       index = start - self.v_map_cfg.colCnt
@@ -213,6 +214,7 @@ function ui:dfs(start, connect_list)
     end
     return false, nil
   end
+  
   for k, v in ipairs(pipe_data.directions) do
     local result, index = check_can_connect(v)
     if result then

@@ -610,7 +610,6 @@ return {
     DestinyLevelDropType = 1,
     DifficultyNum = 2,
     DifficultyText = "困难",
-    EndTime = 10016,
     EpisodeId = 200410321,
     FastChallengeId = 9,
     IconPath = "UIEvent03/20240331/Event_icon_mydj2",
@@ -636,8 +635,7 @@ return {
       0,
       0,
       0.7
-    },
-    StartTime = 10015
+    }
   },
   [2001] = {
     Ability = 1,
@@ -862,7 +860,6 @@ return {
     DestinyLevelDropType = 2,
     DifficultyNum = 2,
     DifficultyText = "困难",
-    EndTime = 10016,
     EpisodeId = 20042012003,
     FastChallengeId = 16,
     IconPath = "UIEvent03/20240331/Event_icon_mydj2",
@@ -888,7 +885,6 @@ return {
       0,
       0,
       0.7
-    },
-    StartTime = 10015
+    }
   }
 }

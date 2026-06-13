@@ -399,9 +399,11 @@ end
 
 function ui:click_reborn_btn()
   local _, reborn_cost_num, reborn_cost_id = TowerMgr:get_reborn_cost()
-  local callback1 = function()
+  
+  local function callback1()
     self:requese_reborn()
   end
+  
   local item_cfg = ShareRes.create("item.item", reborn_cost_id)
   local item_tip = reborn_cost_num .. item_cfg.Name
   local stip = Util.format_str("是否使用{1}，进行复活", item_tip)
@@ -409,9 +411,10 @@ function ui:click_reborn_btn()
 end
 
 function ui:click_archieve_born_btn()
-  local callback = function()
+  local function callback()
     self:ui_hide()
   end
+  
   ChapterMgr:request_archieve_reborn_all(callback)
 end
 
@@ -419,10 +422,12 @@ function ui:click_confirm_btn()
   if NOT_PROGRESS_BATTLE_TYPE[self.v_fight_type] and self.v_state ~= CHAPTER_CONFIG.POINTSTATE.complete then
     UIMgr:get_ui("not_progress_battle_def_settle"):ui_show()
   else
-    local callback = function()
+    local function callback()
       Global.scene_mgr:on_enter_main_scene()
+      
       UIMgr:revert_cache_ui()
     end
+    
     if SceneMgr:check_main_scene() then
       self:ui_hide()
     end
@@ -505,9 +510,11 @@ end
 function ui:new_ui(item_id, item_num)
   local award_ui = self:get_auto_cache(CR_REWARD_ITEM_KEY)
   local item_quality = Util.get_image("ItemQuality", award_ui)
-  local click_cb = function()
+  
+  local function click_cb()
     UIMgr:get_ui("itemTip"):ui_show({item_id = item_id})
   end
+  
   self:create_item_obj(nil, item_quality.gameObject, nil, {item_id = item_id, click_cb = click_cb})
   local item_txt = Util.get_text("ItemAmount/Bg/ItemNum", award_ui)
   item_txt.text = item_num

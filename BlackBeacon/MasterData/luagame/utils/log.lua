@@ -140,4 +140,43 @@ function logging.force_print(...)
   _origin_print(...)
 end
 
+function logging.upload_log()
+  local PathDefine = require("utils.path_define")
+  local Account = require("gamelogic.account.account")
+  local log_path = PathDefine.updown_log_dir
+  local log_txt = "无log信息"
+  local contextHead = {}
+  local form = UnityEngine.WWWForm()
+  local platform = PathDefine.platform
+  local account = Account:get_account() or ""
+  local uuid = Global.player_uuid or ""
+  table.insert(contextHead, "account = " .. account)
+  table.insert(contextHead, "uuid = " .. uuid)
+  table.insert(contextHead, "platform = " .. platform)
+  table.insert(contextHead, "deviceModel = " .. UnityEngine.SystemInfo.deviceModel)
+  table.insert(contextHead, "deviceName = " .. UnityEngine.SystemInfo.deviceName)
+  table.insert(contextHead, "deviceUniqueIdentifier = " .. UnityEngine.SystemInfo.deviceUniqueIdentifier)
+  table.insert(contextHead, "graphicsDeviceID = " .. UnityEngine.SystemInfo.graphicsDeviceID)
+  table.insert(contextHead, "graphicsDeviceName = " .. UnityEngine.SystemInfo.graphicsDeviceName)
+  table.insert(contextHead, "graphicsMemorySize = " .. UnityEngine.SystemInfo.graphicsMemorySize)
+  table.insert(contextHead, "systemMemorySize = " .. UnityEngine.SystemInfo.systemMemorySize)
+  form:AddField("classID", "Log")
+  form:AddField("localTime", os.date("%Y-%m-%d_%H-%M-%S", os.time()))
+  form:AddField("roleID", os.date("%Y-%m-%d_%H-%M-%S", os.time()) .. "--Log.txt")
+  local err_key = "**Log**" .. UnityEngine.SystemInfo.deviceModel .. "_" .. platform .. "_" .. account .. "_" .. uuid
+  form:AddField("errorKey", err_key)
+  local file1 = io.input(log_path)
+  if not file1 then
+    Log.Error("log not exist, path = " .. log_path)
+    return
+  end
+  log_txt = io.read("*a")
+  io.close()
+  local content = ""
+  content = table.concat(contextHead, "\n") .. "\n" .. log_txt
+  form:AddField("content", content)
+  CSHelper.PostWWWForm("http://dbug-error-log.mz/collectlog.php", form)
+  Util.show_notify_popup_message(nil, "上传日志成功")
+end
+
 return logging

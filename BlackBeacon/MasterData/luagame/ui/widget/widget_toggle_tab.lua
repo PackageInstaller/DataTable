@@ -1,6 +1,6 @@
 local Base = require("ui.widget.widget_base")
 local M = Util.create_child_mt(Base)
-local TypeUnityUIText = TypeUnityUIText
+local TypeUnityUIText = _ENV.TypeUnityUIText
 local NAME_TOGGLE_LIGHT = "Toggle_Hight{1}"
 local NAME_TOGGLE_TEXT = "Text"
 local COLOR_DIME = tonumber("6A779E", 16)

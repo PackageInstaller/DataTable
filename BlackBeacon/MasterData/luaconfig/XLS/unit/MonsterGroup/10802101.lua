@@ -1,11 +1,11 @@
 return {
   unitList = {
     {
-      Rotate = 0.0,
+      Rotate = 90.0,
       IsEdit = true,
       IsShow = false,
       IsNoUse = false,
-      IsLookAtRole = true,
+      IsLookAtRole = false,
       Camp = 4,
       UnitID = 20205501,
       InitPos = "M1",
@@ -19,11 +19,11 @@ return {
       MagicId = 0
     },
     {
-      Rotate = 0.0,
+      Rotate = 90.0,
       IsEdit = true,
       IsShow = false,
       IsNoUse = false,
-      IsLookAtRole = true,
+      IsLookAtRole = false,
       Camp = 4,
       UnitID = 20105701,
       InitPos = "M2",
@@ -37,11 +37,11 @@ return {
       MagicId = 0
     },
     {
-      Rotate = 0.0,
+      Rotate = 90.0,
       IsEdit = true,
       IsShow = false,
       IsNoUse = false,
-      IsLookAtRole = true,
+      IsLookAtRole = false,
       Camp = 4,
       UnitID = 20205501,
       InitPos = "M3",
@@ -55,11 +55,11 @@ return {
       MagicId = 0
     },
     {
-      Rotate = 0.0,
+      Rotate = 90.0,
       IsEdit = true,
       IsShow = false,
       IsNoUse = false,
-      IsLookAtRole = true,
+      IsLookAtRole = false,
       Camp = 4,
       UnitID = 20105701,
       InitPos = "M4",

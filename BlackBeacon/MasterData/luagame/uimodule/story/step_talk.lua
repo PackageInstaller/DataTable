@@ -281,10 +281,12 @@ function M:show_effect()
   local step_cfg = self.v_step_cfg
   local show_effect_data = step_cfg.ShowEffect
   local effect_type = show_effect_data.Effect
-  local callback = function()
+  
+  local function callback()
     self:shake_anim()
     self:update_talk_desc()
   end
+  
   normal_talk_obj:SetActive(true)
   talk_obj:SetActive(true)
   talk_obj:GetComponent("CanvasGroup").alpha = 1
@@ -307,10 +309,12 @@ function M:hide_effect()
   local step_cfg = self.v_step_cfg
   local hide_effect_data = step_cfg.HideEffect
   local effect_type = hide_effect_data.Effect
-  local callback = function()
+  
+  local function callback()
     self:shake_anim()
     self:complete()
   end
+  
   if effect_type == SHOW_EFFECT_TYPE.DEFAULT then
     normal_talk_obj:SetActive(false)
     canvas.alpha = 0
@@ -472,7 +476,8 @@ function M:desc_effect_default2()
   local desc = LanguageMgr:get_story_text(step_cfg.Content)
   self:enable_talk_next(false)
   desc = self:replace_talk_content(desc)
-  local cb = function()
+  
+  local function cb()
     if not self.v_step_all_cfg.MustPlay then
       self:enable_talk_next(true)
     else
@@ -483,6 +488,7 @@ function M:desc_effect_default2()
     self.v_complete_data.is_text_finish = true
     self:check_complete()
   end
+  
   self.v_talk_content.text = ""
   local string_len = Util.get_string_len(desc)
   if step_cfg.hasStyledText then
@@ -528,9 +534,11 @@ function M:desc_effect_garbled()
   local step_cfg = self.v_step_cfg
   local desc = LanguageMgr:get_story_text(step_cfg.Content)
   desc = self:replace_talk_content(desc)
-  local cb = function()
+  
+  local function cb()
     self:complete()
   end
+  
   self.v_talk_content.text = ""
   local string_len = Util.get_string_len(desc)
   local sequence = self:get_new_sequence("desc_talkeffect_garbled")
@@ -546,12 +554,14 @@ function M:check_create_desc_effect()
     return
   end
   local full_res_path = CSResLoader.GetFullPath(effect_name)
-  local callback = function(_, obj)
+  
+  local function callback(_, obj)
     self.v_desc_effect = obj
     obj.transform:SetParent(self.v_uicompents.TalkContentRoot_rect)
     obj:ResetAttr()
     obj.transform:SetLocalScaleA(0.3)
   end
+  
   ResMgr:load_gameobj_async(full_res_path, nil, nil, callback)
 end
 

@@ -448,7 +448,7 @@ end
 function ui:update_buff_duration()
   for index, item in pairs(self.v_buff_item) do
     local magic = item:get_magic()
-    if not magic then
+    if not magic or not magic.cfg then
       self:remove_buff(index)
     elseif magic.cfg.each_frame_update then
       item:update_fillamount(magic.left_duration / magic.duration)
@@ -524,6 +524,10 @@ function ui:ui_on_destroy()
 end
 
 function ui:update_recover_hp()
+  local hero = Global.hero
+  if not hero or hero:is_destroy() then
+    return
+  end
   local hp_percent = Global.hero.attr_mgr:get_hp_percent()
   local x, _ = self.v_uicompents.BloodFill1_rect:GetSizeDeltaA()
   local cur_per = (x - HP_BAR_MIN_WIDTH) / HP_BAR_RANGE

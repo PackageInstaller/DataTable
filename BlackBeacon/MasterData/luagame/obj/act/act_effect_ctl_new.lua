@@ -46,7 +46,7 @@ end
 function EffectParam:_init()
 end
 
-function EffectParam:dispose_param()
+function EffectParam:on_destroy()
   for i = 1, param_count do
     self[EFFECT_PARAM_KEY[i]] = nil
   end
@@ -77,7 +77,7 @@ local IdxParam = Util.create_class()
 function IdxParam:_init()
 end
 
-function IdxParam:dispose_idx_param()
+function IdxParam:on_destroy()
   for i = 1, POSITION_OFFSET do
     self[i] = nil
   end
@@ -115,11 +115,13 @@ local BIND_TYPE_UPDATE_FUN = {
   end
 }
 local USE_EFFECT_ID = 0
-local get_effect_id = function()
+
+local function get_effect_id()
   USE_EFFECT_ID = USE_EFFECT_ID + 1
   return USE_EFFECT_ID
 end
-local _set_effect_scale_on_create = function(transform, effect_status, scale)
+
+local function _set_effect_scale_on_create(transform, effect_status, scale)
   local scale_x, scale_y, scale_z
   local random_scale_multi = 1
   if effect_status.IsRandomScale then
@@ -134,7 +136,8 @@ local _set_effect_scale_on_create = function(transform, effect_status, scale)
   end
   transform:SetLocalScaleA(scale_x, scale_y, scale_z)
 end
-local _init_effect_position = function(self, effect_id)
+
+local function _init_effect_position(self, effect_id)
   local effect_info = self.v_effect_list[effect_id]
   local offset_x, offset_y, offset_z
   local go = effect_info[EFFECT_IDX_GO]
@@ -188,6 +191,14 @@ function M:_init(char)
   self.v_effect_end_timer_map = {}
   self.v_cur_effect_priority = 1
   self.v_effect_priority_map = {}
+end
+
+function M:on_before_destroy()
+  self.v_char = nil
+end
+
+function M:on_destroy_gameobj()
+  self:stop_all()
 end
 
 function M:late_update()
@@ -244,12 +255,7 @@ function M:low_update()
         self.v_effect_list[effect_id] = nil
         self.force_set_missile_speed_list[effect_id] = nil
         self.v_only_pos_data_list[effect_id] = nil
-        if effect_info.dispose_idx_param then
-          effect_info:dispose_idx_param()
-          IDX_PARAM_POOL:destroy_obj(effect_info)
-        else
-          Log.Error("effect_info.dispose_idx_param is nil", effect_info[EFFECT_IDX_GO].name)
-        end
+        IDX_PARAM_POOL:destroy_obj(effect_info)
       else
         if go:CheckParent() and follow_time and time > follow_time then
           go:SetNullParent()
@@ -383,6 +389,9 @@ function M:play_attach_effect(effect_param, owner)
             table.insert(effect_active_state, active_state_list[i])
           end
         end
+        if not role_go then
+          Log.Error("role_go为空:" .. effect_param.prefab_name)
+        end
         timeline_helper:BindingRes(self.v_char.model_cfg.ModelPath, role_go.gameObject, raw_obj_list)
         local attach_point_com = role_go:GetComponent(typeof(CS.AttachPoint))
         local hero_weapon_mgr = self.v_char.weapon_mgr
@@ -486,11 +495,8 @@ function M:stop_all(is_world)
   if not is_world then
     for effect_id, effect_info in pairs(self.v_effect_list) do
       if not effect_info or type(effect_info) ~= TABLE_TYPE then
-      elseif effect_info.dispose_idx_param then
-        effect_info:dispose_idx_param()
-        IDX_PARAM_POOL:destroy_obj(effect_info)
       else
-        Log.Error("effect_info.dispose_idx_param is nil", effect_info[1].name, effect_id)
+        IDX_PARAM_POOL:destroy_obj(effect_info)
       end
     end
     self.v_effect_list = {}
@@ -587,12 +593,7 @@ function M:clear_effect_info(effect_id)
     Global.camera:remove_role_effect_sign(self.v_char.uuid, effect_id)
   end
   if effect_info then
-    if effect_info.dispose_idx_param then
-      effect_info:dispose_idx_param()
-      IDX_PARAM_POOL:destroy_obj(effect_info)
-    else
-      Log.Error("effect_info.dispose_idx_param is nil", effect_info[1].name, effect_id)
-    end
+    IDX_PARAM_POOL:destroy_obj(effect_info)
   end
 end
 
@@ -624,19 +625,9 @@ function M:_on_create_effect(creat_effect_data)
   if not effect_list_element or effect_list_element ~= LOADING_TAG or Util.is_destroy(self.v_char) or not is_world and Util.is_nil(parent) then
     local effect_info = self.v_effect_list[effect_id]
     if type(effect_info) == TABLE_TYPE then
-      if effect_info.dispose_idx_param then
-        effect_info:dispose_idx_param()
-        IDX_PARAM_POOL:destroy_obj(effect_info)
-      else
-        Log.Error("effect_info.dispose_idx_param is nil", effect_info[1].name, effect_id)
-      end
+      IDX_PARAM_POOL:destroy_obj(effect_info)
     end
-    if creat_effect_data.dispose_param then
-      creat_effect_data:dispose_param()
-      PARAM_POOL:destroy_obj(creat_effect_data)
-    else
-      Log.Error("creat_effect_data.dispose_param is nil", creat_effect_data.prefab_name, creat_effect_data.effect_id)
-    end
+    PARAM_POOL:destroy_obj(creat_effect_data)
     self.v_effect_list[effect_id] = nil
     self.force_set_missile_speed_list[effect_id] = nil
     self.v_only_pos_data_list[effect_id] = nil
@@ -732,12 +723,7 @@ function M:_on_create_effect(creat_effect_data)
     effect_status:SetupOwner(owner_obj.gameObject)
   end
   self:play_effect_triple_sound(self.v_effect_list[effect_id], EFFECT_SOUND_TYPE.START)
-  if creat_effect_data.dispose_param then
-    creat_effect_data:dispose_param()
-    PARAM_POOL:destroy_obj(creat_effect_data)
-  else
-    Log.Error("creat_effect_data.dispose_param is nil", creat_effect_data.prefab_name, creat_effect_data.effect_id)
-  end
+  PARAM_POOL:destroy_obj(creat_effect_data)
   if Global.debug_hide_effect then
     go:SetActive(false)
   end
@@ -898,10 +884,6 @@ function M:clear_effect_on_change_go()
       self:_stop_effect(effect_info, effect_id)
     end
   end
-end
-
-function M:on_destroy_gameobj()
-  self:stop_all()
 end
 
 function M.create_effect_param()

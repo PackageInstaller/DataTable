@@ -7,8 +7,8 @@ return {
       IsNoUse = false,
       IsLookAtRole = true,
       Camp = 4,
-      UnitID = 20103001,
-      InitPos = "M1",
+      UnitID = 20106001,
+      InitPos = "M2",
       OffSetX = 0.0,
       OffSetZ = 0.0,
       Level = 0,
@@ -16,7 +16,7 @@ return {
       UnitKey = "0_601301_0",
       AutoLevel = 1,
       Delay = 0.0,
-      MagicId = 5000001
+      MagicId = 0
     },
     {
       Rotate = 0.0,
@@ -25,8 +25,8 @@ return {
       IsNoUse = false,
       IsLookAtRole = true,
       Camp = 4,
-      UnitID = 20103001,
-      InitPos = "M2",
+      UnitID = 20106001,
+      InitPos = "M3",
       OffSetX = 0.0,
       OffSetZ = 0.0,
       Level = 0,
@@ -34,7 +34,7 @@ return {
       UnitKey = "0_601301_1",
       AutoLevel = 1,
       Delay = 0.0,
-      MagicId = 5000001
+      MagicId = 0
     },
     {
       Rotate = 0.0,
@@ -43,8 +43,8 @@ return {
       IsNoUse = false,
       IsLookAtRole = true,
       Camp = 4,
-      UnitID = 20103001,
-      InitPos = "M3",
+      UnitID = 20100901,
+      InitPos = "M5",
       OffSetX = 0.0,
       OffSetZ = 0.0,
       Level = 0,
@@ -52,7 +52,7 @@ return {
       UnitKey = "0_601301_2",
       AutoLevel = 1,
       Delay = 0.0,
-      MagicId = 5000001
+      MagicId = 0
     },
     {
       Rotate = 0.0,
@@ -61,8 +61,8 @@ return {
       IsNoUse = false,
       IsLookAtRole = true,
       Camp = 4,
-      UnitID = 20103001,
-      InitPos = "M4",
+      UnitID = 20100901,
+      InitPos = "M6",
       OffSetX = 0.0,
       OffSetZ = 0.0,
       Level = 0,
@@ -70,7 +70,7 @@ return {
       UnitKey = "0_601301_3",
       AutoLevel = 1,
       Delay = 0.0,
-      MagicId = 5000001
+      MagicId = 0
     },
     {
       Rotate = 0.0,
@@ -79,8 +79,8 @@ return {
       IsNoUse = false,
       IsLookAtRole = true,
       Camp = 4,
-      UnitID = 20103001,
-      InitPos = "M10",
+      UnitID = 20104001,
+      InitPos = "M1",
       OffSetX = 0.0,
       OffSetZ = 0.0,
       Level = 0,
@@ -88,7 +88,12 @@ return {
       UnitKey = "0_601301_4",
       AutoLevel = 1,
       Delay = 0.0,
-      MagicId = 5000001
+      MagicId = 0,
+      BornPos = {
+        133.498352,
+        357.098572,
+        -75.95651
+      }
     }
   },
   Name = "",

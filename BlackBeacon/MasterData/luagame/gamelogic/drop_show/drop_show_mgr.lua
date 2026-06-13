@@ -6,7 +6,8 @@ local _tsort = table.sort
 local _remove = table.remove
 local DEBUG = false
 local DROP_TYPE = Config.DROP_TYPE
-local item_cmp = function(a, b)
+
+local function item_cmp(a, b)
   local a_type_cfg = a.award_cfg
   local b_type_cfg = b.award_cfg
   local a_award_type = a_type_cfg.AwardType
@@ -25,6 +26,7 @@ local item_cmp = function(a, b)
     return a_award_type < b_award_type
   end
 end
+
 local NOT_SHOW_BATTLE_ITEM_TYPE = {
   [5] = {
     is_all = false,

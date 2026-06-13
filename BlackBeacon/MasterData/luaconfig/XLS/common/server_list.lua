@@ -1,5 +1,6 @@
 return {
   {
+    DebugTag = 1,
     IP = "1.14.249.120",
     WWW = "https://fx-dev3.mingzhougame.com",
     id = 1,
@@ -29,6 +30,7 @@ return {
     port = 443
   },
   {
+    DebugTag = 1,
     IP = "192.168.3.49",
     WWW = "http://fx.mingzhougame.com/49",
     id = 5,
@@ -71,6 +73,7 @@ return {
     port = 80
   },
   {
+    DebugTag = 1,
     IP = "172.16.60.58",
     WWW = "http://fx.mingzhougame.com/58",
     id = 11,
@@ -78,6 +81,7 @@ return {
     port = 80
   },
   {
+    DebugTag = 1,
     IP = "172.16.60.59",
     WWW = "http://fx.mingzhougame.com/59",
     id = 12,
@@ -85,6 +89,7 @@ return {
     port = 80
   },
   {
+    DebugTag = 1,
     IP = "172.16.60.60",
     WWW = "http://fx.mingzhougame.com/60",
     id = 13,
@@ -99,6 +104,7 @@ return {
     port = 80
   },
   {
+    DebugTag = 1,
     IP = "172.16.60.62",
     WWW = "http://fx.mingzhougame.com/62",
     id = 15,
@@ -106,14 +112,14 @@ return {
     port = 80
   },
   {
-    DebugTag = 1,
     IP = "172.16.60.63",
     WWW = "http://fx.mingzhougame.com/63",
     id = 16,
-    name = "内部商务测试服",
+    name = "郭梓",
     port = 80
   },
   {
+    DebugTag = 1,
     IP = "172.16.60.64",
     WWW = "http://fx.mingzhougame.com/64",
     id = 17,
@@ -128,6 +134,7 @@ return {
     port = 80
   },
   {
+    DebugTag = 1,
     IP = "172.16.60.67",
     WWW = "http://fx.mingzhougame.com/67",
     id = 19,
@@ -135,6 +142,7 @@ return {
     port = 80
   },
   {
+    DebugTag = 1,
     IP = "172.16.60.69",
     WWW = "http://fx.mingzhougame.com/69",
     id = 20,
@@ -156,6 +164,7 @@ return {
     port = 80
   },
   {
+    DebugTag = 1,
     IP = "172.16.60.71",
     WWW = "http://fx.mingzhougame.com/71",
     id = 23,
@@ -163,6 +172,7 @@ return {
     port = 80
   },
   {
+    DebugTag = 1,
     IP = "172.16.60.72",
     WWW = "http://fx.mingzhougame.com/72",
     id = 24,
@@ -212,6 +222,7 @@ return {
     port = 80
   },
   {
+    DebugTag = 1,
     IP = "172.16.60.77",
     WWW = "http://fx.mingzhougame.com/77",
     id = 31,
@@ -244,7 +255,8 @@ return {
     WWW = "https://qa01-realm.mgtiancity.com",
     id = 35,
     name = "天成QA",
-    port = 443
+    port = 443,
+    tag = 1
   },
   {
     IP = "172.16.60.81",
@@ -289,13 +301,11 @@ return {
     port = 443
   },
   {
-    DebugTag = 1,
     IP = "",
     WWW = "https://swt-realm-bb.mgtiancity.com",
     id = 42,
     name = "天成商务测试服",
-    port = 443,
-    tag = 1
+    port = 443
   },
   {
     IP = "",
@@ -303,5 +313,47 @@ return {
     id = 43,
     name = "GH_TEST_1.1",
     port = 443
+  },
+  {
+    IP = "172.16.60.83",
+    WWW = "http://fx.mingzhougame.com/83",
+    id = 44,
+    name = "马琳策",
+    port = 80
+  },
+  {
+    IP = "172.16.60.84",
+    WWW = "http://fx.mingzhougame.com/84",
+    id = 45,
+    name = "钟岳华",
+    port = 80
+  },
+  {
+    IP = "172.16.60.85",
+    WWW = "http://fx.mingzhougame.com/85",
+    id = 46,
+    name = "庄淑颖",
+    port = 80
+  },
+  {
+    IP = "172.16.60.154",
+    WWW = "http://fx.mingzhougame.com/154",
+    id = 47,
+    name = "内网先遣服",
+    port = 80
+  },
+  {
+    IP = "172.16.60.153",
+    WWW = "http://fx.mingzhougame.com/153",
+    id = 48,
+    name = "新版本分支测试服",
+    port = 80
+  },
+  {
+    IP = "172.16.60.152",
+    WWW = "http://fx.mingzhougame.com/152",
+    id = 49,
+    name = "先遣服内网测试服",
+    port = 80
   }
 }

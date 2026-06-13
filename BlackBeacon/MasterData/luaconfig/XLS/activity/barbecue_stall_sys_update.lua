@@ -128,7 +128,7 @@ return {
   {
     CostCount = 100,
     CostItem = 41,
-    Desc = "空杯的恢复时间缩短为4秒",
+    Desc = "空杯的恢复时间缩短为3秒",
     EffectSys = 108,
     Id = 15,
     LimitationLv = 1,
@@ -137,7 +137,7 @@ return {
   {
     CostCount = 150,
     CostItem = 41,
-    Desc = "空杯的恢复时间缩短为3秒",
+    Desc = "空杯的恢复时间缩短为2秒",
     EffectSys = 108,
     Id = 16,
     LimitationLv = 2,
@@ -146,7 +146,7 @@ return {
   {
     CostCount = 100,
     CostItem = 41,
-    Desc = "空杯的存放上限提高至8",
+    Desc = "空杯的存放上限提高至6",
     EffectSys = 109,
     Id = 17,
     LimitationLv = 1,
@@ -155,7 +155,7 @@ return {
   {
     CostCount = 150,
     CostItem = 41,
-    Desc = "空杯的存放上限提高至10",
+    Desc = "空杯的存放上限提高至7",
     EffectSys = 109,
     Id = 18,
     LimitationLv = 2,
@@ -173,7 +173,7 @@ return {
   {
     CostCount = 150,
     CostItem = 41,
-    Desc = "客人耐心时间延长30%",
+    Desc = "客人耐心时间延长40%",
     EffectSys = 110,
     Id = 20,
     LimitationLv = 2,

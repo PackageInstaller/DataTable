@@ -1,6 +1,7 @@
 local M = {}
 local mt = {}
-local _new_block = function(v)
+
+local function _new_block(v)
   local block = {
     value = v,
     next = false,
@@ -8,13 +9,16 @@ local _new_block = function(v)
   }
   return block
 end
+
 local endian_fmt = {little = "<", big = ">"}
-local pack_data = function(data, header_len, endian)
+
+local function pack_data(data, header_len, endian)
   local len = #data
   local fmt = endian_fmt[endian] .. "I" .. header_len .. "c" .. len
   return string.pack(fmt, len, data)
 end
-local insert_free_list = function(self, block)
+
+local function insert_free_list(self, block)
   block.prev = false
   block.next = false
   local count = self.v_free_list_count
@@ -22,7 +26,8 @@ local insert_free_list = function(self, block)
   self.v_free_list_count = count
   self.v_free_list[count] = block
 end
-local get_block = function(self)
+
+local function get_block(self)
   local count = self.v_free_list_count
   if count > 0 then
     local block = self.v_free_list[count]
@@ -33,7 +38,8 @@ local get_block = function(self)
     return _new_block()
   end
 end
-local free_block = function(self, block)
+
+local function free_block(self, block)
   local next = block.next
   local prev = block.prev
   if next then
@@ -44,13 +50,15 @@ local free_block = function(self, block)
   end
   insert_free_list(self, block)
 end
-local init_buffer = function(self)
+
+local function init_buffer(self)
   local DEF_FREE_BLOCK = 3
   for i = 1, DEF_FREE_BLOCK do
     insert_free_list(self, _new_block())
   end
 end
-local create = function()
+
+local function create()
   local raw = {
     v_free_list = {},
     v_free_list_count = 0,
@@ -200,7 +208,7 @@ function mt:get_head_data()
   return head and head.value or false
 end
 
-local _dump_list = function(list)
+local function _dump_list(list)
   while list do
     print(" node = ", list)
     for k, v in pairs(list) do

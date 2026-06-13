@@ -3171,7 +3171,7 @@ return {
   },
   ["100102621"] = {
     ChineseSound = "Voice_H1001026_1_Skill01",
-    ChineseSoundTxt = "星光流转",
+    ChineseSoundTxt = "星光流转。",
     Id = "100102621"
   },
   ["100102622"] = {
@@ -3181,7 +3181,7 @@ return {
   },
   ["100102623"] = {
     ChineseSound = "Voice_H1001026_3_Evasion",
-    ChineseSoundTxt = "星移",
+    ChineseSoundTxt = "星移。",
     Id = "100102623"
   },
   ["100102624"] = {
@@ -3215,7 +3215,7 @@ return {
     Id = "100102629"
   },
   ["100102701"] = {
-    ChineseSound = "jinlv-1",
+    ChineseSound = "jinlv_1",
     ChineseSoundTxt = "我是金缕，您需要“金线团”的指引吗？",
     Id = "100102701"
   },
@@ -3236,7 +3236,7 @@ return {
   },
   ["100102704"] = {
     ChineseSound = "jinlv_4",
-    ChineseSoundTxt = "（哈欠声）在我感到困乏之前解决一切吧。",
+    ChineseSoundTxt = "在我感到困乏之前解决一切吧。",
     Id = "100102704"
   },
   ["100102705"] = {
@@ -3251,7 +3251,7 @@ return {
   },
   ["100102707"] = {
     ChineseSound = "jinlv_7",
-    ChineseSoundTxt = "思考如同行径于幽邃的迷宫之中， 当您意识到思考本身即为存在之时，您便已经抓住了牵引你离开迷宫的线团。",
+    ChineseSoundTxt = "思考如同行走于幽邃的迷宫之中，当您意识到思考本身即为存在之时，您便已经抓住了牵引您离开迷宫的线团。",
     Id = "100102707"
   },
   ["100102708"] = {
@@ -3318,6 +3318,51 @@ return {
     ChineseSound = "jinlv_20",
     ChineseSoundTxt = "命运的丝线有时也会打结，重新理顺它吧。",
     Id = "100102720"
+  },
+  ["100102721"] = {
+    ChineseSound = "Voice_H1001027_1_Skill01",
+    ChineseSoundTxt = "小径分岔。",
+    Id = "100102721"
+  },
+  ["100102722"] = {
+    ChineseSound = "Voice_H1001027_2_Skill02",
+    ChineseSoundTxt = "幽思回环。",
+    Id = "100102722"
+  },
+  ["100102723"] = {
+    ChineseSound = "Voice_H1001027_3_Evasion",
+    ChineseSoundTxt = "岔道。",
+    Id = "100102723"
+  },
+  ["100102724"] = {
+    ChineseSound = "Voice_H1001027_4_MinorWound",
+    ChineseSoundTxt = "误入歧途了？",
+    Id = "100102724"
+  },
+  ["100102725"] = {
+    ChineseSound = "Voice_H1001027_5_SeriousInjury",
+    ChineseSoundTxt = "这是死路，赶快掉头。",
+    Id = "100102725"
+  },
+  ["100102726"] = {
+    ChineseSound = "Voice_H1001027_6_Death",
+    ChineseSoundTxt = "该苏醒了……",
+    Id = "100102726"
+  },
+  ["100102727"] = {
+    ChineseSound = "Voice_H1001027_7_Ult",
+    ChineseSoundTxt = "正途已然揭示！",
+    Id = "100102727"
+  },
+  ["100102728"] = {
+    ChineseSound = "Voice_H1001027_8_Born",
+    ChineseSoundTxt = "在找向导吗？",
+    Id = "100102728"
+  },
+  ["100102729"] = {
+    ChineseSound = "Voice_H1001027_9_Finish",
+    ChineseSoundTxt = "这就是迷宫的出口。",
+    Id = "100102729"
   },
   ["100102801"] = {
     ChineseSound = "ling-1",
@@ -3530,153 +3575,153 @@ return {
     Id = "100102920"
   },
   ["100103001"] = {
-    ChineseSound = "ling-1",
-    ChineseSoundTxt = "你好，我是零，我将作为你的引导者，协助你完成接下来的登记。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "虽说不是初见，但礼节还是不可少——我是旃檀， 唯实社的秘盟使节，希望我们今后合作愉快。",
     Id = "100103001"
   },
   ["100103001_1"] = {
-    ChineseSound = "ling_1_R",
-    ChineseSoundTxt = "你好，我是零，我将作为你的引导者，协助你完成接下来的登记。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "虽说不是初见，但礼节还是不可少——我是旃檀， 唯实社的秘盟使节，希望我们今后合作愉快。",
     Id = "100103001_1"
   },
   ["100103002"] = {
-    ChineseSound = "ling-2",
-    ChineseSoundTxt = "我会将这些经验记录下来。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "天枢渐明，顺时而行。",
     Id = "100103002"
   },
   ["100103003"] = {
-    ChineseSound = "ling-3",
-    ChineseSoundTxt = "我似乎……“看见”了更多的东西……那些记忆……真的是我的东西么？",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "知之始己，自知而后知人……确是有些理解其中的深意了。",
     Id = "100103003"
   },
   ["100103004"] = {
-    ChineseSound = "ling-4",
-    ChineseSoundTxt = "我很少与别人一同行动。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "排兵布阵，果然还是要亲自确认一番才好。",
     Id = "100103004"
   },
   ["100103005"] = {
-    ChineseSound = "ling-5",
-    ChineseSoundTxt = "我会在被允许的范围内，回答你的所有疑问，这是我的义务。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "异象再怎么怪力乱神，总归还是要通过人来发挥作用。唯实社对付前者，而我……负责和后者打交道。",
     Id = "100103005"
   },
   ["100103006"] = {
-    ChineseSound = "ling-6",
-    ChineseSoundTxt = "图书馆对于我而言很重要，除了它，我一无所有。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "天下攘攘，皆为利往。所谓左右逢源，不外乎做好三件事：察言观色，知其所好，以利驱人。",
     Id = "100103006"
   },
   ["100103007"] = {
-    ChineseSound = "ling-7",
-    ChineseSoundTxt = "不可妄言，不可妄书，不可妄想，盖因言语有力量，文字有力量，思考亦有力量——在图书馆内，你必须谨遵这些法则行事。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "这世上没有什么万全之策。计谋不两忠，一方得利那自然会有一方得害。在各方之间找到一个微妙的平衡点，就是我的工作。",
     Id = "100103007"
   },
   ["100103008"] = {
-    ChineseSound = "ling-8",
-    ChineseSoundTxt = "你问我正在写什么？我正在记录你的言行与举止……嗯？你为什么要阻止我？",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "我去过很多地方，也见过不少让人忘返的风景。只是走得越远，反而觉得自己像个过客。您也有过这种感觉吗？",
     Id = "100103008"
   },
   ["100103009"] = {
-    ChineseSound = "ling-9",
-    ChineseSoundTxt = "曾经有一名哲人坚信图书馆内有一本全知之书，这本书是所有书的概要与索引，为了寻找这本书，他踏上了一个没有终点的旅途……我不知道这个故事的结局，这是我很久之前听到的故事了。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "情报网？呵，实在是言重了，不过是在外头待久了，顺带交几个朋友、吃几餐便饭、听几个故事罢了。您要是感兴趣的话……不妨陪我喝杯茶吧。",
     Id = "100103009"
   },
   ["100103010"] = {
-    ChineseSound = "ling-10",
-    ChineseSoundTxt = "我们必须知道，也必将知道——科斯莫斯常常对我说这句话，但是我并不能理解他指的究竟是什么……跟着你，我也许能找到这个问题的答案。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "权谋算计，算不尽人心反复。我真正期望的，其实还是清茶对坐，赤诚以待，就像……您同我相处时这样。",
     Id = "100103010"
   },
   ["100103011"] = {
-    ChineseSound = "ling-11",
-    ChineseSoundTxt = "我会陪伴你，直到旅途的终点。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "常言，士别三日当刮目相看。和上次见面相比，您的气色确实好上了不少。",
     Id = "100103011"
   },
   ["100103012"] = {
-    ChineseSound = "ling-12",
-    ChineseSoundTxt = "我一直带着的这本书？这是我的秘密，暂时还不能告诉你。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "因为工作缘故，我在世界各地都发展了些人脉。他日若有机会，我来将他们一一介绍给你吧？",
     Id = "100103012"
   },
   ["100103013"] = {
-    ChineseSound = "ling-13",
-    ChineseSoundTxt = "你可以跟我分享更多关于你的事情，我想把它们全部记录下来。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "以天下之目看，则无不明。当您举棋不定，感到迷茫的时候，我可以为您出谋划策。",
     Id = "100103013"
   },
   ["100103014"] = {
-    ChineseSound = "ling-14",
-    ChineseSoundTxt = "感到害怕的时候，就握住我的手吧，图书馆将会永远庇护你。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "游历诸国，我本以为自己早就习惯萍踪浪迹……直至与您相遇，我才真正知晓再会的珍贵。",
     Id = "100103014"
   },
   ["100103015"] = {
-    ChineseSound = "ling-15",
-    ChineseSoundTxt = "……谢谢。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "都说礼尚往来，看来之后……我也得为您准备礼物了。",
     Id = "100103015"
   },
   ["100103016"] = {
-    ChineseSound = "ling-16",
-    ChineseSoundTxt = "请不要离开我的视野，我有义务保护你。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "思虑需静心，您可是在冥想？",
     Id = "100103016"
   },
   ["100103017"] = {
-    ChineseSound = "ling-17",
-    ChineseSoundTxt = "你来了……我等你很久了……很久……很久了。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "和预测的一样，您果然会在这个时候出现。",
     Id = "100103017"
   },
   ["100103018"] = {
-    ChineseSound = "ling-18",
-    ChineseSoundTxt = "你想，干什么？",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "阁下是要引起外交事故么？呵，开玩笑的。",
     Id = "100103018"
   },
   ["100103019"] = {
-    ChineseSound = "ling-19",
-    ChineseSoundTxt = "感谢你的指引。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "计出万全，自当所向披靡。",
     Id = "100103019"
   },
   ["100103020"] = {
-    ChineseSound = "ling-20",
-    ChineseSoundTxt = "你有好好地注视着这一切么？",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "胜败乃兵家常事，今日的退让，未尝不是明日的胜机。",
     Id = "100103020"
   },
   ["100103021"] = {
-    ChineseSound = "Voice_H1001001_1_Skill01",
-    ChineseSoundTxt = "振翅吧。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "风助火势。",
     Id = "100103021"
   },
   ["100103022"] = {
-    ChineseSound = "Voice_H1001001_2_Skill02",
-    ChineseSoundTxt = "陨落。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "灰飞烟灭。",
     Id = "100103022"
   },
   ["100103023"] = {
-    ChineseSound = "Voice_H1001001_3_Evasion",
-    ChineseSoundTxt = "洞悉无遗。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "算无遗策。",
     Id = "100103023"
   },
   ["100103024"] = {
-    ChineseSound = "Voice_H1001001_4_MinorWound",
-    ChineseSoundTxt = "这就是“痛”？",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "竟有此事……",
     Id = "100103024"
   },
   ["100103025"] = {
-    ChineseSound = "Voice_H1001001_5_SeriousInjury",
-    ChineseSoundTxt = "没关系，我还活着。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "失算了。",
     Id = "100103025"
   },
   ["100103026"] = {
-    ChineseSound = "Voice_H1001001_6_Death",
-    ChineseSoundTxt = "要……划上句号了吗……",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "何等……失态。",
     Id = "100103026"
   },
   ["100103027"] = {
-    ChineseSound = "Voice_H1001001_7_Ult",
-    ChineseSoundTxt = "安祖，结束一切吧。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "死生之事，燎于尘灰。",
     Id = "100103027"
   },
   ["100103028"] = {
-    ChineseSound = "Voice_H1001001_8_Born",
-    ChineseSoundTxt = "展翅吧，安祖。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "运筹帷幄，决胜千里。",
     Id = "100103028"
   },
   ["100103029"] = {
-    ChineseSound = "Voice_H1001001_9_Finish",
-    ChineseSoundTxt = "安，做得很好，回来吧。",
+    ChineseSound = "Sound_H1001023_cast_skill3_3_3",
+    ChineseSoundTxt = "纵横天下，谋定而后动。",
     Id = "100103029"
   }
 }

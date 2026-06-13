@@ -152,10 +152,14 @@ function ui:ui_finish_load()
     end, nil, nil, true)
   end)
   self:set_button("BtnResetFloor", function()
-    self:lock_all_grid()
-    MineSweeperMgr:request_reset_floor(function()
-      self:play_refresh_vfx()
-    end)
+    Util.show_notify_popup_message(function()
+      self:lock_all_grid()
+      MineSweeperMgr:request_reset_floor(function()
+        self:play_refresh_vfx()
+      end, function()
+        self:unlock_all_grid()
+      end)
+    end, "是否重置本层", nil, "是", "否", nil, nil, nil, true)
   end)
   self:set_button("BtnGold", function()
     self:enable_tips(true)
@@ -232,7 +236,6 @@ function ui:ui_on_show()
   self:register_event()
   self:refresh(true)
   self:select_grid()
-  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.ui_minesweeper_battle_UI_SOUND)
   
   function self.v_wrap_fun()
     self.v_uicompents.Ani_UIMineBattle_Refresh_In_pd:Play()
@@ -244,10 +247,12 @@ function ui:ui_on_show()
   end
   
   self.v_uicompents.Ani_UIMineBattle_Refresh_Out_pd:stopped("+", self.v_wrap_fun)
+  self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close, self)
 end
 
 function ui:ui_on_update()
   self:hp_update_vfx()
+  self:resetfloor_cd()
 end
 
 function ui:ui_on_hide()
@@ -331,7 +336,7 @@ function ui:refresh(is_open_ui)
     local grid = self.v_static_sv_grid:get_item_by_idx(self.select_grid_index)
     grid:select()
   end
-  if 0 == self.v_cur_hp then
+  if self.v_cur_hp <= 0 then
     local ui_minesweeper_settle = UIMgr:try_get_visible_ui("ui_minesweeper_settle")
     if not ui_minesweeper_settle then
       UIMgr:get_ui("ui_minesweeper_settle"):ui_show(MineSweeperMgr.GAME_SETTLEMENT_TYPE.FAIL, nil, function()
@@ -362,6 +367,20 @@ function ui:hp_update_vfx()
   local fill_img = self.v_uicompents.HpBarFill_img
   local src_fillamount = fill_img.fillAmount
   fill_img.fillAmount = mathx.lerp_number(src_fillamount, self.v_real_fillamount, 0.3)
+end
+
+function ui:resetfloor_cd()
+  local cool_down_time = MineSweeperMgr.cool_down_time
+  local real_time = Global.real_time
+  if cool_down_time and cool_down_time > real_time then
+    local diff = math.ceil(cool_down_time - real_time)
+    self.v_uiobjects.CDNum:SetActiveEx(true)
+    self.v_uicompents.CDNum_txt.text = diff
+    self.v_uicompents.BtnResetFloor_btn.interactable = false
+  else
+    self.v_uiobjects.CDNum:SetActiveEx(false)
+    self.v_uicompents.BtnResetFloor_btn.interactable = true
+  end
 end
 
 function ui:refresh_grid()
@@ -495,7 +514,18 @@ function ui:on_click_grid(grid_index)
     if grid_type == GridType.MONSTER or grid_type == GridType.BOSS then
       self:select_grid(grid_index)
     elseif grid_type == GridType.ITEM then
-      MineSweeperMgr:use_grid(grid_index)
+      local grid_cfg = ShareRes.get_minesweeper_grid_cfg(grid_info.grid_id)
+      local item_type = grid_cfg.Args[1]
+      if item_type == MineSweeperMgr.ITEM_TYPE.HEALTH then
+        local blood_count = MineSweeperMgr:get_minesweeper_chapter_info().blood_count
+        if blood_count == minesweeper_misc.StaminaLimit then
+          Util.show_message_tip(2810)
+        else
+          MineSweeperMgr:use_grid(grid_index)
+        end
+      else
+        MineSweeperMgr:use_grid(grid_index)
+      end
     elseif grid_type == GridType.BLESS then
       UIMgr:get_ui("ui_minesweeper_buff"):ui_show(MineSweeperBuffUI.Type.Item, grid_index)
     elseif grid_type == GridType.SHOP then
@@ -567,11 +597,9 @@ function ui:ending_vfx()
   local item_grid_count = #item_grididx_list
   time_offset = time_offset + item_grid_count * interval + 0.2
   local timer_handle = Timer:add_timer(nil, time_offset, function()
-    self.v_uiobjects.AllBeat:SetActiveEx(true)
     self.v_safearea_canvas_group.blocksRaycasts = true
     self:register_event()
     self:refresh()
-    Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.minesweeper_allbeat_SOUND)
   end)
   _insert(self.v_timer_handles, timer_handle)
 end
@@ -586,6 +614,13 @@ function ui:lock_all_grid()
   local grid_instance_list = self.v_static_sv_grid:get_items()
   for _, grid_instance in ipairs(grid_instance_list) do
     grid_instance:lock()
+  end
+end
+
+function ui:unlock_all_grid()
+  local grid_instance_list = self.v_static_sv_grid:get_items()
+  for _, grid_instance in ipairs(grid_instance_list) do
+    grid_instance:unlock()
   end
 end
 
@@ -616,6 +651,10 @@ end
 
 function ui:on_reset_floor()
   self:select_grid()
+end
+
+function ui:check_close()
+  NoviceMgr:check_close_activity_ui(MineSweeperMgr.activity_id, self.v_ui_name, nil, true)
 end
 
 return ui

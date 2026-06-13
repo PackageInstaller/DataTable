@@ -3,7 +3,7 @@ local Math = require("base.mathx")
 local TypeUnityRigidbody = typeof(UnityEngine.Rigidbody)
 local TypeDynamicGridObstacle = typeof(CS.Pathfinding.DynamicGridObstacle)
 local NOWALK_LAYER = Layer.Layer.WalkBlock
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local CONFIG = {
   DGO_UPDATE_ERR = 0.5,
   DGO_CHECK_TIME = 0.2,
@@ -11,7 +11,8 @@ local CONFIG = {
   SHADOW_CHECK_TIME = 1
 }
 local PLAT_OBSTACLE_ROOT = "PlatObstacleRoot"
-local _get_plat_obstacle_root = function()
+
+local function _get_plat_obstacle_root()
   local root_obj = UnityFind(PLAT_OBSTACLE_ROOT)
   if nil == root_obj then
     root_obj = UnityGameObject(PLAT_OBSTACLE_ROOT)
@@ -19,6 +20,7 @@ local _get_plat_obstacle_root = function()
   end
   return root_obj
 end
+
 local Shadow = Util.create_class()
 
 function Shadow:_init(collider, plat)

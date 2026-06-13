@@ -31,8 +31,10 @@ function M.Shift(skill, params)
   local acc = params[5] or 0
   local deg = params[6] or 0
   local break_config = params[7]
+  local turn_type = params[8]
+  local notify_type = params[9]
   Util.assert(duration, skill.skill_id)
-  skill:play_skill_shift(start_speed, duration, acc, deg, break_config)
+  skill:play_skill_shift(start_speed, duration, acc, deg, break_config, turn_type, notify_type)
 end
 
 function M.FixedTimeShift(skill, params)

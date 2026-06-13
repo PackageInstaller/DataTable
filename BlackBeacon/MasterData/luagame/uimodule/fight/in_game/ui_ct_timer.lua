@@ -121,32 +121,16 @@ function M:ui_on_update(dt)
     self.v_millisecond_counter = self.v_millisecond_counter + dt
     JournalMgr:record_cur_time(self.v_ct_seconds + self.v_start_time - Date.server_time() + self.v_millisecond_counter)
   end
-  if self.v_ct_timer and not self.v_pause_start_time and self.v_ct_seconds and self.v_start_time then
-    local seconds = self.v_ct_seconds + self.v_start_time - Date.server_time()
-    if seconds <= 0 then
-      self:clear_timer()
-      self:ui_hide()
-      if scene_logic_timer_end_event_name then
-        BehaviorMgr:call_scene_logic_event_fun("on_ct_timer_end", scene_logic_timer_end_event_name)
-        scene_logic_timer_end_event_name = nil
-      end
-    end
+  if self.v_pause_start_time then
+    return
   end
+  self:refresh_count_down_time()
 end
 
 function M:start_count_down_timer(seconds)
   self.v_ct_seconds = seconds or self.v_ct_seconds
-  if self.v_ct_seconds > 0 then
-    if Global.is_open_timer and JournalMgr:get_oepn_record_jiournal_info() then
-      self.v_millisecond_counter = 0
-    end
-    if not self.v_ct_timer then
-      self:refresh_count_down_time()
-      self:create_countdown_timer("ui_in_game_timer", self.v_ct_seconds, function()
-        self:refresh_count_down_time()
-      end)
-      return true
-    end
+  if self.v_ct_seconds > 0 and Global.is_open_timer and JournalMgr:get_oepn_record_jiournal_info() then
+    self.v_millisecond_counter = 0
   end
   return false
 end
@@ -162,8 +146,18 @@ end
 
 function M:refresh_count_down_time()
   local seconds = self.v_ct_seconds + self.v_start_time - Date.server_time()
+  if self.v_curr_show_seconds and self.v_curr_show_seconds == seconds then
+    return
+  end
+  self.v_curr_show_seconds = seconds
   TowerMgr:check_tower_task_update(Config.CommonDefine.TOWER_TASK_TYPE.FIGHT_TIME, false, math.max(0, Date.server_time() - self.v_start_time))
   if seconds <= 0 then
+    self:clear_timer()
+    self:ui_hide()
+    if scene_logic_timer_end_event_name then
+      BehaviorMgr:call_scene_logic_event_fun("on_ct_timer_end", scene_logic_timer_end_event_name)
+      scene_logic_timer_end_event_name = nil
+    end
     return
   end
   local count_down_text = self.v_uicompents.CTTime_txt

@@ -5,16 +5,25 @@ local t = {
       Id = 1,
       IdealStartDist = 5,
       MaxDistance = 10,
-      SearchAngleWeight = {5, -0.05},
-      SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0
+      SearchAngleWeight = {
+        {5, -0.05}
       },
-      SearchViscousWeight = {3, 2},
+      SearchDistWeight = {
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        }
+      },
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       SecAngle = 60,
       SecRadius = 5,
       SkActName = "atk1",
@@ -264,7 +273,10 @@ local t = {
       MaxDistance = 10,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 5,
       SkActName = "qte",
@@ -406,16 +418,25 @@ local t = {
       Id = 0,
       IdealStartDist = 5,
       MaxDistance = 10,
-      SearchAngleWeight = {5, -0.05},
-      SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0
+      SearchAngleWeight = {
+        {5, -0.05}
       },
-      SearchViscousWeight = {3, 2},
+      SearchDistWeight = {
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        }
+      },
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       SecAngle = 60,
       SecRadius = 5,
       SkActName = "atk1",
@@ -690,7 +711,10 @@ local t = {
       MaxDistance = 2.5,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 2.5,
       SkActName = "qte",
@@ -852,16 +876,25 @@ local t = {
       Id = 7,
       IdealStartDist = 10,
       MaxDistance = 10,
-      SearchAngleWeight = {5, -0.05},
-      SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0
+      SearchAngleWeight = {
+        {5, -0.05}
       },
-      SearchViscousWeight = {3, 2},
+      SearchDistWeight = {
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        }
+      },
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       SecAngle = 60,
       SecRadius = 10,
       SkActName = "arashi",
@@ -877,6 +910,10 @@ local t = {
       MaxDistance = 10,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
+      SearchHpWeight = {
+        {20},
+        {20}
+      },
       SearchViscousWeight = nil,
       SecAngle = 60,
       SecRadius = 0,
@@ -1034,9 +1071,13 @@ local t = {
       MaxDistance = 10,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
+      SearchHpWeight = {
+        {20},
+        {20}
+      },
       SearchViscousWeight = nil,
       SecAngle = 0,
-      SecRadius = 2,
+      SecRadius = 0,
       SkActName = "linkQte",
       StrSkills = {"linkQte"},
       TransDisable = nil,
@@ -1046,7 +1087,7 @@ local t = {
       CharId = 1001008,
       Id = 8,
       IdealStartDist = 5,
-      MaxDistance = 10,
+      MaxDistance = 5,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
       SearchViscousWeight = nil,
@@ -1084,12 +1125,38 @@ local t = {
       CharId = 1001008,
       Id = 9,
       IdealStartDist = 7,
-      MaxDistance = 5,
+      MaxDistance = 12.5,
       SearchAngleWeight = nil,
-      SearchDistWeight = nil,
-      SearchViscousWeight = nil,
-      SecAngle = 45,
-      SecRadius = 7,
+      SearchDedupWeight = {
+        {
+          -20,
+          1,
+          2
+        },
+        {
+          -20,
+          1,
+          2
+        }
+      },
+      SearchDistWeight = {
+        {
+          8,
+          -2,
+          4
+        },
+        {
+          10,
+          -2,
+          4
+        }
+      },
+      SearchViscousWeight = {
+        {0},
+        {0}
+      },
+      SecAngle = 60,
+      SecRadius = 0,
       SkActName = "punishMult",
       StrSkills = {
         "punishStart",
@@ -1108,7 +1175,10 @@ local t = {
       MaxDistance = 2.5,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 2.5,
       SkActName = "qte",
@@ -1120,12 +1190,35 @@ local t = {
       CharId = 1001008,
       Id = 11,
       IdealStartDist = 2,
-      MaxDistance = 10,
+      MaxDistance = 15,
       SearchAngleWeight = nil,
-      SearchDistWeight = nil,
+      SearchDedupWeight = {
+        {
+          -40,
+          1,
+          2
+        },
+        {
+          -40,
+          1,
+          2
+        }
+      },
+      SearchDistWeight = {
+        {
+          15,
+          -3,
+          12
+        },
+        {
+          15,
+          -3,
+          12
+        }
+      },
       SearchViscousWeight = nil,
       SecAngle = 60,
-      SecRadius = 2,
+      SecRadius = 15,
       SkActName = "ult",
       StrSkills = {"ultStart"},
       TransDisable = nil,
@@ -1152,6 +1245,18 @@ local t = {
       IdealStartDist = 5,
       MaxDistance = 10,
       SearchAngleWeight = nil,
+      SearchDedupWeight = {
+        {
+          -30,
+          1,
+          2
+        },
+        {
+          -30,
+          1,
+          2
+        }
+      },
       SearchDistWeight = nil,
       SearchViscousWeight = nil,
       SecAngle = 60,
@@ -1168,16 +1273,25 @@ local t = {
       Id = 1,
       IdealStartDist = 5,
       MaxDistance = 10,
-      SearchAngleWeight = {5, -0.05},
-      SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0
+      SearchAngleWeight = {
+        {5, -0.05}
       },
-      SearchViscousWeight = {3, 2},
+      SearchDistWeight = {
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        }
+      },
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       SecAngle = 60,
       SecRadius = 5,
       SkActName = "atk1",
@@ -1382,7 +1496,10 @@ local t = {
       MaxDistance = 3,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 3,
       SkActName = "qte",
@@ -1431,24 +1548,35 @@ local t = {
       MaxDistance = 10,
       SearchAngleWeight = nil,
       SearchDensityWeight = {
-        8,
-        -0.04,
-        90,
-        10,
-        8,
-        -0.04,
-        90,
-        10
+        {
+          8,
+          -0.04,
+          90,
+          10
+        },
+        {
+          8,
+          -0.04,
+          90,
+          10
+        }
       },
       SearchDistWeight = {
-        4,
-        -0.5,
-        0,
-        5,
-        -0.5,
-        0
+        {
+          4,
+          -0.5,
+          0
+        },
+        {
+          5,
+          -0.5,
+          0
+        }
       },
-      SearchViscousWeight = {0, 0},
+      SearchViscousWeight = {
+        {0},
+        {0}
+      },
       SecAngle = 60,
       SecRadius = 0,
       SkActName = "ult",
@@ -1525,16 +1653,25 @@ local t = {
       Id = 21,
       IdealStartDist = 5,
       MaxDistance = 10,
-      SearchAngleWeight = {5, -0.05},
-      SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0
+      SearchAngleWeight = {
+        {5, -0.05}
       },
-      SearchViscousWeight = {3, 2},
+      SearchDistWeight = {
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        }
+      },
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       SecAngle = 60,
       SecRadius = 5,
       SkActName = "atk1",
@@ -1705,7 +1842,10 @@ local t = {
       MaxDistance = 0.5,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 0.5,
       SkActName = "qte",
@@ -1813,16 +1953,25 @@ local t = {
       Id = 1,
       IdealStartDist = 5,
       MaxDistance = 10,
-      SearchAngleWeight = {5, -0.05},
-      SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0
+      SearchAngleWeight = {
+        {5, -0.05}
       },
-      SearchViscousWeight = {3, 2},
+      SearchDistWeight = {
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        }
+      },
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       SecAngle = 60,
       SecRadius = 5,
       SkActName = "atk1",
@@ -2094,7 +2243,10 @@ local t = {
       MaxDistance = 10,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 5,
       SkActName = "ult",
@@ -2313,7 +2465,10 @@ local t = {
       MaxDistance = 2.5,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 2.5,
       SkActName = "qte",
@@ -2390,15 +2545,35 @@ local t = {
       Id = 23,
       IdealStartDist = 0,
       MaxDistance = 10,
-      SearchAngleWeight = {5, 0},
+      SearchAngleWeight = {
+        {5},
+        {0}
+      },
       SearchDensityWeight = {
-        10,
-        -0.02,
-        90,
-        4
+        {
+          10,
+          -0.2,
+          90,
+          4
+        },
+        {
+          10,
+          -0.2,
+          90,
+          4
+        },
+        {
+          10,
+          -0.2,
+          90,
+          4
+        }
       },
       SearchDistWeight = nil,
-      SearchViscousWeight = {2, 2},
+      SearchViscousWeight = {
+        {2},
+        {2}
+      },
       SecAngle = 60,
       SecRadius = 0,
       SkActName = "spAtk",
@@ -2414,15 +2589,35 @@ local t = {
       Id = 30,
       IdealStartDist = 5,
       MaxDistance = 10,
-      SearchAngleWeight = {5, 0},
+      SearchAngleWeight = {
+        {5},
+        {0}
+      },
       SearchDensityWeight = {
-        10,
-        -0.02,
-        90,
-        4
+        {
+          10,
+          -0.2,
+          90,
+          4
+        },
+        {
+          10,
+          -0.2,
+          90,
+          4
+        },
+        {
+          10,
+          -0.2,
+          90,
+          4
+        }
       },
       SearchDistWeight = nil,
-      SearchViscousWeight = {2, 2},
+      SearchViscousWeight = {
+        {2},
+        {2}
+      },
       SecAngle = 60,
       SecRadius = 5,
       SkActName = "ult",
@@ -2450,15 +2645,35 @@ local t = {
       Id = 35,
       IdealStartDist = 5,
       MaxDistance = 10,
-      SearchAngleWeight = {5, 0},
+      SearchAngleWeight = {
+        {5},
+        {0}
+      },
       SearchDensityWeight = {
-        10,
-        -0.02,
-        90,
-        4
+        {
+          10,
+          -0.2,
+          90,
+          4
+        },
+        {
+          10,
+          -0.2,
+          90,
+          4
+        },
+        {
+          10,
+          -0.2,
+          90,
+          4
+        }
       },
       SearchDistWeight = nil,
-      SearchViscousWeight = {2, 2},
+      SearchViscousWeight = {
+        {2},
+        {2}
+      },
       SecAngle = 60,
       SecRadius = 5,
       SkActName = "ultFast",
@@ -2473,16 +2688,25 @@ local t = {
       Id = 22,
       IdealStartDist = 5,
       MaxDistance = 10,
-      SearchAngleWeight = {5, -0.05},
-      SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0
+      SearchAngleWeight = {
+        {5, -0.05}
       },
-      SearchViscousWeight = {3, 2},
+      SearchDistWeight = {
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        }
+      },
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       SecAngle = 60,
       SecRadius = 5,
       SkActName = "atk1",
@@ -2637,7 +2861,10 @@ local t = {
       MaxDistance = 3,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 3,
       SkActName = "qte",
@@ -2953,7 +3180,10 @@ local t = {
       MaxDistance = 4,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 4,
       SkActName = "qte",
@@ -3516,7 +3746,10 @@ local t = {
       MaxDistance = 3.5,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 3.5,
       SkActName = "qte",
@@ -3531,10 +3764,18 @@ local t = {
       MaxDistance = 10,
       SearchAngleWeight = nil,
       SearchDensityWeight = {
-        10,
-        -0.02,
-        90,
-        7.5
+        {
+          10,
+          -0.2,
+          90,
+          7.5
+        },
+        {
+          10,
+          -0.2,
+          90,
+          7.5
+        }
       },
       SearchDistWeight = nil,
       SearchViscousWeight = nil,
@@ -3913,7 +4154,10 @@ local t = {
       MaxDistance = 2,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 2,
       SkActName = "finish",
@@ -3975,7 +4219,10 @@ local t = {
       MaxDistance = 2,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 2,
       SkActName = "qte",
@@ -4225,7 +4472,10 @@ local t = {
       MaxDistance = 4,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 4,
       SkActName = "qte",
@@ -4591,7 +4841,10 @@ local t = {
       MaxDistance = 1.5,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 1.5,
       SkActName = "qte",
@@ -4698,9 +4951,12 @@ local t = {
       Id = 58,
       IdealStartDist = 5,
       MaxDistance = 7,
-      NeedCull = true,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
+      SearchOcclusWeight = {
+        {-100},
+        {-100}
+      },
       SearchViscousWeight = nil,
       SecAngle = 60,
       SecRadius = 5,
@@ -4715,9 +4971,12 @@ local t = {
       Id = 59,
       IdealStartDist = 5,
       MaxDistance = 7,
-      NeedCull = true,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
+      SearchOcclusWeight = {
+        {-100},
+        {-100}
+      },
       SearchViscousWeight = nil,
       SecAngle = 60,
       SecRadius = 5,
@@ -4732,9 +4991,12 @@ local t = {
       Id = 60,
       IdealStartDist = 5,
       MaxDistance = 7,
-      NeedCull = true,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
+      SearchOcclusWeight = {
+        {-100},
+        {-100}
+      },
       SearchViscousWeight = nil,
       SecAngle = 60,
       SecRadius = 5,
@@ -4749,9 +5011,12 @@ local t = {
       Id = 61,
       IdealStartDist = 5,
       MaxDistance = 7,
-      NeedCull = true,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
+      SearchOcclusWeight = {
+        {-100},
+        {-100}
+      },
       SearchViscousWeight = nil,
       SecAngle = 60,
       SecRadius = 5,
@@ -5159,7 +5424,10 @@ local t = {
       MaxDistance = 5.5,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 3,
       SkActName = "qte",
@@ -5276,11 +5544,15 @@ local t = {
       Id = 115,
       IdealStartDist = 5,
       MaxDistance = 10,
-      SearchAngleWeight = {10, -0.15},
+      SearchAngleWeight = {
+        {10, -0.15}
+      },
       SearchDistWeight = {
-        0,
-        2,
-        0
+        {
+          0,
+          2,
+          0
+        }
       },
       SearchViscousWeight = nil,
       SecAngle = 360,
@@ -5539,7 +5811,10 @@ local t = {
       MaxDistance = 1.5,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 1.5,
       SkActName = "qte",
@@ -5913,17 +6188,29 @@ local t = {
       Id = 42,
       IdealStartDist = 0,
       MaxDistance = 4,
-      SearchAngleWeight = {0},
-      SearchDistWeight = {
-        10,
-        -2,
-        0,
-        10,
-        -2,
-        0
+      SearchAngleWeight = {
+        {0}
       },
-      SearchHpWeight = {-5, -5},
-      SearchViscousWeight = {5, 5},
+      SearchDistWeight = {
+        {
+          10,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        }
+      },
+      SearchHpWeight = {
+        {-5},
+        {-5}
+      },
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 0,
       SecRadius = 0,
       SkActName = "furyAtk",
@@ -6004,7 +6291,10 @@ local t = {
       MaxDistance = 10,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 0,
       SecRadius = 0,
       SkActName = "furyFly",
@@ -6020,17 +6310,29 @@ local t = {
       Id = 51,
       IdealStartDist = 0,
       MaxDistance = 4,
-      SearchAngleWeight = {0},
-      SearchDistWeight = {
-        10,
-        -2,
-        0,
-        10,
-        -2,
-        0
+      SearchAngleWeight = {
+        {0}
       },
-      SearchHpWeight = {-5, -5},
-      SearchViscousWeight = {-5, 0},
+      SearchDistWeight = {
+        {
+          10,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        }
+      },
+      SearchHpWeight = {
+        {-5},
+        {-5}
+      },
+      SearchViscousWeight = {
+        {-5},
+        {0}
+      },
       SecAngle = 0,
       SecRadius = 0,
       SkActName = "furySprint",
@@ -6114,7 +6416,10 @@ local t = {
       MaxDistance = 4,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 4,
       SkActName = "qte",
@@ -6485,7 +6790,10 @@ local t = {
       MaxDistance = 4.5,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 4.5,
       SkActName = "qte",
@@ -6951,7 +7259,10 @@ local t = {
       MaxDistance = 2,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 2,
       SkActName = "qte",
@@ -7230,14 +7541,18 @@ local t = {
       MaxDistance = 10,
       SearchAngleWeight = nil,
       SearchDensityWeight = {
-        10,
-        -2,
-        60,
-        4,
-        10,
-        -2,
-        60,
-        4
+        {
+          10,
+          -0.2,
+          60,
+          4
+        },
+        {
+          10,
+          -0.2,
+          60,
+          4
+        }
       },
       SearchDistWeight = nil,
       SearchViscousWeight = nil,
@@ -7607,7 +7922,9 @@ local t = {
       StrSkills = {
         "spiralPrick"
       },
-      TransDisable = nil,
+      TransDisable = {
+        "penetrating"
+      },
       TransEnable = nil,
       TransInertia = 2,
       TransPrio = 2,
@@ -7665,9 +7982,12 @@ local t = {
       Id = 193,
       IdealStartDist = 5,
       MaxDistance = 8,
-      NeedCull = true,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
+      SearchOcclusWeight = {
+        {-100},
+        {-100}
+      },
       SearchViscousWeight = nil,
       SecAngle = 60,
       SecRadius = 5,
@@ -7682,9 +8002,12 @@ local t = {
       Id = 194,
       IdealStartDist = 5,
       MaxDistance = 8,
-      NeedCull = true,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
+      SearchOcclusWeight = {
+        {-100},
+        {-100}
+      },
       SearchViscousWeight = nil,
       SecAngle = 60,
       SecRadius = 5,
@@ -7699,9 +8022,12 @@ local t = {
       Id = 195,
       IdealStartDist = 5,
       MaxDistance = 8,
-      NeedCull = true,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
+      SearchOcclusWeight = {
+        {-100},
+        {-100}
+      },
       SearchViscousWeight = nil,
       SecAngle = 60,
       SecRadius = 5,
@@ -7716,9 +8042,12 @@ local t = {
       Id = 196,
       IdealStartDist = 5,
       MaxDistance = 8,
-      NeedCull = true,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
+      SearchOcclusWeight = {
+        {-100},
+        {-100}
+      },
       SearchViscousWeight = nil,
       SecAngle = 60,
       SecRadius = 5,
@@ -7823,9 +8152,12 @@ local t = {
       Id = 197,
       IdealStartDist = 5,
       MaxDistance = 8,
-      NeedCull = true,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
+      SearchOcclusWeight = {
+        {-100},
+        {-100}
+      },
       SearchViscousWeight = nil,
       SecAngle = 60,
       SecRadius = 5,
@@ -7859,7 +8191,10 @@ local t = {
       MaxDistance = 10,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 2,
       SkActName = "qte",
@@ -7980,7 +8315,7 @@ local t = {
       StrSkills = {
         "skill03_SpL"
       },
-      TransDisable = nil,
+      TransDisable = {"dashOut", "dashIn"},
       TransEnable = nil,
       Type = "skill"
     },
@@ -7999,7 +8334,7 @@ local t = {
       StrSkills = {
         "skill03_SpR"
       },
-      TransDisable = nil,
+      TransDisable = {"dashOut", "dashIn"},
       TransEnable = nil,
       Type = "skill"
     },
@@ -8269,7 +8604,7 @@ local t = {
       SecRadius = 2,
       SkActName = "linkQte",
       StrSkills = {"linkQte"},
-      TransDisable = nil,
+      TransDisable = {"skill3_1", "skill2_1"},
       TransEnable = nil
     },
     link_skill2_1 = {
@@ -8315,7 +8650,10 @@ local t = {
       MaxDistance = 2,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 2,
       SkActName = "qte",
@@ -8346,14 +8684,18 @@ local t = {
       MaxDistance = 10,
       SearchAngleWeight = nil,
       SearchDensityWeight = {
-        10,
-        -0.02,
-        360,
-        6,
-        10,
-        -0.02,
-        360,
-        6
+        {
+          10,
+          -0.2,
+          360,
+          6
+        },
+        {
+          10,
+          -0.2,
+          360,
+          6
+        }
       },
       SearchDistWeight = nil,
       SearchViscousWeight = nil,
@@ -8361,7 +8703,7 @@ local t = {
       SecRadius = 5,
       SkActName = "skill2_2",
       StrSkills = {"skill2_2"},
-      TransDisable = nil,
+      TransDisable = {"dashOut", "dashIn"},
       TransEnable = nil,
       Type = "skill"
     },
@@ -8393,7 +8735,7 @@ local t = {
       SecRadius = 2,
       SkActName = "skill3_2",
       StrSkills = {"skill3_2"},
-      TransDisable = nil,
+      TransDisable = {"dashOut", "dashIn"},
       TransEnable = nil,
       Type = "skill"
     },
@@ -8622,7 +8964,10 @@ local t = {
       MaxDistance = 4.5,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 4.5,
       SkActName = "qte",
@@ -9059,7 +9404,10 @@ local t = {
       MaxDistance = 3,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 3,
       SkActName = "linkQte",
@@ -9186,16 +9534,25 @@ local t = {
       Id = 13,
       IdealStartDist = 5,
       MaxDistance = 10,
-      SearchAngleWeight = {5, -0.05},
-      SearchDistWeight = {
-        8,
-        -2,
-        0,
-        10,
-        -2,
-        0
+      SearchAngleWeight = {
+        {5, -0.05}
       },
-      SearchViscousWeight = {3, 2},
+      SearchDistWeight = {
+        {
+          8,
+          -2,
+          0
+        },
+        {
+          10,
+          -2,
+          0
+        }
+      },
+      SearchViscousWeight = {
+        {3},
+        {2}
+      },
       SecAngle = 60,
       SecRadius = 5,
       SkActName = "air_sprint",
@@ -9232,7 +9589,7 @@ local t = {
       SecRadius = 15,
       SkActName = "atk2",
       StrSkills = {"atk2"},
-      TransDisable = {"throw_fan"},
+      TransDisable = nil,
       TransEnable = nil,
       Type = "atk"
     },
@@ -9396,7 +9753,10 @@ local t = {
       MaxDistance = 2,
       SearchAngleWeight = nil,
       SearchDistWeight = nil,
-      SearchViscousWeight = {5, 5},
+      SearchViscousWeight = {
+        {5},
+        {5}
+      },
       SecAngle = 60,
       SecRadius = 2,
       SkActName = "qte",
@@ -9863,8 +10223,6 @@ t[1001008].punish4.SearchViscousWeight = t[1001008].arashi.SearchViscousWeight
 t[1001008].punish4.TransDisable = t[1001001].atk1.TransDisable
 t[1001008].punish4.TransEnable = t[1001001].atk1.TransDisable
 t[1001008].punishMult.SearchAngleWeight = t[1001008].arashi.SearchAngleWeight
-t[1001008].punishMult.SearchDistWeight = t[1001008].arashi.SearchDistWeight
-t[1001008].punishMult.SearchViscousWeight = t[1001008].arashi.SearchViscousWeight
 t[1001008].punishMult.TransDisable = t[1001001].atk1.TransDisable
 t[1001008].punishMult.TransEnable = t[1001001].atk1.TransDisable
 t[1001008].qte.SearchAngleWeight = t[1001008].arashi.SearchAngleWeight
@@ -9872,7 +10230,6 @@ t[1001008].qte.SearchDistWeight = t[1001008].arashi.SearchDistWeight
 t[1001008].qte.TransDisable = t[1001001].atk1.TransDisable
 t[1001008].qte.TransEnable = t[1001001].atk1.TransDisable
 t[1001008].ult.SearchAngleWeight = t[1001008].arashi.SearchAngleWeight
-t[1001008].ult.SearchDistWeight = t[1001008].arashi.SearchDistWeight
 t[1001008].ult.SearchViscousWeight = t[1001008].arashi.SearchViscousWeight
 t[1001008].ult.TransDisable = t[1001001].atk1.TransDisable
 t[1001008].ult.TransEnable = t[1001001].atk1.TransDisable
@@ -11695,7 +12052,6 @@ t[1001025].smashDown.TransEnable = t[1001001].atk1.TransDisable
 t[1001025].spiralPrick.SearchAngleWeight = t[1001004].atk1.SearchAngleWeight
 t[1001025].spiralPrick.SearchDistWeight = t[1001004].atk1.SearchDistWeight
 t[1001025].spiralPrick.SearchViscousWeight = t[1001004].atk1.SearchViscousWeight
-t[1001025].spiralPrick.TransDisable = t[1001001].atk1.TransDisable
 t[1001025].spiralPrick.TransEnable = t[1001001].atk1.TransDisable
 t[1001025].ult.SearchAngleWeight = t[1001004].atk1.SearchAngleWeight
 t[1001025].ult.SearchDistWeight = t[1001004].atk1.SearchDistWeight
@@ -11806,12 +12162,10 @@ t[1001026].skill03_R.TransEnable = t[1001001].atk1.TransDisable
 t[1001026].skill03_SpL.SearchAngleWeight = t[1001011].atk1.SearchAngleWeight
 t[1001026].skill03_SpL.SearchDistWeight = t[1001011].atk1.SearchDistWeight
 t[1001026].skill03_SpL.SearchViscousWeight = t[1001011].atk1.SearchViscousWeight
-t[1001026].skill03_SpL.TransDisable = t[1001001].atk1.TransDisable
 t[1001026].skill03_SpL.TransEnable = t[1001001].atk1.TransDisable
 t[1001026].skill03_SpR.SearchAngleWeight = t[1001011].atk1.SearchAngleWeight
 t[1001026].skill03_SpR.SearchDistWeight = t[1001011].atk1.SearchDistWeight
 t[1001026].skill03_SpR.SearchViscousWeight = t[1001011].atk1.SearchViscousWeight
-t[1001026].skill03_SpR.TransDisable = t[1001001].atk1.TransDisable
 t[1001026].skill03_SpR.TransEnable = t[1001001].atk1.TransDisable
 t[1001026].skill03_Ult.SearchAngleWeight = t[1001011].atk1.SearchAngleWeight
 t[1001026].skill03_Ult.SearchDistWeight = t[1001011].atk1.SearchDistWeight
@@ -11895,7 +12249,6 @@ t[1001027].heavy.TransEnable = t[1001001].atk1.TransDisable
 t[1001027].linkQte.SearchAngleWeight = t[1001008].arashi.SearchAngleWeight
 t[1001027].linkQte.SearchDistWeight = t[1001008].arashi.SearchDistWeight
 t[1001027].linkQte.SearchViscousWeight = t[1001008].arashi.SearchViscousWeight
-t[1001027].linkQte.TransDisable = t[1001001].atk1.TransDisable
 t[1001027].linkQte.TransEnable = t[1001001].atk1.TransDisable
 t[1001027].link_skill2_1.SearchAngleWeight = t[1001008].arashi.SearchAngleWeight
 t[1001027].link_skill2_1.SearchDistWeight = t[1001008].arashi.SearchDistWeight
@@ -11919,7 +12272,6 @@ t[1001027].skill2_1.TransEnable = t[1001001].atk1.TransDisable
 t[1001027].skill2_2.SearchAngleWeight = t[1001008].arashi.SearchAngleWeight
 t[1001027].skill2_2.SearchDistWeight = t[1001008].arashi.SearchDistWeight
 t[1001027].skill2_2.SearchViscousWeight = t[1001008].arashi.SearchViscousWeight
-t[1001027].skill2_2.TransDisable = t[1001001].atk1.TransDisable
 t[1001027].skill2_2.TransEnable = t[1001001].atk1.TransDisable
 t[1001027].skill3_1.SearchAngleWeight = t[1001008].arashi.SearchAngleWeight
 t[1001027].skill3_1.SearchDistWeight = t[1001008].arashi.SearchDistWeight
@@ -11929,7 +12281,6 @@ t[1001027].skill3_1.TransEnable = t[1001001].atk1.TransDisable
 t[1001027].skill3_2.SearchAngleWeight = t[1001008].arashi.SearchAngleWeight
 t[1001027].skill3_2.SearchDistWeight = t[1001008].arashi.SearchDistWeight
 t[1001027].skill3_2.SearchViscousWeight = t[1001008].arashi.SearchViscousWeight
-t[1001027].skill3_2.TransDisable = t[1001001].atk1.TransDisable
 t[1001027].skill3_2.TransEnable = t[1001001].atk1.TransDisable
 t[1001027].ult.SearchAngleWeight = t[1001008].arashi.SearchAngleWeight
 t[1001027].ult.SearchDistWeight = t[1001008].arashi.SearchDistWeight
@@ -12179,6 +12530,7 @@ t[1001030].atk1.TransEnable = t[1001001].atk1.TransDisable
 t[1001030].atk2.SearchAngleWeight = t[1001030].air_sprint.SearchAngleWeight
 t[1001030].atk2.SearchDistWeight = t[1001030].air_sprint.SearchDistWeight
 t[1001030].atk2.SearchViscousWeight = t[1001030].air_sprint.SearchViscousWeight
+t[1001030].atk2.TransDisable = t[1001001].atk1.TransDisable
 t[1001030].atk2.TransEnable = t[1001001].atk1.TransDisable
 t[1001030].atk3.SearchAngleWeight = t[1001030].air_sprint.SearchAngleWeight
 t[1001030].atk3.SearchDistWeight = t[1001030].air_sprint.SearchDistWeight

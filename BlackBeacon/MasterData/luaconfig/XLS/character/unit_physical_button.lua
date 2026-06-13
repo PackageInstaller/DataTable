@@ -790,7 +790,7 @@ return {
       BtnName = "sk2",
       CharId = 1001030,
       Id = 3,
-      InitIcon = "skill3_1"
+      InitIcon = "sweep"
     },
     ult = {
       BtnName = "ult",

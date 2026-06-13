@@ -30,6 +30,12 @@ function M.release_all_pool()
   UtilTable.clear_map(POOL_INFOS)
 end
 
+function M.print_all_pool()
+  for key, pool in pairs(POOLS) do
+    Log.Error("pool: ", key, " active_count: ", pool:get_active_count(), " free_count: ", pool:get_free_count())
+  end
+end
+
 function M.check_exist(key)
   return nil ~= POOLS[key]
 end
@@ -107,6 +113,10 @@ function M:get_active_count()
   return self.v_pool_info.active_count
 end
 
+function M:get_free_count()
+  return self.v_pool_info.free_count
+end
+
 function M:release_active_objs()
   for active_obj, _ in pairs(self.v_pool_info.active_objs) do
     self:destroy_obj(active_obj)
@@ -115,13 +125,16 @@ function M:release_active_objs()
   UtilTable.clear_map(self.v_pool_info.active_objs)
 end
 
-function M:release_free_objs()
+function M:call_free_objs_on_release()
   for key, obj in pairs(self.v_pool_info.free_objs) do
     if obj and obj.on_release then
       obj:on_release()
     end
-    self.v_pool_info.free_objs[key] = nil
   end
+end
+
+function M:release_free_objs()
+  self:call_free_objs_on_release()
   self.v_pool_info.free_count = 0
   self.v_throw_to_many_error_lock = nil
   UtilTable.clear_map(self.v_pool_info.free_objs)

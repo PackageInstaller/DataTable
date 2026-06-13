@@ -19,6 +19,15 @@ end
 function ui:ui_on_show()
   local transform = self:get_object_transform()
   self.v_size_delta_x, self.v_size_delta_y = transform:GetSizeDeltaA()
+  local activated_pov_index = VisualGameManager:get_activated_pov_index()
+  local capture_system_data = VisualGameManager:get_capture_system_data()
+  local index
+  for i, pov_index in ipairs(capture_system_data.PovID) do
+    if pov_index == activated_pov_index then
+      index = i
+    end
+  end
+  self.v_uicompents.LocationName_txt.text = capture_system_data.Desc[index]
 end
 
 function ui:ui_on_update()

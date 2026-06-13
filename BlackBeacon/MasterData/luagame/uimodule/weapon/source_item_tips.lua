@@ -54,7 +54,8 @@ function ui:on_click_up_lv()
   if not self.v_cost_gem_data or self.v_lvup_click_blocker then
     return
   end
-  local cb = function()
+  
+  local function cb()
     GemStoneMgr:req_c2gs_equip_gemstone_up_level(self.v_uuid, self.v_cost_gem_data.uuid, function()
       if self.v_anim_lvup then
         self.v_anim_lvup.time = 0
@@ -67,6 +68,7 @@ function ui:on_click_up_lv()
       end)
     end)
   end
+  
   if 0 ~= self.v_cost_gem_data.owner then
     Util.show_notify_popup_message(cb, "消耗材料已被装备，是否继续？")
   elseif self.v_cost_gem_data.level > 1 then

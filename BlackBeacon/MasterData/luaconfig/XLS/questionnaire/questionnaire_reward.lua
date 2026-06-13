@@ -13,5 +13,15 @@ return {
     Id = 300007760,
     MailId = 100002,
     RewardLimit = 1
+  },
+  [321286542] = {
+    Id = 321286542,
+    MailId = 100003,
+    RewardLimit = 1
+  },
+  [322812077] = {
+    Id = 322812077,
+    MailId = 100003,
+    RewardLimit = 1
   }
 }

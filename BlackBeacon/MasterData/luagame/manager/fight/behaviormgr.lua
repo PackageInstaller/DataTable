@@ -100,10 +100,12 @@ local EVENTS = {
   ON_TREASURE_CHEST_GUIDE_STATE_UPDATE = "on_treasure_chest_guide_state_update",
   ON_ACTIVATE_POV_CAMERA = "on_activate_pov_camera",
   ON_DEACTIVATE_POV_CAMERA = "on_deactivate_pov_camera",
-  ON_FORCE_SHIFT_END = "on_force_shift_end"
+  ON_FORCE_SHIFT_END = "on_force_shift_end",
+  ON_SKILL_SHIFT_PAUSE = "on_skill_shift_pause"
 }
 M.EVENTS = EVENTS
-local _get_event_key = function(event_name)
+
+local function _get_event_key(event_name)
   local event_key, event_key2 = EVENT_NAME_CACHE[event_name], EVENT2_NAME_CACHE[event_name]
   if not event_key then
     event_key = string.format(TBNAME_PREFIX, event_name)
@@ -131,16 +133,13 @@ function M:init()
   Util.bind_msg(self, Const.MSG_ON_ROLE_ATTR_CHANGE, self.on_role_attr_change, self)
   self.v_char_to_behaviors = setmetatable({}, Config.KEY_WEAK_METATABLE)
   self.v_char_scopes = setmetatable({}, Config.KEY_WEAK_METATABLE)
-  if UNITY_EDITOR then
-    self.v_behavior_list = {}
-  end
   self.v_wait_load = {}
   self.v_fun_call_count = {}
   self.v_last_update_time = 0
   self.v_mqs = {}
   self.v_hero_behavior_list = {}
   self.v_wait_load_maneger = {}
-  self.v_file_to_maneger = setmetatable({}, Config.WEAK_METATABLE)
+  self.v_file_to_manager = setmetatable({}, Config.WEAK_METATABLE)
 end
 
 function M:on_enter_tower()
@@ -168,13 +167,13 @@ function M:load_manager(file)
     self.v_wait_load_maneger[file] = true
     return
   end
-  if self.v_file_to_maneger[file] then
+  if self.v_file_to_manager[file] and UNITY_EDITOR then
     Log.Error("管理器已存在，不可重复创建", file, debug.traceback())
     return
   end
   local module = self:get_behavior_module(file)
   local instance = module:new(file, SCOPE_GLOBAL)
-  self.v_file_to_maneger[file] = instance
+  self.v_file_to_manager[file] = instance
   if instance.on_start then
     instance:on_start()
   end
@@ -207,8 +206,6 @@ function M:load(file, char, callback)
   local instance = module:new(char, file, char_scope, SCOPE_GLOBAL)
   instance.file_id = file
   instance.npc = char
-  instance.scope_npc = char_scope
-  instance.scope_global = SCOPE_GLOBAL
   if instance.on_start then
     instance:on_start()
   end
@@ -222,14 +219,6 @@ function M:load(file, char, callback)
     Log.Error("行为脚本将被覆盖， 需检查是否正确， 原先脚本:", char_behaviors[file].file_id, "覆盖脚本：", file, debug.traceback())
   end
   char_behaviors[file] = instance
-  if UNITY_EDITOR then
-    local behavior_list = self.v_behavior_list[file]
-    if not behavior_list then
-      behavior_list = {}
-      self.v_behavior_list[file] = behavior_list
-    end
-    table.insert(behavior_list, instance)
-  end
   if char:is_hero() then
     self.v_hero_behavior_list[file] = instance
     if not Util.is_client_only() then
@@ -287,7 +276,7 @@ function M:remove_manager(file)
     self.v_wait_load_maneger[file] = nil
     self.v_wait_load_count = self.v_wait_load_count - 1
   end
-  local instance = self.v_file_to_maneger[file]
+  local instance = self.v_file_to_manager[file]
   if not instance then
     return
   end
@@ -295,7 +284,7 @@ function M:remove_manager(file)
   if instance.on_remove then
     instance:on_remove()
   end
-  self.v_file_to_maneger[file] = nil
+  self.v_file_to_manager[file] = nil
 end
 
 function M:remove(file, char)
@@ -312,13 +301,6 @@ function M:remove(file, char)
     return
   end
   self:_remove_event_listener(instance)
-  if UNITY_EDITOR then
-    local behavior_list = self.v_behavior_list[file]
-    if behavior_list then
-      local pos = UtilTable.table_find(behavior_list, instance)
-      table.remove(behavior_list, pos)
-    end
-  end
   if instance.on_remove then
     instance:on_remove()
   end
@@ -343,7 +325,7 @@ end
 
 function M:clear_all(is_clear_scene)
   if is_clear_scene then
-    UtilTable.clear_map(self.v_char_to_behaviors)
+    self.v_char_to_behaviors = {}
   end
   local CommonManager = M.SCOPE_GLOBAL.ComnMgr
   UtilTable.clear_map(M.SCOPE_GLOBAL)
@@ -364,14 +346,14 @@ function M:clear_all(is_clear_scene)
   end
   BehaviorLoader:clear_all()
   SceneBehaviorLoader:clear_all()
-  if CommonManager then
+  if Util.is_client_only() and CommonManager then
     self:remove_manager(CommonManager.file_id)
-    UtilTable.clear_map(self.v_file_to_maneger)
-    if not is_clear_scene then
-      self:create_common_manager()
-    end
-  else
-    UtilTable.clear_map(self.v_file_to_maneger)
+    UtilTable.clear_map(self.v_file_to_manager)
+    self:create_common_manager()
+  end
+  self:clear_all_manager()
+  if is_clear_scene then
+    self:destroy_all_manager()
   end
   EVENT_NAME_CACHE = {}
   EVENT2_NAME_CACHE = {}
@@ -394,9 +376,6 @@ function M:reload_all()
       cb = char._on_load_file_finish
     end
     self:load(file, char, cb)
-  end
-  if UNITY_EDITOR then
-    self.v_behavior_list = {}
   end
 end
 
@@ -429,6 +408,29 @@ end
 function M:create_common_manager()
   local manager_path = "common.common_manager"
   self:load_manager(manager_path)
+end
+
+function M:destroy_all_manager()
+  if not self.v_file_to_manager then
+    return
+  end
+  for _, instance in pairs(self.v_file_to_manager) do
+    if instance.on_destroy_mamager then
+      instance:on_destroy_mamager()
+    end
+  end
+  UtilTable.clear_map(self.v_file_to_manager)
+end
+
+function M:clear_all_manager()
+  if not self.v_file_to_manager then
+    return
+  end
+  for _, instance in pairs(self.v_file_to_manager) do
+    if instance.on_clear_manager then
+      instance:on_clear_manager()
+    end
+  end
 end
 
 function M:update()
@@ -798,7 +800,8 @@ function M:effect_aborn_magic(npc, target, element)
 end
 
 local _def_magic_tag = "DEF_MAGIC_TAG"
-local call_magic_mq = function(self, type, magic_id, ...)
+
+local function call_magic_mq(self, type, magic_id, ...)
   local mqs = self.v_mqs[type]
   if not mqs then
     return
@@ -911,7 +914,8 @@ function M:get_behavior_by_obj(obj)
 end
 
 local _def_missile_tag = "DEF_MISSILE_TAG"
-local call_missile_mq = function(self, type, missile_id, ...)
+
+local function call_missile_mq(self, type, missile_id, ...)
   local mqs = self.v_mqs[type]
   if not mqs then
     return
@@ -959,7 +963,8 @@ function M:on_missile_bound_release_npc(owner, target_npc, missile_cfg, missile)
 end
 
 local _def_button_tag = "DEF_BUTTON_TAG"
-local call_button_mq = function(self, type, ...)
+
+local function call_button_mq(self, type, ...)
   local mqs = self.v_mqs[type]
   if not mqs then
     return

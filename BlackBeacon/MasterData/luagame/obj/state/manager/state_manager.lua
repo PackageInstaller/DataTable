@@ -15,6 +15,29 @@ function M:_init(owner)
   end
 end
 
+function M:on_before_destroy()
+  self.v_owner = nil
+end
+
+function M:on_destroy_gameobj()
+  self.v_cur_states = nil
+  for _, state in pairs(self.v_states) do
+    state:on_destroy()
+  end
+  self.v_states = nil
+  self.v_action_states = nil
+end
+
+function M:on_destroy_luaobj()
+  self.v_god_mode_time = nil
+  self.v_god_mode_key = nil
+  for state_name, state in pairs(self.v_cur_states) do
+    self.v_cur_states[state_name] = nil
+    self.v_action_states[state_name] = nil
+    state:state_on_leave()
+  end
+end
+
 function M:register_all_state()
   assert(nil)
 end
@@ -157,16 +180,6 @@ end
 
 function M:get_cur_state(state_name)
   return self.v_cur_states[state_name]
-end
-
-function M:on_destroy_luaobj()
-  self.v_god_mode_time = nil
-  self.v_god_mode_key = nil
-  for state_name, state in pairs(self.v_cur_states) do
-    self.v_cur_states[state_name] = nil
-    self.v_action_states[state_name] = nil
-    state:state_on_leave()
-  end
 end
 
 function M:get_all_state()

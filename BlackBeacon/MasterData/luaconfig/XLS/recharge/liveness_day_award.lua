@@ -55,27 +55,27 @@ return {
   },
   {
     {
-      AwardGroupId = 21001,
+      AwardGroupId = 42941,
       Id = 3,
       SignDay = 1
     },
     {
-      AwardGroupId = 21002,
+      AwardGroupId = 42942,
       Id = 3,
       SignDay = 2
     },
     {
-      AwardGroupId = 21003,
+      AwardGroupId = 42943,
       Id = 3,
       SignDay = 3
     },
     {
-      AwardGroupId = 21004,
+      AwardGroupId = 42944,
       Id = 3,
       SignDay = 4
     },
     {
-      AwardGroupId = 21005,
+      AwardGroupId = 42945,
       Id = 3,
       SignDay = 5
     }

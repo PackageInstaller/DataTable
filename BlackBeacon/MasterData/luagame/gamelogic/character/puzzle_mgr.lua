@@ -248,9 +248,10 @@ function M:remove_buddy_all_puzzle(buddy_id)
     end
   end
   if #puzzle_uuid_list > 0 then
-    local confirm_cb = function()
+    local function confirm_cb()
       self:uninstall_puzzle(nil, puzzle_uuid_list)
     end
+    
     Util.show_notify_popup_message(confirm_cb, "是否卸下全部古痕？")
   end
 end

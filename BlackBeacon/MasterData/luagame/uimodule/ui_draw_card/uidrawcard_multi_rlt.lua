@@ -36,14 +36,16 @@ local TYPE_SORT_DIC = {
   [Config.AWARD_TYPE.EQUIP] = 5,
   [Config.AWARD_TYPE.ITEM] = 0
 }
-local _type_value_of_item = function(item_id)
+
+local function _type_value_of_item(item_id)
   local config = Util.get_item_type_cfg(item_id)
   if not config then
     return 0
   end
   return TYPE_SORT_DIC[config.AwardType] or 0
 end
-local _item_sorter = function(a, b)
+
+local function _item_sorter(a, b)
   local quality_a = UtilUI.get_item_qulity(a.item_id)
   local quality_b = UtilUI.get_item_qulity(b.item_id)
   if quality_a ~= quality_b then
@@ -93,9 +95,11 @@ function ui:ui_on_show(data_list)
   else
     self.v_item_list.transform:SetLocalScaleA(1 * scale, 1 * scale, 1)
   end
-  local stopped_func = function()
+  
+  local function stopped_func()
     MsgGame:mq_publish2(Const.MSG_RELEASE_COMMON_BATTLE_TIPS_HOLD_TASK)
   end
+  
   self.v_ui_in_pd_trans:SetTimelineSeqEndCB(stopped_func)
   self.v_uiobjects.Gold:SetActive(max_quality > 4)
   self.v_uiobjects.Other:SetActive(max_quality <= 4)

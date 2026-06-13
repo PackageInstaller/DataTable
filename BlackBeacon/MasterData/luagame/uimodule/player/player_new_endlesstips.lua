@@ -6,7 +6,8 @@ local PLAYER_NEW_ENDLESSTIPS_ITEM = require("uimodule.player.player_new_endlesst
 local PALYER_NEW_ENDLESSTIPS_ITEM_TEMP_KEY = "PLAYER_NEW_ENDLESSTIPS_ITEM_TEMP_KEY"
 local _tinsert = table.insert
 local INFINITE_EPISODE_TYPE = Config.CommonDefine.INFINITE_EPISODE_TYPE
-local sort_func = function(a, b)
+
+local function sort_func(a, b)
   if a.Priority ~= b.Priority then
     return a.Priority < b.Priority
   else
@@ -38,30 +39,37 @@ function ui:ui_on_show(select_id)
       _tinsert(chapter_list, v)
     end
   end
-  self.v_static_sv:update_list(chapter_list)
-  local togs = {}
-  local items = self.v_static_sv:get_items()
-  local defualt_index
-  for index, item in ipairs(items) do
-    local tog = item.v_uicompents.Bg_tog
-    if item.v_chapter_id == select_id then
-      defualt_index = index
-    end
-    _tinsert(togs, tog)
-  end
-  local init_cb = function()
+  if UtilTable.is_empty(chapter_list) then
+    _tinsert(chapter_list, {id = -1, score = 0})
+    self.v_static_sv:update_list(chapter_list)
+  else
+    self.v_static_sv:update_list(chapter_list)
+    local togs = {}
     local items = self.v_static_sv:get_items()
-    for i, v in ipairs(items) do
-      if v.v_chapter_id == select_id then
-        v.v_uiobjects.Active:SetActive(true)
-        goto lbl_21
+    local defualt_index
+    for index, item in ipairs(items) do
+      local tog = item.v_uicompents.Bg_tog
+      if item.v_chapter_id == select_id then
+        defualt_index = index
       end
+      _tinsert(togs, tog)
     end
-    ::lbl_21::
+    
+    local function init_cb()
+      local items = self.v_static_sv:get_items()
+      for i, v in ipairs(items) do
+        if v.v_chapter_id == select_id then
+          v.v_uiobjects.Active:SetActive(true)
+          goto lbl_21
+        end
+      end
+      ::lbl_21::
+    end
+    
+    self.v_toggle_tab:init_by_toggles(togs, function(index)
+      self:refresh_select_view(index)
+    end, defualt_index, nil, init_cb)
   end
-  self.v_toggle_tab:init_by_toggles(togs, function(index)
-    self:refresh_select_view(index)
-  end, defualt_index, nil, init_cb)
 end
 
 function ui:init_infinite_list()

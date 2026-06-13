@@ -46,10 +46,12 @@ function ui:ui_on_hide()
 end
 
 function ui:_onclick_quit_btn()
-  local callback = function()
+  local function callback()
     Global.scene_mgr:on_enter_main_scene()
+    
     UIMgr:revert_cache_ui()
   end
+  
   if TowerMgr then
     TowerMgr:get_fight_reward(callback)
   end

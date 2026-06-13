@@ -79,12 +79,14 @@ local M = {}
 
 function M.play(transform, alpha_target, base_action_id, call_back)
   local action_run_count = 0
-  local complete_call_back = function()
+  
+  local function complete_call_back()
     action_run_count = action_run_count - 1
     if 0 == action_run_count and call_back then
       call_back()
     end
   end
+  
   local do_action_list = {}
   for i = 0, ACTION_GROUP_MAX do
     local action_id = base_action_id + i * 10

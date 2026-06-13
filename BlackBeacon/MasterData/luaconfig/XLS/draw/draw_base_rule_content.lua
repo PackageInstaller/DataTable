@@ -113,6 +113,18 @@ return {
     Title = "详情说明",
     Type = 1
   },
+  [314] = {
+    ContentText = "卡池开放期间，预见者在<color=#ec7f00><b>[清扫即歼灭]</b></color>中可使用[寻时密钥]进行检索。",
+    Id = 314,
+    Title = "详情说明",
+    Type = 1
+  },
+  [315] = {
+    ContentText = "卡池开放期间，预见者在<color=#ec7f00><b>[转风势，揽云波]</b></color>中可使用[寻时密钥]进行检索。",
+    Id = 315,
+    Title = "详情说明",
+    Type = 1
+  },
   [401] = {
     Buddys = {1001009},
     Id = 401,
@@ -361,6 +373,54 @@ return {
   [445] = {
     ContentText = "卡池开放期间，预见者在<color=#ec7f00><b>[幽思的边界]</b></color>中可使用[寻时密钥]进行检索。",
     Id = 445,
+    Title = "详情说明",
+    Type = 1
+  },
+  [446] = {
+    Buddys = {1001025},
+    Id = 446,
+    Quality = 5,
+    Title = "占 <color=#d9a24e>5星</color> 出率的70%",
+    Type = 2
+  },
+  [447] = {
+    Buddys = {
+      1001011,
+      1001020,
+      1001013
+    },
+    Id = 447,
+    Quality = 4,
+    Title = "占 <color=#be97fb>4星</color> 出率的70%",
+    Type = 2
+  },
+  [448] = {
+    ContentText = "卡池开放期间，预见者在<color=#ec7f00><b>[家政终结者]</b></color>中可使用[寻时密钥]进行检索。",
+    Id = 448,
+    Title = "详情说明",
+    Type = 1
+  },
+  [449] = {
+    Buddys = {1001030},
+    Id = 449,
+    Quality = 5,
+    Title = "占 <color=#d9a24e>5星</color> 出率的70%",
+    Type = 2
+  },
+  [450] = {
+    Buddys = {
+      1001021,
+      1001015,
+      1001019
+    },
+    Id = 450,
+    Quality = 4,
+    Title = "占 <color=#be97fb>4星</color> 出率的70%",
+    Type = 2
+  },
+  [451] = {
+    ContentText = "卡池开放期间，预见者在<color=#ec7f00><b>[谋无遗策]</b></color>中可使用[寻时密钥]进行检索。",
+    Id = 451,
     Title = "详情说明",
     Type = 1
   }

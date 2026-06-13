@@ -105,7 +105,7 @@ function M:get_cur_area()
 end
 
 do
-  local _area_sorter = function(a, b)
+  local function _area_sorter(a, b)
     return a.cnt > b.cnt
   end
   

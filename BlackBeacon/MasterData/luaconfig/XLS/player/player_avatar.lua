@@ -386,7 +386,7 @@ return {
     Id = 700300,
     MaxCount = 1,
     Name = "兰华国香·头像",
-    Priority = 3,
+    Priority = 4,
     Quality = 4,
     RetrieveId = 0,
     Type = 1
@@ -400,7 +400,7 @@ return {
     Id = 700301,
     MaxCount = 1,
     Name = "紫夜珠光·头像",
-    Priority = 2,
+    Priority = 3,
     Quality = 5,
     RetrieveId = 0,
     Type = 1
@@ -414,6 +414,20 @@ return {
     Id = 700302,
     MaxCount = 1,
     Name = "小苍兰·头像",
+    Priority = 2,
+    Quality = 4,
+    RetrieveId = 0,
+    Type = 1
+  },
+  [700303] = {
+    BuddyID = 1001026,
+    CodeKey = "",
+    Desc = "获取对应时装引浪星光后解锁。",
+    HeapCount = 1,
+    Icon = "tx_player_26_S1",
+    Id = 700303,
+    MaxCount = 1,
+    Name = "引浪星光·头像",
     Priority = 1,
     Quality = 4,
     RetrieveId = 0,

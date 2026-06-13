@@ -18,7 +18,7 @@ local SyncTransforms = UnityEngine.Physics.SyncTransforms
 local SCALE_SPEED = 0.5
 local CSChangeLayer = CSHelper.ChangeLayerRecursively
 local CSChangeLayerExcept = CSHelper.ChangeLayerExceptRecursively
-local CompExtensions = CompExtensions
+local CompExtensions = _ENV.CompExtensions
 local M = Util.create_class()
 local MAX_COLLIDER_LEVEL = 999
 local MAX_OUT_LENGTH = 5
@@ -578,7 +578,7 @@ function M:_get_fixed_dir(cur_x, y, cur_z, cur_move_step, ray_start_y)
   self.collide_fixed_dir = nil
 end
 
-local _check_pos_can_walk = function(self, x, z, ray_start_y)
+local function _check_pos_can_walk(self, x, z, ray_start_y)
   local co
   if self:is_ghost() and not self:is_co_scene_npc() then
     co = SceneMgr:check_wall_collision(self, x, z)
@@ -592,7 +592,8 @@ local _check_pos_can_walk = function(self, x, z, ray_start_y)
     end
   end
 end
-local _get_nearist_dir_by_cache = function(self, cur_x, cur_z, ray_start_y, index)
+
+local function _get_nearist_dir_by_cache(self, cur_x, cur_z, ray_start_y, index)
   local dir_list = possible_cache_dir
   local dx, dz = dir_list[index], dir_list[index + 1]
   local x, z = cur_x + dx, cur_z + dz
@@ -602,6 +603,7 @@ local _get_nearist_dir_by_cache = function(self, cur_x, cur_z, ray_start_y, inde
     return dx, dz, height
   end
 end
+
 local OPPOSITE_DIR = {
   [1] = 3,
   [3] = 1,
@@ -1105,25 +1107,33 @@ function M:_check_sync_area()
     self.v_area_mask = new_mask
     if enter_area_list then
       for enter_area, v in pairs(enter_area_list) do
-        BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.ON_ENTER_AREA, self, enter_area)
-        BehaviorMgr:call_behavior_fun(self, "on_self_enter_area", enter_area)
-        if self:is_hero() then
-          BehaviorMgr:call_behavior_fun(self, "on_hero_enter_area", enter_area)
-        end
-        BehaviorMgr:call_scene_logic_event_fun(BehaviorMgr.EVENTS.ON_ENTER_AREA, self, enter_area)
+        self:trigger_enter_area_event(enter_area)
       end
     end
     if out_area_list then
       for out_area, v in pairs(out_area_list) do
-        BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.ON_LEAVE_AREA, self, out_area)
-        BehaviorMgr:call_behavior_fun(self, "on_self_leave_area", out_area)
-        if self:is_hero() then
-          BehaviorMgr:call_behavior_fun(self, "on_hero_leave_area", out_area)
-        end
-        BehaviorMgr:call_scene_logic_event_fun(BehaviorMgr.EVENTS.ON_LEAVE_AREA, self, out_area)
+        self:trigger_leave_area_event(out_area)
       end
     end
   end
+end
+
+function M:trigger_enter_area_event(enter_area)
+  BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.ON_ENTER_AREA, self, enter_area)
+  BehaviorMgr:call_behavior_fun(self, "on_self_enter_area", enter_area)
+  if self:is_hero() then
+    BehaviorMgr:call_behavior_fun(self, "on_hero_enter_area", enter_area)
+  end
+  BehaviorMgr:call_scene_logic_event_fun(BehaviorMgr.EVENTS.ON_ENTER_AREA, self, enter_area)
+end
+
+function M:trigger_leave_area_event(out_area)
+  BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.ON_LEAVE_AREA, self, out_area)
+  BehaviorMgr:call_behavior_fun(self, "on_self_leave_area", out_area)
+  if self:is_hero() then
+    BehaviorMgr:call_behavior_fun(self, "on_hero_leave_area", out_area)
+  end
+  BehaviorMgr:call_scene_logic_event_fun(BehaviorMgr.EVENTS.ON_LEAVE_AREA, self, out_area)
 end
 
 function M:is_in_tp_area()
@@ -1328,7 +1338,7 @@ function M:get_radius_offset_pos()
   return offset_pos[1], offset_pos[2]
 end
 
-local _need_sync_transforms = function(self)
+local function _need_sync_transforms(self)
   return not self:is_missile() and not self:is_functional_npc() and not self:is_scene_npc() and not self:is_simple_npc() and not self.in_background
 end
 
@@ -2090,9 +2100,11 @@ function M:obj_try_ation(action_name)
   if not self.act_ctrl then
     return
   end
-  local pass_cb = function()
+  
+  local function pass_cb()
     self.act_ctrl:try_action(action_name, 0)
   end
+  
   self:check_motion_config(action_name, pass_cb)
 end
 

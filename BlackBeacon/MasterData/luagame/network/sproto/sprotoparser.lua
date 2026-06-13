@@ -40,13 +40,15 @@ local Ct = lpeg.Ct
 local Cg = lpeg.Cg
 local Cc = lpeg.Cc
 local V = lpeg.V
-local count_lines = function(_, pos, parser_state)
+
+local function count_lines(_, pos, parser_state)
   if pos > parser_state.pos then
     parser_state.line = parser_state.line + 1
     parser_state.pos = pos
   end
   return pos
 end
+
 local exception = lpeg.Cmt(lpeg.Carg(1), function(_, pos, parser_state)
   error(string.format("syntax error at [%s] line (%d)", parser_state.file or "", parser_state.line))
   return pos
@@ -65,12 +67,15 @@ local typename = C(word * ("." * word) ^ 0)
 local tag = R("09") ^ 1 / tonumber
 local mainkey = "(" * blank0 * name * blank0 * ")"
 local decimal = "(" * blank0 * C(tag) * blank0 * ")"
-local multipat = function(pat)
+
+local function multipat(pat)
   return Ct(blank0 * (pat * blanks) ^ 0 * pat ^ 0 * blank0)
 end
-local namedpat = function(name, pat)
+
+local function namedpat(name, pat)
   return Ct(Cg(Cc(name), "type") * Cg(pat))
 end
+
 local typedef = P({
   "ALL",
   FIELD = namedpat("field", name * blanks * tag * blank0 * ":" * blank0 * C("*") ^ (-1) * typename * (mainkey + decimal) ^ 0),
@@ -157,7 +162,7 @@ function convert.type(all, obj)
   return result
 end
 
-local adjust = function(r)
+local function adjust(r)
   local result = {
     type = {},
     protocol = {}
@@ -170,6 +175,7 @@ local adjust = function(r)
   end
   return result
 end
+
 local buildin_types = {
   integer = 0,
   boolean = 1,
@@ -195,7 +201,7 @@ local function checktype(types, ptype, t)
   end
 end
 
-local check_protocol = function(r)
+local function check_protocol(r)
   local map = {}
   local type = r.type
   for name, v in pairs(r.protocol) do
@@ -216,7 +222,8 @@ local check_protocol = function(r)
   end
   return r
 end
-local flattypename = function(r)
+
+local function flattypename(r)
   for typename, t in pairs(r.type) do
     for _, f in pairs(t) do
       local ftype = f.typename
@@ -229,7 +236,8 @@ local flattypename = function(r)
   end
   return r
 end
-local parser = function(text, filename)
+
+local function parser(text, filename)
   local state = {
     file = filename,
     pos = 0,
@@ -238,7 +246,8 @@ local parser = function(text, filename)
   local r = lpeg.match(proto * -1 + exception, text, 1, state)
   return flattypename(check_protocol(adjust(r)))
 end
-local packfield = function(f)
+
+local function packfield(f)
   local strtbl = {}
   if f.array then
     if f.key then
@@ -272,7 +281,8 @@ local packfield = function(f)
   table.insert(strtbl, packbytes(f.name))
   return packbytes(table.concat(strtbl))
 end
-local packtype = function(name, t, alltypes)
+
+local function packtype(name, t, alltypes)
   local fields = {}
   local tmp = {}
   for _, f in ipairs(t) do
@@ -319,7 +329,8 @@ local packtype = function(name, t, alltypes)
   end
   return packbytes(table.concat(data))
 end
-local packproto = function(name, p, alltypes)
+
+local function packproto(name, p, alltypes)
   if p.request then
     local request = alltypes[p.request]
     if nil == request then
@@ -353,7 +364,8 @@ local packproto = function(name, p, alltypes)
   table.insert(tmp, packbytes(name))
   return packbytes(table.concat(tmp))
 end
-local packgroup = function(t, p)
+
+local function packgroup(t, p)
   if next(t) == nil then
     assert(next(p) == nil)
     return "\000\000"
@@ -414,9 +426,11 @@ local packgroup = function(t, p)
   end
   return table.concat(result)
 end
-local encodeall = function(r)
+
+local function encodeall(r)
   return packgroup(r.type, r.protocol)
 end
+
 local sparser = {}
 
 function sparser.dump(str)

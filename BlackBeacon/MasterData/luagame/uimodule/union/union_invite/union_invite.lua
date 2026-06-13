@@ -93,9 +93,11 @@ function ui:_onclick_search_btn()
       input_txt = tonumber(input_txt)
     end
   end
-  local callback = function(list)
+  
+  local function callback(list)
     self.v_list_view:refresh_data(list)
   end
+  
   if "string" == type(input_txt) then
     UnionMgr:request_search_no_union_players(nil, input_txt, callback)
   elseif type(input_txt) == "number" then

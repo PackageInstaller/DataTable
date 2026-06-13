@@ -3,9 +3,9 @@ local Input = UnityEngine.Input
 local CSInput = UnityEngine.Input
 local TouchPhase = UnityEngine.TouchPhase
 local Vec2 = require("base.vec2")
-local UnityVector2 = UnityVector2
-local CSHelper = CSHelper
-local UnityFind = UnityFind
+local UnityVector2 = _ENV.UnityVector2
+local CSHelper = _ENV.CSHelper
+local UnityFind = _ENV.UnityFind
 local TypeSceneContainer = typeof(CS.Game.SceneContainer)
 local TYPE_EFFECT_STATUS = TypeEffectStatus
 local ScaleListenerType = typeof(CS.ScaleListener)
@@ -122,12 +122,15 @@ function ui:init_container()
   self.v_uicompents.CenterRoot_rect:SetLocalEuler(0, 0, -angle_z)
   self.v_vcamera_control = self.v_container:Get("VirtualCamera_Control")
   local vcamera_control = self.v_vcamera_control
-  self.v_eff2 = Util.get_component("Drawcard_PD/FocusOnClock/Fx_Chouka_2", vcamera_control, TYPE_EFFECT_STATUS)
-  self.v_eff3 = Util.get_component("Drawcard_PD/FocusOnClock/Fx_Chouka_3", vcamera_control, TYPE_EFFECT_STATUS)
+  local draw_card_pd_name = FashionMgr:get_curr_fashion_draw_card_pd_name()
+  FashionMgr:show_fashion_draw_card_pd(draw_card_pd_name, self.v_vcamera_control)
+  self.v_draw_card_pd_go = Util.get_child_gameobj(draw_card_pd_name, vcamera_control)
+  self.v_eff2 = Util.get_component("FocusOnClock/Fx_Chouka_2", self.v_draw_card_pd_go, TYPE_EFFECT_STATUS)
+  self.v_eff3 = Util.get_component("FocusOnClock/Fx_Chouka_3", self.v_draw_card_pd_go, TYPE_EFFECT_STATUS)
   self.v_eff2:SetSpeed(1)
   self.v_eff3:SetSpeed(1)
   self:load_stars()
-  self.v_ani_step_eff = Util.get_child_gameobj("Drawcard_PD/FocusOnClock", vcamera_control):GetComponent(TypeUnityAnimator)
+  self.v_ani_step_eff = Util.get_child_gameobj("FocusOnClock", self.v_draw_card_pd_go):GetComponent(TypeUnityAnimator)
   self.v_ani_step_camera = Util.get_child_gameobj("CM_vcam", vcamera_control):GetComponent(TypeUnityAnimator)
   self.v_ani_step_clock = self.v_container:Get("Clock"):GetComponent(TypeUnityAnimator)
   self.v_ani_step_eff.speed = 0
@@ -166,7 +169,7 @@ function ui:load_stars()
     end
   end
   self.v_star_audio_id = max_quality >= 5 and Config.HIGH_QUALITY_AUDIO_ID or Config.NORMAL_QUALITY_AUDIO_ID
-  local shuttle_position = Util.get_child_gameobj("Drawcard_PD/CloseToClock/Chongdong", self.v_vcamera_control)
+  local shuttle_position = Util.get_child_gameobj("CloseToClock/Chongdong", self.v_draw_card_pd_go)
   for q, name in pairs(Config.DRAW_RESULT_QUALITY2_EFFECT_NAME) do
     Util.get_child_gameobj(name, shuttle_position):SetActive(max_quality == q)
   end
@@ -271,7 +274,7 @@ function ui:change_effect_speed(angle_count)
   self.v_eff3:SetSpeed(speed)
   self.v_ani_step_eff:Play("FocusOnClock", -1, ratio)
   self.v_ani_step_camera:Play("FocusOnClock_camera", -1, ratio)
-  self.v_ani_step_clock:Play("FocusOnClock_clock", -1, ratio)
+  self.v_ani_step_clock:Play(FashionMgr:get_curr_fashion_clock_anim_name(), -1, ratio)
   local lv = 1
   for i, t in ipairs(EFF_AUDIO_ID_LIST) do
     if ratio >= (i - 1) / 3 then
@@ -295,7 +298,7 @@ function ui:check_move_end()
     self.v_uimain:close_to_clock(function()
       self.v_ani_step_eff:Play("FocusOnClock", -1, 0)
       self.v_ani_step_camera:Play("FocusOnClock_camera", -1, 0)
-      self.v_ani_step_clock:Play("FocusOnClock_clock", -1, 0)
+      self.v_ani_step_clock:Play(FashionMgr:get_curr_fashion_clock_anim_name(), -1, 0)
     end)
     if self.v_audio_level then
       Global.sound_mgr:stop_sound_by_id_ex(EFF_AUDIO_ID_LIST[self.v_audio_level][2])

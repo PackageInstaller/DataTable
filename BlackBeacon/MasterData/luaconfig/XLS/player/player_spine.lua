@@ -3,307 +3,399 @@ return {
     BuddyID = 1001001,
     BuddyName = "零",
     FashionId = 3001001,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001002] = {
     BuddyID = 1001002,
     BuddyName = "徒花",
     FashionId = 3001002,
+    IsBase = 1,
     Name = "初始时装",
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001003] = {
     BuddyID = 1001003,
     BuddyName = "火石",
     FashionId = 3001003,
+    IsBase = 1,
     Name = "初始时装",
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001004] = {
     BuddyID = 1001004,
     BuddyName = "薪",
     FashionId = 3001004,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001005] = {
     BuddyID = 1001005,
     BuddyName = "柯尔特",
     FashionId = 3001005,
+    IsBase = 1,
     Name = "初始时装",
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001006] = {
     BuddyID = 1001006,
     BuddyName = "康帕丝",
     FashionId = 3001006,
+    IsBase = 1,
     Name = "初始时装",
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001007] = {
     BuddyID = 1001007,
     BuddyName = "浮波",
     FashionId = 3001007,
+    IsBase = 1,
     Name = "初始时装",
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001008] = {
     BuddyID = 1001008,
     BuddyName = "伊蕾什安",
     FashionId = 3001008,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
+    PosX1 = 500,
     PosY = -50,
+    PosY1 = -60,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001009] = {
     BuddyID = 1001009,
     BuddyName = "铂鸢",
     FashionId = 3001009,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001010] = {
     BuddyID = 1001010,
     BuddyName = "阿斯蒂",
     FashionId = 3001010,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001011] = {
     BuddyID = 1001011,
     BuddyName = "暝",
     FashionId = 3001011,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001012] = {
     BuddyID = 1001012,
     BuddyName = "青",
     FashionId = 3001012,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001013] = {
     BuddyID = 1001013,
     BuddyName = "赫菲",
     FashionId = 3001013,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001014] = {
     BuddyID = 1001014,
     BuddyName = "萝歌丝",
     FashionId = 3001014,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001015] = {
     BuddyID = 1001015,
     BuddyName = "沙玛什",
     FashionId = 3001015,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -140,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001016] = {
     BuddyID = 1001016,
     BuddyName = "薇奥拉",
     FashionId = 3001016,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 350,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001017] = {
     BuddyID = 1001017,
     BuddyName = "南娜",
     FashionId = 3001017,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001018] = {
     BuddyID = 1001018,
     BuddyName = "恩基",
     FashionId = 3001018,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001019] = {
     BuddyID = 1001019,
     BuddyName = "宁莎",
     FashionId = 3001019,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001020] = {
     BuddyID = 1001020,
     BuddyName = "无实",
     FashionId = 3001020,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -100,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001021] = {
     BuddyID = 1001021,
     BuddyName = "阿紫",
     FashionId = 3001021,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001022] = {
     BuddyID = 1001022,
     BuddyName = "黎蚩",
     FashionId = 3001022,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001023] = {
     BuddyID = 1001023,
     BuddyName = "姬夏",
     FashionId = 3001023,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -100,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001024] = {
     BuddyID = 1001024,
     BuddyName = "郁离",
     FashionId = 3001024,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001025] = {
     BuddyID = 1001025,
     BuddyName = "巴拉莱卡",
     FashionId = 3001025,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001026] = {
     BuddyID = 1001026,
     BuddyName = "菲娜米娜",
     FashionId = 3001026,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001027] = {
     BuddyID = 1001027,
     BuddyName = "金缕",
     FashionId = 3001027,
+    IsBase = 1,
     IsSpine = 1,
     Name = "初始时装",
     PosX = 400,
-    PosY = -50,
+    PosY = -100,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001028] = {
     BuddyID = 1001028,
     BuddyName = "薇丝珀",
     FashionId = 3001028,
+    IsBase = 1,
     Name = "初始时装",
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001029] = {
     BuddyID = 1001029,
     BuddyName = "黑铂鸢",
     FashionId = 3001029,
+    IsBase = 1,
     Name = "初始时装",
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3001030] = {
     BuddyID = 1001030,
     BuddyName = "旃檀",
     FashionId = 3001030,
+    IsBase = 1,
     Name = "初始时装",
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002001] = {
     BuddyID = 1001001,
@@ -314,7 +406,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002004] = {
     BuddyID = 1001004,
@@ -325,7 +419,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002008] = {
     BuddyID = 1001008,
@@ -336,7 +432,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002009] = {
     BuddyID = 1001009,
@@ -347,7 +445,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002010] = {
     BuddyID = 1001010,
@@ -358,7 +458,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002011] = {
     BuddyID = 1001011,
@@ -369,7 +471,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002012] = {
     BuddyID = 1001012,
@@ -380,7 +484,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002013] = {
     BuddyID = 1001013,
@@ -391,7 +497,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002014] = {
     BuddyID = 1001014,
@@ -402,7 +510,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002015] = {
     BuddyID = 1001015,
@@ -413,7 +523,9 @@ return {
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002016] = {
     BuddyID = 1001016,
@@ -424,7 +536,9 @@ return {
     PosX = 350,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002017] = {
     BuddyID = 1001017,
@@ -435,7 +549,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002018] = {
     BuddyID = 1001018,
@@ -446,7 +562,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002019] = {
     BuddyID = 1001019,
@@ -457,7 +575,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002020] = {
     BuddyID = 1001020,
@@ -468,7 +588,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002021] = {
     BuddyID = 1001021,
@@ -479,7 +601,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002022] = {
     BuddyID = 1001022,
@@ -490,7 +614,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002023] = {
     BuddyID = 1001023,
@@ -500,7 +626,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002024] = {
     BuddyID = 1001024,
@@ -511,7 +639,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002025] = {
     BuddyID = 1001025,
@@ -522,7 +652,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002026] = {
     BuddyID = 1001026,
@@ -533,7 +665,9 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002027] = {
     BuddyID = 1001027,
@@ -542,9 +676,11 @@ return {
     IsSpine = 2,
     Name = "缤纷色彩",
     PosX = 400,
-    PosY = 0,
+    PosY = -25,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002028] = {
     BuddyID = 1001028,
@@ -552,7 +688,9 @@ return {
     FashionId = 3002028,
     Name = "缤纷色彩",
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002029] = {
     BuddyID = 1001029,
@@ -560,7 +698,9 @@ return {
     FashionId = 3002029,
     Name = "缤纷色彩",
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3002030] = {
     BuddyID = 1001030,
@@ -568,7 +708,9 @@ return {
     FashionId = 3002030,
     Name = "缤纷色彩",
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3003001] = {
     BuddyID = 1001001,
@@ -579,7 +721,9 @@ return {
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3003009] = {
     BuddyID = 1001009,
@@ -590,7 +734,9 @@ return {
     PosX = 400,
     PosY = -8,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3003016] = {
     BuddyID = 1001016,
@@ -601,7 +747,9 @@ return {
     PosX = 350,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3003020] = {
     BuddyID = 1001020,
@@ -612,7 +760,22 @@ return {
     PosX = 400,
     PosY = -50,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
+  },
+  [3003026] = {
+    BuddyID = 1001026,
+    BuddyName = "菲娜米娜",
+    FashionId = 3003026,
+    IsSpine = 1,
+    Name = "引浪星光",
+    PosX = 365,
+    PosY = -50,
+    PosZ = 0,
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   },
   [3004009] = {
     BuddyID = 1001009,
@@ -623,6 +786,8 @@ return {
     PosX = 400,
     PosY = 0,
     PosZ = 0,
-    Scale = 1
+    PosZ1 = 0,
+    Scale = 1,
+    Scale1 = 1
   }
 }

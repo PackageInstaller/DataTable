@@ -28,7 +28,8 @@ local MODEL = {
     BIND_TYPE.TOGGLE
   }
 }
-local activity_sort = function(a, b)
+
+local function activity_sort(a, b)
   if a.priority == b.priority then
     if a.start_time == b.start_time then
       if a.id == b.id then
@@ -42,7 +43,8 @@ local activity_sort = function(a, b)
     return a.priority > b.priority
   end
 end
-local system_sort = function(a, b)
+
+local function system_sort(a, b)
   if a.priority == b.priority then
     if a.start_time == b.start_time then
       return a.id > b.id

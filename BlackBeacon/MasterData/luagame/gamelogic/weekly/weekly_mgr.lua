@@ -1229,9 +1229,11 @@ end
 function M:start_pvp_fight(point_id)
   local fight_type = CommonDef.CHALLENGE_TYPE.WEEK_ACTY_PVP_EPI
   local fight_team = self:get_weekly_fight_team(fight_type, point_id, false)
-  local cb = function()
+  
+  local function cb()
     TowerMgr:on_new_enter_tower(fight_type, point_id, 0, nil, fight_team)
   end
+  
   FormationMgr:change_fight_team(fight_team.id, fight_team.buddys, fight_team.main_pos)
   FormationMgr:send_save_fight_team(fight_team.id, cb)
 end

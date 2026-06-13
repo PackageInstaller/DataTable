@@ -506,22 +506,25 @@ function M:back_challenge_ring_plus()
   if not self:_back_challenge_ring_plus_check() then
     return
   end
-  local story_cb = function()
+  
+  local function story_cb()
     local event_data = self:get_card_event_data()
     if event_data then
       if Util.is_more_than_zero(event_data.event_id) then
         UIMgr:try_show_ui("challenge_ring_plus", "refresh_data")
         UIMgr:try_show_ui("fate_book_event_card", nil, self.v_cur_select_card_index, event_data, true)
       else
-        local remove_cb = function()
+        local function remove_cb()
           UIMgr:try_show_ui("challenge_ring_plus", "refresh_data")
         end
+        
         self:req_remove_card(remove_cb)
       end
     else
       UIMgr:try_show_ui("challenge_ring_plus", "refresh_data")
     end
   end
+  
   self.is_pick_up_all_item = false
   self.v_is_in_curse_fighting = false
   self:check_remove_back_ring_timer()
@@ -703,13 +706,15 @@ function M:select_door_card()
   if not self:is_door_open() then
     return
   end
-  local story_cb = function()
+  
+  local function story_cb()
     if self:is_end_ring() then
       self:req_enter_door()
       return
     end
     UIMgr:get_ui("fate_book_floor"):ui_show()
   end
+  
   self:check_start_or_end_ring_story(false, story_cb)
 end
 
@@ -1744,8 +1749,9 @@ function M:check_select_card_story(is_start, story_cb)
 end
 
 function M:select_card_logic(curse_value, debuff_list)
-  local story_cb = function()
+  local function story_cb()
     local select_index = self.v_cur_select_card_index
+    
     local card_cfg_info = self:get_card_cfg_info(select_index)
     local fun_name = CRAD_TYPE_FUN[card_cfg_info.Type]
     self[fun_name](self, select_index)
@@ -1756,6 +1762,7 @@ function M:select_card_logic(curse_value, debuff_list)
       self.v_is_in_multi_buy_view = true
     end
   end
+  
   self:check_select_card_story(true, story_cb)
 end
 

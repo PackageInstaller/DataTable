@@ -10,7 +10,7 @@ local UnityMaterial = UnityEngine.Material
 local TypeUnityAnimatorOverrideController = typeof(UnityEngine.AnimatorOverrideController)
 local UnityAnimationClip = UnityEngine.AnimationClip
 local UnityResourceFind = UnityEngine.Resources.FindObjectsOfTypeAll
-local TypeEffectStage = TypeEffectStage
+local TypeEffectStage = _ENV.TypeEffectStage
 local MAX_LOADING_EFFECT_COUNT = 20
 local _insert, _remove = table.insert, table.remove
 local LuaResPoolClass = Util.create_class()
@@ -398,7 +398,7 @@ function M:get_empty()
   return obj
 end
 
-local get_collider = function(self, func, pool_name, need_multi_collide, param, path)
+local function get_collider(self, func, pool_name, need_multi_collide, param, path)
   local pool = self.v_pools[pool_name]
   local obj = self:_pop_from_free_list(pool, path)
   if obj then

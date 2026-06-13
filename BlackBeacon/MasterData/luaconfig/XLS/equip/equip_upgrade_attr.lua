@@ -4095,9 +4095,9 @@ return {
     {
       Id = 2010270,
       Lv = 1,
-      attack = 7.21,
+      attack = 7.32,
       crit_atk_per = 0,
-      defense = 1.26,
+      defense = 1.35,
       energy = 0,
       hp = 0,
       penetrate = 0
@@ -4105,9 +4105,9 @@ return {
     {
       Id = 2010270,
       Lv = 2,
-      attack = 7.7,
+      attack = 7.83,
       crit_atk_per = 0,
-      defense = 1.34,
+      defense = 1.44,
       energy = 0,
       hp = 0,
       penetrate = 0
@@ -4115,9 +4115,9 @@ return {
     {
       Id = 2010270,
       Lv = 3,
-      attack = 8.56,
+      attack = 8.7,
       crit_atk_per = 0,
-      defense = 1.49,
+      defense = 1.6,
       energy = 0,
       hp = 0,
       penetrate = 0
@@ -4125,9 +4125,9 @@ return {
     {
       Id = 2010270,
       Lv = 4,
-      attack = 10.27,
+      attack = 10.44,
       crit_atk_per = 0,
-      defense = 1.79,
+      defense = 1.92,
       energy = 0,
       hp = 0,
       penetrate = 0
@@ -4137,9 +4137,9 @@ return {
     {
       Id = 2010271,
       Lv = 1,
-      attack = 8.11,
+      attack = 8.24,
       crit_atk_per = 0,
-      defense = 1.41,
+      defense = 1.52,
       energy = 0,
       hp = 0,
       penetrate = 0
@@ -4147,9 +4147,9 @@ return {
     {
       Id = 2010271,
       Lv = 2,
-      attack = 8.66,
+      attack = 8.81,
       crit_atk_per = 0,
-      defense = 1.51,
+      defense = 1.62,
       energy = 0,
       hp = 0,
       penetrate = 0
@@ -4157,9 +4157,9 @@ return {
     {
       Id = 2010271,
       Lv = 3,
-      attack = 9.63,
+      attack = 9.79,
       crit_atk_per = 0,
-      defense = 1.68,
+      defense = 1.8,
       energy = 0,
       hp = 0,
       penetrate = 0
@@ -4167,9 +4167,9 @@ return {
     {
       Id = 2010271,
       Lv = 4,
-      attack = 11.55,
+      attack = 11.74,
       crit_atk_per = 0,
-      defense = 2.01,
+      defense = 2.16,
       energy = 0,
       hp = 0,
       penetrate = 0
@@ -4177,9 +4177,9 @@ return {
     {
       Id = 2010271,
       Lv = 5,
-      attack = 13.48,
+      attack = 13.7,
       crit_atk_per = 0,
-      defense = 2.35,
+      defense = 2.52,
       energy = 0,
       hp = 0,
       penetrate = 0
@@ -4189,17 +4189,7 @@ return {
     {
       Id = 2010272,
       Lv = 1,
-      attack = 9.01,
-      crit_atk_per = 0,
-      defense = 1.57,
-      energy = 0,
-      hp = 0,
-      penetrate = 0
-    },
-    {
-      Id = 2010272,
-      Lv = 2,
-      attack = 9.63,
+      attack = 9.16,
       crit_atk_per = 0,
       defense = 1.68,
       energy = 0,
@@ -4208,10 +4198,20 @@ return {
     },
     {
       Id = 2010272,
-      Lv = 3,
-      attack = 10.7,
+      Lv = 2,
+      attack = 9.79,
       crit_atk_per = 0,
-      defense = 1.86,
+      defense = 1.8,
+      energy = 0,
+      hp = 0,
+      penetrate = 0
+    },
+    {
+      Id = 2010272,
+      Lv = 3,
+      attack = 10.87,
+      crit_atk_per = 0,
+      defense = 2,
       energy = 0,
       hp = 0,
       penetrate = 0
@@ -4219,9 +4219,9 @@ return {
     {
       Id = 2010272,
       Lv = 4,
-      attack = 12.83,
+      attack = 13.05,
       crit_atk_per = 0,
-      defense = 2.24,
+      defense = 2.4,
       energy = 0,
       hp = 0,
       penetrate = 0
@@ -4229,9 +4229,9 @@ return {
     {
       Id = 2010272,
       Lv = 5,
-      attack = 14.97,
+      attack = 15.22,
       crit_atk_per = 0,
-      defense = 2.61,
+      defense = 2.8,
       energy = 0,
       hp = 0,
       penetrate = 0
@@ -4239,9 +4239,9 @@ return {
     {
       Id = 2010272,
       Lv = 6,
-      attack = 17.11,
+      attack = 17.4,
       crit_atk_per = 0,
-      defense = 2.98,
+      defense = 3.2,
       energy = 0,
       hp = 0,
       penetrate = 0

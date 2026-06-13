@@ -22,6 +22,7 @@ end
 function M:on_destroy()
   self.v_skill_effect_queue = {}
   self.v_skill_effect_count = 0
+  Util.unbind_all_msg(self)
 end
 
 function M:_init()

@@ -26,7 +26,8 @@ function ui:ui_on_show(data)
   self:give_back_auto_cache(DETAIL_PROBABILITY_ITEM_KEY)
   for index, data_list in ipairs(treasure_chest_cfg.fixedItem) do
     local fixed_item = self:get_auto_cache(DETAIL_FIXED_ITEM_KEY)
-    local click_cb = function()
+    
+    local function click_cb()
       UIMgr:get_ui("itemTip"):ui_show({
         item_id = data_list[1],
         jump_cb = function()
@@ -34,11 +35,13 @@ function ui:ui_on_show(data)
         end
       })
     end
+    
     self:set_item(fixed_item, data_list[1], data_list[2] > 0, data_list[3], data_list[4], click_cb)
   end
   for index, data_list in ipairs(treasure_chest_cfg.probabilityItem) do
     local probability_item = self:get_auto_cache(DETAIL_PROBABILITY_ITEM_KEY)
-    local click_cb = function()
+    
+    local function click_cb()
       UIMgr:get_ui("itemTip"):ui_show({
         item_id = data_list[1],
         jump_cb = function()
@@ -46,6 +49,7 @@ function ui:ui_on_show(data)
         end
       })
     end
+    
     self:set_item(probability_item, data_list[1], data_list[2] > 0, data_list[3], data_list[4], click_cb)
   end
 end

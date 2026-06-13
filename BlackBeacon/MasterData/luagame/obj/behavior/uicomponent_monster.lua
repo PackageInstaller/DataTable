@@ -8,7 +8,7 @@ function M:setup_headbar()
   end
 end
 
-local need_boss_type = function(monster_type)
+local function need_boss_type(monster_type)
   if monster_type >= MONSTER_TYPE.BOSS and monster_type <= MONSTER_TYPE.CITY_HOST then
     return true
   end

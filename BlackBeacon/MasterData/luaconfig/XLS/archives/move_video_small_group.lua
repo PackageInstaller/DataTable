@@ -2641,7 +2641,7 @@ return {
     Id = 901,
     Name = "学院国",
     PoltId = 1003010101,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 17,
     StoryWriterName = "日晶、滕野"
   },
@@ -2655,9 +2655,9 @@ return {
     Id = 902,
     Name = "危机会议",
     PoltId = 1003010201,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 16,
-    StoryWriterName = "鸽子笼"
+    StoryWriterName = "鸽子笼、日晶"
   },
   [903] = {
     Bg = "ExStoryBg1_07",
@@ -2669,9 +2669,9 @@ return {
     Id = 903,
     Name = "天文学院",
     PoltId = 1003010301,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 15,
-    StoryWriterName = "鸽子笼"
+    StoryWriterName = "鸽子笼、日晶"
   },
   [904] = {
     Bg = "ExStoryBg1_07",
@@ -2683,7 +2683,7 @@ return {
     Id = 904,
     Name = "白矮星",
     PoltId = 34010407,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 14,
     StoryWriterName = "日晶、滕野"
   },
@@ -2697,9 +2697,9 @@ return {
     Id = 905,
     Name = "寻觅",
     PoltId = 34010501,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 13,
-    StoryWriterName = "鸽子笼"
+    StoryWriterName = "鸽子笼、日晶"
   },
   [906] = {
     Bg = "ExStoryBg1_07",
@@ -2711,7 +2711,7 @@ return {
     Id = 906,
     Name = "月亮",
     PoltId = 1003010601,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 12,
     StoryWriterName = "日晶、滕野"
   },
@@ -2725,9 +2725,9 @@ return {
     Id = 907,
     Name = "记忆碎片",
     PoltId = 34010701,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 11,
-    StoryWriterName = "鸽子笼"
+    StoryWriterName = "鸽子笼、日晶"
   },
   [908] = {
     Bg = "ExStoryBg1_07",
@@ -2739,7 +2739,7 @@ return {
     Id = 908,
     Name = "双星",
     PoltId = 1003010801,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 10,
     StoryWriterName = "日晶、滕野"
   },
@@ -2753,9 +2753,9 @@ return {
     Id = 909,
     Name = "少女",
     PoltId = 1003010902,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 9,
-    StoryWriterName = "鸽子笼"
+    StoryWriterName = "鸽子笼、日晶"
   },
   [910] = {
     Bg = "ExStoryBg1_07",
@@ -2767,7 +2767,7 @@ return {
     Id = 910,
     Name = "日心说",
     PoltId = 1003011001,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 8,
     StoryWriterName = "日晶、滕野"
   },
@@ -2781,9 +2781,9 @@ return {
     Id = 911,
     Name = "手段",
     PoltId = 1003011101,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 7,
-    StoryWriterName = "鸽子笼"
+    StoryWriterName = "鸽子笼、日晶"
   },
   [912] = {
     Bg = "ExStoryBg1_07",
@@ -2795,7 +2795,7 @@ return {
     Id = 912,
     Name = "陪伴者",
     PoltId = 34011201,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 6,
     StoryWriterName = "日晶、滕野"
   },
@@ -2809,7 +2809,7 @@ return {
     Id = 913,
     Name = "引力波",
     PoltId = 1003011301,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 5,
     StoryWriterName = "日晶、滕野"
   },
@@ -2823,7 +2823,7 @@ return {
     Id = 914,
     Name = "黄昏",
     PoltId = 1003011401,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 4,
     StoryWriterName = "日晶、滕野"
   },
@@ -2837,7 +2837,7 @@ return {
     Id = 915,
     Name = "葬礼",
     PoltId = 1003011501,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 3,
     StoryWriterName = "日晶、滕野"
   },
@@ -2851,9 +2851,9 @@ return {
     Id = 916,
     Name = "直面星辰",
     PoltId = 1003011601,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 2,
-    StoryWriterName = "鸽子笼"
+    StoryWriterName = "鸽子笼、日晶"
   },
   [917] = {
     Bg = "ExStoryBg1_07",
@@ -2865,8 +2865,8 @@ return {
     Id = 917,
     Name = "摇篮曲",
     PoltId = 1003011701,
-    ScreenWriterName = "日晶、滕野",
+    ScreenWriterName = "日晶",
     ShowPriority = 1,
-    StoryWriterName = "日晶、滕野"
+    StoryWriterName = "日晶"
   }
 }

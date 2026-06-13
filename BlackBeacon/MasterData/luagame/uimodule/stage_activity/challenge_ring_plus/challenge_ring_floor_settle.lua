@@ -198,7 +198,7 @@ function ui:_page_turning(is_next)
   end
 end
 
-local _get_draw_award_list = function(award_list, history_choose_reward)
+local function _get_draw_award_list(award_list, history_choose_reward)
   for index, data in pairs(award_list) do
     data.history_action = {
       {
@@ -209,9 +209,11 @@ local _get_draw_award_list = function(award_list, history_choose_reward)
     table.insert(history_choose_reward, data)
   end
 end
-local _exit_func = function(self)
-  local cb = function()
+
+local function _exit_func(self)
+  local function cb()
     local history_choose_award = TreasureChestMgr:get_history_choose_award()
+    
     if not history_choose_award or next(history_choose_award) == nil then
       history_choose_award = history_choose_award or {}
       self.flag_reward_list = TowerMgr:get_flag_reward_list() or {}
@@ -226,6 +228,7 @@ local _exit_func = function(self)
       UIMgr:get_ui("fate_book_settle"):ui_show(self.v_is_fight, self.is_end_ring, self.v_tower_info, self.v_fight_info, history_choose_award, self.v_episode_id)
     end
   end
+  
   if TowerMgr then
     TowerMgr:get_fight_reward(nil, false, cb)
   end
@@ -238,10 +241,12 @@ function ui:_confirm()
     local tip = Util.format_str("尚未开启或存储的卡牌将自动销毁，是否确认")
     local cancel_btn = Util.format_str("取消")
     local sure_btn = Util.format_str("确认")
-    local srue_cb = function()
+    
+    local function srue_cb()
       _get_draw_award_list(new_award_list, history_choose_award)
       _exit_func(self)
     end
+    
     UIMgr:get_ui("uinotice_tips"):ui_show(srue_cb, nil, tip, sure_btn, cancel_btn)
   else
     if self.v_is_clear then
@@ -283,7 +288,7 @@ function ui:remove_card_item_list()
   self.v_card_item_list = {}
 end
 
-local _after_fun = function(self, id)
+local function _after_fun(self, id)
   if not UIMgr:try_get_visible_ui("card_pack_tips") then
     TreasureChestMgr:on_oper_card(id)
   end
@@ -408,7 +413,8 @@ function ui:set_anima_card(is_delete, card_pos, img_name, quality, drag_card_z, 
   local index = anima_card.v_index
   self.v_on_show_card_list[index] = anima_card
   self.v_anima_card_list[index] = nil
-  local cb = function()
+  
+  local function cb()
     anima_card:set_activate(false)
     self.v_on_show_card_list[anima_card.v_index] = nil
     self.v_anima_card_list[anima_card.v_index] = anima_card
@@ -419,6 +425,7 @@ function ui:set_anima_card(is_delete, card_pos, img_name, quality, drag_card_z, 
       anima_end_cb()
     end
   end
+  
   if is_delete then
     anima_card:play_delete_anima(cb)
   else

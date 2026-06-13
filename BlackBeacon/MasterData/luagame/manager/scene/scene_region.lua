@@ -12,16 +12,19 @@ local TypeUnityRigidbody = typeof(UnityEngine.Rigidbody)
 local TypeUnityBoxCollider = typeof(UnityEngine.BoxCollider)
 local TypeUVAnimation = typeof(CS.UVAnimation)
 local TypeText = TypeUnityUIText
-local UnityDestroy = UnityDestroy
+local UnityDestroy = _ENV.UnityDestroy
 local TAG_NAME = {TP = "tp", EMPTY_WALL = "emptywall"}
-local CompExtensions = CompExtensions
+local CompExtensions = _ENV.CompExtensions
 local _tinsert = table.insert
+local CSHelper = _ENV.CSHelper
 local CHECK_SIZE = 2
 local _uid = 1
-local _next_uid = function()
+
+local function _next_uid()
   _uid = _uid + 1
   return _uid
 end
+
 local M = Util.create_class()
 
 function M:_init(size_config, area_config, pos_config, plat_scene_obj, logic, is_plat, area_name_list, map)
@@ -380,13 +383,16 @@ do
     0,
     0
   }
-  local _create_bound_effect = function(self, name, pos_x, pos_z, angle, len)
-    local callback = function(game_object)
+  
+  local function _create_bound_effect(self, name, pos_x, pos_z, angle, len)
+    local function callback(game_object)
       game_object.transform:SetLocalScaleA(1, 1, len)
+      
       local uv_object = game_object:FindChild("Bianjie_101")
       local uv_animation = uv_object:GetComponent(TypeUVAnimation)
       uv_animation:SetTextOffsetXY(1, len)
     end
+    
     local height = Global.hero:get_pos_height()
     self.v_scene_logic:create_gameobj(BOUND_EFFECT, name, pos_x, height, pos_z, angle, callback)
   end
@@ -473,6 +479,7 @@ function M:release()
   end
   self:_clear_links()
   self:_destroy_border_collider()
+  self.v_map = nil
 end
 
 function M:late_update()
@@ -777,7 +784,7 @@ do
     return min
   end
   
-  local _check_box_contains_point = function(colliderObj, box_center, box_half_size, position)
+  local function _check_box_contains_point(colliderObj, box_center, box_half_size, position)
     if not colliderObj then
       return
     end
@@ -821,6 +828,40 @@ do
       end
     end
     return cur_mask, is_dirty, enter_area_list, out_area_list
+  end
+  
+  function M:trigger_area_event_on_path(baseobj, cur_mask, area_dic, start_pos, end_pos)
+    if not self.v_temp_area_map then
+      self.v_temp_area_map = {}
+    end
+    UtilTable.clear_map(self.v_temp_area_map)
+    for key, area in pairs(self.v_area_map) do
+      self.v_temp_area_map[key] = area
+    end
+    for key, area in pairs(self.v_temp_area_map) do
+      local collider = area.box_collider
+      collider.enabled = true
+      local start_x, start_y, start_z = start_pos:Get()
+      local end_x, end_y, end_z = end_pos:Get()
+      local hit_flag = CSHelper.ColliderLineCast(collider, start_x, start_y, start_z, end_x, end_y, end_z)
+      local index = area_dic[area.Key]
+      local index_mask = 1 << index
+      local is_enter = 1 == hit_flag >> 1 & 1
+      if is_enter then
+        cur_mask = cur_mask ~ index_mask
+        baseobj:trigger_enter_area_event(area)
+        baseobj:set_area_mask(cur_mask)
+      end
+      local is_leave = 1 == hit_flag & 1
+      if is_leave then
+        cur_mask = cur_mask ~ index_mask
+        if self.v_area_map[key] then
+          baseobj:trigger_leave_area_event(area)
+        end
+        baseobj:set_area_mask(cur_mask)
+      end
+      collider.enabled = false
+    end
   end
   
   function M:is_in_tp_area(cur_mask, area_dic, position)

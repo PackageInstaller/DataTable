@@ -118,7 +118,8 @@ end
 
 function ui:ui_on_show(pop_by_stack)
   self:bind_auto_mq(Const.MSG_ON_BUILDING_DATA_UPDATE, self.on_building_data_update, self)
-  local open_scene_cb = function()
+  
+  local function open_scene_cb()
     self.v_uiobjects.Fx_Cloud:SetActive(not pop_by_stack)
     self:play_playable_director("Ani_UIHomeMain_In")
     self.v_uiobjects.Black:SetActive(false)
@@ -126,6 +127,7 @@ function ui:ui_on_show(pop_by_stack)
     self:refresh_view()
     self.v_camera = BuildingMgr:get_building_scene_camera()
   end
+  
   self.v_uiobjects.Black:SetActive(true)
   BuildingMgr:open_building_scene(open_scene_cb)
 end

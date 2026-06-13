@@ -70,9 +70,11 @@ function ui:ui_finish_load()
     local has_award = CharacterMgr:check_favor_award(self.v_buddy_id)
     if has_award then
       self.v_uicompents.BtnRecive_btn.interactable = false
-      local refresh_cb = function()
+      
+      local function refresh_cb()
         self:refresh_data()
       end
+      
       CharacterMgr:get_favor_award(self.v_buddy_id, refresh_cb)
     end
   end)

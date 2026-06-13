@@ -15,7 +15,7 @@ end
 function M:on_reconnect()
 end
 
-function M:start_timer(use_time)
+function M:start_timer()
   local ui = UIMgr:get_ui("ui_act_minesweeper_battle"):ui_show()
 end
 

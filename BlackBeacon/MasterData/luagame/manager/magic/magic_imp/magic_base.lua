@@ -2,17 +2,20 @@ local CommonDef = require("cs_share.common_define")
 local MagicDef = require("cs_share.magic_def")
 local TIME_SCELE_TYPE = MagicDef.TIME_SCELE_TYPE
 local _uuid = 0
-local _next_uuid = function()
+
+local function _next_uuid()
   _uuid = _uuid + 1
   return _uuid
 end
-local _get_owner_auto_scale = function(owner)
+
+local function _get_owner_auto_scale(owner)
   local model_cfg = owner.model_cfg
   if not model_cfg then
     return
   end
   return model_cfg.EffectScale
 end
+
 local M = Util.create_class()
 
 function M:_init(owner, magic_info)
@@ -36,6 +39,27 @@ function M:_init(owner, magic_info)
   self.magic_arg = magic_info.args
   self.uuid = _next_uuid()
   self:owner_add_effect()
+end
+
+function M:on_release()
+  self.owner = nil
+  self.magic_info = nil
+  self.magic_id = nil
+  self.magic_level = nil
+  self.owner_missile = nil
+  self.owner_skill_id = nil
+  self.effect_id_list = nil
+  self.cfg = nil
+  self.effect_cfg = nil
+  self.update_type = nil
+  self.magic_kind_list = nil
+  self.magic_type = nil
+  self.left_duration = nil
+  self.duration = nil
+  self.remain_duration = nil
+  self.timescale_type = nil
+  self.magic_arg = nil
+  self.uuid = nil
 end
 
 function M:reset_time()

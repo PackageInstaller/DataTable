@@ -48,10 +48,12 @@ function ui:ui_finish_load()
     end
   end)
   self:set_button("BtnConfirm", function()
-    local cb = function()
+    local function cb()
       Global.scene_mgr:on_enter_main_scene()
+      
       UIMgr:revert_cache_ui()
     end
+    
     TowerMgr:get_fight_reward(cb, nil, true)
   end)
   self.v_static_sv = SaticSv:new(self, self.v_uiobjects.Layout1, CharTemClass, CharTemKey)
@@ -59,7 +61,6 @@ end
 
 function ui:ui_on_show()
   self:refresh()
-  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.ui_minesweeper_battle_suc_UI_SOUND)
 end
 
 function ui:ui_on_hide()
@@ -81,6 +82,15 @@ function ui:refresh()
   end
   self.v_uicompents.TimeHpNum_txt.text = hp_cost
   self.v_uicompents.HpReduceNum_txt.text = hp_cost + character_hp_cost
+  Util.set_color(self.v_uicompents.TimeHpNum_txt, 0 == hp_cost and 16117218 or 16735838)
+  local grid_cfg = ShareRes.get_minesweeper_grid_cfg(MineSweeperMgr.battle_grid_id)
+  if grid_cfg.AwardTime and grid_cfg.AwardScore and cost_time < grid_cfg.AwardTime then
+    local awardscore = math.floor((grid_cfg.AwardTime - cost_time) / grid_cfg.AwardTime * grid_cfg.AwardScore)
+    self.v_uiobjects.AwardScore:SetActiveEx(true)
+    self.v_uicompents.AwardScoreNum_txt.text = awardscore
+  else
+    self.v_uiobjects.AwardScore:SetActiveEx(false)
+  end
 end
 
 return ui

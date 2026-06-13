@@ -4,7 +4,8 @@ local type_func_name = {
   [Config.SELECT_ITEM_TYPE.STORY_SNIPPET] = "set_story_snippet_data",
   [Config.SELECT_ITEM_TYPE.CURSE_SELECT_POINT] = "set_curse_select_point_data"
 }
-local _set_text_and_btn = function(self, data)
+
+local function _set_text_and_btn(self, data)
   self.v_uicompents.Text_txt.text = data.text
   if data.cb then
     local btn = self:get_button()

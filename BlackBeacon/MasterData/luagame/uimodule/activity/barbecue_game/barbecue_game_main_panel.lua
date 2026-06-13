@@ -80,7 +80,8 @@ function ui:ui_finish_load()
   end
   self:register_exist_auto_template(BBQ_GAME_FOOD_ITEM_TEMP_KEY, self.v_uiobjects.FoodObj, self.v_uiobjects.TableContent)
   self:register_exist_auto_template(BBQ_GAME_MENU_ITEM_TEMP_KEY, self.v_uiobjects.RecipeTem, self.v_uiobjects.RecipeContent)
-  RedPointMgr:bind_redpoint(self, self.v_uiobjects.TaskRed, RedEnum.MUSIC_GAME_ACT_TASK)
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.RedDot, RedEnum.BBQ_GAME_NEW_STAGE)
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.TaskRed, RedEnum.BBQ_GAME_TASK_AWARD)
 end
 
 function ui:ui_on_show()
@@ -104,18 +105,17 @@ function ui:ui_on_show()
     self:show_main_view()
     self:set_menu_box()
   end
-  RedPointMgr:bind_redpoint(self, self.v_uiobjects.RedDot, RedEnum.BBQ_GAME_NEW_STAGE)
-  RedPointMgr:bind_redpoint(self, self.v_uiobjects.TaskRed, RedEnum.BBQ_GAME_TASK_AWARD)
   self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close, self)
   self:bind_auto_mq(Const.MSG_ON_BBQ_STAGE_BACK_TO_MAIN, self.show_main_view, self)
   self:bind_auto_mq(Const.MSG_ON_BBQ_STAGE_ENTER_GAME, self.on_enter_stage, self)
   self:bind_auto_mq(Const.MSG_ON_BBQ_SYS_UPDATE, self.update_upgrade_red, self)
+  self:bind_auto_mq(Const.MSG_ROLE_RES_CHANGE, self.update_upgrade_red, self)
   self:bind_auto_mq(Const.MSG_ON_HIDE_UI, self.response_hide_ui_event, self)
   self:bind_auto_mq(Const.MSG_ON_SHOW_UI, self.response_show_ui_event, self)
 end
 
-function ui:check_close(force_close)
-  if NoviceMgr:check_close_activity_ui(self.v_activity_id, self.v_ui_name, true == force_close) then
+function ui:check_close()
+  if NoviceMgr:check_close_activity_ui(self.v_activity_id, self.v_ui_name) then
     self:stop_ct()
   end
 end
@@ -159,6 +159,10 @@ function ui:ui_on_destroy()
 end
 
 function ui:show_main_view()
+  local need_first_guide = 0 == LocalStorage:load_int(BBQ_FIRST_GUIDE_STORAGE_KEY, 0, true)
+  if need_first_guide and GUIDE_STAGE_ID then
+    LocalStorage:save_int(BBQ_FIRST_GUIDE_STORAGE_KEY, 1, true)
+  end
   self.v_uiobjects.Main:SetActiveEx(true)
   self.v_uiobjects.CharGroup:SetActiveEx(false)
   self.v_uiobjects.TableContent:SetActiveEx(false)
@@ -190,6 +194,7 @@ function ui:on_enter_stage(msg)
 end
 
 function ui:enter_stage(stage_id)
+  self.v_need_first_guide = 0 == LocalStorage:load_int(BBQ_FIRST_GUIDE_STORAGE_KEY, 0, true)
   local stage_cfg = ShareRes.create("activity.barbecue_stall_episode", stage_id)
   self.v_stage_id = stage_id
   self.v_stage_cfg = stage_cfg
@@ -546,6 +551,11 @@ function ui:get_free_dish_idx()
     self.v_dish_pool[free_dish_idx] = item
   end
   self.v_free_dish[free_dish_idx] = nil
+  for _, idx in ipairs(self.v_active_dish_idx_list) do
+    if free_dish_idx == idx then
+      return self:get_free_dish_idx()
+    end
+  end
   return free_dish_idx
 end
 

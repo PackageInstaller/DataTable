@@ -32,6 +32,12 @@ return {
   ["101104_guide_x264_2"] = {
     VideoName = "101104_guide_x264_2"
   },
+  ["101104_guide_x264_2_PC"] = {
+    VideoName = "101104_guide_x264_2_PC"
+  },
+  ["101104_guide_x264_PC"] = {
+    VideoName = "101104_guide_x264_PC"
+  },
   ["101108_guide_x264"] = {
     VideoName = "101108_guide_x264"
   },
@@ -114,6 +120,18 @@ return {
   },
   ["1080901_guide"] = {
     VideoName = "1080901_guide"
+  },
+  ["1081001_guide"] = {
+    VideoName = "1081001_guide"
+  },
+  ["1081002_guide"] = {
+    VideoName = "1081002_guide"
+  },
+  ["1081003_guide"] = {
+    VideoName = "1081003_guide"
+  },
+  ["1081004_guide"] = {
+    VideoName = "1081004_guide"
   },
   ["10901021"] = {VideoName = "10901021"},
   ["10901022"] = {VideoName = "10901022"},
@@ -229,6 +247,36 @@ return {
   ["800202_guide"] = {
     VideoName = "800202_guide"
   },
+  ["800302_guide1"] = {
+    VideoName = "800302_guide1"
+  },
+  ["800302_guide2"] = {
+    VideoName = "800302_guide2"
+  },
+  ["800303_guide1"] = {
+    VideoName = "800303_guide1"
+  },
+  ["800303_guide2"] = {
+    VideoName = "800303_guide2"
+  },
+  ["800303_guide3"] = {
+    VideoName = "800303_guide3"
+  },
+  ["800401_guide"] = {
+    VideoName = "800401_guide"
+  },
+  ["800402_guide1"] = {
+    VideoName = "800402_guide1"
+  },
+  ["800402_guide2"] = {
+    VideoName = "800402_guide2"
+  },
+  ["800403_guide1"] = {
+    VideoName = "800403_guide1"
+  },
+  ["800403_guide2"] = {
+    VideoName = "800403_guide2"
+  },
   C2T1 = {StopBgm = 1, VideoName = "C2T1"},
   C2T3 = {IsContainsVoice = 1, VideoName = "C2T3"},
   LC_Chapter_05_end_part1 = {
@@ -238,6 +286,9 @@ return {
   LC_Chapter_05_end_part2 = {
     StopBgm = 1,
     VideoName = "LC_Chapter_05_end_part2"
+  },
+  Video_Chouka_01_boyuan = {
+    VideoName = "Video_Chouka_01_boyuan"
   },
   husong2 = {VideoName = "husong2"},
   migongtips = {VideoName = "migongtips"},
@@ -306,6 +357,9 @@ return {
   },
   storyvideo_023 = {
     VideoName = "storyvideo_023"
+  },
+  storyvideo_024 = {
+    VideoName = "storyvideo_024"
   },
   timestop1 = {VideoName = "timestop1"},
   timestop2 = {VideoName = "timestop2"},

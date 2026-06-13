@@ -14,6 +14,7 @@ local M = Util.create_class()
 function M:_init()
   self.v_magic_class = {}
   self.v_magic_pool_mgr = {}
+  Util.bind_msg(self, Const.MSG_ON_LEAVE_ROOM, self.call_free_objs_on_release, self)
 end
 
 M.Event = {
@@ -170,14 +171,16 @@ M.Magic = {
     file = "magic_attr_limit"
   }
 }
-local default_check_func = function(logic_cfg)
+
+local function default_check_func(logic_cfg)
   local result = false
   if (logic_cfg.IsReceive == BROARDCAST_TYPE.NONE or logic_cfg.IsReceive == BROARDCAST_TYPE.ONLY_BEGIN) and 0 == logic_cfg.Duration then
     result = true
   end
   return result
 end
-local attr_additive_check_func = function(logic_cfg)
+
+local function attr_additive_check_func(logic_cfg)
   local result = false
   if not default_check_func(logic_cfg) then
     return result
@@ -185,6 +188,7 @@ local attr_additive_check_func = function(logic_cfg)
   local set_type = logic_cfg[4]
   return set_type ~= Config.ATTR_SET_TYPE.CHANGE_BY_DELTA
 end
+
 local special_check_func = {
   [MAGIC_TYPE.ChangeAttribAdditive] = attr_additive_check_func
 }
@@ -242,6 +246,12 @@ function M:collection_active_magic_info()
         JournalMgr:collection_magic_info(owner_missile_id, owner_skill_id, magic_id, magic_info.magic_level, 0, magic_base.rtid, magic_base.owner:get_npc_id(), magic_base.owner.uuid, MagicActionType.ACTIVE)
       end
     end
+  end
+end
+
+function M:call_free_objs_on_release()
+  for _, magic_pool in pairs(self.v_magic_pool_mgr) do
+    magic_pool:call_free_objs_on_release()
   end
 end
 

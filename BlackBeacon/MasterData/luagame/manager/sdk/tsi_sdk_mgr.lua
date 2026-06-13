@@ -49,13 +49,14 @@ function M:init_ios_purchse_products()
   end
 end
 
-local _log = function(log, ...)
+local function _log(log, ...)
   if GAME_DEBUG then
     Log.Info("[Lua_SDK] " .. log, ...)
   else
     Log.Info("[Lua_SDK] " .. log)
   end
 end
+
 local PROCCESS_FUNC = {
   [SDKConst.LoginSuccess] = {
     custom_cb = function(mgr, response)
@@ -85,8 +86,7 @@ local PROCCESS_FUNC = {
   [SDKConst.OnNoExitProvider] = {
     custom_cb = function(mgr, response)
       mgr:show_exit_game_popup()
-    end,
-    dont_destroy = true
+    end
   },
   [SDKConst.PaySuccess] = {},
   [SDKConst.PayFailed] = {},
@@ -129,10 +129,6 @@ function M:_on_sdk_callback(type, response)
   if config then
     if handler then
       handler:process(response)
-      if not config.dont_destroy then
-        handler:on_destroy()
-        self.v_handler_dic[type] = nil
-      end
     elseif config.event then
       local msg = MsgGame:mq_publish2(config.event)
       msg.mm_obj = response
@@ -171,22 +167,26 @@ function M:_android_buy_product(product_id, price, cb)
       local sdk_custom = resp.tsi_custom
       local open_transaction_id = resp.open_transaction_id
       TSISDKManager.SetOrderEvent(open_transaction_id, price)
-      local pay_success_cb = function()
+      
+      local function pay_success_cb()
         TSISDKManager.SetPaymentEvent(open_transaction_id, price)
         if cb then
           cb(true)
         end
       end
-      local sdk_pay_failed_cb = function(reason)
+      
+      local function sdk_pay_failed_cb(reason)
         if cb then
           cb(false)
         end
       end
-      local pay_cancel_cb = function()
+      
+      local function pay_cancel_cb()
         if cb then
           cb(false)
         end
       end
+      
       self:_register_callback(SDKConst.PaySuccess, pay_success_cb)
       self:_register_callback(SDKConst.PayFailed, sdk_pay_failed_cb)
       self:_register_callback(SDKConst.PayCancel, pay_cancel_cb)
@@ -202,17 +202,20 @@ function M:_ios_buy_product(product_id, price, cb)
     cb(false)
     return
   end
-  local pay_success_cb = function()
+  
+  local function pay_success_cb()
     if cb then
       cb(true)
     end
   end
+  
   local send_data1 = {product_id = product_id}
   Network:call("c2gs_new_recharge_order", send_data1, function(ok, resp)
     if ok then
       local order_id = resp.order_id
       local open_transaction_id = resp.open_transaction_id
-      local ios_pay_success = function(payload)
+      
+      local function ios_pay_success(payload)
         local send_data2 = {
           order_id = order_id,
           open_transaction_id = open_transaction_id,
@@ -226,11 +229,13 @@ function M:_ios_buy_product(product_id, price, cb)
           end
         end)
       end
-      local sdk_pay_failed_cb = function(reason)
+      
+      local function sdk_pay_failed_cb(reason)
         if cb then
           cb(false)
         end
       end
+      
       CS.Game.PurchasingManager.Instance:Purchase(product_id, ios_pay_success, sdk_pay_failed_cb)
     elseif cb then
       cb(false)
@@ -498,12 +503,14 @@ do
     end
     local mask_time = UNITY_ANDROID and 5 or math.huge
     ScreenMaskMgr:open_one_tag(buy_product_tag, mask_time, false)
-    local callback = function(result)
+    
+    local function callback(result)
       ScreenMaskMgr:close_one_tag(buy_product_tag)
       if cb then
         cb(result)
       end
     end
+    
     if not self:_check_valid() then
       callback(false)
       return
@@ -540,7 +547,13 @@ function M:get_login_game_server_url(host)
 end
 
 function M:get_server_list_json_url()
-  return "https://cdnblackbeacon.mtiancity.com/sliebiao/swt/server_list.json?time=" .. Date.server_time()
+  if IS_STAGING then
+    return "https://cdnblackbeacon.mtiancity.com/sliebiao/shen/server_list.json?time=" .. Date.server_time()
+  elseif self:_is_use_official_server() then
+    return "https://cdnblackbeacon.mtiancity.com/sliebiao/live/server_list.json?time=" .. Date.server_time()
+  else
+    return "https://cdnblackbeacon.mtiancity.com/sliebiao/live-qd/server_list.json?time=" .. Date.server_time()
+  end
 end
 
 function M:get_notice_url(picture)
@@ -555,7 +568,7 @@ function M:get_notice_url(picture)
 end
 
 function M:is_enable_qrcode_login()
-  if self:is_simulator() then
+  if GAME_RELEASE or self:is_simulator() then
     return false
   end
   return true
@@ -566,24 +579,25 @@ function M:is_enable_feedback_in_login()
 end
 
 function M:is_show_privacy_policy_btn_in_more_entry()
-  if not self.v_channel_cfg then
-    return false
+  if not UNITY_EDITOR and UNITY_STANDALONE_WIN then
+    return true
   end
-  if UNITY_EDITOR or UNITY_STANDALONE_WIN then
+  if not self.v_channel_cfg then
     return false
   end
   return not self.v_channel_cfg.not_show_privacy
 end
 
 function M:open_privacy_policy()
-  if not self:_check_valid() then
-    return
+  if UNITY_STANDALONE_WIN then
+    UIMgr:get_ui("ui_user_agreement_tips"):ui_show()
+  else
+    ScreenMaskMgr:open_one_tag("privacy_policy", math.huge, false)
+    TSISDKManager.GameRequestTsiPrivate()
+    Timer:add_timer("close_privacy_policy", 3, function()
+      ScreenMaskMgr:close_one_tag("privacy_policy")
+    end)
   end
-  ScreenMaskMgr:open_one_tag("privacy_policy", math.huge, false)
-  TSISDKManager.GameRequestTsiPrivate()
-  Timer:add_timer("close_privacy_policy", 3, function()
-    ScreenMaskMgr:close_one_tag("privacy_policy")
-  end)
 end
 
 function M:is_show_delete_account_in_more_entry()
@@ -608,10 +622,7 @@ function M:is_show_help_center_btn_in_more_entry()
 end
 
 function M:is_show_community_btn_in_more_entry()
-  if UNITY_EDITOR or UNITY_STANDALONE_WIN then
-    return false
-  end
-  return true
+  return false
 end
 
 function M:clear_sensitive_cache()

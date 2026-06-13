@@ -92,10 +92,12 @@ function ui:_init_map_view()
 end
 
 function ui:_onclick_save_btn()
-  local cb = function()
+  local function cb()
     Global.scene_mgr:on_enter_main_scene()
+    
     UIMgr:revert_cache_ui()
   end
+  
   if TowerMgr then
     TowerMgr:on_exit_tower(cb)
   end
@@ -604,9 +606,11 @@ end
 function ui:_exit_top_ver_tower()
   local tip = Util.format_str("是否立即退出关卡")
   local sure_btn = Util.format_str("退出")
-  local sure_callback = function()
+  
+  local function sure_callback()
     UIMgr:get_ui("top_ver_settlement"):ui_show()
   end
+  
   UIMgr:get_ui("uinotice_tips"):ui_show(sure_callback, nil, tip, sure_btn)
   UIMgr:get_ui("uinotice_tips"):enable_bg_click(true)
 end
@@ -624,19 +628,22 @@ function ui:_exit_tower(fight_type)
     sure_btn = Util.format_str("中继保存")
     cancel_btn = Util.format_str("直接结算")
   end
-  local sure_callback = function()
+  
+  local function sure_callback()
     local fun = EXIT_FUNC[fight_type] or COMMON_EXIT_FUNC
     if self[fun] then
       self[fun](self)
     end
   end
-  local cancel_callback = function()
+  
+  local function cancel_callback()
     if cancal_return then
       return
     elseif self:check_weekly_fight(fight_type) then
-      local cb = function()
+      local function cb()
         UIMgr:get_ui("weekly_fight_settle"):ui_show()
       end
+      
       WeeklyMgr:request_weekly_prepare_score(cb)
     elseif NOT_PROGRESS_BATTLE_TYPE[fight_type] then
       UIMgr:get_ui("not_progress_battle_def_settle"):ui_show()
@@ -653,6 +660,7 @@ function ui:_exit_tower(fight_type)
       UIMgr:get_ui("fight_settlement"):ui_show(CHAPTER_CONFIG.POINTSTATE.quit)
     end
   end
+  
   if fight_type == CommonDef.CHALLENGE_TYPE.WEEK_ACTY_PERPARE_EPI or fight_type == CommonDef.CHALLENGE_TYPE.WEEK_ACTY_PVP_EPI then
     sure_btn = Util.format_str("返回")
     
@@ -670,19 +678,22 @@ end
 
 function ui:common_exit()
   self:ui_hide()
-  local cb = function()
+  
+  local function cb()
     Global.scene_mgr:on_enter_main_scene()
     UIMgr:revert_cache_ui()
   end
+  
   if TowerMgr then
     TowerMgr:on_exit_tower(cb)
   end
 end
 
 function ui:long_chapter_exit()
-  local cb = function()
+  local function cb()
     self:common_exit()
   end
+  
   TowerMgr:long_chapter_exit(false, cb, true)
 end
 

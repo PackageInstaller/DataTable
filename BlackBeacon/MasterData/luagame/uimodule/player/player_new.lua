@@ -29,6 +29,9 @@ local DEFAULT_POS = {
 }
 
 function ui:ui_finish_load()
+  self.v_uiobjects.EditTitle:SetActive(false)
+  self.v_uiobjects.PlayerFunctionList:SetActive(false)
+  self.v_uiobjects.InfoFunctionList:SetActive(false)
   self.v_slider_control_area = self.v_uicompents.Slider_rect
   self.v_slider_control_area:SetActive(true)
   self.v_is_slider_interacting = false
@@ -54,13 +57,15 @@ function ui:ui_finish_load()
   self.v_is_moving_spine = false
   self:set_button("BtnPos", function()
     self:set_part_ui_visible(false)
+    self:set_button_interactable(false)
     self.v_is_moving_spine = true
   end)
   self:set_button("BtnClose", function()
     local has_changed = self:spine_position_changed()
     if has_changed then
-      local cancel_cb = function()
+      local function cancel_cb()
         self.v_buddy_spine_info = PlayerMgr:get_buddy_spine_info()
+        
         local buddy_id = self.v_buddy_spine_info.buddy_id
         local fashion_id = self.v_buddy_spine_info.fashion_id
         local px = self.v_buddy_spine_info.px
@@ -68,12 +73,15 @@ function ui:ui_finish_load()
         local scale = self.v_buddy_spine_info.scale
         self:refresh_spine_view(buddy_id, fashion_id, px, py, scale)
       end
-      local confirm_cb = function()
+      
+      local function confirm_cb()
         self:save_position_data()
       end
+      
       Util.show_notify_popup_message(confirm_cb, "直接退出将丢失未保存改动，\n是否确认退出？", nil, "保存后退出", "直接退出", cancel_cb, nil, nil, true)
     end
     self:set_part_ui_visible(true)
+    self:set_button_interactable(true)
     self.v_is_moving_spine = false
   end)
   self:set_button("BtnPosReset", function()
@@ -82,6 +90,7 @@ function ui:ui_finish_load()
   end)
   self:set_button("BtnSavePos", function()
     self:set_part_ui_visible(true)
+    self:set_button_interactable(true)
     self:save_position_data()
     self.v_is_moving_spine = false
   end)
@@ -245,9 +254,11 @@ end
 function ui:refresh_bosschal_view(boss_id)
   self.v_uiobjects.BossChalOn:SetActive(boss_id)
   self.v_uiobjects.BossChalOff:SetActive(not boss_id)
-  local rank_name = Config.CommonDefine.RANK_NAME.BOSS_FIGHT
+  self.v_select_boss_difficulty = 4
   local boss_cfg_list = ShareRes.create("chapter.boss_fight")
   local boss_ep_cfg_list = ShareRes.create("chapter.boss_fight_episode")
+  assert(boss_cfg_list, "读取boss副本表失败")
+  assert(boss_ep_cfg_list, "读取boss关卡表失败")
   if not self.v_boss_data_list then
     local boss_data_list = {}
     for i, v in pairs(boss_cfg_list) do
@@ -256,85 +267,41 @@ function ui:refresh_bosschal_view(boss_id)
         boss_data_list[i].Name = v.Name
         boss_data_list[i].is_unlock = true
         boss_data_list[i].boss_fight_id = v.Id
+        boss_data_list[i].all_episode_list = boss_ep_cfg_list[i]
       end
     end
-    local episode_id_list = {}
-    local rank_cfg_list = {}
-    for i, data in ipairs(boss_ep_cfg_list) do
-      if nil ~= boss_data_list[i] and boss_data_list[i].is_unlock then
-        for idx, detail in ipairs(data) do
-          if detail.IsOpenRank and 4 == detail.Difficulty then
-            local info = RankMgr:get_new_rank_title(detail.EpisodeId, detail.DifficultyDesc, detail.ShowRankPlayer, detail.RankPlayer, detail.RankRefreshType, boss_data_list[i].Name)
-            _tinsert(episode_id_list, detail.EpisodeId)
-            _tinsert(rank_cfg_list, info)
-            boss_data_list[i].Id = detail.Id
-            boss_data_list[i].EpisodeId = detail.EpisodeId
+    local select_difficulty = self.v_select_boss_difficulty
+    for idx, vtime in ipairs(boss_data_list) do
+      for _, value in ipairs(boss_data_list[idx].all_episode_list) do
+        if value.Difficulty == select_difficulty then
+          local chapId = value.Id
+          boss_data_list[idx].chapId = value.Id
+          local pass_time = BossChallengeMgr:get_challenge_episode_pass_time(boss_data_list[idx].boss_fight_id, chapId)
+          if pass_time and pass_time > 0 then
+            boss_data_list[idx].Score = Util.format_str(Date.get_time_desc(pass_time))
           end
         end
       end
     end
-    self.v_total_count = 0
-    local fun = function()
-      local rank_info_list = {}
-      for idx, episode_id in ipairs(episode_id_list) do
-        local temp
-        if nil ~= episode_id and "" ~= episode_id then
-          local full_rank_name = RankMgr:get_full_rank_name(rank_name, episode_id)
-          if full_rank_name then
-            temp = RankMgr:get_rank_info(full_rank_name)
-          end
-        end
-        _tinsert(rank_info_list, temp or {})
-      end
-      for x, rank_info in ipairs(rank_info_list) do
-        local tem
-        tem = RankMgr:get_score(rank_name, rank_info.my_rank.value)
-        boss_data_list[x].Score = tem or ""
-        if x == boss_id then
-          local score = tem
-          if "--" == tem then
-            self.v_uiobjects.BossChalOff:SetActive(true)
-            self.v_uiobjects.BossChalOn:SetActive(false)
-          else
-            self.v_uiobjects.BossChalOff:SetActive(false)
-            self.v_uiobjects.BossChalOn:SetActive(true)
-            self.v_uicompents.BossName_txt.text = boss_data_list[x].Name
-            self.v_uicompents.BossChalTopTime_txt.text = score
-          end
-        end
-        local rank_area = self.v_total_count
-        if rank_area < rank_info.my_rank.rank or -1 == rank_info.my_rank.rank then
-          boss_data_list[x].Rank = -1
-        else
-          boss_data_list[x].Rank = rank_info.my_rank.rank
-        end
-      end
-      self.v_boss_data_list = boss_data_list
-    end
-    for i, cfg in ipairs(rank_cfg_list) do
-      if 0 == self.v_total_count and cfg.total_count > 0 then
-        self.v_total_count = cfg.total_count
-      end
-      RankMgr:request_rank_list(rank_name, cfg.flag, 1, cfg.show_count, cfg.total_count, true, fun)
-    end
+    self.v_boss_data_list = boss_data_list
   else
     for idx, v in ipairs(self.v_boss_data_list) do
-      if v.Id == boss_id then
+      if v.chapId == boss_id then
         local score = v.Score
         local name = v.Name
-        if "--" == score or not score then
+        if not score then
           self.v_uiobjects.BossChalOff:SetActive(true)
           self.v_uiobjects.BossChalOn:SetActive(false)
-          goto lbl_180
+          goto lbl_146
         end
         self.v_uiobjects.BossChalOff:SetActive(false)
         self.v_uiobjects.BossChalOn:SetActive(true)
         self.v_uicompents.BossName_txt.text = name
         self.v_uicompents.BossChalTopTime_txt.text = score
-        goto lbl_180
+        goto lbl_146
       end
     end
-    ::lbl_180::
+    ::lbl_146::
   end
 end
 
@@ -594,6 +561,13 @@ function ui:set_part_ui_visible(is_visible)
   self.v_uiobjects.BtnSavePos:SetActive(not is_visible)
   self.v_uiobjects.BtnPosReset:SetActive(not is_visible)
   self.v_uiobjects.Slider:SetActive(not is_visible)
+  self.v_uiobjects.EditTitle:SetActive(not is_visible)
+end
+
+function ui:set_button_interactable(is_interactable)
+  self.v_uicompents.BtnFunction_btn.interactable = is_interactable
+  self.v_uicompents.BtnEndlessDetail_btn.interactable = is_interactable
+  self.v_uicompents.BtnBossChalDetail_btn.interactable = is_interactable
 end
 
 function ui:on_click_tog(tog_type, isOn)
@@ -687,7 +661,7 @@ function ui:refresh_spine_view(buddy_id, fashion_id, px, py, scale)
   self.v_fashion_id = fashion_id
   if fashion_id then
     local fashion_cfg = ShareRes.get_fashion_cfg(fashion_id)
-    self.v_is_base_fashion = 1 == fashion_cfg.IsBase or not fashion_cfg.IsBase
+    self.v_is_base_fashion = 1 == fashion_cfg.IsBase
   else
     self.v_is_base_fashion = true
   end
@@ -698,9 +672,10 @@ function ui:refresh_spine_view(buddy_id, fashion_id, px, py, scale)
   self.v_uiobjects.HeroRawImg:SetActiveEx(true == data.is_spine)
   self.v_uiobjects.BtnSpine:SetActive(true == data.is_spine and not self.v_is_break)
   if not data.is_spine then
-    local cb = function(img)
+    local function cb(img)
       img.gameObject:SetActive(true)
     end
+    
     ResMgr:load_set_icon(self.v_uicompents.HeroIcon_img, data.val, cb, true)
   end
   local fashion_spine_cfg = ShareRes.create("player.player_spine", fashion_id)

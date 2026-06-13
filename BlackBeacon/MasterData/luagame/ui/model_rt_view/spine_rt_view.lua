@@ -139,7 +139,8 @@ function M:load_spine_res(res_name, callback, is_sync_load)
       end
     end
   end
-  local load_cb = function(obj)
+  
+  local function load_cb(obj)
     if self.v_is_destroy then
       if obj and not obj:IsNull() then
         obj.gameObject:SetActive(false)
@@ -174,6 +175,7 @@ function M:load_spine_res(res_name, callback, is_sync_load)
       callback(obj)
     end
   end
+  
   self.v_spine_mgr:load_spine_res(res_name, load_cb, is_sync_load)
 end
 

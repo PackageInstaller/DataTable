@@ -1,0 +1,347 @@
+local empty = {}
+return
+{
+  Areas = {
+    {
+      Key = "tp1",
+      Tag = "tp",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 5.16753, 9.649991, 101.037621 },
+      Size = { 1.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "tp2",
+      Tag = "tp",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { -10.0, 8.0, -5.0 },
+      Size = { 1.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "tp3",
+      Tag = "tp",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { -10.0, 8.0, -5.0 },
+      Size = { 1.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "tp4",
+      Tag = "tp",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 144.0, 8.400056, 47.0 },
+      Size = { 1.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "wall1",
+      Tag = "wallblock",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { -10.0, 13.0, 70.0 },
+      Size = { 1.0, 10.0, 150.0 },
+      Show = true
+    },
+    {
+      Key = "wall2",
+      Tag = "wallblock",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 152.5, 13.0, 70.0 },
+      Size = { 1.0, 10.0, 150.0 },
+      Show = true
+    },
+    {
+      Key = "wall3",
+      Tag = "wallblock",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 71.25, 13.0, 145.0 },
+      Size = { 162.5, 10.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "wall4",
+      Tag = "wallblock",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 71.25, 13.0, -5.0 },
+      Size = { 162.5, 10.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "K01",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 5.33, 10.0, 0.0 },
+      Size = { 1.0, 1.0, 4.0 },
+      Show = true
+    },
+    {
+      Key = "K02",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 9.5, 10.0, 0.0 },
+      Size = { 1.0, 1.0, 4.0 },
+      Show = true
+    },
+    {
+      Key = "K04",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 29.5, 10.0, 0.0 },
+      Size = { 1.0, 1.0, 4.0 },
+      Show = true
+    },
+    {
+      Key = "K03",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 19.5, 10.0, 0.0 },
+      Size = { 1.0, 1.0, 4.0 },
+      Show = true
+    },
+    {
+      Key = "CAM1",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.0, 10.0, 3.0 },
+      Size = { 6.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "T1",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.0, 10.0, 74.0 },
+      Size = { 4.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "K05",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 39.5, 10.0, 0.0 },
+      Size = { 1.0, 1.0, 4.0 },
+      Show = true
+    },
+    {
+      Key = "K06",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 71.5, 10.0, 0.0 },
+      Size = { 1.0, 1.0, 4.0 },
+      Show = true
+    },
+    {
+      Key = "K07",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 76.5, 10.0, 0.0 },
+      Size = { 1.0, 1.0, 4.0 },
+      Show = true
+    },
+    {
+      Key = "K08",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 107.55, 10.0, 0.0 },
+      Size = { 1.0, 1.0, 4.0 },
+      Show = true
+    },
+    {
+      Key = "K10",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 140.5, 10.0, 0.0 },
+      Size = { 1.0, 1.0, 8.0 },
+      Show = true
+    },
+    {
+      Key = "GUIDE",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 144.0, 1.0, 24.0 },
+      Size = { 4.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "WIN",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 144.0, 5.73, 50.0 },
+      Size = { 10.0, 10.0, 10.0 },
+      Show = true
+    },
+    {
+      Key = "DEAD1",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 115.0, 2.5, 0.0 },
+      Size = { 40.0, 7.0, 10.0 },
+      Show = true
+    },
+    {
+      Key = "FAST",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 144.0, 7.8, 4.0 },
+      Size = { 4.0, 1.5, 1.0 },
+      Show = true
+    },
+    {
+      Key = "GUIDE1",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.0, 10.0500059, 121.0 },
+      Size = { 4.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "DEAD2",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 83.0, 3.0, 0.0 },
+      Size = { 24.0, 6.0, 10.0 },
+      Show = true
+    },
+    {
+      Key = "DEAD3",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 25.87, 0.21, 0.0 },
+      Size = { 90.0, 8.0, 15.0 },
+      Show = true
+    },
+    {
+      Key = "S1",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 33.5, 0.414846539, 125.6 },
+      Size = { 10.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "S2",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 32.0, 0.414846539, 102.0 },
+      Size = { 9.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "finish",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 0.5287268, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 144.0, 4.82, 42.57401 },
+      Size = { 8.0, 15.0, 4.0 },
+      Show = true
+    },
+    {
+      Key = "emptywall1",
+      Tag = "emptywall",
+      Group = 1,
+      Color = { 0.0, 0.0, 0.0, 1.0 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 139.12, 0.399176478, 30.0954552 },
+      Size = { 5.0, 5.0, 10.0 },
+      Show = true
+    },
+    {
+      Key = "emptywall1(Copy2)",
+      Tag = "emptywall",
+      Group = 1,
+      Color = { 0.0, 0.0, 0.0, 1.0 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 148.79, 0.399176478, 30.0954552 },
+      Size = { 5.0, 5.0, 10.0 },
+      Show = true
+    }
+  },
+}

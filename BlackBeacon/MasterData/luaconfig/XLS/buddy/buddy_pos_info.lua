@@ -3678,6 +3678,7 @@ return {
   },
   [1001029] = {
     {
+      ApproachAnim = "ui_idle_1",
       CameraClipping = {0.3, 1000},
       CameraFOV = 7,
       CameraPosition = {
@@ -3705,7 +3706,7 @@ return {
         180,
         0
       },
-      StopAnim = "arder_idle"
+      StopAnim = "ui_idle_2"
     },
     {
       CameraClipping = {0.3, 1000},
@@ -3734,8 +3735,7 @@ return {
         0,
         172,
         0
-      },
-      StopAnim = "arder_idle"
+      }
     },
     {
       CameraClipping = {0.3, 1000},
@@ -3764,8 +3764,7 @@ return {
         0,
         188.69,
         0
-      },
-      StopAnim = "arder_idle"
+      }
     },
     {
       CameraClipping = {0.3, 1000},
@@ -3794,8 +3793,7 @@ return {
         0,
         15,
         0
-      },
-      StopAnim = "arder_idle"
+      }
     },
     [7] = {
       CameraClipping = {5, 1000},
@@ -3825,12 +3823,13 @@ return {
         180,
         0
       },
-      StopAnim = "arder_idle"
+      StopAnim = "ui_idle_2"
     },
     HeroId = 1001029
   },
   [1001030] = {
     {
+      ApproachAnim = "ui_idle_1",
       CameraClipping = {0.3, 1000},
       CameraFOV = 7,
       CameraPosition = {
@@ -3858,7 +3857,7 @@ return {
         180,
         0
       },
-      StopAnim = "arder_idle"
+      StopAnim = "ui_idle_2"
     },
     {
       CameraClipping = {0.3, 1000},
@@ -3887,8 +3886,7 @@ return {
         0,
         172,
         0
-      },
-      StopAnim = "arder_idle"
+      }
     },
     {
       CameraClipping = {0.3, 1000},
@@ -3917,8 +3915,7 @@ return {
         0,
         188.69,
         0
-      },
-      StopAnim = "arder_idle"
+      }
     },
     {
       CameraClipping = {0.3, 1000},
@@ -3947,8 +3944,7 @@ return {
         0,
         180,
         0
-      },
-      StopAnim = "arder_idle"
+      }
     },
     [7] = {
       CameraClipping = {5, 1000},
@@ -3978,7 +3974,7 @@ return {
         180,
         0
       },
-      StopAnim = "arder_idle"
+      StopAnim = "ui_idle_2"
     },
     HeroId = 1001030
   },
@@ -4296,7 +4292,6 @@ return {
   },
   [3004009] = {
     {
-      ApproachAnim = "ui_idle_1",
       CameraClipping = {0.3, 1000},
       CameraFOV = 7,
       CameraPosition = {
@@ -4323,8 +4318,7 @@ return {
         0,
         180,
         0
-      },
-      StopAnim = "ui_idle_2"
+      }
     },
     {
       CameraClipping = {0.3, 1000},

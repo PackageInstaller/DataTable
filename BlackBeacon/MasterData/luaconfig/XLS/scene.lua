@@ -11,7 +11,7 @@ return {
     BGMId = "AG_BGM_V1",
     IsOld = false,
     MapName = "Scene666",
-    ResCategory = 999,
+    ResCategory = 0,
     SceneID = 101
   },
   [102] = {
@@ -488,7 +488,7 @@ return {
     FarClipPlane = 2000,
     IsOld = false,
     MapName = "Sc08",
-    ResCategory = 999,
+    ResCategory = 8,
     SceneID = 163,
     SceneName = "Sc08_01"
   },
@@ -560,7 +560,7 @@ return {
     FarClipPlane = 2000,
     IsOld = false,
     MapName = "Sc09",
-    ResCategory = 9,
+    ResCategory = 1,
     SceneID = 171,
     SceneName = "Sc09_01a"
   },
@@ -569,8 +569,26 @@ return {
     FarClipPlane = 2000,
     IsOld = false,
     MapName = "Sc09",
-    ResCategory = 9,
+    ResCategory = 1,
     SceneID = 172,
     SceneName = "Sc09_01b"
+  },
+  [173] = {
+    BGMId = "AG_BGM_V2",
+    FarClipPlane = 2000,
+    IsOld = false,
+    MapName = "Sc10",
+    ResCategory = 10,
+    SceneID = 173,
+    SceneName = "Sc10_01"
+  },
+  [174] = {
+    BGMId = "AG_BGM_V2",
+    FarClipPlane = 2000,
+    IsOld = false,
+    MapName = "Sc10",
+    ResCategory = 10,
+    SceneID = 174,
+    SceneName = "Sc10_02"
   }
 }

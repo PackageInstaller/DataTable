@@ -59,7 +59,8 @@ function ui:tween(item_data, key)
   else
     end_value = self:get_card_count()
   end
-  local show_value_func = function(v)
+  
+  local function show_value_func(v)
     v = math.floor(v)
     if item_data then
       self.v_uicompents.GoldNum_txt.text = v
@@ -67,6 +68,7 @@ function ui:tween(item_data, key)
       self.v_uicompents.DropNum_txt.text = v
     end
   end
+  
   if self.v_tweens[key] then
     self.v_tweens[key]:Kill(false)
     self.v_tweens[key] = nil

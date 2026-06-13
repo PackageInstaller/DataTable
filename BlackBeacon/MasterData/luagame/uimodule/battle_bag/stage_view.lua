@@ -125,16 +125,19 @@ function ui:get_starrating_data(point_id)
   local condition_list = ShareRes.get_point_star_condition(point_id) or {}
   local condition_desc = {}
   for _, id in pairs(condition_list) do
-    local cfg = ShareRes.get_point_star_condition_cfg(id)
-    local temp = cfg.ConditionDesc
-    local arg = cfg.Arg[1]
-    if cfg.ConditionType == Config.Condition_Type.HealthMoreThan then
-      local percent_health = arg / 100
-      percent_health = math.max(percent_health, 1)
-      arg = string.format("%d", percent_health) .. "%"
+    if not id or id <= 0 then
+    else
+      local cfg = ShareRes.get_point_star_condition_cfg(id)
+      local temp = cfg.ConditionDesc
+      local arg = cfg.Arg[1]
+      if cfg.ConditionType == Config.Condition_Type.HealthMoreThan then
+        local percent_health = arg / 100
+        percent_health = math.max(percent_health, 1)
+        arg = string.format("%d", percent_health) .. "%"
+      end
+      temp = Util.format_str(temp, arg)
+      _tinsert(condition_desc, temp)
     end
-    temp = Util.format_str(temp, arg)
-    _tinsert(condition_desc, temp)
   end
   return condition_desc
 end

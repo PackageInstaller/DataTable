@@ -118,7 +118,8 @@ function M:load_effect(effect_data, effect_parent)
   local flip_type = effect_data.Flip or 0
   local set_alpha = effect_data.effectAlpha or 1
   local need_change_alpha = set_alpha < 0.95
-  local callback = function(obj)
+  
+  local function callback(obj)
     obj.gameObject:SetActive(false)
     self.v_lua_obj:add_effect_obj(res_name, obj, layer, effect_parent, flip_type)
     obj.gameObject:ResetAttr()
@@ -157,6 +158,7 @@ function M:load_effect(effect_data, effect_parent)
       sequence:Append(canvas_group:DOFade(1, effect_data.fadeInTime))
     end
   end
+  
   ResPoolMgr:get_ui_effect_async(res_name, callback)
 end
 

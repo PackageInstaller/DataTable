@@ -13,17 +13,20 @@ function ui:ui_finish_load()
   end)
   self:set_button("BtnReturn", function()
     if self:check_is_need_save() then
-      local sure_callback = function()
+      local function sure_callback()
         self:click_save()
+        
         CharacterMgr:set_card_show_data()
         CharacterMgr:set_show_all_buddy_temp()
         self:ui_hide()
       end
-      local cancel_callback = function()
+      
+      local function cancel_callback()
         CharacterMgr:set_card_show_data()
         CharacterMgr:set_show_all_buddy_temp()
         self:ui_hide()
       end
+      
       local stip = Util.format_str("存在未保存改动,是否保存后退出？")
       UIMgr:get_ui("uinotice_tips"):ui_show(sure_callback, cancel_callback, stip, Util.format_str("保存后退出"), Util.format_str("直接退出"))
     else

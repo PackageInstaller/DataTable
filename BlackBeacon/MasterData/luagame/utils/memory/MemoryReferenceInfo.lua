@@ -3,12 +3,14 @@ local cConfig = {
   m_bSingleMemoryRefFileAddTime = true,
   m_bComparedMemoryRefFileAddTime = true
 }
-local FormatDateTimeNow = function()
+
+local function FormatDateTimeNow()
   local cDateTime = os.date("*t")
   local strDateTime = string.format("%04d%02d%02d-%02d%02d%02d", tostring(cDateTime.year), tostring(cDateTime.month), tostring(cDateTime.day), tostring(cDateTime.hour), tostring(cDateTime.min), tostring(cDateTime.sec))
   return strDateTime
 end
-local GetOriginalToStringResult = function(cObject)
+
+local function GetOriginalToStringResult(cObject)
   if not cObject then
     return ""
   end
@@ -27,7 +29,8 @@ local GetOriginalToStringResult = function(cObject)
   end
   return strName
 end
-local CreateObjectReferenceInfoContainer = function()
+
+local function CreateObjectReferenceInfoContainer()
   local cContainer = {}
   local cObjectReferenceCount = {}
   setmetatable(cObjectReferenceCount, {__mode = "k"})
@@ -40,7 +43,8 @@ local CreateObjectReferenceInfoContainer = function()
   cContainer.m_nCurrentLine = -1
   return cContainer
 end
-local CreateObjectReferenceInfoContainerFromFile = function(strFilePath)
+
+local function CreateObjectReferenceInfoContainerFromFile(strFilePath)
   local cContainer = CreateObjectReferenceInfoContainer()
   cContainer.m_strShortSrc = strFilePath
   local cRefInfo = cContainer.m_cObjectReferenceCount
@@ -60,7 +64,8 @@ local CreateObjectReferenceInfoContainerFromFile = function(strFilePath)
   cFile = nil
   return cContainer
 end
-local CreateSingleObjectReferenceInfoContainer = function(strObjectName, cObject)
+
+local function CreateSingleObjectReferenceInfoContainer(strObjectName, cObject)
   local cContainer = {}
   local cObjectExistTag = {}
   setmetatable(cObjectExistTag, {__mode = "k"})
@@ -417,7 +422,7 @@ local function CollectSingleObjectReferenceInMemory(strName, cObject, cDumpInfoC
   end
 end
 
-local OutputMemorySnapshot = function(strSavePath, strExtraFileName, nMaxRescords, strRootObjectName, cRootObject, cDumpInfoResultsBase, cDumpInfoResults)
+local function OutputMemorySnapshot(strSavePath, strExtraFileName, nMaxRescords, strRootObjectName, cRootObject, cDumpInfoResultsBase, cDumpInfoResults)
   if not cDumpInfoResults then
     return
   end
@@ -471,13 +476,15 @@ local OutputMemorySnapshot = function(strSavePath, strExtraFileName, nMaxRescord
     cOutputHandle = cFile
     cOutputEntry = cFile.write
   end
-  local cOutputer = function(strContent)
+  
+  local function cOutputer(strContent)
     if cOutputHandle then
       cOutputEntry(cOutputHandle, strContent)
     else
       cOutputEntry(strContent)
     end
   end
+  
   if cDumpInfoResultsBase then
     cOutputer("--------------------------------------------------------\n")
     cOutputer("-- This is compared memory information.\n")
@@ -534,7 +541,8 @@ local OutputMemorySnapshot = function(strSavePath, strExtraFileName, nMaxRescord
     cOutputHandle = nil
   end
 end
-local OutputMemorySnapshotSingleObject = function(strSavePath, strExtraFileName, nMaxRescords, cDumpInfoResults)
+
+local function OutputMemorySnapshotSingleObject(strSavePath, strExtraFileName, nMaxRescords, cDumpInfoResults)
   if not cDumpInfoResults then
     return
   end
@@ -564,13 +572,15 @@ local OutputMemorySnapshotSingleObject = function(strSavePath, strExtraFileName,
     cOutputHandle = cFile
     cOutputEntry = cFile.write
   end
-  local cOutputer = function(strContent)
+  
+  local function cOutputer(strContent)
     if cOutputHandle then
       cOutputEntry(cOutputHandle, strContent)
     else
       cOutputEntry(strContent)
     end
   end
+  
   cOutputer("--------------------------------------------------------\n")
   cOutputer("-- Collect single object memory reference at line:" .. tostring(cDumpInfoResults.m_nCurrentLine) .. "@file:" .. cDumpInfoResults.m_strShortSrc .. "\n")
   cOutputer("--------------------------------------------------------\n")
@@ -594,7 +604,8 @@ local OutputMemorySnapshotSingleObject = function(strSavePath, strExtraFileName,
     cOutputHandle = nil
   end
 end
-local OutputFilteredResult = function(strFilePath, strFilter, bIncludeFilter, bOutputFile)
+
+local function OutputFilteredResult(strFilePath, strFilter, bIncludeFilter, bOutputFile)
   if not strFilePath or 0 == string.len(strFilePath) then
     print("You need to specify a file path.")
     return
@@ -637,13 +648,15 @@ local OutputFilteredResult = function(strFilePath, strFilter, bIncludeFilter, bO
     cOutputHandle = cFile
     cOutputEntry = cFile.write
   end
-  local cOutputer = function(strContent)
+  
+  local function cOutputer(strContent)
     if cOutputHandle then
       cOutputEntry(cOutputHandle, strContent)
     else
       cOutputEntry(strContent)
     end
   end
+  
   for i, v in ipairs(cFilteredResult) do
     cOutputer(v .. "\n")
   end
@@ -652,7 +665,8 @@ local OutputFilteredResult = function(strFilePath, strFilter, bIncludeFilter, bO
     cOutputHandle = nil
   end
 end
-local DumpMemorySnapshot = function(strSavePath, strExtraFileName, nMaxRescords, strRootObjectName, cRootObject)
+
+local function DumpMemorySnapshot(strSavePath, strExtraFileName, nMaxRescords, strRootObjectName, cRootObject)
   local strDateTime = FormatDateTimeNow()
   if cRootObject then
     if not strRootObjectName or 0 == string.len(strRootObjectName) then
@@ -671,15 +685,18 @@ local DumpMemorySnapshot = function(strSavePath, strExtraFileName, nMaxRescords,
   CollectObjectReferenceInMemory(strRootObjectName, cRootObject, cDumpInfoContainer)
   OutputMemorySnapshot(strSavePath, strExtraFileName, nMaxRescords, strRootObjectName, cRootObject, nil, cDumpInfoContainer)
 end
-local DumpMemorySnapshotCompared = function(strSavePath, strExtraFileName, nMaxRescords, cResultBefore, cResultAfter)
+
+local function DumpMemorySnapshotCompared(strSavePath, strExtraFileName, nMaxRescords, cResultBefore, cResultAfter)
   OutputMemorySnapshot(strSavePath, strExtraFileName, nMaxRescords, nil, nil, cResultBefore, cResultAfter)
 end
-local DumpMemorySnapshotComparedFile = function(strSavePath, strExtraFileName, nMaxRescords, strResultFilePathBefore, strResultFilePathAfter)
+
+local function DumpMemorySnapshotComparedFile(strSavePath, strExtraFileName, nMaxRescords, strResultFilePathBefore, strResultFilePathAfter)
   local cResultBefore = CreateObjectReferenceInfoContainerFromFile(strResultFilePathBefore)
   local cResultAfter = CreateObjectReferenceInfoContainerFromFile(strResultFilePathAfter)
   OutputMemorySnapshot(strSavePath, strExtraFileName, nMaxRescords, nil, nil, cResultBefore, cResultAfter)
 end
-local DumpMemorySnapshotSingleObject = function(strSavePath, strExtraFileName, nMaxRescords, strObjectName, cObject)
+
+local function DumpMemorySnapshotSingleObject(strSavePath, strExtraFileName, nMaxRescords, strObjectName, cObject)
   if not cObject then
     return
   end
@@ -696,6 +713,7 @@ local DumpMemorySnapshotSingleObject = function(strSavePath, strExtraFileName, n
   CollectSingleObjectReferenceInMemory("registry", debug.getregistry(), cDumpInfoContainer)
   OutputMemorySnapshotSingleObject(strSavePath, strExtraFileName, nMaxRescords, cDumpInfoContainer)
 end
+
 local cPublications = {
   m_cConfig = nil,
   m_cMethods = {},

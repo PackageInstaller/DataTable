@@ -1596,7 +1596,8 @@ function this.IsMeetCondition(conditionExp)
   local conditionExpTable = {varName = conditionExp}
   local retTable = this.processWatchedExp(conditionExpTable)
   local isMeetCondition = false
-  local HandleResult = function()
+  
+  local function HandleResult()
     if retTable[1].isSuccess == "true" then
       if retTable[1].value == "nil" or retTable[1].value == "false" and retTable[1].type == "boolean" then
         isMeetCondition = false
@@ -1607,6 +1608,7 @@ function this.IsMeetCondition(conditionExp)
       isMeetCondition = false
     end
   end
+  
   xpcall(HandleResult, function()
     isMeetCondition = false
   end)
@@ -2591,10 +2593,12 @@ end
 
 function tools.show(t, name, indent)
   local cart, autoref
-  local isemptytable = function(t)
+  
+  local function isemptytable(t)
     return next(t) == nil
   end
-  local basicSerialize = function(o)
+  
+  local function basicSerialize(o)
     local so = tostring(o)
     if type(o) == "function" then
       local info = debug.getinfo(o, "S")

@@ -26,6 +26,7 @@ local TypeUnityCollider = typeof(UnityEngine.Collider)
 local TypeCapsuleCollider = typeof(UnityEngine.CapsuleCollider)
 local TypeUnityRigidbody = typeof(UnityEngine.Rigidbody)
 local TypeRagdollHitReaction = typeof(CS.Game.RagdollHitReaction)
+local TypeRVOController = typeof(CS.Pathfinding.RVO.RVOController)
 local HURT_EFFECT_CD = 0.2
 local BREAK_SP_EFFECT = ShareRes.get_comm_string_value("BreakSuperArmorEffect")
 local DEFAULT_HIT_EFFECT = "Fx_Common_BeHit"
@@ -91,6 +92,11 @@ function M:on_init_gameobj(...)
   self.v_rigid = self.gameobj:GetComponent(TypeUnityRigidbody)
   self.v_ragdoll_hit_reaction = self.gameobj:GetComponent(TypeRagdollHitReaction)
   self.radius = self.capsule.radius * self.model_scale
+  if self:is_monster() and (self.v_kind == CommDefine.NPC_KIND.MONSTER or self.v_kind == CommDefine.NPC_KIND.ELITE or self.v_kind == CommDefine.NPC_KIND.BOSS) then
+    self.rvo_controller = self.gameobj:TryAddComponent(TypeRVOController)
+    self.rvo_controller.radius = self.radius + 0.25
+    self.rvo_controller_enabled = true
+  end
   self.v_collider_offset = Vec3.New()
   self.v_collider_offset:SetA(self.capsule.center)
   self.id = self.character_cfg.NpcId
@@ -725,6 +731,13 @@ function M:enable_ragdoll_animator(enable)
   end
 end
 
+function M:set_enable_rvo(is_enable)
+  if self.rvo_controller then
+    self.rvo_controller.enabled = is_enable
+    self.rvo_controller_enabled = is_enable
+  end
+end
+
 function M:get_bone_shake_ratio()
   return self.character_cfg.BoneShakeRatio
 end
@@ -781,7 +794,7 @@ function M:on_dead(...)
   self.v_is_die = true
   self:set_record_hurt_flag_state(false)
   self.state_manager:to_die_state(...)
-  NextFrameMgr:add(self.magic_mgr.on_role_dead, self.magic_mgr)
+  self.magic_mgr:on_role_dead()
   local msg = MsgGame:mq_publish2(Const.MSG_ROLE_DEAD)
   msg.mm_obj = self
   if 0 == SceneMgr:get_alive_ai_count() and self:is_npc() and self:get_ai_group_id() then

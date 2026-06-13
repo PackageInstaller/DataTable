@@ -25,8 +25,8 @@ local UnityInstantiate = UnityGameObject.Instantiate
 local Application = UnityEngine.Application
 local RuntimePackage = require("manager.res.runtime_package")
 local Layer = require("utils.layer")
-local UnityFind = UnityFind
-local UnityDestroy = UnityDestroy
+local UnityFind = _ENV.UnityFind
+local UnityDestroy = _ENV.UnityDestroy
 local UnityTime = UnityEngine.Time
 local UnityCurve = UnityEngine.AnimationCurve
 local CSCriAtom = CS.CriWare.CriAtom
@@ -127,7 +127,8 @@ local SOUND_ABORT_TYPE = {
   BEHIT_ABORT = 2,
   BOTH_ABORT = 3
 }
-local get_resouce_path = function(file, is_not_lower, cue_name)
+
+local function get_resouce_path(file, is_not_lower, cue_name)
   if not is_not_lower then
     file = string.lower(file)
   end
@@ -137,6 +138,7 @@ local get_resouce_path = function(file, is_not_lower, cue_name)
     return RuntimePackage.get_sound_path(file, cue_name)
   end
 end
+
 local is_need_check_bgm_switch_label = false
 local LOGIC_FRAME = Config.LOGIC_FRAME
 local M = Util.create_class()
@@ -207,7 +209,7 @@ function M:_init()
   self.v_switch_idle_track = 0
   self.v_criware_obj_list = {}
   self.v_criware_obj_list_fade = {}
-  self.v_gen_criware_source = {}
+  self.v_gen_criware_source = setmetatable({}, Global.config.KEY_WEAK_METATABLE)
   self.v_common_audio_active = true
   self:register_event()
   self:set_sound_reverb_state(false)
@@ -626,12 +628,14 @@ function M:play_sound(data)
     for key, value in pairs(data) do
       play_data[key] = value
     end
-    local sound_loaded_callback = function()
+    
+    local function sound_loaded_callback()
       if fixed_source and Util.is_nil(fixed_source) then
         return
       end
       self:play_sound(play_data)
     end
+    
     self.v_loaded_callback_sound[cue_sheet] = self.v_loaded_callback_sound[cue_sheet] or {}
     _tinsert(self.v_loaded_callback_sound[cue_sheet], sound_loaded_callback)
     if #self.v_loaded_callback_sound[cue_sheet] > 1000 then
@@ -678,7 +682,8 @@ function M:play_sound(data)
   if not cue_sheet_path then
     return
   end
-  local callback = function()
+  
+  local function callback()
     local cur_sheet = self.v_cache_sound_info[cue_sheet].cue_sheet
     if not self:check_play(self.v_cache_sound_info[cue_sheet].cue_sheet) then
       return
@@ -691,6 +696,7 @@ function M:play_sound(data)
     end
     self:check_play_loading_sound(cur_sheet)
   end
+  
   CompExtensions.LoadSound(callback, cue_sheet, cue_sheet_path, cue_name, cue_awb_path)
 end
 
@@ -1089,10 +1095,12 @@ function M:switch_fight_bgm(bgm_id, volume, fadeout_time)
     Log.Error("音效配置丢失 = ", bgm_id)
     return
   end
-  local callback = function()
+  
+  local function callback()
     self.v_source_bgm.volume = INIT_BGM_VOLUME
     self:play_sound(sound_acd, sound_name, SOURCE_TYPE.BGM)
   end
+  
   fadeout_time = fadeout_time or 1
   self.v_switch_bgm_data = {
     source_type = SOURCE_TYPE.BGM,
@@ -1124,6 +1132,9 @@ function M:missile_sound(missile, sound_id, npc_kind)
     sound_id = ShareRes.get_sound_map_by_fashion_id(sound_id, missile_owner:get_fashion_id())
   end
   local gameobj = missile.gameobj
+  if Util.is_nil(gameobj) then
+    return
+  end
   local cri_atom_source = gameobj:GetComponent(TypeCriAtomSource)
   cri_atom_source = cri_atom_source or gameobj:AddComponent(TypeCriAtomSource)
   cri_atom_source.volume = INIT_EFFECT_VOLUME
@@ -1233,7 +1244,8 @@ function M:insert_fade_data(cri_atom_source, fade_time, start_val, target_val, s
     start_val = cri_atom_source.volume
   end
   target_val = target_val or 0
-  local abort_func = function()
+  
+  local function abort_func()
     if instance_id and self.v_skill_sound_abort[instance_id] then
       for _, sound_abort_info in pairs(self.v_skill_sound_abort[instance_id]) do
         if not Util.is_nil(cri_atom_source) then
@@ -1245,6 +1257,7 @@ function M:insert_fade_data(cri_atom_source, fade_time, start_val, target_val, s
       self.v_skill_sound_abort[instance_id] = nil
     end
   end
+  
   if not fade_time or fade_time <= 0 then
     if abort_type and abort_type > 0 then
       cri_atom_source:Stop()
@@ -1253,12 +1266,14 @@ function M:insert_fade_data(cri_atom_source, fade_time, start_val, target_val, s
   else
     local last_val = self:remove_fade_source_data(cri_atom_source)
     start_val = last_val >= 0 and last_val or start_val
-    local suc_cb_addition = function()
+    
+    local function suc_cb_addition()
       if suc_cb then
         suc_cb()
       end
       abort_func()
     end
+    
     local fade_data = {
       cri_atom_source = cri_atom_source,
       end_time = fade_time,
@@ -1468,17 +1483,21 @@ end
 function M:play_story_bgm_sound(sound_id, is_loop, fade_in_time, sound_volume, cb)
   local source = self:get_sound_source_by_type(SOURCE_TYPE.BGM)
   self.v_is_play_story_bgm = true
-  local story_cb = function()
+  
+  local function story_cb()
     self:remove_fade_source_data(source)
     self.v_source_bgm.loop = is_loop
     self:play_sound_by_id(sound_id, nil, cb, true)
   end
+  
   if self.v_bgm_cue_sheet and self.v_bgm_cue_sheet ~= "" and self.v_bgm_cue_sheet ~= MAIN_BGM then
-    local cb = function()
+    local function cb()
       self:bgm_stop()
+      
       story_cb()
       self:story_sound_volume_fade(source, fade_in_time, sound_volume)
     end
+    
     cb()
   else
     story_cb()
@@ -1562,7 +1581,8 @@ function M:stop_story_sound(is_bgm, sound_res, fade_out_time)
     source = self.v_source_bgm
   end
   self.v_story_loop_sound[sound_res] = nil
-  local cb = function()
+  
+  local function cb()
     self.v_sound_in_fade_out = nil
     if is_bgm then
       if fade_out_time and fade_out_time > 0 then
@@ -1574,6 +1594,7 @@ function M:stop_story_sound(is_bgm, sound_res, fade_out_time)
       source:Stop()
     end
   end
+  
   if fade_out_time and fade_out_time > 0 then
     self.v_sound_in_fade_out = true
     if is_bgm then
@@ -1743,7 +1764,7 @@ function M:play_transmit_sound(is_start)
 end
 
 function M:play_award_drop_init_sound(obj)
-  local cb = function()
+  local function cb()
     if Util.is_nil(obj) then
       return
     end
@@ -1758,6 +1779,7 @@ function M:play_award_drop_init_sound(obj)
     self:play_sound_by_id("Sound_DropPoint_1", -1, nil, nil, cri_atom_source)
     self.v_dorp_loop_cri = cri_atom_source
   end
+  
   self:play_sound_by_id("Sound_DropPoint", -1)
   cb()
 end
@@ -1863,11 +1885,13 @@ function M:pause_scene_fade(pause, main_scene)
     if not Util.is_nil(sound_data.source_obj) then
       local cri_atom_source = sound_data.source_obj:GetComponent(TypeCriAtomSource)
       self:remove_fade_source_data(cri_atom_source)
-      local callback = function()
+      
+      local function callback()
         if not Util.is_nil(cri_atom_source) then
           cri_atom_source:Pause(sound_pause)
         end
       end
+      
       if sound_pause then
         self:insert_fade_data(cri_atom_source, 0.5, cri_atom_source.volume, 0, callback, nil, nil, SkillVolume)
       else
@@ -1879,9 +1903,11 @@ function M:pause_scene_fade(pause, main_scene)
     end
   end
   self:remove_fade_source_data(self.v_source_effect)
-  local callback = function()
+  
+  local function callback()
     self.v_source_effect:Pause(sound_pause)
   end
+  
   if sound_pause then
     self:insert_fade_data(self.v_source_effect, 0.5, INIT_EFFECT_VOLUME_ASC, 0, callback, nil, nil, SfxVolume)
   else
@@ -2140,6 +2166,9 @@ function M:sound_release()
     self.v_preload_sound_info = nil
     self.v_npc_id_sound = nil
   end
+  self.v_pre_tl_src = nil
+  self.v_pre_tl_asc = nil
+  self.v_pre_tl_ts = nil
 end
 
 function M:set_sound_source_volume(sound_type, init_volume_type, volume)
@@ -2194,9 +2223,11 @@ function M:set_space_time_aisac_control(volume, duration)
     self.v_source_bgm:CustomSetAisacControl(SpaceTimeChange, volume)
   else
     local start = self:get_aisac_value(self.v_source_bgm, SpaceTimeChange)
-    local value_func = function(value)
+    
+    local function value_func(value)
       self.v_source_bgm:CustomSetAisacControl(SpaceTimeChange, value)
     end
+    
     CSHelper.WrapTweenTo(start, volume, 0.3, value_func)
   end
 end
@@ -2336,13 +2367,15 @@ function M:play_sound_by_cscall(base_params)
         if not Util.is_nil(self.v_pre_tl_src) and self.v_pre_tl_ts ~= track_sound then
           local cir_src = self.v_pre_tl_src
           cir_src.transform:SetParent(nil)
-          local cb = function()
+          
+          local function cb()
             self:set_delay_task(6, function()
               if not Util.is_nil(cir_src) then
                 UnityDestroy(cir_src.gameObject)
               end
             end)
           end
+          
           self:insert_fade_data(self.v_pre_tl_src, self.v_pre_fead_time or 0.5, 1, 0, cb, nil, nil, self.v_pre_tl_asc)
         end
         self.v_pre_tl_src = track_cri
@@ -2356,13 +2389,15 @@ function M:play_sound_by_cscall(base_params)
         if not Util.is_nil(self.v_pre_tl_src) and self.v_pre_tl_ts ~= track_sound then
           local cir_src = self.v_pre_tl_src
           cir_src.transform:SetParent(nil)
-          local cb = function()
+          
+          local function cb()
             self:set_delay_task(6, function()
               if not Util.is_nil(cir_src) then
                 UnityDestroy(cir_src.gameObject)
               end
             end)
           end
+          
           self:insert_fade_data(self.v_pre_tl_src, self.v_pre_fead_time or 0.5, 1, 0, cb, nil, nil, self.v_pre_tl_asc)
         end
         self.v_pre_tl_src = track_cri
@@ -2513,6 +2548,8 @@ function M:destory_object_source(traget_obj, has_destory, sound_name)
       UnityDestroy(cfg.obj)
     end
   end
+  cfg.cri_obj = nil
+  cfg.obj = nil
   self.v_object_source_list[obj_instance_id] = nil
 end
 
@@ -2672,11 +2709,12 @@ function M:play_sound_by_id_effect_sound(id, obj_key, eff_sound_type, effect_sou
     return
   end
   if DelayPlay and DelayPlay > 0 then
-    local callback = function()
+    local function callback()
       if self.v_criware_obj_list[obj_key] or self.v_criware_obj_list_fade[obj_key] then
         self:play_sound_by_id_effect_sound(id, obj_key, eff_sound_type, effect_sound_cfg, npc)
       end
     end
+    
     local by_time_scale = ByTimeScale
     local get_time_update
     if 1 == by_time_scale then
@@ -2768,12 +2806,14 @@ function M:remove_effect_obj(obj_key)
   if obj and not obj:IsNull() then
     if fade_time and fade_time > 0 then
       obj.transform:SetParent(self.v_effect_obj_pool_nodeParent)
-      local callback = function()
+      
+      local function callback()
         if obj and not obj:IsNull() then
           self:release_effect_criobj_cache(obj)
         end
         self.v_criware_obj_list_fade[obj_key] = nil
       end
+      
       if isLoop and obj and not obj:IsNull() then
         cri_obj:Stop()
         if cri_obj_loop then
@@ -2817,10 +2857,11 @@ function M:scene_switch_clear()
       end
     end
   end
+  self.v_skill_sound_abort = {}
   self.v_effect_obj_pool_collect = {}
   self.v_criware_obj_list = {}
   self.v_criware_obj_list_fade = {}
-  self.v_gen_criware_source = {}
+  self.v_gen_criware_source = setmetatable({}, Global.config.KEY_WEAK_METATABLE)
   self.v_object_source_cuesheet_list = {}
 end
 
@@ -2837,15 +2878,7 @@ function M:add_gen_cri_source(src, src_type, src_obj)
 end
 
 function M:check_remove_gen_cri_source()
-  local temp = {}
-  for k, v in pairs(self.v_gen_criware_source) do
-    if Util.is_nil(k) then
-      _tinsert(temp, k)
-    end
-  end
-  for k, v in pairs(temp) do
-    self.v_gen_criware_source[v] = nil
-  end
+  self.v_gen_criware_source = setmetatable({}, Global.config.KEY_WEAK_METATABLE)
 end
 
 function M:pause_gen_source(pause_or_continue, target_type, delay_time, force_no_state)
@@ -2855,7 +2888,8 @@ function M:pause_gen_source(pause_or_continue, target_type, delay_time, force_no
   self:clear_pause_sound_timer()
   local target_type_param = target_type
   local pause_or_continue_param = pause_or_continue
-  local cb = function()
+  
+  local function cb()
     if target_type_param then
       self:check_remove_gen_cri_source()
       for k, v in pairs(self.v_gen_criware_source) do
@@ -2868,6 +2902,7 @@ function M:pause_gen_source(pause_or_continue, target_type, delay_time, force_no
       self:control_play_object_source(not pause_or_continue_param)
     end
   end
+  
   if delay_time and delay_time > 0 then
     self.v_pause_sound_timer = Timer:add_timer("pause_sound_timer", delay_time, function()
       cb()

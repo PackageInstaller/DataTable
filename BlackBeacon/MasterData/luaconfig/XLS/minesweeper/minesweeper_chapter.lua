@@ -33,8 +33,8 @@ return {
   },
   {
     BlessId = 1,
-    BuffDesc = "光异常下，怪物光属性伤害抗性削弱30%，在完全破韧状态下触发光异常则怪物光属性伤害抗性削弱50%。",
-    BuffId = 70000213,
+    BuffDesc = "角色光属性、火属性伤害提升10%，处于连携状态下，光属性、火属性伤害额外提升30%",
+    BuffId = 70000216,
     ChapterName = "下期",
     FloorGroupId = 102,
     GroupId = 102,
@@ -49,8 +49,8 @@ return {
   },
   {
     BlessId = 1,
-    BuffDesc = "光异常下，怪物光属性伤害抗性削弱30%，在完全破韧状态下触发光异常则怪物光属性伤害抗性削弱50%。",
-    BuffId = 70000213,
+    BuffDesc = "角色光属性、火属性伤害提升10%，处于连携状态下，光属性、火属性伤害额外提升30%",
+    BuffId = 70000216,
     ChapterName = "下期",
     FloorGroupId = 102,
     GroupId = 102,

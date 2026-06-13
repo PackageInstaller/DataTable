@@ -4,9 +4,9 @@ local acos = math.acos
 local sqrt = math.sqrt
 local _cos = math.cos
 local _sin = math.sin
-local setmetatable = setmetatable
-local rawset = rawset
-local rawget = rawget
+local setmetatable = _ENV.setmetatable
+local rawset = _ENV.rawset
+local rawget = _ENV.rawget
 local vec2 = {}
 vec2.__index = vec2
 

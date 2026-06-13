@@ -58,7 +58,7 @@ local Canvas_Fade_Time = 0.2
 local SaticSv = require("ui.widget.static_scroll_view")
 local VoiceItem = require("uimodule.character.archives.char_voice_item")
 local VoiceItemKey = "CHAR_ARCHIVE_VOICE_ITEM_KEY"
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local TypeSceneContainer = typeof(CS.Game.SceneContainer)
 local TypeCSPlayableDirector = typeof(UnityEngine.Playables.PlayableDirector)
 local char_archive_voice_language_key = "CHAR_ARCHIVE_VOICE_LANGUAGE_KEY"
@@ -168,8 +168,9 @@ function ui:on_btn_change_language_click()
 end
 
 function ui:change_cv_language(language_str)
-  local cb = function()
+  local function cb()
     CharacterMgr:refresh_buddy_cv_language(self.v_buddy_id, language_str)
+    
     self:refresh_curr_buddy_cv_language()
     Global.sound_mgr:remove_cache_voice_sound()
     self.v_uiobjects.LanguageContent:SetActive(false)
@@ -177,6 +178,7 @@ function ui:change_cv_language(language_str)
     self:stop_playing_voice()
     Util.show_message_tip("切换成功")
   end
+  
   if Game_AssetBundle then
     local format_size = CS.VoiceCheckManager.Instance:GetNeedDownloadSoundSize(language_str)
     if "" == format_size then

@@ -1,4 +1,4 @@
-local setmetatable = setmetatable
+local setmetatable = _ENV.setmetatable
 local FindTransformRecursively = CSHelper.FindTransformRecursively
 local metatable = {
   __index = function(pool, name)

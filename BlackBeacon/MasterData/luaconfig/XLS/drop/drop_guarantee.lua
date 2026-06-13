@@ -321,6 +321,34 @@ return {
       WatchCount = 10
     }
   },
+  [127] = {
+    {
+      CellId = 4100252,
+      Index = 1,
+      InheritId = 6,
+      WatchCount = 50
+    },
+    {
+      CellId = 1001251,
+      Index = 2,
+      InheritId = 6,
+      WatchCount = 10
+    }
+  },
+  [128] = {
+    {
+      CellId = 4100302,
+      Index = 1,
+      InheritId = 6,
+      WatchCount = 50
+    },
+    {
+      CellId = 1001301,
+      Index = 2,
+      InheritId = 6,
+      WatchCount = 10
+    }
+  },
   [1000] = {
     {
       CellId = 1010000,
@@ -400,6 +428,34 @@ return {
     },
     {
       CellId = 1010051,
+      Index = 2,
+      InheritId = 3,
+      WatchCount = 10
+    }
+  },
+  [1006] = {
+    {
+      CellId = 1010060,
+      Index = 1,
+      InheritId = 3,
+      WatchCount = 70
+    },
+    {
+      CellId = 1010061,
+      Index = 2,
+      InheritId = 3,
+      WatchCount = 10
+    }
+  },
+  [1007] = {
+    {
+      CellId = 1010070,
+      Index = 1,
+      InheritId = 3,
+      WatchCount = 70
+    },
+    {
+      CellId = 1010071,
       Index = 2,
       InheritId = 3,
       WatchCount = 10
@@ -550,6 +606,22 @@ return {
   [1010050] = {
     {
       CellId = 4000027,
+      Index = 1,
+      InheritId = 4,
+      WatchCount = 2
+    }
+  },
+  [1010060] = {
+    {
+      CellId = 4000025,
+      Index = 1,
+      InheritId = 4,
+      WatchCount = 2
+    }
+  },
+  [1010070] = {
+    {
+      CellId = 4000030,
       Index = 1,
       InheritId = 4,
       WatchCount = 2

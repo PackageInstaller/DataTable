@@ -4,12 +4,14 @@ local Account = require("gamelogic.account.account")
 local UnitySystemInfo = UnityEngine.SystemInfo
 local M = {}
 local PLATFORM = Config.PLATFORM
-local _log = function(log, ...)
+
+local function _log(log, ...)
   if GAME_DEBUG then
     Log.Info("[Lua_SDK_Track] " .. log, ...)
   end
 end
-local is_true = function(value)
+
+local function is_true(value)
   return true == value or 1 == value
 end
 
@@ -18,7 +20,7 @@ function M:_init()
 end
 
 function M:is_use_sdk()
-  if UNITY_EDITOR then
+  if UNITY_EDITOR or UNITY_STANDALONE_WIN then
     return false
   end
   return SDKManager:is_use_sdk()

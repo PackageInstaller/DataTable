@@ -27,7 +27,8 @@ local REAPIR_STATE = {
 }
 local M = setmetatable({}, Base)
 M.__index = M
-local get_platform_dir = function()
+
+local function get_platform_dir()
   local dir
   if GAME_RELEASE then
     if UNITY_ANDROID then
@@ -46,13 +47,15 @@ local get_platform_dir = function()
   end
   return string.format("%s%s", Uuid, dir)
 end
-local get_version_url = function(name, url)
+
+local function get_version_url(name, url)
   local dir = get_platform_dir()
   local random = string.format("?p=%s", os.time())
   url = string.format(url, dir .. name) .. random
   return url
 end
-local do_request_version = function(path, timeout)
+
+local function do_request_version(path, timeout)
   local request
   local success = false
   for i = 1, #VERSION_URL do
@@ -77,13 +80,16 @@ local do_request_version = function(path, timeout)
   end
   return request, success
 end
-local get_patch_url = function(self, filepath, md5, url)
+
+local function get_patch_url(self, filepath, md5, url)
   local dir = get_platform_dir() .. "assetbundles/"
   local res = self.v_remote_relative_dir .. dir .. string.format("%s.%s", filepath, md5)
   return CSHelper.EscapeUriString(string.format(url, res))
 end
+
 local MEGABYTE = 1048576
-local format_size = function(size)
+
+local function format_size(size)
   if size < MEGABYTE then
     return string.format("%.2fK", size / 1024)
   else
@@ -199,10 +205,12 @@ function M:check_update()
       self:update_tip("暂无文件修正")
       return
     end
-    local callback = function()
+    
+    local function callback()
       self.v_need_download_patch = need_download_list
       self:_check_download_patch()
     end
+    
     self.v_callback = callback
     local size = format_size(self.v_repair_content_size)
     self.v_repair_state = REAPIR_STATE.CHECK_END

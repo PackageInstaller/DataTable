@@ -5416,6 +5416,15 @@ return {
     {
       Condition = 0,
       HeroId = 1001026,
+      Id = 100102616,
+      NeedHide = 0,
+      Page = 1,
+      SortOrder = 16,
+      Title = "待机"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001026,
       Id = 100102605,
       NeedHide = 0,
       Page = 1,
@@ -5425,11 +5434,29 @@ return {
     {
       Condition = 0,
       HeroId = 1001026,
+      Id = 100102617,
+      NeedHide = 0,
+      Page = 1,
+      SortOrder = 15,
+      Title = "登录问候"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001026,
       Id = 100102606,
       NeedHide = 0,
       Page = 1,
       SortOrder = 15,
       Title = "交流2"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001026,
+      Id = 100102618,
+      NeedHide = 0,
+      Page = 1,
+      SortOrder = 14,
+      Title = "快速点击"
     },
     {
       Condition = 0,
@@ -5459,6 +5486,15 @@ return {
       Title = "交流5"
     },
     {
+      Condition = 0,
+      HeroId = 1001026,
+      Id = 100102621,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 11,
+      Title = "战斗语音1"
+    },
+    {
       Condition = 1044100102605,
       HeroId = 1001026,
       Id = 100102610,
@@ -5470,11 +5506,29 @@ return {
     {
       Condition = 0,
       HeroId = 1001026,
+      Id = 100102622,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 10,
+      Title = "战斗语音2"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001026,
       Id = 100102615,
       NeedHide = 0,
       Page = 1,
       SortOrder = 10,
       Title = "感谢"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001026,
+      Id = 100102623,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 9,
+      Title = "回避"
     },
     {
       Condition = 1044100102602,
@@ -5486,6 +5540,15 @@ return {
       Title = "好感提升1"
     },
     {
+      Condition = 0,
+      HeroId = 1001026,
+      Id = 100102624,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 8,
+      Title = "受伤"
+    },
+    {
       Condition = 1044100102603,
       HeroId = 1001026,
       Id = 100102612,
@@ -5493,6 +5556,15 @@ return {
       Page = 1,
       SortOrder = 8,
       Title = "好感提升2"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001026,
+      Id = 100102625,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 7,
+      Title = "重伤"
     },
     {
       Condition = 1044100102604,
@@ -5504,6 +5576,15 @@ return {
       Title = "好感提升3"
     },
     {
+      Condition = 0,
+      HeroId = 1001026,
+      Id = 100102626,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 6,
+      Title = "阵亡"
+    },
+    {
       Condition = 1044100102605,
       HeroId = 1001026,
       Id = 100102614,
@@ -5511,6 +5592,51 @@ return {
       Page = 1,
       SortOrder = 6,
       Title = "好感提升4"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001026,
+      Id = 100102627,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 5,
+      Title = "终结技"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001026,
+      Id = 100102628,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 4,
+      Title = "战斗入场"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001026,
+      Id = 100102629,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 3,
+      Title = "战斗结算"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001026,
+      Id = 100102619,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 2,
+      Title = "胜利结算"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001026,
+      Id = 100102620,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 1,
+      Title = "失败结算"
     }
   },
   [1001027] = {
@@ -5553,6 +5679,15 @@ return {
     {
       Condition = 0,
       HeroId = 1001027,
+      Id = 100102716,
+      NeedHide = 0,
+      Page = 1,
+      SortOrder = 16,
+      Title = "待机"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001027,
       Id = 100102705,
       NeedHide = 0,
       Page = 1,
@@ -5562,11 +5697,29 @@ return {
     {
       Condition = 0,
       HeroId = 1001027,
+      Id = 100102717,
+      NeedHide = 0,
+      Page = 1,
+      SortOrder = 15,
+      Title = "登录问候"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001027,
       Id = 100102706,
       NeedHide = 0,
       Page = 1,
       SortOrder = 15,
       Title = "交流2"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001027,
+      Id = 100102718,
+      NeedHide = 0,
+      Page = 1,
+      SortOrder = 14,
+      Title = "快速点击"
     },
     {
       Condition = 0,
@@ -5596,6 +5749,15 @@ return {
       Title = "交流5"
     },
     {
+      Condition = 0,
+      HeroId = 1001027,
+      Id = 100102721,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 11,
+      Title = "战斗语音1"
+    },
+    {
       Condition = 1044100102705,
       HeroId = 1001027,
       Id = 100102710,
@@ -5607,11 +5769,29 @@ return {
     {
       Condition = 0,
       HeroId = 1001027,
+      Id = 100102722,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 10,
+      Title = "战斗语音2"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001027,
       Id = 100102715,
       NeedHide = 0,
       Page = 1,
       SortOrder = 10,
       Title = "感谢"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001027,
+      Id = 100102723,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 9,
+      Title = "回避"
     },
     {
       Condition = 1044100102702,
@@ -5623,6 +5803,15 @@ return {
       Title = "好感提升1"
     },
     {
+      Condition = 0,
+      HeroId = 1001027,
+      Id = 100102724,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 8,
+      Title = "受伤"
+    },
+    {
       Condition = 1044100102703,
       HeroId = 1001027,
       Id = 100102712,
@@ -5630,6 +5819,15 @@ return {
       Page = 1,
       SortOrder = 8,
       Title = "好感提升2"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001027,
+      Id = 100102725,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 7,
+      Title = "重伤"
     },
     {
       Condition = 1044100102704,
@@ -5641,6 +5839,15 @@ return {
       Title = "好感提升3"
     },
     {
+      Condition = 0,
+      HeroId = 1001027,
+      Id = 100102727,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 6,
+      Title = "阵亡"
+    },
+    {
       Condition = 1044100102705,
       HeroId = 1001027,
       Id = 100102714,
@@ -5648,6 +5855,51 @@ return {
       Page = 1,
       SortOrder = 6,
       Title = "好感提升4"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001027,
+      Id = 100102726,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 5,
+      Title = "终结技"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001027,
+      Id = 100102728,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 4,
+      Title = "战斗入场"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001027,
+      Id = 100102729,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 3,
+      Title = "战斗结算"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001027,
+      Id = 100102719,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 2,
+      Title = "胜利结算"
+    },
+    {
+      Condition = 0,
+      HeroId = 1001027,
+      Id = 100102720,
+      NeedHide = 0,
+      Page = 2,
+      SortOrder = 1,
+      Title = "失败结算"
     }
   },
   [1001028] = {
@@ -6034,7 +6286,7 @@ return {
       Title = "战斗语音2"
     },
     {
-      Condition = 1044100100102,
+      Condition = 0,
       HeroId = 1001030,
       Id = 100103008,
       NeedHide = 0,
@@ -6052,7 +6304,7 @@ return {
       Title = "回避"
     },
     {
-      Condition = 1044100100103,
+      Condition = 0,
       HeroId = 1001030,
       Id = 100103009,
       NeedHide = 0,
@@ -6070,7 +6322,7 @@ return {
       Title = "受伤"
     },
     {
-      Condition = 1044100100105,
+      Condition = 0,
       HeroId = 1001030,
       Id = 100103010,
       NeedHide = 0,
@@ -6106,7 +6358,7 @@ return {
       Title = "阵亡"
     },
     {
-      Condition = 1044100100102,
+      Condition = 0,
       HeroId = 1001030,
       Id = 100103012,
       NeedHide = 0,
@@ -6124,7 +6376,7 @@ return {
       Title = "终结技"
     },
     {
-      Condition = 1044100100103,
+      Condition = 0,
       HeroId = 1001030,
       Id = 100103013,
       NeedHide = 0,
@@ -6142,7 +6394,7 @@ return {
       Title = "战斗入场"
     },
     {
-      Condition = 1044100100104,
+      Condition = 0,
       HeroId = 1001030,
       Id = 100103014,
       NeedHide = 0,
@@ -6160,7 +6412,7 @@ return {
       Title = "战斗结算"
     },
     {
-      Condition = 1044100100105,
+      Condition = 0,
       HeroId = 1001030,
       Id = 100103015,
       NeedHide = 0,

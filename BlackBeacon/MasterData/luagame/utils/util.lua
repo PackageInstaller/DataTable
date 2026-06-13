@@ -10,7 +10,7 @@ local VEC3_TEMP = Vec3.New(0, 0, 0)
 local VEC3_TEMP_1 = Vec3.New(0, 0, 0)
 local VEC2_TEMP = Vec2.New(0, 0)
 local QuatTemp = Quat.New(0, 0, 0, 0)
-local CSHelper = CSHelper
+local CSHelper = _ENV.CSHelper
 local CSDragEventListener = CS.Game.DragEventListener
 local CSDragEventListener2 = CS.Game.DragEventListener2
 local TouchManager = CS.TouchManager
@@ -26,7 +26,7 @@ local Regex = CS.System.Text.RegularExpressions.Regex
 local legal_special_char = "^[\\u4e00-\\u9fa5A-Za-z0-9%s]+$"
 local special_char = ShareRes.get_legal_special_char()
 legal_special_char = string.format(legal_special_char, special_char)
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local UnityShader = UnityEngine.Shader
 local UnityScreen = UnityEngine.Screen
 local Rect = UnityEngine.Rect
@@ -114,12 +114,13 @@ function M.create_child_mt(base)
   return child
 end
 
-local _create_class_new = function(self, ...)
+local function _create_class_new(self, ...)
   local ret = setmetatable({}, self)
   ret:_init(...)
   return ret
 end
-local _create_class_on_destroy = function(self)
+
+local function _create_class_on_destroy(self)
 end
 
 function M.create_class()
@@ -149,7 +150,8 @@ function M.format_str_raw(msg, ...)
       ...
     }
     local result = string.gsub(msg, "{([%d]+)}", function(idx)
-      return args[tonumber(idx)]
+      local value = args[tonumber(idx)] or ""
+      return tostring(value)
     end)
     return result
   else
@@ -344,13 +346,15 @@ local NEED_CACHE_PROPERTIES = {
   [TRANSFORM_STR] = true
 }
 local GAMEOBJ_INFOS = {}
-local wrap_gameobj_func = function(func)
+
+local function wrap_gameobj_func(func)
   return function(obj, ...)
     assert(obj.gameObject)
     return func(obj.gameObject, ...)
   end
 end
-local gameobj_index_func = function(tbl, key)
+
+local function gameobj_index_func(tbl, key)
   local info = GAMEOBJ_INFOS[key]
   if not info then
     local go = rawget(tbl, GAMEOBJECT_STR)
@@ -374,19 +378,24 @@ local gameobj_index_func = function(tbl, key)
     return ret
   end
 end
-local gameobj_newindex_func = function(tbl, k, v)
+
+local function gameobj_newindex_func(tbl, k, v)
   rawget(tbl, GAMEOBJECT_STR)[k] = v
 end
+
 local COMPONENT_INFOS = {}
-local wrap_compoent_func = function(func)
+
+local function wrap_compoent_func(func)
   return function(obj, ...)
     return func(obj.component, ...)
   end
 end
-local component_newindex_func = function(tbl, k, v)
+
+local function component_newindex_func(tbl, k, v)
   rawget(tbl, COMPONENT_STR)[k] = v
 end
-local component_index_func = function(tbl, key)
+
+local function component_index_func(tbl, key)
   local component_type = rawget(tbl, COMPONENT_TYPE_STR)
   local component_func_cache = COMPONENT_INFOS[component_type]
   if not component_func_cache then
@@ -416,7 +425,8 @@ local component_index_func = function(tbl, key)
     return ret
   end
 end
-local get_new_transforms = function()
+
+local function get_new_transforms()
   return setmetatable({}, {
     __mode = "k",
     __index = function(tbl, go)
@@ -426,12 +436,14 @@ local get_new_transforms = function()
     end
   })
 end
+
 local GAMEOBJ_CACHES = setmetatable({}, {__mode = "k"})
 local COMPONENT_CACHES = setmetatable({}, {__mode = "k"})
 TRANSFORMS = get_new_transforms()
 local COMPONENT_METATABLE = {__index = component_index_func, __newindex = component_newindex_func}
 local GAMEOBJ_METATABLE = {__index = gameobj_index_func, __newindex = gameobj_newindex_func}
-local SetParent = function(self, parent, ...)
+
+local function SetParent(self, parent, ...)
   self.gameObject:SetParent(parent.gameObject, ...)
 end
 
@@ -465,7 +477,8 @@ function M.get_child_gameobj(name, parent)
 end
 
 local COMPONENT_TYPES = {}
-local get_component_type = function(type)
+
+local function get_component_type(type)
   local component_type = COMPONENT_TYPES[type]
   if not component_type then
     component_type = typeof(type)
@@ -781,7 +794,7 @@ end
 
 local id_list = CS.System.Array.CreateInstance(typeof(CS.System.Int32), 10)
 local collider_list = CS.System.Array.CreateInstance(typeof(UnityEngine.Collider), 10)
-local CompExtensions = CompExtensions
+local CompExtensions = _ENV.CompExtensions
 CompExtensions.IdCache = id_list
 CompExtensions.ColliderCache = collider_list
 local IngnoreTrigger = UnityEngine.QueryTriggerInteraction.Ignore
@@ -2531,7 +2544,7 @@ function M.get_build_show_version()
   return BuildVersionInfo.ShowVersion
 end
 
-local get_platform_str = function()
+local function get_platform_str()
   if UNITY_EDITOR then
     return "Editor"
   elseif UNITY_ANDROID then
@@ -2542,7 +2555,8 @@ local get_platform_str = function()
     return ""
   end
 end
-local get_area_tag_str = function()
+
+local function get_area_tag_str()
   if SDKType == Config.SDK_TYPE.HIVE_SDK then
     return "GL"
   else
@@ -2551,7 +2565,7 @@ local get_area_tag_str = function()
 end
 
 function M.get_bundle_version()
-  return string.format("%s.%s.%s", M.get_build_show_version(), M.get_build_major_version())
+  return string.format("%s.%s.%s", M.get_build_show_version(), M.get_build_major_version(), M.get_build_res_version())
 end
 
 function M.get_login_version()
@@ -2784,6 +2798,18 @@ function M.show_recharge_box_by_item_id(item_id, lack_cnt, next_exchange_cost_id
     CharacterMgr:request_exchange_item(exchange_config.Id, lack_cnt)
   end
   M.show_recharge_box(item_id, lack_cnt, exchange_cost_id, exchange_cost_cnt, next_exchange_cost_id, next_exchange_cost_cnt, callback)
+end
+
+function M.get_res_is_integrity()
+  if Game_AssetBundle and DownloadMgr and not DownloadMgr:check_res_is_integrity() then
+    local Setting_Cfg = require("uimodule.battle_setting.battle_setting_cfg")
+    local msg = "资源不完整，是否前往下载所有资源"
+    Util.show_notify_popup_message(function()
+      UIMgr:get_ui("battle_setting"):ui_show(Setting_Cfg.PageTag.Download)
+    end, msg, "提示", "确定", "取消", nil, false)
+    return false
+  end
+  return true
 end
 
 return M

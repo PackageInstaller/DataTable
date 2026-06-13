@@ -22,7 +22,7 @@ function M:_init(missile, lineparams)
   self:set_params(params)
 end
 
-local _circle_curve = function(self, x0, z0, x1, z1, t, curve_offset)
+local function _circle_curve(self, x0, z0, x1, z1, t, curve_offset)
   local dir_x, dir_z = Util.normalize2(x1 - x0, z1 - z0)
   local distance = mathx.distance2(x0, z0, x1, z1)
   local normal_x, normal_z = mathx.rotate_vec2(dir_x, dir_z, -90 * self.v_dir)
@@ -32,7 +32,8 @@ local _circle_curve = function(self, x0, z0, x1, z1, t, curve_offset)
   local x, _, z = _bezier(x0, 0, z0, ex_x, 0, ex_z, x1, 0, z1, t)
   return x, z
 end
-local _acc_move_center_to_target = function(self, dt)
+
+local function _acc_move_center_to_target(self, dt)
   self.v_acc_time = self.v_acc_time + dt
   local move_dist = 0.5 * self.v_acc * dt * dt
   local center_x, center_z
@@ -49,7 +50,8 @@ local _acc_move_center_to_target = function(self, dt)
     self.v_acc_time = 0
   end
 end
-local _to_circle = function(self, dt)
+
+local function _to_circle(self, dt)
   _acc_move_center_to_target(self, dt)
   self.v_cur_time = self.v_cur_time + dt
   local half_radius = self.v_circle_radius * 0.5
@@ -65,7 +67,8 @@ local _to_circle = function(self, dt)
     self.v_cur_rad = cur_rad
   end
 end
-local _in_circle = function(self, dt)
+
+local function _in_circle(self, dt)
   _acc_move_center_to_target(self, dt)
   self.v_cur_time = self.v_cur_time + dt
   local cur_rad = self.v_cur_rad + self.v_cur_time * self.v_circle_speed * self.v_dir
@@ -78,7 +81,8 @@ local _in_circle = function(self, dt)
     self.v_cur_rad = cur_rad
   end
 end
-local _dec_circle = function(self, dt)
+
+local function _dec_circle(self, dt)
   self.v_cur_time = self.v_cur_time + dt
   local cur_speed = self.v_circle_speed + self.v_out_dec * self.v_cur_time
   local cur_rad = self.v_cur_rad + self.v_cur_time * cur_speed * self.v_dir
@@ -94,7 +98,8 @@ local _dec_circle = function(self, dt)
     self.v_end_z = self.v_center_pos.z + self.v_end_offset_z
   end
 end
-local _keep_in_circle = function(self, dt)
+
+local function _keep_in_circle(self, dt)
   self.v_cur_time = self.v_cur_time + dt
   local cur_rad = self.v_cur_rad + self.v_cur_time * self.v_out_speed * self.v_dir
   local dx = _sin(cur_rad) * self.v_circle_radius
@@ -113,7 +118,8 @@ local _keep_in_circle = function(self, dt)
     self.v_out_start_z = self.v_center_pos.z + dz
   end
 end
-local _out_circle = function(self, dt)
+
+local function _out_circle(self, dt)
   self.v_cur_time = self.v_cur_time + dt
   local speed = self.v_out_speed + self.v_out_acc * self.v_cur_time
   local t = self.v_cur_time * speed

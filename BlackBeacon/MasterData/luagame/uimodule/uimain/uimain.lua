@@ -1,5 +1,5 @@
 local UnityTime = UnityEngine.Time
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local TypeUnityCamera = typeof(UnityEngine.Camera)
 local TypeSceneContainer = typeof(CS.Game.SceneContainer)
 local UnityShader = UnityEngine.Shader
@@ -214,9 +214,20 @@ function ui:ui_finish_load(...)
   self:set_button("BtnTower", function()
     UIMgr:get_ui("ui_climbing_tower_main"):ui_show()
   end)
-  local sure_callback = function()
+  self:set_button("BtnActivitySummer", function()
+    UIMgr:get_ui("ui_activity_summer_main"):ui_show()
+  end)
+  self:set_button("BtnEntrance", function()
+    SysOpenMgr:jump_to_sys(self.v_curr_quick_enter_cfg.JumpId)
+  end)
+  self:set_button("BtnChange", function()
+    self:refresh_main_scene_quick_btn_state()
+  end)
+  
+  local function sure_callback()
     UIMgr:RemoveCanvasBlur()
   end
+  
   self:set_button("BtnOrnaments", function()
     UIMgr:get_ui("ui_ornaments"):ui_show()
   end)
@@ -277,14 +288,59 @@ function ui:on_click_fight()
       UIMgr:get_ui("chapter"):ui_show()
     end)
   else
-    local confirm_cb = function()
+    local function confirm_cb()
       local tower_id = DebugSetting:get_tower_id()
+      
       if tower_id and tower_id > 0 then
         TowerMgr:on_gm_enter_tower(tower_id)
       end
     end
+    
     Util.show_notify_popup_message(confirm_cb, "GM进塔", "GM进塔")
   end
+end
+
+function ui:clear_csharp_ref()
+  self.v_safe_area_obj = nil
+  self.v_scene_root_obj = nil
+  self.v_container = nil
+  self.v_video_player = nil
+  self.v_minute_hand = nil
+  self.v_hour_hand = nil
+  self.v_clock = nil
+  self.v_video_player_plane = nil
+  self.v_video_player_compenent = nil
+  self.v_photo_frame_mat_collect = nil
+  self.v_tex_info = nil
+  self.v_video_player_mat = nil
+  self.v_video_tex_info = nil
+  self.v_video_show_anim = nil
+  self.v_video_hide_anim = nil
+  self.v_chou_ka_canvas_group = nil
+  self.v_vcamera_control = nil
+  self.v_photo_frame_pd = nil
+  self.v_drawcard_enter_pd = nil
+  self.v_drawcard_close_to_clock_pd = nil
+  self.v_camera_track_obj = nil
+  self.v_camera_track_manager = nil
+  self.v_level_award_red_obj = nil
+  self.v_scene_journey_effect_container = nil
+  self.v_scene_journey_born_effect = nil
+  self.v_scene_journey_idle_effect = nil
+  self.v_scene_journey_interact_effect = nil
+  self.v_ani_fade_in = nil
+  self.v_ani_fade_in_delay = nil
+  self.v_ani_fade_in_no_player = nil
+  self.v_ani_ui_out = nil
+  self.v_ani_ui_black = nil
+  self.v_ani_character_in = nil
+  self.v_ani_character_out = nil
+  self.v_bird_red_rect = nil
+  self.v_level_award_red_rect = nil
+  self.v_bird_red_icon = nil
+  self.v_download_text = nil
+  self.v_full_screen_background = nil
+  self.v_signboard_girl_panel = nil
 end
 
 function ui:init_scene_container()
@@ -327,8 +383,7 @@ function ui:init_scene_container()
   self.v_vcamera_control = self.v_container:Get("VirtualCamera_Control")
   self.v_vcamera_control:SetActive(false)
   self.v_photo_frame_pd = Util.get_playabledirector(nil, photo_frame)
-  self.v_drawcard_enter_pd = Util.get_playabledirector("Drawcard_PD/Enter", self.v_vcamera_control)
-  self.v_drawcard_close_to_clock_pd = Util.get_playabledirector("Drawcard_PD/CloseToClock", self.v_vcamera_control)
+  self:refresh_draw_card_info()
   self.v_container:Get("Drawcard").transform:SetActive(false)
   self.v_camera_track_obj = self.v_container:Get("CinemachineTrack")
   self.v_camera_track_manager = self.v_camera_track_obj:GetComponent(typeof(CS.Game.CameraTrackManager))
@@ -356,6 +411,14 @@ function ui:init_scene_container()
   if self.v_level_award_red_obj then
     self.v_level_award_red_obj_bubble_pos = self.v_level_award_red_obj.transform.position + bird_level_need_add_vet3
   end
+end
+
+function ui:refresh_draw_card_info()
+  local draw_card_pd_name = FashionMgr:get_curr_fashion_draw_card_pd_name()
+  FashionMgr:show_fashion_draw_card_pd(draw_card_pd_name, self.v_vcamera_control)
+  local draw_card_pd_go = Util.get_child_gameobj(draw_card_pd_name, self.v_vcamera_control)
+  self.v_drawcard_enter_pd = Util.get_playabledirector("Enter", draw_card_pd_go)
+  self.v_drawcard_close_to_clock_pd = Util.get_playabledirector("CloseToClock", draw_card_pd_go)
 end
 
 function ui:cache_ui()
@@ -420,17 +483,19 @@ function ui:ui_on_show(after_show_callback)
   Global.sound_mgr:sound_preload_by_soundid("Sound_H1001001_ui_idle")
   self:refresh_remain_time(Util.get_text("Text", self.v_uiobjects.BagTimeTag), Util.get_image(nil, self.v_uiobjects.BagTimeTag), self.v_uiobjects.BagTimeTag, Util.get_child_gameobj("SysOpen/RedPoint", self.v_uiobjects.Btn_Bag))
   DownloadMgr:refresh_ui_main_tips()
-  self:refresh_climbing_tower_btn()
+  self.v_uiobjects.Ani_BtnEntrance_Change:SetActive(true)
+  self:refresh_quick_enter_cfg_list()
+  self:refresh_main_scene_quick_btn_state()
 end
 
-function ui:refresh_climbing_tower_btn()
-  local is_show, curr, max = ClimbingTowerMgr:get_main_btn_info()
-  self.v_uiobjects.BtnTower:SetActive(is_show and curr < max)
-  if not is_show then
+function ui:refresh_summer_btn()
+  local activity_cfg = TimeLimitedActMgr:get_activity_cfg_with_activity_type(TimeLimitedActMgr.Type.SummerActivity)
+  if not activity_cfg then
+    self.v_uiobjects.BtnActivitySummer:SetActive(false)
     return
   end
-  local txt = Util.get_text("StarNum", self.v_uiobjects.BtnTower)
-  txt.text = curr .. "/" .. max
+  local is_open = TimeLimitedActMgr:is_activity_open(activity_cfg.Id)
+  self.v_uiobjects.BtnActivitySummer:SetActive(is_open)
 end
 
 function ui:show_res_err()
@@ -478,7 +543,7 @@ function ui:register_event()
   self:bind_auto_mq(Const.MSG_ON_ITEM_UPDATE, self.refresh_remain_time_event, self)
   self:bind_auto_mq(Const.ON_VERSION_ACTIVITY_UPDATE, self.on_version_activity_update, self)
   self:bind_auto_mq(Const.MSG_UPDATE_PASSPORT_DATA, self.on_passport_data_update, self)
-  self:bind_auto_mq(Const.ON_MAIN_SCENE_FASHION_UPDATE, self.on_main_scene_fashion_update, self)
+  self:bind_auto_mq(Const.MSG_ON_LIGHT_DATA_INDEX_UPDATE, self.on_main_scene_fashion_update, self)
 end
 
 function ui:ui_on_hide()
@@ -504,6 +569,9 @@ function ui:ui_on_hide()
   if self.v_login_timer_id then
     Timer:remove_timer(self.v_login_timer_id)
   end
+  self:clear_quick_enter_timer()
+  self:clear_quick_btn_change_timer()
+  Global.sound_mgr:stop_lipsync_data()
 end
 
 function ui:clear_main_scene_timer()
@@ -624,9 +692,11 @@ function ui:play_story_with_npc_id(npc_id, not_story_cb, delay_time, is_need_pla
       self:change_center_event_model_view_param(board_id, false)
     end
     self:enable_ui_show_gameobj(false, true)
-    local cb = function(role_event_type)
+    
+    local function cb(role_event_type)
       self:on_story_finish(role_event_type, buddy_event_data)
     end
+    
     Log.Info("播放剧情,角色事件Id=", buddy_event_data.buddy_info.event_id, "剧情id:", story_id)
     self:play_story_delay(story_id, delay_time, cb)
   elseif not_story_cb then
@@ -705,9 +775,10 @@ function ui:on_story_finish(role_event_type, buddy_event_data)
 end
 
 function ui:open_ui_main_close_win_with_cb()
-  local cb = function(npc_id)
+  local function cb(npc_id)
     self:play_story_with_npc_id(npc_id, nil, 0)
   end
+  
   self:open_ui_main_close_win(cb)
   if UIMainBubbleMgr then
     UIMainBubbleMgr:try_set_board_girl_bubble_played()
@@ -753,14 +824,13 @@ function ui:ui_on_destroy()
   self.v_timer = nil
   self.v_sys_list = {}
   self.v_btn2sys = {}
-  self.v_safe_area_obj = nil
   self.v_fade_dotween:DOKill()
   self.v_fade_dotween = nil
-  self.v_container = nil
   if self.v_track_animator_controller_path then
     Global.res_mgr:unload_res(self.v_track_animator_controller_path, UnityAnimatorOverrideController)
   end
   self:clear_main_scene_timer()
+  self:clear_csharp_ref()
 end
 
 function ui:release_model()
@@ -866,7 +936,7 @@ function ui:_refresh_sys_btn()
       open = version_activity_id and true or false
     elseif data.ui_name == "ui_monthtask" then
       local id = PassPortMgr:get_passport_data().id
-      open = 0 ~= id
+      open = open and 0 ~= id
     end
     self:check_ui_open_state(open, btn_name)
   end
@@ -1238,6 +1308,9 @@ function ui:change_model_view_param(param_id, is_fast, ignore_same_act, ignore_a
       flag = true
     end
     if flag then
+      if GuideMgr:get_cur_guider() then
+        return
+      end
       self.v_login_act_trigger = true
       self.v_ani_ui_black.time = 0
       self.v_ani_ui_black:Play()
@@ -1578,9 +1651,11 @@ function ui:far_click_char()
     return
   end
   local is_played, is_in_progress = TaskMgr:get_npc_story_is_played(buddy_event_data)
-  local cb = function(npc_id)
+  
+  local function cb(npc_id)
     self:play_story_with_npc_id(npc_id, nil, 0)
   end
+  
   if is_played and is_in_progress then
     self:open_ui_main_close_win_with_cb()
   elseif not is_played and is_in_progress then
@@ -1731,7 +1806,7 @@ function ui:refresh_activity_banner()
         local q_id = v.QuestionnaireId[target_tag]
         if q_id and not PlayerSundryMgr:is_questionnaire_open(q_id) then
         else
-          _tinsert(banner_items, v)
+          _tinsert(banner_items, UtilTable.copy_table(v))
           if 0 ~= end_time then
             self.v_banner_refresh_time = self.v_banner_refresh_time and (end_time > self.v_banner_refresh_time and self.v_banner_refresh_time or end_time) or end_time
           end
@@ -1965,6 +2040,9 @@ function ui:get_path(file)
 end
 
 function ui:set_video_info(cfg)
+  if not self.v_video_player_compenent then
+    return
+  end
   self.v_cur_video_url = self:get_path(cfg.VedioName)
   self.v_video_player_compenent.url = self.v_cur_video_url
 end
@@ -2451,6 +2529,8 @@ function ui:on_version_activity_update()
   self:main_scene_set_tex()
   self:refresh_stage_info()
   self:_refresh_sys_btn()
+  self:refresh_quick_enter_cfg_list()
+  self:refresh_main_scene_quick_btn_state()
 end
 
 function ui:on_passport_data_update()
@@ -2460,11 +2540,151 @@ function ui:on_passport_data_update()
   end
 end
 
-function ui:on_main_scene_fashion_update(msg)
-  if not msg or not msg.mm_x then
+function ui:on_main_scene_fashion_update()
+  self:refresh_draw_card_info()
+end
+
+function ui:refresh_quick_enter_cfg_list()
+  self.v_quick_btn_not_can_click = nil
+  local cfg_list = ShareRes.create("main_scene_video.main_scene_quick_entrance")
+  self.v_quick_enter_cfg_opened_list = {}
+  for _, cfg in ipairs(cfg_list) do
+    local is_open = self:check_quick_enter_info_is_open(cfg)
+    if is_open then
+      table.insert(self.v_quick_enter_cfg_opened_list, cfg)
+    end
+  end
+  self.v_quick_enter_cfg_opened_count = #self.v_quick_enter_cfg_opened_list
+  table.sort(self.v_quick_enter_cfg_opened_list, function(a, b)
+    return a.Priority < b.Priority
+  end)
+end
+
+function ui:check_quick_enter_info_is_open(cfg)
+  local jump_cfg = ShareRes.create("sysopen.sys_jump")[cfg.JumpId]
+  local is_sys_open = jump_cfg and SysOpenMgr:get_sys_is_open(jump_cfg.sys_id) or false
+  if not is_sys_open then
+    return false
+  end
+  local open_time = cfg.OpenTime and Date.get_time_stamp_by_scheme_id(cfg.OpenTime) or 0
+  local end_time = cfg.StopTime and Date.get_time_stamp_by_scheme_id(cfg.StopTime) or 0
+  local cur_time = Date.server_time()
+  local is_time_open = open_time <= cur_time and (0 == end_time or end_time > cur_time)
+  if not is_time_open then
+    return false
+  end
+  local condition_id = Condition:check_condition_list(cfg.Condition)
+  if 0 ~= condition_id then
+    return false
+  end
+  if cfg.CloseCondition and cfg.CloseCondition > 0 then
+    local is_close = Condition:check_condition(cfg.CloseCondition)
+    if is_close then
+      return false
+    end
+  end
+  return true
+end
+
+function ui:refresh_main_scene_quick_btn_state()
+  if self.v_quick_btn_not_can_click then
     return
   end
-  FashionMgr:refresh_main_scene_fashion()
+  self.v_quick_btn_not_can_click = true
+  self.v_uicompents.Ani_BtnEntrance_Change_pd:Play()
+  self:clear_quick_btn_change_timer()
+  self.v_quick_btn_change_timer = Timer:add_timer("Ani_BtnEntrance_Change_Timer", 0.2, function()
+    self.v_quick_btn_not_can_click = nil
+    self.v_uiobjects.BtnTower:SetActive(false)
+    self.v_uiobjects.BtnActivitySummer:SetActive(false)
+    self:refresh_quick_enter_cfg()
+    if not self.v_curr_quick_enter_cfg then
+      self.v_uiobjects.BtnEntrance:SetActive(false)
+      return
+    end
+    self.v_uiobjects.BtnEntrance:SetActive(true)
+    self:refresh_quick_enter_info()
+  end)
+end
+
+function ui:refresh_quick_enter_cfg()
+  if 0 == self.v_quick_enter_cfg_opened_count then
+    self.v_curr_quick_enter_index = nil
+    self.v_next_quick_enter_index = nil
+    self.v_curr_quick_enter_cfg = nil
+    self.v_next_quick_enter_cfg = nil
+    return
+  end
+  if not self.v_curr_quick_enter_index then
+    self.v_curr_quick_enter_index = 1
+  else
+    self.v_curr_quick_enter_index = self.v_curr_quick_enter_index + 1
+  end
+  if self.v_curr_quick_enter_index > self.v_quick_enter_cfg_opened_count then
+    self.v_curr_quick_enter_index = 1
+  end
+  self.v_next_quick_enter_index = self.v_curr_quick_enter_index + 1
+  if self.v_next_quick_enter_index > self.v_quick_enter_cfg_opened_count then
+    self.v_next_quick_enter_index = 1
+  end
+  if self.v_next_quick_enter_index == self.v_curr_quick_enter_index then
+    self.v_next_quick_enter_index = nil
+    self.v_next_quick_enter_cfg = nil
+  end
+  self.v_curr_quick_enter_cfg = self.v_quick_enter_cfg_opened_list[self.v_curr_quick_enter_index]
+  if self.v_next_quick_enter_index then
+    self.v_next_quick_enter_cfg = self.v_quick_enter_cfg_opened_list[self.v_next_quick_enter_index]
+  end
+end
+
+function ui:refresh_quick_enter_info()
+  self.v_uiobjects.BtnChange:SetActive(self.v_next_quick_enter_cfg ~= nil)
+  self.v_uiobjects.ActivityEntrance2:SetActive(self.v_next_quick_enter_cfg ~= nil)
+  ResMgr:load_set_icon(self.v_uicompents.ActivityEntrance1_img, self.v_curr_quick_enter_cfg.ImagePath)
+  self.v_uicompents.EntranceText_txt.text = self.v_curr_quick_enter_cfg.Title
+  if self.v_next_quick_enter_cfg then
+    ResMgr:load_set_icon(self.v_uicompents.ActivityEntrance2_img, self.v_next_quick_enter_cfg.ImagePath)
+    self:add_quick_enter_timer()
+  end
+  if not self.v_curr_quick_enter_cfg.IsNeedShowStar or 0 == self.v_curr_quick_enter_cfg.IsNeedShowStar then
+    self.v_uiobjects.Star:SetActive(false)
+    self.v_uiobjects.StarNum:SetActive(false)
+    return
+  end
+  self.v_uiobjects.Star:SetActive(true)
+  self.v_uiobjects.StarNum:SetActive(true)
+  if self.v_curr_quick_enter_cfg.FightType == Config.CommonDefine.CHALLENGE_TYPE.CLIMBING_TOWER then
+    local _, curr, max = ClimbingTowerMgr:get_main_btn_info()
+    self.v_uicompents.StarNum_txt.text = curr .. "/" .. max
+  end
+end
+
+function ui:add_quick_enter_timer()
+  self:clear_quick_enter_timer()
+  if not self.v_curr_quick_enter_cfg then
+    return
+  end
+  local time = self.v_curr_quick_enter_cfg.ShowTime
+  if not time or time <= 0 then
+    return
+  end
+  self.v_quick_enter_timer = Timer:add_timer("quick_enter_timer", time, function()
+    self:refresh_main_scene_quick_btn_state()
+  end)
+end
+
+function ui:clear_quick_enter_timer()
+  if self.v_quick_enter_timer then
+    Timer:remove_timer(self.v_quick_enter_timer)
+    self.v_quick_enter_timer = nil
+  end
+end
+
+function ui:clear_quick_btn_change_timer()
+  if self.v_quick_btn_change_timer then
+    Timer:remove_timer(self.v_quick_btn_change_timer)
+    self.v_quick_btn_change_timer = nil
+  end
 end
 
 return ui

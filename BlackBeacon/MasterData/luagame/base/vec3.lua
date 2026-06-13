@@ -1,5 +1,5 @@
 local Math = require("base.mathx")
-local math = math
+local math = _ENV.math
 local acos = math.acos
 local sqrt = math.sqrt
 local max = math.max
@@ -9,10 +9,10 @@ local cos = math.cos
 local sin = math.sin
 local abs = math.abs
 local sign = Math.Sign
-local setmetatable = setmetatable
-local rawset = rawset
-local rawget = rawget
-local type = type
+local setmetatable = _ENV.setmetatable
+local rawset = _ENV.rawset
+local rawget = _ENV.rawget
+local type = _ENV.type
 local _cos = math.cos
 local _sin = math.sin
 local rad2Deg = Math.Rad2Deg
@@ -288,7 +288,8 @@ function ClampedMove(lhs, rhs, clampedDelta)
 end
 
 local overSqrt2 = 0.7071067811865476
-local OrthoNormalVector = function(vec)
+
+local function OrthoNormalVector(vec)
   local res = _new()
   if abs(vec.z) > overSqrt2 then
     local a = vec.y * vec.y + vec.z * vec.z
@@ -549,6 +550,15 @@ function vec3.AngleAroundAxis_NoneAlloc(from, to, axis)
   temp_vec3_02:Sub(temp_vec3_01)
   local angle = vec3.AngleRaw(temp_vec3_00:SetNormalize(), temp_vec3_02:SetNormalize())
   return angle * (vec3.Dot(axis, vec3.CrossA(temp_vec3_00, temp_vec3_02, temp_vec3_00)) < 0 and -1 or 1)
+end
+
+function vec3.SignedProjectLen(normal_x, normal_y, normal_z, vec_x, vec_y, vec_z)
+  local sqrMang = normal_x * normal_x + normal_y * normal_y + normal_z * normal_z
+  if sqrMang < 1.175494E-38 then
+    return 0, 0, 0
+  end
+  local dotValue = vec3.DotA(normal_x, normal_y, normal_z, vec_x, vec_y, vec_z)
+  return dotValue / math.sqrt(sqrMang)
 end
 
 function vec3.ProjectLen(normal_x, normal_y, normal_z, vec_x, vec_y, vec_z)

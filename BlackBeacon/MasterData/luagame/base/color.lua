@@ -1,6 +1,6 @@
-local setmetatable = setmetatable
+local setmetatable = _ENV.setmetatable
 local _floor = math.floor
-local type = type
+local type = _ENV.type
 local Mathf = UnityEngine.Mathf
 local Math = require("base.mathx")
 local Color = {}
@@ -119,7 +119,7 @@ function Color.HSVToRGB(H, S, V, hdr)
   return white
 end
 
-local RGBToHSVHelper = function(offset, dominantcolor, colorone, colortwo)
+local function RGBToHSVHelper(offset, dominantcolor, colorone, colortwo)
   local V = dominantcolor
   if 0 ~= V then
     local num = 0

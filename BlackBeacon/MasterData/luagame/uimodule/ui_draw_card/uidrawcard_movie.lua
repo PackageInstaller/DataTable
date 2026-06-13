@@ -259,7 +259,7 @@ function ui:_enter_movie_step_2()
 end
 
 function ui:_refresh_big_icon(img, item_type, item_id, is_shadow)
-  local cb = function()
+  local function cb()
     if item_type == Config.AWARD_TYPE.ITEM then
       img.transform:SetLocalScaleA(3, 3, 1)
     elseif item_type == Config.AWARD_TYPE.CHARA then
@@ -268,6 +268,7 @@ function ui:_refresh_big_icon(img, item_type, item_id, is_shadow)
       img.transform:SetLocalScaleA(1.6, 1.6, 1)
     end
   end
+  
   if item_type == Config.AWARD_TYPE.CHARA then
     local path = UtilUI.get_hero_images(item_id, Config.HERO_ICON_LV.HD_FULL_IMG)
     ResMgr:load_set_icon(img, path, cb, true, self)

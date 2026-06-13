@@ -2,7 +2,6 @@ return {
   {
     {
       DropId = 16701,
-      EndTime = 10010,
       GroupId = 1,
       Index = 1,
       ShowAwardId = 400226
@@ -10,7 +9,6 @@ return {
     {
       BeginTime = 5,
       DropId = 16702,
-      EndTime = 10010,
       GroupId = 1,
       Index = 2,
       ShowAwardId = 400227,
@@ -19,7 +17,6 @@ return {
     {
       BeginTime = 9,
       DropId = 16703,
-      EndTime = 10014,
       GroupId = 1,
       Index = 3,
       ShowAwardId = 400229
@@ -27,7 +24,6 @@ return {
     {
       BeginTime = 9,
       DropId = 16704,
-      EndTime = 10016,
       GroupId = 1,
       Index = 4,
       ShowAwardId = 400230,

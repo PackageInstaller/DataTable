@@ -319,11 +319,13 @@ function ui:on_confirm_updagrade_ability()
   if not self.v_select_ability_index or self.v_hide_timer then
     return
   end
-  local cb = function()
+  
+  local function cb()
     self.v_hide_timer = Timer:add_timer(nil, self.v_uicompents.OutPd_pd.duration, function()
       self:ui_hide()
     end)
   end
+  
   GenresMgr:request_upgrade_ability(self.v_data.id, self.v_select_ability_index, cb)
 end
 
@@ -331,9 +333,11 @@ function ui:on_confirm_task_ability_award()
   if not self.v_select_ability_index or self.v_hide_timer then
     return
   end
-  local cb = function()
+  
+  local function cb()
     self:after_select_ability()
   end
+  
   ChallengeRingPlusMgr:get_curse_task_award(self.v_data.id, nil, nil, self.v_select_ability_index, nil, cb)
 end
 
@@ -341,9 +345,11 @@ function ui:on_confirm_task_ornament_award()
   if not self.v_select_ornament_index or self.v_hide_timer then
     return
   end
-  local cb = function()
+  
+  local function cb()
     self:after_select_ornament()
   end
+  
   ChallengeRingPlusMgr:get_curse_task_award(self.v_data.id, nil, nil, nil, self.v_select_ornament_index, cb)
 end
 
@@ -351,13 +357,15 @@ function ui:on_confirm_option_ability()
   if not self.v_select_ability_index or self.v_hide_timer then
     return
   end
-  local cb = function(resp)
+  
+  local function cb(resp)
     local data
     if resp.ability_drop_data and not UtilTable.is_empty(resp.ability_drop_data.ability_drop) then
       data = resp
     end
     self:after_select_ability(data, CURSE_CHOOSE_ITEM_TYPE.OPTION_ABILITY)
   end
+  
   local uuid = self.v_data and self.v_data.uuid
   GenresMgr:request_choose_options_ability(self.v_select_ability_index, uuid, cb)
 end
@@ -366,9 +374,11 @@ function ui:on_confirm_option_ornament()
   if not self.v_select_ornament_index or self.v_hide_timer then
     return
   end
-  local cb = function()
+  
+  local function cb()
     self:after_select_ornament()
   end
+  
   local uuid = self.v_data and self.v_data.uuid
   BattleOrnamentMgr:request_choose_options_ornaments(self.v_select_ornament_index, uuid, cb)
 end
@@ -377,9 +387,11 @@ function ui:on_confirm_drop_ornament()
   if not self.v_select_ornament_index or self.v_hide_timer then
     return
   end
-  local cb = function()
+  
+  local function cb()
     self:after_select_ornament()
   end
+  
   local uuid = self.v_data and self.v_data.uuid
   BattleOrnamentMgr:select_drop_ornament(self.v_select_ornament_index, uuid, cb)
 end
@@ -392,11 +404,13 @@ function ui:on_confirm_select_ornament()
   if not ChallengeRingPlusMgr:check_can_pay_recuperation_card(data.pay_type, data.recuperate_cfg, true) then
     return
   end
-  local cb = function()
+  
+  local function cb()
     self.v_hide_timer = Timer:add_timer(nil, self.v_uicompents.OutPd_pd.duration, function()
       self:ui_hide()
     end)
   end
+  
   local use_curse_value = data.pay_type == Config.PAY_COSE_TYPE.USE_CUESE
   local recuperate_data = data.recuperate_data
   BattleOrnamentMgr:request_choose_ornament(recuperate_data.id, self.v_select_ornament_index, use_curse_value, cb)
@@ -406,11 +420,13 @@ function ui:on_confirm_select_buff_ornament()
   if not self.v_select_ornament_index or self.v_hide_timer then
     return
   end
-  local cb = function()
+  
+  local function cb()
     self.v_hide_timer = Timer:add_timer(nil, self.v_uicompents.OutPd_pd.duration, function()
       self:ui_hide()
     end)
   end
+  
   local uuid = self.v_data.uuid
   BattleOrnamentMgr:request_buff_choose_ornament(uuid, self.v_select_ornament_index, cb)
 end
@@ -419,9 +435,11 @@ function ui:on_confirm_select_ability()
   if not self.v_select_ability_index or self.v_hide_timer then
     return
   end
-  local cb = function()
+  
+  local function cb()
     self:after_select_ability()
   end
+  
   self:set_opeartion_lock(true)
   GenresMgr:select_drop_ability(self.v_select_ability_index, self.v_data and self.v_data.uuid, cb)
 end
@@ -431,9 +449,11 @@ function ui:on_confirm_select_buff_ability()
     return
   end
   local uuid = self.v_data.uuid
-  local cb = function()
+  
+  local function cb()
     self:after_select_ability()
   end
+  
   GenresMgr:select_buff_ability(uuid, self.v_select_ability_index, cb)
 end
 
@@ -498,12 +518,14 @@ function ui:update_task_ability_refresh()
     Util.show_message_tip(2314, UtilUI.get_item_name(drop_cfg.CostItem))
     return
   end
-  local cb = function(data)
+  
+  local function cb(data)
     self.v_ability_refresh_cnt = self.v_ability_refresh_cnt + 1
     if data then
       self:refresh(data, data.data_type)
     end
   end
+  
   local task_id = self.v_data.id
   GenresMgr:refresh_task_ability_drop(task_id, cb)
 end
@@ -519,7 +541,8 @@ function ui:update_buff_ability_refresh()
     return
   end
   local uuid = self.v_data.uuid
-  local cb = function(resp)
+  
+  local function cb(resp)
     self.v_ability_refresh_cnt = self.v_ability_refresh_cnt + 1
     if resp then
       local data = resp
@@ -527,6 +550,7 @@ function ui:update_buff_ability_refresh()
       self:refresh(data, CURSE_CHOOSE_ITEM_TYPE.BUFF_ABILITY)
     end
   end
+  
   GenresMgr:refresh_buff_ability(uuid, cb)
 end
 
@@ -542,11 +566,13 @@ function ui:update_drop_ability_refresh()
     Util.show_message_tip(2314, UtilUI.get_item_name(drop_cfg.CostItem))
     return
   end
-  local cb = function(data)
+  
+  local function cb(data)
     if data then
       self:refresh(data, CURSE_CHOOSE_ITEM_TYPE.ABILITY)
     end
   end
+  
   GenresMgr:refresh_drop_ability(cb)
 end
 

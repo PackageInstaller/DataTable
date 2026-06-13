@@ -43,7 +43,7 @@ function M:get_camera_hit_distance()
   local norm_dir = camera_dir:SetNormalize()
   local max_distance = 99999
   local need_check_obstacle = SceneMgr:check_obstacle_missile()
-  local hit_distance = self.v_cs_camera_collsion:GetClosestCollidedDistance(start_pos, norm_dir, distance, need_check_obstacle or false, self.v_camera.v_camera_mode == config.CAMERA_VIEW_TYPE.SHOULDER)
+  local hit_distance = self.v_cs_camera_collsion:GetClosestCollidedDistance(start_pos.x, start_pos.y, start_pos.z, norm_dir.x, norm_dir.y, norm_dir.z, distance, need_check_obstacle or false, self.v_camera.v_camera_mode == config.CAMERA_VIEW_TYPE.SHOULDER)
   return hit_distance > 0 and max_distance > hit_distance and hit_distance or 0
 end
 

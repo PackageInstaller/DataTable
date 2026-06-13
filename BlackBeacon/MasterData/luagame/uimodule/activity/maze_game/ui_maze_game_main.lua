@@ -8,7 +8,7 @@ local STORY_FIRST_PLAY_KEY = "STORY_FIRST_PLAY_KEY"
 function ui:on_click_item(point_id)
   local point_cfg = ShareRes.get_ponder_maze_point_cfg(point_id)
   local unlock_time = point_cfg.UnlockTime and Date.get_time_stamp_by_scheme_id(point_cfg.UnlockTime)
-  if unlock_time and unlock_time < Date.server_time() then
+  if unlock_time and unlock_time > Date.server_time() then
     return
   end
   if Util.is_more_than_zero(point_cfg.PrePoint) and not NoviceMgr:get_ponder_maze_point_is_comp(self.v_activity_id, point_cfg.PrePoint) then
@@ -51,18 +51,12 @@ local TRIGGER_TYPE = {
 }
 
 function ui:ui_on_show(activity_id)
-  RedPointMgr:bind_redpoint(self, self.v_uiobjects.TaskRedPoint, RedEnum.MAZE_ACT_TASK)
-  self:refresh_view(activity_id)
-  if 0 == LocalStorage:load_int(STORY_FIRST_PLAY_KEY, 0, true) then
-    local cfgs = ShareRes.get_ponder_maze_story_cfg()
-    for story_id, cfg in pairs(cfgs) do
-      if cfg.StoryType == TRIGGER_TYPE.DEFAULT_UNLOCK then
-        StoryMgr:on_start(story_id)
-        break
-      end
-    end
-    LocalStorage:save_int(STORY_FIRST_PLAY_KEY, 1, true)
-  end
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.TaskRedPoint, RedEnum.MAZE_ACT_TASK, RedEnum.TIME_LIMITED_ACTIVITY_BTN_5_1_2)
+  self.v_activity_id = activity_id
+  self.v_activity_cfg = ShareRes.get_activity_cfg(self.v_activity_id)
+  self:refresh_view()
+  NoviceMgr:check_maze_game_tips_and_story(self.v_activity_id)
+  self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close, self)
 end
 
 function ui:ui_on_update()
@@ -76,9 +70,7 @@ end
 function ui:ui_on_destroy()
 end
 
-function ui:refresh_view(activity_id)
-  self.v_activity_id = activity_id
-  self.v_activity_cfg = ShareRes.get_activity_cfg(self.v_activity_id)
+function ui:refresh_view()
   local maze_activity_cfg = ShareRes.get_ponder_maze_activity_cfg(self.v_activity_id)
   if maze_activity_cfg then
     local point_list = UtilTable.map2list(maze_activity_cfg.Point, function(a, b)
@@ -103,9 +95,6 @@ end
 function ui:clear_item(is_hide)
   self:give_back_auto_cache(STAGECONTENT_STAGETEM_TEMP_KEY)
   for key, item in pairs(self.v_item_list) do
-    if is_hide then
-      item:close_red()
-    end
     item:ui_hide()
     item:ui_destroy()
     self.v_item_list[key] = nil
@@ -168,6 +157,10 @@ function ui:refresh_ill_red()
     end
   end
   self.v_uiobjects.HandBookRedPoint:SetActive(is_red)
+end
+
+function ui:check_close()
+  NoviceMgr:check_close_activity_ui(self.v_activity_id, self.v_ui_name)
 end
 
 return ui

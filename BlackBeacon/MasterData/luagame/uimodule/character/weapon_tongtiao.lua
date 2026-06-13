@@ -162,10 +162,12 @@ function ui:click_select_cost()
     return
   end
   self.v_uiobjects.Cost:SetActive(false)
-  local selected_callback = function(equip_id)
+  
+  local function selected_callback(equip_id)
     self.v_select_equip_uuid = equip_id
     self.v_parent_ui:selected_tongtiao()
   end
+  
   UIMgr:get_ui("char_weapon_select"):ui_show(selected_callback, nil, OPEN_TYPE.COST, self.v_cost_id, self.v_equip_uuid)
 end
 

@@ -40,11 +40,13 @@ function ui:ui_finish_load()
     if not self:check_advance() then
       return
     end
-    local callback = function()
+    
+    local function callback()
       Util.show_message_tip(2141)
       UIMgr:get_ui("char_advance_suc_pnl"):ui_show(self.v_buddy_info.id)
       self:update_buddy_info()
     end
+    
     CharacterMgr:char_advance(self.v_buddy_info.id, callback)
   end)
   self:set_button("CostItem", function()

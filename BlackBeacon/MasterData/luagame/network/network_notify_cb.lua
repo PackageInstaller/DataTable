@@ -4,32 +4,42 @@ local CommonDefine = require("cs_share.common_define")
 local Account = require("gamelogic.account.account")
 local LocalStorage = require("utils.localstorage")
 local tb = {}
-local on_get_role_base_info = function(data)
+
+local function on_get_role_base_info(data)
   PlayerMgr:on_get_role_base_info(data.role_info)
 end
-local on_get_buddy_list = function(data)
+
+local function on_get_buddy_list(data)
   CharacterMgr:on_get_buddy_list(data.buddys)
 end
-local on_get_buddy_info = function(data)
+
+local function on_get_buddy_info(data)
   CharacterMgr:on_get_buddy_info(data.buddy)
 end
-local on_get_equip_list = function(data)
+
+local function on_get_equip_list(data)
   CharacterMgr:on_get_equip_list(data.equips)
 end
-local on_get_equip = function(data)
+
+local function on_get_equip(data)
   CharacterMgr:on_get_equip(data.equip)
 end
-local on_delete_equip = function(data)
+
+local function on_delete_equip(data)
   CharacterMgr:on_delete_equip(data)
 end
-local on_get_buddy_attribute = function(data)
+
+local function on_get_buddy_attribute(data)
 end
-local on_get_buddy_advance = function(data)
+
+local function on_get_buddy_advance(data)
 end
-local on_buddy_to_advance_item = function(data)
+
+local function on_buddy_to_advance_item(data)
   CharacterMgr:on_buddy_to_advance_item(data)
 end
-local on_get_scenepos = function(data)
+
+local function on_get_scenepos(data)
 end
 
 function tb.phone_debug_info(...)
@@ -38,43 +48,54 @@ function tb.phone_debug_info(...)
   end
 end
 
-local on_get_bag_items = function(data)
+local function on_get_bag_items(data)
   tb.phone_debug_info("gs2c_bag_items", data)
   BagMgr:on_get_item_list(data)
 end
-local on_set_tower_info = function(data)
+
+local function on_set_tower_info(data)
   TowerMgr:update_tower_info(data)
 end
-local on_refresh_room_info = function(data)
+
+local function on_refresh_room_info(data)
   TowerMgr:update_room_info(data)
 end
-local on_res_update = function(data)
+
+local function on_res_update(data)
   CharacterMgr:on_res_update(data)
 end
-local on_res_list = function(data)
+
+local function on_res_list(data)
   CharacterMgr:on_res_list(data)
 end
-local on_init_exchange_times = function(data)
+
+local function on_init_exchange_times(data)
   CharacterMgr:on_init_exchange_times(data)
 end
-local on_item_update = function(data)
+
+local function on_item_update(data)
   tb.phone_debug_info("gs2c_items_update", data)
   BagMgr:on_items_update(data)
 end
-local on_item_delete = function(data)
+
+local function on_item_delete(data)
   tb.phone_debug_info("gs2c_item_delete", data)
   BagMgr:on_item_delete(data)
 end
-local on_ret_task_list = function(data)
+
+local function on_ret_task_list(data)
   TaskMgr:on_ret_task_list(data)
 end
-local on_ret_task = function(data)
+
+local function on_ret_task(data)
   TaskMgr:update_task(data)
 end
-local on_task_group_list = function(data)
+
+local function on_task_group_list(data)
   TaskMgr:update_task_group_list(data)
 end
-local on_task_group_info = function(data)
+
+local function on_task_group_info(data)
   TaskMgr:update_task_group_info(data)
 end
 
@@ -82,15 +103,17 @@ function tb.on_task_group_award_list(data)
   TaskMgr:update_task_group_award_list(data)
 end
 
-local on_create_battle_team = function(data)
+local function on_create_battle_team(data)
   TowerMgr:on_create_battle_team(data)
 end
-local _log_rpc = function(func_name, args)
+
+local function _log_rpc(func_name, args)
   if Global.is_open_rpc_log then
     Log.Info("关卡rpc调用", func_name, args, "当前帧id", Global.frame_id)
   end
 end
-local on_scene_call = function(data)
+
+local function on_scene_call(data)
   local scene_rpc = SceneMgr:get_scene_rpc()
   assert(scene_rpc[data.method], "no such method[" .. data.method .. "]")
   local func_name = data.method
@@ -98,13 +121,15 @@ local on_scene_call = function(data)
   _log_rpc(func_name, args)
   scene_rpc[data.method](scene_rpc, Seri.unpack(data.pack_args))
 end
-local on_fight_end = function(data)
+
+local function on_fight_end(data)
   local scene_logic = SceneMgr:get_scene_logic()
   if scene_logic then
     scene_logic:fight_end(data.is_win)
   end
 end
-local on_get_fight_time = function(data)
+
+local function on_get_fight_time(data)
   local tower = TowerMgr:get_tower()
   tower:set_continue_fight_time(data.fight_time)
   local fight_info = TowerMgr:get_fight_info()
@@ -112,10 +137,12 @@ local on_get_fight_time = function(data)
     ChapterMgr:set_continue_fight_time(data.fight_time)
   end
 end
-local on_newbie_info = function(data)
+
+local function on_newbie_info(data)
   NewbieTowerMgr:on_newbie_info(data)
 end
-local on_tp_room = function(data)
+
+local function on_tp_room(data)
   local scene_logic = SceneMgr:get_scene_logic()
   if scene_logic then
     Log.Info("on_tp_room start")
@@ -124,13 +151,16 @@ local on_tp_room = function(data)
     Log.Error("on_tp_room logic null")
   end
 end
-local on_ret_chapter_list = function(data)
+
+local function on_ret_chapter_list(data)
   ChapterMgr:on_ret_chapter_list(data)
 end
-local on_ret_cut_grass_epi_list = function(data)
+
+local function on_ret_cut_grass_epi_list(data)
   ChapterMgr:on_ret_cut_grass_epi_list(data)
 end
-local on_ret_cut_grass_epi_data = function(data)
+
+local function on_ret_cut_grass_epi_data(data)
   ChapterMgr:on_ret_cut_grass_epi_data(data)
 end
 
@@ -138,58 +168,75 @@ function tb.on_refresh_npc_shop_data(data)
   FunctionalNpcMgr:on_refresh_npc_shop_data(data)
 end
 
-local on_chapter_update = function(data)
+local function on_chapter_update(data)
   ChapterMgr:on_chapter_update(data)
 end
-local on_chapter_point_update = function(data)
+
+local function on_chapter_point_update(data)
   ChapterMgr:update_chapter_point_data(data)
 end
-local on_battle_item_delete = function(data)
+
+local function on_battle_item_delete(data)
   FightBagMgr:on_item_delete(data)
 end
-local on_battle_items_update = function(data)
+
+local function on_battle_items_update(data)
   FightBagMgr:on_items_update(data)
 end
-local on_battle_items = function(data)
+
+local function on_battle_items(data)
   FightBagMgr:on_get_item_list(data)
 end
-local on_wear_info_list = function(data)
+
+local function on_wear_info_list(data)
   FightBagMgr:on_wear_info_list(data)
 end
-local on_wear_info_update = function(data)
+
+local function on_wear_info_update(data)
   FightBagMgr:on_wear_info_update(data)
 end
-local on_virtual_res_update = function(data)
+
+local function on_virtual_res_update(data)
   FightBagMgr:on_res_update(data)
 end
-local on_battle_items_init = function(data)
+
+local function on_battle_items_init(data)
   FightBagMgr:on_get_item_list(data)
 end
-local on_battle_drop_list = function(data)
+
+local function on_battle_drop_list(data)
   FightBagMgr:on_battle_drop_list(data)
 end
-local on_prefab_team_list = function(data)
+
+local function on_prefab_team_list(data)
   FormationMgr:on_prefab_team_list(data.prefab_team_list)
 end
-local on_prefab_team_update = function(data)
+
+local function on_prefab_team_update(data)
   FormationMgr:on_prefab_team_update(data.prefab_team)
 end
-local on_fight_team_list = function(data)
+
+local function on_fight_team_list(data)
   FormationMgr:on_fight_team_list(data.fight_team_list)
 end
-local on_fight_team_update = function(data)
+
+local function on_fight_team_update(data)
   FormationMgr:on_fight_team_update(data.fight_team)
 end
-local on_tower_progress = function(data)
+
+local function on_tower_progress(data)
   TowerMgr:update_tower_progress(data)
 end
-local on_scene_skill = function(data)
+
+local function on_scene_skill(data)
   TowerMgr:on_ret_scene_skill(data)
 end
-local on_scene_skill_upgrade = function(data)
+
+local function on_scene_skill_upgrade(data)
   TowerMgr:scene_skill_upgrade(data)
 end
-local on_ret_award_list = function(data)
+
+local function on_ret_award_list(data)
   BagMgr:show_reward_list(data)
 end
 
@@ -197,12 +244,15 @@ function tb.on_gs2c_award_exchange(data)
   BagMgr:show_award_exchange(data)
 end
 
-local on_ret_sysopen_list = function(open_list)
+local function on_ret_sysopen_list(open_list)
 end
-local on_ret_new_sysopen = function(sys_id)
+
+local function on_ret_new_sysopen(sys_id)
 end
+
 local RES_ERR_TIP = "前后台资源版本号不匹配错误"
-local on_recv_server_log = function(data)
+
+local function on_recv_server_log(data)
   local warning_level = data.warning_level
   local prefix = data.ex_tips or ""
   if data.message == "掉落工具打印" then
@@ -220,34 +270,44 @@ local on_recv_server_log = function(data)
     Global.res_err_tip = data.message
   end
 end
-local on_mail_list = function(data)
+
+local function on_mail_list(data)
   MailMgr:on_mail_list(data)
 end
-local on_mail_info_update = function(data)
+
+local function on_mail_info_update(data)
   MailMgr:on_mail_info_update(data)
 end
-local on_mail_delete = function(data)
+
+local function on_mail_delete(data)
   MailMgr:on_mail_delete(data)
 end
-local on_battle_shop_item_list = function(data)
+
+local function on_battle_shop_item_list(data)
   BattleShopMgr:on_battle_shop_item_list(data)
 end
-local on_refresh_battle_shop_discount = function(data)
+
+local function on_refresh_battle_shop_discount(data)
   BattleShopMgr:on_refresh_battle_shop_discount(data)
 end
-local on_battle_talent_update = function(data)
+
+local function on_battle_talent_update(data)
   BattleTalentMgr:on_battle_talent_update(data)
 end
-local on_battle_talent_active_talent_ids = function(data)
+
+local function on_battle_talent_active_talent_ids(data)
 end
-local on_hero_status_init = function(data)
+
+local function on_hero_status_init(data)
   local data = Seri.unpack(data.pack_info)
   SceneMgr:sycn_saved_attrs(data)
 end
-local on_sign_in_history = function(data)
+
+local function on_sign_in_history(data)
   SignInMgr:on_sign_in_hisotry(data)
 end
-local on_show_read_point = function(data)
+
+local function on_show_read_point(data)
   if data.type == CommonDefine.REDPOINT_TYPE.SIGN_IN then
     SignInMgr:on_update_red_point()
   elseif data.type == CommonDefine.REDPOINT_TYPE.FRIEND then
@@ -258,34 +318,44 @@ local on_show_read_point = function(data)
     UnionMgr:show_application_redpoint()
   end
 end
-local on_notice_list = function(data)
+
+local function on_notice_list(data)
   NoticeMgr:on_notice_list(data)
 end
-local on_update_notice = function(data)
+
+local function on_update_notice(data)
   NoticeMgr:on_update_notice(data)
 end
-local on_delete_notice = function(data)
+
+local function on_delete_notice(data)
   NoticeMgr:on_delete_notice(data)
 end
-local on_player_info = function(data)
+
+local function on_player_info(data)
   PlayerMgr:on_player_info(data)
 end
-local on_draw_group_list = function(data)
+
+local function on_draw_group_list(data)
   DrawCardMgr:recv_draw_group_list(data)
 end
-local on_draw_group_update = function(data)
+
+local function on_draw_group_update(data)
   DrawCardMgr:recv_draw_group_update(data)
 end
-local on_draw_pool_close = function(data)
+
+local function on_draw_pool_close(data)
   DrawCardMgr:recv_draw_pool_close(data)
 end
-local on_draw_group_close = function(data)
+
+local function on_draw_group_close(data)
   DrawCardMgr:recv_draw_group_close(data)
 end
-local on_draw_pool_update = function(data)
+
+local function on_draw_pool_update(data)
   DrawCardMgr:recv_draw_pool_update(data)
 end
-local on_draw_pool_info = function(data)
+
+local function on_draw_pool_info(data)
   DrawCardMgr:recv_draw_pool_info(data)
 end
 
@@ -293,28 +363,35 @@ function tb.on_free_draw_data_update(data)
   DrawCardMgr:recv_free_draw_data(data)
 end
 
-local on_exchange_shop = function(data)
+local function on_exchange_shop(data)
   ShopMgr:on_get_ex_shop_goods_update(data)
 end
-local on_unlock_exchange_goods = function(data)
+
+local function on_unlock_exchange_goods(data)
   ShopMgr:on_ex_shop_goods_unlock(data)
 end
-local on_expire_exchange_goods = function(data)
+
+local function on_expire_exchange_goods(data)
   ShopMgr:on_ex_shop_goods_expire(data)
 end
-local on_expire_exchange_shop = function(data)
+
+local function on_expire_exchange_shop(data)
   ShopMgr:on_ex_shop_expire(data)
 end
-local on_reset_exchange_shop = function(data)
+
+local function on_reset_exchange_shop(data)
   ShopMgr:on_reset_ex_shop_data(data)
 end
-local on_monitor_item_cnt = function(data)
+
+local function on_monitor_item_cnt(data)
   ShopMgr:on_stock_item_update(data)
 end
-local on_exchange_shop_list = function(data)
+
+local function on_exchange_shop_list(data)
   ShopMgr:on_get_ex_shop_data(data)
 end
-local on_exchange_goods_mask_new = function(data)
+
+local function on_exchange_goods_mask_new(data)
   ShopMgr:on_goods_mark_update(data)
 end
 
@@ -322,19 +399,23 @@ function tb.on_exchange_goods_reset(data)
   ShopMgr:on_get_ex_shop_goods_update(data)
 end
 
-local on_ret_inf_chapter_list = function(data)
+local function on_ret_inf_chapter_list(data)
   ChapterMgr:on_ret_inf_chapter_list(data)
 end
-local on_inf_chapter_update = function(data)
+
+local function on_inf_chapter_update(data)
   ChapterMgr:on_inf_chapter_update(data)
 end
-local on_inf_chapter_update_floor = function(data)
+
+local function on_inf_chapter_update_floor(data)
   ChapterMgr:on_inf_chapter_update_floor(data)
 end
-local on_update_infinite_award_info = function(data)
+
+local function on_update_infinite_award_info(data)
   ChapterMgr:on_update_infinite_award_info(data)
 end
-local on_battle_infinite_privilege = function(data)
+
+local function on_battle_infinite_privilege(data)
   ChapterMgr:on_battle_infinite_privilege(data)
 end
 
@@ -346,25 +427,31 @@ function tb.update_unlock_entry(data)
   ChapterEndlessMgr:update_unlock_entry(data)
 end
 
-local on_episode_archives_info = function(data)
+local function on_episode_archives_info(data)
   ChapterMgr:on_episode_archives_info(data)
 end
-local on_add_episode_archives_id = function(data)
+
+local function on_add_episode_archives_id(data)
   ChapterMgr:on_add_episode_archives_id(data)
 end
-local on_del_episode_archives_id = function(data)
+
+local function on_del_episode_archives_id(data)
   ChapterMgr:on_del_episode_archives_id(data)
 end
-local on_material_list_update = function(data)
+
+local function on_material_list_update(data)
   ChapterMgr:on_material_list_update(data)
 end
-local on_material_chapter_update_floor = function(data)
+
+local function on_material_chapter_update_floor(data)
   ChapterMgr:on_material_chapter_update_floor(data)
 end
-local on_material_data_update = function(data)
+
+local function on_material_data_update(data)
   ChapterMgr:on_material_data_update(data)
 end
-local on_material_expire = function(id)
+
+local function on_material_expire(id)
   ChapterMgr:on_material_expire(id)
 end
 
@@ -376,16 +463,19 @@ function tb.on_material_epi_data_update(data)
   ChapterMaterialMgr:on_material_epi_data_update(data)
 end
 
-local on_player_upgrade = function(data)
+local function on_player_upgrade(data)
   PlayerMgr:on_player_upgrade(data)
 end
-local on_battle_treasure_info = function(data)
+
+local function on_battle_treasure_info(data)
   BattleTreasureMgr:on_battle_treasure_info(data)
 end
-local on_fashion_list_ret = function(data)
+
+local function on_fashion_list_ret(data)
   FashionMgr:on_ret_fashion_data(data)
 end
-local on_fashion_info_ret = function(data)
+
+local function on_fashion_info_ret(data)
   FashionMgr:on_ret_refresh_fashion_data(data.buddy_fashion)
 end
 
@@ -397,40 +487,49 @@ function tb.on_equip_fashion_list(data)
   FashionMgr:on_equip_fashion_list(data)
 end
 
-local on_sys_list_init = function(data)
+local function on_sys_list_init(data)
   SysOpenMgr:on_sys_list_init(data)
 end
-local on_sys_open = function(data)
+
+local function on_sys_open(data)
   SysOpenMgr:on_sys_open(data)
 end
-local on_battle_skill = function(data)
+
+local function on_battle_skill(data)
   BattleSkillBookMgr:on_battle_skill(data)
 end
-local on_battle_skill_select_list = function(data)
+
+local function on_battle_skill_select_list(data)
   BattleSkillBookMgr:on_battle_skill_select_list(data)
 end
-local on_logout = function(data)
+
+local function on_logout(data)
   local reason_id = tonumber(data.reason)
   Network:close()
   Util.show_notify_popup_message(function()
     Global.gamemode:gmode_set_mode(Const.MODE_CHECK_UPDATE)
   end, Util.get_error_code_msg(reason_id), "网络断开", "确定", nil, nil, true)
 end
-local on_refresh_login_token = function(data)
+
+local function on_refresh_login_token(data)
   Log.Info("update_token " .. data.login_token)
   Account:update_login_token(data.login_token)
 end
-local on_battle_drop_show_list = function(data)
+
+local function on_battle_drop_show_list(data)
   TowerMgr:set_drop_show_list(data)
   DropShowMgr:on_battle_drop_show_list(data)
 end
-local on_word_chat_info = function(data)
+
+local function on_word_chat_info(data)
   ChatMgr:sync_word_chat_info(data)
 end
-local on_friend_chat_info = function(data)
+
+local function on_friend_chat_info(data)
   ChatMgr:sync_friend_chat_info(data)
 end
-local on_system_notify = function(data)
+
+local function on_system_notify(data)
   ChatMgr:sync_system_notify(data)
 end
 
@@ -438,83 +537,104 @@ function tb.gs2c_del_revolve(data)
   MarqueeMgr:remove_msg(data.msg_index)
 end
 
-local on_battle_room_data = function(data)
+local function on_battle_room_data(data)
   TowerMgr:on_battle_room_data(data)
 end
-local on_newbie_sign_in_history = function(data)
+
+local function on_newbie_sign_in_history(data)
   NoviceMgr:sync_newbie_sign_in_history(data)
 end
-local get_activity_seven_sign_in_data = function(data)
+
+local function get_activity_seven_sign_in_data(data)
   NoviceMgr:get_activity_seven_sign_in_data(data)
 end
-local on_close_activity = function(data)
+
+local function on_close_activity(data)
   NoviceMgr:sync_close_activity(data)
 end
-local on_guide_update = function(data)
+
+local function on_guide_update(data)
   GuideMgr:sync_guide_update(data)
   GraphicGuideMgr:sync_guide_update(data)
 end
-local on_battle_task_list = function(data)
+
+local function on_battle_task_list(data)
   BattleTaskMgr:sync_battle_task_list(data)
 end
-local on_battle_task_info = function(data)
+
+local function on_battle_task_info(data)
   BattleTaskMgr:sync_battle_task_info(data)
 end
-local on_battle_task_failed = function(data)
+
+local function on_battle_task_failed(data)
   BattleTaskMgr:sync_battle_task_failed(data.task_id)
 end
-local on_battle_update_mark_task = function(data)
+
+local function on_battle_update_mark_task(data)
   BattleTaskMgr:update_track_task_id(data)
 end
-local on_battle_treasure_box_list = function(data)
+
+local function on_battle_treasure_box_list(data)
   BattleTreasureBoxMgr:on_battle_treasure_box_list(data)
 end
-local on_best_conf_tower_list = function(data)
+
+local function on_best_conf_tower_list(data)
   local activity = ActivityMgr:get_top_version_act()
   if activity then
     activity:sync_best_conf_tower_list(data)
   end
 end
-local on_best_conf_tower_data = function(data)
+
+local function on_best_conf_tower_data(data)
   local activity = ActivityMgr:get_top_version_act()
   if activity then
     activity:sync_best_conf_tower_data(data)
   end
 end
-local on_update_acty_open = function(data)
+
+local function on_update_acty_open(data)
   ActivityMgr:sync_update_acty_open(data)
 end
-local on_acty_open_list = function(data)
+
+local function on_acty_open_list(data)
   ActivityMgr:sync_acty_open_list(data)
 end
-local on_battle_data_abnormal = function(data)
+
+local function on_battle_data_abnormal(data)
   Log.Error("战斗数据异常，注意查看打印信息")
 end
-local on_chal_ring_tower_list = function(data)
+
+local function on_chal_ring_tower_list(data)
   local activity = ActivityMgr:get_challenge_ring_act()
   if activity then
     activity:sync_best_conf_tower_list(data)
   end
 end
-local on_best_chal_ring_tower_data = function(data)
+
+local function on_best_chal_ring_tower_data(data)
   local activity = ActivityMgr:get_challenge_ring_act()
   if activity then
     activity:sync_best_conf_tower_data(data)
   end
 end
-local on_get_cr_random_card = function(data)
+
+local function on_get_cr_random_card(data)
   ChallengeRingMgr:on_get_cr_random_card(data)
 end
-local on_get_chal_ring_cards_data = function(data)
+
+local function on_get_chal_ring_cards_data(data)
   ChallengeRingMgr:on_get_chal_ring_cards_data(data)
 end
-local on_update_cr_card_state = function(data)
+
+local function on_update_cr_card_state(data)
   ChallengeRingMgr:on_update_cr_card_state(data)
 end
-local on_update_chal_ring_emblem = function(data)
+
+local function on_update_chal_ring_emblem(data)
   ChallengeRingMgr:on_update_chal_ring_emblem(data)
 end
-local on_update_lock_info = function(data)
+
+local function on_update_lock_info(data)
   if not TowerMgr then
     return
   end
@@ -523,165 +643,204 @@ local on_update_lock_info = function(data)
     tower:on_update_lock_info(data)
   end
 end
-local on_get_init_box_info = function(data)
+
+local function on_get_init_box_info(data)
   InitBoxMgr:on_get_init_box_info(data)
 end
-local on_open_floor_preview = function(data)
+
+local function on_open_floor_preview(data)
   FightBagMgr:on_open_floor_preview(data)
 end
-local on_random_ans_update = function(data)
+
+local function on_random_ans_update(data)
   FightBagMgr:on_random_ans_update(data)
 end
-local on_get_netdisk_data = function(data)
+
+local function on_get_netdisk_data(data)
   BattleSettingMgr:on_get_netdisk_data(data)
   GuideMgr:on_get_netdisk_data(data)
 end
-local on_battle_buff_list = function(data)
+
+local function on_battle_buff_list(data)
   FightBagMgr:on_battle_buff_list(data)
 end
-local on_battle_buff_info = function(data)
+
+local function on_battle_buff_info(data)
   FightBagMgr:on_battle_buff_info(data)
 end
-local on_dummy_proc = function(data)
+
+local function on_dummy_proc(data)
 end
-local on_buddy_teach_list = function(data)
+
+local function on_buddy_teach_list(data)
   local activity = ActivityMgr:get_skill_teach_act()
   if activity then
     activity:on_buddy_teach_list(data)
   end
 end
-local on_buddy_teach_data = function(data)
+
+local function on_buddy_teach_data(data)
   local activity = ActivityMgr:get_skill_teach_act()
   if activity then
     activity:on_buddy_teach_data(data)
   end
 end
-local on_online_battle_list = function(data)
+
+local function on_online_battle_list(data)
   local activity = ActivityMgr:get_online_battle_act()
   if activity then
     activity:on_online_battle_list(data)
   end
 end
-local on_roominfo = function(data)
+
+local function on_roominfo(data)
   local activity = ActivityMgr:get_online_battle_act()
   if activity then
     activity:on_roominfo(data)
   end
 end
-local on_change_room = function(data)
+
+local function on_change_room(data)
   local activity = ActivityMgr:get_online_battle_act()
   if activity then
     activity:on_change_room(data)
   end
 end
-local on_player_roomadd = function(data)
+
+local function on_player_roomadd(data)
   local activity = ActivityMgr:get_online_battle_act()
   if activity then
     activity:on_player_roomadd(data)
   end
 end
-local on_player_roomdel = function(data)
+
+local function on_player_roomdel(data)
   local activity = ActivityMgr:get_online_battle_act()
   if activity then
     activity:on_player_roomdel(data)
   end
 end
-local on_invite_message = function(data)
+
+local function on_invite_message(data)
   local activity = ActivityMgr:get_online_battle_act()
   if activity then
     activity:on_invite_message(data)
   end
 end
-local on_enterwar_room = function(data)
+
+local function on_enterwar_room(data)
   local activity = ActivityMgr:get_online_battle_act()
   if activity then
     activity:on_enterwar_room(data)
   end
 end
-local on_match_exit = function(data)
+
+local function on_match_exit(data)
   local activity = ActivityMgr:get_online_battle_act()
   if activity then
     activity:on_match_exit(data)
   end
 end
-local on_room_changebuddy = function(data)
+
+local function on_room_changebuddy(data)
   local activity = ActivityMgr:get_online_battle_act()
   if activity then
     activity:on_room_changebuddy(data)
   end
 end
-local on_system_leaveroom = function(data)
+
+local function on_system_leaveroom(data)
   local activity = ActivityMgr:get_online_battle_act()
   if activity then
     activity:on_system_leaveroom(data)
   end
 end
-local on_kickout_capatin_countdown = function(data)
+
+local function on_kickout_capatin_countdown(data)
   local activity = ActivityMgr:get_online_battle_act()
   if activity then
     activity:on_kickout_capatin_countdown(data)
   end
 end
-local on_room_change_capatin = function(data)
+
+local function on_room_change_capatin(data)
   local activity = ActivityMgr:get_online_battle_act()
   if activity then
     activity:on_room_change_capatin(data)
   end
 end
-local on_arch_open_list = function(data)
+
+local function on_arch_open_list(data)
   ArchiveMgr:on_arch_open_list(data)
 end
-local on_update_arch_open = function(data)
+
+local function on_update_arch_open(data)
   ArchiveMgr:on_update_arch_open(data)
 end
-local on_concern_net_list = function(data)
+
+local function on_concern_net_list(data)
   ArchiveMgr:on_concern_net_list(data)
 end
-local on_concern_net_data = function(data)
+
+local function on_concern_net_data(data)
   ArchiveMgr:on_concern_net_data(data)
 end
-local on_world_dictionary_list = function(data)
+
+local function on_world_dictionary_list(data)
   ArchiveMgr:on_world_dictionary_list(data)
 end
-local on_world_dictionary_data = function(data)
+
+local function on_world_dictionary_data(data)
   ArchiveMgr:on_world_dictionary_data(data)
 end
-local on_enemy_information_list = function(data)
+
+local function on_enemy_information_list(data)
   ArchiveMgr:on_enemy_information_list(data)
 end
-local on_enemy_information_data = function(data)
+
+local function on_enemy_information_data(data)
   ArchiveMgr:on_enemy_information_data(data)
 end
-local on_enemy_information_server_data = function(data)
+
+local function on_enemy_information_server_data(data)
   ArchiveMgr:on_enemy_information_server_data(data)
 end
-local on_move_video_list = function(data)
+
+local function on_move_video_list(data)
   ArchiveMgr:on_move_video_list(data)
 end
-local on_move_video_data = function(data)
+
+local function on_move_video_data(data)
   ArchiveMgr:on_move_video_data(data)
 end
-local on_album_list = function(data)
+
+local function on_album_list(data)
   ArchiveMgr:on_album_list(data)
 end
-local on_album_data = function(data)
+
+local function on_album_data(data)
   ArchiveMgr:on_album_data(data)
 end
-local on_ret_tower_story_record = function(data)
+
+local function on_ret_tower_story_record(data)
   if TowerMgr then
     TowerMgr:on_ret_tower_story_record(data)
   end
 end
-local on_init_buddy_rune_list = function(data)
+
+local function on_init_buddy_rune_list(data)
   Rune2Mgr:on_init_buddy_rune_list(data)
 end
-local on_update_buddy_rune = function(data)
+
+local function on_update_buddy_rune(data)
   Rune2Mgr:on_update_buddy_rune(data)
 end
-local update_ornaments_list = function(data)
+
+local function update_ornaments_list(data)
   BattleOrnamentMgr:update_ornaments_list(data)
 end
-local update_ornaments_pos = function(data)
+
+local function update_ornaments_pos(data)
   BattleOrnamentMgr:update_ornaments_pos(data)
 end
 
@@ -693,38 +852,46 @@ function tb.on_batch_ornaments_restore_pos_data(data)
   BattleOrnamentMgr:on_batch_ornaments_restore_pos_data(data)
 end
 
-local on_gm_add_rune2_drop = function(data)
+local function on_gm_add_rune2_drop(data)
   Rune2Mgr:on_gm_add_rune2_drop(data)
 end
-local on_replace_team_data = function(data)
+
+local function on_replace_team_data(data)
   SceneMgr:replace_team_pos_data(data)
 end
-local on_recharge_money_list = function(data)
+
+local function on_recharge_money_list(data)
   RechargeMgr:on_recharge_money_list(data)
 end
-local on_recharge_money_data = function(data)
+
+local function on_recharge_money_data(data)
   RechargeMgr:on_recharge_money_data(data)
 end
-local on_monthly_cards_info = function(data)
+
+local function on_monthly_cards_info(data)
   RechargeMgr:on_monthly_cards_info(data)
 end
-local on_gift_shop_list = function(data)
+
+local function on_gift_shop_list(data)
   RechargeMgr:on_gift_shop_list(data)
 end
-local on_gift_shop_data = function(data)
+
+local function on_gift_shop_data(data)
   RechargeMgr:on_gift_shop_data(data)
 end
 
 function tb.on_update_gift_shop_data(data)
 end
 
-local on_monthly_card_info_update = function(data)
+local function on_monthly_card_info_update(data)
   RechargeMgr:on_monthly_card_info_update(data)
 end
-local on_monthly_card_expired = function(data)
+
+local function on_monthly_card_expired(data)
   RechargeMgr:on_monthly_card_expired(data)
 end
-local on_offline_recharge_award = function(data)
+
+local function on_offline_recharge_award(data)
   RechargeMgr:on_offline_recharge_award(data)
 end
 
@@ -744,22 +911,27 @@ function tb.on_activity_gold_equip_info(data)
   NoviceMgr:on_activity_gold_equip_info(data)
 end
 
-local on_tower_mark_statuses = function(data)
+local function on_tower_mark_statuses(data)
   TowerMgr:on_tower_mark_statuses(data)
 end
-local on_tower_history_floor = function(data)
+
+local function on_tower_history_floor(data)
   TowerMgr:on_tower_history_floor(data)
 end
-local on_get_all_buddy_voice_info = function(data)
+
+local function on_get_all_buddy_voice_info(data)
   CharacterMgr:on_get_all_buddy_voice_info(data)
 end
-local on_unlock_new_buddy_voice = function(data)
+
+local function on_unlock_new_buddy_voice(data)
   CharacterMgr:unlock_new_buddy_voice(data)
 end
-local on_buddy_show_info = function(data)
+
+local function on_buddy_show_info(data)
   CharacterMgr:on_buddy_show_info(data)
 end
-local on_update_buddy_refine = function(data)
+
+local function on_update_buddy_refine(data)
   CharacterMgr:on_update_buddy_refine(data)
 end
 
@@ -767,16 +939,19 @@ function tb.on_buddy_archives_add(data)
   CharacterMgr:on_buddy_archives_add(data)
 end
 
-local on_guild_chat_info = function(data)
+local function on_guild_chat_info(data)
   ChatMgr:sync_union_chat_info(data)
 end
-local on_guild_state = function(data)
+
+local function on_guild_state(data)
   UnionMgr:on_guild_state(data)
 end
-local on_guild_memeber_num_change = function(data)
+
+local function on_guild_memeber_num_change(data)
   UnionMgr:on_guild_memeber_num_change(data)
 end
-local on_hero_born_position = function(data)
+
+local function on_hero_born_position(data)
   local pos_list = data.pos_list
   local hero = Global.hero
   if hero then
@@ -789,19 +964,24 @@ local on_hero_born_position = function(data)
     end
   end
 end
-local on_curse_ring_data = function(data)
+
+local function on_curse_ring_data(data)
   ChallengeRingPlusMgr:on_curse_data(data)
 end
-local on_curse_update = function(data)
+
+local function on_curse_update(data)
   ChallengeRingPlusMgr:on_update_curse(data)
 end
-local on_curse_remove_current_card = function(data)
+
+local function on_curse_remove_current_card(data)
   ChallengeRingPlusMgr:on_remove_current_card(data)
 end
-local on_chal_ring_plus_data = function(data)
+
+local function on_chal_ring_plus_data(data)
   ChallengeRingPlusMgr:on_chal_ring_plus_data(data)
 end
-local on_update_chal_ring_plus_point_data = function(data)
+
+local function on_update_chal_ring_plus_point_data(data)
   ChallengeRingPlusMgr:on_update_chal_ring_plus_point_data(data)
 end
 

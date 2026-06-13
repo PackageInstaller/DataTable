@@ -1,6 +1,6 @@
 local Base = require("ui.widget.widget_base")
 local M = Util.create_child_mt(Base)
-local CSHelper = CSHelper
+local CSHelper = _ENV.CSHelper
 
 function M:_init(parent_ui, content_gameobj, template_class, constraint_count, template_key)
   self.v_content_gameobj = content_gameobj

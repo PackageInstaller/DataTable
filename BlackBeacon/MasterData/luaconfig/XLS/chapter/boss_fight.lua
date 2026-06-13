@@ -35,6 +35,7 @@ return {
     IconPath = "UIBossChal/bosstz_bg_boss_5",
     Id = 4,
     Name = "罴",
+    ResChapter = 4,
     ShowCondition = 100402,
     Sort = 4,
     UnlockCondition = 100501
@@ -45,6 +46,7 @@ return {
     IconPath = "UIBossChal/bosstz_bg_boss_4",
     Id = 5,
     Name = "无实",
+    ResChapter = 5,
     ShowCondition = 100502,
     Sort = 5,
     UnlockCondition = 100600
@@ -55,6 +57,7 @@ return {
     IconPath = "UIBossChal/bosstz_bg_boss_7",
     Id = 6,
     Name = "毕方",
+    ResChapter = 6,
     ShowCondition = 100602,
     Sort = 6,
     UnlockCondition = 100602
@@ -65,6 +68,7 @@ return {
     IconPath = "UIBossChal/bosstz_bg_boss_8",
     Id = 7,
     Name = "大将军 姬鸿",
+    ResChapter = 7,
     ShowCondition = 100602,
     Sort = 7,
     UnlockCondition = 100702

@@ -34,13 +34,15 @@ local disable_obj = {
   "Thumb8"
 }
 local track_num = 20
-local get_border_sld_ui_part = function()
+
+local function get_border_sld_ui_part()
   local sld_part = Fight_Layout_Cfg.border_sld_max_num - Fight_Layout_Cfg.border_sld_min_num
   local ui_part = Fight_Layout_Cfg.ui_border_offset_max - Fight_Layout_Cfg.ui_border_offset_min
   local part_num = _floor(ui_part / sld_part)
   return part_num
 end
-local map_value = function(min_scale, sld_value)
+
+local function map_value(min_scale, sld_value)
   local part = Fight_Layout_Cfg.max_sld_num - Fight_Layout_Cfg.min_sld_num
   local ui_max_num = min_scale * 2
   local ui_min_num = min_scale / 2
@@ -48,7 +50,8 @@ local map_value = function(min_scale, sld_value)
   local result = ui_min_num + (sld_value - Fight_Layout_Cfg.min_sld_num) * ui_part
   return result
 end
-local map_ui_to_sld = function(min_scale, ui_value)
+
+local function map_ui_to_sld(min_scale, ui_value)
   local part = Fight_Layout_Cfg.max_sld_num - Fight_Layout_Cfg.min_sld_num
   local ui_max_num = min_scale * 2
   local ui_min_num = min_scale / 2
@@ -56,7 +59,8 @@ local map_ui_to_sld = function(min_scale, ui_value)
   local result = Fight_Layout_Cfg.min_sld_num + (ui_value - ui_min_num) / ui_part
   return result
 end
-local get_ui_standard = function(self)
+
+local function get_ui_standard(self)
   local scale_list = {}
   for _, group in pairs(Fight_Layout_Cfg.layout_group) do
     for _, ui_name in pairs(group) do
@@ -72,7 +76,8 @@ local get_ui_standard = function(self)
   end
   return scale_list
 end
-local _record_ui_data = function(self, ui_list, ui_name)
+
+local function _record_ui_data(self, ui_list, ui_name)
   local rect = self.v_ui_rect[ui_name]
   if rect then
     local x, y = rect:GetAnchoredPositionA()
@@ -97,7 +102,8 @@ local _record_ui_data = function(self, ui_list, ui_name)
     Log.Error("自定义按钮界面   ui对象", ui_name, "丢失")
   end
 end
-local get_now_ui_list = function(self)
+
+local function get_now_ui_list(self)
   local ui_list = {}
   for _, ui_name in pairs(Fight_Layout_Cfg.MOVE_AREA) do
     _record_ui_data(self, ui_list, ui_name)
@@ -109,7 +115,8 @@ local get_now_ui_list = function(self)
   end
   return ui_list
 end
-local set_ui_list_layout_data = function(self, ui_list, reset)
+
+local function set_ui_list_layout_data(self, ui_list, reset)
   for ui_name, data in pairs(ui_list) do
     local rect = self.v_ui_rect[ui_name]
     if rect and not Fight_Layout_Cfg.MOVE_AREA[ui_name] then
@@ -336,7 +343,7 @@ function ui:_check_overlap(now_rect, ui_group, check_ui_name)
   return false
 end
 
-local change_refualte_location = function(now_dir, rect, offset)
+local function change_refualte_location(now_dir, rect, offset)
   local local_x, local_y = rect:GetLocalPositionA3()
   if now_dir == Fight_Layout_Cfg.regulation_dir.Left then
     rect:SetLocalPositionA(local_x - offset, local_y)

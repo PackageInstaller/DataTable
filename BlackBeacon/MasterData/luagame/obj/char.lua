@@ -62,7 +62,9 @@ function M:aftersetup(...)
   if self.character_cfg then
     local body_radius = self.character_cfg.BodyRadius
     self.v_body_radius = body_radius
-    self.collider = CircleCollider:new(self, body_radius)
+    if not self:is_god() then
+      self.collider = CircleCollider:new(self, body_radius)
+    end
     self.v_cfg_model_scale = self.character_cfg.ModelScale
   end
   self.v_cfg_model_scale = self.v_cfg_model_scale or 1

@@ -3,7 +3,9 @@ local ui = Util.create_child_mt(Base)
 local SaticSv = require("ui.widget.static_scroll_view")
 local AwardTemClass = Util.create_child_mt(require("ui.uiobject"))
 local AwardTemKey = "MINESWEEPER_AWARDTEM"
+local LocalStorage = require("utils.localstorage")
 local color = {16117218, 6237702}
+local height = 168
 
 function AwardTemClass:ui_finish_load()
 end
@@ -30,12 +32,14 @@ function AwardTemClass:set_data(data)
       receivemask:SetActiveEx(false)
       redpoint:SetActiveEx(true)
       Util.set_color(scorenum_txt, color[1])
+      self.v_parent_ui:mark_acceptable(data.idx)
     end
   else
     receivebg:SetActiveEx(false)
     receivemask:SetActiveEx(false)
     redpoint:SetActiveEx(false)
     Util.set_color(scorenum_txt, color[2])
+    self.v_parent_ui:mark_acceptable(data.idx)
   end
   local btn = Util.get_button(nil, self.v_object)
   self:set_button_listener(btn, function()
@@ -91,12 +95,16 @@ function ui:ui_finish_load()
     self:on_click_start_btn()
   end)
   self.v_static_sv_award = SaticSv:new(self, self.v_uiobjects.AwardList, AwardTemClass, AwardTemKey)
+  local viewport = self.v_uiobjects.AwardList.transform.parent
+  local viewport_rect = Util.get_rect_transform(nil, viewport)
+  local _, h = viewport_rect:GetRectWH()
+  self.v_viewport_height = h
 end
 
 function ui:ui_on_show()
   self:refresh()
   self:bind_auto_mq(Const.MSG_ON_UPDATE_MINESWEEPER_INFO, self.on_update_minesweeper_info, self)
-  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.ui_act_minesweeper_UI_SOUND)
+  self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close, self)
 end
 
 function ui:ui_on_hide()
@@ -110,13 +118,19 @@ function ui:cache_ui()
 end
 
 function ui:refresh()
+  local t = LocalStorage:load_table(MineSweeperMgr.MINESWEEPER_KEY, true) or {}
+  t[MineSweeperMgr.chapter_group_id] = 1
+  LocalStorage:save_table(MineSweeperMgr.MINESWEEPER_KEY, t, true)
+  MineSweeperMgr:refresh_redpoint()
   local minesweep_chapter_info = MineSweeperMgr:get_minesweeper_chapter_info()
   local minesweep_activity_id = MineSweeperMgr.activity_id
   local minesweep_chapter_id = MineSweeperMgr:get_minesweeper_chapter_id()
   local minesweeper_chapter_cfg = ShareRes.create("minesweeper.minesweeper_chapter")[minesweep_chapter_id]
   local score_award_id = minesweeper_chapter_cfg.ScoreAwardId
   local award_list = ShareRes.create("minesweeper.minesweeper_score_award")[score_award_id]
+  self.v_min_idx = #award_list
   self.v_static_sv_award:update_list(award_list)
+  self:scroll_to_index(self.v_min_idx)
   local activity_cfg = ShareRes.get_activity_cfg(minesweep_activity_id)
   local remain_time = NoviceMgr:get_time_remaining(activity_cfg.TimeType, activity_cfg.StopTime, activity_cfg.OpenTime, activity_cfg.SustainTime)
   self.v_uicompents.Time_txt.text = Date.get_time_format_7(remain_time)
@@ -133,7 +147,7 @@ function ui:refresh()
   remain_time = Date.get_time_stamp_by_scheme_id(endtime_id) - Date.server_time()
   self.v_uicompents.ChapTime_txt.text = Date.get_time_format_7(remain_time)
   self.v_uicompents.ChapName_txt.text = minesweeper_chapter_cfg.ChapterName
-  self.v_uicompents.LvGroupNum1_txt.text = minesweeper_chapter_cfg.LevelRangeText
+  self.v_uicompents.LvGroupNum1_txt.text = minesweeper_chapter_cfg.LevelName
   self.v_uicompents.Title_txt.text = "战功奖励" .. minesweeper_chapter_cfg.LevelRangeText
   self.v_uicompents.ScoreNum_txt.text = MineSweeperMgr:get_minesweeper_record_score()
   local level, level_range_begin, level_range_end = MineSweeperMgr:calc_minesweeper_knowledge_level(minesweep_chapter_info.knowledge_level_score, minesweep_chapter_id, true)
@@ -157,8 +171,21 @@ function ui:on_click_start_btn()
   end
 end
 
+function ui:scroll_to_index(index)
+  local list_height = #self.v_static_sv_award:get_items() * height
+  self.v_uicompents.AwardList_rect:SetAnchoredPositionY(math.min((index - 1) * height, list_height - self.v_viewport_height))
+end
+
+function ui:mark_acceptable(index)
+  self.v_min_idx = math.min(index, self.v_min_idx)
+end
+
 function ui:on_update_minesweeper_info()
   self:refresh()
+end
+
+function ui:check_close()
+  NoviceMgr:check_close_activity_ui(MineSweeperMgr.activity_id, self.v_ui_name, nil, true)
 end
 
 return ui

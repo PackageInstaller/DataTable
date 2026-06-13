@@ -47,10 +47,12 @@ end
 
 function M:_do_after_play_screen_black_out()
   if DebugSetting and not DebugSetting:is_enter_chapter() then
-    local cb = function()
+    local function cb()
       Global.scene_mgr:on_enter_main_scene()
+      
       UIMgr:revert_cache_ui()
     end
+    
     if TowerMgr then
       TowerMgr:on_exit_tower(cb)
     end
@@ -78,9 +80,10 @@ function M:on_role_die_anima_end(npc_uuid)
   end
   if formation_num <= die_num then
     if DebugSetting and not DebugSetting:is_enter_chapter() then
-      local cb = function()
+      local function cb()
         Global.scene_mgr:on_enter_main_scene()
       end
+      
       TowerMgr:on_exit_tower(cb)
       return
     end

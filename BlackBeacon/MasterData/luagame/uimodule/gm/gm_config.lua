@@ -8,7 +8,10 @@ local M = {
         ParamsKey = {
           "uuid",
           "item_id",
-          "count"
+          "count",
+          "arg1",
+          "arg2",
+          "arg3"
         },
         Tips = "发放奖励:玩家ID = {0},道具ID = {1},道具数量 = {2}"
       },
@@ -397,6 +400,17 @@ local M = {
           "score"
         },
         Tips = "玩家ID = {0},活动id = {1}, 积分{2}"
+      },
+      {
+        name = "扫雷排行榜上榜",
+        Instruct = "update_minesweeper_rank",
+        ParamsKey = {
+          "uuid",
+          "activity_id",
+          "score",
+          "floor"
+        },
+        Tips = "玩家ID = {0},活动id = {1}, 积分{2}, 层{3}"
       }
     }
   },
@@ -553,8 +567,8 @@ local M = {
       {
         name = "拼图小游戏",
         Instruct = "play_puzzle_game",
-        ParamsKey = {},
-        Tips = "",
+        ParamsKey = {"stage_id"},
+        Tips = "（留空则打开关卡列表界面）关卡Id",
         IsFunction = true
       },
       {
@@ -809,8 +823,8 @@ local M = {
         ParamsKey = {"distance"}
       },
       {
-        name = "剔除场景",
-        Instruct = "cull_scene",
+        name = "相机剔除",
+        Instruct = "camera_cull",
         IsFunction = true
       },
       {

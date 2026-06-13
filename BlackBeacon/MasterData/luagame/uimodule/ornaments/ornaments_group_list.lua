@@ -80,7 +80,8 @@ function ui:set_data(data)
     ornament_info.group_idx = self.v_cur_idx
     _tinsert(self.v_ornaments, ornament_info)
   end
-  local sort_func = function(a, b)
+  
+  local function sort_func(a, b)
     if data.cur_page == PAGE.QUALITY then
       if a.is_unlock == b.is_unlock then
         return a.sort_order < b.sort_order
@@ -91,6 +92,7 @@ function ui:set_data(data)
       return a.sort_order < b.sort_order
     end
   end
+  
   _tsort(self.v_ornaments, sort_func)
   self.v_icon1:SetActive(false)
   self.v_icon2:SetActive(false)

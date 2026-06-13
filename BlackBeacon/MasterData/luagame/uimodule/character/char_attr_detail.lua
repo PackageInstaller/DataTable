@@ -186,8 +186,9 @@ function ui:update_attr_list(group_obj, attr_list, attrs_list)
 end
 
 function ui:add_detial_listener(detail_btn, attr_val, attr_cfg)
-  local cb = function()
+  local function cb()
     local str = attr_cfg.AttrDesc
+    
     if attr_cfg.Id == FightDefine.ATTR_TYPE.ABNORMAL_PURE_ESSENCE then
       if attr_val < 0 then
         return
@@ -218,6 +219,7 @@ function ui:add_detial_listener(detail_btn, attr_val, attr_cfg)
     pos.z = self.v_uiobjects.AttrDetailTips.transform.position.z
     self.v_uiobjects.AttrDetailTips.transform.position = pos
   end
+  
   self:set_button_listener(detail_btn, cb)
 end
 

@@ -1510,7 +1510,7 @@ return {
     Name = "cond_fish_barbecue_all_score",
     StopWhen = 0,
     Type = 1189,
-    ValueType = 1
+    ValueType = 0
   },
   [1190] = {
     CompareType = 0,
@@ -1526,6 +1526,14 @@ return {
     Name = "cond_ponder_unlock_ponder",
     StopWhen = 0,
     Type = 1191,
+    ValueType = 1
+  },
+  [1192] = {
+    CompareType = 0,
+    EventId = 202,
+    Name = "cond_finish_plot_preheat",
+    StopWhen = 0,
+    Type = 1192,
     ValueType = 1
   }
 }

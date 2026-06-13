@@ -2133,130 +2133,138 @@ return {
     RestTime = ""
   },
   [22020] = {
+    ActiveTime = 11,
     Award = 22020,
     Condition = {
-      29806,
+      22020,
       0,
       0
     },
-    Desc = "在与星共渔中通关【关卡6】",
+    Desc = "【幽思与时日】通关【世俗哲人王】",
     Duration = 0,
-    Group = 22010,
+    ExpireTime = 12,
+    Group = 22020,
     Id = 22020,
-    Jump = 0,
-    Name = "在【与星共渔】中通过关卡6",
+    Jump = 27007,
+    Name = "【幽思与时日】中，通关第6关【世俗哲人王】",
     Priority = 0,
     RestTime = ""
   },
   [22021] = {
+    ActiveTime = 9,
     Award = 22021,
     Condition = {
-      29902,
+      22021,
       0,
       0
     },
-    Desc = "通关1次引星共振关卡2",
+    Desc = "【与星共渔】中，通关【关卡10】",
     Duration = 0,
-    Group = 22010,
+    ExpireTime = 12,
+    Group = 22020,
     Id = 22021,
-    Jump = 0,
-    Name = "在【引星共振】中通关1次关卡2",
+    Jump = 27004,
+    Name = "【与星共渔】中，通关【关卡10】",
     Priority = 0,
     RestTime = ""
   },
   [22022] = {
+    ActiveTime = 92016,
     Award = 22022,
     Condition = {
-      29906,
+      22022,
       0,
       0
     },
-    Desc = "",
+    Desc = "【夏宴小摊】累计营业额达到70000",
     Duration = 0,
-    Group = 22010,
+    ExpireTime = 92018,
+    Group = 22020,
     Id = 22022,
-    Jump = 0,
-    Name = "在【夏宴小摊】中累计获得2000星愿币",
+    Jump = 27005,
+    Name = "【夏宴小摊】累计营业额达到70000",
     Priority = 0,
     RestTime = ""
   },
   [22023] = {
+    ActiveTime = 9,
     Award = 22023,
     Condition = {
-      22012,
+      22023,
       0,
       0
     },
-    Desc = "累计检索50次",
+    Desc = "【引星共振】中，累计获得3500星愿币",
     Duration = 0,
-    Group = 22010,
+    ExpireTime = 12,
+    Group = 22020,
     Id = 22023,
-    Jump = 21502,
-    Name = "累计检索50次",
+    Jump = 27002,
+    Name = "累计获得3500星愿币",
     Priority = 0,
     RestTime = ""
   },
   [22024] = {
     Award = 22024,
     Condition = {
-      22013,
+      22024,
       0,
       0
     },
-    Desc = "完成主线关卡【绝地天通】",
+    Desc = "累计检索50次",
     Duration = 0,
-    Group = 22010,
+    Group = 22020,
     Id = 22024,
-    Jump = 17312,
-    Name = "完成主线关卡【绝地天通】",
+    Jump = 21502,
+    Name = "累计检索50次",
     Priority = 0,
     RestTime = ""
   },
   [22025] = {
     Award = 22025,
     Condition = {
-      22014,
+      22025,
       0,
       0
     },
-    Desc = "通关角色轶事【故人归】",
+    Desc = "完成外篇关卡【十亿年后的回响】",
     Duration = 0,
-    Group = 22010,
+    Group = 22020,
     Id = 22025,
-    Jump = 17314,
-    Name = "通关角色轶事【故人归】",
+    Jump = 0,
+    Name = "完成外篇关卡【十亿年后的回响】",
     Priority = 0,
     RestTime = ""
   },
   [22026] = {
     Award = 22026,
     Condition = {
-      22015,
+      22026,
       0,
       0
     },
-    Desc = "核心地带单期总计获得12星",
+    Desc = "通关角色轶事【事古作刀铭】",
     Duration = 0,
-    Group = 22010,
+    Group = 22020,
     Id = 22026,
-    Jump = 17201,
-    Name = "核心地带单期总计获得12星",
+    Jump = 0,
+    Name = "通关角色轶事【事古作刀铭】",
     Priority = 0,
     RestTime = ""
   },
   [22027] = {
     Award = 22027,
     Condition = {
-      8003001,
+      22027,
       0,
       0
     },
-    Desc = "通关【命运之书】书页重组Ⅱ",
+    Desc = "核心地带单期总计获得12星",
     Duration = 0,
-    Group = 22010,
+    Group = 22020,
     Id = 22027,
-    Jump = 20501,
-    Name = "通关【命运之书】书页重组Ⅱ",
+    Jump = 17201,
+    Name = "核心地带单期总计获得12星",
     Priority = 0,
     RestTime = ""
   },
@@ -2475,7 +2483,7 @@ return {
       0,
       0
     },
-    Desc = "完成主线3-5",
+    Desc = "完成主线3-5+DA794:N794",
     Duration = 0,
     Group = 203,
     Id = 22301,
@@ -4388,6 +4396,118 @@ return {
     Priority = 0,
     RestTime = ""
   },
+  [29711] = {
+    Award = 42521,
+    Condition = {
+      29701,
+      0,
+      0
+    },
+    Desc = "每日登录",
+    Duration = 0,
+    Group = 339,
+    Id = 29711,
+    Jump = 0,
+    Name = "每日登录",
+    Priority = 0,
+    RestTime = ""
+  },
+  [29712] = {
+    Award = 42521,
+    Condition = {
+      29702,
+      0,
+      0
+    },
+    Desc = "累计消耗80点明度",
+    Duration = 0,
+    Group = 339,
+    Id = 29712,
+    Jump = 0,
+    Name = "累计消耗80点明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [29713] = {
+    Award = 42522,
+    Condition = {
+      29703,
+      0,
+      0
+    },
+    Desc = "累计消耗160点明度",
+    Duration = 0,
+    Group = 339,
+    Id = 29713,
+    Jump = 0,
+    Name = "累计消耗160点明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [29714] = {
+    Award = 42521,
+    Condition = {
+      29704,
+      0,
+      0
+    },
+    Desc = "累计消耗240点明度",
+    Duration = 0,
+    Group = 339,
+    Id = 29714,
+    Jump = 0,
+    Name = "累计消耗240点明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [29715] = {
+    Award = 42521,
+    Condition = {
+      29705,
+      0,
+      0
+    },
+    Desc = "完成2次巴别塔外勤任务",
+    Duration = 0,
+    Group = 339,
+    Id = 29715,
+    Jump = 0,
+    Name = "完成2次巴别塔外勤任务",
+    Priority = 0,
+    RestTime = ""
+  },
+  [29716] = {
+    Award = 42523,
+    Condition = {
+      29706,
+      0,
+      0
+    },
+    Desc = "完成3次巴别塔外勤任务",
+    Duration = 0,
+    Group = 339,
+    Id = 29716,
+    Jump = 0,
+    Name = "完成3次巴别塔外勤任务",
+    Priority = 0,
+    RestTime = ""
+  },
+  [29717] = {
+    Award = 42521,
+    Condition = {
+      29707,
+      0,
+      0
+    },
+    Desc = "完成4次巴别塔外勤任务",
+    Duration = 0,
+    Group = 339,
+    Id = 29717,
+    Jump = 0,
+    Name = "完成4次巴别塔外勤任务",
+    Priority = 0,
+    RestTime = ""
+  },
   [29801] = {
     Award = 42600,
     Condition = {
@@ -4756,6 +4876,134 @@ return {
     Priority = 0,
     RestTime = ""
   },
+  [29909] = {
+    Award = 42700,
+    Condition = {
+      29901,
+      0,
+      0
+    },
+    Desc = "通关1次【螺漩的涟漪】",
+    Duration = 0,
+    Group = 336,
+    Id = 29909,
+    Jump = 0,
+    Name = "通关1次引星共振关卡1",
+    Priority = 0,
+    RestTime = ""
+  },
+  [29910] = {
+    Award = 42700,
+    Condition = {
+      29902,
+      0,
+      0
+    },
+    Desc = "通关1次【深锚的波动】",
+    Duration = 0,
+    Group = 336,
+    Id = 29910,
+    Jump = 0,
+    Name = "通关1次引星共振关卡2",
+    Priority = 0,
+    RestTime = ""
+  },
+  [29911] = {
+    Award = 42700,
+    Condition = {
+      29903,
+      0,
+      0
+    },
+    Desc = "通关1次【群星的牵引】",
+    Duration = 0,
+    Group = 336,
+    Id = 29911,
+    Jump = 0,
+    Name = "通关1次引星共振关卡3",
+    Priority = 0,
+    RestTime = ""
+  },
+  [29912] = {
+    Award = 42701,
+    Condition = {
+      29904,
+      0,
+      0
+    },
+    Desc = "累计获得1000星愿币",
+    Duration = 0,
+    Group = 336,
+    Id = 29912,
+    Jump = 0,
+    Name = "累计获得1000星愿币",
+    Priority = 0,
+    RestTime = ""
+  },
+  [29913] = {
+    Award = 42702,
+    Condition = {
+      29905,
+      0,
+      0
+    },
+    Desc = "累计获得1500星愿币",
+    Duration = 0,
+    Group = 336,
+    Id = 29913,
+    Jump = 0,
+    Name = "累计获得1500星愿币",
+    Priority = 0,
+    RestTime = ""
+  },
+  [29914] = {
+    Award = 42706,
+    Condition = {
+      29906,
+      0,
+      0
+    },
+    Desc = "累计获得2000星愿币",
+    Duration = 0,
+    Group = 336,
+    Id = 29914,
+    Jump = 0,
+    Name = "累计获得2000星愿币",
+    Priority = 0,
+    RestTime = ""
+  },
+  [29915] = {
+    Award = 42707,
+    Condition = {
+      29907,
+      0,
+      0
+    },
+    Desc = "累计获得3000星愿币",
+    Duration = 0,
+    Group = 336,
+    Id = 29915,
+    Jump = 0,
+    Name = "累计获得3000星愿币",
+    Priority = 0,
+    RestTime = ""
+  },
+  [29916] = {
+    Award = 42708,
+    Condition = {
+      29908,
+      0,
+      0
+    },
+    Desc = "累计获得4000星愿币",
+    Duration = 0,
+    Group = 336,
+    Id = 29916,
+    Jump = 0,
+    Name = "累计获得4000星愿币",
+    Priority = 0,
+    RestTime = ""
+  },
   [30001] = {
     Award = 42900,
     Condition = {
@@ -5039,6 +5287,294 @@ return {
     Duration = 0,
     Group = 333,
     Id = 30018,
+    Jump = 0,
+    Name = "累计营业额达到100000",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30019] = {
+    Award = 42900,
+    Condition = {
+      30001,
+      0,
+      0
+    },
+    Desc = "达成【夏宴小摊】第1天营业额目标",
+    Duration = 0,
+    Group = 337,
+    Id = 30019,
+    Jump = 0,
+    Name = "达成【夏宴小摊】第1天营业额目标",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30020] = {
+    Award = 42901,
+    Condition = {
+      30002,
+      0,
+      0
+    },
+    Desc = "达成【夏宴小摊】第3天营业额目标",
+    Duration = 0,
+    Group = 337,
+    Id = 30020,
+    Jump = 0,
+    Name = "达成【夏宴小摊】第3天营业额目标",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30021] = {
+    Award = 42902,
+    Condition = {
+      30003,
+      0,
+      0
+    },
+    Desc = "达成【夏宴小摊】第5天营业额目标",
+    Duration = 0,
+    Group = 337,
+    Id = 30021,
+    Jump = 0,
+    Name = "达成【夏宴小摊】第5天营业额目标",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30022] = {
+    Award = 42903,
+    Condition = {
+      30004,
+      0,
+      0
+    },
+    Desc = "达成【夏宴小摊】第7天营业额目标",
+    Duration = 0,
+    Group = 337,
+    Id = 30022,
+    Jump = 0,
+    Name = "达成【夏宴小摊】第7天营业额目标",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30023] = {
+    Award = 42904,
+    Condition = {
+      30005,
+      0,
+      0
+    },
+    Desc = "达成【夏宴小摊】第9天营业额目标",
+    Duration = 0,
+    Group = 337,
+    Id = 30023,
+    Jump = 0,
+    Name = "达成【夏宴小摊】第9天营业额目标",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30024] = {
+    Award = 42905,
+    Condition = {
+      30006,
+      0,
+      0
+    },
+    Desc = "达成【夏宴小摊】第11天营业额目标",
+    Duration = 0,
+    Group = 337,
+    Id = 30024,
+    Jump = 0,
+    Name = "达成【夏宴小摊】第11天营业额目标",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30025] = {
+    Award = 42906,
+    Condition = {
+      30007,
+      0,
+      0
+    },
+    Desc = "累计营业额达到2000",
+    Duration = 0,
+    Group = 337,
+    Id = 30025,
+    Jump = 0,
+    Name = "累计营业额达到2000",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30026] = {
+    Award = 42907,
+    Condition = {
+      30008,
+      0,
+      0
+    },
+    Desc = "累计营业额达到5000",
+    Duration = 0,
+    Group = 337,
+    Id = 30026,
+    Jump = 0,
+    Name = "累计营业额达到5000",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30027] = {
+    Award = 42908,
+    Condition = {
+      30009,
+      0,
+      0
+    },
+    Desc = "累计营业额达到10000",
+    Duration = 0,
+    Group = 337,
+    Id = 30027,
+    Jump = 0,
+    Name = "累计营业额达到10000",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30028] = {
+    Award = 42909,
+    Condition = {
+      30010,
+      0,
+      0
+    },
+    Desc = "累计营业额达到15000",
+    Duration = 0,
+    Group = 337,
+    Id = 30028,
+    Jump = 0,
+    Name = "累计营业额达到15000",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30029] = {
+    Award = 42910,
+    Condition = {
+      30011,
+      0,
+      0
+    },
+    Desc = "累计营业额达到20000",
+    Duration = 0,
+    Group = 337,
+    Id = 30029,
+    Jump = 0,
+    Name = "累计营业额达到20000",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30030] = {
+    Award = 42911,
+    Condition = {
+      30012,
+      0,
+      0
+    },
+    Desc = "累计营业额达到30000",
+    Duration = 0,
+    Group = 337,
+    Id = 30030,
+    Jump = 0,
+    Name = "累计营业额达到30000",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30031] = {
+    Award = 42912,
+    Condition = {
+      30013,
+      0,
+      0
+    },
+    Desc = "累计营业额达到40000",
+    Duration = 0,
+    Group = 337,
+    Id = 30031,
+    Jump = 0,
+    Name = "累计营业额达到40000",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30032] = {
+    Award = 42913,
+    Condition = {
+      30014,
+      0,
+      0
+    },
+    Desc = "累计营业额达到50000",
+    Duration = 0,
+    Group = 337,
+    Id = 30032,
+    Jump = 0,
+    Name = "累计营业额达到50000",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30033] = {
+    Award = 42914,
+    Condition = {
+      30015,
+      0,
+      0
+    },
+    Desc = "累计营业额达到60000",
+    Duration = 0,
+    Group = 337,
+    Id = 30033,
+    Jump = 0,
+    Name = "累计营业额达到60000",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30034] = {
+    Award = 42915,
+    Condition = {
+      30016,
+      0,
+      0
+    },
+    Desc = "累计营业额达到70000",
+    Duration = 0,
+    Group = 337,
+    Id = 30034,
+    Jump = 0,
+    Name = "累计营业额达到70000",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30035] = {
+    Award = 42916,
+    Condition = {
+      30017,
+      0,
+      0
+    },
+    Desc = "累计营业额达到85000",
+    Duration = 0,
+    Group = 337,
+    Id = 30035,
+    Jump = 0,
+    Name = "累计营业额达到85000",
+    Priority = 0,
+    RestTime = ""
+  },
+  [30036] = {
+    Award = 42917,
+    Condition = {
+      30018,
+      0,
+      0
+    },
+    Desc = "累计营业额达到100000",
+    Duration = 0,
+    Group = 337,
+    Id = 30036,
     Jump = 0,
     Name = "累计营业额达到100000",
     Priority = 0,
@@ -5702,6 +6238,134 @@ return {
     Duration = 0,
     Group = 322,
     Id = 32208,
+    Jump = 0,
+    Name = "活动内累计获得24颗星",
+    Priority = 0,
+    RestTime = ""
+  },
+  [33501] = {
+    Award = 42130,
+    Condition = {
+      27011,
+      0,
+      0
+    },
+    Desc = "通关小游戏III-关卡2",
+    Duration = 0,
+    Group = 335,
+    Id = 33501,
+    Jump = 0,
+    Name = "通关小游戏III-关卡2",
+    Priority = 0,
+    RestTime = ""
+  },
+  [33502] = {
+    Award = 42131,
+    Condition = {
+      27012,
+      0,
+      0
+    },
+    Desc = "通关小游戏III-关卡4",
+    Duration = 0,
+    Group = 335,
+    Id = 33502,
+    Jump = 0,
+    Name = "通关小游戏III-关卡4",
+    Priority = 0,
+    RestTime = ""
+  },
+  [33503] = {
+    Award = 42132,
+    Condition = {
+      27013,
+      0,
+      0
+    },
+    Desc = "通关小游戏IV-关卡2",
+    Duration = 0,
+    Group = 335,
+    Id = 33503,
+    Jump = 0,
+    Name = "通关小游戏IV-关卡2",
+    Priority = 0,
+    RestTime = ""
+  },
+  [33504] = {
+    Award = 42133,
+    Condition = {
+      27014,
+      0,
+      0
+    },
+    Desc = "通关小游戏IV-关卡4",
+    Duration = 0,
+    Group = 335,
+    Id = 33504,
+    Jump = 0,
+    Name = "通关小游戏IV-关卡4",
+    Priority = 0,
+    RestTime = ""
+  },
+  [33505] = {
+    Award = 42134,
+    Condition = {
+      27015,
+      0,
+      0
+    },
+    Desc = "活动内累计获得6颗星",
+    Duration = 0,
+    Group = 335,
+    Id = 33505,
+    Jump = 0,
+    Name = "活动内累计获得6颗星",
+    Priority = 0,
+    RestTime = ""
+  },
+  [33506] = {
+    Award = 42135,
+    Condition = {
+      27016,
+      0,
+      0
+    },
+    Desc = "活动内累计获得12颗星",
+    Duration = 0,
+    Group = 335,
+    Id = 33506,
+    Jump = 0,
+    Name = "活动内累计获得12颗星",
+    Priority = 0,
+    RestTime = ""
+  },
+  [33507] = {
+    Award = 42136,
+    Condition = {
+      27017,
+      0,
+      0
+    },
+    Desc = "活动内累计获得18颗星",
+    Duration = 0,
+    Group = 335,
+    Id = 33507,
+    Jump = 0,
+    Name = "活动内累计获得18颗星",
+    Priority = 0,
+    RestTime = ""
+  },
+  [33508] = {
+    Award = 42137,
+    Condition = {
+      27018,
+      0,
+      0
+    },
+    Desc = "活动内累计获得24颗星",
+    Duration = 0,
+    Group = 335,
+    Id = 33508,
     Jump = 0,
     Name = "活动内累计获得24颗星",
     Priority = 0,
@@ -6566,6 +7230,51 @@ return {
     Priority = 0,
     RestTime = ""
   },
+  [100800] = {
+    Award = 10831,
+    Condition = {
+      100800,
+      0,
+      0
+    },
+    Desc = "完成主线【8-6】",
+    Duration = 0,
+    Id = 100800,
+    Jump = 0,
+    Name = "第8章主线任务1",
+    Priority = 0,
+    RestTime = ""
+  },
+  [100801] = {
+    Award = 10832,
+    Condition = {
+      100801,
+      0,
+      0
+    },
+    Desc = "完成主线【8-12】",
+    Duration = 0,
+    Id = 100801,
+    Jump = 0,
+    Name = "第8章主线任务2",
+    Priority = 0,
+    RestTime = ""
+  },
+  [100802] = {
+    Award = 10833,
+    Condition = {
+      100802,
+      0,
+      0
+    },
+    Desc = "完成主线【8-18】",
+    Duration = 0,
+    Id = 100802,
+    Jump = 0,
+    Name = "第8章主线任务3",
+    Priority = 0,
+    RestTime = ""
+  },
   [110000] = {
     Award = 10931,
     Condition = {
@@ -7123,6 +7832,598 @@ return {
     Priority = 0,
     RestTime = ""
   },
+  [303001] = {
+    Award = 42600,
+    Condition = {
+      303001,
+      0,
+      0
+    },
+    Desc = "在与星共渔中通关【关卡1】",
+    Duration = 0,
+    Group = 338,
+    Id = 303001,
+    Jump = 0,
+    Name = "在与星共渔中通关【关卡1】",
+    Priority = 0,
+    RestTime = ""
+  },
+  [303002] = {
+    Award = 42601,
+    Condition = {
+      303002,
+      0,
+      0
+    },
+    Desc = "在与星共渔中通关【关卡2】",
+    Duration = 0,
+    Group = 338,
+    Id = 303002,
+    Jump = 0,
+    Name = "在与星共渔中通关【关卡2】",
+    Priority = 0,
+    RestTime = ""
+  },
+  [303003] = {
+    Award = 42602,
+    Condition = {
+      303003,
+      0,
+      0
+    },
+    Desc = "在与星共渔中通关【关卡3】",
+    Duration = 0,
+    Group = 338,
+    Id = 303003,
+    Jump = 0,
+    Name = "在与星共渔中通关【关卡3】",
+    Priority = 0,
+    RestTime = ""
+  },
+  [303004] = {
+    Award = 42603,
+    Condition = {
+      303004,
+      0,
+      0
+    },
+    Desc = "在与星共渔中通关【关卡4】",
+    Duration = 0,
+    Group = 338,
+    Id = 303004,
+    Jump = 0,
+    Name = "在与星共渔中通关【关卡4】",
+    Priority = 0,
+    RestTime = ""
+  },
+  [303005] = {
+    Award = 42604,
+    Condition = {
+      303005,
+      0,
+      0
+    },
+    Desc = "在与星共渔中通关【关卡5】",
+    Duration = 0,
+    Group = 338,
+    Id = 303005,
+    Jump = 0,
+    Name = "在与星共渔中通关【关卡5】",
+    Priority = 0,
+    RestTime = ""
+  },
+  [303006] = {
+    Award = 42605,
+    Condition = {
+      303006,
+      0,
+      0
+    },
+    Desc = "在与星共渔中通关【关卡6】",
+    Duration = 0,
+    Group = 338,
+    Id = 303006,
+    Jump = 0,
+    Name = "在与星共渔中通关【关卡6】",
+    Priority = 0,
+    RestTime = ""
+  },
+  [303007] = {
+    Award = 42606,
+    Condition = {
+      303007,
+      0,
+      0
+    },
+    Desc = "在与星共渔中通关【关卡7】",
+    Duration = 0,
+    Group = 338,
+    Id = 303007,
+    Jump = 0,
+    Name = "在与星共渔中通关【关卡7】",
+    Priority = 0,
+    RestTime = ""
+  },
+  [303008] = {
+    Award = 42607,
+    Condition = {
+      303008,
+      0,
+      0
+    },
+    Desc = "在与星共渔中通关【关卡8】",
+    Duration = 0,
+    Group = 338,
+    Id = 303008,
+    Jump = 0,
+    Name = "在与星共渔中通关【关卡8】",
+    Priority = 0,
+    RestTime = ""
+  },
+  [303009] = {
+    Award = 42608,
+    Condition = {
+      303009,
+      0,
+      0
+    },
+    Desc = "在与星共渔中通关【关卡9】",
+    Duration = 0,
+    Group = 338,
+    Id = 303009,
+    Jump = 0,
+    Name = "在与星共渔中通关【关卡9】",
+    Priority = 0,
+    RestTime = ""
+  },
+  [303010] = {
+    Award = 42609,
+    Condition = {
+      303010,
+      0,
+      0
+    },
+    Desc = "在与星共渔中通关【关卡10】",
+    Duration = 0,
+    Group = 338,
+    Id = 303010,
+    Jump = 0,
+    Name = "在与星共渔中通关【关卡10】",
+    Priority = 0,
+    RestTime = ""
+  },
+  [303011] = {
+    Award = 42610,
+    Condition = {
+      303011,
+      0,
+      0
+    },
+    Desc = "在与星共渔中通关【关卡11】",
+    Duration = 0,
+    Group = 338,
+    Id = 303011,
+    Jump = 0,
+    Name = "在与星共渔中通关【关卡11】",
+    Priority = 0,
+    RestTime = ""
+  },
+  [303012] = {
+    Award = 42611,
+    Condition = {
+      303012,
+      0,
+      0
+    },
+    Desc = "在与星共渔中通关【关卡12】",
+    Duration = 0,
+    Group = 338,
+    Id = 303012,
+    Jump = 0,
+    Name = "在与星共渔中通关【关卡12】",
+    Priority = 0,
+    RestTime = ""
+  },
+  [303013] = {
+    Award = 42612,
+    Condition = {
+      303013,
+      0,
+      0
+    },
+    Desc = "3星关卡数量达到3",
+    Duration = 0,
+    Group = 338,
+    Id = 303013,
+    Jump = 0,
+    Name = "3星关卡数量达到3",
+    Priority = 0,
+    RestTime = ""
+  },
+  [303014] = {
+    Award = 42613,
+    Condition = {
+      303014,
+      0,
+      0
+    },
+    Desc = "3星关卡数量达到6",
+    Duration = 0,
+    Group = 338,
+    Id = 303014,
+    Jump = 0,
+    Name = "3星关卡数量达到6",
+    Priority = 0,
+    RestTime = ""
+  },
+  [303015] = {
+    Award = 42614,
+    Condition = {
+      303015,
+      0,
+      0
+    },
+    Desc = "3星关卡数量达到9",
+    Duration = 0,
+    Group = 338,
+    Id = 303015,
+    Jump = 0,
+    Name = "3星关卡数量达到9",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420301] = {
+    Award = 42010,
+    Condition = {
+      420301,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4203,
+    Id = 420301,
+    Jump = 0,
+    Name = "解答第一个问题",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420302] = {
+    Award = 42011,
+    Condition = {
+      420302,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4203,
+    Id = 420302,
+    Jump = 0,
+    Name = "解答第二个问题",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420303] = {
+    Award = 42012,
+    Condition = {
+      420303,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4203,
+    Id = 420303,
+    Jump = 0,
+    Name = "解答第三个问题",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420304] = {
+    Award = 42013,
+    Condition = {
+      420304,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4203,
+    Id = 420304,
+    Jump = 0,
+    Name = "解答第四个问题",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420305] = {
+    Award = 42014,
+    Condition = {
+      420305,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4203,
+    Id = 420305,
+    Jump = 0,
+    Name = "解答第五个问题",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420306] = {
+    Award = 42015,
+    Condition = {
+      420306,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4203,
+    Id = 420306,
+    Jump = 0,
+    Name = "解答第六个问题",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420401] = {
+    Award = 42020,
+    Condition = {
+      420401,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4204,
+    Id = 420401,
+    Jump = 0,
+    Name = "打字总量达到1千",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420402] = {
+    Award = 42021,
+    Condition = {
+      420402,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4204,
+    Id = 420402,
+    Jump = 0,
+    Name = "打字总量达到3千",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420403] = {
+    Award = 42022,
+    Condition = {
+      420403,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4204,
+    Id = 420403,
+    Jump = 0,
+    Name = "打字总量达到6千",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420404] = {
+    Award = 42023,
+    Condition = {
+      420404,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4204,
+    Id = 420404,
+    Jump = 0,
+    Name = "打字总量达到1万",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420405] = {
+    Award = 42024,
+    Condition = {
+      420405,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4204,
+    Id = 420405,
+    Jump = 0,
+    Name = "打字总量达到2万",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420406] = {
+    Award = 42025,
+    Condition = {
+      420406,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4204,
+    Id = 420406,
+    Jump = 0,
+    Name = "打字总量达到5万",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420407] = {
+    Award = 42026,
+    Condition = {
+      420407,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4204,
+    Id = 420407,
+    Jump = 0,
+    Name = "打字总量达到10万",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420408] = {
+    Award = 42027,
+    Condition = {
+      420408,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4204,
+    Id = 420408,
+    Jump = 0,
+    Name = "打字总量达到20万",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420409] = {
+    Award = 42028,
+    Condition = {
+      420409,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4204,
+    Id = 420409,
+    Jump = 0,
+    Name = "打字总量达到50万",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420410] = {
+    Award = 42029,
+    Condition = {
+      420410,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4204,
+    Id = 420410,
+    Jump = 0,
+    Name = "打字总量达到100万",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420411] = {
+    Award = 42030,
+    Condition = {
+      420411,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4204,
+    Id = 420411,
+    Jump = 0,
+    Name = "打字总量达到300万",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420412] = {
+    Award = 42031,
+    Condition = {
+      420412,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4204,
+    Id = 420412,
+    Jump = 0,
+    Name = "打字总量达到1000万",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420413] = {
+    Award = 42032,
+    Condition = {
+      420413,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4204,
+    Id = 420413,
+    Jump = 0,
+    Name = "打字总量达到5000万",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420414] = {
+    Award = 42033,
+    Condition = {
+      420414,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4204,
+    Id = 420414,
+    Jump = 0,
+    Name = "打字总量达到1亿",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420415] = {
+    Award = 42034,
+    Condition = {
+      420415,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4204,
+    Id = 420415,
+    Jump = 0,
+    Name = "打字总量达到5亿",
+    Priority = 0,
+    RestTime = ""
+  },
+  [420416] = {
+    Award = 42035,
+    Condition = {
+      420416,
+      0,
+      0
+    },
+    Desc = "",
+    Duration = 0,
+    Group = 4204,
+    Id = 420416,
+    Jump = 0,
+    Name = "打字总量达到10亿",
+    Priority = 0,
+    RestTime = ""
+  },
   [999991] = {
     Award = 40,
     Condition = {
@@ -7240,6 +8541,406 @@ return {
     Id = 999998,
     Jump = 0,
     Name = "周6颗星",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202101] = {
+    Award = 22024,
+    Condition = {
+      22024,
+      0,
+      0
+    },
+    Desc = "累计检索50次",
+    Duration = 0,
+    Group = 22021,
+    Id = 2202101,
+    Jump = 21502,
+    Name = "累计检索50次",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202102] = {
+    Award = 22027,
+    Condition = {
+      22027,
+      0,
+      0
+    },
+    Desc = "核心地带单期总计获得12星",
+    Duration = 0,
+    Group = 22021,
+    Id = 2202102,
+    Jump = 17201,
+    Name = "核心地带单期总计获得12星",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202103] = {
+    Award = 22027,
+    Condition = {
+      21039,
+      0,
+      0
+    },
+    Desc = "消耗800明度",
+    Duration = 0,
+    Group = 22021,
+    Id = 2202103,
+    Jump = 16101,
+    Name = "消耗800明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202104] = {
+    Award = 22027,
+    Condition = {
+      21034,
+      0,
+      0
+    },
+    Desc = "消耗1200明度",
+    Duration = 0,
+    Group = 22021,
+    Id = 2202104,
+    Jump = 16101,
+    Name = "消耗1200明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202105] = {
+    Award = 22027,
+    Condition = {
+      22502,
+      0,
+      0
+    },
+    Desc = "累计消耗250宿命之印",
+    Duration = 0,
+    Group = 22021,
+    Id = 2202105,
+    Jump = 22502,
+    Name = "累计消耗250宿命之印",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202201] = {
+    Award = 22024,
+    Condition = {
+      22024,
+      0,
+      0
+    },
+    Desc = "累计检索50次",
+    Duration = 0,
+    Group = 22022,
+    Id = 2202201,
+    Jump = 21502,
+    Name = "累计检索50次",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202202] = {
+    Award = 22027,
+    Condition = {
+      22027,
+      0,
+      0
+    },
+    Desc = "核心地带单期总计获得12星",
+    Duration = 0,
+    Group = 22022,
+    Id = 2202202,
+    Jump = 17201,
+    Name = "核心地带单期总计获得12星",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202203] = {
+    Award = 22027,
+    Condition = {
+      21039,
+      0,
+      0
+    },
+    Desc = "消耗800明度",
+    Duration = 0,
+    Group = 22022,
+    Id = 2202203,
+    Jump = 16101,
+    Name = "消耗800明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202204] = {
+    Award = 22027,
+    Condition = {
+      21034,
+      0,
+      0
+    },
+    Desc = "消耗1200明度",
+    Duration = 0,
+    Group = 22022,
+    Id = 2202204,
+    Jump = 16101,
+    Name = "消耗1200明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202205] = {
+    Award = 22027,
+    Condition = {
+      22502,
+      0,
+      0
+    },
+    Desc = "累计消耗250宿命之印",
+    Duration = 0,
+    Group = 22022,
+    Id = 2202205,
+    Jump = 22502,
+    Name = "累计消耗250宿命之印",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202301] = {
+    Award = 22024,
+    Condition = {
+      22024,
+      0,
+      0
+    },
+    Desc = "累计检索50次",
+    Duration = 0,
+    Group = 22023,
+    Id = 2202301,
+    Jump = 21502,
+    Name = "累计检索50次",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202302] = {
+    Award = 22027,
+    Condition = {
+      22027,
+      0,
+      0
+    },
+    Desc = "核心地带单期总计获得12星",
+    Duration = 0,
+    Group = 22023,
+    Id = 2202302,
+    Jump = 17201,
+    Name = "核心地带单期总计获得12星",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202303] = {
+    Award = 22027,
+    Condition = {
+      21039,
+      0,
+      0
+    },
+    Desc = "消耗800明度",
+    Duration = 0,
+    Group = 22023,
+    Id = 2202303,
+    Jump = 16101,
+    Name = "消耗800明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202304] = {
+    Award = 22027,
+    Condition = {
+      21034,
+      0,
+      0
+    },
+    Desc = "消耗1200明度",
+    Duration = 0,
+    Group = 22023,
+    Id = 2202304,
+    Jump = 16101,
+    Name = "消耗1200明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202305] = {
+    Award = 22027,
+    Condition = {
+      22502,
+      0,
+      0
+    },
+    Desc = "累计消耗250宿命之印",
+    Duration = 0,
+    Group = 22023,
+    Id = 2202305,
+    Jump = 22502,
+    Name = "累计消耗250宿命之印",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202401] = {
+    Award = 22024,
+    Condition = {
+      22024,
+      0,
+      0
+    },
+    Desc = "累计检索50次",
+    Duration = 0,
+    Group = 22024,
+    Id = 2202401,
+    Jump = 21502,
+    Name = "累计检索50次",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202402] = {
+    Award = 22027,
+    Condition = {
+      22027,
+      0,
+      0
+    },
+    Desc = "核心地带单期总计获得12星",
+    Duration = 0,
+    Group = 22024,
+    Id = 2202402,
+    Jump = 17201,
+    Name = "核心地带单期总计获得12星",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202403] = {
+    Award = 22027,
+    Condition = {
+      21039,
+      0,
+      0
+    },
+    Desc = "消耗800明度",
+    Duration = 0,
+    Group = 22024,
+    Id = 2202403,
+    Jump = 16101,
+    Name = "消耗800明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202404] = {
+    Award = 22027,
+    Condition = {
+      21034,
+      0,
+      0
+    },
+    Desc = "消耗1200明度",
+    Duration = 0,
+    Group = 22024,
+    Id = 2202404,
+    Jump = 16101,
+    Name = "消耗1200明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202405] = {
+    Award = 22027,
+    Condition = {
+      22502,
+      0,
+      0
+    },
+    Desc = "累计消耗250宿命之印",
+    Duration = 0,
+    Group = 22024,
+    Id = 2202405,
+    Jump = 22502,
+    Name = "累计消耗250宿命之印",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202501] = {
+    Award = 22024,
+    Condition = {
+      22024,
+      0,
+      0
+    },
+    Desc = "累计检索50次",
+    Duration = 0,
+    Group = 22025,
+    Id = 2202501,
+    Jump = 21502,
+    Name = "累计检索50次",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202502] = {
+    Award = 22027,
+    Condition = {
+      22027,
+      0,
+      0
+    },
+    Desc = "核心地带单期总计获得12星",
+    Duration = 0,
+    Group = 22025,
+    Id = 2202502,
+    Jump = 17201,
+    Name = "核心地带单期总计获得12星",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202503] = {
+    Award = 22027,
+    Condition = {
+      21039,
+      0,
+      0
+    },
+    Desc = "消耗800明度",
+    Duration = 0,
+    Group = 22025,
+    Id = 2202503,
+    Jump = 16101,
+    Name = "消耗800明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202504] = {
+    Award = 22027,
+    Condition = {
+      21034,
+      0,
+      0
+    },
+    Desc = "消耗1200明度",
+    Duration = 0,
+    Group = 22025,
+    Id = 2202504,
+    Jump = 16101,
+    Name = "消耗1200明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [2202505] = {
+    Award = 22027,
+    Condition = {
+      22502,
+      0,
+      0
+    },
+    Desc = "累计消耗250宿命之印",
+    Duration = 0,
+    Group = 22025,
+    Id = 2202505,
+    Jump = 22502,
+    Name = "累计消耗250宿命之印",
     Priority = 0,
     RestTime = ""
   },
@@ -8198,6 +9899,51 @@ return {
     Desc = "通关角色轶事-事古作刀铭",
     Duration = 0,
     Id = 4001064,
+    Jump = 0,
+    Name = "历程",
+    Priority = 0,
+    RestTime = ""
+  },
+  [4001065] = {
+    Award = 34000,
+    Condition = {
+      4001065,
+      0,
+      0
+    },
+    Desc = "通关主线第八章-暂未包装",
+    Duration = 0,
+    Id = 4001065,
+    Jump = 0,
+    Name = "历程",
+    Priority = 0,
+    RestTime = ""
+  },
+  [4001066] = {
+    Award = 34000,
+    Condition = {
+      4001066,
+      0,
+      0
+    },
+    Desc = "通关主线第八章困难关卡",
+    Duration = 0,
+    Id = 4001066,
+    Jump = 0,
+    Name = "历程",
+    Priority = 0,
+    RestTime = ""
+  },
+  [4001067] = {
+    Award = 34000,
+    Condition = {
+      4001067,
+      0,
+      0
+    },
+    Desc = "获取第八章主线全部关卡宝箱",
+    Duration = 0,
+    Id = 4001067,
     Jump = 0,
     Name = "历程",
     Priority = 0,
@@ -11258,12 +13004,12 @@ return {
       0,
       0
     },
-    Desc = "完成主线【ex7-11】",
+    Desc = "完成【ex7-11】",
     Duration = 0,
     Group = 5015022,
     Id = 501502204,
     Jump = 501502204,
-    Name = "完成主线【ex7-11】",
+    Name = "完成【ex7-11】",
     Priority = 0,
     RestTime = ""
   },
@@ -11337,7 +13083,7 @@ return {
   [501502301] = {
     Award = 0,
     Condition = {
-      501502201,
+      501502301,
       0,
       0
     },
@@ -11353,7 +13099,7 @@ return {
   [501502302] = {
     Award = 0,
     Condition = {
-      501502202,
+      501502302,
       0,
       0
     },
@@ -11361,7 +13107,7 @@ return {
     Duration = 0,
     Group = 5015023,
     Id = 501502302,
-    Jump = 501502202,
+    Jump = 501502302,
     Name = "累计检索30次",
     Priority = 0,
     RestTime = ""
@@ -11369,100 +13115,740 @@ return {
   [501502303] = {
     Award = 0,
     Condition = {
-      501502203,
+      501502303,
       0,
       0
     },
-    Desc = "完成主线【7-23】",
+    Desc = "完成外篇【ER-17】",
     Duration = 0,
     Group = 5015023,
     Id = 501502303,
-    Jump = 501502203,
-    Name = "完成主线【7-23】",
+    Jump = 501502303,
+    Name = "完成外篇【ER-17】",
     Priority = 0,
     RestTime = ""
   },
   [501502304] = {
-    ActiveTime = 7,
+    ActiveTime = 11,
     Award = 0,
     Condition = {
-      501502204,
+      501502304,
       0,
       0
     },
-    Desc = "完成主线【ex7-11】",
+    Desc = "完成角色轶事【事古作刀铭】",
     Duration = 0,
     Group = 5015023,
     Id = 501502304,
-    Jump = 501502204,
-    Name = "完成主线【ex7-11】",
+    Jump = 501502304,
+    Name = "完成角色轶事【事古作刀铭】",
     Priority = 0,
     RestTime = ""
   },
   [501502305] = {
-    ActiveTime = 91013,
     Award = 0,
     Condition = {
-      501502205,
+      501502305,
       0,
       0
     },
-    Desc = "【风雅颂】中，累计通关6关",
+    Desc = "累计获得3500星愿币",
     Duration = 0,
     Group = 5015023,
     Id = 501502305,
-    Jump = 501502205,
-    Name = "【风雅颂】中，累计通关6关",
+    Jump = 501502305,
+    Name = "累计获得3500星愿币",
     Priority = 0,
     RestTime = ""
   },
   [501502306] = {
-    ActiveTime = 30013,
+    ActiveTime = 92010,
     Award = 0,
     Condition = {
-      501502206,
+      501502306,
       0,
       0
     },
-    Desc = "【地宫机窍】累计通关12关",
+    Desc = "在与星共渔中通关【关卡10】",
     Duration = 0,
     Group = 5015023,
     Id = 501502306,
-    Jump = 501502206,
-    Name = "【地宫机窍】中，累计通关12关",
+    Jump = 501502306,
+    Name = "在与星共渔中通关【关卡10】",
     Priority = 0,
     RestTime = ""
   },
   [501502307] = {
-    ActiveTime = 7,
+    ActiveTime = 92019,
     Award = 0,
     Condition = {
-      501502207,
+      501502307,
       0,
       0
     },
-    Desc = "完成角色轶事【故人归】",
+    Desc = "【夏宴小摊】累计营业额达到70000",
     Duration = 0,
     Group = 5015023,
     Id = 501502307,
-    Jump = 501502207,
-    Name = "完成角色轶事【故人归】",
+    Jump = 501502307,
+    Name = "【夏宴小摊】累计营业额达到70000",
     Priority = 0,
     RestTime = ""
   },
   [501502308] = {
+    ActiveTime = 9,
     Award = 0,
     Condition = {
-      501502208,
+      501502308,
       0,
       0
     },
-    Desc = "累计消耗1500宿命之印",
+    Desc = "【幽思与时日】中，通关第6关【世俗哲人王】",
     Duration = 0,
     Group = 5015023,
     Id = 501502308,
-    Jump = 501502208,
-    Name = "累计消耗1500宿命之印",
+    Jump = 501502308,
+    Name = "【幽思与时日】中，通关第6关【世俗哲人王】",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502401] = {
+    Award = 0,
+    Condition = {
+      501502401,
+      0,
+      0
+    },
+    Desc = "累计登录5天",
+    Duration = 0,
+    Group = 5015024,
+    Id = 501502401,
+    Jump = 0,
+    Name = "累计登录5天",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502402] = {
+    Award = 0,
+    Condition = {
+      501502402,
+      0,
+      0
+    },
+    Desc = "累计消耗50000奥雷",
+    Duration = 0,
+    Group = 5015024,
+    Id = 501502402,
+    Jump = 0,
+    Name = "累计消耗50000奥雷",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502403] = {
+    Award = 0,
+    Condition = {
+      501502403,
+      0,
+      0
+    },
+    Desc = "消耗200明度",
+    Duration = 0,
+    Group = 5015024,
+    Id = 501502403,
+    Jump = 0,
+    Name = "消耗200明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502404] = {
+    Award = 0,
+    Condition = {
+      501502404,
+      0,
+      0
+    },
+    Desc = "消耗600明度",
+    Duration = 0,
+    Group = 5015024,
+    Id = 501502404,
+    Jump = 0,
+    Name = "消耗600明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502405] = {
+    Award = 0,
+    Condition = {
+      501502405,
+      0,
+      0
+    },
+    Desc = "消耗1000明度",
+    Duration = 0,
+    Group = 5015024,
+    Id = 501502405,
+    Jump = 0,
+    Name = "消耗1000明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502406] = {
+    Award = 0,
+    Condition = {
+      501502406,
+      0,
+      0
+    },
+    Desc = "消耗1500明度",
+    Duration = 0,
+    Group = 5015024,
+    Id = 501502406,
+    Jump = 0,
+    Name = "消耗1500明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502407] = {
+    Award = 0,
+    Condition = {
+      501502407,
+      0,
+      0
+    },
+    Desc = "玩家等级达到40级",
+    Duration = 0,
+    Group = 5015024,
+    Id = 501502407,
+    Jump = 0,
+    Name = "玩家等级达到40级",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502408] = {
+    Award = 0,
+    Condition = {
+      501502408,
+      0,
+      0
+    },
+    Desc = "累计检索30次",
+    Duration = 0,
+    Group = 5015024,
+    Id = 501502408,
+    Jump = 501502302,
+    Name = "累计检索30次",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502501] = {
+    Award = 0,
+    Condition = {
+      501502501,
+      0,
+      0
+    },
+    Desc = "累计登录5天",
+    Duration = 0,
+    Group = 5015025,
+    Id = 501502501,
+    Jump = 0,
+    Name = "累计登录5天",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502502] = {
+    Award = 0,
+    Condition = {
+      501502502,
+      0,
+      0
+    },
+    Desc = "累计消耗50000奥雷",
+    Duration = 0,
+    Group = 5015025,
+    Id = 501502502,
+    Jump = 0,
+    Name = "累计消耗50000奥雷",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502503] = {
+    Award = 0,
+    Condition = {
+      501502503,
+      0,
+      0
+    },
+    Desc = "消耗200明度",
+    Duration = 0,
+    Group = 5015025,
+    Id = 501502503,
+    Jump = 0,
+    Name = "消耗200明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502504] = {
+    Award = 0,
+    Condition = {
+      501502504,
+      0,
+      0
+    },
+    Desc = "消耗600明度",
+    Duration = 0,
+    Group = 5015025,
+    Id = 501502504,
+    Jump = 0,
+    Name = "消耗600明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502505] = {
+    Award = 0,
+    Condition = {
+      501502505,
+      0,
+      0
+    },
+    Desc = "消耗1000明度",
+    Duration = 0,
+    Group = 5015025,
+    Id = 501502505,
+    Jump = 0,
+    Name = "消耗1000明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502506] = {
+    Award = 0,
+    Condition = {
+      501502506,
+      0,
+      0
+    },
+    Desc = "消耗1500明度",
+    Duration = 0,
+    Group = 5015025,
+    Id = 501502506,
+    Jump = 0,
+    Name = "消耗1500明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502507] = {
+    Award = 0,
+    Condition = {
+      501502507,
+      0,
+      0
+    },
+    Desc = "玩家等级达到40级",
+    Duration = 0,
+    Group = 5015025,
+    Id = 501502507,
+    Jump = 0,
+    Name = "玩家等级达到40级",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502508] = {
+    Award = 0,
+    Condition = {
+      501502508,
+      0,
+      0
+    },
+    Desc = "累计检索30次",
+    Duration = 0,
+    Group = 5015025,
+    Id = 501502508,
+    Jump = 501502302,
+    Name = "累计检索30次",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502601] = {
+    Award = 0,
+    Condition = {
+      501502601,
+      0,
+      0
+    },
+    Desc = "累计登录5天",
+    Duration = 0,
+    Group = 5015026,
+    Id = 501502601,
+    Jump = 0,
+    Name = "累计登录5天",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502602] = {
+    Award = 0,
+    Condition = {
+      501502602,
+      0,
+      0
+    },
+    Desc = "累计消耗50000奥雷",
+    Duration = 0,
+    Group = 5015026,
+    Id = 501502602,
+    Jump = 0,
+    Name = "累计消耗50000奥雷",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502603] = {
+    Award = 0,
+    Condition = {
+      501502603,
+      0,
+      0
+    },
+    Desc = "消耗200明度",
+    Duration = 0,
+    Group = 5015026,
+    Id = 501502603,
+    Jump = 0,
+    Name = "消耗200明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502604] = {
+    Award = 0,
+    Condition = {
+      501502604,
+      0,
+      0
+    },
+    Desc = "消耗600明度",
+    Duration = 0,
+    Group = 5015026,
+    Id = 501502604,
+    Jump = 0,
+    Name = "消耗600明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502605] = {
+    Award = 0,
+    Condition = {
+      501502605,
+      0,
+      0
+    },
+    Desc = "消耗1000明度",
+    Duration = 0,
+    Group = 5015026,
+    Id = 501502605,
+    Jump = 0,
+    Name = "消耗1000明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502606] = {
+    Award = 0,
+    Condition = {
+      501502606,
+      0,
+      0
+    },
+    Desc = "消耗1500明度",
+    Duration = 0,
+    Group = 5015026,
+    Id = 501502606,
+    Jump = 0,
+    Name = "消耗1500明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502607] = {
+    Award = 0,
+    Condition = {
+      501502607,
+      0,
+      0
+    },
+    Desc = "玩家等级达到40级",
+    Duration = 0,
+    Group = 5015026,
+    Id = 501502607,
+    Jump = 0,
+    Name = "玩家等级达到40级",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502608] = {
+    Award = 0,
+    Condition = {
+      501502608,
+      0,
+      0
+    },
+    Desc = "累计检索30次",
+    Duration = 0,
+    Group = 5015026,
+    Id = 501502608,
+    Jump = 501502302,
+    Name = "累计检索30次",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502701] = {
+    Award = 0,
+    Condition = {
+      501502701,
+      0,
+      0
+    },
+    Desc = "累计登录5天",
+    Duration = 0,
+    Group = 5015027,
+    Id = 501502701,
+    Jump = 0,
+    Name = "累计登录5天",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502702] = {
+    Award = 0,
+    Condition = {
+      501502702,
+      0,
+      0
+    },
+    Desc = "累计消耗50000奥雷",
+    Duration = 0,
+    Group = 5015027,
+    Id = 501502702,
+    Jump = 0,
+    Name = "累计消耗50000奥雷",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502703] = {
+    Award = 0,
+    Condition = {
+      501502703,
+      0,
+      0
+    },
+    Desc = "消耗200明度",
+    Duration = 0,
+    Group = 5015027,
+    Id = 501502703,
+    Jump = 0,
+    Name = "消耗200明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502704] = {
+    Award = 0,
+    Condition = {
+      501502704,
+      0,
+      0
+    },
+    Desc = "消耗600明度",
+    Duration = 0,
+    Group = 5015027,
+    Id = 501502704,
+    Jump = 0,
+    Name = "消耗600明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502705] = {
+    Award = 0,
+    Condition = {
+      501502705,
+      0,
+      0
+    },
+    Desc = "消耗1000明度",
+    Duration = 0,
+    Group = 5015027,
+    Id = 501502705,
+    Jump = 0,
+    Name = "消耗1000明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502706] = {
+    Award = 0,
+    Condition = {
+      501502706,
+      0,
+      0
+    },
+    Desc = "消耗1500明度",
+    Duration = 0,
+    Group = 5015027,
+    Id = 501502706,
+    Jump = 0,
+    Name = "消耗1500明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502707] = {
+    Award = 0,
+    Condition = {
+      501502707,
+      0,
+      0
+    },
+    Desc = "玩家等级达到40级",
+    Duration = 0,
+    Group = 5015027,
+    Id = 501502707,
+    Jump = 0,
+    Name = "玩家等级达到40级",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502708] = {
+    Award = 0,
+    Condition = {
+      501502708,
+      0,
+      0
+    },
+    Desc = "累计检索30次",
+    Duration = 0,
+    Group = 5015027,
+    Id = 501502708,
+    Jump = 501502302,
+    Name = "累计检索30次",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502801] = {
+    Award = 0,
+    Condition = {
+      501502801,
+      0,
+      0
+    },
+    Desc = "累计登录5天",
+    Duration = 0,
+    Group = 5015028,
+    Id = 501502801,
+    Jump = 0,
+    Name = "累计登录5天",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502802] = {
+    Award = 0,
+    Condition = {
+      501502802,
+      0,
+      0
+    },
+    Desc = "累计消耗50000奥雷",
+    Duration = 0,
+    Group = 5015028,
+    Id = 501502802,
+    Jump = 0,
+    Name = "累计消耗50000奥雷",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502803] = {
+    Award = 0,
+    Condition = {
+      501502803,
+      0,
+      0
+    },
+    Desc = "消耗200明度",
+    Duration = 0,
+    Group = 5015028,
+    Id = 501502803,
+    Jump = 0,
+    Name = "消耗200明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502804] = {
+    Award = 0,
+    Condition = {
+      501502804,
+      0,
+      0
+    },
+    Desc = "消耗600明度",
+    Duration = 0,
+    Group = 5015028,
+    Id = 501502804,
+    Jump = 0,
+    Name = "消耗600明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502805] = {
+    Award = 0,
+    Condition = {
+      501502805,
+      0,
+      0
+    },
+    Desc = "消耗1000明度",
+    Duration = 0,
+    Group = 5015028,
+    Id = 501502805,
+    Jump = 0,
+    Name = "消耗1000明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502806] = {
+    Award = 0,
+    Condition = {
+      501502806,
+      0,
+      0
+    },
+    Desc = "消耗1500明度",
+    Duration = 0,
+    Group = 5015028,
+    Id = 501502806,
+    Jump = 0,
+    Name = "消耗1500明度",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502807] = {
+    Award = 0,
+    Condition = {
+      501502807,
+      0,
+      0
+    },
+    Desc = "玩家等级达到40级",
+    Duration = 0,
+    Group = 5015028,
+    Id = 501502807,
+    Jump = 0,
+    Name = "玩家等级达到40级",
+    Priority = 0,
+    RestTime = ""
+  },
+  [501502808] = {
+    Award = 0,
+    Condition = {
+      501502808,
+      0,
+      0
+    },
+    Desc = "累计检索30次",
+    Duration = 0,
+    Group = 5015028,
+    Id = 501502808,
+    Jump = 501502302,
+    Name = "累计检索30次",
     Priority = 0,
     RestTime = ""
   },
@@ -11477,7 +13863,7 @@ return {
     Duration = 0,
     Id = 1001025001,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-巴拉莱卡",
     Priority = 0,
     RestTime = ""
   },
@@ -11492,7 +13878,7 @@ return {
     Duration = 0,
     Id = 1001025002,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-巴拉莱卡",
     Priority = 0,
     RestTime = ""
   },
@@ -11507,7 +13893,7 @@ return {
     Duration = 0,
     Id = 1001025003,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-巴拉莱卡",
     Priority = 0,
     RestTime = ""
   },
@@ -11522,7 +13908,7 @@ return {
     Duration = 0,
     Id = 1001025004,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-巴拉莱卡",
     Priority = 0,
     RestTime = ""
   },
@@ -11537,7 +13923,7 @@ return {
     Duration = 0,
     Id = 1001025005,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-巴拉莱卡",
     Priority = 0,
     RestTime = ""
   },
@@ -11552,7 +13938,7 @@ return {
     Duration = 0,
     Id = 1001025006,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-巴拉莱卡",
     Priority = 0,
     RestTime = ""
   },
@@ -11567,7 +13953,7 @@ return {
     Duration = 0,
     Id = 1001025007,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-巴拉莱卡",
     Priority = 0,
     RestTime = ""
   },
@@ -11582,7 +13968,7 @@ return {
     Duration = 0,
     Id = 1001025008,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-巴拉莱卡",
     Priority = 0,
     RestTime = ""
   },
@@ -11597,7 +13983,7 @@ return {
     Duration = 0,
     Id = 1001025009,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-巴拉莱卡",
     Priority = 0,
     RestTime = ""
   },
@@ -11612,7 +13998,7 @@ return {
     Duration = 0,
     Id = 1001026001,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-菲娜米娜",
     Priority = 0,
     RestTime = ""
   },
@@ -11627,7 +14013,7 @@ return {
     Duration = 0,
     Id = 1001026002,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-菲娜米娜",
     Priority = 0,
     RestTime = ""
   },
@@ -11642,7 +14028,7 @@ return {
     Duration = 0,
     Id = 1001026003,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-菲娜米娜",
     Priority = 0,
     RestTime = ""
   },
@@ -11657,7 +14043,7 @@ return {
     Duration = 0,
     Id = 1001026004,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-菲娜米娜",
     Priority = 0,
     RestTime = ""
   },
@@ -11672,7 +14058,7 @@ return {
     Duration = 0,
     Id = 1001026005,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-菲娜米娜",
     Priority = 0,
     RestTime = ""
   },
@@ -11687,7 +14073,7 @@ return {
     Duration = 0,
     Id = 1001026006,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-菲娜米娜",
     Priority = 0,
     RestTime = ""
   },
@@ -11702,7 +14088,7 @@ return {
     Duration = 0,
     Id = 1001026007,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-菲娜米娜",
     Priority = 0,
     RestTime = ""
   },
@@ -11717,7 +14103,7 @@ return {
     Duration = 0,
     Id = 1001026008,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-菲娜米娜",
     Priority = 0,
     RestTime = ""
   },
@@ -11732,7 +14118,7 @@ return {
     Duration = 0,
     Id = 1001026009,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-菲娜米娜",
     Priority = 0,
     RestTime = ""
   },
@@ -11747,7 +14133,7 @@ return {
     Duration = 0,
     Id = 1001027001,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-金缕",
     Priority = 0,
     RestTime = ""
   },
@@ -11762,7 +14148,7 @@ return {
     Duration = 0,
     Id = 1001027002,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-金缕",
     Priority = 0,
     RestTime = ""
   },
@@ -11777,7 +14163,7 @@ return {
     Duration = 0,
     Id = 1001027003,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-金缕",
     Priority = 0,
     RestTime = ""
   },
@@ -11792,7 +14178,7 @@ return {
     Duration = 0,
     Id = 1001027004,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-金缕",
     Priority = 0,
     RestTime = ""
   },
@@ -11807,7 +14193,7 @@ return {
     Duration = 0,
     Id = 1001027005,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-金缕",
     Priority = 0,
     RestTime = ""
   },
@@ -11822,7 +14208,7 @@ return {
     Duration = 0,
     Id = 1001027006,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-金缕",
     Priority = 0,
     RestTime = ""
   },
@@ -11837,7 +14223,7 @@ return {
     Duration = 0,
     Id = 1001027007,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-金缕",
     Priority = 0,
     RestTime = ""
   },
@@ -11852,7 +14238,7 @@ return {
     Duration = 0,
     Id = 1001027008,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-金缕",
     Priority = 0,
     RestTime = ""
   },
@@ -11867,7 +14253,142 @@ return {
     Duration = 0,
     Id = 1001027009,
     Jump = 0,
-    Name = "角色成就",
+    Name = "角色成就-金缕",
+    Priority = 0,
+    RestTime = ""
+  },
+  [1001030001] = {
+    Award = 34000,
+    Condition = {
+      1001030001,
+      0,
+      0
+    },
+    Desc = "旃檀战力达到3000",
+    Duration = 0,
+    Id = 1001030001,
+    Jump = 0,
+    Name = "角色成就-旃檀",
+    Priority = 0,
+    RestTime = ""
+  },
+  [1001030002] = {
+    Award = 34001,
+    Condition = {
+      1001030002,
+      0,
+      0
+    },
+    Desc = "旃檀战力达到7000",
+    Duration = 0,
+    Id = 1001030002,
+    Jump = 0,
+    Name = "角色成就-旃檀",
+    Priority = 0,
+    RestTime = ""
+  },
+  [1001030003] = {
+    Award = 34001,
+    Condition = {
+      1001030003,
+      0,
+      0
+    },
+    Desc = "旃檀战力达到12000",
+    Duration = 0,
+    Id = 1001030003,
+    Jump = 0,
+    Name = "角色成就-旃檀",
+    Priority = 0,
+    RestTime = ""
+  },
+  [1001030004] = {
+    Award = 34000,
+    Condition = {
+      1001030004,
+      0,
+      0
+    },
+    Desc = "旃檀全部技能满级",
+    Duration = 0,
+    Id = 1001030004,
+    Jump = 0,
+    Name = "角色成就-旃檀",
+    Priority = 0,
+    RestTime = ""
+  },
+  [1001030005] = {
+    Award = 34001,
+    Condition = {
+      1001030005,
+      0,
+      0
+    },
+    Desc = "旃檀潜能3级",
+    Duration = 0,
+    Id = 1001030005,
+    Jump = 0,
+    Name = "角色成就-旃檀",
+    Priority = 0,
+    RestTime = ""
+  },
+  [1001030006] = {
+    Award = 34002,
+    Condition = {
+      1001030006,
+      0,
+      0
+    },
+    Desc = "旃檀潜能满级",
+    Duration = 0,
+    Id = 1001030006,
+    Jump = 0,
+    Name = "角色成就-旃檀",
+    Priority = 0,
+    RestTime = ""
+  },
+  [1001030007] = {
+    Award = 34000,
+    Condition = {
+      1001030007,
+      0,
+      0
+    },
+    Desc = "获得旃檀的5星武器",
+    Duration = 0,
+    Id = 1001030007,
+    Jump = 0,
+    Name = "角色成就-旃檀",
+    Priority = 0,
+    RestTime = ""
+  },
+  [1001030008] = {
+    Award = 34002,
+    Condition = {
+      1001030008,
+      0,
+      0
+    },
+    Desc = "旃檀的5星武器同调5级",
+    Duration = 0,
+    Id = 1001030008,
+    Jump = 0,
+    Name = "角色成就-旃檀",
+    Priority = 0,
+    RestTime = ""
+  },
+  [1001030009] = {
+    Award = 34001,
+    Condition = {
+      1001030009,
+      0,
+      0
+    },
+    Desc = "旃檀的5星武器90级",
+    Duration = 0,
+    Id = 1001030009,
+    Jump = 0,
+    Name = "角色成就-旃檀",
     Priority = 0,
     RestTime = ""
   },
@@ -15168,6 +17689,198 @@ return {
     Id = 4001024009,
     Jump = 0,
     Name = "角色成就",
+    Priority = 0,
+    RestTime = ""
+  },
+  [5015025001] = {
+    Award = 42001,
+    Condition = {
+      5015025001,
+      0,
+      0
+    },
+    Desc = "完成关卡1",
+    Duration = 0,
+    Group = 501502,
+    Id = 5015025001,
+    Jump = 0,
+    Name = "完成关卡1",
+    Priority = 0,
+    RestTime = ""
+  },
+  [5015025002] = {
+    Award = 42002,
+    Condition = {
+      5015025002,
+      0,
+      0
+    },
+    Desc = "完成关卡2",
+    Duration = 0,
+    Group = 501502,
+    Id = 5015025002,
+    Jump = 0,
+    Name = "完成关卡2",
+    Priority = 0,
+    RestTime = ""
+  },
+  [5015025003] = {
+    Award = 42003,
+    Condition = {
+      5015025003,
+      0,
+      0
+    },
+    Desc = "完成关卡3",
+    Duration = 0,
+    Group = 501502,
+    Id = 5015025003,
+    Jump = 0,
+    Name = "完成关卡3",
+    Priority = 0,
+    RestTime = ""
+  },
+  [5015025004] = {
+    Award = 42001,
+    Condition = {
+      5015025004,
+      0,
+      0
+    },
+    Desc = "完成关卡4",
+    Duration = 0,
+    Group = 501502,
+    Id = 5015025004,
+    Jump = 0,
+    Name = "完成关卡4",
+    Priority = 0,
+    RestTime = ""
+  },
+  [5015025005] = {
+    Award = 42002,
+    Condition = {
+      5015025005,
+      0,
+      0
+    },
+    Desc = "完成关卡5",
+    Duration = 0,
+    Group = 501502,
+    Id = 5015025005,
+    Jump = 0,
+    Name = "完成关卡5",
+    Priority = 0,
+    RestTime = ""
+  },
+  [5015025006] = {
+    Award = 42003,
+    Condition = {
+      5015025006,
+      0,
+      0
+    },
+    Desc = "完成关卡6",
+    Duration = 0,
+    Group = 501502,
+    Id = 5015025006,
+    Jump = 0,
+    Name = "完成关卡6",
+    Priority = 0,
+    RestTime = ""
+  },
+  [5015025007] = {
+    Award = 42001,
+    Condition = {
+      5015025007,
+      0,
+      0
+    },
+    Desc = "完成关卡7",
+    Duration = 0,
+    Group = 501502,
+    Id = 5015025007,
+    Jump = 0,
+    Name = "完成关卡7",
+    Priority = 0,
+    RestTime = ""
+  },
+  [5015025008] = {
+    Award = 42002,
+    Condition = {
+      5015025008,
+      0,
+      0
+    },
+    Desc = "完成关卡8",
+    Duration = 0,
+    Group = 501502,
+    Id = 5015025008,
+    Jump = 0,
+    Name = "完成关卡8",
+    Priority = 0,
+    RestTime = ""
+  },
+  [5015025009] = {
+    Award = 42003,
+    Condition = {
+      5015025009,
+      0,
+      0
+    },
+    Desc = "完成关卡9",
+    Duration = 0,
+    Group = 501502,
+    Id = 5015025009,
+    Jump = 0,
+    Name = "完成关卡9",
+    Priority = 0,
+    RestTime = ""
+  },
+  [5015025010] = {
+    Award = 42001,
+    Condition = {
+      5015025010,
+      0,
+      0
+    },
+    Desc = "完成关卡10",
+    Duration = 0,
+    Group = 501502,
+    Id = 5015025010,
+    Jump = 0,
+    Name = "完成关卡10",
+    Priority = 0,
+    RestTime = ""
+  },
+  [5015025011] = {
+    Award = 42002,
+    Condition = {
+      5015025011,
+      0,
+      0
+    },
+    Desc = "完成关卡11",
+    Duration = 0,
+    Group = 501502,
+    Id = 5015025011,
+    Jump = 0,
+    Name = "完成关卡11",
+    Priority = 0,
+    RestTime = ""
+  },
+  [5015025012] = {
+    Award = 42003,
+    Condition = {
+      5015025012,
+      0,
+      0
+    },
+    Desc = "完成关卡12",
+    Duration = 0,
+    Group = 501502,
+    Id = 5015025012,
+    Jump = 0,
+    Name = "完成关卡12",
     Priority = 0,
     RestTime = ""
   },

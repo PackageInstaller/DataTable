@@ -220,7 +220,8 @@ function M:load_prefab_async(is_init, model_id, callback)
     Log.Error("获取基建模型配置失败, model_id：", model_id, debug.traceback())
     return
   end
-  local async_callback = function(go)
+  
+  local function async_callback(go)
     if model_id == BUILDING_CONFIG.BUILDING_ROOT_MODEL_ID then
       self.v_main_model = go
     end
@@ -240,6 +241,7 @@ function M:load_prefab_async(is_init, model_id, callback)
       self:on_load_prefab_done()
     end
   end
+  
   NextFrameMgr:add_next_update(ResPoolMgr.get_world_model_async, ResPoolMgr, cfg.PrefabName, async_callback)
   self.v_load_prefab_count = self.v_load_prefab_count + 1
 end

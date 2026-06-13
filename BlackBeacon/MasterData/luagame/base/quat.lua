@@ -1,6 +1,6 @@
 local Math = require("base.mathx")
 local Vec3 = require("base.vec3")
-local math = math
+local math = _ENV.math
 local sin = math.sin
 local cos = math.cos
 local acos = math.acos
@@ -12,10 +12,10 @@ local sign = Math.sign
 local atan2 = math.atan
 local clamp = Math.Clamp
 local abs = math.abs
-local setmetatable = setmetatable
-local getmetatable = getmetatable
-local rawget = rawget
-local rawset = rawset
+local setmetatable = _ENV.setmetatable
+local getmetatable = _ENV.getmetatable
+local rawget = _ENV.rawget
+local rawset = _ENV.rawset
 local rad2Deg = Math.Rad2Deg
 local halfDegToRad = 0.5 * Math.Deg2Rad
 local _forward = Vec3.forward
@@ -202,7 +202,8 @@ local temp_q = {
   0,
   0
 }
-local MatrixToQuat = function(rot, quat)
+
+local function MatrixToQuat(rot, quat)
   local trace = rot[1][1] + rot[2][2] + rot[3][3]
   if trace > 0 then
     local s = sqrt(trace + 1)
@@ -232,6 +233,7 @@ local MatrixToQuat = function(rot, quat)
     quat:SetNormalize()
   end
 end
+
 local temp_up_tb = {
   0,
   0,
@@ -534,7 +536,7 @@ function Quat:SetIdentity()
   self.w = 1
 end
 
-local UnclampedSlerp = function(from, to, t)
+local function UnclampedSlerp(from, to, t)
   local cosAngle = Quat.Dot(from, to)
   if cosAngle < 0 then
     cosAngle = -cosAngle
@@ -553,8 +555,10 @@ local UnclampedSlerp = function(from, to, t)
     return Quat.Lerp(from, to, t)
   end
 end
+
 local temp_quat_00 = Quat.New()
-local UnclampedSlerpA = function(from, to, t, out)
+
+local function UnclampedSlerpA(from, to, t, out)
   local cosAngle = Quat.Dot(from, to)
   temp_quat_00:CopyValue(to)
   if cosAngle < 0 then
@@ -593,7 +597,7 @@ function Quat.RotateTowards(from, to, maxDegreesDelta)
   return UnclampedSlerp(from, to, t)
 end
 
-local Approximately = function(f0, f1)
+local function Approximately(f0, f1)
   return abs(f0 - f1) < 1.0E-6
 end
 
@@ -622,7 +626,8 @@ local half_pi = pi * 0.5
 local two_pi = 2 * pi
 local negativeFlip = -1.0E-4
 local positiveFlip = two_pi - 1.0E-4
-local SanitizeEuler = function(euler)
+
+local function SanitizeEuler(euler)
   if euler.x < negativeFlip then
     euler.x = euler.x + two_pi
   elseif euler.x > positiveFlip then

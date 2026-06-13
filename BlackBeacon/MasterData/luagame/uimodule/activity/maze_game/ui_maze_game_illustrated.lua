@@ -41,6 +41,7 @@ end
 function ui:ui_on_show(activity_id, select_page)
   self.v_activity_id = activity_id
   self:refresh_view(select_page)
+  self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close, self)
 end
 
 function ui:ui_on_hide()
@@ -81,6 +82,9 @@ function ui:refresh_content()
   end
   if cfgs then
     local list = UtilTable.map2list(cfgs, function(a, b)
+      if a.Priority and b.Priority and a.Priority ~= b.Priority then
+        return a.Priority < b.Priority
+      end
       if a.Id ~= b.Id then
         return a.Id < b.Id
       end
@@ -116,7 +120,7 @@ function ui:refresh_content()
           
           function click_cb()
             if is_unlock then
-              UIMgr:try_show_ui("ui_maze_game_illustrated", nil, ponder_id)
+              UIMgr:get_ui("ui_maze_game_settle_tips"):ui_show(ponder_id)
               NoviceMgr:close_ill_item_red(self.v_activity_id, cfg.Id, red_key)
               RedPoint:SetActive(false)
             elseif unlock_desc then
@@ -136,6 +140,7 @@ function ui:refresh_content()
           else
             is_unlock = true
           end
+          unlock_desc = cfg.UnlockDesc
           
           function click_cb()
             if is_unlock then
@@ -161,6 +166,10 @@ function ui:refresh_content()
       end
     end
   end
+end
+
+function ui:check_close()
+  NoviceMgr:check_close_activity_ui(self.v_activity_id, self.v_ui_name, nil, true)
 end
 
 return ui

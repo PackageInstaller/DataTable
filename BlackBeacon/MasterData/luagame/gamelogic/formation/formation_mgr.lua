@@ -127,7 +127,7 @@ function M:get_fight_team_send_data(team_id, point_id, clear_assist)
 end
 
 function M:get_new_fight_team_send_data(point_id, node_id, floor_num)
-  local fight_team = self:get_fight_team_data(point_id)
+  local fight_team = self:get_fight_team_data(nil, point_id)
   local correct_fight_team_buddys = self:get_correct_fight_team(point_id, node_id, floor_num)
   local buddys = {}
   for pos, data in ipairs(correct_fight_team_buddys) do

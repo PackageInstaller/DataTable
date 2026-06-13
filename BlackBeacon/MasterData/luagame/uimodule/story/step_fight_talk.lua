@@ -146,10 +146,12 @@ function M:show_effect()
   local step_cfg = self.v_step_cfg
   local show_effect_data = step_cfg.ShowEffect
   local effect_type = show_effect_data.Effect
-  local callback = function()
+  
+  local function callback()
     self:shake_anim()
     self:update_talk_desc()
   end
+  
   talk_obj:SetActive(true)
   if effect_type == SHOW_EFFECT_TYPE.DEFAULT then
     canvas.alpha = 1
@@ -168,11 +170,13 @@ function M:hide_effect()
   local step_cfg = self.v_step_cfg
   local hide_effect_data = step_cfg.HideEffect
   local effect_type = hide_effect_data.Effect
-  local callback = function()
+  
+  local function callback()
     self:shake_anim()
     self.v_complete_data.is_desc_effect = true
     self:check_complete()
   end
+  
   if effect_type == SHOW_EFFECT_TYPE.DEFAULT then
     talk_obj:SetActive(false)
     canvas.alpha = 0
@@ -271,11 +275,13 @@ function M:desc_effect_default()
   local talk_next = Util.get_child_gameobj("Talk_next", self.v_uiobjects.FightTalk)
   talk_next:SetActive(false)
   desc = self:replace_talk_content(desc)
-  local cb = function()
+  
+  local function cb()
     self.v_uiobjects.Talk_next:SetActive(true)
     self.v_complete_data.is_desc_effect = true
     self:check_complete()
   end
+  
   self.v_txt_obj.text = ""
   local string_len = Util.get_string_len(desc)
   if step_cfg.hasStyledText then

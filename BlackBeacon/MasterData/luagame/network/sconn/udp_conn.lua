@@ -8,17 +8,20 @@ local EISCONN = socket.EISCONN
 local RECV_BUFSIZE = 8192
 local WSAEINVAL = 10022
 local mt = {}
-local conn_error = function(errcode)
+
+local function conn_error(errcode)
   return socket.strerror(errcode) .. "[" .. tostring(errcode) .. "]"
 end
-local resolve = function(host)
+
+local function resolve(host)
   local addr_tbl, err = socket.resolve(host)
   if not addr_tbl then
     return false, socket.gai_strerror(err) .. "[" .. tostring(err) .. "]"
   end
   return assert(addr_tbl[1])
 end
-local connect = function(addr, port)
+
+local function connect(addr, port)
   local fd = socket.socket(addr.family, socket.SOCK_DGRAM, 0)
   fd:setblocking(false)
   local errcode = fd:connect(addr.addr, port)
@@ -36,14 +39,16 @@ local connect = function(addr, port)
     return nil, conn_error(errcode)
   end
 end
-local connect_host = function(host, port)
+
+local function connect_host(host, port)
   local addr, err = resolve(host)
   if not addr then
     return false, err
   end
   return connect(addr, port)
 end
-local _flush_send = function(self)
+
+local function _flush_send(self)
   local send_buf = self.v_send_buf
   local v = send_buf:get_head_data()
   local fd = self.v_fd
@@ -67,7 +72,8 @@ local _flush_send = function(self)
   end
   return count
 end
-local _flush_recv = function(self)
+
+local function _flush_recv(self)
   local recv_buf = self.v_recv_buf
   local fd = self.v_fd
   local count = 0
@@ -96,7 +102,8 @@ local _flush_recv = function(self)
   end
   return count
 end
-local _check_connect = function(self)
+
+local function _check_connect(self)
   if not self.v_fd then
     return false
   end

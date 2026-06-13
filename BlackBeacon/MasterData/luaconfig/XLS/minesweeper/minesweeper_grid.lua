@@ -90,7 +90,7 @@ return {
     Args = {1},
     Bg = "UIActMine/Icon/slrg_game_qz2",
     ButtonText = "编队",
-    Desc = "简单的战斗，完成后可获得随机奖励。",
+    Desc = "较为简单的战斗，有几率掉落随机谋略。",
     DropGrid = {
       {5, 2},
       {6, 7},
@@ -107,7 +107,7 @@ return {
     Bg = "UIActMine/Icon/slrg_game_qz3",
     BuffId = 6032009,
     ButtonText = "编队",
-    Desc = "困难的战斗，完成后可获得随机战略。\n\n该精英被战胜前，本层所有战斗，怪物伤害+20%",
+    Desc = "较为困难的战斗，可以获取随机谋略。\n\n该精英被战胜前，本层所有战斗，怪物伤害+20%",
     DropGrid = {
       {5, 2}
     },
@@ -121,7 +121,7 @@ return {
     Args = {3},
     Bg = "UIActMine/Icon/slrg_game_qz6",
     ButtonText = "编队",
-    Desc = "充满危险的战斗，完成后可获得随机橙色战略。",
+    Desc = "危机四伏的战斗，必定获取随机橙色谋略。",
     DropGrid = {
       {8, 1}
     },
@@ -135,7 +135,7 @@ return {
     Args = {4},
     Bg = "UIActMine/Icon/slrg_game_qz6",
     ButtonText = "编队",
-    Desc = "充满危险的战斗，完成后可获得随机橙色战略。",
+    Desc = "危机四伏的战斗，必定获取随机橙色谋略。",
     DropGrid = {
       {8, 1}
     },
@@ -149,7 +149,7 @@ return {
     Args = {5},
     Bg = "UIActMine/Icon/slrg_game_qz6",
     ButtonText = "编队",
-    Desc = "充满危险的战斗，完成后可获得随机橙色战略。",
+    Desc = "危机四伏的战斗，必定获取随机橙色谋略。",
     DropGrid = {
       {8, 1}
     },
@@ -163,7 +163,7 @@ return {
     Args = {6},
     Bg = "UIActMine/Icon/slrg_game_qz6",
     ButtonText = "编队",
-    Desc = "充满危险的战斗，完成后可获得随机橙色战略。",
+    Desc = "危机四伏的战斗，必定获取随机橙色谋略。",
     DropGrid = {
       {8, 1}
     },
@@ -177,7 +177,7 @@ return {
     Args = {7},
     Bg = "UIActMine/Icon/slrg_game_qz2",
     ButtonText = "编队",
-    Desc = "简单的战斗，完成后可获得随机奖励。",
+    Desc = "较为简单的战斗，有几率掉落随机谋略。",
     DropGrid = {
       {5, 2},
       {6, 7},
@@ -194,7 +194,7 @@ return {
     Bg = "UIActMine/Icon/slrg_game_qz3",
     BuffId = 6032009,
     ButtonText = "编队",
-    Desc = "困难的战斗，完成后可获得随机战略。\n\n该精英被战胜前，本层所有战斗，怪物伤害+20%",
+    Desc = "较为困难的战斗，可以获取随机谋略。\n\n该精英被战胜前，本层所有战斗，怪物伤害+20%",
     DropGrid = {
       {5, 2}
     },
@@ -206,9 +206,11 @@ return {
   },
   [102003] = {
     Args = {9},
+    AwardScore = 300,
+    AwardTime = 300,
     Bg = "UIActMine/Icon/slrg_game_qz6",
     ButtonText = "编队",
-    Desc = "充满危险的战斗，完成后可获得随机橙色战略。",
+    Desc = "危机四伏的战斗，必定获取随机橙色谋略。\n\n根据战斗时间，最多可额外获得300战功",
     DropGrid = {
       {8, 1}
     },
@@ -220,9 +222,11 @@ return {
   },
   [102004] = {
     Args = {10},
+    AwardScore = 300,
+    AwardTime = 300,
     Bg = "UIActMine/Icon/slrg_game_qz6",
     ButtonText = "编队",
-    Desc = "充满危险的战斗，完成后可获得随机橙色战略。",
+    Desc = "危机四伏的战斗，必定获取随机橙色谋略。\n\n根据战斗时间，最多可额外获得300战功",
     DropGrid = {
       {8, 1}
     },
@@ -234,9 +238,11 @@ return {
   },
   [102005] = {
     Args = {11},
+    AwardScore = 300,
+    AwardTime = 300,
     Bg = "UIActMine/Icon/slrg_game_qz6",
     ButtonText = "编队",
-    Desc = "充满危险的战斗，完成后可获得随机橙色战略。",
+    Desc = "危机四伏的战斗，必定获取随机橙色谋略。\n\n根据战斗时间，最多可额外获得300战功",
     DropGrid = {
       {8, 1}
     },
@@ -248,9 +254,11 @@ return {
   },
   [102006] = {
     Args = {12},
+    AwardScore = 300,
+    AwardTime = 300,
     Bg = "UIActMine/Icon/slrg_game_qz6",
     ButtonText = "编队",
-    Desc = "充满危险的战斗，完成后可获得随机橙色战略。",
+    Desc = "危机四伏的战斗，必定获取随机橙色谋略。\n\n根据战斗时间，最多可额外获得300战功",
     DropGrid = {
       {8, 1}
     },

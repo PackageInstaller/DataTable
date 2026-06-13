@@ -28,6 +28,17 @@ function M:_init(char)
   self:reset_rotate_speed()
 end
 
+function M:on_before_destroy()
+  self.v_char = nil
+  self.v_character_cfg = nil
+end
+
+function M:on_destroy_gameobj()
+  self.v_trans_body = nil
+  self.v_has_setup = nil
+  self.v_mode = FREE_MODE
+end
+
 function M:set_enable(v)
   self.v_enable = v
 end
@@ -44,12 +55,6 @@ end
 
 function M:is_setup()
   return self.v_has_setup
-end
-
-function M:on_destroy_gameobj()
-  self.v_trans_body = nil
-  self.v_has_setup = nil
-  self.v_mode = FREE_MODE
 end
 
 function M:update_orienter()

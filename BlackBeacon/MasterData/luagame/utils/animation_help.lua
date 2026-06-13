@@ -1,4 +1,4 @@
-local UnityTransform = UnityTransform
+local UnityTransform = _ENV.UnityTransform
 local UnityClip = UnityEngine.AnimationClip
 local UnityKeyframe = UnityEngine.Keyframe
 local UnityCurve = UnityEngine.AnimationCurve

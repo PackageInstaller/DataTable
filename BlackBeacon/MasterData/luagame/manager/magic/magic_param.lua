@@ -26,9 +26,11 @@ function M:_init(magic_id, attacker, owner_missile, owner_skill, magic_level, lo
     self.owner_skill_id = owner_missile:get_skill_id()
   end
   self.not_send_msg = not_send_msg
+  self.is_destroy = false
 end
 
 function M:on_destroy()
+  self.is_destroy = true
   self.magic_id = nil
   self.attacker = nil
   self.owner_missile = nil

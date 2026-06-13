@@ -27,12 +27,14 @@ return {
     AddWeightBuddy = {
       1001001,
       1001008,
-      1001017
+      1001017,
+      1001026
     },
     AddWeightBuddyMap = {
       [1001001] = true,
       [1001008] = true,
-      [1001017] = true
+      [1001017] = true,
+      [1001026] = true
     },
     AwardId = 41011,
     Desc = "一段对过往旅途的追思，用于激活特殊派遣任务",
@@ -71,12 +73,14 @@ return {
     AddWeightBuddy = {
       1001015,
       1001016,
-      1001023
+      1001023,
+      1001027
     },
     AddWeightBuddyMap = {
       [1001015] = true,
       [1001016] = true,
-      [1001023] = true
+      [1001023] = true,
+      [1001027] = true
     },
     AwardId = 41013,
     Desc = "一段对过往旅途的追思，用于激活特殊派遣任务",

@@ -12,16 +12,7 @@ function M:get_path(file)
   if not Game_AssetBundle then
     return Path.get_editor_sound_path(file)
   else
-    local result_file
-    local str_array = Util.split_str(file, ".")
-    if str_array and 2 == #str_array then
-      result_file = Util.format_str("{1}_{2}.{3}", str_array[1], string.lower(Global.curr_text_language), str_array[2])
-      if not RuntimePackage.get_bundle_exist(result_file) then
-        result_file = nil
-      end
-    end
-    result_file = result_file or file
-    return RuntimePackage.get_bundle_path(file)
+    return RuntimePackage.get_video_path(file)
   end
 end
 
@@ -74,13 +65,15 @@ function M:play_with_cri_video(video_name, is_skip, aspect_ratio)
       self.v_cri_movie_canvas_group.alpha = 0
       self.v_usm_mask_canvas_group.alpha = 0
       self.v_cri_movie_canvas_group.gameObject:SetActive(true)
-      local value_func = function(value)
+      
+      local function value_func(value)
         self.v_cri_movie_canvas_group.alpha = value
         self.v_usm_mask_canvas_group.alpha = value
         if value >= 1 then
           self:play_cri_video_callback(movie_image)
         end
       end
+      
       CSHelper.WrapTweenTo(0, 1, self.v_play_video_data.enter_all_time, value_func)
     else
       self.v_cri_movie_canvas_group.gameObject:SetActive(true)
@@ -120,7 +113,8 @@ function M:stop_cri_movie_player()
   if self.v_play_video_data.out_all_time and self.v_play_video_data.out_all_time > 0 then
     self.v_cri_movie_canvas_group.alpha = 1
     self.v_usm_mask_canvas_group.alpha = 1
-    local value_func = function(value)
+    
+    local function value_func(value)
       if not Util.is_nil(self.v_cri_movie_canvas_group) then
         self.v_cri_movie_canvas_group.alpha = value
       end
@@ -131,6 +125,7 @@ function M:stop_cri_movie_player()
         self:stop_cri_movie_player_callback()
       end
     end
+    
     CSHelper.WrapTweenTo(1, 0, self.v_play_video_data.out_all_time, value_func)
   else
     self:stop_cri_movie_player_callback()

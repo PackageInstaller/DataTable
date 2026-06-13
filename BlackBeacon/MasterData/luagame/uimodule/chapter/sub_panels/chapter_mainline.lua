@@ -174,9 +174,6 @@ function ui:get_chapter_show_list(page_type)
         temp.lock = true
       end
       _tinsert(show_list, temp)
-      if cover_count <= 0 then
-        break
-      end
     end
   end
   if not self.v_last_unlock_idx then

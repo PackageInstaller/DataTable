@@ -138,7 +138,7 @@ function conn_mt:on_throw_error(...)
   Network:handle_connect_error()
 end
 
-local connect = function(host, port, ipv6_ip)
+local function connect(host, port, ipv6_ip)
   local c = conn_mt.new()
   local sock, err = c.v_sconn:connect(host, port, ipv6_ip)
   if not sock then
@@ -146,4 +146,5 @@ local connect = function(host, port, ipv6_ip)
   end
   return c
 end
+
 return {connect_host = connect}

@@ -32,7 +32,9 @@ function ui:ui_finish_load()
     local chapter_id = episode_cfg.Id
     local episode_id = episode_cfg.EpisodeId
     if episode_id then
-      UIMgr:get_ui("team"):ui_show(chapter_id, episode_id)
+      UIMgr:get_ui("team"):ui_show(chapter_id, episode_id, nil, nil, nil, nil, {
+        self.v_activity_id
+      })
     end
   end)
   self:register_exist_auto_template(TagA, self.v_uiobjects.PageTem1, self.v_uiobjects.PageTemContent1)

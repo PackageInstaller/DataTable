@@ -8,7 +8,7 @@ local ITEM_OBJ_COM = require("uimodule.item.item_obj_com")
 local type_playable_director = typeof(UnityEngine.Playables.PlayableDirector)
 local type_canvas_group = typeof(UnityEngine.CanvasGroup)
 local type_ui_particle = typeof(CS.UIParticleExtensions.UIParticle)
-local TypeEffectStatus = TypeEffectStatus
+local TypeEffectStatus = _ENV.TypeEffectStatus
 
 function ui:ui_finish_load()
   self.v_item_list = {}
@@ -110,20 +110,24 @@ end
 function ui:on_flip_start()
   self.v_in_flip_start_anima = true
   local pd = self.v_flip_pds[self.v_card_quality]
-  local start_done_cb = function()
+  
+  local function start_done_cb()
     self:stop_flip_start_pd()
     self.v_in_flip_start_anima = false
     self:on_flip_done()
   end
-  local play_award_in_pd_cb = function()
+  
+  local function play_award_in_pd_cb()
     self:play_award_in_pd()
     self:add_timer("start_done_cb", 1, start_done_cb)
   end
-  local show_cb = function()
+  
+  local function show_cb()
     self.v_award_show_pd:Play()
     self.v_uiobjects.Award:SetActive(true)
     self:add_timer("play_award_in_pd_cb", 1, play_award_in_pd_cb)
   end
+  
   pd:Play()
   self.v_award_bg.alpha = 1
   self.v_award.alpha = 1
@@ -132,18 +136,21 @@ end
 
 function ui:on_flip_done()
   self.v_in_flip_done_anima = true
-  local done_cb = function()
+  
+  local function done_cb()
     if self:visible() then
       self:ui_hide()
       self:stop_flip_done_pd()
       self.v_in_flip_done_anima = false
     end
   end
-  local award_hide_pd_cb = function()
+  
+  local function award_hide_pd_cb()
     if self:visible() then
       self.v_award_hide_pd:Play()
     end
   end
+  
   local duration = self.v_award_hide_pd.duration
   self:play_award_out_pd()
   local target_tf = self.v_award_tf
@@ -157,10 +164,12 @@ function ui:on_flip_done()
 end
 
 function ui:particle_move(cb, target_tf)
-  local dotween_cb = function()
+  local function dotween_cb()
     self.v_uiobjects.GetParticle:SetActive(false)
+    
     cb()
   end
+  
   if self.v_particle_sequence then
     self.v_particle_sequence:Kill(false)
     self.v_particle_sequence = nil
@@ -267,9 +276,11 @@ function ui:skip_flip_anima()
   self.v_award_bg.alpha = 1
   self.v_award.alpha = 1
   self.v_in_flip_start_anima = false
-  local skip_start_cb = function()
+  
+  local function skip_start_cb()
     self:on_flip_done()
   end
+  
   for key, pds in pairs(self.v_item_coms) do
     if pds.award_out then
       pds.award_out.gameObject:SetActive(false)

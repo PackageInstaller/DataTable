@@ -5635,11 +5635,10 @@ return {
   },
   [1300] = {
     {
-      delay_show = 3,
       follow_ui = 1,
       func_name = "onclick_ui_control",
       guide_id = 1300,
-      id = 751,
+      id = 771,
       is_3d_ui = 0,
       num = 1,
       param = {
@@ -5665,7 +5664,7 @@ return {
       follow_ui = 1,
       func_name = "onclick_ui_control",
       guide_id = 1300,
-      id = 752,
+      id = 772,
       is_3d_ui = 0,
       num = 2,
       param = {
@@ -5692,7 +5691,7 @@ return {
       follow_ui = 1,
       func_name = "onclick_ui_control",
       guide_id = 1300,
-      id = 753,
+      id = 773,
       is_3d_ui = 0,
       num = 3,
       param = {
@@ -5719,7 +5718,7 @@ return {
       follow_ui = 1,
       func_name = "onclick_ui_control",
       guide_id = 1300,
-      id = 754,
+      id = 774,
       is_3d_ui = 0,
       num = 4,
       param = {
@@ -5746,7 +5745,7 @@ return {
       follow_ui = 1,
       func_name = "onclick_ui_control",
       guide_id = 1300,
-      id = 755,
+      id = 775,
       is_3d_ui = 0,
       num = 5,
       param = {
@@ -5772,7 +5771,7 @@ return {
       follow_ui = 1,
       func_name = "onclick_ui_control",
       guide_id = 1300,
-      id = 756,
+      id = 776,
       is_3d_ui = 0,
       num = 6,
       param = {
@@ -5798,7 +5797,7 @@ return {
       follow_ui = 1,
       func_name = "onclick_ui_control",
       guide_id = 1300,
-      id = 757,
+      id = 777,
       is_3d_ui = 0,
       num = 7,
       param = {
@@ -5825,7 +5824,7 @@ return {
       follow_ui = 1,
       func_name = "onclick_ui_control",
       guide_id = 1300,
-      id = 758,
+      id = 778,
       is_3d_ui = 0,
       num = 8,
       param = {
@@ -5852,7 +5851,7 @@ return {
       follow_ui = 1,
       func_name = "onclick_ui_control",
       guide_id = 1300,
-      id = 759,
+      id = 779,
       is_3d_ui = 0,
       num = 9,
       param = {
@@ -5878,7 +5877,7 @@ return {
       follow_ui = 1,
       func_name = "onclick_ui_control",
       guide_id = 1300,
-      id = 760,
+      id = 780,
       is_3d_ui = 0,
       num = 10,
       param = {
@@ -5904,7 +5903,7 @@ return {
       follow_ui = 1,
       func_name = "onclick_ui_control",
       guide_id = 1300,
-      id = 761,
+      id = 781,
       is_3d_ui = 0,
       num = 11,
       param = {
@@ -5930,7 +5929,7 @@ return {
       follow_ui = 1,
       func_name = "onclick_ui_control",
       guide_id = 1300,
-      id = 762,
+      id = 782,
       is_3d_ui = 0,
       num = 12,
       param = {
@@ -5957,7 +5956,7 @@ return {
       follow_ui = 1,
       func_name = "onclick_ui_control",
       guide_id = 1300,
-      id = 763,
+      id = 783,
       is_3d_ui = 0,
       num = 13,
       param = {
@@ -5983,7 +5982,7 @@ return {
       follow_ui = 1,
       func_name = "onclick_ui_control",
       guide_id = 1300,
-      id = 764,
+      id = 784,
       is_3d_ui = 0,
       num = 14,
       param = {
@@ -10205,7 +10204,7 @@ return {
       follow_ui = 0,
       func_name = "onclick_ui_control",
       guide_id = 1080211,
-      id = 765,
+      id = 785,
       is_3d_ui = 0,
       num = 1,
       param = {
@@ -11233,9 +11232,10 @@ return {
         "1",
         "SafeArea/Main_/Guide_challenge_/center",
         [5] = "角色接触到<color=#FEC66B>天体虚像</color>后会与<color=#FEC66B>天体虚像</color>产生连线，随后<color=#FEC66B>天体虚像</color>会持续向着玩家移动",
-        [6] = "4",
+        [6] = "3",
         [7] = "1"
       },
+      txt_side = 1,
       ui_name = "fight",
       ui_scale = 1
     }
@@ -11253,9 +11253,10 @@ return {
         "1",
         "SafeArea/Main_/Guide_challenge_/center",
         [5] = "与玩家产生连线的天体虚像在接触到怪物时会膨胀并爆炸",
-        [6] = "4",
+        [6] = "3",
         [7] = "1"
       },
+      txt_side = 1,
       ui_name = "fight",
       ui_scale = 1
     }
@@ -11273,9 +11274,10 @@ return {
         "1",
         "SafeArea/Main_/Guide_challenge_/center",
         [5] = "<color=#FEC66B>天体虚像</color>爆炸后，底座会积蓄能量并重新生成<color=#FEC66B>天体虚像</color>",
-        [6] = "4",
+        [6] = "3",
         [7] = "1"
       },
+      txt_side = 1,
       ui_name = "fight",
       ui_scale = 1
     }
@@ -15924,6 +15926,402 @@ return {
       ui_scale = 1
     }
   },
+  [100102501] = {
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102501,
+      id = 751,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "2",
+        "SafeArea/Main_/Bar_/HeroBlood_/HBlood_/SpecialBar_",
+        [5] = "巴拉莱卡的普攻第3段命中敌人获得1层<color=#476DBB>【枪焰】</color>效果",
+        [6] = "3",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
+  [100102502] = {
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102502,
+      id = 752,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "1",
+        "Btn_skill3",
+        [5] = "闪避！",
+        [6] = "3",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
+  [100102503] = {
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102503,
+      id = 753,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "1",
+        "Btn_skill1",
+        [5] = "使用闪避反击",
+        [6] = "4",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
+  [100102504] = {
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102504,
+      id = 754,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "1",
+        "Btn_skill1",
+        [5] = "巴拉莱卡闪避反击后，再次点击普攻直接释放第3段普攻",
+        [6] = "4",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
+  [100102505] = {
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102505,
+      id = 755,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "2",
+        "SafeArea/Main_/Bar_/HeroBlood_/HBlood_/SpecialBar_",
+        [5] = "命中敌人后获得1层<color=#476DBB>【枪焰】</color>效果。",
+        [6] = "3",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
+  [100102506] = {
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102506,
+      id = 756,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "2",
+        "SafeArea/Main_/Bar_/HeroBlood_/HBlood_/SpecialBar_",
+        [5] = "你已累积3层<color=#476DBB>【枪焰】</color>效果",
+        [6] = "3",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    },
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102506,
+      id = 757,
+      is_3d_ui = 0,
+      num = 2,
+      param = {
+        "1",
+        "1",
+        "Btn_skill1",
+        [5] = "消耗所有<color=#476DBB>【枪焰】</color>释放强化普攻<color=#476DBB>【破障】</color>",
+        [6] = "4",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
+  [100102507] = {
+    {
+      click_mode = 1,
+      follow_ui = 1,
+      func_name = "long_click_ui_control",
+      guide_id = 100102507,
+      id = 758,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "1",
+        "Btn_skill1",
+        [5] = "长按普攻发动重击；超长按普攻，重击后可衔接第3段普攻，命中敌人后获得一层<color=#476DBB>【枪焰】</color>效果",
+        [6] = "4",
+        [7] = "1",
+        [8] = "0.15"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
+  [100102508] = {
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102508,
+      id = 759,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "1",
+        "Btn_skill4",
+        [5] = "使用<color=#D56D2E>技能1</color><color=#476DBB>【膝击】</color>后，可获得强化普攻<color=#476DBB>【攻歼】</color>",
+        [6] = "4",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
+  [100102509] = {
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102509,
+      id = 760,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "1",
+        "Btn_skill4",
+        [5] = "使用强化普攻<color=#476DBB>【攻歼】</color>命中后，获得1层<color=#476DBB>【枪焰】</color>效果，并强化<color=#D56D2E>技能2</color><color=#476DBB>【远距突击】</color>，该技能短时间内变为<color=#476DBB>【近身突袭】</color>",
+        [6] = "4",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
+  [100102510] = {
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102510,
+      id = 761,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "1",
+        "Btn_skill5",
+        [5] = "<color=#D56D2E>技能2</color>获得了强化。使用<color=#476DBB>【近身突袭】</color>，也能获得1层<color=#476DBB>【枪焰】</color>效果",
+        [6] = "4",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
+  [100102511] = {
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102511,
+      id = 762,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "1",
+        "SafeArea/Main_/TeamHeads_/ChangHero1_",
+        [5] = "将巴拉莱卡切换至后台",
+        [6] = "4",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
+  [100102512] = {
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102512,
+      id = 763,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "1",
+        "SafeArea/Main_/Guide_challenge_/center",
+        [5] = "使用过了强化普攻<color=#476DBB>【破障】</color>后，将巴拉莱卡切换至后台，召唤3次<color=#476DBB>【枪焰威势】</color>",
+        [6] = "2",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
+  [100102513] = {
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102513,
+      id = 764,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "1",
+        "SafeArea/Main_/TeamHeads_/ChangHero1_",
+        [5] = "再次切换回巴拉莱卡，发动强力俯冲攻击<color=#476DBB>【女仆已就位】</color>",
+        [6] = "4",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
+  [100102514] = {
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102514,
+      id = 765,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "1",
+        "Btn_skill5",
+        [5] = "使用<color=#D56D2E>技能2</color>，获得1层<color=#476DBB>【枪焰】</color>效果",
+        [6] = "4",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
+  [100102515] = {
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102515,
+      id = 766,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "2",
+        "SafeArea/Main_/Bar_/HeroBlood_/HBlood_/SpecialBar_",
+        [5] = "巴拉莱卡积累了1层<color=#476DBB>【枪焰】</color>效果",
+        [6] = "3",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
+  [100102516] = {
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102516,
+      id = 767,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "1",
+        "SafeArea/Main_/Guide_challenge_/center",
+        [5] = "使用了强化普攻后进入<color=#476DBB>【枪焰过载】</color>状态15s，角色身上有紫色火焰",
+        [6] = "4",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    },
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102516,
+      id = 768,
+      is_3d_ui = 0,
+      num = 2,
+      param = {
+        "1",
+        "2",
+        "SafeArea/Main_/Bar_/HeroBlood_/HBlood_/SpecialBar_",
+        [5] = "<color=#476DBB>【枪焰过载】</color>状态下依然可积累<color=#476DBB>【枪焰】</color>",
+        [6] = "4",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
+  [100102517] = {
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102517,
+      id = 769,
+      is_3d_ui = 0,
+      num = 1,
+      param = {
+        "1",
+        "1",
+        "SafeArea/Main_/Guide_challenge_/center",
+        [5] = "本次教程，我们缩短了冷却时长",
+        [6] = "4",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    },
+    {
+      follow_ui = 1,
+      func_name = "onclick_ui_control",
+      guide_id = 100102517,
+      id = 770,
+      is_3d_ui = 0,
+      num = 2,
+      param = {
+        "1",
+        "2",
+        "SafeArea/Main_/Bar_/HeroBlood_/HBlood_/SpecialBar_",
+        [5] = "现在<color=#476DBB>【枪焰】</color>可以蓄积了",
+        [6] = "4",
+        [7] = "1"
+      },
+      ui_name = "fight",
+      ui_scale = 1
+    }
+  },
   [100102601] = {
     {
       follow_ui = 0,
@@ -15981,9 +16379,10 @@ return {
         "2",
         "SafeArea/Main_/Guide_challenge_/center",
         [5] = "当<color=#476DBB>【伴星】</color>处于<color=#476DBB>【共鸣宙域】</color>时，即可聚集星辰之力。",
-        [6] = "4",
+        [6] = "3",
         [7] = "1"
       },
+      txt_side = 1,
       ui_name = "fight",
       ui_scale = 1
     }
@@ -16087,9 +16486,10 @@ return {
         "2",
         "SafeArea/Main_/Guide_challenge_/center",
         [5] = "此时【伴星】与<color=#476DBB>【共鸣宙域】</color>顺时针相邻，需使用1次<color=#476DBB>【耀芒】</color>令<color=#476DBB>【伴星】</color>处于<color=#476DBB>【共鸣宙域】</color>",
-        [6] = "4",
+        [6] = "3",
         [7] = "1"
       },
+      txt_side = 1,
       ui_name = "fight",
       ui_scale = 1
     }

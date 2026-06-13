@@ -35,22 +35,26 @@ local lua_reserved_keywords = {
   "until",
   "while"
 }
-local keys = function(t)
+
+local function keys(t)
   local res = {}
   local oktypes = {stringstring = true, numbernumber = true}
-  local cmpfct = function(a, b)
+  
+  local function cmpfct(a, b)
     if oktypes[type(a) .. type(b)] then
       return a < b
     else
       return type(a) < type(b)
     end
   end
+  
   for k in pairs(t) do
     res[#res + 1] = k
   end
   table.sort(res, cmpfct)
   return res
 end
+
 local c_functions = {}
 for _, lib in pairs({
   "_G",
@@ -74,7 +78,8 @@ for _, lib in pairs({
     end
   end
 end
-local DataDumper = function(value, varname, fastmode, ident, postprocess)
+
+local function DataDumper(value, varname, fastmode, ident, postprocess)
   local defined, dumplua = {}
   local string_format, type, string_dump, string_rep = string.format, type, string.dump, string.rep
   local tostring, pairs, table_concat = tostring, pairs, table.concat
@@ -109,7 +114,8 @@ local DataDumper = function(value, varname, fastmode, ident, postprocess)
       error("Cannot dump threads")
     end
   }
-  local test_defined = function(value, path)
+  
+  local function test_defined(value, path)
     if defined[value] then
       if path:match("^getmetatable.*%)$") then
         out[#out + 1] = string_format("s%s, %s)\n", path:sub(2, -2), defined[value])
@@ -120,7 +126,8 @@ local DataDumper = function(value, varname, fastmode, ident, postprocess)
     end
     defined[value] = path
   end
-  local make_key = function(t, key)
+  
+  local function make_key(t, key)
     local s
     if "string" == type(key) and key:match("^[_%a][_%w]*$") then
       s = key .. "="
@@ -130,6 +137,7 @@ local DataDumper = function(value, varname, fastmode, ident, postprocess)
     t[key] = s
     return s
   end
+  
   for _, k in ipairs(lua_reserved_keywords) do
     keycache[k] = "[\"" .. k .. "\"] = "
   end
@@ -263,4 +271,5 @@ local DataDumper = function(value, varname, fastmode, ident, postprocess)
     return table.concat(items)
   end
 end
+
 return DataDumper

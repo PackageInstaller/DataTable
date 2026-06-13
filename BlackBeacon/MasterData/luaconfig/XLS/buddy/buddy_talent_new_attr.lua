@@ -392,9 +392,9 @@ return {
       Lv = 3
     },
     [5] = {
-      AttrId = 76,
+      AttrId = 21,
       AttrType = 0,
-      AttrValue = 600,
+      AttrValue = 750,
       Id = 1001025,
       Lv = 5
     }
@@ -465,16 +465,16 @@ return {
   },
   [1001030] = {
     [3] = {
-      AttrId = 20,
-      AttrType = 1,
-      AttrValue = 800,
+      AttrId = 23,
+      AttrType = 0,
+      AttrValue = 65,
       Id = 1001030,
       Lv = 3
     },
     [5] = {
-      AttrId = 76,
-      AttrType = 0,
-      AttrValue = 800,
+      AttrId = 20,
+      AttrType = 1,
+      AttrValue = 500,
       Id = 1001030,
       Lv = 5
     }

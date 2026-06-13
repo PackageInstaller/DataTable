@@ -13,7 +13,7 @@ local UnityLoad = UnityEngine.Resources.Load
 local UnityUnLoad = UnityEngine.Resources.UnloadAsset
 local _slower = string.lower
 local _sformat = string.format
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local RuntimeMeshCombinener = CS.RuntimeMeshCombinener
 local CSSceneIllumination = CS.SceneIllumination
 local LOAD_SCENE_BUNDLE_PROGRESS = 0.2
@@ -25,21 +25,24 @@ local LIGHTMAP_NAME_RULES = {
   "lightmap-%s_comp_dir_%s",
   "lightmap-%s_comp_shadowmask_%s"
 }
-local get_scene_asset_path = function(scene_cfg)
+
+local function get_scene_asset_path(scene_cfg)
   local scene_name = string.lower(scene_cfg.MapName)
   local name = scene_cfg.SceneName and scene_cfg.SceneName or scene_cfg.MapName
   name = string.lower(Util.check_load_scene_name(name))
   local scene_asset_path = "assets/product/world/" .. scene_name .. "/" .. name .. ".unity"
   return scene_asset_path
 end
-local _get_scene_lightmap_directory = function(scene_cfg)
+
+local function _get_scene_lightmap_directory(scene_cfg)
   local scene_name = scene_cfg.SceneName and scene_cfg.SceneName or scene_cfg.MapName
   scene_name = string.lower(scene_name)
   local map_name = string.lower(scene_cfg.MapName)
   local scene_lightmap_dir = "assets/product/world/" .. map_name .. "/" .. scene_name .. "/lightingmapdata"
   return scene_lightmap_dir
 end
-local _get_cur_diff_light_index = function(use_flag)
+
+local function _get_cur_diff_light_index(use_flag)
   local index = 0
   local use_index_table = {}
   if TowerMgr then
@@ -72,7 +75,8 @@ local _get_cur_diff_light_index = function(use_flag)
     return use_index_table
   end
 end
-local _get_filered_unused_lightmap_bundles_deps = function(self, scene_deps)
+
+local function _get_filered_unused_lightmap_bundles_deps(self, scene_deps)
   if self.v_scene_name == "Main" or self.v_scene_name == "main" then
     return scene_deps
   end
@@ -91,7 +95,8 @@ local _get_filered_unused_lightmap_bundles_deps = function(self, scene_deps)
   end
   return deps
 end
-local _init_scene_diff_light = function()
+
+local function _init_scene_diff_light()
   local scene_effect_obj = UnityFind("SceneEffect")
   if not scene_effect_obj then
     return
@@ -101,7 +106,8 @@ local _init_scene_diff_light = function()
   scene_illumination.curLightDataIndex = index
   scene_illumination:ApplySceneEffect()
 end
-local _init_static_batching = function()
+
+local function _init_static_batching()
   if Global.scene_mgr and Global.scene_mgr:check_main_scene() or Global.render_mgr:is_low_memory_device() then
     return
   end

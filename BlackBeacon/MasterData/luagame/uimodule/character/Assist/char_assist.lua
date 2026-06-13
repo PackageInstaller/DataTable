@@ -70,9 +70,10 @@ function ui:ui_finish_load()
 end
 
 function ui:on_click_refresh()
-  local cb = function()
+  local function cb()
     self:refresh_countdown_timer()
   end
+  
   AssistMgr:request_refresh_all_push_list(cb)
 end
 
@@ -294,13 +295,15 @@ function ui:setup_team_view()
 end
 
 function ui:on_select_buddy(buddy_info)
-  local succ_callback = function()
+  local function succ_callback()
     AssistMgr:set_assist_buddy(buddy_info)
+    
     self:change_team_info(buddy_info)
     AssistMgr:clear_assist_buddy_old_info()
     self.v_cur_tab = nil
     self:ui_hide()
   end
+  
   if buddy_info then
     local point_id = self.v_team_data.point_id
     local pos = self.v_team_data.select_pos

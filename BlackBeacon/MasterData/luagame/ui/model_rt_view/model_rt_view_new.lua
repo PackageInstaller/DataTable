@@ -481,7 +481,8 @@ function M:load_gameobj_async(npc, npc_info, params)
       local model_rot = self.v_scene_model_cfg.ModelRotation
       trans:SetEuler(model_rot[1], model_rot[2], model_rot[3])
     end
-    local attach_model_loaded_cb = function()
+    
+    local function attach_model_loaded_cb()
       if self.v_is_show_effect then
         local effect_param = npc_info.npc.act_effect_ctrl.create_effect_param()
         effect_param.prefab_name = self.v_effect_name
@@ -508,6 +509,7 @@ function M:load_gameobj_async(npc, npc_info, params)
         self:set_model_color(trans)
       end
     end
+    
     if do_preload_attach_model then
       local approach_anim = CharacterMgr:get_hero_approach_anim_by_type(npc:get_npc_id(), 1)
       if approach_anim then
@@ -672,7 +674,7 @@ function M:set_visible(is_on)
   if is_on and self.v_gameobj then
     self:set_all_character_mat(self.v_gameobj, true)
     if self:get_is_signboard() then
-      self:set_model_color_msg()
+      MsgGame:mq_publish2(Const.MSG_ON_LIGHT_DATA_INDEX_UPDATE)
     end
   end
   if not is_on and self.v_mat_tween then
@@ -1158,9 +1160,10 @@ function M:point_light_mat_set(ui_name, is_kb)
           UnityShader.SetGlobalFloat(MAIN_SCENE_SHOW_ATTEN, 1)
         end
         if "KB1" == ui_name and spec_logic_light and nil == shadow_cfg and self.v_pre_shadow then
-          local value_func_pos = function(value)
+          local function value_func_pos(value)
             UnityShader.SetGlobalFloat(MAIN_SCENE_SHOW_ATTEN, value)
           end
+          
           local mat_tween_pos = CSHelper.WrapTweenTo(0, 1, 2, value_func_pos)
           table.insert(self.v_mat_tween, mat_tween_pos)
         end
@@ -1192,17 +1195,21 @@ function M:point_light_mat_set(ui_name, is_kb)
             local char_pos = trans.position
             mat:SetMatVector(SHADERID_CHARACTER_LIGHT_POS, set_cfg[1] + char_pos.x, set_cfg[2] + char_pos.y, set_cfg[3] + char_pos.z, set_cfg[4])
             if is_kb then
-              local value_func = function(value)
+              local function value_func(value)
                 mat:SetFloat(MAIN_SCENE_LIGHTON, value)
+                
                 UnityShader.SetGlobalFloat(MAIN_SCENE_GRADIENT, 1 - value)
               end
+              
               local mat_tween = CSHelper.WrapTweenTo(0, 1, 1.5, value_func)
               table.insert(self.v_mat_tween, mat_tween)
             else
               mat:SetFloat(MAIN_SCENE_LIGHTON, 1)
-              local value_func_pos = function(value)
+              
+              local function value_func_pos(value)
                 mat:SetMatVector(SHADERID_CHARACTER_LIGHT_POS, set_cfg[1] + trans.position.x, set_cfg[2] + trans.position.y, set_cfg[3] + trans.position.z, set_cfg[4])
               end
+              
               local mat_tween_pos = CSHelper.WrapTweenTo(0, 1, 1.5, value_func_pos)
               table.insert(self.v_mat_tween, mat_tween_pos)
             end
@@ -1213,14 +1220,16 @@ function M:point_light_mat_set(ui_name, is_kb)
             end
             UnityShader.SetGlobalFloat(MAIN_SCENE_SHOW_ID, 1)
           elseif is_kb then
-            local value_func = function(value)
+            local function value_func(value)
               mat:SetFloat(MAIN_SCENE_LIGHTON, value)
+              
               UnityShader.SetGlobalFloat(MAIN_SCENE_GRADIENT, 1 - value)
               if value < 0.1 then
                 UnityShader.SetGlobalFloat(MAIN_SCENE_SHOW_ID, 0)
                 UnityShader.SetGlobalFloat(MAIN_SCENE_GRADIENT, 0)
               end
             end
+            
             local mat_tween = CSHelper.WrapTweenTo(1, 0, 1.5, value_func)
             table.insert(self.v_mat_tween, mat_tween)
             UnityShader.SetGlobalFloat(MAIN_SCENE_SHOW_ID, 1)
@@ -1319,7 +1328,7 @@ function M:set_model_color(trans_param)
     local idx = FashionMgr:get_scene_illumination_index()
     local trans = trans_param
     if 3 == idx then
-      local blue_color = Color.New(0.69, 0.9, 1, 1)
+      local blue_color = Color.New(0.8, 0.9, 1, 1)
       self:set_all_mat_instance(trans, function(mat)
         mat:SetColor(ColorPropID, blue_color)
       end)

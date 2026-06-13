@@ -12,10 +12,12 @@ function ui:ui_finish_load()
       UIMgr:get_ui("player_hero"):ui_show()
       return
     end
-    local cb = function(data)
+    
+    local function cb(data)
       Player_Hero_Helper.set_hero_data(data)
       UIMgr:get_ui("player_hero"):ui_show()
     end
+    
     FriendMgr:c2gs_get_role_buddy_info(self.v_uuid, self.v_buddy_info.id, cb)
   end)
 end

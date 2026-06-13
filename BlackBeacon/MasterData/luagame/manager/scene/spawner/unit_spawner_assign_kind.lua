@@ -3,15 +3,9 @@ local M = Util.create_child_mt(Base)
 local Math = require("base.mathx")
 local CommDefine = require("cs_share.common_define")
 local LOGIC_OTHER_PARAMETER = CommDefine.LOGIC_OTHER_PARAMETER
-local OrientationType = {
-  LookAtPlayer = 1,
-  Random = 2,
-  BackOnToPlayer = 3
-}
 
 function M:_init(logic_runner, action_cfg)
   Base._init(self, logic_runner, action_cfg)
-  self.v_assign_kind_wave = {}
   self.v_random_wave_infos = {}
   self.v_cumulative_counts = {}
   self.v_total_spawn_count = 0
@@ -27,10 +21,10 @@ function M:_init(logic_runner, action_cfg)
     self.v_cumulative_counts[index] = self.v_total_spawn_count
   end
   self.v_remain_spawn_count = self.v_total_spawn_count
-  self:spawne_unit()
+  self:spawn_unit()
 end
 
-function M:spawne_unit()
+function M:spawn_unit()
   local create_count = self.v_remain_spawn_count > 0 and math.min(self.v_max_active_unit_count - self.v_cur_active_count, self.v_remain_spawn_count) or 0
   if create_count > 0 then
     for _ = 1, create_count do
@@ -67,17 +61,6 @@ function M:spawne_unit()
         end
       end
     end
-  end
-end
-
-function M:get_unit_born_dir(born_x, born_z, dir_type)
-  local hx, hz = Global.hero:get_pos2()
-  if dir_type == OrientationType.LookAtPlayer then
-    return Math.get_lookat_dir(hx, hz, born_x, born_z)
-  elseif dir_type == OrientationType.Random then
-    return math.random(0, 360)
-  elseif dir_type == OrientationType.BackOnToPlayer then
-    return Math.get_positibe_angle(Math.get_lookat_dir(hx, hz, born_x, born_z) + 180)
   end
 end
 

@@ -40,13 +40,16 @@ function ui:set_item_data(item, data)
   Util.load_char_head_icon(head_icon, data.icon)
   player_lv.text = data.lv
   player_name.text = data.name
-  local cb = function()
+  
+  local function cb()
     self:update_black_list()
   end
+  
   self:set_button_listener(del_btn, function()
-    local callback = function()
+    local function callback()
       FriendMgr:remove_friend_black_list(data.uuid, cb)
     end
+    
     local stip = Util.get_i18n("是否解除屏蔽“{1}”")
     stip = Util.format_str(stip, data.name)
     UIMgr:get_ui("uinotice_tips"):ui_show(callback, nil, stip)

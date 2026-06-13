@@ -263,9 +263,11 @@ function ui:set_curse_activate_view()
   local debuff_list = ChallengeRingPlusMgr:get_debuff()
   local debuff_list_old = ChallengeRingPlusMgr:get_debuff_old()
   local challenge_ring_plus = UIMgr:get_ui("challenge_ring_plus")
-  local cb = function()
+  
+  local function cb()
     self:check_have_remove_card()
   end
+  
   local count = #debuff_list
   if count <= 4 and count > #debuff_list_old and challenge_ring_plus:visible() then
     local curse_activate = UIMgr:get_ui("curse_activate")
@@ -489,9 +491,11 @@ function ui:remove_card_anim(remove_idx)
   if not card_item then
     return
   end
-  local cb = function()
+  
+  local function cb()
     self:remove_card_after_anima(remove_idx)
   end
+  
   if self.v_ring_plus_ui then
     self.v_ring_plus_ui:set_pnl_not_click(true)
   end
@@ -504,10 +508,12 @@ function ui:remove_create_boss_card_anim(remove_idx, boss_index)
   if not card_obj then
     return
   end
-  local cb = function()
-    local effect_end_cb = function()
+  
+  local function cb()
+    local function effect_end_cb()
       card_obj:change_click_state(true)
     end
+    
     local boss_data = {
       card_index = boss_index,
       is_can_click = 1 == remove_idx or remove_idx == self.v_now_card_num
@@ -520,6 +526,7 @@ function ui:remove_create_boss_card_anim(remove_idx, boss_index)
     end
     card_obj:play_boss_card_show_effect(effect_end_cb)
   end
+  
   self:set_is_play_anim(true)
   if self.v_ring_plus_ui then
     self.v_ring_plus_ui:set_pnl_not_click(true)
@@ -537,12 +544,14 @@ function ui:play_unlock_door_anima(remove_idx)
     return
   end
   local pos = card_obj:get_key_pos()
-  local remove_card_cb = function()
+  
+  local function remove_card_cb()
     if self.v_ring_plus_ui then
       self.v_ring_plus_ui:play_key_anima(pos)
     end
     self:remove_card_after_anima(remove_idx)
   end
+  
   if self.v_ring_plus_ui then
     self.v_ring_plus_ui:open_unlock_icon(false)
     self.v_ring_plus_ui:play_key_break_effect()

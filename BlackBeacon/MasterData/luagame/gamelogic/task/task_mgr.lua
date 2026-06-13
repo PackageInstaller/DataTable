@@ -56,7 +56,7 @@ function M:on_reconnect()
   self.v_task_list = {}
 end
 
-local _arrange_task = function(task_info)
+local function _arrange_task(task_info)
   local task_cfg = ShareRes.create("condition.task", task_info.id)
   task_info.task_cfg = task_cfg
   local progress = task_info.progress
@@ -76,6 +76,7 @@ function M:on_ret_task_list(task_list)
   end
   self:_refresh_novice_redpoint()
   self:refresh_summer_epi_redpoint()
+  self:refresh_maze_game_red_point()
 end
 
 function M:update_task(task_data)
@@ -97,6 +98,7 @@ function M:update_task(task_data)
   self:_refresh_novice_redpoint()
   self:_refresh_top_ver_redpoint()
   self:refresh_summer_epi_redpoint()
+  self:refresh_maze_game_red_point()
   self:record_cur_chapter_finish_task(task_data)
 end
 
@@ -197,6 +199,37 @@ end
 
 function M:get_task_by_id(task_id)
   return self.v_task_list and self.v_task_list[task_id]
+end
+
+function M:get_sort_task_list(task_group_id)
+  local task_list = ShareRes.get_task_group_cfg(task_group_id)
+  local task_id_list = {}
+  local task_id_state_list = {}
+  local all_task_got = true
+  local is_have_task_receive = false
+  for task_id in pairs(task_list) do
+    local task_state = TaskMgr:get_task_state(task_id)
+    if task_state ~= Config.CommonDefine.TaskState.GotAward then
+      all_task_got = false
+    end
+    local state = 2
+    if task_state == Config.CommonDefine.TaskState.Complete then
+      is_have_task_receive = true
+      state = 1
+    elseif task_state == Config.CommonDefine.TaskState.GotAward then
+      state = 3
+    end
+    task_id_list[#task_id_list + 1] = task_id
+    task_id_state_list[task_id] = state
+  end
+  table.sort(task_id_list, function(a, b)
+    if task_id_state_list[a] == task_id_state_list[b] then
+      return a < b
+    end
+    return task_id_state_list[a] < task_id_state_list[b]
+  end)
+  task_id_state_list = nil
+  return task_id_list, all_task_got, is_have_task_receive
 end
 
 function M:get_task_group(group_id)
@@ -379,6 +412,25 @@ function M:refresh_summer_epi_redpoint()
     end
   end
   RedPointMgr:enable_redpoint(RedEnum.SUMMER_ACTIVITY_TASK, show)
+end
+
+function M:refresh_maze_game_red_point()
+  local version_activity_cfg = TimeLimitedActMgr:get_activity_cfg_with_activity_type(TimeLimitedActMgr.Type.MazeGame)
+  if not version_activity_cfg then
+    return
+  end
+  local is_open = TimeLimitedActMgr:is_activity_open(version_activity_cfg.Id)
+  if not is_open then
+    return
+  end
+  local activity_id = tonumber(version_activity_cfg.Param[1])
+  local maze_activity_cfg = ShareRes.get_ponder_maze_activity_cfg(activity_id)
+  if not maze_activity_cfg then
+    return
+  end
+  local task_group_id = maze_activity_cfg.TaskGroup
+  local _, _, is_have_task_receive = TaskMgr:get_sort_task_list(task_group_id)
+  RedPointMgr:enable_dynamic_redpoint(RedEnum.MAZE_ACT_TASK, RedEnum.TIME_LIMITED_ACTIVITY_BTN_5_1_2, is_have_task_receive)
 end
 
 function M:record_cur_chapter_finish_task(task_data)
@@ -971,9 +1023,10 @@ function M:refresh_role_model(board_npc_id_index)
     end)
   end
   for i, need_remove_data in ipairs(need_remove_model_list) do
-    local cb = function()
+    local function cb()
       model_view:remove_npc_by_index(need_remove_data.index)
     end
+    
     self:play_buddy_event_delivery_anim(need_remove_data.npc_id, model_view, need_remove_data.index, cb)
   end
   for i, buddy_data in pairs(need_add_model_list) do
@@ -1169,7 +1222,8 @@ function M:load_npc(model_view, npc_id, board_id, is_journey_event_model, create
     scale_y = scale[2],
     scale_z = scale[3]
   }
-  local cb = function(model_index)
+  
+  local function cb(model_index)
     if not is_journey_event_model then
       local ui_main_close_new = UIMgr:try_get_visible_ui("uimain_close_new")
       if ui_main_close_new then
@@ -1183,12 +1237,14 @@ function M:load_npc(model_view, npc_id, board_id, is_journey_event_model, create
       create_finish_callback(model_index)
     end
   end
-  local init_anim_cb = function(model_index)
+  
+  local function init_anim_cb(model_index)
     if init_anim_finish_callback then
       init_anim_finish_callback()
     end
     model_view:play_anim(ACT_DEFINE.UIMainIdle, model_index, nil, true)
   end
+  
   local entrance_anim = self:get_entrance_anim(npc_id)
   local is_loop
   if entrance_anim then

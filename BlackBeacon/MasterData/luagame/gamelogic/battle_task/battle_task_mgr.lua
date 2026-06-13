@@ -352,7 +352,8 @@ function M:get_path(cur_room_num, relation_info, target_room_data, path_list, ca
       end
     end
   end
-  local cb = function()
+  
+  local function cb()
     self:get_next_room_id(cache_path, relation_info, start_room_num, 2)
     cur_room_num = self.v_next_room_id
     if cur_room_num and not self.v_is_navogator_end then
@@ -360,6 +361,7 @@ function M:get_path(cur_room_num, relation_info, target_room_data, path_list, ca
     end
     self.v_next_room_id = nil
   end
+  
   if not is_ok then
     if not next_room then
       cb()
@@ -409,7 +411,8 @@ function M:get_next_room_id(cache_path, relation_info, start_room_num, init_idx)
       break
     end
   end
-  local clear_cb = function(index)
+  
+  local function clear_cb(index)
     select_index = index or select_index
     for i = #cache_path, 1, -1 do
       if i >= select_index then
@@ -432,6 +435,7 @@ function M:get_next_room_id(cache_path, relation_info, start_room_num, init_idx)
       end
     end
   end
+  
   if select_index and room_id then
     clear_cb()
   end
@@ -526,13 +530,15 @@ function M:request_add_task_progress(id, value, callback)
   if SceneMgr:check_main_scene() then
     return
   end
-  local cb = function()
+  
+  local function cb()
     if SceneMgr:check_main_scene() then
       return
     end
     self:add_record_progress_param(id, value)
     MsgGame:mq_publish2(Const.MSG_ON_TOWER_DATA_UPDATE)
   end
+  
   local body = {id = id, value = value}
   Network:call("c2gs_client_behavior_add_condtion_value", body, function(ok, resp)
     if ok then

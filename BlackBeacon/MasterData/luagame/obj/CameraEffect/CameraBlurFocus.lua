@@ -21,11 +21,13 @@ function M:set_blur_focus(radius, iteration, downScaling, time)
   if not self.v_camera_blur_focus then
     self.v_camera_blur_focus = self.v_camera_obj:GetComponent(TypeCameraFocusBlur)
   end
-  local callback = function()
+  
+  local function callback()
     if Global.hero and radius < 0 then
       Global.hero:set_layer(Layer.Layer.Character)
     end
   end
+  
   if Global.hero and radius >= 0 then
     Global.hero:set_layer(Layer.Layer.BlurFocus)
   end

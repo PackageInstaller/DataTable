@@ -13,7 +13,8 @@ local TAG_TYPE_TO_CLASS_NAME = {
 }
 local SIMPLE_TAG_TIMER_TYPE = Config.SIMPLE_TAG_TIMER_TYPE
 local NEXT_TIMER_UPDATE_TIME = {}
-local binary_search = function(search_table, target_index)
+
+local function binary_search(search_table, target_index)
   local low = 1
   local high = #search_table
   while low <= high do
@@ -29,7 +30,8 @@ local binary_search = function(search_table, target_index)
   end
   return nil
 end
-local remove_element = function(tag_list, remove_index)
+
+local function remove_element(tag_list, remove_index)
   local search_index = binary_search(tag_list, remove_index)
   if search_index then
     table.remove(tag_list, search_index)
@@ -43,7 +45,8 @@ local remove_element = function(tag_list, remove_index)
     Log.Error("二分查询获取到的索引为空, 请检查逻辑代码", debug.traceback())
   end
 end
-local get_tag_object = function(tag_type, index, ...)
+
+local function get_tag_object(tag_type, index, ...)
   local pool = POOL_TABLE[tag_type]
   if not pool then
     local pool_name = POOL_STR .. tag_type
@@ -53,7 +56,8 @@ local get_tag_object = function(tag_type, index, ...)
   end
   return pool:new_obj(tag_type, index, ...)
 end
-local release_tag_object = function(tag_object)
+
+local function release_tag_object(tag_object)
   if not tag_object then
     Log.Error("尝试释放空对象", tag_object.tag_type, debug.traceback())
     return
@@ -65,7 +69,8 @@ local release_tag_object = function(tag_object)
   end
   pool:destroy_obj(tag_object)
 end
-local get_current_time = function(timer_type)
+
+local function get_current_time(timer_type)
   if timer_type == SIMPLE_TAG_TIMER_TYPE.GLOBAL_TIME_SCALE then
     return GlobalTimeMgr:get_time()
   elseif timer_type == SIMPLE_TAG_TIMER_TYPE.UNSCALE then
@@ -178,7 +183,7 @@ function M:add_tag(tag_type, ...)
   return tag
 end
 
-local try_remove_tag_from_linked_list = function(type_linked_list, key, tag_object)
+local function try_remove_tag_from_linked_list(type_linked_list, key, tag_object)
   local linked_list = type_linked_list[key]
   local next_tag
   if linked_list then

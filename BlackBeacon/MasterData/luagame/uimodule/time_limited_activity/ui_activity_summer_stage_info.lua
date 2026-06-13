@@ -50,7 +50,7 @@ function ui:ui_finish_load()
   end)
   self:set_button("BtnQuickFinish", function()
     if not self.v_is_pass then
-      Util.show_message_tip(1824)
+      Util.show_message_tip(2809)
       return
     end
     local activeSelf = self.v_uiobjects.MultiSetTimesRoot.activeSelf
@@ -103,8 +103,9 @@ function ui:refresh_panel(param)
 end
 
 function ui:fade_in()
-  local cb = function()
+  local function cb()
     UIMgr:add_set_game_pause_count(1)
+    
     self:set_no_click_active(false)
     if self.v_is_settle then
       self:check_ui_chapter_detail()
@@ -113,6 +114,7 @@ function ui:fade_in()
     in_pd:ResetPD()
     in_pd:Play()
   end
+  
   self:stop_fain_timer()
   self.v_cg.alpha = 0
   if SceneMgr:check_main_scene() then
@@ -181,6 +183,7 @@ function ui:set_multiple_item_data(obj, data)
     TimeLimitedActMgr:set_fight_challenge_multiple(data.num)
     self.v_uiobjects.MultiSetTimesRoot:SetActive(false)
     self:refresh_version_episode_fight_cost(self.v_param)
+    self:refresh_point_award()
   end)
 end
 
@@ -334,6 +337,7 @@ function ui:set_award_item(data, complete)
   local obj = self:get_auto_cache(SUMMER_FIGHT_AWARD_KEY)
   local item = ITEM_OBJ_COM:ui_wrap_ex(self, obj, true)
   item:set_data(data)
+  item:set_count(data.count * TimeLimitedActMgr:get_fight_challenge_multiple())
   local tag_obj
   for key, value in pairs(NODE_TAG_NAME) do
     tag_obj = self:get_child_gameobj(value, obj)
@@ -465,9 +469,11 @@ function ui:_after_click_start_btn()
   if not is_tp_floor then
     if need_play_story then
       self.v_on_story_show_hide = true
-      local story_real_start_cb = function()
+      
+      local function story_real_start_cb()
         self:_on_story_begin()
       end
+      
       StoryMgr:set_story_real_start_cb(story_id, story_real_start_cb)
       StoryMgr:on_start(story_id)
     else
@@ -497,9 +503,11 @@ function ui:_on_fight_scene_click_start_btn()
       ChapterMgr:set_record_select_chapter_id()
       ChapterMgr:set_record_select_param_id()
     end
-    local cb = function()
+    
+    local function cb()
       self:_after_click_start_btn()
     end
+    
     if not TowerMgr:check_play_fight_story(nil, cb) then
       cb()
     end
@@ -625,9 +633,10 @@ function ui:_click_jump_btn()
   if self.v_module_type == Config.AREA_POINT_MODULE_TYPE.CHAPTER_NODE then
     local node_cfg = ShareRes.get_chapter_node_cfg(self.v_module_param)
     if node_cfg and node_cfg.ExploreNode and node_cfg.ExploreNode ~= node_cfg then
-      local sure_func = function()
+      local function sure_func()
         self:try_move_to_target_area_point(node_cfg.ExploreNode, false, false)
       end
+      
       local str = node_cfg.MultipleEntryTips or "重复挑战？"
       UIMgr:get_ui("uinotice_tips"):ui_show(sure_func, nil, str)
     end
@@ -710,11 +719,13 @@ function ui:_click_settle_btn(after_load_story_id, ignore_ui)
     chapter_cfg = ShareRes.get_chapter_cfg(chapter_cfg.NormalChapter)
     chapter_id = chapter_cfg.Id
   end
-  local cb = function()
-    local exit_cb = function()
+  
+  local function cb()
+    local function exit_cb()
       if (is_long_chapter or is_chapter) and not ignore_ui then
         local pass_param = {
           pass_id = self.v_module_param,
+          
           is_hard = is_chapter,
           not_show_anima = true,
           do_unlock_anima = do_unlock_anima
@@ -725,12 +736,14 @@ function ui:_click_settle_btn(after_load_story_id, ignore_ui)
       Global.scene_mgr:on_enter_main_scene()
       UIMgr:revert_cache_ui()
     end
+    
     if is_long_chapter then
       TowerMgr:long_chapter_exit(true, exit_cb)
     else
       TowerMgr:on_exit_tower(exit_cb)
     end
   end
+  
   if not TowerMgr:check_play_fight_story(nil, cb) then
     cb()
   end

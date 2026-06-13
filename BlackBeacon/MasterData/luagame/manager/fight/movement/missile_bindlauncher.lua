@@ -1,13 +1,15 @@
 local M = Util.create_class()
 local BIND_TYPE = Config.BIND_LAUNCHER
 local Vec3 = require("base.vec3")
-local _offset_by_dir = function(obj, pos, offset_x, offset_y, offset_z)
+
+local function _offset_by_dir(obj, pos, offset_x, offset_y, offset_z)
   local dir = obj:get_dir_vec()
   local dx, dy, dz = dir.x * offset_z, dir.y * offset_z, dir.z * offset_z
   local rx, ry, rz = dir.z * offset_x, dir.y * offset_x, -dir.x * offset_x
   local x, y, z = pos.x + dx + rx, pos.y + dy + ry + offset_y, pos.z + dz + rz
   return x, y, z
 end
+
 local InitHelper = {
   [BIND_TYPE.ALL] = function(movement, missile)
     missile:set_parent_tans(movement.v_char.transform, true)

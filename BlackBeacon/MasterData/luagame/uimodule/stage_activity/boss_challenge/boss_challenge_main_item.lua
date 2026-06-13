@@ -18,6 +18,16 @@ function ui:set_data(id)
   local cfg = ShareRes.get_boss_fight_cfg(id)
   local is_lock = not BossChallengeMgr:get_boss_challenge_is_unlock(id)
   self:set_button_listener(self.v_uicompents.Button_btn, function()
+    local is_can_fight = true
+    if Game_AssetBundle and DownloadMgr and cfg and cfg.ResChapter and cfg.ResChapter > 3 then
+      local is_res_integrity = CS.GameToLua.CheckUpdate.GetResIntegrity()
+      if not is_res_integrity then
+        is_can_fight = DownloadMgr:is_can_fight(cfg.ResChapter, true, true)
+      end
+    end
+    if not is_can_fight then
+      return
+    end
     if BossChallengeMgr:get_boss_challenge_is_unlock(id) then
       UIMgr:try_show_ui("boss_challenge_point_detail", nil, id)
     end

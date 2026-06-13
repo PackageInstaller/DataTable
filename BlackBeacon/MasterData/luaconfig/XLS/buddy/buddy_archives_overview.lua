@@ -443,15 +443,15 @@ return {
     Style = 1
   },
   [1001025] = {
-    BodyWeight = "48kg",
+    BodyWeight = "54KG",
     BuddyDesc = "",
-    CampName = "唯实社",
-    Date = "世界历38年12月1日",
-    Height = "162cm",
+    CampName = "铂鸢家族",
+    Date = "世界历32年10月8日",
+    Height = "175cm",
     Id = 1001025,
     OffsetX = 340,
     OffsetY = -79.9,
-    PlaceOfBirth = "乾/西极域",
+    PlaceOfBirth = "西里尔/艾尔米塔什",
     Pos = {
       0.1,
       0.9,
@@ -558,21 +558,21 @@ return {
     Style = 1
   },
   [1001030] = {
-    BodyWeight = "41kg",
+    BodyWeight = "49kg",
     BuddyDesc = "",
-    CampName = "楔文会",
-    Date = "世界历39年11月12日",
-    Height = "163cm",
+    CampName = "唯实社",
+    Date = "世界历37年2月10日",
+    Height = "168cm",
     Id = 1001030,
     OffsetX = 340,
     OffsetY = -79.9,
-    PlaceOfBirth = "欧贝德/埃利都",
+    PlaceOfBirth = "乾",
     Pos = {
       0.1,
       0.9,
       0.815
     },
-    RealName = "零",
+    RealName = "谭旃",
     Rotate = {
       0,
       -173.24,

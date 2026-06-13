@@ -31,13 +31,16 @@ local MODEL = {
 function ui:ui_finish_load()
   self:init_model(MODEL)
   self:set_button("BtnAccept", function()
-    local apply_callback = function()
+    local function apply_callback()
       self:ui_hide()
+      
       Util.show_message_tip(2194)
     end
-    local fail_callback = function()
+    
+    local function fail_callback()
       self:ui_hide()
     end
+    
     FriendMgr:apply_add_friend(self.v_uuid, apply_callback, fail_callback)
   end)
   self:set_button("BtnRefuse", function()

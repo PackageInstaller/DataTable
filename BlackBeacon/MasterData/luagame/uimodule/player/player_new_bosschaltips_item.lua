@@ -6,23 +6,24 @@ function ui:set_data(Boss_data)
 end
 
 function ui:refresh_bosschal_items(Boss_data)
-  self.v_boss_id = Boss_data.Id
+  self.v_boss_id = Boss_data.chapId
   self.v_uicompents.BossName_txt.text = Boss_data.Name
-  if Boss_data.Score == "--" or not Boss_data.Score then
+  if -1 == Boss_data.Id then
+    self.v_uiobjects.Time:SetActive(false)
+    self.v_uiobjects.NoTime:SetActive(true)
+    self.v_uicompents.BossName_txt.text = "暂未解锁"
+    self.v_uiobjects.BossBg:SetActive(false)
+    self.v_object:SetActive(true)
+    self.v_uiobjects.BossActive:SetActive(false)
+    return
+  end
+  if not Boss_data.Score then
     self.v_uiobjects.Time:SetActive(false)
     self.v_uiobjects.NoTime:SetActive(true)
   else
     self.v_uiobjects.Time:SetActive(true)
     self.v_uiobjects.NoTime:SetActive(false)
     self.v_uicompents.Time_txt.text = Boss_data.Score
-  end
-  if -1 == Boss_data.Rank or not Boss_data.Rank then
-    self.v_uiobjects.Rank:SetActive(false)
-    self.v_uiobjects.NoRank:SetActive(true)
-  else
-    self.v_uiobjects.Rank:SetActive(true)
-    self.v_uiobjects.NoRank:SetActive(false)
-    self.v_uicompents.Rank_txt.text = Boss_data.Rank
   end
 end
 

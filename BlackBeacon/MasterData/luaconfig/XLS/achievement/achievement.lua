@@ -4,7 +4,7 @@ return {
     Id = 1002,
     IsHide = 0,
     Name = "千里之行",
-    Priority = 62,
+    Priority = 65,
     TaskId = 4001002,
     UnlockCondition = {0}
   },
@@ -13,7 +13,7 @@ return {
     Id = 1003,
     IsHide = 0,
     Name = "馆长职责",
-    Priority = 61,
+    Priority = 64,
     TaskId = 4001003,
     UnlockCondition = {0}
   },
@@ -22,7 +22,7 @@ return {
     Id = 1005,
     IsHide = 0,
     Name = "似乎逐渐理解一切",
-    Priority = 60,
+    Priority = 63,
     TaskId = 4001005,
     UnlockCondition = {0}
   },
@@ -31,7 +31,7 @@ return {
     Id = 1006,
     IsHide = 0,
     Name = "我已经完全明白了！",
-    Priority = 59,
+    Priority = 62,
     TaskId = 4001006,
     UnlockCondition = {0}
   },
@@ -40,7 +40,7 @@ return {
     Id = 1007,
     IsHide = 0,
     Name = "始于足下",
-    Priority = 58,
+    Priority = 61,
     TaskId = 4001007,
     UnlockCondition = {0}
   },
@@ -49,7 +49,7 @@ return {
     Id = 1008,
     IsHide = 0,
     Name = "千金散尽I",
-    Priority = 57,
+    Priority = 60,
     TaskId = 4001008,
     UnlockCondition = {0}
   },
@@ -58,7 +58,7 @@ return {
     Id = 1009,
     IsHide = 0,
     Name = "检索达人I",
-    Priority = 54,
+    Priority = 57,
     TaskId = 4001009,
     UnlockCondition = {0}
   },
@@ -67,7 +67,7 @@ return {
     Id = 1010,
     IsHide = 0,
     Name = "永燃明灯I",
-    Priority = 51,
+    Priority = 54,
     TaskId = 4001010,
     UnlockCondition = {0}
   },
@@ -76,7 +76,7 @@ return {
     Id = 1011,
     IsHide = 1,
     Name = "幸运日",
-    Priority = 48,
+    Priority = 51,
     TaskId = 4001011,
     UnlockCondition = {0}
   },
@@ -85,7 +85,7 @@ return {
     Id = 1012,
     IsHide = 1,
     Name = "“五”味杂陈",
-    Priority = 47,
+    Priority = 50,
     TaskId = 4001012,
     UnlockCondition = {0}
   },
@@ -94,7 +94,7 @@ return {
     Id = 1013,
     IsHide = 1,
     Name = "成员鸣泣之时",
-    Priority = 46,
+    Priority = 49,
     TaskId = 4001013,
     UnlockCondition = {0}
   },
@@ -103,7 +103,7 @@ return {
     Id = 1014,
     IsHide = 1,
     Name = "是谁把它放这的？！",
-    Priority = 45,
+    Priority = 48,
     TaskId = 4001014,
     UnlockCondition = {0}
   },
@@ -112,7 +112,7 @@ return {
     Id = 1015,
     IsHide = 0,
     Name = "这是哪？",
-    Priority = 44,
+    Priority = 47,
     TaskId = 4001015,
     UnlockCondition = {0}
   },
@@ -121,7 +121,7 @@ return {
     Id = 1016,
     IsHide = 0,
     Name = "第一滴血",
-    Priority = 43,
+    Priority = 46,
     TaskId = 4001016,
     UnlockCondition = {0}
   },
@@ -130,7 +130,7 @@ return {
     Id = 1017,
     IsHide = 0,
     Name = "摇铃铛吧",
-    Priority = 42,
+    Priority = 45,
     TaskId = 4001017,
     UnlockCondition = {0}
   },
@@ -139,7 +139,7 @@ return {
     Id = 1018,
     IsHide = 0,
     Name = "人形超算",
-    Priority = 41,
+    Priority = 44,
     TaskId = 4001018,
     UnlockCondition = {0}
   },
@@ -148,7 +148,7 @@ return {
     Id = 1019,
     IsHide = 0,
     Name = "鉴宝者",
-    Priority = 40,
+    Priority = 43,
     TaskId = 4001019,
     UnlockCondition = {0}
   },
@@ -157,7 +157,7 @@ return {
     Id = 1020,
     IsHide = 0,
     Name = "秘盟领袖",
-    Priority = 39,
+    Priority = 42,
     TaskId = 4001020,
     UnlockCondition = {0}
   },
@@ -166,7 +166,7 @@ return {
     Id = 1021,
     IsHide = 0,
     Name = "兵器库",
-    Priority = 38,
+    Priority = 41,
     TaskId = 4001021,
     UnlockCondition = {0}
   },
@@ -175,7 +175,7 @@ return {
     Id = 1022,
     IsHide = 0,
     Name = "无限剑制",
-    Priority = 37,
+    Priority = 40,
     TaskId = 4001022,
     UnlockCondition = {0}
   },
@@ -184,7 +184,7 @@ return {
     Id = 1023,
     IsHide = 1,
     Name = "启程",
-    Priority = 36,
+    Priority = 39,
     TaskId = 4001023,
     UnlockCondition = {0}
   },
@@ -193,7 +193,7 @@ return {
     Id = 1024,
     IsHide = 1,
     Name = "不灭之星",
-    Priority = 35,
+    Priority = 38,
     TaskId = 4001024,
     UnlockCondition = {0}
   },
@@ -202,7 +202,7 @@ return {
     Id = 1025,
     IsHide = 1,
     Name = "高塔终末",
-    Priority = 34,
+    Priority = 37,
     TaskId = 4001025,
     UnlockCondition = {0}
   },
@@ -211,7 +211,7 @@ return {
     Id = 1026,
     IsHide = 1,
     Name = "闻蝉鸣，严夏至",
-    Priority = 33,
+    Priority = 36,
     TaskId = 4001026,
     UnlockCondition = {0}
   },
@@ -220,7 +220,7 @@ return {
     Id = 1027,
     IsHide = 1,
     Name = "苦昼短",
-    Priority = 32,
+    Priority = 35,
     TaskId = 4001027,
     UnlockCondition = {0}
   },
@@ -229,7 +229,7 @@ return {
     Id = 1028,
     IsHide = 1,
     Name = "参商",
-    Priority = 31,
+    Priority = 34,
     TaskId = 4001028,
     UnlockCondition = {0}
   },
@@ -238,7 +238,7 @@ return {
     Id = 1029,
     IsHide = 1,
     Name = "归去来兮",
-    Priority = 30,
+    Priority = 33,
     TaskId = 4001029,
     UnlockCondition = {0}
   },
@@ -247,7 +247,7 @@ return {
     Id = 1030,
     IsHide = 1,
     Name = "深渊的凝视",
-    Priority = 28,
+    Priority = 30,
     TaskId = 4001030,
     UnlockCondition = {0}
   },
@@ -256,7 +256,7 @@ return {
     Id = 1031,
     IsHide = 1,
     Name = "亘古的回声",
-    Priority = 27,
+    Priority = 29,
     TaskId = 4001031,
     UnlockCondition = {0}
   },
@@ -265,7 +265,7 @@ return {
     Id = 1032,
     IsHide = 1,
     Name = "逐日",
-    Priority = 26,
+    Priority = 28,
     TaskId = 4001032,
     UnlockCondition = {0}
   },
@@ -274,7 +274,7 @@ return {
     Id = 1033,
     IsHide = 1,
     Name = "表里山河",
-    Priority = 25,
+    Priority = 27,
     TaskId = 4001033,
     UnlockCondition = {0}
   },
@@ -283,7 +283,7 @@ return {
     Id = 1034,
     IsHide = 1,
     Name = "青城猎人",
-    Priority = 24,
+    Priority = 26,
     TaskId = 4001034,
     UnlockCondition = {0}
   },
@@ -292,7 +292,7 @@ return {
     Id = 1035,
     IsHide = 1,
     Name = "青御城猴管",
-    Priority = 23,
+    Priority = 25,
     TaskId = 4001035,
     UnlockCondition = {0}
   },
@@ -301,7 +301,7 @@ return {
     Id = 1036,
     IsHide = 1,
     Name = "衣冠神州路",
-    Priority = 22,
+    Priority = 24,
     TaskId = 4001036,
     UnlockCondition = {0}
   },
@@ -310,7 +310,7 @@ return {
     Id = 1037,
     IsHide = 1,
     Name = "书中自有黄金屋",
-    Priority = 20,
+    Priority = 22,
     TaskId = 4001037,
     UnlockCondition = {0}
   },
@@ -319,7 +319,7 @@ return {
     Id = 1038,
     IsHide = 1,
     Name = "欧贝德的遗珍",
-    Priority = 19,
+    Priority = 21,
     TaskId = 4001038,
     UnlockCondition = {0}
   },
@@ -328,7 +328,7 @@ return {
     Id = 1039,
     IsHide = 1,
     Name = "整理内存",
-    Priority = 18,
+    Priority = 20,
     TaskId = 4001039,
     UnlockCondition = {0}
   },
@@ -337,7 +337,7 @@ return {
     Id = 1040,
     IsHide = 1,
     Name = "鱼米之乡",
-    Priority = 17,
+    Priority = 19,
     TaskId = 4001040,
     UnlockCondition = {0}
   },
@@ -346,7 +346,7 @@ return {
     Id = 1041,
     IsHide = 1,
     Name = "春华秋实",
-    Priority = 16,
+    Priority = 18,
     TaskId = 4001041,
     UnlockCondition = {0}
   },
@@ -355,7 +355,7 @@ return {
     Id = 1042,
     IsHide = 1,
     Name = "千年古都",
-    Priority = 15,
+    Priority = 17,
     TaskId = 4001042,
     UnlockCondition = {0}
   },
@@ -364,7 +364,7 @@ return {
     Id = 1043,
     IsHide = 1,
     Name = "琼楼玉宇",
-    Priority = 14,
+    Priority = 16,
     TaskId = 4001043,
     UnlockCondition = {0}
   },
@@ -445,7 +445,7 @@ return {
     Id = 1052,
     IsHide = 0,
     Name = "千金散尽II",
-    Priority = 56,
+    Priority = 59,
     TaskId = 4001052,
     UnlockCondition = {0}
   },
@@ -454,7 +454,7 @@ return {
     Id = 1053,
     IsHide = 0,
     Name = "千金散尽III",
-    Priority = 55,
+    Priority = 58,
     TaskId = 4001053,
     UnlockCondition = {0}
   },
@@ -463,7 +463,7 @@ return {
     Id = 1054,
     IsHide = 0,
     Name = "检索达人II",
-    Priority = 53,
+    Priority = 56,
     TaskId = 4001054,
     UnlockCondition = {0}
   },
@@ -472,7 +472,7 @@ return {
     Id = 1055,
     IsHide = 0,
     Name = "检索达人III",
-    Priority = 52,
+    Priority = 55,
     TaskId = 4001055,
     UnlockCondition = {0}
   },
@@ -481,7 +481,7 @@ return {
     Id = 1056,
     IsHide = 0,
     Name = "永燃明灯II",
-    Priority = 50,
+    Priority = 53,
     TaskId = 4001056,
     UnlockCondition = {0}
   },
@@ -490,7 +490,7 @@ return {
     Id = 1057,
     IsHide = 0,
     Name = "永燃明灯III",
-    Priority = 49,
+    Priority = 52,
     TaskId = 4001057,
     UnlockCondition = {0}
   },
@@ -526,7 +526,7 @@ return {
     Id = 1061,
     IsHide = 1,
     Name = "坠落的星星",
-    Priority = 29,
+    Priority = 31,
     TaskId = 4001061,
     UnlockCondition = {0}
   },
@@ -535,7 +535,7 @@ return {
     Id = 1062,
     IsHide = 1,
     Name = "天文学难题",
-    Priority = 21,
+    Priority = 23,
     TaskId = 4001062,
     UnlockCondition = {0}
   },
@@ -544,7 +544,7 @@ return {
     Id = 1063,
     IsHide = 1,
     Name = "学院参观日",
-    Priority = 13,
+    Priority = 14,
     TaskId = 4001063,
     UnlockCondition = {0}
   },
@@ -552,9 +552,36 @@ return {
     GroupId = 1,
     Id = 1064,
     IsHide = 1,
-    Name = "通关角色轶事-事古作刀铭",
+    Name = "刀中真意",
     Priority = 8,
     TaskId = 4001064,
+    UnlockCondition = {0}
+  },
+  [1065] = {
+    GroupId = 1,
+    Id = 1065,
+    IsHide = 1,
+    Name = "一步之遥",
+    Priority = 32,
+    TaskId = 4001065,
+    UnlockCondition = {0}
+  },
+  [1066] = {
+    GroupId = 1,
+    Id = 1066,
+    IsHide = 1,
+    Name = "博物馆奇妙夜",
+    Priority = 15,
+    TaskId = 4001066,
+    UnlockCondition = {0}
+  },
+  [1067] = {
+    GroupId = 1,
+    Id = 1067,
+    IsHide = 1,
+    Name = "艺术殿堂",
+    Priority = 13,
+    TaskId = 4001067,
     UnlockCondition = {0}
   },
   [2003] = {
@@ -3021,6 +3048,87 @@ return {
     Name = "幽思凝影·突破",
     Priority = 0,
     TaskId = 1001027009,
+    UnlockCondition = {0}
+  },
+  [1001030001] = {
+    GroupId = 1001030,
+    Id = 1001030001,
+    IsHide = 0,
+    Name = "奇谋百出Ⅰ",
+    Priority = 0,
+    TaskId = 1001030001,
+    UnlockCondition = {0}
+  },
+  [1001030002] = {
+    GroupId = 1001030,
+    Id = 1001030002,
+    IsHide = 0,
+    Name = "奇谋百出Ⅱ",
+    Priority = 0,
+    TaskId = 1001030002,
+    UnlockCondition = {0}
+  },
+  [1001030003] = {
+    GroupId = 1001030,
+    Id = 1001030003,
+    IsHide = 0,
+    Name = "奇谋百出Ⅲ",
+    Priority = 0,
+    TaskId = 1001030003,
+    UnlockCondition = {0}
+  },
+  [1001030004] = {
+    GroupId = 1001030,
+    Id = 1001030004,
+    IsHide = 0,
+    Name = "筹策万类",
+    Priority = 0,
+    TaskId = 1001030004,
+    UnlockCondition = {0}
+  },
+  [1001030005] = {
+    GroupId = 1001030,
+    Id = 1001030005,
+    IsHide = 0,
+    Name = "合纵连横Ⅰ",
+    Priority = 0,
+    TaskId = 1001030005,
+    UnlockCondition = {0}
+  },
+  [1001030006] = {
+    GroupId = 1001030,
+    Id = 1001030006,
+    IsHide = 0,
+    Name = "合纵连横Ⅱ",
+    Priority = 0,
+    TaskId = 1001030006,
+    UnlockCondition = {0}
+  },
+  [1001030007] = {
+    GroupId = 1001030,
+    Id = 1001030007,
+    IsHide = 0,
+    Name = "灼华",
+    Priority = 0,
+    TaskId = 1001030007,
+    UnlockCondition = {0}
+  },
+  [1001030008] = {
+    GroupId = 1001030,
+    Id = 1001030008,
+    IsHide = 0,
+    Name = "灼华·同调",
+    Priority = 0,
+    TaskId = 1001030008,
+    UnlockCondition = {0}
+  },
+  [1001030009] = {
+    GroupId = 1001030,
+    Id = 1001030009,
+    IsHide = 0,
+    Name = "灼华·突破",
+    Priority = 0,
+    TaskId = 1001030009,
     UnlockCondition = {0}
   },
   [1008008001] = {

@@ -4,7 +4,8 @@ local middleclass = {
   _URL = "https://github.com/kikito/middleclass",
   _LICENSE = "    MIT LICENSE\n    Copyright (c) 2011 Enrique García Cota\n    Permission is hereby granted, free of charge, to any person obtaining a\n    copy of this software and associated documentation files (the\n    \"Software\"), to deal in the Software without restriction, including\n    without limitation the rights to use, copy, modify, merge, publish,\n    distribute, sublicense, and/or sell copies of the Software, and to\n    permit persons to whom the Software is furnished to do so, subject to\n    the following conditions:\n    The above copyright notice and this permission notice shall be included\n    in all copies or substantial portions of the Software.\n    THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\n    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\n    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\n    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\n    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\n    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\n    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n  "
 }
-local _createIndexWrapper = function(aClass, f)
+
+local function _createIndexWrapper(aClass, f)
   if nil == f then
     return aClass.__instanceDict
   else
@@ -31,20 +32,23 @@ local function _propagateInstanceMethod(aClass, name, f)
   end
 end
 
-local _declareInstanceMethod = function(aClass, name, f)
+local function _declareInstanceMethod(aClass, name, f)
   aClass.__declaredMethods[name] = f
   if nil == f and aClass.super then
     f = aClass.super.__instanceDict[name]
   end
   _propagateInstanceMethod(aClass, name, f)
 end
-local _tostring = function(self)
+
+local function _tostring(self)
   return "class " .. self.name
 end
-local _call = function(self, ...)
+
+local function _call(self, ...)
   return self:new(...)
 end
-local _createClass = function(name, super)
+
+local function _createClass(name, super)
   local dict = {}
   dict.__index = dict
   local aClass = {
@@ -80,7 +84,8 @@ local _createClass = function(name, super)
   })
   return aClass
 end
-local _includeMixin = function(aClass, mixin)
+
+local function _includeMixin(aClass, mixin)
   assert(type(mixin) == "table", "mixin must be a table")
   for name, method in pairs(mixin) do
     if "included" ~= name and "static" ~= name then
@@ -95,6 +100,7 @@ local _includeMixin = function(aClass, mixin)
   end
   return aClass
 end
+
 local DefaultMixin = {
   __tostring = function(self)
     return "instance of " .. tostring(self.class)

@@ -126,7 +126,7 @@ function ui:ui_finish_load()
     self:click_order_btn()
   end)
   self.v_sort_name_text = Util.get_text("Text", self.v_sort_btn.transform)
-  self.v_out_ani = Util.get_child_gameobj("Animation/Ani_UISignBoard_Girl_Change_Out", self.v_object)
+  self.v_out_ani = Util.get_child_gameobj("Animation/Ani_UISignBoard_Girl_ChangeL_Out", self.v_object)
   self:register_exist_auto_template(SIGNBOARD_BUDDY_ROLE_KEY, self.v_buddy_template, self.v_buddy_list)
   self:register_exist_auto_template(SIGNBOARD_BUDDY_ROLE_FILTER_KEY, self.v_filter_template, self.v_filter_content)
   self:register_exist_auto_template(SIGNBOARD_BUDDY_ROLE_FILTER_LIST_KEY, self.v_filter_list_template, self.v_filter_list)
@@ -137,9 +137,6 @@ function ui:do_hide(do_tween)
   self.v_cache_buddy_list = nil
   self.v_order_type = nil
   CharacterMgr:set_screen_condtion(1)
-  if not self.v_is_confirm then
-    MsgGame:mq_publish2(Const.MSG_ON_PLAYER_SPINE_CHOOSE_HIDE)
-  end
   self.v_is_selecting_fashion = false
   self:clear_exit_seq()
   if do_tween then
@@ -148,9 +145,15 @@ function ui:do_hide(do_tween)
     self.v_exit_seq:AppendInterval(0.3)
     self.v_exit_seq:OnComplete(function()
       self:ui_hide()
+      if not self.v_is_confirm then
+        MsgGame:mq_publish2(Const.MSG_ON_PLAYER_SPINE_CHOOSE_HIDE)
+      end
     end)
   else
     self:ui_hide()
+    if not self.v_is_confirm then
+      MsgGame:mq_publish2(Const.MSG_ON_PLAYER_SPINE_CHOOSE_HIDE)
+    end
   end
 end
 

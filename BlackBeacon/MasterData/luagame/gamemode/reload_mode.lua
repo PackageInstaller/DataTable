@@ -3,11 +3,13 @@ local Base = require("gamemode.base")
 local AssetCache = require("manager.res.asset_cache")
 local UnityFindObjectsOfType = UnityGameObject.FindObjectsOfType
 local UnityCamera = typeof(UnityEngine.Camera)
-local create_child_mt = function(base)
+
+local function create_child_mt(base)
   local child = setmetatable({}, base)
   child.__index = child
   return child
 end
+
 local M = create_child_mt(Base)
 
 function M:gd_init()
@@ -57,7 +59,7 @@ function M:_load_empty_scene()
   end
 end
 
-local reload = function()
+local function reload()
   Global.stop_update = true
   collectgarbage("collect")
   collectgarbage("collect")

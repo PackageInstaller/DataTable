@@ -130,7 +130,8 @@ function ui:click_btn_tong_tiao()
       break
     end
   end
-  local finish_close_cb = function()
+  
+  local function finish_close_cb()
     if self.is_can_max then
       local select_ui = UIMgr:try_get_ui("char_weapon_select")
       if select_ui then
@@ -140,13 +141,15 @@ function ui:click_btn_tong_tiao()
       self.weapon_select_ui:set_model_visible(true)
     end
   end
-  local cb = function()
+  
+  local function cb()
     self.weapon_select_ui:set_model_visible(false)
     CharacterMgr:advance_equip_new(self.v_equip_uuid, self.select_equip_list, function()
       UIMgr:get_ui("weapon_tongtiao_finish"):ui_show(self.advance_lv, self.v_equip_uuid, finish_close_cb)
       self.weapon_select_ui:un_select_all(true)
     end)
   end
+  
   if not is_lock then
     cb()
   else

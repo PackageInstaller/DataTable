@@ -25,7 +25,7 @@ function M:init_sys()
   self.v_is_get_data = false
 end
 
-local use_line = function(pre_id, next_id)
+local function use_line(pre_id, next_id)
   local Line = {
     Line1 = 1,
     Line2 = 2,
@@ -41,12 +41,14 @@ local use_line = function(pre_id, next_id)
   end
   return Line.Line1
 end
-local get_career_id_by_tree_id = function(talent_tree_id)
+
+local function get_career_id_by_tree_id(talent_tree_id)
   local talent_tree_cfg = ShareRes.create("fight_talent.fight_talent_tree", talent_tree_id)
   local career_id = talent_tree_cfg.Career
   return career_id
 end
-local get_talent_tree_by_career = function(career_id)
+
+local function get_talent_tree_by_career(career_id)
   local talent_tree_cfg = ShareRes.create("fight_talent.fight_talent_tree")
   local talent_tree
   for _, tree_cfg in pairs(talent_tree_cfg) do
@@ -95,7 +97,7 @@ function M:init_tree_point_list()
   self.v_tree_node_list = node_tb
 end
 
-local has_acess_point = function(front_ids, node_tb)
+local function has_acess_point(front_ids, node_tb)
   local Has_acess_front_point = false
   for _, front_id in pairs(front_ids) do
     if node_tb[front_id].state ~= Talent_Cfg.TALENT_POINT_STATE.UNSELECT then
@@ -403,7 +405,7 @@ function M:on_battle_talent_active_talent_ids(data)
   MsgGame:mq_publish2(Const.MSG_ON_TALENT_UPDATE)
 end
 
-local cal_attr = function(attrs, role_attr)
+local function cal_attr(attrs, role_attr)
   for index, info in pairs(attrs) do
     if "Attrs_Id" ~= index then
       local id = CONFIG_NAME_ATTR_ID[index]

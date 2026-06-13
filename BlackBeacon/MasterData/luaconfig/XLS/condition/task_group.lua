@@ -191,6 +191,36 @@ return {
     Name = "幽思与时日任务组",
     Priority = 0
   },
+  [335] = {
+    Award = 0,
+    Id = 335,
+    Name = "时廻的莫比乌斯任务组二期",
+    Priority = 0
+  },
+  [336] = {
+    Award = 0,
+    Id = 336,
+    Name = "夏日活动副本任务组二",
+    Priority = 0
+  },
+  [337] = {
+    Award = 0,
+    Id = 337,
+    Name = "沙威玛活动任务组二",
+    Priority = 0
+  },
+  [338] = {
+    Award = 0,
+    Id = 338,
+    Name = "钓鱼小游戏任务组二",
+    Priority = 0
+  },
+  [339] = {
+    Award = 0,
+    Id = 339,
+    Name = "打靶游戏任务组二",
+    Priority = 0
+  },
   [3001] = {
     Award = 0,
     Id = 3001,
@@ -233,6 +263,18 @@ return {
     Name = "猴子打字机货币任务",
     Priority = 0
   },
+  [4203] = {
+    Award = 0,
+    Id = 4203,
+    Name = "复刻猴子打字机进度任务",
+    Priority = 0
+  },
+  [4204] = {
+    Award = 0,
+    Id = 4204,
+    Name = "复刻猴子打字机货币任务",
+    Priority = 0
+  },
   [8001] = {
     Award = 0,
     Id = 8001,
@@ -273,6 +315,36 @@ return {
     Award = 0,
     Id = 22020,
     Name = "战令任务3.0",
+    Priority = 0
+  },
+  [22021] = {
+    Award = 0,
+    Id = 22021,
+    Name = "战令5",
+    Priority = 0
+  },
+  [22022] = {
+    Award = 0,
+    Id = 22022,
+    Name = "战令6",
+    Priority = 0
+  },
+  [22023] = {
+    Award = 0,
+    Id = 22023,
+    Name = "战令7",
+    Priority = 0
+  },
+  [22024] = {
+    Award = 0,
+    Id = 22024,
+    Name = "战令8",
+    Priority = 0
+  },
+  [22025] = {
+    Award = 0,
+    Id = 22025,
+    Name = "战令9",
     Priority = 0
   },
   [22800] = {
@@ -341,9 +413,21 @@ return {
     Name = "围住小猫测试任务组",
     Priority = 0
   },
+  [501502] = {
+    Award = 0,
+    Id = 501502,
+    Name = "恩基大逃亡复刻",
+    Priority = 0
+  },
   [5015021] = {
     Award = 0,
     Id = 5015021,
+    Name = "金色武器活动任务组",
+    Priority = 0
+  },
+  [5015022] = {
+    Award = 0,
+    Id = 5015022,
     Name = "金色武器活动任务组",
     Priority = 0
   },
@@ -351,6 +435,36 @@ return {
     Award = 0,
     Id = 5015023,
     Name = "金色武器活动任务组",
+    Priority = 0
+  },
+  [5015024] = {
+    Award = 0,
+    Id = 5015024,
+    Name = "匠神1",
+    Priority = 0
+  },
+  [5015025] = {
+    Award = 0,
+    Id = 5015025,
+    Name = "匠神2",
+    Priority = 0
+  },
+  [5015026] = {
+    Award = 0,
+    Id = 5015026,
+    Name = "匠神3",
+    Priority = 0
+  },
+  [5015027] = {
+    Award = 0,
+    Id = 5015027,
+    Name = "匠神4",
+    Priority = 0
+  },
+  [5015028] = {
+    Award = 0,
+    Id = 5015028,
+    Name = "匠神5",
     Priority = 0
   }
 }

@@ -10,9 +10,10 @@ local ENTRY_BG_IMAGE_PATH = {
   [INFINITE_ENTRY_TYPE.GAIN] = "UIEndless/Endless_db_bz2",
   [INFINITE_ENTRY_TYPE.NEGATIVE] = "UIEndless/Endless_db_bz1"
 }
-local sort = function(a, b)
-  if a.Serial ~= b.Serial then
-    return a.Serial < b.Serial
+
+local function sort(a, b)
+  if a.DifficultyCeof ~= b.DifficultyCeof then
+    return a.DifficultyCeof < b.DifficultyCeof
   else
     return false
   end

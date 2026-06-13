@@ -339,7 +339,8 @@ function ui:buy_challenge_num()
   local cost_id = point_cfg.BuyFightNumCost[1]
   local cost_num = point_cfg.BuyFightNumCost[2]
   local item_cfg = ShareRes.get_item_cfg(cost_id)
-  local sure_callback = function()
+  
+  local function sure_callback()
     local item_num = BagMgr:get_item_num(cost_id)
     if item_num < cost_num then
       Util.show_message_tip(2115)
@@ -347,6 +348,7 @@ function ui:buy_challenge_num()
     end
     ChapterMgr:buy_challenge_num(self.v_chapter_id, self.v_point_id)
   end
+  
   local tip = string.format("是否使用%s增加1次挑战次数", item_cfg.Name .. "：" .. cost_num)
   UIMgr:get_ui("uinotice_tips"):ui_show(sure_callback, nil, tip)
 end
@@ -490,10 +492,12 @@ function ui:_set_ready(is_ready)
       return
     end
   end
-  local cb = function()
+  
+  local function cb()
     self.v_btn_ready:SetActive(false)
     self.v_get_ready:SetActive(true)
   end
+  
   local key = ROOM_CHANGE_TYPE.PLAYER_STATE
   local value = is_ready and ROOM_ABOUT_MAP.STATE_MAP.READY or ROOM_ABOUT_MAP.STATE_MAP.NOT_READY
   ActivityMgr:invoke(Act_ID, "request_change_roomstate", key, value, cb)

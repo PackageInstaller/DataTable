@@ -6,7 +6,7 @@ local RuntimePackage = require("manager.res.runtime_package")
 local AssetBundleMgr = Global.assetbundle_mgr
 local UnitySprite = UnityEngine.Sprite
 local UnityTexture2D = UnityEngine.Texture2D
-local UnityDestroy = UnityDestroy
+local UnityDestroy = _ENV.UnityDestroy
 local UnityDontDestroyOnLoad = UnityGameObject.DontDestroyOnLoad
 local UnityInstantiate = UnityGameObject.Instantiate
 local UnityAssetBundle = UnityEngine.AssetBundle
@@ -22,21 +22,25 @@ local Base = require("manager.res.base_loader")
 local M = Global.util.create_child_mt(Base)
 local MAX_EXT_STAGE = 2
 local CACHE_ASSET_TYPE = AssetCache.DEFAULT_ASSET_TYPE
-local get_asset_full_path = function(asset, subfix)
+
+local function get_asset_full_path(asset, subfix)
   if subfix then
     return _sformat("assets/resources/%s%s", asset, subfix)
   else
     return _sformat("assets/resources/%s", asset)
   end
 end
-local get_icon_full_path = function(icon)
+
+local function get_icon_full_path(icon)
   return _sformat("assets/product/ui/images/%s.png", _slower(icon))
 end
-local get_atlas_assetbundle_path = function(atlas)
+
+local function get_atlas_assetbundle_path(atlas)
   atlas = _slower(atlas)
   return _sformat("rawdata/ui_atlas/%s.assetbundle", atlas)
 end
-local asset_to_bundle = function(asset)
+
+local function asset_to_bundle(asset)
   return AssetToBundle[asset]
 end
 

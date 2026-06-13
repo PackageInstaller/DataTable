@@ -4,7 +4,8 @@ local WEAPON_REDUCTION_ITEM = require("uimodule.activity.weapon_reduction_item")
 local LoopListClass = require("ui.widget.infinite_loop_list")
 local BagCfg = require("uimodule.uibag.uibag_configs")
 local MATERIAL_ITEM_TEMPLETE_KEY = "MATERIAL_ITEM_TEMPLETE_KEY"
-local _build_equip_gem_list = function(gemstone_slot)
+
+local function _build_equip_gem_list(gemstone_slot)
   if not gemstone_slot then
     return nil
   end
@@ -16,7 +17,8 @@ local _build_equip_gem_list = function(gemstone_slot)
   end
   return list
 end
-local _rebuild_list = function(weapon)
+
+local function _rebuild_list(weapon)
   local ret_weapon = {}
   local wp_cfg = ShareRes.create("equip.equip", weapon.id)
   ret_weapon.uuid = weapon.uuid

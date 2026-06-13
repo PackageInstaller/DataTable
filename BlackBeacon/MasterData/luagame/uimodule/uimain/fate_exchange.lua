@@ -34,8 +34,9 @@ function ui:on_click_add_btn()
     return
   end
   self.v_cur_exchange_num = self.v_cur_exchange_num + 1
+  self.v_lack_cnt = self.v_lack_cnt + 1
   self.v_uicompents.Slider_sld.value = self.v_cur_exchange_num
-  self:update_exchange_num(self.v_target_id, self.v_lack_cnt, self.v_item_id)
+  self:refresh_view()
 end
 
 function ui:on_click_reduce_btn()
@@ -44,28 +45,33 @@ function ui:on_click_reduce_btn()
     return
   end
   self.v_cur_exchange_num = self.v_cur_exchange_num - 1
+  self.v_lack_cnt = self.v_lack_cnt - 1
   self.v_uicompents.Slider_sld.value = self.v_cur_exchange_num
-  self:update_exchange_num(self.v_target_id, self.v_lack_cnt, self.v_item_id)
+  self:refresh_view()
 end
 
 function ui:on_click_confirm_btn()
   if self.v_callback then
     self.v_callback()
   else
-    local target_id = self.v_target_id
-    local item_id = self.v_item_id
-    local target_item_cfg = UtilUI.get_item_cfg(target_id)
-    local item_possess_num = BagMgr:get_item_num(target_id)
-    if item_possess_num < target_item_cfg.MaxCount and self.v_can_exchange_max_num < 1 then
-      UIMgr:get_ui("uiforcerecharg"):ui_show(nil, self.v_need_sp_count)
-      return
-    end
-    local exchange_config = CharacterMgr:get_exchange_config(Config.EXCHANGE_TYPE.DEFAULT, target_id, item_id)
-    CharacterMgr:request_exchange_item(exchange_config.Id, self.v_cur_exchange_num, function()
-      Util.show_message_tip(2229)
-      self:ui_hide()
-    end)
+    self:response_click_confirm_btn()
   end
+end
+
+function ui:response_click_confirm_btn()
+  local target_id = self.v_target_id
+  local item_id = self.v_item_id
+  local target_item_cfg = UtilUI.get_item_cfg(target_id)
+  local item_possess_num = BagMgr:get_item_num(target_id)
+  if item_possess_num < target_item_cfg.MaxCount and self.v_can_exchange_max_num < 1 then
+    UIMgr:get_ui("uiforcerecharg"):ui_show(nil, self.v_need_sp_count)
+    return
+  end
+  local exchange_config = CharacterMgr:get_exchange_config(Config.EXCHANGE_TYPE.DEFAULT, target_id, item_id)
+  CharacterMgr:request_exchange_item(exchange_config.Id, self.v_cur_exchange_num, function()
+    Util.show_message_tip(2229)
+    self:ui_hide()
+  end)
 end
 
 function ui:onclick_slider()
@@ -90,7 +96,7 @@ end
 function ui:refresh_view()
   local target_id, item_id = self.v_target_id, self.v_item_id
   local lack_cnt = self.v_lack_cnt
-  self:show_item(target_id, nil, item_id)
+  self:show_item(target_id, lack_cnt, item_id)
   self:update_exchange_num(target_id, lack_cnt, item_id)
 end
 
@@ -145,7 +151,7 @@ end
 
 function ui:update_exchange_num(target_id, lack_cnt, item_id, exchange_item_cnt)
   lack_cnt = lack_cnt or 1
-  self.v_cur_exchange_num = self.v_cur_exchange_num or lack_cnt
+  self.v_cur_exchange_num = lack_cnt or self.v_cur_exchange_num
   self.v_cur_exchange_num = self.v_cur_exchange_num > 1 and self.v_cur_exchange_num or 1
   local cfg = CharacterMgr:get_exchange_config(Config.EXCHANGE_TYPE.DEFAULT, target_id, item_id)
   local cfg1 = UtilUI.get_item_cfg(target_id)
@@ -200,6 +206,14 @@ end
 
 function ui:set_open_charg_on_hide(is_open)
   self.v_open_charg_on_hide = is_open
+end
+
+function ui:check_can_exchange()
+  return self.v_can_exchange_max_num >= self.v_lack_cnt
+end
+
+function ui:get_cur_lack_cnt()
+  return self.v_lack_cnt
 end
 
 return ui

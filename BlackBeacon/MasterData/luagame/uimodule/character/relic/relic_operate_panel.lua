@@ -414,7 +414,7 @@ function ui:on_click_relic_consume(uuid)
     local need_unlock = 1 == temp_relic_data.lock
     local need_unwear = 0 ~= owner_id
     if need_unlock or need_unwear then
-      local confirm_cb = function()
+      local function confirm_cb()
         if need_unlock then
           RelicMgr:req_unlock_relic(uuid, function()
             if not need_unwear then
@@ -428,6 +428,7 @@ function ui:on_click_relic_consume(uuid)
           end)
         end
       end
+      
       show_tips_uuid = nil
       Util.show_notify_popup_message(confirm_cb, "物品已锁定/已装备，是否解锁/卸下并选中作为消耗？")
     else

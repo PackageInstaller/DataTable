@@ -25,11 +25,11 @@ function ui:set_data(unlock_time, puzzle_id, role_id)
   self.v_uiobjects.ProfileLock:SetActive(not is_unlock)
   self.v_uiobjects.Profile:SetActive(is_unlock)
   self.v_uiobjects.BtnDetail:SetActive(is_unlock)
+  local icon_path = ShareRes.get_item_icon_path(puzzle_id)
+  ResMgr:load_set_icon(self.v_uicompents.PuzzleIcon_img, icon_path)
   local buddy_name = "？？？"
   if is_unlock then
     local puzzle_cfg = ShareRes.get_buddy_puzzle_cfg(puzzle_id)
-    local icon_path = ShareRes.get_item_icon_path(puzzle_id)
-    ResMgr:load_set_icon(self.v_uicompents.PuzzleIcon_img, icon_path)
     self.v_uicompents.PuzzleName_txt.text = puzzle_cfg.Name
     local buddy_cfg = ShareRes.get_buddy_cfg(role_id)
     buddy_name = buddy_cfg.Name

@@ -187,6 +187,10 @@ function M:add_magic_start(char, attacker, magic_info, logic_cfg, ext_args, rtid
   if Util.is_client_only() then
     return
   end
+  if magic_info and magic_info.is_destroy then
+    Log.Errorf("magic report error, magic is destroy, owner id:%s, attacker id:%s  %s", char.id, attacker.id, debug.traceback())
+    return
+  end
   local magic_type = logic_cfg.type
   local attacker_uuid = assert(attacker.uuid)
   local target_uuid = assert(char.uuid)

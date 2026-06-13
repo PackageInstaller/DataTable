@@ -97,7 +97,8 @@ function ui:create_spine()
   local pos_info = spine_cfg.Pos
   local raw = self:get_rawimage(nil, self.v_uiobjects.SpineRaw)
   raw.enabled = false
-  local load_cb = function(obj)
+  
+  local function load_cb(obj)
     if Util.is_nil(raw) then
       return
     end
@@ -112,6 +113,7 @@ function ui:create_spine()
     self.v_spine_rt:play_loop_anim(role_res, loop_anim_name)
     raw.enabled = true
   end
+  
   self.v_spine_rt:load_spine_res(role_res, load_cb)
 end
 

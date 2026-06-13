@@ -114,9 +114,10 @@ function ui:ui_finish_load()
   end)
   self:set_button("RestLocalSettingInfo", function()
     if self.v_select_sub_toggle == Page_Tag.PCTouch then
-      local confirm_fun = function()
+      local function confirm_fun()
         self:on_click_reset_to_default()
       end
+      
       UIMgr:get_ui("uinotice_tips"):ui_show(confirm_fun, nil, "是否将当前键位设置恢复为默认状态？")
     else
       self:on_click_reset_to_default()
@@ -352,7 +353,8 @@ function ui:select_cv_language_toggle(language_index)
   end
   Global.sound_mgr:remove_cache_voice_sound()
   local language = CommonDefine.INDEX_LANGUAGE[language_index]
-  local cb = function(is_need_tip)
+  
+  local function cb(is_need_tip)
     Global.curr_language = language
     if CharacterMgr then
       CharacterMgr:refresh_all_buddy_cv_language()
@@ -365,6 +367,7 @@ function ui:select_cv_language_toggle(language_index)
       Util.show_message_tip("切换成功")
     end
   end
+  
   if Game_AssetBundle then
     local format_size = CS.VoiceCheckManager.Instance:GetNeedDownloadSoundSize(language)
     local tips = ""
@@ -416,7 +419,8 @@ function ui:select_story_cv_language_toggle(language_index)
     return
   end
   local language = CommonDefine.INDEX_LANGUAGE[language_index]
-  local cb = function(is_need_tip)
+  
+  local function cb(is_need_tip)
     Global.curr_story_cv_language = language
     CS.GameToLua.CheckUpdate.SetSelectStoryVoiceLanguage(language_index)
     Global.sound_mgr:remove_cache_voice_sound()
@@ -426,6 +430,7 @@ function ui:select_story_cv_language_toggle(language_index)
       Util.show_message_tip("切换成功")
     end
   end
+  
   if Game_AssetBundle then
     local format_size = CS.VoiceCheckManager.Instance:GetNeedDownloadStorySoundSize(language)
     if "" == format_size then
@@ -640,14 +645,10 @@ function ui:init_ui_listener()
         self.v_graphic_quality_data[key] = data
       elseif data.page_tag == Page_Tag.Other then
         self.v_other_data[key] = data
-      else
-        if data.page_tag ~= Page_Tag.PCTouch or SDKManager:is_support_key_mouse() then
-          goto lbl_59
-        end
+      elseif data.page_tag == Page_Tag.PCTouch and not SDKManager:is_support_key_mouse() then
         goto lbl_182
       end
     end
-    ::lbl_59::
     if data.desc_obj then
       local desc_txt = Util.get_text(nil, self.v_uiobjects[data.desc_obj])
       if desc_txt then
@@ -1030,8 +1031,9 @@ function ui:refresh_notification_view()
 end
 
 function ui:close()
-  local confirm_callback = function()
+  local function confirm_callback()
     BattleSettingMgr:save_local_setting_info()
+    
     if not Global.gamemode:gmode_is_login() then
       BattleSettingMgr:save_online_setting_info()
     else
@@ -1051,7 +1053,8 @@ function ui:close()
       self:ui_hide()
     end
   end
-  local cancel_callback = function()
+  
+  local function cancel_callback()
     BattleSettingMgr:reset_local_setting_info()
     if not Global.gamemode:gmode_is_login() then
       BattleSettingMgr:reset_setting_info()
@@ -1059,6 +1062,7 @@ function ui:close()
     self:refresh_view()
     self:ui_hide()
   end
+  
   if self:get_change_state() then
     Util.show_notify_popup_message(confirm_callback, "是否保存修改", nil, nil, nil, cancel_callback, nil, nil)
   elseif SDKManager:is_support_key_mouse() then
@@ -1137,13 +1141,15 @@ function ui:refresh_account_page()
 end
 
 function ui:init_gpg_page()
-  local btn_callback = function(btn_name, btn_key)
+  local function btn_callback(btn_name, btn_key)
     local key_code = BattleSettingMgr:get_gpg_custom_button(btn_key)
+    
     local key_name = BattleSettingMgr:keycode_to_string(key_code)
     UIMgr:get_ui("ui_input_listener"):ui_show(btn_name, key_name)
     local bg_set = Util.get_child_gameobj("BgSet", self.v_uiobjects[btn_name])
     bg_set:SetActiveEx(true)
   end
+  
   local v_uicompents = self.v_uicompents
   for btn_name, t in pairs(Setting_Cfg.BTNNAME_INFO) do
     local key = t.key

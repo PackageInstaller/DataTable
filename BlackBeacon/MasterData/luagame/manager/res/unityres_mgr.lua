@@ -1,11 +1,13 @@
 local Util = require("utils.util")
 local AssetCache = require("manager.res.asset_cache")
 local ResLoader = CS.ResLoader
-local msgh = function(err)
+
+local function msgh(err)
   local traceback = debug.traceback()
   local msg = err .. "\n" .. traceback
   Log.Error(msg)
 end
+
 local M = Util.create_class()
 
 function M:_init()

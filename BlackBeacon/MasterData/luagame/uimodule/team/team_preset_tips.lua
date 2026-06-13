@@ -67,7 +67,7 @@ function ui:cache_ui()
   return false
 end
 
-local get_team_name = function(team_data)
+local function get_team_name(team_data)
   local name = team_data.name
   if not name or "" == name then
     name = Util.format_str("编队{1}", team_data.id)
@@ -97,7 +97,8 @@ function ui:_confirm_change_name()
     Word_Censor.check_has_sensitive(self:ui_get_name(), new_name, function(ok, lab)
       if ok then
         local team_id = self.v_edit_name_team_id
-        local cb = function(ok)
+        
+        local function cb(ok)
           if ok then
             self:update_team_name_show(team_id, new_name)
           else
@@ -105,6 +106,7 @@ function ui:_confirm_change_name()
             self:update_team_name_show(team_id, new_name)
           end
         end
+        
         FormationMgr:save_prefab_team(team_id, new_name, nil, nil, cb)
       end
     end, "save_formation_name")

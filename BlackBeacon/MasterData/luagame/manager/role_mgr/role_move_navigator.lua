@@ -41,9 +41,9 @@ end
 
 local M = Util.create_child_mt(Base)
 
-function M:_init(chara)
+function M:_init(char)
   Base._init(self)
-  self.v_char = chara
+  self.v_char = char
   self.v_game_obj = nil
   self.v_navigating = false
   self.v_state = STATE.NONE
@@ -58,12 +58,26 @@ function M:_init(chara)
   M.v_nearest_pool = LuaObjPoolMgr.get_pool("find_path_nearest_pool") or LuaObjPoolMgr.register("find_path_nearest_pool", 50, NearestPos)
   self.v_profile_last_time = 0
   self.v_profile_cnt = 0
-  self.v_nav_record = {}
+  self.v_path_debuger = nil
+end
+
+function M:on_before_destroy()
+  self.v_char = nil
+  self.v_path_debuger = nil
+  self.v_point_list = nil
+end
+
+function M:on_destroy_gameobj()
+  self:_clear_nav()
+  self:_clear_target_info()
+  self:_clear_custom_find_path()
+  self.v_game_obj = nil
 end
 
 local _nearest_pos_cache = {}
 local _nearest_tmp_tb = {}
-local _add_to_cache = function(body_size, grid_idx, gg_idx, rlt, new_x, new_y, new_z)
+
+local function _add_to_cache(body_size, grid_idx, gg_idx, rlt, new_x, new_y, new_z)
   _nearest_tmp_tb[1], _nearest_tmp_tb[2] = body_size, gg_idx
   local t, k, v
   t = _nearest_pos_cache
@@ -75,7 +89,8 @@ local _add_to_cache = function(body_size, grid_idx, gg_idx, rlt, new_x, new_y, n
   end
   t[grid_idx] = M.v_nearest_pool:new_obj(rlt, new_x, new_y, new_z)
 end
-local _get_from_cache = function(body_size, grid_idx, gg_idx)
+
+local function _get_from_cache(body_size, grid_idx, gg_idx)
   _nearest_tmp_tb[1], _nearest_tmp_tb[2], _nearest_tmp_tb[3] = body_size, gg_idx, grid_idx
   local t, k, v
   t = _nearest_pos_cache
@@ -89,7 +104,8 @@ local _get_from_cache = function(body_size, grid_idx, gg_idx)
   end
   return true, t.rlt, t.x, t.y, t.z
 end
-local _get_cache_nearest_grid_pos = function(body_size, x, y, z, gg)
+
+local function _get_cache_nearest_grid_pos(body_size, x, y, z, gg)
   local grid = AstarHelper.GetNearestGrid1(x, y, z, gg, false, true)
   local is_success, new_rlt, new_grid, new_x, new_y, new_z
   if not grid then
@@ -146,6 +162,9 @@ function M:_clear_task()
 end
 
 function M:_clear_point_list()
+  if not self.v_point_list then
+    return
+  end
   if self.v_point_list.n >= 1 then
     for i = 1, self.v_point_list.n do
       local point = self.v_point_list[i]
@@ -580,13 +599,6 @@ end
 
 function M:get_gameobj()
   return self.v_game_obj
-end
-
-function M:on_destroy_gameobj()
-  self:_clear_nav()
-  self:_clear_target_info()
-  self:_clear_custom_find_path()
-  self.v_game_obj = nil
 end
 
 function M:update()

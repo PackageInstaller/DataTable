@@ -45,7 +45,7 @@ function M:get_is_no_notice()
   return 0 == activity_count + system_count
 end
 
-local _sort_func = function(a, b)
+local function _sort_func(a, b)
   if a.sort_id ~= b.sort_id then
     return a.sort_id < b.sort_id
   end

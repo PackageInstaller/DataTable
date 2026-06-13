@@ -13,7 +13,8 @@ local cache_mt = {}
 local VERBOSE = true
 local log = VERBOSE and print or function(...)
 end
-local cache_create = function()
+
+local function cache_create()
   local raw = {
     size = 0,
     top = 0,
@@ -96,7 +97,8 @@ local state = {
   },
   close = {name = "close"}
 }
-local switch_state = function(self, s)
+
+local function switch_state(self, s)
   local v = state[s]
   assert(v)
   log(">>>>>>>>>>>>>switch_state:", s)
@@ -105,6 +107,7 @@ local switch_state = function(self, s)
     v.request(self)
   end
 end
+
 local out = {}
 
 function state.newconnect:request()
@@ -231,7 +234,7 @@ function state.forward:send(data)
   cache:insert(data)
 end
 
-local connect = function(host, port)
+local function connect(host, port)
   local raw = {
     v_state = false,
     v_sock = false,

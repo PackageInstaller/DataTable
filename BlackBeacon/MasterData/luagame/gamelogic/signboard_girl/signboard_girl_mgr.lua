@@ -26,7 +26,7 @@ function M:init_sys()
   self.v_is_clock_update = true
 end
 
-local draw_random_action = function(action_list)
+local function draw_random_action(action_list)
   if not action_list then
     return
   end

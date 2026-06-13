@@ -175,6 +175,22 @@ return {
       SoundName = "Sound_H1001027_ui_idle"
     }
   },
+  [1001028] = {
+    ui_idle_1 = {
+      ActName = "ui_idle_1",
+      CharId = 1001028,
+      Id = 24,
+      SoundName = "Sound_H1001028_ui_idle"
+    }
+  },
+  [1001030] = {
+    ui_idle_1 = {
+      ActName = "ui_idle_1",
+      CharId = 1001030,
+      Id = 25,
+      SoundName = "Sound_H1001030_ui_idle"
+    }
+  },
   [1002309] = {
     ui_idle_1 = {
       ActName = "ui_idle_1",

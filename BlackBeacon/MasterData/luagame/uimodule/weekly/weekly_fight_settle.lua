@@ -5,13 +5,15 @@ local MAX_CHAR_ITEM_COUNT = Config.MAX_CHAR_ITEM_COUNT
 local Char_Helper = require("uimodule.character.char_helper")
 local SPINE_RT_VIEW = require("ui.model_rt_view.spine_rt_view")
 local SpineHelper = require("ui.model_rt_view.spine_helper")
-local sort = function(a, b)
+
+local function sort(a, b)
   if a.pos ~= b.pos then
     return a.pos < b.pos
   else
     return false
   end
 end
+
 local _tinsert = table.insert
 local player_icon_path_prefix = "Icon/Profile/%s"
 local CommonDef = require("cs_share.common_define")
@@ -46,10 +48,12 @@ function ui:ui_finish_load()
 end
 
 function ui:click_confirm_btn()
-  local callback = function()
+  local function callback()
     Global.scene_mgr:on_enter_main_scene()
+    
     UIMgr:revert_cache_ui()
   end
+  
   if SceneMgr:check_main_scene() then
     self:ui_hide()
   end

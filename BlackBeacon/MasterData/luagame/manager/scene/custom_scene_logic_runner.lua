@@ -58,7 +58,7 @@ function M:get_npc_pos(npc)
   return npc:get_pos_vec3()
 end
 
-local check_npc = function(npc)
+local function check_npc(npc)
   return npc and not npc:is_destroy()
 end
 

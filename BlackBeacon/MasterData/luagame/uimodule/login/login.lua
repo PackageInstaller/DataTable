@@ -36,7 +36,6 @@ function ui:ui_finish_load()
   self:set_button("BtnChooseServer", function()
     self:_on_click_choose_server_Btn()
   end)
-  self.v_uiobjects.BtnNotice:SetActiveEx(not IS_STAGING)
   self:set_button("BtnNotice", function()
     self:open_notice_ui()
   end)
@@ -136,9 +135,7 @@ function ui:ui_on_show(callback)
   self:bind_auto_mq(Const.MSG_LOGIN_FAILED, self._handle_login_failed, self)
   self.v_uiobjects.Title_BB:SetActive(true)
   self.v_uiobjects.Title_LingBo:SetActive(false)
-  if not IS_STAGING then
-    self:_add_open_notice_timer()
-  end
+  self:_add_open_notice_timer()
   if UIMgr then
     UIMgr:open_default_ui(false)
   end
@@ -214,19 +211,12 @@ function ui:_on_click_login_btn()
 end
 
 function ui:_onclick_out_btn()
-  local tip = Util.format_str("是否取消登录")
-  local cancel_btn = Util.format_str("取消")
-  local sure_btn = Util.format_str("确认")
-  local is_use_sdk = SDKManager:is_use_sdk()
-  if SDKManager:is_use_sdk() then
+  if UNITY_STANDALONE_WIN then
+    UIMgr:get_ui("ui_player_exit_tip"):ui_show()
+  elseif SDKManager:is_use_sdk() then
     SDKManager:logout()
   else
-    local sure_callback = function()
-      self.v_uiobjects.LoginPopup:SetActive(true)
-      self.v_uiobjects.SetServer:SetActive(false)
-      self.v_uiobjects.SetPlayerId:SetActive(true)
-    end
-    UIMgr:get_ui("uinotice_tips"):ui_show(sure_callback, nil, tip, sure_btn, cancel_btn)
+    self:show_logout_popup()
   end
 end
 
@@ -420,6 +410,20 @@ function ui:refresh_use_sdk_login_state()
     self:_on_click_choose_server_Btn()
   end
   self:_refresh_player_id_txt()
+end
+
+function ui:show_logout_popup()
+  local tip = Util.format_str("是否取消登录")
+  local cancel_btn = Util.format_str("取消")
+  local sure_btn = Util.format_str("确认")
+  
+  local function sure_callback()
+    self.v_uiobjects.LoginPopup:SetActive(true)
+    self.v_uiobjects.SetServer:SetActive(false)
+    self.v_uiobjects.SetPlayerId:SetActive(true)
+  end
+  
+  UIMgr:get_ui("uinotice_tips"):ui_show(sure_callback, nil, tip, sure_btn, cancel_btn)
 end
 
 return ui

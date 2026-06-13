@@ -130,5 +130,9 @@ return {
   [133] = {
     Name = "cond_check_ring_challenge_red",
     Type = 133
+  },
+  [134] = {
+    Name = "cond_climbing_tower_max_star",
+    Type = 134
   }
 }

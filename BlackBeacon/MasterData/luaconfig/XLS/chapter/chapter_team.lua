@@ -657,6 +657,436 @@ return {
       StandbyId = {}
     }
   },
+  [360026] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {
+        [2] = true,
+        [3] = true
+      },
+      BuddyId = {10002026},
+      BuddyRobot = {
+        [1001026] = 10002026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 360026,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10002026, 10002026},
+      StandbyId = {}
+    }
+  },
+  [610001] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001026] = 10001026,
+        [1001027] = 10001027
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610001,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10001027, 10001026},
+      StandbyId = {}
+    }
+  },
+  [610002] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001026] = 10001026,
+        [1001027] = 10001027
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610002,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10001027, 10001026},
+      StandbyId = {}
+    }
+  },
+  [610003] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001026] = 10001026,
+        [1001027] = 10001027
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610003,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10001027, 10001026},
+      StandbyId = {}
+    }
+  },
+  [610004] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001026] = 10001026,
+        [1001027] = 10001027
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610004,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10001027, 10001026},
+      StandbyId = {}
+    }
+  },
+  [610005] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001026] = 10001026,
+        [1001027] = 10001027
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610005,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10001027, 10001026},
+      StandbyId = {}
+    }
+  },
+  [610006] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001026] = 10001026,
+        [1001027] = 10001027
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610006,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10001027, 10001026},
+      StandbyId = {}
+    }
+  },
+  [610007] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001026] = 10001026,
+        [1001027] = 10001027
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610007,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10001027, 10001026},
+      StandbyId = {}
+    }
+  },
+  [610008] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001026] = 10001026,
+        [1001027] = 10001027
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610008,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10001027, 10001026},
+      StandbyId = {}
+    }
+  },
+  [610009] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001026] = 10001026,
+        [1001027] = 10001027
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610009,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10001027, 10001026},
+      StandbyId = {}
+    }
+  },
+  [610010] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001026] = 10001026,
+        [1001027] = 10001027
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610010,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10001027, 10001026},
+      StandbyId = {}
+    }
+  },
+  [610011] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {
+        [2] = true,
+        [3] = true
+      },
+      BuddyId = {10000001},
+      BuddyRobot = {
+        [1001001] = 10000001
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610011,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10000001, 10000001},
+      StandbyId = {}
+    }
+  },
+  [610012] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {
+        [2] = true,
+        [3] = true
+      },
+      BuddyId = {10000001},
+      BuddyRobot = {
+        [1001001] = 10000001
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610012,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10000001, 10000001},
+      StandbyId = {}
+    }
+  },
+  [610013] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {
+        [2] = true,
+        [3] = true
+      },
+      BuddyId = {10000001},
+      BuddyRobot = {
+        [1001001] = 10000001
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610013,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10000001, 10000001},
+      StandbyId = {}
+    }
+  },
+  [610014] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {
+        [2] = true,
+        [3] = true
+      },
+      BuddyId = {10000001},
+      BuddyRobot = {
+        [1001001] = 10000001
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610014,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10000001, 10000001},
+      StandbyId = {}
+    }
+  },
+  [610015] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001026] = 10001026,
+        [1001027] = 10001027
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610015,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10001027, 10001026},
+      StandbyId = {}
+    }
+  },
+  [610016] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001017] = 10001017,
+        [1001019] = 10001019
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610016,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10001017, 10001019},
+      StandbyId = {}
+    }
+  },
+  [610017] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001016] = 10001016,
+        [1001021] = 10001021
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610017,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10001016, 10001021},
+      StandbyId = {}
+    }
+  },
+  [610018] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001009] = 10001009,
+        [1001013] = 10001013
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610018,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10001009, 10001013},
+      StandbyId = {}
+    }
+  },
+  [610019] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001012] = 10001012,
+        [1001023] = 10001023
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 610019,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10001023, 10001012},
+      StandbyId = {}
+    }
+  },
   [800101] = {
     {
       BanBuddy = {},
@@ -838,6 +1268,762 @@ return {
       LimitCount = 0,
       LimitDesc = "",
       RobotPool = {10000001, 10000001},
+      StandbyId = {}
+    }
+  },
+  [800301] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {
+        [2] = true,
+        [3] = true
+      },
+      BuddyId = {10000012},
+      BuddyRobot = {
+        [1001012] = 10000012
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 800301,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10000012, 10000012},
+      StandbyId = {}
+    }
+  },
+  [800302] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {
+        [2] = true,
+        [3] = true
+      },
+      BuddyId = {10000012},
+      BuddyRobot = {
+        [1001012] = 10000012
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 800302,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10000012, 10000012},
+      StandbyId = {}
+    }
+  },
+  [800303] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {
+        [2] = true,
+        [3] = true
+      },
+      BuddyId = {10000012},
+      BuddyRobot = {
+        [1001012] = 10000012
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 800303,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10000012, 10000012},
+      StandbyId = {}
+    }
+  },
+  [800304] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {
+        [2] = true,
+        [3] = true
+      },
+      BuddyId = {10000012},
+      BuddyRobot = {
+        [1001012] = 10000012
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 800304,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10000012, 10000012},
+      StandbyId = {}
+    }
+  },
+  [800401] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {
+        [2] = true,
+        [3] = true
+      },
+      BuddyId = {10000012},
+      BuddyRobot = {
+        [1001012] = 10000012
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 800401,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10000012, 10000012},
+      StandbyId = {}
+    }
+  },
+  [800402] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {
+        [2] = true,
+        [3] = true
+      },
+      BuddyId = {10000012},
+      BuddyRobot = {
+        [1001012] = 10000012
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 800402,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10000012, 10000012},
+      StandbyId = {}
+    }
+  },
+  [800403] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {
+        [2] = true,
+        [3] = true
+      },
+      BuddyId = {10000012},
+      BuddyRobot = {
+        [1001012] = 10000012
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 800403,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10000012, 10000012},
+      StandbyId = {}
+    }
+  },
+  [800404] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {
+        [2] = true,
+        [3] = true
+      },
+      BuddyId = {10000012},
+      BuddyRobot = {
+        [1001012] = 10000012
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 800404,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {10000012, 10000012},
+      StandbyId = {}
+    }
+  },
+  [910101] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 910101,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [910102] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 910102,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [910103] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 910103,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [910104] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 910104,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [910105] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 910105,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [910201] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 910201,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [910202] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 910202,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [910301] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 910301,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [910302] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 910302,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [910303] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 910303,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [910304] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 910304,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [920101] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 920101,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [920102] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 920102,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [920103] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 920103,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [920104] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 920104,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [920105] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 920105,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [920201] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 920201,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [920202] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 920202,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [920301] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 920301,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [920302] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 920302,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [920303] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 920303,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
+      StandbyId = {}
+    }
+  },
+  [920304] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001014] = 10003014,
+        [1001016] = 10003016,
+        [1001026] = 10003026
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 920304,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {
+        10003026,
+        10003014,
+        10003016
+      },
       StandbyId = {}
     }
   },
@@ -4116,6 +5302,35 @@ return {
       StandbyId = {}
     }
   },
+  [10032501] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {
+        [3] = true
+      },
+      BuddyId = {10000025, 10000009},
+      BuddyRobot = {
+        [1001009] = 10000009,
+        [1001025] = 10000025
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 10032501,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      MainPos = 1,
+      RobotPool = {
+        10000025,
+        10000009,
+        10000025,
+        10000009
+      },
+      StandbyId = {}
+    }
+  },
   [10032601] = {
     {
       BanBuddy = {},
@@ -5123,6 +6338,446 @@ return {
       LimitDesc = "",
       MainPos = 1,
       RobotPool = {11000034, 11000034},
+      StandbyId = {}
+    }
+  },
+  [10080100] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {
+        [2] = true,
+        [3] = true
+      },
+      BuddyId = {10003009},
+      BuddyRobot = {
+        [1001009] = 10003009
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 10080100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      MainPos = 1,
+      RobotPool = {10003009, 10003009},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {10003009},
+      BuddyRobot = {
+        [1001009] = 10003009
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 2,
+      Id = 10080100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      MainPos = 1,
+      RobotPool = {10003009, 10003009},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {10003025},
+      BuddyRobot = {
+        [1001025] = 10003025
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 3,
+      Id = 10080100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      MainPos = 1,
+      RobotPool = {10003025, 10003025},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {
+        [2] = true,
+        [3] = true
+      },
+      BuddyId = {10003009},
+      BuddyRobot = {
+        [1001009] = 10003009
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 4,
+      Id = 10080100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      MainPos = 1,
+      RobotPool = {10003009, 10003009},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {10003025},
+      BuddyRobot = {
+        [1001025] = 10003025
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 5,
+      Id = 10080100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      MainPos = 1,
+      RobotPool = {10003025, 10003025},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {10003009},
+      BuddyRobot = {
+        [1001009] = 10003009
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 6,
+      Id = 10080100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      MainPos = 1,
+      RobotPool = {10003009, 10003009},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {10003009},
+      BuddyRobot = {
+        [1001009] = 10003009
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 7,
+      Id = 10080100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      MainPos = 1,
+      RobotPool = {10003009, 10003009},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {1001025},
+      BanBuddyMap = {
+        [1001025] = true
+      },
+      BanPos = {
+        [3] = true
+      },
+      BuddyId = {10003009},
+      BuddyRobot = {
+        [1001009] = 10003009,
+        [1001025] = 10003025
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 8,
+      Id = 10080100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      MainPos = 1,
+      RobotPool = {
+        10003009,
+        10003025,
+        10003009,
+        10003025
+      },
+      StandbyId = {
+        [3] = 10003025
+      }
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {10003009},
+      BuddyRobot = {
+        [1001009] = 10003009
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 9,
+      Id = 10080100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      MainPos = 1,
+      RobotPool = {10003009, 10003009},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {10003009},
+      BuddyRobot = {
+        [1001009] = 10003009
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 10,
+      Id = 10080100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      MainPos = 1,
+      RobotPool = {10003009, 10003009},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {10003009},
+      BuddyRobot = {
+        [1001009] = 10003009
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 11,
+      Id = 10080100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      MainPos = 1,
+      RobotPool = {10003009, 10003009},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {10003025},
+      BuddyRobot = {
+        [1001025] = 10003025
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 12,
+      Id = 10080100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      MainPos = 1,
+      RobotPool = {10003025, 10003025},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {10003009},
+      BuddyRobot = {
+        [1001009] = 10003009
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 13,
+      Id = 10080100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      MainPos = 1,
+      RobotPool = {10003009, 10003009},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {10003009},
+      BuddyRobot = {
+        [1001009] = 10003009
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 14,
+      Id = 10080100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      MainPos = 1,
+      RobotPool = {10003009, 10003009},
+      StandbyId = {}
+    }
+  },
+  [10091100] = {
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001001] = 11000036,
+        [1001014] = 11000037
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 1,
+      Id = 10091100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {11000036, 11000037},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001001] = 11000036,
+        [1001014] = 11000037
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 2,
+      Id = 10091100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {11000036, 11000037},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001001] = 11000036,
+        [1001014] = 11000037
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 3,
+      Id = 10091100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {11000036, 11000037},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001001] = 11000036,
+        [1001014] = 11000037
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 4,
+      Id = 10091100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {11000036, 11000037},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001001] = 11000036,
+        [1001014] = 11000037
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 5,
+      Id = 10091100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {11000036, 11000037},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001001] = 11000036,
+        [1001014] = 11000037
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 6,
+      Id = 10091100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {11000036, 11000037},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001001] = 11000036,
+        [1001014] = 11000037
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 7,
+      Id = 10091100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {11000036, 11000037},
+      StandbyId = {}
+    },
+    {
+      BanBuddy = {},
+      BanBuddyMap = {},
+      BanPos = {},
+      BuddyId = {},
+      BuddyRobot = {
+        [1001001] = 11000036,
+        [1001014] = 11000037
+      },
+      ElementId = 0,
+      FillRobot = 1,
+      FloorIdx = 8,
+      Id = 10091100,
+      JobId = 0,
+      LimitCount = 0,
+      LimitDesc = "",
+      RobotPool = {11000036, 11000037},
       StandbyId = {}
     }
   },

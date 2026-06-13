@@ -7,7 +7,7 @@ return {
       IsNoUse = false,
       IsLookAtRole = true,
       Camp = 4,
-      UnitID = 20103001,
+      UnitID = 20106001,
       InitPos = "M1",
       OffSetX = 0.0,
       OffSetZ = 0.0,
@@ -16,7 +16,7 @@ return {
       UnitKey = "0_601302_0",
       AutoLevel = 1,
       Delay = 0.0,
-      MagicId = 5000001
+      MagicId = 0
     },
     {
       Rotate = 0.0,
@@ -25,7 +25,7 @@ return {
       IsNoUse = false,
       IsLookAtRole = true,
       Camp = 4,
-      UnitID = 20103001,
+      UnitID = 20106001,
       InitPos = "M2",
       OffSetX = 0.0,
       OffSetZ = 0.0,
@@ -34,7 +34,7 @@ return {
       UnitKey = "0_601302_1",
       AutoLevel = 1,
       Delay = 0.0,
-      MagicId = 5000001
+      MagicId = 0
     },
     {
       Rotate = 0.0,
@@ -43,7 +43,7 @@ return {
       IsNoUse = false,
       IsLookAtRole = true,
       Camp = 4,
-      UnitID = 20102701,
+      UnitID = 20106001,
       InitPos = "M3",
       OffSetX = 0.0,
       OffSetZ = 0.0,
@@ -52,7 +52,7 @@ return {
       UnitKey = "0_601302_2",
       AutoLevel = 1,
       Delay = 0.0,
-      MagicId = 5000001
+      MagicId = 0
     },
     {
       Rotate = 0.0,
@@ -61,8 +61,8 @@ return {
       IsNoUse = false,
       IsLookAtRole = true,
       Camp = 4,
-      UnitID = 20102701,
-      InitPos = "M4",
+      UnitID = 20100901,
+      InitPos = "E2",
       OffSetX = 0.0,
       OffSetZ = 0.0,
       Level = 0,
@@ -70,7 +70,7 @@ return {
       UnitKey = "0_601302_3",
       AutoLevel = 1,
       Delay = 0.0,
-      MagicId = 5000001
+      MagicId = 0
     },
     {
       Rotate = 0.0,
@@ -79,8 +79,8 @@ return {
       IsNoUse = false,
       IsLookAtRole = true,
       Camp = 4,
-      UnitID = 20102701,
-      InitPos = "M10",
+      UnitID = 20100901,
+      InitPos = "E3",
       OffSetX = 0.0,
       OffSetZ = 0.0,
       Level = 0,
@@ -88,7 +88,30 @@ return {
       UnitKey = "0_601302_4",
       AutoLevel = 1,
       Delay = 0.0,
-      MagicId = 5000001
+      MagicId = 0
+    },
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = true,
+      Camp = 4,
+      UnitID = 20204901,
+      InitPos = "M1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "0_601302_5",
+      AutoLevel = 1,
+      Delay = 0.0,
+      MagicId = 0,
+      BornPos = {
+        133.463882,
+        357.098572,
+        -75.99234
+      }
     }
   },
   Name = "",

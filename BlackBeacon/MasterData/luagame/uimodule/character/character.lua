@@ -217,9 +217,11 @@ function ui:change_buddy(buddy_id)
   CharacterMgr:set_last_select_buddy_id(buddy_id)
   CharacterMgr:update_buddy_red(buddy_id)
   self.v_buddy_id = buddy_id
-  local load_cb = function()
+  
+  local function load_cb()
     MsgGame:mq_publish2(Const.MSG_INSIDE_LIST_CHANGE_BUDDY)
   end
+  
   self:update_model_view(self.v_buddy_id, load_cb)
   self.v_lie_cfg = ShareRes.get_buddy_lie_cfg(self.v_buddy_id)
 end

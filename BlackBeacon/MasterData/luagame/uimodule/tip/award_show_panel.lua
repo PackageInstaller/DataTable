@@ -197,7 +197,8 @@ end
 
 function ui:update_item_view(item_ui, item_id, item_num)
   local quality_img = Util.get_image("Main_Content/Bg", item_ui)
-  local callback = function()
+  
+  local function callback()
     UIMgr:get_ui("itemTip"):ui_show({
       item_id = item_id,
       is_exist_jump = false,
@@ -207,6 +208,7 @@ function ui:update_item_view(item_ui, item_id, item_num)
       end
     })
   end
+  
   local item = self:create_item_obj(nil, quality_img.gameObject, nil, {item_id = item_id, click_cb = callback})
   local num_bg = self:get_child_gameobj("Main_Content/amount", item_ui)
   num_bg:SetActive(item_num >= 1)

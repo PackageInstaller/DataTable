@@ -104,7 +104,7 @@ local BookIndexs = {
   Book3 = {name = "Book3_", index = 3},
   Book4 = {name = "Book4_", index = 4}
 }
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local TypeSceneContainer = typeof(CS.Game.SceneContainer)
 
 function ui:ui_finish_load()

@@ -787,7 +787,7 @@ function M:get_load_progress()
   return self.v_need_load_res_num, self.v_load_suc_num
 end
 
-local mask_the_story_res = function(flag_list, res_name)
+local function mask_the_story_res(flag_list, res_name)
   local not_mask = nil == flag_list[res_name]
   if not_mask then
     flag_list[res_name] = true

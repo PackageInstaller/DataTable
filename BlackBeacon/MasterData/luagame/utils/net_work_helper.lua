@@ -1,4 +1,4 @@
-local CSHelper = CSHelper
+local CSHelper = _ENV.CSHelper
 local NOT_REACHABLE = 0
 local NET_CHECK_COUNTER = 20
 local NET_CHECK_MAX_CNT = 3

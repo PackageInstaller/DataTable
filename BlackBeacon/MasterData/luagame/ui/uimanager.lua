@@ -13,7 +13,7 @@ local COMMON_RETURN_BUTTON_NAME = {
   "BtnRetX",
   "BtnRet"
 }
-local UnityFind = UnityFind
+local UnityFind = _ENV.UnityFind
 local UnityCamera = typeof(UnityEngine.Camera)
 local CSUIGaussianBlur = typeof(CS.Game.UIGaussianBlur)
 local CSScreen = UnityEngine.Screen
@@ -254,7 +254,7 @@ function M:reset()
   self.v_main_scene_after_load_ui = nil
 end
 
-local new_ui = function(self, cfg)
+local function new_ui(self, cfg)
   local clz = require("uimodule." .. cfg.class)
   local ui = clz.ui_new(clz, cfg, nil, self.root_obj, self.root_camera)
   return ui
@@ -645,7 +645,8 @@ function M:set_backgroud_blur(ui_name, callback, cbdata, target_blur_type)
   if target_blur_type then
     blur_type = target_blur_type
   end
-  local after_blur = function()
+  
+  local function after_blur()
     local tex = self.v_blur_componet:GetBlurTexture()
     for _, v in ipairs(self.v_blur_stack[blur_type]) do
       if v.ui_name == ui_name then
@@ -660,6 +661,7 @@ function M:set_backgroud_blur(ui_name, callback, cbdata, target_blur_type)
       self:remove_backgroud_blur(ui_name)
     end
   end
+  
   table.insert(self.v_blur_stack[blur_type], {ui_name = ui_name, after_blur = after_blur})
   self:_set_blur(blur_type, after_blur, ui_name)
 end

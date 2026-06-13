@@ -417,10 +417,12 @@ function ui:click_btn_ornament_pay(is_use_curse_value, ornament_id, goods_index)
       return
     end
   end
-  local suc_cb = function()
+  
+  local function suc_cb()
     Util.show_message_tip(2048)
     self:ui_hide()
   end
+  
   local pos = BattleOrnamentMgr:get_null_pos()
   if self.v_npc_data then
     BattleOrnamentMgr:buy_ornament_by_npc_shop(self.v_npc_data.npc_id, self.v_select_good_data.index, nil, pos, nil)

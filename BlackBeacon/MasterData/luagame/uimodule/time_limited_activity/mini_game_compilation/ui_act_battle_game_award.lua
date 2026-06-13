@@ -123,7 +123,8 @@ function ui:refresh()
       has_award = true
     end
   end
-  local get_sort_id = function(state)
+  
+  local function get_sort_id(state)
     if state == TASK_STATE.COMPLETE then
       return 1
     elseif state == TASK_STATE.GET_REWARD then
@@ -132,6 +133,7 @@ function ui:refresh()
       return 2
     end
   end
+  
   table.sort(task_list, function(a, b)
     local a_state = TaskMgr:get_task_state(a.Id)
     local b_state = TaskMgr:get_task_state(b.Id)

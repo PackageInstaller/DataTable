@@ -8,13 +8,15 @@ function M.init()
 end
 
 function M.login(callback, cbdata)
-  local login_cb = function(ok, resp, is_reconnect)
+  local function login_cb(ok, resp, is_reconnect)
     callback(cbdata, ok, resp, is_reconnect)
   end
-  local reconnect_cb = function()
+  
+  local function reconnect_cb()
     UIMgr:get_ui("reconnecting"):ui_show(Config.CONNECT.LOBBY)
     return true
   end
+  
   Network:init(login_cb, reconnect_cb)
 end
 

@@ -9,11 +9,12 @@ return {
     groupId = 6
   },
   [10011008] = {
-    BasicLimit = {102410010750},
+    BasicLimit = {102410010700},
     ChapterBg = "SideStoryBg01_08",
     ChapterId = 10081,
     GroupName = "午夜降临前",
     Id = 10011008,
+    StartTime = 51001,
     Type = 1,
     groupId = 8
   }

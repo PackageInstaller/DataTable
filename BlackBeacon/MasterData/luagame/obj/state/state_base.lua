@@ -17,6 +17,12 @@ function M:_init(owner, state_manager)
   end
 end
 
+function M:on_destroy()
+  self.v_owner = nil
+  self.v_state_manager = nil
+  self.v_state_tbl = nil
+end
+
 function M:has_old_state()
   return self.v_has_old_state
 end

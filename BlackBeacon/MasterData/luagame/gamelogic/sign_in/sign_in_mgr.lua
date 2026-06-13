@@ -8,7 +8,7 @@ function M:init_sys()
   self.v_change_sign_in = false
 end
 
-local is_sign_check = function(nowday, today, is_today_done)
+local function is_sign_check(nowday, today, is_today_done)
   if is_today_done then
     if nowday <= today then
       return true

@@ -76,8 +76,8 @@ function ui:on_produce_finish()
   self:try_move_mat_to_content()
 end
 
-function ui:on_upgrade(msg)
-  if not self.v_duration_sys_id or self.v_duration_sys_id ~= msg.mm_x then
+function ui:on_upgrade()
+  if not self.v_duration_sys_id then
     return
   end
   self.v_duration_second = BarbecueGameMgr:get_val_by_sys_id(self.v_duration_sys_id)

@@ -808,5 +808,35 @@ return {
     SkillDesc = "习得青技能3",
     SkillId = 100102703,
     SkillType = 1
+  },
+  [100103001] = {
+    BuddyId = 1001030,
+    EffectId = 3,
+    Icon = "UI_skill_counter_1",
+    MasteryType = "小技能",
+    Name = "闪避",
+    SkillDesc = "习得青闪避",
+    SkillId = 100103001,
+    SkillType = 1
+  },
+  [100103002] = {
+    BuddyId = 1001030,
+    EffectId = 4,
+    Icon = "UI_H1001030_skill1_1",
+    MasteryType = "小技能",
+    Name = "技能2",
+    SkillDesc = "习得青技能2",
+    SkillId = 100103002,
+    SkillType = 1
+  },
+  [100103003] = {
+    BuddyId = 1001030,
+    EffectId = 5,
+    Icon = "UI_H1001030_skill2_1",
+    MasteryType = "小技能",
+    Name = "技能3",
+    SkillDesc = "习得青技能3",
+    SkillId = 100103003,
+    SkillType = 1
   }
 }

@@ -108,9 +108,11 @@ function ui:_onclick_equip_btn()
     self:_onclick_close_btn()
     return
   end
-  local callback = function()
+  
+  local function callback()
     self:_onclick_close_btn()
   end
+  
   if self.v_source == bagConfig.EquipSrc.Bag then
     FightBagMgr:request_take_on_equip(self.v_hero.buddy_cfg.ModelId, self.v_item_data, callback)
   else

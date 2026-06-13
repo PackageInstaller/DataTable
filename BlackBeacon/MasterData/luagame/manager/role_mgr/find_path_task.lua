@@ -36,7 +36,8 @@ end
 local M = Util.create_class()
 local _tinsert = table.insert
 local s_unique_id = 0
-local _next_unique_id = function()
+
+local function _next_unique_id()
   s_unique_id = s_unique_id + 1
   return s_unique_id
 end

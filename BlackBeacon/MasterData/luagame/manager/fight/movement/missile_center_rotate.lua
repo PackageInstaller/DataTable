@@ -35,7 +35,7 @@ function M:set_params(params)
   self.v_use_born_y = Util.is_more_than_zero(params[6])
 end
 
-local _get_param_index = function(self)
+local function _get_param_index(self)
   local time = 0
   for index = 1, #self.v_times do
     time = time + self.v_times[index]
@@ -45,18 +45,21 @@ local _get_param_index = function(self)
   end
   return #self.v_times
 end
-local _check_cur_time = function(self, index)
+
+local function _check_cur_time(self, index)
   if self.cur_index ~= index then
     self.v_cur_time = 0
   end
   self.cur_index = index
 end
-local _get_speed = function(self)
+
+local function _get_speed(self)
   local index = _get_param_index(self)
   _check_cur_time(self, index)
   return (self:_get_base_speed(index) + self:_get_acc(index) * self.v_cur_time) * self.v_time_scale * self.v_missile:get_owner_time_scale()
 end
-local _radius_rotate = function(self, dt)
+
+local function _radius_rotate(self, dt)
   self.v_cur_rad = self.v_cur_rad + dt * _get_speed(self) * deg2rad
   local dx = _sin(self.v_cur_rad) * self.v_raduis
   local dz = _cos(self.v_cur_rad) * self.v_raduis
@@ -67,7 +70,8 @@ local _radius_rotate = function(self, dt)
   end
   self.v_missile:set_pos(dx + sx, sy, dz + sz)
 end
-local _self_rotate = function(self, dt)
+
+local function _self_rotate(self, dt)
   self.v_cur_rotate_deg = self.v_cur_rotate_deg + dt * _get_speed(self)
   self.v_missile.transform:SetLocalEulerY(self.v_cur_rotate_deg)
 end

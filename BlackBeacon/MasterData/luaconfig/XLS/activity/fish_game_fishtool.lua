@@ -7,7 +7,7 @@ return {
     Id = 1,
     LaunchSpeed = 60,
     MaximumDistance = 1600,
-    RecyclingSpeed = 60,
+    RecyclingSpeed = 70,
     RotationSpeed = 4
   },
   {

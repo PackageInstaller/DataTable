@@ -43,14 +43,17 @@ function ui:on_click_btn()
       story_id = task_cfg.StoryId
       chain_centre_event_id = task_cfg.ChainCentreEventId
     end
-    local get_cb = function()
+    
+    local function get_cb()
       if self:visible() then
-        local story_end_cb = function()
+        local function story_end_cb()
           BuildingMgr:try_show_adventrue_task_award()
+          
           if Util.is_more_than_zero(chain_centre_event_id) then
             UIMgr:get_ui("building_batch_tips"):ui_show(task_id, true)
           end
         end
+        
         if Util.is_more_than_zero(story_id) then
           StoryMgr:on_start(story_id)
           StoryMgr:set_story_end_cb(story_id, story_end_cb)
@@ -59,6 +62,7 @@ function ui:on_click_btn()
         end
       end
     end
+    
     BuildingMgr:requst_adventure_gain_task_reward(self.v_task_type, self.v_task_index, task_data.is_history, get_cb)
     return
   else

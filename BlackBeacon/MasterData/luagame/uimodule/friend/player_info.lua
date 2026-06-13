@@ -120,10 +120,12 @@ function ui:ui_finish_load()
     FriendMgr:set_show_player_info()
   end)
   self:set_button("BtnSend", function()
-    local apply_callback = function()
+    local function apply_callback()
       Util.show_message_tip(2194)
+      
       self:update_btn_state()
     end
+    
     FriendMgr:apply_add_friend(self.v_player_data.uuid, apply_callback)
   end)
   self:set_button("BtnFunction", function()
@@ -146,9 +148,11 @@ function ui:ui_finish_load()
   end)
   self:set_button("BtnDeleteFriend", function()
     self.v_uiobjects.FunctionList:SetActive(false)
-    local conform_callback = function()
+    
+    local function conform_callback()
       FriendMgr:delete_friend(self.v_player_data.uuid)
     end
+    
     local desc = Util.get_i18n("确认删除该好友")
     Util.show_conform_tip(desc, nil, nil, nil, conform_callback)
   end)
@@ -180,11 +184,13 @@ function ui:init_event()
 end
 
 function ui:set_black()
-  local cb = function()
+  local function cb()
     self.v_uiobjects.FunctionList:SetActive(false)
+    
     self:update_player_info()
     Util.show_message_tip(2197)
   end
+  
   FriendMgr:add_friend_black_list(self.v_player_data.uuid, self.v_player_data, cb)
 end
 

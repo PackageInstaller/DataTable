@@ -17,14 +17,16 @@ local BUILDING_TYPE_TO_LEVEL_UP_RED = {
   [CommonDefine.BUILDING_TYPE.COMBINE] = RedEnum.COMBINE_LV_UP
 }
 local BUILDING_USE_ITEM = BUILDING_CONFIG.BUILDING_USE_ITEM
-local start_time_sort_func = function(a, b)
+
+local function start_time_sort_func(a, b)
   if a.start_time ~= b.start_time then
     return a.start_time < b.start_time
   else
     return false
   end
 end
-local _check_adventrue_team_limit = function(limit_cfg, compare_map, show_tips)
+
+local function _check_adventrue_team_limit(limit_cfg, compare_map, show_tips)
   local args = limit_cfg.Arg
   local suc
   if limit_cfg.Type == CommonDefine.BUILDING_BUDDY_LIMIT.BUDDY_ID then
@@ -676,13 +678,15 @@ end
 function M:select_clue_map_to_use_clue_list(show_tips)
   self:check_all_clue_is_expier()
   local temp_list
-  local sort = function(a, b)
+  
+  local function sort(a, b)
     if a.expire_time ~= b.expire_time then
       return a.expire_time < b.expire_time
     else
       return false
     end
   end
+  
   local clue_list = {}
   local clue_count
   if self.v_select_clue_count_map then
@@ -1029,7 +1033,8 @@ function M:get_task_count_by_type(task_type)
 end
 
 local designated_role_map, designated_element_map, designated_job_map, weight_list, target_clue_id
-local _char_list_sort_func = function(a, b)
+
+local function _char_list_sort_func(a, b)
   local a_cfg, b_cfg = ShareRes.get_buddy_cfg(a.id), ShareRes.get_buddy_cfg(b.id)
   local a_used, b_used = BuildingMgr:check_char_is_dispatch(a.id), BuildingMgr:check_char_is_dispatch(b.id)
   if a_used ~= b_used then

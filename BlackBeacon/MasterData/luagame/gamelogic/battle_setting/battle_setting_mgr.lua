@@ -886,8 +886,9 @@ function M:get_start_drag_ratio()
 end
 
 do
-  local show_notification_change_msg = function(type, is_on)
+  local function show_notification_change_msg(type, is_on)
     local is_on_str = is_on and "开启" or "关闭"
+    
     local tip_content = string.format("%s%s: [Glohow] %s %s %s", is_on_str, Setting_Cfg.NOTIFICATION_TYPE_NAME[type], Date.get_time_year_month_day(Date.now()), is_on_str, Setting_Cfg.NOTIFICATION_TYPE_NAME[type])
     Util.show_banner_tip(tip_content)
   end
