@@ -1,0 +1,22831 @@
+local title = {
+	id = 0,
+	year = 0,
+	month = 0,
+	days = 0,
+	dailyReward = 0,
+	effect = 0,
+	monthlyCard = 0,
+	festival = 0
+}
+
+local value = {
+[211101] =
+{
+ 		id=211101,
+ 		year=2021,
+ 		month=11,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=122,
+ 	festival=0
+},
+[211102] =
+{
+ 		id=211102,
+ 		year=2021,
+ 		month=11,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=122,
+ 	festival=0
+},
+[211103] =
+{
+ 		id=211103,
+ 		year=2021,
+ 		month=11,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=122,
+ 	festival=0
+},
+[211104] =
+{
+ 		id=211104,
+ 		year=2021,
+ 		month=11,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=122,
+ 	festival=0
+},
+[211105] =
+{
+ 		id=211105,
+ 		year=2021,
+ 		month=11,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=122,
+ 	festival=0
+},
+[211106] =
+{
+ 		id=211106,
+ 		year=2021,
+ 		month=11,
+ 		days=6,
+ 		dailyReward=806,
+ 		effect=1,
+ 		monthlyCard=122,
+ 	festival=0
+},
+[211107] =
+{
+ 		id=211107,
+ 		year=2021,
+ 		month=11,
+ 		days=7,
+ 		dailyReward=807,
+ 		monthlyCard=122,
+ 	festival=0
+},
+[211108] =
+{
+ 		id=211108,
+ 		year=2021,
+ 		month=11,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=122,
+ 	festival=0
+},
+[211109] =
+{
+ 		id=211109,
+ 		year=2021,
+ 		month=11,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=122,
+ 	festival=0
+},
+[211110] =
+{
+ 		id=211110,
+ 		year=2021,
+ 		month=11,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211111] =
+{
+ 		id=211111,
+ 		year=2021,
+ 		month=11,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211112] =
+{
+ 		id=211112,
+ 		year=2021,
+ 		month=11,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211113] =
+{
+ 		id=211113,
+ 		year=2021,
+ 		month=11,
+ 		days=13,
+ 		dailyReward=813,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211114] =
+{
+ 		id=211114,
+ 		year=2021,
+ 		month=11,
+ 		days=14,
+ 		dailyReward=814,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211115] =
+{
+ 		id=211115,
+ 		year=2021,
+ 		month=11,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211116] =
+{
+ 		id=211116,
+ 		year=2021,
+ 		month=11,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211117] =
+{
+ 		id=211117,
+ 		year=2021,
+ 		month=11,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211118] =
+{
+ 		id=211118,
+ 		year=2021,
+ 		month=11,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211119] =
+{
+ 		id=211119,
+ 		year=2021,
+ 		month=11,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211120] =
+{
+ 		id=211120,
+ 		year=2021,
+ 		month=11,
+ 		days=20,
+ 		dailyReward=820,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211121] =
+{
+ 		id=211121,
+ 		year=2021,
+ 		month=11,
+ 		days=21,
+ 		dailyReward=821,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211122] =
+{
+ 		id=211122,
+ 		year=2021,
+ 		month=11,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211123] =
+{
+ 		id=211123,
+ 		year=2021,
+ 		month=11,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211124] =
+{
+ 		id=211124,
+ 		year=2021,
+ 		month=11,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211125] =
+{
+ 		id=211125,
+ 		year=2021,
+ 		month=11,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211126] =
+{
+ 		id=211126,
+ 		year=2021,
+ 		month=11,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211127] =
+{
+ 		id=211127,
+ 		year=2021,
+ 		month=11,
+ 		days=27,
+ 		dailyReward=827,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211128] =
+{
+ 		id=211128,
+ 		year=2021,
+ 		month=11,
+ 		days=28,
+ 		dailyReward=828,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211129] =
+{
+ 		id=211129,
+ 		year=2021,
+ 		month=11,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211130] =
+{
+ 		id=211130,
+ 		year=2021,
+ 		month=11,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211201] =
+{
+ 		id=211201,
+ 		year=2021,
+ 		month=12,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211202] =
+{
+ 		id=211202,
+ 		year=2021,
+ 		month=12,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211203] =
+{
+ 		id=211203,
+ 		year=2021,
+ 		month=12,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211204] =
+{
+ 		id=211204,
+ 		year=2021,
+ 		month=12,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211205] =
+{
+ 		id=211205,
+ 		year=2021,
+ 		month=12,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211206] =
+{
+ 		id=211206,
+ 		year=2021,
+ 		month=12,
+ 		days=6,
+ 		dailyReward=806,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211207] =
+{
+ 		id=211207,
+ 		year=2021,
+ 		month=12,
+ 		days=7,
+ 		dailyReward=807,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211208] =
+{
+ 		id=211208,
+ 		year=2021,
+ 		month=12,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211209] =
+{
+ 		id=211209,
+ 		year=2021,
+ 		month=12,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211210] =
+{
+ 		id=211210,
+ 		year=2021,
+ 		month=12,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211211] =
+{
+ 		id=211211,
+ 		year=2021,
+ 		month=12,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211212] =
+{
+ 		id=211212,
+ 		year=2021,
+ 		month=12,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211213] =
+{
+ 		id=211213,
+ 		year=2021,
+ 		month=12,
+ 		days=13,
+ 		dailyReward=813,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211214] =
+{
+ 		id=211214,
+ 		year=2021,
+ 		month=12,
+ 		days=14,
+ 		dailyReward=814,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211215] =
+{
+ 		id=211215,
+ 		year=2021,
+ 		month=12,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211216] =
+{
+ 		id=211216,
+ 		year=2021,
+ 		month=12,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211217] =
+{
+ 		id=211217,
+ 		year=2021,
+ 		month=12,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211218] =
+{
+ 		id=211218,
+ 		year=2021,
+ 		month=12,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211219] =
+{
+ 		id=211219,
+ 		year=2021,
+ 		month=12,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211220] =
+{
+ 		id=211220,
+ 		year=2021,
+ 		month=12,
+ 		days=20,
+ 		dailyReward=820,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211221] =
+{
+ 		id=211221,
+ 		year=2021,
+ 		month=12,
+ 		days=21,
+ 		dailyReward=821,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211222] =
+{
+ 		id=211222,
+ 		year=2021,
+ 		month=12,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211223] =
+{
+ 		id=211223,
+ 		year=2021,
+ 		month=12,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211224] =
+{
+ 		id=211224,
+ 		year=2021,
+ 		month=12,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211225] =
+{
+ 		id=211225,
+ 		year=2021,
+ 		month=12,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211226] =
+{
+ 		id=211226,
+ 		year=2021,
+ 		month=12,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211227] =
+{
+ 		id=211227,
+ 		year=2021,
+ 		month=12,
+ 		days=27,
+ 		dailyReward=827,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211228] =
+{
+ 		id=211228,
+ 		year=2021,
+ 		month=12,
+ 		days=28,
+ 		dailyReward=828,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211229] =
+{
+ 		id=211229,
+ 		year=2021,
+ 		month=12,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211230] =
+{
+ 		id=211230,
+ 		year=2021,
+ 		month=12,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[211231] =
+{
+ 		id=211231,
+ 		year=2021,
+ 		month=12,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220101] =
+{
+ 		id=220101,
+ 		year=2022,
+ 		month=1,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220102] =
+{
+ 		id=220102,
+ 		year=2022,
+ 		month=1,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220103] =
+{
+ 		id=220103,
+ 		year=2022,
+ 		month=1,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220104] =
+{
+ 		id=220104,
+ 		year=2022,
+ 		month=1,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220105] =
+{
+ 		id=220105,
+ 		year=2022,
+ 		month=1,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220106] =
+{
+ 		id=220106,
+ 		year=2022,
+ 		month=1,
+ 		days=6,
+ 		dailyReward=806,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220107] =
+{
+ 		id=220107,
+ 		year=2022,
+ 		month=1,
+ 		days=7,
+ 		dailyReward=807,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220108] =
+{
+ 		id=220108,
+ 		year=2022,
+ 		month=1,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220109] =
+{
+ 		id=220109,
+ 		year=2022,
+ 		month=1,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220110] =
+{
+ 		id=220110,
+ 		year=2022,
+ 		month=1,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220111] =
+{
+ 		id=220111,
+ 		year=2022,
+ 		month=1,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220112] =
+{
+ 		id=220112,
+ 		year=2022,
+ 		month=1,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220113] =
+{
+ 		id=220113,
+ 		year=2022,
+ 		month=1,
+ 		days=13,
+ 		dailyReward=813,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220114] =
+{
+ 		id=220114,
+ 		year=2022,
+ 		month=1,
+ 		days=14,
+ 		dailyReward=814,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220115] =
+{
+ 		id=220115,
+ 		year=2022,
+ 		month=1,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220116] =
+{
+ 		id=220116,
+ 		year=2022,
+ 		month=1,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220117] =
+{
+ 		id=220117,
+ 		year=2022,
+ 		month=1,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220118] =
+{
+ 		id=220118,
+ 		year=2022,
+ 		month=1,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220119] =
+{
+ 		id=220119,
+ 		year=2022,
+ 		month=1,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220120] =
+{
+ 		id=220120,
+ 		year=2022,
+ 		month=1,
+ 		days=20,
+ 		dailyReward=820,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220121] =
+{
+ 		id=220121,
+ 		year=2022,
+ 		month=1,
+ 		days=21,
+ 		dailyReward=821,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220122] =
+{
+ 		id=220122,
+ 		year=2022,
+ 		month=1,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220123] =
+{
+ 		id=220123,
+ 		year=2022,
+ 		month=1,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220124] =
+{
+ 		id=220124,
+ 		year=2022,
+ 		month=1,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220125] =
+{
+ 		id=220125,
+ 		year=2022,
+ 		month=1,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220126] =
+{
+ 		id=220126,
+ 		year=2022,
+ 		month=1,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220127] =
+{
+ 		id=220127,
+ 		year=2022,
+ 		month=1,
+ 		days=27,
+ 		dailyReward=827,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220128] =
+{
+ 		id=220128,
+ 		year=2022,
+ 		month=1,
+ 		days=28,
+ 		dailyReward=828,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220129] =
+{
+ 		id=220129,
+ 		year=2022,
+ 		month=1,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220130] =
+{
+ 		id=220130,
+ 		year=2022,
+ 		month=1,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220131] =
+{
+ 		id=220131,
+ 		year=2022,
+ 		month=1,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220201] =
+{
+ 		id=220201,
+ 		year=2022,
+ 		month=2,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220202] =
+{
+ 		id=220202,
+ 		year=2022,
+ 		month=2,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220203] =
+{
+ 		id=220203,
+ 		year=2022,
+ 		month=2,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220204] =
+{
+ 		id=220204,
+ 		year=2022,
+ 		month=2,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220205] =
+{
+ 		id=220205,
+ 		year=2022,
+ 		month=2,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220206] =
+{
+ 		id=220206,
+ 		year=2022,
+ 		month=2,
+ 		days=6,
+ 		dailyReward=806,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220207] =
+{
+ 		id=220207,
+ 		year=2022,
+ 		month=2,
+ 		days=7,
+ 		dailyReward=807,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220208] =
+{
+ 		id=220208,
+ 		year=2022,
+ 		month=2,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220209] =
+{
+ 		id=220209,
+ 		year=2022,
+ 		month=2,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220210] =
+{
+ 		id=220210,
+ 		year=2022,
+ 		month=2,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220211] =
+{
+ 		id=220211,
+ 		year=2022,
+ 		month=2,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220212] =
+{
+ 		id=220212,
+ 		year=2022,
+ 		month=2,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220213] =
+{
+ 		id=220213,
+ 		year=2022,
+ 		month=2,
+ 		days=13,
+ 		dailyReward=813,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220214] =
+{
+ 		id=220214,
+ 		year=2022,
+ 		month=2,
+ 		days=14,
+ 		dailyReward=814,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220215] =
+{
+ 		id=220215,
+ 		year=2022,
+ 		month=2,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220216] =
+{
+ 		id=220216,
+ 		year=2022,
+ 		month=2,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220217] =
+{
+ 		id=220217,
+ 		year=2022,
+ 		month=2,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220218] =
+{
+ 		id=220218,
+ 		year=2022,
+ 		month=2,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220219] =
+{
+ 		id=220219,
+ 		year=2022,
+ 		month=2,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220220] =
+{
+ 		id=220220,
+ 		year=2022,
+ 		month=2,
+ 		days=20,
+ 		dailyReward=820,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220221] =
+{
+ 		id=220221,
+ 		year=2022,
+ 		month=2,
+ 		days=21,
+ 		dailyReward=821,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220222] =
+{
+ 		id=220222,
+ 		year=2022,
+ 		month=2,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220223] =
+{
+ 		id=220223,
+ 		year=2022,
+ 		month=2,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220224] =
+{
+ 		id=220224,
+ 		year=2022,
+ 		month=2,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220225] =
+{
+ 		id=220225,
+ 		year=2022,
+ 		month=2,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220226] =
+{
+ 		id=220226,
+ 		year=2022,
+ 		month=2,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220227] =
+{
+ 		id=220227,
+ 		year=2022,
+ 		month=2,
+ 		days=27,
+ 		dailyReward=827,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220228] =
+{
+ 		id=220228,
+ 		year=2022,
+ 		month=2,
+ 		days=28,
+ 		dailyReward=828,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220301] =
+{
+ 		id=220301,
+ 		year=2022,
+ 		month=3,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220302] =
+{
+ 		id=220302,
+ 		year=2022,
+ 		month=3,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220303] =
+{
+ 		id=220303,
+ 		year=2022,
+ 		month=3,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220304] =
+{
+ 		id=220304,
+ 		year=2022,
+ 		month=3,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220305] =
+{
+ 		id=220305,
+ 		year=2022,
+ 		month=3,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220306] =
+{
+ 		id=220306,
+ 		year=2022,
+ 		month=3,
+ 		days=6,
+ 		dailyReward=806,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220307] =
+{
+ 		id=220307,
+ 		year=2022,
+ 		month=3,
+ 		days=7,
+ 		dailyReward=807,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220308] =
+{
+ 		id=220308,
+ 		year=2022,
+ 		month=3,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220309] =
+{
+ 		id=220309,
+ 		year=2022,
+ 		month=3,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220310] =
+{
+ 		id=220310,
+ 		year=2022,
+ 		month=3,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220311] =
+{
+ 		id=220311,
+ 		year=2022,
+ 		month=3,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220312] =
+{
+ 		id=220312,
+ 		year=2022,
+ 		month=3,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220313] =
+{
+ 		id=220313,
+ 		year=2022,
+ 		month=3,
+ 		days=13,
+ 		dailyReward=813,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220314] =
+{
+ 		id=220314,
+ 		year=2022,
+ 		month=3,
+ 		days=14,
+ 		dailyReward=814,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220315] =
+{
+ 		id=220315,
+ 		year=2022,
+ 		month=3,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220316] =
+{
+ 		id=220316,
+ 		year=2022,
+ 		month=3,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220317] =
+{
+ 		id=220317,
+ 		year=2022,
+ 		month=3,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220318] =
+{
+ 		id=220318,
+ 		year=2022,
+ 		month=3,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220319] =
+{
+ 		id=220319,
+ 		year=2022,
+ 		month=3,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220320] =
+{
+ 		id=220320,
+ 		year=2022,
+ 		month=3,
+ 		days=20,
+ 		dailyReward=820,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220321] =
+{
+ 		id=220321,
+ 		year=2022,
+ 		month=3,
+ 		days=21,
+ 		dailyReward=821,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220322] =
+{
+ 		id=220322,
+ 		year=2022,
+ 		month=3,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220323] =
+{
+ 		id=220323,
+ 		year=2022,
+ 		month=3,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220324] =
+{
+ 		id=220324,
+ 		year=2022,
+ 		month=3,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220325] =
+{
+ 		id=220325,
+ 		year=2022,
+ 		month=3,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220326] =
+{
+ 		id=220326,
+ 		year=2022,
+ 		month=3,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220327] =
+{
+ 		id=220327,
+ 		year=2022,
+ 		month=3,
+ 		days=27,
+ 		dailyReward=827,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220328] =
+{
+ 		id=220328,
+ 		year=2022,
+ 		month=3,
+ 		days=28,
+ 		dailyReward=828,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220329] =
+{
+ 		id=220329,
+ 		year=2022,
+ 		month=3,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220330] =
+{
+ 		id=220330,
+ 		year=2022,
+ 		month=3,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220331] =
+{
+ 		id=220331,
+ 		year=2022,
+ 		month=3,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220401] =
+{
+ 		id=220401,
+ 		year=2022,
+ 		month=4,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220402] =
+{
+ 		id=220402,
+ 		year=2022,
+ 		month=4,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220403] =
+{
+ 		id=220403,
+ 		year=2022,
+ 		month=4,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220404] =
+{
+ 		id=220404,
+ 		year=2022,
+ 		month=4,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220405] =
+{
+ 		id=220405,
+ 		year=2022,
+ 		month=4,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220406] =
+{
+ 		id=220406,
+ 		year=2022,
+ 		month=4,
+ 		days=6,
+ 		dailyReward=806,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220407] =
+{
+ 		id=220407,
+ 		year=2022,
+ 		month=4,
+ 		days=7,
+ 		dailyReward=807,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220408] =
+{
+ 		id=220408,
+ 		year=2022,
+ 		month=4,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220409] =
+{
+ 		id=220409,
+ 		year=2022,
+ 		month=4,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220410] =
+{
+ 		id=220410,
+ 		year=2022,
+ 		month=4,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220411] =
+{
+ 		id=220411,
+ 		year=2022,
+ 		month=4,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220412] =
+{
+ 		id=220412,
+ 		year=2022,
+ 		month=4,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220413] =
+{
+ 		id=220413,
+ 		year=2022,
+ 		month=4,
+ 		days=13,
+ 		dailyReward=813,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220414] =
+{
+ 		id=220414,
+ 		year=2022,
+ 		month=4,
+ 		days=14,
+ 		dailyReward=814,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220415] =
+{
+ 		id=220415,
+ 		year=2022,
+ 		month=4,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220416] =
+{
+ 		id=220416,
+ 		year=2022,
+ 		month=4,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220417] =
+{
+ 		id=220417,
+ 		year=2022,
+ 		month=4,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220418] =
+{
+ 		id=220418,
+ 		year=2022,
+ 		month=4,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220419] =
+{
+ 		id=220419,
+ 		year=2022,
+ 		month=4,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220420] =
+{
+ 		id=220420,
+ 		year=2022,
+ 		month=4,
+ 		days=20,
+ 		dailyReward=820,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220421] =
+{
+ 		id=220421,
+ 		year=2022,
+ 		month=4,
+ 		days=21,
+ 		dailyReward=821,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220422] =
+{
+ 		id=220422,
+ 		year=2022,
+ 		month=4,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220423] =
+{
+ 		id=220423,
+ 		year=2022,
+ 		month=4,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220424] =
+{
+ 		id=220424,
+ 		year=2022,
+ 		month=4,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220425] =
+{
+ 		id=220425,
+ 		year=2022,
+ 		month=4,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220426] =
+{
+ 		id=220426,
+ 		year=2022,
+ 		month=4,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220427] =
+{
+ 		id=220427,
+ 		year=2022,
+ 		month=4,
+ 		days=27,
+ 		dailyReward=827,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220428] =
+{
+ 		id=220428,
+ 		year=2022,
+ 		month=4,
+ 		days=28,
+ 		dailyReward=828,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220429] =
+{
+ 		id=220429,
+ 		year=2022,
+ 		month=4,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220430] =
+{
+ 		id=220430,
+ 		year=2022,
+ 		month=4,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220501] =
+{
+ 		id=220501,
+ 		year=2022,
+ 		month=5,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220502] =
+{
+ 		id=220502,
+ 		year=2022,
+ 		month=5,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220503] =
+{
+ 		id=220503,
+ 		year=2022,
+ 		month=5,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220504] =
+{
+ 		id=220504,
+ 		year=2022,
+ 		month=5,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220505] =
+{
+ 		id=220505,
+ 		year=2022,
+ 		month=5,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220506] =
+{
+ 		id=220506,
+ 		year=2022,
+ 		month=5,
+ 		days=6,
+ 		dailyReward=806,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220507] =
+{
+ 		id=220507,
+ 		year=2022,
+ 		month=5,
+ 		days=7,
+ 		dailyReward=807,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220508] =
+{
+ 		id=220508,
+ 		year=2022,
+ 		month=5,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220509] =
+{
+ 		id=220509,
+ 		year=2022,
+ 		month=5,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220510] =
+{
+ 		id=220510,
+ 		year=2022,
+ 		month=5,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220511] =
+{
+ 		id=220511,
+ 		year=2022,
+ 		month=5,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220512] =
+{
+ 		id=220512,
+ 		year=2022,
+ 		month=5,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220513] =
+{
+ 		id=220513,
+ 		year=2022,
+ 		month=5,
+ 		days=13,
+ 		dailyReward=813,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220514] =
+{
+ 		id=220514,
+ 		year=2022,
+ 		month=5,
+ 		days=14,
+ 		dailyReward=814,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220515] =
+{
+ 		id=220515,
+ 		year=2022,
+ 		month=5,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220516] =
+{
+ 		id=220516,
+ 		year=2022,
+ 		month=5,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220517] =
+{
+ 		id=220517,
+ 		year=2022,
+ 		month=5,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220518] =
+{
+ 		id=220518,
+ 		year=2022,
+ 		month=5,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220519] =
+{
+ 		id=220519,
+ 		year=2022,
+ 		month=5,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220520] =
+{
+ 		id=220520,
+ 		year=2022,
+ 		month=5,
+ 		days=20,
+ 		dailyReward=820,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220521] =
+{
+ 		id=220521,
+ 		year=2022,
+ 		month=5,
+ 		days=21,
+ 		dailyReward=821,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220522] =
+{
+ 		id=220522,
+ 		year=2022,
+ 		month=5,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220523] =
+{
+ 		id=220523,
+ 		year=2022,
+ 		month=5,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220524] =
+{
+ 		id=220524,
+ 		year=2022,
+ 		month=5,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220525] =
+{
+ 		id=220525,
+ 		year=2022,
+ 		month=5,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220526] =
+{
+ 		id=220526,
+ 		year=2022,
+ 		month=5,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220527] =
+{
+ 		id=220527,
+ 		year=2022,
+ 		month=5,
+ 		days=27,
+ 		dailyReward=827,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220528] =
+{
+ 		id=220528,
+ 		year=2022,
+ 		month=5,
+ 		days=28,
+ 		dailyReward=828,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220529] =
+{
+ 		id=220529,
+ 		year=2022,
+ 		month=5,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220530] =
+{
+ 		id=220530,
+ 		year=2022,
+ 		month=5,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220531] =
+{
+ 		id=220531,
+ 		year=2022,
+ 		month=5,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220601] =
+{
+ 		id=220601,
+ 		year=2022,
+ 		month=6,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220602] =
+{
+ 		id=220602,
+ 		year=2022,
+ 		month=6,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220603] =
+{
+ 		id=220603,
+ 		year=2022,
+ 		month=6,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220604] =
+{
+ 		id=220604,
+ 		year=2022,
+ 		month=6,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220605] =
+{
+ 		id=220605,
+ 		year=2022,
+ 		month=6,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220606] =
+{
+ 		id=220606,
+ 		year=2022,
+ 		month=6,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220607] =
+{
+ 		id=220607,
+ 		year=2022,
+ 		month=6,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220608] =
+{
+ 		id=220608,
+ 		year=2022,
+ 		month=6,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220609] =
+{
+ 		id=220609,
+ 		year=2022,
+ 		month=6,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220610] =
+{
+ 		id=220610,
+ 		year=2022,
+ 		month=6,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220611] =
+{
+ 		id=220611,
+ 		year=2022,
+ 		month=6,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220612] =
+{
+ 		id=220612,
+ 		year=2022,
+ 		month=6,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220613] =
+{
+ 		id=220613,
+ 		year=2022,
+ 		month=6,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220614] =
+{
+ 		id=220614,
+ 		year=2022,
+ 		month=6,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220615] =
+{
+ 		id=220615,
+ 		year=2022,
+ 		month=6,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220616] =
+{
+ 		id=220616,
+ 		year=2022,
+ 		month=6,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220617] =
+{
+ 		id=220617,
+ 		year=2022,
+ 		month=6,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220618] =
+{
+ 		id=220618,
+ 		year=2022,
+ 		month=6,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220619] =
+{
+ 		id=220619,
+ 		year=2022,
+ 		month=6,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220620] =
+{
+ 		id=220620,
+ 		year=2022,
+ 		month=6,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220621] =
+{
+ 		id=220621,
+ 		year=2022,
+ 		month=6,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220622] =
+{
+ 		id=220622,
+ 		year=2022,
+ 		month=6,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220623] =
+{
+ 		id=220623,
+ 		year=2022,
+ 		month=6,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220624] =
+{
+ 		id=220624,
+ 		year=2022,
+ 		month=6,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220625] =
+{
+ 		id=220625,
+ 		year=2022,
+ 		month=6,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220626] =
+{
+ 		id=220626,
+ 		year=2022,
+ 		month=6,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220627] =
+{
+ 		id=220627,
+ 		year=2022,
+ 		month=6,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220628] =
+{
+ 		id=220628,
+ 		year=2022,
+ 		month=6,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220629] =
+{
+ 		id=220629,
+ 		year=2022,
+ 		month=6,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220630] =
+{
+ 		id=220630,
+ 		year=2022,
+ 		month=6,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220701] =
+{
+ 		id=220701,
+ 		year=2022,
+ 		month=7,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220702] =
+{
+ 		id=220702,
+ 		year=2022,
+ 		month=7,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220703] =
+{
+ 		id=220703,
+ 		year=2022,
+ 		month=7,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220704] =
+{
+ 		id=220704,
+ 		year=2022,
+ 		month=7,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220705] =
+{
+ 		id=220705,
+ 		year=2022,
+ 		month=7,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220706] =
+{
+ 		id=220706,
+ 		year=2022,
+ 		month=7,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220707] =
+{
+ 		id=220707,
+ 		year=2022,
+ 		month=7,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220708] =
+{
+ 		id=220708,
+ 		year=2022,
+ 		month=7,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220709] =
+{
+ 		id=220709,
+ 		year=2022,
+ 		month=7,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220710] =
+{
+ 		id=220710,
+ 		year=2022,
+ 		month=7,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220711] =
+{
+ 		id=220711,
+ 		year=2022,
+ 		month=7,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220712] =
+{
+ 		id=220712,
+ 		year=2022,
+ 		month=7,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220713] =
+{
+ 		id=220713,
+ 		year=2022,
+ 		month=7,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220714] =
+{
+ 		id=220714,
+ 		year=2022,
+ 		month=7,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220715] =
+{
+ 		id=220715,
+ 		year=2022,
+ 		month=7,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220716] =
+{
+ 		id=220716,
+ 		year=2022,
+ 		month=7,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220717] =
+{
+ 		id=220717,
+ 		year=2022,
+ 		month=7,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220718] =
+{
+ 		id=220718,
+ 		year=2022,
+ 		month=7,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220719] =
+{
+ 		id=220719,
+ 		year=2022,
+ 		month=7,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220720] =
+{
+ 		id=220720,
+ 		year=2022,
+ 		month=7,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220721] =
+{
+ 		id=220721,
+ 		year=2022,
+ 		month=7,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220722] =
+{
+ 		id=220722,
+ 		year=2022,
+ 		month=7,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220723] =
+{
+ 		id=220723,
+ 		year=2022,
+ 		month=7,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220724] =
+{
+ 		id=220724,
+ 		year=2022,
+ 		month=7,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220725] =
+{
+ 		id=220725,
+ 		year=2022,
+ 		month=7,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220726] =
+{
+ 		id=220726,
+ 		year=2022,
+ 		month=7,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220727] =
+{
+ 		id=220727,
+ 		year=2022,
+ 		month=7,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220728] =
+{
+ 		id=220728,
+ 		year=2022,
+ 		month=7,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220729] =
+{
+ 		id=220729,
+ 		year=2022,
+ 		month=7,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220730] =
+{
+ 		id=220730,
+ 		year=2022,
+ 		month=7,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220731] =
+{
+ 		id=220731,
+ 		year=2022,
+ 		month=7,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220801] =
+{
+ 		id=220801,
+ 		year=2022,
+ 		month=8,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220802] =
+{
+ 		id=220802,
+ 		year=2022,
+ 		month=8,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220803] =
+{
+ 		id=220803,
+ 		year=2022,
+ 		month=8,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220804] =
+{
+ 		id=220804,
+ 		year=2022,
+ 		month=8,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220805] =
+{
+ 		id=220805,
+ 		year=2022,
+ 		month=8,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220806] =
+{
+ 		id=220806,
+ 		year=2022,
+ 		month=8,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220807] =
+{
+ 		id=220807,
+ 		year=2022,
+ 		month=8,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220808] =
+{
+ 		id=220808,
+ 		year=2022,
+ 		month=8,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220809] =
+{
+ 		id=220809,
+ 		year=2022,
+ 		month=8,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220810] =
+{
+ 		id=220810,
+ 		year=2022,
+ 		month=8,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220811] =
+{
+ 		id=220811,
+ 		year=2022,
+ 		month=8,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220812] =
+{
+ 		id=220812,
+ 		year=2022,
+ 		month=8,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220813] =
+{
+ 		id=220813,
+ 		year=2022,
+ 		month=8,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220814] =
+{
+ 		id=220814,
+ 		year=2022,
+ 		month=8,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220815] =
+{
+ 		id=220815,
+ 		year=2022,
+ 		month=8,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220816] =
+{
+ 		id=220816,
+ 		year=2022,
+ 		month=8,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220817] =
+{
+ 		id=220817,
+ 		year=2022,
+ 		month=8,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220818] =
+{
+ 		id=220818,
+ 		year=2022,
+ 		month=8,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220819] =
+{
+ 		id=220819,
+ 		year=2022,
+ 		month=8,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220820] =
+{
+ 		id=220820,
+ 		year=2022,
+ 		month=8,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220821] =
+{
+ 		id=220821,
+ 		year=2022,
+ 		month=8,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220822] =
+{
+ 		id=220822,
+ 		year=2022,
+ 		month=8,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220823] =
+{
+ 		id=220823,
+ 		year=2022,
+ 		month=8,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220824] =
+{
+ 		id=220824,
+ 		year=2022,
+ 		month=8,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220825] =
+{
+ 		id=220825,
+ 		year=2022,
+ 		month=8,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220826] =
+{
+ 		id=220826,
+ 		year=2022,
+ 		month=8,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220827] =
+{
+ 		id=220827,
+ 		year=2022,
+ 		month=8,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220828] =
+{
+ 		id=220828,
+ 		year=2022,
+ 		month=8,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220829] =
+{
+ 		id=220829,
+ 		year=2022,
+ 		month=8,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220830] =
+{
+ 		id=220830,
+ 		year=2022,
+ 		month=8,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220831] =
+{
+ 		id=220831,
+ 		year=2022,
+ 		month=8,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220901] =
+{
+ 		id=220901,
+ 		year=2022,
+ 		month=9,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220902] =
+{
+ 		id=220902,
+ 		year=2022,
+ 		month=9,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220903] =
+{
+ 		id=220903,
+ 		year=2022,
+ 		month=9,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220904] =
+{
+ 		id=220904,
+ 		year=2022,
+ 		month=9,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220905] =
+{
+ 		id=220905,
+ 		year=2022,
+ 		month=9,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220906] =
+{
+ 		id=220906,
+ 		year=2022,
+ 		month=9,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220907] =
+{
+ 		id=220907,
+ 		year=2022,
+ 		month=9,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220908] =
+{
+ 		id=220908,
+ 		year=2022,
+ 		month=9,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220909] =
+{
+ 		id=220909,
+ 		year=2022,
+ 		month=9,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220910] =
+{
+ 		id=220910,
+ 		year=2022,
+ 		month=9,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220911] =
+{
+ 		id=220911,
+ 		year=2022,
+ 		month=9,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220912] =
+{
+ 		id=220912,
+ 		year=2022,
+ 		month=9,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220913] =
+{
+ 		id=220913,
+ 		year=2022,
+ 		month=9,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220914] =
+{
+ 		id=220914,
+ 		year=2022,
+ 		month=9,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220915] =
+{
+ 		id=220915,
+ 		year=2022,
+ 		month=9,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220916] =
+{
+ 		id=220916,
+ 		year=2022,
+ 		month=9,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220917] =
+{
+ 		id=220917,
+ 		year=2022,
+ 		month=9,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220918] =
+{
+ 		id=220918,
+ 		year=2022,
+ 		month=9,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220919] =
+{
+ 		id=220919,
+ 		year=2022,
+ 		month=9,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220920] =
+{
+ 		id=220920,
+ 		year=2022,
+ 		month=9,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220921] =
+{
+ 		id=220921,
+ 		year=2022,
+ 		month=9,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220922] =
+{
+ 		id=220922,
+ 		year=2022,
+ 		month=9,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220923] =
+{
+ 		id=220923,
+ 		year=2022,
+ 		month=9,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220924] =
+{
+ 		id=220924,
+ 		year=2022,
+ 		month=9,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220925] =
+{
+ 		id=220925,
+ 		year=2022,
+ 		month=9,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220926] =
+{
+ 		id=220926,
+ 		year=2022,
+ 		month=9,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220927] =
+{
+ 		id=220927,
+ 		year=2022,
+ 		month=9,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220928] =
+{
+ 		id=220928,
+ 		year=2022,
+ 		month=9,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220929] =
+{
+ 		id=220929,
+ 		year=2022,
+ 		month=9,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[220930] =
+{
+ 		id=220930,
+ 		year=2022,
+ 		month=9,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221001] =
+{
+ 		id=221001,
+ 		year=2022,
+ 		month=10,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221002] =
+{
+ 		id=221002,
+ 		year=2022,
+ 		month=10,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221003] =
+{
+ 		id=221003,
+ 		year=2022,
+ 		month=10,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221004] =
+{
+ 		id=221004,
+ 		year=2022,
+ 		month=10,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221005] =
+{
+ 		id=221005,
+ 		year=2022,
+ 		month=10,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221006] =
+{
+ 		id=221006,
+ 		year=2022,
+ 		month=10,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221007] =
+{
+ 		id=221007,
+ 		year=2022,
+ 		month=10,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221008] =
+{
+ 		id=221008,
+ 		year=2022,
+ 		month=10,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221009] =
+{
+ 		id=221009,
+ 		year=2022,
+ 		month=10,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221010] =
+{
+ 		id=221010,
+ 		year=2022,
+ 		month=10,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221011] =
+{
+ 		id=221011,
+ 		year=2022,
+ 		month=10,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221012] =
+{
+ 		id=221012,
+ 		year=2022,
+ 		month=10,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221013] =
+{
+ 		id=221013,
+ 		year=2022,
+ 		month=10,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221014] =
+{
+ 		id=221014,
+ 		year=2022,
+ 		month=10,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221015] =
+{
+ 		id=221015,
+ 		year=2022,
+ 		month=10,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221016] =
+{
+ 		id=221016,
+ 		year=2022,
+ 		month=10,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221017] =
+{
+ 		id=221017,
+ 		year=2022,
+ 		month=10,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221018] =
+{
+ 		id=221018,
+ 		year=2022,
+ 		month=10,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221019] =
+{
+ 		id=221019,
+ 		year=2022,
+ 		month=10,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221020] =
+{
+ 		id=221020,
+ 		year=2022,
+ 		month=10,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221021] =
+{
+ 		id=221021,
+ 		year=2022,
+ 		month=10,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221022] =
+{
+ 		id=221022,
+ 		year=2022,
+ 		month=10,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221023] =
+{
+ 		id=221023,
+ 		year=2022,
+ 		month=10,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221024] =
+{
+ 		id=221024,
+ 		year=2022,
+ 		month=10,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221025] =
+{
+ 		id=221025,
+ 		year=2022,
+ 		month=10,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221026] =
+{
+ 		id=221026,
+ 		year=2022,
+ 		month=10,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221027] =
+{
+ 		id=221027,
+ 		year=2022,
+ 		month=10,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221028] =
+{
+ 		id=221028,
+ 		year=2022,
+ 		month=10,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221029] =
+{
+ 		id=221029,
+ 		year=2022,
+ 		month=10,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221030] =
+{
+ 		id=221030,
+ 		year=2022,
+ 		month=10,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221031] =
+{
+ 		id=221031,
+ 		year=2022,
+ 		month=10,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221101] =
+{
+ 		id=221101,
+ 		year=2022,
+ 		month=11,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221102] =
+{
+ 		id=221102,
+ 		year=2022,
+ 		month=11,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221103] =
+{
+ 		id=221103,
+ 		year=2022,
+ 		month=11,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221104] =
+{
+ 		id=221104,
+ 		year=2022,
+ 		month=11,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221105] =
+{
+ 		id=221105,
+ 		year=2022,
+ 		month=11,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221106] =
+{
+ 		id=221106,
+ 		year=2022,
+ 		month=11,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221107] =
+{
+ 		id=221107,
+ 		year=2022,
+ 		month=11,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221108] =
+{
+ 		id=221108,
+ 		year=2022,
+ 		month=11,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221109] =
+{
+ 		id=221109,
+ 		year=2022,
+ 		month=11,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221110] =
+{
+ 		id=221110,
+ 		year=2022,
+ 		month=11,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221111] =
+{
+ 		id=221111,
+ 		year=2022,
+ 		month=11,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221112] =
+{
+ 		id=221112,
+ 		year=2022,
+ 		month=11,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221113] =
+{
+ 		id=221113,
+ 		year=2022,
+ 		month=11,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221114] =
+{
+ 		id=221114,
+ 		year=2022,
+ 		month=11,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221115] =
+{
+ 		id=221115,
+ 		year=2022,
+ 		month=11,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221116] =
+{
+ 		id=221116,
+ 		year=2022,
+ 		month=11,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221117] =
+{
+ 		id=221117,
+ 		year=2022,
+ 		month=11,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221118] =
+{
+ 		id=221118,
+ 		year=2022,
+ 		month=11,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221119] =
+{
+ 		id=221119,
+ 		year=2022,
+ 		month=11,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221120] =
+{
+ 		id=221120,
+ 		year=2022,
+ 		month=11,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221121] =
+{
+ 		id=221121,
+ 		year=2022,
+ 		month=11,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221122] =
+{
+ 		id=221122,
+ 		year=2022,
+ 		month=11,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221123] =
+{
+ 		id=221123,
+ 		year=2022,
+ 		month=11,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221124] =
+{
+ 		id=221124,
+ 		year=2022,
+ 		month=11,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221125] =
+{
+ 		id=221125,
+ 		year=2022,
+ 		month=11,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221126] =
+{
+ 		id=221126,
+ 		year=2022,
+ 		month=11,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221127] =
+{
+ 		id=221127,
+ 		year=2022,
+ 		month=11,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221128] =
+{
+ 		id=221128,
+ 		year=2022,
+ 		month=11,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221129] =
+{
+ 		id=221129,
+ 		year=2022,
+ 		month=11,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221130] =
+{
+ 		id=221130,
+ 		year=2022,
+ 		month=11,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221201] =
+{
+ 		id=221201,
+ 		year=2022,
+ 		month=12,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221202] =
+{
+ 		id=221202,
+ 		year=2022,
+ 		month=12,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221203] =
+{
+ 		id=221203,
+ 		year=2022,
+ 		month=12,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221204] =
+{
+ 		id=221204,
+ 		year=2022,
+ 		month=12,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221205] =
+{
+ 		id=221205,
+ 		year=2022,
+ 		month=12,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221206] =
+{
+ 		id=221206,
+ 		year=2022,
+ 		month=12,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221207] =
+{
+ 		id=221207,
+ 		year=2022,
+ 		month=12,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221208] =
+{
+ 		id=221208,
+ 		year=2022,
+ 		month=12,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221209] =
+{
+ 		id=221209,
+ 		year=2022,
+ 		month=12,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221210] =
+{
+ 		id=221210,
+ 		year=2022,
+ 		month=12,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221211] =
+{
+ 		id=221211,
+ 		year=2022,
+ 		month=12,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221212] =
+{
+ 		id=221212,
+ 		year=2022,
+ 		month=12,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221213] =
+{
+ 		id=221213,
+ 		year=2022,
+ 		month=12,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221214] =
+{
+ 		id=221214,
+ 		year=2022,
+ 		month=12,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221215] =
+{
+ 		id=221215,
+ 		year=2022,
+ 		month=12,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221216] =
+{
+ 		id=221216,
+ 		year=2022,
+ 		month=12,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221217] =
+{
+ 		id=221217,
+ 		year=2022,
+ 		month=12,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221218] =
+{
+ 		id=221218,
+ 		year=2022,
+ 		month=12,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221219] =
+{
+ 		id=221219,
+ 		year=2022,
+ 		month=12,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221220] =
+{
+ 		id=221220,
+ 		year=2022,
+ 		month=12,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221221] =
+{
+ 		id=221221,
+ 		year=2022,
+ 		month=12,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221222] =
+{
+ 		id=221222,
+ 		year=2022,
+ 		month=12,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221223] =
+{
+ 		id=221223,
+ 		year=2022,
+ 		month=12,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221224] =
+{
+ 		id=221224,
+ 		year=2022,
+ 		month=12,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221225] =
+{
+ 		id=221225,
+ 		year=2022,
+ 		month=12,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221226] =
+{
+ 		id=221226,
+ 		year=2022,
+ 		month=12,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221227] =
+{
+ 		id=221227,
+ 		year=2022,
+ 		month=12,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221228] =
+{
+ 		id=221228,
+ 		year=2022,
+ 		month=12,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221229] =
+{
+ 		id=221229,
+ 		year=2022,
+ 		month=12,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221230] =
+{
+ 		id=221230,
+ 		year=2022,
+ 		month=12,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[221231] =
+{
+ 		id=221231,
+ 		year=2022,
+ 		month=12,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230101] =
+{
+ 		id=230101,
+ 		year=2023,
+ 		month=1,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230102] =
+{
+ 		id=230102,
+ 		year=2023,
+ 		month=1,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230103] =
+{
+ 		id=230103,
+ 		year=2023,
+ 		month=1,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230104] =
+{
+ 		id=230104,
+ 		year=2023,
+ 		month=1,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230105] =
+{
+ 		id=230105,
+ 		year=2023,
+ 		month=1,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230106] =
+{
+ 		id=230106,
+ 		year=2023,
+ 		month=1,
+ 		days=6,
+ 		dailyReward=806,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230107] =
+{
+ 		id=230107,
+ 		year=2023,
+ 		month=1,
+ 		days=7,
+ 		dailyReward=807,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230108] =
+{
+ 		id=230108,
+ 		year=2023,
+ 		month=1,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230109] =
+{
+ 		id=230109,
+ 		year=2023,
+ 		month=1,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230110] =
+{
+ 		id=230110,
+ 		year=2023,
+ 		month=1,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230111] =
+{
+ 		id=230111,
+ 		year=2023,
+ 		month=1,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230112] =
+{
+ 		id=230112,
+ 		year=2023,
+ 		month=1,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230113] =
+{
+ 		id=230113,
+ 		year=2023,
+ 		month=1,
+ 		days=13,
+ 		dailyReward=813,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230114] =
+{
+ 		id=230114,
+ 		year=2023,
+ 		month=1,
+ 		days=14,
+ 		dailyReward=814,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230115] =
+{
+ 		id=230115,
+ 		year=2023,
+ 		month=1,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230116] =
+{
+ 		id=230116,
+ 		year=2023,
+ 		month=1,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230117] =
+{
+ 		id=230117,
+ 		year=2023,
+ 		month=1,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230118] =
+{
+ 		id=230118,
+ 		year=2023,
+ 		month=1,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230119] =
+{
+ 		id=230119,
+ 		year=2023,
+ 		month=1,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230120] =
+{
+ 		id=230120,
+ 		year=2023,
+ 		month=1,
+ 		days=20,
+ 		dailyReward=820,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230121] =
+{
+ 		id=230121,
+ 		year=2023,
+ 		month=1,
+ 		days=21,
+ 		dailyReward=821,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230122] =
+{
+ 		id=230122,
+ 		year=2023,
+ 		month=1,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230123] =
+{
+ 		id=230123,
+ 		year=2023,
+ 		month=1,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230124] =
+{
+ 		id=230124,
+ 		year=2023,
+ 		month=1,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230125] =
+{
+ 		id=230125,
+ 		year=2023,
+ 		month=1,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230126] =
+{
+ 		id=230126,
+ 		year=2023,
+ 		month=1,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230127] =
+{
+ 		id=230127,
+ 		year=2023,
+ 		month=1,
+ 		days=27,
+ 		dailyReward=827,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230128] =
+{
+ 		id=230128,
+ 		year=2023,
+ 		month=1,
+ 		days=28,
+ 		dailyReward=828,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230129] =
+{
+ 		id=230129,
+ 		year=2023,
+ 		month=1,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230130] =
+{
+ 		id=230130,
+ 		year=2023,
+ 		month=1,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230131] =
+{
+ 		id=230131,
+ 		year=2023,
+ 		month=1,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230201] =
+{
+ 		id=230201,
+ 		year=2023,
+ 		month=2,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230202] =
+{
+ 		id=230202,
+ 		year=2023,
+ 		month=2,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230203] =
+{
+ 		id=230203,
+ 		year=2023,
+ 		month=2,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230204] =
+{
+ 		id=230204,
+ 		year=2023,
+ 		month=2,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230205] =
+{
+ 		id=230205,
+ 		year=2023,
+ 		month=2,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230206] =
+{
+ 		id=230206,
+ 		year=2023,
+ 		month=2,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230207] =
+{
+ 		id=230207,
+ 		year=2023,
+ 		month=2,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230208] =
+{
+ 		id=230208,
+ 		year=2023,
+ 		month=2,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230209] =
+{
+ 		id=230209,
+ 		year=2023,
+ 		month=2,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230210] =
+{
+ 		id=230210,
+ 		year=2023,
+ 		month=2,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230211] =
+{
+ 		id=230211,
+ 		year=2023,
+ 		month=2,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230212] =
+{
+ 		id=230212,
+ 		year=2023,
+ 		month=2,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230213] =
+{
+ 		id=230213,
+ 		year=2023,
+ 		month=2,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230214] =
+{
+ 		id=230214,
+ 		year=2023,
+ 		month=2,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230215] =
+{
+ 		id=230215,
+ 		year=2023,
+ 		month=2,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230216] =
+{
+ 		id=230216,
+ 		year=2023,
+ 		month=2,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230217] =
+{
+ 		id=230217,
+ 		year=2023,
+ 		month=2,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230218] =
+{
+ 		id=230218,
+ 		year=2023,
+ 		month=2,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230219] =
+{
+ 		id=230219,
+ 		year=2023,
+ 		month=2,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230220] =
+{
+ 		id=230220,
+ 		year=2023,
+ 		month=2,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230221] =
+{
+ 		id=230221,
+ 		year=2023,
+ 		month=2,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230222] =
+{
+ 		id=230222,
+ 		year=2023,
+ 		month=2,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230223] =
+{
+ 		id=230223,
+ 		year=2023,
+ 		month=2,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230224] =
+{
+ 		id=230224,
+ 		year=2023,
+ 		month=2,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230225] =
+{
+ 		id=230225,
+ 		year=2023,
+ 		month=2,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230226] =
+{
+ 		id=230226,
+ 		year=2023,
+ 		month=2,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230227] =
+{
+ 		id=230227,
+ 		year=2023,
+ 		month=2,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230228] =
+{
+ 		id=230228,
+ 		year=2023,
+ 		month=2,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230301] =
+{
+ 		id=230301,
+ 		year=2023,
+ 		month=3,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230302] =
+{
+ 		id=230302,
+ 		year=2023,
+ 		month=3,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230303] =
+{
+ 		id=230303,
+ 		year=2023,
+ 		month=3,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230304] =
+{
+ 		id=230304,
+ 		year=2023,
+ 		month=3,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230305] =
+{
+ 		id=230305,
+ 		year=2023,
+ 		month=3,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230306] =
+{
+ 		id=230306,
+ 		year=2023,
+ 		month=3,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230307] =
+{
+ 		id=230307,
+ 		year=2023,
+ 		month=3,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230308] =
+{
+ 		id=230308,
+ 		year=2023,
+ 		month=3,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230309] =
+{
+ 		id=230309,
+ 		year=2023,
+ 		month=3,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230310] =
+{
+ 		id=230310,
+ 		year=2023,
+ 		month=3,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230311] =
+{
+ 		id=230311,
+ 		year=2023,
+ 		month=3,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230312] =
+{
+ 		id=230312,
+ 		year=2023,
+ 		month=3,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230313] =
+{
+ 		id=230313,
+ 		year=2023,
+ 		month=3,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230314] =
+{
+ 		id=230314,
+ 		year=2023,
+ 		month=3,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230315] =
+{
+ 		id=230315,
+ 		year=2023,
+ 		month=3,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230316] =
+{
+ 		id=230316,
+ 		year=2023,
+ 		month=3,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230317] =
+{
+ 		id=230317,
+ 		year=2023,
+ 		month=3,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230318] =
+{
+ 		id=230318,
+ 		year=2023,
+ 		month=3,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230319] =
+{
+ 		id=230319,
+ 		year=2023,
+ 		month=3,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230320] =
+{
+ 		id=230320,
+ 		year=2023,
+ 		month=3,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230321] =
+{
+ 		id=230321,
+ 		year=2023,
+ 		month=3,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230322] =
+{
+ 		id=230322,
+ 		year=2023,
+ 		month=3,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230323] =
+{
+ 		id=230323,
+ 		year=2023,
+ 		month=3,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230324] =
+{
+ 		id=230324,
+ 		year=2023,
+ 		month=3,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230325] =
+{
+ 		id=230325,
+ 		year=2023,
+ 		month=3,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230326] =
+{
+ 		id=230326,
+ 		year=2023,
+ 		month=3,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230327] =
+{
+ 		id=230327,
+ 		year=2023,
+ 		month=3,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230328] =
+{
+ 		id=230328,
+ 		year=2023,
+ 		month=3,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230329] =
+{
+ 		id=230329,
+ 		year=2023,
+ 		month=3,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230330] =
+{
+ 		id=230330,
+ 		year=2023,
+ 		month=3,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230331] =
+{
+ 		id=230331,
+ 		year=2023,
+ 		month=3,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230401] =
+{
+ 		id=230401,
+ 		year=2023,
+ 		month=4,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230402] =
+{
+ 		id=230402,
+ 		year=2023,
+ 		month=4,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230403] =
+{
+ 		id=230403,
+ 		year=2023,
+ 		month=4,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230404] =
+{
+ 		id=230404,
+ 		year=2023,
+ 		month=4,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230405] =
+{
+ 		id=230405,
+ 		year=2023,
+ 		month=4,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230406] =
+{
+ 		id=230406,
+ 		year=2023,
+ 		month=4,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230407] =
+{
+ 		id=230407,
+ 		year=2023,
+ 		month=4,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230408] =
+{
+ 		id=230408,
+ 		year=2023,
+ 		month=4,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230409] =
+{
+ 		id=230409,
+ 		year=2023,
+ 		month=4,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230410] =
+{
+ 		id=230410,
+ 		year=2023,
+ 		month=4,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230411] =
+{
+ 		id=230411,
+ 		year=2023,
+ 		month=4,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230412] =
+{
+ 		id=230412,
+ 		year=2023,
+ 		month=4,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230413] =
+{
+ 		id=230413,
+ 		year=2023,
+ 		month=4,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230414] =
+{
+ 		id=230414,
+ 		year=2023,
+ 		month=4,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230415] =
+{
+ 		id=230415,
+ 		year=2023,
+ 		month=4,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230416] =
+{
+ 		id=230416,
+ 		year=2023,
+ 		month=4,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230417] =
+{
+ 		id=230417,
+ 		year=2023,
+ 		month=4,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230418] =
+{
+ 		id=230418,
+ 		year=2023,
+ 		month=4,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230419] =
+{
+ 		id=230419,
+ 		year=2023,
+ 		month=4,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230420] =
+{
+ 		id=230420,
+ 		year=2023,
+ 		month=4,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230421] =
+{
+ 		id=230421,
+ 		year=2023,
+ 		month=4,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230422] =
+{
+ 		id=230422,
+ 		year=2023,
+ 		month=4,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230423] =
+{
+ 		id=230423,
+ 		year=2023,
+ 		month=4,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230424] =
+{
+ 		id=230424,
+ 		year=2023,
+ 		month=4,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230425] =
+{
+ 		id=230425,
+ 		year=2023,
+ 		month=4,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230426] =
+{
+ 		id=230426,
+ 		year=2023,
+ 		month=4,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230427] =
+{
+ 		id=230427,
+ 		year=2023,
+ 		month=4,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230428] =
+{
+ 		id=230428,
+ 		year=2023,
+ 		month=4,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230429] =
+{
+ 		id=230429,
+ 		year=2023,
+ 		month=4,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230430] =
+{
+ 		id=230430,
+ 		year=2023,
+ 		month=4,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230501] =
+{
+ 		id=230501,
+ 		year=2023,
+ 		month=5,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230502] =
+{
+ 		id=230502,
+ 		year=2023,
+ 		month=5,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230503] =
+{
+ 		id=230503,
+ 		year=2023,
+ 		month=5,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230504] =
+{
+ 		id=230504,
+ 		year=2023,
+ 		month=5,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230505] =
+{
+ 		id=230505,
+ 		year=2023,
+ 		month=5,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230506] =
+{
+ 		id=230506,
+ 		year=2023,
+ 		month=5,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230507] =
+{
+ 		id=230507,
+ 		year=2023,
+ 		month=5,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230508] =
+{
+ 		id=230508,
+ 		year=2023,
+ 		month=5,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230509] =
+{
+ 		id=230509,
+ 		year=2023,
+ 		month=5,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230510] =
+{
+ 		id=230510,
+ 		year=2023,
+ 		month=5,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230511] =
+{
+ 		id=230511,
+ 		year=2023,
+ 		month=5,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230512] =
+{
+ 		id=230512,
+ 		year=2023,
+ 		month=5,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230513] =
+{
+ 		id=230513,
+ 		year=2023,
+ 		month=5,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230514] =
+{
+ 		id=230514,
+ 		year=2023,
+ 		month=5,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230515] =
+{
+ 		id=230515,
+ 		year=2023,
+ 		month=5,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230516] =
+{
+ 		id=230516,
+ 		year=2023,
+ 		month=5,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230517] =
+{
+ 		id=230517,
+ 		year=2023,
+ 		month=5,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230518] =
+{
+ 		id=230518,
+ 		year=2023,
+ 		month=5,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230519] =
+{
+ 		id=230519,
+ 		year=2023,
+ 		month=5,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230520] =
+{
+ 		id=230520,
+ 		year=2023,
+ 		month=5,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230521] =
+{
+ 		id=230521,
+ 		year=2023,
+ 		month=5,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230522] =
+{
+ 		id=230522,
+ 		year=2023,
+ 		month=5,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230523] =
+{
+ 		id=230523,
+ 		year=2023,
+ 		month=5,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230524] =
+{
+ 		id=230524,
+ 		year=2023,
+ 		month=5,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230525] =
+{
+ 		id=230525,
+ 		year=2023,
+ 		month=5,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230526] =
+{
+ 		id=230526,
+ 		year=2023,
+ 		month=5,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230527] =
+{
+ 		id=230527,
+ 		year=2023,
+ 		month=5,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230528] =
+{
+ 		id=230528,
+ 		year=2023,
+ 		month=5,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230529] =
+{
+ 		id=230529,
+ 		year=2023,
+ 		month=5,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230530] =
+{
+ 		id=230530,
+ 		year=2023,
+ 		month=5,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230531] =
+{
+ 		id=230531,
+ 		year=2023,
+ 		month=5,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230601] =
+{
+ 		id=230601,
+ 		year=2023,
+ 		month=6,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230602] =
+{
+ 		id=230602,
+ 		year=2023,
+ 		month=6,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230603] =
+{
+ 		id=230603,
+ 		year=2023,
+ 		month=6,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230604] =
+{
+ 		id=230604,
+ 		year=2023,
+ 		month=6,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230605] =
+{
+ 		id=230605,
+ 		year=2023,
+ 		month=6,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230606] =
+{
+ 		id=230606,
+ 		year=2023,
+ 		month=6,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230607] =
+{
+ 		id=230607,
+ 		year=2023,
+ 		month=6,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230608] =
+{
+ 		id=230608,
+ 		year=2023,
+ 		month=6,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230609] =
+{
+ 		id=230609,
+ 		year=2023,
+ 		month=6,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230610] =
+{
+ 		id=230610,
+ 		year=2023,
+ 		month=6,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230611] =
+{
+ 		id=230611,
+ 		year=2023,
+ 		month=6,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230612] =
+{
+ 		id=230612,
+ 		year=2023,
+ 		month=6,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230613] =
+{
+ 		id=230613,
+ 		year=2023,
+ 		month=6,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230614] =
+{
+ 		id=230614,
+ 		year=2023,
+ 		month=6,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230615] =
+{
+ 		id=230615,
+ 		year=2023,
+ 		month=6,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230616] =
+{
+ 		id=230616,
+ 		year=2023,
+ 		month=6,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230617] =
+{
+ 		id=230617,
+ 		year=2023,
+ 		month=6,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230618] =
+{
+ 		id=230618,
+ 		year=2023,
+ 		month=6,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230619] =
+{
+ 		id=230619,
+ 		year=2023,
+ 		month=6,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230620] =
+{
+ 		id=230620,
+ 		year=2023,
+ 		month=6,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230621] =
+{
+ 		id=230621,
+ 		year=2023,
+ 		month=6,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230622] =
+{
+ 		id=230622,
+ 		year=2023,
+ 		month=6,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230623] =
+{
+ 		id=230623,
+ 		year=2023,
+ 		month=6,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230624] =
+{
+ 		id=230624,
+ 		year=2023,
+ 		month=6,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230625] =
+{
+ 		id=230625,
+ 		year=2023,
+ 		month=6,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230626] =
+{
+ 		id=230626,
+ 		year=2023,
+ 		month=6,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230627] =
+{
+ 		id=230627,
+ 		year=2023,
+ 		month=6,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230628] =
+{
+ 		id=230628,
+ 		year=2023,
+ 		month=6,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230629] =
+{
+ 		id=230629,
+ 		year=2023,
+ 		month=6,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230630] =
+{
+ 		id=230630,
+ 		year=2023,
+ 		month=6,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230701] =
+{
+ 		id=230701,
+ 		year=2023,
+ 		month=7,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230702] =
+{
+ 		id=230702,
+ 		year=2023,
+ 		month=7,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230703] =
+{
+ 		id=230703,
+ 		year=2023,
+ 		month=7,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230704] =
+{
+ 		id=230704,
+ 		year=2023,
+ 		month=7,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230705] =
+{
+ 		id=230705,
+ 		year=2023,
+ 		month=7,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230706] =
+{
+ 		id=230706,
+ 		year=2023,
+ 		month=7,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230707] =
+{
+ 		id=230707,
+ 		year=2023,
+ 		month=7,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230708] =
+{
+ 		id=230708,
+ 		year=2023,
+ 		month=7,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230709] =
+{
+ 		id=230709,
+ 		year=2023,
+ 		month=7,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230710] =
+{
+ 		id=230710,
+ 		year=2023,
+ 		month=7,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230711] =
+{
+ 		id=230711,
+ 		year=2023,
+ 		month=7,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230712] =
+{
+ 		id=230712,
+ 		year=2023,
+ 		month=7,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230713] =
+{
+ 		id=230713,
+ 		year=2023,
+ 		month=7,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230714] =
+{
+ 		id=230714,
+ 		year=2023,
+ 		month=7,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230715] =
+{
+ 		id=230715,
+ 		year=2023,
+ 		month=7,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230716] =
+{
+ 		id=230716,
+ 		year=2023,
+ 		month=7,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230717] =
+{
+ 		id=230717,
+ 		year=2023,
+ 		month=7,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230718] =
+{
+ 		id=230718,
+ 		year=2023,
+ 		month=7,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230719] =
+{
+ 		id=230719,
+ 		year=2023,
+ 		month=7,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230720] =
+{
+ 		id=230720,
+ 		year=2023,
+ 		month=7,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230721] =
+{
+ 		id=230721,
+ 		year=2023,
+ 		month=7,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230722] =
+{
+ 		id=230722,
+ 		year=2023,
+ 		month=7,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230723] =
+{
+ 		id=230723,
+ 		year=2023,
+ 		month=7,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230724] =
+{
+ 		id=230724,
+ 		year=2023,
+ 		month=7,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230725] =
+{
+ 		id=230725,
+ 		year=2023,
+ 		month=7,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230726] =
+{
+ 		id=230726,
+ 		year=2023,
+ 		month=7,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230727] =
+{
+ 		id=230727,
+ 		year=2023,
+ 		month=7,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230728] =
+{
+ 		id=230728,
+ 		year=2023,
+ 		month=7,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230729] =
+{
+ 		id=230729,
+ 		year=2023,
+ 		month=7,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230730] =
+{
+ 		id=230730,
+ 		year=2023,
+ 		month=7,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230731] =
+{
+ 		id=230731,
+ 		year=2023,
+ 		month=7,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230801] =
+{
+ 		id=230801,
+ 		year=2023,
+ 		month=8,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230802] =
+{
+ 		id=230802,
+ 		year=2023,
+ 		month=8,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230803] =
+{
+ 		id=230803,
+ 		year=2023,
+ 		month=8,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230804] =
+{
+ 		id=230804,
+ 		year=2023,
+ 		month=8,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230805] =
+{
+ 		id=230805,
+ 		year=2023,
+ 		month=8,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230806] =
+{
+ 		id=230806,
+ 		year=2023,
+ 		month=8,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230807] =
+{
+ 		id=230807,
+ 		year=2023,
+ 		month=8,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230808] =
+{
+ 		id=230808,
+ 		year=2023,
+ 		month=8,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230809] =
+{
+ 		id=230809,
+ 		year=2023,
+ 		month=8,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230810] =
+{
+ 		id=230810,
+ 		year=2023,
+ 		month=8,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230811] =
+{
+ 		id=230811,
+ 		year=2023,
+ 		month=8,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230812] =
+{
+ 		id=230812,
+ 		year=2023,
+ 		month=8,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230813] =
+{
+ 		id=230813,
+ 		year=2023,
+ 		month=8,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230814] =
+{
+ 		id=230814,
+ 		year=2023,
+ 		month=8,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230815] =
+{
+ 		id=230815,
+ 		year=2023,
+ 		month=8,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230816] =
+{
+ 		id=230816,
+ 		year=2023,
+ 		month=8,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230817] =
+{
+ 		id=230817,
+ 		year=2023,
+ 		month=8,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230818] =
+{
+ 		id=230818,
+ 		year=2023,
+ 		month=8,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230819] =
+{
+ 		id=230819,
+ 		year=2023,
+ 		month=8,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230820] =
+{
+ 		id=230820,
+ 		year=2023,
+ 		month=8,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230821] =
+{
+ 		id=230821,
+ 		year=2023,
+ 		month=8,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230822] =
+{
+ 		id=230822,
+ 		year=2023,
+ 		month=8,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230823] =
+{
+ 		id=230823,
+ 		year=2023,
+ 		month=8,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230824] =
+{
+ 		id=230824,
+ 		year=2023,
+ 		month=8,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230825] =
+{
+ 		id=230825,
+ 		year=2023,
+ 		month=8,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230826] =
+{
+ 		id=230826,
+ 		year=2023,
+ 		month=8,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230827] =
+{
+ 		id=230827,
+ 		year=2023,
+ 		month=8,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230828] =
+{
+ 		id=230828,
+ 		year=2023,
+ 		month=8,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230829] =
+{
+ 		id=230829,
+ 		year=2023,
+ 		month=8,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230830] =
+{
+ 		id=230830,
+ 		year=2023,
+ 		month=8,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230831] =
+{
+ 		id=230831,
+ 		year=2023,
+ 		month=8,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230901] =
+{
+ 		id=230901,
+ 		year=2023,
+ 		month=9,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230902] =
+{
+ 		id=230902,
+ 		year=2023,
+ 		month=9,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230903] =
+{
+ 		id=230903,
+ 		year=2023,
+ 		month=9,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230904] =
+{
+ 		id=230904,
+ 		year=2023,
+ 		month=9,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230905] =
+{
+ 		id=230905,
+ 		year=2023,
+ 		month=9,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230906] =
+{
+ 		id=230906,
+ 		year=2023,
+ 		month=9,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230907] =
+{
+ 		id=230907,
+ 		year=2023,
+ 		month=9,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230908] =
+{
+ 		id=230908,
+ 		year=2023,
+ 		month=9,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230909] =
+{
+ 		id=230909,
+ 		year=2023,
+ 		month=9,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230910] =
+{
+ 		id=230910,
+ 		year=2023,
+ 		month=9,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230911] =
+{
+ 		id=230911,
+ 		year=2023,
+ 		month=9,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230912] =
+{
+ 		id=230912,
+ 		year=2023,
+ 		month=9,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230913] =
+{
+ 		id=230913,
+ 		year=2023,
+ 		month=9,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230914] =
+{
+ 		id=230914,
+ 		year=2023,
+ 		month=9,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230915] =
+{
+ 		id=230915,
+ 		year=2023,
+ 		month=9,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230916] =
+{
+ 		id=230916,
+ 		year=2023,
+ 		month=9,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230917] =
+{
+ 		id=230917,
+ 		year=2023,
+ 		month=9,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230918] =
+{
+ 		id=230918,
+ 		year=2023,
+ 		month=9,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230919] =
+{
+ 		id=230919,
+ 		year=2023,
+ 		month=9,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230920] =
+{
+ 		id=230920,
+ 		year=2023,
+ 		month=9,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230921] =
+{
+ 		id=230921,
+ 		year=2023,
+ 		month=9,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230922] =
+{
+ 		id=230922,
+ 		year=2023,
+ 		month=9,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230923] =
+{
+ 		id=230923,
+ 		year=2023,
+ 		month=9,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230924] =
+{
+ 		id=230924,
+ 		year=2023,
+ 		month=9,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230925] =
+{
+ 		id=230925,
+ 		year=2023,
+ 		month=9,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230926] =
+{
+ 		id=230926,
+ 		year=2023,
+ 		month=9,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230927] =
+{
+ 		id=230927,
+ 		year=2023,
+ 		month=9,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230928] =
+{
+ 		id=230928,
+ 		year=2023,
+ 		month=9,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230929] =
+{
+ 		id=230929,
+ 		year=2023,
+ 		month=9,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[230930] =
+{
+ 		id=230930,
+ 		year=2023,
+ 		month=9,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231001] =
+{
+ 		id=231001,
+ 		year=2023,
+ 		month=10,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231002] =
+{
+ 		id=231002,
+ 		year=2023,
+ 		month=10,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231003] =
+{
+ 		id=231003,
+ 		year=2023,
+ 		month=10,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231004] =
+{
+ 		id=231004,
+ 		year=2023,
+ 		month=10,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231005] =
+{
+ 		id=231005,
+ 		year=2023,
+ 		month=10,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231006] =
+{
+ 		id=231006,
+ 		year=2023,
+ 		month=10,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231007] =
+{
+ 		id=231007,
+ 		year=2023,
+ 		month=10,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231008] =
+{
+ 		id=231008,
+ 		year=2023,
+ 		month=10,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231009] =
+{
+ 		id=231009,
+ 		year=2023,
+ 		month=10,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231010] =
+{
+ 		id=231010,
+ 		year=2023,
+ 		month=10,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231011] =
+{
+ 		id=231011,
+ 		year=2023,
+ 		month=10,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231012] =
+{
+ 		id=231012,
+ 		year=2023,
+ 		month=10,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231013] =
+{
+ 		id=231013,
+ 		year=2023,
+ 		month=10,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231014] =
+{
+ 		id=231014,
+ 		year=2023,
+ 		month=10,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231015] =
+{
+ 		id=231015,
+ 		year=2023,
+ 		month=10,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231016] =
+{
+ 		id=231016,
+ 		year=2023,
+ 		month=10,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231017] =
+{
+ 		id=231017,
+ 		year=2023,
+ 		month=10,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231018] =
+{
+ 		id=231018,
+ 		year=2023,
+ 		month=10,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231019] =
+{
+ 		id=231019,
+ 		year=2023,
+ 		month=10,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231020] =
+{
+ 		id=231020,
+ 		year=2023,
+ 		month=10,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231021] =
+{
+ 		id=231021,
+ 		year=2023,
+ 		month=10,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231022] =
+{
+ 		id=231022,
+ 		year=2023,
+ 		month=10,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231023] =
+{
+ 		id=231023,
+ 		year=2023,
+ 		month=10,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231024] =
+{
+ 		id=231024,
+ 		year=2023,
+ 		month=10,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231025] =
+{
+ 		id=231025,
+ 		year=2023,
+ 		month=10,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231026] =
+{
+ 		id=231026,
+ 		year=2023,
+ 		month=10,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231027] =
+{
+ 		id=231027,
+ 		year=2023,
+ 		month=10,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231028] =
+{
+ 		id=231028,
+ 		year=2023,
+ 		month=10,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231029] =
+{
+ 		id=231029,
+ 		year=2023,
+ 		month=10,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231030] =
+{
+ 		id=231030,
+ 		year=2023,
+ 		month=10,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231031] =
+{
+ 		id=231031,
+ 		year=2023,
+ 		month=10,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231101] =
+{
+ 		id=231101,
+ 		year=2023,
+ 		month=11,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231102] =
+{
+ 		id=231102,
+ 		year=2023,
+ 		month=11,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231103] =
+{
+ 		id=231103,
+ 		year=2023,
+ 		month=11,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231104] =
+{
+ 		id=231104,
+ 		year=2023,
+ 		month=11,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231105] =
+{
+ 		id=231105,
+ 		year=2023,
+ 		month=11,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231106] =
+{
+ 		id=231106,
+ 		year=2023,
+ 		month=11,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231107] =
+{
+ 		id=231107,
+ 		year=2023,
+ 		month=11,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231108] =
+{
+ 		id=231108,
+ 		year=2023,
+ 		month=11,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231109] =
+{
+ 		id=231109,
+ 		year=2023,
+ 		month=11,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231110] =
+{
+ 		id=231110,
+ 		year=2023,
+ 		month=11,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231111] =
+{
+ 		id=231111,
+ 		year=2023,
+ 		month=11,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231112] =
+{
+ 		id=231112,
+ 		year=2023,
+ 		month=11,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231113] =
+{
+ 		id=231113,
+ 		year=2023,
+ 		month=11,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231114] =
+{
+ 		id=231114,
+ 		year=2023,
+ 		month=11,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231115] =
+{
+ 		id=231115,
+ 		year=2023,
+ 		month=11,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231116] =
+{
+ 		id=231116,
+ 		year=2023,
+ 		month=11,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231117] =
+{
+ 		id=231117,
+ 		year=2023,
+ 		month=11,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231118] =
+{
+ 		id=231118,
+ 		year=2023,
+ 		month=11,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231119] =
+{
+ 		id=231119,
+ 		year=2023,
+ 		month=11,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231120] =
+{
+ 		id=231120,
+ 		year=2023,
+ 		month=11,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231121] =
+{
+ 		id=231121,
+ 		year=2023,
+ 		month=11,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231122] =
+{
+ 		id=231122,
+ 		year=2023,
+ 		month=11,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231123] =
+{
+ 		id=231123,
+ 		year=2023,
+ 		month=11,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231124] =
+{
+ 		id=231124,
+ 		year=2023,
+ 		month=11,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231125] =
+{
+ 		id=231125,
+ 		year=2023,
+ 		month=11,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231126] =
+{
+ 		id=231126,
+ 		year=2023,
+ 		month=11,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231127] =
+{
+ 		id=231127,
+ 		year=2023,
+ 		month=11,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231128] =
+{
+ 		id=231128,
+ 		year=2023,
+ 		month=11,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231129] =
+{
+ 		id=231129,
+ 		year=2023,
+ 		month=11,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231130] =
+{
+ 		id=231130,
+ 		year=2023,
+ 		month=11,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231201] =
+{
+ 		id=231201,
+ 		year=2023,
+ 		month=12,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231202] =
+{
+ 		id=231202,
+ 		year=2023,
+ 		month=12,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231203] =
+{
+ 		id=231203,
+ 		year=2023,
+ 		month=12,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231204] =
+{
+ 		id=231204,
+ 		year=2023,
+ 		month=12,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231205] =
+{
+ 		id=231205,
+ 		year=2023,
+ 		month=12,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231206] =
+{
+ 		id=231206,
+ 		year=2023,
+ 		month=12,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231207] =
+{
+ 		id=231207,
+ 		year=2023,
+ 		month=12,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231208] =
+{
+ 		id=231208,
+ 		year=2023,
+ 		month=12,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231209] =
+{
+ 		id=231209,
+ 		year=2023,
+ 		month=12,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231210] =
+{
+ 		id=231210,
+ 		year=2023,
+ 		month=12,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231211] =
+{
+ 		id=231211,
+ 		year=2023,
+ 		month=12,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231212] =
+{
+ 		id=231212,
+ 		year=2023,
+ 		month=12,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231213] =
+{
+ 		id=231213,
+ 		year=2023,
+ 		month=12,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231214] =
+{
+ 		id=231214,
+ 		year=2023,
+ 		month=12,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231215] =
+{
+ 		id=231215,
+ 		year=2023,
+ 		month=12,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231216] =
+{
+ 		id=231216,
+ 		year=2023,
+ 		month=12,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231217] =
+{
+ 		id=231217,
+ 		year=2023,
+ 		month=12,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231218] =
+{
+ 		id=231218,
+ 		year=2023,
+ 		month=12,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231219] =
+{
+ 		id=231219,
+ 		year=2023,
+ 		month=12,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231220] =
+{
+ 		id=231220,
+ 		year=2023,
+ 		month=12,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231221] =
+{
+ 		id=231221,
+ 		year=2023,
+ 		month=12,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231222] =
+{
+ 		id=231222,
+ 		year=2023,
+ 		month=12,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231223] =
+{
+ 		id=231223,
+ 		year=2023,
+ 		month=12,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231224] =
+{
+ 		id=231224,
+ 		year=2023,
+ 		month=12,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231225] =
+{
+ 		id=231225,
+ 		year=2023,
+ 		month=12,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231226] =
+{
+ 		id=231226,
+ 		year=2023,
+ 		month=12,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231227] =
+{
+ 		id=231227,
+ 		year=2023,
+ 		month=12,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231228] =
+{
+ 		id=231228,
+ 		year=2023,
+ 		month=12,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231229] =
+{
+ 		id=231229,
+ 		year=2023,
+ 		month=12,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231230] =
+{
+ 		id=231230,
+ 		year=2023,
+ 		month=12,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[231231] =
+{
+ 		id=231231,
+ 		year=2023,
+ 		month=12,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240101] =
+{
+ 		id=240101,
+ 		year=2024,
+ 		month=1,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240102] =
+{
+ 		id=240102,
+ 		year=2024,
+ 		month=1,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240103] =
+{
+ 		id=240103,
+ 		year=2024,
+ 		month=1,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240104] =
+{
+ 		id=240104,
+ 		year=2024,
+ 		month=1,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240105] =
+{
+ 		id=240105,
+ 		year=2024,
+ 		month=1,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240106] =
+{
+ 		id=240106,
+ 		year=2024,
+ 		month=1,
+ 		days=6,
+ 		dailyReward=806,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240107] =
+{
+ 		id=240107,
+ 		year=2024,
+ 		month=1,
+ 		days=7,
+ 		dailyReward=807,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240108] =
+{
+ 		id=240108,
+ 		year=2024,
+ 		month=1,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240109] =
+{
+ 		id=240109,
+ 		year=2024,
+ 		month=1,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240110] =
+{
+ 		id=240110,
+ 		year=2024,
+ 		month=1,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240111] =
+{
+ 		id=240111,
+ 		year=2024,
+ 		month=1,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240112] =
+{
+ 		id=240112,
+ 		year=2024,
+ 		month=1,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240113] =
+{
+ 		id=240113,
+ 		year=2024,
+ 		month=1,
+ 		days=13,
+ 		dailyReward=813,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240114] =
+{
+ 		id=240114,
+ 		year=2024,
+ 		month=1,
+ 		days=14,
+ 		dailyReward=814,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240115] =
+{
+ 		id=240115,
+ 		year=2024,
+ 		month=1,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240116] =
+{
+ 		id=240116,
+ 		year=2024,
+ 		month=1,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240117] =
+{
+ 		id=240117,
+ 		year=2024,
+ 		month=1,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240118] =
+{
+ 		id=240118,
+ 		year=2024,
+ 		month=1,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240119] =
+{
+ 		id=240119,
+ 		year=2024,
+ 		month=1,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240120] =
+{
+ 		id=240120,
+ 		year=2024,
+ 		month=1,
+ 		days=20,
+ 		dailyReward=820,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240121] =
+{
+ 		id=240121,
+ 		year=2024,
+ 		month=1,
+ 		days=21,
+ 		dailyReward=821,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240122] =
+{
+ 		id=240122,
+ 		year=2024,
+ 		month=1,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240123] =
+{
+ 		id=240123,
+ 		year=2024,
+ 		month=1,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240124] =
+{
+ 		id=240124,
+ 		year=2024,
+ 		month=1,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240125] =
+{
+ 		id=240125,
+ 		year=2024,
+ 		month=1,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240126] =
+{
+ 		id=240126,
+ 		year=2024,
+ 		month=1,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240127] =
+{
+ 		id=240127,
+ 		year=2024,
+ 		month=1,
+ 		days=27,
+ 		dailyReward=827,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240128] =
+{
+ 		id=240128,
+ 		year=2024,
+ 		month=1,
+ 		days=28,
+ 		dailyReward=828,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240129] =
+{
+ 		id=240129,
+ 		year=2024,
+ 		month=1,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240130] =
+{
+ 		id=240130,
+ 		year=2024,
+ 		month=1,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240131] =
+{
+ 		id=240131,
+ 		year=2024,
+ 		month=1,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240201] =
+{
+ 		id=240201,
+ 		year=2024,
+ 		month=2,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240202] =
+{
+ 		id=240202,
+ 		year=2024,
+ 		month=2,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240203] =
+{
+ 		id=240203,
+ 		year=2024,
+ 		month=2,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240204] =
+{
+ 		id=240204,
+ 		year=2024,
+ 		month=2,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240205] =
+{
+ 		id=240205,
+ 		year=2024,
+ 		month=2,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240206] =
+{
+ 		id=240206,
+ 		year=2024,
+ 		month=2,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240207] =
+{
+ 		id=240207,
+ 		year=2024,
+ 		month=2,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240208] =
+{
+ 		id=240208,
+ 		year=2024,
+ 		month=2,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240209] =
+{
+ 		id=240209,
+ 		year=2024,
+ 		month=2,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240210] =
+{
+ 		id=240210,
+ 		year=2024,
+ 		month=2,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240211] =
+{
+ 		id=240211,
+ 		year=2024,
+ 		month=2,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240212] =
+{
+ 		id=240212,
+ 		year=2024,
+ 		month=2,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240213] =
+{
+ 		id=240213,
+ 		year=2024,
+ 		month=2,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240214] =
+{
+ 		id=240214,
+ 		year=2024,
+ 		month=2,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240215] =
+{
+ 		id=240215,
+ 		year=2024,
+ 		month=2,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240216] =
+{
+ 		id=240216,
+ 		year=2024,
+ 		month=2,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240217] =
+{
+ 		id=240217,
+ 		year=2024,
+ 		month=2,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240218] =
+{
+ 		id=240218,
+ 		year=2024,
+ 		month=2,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240219] =
+{
+ 		id=240219,
+ 		year=2024,
+ 		month=2,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240220] =
+{
+ 		id=240220,
+ 		year=2024,
+ 		month=2,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240221] =
+{
+ 		id=240221,
+ 		year=2024,
+ 		month=2,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240222] =
+{
+ 		id=240222,
+ 		year=2024,
+ 		month=2,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240223] =
+{
+ 		id=240223,
+ 		year=2024,
+ 		month=2,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240224] =
+{
+ 		id=240224,
+ 		year=2024,
+ 		month=2,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240225] =
+{
+ 		id=240225,
+ 		year=2024,
+ 		month=2,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240226] =
+{
+ 		id=240226,
+ 		year=2024,
+ 		month=2,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240227] =
+{
+ 		id=240227,
+ 		year=2024,
+ 		month=2,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240228] =
+{
+ 		id=240228,
+ 		year=2024,
+ 		month=2,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240229] =
+{
+ 		id=240229,
+ 		year=2024,
+ 		month=2,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240301] =
+{
+ 		id=240301,
+ 		year=2024,
+ 		month=3,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240302] =
+{
+ 		id=240302,
+ 		year=2024,
+ 		month=3,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240303] =
+{
+ 		id=240303,
+ 		year=2024,
+ 		month=3,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240304] =
+{
+ 		id=240304,
+ 		year=2024,
+ 		month=3,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240305] =
+{
+ 		id=240305,
+ 		year=2024,
+ 		month=3,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240306] =
+{
+ 		id=240306,
+ 		year=2024,
+ 		month=3,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240307] =
+{
+ 		id=240307,
+ 		year=2024,
+ 		month=3,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240308] =
+{
+ 		id=240308,
+ 		year=2024,
+ 		month=3,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240309] =
+{
+ 		id=240309,
+ 		year=2024,
+ 		month=3,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240310] =
+{
+ 		id=240310,
+ 		year=2024,
+ 		month=3,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240311] =
+{
+ 		id=240311,
+ 		year=2024,
+ 		month=3,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240312] =
+{
+ 		id=240312,
+ 		year=2024,
+ 		month=3,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240313] =
+{
+ 		id=240313,
+ 		year=2024,
+ 		month=3,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240314] =
+{
+ 		id=240314,
+ 		year=2024,
+ 		month=3,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240315] =
+{
+ 		id=240315,
+ 		year=2024,
+ 		month=3,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240316] =
+{
+ 		id=240316,
+ 		year=2024,
+ 		month=3,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240317] =
+{
+ 		id=240317,
+ 		year=2024,
+ 		month=3,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240318] =
+{
+ 		id=240318,
+ 		year=2024,
+ 		month=3,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240319] =
+{
+ 		id=240319,
+ 		year=2024,
+ 		month=3,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240320] =
+{
+ 		id=240320,
+ 		year=2024,
+ 		month=3,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240321] =
+{
+ 		id=240321,
+ 		year=2024,
+ 		month=3,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240322] =
+{
+ 		id=240322,
+ 		year=2024,
+ 		month=3,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240323] =
+{
+ 		id=240323,
+ 		year=2024,
+ 		month=3,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240324] =
+{
+ 		id=240324,
+ 		year=2024,
+ 		month=3,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240325] =
+{
+ 		id=240325,
+ 		year=2024,
+ 		month=3,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240326] =
+{
+ 		id=240326,
+ 		year=2024,
+ 		month=3,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240327] =
+{
+ 		id=240327,
+ 		year=2024,
+ 		month=3,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240328] =
+{
+ 		id=240328,
+ 		year=2024,
+ 		month=3,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240329] =
+{
+ 		id=240329,
+ 		year=2024,
+ 		month=3,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240330] =
+{
+ 		id=240330,
+ 		year=2024,
+ 		month=3,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240331] =
+{
+ 		id=240331,
+ 		year=2024,
+ 		month=3,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240401] =
+{
+ 		id=240401,
+ 		year=2024,
+ 		month=4,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240402] =
+{
+ 		id=240402,
+ 		year=2024,
+ 		month=4,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240403] =
+{
+ 		id=240403,
+ 		year=2024,
+ 		month=4,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240404] =
+{
+ 		id=240404,
+ 		year=2024,
+ 		month=4,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240405] =
+{
+ 		id=240405,
+ 		year=2024,
+ 		month=4,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240406] =
+{
+ 		id=240406,
+ 		year=2024,
+ 		month=4,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240407] =
+{
+ 		id=240407,
+ 		year=2024,
+ 		month=4,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240408] =
+{
+ 		id=240408,
+ 		year=2024,
+ 		month=4,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240409] =
+{
+ 		id=240409,
+ 		year=2024,
+ 		month=4,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240410] =
+{
+ 		id=240410,
+ 		year=2024,
+ 		month=4,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240411] =
+{
+ 		id=240411,
+ 		year=2024,
+ 		month=4,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240412] =
+{
+ 		id=240412,
+ 		year=2024,
+ 		month=4,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240413] =
+{
+ 		id=240413,
+ 		year=2024,
+ 		month=4,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240414] =
+{
+ 		id=240414,
+ 		year=2024,
+ 		month=4,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240415] =
+{
+ 		id=240415,
+ 		year=2024,
+ 		month=4,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240416] =
+{
+ 		id=240416,
+ 		year=2024,
+ 		month=4,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240417] =
+{
+ 		id=240417,
+ 		year=2024,
+ 		month=4,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240418] =
+{
+ 		id=240418,
+ 		year=2024,
+ 		month=4,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240419] =
+{
+ 		id=240419,
+ 		year=2024,
+ 		month=4,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240420] =
+{
+ 		id=240420,
+ 		year=2024,
+ 		month=4,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240421] =
+{
+ 		id=240421,
+ 		year=2024,
+ 		month=4,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240422] =
+{
+ 		id=240422,
+ 		year=2024,
+ 		month=4,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240423] =
+{
+ 		id=240423,
+ 		year=2024,
+ 		month=4,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240424] =
+{
+ 		id=240424,
+ 		year=2024,
+ 		month=4,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240425] =
+{
+ 		id=240425,
+ 		year=2024,
+ 		month=4,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240426] =
+{
+ 		id=240426,
+ 		year=2024,
+ 		month=4,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240427] =
+{
+ 		id=240427,
+ 		year=2024,
+ 		month=4,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240428] =
+{
+ 		id=240428,
+ 		year=2024,
+ 		month=4,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240429] =
+{
+ 		id=240429,
+ 		year=2024,
+ 		month=4,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240430] =
+{
+ 		id=240430,
+ 		year=2024,
+ 		month=4,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240501] =
+{
+ 		id=240501,
+ 		year=2024,
+ 		month=5,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240502] =
+{
+ 		id=240502,
+ 		year=2024,
+ 		month=5,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240503] =
+{
+ 		id=240503,
+ 		year=2024,
+ 		month=5,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240504] =
+{
+ 		id=240504,
+ 		year=2024,
+ 		month=5,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240505] =
+{
+ 		id=240505,
+ 		year=2024,
+ 		month=5,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240506] =
+{
+ 		id=240506,
+ 		year=2024,
+ 		month=5,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240507] =
+{
+ 		id=240507,
+ 		year=2024,
+ 		month=5,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240508] =
+{
+ 		id=240508,
+ 		year=2024,
+ 		month=5,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240509] =
+{
+ 		id=240509,
+ 		year=2024,
+ 		month=5,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240510] =
+{
+ 		id=240510,
+ 		year=2024,
+ 		month=5,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240511] =
+{
+ 		id=240511,
+ 		year=2024,
+ 		month=5,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240512] =
+{
+ 		id=240512,
+ 		year=2024,
+ 		month=5,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240513] =
+{
+ 		id=240513,
+ 		year=2024,
+ 		month=5,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240514] =
+{
+ 		id=240514,
+ 		year=2024,
+ 		month=5,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240515] =
+{
+ 		id=240515,
+ 		year=2024,
+ 		month=5,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240516] =
+{
+ 		id=240516,
+ 		year=2024,
+ 		month=5,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240517] =
+{
+ 		id=240517,
+ 		year=2024,
+ 		month=5,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240518] =
+{
+ 		id=240518,
+ 		year=2024,
+ 		month=5,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240519] =
+{
+ 		id=240519,
+ 		year=2024,
+ 		month=5,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240520] =
+{
+ 		id=240520,
+ 		year=2024,
+ 		month=5,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240521] =
+{
+ 		id=240521,
+ 		year=2024,
+ 		month=5,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240522] =
+{
+ 		id=240522,
+ 		year=2024,
+ 		month=5,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240523] =
+{
+ 		id=240523,
+ 		year=2024,
+ 		month=5,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240524] =
+{
+ 		id=240524,
+ 		year=2024,
+ 		month=5,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240525] =
+{
+ 		id=240525,
+ 		year=2024,
+ 		month=5,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240526] =
+{
+ 		id=240526,
+ 		year=2024,
+ 		month=5,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240527] =
+{
+ 		id=240527,
+ 		year=2024,
+ 		month=5,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240528] =
+{
+ 		id=240528,
+ 		year=2024,
+ 		month=5,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240529] =
+{
+ 		id=240529,
+ 		year=2024,
+ 		month=5,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240530] =
+{
+ 		id=240530,
+ 		year=2024,
+ 		month=5,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240531] =
+{
+ 		id=240531,
+ 		year=2024,
+ 		month=5,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240601] =
+{
+ 		id=240601,
+ 		year=2024,
+ 		month=6,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240602] =
+{
+ 		id=240602,
+ 		year=2024,
+ 		month=6,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240603] =
+{
+ 		id=240603,
+ 		year=2024,
+ 		month=6,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240604] =
+{
+ 		id=240604,
+ 		year=2024,
+ 		month=6,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240605] =
+{
+ 		id=240605,
+ 		year=2024,
+ 		month=6,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240606] =
+{
+ 		id=240606,
+ 		year=2024,
+ 		month=6,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240607] =
+{
+ 		id=240607,
+ 		year=2024,
+ 		month=6,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240608] =
+{
+ 		id=240608,
+ 		year=2024,
+ 		month=6,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240609] =
+{
+ 		id=240609,
+ 		year=2024,
+ 		month=6,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240610] =
+{
+ 		id=240610,
+ 		year=2024,
+ 		month=6,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240611] =
+{
+ 		id=240611,
+ 		year=2024,
+ 		month=6,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240612] =
+{
+ 		id=240612,
+ 		year=2024,
+ 		month=6,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240613] =
+{
+ 		id=240613,
+ 		year=2024,
+ 		month=6,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240614] =
+{
+ 		id=240614,
+ 		year=2024,
+ 		month=6,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240615] =
+{
+ 		id=240615,
+ 		year=2024,
+ 		month=6,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240616] =
+{
+ 		id=240616,
+ 		year=2024,
+ 		month=6,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240617] =
+{
+ 		id=240617,
+ 		year=2024,
+ 		month=6,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240618] =
+{
+ 		id=240618,
+ 		year=2024,
+ 		month=6,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240619] =
+{
+ 		id=240619,
+ 		year=2024,
+ 		month=6,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240620] =
+{
+ 		id=240620,
+ 		year=2024,
+ 		month=6,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240621] =
+{
+ 		id=240621,
+ 		year=2024,
+ 		month=6,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240622] =
+{
+ 		id=240622,
+ 		year=2024,
+ 		month=6,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240623] =
+{
+ 		id=240623,
+ 		year=2024,
+ 		month=6,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240624] =
+{
+ 		id=240624,
+ 		year=2024,
+ 		month=6,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240625] =
+{
+ 		id=240625,
+ 		year=2024,
+ 		month=6,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240626] =
+{
+ 		id=240626,
+ 		year=2024,
+ 		month=6,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240627] =
+{
+ 		id=240627,
+ 		year=2024,
+ 		month=6,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240628] =
+{
+ 		id=240628,
+ 		year=2024,
+ 		month=6,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240629] =
+{
+ 		id=240629,
+ 		year=2024,
+ 		month=6,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240630] =
+{
+ 		id=240630,
+ 		year=2024,
+ 		month=6,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240701] =
+{
+ 		id=240701,
+ 		year=2024,
+ 		month=7,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240702] =
+{
+ 		id=240702,
+ 		year=2024,
+ 		month=7,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240703] =
+{
+ 		id=240703,
+ 		year=2024,
+ 		month=7,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240704] =
+{
+ 		id=240704,
+ 		year=2024,
+ 		month=7,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240705] =
+{
+ 		id=240705,
+ 		year=2024,
+ 		month=7,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240706] =
+{
+ 		id=240706,
+ 		year=2024,
+ 		month=7,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240707] =
+{
+ 		id=240707,
+ 		year=2024,
+ 		month=7,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240708] =
+{
+ 		id=240708,
+ 		year=2024,
+ 		month=7,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240709] =
+{
+ 		id=240709,
+ 		year=2024,
+ 		month=7,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240710] =
+{
+ 		id=240710,
+ 		year=2024,
+ 		month=7,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240711] =
+{
+ 		id=240711,
+ 		year=2024,
+ 		month=7,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240712] =
+{
+ 		id=240712,
+ 		year=2024,
+ 		month=7,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240713] =
+{
+ 		id=240713,
+ 		year=2024,
+ 		month=7,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240714] =
+{
+ 		id=240714,
+ 		year=2024,
+ 		month=7,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240715] =
+{
+ 		id=240715,
+ 		year=2024,
+ 		month=7,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240716] =
+{
+ 		id=240716,
+ 		year=2024,
+ 		month=7,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240717] =
+{
+ 		id=240717,
+ 		year=2024,
+ 		month=7,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240718] =
+{
+ 		id=240718,
+ 		year=2024,
+ 		month=7,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240719] =
+{
+ 		id=240719,
+ 		year=2024,
+ 		month=7,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240720] =
+{
+ 		id=240720,
+ 		year=2024,
+ 		month=7,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240721] =
+{
+ 		id=240721,
+ 		year=2024,
+ 		month=7,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240722] =
+{
+ 		id=240722,
+ 		year=2024,
+ 		month=7,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240723] =
+{
+ 		id=240723,
+ 		year=2024,
+ 		month=7,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240724] =
+{
+ 		id=240724,
+ 		year=2024,
+ 		month=7,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240725] =
+{
+ 		id=240725,
+ 		year=2024,
+ 		month=7,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240726] =
+{
+ 		id=240726,
+ 		year=2024,
+ 		month=7,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240727] =
+{
+ 		id=240727,
+ 		year=2024,
+ 		month=7,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240728] =
+{
+ 		id=240728,
+ 		year=2024,
+ 		month=7,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240729] =
+{
+ 		id=240729,
+ 		year=2024,
+ 		month=7,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240730] =
+{
+ 		id=240730,
+ 		year=2024,
+ 		month=7,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240731] =
+{
+ 		id=240731,
+ 		year=2024,
+ 		month=7,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240801] =
+{
+ 		id=240801,
+ 		year=2024,
+ 		month=8,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240802] =
+{
+ 		id=240802,
+ 		year=2024,
+ 		month=8,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240803] =
+{
+ 		id=240803,
+ 		year=2024,
+ 		month=8,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240804] =
+{
+ 		id=240804,
+ 		year=2024,
+ 		month=8,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240805] =
+{
+ 		id=240805,
+ 		year=2024,
+ 		month=8,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240806] =
+{
+ 		id=240806,
+ 		year=2024,
+ 		month=8,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240807] =
+{
+ 		id=240807,
+ 		year=2024,
+ 		month=8,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240808] =
+{
+ 		id=240808,
+ 		year=2024,
+ 		month=8,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240809] =
+{
+ 		id=240809,
+ 		year=2024,
+ 		month=8,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240810] =
+{
+ 		id=240810,
+ 		year=2024,
+ 		month=8,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240811] =
+{
+ 		id=240811,
+ 		year=2024,
+ 		month=8,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240812] =
+{
+ 		id=240812,
+ 		year=2024,
+ 		month=8,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240813] =
+{
+ 		id=240813,
+ 		year=2024,
+ 		month=8,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240814] =
+{
+ 		id=240814,
+ 		year=2024,
+ 		month=8,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240815] =
+{
+ 		id=240815,
+ 		year=2024,
+ 		month=8,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240816] =
+{
+ 		id=240816,
+ 		year=2024,
+ 		month=8,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240817] =
+{
+ 		id=240817,
+ 		year=2024,
+ 		month=8,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240818] =
+{
+ 		id=240818,
+ 		year=2024,
+ 		month=8,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240819] =
+{
+ 		id=240819,
+ 		year=2024,
+ 		month=8,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240820] =
+{
+ 		id=240820,
+ 		year=2024,
+ 		month=8,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240821] =
+{
+ 		id=240821,
+ 		year=2024,
+ 		month=8,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240822] =
+{
+ 		id=240822,
+ 		year=2024,
+ 		month=8,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240823] =
+{
+ 		id=240823,
+ 		year=2024,
+ 		month=8,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240824] =
+{
+ 		id=240824,
+ 		year=2024,
+ 		month=8,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240825] =
+{
+ 		id=240825,
+ 		year=2024,
+ 		month=8,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240826] =
+{
+ 		id=240826,
+ 		year=2024,
+ 		month=8,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240827] =
+{
+ 		id=240827,
+ 		year=2024,
+ 		month=8,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240828] =
+{
+ 		id=240828,
+ 		year=2024,
+ 		month=8,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240829] =
+{
+ 		id=240829,
+ 		year=2024,
+ 		month=8,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240830] =
+{
+ 		id=240830,
+ 		year=2024,
+ 		month=8,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240831] =
+{
+ 		id=240831,
+ 		year=2024,
+ 		month=8,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240901] =
+{
+ 		id=240901,
+ 		year=2024,
+ 		month=9,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240902] =
+{
+ 		id=240902,
+ 		year=2024,
+ 		month=9,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240903] =
+{
+ 		id=240903,
+ 		year=2024,
+ 		month=9,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240904] =
+{
+ 		id=240904,
+ 		year=2024,
+ 		month=9,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240905] =
+{
+ 		id=240905,
+ 		year=2024,
+ 		month=9,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240906] =
+{
+ 		id=240906,
+ 		year=2024,
+ 		month=9,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240907] =
+{
+ 		id=240907,
+ 		year=2024,
+ 		month=9,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240908] =
+{
+ 		id=240908,
+ 		year=2024,
+ 		month=9,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240909] =
+{
+ 		id=240909,
+ 		year=2024,
+ 		month=9,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240910] =
+{
+ 		id=240910,
+ 		year=2024,
+ 		month=9,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240911] =
+{
+ 		id=240911,
+ 		year=2024,
+ 		month=9,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240912] =
+{
+ 		id=240912,
+ 		year=2024,
+ 		month=9,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240913] =
+{
+ 		id=240913,
+ 		year=2024,
+ 		month=9,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240914] =
+{
+ 		id=240914,
+ 		year=2024,
+ 		month=9,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240915] =
+{
+ 		id=240915,
+ 		year=2024,
+ 		month=9,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240916] =
+{
+ 		id=240916,
+ 		year=2024,
+ 		month=9,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240917] =
+{
+ 		id=240917,
+ 		year=2024,
+ 		month=9,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240918] =
+{
+ 		id=240918,
+ 		year=2024,
+ 		month=9,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240919] =
+{
+ 		id=240919,
+ 		year=2024,
+ 		month=9,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240920] =
+{
+ 		id=240920,
+ 		year=2024,
+ 		month=9,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240921] =
+{
+ 		id=240921,
+ 		year=2024,
+ 		month=9,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240922] =
+{
+ 		id=240922,
+ 		year=2024,
+ 		month=9,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240923] =
+{
+ 		id=240923,
+ 		year=2024,
+ 		month=9,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240924] =
+{
+ 		id=240924,
+ 		year=2024,
+ 		month=9,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240925] =
+{
+ 		id=240925,
+ 		year=2024,
+ 		month=9,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240926] =
+{
+ 		id=240926,
+ 		year=2024,
+ 		month=9,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240927] =
+{
+ 		id=240927,
+ 		year=2024,
+ 		month=9,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240928] =
+{
+ 		id=240928,
+ 		year=2024,
+ 		month=9,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240929] =
+{
+ 		id=240929,
+ 		year=2024,
+ 		month=9,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[240930] =
+{
+ 		id=240930,
+ 		year=2024,
+ 		month=9,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241001] =
+{
+ 		id=241001,
+ 		year=2024,
+ 		month=10,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241002] =
+{
+ 		id=241002,
+ 		year=2024,
+ 		month=10,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241003] =
+{
+ 		id=241003,
+ 		year=2024,
+ 		month=10,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241004] =
+{
+ 		id=241004,
+ 		year=2024,
+ 		month=10,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241005] =
+{
+ 		id=241005,
+ 		year=2024,
+ 		month=10,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241006] =
+{
+ 		id=241006,
+ 		year=2024,
+ 		month=10,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241007] =
+{
+ 		id=241007,
+ 		year=2024,
+ 		month=10,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241008] =
+{
+ 		id=241008,
+ 		year=2024,
+ 		month=10,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241009] =
+{
+ 		id=241009,
+ 		year=2024,
+ 		month=10,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241010] =
+{
+ 		id=241010,
+ 		year=2024,
+ 		month=10,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241011] =
+{
+ 		id=241011,
+ 		year=2024,
+ 		month=10,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241012] =
+{
+ 		id=241012,
+ 		year=2024,
+ 		month=10,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241013] =
+{
+ 		id=241013,
+ 		year=2024,
+ 		month=10,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241014] =
+{
+ 		id=241014,
+ 		year=2024,
+ 		month=10,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241015] =
+{
+ 		id=241015,
+ 		year=2024,
+ 		month=10,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241016] =
+{
+ 		id=241016,
+ 		year=2024,
+ 		month=10,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241017] =
+{
+ 		id=241017,
+ 		year=2024,
+ 		month=10,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241018] =
+{
+ 		id=241018,
+ 		year=2024,
+ 		month=10,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241019] =
+{
+ 		id=241019,
+ 		year=2024,
+ 		month=10,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241020] =
+{
+ 		id=241020,
+ 		year=2024,
+ 		month=10,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241021] =
+{
+ 		id=241021,
+ 		year=2024,
+ 		month=10,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241022] =
+{
+ 		id=241022,
+ 		year=2024,
+ 		month=10,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241023] =
+{
+ 		id=241023,
+ 		year=2024,
+ 		month=10,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241024] =
+{
+ 		id=241024,
+ 		year=2024,
+ 		month=10,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241025] =
+{
+ 		id=241025,
+ 		year=2024,
+ 		month=10,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241026] =
+{
+ 		id=241026,
+ 		year=2024,
+ 		month=10,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241027] =
+{
+ 		id=241027,
+ 		year=2024,
+ 		month=10,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241028] =
+{
+ 		id=241028,
+ 		year=2024,
+ 		month=10,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241029] =
+{
+ 		id=241029,
+ 		year=2024,
+ 		month=10,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241030] =
+{
+ 		id=241030,
+ 		year=2024,
+ 		month=10,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241031] =
+{
+ 		id=241031,
+ 		year=2024,
+ 		month=10,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241101] =
+{
+ 		id=241101,
+ 		year=2024,
+ 		month=11,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241102] =
+{
+ 		id=241102,
+ 		year=2024,
+ 		month=11,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241103] =
+{
+ 		id=241103,
+ 		year=2024,
+ 		month=11,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241104] =
+{
+ 		id=241104,
+ 		year=2024,
+ 		month=11,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241105] =
+{
+ 		id=241105,
+ 		year=2024,
+ 		month=11,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241106] =
+{
+ 		id=241106,
+ 		year=2024,
+ 		month=11,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241107] =
+{
+ 		id=241107,
+ 		year=2024,
+ 		month=11,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241108] =
+{
+ 		id=241108,
+ 		year=2024,
+ 		month=11,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241109] =
+{
+ 		id=241109,
+ 		year=2024,
+ 		month=11,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241110] =
+{
+ 		id=241110,
+ 		year=2024,
+ 		month=11,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241111] =
+{
+ 		id=241111,
+ 		year=2024,
+ 		month=11,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241112] =
+{
+ 		id=241112,
+ 		year=2024,
+ 		month=11,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241113] =
+{
+ 		id=241113,
+ 		year=2024,
+ 		month=11,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241114] =
+{
+ 		id=241114,
+ 		year=2024,
+ 		month=11,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241115] =
+{
+ 		id=241115,
+ 		year=2024,
+ 		month=11,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241116] =
+{
+ 		id=241116,
+ 		year=2024,
+ 		month=11,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241117] =
+{
+ 		id=241117,
+ 		year=2024,
+ 		month=11,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241118] =
+{
+ 		id=241118,
+ 		year=2024,
+ 		month=11,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241119] =
+{
+ 		id=241119,
+ 		year=2024,
+ 		month=11,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241120] =
+{
+ 		id=241120,
+ 		year=2024,
+ 		month=11,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241121] =
+{
+ 		id=241121,
+ 		year=2024,
+ 		month=11,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241122] =
+{
+ 		id=241122,
+ 		year=2024,
+ 		month=11,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241123] =
+{
+ 		id=241123,
+ 		year=2024,
+ 		month=11,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241124] =
+{
+ 		id=241124,
+ 		year=2024,
+ 		month=11,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241125] =
+{
+ 		id=241125,
+ 		year=2024,
+ 		month=11,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241126] =
+{
+ 		id=241126,
+ 		year=2024,
+ 		month=11,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241127] =
+{
+ 		id=241127,
+ 		year=2024,
+ 		month=11,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241128] =
+{
+ 		id=241128,
+ 		year=2024,
+ 		month=11,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241129] =
+{
+ 		id=241129,
+ 		year=2024,
+ 		month=11,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241130] =
+{
+ 		id=241130,
+ 		year=2024,
+ 		month=11,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241201] =
+{
+ 		id=241201,
+ 		year=2024,
+ 		month=12,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241202] =
+{
+ 		id=241202,
+ 		year=2024,
+ 		month=12,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241203] =
+{
+ 		id=241203,
+ 		year=2024,
+ 		month=12,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241204] =
+{
+ 		id=241204,
+ 		year=2024,
+ 		month=12,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241205] =
+{
+ 		id=241205,
+ 		year=2024,
+ 		month=12,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241206] =
+{
+ 		id=241206,
+ 		year=2024,
+ 		month=12,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241207] =
+{
+ 		id=241207,
+ 		year=2024,
+ 		month=12,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241208] =
+{
+ 		id=241208,
+ 		year=2024,
+ 		month=12,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241209] =
+{
+ 		id=241209,
+ 		year=2024,
+ 		month=12,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241210] =
+{
+ 		id=241210,
+ 		year=2024,
+ 		month=12,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241211] =
+{
+ 		id=241211,
+ 		year=2024,
+ 		month=12,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241212] =
+{
+ 		id=241212,
+ 		year=2024,
+ 		month=12,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241213] =
+{
+ 		id=241213,
+ 		year=2024,
+ 		month=12,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241214] =
+{
+ 		id=241214,
+ 		year=2024,
+ 		month=12,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241215] =
+{
+ 		id=241215,
+ 		year=2024,
+ 		month=12,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241216] =
+{
+ 		id=241216,
+ 		year=2024,
+ 		month=12,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241217] =
+{
+ 		id=241217,
+ 		year=2024,
+ 		month=12,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241218] =
+{
+ 		id=241218,
+ 		year=2024,
+ 		month=12,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241219] =
+{
+ 		id=241219,
+ 		year=2024,
+ 		month=12,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241220] =
+{
+ 		id=241220,
+ 		year=2024,
+ 		month=12,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241221] =
+{
+ 		id=241221,
+ 		year=2024,
+ 		month=12,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241222] =
+{
+ 		id=241222,
+ 		year=2024,
+ 		month=12,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241223] =
+{
+ 		id=241223,
+ 		year=2024,
+ 		month=12,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241224] =
+{
+ 		id=241224,
+ 		year=2024,
+ 		month=12,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241225] =
+{
+ 		id=241225,
+ 		year=2024,
+ 		month=12,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241226] =
+{
+ 		id=241226,
+ 		year=2024,
+ 		month=12,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241227] =
+{
+ 		id=241227,
+ 		year=2024,
+ 		month=12,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241228] =
+{
+ 		id=241228,
+ 		year=2024,
+ 		month=12,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241229] =
+{
+ 		id=241229,
+ 		year=2024,
+ 		month=12,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241230] =
+{
+ 		id=241230,
+ 		year=2024,
+ 		month=12,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[241231] =
+{
+ 		id=241231,
+ 		year=2024,
+ 		month=12,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250101] =
+{
+ 		id=250101,
+ 		year=2025,
+ 		month=1,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250102] =
+{
+ 		id=250102,
+ 		year=2025,
+ 		month=1,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250103] =
+{
+ 		id=250103,
+ 		year=2025,
+ 		month=1,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250104] =
+{
+ 		id=250104,
+ 		year=2025,
+ 		month=1,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250105] =
+{
+ 		id=250105,
+ 		year=2025,
+ 		month=1,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250106] =
+{
+ 		id=250106,
+ 		year=2025,
+ 		month=1,
+ 		days=6,
+ 		dailyReward=806,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250107] =
+{
+ 		id=250107,
+ 		year=2025,
+ 		month=1,
+ 		days=7,
+ 		dailyReward=807,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250108] =
+{
+ 		id=250108,
+ 		year=2025,
+ 		month=1,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250109] =
+{
+ 		id=250109,
+ 		year=2025,
+ 		month=1,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250110] =
+{
+ 		id=250110,
+ 		year=2025,
+ 		month=1,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250111] =
+{
+ 		id=250111,
+ 		year=2025,
+ 		month=1,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250112] =
+{
+ 		id=250112,
+ 		year=2025,
+ 		month=1,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250113] =
+{
+ 		id=250113,
+ 		year=2025,
+ 		month=1,
+ 		days=13,
+ 		dailyReward=813,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250114] =
+{
+ 		id=250114,
+ 		year=2025,
+ 		month=1,
+ 		days=14,
+ 		dailyReward=814,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250115] =
+{
+ 		id=250115,
+ 		year=2025,
+ 		month=1,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250116] =
+{
+ 		id=250116,
+ 		year=2025,
+ 		month=1,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250117] =
+{
+ 		id=250117,
+ 		year=2025,
+ 		month=1,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250118] =
+{
+ 		id=250118,
+ 		year=2025,
+ 		month=1,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250119] =
+{
+ 		id=250119,
+ 		year=2025,
+ 		month=1,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250120] =
+{
+ 		id=250120,
+ 		year=2025,
+ 		month=1,
+ 		days=20,
+ 		dailyReward=820,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250121] =
+{
+ 		id=250121,
+ 		year=2025,
+ 		month=1,
+ 		days=21,
+ 		dailyReward=821,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250122] =
+{
+ 		id=250122,
+ 		year=2025,
+ 		month=1,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250123] =
+{
+ 		id=250123,
+ 		year=2025,
+ 		month=1,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250124] =
+{
+ 		id=250124,
+ 		year=2025,
+ 		month=1,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250125] =
+{
+ 		id=250125,
+ 		year=2025,
+ 		month=1,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250126] =
+{
+ 		id=250126,
+ 		year=2025,
+ 		month=1,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250127] =
+{
+ 		id=250127,
+ 		year=2025,
+ 		month=1,
+ 		days=27,
+ 		dailyReward=827,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250128] =
+{
+ 		id=250128,
+ 		year=2025,
+ 		month=1,
+ 		days=28,
+ 		dailyReward=828,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250129] =
+{
+ 		id=250129,
+ 		year=2025,
+ 		month=1,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250130] =
+{
+ 		id=250130,
+ 		year=2025,
+ 		month=1,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250131] =
+{
+ 		id=250131,
+ 		year=2025,
+ 		month=1,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250201] =
+{
+ 		id=250201,
+ 		year=2025,
+ 		month=2,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250202] =
+{
+ 		id=250202,
+ 		year=2025,
+ 		month=2,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250203] =
+{
+ 		id=250203,
+ 		year=2025,
+ 		month=2,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250204] =
+{
+ 		id=250204,
+ 		year=2025,
+ 		month=2,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250205] =
+{
+ 		id=250205,
+ 		year=2025,
+ 		month=2,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250206] =
+{
+ 		id=250206,
+ 		year=2025,
+ 		month=2,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250207] =
+{
+ 		id=250207,
+ 		year=2025,
+ 		month=2,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250208] =
+{
+ 		id=250208,
+ 		year=2025,
+ 		month=2,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250209] =
+{
+ 		id=250209,
+ 		year=2025,
+ 		month=2,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250210] =
+{
+ 		id=250210,
+ 		year=2025,
+ 		month=2,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250211] =
+{
+ 		id=250211,
+ 		year=2025,
+ 		month=2,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250212] =
+{
+ 		id=250212,
+ 		year=2025,
+ 		month=2,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250213] =
+{
+ 		id=250213,
+ 		year=2025,
+ 		month=2,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250214] =
+{
+ 		id=250214,
+ 		year=2025,
+ 		month=2,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250215] =
+{
+ 		id=250215,
+ 		year=2025,
+ 		month=2,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250216] =
+{
+ 		id=250216,
+ 		year=2025,
+ 		month=2,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250217] =
+{
+ 		id=250217,
+ 		year=2025,
+ 		month=2,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250218] =
+{
+ 		id=250218,
+ 		year=2025,
+ 		month=2,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250219] =
+{
+ 		id=250219,
+ 		year=2025,
+ 		month=2,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250220] =
+{
+ 		id=250220,
+ 		year=2025,
+ 		month=2,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250221] =
+{
+ 		id=250221,
+ 		year=2025,
+ 		month=2,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250222] =
+{
+ 		id=250222,
+ 		year=2025,
+ 		month=2,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250223] =
+{
+ 		id=250223,
+ 		year=2025,
+ 		month=2,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250224] =
+{
+ 		id=250224,
+ 		year=2025,
+ 		month=2,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250225] =
+{
+ 		id=250225,
+ 		year=2025,
+ 		month=2,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250226] =
+{
+ 		id=250226,
+ 		year=2025,
+ 		month=2,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250227] =
+{
+ 		id=250227,
+ 		year=2025,
+ 		month=2,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250228] =
+{
+ 		id=250228,
+ 		year=2025,
+ 		month=2,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250301] =
+{
+ 		id=250301,
+ 		year=2025,
+ 		month=3,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250302] =
+{
+ 		id=250302,
+ 		year=2025,
+ 		month=3,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250303] =
+{
+ 		id=250303,
+ 		year=2025,
+ 		month=3,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250304] =
+{
+ 		id=250304,
+ 		year=2025,
+ 		month=3,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250305] =
+{
+ 		id=250305,
+ 		year=2025,
+ 		month=3,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250306] =
+{
+ 		id=250306,
+ 		year=2025,
+ 		month=3,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250307] =
+{
+ 		id=250307,
+ 		year=2025,
+ 		month=3,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250308] =
+{
+ 		id=250308,
+ 		year=2025,
+ 		month=3,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250309] =
+{
+ 		id=250309,
+ 		year=2025,
+ 		month=3,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250310] =
+{
+ 		id=250310,
+ 		year=2025,
+ 		month=3,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250311] =
+{
+ 		id=250311,
+ 		year=2025,
+ 		month=3,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250312] =
+{
+ 		id=250312,
+ 		year=2025,
+ 		month=3,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250313] =
+{
+ 		id=250313,
+ 		year=2025,
+ 		month=3,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250314] =
+{
+ 		id=250314,
+ 		year=2025,
+ 		month=3,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250315] =
+{
+ 		id=250315,
+ 		year=2025,
+ 		month=3,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250316] =
+{
+ 		id=250316,
+ 		year=2025,
+ 		month=3,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250317] =
+{
+ 		id=250317,
+ 		year=2025,
+ 		month=3,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250318] =
+{
+ 		id=250318,
+ 		year=2025,
+ 		month=3,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250319] =
+{
+ 		id=250319,
+ 		year=2025,
+ 		month=3,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250320] =
+{
+ 		id=250320,
+ 		year=2025,
+ 		month=3,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250321] =
+{
+ 		id=250321,
+ 		year=2025,
+ 		month=3,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250322] =
+{
+ 		id=250322,
+ 		year=2025,
+ 		month=3,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250323] =
+{
+ 		id=250323,
+ 		year=2025,
+ 		month=3,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250324] =
+{
+ 		id=250324,
+ 		year=2025,
+ 		month=3,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250325] =
+{
+ 		id=250325,
+ 		year=2025,
+ 		month=3,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250326] =
+{
+ 		id=250326,
+ 		year=2025,
+ 		month=3,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250327] =
+{
+ 		id=250327,
+ 		year=2025,
+ 		month=3,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250328] =
+{
+ 		id=250328,
+ 		year=2025,
+ 		month=3,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250329] =
+{
+ 		id=250329,
+ 		year=2025,
+ 		month=3,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250330] =
+{
+ 		id=250330,
+ 		year=2025,
+ 		month=3,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250331] =
+{
+ 		id=250331,
+ 		year=2025,
+ 		month=3,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250401] =
+{
+ 		id=250401,
+ 		year=2025,
+ 		month=4,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250402] =
+{
+ 		id=250402,
+ 		year=2025,
+ 		month=4,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250403] =
+{
+ 		id=250403,
+ 		year=2025,
+ 		month=4,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250404] =
+{
+ 		id=250404,
+ 		year=2025,
+ 		month=4,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250405] =
+{
+ 		id=250405,
+ 		year=2025,
+ 		month=4,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250406] =
+{
+ 		id=250406,
+ 		year=2025,
+ 		month=4,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250407] =
+{
+ 		id=250407,
+ 		year=2025,
+ 		month=4,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250408] =
+{
+ 		id=250408,
+ 		year=2025,
+ 		month=4,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250409] =
+{
+ 		id=250409,
+ 		year=2025,
+ 		month=4,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250410] =
+{
+ 		id=250410,
+ 		year=2025,
+ 		month=4,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250411] =
+{
+ 		id=250411,
+ 		year=2025,
+ 		month=4,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250412] =
+{
+ 		id=250412,
+ 		year=2025,
+ 		month=4,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250413] =
+{
+ 		id=250413,
+ 		year=2025,
+ 		month=4,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250414] =
+{
+ 		id=250414,
+ 		year=2025,
+ 		month=4,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250415] =
+{
+ 		id=250415,
+ 		year=2025,
+ 		month=4,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250416] =
+{
+ 		id=250416,
+ 		year=2025,
+ 		month=4,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250417] =
+{
+ 		id=250417,
+ 		year=2025,
+ 		month=4,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250418] =
+{
+ 		id=250418,
+ 		year=2025,
+ 		month=4,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250419] =
+{
+ 		id=250419,
+ 		year=2025,
+ 		month=4,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250420] =
+{
+ 		id=250420,
+ 		year=2025,
+ 		month=4,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250421] =
+{
+ 		id=250421,
+ 		year=2025,
+ 		month=4,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250422] =
+{
+ 		id=250422,
+ 		year=2025,
+ 		month=4,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250423] =
+{
+ 		id=250423,
+ 		year=2025,
+ 		month=4,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250424] =
+{
+ 		id=250424,
+ 		year=2025,
+ 		month=4,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250425] =
+{
+ 		id=250425,
+ 		year=2025,
+ 		month=4,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250426] =
+{
+ 		id=250426,
+ 		year=2025,
+ 		month=4,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250427] =
+{
+ 		id=250427,
+ 		year=2025,
+ 		month=4,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250428] =
+{
+ 		id=250428,
+ 		year=2025,
+ 		month=4,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250429] =
+{
+ 		id=250429,
+ 		year=2025,
+ 		month=4,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250430] =
+{
+ 		id=250430,
+ 		year=2025,
+ 		month=4,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250501] =
+{
+ 		id=250501,
+ 		year=2025,
+ 		month=5,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250502] =
+{
+ 		id=250502,
+ 		year=2025,
+ 		month=5,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250503] =
+{
+ 		id=250503,
+ 		year=2025,
+ 		month=5,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250504] =
+{
+ 		id=250504,
+ 		year=2025,
+ 		month=5,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250505] =
+{
+ 		id=250505,
+ 		year=2025,
+ 		month=5,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250506] =
+{
+ 		id=250506,
+ 		year=2025,
+ 		month=5,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250507] =
+{
+ 		id=250507,
+ 		year=2025,
+ 		month=5,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250508] =
+{
+ 		id=250508,
+ 		year=2025,
+ 		month=5,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250509] =
+{
+ 		id=250509,
+ 		year=2025,
+ 		month=5,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250510] =
+{
+ 		id=250510,
+ 		year=2025,
+ 		month=5,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250511] =
+{
+ 		id=250511,
+ 		year=2025,
+ 		month=5,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250512] =
+{
+ 		id=250512,
+ 		year=2025,
+ 		month=5,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250513] =
+{
+ 		id=250513,
+ 		year=2025,
+ 		month=5,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250514] =
+{
+ 		id=250514,
+ 		year=2025,
+ 		month=5,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250515] =
+{
+ 		id=250515,
+ 		year=2025,
+ 		month=5,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250516] =
+{
+ 		id=250516,
+ 		year=2025,
+ 		month=5,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250517] =
+{
+ 		id=250517,
+ 		year=2025,
+ 		month=5,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250518] =
+{
+ 		id=250518,
+ 		year=2025,
+ 		month=5,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250519] =
+{
+ 		id=250519,
+ 		year=2025,
+ 		month=5,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250520] =
+{
+ 		id=250520,
+ 		year=2025,
+ 		month=5,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250521] =
+{
+ 		id=250521,
+ 		year=2025,
+ 		month=5,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250522] =
+{
+ 		id=250522,
+ 		year=2025,
+ 		month=5,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250523] =
+{
+ 		id=250523,
+ 		year=2025,
+ 		month=5,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250524] =
+{
+ 		id=250524,
+ 		year=2025,
+ 		month=5,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250525] =
+{
+ 		id=250525,
+ 		year=2025,
+ 		month=5,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250526] =
+{
+ 		id=250526,
+ 		year=2025,
+ 		month=5,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250527] =
+{
+ 		id=250527,
+ 		year=2025,
+ 		month=5,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250528] =
+{
+ 		id=250528,
+ 		year=2025,
+ 		month=5,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250529] =
+{
+ 		id=250529,
+ 		year=2025,
+ 		month=5,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250530] =
+{
+ 		id=250530,
+ 		year=2025,
+ 		month=5,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250531] =
+{
+ 		id=250531,
+ 		year=2025,
+ 		month=5,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250601] =
+{
+ 		id=250601,
+ 		year=2025,
+ 		month=6,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250602] =
+{
+ 		id=250602,
+ 		year=2025,
+ 		month=6,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250603] =
+{
+ 		id=250603,
+ 		year=2025,
+ 		month=6,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250604] =
+{
+ 		id=250604,
+ 		year=2025,
+ 		month=6,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250605] =
+{
+ 		id=250605,
+ 		year=2025,
+ 		month=6,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250606] =
+{
+ 		id=250606,
+ 		year=2025,
+ 		month=6,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250607] =
+{
+ 		id=250607,
+ 		year=2025,
+ 		month=6,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250608] =
+{
+ 		id=250608,
+ 		year=2025,
+ 		month=6,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250609] =
+{
+ 		id=250609,
+ 		year=2025,
+ 		month=6,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250610] =
+{
+ 		id=250610,
+ 		year=2025,
+ 		month=6,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250611] =
+{
+ 		id=250611,
+ 		year=2025,
+ 		month=6,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250612] =
+{
+ 		id=250612,
+ 		year=2025,
+ 		month=6,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250613] =
+{
+ 		id=250613,
+ 		year=2025,
+ 		month=6,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250614] =
+{
+ 		id=250614,
+ 		year=2025,
+ 		month=6,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250615] =
+{
+ 		id=250615,
+ 		year=2025,
+ 		month=6,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250616] =
+{
+ 		id=250616,
+ 		year=2025,
+ 		month=6,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250617] =
+{
+ 		id=250617,
+ 		year=2025,
+ 		month=6,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250618] =
+{
+ 		id=250618,
+ 		year=2025,
+ 		month=6,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250619] =
+{
+ 		id=250619,
+ 		year=2025,
+ 		month=6,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250620] =
+{
+ 		id=250620,
+ 		year=2025,
+ 		month=6,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250621] =
+{
+ 		id=250621,
+ 		year=2025,
+ 		month=6,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250622] =
+{
+ 		id=250622,
+ 		year=2025,
+ 		month=6,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250623] =
+{
+ 		id=250623,
+ 		year=2025,
+ 		month=6,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250624] =
+{
+ 		id=250624,
+ 		year=2025,
+ 		month=6,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250625] =
+{
+ 		id=250625,
+ 		year=2025,
+ 		month=6,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250626] =
+{
+ 		id=250626,
+ 		year=2025,
+ 		month=6,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250627] =
+{
+ 		id=250627,
+ 		year=2025,
+ 		month=6,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250628] =
+{
+ 		id=250628,
+ 		year=2025,
+ 		month=6,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250629] =
+{
+ 		id=250629,
+ 		year=2025,
+ 		month=6,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250630] =
+{
+ 		id=250630,
+ 		year=2025,
+ 		month=6,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250701] =
+{
+ 		id=250701,
+ 		year=2025,
+ 		month=7,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250702] =
+{
+ 		id=250702,
+ 		year=2025,
+ 		month=7,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250703] =
+{
+ 		id=250703,
+ 		year=2025,
+ 		month=7,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250704] =
+{
+ 		id=250704,
+ 		year=2025,
+ 		month=7,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250705] =
+{
+ 		id=250705,
+ 		year=2025,
+ 		month=7,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250706] =
+{
+ 		id=250706,
+ 		year=2025,
+ 		month=7,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250707] =
+{
+ 		id=250707,
+ 		year=2025,
+ 		month=7,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250708] =
+{
+ 		id=250708,
+ 		year=2025,
+ 		month=7,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250709] =
+{
+ 		id=250709,
+ 		year=2025,
+ 		month=7,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250710] =
+{
+ 		id=250710,
+ 		year=2025,
+ 		month=7,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250711] =
+{
+ 		id=250711,
+ 		year=2025,
+ 		month=7,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250712] =
+{
+ 		id=250712,
+ 		year=2025,
+ 		month=7,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250713] =
+{
+ 		id=250713,
+ 		year=2025,
+ 		month=7,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250714] =
+{
+ 		id=250714,
+ 		year=2025,
+ 		month=7,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250715] =
+{
+ 		id=250715,
+ 		year=2025,
+ 		month=7,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250716] =
+{
+ 		id=250716,
+ 		year=2025,
+ 		month=7,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250717] =
+{
+ 		id=250717,
+ 		year=2025,
+ 		month=7,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250718] =
+{
+ 		id=250718,
+ 		year=2025,
+ 		month=7,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250719] =
+{
+ 		id=250719,
+ 		year=2025,
+ 		month=7,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250720] =
+{
+ 		id=250720,
+ 		year=2025,
+ 		month=7,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250721] =
+{
+ 		id=250721,
+ 		year=2025,
+ 		month=7,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250722] =
+{
+ 		id=250722,
+ 		year=2025,
+ 		month=7,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250723] =
+{
+ 		id=250723,
+ 		year=2025,
+ 		month=7,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250724] =
+{
+ 		id=250724,
+ 		year=2025,
+ 		month=7,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250725] =
+{
+ 		id=250725,
+ 		year=2025,
+ 		month=7,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250726] =
+{
+ 		id=250726,
+ 		year=2025,
+ 		month=7,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250727] =
+{
+ 		id=250727,
+ 		year=2025,
+ 		month=7,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250728] =
+{
+ 		id=250728,
+ 		year=2025,
+ 		month=7,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250729] =
+{
+ 		id=250729,
+ 		year=2025,
+ 		month=7,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250730] =
+{
+ 		id=250730,
+ 		year=2025,
+ 		month=7,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250731] =
+{
+ 		id=250731,
+ 		year=2025,
+ 		month=7,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250801] =
+{
+ 		id=250801,
+ 		year=2025,
+ 		month=8,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250802] =
+{
+ 		id=250802,
+ 		year=2025,
+ 		month=8,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250803] =
+{
+ 		id=250803,
+ 		year=2025,
+ 		month=8,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250804] =
+{
+ 		id=250804,
+ 		year=2025,
+ 		month=8,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250805] =
+{
+ 		id=250805,
+ 		year=2025,
+ 		month=8,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250806] =
+{
+ 		id=250806,
+ 		year=2025,
+ 		month=8,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250807] =
+{
+ 		id=250807,
+ 		year=2025,
+ 		month=8,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250808] =
+{
+ 		id=250808,
+ 		year=2025,
+ 		month=8,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250809] =
+{
+ 		id=250809,
+ 		year=2025,
+ 		month=8,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250810] =
+{
+ 		id=250810,
+ 		year=2025,
+ 		month=8,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250811] =
+{
+ 		id=250811,
+ 		year=2025,
+ 		month=8,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250812] =
+{
+ 		id=250812,
+ 		year=2025,
+ 		month=8,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250813] =
+{
+ 		id=250813,
+ 		year=2025,
+ 		month=8,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250814] =
+{
+ 		id=250814,
+ 		year=2025,
+ 		month=8,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250815] =
+{
+ 		id=250815,
+ 		year=2025,
+ 		month=8,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250816] =
+{
+ 		id=250816,
+ 		year=2025,
+ 		month=8,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250817] =
+{
+ 		id=250817,
+ 		year=2025,
+ 		month=8,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250818] =
+{
+ 		id=250818,
+ 		year=2025,
+ 		month=8,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250819] =
+{
+ 		id=250819,
+ 		year=2025,
+ 		month=8,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250820] =
+{
+ 		id=250820,
+ 		year=2025,
+ 		month=8,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250821] =
+{
+ 		id=250821,
+ 		year=2025,
+ 		month=8,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250822] =
+{
+ 		id=250822,
+ 		year=2025,
+ 		month=8,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250823] =
+{
+ 		id=250823,
+ 		year=2025,
+ 		month=8,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250824] =
+{
+ 		id=250824,
+ 		year=2025,
+ 		month=8,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250825] =
+{
+ 		id=250825,
+ 		year=2025,
+ 		month=8,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250826] =
+{
+ 		id=250826,
+ 		year=2025,
+ 		month=8,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250827] =
+{
+ 		id=250827,
+ 		year=2025,
+ 		month=8,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250828] =
+{
+ 		id=250828,
+ 		year=2025,
+ 		month=8,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250829] =
+{
+ 		id=250829,
+ 		year=2025,
+ 		month=8,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250830] =
+{
+ 		id=250830,
+ 		year=2025,
+ 		month=8,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250831] =
+{
+ 		id=250831,
+ 		year=2025,
+ 		month=8,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250901] =
+{
+ 		id=250901,
+ 		year=2025,
+ 		month=9,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250902] =
+{
+ 		id=250902,
+ 		year=2025,
+ 		month=9,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250903] =
+{
+ 		id=250903,
+ 		year=2025,
+ 		month=9,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250904] =
+{
+ 		id=250904,
+ 		year=2025,
+ 		month=9,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250905] =
+{
+ 		id=250905,
+ 		year=2025,
+ 		month=9,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250906] =
+{
+ 		id=250906,
+ 		year=2025,
+ 		month=9,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250907] =
+{
+ 		id=250907,
+ 		year=2025,
+ 		month=9,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250908] =
+{
+ 		id=250908,
+ 		year=2025,
+ 		month=9,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250909] =
+{
+ 		id=250909,
+ 		year=2025,
+ 		month=9,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250910] =
+{
+ 		id=250910,
+ 		year=2025,
+ 		month=9,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250911] =
+{
+ 		id=250911,
+ 		year=2025,
+ 		month=9,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250912] =
+{
+ 		id=250912,
+ 		year=2025,
+ 		month=9,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250913] =
+{
+ 		id=250913,
+ 		year=2025,
+ 		month=9,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250914] =
+{
+ 		id=250914,
+ 		year=2025,
+ 		month=9,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250915] =
+{
+ 		id=250915,
+ 		year=2025,
+ 		month=9,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250916] =
+{
+ 		id=250916,
+ 		year=2025,
+ 		month=9,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250917] =
+{
+ 		id=250917,
+ 		year=2025,
+ 		month=9,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250918] =
+{
+ 		id=250918,
+ 		year=2025,
+ 		month=9,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250919] =
+{
+ 		id=250919,
+ 		year=2025,
+ 		month=9,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250920] =
+{
+ 		id=250920,
+ 		year=2025,
+ 		month=9,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250921] =
+{
+ 		id=250921,
+ 		year=2025,
+ 		month=9,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250922] =
+{
+ 		id=250922,
+ 		year=2025,
+ 		month=9,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250923] =
+{
+ 		id=250923,
+ 		year=2025,
+ 		month=9,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250924] =
+{
+ 		id=250924,
+ 		year=2025,
+ 		month=9,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250925] =
+{
+ 		id=250925,
+ 		year=2025,
+ 		month=9,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250926] =
+{
+ 		id=250926,
+ 		year=2025,
+ 		month=9,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250927] =
+{
+ 		id=250927,
+ 		year=2025,
+ 		month=9,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250928] =
+{
+ 		id=250928,
+ 		year=2025,
+ 		month=9,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250929] =
+{
+ 		id=250929,
+ 		year=2025,
+ 		month=9,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[250930] =
+{
+ 		id=250930,
+ 		year=2025,
+ 		month=9,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251001] =
+{
+ 		id=251001,
+ 		year=2025,
+ 		month=10,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251002] =
+{
+ 		id=251002,
+ 		year=2025,
+ 		month=10,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251003] =
+{
+ 		id=251003,
+ 		year=2025,
+ 		month=10,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251004] =
+{
+ 		id=251004,
+ 		year=2025,
+ 		month=10,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251005] =
+{
+ 		id=251005,
+ 		year=2025,
+ 		month=10,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251006] =
+{
+ 		id=251006,
+ 		year=2025,
+ 		month=10,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251007] =
+{
+ 		id=251007,
+ 		year=2025,
+ 		month=10,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251008] =
+{
+ 		id=251008,
+ 		year=2025,
+ 		month=10,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251009] =
+{
+ 		id=251009,
+ 		year=2025,
+ 		month=10,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251010] =
+{
+ 		id=251010,
+ 		year=2025,
+ 		month=10,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251011] =
+{
+ 		id=251011,
+ 		year=2025,
+ 		month=10,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251012] =
+{
+ 		id=251012,
+ 		year=2025,
+ 		month=10,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251013] =
+{
+ 		id=251013,
+ 		year=2025,
+ 		month=10,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251014] =
+{
+ 		id=251014,
+ 		year=2025,
+ 		month=10,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251015] =
+{
+ 		id=251015,
+ 		year=2025,
+ 		month=10,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251016] =
+{
+ 		id=251016,
+ 		year=2025,
+ 		month=10,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251017] =
+{
+ 		id=251017,
+ 		year=2025,
+ 		month=10,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251018] =
+{
+ 		id=251018,
+ 		year=2025,
+ 		month=10,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251019] =
+{
+ 		id=251019,
+ 		year=2025,
+ 		month=10,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251020] =
+{
+ 		id=251020,
+ 		year=2025,
+ 		month=10,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251021] =
+{
+ 		id=251021,
+ 		year=2025,
+ 		month=10,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251022] =
+{
+ 		id=251022,
+ 		year=2025,
+ 		month=10,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251023] =
+{
+ 		id=251023,
+ 		year=2025,
+ 		month=10,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251024] =
+{
+ 		id=251024,
+ 		year=2025,
+ 		month=10,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251025] =
+{
+ 		id=251025,
+ 		year=2025,
+ 		month=10,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251026] =
+{
+ 		id=251026,
+ 		year=2025,
+ 		month=10,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251027] =
+{
+ 		id=251027,
+ 		year=2025,
+ 		month=10,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251028] =
+{
+ 		id=251028,
+ 		year=2025,
+ 		month=10,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251029] =
+{
+ 		id=251029,
+ 		year=2025,
+ 		month=10,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251030] =
+{
+ 		id=251030,
+ 		year=2025,
+ 		month=10,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251031] =
+{
+ 		id=251031,
+ 		year=2025,
+ 		month=10,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251101] =
+{
+ 		id=251101,
+ 		year=2025,
+ 		month=11,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251102] =
+{
+ 		id=251102,
+ 		year=2025,
+ 		month=11,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251103] =
+{
+ 		id=251103,
+ 		year=2025,
+ 		month=11,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251104] =
+{
+ 		id=251104,
+ 		year=2025,
+ 		month=11,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251105] =
+{
+ 		id=251105,
+ 		year=2025,
+ 		month=11,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251106] =
+{
+ 		id=251106,
+ 		year=2025,
+ 		month=11,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251107] =
+{
+ 		id=251107,
+ 		year=2025,
+ 		month=11,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251108] =
+{
+ 		id=251108,
+ 		year=2025,
+ 		month=11,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251109] =
+{
+ 		id=251109,
+ 		year=2025,
+ 		month=11,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251110] =
+{
+ 		id=251110,
+ 		year=2025,
+ 		month=11,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251111] =
+{
+ 		id=251111,
+ 		year=2025,
+ 		month=11,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251112] =
+{
+ 		id=251112,
+ 		year=2025,
+ 		month=11,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251113] =
+{
+ 		id=251113,
+ 		year=2025,
+ 		month=11,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251114] =
+{
+ 		id=251114,
+ 		year=2025,
+ 		month=11,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251115] =
+{
+ 		id=251115,
+ 		year=2025,
+ 		month=11,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251116] =
+{
+ 		id=251116,
+ 		year=2025,
+ 		month=11,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251117] =
+{
+ 		id=251117,
+ 		year=2025,
+ 		month=11,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251118] =
+{
+ 		id=251118,
+ 		year=2025,
+ 		month=11,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251119] =
+{
+ 		id=251119,
+ 		year=2025,
+ 		month=11,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251120] =
+{
+ 		id=251120,
+ 		year=2025,
+ 		month=11,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251121] =
+{
+ 		id=251121,
+ 		year=2025,
+ 		month=11,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251122] =
+{
+ 		id=251122,
+ 		year=2025,
+ 		month=11,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251123] =
+{
+ 		id=251123,
+ 		year=2025,
+ 		month=11,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251124] =
+{
+ 		id=251124,
+ 		year=2025,
+ 		month=11,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251125] =
+{
+ 		id=251125,
+ 		year=2025,
+ 		month=11,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251126] =
+{
+ 		id=251126,
+ 		year=2025,
+ 		month=11,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251127] =
+{
+ 		id=251127,
+ 		year=2025,
+ 		month=11,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251128] =
+{
+ 		id=251128,
+ 		year=2025,
+ 		month=11,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251129] =
+{
+ 		id=251129,
+ 		year=2025,
+ 		month=11,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251130] =
+{
+ 		id=251130,
+ 		year=2025,
+ 		month=11,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251201] =
+{
+ 		id=251201,
+ 		year=2025,
+ 		month=12,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251202] =
+{
+ 		id=251202,
+ 		year=2025,
+ 		month=12,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251203] =
+{
+ 		id=251203,
+ 		year=2025,
+ 		month=12,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251204] =
+{
+ 		id=251204,
+ 		year=2025,
+ 		month=12,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251205] =
+{
+ 		id=251205,
+ 		year=2025,
+ 		month=12,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251206] =
+{
+ 		id=251206,
+ 		year=2025,
+ 		month=12,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251207] =
+{
+ 		id=251207,
+ 		year=2025,
+ 		month=12,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251208] =
+{
+ 		id=251208,
+ 		year=2025,
+ 		month=12,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251209] =
+{
+ 		id=251209,
+ 		year=2025,
+ 		month=12,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251210] =
+{
+ 		id=251210,
+ 		year=2025,
+ 		month=12,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251211] =
+{
+ 		id=251211,
+ 		year=2025,
+ 		month=12,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251212] =
+{
+ 		id=251212,
+ 		year=2025,
+ 		month=12,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251213] =
+{
+ 		id=251213,
+ 		year=2025,
+ 		month=12,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251214] =
+{
+ 		id=251214,
+ 		year=2025,
+ 		month=12,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251215] =
+{
+ 		id=251215,
+ 		year=2025,
+ 		month=12,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251216] =
+{
+ 		id=251216,
+ 		year=2025,
+ 		month=12,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251217] =
+{
+ 		id=251217,
+ 		year=2025,
+ 		month=12,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251218] =
+{
+ 		id=251218,
+ 		year=2025,
+ 		month=12,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251219] =
+{
+ 		id=251219,
+ 		year=2025,
+ 		month=12,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251220] =
+{
+ 		id=251220,
+ 		year=2025,
+ 		month=12,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251221] =
+{
+ 		id=251221,
+ 		year=2025,
+ 		month=12,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251222] =
+{
+ 		id=251222,
+ 		year=2025,
+ 		month=12,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251223] =
+{
+ 		id=251223,
+ 		year=2025,
+ 		month=12,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251224] =
+{
+ 		id=251224,
+ 		year=2025,
+ 		month=12,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251225] =
+{
+ 		id=251225,
+ 		year=2025,
+ 		month=12,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251226] =
+{
+ 		id=251226,
+ 		year=2025,
+ 		month=12,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251227] =
+{
+ 		id=251227,
+ 		year=2025,
+ 		month=12,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251228] =
+{
+ 		id=251228,
+ 		year=2025,
+ 		month=12,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251229] =
+{
+ 		id=251229,
+ 		year=2025,
+ 		month=12,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251230] =
+{
+ 		id=251230,
+ 		year=2025,
+ 		month=12,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[251231] =
+{
+ 		id=251231,
+ 		year=2025,
+ 		month=12,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260101] =
+{
+ 		id=260101,
+ 		year=2026,
+ 		month=1,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260102] =
+{
+ 		id=260102,
+ 		year=2026,
+ 		month=1,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260103] =
+{
+ 		id=260103,
+ 		year=2026,
+ 		month=1,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260104] =
+{
+ 		id=260104,
+ 		year=2026,
+ 		month=1,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260105] =
+{
+ 		id=260105,
+ 		year=2026,
+ 		month=1,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260106] =
+{
+ 		id=260106,
+ 		year=2026,
+ 		month=1,
+ 		days=6,
+ 		dailyReward=806,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260107] =
+{
+ 		id=260107,
+ 		year=2026,
+ 		month=1,
+ 		days=7,
+ 		dailyReward=807,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260108] =
+{
+ 		id=260108,
+ 		year=2026,
+ 		month=1,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260109] =
+{
+ 		id=260109,
+ 		year=2026,
+ 		month=1,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260110] =
+{
+ 		id=260110,
+ 		year=2026,
+ 		month=1,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260111] =
+{
+ 		id=260111,
+ 		year=2026,
+ 		month=1,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260112] =
+{
+ 		id=260112,
+ 		year=2026,
+ 		month=1,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260113] =
+{
+ 		id=260113,
+ 		year=2026,
+ 		month=1,
+ 		days=13,
+ 		dailyReward=813,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260114] =
+{
+ 		id=260114,
+ 		year=2026,
+ 		month=1,
+ 		days=14,
+ 		dailyReward=814,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260115] =
+{
+ 		id=260115,
+ 		year=2026,
+ 		month=1,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260116] =
+{
+ 		id=260116,
+ 		year=2026,
+ 		month=1,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260117] =
+{
+ 		id=260117,
+ 		year=2026,
+ 		month=1,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260118] =
+{
+ 		id=260118,
+ 		year=2026,
+ 		month=1,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260119] =
+{
+ 		id=260119,
+ 		year=2026,
+ 		month=1,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260120] =
+{
+ 		id=260120,
+ 		year=2026,
+ 		month=1,
+ 		days=20,
+ 		dailyReward=820,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260121] =
+{
+ 		id=260121,
+ 		year=2026,
+ 		month=1,
+ 		days=21,
+ 		dailyReward=821,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260122] =
+{
+ 		id=260122,
+ 		year=2026,
+ 		month=1,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260123] =
+{
+ 		id=260123,
+ 		year=2026,
+ 		month=1,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260124] =
+{
+ 		id=260124,
+ 		year=2026,
+ 		month=1,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260125] =
+{
+ 		id=260125,
+ 		year=2026,
+ 		month=1,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260126] =
+{
+ 		id=260126,
+ 		year=2026,
+ 		month=1,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260127] =
+{
+ 		id=260127,
+ 		year=2026,
+ 		month=1,
+ 		days=27,
+ 		dailyReward=827,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260128] =
+{
+ 		id=260128,
+ 		year=2026,
+ 		month=1,
+ 		days=28,
+ 		dailyReward=828,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260129] =
+{
+ 		id=260129,
+ 		year=2026,
+ 		month=1,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260130] =
+{
+ 		id=260130,
+ 		year=2026,
+ 		month=1,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260131] =
+{
+ 		id=260131,
+ 		year=2026,
+ 		month=1,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260132] =
+{
+ 		id=260132,
+ 		year=2026,
+ 		month=2,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260133] =
+{
+ 		id=260133,
+ 		year=2026,
+ 		month=2,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260134] =
+{
+ 		id=260134,
+ 		year=2026,
+ 		month=2,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260135] =
+{
+ 		id=260135,
+ 		year=2026,
+ 		month=2,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260136] =
+{
+ 		id=260136,
+ 		year=2026,
+ 		month=2,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260137] =
+{
+ 		id=260137,
+ 		year=2026,
+ 		month=2,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260138] =
+{
+ 		id=260138,
+ 		year=2026,
+ 		month=2,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260139] =
+{
+ 		id=260139,
+ 		year=2026,
+ 		month=2,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260140] =
+{
+ 		id=260140,
+ 		year=2026,
+ 		month=2,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260141] =
+{
+ 		id=260141,
+ 		year=2026,
+ 		month=2,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260142] =
+{
+ 		id=260142,
+ 		year=2026,
+ 		month=2,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260143] =
+{
+ 		id=260143,
+ 		year=2026,
+ 		month=2,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260144] =
+{
+ 		id=260144,
+ 		year=2026,
+ 		month=2,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260145] =
+{
+ 		id=260145,
+ 		year=2026,
+ 		month=2,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260146] =
+{
+ 		id=260146,
+ 		year=2026,
+ 		month=2,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260147] =
+{
+ 		id=260147,
+ 		year=2026,
+ 		month=2,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260148] =
+{
+ 		id=260148,
+ 		year=2026,
+ 		month=2,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260149] =
+{
+ 		id=260149,
+ 		year=2026,
+ 		month=2,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260150] =
+{
+ 		id=260150,
+ 		year=2026,
+ 		month=2,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260151] =
+{
+ 		id=260151,
+ 		year=2026,
+ 		month=2,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260152] =
+{
+ 		id=260152,
+ 		year=2026,
+ 		month=2,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260153] =
+{
+ 		id=260153,
+ 		year=2026,
+ 		month=2,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260154] =
+{
+ 		id=260154,
+ 		year=2026,
+ 		month=2,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260155] =
+{
+ 		id=260155,
+ 		year=2026,
+ 		month=2,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260156] =
+{
+ 		id=260156,
+ 		year=2026,
+ 		month=2,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260157] =
+{
+ 		id=260157,
+ 		year=2026,
+ 		month=2,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260158] =
+{
+ 		id=260158,
+ 		year=2026,
+ 		month=2,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260159] =
+{
+ 		id=260159,
+ 		year=2026,
+ 		month=2,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260160] =
+{
+ 		id=260160,
+ 		year=2026,
+ 		month=3,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260161] =
+{
+ 		id=260161,
+ 		year=2026,
+ 		month=3,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260162] =
+{
+ 		id=260162,
+ 		year=2026,
+ 		month=3,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260163] =
+{
+ 		id=260163,
+ 		year=2026,
+ 		month=3,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260164] =
+{
+ 		id=260164,
+ 		year=2026,
+ 		month=3,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260165] =
+{
+ 		id=260165,
+ 		year=2026,
+ 		month=3,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260166] =
+{
+ 		id=260166,
+ 		year=2026,
+ 		month=3,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260167] =
+{
+ 		id=260167,
+ 		year=2026,
+ 		month=3,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260168] =
+{
+ 		id=260168,
+ 		year=2026,
+ 		month=3,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260169] =
+{
+ 		id=260169,
+ 		year=2026,
+ 		month=3,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260170] =
+{
+ 		id=260170,
+ 		year=2026,
+ 		month=3,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260171] =
+{
+ 		id=260171,
+ 		year=2026,
+ 		month=3,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260172] =
+{
+ 		id=260172,
+ 		year=2026,
+ 		month=3,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260173] =
+{
+ 		id=260173,
+ 		year=2026,
+ 		month=3,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260174] =
+{
+ 		id=260174,
+ 		year=2026,
+ 		month=3,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260175] =
+{
+ 		id=260175,
+ 		year=2026,
+ 		month=3,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260176] =
+{
+ 		id=260176,
+ 		year=2026,
+ 		month=3,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260177] =
+{
+ 		id=260177,
+ 		year=2026,
+ 		month=3,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260178] =
+{
+ 		id=260178,
+ 		year=2026,
+ 		month=3,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260179] =
+{
+ 		id=260179,
+ 		year=2026,
+ 		month=3,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260180] =
+{
+ 		id=260180,
+ 		year=2026,
+ 		month=3,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260181] =
+{
+ 		id=260181,
+ 		year=2026,
+ 		month=3,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260182] =
+{
+ 		id=260182,
+ 		year=2026,
+ 		month=3,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260183] =
+{
+ 		id=260183,
+ 		year=2026,
+ 		month=3,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260184] =
+{
+ 		id=260184,
+ 		year=2026,
+ 		month=3,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260185] =
+{
+ 		id=260185,
+ 		year=2026,
+ 		month=3,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260186] =
+{
+ 		id=260186,
+ 		year=2026,
+ 		month=3,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260187] =
+{
+ 		id=260187,
+ 		year=2026,
+ 		month=3,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260188] =
+{
+ 		id=260188,
+ 		year=2026,
+ 		month=3,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260189] =
+{
+ 		id=260189,
+ 		year=2026,
+ 		month=3,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260190] =
+{
+ 		id=260190,
+ 		year=2026,
+ 		month=3,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260191] =
+{
+ 		id=260191,
+ 		year=2026,
+ 		month=4,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260192] =
+{
+ 		id=260192,
+ 		year=2026,
+ 		month=4,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260193] =
+{
+ 		id=260193,
+ 		year=2026,
+ 		month=4,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260194] =
+{
+ 		id=260194,
+ 		year=2026,
+ 		month=4,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260195] =
+{
+ 		id=260195,
+ 		year=2026,
+ 		month=4,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260196] =
+{
+ 		id=260196,
+ 		year=2026,
+ 		month=4,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260197] =
+{
+ 		id=260197,
+ 		year=2026,
+ 		month=4,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260198] =
+{
+ 		id=260198,
+ 		year=2026,
+ 		month=4,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260199] =
+{
+ 		id=260199,
+ 		year=2026,
+ 		month=4,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260200] =
+{
+ 		id=260200,
+ 		year=2026,
+ 		month=4,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260201] =
+{
+ 		id=260201,
+ 		year=2026,
+ 		month=4,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260202] =
+{
+ 		id=260202,
+ 		year=2026,
+ 		month=4,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260203] =
+{
+ 		id=260203,
+ 		year=2026,
+ 		month=4,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260204] =
+{
+ 		id=260204,
+ 		year=2026,
+ 		month=4,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260205] =
+{
+ 		id=260205,
+ 		year=2026,
+ 		month=4,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260206] =
+{
+ 		id=260206,
+ 		year=2026,
+ 		month=4,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260207] =
+{
+ 		id=260207,
+ 		year=2026,
+ 		month=4,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260208] =
+{
+ 		id=260208,
+ 		year=2026,
+ 		month=4,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260209] =
+{
+ 		id=260209,
+ 		year=2026,
+ 		month=4,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260210] =
+{
+ 		id=260210,
+ 		year=2026,
+ 		month=4,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260211] =
+{
+ 		id=260211,
+ 		year=2026,
+ 		month=4,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260212] =
+{
+ 		id=260212,
+ 		year=2026,
+ 		month=4,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260213] =
+{
+ 		id=260213,
+ 		year=2026,
+ 		month=4,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260214] =
+{
+ 		id=260214,
+ 		year=2026,
+ 		month=4,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260215] =
+{
+ 		id=260215,
+ 		year=2026,
+ 		month=4,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260216] =
+{
+ 		id=260216,
+ 		year=2026,
+ 		month=4,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260217] =
+{
+ 		id=260217,
+ 		year=2026,
+ 		month=4,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260218] =
+{
+ 		id=260218,
+ 		year=2026,
+ 		month=4,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260219] =
+{
+ 		id=260219,
+ 		year=2026,
+ 		month=4,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260220] =
+{
+ 		id=260220,
+ 		year=2026,
+ 		month=4,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260221] =
+{
+ 		id=260221,
+ 		year=2026,
+ 		month=5,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260222] =
+{
+ 		id=260222,
+ 		year=2026,
+ 		month=5,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260223] =
+{
+ 		id=260223,
+ 		year=2026,
+ 		month=5,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260224] =
+{
+ 		id=260224,
+ 		year=2026,
+ 		month=5,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260225] =
+{
+ 		id=260225,
+ 		year=2026,
+ 		month=5,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260226] =
+{
+ 		id=260226,
+ 		year=2026,
+ 		month=5,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260227] =
+{
+ 		id=260227,
+ 		year=2026,
+ 		month=5,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260228] =
+{
+ 		id=260228,
+ 		year=2026,
+ 		month=5,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260229] =
+{
+ 		id=260229,
+ 		year=2026,
+ 		month=5,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260230] =
+{
+ 		id=260230,
+ 		year=2026,
+ 		month=5,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260231] =
+{
+ 		id=260231,
+ 		year=2026,
+ 		month=5,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260232] =
+{
+ 		id=260232,
+ 		year=2026,
+ 		month=5,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260233] =
+{
+ 		id=260233,
+ 		year=2026,
+ 		month=5,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260234] =
+{
+ 		id=260234,
+ 		year=2026,
+ 		month=5,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260235] =
+{
+ 		id=260235,
+ 		year=2026,
+ 		month=5,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260236] =
+{
+ 		id=260236,
+ 		year=2026,
+ 		month=5,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260237] =
+{
+ 		id=260237,
+ 		year=2026,
+ 		month=5,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260238] =
+{
+ 		id=260238,
+ 		year=2026,
+ 		month=5,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260239] =
+{
+ 		id=260239,
+ 		year=2026,
+ 		month=5,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260240] =
+{
+ 		id=260240,
+ 		year=2026,
+ 		month=5,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260241] =
+{
+ 		id=260241,
+ 		year=2026,
+ 		month=5,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260242] =
+{
+ 		id=260242,
+ 		year=2026,
+ 		month=5,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260243] =
+{
+ 		id=260243,
+ 		year=2026,
+ 		month=5,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260244] =
+{
+ 		id=260244,
+ 		year=2026,
+ 		month=5,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260245] =
+{
+ 		id=260245,
+ 		year=2026,
+ 		month=5,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260246] =
+{
+ 		id=260246,
+ 		year=2026,
+ 		month=5,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260247] =
+{
+ 		id=260247,
+ 		year=2026,
+ 		month=5,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260248] =
+{
+ 		id=260248,
+ 		year=2026,
+ 		month=5,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260249] =
+{
+ 		id=260249,
+ 		year=2026,
+ 		month=5,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260250] =
+{
+ 		id=260250,
+ 		year=2026,
+ 		month=5,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260251] =
+{
+ 		id=260251,
+ 		year=2026,
+ 		month=5,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260252] =
+{
+ 		id=260252,
+ 		year=2026,
+ 		month=6,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260253] =
+{
+ 		id=260253,
+ 		year=2026,
+ 		month=6,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260254] =
+{
+ 		id=260254,
+ 		year=2026,
+ 		month=6,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260255] =
+{
+ 		id=260255,
+ 		year=2026,
+ 		month=6,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260256] =
+{
+ 		id=260256,
+ 		year=2026,
+ 		month=6,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260257] =
+{
+ 		id=260257,
+ 		year=2026,
+ 		month=6,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260258] =
+{
+ 		id=260258,
+ 		year=2026,
+ 		month=6,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260259] =
+{
+ 		id=260259,
+ 		year=2026,
+ 		month=6,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260260] =
+{
+ 		id=260260,
+ 		year=2026,
+ 		month=6,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260261] =
+{
+ 		id=260261,
+ 		year=2026,
+ 		month=6,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260262] =
+{
+ 		id=260262,
+ 		year=2026,
+ 		month=6,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260263] =
+{
+ 		id=260263,
+ 		year=2026,
+ 		month=6,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260264] =
+{
+ 		id=260264,
+ 		year=2026,
+ 		month=6,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260265] =
+{
+ 		id=260265,
+ 		year=2026,
+ 		month=6,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260266] =
+{
+ 		id=260266,
+ 		year=2026,
+ 		month=6,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260267] =
+{
+ 		id=260267,
+ 		year=2026,
+ 		month=6,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260268] =
+{
+ 		id=260268,
+ 		year=2026,
+ 		month=6,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260269] =
+{
+ 		id=260269,
+ 		year=2026,
+ 		month=6,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260270] =
+{
+ 		id=260270,
+ 		year=2026,
+ 		month=6,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260271] =
+{
+ 		id=260271,
+ 		year=2026,
+ 		month=6,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260272] =
+{
+ 		id=260272,
+ 		year=2026,
+ 		month=6,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260273] =
+{
+ 		id=260273,
+ 		year=2026,
+ 		month=6,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260274] =
+{
+ 		id=260274,
+ 		year=2026,
+ 		month=6,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260275] =
+{
+ 		id=260275,
+ 		year=2026,
+ 		month=6,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260276] =
+{
+ 		id=260276,
+ 		year=2026,
+ 		month=6,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260277] =
+{
+ 		id=260277,
+ 		year=2026,
+ 		month=6,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260278] =
+{
+ 		id=260278,
+ 		year=2026,
+ 		month=6,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260279] =
+{
+ 		id=260279,
+ 		year=2026,
+ 		month=6,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260280] =
+{
+ 		id=260280,
+ 		year=2026,
+ 		month=6,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260281] =
+{
+ 		id=260281,
+ 		year=2026,
+ 		month=6,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260282] =
+{
+ 		id=260282,
+ 		year=2026,
+ 		month=7,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260283] =
+{
+ 		id=260283,
+ 		year=2026,
+ 		month=7,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260284] =
+{
+ 		id=260284,
+ 		year=2026,
+ 		month=7,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260285] =
+{
+ 		id=260285,
+ 		year=2026,
+ 		month=7,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260286] =
+{
+ 		id=260286,
+ 		year=2026,
+ 		month=7,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260287] =
+{
+ 		id=260287,
+ 		year=2026,
+ 		month=7,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260288] =
+{
+ 		id=260288,
+ 		year=2026,
+ 		month=7,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260289] =
+{
+ 		id=260289,
+ 		year=2026,
+ 		month=7,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260290] =
+{
+ 		id=260290,
+ 		year=2026,
+ 		month=7,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260291] =
+{
+ 		id=260291,
+ 		year=2026,
+ 		month=7,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260292] =
+{
+ 		id=260292,
+ 		year=2026,
+ 		month=7,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260293] =
+{
+ 		id=260293,
+ 		year=2026,
+ 		month=7,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260294] =
+{
+ 		id=260294,
+ 		year=2026,
+ 		month=7,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260295] =
+{
+ 		id=260295,
+ 		year=2026,
+ 		month=7,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260296] =
+{
+ 		id=260296,
+ 		year=2026,
+ 		month=7,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260297] =
+{
+ 		id=260297,
+ 		year=2026,
+ 		month=7,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260298] =
+{
+ 		id=260298,
+ 		year=2026,
+ 		month=7,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260299] =
+{
+ 		id=260299,
+ 		year=2026,
+ 		month=7,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260300] =
+{
+ 		id=260300,
+ 		year=2026,
+ 		month=7,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260301] =
+{
+ 		id=260301,
+ 		year=2026,
+ 		month=7,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260302] =
+{
+ 		id=260302,
+ 		year=2026,
+ 		month=7,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260303] =
+{
+ 		id=260303,
+ 		year=2026,
+ 		month=7,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260304] =
+{
+ 		id=260304,
+ 		year=2026,
+ 		month=7,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260305] =
+{
+ 		id=260305,
+ 		year=2026,
+ 		month=7,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260306] =
+{
+ 		id=260306,
+ 		year=2026,
+ 		month=7,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260307] =
+{
+ 		id=260307,
+ 		year=2026,
+ 		month=7,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260308] =
+{
+ 		id=260308,
+ 		year=2026,
+ 		month=7,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260309] =
+{
+ 		id=260309,
+ 		year=2026,
+ 		month=7,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260310] =
+{
+ 		id=260310,
+ 		year=2026,
+ 		month=7,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260311] =
+{
+ 		id=260311,
+ 		year=2026,
+ 		month=7,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260312] =
+{
+ 		id=260312,
+ 		year=2026,
+ 		month=7,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260313] =
+{
+ 		id=260313,
+ 		year=2026,
+ 		month=8,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260314] =
+{
+ 		id=260314,
+ 		year=2026,
+ 		month=8,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260315] =
+{
+ 		id=260315,
+ 		year=2026,
+ 		month=8,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260316] =
+{
+ 		id=260316,
+ 		year=2026,
+ 		month=8,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260317] =
+{
+ 		id=260317,
+ 		year=2026,
+ 		month=8,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260318] =
+{
+ 		id=260318,
+ 		year=2026,
+ 		month=8,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260319] =
+{
+ 		id=260319,
+ 		year=2026,
+ 		month=8,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260320] =
+{
+ 		id=260320,
+ 		year=2026,
+ 		month=8,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260321] =
+{
+ 		id=260321,
+ 		year=2026,
+ 		month=8,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260322] =
+{
+ 		id=260322,
+ 		year=2026,
+ 		month=8,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260323] =
+{
+ 		id=260323,
+ 		year=2026,
+ 		month=8,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260324] =
+{
+ 		id=260324,
+ 		year=2026,
+ 		month=8,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260325] =
+{
+ 		id=260325,
+ 		year=2026,
+ 		month=8,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260326] =
+{
+ 		id=260326,
+ 		year=2026,
+ 		month=8,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260327] =
+{
+ 		id=260327,
+ 		year=2026,
+ 		month=8,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260328] =
+{
+ 		id=260328,
+ 		year=2026,
+ 		month=8,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260329] =
+{
+ 		id=260329,
+ 		year=2026,
+ 		month=8,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260330] =
+{
+ 		id=260330,
+ 		year=2026,
+ 		month=8,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260331] =
+{
+ 		id=260331,
+ 		year=2026,
+ 		month=8,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260332] =
+{
+ 		id=260332,
+ 		year=2026,
+ 		month=8,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260333] =
+{
+ 		id=260333,
+ 		year=2026,
+ 		month=8,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260334] =
+{
+ 		id=260334,
+ 		year=2026,
+ 		month=8,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260335] =
+{
+ 		id=260335,
+ 		year=2026,
+ 		month=8,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260336] =
+{
+ 		id=260336,
+ 		year=2026,
+ 		month=8,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260337] =
+{
+ 		id=260337,
+ 		year=2026,
+ 		month=8,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260338] =
+{
+ 		id=260338,
+ 		year=2026,
+ 		month=8,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260339] =
+{
+ 		id=260339,
+ 		year=2026,
+ 		month=8,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260340] =
+{
+ 		id=260340,
+ 		year=2026,
+ 		month=8,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260341] =
+{
+ 		id=260341,
+ 		year=2026,
+ 		month=8,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260342] =
+{
+ 		id=260342,
+ 		year=2026,
+ 		month=8,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260343] =
+{
+ 		id=260343,
+ 		year=2026,
+ 		month=8,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260344] =
+{
+ 		id=260344,
+ 		year=2026,
+ 		month=9,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260345] =
+{
+ 		id=260345,
+ 		year=2026,
+ 		month=9,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260346] =
+{
+ 		id=260346,
+ 		year=2026,
+ 		month=9,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260347] =
+{
+ 		id=260347,
+ 		year=2026,
+ 		month=9,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260348] =
+{
+ 		id=260348,
+ 		year=2026,
+ 		month=9,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260349] =
+{
+ 		id=260349,
+ 		year=2026,
+ 		month=9,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260350] =
+{
+ 		id=260350,
+ 		year=2026,
+ 		month=9,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260351] =
+{
+ 		id=260351,
+ 		year=2026,
+ 		month=9,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260352] =
+{
+ 		id=260352,
+ 		year=2026,
+ 		month=9,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260353] =
+{
+ 		id=260353,
+ 		year=2026,
+ 		month=9,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260354] =
+{
+ 		id=260354,
+ 		year=2026,
+ 		month=9,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260355] =
+{
+ 		id=260355,
+ 		year=2026,
+ 		month=9,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260356] =
+{
+ 		id=260356,
+ 		year=2026,
+ 		month=9,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260357] =
+{
+ 		id=260357,
+ 		year=2026,
+ 		month=9,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260358] =
+{
+ 		id=260358,
+ 		year=2026,
+ 		month=9,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260359] =
+{
+ 		id=260359,
+ 		year=2026,
+ 		month=9,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260360] =
+{
+ 		id=260360,
+ 		year=2026,
+ 		month=9,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260361] =
+{
+ 		id=260361,
+ 		year=2026,
+ 		month=9,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260362] =
+{
+ 		id=260362,
+ 		year=2026,
+ 		month=9,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260363] =
+{
+ 		id=260363,
+ 		year=2026,
+ 		month=9,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260364] =
+{
+ 		id=260364,
+ 		year=2026,
+ 		month=9,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260365] =
+{
+ 		id=260365,
+ 		year=2026,
+ 		month=9,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260366] =
+{
+ 		id=260366,
+ 		year=2026,
+ 		month=9,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260367] =
+{
+ 		id=260367,
+ 		year=2026,
+ 		month=9,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260368] =
+{
+ 		id=260368,
+ 		year=2026,
+ 		month=9,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260369] =
+{
+ 		id=260369,
+ 		year=2026,
+ 		month=9,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260370] =
+{
+ 		id=260370,
+ 		year=2026,
+ 		month=9,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260371] =
+{
+ 		id=260371,
+ 		year=2026,
+ 		month=9,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260372] =
+{
+ 		id=260372,
+ 		year=2026,
+ 		month=9,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260373] =
+{
+ 		id=260373,
+ 		year=2026,
+ 		month=9,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260374] =
+{
+ 		id=260374,
+ 		year=2026,
+ 		month=10,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260375] =
+{
+ 		id=260375,
+ 		year=2026,
+ 		month=10,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260376] =
+{
+ 		id=260376,
+ 		year=2026,
+ 		month=10,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260377] =
+{
+ 		id=260377,
+ 		year=2026,
+ 		month=10,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260378] =
+{
+ 		id=260378,
+ 		year=2026,
+ 		month=10,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260379] =
+{
+ 		id=260379,
+ 		year=2026,
+ 		month=10,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260380] =
+{
+ 		id=260380,
+ 		year=2026,
+ 		month=10,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260381] =
+{
+ 		id=260381,
+ 		year=2026,
+ 		month=10,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260382] =
+{
+ 		id=260382,
+ 		year=2026,
+ 		month=10,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260383] =
+{
+ 		id=260383,
+ 		year=2026,
+ 		month=10,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260384] =
+{
+ 		id=260384,
+ 		year=2026,
+ 		month=10,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260385] =
+{
+ 		id=260385,
+ 		year=2026,
+ 		month=10,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260386] =
+{
+ 		id=260386,
+ 		year=2026,
+ 		month=10,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260387] =
+{
+ 		id=260387,
+ 		year=2026,
+ 		month=10,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260388] =
+{
+ 		id=260388,
+ 		year=2026,
+ 		month=10,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260389] =
+{
+ 		id=260389,
+ 		year=2026,
+ 		month=10,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260390] =
+{
+ 		id=260390,
+ 		year=2026,
+ 		month=10,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260391] =
+{
+ 		id=260391,
+ 		year=2026,
+ 		month=10,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260392] =
+{
+ 		id=260392,
+ 		year=2026,
+ 		month=10,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260393] =
+{
+ 		id=260393,
+ 		year=2026,
+ 		month=10,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260394] =
+{
+ 		id=260394,
+ 		year=2026,
+ 		month=10,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260395] =
+{
+ 		id=260395,
+ 		year=2026,
+ 		month=10,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260396] =
+{
+ 		id=260396,
+ 		year=2026,
+ 		month=10,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260397] =
+{
+ 		id=260397,
+ 		year=2026,
+ 		month=10,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260398] =
+{
+ 		id=260398,
+ 		year=2026,
+ 		month=10,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260399] =
+{
+ 		id=260399,
+ 		year=2026,
+ 		month=10,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260400] =
+{
+ 		id=260400,
+ 		year=2026,
+ 		month=10,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260401] =
+{
+ 		id=260401,
+ 		year=2026,
+ 		month=10,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260402] =
+{
+ 		id=260402,
+ 		year=2026,
+ 		month=10,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260403] =
+{
+ 		id=260403,
+ 		year=2026,
+ 		month=10,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260404] =
+{
+ 		id=260404,
+ 		year=2026,
+ 		month=10,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260405] =
+{
+ 		id=260405,
+ 		year=2026,
+ 		month=11,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260406] =
+{
+ 		id=260406,
+ 		year=2026,
+ 		month=11,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260407] =
+{
+ 		id=260407,
+ 		year=2026,
+ 		month=11,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260408] =
+{
+ 		id=260408,
+ 		year=2026,
+ 		month=11,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260409] =
+{
+ 		id=260409,
+ 		year=2026,
+ 		month=11,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260410] =
+{
+ 		id=260410,
+ 		year=2026,
+ 		month=11,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260411] =
+{
+ 		id=260411,
+ 		year=2026,
+ 		month=11,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260412] =
+{
+ 		id=260412,
+ 		year=2026,
+ 		month=11,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260413] =
+{
+ 		id=260413,
+ 		year=2026,
+ 		month=11,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260414] =
+{
+ 		id=260414,
+ 		year=2026,
+ 		month=11,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260415] =
+{
+ 		id=260415,
+ 		year=2026,
+ 		month=11,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260416] =
+{
+ 		id=260416,
+ 		year=2026,
+ 		month=11,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260417] =
+{
+ 		id=260417,
+ 		year=2026,
+ 		month=11,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260418] =
+{
+ 		id=260418,
+ 		year=2026,
+ 		month=11,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260419] =
+{
+ 		id=260419,
+ 		year=2026,
+ 		month=11,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260420] =
+{
+ 		id=260420,
+ 		year=2026,
+ 		month=11,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260421] =
+{
+ 		id=260421,
+ 		year=2026,
+ 		month=11,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260422] =
+{
+ 		id=260422,
+ 		year=2026,
+ 		month=11,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260423] =
+{
+ 		id=260423,
+ 		year=2026,
+ 		month=11,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260424] =
+{
+ 		id=260424,
+ 		year=2026,
+ 		month=11,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260425] =
+{
+ 		id=260425,
+ 		year=2026,
+ 		month=11,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260426] =
+{
+ 		id=260426,
+ 		year=2026,
+ 		month=11,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260427] =
+{
+ 		id=260427,
+ 		year=2026,
+ 		month=11,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260428] =
+{
+ 		id=260428,
+ 		year=2026,
+ 		month=11,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260429] =
+{
+ 		id=260429,
+ 		year=2026,
+ 		month=11,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260430] =
+{
+ 		id=260430,
+ 		year=2026,
+ 		month=11,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260431] =
+{
+ 		id=260431,
+ 		year=2026,
+ 		month=11,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260432] =
+{
+ 		id=260432,
+ 		year=2026,
+ 		month=11,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260433] =
+{
+ 		id=260433,
+ 		year=2026,
+ 		month=11,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260434] =
+{
+ 		id=260434,
+ 		year=2026,
+ 		month=11,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260435] =
+{
+ 		id=260435,
+ 		year=2026,
+ 		month=12,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260436] =
+{
+ 		id=260436,
+ 		year=2026,
+ 		month=12,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260437] =
+{
+ 		id=260437,
+ 		year=2026,
+ 		month=12,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260438] =
+{
+ 		id=260438,
+ 		year=2026,
+ 		month=12,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260439] =
+{
+ 		id=260439,
+ 		year=2026,
+ 		month=12,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260440] =
+{
+ 		id=260440,
+ 		year=2026,
+ 		month=12,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260441] =
+{
+ 		id=260441,
+ 		year=2026,
+ 		month=12,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260442] =
+{
+ 		id=260442,
+ 		year=2026,
+ 		month=12,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260443] =
+{
+ 		id=260443,
+ 		year=2026,
+ 		month=12,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260444] =
+{
+ 		id=260444,
+ 		year=2026,
+ 		month=12,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260445] =
+{
+ 		id=260445,
+ 		year=2026,
+ 		month=12,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260446] =
+{
+ 		id=260446,
+ 		year=2026,
+ 		month=12,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260447] =
+{
+ 		id=260447,
+ 		year=2026,
+ 		month=12,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260448] =
+{
+ 		id=260448,
+ 		year=2026,
+ 		month=12,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260449] =
+{
+ 		id=260449,
+ 		year=2026,
+ 		month=12,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260450] =
+{
+ 		id=260450,
+ 		year=2026,
+ 		month=12,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260451] =
+{
+ 		id=260451,
+ 		year=2026,
+ 		month=12,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260452] =
+{
+ 		id=260452,
+ 		year=2026,
+ 		month=12,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260453] =
+{
+ 		id=260453,
+ 		year=2026,
+ 		month=12,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260454] =
+{
+ 		id=260454,
+ 		year=2026,
+ 		month=12,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260455] =
+{
+ 		id=260455,
+ 		year=2026,
+ 		month=12,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260456] =
+{
+ 		id=260456,
+ 		year=2026,
+ 		month=12,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260457] =
+{
+ 		id=260457,
+ 		year=2026,
+ 		month=12,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260458] =
+{
+ 		id=260458,
+ 		year=2026,
+ 		month=12,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260459] =
+{
+ 		id=260459,
+ 		year=2026,
+ 		month=12,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260460] =
+{
+ 		id=260460,
+ 		year=2026,
+ 		month=12,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260461] =
+{
+ 		id=260461,
+ 		year=2026,
+ 		month=12,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260462] =
+{
+ 		id=260462,
+ 		year=2026,
+ 		month=12,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260463] =
+{
+ 		id=260463,
+ 		year=2026,
+ 		month=12,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260464] =
+{
+ 		id=260464,
+ 		year=2026,
+ 		month=12,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[260465] =
+{
+ 		id=260465,
+ 		year=2026,
+ 		month=12,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270101] =
+{
+ 		id=270101,
+ 		year=2027,
+ 		month=1,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270102] =
+{
+ 		id=270102,
+ 		year=2027,
+ 		month=1,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270103] =
+{
+ 		id=270103,
+ 		year=2027,
+ 		month=1,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270104] =
+{
+ 		id=270104,
+ 		year=2027,
+ 		month=1,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270105] =
+{
+ 		id=270105,
+ 		year=2027,
+ 		month=1,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270106] =
+{
+ 		id=270106,
+ 		year=2027,
+ 		month=1,
+ 		days=6,
+ 		dailyReward=806,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270107] =
+{
+ 		id=270107,
+ 		year=2027,
+ 		month=1,
+ 		days=7,
+ 		dailyReward=807,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270108] =
+{
+ 		id=270108,
+ 		year=2027,
+ 		month=1,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270109] =
+{
+ 		id=270109,
+ 		year=2027,
+ 		month=1,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270110] =
+{
+ 		id=270110,
+ 		year=2027,
+ 		month=1,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270111] =
+{
+ 		id=270111,
+ 		year=2027,
+ 		month=1,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270112] =
+{
+ 		id=270112,
+ 		year=2027,
+ 		month=1,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270113] =
+{
+ 		id=270113,
+ 		year=2027,
+ 		month=1,
+ 		days=13,
+ 		dailyReward=813,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270114] =
+{
+ 		id=270114,
+ 		year=2027,
+ 		month=1,
+ 		days=14,
+ 		dailyReward=814,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270115] =
+{
+ 		id=270115,
+ 		year=2027,
+ 		month=1,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270116] =
+{
+ 		id=270116,
+ 		year=2027,
+ 		month=1,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270117] =
+{
+ 		id=270117,
+ 		year=2027,
+ 		month=1,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270118] =
+{
+ 		id=270118,
+ 		year=2027,
+ 		month=1,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270119] =
+{
+ 		id=270119,
+ 		year=2027,
+ 		month=1,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270120] =
+{
+ 		id=270120,
+ 		year=2027,
+ 		month=1,
+ 		days=20,
+ 		dailyReward=820,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270121] =
+{
+ 		id=270121,
+ 		year=2027,
+ 		month=1,
+ 		days=21,
+ 		dailyReward=821,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270122] =
+{
+ 		id=270122,
+ 		year=2027,
+ 		month=1,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270123] =
+{
+ 		id=270123,
+ 		year=2027,
+ 		month=1,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270124] =
+{
+ 		id=270124,
+ 		year=2027,
+ 		month=1,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270125] =
+{
+ 		id=270125,
+ 		year=2027,
+ 		month=1,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270126] =
+{
+ 		id=270126,
+ 		year=2027,
+ 		month=1,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270127] =
+{
+ 		id=270127,
+ 		year=2027,
+ 		month=1,
+ 		days=27,
+ 		dailyReward=827,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270128] =
+{
+ 		id=270128,
+ 		year=2027,
+ 		month=1,
+ 		days=28,
+ 		dailyReward=828,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270129] =
+{
+ 		id=270129,
+ 		year=2027,
+ 		month=1,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270130] =
+{
+ 		id=270130,
+ 		year=2027,
+ 		month=1,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270131] =
+{
+ 		id=270131,
+ 		year=2027,
+ 		month=1,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270132] =
+{
+ 		id=270132,
+ 		year=2027,
+ 		month=2,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270133] =
+{
+ 		id=270133,
+ 		year=2027,
+ 		month=2,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270134] =
+{
+ 		id=270134,
+ 		year=2027,
+ 		month=2,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270135] =
+{
+ 		id=270135,
+ 		year=2027,
+ 		month=2,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270136] =
+{
+ 		id=270136,
+ 		year=2027,
+ 		month=2,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270137] =
+{
+ 		id=270137,
+ 		year=2027,
+ 		month=2,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270138] =
+{
+ 		id=270138,
+ 		year=2027,
+ 		month=2,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270139] =
+{
+ 		id=270139,
+ 		year=2027,
+ 		month=2,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270140] =
+{
+ 		id=270140,
+ 		year=2027,
+ 		month=2,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270141] =
+{
+ 		id=270141,
+ 		year=2027,
+ 		month=2,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270142] =
+{
+ 		id=270142,
+ 		year=2027,
+ 		month=2,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270143] =
+{
+ 		id=270143,
+ 		year=2027,
+ 		month=2,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270144] =
+{
+ 		id=270144,
+ 		year=2027,
+ 		month=2,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270145] =
+{
+ 		id=270145,
+ 		year=2027,
+ 		month=2,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270146] =
+{
+ 		id=270146,
+ 		year=2027,
+ 		month=2,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270147] =
+{
+ 		id=270147,
+ 		year=2027,
+ 		month=2,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270148] =
+{
+ 		id=270148,
+ 		year=2027,
+ 		month=2,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270149] =
+{
+ 		id=270149,
+ 		year=2027,
+ 		month=2,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270150] =
+{
+ 		id=270150,
+ 		year=2027,
+ 		month=2,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270151] =
+{
+ 		id=270151,
+ 		year=2027,
+ 		month=2,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270152] =
+{
+ 		id=270152,
+ 		year=2027,
+ 		month=2,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270153] =
+{
+ 		id=270153,
+ 		year=2027,
+ 		month=2,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270154] =
+{
+ 		id=270154,
+ 		year=2027,
+ 		month=2,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270155] =
+{
+ 		id=270155,
+ 		year=2027,
+ 		month=2,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270156] =
+{
+ 		id=270156,
+ 		year=2027,
+ 		month=2,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270157] =
+{
+ 		id=270157,
+ 		year=2027,
+ 		month=2,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270158] =
+{
+ 		id=270158,
+ 		year=2027,
+ 		month=2,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270159] =
+{
+ 		id=270159,
+ 		year=2027,
+ 		month=2,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270160] =
+{
+ 		id=270160,
+ 		year=2027,
+ 		month=3,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270161] =
+{
+ 		id=270161,
+ 		year=2027,
+ 		month=3,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270162] =
+{
+ 		id=270162,
+ 		year=2027,
+ 		month=3,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270163] =
+{
+ 		id=270163,
+ 		year=2027,
+ 		month=3,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270164] =
+{
+ 		id=270164,
+ 		year=2027,
+ 		month=3,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270165] =
+{
+ 		id=270165,
+ 		year=2027,
+ 		month=3,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270166] =
+{
+ 		id=270166,
+ 		year=2027,
+ 		month=3,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270167] =
+{
+ 		id=270167,
+ 		year=2027,
+ 		month=3,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270168] =
+{
+ 		id=270168,
+ 		year=2027,
+ 		month=3,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270169] =
+{
+ 		id=270169,
+ 		year=2027,
+ 		month=3,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270170] =
+{
+ 		id=270170,
+ 		year=2027,
+ 		month=3,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270171] =
+{
+ 		id=270171,
+ 		year=2027,
+ 		month=3,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270172] =
+{
+ 		id=270172,
+ 		year=2027,
+ 		month=3,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270173] =
+{
+ 		id=270173,
+ 		year=2027,
+ 		month=3,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270174] =
+{
+ 		id=270174,
+ 		year=2027,
+ 		month=3,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270175] =
+{
+ 		id=270175,
+ 		year=2027,
+ 		month=3,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270176] =
+{
+ 		id=270176,
+ 		year=2027,
+ 		month=3,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270177] =
+{
+ 		id=270177,
+ 		year=2027,
+ 		month=3,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270178] =
+{
+ 		id=270178,
+ 		year=2027,
+ 		month=3,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270179] =
+{
+ 		id=270179,
+ 		year=2027,
+ 		month=3,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270180] =
+{
+ 		id=270180,
+ 		year=2027,
+ 		month=3,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270181] =
+{
+ 		id=270181,
+ 		year=2027,
+ 		month=3,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270182] =
+{
+ 		id=270182,
+ 		year=2027,
+ 		month=3,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270183] =
+{
+ 		id=270183,
+ 		year=2027,
+ 		month=3,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270184] =
+{
+ 		id=270184,
+ 		year=2027,
+ 		month=3,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270185] =
+{
+ 		id=270185,
+ 		year=2027,
+ 		month=3,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270186] =
+{
+ 		id=270186,
+ 		year=2027,
+ 		month=3,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270187] =
+{
+ 		id=270187,
+ 		year=2027,
+ 		month=3,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270188] =
+{
+ 		id=270188,
+ 		year=2027,
+ 		month=3,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270189] =
+{
+ 		id=270189,
+ 		year=2027,
+ 		month=3,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270190] =
+{
+ 		id=270190,
+ 		year=2027,
+ 		month=3,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270191] =
+{
+ 		id=270191,
+ 		year=2027,
+ 		month=4,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270192] =
+{
+ 		id=270192,
+ 		year=2027,
+ 		month=4,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270193] =
+{
+ 		id=270193,
+ 		year=2027,
+ 		month=4,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270194] =
+{
+ 		id=270194,
+ 		year=2027,
+ 		month=4,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270195] =
+{
+ 		id=270195,
+ 		year=2027,
+ 		month=4,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270196] =
+{
+ 		id=270196,
+ 		year=2027,
+ 		month=4,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270197] =
+{
+ 		id=270197,
+ 		year=2027,
+ 		month=4,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270198] =
+{
+ 		id=270198,
+ 		year=2027,
+ 		month=4,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270199] =
+{
+ 		id=270199,
+ 		year=2027,
+ 		month=4,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270200] =
+{
+ 		id=270200,
+ 		year=2027,
+ 		month=4,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270201] =
+{
+ 		id=270201,
+ 		year=2027,
+ 		month=4,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270202] =
+{
+ 		id=270202,
+ 		year=2027,
+ 		month=4,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270203] =
+{
+ 		id=270203,
+ 		year=2027,
+ 		month=4,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270204] =
+{
+ 		id=270204,
+ 		year=2027,
+ 		month=4,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270205] =
+{
+ 		id=270205,
+ 		year=2027,
+ 		month=4,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270206] =
+{
+ 		id=270206,
+ 		year=2027,
+ 		month=4,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270207] =
+{
+ 		id=270207,
+ 		year=2027,
+ 		month=4,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270208] =
+{
+ 		id=270208,
+ 		year=2027,
+ 		month=4,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270209] =
+{
+ 		id=270209,
+ 		year=2027,
+ 		month=4,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270210] =
+{
+ 		id=270210,
+ 		year=2027,
+ 		month=4,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270211] =
+{
+ 		id=270211,
+ 		year=2027,
+ 		month=4,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270212] =
+{
+ 		id=270212,
+ 		year=2027,
+ 		month=4,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270213] =
+{
+ 		id=270213,
+ 		year=2027,
+ 		month=4,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270214] =
+{
+ 		id=270214,
+ 		year=2027,
+ 		month=4,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270215] =
+{
+ 		id=270215,
+ 		year=2027,
+ 		month=4,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270216] =
+{
+ 		id=270216,
+ 		year=2027,
+ 		month=4,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270217] =
+{
+ 		id=270217,
+ 		year=2027,
+ 		month=4,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270218] =
+{
+ 		id=270218,
+ 		year=2027,
+ 		month=4,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270219] =
+{
+ 		id=270219,
+ 		year=2027,
+ 		month=4,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270220] =
+{
+ 		id=270220,
+ 		year=2027,
+ 		month=4,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270221] =
+{
+ 		id=270221,
+ 		year=2027,
+ 		month=5,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270222] =
+{
+ 		id=270222,
+ 		year=2027,
+ 		month=5,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270223] =
+{
+ 		id=270223,
+ 		year=2027,
+ 		month=5,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270224] =
+{
+ 		id=270224,
+ 		year=2027,
+ 		month=5,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270225] =
+{
+ 		id=270225,
+ 		year=2027,
+ 		month=5,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270226] =
+{
+ 		id=270226,
+ 		year=2027,
+ 		month=5,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270227] =
+{
+ 		id=270227,
+ 		year=2027,
+ 		month=5,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270228] =
+{
+ 		id=270228,
+ 		year=2027,
+ 		month=5,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270229] =
+{
+ 		id=270229,
+ 		year=2027,
+ 		month=5,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270230] =
+{
+ 		id=270230,
+ 		year=2027,
+ 		month=5,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270231] =
+{
+ 		id=270231,
+ 		year=2027,
+ 		month=5,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270232] =
+{
+ 		id=270232,
+ 		year=2027,
+ 		month=5,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270233] =
+{
+ 		id=270233,
+ 		year=2027,
+ 		month=5,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270234] =
+{
+ 		id=270234,
+ 		year=2027,
+ 		month=5,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270235] =
+{
+ 		id=270235,
+ 		year=2027,
+ 		month=5,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270236] =
+{
+ 		id=270236,
+ 		year=2027,
+ 		month=5,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270237] =
+{
+ 		id=270237,
+ 		year=2027,
+ 		month=5,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270238] =
+{
+ 		id=270238,
+ 		year=2027,
+ 		month=5,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270239] =
+{
+ 		id=270239,
+ 		year=2027,
+ 		month=5,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270240] =
+{
+ 		id=270240,
+ 		year=2027,
+ 		month=5,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270241] =
+{
+ 		id=270241,
+ 		year=2027,
+ 		month=5,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270242] =
+{
+ 		id=270242,
+ 		year=2027,
+ 		month=5,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270243] =
+{
+ 		id=270243,
+ 		year=2027,
+ 		month=5,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270244] =
+{
+ 		id=270244,
+ 		year=2027,
+ 		month=5,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270245] =
+{
+ 		id=270245,
+ 		year=2027,
+ 		month=5,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270246] =
+{
+ 		id=270246,
+ 		year=2027,
+ 		month=5,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270247] =
+{
+ 		id=270247,
+ 		year=2027,
+ 		month=5,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270248] =
+{
+ 		id=270248,
+ 		year=2027,
+ 		month=5,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270249] =
+{
+ 		id=270249,
+ 		year=2027,
+ 		month=5,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270250] =
+{
+ 		id=270250,
+ 		year=2027,
+ 		month=5,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270251] =
+{
+ 		id=270251,
+ 		year=2027,
+ 		month=5,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270252] =
+{
+ 		id=270252,
+ 		year=2027,
+ 		month=6,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270253] =
+{
+ 		id=270253,
+ 		year=2027,
+ 		month=6,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270254] =
+{
+ 		id=270254,
+ 		year=2027,
+ 		month=6,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270255] =
+{
+ 		id=270255,
+ 		year=2027,
+ 		month=6,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270256] =
+{
+ 		id=270256,
+ 		year=2027,
+ 		month=6,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270257] =
+{
+ 		id=270257,
+ 		year=2027,
+ 		month=6,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270258] =
+{
+ 		id=270258,
+ 		year=2027,
+ 		month=6,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270259] =
+{
+ 		id=270259,
+ 		year=2027,
+ 		month=6,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270260] =
+{
+ 		id=270260,
+ 		year=2027,
+ 		month=6,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270261] =
+{
+ 		id=270261,
+ 		year=2027,
+ 		month=6,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270262] =
+{
+ 		id=270262,
+ 		year=2027,
+ 		month=6,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270263] =
+{
+ 		id=270263,
+ 		year=2027,
+ 		month=6,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270264] =
+{
+ 		id=270264,
+ 		year=2027,
+ 		month=6,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270265] =
+{
+ 		id=270265,
+ 		year=2027,
+ 		month=6,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270266] =
+{
+ 		id=270266,
+ 		year=2027,
+ 		month=6,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270267] =
+{
+ 		id=270267,
+ 		year=2027,
+ 		month=6,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270268] =
+{
+ 		id=270268,
+ 		year=2027,
+ 		month=6,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270269] =
+{
+ 		id=270269,
+ 		year=2027,
+ 		month=6,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270270] =
+{
+ 		id=270270,
+ 		year=2027,
+ 		month=6,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270271] =
+{
+ 		id=270271,
+ 		year=2027,
+ 		month=6,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270272] =
+{
+ 		id=270272,
+ 		year=2027,
+ 		month=6,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270273] =
+{
+ 		id=270273,
+ 		year=2027,
+ 		month=6,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270274] =
+{
+ 		id=270274,
+ 		year=2027,
+ 		month=6,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270275] =
+{
+ 		id=270275,
+ 		year=2027,
+ 		month=6,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270276] =
+{
+ 		id=270276,
+ 		year=2027,
+ 		month=6,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270277] =
+{
+ 		id=270277,
+ 		year=2027,
+ 		month=6,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270278] =
+{
+ 		id=270278,
+ 		year=2027,
+ 		month=6,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270279] =
+{
+ 		id=270279,
+ 		year=2027,
+ 		month=6,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270280] =
+{
+ 		id=270280,
+ 		year=2027,
+ 		month=6,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270281] =
+{
+ 		id=270281,
+ 		year=2027,
+ 		month=6,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270282] =
+{
+ 		id=270282,
+ 		year=2027,
+ 		month=7,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270283] =
+{
+ 		id=270283,
+ 		year=2027,
+ 		month=7,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270284] =
+{
+ 		id=270284,
+ 		year=2027,
+ 		month=7,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270285] =
+{
+ 		id=270285,
+ 		year=2027,
+ 		month=7,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270286] =
+{
+ 		id=270286,
+ 		year=2027,
+ 		month=7,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270287] =
+{
+ 		id=270287,
+ 		year=2027,
+ 		month=7,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270288] =
+{
+ 		id=270288,
+ 		year=2027,
+ 		month=7,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270289] =
+{
+ 		id=270289,
+ 		year=2027,
+ 		month=7,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270290] =
+{
+ 		id=270290,
+ 		year=2027,
+ 		month=7,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270291] =
+{
+ 		id=270291,
+ 		year=2027,
+ 		month=7,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270292] =
+{
+ 		id=270292,
+ 		year=2027,
+ 		month=7,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270293] =
+{
+ 		id=270293,
+ 		year=2027,
+ 		month=7,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270294] =
+{
+ 		id=270294,
+ 		year=2027,
+ 		month=7,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270295] =
+{
+ 		id=270295,
+ 		year=2027,
+ 		month=7,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270296] =
+{
+ 		id=270296,
+ 		year=2027,
+ 		month=7,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270297] =
+{
+ 		id=270297,
+ 		year=2027,
+ 		month=7,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270298] =
+{
+ 		id=270298,
+ 		year=2027,
+ 		month=7,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270299] =
+{
+ 		id=270299,
+ 		year=2027,
+ 		month=7,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270300] =
+{
+ 		id=270300,
+ 		year=2027,
+ 		month=7,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270301] =
+{
+ 		id=270301,
+ 		year=2027,
+ 		month=7,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270302] =
+{
+ 		id=270302,
+ 		year=2027,
+ 		month=7,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270303] =
+{
+ 		id=270303,
+ 		year=2027,
+ 		month=7,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270304] =
+{
+ 		id=270304,
+ 		year=2027,
+ 		month=7,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270305] =
+{
+ 		id=270305,
+ 		year=2027,
+ 		month=7,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270306] =
+{
+ 		id=270306,
+ 		year=2027,
+ 		month=7,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270307] =
+{
+ 		id=270307,
+ 		year=2027,
+ 		month=7,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270308] =
+{
+ 		id=270308,
+ 		year=2027,
+ 		month=7,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270309] =
+{
+ 		id=270309,
+ 		year=2027,
+ 		month=7,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270310] =
+{
+ 		id=270310,
+ 		year=2027,
+ 		month=7,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270311] =
+{
+ 		id=270311,
+ 		year=2027,
+ 		month=7,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270312] =
+{
+ 		id=270312,
+ 		year=2027,
+ 		month=7,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270313] =
+{
+ 		id=270313,
+ 		year=2027,
+ 		month=8,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270314] =
+{
+ 		id=270314,
+ 		year=2027,
+ 		month=8,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270315] =
+{
+ 		id=270315,
+ 		year=2027,
+ 		month=8,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270316] =
+{
+ 		id=270316,
+ 		year=2027,
+ 		month=8,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270317] =
+{
+ 		id=270317,
+ 		year=2027,
+ 		month=8,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270318] =
+{
+ 		id=270318,
+ 		year=2027,
+ 		month=8,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270319] =
+{
+ 		id=270319,
+ 		year=2027,
+ 		month=8,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270320] =
+{
+ 		id=270320,
+ 		year=2027,
+ 		month=8,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270321] =
+{
+ 		id=270321,
+ 		year=2027,
+ 		month=8,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270322] =
+{
+ 		id=270322,
+ 		year=2027,
+ 		month=8,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270323] =
+{
+ 		id=270323,
+ 		year=2027,
+ 		month=8,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270324] =
+{
+ 		id=270324,
+ 		year=2027,
+ 		month=8,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270325] =
+{
+ 		id=270325,
+ 		year=2027,
+ 		month=8,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270326] =
+{
+ 		id=270326,
+ 		year=2027,
+ 		month=8,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270327] =
+{
+ 		id=270327,
+ 		year=2027,
+ 		month=8,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270328] =
+{
+ 		id=270328,
+ 		year=2027,
+ 		month=8,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270329] =
+{
+ 		id=270329,
+ 		year=2027,
+ 		month=8,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270330] =
+{
+ 		id=270330,
+ 		year=2027,
+ 		month=8,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270331] =
+{
+ 		id=270331,
+ 		year=2027,
+ 		month=8,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270332] =
+{
+ 		id=270332,
+ 		year=2027,
+ 		month=8,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270333] =
+{
+ 		id=270333,
+ 		year=2027,
+ 		month=8,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270334] =
+{
+ 		id=270334,
+ 		year=2027,
+ 		month=8,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270335] =
+{
+ 		id=270335,
+ 		year=2027,
+ 		month=8,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270336] =
+{
+ 		id=270336,
+ 		year=2027,
+ 		month=8,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270337] =
+{
+ 		id=270337,
+ 		year=2027,
+ 		month=8,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270338] =
+{
+ 		id=270338,
+ 		year=2027,
+ 		month=8,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270339] =
+{
+ 		id=270339,
+ 		year=2027,
+ 		month=8,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270340] =
+{
+ 		id=270340,
+ 		year=2027,
+ 		month=8,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270341] =
+{
+ 		id=270341,
+ 		year=2027,
+ 		month=8,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270342] =
+{
+ 		id=270342,
+ 		year=2027,
+ 		month=8,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270343] =
+{
+ 		id=270343,
+ 		year=2027,
+ 		month=8,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270344] =
+{
+ 		id=270344,
+ 		year=2027,
+ 		month=9,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270345] =
+{
+ 		id=270345,
+ 		year=2027,
+ 		month=9,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270346] =
+{
+ 		id=270346,
+ 		year=2027,
+ 		month=9,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270347] =
+{
+ 		id=270347,
+ 		year=2027,
+ 		month=9,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270348] =
+{
+ 		id=270348,
+ 		year=2027,
+ 		month=9,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270349] =
+{
+ 		id=270349,
+ 		year=2027,
+ 		month=9,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270350] =
+{
+ 		id=270350,
+ 		year=2027,
+ 		month=9,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270351] =
+{
+ 		id=270351,
+ 		year=2027,
+ 		month=9,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270352] =
+{
+ 		id=270352,
+ 		year=2027,
+ 		month=9,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270353] =
+{
+ 		id=270353,
+ 		year=2027,
+ 		month=9,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270354] =
+{
+ 		id=270354,
+ 		year=2027,
+ 		month=9,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270355] =
+{
+ 		id=270355,
+ 		year=2027,
+ 		month=9,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270356] =
+{
+ 		id=270356,
+ 		year=2027,
+ 		month=9,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270357] =
+{
+ 		id=270357,
+ 		year=2027,
+ 		month=9,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270358] =
+{
+ 		id=270358,
+ 		year=2027,
+ 		month=9,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270359] =
+{
+ 		id=270359,
+ 		year=2027,
+ 		month=9,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270360] =
+{
+ 		id=270360,
+ 		year=2027,
+ 		month=9,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270361] =
+{
+ 		id=270361,
+ 		year=2027,
+ 		month=9,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270362] =
+{
+ 		id=270362,
+ 		year=2027,
+ 		month=9,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270363] =
+{
+ 		id=270363,
+ 		year=2027,
+ 		month=9,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270364] =
+{
+ 		id=270364,
+ 		year=2027,
+ 		month=9,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270365] =
+{
+ 		id=270365,
+ 		year=2027,
+ 		month=9,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270366] =
+{
+ 		id=270366,
+ 		year=2027,
+ 		month=9,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270367] =
+{
+ 		id=270367,
+ 		year=2027,
+ 		month=9,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270368] =
+{
+ 		id=270368,
+ 		year=2027,
+ 		month=9,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270369] =
+{
+ 		id=270369,
+ 		year=2027,
+ 		month=9,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270370] =
+{
+ 		id=270370,
+ 		year=2027,
+ 		month=9,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270371] =
+{
+ 		id=270371,
+ 		year=2027,
+ 		month=9,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270372] =
+{
+ 		id=270372,
+ 		year=2027,
+ 		month=9,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270373] =
+{
+ 		id=270373,
+ 		year=2027,
+ 		month=9,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270374] =
+{
+ 		id=270374,
+ 		year=2027,
+ 		month=10,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270375] =
+{
+ 		id=270375,
+ 		year=2027,
+ 		month=10,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270376] =
+{
+ 		id=270376,
+ 		year=2027,
+ 		month=10,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270377] =
+{
+ 		id=270377,
+ 		year=2027,
+ 		month=10,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270378] =
+{
+ 		id=270378,
+ 		year=2027,
+ 		month=10,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270379] =
+{
+ 		id=270379,
+ 		year=2027,
+ 		month=10,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270380] =
+{
+ 		id=270380,
+ 		year=2027,
+ 		month=10,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270381] =
+{
+ 		id=270381,
+ 		year=2027,
+ 		month=10,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270382] =
+{
+ 		id=270382,
+ 		year=2027,
+ 		month=10,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270383] =
+{
+ 		id=270383,
+ 		year=2027,
+ 		month=10,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270384] =
+{
+ 		id=270384,
+ 		year=2027,
+ 		month=10,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270385] =
+{
+ 		id=270385,
+ 		year=2027,
+ 		month=10,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270386] =
+{
+ 		id=270386,
+ 		year=2027,
+ 		month=10,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270387] =
+{
+ 		id=270387,
+ 		year=2027,
+ 		month=10,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270388] =
+{
+ 		id=270388,
+ 		year=2027,
+ 		month=10,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270389] =
+{
+ 		id=270389,
+ 		year=2027,
+ 		month=10,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270390] =
+{
+ 		id=270390,
+ 		year=2027,
+ 		month=10,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270391] =
+{
+ 		id=270391,
+ 		year=2027,
+ 		month=10,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270392] =
+{
+ 		id=270392,
+ 		year=2027,
+ 		month=10,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270393] =
+{
+ 		id=270393,
+ 		year=2027,
+ 		month=10,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270394] =
+{
+ 		id=270394,
+ 		year=2027,
+ 		month=10,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270395] =
+{
+ 		id=270395,
+ 		year=2027,
+ 		month=10,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270396] =
+{
+ 		id=270396,
+ 		year=2027,
+ 		month=10,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270397] =
+{
+ 		id=270397,
+ 		year=2027,
+ 		month=10,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270398] =
+{
+ 		id=270398,
+ 		year=2027,
+ 		month=10,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270399] =
+{
+ 		id=270399,
+ 		year=2027,
+ 		month=10,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270400] =
+{
+ 		id=270400,
+ 		year=2027,
+ 		month=10,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270401] =
+{
+ 		id=270401,
+ 		year=2027,
+ 		month=10,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270402] =
+{
+ 		id=270402,
+ 		year=2027,
+ 		month=10,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270403] =
+{
+ 		id=270403,
+ 		year=2027,
+ 		month=10,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270404] =
+{
+ 		id=270404,
+ 		year=2027,
+ 		month=10,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270405] =
+{
+ 		id=270405,
+ 		year=2027,
+ 		month=11,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270406] =
+{
+ 		id=270406,
+ 		year=2027,
+ 		month=11,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270407] =
+{
+ 		id=270407,
+ 		year=2027,
+ 		month=11,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270408] =
+{
+ 		id=270408,
+ 		year=2027,
+ 		month=11,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270409] =
+{
+ 		id=270409,
+ 		year=2027,
+ 		month=11,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270410] =
+{
+ 		id=270410,
+ 		year=2027,
+ 		month=11,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270411] =
+{
+ 		id=270411,
+ 		year=2027,
+ 		month=11,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270412] =
+{
+ 		id=270412,
+ 		year=2027,
+ 		month=11,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270413] =
+{
+ 		id=270413,
+ 		year=2027,
+ 		month=11,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270414] =
+{
+ 		id=270414,
+ 		year=2027,
+ 		month=11,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270415] =
+{
+ 		id=270415,
+ 		year=2027,
+ 		month=11,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270416] =
+{
+ 		id=270416,
+ 		year=2027,
+ 		month=11,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270417] =
+{
+ 		id=270417,
+ 		year=2027,
+ 		month=11,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270418] =
+{
+ 		id=270418,
+ 		year=2027,
+ 		month=11,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270419] =
+{
+ 		id=270419,
+ 		year=2027,
+ 		month=11,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270420] =
+{
+ 		id=270420,
+ 		year=2027,
+ 		month=11,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270421] =
+{
+ 		id=270421,
+ 		year=2027,
+ 		month=11,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270422] =
+{
+ 		id=270422,
+ 		year=2027,
+ 		month=11,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270423] =
+{
+ 		id=270423,
+ 		year=2027,
+ 		month=11,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270424] =
+{
+ 		id=270424,
+ 		year=2027,
+ 		month=11,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270425] =
+{
+ 		id=270425,
+ 		year=2027,
+ 		month=11,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270426] =
+{
+ 		id=270426,
+ 		year=2027,
+ 		month=11,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270427] =
+{
+ 		id=270427,
+ 		year=2027,
+ 		month=11,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270428] =
+{
+ 		id=270428,
+ 		year=2027,
+ 		month=11,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270429] =
+{
+ 		id=270429,
+ 		year=2027,
+ 		month=11,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270430] =
+{
+ 		id=270430,
+ 		year=2027,
+ 		month=11,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270431] =
+{
+ 		id=270431,
+ 		year=2027,
+ 		month=11,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270432] =
+{
+ 		id=270432,
+ 		year=2027,
+ 		month=11,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270433] =
+{
+ 		id=270433,
+ 		year=2027,
+ 		month=11,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270434] =
+{
+ 		id=270434,
+ 		year=2027,
+ 		month=11,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270435] =
+{
+ 		id=270435,
+ 		year=2027,
+ 		month=12,
+ 		days=1,
+ 		dailyReward=801,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270436] =
+{
+ 		id=270436,
+ 		year=2027,
+ 		month=12,
+ 		days=2,
+ 		dailyReward=802,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270437] =
+{
+ 		id=270437,
+ 		year=2027,
+ 		month=12,
+ 		days=3,
+ 		dailyReward=803,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270438] =
+{
+ 		id=270438,
+ 		year=2027,
+ 		month=12,
+ 		days=4,
+ 		dailyReward=804,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270439] =
+{
+ 		id=270439,
+ 		year=2027,
+ 		month=12,
+ 		days=5,
+ 		dailyReward=805,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270440] =
+{
+ 		id=270440,
+ 		year=2027,
+ 		month=12,
+ 		days=6,
+ 		dailyReward=806,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270441] =
+{
+ 		id=270441,
+ 		year=2027,
+ 		month=12,
+ 		days=7,
+ 		dailyReward=807,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270442] =
+{
+ 		id=270442,
+ 		year=2027,
+ 		month=12,
+ 		days=8,
+ 		dailyReward=808,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270443] =
+{
+ 		id=270443,
+ 		year=2027,
+ 		month=12,
+ 		days=9,
+ 		dailyReward=809,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270444] =
+{
+ 		id=270444,
+ 		year=2027,
+ 		month=12,
+ 		days=10,
+ 		dailyReward=810,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270445] =
+{
+ 		id=270445,
+ 		year=2027,
+ 		month=12,
+ 		days=11,
+ 		dailyReward=811,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270446] =
+{
+ 		id=270446,
+ 		year=2027,
+ 		month=12,
+ 		days=12,
+ 		dailyReward=812,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270447] =
+{
+ 		id=270447,
+ 		year=2027,
+ 		month=12,
+ 		days=13,
+ 		dailyReward=813,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270448] =
+{
+ 		id=270448,
+ 		year=2027,
+ 		month=12,
+ 		days=14,
+ 		dailyReward=814,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270449] =
+{
+ 		id=270449,
+ 		year=2027,
+ 		month=12,
+ 		days=15,
+ 		dailyReward=815,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270450] =
+{
+ 		id=270450,
+ 		year=2027,
+ 		month=12,
+ 		days=16,
+ 		dailyReward=816,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270451] =
+{
+ 		id=270451,
+ 		year=2027,
+ 		month=12,
+ 		days=17,
+ 		dailyReward=817,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270452] =
+{
+ 		id=270452,
+ 		year=2027,
+ 		month=12,
+ 		days=18,
+ 		dailyReward=818,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270453] =
+{
+ 		id=270453,
+ 		year=2027,
+ 		month=12,
+ 		days=19,
+ 		dailyReward=819,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270454] =
+{
+ 		id=270454,
+ 		year=2027,
+ 		month=12,
+ 		days=20,
+ 		dailyReward=820,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270455] =
+{
+ 		id=270455,
+ 		year=2027,
+ 		month=12,
+ 		days=21,
+ 		dailyReward=821,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270456] =
+{
+ 		id=270456,
+ 		year=2027,
+ 		month=12,
+ 		days=22,
+ 		dailyReward=822,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270457] =
+{
+ 		id=270457,
+ 		year=2027,
+ 		month=12,
+ 		days=23,
+ 		dailyReward=823,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270458] =
+{
+ 		id=270458,
+ 		year=2027,
+ 		month=12,
+ 		days=24,
+ 		dailyReward=824,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270459] =
+{
+ 		id=270459,
+ 		year=2027,
+ 		month=12,
+ 		days=25,
+ 		dailyReward=825,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270460] =
+{
+ 		id=270460,
+ 		year=2027,
+ 		month=12,
+ 		days=26,
+ 		dailyReward=826,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270461] =
+{
+ 		id=270461,
+ 		year=2027,
+ 		month=12,
+ 		days=27,
+ 		dailyReward=827,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270462] =
+{
+ 		id=270462,
+ 		year=2027,
+ 		month=12,
+ 		days=28,
+ 		dailyReward=828,
+ 		effect=1,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270463] =
+{
+ 		id=270463,
+ 		year=2027,
+ 		month=12,
+ 		days=29,
+ 		dailyReward=829,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270464] =
+{
+ 		id=270464,
+ 		year=2027,
+ 		month=12,
+ 		days=30,
+ 		dailyReward=830,
+ 		monthlyCard=800,
+ 	festival=0
+},
+[270465] =
+{
+ 		id=270465,
+ 		year=2027,
+ 		month=12,
+ 		days=31,
+ 		dailyReward=831,
+ 		monthlyCard=800,
+ 	festival=0
+}
+}
+
+return {title=title, value=value}

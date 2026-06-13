@@ -1,0 +1,1419 @@
+local title = {
+	id = 0,
+	type = 0,
+	relationId = {},
+	name = 0,
+	icon = "",
+	order = 0,
+	openType = 0,
+	startTime = 0,
+	endTime = 0,
+	closeTime = 0,
+	startTime2 = 0,
+	lastTime = 0,
+	closeTime2 = 0,
+	openCondition = {},
+	prefabPath = "",
+	ifOpen = 0,
+	value = {},
+	itemSpecial = {}
+}
+
+local value = {
+[101] =
+{
+ 		id=101,
+ 		type=4,
+ 		relationId={0},
+ 		name=361,
+ 		icon="UI/SpritePics/main/ui_main_icon_activity",
+ 		order=1,
+ 		openType=4,
+ 		lastTime=30,
+ 		prefabPath="UISevenSign",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[103] =
+{
+ 		id=103,
+ 		type=4,
+ 		relationId={0},
+ 		name=1318,
+ 		icon="UI/SpritePics/main/ui_main_icon_reward",
+ 		order=3,
+ 		openType=2,
+ 		startTime=1759093200,
+ 		endTime=1760111999,
+ 		closeTime=1760111999,
+ 		prefabPath="LoginReward_NationalDay",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[104] =
+{
+ 		id=104,
+ 		type=4,
+ 		relationId={0},
+ 		name=1320,
+ 		icon="UI/SpritePics/main/ui_main_icon_reward",
+ 		order=4,
+ 		openType=2,
+ 		startTime=1735419600,
+ 		endTime=1736006399,
+ 		closeTime=1736006399,
+ 		prefabPath="LoginReward_Mid_AutumnFestival",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[105] =
+{
+ 		id=105,
+ 		type=23,
+ 		relationId={0},
+ 		name=1321,
+ 		openType=2,
+ 		startTime=1733950800,
+ 		endTime=2054822400,
+ 		closeTime=2054822400,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[1024] =
+{
+ 		id=1024,
+ 		type=3,
+ 		relationId={1093},
+ 		name=362,
+ 		icon="UI/SpritePics/main/ui_shop_mainicon01",
+ 		openType=4,
+ 		lastTime=14,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[1093] =
+{
+ 		id=1093,
+ 		type=9,
+ 		relationId={0},
+ 		name=441,
+ 		openType=4,
+ 		lastTime=14,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[1114] =
+{
+ 		id=1114,
+ 		type=15,
+ 		relationId={0},
+ 		openType=4,
+ 		lastTime=99999,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[1099] =
+{
+ 		id=1099,
+ 		type=13,
+ 		relationId={1100,1101},
+ 		openType=2,
+ 		startTime=1733950800,
+ 		endTime=1736524800,
+ 		closeTime=1736524800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[1100] =
+{
+ 		id=1100,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1733950800,
+ 		endTime=1736524800,
+ 		closeTime=1736524800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[1101] =
+{
+ 		id=1101,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1733950800,
+ 		endTime=1736524800,
+ 		closeTime=1736524800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[1102] =
+{
+ 		id=1102,
+ 		type=13,
+ 		relationId={1103,1104},
+ 		openType=2,
+ 		startTime=1736542800,
+ 		endTime=1739116800,
+ 		closeTime=1739116800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[1103] =
+{
+ 		id=1103,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1736542800,
+ 		endTime=1739116800,
+ 		closeTime=1739116800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[1104] =
+{
+ 		id=1104,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1736542800,
+ 		endTime=1739116800,
+ 		closeTime=1739116800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2105] =
+{
+ 		id=2105,
+ 		type=13,
+ 		relationId={2106,2107},
+ 		openType=2,
+ 		startTime=1739134800,
+ 		endTime=1741708800,
+ 		closeTime=1741708800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2106] =
+{
+ 		id=2106,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1739134800,
+ 		endTime=1741708800,
+ 		closeTime=1741708800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2107] =
+{
+ 		id=2107,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1739134800,
+ 		endTime=1741708800,
+ 		closeTime=1741708800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2108] =
+{
+ 		id=2108,
+ 		type=13,
+ 		relationId={2109,2110},
+ 		openType=2,
+ 		startTime=1741726800,
+ 		endTime=1744300800,
+ 		closeTime=1744300800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2109] =
+{
+ 		id=2109,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1741726800,
+ 		endTime=1744300800,
+ 		closeTime=1744300800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2110] =
+{
+ 		id=2110,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1741726800,
+ 		endTime=1744300800,
+ 		closeTime=1744300800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2111] =
+{
+ 		id=2111,
+ 		type=13,
+ 		relationId={2112,2113},
+ 		openType=2,
+ 		startTime=1744318800,
+ 		endTime=1746892800,
+ 		closeTime=1746892800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2112] =
+{
+ 		id=2112,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1744318800,
+ 		endTime=1746892800,
+ 		closeTime=1746892800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2113] =
+{
+ 		id=2113,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1744318800,
+ 		endTime=1746892800,
+ 		closeTime=1746892800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2114] =
+{
+ 		id=2114,
+ 		type=13,
+ 		relationId={2115,2116},
+ 		openType=2,
+ 		startTime=1746910800,
+ 		endTime=1749484800,
+ 		closeTime=1749484800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2115] =
+{
+ 		id=2115,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1746910800,
+ 		endTime=1749484800,
+ 		closeTime=1749484800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2116] =
+{
+ 		id=2116,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1746910800,
+ 		endTime=1749484800,
+ 		closeTime=1749484800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2117] =
+{
+ 		id=2117,
+ 		type=13,
+ 		relationId={2118,2119},
+ 		openType=2,
+ 		startTime=1749502800,
+ 		endTime=1752076800,
+ 		closeTime=1752076800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2118] =
+{
+ 		id=2118,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1749502800,
+ 		endTime=1752076800,
+ 		closeTime=1752076800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2119] =
+{
+ 		id=2119,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1749502800,
+ 		endTime=1752076800,
+ 		closeTime=1752076800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2120] =
+{
+ 		id=2120,
+ 		type=13,
+ 		relationId={2121,2122},
+ 		openType=2,
+ 		startTime=1752094800,
+ 		endTime=1754668800,
+ 		closeTime=1754668800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2121] =
+{
+ 		id=2121,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1752094800,
+ 		endTime=1754668800,
+ 		closeTime=1754668800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2122] =
+{
+ 		id=2122,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1752094800,
+ 		endTime=1754668800,
+ 		closeTime=1754668800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2123] =
+{
+ 		id=2123,
+ 		type=13,
+ 		relationId={2124,2125},
+ 		openType=2,
+ 		startTime=1754686800,
+ 		endTime=1757260800,
+ 		closeTime=1757260800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2124] =
+{
+ 		id=2124,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1754686800,
+ 		endTime=1757260800,
+ 		closeTime=1757260800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2125] =
+{
+ 		id=2125,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1754686800,
+ 		endTime=1757260800,
+ 		closeTime=1757260800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2126] =
+{
+ 		id=2126,
+ 		type=13,
+ 		relationId={2127,2128},
+ 		openType=2,
+ 		startTime=1757278800,
+ 		endTime=1759852800,
+ 		closeTime=1759852800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2127] =
+{
+ 		id=2127,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1757278800,
+ 		endTime=1759852800,
+ 		closeTime=1759852800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2128] =
+{
+ 		id=2128,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1757278800,
+ 		endTime=1759852800,
+ 		closeTime=1759852800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2129] =
+{
+ 		id=2129,
+ 		type=13,
+ 		relationId={2130,2131},
+ 		openType=2,
+ 		startTime=1759870800,
+ 		endTime=1762444800,
+ 		closeTime=1762444800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2130] =
+{
+ 		id=2130,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1759870800,
+ 		endTime=1762444800,
+ 		closeTime=1762444800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2131] =
+{
+ 		id=2131,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1759870800,
+ 		endTime=1762444800,
+ 		closeTime=1762444800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2132] =
+{
+ 		id=2132,
+ 		type=13,
+ 		relationId={2133,2134},
+ 		openType=2,
+ 		startTime=1762462800,
+ 		endTime=1765036800,
+ 		closeTime=1765036800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2133] =
+{
+ 		id=2133,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1762462800,
+ 		endTime=1765036800,
+ 		closeTime=1765036800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2134] =
+{
+ 		id=2134,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1762462800,
+ 		endTime=1765036800,
+ 		closeTime=1765036800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2135] =
+{
+ 		id=2135,
+ 		type=13,
+ 		relationId={2136,2137},
+ 		openType=2,
+ 		startTime=1765054800,
+ 		endTime=1767628800,
+ 		closeTime=1767628800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2136] =
+{
+ 		id=2136,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1765054800,
+ 		endTime=1767628800,
+ 		closeTime=1767628800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2137] =
+{
+ 		id=2137,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1765054800,
+ 		endTime=1767628800,
+ 		closeTime=1767628800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2138] =
+{
+ 		id=2138,
+ 		type=13,
+ 		relationId={2139,2140},
+ 		openType=2,
+ 		startTime=1767646800,
+ 		endTime=1770220800,
+ 		closeTime=1770220800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2139] =
+{
+ 		id=2139,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1767646800,
+ 		endTime=1770220800,
+ 		closeTime=1770220800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2140] =
+{
+ 		id=2140,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1767646800,
+ 		endTime=1770220800,
+ 		closeTime=1770220800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2141] =
+{
+ 		id=2141,
+ 		type=13,
+ 		relationId={2142,2143},
+ 		openType=2,
+ 		startTime=1770238800,
+ 		endTime=1772812800,
+ 		closeTime=1772812800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2142] =
+{
+ 		id=2142,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1770238800,
+ 		endTime=1772812800,
+ 		closeTime=1772812800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2143] =
+{
+ 		id=2143,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1770238800,
+ 		endTime=1772812800,
+ 		closeTime=1772812800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2144] =
+{
+ 		id=2144,
+ 		type=13,
+ 		relationId={2145,2146},
+ 		openType=2,
+ 		startTime=1772830800,
+ 		endTime=1775404800,
+ 		closeTime=1775404800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2145] =
+{
+ 		id=2145,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1772830800,
+ 		endTime=1775404800,
+ 		closeTime=1775404800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2146] =
+{
+ 		id=2146,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1772830800,
+ 		endTime=1775404800,
+ 		closeTime=1775404800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2147] =
+{
+ 		id=2147,
+ 		type=13,
+ 		relationId={2148,2149},
+ 		openType=2,
+ 		startTime=1775422800,
+ 		endTime=1777996800,
+ 		closeTime=1777996800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2148] =
+{
+ 		id=2148,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1775422800,
+ 		endTime=1777996800,
+ 		closeTime=1777996800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2149] =
+{
+ 		id=2149,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1775422800,
+ 		endTime=1777996800,
+ 		closeTime=1777996800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2150] =
+{
+ 		id=2150,
+ 		type=13,
+ 		relationId={2151,2152},
+ 		openType=2,
+ 		startTime=1778014800,
+ 		endTime=1780588800,
+ 		closeTime=1780588800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2151] =
+{
+ 		id=2151,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1778014800,
+ 		endTime=1780588800,
+ 		closeTime=1780588800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2152] =
+{
+ 		id=2152,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1778014800,
+ 		endTime=1780588800,
+ 		closeTime=1780588800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2153] =
+{
+ 		id=2153,
+ 		type=13,
+ 		relationId={2154,2155},
+ 		openType=2,
+ 		startTime=1780606800,
+ 		endTime=1783180800,
+ 		closeTime=1783180800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2154] =
+{
+ 		id=2154,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1780606800,
+ 		endTime=1783180800,
+ 		closeTime=1783180800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2155] =
+{
+ 		id=2155,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1780606800,
+ 		endTime=1783180800,
+ 		closeTime=1783180800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2156] =
+{
+ 		id=2156,
+ 		type=13,
+ 		relationId={2157,2158},
+ 		openType=2,
+ 		startTime=1783198800,
+ 		endTime=1785772800,
+ 		closeTime=1785772800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2157] =
+{
+ 		id=2157,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1783198800,
+ 		endTime=1785772800,
+ 		closeTime=1785772800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2158] =
+{
+ 		id=2158,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1783198800,
+ 		endTime=1785772800,
+ 		closeTime=1785772800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2159] =
+{
+ 		id=2159,
+ 		type=13,
+ 		relationId={2160,2161},
+ 		openType=2,
+ 		startTime=1785790800,
+ 		endTime=1788364800,
+ 		closeTime=1788364800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2160] =
+{
+ 		id=2160,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1785790800,
+ 		endTime=1788364800,
+ 		closeTime=1788364800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2161] =
+{
+ 		id=2161,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1785790800,
+ 		endTime=1788364800,
+ 		closeTime=1788364800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2162] =
+{
+ 		id=2162,
+ 		type=13,
+ 		relationId={2163,2164},
+ 		openType=2,
+ 		startTime=1788382800,
+ 		endTime=1790956800,
+ 		closeTime=1790956800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2163] =
+{
+ 		id=2163,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1788382800,
+ 		endTime=1790956800,
+ 		closeTime=1790956800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2164] =
+{
+ 		id=2164,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1788382800,
+ 		endTime=1790956800,
+ 		closeTime=1790956800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2165] =
+{
+ 		id=2165,
+ 		type=13,
+ 		relationId={2166,2167},
+ 		openType=2,
+ 		startTime=1790974800,
+ 		endTime=1793548800,
+ 		closeTime=1793548800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2166] =
+{
+ 		id=2166,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1790974800,
+ 		endTime=1793548800,
+ 		closeTime=1793548800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2167] =
+{
+ 		id=2167,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1790974800,
+ 		endTime=1793548800,
+ 		closeTime=1793548800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2168] =
+{
+ 		id=2168,
+ 		type=13,
+ 		relationId={2169,2170},
+ 		openType=2,
+ 		startTime=1793566800,
+ 		endTime=1796140800,
+ 		closeTime=1796140800,
+ 		lastTime=30,
+ 		prefabPath="PassUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2169] =
+{
+ 		id=2169,
+ 		type=14,
+ 		openType=2,
+ 		startTime=1793566800,
+ 		endTime=1796140800,
+ 		closeTime=1796140800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2170] =
+{
+ 		id=2170,
+ 		type=16,
+ 		openType=2,
+ 		startTime=1793566800,
+ 		endTime=1796140800,
+ 		closeTime=1796140800,
+ 		lastTime=30,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[3001] =
+{
+ 		id=3001,
+ 		type=10,
+ 		relationId={3002,3003},
+ 		name=374,
+ 		openType=2,
+ 		startTime=1734814800,
+ 		endTime=1737061200,
+ 		closeTime=1737234000,
+ 		openCondition={1206},
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[3002] =
+{
+ 		id=3002,
+ 		type=11,
+ 		relationId={0},
+ 		name=374,
+ 		openType=2,
+ 		startTime=1734814800,
+ 		endTime=1737234000,
+ 		closeTime=1737234000,
+ 		openCondition={1206},
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[3003] =
+{
+ 		id=3003,
+ 		type=12,
+ 		relationId={0},
+ 		name=374,
+ 		openType=2,
+ 		startTime=1734814800,
+ 		endTime=1737234000,
+ 		closeTime=1737234000,
+ 		openCondition={1206},
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2000] =
+{
+ 		id=2000,
+ 		type=10,
+ 		relationId={2001,2002},
+ 		name=6144,
+ 		openType=2,
+ 		startTime=1737579600,
+ 		endTime=1739826000,
+ 		closeTime=1739998800,
+ 		openCondition={1206},
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2001] =
+{
+ 		id=2001,
+ 		type=11,
+ 		relationId={0},
+ 		name=6145,
+ 		openType=2,
+ 		startTime=1737579600,
+ 		endTime=1739998800,
+ 		closeTime=1739998800,
+ 		openCondition={1206},
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[2002] =
+{
+ 		id=2002,
+ 		type=12,
+ 		relationId={0},
+ 		name=6146,
+ 		openType=2,
+ 		startTime=1737579600,
+ 		endTime=1739998800,
+ 		closeTime=1739998800,
+ 		openCondition={1206},
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[6010] =
+{
+ 		id=6010,
+ 		type=17,
+ 		relationId={6011},
+ 		openType=2,
+ 		startTime=1739221200,
+ 		endTime=1739998800,
+ 		closeTime=1739998800,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[6011] =
+{
+ 		id=6011,
+ 		type=12,
+ 		relationId={0},
+ 		openType=2,
+ 		startTime=1739221200,
+ 		endTime=1739998800,
+ 		closeTime=1739998800,
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[7001] =
+{
+ 		id=7001,
+ 		type=20,
+ 		openType=2,
+ 		startTime=1734296400,
+ 		endTime=1734901200,
+ 		closeTime=1734901200,
+ 		openCondition={1113},
+ 		ifOpen=1,
+ 	itemSpecial={101}
+},
+[7002] =
+{
+ 		id=7002,
+ 		type=20,
+ 		openType=2,
+ 		startTime=1738357200,
+ 		endTime=1738962000,
+ 		closeTime=1738962000,
+ 		openCondition={1113},
+ 		ifOpen=1,
+ 	itemSpecial={114}
+},
+[7003] =
+{
+ 		id=7003,
+ 		type=20,
+ 		openType=2,
+ 		startTime=1742418000,
+ 		endTime=1743022800,
+ 		closeTime=1743022800,
+ 		openCondition={1113},
+ 		ifOpen=1,
+ 	itemSpecial={115}
+},
+[7004] =
+{
+ 		id=7004,
+ 		type=20,
+ 		openType=2,
+ 		startTime=1746478800,
+ 		endTime=1747083600,
+ 		closeTime=1747083600,
+ 		openCondition={1113},
+ 		ifOpen=1,
+ 	itemSpecial={116}
+},
+[8001] =
+{
+ 		id=8001,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1734728400,
+ 		endTime=1735419600,
+ 		closeTime=1735419600,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8002] =
+{
+ 		id=8002,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1737234000,
+ 		endTime=1737925200,
+ 		closeTime=1737925200,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8003] =
+{
+ 		id=8003,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1739739600,
+ 		endTime=1740430800,
+ 		closeTime=1740430800,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8004] =
+{
+ 		id=8004,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1742245200,
+ 		endTime=1742936400,
+ 		closeTime=1742936400,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8005] =
+{
+ 		id=8005,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1744750800,
+ 		endTime=1745442000,
+ 		closeTime=1745442000,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8006] =
+{
+ 		id=8006,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1747256400,
+ 		endTime=1747947600,
+ 		closeTime=1747947600,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8007] =
+{
+ 		id=8007,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1749762000,
+ 		endTime=1750453200,
+ 		closeTime=1750453200,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8008] =
+{
+ 		id=8008,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1752267600,
+ 		endTime=1752958800,
+ 		closeTime=1752958800,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8009] =
+{
+ 		id=8009,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1754773200,
+ 		endTime=1755464400,
+ 		closeTime=1755464400,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8010] =
+{
+ 		id=8010,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1757278800,
+ 		endTime=1757970000,
+ 		closeTime=1757970000,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8011] =
+{
+ 		id=8011,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1759784400,
+ 		endTime=1760475600,
+ 		closeTime=1760475600,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8012] =
+{
+ 		id=8012,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1762290000,
+ 		endTime=1762981200,
+ 		closeTime=1762981200,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8013] =
+{
+ 		id=8013,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1764795600,
+ 		endTime=1765486800,
+ 		closeTime=1765486800,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8014] =
+{
+ 		id=8014,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1767301200,
+ 		endTime=1767992400,
+ 		closeTime=1767992400,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8015] =
+{
+ 		id=8015,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1769806800,
+ 		endTime=1770498000,
+ 		closeTime=1770498000,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8016] =
+{
+ 		id=8016,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1772312400,
+ 		endTime=1773003600,
+ 		closeTime=1773003600,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8017] =
+{
+ 		id=8017,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1774818000,
+ 		endTime=1775509200,
+ 		closeTime=1775509200,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+},
+[8018] =
+{
+ 		id=8018,
+ 		type=18,
+ 		name=6247,
+ 		openType=2,
+ 		startTime=1777323600,
+ 		endTime=1778014800,
+ 		closeTime=1778014800,
+ 		prefabPath="ResCopyActivityUI",
+ 		ifOpen=1,
+ 	itemSpecial={}
+}
+}
+
+return {title=title, value=value}

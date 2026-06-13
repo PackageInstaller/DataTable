@@ -1,0 +1,336 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8287418181639858244
+  },
+  "m_Name": "BoneConfig",
+  "itemConfigs": [
+    {
+      "description": "头顶ui节点",
+      "key": "HeadUI",
+      "boneName": "Bind_HeadUI",
+      "g_boneName": "Bind_HeadUI",
+      "mustInclude": 1
+    },
+    {
+      "description": "头顶",
+      "key": "Head",
+      "boneName": "Dummy_Head",
+      "g_boneName": "Dummy_Head",
+      "mustInclude": 0
+    },
+    {
+      "description": "后背",
+      "key": "Back",
+      "boneName": "Dummy_Back",
+      "g_boneName": "Dummy_Back",
+      "mustInclude": 0
+    },
+    {
+      "description": "胸",
+      "key": "Chest",
+      "boneName": "Dummy_Chest",
+      "g_boneName": "Dummy_Chest",
+      "mustInclude": 0
+    },
+    {
+      "description": "左手手臂",
+      "key": "L_Arm",
+      "boneName": "Dummy_L_Arm",
+      "g_boneName": "Dummy_L_Arm",
+      "mustInclude": 0
+    },
+    {
+      "description": "左脚",
+      "key": "L_Foot",
+      "boneName": "Dummy_L_Foot",
+      "g_boneName": "Dummy_L_Foot",
+      "mustInclude": 0
+    },
+    {
+      "description": "左手",
+      "key": "L_Hand",
+      "boneName": "Dummy_L_Hand",
+      "g_boneName": "Dummy_L_Hand",
+      "mustInclude": 0
+    },
+    {
+      "description": "左肩",
+      "key": "L_Shoulder",
+      "boneName": "Dummy_L_Shoulder",
+      "g_boneName": "Dummy_L_Shoulder",
+      "mustInclude": 0
+    },
+    {
+      "description": "左腰",
+      "key": "L_Waist",
+      "boneName": "Dummy_L_Waist",
+      "g_boneName": "Dummy_L_Waist",
+      "mustInclude": 0
+    },
+    {
+      "description": "右手手臂",
+      "key": "R_Arm",
+      "boneName": "Dummy_R_Arm",
+      "g_boneName": "Dummy_R_Arm",
+      "mustInclude": 0
+    },
+    {
+      "description": "右脚",
+      "key": "R_Foot",
+      "boneName": "Dummy_R_Foot",
+      "g_boneName": "Dummy_R_Foot",
+      "mustInclude": 0
+    },
+    {
+      "description": "右手",
+      "key": "R_Hand",
+      "boneName": "Dummy_R_Hand",
+      "g_boneName": "Dummy_R_Hand",
+      "mustInclude": 0
+    },
+    {
+      "description": "右肩",
+      "key": "R_Shoulder",
+      "boneName": "Dummy_R_Shoulder",
+      "g_boneName": "Dummy_R_Shoulder",
+      "mustInclude": 0
+    },
+    {
+      "description": "右腰",
+      "key": "R_Waist",
+      "boneName": "Dummy_R_Waist",
+      "g_boneName": "Dummy_R_Waist",
+      "mustInclude": 0
+    },
+    {
+      "description": "根节点",
+      "key": "Root",
+      "boneName": "Bone_Root",
+      "g_boneName": "Root",
+      "mustInclude": 1
+    },
+    {
+      "description": "腰",
+      "key": "Waist",
+      "boneName": "Dummy_Waist",
+      "g_boneName": "Dummy_Waist",
+      "mustInclude": 0
+    },
+    {
+      "description": "yao",
+      "key": "yao",
+      "boneName": "Dummy_yao",
+      "g_boneName": "Dummy_yao",
+      "mustInclude": 0
+    },
+    {
+      "description": "武器点1",
+      "key": "Weapon01",
+      "boneName": "Dummy_Weapon01",
+      "g_boneName": "Dummy_Weapon01",
+      "mustInclude": 0
+    },
+    {
+      "description": "武器点2",
+      "key": "Weapon02",
+      "boneName": "Dummy_Weapon02",
+      "g_boneName": "Dummy_Weapon02",
+      "mustInclude": 0
+    },
+    {
+      "description": "武器点3",
+      "key": "Weapon03",
+      "boneName": "Dummy_Weapon03",
+      "g_boneName": "Dummy_Weapon03",
+      "mustInclude": 0
+    },
+    {
+      "description": "武器点4",
+      "key": "Weapon04",
+      "boneName": "Dummy_Weapon04",
+      "g_boneName": "Dummy_Weapon04",
+      "mustInclude": 0
+    },
+    {
+      "description": "武器点5",
+      "key": "Weapon05",
+      "boneName": "Dummy_Weapon05",
+      "g_boneName": "Dummy_Weapon05",
+      "mustInclude": 0
+    },
+    {
+      "description": "子弹点1",
+      "key": "Missile01",
+      "boneName": "Dummy_Missile01",
+      "g_boneName": "Dummy_Missile01",
+      "mustInclude": 0
+    },
+    {
+      "description": "子弹点2",
+      "key": "Missile02",
+      "boneName": "Dummy_Missile02",
+      "g_boneName": "Dummy_Missile02",
+      "mustInclude": 0
+    },
+    {
+      "description": "子弹点3",
+      "key": "Missile03",
+      "boneName": "Dummy_Missile03",
+      "g_boneName": "Dummy_Missile03",
+      "mustInclude": 0
+    },
+    {
+      "description": "子弹点4",
+      "key": "Missile04",
+      "boneName": "Dummy_Missile04",
+      "g_boneName": "Dummy_Missile04",
+      "mustInclude": 0
+    },
+    {
+      "description": "特效受击挂点",
+      "key": "Hit",
+      "boneName": "Dummy_Hit",
+      "g_boneName": "Dummy_Hit",
+      "mustInclude": 0
+    },
+    {
+      "description": "表演点",
+      "key": "ShowPoint",
+      "boneName": "Dummy_ShowPoint",
+      "g_boneName": "Dummy_ShowPoint",
+      "mustInclude": 0
+    },
+    {
+      "description": "胸部骨骼",
+      "key": "Bip_Chest",
+      "boneName": "Bip001 Spine2",
+      "g_boneName": "Bip001 Spine2",
+      "mustInclude": 0
+    },
+    {
+      "description": "腰部骨骼",
+      "key": "Bip_Waist",
+      "boneName": "Bip001 Spine1",
+      "g_boneName": "Bip001 Spine1",
+      "mustInclude": 0
+    },
+    {
+      "description": "臀部骨骼",
+      "key": "Bip_Hip",
+      "boneName": "Bip001 Spine",
+      "g_boneName": "Bip001 Spine",
+      "mustInclude": 0
+    },
+    {
+      "description": "左手骨骼",
+      "key": "Bip_L_Hand",
+      "boneName": "Bip001 L Hand",
+      "g_boneName": "Bip001 L Hand",
+      "mustInclude": 0
+    },
+    {
+      "description": "右手骨骼",
+      "key": "Bip_R_Hand",
+      "boneName": "Bip001 R Hand",
+      "g_boneName": "Bip001 R Hand",
+      "mustInclude": 0
+    },
+    {
+      "description": "左锁骨",
+      "key": "Bip_L_Clavicle",
+      "boneName": "Bip001 L Clavicle",
+      "g_boneName": "Bip001 L Clavicle",
+      "mustInclude": 0
+    },
+    {
+      "description": "右锁骨",
+      "key": "Bip_R_Clavicle",
+      "boneName": "Bip001 R Clavicle",
+      "g_boneName": "Bip001 R Clavicle",
+      "mustInclude": 0
+    },
+    {
+      "description": "左上臂",
+      "key": "Bip_L_UpperArm",
+      "boneName": "Bip001 L UpperArm",
+      "g_boneName": "Bip001 L UpperArm",
+      "mustInclude": 0
+    },
+    {
+      "description": "右上臂",
+      "key": "Bip_R_UpperArm",
+      "boneName": "Bip001 R UpperArm",
+      "g_boneName": "Bip001 R UpperArm",
+      "mustInclude": 0
+    },
+    {
+      "description": "左前臂",
+      "key": "Bip_L_ForeArm",
+      "boneName": "Bip001 L Forearm",
+      "g_boneName": "Bip001 L Forearm",
+      "mustInclude": 0
+    },
+    {
+      "description": "右前臂",
+      "key": "Bip_R_ForeArm",
+      "boneName": "Bip001 R Forearm",
+      "g_boneName": "Bip001 R Forearm",
+      "mustInclude": 0
+    },
+    {
+      "description": "ik跟随点",
+      "key": "IkFollow",
+      "boneName": "Dummy_IkFollow",
+      "g_boneName": "Dummy_IkFollow",
+      "mustInclude": 0
+    }
+  ],
+  "BoneKeyNames": [
+    "HeadUI",
+    "Head",
+    "Back",
+    "Chest",
+    "L_Arm",
+    "L_Foot",
+    "L_Hand",
+    "L_Shoulder",
+    "L_Waist",
+    "R_Arm",
+    "R_Foot",
+    "R_Hand",
+    "R_Shoulder",
+    "R_Waist",
+    "Root",
+    "Waist",
+    "yao",
+    "Weapon01",
+    "Weapon02",
+    "Weapon03",
+    "Weapon04",
+    "Weapon05",
+    "Missile01",
+    "Missile02",
+    "Missile03",
+    "Missile04",
+    "Hit",
+    "ShowPoint",
+    "Bip_Chest",
+    "Bip_Waist",
+    "Bip_Hip",
+    "Bip_L_Hand",
+    "Bip_R_Hand",
+    "Bip_L_Clavicle",
+    "Bip_R_Clavicle",
+    "Bip_L_UpperArm",
+    "Bip_R_UpperArm",
+    "Bip_L_ForeArm",
+    "Bip_R_ForeArm",
+    "Follow"
+  ]
+}

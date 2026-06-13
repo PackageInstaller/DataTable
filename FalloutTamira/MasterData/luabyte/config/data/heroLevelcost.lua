@@ -1,0 +1,1204 @@
+local title = {
+	id = 0,
+	needItem = {},
+	needNumN = {},
+	needNumR = {},
+	needNumSR = {},
+	needNumSSR = {},
+	growth = {},
+	growthAttribute = {},
+	needNum = {}
+}
+
+local value = {
+[1] =
+{
+ 		id=1,
+ 		needItem={1,3},
+ 		needNumN={10,20},
+ 		needNumR={15,25},
+ 		needNumSR={20,35},
+ 		needNumSSR={20,40},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[2] =
+{
+ 		id=2,
+ 		needItem={1,3},
+ 		needNumN={15,25},
+ 		needNumR={20,40},
+ 		needNumSR={25,50},
+ 		needNumSSR={30,60},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[3] =
+{
+ 		id=3,
+ 		needItem={1,3},
+ 		needNumN={20,35},
+ 		needNumR={25,50},
+ 		needNumSR={35,65},
+ 		needNumSSR={40,80},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[4] =
+{
+ 		id=4,
+ 		needItem={1,3},
+ 		needNumN={20,40},
+ 		needNumR={30,60},
+ 		needNumSR={40,80},
+ 		needNumSSR={50,100},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[5] =
+{
+ 		id=5,
+ 		needItem={1,3},
+ 		needNumN={25,50},
+ 		needNumR={40,75},
+ 		needNumSR={50,100},
+ 		needNumSSR={60,120},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[6] =
+{
+ 		id=6,
+ 		needItem={1,3},
+ 		needNumN={30,60},
+ 		needNumR={45,85},
+ 		needNumSR={60,115},
+ 		needNumSSR={70,140},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[7] =
+{
+ 		id=7,
+ 		needItem={1,3},
+ 		needNumN={35,65},
+ 		needNumR={50,100},
+ 		needNumSR={65,130},
+ 		needNumSSR={80,160},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[8] =
+{
+ 		id=8,
+ 		needItem={1,3},
+ 		needNumN={40,75},
+ 		needNumR={55,110},
+ 		needNumSR={75,145},
+ 		needNumSSR={90,180},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[9] =
+{
+ 		id=9,
+ 		needItem={1,3},
+ 		needNumN={40,80},
+ 		needNumR={60,120},
+ 		needNumSR={80,160},
+ 		needNumSSR={100,200},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[10] =
+{
+ 		id=10,
+ 		needItem={1,3},
+ 		needNumN={60,120},
+ 		needNumR={90,180},
+ 		needNumSR={120,240},
+ 		needNumSSR={150,300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[11] =
+{
+ 		id=11,
+ 		needItem={1,3},
+ 		needNumN={70,140},
+ 		needNumR={105,210},
+ 		needNumSR={140,280},
+ 		needNumSSR={175,350},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[12] =
+{
+ 		id=12,
+ 		needItem={1,3},
+ 		needNumN={80,160},
+ 		needNumR={120,240},
+ 		needNumSR={160,320},
+ 		needNumSSR={200,400},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[13] =
+{
+ 		id=13,
+ 		needItem={1,3},
+ 		needNumN={90,180},
+ 		needNumR={135,270},
+ 		needNumSR={180,360},
+ 		needNumSSR={225,450},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[14] =
+{
+ 		id=14,
+ 		needItem={1,3},
+ 		needNumN={100,200},
+ 		needNumR={150,300},
+ 		needNumSR={200,400},
+ 		needNumSSR={250,500},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[15] =
+{
+ 		id=15,
+ 		needItem={1,3},
+ 		needNumN={110,220},
+ 		needNumR={165,330},
+ 		needNumSR={220,440},
+ 		needNumSSR={275,550},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[16] =
+{
+ 		id=16,
+ 		needItem={1,3},
+ 		needNumN={120,240},
+ 		needNumR={180,360},
+ 		needNumSR={240,480},
+ 		needNumSSR={300,600},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[17] =
+{
+ 		id=17,
+ 		needItem={1,3},
+ 		needNumN={130,260},
+ 		needNumR={195,390},
+ 		needNumSR={260,520},
+ 		needNumSSR={325,650},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[18] =
+{
+ 		id=18,
+ 		needItem={1,3},
+ 		needNumN={140,280},
+ 		needNumR={210,420},
+ 		needNumSR={280,560},
+ 		needNumSSR={350,700},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[19] =
+{
+ 		id=19,
+ 		needItem={1,3},
+ 		needNumN={150,300},
+ 		needNumR={225,450},
+ 		needNumSR={300,600},
+ 		needNumSSR={375,750},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[20] =
+{
+ 		id=20,
+ 		needItem={1,3},
+ 		needNumN={180,360},
+ 		needNumR={270,540},
+ 		needNumSR={360,720},
+ 		needNumSSR={450,900},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[21] =
+{
+ 		id=21,
+ 		needItem={1,3},
+ 		needNumN={190,380},
+ 		needNumR={285,570},
+ 		needNumSR={380,760},
+ 		needNumSSR={475,950},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[22] =
+{
+ 		id=22,
+ 		needItem={1,3},
+ 		needNumN={200,400},
+ 		needNumR={300,600},
+ 		needNumSR={400,800},
+ 		needNumSSR={500,1000},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[23] =
+{
+ 		id=23,
+ 		needItem={1,3},
+ 		needNumN={210,420},
+ 		needNumR={315,630},
+ 		needNumSR={420,840},
+ 		needNumSSR={525,1050},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[24] =
+{
+ 		id=24,
+ 		needItem={1,3},
+ 		needNumN={220,440},
+ 		needNumR={330,660},
+ 		needNumSR={440,880},
+ 		needNumSSR={550,1100},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[25] =
+{
+ 		id=25,
+ 		needItem={1,3},
+ 		needNumN={230,460},
+ 		needNumR={345,690},
+ 		needNumSR={460,920},
+ 		needNumSSR={575,1150},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[26] =
+{
+ 		id=26,
+ 		needItem={1,3},
+ 		needNumN={240,480},
+ 		needNumR={360,720},
+ 		needNumSR={480,960},
+ 		needNumSSR={600,1200},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[27] =
+{
+ 		id=27,
+ 		needItem={1,3},
+ 		needNumN={250,500},
+ 		needNumR={375,750},
+ 		needNumSR={500,1000},
+ 		needNumSSR={625,1250},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[28] =
+{
+ 		id=28,
+ 		needItem={1,3},
+ 		needNumN={260,520},
+ 		needNumR={390,780},
+ 		needNumSR={520,1040},
+ 		needNumSSR={650,1300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[29] =
+{
+ 		id=29,
+ 		needItem={1,3},
+ 		needNumN={270,540},
+ 		needNumR={405,810},
+ 		needNumSR={540,1080},
+ 		needNumSSR={675,1350},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[30] =
+{
+ 		id=30,
+ 		needItem={1,3},
+ 		needNumN={320,640},
+ 		needNumR={480,960},
+ 		needNumSR={640,1280},
+ 		needNumSSR={800,1600},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[31] =
+{
+ 		id=31,
+ 		needItem={1,3},
+ 		needNumN={330,660},
+ 		needNumR={495,990},
+ 		needNumSR={660,1320},
+ 		needNumSSR={825,1650},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[32] =
+{
+ 		id=32,
+ 		needItem={1,3},
+ 		needNumN={340,680},
+ 		needNumR={510,1020},
+ 		needNumSR={680,1360},
+ 		needNumSSR={850,1700},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[33] =
+{
+ 		id=33,
+ 		needItem={1,3},
+ 		needNumN={350,700},
+ 		needNumR={525,1050},
+ 		needNumSR={700,1400},
+ 		needNumSSR={875,1750},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[34] =
+{
+ 		id=34,
+ 		needItem={1,3},
+ 		needNumN={360,720},
+ 		needNumR={540,1080},
+ 		needNumSR={720,1440},
+ 		needNumSSR={900,1800},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[35] =
+{
+ 		id=35,
+ 		needItem={1,3},
+ 		needNumN={370,740},
+ 		needNumR={555,1110},
+ 		needNumSR={740,1480},
+ 		needNumSSR={925,1850},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[36] =
+{
+ 		id=36,
+ 		needItem={1,3},
+ 		needNumN={380,760},
+ 		needNumR={570,1140},
+ 		needNumSR={760,1520},
+ 		needNumSSR={950,1900},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[37] =
+{
+ 		id=37,
+ 		needItem={1,3},
+ 		needNumN={390,780},
+ 		needNumR={585,1170},
+ 		needNumSR={780,1560},
+ 		needNumSSR={975,1950},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[38] =
+{
+ 		id=38,
+ 		needItem={1,3},
+ 		needNumN={400,800},
+ 		needNumR={600,1200},
+ 		needNumSR={800,1600},
+ 		needNumSSR={1000,2000},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[39] =
+{
+ 		id=39,
+ 		needItem={1,3},
+ 		needNumN={410,820},
+ 		needNumR={615,1230},
+ 		needNumSR={820,1640},
+ 		needNumSSR={1025,2050},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[40] =
+{
+ 		id=40,
+ 		needItem={1,3},
+ 		needNumN={520,1040},
+ 		needNumR={780,1560},
+ 		needNumSR={1040,2080},
+ 		needNumSSR={1300,2600},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[41] =
+{
+ 		id=41,
+ 		needItem={1,3},
+ 		needNumN={560,1120},
+ 		needNumR={840,1680},
+ 		needNumSR={1120,2240},
+ 		needNumSSR={1400,2800},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[42] =
+{
+ 		id=42,
+ 		needItem={1,3},
+ 		needNumN={600,1200},
+ 		needNumR={900,1800},
+ 		needNumSR={1200,2400},
+ 		needNumSSR={1500,3000},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[43] =
+{
+ 		id=43,
+ 		needItem={1,3},
+ 		needNumN={640,1280},
+ 		needNumR={960,1920},
+ 		needNumSR={1280,2560},
+ 		needNumSSR={1600,3200},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[44] =
+{
+ 		id=44,
+ 		needItem={1,3},
+ 		needNumN={680,1360},
+ 		needNumR={1020,2040},
+ 		needNumSR={1360,2720},
+ 		needNumSSR={1700,3400},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[45] =
+{
+ 		id=45,
+ 		needItem={1,3},
+ 		needNumN={720,1440},
+ 		needNumR={1080,2160},
+ 		needNumSR={1440,2880},
+ 		needNumSSR={1800,3600},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[46] =
+{
+ 		id=46,
+ 		needItem={1,3},
+ 		needNumN={760,1520},
+ 		needNumR={1140,2280},
+ 		needNumSR={1520,3040},
+ 		needNumSSR={1900,3800},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[47] =
+{
+ 		id=47,
+ 		needItem={1,3},
+ 		needNumN={800,1600},
+ 		needNumR={1200,2400},
+ 		needNumSR={1600,3200},
+ 		needNumSSR={2000,4000},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[48] =
+{
+ 		id=48,
+ 		needItem={1,3},
+ 		needNumN={840,1680},
+ 		needNumR={1260,2520},
+ 		needNumSR={1680,3360},
+ 		needNumSSR={2100,4200},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[49] =
+{
+ 		id=49,
+ 		needItem={1,3},
+ 		needNumN={880,1760},
+ 		needNumR={1320,2640},
+ 		needNumSR={1760,3520},
+ 		needNumSSR={2200,4400},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[50] =
+{
+ 		id=50,
+ 		needItem={1,3},
+ 		needNumN={980,1960},
+ 		needNumR={1470,2940},
+ 		needNumSR={1960,3920},
+ 		needNumSSR={2450,4900},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[51] =
+{
+ 		id=51,
+ 		needItem={1,3},
+ 		needNumN={1030,2060},
+ 		needNumR={1545,3090},
+ 		needNumSR={2060,4120},
+ 		needNumSSR={2575,5150},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[52] =
+{
+ 		id=52,
+ 		needItem={1,3},
+ 		needNumN={1080,2160},
+ 		needNumR={1620,3240},
+ 		needNumSR={2160,4320},
+ 		needNumSSR={2700,5400},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[53] =
+{
+ 		id=53,
+ 		needItem={1,3},
+ 		needNumN={1130,2260},
+ 		needNumR={1695,3390},
+ 		needNumSR={2260,4520},
+ 		needNumSSR={2825,5650},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[54] =
+{
+ 		id=54,
+ 		needItem={1,3},
+ 		needNumN={1180,2360},
+ 		needNumR={1770,3540},
+ 		needNumSR={2360,4720},
+ 		needNumSSR={2950,5900},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[55] =
+{
+ 		id=55,
+ 		needItem={1,3},
+ 		needNumN={1230,2460},
+ 		needNumR={1845,3690},
+ 		needNumSR={2460,4920},
+ 		needNumSSR={3075,6150},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[56] =
+{
+ 		id=56,
+ 		needItem={1,3},
+ 		needNumN={1280,2560},
+ 		needNumR={1920,3840},
+ 		needNumSR={2560,5120},
+ 		needNumSSR={3200,6400},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[57] =
+{
+ 		id=57,
+ 		needItem={1,3},
+ 		needNumN={1330,2660},
+ 		needNumR={1995,3990},
+ 		needNumSR={2660,5320},
+ 		needNumSSR={3325,6650},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[58] =
+{
+ 		id=58,
+ 		needItem={1,3},
+ 		needNumN={1380,2760},
+ 		needNumR={2070,4140},
+ 		needNumSR={2760,5520},
+ 		needNumSSR={3450,6900},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[59] =
+{
+ 		id=59,
+ 		needItem={1,3},
+ 		needNumN={1430,2860},
+ 		needNumR={2145,4290},
+ 		needNumSR={2860,5720},
+ 		needNumSSR={3575,7150},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[60] =
+{
+ 		id=60,
+ 		needItem={1,3},
+ 		needNumN={1580,3160},
+ 		needNumR={2370,4740},
+ 		needNumSR={3160,6320},
+ 		needNumSSR={3950,7900},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[61] =
+{
+ 		id=61,
+ 		needItem={1,3},
+ 		needNumN={1640,3280},
+ 		needNumR={2460,4920},
+ 		needNumSR={3280,6560},
+ 		needNumSSR={4100,8200},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[62] =
+{
+ 		id=62,
+ 		needItem={1,3},
+ 		needNumN={1700,3400},
+ 		needNumR={2550,5100},
+ 		needNumSR={3400,6800},
+ 		needNumSSR={4250,8500},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[63] =
+{
+ 		id=63,
+ 		needItem={1,3},
+ 		needNumN={1760,3520},
+ 		needNumR={2640,5280},
+ 		needNumSR={3520,7040},
+ 		needNumSSR={4400,8800},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[64] =
+{
+ 		id=64,
+ 		needItem={1,3},
+ 		needNumN={1820,3640},
+ 		needNumR={2730,5460},
+ 		needNumSR={3640,7280},
+ 		needNumSSR={4550,9100},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[65] =
+{
+ 		id=65,
+ 		needItem={1,3},
+ 		needNumN={1880,3760},
+ 		needNumR={2820,5640},
+ 		needNumSR={3760,7520},
+ 		needNumSSR={4700,9400},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[66] =
+{
+ 		id=66,
+ 		needItem={1,3},
+ 		needNumN={1940,3880},
+ 		needNumR={2910,5820},
+ 		needNumSR={3880,7760},
+ 		needNumSSR={4850,9700},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[67] =
+{
+ 		id=67,
+ 		needItem={1,3},
+ 		needNumN={2000,4000},
+ 		needNumR={3000,6000},
+ 		needNumSR={4000,8000},
+ 		needNumSSR={5000,10000},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[68] =
+{
+ 		id=68,
+ 		needItem={1,3},
+ 		needNumN={2060,4120},
+ 		needNumR={3090,6180},
+ 		needNumSR={4120,8240},
+ 		needNumSSR={5150,10300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[69] =
+{
+ 		id=69,
+ 		needItem={1,3},
+ 		needNumN={2120,4240},
+ 		needNumR={3180,6360},
+ 		needNumSR={4240,8480},
+ 		needNumSSR={5300,10600},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[70] =
+{
+ 		id=70,
+ 		needItem={1,3},
+ 		needNumN={2520,5040},
+ 		needNumR={3780,7560},
+ 		needNumSR={5040,10080},
+ 		needNumSSR={6300,12600},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[71] =
+{
+ 		id=71,
+ 		needItem={1,3},
+ 		needNumN={2680,5360},
+ 		needNumR={4020,8040},
+ 		needNumSR={5360,10720},
+ 		needNumSSR={6700,13400},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[72] =
+{
+ 		id=72,
+ 		needItem={1,3},
+ 		needNumN={2840,5680},
+ 		needNumR={4260,8520},
+ 		needNumSR={5680,11360},
+ 		needNumSSR={7100,14200},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[73] =
+{
+ 		id=73,
+ 		needItem={1,3},
+ 		needNumN={3000,6000},
+ 		needNumR={4500,9000},
+ 		needNumSR={6000,12000},
+ 		needNumSSR={7500,15000},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[74] =
+{
+ 		id=74,
+ 		needItem={1,3},
+ 		needNumN={3160,6320},
+ 		needNumR={4740,9480},
+ 		needNumSR={6320,12640},
+ 		needNumSSR={7900,15800},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[75] =
+{
+ 		id=75,
+ 		needItem={1,3},
+ 		needNumN={3320,6640},
+ 		needNumR={4980,9960},
+ 		needNumSR={6640,13280},
+ 		needNumSSR={8300,16600},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[76] =
+{
+ 		id=76,
+ 		needItem={1,3},
+ 		needNumN={3480,6960},
+ 		needNumR={5220,10440},
+ 		needNumSR={6960,13920},
+ 		needNumSSR={8700,17400},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[77] =
+{
+ 		id=77,
+ 		needItem={1,3},
+ 		needNumN={3640,7280},
+ 		needNumR={5460,10920},
+ 		needNumSR={7280,14560},
+ 		needNumSSR={9100,18200},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[78] =
+{
+ 		id=78,
+ 		needItem={1,3},
+ 		needNumN={3800,7600},
+ 		needNumR={5700,11400},
+ 		needNumSR={7600,15200},
+ 		needNumSSR={9500,19000},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[79] =
+{
+ 		id=79,
+ 		needItem={1,3},
+ 		needNumN={3960,7920},
+ 		needNumR={5940,11880},
+ 		needNumSR={7920,15840},
+ 		needNumSSR={9900,19800},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[80] =
+{
+ 		id=80,
+ 		needItem={1,3},
+ 		needNumN={4960,9920},
+ 		needNumR={7440,14880},
+ 		needNumSR={9920,19840},
+ 		needNumSSR={12400,24800},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[81] =
+{
+ 		id=81,
+ 		needItem={1,3},
+ 		needNumN={5260,10520},
+ 		needNumR={7890,15780},
+ 		needNumSR={10520,21040},
+ 		needNumSSR={13150,26300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[82] =
+{
+ 		id=82,
+ 		needItem={1,3},
+ 		needNumN={5560,11120},
+ 		needNumR={8340,16680},
+ 		needNumSR={11120,22240},
+ 		needNumSSR={13900,27800},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[83] =
+{
+ 		id=83,
+ 		needItem={1,3},
+ 		needNumN={5860,11720},
+ 		needNumR={8790,17580},
+ 		needNumSR={11720,23440},
+ 		needNumSSR={14650,29300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[84] =
+{
+ 		id=84,
+ 		needItem={1,3},
+ 		needNumN={6160,12320},
+ 		needNumR={9240,18480},
+ 		needNumSR={12320,24640},
+ 		needNumSSR={15400,30800},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[85] =
+{
+ 		id=85,
+ 		needItem={1,3},
+ 		needNumN={6460,12920},
+ 		needNumR={9690,19380},
+ 		needNumSR={12920,25840},
+ 		needNumSSR={16150,32300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[86] =
+{
+ 		id=86,
+ 		needItem={1,3},
+ 		needNumN={6760,13520},
+ 		needNumR={10140,20280},
+ 		needNumSR={13520,27040},
+ 		needNumSSR={16900,33800},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[87] =
+{
+ 		id=87,
+ 		needItem={1,3},
+ 		needNumN={7060,14120},
+ 		needNumR={10590,21180},
+ 		needNumSR={14120,28240},
+ 		needNumSSR={17650,35300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[88] =
+{
+ 		id=88,
+ 		needItem={1,3},
+ 		needNumN={7360,14720},
+ 		needNumR={11040,22080},
+ 		needNumSR={14720,29440},
+ 		needNumSSR={18400,36800},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[89] =
+{
+ 		id=89,
+ 		needItem={1,3},
+ 		needNumN={7660,15320},
+ 		needNumR={11490,22980},
+ 		needNumSR={15320,30640},
+ 		needNumSSR={19150,38300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[90] =
+{
+ 		id=90,
+ 		needItem={1,3},
+ 		needNumN={9660,19320},
+ 		needNumR={14490,28980},
+ 		needNumSR={19320,38640},
+ 		needNumSSR={24150,48300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[91] =
+{
+ 		id=91,
+ 		needItem={1,3},
+ 		needNumN={10260,20520},
+ 		needNumR={15390,30780},
+ 		needNumSR={20520,41040},
+ 		needNumSSR={25650,51300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[92] =
+{
+ 		id=92,
+ 		needItem={1,3},
+ 		needNumN={10860,21720},
+ 		needNumR={16290,32580},
+ 		needNumSR={21720,43440},
+ 		needNumSSR={27150,54300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[93] =
+{
+ 		id=93,
+ 		needItem={1,3},
+ 		needNumN={11460,22920},
+ 		needNumR={17190,34380},
+ 		needNumSR={22920,45840},
+ 		needNumSSR={28650,57300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[94] =
+{
+ 		id=94,
+ 		needItem={1,3},
+ 		needNumN={12060,24120},
+ 		needNumR={18090,36180},
+ 		needNumSR={24120,48240},
+ 		needNumSSR={30150,60300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[95] =
+{
+ 		id=95,
+ 		needItem={1,3},
+ 		needNumN={12660,25320},
+ 		needNumR={18990,37980},
+ 		needNumSR={25320,50640},
+ 		needNumSSR={31650,63300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[96] =
+{
+ 		id=96,
+ 		needItem={1,3},
+ 		needNumN={13260,26520},
+ 		needNumR={19890,39780},
+ 		needNumSR={26520,53040},
+ 		needNumSSR={33150,66300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[97] =
+{
+ 		id=97,
+ 		needItem={1,3},
+ 		needNumN={13860,27720},
+ 		needNumR={20790,41580},
+ 		needNumSR={27720,55440},
+ 		needNumSSR={34650,69300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[98] =
+{
+ 		id=98,
+ 		needItem={1,3},
+ 		needNumN={14460,28920},
+ 		needNumR={21690,43380},
+ 		needNumSR={28920,57840},
+ 		needNumSSR={36150,72300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+},
+[99] =
+{
+ 		id=99,
+ 		needItem={1,3},
+ 		needNumN={15060,30120},
+ 		needNumR={22590,45180},
+ 		needNumSR={30120,60240},
+ 		needNumSSR={37650,75300},
+ 		growth={1,2,3,4,5},
+ 		growthAttribute={200,200,200,200,200},
+ 	needNum={1,1}
+}
+}
+
+return {title=title, value=value}

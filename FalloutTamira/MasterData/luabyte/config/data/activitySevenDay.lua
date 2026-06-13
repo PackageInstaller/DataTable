@@ -1,0 +1,1325 @@
+local title = {
+	id = 0,
+	activityId = 0,
+	day = 0,
+	name = 0,
+	des = 0,
+	limit = 0,
+	limitValue1 = 0,
+	limitValue2 = 0,
+	limitValue3 = 0,
+	activeValue = 0,
+	reward = 0,
+	linkto = 0,
+	banner = "",
+	target = 0,
+	order = 0,
+	videoPath = "",
+	notice = 0,
+	iconPath = ""
+}
+
+local value = {
+[1] =
+{
+ 		id=1,
+ 		activityId=1024,
+ 		day=1,
+ 		des=31012001,
+ 		limit=23,
+ 		limitValue1=1,
+ 		activeValue=10,
+ 		reward=401,
+ 		linkto=1,
+ 	iconPath=""
+},
+[2] =
+{
+ 		id=2,
+ 		activityId=1024,
+ 		day=1,
+ 		des=31012002,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=20104,
+ 		activeValue=15,
+ 		reward=402,
+ 		linkto=41,
+ 	iconPath=""
+},
+[3] =
+{
+ 		id=3,
+ 		activityId=1024,
+ 		day=1,
+ 		des=31012003,
+ 		limit=22,
+ 		limitValue1=15,
+ 		limitValue2=1,
+ 		activeValue=15,
+ 		reward=403,
+ 		linkto=3,
+ 	iconPath=""
+},
+[4] =
+{
+ 		id=4,
+ 		activityId=1024,
+ 		day=1,
+ 		des=31012004,
+ 		limit=132,
+ 		limitValue1=2,
+ 		limitValue2=2,
+ 		limitValue3=10,
+ 		activeValue=15,
+ 		reward=404,
+ 		linkto=61,
+ 	iconPath=""
+},
+[5] =
+{
+ 		id=5,
+ 		activityId=1024,
+ 		day=1,
+ 		des=31012005,
+ 		limit=26,
+ 		limitValue1=3,
+ 		limitValue2=1,
+ 		activeValue=15,
+ 		reward=405,
+ 		linkto=61,
+ 	iconPath=""
+},
+[6] =
+{
+ 		id=6,
+ 		activityId=1024,
+ 		day=1,
+ 		des=31012006,
+ 		limit=14,
+ 		limitValue1=1,
+ 		activeValue=15,
+ 		reward=406,
+ 		linkto=5,
+ 	iconPath=""
+},
+[7] =
+{
+ 		id=7,
+ 		activityId=1024,
+ 		day=1,
+ 		des=31012007,
+ 		limit=43,
+ 		limitValue1=1,
+ 		activeValue=10,
+ 		reward=407,
+ 		linkto=72,
+ 	iconPath=""
+},
+[8] =
+{
+ 		id=8,
+ 		activityId=1024,
+ 		day=1,
+ 		des=31012008,
+ 		limit=35,
+ 		limitValue1=1,
+ 		activeValue=15,
+ 		reward=408,
+ 		linkto=5,
+ 	iconPath=""
+},
+[9] =
+{
+ 		id=9,
+ 		activityId=1024,
+ 		day=1,
+ 		des=31012009,
+ 		limit=111,
+ 		limitValue1=1,
+ 		activeValue=10,
+ 		reward=409,
+ 		linkto=72,
+ 	iconPath=""
+},
+[10] =
+{
+ 		id=10,
+ 		activityId=1024,
+ 		day=2,
+ 		des=31012010,
+ 		limit=23,
+ 		limitValue1=1,
+ 		activeValue=10,
+ 		reward=410,
+ 		linkto=1,
+ 	iconPath=""
+},
+[11] =
+{
+ 		id=11,
+ 		activityId=1024,
+ 		day=2,
+ 		des=31012011,
+ 		limit=132,
+ 		limitValue1=1,
+ 		limitValue2=3,
+ 		limitValue3=20,
+ 		activeValue=15,
+ 		reward=411,
+ 		linkto=61,
+ 	iconPath=""
+},
+[12] =
+{
+ 		id=12,
+ 		activityId=1024,
+ 		day=2,
+ 		des=31012012,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=20103,
+ 		activeValue=15,
+ 		reward=412,
+ 		linkto=41,
+ 	iconPath=""
+},
+[13] =
+{
+ 		id=13,
+ 		activityId=1024,
+ 		day=2,
+ 		des=31012013,
+ 		limit=132,
+ 		limitValue1=1,
+ 		limitValue2=4,
+ 		limitValue3=20,
+ 		activeValue=15,
+ 		reward=411,
+ 		linkto=61,
+ 	iconPath=""
+},
+[14] =
+{
+ 		id=14,
+ 		activityId=1024,
+ 		day=2,
+ 		des=31012014,
+ 		limit=38,
+ 		limitValue1=2,
+ 		activeValue=15,
+ 		reward=414,
+ 		linkto=63,
+ 	iconPath=""
+},
+[15] =
+{
+ 		id=15,
+ 		activityId=1024,
+ 		day=2,
+ 		des=31012015,
+ 		limit=133,
+ 		limitValue1=1,
+ 		limitValue2=2,
+ 		limitValue3=20,
+ 		activeValue=15,
+ 		reward=415,
+ 		linkto=61,
+ 	iconPath=""
+},
+[16] =
+{
+ 		id=16,
+ 		activityId=1024,
+ 		day=2,
+ 		des=31012016,
+ 		limit=111,
+ 		limitValue1=1,
+ 		activeValue=10,
+ 		reward=416,
+ 		linkto=72,
+ 	iconPath=""
+},
+[17] =
+{
+ 		id=17,
+ 		activityId=1024,
+ 		day=2,
+ 		des=31012017,
+ 		limit=27,
+ 		limitValue1=1,
+ 		limitValue2=1,
+ 		activeValue=15,
+ 		reward=417,
+ 		linkto=64,
+ 	iconPath=""
+},
+[18] =
+{
+ 		id=18,
+ 		activityId=1024,
+ 		day=2,
+ 		des=31012018,
+ 		limit=141,
+ 		limitValue1=1,
+ 		limitValue2=110003,
+ 		activeValue=10,
+ 		reward=418,
+ 		linkto=6,
+ 	iconPath=""
+},
+[19] =
+{
+ 		id=19,
+ 		activityId=1024,
+ 		day=3,
+ 		des=31012019,
+ 		limit=23,
+ 		limitValue1=1,
+ 		activeValue=10,
+ 		reward=419,
+ 		linkto=1,
+ 	iconPath=""
+},
+[20] =
+{
+ 		id=20,
+ 		activityId=1024,
+ 		day=3,
+ 		des=31012020,
+ 		limit=132,
+ 		limitValue1=2,
+ 		limitValue2=6,
+ 		limitValue3=30,
+ 		activeValue=15,
+ 		reward=420,
+ 		linkto=61,
+ 	iconPath=""
+},
+[21] =
+{
+ 		id=21,
+ 		activityId=1024,
+ 		day=3,
+ 		des=31012021,
+ 		limit=133,
+ 		limitValue1=2,
+ 		limitValue2=2,
+ 		limitValue3=30,
+ 		activeValue=15,
+ 		reward=421,
+ 		linkto=61,
+ 	iconPath=""
+},
+[22] =
+{
+ 		id=22,
+ 		activityId=1024,
+ 		day=3,
+ 		des=31012022,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=30103,
+ 		activeValue=15,
+ 		reward=422,
+ 		linkto=41,
+ 	iconPath=""
+},
+[23] =
+{
+ 		id=23,
+ 		activityId=1024,
+ 		day=3,
+ 		des=31012023,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=10203,
+ 		activeValue=15,
+ 		reward=423,
+ 		linkto=42,
+ 	iconPath=""
+},
+[24] =
+{
+ 		id=24,
+ 		activityId=1024,
+ 		day=3,
+ 		des=31012024,
+ 		limit=38,
+ 		limitValue1=4,
+ 		activeValue=15,
+ 		reward=424,
+ 		linkto=63,
+ 	iconPath=""
+},
+[25] =
+{
+ 		id=25,
+ 		activityId=1024,
+ 		day=3,
+ 		des=31012025,
+ 		limit=12,
+ 		limitValue1=2,
+ 		activeValue=10,
+ 		reward=425,
+ 		linkto=71,
+ 	iconPath=""
+},
+[26] =
+{
+ 		id=26,
+ 		activityId=1024,
+ 		day=3,
+ 		des=31012026,
+ 		limit=39,
+ 		limitValue1=2,
+ 		activeValue=15,
+ 		reward=426,
+ 		linkto=76,
+ 	iconPath=""
+},
+[27] =
+{
+ 		id=27,
+ 		activityId=1024,
+ 		day=3,
+ 		des=31012027,
+ 		limit=64,
+ 		limitValue1=1,
+ 		activeValue=10,
+ 		reward=427,
+ 		linkto=6,
+ 	iconPath=""
+},
+[28] =
+{
+ 		id=28,
+ 		activityId=1024,
+ 		day=4,
+ 		des=31012028,
+ 		limit=23,
+ 		limitValue1=1,
+ 		activeValue=10,
+ 		reward=428,
+ 		linkto=1,
+ 	iconPath=""
+},
+[29] =
+{
+ 		id=29,
+ 		activityId=1024,
+ 		day=4,
+ 		des=31012029,
+ 		limit=133,
+ 		limitValue1=1,
+ 		limitValue2=2,
+ 		limitValue3=40,
+ 		activeValue=15,
+ 		reward=429,
+ 		linkto=61,
+ 	iconPath=""
+},
+[30] =
+{
+ 		id=30,
+ 		activityId=1024,
+ 		day=4,
+ 		des=31012030,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=30109,
+ 		activeValue=15,
+ 		reward=430,
+ 		linkto=41,
+ 	iconPath=""
+},
+[31] =
+{
+ 		id=31,
+ 		activityId=1024,
+ 		day=4,
+ 		des=31012031,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=10209,
+ 		activeValue=15,
+ 		reward=431,
+ 		linkto=42,
+ 	iconPath=""
+},
+[32] =
+{
+ 		id=32,
+ 		activityId=1024,
+ 		day=4,
+ 		des=31012032,
+ 		limit=16,
+ 		limitValue1=1,
+ 		activeValue=15,
+ 		reward=432,
+ 		linkto=5,
+ 	iconPath=""
+},
+[33] =
+{
+ 		id=33,
+ 		activityId=1024,
+ 		day=4,
+ 		des=31012033,
+ 		limit=141,
+ 		limitValue1=2,
+ 		limitValue2=110003,
+ 		activeValue=15,
+ 		reward=433,
+ 		linkto=6,
+ 	iconPath=""
+},
+[34] =
+{
+ 		id=34,
+ 		activityId=1024,
+ 		day=4,
+ 		des=31012034,
+ 		limit=131,
+ 		limitValue1=2,
+ 		activeValue=10,
+ 		reward=434,
+ 		linkto=75,
+ 	iconPath=""
+},
+[35] =
+{
+ 		id=35,
+ 		activityId=1024,
+ 		day=4,
+ 		des=31012035,
+ 		limit=112,
+ 		limitValue1=1,
+ 		activeValue=15,
+ 		reward=435,
+ 		linkto=75,
+ 	iconPath=""
+},
+[36] =
+{
+ 		id=36,
+ 		activityId=1024,
+ 		day=4,
+ 		des=31012036,
+ 		limit=27,
+ 		limitValue1=1,
+ 		limitValue2=3,
+ 		activeValue=10,
+ 		reward=436,
+ 		linkto=64,
+ 	iconPath=""
+},
+[37] =
+{
+ 		id=37,
+ 		activityId=1024,
+ 		day=5,
+ 		des=31012037,
+ 		limit=23,
+ 		limitValue1=1,
+ 		activeValue=10,
+ 		reward=437,
+ 		linkto=1,
+ 	iconPath=""
+},
+[38] =
+{
+ 		id=38,
+ 		activityId=1024,
+ 		day=5,
+ 		des=31012038,
+ 		limit=132,
+ 		limitValue1=1,
+ 		limitValue2=3,
+ 		limitValue3=40,
+ 		activeValue=15,
+ 		reward=438,
+ 		linkto=61,
+ 	iconPath=""
+},
+[39] =
+{
+ 		id=39,
+ 		activityId=1024,
+ 		day=5,
+ 		des=31012039,
+ 		limit=133,
+ 		limitValue1=2,
+ 		limitValue2=2,
+ 		limitValue3=40,
+ 		activeValue=15,
+ 		reward=439,
+ 		linkto=61,
+ 	iconPath=""
+},
+[40] =
+{
+ 		id=40,
+ 		activityId=1024,
+ 		day=5,
+ 		des=31012040,
+ 		limit=38,
+ 		limitValue1=6,
+ 		activeValue=15,
+ 		reward=440,
+ 		linkto=63,
+ 	iconPath=""
+},
+[41] =
+{
+ 		id=41,
+ 		activityId=1024,
+ 		day=5,
+ 		des=31012041,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=40102,
+ 		activeValue=15,
+ 		reward=441,
+ 		linkto=41,
+ 	iconPath=""
+},
+[42] =
+{
+ 		id=42,
+ 		activityId=1024,
+ 		day=5,
+ 		des=31012042,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=20204,
+ 		activeValue=15,
+ 		reward=442,
+ 		linkto=42,
+ 	iconPath=""
+},
+[43] =
+{
+ 		id=43,
+ 		activityId=1024,
+ 		day=5,
+ 		des=31012043,
+ 		limit=34,
+ 		limitValue1=2,
+ 		limitValue2=2,
+ 		activeValue=10,
+ 		reward=443,
+ 		linkto=5,
+ 	iconPath=""
+},
+[44] =
+{
+ 		id=44,
+ 		activityId=1024,
+ 		day=5,
+ 		des=31012044,
+ 		limit=51,
+ 		limitValue1=2,
+ 		activeValue=15,
+ 		reward=444,
+ 		linkto=94,
+ 	iconPath=""
+},
+[45] =
+{
+ 		id=45,
+ 		activityId=1024,
+ 		day=5,
+ 		des=31012045,
+ 		limit=64,
+ 		limitValue1=2,
+ 		activeValue=10,
+ 		reward=445,
+ 		linkto=6,
+ 	iconPath=""
+},
+[46] =
+{
+ 		id=46,
+ 		activityId=1024,
+ 		day=6,
+ 		des=31012046,
+ 		limit=23,
+ 		limitValue1=1,
+ 		activeValue=10,
+ 		reward=446,
+ 		linkto=1,
+ 	iconPath=""
+},
+[47] =
+{
+ 		id=47,
+ 		activityId=1024,
+ 		day=6,
+ 		des=31012047,
+ 		limit=132,
+ 		limitValue1=2,
+ 		limitValue2=2,
+ 		limitValue3=45,
+ 		activeValue=15,
+ 		reward=447,
+ 		linkto=61,
+ 	iconPath=""
+},
+[48] =
+{
+ 		id=48,
+ 		activityId=1024,
+ 		day=6,
+ 		des=31012048,
+ 		limit=26,
+ 		limitValue1=4,
+ 		limitValue2=4,
+ 		activeValue=15,
+ 		reward=448,
+ 		linkto=61,
+ 	iconPath=""
+},
+[49] =
+{
+ 		id=49,
+ 		activityId=1024,
+ 		day=6,
+ 		des=31012049,
+ 		limit=38,
+ 		limitValue1=8,
+ 		activeValue=15,
+ 		reward=449,
+ 		linkto=63,
+ 	iconPath=""
+},
+[50] =
+{
+ 		id=50,
+ 		activityId=1024,
+ 		day=6,
+ 		des=31012050,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=40107,
+ 		activeValue=15,
+ 		reward=450,
+ 		linkto=41,
+ 	iconPath=""
+},
+[51] =
+{
+ 		id=51,
+ 		activityId=1024,
+ 		day=6,
+ 		des=31012051,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=20207,
+ 		activeValue=15,
+ 		reward=451,
+ 		linkto=42,
+ 	iconPath=""
+},
+[52] =
+{
+ 		id=52,
+ 		activityId=1024,
+ 		day=6,
+ 		des=31012052,
+ 		limit=13,
+ 		limitValue1=2,
+ 		limitValue2=2,
+ 		activeValue=10,
+ 		reward=452,
+ 		linkto=5,
+ 	iconPath=""
+},
+[53] =
+{
+ 		id=53,
+ 		activityId=1024,
+ 		day=6,
+ 		des=31012053,
+ 		limit=16,
+ 		limitValue1=2,
+ 		activeValue=15,
+ 		reward=453,
+ 		linkto=94,
+ 	iconPath=""
+},
+[54] =
+{
+ 		id=54,
+ 		activityId=1024,
+ 		day=6,
+ 		des=31012054,
+ 		limit=31,
+ 		limitValue1=1,
+ 		limitValue2=102,
+ 		activeValue=10,
+ 		reward=454,
+ 		linkto=76,
+ 	iconPath=""
+},
+[55] =
+{
+ 		id=55,
+ 		activityId=1024,
+ 		day=7,
+ 		des=31012055,
+ 		limit=133,
+ 		limitValue1=2,
+ 		limitValue2=2,
+ 		limitValue3=50,
+ 		activeValue=10,
+ 		reward=455,
+ 		linkto=61,
+ 	iconPath=""
+},
+[56] =
+{
+ 		id=56,
+ 		activityId=1024,
+ 		day=7,
+ 		des=31012056,
+ 		limit=132,
+ 		limitValue1=2,
+ 		limitValue2=1,
+ 		limitValue3=50,
+ 		activeValue=15,
+ 		reward=456,
+ 		linkto=61,
+ 	iconPath=""
+},
+[57] =
+{
+ 		id=57,
+ 		activityId=1024,
+ 		day=7,
+ 		des=31012057,
+ 		limit=26,
+ 		limitValue1=1,
+ 		limitValue2=5,
+ 		activeValue=15,
+ 		reward=457,
+ 		linkto=61,
+ 	iconPath=""
+},
+[58] =
+{
+ 		id=58,
+ 		activityId=1024,
+ 		day=7,
+ 		des=31012058,
+ 		limit=38,
+ 		limitValue1=10,
+ 		activeValue=15,
+ 		reward=458,
+ 		linkto=63,
+ 	iconPath=""
+},
+[59] =
+{
+ 		id=59,
+ 		activityId=1024,
+ 		day=7,
+ 		des=31012059,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=40114,
+ 		activeValue=15,
+ 		reward=459,
+ 		linkto=41,
+ 	iconPath=""
+},
+[60] =
+{
+ 		id=60,
+ 		activityId=1024,
+ 		day=7,
+ 		des=31012060,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=20211,
+ 		activeValue=15,
+ 		reward=460,
+ 		linkto=42,
+ 	iconPath=""
+},
+[61] =
+{
+ 		id=61,
+ 		activityId=1024,
+ 		day=7,
+ 		des=31012061,
+ 		limit=131,
+ 		limitValue1=3,
+ 		activeValue=10,
+ 		reward=461,
+ 		linkto=75,
+ 	iconPath=""
+},
+[62] =
+{
+ 		id=62,
+ 		activityId=1024,
+ 		day=7,
+ 		des=31012062,
+ 		limit=27,
+ 		limitValue1=1,
+ 		limitValue2=3,
+ 		activeValue=15,
+ 		reward=462,
+ 		linkto=64,
+ 	iconPath=""
+},
+[63] =
+{
+ 		id=63,
+ 		activityId=1024,
+ 		day=7,
+ 		des=31012063,
+ 		limit=61,
+ 		limitValue1=1,
+ 		limitValue2=1,
+ 		activeValue=10,
+ 		reward=463,
+ 		linkto=65,
+ 	iconPath=""
+},
+[101] =
+{
+ 		id=101,
+ 		activityId=1024,
+ 		day=1,
+ 		des=31012067,
+ 		limit=58,
+ 		limitValue1=9,
+ 		reward=464,
+ 		target=1,
+ 	iconPath=""
+},
+[102] =
+{
+ 		id=102,
+ 		activityId=1024,
+ 		day=2,
+ 		des=31012067,
+ 		limit=58,
+ 		limitValue1=9,
+ 		reward=465,
+ 		target=1,
+ 	iconPath=""
+},
+[103] =
+{
+ 		id=103,
+ 		activityId=1024,
+ 		day=3,
+ 		des=31012067,
+ 		limit=58,
+ 		limitValue1=9,
+ 		reward=466,
+ 		target=1,
+ 	iconPath=""
+},
+[104] =
+{
+ 		id=104,
+ 		activityId=1024,
+ 		day=4,
+ 		des=31012067,
+ 		limit=58,
+ 		limitValue1=9,
+ 		reward=467,
+ 		target=1,
+ 	iconPath=""
+},
+[105] =
+{
+ 		id=105,
+ 		activityId=1024,
+ 		day=5,
+ 		des=31012067,
+ 		limit=58,
+ 		limitValue1=9,
+ 		reward=468,
+ 		target=1,
+ 	iconPath=""
+},
+[106] =
+{
+ 		id=106,
+ 		activityId=1024,
+ 		day=6,
+ 		des=31012067,
+ 		limit=58,
+ 		limitValue1=9,
+ 		reward=469,
+ 		target=1,
+ 	iconPath=""
+},
+[107] =
+{
+ 		id=107,
+ 		activityId=1024,
+ 		day=7,
+ 		des=31012067,
+ 		limit=58,
+ 		limitValue1=9,
+ 		reward=470,
+ 		target=1,
+ 	iconPath=""
+},
+[108] =
+{
+ 		id=108,
+ 		activityId=1114,
+ 		day=1,
+ 		des=31014001,
+ 		limit=48,
+ 		limitValue1=1,
+ 		limitValue2=1401,
+ 		reward=474,
+ 		linkto=16,
+ 	iconPath=""
+},
+[109] =
+{
+ 		id=109,
+ 		activityId=1114,
+ 		day=1,
+ 		des=31014002,
+ 		limit=10,
+ 		limitValue1=1,
+ 		limitValue2=20103,
+ 		reward=475,
+ 		linkto=41,
+ 	iconPath=""
+},
+[110] =
+{
+ 		id=110,
+ 		activityId=1114,
+ 		day=1,
+ 		des=31014003,
+ 		limit=46,
+ 		limitValue1=20,
+ 		limitValue2=110003,
+ 		reward=471,
+ 		linkto=95,
+ 	iconPath=""
+},
+[111] =
+{
+ 		id=111,
+ 		activityId=1114,
+ 		day=1,
+ 		des=31014010,
+ 		limit=58,
+ 		limitValue1=3,
+ 		target=1,
+ 		videoPath="Video/anxixiang_action.mp4",
+ 		notice=5225,
+ 	iconPath="UI/SpritePics/dormitory_activity/ui_dormitory_activity_icon_jinpingtang"
+},
+[112] =
+{
+ 		id=112,
+ 		activityId=1115,
+ 		day=1,
+ 		des=31014001,
+ 		limit=48,
+ 		limitValue1=1,
+ 		limitValue2=1404,
+ 		reward=474,
+ 		linkto=2,
+ 	iconPath=""
+},
+[113] =
+{
+ 		id=113,
+ 		activityId=1115,
+ 		day=1,
+ 		des=31014002,
+ 		limit=141,
+ 		limitValue1=3,
+ 		limitValue2=110003,
+ 		reward=475,
+ 		linkto=41,
+ 	iconPath=""
+},
+[114] =
+{
+ 		id=114,
+ 		activityId=1115,
+ 		day=1,
+ 		des=31014003,
+ 		limit=46,
+ 		limitValue1=20,
+ 		limitValue2=120001,
+ 		reward=471,
+ 		linkto=96,
+ 	iconPath=""
+},
+[115] =
+{
+ 		id=115,
+ 		activityId=1115,
+ 		day=1,
+ 		des=31014010,
+ 		limit=58,
+ 		limitValue1=3,
+ 		target=1,
+ 		videoPath="Video/anxixiang_action.mp4",
+ 		notice=5225,
+ 	iconPath="UI/SpritePics/dormitory_activity/ui_dormitory_activity_icon_jinpingtang"
+},
+[201] =
+{
+ 		id=201,
+ 		activityId=10002,
+ 		des=6252,
+ 		limit=63,
+ 		limitValue1=20,
+ 		reward=20014,
+ 	iconPath=""
+},
+[202] =
+{
+ 		id=202,
+ 		activityId=10002,
+ 		des=6253,
+ 		limit=63,
+ 		limitValue1=45,
+ 		reward=20015,
+ 	iconPath=""
+},
+[203] =
+{
+ 		id=203,
+ 		activityId=10002,
+ 		des=6254,
+ 		limit=63,
+ 		limitValue1=70,
+ 		reward=20016,
+ 	iconPath=""
+},
+[204] =
+{
+ 		id=204,
+ 		activityId=10002,
+ 		des=6255,
+ 		limit=63,
+ 		limitValue1=95,
+ 		reward=20017,
+ 	iconPath=""
+},
+[205] =
+{
+ 		id=205,
+ 		activityId=10002,
+ 		des=6256,
+ 		limit=63,
+ 		limitValue1=120,
+ 		reward=20014,
+ 	iconPath=""
+},
+[301] =
+{
+ 		id=301,
+ 		activityId=105,
+ 		day=1,
+ 		des=31012046,
+ 		limit=23,
+ 		limitValue1=1,
+ 		reward=5,
+ 		linkto=1,
+ 	iconPath=""
+},
+[302] =
+{
+ 		id=302,
+ 		activityId=105,
+ 		day=2,
+ 		des=31012070,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=20114,
+ 		reward=5,
+ 		linkto=41,
+ 	iconPath=""
+},
+[303] =
+{
+ 		id=303,
+ 		activityId=105,
+ 		day=3,
+ 		des=31012069,
+ 		limit=22,
+ 		limitValue1=40,
+ 		limitValue2=1,
+ 		reward=5,
+ 		linkto=3,
+ 	iconPath=""
+},
+[304] =
+{
+ 		id=304,
+ 		activityId=105,
+ 		day=4,
+ 		des=31012031,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=10209,
+ 		reward=5,
+ 		linkto=42,
+ 	iconPath=""
+},
+[305] =
+{
+ 		id=305,
+ 		activityId=105,
+ 		day=5,
+ 		des=31012071,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=30104,
+ 		reward=5,
+ 		linkto=41,
+ 	iconPath=""
+},
+[306] =
+{
+ 		id=306,
+ 		activityId=105,
+ 		day=6,
+ 		des=31012072,
+ 		limit=46,
+ 		limitValue1=30,
+ 		limitValue2=120004,
+ 		reward=5,
+ 		linkto=61,
+ 	iconPath=""
+},
+[307] =
+{
+ 		id=307,
+ 		activityId=105,
+ 		day=7,
+ 		des=31012073,
+ 		limit=46,
+ 		limitValue1=30,
+ 		limitValue2=140002,
+ 		reward=5,
+ 		linkto=61,
+ 	iconPath=""
+},
+[308] =
+{
+ 		id=308,
+ 		activityId=105,
+ 		day=8,
+ 		des=31012012,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=20103,
+ 		reward=5,
+ 		linkto=41,
+ 	iconPath=""
+},
+[309] =
+{
+ 		id=309,
+ 		activityId=105,
+ 		day=9,
+ 		des=31012074,
+ 		limit=39,
+ 		limitValue1=3,
+ 		reward=5,
+ 		linkto=76,
+ 	iconPath=""
+},
+[310] =
+{
+ 		id=310,
+ 		activityId=105,
+ 		day=10,
+ 		des=31012059,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=40114,
+ 		reward=5,
+ 		linkto=41,
+ 	iconPath=""
+},
+[311] =
+{
+ 		id=311,
+ 		activityId=105,
+ 		day=11,
+ 		des=31012062,
+ 		limit=27,
+ 		limitValue1=1,
+ 		limitValue2=3,
+ 		reward=5,
+ 		linkto=64,
+ 	iconPath=""
+},
+[312] =
+{
+ 		id=312,
+ 		activityId=105,
+ 		day=12,
+ 		des=31012052,
+ 		limit=13,
+ 		limitValue1=2,
+ 		limitValue2=2,
+ 		reward=5,
+ 		linkto=5,
+ 	iconPath=""
+},
+[313] =
+{
+ 		id=313,
+ 		activityId=105,
+ 		day=13,
+ 		des=31012056,
+ 		limit=132,
+ 		limitValue1=2,
+ 		limitValue2=1,
+ 		limitValue3=50,
+ 		reward=5,
+ 		linkto=61,
+ 	iconPath=""
+},
+[314] =
+{
+ 		id=314,
+ 		activityId=105,
+ 		day=14,
+ 		des=31012063,
+ 		limit=61,
+ 		limitValue1=1,
+ 		limitValue2=1,
+ 		reward=5,
+ 		linkto=65,
+ 	iconPath=""
+},
+[315] =
+{
+ 		id=315,
+ 		activityId=105,
+ 		day=15,
+ 		des=31012075,
+ 		limit=28,
+ 		limitValue1=1,
+ 		limitValue2=2,
+ 		reward=5,
+ 		linkto=64,
+ 	iconPath=""
+}
+}
+
+return {title=title, value=value}

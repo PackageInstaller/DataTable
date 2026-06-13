@@ -1,0 +1,1436 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -7488953462837080793
+  },
+  "m_Name": "uiGuide",
+  "items": [
+    {
+      "needSave": 1,
+      "guideId": 3,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep05",
+      "desc": "引导去单抽安息香",
+      "saveStepId": 13,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MainSceneUI",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            10102
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            10103
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 1,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep01",
+      "desc": "引导编队后进入0-3关",
+      "saveStepId": 3,
+      "saveStepIdMainScene": 3,
+      "triggerConditions": [
+        {
+          "triggerCondition": 10,
+          "isTrue": 1,
+          "param": [
+            3
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 0,
+          "param": [],
+          "paramStr": "GetItemsUI",
+          "guideFlowType": 1,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "Lottery",
+          "guideFlowType": 1,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            10102
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            10103
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MainSceneUI",
+          "guideFlowType": 2,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 4,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep06",
+      "desc": "引导去做任务",
+      "saveStepId": 6,
+      "saveStepIdMainScene": 6,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MissionStageUI",
+          "guideFlowType": 1,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            10103
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            10404
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 10,
+          "isTrue": 1,
+          "param": [
+            1
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 0,
+          "param": [],
+          "paramStr": "BattleSettlementUI",
+          "guideFlowType": 1,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MainSceneUI",
+          "guideFlowType": 2,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 26,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep26",
+      "desc": "养成引导升级",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MissionStageUI",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 10,
+          "isTrue": 1,
+          "param": [
+            4
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            10404
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            10104
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 11,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep13",
+      "desc": "0-4进入编队引导职业",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "UITeamConfig",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 14,
+          "isTrue": 1,
+          "param": [
+            10104
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 2,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep02",
+      "desc": "G0-5之后引导十连抽",
+      "saveStepId": 4,
+      "saveStepIdMainScene": 4,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MissionStageUI",
+          "guideFlowType": 1,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            10405
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            10105
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MainSceneUI",
+          "guideFlowType": 2,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 22,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep17",
+      "desc": "0-5进入编队引导冬青",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "UITeamConfig",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 14,
+          "isTrue": 1,
+          "param": [
+            10105
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 23,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep22",
+      "desc": "0-5之后引导星级及星级宝箱",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MissionStageUI",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            10105
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            10407
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 24,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep24",
+      "desc": "0-6进入编队引导异能",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [
+            0,
+            0
+          ],
+          "paramStr": "UITeamConfig",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 14,
+          "isTrue": 1,
+          "param": [
+            10107
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 28,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep28",
+      "desc": "0-7进入编队引导莎姬",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "UITeamConfig",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 14,
+          "isTrue": 1,
+          "param": [
+            10108
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 29,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep29",
+      "desc": "0-8结束之后引导养成",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MissionStageUI",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            10109
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            10111
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 6,
+      "hasNextGuideId": 1,
+      "guideName": "battleGuideStep04",
+      "desc": "s0-10序章结束后进入章节领取章节奖励",
+      "saveStepId": 3,
+      "saveStepIdMainScene": 3,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 0,
+          "param": [],
+          "paramStr": "GetItemsUI",
+          "guideFlowType": 1,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MissionStageUI",
+          "guideFlowType": 1,
+          "paramFilterStrs": [
+            ""
+          ]
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            10112
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            20400
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MainSceneUI",
+          "guideFlowType": 2,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 7,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep09",
+      "desc": "引导进入资源关卡",
+      "saveStepId": 8,
+      "saveStepIdMainScene": 8,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [
+            0
+          ],
+          "paramStr": "MissionStageUI",
+          "guideFlowType": 1,
+          "paramFilterStrs": [
+            "MissionChapterResources"
+          ]
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            20101
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            20402
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 13,
+          "isTrue": 1,
+          "param": [
+            1
+          ],
+          "paramStr": "",
+          "guideFlowType": 1,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MainSceneUI",
+          "guideFlowType": 2,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 33,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep37",
+      "desc": "引导扫荡",
+      "saveStepId": 3,
+      "saveStepIdMainScene": 3,
+      "triggerConditions": [
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            1004
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            1001
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MissionStageUI",
+          "guideFlowType": 1,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 13,
+          "isTrue": 1,
+          "param": [
+            3
+          ],
+          "paramStr": "",
+          "guideFlowType": 1,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 10,
+          "isTrue": 1,
+          "param": [
+            7
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 17,
+          "isTrue": 1,
+          "param": [
+            1004
+          ],
+          "paramStr": "",
+          "guideFlowType": 1,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MainSceneUI",
+          "guideFlowType": 2,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 8,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep11",
+      "desc": "G1-3之后引导进入边舱",
+      "saveStepId": 3,
+      "saveStepIdMainScene": 3,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MissionStageUI",
+          "guideFlowType": 1,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            20404
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            20104
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MainSceneUI",
+          "guideFlowType": 2,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 9,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep10",
+      "desc": "主动进入边舱引导",
+      "saveStepId": 9,
+      "saveStepIdMainScene": 9,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "OtakuMainUI",
+          "guideFlowType": 1,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MainSceneUI",
+          "guideFlowType": 2,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 10,
+          "isTrue": 1,
+          "param": [
+            8
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 15,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep08",
+      "desc": "1-3引导佩戴边舱技能",
+      "saveStepId": 3,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "UITeamConfig",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 14,
+          "isTrue": 1,
+          "param": [
+            20104
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 35,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep31",
+      "desc": "1-4引导助战",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "UITeamConfig",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 14,
+          "isTrue": 1,
+          "param": [
+            20108
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 5,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep03",
+      "desc": "1-5之后引导图鉴",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MissionStageUI",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            20114
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            20109
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 18,
+      "hasNextGuideId": 1,
+      "guideName": "battleGuideStep18",
+      "desc": "1-7之后引导进入特殊章节",
+      "saveStepId": 2,
+      "saveStepIdMainScene": 2,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 0,
+          "param": [],
+          "paramStr": "LoadingChapter",
+          "guideFlowType": 1,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MissionStageUI",
+          "guideFlowType": 1,
+          "paramFilterStrs": [
+            "LoadingChapterUI"
+          ]
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            20115
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 10,
+          "isTrue": 0,
+          "param": [
+            19
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MainSceneUI",
+          "guideFlowType": 2,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 19,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep19",
+      "desc": "主动进入特殊章节的引导",
+      "saveStepId": 3,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MissionStageUI",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            20115
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 13,
+          "isTrue": 1,
+          "param": [
+            2
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            20107
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            10201
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 27,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep27",
+      "desc": "1-12进入编队后引导齐娜",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "UITeamConfig",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 14,
+          "isTrue": 1,
+          "param": [
+            20105
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 36,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep32",
+      "desc": "1-13之后引导boss战",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MissionStageUI",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            20111
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            30100
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 30,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep30",
+      "desc": "主动进入悬赏",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MissionOfferRewards",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            20111
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 31,
+      "hasNextGuideId": 1,
+      "guideName": "battleGuideStep35",
+      "desc": "2-4之后调查舱引导",
+      "saveStepId": 4,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            30103
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MissionStageUI",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            30104
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 25,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep14",
+      "desc": "主动进入调查舱",
+      "saveStepId": 12,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "WishjourneyUI",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 13,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep07",
+      "desc": "2-13之后奇点遭遇引导",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "MissionStageUI",
+          "guideFlowType": 0,
+          "paramFilterStrs": [
+            "MissionChapterResources"
+          ]
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 1,
+          "param": [
+            30111
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 1,
+          "isTrue": 0,
+          "param": [
+            40401
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 10,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep12",
+      "desc": "主动进入制造舱",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "OtakuManufacturingCabin",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 12,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep23",
+      "desc": "主动进入餐厅",
+      "saveStepId": 6,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "RestaurantRootUI",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 0,
+          "param": [],
+          "paramStr": "UICookStar",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 16,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep15",
+      "desc": "任意角色到50级引导基因",
+      "saveStepId": 7,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 8,
+          "isTrue": 1,
+          "param": [
+            0,
+            50,
+            0
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "RoleDevelopMain",
+          "guideFlowType": 0,
+          "paramFilterStrs": [
+            ""
+          ]
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 0,
+          "param": [],
+          "paramStr": "RoleGene",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 0,
+          "param": [],
+          "paramStr": "UIRoleLevelUp",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 0,
+          "param": [],
+          "paramStr": "RoleSkillUI",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 0,
+          "param": [],
+          "paramStr": "UIRoleCore",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 0,
+          "param": [],
+          "paramStr": "UIAwake",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 0,
+          "param": [],
+          "paramStr": "RoleProfileUI",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 17,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep16",
+      "desc": "宿舍引导布置",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 15,
+          "isTrue": 1,
+          "param": [
+            110003,
+            2
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 10,
+          "isTrue": 1,
+          "param": [
+            20
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 1,
+          "param": [],
+          "paramStr": "Dorm",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        },
+        {
+          "triggerCondition": 11,
+          "isTrue": 0,
+          "param": [],
+          "paramStr": "FavorUpUI",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 0
+    },
+    {
+      "needSave": 1,
+      "guideId": 20,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep20",
+      "desc": "引导接取宿舍任务",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 10,
+          "isTrue": 0,
+          "param": [
+            20
+          ],
+          "paramStr": "Dorm",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 1
+    },
+    {
+      "needSave": 1,
+      "guideId": 14,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep25",
+      "desc": "引导点击安息香",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 10,
+          "isTrue": 1,
+          "param": [
+            20
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 1
+    },
+    {
+      "needSave": 1,
+      "guideId": 21,
+      "hasNextGuideId": 0,
+      "guideName": "battleGuideStep21",
+      "desc": "引导好感度",
+      "saveStepId": 1,
+      "saveStepIdMainScene": 0,
+      "triggerConditions": [
+        {
+          "triggerCondition": 10,
+          "isTrue": 0,
+          "param": [
+            21
+          ],
+          "paramStr": "",
+          "guideFlowType": 0,
+          "paramFilterStrs": []
+        }
+      ],
+      "bManualTrigger": 1
+    }
+  ]
+}

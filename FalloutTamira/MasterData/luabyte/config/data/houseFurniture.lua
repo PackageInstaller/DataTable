@@ -1,0 +1,1191 @@
+local title = {
+	id = 0,
+	homeFurniturePoint = "",
+	theme = 0,
+	atmosphere = 0,
+	type = 0,
+	subType = 0,
+	page = 0,
+	ifInteraction = 0,
+	hero = {},
+	resources = "",
+	show = 0,
+	positionId = {},
+	offset = {},
+	picture = "",
+	bigPicture = "",
+	words = {},
+	uiType = 0,
+	web = "",
+	jump = 0,
+	ownpositionId = {},
+	areaType = {},
+	layoutType = 0
+}
+
+local value = {
+[3001] =
+{
+ 		id=3001,
+ 		theme=1,
+ 		atmosphere=50,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,1000,1000,1000},
+ 		areaType={1,3,6},
+ 	layoutType=0
+},
+[3002] =
+{
+ 		id=3002,
+ 		theme=1,
+ 		atmosphere=50,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/common_smallFurniture_pot_1",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,1000,1000,1000},
+ 		areaType={1,3,6},
+ 	layoutType=0
+},
+[3003] =
+{
+ 		id=3003,
+ 		theme=1,
+ 		atmosphere=50,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home01_robot01",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,800,800,800},
+ 		areaType={1,3,6},
+ 	layoutType=0
+},
+[3004] =
+{
+ 		id=3004,
+ 		theme=1,
+ 		atmosphere=5,
+ 		type=9,
+ 		ifInteraction=2,
+ 		hero={110003},
+ 		resources="Furniture/Home_book2_110003",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,1000,1000,1000},
+ 		areaType={1,2,3,6},
+ 	layoutType=0
+},
+[3005] =
+{
+ 		id=3005,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/common_smallFurniture_flower_1",
+ 		show=1,
+ 		positionId={1},
+ 		offset={0,0,0,0,0,0,1000,1000,1000},
+ 		areaType={1},
+ 	layoutType=0
+},
+[3006] =
+{
+ 		id=3006,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/common_smallFurniture_pillow_1",
+ 		show=1,
+ 		positionId={2},
+ 		offset={0,0,0,0,0,0,1000,1000,1000},
+ 		areaType={1},
+ 	layoutType=0
+},
+[3007] =
+{
+ 		id=3007,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/common_smallFurniture_game_2",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,1000,1000,1000},
+ 		areaType={1,2,3,6},
+ 	layoutType=0
+},
+[3008] =
+{
+ 		id=3008,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_light_120001",
+ 		show=1,
+ 		positionId={5},
+ 		offset={0,0,0,0,0,0,1000,1000,1000},
+ 		areaType={2},
+ 	layoutType=0
+},
+[3009] =
+{
+ 		id=3009,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/common_smallFurniture_picture_1",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,100,0,-20000,0,0,1000,1000,1000},
+ 		areaType={1,3,6},
+ 	layoutType=0
+},
+[3011] =
+{
+ 		id=3011,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home02_flower01a",
+ 		show=1,
+ 		positionId={1},
+ 		offset={0,0,0,0,0,0,0,0,0},
+ 		areaType={1},
+ 	layoutType=0
+},
+[3012] =
+{
+ 		id=3012,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home02_case02a",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,0,0,0},
+ 		areaType={1,3,6},
+ 	layoutType=0
+},
+[3013] =
+{
+ 		id=3013,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home02_case02b",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,0,0,0},
+ 		areaType={1,3,6},
+ 	layoutType=0
+},
+[3014] =
+{
+ 		id=3014,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home02_case02c",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,0,0,0},
+ 		areaType={1,3,6},
+ 	layoutType=0
+},
+[3015] =
+{
+ 		id=3015,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home02_case02d",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,0,0,0},
+ 		areaType={1,3,6},
+ 	layoutType=0
+},
+[3016] =
+{
+ 		id=3016,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home02_case02e",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,0,0,0},
+ 		areaType={1,3,6},
+ 	layoutType=0
+},
+[3017] =
+{
+ 		id=3017,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home02_case02f",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,0,0,0},
+ 		areaType={1,3,6},
+ 	layoutType=0
+},
+[3018] =
+{
+ 		id=3018,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home02_bed01b",
+ 		show=1,
+ 		positionId={2},
+ 		offset={0,0,0,0,0,0,0,0,0},
+ 		areaType={2},
+ 	layoutType=0
+},
+[3019] =
+{
+ 		id=3019,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home02_bed01c",
+ 		show=1,
+ 		positionId={2},
+ 		offset={0,0,0,0,0,0,0,0,0},
+ 		areaType={2},
+ 	layoutType=0
+},
+[3020] =
+{
+ 		id=3020,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home02_bed01d",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,0,0,0},
+ 		areaType={2,3,6},
+ 	layoutType=0
+},
+[3021] =
+{
+ 		id=3021,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home02_bed01e",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,0,0,0},
+ 		areaType={2,3,6},
+ 	layoutType=0
+},
+[3022] =
+{
+ 		id=3022,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home02_flower03a",
+ 		show=1,
+ 		positionId={1},
+ 		offset={0,0,0,0,0,0,0,0,0},
+ 		areaType={1},
+ 	layoutType=0
+},
+[3023] =
+{
+ 		id=3023,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home02_robot01",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,0,0,0},
+ 		areaType={1,2,3,6},
+ 	layoutType=0
+},
+[3024] =
+{
+ 		id=3024,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home02_playstation01",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,0,0,0},
+ 		areaType={1,3,6},
+ 	layoutType=0
+},
+[3025] =
+{
+ 		id=3025,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home01_book01",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,0,0,0},
+ 		areaType={1,3,6},
+ 	layoutType=0
+},
+[3502] =
+{
+ 		id=3502,
+ 		homeFurniturePoint="Bed",
+ 		theme=2,
+ 		atmosphere=5,
+ 		type=1,
+ 		page=1,
+ 		ifInteraction=1,
+ 		hero={110003},
+ 		resources="Furniture/Home01_bed01",
+ 		show=1,
+ 		ownpositionId={2,5},
+ 		areaType={2},
+ 	layoutType=0
+},
+[3503] =
+{
+ 		id=3503,
+ 		homeFurniturePoint="Anxixiang_Furniture_Chair",
+ 		theme=2,
+ 		atmosphere=5,
+ 		type=4,
+ 		page=4,
+ 		ifInteraction=1,
+ 		hero={110003},
+ 		resources="Furniture/Home01_chair01",
+ 		show=1,
+ 		areaType={3},
+ 	layoutType=0
+},
+[3504] =
+{
+ 		id=3504,
+ 		homeFurniturePoint="Anxixiang_Furniture_Bath",
+ 		theme=2,
+ 		atmosphere=5,
+ 		type=7,
+ 		ifInteraction=1,
+ 		show=1,
+ 		areaType={4},
+ 	layoutType=0
+},
+[3505] =
+{
+ 		id=3505,
+ 		homeFurniturePoint="Anxixiang_Furniture_Cabinet",
+ 		theme=2,
+ 		atmosphere=5,
+ 		type=10,
+ 		ifInteraction=3,
+ 		resources="Furniture/Home01_cabinet01",
+ 		show=1,
+ 		areaType={5},
+ 	layoutType=0
+},
+[3506] =
+{
+ 		id=3506,
+ 		homeFurniturePoint="Bookcase",
+ 		theme=2,
+ 		type=13,
+ 		page=2,
+ 		ifInteraction=3,
+ 		resources="Furniture/Home01_bookcase01",
+ 		ownpositionId={3},
+ 		areaType={3},
+ 	layoutType=0
+},
+[3507] =
+{
+ 		id=3507,
+ 		homeFurniturePoint="Sofa",
+ 		theme=2,
+ 		atmosphere=5,
+ 		type=3,
+ 		page=5,
+ 		ifInteraction=1,
+ 		hero={110003},
+ 		resources="Furniture/Home01_sofa01",
+ 		show=1,
+ 		ownpositionId={1,2},
+ 		areaType={1},
+ 	layoutType=0
+},
+[3508] =
+{
+ 		id=3508,
+ 		homeFurniturePoint="SofaGuest",
+ 		theme=2,
+ 		atmosphere=5,
+ 		type=4,
+ 		page=5,
+ 		ifInteraction=3,
+ 		resources="Furniture/Home01_sofa02",
+ 		show=1,
+ 		areaType={1},
+ 	layoutType=0
+},
+[3510] =
+{
+ 		id=3510,
+ 		homeFurniturePoint="Console",
+ 		theme=2,
+ 		atmosphere=5,
+ 		type=2,
+ 		page=3,
+ 		ifInteraction=3,
+ 		resources="Furniture/Home01_display01",
+ 		show=1,
+ 		ownpositionId={3,3,3,1,1},
+ 		areaType={3},
+ 	layoutType=0
+},
+[3512] =
+{
+ 		id=3512,
+ 		theme=2,
+ 		type=12,
+ 		page=5,
+ 		ifInteraction=3,
+ 		show=1,
+ 		areaType={5},
+ 	layoutType=0
+},
+[3513] =
+{
+ 		id=3513,
+ 		homeFurniturePoint="Main",
+ 		theme=1,
+ 		type=8,
+ 		ifInteraction=1,
+ 		resources="Home01_Style_Default",
+ 		show=1,
+ 		ownpositionId={6},
+ 		areaType={4},
+ 	layoutType=0
+},
+[3514] =
+{
+ 		id=3514,
+ 		homeFurniturePoint="Table",
+ 		theme=1,
+ 		atmosphere=5,
+ 		type=5,
+ 		ifInteraction=1,
+ 		resources="Furniture/Home01_desk01",
+ 		show=1,
+ 		ownpositionId={3,3},
+ 		areaType={1},
+ 	layoutType=0
+},
+[3516] =
+{
+ 		id=3516,
+ 		homeFurniturePoint="Bed",
+ 		theme=2,
+ 		atmosphere=50,
+ 		type=1,
+ 		page=1,
+ 		ifInteraction=1,
+ 		hero={110003},
+ 		resources="Furniture/Home02_bed01",
+ 		show=1,
+ 		ownpositionId={2,5},
+ 		areaType={2},
+ 	layoutType=0
+},
+[3517] =
+{
+ 		id=3517,
+ 		homeFurniturePoint="Sofa",
+ 		theme=2,
+ 		atmosphere=50,
+ 		type=3,
+ 		page=5,
+ 		ifInteraction=1,
+ 		hero={110003},
+ 		resources="Furniture/Home02_Sofa01",
+ 		show=1,
+ 		ownpositionId={1,2},
+ 		areaType={1},
+ 	layoutType=0
+},
+[3518] =
+{
+ 		id=3518,
+ 		homeFurniturePoint="SofaGuest",
+ 		theme=2,
+ 		atmosphere=50,
+ 		type=4,
+ 		page=5,
+ 		ifInteraction=3,
+ 		resources="Furniture/Home02_Sofa02",
+ 		show=1,
+ 		areaType={1},
+ 	layoutType=0
+},
+[3519] =
+{
+ 		id=3519,
+ 		homeFurniturePoint="Console",
+ 		theme=2,
+ 		atmosphere=50,
+ 		type=2,
+ 		page=3,
+ 		ifInteraction=3,
+ 		resources="Furniture/Home02_display01",
+ 		show=1,
+ 		ownpositionId={3,3,3,1,1},
+ 		areaType={3},
+ 	layoutType=0
+},
+[3520] =
+{
+ 		id=3520,
+ 		homeFurniturePoint="Table",
+ 		theme=2,
+ 		atmosphere=50,
+ 		type=5,
+ 		page=5,
+ 		ifInteraction=3,
+ 		resources="Furniture/Home02_desk01",
+ 		show=1,
+ 		ownpositionId={3,3},
+ 		areaType={1},
+ 	layoutType=0
+},
+[3521] =
+{
+ 		id=3521,
+ 		homeFurniturePoint="Anxixiang_Furniture_Bath",
+ 		theme=2,
+ 		type=7,
+ 		page=5,
+ 		ifInteraction=3,
+ 		show=1,
+ 	layoutType=0
+},
+[3522] =
+{
+ 		id=3522,
+ 		homeFurniturePoint="Bookcase",
+ 		theme=2,
+ 		type=13,
+ 		page=5,
+ 		ifInteraction=3,
+ 		resources="Furniture/Home02_bookcase01",
+ 		ownpositionId={3},
+ 		areaType={3},
+ 	layoutType=0
+},
+[3523] =
+{
+ 		id=3523,
+ 		homeFurniturePoint="Photowall",
+ 		theme=1,
+ 		type=14,
+ 		ifInteraction=1,
+ 		resources="Furniture/Home01_poster01",
+ 		ownpositionId={4,4,4,4,4,4},
+ 		areaType={7},
+ 	layoutType=0
+},
+[3524] =
+{
+ 		id=3524,
+ 		homeFurniturePoint="Photowall2",
+ 		theme=1,
+ 		type=15,
+ 		ifInteraction=1,
+ 		resources="Furniture/Home01_coffee01",
+ 		ownpositionId={4},
+ 		areaType={8},
+ 	layoutType=0
+},
+[3525] =
+{
+ 		id=3525,
+ 		homeFurniturePoint="Photowall3",
+ 		theme=1,
+ 		type=16,
+ 		ifInteraction=1,
+ 		resources="Furniture/Home01_poster01",
+ 		ownpositionId={4},
+ 		areaType={9},
+ 	layoutType=0
+},
+[3010] =
+{
+ 		id=3010,
+ 		theme=1,
+ 		atmosphere=50,
+ 		type=9,
+ 		subType=908,
+ 		ifInteraction=2,
+ 		resources="Furniture/Machine",
+ 		show=1,
+ 		positionId={6},
+ 		offset={0,200,0,0,0,0,1000,1000,1000},
+ 		areaType={4},
+ 	layoutType=0
+},
+[3526] =
+{
+ 		id=3526,
+ 		theme=1,
+ 		type=17,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		areaType={5},
+ 	layoutType=0
+},
+[3527] =
+{
+ 		id=3527,
+ 		theme=1,
+ 		type=6,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 	layoutType=0
+},
+[3528] =
+{
+ 		id=3528,
+ 		homeFurniturePoint="Main",
+ 		theme=1,
+ 		type=8,
+ 		ifInteraction=1,
+ 		resources="Home01_Style_Pink",
+ 		show=1,
+ 		ownpositionId={6},
+ 		areaType={4},
+ 	layoutType=0
+},
+[3529] =
+{
+ 		id=3529,
+ 		homeFurniturePoint="Shelf",
+ 		theme=1,
+ 		type=19,
+ 		ifInteraction=1,
+ 		resources="Furniture/Home01_desk01",
+ 		ownpositionId={3,3,3,3,3,3},
+ 		areaType={6},
+ 	layoutType=0
+},
+[3530] =
+{
+ 		id=3530,
+ 		homeFurniturePoint="NightTable",
+ 		theme=1,
+ 		atmosphere=5,
+ 		type=20,
+ 		ifInteraction=1,
+ 		resources="Furniture/Home01_beddesk01",
+ 		show=1,
+ 		ownpositionId={3,3},
+ 		areaType={2},
+ 	layoutType=0
+},
+[3531] =
+{
+ 		id=3531,
+ 		homeFurniturePoint="NightTable",
+ 		theme=1,
+ 		atmosphere=50,
+ 		type=20,
+ 		ifInteraction=1,
+ 		resources="Furniture/Home02_beddesk01",
+ 		show=1,
+ 		ownpositionId={3,3},
+ 		areaType={2},
+ 	layoutType=0
+},
+[3541] =
+{
+ 		id=3541,
+ 		homeFurniturePoint="Bookcase",
+ 		theme=2,
+ 		type=13,
+ 		page=2,
+ 		ifInteraction=3,
+ 		resources="Furniture/Home01_bookcase01",
+ 		ownpositionId={3},
+ 		areaType={3},
+ 	layoutType=0
+},
+[3542] =
+{
+ 		id=3542,
+ 		homeFurniturePoint="Main",
+ 		theme=1,
+ 		type=8,
+ 		ifInteraction=1,
+ 		resources="Home01_Style_Default",
+ 		show=1,
+ 		ownpositionId={6},
+ 		areaType={4},
+ 	layoutType=0
+},
+[3543] =
+{
+ 		id=3543,
+ 		homeFurniturePoint="Photowall",
+ 		theme=1,
+ 		type=14,
+ 		ifInteraction=1,
+ 		resources="Furniture/Home01_poster01",
+ 		ownpositionId={4,4,4,4,4,4},
+ 		areaType={7},
+ 	layoutType=0
+},
+[3544] =
+{
+ 		id=3544,
+ 		homeFurniturePoint="Photowall2",
+ 		theme=1,
+ 		type=15,
+ 		ifInteraction=1,
+ 		resources="Furniture/Home01_coffee01",
+ 		ownpositionId={4},
+ 		areaType={8},
+ 	layoutType=0
+},
+[3545] =
+{
+ 		id=3545,
+ 		homeFurniturePoint="Photowall3",
+ 		theme=1,
+ 		type=16,
+ 		ifInteraction=1,
+ 		resources="Furniture/Home01_poster01",
+ 		ownpositionId={4},
+ 		areaType={9},
+ 	layoutType=0
+},
+[3546] =
+{
+ 		id=3546,
+ 		homeFurniturePoint="Shelf",
+ 		theme=1,
+ 		type=19,
+ 		ifInteraction=1,
+ 		resources="Furniture/Home01_desk01",
+ 		ownpositionId={3,3,3,3,3,3},
+ 		areaType={6},
+ 	layoutType=0
+},
+[3547] =
+{
+ 		id=3547,
+ 		theme=1,
+ 		atmosphere=5,
+ 		type=9,
+ 		ifInteraction=2,
+ 		hero={120001},
+ 		resources="Furniture/Home_book2_110003",
+ 		show=1,
+ 		positionId={3},
+ 		offset={0,0,0,0,0,0,1000,1000,1000},
+ 		areaType={1,2,3,6},
+ 	layoutType=0
+},
+[4013] =
+{
+ 		id=4013,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215529",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215529",
+ 		words={5010001,5011001},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4014] =
+{
+ 		id=4014,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215530",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215530",
+ 		words={5010002,5011002},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4015] =
+{
+ 		id=4015,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215531",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215531",
+ 		words={5010003,5011003},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4016] =
+{
+ 		id=4016,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215532",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215532",
+ 		words={5010004,5011004},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4017] =
+{
+ 		id=4017,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215533",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215533",
+ 		words={5010005,5011005},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4018] =
+{
+ 		id=4018,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215534",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215534",
+ 		words={5010006,5011006},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4019] =
+{
+ 		id=4019,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215545",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215545",
+ 		words={5010007,5011007},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4020] =
+{
+ 		id=4020,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215546",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215546",
+ 		words={5010008,5011008},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4021] =
+{
+ 		id=4021,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215547",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215547",
+ 		words={5010009,5011009},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4022] =
+{
+ 		id=4022,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215548",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215548",
+ 		words={5010010,5011010},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4023] =
+{
+ 		id=4023,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215549",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215549",
+ 		words={5010011,5011011},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4024] =
+{
+ 		id=4024,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215550",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_awake_big_215550",
+ 		words={5010012,5011012},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4025] =
+{
+ 		id=4025,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_photograph_big_02",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_photograph_big_02",
+ 		words={5010013,5011013},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4026] =
+{
+ 		id=4026,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_photograph_big_03",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_photograph_big_03",
+ 		words={5010014,5011014},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4027] =
+{
+ 		id=4027,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_photograph_big_04",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_photograph_big_04",
+ 		words={5010015,5011015},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4028] =
+{
+ 		id=4028,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_photograph_big_4028",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_photograph_big_4028",
+ 		words={5010014,5011014},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4029] =
+{
+ 		id=4029,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_photograph_big_4029",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_photograph_big_4029",
+ 		words={5010015,5011015},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4030] =
+{
+ 		id=4030,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_photograph_big_4030",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_photograph_big_4030",
+ 		words={5010014,5011014},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+},
+[4031] =
+{
+ 		id=4031,
+ 		theme=1,
+ 		atmosphere=30,
+ 		type=9,
+ 		subType=902,
+ 		ifInteraction=2,
+ 		resources="Furniture/Home_book1_110003",
+ 		show=1,
+ 		positionId={4},
+ 		offset={0,0,0,0,0,0,50,50,50},
+ 		picture="UI/SpritePics/dormitory/ui_dormitory_photograph_big_4031",
+ 		bigPicture="UI/SpritePics/dormitory/ui_dormitory_photograph_big_4031",
+ 		words={5010015,5011015},
+ 		uiType=1,
+ 		areaType={7,8,9},
+ 	layoutType=0
+}
+}
+
+return {title=title, value=value}

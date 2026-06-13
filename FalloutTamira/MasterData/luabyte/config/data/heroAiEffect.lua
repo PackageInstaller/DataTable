@@ -1,0 +1,5109 @@
+local title = {
+	id = 0,
+	heroId = 0,
+	needStar = 0,
+	attributeType = {},
+	attributeValue = {},
+	passive = {},
+	name = 0,
+	haloDesc = {},
+	haloNextDesc = {},
+	levelDesc = 0,
+	detailDesc = 0,
+	openCondition = 0
+}
+
+local value = {
+[1100011] =
+{
+ 		id=1100011,
+ 		heroId=110001,
+ 		needStar=1,
+ 		attributeType={34},
+ 		attributeValue={250},
+ 		name=4249,
+ 		haloDesc={22000121},
+ 		haloNextDesc={22000122},
+ 		levelDesc=5232,
+ 		detailDesc=22000021,
+ 	openCondition=205
+},
+[1100012] =
+{
+ 		id=1100012,
+ 		heroId=110001,
+ 		needStar=2,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		name=4249,
+ 		haloDesc={22000122},
+ 		haloNextDesc={22000123},
+ 		levelDesc=5233,
+ 		detailDesc=22000022,
+ 	openCondition=205
+},
+[1100013] =
+{
+ 		id=1100013,
+ 		heroId=110001,
+ 		needStar=3,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200101},
+ 		name=4249,
+ 		haloDesc={22000122,22000123},
+ 		haloNextDesc={22000124},
+ 		levelDesc=5234,
+ 		detailDesc=22000023,
+ 	openCondition=206
+},
+[1100014] =
+{
+ 		id=1100014,
+ 		heroId=110001,
+ 		needStar=4,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102},
+ 		name=4249,
+ 		haloDesc={22000122,22000124},
+ 		haloNextDesc={22000125},
+ 		levelDesc=5235,
+ 		detailDesc=22000024,
+ 	openCondition=206
+},
+[1100015] =
+{
+ 		id=1100015,
+ 		heroId=110001,
+ 		needStar=5,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200201},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000125},
+ 		haloNextDesc={22000126},
+ 		levelDesc=5236,
+ 		detailDesc=22000025,
+ 	openCondition=207
+},
+[1100016] =
+{
+ 		id=1100016,
+ 		heroId=110001,
+ 		needStar=6,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200202},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000126},
+ 		levelDesc=5237,
+ 		detailDesc=22000026,
+ 	openCondition=208
+},
+[1100021] =
+{
+ 		id=1100021,
+ 		heroId=110002,
+ 		needStar=1,
+ 		attributeType={1001},
+ 		attributeValue={300},
+ 		name=4267,
+ 		haloDesc={22000111},
+ 		haloNextDesc={22000112},
+ 		levelDesc=5232,
+ 		detailDesc=22000011,
+ 	openCondition=205
+},
+[1100022] =
+{
+ 		id=1100022,
+ 		heroId=110002,
+ 		needStar=2,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		name=4267,
+ 		haloDesc={22000112},
+ 		haloNextDesc={22000113},
+ 		levelDesc=5233,
+ 		detailDesc=22000012,
+ 	openCondition=205
+},
+[1100023] =
+{
+ 		id=1100023,
+ 		heroId=110002,
+ 		needStar=3,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100101},
+ 		name=4267,
+ 		haloDesc={22000112,22000113},
+ 		haloNextDesc={22000114},
+ 		levelDesc=5234,
+ 		detailDesc=22000013,
+ 	openCondition=206
+},
+[1100024] =
+{
+ 		id=1100024,
+ 		heroId=110002,
+ 		needStar=4,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102},
+ 		name=4267,
+ 		haloDesc={22000112,22000114},
+ 		haloNextDesc={22000115},
+ 		levelDesc=5235,
+ 		detailDesc=22000014,
+ 	openCondition=206
+},
+[1100025] =
+{
+ 		id=1100025,
+ 		heroId=110002,
+ 		needStar=5,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100201},
+ 		name=4267,
+ 		haloDesc={22000112,22000114,22000115},
+ 		haloNextDesc={22000116},
+ 		levelDesc=5236,
+ 		detailDesc=22000015,
+ 	openCondition=207
+},
+[1100026] =
+{
+ 		id=1100026,
+ 		heroId=110002,
+ 		needStar=6,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100202},
+ 		name=4267,
+ 		haloDesc={22000112,22000114,22000116},
+ 		levelDesc=5237,
+ 		detailDesc=22000016,
+ 	openCondition=208
+},
+[1100031] =
+{
+ 		id=1100031,
+ 		heroId=110003,
+ 		needStar=1,
+ 		attributeType={1002},
+ 		attributeValue={200},
+ 		name=4243,
+ 		haloDesc={22000151},
+ 		haloNextDesc={22000152},
+ 		levelDesc=5232,
+ 		detailDesc=22000051,
+ 	openCondition=205
+},
+[1100032] =
+{
+ 		id=1100032,
+ 		heroId=110003,
+ 		needStar=2,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		name=4243,
+ 		haloDesc={22000152},
+ 		haloNextDesc={22000153},
+ 		levelDesc=5233,
+ 		detailDesc=22000052,
+ 	openCondition=205
+},
+[1100033] =
+{
+ 		id=1100033,
+ 		heroId=110003,
+ 		needStar=3,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500101},
+ 		name=4243,
+ 		haloDesc={22000152,22000153},
+ 		haloNextDesc={22000154},
+ 		levelDesc=5234,
+ 		detailDesc=22000053,
+ 	openCondition=206
+},
+[1100034] =
+{
+ 		id=1100034,
+ 		heroId=110003,
+ 		needStar=4,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102},
+ 		name=4243,
+ 		haloDesc={22000152,22000154},
+ 		haloNextDesc={22000155},
+ 		levelDesc=5235,
+ 		detailDesc=22000054,
+ 	openCondition=206
+},
+[1100035] =
+{
+ 		id=1100035,
+ 		heroId=110003,
+ 		needStar=5,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102,500201},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000155},
+ 		haloNextDesc={22000156},
+ 		levelDesc=5236,
+ 		detailDesc=22000055,
+ 	openCondition=207
+},
+[1100036] =
+{
+ 		id=1100036,
+ 		heroId=110003,
+ 		needStar=6,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102,500202},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000156},
+ 		levelDesc=5237,
+ 		detailDesc=22000056,
+ 	openCondition=208
+},
+[1100041] =
+{
+ 		id=1100041,
+ 		heroId=110004,
+ 		needStar=1,
+ 		attributeType={34},
+ 		attributeValue={250},
+ 		name=4249,
+ 		haloDesc={22000121},
+ 		haloNextDesc={22000122},
+ 		levelDesc=5232,
+ 		detailDesc=22000021,
+ 	openCondition=205
+},
+[1100042] =
+{
+ 		id=1100042,
+ 		heroId=110004,
+ 		needStar=2,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		name=4249,
+ 		haloDesc={22000122},
+ 		haloNextDesc={22000123},
+ 		levelDesc=5233,
+ 		detailDesc=22000022,
+ 	openCondition=205
+},
+[1100043] =
+{
+ 		id=1100043,
+ 		heroId=110004,
+ 		needStar=3,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200101},
+ 		name=4249,
+ 		haloDesc={22000122,22000123},
+ 		haloNextDesc={22000124},
+ 		levelDesc=5234,
+ 		detailDesc=22000023,
+ 	openCondition=206
+},
+[1100044] =
+{
+ 		id=1100044,
+ 		heroId=110004,
+ 		needStar=4,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102},
+ 		name=4249,
+ 		haloDesc={22000122,22000124},
+ 		haloNextDesc={22000125},
+ 		levelDesc=5235,
+ 		detailDesc=22000024,
+ 	openCondition=206
+},
+[1100045] =
+{
+ 		id=1100045,
+ 		heroId=110004,
+ 		needStar=5,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200201},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000125},
+ 		haloNextDesc={22000126},
+ 		levelDesc=5236,
+ 		detailDesc=22000025,
+ 	openCondition=207
+},
+[1100046] =
+{
+ 		id=1100046,
+ 		heroId=110004,
+ 		needStar=6,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200202},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000126},
+ 		levelDesc=5237,
+ 		detailDesc=22000026,
+ 	openCondition=208
+},
+[1100051] =
+{
+ 		id=1100051,
+ 		heroId=110005,
+ 		needStar=1,
+ 		attributeType={25,26},
+ 		attributeValue={200,200},
+ 		name=4255,
+ 		haloDesc={22000131},
+ 		haloNextDesc={22000132},
+ 		levelDesc=5232,
+ 		detailDesc=22000031,
+ 	openCondition=205
+},
+[1100052] =
+{
+ 		id=1100052,
+ 		heroId=110005,
+ 		needStar=2,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		name=4255,
+ 		haloDesc={22000121,22000132},
+ 		haloNextDesc={22000133},
+ 		levelDesc=5233,
+ 		detailDesc=22000032,
+ 	openCondition=205
+},
+[1100053] =
+{
+ 		id=1100053,
+ 		heroId=110005,
+ 		needStar=3,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300101},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000133},
+ 		haloNextDesc={22000134},
+ 		levelDesc=5234,
+ 		detailDesc=22000033,
+ 	openCondition=206
+},
+[1100054] =
+{
+ 		id=1100054,
+ 		heroId=110005,
+ 		needStar=4,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134},
+ 		haloNextDesc={22000135},
+ 		levelDesc=5235,
+ 		detailDesc=22000034,
+ 	openCondition=206
+},
+[1100055] =
+{
+ 		id=1100055,
+ 		heroId=110005,
+ 		needStar=5,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300201,300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134,22000135},
+ 		haloNextDesc={22000136},
+ 		levelDesc=5236,
+ 		detailDesc=22000035,
+ 	openCondition=207
+},
+[1100056] =
+{
+ 		id=1100056,
+ 		heroId=110005,
+ 		needStar=6,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300202,300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134,22000136},
+ 		levelDesc=5237,
+ 		detailDesc=22000036,
+ 	openCondition=208
+},
+[1100061] =
+{
+ 		id=1100061,
+ 		heroId=110006,
+ 		needStar=1,
+ 		attributeType={34},
+ 		attributeValue={250},
+ 		name=4249,
+ 		haloDesc={22000121},
+ 		haloNextDesc={22000122},
+ 		levelDesc=5232,
+ 		detailDesc=22000021,
+ 	openCondition=205
+},
+[1100062] =
+{
+ 		id=1100062,
+ 		heroId=110006,
+ 		needStar=2,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		name=4249,
+ 		haloDesc={22000122},
+ 		haloNextDesc={22000123},
+ 		levelDesc=5233,
+ 		detailDesc=22000022,
+ 	openCondition=205
+},
+[1100063] =
+{
+ 		id=1100063,
+ 		heroId=110006,
+ 		needStar=3,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200101},
+ 		name=4249,
+ 		haloDesc={22000122,22000123},
+ 		haloNextDesc={22000124},
+ 		levelDesc=5234,
+ 		detailDesc=22000023,
+ 	openCondition=206
+},
+[1100064] =
+{
+ 		id=1100064,
+ 		heroId=110006,
+ 		needStar=4,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102},
+ 		name=4249,
+ 		haloDesc={22000122,22000124},
+ 		haloNextDesc={22000125},
+ 		levelDesc=5235,
+ 		detailDesc=22000024,
+ 	openCondition=206
+},
+[1100065] =
+{
+ 		id=1100065,
+ 		heroId=110006,
+ 		needStar=5,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200201},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000125},
+ 		haloNextDesc={22000126},
+ 		levelDesc=5236,
+ 		detailDesc=22000025,
+ 	openCondition=207
+},
+[1100066] =
+{
+ 		id=1100066,
+ 		heroId=110006,
+ 		needStar=6,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200202},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000126},
+ 		levelDesc=5237,
+ 		detailDesc=22000026,
+ 	openCondition=208
+},
+[1100071] =
+{
+ 		id=1100071,
+ 		heroId=110007,
+ 		needStar=1,
+ 		passive={400101},
+ 		name=4261,
+ 		haloDesc={22000141},
+ 		haloNextDesc={22000142},
+ 		levelDesc=5232,
+ 		detailDesc=22000041,
+ 	openCondition=205
+},
+[1100072] =
+{
+ 		id=1100072,
+ 		heroId=110007,
+ 		needStar=2,
+ 		passive={400102},
+ 		name=4261,
+ 		haloDesc={22000142},
+ 		haloNextDesc={22000143},
+ 		levelDesc=5233,
+ 		detailDesc=22000042,
+ 	openCondition=205
+},
+[1100073] =
+{
+ 		id=1100073,
+ 		heroId=110007,
+ 		needStar=3,
+ 		passive={400201,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000143},
+ 		haloNextDesc={22000144},
+ 		levelDesc=5234,
+ 		detailDesc=22000043,
+ 	openCondition=206
+},
+[1100074] =
+{
+ 		id=1100074,
+ 		heroId=110007,
+ 		needStar=4,
+ 		passive={400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144},
+ 		haloNextDesc={22000145},
+ 		levelDesc=5235,
+ 		detailDesc=22000044,
+ 	openCondition=206
+},
+[1100075] =
+{
+ 		id=1100075,
+ 		heroId=110007,
+ 		needStar=5,
+ 		passive={400301,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000145},
+ 		haloNextDesc={22000146},
+ 		levelDesc=5236,
+ 		detailDesc=22000045,
+ 	openCondition=206
+},
+[1100076] =
+{
+ 		id=1100076,
+ 		heroId=110007,
+ 		needStar=6,
+ 		passive={400302,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000146},
+ 		levelDesc=5237,
+ 		detailDesc=22000046,
+ 	openCondition=206
+},
+[1100081] =
+{
+ 		id=1100081,
+ 		heroId=110008,
+ 		needStar=1,
+ 		attributeType={25,26},
+ 		attributeValue={200,200},
+ 		name=4255,
+ 		haloDesc={22000131},
+ 		haloNextDesc={22000132},
+ 		levelDesc=5232,
+ 		detailDesc=22000031,
+ 	openCondition=205
+},
+[1100082] =
+{
+ 		id=1100082,
+ 		heroId=110008,
+ 		needStar=2,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		name=4255,
+ 		haloDesc={22000131,22000132},
+ 		haloNextDesc={22000133},
+ 		levelDesc=5233,
+ 		detailDesc=22000032,
+ 	openCondition=205
+},
+[1100083] =
+{
+ 		id=1100083,
+ 		heroId=110008,
+ 		needStar=3,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300101},
+ 		name=4255,
+ 		haloDesc={22000131,22000132,22000133},
+ 		haloNextDesc={22000134},
+ 		levelDesc=5234,
+ 		detailDesc=22000033,
+ 	openCondition=206
+},
+[1100084] =
+{
+ 		id=1100084,
+ 		heroId=110008,
+ 		needStar=4,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300102},
+ 		name=4255,
+ 		haloDesc={22000131,22000132,22000134},
+ 		haloNextDesc={22000135},
+ 		levelDesc=5235,
+ 		detailDesc=22000034,
+ 	openCondition=206
+},
+[1100085] =
+{
+ 		id=1100085,
+ 		heroId=110008,
+ 		needStar=5,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300201,300102},
+ 		name=4255,
+ 		haloDesc={22000131,22000132,22000134,22000135},
+ 		haloNextDesc={22000136},
+ 		levelDesc=5236,
+ 		detailDesc=22000035,
+ 	openCondition=207
+},
+[1100086] =
+{
+ 		id=1100086,
+ 		heroId=110008,
+ 		needStar=6,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300202,300102},
+ 		name=4255,
+ 		haloDesc={22000131,22000132,22000134,22000136},
+ 		levelDesc=5237,
+ 		detailDesc=22000036,
+ 	openCondition=208
+},
+[1100091] =
+{
+ 		id=1100091,
+ 		heroId=110009,
+ 		needStar=1,
+ 		attributeType={1002},
+ 		attributeValue={200},
+ 		name=4243,
+ 		haloDesc={22000151},
+ 		haloNextDesc={22000152},
+ 		levelDesc=5232,
+ 		detailDesc=22000051,
+ 	openCondition=205
+},
+[1100092] =
+{
+ 		id=1100092,
+ 		heroId=110009,
+ 		needStar=2,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		name=4243,
+ 		haloDesc={22000152},
+ 		haloNextDesc={22000153},
+ 		levelDesc=5233,
+ 		detailDesc=22000052,
+ 	openCondition=205
+},
+[1100093] =
+{
+ 		id=1100093,
+ 		heroId=110009,
+ 		needStar=3,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500101},
+ 		name=4243,
+ 		haloDesc={22000152,22000153},
+ 		haloNextDesc={22000154},
+ 		levelDesc=5234,
+ 		detailDesc=22000053,
+ 	openCondition=206
+},
+[1100094] =
+{
+ 		id=1100094,
+ 		heroId=110009,
+ 		needStar=4,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102},
+ 		name=4243,
+ 		haloDesc={22000152,22000154},
+ 		haloNextDesc={22000155},
+ 		levelDesc=5235,
+ 		detailDesc=22000054,
+ 	openCondition=206
+},
+[1100095] =
+{
+ 		id=1100095,
+ 		heroId=110009,
+ 		needStar=5,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102,500201},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000155},
+ 		haloNextDesc={22000156},
+ 		levelDesc=5236,
+ 		detailDesc=22000055,
+ 	openCondition=207
+},
+[1100096] =
+{
+ 		id=1100096,
+ 		heroId=110009,
+ 		needStar=6,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102,500202},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000156},
+ 		levelDesc=5237,
+ 		detailDesc=22000056,
+ 	openCondition=208
+},
+[1100101] =
+{
+ 		id=1100101,
+ 		heroId=110010,
+ 		needStar=1,
+ 		passive={400101},
+ 		name=4261,
+ 		haloDesc={22000141},
+ 		haloNextDesc={22000142},
+ 		levelDesc=5232,
+ 		detailDesc=22000041,
+ 	openCondition=205
+},
+[1100102] =
+{
+ 		id=1100102,
+ 		heroId=110010,
+ 		needStar=2,
+ 		passive={400102},
+ 		name=4261,
+ 		haloDesc={22000142},
+ 		haloNextDesc={22000143},
+ 		levelDesc=5233,
+ 		detailDesc=22000042,
+ 	openCondition=205
+},
+[1100103] =
+{
+ 		id=1100103,
+ 		heroId=110010,
+ 		needStar=3,
+ 		passive={400201,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000143},
+ 		haloNextDesc={22000144},
+ 		levelDesc=5234,
+ 		detailDesc=22000043,
+ 	openCondition=206
+},
+[1100104] =
+{
+ 		id=1100104,
+ 		heroId=110010,
+ 		needStar=4,
+ 		passive={400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144},
+ 		haloNextDesc={22000145},
+ 		levelDesc=5235,
+ 		detailDesc=22000044,
+ 	openCondition=206
+},
+[1100105] =
+{
+ 		id=1100105,
+ 		heroId=110010,
+ 		needStar=5,
+ 		passive={400301,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000145},
+ 		haloNextDesc={22000146},
+ 		levelDesc=5236,
+ 		detailDesc=22000045,
+ 	openCondition=207
+},
+[1100106] =
+{
+ 		id=1100106,
+ 		heroId=110010,
+ 		needStar=6,
+ 		passive={400302,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000146},
+ 		levelDesc=5237,
+ 		detailDesc=22000046,
+ 	openCondition=208
+},
+[1100111] =
+{
+ 		id=1100111,
+ 		heroId=110011,
+ 		needStar=1,
+ 		attributeType={34},
+ 		attributeValue={250},
+ 		name=4249,
+ 		haloDesc={22000121},
+ 		haloNextDesc={22000122},
+ 		levelDesc=5232,
+ 		detailDesc=22000021,
+ 	openCondition=205
+},
+[1100112] =
+{
+ 		id=1100112,
+ 		heroId=110011,
+ 		needStar=2,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		name=4249,
+ 		haloDesc={22000122},
+ 		haloNextDesc={22000123},
+ 		levelDesc=5233,
+ 		detailDesc=22000022,
+ 	openCondition=205
+},
+[1100113] =
+{
+ 		id=1100113,
+ 		heroId=110011,
+ 		needStar=3,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200101},
+ 		name=4249,
+ 		haloDesc={22000122,22000123},
+ 		haloNextDesc={22000124},
+ 		levelDesc=5234,
+ 		detailDesc=22000023,
+ 	openCondition=206
+},
+[1100114] =
+{
+ 		id=1100114,
+ 		heroId=110011,
+ 		needStar=4,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102},
+ 		name=4249,
+ 		haloDesc={22000122,22000124},
+ 		haloNextDesc={22000125},
+ 		levelDesc=5235,
+ 		detailDesc=22000024,
+ 	openCondition=206
+},
+[1100115] =
+{
+ 		id=1100115,
+ 		heroId=110011,
+ 		needStar=5,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200201},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000125},
+ 		haloNextDesc={22000126},
+ 		levelDesc=5236,
+ 		detailDesc=22000025,
+ 	openCondition=206
+},
+[1100116] =
+{
+ 		id=1100116,
+ 		heroId=110011,
+ 		needStar=6,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200202},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000126},
+ 		levelDesc=5237,
+ 		detailDesc=22000026,
+ 	openCondition=206
+},
+[1100121] =
+{
+ 		id=1100121,
+ 		heroId=110012,
+ 		needStar=1,
+ 		passive={400101},
+ 		name=4261,
+ 		haloDesc={22000141},
+ 		haloNextDesc={22000142},
+ 		levelDesc=5232,
+ 		detailDesc=22000041,
+ 	openCondition=205
+},
+[1100122] =
+{
+ 		id=1100122,
+ 		heroId=110012,
+ 		needStar=2,
+ 		passive={400102},
+ 		name=4261,
+ 		haloDesc={22000142},
+ 		haloNextDesc={22000143},
+ 		levelDesc=5233,
+ 		detailDesc=22000042,
+ 	openCondition=205
+},
+[1100123] =
+{
+ 		id=1100123,
+ 		heroId=110012,
+ 		needStar=3,
+ 		passive={400201,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000143},
+ 		haloNextDesc={22000144},
+ 		levelDesc=5234,
+ 		detailDesc=22000043,
+ 	openCondition=206
+},
+[1100124] =
+{
+ 		id=1100124,
+ 		heroId=110012,
+ 		needStar=4,
+ 		passive={400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144},
+ 		haloNextDesc={22000145},
+ 		levelDesc=5235,
+ 		detailDesc=22000044,
+ 	openCondition=206
+},
+[1100125] =
+{
+ 		id=1100125,
+ 		heroId=110012,
+ 		needStar=5,
+ 		passive={400301,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000145},
+ 		haloNextDesc={22000146},
+ 		levelDesc=5236,
+ 		detailDesc=22000045,
+ 	openCondition=207
+},
+[1100126] =
+{
+ 		id=1100126,
+ 		heroId=110012,
+ 		needStar=6,
+ 		passive={400302,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000146},
+ 		levelDesc=5237,
+ 		detailDesc=22000046,
+ 	openCondition=208
+},
+[1100131] =
+{
+ 		id=1100131,
+ 		heroId=110013,
+ 		needStar=1,
+ 		attributeType={1001},
+ 		attributeValue={300},
+ 		name=4267,
+ 		haloDesc={22000111},
+ 		haloNextDesc={22000112},
+ 		levelDesc=5232,
+ 		detailDesc=22000011,
+ 	openCondition=205
+},
+[1100132] =
+{
+ 		id=1100132,
+ 		heroId=110013,
+ 		needStar=2,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		name=4267,
+ 		haloDesc={22000112},
+ 		haloNextDesc={22000113},
+ 		levelDesc=5233,
+ 		detailDesc=22000012,
+ 	openCondition=205
+},
+[1100133] =
+{
+ 		id=1100133,
+ 		heroId=110013,
+ 		needStar=3,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100101},
+ 		name=4267,
+ 		haloDesc={22000112,22000113},
+ 		haloNextDesc={22000114},
+ 		levelDesc=5234,
+ 		detailDesc=22000013,
+ 	openCondition=206
+},
+[1100134] =
+{
+ 		id=1100134,
+ 		heroId=110013,
+ 		needStar=4,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102},
+ 		name=4267,
+ 		haloDesc={22000112,22000114},
+ 		haloNextDesc={22000115},
+ 		levelDesc=5235,
+ 		detailDesc=22000014,
+ 	openCondition=206
+},
+[1100135] =
+{
+ 		id=1100135,
+ 		heroId=110013,
+ 		needStar=5,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100201},
+ 		name=4267,
+ 		haloDesc={22000112,22000114,22000115},
+ 		haloNextDesc={22000116},
+ 		levelDesc=5236,
+ 		detailDesc=22000015,
+ 	openCondition=207
+},
+[1100136] =
+{
+ 		id=1100136,
+ 		heroId=110013,
+ 		needStar=6,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100202},
+ 		name=4267,
+ 		haloDesc={22000112,22000114,22000116},
+ 		levelDesc=5237,
+ 		detailDesc=22000016,
+ 	openCondition=208
+},
+[1100141] =
+{
+ 		id=1100141,
+ 		heroId=110014,
+ 		needStar=1,
+ 		attributeType={25,26},
+ 		attributeValue={200,200},
+ 		name=4255,
+ 		haloDesc={22000131},
+ 		haloNextDesc={22000132},
+ 		levelDesc=5232,
+ 		detailDesc=22000031,
+ 	openCondition=205
+},
+[1100142] =
+{
+ 		id=1100142,
+ 		heroId=110014,
+ 		needStar=2,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		name=4255,
+ 		haloDesc={22000121,22000132},
+ 		haloNextDesc={22000133},
+ 		levelDesc=5233,
+ 		detailDesc=22000032,
+ 	openCondition=205
+},
+[1100143] =
+{
+ 		id=1100143,
+ 		heroId=110014,
+ 		needStar=3,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300101},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000133},
+ 		haloNextDesc={22000134},
+ 		levelDesc=5234,
+ 		detailDesc=22000033,
+ 	openCondition=206
+},
+[1100144] =
+{
+ 		id=1100144,
+ 		heroId=110014,
+ 		needStar=4,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134},
+ 		haloNextDesc={22000135},
+ 		levelDesc=5235,
+ 		detailDesc=22000034,
+ 	openCondition=206
+},
+[1100145] =
+{
+ 		id=1100145,
+ 		heroId=110014,
+ 		needStar=5,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300201,300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134,22000135},
+ 		haloNextDesc={22000136},
+ 		levelDesc=5236,
+ 		detailDesc=22000035,
+ 	openCondition=207
+},
+[1100146] =
+{
+ 		id=1100146,
+ 		heroId=110014,
+ 		needStar=6,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300202,300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134,22000136},
+ 		levelDesc=5237,
+ 		detailDesc=22000036,
+ 	openCondition=208
+},
+[1200011] =
+{
+ 		id=1200011,
+ 		heroId=120001,
+ 		needStar=1,
+ 		attributeType={8},
+ 		attributeValue={-3},
+ 		name=4237,
+ 		haloDesc={22000161},
+ 		haloNextDesc={22000162},
+ 		levelDesc=5232,
+ 		detailDesc=22000061,
+ 	openCondition=205
+},
+[1200012] =
+{
+ 		id=1200012,
+ 		heroId=120001,
+ 		needStar=2,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		name=4237,
+ 		haloDesc={22000162},
+ 		haloNextDesc={22000163},
+ 		levelDesc=5233,
+ 		detailDesc=22000062,
+ 	openCondition=205
+},
+[1200013] =
+{
+ 		id=1200013,
+ 		heroId=120001,
+ 		needStar=3,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600101},
+ 		name=4237,
+ 		haloDesc={22000162,22000163},
+ 		haloNextDesc={22000164},
+ 		levelDesc=5234,
+ 		detailDesc=22000063,
+ 	openCondition=206
+},
+[1200014] =
+{
+ 		id=1200014,
+ 		heroId=120001,
+ 		needStar=4,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102},
+ 		name=4237,
+ 		haloDesc={22000162,22000164},
+ 		haloNextDesc={22000165},
+ 		levelDesc=5235,
+ 		detailDesc=22000064,
+ 	openCondition=206
+},
+[1200015] =
+{
+ 		id=1200015,
+ 		heroId=120001,
+ 		needStar=5,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102,600201},
+ 		name=4237,
+ 		haloDesc={22000162,22000164,22000165},
+ 		haloNextDesc={22000166},
+ 		levelDesc=5236,
+ 		detailDesc=22000065,
+ 	openCondition=207
+},
+[1200016] =
+{
+ 		id=1200016,
+ 		heroId=120001,
+ 		needStar=6,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102,600202},
+ 		name=4237,
+ 		haloDesc={22000162,22000164,22000166},
+ 		levelDesc=5237,
+ 		detailDesc=22000066,
+ 	openCondition=208
+},
+[1200021] =
+{
+ 		id=1200021,
+ 		heroId=120002,
+ 		needStar=1,
+ 		attributeType={34},
+ 		attributeValue={250},
+ 		name=4249,
+ 		haloDesc={22000121},
+ 		haloNextDesc={22000122},
+ 		levelDesc=5232,
+ 		detailDesc=22000021,
+ 	openCondition=205
+},
+[1200022] =
+{
+ 		id=1200022,
+ 		heroId=120002,
+ 		needStar=2,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		name=4249,
+ 		haloDesc={22000122},
+ 		haloNextDesc={22000123},
+ 		levelDesc=5233,
+ 		detailDesc=22000022,
+ 	openCondition=205
+},
+[1200023] =
+{
+ 		id=1200023,
+ 		heroId=120002,
+ 		needStar=3,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200101},
+ 		name=4249,
+ 		haloDesc={22000122,22000123},
+ 		haloNextDesc={22000124},
+ 		levelDesc=5234,
+ 		detailDesc=22000023,
+ 	openCondition=206
+},
+[1200024] =
+{
+ 		id=1200024,
+ 		heroId=120002,
+ 		needStar=4,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102},
+ 		name=4249,
+ 		haloDesc={22000122,22000124},
+ 		haloNextDesc={22000125},
+ 		levelDesc=5235,
+ 		detailDesc=22000024,
+ 	openCondition=206
+},
+[1200025] =
+{
+ 		id=1200025,
+ 		heroId=120002,
+ 		needStar=5,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200201},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000125},
+ 		haloNextDesc={22000126},
+ 		levelDesc=5236,
+ 		detailDesc=22000025,
+ 	openCondition=207
+},
+[1200026] =
+{
+ 		id=1200026,
+ 		heroId=120002,
+ 		needStar=6,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200202},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000126},
+ 		levelDesc=5237,
+ 		detailDesc=22000026,
+ 	openCondition=208
+},
+[1200031] =
+{
+ 		id=1200031,
+ 		heroId=120003,
+ 		needStar=1,
+ 		attributeType={1002},
+ 		attributeValue={200},
+ 		name=4243,
+ 		haloDesc={22000151},
+ 		haloNextDesc={22000152},
+ 		levelDesc=5232,
+ 		detailDesc=22000051,
+ 	openCondition=205
+},
+[1200032] =
+{
+ 		id=1200032,
+ 		heroId=120003,
+ 		needStar=2,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		name=4243,
+ 		haloDesc={22000152},
+ 		haloNextDesc={22000153},
+ 		levelDesc=5233,
+ 		detailDesc=22000052,
+ 	openCondition=205
+},
+[1200033] =
+{
+ 		id=1200033,
+ 		heroId=120003,
+ 		needStar=3,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500101},
+ 		name=4243,
+ 		haloDesc={22000152,22000153},
+ 		haloNextDesc={22000154},
+ 		levelDesc=5234,
+ 		detailDesc=22000053,
+ 	openCondition=206
+},
+[1200034] =
+{
+ 		id=1200034,
+ 		heroId=120003,
+ 		needStar=4,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102},
+ 		name=4243,
+ 		haloDesc={22000152,22000154},
+ 		haloNextDesc={22000155},
+ 		levelDesc=5235,
+ 		detailDesc=22000054,
+ 	openCondition=206
+},
+[1200035] =
+{
+ 		id=1200035,
+ 		heroId=120003,
+ 		needStar=5,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102,500201},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000155},
+ 		haloNextDesc={22000156},
+ 		levelDesc=5236,
+ 		detailDesc=22000055,
+ 	openCondition=207
+},
+[1200036] =
+{
+ 		id=1200036,
+ 		heroId=120003,
+ 		needStar=6,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102,500202},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000156},
+ 		levelDesc=5237,
+ 		detailDesc=22000056,
+ 	openCondition=208
+},
+[1200041] =
+{
+ 		id=1200041,
+ 		heroId=120004,
+ 		needStar=1,
+ 		attributeType={34},
+ 		attributeValue={250},
+ 		name=4249,
+ 		haloDesc={22000121},
+ 		haloNextDesc={22000122},
+ 		levelDesc=5232,
+ 		detailDesc=22000021,
+ 	openCondition=205
+},
+[1200042] =
+{
+ 		id=1200042,
+ 		heroId=120004,
+ 		needStar=2,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		name=4249,
+ 		haloDesc={22000122},
+ 		haloNextDesc={22000123},
+ 		levelDesc=5233,
+ 		detailDesc=22000022,
+ 	openCondition=205
+},
+[1200043] =
+{
+ 		id=1200043,
+ 		heroId=120004,
+ 		needStar=3,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200101},
+ 		name=4249,
+ 		haloDesc={22000122,22000123},
+ 		haloNextDesc={22000124},
+ 		levelDesc=5234,
+ 		detailDesc=22000023,
+ 	openCondition=206
+},
+[1200044] =
+{
+ 		id=1200044,
+ 		heroId=120004,
+ 		needStar=4,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102},
+ 		name=4249,
+ 		haloDesc={22000122,22000124},
+ 		haloNextDesc={22000125},
+ 		levelDesc=5235,
+ 		detailDesc=22000024,
+ 	openCondition=206
+},
+[1200045] =
+{
+ 		id=1200045,
+ 		heroId=120004,
+ 		needStar=5,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200201},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000125},
+ 		haloNextDesc={22000126},
+ 		levelDesc=5236,
+ 		detailDesc=22000025,
+ 	openCondition=207
+},
+[1200046] =
+{
+ 		id=1200046,
+ 		heroId=120004,
+ 		needStar=6,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200202},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000126},
+ 		levelDesc=5237,
+ 		detailDesc=22000026,
+ 	openCondition=208
+},
+[1200051] =
+{
+ 		id=1200051,
+ 		heroId=120005,
+ 		needStar=1,
+ 		attributeType={1002},
+ 		attributeValue={200},
+ 		name=4243,
+ 		haloDesc={22000151},
+ 		haloNextDesc={22000152},
+ 		levelDesc=5232,
+ 		detailDesc=22000051,
+ 	openCondition=205
+},
+[1200052] =
+{
+ 		id=1200052,
+ 		heroId=120005,
+ 		needStar=2,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		name=4243,
+ 		haloDesc={22000152},
+ 		haloNextDesc={22000153},
+ 		levelDesc=5233,
+ 		detailDesc=22000052,
+ 	openCondition=205
+},
+[1200053] =
+{
+ 		id=1200053,
+ 		heroId=120005,
+ 		needStar=3,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500101},
+ 		name=4243,
+ 		haloDesc={22000152,22000153},
+ 		haloNextDesc={22000154},
+ 		levelDesc=5234,
+ 		detailDesc=22000053,
+ 	openCondition=206
+},
+[1200054] =
+{
+ 		id=1200054,
+ 		heroId=120005,
+ 		needStar=4,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102},
+ 		name=4243,
+ 		haloDesc={22000152,22000154},
+ 		haloNextDesc={22000155},
+ 		levelDesc=5235,
+ 		detailDesc=22000054,
+ 	openCondition=206
+},
+[1200055] =
+{
+ 		id=1200055,
+ 		heroId=120005,
+ 		needStar=5,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102,500201},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000155},
+ 		haloNextDesc={22000156},
+ 		levelDesc=5236,
+ 		detailDesc=22000055,
+ 	openCondition=206
+},
+[1200056] =
+{
+ 		id=1200056,
+ 		heroId=120005,
+ 		needStar=6,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102,500202},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000156},
+ 		levelDesc=5237,
+ 		detailDesc=22000056,
+ 	openCondition=206
+},
+[1200061] =
+{
+ 		id=1200061,
+ 		heroId=120006,
+ 		needStar=1,
+ 		attributeType={1001},
+ 		attributeValue={300},
+ 		name=4243,
+ 		haloDesc={22000111},
+ 		haloNextDesc={22000112},
+ 		levelDesc=5232,
+ 		detailDesc=22000011,
+ 	openCondition=205
+},
+[1200062] =
+{
+ 		id=1200062,
+ 		heroId=120006,
+ 		needStar=2,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		name=4243,
+ 		haloDesc={22000112},
+ 		haloNextDesc={22000113},
+ 		levelDesc=5233,
+ 		detailDesc=22000012,
+ 	openCondition=205
+},
+[1200063] =
+{
+ 		id=1200063,
+ 		heroId=120006,
+ 		needStar=3,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100101},
+ 		name=4243,
+ 		haloDesc={22000112,22000113},
+ 		haloNextDesc={22000114},
+ 		levelDesc=5234,
+ 		detailDesc=22000013,
+ 	openCondition=206
+},
+[1200064] =
+{
+ 		id=1200064,
+ 		heroId=120006,
+ 		needStar=4,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102},
+ 		name=4243,
+ 		haloDesc={22000112,22000114},
+ 		haloNextDesc={22000115},
+ 		levelDesc=5235,
+ 		detailDesc=22000014,
+ 	openCondition=206
+},
+[1200065] =
+{
+ 		id=1200065,
+ 		heroId=120006,
+ 		needStar=5,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100201},
+ 		name=4243,
+ 		haloDesc={22000112,22000114,22000115},
+ 		haloNextDesc={22000116},
+ 		levelDesc=5236,
+ 		detailDesc=22000015,
+ 	openCondition=206
+},
+[1200066] =
+{
+ 		id=1200066,
+ 		heroId=120006,
+ 		needStar=6,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100202},
+ 		name=4243,
+ 		haloDesc={22000112,22000114,22000116},
+ 		levelDesc=5237,
+ 		detailDesc=22000016,
+ 	openCondition=206
+},
+[1200071] =
+{
+ 		id=1200071,
+ 		heroId=120007,
+ 		needStar=1,
+ 		attributeType={1001},
+ 		attributeValue={300},
+ 		name=4267,
+ 		haloDesc={22000111},
+ 		haloNextDesc={22000112},
+ 		levelDesc=5232,
+ 		detailDesc=22000011,
+ 	openCondition=205
+},
+[1200072] =
+{
+ 		id=1200072,
+ 		heroId=120007,
+ 		needStar=2,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		name=4267,
+ 		haloDesc={22000112},
+ 		haloNextDesc={22000113},
+ 		levelDesc=5233,
+ 		detailDesc=22000012,
+ 	openCondition=205
+},
+[1200073] =
+{
+ 		id=1200073,
+ 		heroId=120007,
+ 		needStar=3,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100101},
+ 		name=4267,
+ 		haloDesc={22000112,22000113},
+ 		haloNextDesc={22000114},
+ 		levelDesc=5234,
+ 		detailDesc=22000013,
+ 	openCondition=206
+},
+[1200074] =
+{
+ 		id=1200074,
+ 		heroId=120007,
+ 		needStar=4,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102},
+ 		name=4267,
+ 		haloDesc={22000112,22000114},
+ 		haloNextDesc={22000115},
+ 		levelDesc=5235,
+ 		detailDesc=22000014,
+ 	openCondition=206
+},
+[1200075] =
+{
+ 		id=1200075,
+ 		heroId=120007,
+ 		needStar=5,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100201},
+ 		name=4267,
+ 		haloDesc={22000112,22000114,22000115},
+ 		haloNextDesc={22000116},
+ 		levelDesc=5236,
+ 		detailDesc=22000015,
+ 	openCondition=207
+},
+[1200076] =
+{
+ 		id=1200076,
+ 		heroId=120007,
+ 		needStar=6,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100202},
+ 		name=4267,
+ 		haloDesc={22000112,22000114,22000116},
+ 		levelDesc=5237,
+ 		detailDesc=22000016,
+ 	openCondition=208
+},
+[1200081] =
+{
+ 		id=1200081,
+ 		heroId=120008,
+ 		needStar=1,
+ 		attributeType={34},
+ 		attributeValue={250},
+ 		name=4249,
+ 		haloDesc={22000121},
+ 		haloNextDesc={22000122},
+ 		levelDesc=5232,
+ 		detailDesc=22000021,
+ 	openCondition=205
+},
+[1200082] =
+{
+ 		id=1200082,
+ 		heroId=120008,
+ 		needStar=2,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		name=4249,
+ 		haloDesc={22000122},
+ 		haloNextDesc={22000123},
+ 		levelDesc=5233,
+ 		detailDesc=22000022,
+ 	openCondition=205
+},
+[1200083] =
+{
+ 		id=1200083,
+ 		heroId=120008,
+ 		needStar=3,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200101},
+ 		name=4249,
+ 		haloDesc={22000122,22000123},
+ 		haloNextDesc={22000124},
+ 		levelDesc=5234,
+ 		detailDesc=22000023,
+ 	openCondition=206
+},
+[1200084] =
+{
+ 		id=1200084,
+ 		heroId=120008,
+ 		needStar=4,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102},
+ 		name=4249,
+ 		haloDesc={22000122,22000124},
+ 		haloNextDesc={22000125},
+ 		levelDesc=5235,
+ 		detailDesc=22000024,
+ 	openCondition=206
+},
+[1200085] =
+{
+ 		id=1200085,
+ 		heroId=120008,
+ 		needStar=5,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200201},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000125},
+ 		haloNextDesc={22000126},
+ 		levelDesc=5236,
+ 		detailDesc=22000025,
+ 	openCondition=207
+},
+[1200086] =
+{
+ 		id=1200086,
+ 		heroId=120008,
+ 		needStar=6,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200202},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000126},
+ 		levelDesc=5237,
+ 		detailDesc=22000026,
+ 	openCondition=208
+},
+[1200091] =
+{
+ 		id=1200091,
+ 		heroId=120009,
+ 		needStar=1,
+ 		attributeType={34},
+ 		attributeValue={250},
+ 		name=4249,
+ 		haloDesc={22000121},
+ 		haloNextDesc={22000122},
+ 		levelDesc=5232,
+ 		detailDesc=22000021,
+ 	openCondition=205
+},
+[1200092] =
+{
+ 		id=1200092,
+ 		heroId=120009,
+ 		needStar=2,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		name=4249,
+ 		haloDesc={22000122},
+ 		haloNextDesc={22000123},
+ 		levelDesc=5233,
+ 		detailDesc=22000022,
+ 	openCondition=205
+},
+[1200093] =
+{
+ 		id=1200093,
+ 		heroId=120009,
+ 		needStar=3,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200101},
+ 		name=4249,
+ 		haloDesc={22000122,22000123},
+ 		haloNextDesc={22000124},
+ 		levelDesc=5234,
+ 		detailDesc=22000023,
+ 	openCondition=206
+},
+[1200094] =
+{
+ 		id=1200094,
+ 		heroId=120009,
+ 		needStar=4,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102},
+ 		name=4249,
+ 		haloDesc={22000122,22000124},
+ 		haloNextDesc={22000125},
+ 		levelDesc=5235,
+ 		detailDesc=22000024,
+ 	openCondition=206
+},
+[1200095] =
+{
+ 		id=1200095,
+ 		heroId=120009,
+ 		needStar=5,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200201},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000125},
+ 		haloNextDesc={22000126},
+ 		levelDesc=5236,
+ 		detailDesc=22000025,
+ 	openCondition=207
+},
+[1200096] =
+{
+ 		id=1200096,
+ 		heroId=120009,
+ 		needStar=6,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200202},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000126},
+ 		levelDesc=5237,
+ 		detailDesc=22000026,
+ 	openCondition=208
+},
+[1200101] =
+{
+ 		id=1200101,
+ 		heroId=120010,
+ 		needStar=1,
+ 		attributeType={8},
+ 		attributeValue={-3},
+ 		name=4237,
+ 		haloDesc={22000161},
+ 		haloNextDesc={22000162},
+ 		levelDesc=5232,
+ 		detailDesc=22000061,
+ 	openCondition=205
+},
+[1200102] =
+{
+ 		id=1200102,
+ 		heroId=120010,
+ 		needStar=2,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		name=4237,
+ 		haloDesc={22000162},
+ 		haloNextDesc={22000163},
+ 		levelDesc=5233,
+ 		detailDesc=22000062,
+ 	openCondition=205
+},
+[1200103] =
+{
+ 		id=1200103,
+ 		heroId=120010,
+ 		needStar=3,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600101},
+ 		name=4237,
+ 		haloDesc={22000162,22000163},
+ 		haloNextDesc={22000164},
+ 		levelDesc=5234,
+ 		detailDesc=22000063,
+ 	openCondition=206
+},
+[1200104] =
+{
+ 		id=1200104,
+ 		heroId=120010,
+ 		needStar=4,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102},
+ 		name=4237,
+ 		haloDesc={22000162,22000164},
+ 		haloNextDesc={22000165},
+ 		levelDesc=5235,
+ 		detailDesc=22000064,
+ 	openCondition=206
+},
+[1200105] =
+{
+ 		id=1200105,
+ 		heroId=120010,
+ 		needStar=5,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102,600201},
+ 		name=4237,
+ 		haloDesc={22000162,22000164,22000165},
+ 		haloNextDesc={22000166},
+ 		levelDesc=5236,
+ 		detailDesc=22000065,
+ 	openCondition=206
+},
+[1200106] =
+{
+ 		id=1200106,
+ 		heroId=120010,
+ 		needStar=6,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102,600202},
+ 		name=4237,
+ 		haloDesc={22000162,22000164,22000166},
+ 		levelDesc=5237,
+ 		detailDesc=22000066,
+ 	openCondition=206
+},
+[1200111] =
+{
+ 		id=1200111,
+ 		heroId=120011,
+ 		needStar=1,
+ 		passive={400101},
+ 		name=4261,
+ 		haloDesc={22000141},
+ 		haloNextDesc={22000142},
+ 		levelDesc=5232,
+ 		detailDesc=22000041,
+ 	openCondition=205
+},
+[1200112] =
+{
+ 		id=1200112,
+ 		heroId=120011,
+ 		needStar=2,
+ 		passive={400102},
+ 		name=4261,
+ 		haloDesc={22000142},
+ 		haloNextDesc={22000143},
+ 		levelDesc=5233,
+ 		detailDesc=22000042,
+ 	openCondition=205
+},
+[1200113] =
+{
+ 		id=1200113,
+ 		heroId=120011,
+ 		needStar=3,
+ 		passive={400201,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000143},
+ 		haloNextDesc={22000144},
+ 		levelDesc=5234,
+ 		detailDesc=22000043,
+ 	openCondition=206
+},
+[1200114] =
+{
+ 		id=1200114,
+ 		heroId=120011,
+ 		needStar=4,
+ 		passive={400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144},
+ 		haloNextDesc={22000145},
+ 		levelDesc=5235,
+ 		detailDesc=22000044,
+ 	openCondition=206
+},
+[1200115] =
+{
+ 		id=1200115,
+ 		heroId=120011,
+ 		needStar=5,
+ 		passive={400301,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000145},
+ 		haloNextDesc={22000146},
+ 		levelDesc=5236,
+ 		detailDesc=22000045,
+ 	openCondition=207
+},
+[1200116] =
+{
+ 		id=1200116,
+ 		heroId=120011,
+ 		needStar=6,
+ 		passive={400302,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000146},
+ 		levelDesc=5237,
+ 		detailDesc=22000046,
+ 	openCondition=208
+},
+[1200121] =
+{
+ 		id=1200121,
+ 		heroId=120012,
+ 		needStar=1,
+ 		attributeType={25,26},
+ 		attributeValue={200,200},
+ 		name=4255,
+ 		haloDesc={22000131},
+ 		haloNextDesc={22000132},
+ 		levelDesc=5232,
+ 		detailDesc=22000031,
+ 	openCondition=205
+},
+[1200122] =
+{
+ 		id=1200122,
+ 		heroId=120012,
+ 		needStar=2,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		name=4255,
+ 		haloDesc={22000121,22000132},
+ 		haloNextDesc={22000133},
+ 		levelDesc=5233,
+ 		detailDesc=22000032,
+ 	openCondition=205
+},
+[1200123] =
+{
+ 		id=1200123,
+ 		heroId=120012,
+ 		needStar=3,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300101},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000133},
+ 		haloNextDesc={22000134},
+ 		levelDesc=5234,
+ 		detailDesc=22000033,
+ 	openCondition=206
+},
+[1200124] =
+{
+ 		id=1200124,
+ 		heroId=120012,
+ 		needStar=4,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134},
+ 		haloNextDesc={22000135},
+ 		levelDesc=5235,
+ 		detailDesc=22000034,
+ 	openCondition=206
+},
+[1200125] =
+{
+ 		id=1200125,
+ 		heroId=120012,
+ 		needStar=5,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300201,300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134,22000135},
+ 		haloNextDesc={22000136},
+ 		levelDesc=5236,
+ 		detailDesc=22000035,
+ 	openCondition=207
+},
+[1200126] =
+{
+ 		id=1200126,
+ 		heroId=120012,
+ 		needStar=6,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300202,300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134,22000136},
+ 		levelDesc=5237,
+ 		detailDesc=22000036,
+ 	openCondition=208
+},
+[1200131] =
+{
+ 		id=1200131,
+ 		heroId=120013,
+ 		needStar=1,
+ 		attributeType={34},
+ 		attributeValue={250},
+ 		name=4249,
+ 		haloDesc={22000121},
+ 		haloNextDesc={22000122},
+ 		levelDesc=5232,
+ 		detailDesc=22000021,
+ 	openCondition=205
+},
+[1200132] =
+{
+ 		id=1200132,
+ 		heroId=120013,
+ 		needStar=2,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		name=4249,
+ 		haloDesc={22000122},
+ 		haloNextDesc={22000123},
+ 		levelDesc=5233,
+ 		detailDesc=22000022,
+ 	openCondition=205
+},
+[1200133] =
+{
+ 		id=1200133,
+ 		heroId=120013,
+ 		needStar=3,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200101},
+ 		name=4249,
+ 		haloDesc={22000122,22000123},
+ 		haloNextDesc={22000124},
+ 		levelDesc=5234,
+ 		detailDesc=22000023,
+ 	openCondition=206
+},
+[1200134] =
+{
+ 		id=1200134,
+ 		heroId=120013,
+ 		needStar=4,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102},
+ 		name=4249,
+ 		haloDesc={22000122,22000124},
+ 		haloNextDesc={22000125},
+ 		levelDesc=5235,
+ 		detailDesc=22000024,
+ 	openCondition=206
+},
+[1200135] =
+{
+ 		id=1200135,
+ 		heroId=120013,
+ 		needStar=5,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200201},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000125},
+ 		haloNextDesc={22000126},
+ 		levelDesc=5236,
+ 		detailDesc=22000025,
+ 	openCondition=207
+},
+[1200136] =
+{
+ 		id=1200136,
+ 		heroId=120013,
+ 		needStar=6,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200202},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000126},
+ 		levelDesc=5237,
+ 		detailDesc=22000026,
+ 	openCondition=208
+},
+[1300011] =
+{
+ 		id=1300011,
+ 		heroId=130001,
+ 		needStar=1,
+ 		passive={400101},
+ 		name=4261,
+ 		haloDesc={22000141},
+ 		haloNextDesc={22000142},
+ 		levelDesc=5232,
+ 		detailDesc=22000041,
+ 	openCondition=205
+},
+[1300012] =
+{
+ 		id=1300012,
+ 		heroId=130001,
+ 		needStar=2,
+ 		passive={400102},
+ 		name=4261,
+ 		haloDesc={22000142},
+ 		haloNextDesc={22000143},
+ 		levelDesc=5233,
+ 		detailDesc=22000042,
+ 	openCondition=205
+},
+[1300013] =
+{
+ 		id=1300013,
+ 		heroId=130001,
+ 		needStar=3,
+ 		passive={400201,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000143},
+ 		haloNextDesc={22000144},
+ 		levelDesc=5234,
+ 		detailDesc=22000043,
+ 	openCondition=206
+},
+[1300014] =
+{
+ 		id=1300014,
+ 		heroId=130001,
+ 		needStar=4,
+ 		passive={400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144},
+ 		haloNextDesc={22000145},
+ 		levelDesc=5235,
+ 		detailDesc=22000044,
+ 	openCondition=206
+},
+[1300015] =
+{
+ 		id=1300015,
+ 		heroId=130001,
+ 		needStar=5,
+ 		passive={400301,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000145},
+ 		haloNextDesc={22000146},
+ 		levelDesc=5236,
+ 		detailDesc=22000045,
+ 	openCondition=207
+},
+[1300016] =
+{
+ 		id=1300016,
+ 		heroId=130001,
+ 		needStar=6,
+ 		passive={400302,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000146},
+ 		levelDesc=5237,
+ 		detailDesc=22000046,
+ 	openCondition=208
+},
+[1300021] =
+{
+ 		id=1300021,
+ 		heroId=130002,
+ 		needStar=1,
+ 		attributeType={8},
+ 		attributeValue={-3},
+ 		name=4237,
+ 		haloDesc={22000161},
+ 		haloNextDesc={22000162},
+ 		levelDesc=5232,
+ 		detailDesc=22000061,
+ 	openCondition=205
+},
+[1300022] =
+{
+ 		id=1300022,
+ 		heroId=130002,
+ 		needStar=2,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		name=4237,
+ 		haloDesc={22000162},
+ 		haloNextDesc={22000163},
+ 		levelDesc=5233,
+ 		detailDesc=22000062,
+ 	openCondition=205
+},
+[1300023] =
+{
+ 		id=1300023,
+ 		heroId=130002,
+ 		needStar=3,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600101},
+ 		name=4237,
+ 		haloDesc={22000162,22000163},
+ 		haloNextDesc={22000164},
+ 		levelDesc=5234,
+ 		detailDesc=22000063,
+ 	openCondition=206
+},
+[1300024] =
+{
+ 		id=1300024,
+ 		heroId=130002,
+ 		needStar=4,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102},
+ 		name=4237,
+ 		haloDesc={22000162,22000164},
+ 		haloNextDesc={22000165},
+ 		levelDesc=5235,
+ 		detailDesc=22000064,
+ 	openCondition=206
+},
+[1300025] =
+{
+ 		id=1300025,
+ 		heroId=130002,
+ 		needStar=5,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102,600201},
+ 		name=4237,
+ 		haloDesc={22000162,22000164,22000165},
+ 		haloNextDesc={22000166},
+ 		levelDesc=5236,
+ 		detailDesc=22000065,
+ 	openCondition=206
+},
+[1300026] =
+{
+ 		id=1300026,
+ 		heroId=130002,
+ 		needStar=6,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102,600202},
+ 		name=4237,
+ 		haloDesc={22000162,22000164,22000166},
+ 		levelDesc=5237,
+ 		detailDesc=22000066,
+ 	openCondition=206
+},
+[1300031] =
+{
+ 		id=1300031,
+ 		heroId=130003,
+ 		needStar=1,
+ 		attributeType={1001},
+ 		attributeValue={300},
+ 		name=4267,
+ 		haloDesc={22000111},
+ 		haloNextDesc={22000112},
+ 		levelDesc=5232,
+ 		detailDesc=22000011,
+ 	openCondition=205
+},
+[1300032] =
+{
+ 		id=1300032,
+ 		heroId=130003,
+ 		needStar=2,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		name=4267,
+ 		haloDesc={22000112},
+ 		haloNextDesc={22000113},
+ 		levelDesc=5233,
+ 		detailDesc=22000012,
+ 	openCondition=205
+},
+[1300033] =
+{
+ 		id=1300033,
+ 		heroId=130003,
+ 		needStar=3,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100101},
+ 		name=4267,
+ 		haloDesc={22000112,22000113},
+ 		haloNextDesc={22000114},
+ 		levelDesc=5234,
+ 		detailDesc=22000013,
+ 	openCondition=206
+},
+[1300034] =
+{
+ 		id=1300034,
+ 		heroId=130003,
+ 		needStar=4,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102},
+ 		name=4267,
+ 		haloDesc={22000112,22000114},
+ 		haloNextDesc={22000115},
+ 		levelDesc=5235,
+ 		detailDesc=22000014,
+ 	openCondition=206
+},
+[1300035] =
+{
+ 		id=1300035,
+ 		heroId=130003,
+ 		needStar=5,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100201},
+ 		name=4267,
+ 		haloDesc={22000112,22000114,22000115},
+ 		haloNextDesc={22000116},
+ 		levelDesc=5236,
+ 		detailDesc=22000015,
+ 	openCondition=207
+},
+[1300036] =
+{
+ 		id=1300036,
+ 		heroId=130003,
+ 		needStar=6,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100202},
+ 		name=4267,
+ 		haloDesc={22000112,22000114,22000116},
+ 		levelDesc=5237,
+ 		detailDesc=22000016,
+ 	openCondition=208
+},
+[1300041] =
+{
+ 		id=1300041,
+ 		heroId=130004,
+ 		needStar=1,
+ 		attributeType={25,26},
+ 		attributeValue={200,200},
+ 		name=4255,
+ 		haloDesc={22000131},
+ 		haloNextDesc={22000132},
+ 		levelDesc=5232,
+ 		detailDesc=22000031,
+ 	openCondition=205
+},
+[1300042] =
+{
+ 		id=1300042,
+ 		heroId=130004,
+ 		needStar=2,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		name=4255,
+ 		haloDesc={22000121,22000132},
+ 		haloNextDesc={22000133},
+ 		levelDesc=5233,
+ 		detailDesc=22000032,
+ 	openCondition=205
+},
+[1300043] =
+{
+ 		id=1300043,
+ 		heroId=130004,
+ 		needStar=3,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300101},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000133},
+ 		haloNextDesc={22000134},
+ 		levelDesc=5234,
+ 		detailDesc=22000033,
+ 	openCondition=206
+},
+[1300044] =
+{
+ 		id=1300044,
+ 		heroId=130004,
+ 		needStar=4,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134},
+ 		haloNextDesc={22000135},
+ 		levelDesc=5235,
+ 		detailDesc=22000034,
+ 	openCondition=206
+},
+[1300045] =
+{
+ 		id=1300045,
+ 		heroId=130004,
+ 		needStar=5,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300201,300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134,22000135},
+ 		haloNextDesc={22000136},
+ 		levelDesc=5236,
+ 		detailDesc=22000035,
+ 	openCondition=207
+},
+[1300046] =
+{
+ 		id=1300046,
+ 		heroId=130004,
+ 		needStar=6,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300202,300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134,22000136},
+ 		levelDesc=5237,
+ 		detailDesc=22000036,
+ 	openCondition=208
+},
+[1300051] =
+{
+ 		id=1300051,
+ 		heroId=130005,
+ 		needStar=1,
+ 		passive={400101},
+ 		name=4261,
+ 		haloDesc={22000141},
+ 		haloNextDesc={22000142},
+ 		levelDesc=5232,
+ 		detailDesc=22000041,
+ 	openCondition=205
+},
+[1300052] =
+{
+ 		id=1300052,
+ 		heroId=130005,
+ 		needStar=2,
+ 		passive={400102},
+ 		name=4261,
+ 		haloDesc={22000142},
+ 		haloNextDesc={22000143},
+ 		levelDesc=5233,
+ 		detailDesc=22000042,
+ 	openCondition=205
+},
+[1300053] =
+{
+ 		id=1300053,
+ 		heroId=130005,
+ 		needStar=3,
+ 		passive={400201,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000143},
+ 		haloNextDesc={22000144},
+ 		levelDesc=5234,
+ 		detailDesc=22000043,
+ 	openCondition=206
+},
+[1300054] =
+{
+ 		id=1300054,
+ 		heroId=130005,
+ 		needStar=4,
+ 		passive={400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144},
+ 		haloNextDesc={22000145},
+ 		levelDesc=5235,
+ 		detailDesc=22000044,
+ 	openCondition=206
+},
+[1300055] =
+{
+ 		id=1300055,
+ 		heroId=130005,
+ 		needStar=5,
+ 		passive={400301,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000145},
+ 		haloNextDesc={22000146},
+ 		levelDesc=5236,
+ 		detailDesc=22000045,
+ 	openCondition=207
+},
+[1300056] =
+{
+ 		id=1300056,
+ 		heroId=130005,
+ 		needStar=6,
+ 		passive={400302,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000146},
+ 		levelDesc=5237,
+ 		detailDesc=22000046,
+ 	openCondition=208
+},
+[1300061] =
+{
+ 		id=1300061,
+ 		heroId=130006,
+ 		needStar=1,
+ 		attributeType={1002},
+ 		attributeValue={250},
+ 		name=4243,
+ 		haloDesc={22000151},
+ 		haloNextDesc={22000152},
+ 		levelDesc=5232,
+ 		detailDesc=22000051,
+ 	openCondition=205
+},
+[1300062] =
+{
+ 		id=1300062,
+ 		heroId=130006,
+ 		needStar=2,
+ 		attributeType={1002},
+ 		attributeValue={500},
+ 		name=4243,
+ 		haloDesc={22000152},
+ 		haloNextDesc={22000153},
+ 		levelDesc=5233,
+ 		detailDesc=22000052,
+ 	openCondition=205
+},
+[1300063] =
+{
+ 		id=1300063,
+ 		heroId=130006,
+ 		needStar=3,
+ 		attributeType={1002},
+ 		attributeValue={500},
+ 		passive={500101},
+ 		name=4243,
+ 		haloDesc={22000152,22000153},
+ 		haloNextDesc={22000154},
+ 		levelDesc=5234,
+ 		detailDesc=22000053,
+ 	openCondition=206
+},
+[1300064] =
+{
+ 		id=1300064,
+ 		heroId=130006,
+ 		needStar=4,
+ 		attributeType={1002},
+ 		attributeValue={500},
+ 		passive={500102},
+ 		name=4243,
+ 		haloDesc={22000152,22000154},
+ 		haloNextDesc={22000155},
+ 		levelDesc=5235,
+ 		detailDesc=22000054,
+ 	openCondition=206
+},
+[1300065] =
+{
+ 		id=1300065,
+ 		heroId=130006,
+ 		needStar=5,
+ 		attributeType={1002},
+ 		attributeValue={500},
+ 		passive={500102,500201},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000155},
+ 		haloNextDesc={22000156},
+ 		levelDesc=5236,
+ 		detailDesc=22000055,
+ 	openCondition=207
+},
+[1300066] =
+{
+ 		id=1300066,
+ 		heroId=130006,
+ 		needStar=6,
+ 		attributeType={1002},
+ 		attributeValue={500},
+ 		passive={500102,500202},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000156},
+ 		levelDesc=5237,
+ 		detailDesc=22000056,
+ 	openCondition=208
+},
+[1300071] =
+{
+ 		id=1300071,
+ 		heroId=130007,
+ 		needStar=1,
+ 		attributeType={1002},
+ 		attributeValue={250},
+ 		name=4243,
+ 		haloDesc={22000151},
+ 		haloNextDesc={22000152},
+ 		levelDesc=5232,
+ 		detailDesc=22000051,
+ 	openCondition=205
+},
+[1300072] =
+{
+ 		id=1300072,
+ 		heroId=130007,
+ 		needStar=2,
+ 		attributeType={1002},
+ 		attributeValue={500},
+ 		name=4243,
+ 		haloDesc={22000152},
+ 		haloNextDesc={22000153},
+ 		levelDesc=5233,
+ 		detailDesc=22000052,
+ 	openCondition=205
+},
+[1300073] =
+{
+ 		id=1300073,
+ 		heroId=130007,
+ 		needStar=3,
+ 		attributeType={1002},
+ 		attributeValue={500},
+ 		passive={500101},
+ 		name=4243,
+ 		haloDesc={22000152,22000153},
+ 		haloNextDesc={22000154},
+ 		levelDesc=5234,
+ 		detailDesc=22000053,
+ 	openCondition=206
+},
+[1300074] =
+{
+ 		id=1300074,
+ 		heroId=130007,
+ 		needStar=4,
+ 		attributeType={1002},
+ 		attributeValue={500},
+ 		passive={500102},
+ 		name=4243,
+ 		haloDesc={22000152,22000154},
+ 		haloNextDesc={22000155},
+ 		levelDesc=5235,
+ 		detailDesc=22000054,
+ 	openCondition=206
+},
+[1300075] =
+{
+ 		id=1300075,
+ 		heroId=130007,
+ 		needStar=5,
+ 		attributeType={1002},
+ 		attributeValue={500},
+ 		passive={500102,500201},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000155},
+ 		haloNextDesc={22000156},
+ 		levelDesc=5236,
+ 		detailDesc=22000055,
+ 	openCondition=206
+},
+[1300076] =
+{
+ 		id=1300076,
+ 		heroId=130007,
+ 		needStar=6,
+ 		attributeType={1002},
+ 		attributeValue={500},
+ 		passive={500102,500202},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000156},
+ 		levelDesc=5237,
+ 		detailDesc=22000056,
+ 	openCondition=206
+},
+[1300081] =
+{
+ 		id=1300081,
+ 		heroId=130008,
+ 		needStar=1,
+ 		passive={400101},
+ 		name=4243,
+ 		haloDesc={22000141},
+ 		haloNextDesc={22000142},
+ 		levelDesc=5232,
+ 		detailDesc=22000041,
+ 	openCondition=205
+},
+[1300082] =
+{
+ 		id=1300082,
+ 		heroId=130008,
+ 		needStar=2,
+ 		passive={400102},
+ 		name=4243,
+ 		haloDesc={22000142},
+ 		haloNextDesc={22000143},
+ 		levelDesc=5233,
+ 		detailDesc=22000042,
+ 	openCondition=205
+},
+[1300083] =
+{
+ 		id=1300083,
+ 		heroId=130008,
+ 		needStar=3,
+ 		passive={400201,400102},
+ 		name=4243,
+ 		haloDesc={22000142,22000143},
+ 		haloNextDesc={22000144},
+ 		levelDesc=5234,
+ 		detailDesc=22000043,
+ 	openCondition=206
+},
+[1300084] =
+{
+ 		id=1300084,
+ 		heroId=130008,
+ 		needStar=4,
+ 		passive={400202,400102},
+ 		name=4243,
+ 		haloDesc={22000142,22000144},
+ 		haloNextDesc={22000145},
+ 		levelDesc=5235,
+ 		detailDesc=22000044,
+ 	openCondition=206
+},
+[1300085] =
+{
+ 		id=1300085,
+ 		heroId=130008,
+ 		needStar=5,
+ 		passive={400301,400202,400102},
+ 		name=4243,
+ 		haloDesc={22000142,22000144,22000145},
+ 		haloNextDesc={22000146},
+ 		levelDesc=5236,
+ 		detailDesc=22000045,
+ 	openCondition=206
+},
+[1300086] =
+{
+ 		id=1300086,
+ 		heroId=130008,
+ 		needStar=6,
+ 		passive={400302,400202,400102},
+ 		name=4243,
+ 		haloDesc={22000142,22000144,22000146},
+ 		levelDesc=5237,
+ 		detailDesc=22000046,
+ 	openCondition=206
+},
+[1300091] =
+{
+ 		id=1300091,
+ 		heroId=130009,
+ 		needStar=1,
+ 		passive={400101},
+ 		name=4261,
+ 		haloDesc={22000141},
+ 		haloNextDesc={22000142},
+ 		levelDesc=5232,
+ 		detailDesc=22000041,
+ 	openCondition=205
+},
+[1300092] =
+{
+ 		id=1300092,
+ 		heroId=130009,
+ 		needStar=2,
+ 		passive={400102},
+ 		name=4261,
+ 		haloDesc={22000142},
+ 		haloNextDesc={22000163},
+ 		levelDesc=5233,
+ 		detailDesc=22000042,
+ 	openCondition=205
+},
+[1300093] =
+{
+ 		id=1300093,
+ 		heroId=130009,
+ 		needStar=3,
+ 		passive={400102,600101},
+ 		name=4237,
+ 		haloDesc={22000162,22000163},
+ 		haloNextDesc={22000164},
+ 		levelDesc=5234,
+ 		detailDesc=22000063,
+ 	openCondition=206
+},
+[1300094] =
+{
+ 		id=1300094,
+ 		heroId=130009,
+ 		needStar=4,
+ 		passive={400102,600102},
+ 		name=4237,
+ 		haloDesc={22000162,22000164},
+ 		haloNextDesc={22000165},
+ 		levelDesc=5235,
+ 		detailDesc=22000064,
+ 	openCondition=206
+},
+[1300095] =
+{
+ 		id=1300095,
+ 		heroId=130009,
+ 		needStar=5,
+ 		passive={400102,600102,600201},
+ 		name=4237,
+ 		haloDesc={22000162,22000164,22000165},
+ 		haloNextDesc={22000166},
+ 		levelDesc=5236,
+ 		detailDesc=22000065,
+ 	openCondition=207
+},
+[1300096] =
+{
+ 		id=1300096,
+ 		heroId=130009,
+ 		needStar=6,
+ 		passive={400102,600102,600202},
+ 		name=4237,
+ 		haloDesc={22000162,22000164,22000166},
+ 		levelDesc=5237,
+ 		detailDesc=22000066,
+ 	openCondition=208
+},
+[1300101] =
+{
+ 		id=1300101,
+ 		heroId=130010,
+ 		needStar=1,
+ 		attributeType={8},
+ 		attributeValue={-3},
+ 		name=4237,
+ 		haloDesc={22000161},
+ 		haloNextDesc={22000162},
+ 		levelDesc=5232,
+ 		detailDesc=22000061,
+ 	openCondition=205
+},
+[1300102] =
+{
+ 		id=1300102,
+ 		heroId=130010,
+ 		needStar=2,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		name=4237,
+ 		haloDesc={22000162},
+ 		haloNextDesc={22000163},
+ 		levelDesc=5233,
+ 		detailDesc=22000062,
+ 	openCondition=205
+},
+[1300103] =
+{
+ 		id=1300103,
+ 		heroId=130010,
+ 		needStar=3,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600101},
+ 		name=4237,
+ 		haloDesc={22000162,22000163},
+ 		haloNextDesc={22000164},
+ 		levelDesc=5234,
+ 		detailDesc=22000063,
+ 	openCondition=206
+},
+[1300104] =
+{
+ 		id=1300104,
+ 		heroId=130010,
+ 		needStar=4,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102},
+ 		name=4237,
+ 		haloDesc={22000162,22000164},
+ 		haloNextDesc={22000165},
+ 		levelDesc=5235,
+ 		detailDesc=22000064,
+ 	openCondition=206
+},
+[1300105] =
+{
+ 		id=1300105,
+ 		heroId=130010,
+ 		needStar=5,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102,600201},
+ 		name=4237,
+ 		haloDesc={22000162,22000164,22000165},
+ 		haloNextDesc={22000166},
+ 		levelDesc=5236,
+ 		detailDesc=22000065,
+ 	openCondition=207
+},
+[1300106] =
+{
+ 		id=1300106,
+ 		heroId=130010,
+ 		needStar=6,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102,600202},
+ 		name=4237,
+ 		haloDesc={22000162,22000164,22000166},
+ 		levelDesc=5237,
+ 		detailDesc=22000066,
+ 	openCondition=208
+},
+[1300111] =
+{
+ 		id=1300111,
+ 		heroId=130011,
+ 		needStar=1,
+ 		passive={400101},
+ 		name=4261,
+ 		haloDesc={22000141},
+ 		haloNextDesc={22000142},
+ 		levelDesc=5232,
+ 		detailDesc=22000041,
+ 	openCondition=205
+},
+[1300112] =
+{
+ 		id=1300112,
+ 		heroId=130011,
+ 		needStar=2,
+ 		passive={400102},
+ 		name=4261,
+ 		haloDesc={22000142},
+ 		haloNextDesc={22000143},
+ 		levelDesc=5233,
+ 		detailDesc=22000042,
+ 	openCondition=205
+},
+[1300113] =
+{
+ 		id=1300113,
+ 		heroId=130011,
+ 		needStar=3,
+ 		passive={400201,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000143},
+ 		haloNextDesc={22000144},
+ 		levelDesc=5234,
+ 		detailDesc=22000043,
+ 	openCondition=206
+},
+[1300114] =
+{
+ 		id=1300114,
+ 		heroId=130011,
+ 		needStar=4,
+ 		passive={400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144},
+ 		haloNextDesc={22000145},
+ 		levelDesc=5235,
+ 		detailDesc=22000044,
+ 	openCondition=206
+},
+[1300115] =
+{
+ 		id=1300115,
+ 		heroId=130011,
+ 		needStar=5,
+ 		passive={400301,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000145},
+ 		haloNextDesc={22000146},
+ 		levelDesc=5236,
+ 		detailDesc=22000045,
+ 	openCondition=207
+},
+[1300116] =
+{
+ 		id=1300116,
+ 		heroId=130011,
+ 		needStar=6,
+ 		passive={400302,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000146},
+ 		levelDesc=5237,
+ 		detailDesc=22000046,
+ 	openCondition=208
+},
+[1300121] =
+{
+ 		id=1300121,
+ 		heroId=130012,
+ 		needStar=1,
+ 		attributeType={1002},
+ 		attributeValue={250},
+ 		name=4243,
+ 		haloDesc={22000151},
+ 		haloNextDesc={22000152},
+ 		levelDesc=5232,
+ 		detailDesc=22000051,
+ 	openCondition=205
+},
+[1300122] =
+{
+ 		id=1300122,
+ 		heroId=130012,
+ 		needStar=2,
+ 		attributeType={1002},
+ 		attributeValue={500},
+ 		name=4243,
+ 		haloDesc={22000152},
+ 		haloNextDesc={22000153},
+ 		levelDesc=5233,
+ 		detailDesc=22000052,
+ 	openCondition=205
+},
+[1300123] =
+{
+ 		id=1300123,
+ 		heroId=130012,
+ 		needStar=3,
+ 		attributeType={1002},
+ 		attributeValue={500},
+ 		passive={500101},
+ 		name=4243,
+ 		haloDesc={22000152,22000153},
+ 		haloNextDesc={22000154},
+ 		levelDesc=5234,
+ 		detailDesc=22000053,
+ 	openCondition=206
+},
+[1300124] =
+{
+ 		id=1300124,
+ 		heroId=130012,
+ 		needStar=4,
+ 		attributeType={1002},
+ 		attributeValue={500},
+ 		passive={500102},
+ 		name=4243,
+ 		haloDesc={22000152,22000154},
+ 		haloNextDesc={22000155},
+ 		levelDesc=5235,
+ 		detailDesc=22000054,
+ 	openCondition=206
+},
+[1300125] =
+{
+ 		id=1300125,
+ 		heroId=130012,
+ 		needStar=5,
+ 		attributeType={1002},
+ 		attributeValue={500},
+ 		passive={500102,500201},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000155},
+ 		haloNextDesc={22000156},
+ 		levelDesc=5236,
+ 		detailDesc=22000055,
+ 	openCondition=207
+},
+[1300126] =
+{
+ 		id=1300126,
+ 		heroId=130012,
+ 		needStar=6,
+ 		attributeType={1002},
+ 		attributeValue={500},
+ 		passive={500102,500202},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000156},
+ 		levelDesc=5237,
+ 		detailDesc=22000056,
+ 	openCondition=208
+},
+[1400011] =
+{
+ 		id=1400011,
+ 		heroId=140001,
+ 		needStar=1,
+ 		attributeType={8},
+ 		attributeValue={-3},
+ 		name=4237,
+ 		haloDesc={22000161},
+ 		haloNextDesc={22000162},
+ 		levelDesc=5232,
+ 		detailDesc=22000061,
+ 	openCondition=205
+},
+[1400012] =
+{
+ 		id=1400012,
+ 		heroId=140001,
+ 		needStar=2,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		name=4237,
+ 		haloDesc={22000162},
+ 		haloNextDesc={22000163},
+ 		levelDesc=5233,
+ 		detailDesc=22000062,
+ 	openCondition=205
+},
+[1400013] =
+{
+ 		id=1400013,
+ 		heroId=140001,
+ 		needStar=3,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600101},
+ 		name=4237,
+ 		haloDesc={22000162,22000163},
+ 		haloNextDesc={22000164},
+ 		levelDesc=5234,
+ 		detailDesc=22000063,
+ 	openCondition=206
+},
+[1400014] =
+{
+ 		id=1400014,
+ 		heroId=140001,
+ 		needStar=4,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102},
+ 		name=4237,
+ 		haloDesc={22000162,22000164},
+ 		haloNextDesc={22000165},
+ 		levelDesc=5235,
+ 		detailDesc=22000064,
+ 	openCondition=206
+},
+[1400015] =
+{
+ 		id=1400015,
+ 		heroId=140001,
+ 		needStar=5,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102,600201},
+ 		name=4237,
+ 		haloDesc={22000162,22000164,22000165},
+ 		haloNextDesc={22000166},
+ 		levelDesc=5236,
+ 		detailDesc=22000065,
+ 	openCondition=207
+},
+[1400016] =
+{
+ 		id=1400016,
+ 		heroId=140001,
+ 		needStar=6,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102,600202},
+ 		name=4237,
+ 		haloDesc={22000162,22000164,22000166},
+ 		levelDesc=5237,
+ 		detailDesc=22000066,
+ 	openCondition=208
+},
+[1400021] =
+{
+ 		id=1400021,
+ 		heroId=140002,
+ 		needStar=1,
+ 		passive={400101},
+ 		name=4261,
+ 		haloDesc={22000141},
+ 		haloNextDesc={22000142},
+ 		levelDesc=5232,
+ 		detailDesc=22000041,
+ 	openCondition=205
+},
+[1400022] =
+{
+ 		id=1400022,
+ 		heroId=140002,
+ 		needStar=2,
+ 		passive={400102},
+ 		name=4261,
+ 		haloDesc={22000142},
+ 		haloNextDesc={22000143},
+ 		levelDesc=5233,
+ 		detailDesc=22000042,
+ 	openCondition=205
+},
+[1400023] =
+{
+ 		id=1400023,
+ 		heroId=140002,
+ 		needStar=3,
+ 		passive={400201,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000143},
+ 		haloNextDesc={22000144},
+ 		levelDesc=5234,
+ 		detailDesc=22000043,
+ 	openCondition=206
+},
+[1400024] =
+{
+ 		id=1400024,
+ 		heroId=140002,
+ 		needStar=4,
+ 		passive={400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144},
+ 		haloNextDesc={22000145},
+ 		levelDesc=5235,
+ 		detailDesc=22000044,
+ 	openCondition=206
+},
+[1400025] =
+{
+ 		id=1400025,
+ 		heroId=140002,
+ 		needStar=5,
+ 		passive={400301,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000145},
+ 		haloNextDesc={22000146},
+ 		levelDesc=5236,
+ 		detailDesc=22000045,
+ 	openCondition=207
+},
+[1400026] =
+{
+ 		id=1400026,
+ 		heroId=140002,
+ 		needStar=6,
+ 		passive={400302,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000146},
+ 		levelDesc=5237,
+ 		detailDesc=22000046,
+ 	openCondition=208
+},
+[1400031] =
+{
+ 		id=1400031,
+ 		heroId=140003,
+ 		needStar=1,
+ 		attributeType={34},
+ 		attributeValue={250},
+ 		name=4249,
+ 		haloDesc={22000121},
+ 		haloNextDesc={22000122},
+ 		levelDesc=5232,
+ 		detailDesc=22000021,
+ 	openCondition=205
+},
+[1400032] =
+{
+ 		id=1400032,
+ 		heroId=140003,
+ 		needStar=2,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		name=4249,
+ 		haloDesc={22000122},
+ 		haloNextDesc={22000123},
+ 		levelDesc=5233,
+ 		detailDesc=22000022,
+ 	openCondition=205
+},
+[1400033] =
+{
+ 		id=1400033,
+ 		heroId=140003,
+ 		needStar=3,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200101},
+ 		name=4249,
+ 		haloDesc={22000122,22000123},
+ 		haloNextDesc={22000124},
+ 		levelDesc=5234,
+ 		detailDesc=22000023,
+ 	openCondition=206
+},
+[1400034] =
+{
+ 		id=1400034,
+ 		heroId=140003,
+ 		needStar=4,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102},
+ 		name=4249,
+ 		haloDesc={22000122,22000124},
+ 		haloNextDesc={22000125},
+ 		levelDesc=5235,
+ 		detailDesc=22000024,
+ 	openCondition=206
+},
+[1400035] =
+{
+ 		id=1400035,
+ 		heroId=140003,
+ 		needStar=5,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200201},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000125},
+ 		haloNextDesc={22000126},
+ 		levelDesc=5236,
+ 		detailDesc=22000025,
+ 	openCondition=207
+},
+[1400036] =
+{
+ 		id=1400036,
+ 		heroId=140003,
+ 		needStar=6,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200202},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000126},
+ 		levelDesc=5237,
+ 		detailDesc=22000026,
+ 	openCondition=208
+},
+[1400041] =
+{
+ 		id=1400041,
+ 		heroId=140004,
+ 		needStar=1,
+ 		passive={400101},
+ 		name=4261,
+ 		haloDesc={22000141},
+ 		haloNextDesc={22000142},
+ 		levelDesc=5232,
+ 		detailDesc=22000041,
+ 	openCondition=205
+},
+[1400042] =
+{
+ 		id=1400042,
+ 		heroId=140004,
+ 		needStar=2,
+ 		passive={400102},
+ 		name=4261,
+ 		haloDesc={22000142},
+ 		haloNextDesc={22000143},
+ 		levelDesc=5233,
+ 		detailDesc=22000042,
+ 	openCondition=205
+},
+[1400043] =
+{
+ 		id=1400043,
+ 		heroId=140004,
+ 		needStar=3,
+ 		passive={400201,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000143},
+ 		haloNextDesc={22000144},
+ 		levelDesc=5234,
+ 		detailDesc=22000043,
+ 	openCondition=206
+},
+[1400044] =
+{
+ 		id=1400044,
+ 		heroId=140004,
+ 		needStar=4,
+ 		passive={400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144},
+ 		haloNextDesc={22000145},
+ 		levelDesc=5235,
+ 		detailDesc=22000044,
+ 	openCondition=206
+},
+[1400045] =
+{
+ 		id=1400045,
+ 		heroId=140004,
+ 		needStar=5,
+ 		passive={400301,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000145},
+ 		haloNextDesc={22000146},
+ 		levelDesc=5236,
+ 		detailDesc=22000045,
+ 	openCondition=207
+},
+[1400046] =
+{
+ 		id=1400046,
+ 		heroId=140004,
+ 		needStar=6,
+ 		passive={400302,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000146},
+ 		levelDesc=5237,
+ 		detailDesc=22000046,
+ 	openCondition=208
+},
+[1400051] =
+{
+ 		id=1400051,
+ 		heroId=140005,
+ 		needStar=1,
+ 		attributeType={1001},
+ 		attributeValue={300},
+ 		name=4255,
+ 		haloDesc={22000111},
+ 		haloNextDesc={22000112},
+ 		levelDesc=5232,
+ 		detailDesc=22000011,
+ 	openCondition=205
+},
+[1400052] =
+{
+ 		id=1400052,
+ 		heroId=140005,
+ 		needStar=2,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		name=4255,
+ 		haloDesc={22000112},
+ 		haloNextDesc={22000113},
+ 		levelDesc=5233,
+ 		detailDesc=22000012,
+ 	openCondition=205
+},
+[1400053] =
+{
+ 		id=1400053,
+ 		heroId=140005,
+ 		needStar=3,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100101},
+ 		name=4255,
+ 		haloDesc={22000112,22000113},
+ 		haloNextDesc={22000114},
+ 		levelDesc=5234,
+ 		detailDesc=22000013,
+ 	openCondition=206
+},
+[1400054] =
+{
+ 		id=1400054,
+ 		heroId=140005,
+ 		needStar=4,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102},
+ 		name=4255,
+ 		haloDesc={22000112,22000114},
+ 		haloNextDesc={22000115},
+ 		levelDesc=5235,
+ 		detailDesc=22000014,
+ 	openCondition=206
+},
+[1400055] =
+{
+ 		id=1400055,
+ 		heroId=140005,
+ 		needStar=5,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100201},
+ 		name=4255,
+ 		haloDesc={22000112,22000114,22000115},
+ 		haloNextDesc={22000116},
+ 		levelDesc=5236,
+ 		detailDesc=22000015,
+ 	openCondition=207
+},
+[1400056] =
+{
+ 		id=1400056,
+ 		heroId=140005,
+ 		needStar=6,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100202},
+ 		name=4255,
+ 		haloDesc={22000112,22000114,22000116},
+ 		levelDesc=5237,
+ 		detailDesc=22000016,
+ 	openCondition=208
+},
+[1400061] =
+{
+ 		id=1400061,
+ 		heroId=140006,
+ 		needStar=1,
+ 		attributeType={34},
+ 		attributeValue={250},
+ 		name=4249,
+ 		haloDesc={22000121},
+ 		haloNextDesc={22000122},
+ 		levelDesc=5232,
+ 		detailDesc=22000021,
+ 	openCondition=205
+},
+[1400062] =
+{
+ 		id=1400062,
+ 		heroId=140006,
+ 		needStar=2,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		name=4249,
+ 		haloDesc={22000122},
+ 		haloNextDesc={22000123},
+ 		levelDesc=5233,
+ 		detailDesc=22000022,
+ 	openCondition=205
+},
+[1400063] =
+{
+ 		id=1400063,
+ 		heroId=140006,
+ 		needStar=3,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200101},
+ 		name=4249,
+ 		haloDesc={22000122,22000123},
+ 		haloNextDesc={22000124},
+ 		levelDesc=5234,
+ 		detailDesc=22000023,
+ 	openCondition=206
+},
+[1400064] =
+{
+ 		id=1400064,
+ 		heroId=140006,
+ 		needStar=4,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102},
+ 		name=4249,
+ 		haloDesc={22000122,22000124},
+ 		haloNextDesc={22000125},
+ 		levelDesc=5235,
+ 		detailDesc=22000024,
+ 	openCondition=206
+},
+[1400065] =
+{
+ 		id=1400065,
+ 		heroId=140006,
+ 		needStar=5,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200201},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000125},
+ 		haloNextDesc={22000126},
+ 		levelDesc=5236,
+ 		detailDesc=22000025,
+ 	openCondition=207
+},
+[1400066] =
+{
+ 		id=1400066,
+ 		heroId=140006,
+ 		needStar=6,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200202},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000126},
+ 		levelDesc=5237,
+ 		detailDesc=22000026,
+ 	openCondition=208
+},
+[1400071] =
+{
+ 		id=1400071,
+ 		heroId=140007,
+ 		needStar=1,
+ 		attributeType={1001},
+ 		attributeValue={300},
+ 		name=4267,
+ 		haloDesc={22000111},
+ 		haloNextDesc={22000112},
+ 		levelDesc=5232,
+ 		detailDesc=22000011,
+ 	openCondition=205
+},
+[1400072] =
+{
+ 		id=1400072,
+ 		heroId=140007,
+ 		needStar=2,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		name=4267,
+ 		haloDesc={22000112},
+ 		haloNextDesc={22000113},
+ 		levelDesc=5233,
+ 		detailDesc=22000012,
+ 	openCondition=205
+},
+[1400073] =
+{
+ 		id=1400073,
+ 		heroId=140007,
+ 		needStar=3,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100101},
+ 		name=4267,
+ 		haloDesc={22000112,22000113},
+ 		haloNextDesc={22000114},
+ 		levelDesc=5234,
+ 		detailDesc=22000013,
+ 	openCondition=206
+},
+[1400074] =
+{
+ 		id=1400074,
+ 		heroId=140007,
+ 		needStar=4,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102},
+ 		name=4267,
+ 		haloDesc={22000112,22000114},
+ 		haloNextDesc={22000115},
+ 		levelDesc=5235,
+ 		detailDesc=22000014,
+ 	openCondition=206
+},
+[1400075] =
+{
+ 		id=1400075,
+ 		heroId=140007,
+ 		needStar=5,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100201},
+ 		name=4267,
+ 		haloDesc={22000112,22000114,22000115},
+ 		haloNextDesc={22000116},
+ 		levelDesc=5236,
+ 		detailDesc=22000015,
+ 	openCondition=206
+},
+[1400076] =
+{
+ 		id=1400076,
+ 		heroId=140007,
+ 		needStar=6,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100202},
+ 		name=4267,
+ 		haloDesc={22000112,22000114,22000116},
+ 		levelDesc=5237,
+ 		detailDesc=22000016,
+ 	openCondition=206
+},
+[1400081] =
+{
+ 		id=1400081,
+ 		heroId=140008,
+ 		needStar=1,
+ 		attributeType={34},
+ 		attributeValue={250},
+ 		name=4237,
+ 		haloDesc={22000121},
+ 		haloNextDesc={22000122},
+ 		levelDesc=5232,
+ 		detailDesc=22000021,
+ 	openCondition=205
+},
+[1400082] =
+{
+ 		id=1400082,
+ 		heroId=140008,
+ 		needStar=2,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		name=4237,
+ 		haloDesc={22000122},
+ 		haloNextDesc={22000123},
+ 		levelDesc=5233,
+ 		detailDesc=22000022,
+ 	openCondition=205
+},
+[1400083] =
+{
+ 		id=1400083,
+ 		heroId=140008,
+ 		needStar=3,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200101},
+ 		name=4237,
+ 		haloDesc={22000122,22000123},
+ 		haloNextDesc={22000124},
+ 		levelDesc=5234,
+ 		detailDesc=22000023,
+ 	openCondition=206
+},
+[1400084] =
+{
+ 		id=1400084,
+ 		heroId=140008,
+ 		needStar=4,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102},
+ 		name=4237,
+ 		haloDesc={22000122,22000124},
+ 		haloNextDesc={22000125},
+ 		levelDesc=5235,
+ 		detailDesc=22000024,
+ 	openCondition=206
+},
+[1400085] =
+{
+ 		id=1400085,
+ 		heroId=140008,
+ 		needStar=5,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200201},
+ 		name=4237,
+ 		haloDesc={22000122,22000124,22000125},
+ 		haloNextDesc={22000126},
+ 		levelDesc=5236,
+ 		detailDesc=22000025,
+ 	openCondition=206
+},
+[1400086] =
+{
+ 		id=1400086,
+ 		heroId=140008,
+ 		needStar=6,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200202},
+ 		name=4237,
+ 		haloDesc={22000122,22000124,22000126},
+ 		levelDesc=5237,
+ 		detailDesc=22000026,
+ 	openCondition=206
+},
+[1400091] =
+{
+ 		id=1400091,
+ 		heroId=140009,
+ 		needStar=1,
+ 		attributeType={1002},
+ 		attributeValue={200},
+ 		name=4243,
+ 		haloDesc={22000151},
+ 		haloNextDesc={22000152},
+ 		levelDesc=5232,
+ 		detailDesc=22000051,
+ 	openCondition=205
+},
+[1400092] =
+{
+ 		id=1400092,
+ 		heroId=140009,
+ 		needStar=2,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		name=4243,
+ 		haloDesc={22000152},
+ 		haloNextDesc={22000153},
+ 		levelDesc=5233,
+ 		detailDesc=22000052,
+ 	openCondition=205
+},
+[1400093] =
+{
+ 		id=1400093,
+ 		heroId=140009,
+ 		needStar=3,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500101},
+ 		name=4243,
+ 		haloDesc={22000152,22000153},
+ 		haloNextDesc={22000154},
+ 		levelDesc=5234,
+ 		detailDesc=22000053,
+ 	openCondition=206
+},
+[1400094] =
+{
+ 		id=1400094,
+ 		heroId=140009,
+ 		needStar=4,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102},
+ 		name=4243,
+ 		haloDesc={22000152,22000154},
+ 		haloNextDesc={22000155},
+ 		levelDesc=5235,
+ 		detailDesc=22000054,
+ 	openCondition=206
+},
+[1400095] =
+{
+ 		id=1400095,
+ 		heroId=140009,
+ 		needStar=5,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102,500201},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000155},
+ 		haloNextDesc={22000156},
+ 		levelDesc=5236,
+ 		detailDesc=22000055,
+ 	openCondition=207
+},
+[1400096] =
+{
+ 		id=1400096,
+ 		heroId=140009,
+ 		needStar=6,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102,500202},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000156},
+ 		levelDesc=5237,
+ 		detailDesc=22000056,
+ 	openCondition=208
+},
+[1400101] =
+{
+ 		id=1400101,
+ 		heroId=140010,
+ 		needStar=1,
+ 		attributeType={25,26},
+ 		attributeValue={200,200},
+ 		name=4255,
+ 		haloDesc={22000131},
+ 		haloNextDesc={22000132},
+ 		levelDesc=5232,
+ 		detailDesc=22000031,
+ 	openCondition=205
+},
+[1400102] =
+{
+ 		id=1400102,
+ 		heroId=140010,
+ 		needStar=2,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		name=4255,
+ 		haloDesc={22000121,22000132},
+ 		haloNextDesc={22000133},
+ 		levelDesc=5233,
+ 		detailDesc=22000032,
+ 	openCondition=205
+},
+[1400103] =
+{
+ 		id=1400103,
+ 		heroId=140010,
+ 		needStar=3,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300101},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000133},
+ 		haloNextDesc={22000134},
+ 		levelDesc=5234,
+ 		detailDesc=22000033,
+ 	openCondition=206
+},
+[1400104] =
+{
+ 		id=1400104,
+ 		heroId=140010,
+ 		needStar=4,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134},
+ 		haloNextDesc={22000135},
+ 		levelDesc=5235,
+ 		detailDesc=22000034,
+ 	openCondition=206
+},
+[1400105] =
+{
+ 		id=1400105,
+ 		heroId=140010,
+ 		needStar=5,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300201,300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134,22000135},
+ 		haloNextDesc={22000136},
+ 		levelDesc=5236,
+ 		detailDesc=22000035,
+ 	openCondition=206
+},
+[1400106] =
+{
+ 		id=1400106,
+ 		heroId=140010,
+ 		needStar=6,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300202,300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134,22000136},
+ 		levelDesc=5237,
+ 		detailDesc=22000036,
+ 	openCondition=206
+},
+[1400111] =
+{
+ 		id=1400111,
+ 		heroId=140011,
+ 		needStar=1,
+ 		attributeType={25,26},
+ 		attributeValue={200,200},
+ 		name=4255,
+ 		haloDesc={22000131},
+ 		haloNextDesc={22000132},
+ 		levelDesc=5232,
+ 		detailDesc=22000031,
+ 	openCondition=205
+},
+[1400112] =
+{
+ 		id=1400112,
+ 		heroId=140011,
+ 		needStar=2,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		name=4255,
+ 		haloDesc={22000121,22000132},
+ 		haloNextDesc={22000133},
+ 		levelDesc=5233,
+ 		detailDesc=22000032,
+ 	openCondition=205
+},
+[1400113] =
+{
+ 		id=1400113,
+ 		heroId=140011,
+ 		needStar=3,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300101},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000133},
+ 		haloNextDesc={22000134},
+ 		levelDesc=5234,
+ 		detailDesc=22000033,
+ 	openCondition=206
+},
+[1400114] =
+{
+ 		id=1400114,
+ 		heroId=140011,
+ 		needStar=4,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134},
+ 		haloNextDesc={22000135},
+ 		levelDesc=5235,
+ 		detailDesc=22000034,
+ 	openCondition=206
+},
+[1400115] =
+{
+ 		id=1400115,
+ 		heroId=140011,
+ 		needStar=5,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300201,300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134,22000135},
+ 		haloNextDesc={22000136},
+ 		levelDesc=5236,
+ 		detailDesc=22000035,
+ 	openCondition=207
+},
+[1400116] =
+{
+ 		id=1400116,
+ 		heroId=140011,
+ 		needStar=6,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300202,300102},
+ 		name=4255,
+ 		haloDesc={22000121,22000132,22000134,22000136},
+ 		levelDesc=5237,
+ 		detailDesc=22000036,
+ 	openCondition=208
+},
+[1500011] =
+{
+ 		id=1500011,
+ 		heroId=150001,
+ 		needStar=1,
+ 		passive={400101},
+ 		name=4261,
+ 		haloDesc={22000141},
+ 		haloNextDesc={22000142},
+ 		levelDesc=5232,
+ 		detailDesc=22000041,
+ 	openCondition=205
+},
+[1500012] =
+{
+ 		id=1500012,
+ 		heroId=150001,
+ 		needStar=2,
+ 		passive={400102},
+ 		name=4261,
+ 		haloDesc={22000142},
+ 		haloNextDesc={22000143},
+ 		levelDesc=5233,
+ 		detailDesc=22000042,
+ 	openCondition=205
+},
+[1500013] =
+{
+ 		id=1500013,
+ 		heroId=150001,
+ 		needStar=3,
+ 		passive={400201,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000143},
+ 		haloNextDesc={22000144},
+ 		levelDesc=5234,
+ 		detailDesc=22000043,
+ 	openCondition=206
+},
+[1500014] =
+{
+ 		id=1500014,
+ 		heroId=150001,
+ 		needStar=4,
+ 		passive={400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144},
+ 		haloNextDesc={22000145},
+ 		levelDesc=5235,
+ 		detailDesc=22000044,
+ 	openCondition=206
+},
+[1500015] =
+{
+ 		id=1500015,
+ 		heroId=150001,
+ 		needStar=5,
+ 		passive={400301,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000145},
+ 		haloNextDesc={22000146},
+ 		levelDesc=5236,
+ 		detailDesc=22000045,
+ 	openCondition=207
+},
+[1500016] =
+{
+ 		id=1500016,
+ 		heroId=150001,
+ 		needStar=6,
+ 		passive={400302,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000146},
+ 		levelDesc=5237,
+ 		detailDesc=22000046,
+ 	openCondition=208
+},
+[1500021] =
+{
+ 		id=1500021,
+ 		heroId=150002,
+ 		needStar=1,
+ 		attributeType={1002},
+ 		attributeValue={200},
+ 		name=4243,
+ 		haloDesc={22000151},
+ 		haloNextDesc={22000152},
+ 		levelDesc=5232,
+ 		detailDesc=22000051,
+ 	openCondition=205
+},
+[1500022] =
+{
+ 		id=1500022,
+ 		heroId=150002,
+ 		needStar=2,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		name=4243,
+ 		haloDesc={22000152},
+ 		haloNextDesc={22000153},
+ 		levelDesc=5233,
+ 		detailDesc=22000052,
+ 	openCondition=205
+},
+[1500023] =
+{
+ 		id=1500023,
+ 		heroId=150002,
+ 		needStar=3,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500101},
+ 		name=4243,
+ 		haloDesc={22000152,22000153},
+ 		haloNextDesc={22000154},
+ 		levelDesc=5234,
+ 		detailDesc=22000053,
+ 	openCondition=206
+},
+[1500024] =
+{
+ 		id=1500024,
+ 		heroId=150002,
+ 		needStar=4,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102},
+ 		name=4243,
+ 		haloDesc={22000152,22000154},
+ 		haloNextDesc={22000155},
+ 		levelDesc=5235,
+ 		detailDesc=22000054,
+ 	openCondition=206
+},
+[1500025] =
+{
+ 		id=1500025,
+ 		heroId=150002,
+ 		needStar=5,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102,500201},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000155},
+ 		haloNextDesc={22000156},
+ 		levelDesc=5236,
+ 		detailDesc=22000055,
+ 	openCondition=207
+},
+[1500026] =
+{
+ 		id=1500026,
+ 		heroId=150002,
+ 		needStar=6,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102,500202},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000156},
+ 		levelDesc=5237,
+ 		detailDesc=22000056,
+ 	openCondition=208
+},
+[1500031] =
+{
+ 		id=1500031,
+ 		heroId=150003,
+ 		needStar=1,
+ 		attributeType={8},
+ 		attributeValue={-3},
+ 		name=4237,
+ 		haloDesc={22000161},
+ 		haloNextDesc={22000162},
+ 		levelDesc=5232,
+ 		detailDesc=22000061,
+ 	openCondition=205
+},
+[1500032] =
+{
+ 		id=1500032,
+ 		heroId=150003,
+ 		needStar=2,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		name=4237,
+ 		haloDesc={22000162},
+ 		haloNextDesc={22000163},
+ 		levelDesc=5233,
+ 		detailDesc=22000062,
+ 	openCondition=205
+},
+[1500033] =
+{
+ 		id=1500033,
+ 		heroId=150003,
+ 		needStar=3,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600101},
+ 		name=4237,
+ 		haloDesc={22000162,22000163},
+ 		haloNextDesc={22000164},
+ 		levelDesc=5234,
+ 		detailDesc=22000063,
+ 	openCondition=206
+},
+[1500034] =
+{
+ 		id=1500034,
+ 		heroId=150003,
+ 		needStar=4,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102},
+ 		name=4237,
+ 		haloDesc={22000162,22000164},
+ 		haloNextDesc={22000165},
+ 		levelDesc=5235,
+ 		detailDesc=22000064,
+ 	openCondition=206
+},
+[1500035] =
+{
+ 		id=1500035,
+ 		heroId=150003,
+ 		needStar=5,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600101,600202},
+ 		name=4237,
+ 		haloDesc={22000162,22000164,22000165},
+ 		haloNextDesc={22000166},
+ 		levelDesc=5236,
+ 		detailDesc=22000065,
+ 	openCondition=207
+},
+[1500036] =
+{
+ 		id=1500036,
+ 		heroId=150003,
+ 		needStar=6,
+ 		attributeType={8},
+ 		attributeValue={-5},
+ 		passive={600102,600202},
+ 		name=4237,
+ 		haloDesc={22000162,22000164,22000166},
+ 		levelDesc=5237,
+ 		detailDesc=22000066,
+ 	openCondition=208
+},
+[1500041] =
+{
+ 		id=1500041,
+ 		heroId=150004,
+ 		needStar=1,
+ 		attributeType={25,26},
+ 		attributeValue={200,200},
+ 		name=4255,
+ 		haloDesc={22000131},
+ 		haloNextDesc={22000131,22000132},
+ 		levelDesc=5232,
+ 		detailDesc=22000031,
+ 	openCondition=205
+},
+[1500042] =
+{
+ 		id=1500042,
+ 		heroId=150004,
+ 		needStar=2,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		name=4255,
+ 		haloDesc={22000131,22000132},
+ 		haloNextDesc={22000133},
+ 		levelDesc=5233,
+ 		detailDesc=22000032,
+ 	openCondition=205
+},
+[1500043] =
+{
+ 		id=1500043,
+ 		heroId=150004,
+ 		needStar=3,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300101},
+ 		name=4255,
+ 		haloDesc={22000131,22000132,22000133},
+ 		haloNextDesc={22000134},
+ 		levelDesc=5234,
+ 		detailDesc=22000033,
+ 	openCondition=206
+},
+[1500044] =
+{
+ 		id=1500044,
+ 		heroId=150004,
+ 		needStar=4,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300102},
+ 		name=4255,
+ 		haloDesc={22000131,22000132,22000134},
+ 		haloNextDesc={22000135},
+ 		levelDesc=5235,
+ 		detailDesc=22000034,
+ 	openCondition=206
+},
+[1500045] =
+{
+ 		id=1500045,
+ 		heroId=150004,
+ 		needStar=5,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300201,300102},
+ 		name=4255,
+ 		haloDesc={22000131,22000132,22000134,22000135},
+ 		haloNextDesc={22000136},
+ 		levelDesc=5236,
+ 		detailDesc=22000035,
+ 	openCondition=207
+},
+[1500046] =
+{
+ 		id=1500046,
+ 		heroId=150004,
+ 		needStar=6,
+ 		attributeType={25,26,27,28},
+ 		attributeValue={200,200,200,200},
+ 		passive={300202,300102},
+ 		name=4255,
+ 		haloDesc={22000131,22000132,22000134,22000136},
+ 		levelDesc=5237,
+ 		detailDesc=22000036,
+ 	openCondition=208
+},
+[1500051] =
+{
+ 		id=1500051,
+ 		heroId=150005,
+ 		needStar=1,
+ 		passive={400101},
+ 		name=4261,
+ 		haloDesc={22000141},
+ 		haloNextDesc={22000142},
+ 		levelDesc=5232,
+ 		detailDesc=22000041,
+ 	openCondition=205
+},
+[1500052] =
+{
+ 		id=1500052,
+ 		heroId=150005,
+ 		needStar=2,
+ 		passive={400102},
+ 		name=4261,
+ 		haloDesc={22000142},
+ 		haloNextDesc={22000143},
+ 		levelDesc=5233,
+ 		detailDesc=22000042,
+ 	openCondition=205
+},
+[1500053] =
+{
+ 		id=1500053,
+ 		heroId=150005,
+ 		needStar=3,
+ 		passive={400201,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000143},
+ 		haloNextDesc={22000144},
+ 		levelDesc=5234,
+ 		detailDesc=22000043,
+ 	openCondition=206
+},
+[1500054] =
+{
+ 		id=1500054,
+ 		heroId=150005,
+ 		needStar=4,
+ 		passive={400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144},
+ 		haloNextDesc={22000145},
+ 		levelDesc=5235,
+ 		detailDesc=22000044,
+ 	openCondition=206
+},
+[1500055] =
+{
+ 		id=1500055,
+ 		heroId=150005,
+ 		needStar=5,
+ 		passive={400301,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000145},
+ 		haloNextDesc={22000146},
+ 		levelDesc=5236,
+ 		detailDesc=22000045,
+ 	openCondition=207
+},
+[1500056] =
+{
+ 		id=1500056,
+ 		heroId=150005,
+ 		needStar=6,
+ 		passive={400302,400202,400102},
+ 		name=4261,
+ 		haloDesc={22000142,22000144,22000146},
+ 		levelDesc=5237,
+ 		detailDesc=22000046,
+ 	openCondition=208
+},
+[1500061] =
+{
+ 		id=1500061,
+ 		heroId=150006,
+ 		needStar=1,
+ 		attributeType={1001},
+ 		attributeValue={300},
+ 		name=4267,
+ 		haloDesc={22000111},
+ 		haloNextDesc={22000112},
+ 		levelDesc=5232,
+ 		detailDesc=22000011,
+ 	openCondition=205
+},
+[1500062] =
+{
+ 		id=1500062,
+ 		heroId=150006,
+ 		needStar=2,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		name=4267,
+ 		haloDesc={22000112},
+ 		haloNextDesc={22000113},
+ 		levelDesc=5233,
+ 		detailDesc=22000012,
+ 	openCondition=205
+},
+[1500063] =
+{
+ 		id=1500063,
+ 		heroId=150006,
+ 		needStar=3,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100101},
+ 		name=4267,
+ 		haloDesc={22000112,22000113},
+ 		haloNextDesc={22000114},
+ 		levelDesc=5234,
+ 		detailDesc=22000013,
+ 	openCondition=206
+},
+[1500064] =
+{
+ 		id=1500064,
+ 		heroId=150006,
+ 		needStar=4,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102},
+ 		name=4267,
+ 		haloDesc={22000112,22000114},
+ 		haloNextDesc={22000115},
+ 		levelDesc=5235,
+ 		detailDesc=22000014,
+ 	openCondition=206
+},
+[1500065] =
+{
+ 		id=1500065,
+ 		heroId=150006,
+ 		needStar=5,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100201},
+ 		name=4267,
+ 		haloDesc={22000112,22000114,22000115},
+ 		haloNextDesc={22000116},
+ 		levelDesc=5236,
+ 		detailDesc=22000015,
+ 	openCondition=207
+},
+[1500066] =
+{
+ 		id=1500066,
+ 		heroId=150006,
+ 		needStar=6,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100202},
+ 		name=4267,
+ 		haloDesc={22000112,22000114,22000116},
+ 		levelDesc=5237,
+ 		detailDesc=22000016,
+ 	openCondition=208
+},
+[1500071] =
+{
+ 		id=1500071,
+ 		heroId=150007,
+ 		needStar=1,
+ 		attributeType={34},
+ 		attributeValue={250},
+ 		name=4249,
+ 		haloDesc={22000121},
+ 		haloNextDesc={22000122},
+ 		levelDesc=5232,
+ 		detailDesc=22000021,
+ 	openCondition=205
+},
+[1500072] =
+{
+ 		id=1500072,
+ 		heroId=150007,
+ 		needStar=2,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		name=4249,
+ 		haloDesc={22000122},
+ 		haloNextDesc={22000123},
+ 		levelDesc=5233,
+ 		detailDesc=22000022,
+ 	openCondition=205
+},
+[1500073] =
+{
+ 		id=1500073,
+ 		heroId=150007,
+ 		needStar=3,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200101},
+ 		name=4249,
+ 		haloDesc={22000122,22000123},
+ 		haloNextDesc={22000124},
+ 		levelDesc=5234,
+ 		detailDesc=22000023,
+ 	openCondition=206
+},
+[1500074] =
+{
+ 		id=1500074,
+ 		heroId=150007,
+ 		needStar=4,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102},
+ 		name=4249,
+ 		haloDesc={22000122,22000124},
+ 		haloNextDesc={22000125},
+ 		levelDesc=5235,
+ 		detailDesc=22000024,
+ 	openCondition=206
+},
+[1500075] =
+{
+ 		id=1500075,
+ 		heroId=150007,
+ 		needStar=5,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200201},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000125},
+ 		haloNextDesc={22000126},
+ 		levelDesc=5236,
+ 		detailDesc=22000025,
+ 	openCondition=206
+},
+[1500076] =
+{
+ 		id=1500076,
+ 		heroId=150007,
+ 		needStar=6,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200202},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000126},
+ 		levelDesc=5237,
+ 		detailDesc=22000026,
+ 	openCondition=206
+},
+[1500081] =
+{
+ 		id=1500081,
+ 		heroId=150008,
+ 		needStar=1,
+ 		attributeType={1002},
+ 		attributeValue={200},
+ 		name=4243,
+ 		haloDesc={22000151},
+ 		haloNextDesc={22000152},
+ 		levelDesc=5232,
+ 		detailDesc=22000051,
+ 	openCondition=205
+},
+[1500082] =
+{
+ 		id=1500082,
+ 		heroId=150008,
+ 		needStar=2,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		name=4243,
+ 		haloDesc={22000152},
+ 		haloNextDesc={22000153},
+ 		levelDesc=5233,
+ 		detailDesc=22000052,
+ 	openCondition=205
+},
+[1500083] =
+{
+ 		id=1500083,
+ 		heroId=150008,
+ 		needStar=3,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500101},
+ 		name=4243,
+ 		haloDesc={22000152,22000153},
+ 		haloNextDesc={22000154},
+ 		levelDesc=5234,
+ 		detailDesc=22000053,
+ 	openCondition=206
+},
+[1500084] =
+{
+ 		id=1500084,
+ 		heroId=150008,
+ 		needStar=4,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102},
+ 		name=4243,
+ 		haloDesc={22000152,22000154},
+ 		haloNextDesc={22000155},
+ 		levelDesc=5235,
+ 		detailDesc=22000054,
+ 	openCondition=206
+},
+[1500085] =
+{
+ 		id=1500085,
+ 		heroId=150008,
+ 		needStar=5,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102,500201},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000155},
+ 		haloNextDesc={22000156},
+ 		levelDesc=5236,
+ 		detailDesc=22000055,
+ 	openCondition=206
+},
+[1500086] =
+{
+ 		id=1500086,
+ 		heroId=150008,
+ 		needStar=6,
+ 		attributeType={1002},
+ 		attributeValue={400},
+ 		passive={500102,500202},
+ 		name=4243,
+ 		haloDesc={22000152,22000154,22000156},
+ 		levelDesc=5237,
+ 		detailDesc=22000056,
+ 	openCondition=206
+},
+[1500091] =
+{
+ 		id=1500091,
+ 		heroId=150009,
+ 		needStar=1,
+ 		attributeType={34},
+ 		attributeValue={250},
+ 		name=4249,
+ 		haloDesc={22000121},
+ 		haloNextDesc={22000122},
+ 		levelDesc=5232,
+ 		detailDesc=22000021,
+ 	openCondition=205
+},
+[1500092] =
+{
+ 		id=1500092,
+ 		heroId=150009,
+ 		needStar=2,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		name=4249,
+ 		haloDesc={22000122},
+ 		haloNextDesc={22000123},
+ 		levelDesc=5233,
+ 		detailDesc=22000022,
+ 	openCondition=205
+},
+[1500093] =
+{
+ 		id=1500093,
+ 		heroId=150009,
+ 		needStar=3,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200101},
+ 		name=4249,
+ 		haloDesc={22000122,22000123},
+ 		haloNextDesc={22000124},
+ 		levelDesc=5234,
+ 		detailDesc=22000023,
+ 	openCondition=206
+},
+[1500094] =
+{
+ 		id=1500094,
+ 		heroId=150009,
+ 		needStar=4,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102},
+ 		name=4249,
+ 		haloDesc={22000122,22000124},
+ 		haloNextDesc={22000125},
+ 		levelDesc=5235,
+ 		detailDesc=22000024,
+ 	openCondition=206
+},
+[1500095] =
+{
+ 		id=1500095,
+ 		heroId=150009,
+ 		needStar=5,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200201},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000125},
+ 		haloNextDesc={22000126},
+ 		levelDesc=5236,
+ 		detailDesc=22000025,
+ 	openCondition=207
+},
+[1500096] =
+{
+ 		id=1500096,
+ 		heroId=150009,
+ 		needStar=6,
+ 		attributeType={34},
+ 		attributeValue={500},
+ 		passive={200102,200202},
+ 		name=4249,
+ 		haloDesc={22000122,22000124,22000126},
+ 		levelDesc=5237,
+ 		detailDesc=22000026,
+ 	openCondition=208
+},
+[1500101] =
+{
+ 		id=1500101,
+ 		heroId=150010,
+ 		needStar=1,
+ 		attributeType={1001},
+ 		attributeValue={300},
+ 		name=4267,
+ 		haloDesc={22000111},
+ 		haloNextDesc={22000112},
+ 		levelDesc=5232,
+ 		detailDesc=22000011,
+ 	openCondition=205
+},
+[1500102] =
+{
+ 		id=1500102,
+ 		heroId=150010,
+ 		needStar=2,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		name=4267,
+ 		haloDesc={22000112},
+ 		haloNextDesc={22000113},
+ 		levelDesc=5233,
+ 		detailDesc=22000012,
+ 	openCondition=205
+},
+[1500103] =
+{
+ 		id=1500103,
+ 		heroId=150010,
+ 		needStar=3,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100101},
+ 		name=4267,
+ 		haloDesc={22000112,22000113},
+ 		haloNextDesc={22000114},
+ 		levelDesc=5234,
+ 		detailDesc=22000013,
+ 	openCondition=206
+},
+[1500104] =
+{
+ 		id=1500104,
+ 		heroId=150010,
+ 		needStar=4,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102},
+ 		name=4267,
+ 		haloDesc={22000112,22000114},
+ 		haloNextDesc={22000115},
+ 		levelDesc=5235,
+ 		detailDesc=22000014,
+ 	openCondition=206
+},
+[1500105] =
+{
+ 		id=1500105,
+ 		heroId=150010,
+ 		needStar=5,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100201},
+ 		name=4267,
+ 		haloDesc={22000112,22000114,22000115},
+ 		haloNextDesc={22000116},
+ 		levelDesc=5236,
+ 		detailDesc=22000015,
+ 	openCondition=206
+},
+[1500106] =
+{
+ 		id=1500106,
+ 		heroId=150010,
+ 		needStar=6,
+ 		attributeType={1001},
+ 		attributeValue={600},
+ 		passive={100102,100202},
+ 		name=4267,
+ 		haloDesc={22000112,22000114,22000116},
+ 		levelDesc=5237,
+ 		detailDesc=22000016,
+ 	openCondition=206
+}
+}
+
+return {title=title, value=value}

@@ -1,0 +1,15592 @@
+local title = {
+	id = 0,
+	desc = 0,
+	missionType = 0,
+	missionClass = 0,
+	mapConditionId = 0,
+	randomWeight = 0,
+	name = 0,
+	quality = 0,
+	image = ""
+}
+
+local value = {
+[1] =
+{
+ 		id=1,
+ 		desc=30001001,
+ 		missionType=1,
+ 		missionClass=1,
+ 		mapConditionId=1001,
+ 		randomWeight=100,
+ 	image=""
+},
+[2] =
+{
+ 		id=2,
+ 		desc=30001002,
+ 		missionType=1,
+ 		missionClass=2,
+ 		mapConditionId=1002,
+ 		randomWeight=100,
+ 	image=""
+},
+[3] =
+{
+ 		id=3,
+ 		desc=30001003,
+ 		missionType=1,
+ 		missionClass=3,
+ 		mapConditionId=1003,
+ 		randomWeight=100,
+ 	image=""
+},
+[4] =
+{
+ 		id=4,
+ 		desc=30001004,
+ 		missionType=1,
+ 		missionClass=4,
+ 		mapConditionId=1004,
+ 		randomWeight=100,
+ 	image=""
+},
+[5] =
+{
+ 		id=5,
+ 		desc=30001005,
+ 		missionType=1,
+ 		missionClass=5,
+ 		mapConditionId=1005,
+ 		randomWeight=100,
+ 	image=""
+},
+[6] =
+{
+ 		id=6,
+ 		desc=30001006,
+ 		missionType=1,
+ 		missionClass=6,
+ 		mapConditionId=1006,
+ 		randomWeight=100,
+ 	image=""
+},
+[7] =
+{
+ 		id=7,
+ 		desc=30001007,
+ 		missionType=1,
+ 		missionClass=7,
+ 		mapConditionId=1007,
+ 		randomWeight=100,
+ 	image=""
+},
+[8] =
+{
+ 		id=8,
+ 		desc=30001008,
+ 		missionType=1,
+ 		missionClass=8,
+ 		mapConditionId=1008,
+ 		randomWeight=100,
+ 	image=""
+},
+[9] =
+{
+ 		id=9,
+ 		desc=30001009,
+ 		missionType=1,
+ 		missionClass=9,
+ 		mapConditionId=1009,
+ 		randomWeight=100,
+ 	image=""
+},
+[10] =
+{
+ 		id=10,
+ 		desc=30001010,
+ 		missionType=1,
+ 		missionClass=10,
+ 		mapConditionId=1010,
+ 		randomWeight=100,
+ 	image=""
+},
+[11] =
+{
+ 		id=11,
+ 		desc=30001011,
+ 		missionType=1,
+ 		missionClass=11,
+ 		mapConditionId=1011,
+ 		randomWeight=100,
+ 	image=""
+},
+[12] =
+{
+ 		id=12,
+ 		desc=30001012,
+ 		missionType=1,
+ 		missionClass=12,
+ 		mapConditionId=1012,
+ 		randomWeight=100,
+ 	image=""
+},
+[13] =
+{
+ 		id=13,
+ 		desc=30001013,
+ 		missionType=1,
+ 		missionClass=1,
+ 		mapConditionId=1013,
+ 		randomWeight=100,
+ 	image=""
+},
+[14] =
+{
+ 		id=14,
+ 		desc=30001014,
+ 		missionType=1,
+ 		missionClass=2,
+ 		mapConditionId=1014,
+ 		randomWeight=100,
+ 	image=""
+},
+[15] =
+{
+ 		id=15,
+ 		desc=30001015,
+ 		missionType=1,
+ 		missionClass=3,
+ 		mapConditionId=1015,
+ 		randomWeight=100,
+ 	image=""
+},
+[16] =
+{
+ 		id=16,
+ 		desc=30001016,
+ 		missionType=1,
+ 		missionClass=4,
+ 		mapConditionId=1016,
+ 		randomWeight=100,
+ 	image=""
+},
+[17] =
+{
+ 		id=17,
+ 		desc=30001017,
+ 		missionType=1,
+ 		missionClass=5,
+ 		mapConditionId=1017,
+ 		randomWeight=100,
+ 	image=""
+},
+[18] =
+{
+ 		id=18,
+ 		desc=30001018,
+ 		missionType=1,
+ 		missionClass=6,
+ 		mapConditionId=1018,
+ 		randomWeight=100,
+ 	image=""
+},
+[19] =
+{
+ 		id=19,
+ 		desc=30001019,
+ 		missionType=1,
+ 		missionClass=7,
+ 		mapConditionId=1019,
+ 		randomWeight=100,
+ 	image=""
+},
+[20] =
+{
+ 		id=20,
+ 		desc=30001020,
+ 		missionType=1,
+ 		missionClass=8,
+ 		mapConditionId=1020,
+ 		randomWeight=100,
+ 	image=""
+},
+[21] =
+{
+ 		id=21,
+ 		desc=30001021,
+ 		missionType=1,
+ 		missionClass=9,
+ 		mapConditionId=1021,
+ 		randomWeight=100,
+ 	image=""
+},
+[22] =
+{
+ 		id=22,
+ 		desc=30001022,
+ 		missionType=1,
+ 		missionClass=10,
+ 		mapConditionId=1022,
+ 		randomWeight=100,
+ 	image=""
+},
+[23] =
+{
+ 		id=23,
+ 		desc=30001023,
+ 		missionType=1,
+ 		missionClass=11,
+ 		mapConditionId=1023,
+ 		randomWeight=100,
+ 	image=""
+},
+[24] =
+{
+ 		id=24,
+ 		desc=30001024,
+ 		missionType=1,
+ 		missionClass=12,
+ 		mapConditionId=1024,
+ 		randomWeight=100,
+ 	image=""
+},
+[25] =
+{
+ 		id=25,
+ 		desc=30001025,
+ 		missionType=1,
+ 		missionClass=1,
+ 		mapConditionId=1025,
+ 		randomWeight=100,
+ 	image=""
+},
+[26] =
+{
+ 		id=26,
+ 		desc=30001026,
+ 		missionType=1,
+ 		missionClass=2,
+ 		mapConditionId=1026,
+ 		randomWeight=100,
+ 	image=""
+},
+[27] =
+{
+ 		id=27,
+ 		desc=30001027,
+ 		missionType=1,
+ 		missionClass=3,
+ 		mapConditionId=1027,
+ 		randomWeight=100,
+ 	image=""
+},
+[28] =
+{
+ 		id=28,
+ 		desc=30001028,
+ 		missionType=1,
+ 		missionClass=4,
+ 		mapConditionId=1028,
+ 		randomWeight=100,
+ 	image=""
+},
+[29] =
+{
+ 		id=29,
+ 		desc=30001029,
+ 		missionType=1,
+ 		missionClass=5,
+ 		mapConditionId=1029,
+ 		randomWeight=100,
+ 	image=""
+},
+[30] =
+{
+ 		id=30,
+ 		desc=30001030,
+ 		missionType=1,
+ 		missionClass=6,
+ 		mapConditionId=1030,
+ 		randomWeight=100,
+ 	image=""
+},
+[31] =
+{
+ 		id=31,
+ 		desc=30001031,
+ 		missionType=1,
+ 		missionClass=7,
+ 		mapConditionId=1031,
+ 		randomWeight=100,
+ 	image=""
+},
+[32] =
+{
+ 		id=32,
+ 		desc=30001032,
+ 		missionType=1,
+ 		missionClass=8,
+ 		mapConditionId=1032,
+ 		randomWeight=100,
+ 	image=""
+},
+[33] =
+{
+ 		id=33,
+ 		desc=30001033,
+ 		missionType=1,
+ 		missionClass=9,
+ 		mapConditionId=1033,
+ 		randomWeight=100,
+ 	image=""
+},
+[34] =
+{
+ 		id=34,
+ 		desc=30001034,
+ 		missionType=1,
+ 		missionClass=10,
+ 		mapConditionId=1034,
+ 		randomWeight=100,
+ 	image=""
+},
+[35] =
+{
+ 		id=35,
+ 		desc=30001035,
+ 		missionType=1,
+ 		missionClass=11,
+ 		mapConditionId=1035,
+ 		randomWeight=100,
+ 	image=""
+},
+[36] =
+{
+ 		id=36,
+ 		desc=30001036,
+ 		missionType=1,
+ 		missionClass=12,
+ 		mapConditionId=1036,
+ 		randomWeight=100,
+ 	image=""
+},
+[37] =
+{
+ 		id=37,
+ 		desc=30001037,
+ 		missionType=1,
+ 		missionClass=1,
+ 		mapConditionId=1037,
+ 		randomWeight=100,
+ 	image=""
+},
+[38] =
+{
+ 		id=38,
+ 		desc=30001039,
+ 		missionType=1,
+ 		missionClass=2,
+ 		mapConditionId=1039,
+ 		randomWeight=100,
+ 	image=""
+},
+[39] =
+{
+ 		id=39,
+ 		desc=30001040,
+ 		missionType=1,
+ 		missionClass=3,
+ 		mapConditionId=1040,
+ 		randomWeight=100,
+ 	image=""
+},
+[40] =
+{
+ 		id=40,
+ 		desc=30001041,
+ 		missionType=1,
+ 		missionClass=4,
+ 		mapConditionId=1041,
+ 		randomWeight=100,
+ 	image=""
+},
+[41] =
+{
+ 		id=41,
+ 		desc=30001042,
+ 		missionType=1,
+ 		missionClass=5,
+ 		mapConditionId=1042,
+ 		randomWeight=100,
+ 	image=""
+},
+[42] =
+{
+ 		id=42,
+ 		desc=30001043,
+ 		missionType=1,
+ 		missionClass=6,
+ 		mapConditionId=1043,
+ 		randomWeight=100,
+ 	image=""
+},
+[43] =
+{
+ 		id=43,
+ 		desc=30001044,
+ 		missionType=1,
+ 		missionClass=7,
+ 		mapConditionId=1044,
+ 		randomWeight=100,
+ 	image=""
+},
+[44] =
+{
+ 		id=44,
+ 		desc=30001045,
+ 		missionType=1,
+ 		missionClass=8,
+ 		mapConditionId=1045,
+ 		randomWeight=100,
+ 	image=""
+},
+[45] =
+{
+ 		id=45,
+ 		desc=30001046,
+ 		missionType=1,
+ 		missionClass=9,
+ 		mapConditionId=1046,
+ 		randomWeight=100,
+ 	image=""
+},
+[46] =
+{
+ 		id=46,
+ 		desc=30001047,
+ 		missionType=1,
+ 		missionClass=10,
+ 		mapConditionId=1047,
+ 		randomWeight=100,
+ 	image=""
+},
+[47] =
+{
+ 		id=47,
+ 		desc=30001048,
+ 		missionType=1,
+ 		missionClass=11,
+ 		mapConditionId=1048,
+ 		randomWeight=100,
+ 	image=""
+},
+[48] =
+{
+ 		id=48,
+ 		desc=30001049,
+ 		missionType=1,
+ 		missionClass=12,
+ 		mapConditionId=1049,
+ 		randomWeight=100,
+ 	image=""
+},
+[49] =
+{
+ 		id=49,
+ 		desc=30001050,
+ 		missionType=1,
+ 		missionClass=1,
+ 		mapConditionId=1050,
+ 		randomWeight=100,
+ 	image=""
+},
+[50] =
+{
+ 		id=50,
+ 		desc=30001051,
+ 		missionType=1,
+ 		missionClass=2,
+ 		mapConditionId=1051,
+ 		randomWeight=100,
+ 	image=""
+},
+[51] =
+{
+ 		id=51,
+ 		desc=30001052,
+ 		missionType=1,
+ 		missionClass=3,
+ 		mapConditionId=1052,
+ 		randomWeight=100,
+ 	image=""
+},
+[52] =
+{
+ 		id=52,
+ 		desc=30001053,
+ 		missionType=1,
+ 		missionClass=4,
+ 		mapConditionId=1053,
+ 		randomWeight=100,
+ 	image=""
+},
+[53] =
+{
+ 		id=53,
+ 		desc=30001054,
+ 		missionType=1,
+ 		missionClass=5,
+ 		mapConditionId=1054,
+ 		randomWeight=100,
+ 	image=""
+},
+[54] =
+{
+ 		id=54,
+ 		desc=30001055,
+ 		missionType=1,
+ 		missionClass=6,
+ 		mapConditionId=1055,
+ 		randomWeight=100,
+ 	image=""
+},
+[55] =
+{
+ 		id=55,
+ 		desc=30001056,
+ 		missionType=1,
+ 		missionClass=7,
+ 		mapConditionId=1056,
+ 		randomWeight=100,
+ 	image=""
+},
+[56] =
+{
+ 		id=56,
+ 		desc=30001057,
+ 		missionType=1,
+ 		missionClass=8,
+ 		mapConditionId=1057,
+ 		randomWeight=100,
+ 	image=""
+},
+[57] =
+{
+ 		id=57,
+ 		desc=30001058,
+ 		missionType=1,
+ 		missionClass=9,
+ 		mapConditionId=1058,
+ 		randomWeight=100,
+ 	image=""
+},
+[58] =
+{
+ 		id=58,
+ 		desc=30001059,
+ 		missionType=1,
+ 		missionClass=10,
+ 		mapConditionId=1059,
+ 		randomWeight=100,
+ 	image=""
+},
+[59] =
+{
+ 		id=59,
+ 		desc=30001060,
+ 		missionType=1,
+ 		missionClass=11,
+ 		mapConditionId=1060,
+ 		randomWeight=100,
+ 	image=""
+},
+[60] =
+{
+ 		id=60,
+ 		desc=30001061,
+ 		missionType=1,
+ 		missionClass=12,
+ 		mapConditionId=1061,
+ 		randomWeight=100,
+ 	image=""
+},
+[61] =
+{
+ 		id=61,
+ 		desc=30001062,
+ 		missionType=1,
+ 		missionClass=1,
+ 		mapConditionId=1062,
+ 		randomWeight=100,
+ 	image=""
+},
+[62] =
+{
+ 		id=62,
+ 		desc=30001063,
+ 		missionType=1,
+ 		missionClass=2,
+ 		mapConditionId=1063,
+ 		randomWeight=100,
+ 	image=""
+},
+[63] =
+{
+ 		id=63,
+ 		desc=30001064,
+ 		missionType=1,
+ 		missionClass=3,
+ 		mapConditionId=1064,
+ 		randomWeight=100,
+ 	image=""
+},
+[64] =
+{
+ 		id=64,
+ 		desc=30001065,
+ 		missionType=1,
+ 		missionClass=4,
+ 		mapConditionId=1065,
+ 		randomWeight=100,
+ 	image=""
+},
+[65] =
+{
+ 		id=65,
+ 		desc=30002001,
+ 		missionType=1,
+ 		missionClass=5,
+ 		mapConditionId=2001,
+ 		randomWeight=100,
+ 	image=""
+},
+[66] =
+{
+ 		id=66,
+ 		desc=30002002,
+ 		missionType=1,
+ 		missionClass=6,
+ 		mapConditionId=2002,
+ 		randomWeight=100,
+ 	image=""
+},
+[67] =
+{
+ 		id=67,
+ 		desc=30002003,
+ 		missionType=1,
+ 		missionClass=7,
+ 		mapConditionId=2003,
+ 		randomWeight=100,
+ 	image=""
+},
+[68] =
+{
+ 		id=68,
+ 		desc=30002004,
+ 		missionType=1,
+ 		missionClass=8,
+ 		mapConditionId=2004,
+ 		randomWeight=100,
+ 	image=""
+},
+[69] =
+{
+ 		id=69,
+ 		desc=30002005,
+ 		missionType=1,
+ 		missionClass=9,
+ 		mapConditionId=2005,
+ 		randomWeight=100,
+ 	image=""
+},
+[70] =
+{
+ 		id=70,
+ 		desc=30002006,
+ 		missionType=1,
+ 		missionClass=10,
+ 		mapConditionId=2006,
+ 		randomWeight=100,
+ 	image=""
+},
+[71] =
+{
+ 		id=71,
+ 		desc=30002007,
+ 		missionType=1,
+ 		missionClass=11,
+ 		mapConditionId=2007,
+ 		randomWeight=100,
+ 	image=""
+},
+[72] =
+{
+ 		id=72,
+ 		desc=30002008,
+ 		missionType=1,
+ 		missionClass=12,
+ 		mapConditionId=2008,
+ 		randomWeight=100,
+ 	image=""
+},
+[73] =
+{
+ 		id=73,
+ 		desc=30002009,
+ 		missionType=1,
+ 		missionClass=1,
+ 		mapConditionId=2009,
+ 		randomWeight=100,
+ 	image=""
+},
+[74] =
+{
+ 		id=74,
+ 		desc=30002010,
+ 		missionType=1,
+ 		missionClass=2,
+ 		mapConditionId=2010,
+ 		randomWeight=100,
+ 	image=""
+},
+[75] =
+{
+ 		id=75,
+ 		desc=30002011,
+ 		missionType=1,
+ 		missionClass=3,
+ 		mapConditionId=2011,
+ 		randomWeight=100,
+ 	image=""
+},
+[76] =
+{
+ 		id=76,
+ 		desc=30002012,
+ 		missionType=1,
+ 		missionClass=4,
+ 		mapConditionId=2012,
+ 		randomWeight=100,
+ 	image=""
+},
+[77] =
+{
+ 		id=77,
+ 		desc=30002013,
+ 		missionType=1,
+ 		missionClass=5,
+ 		mapConditionId=2013,
+ 		randomWeight=100,
+ 	image=""
+},
+[78] =
+{
+ 		id=78,
+ 		desc=30002014,
+ 		missionType=1,
+ 		missionClass=6,
+ 		mapConditionId=2014,
+ 		randomWeight=100,
+ 	image=""
+},
+[79] =
+{
+ 		id=79,
+ 		desc=30002015,
+ 		missionType=1,
+ 		missionClass=7,
+ 		mapConditionId=2015,
+ 		randomWeight=100,
+ 	image=""
+},
+[80] =
+{
+ 		id=80,
+ 		desc=30002016,
+ 		missionType=1,
+ 		missionClass=8,
+ 		mapConditionId=2016,
+ 		randomWeight=100,
+ 	image=""
+},
+[81] =
+{
+ 		id=81,
+ 		desc=30002017,
+ 		missionType=1,
+ 		missionClass=9,
+ 		mapConditionId=2017,
+ 		randomWeight=100,
+ 	image=""
+},
+[82] =
+{
+ 		id=82,
+ 		desc=30002018,
+ 		missionType=1,
+ 		missionClass=10,
+ 		mapConditionId=2018,
+ 		randomWeight=100,
+ 	image=""
+},
+[83] =
+{
+ 		id=83,
+ 		desc=30002019,
+ 		missionType=1,
+ 		missionClass=11,
+ 		mapConditionId=2019,
+ 		randomWeight=100,
+ 	image=""
+},
+[84] =
+{
+ 		id=84,
+ 		desc=30003001,
+ 		missionType=1,
+ 		missionClass=12,
+ 		mapConditionId=3001,
+ 		randomWeight=100,
+ 	image=""
+},
+[85] =
+{
+ 		id=85,
+ 		desc=30003002,
+ 		missionType=1,
+ 		missionClass=1,
+ 		mapConditionId=3002,
+ 		randomWeight=100,
+ 	image=""
+},
+[86] =
+{
+ 		id=86,
+ 		desc=30003003,
+ 		missionType=1,
+ 		missionClass=2,
+ 		mapConditionId=3003,
+ 		randomWeight=100,
+ 	image=""
+},
+[87] =
+{
+ 		id=87,
+ 		desc=30003004,
+ 		missionType=1,
+ 		missionClass=3,
+ 		mapConditionId=3004,
+ 		randomWeight=100,
+ 	image=""
+},
+[88] =
+{
+ 		id=88,
+ 		desc=30003005,
+ 		missionType=1,
+ 		missionClass=4,
+ 		mapConditionId=3005,
+ 		randomWeight=100,
+ 	image=""
+},
+[89] =
+{
+ 		id=89,
+ 		desc=30003006,
+ 		missionType=1,
+ 		missionClass=5,
+ 		mapConditionId=3006,
+ 		randomWeight=100,
+ 	image=""
+},
+[90] =
+{
+ 		id=90,
+ 		desc=30003007,
+ 		missionType=1,
+ 		missionClass=6,
+ 		mapConditionId=3007,
+ 		randomWeight=100,
+ 	image=""
+},
+[91] =
+{
+ 		id=91,
+ 		desc=30003008,
+ 		missionType=1,
+ 		missionClass=7,
+ 		mapConditionId=3008,
+ 		randomWeight=100,
+ 	image=""
+},
+[92] =
+{
+ 		id=92,
+ 		desc=30003009,
+ 		missionType=1,
+ 		missionClass=8,
+ 		mapConditionId=3009,
+ 		randomWeight=100,
+ 	image=""
+},
+[93] =
+{
+ 		id=93,
+ 		desc=30003010,
+ 		missionType=1,
+ 		missionClass=9,
+ 		mapConditionId=3010,
+ 		randomWeight=100,
+ 	image=""
+},
+[94] =
+{
+ 		id=94,
+ 		desc=30003011,
+ 		missionType=1,
+ 		missionClass=10,
+ 		mapConditionId=3011,
+ 		randomWeight=100,
+ 	image=""
+},
+[95] =
+{
+ 		id=95,
+ 		desc=30003012,
+ 		missionType=1,
+ 		missionClass=11,
+ 		mapConditionId=3012,
+ 		randomWeight=100,
+ 	image=""
+},
+[96] =
+{
+ 		id=96,
+ 		desc=30003013,
+ 		missionType=1,
+ 		missionClass=12,
+ 		mapConditionId=3013,
+ 		randomWeight=100,
+ 	image=""
+},
+[97] =
+{
+ 		id=97,
+ 		desc=30003014,
+ 		missionType=1,
+ 		missionClass=1,
+ 		mapConditionId=3014,
+ 		randomWeight=100,
+ 	image=""
+},
+[98] =
+{
+ 		id=98,
+ 		desc=30003015,
+ 		missionType=1,
+ 		missionClass=2,
+ 		mapConditionId=3015,
+ 		randomWeight=100,
+ 	image=""
+},
+[99] =
+{
+ 		id=99,
+ 		desc=30003016,
+ 		missionType=1,
+ 		missionClass=3,
+ 		mapConditionId=3016,
+ 		randomWeight=100,
+ 	image=""
+},
+[100] =
+{
+ 		id=100,
+ 		desc=30003017,
+ 		missionType=1,
+ 		missionClass=4,
+ 		mapConditionId=3017,
+ 		randomWeight=100,
+ 	image=""
+},
+[101] =
+{
+ 		id=101,
+ 		desc=30003018,
+ 		missionType=1,
+ 		missionClass=5,
+ 		mapConditionId=3018,
+ 		randomWeight=100,
+ 	image=""
+},
+[102] =
+{
+ 		id=102,
+ 		desc=30003019,
+ 		missionType=1,
+ 		missionClass=6,
+ 		mapConditionId=3019,
+ 		randomWeight=100,
+ 	image=""
+},
+[103] =
+{
+ 		id=103,
+ 		desc=30003020,
+ 		missionType=1,
+ 		missionClass=7,
+ 		mapConditionId=3020,
+ 		randomWeight=100,
+ 	image=""
+},
+[104] =
+{
+ 		id=104,
+ 		desc=30003021,
+ 		missionType=1,
+ 		missionClass=8,
+ 		mapConditionId=3021,
+ 		randomWeight=100,
+ 	image=""
+},
+[105] =
+{
+ 		id=105,
+ 		desc=30003022,
+ 		missionType=1,
+ 		missionClass=9,
+ 		mapConditionId=3022,
+ 		randomWeight=100,
+ 	image=""
+},
+[106] =
+{
+ 		id=106,
+ 		desc=30003023,
+ 		missionType=1,
+ 		missionClass=10,
+ 		mapConditionId=3023,
+ 		randomWeight=100,
+ 	image=""
+},
+[107] =
+{
+ 		id=107,
+ 		desc=30003024,
+ 		missionType=1,
+ 		missionClass=11,
+ 		mapConditionId=3024,
+ 		randomWeight=100,
+ 	image=""
+},
+[108] =
+{
+ 		id=108,
+ 		desc=30003025,
+ 		missionType=1,
+ 		missionClass=12,
+ 		mapConditionId=3025,
+ 		randomWeight=100,
+ 	image=""
+},
+[109] =
+{
+ 		id=109,
+ 		desc=30003026,
+ 		missionType=1,
+ 		missionClass=1,
+ 		mapConditionId=3026,
+ 		randomWeight=100,
+ 	image=""
+},
+[110] =
+{
+ 		id=110,
+ 		desc=30003027,
+ 		missionType=1,
+ 		missionClass=2,
+ 		mapConditionId=3027,
+ 		randomWeight=100,
+ 	image=""
+},
+[111] =
+{
+ 		id=111,
+ 		desc=30003028,
+ 		missionType=1,
+ 		missionClass=3,
+ 		mapConditionId=3028,
+ 		randomWeight=100,
+ 	image=""
+},
+[112] =
+{
+ 		id=112,
+ 		desc=30003029,
+ 		missionType=1,
+ 		missionClass=4,
+ 		mapConditionId=3029,
+ 		randomWeight=100,
+ 	image=""
+},
+[113] =
+{
+ 		id=113,
+ 		desc=30003030,
+ 		missionType=1,
+ 		missionClass=5,
+ 		mapConditionId=3030,
+ 		randomWeight=100,
+ 	image=""
+},
+[114] =
+{
+ 		id=114,
+ 		desc=30003031,
+ 		missionType=1,
+ 		missionClass=6,
+ 		mapConditionId=3031,
+ 		randomWeight=100,
+ 	image=""
+},
+[115] =
+{
+ 		id=115,
+ 		desc=30003032,
+ 		missionType=1,
+ 		missionClass=7,
+ 		mapConditionId=3032,
+ 		randomWeight=100,
+ 	image=""
+},
+[116] =
+{
+ 		id=116,
+ 		desc=30003033,
+ 		missionType=1,
+ 		missionClass=8,
+ 		mapConditionId=3033,
+ 		randomWeight=100,
+ 	image=""
+},
+[117] =
+{
+ 		id=117,
+ 		desc=30003034,
+ 		missionType=1,
+ 		missionClass=9,
+ 		mapConditionId=3034,
+ 		randomWeight=100,
+ 	image=""
+},
+[118] =
+{
+ 		id=118,
+ 		desc=30003035,
+ 		missionType=1,
+ 		missionClass=10,
+ 		mapConditionId=3035,
+ 		randomWeight=100,
+ 	image=""
+},
+[119] =
+{
+ 		id=119,
+ 		desc=30003036,
+ 		missionType=1,
+ 		missionClass=11,
+ 		mapConditionId=3036,
+ 		randomWeight=100,
+ 	image=""
+},
+[120] =
+{
+ 		id=120,
+ 		desc=30003037,
+ 		missionType=1,
+ 		missionClass=12,
+ 		mapConditionId=3037,
+ 		randomWeight=100,
+ 	image=""
+},
+[121] =
+{
+ 		id=121,
+ 		desc=30003038,
+ 		missionType=1,
+ 		missionClass=1,
+ 		mapConditionId=3038,
+ 		randomWeight=100,
+ 	image=""
+},
+[122] =
+{
+ 		id=122,
+ 		desc=30003039,
+ 		missionType=1,
+ 		missionClass=2,
+ 		mapConditionId=3039,
+ 		randomWeight=100,
+ 	image=""
+},
+[123] =
+{
+ 		id=123,
+ 		desc=30001001,
+ 		missionType=2,
+ 		missionClass=1,
+ 		mapConditionId=1001,
+ 		randomWeight=100,
+ 	image=""
+},
+[124] =
+{
+ 		id=124,
+ 		desc=30001002,
+ 		missionType=2,
+ 		missionClass=2,
+ 		mapConditionId=1002,
+ 		randomWeight=100,
+ 	image=""
+},
+[125] =
+{
+ 		id=125,
+ 		desc=30001003,
+ 		missionType=2,
+ 		missionClass=3,
+ 		mapConditionId=1003,
+ 		randomWeight=100,
+ 	image=""
+},
+[126] =
+{
+ 		id=126,
+ 		desc=30001004,
+ 		missionType=2,
+ 		missionClass=4,
+ 		mapConditionId=1004,
+ 		randomWeight=100,
+ 	image=""
+},
+[127] =
+{
+ 		id=127,
+ 		desc=30001005,
+ 		missionType=2,
+ 		missionClass=5,
+ 		mapConditionId=1005,
+ 		randomWeight=100,
+ 	image=""
+},
+[128] =
+{
+ 		id=128,
+ 		desc=30001006,
+ 		missionType=2,
+ 		missionClass=6,
+ 		mapConditionId=1006,
+ 		randomWeight=100,
+ 	image=""
+},
+[129] =
+{
+ 		id=129,
+ 		desc=30001007,
+ 		missionType=2,
+ 		missionClass=7,
+ 		mapConditionId=1007,
+ 		randomWeight=100,
+ 	image=""
+},
+[130] =
+{
+ 		id=130,
+ 		desc=30001008,
+ 		missionType=2,
+ 		missionClass=8,
+ 		mapConditionId=1008,
+ 		randomWeight=100,
+ 	image=""
+},
+[131] =
+{
+ 		id=131,
+ 		desc=30001009,
+ 		missionType=2,
+ 		missionClass=9,
+ 		mapConditionId=1009,
+ 		randomWeight=100,
+ 	image=""
+},
+[132] =
+{
+ 		id=132,
+ 		desc=30001010,
+ 		missionType=2,
+ 		missionClass=10,
+ 		mapConditionId=1010,
+ 		randomWeight=100,
+ 	image=""
+},
+[133] =
+{
+ 		id=133,
+ 		desc=30001011,
+ 		missionType=2,
+ 		missionClass=11,
+ 		mapConditionId=1011,
+ 		randomWeight=100,
+ 	image=""
+},
+[134] =
+{
+ 		id=134,
+ 		desc=30001012,
+ 		missionType=2,
+ 		missionClass=12,
+ 		mapConditionId=1012,
+ 		randomWeight=100,
+ 	image=""
+},
+[135] =
+{
+ 		id=135,
+ 		desc=30001013,
+ 		missionType=2,
+ 		missionClass=1,
+ 		mapConditionId=1013,
+ 		randomWeight=100,
+ 	image=""
+},
+[136] =
+{
+ 		id=136,
+ 		desc=30001014,
+ 		missionType=2,
+ 		missionClass=2,
+ 		mapConditionId=1014,
+ 		randomWeight=100,
+ 	image=""
+},
+[137] =
+{
+ 		id=137,
+ 		desc=30001015,
+ 		missionType=2,
+ 		missionClass=3,
+ 		mapConditionId=1015,
+ 		randomWeight=100,
+ 	image=""
+},
+[138] =
+{
+ 		id=138,
+ 		desc=30001016,
+ 		missionType=2,
+ 		missionClass=4,
+ 		mapConditionId=1016,
+ 		randomWeight=100,
+ 	image=""
+},
+[139] =
+{
+ 		id=139,
+ 		desc=30001017,
+ 		missionType=2,
+ 		missionClass=5,
+ 		mapConditionId=1017,
+ 		randomWeight=100,
+ 	image=""
+},
+[140] =
+{
+ 		id=140,
+ 		desc=30001018,
+ 		missionType=2,
+ 		missionClass=6,
+ 		mapConditionId=1018,
+ 		randomWeight=100,
+ 	image=""
+},
+[141] =
+{
+ 		id=141,
+ 		desc=30001019,
+ 		missionType=2,
+ 		missionClass=7,
+ 		mapConditionId=1019,
+ 		randomWeight=100,
+ 	image=""
+},
+[142] =
+{
+ 		id=142,
+ 		desc=30001020,
+ 		missionType=2,
+ 		missionClass=8,
+ 		mapConditionId=1020,
+ 		randomWeight=100,
+ 	image=""
+},
+[143] =
+{
+ 		id=143,
+ 		desc=30001021,
+ 		missionType=2,
+ 		missionClass=9,
+ 		mapConditionId=1021,
+ 		randomWeight=100,
+ 	image=""
+},
+[144] =
+{
+ 		id=144,
+ 		desc=30001022,
+ 		missionType=2,
+ 		missionClass=10,
+ 		mapConditionId=1022,
+ 		randomWeight=100,
+ 	image=""
+},
+[145] =
+{
+ 		id=145,
+ 		desc=30001023,
+ 		missionType=2,
+ 		missionClass=11,
+ 		mapConditionId=1023,
+ 		randomWeight=100,
+ 	image=""
+},
+[146] =
+{
+ 		id=146,
+ 		desc=30001024,
+ 		missionType=2,
+ 		missionClass=12,
+ 		mapConditionId=1024,
+ 		randomWeight=100,
+ 	image=""
+},
+[147] =
+{
+ 		id=147,
+ 		desc=30001025,
+ 		missionType=2,
+ 		missionClass=1,
+ 		mapConditionId=1025,
+ 		randomWeight=100,
+ 	image=""
+},
+[148] =
+{
+ 		id=148,
+ 		desc=30001026,
+ 		missionType=2,
+ 		missionClass=2,
+ 		mapConditionId=1026,
+ 		randomWeight=100,
+ 	image=""
+},
+[149] =
+{
+ 		id=149,
+ 		desc=30001027,
+ 		missionType=2,
+ 		missionClass=3,
+ 		mapConditionId=1027,
+ 		randomWeight=100,
+ 	image=""
+},
+[150] =
+{
+ 		id=150,
+ 		desc=30001028,
+ 		missionType=2,
+ 		missionClass=4,
+ 		mapConditionId=1028,
+ 		randomWeight=100,
+ 	image=""
+},
+[151] =
+{
+ 		id=151,
+ 		desc=30001029,
+ 		missionType=2,
+ 		missionClass=5,
+ 		mapConditionId=1029,
+ 		randomWeight=100,
+ 	image=""
+},
+[152] =
+{
+ 		id=152,
+ 		desc=30001030,
+ 		missionType=2,
+ 		missionClass=6,
+ 		mapConditionId=1030,
+ 		randomWeight=100,
+ 	image=""
+},
+[153] =
+{
+ 		id=153,
+ 		desc=30001031,
+ 		missionType=2,
+ 		missionClass=7,
+ 		mapConditionId=1031,
+ 		randomWeight=100,
+ 	image=""
+},
+[154] =
+{
+ 		id=154,
+ 		desc=30001032,
+ 		missionType=2,
+ 		missionClass=8,
+ 		mapConditionId=1032,
+ 		randomWeight=100,
+ 	image=""
+},
+[155] =
+{
+ 		id=155,
+ 		desc=30001033,
+ 		missionType=2,
+ 		missionClass=9,
+ 		mapConditionId=1033,
+ 		randomWeight=100,
+ 	image=""
+},
+[156] =
+{
+ 		id=156,
+ 		desc=30001034,
+ 		missionType=2,
+ 		missionClass=10,
+ 		mapConditionId=1034,
+ 		randomWeight=100,
+ 	image=""
+},
+[157] =
+{
+ 		id=157,
+ 		desc=30001035,
+ 		missionType=2,
+ 		missionClass=11,
+ 		mapConditionId=1035,
+ 		randomWeight=100,
+ 	image=""
+},
+[158] =
+{
+ 		id=158,
+ 		desc=30001036,
+ 		missionType=2,
+ 		missionClass=12,
+ 		mapConditionId=1036,
+ 		randomWeight=100,
+ 	image=""
+},
+[159] =
+{
+ 		id=159,
+ 		desc=30001037,
+ 		missionType=2,
+ 		missionClass=1,
+ 		mapConditionId=1037,
+ 		randomWeight=100,
+ 	image=""
+},
+[160] =
+{
+ 		id=160,
+ 		desc=30001039,
+ 		missionType=2,
+ 		missionClass=2,
+ 		mapConditionId=1039,
+ 		randomWeight=100,
+ 	image=""
+},
+[161] =
+{
+ 		id=161,
+ 		desc=30001040,
+ 		missionType=2,
+ 		missionClass=3,
+ 		mapConditionId=1040,
+ 		randomWeight=100,
+ 	image=""
+},
+[162] =
+{
+ 		id=162,
+ 		desc=30001041,
+ 		missionType=2,
+ 		missionClass=4,
+ 		mapConditionId=1041,
+ 		randomWeight=100,
+ 	image=""
+},
+[163] =
+{
+ 		id=163,
+ 		desc=30001042,
+ 		missionType=2,
+ 		missionClass=5,
+ 		mapConditionId=1042,
+ 		randomWeight=100,
+ 	image=""
+},
+[164] =
+{
+ 		id=164,
+ 		desc=30001043,
+ 		missionType=2,
+ 		missionClass=6,
+ 		mapConditionId=1043,
+ 		randomWeight=100,
+ 	image=""
+},
+[165] =
+{
+ 		id=165,
+ 		desc=30001044,
+ 		missionType=2,
+ 		missionClass=7,
+ 		mapConditionId=1044,
+ 		randomWeight=100,
+ 	image=""
+},
+[166] =
+{
+ 		id=166,
+ 		desc=30001045,
+ 		missionType=2,
+ 		missionClass=8,
+ 		mapConditionId=1045,
+ 		randomWeight=100,
+ 	image=""
+},
+[167] =
+{
+ 		id=167,
+ 		desc=30001046,
+ 		missionType=2,
+ 		missionClass=9,
+ 		mapConditionId=1046,
+ 		randomWeight=100,
+ 	image=""
+},
+[168] =
+{
+ 		id=168,
+ 		desc=30001047,
+ 		missionType=2,
+ 		missionClass=10,
+ 		mapConditionId=1047,
+ 		randomWeight=100,
+ 	image=""
+},
+[169] =
+{
+ 		id=169,
+ 		desc=30001048,
+ 		missionType=2,
+ 		missionClass=11,
+ 		mapConditionId=1048,
+ 		randomWeight=100,
+ 	image=""
+},
+[170] =
+{
+ 		id=170,
+ 		desc=30001049,
+ 		missionType=2,
+ 		missionClass=12,
+ 		mapConditionId=1049,
+ 		randomWeight=100,
+ 	image=""
+},
+[171] =
+{
+ 		id=171,
+ 		desc=30001050,
+ 		missionType=2,
+ 		missionClass=1,
+ 		mapConditionId=1050,
+ 		randomWeight=100,
+ 	image=""
+},
+[172] =
+{
+ 		id=172,
+ 		desc=30001051,
+ 		missionType=2,
+ 		missionClass=2,
+ 		mapConditionId=1051,
+ 		randomWeight=100,
+ 	image=""
+},
+[173] =
+{
+ 		id=173,
+ 		desc=30001052,
+ 		missionType=2,
+ 		missionClass=3,
+ 		mapConditionId=1052,
+ 		randomWeight=100,
+ 	image=""
+},
+[174] =
+{
+ 		id=174,
+ 		desc=30001053,
+ 		missionType=2,
+ 		missionClass=4,
+ 		mapConditionId=1053,
+ 		randomWeight=100,
+ 	image=""
+},
+[175] =
+{
+ 		id=175,
+ 		desc=30001054,
+ 		missionType=2,
+ 		missionClass=5,
+ 		mapConditionId=1054,
+ 		randomWeight=100,
+ 	image=""
+},
+[176] =
+{
+ 		id=176,
+ 		desc=30001055,
+ 		missionType=2,
+ 		missionClass=6,
+ 		mapConditionId=1055,
+ 		randomWeight=100,
+ 	image=""
+},
+[177] =
+{
+ 		id=177,
+ 		desc=30001056,
+ 		missionType=2,
+ 		missionClass=7,
+ 		mapConditionId=1056,
+ 		randomWeight=100,
+ 	image=""
+},
+[178] =
+{
+ 		id=178,
+ 		desc=30001057,
+ 		missionType=2,
+ 		missionClass=8,
+ 		mapConditionId=1057,
+ 		randomWeight=100,
+ 	image=""
+},
+[179] =
+{
+ 		id=179,
+ 		desc=30001058,
+ 		missionType=2,
+ 		missionClass=9,
+ 		mapConditionId=1058,
+ 		randomWeight=100,
+ 	image=""
+},
+[180] =
+{
+ 		id=180,
+ 		desc=30001059,
+ 		missionType=2,
+ 		missionClass=10,
+ 		mapConditionId=1059,
+ 		randomWeight=100,
+ 	image=""
+},
+[181] =
+{
+ 		id=181,
+ 		desc=30001060,
+ 		missionType=2,
+ 		missionClass=11,
+ 		mapConditionId=1060,
+ 		randomWeight=100,
+ 	image=""
+},
+[182] =
+{
+ 		id=182,
+ 		desc=30001061,
+ 		missionType=2,
+ 		missionClass=12,
+ 		mapConditionId=1061,
+ 		randomWeight=100,
+ 	image=""
+},
+[183] =
+{
+ 		id=183,
+ 		desc=30001062,
+ 		missionType=2,
+ 		missionClass=1,
+ 		mapConditionId=1062,
+ 		randomWeight=100,
+ 	image=""
+},
+[184] =
+{
+ 		id=184,
+ 		desc=30001063,
+ 		missionType=2,
+ 		missionClass=2,
+ 		mapConditionId=1063,
+ 		randomWeight=100,
+ 	image=""
+},
+[185] =
+{
+ 		id=185,
+ 		desc=30001064,
+ 		missionType=2,
+ 		missionClass=3,
+ 		mapConditionId=1064,
+ 		randomWeight=100,
+ 	image=""
+},
+[186] =
+{
+ 		id=186,
+ 		desc=30001065,
+ 		missionType=2,
+ 		missionClass=4,
+ 		mapConditionId=1065,
+ 		randomWeight=100,
+ 	image=""
+},
+[187] =
+{
+ 		id=187,
+ 		desc=30002001,
+ 		missionType=2,
+ 		missionClass=5,
+ 		mapConditionId=2001,
+ 		randomWeight=100,
+ 	image=""
+},
+[188] =
+{
+ 		id=188,
+ 		desc=30002002,
+ 		missionType=2,
+ 		missionClass=6,
+ 		mapConditionId=2002,
+ 		randomWeight=100,
+ 	image=""
+},
+[189] =
+{
+ 		id=189,
+ 		desc=30002003,
+ 		missionType=2,
+ 		missionClass=7,
+ 		mapConditionId=2003,
+ 		randomWeight=100,
+ 	image=""
+},
+[190] =
+{
+ 		id=190,
+ 		desc=30002004,
+ 		missionType=2,
+ 		missionClass=8,
+ 		mapConditionId=2004,
+ 		randomWeight=100,
+ 	image=""
+},
+[191] =
+{
+ 		id=191,
+ 		desc=30002005,
+ 		missionType=2,
+ 		missionClass=9,
+ 		mapConditionId=2005,
+ 		randomWeight=100,
+ 	image=""
+},
+[192] =
+{
+ 		id=192,
+ 		desc=30002006,
+ 		missionType=2,
+ 		missionClass=10,
+ 		mapConditionId=2006,
+ 		randomWeight=100,
+ 	image=""
+},
+[193] =
+{
+ 		id=193,
+ 		desc=30002007,
+ 		missionType=2,
+ 		missionClass=11,
+ 		mapConditionId=2007,
+ 		randomWeight=100,
+ 	image=""
+},
+[194] =
+{
+ 		id=194,
+ 		desc=30002008,
+ 		missionType=2,
+ 		missionClass=12,
+ 		mapConditionId=2008,
+ 		randomWeight=100,
+ 	image=""
+},
+[195] =
+{
+ 		id=195,
+ 		desc=30002009,
+ 		missionType=2,
+ 		missionClass=1,
+ 		mapConditionId=2009,
+ 		randomWeight=100,
+ 	image=""
+},
+[196] =
+{
+ 		id=196,
+ 		desc=30002010,
+ 		missionType=2,
+ 		missionClass=2,
+ 		mapConditionId=2010,
+ 		randomWeight=100,
+ 	image=""
+},
+[197] =
+{
+ 		id=197,
+ 		desc=30002011,
+ 		missionType=2,
+ 		missionClass=3,
+ 		mapConditionId=2011,
+ 		randomWeight=100,
+ 	image=""
+},
+[198] =
+{
+ 		id=198,
+ 		desc=30002012,
+ 		missionType=2,
+ 		missionClass=4,
+ 		mapConditionId=2012,
+ 		randomWeight=100,
+ 	image=""
+},
+[199] =
+{
+ 		id=199,
+ 		desc=30002013,
+ 		missionType=2,
+ 		missionClass=5,
+ 		mapConditionId=2013,
+ 		randomWeight=100,
+ 	image=""
+},
+[200] =
+{
+ 		id=200,
+ 		desc=30002014,
+ 		missionType=2,
+ 		missionClass=6,
+ 		mapConditionId=2014,
+ 		randomWeight=100,
+ 	image=""
+},
+[201] =
+{
+ 		id=201,
+ 		desc=30002015,
+ 		missionType=2,
+ 		missionClass=7,
+ 		mapConditionId=2015,
+ 		randomWeight=100,
+ 	image=""
+},
+[202] =
+{
+ 		id=202,
+ 		desc=30002016,
+ 		missionType=2,
+ 		missionClass=8,
+ 		mapConditionId=2016,
+ 		randomWeight=100,
+ 	image=""
+},
+[203] =
+{
+ 		id=203,
+ 		desc=30002017,
+ 		missionType=2,
+ 		missionClass=9,
+ 		mapConditionId=2017,
+ 		randomWeight=100,
+ 	image=""
+},
+[204] =
+{
+ 		id=204,
+ 		desc=30002018,
+ 		missionType=2,
+ 		missionClass=10,
+ 		mapConditionId=2018,
+ 		randomWeight=100,
+ 	image=""
+},
+[205] =
+{
+ 		id=205,
+ 		desc=30002019,
+ 		missionType=2,
+ 		missionClass=11,
+ 		mapConditionId=2019,
+ 		randomWeight=100,
+ 	image=""
+},
+[206] =
+{
+ 		id=206,
+ 		desc=30003001,
+ 		missionType=2,
+ 		missionClass=12,
+ 		mapConditionId=3001,
+ 		randomWeight=100,
+ 	image=""
+},
+[207] =
+{
+ 		id=207,
+ 		desc=30003002,
+ 		missionType=2,
+ 		missionClass=1,
+ 		mapConditionId=3002,
+ 		randomWeight=100,
+ 	image=""
+},
+[208] =
+{
+ 		id=208,
+ 		desc=30003003,
+ 		missionType=2,
+ 		missionClass=2,
+ 		mapConditionId=3003,
+ 		randomWeight=100,
+ 	image=""
+},
+[209] =
+{
+ 		id=209,
+ 		desc=30003004,
+ 		missionType=2,
+ 		missionClass=3,
+ 		mapConditionId=3004,
+ 		randomWeight=100,
+ 	image=""
+},
+[210] =
+{
+ 		id=210,
+ 		desc=30003005,
+ 		missionType=2,
+ 		missionClass=4,
+ 		mapConditionId=3005,
+ 		randomWeight=100,
+ 	image=""
+},
+[211] =
+{
+ 		id=211,
+ 		desc=30003006,
+ 		missionType=2,
+ 		missionClass=5,
+ 		mapConditionId=3006,
+ 		randomWeight=100,
+ 	image=""
+},
+[212] =
+{
+ 		id=212,
+ 		desc=30003007,
+ 		missionType=2,
+ 		missionClass=6,
+ 		mapConditionId=3007,
+ 		randomWeight=100,
+ 	image=""
+},
+[213] =
+{
+ 		id=213,
+ 		desc=30003008,
+ 		missionType=2,
+ 		missionClass=7,
+ 		mapConditionId=3008,
+ 		randomWeight=100,
+ 	image=""
+},
+[214] =
+{
+ 		id=214,
+ 		desc=30003009,
+ 		missionType=2,
+ 		missionClass=8,
+ 		mapConditionId=3009,
+ 		randomWeight=100,
+ 	image=""
+},
+[215] =
+{
+ 		id=215,
+ 		desc=30003010,
+ 		missionType=2,
+ 		missionClass=9,
+ 		mapConditionId=3010,
+ 		randomWeight=100,
+ 	image=""
+},
+[216] =
+{
+ 		id=216,
+ 		desc=30003011,
+ 		missionType=2,
+ 		missionClass=10,
+ 		mapConditionId=3011,
+ 		randomWeight=100,
+ 	image=""
+},
+[217] =
+{
+ 		id=217,
+ 		desc=30003012,
+ 		missionType=2,
+ 		missionClass=11,
+ 		mapConditionId=3012,
+ 		randomWeight=100,
+ 	image=""
+},
+[218] =
+{
+ 		id=218,
+ 		desc=30003013,
+ 		missionType=2,
+ 		missionClass=12,
+ 		mapConditionId=3013,
+ 		randomWeight=100,
+ 	image=""
+},
+[219] =
+{
+ 		id=219,
+ 		desc=30003014,
+ 		missionType=2,
+ 		missionClass=1,
+ 		mapConditionId=3014,
+ 		randomWeight=100,
+ 	image=""
+},
+[220] =
+{
+ 		id=220,
+ 		desc=30003015,
+ 		missionType=2,
+ 		missionClass=2,
+ 		mapConditionId=3015,
+ 		randomWeight=100,
+ 	image=""
+},
+[221] =
+{
+ 		id=221,
+ 		desc=30003016,
+ 		missionType=2,
+ 		missionClass=3,
+ 		mapConditionId=3016,
+ 		randomWeight=100,
+ 	image=""
+},
+[222] =
+{
+ 		id=222,
+ 		desc=30003017,
+ 		missionType=2,
+ 		missionClass=4,
+ 		mapConditionId=3017,
+ 		randomWeight=100,
+ 	image=""
+},
+[223] =
+{
+ 		id=223,
+ 		desc=30003018,
+ 		missionType=2,
+ 		missionClass=5,
+ 		mapConditionId=3018,
+ 		randomWeight=100,
+ 	image=""
+},
+[224] =
+{
+ 		id=224,
+ 		desc=30003019,
+ 		missionType=2,
+ 		missionClass=6,
+ 		mapConditionId=3019,
+ 		randomWeight=100,
+ 	image=""
+},
+[225] =
+{
+ 		id=225,
+ 		desc=30003020,
+ 		missionType=2,
+ 		missionClass=7,
+ 		mapConditionId=3020,
+ 		randomWeight=100,
+ 	image=""
+},
+[226] =
+{
+ 		id=226,
+ 		desc=30003021,
+ 		missionType=2,
+ 		missionClass=8,
+ 		mapConditionId=3021,
+ 		randomWeight=100,
+ 	image=""
+},
+[227] =
+{
+ 		id=227,
+ 		desc=30003022,
+ 		missionType=2,
+ 		missionClass=9,
+ 		mapConditionId=3022,
+ 		randomWeight=100,
+ 	image=""
+},
+[228] =
+{
+ 		id=228,
+ 		desc=30003023,
+ 		missionType=2,
+ 		missionClass=10,
+ 		mapConditionId=3023,
+ 		randomWeight=100,
+ 	image=""
+},
+[229] =
+{
+ 		id=229,
+ 		desc=30003024,
+ 		missionType=2,
+ 		missionClass=11,
+ 		mapConditionId=3024,
+ 		randomWeight=100,
+ 	image=""
+},
+[230] =
+{
+ 		id=230,
+ 		desc=30003025,
+ 		missionType=2,
+ 		missionClass=12,
+ 		mapConditionId=3025,
+ 		randomWeight=100,
+ 	image=""
+},
+[231] =
+{
+ 		id=231,
+ 		desc=30003026,
+ 		missionType=2,
+ 		missionClass=1,
+ 		mapConditionId=3026,
+ 		randomWeight=100,
+ 	image=""
+},
+[232] =
+{
+ 		id=232,
+ 		desc=30003027,
+ 		missionType=2,
+ 		missionClass=2,
+ 		mapConditionId=3027,
+ 		randomWeight=100,
+ 	image=""
+},
+[233] =
+{
+ 		id=233,
+ 		desc=30003028,
+ 		missionType=2,
+ 		missionClass=3,
+ 		mapConditionId=3028,
+ 		randomWeight=100,
+ 	image=""
+},
+[234] =
+{
+ 		id=234,
+ 		desc=30003029,
+ 		missionType=2,
+ 		missionClass=4,
+ 		mapConditionId=3029,
+ 		randomWeight=100,
+ 	image=""
+},
+[235] =
+{
+ 		id=235,
+ 		desc=30003030,
+ 		missionType=2,
+ 		missionClass=5,
+ 		mapConditionId=3030,
+ 		randomWeight=100,
+ 	image=""
+},
+[236] =
+{
+ 		id=236,
+ 		desc=30003031,
+ 		missionType=2,
+ 		missionClass=6,
+ 		mapConditionId=3031,
+ 		randomWeight=100,
+ 	image=""
+},
+[237] =
+{
+ 		id=237,
+ 		desc=30003032,
+ 		missionType=2,
+ 		missionClass=7,
+ 		mapConditionId=3032,
+ 		randomWeight=100,
+ 	image=""
+},
+[238] =
+{
+ 		id=238,
+ 		desc=30003033,
+ 		missionType=2,
+ 		missionClass=8,
+ 		mapConditionId=3033,
+ 		randomWeight=100,
+ 	image=""
+},
+[239] =
+{
+ 		id=239,
+ 		desc=30003034,
+ 		missionType=2,
+ 		missionClass=9,
+ 		mapConditionId=3034,
+ 		randomWeight=100,
+ 	image=""
+},
+[240] =
+{
+ 		id=240,
+ 		desc=30003035,
+ 		missionType=2,
+ 		missionClass=10,
+ 		mapConditionId=3035,
+ 		randomWeight=100,
+ 	image=""
+},
+[241] =
+{
+ 		id=241,
+ 		desc=30003036,
+ 		missionType=2,
+ 		missionClass=11,
+ 		mapConditionId=3036,
+ 		randomWeight=100,
+ 	image=""
+},
+[242] =
+{
+ 		id=242,
+ 		desc=30003037,
+ 		missionType=2,
+ 		missionClass=12,
+ 		mapConditionId=3037,
+ 		randomWeight=100,
+ 	image=""
+},
+[243] =
+{
+ 		id=243,
+ 		desc=30003038,
+ 		missionType=2,
+ 		missionClass=1,
+ 		mapConditionId=3038,
+ 		randomWeight=100,
+ 	image=""
+},
+[244] =
+{
+ 		id=244,
+ 		desc=30003039,
+ 		missionType=2,
+ 		missionClass=2,
+ 		mapConditionId=3039,
+ 		randomWeight=100,
+ 	image=""
+},
+[245] =
+{
+ 		id=245,
+ 		desc=30001001,
+ 		missionType=3,
+ 		missionClass=1,
+ 		mapConditionId=1001,
+ 		randomWeight=100,
+ 	image=""
+},
+[246] =
+{
+ 		id=246,
+ 		desc=30001002,
+ 		missionType=3,
+ 		missionClass=2,
+ 		mapConditionId=1002,
+ 		randomWeight=100,
+ 	image=""
+},
+[247] =
+{
+ 		id=247,
+ 		desc=30001003,
+ 		missionType=3,
+ 		missionClass=3,
+ 		mapConditionId=1003,
+ 		randomWeight=100,
+ 	image=""
+},
+[248] =
+{
+ 		id=248,
+ 		desc=30001004,
+ 		missionType=3,
+ 		missionClass=4,
+ 		mapConditionId=1004,
+ 		randomWeight=100,
+ 	image=""
+},
+[249] =
+{
+ 		id=249,
+ 		desc=30001005,
+ 		missionType=3,
+ 		missionClass=5,
+ 		mapConditionId=1005,
+ 		randomWeight=100,
+ 	image=""
+},
+[250] =
+{
+ 		id=250,
+ 		desc=30001006,
+ 		missionType=3,
+ 		missionClass=6,
+ 		mapConditionId=1006,
+ 		randomWeight=100,
+ 	image=""
+},
+[251] =
+{
+ 		id=251,
+ 		desc=30001007,
+ 		missionType=3,
+ 		missionClass=7,
+ 		mapConditionId=1007,
+ 		randomWeight=100,
+ 	image=""
+},
+[252] =
+{
+ 		id=252,
+ 		desc=30001008,
+ 		missionType=3,
+ 		missionClass=8,
+ 		mapConditionId=1008,
+ 		randomWeight=100,
+ 	image=""
+},
+[253] =
+{
+ 		id=253,
+ 		desc=30001009,
+ 		missionType=3,
+ 		missionClass=9,
+ 		mapConditionId=1009,
+ 		randomWeight=100,
+ 	image=""
+},
+[254] =
+{
+ 		id=254,
+ 		desc=30001010,
+ 		missionType=3,
+ 		missionClass=10,
+ 		mapConditionId=1010,
+ 		randomWeight=100,
+ 	image=""
+},
+[255] =
+{
+ 		id=255,
+ 		desc=30001011,
+ 		missionType=3,
+ 		missionClass=11,
+ 		mapConditionId=1011,
+ 		randomWeight=100,
+ 	image=""
+},
+[256] =
+{
+ 		id=256,
+ 		desc=30001012,
+ 		missionType=3,
+ 		missionClass=12,
+ 		mapConditionId=1012,
+ 		randomWeight=100,
+ 	image=""
+},
+[257] =
+{
+ 		id=257,
+ 		desc=30001013,
+ 		missionType=3,
+ 		missionClass=1,
+ 		mapConditionId=1013,
+ 		randomWeight=100,
+ 	image=""
+},
+[258] =
+{
+ 		id=258,
+ 		desc=30001014,
+ 		missionType=3,
+ 		missionClass=2,
+ 		mapConditionId=1014,
+ 		randomWeight=100,
+ 	image=""
+},
+[259] =
+{
+ 		id=259,
+ 		desc=30001015,
+ 		missionType=3,
+ 		missionClass=3,
+ 		mapConditionId=1015,
+ 		randomWeight=100,
+ 	image=""
+},
+[260] =
+{
+ 		id=260,
+ 		desc=30001016,
+ 		missionType=3,
+ 		missionClass=4,
+ 		mapConditionId=1016,
+ 		randomWeight=100,
+ 	image=""
+},
+[261] =
+{
+ 		id=261,
+ 		desc=30001017,
+ 		missionType=3,
+ 		missionClass=5,
+ 		mapConditionId=1017,
+ 		randomWeight=100,
+ 	image=""
+},
+[262] =
+{
+ 		id=262,
+ 		desc=30001018,
+ 		missionType=3,
+ 		missionClass=6,
+ 		mapConditionId=1018,
+ 		randomWeight=100,
+ 	image=""
+},
+[263] =
+{
+ 		id=263,
+ 		desc=30001019,
+ 		missionType=3,
+ 		missionClass=7,
+ 		mapConditionId=1019,
+ 		randomWeight=100,
+ 	image=""
+},
+[264] =
+{
+ 		id=264,
+ 		desc=30001020,
+ 		missionType=3,
+ 		missionClass=8,
+ 		mapConditionId=1020,
+ 		randomWeight=100,
+ 	image=""
+},
+[265] =
+{
+ 		id=265,
+ 		desc=30001021,
+ 		missionType=3,
+ 		missionClass=9,
+ 		mapConditionId=1021,
+ 		randomWeight=100,
+ 	image=""
+},
+[266] =
+{
+ 		id=266,
+ 		desc=30001022,
+ 		missionType=3,
+ 		missionClass=10,
+ 		mapConditionId=1022,
+ 		randomWeight=100,
+ 	image=""
+},
+[267] =
+{
+ 		id=267,
+ 		desc=30001023,
+ 		missionType=3,
+ 		missionClass=11,
+ 		mapConditionId=1023,
+ 		randomWeight=100,
+ 	image=""
+},
+[268] =
+{
+ 		id=268,
+ 		desc=30001024,
+ 		missionType=3,
+ 		missionClass=12,
+ 		mapConditionId=1024,
+ 		randomWeight=100,
+ 	image=""
+},
+[269] =
+{
+ 		id=269,
+ 		desc=30001025,
+ 		missionType=3,
+ 		missionClass=1,
+ 		mapConditionId=1025,
+ 		randomWeight=100,
+ 	image=""
+},
+[270] =
+{
+ 		id=270,
+ 		desc=30001026,
+ 		missionType=3,
+ 		missionClass=2,
+ 		mapConditionId=1026,
+ 		randomWeight=100,
+ 	image=""
+},
+[271] =
+{
+ 		id=271,
+ 		desc=30001027,
+ 		missionType=3,
+ 		missionClass=3,
+ 		mapConditionId=1027,
+ 		randomWeight=100,
+ 	image=""
+},
+[272] =
+{
+ 		id=272,
+ 		desc=30001028,
+ 		missionType=3,
+ 		missionClass=4,
+ 		mapConditionId=1028,
+ 		randomWeight=100,
+ 	image=""
+},
+[273] =
+{
+ 		id=273,
+ 		desc=30001029,
+ 		missionType=3,
+ 		missionClass=5,
+ 		mapConditionId=1029,
+ 		randomWeight=100,
+ 	image=""
+},
+[274] =
+{
+ 		id=274,
+ 		desc=30001030,
+ 		missionType=3,
+ 		missionClass=6,
+ 		mapConditionId=1030,
+ 		randomWeight=100,
+ 	image=""
+},
+[275] =
+{
+ 		id=275,
+ 		desc=30001031,
+ 		missionType=3,
+ 		missionClass=7,
+ 		mapConditionId=1031,
+ 		randomWeight=100,
+ 	image=""
+},
+[276] =
+{
+ 		id=276,
+ 		desc=30001032,
+ 		missionType=3,
+ 		missionClass=8,
+ 		mapConditionId=1032,
+ 		randomWeight=100,
+ 	image=""
+},
+[277] =
+{
+ 		id=277,
+ 		desc=30001033,
+ 		missionType=3,
+ 		missionClass=9,
+ 		mapConditionId=1033,
+ 		randomWeight=100,
+ 	image=""
+},
+[278] =
+{
+ 		id=278,
+ 		desc=30001034,
+ 		missionType=3,
+ 		missionClass=10,
+ 		mapConditionId=1034,
+ 		randomWeight=100,
+ 	image=""
+},
+[279] =
+{
+ 		id=279,
+ 		desc=30001035,
+ 		missionType=3,
+ 		missionClass=11,
+ 		mapConditionId=1035,
+ 		randomWeight=100,
+ 	image=""
+},
+[280] =
+{
+ 		id=280,
+ 		desc=30001036,
+ 		missionType=3,
+ 		missionClass=12,
+ 		mapConditionId=1036,
+ 		randomWeight=100,
+ 	image=""
+},
+[281] =
+{
+ 		id=281,
+ 		desc=30001037,
+ 		missionType=3,
+ 		missionClass=1,
+ 		mapConditionId=1037,
+ 		randomWeight=100,
+ 	image=""
+},
+[282] =
+{
+ 		id=282,
+ 		desc=30001039,
+ 		missionType=3,
+ 		missionClass=2,
+ 		mapConditionId=1039,
+ 		randomWeight=100,
+ 	image=""
+},
+[283] =
+{
+ 		id=283,
+ 		desc=30001040,
+ 		missionType=3,
+ 		missionClass=3,
+ 		mapConditionId=1040,
+ 		randomWeight=100,
+ 	image=""
+},
+[284] =
+{
+ 		id=284,
+ 		desc=30001041,
+ 		missionType=3,
+ 		missionClass=4,
+ 		mapConditionId=1041,
+ 		randomWeight=100,
+ 	image=""
+},
+[285] =
+{
+ 		id=285,
+ 		desc=30001042,
+ 		missionType=3,
+ 		missionClass=5,
+ 		mapConditionId=1042,
+ 		randomWeight=100,
+ 	image=""
+},
+[286] =
+{
+ 		id=286,
+ 		desc=30001043,
+ 		missionType=3,
+ 		missionClass=6,
+ 		mapConditionId=1043,
+ 		randomWeight=100,
+ 	image=""
+},
+[287] =
+{
+ 		id=287,
+ 		desc=30001044,
+ 		missionType=3,
+ 		missionClass=7,
+ 		mapConditionId=1044,
+ 		randomWeight=100,
+ 	image=""
+},
+[288] =
+{
+ 		id=288,
+ 		desc=30001045,
+ 		missionType=3,
+ 		missionClass=8,
+ 		mapConditionId=1045,
+ 		randomWeight=100,
+ 	image=""
+},
+[289] =
+{
+ 		id=289,
+ 		desc=30001046,
+ 		missionType=3,
+ 		missionClass=9,
+ 		mapConditionId=1046,
+ 		randomWeight=100,
+ 	image=""
+},
+[290] =
+{
+ 		id=290,
+ 		desc=30001047,
+ 		missionType=3,
+ 		missionClass=10,
+ 		mapConditionId=1047,
+ 		randomWeight=100,
+ 	image=""
+},
+[291] =
+{
+ 		id=291,
+ 		desc=30001048,
+ 		missionType=3,
+ 		missionClass=11,
+ 		mapConditionId=1048,
+ 		randomWeight=100,
+ 	image=""
+},
+[292] =
+{
+ 		id=292,
+ 		desc=30001049,
+ 		missionType=3,
+ 		missionClass=12,
+ 		mapConditionId=1049,
+ 		randomWeight=100,
+ 	image=""
+},
+[293] =
+{
+ 		id=293,
+ 		desc=30001050,
+ 		missionType=3,
+ 		missionClass=1,
+ 		mapConditionId=1050,
+ 		randomWeight=100,
+ 	image=""
+},
+[294] =
+{
+ 		id=294,
+ 		desc=30001051,
+ 		missionType=3,
+ 		missionClass=2,
+ 		mapConditionId=1051,
+ 		randomWeight=100,
+ 	image=""
+},
+[295] =
+{
+ 		id=295,
+ 		desc=30001052,
+ 		missionType=3,
+ 		missionClass=3,
+ 		mapConditionId=1052,
+ 		randomWeight=100,
+ 	image=""
+},
+[296] =
+{
+ 		id=296,
+ 		desc=30001053,
+ 		missionType=3,
+ 		missionClass=4,
+ 		mapConditionId=1053,
+ 		randomWeight=100,
+ 	image=""
+},
+[297] =
+{
+ 		id=297,
+ 		desc=30001054,
+ 		missionType=3,
+ 		missionClass=5,
+ 		mapConditionId=1054,
+ 		randomWeight=100,
+ 	image=""
+},
+[298] =
+{
+ 		id=298,
+ 		desc=30001055,
+ 		missionType=3,
+ 		missionClass=6,
+ 		mapConditionId=1055,
+ 		randomWeight=100,
+ 	image=""
+},
+[299] =
+{
+ 		id=299,
+ 		desc=30001056,
+ 		missionType=3,
+ 		missionClass=7,
+ 		mapConditionId=1056,
+ 		randomWeight=100,
+ 	image=""
+},
+[300] =
+{
+ 		id=300,
+ 		desc=30001057,
+ 		missionType=3,
+ 		missionClass=8,
+ 		mapConditionId=1057,
+ 		randomWeight=100,
+ 	image=""
+},
+[301] =
+{
+ 		id=301,
+ 		desc=30001058,
+ 		missionType=3,
+ 		missionClass=9,
+ 		mapConditionId=1058,
+ 		randomWeight=100,
+ 	image=""
+},
+[302] =
+{
+ 		id=302,
+ 		desc=30001059,
+ 		missionType=3,
+ 		missionClass=10,
+ 		mapConditionId=1059,
+ 		randomWeight=100,
+ 	image=""
+},
+[303] =
+{
+ 		id=303,
+ 		desc=30001060,
+ 		missionType=3,
+ 		missionClass=11,
+ 		mapConditionId=1060,
+ 		randomWeight=100,
+ 	image=""
+},
+[304] =
+{
+ 		id=304,
+ 		desc=30001061,
+ 		missionType=3,
+ 		missionClass=12,
+ 		mapConditionId=1061,
+ 		randomWeight=100,
+ 	image=""
+},
+[305] =
+{
+ 		id=305,
+ 		desc=30001062,
+ 		missionType=3,
+ 		missionClass=1,
+ 		mapConditionId=1062,
+ 		randomWeight=100,
+ 	image=""
+},
+[306] =
+{
+ 		id=306,
+ 		desc=30001063,
+ 		missionType=3,
+ 		missionClass=2,
+ 		mapConditionId=1063,
+ 		randomWeight=100,
+ 	image=""
+},
+[307] =
+{
+ 		id=307,
+ 		desc=30001064,
+ 		missionType=3,
+ 		missionClass=3,
+ 		mapConditionId=1064,
+ 		randomWeight=100,
+ 	image=""
+},
+[308] =
+{
+ 		id=308,
+ 		desc=30001065,
+ 		missionType=3,
+ 		missionClass=4,
+ 		mapConditionId=1065,
+ 		randomWeight=100,
+ 	image=""
+},
+[309] =
+{
+ 		id=309,
+ 		desc=30002001,
+ 		missionType=3,
+ 		missionClass=5,
+ 		mapConditionId=2001,
+ 		randomWeight=100,
+ 	image=""
+},
+[310] =
+{
+ 		id=310,
+ 		desc=30002002,
+ 		missionType=3,
+ 		missionClass=6,
+ 		mapConditionId=2002,
+ 		randomWeight=100,
+ 	image=""
+},
+[311] =
+{
+ 		id=311,
+ 		desc=30002003,
+ 		missionType=3,
+ 		missionClass=7,
+ 		mapConditionId=2003,
+ 		randomWeight=100,
+ 	image=""
+},
+[312] =
+{
+ 		id=312,
+ 		desc=30002004,
+ 		missionType=3,
+ 		missionClass=8,
+ 		mapConditionId=2004,
+ 		randomWeight=100,
+ 	image=""
+},
+[313] =
+{
+ 		id=313,
+ 		desc=30002005,
+ 		missionType=3,
+ 		missionClass=9,
+ 		mapConditionId=2005,
+ 		randomWeight=100,
+ 	image=""
+},
+[314] =
+{
+ 		id=314,
+ 		desc=30002006,
+ 		missionType=3,
+ 		missionClass=10,
+ 		mapConditionId=2006,
+ 		randomWeight=100,
+ 	image=""
+},
+[315] =
+{
+ 		id=315,
+ 		desc=30002007,
+ 		missionType=3,
+ 		missionClass=11,
+ 		mapConditionId=2007,
+ 		randomWeight=100,
+ 	image=""
+},
+[316] =
+{
+ 		id=316,
+ 		desc=30002008,
+ 		missionType=3,
+ 		missionClass=12,
+ 		mapConditionId=2008,
+ 		randomWeight=100,
+ 	image=""
+},
+[317] =
+{
+ 		id=317,
+ 		desc=30002009,
+ 		missionType=3,
+ 		missionClass=1,
+ 		mapConditionId=2009,
+ 		randomWeight=100,
+ 	image=""
+},
+[318] =
+{
+ 		id=318,
+ 		desc=30002010,
+ 		missionType=3,
+ 		missionClass=2,
+ 		mapConditionId=2010,
+ 		randomWeight=100,
+ 	image=""
+},
+[319] =
+{
+ 		id=319,
+ 		desc=30002011,
+ 		missionType=3,
+ 		missionClass=3,
+ 		mapConditionId=2011,
+ 		randomWeight=100,
+ 	image=""
+},
+[320] =
+{
+ 		id=320,
+ 		desc=30002012,
+ 		missionType=3,
+ 		missionClass=4,
+ 		mapConditionId=2012,
+ 		randomWeight=100,
+ 	image=""
+},
+[321] =
+{
+ 		id=321,
+ 		desc=30002013,
+ 		missionType=3,
+ 		missionClass=5,
+ 		mapConditionId=2013,
+ 		randomWeight=100,
+ 	image=""
+},
+[322] =
+{
+ 		id=322,
+ 		desc=30002014,
+ 		missionType=3,
+ 		missionClass=6,
+ 		mapConditionId=2014,
+ 		randomWeight=100,
+ 	image=""
+},
+[323] =
+{
+ 		id=323,
+ 		desc=30002015,
+ 		missionType=3,
+ 		missionClass=7,
+ 		mapConditionId=2015,
+ 		randomWeight=100,
+ 	image=""
+},
+[324] =
+{
+ 		id=324,
+ 		desc=30002016,
+ 		missionType=3,
+ 		missionClass=8,
+ 		mapConditionId=2016,
+ 		randomWeight=100,
+ 	image=""
+},
+[325] =
+{
+ 		id=325,
+ 		desc=30002017,
+ 		missionType=3,
+ 		missionClass=9,
+ 		mapConditionId=2017,
+ 		randomWeight=100,
+ 	image=""
+},
+[326] =
+{
+ 		id=326,
+ 		desc=30002018,
+ 		missionType=3,
+ 		missionClass=10,
+ 		mapConditionId=2018,
+ 		randomWeight=100,
+ 	image=""
+},
+[327] =
+{
+ 		id=327,
+ 		desc=30002019,
+ 		missionType=3,
+ 		missionClass=11,
+ 		mapConditionId=2019,
+ 		randomWeight=100,
+ 	image=""
+},
+[328] =
+{
+ 		id=328,
+ 		desc=30003001,
+ 		missionType=3,
+ 		missionClass=12,
+ 		mapConditionId=3001,
+ 		randomWeight=100,
+ 	image=""
+},
+[329] =
+{
+ 		id=329,
+ 		desc=30003002,
+ 		missionType=3,
+ 		missionClass=1,
+ 		mapConditionId=3002,
+ 		randomWeight=100,
+ 	image=""
+},
+[330] =
+{
+ 		id=330,
+ 		desc=30003003,
+ 		missionType=3,
+ 		missionClass=2,
+ 		mapConditionId=3003,
+ 		randomWeight=100,
+ 	image=""
+},
+[331] =
+{
+ 		id=331,
+ 		desc=30003004,
+ 		missionType=3,
+ 		missionClass=3,
+ 		mapConditionId=3004,
+ 		randomWeight=100,
+ 	image=""
+},
+[332] =
+{
+ 		id=332,
+ 		desc=30003005,
+ 		missionType=3,
+ 		missionClass=4,
+ 		mapConditionId=3005,
+ 		randomWeight=100,
+ 	image=""
+},
+[333] =
+{
+ 		id=333,
+ 		desc=30003006,
+ 		missionType=3,
+ 		missionClass=5,
+ 		mapConditionId=3006,
+ 		randomWeight=100,
+ 	image=""
+},
+[334] =
+{
+ 		id=334,
+ 		desc=30003007,
+ 		missionType=3,
+ 		missionClass=6,
+ 		mapConditionId=3007,
+ 		randomWeight=100,
+ 	image=""
+},
+[335] =
+{
+ 		id=335,
+ 		desc=30003008,
+ 		missionType=3,
+ 		missionClass=7,
+ 		mapConditionId=3008,
+ 		randomWeight=100,
+ 	image=""
+},
+[336] =
+{
+ 		id=336,
+ 		desc=30003009,
+ 		missionType=3,
+ 		missionClass=8,
+ 		mapConditionId=3009,
+ 		randomWeight=100,
+ 	image=""
+},
+[337] =
+{
+ 		id=337,
+ 		desc=30003010,
+ 		missionType=3,
+ 		missionClass=9,
+ 		mapConditionId=3010,
+ 		randomWeight=100,
+ 	image=""
+},
+[338] =
+{
+ 		id=338,
+ 		desc=30003011,
+ 		missionType=3,
+ 		missionClass=10,
+ 		mapConditionId=3011,
+ 		randomWeight=100,
+ 	image=""
+},
+[339] =
+{
+ 		id=339,
+ 		desc=30003012,
+ 		missionType=3,
+ 		missionClass=11,
+ 		mapConditionId=3012,
+ 		randomWeight=100,
+ 	image=""
+},
+[340] =
+{
+ 		id=340,
+ 		desc=30003013,
+ 		missionType=3,
+ 		missionClass=12,
+ 		mapConditionId=3013,
+ 		randomWeight=100,
+ 	image=""
+},
+[341] =
+{
+ 		id=341,
+ 		desc=30003014,
+ 		missionType=3,
+ 		missionClass=1,
+ 		mapConditionId=3014,
+ 		randomWeight=100,
+ 	image=""
+},
+[342] =
+{
+ 		id=342,
+ 		desc=30003015,
+ 		missionType=3,
+ 		missionClass=2,
+ 		mapConditionId=3015,
+ 		randomWeight=100,
+ 	image=""
+},
+[343] =
+{
+ 		id=343,
+ 		desc=30003016,
+ 		missionType=3,
+ 		missionClass=3,
+ 		mapConditionId=3016,
+ 		randomWeight=100,
+ 	image=""
+},
+[344] =
+{
+ 		id=344,
+ 		desc=30003017,
+ 		missionType=3,
+ 		missionClass=4,
+ 		mapConditionId=3017,
+ 		randomWeight=100,
+ 	image=""
+},
+[345] =
+{
+ 		id=345,
+ 		desc=30003018,
+ 		missionType=3,
+ 		missionClass=5,
+ 		mapConditionId=3018,
+ 		randomWeight=100,
+ 	image=""
+},
+[346] =
+{
+ 		id=346,
+ 		desc=30003019,
+ 		missionType=3,
+ 		missionClass=6,
+ 		mapConditionId=3019,
+ 		randomWeight=100,
+ 	image=""
+},
+[347] =
+{
+ 		id=347,
+ 		desc=30003020,
+ 		missionType=3,
+ 		missionClass=7,
+ 		mapConditionId=3020,
+ 		randomWeight=100,
+ 	image=""
+},
+[348] =
+{
+ 		id=348,
+ 		desc=30003021,
+ 		missionType=3,
+ 		missionClass=8,
+ 		mapConditionId=3021,
+ 		randomWeight=100,
+ 	image=""
+},
+[349] =
+{
+ 		id=349,
+ 		desc=30003022,
+ 		missionType=3,
+ 		missionClass=9,
+ 		mapConditionId=3022,
+ 		randomWeight=100,
+ 	image=""
+},
+[350] =
+{
+ 		id=350,
+ 		desc=30003023,
+ 		missionType=3,
+ 		missionClass=10,
+ 		mapConditionId=3023,
+ 		randomWeight=100,
+ 	image=""
+},
+[351] =
+{
+ 		id=351,
+ 		desc=30003024,
+ 		missionType=3,
+ 		missionClass=11,
+ 		mapConditionId=3024,
+ 		randomWeight=100,
+ 	image=""
+},
+[352] =
+{
+ 		id=352,
+ 		desc=30003025,
+ 		missionType=3,
+ 		missionClass=12,
+ 		mapConditionId=3025,
+ 		randomWeight=100,
+ 	image=""
+},
+[353] =
+{
+ 		id=353,
+ 		desc=30003026,
+ 		missionType=3,
+ 		missionClass=1,
+ 		mapConditionId=3026,
+ 		randomWeight=100,
+ 	image=""
+},
+[354] =
+{
+ 		id=354,
+ 		desc=30003027,
+ 		missionType=3,
+ 		missionClass=2,
+ 		mapConditionId=3027,
+ 		randomWeight=100,
+ 	image=""
+},
+[355] =
+{
+ 		id=355,
+ 		desc=30003028,
+ 		missionType=3,
+ 		missionClass=3,
+ 		mapConditionId=3028,
+ 		randomWeight=100,
+ 	image=""
+},
+[356] =
+{
+ 		id=356,
+ 		desc=30003029,
+ 		missionType=3,
+ 		missionClass=4,
+ 		mapConditionId=3029,
+ 		randomWeight=100,
+ 	image=""
+},
+[357] =
+{
+ 		id=357,
+ 		desc=30003030,
+ 		missionType=3,
+ 		missionClass=5,
+ 		mapConditionId=3030,
+ 		randomWeight=100,
+ 	image=""
+},
+[358] =
+{
+ 		id=358,
+ 		desc=30003031,
+ 		missionType=3,
+ 		missionClass=6,
+ 		mapConditionId=3031,
+ 		randomWeight=100,
+ 	image=""
+},
+[359] =
+{
+ 		id=359,
+ 		desc=30003032,
+ 		missionType=3,
+ 		missionClass=7,
+ 		mapConditionId=3032,
+ 		randomWeight=100,
+ 	image=""
+},
+[360] =
+{
+ 		id=360,
+ 		desc=30003033,
+ 		missionType=3,
+ 		missionClass=8,
+ 		mapConditionId=3033,
+ 		randomWeight=100,
+ 	image=""
+},
+[361] =
+{
+ 		id=361,
+ 		desc=30003034,
+ 		missionType=3,
+ 		missionClass=9,
+ 		mapConditionId=3034,
+ 		randomWeight=100,
+ 	image=""
+},
+[362] =
+{
+ 		id=362,
+ 		desc=30003035,
+ 		missionType=3,
+ 		missionClass=10,
+ 		mapConditionId=3035,
+ 		randomWeight=100,
+ 	image=""
+},
+[363] =
+{
+ 		id=363,
+ 		desc=30003036,
+ 		missionType=3,
+ 		missionClass=11,
+ 		mapConditionId=3036,
+ 		randomWeight=100,
+ 	image=""
+},
+[364] =
+{
+ 		id=364,
+ 		desc=30003037,
+ 		missionType=3,
+ 		missionClass=12,
+ 		mapConditionId=3037,
+ 		randomWeight=100,
+ 	image=""
+},
+[365] =
+{
+ 		id=365,
+ 		desc=30003038,
+ 		missionType=3,
+ 		missionClass=1,
+ 		mapConditionId=3038,
+ 		randomWeight=100,
+ 	image=""
+},
+[366] =
+{
+ 		id=366,
+ 		desc=30003039,
+ 		missionType=3,
+ 		missionClass=2,
+ 		mapConditionId=3039,
+ 		randomWeight=100,
+ 	image=""
+},
+[367] =
+{
+ 		id=367,
+ 		desc=30001001,
+ 		missionType=4,
+ 		missionClass=1,
+ 		mapConditionId=1001,
+ 		randomWeight=100,
+ 	image=""
+},
+[368] =
+{
+ 		id=368,
+ 		desc=30001002,
+ 		missionType=4,
+ 		missionClass=2,
+ 		mapConditionId=1002,
+ 		randomWeight=100,
+ 	image=""
+},
+[369] =
+{
+ 		id=369,
+ 		desc=30001003,
+ 		missionType=4,
+ 		missionClass=3,
+ 		mapConditionId=1003,
+ 		randomWeight=100,
+ 	image=""
+},
+[370] =
+{
+ 		id=370,
+ 		desc=30001004,
+ 		missionType=4,
+ 		missionClass=4,
+ 		mapConditionId=1004,
+ 		randomWeight=100,
+ 	image=""
+},
+[371] =
+{
+ 		id=371,
+ 		desc=30001005,
+ 		missionType=4,
+ 		missionClass=5,
+ 		mapConditionId=1005,
+ 		randomWeight=100,
+ 	image=""
+},
+[372] =
+{
+ 		id=372,
+ 		desc=30001006,
+ 		missionType=4,
+ 		missionClass=6,
+ 		mapConditionId=1006,
+ 		randomWeight=100,
+ 	image=""
+},
+[373] =
+{
+ 		id=373,
+ 		desc=30001007,
+ 		missionType=4,
+ 		missionClass=7,
+ 		mapConditionId=1007,
+ 		randomWeight=100,
+ 	image=""
+},
+[374] =
+{
+ 		id=374,
+ 		desc=30001008,
+ 		missionType=4,
+ 		missionClass=8,
+ 		mapConditionId=1008,
+ 		randomWeight=100,
+ 	image=""
+},
+[375] =
+{
+ 		id=375,
+ 		desc=30001009,
+ 		missionType=4,
+ 		missionClass=9,
+ 		mapConditionId=1009,
+ 		randomWeight=100,
+ 	image=""
+},
+[376] =
+{
+ 		id=376,
+ 		desc=30001010,
+ 		missionType=4,
+ 		missionClass=10,
+ 		mapConditionId=1010,
+ 		randomWeight=100,
+ 	image=""
+},
+[377] =
+{
+ 		id=377,
+ 		desc=30001011,
+ 		missionType=4,
+ 		missionClass=11,
+ 		mapConditionId=1011,
+ 		randomWeight=100,
+ 	image=""
+},
+[378] =
+{
+ 		id=378,
+ 		desc=30001012,
+ 		missionType=4,
+ 		missionClass=12,
+ 		mapConditionId=1012,
+ 		randomWeight=100,
+ 	image=""
+},
+[379] =
+{
+ 		id=379,
+ 		desc=30001013,
+ 		missionType=4,
+ 		missionClass=1,
+ 		mapConditionId=1013,
+ 		randomWeight=100,
+ 	image=""
+},
+[380] =
+{
+ 		id=380,
+ 		desc=30001014,
+ 		missionType=4,
+ 		missionClass=2,
+ 		mapConditionId=1014,
+ 		randomWeight=100,
+ 	image=""
+},
+[381] =
+{
+ 		id=381,
+ 		desc=30001015,
+ 		missionType=4,
+ 		missionClass=3,
+ 		mapConditionId=1015,
+ 		randomWeight=100,
+ 	image=""
+},
+[382] =
+{
+ 		id=382,
+ 		desc=30001016,
+ 		missionType=4,
+ 		missionClass=4,
+ 		mapConditionId=1016,
+ 		randomWeight=100,
+ 	image=""
+},
+[383] =
+{
+ 		id=383,
+ 		desc=30001017,
+ 		missionType=4,
+ 		missionClass=5,
+ 		mapConditionId=1017,
+ 		randomWeight=100,
+ 	image=""
+},
+[384] =
+{
+ 		id=384,
+ 		desc=30001018,
+ 		missionType=4,
+ 		missionClass=6,
+ 		mapConditionId=1018,
+ 		randomWeight=100,
+ 	image=""
+},
+[385] =
+{
+ 		id=385,
+ 		desc=30001019,
+ 		missionType=4,
+ 		missionClass=7,
+ 		mapConditionId=1019,
+ 		randomWeight=100,
+ 	image=""
+},
+[386] =
+{
+ 		id=386,
+ 		desc=30001020,
+ 		missionType=4,
+ 		missionClass=8,
+ 		mapConditionId=1020,
+ 		randomWeight=100,
+ 	image=""
+},
+[387] =
+{
+ 		id=387,
+ 		desc=30001021,
+ 		missionType=4,
+ 		missionClass=9,
+ 		mapConditionId=1021,
+ 		randomWeight=100,
+ 	image=""
+},
+[388] =
+{
+ 		id=388,
+ 		desc=30001022,
+ 		missionType=4,
+ 		missionClass=10,
+ 		mapConditionId=1022,
+ 		randomWeight=100,
+ 	image=""
+},
+[389] =
+{
+ 		id=389,
+ 		desc=30001023,
+ 		missionType=4,
+ 		missionClass=11,
+ 		mapConditionId=1023,
+ 		randomWeight=100,
+ 	image=""
+},
+[390] =
+{
+ 		id=390,
+ 		desc=30001024,
+ 		missionType=4,
+ 		missionClass=12,
+ 		mapConditionId=1024,
+ 		randomWeight=100,
+ 	image=""
+},
+[391] =
+{
+ 		id=391,
+ 		desc=30001025,
+ 		missionType=4,
+ 		missionClass=1,
+ 		mapConditionId=1025,
+ 		randomWeight=100,
+ 	image=""
+},
+[392] =
+{
+ 		id=392,
+ 		desc=30001026,
+ 		missionType=4,
+ 		missionClass=2,
+ 		mapConditionId=1026,
+ 		randomWeight=100,
+ 	image=""
+},
+[393] =
+{
+ 		id=393,
+ 		desc=30001027,
+ 		missionType=4,
+ 		missionClass=3,
+ 		mapConditionId=1027,
+ 		randomWeight=100,
+ 	image=""
+},
+[394] =
+{
+ 		id=394,
+ 		desc=30001028,
+ 		missionType=4,
+ 		missionClass=4,
+ 		mapConditionId=1028,
+ 		randomWeight=100,
+ 	image=""
+},
+[395] =
+{
+ 		id=395,
+ 		desc=30001029,
+ 		missionType=4,
+ 		missionClass=5,
+ 		mapConditionId=1029,
+ 		randomWeight=100,
+ 	image=""
+},
+[396] =
+{
+ 		id=396,
+ 		desc=30001030,
+ 		missionType=4,
+ 		missionClass=6,
+ 		mapConditionId=1030,
+ 		randomWeight=100,
+ 	image=""
+},
+[397] =
+{
+ 		id=397,
+ 		desc=30001031,
+ 		missionType=4,
+ 		missionClass=7,
+ 		mapConditionId=1031,
+ 		randomWeight=100,
+ 	image=""
+},
+[398] =
+{
+ 		id=398,
+ 		desc=30001032,
+ 		missionType=4,
+ 		missionClass=8,
+ 		mapConditionId=1032,
+ 		randomWeight=100,
+ 	image=""
+},
+[399] =
+{
+ 		id=399,
+ 		desc=30001033,
+ 		missionType=4,
+ 		missionClass=9,
+ 		mapConditionId=1033,
+ 		randomWeight=100,
+ 	image=""
+},
+[400] =
+{
+ 		id=400,
+ 		desc=30001034,
+ 		missionType=4,
+ 		missionClass=10,
+ 		mapConditionId=1034,
+ 		randomWeight=100,
+ 	image=""
+},
+[401] =
+{
+ 		id=401,
+ 		desc=30001035,
+ 		missionType=4,
+ 		missionClass=11,
+ 		mapConditionId=1035,
+ 		randomWeight=100,
+ 	image=""
+},
+[402] =
+{
+ 		id=402,
+ 		desc=30001036,
+ 		missionType=4,
+ 		missionClass=12,
+ 		mapConditionId=1036,
+ 		randomWeight=100,
+ 	image=""
+},
+[403] =
+{
+ 		id=403,
+ 		desc=30001037,
+ 		missionType=4,
+ 		missionClass=1,
+ 		mapConditionId=1037,
+ 		randomWeight=100,
+ 	image=""
+},
+[404] =
+{
+ 		id=404,
+ 		desc=30001039,
+ 		missionType=4,
+ 		missionClass=2,
+ 		mapConditionId=1039,
+ 		randomWeight=100,
+ 	image=""
+},
+[405] =
+{
+ 		id=405,
+ 		desc=30001040,
+ 		missionType=4,
+ 		missionClass=3,
+ 		mapConditionId=1040,
+ 		randomWeight=100,
+ 	image=""
+},
+[406] =
+{
+ 		id=406,
+ 		desc=30001041,
+ 		missionType=4,
+ 		missionClass=4,
+ 		mapConditionId=1041,
+ 		randomWeight=100,
+ 	image=""
+},
+[407] =
+{
+ 		id=407,
+ 		desc=30001042,
+ 		missionType=4,
+ 		missionClass=5,
+ 		mapConditionId=1042,
+ 		randomWeight=100,
+ 	image=""
+},
+[408] =
+{
+ 		id=408,
+ 		desc=30001043,
+ 		missionType=4,
+ 		missionClass=6,
+ 		mapConditionId=1043,
+ 		randomWeight=100,
+ 	image=""
+},
+[409] =
+{
+ 		id=409,
+ 		desc=30001044,
+ 		missionType=4,
+ 		missionClass=7,
+ 		mapConditionId=1044,
+ 		randomWeight=100,
+ 	image=""
+},
+[410] =
+{
+ 		id=410,
+ 		desc=30001045,
+ 		missionType=4,
+ 		missionClass=8,
+ 		mapConditionId=1045,
+ 		randomWeight=100,
+ 	image=""
+},
+[411] =
+{
+ 		id=411,
+ 		desc=30001046,
+ 		missionType=4,
+ 		missionClass=9,
+ 		mapConditionId=1046,
+ 		randomWeight=100,
+ 	image=""
+},
+[412] =
+{
+ 		id=412,
+ 		desc=30001047,
+ 		missionType=4,
+ 		missionClass=10,
+ 		mapConditionId=1047,
+ 		randomWeight=100,
+ 	image=""
+},
+[413] =
+{
+ 		id=413,
+ 		desc=30001048,
+ 		missionType=4,
+ 		missionClass=11,
+ 		mapConditionId=1048,
+ 		randomWeight=100,
+ 	image=""
+},
+[414] =
+{
+ 		id=414,
+ 		desc=30001049,
+ 		missionType=4,
+ 		missionClass=12,
+ 		mapConditionId=1049,
+ 		randomWeight=100,
+ 	image=""
+},
+[415] =
+{
+ 		id=415,
+ 		desc=30001050,
+ 		missionType=4,
+ 		missionClass=1,
+ 		mapConditionId=1050,
+ 		randomWeight=100,
+ 	image=""
+},
+[416] =
+{
+ 		id=416,
+ 		desc=30001051,
+ 		missionType=4,
+ 		missionClass=2,
+ 		mapConditionId=1051,
+ 		randomWeight=100,
+ 	image=""
+},
+[417] =
+{
+ 		id=417,
+ 		desc=30001052,
+ 		missionType=4,
+ 		missionClass=3,
+ 		mapConditionId=1052,
+ 		randomWeight=100,
+ 	image=""
+},
+[418] =
+{
+ 		id=418,
+ 		desc=30001053,
+ 		missionType=4,
+ 		missionClass=4,
+ 		mapConditionId=1053,
+ 		randomWeight=100,
+ 	image=""
+},
+[419] =
+{
+ 		id=419,
+ 		desc=30001054,
+ 		missionType=4,
+ 		missionClass=5,
+ 		mapConditionId=1054,
+ 		randomWeight=100,
+ 	image=""
+},
+[420] =
+{
+ 		id=420,
+ 		desc=30001055,
+ 		missionType=4,
+ 		missionClass=6,
+ 		mapConditionId=1055,
+ 		randomWeight=100,
+ 	image=""
+},
+[421] =
+{
+ 		id=421,
+ 		desc=30001056,
+ 		missionType=4,
+ 		missionClass=7,
+ 		mapConditionId=1056,
+ 		randomWeight=100,
+ 	image=""
+},
+[422] =
+{
+ 		id=422,
+ 		desc=30001057,
+ 		missionType=4,
+ 		missionClass=8,
+ 		mapConditionId=1057,
+ 		randomWeight=100,
+ 	image=""
+},
+[423] =
+{
+ 		id=423,
+ 		desc=30001058,
+ 		missionType=4,
+ 		missionClass=9,
+ 		mapConditionId=1058,
+ 		randomWeight=100,
+ 	image=""
+},
+[424] =
+{
+ 		id=424,
+ 		desc=30001059,
+ 		missionType=4,
+ 		missionClass=10,
+ 		mapConditionId=1059,
+ 		randomWeight=100,
+ 	image=""
+},
+[425] =
+{
+ 		id=425,
+ 		desc=30001060,
+ 		missionType=4,
+ 		missionClass=11,
+ 		mapConditionId=1060,
+ 		randomWeight=100,
+ 	image=""
+},
+[426] =
+{
+ 		id=426,
+ 		desc=30001061,
+ 		missionType=4,
+ 		missionClass=12,
+ 		mapConditionId=1061,
+ 		randomWeight=100,
+ 	image=""
+},
+[427] =
+{
+ 		id=427,
+ 		desc=30001062,
+ 		missionType=4,
+ 		missionClass=1,
+ 		mapConditionId=1062,
+ 		randomWeight=100,
+ 	image=""
+},
+[428] =
+{
+ 		id=428,
+ 		desc=30001063,
+ 		missionType=4,
+ 		missionClass=2,
+ 		mapConditionId=1063,
+ 		randomWeight=100,
+ 	image=""
+},
+[429] =
+{
+ 		id=429,
+ 		desc=30001064,
+ 		missionType=4,
+ 		missionClass=3,
+ 		mapConditionId=1064,
+ 		randomWeight=100,
+ 	image=""
+},
+[430] =
+{
+ 		id=430,
+ 		desc=30001065,
+ 		missionType=4,
+ 		missionClass=4,
+ 		mapConditionId=1065,
+ 		randomWeight=100,
+ 	image=""
+},
+[431] =
+{
+ 		id=431,
+ 		desc=30002001,
+ 		missionType=4,
+ 		missionClass=5,
+ 		mapConditionId=2001,
+ 		randomWeight=100,
+ 	image=""
+},
+[432] =
+{
+ 		id=432,
+ 		desc=30002002,
+ 		missionType=4,
+ 		missionClass=6,
+ 		mapConditionId=2002,
+ 		randomWeight=100,
+ 	image=""
+},
+[433] =
+{
+ 		id=433,
+ 		desc=30002003,
+ 		missionType=4,
+ 		missionClass=7,
+ 		mapConditionId=2003,
+ 		randomWeight=100,
+ 	image=""
+},
+[434] =
+{
+ 		id=434,
+ 		desc=30002004,
+ 		missionType=4,
+ 		missionClass=8,
+ 		mapConditionId=2004,
+ 		randomWeight=100,
+ 	image=""
+},
+[435] =
+{
+ 		id=435,
+ 		desc=30002005,
+ 		missionType=4,
+ 		missionClass=9,
+ 		mapConditionId=2005,
+ 		randomWeight=100,
+ 	image=""
+},
+[436] =
+{
+ 		id=436,
+ 		desc=30002006,
+ 		missionType=4,
+ 		missionClass=10,
+ 		mapConditionId=2006,
+ 		randomWeight=100,
+ 	image=""
+},
+[437] =
+{
+ 		id=437,
+ 		desc=30002007,
+ 		missionType=4,
+ 		missionClass=11,
+ 		mapConditionId=2007,
+ 		randomWeight=100,
+ 	image=""
+},
+[438] =
+{
+ 		id=438,
+ 		desc=30002008,
+ 		missionType=4,
+ 		missionClass=12,
+ 		mapConditionId=2008,
+ 		randomWeight=100,
+ 	image=""
+},
+[439] =
+{
+ 		id=439,
+ 		desc=30002009,
+ 		missionType=4,
+ 		missionClass=1,
+ 		mapConditionId=2009,
+ 		randomWeight=100,
+ 	image=""
+},
+[440] =
+{
+ 		id=440,
+ 		desc=30002010,
+ 		missionType=4,
+ 		missionClass=2,
+ 		mapConditionId=2010,
+ 		randomWeight=100,
+ 	image=""
+},
+[441] =
+{
+ 		id=441,
+ 		desc=30002011,
+ 		missionType=4,
+ 		missionClass=3,
+ 		mapConditionId=2011,
+ 		randomWeight=100,
+ 	image=""
+},
+[442] =
+{
+ 		id=442,
+ 		desc=30002012,
+ 		missionType=4,
+ 		missionClass=4,
+ 		mapConditionId=2012,
+ 		randomWeight=100,
+ 	image=""
+},
+[443] =
+{
+ 		id=443,
+ 		desc=30002013,
+ 		missionType=4,
+ 		missionClass=5,
+ 		mapConditionId=2013,
+ 		randomWeight=100,
+ 	image=""
+},
+[444] =
+{
+ 		id=444,
+ 		desc=30002014,
+ 		missionType=4,
+ 		missionClass=6,
+ 		mapConditionId=2014,
+ 		randomWeight=100,
+ 	image=""
+},
+[445] =
+{
+ 		id=445,
+ 		desc=30002015,
+ 		missionType=4,
+ 		missionClass=7,
+ 		mapConditionId=2015,
+ 		randomWeight=100,
+ 	image=""
+},
+[446] =
+{
+ 		id=446,
+ 		desc=30002016,
+ 		missionType=4,
+ 		missionClass=8,
+ 		mapConditionId=2016,
+ 		randomWeight=100,
+ 	image=""
+},
+[447] =
+{
+ 		id=447,
+ 		desc=30002017,
+ 		missionType=4,
+ 		missionClass=9,
+ 		mapConditionId=2017,
+ 		randomWeight=100,
+ 	image=""
+},
+[448] =
+{
+ 		id=448,
+ 		desc=30002018,
+ 		missionType=4,
+ 		missionClass=10,
+ 		mapConditionId=2018,
+ 		randomWeight=100,
+ 	image=""
+},
+[449] =
+{
+ 		id=449,
+ 		desc=30002019,
+ 		missionType=4,
+ 		missionClass=11,
+ 		mapConditionId=2019,
+ 		randomWeight=100,
+ 	image=""
+},
+[450] =
+{
+ 		id=450,
+ 		desc=30003001,
+ 		missionType=4,
+ 		missionClass=12,
+ 		mapConditionId=3001,
+ 		randomWeight=100,
+ 	image=""
+},
+[451] =
+{
+ 		id=451,
+ 		desc=30003002,
+ 		missionType=4,
+ 		missionClass=1,
+ 		mapConditionId=3002,
+ 		randomWeight=100,
+ 	image=""
+},
+[452] =
+{
+ 		id=452,
+ 		desc=30003003,
+ 		missionType=4,
+ 		missionClass=2,
+ 		mapConditionId=3003,
+ 		randomWeight=100,
+ 	image=""
+},
+[453] =
+{
+ 		id=453,
+ 		desc=30003004,
+ 		missionType=4,
+ 		missionClass=3,
+ 		mapConditionId=3004,
+ 		randomWeight=100,
+ 	image=""
+},
+[454] =
+{
+ 		id=454,
+ 		desc=30003005,
+ 		missionType=4,
+ 		missionClass=4,
+ 		mapConditionId=3005,
+ 		randomWeight=100,
+ 	image=""
+},
+[455] =
+{
+ 		id=455,
+ 		desc=30003006,
+ 		missionType=4,
+ 		missionClass=5,
+ 		mapConditionId=3006,
+ 		randomWeight=100,
+ 	image=""
+},
+[456] =
+{
+ 		id=456,
+ 		desc=30003007,
+ 		missionType=4,
+ 		missionClass=6,
+ 		mapConditionId=3007,
+ 		randomWeight=100,
+ 	image=""
+},
+[457] =
+{
+ 		id=457,
+ 		desc=30003008,
+ 		missionType=4,
+ 		missionClass=7,
+ 		mapConditionId=3008,
+ 		randomWeight=100,
+ 	image=""
+},
+[458] =
+{
+ 		id=458,
+ 		desc=30003009,
+ 		missionType=4,
+ 		missionClass=8,
+ 		mapConditionId=3009,
+ 		randomWeight=100,
+ 	image=""
+},
+[459] =
+{
+ 		id=459,
+ 		desc=30003010,
+ 		missionType=4,
+ 		missionClass=9,
+ 		mapConditionId=3010,
+ 		randomWeight=100,
+ 	image=""
+},
+[460] =
+{
+ 		id=460,
+ 		desc=30003011,
+ 		missionType=4,
+ 		missionClass=10,
+ 		mapConditionId=3011,
+ 		randomWeight=100,
+ 	image=""
+},
+[461] =
+{
+ 		id=461,
+ 		desc=30003012,
+ 		missionType=4,
+ 		missionClass=11,
+ 		mapConditionId=3012,
+ 		randomWeight=100,
+ 	image=""
+},
+[462] =
+{
+ 		id=462,
+ 		desc=30003013,
+ 		missionType=4,
+ 		missionClass=12,
+ 		mapConditionId=3013,
+ 		randomWeight=100,
+ 	image=""
+},
+[463] =
+{
+ 		id=463,
+ 		desc=30003014,
+ 		missionType=4,
+ 		missionClass=1,
+ 		mapConditionId=3014,
+ 		randomWeight=100,
+ 	image=""
+},
+[464] =
+{
+ 		id=464,
+ 		desc=30003015,
+ 		missionType=4,
+ 		missionClass=2,
+ 		mapConditionId=3015,
+ 		randomWeight=100,
+ 	image=""
+},
+[465] =
+{
+ 		id=465,
+ 		desc=30003016,
+ 		missionType=4,
+ 		missionClass=3,
+ 		mapConditionId=3016,
+ 		randomWeight=100,
+ 	image=""
+},
+[466] =
+{
+ 		id=466,
+ 		desc=30003017,
+ 		missionType=4,
+ 		missionClass=4,
+ 		mapConditionId=3017,
+ 		randomWeight=100,
+ 	image=""
+},
+[467] =
+{
+ 		id=467,
+ 		desc=30003018,
+ 		missionType=4,
+ 		missionClass=5,
+ 		mapConditionId=3018,
+ 		randomWeight=100,
+ 	image=""
+},
+[468] =
+{
+ 		id=468,
+ 		desc=30003019,
+ 		missionType=4,
+ 		missionClass=6,
+ 		mapConditionId=3019,
+ 		randomWeight=100,
+ 	image=""
+},
+[469] =
+{
+ 		id=469,
+ 		desc=30003020,
+ 		missionType=4,
+ 		missionClass=7,
+ 		mapConditionId=3020,
+ 		randomWeight=100,
+ 	image=""
+},
+[470] =
+{
+ 		id=470,
+ 		desc=30003021,
+ 		missionType=4,
+ 		missionClass=8,
+ 		mapConditionId=3021,
+ 		randomWeight=100,
+ 	image=""
+},
+[471] =
+{
+ 		id=471,
+ 		desc=30003022,
+ 		missionType=4,
+ 		missionClass=9,
+ 		mapConditionId=3022,
+ 		randomWeight=100,
+ 	image=""
+},
+[472] =
+{
+ 		id=472,
+ 		desc=30003023,
+ 		missionType=4,
+ 		missionClass=10,
+ 		mapConditionId=3023,
+ 		randomWeight=100,
+ 	image=""
+},
+[473] =
+{
+ 		id=473,
+ 		desc=30003024,
+ 		missionType=4,
+ 		missionClass=11,
+ 		mapConditionId=3024,
+ 		randomWeight=100,
+ 	image=""
+},
+[474] =
+{
+ 		id=474,
+ 		desc=30003025,
+ 		missionType=4,
+ 		missionClass=12,
+ 		mapConditionId=3025,
+ 		randomWeight=100,
+ 	image=""
+},
+[475] =
+{
+ 		id=475,
+ 		desc=30003026,
+ 		missionType=4,
+ 		missionClass=1,
+ 		mapConditionId=3026,
+ 		randomWeight=100,
+ 	image=""
+},
+[476] =
+{
+ 		id=476,
+ 		desc=30003027,
+ 		missionType=4,
+ 		missionClass=2,
+ 		mapConditionId=3027,
+ 		randomWeight=100,
+ 	image=""
+},
+[477] =
+{
+ 		id=477,
+ 		desc=30003028,
+ 		missionType=4,
+ 		missionClass=3,
+ 		mapConditionId=3028,
+ 		randomWeight=100,
+ 	image=""
+},
+[478] =
+{
+ 		id=478,
+ 		desc=30003029,
+ 		missionType=4,
+ 		missionClass=4,
+ 		mapConditionId=3029,
+ 		randomWeight=100,
+ 	image=""
+},
+[479] =
+{
+ 		id=479,
+ 		desc=30003030,
+ 		missionType=4,
+ 		missionClass=5,
+ 		mapConditionId=3030,
+ 		randomWeight=100,
+ 	image=""
+},
+[480] =
+{
+ 		id=480,
+ 		desc=30003031,
+ 		missionType=4,
+ 		missionClass=6,
+ 		mapConditionId=3031,
+ 		randomWeight=100,
+ 	image=""
+},
+[481] =
+{
+ 		id=481,
+ 		desc=30003032,
+ 		missionType=4,
+ 		missionClass=7,
+ 		mapConditionId=3032,
+ 		randomWeight=100,
+ 	image=""
+},
+[482] =
+{
+ 		id=482,
+ 		desc=30003033,
+ 		missionType=4,
+ 		missionClass=8,
+ 		mapConditionId=3033,
+ 		randomWeight=100,
+ 	image=""
+},
+[483] =
+{
+ 		id=483,
+ 		desc=30003034,
+ 		missionType=4,
+ 		missionClass=9,
+ 		mapConditionId=3034,
+ 		randomWeight=100,
+ 	image=""
+},
+[484] =
+{
+ 		id=484,
+ 		desc=30003035,
+ 		missionType=4,
+ 		missionClass=10,
+ 		mapConditionId=3035,
+ 		randomWeight=100,
+ 	image=""
+},
+[485] =
+{
+ 		id=485,
+ 		desc=30003036,
+ 		missionType=4,
+ 		missionClass=11,
+ 		mapConditionId=3036,
+ 		randomWeight=100,
+ 	image=""
+},
+[486] =
+{
+ 		id=486,
+ 		desc=30003037,
+ 		missionType=4,
+ 		missionClass=12,
+ 		mapConditionId=3037,
+ 		randomWeight=100,
+ 	image=""
+},
+[487] =
+{
+ 		id=487,
+ 		desc=30003038,
+ 		missionType=4,
+ 		missionClass=1,
+ 		mapConditionId=3038,
+ 		randomWeight=100,
+ 	image=""
+},
+[488] =
+{
+ 		id=488,
+ 		desc=30003039,
+ 		missionType=4,
+ 		missionClass=2,
+ 		mapConditionId=3039,
+ 		randomWeight=100,
+ 	image=""
+},
+[489] =
+{
+ 		id=489,
+ 		desc=30001001,
+ 		missionType=5,
+ 		missionClass=1,
+ 		mapConditionId=1001,
+ 		randomWeight=100,
+ 	image=""
+},
+[490] =
+{
+ 		id=490,
+ 		desc=30001002,
+ 		missionType=5,
+ 		missionClass=2,
+ 		mapConditionId=1002,
+ 		randomWeight=100,
+ 	image=""
+},
+[491] =
+{
+ 		id=491,
+ 		desc=30001003,
+ 		missionType=5,
+ 		missionClass=3,
+ 		mapConditionId=1003,
+ 		randomWeight=100,
+ 	image=""
+},
+[492] =
+{
+ 		id=492,
+ 		desc=30001004,
+ 		missionType=5,
+ 		missionClass=4,
+ 		mapConditionId=1004,
+ 		randomWeight=100,
+ 	image=""
+},
+[493] =
+{
+ 		id=493,
+ 		desc=30001005,
+ 		missionType=5,
+ 		missionClass=5,
+ 		mapConditionId=1005,
+ 		randomWeight=100,
+ 	image=""
+},
+[494] =
+{
+ 		id=494,
+ 		desc=30001006,
+ 		missionType=5,
+ 		missionClass=6,
+ 		mapConditionId=1006,
+ 		randomWeight=100,
+ 	image=""
+},
+[495] =
+{
+ 		id=495,
+ 		desc=30001007,
+ 		missionType=5,
+ 		missionClass=7,
+ 		mapConditionId=1007,
+ 		randomWeight=100,
+ 	image=""
+},
+[496] =
+{
+ 		id=496,
+ 		desc=30001008,
+ 		missionType=5,
+ 		missionClass=8,
+ 		mapConditionId=1008,
+ 		randomWeight=100,
+ 	image=""
+},
+[497] =
+{
+ 		id=497,
+ 		desc=30001009,
+ 		missionType=5,
+ 		missionClass=9,
+ 		mapConditionId=1009,
+ 		randomWeight=100,
+ 	image=""
+},
+[498] =
+{
+ 		id=498,
+ 		desc=30001010,
+ 		missionType=5,
+ 		missionClass=10,
+ 		mapConditionId=1010,
+ 		randomWeight=100,
+ 	image=""
+},
+[499] =
+{
+ 		id=499,
+ 		desc=30001011,
+ 		missionType=5,
+ 		missionClass=11,
+ 		mapConditionId=1011,
+ 		randomWeight=100,
+ 	image=""
+},
+[500] =
+{
+ 		id=500,
+ 		desc=30001012,
+ 		missionType=5,
+ 		missionClass=12,
+ 		mapConditionId=1012,
+ 		randomWeight=100,
+ 	image=""
+},
+[501] =
+{
+ 		id=501,
+ 		desc=30001013,
+ 		missionType=5,
+ 		missionClass=1,
+ 		mapConditionId=1013,
+ 		randomWeight=100,
+ 	image=""
+},
+[502] =
+{
+ 		id=502,
+ 		desc=30001014,
+ 		missionType=5,
+ 		missionClass=2,
+ 		mapConditionId=1014,
+ 		randomWeight=100,
+ 	image=""
+},
+[503] =
+{
+ 		id=503,
+ 		desc=30001015,
+ 		missionType=5,
+ 		missionClass=3,
+ 		mapConditionId=1015,
+ 		randomWeight=100,
+ 	image=""
+},
+[504] =
+{
+ 		id=504,
+ 		desc=30001016,
+ 		missionType=5,
+ 		missionClass=4,
+ 		mapConditionId=1016,
+ 		randomWeight=100,
+ 	image=""
+},
+[505] =
+{
+ 		id=505,
+ 		desc=30001017,
+ 		missionType=5,
+ 		missionClass=5,
+ 		mapConditionId=1017,
+ 		randomWeight=100,
+ 	image=""
+},
+[506] =
+{
+ 		id=506,
+ 		desc=30001018,
+ 		missionType=5,
+ 		missionClass=6,
+ 		mapConditionId=1018,
+ 		randomWeight=100,
+ 	image=""
+},
+[507] =
+{
+ 		id=507,
+ 		desc=30001019,
+ 		missionType=5,
+ 		missionClass=7,
+ 		mapConditionId=1019,
+ 		randomWeight=100,
+ 	image=""
+},
+[508] =
+{
+ 		id=508,
+ 		desc=30001020,
+ 		missionType=5,
+ 		missionClass=8,
+ 		mapConditionId=1020,
+ 		randomWeight=100,
+ 	image=""
+},
+[509] =
+{
+ 		id=509,
+ 		desc=30001021,
+ 		missionType=5,
+ 		missionClass=9,
+ 		mapConditionId=1021,
+ 		randomWeight=100,
+ 	image=""
+},
+[510] =
+{
+ 		id=510,
+ 		desc=30001022,
+ 		missionType=5,
+ 		missionClass=10,
+ 		mapConditionId=1022,
+ 		randomWeight=100,
+ 	image=""
+},
+[511] =
+{
+ 		id=511,
+ 		desc=30001023,
+ 		missionType=5,
+ 		missionClass=11,
+ 		mapConditionId=1023,
+ 		randomWeight=100,
+ 	image=""
+},
+[512] =
+{
+ 		id=512,
+ 		desc=30001024,
+ 		missionType=5,
+ 		missionClass=12,
+ 		mapConditionId=1024,
+ 		randomWeight=100,
+ 	image=""
+},
+[513] =
+{
+ 		id=513,
+ 		desc=30001025,
+ 		missionType=5,
+ 		missionClass=1,
+ 		mapConditionId=1025,
+ 		randomWeight=100,
+ 	image=""
+},
+[514] =
+{
+ 		id=514,
+ 		desc=30001026,
+ 		missionType=5,
+ 		missionClass=2,
+ 		mapConditionId=1026,
+ 		randomWeight=100,
+ 	image=""
+},
+[515] =
+{
+ 		id=515,
+ 		desc=30001027,
+ 		missionType=5,
+ 		missionClass=3,
+ 		mapConditionId=1027,
+ 		randomWeight=100,
+ 	image=""
+},
+[516] =
+{
+ 		id=516,
+ 		desc=30001028,
+ 		missionType=5,
+ 		missionClass=4,
+ 		mapConditionId=1028,
+ 		randomWeight=100,
+ 	image=""
+},
+[517] =
+{
+ 		id=517,
+ 		desc=30001029,
+ 		missionType=5,
+ 		missionClass=5,
+ 		mapConditionId=1029,
+ 		randomWeight=100,
+ 	image=""
+},
+[518] =
+{
+ 		id=518,
+ 		desc=30001030,
+ 		missionType=5,
+ 		missionClass=6,
+ 		mapConditionId=1030,
+ 		randomWeight=100,
+ 	image=""
+},
+[519] =
+{
+ 		id=519,
+ 		desc=30001031,
+ 		missionType=5,
+ 		missionClass=7,
+ 		mapConditionId=1031,
+ 		randomWeight=100,
+ 	image=""
+},
+[520] =
+{
+ 		id=520,
+ 		desc=30001032,
+ 		missionType=5,
+ 		missionClass=8,
+ 		mapConditionId=1032,
+ 		randomWeight=100,
+ 	image=""
+},
+[521] =
+{
+ 		id=521,
+ 		desc=30001033,
+ 		missionType=5,
+ 		missionClass=9,
+ 		mapConditionId=1033,
+ 		randomWeight=100,
+ 	image=""
+},
+[522] =
+{
+ 		id=522,
+ 		desc=30001034,
+ 		missionType=5,
+ 		missionClass=10,
+ 		mapConditionId=1034,
+ 		randomWeight=100,
+ 	image=""
+},
+[523] =
+{
+ 		id=523,
+ 		desc=30001035,
+ 		missionType=5,
+ 		missionClass=11,
+ 		mapConditionId=1035,
+ 		randomWeight=100,
+ 	image=""
+},
+[524] =
+{
+ 		id=524,
+ 		desc=30001036,
+ 		missionType=5,
+ 		missionClass=12,
+ 		mapConditionId=1036,
+ 		randomWeight=100,
+ 	image=""
+},
+[525] =
+{
+ 		id=525,
+ 		desc=30001037,
+ 		missionType=5,
+ 		missionClass=1,
+ 		mapConditionId=1037,
+ 		randomWeight=100,
+ 	image=""
+},
+[526] =
+{
+ 		id=526,
+ 		desc=30001039,
+ 		missionType=5,
+ 		missionClass=2,
+ 		mapConditionId=1039,
+ 		randomWeight=100,
+ 	image=""
+},
+[527] =
+{
+ 		id=527,
+ 		desc=30001040,
+ 		missionType=5,
+ 		missionClass=3,
+ 		mapConditionId=1040,
+ 		randomWeight=100,
+ 	image=""
+},
+[528] =
+{
+ 		id=528,
+ 		desc=30001041,
+ 		missionType=5,
+ 		missionClass=4,
+ 		mapConditionId=1041,
+ 		randomWeight=100,
+ 	image=""
+},
+[529] =
+{
+ 		id=529,
+ 		desc=30001042,
+ 		missionType=5,
+ 		missionClass=5,
+ 		mapConditionId=1042,
+ 		randomWeight=100,
+ 	image=""
+},
+[530] =
+{
+ 		id=530,
+ 		desc=30001043,
+ 		missionType=5,
+ 		missionClass=6,
+ 		mapConditionId=1043,
+ 		randomWeight=100,
+ 	image=""
+},
+[531] =
+{
+ 		id=531,
+ 		desc=30001044,
+ 		missionType=5,
+ 		missionClass=7,
+ 		mapConditionId=1044,
+ 		randomWeight=100,
+ 	image=""
+},
+[532] =
+{
+ 		id=532,
+ 		desc=30001045,
+ 		missionType=5,
+ 		missionClass=8,
+ 		mapConditionId=1045,
+ 		randomWeight=100,
+ 	image=""
+},
+[533] =
+{
+ 		id=533,
+ 		desc=30001046,
+ 		missionType=5,
+ 		missionClass=9,
+ 		mapConditionId=1046,
+ 		randomWeight=100,
+ 	image=""
+},
+[534] =
+{
+ 		id=534,
+ 		desc=30001047,
+ 		missionType=5,
+ 		missionClass=10,
+ 		mapConditionId=1047,
+ 		randomWeight=100,
+ 	image=""
+},
+[535] =
+{
+ 		id=535,
+ 		desc=30001048,
+ 		missionType=5,
+ 		missionClass=11,
+ 		mapConditionId=1048,
+ 		randomWeight=100,
+ 	image=""
+},
+[536] =
+{
+ 		id=536,
+ 		desc=30001049,
+ 		missionType=5,
+ 		missionClass=12,
+ 		mapConditionId=1049,
+ 		randomWeight=100,
+ 	image=""
+},
+[537] =
+{
+ 		id=537,
+ 		desc=30001050,
+ 		missionType=5,
+ 		missionClass=1,
+ 		mapConditionId=1050,
+ 		randomWeight=100,
+ 	image=""
+},
+[538] =
+{
+ 		id=538,
+ 		desc=30001051,
+ 		missionType=5,
+ 		missionClass=2,
+ 		mapConditionId=1051,
+ 		randomWeight=100,
+ 	image=""
+},
+[539] =
+{
+ 		id=539,
+ 		desc=30001052,
+ 		missionType=5,
+ 		missionClass=3,
+ 		mapConditionId=1052,
+ 		randomWeight=100,
+ 	image=""
+},
+[540] =
+{
+ 		id=540,
+ 		desc=30001053,
+ 		missionType=5,
+ 		missionClass=4,
+ 		mapConditionId=1053,
+ 		randomWeight=100,
+ 	image=""
+},
+[541] =
+{
+ 		id=541,
+ 		desc=30001054,
+ 		missionType=5,
+ 		missionClass=5,
+ 		mapConditionId=1054,
+ 		randomWeight=100,
+ 	image=""
+},
+[542] =
+{
+ 		id=542,
+ 		desc=30001055,
+ 		missionType=5,
+ 		missionClass=6,
+ 		mapConditionId=1055,
+ 		randomWeight=100,
+ 	image=""
+},
+[543] =
+{
+ 		id=543,
+ 		desc=30001056,
+ 		missionType=5,
+ 		missionClass=7,
+ 		mapConditionId=1056,
+ 		randomWeight=100,
+ 	image=""
+},
+[544] =
+{
+ 		id=544,
+ 		desc=30001057,
+ 		missionType=5,
+ 		missionClass=8,
+ 		mapConditionId=1057,
+ 		randomWeight=100,
+ 	image=""
+},
+[545] =
+{
+ 		id=545,
+ 		desc=30001058,
+ 		missionType=5,
+ 		missionClass=9,
+ 		mapConditionId=1058,
+ 		randomWeight=100,
+ 	image=""
+},
+[546] =
+{
+ 		id=546,
+ 		desc=30001059,
+ 		missionType=5,
+ 		missionClass=10,
+ 		mapConditionId=1059,
+ 		randomWeight=100,
+ 	image=""
+},
+[547] =
+{
+ 		id=547,
+ 		desc=30001060,
+ 		missionType=5,
+ 		missionClass=11,
+ 		mapConditionId=1060,
+ 		randomWeight=100,
+ 	image=""
+},
+[548] =
+{
+ 		id=548,
+ 		desc=30001061,
+ 		missionType=5,
+ 		missionClass=12,
+ 		mapConditionId=1061,
+ 		randomWeight=100,
+ 	image=""
+},
+[549] =
+{
+ 		id=549,
+ 		desc=30001062,
+ 		missionType=5,
+ 		missionClass=1,
+ 		mapConditionId=1062,
+ 		randomWeight=100,
+ 	image=""
+},
+[550] =
+{
+ 		id=550,
+ 		desc=30001063,
+ 		missionType=5,
+ 		missionClass=2,
+ 		mapConditionId=1063,
+ 		randomWeight=100,
+ 	image=""
+},
+[551] =
+{
+ 		id=551,
+ 		desc=30001064,
+ 		missionType=5,
+ 		missionClass=3,
+ 		mapConditionId=1064,
+ 		randomWeight=100,
+ 	image=""
+},
+[552] =
+{
+ 		id=552,
+ 		desc=30001065,
+ 		missionType=5,
+ 		missionClass=4,
+ 		mapConditionId=1065,
+ 		randomWeight=100,
+ 	image=""
+},
+[553] =
+{
+ 		id=553,
+ 		desc=30002001,
+ 		missionType=5,
+ 		missionClass=5,
+ 		mapConditionId=2001,
+ 		randomWeight=100,
+ 	image=""
+},
+[554] =
+{
+ 		id=554,
+ 		desc=30002002,
+ 		missionType=5,
+ 		missionClass=6,
+ 		mapConditionId=2002,
+ 		randomWeight=100,
+ 	image=""
+},
+[555] =
+{
+ 		id=555,
+ 		desc=30002003,
+ 		missionType=5,
+ 		missionClass=7,
+ 		mapConditionId=2003,
+ 		randomWeight=100,
+ 	image=""
+},
+[556] =
+{
+ 		id=556,
+ 		desc=30002004,
+ 		missionType=5,
+ 		missionClass=8,
+ 		mapConditionId=2004,
+ 		randomWeight=100,
+ 	image=""
+},
+[557] =
+{
+ 		id=557,
+ 		desc=30002005,
+ 		missionType=5,
+ 		missionClass=9,
+ 		mapConditionId=2005,
+ 		randomWeight=100,
+ 	image=""
+},
+[558] =
+{
+ 		id=558,
+ 		desc=30002006,
+ 		missionType=5,
+ 		missionClass=10,
+ 		mapConditionId=2006,
+ 		randomWeight=100,
+ 	image=""
+},
+[559] =
+{
+ 		id=559,
+ 		desc=30002007,
+ 		missionType=5,
+ 		missionClass=11,
+ 		mapConditionId=2007,
+ 		randomWeight=100,
+ 	image=""
+},
+[560] =
+{
+ 		id=560,
+ 		desc=30002008,
+ 		missionType=5,
+ 		missionClass=12,
+ 		mapConditionId=2008,
+ 		randomWeight=100,
+ 	image=""
+},
+[561] =
+{
+ 		id=561,
+ 		desc=30002009,
+ 		missionType=5,
+ 		missionClass=1,
+ 		mapConditionId=2009,
+ 		randomWeight=100,
+ 	image=""
+},
+[562] =
+{
+ 		id=562,
+ 		desc=30002010,
+ 		missionType=5,
+ 		missionClass=2,
+ 		mapConditionId=2010,
+ 		randomWeight=100,
+ 	image=""
+},
+[563] =
+{
+ 		id=563,
+ 		desc=30002011,
+ 		missionType=5,
+ 		missionClass=3,
+ 		mapConditionId=2011,
+ 		randomWeight=100,
+ 	image=""
+},
+[564] =
+{
+ 		id=564,
+ 		desc=30002012,
+ 		missionType=5,
+ 		missionClass=4,
+ 		mapConditionId=2012,
+ 		randomWeight=100,
+ 	image=""
+},
+[565] =
+{
+ 		id=565,
+ 		desc=30002013,
+ 		missionType=5,
+ 		missionClass=5,
+ 		mapConditionId=2013,
+ 		randomWeight=100,
+ 	image=""
+},
+[566] =
+{
+ 		id=566,
+ 		desc=30002014,
+ 		missionType=5,
+ 		missionClass=6,
+ 		mapConditionId=2014,
+ 		randomWeight=100,
+ 	image=""
+},
+[567] =
+{
+ 		id=567,
+ 		desc=30002015,
+ 		missionType=5,
+ 		missionClass=7,
+ 		mapConditionId=2015,
+ 		randomWeight=100,
+ 	image=""
+},
+[568] =
+{
+ 		id=568,
+ 		desc=30002016,
+ 		missionType=5,
+ 		missionClass=8,
+ 		mapConditionId=2016,
+ 		randomWeight=100,
+ 	image=""
+},
+[569] =
+{
+ 		id=569,
+ 		desc=30002017,
+ 		missionType=5,
+ 		missionClass=9,
+ 		mapConditionId=2017,
+ 		randomWeight=100,
+ 	image=""
+},
+[570] =
+{
+ 		id=570,
+ 		desc=30002018,
+ 		missionType=5,
+ 		missionClass=10,
+ 		mapConditionId=2018,
+ 		randomWeight=100,
+ 	image=""
+},
+[571] =
+{
+ 		id=571,
+ 		desc=30002019,
+ 		missionType=5,
+ 		missionClass=11,
+ 		mapConditionId=2019,
+ 		randomWeight=100,
+ 	image=""
+},
+[572] =
+{
+ 		id=572,
+ 		desc=30003001,
+ 		missionType=5,
+ 		missionClass=12,
+ 		mapConditionId=3001,
+ 		randomWeight=100,
+ 	image=""
+},
+[573] =
+{
+ 		id=573,
+ 		desc=30003002,
+ 		missionType=5,
+ 		missionClass=1,
+ 		mapConditionId=3002,
+ 		randomWeight=100,
+ 	image=""
+},
+[574] =
+{
+ 		id=574,
+ 		desc=30003003,
+ 		missionType=5,
+ 		missionClass=2,
+ 		mapConditionId=3003,
+ 		randomWeight=100,
+ 	image=""
+},
+[575] =
+{
+ 		id=575,
+ 		desc=30003004,
+ 		missionType=5,
+ 		missionClass=3,
+ 		mapConditionId=3004,
+ 		randomWeight=100,
+ 	image=""
+},
+[576] =
+{
+ 		id=576,
+ 		desc=30003005,
+ 		missionType=5,
+ 		missionClass=4,
+ 		mapConditionId=3005,
+ 		randomWeight=100,
+ 	image=""
+},
+[577] =
+{
+ 		id=577,
+ 		desc=30003006,
+ 		missionType=5,
+ 		missionClass=5,
+ 		mapConditionId=3006,
+ 		randomWeight=100,
+ 	image=""
+},
+[578] =
+{
+ 		id=578,
+ 		desc=30003007,
+ 		missionType=5,
+ 		missionClass=6,
+ 		mapConditionId=3007,
+ 		randomWeight=100,
+ 	image=""
+},
+[579] =
+{
+ 		id=579,
+ 		desc=30003008,
+ 		missionType=5,
+ 		missionClass=7,
+ 		mapConditionId=3008,
+ 		randomWeight=100,
+ 	image=""
+},
+[580] =
+{
+ 		id=580,
+ 		desc=30003009,
+ 		missionType=5,
+ 		missionClass=8,
+ 		mapConditionId=3009,
+ 		randomWeight=100,
+ 	image=""
+},
+[581] =
+{
+ 		id=581,
+ 		desc=30003010,
+ 		missionType=5,
+ 		missionClass=9,
+ 		mapConditionId=3010,
+ 		randomWeight=100,
+ 	image=""
+},
+[582] =
+{
+ 		id=582,
+ 		desc=30003011,
+ 		missionType=5,
+ 		missionClass=10,
+ 		mapConditionId=3011,
+ 		randomWeight=100,
+ 	image=""
+},
+[583] =
+{
+ 		id=583,
+ 		desc=30003012,
+ 		missionType=5,
+ 		missionClass=11,
+ 		mapConditionId=3012,
+ 		randomWeight=100,
+ 	image=""
+},
+[584] =
+{
+ 		id=584,
+ 		desc=30003013,
+ 		missionType=5,
+ 		missionClass=12,
+ 		mapConditionId=3013,
+ 		randomWeight=100,
+ 	image=""
+},
+[585] =
+{
+ 		id=585,
+ 		desc=30003014,
+ 		missionType=5,
+ 		missionClass=1,
+ 		mapConditionId=3014,
+ 		randomWeight=100,
+ 	image=""
+},
+[586] =
+{
+ 		id=586,
+ 		desc=30003015,
+ 		missionType=5,
+ 		missionClass=2,
+ 		mapConditionId=3015,
+ 		randomWeight=100,
+ 	image=""
+},
+[587] =
+{
+ 		id=587,
+ 		desc=30003016,
+ 		missionType=5,
+ 		missionClass=3,
+ 		mapConditionId=3016,
+ 		randomWeight=100,
+ 	image=""
+},
+[588] =
+{
+ 		id=588,
+ 		desc=30003017,
+ 		missionType=5,
+ 		missionClass=4,
+ 		mapConditionId=3017,
+ 		randomWeight=100,
+ 	image=""
+},
+[589] =
+{
+ 		id=589,
+ 		desc=30003018,
+ 		missionType=5,
+ 		missionClass=5,
+ 		mapConditionId=3018,
+ 		randomWeight=100,
+ 	image=""
+},
+[590] =
+{
+ 		id=590,
+ 		desc=30003019,
+ 		missionType=5,
+ 		missionClass=6,
+ 		mapConditionId=3019,
+ 		randomWeight=100,
+ 	image=""
+},
+[591] =
+{
+ 		id=591,
+ 		desc=30003020,
+ 		missionType=5,
+ 		missionClass=7,
+ 		mapConditionId=3020,
+ 		randomWeight=100,
+ 	image=""
+},
+[592] =
+{
+ 		id=592,
+ 		desc=30003021,
+ 		missionType=5,
+ 		missionClass=8,
+ 		mapConditionId=3021,
+ 		randomWeight=100,
+ 	image=""
+},
+[593] =
+{
+ 		id=593,
+ 		desc=30003022,
+ 		missionType=5,
+ 		missionClass=9,
+ 		mapConditionId=3022,
+ 		randomWeight=100,
+ 	image=""
+},
+[594] =
+{
+ 		id=594,
+ 		desc=30003023,
+ 		missionType=5,
+ 		missionClass=10,
+ 		mapConditionId=3023,
+ 		randomWeight=100,
+ 	image=""
+},
+[595] =
+{
+ 		id=595,
+ 		desc=30003024,
+ 		missionType=5,
+ 		missionClass=11,
+ 		mapConditionId=3024,
+ 		randomWeight=100,
+ 	image=""
+},
+[596] =
+{
+ 		id=596,
+ 		desc=30003025,
+ 		missionType=5,
+ 		missionClass=12,
+ 		mapConditionId=3025,
+ 		randomWeight=100,
+ 	image=""
+},
+[597] =
+{
+ 		id=597,
+ 		desc=30003026,
+ 		missionType=5,
+ 		missionClass=1,
+ 		mapConditionId=3026,
+ 		randomWeight=100,
+ 	image=""
+},
+[598] =
+{
+ 		id=598,
+ 		desc=30003027,
+ 		missionType=5,
+ 		missionClass=2,
+ 		mapConditionId=3027,
+ 		randomWeight=100,
+ 	image=""
+},
+[599] =
+{
+ 		id=599,
+ 		desc=30003028,
+ 		missionType=5,
+ 		missionClass=3,
+ 		mapConditionId=3028,
+ 		randomWeight=100,
+ 	image=""
+},
+[600] =
+{
+ 		id=600,
+ 		desc=30003029,
+ 		missionType=5,
+ 		missionClass=4,
+ 		mapConditionId=3029,
+ 		randomWeight=100,
+ 	image=""
+},
+[601] =
+{
+ 		id=601,
+ 		desc=30003030,
+ 		missionType=5,
+ 		missionClass=5,
+ 		mapConditionId=3030,
+ 		randomWeight=100,
+ 	image=""
+},
+[602] =
+{
+ 		id=602,
+ 		desc=30003031,
+ 		missionType=5,
+ 		missionClass=6,
+ 		mapConditionId=3031,
+ 		randomWeight=100,
+ 	image=""
+},
+[603] =
+{
+ 		id=603,
+ 		desc=30003032,
+ 		missionType=5,
+ 		missionClass=7,
+ 		mapConditionId=3032,
+ 		randomWeight=100,
+ 	image=""
+},
+[604] =
+{
+ 		id=604,
+ 		desc=30003033,
+ 		missionType=5,
+ 		missionClass=8,
+ 		mapConditionId=3033,
+ 		randomWeight=100,
+ 	image=""
+},
+[605] =
+{
+ 		id=605,
+ 		desc=30003034,
+ 		missionType=5,
+ 		missionClass=9,
+ 		mapConditionId=3034,
+ 		randomWeight=100,
+ 	image=""
+},
+[606] =
+{
+ 		id=606,
+ 		desc=30003035,
+ 		missionType=5,
+ 		missionClass=10,
+ 		mapConditionId=3035,
+ 		randomWeight=100,
+ 	image=""
+},
+[607] =
+{
+ 		id=607,
+ 		desc=30003036,
+ 		missionType=5,
+ 		missionClass=11,
+ 		mapConditionId=3036,
+ 		randomWeight=100,
+ 	image=""
+},
+[608] =
+{
+ 		id=608,
+ 		desc=30003037,
+ 		missionType=5,
+ 		missionClass=12,
+ 		mapConditionId=3037,
+ 		randomWeight=100,
+ 	image=""
+},
+[609] =
+{
+ 		id=609,
+ 		desc=30003038,
+ 		missionType=5,
+ 		missionClass=1,
+ 		mapConditionId=3038,
+ 		randomWeight=100,
+ 	image=""
+},
+[610] =
+{
+ 		id=610,
+ 		desc=30003039,
+ 		missionType=5,
+ 		missionClass=2,
+ 		mapConditionId=3039,
+ 		randomWeight=100,
+ 	image=""
+},
+[611] =
+{
+ 		id=611,
+ 		desc=30001001,
+ 		missionType=6,
+ 		missionClass=1,
+ 		mapConditionId=1001,
+ 		randomWeight=100,
+ 	image=""
+},
+[612] =
+{
+ 		id=612,
+ 		desc=30001002,
+ 		missionType=6,
+ 		missionClass=2,
+ 		mapConditionId=1002,
+ 		randomWeight=100,
+ 	image=""
+},
+[613] =
+{
+ 		id=613,
+ 		desc=30001003,
+ 		missionType=6,
+ 		missionClass=3,
+ 		mapConditionId=1003,
+ 		randomWeight=100,
+ 	image=""
+},
+[614] =
+{
+ 		id=614,
+ 		desc=30001004,
+ 		missionType=6,
+ 		missionClass=4,
+ 		mapConditionId=1004,
+ 		randomWeight=100,
+ 	image=""
+},
+[615] =
+{
+ 		id=615,
+ 		desc=30001005,
+ 		missionType=6,
+ 		missionClass=5,
+ 		mapConditionId=1005,
+ 		randomWeight=100,
+ 	image=""
+},
+[616] =
+{
+ 		id=616,
+ 		desc=30001006,
+ 		missionType=6,
+ 		missionClass=6,
+ 		mapConditionId=1006,
+ 		randomWeight=100,
+ 	image=""
+},
+[617] =
+{
+ 		id=617,
+ 		desc=30001007,
+ 		missionType=6,
+ 		missionClass=7,
+ 		mapConditionId=1007,
+ 		randomWeight=100,
+ 	image=""
+},
+[618] =
+{
+ 		id=618,
+ 		desc=30001008,
+ 		missionType=6,
+ 		missionClass=8,
+ 		mapConditionId=1008,
+ 		randomWeight=100,
+ 	image=""
+},
+[619] =
+{
+ 		id=619,
+ 		desc=30001009,
+ 		missionType=6,
+ 		missionClass=9,
+ 		mapConditionId=1009,
+ 		randomWeight=100,
+ 	image=""
+},
+[620] =
+{
+ 		id=620,
+ 		desc=30001010,
+ 		missionType=6,
+ 		missionClass=10,
+ 		mapConditionId=1010,
+ 		randomWeight=100,
+ 	image=""
+},
+[621] =
+{
+ 		id=621,
+ 		desc=30001011,
+ 		missionType=6,
+ 		missionClass=11,
+ 		mapConditionId=1011,
+ 		randomWeight=100,
+ 	image=""
+},
+[622] =
+{
+ 		id=622,
+ 		desc=30001012,
+ 		missionType=6,
+ 		missionClass=12,
+ 		mapConditionId=1012,
+ 		randomWeight=100,
+ 	image=""
+},
+[623] =
+{
+ 		id=623,
+ 		desc=30001013,
+ 		missionType=6,
+ 		missionClass=1,
+ 		mapConditionId=1013,
+ 		randomWeight=100,
+ 	image=""
+},
+[624] =
+{
+ 		id=624,
+ 		desc=30001014,
+ 		missionType=6,
+ 		missionClass=2,
+ 		mapConditionId=1014,
+ 		randomWeight=100,
+ 	image=""
+},
+[625] =
+{
+ 		id=625,
+ 		desc=30001015,
+ 		missionType=6,
+ 		missionClass=3,
+ 		mapConditionId=1015,
+ 		randomWeight=100,
+ 	image=""
+},
+[626] =
+{
+ 		id=626,
+ 		desc=30001016,
+ 		missionType=6,
+ 		missionClass=4,
+ 		mapConditionId=1016,
+ 		randomWeight=100,
+ 	image=""
+},
+[627] =
+{
+ 		id=627,
+ 		desc=30001017,
+ 		missionType=6,
+ 		missionClass=5,
+ 		mapConditionId=1017,
+ 		randomWeight=100,
+ 	image=""
+},
+[628] =
+{
+ 		id=628,
+ 		desc=30001018,
+ 		missionType=6,
+ 		missionClass=6,
+ 		mapConditionId=1018,
+ 		randomWeight=100,
+ 	image=""
+},
+[629] =
+{
+ 		id=629,
+ 		desc=30001019,
+ 		missionType=6,
+ 		missionClass=7,
+ 		mapConditionId=1019,
+ 		randomWeight=100,
+ 	image=""
+},
+[630] =
+{
+ 		id=630,
+ 		desc=30001020,
+ 		missionType=6,
+ 		missionClass=8,
+ 		mapConditionId=1020,
+ 		randomWeight=100,
+ 	image=""
+},
+[631] =
+{
+ 		id=631,
+ 		desc=30001021,
+ 		missionType=6,
+ 		missionClass=9,
+ 		mapConditionId=1021,
+ 		randomWeight=100,
+ 	image=""
+},
+[632] =
+{
+ 		id=632,
+ 		desc=30001022,
+ 		missionType=6,
+ 		missionClass=10,
+ 		mapConditionId=1022,
+ 		randomWeight=100,
+ 	image=""
+},
+[633] =
+{
+ 		id=633,
+ 		desc=30001023,
+ 		missionType=6,
+ 		missionClass=11,
+ 		mapConditionId=1023,
+ 		randomWeight=100,
+ 	image=""
+},
+[634] =
+{
+ 		id=634,
+ 		desc=30001024,
+ 		missionType=6,
+ 		missionClass=12,
+ 		mapConditionId=1024,
+ 		randomWeight=100,
+ 	image=""
+},
+[635] =
+{
+ 		id=635,
+ 		desc=30001025,
+ 		missionType=6,
+ 		missionClass=1,
+ 		mapConditionId=1025,
+ 		randomWeight=100,
+ 	image=""
+},
+[636] =
+{
+ 		id=636,
+ 		desc=30001026,
+ 		missionType=6,
+ 		missionClass=2,
+ 		mapConditionId=1026,
+ 		randomWeight=100,
+ 	image=""
+},
+[637] =
+{
+ 		id=637,
+ 		desc=30001027,
+ 		missionType=6,
+ 		missionClass=3,
+ 		mapConditionId=1027,
+ 		randomWeight=100,
+ 	image=""
+},
+[638] =
+{
+ 		id=638,
+ 		desc=30001028,
+ 		missionType=6,
+ 		missionClass=4,
+ 		mapConditionId=1028,
+ 		randomWeight=100,
+ 	image=""
+},
+[639] =
+{
+ 		id=639,
+ 		desc=30001029,
+ 		missionType=6,
+ 		missionClass=5,
+ 		mapConditionId=1029,
+ 		randomWeight=100,
+ 	image=""
+},
+[640] =
+{
+ 		id=640,
+ 		desc=30001030,
+ 		missionType=6,
+ 		missionClass=6,
+ 		mapConditionId=1030,
+ 		randomWeight=100,
+ 	image=""
+},
+[641] =
+{
+ 		id=641,
+ 		desc=30001031,
+ 		missionType=6,
+ 		missionClass=7,
+ 		mapConditionId=1031,
+ 		randomWeight=100,
+ 	image=""
+},
+[642] =
+{
+ 		id=642,
+ 		desc=30001032,
+ 		missionType=6,
+ 		missionClass=8,
+ 		mapConditionId=1032,
+ 		randomWeight=100,
+ 	image=""
+},
+[643] =
+{
+ 		id=643,
+ 		desc=30001033,
+ 		missionType=6,
+ 		missionClass=9,
+ 		mapConditionId=1033,
+ 		randomWeight=100,
+ 	image=""
+},
+[644] =
+{
+ 		id=644,
+ 		desc=30001034,
+ 		missionType=6,
+ 		missionClass=10,
+ 		mapConditionId=1034,
+ 		randomWeight=100,
+ 	image=""
+},
+[645] =
+{
+ 		id=645,
+ 		desc=30001035,
+ 		missionType=6,
+ 		missionClass=11,
+ 		mapConditionId=1035,
+ 		randomWeight=100,
+ 	image=""
+},
+[646] =
+{
+ 		id=646,
+ 		desc=30001036,
+ 		missionType=6,
+ 		missionClass=12,
+ 		mapConditionId=1036,
+ 		randomWeight=100,
+ 	image=""
+},
+[647] =
+{
+ 		id=647,
+ 		desc=30001037,
+ 		missionType=6,
+ 		missionClass=1,
+ 		mapConditionId=1037,
+ 		randomWeight=100,
+ 	image=""
+},
+[648] =
+{
+ 		id=648,
+ 		desc=30001039,
+ 		missionType=6,
+ 		missionClass=2,
+ 		mapConditionId=1039,
+ 		randomWeight=100,
+ 	image=""
+},
+[649] =
+{
+ 		id=649,
+ 		desc=30001040,
+ 		missionType=6,
+ 		missionClass=3,
+ 		mapConditionId=1040,
+ 		randomWeight=100,
+ 	image=""
+},
+[650] =
+{
+ 		id=650,
+ 		desc=30001041,
+ 		missionType=6,
+ 		missionClass=4,
+ 		mapConditionId=1041,
+ 		randomWeight=100,
+ 	image=""
+},
+[651] =
+{
+ 		id=651,
+ 		desc=30001042,
+ 		missionType=6,
+ 		missionClass=5,
+ 		mapConditionId=1042,
+ 		randomWeight=100,
+ 	image=""
+},
+[652] =
+{
+ 		id=652,
+ 		desc=30001043,
+ 		missionType=6,
+ 		missionClass=6,
+ 		mapConditionId=1043,
+ 		randomWeight=100,
+ 	image=""
+},
+[653] =
+{
+ 		id=653,
+ 		desc=30001044,
+ 		missionType=6,
+ 		missionClass=7,
+ 		mapConditionId=1044,
+ 		randomWeight=100,
+ 	image=""
+},
+[654] =
+{
+ 		id=654,
+ 		desc=30001045,
+ 		missionType=6,
+ 		missionClass=8,
+ 		mapConditionId=1045,
+ 		randomWeight=100,
+ 	image=""
+},
+[655] =
+{
+ 		id=655,
+ 		desc=30001046,
+ 		missionType=6,
+ 		missionClass=9,
+ 		mapConditionId=1046,
+ 		randomWeight=100,
+ 	image=""
+},
+[656] =
+{
+ 		id=656,
+ 		desc=30001047,
+ 		missionType=6,
+ 		missionClass=10,
+ 		mapConditionId=1047,
+ 		randomWeight=100,
+ 	image=""
+},
+[657] =
+{
+ 		id=657,
+ 		desc=30001048,
+ 		missionType=6,
+ 		missionClass=11,
+ 		mapConditionId=1048,
+ 		randomWeight=100,
+ 	image=""
+},
+[658] =
+{
+ 		id=658,
+ 		desc=30001049,
+ 		missionType=6,
+ 		missionClass=12,
+ 		mapConditionId=1049,
+ 		randomWeight=100,
+ 	image=""
+},
+[659] =
+{
+ 		id=659,
+ 		desc=30001050,
+ 		missionType=6,
+ 		missionClass=1,
+ 		mapConditionId=1050,
+ 		randomWeight=100,
+ 	image=""
+},
+[660] =
+{
+ 		id=660,
+ 		desc=30001051,
+ 		missionType=6,
+ 		missionClass=2,
+ 		mapConditionId=1051,
+ 		randomWeight=100,
+ 	image=""
+},
+[661] =
+{
+ 		id=661,
+ 		desc=30001052,
+ 		missionType=6,
+ 		missionClass=3,
+ 		mapConditionId=1052,
+ 		randomWeight=100,
+ 	image=""
+},
+[662] =
+{
+ 		id=662,
+ 		desc=30001053,
+ 		missionType=6,
+ 		missionClass=4,
+ 		mapConditionId=1053,
+ 		randomWeight=100,
+ 	image=""
+},
+[663] =
+{
+ 		id=663,
+ 		desc=30001054,
+ 		missionType=6,
+ 		missionClass=5,
+ 		mapConditionId=1054,
+ 		randomWeight=100,
+ 	image=""
+},
+[664] =
+{
+ 		id=664,
+ 		desc=30001055,
+ 		missionType=6,
+ 		missionClass=6,
+ 		mapConditionId=1055,
+ 		randomWeight=100,
+ 	image=""
+},
+[665] =
+{
+ 		id=665,
+ 		desc=30001056,
+ 		missionType=6,
+ 		missionClass=7,
+ 		mapConditionId=1056,
+ 		randomWeight=100,
+ 	image=""
+},
+[666] =
+{
+ 		id=666,
+ 		desc=30001057,
+ 		missionType=6,
+ 		missionClass=8,
+ 		mapConditionId=1057,
+ 		randomWeight=100,
+ 	image=""
+},
+[667] =
+{
+ 		id=667,
+ 		desc=30001058,
+ 		missionType=6,
+ 		missionClass=9,
+ 		mapConditionId=1058,
+ 		randomWeight=100,
+ 	image=""
+},
+[668] =
+{
+ 		id=668,
+ 		desc=30001059,
+ 		missionType=6,
+ 		missionClass=10,
+ 		mapConditionId=1059,
+ 		randomWeight=100,
+ 	image=""
+},
+[669] =
+{
+ 		id=669,
+ 		desc=30001060,
+ 		missionType=6,
+ 		missionClass=11,
+ 		mapConditionId=1060,
+ 		randomWeight=100,
+ 	image=""
+},
+[670] =
+{
+ 		id=670,
+ 		desc=30001061,
+ 		missionType=6,
+ 		missionClass=12,
+ 		mapConditionId=1061,
+ 		randomWeight=100,
+ 	image=""
+},
+[671] =
+{
+ 		id=671,
+ 		desc=30001062,
+ 		missionType=6,
+ 		missionClass=1,
+ 		mapConditionId=1062,
+ 		randomWeight=100,
+ 	image=""
+},
+[672] =
+{
+ 		id=672,
+ 		desc=30001063,
+ 		missionType=6,
+ 		missionClass=2,
+ 		mapConditionId=1063,
+ 		randomWeight=100,
+ 	image=""
+},
+[673] =
+{
+ 		id=673,
+ 		desc=30001064,
+ 		missionType=6,
+ 		missionClass=3,
+ 		mapConditionId=1064,
+ 		randomWeight=100,
+ 	image=""
+},
+[674] =
+{
+ 		id=674,
+ 		desc=30001065,
+ 		missionType=6,
+ 		missionClass=4,
+ 		mapConditionId=1065,
+ 		randomWeight=100,
+ 	image=""
+},
+[675] =
+{
+ 		id=675,
+ 		desc=30002001,
+ 		missionType=6,
+ 		missionClass=5,
+ 		mapConditionId=2001,
+ 		randomWeight=100,
+ 	image=""
+},
+[676] =
+{
+ 		id=676,
+ 		desc=30002002,
+ 		missionType=6,
+ 		missionClass=6,
+ 		mapConditionId=2002,
+ 		randomWeight=100,
+ 	image=""
+},
+[677] =
+{
+ 		id=677,
+ 		desc=30002003,
+ 		missionType=6,
+ 		missionClass=7,
+ 		mapConditionId=2003,
+ 		randomWeight=100,
+ 	image=""
+},
+[678] =
+{
+ 		id=678,
+ 		desc=30002004,
+ 		missionType=6,
+ 		missionClass=8,
+ 		mapConditionId=2004,
+ 		randomWeight=100,
+ 	image=""
+},
+[679] =
+{
+ 		id=679,
+ 		desc=30002005,
+ 		missionType=6,
+ 		missionClass=9,
+ 		mapConditionId=2005,
+ 		randomWeight=100,
+ 	image=""
+},
+[680] =
+{
+ 		id=680,
+ 		desc=30002006,
+ 		missionType=6,
+ 		missionClass=10,
+ 		mapConditionId=2006,
+ 		randomWeight=100,
+ 	image=""
+},
+[681] =
+{
+ 		id=681,
+ 		desc=30002007,
+ 		missionType=6,
+ 		missionClass=11,
+ 		mapConditionId=2007,
+ 		randomWeight=100,
+ 	image=""
+},
+[682] =
+{
+ 		id=682,
+ 		desc=30002008,
+ 		missionType=6,
+ 		missionClass=12,
+ 		mapConditionId=2008,
+ 		randomWeight=100,
+ 	image=""
+},
+[683] =
+{
+ 		id=683,
+ 		desc=30002009,
+ 		missionType=6,
+ 		missionClass=1,
+ 		mapConditionId=2009,
+ 		randomWeight=100,
+ 	image=""
+},
+[684] =
+{
+ 		id=684,
+ 		desc=30002010,
+ 		missionType=6,
+ 		missionClass=2,
+ 		mapConditionId=2010,
+ 		randomWeight=100,
+ 	image=""
+},
+[685] =
+{
+ 		id=685,
+ 		desc=30002011,
+ 		missionType=6,
+ 		missionClass=3,
+ 		mapConditionId=2011,
+ 		randomWeight=100,
+ 	image=""
+},
+[686] =
+{
+ 		id=686,
+ 		desc=30002012,
+ 		missionType=6,
+ 		missionClass=4,
+ 		mapConditionId=2012,
+ 		randomWeight=100,
+ 	image=""
+},
+[687] =
+{
+ 		id=687,
+ 		desc=30002013,
+ 		missionType=6,
+ 		missionClass=5,
+ 		mapConditionId=2013,
+ 		randomWeight=100,
+ 	image=""
+},
+[688] =
+{
+ 		id=688,
+ 		desc=30002014,
+ 		missionType=6,
+ 		missionClass=6,
+ 		mapConditionId=2014,
+ 		randomWeight=100,
+ 	image=""
+},
+[689] =
+{
+ 		id=689,
+ 		desc=30002015,
+ 		missionType=6,
+ 		missionClass=7,
+ 		mapConditionId=2015,
+ 		randomWeight=100,
+ 	image=""
+},
+[690] =
+{
+ 		id=690,
+ 		desc=30002016,
+ 		missionType=6,
+ 		missionClass=8,
+ 		mapConditionId=2016,
+ 		randomWeight=100,
+ 	image=""
+},
+[691] =
+{
+ 		id=691,
+ 		desc=30002017,
+ 		missionType=6,
+ 		missionClass=9,
+ 		mapConditionId=2017,
+ 		randomWeight=100,
+ 	image=""
+},
+[692] =
+{
+ 		id=692,
+ 		desc=30002018,
+ 		missionType=6,
+ 		missionClass=10,
+ 		mapConditionId=2018,
+ 		randomWeight=100,
+ 	image=""
+},
+[693] =
+{
+ 		id=693,
+ 		desc=30002019,
+ 		missionType=6,
+ 		missionClass=11,
+ 		mapConditionId=2019,
+ 		randomWeight=100,
+ 	image=""
+},
+[694] =
+{
+ 		id=694,
+ 		desc=30003001,
+ 		missionType=6,
+ 		missionClass=12,
+ 		mapConditionId=3001,
+ 		randomWeight=100,
+ 	image=""
+},
+[695] =
+{
+ 		id=695,
+ 		desc=30003002,
+ 		missionType=6,
+ 		missionClass=1,
+ 		mapConditionId=3002,
+ 		randomWeight=100,
+ 	image=""
+},
+[696] =
+{
+ 		id=696,
+ 		desc=30003003,
+ 		missionType=6,
+ 		missionClass=2,
+ 		mapConditionId=3003,
+ 		randomWeight=100,
+ 	image=""
+},
+[697] =
+{
+ 		id=697,
+ 		desc=30003004,
+ 		missionType=6,
+ 		missionClass=3,
+ 		mapConditionId=3004,
+ 		randomWeight=100,
+ 	image=""
+},
+[698] =
+{
+ 		id=698,
+ 		desc=30003005,
+ 		missionType=6,
+ 		missionClass=4,
+ 		mapConditionId=3005,
+ 		randomWeight=100,
+ 	image=""
+},
+[699] =
+{
+ 		id=699,
+ 		desc=30003006,
+ 		missionType=6,
+ 		missionClass=5,
+ 		mapConditionId=3006,
+ 		randomWeight=100,
+ 	image=""
+},
+[700] =
+{
+ 		id=700,
+ 		desc=30003007,
+ 		missionType=6,
+ 		missionClass=6,
+ 		mapConditionId=3007,
+ 		randomWeight=100,
+ 	image=""
+},
+[701] =
+{
+ 		id=701,
+ 		desc=30003008,
+ 		missionType=6,
+ 		missionClass=7,
+ 		mapConditionId=3008,
+ 		randomWeight=100,
+ 	image=""
+},
+[702] =
+{
+ 		id=702,
+ 		desc=30003009,
+ 		missionType=6,
+ 		missionClass=8,
+ 		mapConditionId=3009,
+ 		randomWeight=100,
+ 	image=""
+},
+[703] =
+{
+ 		id=703,
+ 		desc=30003010,
+ 		missionType=6,
+ 		missionClass=9,
+ 		mapConditionId=3010,
+ 		randomWeight=100,
+ 	image=""
+},
+[704] =
+{
+ 		id=704,
+ 		desc=30003011,
+ 		missionType=6,
+ 		missionClass=10,
+ 		mapConditionId=3011,
+ 		randomWeight=100,
+ 	image=""
+},
+[705] =
+{
+ 		id=705,
+ 		desc=30003012,
+ 		missionType=6,
+ 		missionClass=11,
+ 		mapConditionId=3012,
+ 		randomWeight=100,
+ 	image=""
+},
+[706] =
+{
+ 		id=706,
+ 		desc=30003013,
+ 		missionType=6,
+ 		missionClass=12,
+ 		mapConditionId=3013,
+ 		randomWeight=100,
+ 	image=""
+},
+[707] =
+{
+ 		id=707,
+ 		desc=30003014,
+ 		missionType=6,
+ 		missionClass=1,
+ 		mapConditionId=3014,
+ 		randomWeight=100,
+ 	image=""
+},
+[708] =
+{
+ 		id=708,
+ 		desc=30003015,
+ 		missionType=6,
+ 		missionClass=2,
+ 		mapConditionId=3015,
+ 		randomWeight=100,
+ 	image=""
+},
+[709] =
+{
+ 		id=709,
+ 		desc=30003016,
+ 		missionType=6,
+ 		missionClass=3,
+ 		mapConditionId=3016,
+ 		randomWeight=100,
+ 	image=""
+},
+[710] =
+{
+ 		id=710,
+ 		desc=30003017,
+ 		missionType=6,
+ 		missionClass=4,
+ 		mapConditionId=3017,
+ 		randomWeight=100,
+ 	image=""
+},
+[711] =
+{
+ 		id=711,
+ 		desc=30003018,
+ 		missionType=6,
+ 		missionClass=5,
+ 		mapConditionId=3018,
+ 		randomWeight=100,
+ 	image=""
+},
+[712] =
+{
+ 		id=712,
+ 		desc=30003019,
+ 		missionType=6,
+ 		missionClass=6,
+ 		mapConditionId=3019,
+ 		randomWeight=100,
+ 	image=""
+},
+[713] =
+{
+ 		id=713,
+ 		desc=30003020,
+ 		missionType=6,
+ 		missionClass=7,
+ 		mapConditionId=3020,
+ 		randomWeight=100,
+ 	image=""
+},
+[714] =
+{
+ 		id=714,
+ 		desc=30003021,
+ 		missionType=6,
+ 		missionClass=8,
+ 		mapConditionId=3021,
+ 		randomWeight=100,
+ 	image=""
+},
+[715] =
+{
+ 		id=715,
+ 		desc=30003022,
+ 		missionType=6,
+ 		missionClass=9,
+ 		mapConditionId=3022,
+ 		randomWeight=100,
+ 	image=""
+},
+[716] =
+{
+ 		id=716,
+ 		desc=30003023,
+ 		missionType=6,
+ 		missionClass=10,
+ 		mapConditionId=3023,
+ 		randomWeight=100,
+ 	image=""
+},
+[717] =
+{
+ 		id=717,
+ 		desc=30003024,
+ 		missionType=6,
+ 		missionClass=11,
+ 		mapConditionId=3024,
+ 		randomWeight=100,
+ 	image=""
+},
+[718] =
+{
+ 		id=718,
+ 		desc=30003025,
+ 		missionType=6,
+ 		missionClass=12,
+ 		mapConditionId=3025,
+ 		randomWeight=100,
+ 	image=""
+},
+[719] =
+{
+ 		id=719,
+ 		desc=30003026,
+ 		missionType=6,
+ 		missionClass=1,
+ 		mapConditionId=3026,
+ 		randomWeight=100,
+ 	image=""
+},
+[720] =
+{
+ 		id=720,
+ 		desc=30003027,
+ 		missionType=6,
+ 		missionClass=2,
+ 		mapConditionId=3027,
+ 		randomWeight=100,
+ 	image=""
+},
+[721] =
+{
+ 		id=721,
+ 		desc=30003028,
+ 		missionType=6,
+ 		missionClass=3,
+ 		mapConditionId=3028,
+ 		randomWeight=100,
+ 	image=""
+},
+[722] =
+{
+ 		id=722,
+ 		desc=30003029,
+ 		missionType=6,
+ 		missionClass=4,
+ 		mapConditionId=3029,
+ 		randomWeight=100,
+ 	image=""
+},
+[723] =
+{
+ 		id=723,
+ 		desc=30003030,
+ 		missionType=6,
+ 		missionClass=5,
+ 		mapConditionId=3030,
+ 		randomWeight=100,
+ 	image=""
+},
+[724] =
+{
+ 		id=724,
+ 		desc=30003031,
+ 		missionType=6,
+ 		missionClass=6,
+ 		mapConditionId=3031,
+ 		randomWeight=100,
+ 	image=""
+},
+[725] =
+{
+ 		id=725,
+ 		desc=30003032,
+ 		missionType=6,
+ 		missionClass=7,
+ 		mapConditionId=3032,
+ 		randomWeight=100,
+ 	image=""
+},
+[726] =
+{
+ 		id=726,
+ 		desc=30003033,
+ 		missionType=6,
+ 		missionClass=8,
+ 		mapConditionId=3033,
+ 		randomWeight=100,
+ 	image=""
+},
+[727] =
+{
+ 		id=727,
+ 		desc=30003034,
+ 		missionType=6,
+ 		missionClass=9,
+ 		mapConditionId=3034,
+ 		randomWeight=100,
+ 	image=""
+},
+[728] =
+{
+ 		id=728,
+ 		desc=30003035,
+ 		missionType=6,
+ 		missionClass=10,
+ 		mapConditionId=3035,
+ 		randomWeight=100,
+ 	image=""
+},
+[729] =
+{
+ 		id=729,
+ 		desc=30003036,
+ 		missionType=6,
+ 		missionClass=11,
+ 		mapConditionId=3036,
+ 		randomWeight=100,
+ 	image=""
+},
+[730] =
+{
+ 		id=730,
+ 		desc=30003037,
+ 		missionType=6,
+ 		missionClass=12,
+ 		mapConditionId=3037,
+ 		randomWeight=100,
+ 	image=""
+},
+[731] =
+{
+ 		id=731,
+ 		desc=30003038,
+ 		missionType=6,
+ 		missionClass=1,
+ 		mapConditionId=3038,
+ 		randomWeight=100,
+ 	image=""
+},
+[732] =
+{
+ 		id=732,
+ 		desc=30003039,
+ 		missionType=6,
+ 		missionClass=2,
+ 		mapConditionId=3039,
+ 		randomWeight=100,
+ 	image=""
+},
+[733] =
+{
+ 		id=733,
+ 		desc=30001001,
+ 		missionType=7,
+ 		missionClass=1,
+ 		mapConditionId=1001,
+ 		randomWeight=100,
+ 	image=""
+},
+[734] =
+{
+ 		id=734,
+ 		desc=30001002,
+ 		missionType=7,
+ 		missionClass=2,
+ 		mapConditionId=1002,
+ 		randomWeight=100,
+ 	image=""
+},
+[735] =
+{
+ 		id=735,
+ 		desc=30001003,
+ 		missionType=7,
+ 		missionClass=3,
+ 		mapConditionId=1003,
+ 		randomWeight=100,
+ 	image=""
+},
+[736] =
+{
+ 		id=736,
+ 		desc=30001004,
+ 		missionType=7,
+ 		missionClass=4,
+ 		mapConditionId=1004,
+ 		randomWeight=100,
+ 	image=""
+},
+[737] =
+{
+ 		id=737,
+ 		desc=30001005,
+ 		missionType=7,
+ 		missionClass=5,
+ 		mapConditionId=1005,
+ 		randomWeight=100,
+ 	image=""
+},
+[738] =
+{
+ 		id=738,
+ 		desc=30001006,
+ 		missionType=7,
+ 		missionClass=6,
+ 		mapConditionId=1006,
+ 		randomWeight=100,
+ 	image=""
+},
+[739] =
+{
+ 		id=739,
+ 		desc=30001007,
+ 		missionType=7,
+ 		missionClass=7,
+ 		mapConditionId=1007,
+ 		randomWeight=100,
+ 	image=""
+},
+[740] =
+{
+ 		id=740,
+ 		desc=30001008,
+ 		missionType=7,
+ 		missionClass=8,
+ 		mapConditionId=1008,
+ 		randomWeight=100,
+ 	image=""
+},
+[741] =
+{
+ 		id=741,
+ 		desc=30001009,
+ 		missionType=7,
+ 		missionClass=9,
+ 		mapConditionId=1009,
+ 		randomWeight=100,
+ 	image=""
+},
+[742] =
+{
+ 		id=742,
+ 		desc=30001010,
+ 		missionType=7,
+ 		missionClass=10,
+ 		mapConditionId=1010,
+ 		randomWeight=100,
+ 	image=""
+},
+[743] =
+{
+ 		id=743,
+ 		desc=30001011,
+ 		missionType=7,
+ 		missionClass=11,
+ 		mapConditionId=1011,
+ 		randomWeight=100,
+ 	image=""
+},
+[744] =
+{
+ 		id=744,
+ 		desc=30001012,
+ 		missionType=7,
+ 		missionClass=12,
+ 		mapConditionId=1012,
+ 		randomWeight=100,
+ 	image=""
+},
+[745] =
+{
+ 		id=745,
+ 		desc=30001013,
+ 		missionType=7,
+ 		missionClass=1,
+ 		mapConditionId=1013,
+ 		randomWeight=100,
+ 	image=""
+},
+[746] =
+{
+ 		id=746,
+ 		desc=30001014,
+ 		missionType=7,
+ 		missionClass=2,
+ 		mapConditionId=1014,
+ 		randomWeight=100,
+ 	image=""
+},
+[747] =
+{
+ 		id=747,
+ 		desc=30001015,
+ 		missionType=7,
+ 		missionClass=3,
+ 		mapConditionId=1015,
+ 		randomWeight=100,
+ 	image=""
+},
+[748] =
+{
+ 		id=748,
+ 		desc=30001016,
+ 		missionType=7,
+ 		missionClass=4,
+ 		mapConditionId=1016,
+ 		randomWeight=100,
+ 	image=""
+},
+[749] =
+{
+ 		id=749,
+ 		desc=30001017,
+ 		missionType=7,
+ 		missionClass=5,
+ 		mapConditionId=1017,
+ 		randomWeight=100,
+ 	image=""
+},
+[750] =
+{
+ 		id=750,
+ 		desc=30001018,
+ 		missionType=7,
+ 		missionClass=6,
+ 		mapConditionId=1018,
+ 		randomWeight=100,
+ 	image=""
+},
+[751] =
+{
+ 		id=751,
+ 		desc=30001019,
+ 		missionType=7,
+ 		missionClass=7,
+ 		mapConditionId=1019,
+ 		randomWeight=100,
+ 	image=""
+},
+[752] =
+{
+ 		id=752,
+ 		desc=30001020,
+ 		missionType=7,
+ 		missionClass=8,
+ 		mapConditionId=1020,
+ 		randomWeight=100,
+ 	image=""
+},
+[753] =
+{
+ 		id=753,
+ 		desc=30001021,
+ 		missionType=7,
+ 		missionClass=9,
+ 		mapConditionId=1021,
+ 		randomWeight=100,
+ 	image=""
+},
+[754] =
+{
+ 		id=754,
+ 		desc=30001022,
+ 		missionType=7,
+ 		missionClass=10,
+ 		mapConditionId=1022,
+ 		randomWeight=100,
+ 	image=""
+},
+[755] =
+{
+ 		id=755,
+ 		desc=30001023,
+ 		missionType=7,
+ 		missionClass=11,
+ 		mapConditionId=1023,
+ 		randomWeight=100,
+ 	image=""
+},
+[756] =
+{
+ 		id=756,
+ 		desc=30001024,
+ 		missionType=7,
+ 		missionClass=12,
+ 		mapConditionId=1024,
+ 		randomWeight=100,
+ 	image=""
+},
+[757] =
+{
+ 		id=757,
+ 		desc=30001025,
+ 		missionType=7,
+ 		missionClass=1,
+ 		mapConditionId=1025,
+ 		randomWeight=100,
+ 	image=""
+},
+[758] =
+{
+ 		id=758,
+ 		desc=30001026,
+ 		missionType=7,
+ 		missionClass=2,
+ 		mapConditionId=1026,
+ 		randomWeight=100,
+ 	image=""
+},
+[759] =
+{
+ 		id=759,
+ 		desc=30001027,
+ 		missionType=7,
+ 		missionClass=3,
+ 		mapConditionId=1027,
+ 		randomWeight=100,
+ 	image=""
+},
+[760] =
+{
+ 		id=760,
+ 		desc=30001028,
+ 		missionType=7,
+ 		missionClass=4,
+ 		mapConditionId=1028,
+ 		randomWeight=100,
+ 	image=""
+},
+[761] =
+{
+ 		id=761,
+ 		desc=30001029,
+ 		missionType=7,
+ 		missionClass=5,
+ 		mapConditionId=1029,
+ 		randomWeight=100,
+ 	image=""
+},
+[762] =
+{
+ 		id=762,
+ 		desc=30001030,
+ 		missionType=7,
+ 		missionClass=6,
+ 		mapConditionId=1030,
+ 		randomWeight=100,
+ 	image=""
+},
+[763] =
+{
+ 		id=763,
+ 		desc=30001031,
+ 		missionType=7,
+ 		missionClass=7,
+ 		mapConditionId=1031,
+ 		randomWeight=100,
+ 	image=""
+},
+[764] =
+{
+ 		id=764,
+ 		desc=30001032,
+ 		missionType=7,
+ 		missionClass=8,
+ 		mapConditionId=1032,
+ 		randomWeight=100,
+ 	image=""
+},
+[765] =
+{
+ 		id=765,
+ 		desc=30001033,
+ 		missionType=7,
+ 		missionClass=9,
+ 		mapConditionId=1033,
+ 		randomWeight=100,
+ 	image=""
+},
+[766] =
+{
+ 		id=766,
+ 		desc=30001034,
+ 		missionType=7,
+ 		missionClass=10,
+ 		mapConditionId=1034,
+ 		randomWeight=100,
+ 	image=""
+},
+[767] =
+{
+ 		id=767,
+ 		desc=30001035,
+ 		missionType=7,
+ 		missionClass=11,
+ 		mapConditionId=1035,
+ 		randomWeight=100,
+ 	image=""
+},
+[768] =
+{
+ 		id=768,
+ 		desc=30001036,
+ 		missionType=7,
+ 		missionClass=12,
+ 		mapConditionId=1036,
+ 		randomWeight=100,
+ 	image=""
+},
+[769] =
+{
+ 		id=769,
+ 		desc=30001037,
+ 		missionType=7,
+ 		missionClass=1,
+ 		mapConditionId=1037,
+ 		randomWeight=100,
+ 	image=""
+},
+[770] =
+{
+ 		id=770,
+ 		desc=30001039,
+ 		missionType=7,
+ 		missionClass=2,
+ 		mapConditionId=1039,
+ 		randomWeight=100,
+ 	image=""
+},
+[771] =
+{
+ 		id=771,
+ 		desc=30001040,
+ 		missionType=7,
+ 		missionClass=3,
+ 		mapConditionId=1040,
+ 		randomWeight=100,
+ 	image=""
+},
+[772] =
+{
+ 		id=772,
+ 		desc=30001041,
+ 		missionType=7,
+ 		missionClass=4,
+ 		mapConditionId=1041,
+ 		randomWeight=100,
+ 	image=""
+},
+[773] =
+{
+ 		id=773,
+ 		desc=30001042,
+ 		missionType=7,
+ 		missionClass=5,
+ 		mapConditionId=1042,
+ 		randomWeight=100,
+ 	image=""
+},
+[774] =
+{
+ 		id=774,
+ 		desc=30001043,
+ 		missionType=7,
+ 		missionClass=6,
+ 		mapConditionId=1043,
+ 		randomWeight=100,
+ 	image=""
+},
+[775] =
+{
+ 		id=775,
+ 		desc=30001044,
+ 		missionType=7,
+ 		missionClass=7,
+ 		mapConditionId=1044,
+ 		randomWeight=100,
+ 	image=""
+},
+[776] =
+{
+ 		id=776,
+ 		desc=30001045,
+ 		missionType=7,
+ 		missionClass=8,
+ 		mapConditionId=1045,
+ 		randomWeight=100,
+ 	image=""
+},
+[777] =
+{
+ 		id=777,
+ 		desc=30001046,
+ 		missionType=7,
+ 		missionClass=9,
+ 		mapConditionId=1046,
+ 		randomWeight=100,
+ 	image=""
+},
+[778] =
+{
+ 		id=778,
+ 		desc=30001047,
+ 		missionType=7,
+ 		missionClass=10,
+ 		mapConditionId=1047,
+ 		randomWeight=100,
+ 	image=""
+},
+[779] =
+{
+ 		id=779,
+ 		desc=30001048,
+ 		missionType=7,
+ 		missionClass=11,
+ 		mapConditionId=1048,
+ 		randomWeight=100,
+ 	image=""
+},
+[780] =
+{
+ 		id=780,
+ 		desc=30001049,
+ 		missionType=7,
+ 		missionClass=12,
+ 		mapConditionId=1049,
+ 		randomWeight=100,
+ 	image=""
+},
+[781] =
+{
+ 		id=781,
+ 		desc=30001050,
+ 		missionType=7,
+ 		missionClass=1,
+ 		mapConditionId=1050,
+ 		randomWeight=100,
+ 	image=""
+},
+[782] =
+{
+ 		id=782,
+ 		desc=30001051,
+ 		missionType=7,
+ 		missionClass=2,
+ 		mapConditionId=1051,
+ 		randomWeight=100,
+ 	image=""
+},
+[783] =
+{
+ 		id=783,
+ 		desc=30001052,
+ 		missionType=7,
+ 		missionClass=3,
+ 		mapConditionId=1052,
+ 		randomWeight=100,
+ 	image=""
+},
+[784] =
+{
+ 		id=784,
+ 		desc=30001053,
+ 		missionType=7,
+ 		missionClass=4,
+ 		mapConditionId=1053,
+ 		randomWeight=100,
+ 	image=""
+},
+[785] =
+{
+ 		id=785,
+ 		desc=30001054,
+ 		missionType=7,
+ 		missionClass=5,
+ 		mapConditionId=1054,
+ 		randomWeight=100,
+ 	image=""
+},
+[786] =
+{
+ 		id=786,
+ 		desc=30001055,
+ 		missionType=7,
+ 		missionClass=6,
+ 		mapConditionId=1055,
+ 		randomWeight=100,
+ 	image=""
+},
+[787] =
+{
+ 		id=787,
+ 		desc=30001056,
+ 		missionType=7,
+ 		missionClass=7,
+ 		mapConditionId=1056,
+ 		randomWeight=100,
+ 	image=""
+},
+[788] =
+{
+ 		id=788,
+ 		desc=30001057,
+ 		missionType=7,
+ 		missionClass=8,
+ 		mapConditionId=1057,
+ 		randomWeight=100,
+ 	image=""
+},
+[789] =
+{
+ 		id=789,
+ 		desc=30001058,
+ 		missionType=7,
+ 		missionClass=9,
+ 		mapConditionId=1058,
+ 		randomWeight=100,
+ 	image=""
+},
+[790] =
+{
+ 		id=790,
+ 		desc=30001059,
+ 		missionType=7,
+ 		missionClass=10,
+ 		mapConditionId=1059,
+ 		randomWeight=100,
+ 	image=""
+},
+[791] =
+{
+ 		id=791,
+ 		desc=30001060,
+ 		missionType=7,
+ 		missionClass=11,
+ 		mapConditionId=1060,
+ 		randomWeight=100,
+ 	image=""
+},
+[792] =
+{
+ 		id=792,
+ 		desc=30001061,
+ 		missionType=7,
+ 		missionClass=12,
+ 		mapConditionId=1061,
+ 		randomWeight=100,
+ 	image=""
+},
+[793] =
+{
+ 		id=793,
+ 		desc=30001062,
+ 		missionType=7,
+ 		missionClass=1,
+ 		mapConditionId=1062,
+ 		randomWeight=100,
+ 	image=""
+},
+[794] =
+{
+ 		id=794,
+ 		desc=30001063,
+ 		missionType=7,
+ 		missionClass=2,
+ 		mapConditionId=1063,
+ 		randomWeight=100,
+ 	image=""
+},
+[795] =
+{
+ 		id=795,
+ 		desc=30001064,
+ 		missionType=7,
+ 		missionClass=3,
+ 		mapConditionId=1064,
+ 		randomWeight=100,
+ 	image=""
+},
+[796] =
+{
+ 		id=796,
+ 		desc=30001065,
+ 		missionType=7,
+ 		missionClass=4,
+ 		mapConditionId=1065,
+ 		randomWeight=100,
+ 	image=""
+},
+[797] =
+{
+ 		id=797,
+ 		desc=30002001,
+ 		missionType=7,
+ 		missionClass=5,
+ 		mapConditionId=2001,
+ 		randomWeight=100,
+ 	image=""
+},
+[798] =
+{
+ 		id=798,
+ 		desc=30002002,
+ 		missionType=7,
+ 		missionClass=6,
+ 		mapConditionId=2002,
+ 		randomWeight=100,
+ 	image=""
+},
+[799] =
+{
+ 		id=799,
+ 		desc=30002003,
+ 		missionType=7,
+ 		missionClass=7,
+ 		mapConditionId=2003,
+ 		randomWeight=100,
+ 	image=""
+},
+[800] =
+{
+ 		id=800,
+ 		desc=30002004,
+ 		missionType=7,
+ 		missionClass=8,
+ 		mapConditionId=2004,
+ 		randomWeight=100,
+ 	image=""
+},
+[801] =
+{
+ 		id=801,
+ 		desc=30002005,
+ 		missionType=7,
+ 		missionClass=9,
+ 		mapConditionId=2005,
+ 		randomWeight=100,
+ 	image=""
+},
+[802] =
+{
+ 		id=802,
+ 		desc=30002006,
+ 		missionType=7,
+ 		missionClass=10,
+ 		mapConditionId=2006,
+ 		randomWeight=100,
+ 	image=""
+},
+[803] =
+{
+ 		id=803,
+ 		desc=30002007,
+ 		missionType=7,
+ 		missionClass=11,
+ 		mapConditionId=2007,
+ 		randomWeight=100,
+ 	image=""
+},
+[804] =
+{
+ 		id=804,
+ 		desc=30002008,
+ 		missionType=7,
+ 		missionClass=12,
+ 		mapConditionId=2008,
+ 		randomWeight=100,
+ 	image=""
+},
+[805] =
+{
+ 		id=805,
+ 		desc=30002009,
+ 		missionType=7,
+ 		missionClass=1,
+ 		mapConditionId=2009,
+ 		randomWeight=100,
+ 	image=""
+},
+[806] =
+{
+ 		id=806,
+ 		desc=30002010,
+ 		missionType=7,
+ 		missionClass=2,
+ 		mapConditionId=2010,
+ 		randomWeight=100,
+ 	image=""
+},
+[807] =
+{
+ 		id=807,
+ 		desc=30002011,
+ 		missionType=7,
+ 		missionClass=3,
+ 		mapConditionId=2011,
+ 		randomWeight=100,
+ 	image=""
+},
+[808] =
+{
+ 		id=808,
+ 		desc=30002012,
+ 		missionType=7,
+ 		missionClass=4,
+ 		mapConditionId=2012,
+ 		randomWeight=100,
+ 	image=""
+},
+[809] =
+{
+ 		id=809,
+ 		desc=30002013,
+ 		missionType=7,
+ 		missionClass=5,
+ 		mapConditionId=2013,
+ 		randomWeight=100,
+ 	image=""
+},
+[810] =
+{
+ 		id=810,
+ 		desc=30002014,
+ 		missionType=7,
+ 		missionClass=6,
+ 		mapConditionId=2014,
+ 		randomWeight=100,
+ 	image=""
+},
+[811] =
+{
+ 		id=811,
+ 		desc=30002015,
+ 		missionType=7,
+ 		missionClass=7,
+ 		mapConditionId=2015,
+ 		randomWeight=100,
+ 	image=""
+},
+[812] =
+{
+ 		id=812,
+ 		desc=30002016,
+ 		missionType=7,
+ 		missionClass=8,
+ 		mapConditionId=2016,
+ 		randomWeight=100,
+ 	image=""
+},
+[813] =
+{
+ 		id=813,
+ 		desc=30002017,
+ 		missionType=7,
+ 		missionClass=9,
+ 		mapConditionId=2017,
+ 		randomWeight=100,
+ 	image=""
+},
+[814] =
+{
+ 		id=814,
+ 		desc=30002018,
+ 		missionType=7,
+ 		missionClass=10,
+ 		mapConditionId=2018,
+ 		randomWeight=100,
+ 	image=""
+},
+[815] =
+{
+ 		id=815,
+ 		desc=30002019,
+ 		missionType=7,
+ 		missionClass=11,
+ 		mapConditionId=2019,
+ 		randomWeight=100,
+ 	image=""
+},
+[816] =
+{
+ 		id=816,
+ 		desc=30003001,
+ 		missionType=7,
+ 		missionClass=12,
+ 		mapConditionId=3001,
+ 		randomWeight=100,
+ 	image=""
+},
+[817] =
+{
+ 		id=817,
+ 		desc=30003002,
+ 		missionType=7,
+ 		missionClass=1,
+ 		mapConditionId=3002,
+ 		randomWeight=100,
+ 	image=""
+},
+[818] =
+{
+ 		id=818,
+ 		desc=30003003,
+ 		missionType=7,
+ 		missionClass=2,
+ 		mapConditionId=3003,
+ 		randomWeight=100,
+ 	image=""
+},
+[819] =
+{
+ 		id=819,
+ 		desc=30003004,
+ 		missionType=7,
+ 		missionClass=3,
+ 		mapConditionId=3004,
+ 		randomWeight=100,
+ 	image=""
+},
+[820] =
+{
+ 		id=820,
+ 		desc=30003005,
+ 		missionType=7,
+ 		missionClass=4,
+ 		mapConditionId=3005,
+ 		randomWeight=100,
+ 	image=""
+},
+[821] =
+{
+ 		id=821,
+ 		desc=30003006,
+ 		missionType=7,
+ 		missionClass=5,
+ 		mapConditionId=3006,
+ 		randomWeight=100,
+ 	image=""
+},
+[822] =
+{
+ 		id=822,
+ 		desc=30003007,
+ 		missionType=7,
+ 		missionClass=6,
+ 		mapConditionId=3007,
+ 		randomWeight=100,
+ 	image=""
+},
+[823] =
+{
+ 		id=823,
+ 		desc=30003008,
+ 		missionType=7,
+ 		missionClass=7,
+ 		mapConditionId=3008,
+ 		randomWeight=100,
+ 	image=""
+},
+[824] =
+{
+ 		id=824,
+ 		desc=30003009,
+ 		missionType=7,
+ 		missionClass=8,
+ 		mapConditionId=3009,
+ 		randomWeight=100,
+ 	image=""
+},
+[825] =
+{
+ 		id=825,
+ 		desc=30003010,
+ 		missionType=7,
+ 		missionClass=9,
+ 		mapConditionId=3010,
+ 		randomWeight=100,
+ 	image=""
+},
+[826] =
+{
+ 		id=826,
+ 		desc=30003011,
+ 		missionType=7,
+ 		missionClass=10,
+ 		mapConditionId=3011,
+ 		randomWeight=100,
+ 	image=""
+},
+[827] =
+{
+ 		id=827,
+ 		desc=30003012,
+ 		missionType=7,
+ 		missionClass=11,
+ 		mapConditionId=3012,
+ 		randomWeight=100,
+ 	image=""
+},
+[828] =
+{
+ 		id=828,
+ 		desc=30003013,
+ 		missionType=7,
+ 		missionClass=12,
+ 		mapConditionId=3013,
+ 		randomWeight=100,
+ 	image=""
+},
+[829] =
+{
+ 		id=829,
+ 		desc=30003014,
+ 		missionType=7,
+ 		missionClass=1,
+ 		mapConditionId=3014,
+ 		randomWeight=100,
+ 	image=""
+},
+[830] =
+{
+ 		id=830,
+ 		desc=30003015,
+ 		missionType=7,
+ 		missionClass=2,
+ 		mapConditionId=3015,
+ 		randomWeight=100,
+ 	image=""
+},
+[831] =
+{
+ 		id=831,
+ 		desc=30003016,
+ 		missionType=7,
+ 		missionClass=3,
+ 		mapConditionId=3016,
+ 		randomWeight=100,
+ 	image=""
+},
+[832] =
+{
+ 		id=832,
+ 		desc=30003017,
+ 		missionType=7,
+ 		missionClass=4,
+ 		mapConditionId=3017,
+ 		randomWeight=100,
+ 	image=""
+},
+[833] =
+{
+ 		id=833,
+ 		desc=30003018,
+ 		missionType=7,
+ 		missionClass=5,
+ 		mapConditionId=3018,
+ 		randomWeight=100,
+ 	image=""
+},
+[834] =
+{
+ 		id=834,
+ 		desc=30003019,
+ 		missionType=7,
+ 		missionClass=6,
+ 		mapConditionId=3019,
+ 		randomWeight=100,
+ 	image=""
+},
+[835] =
+{
+ 		id=835,
+ 		desc=30003020,
+ 		missionType=7,
+ 		missionClass=7,
+ 		mapConditionId=3020,
+ 		randomWeight=100,
+ 	image=""
+},
+[836] =
+{
+ 		id=836,
+ 		desc=30003021,
+ 		missionType=7,
+ 		missionClass=8,
+ 		mapConditionId=3021,
+ 		randomWeight=100,
+ 	image=""
+},
+[837] =
+{
+ 		id=837,
+ 		desc=30003022,
+ 		missionType=7,
+ 		missionClass=9,
+ 		mapConditionId=3022,
+ 		randomWeight=100,
+ 	image=""
+},
+[838] =
+{
+ 		id=838,
+ 		desc=30003023,
+ 		missionType=7,
+ 		missionClass=10,
+ 		mapConditionId=3023,
+ 		randomWeight=100,
+ 	image=""
+},
+[839] =
+{
+ 		id=839,
+ 		desc=30003024,
+ 		missionType=7,
+ 		missionClass=11,
+ 		mapConditionId=3024,
+ 		randomWeight=100,
+ 	image=""
+},
+[840] =
+{
+ 		id=840,
+ 		desc=30003025,
+ 		missionType=7,
+ 		missionClass=12,
+ 		mapConditionId=3025,
+ 		randomWeight=100,
+ 	image=""
+},
+[841] =
+{
+ 		id=841,
+ 		desc=30003026,
+ 		missionType=7,
+ 		missionClass=1,
+ 		mapConditionId=3026,
+ 		randomWeight=100,
+ 	image=""
+},
+[842] =
+{
+ 		id=842,
+ 		desc=30003027,
+ 		missionType=7,
+ 		missionClass=2,
+ 		mapConditionId=3027,
+ 		randomWeight=100,
+ 	image=""
+},
+[843] =
+{
+ 		id=843,
+ 		desc=30003028,
+ 		missionType=7,
+ 		missionClass=3,
+ 		mapConditionId=3028,
+ 		randomWeight=100,
+ 	image=""
+},
+[844] =
+{
+ 		id=844,
+ 		desc=30003029,
+ 		missionType=7,
+ 		missionClass=4,
+ 		mapConditionId=3029,
+ 		randomWeight=100,
+ 	image=""
+},
+[845] =
+{
+ 		id=845,
+ 		desc=30003030,
+ 		missionType=7,
+ 		missionClass=5,
+ 		mapConditionId=3030,
+ 		randomWeight=100,
+ 	image=""
+},
+[846] =
+{
+ 		id=846,
+ 		desc=30003031,
+ 		missionType=7,
+ 		missionClass=6,
+ 		mapConditionId=3031,
+ 		randomWeight=100,
+ 	image=""
+},
+[847] =
+{
+ 		id=847,
+ 		desc=30003032,
+ 		missionType=7,
+ 		missionClass=7,
+ 		mapConditionId=3032,
+ 		randomWeight=100,
+ 	image=""
+},
+[848] =
+{
+ 		id=848,
+ 		desc=30003033,
+ 		missionType=7,
+ 		missionClass=8,
+ 		mapConditionId=3033,
+ 		randomWeight=100,
+ 	image=""
+},
+[849] =
+{
+ 		id=849,
+ 		desc=30003034,
+ 		missionType=7,
+ 		missionClass=9,
+ 		mapConditionId=3034,
+ 		randomWeight=100,
+ 	image=""
+},
+[850] =
+{
+ 		id=850,
+ 		desc=30003035,
+ 		missionType=7,
+ 		missionClass=10,
+ 		mapConditionId=3035,
+ 		randomWeight=100,
+ 	image=""
+},
+[851] =
+{
+ 		id=851,
+ 		desc=30003036,
+ 		missionType=7,
+ 		missionClass=11,
+ 		mapConditionId=3036,
+ 		randomWeight=100,
+ 	image=""
+},
+[852] =
+{
+ 		id=852,
+ 		desc=30003037,
+ 		missionType=7,
+ 		missionClass=12,
+ 		mapConditionId=3037,
+ 		randomWeight=100,
+ 	image=""
+},
+[853] =
+{
+ 		id=853,
+ 		desc=30003038,
+ 		missionType=7,
+ 		missionClass=1,
+ 		mapConditionId=3038,
+ 		randomWeight=100,
+ 	image=""
+},
+[854] =
+{
+ 		id=854,
+ 		desc=30003039,
+ 		missionType=7,
+ 		missionClass=2,
+ 		mapConditionId=3039,
+ 		randomWeight=100,
+ 	image=""
+},
+[855] =
+{
+ 		id=855,
+ 		desc=30001001,
+ 		missionType=8,
+ 		missionClass=1,
+ 		mapConditionId=1001,
+ 		randomWeight=100,
+ 	image=""
+},
+[856] =
+{
+ 		id=856,
+ 		desc=30001002,
+ 		missionType=8,
+ 		missionClass=2,
+ 		mapConditionId=1002,
+ 		randomWeight=100,
+ 	image=""
+},
+[857] =
+{
+ 		id=857,
+ 		desc=30001003,
+ 		missionType=8,
+ 		missionClass=3,
+ 		mapConditionId=1003,
+ 		randomWeight=100,
+ 	image=""
+},
+[858] =
+{
+ 		id=858,
+ 		desc=30001004,
+ 		missionType=8,
+ 		missionClass=4,
+ 		mapConditionId=1004,
+ 		randomWeight=100,
+ 	image=""
+},
+[859] =
+{
+ 		id=859,
+ 		desc=30001005,
+ 		missionType=8,
+ 		missionClass=5,
+ 		mapConditionId=1005,
+ 		randomWeight=100,
+ 	image=""
+},
+[860] =
+{
+ 		id=860,
+ 		desc=30001006,
+ 		missionType=8,
+ 		missionClass=6,
+ 		mapConditionId=1006,
+ 		randomWeight=100,
+ 	image=""
+},
+[861] =
+{
+ 		id=861,
+ 		desc=30001007,
+ 		missionType=8,
+ 		missionClass=7,
+ 		mapConditionId=1007,
+ 		randomWeight=100,
+ 	image=""
+},
+[862] =
+{
+ 		id=862,
+ 		desc=30001008,
+ 		missionType=8,
+ 		missionClass=8,
+ 		mapConditionId=1008,
+ 		randomWeight=100,
+ 	image=""
+},
+[863] =
+{
+ 		id=863,
+ 		desc=30001009,
+ 		missionType=8,
+ 		missionClass=9,
+ 		mapConditionId=1009,
+ 		randomWeight=100,
+ 	image=""
+},
+[864] =
+{
+ 		id=864,
+ 		desc=30001010,
+ 		missionType=8,
+ 		missionClass=10,
+ 		mapConditionId=1010,
+ 		randomWeight=100,
+ 	image=""
+},
+[865] =
+{
+ 		id=865,
+ 		desc=30001011,
+ 		missionType=8,
+ 		missionClass=11,
+ 		mapConditionId=1011,
+ 		randomWeight=100,
+ 	image=""
+},
+[866] =
+{
+ 		id=866,
+ 		desc=30001012,
+ 		missionType=8,
+ 		missionClass=12,
+ 		mapConditionId=1012,
+ 		randomWeight=100,
+ 	image=""
+},
+[867] =
+{
+ 		id=867,
+ 		desc=30001013,
+ 		missionType=8,
+ 		missionClass=1,
+ 		mapConditionId=1013,
+ 		randomWeight=100,
+ 	image=""
+},
+[868] =
+{
+ 		id=868,
+ 		desc=30001014,
+ 		missionType=8,
+ 		missionClass=2,
+ 		mapConditionId=1014,
+ 		randomWeight=100,
+ 	image=""
+},
+[869] =
+{
+ 		id=869,
+ 		desc=30001015,
+ 		missionType=8,
+ 		missionClass=3,
+ 		mapConditionId=1015,
+ 		randomWeight=100,
+ 	image=""
+},
+[870] =
+{
+ 		id=870,
+ 		desc=30001016,
+ 		missionType=8,
+ 		missionClass=4,
+ 		mapConditionId=1016,
+ 		randomWeight=100,
+ 	image=""
+},
+[871] =
+{
+ 		id=871,
+ 		desc=30001017,
+ 		missionType=8,
+ 		missionClass=5,
+ 		mapConditionId=1017,
+ 		randomWeight=100,
+ 	image=""
+},
+[872] =
+{
+ 		id=872,
+ 		desc=30001018,
+ 		missionType=8,
+ 		missionClass=6,
+ 		mapConditionId=1018,
+ 		randomWeight=100,
+ 	image=""
+},
+[873] =
+{
+ 		id=873,
+ 		desc=30001019,
+ 		missionType=8,
+ 		missionClass=7,
+ 		mapConditionId=1019,
+ 		randomWeight=100,
+ 	image=""
+},
+[874] =
+{
+ 		id=874,
+ 		desc=30001020,
+ 		missionType=8,
+ 		missionClass=8,
+ 		mapConditionId=1020,
+ 		randomWeight=100,
+ 	image=""
+},
+[875] =
+{
+ 		id=875,
+ 		desc=30001021,
+ 		missionType=8,
+ 		missionClass=9,
+ 		mapConditionId=1021,
+ 		randomWeight=100,
+ 	image=""
+},
+[876] =
+{
+ 		id=876,
+ 		desc=30001022,
+ 		missionType=8,
+ 		missionClass=10,
+ 		mapConditionId=1022,
+ 		randomWeight=100,
+ 	image=""
+},
+[877] =
+{
+ 		id=877,
+ 		desc=30001023,
+ 		missionType=8,
+ 		missionClass=11,
+ 		mapConditionId=1023,
+ 		randomWeight=100,
+ 	image=""
+},
+[878] =
+{
+ 		id=878,
+ 		desc=30001024,
+ 		missionType=8,
+ 		missionClass=12,
+ 		mapConditionId=1024,
+ 		randomWeight=100,
+ 	image=""
+},
+[879] =
+{
+ 		id=879,
+ 		desc=30001025,
+ 		missionType=8,
+ 		missionClass=1,
+ 		mapConditionId=1025,
+ 		randomWeight=100,
+ 	image=""
+},
+[880] =
+{
+ 		id=880,
+ 		desc=30001026,
+ 		missionType=8,
+ 		missionClass=2,
+ 		mapConditionId=1026,
+ 		randomWeight=100,
+ 	image=""
+},
+[881] =
+{
+ 		id=881,
+ 		desc=30001027,
+ 		missionType=8,
+ 		missionClass=3,
+ 		mapConditionId=1027,
+ 		randomWeight=100,
+ 	image=""
+},
+[882] =
+{
+ 		id=882,
+ 		desc=30001028,
+ 		missionType=8,
+ 		missionClass=4,
+ 		mapConditionId=1028,
+ 		randomWeight=100,
+ 	image=""
+},
+[883] =
+{
+ 		id=883,
+ 		desc=30001029,
+ 		missionType=8,
+ 		missionClass=5,
+ 		mapConditionId=1029,
+ 		randomWeight=100,
+ 	image=""
+},
+[884] =
+{
+ 		id=884,
+ 		desc=30001030,
+ 		missionType=8,
+ 		missionClass=6,
+ 		mapConditionId=1030,
+ 		randomWeight=100,
+ 	image=""
+},
+[885] =
+{
+ 		id=885,
+ 		desc=30001031,
+ 		missionType=8,
+ 		missionClass=7,
+ 		mapConditionId=1031,
+ 		randomWeight=100,
+ 	image=""
+},
+[886] =
+{
+ 		id=886,
+ 		desc=30001032,
+ 		missionType=8,
+ 		missionClass=8,
+ 		mapConditionId=1032,
+ 		randomWeight=100,
+ 	image=""
+},
+[887] =
+{
+ 		id=887,
+ 		desc=30001033,
+ 		missionType=8,
+ 		missionClass=9,
+ 		mapConditionId=1033,
+ 		randomWeight=100,
+ 	image=""
+},
+[888] =
+{
+ 		id=888,
+ 		desc=30001034,
+ 		missionType=8,
+ 		missionClass=10,
+ 		mapConditionId=1034,
+ 		randomWeight=100,
+ 	image=""
+},
+[889] =
+{
+ 		id=889,
+ 		desc=30001035,
+ 		missionType=8,
+ 		missionClass=11,
+ 		mapConditionId=1035,
+ 		randomWeight=100,
+ 	image=""
+},
+[890] =
+{
+ 		id=890,
+ 		desc=30001036,
+ 		missionType=8,
+ 		missionClass=12,
+ 		mapConditionId=1036,
+ 		randomWeight=100,
+ 	image=""
+},
+[891] =
+{
+ 		id=891,
+ 		desc=30001037,
+ 		missionType=8,
+ 		missionClass=1,
+ 		mapConditionId=1037,
+ 		randomWeight=100,
+ 	image=""
+},
+[892] =
+{
+ 		id=892,
+ 		desc=30001039,
+ 		missionType=8,
+ 		missionClass=2,
+ 		mapConditionId=1039,
+ 		randomWeight=100,
+ 	image=""
+},
+[893] =
+{
+ 		id=893,
+ 		desc=30001040,
+ 		missionType=8,
+ 		missionClass=3,
+ 		mapConditionId=1040,
+ 		randomWeight=100,
+ 	image=""
+},
+[894] =
+{
+ 		id=894,
+ 		desc=30001041,
+ 		missionType=8,
+ 		missionClass=4,
+ 		mapConditionId=1041,
+ 		randomWeight=100,
+ 	image=""
+},
+[895] =
+{
+ 		id=895,
+ 		desc=30001042,
+ 		missionType=8,
+ 		missionClass=5,
+ 		mapConditionId=1042,
+ 		randomWeight=100,
+ 	image=""
+},
+[896] =
+{
+ 		id=896,
+ 		desc=30001043,
+ 		missionType=8,
+ 		missionClass=6,
+ 		mapConditionId=1043,
+ 		randomWeight=100,
+ 	image=""
+},
+[897] =
+{
+ 		id=897,
+ 		desc=30001044,
+ 		missionType=8,
+ 		missionClass=7,
+ 		mapConditionId=1044,
+ 		randomWeight=100,
+ 	image=""
+},
+[898] =
+{
+ 		id=898,
+ 		desc=30001045,
+ 		missionType=8,
+ 		missionClass=8,
+ 		mapConditionId=1045,
+ 		randomWeight=100,
+ 	image=""
+},
+[899] =
+{
+ 		id=899,
+ 		desc=30001046,
+ 		missionType=8,
+ 		missionClass=9,
+ 		mapConditionId=1046,
+ 		randomWeight=100,
+ 	image=""
+},
+[900] =
+{
+ 		id=900,
+ 		desc=30001047,
+ 		missionType=8,
+ 		missionClass=10,
+ 		mapConditionId=1047,
+ 		randomWeight=100,
+ 	image=""
+},
+[901] =
+{
+ 		id=901,
+ 		desc=30001048,
+ 		missionType=8,
+ 		missionClass=11,
+ 		mapConditionId=1048,
+ 		randomWeight=100,
+ 	image=""
+},
+[902] =
+{
+ 		id=902,
+ 		desc=30001049,
+ 		missionType=8,
+ 		missionClass=12,
+ 		mapConditionId=1049,
+ 		randomWeight=100,
+ 	image=""
+},
+[903] =
+{
+ 		id=903,
+ 		desc=30001050,
+ 		missionType=8,
+ 		missionClass=1,
+ 		mapConditionId=1050,
+ 		randomWeight=100,
+ 	image=""
+},
+[904] =
+{
+ 		id=904,
+ 		desc=30001051,
+ 		missionType=8,
+ 		missionClass=2,
+ 		mapConditionId=1051,
+ 		randomWeight=100,
+ 	image=""
+},
+[905] =
+{
+ 		id=905,
+ 		desc=30001052,
+ 		missionType=8,
+ 		missionClass=3,
+ 		mapConditionId=1052,
+ 		randomWeight=100,
+ 	image=""
+},
+[906] =
+{
+ 		id=906,
+ 		desc=30001053,
+ 		missionType=8,
+ 		missionClass=4,
+ 		mapConditionId=1053,
+ 		randomWeight=100,
+ 	image=""
+},
+[907] =
+{
+ 		id=907,
+ 		desc=30001054,
+ 		missionType=8,
+ 		missionClass=5,
+ 		mapConditionId=1054,
+ 		randomWeight=100,
+ 	image=""
+},
+[908] =
+{
+ 		id=908,
+ 		desc=30001055,
+ 		missionType=8,
+ 		missionClass=6,
+ 		mapConditionId=1055,
+ 		randomWeight=100,
+ 	image=""
+},
+[909] =
+{
+ 		id=909,
+ 		desc=30001056,
+ 		missionType=8,
+ 		missionClass=7,
+ 		mapConditionId=1056,
+ 		randomWeight=100,
+ 	image=""
+},
+[910] =
+{
+ 		id=910,
+ 		desc=30001057,
+ 		missionType=8,
+ 		missionClass=8,
+ 		mapConditionId=1057,
+ 		randomWeight=100,
+ 	image=""
+},
+[911] =
+{
+ 		id=911,
+ 		desc=30001058,
+ 		missionType=8,
+ 		missionClass=9,
+ 		mapConditionId=1058,
+ 		randomWeight=100,
+ 	image=""
+},
+[912] =
+{
+ 		id=912,
+ 		desc=30001059,
+ 		missionType=8,
+ 		missionClass=10,
+ 		mapConditionId=1059,
+ 		randomWeight=100,
+ 	image=""
+},
+[913] =
+{
+ 		id=913,
+ 		desc=30001060,
+ 		missionType=8,
+ 		missionClass=11,
+ 		mapConditionId=1060,
+ 		randomWeight=100,
+ 	image=""
+},
+[914] =
+{
+ 		id=914,
+ 		desc=30001061,
+ 		missionType=8,
+ 		missionClass=12,
+ 		mapConditionId=1061,
+ 		randomWeight=100,
+ 	image=""
+},
+[915] =
+{
+ 		id=915,
+ 		desc=30001062,
+ 		missionType=8,
+ 		missionClass=1,
+ 		mapConditionId=1062,
+ 		randomWeight=100,
+ 	image=""
+},
+[916] =
+{
+ 		id=916,
+ 		desc=30001063,
+ 		missionType=8,
+ 		missionClass=2,
+ 		mapConditionId=1063,
+ 		randomWeight=100,
+ 	image=""
+},
+[917] =
+{
+ 		id=917,
+ 		desc=30001064,
+ 		missionType=8,
+ 		missionClass=3,
+ 		mapConditionId=1064,
+ 		randomWeight=100,
+ 	image=""
+},
+[918] =
+{
+ 		id=918,
+ 		desc=30001065,
+ 		missionType=8,
+ 		missionClass=4,
+ 		mapConditionId=1065,
+ 		randomWeight=100,
+ 	image=""
+},
+[919] =
+{
+ 		id=919,
+ 		desc=30002001,
+ 		missionType=8,
+ 		missionClass=5,
+ 		mapConditionId=2001,
+ 		randomWeight=100,
+ 	image=""
+},
+[920] =
+{
+ 		id=920,
+ 		desc=30002002,
+ 		missionType=8,
+ 		missionClass=6,
+ 		mapConditionId=2002,
+ 		randomWeight=100,
+ 	image=""
+},
+[921] =
+{
+ 		id=921,
+ 		desc=30002003,
+ 		missionType=8,
+ 		missionClass=7,
+ 		mapConditionId=2003,
+ 		randomWeight=100,
+ 	image=""
+},
+[922] =
+{
+ 		id=922,
+ 		desc=30002004,
+ 		missionType=8,
+ 		missionClass=8,
+ 		mapConditionId=2004,
+ 		randomWeight=100,
+ 	image=""
+},
+[923] =
+{
+ 		id=923,
+ 		desc=30002005,
+ 		missionType=8,
+ 		missionClass=9,
+ 		mapConditionId=2005,
+ 		randomWeight=100,
+ 	image=""
+},
+[924] =
+{
+ 		id=924,
+ 		desc=30002006,
+ 		missionType=8,
+ 		missionClass=10,
+ 		mapConditionId=2006,
+ 		randomWeight=100,
+ 	image=""
+},
+[925] =
+{
+ 		id=925,
+ 		desc=30002007,
+ 		missionType=8,
+ 		missionClass=11,
+ 		mapConditionId=2007,
+ 		randomWeight=100,
+ 	image=""
+},
+[926] =
+{
+ 		id=926,
+ 		desc=30002008,
+ 		missionType=8,
+ 		missionClass=12,
+ 		mapConditionId=2008,
+ 		randomWeight=100,
+ 	image=""
+},
+[927] =
+{
+ 		id=927,
+ 		desc=30002009,
+ 		missionType=8,
+ 		missionClass=1,
+ 		mapConditionId=2009,
+ 		randomWeight=100,
+ 	image=""
+},
+[928] =
+{
+ 		id=928,
+ 		desc=30002010,
+ 		missionType=8,
+ 		missionClass=2,
+ 		mapConditionId=2010,
+ 		randomWeight=100,
+ 	image=""
+},
+[929] =
+{
+ 		id=929,
+ 		desc=30002011,
+ 		missionType=8,
+ 		missionClass=3,
+ 		mapConditionId=2011,
+ 		randomWeight=100,
+ 	image=""
+},
+[930] =
+{
+ 		id=930,
+ 		desc=30002012,
+ 		missionType=8,
+ 		missionClass=4,
+ 		mapConditionId=2012,
+ 		randomWeight=100,
+ 	image=""
+},
+[931] =
+{
+ 		id=931,
+ 		desc=30002013,
+ 		missionType=8,
+ 		missionClass=5,
+ 		mapConditionId=2013,
+ 		randomWeight=100,
+ 	image=""
+},
+[932] =
+{
+ 		id=932,
+ 		desc=30002014,
+ 		missionType=8,
+ 		missionClass=6,
+ 		mapConditionId=2014,
+ 		randomWeight=100,
+ 	image=""
+},
+[933] =
+{
+ 		id=933,
+ 		desc=30002015,
+ 		missionType=8,
+ 		missionClass=7,
+ 		mapConditionId=2015,
+ 		randomWeight=100,
+ 	image=""
+},
+[934] =
+{
+ 		id=934,
+ 		desc=30002016,
+ 		missionType=8,
+ 		missionClass=8,
+ 		mapConditionId=2016,
+ 		randomWeight=100,
+ 	image=""
+},
+[935] =
+{
+ 		id=935,
+ 		desc=30002017,
+ 		missionType=8,
+ 		missionClass=9,
+ 		mapConditionId=2017,
+ 		randomWeight=100,
+ 	image=""
+},
+[936] =
+{
+ 		id=936,
+ 		desc=30002018,
+ 		missionType=8,
+ 		missionClass=10,
+ 		mapConditionId=2018,
+ 		randomWeight=100,
+ 	image=""
+},
+[937] =
+{
+ 		id=937,
+ 		desc=30002019,
+ 		missionType=8,
+ 		missionClass=11,
+ 		mapConditionId=2019,
+ 		randomWeight=100,
+ 	image=""
+},
+[938] =
+{
+ 		id=938,
+ 		desc=30003001,
+ 		missionType=8,
+ 		missionClass=12,
+ 		mapConditionId=3001,
+ 		randomWeight=100,
+ 	image=""
+},
+[939] =
+{
+ 		id=939,
+ 		desc=30003002,
+ 		missionType=8,
+ 		missionClass=1,
+ 		mapConditionId=3002,
+ 		randomWeight=100,
+ 	image=""
+},
+[940] =
+{
+ 		id=940,
+ 		desc=30003003,
+ 		missionType=8,
+ 		missionClass=2,
+ 		mapConditionId=3003,
+ 		randomWeight=100,
+ 	image=""
+},
+[941] =
+{
+ 		id=941,
+ 		desc=30003004,
+ 		missionType=8,
+ 		missionClass=3,
+ 		mapConditionId=3004,
+ 		randomWeight=100,
+ 	image=""
+},
+[942] =
+{
+ 		id=942,
+ 		desc=30003005,
+ 		missionType=8,
+ 		missionClass=4,
+ 		mapConditionId=3005,
+ 		randomWeight=100,
+ 	image=""
+},
+[943] =
+{
+ 		id=943,
+ 		desc=30003006,
+ 		missionType=8,
+ 		missionClass=5,
+ 		mapConditionId=3006,
+ 		randomWeight=100,
+ 	image=""
+},
+[944] =
+{
+ 		id=944,
+ 		desc=30003007,
+ 		missionType=8,
+ 		missionClass=6,
+ 		mapConditionId=3007,
+ 		randomWeight=100,
+ 	image=""
+},
+[945] =
+{
+ 		id=945,
+ 		desc=30003008,
+ 		missionType=8,
+ 		missionClass=7,
+ 		mapConditionId=3008,
+ 		randomWeight=100,
+ 	image=""
+},
+[946] =
+{
+ 		id=946,
+ 		desc=30003009,
+ 		missionType=8,
+ 		missionClass=8,
+ 		mapConditionId=3009,
+ 		randomWeight=100,
+ 	image=""
+},
+[947] =
+{
+ 		id=947,
+ 		desc=30003010,
+ 		missionType=8,
+ 		missionClass=9,
+ 		mapConditionId=3010,
+ 		randomWeight=100,
+ 	image=""
+},
+[948] =
+{
+ 		id=948,
+ 		desc=30003011,
+ 		missionType=8,
+ 		missionClass=10,
+ 		mapConditionId=3011,
+ 		randomWeight=100,
+ 	image=""
+},
+[949] =
+{
+ 		id=949,
+ 		desc=30003012,
+ 		missionType=8,
+ 		missionClass=11,
+ 		mapConditionId=3012,
+ 		randomWeight=100,
+ 	image=""
+},
+[950] =
+{
+ 		id=950,
+ 		desc=30003013,
+ 		missionType=8,
+ 		missionClass=12,
+ 		mapConditionId=3013,
+ 		randomWeight=100,
+ 	image=""
+},
+[951] =
+{
+ 		id=951,
+ 		desc=30003014,
+ 		missionType=8,
+ 		missionClass=1,
+ 		mapConditionId=3014,
+ 		randomWeight=100,
+ 	image=""
+},
+[952] =
+{
+ 		id=952,
+ 		desc=30003015,
+ 		missionType=8,
+ 		missionClass=2,
+ 		mapConditionId=3015,
+ 		randomWeight=100,
+ 	image=""
+},
+[953] =
+{
+ 		id=953,
+ 		desc=30003016,
+ 		missionType=8,
+ 		missionClass=3,
+ 		mapConditionId=3016,
+ 		randomWeight=100,
+ 	image=""
+},
+[954] =
+{
+ 		id=954,
+ 		desc=30003017,
+ 		missionType=8,
+ 		missionClass=4,
+ 		mapConditionId=3017,
+ 		randomWeight=100,
+ 	image=""
+},
+[955] =
+{
+ 		id=955,
+ 		desc=30003018,
+ 		missionType=8,
+ 		missionClass=5,
+ 		mapConditionId=3018,
+ 		randomWeight=100,
+ 	image=""
+},
+[956] =
+{
+ 		id=956,
+ 		desc=30003019,
+ 		missionType=8,
+ 		missionClass=6,
+ 		mapConditionId=3019,
+ 		randomWeight=100,
+ 	image=""
+},
+[957] =
+{
+ 		id=957,
+ 		desc=30003020,
+ 		missionType=8,
+ 		missionClass=7,
+ 		mapConditionId=3020,
+ 		randomWeight=100,
+ 	image=""
+},
+[958] =
+{
+ 		id=958,
+ 		desc=30003021,
+ 		missionType=8,
+ 		missionClass=8,
+ 		mapConditionId=3021,
+ 		randomWeight=100,
+ 	image=""
+},
+[959] =
+{
+ 		id=959,
+ 		desc=30003022,
+ 		missionType=8,
+ 		missionClass=9,
+ 		mapConditionId=3022,
+ 		randomWeight=100,
+ 	image=""
+},
+[960] =
+{
+ 		id=960,
+ 		desc=30003023,
+ 		missionType=8,
+ 		missionClass=10,
+ 		mapConditionId=3023,
+ 		randomWeight=100,
+ 	image=""
+},
+[961] =
+{
+ 		id=961,
+ 		desc=30003024,
+ 		missionType=8,
+ 		missionClass=11,
+ 		mapConditionId=3024,
+ 		randomWeight=100,
+ 	image=""
+},
+[962] =
+{
+ 		id=962,
+ 		desc=30003025,
+ 		missionType=8,
+ 		missionClass=12,
+ 		mapConditionId=3025,
+ 		randomWeight=100,
+ 	image=""
+},
+[963] =
+{
+ 		id=963,
+ 		desc=30003026,
+ 		missionType=8,
+ 		missionClass=1,
+ 		mapConditionId=3026,
+ 		randomWeight=100,
+ 	image=""
+},
+[964] =
+{
+ 		id=964,
+ 		desc=30003027,
+ 		missionType=8,
+ 		missionClass=2,
+ 		mapConditionId=3027,
+ 		randomWeight=100,
+ 	image=""
+},
+[965] =
+{
+ 		id=965,
+ 		desc=30003028,
+ 		missionType=8,
+ 		missionClass=3,
+ 		mapConditionId=3028,
+ 		randomWeight=100,
+ 	image=""
+},
+[966] =
+{
+ 		id=966,
+ 		desc=30003029,
+ 		missionType=8,
+ 		missionClass=4,
+ 		mapConditionId=3029,
+ 		randomWeight=100,
+ 	image=""
+},
+[967] =
+{
+ 		id=967,
+ 		desc=30003030,
+ 		missionType=8,
+ 		missionClass=5,
+ 		mapConditionId=3030,
+ 		randomWeight=100,
+ 	image=""
+},
+[968] =
+{
+ 		id=968,
+ 		desc=30003031,
+ 		missionType=8,
+ 		missionClass=6,
+ 		mapConditionId=3031,
+ 		randomWeight=100,
+ 	image=""
+},
+[969] =
+{
+ 		id=969,
+ 		desc=30003032,
+ 		missionType=8,
+ 		missionClass=7,
+ 		mapConditionId=3032,
+ 		randomWeight=100,
+ 	image=""
+},
+[970] =
+{
+ 		id=970,
+ 		desc=30003033,
+ 		missionType=8,
+ 		missionClass=8,
+ 		mapConditionId=3033,
+ 		randomWeight=100,
+ 	image=""
+},
+[971] =
+{
+ 		id=971,
+ 		desc=30003034,
+ 		missionType=8,
+ 		missionClass=9,
+ 		mapConditionId=3034,
+ 		randomWeight=100,
+ 	image=""
+},
+[972] =
+{
+ 		id=972,
+ 		desc=30003035,
+ 		missionType=8,
+ 		missionClass=10,
+ 		mapConditionId=3035,
+ 		randomWeight=100,
+ 	image=""
+},
+[973] =
+{
+ 		id=973,
+ 		desc=30003036,
+ 		missionType=8,
+ 		missionClass=11,
+ 		mapConditionId=3036,
+ 		randomWeight=100,
+ 	image=""
+},
+[974] =
+{
+ 		id=974,
+ 		desc=30003037,
+ 		missionType=8,
+ 		missionClass=12,
+ 		mapConditionId=3037,
+ 		randomWeight=100,
+ 	image=""
+},
+[975] =
+{
+ 		id=975,
+ 		desc=30003038,
+ 		missionType=8,
+ 		missionClass=1,
+ 		mapConditionId=3038,
+ 		randomWeight=100,
+ 	image=""
+},
+[976] =
+{
+ 		id=976,
+ 		desc=30003039,
+ 		missionType=8,
+ 		missionClass=2,
+ 		mapConditionId=3039,
+ 		randomWeight=100,
+ 	image=""
+},
+[977] =
+{
+ 		id=977,
+ 		desc=30001001,
+ 		missionType=9,
+ 		missionClass=1,
+ 		mapConditionId=1001,
+ 		randomWeight=100,
+ 	image=""
+},
+[978] =
+{
+ 		id=978,
+ 		desc=30001002,
+ 		missionType=9,
+ 		missionClass=2,
+ 		mapConditionId=1002,
+ 		randomWeight=100,
+ 	image=""
+},
+[979] =
+{
+ 		id=979,
+ 		desc=30001003,
+ 		missionType=9,
+ 		missionClass=3,
+ 		mapConditionId=1003,
+ 		randomWeight=100,
+ 	image=""
+},
+[980] =
+{
+ 		id=980,
+ 		desc=30001004,
+ 		missionType=9,
+ 		missionClass=4,
+ 		mapConditionId=1004,
+ 		randomWeight=100,
+ 	image=""
+},
+[981] =
+{
+ 		id=981,
+ 		desc=30001005,
+ 		missionType=9,
+ 		missionClass=5,
+ 		mapConditionId=1005,
+ 		randomWeight=100,
+ 	image=""
+},
+[982] =
+{
+ 		id=982,
+ 		desc=30001006,
+ 		missionType=9,
+ 		missionClass=6,
+ 		mapConditionId=1006,
+ 		randomWeight=100,
+ 	image=""
+},
+[983] =
+{
+ 		id=983,
+ 		desc=30001007,
+ 		missionType=9,
+ 		missionClass=7,
+ 		mapConditionId=1007,
+ 		randomWeight=100,
+ 	image=""
+},
+[984] =
+{
+ 		id=984,
+ 		desc=30001008,
+ 		missionType=9,
+ 		missionClass=8,
+ 		mapConditionId=1008,
+ 		randomWeight=100,
+ 	image=""
+},
+[985] =
+{
+ 		id=985,
+ 		desc=30001009,
+ 		missionType=9,
+ 		missionClass=9,
+ 		mapConditionId=1009,
+ 		randomWeight=100,
+ 	image=""
+},
+[986] =
+{
+ 		id=986,
+ 		desc=30001010,
+ 		missionType=9,
+ 		missionClass=10,
+ 		mapConditionId=1010,
+ 		randomWeight=100,
+ 	image=""
+},
+[987] =
+{
+ 		id=987,
+ 		desc=30001011,
+ 		missionType=9,
+ 		missionClass=11,
+ 		mapConditionId=1011,
+ 		randomWeight=100,
+ 	image=""
+},
+[988] =
+{
+ 		id=988,
+ 		desc=30001012,
+ 		missionType=9,
+ 		missionClass=12,
+ 		mapConditionId=1012,
+ 		randomWeight=100,
+ 	image=""
+},
+[989] =
+{
+ 		id=989,
+ 		desc=30001013,
+ 		missionType=9,
+ 		missionClass=1,
+ 		mapConditionId=1013,
+ 		randomWeight=100,
+ 	image=""
+},
+[990] =
+{
+ 		id=990,
+ 		desc=30001014,
+ 		missionType=9,
+ 		missionClass=2,
+ 		mapConditionId=1014,
+ 		randomWeight=100,
+ 	image=""
+},
+[991] =
+{
+ 		id=991,
+ 		desc=30001015,
+ 		missionType=9,
+ 		missionClass=3,
+ 		mapConditionId=1015,
+ 		randomWeight=100,
+ 	image=""
+},
+[992] =
+{
+ 		id=992,
+ 		desc=30001016,
+ 		missionType=9,
+ 		missionClass=4,
+ 		mapConditionId=1016,
+ 		randomWeight=100,
+ 	image=""
+},
+[993] =
+{
+ 		id=993,
+ 		desc=30001017,
+ 		missionType=9,
+ 		missionClass=5,
+ 		mapConditionId=1017,
+ 		randomWeight=100,
+ 	image=""
+},
+[994] =
+{
+ 		id=994,
+ 		desc=30001018,
+ 		missionType=9,
+ 		missionClass=6,
+ 		mapConditionId=1018,
+ 		randomWeight=100,
+ 	image=""
+},
+[995] =
+{
+ 		id=995,
+ 		desc=30001019,
+ 		missionType=9,
+ 		missionClass=7,
+ 		mapConditionId=1019,
+ 		randomWeight=100,
+ 	image=""
+},
+[996] =
+{
+ 		id=996,
+ 		desc=30001020,
+ 		missionType=9,
+ 		missionClass=8,
+ 		mapConditionId=1020,
+ 		randomWeight=100,
+ 	image=""
+},
+[997] =
+{
+ 		id=997,
+ 		desc=30001021,
+ 		missionType=9,
+ 		missionClass=9,
+ 		mapConditionId=1021,
+ 		randomWeight=100,
+ 	image=""
+},
+[998] =
+{
+ 		id=998,
+ 		desc=30001022,
+ 		missionType=9,
+ 		missionClass=10,
+ 		mapConditionId=1022,
+ 		randomWeight=100,
+ 	image=""
+},
+[999] =
+{
+ 		id=999,
+ 		desc=30001023,
+ 		missionType=9,
+ 		missionClass=11,
+ 		mapConditionId=1023,
+ 		randomWeight=100,
+ 	image=""
+},
+[1000] =
+{
+ 		id=1000,
+ 		desc=30001024,
+ 		missionType=9,
+ 		missionClass=12,
+ 		mapConditionId=1024,
+ 		randomWeight=100,
+ 	image=""
+},
+[1001] =
+{
+ 		id=1001,
+ 		desc=30001025,
+ 		missionType=9,
+ 		missionClass=1,
+ 		mapConditionId=1025,
+ 		randomWeight=100,
+ 	image=""
+},
+[1002] =
+{
+ 		id=1002,
+ 		desc=30001026,
+ 		missionType=9,
+ 		missionClass=2,
+ 		mapConditionId=1026,
+ 		randomWeight=100,
+ 	image=""
+},
+[1003] =
+{
+ 		id=1003,
+ 		desc=30001027,
+ 		missionType=9,
+ 		missionClass=3,
+ 		mapConditionId=1027,
+ 		randomWeight=100,
+ 	image=""
+},
+[1004] =
+{
+ 		id=1004,
+ 		desc=30001028,
+ 		missionType=9,
+ 		missionClass=4,
+ 		mapConditionId=1028,
+ 		randomWeight=100,
+ 	image=""
+},
+[1005] =
+{
+ 		id=1005,
+ 		desc=30001029,
+ 		missionType=9,
+ 		missionClass=5,
+ 		mapConditionId=1029,
+ 		randomWeight=100,
+ 	image=""
+},
+[1006] =
+{
+ 		id=1006,
+ 		desc=30001030,
+ 		missionType=9,
+ 		missionClass=6,
+ 		mapConditionId=1030,
+ 		randomWeight=100,
+ 	image=""
+},
+[1007] =
+{
+ 		id=1007,
+ 		desc=30001031,
+ 		missionType=9,
+ 		missionClass=7,
+ 		mapConditionId=1031,
+ 		randomWeight=100,
+ 	image=""
+},
+[1008] =
+{
+ 		id=1008,
+ 		desc=30001032,
+ 		missionType=9,
+ 		missionClass=8,
+ 		mapConditionId=1032,
+ 		randomWeight=100,
+ 	image=""
+},
+[1009] =
+{
+ 		id=1009,
+ 		desc=30001033,
+ 		missionType=9,
+ 		missionClass=9,
+ 		mapConditionId=1033,
+ 		randomWeight=100,
+ 	image=""
+},
+[1010] =
+{
+ 		id=1010,
+ 		desc=30001034,
+ 		missionType=9,
+ 		missionClass=10,
+ 		mapConditionId=1034,
+ 		randomWeight=100,
+ 	image=""
+},
+[1011] =
+{
+ 		id=1011,
+ 		desc=30001035,
+ 		missionType=9,
+ 		missionClass=11,
+ 		mapConditionId=1035,
+ 		randomWeight=100,
+ 	image=""
+},
+[1012] =
+{
+ 		id=1012,
+ 		desc=30001036,
+ 		missionType=9,
+ 		missionClass=12,
+ 		mapConditionId=1036,
+ 		randomWeight=100,
+ 	image=""
+},
+[1013] =
+{
+ 		id=1013,
+ 		desc=30001037,
+ 		missionType=9,
+ 		missionClass=1,
+ 		mapConditionId=1037,
+ 		randomWeight=100,
+ 	image=""
+},
+[1014] =
+{
+ 		id=1014,
+ 		desc=30001039,
+ 		missionType=9,
+ 		missionClass=2,
+ 		mapConditionId=1039,
+ 		randomWeight=100,
+ 	image=""
+},
+[1015] =
+{
+ 		id=1015,
+ 		desc=30001040,
+ 		missionType=9,
+ 		missionClass=3,
+ 		mapConditionId=1040,
+ 		randomWeight=100,
+ 	image=""
+},
+[1016] =
+{
+ 		id=1016,
+ 		desc=30001041,
+ 		missionType=9,
+ 		missionClass=4,
+ 		mapConditionId=1041,
+ 		randomWeight=100,
+ 	image=""
+},
+[1017] =
+{
+ 		id=1017,
+ 		desc=30001042,
+ 		missionType=9,
+ 		missionClass=5,
+ 		mapConditionId=1042,
+ 		randomWeight=100,
+ 	image=""
+},
+[1018] =
+{
+ 		id=1018,
+ 		desc=30001043,
+ 		missionType=9,
+ 		missionClass=6,
+ 		mapConditionId=1043,
+ 		randomWeight=100,
+ 	image=""
+},
+[1019] =
+{
+ 		id=1019,
+ 		desc=30001044,
+ 		missionType=9,
+ 		missionClass=7,
+ 		mapConditionId=1044,
+ 		randomWeight=100,
+ 	image=""
+},
+[1020] =
+{
+ 		id=1020,
+ 		desc=30001045,
+ 		missionType=9,
+ 		missionClass=8,
+ 		mapConditionId=1045,
+ 		randomWeight=100,
+ 	image=""
+},
+[1021] =
+{
+ 		id=1021,
+ 		desc=30001046,
+ 		missionType=9,
+ 		missionClass=9,
+ 		mapConditionId=1046,
+ 		randomWeight=100,
+ 	image=""
+},
+[1022] =
+{
+ 		id=1022,
+ 		desc=30001047,
+ 		missionType=9,
+ 		missionClass=10,
+ 		mapConditionId=1047,
+ 		randomWeight=100,
+ 	image=""
+},
+[1023] =
+{
+ 		id=1023,
+ 		desc=30001048,
+ 		missionType=9,
+ 		missionClass=11,
+ 		mapConditionId=1048,
+ 		randomWeight=100,
+ 	image=""
+},
+[1024] =
+{
+ 		id=1024,
+ 		desc=30001049,
+ 		missionType=9,
+ 		missionClass=12,
+ 		mapConditionId=1049,
+ 		randomWeight=100,
+ 	image=""
+},
+[1025] =
+{
+ 		id=1025,
+ 		desc=30001050,
+ 		missionType=9,
+ 		missionClass=1,
+ 		mapConditionId=1050,
+ 		randomWeight=100,
+ 	image=""
+},
+[1026] =
+{
+ 		id=1026,
+ 		desc=30001051,
+ 		missionType=9,
+ 		missionClass=2,
+ 		mapConditionId=1051,
+ 		randomWeight=100,
+ 	image=""
+},
+[1027] =
+{
+ 		id=1027,
+ 		desc=30001052,
+ 		missionType=9,
+ 		missionClass=3,
+ 		mapConditionId=1052,
+ 		randomWeight=100,
+ 	image=""
+},
+[1028] =
+{
+ 		id=1028,
+ 		desc=30001053,
+ 		missionType=9,
+ 		missionClass=4,
+ 		mapConditionId=1053,
+ 		randomWeight=100,
+ 	image=""
+},
+[1029] =
+{
+ 		id=1029,
+ 		desc=30001054,
+ 		missionType=9,
+ 		missionClass=5,
+ 		mapConditionId=1054,
+ 		randomWeight=100,
+ 	image=""
+},
+[1030] =
+{
+ 		id=1030,
+ 		desc=30001055,
+ 		missionType=9,
+ 		missionClass=6,
+ 		mapConditionId=1055,
+ 		randomWeight=100,
+ 	image=""
+},
+[1031] =
+{
+ 		id=1031,
+ 		desc=30001056,
+ 		missionType=9,
+ 		missionClass=7,
+ 		mapConditionId=1056,
+ 		randomWeight=100,
+ 	image=""
+},
+[1032] =
+{
+ 		id=1032,
+ 		desc=30001057,
+ 		missionType=9,
+ 		missionClass=8,
+ 		mapConditionId=1057,
+ 		randomWeight=100,
+ 	image=""
+},
+[1033] =
+{
+ 		id=1033,
+ 		desc=30001058,
+ 		missionType=9,
+ 		missionClass=9,
+ 		mapConditionId=1058,
+ 		randomWeight=100,
+ 	image=""
+},
+[1034] =
+{
+ 		id=1034,
+ 		desc=30001059,
+ 		missionType=9,
+ 		missionClass=10,
+ 		mapConditionId=1059,
+ 		randomWeight=100,
+ 	image=""
+},
+[1035] =
+{
+ 		id=1035,
+ 		desc=30001060,
+ 		missionType=9,
+ 		missionClass=11,
+ 		mapConditionId=1060,
+ 		randomWeight=100,
+ 	image=""
+},
+[1036] =
+{
+ 		id=1036,
+ 		desc=30001061,
+ 		missionType=9,
+ 		missionClass=12,
+ 		mapConditionId=1061,
+ 		randomWeight=100,
+ 	image=""
+},
+[1037] =
+{
+ 		id=1037,
+ 		desc=30001062,
+ 		missionType=9,
+ 		missionClass=1,
+ 		mapConditionId=1062,
+ 		randomWeight=100,
+ 	image=""
+},
+[1038] =
+{
+ 		id=1038,
+ 		desc=30001063,
+ 		missionType=9,
+ 		missionClass=2,
+ 		mapConditionId=1063,
+ 		randomWeight=100,
+ 	image=""
+},
+[1039] =
+{
+ 		id=1039,
+ 		desc=30001064,
+ 		missionType=9,
+ 		missionClass=3,
+ 		mapConditionId=1064,
+ 		randomWeight=100,
+ 	image=""
+},
+[1040] =
+{
+ 		id=1040,
+ 		desc=30001065,
+ 		missionType=9,
+ 		missionClass=4,
+ 		mapConditionId=1065,
+ 		randomWeight=100,
+ 	image=""
+},
+[1041] =
+{
+ 		id=1041,
+ 		desc=30002001,
+ 		missionType=9,
+ 		missionClass=5,
+ 		mapConditionId=2001,
+ 		randomWeight=100,
+ 	image=""
+},
+[1042] =
+{
+ 		id=1042,
+ 		desc=30002002,
+ 		missionType=9,
+ 		missionClass=6,
+ 		mapConditionId=2002,
+ 		randomWeight=100,
+ 	image=""
+},
+[1043] =
+{
+ 		id=1043,
+ 		desc=30002003,
+ 		missionType=9,
+ 		missionClass=7,
+ 		mapConditionId=2003,
+ 		randomWeight=100,
+ 	image=""
+},
+[1044] =
+{
+ 		id=1044,
+ 		desc=30002004,
+ 		missionType=9,
+ 		missionClass=8,
+ 		mapConditionId=2004,
+ 		randomWeight=100,
+ 	image=""
+},
+[1045] =
+{
+ 		id=1045,
+ 		desc=30002005,
+ 		missionType=9,
+ 		missionClass=9,
+ 		mapConditionId=2005,
+ 		randomWeight=100,
+ 	image=""
+},
+[1046] =
+{
+ 		id=1046,
+ 		desc=30002006,
+ 		missionType=9,
+ 		missionClass=10,
+ 		mapConditionId=2006,
+ 		randomWeight=100,
+ 	image=""
+},
+[1047] =
+{
+ 		id=1047,
+ 		desc=30002007,
+ 		missionType=9,
+ 		missionClass=11,
+ 		mapConditionId=2007,
+ 		randomWeight=100,
+ 	image=""
+},
+[1048] =
+{
+ 		id=1048,
+ 		desc=30002008,
+ 		missionType=9,
+ 		missionClass=12,
+ 		mapConditionId=2008,
+ 		randomWeight=100,
+ 	image=""
+},
+[1049] =
+{
+ 		id=1049,
+ 		desc=30002009,
+ 		missionType=9,
+ 		missionClass=1,
+ 		mapConditionId=2009,
+ 		randomWeight=100,
+ 	image=""
+},
+[1050] =
+{
+ 		id=1050,
+ 		desc=30002010,
+ 		missionType=9,
+ 		missionClass=2,
+ 		mapConditionId=2010,
+ 		randomWeight=100,
+ 	image=""
+},
+[1051] =
+{
+ 		id=1051,
+ 		desc=30002011,
+ 		missionType=9,
+ 		missionClass=3,
+ 		mapConditionId=2011,
+ 		randomWeight=100,
+ 	image=""
+},
+[1052] =
+{
+ 		id=1052,
+ 		desc=30002012,
+ 		missionType=9,
+ 		missionClass=4,
+ 		mapConditionId=2012,
+ 		randomWeight=100,
+ 	image=""
+},
+[1053] =
+{
+ 		id=1053,
+ 		desc=30002013,
+ 		missionType=9,
+ 		missionClass=5,
+ 		mapConditionId=2013,
+ 		randomWeight=100,
+ 	image=""
+},
+[1054] =
+{
+ 		id=1054,
+ 		desc=30002014,
+ 		missionType=9,
+ 		missionClass=6,
+ 		mapConditionId=2014,
+ 		randomWeight=100,
+ 	image=""
+},
+[1055] =
+{
+ 		id=1055,
+ 		desc=30002015,
+ 		missionType=9,
+ 		missionClass=7,
+ 		mapConditionId=2015,
+ 		randomWeight=100,
+ 	image=""
+},
+[1056] =
+{
+ 		id=1056,
+ 		desc=30002016,
+ 		missionType=9,
+ 		missionClass=8,
+ 		mapConditionId=2016,
+ 		randomWeight=100,
+ 	image=""
+},
+[1057] =
+{
+ 		id=1057,
+ 		desc=30002017,
+ 		missionType=9,
+ 		missionClass=9,
+ 		mapConditionId=2017,
+ 		randomWeight=100,
+ 	image=""
+},
+[1058] =
+{
+ 		id=1058,
+ 		desc=30002018,
+ 		missionType=9,
+ 		missionClass=10,
+ 		mapConditionId=2018,
+ 		randomWeight=100,
+ 	image=""
+},
+[1059] =
+{
+ 		id=1059,
+ 		desc=30002019,
+ 		missionType=9,
+ 		missionClass=11,
+ 		mapConditionId=2019,
+ 		randomWeight=100,
+ 	image=""
+},
+[1060] =
+{
+ 		id=1060,
+ 		desc=30003001,
+ 		missionType=9,
+ 		missionClass=12,
+ 		mapConditionId=3001,
+ 		randomWeight=100,
+ 	image=""
+},
+[1061] =
+{
+ 		id=1061,
+ 		desc=30003002,
+ 		missionType=9,
+ 		missionClass=1,
+ 		mapConditionId=3002,
+ 		randomWeight=100,
+ 	image=""
+},
+[1062] =
+{
+ 		id=1062,
+ 		desc=30003003,
+ 		missionType=9,
+ 		missionClass=2,
+ 		mapConditionId=3003,
+ 		randomWeight=100,
+ 	image=""
+},
+[1063] =
+{
+ 		id=1063,
+ 		desc=30003004,
+ 		missionType=9,
+ 		missionClass=3,
+ 		mapConditionId=3004,
+ 		randomWeight=100,
+ 	image=""
+},
+[1064] =
+{
+ 		id=1064,
+ 		desc=30003005,
+ 		missionType=9,
+ 		missionClass=4,
+ 		mapConditionId=3005,
+ 		randomWeight=100,
+ 	image=""
+},
+[1065] =
+{
+ 		id=1065,
+ 		desc=30003006,
+ 		missionType=9,
+ 		missionClass=5,
+ 		mapConditionId=3006,
+ 		randomWeight=100,
+ 	image=""
+},
+[1066] =
+{
+ 		id=1066,
+ 		desc=30003007,
+ 		missionType=9,
+ 		missionClass=6,
+ 		mapConditionId=3007,
+ 		randomWeight=100,
+ 	image=""
+},
+[1067] =
+{
+ 		id=1067,
+ 		desc=30003008,
+ 		missionType=9,
+ 		missionClass=7,
+ 		mapConditionId=3008,
+ 		randomWeight=100,
+ 	image=""
+},
+[1068] =
+{
+ 		id=1068,
+ 		desc=30003009,
+ 		missionType=9,
+ 		missionClass=8,
+ 		mapConditionId=3009,
+ 		randomWeight=100,
+ 	image=""
+},
+[1069] =
+{
+ 		id=1069,
+ 		desc=30003010,
+ 		missionType=9,
+ 		missionClass=9,
+ 		mapConditionId=3010,
+ 		randomWeight=100,
+ 	image=""
+},
+[1070] =
+{
+ 		id=1070,
+ 		desc=30003011,
+ 		missionType=9,
+ 		missionClass=10,
+ 		mapConditionId=3011,
+ 		randomWeight=100,
+ 	image=""
+},
+[1071] =
+{
+ 		id=1071,
+ 		desc=30003012,
+ 		missionType=9,
+ 		missionClass=11,
+ 		mapConditionId=3012,
+ 		randomWeight=100,
+ 	image=""
+},
+[1072] =
+{
+ 		id=1072,
+ 		desc=30003013,
+ 		missionType=9,
+ 		missionClass=12,
+ 		mapConditionId=3013,
+ 		randomWeight=100,
+ 	image=""
+},
+[1073] =
+{
+ 		id=1073,
+ 		desc=30003014,
+ 		missionType=9,
+ 		missionClass=1,
+ 		mapConditionId=3014,
+ 		randomWeight=100,
+ 	image=""
+},
+[1074] =
+{
+ 		id=1074,
+ 		desc=30003015,
+ 		missionType=9,
+ 		missionClass=2,
+ 		mapConditionId=3015,
+ 		randomWeight=100,
+ 	image=""
+},
+[1075] =
+{
+ 		id=1075,
+ 		desc=30003016,
+ 		missionType=9,
+ 		missionClass=3,
+ 		mapConditionId=3016,
+ 		randomWeight=100,
+ 	image=""
+},
+[1076] =
+{
+ 		id=1076,
+ 		desc=30003017,
+ 		missionType=9,
+ 		missionClass=4,
+ 		mapConditionId=3017,
+ 		randomWeight=100,
+ 	image=""
+},
+[1077] =
+{
+ 		id=1077,
+ 		desc=30003018,
+ 		missionType=9,
+ 		missionClass=5,
+ 		mapConditionId=3018,
+ 		randomWeight=100,
+ 	image=""
+},
+[1078] =
+{
+ 		id=1078,
+ 		desc=30003019,
+ 		missionType=9,
+ 		missionClass=6,
+ 		mapConditionId=3019,
+ 		randomWeight=100,
+ 	image=""
+},
+[1079] =
+{
+ 		id=1079,
+ 		desc=30003020,
+ 		missionType=9,
+ 		missionClass=7,
+ 		mapConditionId=3020,
+ 		randomWeight=100,
+ 	image=""
+},
+[1080] =
+{
+ 		id=1080,
+ 		desc=30003021,
+ 		missionType=9,
+ 		missionClass=8,
+ 		mapConditionId=3021,
+ 		randomWeight=100,
+ 	image=""
+},
+[1081] =
+{
+ 		id=1081,
+ 		desc=30003022,
+ 		missionType=9,
+ 		missionClass=9,
+ 		mapConditionId=3022,
+ 		randomWeight=100,
+ 	image=""
+},
+[1082] =
+{
+ 		id=1082,
+ 		desc=30003023,
+ 		missionType=9,
+ 		missionClass=10,
+ 		mapConditionId=3023,
+ 		randomWeight=100,
+ 	image=""
+},
+[1083] =
+{
+ 		id=1083,
+ 		desc=30003024,
+ 		missionType=9,
+ 		missionClass=11,
+ 		mapConditionId=3024,
+ 		randomWeight=100,
+ 	image=""
+},
+[1084] =
+{
+ 		id=1084,
+ 		desc=30003025,
+ 		missionType=9,
+ 		missionClass=12,
+ 		mapConditionId=3025,
+ 		randomWeight=100,
+ 	image=""
+},
+[1085] =
+{
+ 		id=1085,
+ 		desc=30003026,
+ 		missionType=9,
+ 		missionClass=1,
+ 		mapConditionId=3026,
+ 		randomWeight=100,
+ 	image=""
+},
+[1086] =
+{
+ 		id=1086,
+ 		desc=30003027,
+ 		missionType=9,
+ 		missionClass=2,
+ 		mapConditionId=3027,
+ 		randomWeight=100,
+ 	image=""
+},
+[1087] =
+{
+ 		id=1087,
+ 		desc=30003028,
+ 		missionType=9,
+ 		missionClass=3,
+ 		mapConditionId=3028,
+ 		randomWeight=100,
+ 	image=""
+},
+[1088] =
+{
+ 		id=1088,
+ 		desc=30003029,
+ 		missionType=9,
+ 		missionClass=4,
+ 		mapConditionId=3029,
+ 		randomWeight=100,
+ 	image=""
+},
+[1089] =
+{
+ 		id=1089,
+ 		desc=30003030,
+ 		missionType=9,
+ 		missionClass=5,
+ 		mapConditionId=3030,
+ 		randomWeight=100,
+ 	image=""
+},
+[1090] =
+{
+ 		id=1090,
+ 		desc=30003031,
+ 		missionType=9,
+ 		missionClass=6,
+ 		mapConditionId=3031,
+ 		randomWeight=100,
+ 	image=""
+},
+[1091] =
+{
+ 		id=1091,
+ 		desc=30003032,
+ 		missionType=9,
+ 		missionClass=7,
+ 		mapConditionId=3032,
+ 		randomWeight=100,
+ 	image=""
+},
+[1092] =
+{
+ 		id=1092,
+ 		desc=30003033,
+ 		missionType=9,
+ 		missionClass=8,
+ 		mapConditionId=3033,
+ 		randomWeight=100,
+ 	image=""
+},
+[1093] =
+{
+ 		id=1093,
+ 		desc=30003034,
+ 		missionType=9,
+ 		missionClass=9,
+ 		mapConditionId=3034,
+ 		randomWeight=100,
+ 	image=""
+},
+[1094] =
+{
+ 		id=1094,
+ 		desc=30003035,
+ 		missionType=9,
+ 		missionClass=10,
+ 		mapConditionId=3035,
+ 		randomWeight=100,
+ 	image=""
+},
+[1095] =
+{
+ 		id=1095,
+ 		desc=30003036,
+ 		missionType=9,
+ 		missionClass=11,
+ 		mapConditionId=3036,
+ 		randomWeight=100,
+ 	image=""
+},
+[1096] =
+{
+ 		id=1096,
+ 		desc=30003037,
+ 		missionType=9,
+ 		missionClass=12,
+ 		mapConditionId=3037,
+ 		randomWeight=100,
+ 	image=""
+},
+[1097] =
+{
+ 		id=1097,
+ 		desc=30003038,
+ 		missionType=9,
+ 		missionClass=1,
+ 		mapConditionId=3038,
+ 		randomWeight=100,
+ 	image=""
+},
+[1098] =
+{
+ 		id=1098,
+ 		desc=30003039,
+ 		missionType=9,
+ 		missionClass=2,
+ 		mapConditionId=3039,
+ 		randomWeight=100,
+ 	image=""
+},
+[1099] =
+{
+ 		id=1099,
+ 		desc=30001001,
+ 		missionType=10,
+ 		missionClass=1,
+ 		mapConditionId=1001,
+ 		randomWeight=100,
+ 	image=""
+},
+[1100] =
+{
+ 		id=1100,
+ 		desc=30001002,
+ 		missionType=10,
+ 		missionClass=2,
+ 		mapConditionId=1002,
+ 		randomWeight=100,
+ 	image=""
+},
+[1101] =
+{
+ 		id=1101,
+ 		desc=30001003,
+ 		missionType=10,
+ 		missionClass=3,
+ 		mapConditionId=1003,
+ 		randomWeight=100,
+ 	image=""
+},
+[1102] =
+{
+ 		id=1102,
+ 		desc=30001004,
+ 		missionType=10,
+ 		missionClass=4,
+ 		mapConditionId=1004,
+ 		randomWeight=100,
+ 	image=""
+},
+[1103] =
+{
+ 		id=1103,
+ 		desc=30001005,
+ 		missionType=10,
+ 		missionClass=5,
+ 		mapConditionId=1005,
+ 		randomWeight=100,
+ 	image=""
+},
+[1104] =
+{
+ 		id=1104,
+ 		desc=30001006,
+ 		missionType=10,
+ 		missionClass=6,
+ 		mapConditionId=1006,
+ 		randomWeight=100,
+ 	image=""
+},
+[1105] =
+{
+ 		id=1105,
+ 		desc=30001007,
+ 		missionType=10,
+ 		missionClass=7,
+ 		mapConditionId=1007,
+ 		randomWeight=100,
+ 	image=""
+},
+[1106] =
+{
+ 		id=1106,
+ 		desc=30001008,
+ 		missionType=10,
+ 		missionClass=8,
+ 		mapConditionId=1008,
+ 		randomWeight=100,
+ 	image=""
+},
+[1107] =
+{
+ 		id=1107,
+ 		desc=30001009,
+ 		missionType=10,
+ 		missionClass=9,
+ 		mapConditionId=1009,
+ 		randomWeight=100,
+ 	image=""
+},
+[1108] =
+{
+ 		id=1108,
+ 		desc=30001010,
+ 		missionType=10,
+ 		missionClass=10,
+ 		mapConditionId=1010,
+ 		randomWeight=100,
+ 	image=""
+},
+[1109] =
+{
+ 		id=1109,
+ 		desc=30001011,
+ 		missionType=10,
+ 		missionClass=11,
+ 		mapConditionId=1011,
+ 		randomWeight=100,
+ 	image=""
+},
+[1110] =
+{
+ 		id=1110,
+ 		desc=30001012,
+ 		missionType=10,
+ 		missionClass=12,
+ 		mapConditionId=1012,
+ 		randomWeight=100,
+ 	image=""
+},
+[1111] =
+{
+ 		id=1111,
+ 		desc=30001013,
+ 		missionType=10,
+ 		missionClass=1,
+ 		mapConditionId=1013,
+ 		randomWeight=100,
+ 	image=""
+},
+[1112] =
+{
+ 		id=1112,
+ 		desc=30001014,
+ 		missionType=10,
+ 		missionClass=2,
+ 		mapConditionId=1014,
+ 		randomWeight=100,
+ 	image=""
+},
+[1113] =
+{
+ 		id=1113,
+ 		desc=30001015,
+ 		missionType=10,
+ 		missionClass=3,
+ 		mapConditionId=1015,
+ 		randomWeight=100,
+ 	image=""
+},
+[1114] =
+{
+ 		id=1114,
+ 		desc=30001016,
+ 		missionType=10,
+ 		missionClass=4,
+ 		mapConditionId=1016,
+ 		randomWeight=100,
+ 	image=""
+},
+[1115] =
+{
+ 		id=1115,
+ 		desc=30001017,
+ 		missionType=10,
+ 		missionClass=5,
+ 		mapConditionId=1017,
+ 		randomWeight=100,
+ 	image=""
+},
+[1116] =
+{
+ 		id=1116,
+ 		desc=30001018,
+ 		missionType=10,
+ 		missionClass=6,
+ 		mapConditionId=1018,
+ 		randomWeight=100,
+ 	image=""
+},
+[1117] =
+{
+ 		id=1117,
+ 		desc=30001019,
+ 		missionType=10,
+ 		missionClass=7,
+ 		mapConditionId=1019,
+ 		randomWeight=100,
+ 	image=""
+},
+[1118] =
+{
+ 		id=1118,
+ 		desc=30001020,
+ 		missionType=10,
+ 		missionClass=8,
+ 		mapConditionId=1020,
+ 		randomWeight=100,
+ 	image=""
+},
+[1119] =
+{
+ 		id=1119,
+ 		desc=30001021,
+ 		missionType=10,
+ 		missionClass=9,
+ 		mapConditionId=1021,
+ 		randomWeight=100,
+ 	image=""
+},
+[1120] =
+{
+ 		id=1120,
+ 		desc=30001022,
+ 		missionType=10,
+ 		missionClass=10,
+ 		mapConditionId=1022,
+ 		randomWeight=100,
+ 	image=""
+},
+[1121] =
+{
+ 		id=1121,
+ 		desc=30001023,
+ 		missionType=10,
+ 		missionClass=11,
+ 		mapConditionId=1023,
+ 		randomWeight=100,
+ 	image=""
+},
+[1122] =
+{
+ 		id=1122,
+ 		desc=30001024,
+ 		missionType=10,
+ 		missionClass=12,
+ 		mapConditionId=1024,
+ 		randomWeight=100,
+ 	image=""
+},
+[1123] =
+{
+ 		id=1123,
+ 		desc=30001025,
+ 		missionType=10,
+ 		missionClass=1,
+ 		mapConditionId=1025,
+ 		randomWeight=100,
+ 	image=""
+},
+[1124] =
+{
+ 		id=1124,
+ 		desc=30001026,
+ 		missionType=10,
+ 		missionClass=2,
+ 		mapConditionId=1026,
+ 		randomWeight=100,
+ 	image=""
+},
+[1125] =
+{
+ 		id=1125,
+ 		desc=30001027,
+ 		missionType=10,
+ 		missionClass=3,
+ 		mapConditionId=1027,
+ 		randomWeight=100,
+ 	image=""
+},
+[1126] =
+{
+ 		id=1126,
+ 		desc=30001028,
+ 		missionType=10,
+ 		missionClass=4,
+ 		mapConditionId=1028,
+ 		randomWeight=100,
+ 	image=""
+},
+[1127] =
+{
+ 		id=1127,
+ 		desc=30001029,
+ 		missionType=10,
+ 		missionClass=5,
+ 		mapConditionId=1029,
+ 		randomWeight=100,
+ 	image=""
+},
+[1128] =
+{
+ 		id=1128,
+ 		desc=30001030,
+ 		missionType=10,
+ 		missionClass=6,
+ 		mapConditionId=1030,
+ 		randomWeight=100,
+ 	image=""
+},
+[1129] =
+{
+ 		id=1129,
+ 		desc=30001031,
+ 		missionType=10,
+ 		missionClass=7,
+ 		mapConditionId=1031,
+ 		randomWeight=100,
+ 	image=""
+},
+[1130] =
+{
+ 		id=1130,
+ 		desc=30001032,
+ 		missionType=10,
+ 		missionClass=8,
+ 		mapConditionId=1032,
+ 		randomWeight=100,
+ 	image=""
+},
+[1131] =
+{
+ 		id=1131,
+ 		desc=30001033,
+ 		missionType=10,
+ 		missionClass=9,
+ 		mapConditionId=1033,
+ 		randomWeight=100,
+ 	image=""
+},
+[1132] =
+{
+ 		id=1132,
+ 		desc=30001034,
+ 		missionType=10,
+ 		missionClass=10,
+ 		mapConditionId=1034,
+ 		randomWeight=100,
+ 	image=""
+},
+[1133] =
+{
+ 		id=1133,
+ 		desc=30001035,
+ 		missionType=10,
+ 		missionClass=11,
+ 		mapConditionId=1035,
+ 		randomWeight=100,
+ 	image=""
+},
+[1134] =
+{
+ 		id=1134,
+ 		desc=30001036,
+ 		missionType=10,
+ 		missionClass=12,
+ 		mapConditionId=1036,
+ 		randomWeight=100,
+ 	image=""
+},
+[1135] =
+{
+ 		id=1135,
+ 		desc=30001037,
+ 		missionType=10,
+ 		missionClass=1,
+ 		mapConditionId=1037,
+ 		randomWeight=100,
+ 	image=""
+},
+[1136] =
+{
+ 		id=1136,
+ 		desc=30001039,
+ 		missionType=10,
+ 		missionClass=2,
+ 		mapConditionId=1039,
+ 		randomWeight=100,
+ 	image=""
+},
+[1137] =
+{
+ 		id=1137,
+ 		desc=30001040,
+ 		missionType=10,
+ 		missionClass=3,
+ 		mapConditionId=1040,
+ 		randomWeight=100,
+ 	image=""
+},
+[1138] =
+{
+ 		id=1138,
+ 		desc=30001041,
+ 		missionType=10,
+ 		missionClass=4,
+ 		mapConditionId=1041,
+ 		randomWeight=100,
+ 	image=""
+},
+[1139] =
+{
+ 		id=1139,
+ 		desc=30001042,
+ 		missionType=10,
+ 		missionClass=5,
+ 		mapConditionId=1042,
+ 		randomWeight=100,
+ 	image=""
+},
+[1140] =
+{
+ 		id=1140,
+ 		desc=30001043,
+ 		missionType=10,
+ 		missionClass=6,
+ 		mapConditionId=1043,
+ 		randomWeight=100,
+ 	image=""
+},
+[1141] =
+{
+ 		id=1141,
+ 		desc=30001044,
+ 		missionType=10,
+ 		missionClass=7,
+ 		mapConditionId=1044,
+ 		randomWeight=100,
+ 	image=""
+},
+[1142] =
+{
+ 		id=1142,
+ 		desc=30001045,
+ 		missionType=10,
+ 		missionClass=8,
+ 		mapConditionId=1045,
+ 		randomWeight=100,
+ 	image=""
+},
+[1143] =
+{
+ 		id=1143,
+ 		desc=30001046,
+ 		missionType=10,
+ 		missionClass=9,
+ 		mapConditionId=1046,
+ 		randomWeight=100,
+ 	image=""
+},
+[1144] =
+{
+ 		id=1144,
+ 		desc=30001047,
+ 		missionType=10,
+ 		missionClass=10,
+ 		mapConditionId=1047,
+ 		randomWeight=100,
+ 	image=""
+},
+[1145] =
+{
+ 		id=1145,
+ 		desc=30001048,
+ 		missionType=10,
+ 		missionClass=11,
+ 		mapConditionId=1048,
+ 		randomWeight=100,
+ 	image=""
+},
+[1146] =
+{
+ 		id=1146,
+ 		desc=30001049,
+ 		missionType=10,
+ 		missionClass=12,
+ 		mapConditionId=1049,
+ 		randomWeight=100,
+ 	image=""
+},
+[1147] =
+{
+ 		id=1147,
+ 		desc=30001050,
+ 		missionType=10,
+ 		missionClass=1,
+ 		mapConditionId=1050,
+ 		randomWeight=100,
+ 	image=""
+},
+[1148] =
+{
+ 		id=1148,
+ 		desc=30001051,
+ 		missionType=10,
+ 		missionClass=2,
+ 		mapConditionId=1051,
+ 		randomWeight=100,
+ 	image=""
+},
+[1149] =
+{
+ 		id=1149,
+ 		desc=30001052,
+ 		missionType=10,
+ 		missionClass=3,
+ 		mapConditionId=1052,
+ 		randomWeight=100,
+ 	image=""
+},
+[1150] =
+{
+ 		id=1150,
+ 		desc=30001053,
+ 		missionType=10,
+ 		missionClass=4,
+ 		mapConditionId=1053,
+ 		randomWeight=100,
+ 	image=""
+},
+[1151] =
+{
+ 		id=1151,
+ 		desc=30001054,
+ 		missionType=10,
+ 		missionClass=5,
+ 		mapConditionId=1054,
+ 		randomWeight=100,
+ 	image=""
+},
+[1152] =
+{
+ 		id=1152,
+ 		desc=30001055,
+ 		missionType=10,
+ 		missionClass=6,
+ 		mapConditionId=1055,
+ 		randomWeight=100,
+ 	image=""
+},
+[1153] =
+{
+ 		id=1153,
+ 		desc=30001056,
+ 		missionType=10,
+ 		missionClass=7,
+ 		mapConditionId=1056,
+ 		randomWeight=100,
+ 	image=""
+},
+[1154] =
+{
+ 		id=1154,
+ 		desc=30001057,
+ 		missionType=10,
+ 		missionClass=8,
+ 		mapConditionId=1057,
+ 		randomWeight=100,
+ 	image=""
+},
+[1155] =
+{
+ 		id=1155,
+ 		desc=30001058,
+ 		missionType=10,
+ 		missionClass=9,
+ 		mapConditionId=1058,
+ 		randomWeight=100,
+ 	image=""
+},
+[1156] =
+{
+ 		id=1156,
+ 		desc=30001059,
+ 		missionType=10,
+ 		missionClass=10,
+ 		mapConditionId=1059,
+ 		randomWeight=100,
+ 	image=""
+},
+[1157] =
+{
+ 		id=1157,
+ 		desc=30001060,
+ 		missionType=10,
+ 		missionClass=11,
+ 		mapConditionId=1060,
+ 		randomWeight=100,
+ 	image=""
+},
+[1158] =
+{
+ 		id=1158,
+ 		desc=30001061,
+ 		missionType=10,
+ 		missionClass=12,
+ 		mapConditionId=1061,
+ 		randomWeight=100,
+ 	image=""
+},
+[1159] =
+{
+ 		id=1159,
+ 		desc=30001062,
+ 		missionType=10,
+ 		missionClass=1,
+ 		mapConditionId=1062,
+ 		randomWeight=100,
+ 	image=""
+},
+[1160] =
+{
+ 		id=1160,
+ 		desc=30001063,
+ 		missionType=10,
+ 		missionClass=2,
+ 		mapConditionId=1063,
+ 		randomWeight=100,
+ 	image=""
+},
+[1161] =
+{
+ 		id=1161,
+ 		desc=30001064,
+ 		missionType=10,
+ 		missionClass=3,
+ 		mapConditionId=1064,
+ 		randomWeight=100,
+ 	image=""
+},
+[1162] =
+{
+ 		id=1162,
+ 		desc=30001065,
+ 		missionType=10,
+ 		missionClass=4,
+ 		mapConditionId=1065,
+ 		randomWeight=100,
+ 	image=""
+},
+[1163] =
+{
+ 		id=1163,
+ 		desc=30002001,
+ 		missionType=10,
+ 		missionClass=5,
+ 		mapConditionId=2001,
+ 		randomWeight=100,
+ 	image=""
+},
+[1164] =
+{
+ 		id=1164,
+ 		desc=30002002,
+ 		missionType=10,
+ 		missionClass=6,
+ 		mapConditionId=2002,
+ 		randomWeight=100,
+ 	image=""
+},
+[1165] =
+{
+ 		id=1165,
+ 		desc=30002003,
+ 		missionType=10,
+ 		missionClass=7,
+ 		mapConditionId=2003,
+ 		randomWeight=100,
+ 	image=""
+},
+[1166] =
+{
+ 		id=1166,
+ 		desc=30002004,
+ 		missionType=10,
+ 		missionClass=8,
+ 		mapConditionId=2004,
+ 		randomWeight=100,
+ 	image=""
+},
+[1167] =
+{
+ 		id=1167,
+ 		desc=30002005,
+ 		missionType=10,
+ 		missionClass=9,
+ 		mapConditionId=2005,
+ 		randomWeight=100,
+ 	image=""
+},
+[1168] =
+{
+ 		id=1168,
+ 		desc=30002006,
+ 		missionType=10,
+ 		missionClass=10,
+ 		mapConditionId=2006,
+ 		randomWeight=100,
+ 	image=""
+},
+[1169] =
+{
+ 		id=1169,
+ 		desc=30002007,
+ 		missionType=10,
+ 		missionClass=11,
+ 		mapConditionId=2007,
+ 		randomWeight=100,
+ 	image=""
+},
+[1170] =
+{
+ 		id=1170,
+ 		desc=30002008,
+ 		missionType=10,
+ 		missionClass=12,
+ 		mapConditionId=2008,
+ 		randomWeight=100,
+ 	image=""
+},
+[1171] =
+{
+ 		id=1171,
+ 		desc=30002009,
+ 		missionType=10,
+ 		missionClass=1,
+ 		mapConditionId=2009,
+ 		randomWeight=100,
+ 	image=""
+},
+[1172] =
+{
+ 		id=1172,
+ 		desc=30002010,
+ 		missionType=10,
+ 		missionClass=2,
+ 		mapConditionId=2010,
+ 		randomWeight=100,
+ 	image=""
+},
+[1173] =
+{
+ 		id=1173,
+ 		desc=30002011,
+ 		missionType=10,
+ 		missionClass=3,
+ 		mapConditionId=2011,
+ 		randomWeight=100,
+ 	image=""
+},
+[1174] =
+{
+ 		id=1174,
+ 		desc=30002012,
+ 		missionType=10,
+ 		missionClass=4,
+ 		mapConditionId=2012,
+ 		randomWeight=100,
+ 	image=""
+},
+[1175] =
+{
+ 		id=1175,
+ 		desc=30002013,
+ 		missionType=10,
+ 		missionClass=5,
+ 		mapConditionId=2013,
+ 		randomWeight=100,
+ 	image=""
+},
+[1176] =
+{
+ 		id=1176,
+ 		desc=30002014,
+ 		missionType=10,
+ 		missionClass=6,
+ 		mapConditionId=2014,
+ 		randomWeight=100,
+ 	image=""
+},
+[1177] =
+{
+ 		id=1177,
+ 		desc=30002015,
+ 		missionType=10,
+ 		missionClass=7,
+ 		mapConditionId=2015,
+ 		randomWeight=100,
+ 	image=""
+},
+[1178] =
+{
+ 		id=1178,
+ 		desc=30002016,
+ 		missionType=10,
+ 		missionClass=8,
+ 		mapConditionId=2016,
+ 		randomWeight=100,
+ 	image=""
+},
+[1179] =
+{
+ 		id=1179,
+ 		desc=30002017,
+ 		missionType=10,
+ 		missionClass=9,
+ 		mapConditionId=2017,
+ 		randomWeight=100,
+ 	image=""
+},
+[1180] =
+{
+ 		id=1180,
+ 		desc=30002018,
+ 		missionType=10,
+ 		missionClass=10,
+ 		mapConditionId=2018,
+ 		randomWeight=100,
+ 	image=""
+},
+[1181] =
+{
+ 		id=1181,
+ 		desc=30002019,
+ 		missionType=10,
+ 		missionClass=11,
+ 		mapConditionId=2019,
+ 		randomWeight=100,
+ 	image=""
+},
+[1182] =
+{
+ 		id=1182,
+ 		desc=30003001,
+ 		missionType=10,
+ 		missionClass=12,
+ 		mapConditionId=3001,
+ 		randomWeight=100,
+ 	image=""
+},
+[1183] =
+{
+ 		id=1183,
+ 		desc=30003002,
+ 		missionType=10,
+ 		missionClass=1,
+ 		mapConditionId=3002,
+ 		randomWeight=100,
+ 	image=""
+},
+[1184] =
+{
+ 		id=1184,
+ 		desc=30003003,
+ 		missionType=10,
+ 		missionClass=2,
+ 		mapConditionId=3003,
+ 		randomWeight=100,
+ 	image=""
+},
+[1185] =
+{
+ 		id=1185,
+ 		desc=30003004,
+ 		missionType=10,
+ 		missionClass=3,
+ 		mapConditionId=3004,
+ 		randomWeight=100,
+ 	image=""
+},
+[1186] =
+{
+ 		id=1186,
+ 		desc=30003005,
+ 		missionType=10,
+ 		missionClass=4,
+ 		mapConditionId=3005,
+ 		randomWeight=100,
+ 	image=""
+},
+[1187] =
+{
+ 		id=1187,
+ 		desc=30003006,
+ 		missionType=10,
+ 		missionClass=5,
+ 		mapConditionId=3006,
+ 		randomWeight=100,
+ 	image=""
+},
+[1188] =
+{
+ 		id=1188,
+ 		desc=30003007,
+ 		missionType=10,
+ 		missionClass=6,
+ 		mapConditionId=3007,
+ 		randomWeight=100,
+ 	image=""
+},
+[1189] =
+{
+ 		id=1189,
+ 		desc=30003008,
+ 		missionType=10,
+ 		missionClass=7,
+ 		mapConditionId=3008,
+ 		randomWeight=100,
+ 	image=""
+},
+[1190] =
+{
+ 		id=1190,
+ 		desc=30003009,
+ 		missionType=10,
+ 		missionClass=8,
+ 		mapConditionId=3009,
+ 		randomWeight=100,
+ 	image=""
+},
+[1191] =
+{
+ 		id=1191,
+ 		desc=30003010,
+ 		missionType=10,
+ 		missionClass=9,
+ 		mapConditionId=3010,
+ 		randomWeight=100,
+ 	image=""
+},
+[1192] =
+{
+ 		id=1192,
+ 		desc=30003011,
+ 		missionType=10,
+ 		missionClass=10,
+ 		mapConditionId=3011,
+ 		randomWeight=100,
+ 	image=""
+},
+[1193] =
+{
+ 		id=1193,
+ 		desc=30003012,
+ 		missionType=10,
+ 		missionClass=11,
+ 		mapConditionId=3012,
+ 		randomWeight=100,
+ 	image=""
+},
+[1194] =
+{
+ 		id=1194,
+ 		desc=30003013,
+ 		missionType=10,
+ 		missionClass=12,
+ 		mapConditionId=3013,
+ 		randomWeight=100,
+ 	image=""
+},
+[1195] =
+{
+ 		id=1195,
+ 		desc=30003014,
+ 		missionType=10,
+ 		missionClass=1,
+ 		mapConditionId=3014,
+ 		randomWeight=100,
+ 	image=""
+},
+[1196] =
+{
+ 		id=1196,
+ 		desc=30003015,
+ 		missionType=10,
+ 		missionClass=2,
+ 		mapConditionId=3015,
+ 		randomWeight=100,
+ 	image=""
+},
+[1197] =
+{
+ 		id=1197,
+ 		desc=30003016,
+ 		missionType=10,
+ 		missionClass=3,
+ 		mapConditionId=3016,
+ 		randomWeight=100,
+ 	image=""
+},
+[1198] =
+{
+ 		id=1198,
+ 		desc=30003017,
+ 		missionType=10,
+ 		missionClass=4,
+ 		mapConditionId=3017,
+ 		randomWeight=100,
+ 	image=""
+},
+[1199] =
+{
+ 		id=1199,
+ 		desc=30003018,
+ 		missionType=10,
+ 		missionClass=5,
+ 		mapConditionId=3018,
+ 		randomWeight=100,
+ 	image=""
+},
+[1200] =
+{
+ 		id=1200,
+ 		desc=30003019,
+ 		missionType=10,
+ 		missionClass=6,
+ 		mapConditionId=3019,
+ 		randomWeight=100,
+ 	image=""
+},
+[1201] =
+{
+ 		id=1201,
+ 		desc=30003020,
+ 		missionType=10,
+ 		missionClass=7,
+ 		mapConditionId=3020,
+ 		randomWeight=100,
+ 	image=""
+},
+[1202] =
+{
+ 		id=1202,
+ 		desc=30003021,
+ 		missionType=10,
+ 		missionClass=8,
+ 		mapConditionId=3021,
+ 		randomWeight=100,
+ 	image=""
+},
+[1203] =
+{
+ 		id=1203,
+ 		desc=30003022,
+ 		missionType=10,
+ 		missionClass=9,
+ 		mapConditionId=3022,
+ 		randomWeight=100,
+ 	image=""
+},
+[1204] =
+{
+ 		id=1204,
+ 		desc=30003023,
+ 		missionType=10,
+ 		missionClass=10,
+ 		mapConditionId=3023,
+ 		randomWeight=100,
+ 	image=""
+},
+[1205] =
+{
+ 		id=1205,
+ 		desc=30003024,
+ 		missionType=10,
+ 		missionClass=11,
+ 		mapConditionId=3024,
+ 		randomWeight=100,
+ 	image=""
+},
+[1206] =
+{
+ 		id=1206,
+ 		desc=30003025,
+ 		missionType=10,
+ 		missionClass=12,
+ 		mapConditionId=3025,
+ 		randomWeight=100,
+ 	image=""
+},
+[1207] =
+{
+ 		id=1207,
+ 		desc=30003026,
+ 		missionType=10,
+ 		missionClass=1,
+ 		mapConditionId=3026,
+ 		randomWeight=100,
+ 	image=""
+},
+[1208] =
+{
+ 		id=1208,
+ 		desc=30003027,
+ 		missionType=10,
+ 		missionClass=2,
+ 		mapConditionId=3027,
+ 		randomWeight=100,
+ 	image=""
+},
+[1209] =
+{
+ 		id=1209,
+ 		desc=30003028,
+ 		missionType=10,
+ 		missionClass=3,
+ 		mapConditionId=3028,
+ 		randomWeight=100,
+ 	image=""
+},
+[1210] =
+{
+ 		id=1210,
+ 		desc=30003029,
+ 		missionType=10,
+ 		missionClass=4,
+ 		mapConditionId=3029,
+ 		randomWeight=100,
+ 	image=""
+},
+[1211] =
+{
+ 		id=1211,
+ 		desc=30003030,
+ 		missionType=10,
+ 		missionClass=5,
+ 		mapConditionId=3030,
+ 		randomWeight=100,
+ 	image=""
+},
+[1212] =
+{
+ 		id=1212,
+ 		desc=30003031,
+ 		missionType=10,
+ 		missionClass=6,
+ 		mapConditionId=3031,
+ 		randomWeight=100,
+ 	image=""
+},
+[1213] =
+{
+ 		id=1213,
+ 		desc=30003032,
+ 		missionType=10,
+ 		missionClass=7,
+ 		mapConditionId=3032,
+ 		randomWeight=100,
+ 	image=""
+},
+[1214] =
+{
+ 		id=1214,
+ 		desc=30003033,
+ 		missionType=10,
+ 		missionClass=8,
+ 		mapConditionId=3033,
+ 		randomWeight=100,
+ 	image=""
+},
+[1215] =
+{
+ 		id=1215,
+ 		desc=30003034,
+ 		missionType=10,
+ 		missionClass=9,
+ 		mapConditionId=3034,
+ 		randomWeight=100,
+ 	image=""
+},
+[1216] =
+{
+ 		id=1216,
+ 		desc=30003035,
+ 		missionType=10,
+ 		missionClass=10,
+ 		mapConditionId=3035,
+ 		randomWeight=100,
+ 	image=""
+},
+[1217] =
+{
+ 		id=1217,
+ 		desc=30003036,
+ 		missionType=10,
+ 		missionClass=11,
+ 		mapConditionId=3036,
+ 		randomWeight=100,
+ 	image=""
+},
+[1218] =
+{
+ 		id=1218,
+ 		desc=30003037,
+ 		missionType=10,
+ 		missionClass=12,
+ 		mapConditionId=3037,
+ 		randomWeight=100,
+ 	image=""
+},
+[1219] =
+{
+ 		id=1219,
+ 		desc=30003038,
+ 		missionType=10,
+ 		missionClass=1,
+ 		mapConditionId=3038,
+ 		randomWeight=100,
+ 	image=""
+},
+[1220] =
+{
+ 		id=1220,
+ 		desc=30003039,
+ 		missionType=10,
+ 		missionClass=2,
+ 		mapConditionId=3039,
+ 		randomWeight=100,
+ 	image=""
+},
+[1221] =
+{
+ 		id=1221,
+ 		desc=30001001,
+ 		missionType=11,
+ 		missionClass=1,
+ 		mapConditionId=1001,
+ 		randomWeight=100,
+ 	image=""
+},
+[1222] =
+{
+ 		id=1222,
+ 		desc=30001002,
+ 		missionType=11,
+ 		missionClass=2,
+ 		mapConditionId=1002,
+ 		randomWeight=100,
+ 	image=""
+},
+[1223] =
+{
+ 		id=1223,
+ 		desc=30001003,
+ 		missionType=11,
+ 		missionClass=3,
+ 		mapConditionId=1003,
+ 		randomWeight=100,
+ 	image=""
+},
+[1224] =
+{
+ 		id=1224,
+ 		desc=30001004,
+ 		missionType=11,
+ 		missionClass=4,
+ 		mapConditionId=1004,
+ 		randomWeight=100,
+ 	image=""
+},
+[1225] =
+{
+ 		id=1225,
+ 		desc=30001005,
+ 		missionType=11,
+ 		missionClass=5,
+ 		mapConditionId=1005,
+ 		randomWeight=100,
+ 	image=""
+},
+[1226] =
+{
+ 		id=1226,
+ 		desc=30001006,
+ 		missionType=11,
+ 		missionClass=6,
+ 		mapConditionId=1006,
+ 		randomWeight=100,
+ 	image=""
+},
+[1227] =
+{
+ 		id=1227,
+ 		desc=30001007,
+ 		missionType=11,
+ 		missionClass=7,
+ 		mapConditionId=1007,
+ 		randomWeight=100,
+ 	image=""
+},
+[1228] =
+{
+ 		id=1228,
+ 		desc=30001008,
+ 		missionType=11,
+ 		missionClass=8,
+ 		mapConditionId=1008,
+ 		randomWeight=100,
+ 	image=""
+},
+[1229] =
+{
+ 		id=1229,
+ 		desc=30001009,
+ 		missionType=11,
+ 		missionClass=9,
+ 		mapConditionId=1009,
+ 		randomWeight=100,
+ 	image=""
+},
+[1230] =
+{
+ 		id=1230,
+ 		desc=30001010,
+ 		missionType=11,
+ 		missionClass=10,
+ 		mapConditionId=1010,
+ 		randomWeight=100,
+ 	image=""
+},
+[1231] =
+{
+ 		id=1231,
+ 		desc=30001011,
+ 		missionType=11,
+ 		missionClass=11,
+ 		mapConditionId=1011,
+ 		randomWeight=100,
+ 	image=""
+},
+[1232] =
+{
+ 		id=1232,
+ 		desc=30001012,
+ 		missionType=11,
+ 		missionClass=12,
+ 		mapConditionId=1012,
+ 		randomWeight=100,
+ 	image=""
+},
+[1233] =
+{
+ 		id=1233,
+ 		desc=30001013,
+ 		missionType=11,
+ 		missionClass=1,
+ 		mapConditionId=1013,
+ 		randomWeight=100,
+ 	image=""
+},
+[1234] =
+{
+ 		id=1234,
+ 		desc=30001014,
+ 		missionType=11,
+ 		missionClass=2,
+ 		mapConditionId=1014,
+ 		randomWeight=100,
+ 	image=""
+},
+[1235] =
+{
+ 		id=1235,
+ 		desc=30001015,
+ 		missionType=11,
+ 		missionClass=3,
+ 		mapConditionId=1015,
+ 		randomWeight=100,
+ 	image=""
+},
+[1236] =
+{
+ 		id=1236,
+ 		desc=30001016,
+ 		missionType=11,
+ 		missionClass=4,
+ 		mapConditionId=1016,
+ 		randomWeight=100,
+ 	image=""
+},
+[1237] =
+{
+ 		id=1237,
+ 		desc=30001017,
+ 		missionType=11,
+ 		missionClass=5,
+ 		mapConditionId=1017,
+ 		randomWeight=100,
+ 	image=""
+},
+[1238] =
+{
+ 		id=1238,
+ 		desc=30001018,
+ 		missionType=11,
+ 		missionClass=6,
+ 		mapConditionId=1018,
+ 		randomWeight=100,
+ 	image=""
+},
+[1239] =
+{
+ 		id=1239,
+ 		desc=30001019,
+ 		missionType=11,
+ 		missionClass=7,
+ 		mapConditionId=1019,
+ 		randomWeight=100,
+ 	image=""
+},
+[1240] =
+{
+ 		id=1240,
+ 		desc=30001020,
+ 		missionType=11,
+ 		missionClass=8,
+ 		mapConditionId=1020,
+ 		randomWeight=100,
+ 	image=""
+},
+[1241] =
+{
+ 		id=1241,
+ 		desc=30001021,
+ 		missionType=11,
+ 		missionClass=9,
+ 		mapConditionId=1021,
+ 		randomWeight=100,
+ 	image=""
+},
+[1242] =
+{
+ 		id=1242,
+ 		desc=30001022,
+ 		missionType=11,
+ 		missionClass=10,
+ 		mapConditionId=1022,
+ 		randomWeight=100,
+ 	image=""
+},
+[1243] =
+{
+ 		id=1243,
+ 		desc=30001023,
+ 		missionType=11,
+ 		missionClass=11,
+ 		mapConditionId=1023,
+ 		randomWeight=100,
+ 	image=""
+},
+[1244] =
+{
+ 		id=1244,
+ 		desc=30001024,
+ 		missionType=11,
+ 		missionClass=12,
+ 		mapConditionId=1024,
+ 		randomWeight=100,
+ 	image=""
+},
+[1245] =
+{
+ 		id=1245,
+ 		desc=30001025,
+ 		missionType=11,
+ 		missionClass=1,
+ 		mapConditionId=1025,
+ 		randomWeight=100,
+ 	image=""
+},
+[1246] =
+{
+ 		id=1246,
+ 		desc=30001026,
+ 		missionType=11,
+ 		missionClass=2,
+ 		mapConditionId=1026,
+ 		randomWeight=100,
+ 	image=""
+},
+[1247] =
+{
+ 		id=1247,
+ 		desc=30001027,
+ 		missionType=11,
+ 		missionClass=3,
+ 		mapConditionId=1027,
+ 		randomWeight=100,
+ 	image=""
+},
+[1248] =
+{
+ 		id=1248,
+ 		desc=30001028,
+ 		missionType=11,
+ 		missionClass=4,
+ 		mapConditionId=1028,
+ 		randomWeight=100,
+ 	image=""
+},
+[1249] =
+{
+ 		id=1249,
+ 		desc=30001029,
+ 		missionType=11,
+ 		missionClass=5,
+ 		mapConditionId=1029,
+ 		randomWeight=100,
+ 	image=""
+},
+[1250] =
+{
+ 		id=1250,
+ 		desc=30001030,
+ 		missionType=11,
+ 		missionClass=6,
+ 		mapConditionId=1030,
+ 		randomWeight=100,
+ 	image=""
+},
+[1251] =
+{
+ 		id=1251,
+ 		desc=30001031,
+ 		missionType=11,
+ 		missionClass=7,
+ 		mapConditionId=1031,
+ 		randomWeight=100,
+ 	image=""
+},
+[1252] =
+{
+ 		id=1252,
+ 		desc=30001032,
+ 		missionType=11,
+ 		missionClass=8,
+ 		mapConditionId=1032,
+ 		randomWeight=100,
+ 	image=""
+},
+[1253] =
+{
+ 		id=1253,
+ 		desc=30001033,
+ 		missionType=11,
+ 		missionClass=9,
+ 		mapConditionId=1033,
+ 		randomWeight=100,
+ 	image=""
+},
+[1254] =
+{
+ 		id=1254,
+ 		desc=30001034,
+ 		missionType=11,
+ 		missionClass=10,
+ 		mapConditionId=1034,
+ 		randomWeight=100,
+ 	image=""
+},
+[1255] =
+{
+ 		id=1255,
+ 		desc=30001035,
+ 		missionType=11,
+ 		missionClass=11,
+ 		mapConditionId=1035,
+ 		randomWeight=100,
+ 	image=""
+},
+[1256] =
+{
+ 		id=1256,
+ 		desc=30001036,
+ 		missionType=11,
+ 		missionClass=12,
+ 		mapConditionId=1036,
+ 		randomWeight=100,
+ 	image=""
+},
+[1257] =
+{
+ 		id=1257,
+ 		desc=30001037,
+ 		missionType=11,
+ 		missionClass=1,
+ 		mapConditionId=1037,
+ 		randomWeight=100,
+ 	image=""
+},
+[1258] =
+{
+ 		id=1258,
+ 		desc=30001039,
+ 		missionType=11,
+ 		missionClass=2,
+ 		mapConditionId=1039,
+ 		randomWeight=100,
+ 	image=""
+},
+[1259] =
+{
+ 		id=1259,
+ 		desc=30001040,
+ 		missionType=11,
+ 		missionClass=3,
+ 		mapConditionId=1040,
+ 		randomWeight=100,
+ 	image=""
+},
+[1260] =
+{
+ 		id=1260,
+ 		desc=30001041,
+ 		missionType=11,
+ 		missionClass=4,
+ 		mapConditionId=1041,
+ 		randomWeight=100,
+ 	image=""
+},
+[1261] =
+{
+ 		id=1261,
+ 		desc=30001042,
+ 		missionType=11,
+ 		missionClass=5,
+ 		mapConditionId=1042,
+ 		randomWeight=100,
+ 	image=""
+},
+[1262] =
+{
+ 		id=1262,
+ 		desc=30001043,
+ 		missionType=11,
+ 		missionClass=6,
+ 		mapConditionId=1043,
+ 		randomWeight=100,
+ 	image=""
+},
+[1263] =
+{
+ 		id=1263,
+ 		desc=30001044,
+ 		missionType=11,
+ 		missionClass=7,
+ 		mapConditionId=1044,
+ 		randomWeight=100,
+ 	image=""
+},
+[1264] =
+{
+ 		id=1264,
+ 		desc=30001045,
+ 		missionType=11,
+ 		missionClass=8,
+ 		mapConditionId=1045,
+ 		randomWeight=100,
+ 	image=""
+},
+[1265] =
+{
+ 		id=1265,
+ 		desc=30001046,
+ 		missionType=11,
+ 		missionClass=9,
+ 		mapConditionId=1046,
+ 		randomWeight=100,
+ 	image=""
+},
+[1266] =
+{
+ 		id=1266,
+ 		desc=30001047,
+ 		missionType=11,
+ 		missionClass=10,
+ 		mapConditionId=1047,
+ 		randomWeight=100,
+ 	image=""
+},
+[1267] =
+{
+ 		id=1267,
+ 		desc=30001048,
+ 		missionType=11,
+ 		missionClass=11,
+ 		mapConditionId=1048,
+ 		randomWeight=100,
+ 	image=""
+},
+[1268] =
+{
+ 		id=1268,
+ 		desc=30001049,
+ 		missionType=11,
+ 		missionClass=12,
+ 		mapConditionId=1049,
+ 		randomWeight=100,
+ 	image=""
+},
+[1269] =
+{
+ 		id=1269,
+ 		desc=30001050,
+ 		missionType=11,
+ 		missionClass=1,
+ 		mapConditionId=1050,
+ 		randomWeight=100,
+ 	image=""
+},
+[1270] =
+{
+ 		id=1270,
+ 		desc=30001051,
+ 		missionType=11,
+ 		missionClass=2,
+ 		mapConditionId=1051,
+ 		randomWeight=100,
+ 	image=""
+},
+[1271] =
+{
+ 		id=1271,
+ 		desc=30001052,
+ 		missionType=11,
+ 		missionClass=3,
+ 		mapConditionId=1052,
+ 		randomWeight=100,
+ 	image=""
+},
+[1272] =
+{
+ 		id=1272,
+ 		desc=30001053,
+ 		missionType=11,
+ 		missionClass=4,
+ 		mapConditionId=1053,
+ 		randomWeight=100,
+ 	image=""
+},
+[1273] =
+{
+ 		id=1273,
+ 		desc=30001054,
+ 		missionType=11,
+ 		missionClass=5,
+ 		mapConditionId=1054,
+ 		randomWeight=100,
+ 	image=""
+},
+[1274] =
+{
+ 		id=1274,
+ 		desc=30001055,
+ 		missionType=11,
+ 		missionClass=6,
+ 		mapConditionId=1055,
+ 		randomWeight=100,
+ 	image=""
+},
+[1275] =
+{
+ 		id=1275,
+ 		desc=30001056,
+ 		missionType=11,
+ 		missionClass=7,
+ 		mapConditionId=1056,
+ 		randomWeight=100,
+ 	image=""
+},
+[1276] =
+{
+ 		id=1276,
+ 		desc=30001057,
+ 		missionType=11,
+ 		missionClass=8,
+ 		mapConditionId=1057,
+ 		randomWeight=100,
+ 	image=""
+},
+[1277] =
+{
+ 		id=1277,
+ 		desc=30001058,
+ 		missionType=11,
+ 		missionClass=9,
+ 		mapConditionId=1058,
+ 		randomWeight=100,
+ 	image=""
+},
+[1278] =
+{
+ 		id=1278,
+ 		desc=30001059,
+ 		missionType=11,
+ 		missionClass=10,
+ 		mapConditionId=1059,
+ 		randomWeight=100,
+ 	image=""
+},
+[1279] =
+{
+ 		id=1279,
+ 		desc=30001060,
+ 		missionType=11,
+ 		missionClass=11,
+ 		mapConditionId=1060,
+ 		randomWeight=100,
+ 	image=""
+},
+[1280] =
+{
+ 		id=1280,
+ 		desc=30001061,
+ 		missionType=11,
+ 		missionClass=12,
+ 		mapConditionId=1061,
+ 		randomWeight=100,
+ 	image=""
+},
+[1281] =
+{
+ 		id=1281,
+ 		desc=30001062,
+ 		missionType=11,
+ 		missionClass=1,
+ 		mapConditionId=1062,
+ 		randomWeight=100,
+ 	image=""
+},
+[1282] =
+{
+ 		id=1282,
+ 		desc=30001063,
+ 		missionType=11,
+ 		missionClass=2,
+ 		mapConditionId=1063,
+ 		randomWeight=100,
+ 	image=""
+},
+[1283] =
+{
+ 		id=1283,
+ 		desc=30001064,
+ 		missionType=11,
+ 		missionClass=3,
+ 		mapConditionId=1064,
+ 		randomWeight=100,
+ 	image=""
+},
+[1284] =
+{
+ 		id=1284,
+ 		desc=30001065,
+ 		missionType=11,
+ 		missionClass=4,
+ 		mapConditionId=1065,
+ 		randomWeight=100,
+ 	image=""
+},
+[1285] =
+{
+ 		id=1285,
+ 		desc=30002001,
+ 		missionType=11,
+ 		missionClass=5,
+ 		mapConditionId=2001,
+ 		randomWeight=100,
+ 	image=""
+},
+[1286] =
+{
+ 		id=1286,
+ 		desc=30002002,
+ 		missionType=11,
+ 		missionClass=6,
+ 		mapConditionId=2002,
+ 		randomWeight=100,
+ 	image=""
+},
+[1287] =
+{
+ 		id=1287,
+ 		desc=30002003,
+ 		missionType=11,
+ 		missionClass=7,
+ 		mapConditionId=2003,
+ 		randomWeight=100,
+ 	image=""
+},
+[1288] =
+{
+ 		id=1288,
+ 		desc=30002004,
+ 		missionType=11,
+ 		missionClass=8,
+ 		mapConditionId=2004,
+ 		randomWeight=100,
+ 	image=""
+},
+[1289] =
+{
+ 		id=1289,
+ 		desc=30002005,
+ 		missionType=11,
+ 		missionClass=9,
+ 		mapConditionId=2005,
+ 		randomWeight=100,
+ 	image=""
+},
+[1290] =
+{
+ 		id=1290,
+ 		desc=30002006,
+ 		missionType=11,
+ 		missionClass=10,
+ 		mapConditionId=2006,
+ 		randomWeight=100,
+ 	image=""
+},
+[1291] =
+{
+ 		id=1291,
+ 		desc=30002007,
+ 		missionType=11,
+ 		missionClass=11,
+ 		mapConditionId=2007,
+ 		randomWeight=100,
+ 	image=""
+},
+[1292] =
+{
+ 		id=1292,
+ 		desc=30002008,
+ 		missionType=11,
+ 		missionClass=12,
+ 		mapConditionId=2008,
+ 		randomWeight=100,
+ 	image=""
+},
+[1293] =
+{
+ 		id=1293,
+ 		desc=30002009,
+ 		missionType=11,
+ 		missionClass=1,
+ 		mapConditionId=2009,
+ 		randomWeight=100,
+ 	image=""
+},
+[1294] =
+{
+ 		id=1294,
+ 		desc=30002010,
+ 		missionType=11,
+ 		missionClass=2,
+ 		mapConditionId=2010,
+ 		randomWeight=100,
+ 	image=""
+},
+[1295] =
+{
+ 		id=1295,
+ 		desc=30002011,
+ 		missionType=11,
+ 		missionClass=3,
+ 		mapConditionId=2011,
+ 		randomWeight=100,
+ 	image=""
+},
+[1296] =
+{
+ 		id=1296,
+ 		desc=30002012,
+ 		missionType=11,
+ 		missionClass=4,
+ 		mapConditionId=2012,
+ 		randomWeight=100,
+ 	image=""
+},
+[1297] =
+{
+ 		id=1297,
+ 		desc=30002013,
+ 		missionType=11,
+ 		missionClass=5,
+ 		mapConditionId=2013,
+ 		randomWeight=100,
+ 	image=""
+},
+[1298] =
+{
+ 		id=1298,
+ 		desc=30002014,
+ 		missionType=11,
+ 		missionClass=6,
+ 		mapConditionId=2014,
+ 		randomWeight=100,
+ 	image=""
+},
+[1299] =
+{
+ 		id=1299,
+ 		desc=30002015,
+ 		missionType=11,
+ 		missionClass=7,
+ 		mapConditionId=2015,
+ 		randomWeight=100,
+ 	image=""
+},
+[1300] =
+{
+ 		id=1300,
+ 		desc=30002016,
+ 		missionType=11,
+ 		missionClass=8,
+ 		mapConditionId=2016,
+ 		randomWeight=100,
+ 	image=""
+},
+[1301] =
+{
+ 		id=1301,
+ 		desc=30002017,
+ 		missionType=11,
+ 		missionClass=9,
+ 		mapConditionId=2017,
+ 		randomWeight=100,
+ 	image=""
+},
+[1302] =
+{
+ 		id=1302,
+ 		desc=30002018,
+ 		missionType=11,
+ 		missionClass=10,
+ 		mapConditionId=2018,
+ 		randomWeight=100,
+ 	image=""
+},
+[1303] =
+{
+ 		id=1303,
+ 		desc=30002019,
+ 		missionType=11,
+ 		missionClass=11,
+ 		mapConditionId=2019,
+ 		randomWeight=100,
+ 	image=""
+},
+[1304] =
+{
+ 		id=1304,
+ 		desc=30003001,
+ 		missionType=11,
+ 		missionClass=12,
+ 		mapConditionId=3001,
+ 		randomWeight=100,
+ 	image=""
+},
+[1305] =
+{
+ 		id=1305,
+ 		desc=30003002,
+ 		missionType=11,
+ 		missionClass=1,
+ 		mapConditionId=3002,
+ 		randomWeight=100,
+ 	image=""
+},
+[1306] =
+{
+ 		id=1306,
+ 		desc=30003003,
+ 		missionType=11,
+ 		missionClass=2,
+ 		mapConditionId=3003,
+ 		randomWeight=100,
+ 	image=""
+},
+[1307] =
+{
+ 		id=1307,
+ 		desc=30003004,
+ 		missionType=11,
+ 		missionClass=3,
+ 		mapConditionId=3004,
+ 		randomWeight=100,
+ 	image=""
+},
+[1308] =
+{
+ 		id=1308,
+ 		desc=30003005,
+ 		missionType=11,
+ 		missionClass=4,
+ 		mapConditionId=3005,
+ 		randomWeight=100,
+ 	image=""
+},
+[1309] =
+{
+ 		id=1309,
+ 		desc=30003006,
+ 		missionType=11,
+ 		missionClass=5,
+ 		mapConditionId=3006,
+ 		randomWeight=100,
+ 	image=""
+},
+[1310] =
+{
+ 		id=1310,
+ 		desc=30003007,
+ 		missionType=11,
+ 		missionClass=6,
+ 		mapConditionId=3007,
+ 		randomWeight=100,
+ 	image=""
+},
+[1311] =
+{
+ 		id=1311,
+ 		desc=30003008,
+ 		missionType=11,
+ 		missionClass=7,
+ 		mapConditionId=3008,
+ 		randomWeight=100,
+ 	image=""
+},
+[1312] =
+{
+ 		id=1312,
+ 		desc=30003009,
+ 		missionType=11,
+ 		missionClass=8,
+ 		mapConditionId=3009,
+ 		randomWeight=100,
+ 	image=""
+},
+[1313] =
+{
+ 		id=1313,
+ 		desc=30003010,
+ 		missionType=11,
+ 		missionClass=9,
+ 		mapConditionId=3010,
+ 		randomWeight=100,
+ 	image=""
+},
+[1314] =
+{
+ 		id=1314,
+ 		desc=30003011,
+ 		missionType=11,
+ 		missionClass=10,
+ 		mapConditionId=3011,
+ 		randomWeight=100,
+ 	image=""
+},
+[1315] =
+{
+ 		id=1315,
+ 		desc=30003012,
+ 		missionType=11,
+ 		missionClass=11,
+ 		mapConditionId=3012,
+ 		randomWeight=100,
+ 	image=""
+},
+[1316] =
+{
+ 		id=1316,
+ 		desc=30003013,
+ 		missionType=11,
+ 		missionClass=12,
+ 		mapConditionId=3013,
+ 		randomWeight=100,
+ 	image=""
+},
+[1317] =
+{
+ 		id=1317,
+ 		desc=30003014,
+ 		missionType=11,
+ 		missionClass=1,
+ 		mapConditionId=3014,
+ 		randomWeight=100,
+ 	image=""
+},
+[1318] =
+{
+ 		id=1318,
+ 		desc=30003015,
+ 		missionType=11,
+ 		missionClass=2,
+ 		mapConditionId=3015,
+ 		randomWeight=100,
+ 	image=""
+},
+[1319] =
+{
+ 		id=1319,
+ 		desc=30003016,
+ 		missionType=11,
+ 		missionClass=3,
+ 		mapConditionId=3016,
+ 		randomWeight=100,
+ 	image=""
+},
+[1320] =
+{
+ 		id=1320,
+ 		desc=30003017,
+ 		missionType=11,
+ 		missionClass=4,
+ 		mapConditionId=3017,
+ 		randomWeight=100,
+ 	image=""
+},
+[1321] =
+{
+ 		id=1321,
+ 		desc=30003018,
+ 		missionType=11,
+ 		missionClass=5,
+ 		mapConditionId=3018,
+ 		randomWeight=100,
+ 	image=""
+},
+[1322] =
+{
+ 		id=1322,
+ 		desc=30003019,
+ 		missionType=11,
+ 		missionClass=6,
+ 		mapConditionId=3019,
+ 		randomWeight=100,
+ 	image=""
+},
+[1323] =
+{
+ 		id=1323,
+ 		desc=30003020,
+ 		missionType=11,
+ 		missionClass=7,
+ 		mapConditionId=3020,
+ 		randomWeight=100,
+ 	image=""
+},
+[1324] =
+{
+ 		id=1324,
+ 		desc=30003021,
+ 		missionType=11,
+ 		missionClass=8,
+ 		mapConditionId=3021,
+ 		randomWeight=100,
+ 	image=""
+},
+[1325] =
+{
+ 		id=1325,
+ 		desc=30003022,
+ 		missionType=11,
+ 		missionClass=9,
+ 		mapConditionId=3022,
+ 		randomWeight=100,
+ 	image=""
+},
+[1326] =
+{
+ 		id=1326,
+ 		desc=30003023,
+ 		missionType=11,
+ 		missionClass=10,
+ 		mapConditionId=3023,
+ 		randomWeight=100,
+ 	image=""
+},
+[1327] =
+{
+ 		id=1327,
+ 		desc=30003024,
+ 		missionType=11,
+ 		missionClass=11,
+ 		mapConditionId=3024,
+ 		randomWeight=100,
+ 	image=""
+},
+[1328] =
+{
+ 		id=1328,
+ 		desc=30003025,
+ 		missionType=11,
+ 		missionClass=12,
+ 		mapConditionId=3025,
+ 		randomWeight=100,
+ 	image=""
+},
+[1329] =
+{
+ 		id=1329,
+ 		desc=30003026,
+ 		missionType=11,
+ 		missionClass=1,
+ 		mapConditionId=3026,
+ 		randomWeight=100,
+ 	image=""
+},
+[1330] =
+{
+ 		id=1330,
+ 		desc=30003027,
+ 		missionType=11,
+ 		missionClass=2,
+ 		mapConditionId=3027,
+ 		randomWeight=100,
+ 	image=""
+},
+[1331] =
+{
+ 		id=1331,
+ 		desc=30003028,
+ 		missionType=11,
+ 		missionClass=3,
+ 		mapConditionId=3028,
+ 		randomWeight=100,
+ 	image=""
+},
+[1332] =
+{
+ 		id=1332,
+ 		desc=30003029,
+ 		missionType=11,
+ 		missionClass=4,
+ 		mapConditionId=3029,
+ 		randomWeight=100,
+ 	image=""
+},
+[1333] =
+{
+ 		id=1333,
+ 		desc=30003030,
+ 		missionType=11,
+ 		missionClass=5,
+ 		mapConditionId=3030,
+ 		randomWeight=100,
+ 	image=""
+},
+[1334] =
+{
+ 		id=1334,
+ 		desc=30003031,
+ 		missionType=11,
+ 		missionClass=6,
+ 		mapConditionId=3031,
+ 		randomWeight=100,
+ 	image=""
+},
+[1335] =
+{
+ 		id=1335,
+ 		desc=30003032,
+ 		missionType=11,
+ 		missionClass=7,
+ 		mapConditionId=3032,
+ 		randomWeight=100,
+ 	image=""
+},
+[1336] =
+{
+ 		id=1336,
+ 		desc=30003033,
+ 		missionType=11,
+ 		missionClass=8,
+ 		mapConditionId=3033,
+ 		randomWeight=100,
+ 	image=""
+},
+[1337] =
+{
+ 		id=1337,
+ 		desc=30003034,
+ 		missionType=11,
+ 		missionClass=9,
+ 		mapConditionId=3034,
+ 		randomWeight=100,
+ 	image=""
+},
+[1338] =
+{
+ 		id=1338,
+ 		desc=30003035,
+ 		missionType=11,
+ 		missionClass=10,
+ 		mapConditionId=3035,
+ 		randomWeight=100,
+ 	image=""
+},
+[1339] =
+{
+ 		id=1339,
+ 		desc=30003036,
+ 		missionType=11,
+ 		missionClass=11,
+ 		mapConditionId=3036,
+ 		randomWeight=100,
+ 	image=""
+},
+[1340] =
+{
+ 		id=1340,
+ 		desc=30003037,
+ 		missionType=11,
+ 		missionClass=12,
+ 		mapConditionId=3037,
+ 		randomWeight=100,
+ 	image=""
+},
+[1341] =
+{
+ 		id=1341,
+ 		desc=30003038,
+ 		missionType=11,
+ 		missionClass=1,
+ 		mapConditionId=3038,
+ 		randomWeight=100,
+ 	image=""
+},
+[1342] =
+{
+ 		id=1342,
+ 		desc=30003039,
+ 		missionType=11,
+ 		missionClass=2,
+ 		mapConditionId=3039,
+ 		randomWeight=100,
+ 	image=""
+},
+[1343] =
+{
+ 		id=1343,
+ 		desc=30001001,
+ 		missionType=12,
+ 		missionClass=1,
+ 		mapConditionId=1001,
+ 		randomWeight=100,
+ 	image=""
+},
+[1344] =
+{
+ 		id=1344,
+ 		desc=30001002,
+ 		missionType=12,
+ 		missionClass=2,
+ 		mapConditionId=1002,
+ 		randomWeight=100,
+ 	image=""
+},
+[1345] =
+{
+ 		id=1345,
+ 		desc=30001003,
+ 		missionType=12,
+ 		missionClass=3,
+ 		mapConditionId=1003,
+ 		randomWeight=100,
+ 	image=""
+},
+[1346] =
+{
+ 		id=1346,
+ 		desc=30001004,
+ 		missionType=12,
+ 		missionClass=4,
+ 		mapConditionId=1004,
+ 		randomWeight=100,
+ 	image=""
+},
+[1347] =
+{
+ 		id=1347,
+ 		desc=30001005,
+ 		missionType=12,
+ 		missionClass=5,
+ 		mapConditionId=1005,
+ 		randomWeight=100,
+ 	image=""
+},
+[1348] =
+{
+ 		id=1348,
+ 		desc=30001006,
+ 		missionType=12,
+ 		missionClass=6,
+ 		mapConditionId=1006,
+ 		randomWeight=100,
+ 	image=""
+},
+[1349] =
+{
+ 		id=1349,
+ 		desc=30001007,
+ 		missionType=12,
+ 		missionClass=7,
+ 		mapConditionId=1007,
+ 		randomWeight=100,
+ 	image=""
+},
+[1350] =
+{
+ 		id=1350,
+ 		desc=30001008,
+ 		missionType=12,
+ 		missionClass=8,
+ 		mapConditionId=1008,
+ 		randomWeight=100,
+ 	image=""
+},
+[1351] =
+{
+ 		id=1351,
+ 		desc=30001009,
+ 		missionType=12,
+ 		missionClass=9,
+ 		mapConditionId=1009,
+ 		randomWeight=100,
+ 	image=""
+},
+[1352] =
+{
+ 		id=1352,
+ 		desc=30001010,
+ 		missionType=12,
+ 		missionClass=10,
+ 		mapConditionId=1010,
+ 		randomWeight=100,
+ 	image=""
+},
+[1353] =
+{
+ 		id=1353,
+ 		desc=30001011,
+ 		missionType=12,
+ 		missionClass=11,
+ 		mapConditionId=1011,
+ 		randomWeight=100,
+ 	image=""
+},
+[1354] =
+{
+ 		id=1354,
+ 		desc=30001012,
+ 		missionType=12,
+ 		missionClass=12,
+ 		mapConditionId=1012,
+ 		randomWeight=100,
+ 	image=""
+},
+[1355] =
+{
+ 		id=1355,
+ 		desc=30001013,
+ 		missionType=12,
+ 		missionClass=1,
+ 		mapConditionId=1013,
+ 		randomWeight=100,
+ 	image=""
+},
+[1356] =
+{
+ 		id=1356,
+ 		desc=30001014,
+ 		missionType=12,
+ 		missionClass=2,
+ 		mapConditionId=1014,
+ 		randomWeight=100,
+ 	image=""
+},
+[1357] =
+{
+ 		id=1357,
+ 		desc=30001015,
+ 		missionType=12,
+ 		missionClass=3,
+ 		mapConditionId=1015,
+ 		randomWeight=100,
+ 	image=""
+},
+[1358] =
+{
+ 		id=1358,
+ 		desc=30001016,
+ 		missionType=12,
+ 		missionClass=4,
+ 		mapConditionId=1016,
+ 		randomWeight=100,
+ 	image=""
+},
+[1359] =
+{
+ 		id=1359,
+ 		desc=30001017,
+ 		missionType=12,
+ 		missionClass=5,
+ 		mapConditionId=1017,
+ 		randomWeight=100,
+ 	image=""
+},
+[1360] =
+{
+ 		id=1360,
+ 		desc=30001018,
+ 		missionType=12,
+ 		missionClass=6,
+ 		mapConditionId=1018,
+ 		randomWeight=100,
+ 	image=""
+},
+[1361] =
+{
+ 		id=1361,
+ 		desc=30001019,
+ 		missionType=12,
+ 		missionClass=7,
+ 		mapConditionId=1019,
+ 		randomWeight=100,
+ 	image=""
+},
+[1362] =
+{
+ 		id=1362,
+ 		desc=30001020,
+ 		missionType=12,
+ 		missionClass=8,
+ 		mapConditionId=1020,
+ 		randomWeight=100,
+ 	image=""
+},
+[1363] =
+{
+ 		id=1363,
+ 		desc=30001021,
+ 		missionType=12,
+ 		missionClass=9,
+ 		mapConditionId=1021,
+ 		randomWeight=100,
+ 	image=""
+},
+[1364] =
+{
+ 		id=1364,
+ 		desc=30001022,
+ 		missionType=12,
+ 		missionClass=10,
+ 		mapConditionId=1022,
+ 		randomWeight=100,
+ 	image=""
+},
+[1365] =
+{
+ 		id=1365,
+ 		desc=30001023,
+ 		missionType=12,
+ 		missionClass=11,
+ 		mapConditionId=1023,
+ 		randomWeight=100,
+ 	image=""
+},
+[1366] =
+{
+ 		id=1366,
+ 		desc=30001024,
+ 		missionType=12,
+ 		missionClass=12,
+ 		mapConditionId=1024,
+ 		randomWeight=100,
+ 	image=""
+},
+[1367] =
+{
+ 		id=1367,
+ 		desc=30001025,
+ 		missionType=12,
+ 		missionClass=1,
+ 		mapConditionId=1025,
+ 		randomWeight=100,
+ 	image=""
+},
+[1368] =
+{
+ 		id=1368,
+ 		desc=30001026,
+ 		missionType=12,
+ 		missionClass=2,
+ 		mapConditionId=1026,
+ 		randomWeight=100,
+ 	image=""
+},
+[1369] =
+{
+ 		id=1369,
+ 		desc=30001027,
+ 		missionType=12,
+ 		missionClass=3,
+ 		mapConditionId=1027,
+ 		randomWeight=100,
+ 	image=""
+},
+[1370] =
+{
+ 		id=1370,
+ 		desc=30001028,
+ 		missionType=12,
+ 		missionClass=4,
+ 		mapConditionId=1028,
+ 		randomWeight=100,
+ 	image=""
+},
+[1371] =
+{
+ 		id=1371,
+ 		desc=30001029,
+ 		missionType=12,
+ 		missionClass=5,
+ 		mapConditionId=1029,
+ 		randomWeight=100,
+ 	image=""
+},
+[1372] =
+{
+ 		id=1372,
+ 		desc=30001030,
+ 		missionType=12,
+ 		missionClass=6,
+ 		mapConditionId=1030,
+ 		randomWeight=100,
+ 	image=""
+},
+[1373] =
+{
+ 		id=1373,
+ 		desc=30001031,
+ 		missionType=12,
+ 		missionClass=7,
+ 		mapConditionId=1031,
+ 		randomWeight=100,
+ 	image=""
+},
+[1374] =
+{
+ 		id=1374,
+ 		desc=30001032,
+ 		missionType=12,
+ 		missionClass=8,
+ 		mapConditionId=1032,
+ 		randomWeight=100,
+ 	image=""
+},
+[1375] =
+{
+ 		id=1375,
+ 		desc=30001033,
+ 		missionType=12,
+ 		missionClass=9,
+ 		mapConditionId=1033,
+ 		randomWeight=100,
+ 	image=""
+},
+[1376] =
+{
+ 		id=1376,
+ 		desc=30001034,
+ 		missionType=12,
+ 		missionClass=10,
+ 		mapConditionId=1034,
+ 		randomWeight=100,
+ 	image=""
+},
+[1377] =
+{
+ 		id=1377,
+ 		desc=30001035,
+ 		missionType=12,
+ 		missionClass=11,
+ 		mapConditionId=1035,
+ 		randomWeight=100,
+ 	image=""
+},
+[1378] =
+{
+ 		id=1378,
+ 		desc=30001036,
+ 		missionType=12,
+ 		missionClass=12,
+ 		mapConditionId=1036,
+ 		randomWeight=100,
+ 	image=""
+},
+[1379] =
+{
+ 		id=1379,
+ 		desc=30001037,
+ 		missionType=12,
+ 		missionClass=1,
+ 		mapConditionId=1037,
+ 		randomWeight=100,
+ 	image=""
+},
+[1380] =
+{
+ 		id=1380,
+ 		desc=30001039,
+ 		missionType=12,
+ 		missionClass=2,
+ 		mapConditionId=1039,
+ 		randomWeight=100,
+ 	image=""
+},
+[1381] =
+{
+ 		id=1381,
+ 		desc=30001040,
+ 		missionType=12,
+ 		missionClass=3,
+ 		mapConditionId=1040,
+ 		randomWeight=100,
+ 	image=""
+},
+[1382] =
+{
+ 		id=1382,
+ 		desc=30001041,
+ 		missionType=12,
+ 		missionClass=4,
+ 		mapConditionId=1041,
+ 		randomWeight=100,
+ 	image=""
+},
+[1383] =
+{
+ 		id=1383,
+ 		desc=30001042,
+ 		missionType=12,
+ 		missionClass=5,
+ 		mapConditionId=1042,
+ 		randomWeight=100,
+ 	image=""
+},
+[1384] =
+{
+ 		id=1384,
+ 		desc=30001043,
+ 		missionType=12,
+ 		missionClass=6,
+ 		mapConditionId=1043,
+ 		randomWeight=100,
+ 	image=""
+},
+[1385] =
+{
+ 		id=1385,
+ 		desc=30001044,
+ 		missionType=12,
+ 		missionClass=7,
+ 		mapConditionId=1044,
+ 		randomWeight=100,
+ 	image=""
+},
+[1386] =
+{
+ 		id=1386,
+ 		desc=30001045,
+ 		missionType=12,
+ 		missionClass=8,
+ 		mapConditionId=1045,
+ 		randomWeight=100,
+ 	image=""
+},
+[1387] =
+{
+ 		id=1387,
+ 		desc=30001046,
+ 		missionType=12,
+ 		missionClass=9,
+ 		mapConditionId=1046,
+ 		randomWeight=100,
+ 	image=""
+},
+[1388] =
+{
+ 		id=1388,
+ 		desc=30001047,
+ 		missionType=12,
+ 		missionClass=10,
+ 		mapConditionId=1047,
+ 		randomWeight=100,
+ 	image=""
+},
+[1389] =
+{
+ 		id=1389,
+ 		desc=30001048,
+ 		missionType=12,
+ 		missionClass=11,
+ 		mapConditionId=1048,
+ 		randomWeight=100,
+ 	image=""
+},
+[1390] =
+{
+ 		id=1390,
+ 		desc=30001049,
+ 		missionType=12,
+ 		missionClass=12,
+ 		mapConditionId=1049,
+ 		randomWeight=100,
+ 	image=""
+},
+[1391] =
+{
+ 		id=1391,
+ 		desc=30001050,
+ 		missionType=12,
+ 		missionClass=1,
+ 		mapConditionId=1050,
+ 		randomWeight=100,
+ 	image=""
+},
+[1392] =
+{
+ 		id=1392,
+ 		desc=30001051,
+ 		missionType=12,
+ 		missionClass=2,
+ 		mapConditionId=1051,
+ 		randomWeight=100,
+ 	image=""
+},
+[1393] =
+{
+ 		id=1393,
+ 		desc=30001052,
+ 		missionType=12,
+ 		missionClass=3,
+ 		mapConditionId=1052,
+ 		randomWeight=100,
+ 	image=""
+},
+[1394] =
+{
+ 		id=1394,
+ 		desc=30001053,
+ 		missionType=12,
+ 		missionClass=4,
+ 		mapConditionId=1053,
+ 		randomWeight=100,
+ 	image=""
+},
+[1395] =
+{
+ 		id=1395,
+ 		desc=30001054,
+ 		missionType=12,
+ 		missionClass=5,
+ 		mapConditionId=1054,
+ 		randomWeight=100,
+ 	image=""
+},
+[1396] =
+{
+ 		id=1396,
+ 		desc=30001055,
+ 		missionType=12,
+ 		missionClass=6,
+ 		mapConditionId=1055,
+ 		randomWeight=100,
+ 	image=""
+},
+[1397] =
+{
+ 		id=1397,
+ 		desc=30001056,
+ 		missionType=12,
+ 		missionClass=7,
+ 		mapConditionId=1056,
+ 		randomWeight=100,
+ 	image=""
+},
+[1398] =
+{
+ 		id=1398,
+ 		desc=30001057,
+ 		missionType=12,
+ 		missionClass=8,
+ 		mapConditionId=1057,
+ 		randomWeight=100,
+ 	image=""
+},
+[1399] =
+{
+ 		id=1399,
+ 		desc=30001058,
+ 		missionType=12,
+ 		missionClass=9,
+ 		mapConditionId=1058,
+ 		randomWeight=100,
+ 	image=""
+},
+[1400] =
+{
+ 		id=1400,
+ 		desc=30001059,
+ 		missionType=12,
+ 		missionClass=10,
+ 		mapConditionId=1059,
+ 		randomWeight=100,
+ 	image=""
+},
+[1401] =
+{
+ 		id=1401,
+ 		desc=30001060,
+ 		missionType=12,
+ 		missionClass=11,
+ 		mapConditionId=1060,
+ 		randomWeight=100,
+ 	image=""
+},
+[1402] =
+{
+ 		id=1402,
+ 		desc=30001061,
+ 		missionType=12,
+ 		missionClass=12,
+ 		mapConditionId=1061,
+ 		randomWeight=100,
+ 	image=""
+},
+[1403] =
+{
+ 		id=1403,
+ 		desc=30001062,
+ 		missionType=12,
+ 		missionClass=1,
+ 		mapConditionId=1062,
+ 		randomWeight=100,
+ 	image=""
+},
+[1404] =
+{
+ 		id=1404,
+ 		desc=30001063,
+ 		missionType=12,
+ 		missionClass=2,
+ 		mapConditionId=1063,
+ 		randomWeight=100,
+ 	image=""
+},
+[1405] =
+{
+ 		id=1405,
+ 		desc=30001064,
+ 		missionType=12,
+ 		missionClass=3,
+ 		mapConditionId=1064,
+ 		randomWeight=100,
+ 	image=""
+},
+[1406] =
+{
+ 		id=1406,
+ 		desc=30001065,
+ 		missionType=12,
+ 		missionClass=4,
+ 		mapConditionId=1065,
+ 		randomWeight=100,
+ 	image=""
+},
+[1407] =
+{
+ 		id=1407,
+ 		desc=30002001,
+ 		missionType=12,
+ 		missionClass=5,
+ 		mapConditionId=2001,
+ 		randomWeight=100,
+ 	image=""
+},
+[1408] =
+{
+ 		id=1408,
+ 		desc=30002002,
+ 		missionType=12,
+ 		missionClass=6,
+ 		mapConditionId=2002,
+ 		randomWeight=100,
+ 	image=""
+},
+[1409] =
+{
+ 		id=1409,
+ 		desc=30002003,
+ 		missionType=12,
+ 		missionClass=7,
+ 		mapConditionId=2003,
+ 		randomWeight=100,
+ 	image=""
+},
+[1410] =
+{
+ 		id=1410,
+ 		desc=30002004,
+ 		missionType=12,
+ 		missionClass=8,
+ 		mapConditionId=2004,
+ 		randomWeight=100,
+ 	image=""
+},
+[1411] =
+{
+ 		id=1411,
+ 		desc=30002005,
+ 		missionType=12,
+ 		missionClass=9,
+ 		mapConditionId=2005,
+ 		randomWeight=100,
+ 	image=""
+},
+[1412] =
+{
+ 		id=1412,
+ 		desc=30002006,
+ 		missionType=12,
+ 		missionClass=10,
+ 		mapConditionId=2006,
+ 		randomWeight=100,
+ 	image=""
+},
+[1413] =
+{
+ 		id=1413,
+ 		desc=30002007,
+ 		missionType=12,
+ 		missionClass=11,
+ 		mapConditionId=2007,
+ 		randomWeight=100,
+ 	image=""
+},
+[1414] =
+{
+ 		id=1414,
+ 		desc=30002008,
+ 		missionType=12,
+ 		missionClass=12,
+ 		mapConditionId=2008,
+ 		randomWeight=100,
+ 	image=""
+},
+[1415] =
+{
+ 		id=1415,
+ 		desc=30002009,
+ 		missionType=12,
+ 		missionClass=1,
+ 		mapConditionId=2009,
+ 		randomWeight=100,
+ 	image=""
+},
+[1416] =
+{
+ 		id=1416,
+ 		desc=30002010,
+ 		missionType=12,
+ 		missionClass=2,
+ 		mapConditionId=2010,
+ 		randomWeight=100,
+ 	image=""
+},
+[1417] =
+{
+ 		id=1417,
+ 		desc=30002011,
+ 		missionType=12,
+ 		missionClass=3,
+ 		mapConditionId=2011,
+ 		randomWeight=100,
+ 	image=""
+},
+[1418] =
+{
+ 		id=1418,
+ 		desc=30002012,
+ 		missionType=12,
+ 		missionClass=4,
+ 		mapConditionId=2012,
+ 		randomWeight=100,
+ 	image=""
+},
+[1419] =
+{
+ 		id=1419,
+ 		desc=30002013,
+ 		missionType=12,
+ 		missionClass=5,
+ 		mapConditionId=2013,
+ 		randomWeight=100,
+ 	image=""
+},
+[1420] =
+{
+ 		id=1420,
+ 		desc=30002014,
+ 		missionType=12,
+ 		missionClass=6,
+ 		mapConditionId=2014,
+ 		randomWeight=100,
+ 	image=""
+},
+[1421] =
+{
+ 		id=1421,
+ 		desc=30002015,
+ 		missionType=12,
+ 		missionClass=7,
+ 		mapConditionId=2015,
+ 		randomWeight=100,
+ 	image=""
+},
+[1422] =
+{
+ 		id=1422,
+ 		desc=30002016,
+ 		missionType=12,
+ 		missionClass=8,
+ 		mapConditionId=2016,
+ 		randomWeight=100,
+ 	image=""
+},
+[1423] =
+{
+ 		id=1423,
+ 		desc=30002017,
+ 		missionType=12,
+ 		missionClass=9,
+ 		mapConditionId=2017,
+ 		randomWeight=100,
+ 	image=""
+},
+[1424] =
+{
+ 		id=1424,
+ 		desc=30002018,
+ 		missionType=12,
+ 		missionClass=10,
+ 		mapConditionId=2018,
+ 		randomWeight=100,
+ 	image=""
+},
+[1425] =
+{
+ 		id=1425,
+ 		desc=30002019,
+ 		missionType=12,
+ 		missionClass=11,
+ 		mapConditionId=2019,
+ 		randomWeight=100,
+ 	image=""
+},
+[1426] =
+{
+ 		id=1426,
+ 		desc=30003001,
+ 		missionType=12,
+ 		missionClass=12,
+ 		mapConditionId=3001,
+ 		randomWeight=100,
+ 	image=""
+},
+[1427] =
+{
+ 		id=1427,
+ 		desc=30003002,
+ 		missionType=12,
+ 		missionClass=1,
+ 		mapConditionId=3002,
+ 		randomWeight=100,
+ 	image=""
+},
+[1428] =
+{
+ 		id=1428,
+ 		desc=30003003,
+ 		missionType=12,
+ 		missionClass=2,
+ 		mapConditionId=3003,
+ 		randomWeight=100,
+ 	image=""
+},
+[1429] =
+{
+ 		id=1429,
+ 		desc=30003004,
+ 		missionType=12,
+ 		missionClass=3,
+ 		mapConditionId=3004,
+ 		randomWeight=100,
+ 	image=""
+},
+[1430] =
+{
+ 		id=1430,
+ 		desc=30003005,
+ 		missionType=12,
+ 		missionClass=4,
+ 		mapConditionId=3005,
+ 		randomWeight=100,
+ 	image=""
+},
+[1431] =
+{
+ 		id=1431,
+ 		desc=30003006,
+ 		missionType=12,
+ 		missionClass=5,
+ 		mapConditionId=3006,
+ 		randomWeight=100,
+ 	image=""
+},
+[1432] =
+{
+ 		id=1432,
+ 		desc=30003007,
+ 		missionType=12,
+ 		missionClass=6,
+ 		mapConditionId=3007,
+ 		randomWeight=100,
+ 	image=""
+},
+[1433] =
+{
+ 		id=1433,
+ 		desc=30003008,
+ 		missionType=12,
+ 		missionClass=7,
+ 		mapConditionId=3008,
+ 		randomWeight=100,
+ 	image=""
+},
+[1434] =
+{
+ 		id=1434,
+ 		desc=30003009,
+ 		missionType=12,
+ 		missionClass=8,
+ 		mapConditionId=3009,
+ 		randomWeight=100,
+ 	image=""
+},
+[1435] =
+{
+ 		id=1435,
+ 		desc=30003010,
+ 		missionType=12,
+ 		missionClass=9,
+ 		mapConditionId=3010,
+ 		randomWeight=100,
+ 	image=""
+},
+[1436] =
+{
+ 		id=1436,
+ 		desc=30003011,
+ 		missionType=12,
+ 		missionClass=10,
+ 		mapConditionId=3011,
+ 		randomWeight=100,
+ 	image=""
+},
+[1437] =
+{
+ 		id=1437,
+ 		desc=30003012,
+ 		missionType=12,
+ 		missionClass=11,
+ 		mapConditionId=3012,
+ 		randomWeight=100,
+ 	image=""
+},
+[1438] =
+{
+ 		id=1438,
+ 		desc=30003013,
+ 		missionType=12,
+ 		missionClass=12,
+ 		mapConditionId=3013,
+ 		randomWeight=100,
+ 	image=""
+},
+[1439] =
+{
+ 		id=1439,
+ 		desc=30003014,
+ 		missionType=12,
+ 		missionClass=1,
+ 		mapConditionId=3014,
+ 		randomWeight=100,
+ 	image=""
+},
+[1440] =
+{
+ 		id=1440,
+ 		desc=30003015,
+ 		missionType=12,
+ 		missionClass=2,
+ 		mapConditionId=3015,
+ 		randomWeight=100,
+ 	image=""
+},
+[1441] =
+{
+ 		id=1441,
+ 		desc=30003016,
+ 		missionType=12,
+ 		missionClass=3,
+ 		mapConditionId=3016,
+ 		randomWeight=100,
+ 	image=""
+},
+[1442] =
+{
+ 		id=1442,
+ 		desc=30003017,
+ 		missionType=12,
+ 		missionClass=4,
+ 		mapConditionId=3017,
+ 		randomWeight=100,
+ 	image=""
+},
+[1443] =
+{
+ 		id=1443,
+ 		desc=30003018,
+ 		missionType=12,
+ 		missionClass=5,
+ 		mapConditionId=3018,
+ 		randomWeight=100,
+ 	image=""
+},
+[1444] =
+{
+ 		id=1444,
+ 		desc=30003019,
+ 		missionType=12,
+ 		missionClass=6,
+ 		mapConditionId=3019,
+ 		randomWeight=100,
+ 	image=""
+},
+[1445] =
+{
+ 		id=1445,
+ 		desc=30003020,
+ 		missionType=12,
+ 		missionClass=7,
+ 		mapConditionId=3020,
+ 		randomWeight=100,
+ 	image=""
+},
+[1446] =
+{
+ 		id=1446,
+ 		desc=30003021,
+ 		missionType=12,
+ 		missionClass=8,
+ 		mapConditionId=3021,
+ 		randomWeight=100,
+ 	image=""
+},
+[1447] =
+{
+ 		id=1447,
+ 		desc=30003022,
+ 		missionType=12,
+ 		missionClass=9,
+ 		mapConditionId=3022,
+ 		randomWeight=100,
+ 	image=""
+},
+[1448] =
+{
+ 		id=1448,
+ 		desc=30003023,
+ 		missionType=12,
+ 		missionClass=10,
+ 		mapConditionId=3023,
+ 		randomWeight=100,
+ 	image=""
+},
+[1449] =
+{
+ 		id=1449,
+ 		desc=30003024,
+ 		missionType=12,
+ 		missionClass=11,
+ 		mapConditionId=3024,
+ 		randomWeight=100,
+ 	image=""
+},
+[1450] =
+{
+ 		id=1450,
+ 		desc=30003025,
+ 		missionType=12,
+ 		missionClass=12,
+ 		mapConditionId=3025,
+ 		randomWeight=100,
+ 	image=""
+},
+[1451] =
+{
+ 		id=1451,
+ 		desc=30003026,
+ 		missionType=12,
+ 		missionClass=1,
+ 		mapConditionId=3026,
+ 		randomWeight=100,
+ 	image=""
+},
+[1452] =
+{
+ 		id=1452,
+ 		desc=30003027,
+ 		missionType=12,
+ 		missionClass=2,
+ 		mapConditionId=3027,
+ 		randomWeight=100,
+ 	image=""
+},
+[1453] =
+{
+ 		id=1453,
+ 		desc=30003028,
+ 		missionType=12,
+ 		missionClass=3,
+ 		mapConditionId=3028,
+ 		randomWeight=100,
+ 	image=""
+},
+[1454] =
+{
+ 		id=1454,
+ 		desc=30003029,
+ 		missionType=12,
+ 		missionClass=4,
+ 		mapConditionId=3029,
+ 		randomWeight=100,
+ 	image=""
+},
+[1455] =
+{
+ 		id=1455,
+ 		desc=30003030,
+ 		missionType=12,
+ 		missionClass=5,
+ 		mapConditionId=3030,
+ 		randomWeight=100,
+ 	image=""
+},
+[1456] =
+{
+ 		id=1456,
+ 		desc=30003031,
+ 		missionType=12,
+ 		missionClass=6,
+ 		mapConditionId=3031,
+ 		randomWeight=100,
+ 	image=""
+},
+[1457] =
+{
+ 		id=1457,
+ 		desc=30003032,
+ 		missionType=12,
+ 		missionClass=7,
+ 		mapConditionId=3032,
+ 		randomWeight=100,
+ 	image=""
+},
+[1458] =
+{
+ 		id=1458,
+ 		desc=30003033,
+ 		missionType=12,
+ 		missionClass=8,
+ 		mapConditionId=3033,
+ 		randomWeight=100,
+ 	image=""
+},
+[1459] =
+{
+ 		id=1459,
+ 		desc=30003034,
+ 		missionType=12,
+ 		missionClass=9,
+ 		mapConditionId=3034,
+ 		randomWeight=100,
+ 	image=""
+},
+[1460] =
+{
+ 		id=1460,
+ 		desc=30003035,
+ 		missionType=12,
+ 		missionClass=10,
+ 		mapConditionId=3035,
+ 		randomWeight=100,
+ 	image=""
+},
+[1461] =
+{
+ 		id=1461,
+ 		desc=30003036,
+ 		missionType=12,
+ 		missionClass=11,
+ 		mapConditionId=3036,
+ 		randomWeight=100,
+ 	image=""
+},
+[1462] =
+{
+ 		id=1462,
+ 		desc=30003037,
+ 		missionType=12,
+ 		missionClass=12,
+ 		mapConditionId=3037,
+ 		randomWeight=100,
+ 	image=""
+},
+[1463] =
+{
+ 		id=1463,
+ 		desc=30003038,
+ 		missionType=12,
+ 		missionClass=1,
+ 		mapConditionId=3038,
+ 		randomWeight=100,
+ 	image=""
+},
+[1464] =
+{
+ 		id=1464,
+ 		desc=30003039,
+ 		missionType=12,
+ 		missionClass=2,
+ 		mapConditionId=3039,
+ 		randomWeight=100,
+ 	image=""
+},
+[1465] =
+{
+ 		id=1465,
+ 		desc=31111001,
+ 		missionType=13,
+ 		missionClass=1,
+ 		mapConditionId=1111001,
+ 		randomWeight=200,
+ 		name=61111001,
+ 		quality=1,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1466] =
+{
+ 		id=1466,
+ 		desc=31111002,
+ 		missionType=13,
+ 		missionClass=2,
+ 		mapConditionId=1111002,
+ 		randomWeight=200,
+ 		name=61111002,
+ 		quality=1,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1467] =
+{
+ 		id=1467,
+ 		desc=31111003,
+ 		missionType=13,
+ 		missionClass=3,
+ 		mapConditionId=1111003,
+ 		randomWeight=200,
+ 		name=61111003,
+ 		quality=1,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1468] =
+{
+ 		id=1468,
+ 		desc=31111004,
+ 		missionType=13,
+ 		missionClass=4,
+ 		mapConditionId=1111004,
+ 		randomWeight=200,
+ 		name=61111004,
+ 		quality=1,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1469] =
+{
+ 		id=1469,
+ 		desc=31111005,
+ 		missionType=13,
+ 		missionClass=5,
+ 		mapConditionId=1111005,
+ 		randomWeight=200,
+ 		name=61111005,
+ 		quality=1,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1470] =
+{
+ 		id=1470,
+ 		desc=31111006,
+ 		missionType=13,
+ 		missionClass=6,
+ 		mapConditionId=1111006,
+ 		randomWeight=200,
+ 		name=61111006,
+ 		quality=1,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1471] =
+{
+ 		id=1471,
+ 		desc=31111007,
+ 		missionType=13,
+ 		missionClass=7,
+ 		mapConditionId=1111007,
+ 		randomWeight=200,
+ 		name=61111007,
+ 		quality=1,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1472] =
+{
+ 		id=1472,
+ 		desc=31111008,
+ 		missionType=13,
+ 		missionClass=8,
+ 		mapConditionId=1111008,
+ 		randomWeight=200,
+ 		name=61111008,
+ 		quality=1,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1473] =
+{
+ 		id=1473,
+ 		desc=31111009,
+ 		missionType=13,
+ 		missionClass=9,
+ 		mapConditionId=1111009,
+ 		randomWeight=200,
+ 		name=61111009,
+ 		quality=1,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1474] =
+{
+ 		id=1474,
+ 		desc=31111010,
+ 		missionType=13,
+ 		missionClass=10,
+ 		mapConditionId=1111010,
+ 		randomWeight=200,
+ 		name=61111010,
+ 		quality=1,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1475] =
+{
+ 		id=1475,
+ 		desc=31121001,
+ 		missionType=13,
+ 		missionClass=11,
+ 		mapConditionId=1121001,
+ 		randomWeight=100,
+ 		name=61121001,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1476] =
+{
+ 		id=1476,
+ 		desc=31121002,
+ 		missionType=13,
+ 		missionClass=12,
+ 		mapConditionId=1121002,
+ 		randomWeight=100,
+ 		name=61121002,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1477] =
+{
+ 		id=1477,
+ 		desc=31121003,
+ 		missionType=13,
+ 		missionClass=13,
+ 		mapConditionId=1121003,
+ 		randomWeight=100,
+ 		name=61121003,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1478] =
+{
+ 		id=1478,
+ 		desc=31121004,
+ 		missionType=13,
+ 		missionClass=14,
+ 		mapConditionId=1121004,
+ 		randomWeight=100,
+ 		name=61121004,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1479] =
+{
+ 		id=1479,
+ 		desc=31121005,
+ 		missionType=13,
+ 		missionClass=15,
+ 		mapConditionId=1121005,
+ 		randomWeight=100,
+ 		name=61121005,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1480] =
+{
+ 		id=1480,
+ 		desc=31121006,
+ 		missionType=13,
+ 		missionClass=16,
+ 		mapConditionId=1121006,
+ 		randomWeight=100,
+ 		name=61121006,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1481] =
+{
+ 		id=1481,
+ 		desc=31121007,
+ 		missionType=13,
+ 		missionClass=17,
+ 		mapConditionId=1121007,
+ 		randomWeight=100,
+ 		name=61121007,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1482] =
+{
+ 		id=1482,
+ 		desc=31121008,
+ 		missionType=13,
+ 		missionClass=18,
+ 		mapConditionId=1121008,
+ 		randomWeight=100,
+ 		name=61121008,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1483] =
+{
+ 		id=1483,
+ 		desc=31121009,
+ 		missionType=13,
+ 		missionClass=19,
+ 		mapConditionId=1121009,
+ 		randomWeight=100,
+ 		name=61121009,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1484] =
+{
+ 		id=1484,
+ 		desc=31121010,
+ 		missionType=13,
+ 		missionClass=20,
+ 		mapConditionId=1121010,
+ 		randomWeight=100,
+ 		name=61121010,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1485] =
+{
+ 		id=1485,
+ 		desc=31121011,
+ 		missionType=13,
+ 		missionClass=21,
+ 		mapConditionId=1121011,
+ 		randomWeight=100,
+ 		name=61121011,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1486] =
+{
+ 		id=1486,
+ 		desc=31122001,
+ 		missionType=13,
+ 		missionClass=22,
+ 		mapConditionId=1122001,
+ 		randomWeight=100,
+ 		name=61122001,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1487] =
+{
+ 		id=1487,
+ 		desc=31122002,
+ 		missionType=13,
+ 		missionClass=23,
+ 		mapConditionId=1122002,
+ 		randomWeight=100,
+ 		name=61122002,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1488] =
+{
+ 		id=1488,
+ 		desc=31122003,
+ 		missionType=13,
+ 		missionClass=24,
+ 		mapConditionId=1122003,
+ 		randomWeight=100,
+ 		name=61122003,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1489] =
+{
+ 		id=1489,
+ 		desc=31122004,
+ 		missionType=13,
+ 		missionClass=25,
+ 		mapConditionId=1122004,
+ 		randomWeight=100,
+ 		name=61122004,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1490] =
+{
+ 		id=1490,
+ 		desc=31122005,
+ 		missionType=13,
+ 		missionClass=26,
+ 		mapConditionId=1122005,
+ 		randomWeight=100,
+ 		name=61122005,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1491] =
+{
+ 		id=1491,
+ 		desc=31122006,
+ 		missionType=13,
+ 		missionClass=27,
+ 		mapConditionId=1122006,
+ 		randomWeight=100,
+ 		name=61122006,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1492] =
+{
+ 		id=1492,
+ 		desc=31122007,
+ 		missionType=13,
+ 		missionClass=28,
+ 		mapConditionId=1122007,
+ 		randomWeight=100,
+ 		name=61122007,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1493] =
+{
+ 		id=1493,
+ 		desc=31122008,
+ 		missionType=13,
+ 		missionClass=29,
+ 		mapConditionId=1122008,
+ 		randomWeight=100,
+ 		name=61122008,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1494] =
+{
+ 		id=1494,
+ 		desc=31122009,
+ 		missionType=13,
+ 		missionClass=30,
+ 		mapConditionId=1122009,
+ 		randomWeight=100,
+ 		name=61122009,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1495] =
+{
+ 		id=1495,
+ 		desc=31122010,
+ 		missionType=13,
+ 		missionClass=31,
+ 		mapConditionId=1122010,
+ 		randomWeight=100,
+ 		name=61122010,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1496] =
+{
+ 		id=1496,
+ 		desc=31123001,
+ 		missionType=13,
+ 		missionClass=32,
+ 		mapConditionId=1123001,
+ 		randomWeight=100,
+ 		name=61123001,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1497] =
+{
+ 		id=1497,
+ 		desc=31123002,
+ 		missionType=13,
+ 		missionClass=33,
+ 		mapConditionId=1123002,
+ 		randomWeight=100,
+ 		name=61123002,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1498] =
+{
+ 		id=1498,
+ 		desc=31123003,
+ 		missionType=13,
+ 		missionClass=34,
+ 		mapConditionId=1123003,
+ 		randomWeight=100,
+ 		name=61123003,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1499] =
+{
+ 		id=1499,
+ 		desc=31123004,
+ 		missionType=13,
+ 		missionClass=35,
+ 		mapConditionId=1123004,
+ 		randomWeight=100,
+ 		name=61123004,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1500] =
+{
+ 		id=1500,
+ 		desc=31123005,
+ 		missionType=13,
+ 		missionClass=36,
+ 		mapConditionId=1123005,
+ 		randomWeight=100,
+ 		name=61123005,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1501] =
+{
+ 		id=1501,
+ 		desc=31124001,
+ 		missionType=13,
+ 		missionClass=37,
+ 		mapConditionId=1124001,
+ 		randomWeight=100,
+ 		name=61124001,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1502] =
+{
+ 		id=1502,
+ 		desc=31124002,
+ 		missionType=13,
+ 		missionClass=38,
+ 		mapConditionId=1124002,
+ 		randomWeight=100,
+ 		name=61124002,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1503] =
+{
+ 		id=1503,
+ 		desc=31124003,
+ 		missionType=13,
+ 		missionClass=39,
+ 		mapConditionId=1124003,
+ 		randomWeight=100,
+ 		name=61124003,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1504] =
+{
+ 		id=1504,
+ 		desc=31124004,
+ 		missionType=13,
+ 		missionClass=40,
+ 		mapConditionId=1124004,
+ 		randomWeight=100,
+ 		name=61124004,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1505] =
+{
+ 		id=1505,
+ 		desc=31125001,
+ 		missionType=13,
+ 		missionClass=41,
+ 		mapConditionId=1125001,
+ 		randomWeight=100,
+ 		name=61125001,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1506] =
+{
+ 		id=1506,
+ 		desc=31125002,
+ 		missionType=13,
+ 		missionClass=42,
+ 		mapConditionId=1125002,
+ 		randomWeight=100,
+ 		name=61125002,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1507] =
+{
+ 		id=1507,
+ 		desc=31125003,
+ 		missionType=13,
+ 		missionClass=43,
+ 		mapConditionId=1125003,
+ 		randomWeight=100,
+ 		name=61125003,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1508] =
+{
+ 		id=1508,
+ 		desc=31125004,
+ 		missionType=13,
+ 		missionClass=44,
+ 		mapConditionId=1125004,
+ 		randomWeight=100,
+ 		name=61125004,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1509] =
+{
+ 		id=1509,
+ 		desc=31126001,
+ 		missionType=13,
+ 		missionClass=45,
+ 		mapConditionId=1126001,
+ 		randomWeight=100,
+ 		name=61126001,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1510] =
+{
+ 		id=1510,
+ 		desc=31126002,
+ 		missionType=13,
+ 		missionClass=46,
+ 		mapConditionId=1126002,
+ 		randomWeight=100,
+ 		name=61126002,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1511] =
+{
+ 		id=1511,
+ 		desc=31126003,
+ 		missionType=13,
+ 		missionClass=47,
+ 		mapConditionId=1126003,
+ 		randomWeight=100,
+ 		name=61126003,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1512] =
+{
+ 		id=1512,
+ 		desc=31126004,
+ 		missionType=13,
+ 		missionClass=48,
+ 		mapConditionId=1126004,
+ 		randomWeight=100,
+ 		name=61126004,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1513] =
+{
+ 		id=1513,
+ 		desc=31126005,
+ 		missionType=13,
+ 		missionClass=49,
+ 		mapConditionId=1126005,
+ 		randomWeight=100,
+ 		name=61126005,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1514] =
+{
+ 		id=1514,
+ 		desc=31126006,
+ 		missionType=13,
+ 		missionClass=50,
+ 		mapConditionId=1126006,
+ 		randomWeight=100,
+ 		name=61126006,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1515] =
+{
+ 		id=1515,
+ 		desc=31126007,
+ 		missionType=13,
+ 		missionClass=51,
+ 		mapConditionId=1126007,
+ 		randomWeight=100,
+ 		name=61126007,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1516] =
+{
+ 		id=1516,
+ 		desc=31126008,
+ 		missionType=13,
+ 		missionClass=52,
+ 		mapConditionId=1126008,
+ 		randomWeight=100,
+ 		name=61126008,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1517] =
+{
+ 		id=1517,
+ 		desc=31127001,
+ 		missionType=13,
+ 		missionClass=53,
+ 		mapConditionId=1127001,
+ 		randomWeight=100,
+ 		name=61127001,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1518] =
+{
+ 		id=1518,
+ 		desc=31127002,
+ 		missionType=13,
+ 		missionClass=54,
+ 		mapConditionId=1127002,
+ 		randomWeight=100,
+ 		name=61127002,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1519] =
+{
+ 		id=1519,
+ 		desc=31127003,
+ 		missionType=13,
+ 		missionClass=55,
+ 		mapConditionId=1127003,
+ 		randomWeight=100,
+ 		name=61127003,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1520] =
+{
+ 		id=1520,
+ 		desc=31141001,
+ 		missionType=13,
+ 		missionClass=56,
+ 		mapConditionId=1141001,
+ 		randomWeight=75,
+ 		name=61141001,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1521] =
+{
+ 		id=1521,
+ 		desc=31141002,
+ 		missionType=13,
+ 		missionClass=57,
+ 		mapConditionId=1141002,
+ 		randomWeight=75,
+ 		name=61141002,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1522] =
+{
+ 		id=1522,
+ 		desc=31141003,
+ 		missionType=13,
+ 		missionClass=58,
+ 		mapConditionId=1141003,
+ 		randomWeight=75,
+ 		name=61141003,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1523] =
+{
+ 		id=1523,
+ 		desc=31141004,
+ 		missionType=13,
+ 		missionClass=59,
+ 		mapConditionId=1141004,
+ 		randomWeight=75,
+ 		name=61141004,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1524] =
+{
+ 		id=1524,
+ 		desc=31142001,
+ 		missionType=13,
+ 		missionClass=60,
+ 		mapConditionId=1142001,
+ 		randomWeight=75,
+ 		name=61142001,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1525] =
+{
+ 		id=1525,
+ 		desc=31142002,
+ 		missionType=13,
+ 		missionClass=61,
+ 		mapConditionId=1142002,
+ 		randomWeight=75,
+ 		name=61142002,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1526] =
+{
+ 		id=1526,
+ 		desc=31142003,
+ 		missionType=13,
+ 		missionClass=62,
+ 		mapConditionId=1142003,
+ 		randomWeight=75,
+ 		name=61142003,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1527] =
+{
+ 		id=1527,
+ 		desc=31143001,
+ 		missionType=13,
+ 		missionClass=63,
+ 		mapConditionId=1143001,
+ 		randomWeight=75,
+ 		name=61143001,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1528] =
+{
+ 		id=1528,
+ 		desc=31145001,
+ 		missionType=13,
+ 		missionClass=64,
+ 		mapConditionId=1145001,
+ 		randomWeight=75,
+ 		name=61145001,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1529] =
+{
+ 		id=1529,
+ 		desc=31146001,
+ 		missionType=13,
+ 		missionClass=65,
+ 		mapConditionId=1146001,
+ 		randomWeight=75,
+ 		name=61146001,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1530] =
+{
+ 		id=1530,
+ 		desc=31146002,
+ 		missionType=13,
+ 		missionClass=66,
+ 		mapConditionId=1146002,
+ 		randomWeight=75,
+ 		name=61146002,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1531] =
+{
+ 		id=1531,
+ 		desc=31147001,
+ 		missionType=13,
+ 		missionClass=67,
+ 		mapConditionId=1147001,
+ 		randomWeight=75,
+ 		name=61147001,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1532] =
+{
+ 		id=1532,
+ 		desc=31147002,
+ 		missionType=13,
+ 		missionClass=68,
+ 		mapConditionId=1147002,
+ 		randomWeight=75,
+ 		name=61147002,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1533] =
+{
+ 		id=1533,
+ 		desc=31128001,
+ 		missionType=13,
+ 		missionClass=69,
+ 		mapConditionId=1128001,
+ 		randomWeight=100,
+ 		name=61128001,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1534] =
+{
+ 		id=1534,
+ 		desc=31128002,
+ 		missionType=13,
+ 		missionClass=70,
+ 		mapConditionId=1128002,
+ 		randomWeight=100,
+ 		name=61128002,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1535] =
+{
+ 		id=1535,
+ 		desc=31128003,
+ 		missionType=13,
+ 		missionClass=71,
+ 		mapConditionId=1128003,
+ 		randomWeight=100,
+ 		name=61128003,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1536] =
+{
+ 		id=1536,
+ 		desc=31128004,
+ 		missionType=13,
+ 		missionClass=72,
+ 		mapConditionId=1128004,
+ 		randomWeight=100,
+ 		name=61128004,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1537] =
+{
+ 		id=1537,
+ 		desc=31128005,
+ 		missionType=13,
+ 		missionClass=73,
+ 		mapConditionId=1128005,
+ 		randomWeight=100,
+ 		name=61128005,
+ 		quality=2,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1538] =
+{
+ 		id=1538,
+ 		desc=31148001,
+ 		missionType=13,
+ 		missionClass=74,
+ 		mapConditionId=1148001,
+ 		randomWeight=75,
+ 		name=61148001,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1539] =
+{
+ 		id=1539,
+ 		desc=31148002,
+ 		missionType=13,
+ 		missionClass=75,
+ 		mapConditionId=1148002,
+ 		randomWeight=75,
+ 		name=61148002,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1540] =
+{
+ 		id=1540,
+ 		desc=31148003,
+ 		missionType=13,
+ 		missionClass=76,
+ 		mapConditionId=1148003,
+ 		randomWeight=75,
+ 		name=61148003,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1541] =
+{
+ 		id=1541,
+ 		desc=31148004,
+ 		missionType=13,
+ 		missionClass=77,
+ 		mapConditionId=1148004,
+ 		randomWeight=75,
+ 		name=61148004,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+},
+[1542] =
+{
+ 		id=1542,
+ 		desc=31148005,
+ 		missionType=13,
+ 		missionClass=78,
+ 		mapConditionId=1148005,
+ 		randomWeight=75,
+ 		name=61148005,
+ 		quality=4,
+ 	image="UI/SpritePics/Item/ui_icon_item_1005"
+}
+}
+
+return {title=title, value=value}

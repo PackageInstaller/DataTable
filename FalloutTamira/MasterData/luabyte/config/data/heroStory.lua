@@ -1,0 +1,18705 @@
+local title = {
+	id = 0,
+	chatType = 0,
+	smallPicture = "",
+	chatName = 0,
+	chatNameEn = 0,
+	hero = 0,
+	heroName = 0,
+	story = 0,
+	group = 0,
+	nextGroup = {},
+	type = 0,
+	speaker = 0,
+	words = {},
+	lotWords = {},
+	times = 0,
+	voice = "",
+	video = "",
+	picture = "",
+	stageId = 0,
+	stageReward = 0,
+	upFavorValue = {},
+	feelingValue = 0
+}
+
+local value = {
+[1359] =
+{
+ 		id=1359,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001314},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1360] =
+{
+ 		id=1360,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001316,47001317},
+ 		lotWords={47001316,47001317},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1361] =
+{
+ 		id=1361,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1362] =
+{
+ 		id=1362,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1363] =
+{
+ 		id=1363,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001318},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1364] =
+{
+ 		id=1364,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001319},
+ 		times=2500,
+ 	feelingValue=0
+},
+[1365] =
+{
+ 		id=1365,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001320},
+ 		times=2350,
+ 	feelingValue=0
+},
+[1366] =
+{
+ 		id=1366,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=8,
+ 		nextGroup={11,11},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001322,47001323},
+ 		lotWords={47001322,47001323},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1367] =
+{
+ 		id=1367,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1368] =
+{
+ 		id=1368,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1369] =
+{
+ 		id=1369,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001324},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1370] =
+{
+ 		id=1370,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001325},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1371] =
+{
+ 		id=1371,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=13,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001327},
+ 		lotWords={47001327},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1372] =
+{
+ 		id=1372,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=14,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1373] =
+{
+ 		id=1373,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001328},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1374] =
+{
+ 		id=1374,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=16,
+ 		nextGroup={17},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001329},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1375] =
+{
+ 		id=1375,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=17,
+ 		nextGroup={20,20},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001331,47001332},
+ 		lotWords={47001331,47001332},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1376] =
+{
+ 		id=1376,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=18,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1377] =
+{
+ 		id=1377,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=19,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1378] =
+{
+ 		id=1378,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001333},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1379] =
+{
+ 		id=1379,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=21,
+ 		nextGroup={22},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001334},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1380] =
+{
+ 		id=1380,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=201,
+ 		group=22,
+ 		type=6,
+ 	feelingValue=0
+},
+[1381] =
+{
+ 		id=1381,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=202,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001336},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1382] =
+{
+ 		id=1382,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=202,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001338,47001339},
+ 		lotWords={47001338,47001339},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1383] =
+{
+ 		id=1383,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=202,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1384] =
+{
+ 		id=1384,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=202,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1385] =
+{
+ 		id=1385,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=202,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001340},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1386] =
+{
+ 		id=1386,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=202,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001341},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1387] =
+{
+ 		id=1387,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=202,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001342},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1388] =
+{
+ 		id=1388,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=202,
+ 		group=8,
+ 		nextGroup={11,11},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001344,47001345},
+ 		lotWords={47001344,47001345},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1389] =
+{
+ 		id=1389,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=202,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1390] =
+{
+ 		id=1390,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=202,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1391] =
+{
+ 		id=1391,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=202,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001346},
+ 		times=500,
+ 	feelingValue=0
+},
+[1392] =
+{
+ 		id=1392,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=202,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001347},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1393] =
+{
+ 		id=1393,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=202,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001348},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1394] =
+{
+ 		id=1394,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=202,
+ 		group=14,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001350},
+ 		lotWords={47001350},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1395] =
+{
+ 		id=1395,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=202,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1396] =
+{
+ 		id=1396,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=202,
+ 		group=16,
+ 		type=6,
+ 	feelingValue=0
+},
+[1397] =
+{
+ 		id=1397,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001352},
+ 		times=850,
+ 	feelingValue=0
+},
+[1398] =
+{
+ 		id=1398,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001354,47001355},
+ 		lotWords={47001354,47001355},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1399] =
+{
+ 		id=1399,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1400] =
+{
+ 		id=1400,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1401] =
+{
+ 		id=1401,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001356},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1402] =
+{
+ 		id=1402,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001357},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1403] =
+{
+ 		id=1403,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=7,
+ 		nextGroup={10,10},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001359,47001360},
+ 		lotWords={47001359,47001360},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1404] =
+{
+ 		id=1404,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=8,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1405] =
+{
+ 		id=1405,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1406] =
+{
+ 		id=1406,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001361},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1407] =
+{
+ 		id=1407,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001362},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1408] =
+{
+ 		id=1408,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001363},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1409] =
+{
+ 		id=1409,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001364},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1410] =
+{
+ 		id=1410,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=14,
+ 		nextGroup={17,17},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001366,47001367},
+ 		lotWords={47001366,47001367},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1411] =
+{
+ 		id=1411,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=15,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1412] =
+{
+ 		id=1412,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1413] =
+{
+ 		id=1413,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001368},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1414] =
+{
+ 		id=1414,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001369},
+ 		times=850,
+ 	feelingValue=0
+},
+[1415] =
+{
+ 		id=1415,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001370},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1416] =
+{
+ 		id=1416,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=20,
+ 		nextGroup={23,23},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001372,47001373},
+ 		lotWords={47001372,47001373},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1417] =
+{
+ 		id=1417,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=21,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1418] =
+{
+ 		id=1418,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=22,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1419] =
+{
+ 		id=1419,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=23,
+ 		nextGroup={24},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001374},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1420] =
+{
+ 		id=1420,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=203,
+ 		group=24,
+ 		type=6,
+ 	feelingValue=0
+},
+[1421] =
+{
+ 		id=1421,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001376},
+ 		times=700,
+ 	feelingValue=0
+},
+[1422] =
+{
+ 		id=1422,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001377},
+ 		times=700,
+ 	feelingValue=0
+},
+[1423] =
+{
+ 		id=1423,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001378},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1424] =
+{
+ 		id=1424,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001379},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1425] =
+{
+ 		id=1425,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=5,
+ 		nextGroup={8,8},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001381,47001382},
+ 		lotWords={47001381,47001382},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1426] =
+{
+ 		id=1426,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=6,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1427] =
+{
+ 		id=1427,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=7,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1428] =
+{
+ 		id=1428,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001383},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1429] =
+{
+ 		id=1429,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001384},
+ 		times=850,
+ 	feelingValue=0
+},
+[1430] =
+{
+ 		id=1430,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001385},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1431] =
+{
+ 		id=1431,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=11,
+ 		nextGroup={14,14},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001387,47001388},
+ 		lotWords={47001387,47001388},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1432] =
+{
+ 		id=1432,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=12,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1433] =
+{
+ 		id=1433,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=13,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1434] =
+{
+ 		id=1434,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001389},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1435] =
+{
+ 		id=1435,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001390},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1436] =
+{
+ 		id=1436,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=16,
+ 		nextGroup={17},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001391},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1437] =
+{
+ 		id=1437,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=17,
+ 		nextGroup={20,20},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001393,47001394},
+ 		lotWords={47001393,47001394},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1438] =
+{
+ 		id=1438,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=18,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1439] =
+{
+ 		id=1439,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=19,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1440] =
+{
+ 		id=1440,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001395},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1441] =
+{
+ 		id=1441,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=21,
+ 		nextGroup={22},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001396},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1442] =
+{
+ 		id=1442,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=204,
+ 		group=22,
+ 		type=6,
+ 	feelingValue=0
+},
+[1443] =
+{
+ 		id=1443,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001398},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1444] =
+{
+ 		id=1444,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001399},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1445] =
+{
+ 		id=1445,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=3,
+ 		nextGroup={6,6},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001401,47001402},
+ 		lotWords={47001401,47001402},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1446] =
+{
+ 		id=1446,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1447] =
+{
+ 		id=1447,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1448] =
+{
+ 		id=1448,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001403},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1449] =
+{
+ 		id=1449,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001404},
+ 		times=2350,
+ 	feelingValue=0
+},
+[1450] =
+{
+ 		id=1450,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001405},
+ 		times=550,
+ 	feelingValue=0
+},
+[1451] =
+{
+ 		id=1451,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001406},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1452] =
+{
+ 		id=1452,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=10,
+ 		nextGroup={13,13},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001408,47001409},
+ 		lotWords={47001408,47001409},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1453] =
+{
+ 		id=1453,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1454] =
+{
+ 		id=1454,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=12,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1455] =
+{
+ 		id=1455,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001410},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1456] =
+{
+ 		id=1456,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001411},
+ 		times=500,
+ 	feelingValue=0
+},
+[1457] =
+{
+ 		id=1457,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001412},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1458] =
+{
+ 		id=1458,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=16,
+ 		nextGroup={19,19},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001414,47001415},
+ 		lotWords={47001414,47001415},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1459] =
+{
+ 		id=1459,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1460] =
+{
+ 		id=1460,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=18,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1461] =
+{
+ 		id=1461,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001416},
+ 		times=550,
+ 	feelingValue=0
+},
+[1462] =
+{
+ 		id=1462,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001417},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1463] =
+{
+ 		id=1463,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=21,
+ 		nextGroup={22},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001418},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1464] =
+{
+ 		id=1464,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=22,
+ 		nextGroup={24},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001420},
+ 		lotWords={47001420},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1465] =
+{
+ 		id=1465,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=23,
+ 		nextGroup={24},
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1466] =
+{
+ 		id=1466,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=205,
+ 		group=24,
+ 		type=6,
+ 	feelingValue=0
+},
+[1467] =
+{
+ 		id=1467,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001422},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1468] =
+{
+ 		id=1468,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001424,47001425},
+ 		lotWords={47001424,47001425},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1469] =
+{
+ 		id=1469,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1470] =
+{
+ 		id=1470,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1471] =
+{
+ 		id=1471,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001426},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1472] =
+{
+ 		id=1472,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001427},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1473] =
+{
+ 		id=1473,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001428},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1474] =
+{
+ 		id=1474,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001429},
+ 		times=700,
+ 	feelingValue=0
+},
+[1475] =
+{
+ 		id=1475,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=9,
+ 		nextGroup={12,12},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001431,47001432},
+ 		lotWords={47001431,47001432},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1476] =
+{
+ 		id=1476,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1477] =
+{
+ 		id=1477,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1478] =
+{
+ 		id=1478,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001433},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1479] =
+{
+ 		id=1479,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001434},
+ 		times=550,
+ 	feelingValue=0
+},
+[1480] =
+{
+ 		id=1480,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=14,
+ 		nextGroup={17,17},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001436,47001437},
+ 		lotWords={47001436,47001437},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1481] =
+{
+ 		id=1481,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=15,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1482] =
+{
+ 		id=1482,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1483] =
+{
+ 		id=1483,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001438},
+ 		times=500,
+ 	feelingValue=0
+},
+[1484] =
+{
+ 		id=1484,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001439},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1485] =
+{
+ 		id=1485,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=207,
+ 		group=19,
+ 		type=6,
+ 	feelingValue=0
+},
+[1486] =
+{
+ 		id=1486,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001441},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1487] =
+{
+ 		id=1487,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001443,47001444},
+ 		lotWords={47001443,47001444},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1488] =
+{
+ 		id=1488,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1489] =
+{
+ 		id=1489,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1490] =
+{
+ 		id=1490,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001445},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1491] =
+{
+ 		id=1491,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001446},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1492] =
+{
+ 		id=1492,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=7,
+ 		nextGroup={10,10},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001448,47001449},
+ 		lotWords={47001448,47001449},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1493] =
+{
+ 		id=1493,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=8,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1494] =
+{
+ 		id=1494,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1495] =
+{
+ 		id=1495,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001450},
+ 		times=550,
+ 	feelingValue=0
+},
+[1496] =
+{
+ 		id=1496,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001451},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1497] =
+{
+ 		id=1497,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001452},
+ 		times=700,
+ 	feelingValue=0
+},
+[1498] =
+{
+ 		id=1498,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=13,
+ 		nextGroup={16,16},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001454,47001455},
+ 		lotWords={47001454,47001455},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1499] =
+{
+ 		id=1499,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=14,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1500] =
+{
+ 		id=1500,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=15,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1501] =
+{
+ 		id=1501,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=16,
+ 		nextGroup={17},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001456},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1502] =
+{
+ 		id=1502,
+ 		chatType=1,
+ 		chatName=8120005,
+ 		hero=120005,
+ 		heroName=8120005,
+ 		story=208,
+ 		group=17,
+ 		type=6,
+ 	feelingValue=0
+},
+[1503] =
+{
+ 		id=1503,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001458},
+ 		times=2200,
+ 	feelingValue=0
+},
+[1504] =
+{
+ 		id=1504,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001459},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1505] =
+{
+ 		id=1505,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001460},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1506] =
+{
+ 		id=1506,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=4,
+ 		nextGroup={7,7},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001462,47001463},
+ 		lotWords={47001462,47001463},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1507] =
+{
+ 		id=1507,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1508] =
+{
+ 		id=1508,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=6,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1509] =
+{
+ 		id=1509,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001464},
+ 		times=2650,
+ 	feelingValue=0
+},
+[1510] =
+{
+ 		id=1510,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001465},
+ 		times=2200,
+ 	feelingValue=0
+},
+[1511] =
+{
+ 		id=1511,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001466},
+ 		times=2200,
+ 	feelingValue=0
+},
+[1512] =
+{
+ 		id=1512,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001467},
+ 		times=2350,
+ 	feelingValue=0
+},
+[1513] =
+{
+ 		id=1513,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=11,
+ 		nextGroup={14,14},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001469,47001470},
+ 		lotWords={47001469,47001470},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1514] =
+{
+ 		id=1514,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=12,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1515] =
+{
+ 		id=1515,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=13,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1516] =
+{
+ 		id=1516,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001471},
+ 		times=2350,
+ 	feelingValue=0
+},
+[1517] =
+{
+ 		id=1517,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001472},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1518] =
+{
+ 		id=1518,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=16,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001474},
+ 		lotWords={47001474},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1519] =
+{
+ 		id=1519,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1520] =
+{
+ 		id=1520,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=209,
+ 		group=18,
+ 		type=6,
+ 	feelingValue=0
+},
+[1567] =
+{
+ 		id=1567,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001522},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1568] =
+{
+ 		id=1568,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001523},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1569] =
+{
+ 		id=1569,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001524},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1570] =
+{
+ 		id=1570,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=4,
+ 		nextGroup={7,7},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001526,47001527},
+ 		lotWords={47001526,47001527},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1571] =
+{
+ 		id=1571,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1572] =
+{
+ 		id=1572,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=6,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1573] =
+{
+ 		id=1573,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001528},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1574] =
+{
+ 		id=1574,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001529},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1575] =
+{
+ 		id=1575,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001530},
+ 		times=500,
+ 	feelingValue=0
+},
+[1576] =
+{
+ 		id=1576,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=10,
+ 		nextGroup={13,13},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001532,47001533},
+ 		lotWords={47001532,47001533},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1577] =
+{
+ 		id=1577,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1578] =
+{
+ 		id=1578,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=12,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1579] =
+{
+ 		id=1579,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001534},
+ 		times=850,
+ 	feelingValue=0
+},
+[1580] =
+{
+ 		id=1580,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001535},
+ 		times=700,
+ 	feelingValue=0
+},
+[1581] =
+{
+ 		id=1581,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001536},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1582] =
+{
+ 		id=1582,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=16,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001538},
+ 		lotWords={47001538},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1583] =
+{
+ 		id=1583,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1584] =
+{
+ 		id=1584,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=4,
+ 		speaker=1,
+ 		words={47001539},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110002_cry1",
+ 	feelingValue=0
+},
+[1585] =
+{
+ 		id=1585,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=213,
+ 		group=19,
+ 		type=6,
+ 	feelingValue=0
+},
+[1586] =
+{
+ 		id=1586,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=214,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001541},
+ 		times=2650,
+ 	feelingValue=0
+},
+[1587] =
+{
+ 		id=1587,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=214,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001542},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1588] =
+{
+ 		id=1588,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=214,
+ 		group=3,
+ 		nextGroup={6,6},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001544,47001545},
+ 		lotWords={47001544,47001545},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1589] =
+{
+ 		id=1589,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=214,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1590] =
+{
+ 		id=1590,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=214,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1591] =
+{
+ 		id=1591,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=214,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001546},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1592] =
+{
+ 		id=1592,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=214,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001547},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1593] =
+{
+ 		id=1593,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=214,
+ 		group=8,
+ 		nextGroup={11,11},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001549,47001550},
+ 		lotWords={47001549,47001550},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1594] =
+{
+ 		id=1594,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=214,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1595] =
+{
+ 		id=1595,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=214,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1596] =
+{
+ 		id=1596,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=214,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001551},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1597] =
+{
+ 		id=1597,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=214,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001552},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1598] =
+{
+ 		id=1598,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=214,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001553},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1599] =
+{
+ 		id=1599,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=214,
+ 		group=14,
+ 		type=6,
+ 	feelingValue=0
+},
+[1600] =
+{
+ 		id=1600,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001555},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1601] =
+{
+ 		id=1601,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001557,47001558},
+ 		lotWords={47001557,47001558},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1602] =
+{
+ 		id=1602,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1603] =
+{
+ 		id=1603,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1604] =
+{
+ 		id=1604,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001559},
+ 		times=500,
+ 	feelingValue=0
+},
+[1605] =
+{
+ 		id=1605,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001560},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1606] =
+{
+ 		id=1606,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=7,
+ 		nextGroup={10,10},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001562,47001563},
+ 		lotWords={47001562,47001563},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1607] =
+{
+ 		id=1607,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=8,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1608] =
+{
+ 		id=1608,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1609] =
+{
+ 		id=1609,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001564},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1610] =
+{
+ 		id=1610,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001565},
+ 		times=2500,
+ 	feelingValue=0
+},
+[1611] =
+{
+ 		id=1611,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=12,
+ 		nextGroup={15,15},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001567,47001568},
+ 		lotWords={47001567,47001568},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1612] =
+{
+ 		id=1612,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=13,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1613] =
+{
+ 		id=1613,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=14,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1614] =
+{
+ 		id=1614,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001569},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1615] =
+{
+ 		id=1615,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=16,
+ 		nextGroup={17},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001570},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1616] =
+{
+ 		id=1616,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001571},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1617] =
+{
+ 		id=1617,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=18,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001573},
+ 		lotWords={47001573},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1618] =
+{
+ 		id=1618,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=19,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1619] =
+{
+ 		id=1619,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001574},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1620] =
+{
+ 		id=1620,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=216,
+ 		group=21,
+ 		type=6,
+ 	feelingValue=0
+},
+[1621] =
+{
+ 		id=1621,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001576},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1622] =
+{
+ 		id=1622,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001578,47001579},
+ 		lotWords={47001578,47001579},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1623] =
+{
+ 		id=1623,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1624] =
+{
+ 		id=1624,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1625] =
+{
+ 		id=1625,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001580},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1626] =
+{
+ 		id=1626,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001581},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1627] =
+{
+ 		id=1627,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=7,
+ 		nextGroup={10,10},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001583,47001584},
+ 		lotWords={47001583,47001584},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1628] =
+{
+ 		id=1628,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=8,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1629] =
+{
+ 		id=1629,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1630] =
+{
+ 		id=1630,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001585},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1631] =
+{
+ 		id=1631,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001586},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1632] =
+{
+ 		id=1632,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001587},
+ 		times=2650,
+ 	feelingValue=0
+},
+[1633] =
+{
+ 		id=1633,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=13,
+ 		nextGroup={16,16},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001589,47001590},
+ 		lotWords={47001589,47001590},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1634] =
+{
+ 		id=1634,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=14,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1635] =
+{
+ 		id=1635,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=15,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1636] =
+{
+ 		id=1636,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=16,
+ 		nextGroup={17},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001591},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1637] =
+{
+ 		id=1637,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001592},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1638] =
+{
+ 		id=1638,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=18,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001594},
+ 		lotWords={47001594},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1639] =
+{
+ 		id=1639,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1640] =
+{
+ 		id=1640,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=218,
+ 		group=20,
+ 		type=6,
+ 	feelingValue=0
+},
+[1641] =
+{
+ 		id=1641,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001596},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1642] =
+{
+ 		id=1642,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001598,47001599},
+ 		lotWords={47001598,47001599},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1643] =
+{
+ 		id=1643,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1644] =
+{
+ 		id=1644,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1645] =
+{
+ 		id=1645,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001600},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1646] =
+{
+ 		id=1646,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001601},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1647] =
+{
+ 		id=1647,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001602},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1648] =
+{
+ 		id=1648,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001603},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1649] =
+{
+ 		id=1649,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=9,
+ 		nextGroup={12,12},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001605,47001606},
+ 		lotWords={47001605,47001606},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1650] =
+{
+ 		id=1650,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1651] =
+{
+ 		id=1651,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1652] =
+{
+ 		id=1652,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001607},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1653] =
+{
+ 		id=1653,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001608},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1654] =
+{
+ 		id=1654,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001609},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1655] =
+{
+ 		id=1655,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=15,
+ 		nextGroup={17},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001611},
+ 		lotWords={47001611},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1656] =
+{
+ 		id=1656,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=16,
+ 		nextGroup={17},
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1657] =
+{
+ 		id=1657,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=219,
+ 		group=17,
+ 		type=6,
+ 	feelingValue=0
+},
+[1658] =
+{
+ 		id=1658,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001613},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1659] =
+{
+ 		id=1659,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001614},
+ 		times=550,
+ 	feelingValue=0
+},
+[1660] =
+{
+ 		id=1660,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=3,
+ 		nextGroup={6,6},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001616,47001617},
+ 		lotWords={47001616,47001617},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1661] =
+{
+ 		id=1661,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1662] =
+{
+ 		id=1662,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1663] =
+{
+ 		id=1663,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001618},
+ 		times=500,
+ 	feelingValue=0
+},
+[1664] =
+{
+ 		id=1664,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001619},
+ 		times=850,
+ 	feelingValue=0
+},
+[1665] =
+{
+ 		id=1665,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001620},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1666] =
+{
+ 		id=1666,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=9,
+ 		nextGroup={12,12},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001622,47001623},
+ 		lotWords={47001622,47001623},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1667] =
+{
+ 		id=1667,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1668] =
+{
+ 		id=1668,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1669] =
+{
+ 		id=1669,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001624},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1670] =
+{
+ 		id=1670,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001625},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1671] =
+{
+ 		id=1671,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001626},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1672] =
+{
+ 		id=1672,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=15,
+ 		nextGroup={18,18},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001628,47001629},
+ 		lotWords={47001628,47001629},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1673] =
+{
+ 		id=1673,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1674] =
+{
+ 		id=1674,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1675] =
+{
+ 		id=1675,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001630},
+ 		times=500,
+ 	feelingValue=0
+},
+[1676] =
+{
+ 		id=1676,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001631},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1677] =
+{
+ 		id=1677,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=221,
+ 		group=20,
+ 		type=6,
+ 	feelingValue=0
+},
+[1678] =
+{
+ 		id=1678,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001633},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1679] =
+{
+ 		id=1679,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001635,47001636},
+ 		lotWords={47001635,47001636},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1680] =
+{
+ 		id=1680,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1681] =
+{
+ 		id=1681,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1682] =
+{
+ 		id=1682,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001637},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1683] =
+{
+ 		id=1683,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001638},
+ 		times=550,
+ 	feelingValue=0
+},
+[1684] =
+{
+ 		id=1684,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001639},
+ 		times=2200,
+ 	feelingValue=0
+},
+[1685] =
+{
+ 		id=1685,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=8,
+ 		nextGroup={11,11},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001641,47001642},
+ 		lotWords={47001641,47001642},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1686] =
+{
+ 		id=1686,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1687] =
+{
+ 		id=1687,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1688] =
+{
+ 		id=1688,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001643},
+ 		times=500,
+ 	feelingValue=0
+},
+[1689] =
+{
+ 		id=1689,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001644},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1690] =
+{
+ 		id=1690,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001645},
+ 		times=2350,
+ 	feelingValue=0
+},
+[1691] =
+{
+ 		id=1691,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=14,
+ 		nextGroup={17,17},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001647,47001648},
+ 		lotWords={47001647,47001648},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1692] =
+{
+ 		id=1692,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=15,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1693] =
+{
+ 		id=1693,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1694] =
+{
+ 		id=1694,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001649},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1695] =
+{
+ 		id=1695,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001650},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1696] =
+{
+ 		id=1696,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001651},
+ 		times=550,
+ 	feelingValue=0
+},
+[1697] =
+{
+ 		id=1697,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=223,
+ 		group=20,
+ 		type=6,
+ 	feelingValue=0
+},
+[1698] =
+{
+ 		id=1698,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001653},
+ 		times=850,
+ 	feelingValue=0
+},
+[1699] =
+{
+ 		id=1699,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001654},
+ 		times=2200,
+ 	feelingValue=0
+},
+[1700] =
+{
+ 		id=1700,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=3,
+ 		nextGroup={6,6},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001656,47001657},
+ 		lotWords={47001656,47001657},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1701] =
+{
+ 		id=1701,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1702] =
+{
+ 		id=1702,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1703] =
+{
+ 		id=1703,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001658},
+ 		times=2650,
+ 	feelingValue=0
+},
+[1704] =
+{
+ 		id=1704,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001659},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1705] =
+{
+ 		id=1705,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=8,
+ 		nextGroup={11,11},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001661,47001662},
+ 		lotWords={47001661,47001662},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1706] =
+{
+ 		id=1706,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1707] =
+{
+ 		id=1707,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1708] =
+{
+ 		id=1708,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001663},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1709] =
+{
+ 		id=1709,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001664},
+ 		times=2350,
+ 	feelingValue=0
+},
+[1710] =
+{
+ 		id=1710,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=13,
+ 		nextGroup={16,16},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001666,47001667},
+ 		lotWords={47001666,47001667},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1711] =
+{
+ 		id=1711,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=14,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1712] =
+{
+ 		id=1712,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=15,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1713] =
+{
+ 		id=1713,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=16,
+ 		nextGroup={17},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001668},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1714] =
+{
+ 		id=1714,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001669},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1715] =
+{
+ 		id=1715,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001670},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1716] =
+{
+ 		id=1716,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001671},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1717] =
+{
+ 		id=1717,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=224,
+ 		group=20,
+ 		type=6,
+ 	feelingValue=0
+},
+[1718] =
+{
+ 		id=1718,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001673},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1719] =
+{
+ 		id=1719,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001675,47001676},
+ 		lotWords={47001675,47001676},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1720] =
+{
+ 		id=1720,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1721] =
+{
+ 		id=1721,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1722] =
+{
+ 		id=1722,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001677},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1723] =
+{
+ 		id=1723,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001678},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1724] =
+{
+ 		id=1724,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001679},
+ 		times=500,
+ 	feelingValue=0
+},
+[1725] =
+{
+ 		id=1725,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001680},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1726] =
+{
+ 		id=1726,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=9,
+ 		nextGroup={12,12},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001682,47001683},
+ 		lotWords={47001682,47001683},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1727] =
+{
+ 		id=1727,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1728] =
+{
+ 		id=1728,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1729] =
+{
+ 		id=1729,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001684},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1730] =
+{
+ 		id=1730,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001685},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1731] =
+{
+ 		id=1731,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=14,
+ 		nextGroup={17,17},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001687,47001688},
+ 		lotWords={47001687,47001688},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1732] =
+{
+ 		id=1732,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=15,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1733] =
+{
+ 		id=1733,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1734] =
+{
+ 		id=1734,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001689},
+ 		times=550,
+ 	feelingValue=0
+},
+[1735] =
+{
+ 		id=1735,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001690},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1736] =
+{
+ 		id=1736,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001691},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1737] =
+{
+ 		id=1737,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=225,
+ 		group=20,
+ 		type=6,
+ 	feelingValue=0
+},
+[1738] =
+{
+ 		id=1738,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001693},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1739] =
+{
+ 		id=1739,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001694},
+ 		times=2350,
+ 	feelingValue=0
+},
+[1740] =
+{
+ 		id=1740,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=3,
+ 		nextGroup={6,6},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001696,47001697},
+ 		lotWords={47001696,47001697},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1741] =
+{
+ 		id=1741,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1742] =
+{
+ 		id=1742,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1743] =
+{
+ 		id=1743,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001698},
+ 		times=2200,
+ 	feelingValue=0
+},
+[1744] =
+{
+ 		id=1744,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001699},
+ 		times=550,
+ 	feelingValue=0
+},
+[1745] =
+{
+ 		id=1745,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001700},
+ 		times=700,
+ 	feelingValue=0
+},
+[1746] =
+{
+ 		id=1746,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=9,
+ 		nextGroup={12,12},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001702,47001703},
+ 		lotWords={47001702,47001703},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1747] =
+{
+ 		id=1747,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1748] =
+{
+ 		id=1748,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1749] =
+{
+ 		id=1749,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001704},
+ 		times=700,
+ 	feelingValue=0
+},
+[1750] =
+{
+ 		id=1750,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001705},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1751] =
+{
+ 		id=1751,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001706},
+ 		times=550,
+ 	feelingValue=0
+},
+[1752] =
+{
+ 		id=1752,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=15,
+ 		nextGroup={18,18},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001708,47001709},
+ 		lotWords={47001708,47001709},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1753] =
+{
+ 		id=1753,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1754] =
+{
+ 		id=1754,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1755] =
+{
+ 		id=1755,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001710},
+ 		times=500,
+ 	feelingValue=0
+},
+[1756] =
+{
+ 		id=1756,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001711},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1757] =
+{
+ 		id=1757,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001712},
+ 		times=500,
+ 	feelingValue=0
+},
+[1758] =
+{
+ 		id=1758,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=21,
+ 		nextGroup={24,24},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001714,47001715},
+ 		lotWords={47001714,47001715},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1759] =
+{
+ 		id=1759,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=22,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1760] =
+{
+ 		id=1760,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=23,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1761] =
+{
+ 		id=1761,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=24,
+ 		nextGroup={25},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001716},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1762] =
+{
+ 		id=1762,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=25,
+ 		nextGroup={26},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001717},
+ 		times=700,
+ 	feelingValue=0
+},
+[1763] =
+{
+ 		id=1763,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=26,
+ 		nextGroup={27},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001718},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1764] =
+{
+ 		id=1764,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=27,
+ 		nextGroup={29},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001720},
+ 		lotWords={47001720},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1765] =
+{
+ 		id=1765,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=28,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1766] =
+{
+ 		id=1766,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=226,
+ 		group=29,
+ 		type=6,
+ 	feelingValue=0
+},
+[1767] =
+{
+ 		id=1767,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001722},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1768] =
+{
+ 		id=1768,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001724,47001725},
+ 		lotWords={47001724,47001725},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1769] =
+{
+ 		id=1769,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1770] =
+{
+ 		id=1770,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1771] =
+{
+ 		id=1771,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001726},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1772] =
+{
+ 		id=1772,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001727},
+ 		times=700,
+ 	feelingValue=0
+},
+[1773] =
+{
+ 		id=1773,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001728},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1774] =
+{
+ 		id=1774,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=4,
+ 		speaker=1,
+ 		words={47001729},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110005_smile1",
+ 	feelingValue=0
+},
+[1775] =
+{
+ 		id=1775,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=9,
+ 		nextGroup={12,12},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001731,47001732},
+ 		lotWords={47001731,47001732},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1776] =
+{
+ 		id=1776,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1777] =
+{
+ 		id=1777,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1778] =
+{
+ 		id=1778,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001733},
+ 		times=550,
+ 	feelingValue=0
+},
+[1779] =
+{
+ 		id=1779,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001734},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1780] =
+{
+ 		id=1780,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001735},
+ 		times=700,
+ 	feelingValue=0
+},
+[1781] =
+{
+ 		id=1781,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=15,
+ 		nextGroup={18,18},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001737,47001738},
+ 		lotWords={47001737,47001738},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1782] =
+{
+ 		id=1782,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1783] =
+{
+ 		id=1783,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1784] =
+{
+ 		id=1784,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001739},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1785] =
+{
+ 		id=1785,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001740},
+ 		times=550,
+ 	feelingValue=0
+},
+[1786] =
+{
+ 		id=1786,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=4,
+ 		speaker=1,
+ 		words={47001741},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110005_laugh1",
+ 	feelingValue=0
+},
+[1787] =
+{
+ 		id=1787,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=227,
+ 		group=21,
+ 		type=6,
+ 	feelingValue=0
+},
+[1788] =
+{
+ 		id=1788,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001743},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1789] =
+{
+ 		id=1789,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001744},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1790] =
+{
+ 		id=1790,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=3,
+ 		nextGroup={6,6},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001746,47001747},
+ 		lotWords={47001746,47001747},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1791] =
+{
+ 		id=1791,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1792] =
+{
+ 		id=1792,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1793] =
+{
+ 		id=1793,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001748},
+ 		times=2200,
+ 	feelingValue=0
+},
+[1794] =
+{
+ 		id=1794,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001749},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1795] =
+{
+ 		id=1795,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001750},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1796] =
+{
+ 		id=1796,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001751},
+ 		times=2500,
+ 	feelingValue=0
+},
+[1797] =
+{
+ 		id=1797,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001752},
+ 		times=500,
+ 	feelingValue=0
+},
+[1798] =
+{
+ 		id=1798,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=11,
+ 		nextGroup={14,14},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001754,47001755},
+ 		lotWords={47001754,47001755},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1799] =
+{
+ 		id=1799,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=12,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1800] =
+{
+ 		id=1800,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=13,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1801] =
+{
+ 		id=1801,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001756},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1802] =
+{
+ 		id=1802,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001757},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1803] =
+{
+ 		id=1803,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=16,
+ 		nextGroup={19,19},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001759,47001760},
+ 		lotWords={47001759,47001760},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1804] =
+{
+ 		id=1804,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1805] =
+{
+ 		id=1805,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=18,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1806] =
+{
+ 		id=1806,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001761},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1807] =
+{
+ 		id=1807,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=228,
+ 		group=20,
+ 		type=6,
+ 	feelingValue=0
+},
+[1808] =
+{
+ 		id=1808,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001763},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1809] =
+{
+ 		id=1809,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001764},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1810] =
+{
+ 		id=1810,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=3,
+ 		nextGroup={6,6},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001766,47001767},
+ 		lotWords={47001766,47001767},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1811] =
+{
+ 		id=1811,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1812] =
+{
+ 		id=1812,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1813] =
+{
+ 		id=1813,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001768},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1814] =
+{
+ 		id=1814,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001769},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1815] =
+{
+ 		id=1815,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001770},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1816] =
+{
+ 		id=1816,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001771},
+ 		times=850,
+ 	feelingValue=0
+},
+[1817] =
+{
+ 		id=1817,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=10,
+ 		nextGroup={13,13},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001773,47001774},
+ 		lotWords={47001773,47001774},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1818] =
+{
+ 		id=1818,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1819] =
+{
+ 		id=1819,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=12,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1820] =
+{
+ 		id=1820,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001775},
+ 		times=500,
+ 	feelingValue=0
+},
+[1821] =
+{
+ 		id=1821,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001776},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1822] =
+{
+ 		id=1822,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=15,
+ 		nextGroup={18,18},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001778,47001779},
+ 		lotWords={47001778,47001779},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1823] =
+{
+ 		id=1823,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1824] =
+{
+ 		id=1824,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1825] =
+{
+ 		id=1825,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001780},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1826] =
+{
+ 		id=1826,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001781},
+ 		times=500,
+ 	feelingValue=0
+},
+[1827] =
+{
+ 		id=1827,
+ 		chatType=1,
+ 		chatName=8110011,
+ 		hero=110011,
+ 		heroName=8110011,
+ 		story=229,
+ 		group=20,
+ 		type=6,
+ 	feelingValue=0
+},
+[1828] =
+{
+ 		id=1828,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001783},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1829] =
+{
+ 		id=1829,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001784},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1830] =
+{
+ 		id=1830,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001785},
+ 		times=700,
+ 	feelingValue=0
+},
+[1831] =
+{
+ 		id=1831,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=4,
+ 		nextGroup={7,7},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001787,47001788},
+ 		lotWords={47001787,47001788},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1832] =
+{
+ 		id=1832,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1833] =
+{
+ 		id=1833,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=6,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1834] =
+{
+ 		id=1834,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001789},
+ 		times=550,
+ 	feelingValue=0
+},
+[1835] =
+{
+ 		id=1835,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001790},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1836] =
+{
+ 		id=1836,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001791},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1837] =
+{
+ 		id=1837,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=10,
+ 		nextGroup={13,13},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001793,47001794},
+ 		lotWords={47001793,47001794},
+ 	feelingValue=0
+},
+[1838] =
+{
+ 		id=1838,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 		times=500,
+ 	feelingValue=0
+},
+[1839] =
+{
+ 		id=1839,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=12,
+ 		type=1,
+ 		speaker=2,
+ 		times=850,
+ 	feelingValue=0
+},
+[1840] =
+{
+ 		id=1840,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001795},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1841] =
+{
+ 		id=1841,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001796},
+ 		times=850,
+ 	feelingValue=0
+},
+[1842] =
+{
+ 		id=1842,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001797},
+ 		times=700,
+ 	feelingValue=0
+},
+[1843] =
+{
+ 		id=1843,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=16,
+ 		nextGroup={19,19},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001799,47001800},
+ 		lotWords={47001799,47001800},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1844] =
+{
+ 		id=1844,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1845] =
+{
+ 		id=1845,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=18,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1846] =
+{
+ 		id=1846,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001801},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1847] =
+{
+ 		id=1847,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001802},
+ 		times=850,
+ 	feelingValue=0
+},
+[1848] =
+{
+ 		id=1848,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=231,
+ 		group=21,
+ 		type=6,
+ 	feelingValue=0
+},
+[1849] =
+{
+ 		id=1849,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001804},
+ 		times=2650,
+ 	feelingValue=0
+},
+[1850] =
+{
+ 		id=1850,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001805},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1851] =
+{
+ 		id=1851,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001806},
+ 		times=2500,
+ 	feelingValue=0
+},
+[1852] =
+{
+ 		id=1852,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=4,
+ 		nextGroup={7,7},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001808,47001809},
+ 		lotWords={47001808,47001809},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1853] =
+{
+ 		id=1853,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1854] =
+{
+ 		id=1854,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=6,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1855] =
+{
+ 		id=1855,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001810},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1856] =
+{
+ 		id=1856,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001811},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1857] =
+{
+ 		id=1857,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=9,
+ 		nextGroup={12,12},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001813,47001814},
+ 		lotWords={47001813,47001814},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1858] =
+{
+ 		id=1858,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1859] =
+{
+ 		id=1859,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1860] =
+{
+ 		id=1860,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001815},
+ 		times=550,
+ 	feelingValue=0
+},
+[1861] =
+{
+ 		id=1861,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001816},
+ 		times=850,
+ 	feelingValue=0
+},
+[1862] =
+{
+ 		id=1862,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=14,
+ 		nextGroup={17,17},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001818,47001819},
+ 		lotWords={47001818,47001819},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1863] =
+{
+ 		id=1863,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=15,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1864] =
+{
+ 		id=1864,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1865] =
+{
+ 		id=1865,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001820},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1866] =
+{
+ 		id=1866,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001821},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1867] =
+{
+ 		id=1867,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=233,
+ 		group=19,
+ 		type=6,
+ 	feelingValue=0
+},
+[1868] =
+{
+ 		id=1868,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001823},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1869] =
+{
+ 		id=1869,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001825,47001826},
+ 		lotWords={47001825,47001826},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1870] =
+{
+ 		id=1870,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1871] =
+{
+ 		id=1871,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1872] =
+{
+ 		id=1872,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001827},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1873] =
+{
+ 		id=1873,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001828},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1874] =
+{
+ 		id=1874,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001829},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1875] =
+{
+ 		id=1875,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=8,
+ 		nextGroup={11,11},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001831,47001832},
+ 		lotWords={47001831,47001832},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1876] =
+{
+ 		id=1876,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1877] =
+{
+ 		id=1877,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1878] =
+{
+ 		id=1878,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001833},
+ 		times=2350,
+ 	feelingValue=0
+},
+[1879] =
+{
+ 		id=1879,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001834},
+ 		times=2200,
+ 	feelingValue=0
+},
+[1880] =
+{
+ 		id=1880,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001835},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1881] =
+{
+ 		id=1881,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001836},
+ 		times=700,
+ 	feelingValue=0
+},
+[1882] =
+{
+ 		id=1882,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=15,
+ 		nextGroup={18,18},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001838,47001839},
+ 		lotWords={47001838,47001839},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1883] =
+{
+ 		id=1883,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1884] =
+{
+ 		id=1884,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1885] =
+{
+ 		id=1885,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001840},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1886] =
+{
+ 		id=1886,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001841},
+ 		times=500,
+ 	feelingValue=0
+},
+[1887] =
+{
+ 		id=1887,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001842},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1888] =
+{
+ 		id=1888,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=234,
+ 		group=21,
+ 		type=6,
+ 	feelingValue=0
+},
+[1889] =
+{
+ 		id=1889,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001844},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1890] =
+{
+ 		id=1890,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001846,47001847},
+ 		lotWords={47001846,47001847},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1891] =
+{
+ 		id=1891,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1892] =
+{
+ 		id=1892,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1893] =
+{
+ 		id=1893,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001848},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1894] =
+{
+ 		id=1894,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001849},
+ 		times=2500,
+ 	feelingValue=0
+},
+[1895] =
+{
+ 		id=1895,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001850},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1896] =
+{
+ 		id=1896,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=8,
+ 		nextGroup={11,11},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001852,47001853},
+ 		lotWords={47001852,47001853},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1897] =
+{
+ 		id=1897,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1898] =
+{
+ 		id=1898,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1899] =
+{
+ 		id=1899,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001854},
+ 		times=2350,
+ 	feelingValue=0
+},
+[1900] =
+{
+ 		id=1900,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001855},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1901] =
+{
+ 		id=1901,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001856},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1902] =
+{
+ 		id=1902,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=14,
+ 		nextGroup={17,17},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001858,47001859},
+ 		lotWords={47001858,47001859},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1903] =
+{
+ 		id=1903,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=15,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1904] =
+{
+ 		id=1904,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1905] =
+{
+ 		id=1905,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001860},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1906] =
+{
+ 		id=1906,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001861},
+ 		times=2200,
+ 	feelingValue=0
+},
+[1907] =
+{
+ 		id=1907,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=235,
+ 		group=19,
+ 		type=6,
+ 	feelingValue=0
+},
+[1908] =
+{
+ 		id=1908,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001863},
+ 		times=700,
+ 	feelingValue=0
+},
+[1909] =
+{
+ 		id=1909,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001865,47001866},
+ 		lotWords={47001865,47001866},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1910] =
+{
+ 		id=1910,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1911] =
+{
+ 		id=1911,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1912] =
+{
+ 		id=1912,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001867},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1913] =
+{
+ 		id=1913,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001868},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1914] =
+{
+ 		id=1914,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001869},
+ 		times=700,
+ 	feelingValue=0
+},
+[1915] =
+{
+ 		id=1915,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=8,
+ 		nextGroup={11,11},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001871,47001872},
+ 		lotWords={47001871,47001872},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1916] =
+{
+ 		id=1916,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1917] =
+{
+ 		id=1917,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1918] =
+{
+ 		id=1918,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001873},
+ 		times=500,
+ 	feelingValue=0
+},
+[1919] =
+{
+ 		id=1919,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001874},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1920] =
+{
+ 		id=1920,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001875},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1921] =
+{
+ 		id=1921,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=14,
+ 		nextGroup={17,17},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001877,47001878},
+ 		lotWords={47001877,47001878},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1922] =
+{
+ 		id=1922,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=15,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1923] =
+{
+ 		id=1923,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1924] =
+{
+ 		id=1924,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001879},
+ 		times=2650,
+ 	feelingValue=0
+},
+[1925] =
+{
+ 		id=1925,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001880},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1926] =
+{
+ 		id=1926,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001881},
+ 		times=2200,
+ 	feelingValue=0
+},
+[1927] =
+{
+ 		id=1927,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001882},
+ 		times=700,
+ 	feelingValue=0
+},
+[1928] =
+{
+ 		id=1928,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=237,
+ 		group=21,
+ 		type=6,
+ 	feelingValue=0
+},
+[1929] =
+{
+ 		id=1929,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001884},
+ 		times=2700,
+ 	feelingValue=0
+},
+[1930] =
+{
+ 		id=1930,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001886,47001887},
+ 		lotWords={47001886,47001887},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1931] =
+{
+ 		id=1931,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1932] =
+{
+ 		id=1932,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1933] =
+{
+ 		id=1933,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001888},
+ 		times=2350,
+ 	feelingValue=0
+},
+[1934] =
+{
+ 		id=1934,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001889},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1935] =
+{
+ 		id=1935,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001890},
+ 		times=2200,
+ 	feelingValue=0
+},
+[1936] =
+{
+ 		id=1936,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=8,
+ 		nextGroup={11,11},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001892,47001893},
+ 		lotWords={47001892,47001893},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1937] =
+{
+ 		id=1937,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1938] =
+{
+ 		id=1938,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1939] =
+{
+ 		id=1939,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001894},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1940] =
+{
+ 		id=1940,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001895},
+ 		times=2500,
+ 	feelingValue=0
+},
+[1941] =
+{
+ 		id=1941,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001896},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1942] =
+{
+ 		id=1942,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001897},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1943] =
+{
+ 		id=1943,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001898},
+ 		times=700,
+ 	feelingValue=0
+},
+[1944] =
+{
+ 		id=1944,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=16,
+ 		nextGroup={19,19},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001900,47001901},
+ 		lotWords={47001900,47001901},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1945] =
+{
+ 		id=1945,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1946] =
+{
+ 		id=1946,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=18,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1947] =
+{
+ 		id=1947,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001902},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1948] =
+{
+ 		id=1948,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001903},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1949] =
+{
+ 		id=1949,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=21,
+ 		nextGroup={22},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001904},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1950] =
+{
+ 		id=1950,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=22,
+ 		nextGroup={23},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001905},
+ 		times=2500,
+ 	feelingValue=0
+},
+[1951] =
+{
+ 		id=1951,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=238,
+ 		group=23,
+ 		type=6,
+ 	feelingValue=0
+},
+[1952] =
+{
+ 		id=1952,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001907},
+ 		times=2500,
+ 	feelingValue=0
+},
+[1953] =
+{
+ 		id=1953,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001909,47001910},
+ 		lotWords={47001909,47001910},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1954] =
+{
+ 		id=1954,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1955] =
+{
+ 		id=1955,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1956] =
+{
+ 		id=1956,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001911},
+ 		times=2650,
+ 	feelingValue=0
+},
+[1957] =
+{
+ 		id=1957,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001912},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1958] =
+{
+ 		id=1958,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001913},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1959] =
+{
+ 		id=1959,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001914},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1960] =
+{
+ 		id=1960,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=9,
+ 		nextGroup={12,12},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001916,47001917},
+ 		lotWords={47001916,47001917},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1961] =
+{
+ 		id=1961,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1962] =
+{
+ 		id=1962,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1963] =
+{
+ 		id=1963,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001918},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1964] =
+{
+ 		id=1964,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001919},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1965] =
+{
+ 		id=1965,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001920},
+ 		times=700,
+ 	feelingValue=0
+},
+[1966] =
+{
+ 		id=1966,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001921},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1967] =
+{
+ 		id=1967,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=16,
+ 		nextGroup={19,19},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001923,47001924},
+ 		lotWords={47001923,47001924},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1968] =
+{
+ 		id=1968,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1969] =
+{
+ 		id=1969,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=18,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1970] =
+{
+ 		id=1970,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001925},
+ 		times=2050,
+ 	feelingValue=0
+},
+[1971] =
+{
+ 		id=1971,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001926},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1972] =
+{
+ 		id=1972,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=21,
+ 		nextGroup={22},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001927},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1973] =
+{
+ 		id=1973,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=22,
+ 		nextGroup={24},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001928},
+ 		times=850,
+ 	feelingValue=0
+},
+[1974] =
+{
+ 		id=1974,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=239,
+ 		group=24,
+ 		type=6,
+ 	feelingValue=0
+},
+[1975] =
+{
+ 		id=1975,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001930},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1976] =
+{
+ 		id=1976,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001931},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1977] =
+{
+ 		id=1977,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=3,
+ 		nextGroup={6,6},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001933,47001934},
+ 		lotWords={47001933,47001934},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1978] =
+{
+ 		id=1978,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1979] =
+{
+ 		id=1979,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1980] =
+{
+ 		id=1980,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001935},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1981] =
+{
+ 		id=1981,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001936},
+ 		times=1600,
+ 	feelingValue=0
+},
+[1982] =
+{
+ 		id=1982,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=8,
+ 		nextGroup={11,11},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001938,47001939},
+ 		lotWords={47001938,47001939},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1983] =
+{
+ 		id=1983,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1984] =
+{
+ 		id=1984,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1985] =
+{
+ 		id=1985,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001940},
+ 		times=2350,
+ 	feelingValue=0
+},
+[1986] =
+{
+ 		id=1986,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001941},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1987] =
+{
+ 		id=1987,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001942},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1988] =
+{
+ 		id=1988,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001943},
+ 		times=1900,
+ 	feelingValue=0
+},
+[1989] =
+{
+ 		id=1989,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=15,
+ 		nextGroup={18,18},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001945,47001946},
+ 		lotWords={47001945,47001946},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1990] =
+{
+ 		id=1990,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1991] =
+{
+ 		id=1991,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1992] =
+{
+ 		id=1992,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001947},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1993] =
+{
+ 		id=1993,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001948},
+ 		times=850,
+ 	feelingValue=0
+},
+[1994] =
+{
+ 		id=1994,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001949},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1995] =
+{
+ 		id=1995,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=21,
+ 		nextGroup={24,24},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001951,47001952},
+ 		lotWords={47001951,47001952},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1996] =
+{
+ 		id=1996,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=22,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1997] =
+{
+ 		id=1997,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=23,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1998] =
+{
+ 		id=1998,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=24,
+ 		nextGroup={25},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001953},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1999] =
+{
+ 		id=1999,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=25,
+ 		nextGroup={26},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001954},
+ 		times=700,
+ 	feelingValue=0
+},
+[2000] =
+{
+ 		id=2000,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=241,
+ 		group=26,
+ 		type=6,
+ 	feelingValue=0
+},
+[2001] =
+{
+ 		id=2001,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001956},
+ 		times=500,
+ 	feelingValue=0
+},
+[2002] =
+{
+ 		id=2002,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001958,47001959},
+ 		lotWords={47001958,47001959},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2003] =
+{
+ 		id=2003,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2004] =
+{
+ 		id=2004,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2005] =
+{
+ 		id=2005,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001960},
+ 		times=1750,
+ 	feelingValue=0
+},
+[2006] =
+{
+ 		id=2006,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001961},
+ 		times=2700,
+ 	feelingValue=0
+},
+[2007] =
+{
+ 		id=2007,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001962},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2008] =
+{
+ 		id=2008,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=4,
+ 		speaker=1,
+ 		words={47001963},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110002_cry2",
+ 	feelingValue=0
+},
+[2009] =
+{
+ 		id=2009,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=9,
+ 		nextGroup={12,12},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001965,47001966},
+ 		lotWords={47001965,47001966},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2010] =
+{
+ 		id=2010,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2011] =
+{
+ 		id=2011,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2012] =
+{
+ 		id=2012,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001967},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2013] =
+{
+ 		id=2013,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001968},
+ 		times=1300,
+ 	feelingValue=0
+},
+[2014] =
+{
+ 		id=2014,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001969},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2015] =
+{
+ 		id=2015,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=4,
+ 		speaker=1,
+ 		words={47001970},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110002_cry1",
+ 	feelingValue=0
+},
+[2016] =
+{
+ 		id=2016,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=16,
+ 		nextGroup={19,19},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001972,47001973},
+ 		lotWords={47001972,47001973},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2017] =
+{
+ 		id=2017,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2018] =
+{
+ 		id=2018,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=18,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2019] =
+{
+ 		id=2019,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001974},
+ 		times=2050,
+ 	feelingValue=0
+},
+[2020] =
+{
+ 		id=2020,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001975},
+ 		times=700,
+ 	feelingValue=0
+},
+[2021] =
+{
+ 		id=2021,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=21,
+ 		nextGroup={22},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001976},
+ 		times=1300,
+ 	feelingValue=0
+},
+[2022] =
+{
+ 		id=2022,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=22,
+ 		nextGroup={23},
+ 		type=4,
+ 		speaker=1,
+ 		words={47001977},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110002_cry2",
+ 	feelingValue=0
+},
+[2023] =
+{
+ 		id=2023,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=242,
+ 		group=23,
+ 		nextGroup={24},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001978},
+ 		times=1300,
+ 	feelingValue=0
+},
+[2024] =
+{
+ 		id=2024,
+ 		chatType=2,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=242,
+ 		group=24,
+ 		type=6,
+ 	feelingValue=0
+},
+[2025] =
+{
+ 		id=2025,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001980},
+ 		times=1300,
+ 	feelingValue=0
+},
+[2026] =
+{
+ 		id=2026,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001981},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2027] =
+{
+ 		id=2027,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001982},
+ 		times=1750,
+ 	feelingValue=0
+},
+[2028] =
+{
+ 		id=2028,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=4,
+ 		nextGroup={7,7},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001984,47001985},
+ 		lotWords={47001984,47001985},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2029] =
+{
+ 		id=2029,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2030] =
+{
+ 		id=2030,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=6,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2031] =
+{
+ 		id=2031,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001986},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2032] =
+{
+ 		id=2032,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001987},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2033] =
+{
+ 		id=2033,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=9,
+ 		nextGroup={12,12},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001989,47001990},
+ 		lotWords={47001989,47001990},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2034] =
+{
+ 		id=2034,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2035] =
+{
+ 		id=2035,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2036] =
+{
+ 		id=2036,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001991},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2037] =
+{
+ 		id=2037,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001992},
+ 		times=2050,
+ 	feelingValue=0
+},
+[2038] =
+{
+ 		id=2038,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001993},
+ 		times=500,
+ 	feelingValue=0
+},
+[2039] =
+{
+ 		id=2039,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=15,
+ 		nextGroup={18,18},
+ 		type=1,
+ 		speaker=2,
+ 		words={47001995,47001996},
+ 		lotWords={47001995,47001996},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2040] =
+{
+ 		id=2040,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2041] =
+{
+ 		id=2041,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2042] =
+{
+ 		id=2042,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001997},
+ 		times=1750,
+ 	feelingValue=0
+},
+[2043] =
+{
+ 		id=2043,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47001998},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2044] =
+{
+ 		id=2044,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=20,
+ 		nextGroup={22},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002000},
+ 		lotWords={47002000},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2045] =
+{
+ 		id=2045,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=21,
+ 		nextGroup={22},
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2046] =
+{
+ 		id=2046,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=243,
+ 		group=22,
+ 		type=6,
+ 	feelingValue=0
+},
+[2047] =
+{
+ 		id=2047,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002002},
+ 		times=1150,
+ 	feelingValue=0
+},
+[2048] =
+{
+ 		id=2048,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002003},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2049] =
+{
+ 		id=2049,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=3,
+ 		nextGroup={6,6},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002005,47002006},
+ 		lotWords={47002005,47002006},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2050] =
+{
+ 		id=2050,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2051] =
+{
+ 		id=2051,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2052] =
+{
+ 		id=2052,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002007},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2053] =
+{
+ 		id=2053,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002008},
+ 		times=2700,
+ 	feelingValue=0
+},
+[2054] =
+{
+ 		id=2054,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002009},
+ 		times=2700,
+ 	feelingValue=0
+},
+[2055] =
+{
+ 		id=2055,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=9,
+ 		nextGroup={12,12},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002011,47002012},
+ 		lotWords={47002011,47002012},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2056] =
+{
+ 		id=2056,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2057] =
+{
+ 		id=2057,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2058] =
+{
+ 		id=2058,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002013},
+ 		times=550,
+ 	feelingValue=0
+},
+[2059] =
+{
+ 		id=2059,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002014},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2060] =
+{
+ 		id=2060,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002015},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2061] =
+{
+ 		id=2061,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=4,
+ 		speaker=1,
+ 		words={47002016},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110005_confident2",
+ 	feelingValue=0
+},
+[2062] =
+{
+ 		id=2062,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=16,
+ 		nextGroup={19,19},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002018,47002019},
+ 		lotWords={47002018,47002019},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2063] =
+{
+ 		id=2063,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2064] =
+{
+ 		id=2064,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=18,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2065] =
+{
+ 		id=2065,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002020},
+ 		times=500,
+ 	feelingValue=0
+},
+[2066] =
+{
+ 		id=2066,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002021},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2067] =
+{
+ 		id=2067,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=244,
+ 		group=21,
+ 		type=6,
+ 	feelingValue=0
+},
+[2068] =
+{
+ 		id=2068,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002023},
+ 		times=1750,
+ 	feelingValue=0
+},
+[2069] =
+{
+ 		id=2069,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002024},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2070] =
+{
+ 		id=2070,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002025},
+ 		times=1750,
+ 	feelingValue=0
+},
+[2071] =
+{
+ 		id=2071,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=4,
+ 		nextGroup={7,7},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002027,47002028},
+ 		lotWords={47002027,47002028},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2072] =
+{
+ 		id=2072,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2073] =
+{
+ 		id=2073,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=6,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2074] =
+{
+ 		id=2074,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002029},
+ 		times=1150,
+ 	feelingValue=0
+},
+[2075] =
+{
+ 		id=2075,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002030},
+ 		times=700,
+ 	feelingValue=0
+},
+[2076] =
+{
+ 		id=2076,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002031},
+ 		times=2050,
+ 	feelingValue=0
+},
+[2077] =
+{
+ 		id=2077,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=10,
+ 		nextGroup={13,13},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002033,47002034},
+ 		lotWords={47002033,47002034},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2078] =
+{
+ 		id=2078,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2079] =
+{
+ 		id=2079,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=12,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2080] =
+{
+ 		id=2080,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002035},
+ 		times=1150,
+ 	feelingValue=0
+},
+[2081] =
+{
+ 		id=2081,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002036},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2082] =
+{
+ 		id=2082,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002037},
+ 		times=850,
+ 	feelingValue=0
+},
+[2083] =
+{
+ 		id=2083,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=16,
+ 		nextGroup={19,19},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002039,47002040},
+ 		lotWords={47002039,47002040},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2084] =
+{
+ 		id=2084,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2085] =
+{
+ 		id=2085,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=18,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2086] =
+{
+ 		id=2086,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002041},
+ 		times=3200,
+ 	feelingValue=0
+},
+[2087] =
+{
+ 		id=2087,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002042},
+ 		times=3200,
+ 	feelingValue=0
+},
+[2088] =
+{
+ 		id=2088,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=21,
+ 		nextGroup={22},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002043},
+ 		times=3200,
+ 	feelingValue=0
+},
+[2089] =
+{
+ 		id=2089,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=22,
+ 		nextGroup={23},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002044},
+ 		times=850,
+ 	feelingValue=0
+},
+[2090] =
+{
+ 		id=2090,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=23,
+ 		nextGroup={25},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002046},
+ 		lotWords={47002046},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2091] =
+{
+ 		id=2091,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=24,
+ 		nextGroup={25},
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2092] =
+{
+ 		id=2092,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=245,
+ 		group=25,
+ 		type=6,
+ 	feelingValue=0
+},
+[2093] =
+{
+ 		id=2093,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002048},
+ 		times=1150,
+ 	feelingValue=0
+},
+[2094] =
+{
+ 		id=2094,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002049},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2095] =
+{
+ 		id=2095,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002050},
+ 		times=3100,
+ 	feelingValue=0
+},
+[2096] =
+{
+ 		id=2096,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=4,
+ 		speaker=1,
+ 		words={47002051},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110003_worry2",
+ 	feelingValue=0
+},
+[2097] =
+{
+ 		id=2097,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=5,
+ 		nextGroup={8,8},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002053,47002054},
+ 		lotWords={47002053,47002054},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2098] =
+{
+ 		id=2098,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=6,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2099] =
+{
+ 		id=2099,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=7,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2100] =
+{
+ 		id=2100,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002055},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2101] =
+{
+ 		id=2101,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002056},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2102] =
+{
+ 		id=2102,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002057},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2103] =
+{
+ 		id=2103,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=11,
+ 		nextGroup={14,14},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002059,47002060},
+ 		lotWords={47002059,47002060},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2104] =
+{
+ 		id=2104,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=12,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2105] =
+{
+ 		id=2105,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=13,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2106] =
+{
+ 		id=2106,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002061},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2107] =
+{
+ 		id=2107,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002062},
+ 		times=2350,
+ 	feelingValue=0
+},
+[2108] =
+{
+ 		id=2108,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=16,
+ 		nextGroup={17},
+ 		type=4,
+ 		speaker=1,
+ 		words={47002063},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110002_cry1",
+ 	feelingValue=0
+},
+[2109] =
+{
+ 		id=2109,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=17,
+ 		nextGroup={20,20},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002065,47002066},
+ 		lotWords={47002065,47002066},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2110] =
+{
+ 		id=2110,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=18,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2111] =
+{
+ 		id=2111,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=19,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2112] =
+{
+ 		id=2112,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002067},
+ 		times=1750,
+ 	feelingValue=0
+},
+[2113] =
+{
+ 		id=2113,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=21,
+ 		nextGroup={22},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002068},
+ 		times=1750,
+ 	feelingValue=0
+},
+[2114] =
+{
+ 		id=2114,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=22,
+ 		nextGroup={23},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002069},
+ 		times=2350,
+ 	feelingValue=0
+},
+[2115] =
+{
+ 		id=2115,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=23,
+ 		nextGroup={24},
+ 		type=4,
+ 		speaker=1,
+ 		words={47002070},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110003_worry1",
+ 	feelingValue=0
+},
+[2116] =
+{
+ 		id=2116,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=24,
+ 		nextGroup={26},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002072},
+ 		lotWords={47002072},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2117] =
+{
+ 		id=2117,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=25,
+ 		nextGroup={26},
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2118] =
+{
+ 		id=2118,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=246,
+ 		group=26,
+ 		type=6,
+ 	feelingValue=0
+},
+[2119] =
+{
+ 		id=2119,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002074},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2120] =
+{
+ 		id=2120,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002075},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2121] =
+{
+ 		id=2121,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=3,
+ 		nextGroup={6,6},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002077,47002078},
+ 		lotWords={47002077,47002078},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2122] =
+{
+ 		id=2122,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2123] =
+{
+ 		id=2123,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2124] =
+{
+ 		id=2124,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002079},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2125] =
+{
+ 		id=2125,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002080},
+ 		times=2200,
+ 	feelingValue=0
+},
+[2126] =
+{
+ 		id=2126,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002081},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2127] =
+{
+ 		id=2127,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002082},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2128] =
+{
+ 		id=2128,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002083},
+ 		times=1300,
+ 	feelingValue=0
+},
+[2129] =
+{
+ 		id=2129,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002084},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2130] =
+{
+ 		id=2130,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=12,
+ 		nextGroup={15,15},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002086,47002087},
+ 		lotWords={47002086,47002087},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2131] =
+{
+ 		id=2131,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=13,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2132] =
+{
+ 		id=2132,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=14,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2133] =
+{
+ 		id=2133,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002088},
+ 		times=1150,
+ 	feelingValue=0
+},
+[2134] =
+{
+ 		id=2134,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=16,
+ 		nextGroup={17},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002089},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2135] =
+{
+ 		id=2135,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002090},
+ 		times=1300,
+ 	feelingValue=0
+},
+[2136] =
+{
+ 		id=2136,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002091},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2137] =
+{
+ 		id=2137,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=19,
+ 		nextGroup={22,22},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002093,47002094},
+ 		lotWords={47002093,47002094},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2138] =
+{
+ 		id=2138,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=20,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2139] =
+{
+ 		id=2139,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=21,
+ 		type=1,
+ 		speaker=2,
+ 		times=850,
+ 	feelingValue=0
+},
+[2140] =
+{
+ 		id=2140,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=22,
+ 		nextGroup={23},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002095},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2141] =
+{
+ 		id=2141,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=23,
+ 		nextGroup={24},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002096},
+ 		times=1150,
+ 	feelingValue=0
+},
+[2142] =
+{
+ 		id=2142,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=24,
+ 		nextGroup={25},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002097},
+ 		times=2200,
+ 	feelingValue=0
+},
+[2143] =
+{
+ 		id=2143,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=25,
+ 		nextGroup={26},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002098},
+ 		times=700,
+ 	feelingValue=0
+},
+[2144] =
+{
+ 		id=2144,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=26,
+ 		nextGroup={28},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002100},
+ 		lotWords={47002100},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2145] =
+{
+ 		id=2145,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=27,
+ 		nextGroup={28},
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2146] =
+{
+ 		id=2146,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=247,
+ 		group=28,
+ 		type=6,
+ 	feelingValue=0
+},
+[2147] =
+{
+ 		id=2147,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002102},
+ 		times=2050,
+ 	feelingValue=0
+},
+[2148] =
+{
+ 		id=2148,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002103},
+ 		times=1750,
+ 	feelingValue=0
+},
+[2149] =
+{
+ 		id=2149,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=3,
+ 		nextGroup={6,6},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002105,47002106},
+ 		lotWords={47002105,47002106},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2150] =
+{
+ 		id=2150,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2151] =
+{
+ 		id=2151,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2152] =
+{
+ 		id=2152,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002107},
+ 		times=3200,
+ 	feelingValue=0
+},
+[2153] =
+{
+ 		id=2153,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002108},
+ 		times=2650,
+ 	feelingValue=0
+},
+[2154] =
+{
+ 		id=2154,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002109},
+ 		times=2500,
+ 	feelingValue=0
+},
+[2155] =
+{
+ 		id=2155,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=9,
+ 		nextGroup={12,12},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002111,47002112},
+ 		lotWords={47002111,47002112},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2156] =
+{
+ 		id=2156,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2157] =
+{
+ 		id=2157,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2158] =
+{
+ 		id=2158,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002113},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2159] =
+{
+ 		id=2159,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002114},
+ 		times=700,
+ 	feelingValue=0
+},
+[2160] =
+{
+ 		id=2160,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002115},
+ 		times=2950,
+ 	feelingValue=0
+},
+[2161] =
+{
+ 		id=2161,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=15,
+ 		nextGroup={18,18},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002117,47002118},
+ 		lotWords={47002117,47002118},
+ 	feelingValue=0
+},
+[2162] =
+{
+ 		id=2162,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 		times=850,
+ 	feelingValue=0
+},
+[2163] =
+{
+ 		id=2163,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 		times=1300,
+ 	feelingValue=0
+},
+[2164] =
+{
+ 		id=2164,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002119},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2165] =
+{
+ 		id=2165,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002120},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2166] =
+{
+ 		id=2166,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002121},
+ 		times=850,
+ 	feelingValue=0
+},
+[2167] =
+{
+ 		id=2167,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=21,
+ 		nextGroup={22},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002122},
+ 		times=700,
+ 	feelingValue=0
+},
+[2168] =
+{
+ 		id=2168,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=22,
+ 		nextGroup={23},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002123},
+ 		times=1300,
+ 	feelingValue=0
+},
+[2169] =
+{
+ 		id=2169,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=248,
+ 		group=23,
+ 		type=6,
+ 	feelingValue=0
+},
+[1521] =
+{
+ 		id=1521,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002125},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1522] =
+{
+ 		id=1522,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002127,47002128},
+ 		lotWords={47002127,47002128},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1523] =
+{
+ 		id=1523,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1524] =
+{
+ 		id=1524,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1525] =
+{
+ 		id=1525,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002129},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1526] =
+{
+ 		id=1526,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002130},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1527] =
+{
+ 		id=1527,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002131},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1528] =
+{
+ 		id=1528,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=8,
+ 		nextGroup={11,11},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002133,47002134},
+ 		lotWords={47002133,47002134},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1529] =
+{
+ 		id=1529,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1530] =
+{
+ 		id=1530,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1531] =
+{
+ 		id=1531,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002135},
+ 		times=850,
+ 	feelingValue=0
+},
+[1532] =
+{
+ 		id=1532,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002136},
+ 		times=550,
+ 	feelingValue=0
+},
+[1533] =
+{
+ 		id=1533,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002137},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1534] =
+{
+ 		id=1534,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=14,
+ 		nextGroup={17,17},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002139,47002140},
+ 		lotWords={47002139,47002140},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1535] =
+{
+ 		id=1535,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=15,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1536] =
+{
+ 		id=1536,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1537] =
+{
+ 		id=1537,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002141},
+ 		times=1150,
+ 	feelingValue=0
+},
+[1538] =
+{
+ 		id=1538,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002142},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1539] =
+{
+ 		id=1539,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=211,
+ 		group=19,
+ 		type=6,
+ 	feelingValue=0
+},
+[1545] =
+{
+ 		id=1545,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002144},
+ 		times=1000,
+ 	feelingValue=0
+},
+[1546] =
+{
+ 		id=1546,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002146,47002147},
+ 		lotWords={47002146,47002147},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1547] =
+{
+ 		id=1547,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1548] =
+{
+ 		id=1548,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1549] =
+{
+ 		id=1549,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002148},
+ 		times=550,
+ 	feelingValue=0
+},
+[1550] =
+{
+ 		id=1550,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002149},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1551] =
+{
+ 		id=1551,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002150},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1552] =
+{
+ 		id=1552,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002151},
+ 		times=1450,
+ 	feelingValue=0
+},
+[1553] =
+{
+ 		id=1553,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=9,
+ 		nextGroup={12,12},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002153,47002154},
+ 		lotWords={47002153,47002154},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1554] =
+{
+ 		id=1554,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1555] =
+{
+ 		id=1555,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=11,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1556] =
+{
+ 		id=1556,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002155},
+ 		times=500,
+ 	feelingValue=0
+},
+[1557] =
+{
+ 		id=1557,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002156},
+ 		times=2200,
+ 	feelingValue=0
+},
+[1558] =
+{
+ 		id=1558,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002157},
+ 		times=1750,
+ 	feelingValue=0
+},
+[1559] =
+{
+ 		id=1559,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002158},
+ 		times=2350,
+ 	feelingValue=0
+},
+[1560] =
+{
+ 		id=1560,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=16,
+ 		nextGroup={19,19},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002160,47002161},
+ 		lotWords={47002160,47002161},
+ 		times=1200,
+ 	feelingValue=0
+},
+[1561] =
+{
+ 		id=1561,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1562] =
+{
+ 		id=1562,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=18,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[1563] =
+{
+ 		id=1563,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002162},
+ 		times=2500,
+ 	feelingValue=0
+},
+[1564] =
+{
+ 		id=1564,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002163},
+ 		times=1300,
+ 	feelingValue=0
+},
+[1565] =
+{
+ 		id=1565,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=212,
+ 		group=21,
+ 		type=6,
+ 	feelingValue=0
+},
+[2170] =
+{
+ 		id=2170,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=206,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002165},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2171] =
+{
+ 		id=2171,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=206,
+ 		group=2,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002167,47002168},
+ 		lotWords={47002167,47002168},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2172] =
+{
+ 		id=2172,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=206,
+ 		group=3,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2173] =
+{
+ 		id=2173,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=206,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2174] =
+{
+ 		id=2174,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=206,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002169},
+ 		times=2200,
+ 	feelingValue=0
+},
+[2175] =
+{
+ 		id=2175,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=206,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002170},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2176] =
+{
+ 		id=2176,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=206,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002171},
+ 		times=2500,
+ 	feelingValue=0
+},
+[2177] =
+{
+ 		id=2177,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=206,
+ 		group=8,
+ 		nextGroup={11,11},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002173,47002174},
+ 		lotWords={47002173,47002174},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2178] =
+{
+ 		id=2178,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=206,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2179] =
+{
+ 		id=2179,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=206,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2180] =
+{
+ 		id=2180,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=206,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002175},
+ 		times=2800,
+ 	feelingValue=0
+},
+[2181] =
+{
+ 		id=2181,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=206,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002176},
+ 		times=2200,
+ 	feelingValue=0
+},
+[2182] =
+{
+ 		id=2182,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=206,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002177},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2183] =
+{
+ 		id=2183,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=206,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002178},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2184] =
+{
+ 		id=2184,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=206,
+ 		group=15,
+ 		nextGroup={18,18},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002180,47002181},
+ 		lotWords={47002180,47002181},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2185] =
+{
+ 		id=2185,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=206,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2186] =
+{
+ 		id=2186,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=206,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2187] =
+{
+ 		id=2187,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=206,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002182},
+ 		times=850,
+ 	feelingValue=0
+},
+[2188] =
+{
+ 		id=2188,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=206,
+ 		group=19,
+ 		type=6,
+ 	feelingValue=0
+},
+[2189] =
+{
+ 		id=2189,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=210,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002184},
+ 		times=2800,
+ 	feelingValue=0
+},
+[2190] =
+{
+ 		id=2190,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=210,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002185},
+ 		times=1150,
+ 	feelingValue=0
+},
+[2191] =
+{
+ 		id=2191,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=210,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002186},
+ 		times=500,
+ 	feelingValue=0
+},
+[2192] =
+{
+ 		id=2192,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=210,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002187},
+ 		times=1300,
+ 	feelingValue=0
+},
+[2193] =
+{
+ 		id=2193,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=210,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002188},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2194] =
+{
+ 		id=2194,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=210,
+ 		group=6,
+ 		nextGroup={9,9},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002190,47002191},
+ 		lotWords={47002190,47002191},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2195] =
+{
+ 		id=2195,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=210,
+ 		group=7,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2196] =
+{
+ 		id=2196,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=210,
+ 		group=8,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2197] =
+{
+ 		id=2197,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=210,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002192},
+ 		times=1300,
+ 	feelingValue=0
+},
+[2198] =
+{
+ 		id=2198,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=210,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002193},
+ 		times=550,
+ 	feelingValue=0
+},
+[2199] =
+{
+ 		id=2199,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=210,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002194},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2200] =
+{
+ 		id=2200,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=210,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002195},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2201] =
+{
+ 		id=2201,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=210,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002196},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2202] =
+{
+ 		id=2202,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=210,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002197},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2203] =
+{
+ 		id=2203,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=210,
+ 		group=15,
+ 		nextGroup={18,18},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002199,47002200},
+ 		lotWords={47002199,47002200},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2204] =
+{
+ 		id=2204,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=210,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2205] =
+{
+ 		id=2205,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=210,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2206] =
+{
+ 		id=2206,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=210,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002201},
+ 		times=1750,
+ 	feelingValue=0
+},
+[2207] =
+{
+ 		id=2207,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=210,
+ 		group=19,
+ 		nextGroup={22,22},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002203,47002204},
+ 		lotWords={47002203,47002204},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2208] =
+{
+ 		id=2208,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=210,
+ 		group=20,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2209] =
+{
+ 		id=2209,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=210,
+ 		group=21,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2210] =
+{
+ 		id=2210,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=210,
+ 		group=22,
+ 		nextGroup={23},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002205},
+ 		times=500,
+ 	feelingValue=0
+},
+[2211] =
+{
+ 		id=2211,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=210,
+ 		group=23,
+ 		nextGroup={24},
+ 		type=4,
+ 		speaker=1,
+ 		words={47002206},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110002_cry1",
+ 	feelingValue=0
+},
+[2212] =
+{
+ 		id=2212,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=210,
+ 		group=24,
+ 		type=6,
+ 	feelingValue=0
+},
+[2213] =
+{
+ 		id=2213,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=215,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002208},
+ 		lotWords={47002208},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2214] =
+{
+ 		id=2214,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=215,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002209},
+ 		times=1750,
+ 	feelingValue=0
+},
+[2215] =
+{
+ 		id=2215,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=215,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002210},
+ 		times=2050,
+ 	feelingValue=0
+},
+[2216] =
+{
+ 		id=2216,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=215,
+ 		group=4,
+ 		nextGroup={7,7},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002212,47002213},
+ 		lotWords={47002212,47002213},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2217] =
+{
+ 		id=2217,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=215,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2218] =
+{
+ 		id=2218,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=215,
+ 		group=6,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2219] =
+{
+ 		id=2219,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=215,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002214},
+ 		times=1300,
+ 	feelingValue=0
+},
+[2220] =
+{
+ 		id=2220,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=215,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002215},
+ 		times=700,
+ 	feelingValue=0
+},
+[2221] =
+{
+ 		id=2221,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=215,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002216},
+ 		times=2050,
+ 	feelingValue=0
+},
+[2222] =
+{
+ 		id=2222,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=215,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002217},
+ 		times=500,
+ 	feelingValue=0
+},
+[2223] =
+{
+ 		id=2223,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=215,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002218},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2224] =
+{
+ 		id=2224,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=215,
+ 		group=12,
+ 		nextGroup={15,15},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002220,47002221},
+ 		lotWords={47002220,47002221},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2225] =
+{
+ 		id=2225,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=215,
+ 		group=13,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2226] =
+{
+ 		id=2226,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=215,
+ 		group=14,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2227] =
+{
+ 		id=2227,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=215,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002222},
+ 		times=2700,
+ 	feelingValue=0
+},
+[2228] =
+{
+ 		id=2228,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=215,
+ 		group=16,
+ 		nextGroup={17},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002223},
+ 		times=2700,
+ 	feelingValue=0
+},
+[2229] =
+{
+ 		id=2229,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=215,
+ 		group=17,
+ 		nextGroup={20,20},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002225,47002226},
+ 		lotWords={47002225,47002226},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2230] =
+{
+ 		id=2230,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=215,
+ 		group=18,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2231] =
+{
+ 		id=2231,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=215,
+ 		group=19,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2232] =
+{
+ 		id=2232,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=215,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002227},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2233] =
+{
+ 		id=2233,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=215,
+ 		group=21,
+ 		nextGroup={22},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002228},
+ 		times=1150,
+ 	feelingValue=0
+},
+[2234] =
+{
+ 		id=2234,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=215,
+ 		group=22,
+ 		type=6,
+ 	feelingValue=0
+},
+[2235] =
+{
+ 		id=2235,
+ 		chatType=3,
+ 		smallPicture="UI/SpritePics/emoji/120002_coffee2",
+ 		chatName=56000004,
+ 		story=300,
+ 		words={57000001,57000002},
+ 	feelingValue=0
+},
+[2237] =
+{
+ 		id=2237,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=217,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002229},
+ 		times=550,
+ 	feelingValue=0
+},
+[2238] =
+{
+ 		id=2238,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=217,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=4,
+ 		speaker=1,
+ 		words={47002230},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110005_confident2",
+ 	feelingValue=0
+},
+[2239] =
+{
+ 		id=2239,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=217,
+ 		group=3,
+ 		nextGroup={6,6},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002232,47002233},
+ 		lotWords={47002232,47002233},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2240] =
+{
+ 		id=2240,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=217,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2241] =
+{
+ 		id=2241,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=217,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2242] =
+{
+ 		id=2242,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=217,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002234},
+ 		times=2700,
+ 	feelingValue=0
+},
+[2243] =
+{
+ 		id=2243,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=217,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002235},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2244] =
+{
+ 		id=2244,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=217,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002236},
+ 		times=2700,
+ 	feelingValue=0
+},
+[2245] =
+{
+ 		id=2245,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=217,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002237},
+ 		times=550,
+ 	feelingValue=0
+},
+[2246] =
+{
+ 		id=2246,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=217,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002238},
+ 		times=850,
+ 	feelingValue=0
+},
+[2247] =
+{
+ 		id=2247,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=217,
+ 		group=11,
+ 		nextGroup={14,14},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002240,47002241},
+ 		lotWords={47002240,47002241},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2248] =
+{
+ 		id=2248,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=217,
+ 		group=12,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2249] =
+{
+ 		id=2249,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=217,
+ 		group=13,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2250] =
+{
+ 		id=2250,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=217,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002242},
+ 		times=2650,
+ 	feelingValue=0
+},
+[2251] =
+{
+ 		id=2251,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=217,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002243},
+ 		times=2700,
+ 	feelingValue=0
+},
+[2252] =
+{
+ 		id=2252,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=217,
+ 		group=16,
+ 		nextGroup={17},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002244},
+ 		times=2200,
+ 	feelingValue=0
+},
+[2253] =
+{
+ 		id=2253,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=217,
+ 		group=17,
+ 		nextGroup={20,20},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002246,47002247},
+ 		lotWords={47002246,47002247},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2254] =
+{
+ 		id=2254,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=217,
+ 		group=18,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2255] =
+{
+ 		id=2255,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=217,
+ 		group=19,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2256] =
+{
+ 		id=2256,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=217,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002248},
+ 		times=1750,
+ 	feelingValue=0
+},
+[2257] =
+{
+ 		id=2257,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=217,
+ 		group=21,
+ 		nextGroup={22},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002249},
+ 		times=2200,
+ 	feelingValue=0
+},
+[2258] =
+{
+ 		id=2258,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=217,
+ 		group=22,
+ 		type=6,
+ 	feelingValue=0
+},
+[2259] =
+{
+ 		id=2259,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=220,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002251},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2260] =
+{
+ 		id=2260,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=220,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002252},
+ 		times=700,
+ 	feelingValue=0
+},
+[2261] =
+{
+ 		id=2261,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=220,
+ 		group=3,
+ 		nextGroup={6,6},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002254,47002255},
+ 		lotWords={47002254,47002255},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2262] =
+{
+ 		id=2262,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=220,
+ 		group=4,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2263] =
+{
+ 		id=2263,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=220,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2264] =
+{
+ 		id=2264,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110007,
+ 		heroName=8110007,
+ 		story=220,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002256},
+ 		times=850,
+ 	feelingValue=0
+},
+[2265] =
+{
+ 		id=2265,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=220,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002257},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2266] =
+{
+ 		id=2266,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=220,
+ 		group=8,
+ 		nextGroup={11,11},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002259,47002260},
+ 		lotWords={47002259,47002260},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2267] =
+{
+ 		id=2267,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=220,
+ 		group=9,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2268] =
+{
+ 		id=2268,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=220,
+ 		group=10,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2269] =
+{
+ 		id=2269,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=220,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002261},
+ 		times=2350,
+ 	feelingValue=0
+},
+[2270] =
+{
+ 		id=2270,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=220,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002262},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2271] =
+{
+ 		id=2271,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=220,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002263},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2272] =
+{
+ 		id=2272,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110007,
+ 		heroName=8110007,
+ 		story=220,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002264},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2273] =
+{
+ 		id=2273,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110007,
+ 		heroName=8110007,
+ 		story=220,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002265},
+ 		times=700,
+ 	feelingValue=0
+},
+[2274] =
+{
+ 		id=2274,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110007,
+ 		heroName=8110007,
+ 		story=220,
+ 		group=16,
+ 		nextGroup={17},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002266},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2275] =
+{
+ 		id=2275,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=220,
+ 		group=17,
+ 		nextGroup={20,20},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002268,47002269},
+ 		lotWords={47002268,47002269},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2276] =
+{
+ 		id=2276,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=220,
+ 		group=18,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2277] =
+{
+ 		id=2277,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=220,
+ 		group=19,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2278] =
+{
+ 		id=2278,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=220,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002270},
+ 		times=500,
+ 	feelingValue=0
+},
+[2279] =
+{
+ 		id=2279,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=220,
+ 		group=21,
+ 		nextGroup={23},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002272},
+ 		lotWords={47002272},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2280] =
+{
+ 		id=2280,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=220,
+ 		group=22,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2281] =
+{
+ 		id=2281,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110007,
+ 		heroName=8110007,
+ 		story=220,
+ 		group=23,
+ 		nextGroup={24},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002273},
+ 		times=2050,
+ 	feelingValue=0
+},
+[2282] =
+{
+ 		id=2282,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110007,
+ 		heroName=8110007,
+ 		story=220,
+ 		group=24,
+ 		nextGroup={25},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002274},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2283] =
+{
+ 		id=2283,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=220,
+ 		group=25,
+ 		type=6,
+ 	feelingValue=0
+},
+[2284] =
+{
+ 		id=2284,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=222,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002276},
+ 		times=500,
+ 	feelingValue=0
+},
+[2285] =
+{
+ 		id=2285,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110007,
+ 		heroName=8110007,
+ 		story=222,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002277},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2286] =
+{
+ 		id=2286,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=222,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002278},
+ 		times=2200,
+ 	feelingValue=0
+},
+[2287] =
+{
+ 		id=2287,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=222,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002279},
+ 		times=2050,
+ 	feelingValue=0
+},
+[2288] =
+{
+ 		id=2288,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110007,
+ 		heroName=8110007,
+ 		story=222,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002280},
+ 		times=500,
+ 	feelingValue=0
+},
+[2289] =
+{
+ 		id=2289,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=222,
+ 		group=6,
+ 		nextGroup={9,9},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002282,47002283},
+ 		lotWords={47002282,47002283},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2290] =
+{
+ 		id=2290,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=222,
+ 		group=7,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2291] =
+{
+ 		id=2291,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=222,
+ 		group=8,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2292] =
+{
+ 		id=2292,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=222,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002284},
+ 		times=2050,
+ 	feelingValue=0
+},
+[2293] =
+{
+ 		id=2293,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=222,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=4,
+ 		speaker=1,
+ 		words={47002285},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110002_expectant1",
+ 	feelingValue=0
+},
+[2294] =
+{
+ 		id=2294,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110007,
+ 		heroName=8110007,
+ 		story=222,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002286},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2295] =
+{
+ 		id=2295,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110007,
+ 		heroName=8110007,
+ 		story=222,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002287},
+ 		times=1300,
+ 	feelingValue=0
+},
+[2296] =
+{
+ 		id=2296,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=222,
+ 		group=13,
+ 		nextGroup={16,16},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002289,47002290},
+ 		lotWords={47002289,47002290},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2297] =
+{
+ 		id=2297,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=222,
+ 		group=14,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2298] =
+{
+ 		id=2298,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=222,
+ 		group=15,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2299] =
+{
+ 		id=2299,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=222,
+ 		group=16,
+ 		nextGroup={17},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002291},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2300] =
+{
+ 		id=2300,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110007,
+ 		heroName=8110007,
+ 		story=222,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002292},
+ 		times=1150,
+ 	feelingValue=0
+},
+[2301] =
+{
+ 		id=2301,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=222,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002293},
+ 		times=2700,
+ 	feelingValue=0
+},
+[2302] =
+{
+ 		id=2302,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110007,
+ 		heroName=8110007,
+ 		story=222,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002294},
+ 		times=500,
+ 	feelingValue=0
+},
+[2303] =
+{
+ 		id=2303,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=222,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002295},
+ 		times=2650,
+ 	feelingValue=0
+},
+[2304] =
+{
+ 		id=2304,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=222,
+ 		group=21,
+ 		nextGroup={24},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002297,47002298},
+ 		lotWords={47002297,47002298},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2305] =
+{
+ 		id=2305,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=222,
+ 		group=22,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2306] =
+{
+ 		id=2306,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=222,
+ 		group=23,
+ 		nextGroup={24},
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2307] =
+{
+ 		id=2307,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=222,
+ 		group=24,
+ 		type=6,
+ 	feelingValue=0
+},
+[2308] =
+{
+ 		id=2308,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=230,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002300},
+ 		times=850,
+ 	feelingValue=0
+},
+[2309] =
+{
+ 		id=2309,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=230,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002301},
+ 		times=1150,
+ 	feelingValue=0
+},
+[2310] =
+{
+ 		id=2310,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=230,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002302},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2311] =
+{
+ 		id=2311,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=230,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002303},
+ 		times=2200,
+ 	feelingValue=0
+},
+[2312] =
+{
+ 		id=2312,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=230,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=4,
+ 		speaker=1,
+ 		words={47002304},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110003_worry2",
+ 	feelingValue=0
+},
+[2313] =
+{
+ 		id=2313,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=230,
+ 		group=6,
+ 		nextGroup={9,9},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002306,47002307},
+ 		lotWords={47002306,47002307},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2314] =
+{
+ 		id=2314,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=230,
+ 		group=7,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2315] =
+{
+ 		id=2315,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=230,
+ 		group=8,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2316] =
+{
+ 		id=2316,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=230,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002308},
+ 		times=1750,
+ 	feelingValue=0
+},
+[2317] =
+{
+ 		id=2317,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=230,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002309},
+ 		times=700,
+ 	feelingValue=0
+},
+[2318] =
+{
+ 		id=2318,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=230,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002310},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2319] =
+{
+ 		id=2319,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=230,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002311},
+ 		times=2650,
+ 	feelingValue=0
+},
+[2320] =
+{
+ 		id=2320,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=230,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002312},
+ 		times=850,
+ 	feelingValue=0
+},
+[2321] =
+{
+ 		id=2321,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=230,
+ 		group=14,
+ 		nextGroup={15},
+ 		type=4,
+ 		speaker=1,
+ 		words={47002313},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110002_cry1",
+ 	feelingValue=0
+},
+[2322] =
+{
+ 		id=2322,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=230,
+ 		group=15,
+ 		nextGroup={18,18},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002315,47002316},
+ 		lotWords={47002315,47002316},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2323] =
+{
+ 		id=2323,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=230,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2324] =
+{
+ 		id=2324,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=230,
+ 		group=17,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2325] =
+{
+ 		id=2325,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=230,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002317},
+ 		times=2350,
+ 	feelingValue=0
+},
+[2326] =
+{
+ 		id=2326,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=230,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002318},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2327] =
+{
+ 		id=2327,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=230,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002319},
+ 		times=1750,
+ 	feelingValue=0
+},
+[2328] =
+{
+ 		id=2328,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=230,
+ 		group=21,
+ 		nextGroup={24,24},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002321,47002322},
+ 		lotWords={47002321,47002322},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2329] =
+{
+ 		id=2329,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=230,
+ 		group=22,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2330] =
+{
+ 		id=2330,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=230,
+ 		group=23,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2331] =
+{
+ 		id=2331,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=230,
+ 		group=24,
+ 		nextGroup={25},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002323},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2332] =
+{
+ 		id=2332,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=230,
+ 		group=25,
+ 		nextGroup={27},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002325},
+ 		lotWords={47002325},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2333] =
+{
+ 		id=2333,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=230,
+ 		group=26,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2334] =
+{
+ 		id=2334,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=230,
+ 		group=27,
+ 		nextGroup={28},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002326},
+ 		times=500,
+ 	feelingValue=0
+},
+[2335] =
+{
+ 		id=2335,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=230,
+ 		group=28,
+ 		nextGroup={29},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002327},
+ 		times=700,
+ 	feelingValue=0
+},
+[2336] =
+{
+ 		id=2336,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=230,
+ 		group=29,
+ 		type=6,
+ 	feelingValue=0
+},
+[2337] =
+{
+ 		id=2337,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=232,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002329},
+ 		times=2050,
+ 	feelingValue=0
+},
+[2338] =
+{
+ 		id=2338,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=232,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002330},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2339] =
+{
+ 		id=2339,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=232,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002331},
+ 		times=500,
+ 	feelingValue=0
+},
+[2340] =
+{
+ 		id=2340,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=232,
+ 		group=4,
+ 		nextGroup={7,7},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002333,47002334},
+ 		lotWords={47002333,47002334},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2341] =
+{
+ 		id=2341,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=232,
+ 		group=5,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2342] =
+{
+ 		id=2342,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=232,
+ 		group=6,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2343] =
+{
+ 		id=2343,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=232,
+ 		group=7,
+ 		nextGroup={8},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002335},
+ 		times=2700,
+ 	feelingValue=0
+},
+[2344] =
+{
+ 		id=2344,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=232,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002336},
+ 		times=2050,
+ 	feelingValue=0
+},
+[2345] =
+{
+ 		id=2345,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=232,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002337},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2346] =
+{
+ 		id=2346,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=232,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002338},
+ 		times=1150,
+ 	feelingValue=0
+},
+[2347] =
+{
+ 		id=2347,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=232,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002339},
+ 		times=2200,
+ 	feelingValue=0
+},
+[2348] =
+{
+ 		id=2348,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=232,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=4,
+ 		speaker=1,
+ 		words={47002340},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110002_cry2",
+ 	feelingValue=0
+},
+[2349] =
+{
+ 		id=2349,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=232,
+ 		group=13,
+ 		nextGroup={16,16},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002342,47002343},
+ 		lotWords={47002342,47002343},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2350] =
+{
+ 		id=2350,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=232,
+ 		group=14,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2351] =
+{
+ 		id=2351,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=232,
+ 		group=15,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2352] =
+{
+ 		id=2352,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=232,
+ 		group=16,
+ 		nextGroup={17},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002344},
+ 		times=850,
+ 	feelingValue=0
+},
+[2353] =
+{
+ 		id=2353,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=232,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002345},
+ 		times=2200,
+ 	feelingValue=0
+},
+[2354] =
+{
+ 		id=2354,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=232,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002346},
+ 		times=2700,
+ 	feelingValue=0
+},
+[2355] =
+{
+ 		id=2355,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=232,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002347},
+ 		times=2050,
+ 	feelingValue=0
+},
+[2356] =
+{
+ 		id=2356,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=232,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002348},
+ 		times=550,
+ 	feelingValue=0
+},
+[2357] =
+{
+ 		id=2357,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=232,
+ 		group=21,
+ 		nextGroup={24,24},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002350,47002351},
+ 		lotWords={47002350,47002351},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2358] =
+{
+ 		id=2358,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=232,
+ 		group=22,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2359] =
+{
+ 		id=2359,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=232,
+ 		group=23,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2360] =
+{
+ 		id=2360,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=232,
+ 		group=24,
+ 		nextGroup={25},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002352},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2361] =
+{
+ 		id=2361,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=232,
+ 		group=25,
+ 		nextGroup={26},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002353},
+ 		times=2500,
+ 	feelingValue=0
+},
+[2362] =
+{
+ 		id=2362,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=232,
+ 		group=26,
+ 		nextGroup={27},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002354},
+ 		times=2200,
+ 	feelingValue=0
+},
+[2363] =
+{
+ 		id=2363,
+ 		chatType=2,
+ 		chatName=56000002,
+ 		story=232,
+ 		group=27,
+ 		type=6,
+ 	feelingValue=0
+},
+[2364] =
+{
+ 		id=2364,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=236,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002356},
+ 		times=2650,
+ 	feelingValue=0
+},
+[2365] =
+{
+ 		id=2365,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=236,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002357},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2366] =
+{
+ 		id=2366,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=236,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002358},
+ 		times=2500,
+ 	feelingValue=0
+},
+[2367] =
+{
+ 		id=2367,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=236,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002359},
+ 		times=1300,
+ 	feelingValue=0
+},
+[2368] =
+{
+ 		id=2368,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=236,
+ 		group=5,
+ 		nextGroup={8,8},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002361,47002362},
+ 		lotWords={47002361,47002362},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2369] =
+{
+ 		id=2369,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=236,
+ 		group=6,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2370] =
+{
+ 		id=2370,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=236,
+ 		group=7,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2371] =
+{
+ 		id=2371,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=236,
+ 		group=8,
+ 		nextGroup={9},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002363},
+ 		times=2050,
+ 	feelingValue=0
+},
+[2372] =
+{
+ 		id=2372,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=236,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002364},
+ 		times=2700,
+ 	feelingValue=0
+},
+[2373] =
+{
+ 		id=2373,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=236,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002365},
+ 		times=2650,
+ 	feelingValue=0
+},
+[2374] =
+{
+ 		id=2374,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=236,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=4,
+ 		speaker=1,
+ 		words={47002366},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110002_angry1",
+ 	feelingValue=0
+},
+[2375] =
+{
+ 		id=2375,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=236,
+ 		group=12,
+ 		nextGroup={15,15},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002368,47002369},
+ 		lotWords={47002368,47002369},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2376] =
+{
+ 		id=2376,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=236,
+ 		group=13,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2377] =
+{
+ 		id=2377,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=236,
+ 		group=14,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2378] =
+{
+ 		id=2378,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=236,
+ 		group=15,
+ 		nextGroup={16},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002370},
+ 		times=2650,
+ 	feelingValue=0
+},
+[2379] =
+{
+ 		id=2379,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=236,
+ 		group=16,
+ 		nextGroup={17},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002371},
+ 		times=2700,
+ 	feelingValue=0
+},
+[2380] =
+{
+ 		id=2380,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=236,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002372},
+ 		times=2700,
+ 	feelingValue=0
+},
+[2381] =
+{
+ 		id=2381,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=236,
+ 		group=18,
+ 		nextGroup={21,21},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002374,47002375},
+ 		lotWords={47002374,47002375},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2382] =
+{
+ 		id=2382,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=236,
+ 		group=19,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2383] =
+{
+ 		id=2383,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=236,
+ 		group=20,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2384] =
+{
+ 		id=2384,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=236,
+ 		group=21,
+ 		nextGroup={22},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002376},
+ 		times=2200,
+ 	feelingValue=0
+},
+[2385] =
+{
+ 		id=2385,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=236,
+ 		group=22,
+ 		nextGroup={23},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002377},
+ 		times=1300,
+ 	feelingValue=0
+},
+[2386] =
+{
+ 		id=2386,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=236,
+ 		group=23,
+ 		nextGroup={24},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002378},
+ 		times=850,
+ 	feelingValue=0
+},
+[2387] =
+{
+ 		id=2387,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=236,
+ 		group=24,
+ 		nextGroup={25},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002379},
+ 		times=850,
+ 	feelingValue=0
+},
+[2388] =
+{
+ 		id=2388,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=236,
+ 		group=25,
+ 		nextGroup={27},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002381},
+ 		lotWords={47002381},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2389] =
+{
+ 		id=2389,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=236,
+ 		group=26,
+ 		nextGroup={27},
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2390] =
+{
+ 		id=2390,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=236,
+ 		group=27,
+ 		type=6,
+ 	feelingValue=0
+},
+[2391] =
+{
+ 		id=2391,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=240,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002383},
+ 		times=2650,
+ 	feelingValue=0
+},
+[2392] =
+{
+ 		id=2392,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=240,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002384},
+ 		times=500,
+ 	feelingValue=0
+},
+[2393] =
+{
+ 		id=2393,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=240,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002385},
+ 		times=550,
+ 	feelingValue=0
+},
+[2394] =
+{
+ 		id=2394,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=240,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002386},
+ 		times=1750,
+ 	feelingValue=0
+},
+[2395] =
+{
+ 		id=2395,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=240,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002387},
+ 		times=2500,
+ 	feelingValue=0
+},
+[2396] =
+{
+ 		id=2396,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=240,
+ 		group=6,
+ 		nextGroup={9,9},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002389,47002390},
+ 		lotWords={47002389,47002390},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2397] =
+{
+ 		id=2397,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=240,
+ 		group=7,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2398] =
+{
+ 		id=2398,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=240,
+ 		group=8,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2399] =
+{
+ 		id=2399,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=240,
+ 		group=9,
+ 		nextGroup={10},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002391},
+ 		times=1150,
+ 	feelingValue=0
+},
+[2400] =
+{
+ 		id=2400,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=240,
+ 		group=10,
+ 		nextGroup={11},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002392},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2401] =
+{
+ 		id=2401,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=240,
+ 		group=11,
+ 		nextGroup={12},
+ 		type=4,
+ 		speaker=1,
+ 		words={47002393},
+ 		times=1000,
+ 		picture="UI/SpritePics/emoji/110002_angry2",
+ 	feelingValue=0
+},
+[2402] =
+{
+ 		id=2402,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=240,
+ 		group=12,
+ 		nextGroup={13},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002394},
+ 		times=550,
+ 	feelingValue=0
+},
+[2403] =
+{
+ 		id=2403,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=240,
+ 		group=13,
+ 		nextGroup={14},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002395},
+ 		times=2050,
+ 	feelingValue=0
+},
+[2404] =
+{
+ 		id=2404,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=240,
+ 		group=14,
+ 		nextGroup={17,17},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002397,47002398},
+ 		lotWords={47002397,47002398},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2405] =
+{
+ 		id=2405,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=240,
+ 		group=15,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2406] =
+{
+ 		id=2406,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=240,
+ 		group=16,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2407] =
+{
+ 		id=2407,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=240,
+ 		group=17,
+ 		nextGroup={18},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002399},
+ 		times=850,
+ 	feelingValue=0
+},
+[2408] =
+{
+ 		id=2408,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=240,
+ 		group=18,
+ 		nextGroup={19},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002400},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2409] =
+{
+ 		id=2409,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=240,
+ 		group=19,
+ 		nextGroup={20},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002401},
+ 		times=2200,
+ 	feelingValue=0
+},
+[2410] =
+{
+ 		id=2410,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=240,
+ 		group=20,
+ 		nextGroup={21},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002402},
+ 		times=1600,
+ 	feelingValue=0
+},
+[2411] =
+{
+ 		id=2411,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=240,
+ 		group=21,
+ 		nextGroup={22},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002403},
+ 		times=850,
+ 	feelingValue=0
+},
+[2412] =
+{
+ 		id=2412,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=240,
+ 		group=22,
+ 		nextGroup={23},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002404},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2413] =
+{
+ 		id=2413,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=240,
+ 		group=23,
+ 		nextGroup={26,26},
+ 		type=1,
+ 		speaker=2,
+ 		words={47002406,47002407},
+ 		lotWords={47002406,47002407},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2414] =
+{
+ 		id=2414,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=240,
+ 		group=24,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2415] =
+{
+ 		id=2415,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=240,
+ 		group=25,
+ 		type=1,
+ 		speaker=2,
+ 	feelingValue=0
+},
+[2416] =
+{
+ 		id=2416,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=240,
+ 		group=26,
+ 		nextGroup={27},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002408},
+ 		times=1150,
+ 	feelingValue=0
+},
+[2417] =
+{
+ 		id=2417,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=240,
+ 		group=27,
+ 		nextGroup={28},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002409},
+ 		times=1450,
+ 	feelingValue=0
+},
+[2418] =
+{
+ 		id=2418,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=240,
+ 		group=28,
+ 		nextGroup={29},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002410},
+ 		times=500,
+ 	feelingValue=0
+},
+[2419] =
+{
+ 		id=2419,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=240,
+ 		group=29,
+ 		nextGroup={30},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002411},
+ 		times=500,
+ 	feelingValue=0
+},
+[2420] =
+{
+ 		id=2420,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=240,
+ 		group=30,
+ 		nextGroup={31},
+ 		type=1,
+ 		speaker=1,
+ 		words={47002412},
+ 		times=1900,
+ 	feelingValue=0
+},
+[2421] =
+{
+ 		id=2421,
+ 		chatType=2,
+ 		chatName=56000001,
+ 		story=240,
+ 		group=31,
+ 		type=6,
+ 	feelingValue=0
+},
+[2422] =
+{
+ 		id=2422,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=341,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010049},
+ 		times=500,
+ 	feelingValue=0
+},
+[2423] =
+{
+ 		id=2423,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		story=341,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010050,40010051},
+ 		lotWords={40010050,40010051},
+ 		times=500,
+ 	feelingValue=0
+},
+[2424] =
+{
+ 		id=2424,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=341,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010052},
+ 		times=500,
+ 	feelingValue=0
+},
+[2425] =
+{
+ 		id=2425,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=341,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010053},
+ 		times=500,
+ 	feelingValue=0
+},
+[2426] =
+{
+ 		id=2426,
+ 		chatType=1,
+ 		chatName=8110006,
+ 		hero=110006,
+ 		heroName=8110006,
+ 		story=341,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2427] =
+{
+ 		id=2427,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=342,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010054},
+ 		times=500,
+ 	feelingValue=0
+},
+[2428] =
+{
+ 		id=2428,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		story=342,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010055,40010056},
+ 		lotWords={40010055,40010056},
+ 		times=500,
+ 	feelingValue=0
+},
+[2429] =
+{
+ 		id=2429,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=342,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010057},
+ 		times=500,
+ 	feelingValue=0
+},
+[2430] =
+{
+ 		id=2430,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=342,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010058},
+ 		times=500,
+ 	feelingValue=0
+},
+[2431] =
+{
+ 		id=2431,
+ 		chatType=1,
+ 		chatName=8110003,
+ 		hero=110003,
+ 		heroName=8110003,
+ 		story=342,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2432] =
+{
+ 		id=2432,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=343,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010059},
+ 		times=500,
+ 	feelingValue=0
+},
+[2433] =
+{
+ 		id=2433,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		story=343,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010060,40010061},
+ 		lotWords={40010060,40010061},
+ 		times=500,
+ 	feelingValue=0
+},
+[2434] =
+{
+ 		id=2434,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=343,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010062},
+ 		times=500,
+ 	feelingValue=0
+},
+[2435] =
+{
+ 		id=2435,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=343,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010063},
+ 		times=500,
+ 	feelingValue=0
+},
+[2436] =
+{
+ 		id=2436,
+ 		chatType=1,
+ 		chatName=8110002,
+ 		hero=110002,
+ 		heroName=8110002,
+ 		story=343,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2437] =
+{
+ 		id=2437,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=344,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010064},
+ 		times=500,
+ 	feelingValue=0
+},
+[2438] =
+{
+ 		id=2438,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		story=344,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010065,40010066},
+ 		lotWords={40010065,40010066},
+ 		times=500,
+ 	feelingValue=0
+},
+[2439] =
+{
+ 		id=2439,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=344,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010067},
+ 		times=500,
+ 	feelingValue=0
+},
+[2440] =
+{
+ 		id=2440,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=344,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010068},
+ 		times=500,
+ 	feelingValue=0
+},
+[2441] =
+{
+ 		id=2441,
+ 		chatType=1,
+ 		chatName=8110005,
+ 		hero=110005,
+ 		heroName=8110005,
+ 		story=344,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2442] =
+{
+ 		id=2442,
+ 		chatType=1,
+ 		chatName=8110009,
+ 		hero=110009,
+ 		heroName=8110009,
+ 		story=345,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010069},
+ 		times=500,
+ 	feelingValue=0
+},
+[2443] =
+{
+ 		id=2443,
+ 		chatType=1,
+ 		chatName=8110009,
+ 		story=345,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010070,40010071},
+ 		lotWords={40010070,40010071},
+ 		times=500,
+ 	feelingValue=0
+},
+[2444] =
+{
+ 		id=2444,
+ 		chatType=1,
+ 		chatName=8110009,
+ 		hero=110009,
+ 		heroName=8110009,
+ 		story=345,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010072},
+ 		times=500,
+ 	feelingValue=0
+},
+[2445] =
+{
+ 		id=2445,
+ 		chatType=1,
+ 		chatName=8110009,
+ 		hero=110009,
+ 		heroName=8110009,
+ 		story=345,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010073},
+ 		times=500,
+ 	feelingValue=0
+},
+[2446] =
+{
+ 		id=2446,
+ 		chatType=1,
+ 		chatName=8110009,
+ 		hero=110009,
+ 		heroName=8110009,
+ 		story=345,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2447] =
+{
+ 		id=2447,
+ 		chatType=1,
+ 		chatName=8110004,
+ 		hero=110004,
+ 		heroName=8110004,
+ 		story=346,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010074},
+ 		times=500,
+ 	feelingValue=0
+},
+[2448] =
+{
+ 		id=2448,
+ 		chatType=1,
+ 		chatName=8110004,
+ 		story=346,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010075,40010076},
+ 		lotWords={40010075,40010076},
+ 		times=500,
+ 	feelingValue=0
+},
+[2449] =
+{
+ 		id=2449,
+ 		chatType=1,
+ 		chatName=8110004,
+ 		hero=110004,
+ 		heroName=8110004,
+ 		story=346,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010077},
+ 		times=500,
+ 	feelingValue=0
+},
+[2450] =
+{
+ 		id=2450,
+ 		chatType=1,
+ 		chatName=8110004,
+ 		hero=110004,
+ 		heroName=8110004,
+ 		story=346,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010078},
+ 		times=500,
+ 	feelingValue=0
+},
+[2451] =
+{
+ 		id=2451,
+ 		chatType=1,
+ 		chatName=8110004,
+ 		hero=110004,
+ 		heroName=8110004,
+ 		story=346,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2452] =
+{
+ 		id=2452,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=347,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010079},
+ 		times=500,
+ 	feelingValue=0
+},
+[2453] =
+{
+ 		id=2453,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		story=347,
+ 		group=2,
+ 		nextGroup={3,3},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010080,40010081},
+ 		lotWords={40010080,40010081},
+ 		times=500,
+ 	feelingValue=0
+},
+[2454] =
+{
+ 		id=2454,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=347,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010082},
+ 		times=500,
+ 	feelingValue=0
+},
+[2455] =
+{
+ 		id=2455,
+ 		chatType=1,
+ 		chatName=8110001,
+ 		hero=110001,
+ 		heroName=8110001,
+ 		story=347,
+ 		group=4,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2456] =
+{
+ 		id=2456,
+ 		chatType=1,
+ 		chatName=8110010,
+ 		hero=110010,
+ 		heroName=8110010,
+ 		story=348,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010083},
+ 		times=500,
+ 	feelingValue=0
+},
+[2457] =
+{
+ 		id=2457,
+ 		chatType=1,
+ 		chatName=8110010,
+ 		hero=110010,
+ 		heroName=8110010,
+ 		story=348,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010084},
+ 		times=500,
+ 	feelingValue=0
+},
+[2458] =
+{
+ 		id=2458,
+ 		chatType=1,
+ 		chatName=8110010,
+ 		hero=110010,
+ 		heroName=8110010,
+ 		story=348,
+ 		group=3,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2459] =
+{
+ 		id=2459,
+ 		chatType=1,
+ 		chatName=8110012,
+ 		hero=110012,
+ 		heroName=8110012,
+ 		story=349,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010085},
+ 		times=500,
+ 	feelingValue=0
+},
+[2460] =
+{
+ 		id=2460,
+ 		chatType=1,
+ 		chatName=8110012,
+ 		story=349,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010086,40010087},
+ 		lotWords={40010086,40010087},
+ 		times=500,
+ 	feelingValue=0
+},
+[2461] =
+{
+ 		id=2461,
+ 		chatType=1,
+ 		chatName=8110012,
+ 		hero=110012,
+ 		heroName=8110012,
+ 		story=349,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010088},
+ 		times=500,
+ 	feelingValue=0
+},
+[2462] =
+{
+ 		id=2462,
+ 		chatType=1,
+ 		chatName=8110012,
+ 		hero=110012,
+ 		heroName=8110012,
+ 		story=349,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010089},
+ 		times=500,
+ 	feelingValue=0
+},
+[2463] =
+{
+ 		id=2463,
+ 		chatType=1,
+ 		chatName=8110012,
+ 		hero=110012,
+ 		heroName=8110012,
+ 		story=349,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2464] =
+{
+ 		id=2464,
+ 		chatType=1,
+ 		chatName=8110014,
+ 		hero=110014,
+ 		heroName=8110014,
+ 		story=350,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010090},
+ 		times=500,
+ 	feelingValue=0
+},
+[2465] =
+{
+ 		id=2465,
+ 		chatType=1,
+ 		chatName=8110014,
+ 		hero=110014,
+ 		heroName=8110014,
+ 		story=350,
+ 		group=2,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2466] =
+{
+ 		id=2466,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=351,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010091},
+ 		times=500,
+ 	feelingValue=0
+},
+[2467] =
+{
+ 		id=2467,
+ 		chatType=1,
+ 		chatName=8120001,
+ 		hero=120001,
+ 		heroName=8120001,
+ 		story=351,
+ 		group=2,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2468] =
+{
+ 		id=2468,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=352,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010092},
+ 		times=500,
+ 	feelingValue=0
+},
+[2469] =
+{
+ 		id=2469,
+ 		chatType=1,
+ 		chatName=8120002,
+ 		hero=120002,
+ 		heroName=8120002,
+ 		story=352,
+ 		group=2,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2470] =
+{
+ 		id=2470,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=353,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010093},
+ 		times=500,
+ 	feelingValue=0
+},
+[2471] =
+{
+ 		id=2471,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		story=353,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010094,40010095},
+ 		lotWords={40010094,40010095},
+ 		times=500,
+ 	feelingValue=0
+},
+[2472] =
+{
+ 		id=2472,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=353,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010096},
+ 		times=500,
+ 	feelingValue=0
+},
+[2473] =
+{
+ 		id=2473,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=353,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010097},
+ 		times=500,
+ 	feelingValue=0
+},
+[2474] =
+{
+ 		id=2474,
+ 		chatType=1,
+ 		chatName=8120003,
+ 		hero=120003,
+ 		heroName=8120003,
+ 		story=353,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2475] =
+{
+ 		id=2475,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=354,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010098},
+ 		times=500,
+ 	feelingValue=0
+},
+[2476] =
+{
+ 		id=2476,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		story=354,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010099,40010100},
+ 		lotWords={40010099,40010100},
+ 		times=500,
+ 	feelingValue=0
+},
+[2477] =
+{
+ 		id=2477,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=354,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010101},
+ 		times=500,
+ 	feelingValue=0
+},
+[2478] =
+{
+ 		id=2478,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=354,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010102},
+ 		times=500,
+ 	feelingValue=0
+},
+[2479] =
+{
+ 		id=2479,
+ 		chatType=1,
+ 		chatName=8120004,
+ 		hero=120004,
+ 		heroName=8120004,
+ 		story=354,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2480] =
+{
+ 		id=2480,
+ 		chatType=1,
+ 		chatName=8120007,
+ 		hero=120007,
+ 		heroName=8120007,
+ 		story=355,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010103},
+ 		times=500,
+ 	feelingValue=0
+},
+[2481] =
+{
+ 		id=2481,
+ 		chatType=1,
+ 		chatName=8120007,
+ 		story=355,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010104,40010105},
+ 		lotWords={40010104,40010105},
+ 		times=500,
+ 	feelingValue=0
+},
+[2482] =
+{
+ 		id=2482,
+ 		chatType=1,
+ 		chatName=8120007,
+ 		hero=120007,
+ 		heroName=8120007,
+ 		story=355,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010106},
+ 		times=500,
+ 	feelingValue=0
+},
+[2483] =
+{
+ 		id=2483,
+ 		chatType=1,
+ 		chatName=8120007,
+ 		hero=120007,
+ 		heroName=8120007,
+ 		story=355,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010107},
+ 		times=500,
+ 	feelingValue=0
+},
+[2484] =
+{
+ 		id=2484,
+ 		chatType=1,
+ 		chatName=8120007,
+ 		hero=120007,
+ 		heroName=8120007,
+ 		story=355,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2485] =
+{
+ 		id=2485,
+ 		chatType=1,
+ 		chatName=8120008,
+ 		hero=120008,
+ 		heroName=8120008,
+ 		story=356,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010108},
+ 		times=500,
+ 	feelingValue=0
+},
+[2486] =
+{
+ 		id=2486,
+ 		chatType=1,
+ 		chatName=8120008,
+ 		hero=120008,
+ 		heroName=8120008,
+ 		story=356,
+ 		group=2,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2487] =
+{
+ 		id=2487,
+ 		chatType=1,
+ 		chatName=8120009,
+ 		hero=120009,
+ 		heroName=8120009,
+ 		story=357,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010109},
+ 		times=500,
+ 	feelingValue=0
+},
+[2488] =
+{
+ 		id=2488,
+ 		chatType=1,
+ 		chatName=8120009,
+ 		hero=120009,
+ 		heroName=8120009,
+ 		story=357,
+ 		group=2,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2489] =
+{
+ 		id=2489,
+ 		chatType=1,
+ 		chatName=8120011,
+ 		hero=120011,
+ 		heroName=8120011,
+ 		story=358,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010110},
+ 		times=500,
+ 	feelingValue=0
+},
+[2490] =
+{
+ 		id=2490,
+ 		chatType=1,
+ 		chatName=8120011,
+ 		story=358,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010111,40010112},
+ 		lotWords={40010111,40010112},
+ 		times=500,
+ 	feelingValue=0
+},
+[2491] =
+{
+ 		id=2491,
+ 		chatType=1,
+ 		chatName=8120011,
+ 		hero=120011,
+ 		heroName=8120011,
+ 		story=358,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010113},
+ 		times=500,
+ 	feelingValue=0
+},
+[2492] =
+{
+ 		id=2492,
+ 		chatType=1,
+ 		chatName=8120011,
+ 		hero=120011,
+ 		heroName=8120011,
+ 		story=358,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010114},
+ 		times=500,
+ 	feelingValue=0
+},
+[2493] =
+{
+ 		id=2493,
+ 		chatType=1,
+ 		chatName=8120011,
+ 		hero=120011,
+ 		heroName=8120011,
+ 		story=358,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2494] =
+{
+ 		id=2494,
+ 		chatType=1,
+ 		chatName=8120013,
+ 		hero=120013,
+ 		heroName=8120013,
+ 		story=359,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010115},
+ 		times=500,
+ 	feelingValue=0
+},
+[2495] =
+{
+ 		id=2495,
+ 		chatType=1,
+ 		chatName=8120013,
+ 		hero=120013,
+ 		heroName=8120013,
+ 		story=359,
+ 		group=2,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2496] =
+{
+ 		id=2496,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=360,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010116},
+ 		times=500,
+ 	feelingValue=0
+},
+[2497] =
+{
+ 		id=2497,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		story=360,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010117,40010118},
+ 		lotWords={40010117,40010118},
+ 		times=500,
+ 	feelingValue=0
+},
+[2498] =
+{
+ 		id=2498,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=360,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010119},
+ 		times=500,
+ 	feelingValue=0
+},
+[2499] =
+{
+ 		id=2499,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=360,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010120},
+ 		times=500,
+ 	feelingValue=0
+},
+[2500] =
+{
+ 		id=2500,
+ 		chatType=1,
+ 		chatName=8130001,
+ 		hero=130001,
+ 		heroName=8130001,
+ 		story=360,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2501] =
+{
+ 		id=2501,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=361,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010121},
+ 		times=500,
+ 	feelingValue=0
+},
+[2502] =
+{
+ 		id=2502,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		story=361,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010122,40010123},
+ 		lotWords={40010122,40010123},
+ 		times=500,
+ 	feelingValue=0
+},
+[2503] =
+{
+ 		id=2503,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=361,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010124},
+ 		times=500,
+ 	feelingValue=0
+},
+[2504] =
+{
+ 		id=2504,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=361,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010125},
+ 		times=500,
+ 	feelingValue=0
+},
+[2505] =
+{
+ 		id=2505,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=361,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2506] =
+{
+ 		id=2506,
+ 		chatType=1,
+ 		chatName=8130004,
+ 		hero=130004,
+ 		heroName=8130004,
+ 		story=362,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010126},
+ 		times=500,
+ 	feelingValue=0
+},
+[2507] =
+{
+ 		id=2507,
+ 		chatType=1,
+ 		chatName=8130004,
+ 		hero=130004,
+ 		heroName=8130004,
+ 		story=362,
+ 		group=2,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2508] =
+{
+ 		id=2508,
+ 		chatType=1,
+ 		chatName=8130005,
+ 		hero=130005,
+ 		heroName=8130005,
+ 		story=363,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010127},
+ 		times=500,
+ 	feelingValue=0
+},
+[2509] =
+{
+ 		id=2509,
+ 		chatType=1,
+ 		chatName=8130005,
+ 		hero=130005,
+ 		heroName=8130005,
+ 		story=363,
+ 		group=2,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2510] =
+{
+ 		id=2510,
+ 		chatType=1,
+ 		chatName=8130006,
+ 		hero=130006,
+ 		heroName=8130006,
+ 		story=364,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010128},
+ 		times=500,
+ 	feelingValue=0
+},
+[2511] =
+{
+ 		id=2511,
+ 		chatType=1,
+ 		chatName=8130006,
+ 		hero=130006,
+ 		heroName=8130006,
+ 		story=364,
+ 		group=2,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2512] =
+{
+ 		id=2512,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=365,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010129},
+ 		times=500,
+ 	feelingValue=0
+},
+[2513] =
+{
+ 		id=2513,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		story=365,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010130,40010131},
+ 		lotWords={40010130,40010131},
+ 		times=500,
+ 	feelingValue=0
+},
+[2514] =
+{
+ 		id=2514,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=365,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010132},
+ 		times=500,
+ 	feelingValue=0
+},
+[2515] =
+{
+ 		id=2515,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=365,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010133},
+ 		times=500,
+ 	feelingValue=0
+},
+[2516] =
+{
+ 		id=2516,
+ 		chatType=1,
+ 		chatName=8140001,
+ 		hero=140001,
+ 		heroName=8140001,
+ 		story=365,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2517] =
+{
+ 		id=2517,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=366,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010134},
+ 		times=500,
+ 	feelingValue=0
+},
+[2518] =
+{
+ 		id=2518,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		story=366,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010135,40010136},
+ 		lotWords={40010135,40010136},
+ 		times=500,
+ 	feelingValue=0
+},
+[2519] =
+{
+ 		id=2519,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=366,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010137},
+ 		times=500,
+ 	feelingValue=0
+},
+[2520] =
+{
+ 		id=2520,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=366,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010138},
+ 		times=500,
+ 	feelingValue=0
+},
+[2521] =
+{
+ 		id=2521,
+ 		chatType=1,
+ 		chatName=8140002,
+ 		hero=140002,
+ 		heroName=8140002,
+ 		story=366,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2522] =
+{
+ 		id=2522,
+ 		chatType=1,
+ 		chatName=8140003,
+ 		hero=140003,
+ 		heroName=8140003,
+ 		story=367,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010139},
+ 		times=500,
+ 	feelingValue=0
+},
+[2523] =
+{
+ 		id=2523,
+ 		chatType=1,
+ 		chatName=8140003,
+ 		story=367,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010140,40010141},
+ 		lotWords={40010140,40010141},
+ 		times=500,
+ 	feelingValue=0
+},
+[2524] =
+{
+ 		id=2524,
+ 		chatType=1,
+ 		chatName=8140003,
+ 		hero=140003,
+ 		heroName=8140003,
+ 		story=367,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010142},
+ 		times=500,
+ 	feelingValue=0
+},
+[2525] =
+{
+ 		id=2525,
+ 		chatType=1,
+ 		chatName=8140003,
+ 		hero=140003,
+ 		heroName=8140003,
+ 		story=367,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010143},
+ 		times=500,
+ 	feelingValue=0
+},
+[2526] =
+{
+ 		id=2526,
+ 		chatType=1,
+ 		chatName=8140003,
+ 		hero=140003,
+ 		heroName=8140003,
+ 		story=367,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2527] =
+{
+ 		id=2527,
+ 		chatType=1,
+ 		chatName=8140004,
+ 		hero=140004,
+ 		heroName=8140004,
+ 		story=368,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010144},
+ 		times=500,
+ 	feelingValue=0
+},
+[2528] =
+{
+ 		id=2528,
+ 		chatType=1,
+ 		chatName=8140004,
+ 		hero=140004,
+ 		heroName=8140004,
+ 		story=368,
+ 		group=2,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2529] =
+{
+ 		id=2529,
+ 		chatType=1,
+ 		chatName=8140005,
+ 		hero=140005,
+ 		heroName=8140005,
+ 		story=369,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010145},
+ 		times=500,
+ 	feelingValue=0
+},
+[2530] =
+{
+ 		id=2530,
+ 		chatType=1,
+ 		chatName=8140005,
+ 		story=369,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010146,40010147},
+ 		lotWords={40010146,40010147},
+ 		times=500,
+ 	feelingValue=0
+},
+[2531] =
+{
+ 		id=2531,
+ 		chatType=1,
+ 		chatName=8140005,
+ 		hero=140005,
+ 		heroName=8140005,
+ 		story=369,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010148},
+ 		times=500,
+ 	feelingValue=0
+},
+[2532] =
+{
+ 		id=2532,
+ 		chatType=1,
+ 		chatName=8140005,
+ 		hero=140005,
+ 		heroName=8140005,
+ 		story=369,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010149},
+ 		times=500,
+ 	feelingValue=0
+},
+[2533] =
+{
+ 		id=2533,
+ 		chatType=1,
+ 		chatName=8140005,
+ 		hero=140005,
+ 		heroName=8140005,
+ 		story=369,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2534] =
+{
+ 		id=2534,
+ 		chatType=1,
+ 		chatName=8140006,
+ 		hero=140006,
+ 		heroName=8140006,
+ 		story=370,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010150},
+ 		times=500,
+ 	feelingValue=0
+},
+[2535] =
+{
+ 		id=2535,
+ 		chatType=1,
+ 		chatName=8140006,
+ 		hero=140006,
+ 		heroName=8140006,
+ 		story=370,
+ 		group=2,
+ 		type=6,
+ 		speaker=1,
+ 		times=500,
+ 	feelingValue=0
+},
+[2536] =
+{
+ 		id=2536,
+ 		chatType=1,
+ 		chatName=8150001,
+ 		hero=150001,
+ 		heroName=8150001,
+ 		story=371,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010151},
+ 		times=500,
+ 	feelingValue=0
+},
+[2537] =
+{
+ 		id=2537,
+ 		chatType=1,
+ 		chatName=8150001,
+ 		hero=150001,
+ 		heroName=8150001,
+ 		story=371,
+ 		group=2,
+ 		type=6,
+ 		speaker=1,
+ 		times=500,
+ 	feelingValue=0
+},
+[2538] =
+{
+ 		id=2538,
+ 		chatType=1,
+ 		chatName=8150002,
+ 		hero=150002,
+ 		heroName=8150002,
+ 		story=372,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010152},
+ 		times=500,
+ 	feelingValue=0
+},
+[2539] =
+{
+ 		id=2539,
+ 		chatType=1,
+ 		chatName=8150002,
+ 		story=372,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010153,40010154},
+ 		lotWords={40010153,40010154},
+ 		times=500,
+ 	feelingValue=0
+},
+[2540] =
+{
+ 		id=2540,
+ 		chatType=1,
+ 		chatName=8150002,
+ 		hero=150002,
+ 		heroName=8150002,
+ 		story=372,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010155},
+ 		times=500,
+ 	feelingValue=0
+},
+[2541] =
+{
+ 		id=2541,
+ 		chatType=1,
+ 		chatName=8150002,
+ 		hero=150002,
+ 		heroName=8150002,
+ 		story=372,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010156},
+ 		times=500,
+ 	feelingValue=0
+},
+[2542] =
+{
+ 		id=2542,
+ 		chatType=1,
+ 		chatName=8150002,
+ 		hero=150002,
+ 		heroName=8150002,
+ 		story=372,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2543] =
+{
+ 		id=2543,
+ 		chatType=1,
+ 		chatName=8150003,
+ 		hero=150003,
+ 		heroName=8150003,
+ 		story=373,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010157},
+ 		times=500,
+ 	feelingValue=0
+},
+[2544] =
+{
+ 		id=2544,
+ 		chatType=1,
+ 		chatName=8150003,
+ 		hero=150003,
+ 		heroName=8150003,
+ 		story=373,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010158},
+ 		times=500,
+ 	feelingValue=0
+},
+[2545] =
+{
+ 		id=2545,
+ 		chatType=1,
+ 		chatName=8150003,
+ 		story=373,
+ 		group=3,
+ 		nextGroup={4,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010159,40010160},
+ 		lotWords={40010159,40010160},
+ 		times=500,
+ 	feelingValue=0
+},
+[2546] =
+{
+ 		id=2546,
+ 		chatType=1,
+ 		chatName=8150003,
+ 		hero=150003,
+ 		heroName=8150003,
+ 		story=373,
+ 		group=4,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010161},
+ 		times=500,
+ 	feelingValue=0
+},
+[2547] =
+{
+ 		id=2547,
+ 		chatType=1,
+ 		chatName=8150003,
+ 		hero=150003,
+ 		heroName=8150003,
+ 		story=373,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010162},
+ 		times=500,
+ 	feelingValue=0
+},
+[2548] =
+{
+ 		id=2548,
+ 		chatType=1,
+ 		chatName=8150003,
+ 		hero=150003,
+ 		heroName=8150003,
+ 		story=373,
+ 		group=6,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2549] =
+{
+ 		id=2549,
+ 		chatType=1,
+ 		chatName=8150004,
+ 		hero=150004,
+ 		heroName=8150004,
+ 		story=374,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010163},
+ 		times=500,
+ 	feelingValue=0
+},
+[2550] =
+{
+ 		id=2550,
+ 		chatType=1,
+ 		chatName=8150004,
+ 		story=374,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010164,40010165},
+ 		lotWords={40010164,40010165},
+ 		times=500,
+ 	feelingValue=0
+},
+[2551] =
+{
+ 		id=2551,
+ 		chatType=1,
+ 		chatName=8150004,
+ 		hero=150004,
+ 		heroName=8150004,
+ 		story=374,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010166},
+ 		times=500,
+ 	feelingValue=0
+},
+[2552] =
+{
+ 		id=2552,
+ 		chatType=1,
+ 		chatName=8150004,
+ 		hero=150004,
+ 		heroName=8150004,
+ 		story=374,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010167},
+ 		times=500,
+ 	feelingValue=0
+},
+[2553] =
+{
+ 		id=2553,
+ 		chatType=1,
+ 		chatName=8150004,
+ 		hero=150004,
+ 		heroName=8150004,
+ 		story=374,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2554] =
+{
+ 		id=2554,
+ 		chatType=1,
+ 		chatName=8150005,
+ 		hero=150005,
+ 		heroName=8150005,
+ 		story=375,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010168},
+ 		times=500,
+ 	feelingValue=0
+},
+[2555] =
+{
+ 		id=2555,
+ 		chatType=1,
+ 		chatName=8150005,
+ 		hero=150005,
+ 		heroName=8150005,
+ 		story=375,
+ 		group=2,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2556] =
+{
+ 		id=2556,
+ 		chatType=1,
+ 		chatName=8150006,
+ 		hero=150006,
+ 		heroName=8150006,
+ 		story=376,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010169},
+ 		times=500,
+ 	feelingValue=0
+},
+[2557] =
+{
+ 		id=2557,
+ 		chatType=1,
+ 		chatName=8150006,
+ 		hero=150006,
+ 		heroName=8150006,
+ 		story=376,
+ 		group=2,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2558] =
+{
+ 		id=2558,
+ 		chatType=1,
+ 		chatName=8150009,
+ 		hero=150009,
+ 		heroName=8150009,
+ 		story=377,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010170},
+ 		times=500,
+ 	feelingValue=0
+},
+[2559] =
+{
+ 		id=2559,
+ 		chatType=1,
+ 		chatName=8150009,
+ 		story=377,
+ 		group=2,
+ 		nextGroup={3,4},
+ 		type=1,
+ 		speaker=2,
+ 		words={40010171,40010172},
+ 		lotWords={40010171,40010172},
+ 		times=500,
+ 	feelingValue=0
+},
+[2560] =
+{
+ 		id=2560,
+ 		chatType=1,
+ 		chatName=8150009,
+ 		hero=150009,
+ 		heroName=8150009,
+ 		story=377,
+ 		group=3,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010173},
+ 		times=500,
+ 	feelingValue=0
+},
+[2561] =
+{
+ 		id=2561,
+ 		chatType=1,
+ 		chatName=8150009,
+ 		hero=150009,
+ 		heroName=8150009,
+ 		story=377,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={40010174},
+ 		times=500,
+ 	feelingValue=0
+},
+[2562] =
+{
+ 		id=2562,
+ 		chatType=1,
+ 		chatName=8150009,
+ 		hero=150009,
+ 		heroName=8150009,
+ 		story=377,
+ 		group=5,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2563] =
+{
+ 		id=2563,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=300,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300000},
+ 		times=800,
+ 	feelingValue=0
+},
+[2564] =
+{
+ 		id=2564,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=300,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300001},
+ 		times=800,
+ 	feelingValue=0
+},
+[2565] =
+{
+ 		id=2565,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=300,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300002},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2566] =
+{
+ 		id=2566,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=300,
+ 		group=4,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2567] =
+{
+ 		id=2567,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=301,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300003},
+ 		times=800,
+ 	feelingValue=0
+},
+[2568] =
+{
+ 		id=2568,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=301,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300004},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2569] =
+{
+ 		id=2569,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=301,
+ 		group=3,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2570] =
+{
+ 		id=2570,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=302,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300005},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2571] =
+{
+ 		id=2571,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=302,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300006},
+ 		times=500,
+ 	feelingValue=0
+},
+[2572] =
+{
+ 		id=2572,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=302,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300007},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2573] =
+{
+ 		id=2573,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=302,
+ 		group=4,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2574] =
+{
+ 		id=2574,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=303,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300008},
+ 		times=800,
+ 	feelingValue=0
+},
+[2575] =
+{
+ 		id=2575,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=303,
+ 		group=2,
+ 		nextGroup={3,3},
+ 		type=1,
+ 		speaker=2,
+ 		words={50300009,50300010},
+ 		lotWords={50300009,50300010},
+ 		times=500,
+ 	feelingValue=0
+},
+[2576] =
+{
+ 		id=2576,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=303,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300011},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2577] =
+{
+ 		id=2577,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=303,
+ 		group=4,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2578] =
+{
+ 		id=2578,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=304,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300012},
+ 		times=800,
+ 	feelingValue=0
+},
+[2579] =
+{
+ 		id=2579,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=304,
+ 		group=2,
+ 		nextGroup={3,3},
+ 		type=1,
+ 		speaker=2,
+ 		words={50300013,50300014},
+ 		lotWords={50300013,50300014},
+ 		times=500,
+ 	feelingValue=0
+},
+[2580] =
+{
+ 		id=2580,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=304,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300015},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2581] =
+{
+ 		id=2581,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=304,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300016},
+ 		times=800,
+ 	feelingValue=0
+},
+[2582] =
+{
+ 		id=2582,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=304,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300017},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2583] =
+{
+ 		id=2583,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=304,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300018},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2584] =
+{
+ 		id=2584,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=304,
+ 		group=7,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2585] =
+{
+ 		id=2585,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=305,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300019},
+ 		times=500,
+ 	feelingValue=0
+},
+[2586] =
+{
+ 		id=2586,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=305,
+ 		group=2,
+ 		nextGroup={3,3},
+ 		type=1,
+ 		speaker=2,
+ 		words={50300020,50300021},
+ 		lotWords={50300020,50300021},
+ 		times=500,
+ 	feelingValue=0
+},
+[2587] =
+{
+ 		id=2587,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=305,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300022},
+ 		times=700,
+ 	feelingValue=0
+},
+[2588] =
+{
+ 		id=2588,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=305,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300023},
+ 		times=2000,
+ 	feelingValue=0
+},
+[2589] =
+{
+ 		id=2589,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=305,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300024},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2590] =
+{
+ 		id=2590,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=305,
+ 		group=6,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2591] =
+{
+ 		id=2591,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=306,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300025},
+ 		times=800,
+ 	feelingValue=0
+},
+[2592] =
+{
+ 		id=2592,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=306,
+ 		group=2,
+ 		nextGroup={3,3},
+ 		type=1,
+ 		speaker=2,
+ 		words={50300026,50300020},
+ 		lotWords={50300026,50300020},
+ 		times=500,
+ 	feelingValue=0
+},
+[2593] =
+{
+ 		id=2593,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=306,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300028},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2594] =
+{
+ 		id=2594,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=306,
+ 		group=4,
+ 		nextGroup={5,5},
+ 		type=1,
+ 		speaker=2,
+ 		words={50300029,50300030},
+ 		lotWords={50300029,50300030},
+ 		times=500,
+ 	feelingValue=0
+},
+[2595] =
+{
+ 		id=2595,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=306,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300031},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2596] =
+{
+ 		id=2596,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=306,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300032},
+ 		times=800,
+ 	feelingValue=0
+},
+[2597] =
+{
+ 		id=2597,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=306,
+ 		group=7,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2598] =
+{
+ 		id=2598,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=307,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300033},
+ 		times=800,
+ 	feelingValue=0
+},
+[2599] =
+{
+ 		id=2599,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=307,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300034},
+ 		times=500,
+ 	feelingValue=0
+},
+[2600] =
+{
+ 		id=2600,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=307,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300035},
+ 		times=800,
+ 	feelingValue=0
+},
+[2601] =
+{
+ 		id=2601,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=307,
+ 		group=4,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2602] =
+{
+ 		id=2602,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=308,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300036},
+ 		times=2800,
+ 	feelingValue=0
+},
+[2603] =
+{
+ 		id=2603,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=308,
+ 		group=2,
+ 		nextGroup={3,3},
+ 		type=1,
+ 		speaker=2,
+ 		words={50300037,50300038},
+ 		lotWords={50300037,50300038},
+ 		times=500,
+ 	feelingValue=0
+},
+[2604] =
+{
+ 		id=2604,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=308,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300039},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2605] =
+{
+ 		id=2605,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=308,
+ 		group=4,
+ 		nextGroup={5},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300040},
+ 		times=800,
+ 	feelingValue=0
+},
+[2606] =
+{
+ 		id=2606,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=308,
+ 		group=5,
+ 		nextGroup={6},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300041},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2607] =
+{
+ 		id=2607,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=308,
+ 		group=6,
+ 		nextGroup={7},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300042},
+ 		times=1200,
+ 	feelingValue=0
+},
+[2608] =
+{
+ 		id=2608,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=308,
+ 		group=7,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+},
+[2609] =
+{
+ 		id=2609,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=309,
+ 		group=1,
+ 		nextGroup={2},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300043},
+ 		times=800,
+ 	feelingValue=0
+},
+[2610] =
+{
+ 		id=2610,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=309,
+ 		group=2,
+ 		nextGroup={3},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300044},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2611] =
+{
+ 		id=2611,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=309,
+ 		group=3,
+ 		nextGroup={4},
+ 		type=1,
+ 		speaker=1,
+ 		words={50300045},
+ 		times=1000,
+ 	feelingValue=0
+},
+[2612] =
+{
+ 		id=2612,
+ 		chatType=1,
+ 		chatName=8130003,
+ 		hero=130003,
+ 		heroName=8130003,
+ 		story=309,
+ 		group=4,
+ 		type=6,
+ 		speaker=1,
+ 	feelingValue=0
+}
+}
+
+return {title=title, value=value}

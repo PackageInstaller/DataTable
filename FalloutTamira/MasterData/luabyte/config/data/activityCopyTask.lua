@@ -1,0 +1,578 @@
+local title = {
+	id = 0,
+	activityId = 0,
+	type = 0,
+	des = 0,
+	reward = 0,
+	linkto = 0,
+	order = 0,
+	limit = 0,
+	limitValue1 = 0,
+	limitValue2 = 0,
+	medal = 0
+}
+
+local value = {
+[101] =
+{
+ 		id=101,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060101,
+ 		reward=21401,
+ 		linkto=4419,
+ 		order=1,
+ 		limit=30,
+ 		limitValue1=3,
+ 		limitValue2=802101,
+ 	medal=0
+},
+[102] =
+{
+ 		id=102,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060102,
+ 		reward=21401,
+ 		linkto=4420,
+ 		order=2,
+ 		limit=30,
+ 		limitValue1=3,
+ 		limitValue2=802102,
+ 	medal=0
+},
+[103] =
+{
+ 		id=103,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060103,
+ 		reward=21401,
+ 		linkto=4421,
+ 		order=3,
+ 		limit=30,
+ 		limitValue1=3,
+ 		limitValue2=802103,
+ 	medal=0
+},
+[104] =
+{
+ 		id=104,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060104,
+ 		reward=21401,
+ 		linkto=4422,
+ 		order=4,
+ 		limit=30,
+ 		limitValue1=3,
+ 		limitValue2=802104,
+ 	medal=0
+},
+[105] =
+{
+ 		id=105,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060105,
+ 		reward=21401,
+ 		linkto=4423,
+ 		order=5,
+ 		limit=30,
+ 		limitValue1=3,
+ 		limitValue2=802105,
+ 	medal=0
+},
+[106] =
+{
+ 		id=106,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060106,
+ 		reward=21401,
+ 		linkto=4424,
+ 		order=6,
+ 		limit=30,
+ 		limitValue1=3,
+ 		limitValue2=802106,
+ 	medal=0
+},
+[107] =
+{
+ 		id=107,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060107,
+ 		reward=21401,
+ 		linkto=4425,
+ 		order=7,
+ 		limit=30,
+ 		limitValue1=3,
+ 		limitValue2=802107,
+ 	medal=0
+},
+[108] =
+{
+ 		id=108,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060108,
+ 		reward=21401,
+ 		linkto=4426,
+ 		order=8,
+ 		limit=30,
+ 		limitValue1=3,
+ 		limitValue2=802108,
+ 	medal=0
+},
+[109] =
+{
+ 		id=109,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060109,
+ 		reward=21401,
+ 		linkto=4427,
+ 		order=9,
+ 		limit=30,
+ 		limitValue1=3,
+ 		limitValue2=802109,
+ 	medal=0
+},
+[110] =
+{
+ 		id=110,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060110,
+ 		reward=21401,
+ 		linkto=4428,
+ 		order=10,
+ 		limit=30,
+ 		limitValue1=3,
+ 		limitValue2=802110,
+ 	medal=0
+},
+[111] =
+{
+ 		id=111,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060111,
+ 		reward=21401,
+ 		linkto=4429,
+ 		order=11,
+ 		limit=30,
+ 		limitValue1=3,
+ 		limitValue2=802111,
+ 	medal=0
+},
+[112] =
+{
+ 		id=112,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060112,
+ 		reward=21401,
+ 		linkto=4430,
+ 		order=12,
+ 		limit=30,
+ 		limitValue1=3,
+ 		limitValue2=802112,
+ 	medal=0
+},
+[113] =
+{
+ 		id=113,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060113,
+ 		reward=21401,
+ 		linkto=4431,
+ 		order=13,
+ 		limit=30,
+ 		limitValue1=4,
+ 		limitValue2=802201,
+ 	medal=0
+},
+[114] =
+{
+ 		id=114,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060114,
+ 		reward=21401,
+ 		linkto=4432,
+ 		order=14,
+ 		limit=30,
+ 		limitValue1=4,
+ 		limitValue2=802202,
+ 	medal=0
+},
+[115] =
+{
+ 		id=115,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060115,
+ 		reward=21401,
+ 		linkto=4433,
+ 		order=15,
+ 		limit=30,
+ 		limitValue1=4,
+ 		limitValue2=802203,
+ 	medal=0
+},
+[116] =
+{
+ 		id=116,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060116,
+ 		reward=21401,
+ 		linkto=4434,
+ 		order=16,
+ 		limit=30,
+ 		limitValue1=4,
+ 		limitValue2=802204,
+ 	medal=0
+},
+[117] =
+{
+ 		id=117,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060117,
+ 		reward=21401,
+ 		linkto=4435,
+ 		order=17,
+ 		limit=30,
+ 		limitValue1=4,
+ 		limitValue2=802205,
+ 	medal=0
+},
+[118] =
+{
+ 		id=118,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060118,
+ 		reward=21401,
+ 		linkto=4436,
+ 		order=18,
+ 		limit=30,
+ 		limitValue1=4,
+ 		limitValue2=802206,
+ 	medal=0
+},
+[119] =
+{
+ 		id=119,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060119,
+ 		reward=21401,
+ 		linkto=4437,
+ 		order=19,
+ 		limit=30,
+ 		limitValue1=4,
+ 		limitValue2=802207,
+ 	medal=0
+},
+[120] =
+{
+ 		id=120,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060120,
+ 		reward=21401,
+ 		linkto=4438,
+ 		order=20,
+ 		limit=30,
+ 		limitValue1=4,
+ 		limitValue2=802208,
+ 	medal=0
+},
+[121] =
+{
+ 		id=121,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060121,
+ 		reward=21401,
+ 		linkto=4439,
+ 		order=21,
+ 		limit=30,
+ 		limitValue1=4,
+ 		limitValue2=802209,
+ 	medal=0
+},
+[122] =
+{
+ 		id=122,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060122,
+ 		reward=21401,
+ 		linkto=4440,
+ 		order=22,
+ 		limit=30,
+ 		limitValue1=4,
+ 		limitValue2=802210,
+ 	medal=0
+},
+[123] =
+{
+ 		id=123,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060123,
+ 		reward=21401,
+ 		linkto=4441,
+ 		order=23,
+ 		limit=30,
+ 		limitValue1=4,
+ 		limitValue2=802211,
+ 	medal=0
+},
+[124] =
+{
+ 		id=124,
+ 		activityId=2001,
+ 		type=1,
+ 		des=31060124,
+ 		reward=21401,
+ 		linkto=4442,
+ 		order=24,
+ 		limit=30,
+ 		limitValue1=4,
+ 		limitValue2=802212,
+ 	medal=0
+},
+[201] =
+{
+ 		id=201,
+ 		activityId=3002,
+ 		type=1,
+ 		des=31060201,
+ 		reward=22200,
+ 		linkto=5301,
+ 		order=1,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=801102,
+ 	medal=0
+},
+[202] =
+{
+ 		id=202,
+ 		activityId=3002,
+ 		type=1,
+ 		des=31060202,
+ 		reward=22200,
+ 		linkto=5302,
+ 		order=2,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=801103,
+ 	medal=0
+},
+[203] =
+{
+ 		id=203,
+ 		activityId=3002,
+ 		type=1,
+ 		des=31060203,
+ 		reward=22200,
+ 		linkto=5303,
+ 		order=3,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=801105,
+ 	medal=0
+},
+[204] =
+{
+ 		id=204,
+ 		activityId=3002,
+ 		type=1,
+ 		des=31060204,
+ 		reward=22200,
+ 		linkto=5304,
+ 		order=4,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=801106,
+ 	medal=0
+},
+[205] =
+{
+ 		id=205,
+ 		activityId=3002,
+ 		type=1,
+ 		des=31060205,
+ 		reward=22200,
+ 		linkto=5305,
+ 		order=5,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=801107,
+ 	medal=0
+},
+[206] =
+{
+ 		id=206,
+ 		activityId=3002,
+ 		type=1,
+ 		des=31060206,
+ 		reward=22200,
+ 		linkto=5306,
+ 		order=6,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=801108,
+ 	medal=0
+},
+[207] =
+{
+ 		id=207,
+ 		activityId=3002,
+ 		type=1,
+ 		des=31060207,
+ 		reward=22200,
+ 		linkto=5307,
+ 		order=7,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=801109,
+ 	medal=0
+},
+[208] =
+{
+ 		id=208,
+ 		activityId=3002,
+ 		type=1,
+ 		des=31060208,
+ 		reward=22200,
+ 		linkto=5308,
+ 		order=8,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=801110,
+ 	medal=0
+},
+[209] =
+{
+ 		id=209,
+ 		activityId=3002,
+ 		type=1,
+ 		des=31060209,
+ 		reward=22200,
+ 		linkto=5311,
+ 		order=9,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=801201,
+ 	medal=0
+},
+[210] =
+{
+ 		id=210,
+ 		activityId=3002,
+ 		type=1,
+ 		des=31060210,
+ 		reward=22200,
+ 		linkto=5312,
+ 		order=10,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=801202,
+ 	medal=0
+},
+[211] =
+{
+ 		id=211,
+ 		activityId=3002,
+ 		type=1,
+ 		des=31060211,
+ 		reward=22200,
+ 		linkto=5313,
+ 		order=11,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=801203,
+ 	medal=0
+},
+[212] =
+{
+ 		id=212,
+ 		activityId=3002,
+ 		type=1,
+ 		des=31060212,
+ 		reward=22200,
+ 		linkto=5314,
+ 		order=12,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=801204,
+ 	medal=0
+},
+[213] =
+{
+ 		id=213,
+ 		activityId=3002,
+ 		type=1,
+ 		des=31060213,
+ 		reward=22200,
+ 		linkto=5315,
+ 		order=13,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=801205,
+ 	medal=0
+},
+[214] =
+{
+ 		id=214,
+ 		activityId=3002,
+ 		type=1,
+ 		des=31060214,
+ 		reward=22200,
+ 		linkto=5316,
+ 		order=14,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=801206,
+ 	medal=0
+},
+[215] =
+{
+ 		id=215,
+ 		activityId=3002,
+ 		type=1,
+ 		des=31060215,
+ 		reward=22200,
+ 		linkto=5317,
+ 		order=15,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=801207,
+ 	medal=0
+},
+[216] =
+{
+ 		id=216,
+ 		activityId=3002,
+ 		type=1,
+ 		des=31060216,
+ 		reward=22200,
+ 		linkto=5318,
+ 		order=16,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=801208,
+ 	medal=0
+}
+}
+
+return {title=title, value=value}

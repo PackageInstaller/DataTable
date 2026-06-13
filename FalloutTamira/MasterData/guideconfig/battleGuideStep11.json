@@ -1,0 +1,207 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8359430822174271028
+  },
+  "m_Name": "battleGuideStep11",
+  "groups": [
+    {
+      "groupId": 1,
+      "items": [
+        {
+          "stepId": 1,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "边舱已开启。",
+            "descLanguageId": 0,
+            "targetName": "Btn_Home",
+            "targetLayerPath": "Fixed/TopBar(Clone)/CommonBack/CommonBack2/Top/Btn_Home",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 59,
+            "height": 71,
+            "connectRadius": 10,
+            "offset": {
+              "x": -0.54,
+              "y": 0.4
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -3.0,
+              "y": 159.0
+            },
+            "effectRotation": -45,
+            "uiDialogOffeset": {
+              "x": -178.2,
+              "y": 206.94
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40087,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 500,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击跳转",
+          "GMMark": 232
+        },
+        {
+          "stepId": 3,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "边舱模块由此进入。",
+            "descLanguageId": 0,
+            "targetName": "Otaku",
+            "targetLayerPath": "Normal/MainUI(Clone)/Bg/Panel_R/R/Otaku",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 160,
+            "height": 75,
+            "connectRadius": 10,
+            "offset": {
+              "x": -38.3,
+              "y": 30.2
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -214.5,
+              "y": -330.12
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40086,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击边舱",
+          "GMMark": 233
+        }
+      ],
+      "desc": "引导首次进入边舱",
+      "autoId": 0
+    }
+  ],
+  "preGroups": [
+    {
+      "groupId": 2,
+      "items": [
+        {
+          "stepId": 3,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "边舱模块由此进入。",
+            "descLanguageId": 0,
+            "targetName": "Otaku",
+            "targetLayerPath": "Normal/MainUI(Clone)/Bg/Panel_R/R/Otaku",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 160,
+            "height": 75,
+            "connectRadius": 10,
+            "offset": {
+              "x": -38.3,
+              "y": 30.2
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -214.5,
+              "y": -330.12
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40086,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击边舱",
+          "GMMark": 233
+        }
+      ],
+      "desc": "",
+      "autoId": 0
+    }
+  ]
+}

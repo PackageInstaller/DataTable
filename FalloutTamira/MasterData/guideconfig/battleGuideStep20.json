@@ -1,0 +1,140 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8359430822174271028
+  },
+  "m_Name": "battleGuideStep20",
+  "groups": [
+    {
+      "groupId": 1,
+      "items": [
+        {
+          "stepId": 2,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "长官，点击返回退出送礼状态。",
+            "descLanguageId": 0,
+            "targetName": "Btn_Back",
+            "targetLayerPath": "Fixed/TopBar(Clone)/CommonBack/CommonBack1/Top/Btn_Back",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 66,
+            "height": 66,
+            "connectRadius": 10,
+            "offset": {
+              "x": -0.73,
+              "y": 2.41
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 167.0,
+              "y": 1.0
+            },
+            "effectRotation": -135,
+            "uiDialogOffeset": {
+              "x": -197.3,
+              "y": -11.15
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 41134,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击返回",
+          "GMMark": 0
+        },
+        {
+          "stepId": 1,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "长官，当宿舍内有事件时会在左侧列表提示。",
+            "descLanguageId": 0,
+            "targetName": "TheatBtn",
+            "targetLayerPath": "Normal/DormitoryMainUI(Clone)/Panel/Content/LeftTips/TipsGroup/TheatBtn",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 66,
+            "height": 66,
+            "connectRadius": 10,
+            "offset": {
+              "x": -0.73,
+              "y": 2.41
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 167.0,
+              "y": 1.0
+            },
+            "effectRotation": -135,
+            "uiDialogOffeset": {
+              "x": -197.3,
+              "y": -11.15
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40134,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "引导点击接取宿舍任务",
+          "GMMark": 0
+        }
+      ],
+      "desc": "宿舍任务引导",
+      "autoId": 0
+    }
+  ],
+  "preGroups": []
+}

@@ -1,0 +1,81 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8359430822174271028
+  },
+  "m_Name": "battleGuideStep33",
+  "groups": [
+    {
+      "groupId": 1,
+      "items": [
+        {
+          "stepId": 2,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "为应对更困难的挑战，<color=#FF9900>立刻升级战员，增强战力。</color>",
+            "descLanguageId": 0,
+            "targetName": "Combatants",
+            "targetLayerPath": "Normal/MainUI(Clone)/Bg/Panel_R/R/Combatants",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 102,
+            "height": 142,
+            "connectRadius": 10,
+            "offset": {
+              "x": -52.0,
+              "y": 20.92
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -292.7,
+              "y": 0.0
+            },
+            "isHero": 0,
+            "actorId": 51100,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40180,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 1050,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击战员",
+          "GMMark": 0
+        }
+      ],
+      "desc": "英雄升级引导",
+      "autoId": 0
+    }
+  ],
+  "preGroups": []
+}

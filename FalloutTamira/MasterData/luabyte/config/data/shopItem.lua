@@ -1,0 +1,1734 @@
+local title = {
+	id = 0,
+	lib = 0,
+	itemId = 0,
+	num = 0,
+	order = 0,
+	probability = 0,
+	finalItem = 0,
+	finalNum = 0,
+	buyCount = 0,
+	openCondition = {},
+	costItem = 0,
+	costNum = 0,
+	discount = 0
+}
+
+local value = {
+[1001] =
+{
+ 		id=1001,
+ 		lib=200002,
+ 		itemId=8507,
+ 		num=1,
+ 		order=1,
+ 		probability=-1,
+ 		finalItem=64,
+ 		finalNum=3,
+ 		buyCount=10,
+ 	discount=0
+},
+[1002] =
+{
+ 		id=1002,
+ 		lib=200002,
+ 		itemId=8508,
+ 		num=1,
+ 		order=2,
+ 		probability=-1,
+ 		finalItem=64,
+ 		finalNum=6,
+ 		buyCount=10,
+ 	discount=0
+},
+[1003] =
+{
+ 		id=1003,
+ 		lib=200002,
+ 		itemId=211,
+ 		num=1,
+ 		order=3,
+ 		probability=-1,
+ 		finalItem=64,
+ 		finalNum=20,
+ 		buyCount=3,
+ 	discount=0
+},
+[1004] =
+{
+ 		id=1004,
+ 		lib=200002,
+ 		itemId=231,
+ 		num=5,
+ 		order=6,
+ 		probability=-1,
+ 		finalItem=64,
+ 		finalNum=10,
+ 		buyCount=5,
+ 	discount=0
+},
+[1005] =
+{
+ 		id=1005,
+ 		lib=200002,
+ 		itemId=503,
+ 		num=1,
+ 		order=7,
+ 		probability=-1,
+ 		finalItem=64,
+ 		finalNum=5,
+ 		buyCount=3,
+ 	discount=0
+},
+[1006] =
+{
+ 		id=1006,
+ 		lib=200002,
+ 		itemId=513,
+ 		num=1,
+ 		order=8,
+ 		probability=-1,
+ 		finalItem=64,
+ 		finalNum=5,
+ 		buyCount=3,
+ 	discount=0
+},
+[1007] =
+{
+ 		id=1007,
+ 		lib=200002,
+ 		itemId=523,
+ 		num=1,
+ 		order=9,
+ 		probability=-1,
+ 		finalItem=64,
+ 		finalNum=5,
+ 		buyCount=3,
+ 	discount=0
+},
+[1008] =
+{
+ 		id=1008,
+ 		lib=200002,
+ 		itemId=533,
+ 		num=1,
+ 		order=10,
+ 		probability=-1,
+ 		finalItem=64,
+ 		finalNum=5,
+ 		buyCount=3,
+ 	discount=0
+},
+[1009] =
+{
+ 		id=1009,
+ 		lib=200002,
+ 		itemId=543,
+ 		num=1,
+ 		order=11,
+ 		probability=-1,
+ 		finalItem=64,
+ 		finalNum=5,
+ 		buyCount=3,
+ 	discount=0
+},
+[1010] =
+{
+ 		id=1010,
+ 		lib=200002,
+ 		itemId=553,
+ 		num=1,
+ 		order=12,
+ 		probability=-1,
+ 		finalItem=64,
+ 		finalNum=5,
+ 		buyCount=3,
+ 	discount=0
+},
+[1011] =
+{
+ 		id=1011,
+ 		lib=200002,
+ 		itemId=504,
+ 		num=1,
+ 		order=13,
+ 		probability=1000,
+ 		finalItem=64,
+ 		finalNum=10,
+ 		buyCount=1,
+ 	discount=0
+},
+[1012] =
+{
+ 		id=1012,
+ 		lib=200002,
+ 		itemId=514,
+ 		num=1,
+ 		order=14,
+ 		probability=1000,
+ 		finalItem=64,
+ 		finalNum=10,
+ 		buyCount=1,
+ 	discount=0
+},
+[1013] =
+{
+ 		id=1013,
+ 		lib=200002,
+ 		itemId=524,
+ 		num=1,
+ 		order=15,
+ 		probability=1000,
+ 		finalItem=64,
+ 		finalNum=10,
+ 		buyCount=1,
+ 	discount=0
+},
+[1014] =
+{
+ 		id=1014,
+ 		lib=200002,
+ 		itemId=534,
+ 		num=1,
+ 		order=16,
+ 		probability=1000,
+ 		finalItem=64,
+ 		finalNum=10,
+ 		buyCount=1,
+ 	discount=0
+},
+[1015] =
+{
+ 		id=1015,
+ 		lib=200002,
+ 		itemId=544,
+ 		num=1,
+ 		order=17,
+ 		probability=1000,
+ 		finalItem=64,
+ 		finalNum=10,
+ 		buyCount=1,
+ 	discount=0
+},
+[1016] =
+{
+ 		id=1016,
+ 		lib=200002,
+ 		itemId=554,
+ 		num=1,
+ 		order=18,
+ 		probability=1000,
+ 		finalItem=64,
+ 		finalNum=10,
+ 		buyCount=1,
+ 	discount=0
+},
+[2001] =
+{
+ 		id=2001,
+ 		lib=200003,
+ 		itemId=1,
+ 		num=2000,
+ 		order=1,
+ 		probability=-1,
+ 		finalItem=61,
+ 		buyCount=1,
+ 	discount=0
+},
+[2002] =
+{
+ 		id=2002,
+ 		lib=200003,
+ 		itemId=51,
+ 		num=1,
+ 		order=2,
+ 		probability=-1,
+ 		finalItem=61,
+ 		finalNum=20,
+ 		buyCount=1,
+ 	discount=0
+},
+[2003] =
+{
+ 		id=2003,
+ 		lib=200003,
+ 		itemId=57,
+ 		num=1,
+ 		order=3,
+ 		probability=-1,
+ 		finalItem=61,
+ 		finalNum=20,
+ 		buyCount=5,
+ 	discount=0
+},
+[2004] =
+{
+ 		id=2004,
+ 		lib=200003,
+ 		itemId=161,
+ 		num=10,
+ 		order=4,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=30,
+ 		buyCount=2,
+ 	discount=0
+},
+[2005] =
+{
+ 		id=2005,
+ 		lib=200003,
+ 		itemId=162,
+ 		num=10,
+ 		order=5,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=150,
+ 		buyCount=2,
+ 	discount=0
+},
+[2006] =
+{
+ 		id=2006,
+ 		lib=200003,
+ 		itemId=56,
+ 		num=1,
+ 		order=6,
+ 		probability=-1,
+ 		finalItem=61,
+ 		finalNum=12,
+ 		buyCount=5,
+ 	discount=0
+},
+[2007] =
+{
+ 		id=2007,
+ 		lib=200003,
+ 		itemId=110001,
+ 		num=1,
+ 		order=7,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[2008] =
+{
+ 		id=2008,
+ 		lib=200003,
+ 		itemId=110004,
+ 		num=1,
+ 		order=8,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[2009] =
+{
+ 		id=2009,
+ 		lib=200003,
+ 		itemId=110005,
+ 		num=1,
+ 		order=9,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[2010] =
+{
+ 		id=2010,
+ 		lib=200003,
+ 		itemId=120004,
+ 		num=1,
+ 		order=10,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[2011] =
+{
+ 		id=2011,
+ 		lib=200003,
+ 		itemId=120001,
+ 		num=1,
+ 		order=11,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[2012] =
+{
+ 		id=2012,
+ 		lib=200003,
+ 		itemId=110001,
+ 		num=1,
+ 		order=12,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[2013] =
+{
+ 		id=2013,
+ 		lib=200003,
+ 		itemId=120007,
+ 		num=1,
+ 		order=13,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[2014] =
+{
+ 		id=2014,
+ 		lib=200003,
+ 		itemId=130001,
+ 		num=1,
+ 		order=14,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[2015] =
+{
+ 		id=2015,
+ 		lib=200003,
+ 		itemId=110005,
+ 		num=1,
+ 		order=15,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[2016] =
+{
+ 		id=2016,
+ 		lib=200003,
+ 		itemId=110004,
+ 		num=1,
+ 		order=16,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[2017] =
+{
+ 		id=2017,
+ 		lib=200003,
+ 		itemId=110002,
+ 		num=1,
+ 		order=17,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[2018] =
+{
+ 		id=2018,
+ 		lib=200003,
+ 		itemId=110006,
+ 		num=1,
+ 		order=18,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[2019] =
+{
+ 		id=2019,
+ 		lib=200003,
+ 		itemId=110010,
+ 		num=1,
+ 		order=19,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[2020] =
+{
+ 		id=2020,
+ 		lib=200003,
+ 		itemId=120008,
+ 		num=1,
+ 		order=20,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[2021] =
+{
+ 		id=2021,
+ 		lib=200003,
+ 		itemId=120009,
+ 		num=1,
+ 		order=21,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[2022] =
+{
+ 		id=2022,
+ 		lib=200003,
+ 		itemId=130004,
+ 		num=1,
+ 		order=22,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[2023] =
+{
+ 		id=2023,
+ 		lib=200003,
+ 		itemId=130005,
+ 		num=1,
+ 		order=23,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[2024] =
+{
+ 		id=2024,
+ 		lib=200003,
+ 		itemId=130006,
+ 		num=1,
+ 		order=24,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[2025] =
+{
+ 		id=2025,
+ 		lib=200003,
+ 		itemId=130009,
+ 		num=1,
+ 		order=25,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[2026] =
+{
+ 		id=2026,
+ 		lib=200003,
+ 		itemId=140004,
+ 		num=1,
+ 		order=26,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[2027] =
+{
+ 		id=2027,
+ 		lib=200003,
+ 		itemId=150006,
+ 		num=1,
+ 		order=27,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[2028] =
+{
+ 		id=2028,
+ 		lib=200003,
+ 		itemId=8103,
+ 		num=1,
+ 		order=28,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=180,
+ 		buyCount=1,
+ 	discount=0
+},
+[3001] =
+{
+ 		id=3001,
+ 		lib=200004,
+ 		itemId=56,
+ 		num=1,
+ 		order=1,
+ 		probability=-1,
+ 		finalItem=62,
+ 		finalNum=10,
+ 		buyCount=10,
+ 	discount=0
+},
+[3002] =
+{
+ 		id=3002,
+ 		lib=200004,
+ 		itemId=1403,
+ 		num=1,
+ 		order=2,
+ 		probability=-1,
+ 		finalItem=62,
+ 		finalNum=88,
+ 		buyCount=1,
+ 	discount=0
+},
+[3003] =
+{
+ 		id=3003,
+ 		lib=200004,
+ 		itemId=8503,
+ 		num=1,
+ 		order=3,
+ 		probability=-1,
+ 		finalItem=62,
+ 		finalNum=6,
+ 		buyCount=5,
+ 	discount=0
+},
+[3004] =
+{
+ 		id=3004,
+ 		lib=200004,
+ 		itemId=10,
+ 		num=1,
+ 		order=4,
+ 		probability=-1,
+ 		finalItem=62,
+ 		finalNum=5,
+ 		buyCount=5,
+ 	discount=0
+},
+[3005] =
+{
+ 		id=3005,
+ 		lib=200004,
+ 		itemId=3517,
+ 		num=1,
+ 		order=6,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=100,
+ 		buyCount=1,
+ 	discount=0
+},
+[3006] =
+{
+ 		id=3006,
+ 		lib=200004,
+ 		itemId=3518,
+ 		num=1,
+ 		order=7,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=100,
+ 		buyCount=1,
+ 	discount=0
+},
+[3007] =
+{
+ 		id=3007,
+ 		lib=200004,
+ 		itemId=3519,
+ 		num=1,
+ 		order=8,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=100,
+ 		buyCount=1,
+ 	discount=0
+},
+[3008] =
+{
+ 		id=3008,
+ 		lib=200004,
+ 		itemId=3520,
+ 		num=1,
+ 		order=9,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=100,
+ 		buyCount=1,
+ 	discount=0
+},
+[3009] =
+{
+ 		id=3009,
+ 		lib=200004,
+ 		itemId=3531,
+ 		num=1,
+ 		order=10,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=100,
+ 		buyCount=1,
+ 	discount=0
+},
+[3010] =
+{
+ 		id=3010,
+ 		lib=200004,
+ 		itemId=3003,
+ 		num=1,
+ 		order=11,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3011] =
+{
+ 		id=3011,
+ 		lib=200004,
+ 		itemId=3005,
+ 		num=1,
+ 		order=12,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3012] =
+{
+ 		id=3012,
+ 		lib=200004,
+ 		itemId=3006,
+ 		num=1,
+ 		order=13,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3013] =
+{
+ 		id=3013,
+ 		lib=200004,
+ 		itemId=3007,
+ 		num=1,
+ 		order=14,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3014] =
+{
+ 		id=3014,
+ 		lib=200004,
+ 		itemId=3009,
+ 		num=1,
+ 		order=15,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3015] =
+{
+ 		id=3015,
+ 		lib=200004,
+ 		itemId=3011,
+ 		num=1,
+ 		order=16,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3016] =
+{
+ 		id=3016,
+ 		lib=200004,
+ 		itemId=3012,
+ 		num=1,
+ 		order=17,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3017] =
+{
+ 		id=3017,
+ 		lib=200004,
+ 		itemId=3013,
+ 		num=1,
+ 		order=18,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3018] =
+{
+ 		id=3018,
+ 		lib=200004,
+ 		itemId=3014,
+ 		num=1,
+ 		order=19,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3019] =
+{
+ 		id=3019,
+ 		lib=200004,
+ 		itemId=3015,
+ 		num=1,
+ 		order=20,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3020] =
+{
+ 		id=3020,
+ 		lib=200004,
+ 		itemId=3016,
+ 		num=1,
+ 		order=21,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3021] =
+{
+ 		id=3021,
+ 		lib=200004,
+ 		itemId=3017,
+ 		num=1,
+ 		order=22,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3022] =
+{
+ 		id=3022,
+ 		lib=200004,
+ 		itemId=3018,
+ 		num=1,
+ 		order=23,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3023] =
+{
+ 		id=3023,
+ 		lib=200004,
+ 		itemId=3020,
+ 		num=1,
+ 		order=24,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3024] =
+{
+ 		id=3024,
+ 		lib=200004,
+ 		itemId=3021,
+ 		num=1,
+ 		order=25,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3025] =
+{
+ 		id=3025,
+ 		lib=200004,
+ 		itemId=3022,
+ 		num=1,
+ 		order=26,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3026] =
+{
+ 		id=3026,
+ 		lib=200004,
+ 		itemId=3023,
+ 		num=1,
+ 		order=27,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3027] =
+{
+ 		id=3027,
+ 		lib=200004,
+ 		itemId=3024,
+ 		num=1,
+ 		order=28,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3028] =
+{
+ 		id=3028,
+ 		lib=200004,
+ 		itemId=3025,
+ 		num=1,
+ 		order=29,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3029] =
+{
+ 		id=3029,
+ 		lib=200004,
+ 		itemId=4013,
+ 		num=1,
+ 		order=30,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3030] =
+{
+ 		id=3030,
+ 		lib=200004,
+ 		itemId=4014,
+ 		num=1,
+ 		order=31,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3031] =
+{
+ 		id=3031,
+ 		lib=200004,
+ 		itemId=4015,
+ 		num=1,
+ 		order=32,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3032] =
+{
+ 		id=3032,
+ 		lib=200004,
+ 		itemId=4016,
+ 		num=1,
+ 		order=33,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3033] =
+{
+ 		id=3033,
+ 		lib=200004,
+ 		itemId=4017,
+ 		num=1,
+ 		order=34,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3034] =
+{
+ 		id=3034,
+ 		lib=200004,
+ 		itemId=4018,
+ 		num=1,
+ 		order=35,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3035] =
+{
+ 		id=3035,
+ 		lib=200004,
+ 		itemId=4019,
+ 		num=1,
+ 		order=36,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3036] =
+{
+ 		id=3036,
+ 		lib=200004,
+ 		itemId=4020,
+ 		num=1,
+ 		order=37,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3037] =
+{
+ 		id=3037,
+ 		lib=200004,
+ 		itemId=4023,
+ 		num=1,
+ 		order=38,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3038] =
+{
+ 		id=3038,
+ 		lib=200004,
+ 		itemId=4026,
+ 		num=1,
+ 		order=39,
+ 		probability=10000,
+ 		finalItem=62,
+ 		finalNum=40,
+ 		buyCount=1,
+ 	discount=0
+},
+[3039] =
+{
+ 		id=3039,
+ 		lib=200004,
+ 		itemId=8525,
+ 		num=1,
+ 		order=5,
+ 		probability=-1,
+ 		finalItem=62,
+ 		finalNum=68,
+ 		buyCount=2,
+ 	discount=0
+},
+[4001] =
+{
+ 		id=4001,
+ 		lib=200005,
+ 		itemId=251,
+ 		num=1,
+ 		order=1,
+ 		probability=-1,
+ 		finalItem=63,
+ 		finalNum=10,
+ 		buyCount=2,
+ 	discount=0
+},
+[4002] =
+{
+ 		id=4002,
+ 		lib=200005,
+ 		itemId=501,
+ 		num=1,
+ 		order=3,
+ 		probability=-1,
+ 		finalItem=63,
+ 		finalNum=2,
+ 		buyCount=5,
+ 	discount=0
+},
+[4003] =
+{
+ 		id=4003,
+ 		lib=200005,
+ 		itemId=511,
+ 		num=1,
+ 		order=4,
+ 		probability=-1,
+ 		finalItem=63,
+ 		finalNum=2,
+ 		buyCount=5,
+ 	discount=0
+},
+[4004] =
+{
+ 		id=4004,
+ 		lib=200005,
+ 		itemId=521,
+ 		num=1,
+ 		order=5,
+ 		probability=-1,
+ 		finalItem=63,
+ 		finalNum=2,
+ 		buyCount=5,
+ 	discount=0
+},
+[4005] =
+{
+ 		id=4005,
+ 		lib=200005,
+ 		itemId=531,
+ 		num=1,
+ 		order=6,
+ 		probability=-1,
+ 		finalItem=63,
+ 		finalNum=2,
+ 		buyCount=5,
+ 	discount=0
+},
+[4006] =
+{
+ 		id=4006,
+ 		lib=200005,
+ 		itemId=541,
+ 		num=1,
+ 		order=7,
+ 		probability=-1,
+ 		finalItem=63,
+ 		finalNum=2,
+ 		buyCount=5,
+ 	discount=0
+},
+[4007] =
+{
+ 		id=4007,
+ 		lib=200005,
+ 		itemId=551,
+ 		num=1,
+ 		order=8,
+ 		probability=1000,
+ 		finalItem=63,
+ 		finalNum=2,
+ 		buyCount=5,
+ 	discount=0
+},
+[4008] =
+{
+ 		id=4008,
+ 		lib=200005,
+ 		itemId=7,
+ 		num=500,
+ 		order=2,
+ 		probability=1000,
+ 		finalItem=63,
+ 		finalNum=5,
+ 		buyCount=5,
+ 	discount=0
+},
+[5001] =
+{
+ 		id=5001,
+ 		lib=200006,
+ 		itemId=1,
+ 		num=2000,
+ 		order=1,
+ 		probability=-1,
+ 		finalItem=61,
+ 		buyCount=1,
+ 	discount=0
+},
+[5002] =
+{
+ 		id=5002,
+ 		lib=200006,
+ 		itemId=8509,
+ 		num=1,
+ 		order=2,
+ 		probability=-1,
+ 		finalItem=61,
+ 		finalNum=20,
+ 		buyCount=2,
+ 	discount=0
+},
+[5003] =
+{
+ 		id=5003,
+ 		lib=200006,
+ 		itemId=51,
+ 		num=1,
+ 		order=3,
+ 		probability=-1,
+ 		finalItem=61,
+ 		finalNum=20,
+ 		buyCount=1,
+ 	discount=0
+},
+[5004] =
+{
+ 		id=5004,
+ 		lib=200006,
+ 		itemId=57,
+ 		num=1,
+ 		order=4,
+ 		probability=-1,
+ 		finalItem=61,
+ 		finalNum=20,
+ 		buyCount=5,
+ 	discount=0
+},
+[5005] =
+{
+ 		id=5005,
+ 		lib=200006,
+ 		itemId=161,
+ 		num=10,
+ 		order=5,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=30,
+ 		buyCount=2,
+ 	discount=0
+},
+[5006] =
+{
+ 		id=5006,
+ 		lib=200006,
+ 		itemId=162,
+ 		num=10,
+ 		order=6,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=150,
+ 		buyCount=2,
+ 	discount=0
+},
+[5007] =
+{
+ 		id=5007,
+ 		lib=200006,
+ 		itemId=56,
+ 		num=1,
+ 		order=11,
+ 		probability=-1,
+ 		finalItem=61,
+ 		finalNum=12,
+ 		buyCount=5,
+ 	discount=0
+},
+[5008] =
+{
+ 		id=5008,
+ 		lib=200006,
+ 		itemId=8103,
+ 		num=1,
+ 		order=9,
+ 		probability=3000,
+ 		finalItem=61,
+ 		finalNum=180,
+ 		buyCount=1,
+ 	discount=0
+},
+[5009] =
+{
+ 		id=5009,
+ 		lib=200006,
+ 		itemId=8502,
+ 		num=1,
+ 		order=10,
+ 		probability=3000,
+ 		finalItem=61,
+ 		finalNum=6,
+ 		buyCount=5,
+ 	discount=0
+},
+[5010] =
+{
+ 		id=5010,
+ 		lib=200006,
+ 		itemId=401,
+ 		num=1,
+ 		order=7,
+ 		probability=-1,
+ 		finalItem=61,
+ 		finalNum=320,
+ 		buyCount=1,
+ 	discount=0
+},
+[5011] =
+{
+ 		id=5011,
+ 		lib=200006,
+ 		itemId=110001,
+ 		num=1,
+ 		order=12,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[5012] =
+{
+ 		id=5012,
+ 		lib=200006,
+ 		itemId=110004,
+ 		num=1,
+ 		order=13,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[5013] =
+{
+ 		id=5013,
+ 		lib=200006,
+ 		itemId=110005,
+ 		num=1,
+ 		order=14,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[5014] =
+{
+ 		id=5014,
+ 		lib=200006,
+ 		itemId=110009,
+ 		num=1,
+ 		order=15,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[5015] =
+{
+ 		id=5015,
+ 		lib=200006,
+ 		itemId=120001,
+ 		num=1,
+ 		order=16,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[5016] =
+{
+ 		id=5016,
+ 		lib=200006,
+ 		itemId=120003,
+ 		num=1,
+ 		order=17,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[5017] =
+{
+ 		id=5017,
+ 		lib=200006,
+ 		itemId=120007,
+ 		num=1,
+ 		order=18,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[5018] =
+{
+ 		id=5018,
+ 		lib=200006,
+ 		itemId=130001,
+ 		num=1,
+ 		order=19,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[5019] =
+{
+ 		id=5019,
+ 		lib=200006,
+ 		itemId=130003,
+ 		num=1,
+ 		order=20,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[5020] =
+{
+ 		id=5020,
+ 		lib=200006,
+ 		itemId=150004,
+ 		num=1,
+ 		order=21,
+ 		probability=500,
+ 		finalItem=61,
+ 		finalNum=800,
+ 		buyCount=1,
+ 	discount=0
+},
+[5021] =
+{
+ 		id=5021,
+ 		lib=200006,
+ 		itemId=110002,
+ 		num=1,
+ 		order=22,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[5022] =
+{
+ 		id=5022,
+ 		lib=200006,
+ 		itemId=110006,
+ 		num=1,
+ 		order=23,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[5023] =
+{
+ 		id=5023,
+ 		lib=200006,
+ 		itemId=110010,
+ 		num=1,
+ 		order=24,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[5024] =
+{
+ 		id=5024,
+ 		lib=200006,
+ 		itemId=120008,
+ 		num=1,
+ 		order=25,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[5025] =
+{
+ 		id=5025,
+ 		lib=200006,
+ 		itemId=120009,
+ 		num=1,
+ 		order=26,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[5026] =
+{
+ 		id=5026,
+ 		lib=200006,
+ 		itemId=130004,
+ 		num=1,
+ 		order=27,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[5027] =
+{
+ 		id=5027,
+ 		lib=200006,
+ 		itemId=130005,
+ 		num=1,
+ 		order=28,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[5028] =
+{
+ 		id=5028,
+ 		lib=200006,
+ 		itemId=130006,
+ 		num=1,
+ 		order=29,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[5029] =
+{
+ 		id=5029,
+ 		lib=200006,
+ 		itemId=130009,
+ 		num=1,
+ 		order=30,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[5030] =
+{
+ 		id=5030,
+ 		lib=200006,
+ 		itemId=140004,
+ 		num=1,
+ 		order=31,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[5031] =
+{
+ 		id=5031,
+ 		lib=200006,
+ 		itemId=150006,
+ 		num=1,
+ 		order=32,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[5032] =
+{
+ 		id=5032,
+ 		lib=200006,
+ 		itemId=110003,
+ 		num=1,
+ 		order=33,
+ 		probability=1000,
+ 		finalItem=61,
+ 		finalNum=160,
+ 		buyCount=1,
+ 	discount=0
+},
+[5033] =
+{
+ 		id=5033,
+ 		lib=200006,
+ 		itemId=402,
+ 		num=1,
+ 		order=8,
+ 		probability=-1,
+ 		finalItem=61,
+ 		finalNum=618,
+ 		buyCount=1,
+ 	discount=0
+},
+[6001] =
+{
+ 		id=6001,
+ 		lib=200007,
+ 		itemId=251,
+ 		num=1,
+ 		order=1,
+ 		probability=-1,
+ 		finalItem=63,
+ 		finalNum=10,
+ 		buyCount=2,
+ 	discount=0
+},
+[6002] =
+{
+ 		id=6002,
+ 		lib=200007,
+ 		itemId=501,
+ 		num=1,
+ 		order=3,
+ 		probability=-1,
+ 		finalItem=63,
+ 		finalNum=2,
+ 		buyCount=15,
+ 	discount=0
+},
+[6003] =
+{
+ 		id=6003,
+ 		lib=200007,
+ 		itemId=511,
+ 		num=1,
+ 		order=4,
+ 		probability=-1,
+ 		finalItem=63,
+ 		finalNum=2,
+ 		buyCount=15,
+ 	discount=0
+},
+[6004] =
+{
+ 		id=6004,
+ 		lib=200007,
+ 		itemId=521,
+ 		num=1,
+ 		order=5,
+ 		probability=-1,
+ 		finalItem=63,
+ 		finalNum=2,
+ 		buyCount=15,
+ 	discount=0
+},
+[6005] =
+{
+ 		id=6005,
+ 		lib=200007,
+ 		itemId=531,
+ 		num=1,
+ 		order=6,
+ 		probability=-1,
+ 		finalItem=63,
+ 		finalNum=2,
+ 		buyCount=15,
+ 	discount=0
+},
+[6006] =
+{
+ 		id=6006,
+ 		lib=200007,
+ 		itemId=541,
+ 		num=1,
+ 		order=7,
+ 		probability=-1,
+ 		finalItem=63,
+ 		finalNum=2,
+ 		buyCount=15,
+ 	discount=0
+},
+[6007] =
+{
+ 		id=6007,
+ 		lib=200007,
+ 		itemId=551,
+ 		num=1,
+ 		order=8,
+ 		probability=1000,
+ 		finalItem=63,
+ 		finalNum=2,
+ 		buyCount=15,
+ 	discount=0
+},
+[6008] =
+{
+ 		id=6008,
+ 		lib=200007,
+ 		itemId=7,
+ 		num=500,
+ 		order=2,
+ 		probability=1000,
+ 		finalItem=63,
+ 		finalNum=5,
+ 		buyCount=15,
+ 	discount=0
+}
+}
+
+return {title=title, value=value}

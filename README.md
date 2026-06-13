@@ -39,6 +39,7 @@
 |    CounterSide    |      未来战      |            国际服 Lua            |
 |  TrickcalChibiGo  |    坨坨可爱捏    |            韩服 Json            |
 | MillenniumWarAigis |     千年战争     |             Dmm Json             |
-|  OshiroProjectRE  |    我去没r18    |             Dmm Json             |
+|  OshiroProjectRE  | 我去没r18(御城) |             Dmm Json             |
 |    MementoMori    |      妹妹头      |           国际服 Json           |
 |  CuisineDimension  |     料理次元     |             国服 Lua             |
+|   FalloutTamira   |   异尘：达米拉   |          国服Lua + Json          |
