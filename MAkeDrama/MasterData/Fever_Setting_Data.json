@@ -1,0 +1,58 @@
+{
+  "__tableName": "Fever_Setting_Data",
+  "__byteLength": 248,
+  "items": [
+    {
+      "fever_level": 0,
+      "accum_exp": 0,
+      "need_exp": 100,
+      "add_fever_gauge_attack": 10,
+      "add_fever_gauge_hit": 4,
+      "supporter_gauge_multiple": 0.2,
+      "fever_multiple_type1": "NONE",
+      "add_stat_per1": 0.0,
+      "fever_multiple_type2": "NONE",
+      "add_stat_per2": 0.0,
+      "fever_buff_time": 0.0
+    },
+    {
+      "fever_level": 1,
+      "accum_exp": 100,
+      "need_exp": 200,
+      "add_fever_gauge_attack": 15,
+      "add_fever_gauge_hit": 8,
+      "supporter_gauge_multiple": 0.5,
+      "fever_multiple_type1": "ATTACK_RATE",
+      "add_stat_per1": 0.02,
+      "fever_multiple_type2": "DEFENSE_RATE",
+      "add_stat_per2": 0.01,
+      "fever_buff_time": 10.0
+    },
+    {
+      "fever_level": 2,
+      "accum_exp": 300,
+      "need_exp": 400,
+      "add_fever_gauge_attack": 20,
+      "add_fever_gauge_hit": 15,
+      "supporter_gauge_multiple": 0.8,
+      "fever_multiple_type1": "ATTACK_RATE",
+      "add_stat_per1": 0.04,
+      "fever_multiple_type2": "DEFENSE_RATE",
+      "add_stat_per2": 0.02,
+      "fever_buff_time": 10.0
+    },
+    {
+      "fever_level": 3,
+      "accum_exp": 700,
+      "need_exp": 0,
+      "add_fever_gauge_attack": 0,
+      "add_fever_gauge_hit": 0,
+      "supporter_gauge_multiple": 0.0,
+      "fever_multiple_type1": "ATTACK_RATE",
+      "add_stat_per1": 0.1,
+      "fever_multiple_type2": "DEFENSE_RATE",
+      "add_stat_per2": 0.03,
+      "fever_buff_time": 10.0
+    }
+  ]
+}

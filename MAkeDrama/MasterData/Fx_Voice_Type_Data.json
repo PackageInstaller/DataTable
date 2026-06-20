@@ -1,0 +1,230 @@
+{
+  "__tableName": "Fx_Voice_Type_Data",
+  "__byteLength": 1770,
+  "items": [
+    {
+      "type": "INGAME_ENTER",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 6,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_enter"
+    },
+    {
+      "type": "INGAME_MOVE",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 7,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_move"
+    },
+    {
+      "type": "INGAME_WIN",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 8,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_win"
+    },
+    {
+      "type": "INGAME_LOSE",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 9,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_lose"
+    },
+    {
+      "type": "INGAME_DIE",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 10,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_die"
+    },
+    {
+      "type": "OUTGAME_CHARGET",
+      "is_display_char_ui": true,
+      "is_ingame_voice": false,
+      "order": 1,
+      "list_name_id": "type_fx_voice_type_ui_list_name_outgame_charget"
+    },
+    {
+      "type": "OUTGAME_CHARLV",
+      "is_display_char_ui": true,
+      "is_ingame_voice": false,
+      "order": 2,
+      "list_name_id": "type_fx_voice_type_ui_list_name_outgame_charlv"
+    },
+    {
+      "type": "OUTGAME_DISPATCH",
+      "is_display_char_ui": false,
+      "is_ingame_voice": false,
+      "order": 0,
+      "list_name_id": ""
+    },
+    {
+      "type": "OUTGAME_PROFILE",
+      "is_display_char_ui": false,
+      "is_ingame_voice": false,
+      "order": 0,
+      "list_name_id": "type_fx_voice_type_ui_list_name_outgame_profile"
+    },
+    {
+      "type": "OUTGAME_RANKUP",
+      "is_display_char_ui": true,
+      "is_ingame_voice": false,
+      "order": 4,
+      "list_name_id": "type_fx_voice_type_ui_list_name_outgame_rankup"
+    },
+    {
+      "type": "OUTGAME_SELECT_CHAR",
+      "is_display_char_ui": false,
+      "is_ingame_voice": false,
+      "order": 0,
+      "list_name_id": ""
+    },
+    {
+      "type": "OUTGAME_SELECT_TEAM",
+      "is_display_char_ui": false,
+      "is_ingame_voice": false,
+      "order": 0,
+      "list_name_id": "type_fx_voice_type_ui_list_name_outgame_select_team"
+    },
+    {
+      "type": "OUTGAME_SKILLLV",
+      "is_display_char_ui": true,
+      "is_ingame_voice": false,
+      "order": 3,
+      "list_name_id": "type_fx_voice_type_ui_list_name_outgame_skilllv"
+    },
+    {
+      "type": "OUTGAME_STARUP",
+      "is_display_char_ui": true,
+      "is_ingame_voice": false,
+      "order": 5,
+      "list_name_id": "type_fx_voice_type_ui_list_name_outgame_starup"
+    },
+    {
+      "type": "OUTGAME_GIFT_01",
+      "is_display_char_ui": false,
+      "is_ingame_voice": false,
+      "order": 0,
+      "list_name_id": ""
+    },
+    {
+      "type": "OUTGAME_GIFT_02",
+      "is_display_char_ui": false,
+      "is_ingame_voice": false,
+      "order": 0,
+      "list_name_id": ""
+    },
+    {
+      "type": "OUTGAME_GIFT_03",
+      "is_display_char_ui": false,
+      "is_ingame_voice": false,
+      "order": 0,
+      "list_name_id": ""
+    },
+    {
+      "type": "OUTGAME_GIFT_99",
+      "is_display_char_ui": false,
+      "is_ingame_voice": false,
+      "order": 0,
+      "list_name_id": ""
+    },
+    {
+      "type": "SKILL_ACTIVE_01",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 11,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_normal_skill_01"
+    },
+    {
+      "type": "SKILL_ACTIVE_02",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 12,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_normal_skill_02"
+    },
+    {
+      "type": "SKILL_ACTIVE_03",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 13,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_normal_skill_03"
+    },
+    {
+      "type": "SKILL_ACTIVE_04",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 14,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_normal_skill_04"
+    },
+    {
+      "type": "SKILL_ACTIVE_05",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 15,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_normal_skill_05"
+    },
+    {
+      "type": "SKILL_ACTIVE_06",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 16,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_normal_skill_06"
+    },
+    {
+      "type": "SKILL_ACTIVE_07",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 17,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_normal_skill_07"
+    },
+    {
+      "type": "SKILL_ACTIVE_08",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 18,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_normal_skill_08"
+    },
+    {
+      "type": "SKILL_ACTIVE_09",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 19,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_normal_skill_09"
+    },
+    {
+      "type": "SKILL_ACTIVE_10",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 20,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_normal_skill_10"
+    },
+    {
+      "type": "SKILL_BURST_CUTIN_01",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 21,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_burst_skill_01"
+    },
+    {
+      "type": "SKILL_BURST_CUTIN_02",
+      "is_display_char_ui": false,
+      "is_ingame_voice": true,
+      "order": 0,
+      "list_name_id": ""
+    },
+    {
+      "type": "SKILL_BURST_FIELD",
+      "is_display_char_ui": true,
+      "is_ingame_voice": true,
+      "order": 22,
+      "list_name_id": "type_fx_voice_type_ui_list_name_ingame_burst_skill_02"
+    },
+    {
+      "type": "INTERACTION",
+      "is_display_char_ui": false,
+      "is_ingame_voice": false,
+      "order": 0,
+      "list_name_id": ""
+    }
+  ]
+}

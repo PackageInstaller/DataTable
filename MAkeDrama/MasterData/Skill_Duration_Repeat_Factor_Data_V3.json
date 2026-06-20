@@ -1,0 +1,42 @@
+{
+  "__tableName": "Skill_Duration_Repeat_Factor_Data_V3",
+  "__byteLength": 439,
+  "items": [
+    {
+      "skill_duration_repeat_factor_id": "factor_heal_per_healpower",
+      "duration_effect_type": "NONE",
+      "repeat_onetime_define_id": "define_heal_per_healpower",
+      "repeat_interval": 1.0
+    },
+    {
+      "skill_duration_repeat_factor_id": "factor_heal_per_maxhp",
+      "duration_effect_type": "NONE",
+      "repeat_onetime_define_id": "define_heal_per_maxhp",
+      "repeat_interval": 0.5
+    },
+    {
+      "skill_duration_repeat_factor_id": "factor_debuff_dot_poison",
+      "duration_effect_type": "NONE",
+      "repeat_onetime_define_id": "define_dot_poison",
+      "repeat_interval": 4.0
+    },
+    {
+      "skill_duration_repeat_factor_id": "factor_debuff_dot_fire",
+      "duration_effect_type": "NONE",
+      "repeat_onetime_define_id": "define_dot_burning",
+      "repeat_interval": 1.0
+    },
+    {
+      "skill_duration_repeat_factor_id": "factor_debuff_dot_bleed",
+      "duration_effect_type": "NONE",
+      "repeat_onetime_define_id": "define_dot_bleeding",
+      "repeat_interval": 1.0
+    },
+    {
+      "skill_duration_repeat_factor_id": "factor_debuff_dot_ch0019",
+      "duration_effect_type": "NONE",
+      "repeat_onetime_define_id": "define_ulti_dot_ch0019",
+      "repeat_interval": 1.0
+    }
+  ]
+}

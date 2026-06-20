@@ -1,0 +1,722 @@
+{
+  "__tableName": "Skill_Duration_Factor_Data_V3",
+  "__byteLength": 5083,
+  "items": [
+    {
+      "skill_duration_factor_id": "factor_buff_atk_per_atk_holder",
+      "duration_effect_type": "BUFF_PHYSICS_ATTACK_UP",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_def_per_def_holder",
+      "duration_effect_type": "BUFF_PHYSICS_DEFEND_UP",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "PHYSICAL_DEFENSE_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_crirate_per_crirate_holder",
+      "duration_effect_type": "BUFF_PHYSICS_CRITICAL_CHANCE_UP",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "PHYSICAL_CRITICAL_CHANCE_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_cridmg_per_cridmg_holder",
+      "duration_effect_type": "BUFF_PHYSICS_CRITICAL_POWER_ADD_UP",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "PHYSICAL_CRITICAL_POWER_ADD_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_accuracy_per_accuracy_holder",
+      "duration_effect_type": "BUFF_ACCURACY_UP",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "ACCURACY_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_evasion_per_evasion_holder",
+      "duration_effect_type": "BUFF_EVASION_UP",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "EVASION_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_penentration_per_penentration_holder",
+      "duration_effect_type": "BUFF_PENETRATE_UP",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "PENETRATION_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_healpower_per_atk_holder",
+      "duration_effect_type": "BUFF_HEAL_UP",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_healpower_per_healpower_holder",
+      "duration_effect_type": "BUFF_HEAL_UP",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "HEAL_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_maxhp_per_maxhp_holder",
+      "duration_effect_type": "BUFF_MAX_HP_UP",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "MAX_LIFE_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_shield_per_healpower_caster",
+      "duration_effect_type": "BUFF_TOTAL_DAMAGE_BARRIER",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "HEAL_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_shield_per_hp_rate_caster",
+      "duration_effect_type": "BUFF_TOTAL_DAMAGE_BARRIER",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "MAX_LIFE_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_atk_per_atk_caster",
+      "duration_effect_type": "BUFF_PHYSICS_ATTACK_UP",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_def_per_def_caster",
+      "duration_effect_type": "BUFF_PHYSICS_DEFEND_UP",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "PHYSICAL_DEFENSE_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_def_per_atk_caster",
+      "duration_effect_type": "BUFF_PHYSICS_DEFEND_UP",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_atk",
+      "duration_effect_type": "BUFF_PHYSICS_ATTACK_UP",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_def",
+      "duration_effect_type": "BUFF_PHYSICS_DEFEND_UP",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_crirate",
+      "duration_effect_type": "BUFF_PHYSICS_CRITICAL_CHANCE_UP",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_cridmg",
+      "duration_effect_type": "BUFF_PHYSICS_CRITICAL_POWER_ADD_UP",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_evasion",
+      "duration_effect_type": "BUFF_EVASION_UP",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_accuracy",
+      "duration_effect_type": "BUFF_ACCURACY_UP",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_heal_power",
+      "duration_effect_type": "BUFF_HEAL_UP",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_max_hp",
+      "duration_effect_type": "BUFF_MAX_HP_UP",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_weight",
+      "duration_effect_type": "BUFF_WEIGHT_UP",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_cc_resist",
+      "duration_effect_type": "BUFF_TOUGHNESS_UP",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_penentration",
+      "duration_effect_type": "BUFF_PENETRATE_UP",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_penentration_resist",
+      "duration_effect_type": "BUFF_PENETRATE_DEFENSE_UP",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_crirate_resist",
+      "duration_effect_type": "BUFF_CRITICAL_CHANCE_RESIST",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_cridmg_resist",
+      "duration_effect_type": "BUFF_CRITICAL_POWER_ADD_RESIST",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_receive_heal",
+      "duration_effect_type": "BUFF_HEAL_RECEIVE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_buff_damage_reduce",
+      "duration_effect_type": "DAMAGE_REDUCE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_debuff_atk_per_atk",
+      "duration_effect_type": "DEBUFF_PHYSICS_ATTACK_DOWN",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_debuff_def_per_def",
+      "duration_effect_type": "DEBUFF_PHYSICS_DEFEND_DOWN",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "PHYSICAL_DEFENSE_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_debuff_crirate_per_crirate",
+      "duration_effect_type": "DEBUFF_PHYSICS_CRITICAL_CHANCE_DOWN",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "PHYSICAL_CRITICAL_CHANCE_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_debuff_crirate_per_crirate_resist",
+      "duration_effect_type": "DEBUFF_CRITICAL_CHANCE_RESIST",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "CRITICAL_CHANCE_RESIST_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_debuff_cridmg_per_cridmg",
+      "duration_effect_type": "DEBUFF_PHYSICS_CRITICAL_POWER_ADD_DOWN",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "PHYSICAL_CRITICAL_POWER_ADD_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_debuff_accuracy_per_accuracy",
+      "duration_effect_type": "DEBUFF_ACCURACY_DOWN",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "ACCURACY_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_debuff_evasion_per_evasion",
+      "duration_effect_type": "DEBUFF_EVASION_DOWN",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "EVASION_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_debuff_penentration_per_penentration",
+      "duration_effect_type": "DEBUFF_PENETRATE_DOWN",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_debuff_healpower_per_healpower",
+      "duration_effect_type": "DEBUFF_HEAL_DOWN",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "HEAL_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_debuff_def_per_atk_caster",
+      "duration_effect_type": "DEBUFF_PHYSICS_DEFEND_DOWN",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_debuff_def_per_def_caster",
+      "duration_effect_type": "DEBUFF_PHYSICS_DEFEND_DOWN",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "PHYSICAL_DEFENSE_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_debuff_critical_resist",
+      "duration_effect_type": "DEBUFF_CRITICAL_CHANCE_RESIST",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_debuff_receiveheal",
+      "duration_effect_type": "DEBUFF_HEAL_RECEIVE",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_cc_stun",
+      "duration_effect_type": "CC_STUN",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_cc_bind",
+      "duration_effect_type": "CC_BIND",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_cc_fear",
+      "duration_effect_type": "CC_FEAR",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_cc_charm",
+      "duration_effect_type": "CC_CHARM",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_cc_freeze",
+      "duration_effect_type": "CC_FREEZE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_cc_silence",
+      "duration_effect_type": "CC_SILENCE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_cc_groggy",
+      "duration_effect_type": "CC_GROGGY",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_stun",
+      "duration_effect_type": "IMMUNE_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "define_cc_stun"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_knockback",
+      "duration_effect_type": "IMMUNE_ONETIME_CATEGORIZE_TYPE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "3"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_bind",
+      "duration_effect_type": "IMMUNE_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "define_cc_bind"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_fear",
+      "duration_effect_type": "IMMUNE_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "define_cc_fear"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_charm",
+      "duration_effect_type": "IMMUNE_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "define_cc_charm"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_freeze",
+      "duration_effect_type": "IMMUNE_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "define_cc_freezing"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_silence",
+      "duration_effect_type": "IMMUNE_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "define_cc_silence"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_duration_cc",
+      "duration_effect_type": "IMMUNE_DURATION_CATEGORIZE_TYPE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "3"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_damage",
+      "duration_effect_type": "IMMUNE_ONETIME_CATEGORIZE_TYPE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "1"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_heal",
+      "duration_effect_type": "IMMUNE_ONETIME_CATEGORIZE_TYPE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "2"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_dot_poison",
+      "duration_effect_type": "IMMUNE_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "define_debuff_dot_poison"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_dot_fire",
+      "duration_effect_type": "IMMUNE_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "define_debuff_dot_fire"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_dot_bleed",
+      "duration_effect_type": "IMMUNE_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "define_debuff_dot_bleed"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_heal_over_time_healpower",
+      "duration_effect_type": "IMMUNE_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "define_buff_heal_over_time"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_heal_over_time_hp",
+      "duration_effect_type": "IMMUNE_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "define_buff_heal_over_time_per_hp"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_overtime_damage_poison",
+      "duration_effect_type": "OVERTIME_DAMAGE",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_overtime_damage_fire",
+      "duration_effect_type": "OVERTIME_DAMAGE",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_overtime_damage_bleed",
+      "duration_effect_type": "OVERTIME_DAMAGE",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_overtime_heal_per_healpower",
+      "duration_effect_type": "OVERTIME_HEAL",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "HEAL_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_overtime_heal_per_maxhp",
+      "duration_effect_type": "OVERTIME_HEAL",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "MAX_LIFE_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_overtime_damage_fire_ch0019",
+      "duration_effect_type": "OVERTIME_DAMAGE",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "MAX_LIFE_RATE",
+      "immune_detail_value": [
+        "0"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_exclude_casting_target",
+      "duration_effect_type": "EXCLUDE_CASTING_TARGET",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": []
+    },
+    {
+      "skill_duration_factor_id": "factor_exclude_detecting_target",
+      "duration_effect_type": "EXCLUDE_DETECTING_TARGET",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": []
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_buff_categorize",
+      "duration_effect_type": "IMMUNE_DURATION_CATEGORIZE_TYPE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "1"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_debuff_categorize",
+      "duration_effect_type": "IMMUNE_DURATION_CATEGORIZE_TYPE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "2"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_cc_categorize",
+      "duration_effect_type": "IMMUNE_DURATION_CATEGORIZE_TYPE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "3"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_heal_categorize",
+      "duration_effect_type": "IMMUNE_ONETIME_CATEGORIZE_TYPE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "2"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_crowdcontrol_categorize",
+      "duration_effect_type": "IMMUNE_ONETIME_CATEGORIZE_TYPE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "3"
+      ]
+    },
+    {
+      "skill_duration_factor_id": "factor_immune_dispel_categorize",
+      "duration_effect_type": "IMMUNE_ONETIME_CATEGORIZE_TYPE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "immune_detail_value": [
+        "4"
+      ]
+    }
+  ]
+}

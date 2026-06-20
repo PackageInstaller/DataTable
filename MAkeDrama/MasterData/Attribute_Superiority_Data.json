@@ -1,0 +1,26 @@
+{
+  "__tableName": "Attribute_Superiority_Data",
+  "__byteLength": 72,
+  "items": [
+    {
+      "attacker_attribute_type": "MERCY",
+      "defender_attribute_type": "OBEY",
+      "final_damage_per": 0.3
+    },
+    {
+      "attacker_attribute_type": "UNITY",
+      "defender_attribute_type": "CHASTITY",
+      "final_damage_per": 0.3
+    },
+    {
+      "attacker_attribute_type": "OBEY",
+      "defender_attribute_type": "UNITY",
+      "final_damage_per": 0.3
+    },
+    {
+      "attacker_attribute_type": "CHASTITY",
+      "defender_attribute_type": "MERCY",
+      "final_damage_per": 0.3
+    }
+  ]
+}

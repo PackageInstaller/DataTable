@@ -1,0 +1,846 @@
+{
+  "__tableName": "Const_Setting_Data",
+  "__byteLength": 10641,
+  "items": [
+    {
+      "key": "BATTLE_FORMULA_DAMAGE_PIERCE_CONSTANT",
+      "type": "int",
+      "value": "500"
+    },
+    {
+      "key": "BATTLE_FORMULA_DAMAGE_DEFEND_CONSTANT",
+      "type": "int",
+      "value": "600"
+    },
+    {
+      "key": "BATTLE_FORMULA_DAMAGE_PIERCE_RATE_MAX",
+      "type": "double",
+      "value": "0.3"
+    },
+    {
+      "key": "BATTLE_FORMULA_EVASION_RATE_CONSTANT",
+      "type": "int",
+      "value": "300"
+    },
+    {
+      "key": "BATTLE_FORMULA_EVASION_RATE_MAX",
+      "type": "double",
+      "value": "0.7"
+    },
+    {
+      "key": "BATTLE_FORMULA_CRITICAL_RATE_CONSTANT",
+      "type": "double",
+      "value": "0.05"
+    },
+    {
+      "key": "BATTLE_FORMULA_CRITICAL_DAMAGE_RATE_MAX",
+      "type": "double",
+      "value": "2.5"
+    },
+    {
+      "key": "BATTLE_FORMULA_CRITICAL_DAMAGE_RATE_MIN",
+      "type": "double",
+      "value": "1.1"
+    },
+    {
+      "key": "BATTLE_FORMULA_ATTACK_SPEED_MAX",
+      "type": "double",
+      "value": "1.5"
+    },
+    {
+      "key": "BATTLE_FORMULA_ATTACK_SPEED_MIN",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "key": "BATTLE_FORMULA_BUST_COOLTIME_SPEED_MIN",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "key": "BATTLE_SKILL_BUST_GLOBAL_COOLTIME",
+      "type": "double",
+      "value": "1.5"
+    },
+    {
+      "key": "BATTLE_FORMULA_DAMAGE_REDUCE_LEVEL_GAP_RATE_MAX",
+      "type": "double",
+      "value": "0.8"
+    },
+    {
+      "key": "BATTLE_FORMULA_DAMAGE_REDUCE_LEVEL_GAP_RATE",
+      "type": "double",
+      "value": "0.08"
+    },
+    {
+      "key": "BATTLE_ENVIRONMENT_SPEED_RATIO_2X",
+      "type": "double",
+      "value": "1.3"
+    },
+    {
+      "key": "BATTLE_ENVIRONMENT_SPEED_RATIO_3X",
+      "type": "double",
+      "value": "1.8"
+    },
+    {
+      "key": "BATTLE_FLOATING_INTERVAL",
+      "type": "double",
+      "value": "0.28"
+    },
+    {
+      "key": "BATTLE_FORMULA_GROWTH_FACTOR_STAR",
+      "type": "double",
+      "value": "20"
+    },
+    {
+      "key": "BATTLE_FORMULA_GROWTH_FACTOR_PC_LEVEL",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "key": "BATTLE_FORMULA_GROWTH_FACTOR_NORMAL_SKILL_LEVEL",
+      "type": "double",
+      "value": "5"
+    },
+    {
+      "key": "BATTLE_FORMULA_GROWTH_FACTOR_BURST_SKILL_LEVEL",
+      "type": "double",
+      "value": "20"
+    },
+    {
+      "key": "BATTLE_FORMULA_GROWTH_FACTOR_EQUIPMENT_TIER",
+      "type": "double",
+      "value": "5"
+    },
+    {
+      "key": "BATTLE_FORMULA_GROWTH_FACTOR_EQUIPMENT_LEVEL",
+      "type": "double",
+      "value": "1"
+    },
+    {
+      "key": "UNDISPUTED_BATTLE_SCORE_CONSTANT",
+      "type": "double",
+      "value": "1"
+    },
+    {
+      "key": "UNDISPUTED_BATTLE_EXPIRE_TIME",
+      "type": "int",
+      "value": "60"
+    },
+    {
+      "key": "UNDISPUTED_BATTLE_EXPIRE_TIME_CHECK_SERVER",
+      "type": "int",
+      "value": "600"
+    },
+    {
+      "key": "UNDISPUTED_BATTLE_END_ALERT_TIME",
+      "type": "int",
+      "value": "50"
+    },
+    {
+      "key": "UNDISPUTED_DAILY_DEFENCE_REWARD_LIMIT",
+      "type": "int",
+      "value": "10"
+    },
+    {
+      "key": "UNDISPUTED_MATCHING_SLOT_COUNT",
+      "type": "int",
+      "value": "5"
+    },
+    {
+      "key": "UNDISPUTED_MATCHING_SLOT_HIDDEN_MAX_COUNT",
+      "type": "int",
+      "value": "3"
+    },
+    {
+      "key": "UNDISPUTED_SCORE_MODE_REFRASH_CHARGE_GOODS_ID",
+      "type": "int",
+      "value": "2"
+    },
+    {
+      "key": "UNDISPUTED_SCORE_MODE_REFRASH_CHARGE_GOODS_AMOUNT",
+      "type": "int",
+      "value": "100"
+    },
+    {
+      "key": "UNDISPUTED_RANK_MODE_BATTLE_CHARGE_GOODS_ID",
+      "type": "int",
+      "value": "2"
+    },
+    {
+      "key": "UNDISPUTED_RANK_MODE_BATTLE_CHARGE_GOODS_AMOUNT",
+      "type": "int",
+      "value": "100"
+    },
+    {
+      "key": "UNDISPUTED_RANK_MODE_REFRASH_COOLTIME",
+      "type": "double",
+      "value": "1.5"
+    },
+    {
+      "key": "UNDISPUTED_RANK_MODE_AUTO_REFRASH_TIME",
+      "type": "int",
+      "value": "120"
+    },
+    {
+      "key": "UNDISPUTED_RANK_MODE_PARTY_EXPIRATION_TIME",
+      "type": "int",
+      "value": "120"
+    },
+    {
+      "key": "UNDISPUTED_RANK_MODE_MATCHING_GROUP_MEMBER_LIMIT",
+      "type": "int",
+      "value": "1000"
+    },
+    {
+      "key": "UNDISPUTED_DEFENSE_REWARD_GOODS_TYPE",
+      "type": "int",
+      "value": "110"
+    },
+    {
+      "key": "UNDISPUTED_DEFENSE_REWARD_GOODS_AMOUNT",
+      "type": "int",
+      "value": "40"
+    },
+    {
+      "key": "UNDISPUTED_DEFENSE_REWARD_LIMIT_COUNT",
+      "type": "int",
+      "value": "5"
+    },
+    {
+      "key": "UNDISPUTED_DEFENSE_REWARD_RESET_SCHEDULE",
+      "type": "int",
+      "value": "8"
+    },
+    {
+      "key": "UNDISPUTED_DEFENSE_PARTY_HIDDEN_SLOT_DEFAULT",
+      "type": "string",
+      "value": "[4,3,2]"
+    },
+    {
+      "key": "UNDISPUTED_TOTALDAMAGERATE",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "key": "UNDISPUTED_KILLRATE",
+      "type": "double",
+      "value": "0.3"
+    },
+    {
+      "key": "UNDISPUTED_DAMAGERECEIVERATE",
+      "type": "double",
+      "value": "0.4"
+    },
+    {
+      "key": "UNDISPUTED_HEALRATE",
+      "type": "double",
+      "value": "0.35"
+    },
+    {
+      "key": "UNDISPUTED_EVASIONRATE",
+      "type": "double",
+      "value": "0.2"
+    },
+    {
+      "key": "UNDISPUTED_DAMAGEABSORPTIONRATE",
+      "type": "double",
+      "value": "0.2"
+    },
+    {
+      "key": "UNDISPUTED_BUFFAPPLICATIONRATE",
+      "type": "double",
+      "value": "5"
+    },
+    {
+      "key": "UNDISPUTED_DEBUFFAPPLICATIONRATE",
+      "type": "double",
+      "value": "5"
+    },
+    {
+      "key": "UNDISPUTED_SURVIVALTIMERATE",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "key": "UNDISPUTED_DISPELRATE",
+      "type": "double",
+      "value": "10"
+    },
+    {
+      "key": "UNDISPUTED_BOT_IN_TIER_COUNT",
+      "type": "int",
+      "value": "100"
+    },
+    {
+      "key": "UNDISPUTED_SCORE_FORMULA_CHAR_GRADE",
+      "type": "double",
+      "value": "4"
+    },
+    {
+      "key": "UNDISPUTED_SCORE_FORMULA_CHAR_LEVEL",
+      "type": "double",
+      "value": "1"
+    },
+    {
+      "key": "UNDISPUTED_SCORE_FORMULA_EQUIP_TIER",
+      "type": "double",
+      "value": "1"
+    },
+    {
+      "key": "UNDISPUTED_SCORE_FORMULA_EQUIP_LEVEL",
+      "type": "double",
+      "value": "0.15"
+    },
+    {
+      "key": "UNDISPUTED_SCORE_FORMULA_SKILL",
+      "type": "double",
+      "value": "1.5"
+    },
+    {
+      "key": "UNDISPUTED_SCORE_FORMULA_BURST_SKILL",
+      "type": "double",
+      "value": "3"
+    },
+    {
+      "key": "UNDISPUTED_SCORE_FORMULA_LOVE",
+      "type": "double",
+      "value": "0.1"
+    },
+    {
+      "key": "ASCENT_SEASON_EXPIRE_NOTICE_TIME",
+      "type": "int",
+      "value": "7"
+    },
+    {
+      "key": "ASCENT_BGM_ID",
+      "type": "string",
+      "value": "bgm_outgame_017"
+    },
+    {
+      "key": "ASSAULT_DAILY_REWARD_GOODS_TYPE",
+      "type": "int",
+      "value": "100"
+    },
+    {
+      "key": "BATTLE_FORMULA_COMBAT_POWER_FACTOR_ATTACK",
+      "type": "double",
+      "value": "1.5"
+    },
+    {
+      "key": "BATTLE_FORMULA_COMBAT_POWER_FACTOR_DEFEND",
+      "type": "double",
+      "value": "0.8"
+    },
+    {
+      "key": "BATTLE_FORMULA_COMBAT_POWER_FACTOR_LIFE",
+      "type": "double",
+      "value": "0.7"
+    },
+    {
+      "key": "BATTLE_FORMULA_COMBAT_POWER_FACTOR_PENETRATION",
+      "type": "double",
+      "value": "1"
+    },
+    {
+      "key": "BATTLE_FORMULA_COMBAT_POWER_FACTOR_PENETRATION_DEFEND",
+      "type": "double",
+      "value": "0.6"
+    },
+    {
+      "key": "BATTLE_FORMULA_COMBAT_POWER_FACTOR_CRITICAL_CHANCE",
+      "type": "double",
+      "value": "1"
+    },
+    {
+      "key": "BATTLE_FORMULA_COMBAT_POWER_FACTOR_CRITICAL_CHANCE_RESIST",
+      "type": "double",
+      "value": "1"
+    },
+    {
+      "key": "BATTLE_FORMULA_COMBAT_POWER_FACTOR_NOT_BUST_SKILL_LV",
+      "type": "double",
+      "value": "20"
+    },
+    {
+      "key": "BATTLE_FORMULA_COMBAT_POWER_FACTOR_BUST_SKILL_LV",
+      "type": "double",
+      "value": "40"
+    },
+    {
+      "key": "BATTLE_FORMULA_COMBAT_POWER_FACTOR_MULTIPLY",
+      "type": "double",
+      "value": "5"
+    },
+    {
+      "key": "UNDISPUTED_SCORE_FORMULA_EQUIP",
+      "type": "double",
+      "value": "1"
+    },
+    {
+      "key": "NICKNAME_CHAR_NUMBER_COUNT_MIN",
+      "type": "int",
+      "value": "4"
+    },
+    {
+      "key": "NICKNAME_CHAR_NUMBER_COUNT_MAX",
+      "type": "int",
+      "value": "16"
+    },
+    {
+      "key": "NICKNAME_CHANGE_FREE_COOLTIME_DAY",
+      "type": "int",
+      "value": "7"
+    },
+    {
+      "key": "NICKNAME_CHANGE_PAID_NEED_CASH",
+      "type": "int",
+      "value": "500"
+    },
+    {
+      "key": "UNLOCK_CONDITION_STAGE_BATTLE_BUST_AUTO",
+      "type": "int",
+      "value": "1001103"
+    },
+    {
+      "key": "UNLOCK_CONDITION_STAGE_BATTLE_SPEED_CHANGE",
+      "type": "int",
+      "value": "1001103"
+    },
+    {
+      "key": "UNLOCK_CONDITION_STAGE_BATTLE_SKIP",
+      "type": "int",
+      "value": "1002112"
+    },
+    {
+      "key": "ACCOUNT_MAX_LEVEL",
+      "type": "int",
+      "value": "60"
+    },
+    {
+      "key": "PROFILE_DEFAULT_MAINCHAR_ID",
+      "type": "int",
+      "value": "36"
+    },
+    {
+      "key": "LOBBY_DEFAULT_THEME_CHARACTER",
+      "type": "int",
+      "value": "36"
+    },
+    {
+      "key": "LOBBY_DEFAULT_THEME_BACKGROUND",
+      "type": "int",
+      "value": "1"
+    },
+    {
+      "key": "PROFILE_DECO_DEFAULT_ICON_ID",
+      "type": "int",
+      "value": "36"
+    },
+    {
+      "key": "PROFILE_DECO_DEFAULT_FRAME_ID",
+      "type": "int",
+      "value": "10000"
+    },
+    {
+      "key": "PROFILE_DECO_DEFAULT_SD_BACKGROUND_ID",
+      "type": "int",
+      "value": "50000"
+    },
+    {
+      "key": "PROFILE_DECO_DEFAULT_TITLE_ID",
+      "type": "int",
+      "value": "30000"
+    },
+    {
+      "key": "CLEAR_ACCOUNT_RESET_CHECK_LEVEL",
+      "type": "int",
+      "value": "10"
+    },
+    {
+      "key": "SUPPORTING_MAXIMUM_COUNT_PER_SLOT",
+      "type": "int",
+      "value": "10"
+    },
+    {
+      "key": "SUPPORTING_REDDOT_OUTPUT_COUNT",
+      "type": "int",
+      "value": "9"
+    },
+    {
+      "key": "SUPPORTING_SLOT_CHANGE_COOLTIME_MINUTE",
+      "type": "int",
+      "value": "1"
+    },
+    {
+      "key": "SUPPORTING_RENTAL_BASE_COST",
+      "type": "int",
+      "value": "10000"
+    },
+    {
+      "key": "SUPPORTING_LEVEL_BASE_CONST",
+      "type": "int",
+      "value": "500"
+    },
+    {
+      "key": "SUPPORTING_REWARD_CONST",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "key": "SUPPORTING_GET_REWARD_COMMISSION",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "key": "SUPPORTING_REWARD_GOODS_ID",
+      "type": "int",
+      "value": "1"
+    },
+    {
+      "key": "FRIENDS_MAX_LIST_NUMBER",
+      "type": "int",
+      "value": "30"
+    },
+    {
+      "key": "FRIENDS_MAX_REQUEST_LIST_NUMBER",
+      "type": "int",
+      "value": "20"
+    },
+    {
+      "key": "FRIENDS_MAX_ACCEPT_LIST_NUMBER",
+      "type": "int",
+      "value": "20"
+    },
+    {
+      "key": "FRIENDS_MAX_RESEARCH_LIST_NUMBER",
+      "type": "int",
+      "value": "20"
+    },
+    {
+      "key": "FRIENDS_GIFT_GOODS_TYPE",
+      "type": "int",
+      "value": "4"
+    },
+    {
+      "key": "FRIENDS_GIFT_RECEIVE_MAX_COUNT",
+      "type": "int",
+      "value": "10"
+    },
+    {
+      "key": "FRIENDS_GIFT_AMOUNT",
+      "type": "int",
+      "value": "1"
+    },
+    {
+      "key": "FRIENDS_GIFT_RESET_SCHEDULE",
+      "type": "int",
+      "value": "1"
+    },
+    {
+      "key": "FRIENDS_RESEARCH_LIST_RESET_COOL_TIME",
+      "type": "int",
+      "value": "10"
+    },
+    {
+      "key": "CHARACTER_GEAR_MAX_TIER",
+      "type": "int",
+      "value": "3"
+    },
+    {
+      "key": "CHARACTER_GEAR_MAX_LEVEL",
+      "type": "int",
+      "value": "50"
+    },
+    {
+      "key": "CAN_SET_GEAR_CHARACTER_GRADE",
+      "type": "int",
+      "value": "5"
+    },
+    {
+      "key": "CAN_SET_GEAR_CHARACTER_LEVEL",
+      "type": "int",
+      "value": "0"
+    },
+    {
+      "key": "EQUIPMENT_LEVEL_UP_USE_GOLD",
+      "type": "int",
+      "value": "1"
+    },
+    {
+      "key": "EQUIPMENT_OPEN_TIER",
+      "type": "int",
+      "value": "4"
+    },
+    {
+      "key": "EQUIPMENT_LEVEL_UP_USE_GOODS_ID",
+      "type": "int",
+      "value": "1"
+    },
+    {
+      "key": "EQUIPMENT_SLOT_COUNT",
+      "type": "int",
+      "value": "3"
+    },
+    {
+      "key": "EQUIPMENT_EXPPOINT_GOODS_ID",
+      "type": "int",
+      "value": "10001"
+    },
+    {
+      "key": "ITEM_ID_DEFINE_MASTERPIECE",
+      "type": "int",
+      "value": "200012"
+    },
+    {
+      "key": "PACKAGE_ITEM_USE_MAX_COUNT",
+      "type": "int",
+      "value": "20"
+    },
+    {
+      "key": "CHARACTER_MAX_GRADE",
+      "type": "int",
+      "value": "5"
+    },
+    {
+      "key": "CHARACTER_LEVEL_UP_USE_GOODS_ID",
+      "type": "int",
+      "value": "1"
+    },
+    {
+      "key": "CHARACTER_LEVEL_UP_USE_GOLD",
+      "type": "int",
+      "value": "2"
+    },
+    {
+      "key": "CHARACTER_EXPPOINT_GOODS_ID",
+      "type": "int",
+      "value": "10000"
+    },
+    {
+      "key": "SHOP_NPC_ID",
+      "type": "int",
+      "value": "101"
+    },
+    {
+      "key": "SHOP_NPC_STANDSTILL_SEC",
+      "type": "int",
+      "value": "15"
+    },
+    {
+      "key": "MONTHLY_BUFF_DURATION_DAY",
+      "type": "int",
+      "value": "30"
+    },
+    {
+      "key": "MONTHLY_PRODUCT_PURCHASE_POSSIBLE_DURATION_DAY",
+      "type": "int",
+      "value": "7"
+    },
+    {
+      "key": "FIRST_PURCHASE_RESET_DATA_ID",
+      "type": "int",
+      "value": "1"
+    },
+    {
+      "key": "POST_RECEIVE_MAX_COUNT",
+      "type": "int",
+      "value": "100"
+    },
+    {
+      "key": "POST_STORE_MAX_COUNT",
+      "type": "int",
+      "value": "50"
+    },
+    {
+      "key": "POST_AUTO_DELETE_DATE_AFTER_RECEIVE",
+      "type": "int",
+      "value": "7"
+    },
+    {
+      "key": "MAIN_EVENT_REWARD_DATE_AFTER_RECEIVE",
+      "type": "int",
+      "value": "7"
+    },
+    {
+      "key": "MAIN_EVENT_BONUS_RATE_MAX",
+      "type": "int",
+      "value": "100"
+    },
+    {
+      "key": "REWARD_GROUP_ID_PER_DATE",
+      "type": "int",
+      "value": "1000"
+    },
+    {
+      "key": "DIVISION_EXP_PER_OBSERVE",
+      "type": "int",
+      "value": "100"
+    },
+    {
+      "key": "OBSERVE_PLACE_CHARACTER_MIN",
+      "type": "int",
+      "value": "1"
+    },
+    {
+      "key": "OBSERVE_PLACE_CHARACTER_MAX",
+      "type": "int",
+      "value": "3"
+    },
+    {
+      "key": "REWARD_GROUP_ID_PER_OBSERVE",
+      "type": "int",
+      "value": "1000"
+    },
+    {
+      "key": "OBSERVE_RESET_SCHEDULE_ID",
+      "type": "int",
+      "value": "1"
+    },
+    {
+      "key": "BAKERY_STEAL_BUTTON_ACTIVATE_STACK_COUNT",
+      "type": "int",
+      "value": "1"
+    },
+    {
+      "key": "BAKERY_MAX_RANK",
+      "type": "int",
+      "value": "5"
+    },
+    {
+      "key": "GIFT_BIRTHDAY_BONUS_RATIO",
+      "type": "int",
+      "value": "5000"
+    },
+    {
+      "key": "TIME_USE_DEFAULT_OPEN_TIME",
+      "type": "string",
+      "value": "05:00:00"
+    },
+    {
+      "key": "TIME_USE_DEFAULT_CLOSE_TIME",
+      "type": "string",
+      "value": "04:59:59"
+    },
+    {
+      "key": "TIME_USE_DAILY_RESET_TIME",
+      "type": "string",
+      "value": "05:00:00"
+    },
+    {
+      "key": "SKIP_ONE_TIME_MAX_COUNT",
+      "type": "int",
+      "value": "30"
+    },
+    {
+      "key": "USER_RETURN_PERIOD",
+      "type": "int",
+      "value": "2"
+    },
+    {
+      "key": "LOBBY_THEME_SLOT_MAX_COUNT",
+      "type": "int",
+      "value": "5"
+    },
+    {
+      "key": "NICKNAME_CHANGE_PAID_NEED_GOODS_ID",
+      "type": "int",
+      "value": "2"
+    },
+    {
+      "key": "ITEM_STORE_MAX_COUNT",
+      "type": "int",
+      "value": "1000000000"
+    },
+    {
+      "key": "VOICE_VOLUME_TEST_ADDRESSABLE",
+      "type": "string",
+      "value": "Assets/AssetResources/Audio/Voice/jp/ch0031/outgame/voc_ch0031_outgame_intro_2.ogg"
+    },
+    {
+      "key": "BGM_DEFAULT_VOLUME",
+      "type": "int",
+      "value": "7"
+    },
+    {
+      "key": "SFX_DEFAULT_VOLUME",
+      "type": "int",
+      "value": "7"
+    },
+    {
+      "key": "VOICE_DEFAULT_VOLUME",
+      "type": "int",
+      "value": "7"
+    },
+    {
+      "key": "GRAPHIC_LEVEL_LOW",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "key": "GRAPHIC_LEVEL_MEDIUM",
+      "type": "double",
+      "value": "0.75"
+    },
+    {
+      "key": "GRAPHIC_LEVEL_HIGH",
+      "type": "double",
+      "value": "1"
+    },
+    {
+      "key": "ACCOUNT_LINK_GUEST_CASH_GIVE_GOODS_ID",
+      "type": "int",
+      "value": "100"
+    },
+    {
+      "key": "ACCOUNT_LINK_GUEST_CASH_GIVE_GOODS_COUNT",
+      "type": "int",
+      "value": "100"
+    },
+    {
+      "key": "BACKGROUND_SESSION_EXPIRE",
+      "type": "int",
+      "value": "600"
+    },
+    {
+      "key": "PICKUP_GACHA_MILEAGE_GOODS_ID",
+      "type": "int",
+      "value": "7"
+    },
+    {
+      "key": "PICKUP_GACHA_MILEAGE_GOODS_COUNT",
+      "type": "int",
+      "value": "1"
+    },
+    {
+      "key": "STORAGE_MAIL_MAX_COUNT",
+      "type": "int",
+      "value": "100"
+    },
+    {
+      "key": "STORAGE_MAIL_EXPIRE_DAYS",
+      "type": "int",
+      "value": "7"
+    },
+    {
+      "key": "BASE_OPEN_TIMESTAMP",
+      "type": "string",
+      "value": "2026-06-04"
+    },
+    {
+      "key": "ONEWEBSHOP_PID_DEV",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "key": "ONEWEBSHOP_PID_QA",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "key": "ONEWEBSHOP_PID_LIVE",
+      "type": "string",
+      "value": "WS00000148"
+    }
+  ]
+}

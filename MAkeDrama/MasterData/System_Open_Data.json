@@ -1,0 +1,158 @@
+{
+  "__tableName": "System_Open_Data",
+  "__byteLength": 1657,
+  "items": [
+    {
+      "system_open_id": 100,
+      "system_type": "OPERATION_MAIN",
+      "condition_type": [
+        "OPEN_STORY_STAGE_CLEAR",
+        "NONE"
+      ],
+      "value": [
+        1001112,
+        0
+      ],
+      "image_name": "Icon_Operation",
+      "system_open_info": "system_open_message_local_sweep_hard",
+      "system_unclock_guide": "null",
+      "system_unclock_guide_popup_msg": "system_open_condition_story_stage_popup_msg",
+      "system_season_off_guide": "null",
+      "system_season_off_popup_msg": "null",
+      "short_cut_type": "STORY_HARD"
+    },
+    {
+      "system_open_id": 103,
+      "system_type": "FRIEND",
+      "condition_type": [
+        "NONE",
+        "NONE"
+      ],
+      "value": [
+        0,
+        0
+      ],
+      "image_name": "Icon_Friendship_Shadow",
+      "system_open_info": "system_open_message_friend",
+      "system_unclock_guide": "null",
+      "system_unclock_guide_popup_msg": "null",
+      "system_season_off_guide": "null",
+      "system_season_off_popup_msg": "null",
+      "short_cut_type": "FRIEND_LIST"
+    },
+    {
+      "system_open_id": 116,
+      "system_type": "COLLECTION",
+      "condition_type": [
+        "NONE",
+        "NONE"
+      ],
+      "value": [
+        0,
+        0
+      ],
+      "image_name": "Icon_Dex_Shadow",
+      "system_open_info": "system_open_message_collection",
+      "system_unclock_guide": "null",
+      "system_unclock_guide_popup_msg": "null",
+      "system_season_off_guide": "null",
+      "system_season_off_popup_msg": "null",
+      "short_cut_type": "COLLECTION_CHARACTER"
+    },
+    {
+      "system_open_id": 211,
+      "system_type": "CONTENTS_ASCENT",
+      "condition_type": [
+        "OPEN_STORY_STAGE_CLEAR",
+        "NONE"
+      ],
+      "value": [
+        1002112,
+        0
+      ],
+      "image_name": "Icon_Operation",
+      "system_open_info": "system_open_message_ascent",
+      "system_unclock_guide": "system_open_condition_short_noti",
+      "system_unclock_guide_popup_msg": "system_open_condition_story_stage_popup_msg",
+      "system_season_off_guide": "null",
+      "system_season_off_popup_msg": "null",
+      "short_cut_type": "ASCENT"
+    },
+    {
+      "system_open_id": 301,
+      "system_type": "DUNGEON_DAILY_ATTRIBUTE",
+      "condition_type": [
+        "OPEN_STORY_STAGE_CLEAR",
+        "NONE"
+      ],
+      "value": [
+        1002106,
+        0
+      ],
+      "image_name": "Icon_Research",
+      "system_open_info": "system_open_message_attribute_dungeon",
+      "system_unclock_guide": "system_open_condition_short_noti",
+      "system_unclock_guide_popup_msg": "system_open_condition_story_stage_popup_msg",
+      "system_season_off_guide": "null",
+      "system_season_off_popup_msg": "null",
+      "short_cut_type": "DAILY_ATTRIBUTE_DUNGEON"
+    },
+    {
+      "system_open_id": 322,
+      "system_type": "DUNGEON_DAILY_RESOURCE",
+      "condition_type": [
+        "OPEN_STORY_STAGE_CLEAR",
+        "NONE"
+      ],
+      "value": [
+        1001106,
+        0
+      ],
+      "image_name": "Icon_Operation",
+      "system_open_info": "system_open_message_resources_dungeon",
+      "system_unclock_guide": "system_open_condition_short_noti",
+      "system_unclock_guide_popup_msg": "system_open_condition_story_stage_popup_msg",
+      "system_season_off_guide": "null",
+      "system_season_off_popup_msg": "null",
+      "short_cut_type": "DAILY_MATERIAL_DUNGEON"
+    },
+    {
+      "system_open_id": 401,
+      "system_type": "CONTENTS_TOTAL_ASSAULT",
+      "condition_type": [
+        "OPEN_STORY_STAGE_CLEAR",
+        "OPEN_CONTENTS_SCHEDULE_NEMESIS"
+      ],
+      "value": [
+        1005112,
+        0
+      ],
+      "image_name": "Icon_Operation",
+      "system_open_info": "system_open_message_nemesis",
+      "system_unclock_guide": "system_open_condition_short_noti",
+      "system_unclock_guide_popup_msg": "system_open_condition_story_stage_popup_msg",
+      "system_season_off_guide": "system_open_condition_no_season_schedule",
+      "system_season_off_popup_msg": "contents_nemesis_unlock",
+      "short_cut_type": "NEMESIS"
+    },
+    {
+      "system_open_id": 501,
+      "system_type": "CONTENTS_UNDISPUTED",
+      "condition_type": [
+        "OPEN_STORY_STAGE_CLEAR",
+        "OPEN_CONTENTS_SCHEDULE_ARENA"
+      ],
+      "value": [
+        1005112,
+        0
+      ],
+      "image_name": "Icon_Memorial",
+      "system_open_info": "system_open_message_arena",
+      "system_unclock_guide": "system_open_condition_short_noti",
+      "system_unclock_guide_popup_msg": "system_open_condition_story_stage_popup_msg",
+      "system_season_off_guide": "system_open_condition_no_season_schedule",
+      "system_season_off_popup_msg": "contents_arena_unlock",
+      "short_cut_type": "UNDISPUTED"
+    }
+  ]
+}

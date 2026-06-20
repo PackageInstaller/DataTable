@@ -1,0 +1,56 @@
+{
+  "__tableName": "Pass_Base_Data",
+  "__byteLength": 736,
+  "items": [
+    {
+      "pass_base_id": 1,
+      "pass_type": "PASS_TYPE_MISSION",
+      "pass_name": "cash_product_name_monthly_pass_2026_6",
+      "retroact_mail_id": 2,
+      "pass_desc": "cash_product_desc_monthly_pass_2026_6",
+      "product_id": 2000,
+      "open_schedule_id": 2001,
+      "pass_quest_category_group_id": 1,
+      "pass_level_stack_type": "PASS_LEVEL_STACK_TYPE_OVER",
+      "pass_level_exp": 100,
+      "level_buy_goods_id": 2,
+      "pass_exp_price": 2,
+      "pass_start_level": 1,
+      "pass_max_level": 30,
+      "pass_reward_group_id": 10,
+      "pass_bonus_reward_id": 9999,
+      "pass_open_condition_type": "OPEN_PLAYER_LV_UP",
+      "pass_open_value": [
+        1
+      ],
+      "tap_prefab_path": "Assets/AssetResources/Prefabs/UI/SeasonPass/Prefabs/SeasonPass_Tab/UISeasonPassTab_Mission.prefab",
+      "page_prefab_path": "Assets/AssetResources/Prefabs/UI/SeasonPass/Prefabs/SeasonPass_View/UISeasonPassView_Mission.prefab",
+      "sort_order": 1
+    },
+    {
+      "pass_base_id": 2,
+      "pass_type": "PASS_TYPE_ACCOUNT_LEVEL",
+      "pass_name": "cash_product_name_mission_pass",
+      "retroact_mail_id": 2,
+      "pass_desc": "cash_product_desc_mission_pass",
+      "product_id": 3000,
+      "open_schedule_id": 1,
+      "pass_quest_category_group_id": 0,
+      "pass_level_stack_type": "PASS_LEVEL_STACK_TYPE_NOT_OVER",
+      "pass_level_exp": 1,
+      "level_buy_goods_id": 0,
+      "pass_exp_price": 0,
+      "pass_start_level": 1,
+      "pass_max_level": 60,
+      "pass_reward_group_id": 100000,
+      "pass_bonus_reward_id": 0,
+      "pass_open_condition_type": "NONE",
+      "pass_open_value": [
+        0
+      ],
+      "tap_prefab_path": "Assets/AssetResources/Prefabs/UI/SeasonPass/Prefabs/SeasonPass_Tab/UISeasonPassTab_Level.prefab",
+      "page_prefab_path": "Assets/AssetResources/Prefabs/UI/SeasonPass/Prefabs/SeasonPass_View/UISeasonPassView_Level.prefab",
+      "sort_order": 2
+    }
+  ]
+}

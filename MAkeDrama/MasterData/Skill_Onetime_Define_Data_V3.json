@@ -1,0 +1,856 @@
+{
+  "__tableName": "Skill_Onetime_Define_Data_V3",
+  "__byteLength": 6752,
+  "items": [
+    {
+      "skill_onetime_define_id": "define_effect_dummy",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "NONE",
+      "onetime_effect_type": "EMPTY_EFFECT",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_damage_base",
+      "onetime_desc_id": "skill_onetime_desc_damage",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DAMAGE",
+      "onetime_effect_type": "ADD_DAMAGE",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "DAMAGE_FLOATER",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_damage_force_critical",
+      "onetime_desc_id": "skill_onetime_desc_damage_force_critical",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DAMAGE",
+      "onetime_effect_type": "ADD_FORCE_CRITICAL_DAMAGE",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "DAMAGE_FLOATER",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_damage_force_critical_with_value",
+      "onetime_desc_id": "skill_onetime_desc_damage_force_critical_with_value",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DAMAGE",
+      "onetime_effect_type": "ADD_FORCE_CRITICAL_DAMAGE",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "DAMAGE_FLOATER",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_damage_force_critical_with_value_damagesplit",
+      "onetime_desc_id": "skill_onetime_desc_damage_force_critical_with_value_damagesplit",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DAMAGE",
+      "onetime_effect_type": "ADD_FORCE_CRITICAL_DAMAGE",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "DAMAGE_FLOATER",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_damage_force_penentration",
+      "onetime_desc_id": "skill_onetime_desc_damage_force_penentration",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DAMAGE",
+      "onetime_effect_type": "ADD_FORCE_PENETRATION_DAMAGE",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "DAMAGE_FLOATER",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_damage_force_penentration_with_value",
+      "onetime_desc_id": "skill_onetime_desc_damage_force_penentration_with_value",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DAMAGE",
+      "onetime_effect_type": "ADD_FORCE_PENETRATION_DAMAGE",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "DAMAGE_FLOATER",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_damage_per_caster_maxhp",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DAMAGE",
+      "onetime_effect_type": "ADD_DAMAGE",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "MAX_LIFE_RATE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "DOT_DAMAGE_FLOATER",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_heal_per_healpower",
+      "onetime_desc_id": "skill_onetime_desc_heal",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "HEAL",
+      "onetime_effect_type": "ADD_HEAL",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "HEAL_RATE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "HEAL_FLOATER",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_heal_per_maxhp",
+      "onetime_desc_id": "skill_onetime_desc_heal_per_maxhp",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "HEAL",
+      "onetime_effect_type": "ADD_HEAL",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "MAX_LIFE_RATE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "HEAL_FLOATER",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_heal_per_maxhp_holder",
+      "onetime_desc_id": "skill_onetime_desc_heal_per_maxhp_holder",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "HEAL",
+      "onetime_effect_type": "ADD_HEAL",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "MAX_LIFE_RATE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "HEAL_FLOATER",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_damage_per_holder_def",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DAMAGE",
+      "onetime_effect_type": "ADD_DAMAGE",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "PHYSICAL_DEFENSE_RATE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "DAMAGE_FLOATER",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_damage_per_holder_maxhp",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DAMAGE",
+      "onetime_effect_type": "ADD_DAMAGE",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "MAX_LIFE_RATE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "DAMAGE_FLOATER",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_cc_knockback",
+      "onetime_desc_id": "skill_onetime_desc_knockback",
+      "is_animation_forced": true,
+      "onetime_categorize_type": "MOVE_CONTROL",
+      "onetime_effect_type": "CC_KNOCKBACK",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_cc_hit_reaction",
+      "onetime_desc_id": "skill_onetime_desc_hitreaction",
+      "is_animation_forced": true,
+      "onetime_categorize_type": "MOVE_CONTROL",
+      "onetime_effect_type": "CC_HIT_REACTION",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_4000010",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_buff_atk_per_atk_holder"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_duration_categorize_buff",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_CATEGORIZE_TYPE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "1"
+      ],
+      "onetime_floater_type": "STRING_FLOATER",
+      "onetime_floater_style": "Green",
+      "onetime_floater_string_id": "skill_floater_duration_dispel_buff"
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_duration_categorize_debuff",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_CATEGORIZE_TYPE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "2"
+      ],
+      "onetime_floater_type": "STRING_FLOATER",
+      "onetime_floater_style": "Green",
+      "onetime_floater_string_id": "skill_floater_duration_dispel_debuff"
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_duration_categorize_cc",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_CATEGORIZE_TYPE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "3"
+      ],
+      "onetime_floater_type": "STRING_FLOATER",
+      "onetime_floater_style": "Green",
+      "onetime_floater_string_id": "skill_floater_duration_dispel_cc"
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_duration_shield",
+      "onetime_desc_id": "skill_onetime_desc_dispel_duration_shield",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_buff_shield_per_healpower_caster",
+        "define_buff_shield_per_hp_rate_caster"
+      ],
+      "onetime_floater_type": "STRING_FLOATER",
+      "onetime_floater_style": "Green",
+      "onetime_floater_string_id": "skill_floater_duration_dispel_shield"
+    },
+    {
+      "skill_onetime_define_id": "define_dot_bleeding",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DAMAGE",
+      "onetime_effect_type": "ADD_DAMAGE",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "MAX_LIFE_RATE",
+      "onetime_define_particle_path": "Assets/AssetResources/Prefabs/Effects/Skill/SkillEffect_Duration_Bleeding.prefab",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "DOT_DAMAGE_FLOATER",
+      "onetime_floater_style": "Bleeding",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dot_poison",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DAMAGE",
+      "onetime_effect_type": "ADD_DAMAGE",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "onetime_define_particle_path": "Assets/AssetResources/Prefabs/Effects/Skill/SkillEffect_Duration_Poison.prefab",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "DOT_DAMAGE_FLOATER",
+      "onetime_floater_style": "Poison",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dot_burning",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DAMAGE",
+      "onetime_effect_type": "ADD_DAMAGE",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "PHYSICAL_ATTACK_RATE",
+      "onetime_define_particle_path": "Assets/AssetResources/Prefabs/Effects/Skill/SkillEffect_Duration_Burning.prefab",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "DOT_DAMAGE_FLOATER",
+      "onetime_floater_style": "Burn",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_reduce_cooltime_bust",
+      "onetime_desc_id": "skill_onetime_desc_reduce_cooltime_bust",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "NONE",
+      "onetime_effect_type": "REDUCE_BURST_COOLDOWN",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0001",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_buff_heal_over_time",
+        "define_buff_heal_over_time_per_hp"
+      ],
+      "onetime_floater_type": "STRING_FLOATER",
+      "onetime_floater_style": "Green",
+      "onetime_floater_string_id": "skill_floater_duration_dispel_heal_over_time"
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0020",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_ch0020"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0019",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_ch0019",
+        "define_passive_ch0019_atk_up_01",
+        "define_passive_ch0019_atk_up_02",
+        "define_passive_ch0019_atk_up_03"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_ulti_dot_ch0019",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DAMAGE",
+      "onetime_effect_type": "ADD_DAMAGE",
+      "multiple_target_type": "CASTER",
+      "multiple_type": "MAX_LIFE_RATE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [],
+      "onetime_floater_type": "DOT_DAMAGE_FLOATER",
+      "onetime_floater_style": "Burn",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0021",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_ch0021"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0021_buff",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_ch0021_buff"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0021_pattern",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_ch0021_pattern"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0024",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_CATEGORIZE_TYPE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "2",
+        "3"
+      ],
+      "onetime_floater_type": "STRING_FLOATER",
+      "onetime_floater_style": "Green",
+      "onetime_floater_string_id": "skill_floater_duration_dispel_debuff"
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0025_01",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_ch0025_skill02"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0025_02",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_CATEGORIZE_TYPE",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "2",
+        "3"
+      ],
+      "onetime_floater_type": "STRING_FLOATER",
+      "onetime_floater_style": "Green",
+      "onetime_floater_string_id": "skill_floater_duration_dispel_all"
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0029",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_ch0029"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0035_skill01",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_ch0035_skill01"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0035_skill02",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_ch0035_skill02"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_passive_trigger_ch0037",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "NONE",
+      "onetime_effect_type": "REDUCE_BURST_COOLDOWN",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0038_single",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_ch0038_single"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0038_multi",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_ch0038_multi"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0042_skill01",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_ch0042_skill01"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0007",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_ch0007"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_ch0062",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_ch0062"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_debuff_umbradei",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_debuff_umbradei"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_muscle_up",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_muscle_up"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_damage_reduce_np8199",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_buff_damage_reduce_np8199"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_trigger_np8199",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_np8199"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_lucky",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_lucky"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_np0306",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_np0306"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_np0311",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_trigger_np0311"
+      ],
+      "onetime_floater_type": "STRING_FLOATER",
+      "onetime_floater_style": "Green",
+      "onetime_floater_string_id": "test"
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_np8200_shield",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_buff_shield_per_healpower_caster"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "define_dispel_np8200_cc_immune",
+      "onetime_desc_id": "",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DISPELL",
+      "onetime_effect_type": "CLEAR_DURATION_DEFINE_ID",
+      "multiple_target_type": "NONE",
+      "multiple_type": "NONE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "define_buff_atk_per_atk_holder",
+        "define_immune_stun"
+      ],
+      "onetime_floater_type": "NONE",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    },
+    {
+      "skill_onetime_define_id": "damage_per_target_hp",
+      "onetime_desc_id": "skill_onetime_desc_damage",
+      "is_animation_forced": false,
+      "onetime_categorize_type": "DAMAGE",
+      "onetime_effect_type": "ADD_DAMAGE",
+      "multiple_target_type": "HOLDER",
+      "multiple_type": "MAX_LIFE_RATE",
+      "onetime_define_particle_path": "",
+      "dispel_detail_value": [
+        "0"
+      ],
+      "onetime_floater_type": "DAMAGE_FLOATER",
+      "onetime_floater_style": "",
+      "onetime_floater_string_id": ""
+    }
+  ]
+}

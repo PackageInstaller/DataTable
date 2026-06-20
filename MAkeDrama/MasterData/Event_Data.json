@@ -1,0 +1,114 @@
+{
+  "__tableName": "Event_Data",
+  "__byteLength": 2041,
+  "items": [
+    {
+      "event_id": 1001,
+      "event_type": "MAIN_EVENT",
+      "connect_event_id": 1001,
+      "full_schedule_id": 10011,
+      "complete_type": "SCHEDULE_END",
+      "is_show": false,
+      "tab_btn_path": "0",
+      "hub_page_path": "0",
+      "pickup_event_character_id": 0,
+      "sort_order": 0
+    },
+    {
+      "event_id": 1002,
+      "event_type": "MAIN_EVENT",
+      "connect_event_id": 1002,
+      "full_schedule_id": 10021,
+      "complete_type": "SCHEDULE_END",
+      "is_show": false,
+      "tab_btn_path": "0",
+      "hub_page_path": "0",
+      "pickup_event_character_id": 0,
+      "sort_order": 0
+    },
+    {
+      "event_id": 2001,
+      "event_type": "ATTENDANCE",
+      "connect_event_id": 21001,
+      "full_schedule_id": 1,
+      "complete_type": "NONE",
+      "is_show": true,
+      "tab_btn_path": "Assets/AssetResources/Prefabs/UI/EventHub/Attendance/Attendance_Lobby/Attendance_Lobby_0001/Prefabs/Attendance_Lobby_0001_Tab",
+      "hub_page_path": "Assets/AssetResources/Prefabs/UI/EventHub/Attendance/Attendance_Lobby/Attendance_Lobby_0001/Prefabs/Attendance_Lobby_0001_View",
+      "pickup_event_character_id": 0,
+      "sort_order": 99
+    },
+    {
+      "event_id": 2006,
+      "event_type": "ATTENDANCE",
+      "connect_event_id": 26001,
+      "full_schedule_id": 1,
+      "complete_type": "ALL_CLEAR",
+      "is_show": true,
+      "tab_btn_path": "Assets/AssetResources/Prefabs/UI/EventHub/Attendance/Attendance_New/Attendance_New_0001/Prefabs/Attendance_New_0001_Tab",
+      "hub_page_path": "Assets/AssetResources/Prefabs/UI/EventHub/Attendance/Attendance_New/Attendance_New_0001/Prefabs/Attendance_New_0001_Page",
+      "pickup_event_character_id": 0,
+      "sort_order": 5
+    },
+    {
+      "event_id": 3003,
+      "event_type": "QUEST_EVENT",
+      "connect_event_id": 12,
+      "full_schedule_id": 1,
+      "complete_type": "ALL_CLEAR",
+      "is_show": true,
+      "tab_btn_path": "Assets/AssetResources/Prefabs/UI/EventHub/QuestEvent/Quest_Guide/Guide_0003/Prefabs/QuestGuide_0003_Tab.prefab",
+      "hub_page_path": "Assets/AssetResources/Prefabs/UI/EventHub/QuestEvent/Quest_Guide/Guide_0003/Prefabs/QuestGuide_0003_Page.prefab",
+      "pickup_event_character_id": 0,
+      "sort_order": 3
+    },
+    {
+      "event_id": 3004,
+      "event_type": "QUEST_EVENT",
+      "connect_event_id": 13,
+      "full_schedule_id": 1,
+      "complete_type": "ALL_CLEAR",
+      "is_show": true,
+      "tab_btn_path": "Assets/AssetResources/Prefabs/UI/EventHub/QuestEvent/Quest_Level/Level_0001/Prefabs/QuestLevel_0001_Tab.prefab",
+      "hub_page_path": "Assets/AssetResources/Prefabs/UI/EventHub/QuestEvent/Quest_Level/Level_0001/Prefabs/QuestLevel_0001_Page.prefab",
+      "pickup_event_character_id": 0,
+      "sort_order": 5
+    },
+    {
+      "event_id": 3005,
+      "event_type": "QUEST_EVENT",
+      "connect_event_id": 14,
+      "full_schedule_id": 1,
+      "complete_type": "ALL_CLEAR",
+      "is_show": true,
+      "tab_btn_path": "Assets/AssetResources/Prefabs/UI/EventHub/QuestEvent/Quest_Stepup/Stepup_0001/Prefabs/QuestStepup_0001_Tab.prefab",
+      "hub_page_path": "Assets/AssetResources/Prefabs/UI/EventHub/QuestEvent/Quest_Stepup/Stepup_0001/Prefabs/QuestStepup_0001_Page.prefab",
+      "pickup_event_character_id": 0,
+      "sort_order": 4
+    },
+    {
+      "event_id": 3007,
+      "event_type": "QUEST_EVENT",
+      "connect_event_id": 16,
+      "full_schedule_id": 304,
+      "complete_type": "NONE",
+      "is_show": true,
+      "tab_btn_path": "Assets/AssetResources/Prefabs/UI/EventHub/QuestEvent/Quest_Pickup/Pickup_0002/Prefabs/QuestPickup_0002_Tab.prefab",
+      "hub_page_path": "Assets/AssetResources/Prefabs/UI/EventHub/QuestEvent/Quest_Pickup/Pickup_0002/Prefabs/QuestPickup_0002_Page.prefab",
+      "pickup_event_character_id": 35,
+      "sort_order": 1
+    },
+    {
+      "event_id": 3008,
+      "event_type": "QUEST_EVENT",
+      "connect_event_id": 2000,
+      "full_schedule_id": 305,
+      "complete_type": "NONE",
+      "is_show": true,
+      "tab_btn_path": "Assets/AssetResources/Prefabs/UI/EventHub/QuestEvent/Quest_Mission/Mission_0001/Prefabs/QuestMission_0001_Tab.prefab",
+      "hub_page_path": "Assets/AssetResources/Prefabs/UI/EventHub/QuestEvent/Quest_Mission/Mission_0001/Prefabs/QuestMission_0001_Page.prefab",
+      "pickup_event_character_id": 0,
+      "sort_order": 2
+    }
+  ]
+}

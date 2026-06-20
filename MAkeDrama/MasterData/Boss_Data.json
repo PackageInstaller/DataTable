@@ -1,0 +1,105 @@
+{
+  "__tableName": "Boss_Data",
+  "__byteLength": 1607,
+  "items": [
+    {
+      "boss_id": 20101,
+      "dungeon_id": 1001,
+      "boss_group_id": 201,
+      "boss_name": "system_boss_name_manageress",
+      "boss_stage_group_id": 20101,
+      "boss_story_info": "story_boss_manageress",
+      "boss_skill_info": [
+        400111,
+        400112,
+        400113,
+        400114,
+        400115,
+        400119
+      ],
+      "prefab_path": "Assets/AssetResources/Prefabs/Popup/UI/BossDungeon/BossStageEntrySlot",
+      "boss_silhouette_path": "Assets/AssetResources/Textures/UI/OutGame/Img_Boss_Lock",
+      "open_game_type": "STORY_MODE",
+      "open_condition_zone_id": 10012,
+      "open_dungeon_id": 1001205,
+      "open_schedule_id": 0,
+      "boss_title_id": "system_boss_title_manageress",
+      "boss_img_standing_path": "Icon_Standing_Boss_000000_Manageress",
+      "boss_img_stage_select_path": "Icon_Boss_Manageress",
+      "boss_img_enter_stage_path": "Icon_Boss_Manageress",
+      "boss_icon": "Icon_Boss_Manageress"
+    },
+    {
+      "boss_id": 20102,
+      "dungeon_id": 1001,
+      "boss_group_id": 201,
+      "boss_name": "system_boss_name_elizabeth",
+      "boss_stage_group_id": 20102,
+      "boss_story_info": "story_boss_elizabeth",
+      "boss_skill_info": [
+        210002,
+        210003,
+        210004
+      ],
+      "prefab_path": "Assets/AssetResources/Prefabs/Popup/UI/BossDungeon/BossStageEntrySlot",
+      "boss_silhouette_path": "Assets/AssetResources/Textures/UI/OutGame/Img_Boss_Lock",
+      "open_game_type": "STORY_MODE",
+      "open_condition_zone_id": 10012,
+      "open_dungeon_id": 1001205,
+      "open_schedule_id": 0,
+      "boss_title_id": "system_boss_title_elizabeth",
+      "boss_img_standing_path": "Icon_Standing_Boss_600001_Elizabeth",
+      "boss_img_stage_select_path": "Icon_Boss_600001",
+      "boss_img_enter_stage_path": "Icon_Boss_600001",
+      "boss_icon": "Icon_NPC_600001"
+    },
+    {
+      "boss_id": 20103,
+      "dungeon_id": 1001,
+      "boss_group_id": 201,
+      "boss_name": "system_boss_name_elizabeth",
+      "boss_stage_group_id": 20103,
+      "boss_story_info": "story_boss_001",
+      "boss_skill_info": [
+        210002,
+        210003,
+        210004
+      ],
+      "prefab_path": "Assets/AssetResources/Prefabs/Popup/UI/BossDungeon/BossStageEntrySlot",
+      "boss_silhouette_path": "Assets/AssetResources/Textures/UI/OutGame/Img_Boss_Lock02",
+      "open_game_type": "BOSS_DUNGEON_MODE",
+      "open_condition_zone_id": 1,
+      "open_dungeon_id": 2010304,
+      "open_schedule_id": 0,
+      "boss_title_id": "system_boss_title_elizabeth",
+      "boss_img_standing_path": "Icon_Standing_Boss_Unknown",
+      "boss_img_stage_select_path": "Icon_Boss_600001",
+      "boss_img_enter_stage_path": "Icon_Boss_600001",
+      "boss_icon": "Icon_NPC_600001"
+    },
+    {
+      "boss_id": 20104,
+      "dungeon_id": 1001,
+      "boss_group_id": 201,
+      "boss_name": "system_boss_name_elizabeth",
+      "boss_stage_group_id": 20104,
+      "boss_story_info": "story_boss_001",
+      "boss_skill_info": [
+        210002,
+        210003,
+        210004
+      ],
+      "prefab_path": "Assets/AssetResources/Prefabs/Popup/UI/BossDungeon/BossStageEntrySlot",
+      "boss_silhouette_path": "Assets/AssetResources/Textures/UI/OutGame/Img_Boss_Lock03",
+      "open_game_type": "BOSS_DUNGEON_MODE",
+      "open_condition_zone_id": 1,
+      "open_dungeon_id": 2010404,
+      "open_schedule_id": 0,
+      "boss_title_id": "system_boss_title_elizabeth",
+      "boss_img_standing_path": "Icon_Standing_Boss_Unknown",
+      "boss_img_stage_select_path": "Icon_Boss_600001",
+      "boss_img_enter_stage_path": "Icon_Boss_600001",
+      "boss_icon": "Icon_NPC_600001"
+    }
+  ]
+}

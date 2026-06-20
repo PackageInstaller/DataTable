@@ -43,3 +43,4 @@
 |    MementoMori    |      妹妹头      |           国际服 Json           |
 |  CuisineDimension  |     料理次元     |             国服 Lua             |
 |   FalloutTamira   |   异尘：达米拉   |          国服Lua + Json          |
+|     MAkeDrama     |    MAkeDrama    |            韩服 Json            |

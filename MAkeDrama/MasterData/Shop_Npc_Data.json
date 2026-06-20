@@ -1,0 +1,70 @@
+{
+  "__tableName": "Shop_Npc_Data",
+  "__byteLength": 1256,
+  "items": [
+    {
+      "index": 1010001,
+      "l2d_id": 101001,
+      "npc_status": "SHOP_ENTER",
+      "bubble_string_id": "system_shop_enter_bubble_1",
+      "state_anim": "00_idle_normal",
+      "bubble_voice_path": "Assets/AssetResources/Audio/Voice/LobbyVoice/Director/Voice_Director_LobbyEnt_01"
+    },
+    {
+      "index": 1010002,
+      "l2d_id": 101001,
+      "npc_status": "SHOP_ENTER",
+      "bubble_string_id": "system_shop_enter_bubble_1",
+      "state_anim": "00_idle_normal",
+      "bubble_voice_path": "Assets/AssetResources/Audio/Voice/LobbyVoice/Director/Voice_Director_LobbyTouch_02"
+    },
+    {
+      "index": 1010003,
+      "l2d_id": 101001,
+      "npc_status": "L2D_TOUCH",
+      "bubble_string_id": "system_shop_touch_bubble_1",
+      "state_anim": "00_active",
+      "bubble_voice_path": "Assets/AssetResources/Audio/Voice/LobbyVoice/Director/Voice_Director_LobbyTouch_03"
+    },
+    {
+      "index": 1010004,
+      "l2d_id": 101001,
+      "npc_status": "L2D_TOUCH",
+      "bubble_string_id": "system_shop_touch_bubble_2",
+      "state_anim": "00_active",
+      "bubble_voice_path": "Assets/AssetResources/Audio/Voice/LobbyVoice/Director/Voice_Director_LobbyTouch_04"
+    },
+    {
+      "index": 1010005,
+      "l2d_id": 101001,
+      "npc_status": "BUY_ITEM",
+      "bubble_string_id": "system_shop_buy_bubble_1",
+      "state_anim": "00_idle_normal",
+      "bubble_voice_path": "Assets/AssetResources/Audio/Voice/LobbyVoice/Director/Voice_Director_LobbyEnt_01"
+    },
+    {
+      "index": 1010006,
+      "l2d_id": 101001,
+      "npc_status": "BUY_ITEM",
+      "bubble_string_id": "system_shop_buy_bubble_2",
+      "state_anim": "00_idle_normal",
+      "bubble_voice_path": "Assets/AssetResources/Audio/Voice/LobbyVoice/Director/Voice_Director_LobbyTouch_01"
+    },
+    {
+      "index": 1010007,
+      "l2d_id": 101001,
+      "npc_status": "STANDSTILL",
+      "bubble_string_id": "system_shop_none_bubble_1",
+      "state_anim": "00_idle_normal",
+      "bubble_voice_path": "Assets/AssetResources/Audio/Voice/LobbyVoice/Director/Voice_Director_LobbyTouch_02"
+    },
+    {
+      "index": 1010008,
+      "l2d_id": 101001,
+      "npc_status": "STANDSTILL",
+      "bubble_string_id": "system_shop_none_bubble_2",
+      "state_anim": "00_idle_normal",
+      "bubble_voice_path": "Assets/AssetResources/Audio/Voice/LobbyVoice/Director/Voice_Director_LobbyTouch_03"
+    }
+  ]
+}

@@ -1,0 +1,9638 @@
+{
+  "__tableName": "Skill_Duration_Data_V3",
+  "__byteLength": 66926,
+  "items": [
+    {
+      "skill_duration_id": "arena_defalut_duration_001",
+      "duration_define_id": "define_buff_arena_defalut_001",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.02,
+        0.05,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "common_passive_atk_up_10",
+      "duration_define_id": "define_buff_atk_per_atk_caster_passive",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 30.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "common_passive_atk_up_15",
+      "duration_define_id": "define_buff_atk_per_atk_caster_passive",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.15,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 30.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "common_passive_atk_up_20",
+      "duration_define_id": "define_buff_atk_per_atk_caster_passive",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 30.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "common_passive_atk_up_25",
+      "duration_define_id": "define_buff_atk_per_atk_caster_passive",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.25,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 30.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "common_passive_atk_up_30",
+      "duration_define_id": "define_buff_atk_per_atk_caster_passive",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 30.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "500007",
+      "duration_define_id": "define_cc_freezing",
+      "apply_target_type": "HOLDER",
+      "rate": 0.05,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "10003211",
+      "duration_define_id": "define_buff_crirate_per_crirate_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "10003311",
+      "duration_define_id": "define_buff_crirate_per_crirate_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.7,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "10004211",
+      "duration_define_id": "define_buff_cridmg_per_cridmg_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.5,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "10004311",
+      "duration_define_id": "define_buff_cridmg_per_cridmg_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0005_skill01_duration_01",
+      "duration_define_id": "define_buff_shield_per_hp_rate_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.4,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.005333333333333334,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.01066666666666667,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0006_skill01_duration_01",
+      "duration_define_id": "define_debuff_accuracy",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.5,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.02,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0006_skill02_duration_01",
+      "duration_define_id": "define_buff_heal_over_time",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.005,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 5,
+      "repeat_multiple": [
+        0.3
+      ],
+      "up_repeat_multiple": [
+        0.01
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0006_ulti_duration_01",
+      "duration_define_id": "define_buff_ch0006_ulti",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 6.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.3
+      ],
+      "up_repeat_multiple": [
+        0.01
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0007_passive_common_duration_01",
+      "duration_define_id": "define_trigger_ch0007",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0007_passive_duration_01",
+      "duration_define_id": "define_buff_penentration_per_penentration_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0007_passive_duration_02",
+      "duration_define_id": "define_buff_penentration_per_penentration_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0007_passive_duration_03",
+      "duration_define_id": "define_buff_penentration_per_penentration_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.4,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0009_skill02_duration_01",
+      "duration_define_id": "define_cc_silence",
+      "apply_target_type": "HOLDER",
+      "rate": 0.1,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0009_passive_duration_01",
+      "duration_define_id": "define_passive_buff_ch0009",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.06,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 9999.0,
+      "duration_max_stack": 10,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0009_passive_duration_02",
+      "duration_define_id": "define_passive_buff_ch0009",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.08,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 9999.0,
+      "duration_max_stack": 10,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0009_passive_duration_03",
+      "duration_define_id": "define_passive_buff_ch0009",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 9999.0,
+      "duration_max_stack": 10,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0010_skill02_duration_01",
+      "duration_define_id": "define_trigger_summer_2026",
+      "apply_target_type": "HOLDER",
+      "rate": 0.7,
+      "up_rate": 0.02,
+      "extra_rate": 0.04,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0010_ulti_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 0.5,
+      "up_rate": 0.075,
+      "extra_rate": 0.1,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0011_skill02_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.05,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.010000000000000002,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.020000000000000004,
+        0.0,
+        0.0
+      ],
+      "time": 40.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0011_trigger_duration_01",
+      "duration_define_id": "define_trigger_ch0011",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 0.8,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0012_ulti_duration_01",
+      "duration_define_id": "define_debuff_accuracy",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.5,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.012,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.020000000000000004,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0013_skill02_duration_01",
+      "duration_define_id": "define_buff_cridmg_per_cridmg_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.013333333333333332,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.026666666666666672,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0014_skill02_duration_01",
+      "duration_define_id": "define_buff_shield_per_healpower_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0014_ulti_duration_01",
+      "duration_define_id": "define_buff_shield_per_healpower_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0015_skill01_duration_01",
+      "duration_define_id": "define_cc_charm",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.8,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        -0.04000000000000001,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        -0.08000000000000002,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0015_passive_duration_01",
+      "duration_define_id": "define_buff_healpower_per_healpower_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 10,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0015_passive_duration_02",
+      "duration_define_id": "define_buff_healpower_per_healpower_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.12,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 10,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0015_passive_duration_03",
+      "duration_define_id": "define_buff_healpower_per_healpower_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.15,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 10,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0016_skill01_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.4,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.005333333333333334,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.01066666666666667,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0016_skill02_duration_01",
+      "duration_define_id": "define_buff_crirate_per_crirate_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.002666666666666667,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.005333333333333335,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0016_ulti_duration_01",
+      "duration_define_id": "define_buff_crirate_per_crirate_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.006,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.010000000000000002,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0016_ulti_duration_02",
+      "duration_define_id": "define_buff_cridmg_per_cridmg_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.006,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.010000000000000002,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0016_passive_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 30.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0016_passive_duration_02",
+      "duration_define_id": "define_buff_atk_per_atk_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.15,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 30.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0016_passive_duration_03",
+      "duration_define_id": "define_buff_atk_per_atk_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 30.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0017_skill01_duration_01",
+      "duration_define_id": "define_debuff_dot_poison",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.002666666666666667,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.005333333333333335,
+        0.0,
+        0.0
+      ],
+      "time": 15.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.5
+      ],
+      "up_repeat_multiple": [
+        0.005
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0017_skill02_duration_01",
+      "duration_define_id": "define_debuff_dot_poison",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.002666666666666667,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.005333333333333335,
+        0.0,
+        0.0
+      ],
+      "time": 15.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.5
+      ],
+      "up_repeat_multiple": [
+        0.005
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0017_ulti_duration_01",
+      "duration_define_id": "define_debuff_dot_poison",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0048000000000000004,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.008000000000000002,
+        0.0,
+        0.0
+      ],
+      "time": 15.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.5
+      ],
+      "up_repeat_multiple": [
+        0.005
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0019_ulti_duration_01",
+      "duration_define_id": "define_trigger_ch0019",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.03,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        -0.0018,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        -0.003,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.05
+      ],
+      "up_repeat_multiple": [
+        -0.005
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0019_passive_duration_01",
+      "duration_define_id": "define_passive_ch0019_atk_up_01",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0019_passive_duration_02",
+      "duration_define_id": "define_passive_ch0019_atk_up_02",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.15,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0019_passive_duration_03",
+      "duration_define_id": "define_passive_ch0019_atk_up_03",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0020_skill02_duration_01",
+      "duration_define_id": "define_trigger_ch0020",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 1,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0020_skill02_duration_02",
+      "duration_define_id": "define_debuff_critical_resist",
+      "apply_target_type": "HOLDER",
+      "rate": 0.6,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.006666666666666666,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.013333333333333336,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0021_common_duration_01",
+      "duration_define_id": "define_trigger_ch0021_pattern",
+      "apply_target_type": "CASTER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0021_skill01_duration_01",
+      "duration_define_id": "define_trigger_ch0021",
+      "apply_target_type": "HOLDER",
+      "rate": 0.6,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0021_skill02_duration_01",
+      "duration_define_id": "define_trigger_ch0021_buff",
+      "apply_target_type": "CASTER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0021_passive_duration_01",
+      "duration_define_id": "define_trigger_ch0021",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0022_skill01_duration_01",
+      "duration_define_id": "define_cc_charm",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.8,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        -0.04000000000000001,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        -0.08000000000000002,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0022_skill02_duration_01",
+      "duration_define_id": "define_cc_fear",
+      "apply_target_type": "HOLDER",
+      "rate": 0.6549999999999999,
+      "up_rate": 0.03,
+      "extra_rate": 0.025,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0022_ulti_duration_01",
+      "duration_define_id": "define_buff_shield_per_hp_rate_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.44,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01584,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.026400000000000003,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.02
+    },
+    {
+      "skill_duration_id": "ch0022_passive_duration_01_trigger",
+      "duration_define_id": "define_trigger_ch0022",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0022_passive_duration_01_work",
+      "duration_define_id": "define_trigger_ch0022_work",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.02,
+        0.01,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0022_passive_duration_02_trigger",
+      "duration_define_id": "define_trigger_ch0022",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0022_passive_duration_02_work",
+      "duration_define_id": "define_trigger_ch0022_work",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.03,
+        0.015,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0022_passive_duration_03_trigger",
+      "duration_define_id": "define_trigger_ch0022",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0022_passive_duration_03_work",
+      "duration_define_id": "define_trigger_ch0022_work",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.05,
+        0.02,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0023_skill01_duration_01",
+      "duration_define_id": "define_buff_shield_per_hp_rate_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.15,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.003,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.005999999999999999,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0023_skill02_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 0.05,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 1.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0023_ulti_duration_01",
+      "duration_define_id": "define_buff_shield_per_hp_rate_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.4,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0144,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.024,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.01
+    },
+    {
+      "skill_duration_id": "ch0023_passive_duration_01",
+      "duration_define_id": "define_trigger_ch0023",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 3,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0023_passive_duration_02",
+      "duration_define_id": "define_trigger_ch0023",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 4,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0023_passive_duration_03",
+      "duration_define_id": "define_trigger_ch0023",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 5,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0024_skill01_duration_01",
+      "duration_define_id": "define_debuff_def_per_def_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.013333333333333332,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.026666666666666672,
+        0.0,
+        0.0
+      ],
+      "time": 8.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0024_ulti_duration_01",
+      "duration_define_id": "define_trigger_ch0024_ulti_buff",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.5,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.06,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 1,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0024_passive_trigger",
+      "duration_define_id": "define_trigger_ch0024",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 1,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0024_passive_duration_01",
+      "duration_define_id": "define_buff_heal_over_time_per_hp",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 1,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0024_passive_duration_02",
+      "duration_define_id": "define_buff_heal_over_time_per_hp",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 7.0,
+      "duration_max_stack": 1,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0024_passive_duration_03",
+      "duration_define_id": "define_buff_heal_over_time_per_hp",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 1,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0025_skill01_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.006666666666666666,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.013333333333333336,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0025_skill02_duration_01",
+      "duration_define_id": "define_trigger_ch0025_skill02",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.02,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.04,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 1,
+      "repeat_multiple": [
+        0.2
+      ],
+      "up_repeat_multiple": [
+        0.002
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0025_passive_duration_01",
+      "duration_define_id": "define_trigger_ch0025_passive_buff",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.05,
+        0.03,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.2
+      ],
+      "up_repeat_multiple": [
+        0.002
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0025_passive_duration_02",
+      "duration_define_id": "define_trigger_ch0025_passive_buff",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.06,
+        0.04,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.2
+      ],
+      "up_repeat_multiple": [
+        0.002
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0025_passive_duration_03",
+      "duration_define_id": "define_trigger_ch0025_passive_buff",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.07,
+        0.05,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.2
+      ],
+      "up_repeat_multiple": [
+        0.002
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0026_skill01_duration_01",
+      "duration_define_id": "define_buff_heal_over_time",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.45,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.030000000000000002,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.060000000000000005,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.1
+      ],
+      "up_repeat_multiple": [
+        0.005
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0026_ulti_duration_01",
+      "duration_define_id": "define_buff_heal_over_time",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.7,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.08399999999999999,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.13999999999999999,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.08
+      ],
+      "up_repeat_multiple": [
+        0.01
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0027_skill02_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.003333333333333333,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.006666666666666668,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0028_skill01_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0028_skill02_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.006666666666666666,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.013333333333333336,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0028_ulti_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.25,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.015,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.025,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0028_passive_duration_01",
+      "duration_define_id": "define_buff_ch0028_passive",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.05,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0028_passive_duration_02",
+      "duration_define_id": "define_buff_ch0028_passive",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.07,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0028_passive_duration_03",
+      "duration_define_id": "define_buff_ch0028_passive",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0029_attack_duration_01",
+      "duration_define_id": "define_trigger_ch0029",
+      "apply_target_type": "CASTER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0030_skill01_duration_01",
+      "duration_define_id": "define_debuff_dot_fire",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.013333333333333332,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.026666666666666672,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.01
+    },
+    {
+      "skill_duration_id": "ch0030_skill02_duration_01",
+      "duration_define_id": "define_debuff_dot_fire",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.013333333333333332,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.026666666666666672,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.01
+    },
+    {
+      "skill_duration_id": "ch0030_ulti_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 1.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0030_ulti_duration_02",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 0.5,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 2.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0030_ulti_duration_03",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 0.25,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0031_skill02_duration_01",
+      "duration_define_id": "define_immune_cc_pc",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0031_ulti_duration_01",
+      "duration_define_id": "define_buff_heal_over_time",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.072,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.12,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0031_passive_duration_01",
+      "duration_define_id": "define_buff_resist_up",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0031_passive_duration_02",
+      "duration_define_id": "define_buff_resist_up",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.15,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0031_passive_duration_03",
+      "duration_define_id": "define_buff_resist_up",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0032_skill02_duration_01",
+      "duration_define_id": "define_buff_healpower_ch0032",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.025,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0025000000000000005,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.005000000000000001,
+        0.0,
+        0.0
+      ],
+      "time": 15.0,
+      "duration_max_stack": 5,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0033_skill02_duration_01",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.5,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0033_ulti_duration_01",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.5,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0034_skill01_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 1.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0034_skill02_duration_01",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.013333333333333332,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.026666666666666672,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0034_ulti_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 2.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0034_passive_duration_01",
+      "duration_define_id": "define_buff_heal_over_time_per_hp",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.03,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.015
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0034_passive_duration_02",
+      "duration_define_id": "define_buff_shield_per_hp_rate_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.015
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0034_passive_duration_03",
+      "duration_define_id": "define_buff_heal_over_time_per_hp",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.03,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.02
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0034_passive_duration_04",
+      "duration_define_id": "define_buff_shield_per_hp_rate_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.25,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.02
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0034_passive_duration_05",
+      "duration_define_id": "define_buff_heal_over_time_per_hp",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.03,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.025
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0034_passive_duration_06",
+      "duration_define_id": "define_buff_shield_per_hp_rate_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.025
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0035_skill01_duration_01",
+      "duration_define_id": "define_trigger_ch0035_skill01",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 2,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0035_skill02_duration_01",
+      "duration_define_id": "define_trigger_ch0035_skill02",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 1,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0035_ulti_duration_01",
+      "duration_define_id": "define_cc_bind",
+      "apply_target_type": "HOLDER",
+      "rate": 0.8,
+      "up_rate": 0.03,
+      "extra_rate": 0.04000000000000001,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0035_passive_duration_01",
+      "duration_define_id": "define_trigger_ch0035",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 1,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0036_skill02_duration_01",
+      "duration_define_id": "define_buff_heal_over_time",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.02,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.04,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.1
+      ],
+      "up_repeat_multiple": [
+        0.01
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0036_ulti_duration_01",
+      "duration_define_id": "define_buff_shield_per_healpower_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        3.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.10799999999999998,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.18,
+        0.0,
+        0.0
+      ],
+      "time": 7.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0036_passive_duration_01",
+      "duration_define_id": "define_buff_ch0036_passive_receive_heal_up",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0037_skill01_duration_01",
+      "duration_define_id": "define_debuff_attack",
+      "apply_target_type": "HOLDER",
+      "rate": 0.76,
+      "up_rate": 0.02,
+      "extra_rate": 0.02,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.013333333333333332,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.026666666666666672,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0037_skill02_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 0.36,
+      "up_rate": 0.02,
+      "extra_rate": 0.02,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0037_ulti_duration_01",
+      "duration_define_id": "define_trigger_ch0037",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.11,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0198,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.033,
+        0.0,
+        0.0
+      ],
+      "time": 15.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0038_skill01_duration_01",
+      "duration_define_id": "define_trigger_ch0038_single",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0038_skill02_duration_01",
+      "duration_define_id": "define_trigger_ch0038_multi",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0038_ulti_change_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0039_skill01_duration_01",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.5,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.03333333333333333,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.06666666666666667,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0039_skill02_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 0.6,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 1.5,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0039_ulti_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 0.6,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0040_skill01_duration_01",
+      "duration_define_id": "define_debuff_ch0040_criticalresist",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0040_skill02_duration_01",
+      "duration_define_id": "define_buff_ch0040_criticalup",
+      "apply_target_type": "CASTER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        1.0,
+        1.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0042_skill01_duration_01",
+      "duration_define_id": "define_trigger_ch0042_skill01_cool",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 20.0,
+      "duration_max_stack": 1,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0042_skill01_duration_02",
+      "duration_define_id": "define_trigger_ch0042_skill01",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 999999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0042_skill02_duration_01",
+      "duration_define_id": "define_buff_penentration_per_penentration_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0042_ulti_duration_01",
+      "duration_define_id": "define_duration_ch0042_drone_trigger",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0042_passive_common_drone_duration_01",
+      "duration_define_id": "define_duration_ch0042_drone_exclude",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0043_skill02_duration_01",
+      "duration_define_id": "define_buff_evasion_per_evasion_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0043_ulti_duration_01",
+      "duration_define_id": "define_buff_evasion_per_evasion_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0046_skill01_duration_01",
+      "duration_define_id": "define_buff_shield_per_hp_rate_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.22,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.007333333333333334,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.014666666666666668,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0046_skill02_duration_01",
+      "duration_define_id": "define_buff_shield_per_hp_rate_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.11,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.003666666666666667,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.007333333333333334,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0046_ulti_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0050_skill02_duration_01",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.5,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.03333333333333333,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.06666666666666667,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0050_skill02_duration_02",
+      "duration_define_id": "define_immune_cc_pc",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0050_ulti_duration_01",
+      "duration_define_id": "define_immune_cc_pc",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0050_ulti_duration_02",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.25,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.03,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.05,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0052_attack_change_duration_01",
+      "duration_define_id": "define_debuff_dot_poison",
+      "apply_target_type": "HOLDER",
+      "rate": 0.5,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.05,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.2
+      ],
+      "up_repeat_multiple": [
+        0.01
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0052_skill02_change_duration_01",
+      "duration_define_id": "define_debuff_dot_poison",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.05,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.2
+      ],
+      "up_repeat_multiple": [
+        0.01
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0052_ulti_duration_01",
+      "duration_define_id": "define_trigger_ch0052",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0053_skill01_duration_01",
+      "duration_define_id": "define_debuff_dot_fire",
+      "apply_target_type": "HOLDER",
+      "rate": 0.76,
+      "up_rate": 0.02,
+      "extra_rate": 0.02,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.002666666666666667,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.005333333333333335,
+        0.0,
+        0.0
+      ],
+      "time": 6.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.1
+      ],
+      "up_repeat_multiple": [
+        0.01
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0053_ulti_duration_01",
+      "duration_define_id": "define_debuff_dot_fire",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0048000000000000004,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.008000000000000002,
+        0.0,
+        0.0
+      ],
+      "time": 6.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.1
+      ],
+      "up_repeat_multiple": [
+        0.01
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0054_skill02_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.006666666666666666,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.013333333333333336,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0054_skill01_duration_01",
+      "duration_define_id": "define_cc_silence",
+      "apply_target_type": "HOLDER",
+      "rate": 0.4,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0054_ulti_duration_01",
+      "duration_define_id": "define_cc_silence",
+      "apply_target_type": "HOLDER",
+      "rate": 0.8,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0056_ulti_duration_01",
+      "duration_define_id": "define_trigger_ch0056",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 20.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0056_ulti_duration_02",
+      "duration_define_id": "define_buff_healpower_per_healpower_holder",
+      "apply_target_type": "CASTER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.5,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.03,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.05,
+        0.0,
+        0.0
+      ],
+      "time": 20.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0056_passive_duration_01",
+      "duration_define_id": "define_trigger_ch0056",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 1,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0056_passive_duration_02",
+      "duration_define_id": "define_trigger_ch0056",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 7.0,
+      "duration_max_stack": 1,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0056_passive_duration_03",
+      "duration_define_id": "define_trigger_ch0056",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 1,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0057_skill02_duration_01",
+      "duration_define_id": "define_trigger_ch0057",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0057_skill02_duration_02",
+      "duration_define_id": "define_buff_cridmg_per_cridmg_holder",
+      "apply_target_type": "CASTER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.05,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.003333333333333333,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.006666666666666668,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.05
+    },
+    {
+      "skill_duration_id": "ch0062_skill02_duration_01",
+      "duration_define_id": "define_trigger_ch0062",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0063_skill01_duration_01",
+      "duration_define_id": "define_buff_shield_per_healpower_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        2.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.04,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.08,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "ch0068_skill02_duration_01",
+      "duration_define_id": "define_immune_cc_pc",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "passive_common_cc_immune",
+      "duration_define_id": "define_immune_cc",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "passive_common_stun_immune",
+      "duration_define_id": "define_immune_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20010711",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 15.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20010712",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 15.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20020711",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 15.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20020712",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 15.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20012311",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20012411",
+      "duration_define_id": "define_debuff_defence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20012511",
+      "duration_define_id": "define_cc_freezing",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20012611",
+      "duration_define_id": "define_cc_freezing",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20012711",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20012811",
+      "duration_define_id": "define_debuff_defence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20012911",
+      "duration_define_id": "define_cc_bind",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20013011",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20013111",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20013211",
+      "duration_define_id": "define_debuff_healpower",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20013311",
+      "duration_define_id": "define_debuff_dot_poison",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.05,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.005,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.05,
+        0.05,
+        0.05
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.5
+      ],
+      "up_repeat_multiple": [
+        0.05
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20013411",
+      "duration_define_id": "define_debuff_dot_poison",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.05,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.005,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.05,
+        0.05,
+        0.05
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.5
+      ],
+      "up_repeat_multiple": [
+        0.05
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20013511",
+      "duration_define_id": "define_buff_evasion_per_evasion_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20013611",
+      "duration_define_id": "define_debuff_accuracy",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20013811",
+      "duration_define_id": "define_cc_silence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21000211",
+      "duration_define_id": "define_debuff_defence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21000312",
+      "duration_define_id": "define_debuff_accuracy",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.05,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.05,
+        0.05,
+        0.05
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21000411",
+      "duration_define_id": "define_debuff_defence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21000412",
+      "duration_define_id": "define_debuff_accuracy",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21001211",
+      "duration_define_id": "define_buff_accuracy_per_accuracy_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.005,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.01,
+        0.01,
+        0.01
+      ],
+      "time": 8.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21001311",
+      "duration_define_id": "define_debuff_attack",
+      "apply_target_type": "HOLDER",
+      "rate": 0.7,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.03,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "time": 9.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21001312",
+      "duration_define_id": "define_debuff_attack",
+      "apply_target_type": "HOLDER",
+      "rate": 0.7,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.03,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "time": 9.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21002112",
+      "duration_define_id": "define_debuff_attack",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 7.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21002212",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21002311",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "time": 999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21002312",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "time": 999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21002411",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21002412",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21002511",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.4,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.4,
+        0.4,
+        0.4
+      ],
+      "time": 999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21002512",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.4,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.4,
+        0.4,
+        0.4
+      ],
+      "time": 999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21002911",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21003212",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21003311",
+      "duration_define_id": "define_buff_defence_small_brother",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        100.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        100.0,
+        100.0,
+        100.0
+      ],
+      "time": 999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21004211",
+      "duration_define_id": "define_debuff_attack",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21004212",
+      "duration_define_id": "define_debuff_defence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21005211",
+      "duration_define_id": "define_debuff_attack",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "21005212",
+      "duration_define_id": "define_debuff_defence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20010411",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "20010412",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0107_skill01_duration_01",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 15.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0107_skill02_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "30010411",
+      "duration_define_id": "define_buff_shield_per_healpower_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 15.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "30011111",
+      "duration_define_id": "define_debuff_defence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "30011211",
+      "duration_define_id": "define_buff_penentration_per_penentration_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "30011511",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "30011811",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "30012111",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.5,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "30012112",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.5,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "30012211",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.25,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "30020411",
+      "duration_define_id": "define_buff_shield_per_healpower_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 15.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0199_skill02_duration_01",
+      "duration_define_id": "define_debuff_defence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 15.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0199_skill04_duration_01",
+      "duration_define_id": "define_buff_shield_per_healpower_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.03,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "time": 6.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0199_skill05_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 0.7,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0312_skill02_duration_01",
+      "duration_define_id": "define_debuff_defence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np8199_passive_trigger_duration_01",
+      "duration_define_id": "define_buff_damage_reduce_np8199",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        9999.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        9999.0,
+        9999.0,
+        9999.0
+      ],
+      "time": 9999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np8199_passive_trigger_duration_02",
+      "duration_define_id": "define_trigger_np8199",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 9999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np8199_skill02_duration_01",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np8199_skill04_duration_01",
+      "duration_define_id": "define_groggy_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0206_attack_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.25,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0207_skill01_duration_01",
+      "duration_define_id": "define_trigger_muscle_up",
+      "apply_target_type": "CASTER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0209_skill01_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0210_skill02_duration_01",
+      "duration_define_id": "define_trigger_muscle_up",
+      "apply_target_type": "CASTER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "30021511",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np2011_skill02_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0212_skill01_duration_01",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 1.0,
+      "extra_rate": 1.0,
+      "multiple": [
+        0.5,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.01,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0299_skill01_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 0.5,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0299_skill03_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 0.5,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0303_attack_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 0.07,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 1.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0305_attack_duration_01",
+      "duration_define_id": "define_debuff_dot_poison",
+      "apply_target_type": "HOLDER",
+      "rate": 0.07,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.02,
+        0.4,
+        0.0
+      ],
+      "up_multiple": [
+        0.005,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "time": 7.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.01
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0306_skill01_duration_01",
+      "duration_define_id": "define_trigger_np0306",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 9999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0307_skill02_duration_01",
+      "duration_define_id": "define_buff_shield_per_hp_rate_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.5,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0307_skill02_duration_02",
+      "duration_define_id": "define_immune_cc",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0308_skill02_duration_01",
+      "duration_define_id": "define_buff_heal_over_time_per_hp",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 2.53,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.02
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0308_skill02_duration_02",
+      "duration_define_id": "define_immune_cc",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 2.53,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0309_attack_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 0.33,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0309_skill02_duration_01",
+      "duration_define_id": "define_buff_shield_per_hp_rate_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 0.33,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.07,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.07,
+        0.07,
+        0.07
+      ],
+      "time": 7.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0309_skill02_duration_02",
+      "duration_define_id": "define_buff_heal_over_time_per_hp",
+      "apply_target_type": "HOLDER",
+      "rate": 0.33,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 7.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.005
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0310_skill02_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.7,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "time": 7.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0310_skill02_duration_02",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 0.77,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.07,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.07,
+        0.07,
+        0.07
+      ],
+      "time": 7.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0311_attack_duration_01",
+      "duration_define_id": "define_debuff_dot_poison",
+      "apply_target_type": "HOLDER",
+      "rate": 0.33,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.02,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.005,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "time": 7.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.01
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0311_skill01_duration_01",
+      "duration_define_id": "define_debuff_dot_poison",
+      "apply_target_type": "HOLDER",
+      "rate": 0.33,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.02,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.005,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "time": 7.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.01
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0311_attack_enhanced_duration_01",
+      "duration_define_id": "define_debuff_dot_poison",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.02,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.005,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "time": 7.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.01
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0311_skill01_enhanced_duration_01",
+      "duration_define_id": "define_debuff_dot_poison",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.02,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.005,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "time": 7.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.01
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0311_skill02_duration_01",
+      "duration_define_id": "define_trigger_np0311",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 9999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0312_attack_duration_01",
+      "duration_define_id": "define_cc_charm",
+      "apply_target_type": "HOLDER",
+      "rate": 0.33,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.02,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.005,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.03
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0312_attack_duration_02",
+      "duration_define_id": "define_debuff_dot_fire",
+      "apply_target_type": "HOLDER",
+      "rate": 0.33,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.03,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.005,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "time": 7.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.07
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0312_attack_duration_03",
+      "duration_define_id": "define_debuff_dot_poison",
+      "apply_target_type": "HOLDER",
+      "rate": 0.33,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.05,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.005,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.05,
+        0.05,
+        0.05
+      ],
+      "time": 20.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.01
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0312_skill01_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 7.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0312_skill01_duration_02",
+      "duration_define_id": "define_buff_shield_per_hp_rate_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 0.33,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.07,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.07,
+        0.07,
+        0.07
+      ],
+      "time": 7.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0312_skill01_duration_03",
+      "duration_define_id": "define_buff_heal_over_time_per_hp",
+      "apply_target_type": "HOLDER",
+      "rate": 0.33,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 7.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.005
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0312_skill03_duration_01",
+      "duration_define_id": "define_cc_charm",
+      "apply_target_type": "HOLDER",
+      "rate": 0.8,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.8,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 6.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0399_common_duration_01",
+      "duration_define_id": "define_cc_charm",
+      "apply_target_type": "HOLDER",
+      "rate": 0.7,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0399_ulti_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0405_skill01_duration_01",
+      "duration_define_id": "define_debuff_defence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0407_skill01_duration_01",
+      "duration_define_id": "define_debuff_dot_bleed",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 15.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.01
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0407_skill02_duration_01",
+      "duration_define_id": "define_buff_shield_per_hp_rate_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0408_skill02_duration_01",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0409_skill02_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0410_skill01_duration_01",
+      "duration_define_id": "define_debuff_dot_bleed",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 15.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.01
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0411_skill01_duration_01",
+      "duration_define_id": "define_debuff_defence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.01
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0411_skill02_duration_01",
+      "duration_define_id": "define_debuff_dot_bleed",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.01
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0411_skill03_duration_01",
+      "duration_define_id": "define_cc_fear",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 3.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.01
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0412_skill03_duration_01",
+      "duration_define_id": "define_buff_shield_per_healpower_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0507_skill01_duration_01",
+      "duration_define_id": "define_debuff_defence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0507_skill01_duration_02",
+      "duration_define_id": "define_buff_def_per_def_holder",
+      "apply_target_type": "CASTER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0508_skill01_duration_01",
+      "duration_define_id": "define_debuff_attack",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0508_skill01_duration_02",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "CASTER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0511_skill01_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 0.2,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 1.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0511_skill02_duration_01",
+      "duration_define_id": "define_buff_shield_per_hp_rate_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0706_skill01_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0712_skill01_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0499_skill01_duration_01",
+      "duration_define_id": "define_buff_np0499",
+      "apply_target_type": "CASTER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "time": 10.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np0499_ulti_duration_01",
+      "duration_define_id": "define_debuff_heal_receive",
+      "apply_target_type": "HOLDER",
+      "rate": 0.3,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 7.0,
+      "duration_max_stack": 1,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np6010_skill04_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "CASTER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np6011_skill04_duration_01",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "CASTER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np6012_skill02_duration_01",
+      "duration_define_id": "define_trigger_debuff_np6012_skill02",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np6012_skill05_duration_01",
+      "duration_define_id": "define_trigger_buff_np6012_skill05",
+      "apply_target_type": "CASTER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np6012_groggy",
+      "duration_define_id": "define_trigger_groggy_np6012",
+      "apply_target_type": "CASTER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np6022_skill01_duration_01",
+      "duration_define_id": "define_buff_shield_per_hp_rate_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.15,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.15,
+        0.15,
+        0.15
+      ],
+      "time": 1.0,
+      "duration_max_stack": 15,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np8094_skill01_duration_01",
+      "duration_define_id": "define_debuff_defence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np8094_skill02_duration_01",
+      "duration_define_id": "define_buff_shield_per_healpower_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np8095_skill01_duration_01",
+      "duration_define_id": "define_debuff_defence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np8095_skill02_duration_01",
+      "duration_define_id": "define_buff_shield_per_healpower_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np8096_skill01_duration_01",
+      "duration_define_id": "define_debuff_defence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np8096_skill02_duration_01",
+      "duration_define_id": "define_buff_shield_per_healpower_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np8097_skill01_duration_01",
+      "duration_define_id": "define_debuff_defence",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np8097_skill02_duration_01",
+      "duration_define_id": "define_buff_shield_per_healpower_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np8200_skill01_duration_01",
+      "duration_define_id": "define_buff_shield_per_hp_rate_caster",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.33,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.33,
+        0.33,
+        0.33
+      ],
+      "time": 9.25,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np8200_skill01_duration_02",
+      "duration_define_id": "define_buff_atk_per_atk_holder",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np8200_skill09_duration_01",
+      "duration_define_id": "define_cc_stun",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 5.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "np8200_passive_cc_immune",
+      "duration_define_id": "define_np8200_immune_cc",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    },
+    {
+      "skill_duration_id": "prologue_duration_skill_check",
+      "duration_define_id": "prologue_skill_checker",
+      "apply_target_type": "HOLDER",
+      "rate": 1.0,
+      "up_rate": 0.0,
+      "extra_rate": 0.0,
+      "multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extra_multiple": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time": 99999.0,
+      "duration_max_stack": 0,
+      "repeat_multiple": [
+        0.0
+      ],
+      "up_repeat_multiple": [
+        0.0
+      ],
+      "fever_multiple": 0.0
+    }
+  ]
+}

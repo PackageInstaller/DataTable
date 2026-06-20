@@ -1,0 +1,134 @@
+{
+  "__tableName": "Goods_Data",
+  "__byteLength": 2047,
+  "items": [
+    {
+      "goods_id": 1,
+      "goods_type": "GOLD",
+      "name_id": "system_goods_name_gold",
+      "desc_id": "system_goods_desc_gold",
+      "max_bound": 9999999999.0,
+      "icon_path": "Icon_Goods_gold"
+    },
+    {
+      "goods_id": 2,
+      "goods_type": "DIA",
+      "name_id": "system_goods_name_gem",
+      "desc_id": "system_goods_desc_gem",
+      "max_bound": 9999999.0,
+      "icon_path": "Icon_Goods_gem_free"
+    },
+    {
+      "goods_id": 3,
+      "goods_type": "DIA_PAY",
+      "name_id": "system_goods_name_dia_pay",
+      "desc_id": "system_goods_desc_dia_pay",
+      "max_bound": 9999999.0,
+      "icon_path": "Icon_Goods_gem_paid"
+    },
+    {
+      "goods_id": 4,
+      "goods_type": "FRIEND",
+      "name_id": "system_goods_name_friend",
+      "desc_id": "system_goods_desc_friend",
+      "max_bound": 999999.0,
+      "icon_path": "Icon_Goods_Friendship_point"
+    },
+    {
+      "goods_id": 5,
+      "goods_type": "MASTER_COIN",
+      "name_id": "system_goods_name_master_coin",
+      "desc_id": "system_goods_desc_master_coin",
+      "max_bound": 999999.0,
+      "icon_path": "Icon_Goods_Master_Coin"
+    },
+    {
+      "goods_id": 6,
+      "goods_type": "CHARACTER_PIECE_BUY_GOODS",
+      "name_id": "system_goods_name_character_piece_buy",
+      "desc_id": "system_goods_desc_character_piece_buy",
+      "max_bound": 999999.0,
+      "icon_path": "Icon_Goods_Idea_Memory"
+    },
+    {
+      "goods_id": 7,
+      "goods_type": "PICKUP_GACHA_MILEAGE",
+      "name_id": "system_goods_name_pickup_gacha_mileage",
+      "desc_id": "system_goods_desc_pickup_gacha_mileage",
+      "max_bound": 999999.0,
+      "icon_path": "Icon_Goods_gacha_mileage"
+    },
+    {
+      "goods_id": 100,
+      "goods_type": "CONTENTS_COIN_NEMESIS",
+      "name_id": "system_goods_name_contents_coin_nemesis",
+      "desc_id": "system_goods_desc_contents_coin_nemesis",
+      "max_bound": 999999.0,
+      "icon_path": "Icon_Goods_Nemesis_Coin"
+    },
+    {
+      "goods_id": 110,
+      "goods_type": "CONTENTS_COIN_UNDISPUTED",
+      "name_id": "system_goods_name_contents_coin_undisputed",
+      "desc_id": "system_goods_desc_contents_coin_undisputed",
+      "max_bound": 999999.0,
+      "icon_path": "Icon_Coin_Arena"
+    },
+    {
+      "goods_id": 1001,
+      "goods_type": "EVENT_GOODS",
+      "name_id": "system_goods_name_event_ev1001_01",
+      "desc_id": "system_goods_desc_event_ev1001_01",
+      "max_bound": 999999.0,
+      "icon_path": "Icon_Goods_EV1001_01"
+    },
+    {
+      "goods_id": 1002,
+      "goods_type": "EVENT_GOODS",
+      "name_id": "system_goods_name_event_ev1002_01",
+      "desc_id": "system_goods_desc_event_ev1002_01",
+      "max_bound": 999999.0,
+      "icon_path": "Icon_Goods_EV1002_01"
+    },
+    {
+      "goods_id": 1003,
+      "goods_type": "EVENT_GOODS",
+      "name_id": "system_goods_name_event_03",
+      "desc_id": "system_goods_desc_event_03",
+      "max_bound": 999999.0,
+      "icon_path": "Icon_Goods_Event_03"
+    },
+    {
+      "goods_id": 5001,
+      "goods_type": "EVENT_STAGE_TICKET_GOODS",
+      "name_id": "system_goods_name_event_ticket_ev1001_01",
+      "desc_id": "system_goods_desc_event_ticket_ev1001_01",
+      "max_bound": 99999999.0,
+      "icon_path": "Icon_Item_ev1001_ticket"
+    },
+    {
+      "goods_id": 5002,
+      "goods_type": "EVENT_STAGE_TICKET_GOODS",
+      "name_id": "system_goods_name_event_ticket_ev1002_01",
+      "desc_id": "system_goods_desc_event_ticket_ev1002_01",
+      "max_bound": 99999999.0,
+      "icon_path": "Icon_Item_EV1002_ticket"
+    },
+    {
+      "goods_id": 10000,
+      "goods_type": "EXPPOINT_CHARACTER",
+      "name_id": "system_goods_name_exppoint_character",
+      "desc_id": "system_goods_desc_exppoint_character",
+      "max_bound": 9999999999.0,
+      "icon_path": "Icon_Goods_Friendship_point"
+    },
+    {
+      "goods_id": 10001,
+      "goods_type": "EXPPOINT_EQUIPMENT",
+      "name_id": "system_goods_name_exppoint_equipment",
+      "desc_id": "system_goods_desc_exppoint_equipment",
+      "max_bound": 9999999999.0,
+      "icon_path": "Icon_Goods_Friendship_point"
+    }
+  ]
+}
