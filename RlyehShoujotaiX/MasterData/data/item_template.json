@@ -183,7 +183,7 @@
             "display_name": "共鳴の輪",
             "rarity": 17201,
             "val_cap": 99999999,
-            "text": "ヴァイスとの繋がりを強くするペンダント。使用するとレベルリンクのキャラクターの枠を開放する",
+            "text": "ヴァイスとの繋がりを強くするペンダント。使用するとレベルリンクのキャラクターの枠を開放する\r\n<color=#87cefa>フレンドptで交換、継承ランク上昇、【実績】ミッション等で入手できる</color>",
             "sort_priority": 300000
         },
         {
@@ -235,12 +235,20 @@
             "sort_priority": 30020
         },
         {
-            "item_id": "item.unit_skin.2_1",
-            "display_name": "ヴァリナのぐいぐい乗馬服",
-            "rarity": 17201,
+            "item_id": "item.unit_skin.19_1",
+            "display_name": "ペイント・アーカム・レッド",
+            "rarity": 1397969457,
             "val_cap": 1,
-            "text": "メニューとバトルの見た目を変更するコスチューム。",
+            "text": "見た目を変更するコスチューム",
             "sort_priority": 110000
+        },
+        {
+            "item_id": "item.bom_skin.40001_1",
+            "display_name": "エルダークトゥルフ",
+            "rarity": 1397969457,
+            "val_cap": 1,
+            "text": "見た目を変更するコスチューム",
+            "sort_priority": 120000
         },
         {
             "item_id": "item.engraving.break",
@@ -473,6 +481,86 @@
             "val_cap": 9999,
             "text": "クリア済みメインストーリーのクエストとアポカリプスモードのノーマルバトルを\r\nバトルなしで完了できる",
             "sort_priority": 0
+        },
+        {
+            "item_id": "item.restore.pvp_try",
+            "display_name": "追加挑戦券（闘技場）",
+            "rarity": 17201,
+            "val_cap": 9999,
+            "text": "闘技場の対戦可能回数を1回復します\r\n付与された対戦可能回数は5:00にリセットされます",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.restore.event_try",
+            "display_name": "追加挑戦券（イベント）",
+            "rarity": 17201,
+            "val_cap": 9999,
+            "text": "イベントの挑戦可能回数を1回復します\r\n付与された挑戦可能回数は5:00にリセットされます",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.restore.sp_quest_try",
+            "display_name": "追加挑戦券（試練の祭壇）",
+            "rarity": 17201,
+            "val_cap": 9999,
+            "text": "試練の祭壇の挑戦可能回数を1回復します\r\n付与された挑戦可能回数は5:00にリセットされます",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.restore.boss_quest_try",
+            "display_name": "追加挑戦券（残響シアター）",
+            "rarity": 17201,
+            "val_cap": 9999,
+            "text": "クリア済みクエストの挑戦可能回数を1回復します\r\n付与された挑戦可能回数は5:00にリセットされます",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.select_unit.fes_ev1",
+            "display_name": "☆3選択券（邪神祭）",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "以下の☆3キャラクターの中から一体を選択して入手可能\r\n・ルゥ=ルルサ\r\n・ルセ=ルルカ",
+            "sort_priority": 90000
+        },
+        {
+            "item_id": "item.select_engraving.common",
+            "display_name": "刻印の霊譜選択BOX",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "選択した刻印の霊譜を入手可能",
+            "sort_priority": 33010
+        },
+        {
+            "item_id": "item.select_unit.nor_ticket1",
+            "display_name": "☆3選択券（ネオン、グラン）",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "以下の☆3キャラクターの中から一体を選択して入手可能\r\n・ネオン\r\n・グラン・ヴェルノ",
+            "sort_priority": 90000
+        },
+        {
+            "item_id": "item.select_unit.nor_startdash_ticket1",
+            "display_name": "☆3選択券（スタートダッシュ）",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "以下の☆3キャラクターの中から一体を選択して入手可能\r\n\r\n<対象キャラクター>\r\n・ネオン\r\n・ユラナ・ゾッタ\r\n・カルヴァレーナ\r\n・エレノワール\r\n・ミューゼ\r\n・シャーコット\r\n・グラン・ヴェルノ\r\n・フィロス\r\n・シゼル＝メ\r\n・ディオネ",
+            "sort_priority": 90001
+        },
+        {
+            "item_id": "item.lottery_startdash.unit_faction_1_SSR",
+            "display_name": "☆3全能因子（スタートダッシュ）",
+            "rarity": 1397969457,
+            "val_cap": 99999999,
+            "text": "60個集めることで、対象の☆3キャラクターを抽選で入手可能\r\n\r\n<対象キャラクター>\r\n・ネオン\r\n・ユラナ・ゾッタ\r\n・カルヴァレーナ\r\n・エレノワール\r\n・ミューゼ\r\n・シャーコット\r\n・グラン・ヴェルノ\r\n・フィロス\r\n・シゼル＝メ\r\n・ディオネ",
+            "sort_priority": 12000
+        },
+        {
+            "item_id": "item.lottery_summercp2026.unit_faction_1_SSR",
+            "display_name": "☆3全能因子（サマーCP）",
+            "rarity": 1397969457,
+            "val_cap": 99999999,
+            "text": "60個集めることで、対象の☆3キャラクターを抽選で入手可能\r\n\r\n<対象キャラクター>\r\n・ムルミィ・ゾォム\r\n・ゼラニュート\r\n・レヴナント\r\n・シェルン\r\n・キャピノラ\r\n・ルナリス\r\n・ネア・ウルム",
+            "sort_priority": 12001
         }
     ]
 }

@@ -15,49 +15,72 @@
             "tabLabelText": "SERVER_RANKING_TOTAL_POWER_TAB_LABEL",
             "contentLabelText": "SERVER_RANKING_TOTAL_POWER_CONTENT_LABEL",
             "rewardTableCategory": 900,
-            "rewardTableNo": 1
+            "rewardTableNo": 1,
+            "aggType": "player_pow"
         },
         {
             "id": 6,
             "tabLabelText": "SERVER_RANKING_QUEST_PROGRESS_TAB_LABEL",
             "contentLabelText": "SERVER_RANKING_QUEST_PROGRESS_CONTENT_LABEL",
             "rewardTableCategory": 900,
-            "rewardTableNo": 21
+            "rewardTableNo": 21,
+            "aggType": "mainquest_prog"
         },
         {
             "id": 7,
             "tabLabelText": "SERVER_RANKING_TOWER_QUEST_PROGRESS_TAB_LABEL",
             "contentLabelText": "SERVER_RANKING_TOWER_QUEST_PROGRESS_CONTENT_LABEL",
             "rewardTableCategory": 900,
-            "rewardTableNo": 31
+            "rewardTableNo": 31,
+            "aggType": "towerquest_prog"
         },
         {
             "id": 8,
             "tabLabelText": "SERVER_RANKING_BOSS_QUEST_1_DAMAGE_TAB_LABEL",
             "contentLabelText": "SERVER_RANKING_BOSS_QUEST_DAMAGE_CONTENT_LABEL",
             "rewardTableCategory": 900,
-            "rewardTableNo": 41
+            "rewardTableNo": 41,
+            "aggType": "bossquest_try_dmg"
         },
         {
             "id": 9,
             "tabLabelText": "SERVER_RANKING_BOSS_QUEST_2_DAMAGE_TAB_LABEL",
             "contentLabelText": "SERVER_RANKING_BOSS_QUEST_DAMAGE_CONTENT_LABEL",
             "rewardTableCategory": 900,
-            "rewardTableNo": 42
+            "rewardTableNo": 42,
+            "aggType": "bossquest_try_dmg"
         },
         {
             "id": 10,
             "tabLabelText": "SERVER_RANKING_BOSS_QUEST_3_DAMAGE_TAB_LABEL",
             "contentLabelText": "SERVER_RANKING_BOSS_QUEST_DAMAGE_CONTENT_LABEL",
             "rewardTableCategory": 900,
-            "rewardTableNo": 43
+            "rewardTableNo": 43,
+            "aggType": "bossquest_try_dmg"
         },
         {
             "id": 11,
             "tabLabelText": "SERVER_RANKING_BOSS_QUEST_4_DAMAGE_TAB_LABEL",
             "contentLabelText": "SERVER_RANKING_BOSS_QUEST_DAMAGE_CONTENT_LABEL",
             "rewardTableCategory": 900,
-            "rewardTableNo": 44
+            "rewardTableNo": 44,
+            "aggType": "bossquest_try_dmg"
+        },
+        {
+            "id": 12,
+            "tabLabelText": "SERVER_RANKING_BOSS_QUEST_5_DAMAGE_TAB_LABEL",
+            "contentLabelText": "SERVER_RANKING_BOSS_QUEST_DAMAGE_CONTENT_LABEL",
+            "rewardTableCategory": 900,
+            "rewardTableNo": 45,
+            "aggType": "bossquest_try_dmg"
+        },
+        {
+            "id": 101,
+            "tabLabelText": "真・海冥の試練",
+            "contentLabelText": "ダメージ",
+            "rewardTableCategory": 900,
+            "rewardTableNo": 51,
+            "aggType": "oldones_try_dmg"
         }
     ]
 }

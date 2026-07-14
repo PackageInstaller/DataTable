@@ -6,26 +6,26 @@
     "m_Enabled": 1,
     "m_Script": {
         "m_FileID": 0,
-        "m_PathID": 6212498527400582187
+        "m_PathID": -686732444515148361
     },
     "m_Name": "skin_skill_data",
     "records": [
         {
-            "id": 29002,
+            "id": 10019,
             "rarity": 0,
-            "name": "最大耐久力2%アップ",
+            "name": "赤色グラフティ",
             "kana": "",
-            "text": "",
+            "text": "攻撃力+[0,0,0]\r\n敵撃破時、5秒間攻撃速度+[0,1,0]",
             "maxLevel": 1,
             "recipeId": 0,
             "skipend": 0,
             "talentList": [
                 {
-                    "talentId": 1,
+                    "talentId": 8,
                     "param": [
                         {
                             "num": [
-                                2
+                                100
                             ]
                         }
                     ],
@@ -40,15 +40,47 @@
                     "range": 1,
                     "triggerData": [],
                     "activeData": []
+                },
+                {
+                    "talentId": 28,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        },
+                        {
+                            "num": [
+                                150
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 18,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
                 }
-            ]
+            ],
+            "IconId": 1
         },
         {
-            "id": 29013,
+            "id": 41001,
             "rarity": 0,
-            "name": "攻撃力5%アップ",
+            "name": "渦巻く濁海の荒波",
             "kana": "",
-            "text": "",
+            "text": "編成時、ルルイエ勢力の攻撃力+5%",
             "maxLevel": 1,
             "recipeId": 0,
             "skipend": 0,
@@ -69,12 +101,23 @@
                             ]
                         }
                     ],
-                    "timing": 26,
-                    "range": 1,
+                    "timing": 1,
+                    "range": 29,
                     "triggerData": [],
-                    "activeData": []
+                    "activeData": [
+                        {
+                            "type": 1014,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
                 }
-            ]
+            ],
+            "IconId": 0
         }
     ]
 }

@@ -11,78 +11,6 @@
     "m_Name": "serial_code_campaign_data",
     "records": [
         {
-            "id": 1,
-            "campaign_code": "TEST1",
-            "reward_table": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "free_coin",
-                        "m_count": 500
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.bom_skill_material.sr",
-                        "m_count": 10
-                    }
-                ]
-            }
-        },
-        {
-            "id": 2,
-            "campaign_code": "TEST2",
-            "reward_table": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "free_coin",
-                        "m_count": 1000
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.bom_skill_material.sr",
-                        "m_count": 20
-                    }
-                ]
-            }
-        },
-        {
-            "id": 3,
-            "campaign_code": "TEST3",
-            "reward_table": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "free_coin",
-                        "m_count": 1500
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.bom_skill_material.sr",
-                        "m_count": 30
-                    }
-                ]
-            }
-        },
-        {
-            "id": 4,
-            "campaign_code": "TEST4",
-            "reward_table": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "free_coin",
-                        "m_count": 2000
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.bom_skill_material.sr",
-                        "m_count": 40
-                    }
-                ]
-            }
-        },
-        {
             "id": 5,
             "campaign_code": "G7001",
             "reward_table": {
@@ -168,6 +96,58 @@
                     {
                         "m_walletCategory": "ticket",
                         "m_walletName": "gacha_common",
+                        "m_count": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": 12,
+            "campaign_code": "HECP1",
+            "reward_table": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_common",
+                        "m_count": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": 13,
+            "campaign_code": "HECP2",
+            "reward_table": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_common",
+                        "m_count": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": 14,
+            "campaign_code": "HECP3",
+            "reward_table": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "growth_16h",
+                        "m_count": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": 15,
+            "campaign_code": "SUMR1",
+            "reward_table": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "material_bag",
+                        "m_walletName": "growth_16h",
                         "m_count": 1
                     }
                 ]

@@ -11,1872 +11,1367 @@
     "m_Name": "box_gacha_prize_table",
     "records": [
         {
-            "id": "p_box_test_01",
+            "id": "ev1_box_gacha_01",
             "prizes": [
                 {
-                    "table_id": "p_box_test_01",
+                    "table_id": "ev1_box_gacha_01",
                     "no": 1,
                     "odds": 300,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
+                    "prize_num": 10,
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_mutate.common",
                     "pickup": 1,
-                    "load_num": 1
+                    "load_num": 3
                 },
                 {
-                    "table_id": "p_box_test_01",
+                    "table_id": "ev1_box_gacha_01",
                     "no": 2,
                     "odds": 400,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 3,
-                    "odds": 1250,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 20
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 4,
-                    "odds": 454,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 5,
-                    "odds": 454,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 3
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 6,
-                    "odds": 464,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 7,
-                    "odds": 464,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 8,
-                    "odds": 464,
-                    "prize_num": 3,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 9,
-                    "odds": 464,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 10,
-                    "odds": 464,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 11,
-                    "odds": 464,
-                    "prize_num": 3,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 12,
-                    "odds": 464,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 13,
-                    "odds": 464,
                     "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 14,
-                    "odds": 464,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 15,
-                    "odds": 464,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 16,
-                    "odds": 464,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 17,
-                    "odds": 464,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 18,
-                    "odds": 1110,
-                    "prize_num": 10000,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_01",
-                    "no": 19,
-                    "odds": 464,
-                    "prize_num": 10,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 3
-                }
-            ]
-        },
-        {
-            "id": "p_box_test_02",
-            "prizes": [
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 1,
-                    "odds": 300,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 1,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 2,
-                    "odds": 400,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 3,
-                    "odds": 1250,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 20
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 4,
-                    "odds": 385,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 5,
-                    "odds": 385,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 3
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 6,
-                    "odds": 385,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 7,
-                    "odds": 385,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 8,
-                    "odds": 385,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 9,
-                    "odds": 385,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 10,
-                    "odds": 386,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 11,
-                    "odds": 386,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 12,
-                    "odds": 386,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 13,
-                    "odds": 386,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 14,
-                    "odds": 386,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 15,
-                    "odds": 386,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 16,
-                    "odds": 386,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 17,
-                    "odds": 385,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 18,
-                    "odds": 385,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 19,
-                    "odds": 386,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 20,
-                    "odds": 386,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 21,
-                    "odds": 1110,
-                    "prize_num": 10000,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_02",
-                    "no": 22,
-                    "odds": 386,
-                    "prize_num": 10,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                }
-            ]
-        },
-        {
-            "id": "p_box_test_03",
-            "prizes": [
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 1,
-                    "odds": 300,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 1,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 2,
-                    "odds": 400,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 3,
-                    "odds": 1250,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 20
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 4,
-                    "odds": 331,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 5,
-                    "odds": 331,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 3
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 6,
-                    "odds": 331,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 7,
-                    "odds": 331,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 8,
-                    "odds": 331,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 9,
-                    "odds": 331,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 10,
-                    "odds": 331,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 11,
-                    "odds": 331,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 12,
-                    "odds": 331,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 13,
-                    "odds": 331,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 14,
-                    "odds": 330,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 15,
-                    "odds": 330,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 16,
-                    "odds": 330,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 17,
-                    "odds": 330,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 18,
-                    "odds": 330,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 19,
-                    "odds": 330,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 20,
-                    "odds": 330,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 21,
-                    "odds": 330,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 22,
-                    "odds": 330,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 23,
-                    "odds": 330,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 24,
-                    "odds": 1110,
-                    "prize_num": 10000,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_03",
-                    "no": 25,
-                    "odds": 330,
-                    "prize_num": 10,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 3
-                }
-            ]
-        },
-        {
-            "id": "p_box_test_04",
-            "prizes": [
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 1,
-                    "odds": 300,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 1,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 2,
-                    "odds": 400,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 3
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 3,
-                    "odds": 1250,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 20
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 4,
-                    "odds": 386,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 5,
-                    "odds": 386,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 3
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 6,
-                    "odds": 386,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 8
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 7,
-                    "odds": 386,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 8,
-                    "odds": 386,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 9,
-                    "odds": 386,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 10,
-                    "odds": 386,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 11,
-                    "odds": 386,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 12,
-                    "odds": 386,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 13,
-                    "odds": 386,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 14,
-                    "odds": 385,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 15,
-                    "odds": 385,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 16,
-                    "odds": 385,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 17,
-                    "odds": 385,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 18,
-                    "odds": 385,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 19,
-                    "odds": 385,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 20,
-                    "odds": 385,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 21,
-                    "odds": 1110,
-                    "prize_num": 10000,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_04",
-                    "no": 22,
-                    "odds": 385,
-                    "prize_num": 10,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 1
-                }
-            ]
-        },
-        {
-            "id": "p_box_test_05",
-            "prizes": [
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 1,
-                    "odds": 250,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 1,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 2,
-                    "odds": 300,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 3
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 3,
-                    "odds": 2000,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 30
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 4,
-                    "odds": 271,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 5,
-                    "odds": 271,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 3
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 6,
-                    "odds": 297,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 8
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 7,
-                    "odds": 271,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 8,
-                    "odds": 271,
-                    "prize_num": 3,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 9,
-                    "odds": 271,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 10,
-                    "odds": 271,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 11,
-                    "odds": 271,
-                    "prize_num": 3,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 12,
-                    "odds": 271,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 13,
-                    "odds": 271,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 14,
-                    "odds": 271,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 15,
-                    "odds": 271,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 16,
-                    "odds": 271,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 17,
-                    "odds": 271,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 18,
-                    "odds": 271,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 19,
-                    "odds": 271,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 20,
-                    "odds": 583,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 21,
-                    "odds": 271,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 22,
-                    "odds": 271,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 23,
-                    "odds": 271,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 24,
-                    "odds": 271,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 25,
-                    "odds": 1150,
-                    "prize_num": 10000,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_05",
-                    "no": 26,
-                    "odds": 271,
-                    "prize_num": 10,
-                    "prize_type": "point",
-                    "prize_name": "gold",
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_exp.common_ssr",
                     "pickup": 0,
                     "load_num": 6
-                }
-            ]
-        },
-        {
-            "id": "p_box_test_06",
-            "prizes": [
-                {
-                    "table_id": "p_box_test_06",
-                    "no": 1,
-                    "odds": 220,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 1,
-                    "load_num": 1
                 },
                 {
-                    "table_id": "p_box_test_06",
-                    "no": 2,
-                    "odds": 280,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_06",
+                    "table_id": "ev1_box_gacha_01",
                     "no": 3,
-                    "odds": 1980,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
+                    "odds": 600,
+                    "prize_num": 10,
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_exp.common_sr",
                     "pickup": 0,
-                    "load_num": 30
+                    "load_num": 6
                 },
                 {
-                    "table_id": "p_box_test_06",
+                    "table_id": "ev1_box_gacha_01",
                     "no": 4,
-                    "odds": 240,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
+                    "odds": 800,
+                    "prize_num": 20,
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_exp.common_r",
                     "pickup": 0,
-                    "load_num": 2
+                    "load_num": 8
                 },
                 {
-                    "table_id": "p_box_test_06",
+                    "table_id": "ev1_box_gacha_01",
                     "no": 5,
-                    "odds": 240,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
+                    "odds": 500,
+                    "prize_num": 2,
+                    "prize_type": "item",
+                    "prize_name": "item.lottery_fragment.unit_faction_SR",
                     "pickup": 0,
-                    "load_num": 3
+                    "load_num": 5
                 },
                 {
-                    "table_id": "p_box_test_06",
+                    "table_id": "ev1_box_gacha_01",
                     "no": 6,
-                    "odds": 455,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
+                    "odds": 700,
+                    "prize_num": 2,
+                    "prize_type": "item",
+                    "prize_name": "item.lottery_fragment.unit_faction_R",
                     "pickup": 0,
                     "load_num": 10
                 },
                 {
-                    "table_id": "p_box_test_06",
+                    "table_id": "ev1_box_gacha_01",
                     "no": 7,
-                    "odds": 240,
+                    "odds": 900,
                     "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
+                    "prize_type": "equip",
+                    "prize_name": "1000",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_01",
+                    "no": 8,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "1010",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_01",
+                    "no": 9,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "1020",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_01",
+                    "no": 10,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "1030",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_01",
+                    "no": 11,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "1040",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_01",
+                    "no": 12,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "1050",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_01",
+                    "no": 13,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "1060",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_01",
+                    "no": 14,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "2000",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_01",
+                    "no": 15,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "2010",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_01",
+                    "no": 16,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "2020",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_01",
+                    "no": 17,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "2030",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_01",
+                    "no": 18,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "2040",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_01",
+                    "no": 19,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "2050",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_01",
+                    "no": 20,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "2060",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_01",
+                    "no": 21,
+                    "odds": 1000,
+                    "prize_num": 1,
+                    "prize_type": "item",
+                    "prize_name": "item.ticket.quest_skip",
+                    "pickup": 0,
+                    "load_num": 5
+                },
+                {
+                    "table_id": "ev1_box_gacha_01",
+                    "no": 22,
+                    "odds": 500,
+                    "prize_num": 1,
+                    "prize_type": "ugift",
+                    "prize_name": "l_f3",
                     "pickup": 0,
                     "load_num": 1
                 },
                 {
-                    "table_id": "p_box_test_06",
-                    "no": 8,
-                    "odds": 240,
-                    "prize_num": 3,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_06",
-                    "no": 9,
-                    "odds": 240,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_06",
-                    "no": 10,
-                    "odds": 240,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_06",
-                    "no": 11,
-                    "odds": 240,
-                    "prize_num": 3,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_06",
-                    "no": 12,
-                    "odds": 240,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_06",
-                    "no": 13,
-                    "odds": 240,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_06",
-                    "no": 14,
-                    "odds": 240,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 3
-                },
-                {
-                    "table_id": "p_box_test_06",
-                    "no": 15,
-                    "odds": 240,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 3
-                },
-                {
-                    "table_id": "p_box_test_06",
-                    "no": 16,
-                    "odds": 240,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 3
-                },
-                {
-                    "table_id": "p_box_test_06",
-                    "no": 17,
-                    "odds": 240,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 3
-                },
-                {
-                    "table_id": "p_box_test_06",
-                    "no": 18,
-                    "odds": 240,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 3
-                },
-                {
-                    "table_id": "p_box_test_06",
-                    "no": 19,
-                    "odds": 240,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 3
-                },
-                {
-                    "table_id": "p_box_test_06",
-                    "no": 20,
-                    "odds": 240,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 3
-                },
-                {
-                    "table_id": "p_box_test_06",
-                    "no": 21,
-                    "odds": 240,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 3
-                },
-                {
-                    "table_id": "p_box_test_06",
-                    "no": 22,
-                    "odds": 240,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 3
-                },
-                {
-                    "table_id": "p_box_test_06",
+                    "table_id": "ev1_box_gacha_01",
                     "no": 23,
-                    "odds": 240,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "ugift",
+                    "prize_name": "m_f",
                     "pickup": 0,
                     "load_num": 3
                 },
                 {
-                    "table_id": "p_box_test_06",
+                    "table_id": "ev1_box_gacha_01",
                     "no": 24,
-                    "odds": 240,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "ugift",
+                    "prize_name": "s_f",
                     "pickup": 0,
-                    "load_num": 3
+                    "load_num": 5
                 },
                 {
-                    "table_id": "p_box_test_06",
+                    "table_id": "ev1_box_gacha_01",
                     "no": 25,
-                    "odds": 240,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "material_bag",
+                    "prize_name": "gold_4h",
                     "pickup": 0,
                     "load_num": 3
                 },
                 {
-                    "table_id": "p_box_test_06",
+                    "table_id": "ev1_box_gacha_01",
                     "no": 26,
-                    "odds": 455,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "material_bag",
+                    "prize_name": "unit_exp_4h",
                     "pickup": 0,
-                    "load_num": 10
+                    "load_num": 3
                 },
                 {
-                    "table_id": "p_box_test_06",
+                    "table_id": "ev1_box_gacha_01",
                     "no": 27,
-                    "odds": 240,
+                    "odds": 700,
                     "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
+                    "prize_type": "material_bag",
+                    "prize_name": "unit_threshold_4h",
                     "pickup": 0,
-                    "load_num": 2
+                    "load_num": 3
                 },
                 {
-                    "table_id": "p_box_test_06",
+                    "table_id": "ev1_box_gacha_01",
                     "no": 28,
-                    "odds": 1090,
-                    "prize_num": 10000,
+                    "odds": 1000,
+                    "prize_num": 100,
                     "prize_type": "point",
-                    "prize_name": "gold",
+                    "prize_name": "explore_pt",
                     "pickup": 0,
-                    "load_num": 10
-                },
-                {
-                    "table_id": "p_box_test_06",
-                    "no": 29,
-                    "odds": 240,
-                    "prize_num": 10,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 1
+                    "load_num": 30
                 }
             ]
         },
         {
-            "id": "p_box_test_07",
+            "id": "ev1_box_gacha_02",
             "prizes": [
                 {
-                    "table_id": "p_box_test_07",
+                    "table_id": "ev1_box_gacha_02",
                     "no": 1,
                     "odds": 300,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
+                    "prize_num": 5,
+                    "prize_type": "item",
+                    "prize_name": "item.lottery_fragment.unit_faction_SSR",
                     "pickup": 1,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_07",
-                    "no": 2,
-                    "odds": 400,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
                     "load_num": 3
                 },
                 {
-                    "table_id": "p_box_test_07",
+                    "table_id": "ev1_box_gacha_02",
+                    "no": 2,
+                    "odds": 400,
+                    "prize_num": 5,
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_exp.common_ssr",
+                    "pickup": 0,
+                    "load_num": 6
+                },
+                {
+                    "table_id": "ev1_box_gacha_02",
                     "no": 3,
-                    "odds": 1250,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
+                    "odds": 600,
+                    "prize_num": 10,
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_exp.common_sr",
                     "pickup": 0,
-                    "load_num": 30
+                    "load_num": 6
                 },
                 {
-                    "table_id": "p_box_test_07",
+                    "table_id": "ev1_box_gacha_02",
                     "no": 4,
-                    "odds": 331,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
+                    "odds": 800,
+                    "prize_num": 20,
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_exp.common_r",
                     "pickup": 0,
-                    "load_num": 2
+                    "load_num": 8
                 },
                 {
-                    "table_id": "p_box_test_07",
+                    "table_id": "ev1_box_gacha_02",
                     "no": 5,
-                    "odds": 431,
-                    "prize_num": 3,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
+                    "odds": 500,
+                    "prize_num": 2,
+                    "prize_type": "item",
+                    "prize_name": "item.lottery_fragment.unit_faction_SR",
+                    "pickup": 0,
+                    "load_num": 5
+                },
+                {
+                    "table_id": "ev1_box_gacha_02",
+                    "no": 6,
+                    "odds": 700,
+                    "prize_num": 2,
+                    "prize_type": "item",
+                    "prize_name": "item.lottery_fragment.unit_faction_R",
                     "pickup": 0,
                     "load_num": 10
                 },
                 {
-                    "table_id": "p_box_test_07",
-                    "no": 6,
-                    "odds": 331,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_07",
+                    "table_id": "ev1_box_gacha_02",
                     "no": 7,
-                    "odds": 331,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "gold",
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "3000",
                     "pickup": 0,
-                    "load_num": 5
+                    "load_num": 4
                 },
                 {
-                    "table_id": "p_box_test_07",
+                    "table_id": "ev1_box_gacha_02",
                     "no": 8,
-                    "odds": 331,
-                    "prize_num": 3,
+                    "odds": 900,
+                    "prize_num": 1,
                     "prize_type": "equip",
-                    "prize_name": "1000",
+                    "prize_name": "3010",
                     "pickup": 0,
-                    "load_num": 5
+                    "load_num": 4
                 },
                 {
-                    "table_id": "p_box_test_07",
+                    "table_id": "ev1_box_gacha_02",
                     "no": 9,
-                    "odds": 331,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "3020",
                     "pickup": 0,
-                    "load_num": 5
+                    "load_num": 4
                 },
                 {
-                    "table_id": "p_box_test_07",
+                    "table_id": "ev1_box_gacha_02",
                     "no": 10,
-                    "odds": 331,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "gold",
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "3030",
                     "pickup": 0,
-                    "load_num": 5
+                    "load_num": 4
                 },
                 {
-                    "table_id": "p_box_test_07",
+                    "table_id": "ev1_box_gacha_02",
                     "no": 11,
-                    "odds": 331,
-                    "prize_num": 3,
+                    "odds": 900,
+                    "prize_num": 1,
                     "prize_type": "equip",
-                    "prize_name": "1000",
+                    "prize_name": "3040",
                     "pickup": 0,
-                    "load_num": 5
+                    "load_num": 4
                 },
                 {
-                    "table_id": "p_box_test_07",
+                    "table_id": "ev1_box_gacha_02",
                     "no": 12,
-                    "odds": 331,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "3050",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_02",
+                    "no": 13,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "3060",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_02",
+                    "no": 14,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "4000",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_02",
+                    "no": 15,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "4010",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_02",
+                    "no": 16,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "4020",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_02",
+                    "no": 17,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "4030",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_02",
+                    "no": 18,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "4040",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_02",
+                    "no": 19,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "4050",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_02",
+                    "no": 20,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "4060",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_02",
+                    "no": 21,
+                    "odds": 1000,
+                    "prize_num": 1,
+                    "prize_type": "item",
+                    "prize_name": "item.ticket.quest_skip",
                     "pickup": 0,
                     "load_num": 5
                 },
                 {
-                    "table_id": "p_box_test_07",
-                    "no": 13,
-                    "odds": 331,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_07",
-                    "no": 14,
-                    "odds": 330,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_07",
-                    "no": 15,
-                    "odds": 330,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_07",
-                    "no": 16,
-                    "odds": 330,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_07",
-                    "no": 17,
-                    "odds": 330,
-                    "prize_num": 5,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_07",
-                    "no": 18,
-                    "odds": 330,
-                    "prize_num": 5,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 2
-                },
-                {
-                    "table_id": "p_box_test_07",
-                    "no": 19,
-                    "odds": 330,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_07",
-                    "no": 20,
-                    "odds": 330,
-                    "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_07",
-                    "no": 21,
-                    "odds": 330,
-                    "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 1
-                },
-                {
-                    "table_id": "p_box_test_07",
+                    "table_id": "ev1_box_gacha_02",
                     "no": 22,
-                    "odds": 330,
+                    "odds": 500,
                     "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
+                    "prize_type": "ugift",
+                    "prize_name": "l_f3",
                     "pickup": 0,
                     "load_num": 1
                 },
                 {
-                    "table_id": "p_box_test_07",
+                    "table_id": "ev1_box_gacha_02",
                     "no": 23,
-                    "odds": 1340,
-                    "prize_num": 10000,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "ugift",
+                    "prize_name": "m_f",
                     "pickup": 0,
-                    "load_num": 20
+                    "load_num": 3
                 },
                 {
-                    "table_id": "p_box_test_07",
+                    "table_id": "ev1_box_gacha_02",
                     "no": 24,
-                    "odds": 330,
-                    "prize_num": 10,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "ugift",
+                    "prize_name": "s_f",
                     "pickup": 0,
-                    "load_num": 6
+                    "load_num": 5
+                },
+                {
+                    "table_id": "ev1_box_gacha_02",
+                    "no": 25,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "material_bag",
+                    "prize_name": "gold_4h",
+                    "pickup": 0,
+                    "load_num": 3
+                },
+                {
+                    "table_id": "ev1_box_gacha_02",
+                    "no": 26,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "material_bag",
+                    "prize_name": "unit_exp_4h",
+                    "pickup": 0,
+                    "load_num": 3
+                },
+                {
+                    "table_id": "ev1_box_gacha_02",
+                    "no": 27,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "material_bag",
+                    "prize_name": "unit_threshold_4h",
+                    "pickup": 0,
+                    "load_num": 3
+                },
+                {
+                    "table_id": "ev1_box_gacha_02",
+                    "no": 28,
+                    "odds": 1000,
+                    "prize_num": 100,
+                    "prize_type": "point",
+                    "prize_name": "explore_pt",
+                    "pickup": 0,
+                    "load_num": 30
                 }
             ]
         },
         {
-            "id": "p_box_test_08",
+            "id": "ev1_box_gacha_03",
             "prizes": [
                 {
-                    "table_id": "p_box_test_08",
+                    "table_id": "ev1_box_gacha_03",
                     "no": 1,
-                    "odds": 370,
+                    "odds": 100,
                     "prize_num": 1,
-                    "prize_type": "attachable",
-                    "prize_name": "1175",
+                    "prize_type": "item",
+                    "prize_name": "item.unit_skin.19_1",
                     "pickup": 1,
                     "load_num": 1
                 },
                 {
-                    "table_id": "p_box_test_08",
+                    "table_id": "ev1_box_gacha_03",
                     "no": 2,
-                    "odds": 370,
+                    "odds": 400,
+                    "prize_num": 5,
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_exp.common_ssr",
+                    "pickup": 0,
+                    "load_num": 6
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 3,
+                    "odds": 600,
+                    "prize_num": 10,
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_exp.common_sr",
+                    "pickup": 0,
+                    "load_num": 6
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 4,
+                    "odds": 800,
+                    "prize_num": 20,
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_exp.common_r",
+                    "pickup": 0,
+                    "load_num": 8
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 5,
+                    "odds": 500,
+                    "prize_num": 2,
+                    "prize_type": "item",
+                    "prize_name": "item.lottery_fragment.unit_faction_SR",
+                    "pickup": 0,
+                    "load_num": 5
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 6,
+                    "odds": 700,
+                    "prize_num": 2,
+                    "prize_type": "item",
+                    "prize_name": "item.lottery_fragment.unit_faction_R",
+                    "pickup": 0,
+                    "load_num": 10
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 7,
+                    "odds": 800,
                     "prize_num": 1,
                     "prize_type": "equip",
-                    "prize_name": "1000",
+                    "prize_name": "1001",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 8,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "1011",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 9,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "1021",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 10,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "1031",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 11,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "1041",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 12,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "1051",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 13,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "1061",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 14,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "2001",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 15,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "2011",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 16,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "2021",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 17,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "2031",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 18,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "2041",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 19,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "2051",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 20,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "2061",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 21,
+                    "odds": 1000,
+                    "prize_num": 1,
+                    "prize_type": "item",
+                    "prize_name": "item.ticket.quest_skip",
+                    "pickup": 0,
+                    "load_num": 5
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 22,
+                    "odds": 500,
+                    "prize_num": 1,
+                    "prize_type": "ugift",
+                    "prize_name": "l_f3",
                     "pickup": 0,
                     "load_num": 1
                 },
                 {
-                    "table_id": "p_box_test_08",
-                    "no": 3,
-                    "odds": 436,
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 23,
+                    "odds": 700,
                     "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
+                    "prize_type": "ugift",
+                    "prize_name": "m_f",
                     "pickup": 0,
                     "load_num": 3
                 },
                 {
-                    "table_id": "p_box_test_08",
-                    "no": 4,
-                    "odds": 2320,
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 24,
+                    "odds": 900,
                     "prize_num": 1,
+                    "prize_type": "ugift",
+                    "prize_name": "s_f",
+                    "pickup": 0,
+                    "load_num": 5
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 25,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "material_bag",
+                    "prize_name": "gold_4h",
+                    "pickup": 0,
+                    "load_num": 3
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 26,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "material_bag",
+                    "prize_name": "unit_exp_4h",
+                    "pickup": 0,
+                    "load_num": 3
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 27,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "material_bag",
+                    "prize_name": "unit_threshold_4h",
+                    "pickup": 0,
+                    "load_num": 3
+                },
+                {
+                    "table_id": "ev1_box_gacha_03",
+                    "no": 28,
+                    "odds": 1000,
+                    "prize_num": 100,
                     "prize_type": "point",
-                    "prize_name": "gold",
+                    "prize_name": "explore_pt",
                     "pickup": 0,
                     "load_num": 30
+                }
+            ]
+        },
+        {
+            "id": "ev1_box_gacha_04",
+            "prizes": [
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 1,
+                    "odds": 100,
+                    "prize_num": 1,
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_mutate_lock.common",
+                    "pickup": 1,
+                    "load_num": 1
                 },
                 {
-                    "table_id": "p_box_test_08",
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 2,
+                    "odds": 400,
+                    "prize_num": 5,
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_exp.common_ssr",
+                    "pickup": 0,
+                    "load_num": 6
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 3,
+                    "odds": 600,
+                    "prize_num": 10,
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_exp.common_sr",
+                    "pickup": 0,
+                    "load_num": 6
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 4,
+                    "odds": 800,
+                    "prize_num": 20,
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_exp.common_r",
+                    "pickup": 0,
+                    "load_num": 8
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
                     "no": 5,
-                    "odds": 436,
+                    "odds": 500,
+                    "prize_num": 2,
+                    "prize_type": "item",
+                    "prize_name": "item.lottery_fragment.unit_faction_SR",
+                    "pickup": 0,
+                    "load_num": 5
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 6,
+                    "odds": 700,
+                    "prize_num": 2,
+                    "prize_type": "item",
+                    "prize_name": "item.lottery_fragment.unit_faction_R",
+                    "pickup": 0,
+                    "load_num": 10
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 7,
+                    "odds": 800,
                     "prize_num": 1,
                     "prize_type": "equip",
-                    "prize_name": "1000",
+                    "prize_name": "3001",
                     "pickup": 0,
-                    "load_num": 2
+                    "load_num": 4
                 },
                 {
-                    "table_id": "p_box_test_08",
-                    "no": 6,
-                    "odds": 436,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 20
-                },
-                {
-                    "table_id": "p_box_test_08",
-                    "no": 7,
-                    "odds": 436,
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 8,
+                    "odds": 800,
                     "prize_num": 1,
-                    "prize_type": "point",
-                    "prize_name": "gold",
+                    "prize_type": "equip",
+                    "prize_name": "3011",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 9,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "3021",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 10,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "3031",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 11,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "3041",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 12,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "3051",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 13,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "3061",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 14,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "4001",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 15,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "4011",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 16,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "4021",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 17,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "4031",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 18,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "4041",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 19,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "4051",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 20,
+                    "odds": 800,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "4061",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 21,
+                    "odds": 1000,
+                    "prize_num": 1,
+                    "prize_type": "item",
+                    "prize_name": "item.ticket.quest_skip",
+                    "pickup": 0,
+                    "load_num": 5
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 22,
+                    "odds": 500,
+                    "prize_num": 1,
+                    "prize_type": "ugift",
+                    "prize_name": "l_f3",
+                    "pickup": 0,
+                    "load_num": 1
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 23,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "ugift",
+                    "prize_name": "m_f",
                     "pickup": 0,
                     "load_num": 3
                 },
                 {
-                    "table_id": "p_box_test_08",
-                    "no": 8,
-                    "odds": 436,
-                    "prize_num": 3,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_08",
-                    "no": 9,
-                    "odds": 436,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_08",
-                    "no": 10,
-                    "odds": 436,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_08",
-                    "no": 11,
-                    "odds": 436,
-                    "prize_num": 3,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_08",
-                    "no": 12,
-                    "odds": 436,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_08",
-                    "no": 13,
-                    "odds": 436,
-                    "prize_num": 3,
-                    "prize_type": "point",
-                    "prize_name": "gold",
-                    "pickup": 0,
-                    "load_num": 5
-                },
-                {
-                    "table_id": "p_box_test_08",
-                    "no": 14,
-                    "odds": 436,
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 24,
+                    "odds": 900,
                     "prize_num": 1,
-                    "prize_type": "equip",
-                    "prize_name": "1000",
+                    "prize_type": "ugift",
+                    "prize_name": "s_f",
                     "pickup": 0,
-                    "load_num": 2
+                    "load_num": 5
                 },
                 {
-                    "table_id": "p_box_test_08",
-                    "no": 15,
-                    "odds": 1580,
-                    "prize_num": 10000,
-                    "prize_type": "point",
-                    "prize_name": "free_coin",
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 25,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "material_bag",
+                    "prize_name": "gold_4h",
                     "pickup": 0,
-                    "load_num": 20
+                    "load_num": 3
                 },
                 {
-                    "table_id": "p_box_test_08",
-                    "no": 16,
-                    "odds": 564,
-                    "prize_num": 10,
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 26,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "material_bag",
+                    "prize_name": "unit_exp_4h",
+                    "pickup": 0,
+                    "load_num": 3
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 27,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "material_bag",
+                    "prize_name": "unit_threshold_4h",
+                    "pickup": 0,
+                    "load_num": 3
+                },
+                {
+                    "table_id": "ev1_box_gacha_04",
+                    "no": 28,
+                    "odds": 1000,
+                    "prize_num": 100,
                     "prize_type": "point",
-                    "prize_name": "gold",
+                    "prize_name": "explore_pt",
+                    "pickup": 0,
+                    "load_num": 30
+                }
+            ]
+        },
+        {
+            "id": "ev1_box_gacha_05",
+            "prizes": [
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 1,
+                    "odds": 50,
+                    "prize_num": 1,
+                    "prize_type": "item",
+                    "prize_name": "item.lottery_potential.crystal_sr",
+                    "pickup": 1,
+                    "load_num": 1
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 2,
+                    "odds": 400,
+                    "prize_num": 5,
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_exp.common_ssr",
                     "pickup": 0,
                     "load_num": 8
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 3,
+                    "odds": 600,
+                    "prize_num": 10,
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_exp.common_sr",
+                    "pickup": 0,
+                    "load_num": 8
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 4,
+                    "odds": 800,
+                    "prize_num": 20,
+                    "prize_type": "item",
+                    "prize_name": "item.engraving_exp.common_r",
+                    "pickup": 0,
+                    "load_num": 8
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 5,
+                    "odds": 500,
+                    "prize_num": 2,
+                    "prize_type": "item",
+                    "prize_name": "item.lottery_fragment.unit_faction_SR",
+                    "pickup": 0,
+                    "load_num": 5
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 6,
+                    "odds": 700,
+                    "prize_num": 2,
+                    "prize_type": "item",
+                    "prize_name": "item.lottery_fragment.unit_faction_R",
+                    "pickup": 0,
+                    "load_num": 10
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 7,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "1063",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 8,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "2063",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 9,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "3063",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 10,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "4063",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 11,
+                    "odds": 600,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "1062",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 12,
+                    "odds": 600,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "2062",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 13,
+                    "odds": 600,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "3062",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 14,
+                    "odds": 600,
+                    "prize_num": 1,
+                    "prize_type": "equip",
+                    "prize_name": "4062",
+                    "pickup": 0,
+                    "load_num": 4
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 15,
+                    "odds": 1000,
+                    "prize_num": 1,
+                    "prize_type": "item",
+                    "prize_name": "item.ticket.quest_skip",
+                    "pickup": 0,
+                    "load_num": 5
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 16,
+                    "odds": 500,
+                    "prize_num": 1,
+                    "prize_type": "ugift",
+                    "prize_name": "l_f3",
+                    "pickup": 0,
+                    "load_num": 1
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 17,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "ugift",
+                    "prize_name": "m_f",
+                    "pickup": 0,
+                    "load_num": 3
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 18,
+                    "odds": 900,
+                    "prize_num": 1,
+                    "prize_type": "ugift",
+                    "prize_name": "s_f",
+                    "pickup": 0,
+                    "load_num": 5
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 19,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "material_bag",
+                    "prize_name": "gold_4h",
+                    "pickup": 0,
+                    "load_num": 3
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 20,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "material_bag",
+                    "prize_name": "unit_exp_4h",
+                    "pickup": 0,
+                    "load_num": 3
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 21,
+                    "odds": 700,
+                    "prize_num": 1,
+                    "prize_type": "material_bag",
+                    "prize_name": "unit_threshold_4h",
+                    "pickup": 0,
+                    "load_num": 3
+                },
+                {
+                    "table_id": "ev1_box_gacha_05",
+                    "no": 22,
+                    "odds": 1000,
+                    "prize_num": 100,
+                    "prize_type": "point",
+                    "prize_name": "explore_pt",
+                    "pickup": 0,
+                    "load_num": 30
                 }
             ]
         }

@@ -287,6 +287,58 @@
                 4
             ],
             "shotBoneIndexes": []
+        },
+        {
+            "id": 12,
+            "type": 6,
+            "waitMotion": "sp_wait",
+            "mainMotion": "sp_action",
+            "waitTime": 180,
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotation": 0,
+            "omenFlag": 1,
+            "missile": 1,
+            "attackRate": 300,
+            "attackFixed": 0,
+            "targetNum": 0,
+            "sortConfig": 0,
+            "filterConfig": 3,
+            "blastTargetNum": 0,
+            "blastSortConfig": 0,
+            "blastFilterConfig": 0,
+            "hitType": 1,
+            "abilityIds": [
+                7
+            ],
+            "shotBoneIndexes": []
+        },
+        {
+            "id": 13,
+            "type": 6,
+            "waitMotion": "sp_wait",
+            "mainMotion": "sp_action",
+            "waitTime": 180,
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotation": 0,
+            "omenFlag": 1,
+            "missile": 5,
+            "attackRate": 60,
+            "attackFixed": 0,
+            "targetNum": 0,
+            "sortConfig": 0,
+            "filterConfig": 3,
+            "blastTargetNum": 0,
+            "blastSortConfig": 0,
+            "blastFilterConfig": 0,
+            "hitType": 2,
+            "abilityIds": [
+                6
+            ],
+            "shotBoneIndexes": []
         }
     ]
 }

@@ -65,7 +65,129 @@
             "need_chapter": 0,
             "shop_id": 8002,
             "open_time": "2026/05/08 12:00:00",
-            "close_time": "2026/05/22 12:00:00",
+            "close_time": "2026/05/22 11:00:00",
+            "event_dataTable_id": 0,
+            "gacha_id": "",
+            "challenge_count_id": 1,
+            "challenge_count_recovery_ids": [
+                1
+            ]
+        },
+        {
+            "id": 4,
+            "tag": "BoxGachaEvent1",
+            "event_type": 2,
+            "name": "ボックスガチャイベント",
+            "resource_id": "Event_BoxGacha_1",
+            "chapter": 100003,
+            "contain_chapters": [
+                100003
+            ],
+            "need_chapter": 0,
+            "shop_id": 0,
+            "open_time": "2026/05/22 12:00:00",
+            "close_time": "2026/05/29 11:00:00",
+            "event_dataTable_id": 0,
+            "gacha_id": "pt_event.box.BoxGacha1",
+            "challenge_count_id": 1,
+            "challenge_count_recovery_ids": [
+                1
+            ]
+        },
+        {
+            "id": 5,
+            "tag": "TradePointEvent4",
+            "event_type": 1,
+            "name": "ポイント交換イベント",
+            "resource_id": "Event_TradePoint_4",
+            "chapter": 100004,
+            "contain_chapters": [
+                100004
+            ],
+            "need_chapter": 0,
+            "shop_id": 8003,
+            "open_time": "2026/05/29 12:00:00",
+            "close_time": "2026/06/12 11:00:00",
+            "event_dataTable_id": 0,
+            "gacha_id": "",
+            "challenge_count_id": 1,
+            "challenge_count_recovery_ids": [
+                1
+            ]
+        },
+        {
+            "id": 6,
+            "tag": "FesEvent1",
+            "event_type": 9,
+            "name": "フェスイベント",
+            "resource_id": "Event_Fes_1",
+            "chapter": 0,
+            "contain_chapters": [
+                0
+            ],
+            "need_chapter": 0,
+            "shop_id": 0,
+            "open_time": "2026/06/12 12:00:00",
+            "close_time": "2026/06/26 11:00:00",
+            "event_dataTable_id": 1,
+            "gacha_id": "",
+            "challenge_count_id": 0,
+            "challenge_count_recovery_ids": []
+        },
+        {
+            "id": 7,
+            "tag": "TradePointEvent5",
+            "event_type": 1,
+            "name": "ポイント交換イベント",
+            "resource_id": "Event_TradePoint_5",
+            "chapter": 100005,
+            "contain_chapters": [
+                100005
+            ],
+            "need_chapter": 0,
+            "shop_id": 8004,
+            "open_time": "2026/06/12 12:00:00",
+            "close_time": "2026/06/26 11:00:00",
+            "event_dataTable_id": 0,
+            "gacha_id": "",
+            "challenge_count_id": 1,
+            "challenge_count_recovery_ids": [
+                1
+            ]
+        },
+        {
+            "id": 8,
+            "tag": "BomQuestEvent1",
+            "event_type": 10,
+            "name": "邪神クエストイベント",
+            "resource_id": "Event_BomQuest_1",
+            "chapter": 0,
+            "contain_chapters": [
+                0
+            ],
+            "need_chapter": 0,
+            "shop_id": 0,
+            "open_time": "2026/06/12 12:00:00",
+            "close_time": "2026/06/26 11:00:00",
+            "event_dataTable_id": 1,
+            "gacha_id": "",
+            "challenge_count_id": 1,
+            "challenge_count_recovery_ids": []
+        },
+        {
+            "id": 9,
+            "tag": "TradePointEvent6",
+            "event_type": 1,
+            "name": "ポイント交換イベント",
+            "resource_id": "Event_TradePoint_6",
+            "chapter": 100006,
+            "contain_chapters": [
+                100006
+            ],
+            "need_chapter": 0,
+            "shop_id": 8005,
+            "open_time": "2026/07/10 11:00:00",
+            "close_time": "2026/07/24 11:00:00",
             "event_dataTable_id": 0,
             "gacha_id": "",
             "challenge_count_id": 1,

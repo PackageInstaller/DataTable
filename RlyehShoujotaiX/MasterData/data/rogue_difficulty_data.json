@@ -385,6 +385,194 @@
                     ]
                 }
             ]
+        },
+        {
+            "theme_id": 3,
+            "difficulties": [
+                {
+                    "no": 1,
+                    "name": "ノーマル",
+                    "ability_text": "",
+                    "stageModifications": [
+                        {
+                            "no": 1,
+                            "enemy_life_rate": 0,
+                            "enemy_attack_rate": 0,
+                            "enemy_defence_rate": 0,
+                            "enemy_magic_defence_rate": 0,
+                            "ability_id": 0,
+                            "rogue_talent_id": 0
+                        },
+                        {
+                            "no": 2,
+                            "enemy_life_rate": 0,
+                            "enemy_attack_rate": 0,
+                            "enemy_defence_rate": 0,
+                            "enemy_magic_defence_rate": 0,
+                            "ability_id": 0,
+                            "rogue_talent_id": 0
+                        },
+                        {
+                            "no": 3,
+                            "enemy_life_rate": 0,
+                            "enemy_attack_rate": 0,
+                            "enemy_defence_rate": 0,
+                            "enemy_magic_defence_rate": 0,
+                            "ability_id": 0,
+                            "rogue_talent_id": 0
+                        },
+                        {
+                            "no": 4,
+                            "enemy_life_rate": 0,
+                            "enemy_attack_rate": 0,
+                            "enemy_defence_rate": 0,
+                            "enemy_magic_defence_rate": 0,
+                            "ability_id": 0,
+                            "rogue_talent_id": 0
+                        },
+                        {
+                            "no": 5,
+                            "enemy_life_rate": 0,
+                            "enemy_attack_rate": 0,
+                            "enemy_defence_rate": 0,
+                            "enemy_magic_defence_rate": 0,
+                            "ability_id": 0,
+                            "rogue_talent_id": 0
+                        },
+                        {
+                            "no": 6,
+                            "enemy_life_rate": 0,
+                            "enemy_attack_rate": 0,
+                            "enemy_defence_rate": 0,
+                            "enemy_magic_defence_rate": 0,
+                            "ability_id": 0,
+                            "rogue_talent_id": 0
+                        }
+                    ]
+                },
+                {
+                    "no": 2,
+                    "name": "ハード",
+                    "ability_text": "敵の最大耐久、攻撃力、物理/魔法防御+50％\r\n獲得チャレンジPt、アポカリプスコイン+50％\r\n<color=#FF4C45>エクシードバトルマスの追加</color>",
+                    "stageModifications": [
+                        {
+                            "no": 1,
+                            "enemy_life_rate": 50,
+                            "enemy_attack_rate": 50,
+                            "enemy_defence_rate": 50,
+                            "enemy_magic_defence_rate": 50,
+                            "ability_id": 0,
+                            "rogue_talent_id": 1
+                        },
+                        {
+                            "no": 2,
+                            "enemy_life_rate": 50,
+                            "enemy_attack_rate": 50,
+                            "enemy_defence_rate": 50,
+                            "enemy_magic_defence_rate": 50,
+                            "ability_id": 0,
+                            "rogue_talent_id": 0
+                        },
+                        {
+                            "no": 3,
+                            "enemy_life_rate": 50,
+                            "enemy_attack_rate": 50,
+                            "enemy_defence_rate": 50,
+                            "enemy_magic_defence_rate": 50,
+                            "ability_id": 0,
+                            "rogue_talent_id": 0
+                        },
+                        {
+                            "no": 4,
+                            "enemy_life_rate": 50,
+                            "enemy_attack_rate": 50,
+                            "enemy_defence_rate": 50,
+                            "enemy_magic_defence_rate": 50,
+                            "ability_id": 0,
+                            "rogue_talent_id": 0
+                        },
+                        {
+                            "no": 5,
+                            "enemy_life_rate": 50,
+                            "enemy_attack_rate": 50,
+                            "enemy_defence_rate": 50,
+                            "enemy_magic_defence_rate": 50,
+                            "ability_id": 0,
+                            "rogue_talent_id": 0
+                        },
+                        {
+                            "no": 6,
+                            "enemy_life_rate": 50,
+                            "enemy_attack_rate": 50,
+                            "enemy_defence_rate": 50,
+                            "enemy_magic_defence_rate": 50,
+                            "ability_id": 0,
+                            "rogue_talent_id": 0
+                        }
+                    ]
+                },
+                {
+                    "no": 3,
+                    "name": "エルドリッチ",
+                    "ability_text": "敵の最大耐久、攻撃力、物理/魔法防御+75％\r\n獲得チャレンジPt、アポカリプスコイン+100％\r\n<color=#FF4C45>ユニークアーティファクトが入手可能</color>",
+                    "stageModifications": [
+                        {
+                            "no": 1,
+                            "enemy_life_rate": 75,
+                            "enemy_attack_rate": 75,
+                            "enemy_defence_rate": 75,
+                            "enemy_magic_defence_rate": 75,
+                            "ability_id": 0,
+                            "rogue_talent_id": 2
+                        },
+                        {
+                            "no": 2,
+                            "enemy_life_rate": 75,
+                            "enemy_attack_rate": 75,
+                            "enemy_defence_rate": 75,
+                            "enemy_magic_defence_rate": 75,
+                            "ability_id": 0,
+                            "rogue_talent_id": 0
+                        },
+                        {
+                            "no": 3,
+                            "enemy_life_rate": 75,
+                            "enemy_attack_rate": 75,
+                            "enemy_defence_rate": 75,
+                            "enemy_magic_defence_rate": 75,
+                            "ability_id": 0,
+                            "rogue_talent_id": 0
+                        },
+                        {
+                            "no": 4,
+                            "enemy_life_rate": 75,
+                            "enemy_attack_rate": 75,
+                            "enemy_defence_rate": 75,
+                            "enemy_magic_defence_rate": 75,
+                            "ability_id": 0,
+                            "rogue_talent_id": 0
+                        },
+                        {
+                            "no": 5,
+                            "enemy_life_rate": 75,
+                            "enemy_attack_rate": 75,
+                            "enemy_defence_rate": 75,
+                            "enemy_magic_defence_rate": 75,
+                            "ability_id": 0,
+                            "rogue_talent_id": 0
+                        },
+                        {
+                            "no": 6,
+                            "enemy_life_rate": 75,
+                            "enemy_attack_rate": 75,
+                            "enemy_defence_rate": 75,
+                            "enemy_magic_defence_rate": 75,
+                            "ability_id": 0,
+                            "rogue_talent_id": 0
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

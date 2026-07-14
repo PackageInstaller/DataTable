@@ -2133,6 +2133,240 @@
             "trainingText": "カルコサ勢力の攻撃力20%上昇"
         },
         {
+            "trainingId": 164,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                75
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵の攻撃力75%上昇"
+        },
+        {
+            "trainingId": 165,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                200
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵の物理防御200%上昇"
+        },
+        {
+            "trainingId": 166,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                110
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵の耐久力110％アップ"
+        },
+        {
+            "trainingId": 167,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 908,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵のスタン無効"
+        },
+        {
+            "trainingId": 168,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 911,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵のノックバック無効"
+        },
+        {
+            "trainingId": 169,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 908,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 911,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵のスタン・ノックバック無効"
+        },
+        {
+            "trainingId": 170,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1014,
+                            "num": [
+                                3
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "trainingText": "アーカム勢力の攻撃力20%上昇"
+        },
+        {
             "trainingId": 300,
             "start": -1,
             "duration": -1,
@@ -2202,7 +2436,7 @@
                     "param": [
                         {
                             "num": [
-                                70
+                                -70
                             ]
                         }
                     ],
@@ -2282,7 +2516,7 @@
                     "param": [
                         {
                             "num": [
-                                70
+                                -70
                             ]
                         }
                     ],

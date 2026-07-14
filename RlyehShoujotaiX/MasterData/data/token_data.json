@@ -276,7 +276,7 @@
             "category": 2,
             "summonUnitId": 30028,
             "enchantBone": 5,
-            "time": 300,
+            "time": 450,
             "summonNum": 7,
             "simultaneous": 99,
             "uniqueToken": 1,
@@ -302,7 +302,7 @@
             "category": 2,
             "summonUnitId": 30028,
             "enchantBone": 5,
-            "time": 450,
+            "time": 600,
             "summonNum": 7,
             "simultaneous": 99,
             "uniqueToken": 1,
@@ -468,6 +468,110 @@
             "offset": {
                 "x": -0.5,
                 "y": 0.05999999865889549,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "isAppearAnim": 1,
+            "isPlayVoice": 0
+        },
+        {
+            "id": 30055,
+            "name": "塵埃の手",
+            "category": 2,
+            "summonUnitId": 30055,
+            "enchantBone": 4,
+            "time": -1,
+            "summonNum": 1,
+            "simultaneous": 1,
+            "uniqueToken": 1,
+            "directionLock": 0,
+            "damageType": 6,
+            "isAttack": 1,
+            "offset": {
+                "x": 0.30000001192092896,
+                "y": 0.05999999865889549,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "isAppearAnim": 1,
+            "isPlayVoice": 0
+        },
+        {
+            "id": 30058,
+            "name": "炎の天馬",
+            "category": 1,
+            "summonUnitId": 30058,
+            "enchantBone": 0,
+            "time": 450,
+            "summonNum": 1,
+            "simultaneous": 5,
+            "uniqueToken": 0,
+            "directionLock": 0,
+            "damageType": 0,
+            "isAttack": 1,
+            "offset": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "isAppearAnim": 1,
+            "isPlayVoice": 0
+        },
+        {
+            "id": 30062,
+            "name": "亀の目",
+            "category": 1,
+            "summonUnitId": 30062,
+            "enchantBone": 0,
+            "time": 450,
+            "summonNum": 1,
+            "simultaneous": 5,
+            "uniqueToken": 0,
+            "directionLock": 0,
+            "damageType": 0,
+            "isAttack": 1,
+            "offset": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "isAppearAnim": 1,
+            "isPlayVoice": 0
+        },
+        {
+            "id": 30064,
+            "name": "大金の地竜",
+            "category": 3,
+            "summonUnitId": 30064,
+            "enchantBone": 0,
+            "time": 600,
+            "summonNum": 1,
+            "simultaneous": 1,
+            "uniqueToken": 0,
+            "directionLock": 1,
+            "damageType": 0,
+            "isAttack": 1,
+            "offset": {
+                "x": 0.0,
+                "y": 0.0,
                 "z": 0.0
             },
             "rotation": {
