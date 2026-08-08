@@ -1,0 +1,174 @@
+{
+  "triggerName": "玩家主动技能",
+  "name": "",
+  "others_num": 1,
+  "ifs": [
+    {
+      "value": "5020203",
+      "term": "and",
+      "id": -1,
+      "ii": 0,
+      "index": 0,
+      "ptype": "判断",
+      "codeType": 1,
+      "target": 1,
+      "t": 1,
+      "type": "技能ID"
+    },
+    {
+      "value": "5020203",
+      "term": "and",
+      "id": -1,
+      "ii": 1,
+      "target": 1,
+      "t": 1,
+      "codeType": 1,
+      "index": 1,
+      "ptype": "判断",
+      "type": "检查CD"
+    }
+  ],
+  "others_id": 0,
+  "trigger": 25,
+  "ifs_and": [
+    0,
+    1
+  ],
+  "ifs_or": [],
+  "others": [
+    {
+      "elses": [],
+      "parentid": -1,
+      "ifs_or": [],
+      "id": 0,
+      "ifs": [
+        {
+          "value": "role_anger;>=;100;",
+          "term": "and",
+          "id": 0,
+          "ii": 0,
+          "index": 0,
+          "t": 3,
+          "codeType": 1,
+          "target": 1,
+          "ptype": "判断",
+          "type": "角色属性"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "role_anger;0;0;1;0",
+          "t": 3,
+          "id": 0,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "角色属性"
+        },
+        {
+          "value": "0;502020201;0;1",
+          "t": 3,
+          "id": 0,
+          "ii": 2,
+          "codeType": 2,
+          "index": 1,
+          "target": 1,
+          "ptype": "是",
+          "type": "发送消息"
+        }
+      ]
+    },
+    {
+      "elses": [],
+      "parentid": -1,
+      "ifs_or": [],
+      "id": 1,
+      "ifs": [
+        {
+          "value": "atk_add_5020202;!=;1",
+          "term": "and",
+          "id": 1,
+          "ii": 0,
+          "index": 0,
+          "t": 3,
+          "codeType": 1,
+          "target": 1,
+          "ptype": "判断",
+          "type": "处于状态"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "role_anger;0;20;0;0",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "角色属性"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "value": 1,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "value": 0,
+      "t": 1,
+      "index": 1,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "value": "5020203;1000;0;0",
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "codeType": 2,
+      "index": 2,
+      "target": 1,
+      "ptype": "是",
+      "type": "设置CD"
+    },
+    {
+      "value": "0;502020203;0;0",
+      "t": 1,
+      "id": -1,
+      "ii": 4,
+      "codeType": 2,
+      "index": 3,
+      "target": 1,
+      "ptype": "是",
+      "type": "发送消息"
+    },
+    {
+      "value": "atk_add|5020203|0;1600;10000;0;84000_5020203_1;0;0;5;0",
+      "t": 1,
+      "id": -1,
+      "ii": 5,
+      "codeType": 2,
+      "index": 4,
+      "target": 1,
+      "ptype": "是",
+      "type": "临时属性"
+    }
+  ]
+}

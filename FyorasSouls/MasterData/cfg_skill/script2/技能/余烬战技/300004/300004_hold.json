@@ -1,0 +1,72 @@
+{
+  "ifs": [
+    {
+      "value": "300004",
+      "id": -1,
+      "t": 1,
+      "index": 0,
+      "term": "and",
+      "ptype": "判断",
+      "target": 1,
+      "codeType": 1,
+      "ii": 0,
+      "type": "技能ID"
+    }
+  ],
+  "ifs_or": [],
+  "name": "",
+  "trigger": 25,
+  "triggerName": "玩家主动技能",
+  "ifs_and": [
+    0
+  ],
+  "others": [],
+  "others_num": 0,
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "roll;0;200;0;30;0;0;0",
+      "id": -1,
+      "t": 1,
+      "index": 0,
+      "target": 1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "200;0;0;;",
+      "id": -1,
+      "t": 1,
+      "index": 1,
+      "target": 1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 2,
+      "type": "无敌时刻"
+    },
+    {
+      "value": "damage_add|300004|0;2000;2000;0;;0;200;0;0",
+      "id": -1,
+      "t": 1,
+      "index": 2,
+      "target": 1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 3,
+      "type": "临时属性"
+    },
+    {
+      "value": "0#0;0;0;1;83100_201002_1;;0;0;;0",
+      "id": -1,
+      "t": 1,
+      "index": 3,
+      "target": 1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 4,
+      "type": "场景特效"
+    }
+  ]
+}

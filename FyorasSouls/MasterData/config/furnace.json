@@ -1,0 +1,30 @@
+{
+  "columns": [
+    "id",
+    "name",
+    "condition",
+    "gold",
+    "furnace_num",
+    "reward",
+    "time"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "name": "破败熔炉",
+      "gold": 100000,
+      "furnace_num": 1000,
+      "reward": "10;1",
+      "time": 5
+    },
+    {
+      "id": 2,
+      "name": "怨恨破败熔炉",
+      "condition": "1;20",
+      "gold": 1000000,
+      "furnace_num": 10000,
+      "reward": "10;1",
+      "time": 5
+    }
+  ]
+}

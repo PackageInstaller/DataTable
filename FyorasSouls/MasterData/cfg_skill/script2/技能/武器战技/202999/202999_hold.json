@@ -1,0 +1,74 @@
+{
+  "others_num": 0,
+  "ifs_or": [],
+  "name": "",
+  "actions": [
+    {
+      "value": "202999;6000;6000",
+      "id": -1,
+      "t": 1,
+      "target": 1,
+      "ii": 1,
+      "codeType": 2,
+      "index": 0,
+      "ptype": "是",
+      "type": "设置CD"
+    },
+    {
+      "value": "202999;3;0;2000;9;202999_hold_finish;guide_ad6a;0;0;0",
+      "id": -1,
+      "t": 1,
+      "target": 1,
+      "ii": 2,
+      "codeType": 2,
+      "index": 1,
+      "ptype": "是",
+      "type": "蓄力"
+    },
+    {
+      "target": 1,
+      "value": "speed_add|202999_damage|0;7500;2000;0;;0;0;0;0",
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "codeType": 2,
+      "index": 2,
+      "ptype": "是",
+      "type": "临时属性"
+    }
+  ],
+  "others_id": 0,
+  "trigger": 25,
+  "ifs_and": [
+    0,
+    1
+  ],
+  "ifs": [
+    {
+      "value": "202999",
+      "id": -1,
+      "t": 1,
+      "term": "and",
+      "target": 1,
+      "ii": 0,
+      "codeType": 1,
+      "index": 0,
+      "ptype": "判断",
+      "type": "检查CD"
+    },
+    {
+      "value": "202999",
+      "id": -1,
+      "t": 1,
+      "term": "and",
+      "target": 1,
+      "ii": 1,
+      "codeType": 1,
+      "index": 1,
+      "ptype": "判断",
+      "type": "技能ID"
+    }
+  ],
+  "triggerName": "玩家主动技能",
+  "others": []
+}

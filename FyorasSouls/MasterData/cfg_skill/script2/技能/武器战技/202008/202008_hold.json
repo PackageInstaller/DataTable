@@ -1,0 +1,96 @@
+{
+  "triggerName": "玩家主动技能",
+  "name": "",
+  "others_num": 0,
+  "trigger": 25,
+  "ifs": [
+    {
+      "value": "202008",
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "term": "and",
+      "codeType": 1,
+      "index": 0,
+      "target": 1,
+      "ptype": "判断",
+      "type": "检查CD"
+    },
+    {
+      "value": "202008",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "term": "and",
+      "codeType": 1,
+      "target": 1,
+      "index": 1,
+      "ptype": "判断",
+      "type": "技能ID"
+    }
+  ],
+  "others_id": 0,
+  "others": [],
+  "ifs_or": [],
+  "actions": [
+    {
+      "value": "spell_ad2;0;500;0;30;0;0;0",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "codeType": 2,
+      "target": 1,
+      "index": 0,
+      "ptype": "是",
+      "type": "动作移动"
+    },
+    {
+      "value": "500;0;0;20200801|20200802;",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "codeType": 2,
+      "target": 1,
+      "index": 1,
+      "ptype": "是",
+      "type": "无敌时刻"
+    },
+    {
+      "value": "0;0;500;500;0",
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "codeType": 2,
+      "target": 1,
+      "index": 2,
+      "ptype": "是",
+      "type": "隐身"
+    },
+    {
+      "value": "0#0;0;0;0;83100_202008_1_b;0;0;0;;0",
+      "t": 1,
+      "index": 3,
+      "id": -1,
+      "ii": 4,
+      "codeType": 2,
+      "target": 1,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "value": "202008;3000;3000",
+      "t": 1,
+      "id": -1,
+      "ii": 5,
+      "codeType": 2,
+      "target": 1,
+      "index": 4,
+      "ptype": "是",
+      "type": "设置CD"
+    }
+  ],
+  "ifs_and": [
+    0,
+    1
+  ]
+}

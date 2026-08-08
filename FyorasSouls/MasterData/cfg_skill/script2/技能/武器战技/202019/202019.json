@@ -1,0 +1,39 @@
+{
+  "ifs": [
+    {
+      "value": "202019;1",
+      "ptype": "判断",
+      "t": 1,
+      "index": 0,
+      "target": 1,
+      "term": "and",
+      "id": -1,
+      "codeType": 1,
+      "ii": 0,
+      "type": "蓄力事件"
+    }
+  ],
+  "ifs_or": [],
+  "name": "",
+  "trigger": 30,
+  "triggerName": "蓄力事件",
+  "actions": [
+    {
+      "value": "0#0;0;4000;5#5#-1;83100_202019_1;202019_hurt;0;1;;0",
+      "ptype": "是",
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "target": 1,
+      "codeType": 2,
+      "ii": 1,
+      "type": "场景特效"
+    }
+  ],
+  "ifs_and": [
+    0
+  ],
+  "others": [],
+  "others_id": 0,
+  "others_num": 0
+}

@@ -1,0 +1,116 @@
+{
+  "actions": [
+    {
+      "value": "attack_6;0;0;0;0;0",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "target": 1,
+      "ptype": "是",
+      "index": 0,
+      "ii": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;800;0;1;85000_4010106_1_a;4010306_hurt",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "target": 1,
+      "ptype": "是",
+      "index": 1,
+      "ii": 2,
+      "type": "场景特效"
+    },
+    {
+      "value": "4010306;0;0;700;9;4010306_hold_finish;;;",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "target": 1,
+      "ptype": "是",
+      "index": 2,
+      "ii": 3,
+      "type": "蓄力"
+    },
+    {
+      "value": 16,
+      "t": 1,
+      "index": 3,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ],
+  "name": "",
+  "trigger": 32,
+  "others": [
+    {
+      "ifs_and": [],
+      "id": 0,
+      "codeType": 0,
+      "ifs": [],
+      "actions": [],
+      "elses": [],
+      "ifs_or": [],
+      "parentid": -1
+    },
+    {
+      "ifs_and": [],
+      "id": 1,
+      "codeType": 0,
+      "ifs": [],
+      "actions": [],
+      "elses": [],
+      "ifs_or": [],
+      "parentid": -1
+    },
+    null
+  ],
+  "ifs": [
+    {
+      "value": "1",
+      "t": 1,
+      "id": -1,
+      "codeType": 1,
+      "index": 0,
+      "term": "and",
+      "ptype": "判断",
+      "target": 1,
+      "ii": 0,
+      "type": "调试模式"
+    },
+    {
+      "value": "4010306",
+      "t": 1,
+      "id": -1,
+      "codeType": 1,
+      "index": 1,
+      "term": "and",
+      "ptype": "判断",
+      "target": 1,
+      "ii": 1,
+      "type": "监听消息"
+    },
+    {
+      "value": "40103",
+      "t": 1,
+      "id": -1,
+      "codeType": 1,
+      "index": 2,
+      "term": "and",
+      "ptype": "判断",
+      "target": 1,
+      "ii": 2,
+      "type": "怪物bid"
+    }
+  ],
+  "ifs_and": [
+    0,
+    1,
+    2
+  ],
+  "others_id": 2,
+  "others_num": 2,
+  "ifs_or": [],
+  "triggerName": "消息事件"
+}

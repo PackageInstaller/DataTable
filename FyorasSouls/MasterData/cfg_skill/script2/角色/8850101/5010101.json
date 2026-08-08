@@ -1,0 +1,129 @@
+{
+  "triggerName": "蓄力事件",
+  "name": "",
+  "others_num": 1,
+  "trigger": 30,
+  "others_id": 1,
+  "ifs_or": [],
+  "others": [
+    null,
+    {
+      "elses": [],
+      "parentid": -1,
+      "id": 1,
+      "ifs_and": [
+        0
+      ],
+      "ifs": [
+        {
+          "value": "ming_yun_level;>=;30;101;0",
+          "t": 3,
+          "id": 1,
+          "ii": 0,
+          "type": "角色属性",
+          "codeType": 1,
+          "target": 1,
+          "index": 0,
+          "ptype": "判断",
+          "term": "and"
+        }
+      ],
+      "ifs_or": [],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "hp|5010101;100;20000;1000;;0;0;0;0",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "codeType": 2,
+          "target": 1,
+          "index": 0,
+          "ptype": "是",
+          "type": "临时属性"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "value": "2000|1|4000|20|101;1000",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "codeType": 2,
+      "target": 1,
+      "index": 0,
+      "ptype": "是",
+      "type": "恢复血量"
+    },
+    {
+      "value": "damage_sub|5010101|0;0|1|2000|20|101;12000|8000|2|10|101;0;84000_5010101_3;0;1000;5;0",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "codeType": 2,
+      "target": 1,
+      "index": 1,
+      "ptype": "是",
+      "type": "临时属性"
+    },
+    {
+      "value": 1,
+      "t": 1,
+      "codeType": 2,
+      "index": 2,
+      "type": "分支"
+    },
+    {
+      "value": "physical_res|5010101|0,ability_damage_res|5010101|0,fire_damage_res|5010101|0,ice_damage_res|5010101|0,electric_damage_res|5010101|0,poison_damage_res|5010101|0,holy_damage_res|5010101|0;0|1|2000|20|101;12000|8000|2|2|101;0;0;0;1000;5;0",
+      "t": 1,
+      "id": -1,
+      "ii": 4,
+      "codeType": 2,
+      "target": 1,
+      "index": 3,
+      "ptype": "是",
+      "type": "临时属性"
+    },
+    {
+      "value": "1#0;500;0;2;84000_5010101_2_b;;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "ii": 5,
+      "codeType": 2,
+      "target": 1,
+      "index": 4,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "value": "1#0;500;0;5;84000_5010101_2_a;;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "ii": 6,
+      "codeType": 2,
+      "target": 1,
+      "index": 5,
+      "ptype": "是",
+      "type": "场景特效"
+    }
+  ],
+  "ifs_and": [
+    0
+  ],
+  "ifs": [
+    {
+      "value": "5010101_hold_finish;1",
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "type": "蓄力事件",
+      "codeType": 1,
+      "target": 1,
+      "index": 0,
+      "ptype": "判断",
+      "term": "and"
+    }
+  ]
+}

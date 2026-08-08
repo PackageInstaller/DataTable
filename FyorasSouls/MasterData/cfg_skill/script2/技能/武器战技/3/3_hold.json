@@ -1,0 +1,82 @@
+{
+  "name": "script2/技能/武器战技/3/3_hold",
+  "ifs": [
+    {
+      "value": "3",
+      "term": "and",
+      "t": 1,
+      "ii": 0,
+      "codeType": 1,
+      "id": -1,
+      "ptype": "判断",
+      "target": 1,
+      "index": 0,
+      "type": "检查CD"
+    },
+    {
+      "value": "3",
+      "term": "and",
+      "t": 1,
+      "ii": 1,
+      "codeType": 1,
+      "id": -1,
+      "ptype": "判断",
+      "target": 1,
+      "index": 1,
+      "type": "技能ID"
+    }
+  ],
+  "trigger": 25,
+  "ifs_and": [
+    0,
+    1
+  ],
+  "ifs_or": [],
+  "actions": [
+    {
+      "value": "3;1000;0;0",
+      "target": 1,
+      "t": 1,
+      "ii": 1,
+      "codeType": 2,
+      "id": -1,
+      "ptype": "是",
+      "index": 0,
+      "type": "设置CD"
+    },
+    {
+      "value": "0#15#2;1#0;300;4000;0#0;1;50;1;100;83500_300003_2#83500_300003_1;simplehurt;1,4,1,21000,10000,10000,0,0,0,1,300,0,0,,,0",
+      "target": 1,
+      "t": 1,
+      "ii": 2,
+      "codeType": 2,
+      "id": -1,
+      "ptype": "是",
+      "index": 1,
+      "type": "发射特效"
+    },
+    {
+      "value": "0.75;150;50;0",
+      "target": 1,
+      "t": 1,
+      "ii": 3,
+      "codeType": 2,
+      "id": -1,
+      "ptype": "是",
+      "index": 2,
+      "type": "屏幕抖动"
+    },
+    {
+      "value": "spell_ap1;0;0;0;0;0;0;0",
+      "target": 1,
+      "t": 1,
+      "ii": 4,
+      "codeType": 2,
+      "id": -1,
+      "ptype": "是",
+      "index": 3,
+      "type": "动作移动"
+    }
+  ],
+  "triggerName": "玩家主动技能"
+}

@@ -1,0 +1,31 @@
+{
+  "columns": [
+    "id",
+    "name",
+    "icon",
+    "condition_xs",
+    "xs"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "name": "神躯",
+      "xs": 1
+    },
+    {
+      "id": 2,
+      "name": "神刑",
+      "xs": 1
+    },
+    {
+      "id": 3,
+      "name": "激活",
+      "xs": 1
+    },
+    {
+      "id": 4,
+      "name": "随灵",
+      "condition_xs": "giftpack_monthlygift;>=;2"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "ifs": [
+    {
+      "value": "300024",
+      "id": -1,
+      "t": 1,
+      "codeType": 1,
+      "term": "and",
+      "ptype": "判断",
+      "target": 1,
+      "index": 0,
+      "ii": 0,
+      "type": "检查CD"
+    },
+    {
+      "value": "300024",
+      "id": -1,
+      "t": 1,
+      "codeType": 1,
+      "term": "and",
+      "ptype": "判断",
+      "target": 1,
+      "index": 1,
+      "ii": 1,
+      "type": "技能ID"
+    }
+  ],
+  "ifs_or": [],
+  "name": "",
+  "trigger": 25,
+  "triggerName": "玩家主动技能",
+  "ifs_and": [
+    0,
+    1
+  ],
+  "actions": [
+    {
+      "value": "300024;3000;3000;0",
+      "ptype": "是",
+      "t": 1,
+      "index": 0,
+      "target": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 1,
+      "type": "设置CD"
+    },
+    {
+      "value": "300024;0;0;900;9;300024a;hold_ad3b;1000;0;0",
+      "ptype": "是",
+      "t": 1,
+      "index": 1,
+      "target": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 2,
+      "type": "蓄力"
+    }
+  ]
+}

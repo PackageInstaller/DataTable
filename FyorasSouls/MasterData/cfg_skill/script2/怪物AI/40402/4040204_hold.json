@@ -1,0 +1,284 @@
+{
+  "triggerName": "蓄力事件",
+  "name": "",
+  "actions": [
+    {
+      "target": 1,
+      "value": "0#0;0;0;1;85000_4040204_1_a;4040204_hurt1;0;0;;0",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 1,
+      "index": 0,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 2,
+      "value": "0#0;0;0;0;85000_4040204_1_b;4040204_hurt1;0;0;;0",
+      "ii": 2,
+      "index": 1,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 2,
+      "value": "0#0;750;0;1;85000_4040204_2_a;4040204_hurt2;0;0;;0",
+      "ii": 3,
+      "index": 2,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 2,
+      "value": "0#0;750;0;0;85000_4040204_2_b;4040204_hurt2;0;0;;0",
+      "ii": 4,
+      "index": 3,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "target": 1,
+      "value": "0#0;1250;0;1;85000_4040204_2_a;4040204_hurt2;0;0;;0",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 5,
+      "index": 4,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "target": 1,
+      "value": "0#0;1250;0;0;85000_4040204_2_b;4040204_hurt2;0;0;;0",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 6,
+      "index": 5,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "target": 1,
+      "value": "0#0;1750;0;1;85000_4040204_2_a;4040204_hurt2;0;0;;0",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 7,
+      "index": 6,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "target": 1,
+      "value": "0#0;1750;0;0;85000_4040204_2_b;4040204_hurt2;0;0;;0",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 8,
+      "index": 7,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 2,
+      "value": "0#0;2250;0;1;85000_4040204_2_a;4040204_hurt2;0;0;;0",
+      "ii": 9,
+      "index": 8,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 2,
+      "value": "0#0;2250;0;0;85000_4040204_2_b;4040204_hurt2;0;0;;0",
+      "ii": 10,
+      "index": 9,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 2,
+      "value": "空",
+      "ii": 11,
+      "index": 10,
+      "ptype": "是",
+      "type": "空"
+    },
+    {
+      "value": 1,
+      "t": 1,
+      "index": 11,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ],
+  "ifs_and": [
+    0,
+    1
+  ],
+  "trigger": 30,
+  "ifs_or": [],
+  "others_id": 0,
+  "ifs": [
+    {
+      "target": 1,
+      "value": "4040204_hold;1",
+      "t": 1,
+      "codeType": 1,
+      "id": -1,
+      "term": "and",
+      "ii": 0,
+      "index": 0,
+      "ptype": "判断",
+      "type": "蓄力事件"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 1,
+      "value": "40402",
+      "term": "and",
+      "ii": 1,
+      "index": 1,
+      "ptype": "判断",
+      "type": "怪物bid"
+    }
+  ],
+  "others_num": 1,
+  "others": [
+    {
+      "id": 0,
+      "elses": [],
+      "actions": [
+        {
+          "target": 1,
+          "value": "0#0;3250;0;1;85000_4040204_2_a;4040204_hurt2;0;0;;0",
+          "t": 5,
+          "codeType": 2,
+          "id": 0,
+          "ii": 1,
+          "index": 0,
+          "ptype": "是",
+          "type": "场景特效"
+        },
+        {
+          "target": 1,
+          "id": 0,
+          "t": 5,
+          "codeType": 2,
+          "value": "0#0;3250;0;0;85000_4040204_2_b;4040204_hurt2;0;0;;0",
+          "ii": 2,
+          "index": 1,
+          "ptype": "是",
+          "type": "场景特效"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "codeType": 0,
+      "ifs": [
+        {
+          "target": 1,
+          "id": 0,
+          "t": 5,
+          "codeType": 1,
+          "value": "4000",
+          "term": "and",
+          "ii": 0,
+          "index": 0,
+          "ptype": "判断",
+          "type": "概率"
+        }
+      ],
+      "ifs_or": [],
+      "parentid": 1
+    },
+    {
+      "id": 1,
+      "elses": [],
+      "actions": [
+        {
+          "target": 1,
+          "id": 1,
+          "t": 3,
+          "codeType": 2,
+          "value": "0#0;2750;0;1;85000_4040204_2_a;4040204_hurt2;0;0;;0",
+          "ii": 1,
+          "index": 0,
+          "ptype": "是",
+          "type": "场景特效"
+        },
+        {
+          "target": 1,
+          "value": "0#0;2750;0;0;85000_4040204_2_b;4040204_hurt2;0;0;;0",
+          "t": 3,
+          "codeType": 2,
+          "id": 1,
+          "ii": 2,
+          "index": 1,
+          "ptype": "是",
+          "type": "场景特效"
+        },
+        {
+          "target": 1,
+          "value": "空",
+          "t": 3,
+          "codeType": 2,
+          "id": 1,
+          "ii": 3,
+          "index": 2,
+          "ptype": "是",
+          "type": "空"
+        },
+        {
+          "value": 0,
+          "t": 3,
+          "index": 3,
+          "codeType": 2,
+          "type": "分支"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "codeType": 0,
+      "ifs": [
+        {
+          "target": 1,
+          "value": "5000",
+          "t": 3,
+          "codeType": 1,
+          "id": 1,
+          "term": "and",
+          "ii": 0,
+          "index": 0,
+          "ptype": "判断",
+          "type": "概率"
+        }
+      ],
+      "ifs_or": [],
+      "parentid": -1
+    }
+  ]
+}

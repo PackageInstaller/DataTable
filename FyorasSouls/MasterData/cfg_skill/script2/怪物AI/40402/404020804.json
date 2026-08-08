@@ -1,0 +1,147 @@
+{
+  "triggerName": "消息事件",
+  "actions": [
+    {
+      "value": 2,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "value": 16,
+      "t": 1,
+      "index": 1,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ],
+  "others": [
+    {
+      "id": 0,
+      "actions": [],
+      "ifs_and": [],
+      "codeType": 0,
+      "ifs": [],
+      "parentid": -1,
+      "elses": [],
+      "ifs_or": []
+    },
+    {
+      "id": 1,
+      "actions": [],
+      "ifs_and": [],
+      "codeType": 0,
+      "ifs": [],
+      "parentid": -1,
+      "elses": [],
+      "ifs_or": []
+    },
+    {
+      "id": 2,
+      "actions": [
+        {
+          "target": 1,
+          "value": "85000_4040201_2_a;1;1;0#22#-2.6;1|2|3;1100;0;85000_4040201_3_b;0;0;4040208_hurt2;0;0;0;1100;1",
+          "t": 3,
+          "codeType": 2,
+          "id": 2,
+          "ii": 1,
+          "ptype": "是",
+          "index": 0,
+          "type": "生成标记特效"
+        },
+        {
+          "target": 1,
+          "value": "0;1;1;0#22#-2.6;0;1100;0;85000_4040201_3_a;1;0;4040208_hurt2;0;0;0;1100;1",
+          "t": 3,
+          "codeType": 2,
+          "id": 2,
+          "ii": 2,
+          "ptype": "是",
+          "index": 1,
+          "type": "生成标记特效"
+        }
+      ],
+      "parentid": -1,
+      "codeType": 0,
+      "ifs": [
+        {
+          "value": "5000",
+          "id": 2,
+          "t": 3,
+          "codeType": 1,
+          "target": 1,
+          "term": "and",
+          "ptype": "判断",
+          "index": 0,
+          "ii": 0,
+          "type": "概率"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "elses": [
+        {
+          "target": 1,
+          "value": "85000_4040201_2_a;1;1;0#25.6#15.4;1|2|3;1100;0;85000_4040201_3_b;0;0;4040208_hurt2;0;0;0;1100;1",
+          "t": 3,
+          "codeType": 3,
+          "id": 2,
+          "ii": 1,
+          "ptype": "否",
+          "index": 0,
+          "type": "生成标记特效"
+        },
+        {
+          "target": 1,
+          "value": "0;1;1;0#25.6#15.4;0;1100;0;85000_4040201_3_a;1;0;4040208_hurt2;0;0;0;1100;1",
+          "t": 3,
+          "codeType": 3,
+          "id": 2,
+          "ii": 2,
+          "ptype": "否",
+          "index": 1,
+          "type": "生成标记特效"
+        }
+      ],
+      "ifs_or": []
+    }
+  ],
+  "name": "",
+  "others_id": 2,
+  "ifs": [
+    {
+      "value": "404020804",
+      "id": -1,
+      "t": 1,
+      "codeType": 1,
+      "target": 1,
+      "term": "and",
+      "ptype": "判断",
+      "index": 0,
+      "ii": 0,
+      "type": "监听消息"
+    },
+    {
+      "value": "40402",
+      "id": -1,
+      "t": 1,
+      "codeType": 1,
+      "target": 1,
+      "term": "and",
+      "ptype": "判断",
+      "index": 1,
+      "ii": 1,
+      "type": "怪物bid"
+    }
+  ],
+  "others_num": 2,
+  "ifs_and": [
+    0,
+    1
+  ],
+  "ifs_or": [],
+  "trigger": 32
+}

@@ -1,0 +1,52 @@
+{
+  "others_id": 0,
+  "name": "",
+  "ifs": [
+    {
+      "value": "201001002",
+      "term": "and",
+      "t": 1,
+      "ii": 0,
+      "codeType": 1,
+      "id": -1,
+      "ptype": "判断",
+      "target": 1,
+      "index": 0,
+      "type": "监听消息"
+    },
+    {
+      "value": "<=;5000",
+      "term": "and",
+      "t": 1,
+      "ii": 1,
+      "codeType": 1,
+      "id": -1,
+      "ptype": "判断",
+      "target": 1,
+      "index": 1,
+      "type": "生命比例"
+    }
+  ],
+  "trigger": 32,
+  "ifs_and": [
+    0,
+    1
+  ],
+  "ifs_or": [],
+  "actions": [
+    {
+      "value": "8400;0;0;0;2;20000;20000;0;0;1",
+      "target": 1,
+      "t": 1,
+      "ii": 1,
+      "codeType": 2,
+      "id": -1,
+      "ptype": "是",
+      "index": 0,
+      "type": "持续伤害"
+    }
+  ],
+  "triggerName": "消息事件",
+  "others": [],
+  "others_num": 0
+}

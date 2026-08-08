@@ -1,0 +1,113 @@
+{
+  "triggerName": "怪物警觉",
+  "actions": [
+    {
+      "target": 1,
+      "value": "4040208;7500;15000;0",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 1,
+      "ptype": "是",
+      "index": 0,
+      "type": "设置CD"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 2,
+      "value": ";0;0;3#0;0;0;0;0",
+      "ii": 2,
+      "ptype": "是",
+      "index": 1,
+      "type": "动作移动"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 2,
+      "value": "4040208_hold;0;0;2466;7;4040208_hold;spell_3;1500;0;0",
+      "ii": 3,
+      "ptype": "是",
+      "index": 2,
+      "type": "蓄力"
+    }
+  ],
+  "others": [],
+  "name": "",
+  "others_id": 0,
+  "ifs": [
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 1,
+      "value": "<;4000",
+      "ii": 0,
+      "ptype": "判断",
+      "index": 0,
+      "term": "and",
+      "type": "生命比例"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 1,
+      "value": "5",
+      "ii": 1,
+      "ptype": "判断",
+      "index": 1,
+      "term": "and",
+      "type": "AI优先级"
+    },
+    {
+      "target": 1,
+      "value": "40402",
+      "t": 1,
+      "codeType": 1,
+      "id": -1,
+      "ii": 2,
+      "ptype": "判断",
+      "index": 2,
+      "term": "and",
+      "type": "怪物bid"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 1,
+      "value": "4040208",
+      "ii": 3,
+      "ptype": "判断",
+      "index": 3,
+      "term": "and",
+      "type": "检查CD"
+    },
+    {
+      "target": 1,
+      "value": "5000",
+      "t": 1,
+      "codeType": 1,
+      "id": -1,
+      "ii": 4,
+      "ptype": "判断",
+      "index": 4,
+      "term": "and",
+      "type": "概率"
+    }
+  ],
+  "others_num": 0,
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "trigger": 26,
+  "ifs_or": []
+}

@@ -1,0 +1,57 @@
+{
+  "ifs": [
+    {
+      "value": "201023a;1",
+      "t": 1,
+      "id": -1,
+      "codeType": 1,
+      "ii": 0,
+      "ptype": "判断",
+      "index": 0,
+      "type": "蓄力事件",
+      "term": "and",
+      "target": 1
+    }
+  ],
+  "trigger": 30,
+  "actions": [
+    {
+      "value": "spell_ad4;0;0;0;0;0",
+      "t": 1,
+      "target": 1,
+      "codeType": 2,
+      "ptype": "是",
+      "index": 0,
+      "type": "动作移动",
+      "ii": 1,
+      "id": -1
+    },
+    {
+      "value": "0;0;0;3;83100_201023_1;201023a",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ptype": "是",
+      "index": 1,
+      "type": "场景特效",
+      "ii": 2,
+      "target": 1
+    },
+    {
+      "value": "1;1;300;0;0;1;40;1;100;83100_201023_2;201023b",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ptype": "是",
+      "index": 2,
+      "type": "发射特效",
+      "ii": 3,
+      "target": 1
+    }
+  ],
+  "ifs_or": [],
+  "ifs_and": [
+    0
+  ],
+  "name": ""
+}

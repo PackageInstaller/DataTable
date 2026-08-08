@@ -1,0 +1,121 @@
+{
+  "ifs_or": [],
+  "trigger": 30,
+  "name": "",
+  "ifs": [
+    {
+      "value": "30703",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "type": "怪物bid",
+      "term": "and",
+      "target": 1,
+      "index": 0,
+      "ii": 0
+    },
+    {
+      "value": "3070301_hold;1",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "type": "蓄力事件",
+      "term": "and",
+      "target": 1,
+      "index": 1,
+      "ii": 1
+    }
+  ],
+  "others": [
+    null,
+    {
+      "ifs_or": [],
+      "ifs": [
+        {
+          "value": "0",
+          "t": 3,
+          "id": 1,
+          "ptype": "判断",
+          "codeType": 1,
+          "type": "目标方位",
+          "term": "and",
+          "index": 0,
+          "target": 1,
+          "ii": 0
+        }
+      ],
+      "codeType": 0,
+      "elses": [
+        {
+          "value": "0;;500;0;35;;0;",
+          "t": 3,
+          "id": 1,
+          "ptype": "否",
+          "codeType": 3,
+          "type": "动作移动",
+          "index": 0,
+          "target": 1,
+          "ii": 1
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "actions": [
+        {
+          "value": "0;;500;3#1#0#0#35;;;0;",
+          "t": 3,
+          "id": 1,
+          "ptype": "是",
+          "codeType": 2,
+          "type": "动作移动",
+          "index": 0,
+          "target": 1,
+          "ii": 1
+        }
+      ],
+      "id": 1,
+      "parentid": -1
+    }
+  ],
+  "ifs_and": [
+    0,
+    1
+  ],
+  "others_num": 1,
+  "actions": [
+    {
+      "value": 1,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "value": "0#0;500;0;0#0#0;82000_3070301_1_b;3070301_hurt",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "type": "场景特效",
+      "target": 1,
+      "index": 1,
+      "ii": 2
+    },
+    {
+      "value": "0#0;500;0;1#0#0;82000_3070301_1_a;",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "type": "场景特效",
+      "target": 1,
+      "index": 2,
+      "ii": 3
+    }
+  ],
+  "others_id": 1,
+  "triggerName": "蓄力事件"
+}

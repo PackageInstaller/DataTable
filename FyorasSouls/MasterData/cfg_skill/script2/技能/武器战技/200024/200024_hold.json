@@ -1,0 +1,85 @@
+{
+  "ifs_and": [
+    0,
+    1
+  ],
+  "ifs": [
+    {
+      "value": "200024",
+      "term": "and",
+      "t": 1,
+      "ptype": "判断",
+      "target": 1,
+      "codeType": 1,
+      "ii": 0,
+      "id": -1,
+      "index": 0,
+      "type": "检查CD"
+    },
+    {
+      "value": "200024",
+      "term": "and",
+      "t": 1,
+      "ptype": "判断",
+      "id": -1,
+      "codeType": 1,
+      "ii": 1,
+      "target": 1,
+      "index": 1,
+      "type": "技能ID"
+    }
+  ],
+  "name": "",
+  "actions": [
+    {
+      "value": "spell_ad2;0;0;0;0;0;0",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "codeType": 2,
+      "ii": 1,
+      "index": 0,
+      "target": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "0.75;150;50;200",
+      "ii": 2,
+      "t": 1,
+      "index": 1,
+      "id": -1,
+      "codeType": 2,
+      "ptype": "是",
+      "target": 1,
+      "type": "屏幕抖动"
+    },
+    {
+      "value": "200024;1000;1000",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "codeType": 2,
+      "ii": 3,
+      "target": 1,
+      "index": 2,
+      "type": "设置CD"
+    },
+    {
+      "value": "0#0;200;0;1;83100_200024_1;200024_hurt;0;0;;0",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "codeType": 2,
+      "ii": 4,
+      "target": 1,
+      "index": 3,
+      "type": "场景特效"
+    }
+  ],
+  "others_num": 0,
+  "triggerName": "玩家主动技能",
+  "others": [],
+  "trigger": 25,
+  "others_id": 0,
+  "ifs_or": []
+}

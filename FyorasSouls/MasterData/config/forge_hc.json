@@ -1,0 +1,574 @@
+{
+  "columns": [
+    "id",
+    "type",
+    "type1",
+    "target",
+    "need_item1",
+    "need_bl",
+    "bl_des",
+    "pingbi",
+    "pd_hc",
+    "beizhu",
+    "beizhu2"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "type": 1,
+      "type1": 2,
+      "target": 2001,
+      "need_item1": "2201;5",
+      "need_bl": "sp1",
+      "beizhu": "干肉块",
+      "beizhu2": "恢复20%生命值"
+    },
+    {
+      "id": 2,
+      "type": 1,
+      "type1": 4,
+      "target": 2002,
+      "need_item1": "2201;3|2201;3",
+      "need_bl": "sp2",
+      "beizhu": "灵翼鸟肉",
+      "beizhu2": "恢复20%专注值，但会发生魔爆"
+    },
+    {
+      "id": 3,
+      "type": 1,
+      "type1": 2,
+      "target": 2003,
+      "need_item1": "2211;2",
+      "need_bl": "sp3",
+      "beizhu": "抗火果干",
+      "beizhu2": "恢复10%生命值，移除灼烧状态，并且清空火属性的异常累积值"
+    },
+    {
+      "id": 4,
+      "type": 1,
+      "type1": 2,
+      "target": 2004,
+      "need_item1": "2211;2",
+      "need_bl": "sp4",
+      "beizhu": "抗冰果干",
+      "beizhu2": "恢复10%生命值，移除冻伤状态，并且清空冰属性的异常累积值"
+    },
+    {
+      "id": 5,
+      "type": 1,
+      "type1": 2,
+      "target": 2005,
+      "need_item1": "2211;2",
+      "need_bl": "sp5",
+      "beizhu": "抗雷果干",
+      "beizhu2": "恢复10%生命值，移除缠雷状态，并且清空雷属性的异常累积值"
+    },
+    {
+      "id": 6,
+      "type": 1,
+      "type1": 2,
+      "target": 2006,
+      "need_item1": "2211;2",
+      "need_bl": "sp6",
+      "beizhu": "抗毒果干",
+      "beizhu2": "恢复10%生命值，移除剧毒状态，并且清空毒属性的异常累积值"
+    },
+    {
+      "id": 7,
+      "type": 1,
+      "type1": 2,
+      "target": 2007,
+      "need_item1": "2211;2",
+      "need_bl": "sp7",
+      "beizhu": "抗圣果干",
+      "beizhu2": "恢复10%生命值，移除惩戒状态，并且清空圣属性的异常累积值"
+    },
+    {
+      "id": 8,
+      "type": 1,
+      "type1": 4,
+      "target": 2008,
+      "need_item1": "2211;2",
+      "need_bl": "sp8",
+      "beizhu": "奇怪肉",
+      "beizhu2": "50%概率恢复40%生命值，50%概率损失20%生命值"
+    },
+    {
+      "id": 9,
+      "type": 1,
+      "type1": 3,
+      "target": 2009,
+      "need_item1": "2202;5",
+      "need_bl": "sp9",
+      "beizhu": "灵鹿肝",
+      "beizhu2": "恢复20%生命值，60秒内移动速度增加15%"
+    },
+    {
+      "id": 10,
+      "type": 1,
+      "type1": 2,
+      "target": 2010,
+      "need_item1": "2202;3|2212;3",
+      "need_bl": "sp10",
+      "beizhu": "龟壳液",
+      "beizhu2": "60秒内获得30%生命值的护盾值"
+    },
+    {
+      "id": 11,
+      "type": 1,
+      "type1": 3,
+      "target": 2011,
+      "need_item1": "2212;5",
+      "need_bl": "sp11",
+      "beizhu": "失色蘑菇",
+      "beizhu2": "恢复20%生命值，180秒内小怪掉落灵魂增加25%"
+    },
+    {
+      "id": 12,
+      "type": 1,
+      "type1": 1,
+      "target": 2012,
+      "need_item1": "2202;3|2201;5",
+      "need_bl": "sp12",
+      "beizhu": "狂蟒肉",
+      "beizhu2": "恢复20%生命值，60秒内增伤率增加10%，减伤率减少10%"
+    },
+    {
+      "id": 13,
+      "type": 1,
+      "type1": 1,
+      "target": 2013,
+      "need_item1": "2202;3|2201;5",
+      "need_bl": "sp13",
+      "beizhu": "腌制腐鱼",
+      "beizhu2": "恢复20%生命值，60秒内击退加成提升8%"
+    },
+    {
+      "id": 14,
+      "type": 1,
+      "type1": 4,
+      "target": 2014,
+      "need_item1": "2203;5",
+      "need_bl": "sp14",
+      "beizhu": "寒虫肉",
+      "beizhu2": "60秒内每秒恢复1%生命值，但是进入冻伤异常状态"
+    },
+    {
+      "id": 15,
+      "type": 1,
+      "type1": 4,
+      "target": 2015,
+      "need_item1": "2203;3|2213;3",
+      "need_bl": "sp15",
+      "beizhu": "病变肉块",
+      "beizhu2": "恢复50%生命值，但是进入剧毒异常状态"
+    },
+    {
+      "id": 16,
+      "type": 1,
+      "type1": 2,
+      "target": 2016,
+      "need_item1": "2213;2|2211;2|2212;2",
+      "need_bl": "sp16",
+      "beizhu": "异型蟹卵",
+      "beizhu2": "恢复30%生命值，60秒内提升10%减伤率"
+    },
+    {
+      "id": 17,
+      "type": 1,
+      "type1": 3,
+      "target": 2017,
+      "need_item1": "2203;2|2201;2|2202;2",
+      "need_bl": "sp17",
+      "beizhu": "圣鹿肝",
+      "beizhu2": "恢复30%生命值，60秒内移动速度增加25%，闪避距离加成提升25%"
+    },
+    {
+      "id": 18,
+      "type": 1,
+      "type1": 3,
+      "target": 2018,
+      "need_item1": "2212;10|2214;5",
+      "need_bl": "sp18",
+      "beizhu": "见灵蘑菇",
+      "beizhu2": "恢复40%生命值，180秒内小怪掉落灵魂增加50%"
+    },
+    {
+      "id": 19,
+      "type": 1,
+      "type1": 4,
+      "target": 2019,
+      "need_item1": "2204;2|2203;2|2202;2",
+      "need_bl": "sp19",
+      "beizhu": "辛辣肉块",
+      "beizhu2": "恢复40%生命值，60秒内提升12.5%暴击率，但是进入灼烧异常状态"
+    },
+    {
+      "id": 20,
+      "type": 1,
+      "type1": 2,
+      "target": 2020,
+      "need_item1": "2204;3|2214;3",
+      "need_bl": "sp20",
+      "beizhu": "巨龟壳液",
+      "beizhu2": "60秒内获得30%生命值的护盾值"
+    },
+    {
+      "id": 21,
+      "type": 1,
+      "type1": 1,
+      "target": 2021,
+      "need_item1": "2214;2|2213;2|2212;2",
+      "need_bl": "sp21",
+      "beizhu": "龙蜕皮",
+      "beizhu2": "恢复40%生命值，60秒内魂纹战技伤害提升45%"
+    },
+    {
+      "id": 22,
+      "type": 1,
+      "type1": 1,
+      "target": 2022,
+      "need_item1": "2204;4|2211;4|2201;4",
+      "need_bl": "sp22",
+      "beizhu": "狂龙肉块",
+      "beizhu2": "恢复40%生命值，60秒内晕眩加成提升8%、冲击加成提升8%"
+    },
+    {
+      "id": 23,
+      "type": 1,
+      "type1": 3,
+      "target": 2023,
+      "need_item1": "2205;2|2204;2|2203;2|2202;2|2201;2",
+      "need_bl": "sp23",
+      "beizhu": "幸运兔肉",
+      "beizhu2": "恢复50%生命值，180秒内幸运增加25%"
+    },
+    {
+      "id": 24,
+      "type": 1,
+      "type1": 2,
+      "target": 2024,
+      "need_item1": "2215;2|2214;2|2213;2|2212;2|2211;2",
+      "need_bl": "sp24",
+      "beizhu": "芙娅的碎魂",
+      "beizhu2": "恢复全部的生命值，120秒内治疗加成25%"
+    },
+    {
+      "id": 25,
+      "type": 1,
+      "type1": 4,
+      "target": 2025,
+      "need_item1": "2205;4|2214;4|2204;4",
+      "need_bl": "sp25",
+      "beizhu": "雷之心",
+      "beizhu2": "恢复50%生命值，60秒内法术伤害增加50%，技能伤害无视敌人12.5%减伤率，但是进入缠雷异常状态"
+    },
+    {
+      "id": 26,
+      "type": 1,
+      "type1": 4,
+      "target": 2026,
+      "need_item1": "2205;5|2215;5",
+      "need_bl": "sp26",
+      "beizhu": "灵翼鸟眼珠",
+      "beizhu2": "恢复50%专注值，60秒内专注值获取率提升25%"
+    },
+    {
+      "id": 27,
+      "type": 2,
+      "type1": 1,
+      "target": 2101,
+      "need_item1": "2221;5",
+      "need_bl": "tz1",
+      "beizhu": "劣质剑油"
+    },
+    {
+      "id": 28,
+      "type": 2,
+      "type1": 2,
+      "target": 2102,
+      "need_item1": "2231;5",
+      "need_bl": "tz2",
+      "beizhu": "劣质护甲片"
+    },
+    {
+      "id": 29,
+      "type": 2,
+      "type1": 1,
+      "target": 2103,
+      "need_item1": "2222;3|2232;3",
+      "need_bl": "tz3",
+      "beizhu": "精灵剑油"
+    },
+    {
+      "id": 30,
+      "type": 2,
+      "type1": 1,
+      "target": 2104,
+      "need_item1": "2222;2|2221;2|2231;2",
+      "need_bl": "tz4",
+      "beizhu": "碾压剑油"
+    },
+    {
+      "id": 31,
+      "type": 2,
+      "type1": 2,
+      "target": 2105,
+      "need_item1": "2222;2|2211;2",
+      "need_bl": "tz5",
+      "beizhu": "抗伤护甲片"
+    },
+    {
+      "id": 32,
+      "type": 2,
+      "type1": 2,
+      "target": 2106,
+      "need_item1": "2222;2|2211;2",
+      "need_bl": "tz6",
+      "beizhu": "抗魔护甲片"
+    },
+    {
+      "id": 33,
+      "type": 2,
+      "type1": 2,
+      "target": 2107,
+      "need_item1": "2222;2|2211;2",
+      "need_bl": "tz7",
+      "beizhu": "抗火护甲片"
+    },
+    {
+      "id": 34,
+      "type": 2,
+      "type1": 2,
+      "target": 2108,
+      "need_item1": "2222;2|2211;2",
+      "need_bl": "tz8",
+      "beizhu": "抗冰护甲片"
+    },
+    {
+      "id": 35,
+      "type": 2,
+      "type1": 2,
+      "target": 2109,
+      "need_item1": "2222;2|2211;2",
+      "need_bl": "tz9",
+      "beizhu": "抗雷护甲片"
+    },
+    {
+      "id": 36,
+      "type": 2,
+      "type1": 2,
+      "target": 2110,
+      "need_item1": "2222;2|2211;2",
+      "need_bl": "tz10",
+      "beizhu": "抗毒护甲片"
+    },
+    {
+      "id": 37,
+      "type": 2,
+      "type1": 2,
+      "target": 2111,
+      "need_item1": "2222;2|2211;2",
+      "need_bl": "tz11",
+      "beizhu": "抗圣护甲片"
+    },
+    {
+      "id": 38,
+      "type": 2,
+      "type1": 1,
+      "target": 2112,
+      "need_item1": "2223;3|2233;3|2203;1|2202;1",
+      "need_bl": "tz12",
+      "beizhu": "魔力剑油"
+    },
+    {
+      "id": 39,
+      "type": 2,
+      "type1": 1,
+      "target": 2113,
+      "need_item1": "2223;3|2233;3|2203;1|2202;1",
+      "need_bl": "tz13",
+      "beizhu": "灼烧剑油"
+    },
+    {
+      "id": 40,
+      "type": 2,
+      "type1": 1,
+      "target": 2114,
+      "need_item1": "2223;3|2233;3|2203;1|2202;1",
+      "need_bl": "tz14",
+      "beizhu": "冻伤剑油"
+    },
+    {
+      "id": 41,
+      "type": 2,
+      "type1": 1,
+      "target": 2115,
+      "need_item1": "2223;3|2233;3|2203;1|2202;1",
+      "need_bl": "tz15",
+      "beizhu": "缠雷剑油"
+    },
+    {
+      "id": 42,
+      "type": 2,
+      "type1": 1,
+      "target": 2116,
+      "need_item1": "2223;3|2233;3|2203;1|2202;1",
+      "need_bl": "tz16",
+      "beizhu": "剧毒剑油"
+    },
+    {
+      "id": 43,
+      "type": 2,
+      "type1": 1,
+      "target": 2117,
+      "need_item1": "2223;3|2233;3|2203;1|2202;1",
+      "need_bl": "tz17",
+      "beizhu": "惩戒剑油"
+    },
+    {
+      "id": 44,
+      "type": 2,
+      "type1": 1,
+      "target": 2118,
+      "need_item1": "2223;3|2233;3|2203;1|2202;1",
+      "need_bl": "tz18",
+      "beizhu": "高傲剑油"
+    },
+    {
+      "id": 45,
+      "type": 2,
+      "type1": 2,
+      "target": 2119,
+      "need_item1": "2233;5",
+      "need_bl": "tz19",
+      "beizhu": "高傲护甲片"
+    },
+    {
+      "id": 46,
+      "type": 2,
+      "type1": 3,
+      "target": 2120,
+      "need_item1": "2233;3|2213;3",
+      "need_bl": "tz20",
+      "beizhu": "狩魂护甲片"
+    },
+    {
+      "id": 47,
+      "type": 2,
+      "type1": 1,
+      "target": 2121,
+      "need_item1": "2224;2|2223;2|2222;2|2221;2",
+      "need_bl": "tz21",
+      "beizhu": "堕神剑油"
+    },
+    {
+      "id": 48,
+      "type": 2,
+      "type1": 1,
+      "target": 2122,
+      "need_item1": "2224;3|2204;3",
+      "need_bl": "tz22",
+      "beizhu": "湖灵剑油"
+    },
+    {
+      "id": 49,
+      "type": 2,
+      "type1": 2,
+      "target": 2123,
+      "need_item1": "2234;2|2233;2|2232;2|2231;2",
+      "need_bl": "tz23",
+      "beizhu": "泰坦护甲片"
+    },
+    {
+      "id": 50,
+      "type": 2,
+      "type1": 4,
+      "target": 2124,
+      "need_item1": "2234;5|2214;3",
+      "need_bl": "tz24",
+      "beizhu": "符文护甲片"
+    },
+    {
+      "id": 51,
+      "type": 2,
+      "type1": 1,
+      "target": 2125,
+      "need_item1": "2225;3|2235;3|2205;1|2204;1|2203;1",
+      "need_bl": "tz25",
+      "beizhu": "浓郁魔力剑油"
+    },
+    {
+      "id": 52,
+      "type": 2,
+      "type1": 1,
+      "target": 2126,
+      "need_item1": "2225;3|2235;3|2205;1|2204;1|2203;1",
+      "need_bl": "tz26",
+      "beizhu": "浓郁灼烧剑油"
+    },
+    {
+      "id": 53,
+      "type": 2,
+      "type1": 1,
+      "target": 2127,
+      "need_item1": "2225;3|2235;3|2205;1|2204;1|2203;1",
+      "need_bl": "tz27",
+      "beizhu": "浓郁冻伤剑油"
+    },
+    {
+      "id": 54,
+      "type": 2,
+      "type1": 1,
+      "target": 2128,
+      "need_item1": "2225;3|2235;3|2205;1|2204;1|2203;1",
+      "need_bl": "tz28",
+      "beizhu": "浓郁缠雷剑油"
+    },
+    {
+      "id": 55,
+      "type": 2,
+      "type1": 1,
+      "target": 2129,
+      "need_item1": "2225;3|2235;3|2205;1|2204;1|2203;1",
+      "need_bl": "tz29",
+      "beizhu": "浓郁剧毒剑油"
+    },
+    {
+      "id": 56,
+      "type": 2,
+      "type1": 1,
+      "target": 2130,
+      "need_item1": "2225;3|2235;3|2205;1|2204;1|2203;1",
+      "need_bl": "tz30",
+      "beizhu": "浓郁惩戒剑油"
+    },
+    {
+      "id": 57,
+      "type": 2,
+      "type1": 1,
+      "target": 2131,
+      "need_item1": "2225;2|2224;2|2223;2|2222;2|2221;2",
+      "need_bl": "tz31",
+      "beizhu": "狩猎强者剑油"
+    },
+    {
+      "id": 58,
+      "type": 2,
+      "type1": 2,
+      "target": 2132,
+      "need_item1": "2235;4|2234;4|2224;4",
+      "need_bl": "tz32",
+      "beizhu": "无畏强者护甲片"
+    },
+    {
+      "id": 59,
+      "type": 2,
+      "type1": 2,
+      "target": 2133,
+      "need_item1": "2235;5|2225;5",
+      "need_bl": "tz33",
+      "beizhu": "虚空护甲片"
+    }
+  ]
+}

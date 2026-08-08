@@ -1,0 +1,24 @@
+{
+  "columns": [
+    "id",
+    "name",
+    "boss"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "name": "首领条件门1",
+      "boss": "boss1;1"
+    },
+    {
+      "id": 2,
+      "name": "首领条件门2",
+      "boss": "boss1;1|boss1;2"
+    },
+    {
+      "id": 3,
+      "name": "首领条件门3",
+      "boss": "boss3;1|boss4;1|boss5;1"
+    }
+  ]
+}

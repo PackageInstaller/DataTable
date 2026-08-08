@@ -1,0 +1,73 @@
+{
+  "columns": [
+    "id",
+    "name",
+    "quality",
+    "listicon",
+    "showicon",
+    "scope_type",
+    "scope",
+    "condition",
+    "xs"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "name": "神躯1皮肤",
+      "quality": 4,
+      "scope_type": 315,
+      "scope": "10010;10011",
+      "xs": 1
+    },
+    {
+      "id": 2,
+      "name": "神躯2皮肤",
+      "quality": 4,
+      "scope_type": 305,
+      "scope": "10012;10013",
+      "xs": 1
+    },
+    {
+      "id": 3,
+      "name": "神躯3皮肤",
+      "quality": 4,
+      "scope_type": 311,
+      "scope": 10020,
+      "xs": 1
+    },
+    {
+      "id": 4,
+      "name": "神躯4皮肤",
+      "quality": 4,
+      "scope_type": 316,
+      "scope": 10008,
+      "condition": "giftpack_monthlygift;>=;2",
+      "xs": 1
+    },
+    {
+      "id": 4,
+      "name": "神躯5皮肤",
+      "quality": 5,
+      "scope_type": 315,
+      "scope": "10010;10011",
+      "xs": 1
+    },
+    {
+      "id": 5,
+      "name": "神躯6皮肤",
+      "quality": 5,
+      "scope_type": 301,
+      "scope": "10001;10002",
+      "condition": "giftpack_monthlygift;>=;4",
+      "xs": 1
+    },
+    {
+      "id": 6,
+      "name": "神躯7皮肤",
+      "quality": 5,
+      "scope_type": 303,
+      "scope": "10005;10006",
+      "condition": "giftpack_monthlygift;>=;6"
+    }
+  ]
+}

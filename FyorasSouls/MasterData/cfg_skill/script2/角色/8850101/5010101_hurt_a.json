@@ -1,0 +1,36 @@
+{
+  "name": "",
+  "ifs_and": [
+    0
+  ],
+  "ifs_or": [],
+  "trigger": 29,
+  "actions": [
+    {
+      "value": "1000|1|3000|20|101",
+      "target": 1,
+      "t": 1,
+      "ii": 1,
+      "codeType": 2,
+      "id": -1,
+      "ptype": "是",
+      "index": 0,
+      "type": "恢复血量"
+    }
+  ],
+  "ifs": [
+    {
+      "value": "5010101_hurt",
+      "target": 1,
+      "t": 1,
+      "ii": 0,
+      "codeType": 1,
+      "id": -1,
+      "term": "and",
+      "ptype": "判断",
+      "index": 0,
+      "type": "伤害事件"
+    }
+  ],
+  "triggerName": "伤害事件"
+}

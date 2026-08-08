@@ -1,0 +1,39 @@
+{
+  "ifs_or": [],
+  "name": "",
+  "others_num": 0,
+  "ifs_and": [
+    0
+  ],
+  "trigger": 29,
+  "others": [],
+  "actions": [
+    {
+      "value": "3;10000;2000#2000;4",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 1,
+      "target": 1,
+      "index": 0,
+      "type": "设置buff"
+    }
+  ],
+  "others_id": 0,
+  "triggerName": "伤害事件",
+  "ifs": [
+    {
+      "value": "200022c",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "codeType": 1,
+      "ii": 0,
+      "term": "and",
+      "target": 1,
+      "index": 0,
+      "type": "伤害事件"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "others_num": 0,
+  "ifs": [
+    {
+      "target": 1,
+      "ii": 0,
+      "t": 1,
+      "ptype": "判断",
+      "term": "and",
+      "value": "30002a;0",
+      "id": -1,
+      "index": 0,
+      "codeType": 1,
+      "type": "蓄力事件"
+    }
+  ],
+  "name": "",
+  "actions": [
+    {
+      "target": 1,
+      "value": "30002;0;2000",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "ii": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "设置CD"
+    },
+    {
+      "target": 1,
+      "value": "0#0;0;0;1;82000_30002_1_atk;30002a_hurt#0",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "ii": 2,
+      "index": 1,
+      "codeType": 2,
+      "type": "场景特效"
+    }
+  ],
+  "trigger": 30,
+  "ifs_and": [
+    0
+  ],
+  "others": [],
+  "triggerName": "蓄力事件",
+  "others_id": 0,
+  "ifs_or": []
+}

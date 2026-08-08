@@ -1,0 +1,50 @@
+{
+  "ifs_or": [],
+  "ifs": [
+    {
+      "value": "201007_hold_finish;1",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "term": "and",
+      "ii": 0,
+      "target": 1,
+      "index": 0,
+      "type": "蓄力事件"
+    }
+  ],
+  "name": "",
+  "ifs_and": [
+    0
+  ],
+  "others_num": 0,
+  "triggerName": "蓄力事件",
+  "others": [],
+  "trigger": 30,
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "spell_ad4;0;0;0;0;0;0;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 1,
+      "index": 0,
+      "target": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;0;0;5;83100_201007_1;201007_hurt;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "codeType": 2,
+      "ii": 2,
+      "ptype": "是",
+      "index": 1,
+      "type": "场景特效"
+    }
+  ]
+}

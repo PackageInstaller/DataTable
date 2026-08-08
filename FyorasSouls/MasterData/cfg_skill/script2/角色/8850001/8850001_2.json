@@ -1,0 +1,61 @@
+{
+  "others_id": 0,
+  "name": "",
+  "others_num": 0,
+  "triggerName": "玩家主动技能",
+  "others": [],
+  "trigger": 25,
+  "ifs_and": [
+    0
+  ],
+  "ifs_or": [],
+  "actions": [
+    {
+      "value": "spell_ad2;0;0;0;0;0;0;0",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 1,
+      "target": 1,
+      "index": 0,
+      "type": "动作移动"
+    },
+    {
+      "value": "0.75;150;50;400",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 2,
+      "index": 1,
+      "target": 1,
+      "type": "屏幕抖动"
+    },
+    {
+      "value": "0#10#3;4#1;500;-1;0#0;1;70;1;150;84000_5000102_1_a#84000_5000102_2;role_50001_long_hurt;",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 3,
+      "index": 2,
+      "target": 1,
+      "type": "发射特效"
+    }
+  ],
+  "ifs": [
+    {
+      "value": "88500012",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "codeType": 1,
+      "ii": 0,
+      "term": "and",
+      "target": 1,
+      "index": 0,
+      "type": "技能ID"
+    }
+  ]
+}

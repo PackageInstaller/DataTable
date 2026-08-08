@@ -1,0 +1,91 @@
+{
+  "others_num": 0,
+  "ifs": [
+    {
+      "target": 1,
+      "ii": 0,
+      "t": 1,
+      "ptype": "判断",
+      "term": "and",
+      "id": -1,
+      "value": "30005",
+      "index": 0,
+      "codeType": 1,
+      "type": "怪物bid"
+    },
+    {
+      "target": 1,
+      "ii": 1,
+      "t": 1,
+      "ptype": "判断",
+      "term": "and",
+      "value": "2500",
+      "id": -1,
+      "index": 1,
+      "codeType": 1,
+      "type": "概率"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "ptype": "判断",
+      "term": "and",
+      "value": "4",
+      "ii": 2,
+      "index": 2,
+      "codeType": 1,
+      "type": "AI优先级"
+    },
+    {
+      "target": 1,
+      "ii": 3,
+      "t": 1,
+      "ptype": "判断",
+      "term": "and",
+      "value": "3000502",
+      "id": -1,
+      "index": 3,
+      "codeType": 1,
+      "type": "检查CD"
+    },
+    {
+      "target": 1,
+      "ii": 4,
+      "t": 1,
+      "ptype": "判断",
+      "term": "and",
+      "value": ">=;25",
+      "id": -1,
+      "index": 4,
+      "codeType": 1,
+      "type": "玩家距离"
+    }
+  ],
+  "name": "隐身",
+  "actions": [
+    {
+      "target": 1,
+      "ii": 1,
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "value": "3000502_hold;0;0;1000;3;3000502_hold;spell_1;900;;0",
+      "index": 0,
+      "codeType": 2,
+      "type": "蓄力"
+    }
+  ],
+  "ifs_or": [],
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "triggerName": "怪物警觉",
+  "others": [],
+  "others_id": 0,
+  "trigger": 26
+}

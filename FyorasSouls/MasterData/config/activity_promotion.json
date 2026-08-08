@@ -1,0 +1,59 @@
+{
+  "columns": [
+    "id",
+    "type",
+    "name",
+    "condition",
+    "cost",
+    "limited_time",
+    "fulllevel_loop_reward",
+    "payid1",
+    "payid2"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "type": 1,
+      "name": "周卡",
+      "cost": 15000,
+      "limited_time": 7,
+      "payid1": 609
+    },
+    {
+      "id": 2,
+      "type": 2,
+      "name": "挑战战令",
+      "cost": 15000,
+      "limited_time": 14,
+      "fulllevel_loop_reward": 50251,
+      "payid1": 603,
+      "payid2": 604
+    },
+    {
+      "id": 3,
+      "type": 3,
+      "name": "无昼回响战令",
+      "cost": 15000,
+      "limited_time": 14,
+      "fulllevel_loop_reward": 50551,
+      "payid1": 605,
+      "payid2": 606
+    },
+    {
+      "id": 4,
+      "type": 4,
+      "name": "成长基金",
+      "cost": 15000,
+      "limited_time": 255,
+      "payid1": 607
+    },
+    {
+      "id": 5,
+      "type": 4,
+      "name": "成长基金2",
+      "cost": 15000,
+      "limited_time": 255,
+      "payid1": 608
+    }
+  ]
+}

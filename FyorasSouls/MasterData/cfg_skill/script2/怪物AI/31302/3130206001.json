@@ -1,0 +1,126 @@
+{
+  "others_id": 2,
+  "name": "",
+  "ifs": [
+    {
+      "value": "1",
+      "term": "and",
+      "t": 1,
+      "ii": 0,
+      "codeType": 1,
+      "id": -1,
+      "ptype": "判断",
+      "target": 1,
+      "index": 0,
+      "type": "调试模式"
+    },
+    {
+      "value": "3130206001",
+      "term": "and",
+      "t": 1,
+      "ii": 1,
+      "codeType": 1,
+      "id": -1,
+      "ptype": "判断",
+      "target": 1,
+      "index": 1,
+      "type": "监听消息"
+    },
+    {
+      "value": "31302",
+      "term": "and",
+      "t": 1,
+      "ii": 2,
+      "codeType": 1,
+      "id": -1,
+      "ptype": "判断",
+      "target": 1,
+      "index": 2,
+      "type": "怪物bid"
+    }
+  ],
+  "trigger": 32,
+  "ifs_and": [
+    0,
+    1,
+    2
+  ],
+  "ifs_or": [],
+  "actions": [
+    {
+      "value": 16,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "value": 2,
+      "t": 1,
+      "index": 1,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ],
+  "triggerName": "消息事件",
+  "others": [
+    {
+      "id": 0,
+      "parentid": -1,
+      "ifs": [],
+      "codeType": 0,
+      "ifs_and": [],
+      "ifs_or": [],
+      "actions": [],
+      "elses": []
+    },
+    {
+      "id": 1,
+      "parentid": -1,
+      "ifs": [],
+      "codeType": 0,
+      "ifs_and": [],
+      "ifs_or": [],
+      "actions": [],
+      "elses": []
+    },
+    {
+      "id": 2,
+      "parentid": -1,
+      "ifs": [
+        {
+          "value": "<=;6000;0",
+          "term": "and",
+          "t": 3,
+          "ii": 0,
+          "codeType": 1,
+          "id": 2,
+          "ptype": "判断",
+          "target": 1,
+          "index": 0,
+          "type": "生命比例"
+        }
+      ],
+      "codeType": 0,
+      "ifs_and": [
+        0
+      ],
+      "ifs_or": [],
+      "actions": [
+        {
+          "value": "0;3130203;0;",
+          "target": 1,
+          "t": 3,
+          "ii": 1,
+          "codeType": 2,
+          "id": 2,
+          "ptype": "是",
+          "index": 0,
+          "type": "发送消息"
+        }
+      ],
+      "elses": []
+    }
+  ],
+  "others_num": 1
+}

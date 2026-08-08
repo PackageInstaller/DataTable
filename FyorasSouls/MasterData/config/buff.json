@@ -1,0 +1,103 @@
+{
+  "columns": [
+    "id",
+    "buff_name",
+    "type",
+    "explain",
+    "icon",
+    "effect",
+    "anim_loop"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "buff_name": "灼烧",
+      "type": 3,
+      "explain": "每秒损失4%生命值，持续10秒\n每次翻滚可以减少3秒持续时间",
+      "icon": "buff_1",
+      "effect": "debuff_2",
+      "anim_loop": "b"
+    },
+    {
+      "id": 2,
+      "buff_name": "灼烧(敌人)",
+      "type": 3,
+      "explain": "每秒受到伤害者的攻击力*40%的火属性伤害，持续10秒\n每次翻滚可以减少3秒持续时间",
+      "icon": "buff_1",
+      "effect": "debuff_2",
+      "anim_loop": "b"
+    },
+    {
+      "id": 3,
+      "buff_name": "冻伤",
+      "type": 3,
+      "explain": "移动速度降低至当前的70%，翻滚冷却时间增加25%，持续10秒",
+      "icon": "buff_2",
+      "effect": "debuff_3",
+      "anim_loop": "b"
+    },
+    {
+      "id": 4,
+      "buff_name": "冻伤(敌人)",
+      "type": 3,
+      "explain": "移动速度降低至当前的80%，持续10秒",
+      "icon": "buff_2",
+      "effect": "debuff_3",
+      "anim_loop": "b"
+    },
+    {
+      "id": 5,
+      "buff_name": "缠雷",
+      "type": 3,
+      "explain": "受到的最终伤害增加20%，持续10秒",
+      "icon": "buff_3",
+      "effect": "debuff_4",
+      "anim_loop": "b"
+    },
+    {
+      "id": 6,
+      "buff_name": "缠雷(敌人)",
+      "type": 3,
+      "explain": "受到的最终伤害增加10%，持续10秒",
+      "icon": "buff_3",
+      "effect": "debuff_4",
+      "anim_loop": "b"
+    },
+    {
+      "id": 7,
+      "buff_name": "剧毒",
+      "type": 3,
+      "explain": "每秒损失1.5%生命值，持续20秒",
+      "icon": "buff_4",
+      "effect": "debuff_5",
+      "anim_loop": "b"
+    },
+    {
+      "id": 8,
+      "buff_name": "剧毒(敌人)",
+      "type": 3,
+      "explain": "每秒受到伤害者的攻击力*15%的毒属性伤害，持续20秒",
+      "icon": "buff_4",
+      "effect": "debuff_5",
+      "anim_loop": "b"
+    },
+    {
+      "id": 9,
+      "buff_name": "惩戒",
+      "type": 3,
+      "explain": "受到的任何治疗效果降低至当前的50%，持续10秒",
+      "icon": "buff_5",
+      "effect": "debuff_6",
+      "anim_loop": "b"
+    },
+    {
+      "id": 10,
+      "buff_name": "惩戒(敌人)",
+      "type": 3,
+      "explain": "受到的任何治疗效果降低至当前的75%，持续10秒",
+      "icon": "buff_5",
+      "effect": "debuff_6",
+      "anim_loop": "b"
+    }
+  ]
+}

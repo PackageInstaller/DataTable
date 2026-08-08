@@ -1,0 +1,68 @@
+{
+  "name": "",
+  "ifs": [
+    {
+      "value": "23a;1",
+      "term": "and",
+      "t": 1,
+      "ii": 0,
+      "codeType": 1,
+      "id": -1,
+      "ptype": "判断",
+      "target": 1,
+      "index": 0,
+      "type": "蓄力事件"
+    }
+  ],
+  "ifs_and": [
+    0
+  ],
+  "ifs_or": [],
+  "actions": [
+    {
+      "value": "damage_add;5000;5000;0;83500_300023_2;1;0;5#0#1;0",
+      "id": -1,
+      "t": 1,
+      "ii": 1,
+      "codeType": 2,
+      "target": 1,
+      "ptype": "是",
+      "index": 0,
+      "type": "临时属性"
+    },
+    {
+      "value": "0#0;0;0;3;83500_300023_1_a;0;0;0;;0",
+      "id": -1,
+      "t": 1,
+      "ii": 2,
+      "codeType": 2,
+      "target": 1,
+      "ptype": "是",
+      "index": 1,
+      "type": "场景特效"
+    },
+    {
+      "value": "0#0;0;0;2;83500_300023_1_b;0;0;0;;0",
+      "id": -1,
+      "t": 1,
+      "ii": 3,
+      "codeType": 2,
+      "target": 1,
+      "ptype": "是",
+      "index": 2,
+      "type": "场景特效"
+    },
+    {
+      "value": "spell_ad9;0;0;0;0;0;0;0",
+      "id": -1,
+      "t": 1,
+      "ii": 4,
+      "codeType": 2,
+      "target": 1,
+      "ptype": "是",
+      "index": 3,
+      "type": "动作移动"
+    }
+  ],
+  "triggerName": "玩家主动技能"
+}

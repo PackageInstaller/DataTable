@@ -1,0 +1,100 @@
+{
+  "columns": [
+    "id",
+    "name",
+    "group",
+    "sort",
+    "typescope",
+    "icon",
+    "weapon"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "name": "全部（主要装备项）",
+      "group": 1,
+      "sort": 1,
+      "typescope": "1001|1002|1003|1004|1005"
+    },
+    {
+      "id": 2,
+      "name": "武器",
+      "group": 1,
+      "sort": 2,
+      "typescope": 1001,
+      "icon": 1,
+      "weapon": 1
+    },
+    {
+      "id": 3,
+      "name": "头盔",
+      "group": 1,
+      "sort": 4,
+      "typescope": 1003,
+      "icon": 3,
+      "weapon": 1
+    },
+    {
+      "id": 4,
+      "name": "铠甲",
+      "group": 1,
+      "sort": 3,
+      "typescope": 1002,
+      "icon": 2,
+      "weapon": 1
+    },
+    {
+      "id": 5,
+      "name": "戒指",
+      "group": 1,
+      "sort": 5,
+      "typescope": 1004,
+      "icon": 4,
+      "weapon": 1
+    },
+    {
+      "id": 6,
+      "name": "项链",
+      "group": 1,
+      "sort": 6,
+      "typescope": 1005,
+      "icon": 5,
+      "weapon": 1
+    },
+    {
+      "id": 8,
+      "name": "日之印",
+      "group": 2,
+      "sort": 2,
+      "typescope": 1007,
+      "icon": 7,
+      "weapon": 1
+    },
+    {
+      "id": 9,
+      "name": "月之印",
+      "group": 2,
+      "sort": 3,
+      "typescope": 1008,
+      "icon": 8,
+      "weapon": 1
+    },
+    {
+      "id": 10,
+      "name": "契魂",
+      "group": 2,
+      "sort": 4,
+      "typescope": 1009,
+      "icon": 9
+    },
+    {
+      "id": 11,
+      "name": "契约",
+      "group": 2,
+      "sort": 5,
+      "typescope": 1010,
+      "icon": 10,
+      "weapon": 1
+    }
+  ]
+}

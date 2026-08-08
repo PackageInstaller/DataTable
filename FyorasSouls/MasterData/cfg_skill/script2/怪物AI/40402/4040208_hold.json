@@ -1,0 +1,129 @@
+{
+  "triggerName": "蓄力事件",
+  "actions": [
+    {
+      "target": 1,
+      "value": "0#0;0;0;1;85000_4040208_1_a;4040208_hurt1;0;0;;0",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 1,
+      "ptype": "是",
+      "index": 0,
+      "type": "场景特效"
+    },
+    {
+      "target": 1,
+      "value": "0#0;0;0;0;85000_4040208_1_b;4040208_hurt1;0;0;;0",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 2,
+      "ptype": "是",
+      "index": 1,
+      "type": "场景特效"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 2,
+      "value": "0;404020801;0;",
+      "ii": 3,
+      "ptype": "是",
+      "index": 2,
+      "type": "发送消息"
+    },
+    {
+      "target": 1,
+      "value": "0;404020802;0;",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 4,
+      "ptype": "是",
+      "index": 3,
+      "type": "发送消息"
+    },
+    {
+      "target": 1,
+      "value": "0;404020803;0;",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 5,
+      "ptype": "是",
+      "index": 4,
+      "type": "发送消息"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 2,
+      "value": "0;404020804;0;",
+      "ii": 6,
+      "ptype": "是",
+      "index": 5,
+      "type": "发送消息"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 2,
+      "value": "0;404020805;0;",
+      "ii": 7,
+      "ptype": "是",
+      "index": 6,
+      "type": "发送消息"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 2,
+      "value": "0;404020806;0;",
+      "ii": 8,
+      "ptype": "是",
+      "index": 7,
+      "type": "发送消息"
+    }
+  ],
+  "others": [],
+  "name": "",
+  "others_id": 0,
+  "ifs": [
+    {
+      "target": 1,
+      "value": "4040208_hold;1",
+      "t": 1,
+      "codeType": 1,
+      "id": -1,
+      "ii": 0,
+      "ptype": "判断",
+      "index": 0,
+      "term": "and",
+      "type": "蓄力事件"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 1,
+      "value": "40402",
+      "ii": 1,
+      "ptype": "判断",
+      "index": 1,
+      "term": "and",
+      "type": "怪物bid"
+    }
+  ],
+  "others_num": 0,
+  "ifs_and": [
+    0,
+    1
+  ],
+  "trigger": 30,
+  "ifs_or": []
+}

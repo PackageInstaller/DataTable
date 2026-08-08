@@ -1,0 +1,98 @@
+{
+  "triggerName": "玩家主动技能",
+  "name": "",
+  "others_num": 1,
+  "ifs": [
+    {
+      "value": "5020207",
+      "codeType": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "term": "and",
+      "ptype": "判断",
+      "target": 1,
+      "index": 0,
+      "type": "检查CD"
+    },
+    {
+      "value": "5020207",
+      "codeType": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "term": "and",
+      "ptype": "判断",
+      "target": 1,
+      "index": 1,
+      "type": "技能ID"
+    }
+  ],
+  "others_id": 1,
+  "ifs_and": [
+    0,
+    1
+  ],
+  "others": [
+    null,
+    {
+      "elses": [],
+      "parentid": -1,
+      "id": 1,
+      "ifs_or": [],
+      "ifs": [
+        {
+          "value": "ming_yun_level;>=;10;201;0",
+          "codeType": 1,
+          "ptype": "判断",
+          "id": 1,
+          "ii": 0,
+          "term": "and",
+          "t": 3,
+          "target": 1,
+          "index": 0,
+          "type": "角色属性"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "atk|5020207|0;0;5000;0;84000_5020207_1;1|0|1;0;0;3#502020202#1",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "临时属性"
+        },
+        {
+          "value": "5020207;5000;0;0",
+          "ptype": "是",
+          "id": 1,
+          "codeType": 2,
+          "t": 3,
+          "target": 1,
+          "index": 1,
+          "ii": 2,
+          "type": "设置CD"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "value": 1,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ],
+  "trigger": 25,
+  "ifs_or": []
+}

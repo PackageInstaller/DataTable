@@ -1,0 +1,57 @@
+{
+  "triggerName": "玩家主动技能",
+  "name": "",
+  "ifs_or": [],
+  "ifs_and": [
+    0
+  ],
+  "actions": [
+    {
+      "value": "0#0;0;0;5;83500_300001_1;0;0;0;;0",
+      "ptype": "是",
+      "id": -1,
+      "ii": 1,
+      "index": 0,
+      "t": 1,
+      "codeType": 2,
+      "target": 1,
+      "type": "场景特效"
+    },
+    {
+      "value": "5",
+      "t": 1,
+      "index": 1,
+      "id": -1,
+      "ii": 2,
+      "codeType": 2,
+      "target": 1,
+      "ptype": "是",
+      "type": "移除debuff状态"
+    },
+    {
+      "value": "spell_ad8;0;0;0;0;0;0;0",
+      "ptype": "是",
+      "id": -1,
+      "ii": 3,
+      "index": 2,
+      "t": 1,
+      "codeType": 2,
+      "target": 1,
+      "type": "动作移动"
+    }
+  ],
+  "ifs": [
+    {
+      "value": "1a;1",
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "term": "and",
+      "codeType": 1,
+      "target": 1,
+      "index": 0,
+      "ptype": "判断",
+      "type": "蓄力事件"
+    }
+  ]
+}

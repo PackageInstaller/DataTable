@@ -1,0 +1,72 @@
+{
+  "ifs": [
+    {
+      "value": "3090201001",
+      "t": 1,
+      "ptype": "判断",
+      "term": "and",
+      "type": "监听消息",
+      "codeType": 1,
+      "ii": 0,
+      "index": 0,
+      "target": 1,
+      "id": -1
+    }
+  ],
+  "name": "",
+  "others_num": 0,
+  "ifs_or": [],
+  "triggerName": "消息事件",
+  "ifs_and": [
+    0
+  ],
+  "others": [],
+  "trigger": 32,
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "0;0;0;0;0",
+      "ii": 1,
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "codeType": 2,
+      "ptype": "是",
+      "target": 1,
+      "type": "隐身"
+    },
+    {
+      "value": "3090201;1000;4000",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 2,
+      "target": 1,
+      "index": 1,
+      "type": "设置CD"
+    },
+    {
+      "value": "0#2#4;1#0#-45#45;100;-1;0#0;1;60;999999;100;83500_300003_2#83500_300003_1;3090201_hurt;",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "codeType": 2,
+      "ii": 3,
+      "ptype": "是",
+      "index": 2,
+      "type": "发射特效"
+    },
+    {
+      "value": "spell_1;0;0;3#0;0.01;0;0;0",
+      "t": 1,
+      "id": -1,
+      "index": 3,
+      "codeType": 2,
+      "ii": 4,
+      "ptype": "是",
+      "target": 1,
+      "type": "动作移动"
+    }
+  ]
+}

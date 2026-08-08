@@ -1,0 +1,32 @@
+{
+  "columns": [
+    "id",
+    "num",
+    "condition"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "num": 1
+    },
+    {
+      "id": 2,
+      "num": 2
+    },
+    {
+      "id": 3,
+      "num": 3,
+      "condition": "1;2"
+    },
+    {
+      "id": 4,
+      "num": 4,
+      "condition": "1;3"
+    },
+    {
+      "id": 5,
+      "num": 5,
+      "condition": "1;4"
+    }
+  ]
+}

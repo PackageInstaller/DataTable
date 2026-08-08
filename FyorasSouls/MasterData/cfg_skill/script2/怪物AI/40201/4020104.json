@@ -1,0 +1,197 @@
+{
+  "ifs": [
+    {
+      "value": "<=;7500",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "term": "and",
+      "index": 0,
+      "target": 1,
+      "codeType": 1,
+      "type": "生命比例"
+    },
+    {
+      "value": "4020104",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "term": "and",
+      "target": 1,
+      "index": 1,
+      "codeType": 1,
+      "type": "检查CD"
+    },
+    {
+      "value": "40201_jieduan;=;1",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "term": "and",
+      "target": 1,
+      "index": 2,
+      "codeType": 1,
+      "type": "局部变量"
+    },
+    {
+      "value": "40201",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "term": "and",
+      "target": 1,
+      "index": 3,
+      "codeType": 1,
+      "type": "怪物bid"
+    },
+    {
+      "value": "5",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "ii": 4,
+      "term": "and",
+      "target": 1,
+      "index": 4,
+      "codeType": 1,
+      "type": "AI优先级"
+    }
+  ],
+  "others": [
+    {
+      "ifs": [],
+      "id": 0,
+      "actions": [],
+      "parentid": -1,
+      "ifs_or": [],
+      "ifs_and": [],
+      "codeType": 0,
+      "elses": []
+    },
+    {
+      "ifs": [],
+      "id": 1,
+      "actions": [],
+      "parentid": -1,
+      "ifs_or": [],
+      "ifs_and": [],
+      "codeType": 0,
+      "elses": []
+    },
+    null,
+    {
+      "ifs": [],
+      "id": 3,
+      "actions": [],
+      "parentid": 2,
+      "ifs_or": [],
+      "ifs_and": [],
+      "codeType": 0,
+      "elses": []
+    }
+  ],
+  "trigger": 26,
+  "name": "",
+  "ifs_or": [],
+  "others_num": 1,
+  "triggerName": "怪物警觉",
+  "others_id": 2,
+  "actions": [
+    {
+      "value": "special;0;0;0;0;0;",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "target": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;500;0;1;85000_4020104_1_a;",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "index": 1,
+      "target": 1,
+      "codeType": 2,
+      "type": "场景特效"
+    },
+    {
+      "value": "0#0;2133;9999999999;3;85000_40201_buff;",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "target": 1,
+      "index": 2,
+      "codeType": 2,
+      "type": "场景特效"
+    },
+    {
+      "value": "40201_jieduan;=;2",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "ii": 4,
+      "index": 3,
+      "target": 1,
+      "codeType": 2,
+      "type": "局部变量"
+    },
+    {
+      "value": "4020104;0;0;2133;10;4020104_hold_finish;;",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "ii": 5,
+      "target": 1,
+      "index": 4,
+      "codeType": 2,
+      "type": "蓄力"
+    },
+    {
+      "value": "85000_4020104_1_b;0;0;0#0#0;1|2|3;60000;0;0;0;4020104_hurt;0;1000;0;0;0",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "ii": 6,
+      "target": 1,
+      "index": 5,
+      "codeType": 2,
+      "type": "生成标记特效"
+    },
+    {
+      "value": "4020104;9999999000;9999999000",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "ii": 7,
+      "target": 1,
+      "index": 6,
+      "codeType": 2,
+      "type": "设置CD"
+    },
+    {
+      "value": 16,
+      "t": 1,
+      "index": 7,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ],
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "elses": []
+}

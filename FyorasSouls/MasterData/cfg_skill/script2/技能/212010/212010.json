@@ -1,0 +1,57 @@
+{
+  "ifs": [
+    {
+      "value": "212010a;1",
+      "codeType": 1,
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "type": "蓄力事件",
+      "ii": 0,
+      "index": 0,
+      "target": 1,
+      "term": "and"
+    }
+  ],
+  "ifs_or": [],
+  "name": "",
+  "actions": [
+    {
+      "value": "0;0;0;3;83500_320010_2;0",
+      "type": "场景特效",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 1,
+      "index": 0,
+      "target": 1
+    },
+    {
+      "value": "3;4200;10;700;",
+      "type": "屏幕抖动",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 2,
+      "index": 1,
+      "target": 1
+    },
+    {
+      "value": "0#4#-1;1;100;0;0;25;50;5;0;83500_320010_3;212010a",
+      "type": "发射特效",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 3,
+      "index": 2,
+      "target": 1
+    }
+  ],
+  "trigger": 30,
+  "ifs_and": [
+    0
+  ]
+}

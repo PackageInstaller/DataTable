@@ -1,0 +1,63 @@
+{
+  "trigger": 30,
+  "triggerName": "蓄力事件",
+  "name": "",
+  "ifs_and": [
+    0,
+    1
+  ],
+  "ifs": [
+    {
+      "value": "30603",
+      "ptype": "判断",
+      "id": -1,
+      "ii": 0,
+      "index": 0,
+      "t": 1,
+      "codeType": 1,
+      "target": 1,
+      "term": "and",
+      "type": "怪物bid"
+    },
+    {
+      "value": "30603a_hold;1",
+      "ptype": "判断",
+      "id": -1,
+      "ii": 1,
+      "index": 1,
+      "t": 1,
+      "codeType": 1,
+      "target": 1,
+      "term": "and",
+      "type": "蓄力事件"
+    }
+  ],
+  "others_id": 0,
+  "ifs_or": [],
+  "others": [],
+  "others_num": 0,
+  "actions": [
+    {
+      "value": "0;;300;0;20;;200;",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "codeType": 2,
+      "target": 1,
+      "index": 0,
+      "ptype": "是",
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;0;0;5;82000_30603_1_atk;30603a1_hurt|30603a2_hurt;0;1;;0",
+      "t": 1,
+      "index": 1,
+      "id": -1,
+      "ii": 2,
+      "codeType": 2,
+      "target": 1,
+      "ptype": "是",
+      "type": "场景特效"
+    }
+  ]
+}

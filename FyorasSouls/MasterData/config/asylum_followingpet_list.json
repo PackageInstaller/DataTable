@@ -1,0 +1,51 @@
+{
+  "columns": [
+    "id",
+    "name",
+    "quality",
+    "listicon",
+    "showicon",
+    "condition",
+    "xs"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "name": "漂浮的武士刀？（我妻胧月专武）",
+      "quality": 4,
+      "xs": 1
+    },
+    {
+      "id": 2,
+      "name": "菲娜玩偶？\n（菲娜专武）",
+      "quality": 4,
+      "xs": 1
+    },
+    {
+      "id": 3,
+      "name": "一本书怪？\n（赛维娅专武）",
+      "quality": 4,
+      "condition": "giftpack_monthlygift;>=;2",
+      "xs": 1
+    },
+    {
+      "id": 4,
+      "name": "可爱小火龙？\n（芬雷斯特专武）",
+      "quality": 5,
+      "xs": 1
+    },
+    {
+      "id": 5,
+      "name": "唯美蓝玫瑰？\n（嫣歌·啜魂专武）",
+      "quality": 5,
+      "condition": "giftpack_monthlygift;>=;4",
+      "xs": 1
+    },
+    {
+      "id": 6,
+      "name": "娇小芙娅？\n（阿莉雅专武）",
+      "quality": 5,
+      "condition": "giftpack_monthlygift;>=;6"
+    }
+  ]
+}

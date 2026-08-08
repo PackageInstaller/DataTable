@@ -1,0 +1,183 @@
+{
+  "others_num": 2,
+  "name": "",
+  "trigger": 32,
+  "others": [
+    {
+      "codeType": 0,
+      "id": 0,
+      "ifs": [],
+      "ifs_and": [],
+      "ifs_or": [],
+      "elses": [],
+      "actions": [],
+      "parentid": -1
+    },
+    {
+      "codeType": 0,
+      "id": 1,
+      "ifs": [],
+      "ifs_and": [],
+      "ifs_or": [],
+      "elses": [],
+      "actions": [],
+      "parentid": -1
+    },
+    {
+      "codeType": 0,
+      "id": 2,
+      "ifs": [
+        {
+          "value": "5000",
+          "t": 3,
+          "id": 2,
+          "ii": 0,
+          "ptype": "判断",
+          "term": "and",
+          "codeType": 1,
+          "index": 0,
+          "target": 1,
+          "type": "概率"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "ifs_or": [],
+      "elses": [],
+      "actions": [
+        {
+          "value": "3000;4010109;0;0",
+          "t": 3,
+          "id": 2,
+          "ii": 1,
+          "ptype": "是",
+          "codeType": 2,
+          "target": 1,
+          "index": 0,
+          "type": "发送消息"
+        }
+      ],
+      "parentid": -1
+    }
+  ],
+  "others_id": 2,
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "ifs_or": [],
+  "triggerName": "消息事件",
+  "ifs": [
+    {
+      "value": "1",
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "ptype": "判断",
+      "term": "and",
+      "codeType": 1,
+      "index": 0,
+      "target": 1,
+      "type": "调试模式"
+    },
+    {
+      "value": "<=;5000",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "ptype": "判断",
+      "term": "and",
+      "codeType": 1,
+      "index": 1,
+      "target": 1,
+      "type": "生命比例"
+    },
+    {
+      "value": "401020802",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "ptype": "判断",
+      "term": "and",
+      "codeType": 1,
+      "index": 2,
+      "target": 1,
+      "type": "监听消息"
+    },
+    {
+      "value": "40102",
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "ptype": "判断",
+      "term": "and",
+      "codeType": 1,
+      "index": 3,
+      "target": 1,
+      "type": "怪物bid"
+    }
+  ],
+  "actions": [
+    {
+      "value": "0;0;750;3#0#-70#70;60;0;1500;",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "ptype": "是",
+      "codeType": 2,
+      "index": 0,
+      "target": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "lunge1_2;0;0;3#0;0.01;0;;",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "ptype": "是",
+      "codeType": 2,
+      "target": 1,
+      "index": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": 2,
+      "t": 1,
+      "index": 2,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "value": "0#0;1500;0;3;85000_4010108_1;401020802_hurt;",
+      "t": 1,
+      "id": -1,
+      "ii": 4,
+      "ptype": "是",
+      "codeType": 2,
+      "target": 1,
+      "index": 3,
+      "type": "场景特效"
+    },
+    {
+      "value": "401020802;0;0;1500;7;401020802_hold_finish;;;",
+      "t": 1,
+      "id": -1,
+      "ii": 5,
+      "ptype": "是",
+      "codeType": 2,
+      "target": 1,
+      "index": 4,
+      "type": "蓄力"
+    },
+    {
+      "value": 16,
+      "t": 1,
+      "index": 5,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ]
+}

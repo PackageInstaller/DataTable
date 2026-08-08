@@ -1,0 +1,89 @@
+{
+  "actions": [
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "ii": 1,
+      "value": "30203a_hold;0;6;750;4;30203a_hold;attack_1;;;",
+      "ptype": "是",
+      "codeType": 2,
+      "index": 0,
+      "type": "蓄力"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "ii": 2,
+      "value": "30203a;0;2000",
+      "ptype": "是",
+      "codeType": 2,
+      "index": 1,
+      "type": "设置CD"
+    }
+  ],
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "others_id": 0,
+  "name": "",
+  "ifs_or": [],
+  "others_num": 0,
+  "others": [],
+  "triggerName": "怪物警觉",
+  "ifs": [
+    {
+      "target": 1,
+      "value": "2",
+      "t": 1,
+      "ii": 0,
+      "id": -1,
+      "term": "and",
+      "ptype": "判断",
+      "codeType": 1,
+      "index": 0,
+      "type": "AI优先级"
+    },
+    {
+      "target": 1,
+      "value": "<=;35",
+      "t": 1,
+      "ii": 1,
+      "id": -1,
+      "term": "and",
+      "ptype": "判断",
+      "codeType": 1,
+      "index": 1,
+      "type": "玩家距离"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "ii": 2,
+      "value": "30203",
+      "term": "and",
+      "ptype": "判断",
+      "codeType": 1,
+      "index": 2,
+      "type": "怪物bid"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "ii": 3,
+      "value": "30203a",
+      "term": "and",
+      "ptype": "判断",
+      "codeType": 1,
+      "index": 3,
+      "type": "检查CD"
+    }
+  ],
+  "trigger": 26
+}

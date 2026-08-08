@@ -1,0 +1,136 @@
+{
+  "others_id": 1,
+  "name": "怪物警觉",
+  "ifs": [
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "ii": 0,
+      "codeType": 1,
+      "value": "<=;25",
+      "term": "and",
+      "ptype": "判断",
+      "index": 0,
+      "type": "玩家距离"
+    },
+    {
+      "target": 1,
+      "term": "and",
+      "t": 1,
+      "ii": 1,
+      "codeType": 1,
+      "id": -1,
+      "ptype": "判断",
+      "value": "3090406",
+      "index": 1,
+      "type": "检查CD"
+    },
+    {
+      "target": 1,
+      "term": "and",
+      "t": 1,
+      "ii": 2,
+      "codeType": 1,
+      "value": "30904",
+      "ptype": "判断",
+      "id": -1,
+      "index": 2,
+      "type": "怪物bid"
+    },
+    {
+      "target": 1,
+      "term": "and",
+      "t": 1,
+      "ii": 3,
+      "codeType": 1,
+      "value": "4",
+      "ptype": "判断",
+      "id": -1,
+      "index": 3,
+      "type": "AI优先级"
+    }
+  ],
+  "trigger": 26,
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "ifs_or": [],
+  "actions": [
+    {
+      "value": 1,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "ii": 2,
+      "codeType": 2,
+      "value": "3090406;4000;8000;0",
+      "ptype": "是",
+      "index": 1,
+      "type": "设置CD"
+    }
+  ],
+  "triggerName": "怪物警觉",
+  "others": [
+    null,
+    {
+      "id": 1,
+      "parentid": -1,
+      "ifs": [
+        {
+          "target": 1,
+          "term": "and",
+          "t": 3,
+          "ii": 0,
+          "codeType": 1,
+          "id": 1,
+          "ptype": "判断",
+          "value": "0",
+          "index": 0,
+          "type": "目标方位"
+        }
+      ],
+      "codeType": 0,
+      "ifs_and": [
+        0
+      ],
+      "ifs_or": [],
+      "actions": [
+        {
+          "target": 1,
+          "id": 1,
+          "t": 3,
+          "ii": 1,
+          "codeType": 2,
+          "value": "spell_6;;300;0;-30;;;",
+          "ptype": "是",
+          "index": 0,
+          "type": "动作移动"
+        }
+      ],
+      "elses": [
+        {
+          "target": 1,
+          "id": 1,
+          "t": 3,
+          "ii": 1,
+          "codeType": 3,
+          "value": "spell_6;;300;3#0;-30;;;",
+          "ptype": "否",
+          "index": 0,
+          "type": "动作移动"
+        }
+      ]
+    }
+  ],
+  "others_num": 1
+}

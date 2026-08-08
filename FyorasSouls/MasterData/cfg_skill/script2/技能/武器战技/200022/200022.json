@@ -1,0 +1,72 @@
+{
+  "ifs_or": [],
+  "name": "",
+  "others_num": 0,
+  "triggerName": "蓄力事件",
+  "trigger": 30,
+  "actions": [
+    {
+      "value": "spell_ap7;0;0;0;0;0;0",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 1,
+      "target": 1,
+      "index": 0,
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;0;0;1;83100_200022_1;200022a",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 2,
+      "target": 1,
+      "index": 1,
+      "type": "场景特效"
+    },
+    {
+      "value": "0#0;0;20000;1;83100_200022_2_a;200022b",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 3,
+      "target": 1,
+      "index": 2,
+      "type": "场景特效"
+    },
+    {
+      "value": "0#0;0;20000;0;83100_200022_2_b;200022c",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 4,
+      "target": 1,
+      "index": 3,
+      "type": "场景特效"
+    }
+  ],
+  "others": [],
+  "others_id": 0,
+  "ifs_and": [
+    0
+  ],
+  "ifs": [
+    {
+      "value": "200022a",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "codeType": 1,
+      "ii": 0,
+      "term": "and",
+      "index": 0,
+      "target": 1,
+      "type": "蓄力事件"
+    }
+  ]
+}

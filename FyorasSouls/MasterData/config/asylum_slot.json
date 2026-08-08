@@ -1,0 +1,72 @@
+{
+  "columns": [
+    "id",
+    "type",
+    "num",
+    "condition",
+    "condition_xs",
+    "xs"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "type": 1,
+      "num": 1,
+      "xs": 1
+    },
+    {
+      "id": 2,
+      "type": 1,
+      "num": 2,
+      "xs": 1
+    },
+    {
+      "id": 3,
+      "type": 1,
+      "num": 3,
+      "condition": "1;1;2",
+      "xs": 1
+    },
+    {
+      "id": 4,
+      "type": 1,
+      "num": 4,
+      "condition": "1;1;3",
+      "xs": 1
+    },
+    {
+      "id": 5,
+      "type": 1,
+      "num": 5,
+      "condition": "1;1;4",
+      "xs": 1
+    },
+    {
+      "id": 6,
+      "type": 2,
+      "num": 1,
+      "xs": 1
+    },
+    {
+      "id": 7,
+      "type": 2,
+      "num": 2,
+      "condition": "1;1;2",
+      "xs": 1
+    },
+    {
+      "id": 8,
+      "type": 2,
+      "num": 3,
+      "condition": "1;1;3",
+      "xs": 1
+    },
+    {
+      "id": 9,
+      "type": 2,
+      "num": 4,
+      "condition": "2;103;4",
+      "condition_xs": "giftpack_monthlygift;>=;2"
+    }
+  ]
+}

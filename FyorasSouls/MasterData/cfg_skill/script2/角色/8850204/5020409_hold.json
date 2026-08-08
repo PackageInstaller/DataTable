@@ -1,0 +1,126 @@
+{
+  "triggerName": "玩家主动技能",
+  "name": "",
+  "others_num": 1,
+  "ifs": [
+    {
+      "value": "5020409",
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "index": 0,
+      "ptype": "判断",
+      "codeType": 1,
+      "target": 1,
+      "term": "and",
+      "type": "技能ID"
+    },
+    {
+      "value": "5020409",
+      "codeType": 1,
+      "ptype": "判断",
+      "id": -1,
+      "ii": 1,
+      "t": 1,
+      "target": 1,
+      "index": 1,
+      "term": "and",
+      "type": "检查CD"
+    }
+  ],
+  "others_id": 2,
+  "trigger": 25,
+  "ifs_or": [],
+  "others": [
+    {
+      "elses": [],
+      "parentid": -1,
+      "ifs_or": [],
+      "id": 0,
+      "ifs": [
+        {
+          "value": "ming_yun_level;>=;20;204;0",
+          "ptype": "判断",
+          "id": 0,
+          "ii": 0,
+          "index": 0,
+          "t": 3,
+          "codeType": 1,
+          "target": 1,
+          "term": "and",
+          "type": "角色属性"
+        },
+        {
+          "value": "1#-30#30",
+          "codeType": 1,
+          "ptype": "判断",
+          "id": 0,
+          "ii": 1,
+          "t": 3,
+          "index": 1,
+          "target": 7,
+          "term": "and",
+          "type": "目标方位"
+        }
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": 1,
+          "t": 3,
+          "index": 0,
+          "codeType": 2,
+          "type": "分支"
+        },
+        {
+          "value": 2,
+          "t": 3,
+          "index": 1,
+          "codeType": 2,
+          "type": "分支"
+        },
+        {
+          "value": "normal_puncture|5020409|0;2000;5000;0;84000_5020409_1_a;0;0;5;0;0",
+          "t": 3,
+          "id": 0,
+          "ii": 3,
+          "codeType": 2,
+          "index": 2,
+          "target": 1,
+          "ptype": "是",
+          "type": "临时属性"
+        },
+        {
+          "value": "5020409;5000;0;0",
+          "t": 3,
+          "id": 0,
+          "ii": 4,
+          "codeType": 2,
+          "index": 3,
+          "target": 1,
+          "ptype": "是",
+          "type": "设置CD"
+        }
+      ],
+      "ifs_and": [
+        0,
+        1
+      ]
+    },
+    null,
+    null
+  ],
+  "actions": [
+    {
+      "value": 0,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ],
+  "ifs_and": [
+    0,
+    1
+  ]
+}

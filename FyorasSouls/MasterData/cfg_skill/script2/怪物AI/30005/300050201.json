@@ -1,0 +1,136 @@
+{
+  "ifs_or": [],
+  "trigger": 32,
+  "name": "",
+  "ifs": [
+    {
+      "value": "0#-30#30",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "type": "目标方位",
+      "term": "and",
+      "target": 1,
+      "index": 0,
+      "ii": 0
+    },
+    {
+      "value": "30005",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "type": "怪物bid",
+      "term": "and",
+      "target": 1,
+      "index": 1,
+      "ii": 1
+    },
+    {
+      "value": "300050201",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "type": "监听消息",
+      "term": "and",
+      "target": 1,
+      "index": 2,
+      "ii": 2
+    }
+  ],
+  "others": [
+    null,
+    {
+      "ifs_or": [],
+      "id": 1,
+      "codeType": 0,
+      "elses": [
+        {
+          "value": "3000501_hold;0;6;850;4;3000501_hold;lunge_1;2600",
+          "t": 3,
+          "id": 1,
+          "ptype": "否",
+          "codeType": 3,
+          "type": "蓄力",
+          "target": 1,
+          "index": 0,
+          "ii": 1
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "actions": [
+        {
+          "value": "30005_hold;0;6;500;4;30005a_hold;attack;1000;0;0",
+          "t": 3,
+          "id": 1,
+          "ptype": "是",
+          "codeType": 2,
+          "type": "蓄力",
+          "target": 1,
+          "index": 0,
+          "ii": 1
+        }
+      ],
+      "ifs": [
+        {
+          "value": "<=;20",
+          "t": 3,
+          "id": 1,
+          "ptype": "判断",
+          "codeType": 1,
+          "type": "玩家距离",
+          "term": "and",
+          "target": 1,
+          "index": 0,
+          "ii": 0
+        }
+      ],
+      "parentid": -1
+    }
+  ],
+  "elses": [
+    {
+      "value": "500;300050201;1;",
+      "t": 1,
+      "id": -1,
+      "ptype": "否",
+      "codeType": 3,
+      "type": "发送消息",
+      "target": 1,
+      "index": 0,
+      "ii": 1
+    },
+    {
+      "value": "0;;250;3#0;1;0;0;",
+      "t": 1,
+      "id": -1,
+      "ptype": "否",
+      "codeType": 3,
+      "type": "动作移动",
+      "target": 1,
+      "index": 1,
+      "ii": 2
+    }
+  ],
+  "ifs_and": [
+    0,
+    1,
+    2
+  ],
+  "others_num": 1,
+  "actions": [
+    {
+      "value": 1,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ],
+  "others_id": 1,
+  "triggerName": "消息事件"
+}

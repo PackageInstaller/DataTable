@@ -1,0 +1,61 @@
+{
+  "trigger": 30,
+  "name": "",
+  "ifs": [
+    {
+      "value": "300005_hold_finish;1",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "index": 0,
+      "type": "蓄力事件",
+      "target": 1,
+      "term": "and",
+      "ii": 0
+    }
+  ],
+  "others": [],
+  "ifs_and": [
+    0
+  ],
+  "ifs_or": [],
+  "others_num": 0,
+  "actions": [
+    {
+      "value": "0#0;0;0;5#0#6;83500_300005_1;0#0;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "type": "场景特效",
+      "index": 0,
+      "target": 1,
+      "ii": 1
+    },
+    {
+      "value": "fire_3|5_fire|0;1;45000;0;83500_300005_2;0;0;2;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "type": "临时属性",
+      "target": 1,
+      "index": 1,
+      "ii": 2
+    },
+    {
+      "value": "spell_ap6;0;0;0;0;0;0;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "type": "动作移动",
+      "target": 1,
+      "index": 2,
+      "ii": 3
+    }
+  ],
+  "others_id": 0,
+  "triggerName": "蓄力事件"
+}

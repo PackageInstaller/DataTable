@@ -1,0 +1,118 @@
+{
+  "ifs_and": [
+    0,
+    1
+  ],
+  "ifs": [
+    {
+      "value": "200023",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "ii": 0,
+      "target": 1,
+      "index": 0,
+      "type": "检查CD"
+    },
+    {
+      "value": "200023",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "ii": 1,
+      "index": 1,
+      "target": 1,
+      "type": "技能ID"
+    }
+  ],
+  "name": "",
+  "actions": [
+    {
+      "value": "spell_ad6;0;300;0;30;0;0;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 1,
+      "index": 0,
+      "target": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "300;0;0;;",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 2,
+      "index": 1,
+      "target": 1,
+      "type": "无敌时刻"
+    },
+    {
+      "value": "0;1#100;300;300;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 3,
+      "index": 2,
+      "target": 1,
+      "type": "隐身"
+    },
+    {
+      "value": "0#0;300;0;1;83100_200023_1;0;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "index": 3,
+      "codeType": 2,
+      "ii": 4,
+      "ptype": "是",
+      "target": 1,
+      "type": "场景特效"
+    },
+    {
+      "value": "0#0;300;0;1;83100_200023_2;200023_hurt;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 5,
+      "target": 1,
+      "index": 4,
+      "type": "场景特效"
+    },
+    {
+      "value": "1.125;150;50;300",
+      "ii": 6,
+      "t": 1,
+      "index": 5,
+      "id": -1,
+      "codeType": 2,
+      "ptype": "是",
+      "target": 1,
+      "type": "屏幕抖动"
+    },
+    {
+      "value": "200023;3000;3000",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 7,
+      "index": 6,
+      "target": 1,
+      "type": "设置CD"
+    }
+  ],
+  "others_num": 0,
+  "triggerName": "玩家主动技能",
+  "others": [],
+  "trigger": 25,
+  "others_id": 0,
+  "ifs_or": []
+}

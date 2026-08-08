@@ -1,0 +1,72 @@
+{
+  "ifs": [
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "term": "or",
+      "codeType": 1,
+      "value": "3020101",
+      "ii": 0,
+      "ptype": "判断",
+      "index": 0,
+      "type": "监听消息"
+    }
+  ],
+  "ifs_and": [],
+  "others_num": 0,
+  "name": "",
+  "actions": [
+    {
+      "target": 1,
+      "value": "2000;0",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 1,
+      "ptype": "是",
+      "index": 0,
+      "type": "怪物死亡"
+    },
+    {
+      "target": 1,
+      "value": "3020101;10000;10000",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 2,
+      "ptype": "是",
+      "index": 1,
+      "type": "设置CD"
+    },
+    {
+      "target": 1,
+      "value": ";;4500;0;1;;0",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 3,
+      "ptype": "是",
+      "index": 2,
+      "type": "动作移动"
+    },
+    {
+      "target": 1,
+      "value": "0;0;4500;4500;0",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 4,
+      "ptype": "是",
+      "index": 3,
+      "type": "隐身"
+    }
+  ],
+  "triggerName": "消息事件",
+  "others": [],
+  "ifs_or": [
+    0
+  ],
+  "others_id": 0,
+  "trigger": 32
+}

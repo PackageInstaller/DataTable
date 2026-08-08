@@ -1,0 +1,59 @@
+{
+  "ifs": [
+    {
+      "value": "201025",
+      "type": "检查CD",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "ii": 0,
+      "index": 0,
+      "target": 1,
+      "term": "and"
+    },
+    {
+      "value": "201025",
+      "codeType": 1,
+      "term": "and",
+      "id": -1,
+      "ptype": "判断",
+      "type": "技能ID",
+      "ii": 1,
+      "index": 1,
+      "target": 1,
+      "t": 1
+    }
+  ],
+  "name": "",
+  "actions": [
+    {
+      "value": "201025;0;0;2000;4;201025a;hold_ad3b;1000",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "type": "蓄力",
+      "ii": 1,
+      "index": 0,
+      "target": 1
+    },
+    {
+      "value": "201025;2000",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "type": "设置CD",
+      "ii": 2,
+      "index": 1,
+      "target": 1
+    }
+  ],
+  "ifs_or": [],
+  "ifs_and": [
+    0,
+    1
+  ],
+  "trigger": 25
+}

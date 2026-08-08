@@ -1,0 +1,72 @@
+{
+  "ifs": [
+    {
+      "value": "202022_hold_finish;1",
+      "ptype": "判断",
+      "t": 1,
+      "codeType": 1,
+      "target": 1,
+      "term": "and",
+      "id": -1,
+      "index": 0,
+      "ii": 0,
+      "type": "蓄力事件"
+    }
+  ],
+  "ifs_or": [],
+  "actions": [
+    {
+      "value": "spell_ap6;0;0;0;0;0;0;0",
+      "ptype": "是",
+      "t": 1,
+      "codeType": 2,
+      "target": 1,
+      "id": -1,
+      "index": 0,
+      "ii": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "31101;30000;-5;0;0;all|2000",
+      "ptype": "是",
+      "t": 1,
+      "codeType": 2,
+      "target": 1,
+      "id": -1,
+      "index": 1,
+      "ii": 2,
+      "type": "召唤精灵"
+    },
+    {
+      "value": "0#0;0;0;1#-5#15;83100_202022_1;;0;0;;0",
+      "ptype": "是",
+      "t": 1,
+      "index": 2,
+      "id": -1,
+      "target": 1,
+      "codeType": 2,
+      "ii": 3,
+      "type": "场景特效"
+    },
+    {
+      "value": "0#0;0;0;1#-5#15;83100_202022_2;;0;0;;0",
+      "ptype": "是",
+      "t": 1,
+      "codeType": 2,
+      "target": 1,
+      "id": -1,
+      "index": 3,
+      "ii": 4,
+      "type": "场景特效"
+    }
+  ],
+  "name": "",
+  "trigger": 30,
+  "triggerName": "蓄力事件",
+  "ifs_and": [
+    0
+  ],
+  "others": [],
+  "others_id": 0,
+  "others_num": 0
+}

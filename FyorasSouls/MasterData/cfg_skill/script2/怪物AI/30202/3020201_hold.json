@@ -1,0 +1,61 @@
+{
+  "ifs": [
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "term": "and",
+      "codeType": 1,
+      "value": "3020201_hold;1",
+      "ii": 0,
+      "ptype": "判断",
+      "index": 0,
+      "type": "蓄力事件"
+    }
+  ],
+  "ifs_and": [
+    0
+  ],
+  "others_num": 0,
+  "name": "",
+  "actions": [
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 2,
+      "value": "3020202;5000;5000",
+      "ii": 1,
+      "ptype": "是",
+      "index": 0,
+      "type": "设置CD"
+    },
+    {
+      "target": 1,
+      "value": "30201;30000;10;0;0",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 2,
+      "ptype": "是",
+      "index": 1,
+      "type": "召唤精灵"
+    },
+    {
+      "target": 1,
+      "value": "3020201;1000000000;100000000",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 3,
+      "ptype": "是",
+      "index": 2,
+      "type": "设置CD"
+    }
+  ],
+  "triggerName": "蓄力事件",
+  "others": [],
+  "others_id": 0,
+  "trigger": 30,
+  "ifs_or": []
+}

@@ -1,0 +1,70 @@
+{
+  "ifs": [
+    {
+      "value": "212001",
+      "type": "技能ID",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "ii": 0,
+      "target": 1,
+      "index": 0,
+      "term": "and"
+    },
+    {
+      "value": "212001",
+      "type": "检查CD",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "ii": 1,
+      "target": 1,
+      "index": 1,
+      "term": "and"
+    }
+  ],
+  "ifs_or": [],
+  "ifs_and": [
+    0,
+    1
+  ],
+  "actions": [
+    {
+      "value": "1;1500;10;100;",
+      "type": "屏幕抖动",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 1,
+      "index": 0,
+      "target": 1
+    },
+    {
+      "value": "212001;10000;0;1",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "type": "设置CD",
+      "ii": 2,
+      "index": 1,
+      "target": 1
+    },
+    {
+      "value": "212001;0;0;1500;6;212001a;hold_ap3a;500",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "type": "蓄力",
+      "ii": 3,
+      "index": 2,
+      "target": 1
+    }
+  ],
+  "name": "",
+  "trigger": 25
+}

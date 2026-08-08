@@ -1,0 +1,72 @@
+{
+  "ifs": [
+    {
+      "value": "201008_hold_finish;1",
+      "t": 1,
+      "ptype": "判断",
+      "id": -1,
+      "term": "and",
+      "codeType": 1,
+      "ii": 0,
+      "index": 0,
+      "target": 1,
+      "type": "蓄力事件"
+    }
+  ],
+  "name": "",
+  "ifs_or": [],
+  "ifs_and": [
+    0
+  ],
+  "others_num": 0,
+  "triggerName": "蓄力事件",
+  "others": [],
+  "trigger": 30,
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "spell_ad5;0;0;0;0;0;0;0",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "codeType": 2,
+      "ii": 1,
+      "target": 1,
+      "index": 0,
+      "type": "动作移动"
+    },
+    {
+      "value": "0#5#5;1#1#-20#20;0;-1;0#0;1;35;99999;150;83100_201008_3#83100_201008_2;201008_hurt2;",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "codeType": 2,
+      "ii": 2,
+      "index": 1,
+      "target": 1,
+      "type": "发射特效"
+    },
+    {
+      "value": "1.125;150;50;100",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "codeType": 2,
+      "ii": 3,
+      "index": 2,
+      "target": 1,
+      "type": "屏幕抖动"
+    },
+    {
+      "value": "0#0;0;0;5;83100_201008_1;201008_hurt1;0;0;;83100_201008_2",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "codeType": 2,
+      "ii": 4,
+      "index": 3,
+      "target": 1,
+      "type": "场景特效"
+    }
+  ]
+}

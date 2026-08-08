@@ -1,0 +1,39 @@
+{
+  "others_num": 0,
+  "ifs_or": [],
+  "name": "",
+  "actions": [
+    {
+      "value": "buff_add;2000;600000;0;eat_ef2_buff;0;0;5;0",
+      "id": -1,
+      "t": 1,
+      "target": 1,
+      "ii": 1,
+      "codeType": 2,
+      "index": 0,
+      "ptype": "是",
+      "type": "临时属性"
+    }
+  ],
+  "others_id": 0,
+  "ifs_and": [
+    0
+  ],
+  "trigger": 28,
+  "ifs": [
+    {
+      "value": "90050",
+      "id": -1,
+      "t": 1,
+      "term": "and",
+      "target": 1,
+      "ii": 0,
+      "codeType": 1,
+      "index": 0,
+      "ptype": "判断",
+      "type": "使用物品id"
+    }
+  ],
+  "triggerName": "使用道具",
+  "others": []
+}

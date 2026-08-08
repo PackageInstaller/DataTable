@@ -1,0 +1,98 @@
+{
+  "triggerName": "玩家主动技能",
+  "name": "",
+  "others_num": 0,
+  "ifs": [
+    {
+      "value": "<=;60",
+      "term": "and",
+      "ptype": "判断",
+      "id": -1,
+      "ii": 0,
+      "codeType": 1,
+      "target": 1,
+      "index": 0,
+      "t": 1,
+      "type": "玩家距离"
+    },
+    {
+      "value": "5010402",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "codeType": 1,
+      "target": 1,
+      "index": 1,
+      "ptype": "判断",
+      "type": "检查CD"
+    },
+    {
+      "value": "5010402",
+      "term": "and",
+      "ptype": "判断",
+      "id": -1,
+      "ii": 2,
+      "codeType": 1,
+      "index": 2,
+      "target": 1,
+      "t": 1,
+      "type": "技能ID"
+    }
+  ],
+  "others_id": 0,
+  "ifs_and": [
+    0,
+    1,
+    2
+  ],
+  "trigger": 25,
+  "others": [],
+  "actions": [
+    {
+      "value": "4#60;200;0;1;84000_5010402_1_b;role_5010402_hurt#800;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "codeType": 2,
+      "index": 0,
+      "target": 1,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "value": "4#60;0;0;0;84000_5010402_1_a;0;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "codeType": 2,
+      "index": 1,
+      "target": 1,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "value": "5010402;1000;0;0",
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "codeType": 2,
+      "index": 2,
+      "target": 1,
+      "ptype": "是",
+      "type": "设置CD"
+    },
+    {
+      "value": "5010402hurt;0;0;0;;0;0;0;0;1",
+      "t": 1,
+      "index": 3,
+      "id": -1,
+      "ii": 4,
+      "codeType": 2,
+      "target": 1,
+      "ptype": "是",
+      "type": "临时属性"
+    }
+  ],
+  "ifs_or": []
+}

@@ -1,0 +1,160 @@
+{
+  "ifs": [
+    {
+      "value": "1",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "codeType": 1,
+      "ii": 0,
+      "ptype": "判断",
+      "index": 0,
+      "type": "调试模式"
+    },
+    {
+      "value": "4080102001",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "index": 1,
+      "codeType": 1,
+      "ii": 1,
+      "ptype": "判断",
+      "target": 1,
+      "type": "监听消息"
+    },
+    {
+      "value": "40801",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "codeType": 1,
+      "ii": 2,
+      "ptype": "判断",
+      "index": 2,
+      "type": "怪物bid"
+    }
+  ],
+  "name": "",
+  "ifs_or": [],
+  "others_num": 1,
+  "ifs_and": [
+    0,
+    1,
+    2
+  ],
+  "triggerName": "消息事件",
+  "others": [
+    {
+      "codeType": 0,
+      "elses": [],
+      "ifs": [],
+      "parentid": -1,
+      "ifs_or": [],
+      "ifs_and": [],
+      "id": 0,
+      "actions": []
+    },
+    {
+      "codeType": 0,
+      "elses": [],
+      "ifs": [],
+      "parentid": -1,
+      "ifs_or": [],
+      "ifs_and": [],
+      "id": 1,
+      "actions": []
+    },
+    {
+      "codeType": 0,
+      "elses": [
+        {
+          "value": "0#0;366;0;5;85000_4080102_1;4080102_hurt;0;0;;0",
+          "t": 3,
+          "id": 2,
+          "target": 1,
+          "codeType": 3,
+          "ii": 1,
+          "ptype": "否",
+          "index": 0,
+          "type": "场景特效"
+        },
+        {
+          "value": "0;0;350;0;25;0;0;0",
+          "t": 3,
+          "id": 2,
+          "target": 1,
+          "codeType": 3,
+          "ii": 2,
+          "ptype": "否",
+          "index": 1,
+          "type": "动作移动"
+        }
+      ],
+      "ifs": [
+        {
+          "value": "0#-80#80",
+          "term": "and",
+          "t": 3,
+          "id": 2,
+          "target": 1,
+          "codeType": 1,
+          "ii": 0,
+          "ptype": "判断",
+          "index": 0,
+          "type": "目标方位"
+        }
+      ],
+      "parentid": -1,
+      "ifs_or": [],
+      "ifs_and": [
+        0
+      ],
+      "id": 2,
+      "actions": [
+        {
+          "value": "0#0;366;0;5;85000_4080102_1;4080102_hurt;0;0;;0",
+          "t": 3,
+          "id": 2,
+          "target": 1,
+          "codeType": 2,
+          "ii": 1,
+          "ptype": "是",
+          "index": 0,
+          "type": "场景特效"
+        },
+        {
+          "value": "0;0;350;3#1#0#0#20;0;0;0;0",
+          "t": 3,
+          "id": 2,
+          "target": 1,
+          "codeType": 2,
+          "ii": 2,
+          "ptype": "是",
+          "index": 1,
+          "type": "动作移动"
+        }
+      ]
+    }
+  ],
+  "trigger": 32,
+  "others_id": 2,
+  "actions": [
+    {
+      "value": 16,
+      "codeType": 2,
+      "t": 1,
+      "index": 0,
+      "type": "分支"
+    },
+    {
+      "value": 2,
+      "codeType": 2,
+      "t": 1,
+      "index": 1,
+      "type": "分支"
+    }
+  ]
+}

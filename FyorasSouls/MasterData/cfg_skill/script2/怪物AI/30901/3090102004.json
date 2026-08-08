@@ -1,0 +1,180 @@
+{
+  "ifs": [
+    {
+      "value": "3090102004",
+      "t": 1,
+      "ptype": "判断",
+      "term": "and",
+      "type": "监听消息",
+      "codeType": 1,
+      "ii": 0,
+      "target": 1,
+      "index": 0,
+      "id": -1
+    }
+  ],
+  "name": "",
+  "others_num": 1,
+  "ifs_or": [],
+  "triggerName": "消息事件",
+  "ifs_and": [
+    0
+  ],
+  "others": [
+    {
+      "codeType": 0,
+      "elses": [
+        {
+          "value": "500;0;0;;",
+          "t": 5,
+          "id": 0,
+          "index": 0,
+          "codeType": 3,
+          "ii": 1,
+          "ptype": "否",
+          "target": 1,
+          "type": "无敌时刻"
+        },
+        {
+          "value": "500;3090102005;0;",
+          "t": 5,
+          "id": 0,
+          "index": 1,
+          "codeType": 3,
+          "ii": 2,
+          "ptype": "否",
+          "target": 1,
+          "type": "发送消息"
+        }
+      ],
+      "ifs": [
+        {
+          "value": "3090100",
+          "t": 5,
+          "id": 0,
+          "term": "and",
+          "index": 0,
+          "codeType": 1,
+          "ii": 0,
+          "ptype": "判断",
+          "target": 1,
+          "type": "检查CD"
+        },
+        {
+          "value": "<=;20",
+          "t": 5,
+          "id": 0,
+          "term": "and",
+          "type": "玩家距离",
+          "codeType": 1,
+          "ii": 1,
+          "target": 1,
+          "index": 1,
+          "ptype": "判断"
+        }
+      ],
+      "parentid": 1,
+      "ifs_or": [],
+      "ifs_and": [
+        0,
+        1
+      ],
+      "id": 0,
+      "actions": [
+        {
+          "value": "0;3090100001;0;",
+          "t": 5,
+          "id": 0,
+          "index": 0,
+          "codeType": 2,
+          "ii": 1,
+          "ptype": "是",
+          "target": 1,
+          "type": "发送消息"
+        }
+      ]
+    },
+    {
+      "codeType": 0,
+      "elses": [
+        {
+          "value": 0,
+          "codeType": 3,
+          "t": 3,
+          "index": 0,
+          "type": "分支"
+        }
+      ],
+      "ifs": [
+        {
+          "value": ">;20",
+          "t": 3,
+          "id": 1,
+          "term": "and",
+          "type": "玩家距离",
+          "codeType": 1,
+          "ii": 0,
+          "index": 0,
+          "target": 1,
+          "ptype": "判断"
+        },
+        {
+          "value": "3090101",
+          "t": 3,
+          "id": 1,
+          "term": "and",
+          "type": "检查CD",
+          "codeType": 1,
+          "ii": 1,
+          "index": 1,
+          "target": 1,
+          "ptype": "判断"
+        },
+        {
+          "value": "0#-30#30",
+          "t": 3,
+          "id": 1,
+          "term": "and",
+          "type": "目标方位",
+          "codeType": 1,
+          "ii": 2,
+          "index": 2,
+          "target": 1,
+          "ptype": "判断"
+        }
+      ],
+      "parentid": -1,
+      "ifs_or": [],
+      "ifs_and": [
+        0,
+        1,
+        2
+      ],
+      "id": 1,
+      "actions": [
+        {
+          "value": "0;3090101002;0;",
+          "t": 3,
+          "id": 1,
+          "target": 1,
+          "codeType": 2,
+          "ii": 1,
+          "ptype": "是",
+          "index": 0,
+          "type": "发送消息"
+        }
+      ]
+    }
+  ],
+  "trigger": 32,
+  "others_id": 0,
+  "actions": [
+    {
+      "value": 1,
+      "codeType": 2,
+      "t": 1,
+      "index": 0,
+      "type": "分支"
+    }
+  ]
+}

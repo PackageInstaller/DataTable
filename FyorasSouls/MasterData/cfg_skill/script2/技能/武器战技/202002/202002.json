@@ -1,0 +1,46 @@
+{
+  "ifs": [
+    {
+      "value": "202002",
+      "codeType": 1,
+      "t": 1,
+      "id": -1,
+      "term": "and",
+      "ptype": "判断",
+      "type": "技能ID",
+      "ii": 0,
+      "index": 0,
+      "target": 1
+    }
+  ],
+  "name": "",
+  "actions": [
+    {
+      "value": "0;0;0;3;83100_202002_1;202002a",
+      "type": "场景特效",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 1,
+      "index": 0,
+      "target": 1
+    },
+    {
+      "value": "500;20;83100_202002_1;202002b",
+      "type": "吸怪物",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 2,
+      "index": 1,
+      "target": 1
+    }
+  ],
+  "ifs_and": [
+    0
+  ],
+  "trigger": 25,
+  "ifs_or": []
+}

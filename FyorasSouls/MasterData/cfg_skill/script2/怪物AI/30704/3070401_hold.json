@@ -1,0 +1,63 @@
+{
+  "ifs": [
+    {
+      "value": "30704",
+      "t": 1,
+      "id": -1,
+      "term": "and",
+      "index": 0,
+      "codeType": 1,
+      "ii": 0,
+      "ptype": "判断",
+      "target": 1,
+      "type": "怪物bid"
+    },
+    {
+      "value": "3070401_hold;1",
+      "t": 1,
+      "id": -1,
+      "term": "and",
+      "index": 1,
+      "codeType": 1,
+      "ii": 1,
+      "ptype": "判断",
+      "target": 1,
+      "type": "蓄力事件"
+    }
+  ],
+  "name": "",
+  "ifs_or": [],
+  "others_num": 0,
+  "triggerName": "蓄力事件",
+  "others": [],
+  "trigger": 30,
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "0#0;0;0;0#0#0;82000_3070401_1_b;;0;1;;0",
+      "t": 1,
+      "id": -1,
+      "index": 0,
+      "codeType": 2,
+      "ii": 1,
+      "ptype": "是",
+      "target": 1,
+      "type": "场景特效"
+    },
+    {
+      "value": "0#0;0;0;1#0#0;82000_3070401_1_a;3070401a_hurt|3070401a_hurt|3070401b_hurt;0;1;;0",
+      "t": 1,
+      "id": -1,
+      "index": 1,
+      "codeType": 2,
+      "ii": 2,
+      "ptype": "是",
+      "target": 1,
+      "type": "场景特效"
+    }
+  ],
+  "ifs_and": [
+    0,
+    1
+  ]
+}

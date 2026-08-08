@@ -48,3 +48,4 @@
 |       AetherGazer       |  大眼(深空之眼)  |            国服 Json            |
 |         MoeCove         |    苍蓝避风港    |             国服 Lua             |
 | DengekiBunkoCROSSINGVOID | 电击文库灵境交错 |         国服 Lua + Json         |
+|       FyorasSouls       |     芙娅之魂     |            国服 Json            |

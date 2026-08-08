@@ -1,0 +1,54 @@
+{
+  "columns": [
+    "id",
+    "type",
+    "name",
+    "condition",
+    "limited_time"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "type": 1,
+      "name": "日礼包",
+      "limited_time": 1
+    },
+    {
+      "id": 2,
+      "type": 1,
+      "name": "周礼包",
+      "limited_time": 7
+    },
+    {
+      "id": 3,
+      "type": 1,
+      "name": "月礼包",
+      "condition": "giftpack_monthlygift;>=;30",
+      "limited_time": 30
+    },
+    {
+      "id": 4,
+      "type": 2,
+      "name": "每日臻选",
+      "limited_time": 1
+    },
+    {
+      "id": 5,
+      "type": 3,
+      "name": "6元档",
+      "limited_time": 7
+    },
+    {
+      "id": 6,
+      "type": 3,
+      "name": "25元档",
+      "limited_time": 7
+    },
+    {
+      "id": 7,
+      "type": 4,
+      "name": "累充荣典",
+      "limited_time": 255
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "triggerName": "消息事件",
+  "name": "",
+  "others_num": 1,
+  "ifs": [
+    {
+      "value": "502020601",
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "type": "监听消息",
+      "codeType": 1,
+      "target": 1,
+      "index": 0,
+      "ptype": "判断",
+      "term": "and"
+    }
+  ],
+  "others_id": 1,
+  "ifs_and": [
+    0
+  ],
+  "others": [
+    null,
+    {
+      "elses": [],
+      "parentid": -1,
+      "id": 1,
+      "ifs": [
+        {
+          "value": "ming_yun_level;>=;5;201;0",
+          "ptype": "判断",
+          "id": 1,
+          "ii": 0,
+          "type": "角色属性",
+          "codeType": 1,
+          "target": 1,
+          "index": 0,
+          "t": 3,
+          "term": "and"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "role_anger;0;20;0;0",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "角色属性"
+        }
+      ],
+      "ifs_or": []
+    }
+  ],
+  "actions": [
+    {
+      "value": 1,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ],
+  "trigger": 32,
+  "ifs_or": []
+}

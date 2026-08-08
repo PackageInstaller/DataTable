@@ -1,0 +1,63 @@
+{
+  "ifs_or": [],
+  "ifs": [
+    {
+      "target": 1,
+      "id": -1,
+      "ptype": "判断",
+      "t": 1,
+      "ii": 0,
+      "value": "3500",
+      "codeType": 1,
+      "term": "and",
+      "index": 0,
+      "type": "概率"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "ptype": "判断",
+      "t": 1,
+      "ii": 1,
+      "value": "3070203",
+      "codeType": 1,
+      "term": "and",
+      "index": 1,
+      "type": "监听消息"
+    }
+  ],
+  "name": "",
+  "others_id": 0,
+  "ifs_and": [
+    0,
+    1
+  ],
+  "others_num": 0,
+  "actions": [
+    {
+      "target": 1,
+      "id": -1,
+      "ptype": "是",
+      "t": 1,
+      "ii": 1,
+      "value": "3070201;7000;10000",
+      "codeType": 2,
+      "index": 0,
+      "type": "设置CD"
+    },
+    {
+      "target": 1,
+      "value": "3070201_hold;0;5;1400;5;3070201_hold;spell_1_1;1000;;",
+      "ptype": "是",
+      "t": 1,
+      "type": "蓄力事件",
+      "id": -1,
+      "codeType": 2,
+      "index": 1,
+      "ii": 2
+    }
+  ],
+  "trigger": 32,
+  "others": [],
+  "triggerName": "消息事件"
+}

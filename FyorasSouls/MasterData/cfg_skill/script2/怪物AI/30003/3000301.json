@@ -1,0 +1,78 @@
+{
+  "ifs": [
+    {
+      "target": 1,
+      "ptype": "判断",
+      "t": 1,
+      "term": "and",
+      "codeType": 1,
+      "id": -1,
+      "value": "",
+      "index": 0,
+      "ii": 0,
+      "type": "玩家喝药中"
+    },
+    {
+      "target": 1,
+      "ptype": "判断",
+      "t": 1,
+      "term": "and",
+      "codeType": 1,
+      "id": -1,
+      "value": "3000301",
+      "index": 1,
+      "ii": 1,
+      "type": "检查CD"
+    },
+    {
+      "target": 1,
+      "ptype": "判断",
+      "t": 1,
+      "term": "and",
+      "codeType": 1,
+      "id": -1,
+      "value": "30003",
+      "index": 2,
+      "ii": 2,
+      "type": "怪物bid"
+    },
+    {
+      "target": 1,
+      "ptype": "判断",
+      "t": 1,
+      "term": "and",
+      "codeType": 1,
+      "value": "4",
+      "id": -1,
+      "index": 3,
+      "ii": 3,
+      "type": "AI优先级"
+    }
+  ],
+  "ifs_or": [],
+  "name": "",
+  "others_num": 0,
+  "others": [],
+  "triggerName": "怪物警觉",
+  "actions": [
+    {
+      "target": 1,
+      "ptype": "是",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "value": "3000301_hold;0;0;2000;6;3000301_hold;spell_1;3000;",
+      "index": 0,
+      "ii": 1,
+      "type": "蓄力"
+    }
+  ],
+  "trigger": 26,
+  "others_id": 0,
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3
+  ]
+}

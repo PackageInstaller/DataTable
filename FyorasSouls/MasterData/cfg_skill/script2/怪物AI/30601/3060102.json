@@ -1,0 +1,124 @@
+{
+  "others_num": 0,
+  "name": "怪物警觉",
+  "triggerName": "怪物警觉",
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "0#0;1033;0;5;82000_3060102_1;3060102_hurt|3060102_hurt|3060102_hurt|3060102a_hurt;;1;;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "ii": 1,
+      "codeType": 2,
+      "target": 1,
+      "index": 0,
+      "type": "场景特效"
+    },
+    {
+      "value": "0;;1900;3#0#-45#45;15;;850;",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "ii": 2,
+      "codeType": 2,
+      "target": 1,
+      "index": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "3060102_hold;0;1;2850;7;3060102_hold;spell_2;1000;;",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "ii": 3,
+      "codeType": 2,
+      "target": 1,
+      "index": 2,
+      "type": "蓄力"
+    },
+    {
+      "value": "3060102;8000;8000",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "ii": 4,
+      "codeType": 2,
+      "target": 1,
+      "index": 3,
+      "type": "设置CD"
+    }
+  ],
+  "trigger": 26,
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "others": [],
+  "ifs": [
+    {
+      "value": "3060102",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "term": "and",
+      "ii": 0,
+      "codeType": 1,
+      "index": 0,
+      "target": 1,
+      "type": "检查CD"
+    },
+    {
+      "value": "30601",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "term": "and",
+      "ii": 1,
+      "codeType": 1,
+      "index": 1,
+      "target": 1,
+      "type": "怪物bid"
+    },
+    {
+      "value": "<=;25",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "term": "and",
+      "ii": 2,
+      "codeType": 1,
+      "index": 2,
+      "target": 1,
+      "type": "玩家距离"
+    },
+    {
+      "value": "0#-45#45",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "term": "and",
+      "ii": 3,
+      "codeType": 1,
+      "index": 3,
+      "target": 1,
+      "type": "目标方位"
+    },
+    {
+      "value": "5",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "term": "and",
+      "ii": 4,
+      "codeType": 1,
+      "index": 4,
+      "target": 1,
+      "type": "AI优先级"
+    }
+  ],
+  "ifs_or": []
+}

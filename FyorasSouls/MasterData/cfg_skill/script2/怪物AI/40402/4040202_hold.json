@@ -1,0 +1,187 @@
+{
+  "triggerName": "蓄力事件",
+  "actions": [
+    {
+      "target": 1,
+      "value": "0#0;0;0;1;85000_4040202_1_a;4040202_hurt1#0;0;0;;0",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 1,
+      "ptype": "是",
+      "index": 0,
+      "type": "场景特效"
+    },
+    {
+      "value": 1,
+      "t": 1,
+      "index": 1,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ],
+  "others": [
+    {
+      "id": 0,
+      "actions": [
+        {
+          "target": 1,
+          "value": "0;1;1;0#0#0;0;1600;0;85000_4040201_3_a;1;0;4040202_hurt2;0;0;0;1600;1",
+          "t": 5,
+          "codeType": 2,
+          "id": 0,
+          "ii": 1,
+          "ptype": "是",
+          "index": 0,
+          "type": "生成标记特效"
+        },
+        {
+          "target": 1,
+          "id": 0,
+          "t": 5,
+          "codeType": 2,
+          "value": "85000_4040201_2_a;1;1;0#0#0;1|2|3;1600;0;85000_4040201_3_b;0;0;4040202_hurt2;0;0;0;1600;1",
+          "ii": 2,
+          "ptype": "是",
+          "index": 1,
+          "type": "生成标记特效"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "codeType": 0,
+      "ifs": [
+        {
+          "target": 1,
+          "value": "5000",
+          "t": 5,
+          "codeType": 1,
+          "id": 0,
+          "term": "and",
+          "ptype": "判断",
+          "index": 0,
+          "ii": 0,
+          "type": "概率"
+        }
+      ],
+      "parentid": 1,
+      "ifs_or": [],
+      "elses": [
+        {
+          "target": 1,
+          "value": "0;1;1;0#0#0;0;2400;0;85000_4040201_3_a;1;0;4040202_hurt2;0;0;0;2400;1",
+          "t": 5,
+          "codeType": 3,
+          "id": 0,
+          "ii": 1,
+          "ptype": "否",
+          "index": 0,
+          "type": "生成标记特效"
+        },
+        {
+          "target": 1,
+          "id": 0,
+          "t": 5,
+          "codeType": 3,
+          "value": "85000_4040201_2_a;1;1;0#0#0;1|2|3;2400;0;85000_4040201_3_b;0;0;4040202_hurt2;0;0;0;2400;1",
+          "ii": 2,
+          "ptype": "否",
+          "index": 1,
+          "type": "生成标记特效"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "actions": [
+        {
+          "target": 1,
+          "value": "85000_4040201_2_a;1;1;0#0#0;1|2|3;800;0;85000_4040201_3_b;0;0;4040202_hurt2;0;0;0;800;1",
+          "t": 3,
+          "codeType": 2,
+          "id": 1,
+          "ii": 1,
+          "ptype": "是",
+          "index": 0,
+          "type": "生成标记特效"
+        },
+        {
+          "target": 1,
+          "id": 1,
+          "t": 3,
+          "codeType": 2,
+          "value": "0;1;1;0#0#0;0;800;0;85000_4040201_3_a;1;0;4040202_hurt2;0;0;0;800;1",
+          "ii": 2,
+          "ptype": "是",
+          "index": 1,
+          "type": "生成标记特效"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "codeType": 0,
+      "ifs": [
+        {
+          "target": 1,
+          "value": "3333",
+          "t": 3,
+          "codeType": 1,
+          "id": 1,
+          "term": "and",
+          "ptype": "判断",
+          "index": 0,
+          "ii": 0,
+          "type": "概率"
+        }
+      ],
+      "parentid": -1,
+      "ifs_or": [],
+      "elses": [
+        {
+          "value": 0,
+          "t": 3,
+          "index": 0,
+          "codeType": 3,
+          "type": "分支"
+        }
+      ]
+    }
+  ],
+  "name": "",
+  "others_id": 0,
+  "ifs": [
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 1,
+      "value": "4040202_hold;1",
+      "term": "and",
+      "ptype": "判断",
+      "index": 0,
+      "ii": 0,
+      "type": "蓄力事件"
+    },
+    {
+      "target": 1,
+      "value": "40402",
+      "t": 1,
+      "codeType": 1,
+      "id": -1,
+      "term": "and",
+      "ptype": "判断",
+      "index": 1,
+      "ii": 1,
+      "type": "怪物bid"
+    }
+  ],
+  "others_num": 1,
+  "ifs_and": [
+    0,
+    1
+  ],
+  "trigger": 30,
+  "ifs_or": []
+}

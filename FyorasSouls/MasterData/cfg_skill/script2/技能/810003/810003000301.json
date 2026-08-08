@@ -1,0 +1,50 @@
+{
+  "ifs_or": [],
+  "actions": [
+    {
+      "value": "1;2;0;3500;5000;12500;10000;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "type": "造成伤害",
+      "codeType": 2,
+      "index": 0,
+      "target": 1,
+      "ii": 1
+    }
+  ],
+  "name": "",
+  "others": [
+    null,
+    {
+      "ifs_or": [],
+      "actions": [],
+      "ifs": [],
+      "codeType": 0,
+      "id": 1,
+      "ifs_and": [],
+      "parentid": -1,
+      "elses": []
+    }
+  ],
+  "trigger": 29,
+  "ifs_and": [
+    0
+  ],
+  "ifs": [
+    {
+      "value": "810003000301",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "type": "伤害事件",
+      "codeType": 1,
+      "index": 0,
+      "target": 1,
+      "ii": 0
+    }
+  ],
+  "others_id": 1,
+  "others_num": 1
+}

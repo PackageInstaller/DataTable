@@ -1,0 +1,72 @@
+{
+  "others": [],
+  "triggerName": "蓄力事件",
+  "actions": [
+    {
+      "target": 1,
+      "value": ";;2500;3;60;;0",
+      "t": 1,
+      "ii": 1,
+      "id": -1,
+      "codeType": 2,
+      "ptype": "是",
+      "index": 0,
+      "type": "动作移动"
+    },
+    {
+      "target": 1,
+      "value": "2500;3020101;1;",
+      "t": 1,
+      "ii": 2,
+      "id": -1,
+      "codeType": 2,
+      "ptype": "是",
+      "index": 1,
+      "type": "发送消息"
+    },
+    {
+      "target": 1,
+      "value": "0#0;2500;0;1;82000_3020101_1_a;3020101_hurt#0",
+      "t": 1,
+      "ii": 3,
+      "id": -1,
+      "codeType": 2,
+      "ptype": "是",
+      "index": 2,
+      "type": "场景特效"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "ii": 4,
+      "value": "0#0;2500;0;0;82000_3020101_1_b;#0",
+      "codeType": 2,
+      "ptype": "是",
+      "index": 3,
+      "type": "场景特效"
+    }
+  ],
+  "others_num": 0,
+  "ifs_and": [
+    0
+  ],
+  "trigger": 30,
+  "ifs": [
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "ii": 0,
+      "term": "and",
+      "codeType": 1,
+      "ptype": "判断",
+      "value": "30201_hold",
+      "index": 0,
+      "type": "蓄力事件"
+    }
+  ],
+  "others_id": 0,
+  "name": "",
+  "ifs_or": []
+}

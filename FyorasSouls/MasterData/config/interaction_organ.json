@@ -1,0 +1,128 @@
+{
+  "columns": [
+    "id",
+    "name",
+    "type",
+    "control_logic",
+    "decrypt"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "name": "机关1",
+      "type": 1,
+      "control_logic": 1,
+      "decrypt": 1001
+    },
+    {
+      "id": 2,
+      "name": "机关2",
+      "type": 1,
+      "control_logic": "2|2;3;4;5",
+      "decrypt": 1002
+    },
+    {
+      "id": 3,
+      "name": "机关3",
+      "type": 1,
+      "control_logic": "2|2;3;4;5",
+      "decrypt": 1002
+    },
+    {
+      "id": 4,
+      "name": "机关4",
+      "type": 1,
+      "control_logic": "2|2;3;4;5",
+      "decrypt": 1002
+    },
+    {
+      "id": 5,
+      "name": "机关5",
+      "type": 1,
+      "control_logic": "2|2;3;4;5",
+      "decrypt": 1002
+    },
+    {
+      "id": 6,
+      "name": "机关6",
+      "type": 1,
+      "decrypt": 1006
+    },
+    {
+      "id": 7,
+      "name": "机关7",
+      "type": 1,
+      "decrypt": 1007
+    },
+    {
+      "id": 8,
+      "name": "机关8",
+      "type": 1,
+      "decrypt": 1008
+    },
+    {
+      "id": 9,
+      "name": "机关9",
+      "type": 1,
+      "decrypt": 1009
+    },
+    {
+      "id": 10,
+      "name": "机关10",
+      "type": 1,
+      "decrypt": 1010
+    },
+    {
+      "id": 1001,
+      "name": "机关条件门1",
+      "type": 2,
+      "decrypt": 70026
+    },
+    {
+      "id": 1002,
+      "name": "机关条件门2",
+      "type": 2,
+      "decrypt": 70039
+    },
+    {
+      "id": 1003,
+      "name": "机关条件门3",
+      "type": 2
+    },
+    {
+      "id": 1004,
+      "name": "机关条件门4",
+      "type": 2
+    },
+    {
+      "id": 1005,
+      "name": "机关条件门5",
+      "type": 2
+    },
+    {
+      "id": 1006,
+      "name": "机关条件门6",
+      "type": 2
+    },
+    {
+      "id": 1007,
+      "name": "机关条件门7",
+      "type": 2
+    },
+    {
+      "id": 1008,
+      "name": "机关条件门8",
+      "type": 2
+    },
+    {
+      "id": 1009,
+      "name": "机关条件门9",
+      "type": 2
+    },
+    {
+      "id": 1010,
+      "name": "机关条件门10",
+      "type": 2
+    }
+  ]
+}

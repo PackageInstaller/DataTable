@@ -1,0 +1,96 @@
+{
+  "ifs_or": [],
+  "trigger": 30,
+  "name": "",
+  "others_id": 0,
+  "others": [],
+  "ifs_and": [
+    0,
+    1
+  ],
+  "others_num": 0,
+  "actions": [
+    {
+      "value": "0;0;1000;4;30;0;0;",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "type": "动作移动",
+      "target": 1,
+      "index": 0,
+      "ii": 1
+    },
+    {
+      "value": "1000;300050201;1;",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "type": "发送消息",
+      "target": 1,
+      "index": 1,
+      "ii": 2
+    },
+    {
+      "value": "1000;0;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "type": "无敌时刻",
+      "target": 1,
+      "index": 2,
+      "ii": 3
+    },
+    {
+      "value": "0;0;1000;1000;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "type": "隐身",
+      "target": 1,
+      "index": 3,
+      "ii": 4
+    },
+    {
+      "value": "3000502;12000;18000",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "type": "设置CD",
+      "target": 1,
+      "index": 4,
+      "ii": 5
+    }
+  ],
+  "ifs": [
+    {
+      "value": "30005",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "type": "怪物bid",
+      "term": "and",
+      "target": 1,
+      "index": 0,
+      "ii": 0
+    },
+    {
+      "value": "3000502_hold;1",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "type": "蓄力事件",
+      "term": "and",
+      "target": 1,
+      "index": 1,
+      "ii": 1
+    }
+  ],
+  "triggerName": "蓄力事件"
+}

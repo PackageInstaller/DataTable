@@ -1,0 +1,39 @@
+{
+  "trigger": 29,
+  "name": "",
+  "triggerName": "伤害事件",
+  "others_num": 0,
+  "actions": [
+    {
+      "value": "1;4;5;20000;0;0;0;0",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "ii": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "造成伤害"
+    }
+  ],
+  "others_id": 0,
+  "ifs_and": [
+    0
+  ],
+  "ifs_or": [],
+  "others": [],
+  "ifs": [
+    {
+      "value": "4900508_hurt",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "ii": 0,
+      "ptype": "判断",
+      "index": 0,
+      "codeType": 1,
+      "type": "伤害事件"
+    }
+  ]
+}
