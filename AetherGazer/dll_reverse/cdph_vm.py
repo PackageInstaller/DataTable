@@ -6,7 +6,7 @@ M32 = 0xFFFFFFFF
 
 _VM_TEXT = None
 CASES = None
-# 壳 VM 的 256 个 opcode 实现（IDA Hex-Rays 反编译 sub_1806E11F0 导出，
+# 反编译 sub_1806E11F0 导出
 _VM_PATH = Path(__file__).resolve().parent / "vm_full.txt"
 
 
