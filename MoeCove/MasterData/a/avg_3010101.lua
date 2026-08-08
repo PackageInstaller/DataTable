@@ -1,0 +1,123 @@
+local avg_3010101Table = {
+                [1] = {
+                        id = 1,
+                        type = 1,
+                        title = "U-81",
+                        showCharacter = 10009,
+                        left = 10009,
+                        center = nil,
+                        right = nil,
+                        action = "U81_默认",
+                        content = "呼……呼……啊，完、完了！天怎么黑了？",
+                },
+
+                [2] = {
+                        id = 2,
+                        type = 1,
+                        title = "皇家方舟",
+                        showCharacter = 10014,
+                        left = nil,
+                        center = nil,
+                        right = 10014,
+                        action = "皇家方舟_默认",
+                        content = "最讨厌<color=#FFDA4D>夜战</color>了。",
+                },
+
+                [3] = {
+                        id = 3,
+                        type = 1,
+                        title = "U-81",
+                        showCharacter = 10009,
+                        left = 10009,
+                        center = nil,
+                        right = nil,
+                        action = "U81_默认",
+                        content = "夜战？",
+                },
+
+                [4] = {
+                        id = 4,
+                        type = 1,
+                        title = "皇家方舟",
+                        showCharacter = 10014,
+                        left = nil,
+                        center = nil,
+                        right = 10014,
+                        action = "皇家方舟_默认",
+                        content = "是的，<color=#FFDA4D>航母</color>在<color=#FFDA4D>夜战</color>中攻击距离将受到限制。",
+                },
+
+                [5] = {
+                        id = 5,
+                        type = 1,
+                        title = "基德",
+                        showCharacter = 10002,
+                        left = nil,
+                        center = nil,
+                        right = 10002,
+                        action = "基德_笑",
+                        content = "<color=#FFDA4D>驱逐舰</color>在<color=#FFDA4D>夜战</color>比较有优势，造成的伤害有所增加。",
+                },
+
+                [6] = {
+                        id = 6,
+                        type = 1,
+                        title = "U-81",
+                        showCharacter = 10009,
+                        left = 10009,
+                        center = nil,
+                        right = nil,
+                        action = "U81_默认",
+                        content = "还有我什么移动不了？航速特别慢？",
+                },
+
+                [7] = {
+                        id = 7,
+                        type = 1,
+                        title = "基德",
+                        showCharacter = 10002,
+                        left = nil,
+                        center = nil,
+                        right = 10002,
+                        action = "基德_默认",
+                        content = "那是因为你现在正处于<color=#FFDA4D>浅海</color>海域中，航行受到了限制。",
+                },
+
+                [8] = {
+                        id = 8,
+                        type = 1,
+                        title = "基德",
+                        showCharacter = 10002,
+                        left = nil,
+                        center = nil,
+                        right = 10002,
+                        action = "基德_默认",
+                        content = "在不同的<color=#FFDA4D>海域</color>中，不同舰种的航行消耗各不相同。",
+                },
+
+                [9] = {
+                        id = 9,
+                        type = 1,
+                        title = "基德",
+                        showCharacter = 10002,
+                        left = nil,
+                        center = nil,
+                        right = 10002,
+                        action = "基德_默认",
+                        content = "可以尝试<color=#FFDA4D>调整镜头</color>到<color=#FFDA4D>俯视视角</color>，就能直观的观察地形了。",
+                },
+
+                [10] = {
+                        id = 10,
+                        type = 1,
+                        title = "基德",
+                        showCharacter = 10002,
+                        left = nil,
+                        center = nil,
+                        right = 10002,
+                        action = "基德_默认",
+                        content = "更多的战斗技巧，后续慢慢摸索！",
+                },
+
+}
+return avg_3010101Table

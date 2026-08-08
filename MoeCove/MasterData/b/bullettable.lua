@@ -1,0 +1,423 @@
+---@class BulletTable
+---@field public id string
+---@field public delay integer
+---@field public SoundResource string
+---@field public preLoad integer
+---@field public isLoop integer
+---@field public shakeEffect table
+---@field public shakeEntry table
+---@field public shakeSustain integer
+---@field public shakeDecay table
+
+---@type BulletTable[]
+local BulletTable = {
+                ["Bullet_B"] = {
+                        id = "Bullet_B",
+                        delay = 0,
+                        SoundResource = "fight_die",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["Bullet_R"] = {
+                        id = "Bullet_R",
+                        delay = 0,
+                        SoundResource = "",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["Bullet_Y"] = {
+                        id = "Bullet_Y",
+                        delay = 0,
+                        SoundResource = "",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["bullet1"] = {
+                        id = "bullet1",
+                        delay = 0,
+                        SoundResource = "",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["bullet2"] = {
+                        id = "bullet2",
+                        delay = 0,
+                        SoundResource = "",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["bullet3"] = {
+                        id = "bullet3",
+                        delay = 0,
+                        SoundResource = "",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["bullet4"] = {
+                        id = "bullet4",
+                        delay = 0,
+                        SoundResource = "",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["fj1"] = {
+                        id = "fj1",
+                        delay = 0,
+                        SoundResource = "plane1",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["fj2"] = {
+                        id = "fj2",
+                        delay = 0,
+                        SoundResource = "plane1",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["fj3"] = {
+                        id = "fj3",
+                        delay = 0,
+                        SoundResource = "plane1",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["fj4"] = {
+                        id = "fj4",
+                        delay = 0,
+                        SoundResource = "plane1",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["fj5"] = {
+                        id = "fj5",
+                        delay = 0,
+                        SoundResource = "plane1",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["fj6"] = {
+                        id = "fj6",
+                        delay = 0,
+                        SoundResource = "plane1",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["fj7"] = {
+                        id = "fj7",
+                        delay = 0,
+                        SoundResource = "plane1",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["fj8"] = {
+                        id = "fj8",
+                        delay = 0,
+                        SoundResource = "plane1",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["fj9"] = {
+                        id = "fj9",
+                        delay = 0,
+                        SoundResource = "plane2",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["fj10"] = {
+                        id = "fj10",
+                        delay = 0,
+                        SoundResource = "plane2",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["fj11"] = {
+                        id = "fj11",
+                        delay = 0,
+                        SoundResource = "plane2",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["fj12"] = {
+                        id = "fj12",
+                        delay = 0,
+                        SoundResource = "plane2",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["fj13"] = {
+                        id = "fj13",
+                        delay = 0,
+                        SoundResource = "plane2",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["fj14"] = {
+                        id = "fj14",
+                        delay = 0,
+                        SoundResource = "plane2",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["jz"] = {
+                        id = "jz",
+                        delay = 0,
+                        SoundResource = "plane4",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["jz2"] = {
+                        id = "jz2",
+                        delay = 0,
+                        SoundResource = "plane4",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["pd2"] = {
+                        id = "pd2",
+                        delay = 0,
+                        SoundResource = "",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["pd3"] = {
+                        id = "pd3",
+                        delay = 0,
+                        SoundResource = "fight_yulei",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["pd4"] = {
+                        id = "pd4",
+                        delay = 0,
+                        SoundResource = "",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["pd5"] = {
+                        id = "pd5",
+                        delay = 0,
+                        SoundResource = "",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["pd6"] = {
+                        id = "pd6",
+                        delay = 0,
+                        SoundResource = "fight_yulei",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {0.6,2},
+                        shakeEntry = {"",0.2},
+                        shakeSustain = 0.25,
+                        shakeDecay = {"",0.1},
+                },
+
+                ["pd7"] = {
+                        id = "pd7",
+                        delay = 0,
+                        SoundResource = "fight_yulei",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["plane1"] = {
+                        id = "plane1",
+                        delay = 0,
+                        SoundResource = "plane2",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["wuninipd"] = {
+                        id = "wuninipd",
+                        delay = 0,
+                        SoundResource = "fight_yulei",
+                        preLoad = 0,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+                ["2001"] = {
+                        id = "2001",
+                        delay = 0,
+                        SoundResource = "",
+                        preLoad = 1,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {},
+                        shakeSustain = 0,
+                        shakeDecay = {},
+                },
+
+                ["2002"] = {
+                        id = "2002",
+                        delay = 0,
+                        SoundResource = "",
+                        preLoad = 1,
+                        isLoop = 0,
+                        shakeEffect = {},
+                        shakeEntry = {},
+                        shakeSustain = 0,
+                        shakeDecay = {},
+                },
+
+                ["3001"] = {
+                        id = "3001",
+                        delay = 0,
+                        SoundResource = "fight_add_debuff",
+                        preLoad = 0,
+                        isLoop = 1,
+                        shakeEffect = {},
+                        shakeEntry = {"",0},
+                        shakeSustain = 0,
+                        shakeDecay = {"",0.3},
+                },
+
+}
+return BulletTable

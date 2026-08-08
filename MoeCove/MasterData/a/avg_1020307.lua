@@ -1,0 +1,70 @@
+local avg_1020307Table = {
+                [1] = {
+                        id = 1,
+                        type = 1,
+                        titleCensored = "瑾",
+                        title = "明石",
+                        showCharacter = 10004,
+                        left = 10004,
+                        center = nil,
+                        right = nil,
+                        action = "明石_默认",
+                        content = "刚刚那束光是？？？",
+                        voice = 104031,
+                },
+
+                [2] = {
+                        id = 2,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = nil,
+                        center = nil,
+                        right = 10006,
+                        action = "重庆_默认",
+                        content = "那是敦刻尔克的<color=#FFDA4D>专长效果</color>。如果在1次行动中没有进行过攻击，则可以获得移动力加成。",
+                        voice = 106059,
+                },
+
+                [3] = {
+                        id = 3,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = nil,
+                        center = nil,
+                        right = 10006,
+                        action = "重庆_默认",
+                        content = "我的专长是，击败[潜艇]或[驱逐舰]单位时，可以获得额外的行动机会。",
+                        voice = nil,
+                },
+
+                [4] = {
+                        id = 4,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = nil,
+                        center = nil,
+                        right = 10006,
+                        action = "重庆_默认",
+                        contentCensored = "则瑾你的专长是，为友军进行维修后，可以附加额外的增益效果。",
+                        content = "则明石你的专长是，为友军进行维修后，可以附加额外的增益效果。",
+                        voice = nil,
+                },
+
+                [5] = {
+                        id = 5,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = nil,
+                        center = nil,
+                        right = 10006,
+                        action = "重庆_默认",
+                        content = "详细效果可以通过<color=#FFDA4D>点击角色</color>查看。",
+                        voice = nil,
+                },
+
+}
+return avg_1020307Table

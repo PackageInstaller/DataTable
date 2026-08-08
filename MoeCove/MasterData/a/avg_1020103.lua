@@ -1,0 +1,71 @@
+local avg_1020103Table = {
+                [1] = {
+                        id = 1,
+                        type = 1,
+                        titleCensored = "瑾",
+                        title = "明石",
+                        showCharacter = 10004,
+                        left = nil,
+                        center = nil,
+                        right = 10004,
+                        action = "明石_默认",
+                        content = "修理完毕！呼~好险好险。",
+                        voice = nil,
+                },
+
+                [2] = {
+                        id = 2,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = 10006,
+                        center = nil,
+                        right = nil,
+                        action = "重庆_默认",
+                        contentCensored = "谢谢瑾，多亏有你在呢！",
+                        content = "谢谢明石，多亏有你在呢！",
+                        voice = nil,
+                },
+
+                [3] = {
+                        id = 3,
+                        type = 1,
+                        titleCensored = "瑾",
+                        title = "明石",
+                        showCharacter = 10004,
+                        left = nil,
+                        center = nil,
+                        right = 10004,
+                        action = "明石_默认",
+                        content = "小事一桩啦~注意敌人的攻势，万一<color=#FFDA4D>中破</color>就糟了。",
+                        voice = 104038,
+                },
+
+                [4] = {
+                        id = 4,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = 10006,
+                        center = nil,
+                        right = nil,
+                        action = "重庆_闭眼",
+                        content = "是呢……指挥官也请注意这点。",
+                        voice = 106059,
+                },
+
+                [5] = {
+                        id = 5,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = 10006,
+                        center = nil,
+                        right = nil,
+                        action = "重庆_默认",
+                        content = "当我们遭到太多攻击时很容易进入<color=#FFDA4D>中破</color>、<color=#FFDA4D>大破</color>状态，这个时候我们发挥的力量会严重受限，对敌人造成的打击大幅削弱。",
+                        voice = nil,
+                },
+
+}
+return avg_1020103Table

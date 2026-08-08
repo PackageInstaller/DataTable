@@ -46,3 +46,4 @@
 |     MAkeDrama     |    MAkeDrama    |            韩服 Json            |
 |   TenkeiParadox   |       天启       |             Dmm Json             |
 |    AetherGazer    |  大眼(深空之眼)  |            国服 Json            |
+|      MoeCove      |    苍蓝避风港    |             国服 Lua             |

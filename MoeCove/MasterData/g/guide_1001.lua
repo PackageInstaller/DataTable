@@ -1,0 +1,55 @@
+local guide_1001Table = {
+    
+                [1] = {    
+                        id = 1,
+                        cutId = 1,
+                        actType = 5,
+                        target = 28001,
+                        parameter1 = "surprised",
+                        parameter2 = nil,
+                        parameter3 = nil,
+                        parameter4 = nil,
+                        parameter5 = nil,
+                        parameter6 = nil,
+                        parameter7 = nil,
+                        secenid = 10001,
+                        localization1 = nil,
+                        localization2 = nil,
+                },
+
+                [2] = {    
+                        id = 2,
+                        cutId = 2,
+                        actType = 4,
+                        target = 28001,
+                        parameter1 = 2,
+                        parameter2 = 1,
+                        parameter3 = 1,
+                        parameter4 = "功能开启了",
+                        parameter5 = nil,
+                        parameter6 = "吕佐夫",
+                        parameter7 = 2,
+                        secenid = 10001,
+                        localization1 = nil,
+                        localization2 = nil,
+                },
+
+                [3] = {    
+                        id = 3,
+                        cutId = 3,
+                        actType = 14,
+                        target = nil,
+                        parameter1 = "end",
+                        parameter2 = nil,
+                        parameter3 = nil,
+                        parameter4 = nil,
+                        parameter5 = nil,
+                        parameter6 = nil,
+                        parameter7 = nil,
+                        secenid = nil,
+                        localization1 = nil,
+                        localization2 = nil,
+                },
+
+}
+return guide_1001Table
