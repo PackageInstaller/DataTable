@@ -1,0 +1,166 @@
+[
+  {
+    "name": "team_ai_5007",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "前排",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActorIsAlive",
+                            "prop": {
+                              "team": "0",
+                              "target": "2",
+                              "alive": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckActorIsAlive",
+                            "prop": {
+                              "team": "0",
+                              "target": "3",
+                              "alive": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionPlayRandomSkill",
+                    "prop": {
+                      "canUseSuperSkill": "0",
+                      "canUseLink": "1",
+                      "canUseAssistSkill": "1",
+                      "canUseSkill2": "1",
+                      "canUseSkill1": "1",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "中排",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlayRandomSkill",
+                "prop": {
+                  "canUseSuperSkill": "0",
+                  "canUseLink": "1",
+                  "canUseAssistSkill": "1",
+                  "canUseSkill2": "1",
+                  "canUseSkill1": "1",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "后排",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActorIsAlive",
+                        "prop": {
+                          "team": "0",
+                          "target": "2",
+                          "alive": "0"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionPlayRandomSkill",
+                    "prop": {
+                      "canUseSuperSkill": "0",
+                      "canUseLink": "1",
+                      "canUseAssistSkill": "1",
+                      "canUseSkill2": "1",
+                      "canUseSkill1": "1",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

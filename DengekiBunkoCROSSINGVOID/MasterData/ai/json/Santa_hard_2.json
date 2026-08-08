@@ -1,0 +1,328 @@
+[
+  {
+    "name": "测试用AI",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "4",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A-3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "2",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "4"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "4"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "4",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B-3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "2",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

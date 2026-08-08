@@ -1,0 +1,567 @@
+[
+  {
+    "name": "测试用AI",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "R1 P1",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "",
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "targetTeam": "0",
+                          "target": "0",
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "R1 P2",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "R1 P3",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "R2 P1",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "",
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "R2 P2",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "R2 P3",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "R3 P1",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "",
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "3",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "R3 P2",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "3",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "R3 P3",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "4"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "R4 P1",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "",
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "R4 P2",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "R4 P3",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "3",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "5"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "R5 P1",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "",
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "R5 P2",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "R5 P3",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "6"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "R6 P1",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "",
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "R6 P2",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "3",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "R6 P3",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "2",
+                  "valueExp": "6"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlayBestSkill",
+                "prop": {
+                  "canUseSuperSkill": "1",
+                  "canUseLink": "1",
+                  "canUseAssistSkill": "1",
+                  "canUseSkill2": "1",
+                  "canUseSkill1": "1",
+                  "returnFailIfFailToPlayDueToLock": "0",
+                  "canUseSkill3_9": "0"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

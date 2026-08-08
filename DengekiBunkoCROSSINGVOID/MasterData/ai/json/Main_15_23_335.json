@@ -1,0 +1,143 @@
+[
+  {
+    "name": "15-7 无大招",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "R1",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "4",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "3",
+                  "expression": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "6",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "0",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "R2",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "4",
+                  "expression": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "7",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "2",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A-1"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

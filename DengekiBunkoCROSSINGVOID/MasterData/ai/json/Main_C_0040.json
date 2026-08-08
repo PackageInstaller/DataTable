@@ -1,0 +1,718 @@
+[
+  {
+    "name": "主线040 攻驱&点杀| 莲太郎Po1 库温瑟Po2 凑智花&蓝原延珠Po3",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "里见莲太郎 \b—— P0 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "库温瑟 P0",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "凑智花V2 \bP0",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "减伤",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "里见莲太郎 —— P1 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "库温瑟 P1",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "凑智花V2 P1",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "4"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "里见莲太郎 —— P2 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "库温瑟 \b P2",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "凑智花V2 P2",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "3"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "里见莲太郎 —— P3 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "库温瑟 \bP3",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "2"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "凑智花V2 \bP3",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "减伤",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "里见莲太郎 —— P4 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "4"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "库温瑟 P4",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "4"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "2"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "凑智花V2 \bP4",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "4"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "减伤",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "里见莲太郎 —— P5 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "5"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "库温瑟 P5",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "5"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "凑智花V2 \bP5",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "5"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "4"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,1234 @@
+[
+  {
+    "name": "测试用AI",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": " p0",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "龙与虎",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Selector",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "name": "检测P1减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "1",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P2减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "2",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P3减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "3",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "驱散",
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "黑雪姬&猪",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "达也&猫",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Selector",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "name": "检测P1增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "1",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P2增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "2",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P3增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "3",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "p1",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "龙与虎",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Selector",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "name": "检测P1减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "1",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P2减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "2",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P3减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "3",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "驱散",
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "黑雪姬&猪",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "达也&猫",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Selector",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "name": "检测P1增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "1",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P2增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "2",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P3增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "3",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "p2",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "龙与虎",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Selector",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "name": "检测P1减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "1",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P2减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "2",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P3减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "3",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "驱散",
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "黑雪姬&猪",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "达也&猫",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Selector",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "name": "检测P1增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "1",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P2增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "2",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P3增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "3",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "p3",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "4"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "龙与虎",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Selector",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "name": "检测P1减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "1",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P2减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "2",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P3减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "3",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "驱散",
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "黑雪姬&猪",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "达也&猫",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Selector",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "name": "检测P1增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "1",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P2增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "2",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P3增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "3",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "p4",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "5"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "龙与虎",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Selector",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "name": "检测P1减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "1",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P2减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "2",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P3减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "3",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "驱散",
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "黑雪姬&猪",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "达也&猫",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Selector",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "name": "检测P1增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "1",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P2增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "2",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P3增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "3",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "p5",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "6"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "龙与虎",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Selector",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "name": "检测P1减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "1",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P2减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "2",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P3减伤buff",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "3",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "驱散",
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "2"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "黑雪姬&猪",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "达也&猫",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Selector",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "name": "检测P1增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "1",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P2增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "2",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "检测P3增益",
+                                    "type": "ConditionCheckActorHasBuff",
+                                    "prop": {
+                                      "targetTeam": "1",
+                                      "target": "3",
+                                      "keyType": "0",
+                                      "buffKeyExp": "2002101"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "2"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "ActionPlayBestSkill",
+            "prop": {
+              "canUseSuperSkill": "1",
+              "canUseLink": "1",
+              "canUseAssistSkill": "1",
+              "canUseSkill2": "1",
+              "canUseSkill1": "1"
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]

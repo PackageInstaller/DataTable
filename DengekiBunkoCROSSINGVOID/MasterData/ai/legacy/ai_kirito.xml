@@ -1,0 +1,12 @@
+<root>
+  <selector>
+    <sequence>
+      <condition_CheckHp operation="4" valueType="1" sourceObjectType="0" searchSourceTypes="" targetObjectType="0" searchTargetTypes="" useStaticTargetValue="True" staticTargetValue="50" />
+      <action_LaunchSkill targetObjectType="2" searchTargetTypes="1" skillName="1" />
+    </sequence>
+    <sequence>
+      <condition_CheckHp operation="3" valueType="1" sourceObjectType="0" searchSourceTypes="" targetObjectType="0" searchTargetTypes="" useStaticTargetValue="True" staticTargetValue="50" />
+      <action_LaunchSkill targetObjectType="2" searchTargetTypes="1" skillName="2" />
+    </sequence>
+  </selector>
+</root>

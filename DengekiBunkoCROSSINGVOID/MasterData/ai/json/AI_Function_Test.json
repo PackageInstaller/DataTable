@@ -1,0 +1,96 @@
+[
+  {
+    "name": "测试用AI",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlayPerformance",
+                "prop": {
+                  "targetTeam": "0",
+                  "target": "7",
+                  "actionName": "",
+                  "textDisplayDelayTime": 0,
+                  "textContent": "DungeonBalanceDescribe_60001",
+                  "textStyle": "1",
+                  "performanceDuration": "2",
+                  "newIdlePose": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlayPerformance",
+                "prop": {
+                  "targetTeam": "0",
+                  "target": "7",
+                  "actionName": "",
+                  "textDisplayDelayTime": 0,
+                  "textContent": "DungeonName_60064",
+                  "textStyle": "2",
+                  "performanceDuration": "2",
+                  "newIdlePose": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlayPerformance",
+                "prop": {
+                  "targetTeam": "0",
+                  "target": "7",
+                  "actionName": "",
+                  "textDisplayDelayTime": 0,
+                  "textContent": "ChallengeName_5108",
+                  "textStyle": "3",
+                  "performanceDuration": "2",
+                  "newIdlePose": ""
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

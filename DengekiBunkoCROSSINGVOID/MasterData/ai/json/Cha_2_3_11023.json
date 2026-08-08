@@ -1,0 +1,169 @@
+[
+  {
+    "name": "挑战2-3 封技",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "name": "夏娜",
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckRound",
+                        "prop": {
+                          "compareOperation": "0",
+                          "valueExp": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionAddBuff",
+                        "prop": {
+                          "targetTeam": "0",
+                          "target": "2",
+                          "buffIndexExp": "1000981",
+                          "buffLevelExp": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckRound",
+                        "prop": {
+                          "compareOperation": "0",
+                          "valueExp": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckRound",
+                        "prop": {
+                          "compareOperation": "0",
+                          "valueExp": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionAddBuff",
+                        "prop": {
+                          "targetTeam": "0",
+                          "target": "2",
+                          "buffIndexExp": "1000981",
+                          "buffLevelExp": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckRound",
+                        "prop": {
+                          "compareOperation": "0",
+                          "valueExp": "4"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionPlayBestSkill",
+                    "prop": {
+                      "canUseSuperSkill": "0",
+                      "canUseLink": "1",
+                      "canUseAssistSkill": "1",
+                      "canUseSkill2": "1",
+                      "canUseSkill1": "1",
+                      "returnFailIfFailToPlayDueToLock": "0",
+                      "canUseSkill3_9": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "ActionPlayRandomSkill",
+            "prop": {
+              "canUseSuperSkill": "0",
+              "canUseLink": "1",
+              "canUseAssistSkill": "1",
+              "canUseSkill2": "1",
+              "canUseSkill1": "1",
+              "returnFailIfFailToPlayDueToLock": "0"
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]

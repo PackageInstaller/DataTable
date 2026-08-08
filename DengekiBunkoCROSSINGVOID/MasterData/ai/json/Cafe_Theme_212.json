@@ -1,0 +1,2061 @@
+[
+  {
+    "name": "轮战 排名1 第二关",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "第一个大招",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "Super1",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "3回合库温瑟",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "4",
+                          "expression": "6"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "9"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "R",
+                          "value": "R+1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "Super1",
+                          "value": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "3回合静雄",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "4",
+                          "expression": "6"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "9"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "R",
+                          "value": "R+1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "Super1",
+                          "value": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "3回合亚子",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "4",
+                          "expression": "6"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "9"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "R",
+                          "value": "R+1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "Super1",
+                          "value": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "第二个大招",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "Super2",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "4回合静雄",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "4",
+                          "expression": "9"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "12"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "R",
+                          "value": "R+1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "Super2",
+                          "value": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "4回合亚子",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "4",
+                          "expression": "9"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "12"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "R",
+                          "value": "R+1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "Super2",
+                          "value": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "5回合库温瑟",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "4",
+                          "expression": "12"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "15"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "R",
+                          "value": "R+1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "Super2",
+                          "value": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "第三个大招",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "Super3",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "5回合亚子",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "4",
+                          "expression": "12"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "15"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "R",
+                          "value": "R+1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "Super3",
+                          "value": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "6回合库温瑟",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "4",
+                          "expression": "15"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "18"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "R",
+                          "value": "R+1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "Super3",
+                          "value": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "6回合静雄",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "4",
+                          "expression": "15"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "18"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "R",
+                          "value": "R+1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "Super3",
+                          "value": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "满员技能顺序",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckAliveActors",
+                "prop": {
+                  "team": "0",
+                  "compareOperation": "0",
+                  "valueExp": "3"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "库温瑟莲 S1 P1 第1回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "静雄朵库萝 S2 P2 第1回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "亚子卢西安 S3 P3 第1回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "6"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "库温瑟莲 S1 P1 第2回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "4",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "静雄朵库萝 S2 P2 第2回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "亚子卢西安 S3 P3 第2回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "9"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "库温瑟莲 S1 P1 第3回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "静雄朵库萝 S2 P2 第3回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "4",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "亚子卢西安 S3 P3 第3回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "4",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "12"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "库温瑟莲 S1 P1 第4回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "静雄朵库萝 S2 P2 第4回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "亚子卢西安 S3 P3 第4回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "15"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "库温瑟莲 S1 P1 第5回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "4",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "静雄朵库萝 S2 P2 第5回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "亚子卢西安 S3 P3 第5回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "18"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "库温瑟莲 S1 P1 第6回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "静雄朵库萝 S2 P2 第6回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "4",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "亚子卢西安 S3 P3 第6回合 满员状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "4",
+                          "expression": "18"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlayBestSkill",
+                        "prop": {
+                          "canUseSuperSkill": "1",
+                          "canUseLink": "1",
+                          "canUseAssistSkill": "1",
+                          "canUseSkill2": "1",
+                          "canUseSkill1": "1",
+                          "returnFailIfFailToPlayDueToLock": "0",
+                          "canUseSkill3_9": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "缺一人技能顺序",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckAliveActors",
+                "prop": {
+                  "team": "0",
+                  "compareOperation": "0",
+                  "valueExp": "2"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "库温瑟莲 S1 P1 第1回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "静雄朵库萝 S2 P2 第1回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "4",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "亚子卢西安 S3 P3 第1回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "6"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "库温瑟莲 S1 P1 第2回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "4",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "静雄朵库萝 S2 P2 第2回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "亚子卢西安 S3 P3 第2回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "9"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "库温瑟莲 S1 P1 第3回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "静雄朵库萝 S2 P2 第3回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "亚子卢西安 S3 P3 第3回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "12"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "库温瑟莲 S1 P1 第4回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "4",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "静雄朵库萝 S2 P2 第4回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "亚子卢西安 S3 P3 第4回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "4",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "15"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "库温瑟莲 S1 P1 第5回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "静雄朵库萝 S2 P2 第5回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "4",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "亚子卢西安 S3 P3 第5回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "18"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "库温瑟莲 S1 P1 第6回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "4",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "静雄朵库萝 S2 P2 第6回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "亚子卢西安 S3 P3 第6回合 缺1人状态",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "4",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "4",
+                          "expression": "18"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlayBestSkill",
+                        "prop": {
+                          "canUseSuperSkill": "1",
+                          "canUseLink": "1",
+                          "canUseAssistSkill": "1",
+                          "canUseSkill2": "1",
+                          "canUseSkill1": "1",
+                          "returnFailIfFailToPlayDueToLock": "0",
+                          "canUseSkill3_9": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "缺二人技能顺序",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckAliveActors",
+                "prop": {
+                  "team": "0",
+                  "compareOperation": "0",
+                  "valueExp": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlayBestSkill",
+                "prop": {
+                  "canUseSuperSkill": "1",
+                  "canUseLink": "1",
+                  "canUseAssistSkill": "1",
+                  "canUseSkill2": "1",
+                  "canUseSkill1": "1",
+                  "returnFailIfFailToPlayDueToLock": "0",
+                  "canUseSkill3_9": "0"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

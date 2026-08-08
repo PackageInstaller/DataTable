@@ -1,0 +1,522 @@
+[
+  {
+    "name": "组队本1 晓古城 机器人 2级AI",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Sequence",
+        "prop": {},
+        "children": [
+          {
+            "name": "状态检测",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "name": "机器人存活状态检测",
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActorIsAlive",
+                        "prop": {
+                          "team": "0",
+                          "target": "1",
+                          "alive": "0"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckActorIsAlive",
+                        "prop": {
+                          "team": "0",
+                          "target": "3",
+                          "alive": "0"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "RobotsDead",
+                          "value": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActorIsAlive",
+                            "prop": {
+                              "team": "0",
+                              "target": "1",
+                              "alive": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckActorIsAlive",
+                            "prop": {
+                              "team": "0",
+                              "target": "3",
+                              "alive": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "RobotsDead",
+                          "value": "2"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "保证返回成功",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "RobotsDead",
+                          "value": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "行为",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "晓古城",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "2"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "没有存活机器人",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "",
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "RobotsDead",
+                              "compareOperation": "0",
+                              "expression": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "",
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "循环 第三回合大招",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "Ro",
+                                      "compareOperation": "0",
+                                      "expression": "2"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "2",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "Ro",
+                                      "value": "0"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "普通攻击",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "0",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "Ro",
+                                      "value": "Ro+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "机器人存活 检测血量",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "HealthCount",
+                                  "compareOperation": "0",
+                                  "expression": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckHp",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "2",
+                                      "compareOperation": "3",
+                                      "valueType": "1",
+                                      "expression": "5000"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "1",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "HealthCount",
+                                      "value": "HealthCount+1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "HealthCount",
+                                      "compareOperation": "0",
+                                      "expression": "2"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "2",
+                                      "buffIndexExp": "997058",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "机器人前排",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "",
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "只有一个存活 一直攻击",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "RobotsDead",
+                              "compareOperation": "0",
+                              "expression": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlayRandomSkill",
+                            "prop": {
+                              "canUseSuperSkill": "0",
+                              "canUseLink": "0",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "轮流攻击",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckRound",
+                                "prop": {
+                                  "compareOperation": "0",
+                                  "valueExp": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckRound",
+                                "prop": {
+                                  "compareOperation": "0",
+                                  "valueExp": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckRound",
+                                "prop": {
+                                  "compareOperation": "0",
+                                  "valueExp": "5"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckRound",
+                                "prop": {
+                                  "compareOperation": "0",
+                                  "valueExp": "7"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckRound",
+                                "prop": {
+                                  "compareOperation": "0",
+                                  "valueExp": "9"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ActionPlayRandomSkill",
+                            "prop": {
+                              "canUseSuperSkill": "0",
+                              "canUseLink": "0",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "机器人后排",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "3"
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "",
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "只有一个存活 一直攻击",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "RobotsDead",
+                              "compareOperation": "0",
+                              "expression": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlayRandomSkill",
+                            "prop": {
+                              "canUseSuperSkill": "0",
+                              "canUseLink": "0",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "轮流攻击",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckRound",
+                                "prop": {
+                                  "compareOperation": "0",
+                                  "valueExp": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckRound",
+                                "prop": {
+                                  "compareOperation": "0",
+                                  "valueExp": "4"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckRound",
+                                "prop": {
+                                  "compareOperation": "0",
+                                  "valueExp": "6"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckRound",
+                                "prop": {
+                                  "compareOperation": "0",
+                                  "valueExp": "8"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckRound",
+                                "prop": {
+                                  "compareOperation": "0",
+                                  "valueExp": "10"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ActionPlayRandomSkill",
+                            "prop": {
+                              "canUseSuperSkill": "0",
+                              "canUseLink": "0",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

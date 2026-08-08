@@ -1,0 +1,193 @@
+[
+  {
+    "name": "攻击叠加BUFF爆发",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "爆发回合",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorHasBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "1",
+                      "keyType": "0",
+                      "buffKeyExp": "997042"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "2",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "爆发回合",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "2"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorHasBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "2",
+                      "keyType": "0",
+                      "buffKeyExp": "997042"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "2",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "爆发回合",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "3"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorHasBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "3",
+                      "keyType": "0",
+                      "buffKeyExp": "997042"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "2",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "4"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "3",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "3",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ActionPlayRandomSkill",
+                "prop": {
+                  "canUseSuperSkill": "0",
+                  "canUseLink": "1",
+                  "canUseAssistSkill": "0",
+                  "canUseSkill2": "1",
+                  "canUseSkill1": "1",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

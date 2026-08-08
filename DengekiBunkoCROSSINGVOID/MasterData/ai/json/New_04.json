@@ -1,0 +1,32 @@
+[
+  {
+    "name": "测试4",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "1号位",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ActionPlayRandomSkill",
+                "prop": {
+                  "target": "0",
+                  "skillType": "2",
+                  "fallbackSkillType": "0"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

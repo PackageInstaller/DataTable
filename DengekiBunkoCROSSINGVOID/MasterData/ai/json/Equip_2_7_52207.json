@@ -1,0 +1,520 @@
+[
+  {
+    "name": "炮姐raid （炮姐+双buff机器人）",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Sequence",
+        "prop": {},
+        "children": [
+          {
+            "name": "行动状态检测",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "攻击状态",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "Stop",
+                      "compareOperation": "0",
+                      "expression": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckHp",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "2",
+                      "compareOperation": "5",
+                      "valueType": "1",
+                      "expression": "6000"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "1",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "3",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "Stop",
+                      "value": "1"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "停止状态",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "Stop",
+                      "compareOperation": "0",
+                      "expression": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActorIsAlive",
+                        "prop": {
+                          "team": "0",
+                          "target": "1",
+                          "alive": "0"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckActorIsAlive",
+                        "prop": {
+                          "team": "0",
+                          "target": "3",
+                          "alive": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "Stop",
+                      "value": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "重置炮姐攻击行动",
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "T",
+                      "value": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "保证selector返回成功",
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "行动",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "Stop",
+                          "compareOperation": "0",
+                          "expression": "0"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "炮姐行动计数，可在转阶段时被重置",
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "compareOperation": "0",
+                                  "expression": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "value": "T+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "compareOperation": "0",
+                                  "expression": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "value": "T+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "compareOperation": "0",
+                                  "expression": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "value": "T+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "关键秒杀回合，玩家需要避免进入此阶段",
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "compareOperation": "0",
+                                  "expression": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "value": "T+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "compareOperation": "0",
+                                  "expression": "4"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "停止状态",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "Stop",
+                      "compareOperation": "0",
+                      "expression": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "MinionA",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "MinionAActed",
+                              "compareOperation": "0",
+                              "expression": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "检查减伤buff",
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "0",
+                                  "target": "2",
+                                  "keyType": "0",
+                                  "buffKeyExp": "997002"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "2",
+                                      "buffIndexExp": "997000",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "添加减伤buff",
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "2",
+                                      "buffIndexExp": "997002",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "1",
+                                      "buffIndexExp": "997009",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "MinionA完成动作",
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "MinionAActed",
+                                      "value": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "MinionB",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "MinionBActed",
+                              "compareOperation": "0",
+                              "expression": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "检查减伤buff",
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "0",
+                                  "target": "2",
+                                  "keyType": "0",
+                                  "buffKeyExp": "997003"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "2",
+                                      "buffIndexExp": "997000",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "添加加血buff",
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "2",
+                                      "buffIndexExp": "997003",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "3",
+                                      "buffIndexExp": "997009",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "MinionB完成动作",
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "MinionBActed",
+                                      "value": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

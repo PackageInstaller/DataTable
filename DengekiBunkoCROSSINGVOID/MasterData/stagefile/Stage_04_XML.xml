@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <Stage Name="Stage_04" ID="04" Scene="SceneS04" StageRectX="-25" StageRectY="25" StageRectZ="-10" StageRectW="10" BornPointX="0" BornPointY="0" BornPointZ="0" BornDirX="1" BornDirY="1" CameraRangeX="-24" CameraRangeY="24" CameraOffPosX="0" CameraOffPosY="2.8" CameraOffPosZ="-9.5" CameraFov="56" ShadowType="2" ShadowR="255" ShadowG="255" ShadowB="255" ShadowA="200" ShadowAmbient="False" ShadowLightDirX="0" ShadowLightDirY="0" ShadowLightDirZ="-0.8" ShadowLightDirW="0" StartStroy="0" EndStory="0" StageTime="0">
+    <StageStatic Name="StaticModel" Asset="Assets/AssetBundle/Logic/Scene/StaticModel.prefab">
+      <Component>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+        <Scale X="100" Y="100" Z="100" />
+        <Script ID="1" LogicID="0" Path="Assets/AssetBundle/Effect/Scene/S04/SFX_CloudN.prefab" Group="1" AnimSpeed="1" />
+      </Component>
+    </StageStatic>
+    <StageStatic Name="StaticModel" Asset="Assets/AssetBundle/Logic/Scene/StaticModel.prefab">
+      <Component>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+        <Scale X="100" Y="100" Z="100" />
+        <Script ID="2" LogicID="0" Path="Assets/AssetBundle/Effect/Scene/S04/SFX_IdearUp.prefab" Group="1" AnimSpeed="1" />
+      </Component>
+    </StageStatic>
+    <StageStatic Name="StaticModel" Asset="Assets/AssetBundle/Logic/Scene/StaticModel.prefab">
+      <Component>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+        <Scale X="100" Y="100" Z="100" />
+        <Script ID="3" LogicID="0" Path="Assets/AssetBundle/Effect/Scene/S04/SFX_Sun01.prefab" Group="1" AnimSpeed="1" />
+      </Component>
+    </StageStatic>
+    <StageStatic Name="StaticModel" Asset="Assets/AssetBundle/Logic/Scene/StaticModel.prefab">
+      <Component>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+        <Scale X="100" Y="100" Z="100" />
+        <Script ID="4" LogicID="0" Path="Assets/AssetBundle/Effect/Scene/S04/SFX_UnderLight.prefab" Group="0" AnimSpeed="1" />
+      </Component>
+    </StageStatic>
+    <StageStatic Name="StaticModel" Asset="Assets/AssetBundle/Logic/Scene/StaticModel.prefab">
+      <Component>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+        <Scale X="100" Y="100" Z="100" />
+        <Script ID="5" LogicID="0" Path="Assets/AssetBundle/Effect/Scene/S04/SFX_Star2.prefab" Group="0" AnimSpeed="1" />
+      </Component>
+    </StageStatic>
+  </Stage>
+</Root>

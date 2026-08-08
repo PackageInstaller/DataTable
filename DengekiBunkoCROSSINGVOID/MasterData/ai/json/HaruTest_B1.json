@@ -1,0 +1,529 @@
+[
+  {
+    "name": "OB B2 | 炮姐&当麻S；CMR&日向S；黑子&初春S |动态AI",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Sequence",
+        "prop": {},
+        "children": [
+          {
+            "name": "环境1————黑子死亡，炮姐存活",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "3",
+                      "alive": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "1",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "offKurokoDie",
+                      "compareOperation": "0",
+                      "expression": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "offKurokoDie",
+                      "value": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "MikotoBurst",
+                      "value": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayPerformance",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "1",
+                      "actionName": "",
+                      "textDisplayDelayTime": 0,
+                      "textContent": "ActorPerformance_1",
+                      "textStyle": "1",
+                      "performanceDuration": "2",
+                      "newIdlePose": ""
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Access",
+                "type": "Sequence",
+                "prop": {},
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "环境2————炮姐血量危险，黑子存活",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckHp",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "1",
+                      "compareOperation": "5",
+                      "valueType": "1",
+                      "expression": "6000"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "3",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "offMikotoInDanger",
+                      "compareOperation": "0",
+                      "expression": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "offMikotoInDanger",
+                      "value": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "KurokoBurst",
+                      "value": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayPerformance",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "3",
+                      "actionName": "",
+                      "textDisplayDelayTime": 0,
+                      "textContent": "ActorPerformance_2",
+                      "textStyle": "1",
+                      "performanceDuration": "2",
+                      "newIdlePose": ""
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Access",
+                "type": "Sequence",
+                "prop": {},
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "环境3————垃圾桶死亡，黑子存活",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "2",
+                      "alive": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "3",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "offCMRDie",
+                      "compareOperation": "0",
+                      "expression": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "offCMRDie",
+                      "value": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayPerformance",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "3",
+                      "actionName": "",
+                      "textDisplayDelayTime": 0,
+                      "textContent": "ActorPerformance_2",
+                      "textStyle": "1",
+                      "performanceDuration": "2",
+                      "newIdlePose": ""
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "KurokoBurst",
+                      "value": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "2"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Access",
+                "type": "Sequence",
+                "prop": {},
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "↓角色行动↓",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "特殊1:黑子&初春",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "3"
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "",
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "高优先：初春S支援1 ",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActorHasBuff",
+                            "prop": {
+                              "targetTeam": "0",
+                              "target": "1",
+                              "keyType": "2",
+                              "buffKeyExp": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "低优先：黑子暴走",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "KurokoBurst",
+                              "compareOperation": "0",
+                              "expression": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "2"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "特殊2:炮姐暴走",
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "炮姐暴走",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "MikotoBurst",
+                          "compareOperation": "0",
+                          "expression": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "以下为常规行为 回合数 \b—— P1 ——",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "1+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "炮姐&当麻S",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "CMR91",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "回合数 \b—— P2 ——",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "2+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "炮姐&当麻S",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "回合数 \b—— P3 ——",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "3+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "炮姐&当麻S",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "x",
+                              "value": "x+3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "2"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

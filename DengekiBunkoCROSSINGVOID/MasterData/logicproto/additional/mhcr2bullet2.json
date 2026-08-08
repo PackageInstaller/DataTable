@@ -1,0 +1,1045 @@
+{
+ "name": "mhcr3",
+ "actions": [
+  {
+   "name": "mhcr2s500drop",
+   "animate": "s300bulletdrop",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -300.0
+    },
+    "b": {
+     "x": 300.0,
+     "y": 200.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": 0.2
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "x": -300.0,
+     "y": 400.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "mhcr2s500shot",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "start": 0.05,
+     "tag": "bound_marble_h",
+     "path": [
+      "Sound/effect/down/bound_marble_h"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "common/P_smoke_dropend_01_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "mhcr3/mhcr3_down",
+     "start": 0.01,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "start": 0.01,
+    "shakeRange": {
+     "x": 1.0,
+     "y": 5.0
+    },
+    "shakeK": {
+     "x": 30.0,
+     "y": 30.0
+    }
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 10,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "mhcr2s500shot",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "mhcr2s500wait",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "mhcr3/mhcr3_gunfire",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {
+      "x": 235.0,
+      "y": 260.0
+     },
+     "offPosition": {}
+    },
+    {
+     "name": "mhcr3/mhcr3_gunfire",
+     "start": 1.5,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {
+      "x": 235.0,
+      "y": 260.0
+     },
+     "offPosition": {}
+    }
+   ],
+   "addRoles": [
+    {
+     "characterID": 3002002,
+     "start": 0.65,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 0.75,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 0.85,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 0.95,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 1.05,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 1.15,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 1.25,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 1.35,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 1.45,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 1.55,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 1.65,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 1.75,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 1.85,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 1.95,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 2.05,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 2.15,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 2.25,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 2.35,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 2.45,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 2.55,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 2.65,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 2.75,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 2.85,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 2.95,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 3.05,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 3.15,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 3.25,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 3.35,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 3002002,
+     "start": 3.45,
+     "endTime": 3.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 170.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "shotbullet"
+     ],
+     "speed": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "distance": 20.0,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "mhcr2s500wait",
+   "animate": "stand",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "mhcr2s500wait",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "distance": 20.0,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "mhcr2s500leave",
+   "animate": "s300bulletleave",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "flyin": "FlyinType_NoDropEnd",
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "common/P_yinshen_01_D",
+     "start": 0.03,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 10,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "shotbullet",
+   "animate": "0.5",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -50.0,
+     "y": -50.0
+    },
+    "b": {
+     "x": 50.0,
+     "y": 50.0
+    },
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "flyin": "FlyinType_NoDropEnd",
+   "hitBoxIgnoreDamage": true,
+   "hitAction": "shotboom",
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "empty",
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {
+    "x": 5000.0
+   },
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 0.8,
+     "tag": "mhcr3_Baraniumu",
+     "path": [
+      "Sound/se/Baraniumu"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 10,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "shotboom",
+   "animate": "0.3",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -50.0,
+     "y": -50.0
+    },
+    "b": {
+     "x": 50.0,
+     "y": 50.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": 0.2
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "flyin": "FlyinType_NoDropEnd",
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "behit_middle",
+    "speed": {
+     "x": -250.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "mhcr3/mhcr3_gunhit",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "mhcr3/mhcr3_gunhit",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {
+      "x": -40.0,
+      "y": -40.0
+     }
+    },
+    {
+     "name": "mhcr3/mhcr3_gunhit",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {
+      "x": -20.0,
+      "y": -80.0
+     }
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 10,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  }
+ ]
+}

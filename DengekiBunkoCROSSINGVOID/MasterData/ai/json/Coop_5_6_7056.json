@@ -1,0 +1,655 @@
+[
+  {
+    "name": "组队本5 二级",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Sequence",
+        "prop": {},
+        "children": [
+          {
+            "name": "人数对比",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "name": "己方",
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckAliveActors",
+                        "prop": {
+                          "team": "0",
+                          "compareOperation": "0",
+                          "valueExp": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "SelfTeamAlive",
+                          "value": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckAliveActors",
+                        "prop": {
+                          "team": "0",
+                          "compareOperation": "0",
+                          "valueExp": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "SelfTeamAlive",
+                          "value": "2"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckAliveActors",
+                        "prop": {
+                          "team": "0",
+                          "compareOperation": "0",
+                          "valueExp": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "SelfTeamAlive",
+                          "value": "3"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "SelfTeamAlive",
+                      "value": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "敌方",
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckAliveActors",
+                        "prop": {
+                          "team": "1",
+                          "compareOperation": "0",
+                          "valueExp": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "EnemyTeamAlive",
+                          "value": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckAliveActors",
+                        "prop": {
+                          "team": "1",
+                          "compareOperation": "0",
+                          "valueExp": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "EnemyTeamAlive",
+                          "value": "2"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckAliveActors",
+                        "prop": {
+                          "team": "1",
+                          "compareOperation": "0",
+                          "valueExp": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "EnemyTeamAlive",
+                          "value": "3"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "EnemyTeamAlive",
+                      "value": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "人数对比",
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "SelfTeamAlive",
+                          "compareOperation": "0",
+                          "expression": "EnemyTeamAlive"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "Condition",
+                          "value": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "SelfTeamAlive",
+                          "compareOperation": "2",
+                          "expression": "EnemyTeamAlive"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "Condition",
+                          "value": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "SelfTeamAlive",
+                          "compareOperation": "3",
+                          "expression": "EnemyTeamAlive"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "Condition",
+                          "value": "2"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "Condition",
+                      "value": "3"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "buff控制",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "是否发生状态转换",
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "CurCondition",
+                      "compareOperation": "1",
+                      "expression": "Condition"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionAddBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "0",
+                      "buffIndexExp": "997068",
+                      "buffLevelExp": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "己方人多buff",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "Condition",
+                              "compareOperation": "0",
+                              "expression": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionAddBuff",
+                            "prop": {
+                              "targetTeam": "0",
+                              "target": "0",
+                              "buffIndexExp": "997067",
+                              "buffLevelExp": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "己方人少buff",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "Condition",
+                              "compareOperation": "0",
+                              "expression": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionAddBuff",
+                            "prop": {
+                              "targetTeam": "0",
+                              "target": "0",
+                              "buffIndexExp": "997066",
+                              "buffLevelExp": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "CurCondition",
+                      "value": "Condition"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "CurCondition",
+                  "value": "Condition"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "SelfTeamAlive",
+                          "compareOperation": "1",
+                          "expression": "CurAlive"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "A",
+                          "value": "0"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "B",
+                          "value": "0"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "CurAlive",
+                          "value": "SelfTeamAlive"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "CurAlive",
+                      "value": "SelfTeamAlive"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "B",
+                          "compareOperation": "4",
+                          "expression": "SelfTeamAlive"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "B",
+                          "value": "0"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "A",
+                          "value": "SelfTeamAlive+1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "B",
+                      "value": "B"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "A",
+                          "compareOperation": "4",
+                          "expression": "SelfTeamAlive+1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "A",
+                          "value": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "A",
+                      "value": "A"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "A",
+                          "compareOperation": "0",
+                          "expression": "0"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "B",
+                          "value": "B+1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "A",
+                          "value": "A+1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "攻击",
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "人少状态攻击",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "Condition",
+                                  "compareOperation": "0",
+                                  "expression": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "2",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "人多状态攻击",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "Condition",
+                                  "compareOperation": "0",
+                                  "expression": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlayRandomSkill",
+                                "prop": {
+                                  "canUseSuperSkill": "0",
+                                  "canUseLink": "0",
+                                  "canUseAssistSkill": "0",
+                                  "canUseSkill2": "1",
+                                  "canUseSkill1": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "人数相等状态攻击",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "Condition",
+                                  "compareOperation": "0",
+                                  "expression": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlayRandomSkill",
+                                "prop": {
+                                  "canUseSuperSkill": "1",
+                                  "canUseLink": "1",
+                                  "canUseAssistSkill": "1",
+                                  "canUseSkill2": "1",
+                                  "canUseSkill1": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "A",
+                      "value": "A+1"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

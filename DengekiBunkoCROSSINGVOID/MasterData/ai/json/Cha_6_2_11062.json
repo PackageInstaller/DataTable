@@ -1,0 +1,1198 @@
+[
+  {
+    "name": "敌方防御/护盾",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Sequence",
+        "prop": {},
+        "children": [
+          {
+            "type": "ActionGenRandom",
+            "prop": {
+              "varname": "A",
+              "rangeLower": "0",
+              "rangeUpper": "30"
+            },
+            "children": []
+          },
+          {
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "是否存在buff",
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActorHasBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "2",
+                      "keyType": "0",
+                      "buffKeyExp": "996020"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorHasBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "3",
+                      "keyType": "0",
+                      "buffKeyExp": "996020"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorHasBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "1",
+                      "keyType": "0",
+                      "buffKeyExp": "996020"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "随机数0~1",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "A",
+                      "compareOperation": "5",
+                      "expression": "10"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "A",
+                      "compareOperation": "4",
+                      "expression": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActorIsAlive",
+                            "prop": {
+                              "team": "0",
+                              "target": "1",
+                              "alive": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionAddBuff",
+                            "prop": {
+                              "targetTeam": "0",
+                              "target": "1",
+                              "buffIndexExp": "996020",
+                              "buffLevelExp": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckAliveActors",
+                            "prop": {
+                              "team": "0",
+                              "compareOperation": "0",
+                              "valueExp": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "A",
+                                      "compareOperation": "5",
+                                      "expression": "5"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "2",
+                                      "buffIndexExp": "996020",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "A",
+                                      "compareOperation": "2",
+                                      "expression": "5"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "3",
+                                      "buffIndexExp": "996020",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckAliveActors",
+                            "prop": {
+                              "team": "0",
+                              "compareOperation": "0",
+                              "valueExp": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckActorIsAlive",
+                                    "prop": {
+                                      "team": "0",
+                                      "target": "2",
+                                      "alive": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "2",
+                                      "buffIndexExp": "996020",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckActorIsAlive",
+                                    "prop": {
+                                      "team": "0",
+                                      "target": "3",
+                                      "alive": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "3",
+                                      "buffIndexExp": "996020",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "随机数1~2",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "A",
+                      "compareOperation": "5",
+                      "expression": "20"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "A",
+                      "compareOperation": "2",
+                      "expression": "10"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActorIsAlive",
+                            "prop": {
+                              "team": "0",
+                              "target": "2",
+                              "alive": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionAddBuff",
+                            "prop": {
+                              "targetTeam": "0",
+                              "target": "2",
+                              "buffIndexExp": "996020",
+                              "buffLevelExp": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckAliveActors",
+                            "prop": {
+                              "team": "0",
+                              "compareOperation": "0",
+                              "valueExp": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "A",
+                                      "compareOperation": "5",
+                                      "expression": "15"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "1",
+                                      "buffIndexExp": "996020",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "A",
+                                      "compareOperation": "2",
+                                      "expression": "15"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "3",
+                                      "buffIndexExp": "996020",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckAliveActors",
+                            "prop": {
+                              "team": "0",
+                              "compareOperation": "0",
+                              "valueExp": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckActorIsAlive",
+                                    "prop": {
+                                      "team": "0",
+                                      "target": "1",
+                                      "alive": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "1",
+                                      "buffIndexExp": "996020",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckActorIsAlive",
+                                    "prop": {
+                                      "team": "0",
+                                      "target": "3",
+                                      "alive": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "3",
+                                      "buffIndexExp": "996020",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "A",
+                      "compareOperation": "5",
+                      "expression": "30"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "A",
+                      "compareOperation": "2",
+                      "expression": "20"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActorIsAlive",
+                            "prop": {
+                              "team": "0",
+                              "target": "3",
+                              "alive": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionAddBuff",
+                            "prop": {
+                              "targetTeam": "0",
+                              "target": "3",
+                              "buffIndexExp": "996020",
+                              "buffLevelExp": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckAliveActors",
+                            "prop": {
+                              "team": "0",
+                              "compareOperation": "0",
+                              "valueExp": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "A",
+                                      "compareOperation": "5",
+                                      "expression": "25"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "1",
+                                      "buffIndexExp": "996020",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "A",
+                                      "compareOperation": "2",
+                                      "expression": "25"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "2",
+                                      "buffIndexExp": "996020",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckAliveActors",
+                            "prop": {
+                              "team": "0",
+                              "compareOperation": "0",
+                              "valueExp": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckActorIsAlive",
+                                    "prop": {
+                                      "team": "0",
+                                      "target": "1",
+                                      "alive": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "1",
+                                      "buffIndexExp": "996020",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckActorIsAlive",
+                                    "prop": {
+                                      "team": "0",
+                                      "target": "2",
+                                      "alive": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "2",
+                                      "buffIndexExp": "996020",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "回合数 \b—— P1 ——",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "1号位2技能",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "2号位2技能",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "3号2技能",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "回合数 \b—— P2 ——",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "2"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "1号位1技能",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "2号位助战",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "3号位1技能",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "回合数 \b—— P3 ——",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "3"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "1号位2技能护盾",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "2号位2技能",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "3号位1技能",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "回合数 \b—— P4 ——",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "4"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "1号位2技能",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "2号位1技能",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "3号位2技能",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "回合数 \b—— P5 ——",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "5"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "1号位2技能",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "2号位2技能",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "3号位2技能",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "回合数 \b—— P6 ——",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "6"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "1号位1技能",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "2号位助战技能",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "3号位大招",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "2"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "回合数 \b—— 大于P6 ——",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "2",
+                      "valueExp": "6"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayBestSkill",
+                    "prop": {
+                      "canUseSuperSkill": "1",
+                      "canUseLink": "1",
+                      "canUseAssistSkill": "1",
+                      "canUseSkill2": "1",
+                      "canUseSkill1": "1",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

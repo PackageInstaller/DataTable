@@ -1,0 +1,243 @@
+local WU, DB, REF = require("Common/WindowUtil")(this)
+local PB = require("Common/PbHelper")
+local NU = require("Common/NotepadUtil")
+local U = require("Common/Util")
+local DBH = require("Manager/DataBindingHandler")
+local GU = require("Common/GroupUtil")
+local AU = require("Common/ActorUtil")
+local DU = require("Common/DungeonUtil")
+local RU = require("Common/RedMarkUtil")
+local S = require("Common/Singleton")
+local BASE = inherit("Window/DungeonBalance/DungeonBalanceBase", _ENV)
+local SDU = require("Common/SoundUtil")
+local m_group, m_balance, m_rewards, m_skipAnim, m_dungeonType, m_triggeredEvent, m_receiveFoodEvent
+
+function SetupWindow()
+  WU.BindButtonEvent(REF.TriggeredEvent, function()
+    this:SetData("TriggeredEvent/New", m_triggeredEvent)
+    BASE.OnButtonContinueClick()
+  end)
+  WU.BindButtonEvent(REF.GameReceiveEvent, function()
+    BASE.OnButtonContinueClick("Welfare, GameReceiveFood")
+  end)
+  WU.ToggleRendering(REF.AnimMask, false)
+  WU.ToggleRendering(REF.NodeContinue, false)
+  WU.SetActive(REF.NewButton, false)
+  REF.WidgetFightAgain["$SetContinueCall"](function()
+    BASE.OnButtonContinueClick()
+  end)
+  CS.EventDelegate.Add(REF.TweenerGroup1.UIPlayTween.onFinished, function()
+    if not m_skipAnim then
+      REF.WidgetDungeonGroup["$SetLevelupExp"](m_balance.expChange, m_group, true)
+    end
+  end)
+  WU.BindButtonEvent(REF.AnimMask, OnSkipAnimClick)
+end
+
+function InitWindow()
+  this:RegisterGameEvent("UI/WindowUninited", OnWindowUninited)
+  BASE.SetActorTextureEffect(this:GetData("FightWinActor"))
+  local dungeonId = this:GetData("WindowDungeon/DungeonId")
+  m_balance = this:GetData("DungeonBalance/result")
+  local changes = BASE.GetFavourChangeRoles(m_balance.favourChange)
+  m_rewards = DU.GetDungeonBalanceRewards(m_balance)
+  WU.ToggleRendering(REF.Targets, false)
+  WU.ToggleRendering(REF.TitleLine1, false)
+  WU.ToggleRendering(REF.AcquirementList, false)
+  WU.ToggleRendering(REF.TitleLine2, false)
+  WU.ToggleRendering(REF.WidgetDungeonGroup, false)
+  WU.ToggleRendering(REF.WidgetProfitBuffList, false)
+  BASE.ToggleTriggleEventEffect(false)
+  m_triggeredEvent = m_balance.eventInfo
+  if m_triggeredEvent then
+    DBH.TriggeredEventChange(m_triggeredEvent)
+  end
+  BASE.ToggleReceiveFoodGameEventEffect(false)
+  m_receiveFoodEvent = m_balance.minigameTriggerInfo and m_balance.minigameTriggerInfo.isTriggered
+  if m_receiveFoodEvent then
+    RU.SetRedMark("Welfare/ChineseNewYear/MiniGame", m_receiveFoodEvent)
+  end
+  local info = this:GetData("BalanceInfo/Groups")
+  m_group = info.groups[tostring(info.selectedGroupId)]
+  REF.WidgetFightAgain["$SetSelectedGroupId"](info.selectedGroupId)
+  REF.WidgetDungeonGroup["$SetView"](m_group)
+  REF.WidgetDungeonGroup["$SetOldExp"](m_balance.expChange, m_group)
+  REF.WidgetDungeonGroup["$SetFavourChangeIds"](changes)
+  local balanceType = this:GetData("FightDungeonType")
+  m_dungeonType = balanceType
+  if balanceType == PB.enum.DungeonType.Normal then
+    local chapterId = this:GetData("WindowDungeon/ChapterId")
+    local chapterInfo = this:GetData("fci/dungeon/chapter/" .. chapterId)
+    if chapterInfo then
+      local balance = chapterInfo.recordDungeons[dungeonId]
+      if balance then
+        BASE.InitTargets(balance, dungeonId)
+      end
+    end
+  else
+    BASE.InitTargets(m_balance, dungeonId)
+  end
+  BASE.InitAcquirement(m_balance)
+  if #BASE.m_rewards < 7 then
+    REF.AcquirementScrollView.UIScrollView.contentPivot = CS.UIWidget.Pivot.TopRight
+    REF.AcquirementScrollView.UIScrollView:ResetPosition()
+  end
+  BASE.InitPlayerInfo(m_balance)
+  NU.UpdateRoleFavour(m_balance.favourChange)
+  WU.ToggleRendering(REF.AnimMask, true)
+  PlayPlayerExpAnim()
+  this:DelayInvokeInSeconds(0.2, function()
+    local tutorialId = this:GetData("CurrentTutorial")
+    if tutorialId == 24 and dungeonId == 1 or tutorialId == 56 then
+      local tutorialMgr = S:Get("TutorialManager")
+      tutorialMgr.DoTutorial()
+    end
+  end)
+  local isShowStar = DU.IsShowStar(dungeonId)
+  if isShowStar then
+    if REF.LabelDesc then
+      REF.LabelDesc.gameObject:SetActive(false)
+    end
+    if REF.Targets then
+      REF.Targets.gameObject:SetActive(true)
+    end
+  else
+    if REF.LabelDesc then
+      REF.LabelDesc.gameObject:SetActive(true)
+    end
+    if REF.Targets then
+      REF.Targets.gameObject:SetActive(false)
+    end
+    if REF.RightPanel then
+      local curps = REF.RightPanel.transform.localPosition
+      REF.RightPanel.transform.localPosition = CS.UnityEngine.Vector3(curps.x, REF.LabelDesc.transform.localPosition.y - 240, 0)
+    end
+    REF.LabelDesc.UILabel.text = WU.GetString("DungeonBalanceDescribe_" .. dungeonId)
+  end
+end
+
+function OnWindowUninited(window)
+  if window.name == "PlayerLevelupResult" then
+    PlayOtherAnim()
+  end
+end
+
+function OnSkipAnimClick()
+  if m_skipAnim then
+    return
+  end
+  m_skipAnim = true
+  WU.ToggleRendering(REF.Targets, true)
+  WU.ToggleRendering(REF.TitleLine1, true)
+  BASE.SetProfitBuff(m_balance.profits, CS.UIWidget.Pivot.Right)
+  WU.ToggleRendering(REF.TitleLine2, true)
+  WU.ToggleRendering(REF.WidgetDungeonGroup, true)
+  REF.SpriteExpAdd.TweenFillAmount.enabled = true
+  REF.SpriteExpAdd.TweenFillAmount:FinishImmediately()
+  BASE.ShiningStars(true)
+  REF.Targets.UIPlayTween:Play(true)
+  REF.Targets.UIPlayTween:Finish()
+  REF.TweenerGroup1.UIPlayTween:Play(true)
+  REF.TweenerGroup1.UIPlayTween:Finish()
+  REF.WidgetDungeonGroup["$SetLevelupExp"](m_balance.expChange, m_group, false)
+  WU.ToggleRendering(REF.AcquirementList, true)
+  if 0 < #m_rewards then
+    REF.AcquirementContent.UIPlayTween:Play(true)
+    REF.AcquirementContent.UIPlayTween:Finish()
+  end
+  OnAnimFinished()
+end
+
+function PlayPlayerExpAnim()
+  this:DelayInvokeInSeconds(0.5, function()
+    if m_skipAnim then
+      return
+    end
+    REF.SpriteExpAdd.TweenFillAmount.enabled = true
+    if m_balance.playerLevelBeforeBalance == m_balance.playerLevel then
+      this:DelayInvokeInSeconds(1, function()
+        if m_skipAnim then
+          return
+        end
+        PlayOtherAnim()
+      end)
+    end
+  end)
+end
+
+function PlayOtherAnim()
+  if m_skipAnim then
+    return
+  end
+  WU.ToggleRendering(REF.Targets, true)
+  REF.Targets.UIPlayTween:Play(true)
+  BASE.ShiningStars()
+  this:DelayInvokeInSeconds(BASE.ShiningStarDelay * #m_balance.targetsDone, function()
+    if m_skipAnim then
+      return
+    end
+    WU.ToggleRendering(REF.TitleLine1, true)
+    REF.TitleLine1.UIPlayTween:Play(true)
+    BASE.SetProfitBuff(m_balance.profits, CS.UIWidget.Pivot.Right)
+    this:DelayInvokeInSeconds(BASE.TitleAnimTime, function()
+      if m_skipAnim then
+        return
+      end
+      WU.ToggleRendering(REF.AcquirementList, true)
+      REF.AcquirementContent.UIPlayTween:Play(true)
+      this:DelayInvokeInSeconds(#m_rewards * BASE.RewardAnimTime, function()
+        if m_skipAnim then
+          return
+        end
+        WU.ToggleRendering(REF.TitleLine2, true)
+        REF.TitleLine2.UIPlayTween:Play(true)
+        this:DelayInvokeInSeconds(BASE.TitleAnimTime, function()
+          if m_skipAnim then
+            return
+          end
+          WU.ToggleRendering(REF.WidgetDungeonGroup, true)
+          REF.TweenerGroup1.UIPlayTween:Play(true)
+          this:DelayInvokeInSeconds(1, function()
+            if m_skipAnim then
+              return
+            end
+            OnAnimFinished()
+          end)
+        end)
+      end)
+    end)
+  end)
+end
+
+function OnAnimFinished()
+  local delayTime = 0
+  if m_receiveFoodEvent then
+    BASE.ToggleReceiveFoodGameEventEffect(true)
+    delayTime = 2
+  elseif m_triggeredEvent then
+    BASE.ToggleTriggleEventEffect(true)
+    delayTime = 2
+  end
+  this:DelayInvokeInSeconds(delayTime, function()
+    WU.ToggleRendering(REF.AnimMask, false)
+    WU.SetActive(REF.NewButton, true)
+    if #m_rewards > #REF.AcquirementContent - 2 then
+      REF.AcquirementList.BoxCollider2D.enabled = true
+      WU.TraverseChildren(REF.AcquirementContent, function(go)
+        go:GetComponentInChildren(typeof(CS.UIDragScrollView)).enabled = true
+      end)
+    end
+    local bShake = false
+    for i, v in ipairs(m_rewards) do
+      if v.equip and v.equip.quality >= 4 then
+        CS.GameUtility.Vibrate()
+        break
+      end
+    end
+    BASE.OnDungeonAnimFinished()
+  end)
+end
+
+function OnDestroy()
+  BASE.OnDestroy()
+end

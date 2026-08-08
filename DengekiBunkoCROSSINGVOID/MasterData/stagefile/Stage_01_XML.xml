@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <Stage Name="Stage_01" ID="01" Scene="SceneS01" StageRectX="-25" StageRectY="25" StageRectZ="-10" StageRectW="10" BornPointX="0" BornPointY="0" BornPointZ="0" BornDirX="1" BornDirY="1" CameraRangeX="-24" CameraRangeY="24" CameraOffPosX="0" CameraOffPosY="2.8" CameraOffPosZ="-9.5" CameraFov="56" ShadowType="1" ShadowR="0" ShadowG="0" ShadowB="0" ShadowA="100" ShadowAmbient="True" ShadowLightDirX="0" ShadowLightDirY="0" ShadowLightDirZ="0" ShadowLightDirW="0" StartStroy="0" EndStory="0" StageTime="0">
+    <StageStatic Name="StaticModel" Asset="Assets/AssetBundle/Logic/Scene/StaticModel.prefab">
+      <Component>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+        <Scale X="100" Y="100" Z="100" />
+        <Script ID="1" LogicID="0" Path="Assets/AssetBundle/Effect/Scene/S01/SFX_PinkLight.prefab" Group="1" AnimSpeed="1" />
+      </Component>
+    </StageStatic>
+    <StageStatic Name="StaticModel" Asset="Assets/AssetBundle/Logic/Scene/StaticModel.prefab">
+      <Component>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+        <Scale X="100" Y="100" Z="100" />
+        <Script ID="2" LogicID="0" Path="Assets/AssetBundle/Effect/Scene/S01/SFX_PointLight01.prefab" Group="1" AnimSpeed="1" />
+      </Component>
+    </StageStatic>
+    <StageStatic Name="StaticModel" Asset="Assets/AssetBundle/Logic/Scene/StaticModel.prefab">
+      <Component>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+        <Scale X="100" Y="100" Z="100" />
+        <Script ID="3" LogicID="0" Path="Assets/AssetBundle/Effect/Scene/S01/SFX_PointLight02.prefab" Group="1" AnimSpeed="1" />
+      </Component>
+    </StageStatic>
+    <StageStatic Name="StaticModel" Asset="Assets/AssetBundle/Logic/Scene/StaticModel.prefab">
+      <Component>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+        <Scale X="100" Y="100" Z="100" />
+        <Script ID="4" LogicID="0" Path="Assets/AssetBundle/Effect/Scene/S01/SFX_SmokeWhite.prefab" Group="1" AnimSpeed="1" />
+      </Component>
+    </StageStatic>
+    <StageStatic Name="StaticModel" Asset="Assets/AssetBundle/Logic/Scene/StaticModel.prefab">
+      <Component>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+        <Scale X="100" Y="100" Z="100" />
+        <Script ID="5" LogicID="0" Path="Assets/AssetBundle/Effect/Scene/S01/SFX_SmokeYellow.prefab" Group="1" AnimSpeed="1" />
+      </Component>
+    </StageStatic>
+    <StageStatic Name="StaticModel" Asset="Assets/AssetBundle/Logic/Scene/StaticModel.prefab">
+      <Component>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+        <Scale X="100" Y="100" Z="100" />
+        <Script ID="6" LogicID="0" Path="Assets/AssetBundle/Effect/Scene/S01/SFX_SparUp.prefab" Group="0" AnimSpeed="1" />
+      </Component>
+    </StageStatic>
+    <StageStatic Name="StaticModel" Asset="Assets/AssetBundle/Logic/Scene/StaticModel.prefab">
+      <Component>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+        <Scale X="100" Y="100" Z="100" />
+        <Script ID="7" LogicID="0" Path="Assets/AssetBundle/Effect/Scene/S01/SFX_Welding.prefab" Group="1" AnimSpeed="1" />
+      </Component>
+    </StageStatic>
+    <StageStatic Name="StaticModel" Asset="Assets/AssetBundle/Logic/Scene/StaticModel.prefab">
+      <Component>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+        <Scale X="100" Y="100" Z="100" />
+        <Script ID="8" LogicID="0" Path="Assets/AssetBundle/Effect/Scene/S01/S01_Container.prefab" Group="0" AnimSpeed="1" />
+      </Component>
+    </StageStatic>
+  </Stage>
+</Root>

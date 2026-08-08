@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <Scene Name="SceneS08" Rotate="0">
+    <AmbientLight R="255" G="255" B="255" Intensity="1" />
+    <DirectionalLight RotX="40.00002" RotY="320" RotZ="340" R="200" G="150" B="150" Intensity="1.5" />
+    <SkyBox Name="" />
+    <Fog FogEnable="False" FogMode="Linear" FogDensity="0.02" FogStart="40" FogEnd="180" FogR="232" FogG="206" FogB="255" />
+    <LightMap />
+    <PathWay Asset="Assets/AssetBundle/Scene/Main/S08/PathWay.prefab" />
+    <ScenePart Name="S08_Scene" Asset="Assets/AssetBundle/Scene/Main/S08/S08_Scene.prefab">
+      <Transform>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+      </Transform>
+      <Render Name="Buildings1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Buildings2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Floor" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant01" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant02" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant03" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant04" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant05" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant06" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant07" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant08" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant09" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant10" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant11" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant12" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant13" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant14" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant15" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant16" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant17" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant18" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant19" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant20" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant21" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant22" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant23" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant24" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant25" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant26" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant27" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant28" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Plant29" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Windmill1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Windmill2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface26" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface28" Index="-1" X="1" Y="1" Z="0" W="0" />
+    </ScenePart>
+  </Scene>
+</Root>

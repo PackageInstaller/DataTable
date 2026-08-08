@@ -1,0 +1,147 @@
+[
+  {
+    "name": "黑雪姬反伤，深雪盾",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "1号位",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "T",
+                  "compareOperation": "0",
+                  "expression": "0+x"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "T",
+                  "value": "T+1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "target": "1",
+                  "skillType": "1",
+                  "cardNum": "1",
+                  "fallbackSkillType": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionLog",
+                "prop": {
+                  "log": "1号 攻击"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "2号位",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "T",
+                  "compareOperation": "0",
+                  "expression": "1+x"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "T",
+                  "value": "T+1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionLog",
+                "prop": {
+                  "log": "2号 攻击"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "target": "2",
+                  "skillType": "0",
+                  "cardNum": "1",
+                  "fallbackSkillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "3号位",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "T",
+                  "compareOperation": "0",
+                  "expression": "2+x"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "T",
+                  "value": "T+1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "x",
+                  "value": "x+3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionLog",
+                "prop": {
+                  "log": "3号 攻击"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "target": "3",
+                  "skillType": "2",
+                  "cardNum": "4",
+                  "fallbackSkillType": "0"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

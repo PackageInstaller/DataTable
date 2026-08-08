@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <Scene Name="SceneS12" Rotate="0">
+    <AmbientLight R="255" G="255" B="255" Intensity="1" />
+    <DirectionalLight RotX="40.00002" RotY="320" RotZ="340" R="200" G="150" B="150" Intensity="1.5" />
+    <SkyBox Name="" />
+    <Fog FogEnable="False" FogMode="Linear" FogDensity="0.02" FogStart="40" FogEnd="180" FogR="232" FogG="206" FogB="255" />
+    <LightMap />
+    <PathWay Asset="Assets/AssetBundle/Scene/Main/S12/PathWay.prefab" />
+    <ScenePart Name="S12_Scene" Asset="Assets/AssetBundle/Scene/Main/S12/S12_Scene.prefab">
+      <Transform>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+      </Transform>
+      <Render Name="Building01" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Floor" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane3" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane4" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane5" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane6" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane7" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane8" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane9" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane10" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane11" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane12" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane13" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane14" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane15" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane16" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane17" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane18" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane19" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane20" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane21" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane22" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane23" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane24" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane25" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane26" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane27" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane28" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane29" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane30" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane31" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane32" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane33" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane34" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane35" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane36" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Tower" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface3" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface10" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane37" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane38" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Cloud" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Cloud1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Cloud2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Cloud3" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Sky1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="TreeFar" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="TreeFar2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="TreeGreen" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="TreeGreen1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="TreeGreen2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="TreeGreen3" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="TreeGreen4" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="TreeGreen5" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface7" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface8" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="TreeGreen7" Index="-1" X="1" Y="1" Z="0" W="0" />
+    </ScenePart>
+  </Scene>
+</Root>

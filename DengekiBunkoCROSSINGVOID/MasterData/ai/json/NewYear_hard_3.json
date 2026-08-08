@@ -1,0 +1,116 @@
+[
+  {
+    "name": "圣诞高难本-3",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "机器人防御阶段",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckActorHasBuff",
+                "prop": {
+                  "targetTeam": "0",
+                  "target": "1",
+                  "keyType": "2",
+                  "buffKeyExp": "996095"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "机器人回血阶段",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckActorHasBuff",
+                "prop": {
+                  "targetTeam": "0",
+                  "target": "1",
+                  "keyType": "2",
+                  "buffKeyExp": "996096"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "机器人反噬阶段",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckActorHasBuff",
+                "prop": {
+                  "targetTeam": "0",
+                  "target": "1",
+                  "keyType": "2",
+                  "buffKeyExp": "996097"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "机器人狂暴阶段",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckActorHasBuff",
+                "prop": {
+                  "targetTeam": "0",
+                  "target": "1",
+                  "keyType": "2",
+                  "buffKeyExp": "996099"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "2",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

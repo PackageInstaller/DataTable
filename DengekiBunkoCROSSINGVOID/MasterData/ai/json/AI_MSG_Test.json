@@ -1,0 +1,39 @@
+[
+  {
+    "name": "测试怪物表现用AI",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionAddBuff",
+                "prop": {
+                  "targetTeam": "1",
+                  "target": "0",
+                  "buffIndexExp": "997500",
+                  "buffLevelExp": "1"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

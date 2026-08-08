@@ -1,0 +1,53 @@
+[
+ {
+  "maxMemberCount": 30,
+  "maxNameLen": 7,
+  "maxBillboardLen": 64,
+  "createMinLevel": 23,
+  "createCost": {
+   "type": 7,
+   "count": 100000
+  },
+  "viceCount": 3,
+  "randomBatchCount": 10,
+  "love_score_mu": 30,
+  "love_score_sigma": 8,
+  "love_segment": [
+   {
+    "score_low": 60,
+    "random_low": 12000,
+    "random_high": 16000
+   },
+   {
+    "score_low": 80,
+    "random_low": 16000,
+    "random_high": 18000
+   },
+   {
+    "score_low": 100,
+    "random_low": 18000,
+    "random_high": 20000
+   }
+  ],
+  "badgeCount": 6,
+  "renameCost": 1000,
+  "editIconCost": 1000,
+  "donateMaxCount": 10,
+  "maxRecord": 50,
+  "voteStartPresidentLeave": 604800,
+  "voteLastTime": 259200,
+  "voteCoolDown": 604800,
+  "donateRefund": {
+   "type": 17,
+   "count": 10
+  },
+  "maxLoveScore": 100,
+  "donateRefreshIsoWeekday": 7,
+  "donateMaxCountByOnePlayer": 100,
+  "maxGuildDeployDoneCount": 2,
+  "maxGuildPendingList": 50,
+  "guildFunctionLimitWhenQuit": 86400,
+  "punishQuitCount": 1,
+  "maxGuildLevel": 15
+ }
+]

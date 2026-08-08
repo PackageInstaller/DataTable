@@ -1,0 +1,50 @@
+[
+  {
+    "name": "剧情1-3 静雄",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "type": "ActionPlayBestSkill",
+            "prop": {
+              "canUseSuperSkill": "0",
+              "canUseLink": "0",
+              "canUseAssistSkill": "0",
+              "canUseSkill2": "1",
+              "canUseSkill1": "1",
+              "returnFailIfFailToPlayDueToLock": "0",
+              "canUseSkill3_9": "0"
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]

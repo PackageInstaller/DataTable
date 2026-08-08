@@ -1,0 +1,55 @@
+[
+  {
+    "name": "team_ai_1",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "2",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "type": "ActionPlayBestSkill",
+            "prop": {
+              "canUseSuperSkill": "0",
+              "canUseLink": "0",
+              "canUseAssistSkill": "1",
+              "canUseSkill2": "1",
+              "canUseSkill1": "1"
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]

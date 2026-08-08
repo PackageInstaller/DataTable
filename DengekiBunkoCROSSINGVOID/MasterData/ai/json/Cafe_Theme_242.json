@@ -1,0 +1,1821 @@
+[
+  {
+    "name": "轮战 排名2 第二关",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Sequence",
+        "prop": {},
+        "children": [
+          {
+            "name": "检查第一个死亡的角色",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "D1",
+                      "compareOperation": "0",
+                      "expression": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "前排第一个死亡",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActorIsAlive",
+                            "prop": {
+                              "team": "0",
+                              "target": "1",
+                              "alive": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "D1",
+                              "value": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "中排第一个死亡",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActorIsAlive",
+                            "prop": {
+                              "team": "0",
+                              "target": "2",
+                              "alive": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "D1",
+                              "value": "2"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "后排第一个死亡",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActorIsAlive",
+                            "prop": {
+                              "team": "0",
+                              "target": "3",
+                              "alive": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "D1",
+                              "value": "3"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "保证selector一定能通过",
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "D2",
+                  "value": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "前排死亡",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "D1",
+                      "compareOperation": "0",
+                      "expression": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "前排死亡 中排行为",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "前排死亡后 中排第1回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D12",
+                                      "compareOperation": "0",
+                                      "expression": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "7",
+                                      "buffIndexExp": "992051",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "0",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D12",
+                                      "value": "D12+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "前排死亡后 中排第2回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D12",
+                                      "compareOperation": "0",
+                                      "expression": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "4",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D12",
+                                      "value": "D12+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "前排死亡后 中排第3回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D12",
+                                      "compareOperation": "0",
+                                      "expression": "2"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "0",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D12",
+                                      "value": "D12+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "前排死亡后 中排第4回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D12",
+                                      "compareOperation": "0",
+                                      "expression": "3"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "0",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D12",
+                                      "value": "0"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "前排死亡 后排行为 4回合技能循环",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "前排死亡后 后排第1回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D13",
+                                      "compareOperation": "0",
+                                      "expression": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "4",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D13",
+                                      "value": "D13+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "前排死亡后 后排第2回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D13",
+                                      "compareOperation": "0",
+                                      "expression": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "0",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D13",
+                                      "value": "D13+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "前排死亡后 后排第3回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D13",
+                                      "compareOperation": "0",
+                                      "expression": "2"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "2",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D13",
+                                      "value": "D13+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "前排死亡后 后排第4回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D13",
+                                      "compareOperation": "0",
+                                      "expression": "3"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "4",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D13",
+                                      "value": "0"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "中排死亡",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "D1",
+                      "compareOperation": "0",
+                      "expression": "2"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "中排死亡 后排行为",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "中排死亡后 后排第1回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D23",
+                                      "compareOperation": "0",
+                                      "expression": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "7",
+                                      "buffIndexExp": "992051",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "0",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D23",
+                                      "value": "D23+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "中排死亡后 后排第2回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D23",
+                                      "compareOperation": "0",
+                                      "expression": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "1",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D23",
+                                      "value": "D23+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "中排死亡后 后排第3回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D23",
+                                      "compareOperation": "0",
+                                      "expression": "2"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "2",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D23",
+                                      "value": "D23+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "中排死亡后 后排第4回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D23",
+                                      "compareOperation": "0",
+                                      "expression": "3"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "4",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D23",
+                                      "value": "0"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "中排死亡 前排行为 4回合技能循环",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "中排死亡后 前排第1回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D21",
+                                      "compareOperation": "0",
+                                      "expression": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "1",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D21",
+                                      "value": "D21+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "中排死亡后 前排第2回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D21",
+                                      "compareOperation": "0",
+                                      "expression": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "4",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D21",
+                                      "value": "D21+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "中排死亡后 前排第3回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D21",
+                                      "compareOperation": "0",
+                                      "expression": "2"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "2",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D21",
+                                      "value": "D21+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "中排死亡后 前排第4回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D21",
+                                      "compareOperation": "0",
+                                      "expression": "3"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "4",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D21",
+                                      "value": "0"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "后排死亡",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "D1",
+                      "compareOperation": "0",
+                      "expression": "3"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "后排死亡 中排行为",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "后排死亡后 中排第1回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D32",
+                                      "compareOperation": "0",
+                                      "expression": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionAddBuff",
+                                    "prop": {
+                                      "targetTeam": "0",
+                                      "target": "7",
+                                      "buffIndexExp": "992051",
+                                      "buffLevelExp": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "3",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D32",
+                                      "value": "D32+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "后排死亡后 中排第2回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D32",
+                                      "compareOperation": "0",
+                                      "expression": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "0",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D32",
+                                      "value": "D32+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "后排死亡后 中排第3回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D32",
+                                      "compareOperation": "0",
+                                      "expression": "2"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "2",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D32",
+                                      "value": "D32+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "后排死亡后 中排第4回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D32",
+                                      "compareOperation": "0",
+                                      "expression": "3"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "4",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D32",
+                                      "value": "0"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "后排死亡 前排行为 4回合技能循环",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "后排死亡后 前排第1回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D31",
+                                      "compareOperation": "0",
+                                      "expression": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "3",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D31",
+                                      "value": "D31+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "后排死亡后 前排第2回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D31",
+                                      "compareOperation": "0",
+                                      "expression": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "1",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D31",
+                                      "value": "D31+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "后排死亡后 前排第3回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D31",
+                                      "compareOperation": "0",
+                                      "expression": "2"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "4",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D31",
+                                      "value": "D31+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "后排死亡后 前排第4回合",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D31",
+                                      "compareOperation": "0",
+                                      "expression": "3"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "2",
+                                      "returnFailIfFailToPlayDueToLock": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "D31",
+                                      "value": "0"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "满员状态",
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "R1 P1",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "R1 P2",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "R1 P3",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "4",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "6"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "R2 P1",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "R2 P2",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "4",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "R2 P3",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "9"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "R3 P1",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "R3 P2",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "R3 P3",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "12"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "R4 P1",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "2",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "R4 P2",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "R4 P3",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "15"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "R5 P1",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "R5 P2",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "2",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "R5 P3",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "3",
+                          "expression": "18"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "R6 P1",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "4",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "R6 P2",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "R6 P3",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActor",
+                                "prop": {
+                                  "actorPosition": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "2",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "R",
+                                  "value": "R+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "R",
+                          "compareOperation": "4",
+                          "expression": "18"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlayBestSkill",
+                        "prop": {
+                          "canUseSuperSkill": "1",
+                          "canUseLink": "1",
+                          "canUseAssistSkill": "1",
+                          "canUseSkill2": "1",
+                          "canUseSkill1": "1",
+                          "returnFailIfFailToPlayDueToLock": "0",
+                          "canUseSkill3_9": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

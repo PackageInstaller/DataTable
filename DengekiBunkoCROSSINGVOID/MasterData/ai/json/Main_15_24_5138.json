@@ -1,0 +1,333 @@
+[
+  {
+    "name": "15-16",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "R1",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ActionGenRandom",
+                "prop": {
+                  "varname": "A",
+                  "rangeLower": "0",
+                  "rangeUpper": "100"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "一阶段 随机前 全 全",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActorHasBuff",
+                        "prop": {
+                          "targetTeam": "0",
+                          "target": "1",
+                          "keyType": "2",
+                          "buffKeyExp": "996157"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "",
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "5",
+                                  "expression": "33"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "2",
+                                  "expression": "33"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "5",
+                                  "expression": "66"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "6",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "2",
+                                  "expression": "66"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "7",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "二阶段 随机前或满能大 全 全",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActorHasBuff",
+                        "prop": {
+                          "targetTeam": "0",
+                          "target": "1",
+                          "keyType": "2",
+                          "buffKeyExp": "996162"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "",
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "5",
+                                  "expression": "33"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlayBestSkill",
+                                "prop": {
+                                  "canUseSuperSkill": "1",
+                                  "canUseLink": "0",
+                                  "canUseAssistSkill": "0",
+                                  "canUseSkill2": "0",
+                                  "canUseSkill1": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0",
+                                  "canUseSkill3_9": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "2",
+                                  "expression": "33"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "5",
+                                  "expression": "66"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "6",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "2",
+                                  "expression": "66"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "7",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "三阶段 后 大循环",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActorHasBuff",
+                        "prop": {
+                          "targetTeam": "0",
+                          "target": "1",
+                          "keyType": "2",
+                          "buffKeyExp": "996161"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "",
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "B",
+                                  "compareOperation": "0",
+                                  "expression": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "2",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "B",
+                                  "value": "B+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "B",
+                                  "compareOperation": "0",
+                                  "expression": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "6",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "B",
+                                  "value": "B-1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

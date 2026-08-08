@@ -1,0 +1,129 @@
+[
+  {
+    "name": "team_ai_xu_3",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckActorIsAlive",
+                "prop": {
+                  "team": "0",
+                  "target": "2",
+                  "alive": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionGenRandom",
+                "prop": {
+                  "varname": "r1",
+                  "rangeLower": "0",
+                  "rangeUpper": "100"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionGenRandom",
+                "prop": {
+                  "varname": "r2",
+                  "rangeLower": "0",
+                  "rangeUpper": "100"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "r1",
+                  "compareOperation": "4",
+                  "expression": "66"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "r2",
+                          "compareOperation": "4",
+                          "expression": "50"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlayCards",
+                        "prop": {
+                          "target": "2",
+                          "scardCountExp": "0",
+                          "cardCountExp": "3"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ActionPlayCards",
+                        "prop": {
+                          "target": "2",
+                          "scardCountExp": "0",
+                          "cardCountExp": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "type": "ActionPlayRandomCards",
+                "prop": {
+                  "target": "0",
+                  "scardRateExp": "0",
+                  "maxCardsCountExp": "3",
+                  "excludeTargets": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlayRandomCards",
+                "prop": {
+                  "target": "2",
+                  "scardRateExp": "0",
+                  "maxCardsCountExp": "1",
+                  "excludeTargets": ""
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
