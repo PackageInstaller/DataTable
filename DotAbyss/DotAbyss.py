@@ -375,14 +375,19 @@ class AbyssDownloader:
         console.print(f"[green][+] 当前 Hash: {current_hash}[/green]")
 
         hash_file = "catalog.hash"
+        catalog_json_path = "catalog.json"
         updated = True
         if os.path.exists(hash_file):
             with open(hash_file, "r") as f:
                 old_hash = f.read().strip()
                 if old_hash == current_hash:
-                    console.print("[yellow][*] Catalog 已经是最新，跳过。[/yellow]")
                     updated = False
-                    return
+                    if os.path.exists(catalog_json_path):
+                        console.print("[yellow][*] Catalog 已经是最新，跳过。[/yellow]")
+                        return
+                    console.print(
+                        "[yellow][*] Catalog 已是最新，但缺少 catalog.json，将重新解析导出...[/yellow]"
+                    )
 
         bin_path = f"catalog_{self.client_ver_prefix}.bin"
         if not os.path.exists(bin_path) or updated:
@@ -398,6 +403,8 @@ class AbyssDownloader:
             reader = UnityCatalogReader(bin_path)
             assets = reader.get_asset_list()
             console.print(f"[green][+] 找到 {len(assets)} 个资产项目[/green]")
+            reader.export_to_json(catalog_json_path)
+            console.print(f"[green][+] 已导出解析后的 {catalog_json_path}[/green]")
         except Exception as e:
             console.print(f"[red][-] 解析 Catalog 失败: {e}[/red]")
             return

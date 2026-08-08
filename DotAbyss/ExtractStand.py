@@ -13,7 +13,7 @@ class SpriteAtlasExtractor:
         self.bundle_dir = Path(bundle_dir).resolve()
         self.script_dir = Path(os.path.dirname(os.path.abspath(__file__)))
         self.output_dir = self.script_dir / "Stand"
-        self.assets_json_path = self.script_dir / "assets.json"
+        self.assets_json_path = self.script_dir / "catalog.json"
 
         if not self.assets_json_path.exists():
             raise FileNotFoundError(
@@ -148,14 +148,10 @@ class SpriteAtlasExtractor:
                         else 0
                     ),
                     "sw": (
-                        size_delta.x
-                        if size_delta and hasattr(size_delta, "x")
-                        else 0
+                        size_delta.x if size_delta and hasattr(size_delta, "x") else 0
                     ),
                     "sh": (
-                        size_delta.y
-                        if size_delta and hasattr(size_delta, "y")
-                        else 0
+                        size_delta.y if size_delta and hasattr(size_delta, "y") else 0
                     ),
                     "parent": parent_name,
                 }
@@ -623,8 +619,8 @@ class SpriteAtlasExtractor:
                 # 将 expr_resized 直接以 Alpha 混合模式贴到 canvas 的 (paste_x, paste_y) 处
                 canvas.alpha_composite(expr_resized, dest=(paste_x, paste_y))
 
-                # 命名格式: 表情名.png
-                expr_save_name = f"{expr_data['name']}.png"
+                # 命名格式: id_表情名.png
+                expr_save_name = f"{atlas_name}_{expr_data['name']}.png"
                 canvas.save(output_path / expr_save_name)
                 self.stats["expression_exported"] += 1
                 print(f"  └─ [表情合成] {expr_save_name}")
@@ -755,7 +751,7 @@ class SpriteAtlasExtractor:
                 body_img,
                 [(expr_resized, face_paste_x, face_paste_y)],
             )
-            expr_save_name = f"{expr_data['name']}.png"
+            expr_save_name = f"{atlas_name}_{expr_data['name']}.png"
             canvas.save(output_path / expr_save_name)
             self.stats["expression_exported"] += 1
             print(f"  └─ [sub 表情合成] {expr_save_name}")
@@ -772,17 +768,13 @@ class SpriteAtlasExtractor:
                     base_face_layer = self._prepare_sprite_layer(
                         base_face, target_fw, target_fh
                     )
-                    overlays.append(
-                        (base_face_layer, face_paste_x, face_paste_y)
-                    )
+                    overlays.append((base_face_layer, face_paste_x, face_paste_y))
                 overlay_layer = self._prepare_sprite_layer(
                     overlay_data, front_target_w, front_target_h
                 )
-                overlays.append(
-                    (overlay_layer, front_paste_x, front_paste_y)
-                )
+                overlays.append((overlay_layer, front_paste_x, front_paste_y))
                 canvas = self._composite_with_overflow(body_img, overlays)
-                expr_save_name = f"{overlay_data['name']}.png"
+                expr_save_name = f"{atlas_name}_{overlay_data['name']}.png"
                 canvas.save(output_path / expr_save_name)
                 self.stats["expression_exported"] += 1
                 print(f"  └─ [sub 前景合成] {expr_save_name}")

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DNFBDmp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a53ca19e9a0d6281c2fd61d795e486ff816f94c6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff8d1f5bca55bc6d0509be21f383455b070efb4b")]
 [assembly: System.Reflection.AssemblyProductAttribute("DNFBDmp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DNFBDmp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

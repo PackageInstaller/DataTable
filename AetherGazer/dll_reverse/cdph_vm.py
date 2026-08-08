@@ -1,16 +1,19 @@
 import re
 import struct
+from pathlib import Path
 
 M32 = 0xFFFFFFFF
 
 _VM_TEXT = None
 CASES = None
+# 壳 VM 的 256 个 opcode 实现（IDA Hex-Rays 反编译 sub_1806E11F0 导出，
+_VM_PATH = Path(__file__).resolve().parent / "vm_full.txt"
 
 
 def _load_cases():
     global CASES, _VM_TEXT
     if CASES is None:
-        _VM_TEXT = open("/tmp/vm_full.txt").read()
+        _VM_TEXT = _VM_PATH.read_text(encoding="utf-8")
         CASES = parse_cases(_VM_TEXT)
     return CASES
 
