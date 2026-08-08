@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Battle.Simulator.LogicScripts</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net40</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="FlowCanvas">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/FlowCanvas.dll</HintPath>
+    </Reference>
+    <Reference Include="common">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/common.dll</HintPath>
+    </Reference>
+    <Reference Include="logic">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/logic.dll</HintPath>
+    </Reference>
+    <Reference Include="Battle.Simulator.Render">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Battle.Simulator.Render.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.Base">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Entitas.dll</HintPath>
+    </Reference>
+    <Reference Include="network">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/network.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

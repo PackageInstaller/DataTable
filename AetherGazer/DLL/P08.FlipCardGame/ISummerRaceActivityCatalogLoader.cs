@@ -1,0 +1,4 @@
+public interface ISummerRaceActivityCatalogLoader
+{
+	SummerRaceActivityRuntimeCatalog LoadCatalog(SummerRaceActivityLoadContext context);
+}

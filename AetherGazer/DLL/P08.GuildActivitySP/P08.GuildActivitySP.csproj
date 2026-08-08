@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>P08.GuildActivitySP</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net40</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.Base">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="common">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/common.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.ToLua">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.ToLua.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

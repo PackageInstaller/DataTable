@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using ParadoxNotion.Design;
+
+namespace FlowCanvas.Nodes;
+
+[Name("实体初始化AI完成事件(实体类型ID)", 0)]
+[Category("Logic/事件")]
+[Description("实体初始化ai完成事件, 会在实体创建之后的一帧触发")]
+public class EntityInitAIFinishedEventWith : EventNode
+{
+	private int entityID;
+
+	private FlowOutput output;
+
+	private ValueInput<int> roleIDInput;
+
+	private Stack<Flow.ReturnData> returnData = new Stack<Flow.ReturnData>(16);
+
+	protected override void RegisterPorts()
+	{
+		AddValueOutput("实体ID", () => entityID);
+		roleIDInput = AddValueInput<int>("实体类型ID", "角色ID");
+		output = AddFlowOutput("");
+	}
+
+	public override void OnGraphStarted()
+	{
+		ISimulatorInferface simInterface = base.mSimContext.GetSimInterface();
+		simInterface.mInitEntityFinishedEvent = (Action<int>)Delegate.Combine(simInterface.mInitEntityFinishedEvent, new Action<int>(OnEntityInitFinishedEventHandler));
+		ISimulatorInferface simInterface2 = base.mSimContext.GetSimInterface();
+		simInterface2.mAIAddedLogicEvent = (Action<int>)Delegate.Combine(simInterface2.mAIAddedLogicEvent, new Action<int>(OnEntityInitFinishedEventHandler));
+	}
+
+	public override void OnGraphStoped()
+	{
+		ISimulatorInferface simInterface = base.mSimContext.GetSimInterface();
+		simInterface.mInitEntityFinishedEvent = (Action<int>)Delegate.Remove(simInterface.mInitEntityFinishedEvent, new Action<int>(OnEntityInitFinishedEventHandler));
+		ISimulatorInferface simInterface2 = base.mSimContext.GetSimInterface();
+		simInterface2.mAIAddedLogicEvent = (Action<int>)Delegate.Remove(simInterface2.mAIAddedLogicEvent, new Action<int>(OnEntityInitFinishedEventHandler));
+	}
+
+	private void OnEntityInitFinishedEventHandler(int id)
+	{
+		SimEntity entityWithEntityID = base.mSimContext.GetEntityWithEntityID(id);
+		if (entityWithEntityID != null && entityWithEntityID.hasEntityConfig && entityWithEntityID.ENTITY_CONFIG_ID == roleIDInput.value && entityWithEntityID.hasEntityAIThink)
+		{
+			entityID = id;
+			Flow f = new Flow
+			{
+				userData = entityWithEntityID,
+				returnData = returnData
+			};
+			output.Call(f);
+		}
+	}
+}

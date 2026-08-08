@@ -1,0 +1,189 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>P08.Main</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net40</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.Base">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.Splash">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.Splash.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.RenderPipeline">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.RenderPipeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.3rd">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.3rd.dll</HintPath>
+    </Reference>
+    <Reference Include="MagicaClothV2">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/MagicaClothV2.dll</HintPath>
+    </Reference>
+    <Reference Include="PinYinConverterCore">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/PinYinConverterCore.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.ReplicaExt.Runtime">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.ReplicaExt.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Battle.Simulator.Render">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Battle.Simulator.Render.dll</HintPath>
+    </Reference>
+    <Reference Include="logic">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/logic.dll</HintPath>
+    </Reference>
+    <Reference Include="common">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/common.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.I18N">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.I18N.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.FlipCardGame">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.FlipCardGame.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.ToLua">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.ToLua.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Sirenix.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Kybernetik.Animancer">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Kybernetik.Animancer.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.Dorm">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.Dorm.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.Chess">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.Chess.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.GuildActivity">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.GuildActivity.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.GuildActivitySP">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.GuildActivitySP.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.MusicGame">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.MusicGame.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.PaperCutGame">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.PaperCutGame.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.QWorld">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.QWorld.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.SailGame">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.SailGame.dll</HintPath>
+    </Reference>
+    <Reference Include="spine-unity">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/spine-unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="HybridCLR.Runtime">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/HybridCLR.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="RootMotion">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/RootMotion.dll</HintPath>
+    </Reference>
+    <Reference Include="Kybernetik.Animancer.FSM">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Kybernetik.Animancer.FSM.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Animation.Rigging">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Unity.Animation.Rigging.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Debugger">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Debugger.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="litjson">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/litjson.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.Pipelines.UI">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.Pipelines.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Vella.NativeHull">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Vella.NativeHull.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/System.Net.Http.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

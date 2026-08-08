@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "ID": 1,
+    "Type": 1,
+    "Name": "即死",
+    "Status": 16,
+    "Target": 3,
+    "Count": 1,
+    "During": 430,
+    "TriggerRangeType": 3,
+    "DamageEffectType": 4
+  },
+  {
+    "id": 2,
+    "ID": 2,
+    "Type": 1,
+    "Name": "燃烧",
+    "Status": 2,
+    "Target": 2,
+    "Count": 10,
+    "During": 5000,
+    "Tick": 1000,
+    "TriggerRangeType": 3,
+    "Range": 10000,
+    "DamageEffectType": 1,
+    "DamageEffectValue": 100
+  },
+  {
+    "id": 3,
+    "ID": 3,
+    "Type": 1,
+    "Name": "测试",
+    "Status": 2,
+    "Target": 3,
+    "Count": 18446744073709551615,
+    "During": 5000,
+    "Tick": 18446744073709551615,
+    "TriggerRangeType": 3,
+    "Range": 10000
+  },
+  {
+    "id": 4,
+    "ID": 4,
+    "Type": 1,
+    "Name": "护盾",
+    "Status": 21,
+    "Target": 1,
+    "Count": 18446744073709551615,
+    "During": 6000,
+    "Tick": 18446744073709551615,
+    "TriggerRangeType": 3,
+    "Range": 10000,
+    "ShieldValue": 1000
+  },
+  {
+    "id": 10,
+    "ID": 10,
+    "Type": 1,
+    "Name": "无敌",
+    "Status": 10,
+    "Target": 3,
+    "Count": 18446744073709551615,
+    "During": 5000,
+    "Tick": 18446744073709551615
+  },
+  {
+    "id": 21,
+    "ID": 21,
+    "Type": 1,
+    "Name": "吸血测试",
+    "Status": 22,
+    "Target": 2,
+    "Count": 18446744073709551615,
+    "During": 5000,
+    "Tick": 18446744073709551615,
+    "LeechLifeType": 1,
+    "LeechLifeParam": 10
+  },
+  {
+    "id": 23,
+    "ID": 23,
+    "Type": 1,
+    "Name": "变身",
+    "Status": 23,
+    "Target": 3,
+    "Count": 18446744073709551615,
+    "During": 10000,
+    "Tick": 18446744073709551615,
+    "TransformSkillArr": [
+      1011203,
+      1011202,
+      1011201,
+      1011200
+    ]
+  }
+]

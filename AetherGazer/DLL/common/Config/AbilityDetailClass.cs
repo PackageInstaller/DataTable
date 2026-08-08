@@ -1,0 +1,59 @@
+using Google.Protobuf.Reflection;
+
+namespace Config;
+
+public enum AbilityDetailClass
+{
+	[OriginalName("AbilityDetailClass_None")]
+	None,
+	[OriginalName("AbilityDetailClass_LightAttack")]
+	LightAttack,
+	[OriginalName("AbilityDetailClass_Skill")]
+	Skill,
+	[OriginalName("AbilityDetailClass_Avoid")]
+	Avoid,
+	[OriginalName("AbilityDetailClass_Dead")]
+	Dead,
+	[OriginalName("AbilityDetailClass_Defense")]
+	Defense,
+	[OriginalName("AbilityDetailClass_SkillMove")]
+	SkillMove,
+	[OriginalName("AbilityDetailClass_HeavyAttack")]
+	HeavyAttack,
+	[OriginalName("AbilityDetailClass_Ultimate")]
+	Ultimate,
+	[OriginalName("AbilityDetailClass_Run")]
+	Run,
+	[OriginalName("AbilityDetailClass_Idle")]
+	Idle,
+	[OriginalName("AbilityDetailClass_Endure")]
+	Endure,
+	[OriginalName("AbilityDetailClass_Hit")]
+	Hit,
+	[OriginalName("AbilityDetailClass_MonsterEliteAttack")]
+	MonsterEliteAttack,
+	[OriginalName("AbilityDetailClass_MonsterEliteSkill")]
+	MonsterEliteSkill,
+	[OriginalName("AbilityDetailClass_Charge")]
+	Charge,
+	[OriginalName("AbilityDetailClass_MonsterSkill")]
+	MonsterSkill,
+	[OriginalName("AbilityDetailClass_HitGround")]
+	HitGround,
+	[OriginalName("AbilityDetailClass_FallGround")]
+	FallGround,
+	[OriginalName("AbilityDetailClass_RunStart")]
+	RunStart,
+	[OriginalName("AbilityDetailClass_GatherSkill")]
+	GatherSkill,
+	[OriginalName("AbilityDetailClass_Recovery")]
+	Recovery,
+	[OriginalName("AbilityDetailClass_UniqueSkill")]
+	UniqueSkill,
+	[OriginalName("AbilityDetailClass_ThrownSkill")]
+	ThrownSkill,
+	[OriginalName("AbilityDetailClass_StrongSkill")]
+	StrongSkill,
+	[OriginalName("AbilityDetailClass_StrongSkillHitGround")]
+	StrongSkillHitGround
+}

@@ -1,0 +1,4 @@
+public interface ISummerRaceActivityProgressLoader
+{
+	SummerRaceActivityProgressContract LoadProgress(SummerRaceActivityLoadContext context);
+}

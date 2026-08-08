@@ -1,0 +1,6 @@
+public enum PinballPassiveSkillType
+{
+	PLAYERPASSIVE01 = 16,
+	PLAYERPASSIVE02,
+	PLAYERPASSIVE03
+}

@@ -45,3 +45,4 @@
 |   FalloutTamira   |   异尘：达米拉   |          国服Lua + Json          |
 |     MAkeDrama     |    MAkeDrama    |            韩服 Json            |
 |   TenkeiParadox   |       天启       |             Dmm Json             |
+|    AetherGazer    |  大眼(深空之眼)  |            国服 Json            |

@@ -1,0 +1,68 @@
+using Config;
+using ParadoxNotion.Design;
+
+namespace FlowCanvas.Nodes;
+
+[Name("得到Buff信息(类型(处理逻辑)ID)(逻辑)(过时)", 0)]
+[Category("Logic/Buff")]
+[Description("获取buff信息, 找到他身上第一个这个ID的buff信息")]
+public class GetBuffInfoByClassID : FlowNode
+{
+	protected override void RegisterPorts()
+	{
+		ValueInput<int> entityIDInput = AddValueInput<int>("实体ID", "实体ID");
+		ValueInput<int> classIDInput = AddValueInput<int>("类型(处理逻辑)ID", "BuffID");
+		int floor = 0;
+		int index = 0;
+		int maxFloor = 0;
+		int duringTime = 0;
+		int leftTime = 0;
+		string subType = "";
+		AddValueOutput("实体ID", "实体ID", () => entityIDInput.value);
+		AddValueOutput("数组下标", "索引", () => index);
+		AddValueOutput("Buff层数", "层数", () => floor);
+		AddValueOutput("剩余时长", "剩余时间", () => leftTime);
+		AddValueOutput("配置ID", "buffConfigID", () => classIDInput.GetValue());
+		AddValueOutput("最大层数", "最大等级", () => maxFloor);
+		AddValueOutput("持续总长", "buff持续时间", () => duringTime);
+		AddValueOutput("子类型", "BUFF子类型", () => subType);
+		int interval = 0;
+		AddValueOutput("触发间隔时长(毫秒)", "间隔", () => interval);
+		FlowOutput output = AddFlowOutput("");
+		FlowOutput falseOutput = AddFlowOutput("没有信息", "false");
+		FlowOutput errorOutput = AddFlowOutput("Error", "error");
+		AddFlowInput("", delegate(Flow f)
+		{
+			int value = classIDInput.value;
+			SimEntity entityWithEntityID = base.mSimContext.GetEntityWithEntityID(entityIDInput.value);
+			if (entityWithEntityID == null)
+			{
+				errorOutput.Call(f);
+			}
+			else if (!entityWithEntityID.hasEntityBuff)
+			{
+				falseOutput.Call(f);
+			}
+			else
+			{
+				index = AddBuff.GetBuffClassIDIndex(value, entityWithEntityID);
+				if (index == -1)
+				{
+					falseOutput.Call(f);
+				}
+				else
+				{
+					floor = entityWithEntityID.entityBuff.mBuffFloor[index];
+					value = entityWithEntityID.entityBuff.mBuffConfigID[index];
+					public_buff config = ConfigHelper.GetInstance().GetConfig<public_buff>(value);
+					maxFloor = config.MaxLevel;
+					leftTime = entityWithEntityID.entityBuff.mDuringArray[index];
+					duringTime = config.KeepTime;
+					subType = config.SubType;
+					interval = entityWithEntityID.entityBuff.mTickArray[index];
+					output.Call(f);
+				}
+			}
+		});
+	}
+}
