@@ -27,7 +27,8 @@ AetherGazer/
 │   ├── extract_schema.py       # il2cpp.cs -> config_schema.json
 │   └── config_schema.json      # 180 个 protobuf 消息字段映射
 ├── scripts/
-│   └── fetch_masterdata.py     # 一键下载+提取+解析数据表
+│   ├── fetch_masterdata.py     # 一键下载+提取+解析数据表
+│   └── fetch_lua.py            # 下载 scripts64/scripts32 并拆出 x64/x86 Lua
 └── dll_reverse/
     ├── cdph_vm.py              # CDPH 壳 VM 解释器
     ├── decrypt_il.py           # IL 方法体解密
@@ -71,6 +72,26 @@ python scripts/fetch_masterdata.py
 脚本会自动下载 `config.ys`、提取 Config TextAsset、按字段映射反序列化
 全部 89 张表到 `MasterData/`（每表一个 JSON 文件）。
 
+### 2.5 下载并提取 Lua 脚本
+
+只下载 Lua 相关资源：
+
+```bash
+python updater/aethergazer_updater.py --output ./aethergazer --only lua
+```
+
+或者一键下载并解出两个架构的全部 Lua 到 `Lua/x64` 与 `Lua/x86`：
+
+```bash
+python scripts/fetch_lua.py
+```
+
+下载后调用系统命令 `luajit-decompiler` 反编译（结果在 `LuaDecomp/`）：
+
+```bash
+python scripts/fetch_lua.py --decompile
+```
+
 ### 3. 反编译HybridCLR DLL
 
 ```bash
@@ -94,5 +115,6 @@ python build_all.py
 - [docs/updater.md](docs/updater.md) —— 下载更新器原理与参数
 - [docs/masterdata.md](docs/masterdata.md) —— 数据表提取/解析/字段映射
 - [docs/config-format.md](docs/config-format.md) —— Config 二进制格式
+- [docs/lua-bridge.md](docs/lua-bridge.md) —— Lua 脚本桥（ToLua）使用情况
 - [docs/reverse-engineering.md](docs/reverse-engineering.md) —— CDPH 容器、
   壳 VM、四流解密、DLL 重建与反编译全过程

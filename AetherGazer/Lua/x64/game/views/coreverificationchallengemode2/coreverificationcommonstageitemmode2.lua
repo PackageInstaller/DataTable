@@ -1,0 +1,152 @@
+﻿local var_0_0 = class("CoreVerificationCommonStageItemMode2", ReduxView)
+
+function var_0_0.OnCtor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0.gameObject_ = arg_1_1
+	arg_1_0.transform_ = arg_1_1.transform
+	arg_1_0.cfg = arg_1_2
+	arg_1_0.index = arg_1_3
+	arg_1_0.stage_id = arg_1_2.stage_id
+
+	arg_1_0:Init()
+end
+
+function var_0_0.Init(arg_2_0)
+	arg_2_0:InitUI()
+	arg_2_0:AddUIListener()
+end
+
+function var_0_0.InitUI(arg_3_0)
+	arg_3_0:BindCfgUI()
+
+	arg_3_0.challengeHeadItems = {}
+	arg_3_0.buffList = {}
+
+	for iter_3_0 = 1, 3 do
+		arg_3_0.challengeHeadItems[iter_3_0] = CoreVerificationChallengeHeroHeadItem.New(arg_3_0["heroItem_" .. iter_3_0], iter_3_0)
+	end
+
+	arg_3_0.stateController_ = arg_3_0.controller_:GetController("selection01")
+	arg_3_0.titleText_.text = arg_3_0.cfg.stage_name
+
+	local var_3_0 = arg_3_0.cfg.cost_limit_up
+
+	arg_3_0.maxText_.text = string.format(GetTips("CORE_VERIFICATION_CL_COST_LIMIT_3"), "+" .. var_3_0)
+end
+
+function var_0_0.AddUIListener(arg_4_0)
+	arg_4_0:AddBtnListener(arg_4_0.btn_, nil, function()
+		local var_5_0 = arg_4_0.heroList and arg_4_0.heroList or {}
+
+		JumpTools.OpenPageByJump("/coreVerificationCommonStageViewMode2", {
+			cfg = arg_4_0.cfg,
+			index = arg_4_0.index,
+			heroList = var_5_0
+		})
+	end)
+end
+
+function var_0_0.RefreshUI(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_0.cfg.cost_limit_up
+
+	arg_6_0.maxText_.text = string.format(GetTips("CORE_VERIFICATION_CL_COST_LIMIT_3"), "+" .. var_6_0)
+
+	if arg_6_1 then
+		arg_6_0.heroList = arg_6_1.common_lock_id and arg_6_1.common_lock_id or {}
+
+		if arg_6_1 and arg_6_1.stage_id > 0 and #arg_6_1.common_lock_id > 0 then
+			arg_6_0.stateController_:SetSelectedIndex(1)
+		else
+			arg_6_0.stateController_:SetSelectedIndex(0)
+
+			if arg_6_0.buffList and #arg_6_0.buffList > 0 then
+				for iter_6_0 = 1, #arg_6_0.buffList do
+					arg_6_0.buffList[iter_6_0]:Dispose()
+					Object.Destroy(arg_6_0.buffList[iter_6_0].gameObject_)
+
+					arg_6_0.buffList[iter_6_0] = nil
+				end
+			end
+		end
+
+		local var_6_1 = arg_6_1.common_lock_id
+
+		for iter_6_1 = 1, 3 do
+			local var_6_2 = var_6_1[iter_6_1] and var_6_1[iter_6_1] or 0
+
+			arg_6_0.challengeHeadItems[iter_6_1]:RefreshUI(var_6_2)
+		end
+	else
+		arg_6_0.stateController_:SetSelectedIndex(0)
+
+		if arg_6_0.buffList and #arg_6_0.buffList > 0 then
+			for iter_6_2 = 1, #arg_6_0.buffList do
+				arg_6_0.buffList[iter_6_2]:Dispose()
+				Object.Destroy(arg_6_0.buffList[iter_6_2].gameObject_)
+
+				arg_6_0.buffList[iter_6_2] = nil
+			end
+		end
+
+		for iter_6_3 = 1, 3 do
+			arg_6_0.challengeHeadItems[iter_6_3]:RefreshUI(0)
+		end
+	end
+end
+
+function var_0_0.RefreshAffix(arg_7_0)
+	local var_7_0 = {}
+
+	for iter_7_0, iter_7_1 in ipairs(arg_7_0.cfg.stage_buff) do
+		local var_7_1 = {
+			type = 1,
+			buff_id = iter_7_1
+		}
+
+		table.insert(var_7_0, var_7_1)
+	end
+
+	for iter_7_2, iter_7_3 in ipairs(arg_7_0.cfg.stage_debuff) do
+		local var_7_2 = {
+			type = 2,
+			buff_id = iter_7_3
+		}
+
+		table.insert(var_7_0, var_7_2)
+	end
+
+	for iter_7_4 = 1, #var_7_0 do
+		if not arg_7_0.buffList[iter_7_4] then
+			local var_7_3 = Object.Instantiate(arg_7_0.affixItem_, arg_7_0.tagParent_)
+
+			arg_7_0.buffList[iter_7_4] = CoreVerificationChallengeAffixItemItem.New(var_7_3)
+		end
+
+		arg_7_0.buffList[iter_7_4]:RefreshUI(var_7_0[iter_7_4])
+		arg_7_0.buffList[iter_7_4]:Show(true)
+	end
+
+	for iter_7_5 = #var_7_0 + 1, #arg_7_0.buffList do
+		arg_7_0.buffList[iter_7_5]:Show(false)
+	end
+end
+
+function var_0_0.Dispose(arg_8_0)
+	for iter_8_0 = 1, 3 do
+		arg_8_0.challengeHeadItems[iter_8_0]:Dispose()
+
+		arg_8_0.challengeHeadItems[iter_8_0] = nil
+	end
+
+	if arg_8_0.buffList then
+		for iter_8_1 = 1, #arg_8_0.buffList do
+			arg_8_0.buffList[iter_8_1]:Dispose()
+			Object.Destroy(arg_8_0.buffList[iter_8_1].gameObject_)
+
+			arg_8_0.buffList[iter_8_1] = nil
+		end
+	end
+
+	var_0_0.super.Dispose(arg_8_0)
+end
+
+return var_0_0

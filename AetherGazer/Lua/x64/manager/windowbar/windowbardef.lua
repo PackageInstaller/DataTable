@@ -1,0 +1,10 @@
+﻿BACK_BAR = "BACK_BAR"
+HOME_BAR = "HOME_BAR"
+NAVI_BAR = "NAVI_BAR"
+INFO_BAR = "INFO_BAR"
+EXTRA_BAR = "EXTRA_BAR"
+INVITE_BAR = "INVITE_BAR"
+ACTIVITY_MATRIX_COIN = "ACTIVITY_MATRIX_COIN"
+ACTIVITY_COIN = "ACTIVITY_COIN"
+SimBusinessFundBar = import(".SimBusinessFundBarItem").bar
+SimBusinessDailyStageFundBar = import(".SimBusinessFundBarItem").normalStageFundBar

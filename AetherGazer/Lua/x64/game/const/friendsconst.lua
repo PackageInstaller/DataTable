@@ -1,0 +1,15 @@
+﻿return {
+	FRIEND_TYPE = {
+		MY_FRIENDS = 1,
+		FRIEND_REQUESTS = 3,
+		NEW_FRIENDS = 2,
+		BLACKLIST = 4,
+		SEARCH = 5
+	},
+	SORT_TYPE = {
+		LAST_LOAD = 2,
+		NAME = 3,
+		LAST_CHAT = 1,
+		DEFAULT = 0
+	}
+}

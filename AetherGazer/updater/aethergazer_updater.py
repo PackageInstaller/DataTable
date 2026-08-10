@@ -129,6 +129,14 @@ def select_entries(entries: List[Dict], manifest: Dict, only: List[str]) -> List
         if group in known_groups:
             wanted_paths.update(known_groups[group])
             continue
+        if group == "lua":
+            # Lua bundle：scripts32 / scripts64（热更分发），外加 tolua 原生运行时
+            for e in entries:
+                if e["path"] in ("scripts32", "scripts64") or e["path"].endswith(
+                    "/p08_tolua_dll.ys"
+                ):
+                    wanted_paths.add(e["path"])
+            continue
         # 具体包名，例如 assetpend_common_chapter_2
         wanted_paths.update((pend.get("pendDict") or {}).get(group, []))
         wanted_paths.update((pend.get("voiceDict") or {}).get(group, []))
@@ -534,7 +542,7 @@ def main() -> int:
     parser.add_argument(
         "--only",
         default="all,voice",
-        help="下载范围: all / single / voice / newbie / advance / permanent / 具体包名(逗号分隔)",
+        help="下载范围: all / single / voice / lua / newbie / advance / permanent / 具体包名(逗号分隔)",
     )
     parser.add_argument(
         "--voice-lang",

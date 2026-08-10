@@ -1,0 +1,9 @@
+﻿return {
+	WORLDVIEW = 7,
+	ILLUSTRATION = 6,
+	EQUIP = 4,
+	INFORMATION = 1,
+	SERVANT = 3,
+	PLOT = 5,
+	ENEMY = 2
+}

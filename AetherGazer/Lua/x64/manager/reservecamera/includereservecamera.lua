@@ -1,0 +1,5 @@
+﻿ReserveCameraConst = require("manager/reserveCamera/ReserveCameraConst")
+ReserveCameraMgr = require("manager/reserveCamera/ReserveCameraMgr")
+ReserveCameraTemplate = require("manager/reserveCamera/ReserveCameraTemplate")
+ReserveCameraGroup = require("manager/reserveCamera/ReserveCameraGroup")
+ReserveHeroCameraTemplate = require("manager/reserveCamera/ReserveHeroCameraTemplate")

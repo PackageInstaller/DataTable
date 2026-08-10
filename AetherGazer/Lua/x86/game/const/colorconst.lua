@@ -1,0 +1,14 @@
+﻿return {
+	ORANGE_HEX = "F48800",
+	RED_HEX = "FF000B",
+	BLACK_HEX = "3D4045",
+	GREY_LOW_HEX = "CBD2D9",
+	GREY_HEX = "F4FBFB",
+	BLUE_HEX = "77B2FE",
+	GREY = Color(0.957, 0.984, 0.984),
+	GREY_LOW = Color(0.796, 0.824, 0.851),
+	RED = Color(1, 0, 0.043),
+	BLACK = Color(0.239, 0.251, 0.271),
+	ORANGE = Color(0.957, 0.533, 0),
+	BLUE = Color(0.467, 0.699, 0.997)
+}

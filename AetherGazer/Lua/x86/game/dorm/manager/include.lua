@@ -1,0 +1,5 @@
+﻿DormFurnitureManager = import(".DormFurnitureManager")
+DormCharacterManager = import(".DormCharacterManager")
+DormCharacterActionManager = import(".DormCharacterActionManager")
+BackHomeDataManager = import(".BackHomeDataManager")
+DormMultiFurnitureStructureManager = import(".DormMultiFurnitureStructureManager")
