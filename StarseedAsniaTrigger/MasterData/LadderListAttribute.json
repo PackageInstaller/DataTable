@@ -1,0 +1,35 @@
+{
+  "Proxyan":{
+    "LadderId":"Proxyan",
+    "Show":true,
+    "ShowRegion":false,
+    "ScoreType":"Proxyan",
+    "ButtonKey":"Btn.Ranking.Character",
+    "ButtonIcon":"tab_rank_proxyan",
+    "PopupTitleKey":"Title.Character.Ranking",
+    "PopupSubtitleKey":"UI.003560",
+    "ScoreUnitKey":"UI.Character.Score"
+  },
+  "Stage":{
+    "LadderId":"Stage",
+    "Show":true,
+    "ShowRegion":true,
+    "ScoreType":"Stage",
+    "ButtonKey":"Btn.Ranking.Stage",
+    "ButtonIcon":"tab_rank_adventure",
+    "PopupTitleKey":"Title.Stage.Ranking",
+    "PopupSubtitleKey":"UI.003561",
+    "ScoreUnitKey":"UI.Stage.Score"
+  },
+  "DataTower":{
+    "LadderId":"DataTower",
+    "Show":true,
+    "ShowRegion":true,
+    "ScoreType":"DataTower",
+    "ButtonKey":"Btn.Ranking.DataTower",
+    "ButtonIcon":"tab_rank_datatower",
+    "PopupTitleKey":"Title.DataTower.Ranking",
+    "PopupSubtitleKey":"UI.003562",
+    "ScoreUnitKey":"UI.DataTower.Score"
+  }
+}

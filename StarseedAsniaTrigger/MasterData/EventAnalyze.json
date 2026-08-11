@@ -1,0 +1,29 @@
+{
+  "2214000000001":{
+    "Id":2214000000001,
+    "DateRangeCondition":[
+      127,
+      [
+        [
+          "2024-07-05T00:00:00+00:00",
+          "2024-10-10T00:00:00+00:00"
+        ]
+      ]
+    ],
+    "Condition":[
+      24,
+      [
+        "Event"
+      ]
+    ],
+    "DailyPoint":3,
+    "CompletePoint":90,
+    "ActiveAnalyzeItem":"Event.Analyze.Fee001",
+    "ActiveAnalyzePoint":3,
+    "GachaRewardsPool":"분석.캐릭터.통상.SR",
+    "ParentAttributeFilter":true,
+    "TabName":"UI.Analysys.EventName",
+    "TabIcon":"tab_event_analyze",
+    "Prefab":"UI/Prefabs/Lobby/Event/Event_Analyze/Event_Analyze.prefab"
+  }
+}

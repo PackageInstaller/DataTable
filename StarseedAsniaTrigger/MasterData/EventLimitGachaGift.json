@@ -1,0 +1,29 @@
+{
+  "2915000000001":{
+    "Id":2915000000001,
+    "DateRangeCondition":[
+      127,
+      [
+        [
+          "2024-07-05T00:00:00+00:00",
+          "2099-10-10T00:00:00+00:00"
+        ]
+      ]
+    ],
+    "UnlockCondition":[
+      19,
+      [
+        "스테이지16",
+        null
+      ]
+    ],
+    "Reset":"SYSTEM_DAILY_RESET",
+    "TryLimitCount":10,
+    "RewardCount":100,
+    "UIPrefab":"UI/Prefabs/Lobby/Event/Event_LimitGachaGift/Event_LimitGachaGift_01.prefab",
+    "Title":"Event.Dailygatchagift.TabName",
+    "Icon":"tab_event_dailygachagift",
+    "Rewards":"LimitGachaGift.Rewards1",
+    "FixRewards":"LimitGachaGift.Fix.Rewards1"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "111.Academy.01.buff.buffeffect.SkillModifier":{
+    "Id":"111.Academy.01.buff.buffeffect.SkillModifier",
+    "SkillTypes":[
+      "Ultimate",
+      "Skill1",
+      "Skill2"
+    ],
+    "CoolDown":0,
+    "PreBuffs":[
+      "111.Academy.01.hit.epdown.buff"
+    ]
+  },
+  "123.Academy.01.buff.buffeffect.SkillModifier":{
+    "Id":"123.Academy.01.buff.buffeffect.SkillModifier",
+    "SkillTypes":[
+      "Ultimate"
+    ],
+    "CoolDown":0,
+    "PreBuffs":[
+      "123.Academy.01.hit.event.buff"
+    ]
+  },
+  "138.Academy.01.buff.buffeffect.SkillModifier":{
+    "Id":"138.Academy.01.buff.buffeffect.SkillModifier",
+    "SkillTypes":[
+      "Ultimate",
+      "Skill1",
+      "Skill2"
+    ],
+    "CoolDown":0,
+    "PreBuffs":[
+      "138.Academy.01.recharge.buff"
+    ]
+  }
+}

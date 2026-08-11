@@ -1,0 +1,25 @@
+{
+  "2914000000001":{
+    "Id":2914000000001,
+    "DateRangeCondition":[
+      127,
+      [
+        [
+          "2024-07-05T00:00:00+00:00",
+          "2099-10-10T00:00:00+00:00"
+        ]
+      ]
+    ],
+    "UnlockCondition":[
+      15,
+      [
+        1000
+      ]
+    ],
+    "Reset":"SYSTEM_DAILY_RESET",
+    "DailyRewardCount":10,
+    "UIPrefab":"UI/Prefabs/Lobby/Event/Event_DailyGachaGift/Event_DailyGachaGift_01.prefab",
+    "Title":"Event.Dailygatchagift.TabName",
+    "Icon":"tab_event_dailygachagift"
+  }
+}
