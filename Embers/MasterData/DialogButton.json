@@ -954,6 +954,15 @@
         "IconType": "dialog_1"
     },
     {
+        "Id": 81052020,
+        "Text": "关于你们的老板。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1052015",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
         "Id": 81052004,
         "Text": "离开。",
         "Result": "关闭界面",
@@ -972,6 +981,15 @@
         "IconType": "dialog_1"
     },
     {
+        "Id": 81052021,
+        "Text": "关于“纸牌屋”。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1052016",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
         "Id": 81052006,
         "Text": "离开。",
         "Result": "关闭界面",
@@ -982,12 +1000,21 @@
     },
     {
         "Id": 81052007,
-        "Text": "继续搭话。",
+        "Text": "今天手气怎么样？",
         "Result": "打开对话链",
         "ParadoxArgs": "pick",
         "Args": "1052005",
         "OpenConfition": [],
         "IconType": "dialog_1"
+    },
+    {
+        "Id": 81052022,
+        "Text": "关于”纸牌屋”。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1052017",
+        "OpenConfition": [],
+        "IconType": ""
     },
     {
         "Id": 81052008,
@@ -1071,26 +1098,53 @@
         "IconType": ""
     },
     {
-        "Id": 81053001,
-        "Text": "对霍克夫人表示担忧。",
+        "Id": 81052017,
+        "Text": "你是谁？找我有事？",
         "Result": "打开对话链",
         "ParadoxArgs": "",
+        "Args": "1052012",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81052018,
+        "Text": "旁听一下",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1052013",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81052019,
+        "Text": "你是来看病的？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1052014",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81053001,
+        "Text": "您说。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
         "Args": "1053001",
         "OpenConfition": [],
         "IconType": ""
     },
     {
         "Id": 81053002,
-        "Text": "对蕾恩的过去感到好奇。",
+        "Text": "对霍克夫人表示担忧。",
         "Result": "打开对话链",
-        "ParadoxArgs": "",
+        "ParadoxArgs": "pick",
         "Args": "1053002",
         "OpenConfition": [],
         "IconType": ""
     },
     {
         "Id": 81053003,
-        "Text": "没事了。",
+        "Text": "对蕾恩的过去好奇。",
         "Result": "打开对话链",
         "ParadoxArgs": "",
         "Args": "1053003",
@@ -1099,7 +1153,7 @@
     },
     {
         "Id": 81053004,
-        "Text": "想要了解龙舌兰。",
+        "Text": "没事了。",
         "Result": "打开对话链",
         "ParadoxArgs": "",
         "Args": "1053004",
@@ -1108,7 +1162,7 @@
     },
     {
         "Id": 81053005,
-        "Text": "你为什么会选择加入警署？",
+        "Text": "想要了解龙舌兰。",
         "Result": "打开对话链",
         "ParadoxArgs": "",
         "Args": "1053005",
@@ -1117,7 +1171,7 @@
     },
     {
         "Id": 81053006,
-        "Text": "没事了。",
+        "Text": "你为什么会选择加入警署？",
         "Result": "打开对话链",
         "ParadoxArgs": "",
         "Args": "1053006",
@@ -1126,7 +1180,7 @@
     },
     {
         "Id": 81053007,
-        "Text": "你为什么要隐瞒自己的身份？",
+        "Text": "没事了。",
         "Result": "打开对话链",
         "ParadoxArgs": "",
         "Args": "1053007",
@@ -1135,7 +1189,7 @@
     },
     {
         "Id": 81053008,
-        "Text": "“金沙帮”的调查进展如何？",
+        "Text": "你为什么要隐瞒自己的身份？",
         "Result": "打开对话链",
         "ParadoxArgs": "",
         "Args": "1053008",
@@ -1144,7 +1198,7 @@
     },
     {
         "Id": 81053009,
-        "Text": "没事了。",
+        "Text": "“金沙帮”的调查进展如何？",
         "Result": "打开对话链",
         "ParadoxArgs": "",
         "Args": "1053009",
@@ -1153,7 +1207,7 @@
     },
     {
         "Id": 81053010,
-        "Text": "出发吧。",
+        "Text": "没事了。",
         "Result": "打开对话链",
         "ParadoxArgs": "",
         "Args": "1053010",
@@ -1162,10 +1216,19 @@
     },
     {
         "Id": 81053011,
-        "Text": "稍等一下，我还没准备好。",
+        "Text": "出发吧……你穿的什么衣服？",
         "Result": "打开对话链",
         "ParadoxArgs": "",
         "Args": "1053011",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81053012,
+        "Text": "稍等一下，我还没准备好。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1053012",
         "OpenConfition": [],
         "IconType": ""
     },
@@ -2234,7 +2297,7 @@
     {
         "Id": 82051012,
         "Text": "你没事吧？",
-        "Result": "关闭界面",
+        "Result": "打开对话链",
         "ParadoxArgs": "",
         "Args": "2051011",
         "OpenConfition": [],
@@ -2314,28 +2377,226 @@
     },
     {
         "Id": 82051021,
-        "Text": "汇报“清道夫”落网和朱莉·诺曼的遭遇。",
-        "Result": "打开对话链",
-        "ParadoxArgs": "pick1",
-        "Args": "2051018",
-        "OpenConfition": [],
-        "IconType": "dialog_2"
-    },
-    {
-        "Id": 82051022,
         "Text": "好的。",
         "Result": "关闭界面",
-        "ParadoxArgs": "pick",
+        "ParadoxArgs": "pick1",
         "Args": "",
         "OpenConfition": [],
         "IconType": "dialog_2"
     },
     {
-        "Id": 82051023,
+        "Id": 82051022,
         "Text": "现在还不行。",
         "Result": "打开对话链",
         "ParadoxArgs": "",
-        "Args": "2051019",
+        "Args": "2051018",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82052001,
+        "Text": "汇报“清道夫”落网和朱莉·诺曼的遭遇。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick1",
+        "Args": "2052001",
+        "OpenConfition": [],
+        "IconType": "dialog_2"
+    },
+    {
+        "Id": 82052002,
+        "Text": "你在找什么？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "2052002",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82052003,
+        "Text": "拿出“隐身喷雾”。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "2052003",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82052004,
+        "Text": "我准备好了。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "2052004",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82052005,
+        "Text": "离开。",
+        "Result": "关闭界面",
+        "ParadoxArgs": "",
+        "Args": "",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82052006,
+        "Text": "鲜花。",
+        "Result": "创建按钮组",
+        "ParadoxArgs": "",
+        "Args": "1",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82052007,
+        "Text": "食物。",
+        "Result": "创建按钮组",
+        "ParadoxArgs": "",
+        "Args": "1",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 820520071,
+        "Text": "红色的。",
+        "Result": "创建按钮组",
+        "ParadoxArgs": "",
+        "Args": "2",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 820520072,
+        "Text": "金色的",
+        "Result": "创建按钮组",
+        "ParadoxArgs": "",
+        "Args": "2",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 820520073,
+        "Text": "灰色的。",
+        "Result": "创建按钮组",
+        "ParadoxArgs": "",
+        "Args": "2",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 820520074,
+        "Text": "锯子。",
+        "Result": "创建按钮组",
+        "ParadoxArgs": "",
+        "Args": "3",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 820520075,
+        "Text": "勺子。",
+        "Result": "创建按钮组",
+        "ParadoxArgs": "",
+        "Args": "3",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 820520076,
+        "Text": "一把餐刀。",
+        "Result": "创建按钮组",
+        "ParadoxArgs": "",
+        "Args": "3",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82052008,
+        "Text": "财宝。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "2052005",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82052009,
+        "Text": "红色的。",
+        "Result": "创建按钮组",
+        "ParadoxArgs": "",
+        "Args": "1",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82052010,
+        "Text": "金色的。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "2052006",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82052011,
+        "Text": "灰色的。",
+        "Result": "创建按钮组",
+        "ParadoxArgs": "",
+        "Args": "1",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 820520111,
+        "Text": "锯子。",
+        "Result": "创建按钮组",
+        "ParadoxArgs": "",
+        "Args": "2",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 820520112,
+        "Text": "勺子。",
+        "Result": "创建按钮组",
+        "ParadoxArgs": "",
+        "Args": "2",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 820520113,
+        "Text": "一把餐刀。",
+        "Result": "创建按钮组",
+        "ParadoxArgs": "",
+        "Args": "2",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82052012,
+        "Text": "锯子。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "2052007",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82052013,
+        "Text": "勺子。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "2052007",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82052014,
+        "Text": "一把餐刀。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "2052008",
         "OpenConfition": [],
         "IconType": ""
     }

@@ -205,7 +205,7 @@
     },
     {
         "Id": 220011,
-        "TaskData": 7,
+        "TaskData": 5,
         "TaskType": 1,
         "TaskDesc": "击败所有敌人",
         "NextTask": 0,
@@ -319,32 +319,19 @@
     },
     {
         "Id": 230011,
-        "TaskData": 2,
-        "TaskType": 2,
-        "TaskDesc": "击败所有敌人",
-        "NextTask": 230012,
-        "Monsters": [
-            1
-        ],
-        "TargetMonsters": [
-            1
-        ],
-        "MessageType": 1,
-        "DelayTime": 1,
-        "LifeTime": 1,
-        "MessageDesc": "敌人来袭！"
-    },
-    {
-        "Id": 230012,
         "TaskData": 5,
-        "TaskType": 2,
+        "TaskType": 1,
         "TaskDesc": "击败所有敌人",
         "NextTask": 0,
         "Monsters": [
-            2
+            1,
+            2,
+            3
         ],
         "TargetMonsters": [
-            2
+            1,
+            2,
+            3
         ],
         "MessageType": 1,
         "DelayTime": 1,
@@ -353,31 +340,16 @@
     },
     {
         "Id": 230021,
-        "TaskData": 2,
-        "TaskType": 2,
-        "TaskDesc": "击败所有敌人",
-        "NextTask": 230022,
-        "Monsters": [
-            1
-        ],
-        "TargetMonsters": [
-            1
-        ],
-        "MessageType": 1,
-        "DelayTime": 1,
-        "LifeTime": 1,
-        "MessageDesc": "敌人来袭！"
-    },
-    {
-        "Id": 230022,
-        "TaskData": 5,
-        "TaskType": 2,
+        "TaskData": 7,
+        "TaskType": 1,
         "TaskDesc": "击败所有敌人",
         "NextTask": 0,
         "Monsters": [
+            1,
             2
         ],
         "TargetMonsters": [
+            1,
             2
         ],
         "MessageType": 1,
@@ -387,31 +359,16 @@
     },
     {
         "Id": 230031,
-        "TaskData": 2,
-        "TaskType": 2,
-        "TaskDesc": "击败所有敌人",
-        "NextTask": 230032,
-        "Monsters": [
-            1
-        ],
-        "TargetMonsters": [
-            1
-        ],
-        "MessageType": 1,
-        "DelayTime": 1,
-        "LifeTime": 1,
-        "MessageDesc": "敌人来袭！"
-    },
-    {
-        "Id": 230032,
-        "TaskData": 5,
-        "TaskType": 2,
+        "TaskData": 7,
+        "TaskType": 1,
         "TaskDesc": "击败所有敌人",
         "NextTask": 0,
         "Monsters": [
+            1,
             2
         ],
         "TargetMonsters": [
+            1,
             2
         ],
         "MessageType": 1,
@@ -421,31 +378,16 @@
     },
     {
         "Id": 230041,
-        "TaskData": 3,
-        "TaskType": 2,
-        "TaskDesc": "击败所有敌人",
-        "NextTask": 230042,
-        "Monsters": [
-            1
-        ],
-        "TargetMonsters": [
-            1
-        ],
-        "MessageType": 1,
-        "DelayTime": 1,
-        "LifeTime": 1,
-        "MessageDesc": "敌人来袭！"
-    },
-    {
-        "Id": 230042,
-        "TaskData": 5,
-        "TaskType": 2,
+        "TaskData": 8,
+        "TaskType": 1,
         "TaskDesc": "击败所有敌人",
         "NextTask": 0,
         "Monsters": [
+            1,
             2
         ],
         "TargetMonsters": [
+            1,
             2
         ],
         "MessageType": 1,
@@ -455,31 +397,16 @@
     },
     {
         "Id": 230051,
-        "TaskData": 3,
-        "TaskType": 2,
-        "TaskDesc": "击败所有敌人",
-        "NextTask": 230052,
-        "Monsters": [
-            1
-        ],
-        "TargetMonsters": [
-            1
-        ],
-        "MessageType": 1,
-        "DelayTime": 1,
-        "LifeTime": 1,
-        "MessageDesc": "敌人来袭！"
-    },
-    {
-        "Id": 230052,
-        "TaskData": 5,
-        "TaskType": 2,
+        "TaskData": 8,
+        "TaskType": 1,
         "TaskDesc": "击败所有敌人",
         "NextTask": 0,
         "Monsters": [
+            1,
             2
         ],
         "TargetMonsters": [
+            1,
             2
         ],
         "MessageType": 1,
@@ -489,31 +416,16 @@
     },
     {
         "Id": 230061,
-        "TaskData": 3,
-        "TaskType": 2,
-        "TaskDesc": "击败所有敌人",
-        "NextTask": 230062,
-        "Monsters": [
-            1
-        ],
-        "TargetMonsters": [
-            1
-        ],
-        "MessageType": 1,
-        "DelayTime": 1,
-        "LifeTime": 1,
-        "MessageDesc": "敌人来袭！"
-    },
-    {
-        "Id": 230062,
-        "TaskData": 5,
-        "TaskType": 2,
+        "TaskData": 8,
+        "TaskType": 1,
         "TaskDesc": "击败所有敌人",
         "NextTask": 0,
         "Monsters": [
+            1,
             2
         ],
         "TargetMonsters": [
+            1,
             2
         ],
         "MessageType": 1,
@@ -770,6 +682,120 @@
     {
         "Id": 250051,
         "TaskData": 7,
+        "TaskType": 1,
+        "TaskDesc": "击败所有敌人",
+        "NextTask": 0,
+        "Monsters": [
+            1,
+            2
+        ],
+        "TargetMonsters": [
+            1,
+            2
+        ],
+        "MessageType": 1,
+        "DelayTime": 1,
+        "LifeTime": 1,
+        "MessageDesc": "敌人来袭！"
+    },
+    {
+        "Id": 260011,
+        "TaskData": 4,
+        "TaskType": 1,
+        "TaskDesc": "击败所有敌人",
+        "NextTask": 0,
+        "Monsters": [
+            1,
+            2
+        ],
+        "TargetMonsters": [
+            1,
+            2
+        ],
+        "MessageType": 1,
+        "DelayTime": 1,
+        "LifeTime": 1,
+        "MessageDesc": "敌人来袭！"
+    },
+    {
+        "Id": 260021,
+        "TaskData": 4,
+        "TaskType": 1,
+        "TaskDesc": "击败所有敌人",
+        "NextTask": 0,
+        "Monsters": [
+            1,
+            2
+        ],
+        "TargetMonsters": [
+            1,
+            2
+        ],
+        "MessageType": 1,
+        "DelayTime": 1,
+        "LifeTime": 1,
+        "MessageDesc": "敌人来袭！"
+    },
+    {
+        "Id": 260031,
+        "TaskData": 4,
+        "TaskType": 1,
+        "TaskDesc": "击败所有敌人",
+        "NextTask": 0,
+        "Monsters": [
+            1,
+            2
+        ],
+        "TargetMonsters": [
+            1,
+            2
+        ],
+        "MessageType": 1,
+        "DelayTime": 1,
+        "LifeTime": 1,
+        "MessageDesc": "敌人来袭！"
+    },
+    {
+        "Id": 270011,
+        "TaskData": 5,
+        "TaskType": 1,
+        "TaskDesc": "击败所有敌人",
+        "NextTask": 0,
+        "Monsters": [
+            1,
+            2
+        ],
+        "TargetMonsters": [
+            1,
+            2
+        ],
+        "MessageType": 1,
+        "DelayTime": 1,
+        "LifeTime": 1,
+        "MessageDesc": "敌人来袭！"
+    },
+    {
+        "Id": 270021,
+        "TaskData": 5,
+        "TaskType": 1,
+        "TaskDesc": "击败所有敌人",
+        "NextTask": 0,
+        "Monsters": [
+            1,
+            2
+        ],
+        "TargetMonsters": [
+            1,
+            2
+        ],
+        "MessageType": 1,
+        "DelayTime": 1,
+        "LifeTime": 1,
+        "MessageDesc": "敌人来袭！"
+    },
+    {
+        "Id": 270031,
+        "TaskData": 5,
         "TaskType": 1,
         "TaskDesc": "击败所有敌人",
         "NextTask": 0,

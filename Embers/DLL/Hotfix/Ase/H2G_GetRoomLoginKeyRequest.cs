@@ -1,0 +1,188 @@
+using GameFramework.Network;
+using MemoryPack;
+using MemoryPack.Formatters;
+using MemoryPack.Internal;
+
+namespace Ase;
+
+[Message(1025)]
+[MemoryPackable(GenerateType.Object)]
+public class H2G_GetRoomLoginKeyRequest : MessageObject, IRequest, IMessage, IMemoryPackable<H2G_GetRoomLoginKeyRequest>, IMemoryPackFormatterRegister
+{
+	[Preserve]
+	private sealed class H2G_GetRoomLoginKeyRequestFormatter : MemoryPackFormatter<H2G_GetRoomLoginKeyRequest>
+	{
+		[Preserve]
+		public override void Serialize(ref MemoryPackWriter writer, ref H2G_GetRoomLoginKeyRequest value)
+		{
+			H2G_GetRoomLoginKeyRequest.Serialize(ref writer, ref value);
+		}
+
+		[Preserve]
+		public override void Deserialize(ref MemoryPackReader reader, ref H2G_GetRoomLoginKeyRequest value)
+		{
+			H2G_GetRoomLoginKeyRequest.Deserialize(ref reader, ref value);
+		}
+	}
+
+	[MemoryPackOrder(89)]
+	public int RpcId { get; set; }
+
+	[MemoryPackOrder(92)]
+	public long ActorId { get; set; }
+
+	[MemoryPackOrder(0)]
+	public long PlayerId { get; set; }
+
+	[MemoryPackOrder(1)]
+	public int HallId { get; set; }
+
+	public static H2G_GetRoomLoginKeyRequest Create(bool isFromPool = true)
+	{
+		if (isFromPool)
+		{
+			return Singleton<ObjectPool>.Instance.Fetch(typeof(H2G_GetRoomLoginKeyRequest)) as H2G_GetRoomLoginKeyRequest;
+		}
+		return new H2G_GetRoomLoginKeyRequest();
+	}
+
+	public override void Dispose()
+	{
+		if (base.IsFromPool)
+		{
+			RpcId = 0;
+			ActorId = 0L;
+			PlayerId = 0L;
+			HallId = 0;
+			Singleton<ObjectPool>.Instance.Recycle(this);
+		}
+	}
+
+	static H2G_GetRoomLoginKeyRequest()
+	{
+		RegisterFormatter();
+	}
+
+	[Preserve]
+	public static void RegisterFormatter()
+	{
+		if (!MemoryPackFormatterProvider.IsRegistered<H2G_GetRoomLoginKeyRequest>())
+		{
+			MemoryPackFormatterProvider.Register(new H2G_GetRoomLoginKeyRequestFormatter());
+		}
+		if (!MemoryPackFormatterProvider.IsRegistered<H2G_GetRoomLoginKeyRequest[]>())
+		{
+			MemoryPackFormatterProvider.Register(new ArrayFormatter<H2G_GetRoomLoginKeyRequest>());
+		}
+	}
+
+	[Preserve]
+	public static void Serialize(ref MemoryPackWriter writer, ref H2G_GetRoomLoginKeyRequest? value)
+	{
+		if (value == null)
+		{
+			writer.WriteNullObjectHeader();
+		}
+		else
+		{
+			writer.WriteUnmanagedWithObjectHeader<bool, long, int, int, long>(5, value.IsFromPool, value.PlayerId, value.HallId, value.RpcId, value.ActorId);
+		}
+	}
+
+	[Preserve]
+	public static void Deserialize(ref MemoryPackReader reader, ref H2G_GetRoomLoginKeyRequest? value)
+	{
+		if (!reader.TryReadObjectHeader(out var memberCount))
+		{
+			value = null;
+			return;
+		}
+		bool value2;
+		long value3;
+		int value4;
+		int value5;
+		long value6;
+		if (memberCount == 5)
+		{
+			if (value != null)
+			{
+				value2 = value.IsFromPool;
+				value3 = value.PlayerId;
+				value4 = value.HallId;
+				value5 = value.RpcId;
+				value6 = value.ActorId;
+				reader.ReadUnmanaged<bool>(out value2);
+				reader.ReadUnmanaged<long>(out value3);
+				reader.ReadUnmanaged<int>(out value4);
+				reader.ReadUnmanaged<int>(out value5);
+				reader.ReadUnmanaged<long>(out value6);
+				goto IL_0119;
+			}
+			reader.ReadUnmanaged<bool, long, int, int, long>(out value2, out value3, out value4, out value5, out value6);
+		}
+		else
+		{
+			if (memberCount > 5)
+			{
+				MemoryPackSerializationException.ThrowInvalidPropertyCount(typeof(H2G_GetRoomLoginKeyRequest), 5, memberCount);
+				return;
+			}
+			if (value == null)
+			{
+				value2 = false;
+				value3 = 0L;
+				value4 = 0;
+				value5 = 0;
+				value6 = 0L;
+			}
+			else
+			{
+				value2 = value.IsFromPool;
+				value3 = value.PlayerId;
+				value4 = value.HallId;
+				value5 = value.RpcId;
+				value6 = value.ActorId;
+			}
+			if (memberCount != 0)
+			{
+				reader.ReadUnmanaged<bool>(out value2);
+				if (memberCount != 1)
+				{
+					reader.ReadUnmanaged<long>(out value3);
+					if (memberCount != 2)
+					{
+						reader.ReadUnmanaged<int>(out value4);
+						if (memberCount != 3)
+						{
+							reader.ReadUnmanaged<int>(out value5);
+							if (memberCount != 4)
+							{
+								reader.ReadUnmanaged<long>(out value6);
+								_ = 5;
+							}
+						}
+					}
+				}
+			}
+			if (value != null)
+			{
+				goto IL_0119;
+			}
+		}
+		value = new H2G_GetRoomLoginKeyRequest
+		{
+			IsFromPool = value2,
+			PlayerId = value3,
+			HallId = value4,
+			RpcId = value5,
+			ActorId = value6
+		};
+		return;
+		IL_0119:
+		value.IsFromPool = value2;
+		value.PlayerId = value3;
+		value.HallId = value4;
+		value.RpcId = value5;
+		value.ActorId = value6;
+	}
+}

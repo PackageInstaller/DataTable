@@ -1,0 +1,256 @@
+using GameFramework.Network;
+using MemoryPack;
+using MemoryPack.Formatters;
+using MemoryPack.Internal;
+
+namespace Ase;
+
+[Message(10034)]
+[MemoryPackable(GenerateType.Object)]
+public class H2C_CreateUser : MessageObject, IActorLocationResponse, IActorResponse, IResponse, IMessage, IMemoryPackable<H2C_CreateUser>, IMemoryPackFormatterRegister
+{
+	[Preserve]
+	private sealed class H2C_CreateUserFormatter : MemoryPackFormatter<H2C_CreateUser>
+	{
+		[Preserve]
+		public override void Serialize(ref MemoryPackWriter writer, ref H2C_CreateUser value)
+		{
+			H2C_CreateUser.Serialize(ref writer, ref value);
+		}
+
+		[Preserve]
+		public override void Deserialize(ref MemoryPackReader reader, ref H2C_CreateUser value)
+		{
+			H2C_CreateUser.Deserialize(ref reader, ref value);
+		}
+	}
+
+	[MemoryPackOrder(89)]
+	public int RpcId { get; set; }
+
+	[MemoryPackOrder(90)]
+	public int Error { get; set; }
+
+	[MemoryPackOrder(91)]
+	public string Message { get; set; }
+
+	[MemoryPackOrder(0)]
+	public string Name { get; set; }
+
+	[MemoryPackOrder(1)]
+	public long UserId { get; set; }
+
+	[MemoryPackOrder(2)]
+	public UserBaseInfo UserBaseInfo { get; set; }
+
+	[MemoryPackOrder(3)]
+	public long ServerTime { get; set; }
+
+	[MemoryPackOrder(4)]
+	public long ServerOpenTime { get; set; }
+
+	public static H2C_CreateUser Create(bool isFromPool = true)
+	{
+		if (isFromPool)
+		{
+			return Singleton<ObjectPool>.Instance.Fetch(typeof(H2C_CreateUser)) as H2C_CreateUser;
+		}
+		return new H2C_CreateUser();
+	}
+
+	public override void Dispose()
+	{
+		if (base.IsFromPool)
+		{
+			RpcId = 0;
+			Error = 0;
+			Message = null;
+			Name = null;
+			UserId = 0L;
+			UserBaseInfo = null;
+			ServerTime = 0L;
+			ServerOpenTime = 0L;
+			Singleton<ObjectPool>.Instance.Recycle(this);
+		}
+	}
+
+	static H2C_CreateUser()
+	{
+		RegisterFormatter();
+	}
+
+	[Preserve]
+	public static void RegisterFormatter()
+	{
+		if (!MemoryPackFormatterProvider.IsRegistered<H2C_CreateUser>())
+		{
+			MemoryPackFormatterProvider.Register(new H2C_CreateUserFormatter());
+		}
+		if (!MemoryPackFormatterProvider.IsRegistered<H2C_CreateUser[]>())
+		{
+			MemoryPackFormatterProvider.Register(new ArrayFormatter<H2C_CreateUser>());
+		}
+	}
+
+	[Preserve]
+	public static void Serialize(ref MemoryPackWriter writer, ref H2C_CreateUser? value)
+	{
+		if (value == null)
+		{
+			writer.WriteNullObjectHeader();
+			return;
+		}
+		writer.WriteUnmanagedWithObjectHeader<bool>(9, value.IsFromPool);
+		writer.WriteString(value.Name);
+		writer.WriteUnmanaged<long>(value.UserId);
+		writer.WritePackable<UserBaseInfo>(value.UserBaseInfo);
+		writer.WriteUnmanaged<long, long, int, int>(value.ServerTime, value.ServerOpenTime, value.RpcId, value.Error);
+		writer.WriteString(value.Message);
+	}
+
+	[Preserve]
+	public static void Deserialize(ref MemoryPackReader reader, ref H2C_CreateUser? value)
+	{
+		if (!reader.TryReadObjectHeader(out var memberCount))
+		{
+			value = null;
+			return;
+		}
+		bool value2;
+		long value3;
+		UserBaseInfo value4;
+		long value5;
+		long value6;
+		int value7;
+		int value8;
+		string name;
+		string message;
+		if (memberCount == 9)
+		{
+			if (value != null)
+			{
+				value2 = value.IsFromPool;
+				name = value.Name;
+				value3 = value.UserId;
+				value4 = value.UserBaseInfo;
+				value5 = value.ServerTime;
+				value6 = value.ServerOpenTime;
+				value7 = value.RpcId;
+				value8 = value.Error;
+				message = value.Message;
+				reader.ReadUnmanaged<bool>(out value2);
+				name = reader.ReadString();
+				reader.ReadUnmanaged<long>(out value3);
+				reader.ReadPackable(ref value4);
+				reader.ReadUnmanaged<long>(out value5);
+				reader.ReadUnmanaged<long>(out value6);
+				reader.ReadUnmanaged<int>(out value7);
+				reader.ReadUnmanaged<int>(out value8);
+				message = reader.ReadString();
+				goto IL_01e8;
+			}
+			reader.ReadUnmanaged<bool>(out value2);
+			name = reader.ReadString();
+			reader.ReadUnmanaged<long>(out value3);
+			value4 = reader.ReadPackable<UserBaseInfo>();
+			reader.ReadUnmanaged<long, long, int, int>(out value5, out value6, out value7, out value8);
+			message = reader.ReadString();
+		}
+		else
+		{
+			if (memberCount > 9)
+			{
+				MemoryPackSerializationException.ThrowInvalidPropertyCount(typeof(H2C_CreateUser), 9, memberCount);
+				return;
+			}
+			if (value == null)
+			{
+				value2 = false;
+				name = null;
+				value3 = 0L;
+				value4 = null;
+				value5 = 0L;
+				value6 = 0L;
+				value7 = 0;
+				value8 = 0;
+				message = null;
+			}
+			else
+			{
+				value2 = value.IsFromPool;
+				name = value.Name;
+				value3 = value.UserId;
+				value4 = value.UserBaseInfo;
+				value5 = value.ServerTime;
+				value6 = value.ServerOpenTime;
+				value7 = value.RpcId;
+				value8 = value.Error;
+				message = value.Message;
+			}
+			if (memberCount != 0)
+			{
+				reader.ReadUnmanaged<bool>(out value2);
+				if (memberCount != 1)
+				{
+					name = reader.ReadString();
+					if (memberCount != 2)
+					{
+						reader.ReadUnmanaged<long>(out value3);
+						if (memberCount != 3)
+						{
+							reader.ReadPackable(ref value4);
+							if (memberCount != 4)
+							{
+								reader.ReadUnmanaged<long>(out value5);
+								if (memberCount != 5)
+								{
+									reader.ReadUnmanaged<long>(out value6);
+									if (memberCount != 6)
+									{
+										reader.ReadUnmanaged<int>(out value7);
+										if (memberCount != 7)
+										{
+											reader.ReadUnmanaged<int>(out value8);
+											if (memberCount != 8)
+											{
+												message = reader.ReadString();
+												_ = 9;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			if (value != null)
+			{
+				goto IL_01e8;
+			}
+		}
+		value = new H2C_CreateUser
+		{
+			IsFromPool = value2,
+			Name = name,
+			UserId = value3,
+			UserBaseInfo = value4,
+			ServerTime = value5,
+			ServerOpenTime = value6,
+			RpcId = value7,
+			Error = value8,
+			Message = message
+		};
+		return;
+		IL_01e8:
+		value.IsFromPool = value2;
+		value.Name = name;
+		value.UserId = value3;
+		value.UserBaseInfo = value4;
+		value.ServerTime = value5;
+		value.ServerOpenTime = value6;
+		value.RpcId = value7;
+		value.Error = value8;
+		value.Message = message;
+	}
+}

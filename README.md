@@ -45,7 +45,7 @@
 |      FalloutTamira      |   异尘：达米拉   |          国服Lua + Json          |
 |        MAkeDrama        |    MAkeDrama    |            韩服 Json            |
 |      TenkeiParadox      |       天启       |             Dmm Json             |
-|       AetherGazer       |  大眼(深空之眼)  |            国服 Json            |
+|       AetherGazer       |  大眼(深空之眼)  |        国服 Json + LuaJIT        |
 |         MoeCove         |    苍蓝避风港    |             国服 Lua             |
 | DengekiBunkoCROSSINGVOID | 电击文库灵境交错 |         国服 Lua + Json         |
 |       FyorasSouls       |     芙娅之魂     |            国服 Json            |

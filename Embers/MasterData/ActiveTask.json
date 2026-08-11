@@ -276,6 +276,26 @@
         "OpenId": 70011
     },
     {
+        "Id": 1014,
+        "ActiveType": 1,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                6
+            ]
+        ],
+        "TargetValue": 1,
+        "ActiveItem": 9810,
+        "EXP": 20,
+        "TargetDesc": "通关淬炼之间1次",
+        "TargetWindow": "",
+        "WindowParams": [],
+        "OpenId": 0
+    },
+    {
         "Id": 2001,
         "ActiveType": 2,
         "TargetType": 1014,
@@ -424,5 +444,25 @@
             0
         ],
         "OpenId": 70014
+    },
+    {
+        "Id": 2008,
+        "ActiveType": 2,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                6
+            ]
+        ],
+        "TargetValue": 10,
+        "ActiveItem": 9820,
+        "EXP": 20,
+        "TargetDesc": "通关淬炼之间10次",
+        "TargetWindow": "",
+        "WindowParams": [],
+        "OpenId": 0
     }
 ]

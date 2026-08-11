@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>GameFramework.Runtime</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net48</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>Download/DLL/UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="GameFramework">
+      <HintPath>Download/DLL/GameFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule" />
+    <Reference Include="UnityEngine.UnityWebRequestModule" />
+    <Reference Include="System.Core">
+      <HintPath>Download/DLL/System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule" />
+    <Reference Include="UnityEngine.UIModule" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Download/DLL/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="I2.Runtime" />
+    <Reference Include="UniTask">
+      <HintPath>Download/DLL/UniTask.dll</HintPath>
+    </Reference>
+    <Reference Include="YooAsset" />
+    <Reference Include="UnityEngine.AudioModule" />
+    <Reference Include="ICSharpCode.SharpZipLib" />
+    <Reference Include="UnityEngine.JSONSerializeModule" />
+  </ItemGroup>
+</Project>

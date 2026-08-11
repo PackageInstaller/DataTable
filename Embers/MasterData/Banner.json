@@ -82,7 +82,7 @@
         "SpCondition": [],
         "SpConfig": [],
         "SpCd": 0,
-        "JumpWindow": "OpActivityWindow",
+        "JumpWindow": "OperatingActivityWindow",
         "JumpConfig": [
             5
         ],
@@ -103,7 +103,7 @@
         "SpCondition": [],
         "SpConfig": [],
         "SpCd": 0,
-        "JumpWindow": "OpActivityWindow",
+        "JumpWindow": "OperatingActivityWindow",
         "JumpConfig": [
             1
         ],
@@ -124,7 +124,7 @@
         "SpCondition": [],
         "SpConfig": [],
         "SpCd": 0,
-        "JumpWindow": "OpActivityWindow",
+        "JumpWindow": "OperatingActivityWindow",
         "JumpConfig": [
             2
         ],
@@ -133,7 +133,7 @@
     {
         "Id": 6,
         "LittleImg": "",
-        "Sort": 5,
+        "Sort": 0,
         "Img": "Banner/Banner6",
         "Weight": 1000,
         "StartTime": "",
@@ -145,7 +145,7 @@
         "SpCondition": [],
         "SpConfig": [],
         "SpCd": 0,
-        "JumpWindow": "OpActivityWindow",
+        "JumpWindow": "OperatingActivityWindow",
         "JumpConfig": [
             4
         ],
@@ -223,7 +223,7 @@
         "SpCondition": [],
         "SpConfig": [],
         "SpCd": 0,
-        "JumpWindow": "OpActivityWindow",
+        "JumpWindow": "OperatingActivityWindow",
         "JumpConfig": [
             12
         ],
@@ -244,7 +244,7 @@
         "SpCondition": [],
         "SpConfig": [],
         "SpCd": 0,
-        "JumpWindow": "OpActivityWindow",
+        "JumpWindow": "OperatingActivityWindow",
         "JumpConfig": [
             9
         ],
@@ -265,7 +265,7 @@
         "SpCondition": [],
         "SpConfig": [],
         "SpCd": 0,
-        "JumpWindow": "OpActivityWindow",
+        "JumpWindow": "OperatingActivityWindow",
         "JumpConfig": [
             11
         ],
@@ -277,7 +277,7 @@
         "Sort": 3,
         "Img": "",
         "Weight": 0,
-        "StartTime": "2025.10.15",
+        "StartTime": "2025.10.10",
         "EndTime": "2025.11.25",
         "OnCondition": 0,
         "OnConfig": 0,
@@ -288,7 +288,7 @@
         "SpCd": 0,
         "JumpWindow": "",
         "JumpConfig": [],
-        "JumpWeb": "https://test.activity.kiifstudio.com/game-recruit"
+        "JumpWeb": "https://activity.kiifstudio.com/game-recruit"
     },
     {
         "Id": 14,
@@ -305,9 +305,631 @@
         "SpCondition": [],
         "SpConfig": [],
         "SpCd": 0,
-        "JumpWindow": "OpActivityWindow",
+        "JumpWindow": "OperatingActivityWindow",
         "JumpConfig": [
             13
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1101,
+        "LittleImg": "MainActivityTab_005",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 20,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            20
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1102,
+        "LittleImg": "MainActivityTab_006",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 21,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            21
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1103,
+        "LittleImg": "MainActivityTab_007",
+        "Sort": 4,
+        "Img": "Banner/Banner10",
+        "Weight": 1000,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 22,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            22
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1104,
+        "LittleImg": "MainActivityTab_003",
+        "Sort": 17,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 0,
+        "OnConfig": 0,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "",
+        "JumpConfig": [],
+        "JumpWeb": "https://activity.kiifstudio.com/game-recruit"
+    },
+    {
+        "Id": 1105,
+        "LittleImg": "MainActivityTab_1105",
+        "Sort": 3,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "2025.10.10",
+        "EndTime": "2026.01.07",
+        "OnCondition": 0,
+        "OnConfig": 0,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "",
+        "JumpConfig": [],
+        "JumpWeb": "https://activity.kiifstudio.com/move-grid"
+    },
+    {
+        "Id": 1211,
+        "LittleImg": "MainActivityTab_1211",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1211,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1211
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1212,
+        "LittleImg": "MainActivityTab_1212",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1212,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1212
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1213,
+        "LittleImg": "MainActivityTab_1213",
+        "Sort": 4,
+        "Img": "Banner/Banner1213",
+        "Weight": 1000,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1213,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1213
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1214,
+        "LittleImg": "MainActivityTab_1105",
+        "Sort": 3,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "2026.01.28",
+        "EndTime": "2026.02.11",
+        "OnCondition": 0,
+        "OnConfig": 0,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "",
+        "JumpConfig": [],
+        "JumpWeb": "https://activity.kiifstudio.com/memory-flip"
+    },
+    {
+        "Id": 1303,
+        "LittleImg": "MainActivityTab_1303",
+        "Sort": 4,
+        "Img": "Banner/Banner1303",
+        "Weight": 1000,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1303,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1303
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1315,
+        "LittleImg": "MainActivityTab_1315",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1315,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1315
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1316,
+        "LittleImg": "MainActivityTab_1316",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1316,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1316
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1350,
+        "LittleImg": "",
+        "Sort": 0,
+        "Img": "Banner/Banner1350",
+        "Weight": 3000,
+        "StartTime": "2026.02.11",
+        "EndTime": "2026.02.25",
+        "OnCondition": 0,
+        "OnConfig": 0,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "ShopWindow",
+        "JumpConfig": [
+            4
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1351,
+        "LittleImg": "",
+        "Sort": 0,
+        "Img": "Banner/Banner1351",
+        "Weight": 2000,
+        "StartTime": "2026.02.11",
+        "EndTime": "2026.02.25",
+        "OnCondition": 0,
+        "OnConfig": 0,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "ShopWindow",
+        "JumpConfig": [
+            4
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1352,
+        "LittleImg": "",
+        "Sort": 0,
+        "Img": "Banner/Banner1352",
+        "Weight": 1000,
+        "StartTime": "2026.03.18",
+        "EndTime": "2026.05.13",
+        "OnCondition": 7,
+        "OnConfig": 0,
+        "OffCondition": 5,
+        "OffConfig": 6035,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "ShopWindow",
+        "JumpConfig": [
+            4
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1318,
+        "LittleImg": "MainActivityTab_1318",
+        "Sort": 4,
+        "Img": "Banner/Banner1318",
+        "Weight": 1000,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1318,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1318
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1411,
+        "LittleImg": "MainActivityTab_1411",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1411,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1411
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1412,
+        "LittleImg": "Prayingforrainonacoldnight",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1412,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1412
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1413,
+        "LittleImg": "MainActivityTab_005",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1413,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1413
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1414,
+        "LittleImg": "MainActivityTab_1414",
+        "Sort": 4,
+        "Img": "Banner/Banner1414",
+        "Weight": 1000,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1414,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1401
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1415,
+        "LittleImg": "MainActivityTab_1415",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "2026.04.22",
+        "EndTime": "2026.05.13",
+        "OnCondition": 0,
+        "OnConfig": 0,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "",
+        "JumpConfig": [],
+        "JumpWeb": "https://activity.kiifstudio.com/huarong-dao"
+    },
+    {
+        "Id": 1527,
+        "LittleImg": "MainActivityTab_1527",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1527,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1527
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1528,
+        "LittleImg": "MainActivityTab_1211",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1528,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1528
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1529,
+        "LittleImg": "MainActivityTab_1529",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1529,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1529
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1530,
+        "LittleImg": "MainActivityTab_1530",
+        "Sort": 4,
+        "Img": "Banner/Banner1530",
+        "Weight": 1000,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1530,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1508
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1631,
+        "LittleImg": "MainActivityTab_1631",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1631,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1631
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1632,
+        "LittleImg": "MainActivityTab_1632",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1632,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1632
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1633,
+        "LittleImg": "MainActivityTab_1633",
+        "Sort": 4,
+        "Img": "Banner/Banner1633",
+        "Weight": 1000,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1613,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1613
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1634,
+        "LittleImg": "MainActivityTab_006",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1634,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1634
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 1635,
+        "LittleImg": "MainActivityTab_1212",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 1635,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OperatingActivityWindow",
+        "JumpConfig": [
+            1635
         ],
         "JumpWeb": ""
     }

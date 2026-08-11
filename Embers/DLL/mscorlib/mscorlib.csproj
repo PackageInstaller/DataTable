@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>mscorlib</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net40</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="collation.core.bin" />
+    <None Remove="collation.tailoring.bin" />
+    <None Remove="collation.cjkCHS.bin" />
+    <None Remove="collation.cjkCHT.bin" />
+    <None Remove="collation.cjkJA.bin" />
+    <None Remove="collation.cjkKO.bin" />
+    <None Remove="collation.cjkKOlv2.bin" />
+    <EmbeddedResource Include="collation.core.bin" LogicalName="collation.core.bin" />
+    <EmbeddedResource Include="collation.tailoring.bin" LogicalName="collation.tailoring.bin" />
+    <EmbeddedResource Include="collation.cjkCHS.bin" LogicalName="collation.cjkCHS.bin" />
+    <EmbeddedResource Include="collation.cjkCHT.bin" LogicalName="collation.cjkCHT.bin" />
+    <EmbeddedResource Include="collation.cjkJA.bin" LogicalName="collation.cjkJA.bin" />
+    <EmbeddedResource Include="collation.cjkKO.bin" LogicalName="collation.cjkKO.bin" />
+    <EmbeddedResource Include="collation.cjkKOlv2.bin" LogicalName="collation.cjkKOlv2.bin" />
+  </ItemGroup>
+  <ItemGroup />
+</Project>

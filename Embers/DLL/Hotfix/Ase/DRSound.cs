@@ -1,0 +1,66 @@
+using System.IO;
+using System.Text;
+using GameFramework.Runtime;
+
+namespace Ase;
+
+public class DRSound : DataRowBase
+{
+	private int m_Id;
+
+	public override int Id => m_Id;
+
+	public string AssetName { get; private set; }
+
+	public int Priority { get; private set; }
+
+	public bool Loop { get; private set; }
+
+	public float Volume { get; private set; }
+
+	public float SpatialBlend { get; private set; }
+
+	public float MaxDistance { get; private set; }
+
+	public override bool ParseDataRow(string dataRowString, object userData)
+	{
+		string[] array = dataRowString.Split(DataTableExtension.DataSplitSeparators);
+		for (int i = 0; i < array.Length; i++)
+		{
+			array[i] = array[i].Trim(DataTableExtension.DataTrimSeparators);
+		}
+		int num = 0;
+		num++;
+		m_Id = int.Parse(array[num++]);
+		num++;
+		AssetName = array[num++];
+		Priority = int.Parse(array[num++]);
+		Loop = bool.Parse(array[num++]);
+		Volume = float.Parse(array[num++]);
+		SpatialBlend = float.Parse(array[num++]);
+		MaxDistance = float.Parse(array[num++]);
+		GeneratePropertyArray();
+		return true;
+	}
+
+	public override bool ParseDataRow(byte[] dataRowBytes, int startIndex, int length, object userData)
+	{
+		using (MemoryStream input = new MemoryStream(dataRowBytes, startIndex, length, writable: false))
+		{
+			using BinaryReader binaryReader = new BinaryReader(input, Encoding.UTF8);
+			m_Id = binaryReader.Read7BitEncodedInt32();
+			AssetName = binaryReader.ReadString();
+			Priority = binaryReader.Read7BitEncodedInt32();
+			Loop = binaryReader.ReadBoolean();
+			Volume = binaryReader.ReadSingle();
+			SpatialBlend = binaryReader.ReadSingle();
+			MaxDistance = binaryReader.ReadSingle();
+		}
+		GeneratePropertyArray();
+		return true;
+	}
+
+	private void GeneratePropertyArray()
+	{
+	}
+}

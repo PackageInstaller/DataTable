@@ -16,7 +16,11 @@
         ],
         "Weapon": 9244003,
         "WeaponLv": 80,
-        "WeaponRefine": 1
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
     },
     {
         "Id": 100101,
@@ -35,7 +39,31 @@
         ],
         "Weapon": 9254002,
         "WeaponLv": 80,
-        "WeaponRefine": 1
+        "WeaponRefine": 1,
+        "Attribute": [
+            200020,
+            200040,
+            200060,
+            200070,
+            200080,
+            200130
+        ],
+        "AttributeNum": [
+            100.0,
+            100.0,
+            100.0,
+            30.0,
+            50.0,
+            50.0
+        ],
+        "Entry": [
+            7001,
+            7002
+        ],
+        "EntryLev": [
+            3,
+            3
+        ]
     },
     {
         "Id": 100204,
@@ -54,7 +82,11 @@
         ],
         "Weapon": 9224002,
         "WeaponLv": 80,
-        "WeaponRefine": 1
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
     },
     {
         "Id": 170401,
@@ -73,7 +105,11 @@
         ],
         "Weapon": 9214003,
         "WeaponLv": 60,
-        "WeaponRefine": 1
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
     },
     {
         "Id": 170402,
@@ -92,7 +128,11 @@
         ],
         "Weapon": 9214003,
         "WeaponLv": 70,
-        "WeaponRefine": 2
+        "WeaponRefine": 2,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
     },
     {
         "Id": 170403,
@@ -111,7 +151,11 @@
         ],
         "Weapon": 9214003,
         "WeaponLv": 80,
-        "WeaponRefine": 3
+        "WeaponRefine": 3,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
     },
     {
         "Id": 170404,
@@ -128,9 +172,13 @@
             403,
             503
         ],
-        "Weapon": 9214001,
+        "Weapon": 9214002,
         "WeaponLv": 80,
-        "WeaponRefine": 3
+        "WeaponRefine": 3,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
     },
     {
         "Id": 100201,
@@ -149,7 +197,11 @@
         ],
         "Weapon": 9224002,
         "WeaponLv": 60,
-        "WeaponRefine": 1
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
     },
     {
         "Id": 100202,
@@ -168,7 +220,11 @@
         ],
         "Weapon": 9224002,
         "WeaponLv": 70,
-        "WeaponRefine": 2
+        "WeaponRefine": 2,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
     },
     {
         "Id": 100203,
@@ -187,6 +243,1391 @@
         ],
         "Weapon": 9224002,
         "WeaponLv": 80,
-        "WeaponRefine": 3
+        "WeaponRefine": 3,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 100102,
+        "HeroId": 1001,
+        "HeroSkin": 100100,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 3,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9254002,
+        "WeaponLv": 80,
+        "WeaponRefine": 3,
+        "Attribute": [
+            200010,
+            200030,
+            200050
+        ],
+        "AttributeNum": [
+            8813.0,
+            380.0,
+            962.0
+        ],
+        "Entry": [
+            7010,
+            7061,
+            7036
+        ],
+        "EntryLev": [
+            3,
+            3,
+            6
+        ]
+    },
+    {
+        "Id": 100205,
+        "HeroId": 1002,
+        "HeroSkin": 100200,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 3,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9224002,
+        "WeaponLv": 80,
+        "WeaponRefine": 3,
+        "Attribute": [
+            200010,
+            200030,
+            200050
+        ],
+        "AttributeNum": [
+            7806.0,
+            362.0,
+            893.0
+        ],
+        "Entry": [
+            7017,
+            7054,
+            7035
+        ],
+        "EntryLev": [
+            3,
+            3,
+            6
+        ]
+    },
+    {
+        "Id": 110401,
+        "HeroId": 1104,
+        "HeroSkin": 110400,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 3,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9214001,
+        "WeaponLv": 80,
+        "WeaponRefine": 3,
+        "Attribute": [
+            200010,
+            200030,
+            200050,
+            200070,
+            200080
+        ],
+        "AttributeNum": [
+            8165.0,
+            380.0,
+            1357.0,
+            0.014,
+            0.7
+        ],
+        "Entry": [
+            7036,
+            7035
+        ],
+        "EntryLev": [
+            6,
+            6
+        ]
+    },
+    {
+        "Id": 170101,
+        "HeroId": 1701,
+        "HeroSkin": 170100,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 2,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9254003,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 100801,
+        "HeroId": 1008,
+        "HeroSkin": 100800,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 2,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            0,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9224003,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 100701,
+        "HeroId": 1007,
+        "HeroSkin": 100701,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 2,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9234001,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 170102,
+        "HeroId": 1701,
+        "HeroSkin": 170100,
+        "HeroStarLv": 2,
+        "HeroLv": 40,
+        "HerosoulLv": 3,
+        "TalentBigLv": 6,
+        "TalentSmallLv": [
+            101,
+            201,
+            301,
+            401,
+            501
+        ],
+        "Weapon": 9254003,
+        "WeaponLv": 40,
+        "WeaponRefine": 1,
+        "Attribute": [
+            200030
+        ],
+        "AttributeNum": [
+            200.0
+        ],
+        "Entry": [
+            7061
+        ],
+        "EntryLev": [
+            3
+        ]
+    },
+    {
+        "Id": 170103,
+        "HeroId": 1701,
+        "HeroSkin": 170100,
+        "HeroStarLv": 4,
+        "HeroLv": 60,
+        "HerosoulLv": 3,
+        "TalentBigLv": 10,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9254003,
+        "WeaponLv": 60,
+        "WeaponRefine": 2,
+        "Attribute": [
+            200030
+        ],
+        "AttributeNum": [
+            200.0
+        ],
+        "Entry": [
+            7061
+        ],
+        "EntryLev": [
+            3
+        ]
+    },
+    {
+        "Id": 170104,
+        "HeroId": 1701,
+        "HeroSkin": 170100,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 3,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9254003,
+        "WeaponLv": 80,
+        "WeaponRefine": 3,
+        "Attribute": [
+            200050
+        ],
+        "AttributeNum": [
+            400.0
+        ],
+        "Entry": [
+            7061
+        ],
+        "EntryLev": [
+            3
+        ]
+    },
+    {
+        "Id": 120701,
+        "HeroId": 1207,
+        "HeroSkin": 120700,
+        "HeroStarLv": 2,
+        "HeroLv": 40,
+        "HerosoulLv": 3,
+        "TalentBigLv": 6,
+        "TalentSmallLv": [
+            101,
+            201,
+            301,
+            401,
+            501
+        ],
+        "Weapon": 9254001,
+        "WeaponLv": 40,
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 120702,
+        "HeroId": 1207,
+        "HeroSkin": 120700,
+        "HeroStarLv": 4,
+        "HeroLv": 60,
+        "HerosoulLv": 3,
+        "TalentBigLv": 10,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9254001,
+        "WeaponLv": 60,
+        "WeaponRefine": 2,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 120703,
+        "HeroId": 1207,
+        "HeroSkin": 120700,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 3,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9254001,
+        "WeaponLv": 80,
+        "WeaponRefine": 3,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 160401,
+        "HeroId": 1604,
+        "HeroSkin": 160400,
+        "HeroStarLv": 2,
+        "HeroLv": 40,
+        "HerosoulLv": 3,
+        "TalentBigLv": 6,
+        "TalentSmallLv": [
+            101,
+            201,
+            301,
+            401,
+            501
+        ],
+        "Weapon": 9234002,
+        "WeaponLv": 40,
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 160402,
+        "HeroId": 1604,
+        "HeroSkin": 160400,
+        "HeroStarLv": 4,
+        "HeroLv": 60,
+        "HerosoulLv": 3,
+        "TalentBigLv": 10,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9234002,
+        "WeaponLv": 60,
+        "WeaponRefine": 2,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 160403,
+        "HeroId": 1604,
+        "HeroSkin": 160400,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 3,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9234002,
+        "WeaponLv": 80,
+        "WeaponRefine": 3,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 100802,
+        "HeroId": 1008,
+        "HeroSkin": 100800,
+        "HeroStarLv": 2,
+        "HeroLv": 40,
+        "HerosoulLv": 3,
+        "TalentBigLv": 6,
+        "TalentSmallLv": [
+            101,
+            201,
+            301,
+            401,
+            501
+        ],
+        "Weapon": 9224002,
+        "WeaponLv": 40,
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 100803,
+        "HeroId": 1008,
+        "HeroSkin": 100800,
+        "HeroStarLv": 4,
+        "HeroLv": 60,
+        "HerosoulLv": 3,
+        "TalentBigLv": 10,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9224002,
+        "WeaponLv": 60,
+        "WeaponRefine": 2,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 100804,
+        "HeroId": 1008,
+        "HeroSkin": 100800,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 3,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9224002,
+        "WeaponLv": 80,
+        "WeaponRefine": 3,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 170405,
+        "HeroId": 1704,
+        "HeroSkin": 170400,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 3,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9214001,
+        "WeaponLv": 80,
+        "WeaponRefine": 3,
+        "Attribute": [
+            200010,
+            200030,
+            200050,
+            200070,
+            200080
+        ],
+        "AttributeNum": [
+            8165.0,
+            380.0,
+            1357.0,
+            0.014,
+            0.7
+        ],
+        "Entry": [
+            7036,
+            7035
+        ],
+        "EntryLev": [
+            6,
+            6
+        ]
+    },
+    {
+        "Id": 100805,
+        "HeroId": 1008,
+        "HeroSkin": 100800,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 3,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9224002,
+        "WeaponLv": 80,
+        "WeaponRefine": 3,
+        "Attribute": [
+            200010,
+            200030,
+            200050
+        ],
+        "AttributeNum": [
+            7806.0,
+            362.0,
+            893.0
+        ],
+        "Entry": [
+            7017,
+            7054,
+            7035
+        ],
+        "EntryLev": [
+            3,
+            3,
+            6
+        ]
+    },
+    {
+        "Id": 170105,
+        "HeroId": 1701,
+        "HeroSkin": 170100,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 3,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9254003,
+        "WeaponLv": 80,
+        "WeaponRefine": 3,
+        "Attribute": [
+            200010,
+            200030,
+            200050
+        ],
+        "AttributeNum": [
+            8813.0,
+            380.0,
+            962.0
+        ],
+        "Entry": [
+            7010,
+            7061,
+            7036
+        ],
+        "EntryLev": [
+            3,
+            3,
+            8
+        ]
+    },
+    {
+        "Id": 100401,
+        "HeroId": 1004,
+        "HeroSkin": 100400,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 2,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9234003,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 100901,
+        "HeroId": 1009,
+        "HeroSkin": 100900,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 2,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9214004,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 110301,
+        "HeroId": 1103,
+        "HeroSkin": 110301,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 4,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9214001,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [
+            200220
+        ],
+        "AttributeNum": [
+            5.0
+        ],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 101501,
+        "HeroId": 1015,
+        "HeroSkin": 101500,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 2,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9264003,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 101001,
+        "HeroId": 1010,
+        "HeroSkin": 101000,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 2,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9224004,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 170406,
+        "HeroId": 1704,
+        "HeroSkin": 170401,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 4,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9214003,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [
+            200220
+        ],
+        "AttributeNum": [
+            5.0
+        ],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 110402,
+        "HeroId": 1104,
+        "HeroSkin": 110401,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 4,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9214001,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [
+            200220
+        ],
+        "AttributeNum": [
+            5.0
+        ],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 101502,
+        "HeroId": 1015,
+        "HeroSkin": 101500,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 3,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9264003,
+        "WeaponLv": 80,
+        "WeaponRefine": 3,
+        "Attribute": [
+            200010,
+            200030,
+            200050
+        ],
+        "AttributeNum": [
+            7806.0,
+            362.0,
+            893.0
+        ],
+        "Entry": [
+            7017,
+            7054,
+            7035
+        ],
+        "EntryLev": [
+            3,
+            3,
+            6
+        ]
+    },
+    {
+        "Id": 101503,
+        "HeroId": 1015,
+        "HeroSkin": 101500,
+        "HeroStarLv": 2,
+        "HeroLv": 40,
+        "HerosoulLv": 3,
+        "TalentBigLv": 6,
+        "TalentSmallLv": [
+            101,
+            201,
+            301,
+            401,
+            501
+        ],
+        "Weapon": 9254003,
+        "WeaponLv": 40,
+        "WeaponRefine": 1,
+        "Attribute": [
+            200030
+        ],
+        "AttributeNum": [
+            200.0
+        ],
+        "Entry": [
+            7121,
+            7001
+        ],
+        "EntryLev": [
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 101504,
+        "HeroId": 1015,
+        "HeroSkin": 101500,
+        "HeroStarLv": 4,
+        "HeroLv": 60,
+        "HerosoulLv": 3,
+        "TalentBigLv": 10,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9254003,
+        "WeaponLv": 60,
+        "WeaponRefine": 2,
+        "Attribute": [
+            200030
+        ],
+        "AttributeNum": [
+            200.0
+        ],
+        "Entry": [
+            7121,
+            7001
+        ],
+        "EntryLev": [
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 101505,
+        "HeroId": 1015,
+        "HeroSkin": 101500,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 3,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9254003,
+        "WeaponLv": 80,
+        "WeaponRefine": 3,
+        "Attribute": [
+            200050
+        ],
+        "AttributeNum": [
+            400.0
+        ],
+        "Entry": [
+            7121,
+            7001
+        ],
+        "EntryLev": [
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 110403,
+        "HeroId": 1104,
+        "HeroSkin": 110400,
+        "HeroStarLv": 2,
+        "HeroLv": 40,
+        "HerosoulLv": 3,
+        "TalentBigLv": 6,
+        "TalentSmallLv": [
+            101,
+            201,
+            301,
+            401,
+            501
+        ],
+        "Weapon": 9254001,
+        "WeaponLv": 40,
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 110404,
+        "HeroId": 1104,
+        "HeroSkin": 110400,
+        "HeroStarLv": 4,
+        "HeroLv": 60,
+        "HerosoulLv": 3,
+        "TalentBigLv": 10,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9254001,
+        "WeaponLv": 60,
+        "WeaponRefine": 2,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 110405,
+        "HeroId": 1104,
+        "HeroSkin": 110400,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 3,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9254001,
+        "WeaponLv": 80,
+        "WeaponRefine": 3,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 101201,
+        "HeroId": 1012,
+        "HeroSkin": 101200,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 2,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9254004,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 160702,
+        "HeroId": 1607,
+        "HeroSkin": 160701,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 2,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9244003,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [
+            200220
+        ],
+        "AttributeNum": [
+            5.0
+        ],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 101101,
+        "HeroId": 1011,
+        "HeroSkin": 101100,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 2,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9244004,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 101401,
+        "HeroId": 1014,
+        "HeroSkin": 101400,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 2,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9264004,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 100402,
+        "HeroId": 1004,
+        "HeroSkin": 100401,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 2,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9234003,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [
+            200220
+        ],
+        "AttributeNum": [
+            5.0
+        ],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 101102,
+        "HeroId": 1011,
+        "HeroSkin": 101100,
+        "HeroStarLv": 2,
+        "HeroLv": 40,
+        "HerosoulLv": 3,
+        "TalentBigLv": 6,
+        "TalentSmallLv": [
+            101,
+            201,
+            301,
+            401,
+            501
+        ],
+        "Weapon": 9244004,
+        "WeaponLv": 40,
+        "WeaponRefine": 1,
+        "Attribute": [
+            200030
+        ],
+        "AttributeNum": [
+            200.0
+        ],
+        "Entry": [
+            7121,
+            7001
+        ],
+        "EntryLev": [
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 101103,
+        "HeroId": 1011,
+        "HeroSkin": 101100,
+        "HeroStarLv": 4,
+        "HeroLv": 60,
+        "HerosoulLv": 3,
+        "TalentBigLv": 10,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9244004,
+        "WeaponLv": 60,
+        "WeaponRefine": 2,
+        "Attribute": [
+            200030
+        ],
+        "AttributeNum": [
+            200.0
+        ],
+        "Entry": [
+            7121,
+            7001
+        ],
+        "EntryLev": [
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 101104,
+        "HeroId": 1011,
+        "HeroSkin": 101100,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 3,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9244004,
+        "WeaponLv": 80,
+        "WeaponRefine": 3,
+        "Attribute": [
+            200050
+        ],
+        "AttributeNum": [
+            400.0
+        ],
+        "Entry": [
+            7121,
+            7001
+        ],
+        "EntryLev": [
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 160703,
+        "HeroId": 1607,
+        "HeroSkin": 160700,
+        "HeroStarLv": 2,
+        "HeroLv": 40,
+        "HerosoulLv": 3,
+        "TalentBigLv": 6,
+        "TalentSmallLv": [
+            101,
+            201,
+            301,
+            401,
+            501
+        ],
+        "Weapon": 9244003,
+        "WeaponLv": 40,
+        "WeaponRefine": 1,
+        "Attribute": [
+            200030
+        ],
+        "AttributeNum": [
+            200.0
+        ],
+        "Entry": [
+            7121,
+            7001
+        ],
+        "EntryLev": [
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 160704,
+        "HeroId": 1607,
+        "HeroSkin": 160700,
+        "HeroStarLv": 4,
+        "HeroLv": 60,
+        "HerosoulLv": 3,
+        "TalentBigLv": 10,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9244003,
+        "WeaponLv": 60,
+        "WeaponRefine": 2,
+        "Attribute": [
+            200030
+        ],
+        "AttributeNum": [
+            200.0
+        ],
+        "Entry": [
+            7121,
+            7001
+        ],
+        "EntryLev": [
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 160705,
+        "HeroId": 1607,
+        "HeroSkin": 160700,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 3,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9244003,
+        "WeaponLv": 80,
+        "WeaponRefine": 3,
+        "Attribute": [
+            200050
+        ],
+        "AttributeNum": [
+            400.0
+        ],
+        "Entry": [
+            7121,
+            7001
+        ],
+        "EntryLev": [
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 101701,
+        "HeroId": 1017,
+        "HeroSkin": 101700,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 2,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9224005,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 101301,
+        "HeroId": 1013,
+        "HeroSkin": 101300,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 2,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9234004,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [],
+        "AttributeNum": [],
+        "Entry": [],
+        "EntryLev": []
+    },
+    {
+        "Id": 101302,
+        "HeroId": 1013,
+        "HeroSkin": 101301,
+        "HeroStarLv": 5,
+        "HeroLv": 80,
+        "HerosoulLv": 2,
+        "TalentBigLv": 12,
+        "TalentSmallLv": [
+            103,
+            203,
+            303,
+            403,
+            503
+        ],
+        "Weapon": 9234004,
+        "WeaponLv": 80,
+        "WeaponRefine": 1,
+        "Attribute": [
+            200220
+        ],
+        "AttributeNum": [
+            5.0
+        ],
+        "Entry": [],
+        "EntryLev": []
     }
 ]

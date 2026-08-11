@@ -5452,7 +5452,7 @@
         "ConditionNum": [
             6
         ],
-        "TinderType": 3,
+        "TinderType": 1,
         "SkillDesc": "精准点按后，伤害增加",
         "BattleValue": [
             170101101
@@ -5481,7 +5481,7 @@
             9,
             0
         ],
-        "TinderType": 3,
+        "TinderType": 1,
         "SkillDesc": "精准点按后，伤害增加",
         "BattleValue": [
             170101102
@@ -5510,7 +5510,7 @@
             10,
             0
         ],
-        "TinderType": 3,
+        "TinderType": 1,
         "SkillDesc": "精准点按后，伤害增加",
         "BattleValue": [
             170101103
@@ -5537,7 +5537,7 @@
         "ConditionNum": [
             6
         ],
-        "TinderType": 3,
+        "TinderType": 1,
         "SkillDesc": "破势类型的武器伤害增加",
         "BattleValue": [
             170111201
@@ -5566,7 +5566,7 @@
             9,
             0
         ],
-        "TinderType": 3,
+        "TinderType": 1,
         "SkillDesc": "破势类型的武器伤害增加",
         "BattleValue": [
             170111202
@@ -5595,7 +5595,7 @@
             10,
             0
         ],
-        "TinderType": 3,
+        "TinderType": 1,
         "SkillDesc": "破势类型的武器伤害增加",
         "BattleValue": [
             170111203
@@ -5622,7 +5622,7 @@
         "ConditionNum": [
             6
         ],
-        "TinderType": 3,
+        "TinderType": 1,
         "SkillDesc": "派生2技能命中后，锯攻击伤害增加",
         "BattleValue": [
             170121301
@@ -5651,7 +5651,7 @@
             9,
             0
         ],
-        "TinderType": 3,
+        "TinderType": 1,
         "SkillDesc": "派生2技能命中后，锯攻击伤害增加",
         "BattleValue": [
             170121302
@@ -5680,7 +5680,7 @@
             10,
             0
         ],
-        "TinderType": 3,
+        "TinderType": 1,
         "SkillDesc": "派生2技能命中后，锯攻击伤害增加",
         "BattleValue": [
             170121303
@@ -5707,7 +5707,7 @@
         "ConditionNum": [
             6
         ],
-        "TinderType": 3,
+        "TinderType": 1,
         "SkillDesc": "普攻命中时，回复耐力",
         "BattleValue": [
             170131401
@@ -5736,7 +5736,7 @@
             9,
             0
         ],
-        "TinderType": 3,
+        "TinderType": 1,
         "SkillDesc": "普攻命中时，回复耐力",
         "BattleValue": [
             170131402
@@ -5765,7 +5765,7 @@
             10,
             0
         ],
-        "TinderType": 3,
+        "TinderType": 1,
         "SkillDesc": "普攻命中时，回复耐力",
         "BattleValue": [
             170131403
@@ -5792,7 +5792,7 @@
         "ConditionNum": [
             6
         ],
-        "TinderType": 3,
+        "TinderType": 1,
         "SkillDesc": "奥义buff的伤害加成增加",
         "BattleValue": [
             170141501
@@ -5821,7 +5821,7 @@
             9,
             0
         ],
-        "TinderType": 3,
+        "TinderType": 1,
         "SkillDesc": "奥义buff的伤害加成增加",
         "BattleValue": [
             170141502
@@ -5850,7 +5850,7 @@
             10,
             0
         ],
-        "TinderType": 3,
+        "TinderType": 1,
         "SkillDesc": "奥义buff的伤害加成增加",
         "BattleValue": [
             170141503
@@ -12841,6 +12841,6351 @@
             120205301
         ],
         "BattleBuffId": 10005,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 466,
+        "HeroId": 1008,
+        "SkillId": 100801,
+        "Order": 101,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1008101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 467,
+        "HeroId": 1008,
+        "SkillId": 100801,
+        "Order": 102,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1008102
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 468,
+        "HeroId": 1008,
+        "SkillId": 100801,
+        "Order": 103,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1008103
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 469,
+        "HeroId": 1008,
+        "SkillId": 100811,
+        "Order": 201,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1008201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 470,
+        "HeroId": 1008,
+        "SkillId": 100811,
+        "Order": 202,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1008202
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 471,
+        "HeroId": 1008,
+        "SkillId": 100811,
+        "Order": 203,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1008203
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 472,
+        "HeroId": 1008,
+        "SkillId": 100821,
+        "Order": 301,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1008301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 473,
+        "HeroId": 1008,
+        "SkillId": 100821,
+        "Order": 302,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1008302
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 474,
+        "HeroId": 1008,
+        "SkillId": 100821,
+        "Order": 303,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1008303
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 475,
+        "HeroId": 1008,
+        "SkillId": 100831,
+        "Order": 401,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1008401
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 476,
+        "HeroId": 1008,
+        "SkillId": 100831,
+        "Order": 402,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1008402
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 477,
+        "HeroId": 1008,
+        "SkillId": 100831,
+        "Order": 403,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1008403
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 478,
+        "HeroId": 1008,
+        "SkillId": 100841,
+        "Order": 501,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1008501
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 479,
+        "HeroId": 1008,
+        "SkillId": 100841,
+        "Order": 502,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1008502
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 480,
+        "HeroId": 1008,
+        "SkillId": 100841,
+        "Order": 503,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1008503
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 481,
+        "HeroId": 1004,
+        "SkillId": 100401,
+        "Order": 101,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100401101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 482,
+        "HeroId": 1004,
+        "SkillId": 100401,
+        "Order": 102,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100401201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 483,
+        "HeroId": 1004,
+        "SkillId": 100401,
+        "Order": 103,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100401301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 484,
+        "HeroId": 1004,
+        "SkillId": 100411,
+        "Order": 201,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100402101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 485,
+        "HeroId": 1004,
+        "SkillId": 100411,
+        "Order": 202,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100402201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 486,
+        "HeroId": 1004,
+        "SkillId": 100411,
+        "Order": 203,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100402301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 487,
+        "HeroId": 1004,
+        "SkillId": 100421,
+        "Order": 301,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100403101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 488,
+        "HeroId": 1004,
+        "SkillId": 100421,
+        "Order": 302,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100403201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 489,
+        "HeroId": 1004,
+        "SkillId": 100421,
+        "Order": 303,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100403301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 490,
+        "HeroId": 1004,
+        "SkillId": 100431,
+        "Order": 401,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100404101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 491,
+        "HeroId": 1004,
+        "SkillId": 100431,
+        "Order": 402,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100404201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 492,
+        "HeroId": 1004,
+        "SkillId": 100431,
+        "Order": 403,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100404301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 493,
+        "HeroId": 1004,
+        "SkillId": 100441,
+        "Order": 501,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100405101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 494,
+        "HeroId": 1004,
+        "SkillId": 100441,
+        "Order": 502,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100405201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 495,
+        "HeroId": 1004,
+        "SkillId": 100441,
+        "Order": 503,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100405301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 496,
+        "HeroId": 1010,
+        "SkillId": 101001,
+        "Order": 101,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101001101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 497,
+        "HeroId": 1010,
+        "SkillId": 101001,
+        "Order": 102,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101001201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 498,
+        "HeroId": 1010,
+        "SkillId": 101001,
+        "Order": 103,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101001301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 499,
+        "HeroId": 1010,
+        "SkillId": 101011,
+        "Order": 201,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101002101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 500,
+        "HeroId": 1010,
+        "SkillId": 101011,
+        "Order": 202,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101002201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 501,
+        "HeroId": 1010,
+        "SkillId": 101011,
+        "Order": 203,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101002301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 502,
+        "HeroId": 1010,
+        "SkillId": 101021,
+        "Order": 301,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101003101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 503,
+        "HeroId": 1010,
+        "SkillId": 101021,
+        "Order": 302,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101003201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 504,
+        "HeroId": 1010,
+        "SkillId": 101021,
+        "Order": 303,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101003301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 505,
+        "HeroId": 1010,
+        "SkillId": 101031,
+        "Order": 401,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101004101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 506,
+        "HeroId": 1010,
+        "SkillId": 101031,
+        "Order": 402,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101004201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 507,
+        "HeroId": 1010,
+        "SkillId": 101031,
+        "Order": 403,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101004301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 508,
+        "HeroId": 1010,
+        "SkillId": 101041,
+        "Order": 501,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101005101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 509,
+        "HeroId": 1010,
+        "SkillId": 101041,
+        "Order": 502,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101005201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 510,
+        "HeroId": 1010,
+        "SkillId": 101041,
+        "Order": 503,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101005301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 511,
+        "HeroId": 1009,
+        "SkillId": 100901,
+        "Order": 101,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100901101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 512,
+        "HeroId": 1009,
+        "SkillId": 100901,
+        "Order": 102,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100901201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 513,
+        "HeroId": 1009,
+        "SkillId": 100901,
+        "Order": 103,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100901301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 514,
+        "HeroId": 1009,
+        "SkillId": 100911,
+        "Order": 201,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100902101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 515,
+        "HeroId": 1009,
+        "SkillId": 100911,
+        "Order": 202,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100902201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 516,
+        "HeroId": 1009,
+        "SkillId": 100911,
+        "Order": 203,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100902301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 517,
+        "HeroId": 1009,
+        "SkillId": 100921,
+        "Order": 301,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100903101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 518,
+        "HeroId": 1009,
+        "SkillId": 100921,
+        "Order": 302,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100903201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 519,
+        "HeroId": 1009,
+        "SkillId": 100921,
+        "Order": 303,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100903301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 520,
+        "HeroId": 1009,
+        "SkillId": 100931,
+        "Order": 401,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100904101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 521,
+        "HeroId": 1009,
+        "SkillId": 100931,
+        "Order": 402,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100904201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 522,
+        "HeroId": 1009,
+        "SkillId": 100931,
+        "Order": 403,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100904301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 523,
+        "HeroId": 1009,
+        "SkillId": 100941,
+        "Order": 501,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100905101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 524,
+        "HeroId": 1009,
+        "SkillId": 100941,
+        "Order": 502,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100905201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 525,
+        "HeroId": 1009,
+        "SkillId": 100941,
+        "Order": 503,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            100905301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 526,
+        "HeroId": 1017,
+        "SkillId": 101701,
+        "Order": 101,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101701101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 527,
+        "HeroId": 1017,
+        "SkillId": 101701,
+        "Order": 102,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101701201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 528,
+        "HeroId": 1017,
+        "SkillId": 101701,
+        "Order": 103,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101701301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 529,
+        "HeroId": 1017,
+        "SkillId": 101711,
+        "Order": 201,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101702101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 530,
+        "HeroId": 1017,
+        "SkillId": 101711,
+        "Order": 202,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101702201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 531,
+        "HeroId": 1017,
+        "SkillId": 101711,
+        "Order": 203,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101702301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 532,
+        "HeroId": 1017,
+        "SkillId": 101721,
+        "Order": 301,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101703101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 533,
+        "HeroId": 1017,
+        "SkillId": 101721,
+        "Order": 302,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101703201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 534,
+        "HeroId": 1017,
+        "SkillId": 101721,
+        "Order": 303,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101703301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 535,
+        "HeroId": 1017,
+        "SkillId": 101731,
+        "Order": 401,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101704101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 536,
+        "HeroId": 1017,
+        "SkillId": 101731,
+        "Order": 402,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101704201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 537,
+        "HeroId": 1017,
+        "SkillId": 101731,
+        "Order": 403,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101704301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 538,
+        "HeroId": 1017,
+        "SkillId": 101741,
+        "Order": 501,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101705101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 539,
+        "HeroId": 1017,
+        "SkillId": 101741,
+        "Order": 502,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101705201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 540,
+        "HeroId": 1017,
+        "SkillId": 101741,
+        "Order": 503,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101705301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 541,
+        "HeroId": 1011,
+        "SkillId": 101101,
+        "Order": 101,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1011101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 542,
+        "HeroId": 1011,
+        "SkillId": 101101,
+        "Order": 102,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1011102
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 543,
+        "HeroId": 1011,
+        "SkillId": 101101,
+        "Order": 103,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1011103
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 544,
+        "HeroId": 1011,
+        "SkillId": 101111,
+        "Order": 201,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1011201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 545,
+        "HeroId": 1011,
+        "SkillId": 101111,
+        "Order": 202,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1011202
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 546,
+        "HeroId": 1011,
+        "SkillId": 101111,
+        "Order": 203,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1011203
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 547,
+        "HeroId": 1011,
+        "SkillId": 101121,
+        "Order": 301,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1011301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 548,
+        "HeroId": 1011,
+        "SkillId": 101121,
+        "Order": 302,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1011302
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 549,
+        "HeroId": 1011,
+        "SkillId": 101121,
+        "Order": 303,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1011303
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 550,
+        "HeroId": 1011,
+        "SkillId": 101131,
+        "Order": 401,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1011401
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 551,
+        "HeroId": 1011,
+        "SkillId": 101131,
+        "Order": 402,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1011402
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 552,
+        "HeroId": 1011,
+        "SkillId": 101131,
+        "Order": 403,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1011403
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 553,
+        "HeroId": 1011,
+        "SkillId": 101141,
+        "Order": 501,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1011501
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 554,
+        "HeroId": 1011,
+        "SkillId": 101141,
+        "Order": 502,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1011502
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 555,
+        "HeroId": 1011,
+        "SkillId": 101141,
+        "Order": 503,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            1011503
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 556,
+        "HeroId": 1019,
+        "SkillId": 101901,
+        "Order": 101,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101901101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 557,
+        "HeroId": 1019,
+        "SkillId": 101901,
+        "Order": 102,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101901201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 558,
+        "HeroId": 1019,
+        "SkillId": 101901,
+        "Order": 103,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101901301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 559,
+        "HeroId": 1019,
+        "SkillId": 101911,
+        "Order": 201,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101902101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 560,
+        "HeroId": 1019,
+        "SkillId": 101911,
+        "Order": 202,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101902201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 561,
+        "HeroId": 1019,
+        "SkillId": 101911,
+        "Order": 203,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101902301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 562,
+        "HeroId": 1019,
+        "SkillId": 101921,
+        "Order": 301,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101903101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 563,
+        "HeroId": 1019,
+        "SkillId": 101921,
+        "Order": 302,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101903201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 564,
+        "HeroId": 1019,
+        "SkillId": 101921,
+        "Order": 303,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101903301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 565,
+        "HeroId": 1019,
+        "SkillId": 101931,
+        "Order": 401,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101904101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 566,
+        "HeroId": 1019,
+        "SkillId": 101931,
+        "Order": 402,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101904201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 567,
+        "HeroId": 1019,
+        "SkillId": 101931,
+        "Order": 403,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101904301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 568,
+        "HeroId": 1019,
+        "SkillId": 101941,
+        "Order": 501,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101905101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 569,
+        "HeroId": 1019,
+        "SkillId": 101941,
+        "Order": 502,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101905201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 570,
+        "HeroId": 1019,
+        "SkillId": 101941,
+        "Order": 503,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101905301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 571,
+        "HeroId": 1016,
+        "SkillId": 101601,
+        "Order": 101,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101601101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 572,
+        "HeroId": 1016,
+        "SkillId": 101601,
+        "Order": 102,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101601201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 573,
+        "HeroId": 1016,
+        "SkillId": 101601,
+        "Order": 103,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101601301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 574,
+        "HeroId": 1016,
+        "SkillId": 101611,
+        "Order": 201,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101602101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 575,
+        "HeroId": 1016,
+        "SkillId": 101611,
+        "Order": 202,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101602201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 576,
+        "HeroId": 1016,
+        "SkillId": 101611,
+        "Order": 203,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101602301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 577,
+        "HeroId": 1016,
+        "SkillId": 101621,
+        "Order": 301,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101603101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 578,
+        "HeroId": 1016,
+        "SkillId": 101621,
+        "Order": 302,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101603201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 579,
+        "HeroId": 1016,
+        "SkillId": 101621,
+        "Order": 303,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101603301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 580,
+        "HeroId": 1016,
+        "SkillId": 101631,
+        "Order": 401,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101604101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 581,
+        "HeroId": 1016,
+        "SkillId": 101631,
+        "Order": 402,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101604201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 582,
+        "HeroId": 1016,
+        "SkillId": 101631,
+        "Order": 403,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101604301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 583,
+        "HeroId": 1016,
+        "SkillId": 101641,
+        "Order": 501,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101605101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 584,
+        "HeroId": 1016,
+        "SkillId": 101641,
+        "Order": 502,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101605201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 585,
+        "HeroId": 1016,
+        "SkillId": 101641,
+        "Order": 503,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101605301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 586,
+        "HeroId": 1015,
+        "SkillId": 101501,
+        "Order": 101,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101501101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 587,
+        "HeroId": 1015,
+        "SkillId": 101501,
+        "Order": 102,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101501201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 588,
+        "HeroId": 1015,
+        "SkillId": 101501,
+        "Order": 103,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101501301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 589,
+        "HeroId": 1015,
+        "SkillId": 101511,
+        "Order": 201,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101502101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 590,
+        "HeroId": 1015,
+        "SkillId": 101511,
+        "Order": 202,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101502201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 591,
+        "HeroId": 1015,
+        "SkillId": 101511,
+        "Order": 203,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101502301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 592,
+        "HeroId": 1015,
+        "SkillId": 101521,
+        "Order": 301,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101503101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 593,
+        "HeroId": 1015,
+        "SkillId": 101521,
+        "Order": 302,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101503201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 594,
+        "HeroId": 1015,
+        "SkillId": 101521,
+        "Order": 303,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101503301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 595,
+        "HeroId": 1015,
+        "SkillId": 101531,
+        "Order": 401,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101504101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 596,
+        "HeroId": 1015,
+        "SkillId": 101531,
+        "Order": 402,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101504201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 597,
+        "HeroId": 1015,
+        "SkillId": 101531,
+        "Order": 403,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101504301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 598,
+        "HeroId": 1015,
+        "SkillId": 101541,
+        "Order": 501,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101505101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 599,
+        "HeroId": 1015,
+        "SkillId": 101541,
+        "Order": 502,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101505201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 600,
+        "HeroId": 1015,
+        "SkillId": 101541,
+        "Order": 503,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101505301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 601,
+        "HeroId": 1014,
+        "SkillId": 101401,
+        "Order": 101,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101401101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 602,
+        "HeroId": 1014,
+        "SkillId": 101401,
+        "Order": 102,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101401201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 603,
+        "HeroId": 1014,
+        "SkillId": 101401,
+        "Order": 103,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101401301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 604,
+        "HeroId": 1014,
+        "SkillId": 101411,
+        "Order": 201,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101402101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 605,
+        "HeroId": 1014,
+        "SkillId": 101411,
+        "Order": 202,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101402201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 606,
+        "HeroId": 1014,
+        "SkillId": 101411,
+        "Order": 203,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101402301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 607,
+        "HeroId": 1014,
+        "SkillId": 101421,
+        "Order": 301,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101403101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 608,
+        "HeroId": 1014,
+        "SkillId": 101421,
+        "Order": 302,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101403201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 609,
+        "HeroId": 1014,
+        "SkillId": 101421,
+        "Order": 303,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101403301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 610,
+        "HeroId": 1014,
+        "SkillId": 101431,
+        "Order": 401,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101404101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 611,
+        "HeroId": 1014,
+        "SkillId": 101431,
+        "Order": 402,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101404201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 612,
+        "HeroId": 1014,
+        "SkillId": 101431,
+        "Order": 403,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101404301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 613,
+        "HeroId": 1014,
+        "SkillId": 101441,
+        "Order": 501,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101405101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 614,
+        "HeroId": 1014,
+        "SkillId": 101441,
+        "Order": 502,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101405201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 615,
+        "HeroId": 1014,
+        "SkillId": 101441,
+        "Order": 503,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101405301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 616,
+        "HeroId": 1020,
+        "SkillId": 102001,
+        "Order": 101,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            102001101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 617,
+        "HeroId": 1020,
+        "SkillId": 102001,
+        "Order": 102,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            102001201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 618,
+        "HeroId": 1020,
+        "SkillId": 102001,
+        "Order": 103,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            102001301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 619,
+        "HeroId": 1020,
+        "SkillId": 102011,
+        "Order": 201,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            102002101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 620,
+        "HeroId": 1020,
+        "SkillId": 102011,
+        "Order": 202,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            102002201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 621,
+        "HeroId": 1020,
+        "SkillId": 102011,
+        "Order": 203,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            102002301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 622,
+        "HeroId": 1020,
+        "SkillId": 102021,
+        "Order": 301,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            102003101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 623,
+        "HeroId": 1020,
+        "SkillId": 102021,
+        "Order": 302,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            102003201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 624,
+        "HeroId": 1020,
+        "SkillId": 102021,
+        "Order": 303,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            102003301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 625,
+        "HeroId": 1020,
+        "SkillId": 102031,
+        "Order": 401,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            102004101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 626,
+        "HeroId": 1020,
+        "SkillId": 102031,
+        "Order": 402,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            102004201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 627,
+        "HeroId": 1020,
+        "SkillId": 102031,
+        "Order": 403,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            102004301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 628,
+        "HeroId": 1020,
+        "SkillId": 102041,
+        "Order": 501,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            102005101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 629,
+        "HeroId": 1020,
+        "SkillId": 102041,
+        "Order": 502,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            102005201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 630,
+        "HeroId": 1020,
+        "SkillId": 102041,
+        "Order": 503,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            102005301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 631,
+        "HeroId": 1013,
+        "SkillId": 101301,
+        "Order": 101,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101301101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 632,
+        "HeroId": 1013,
+        "SkillId": 101301,
+        "Order": 102,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101301201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 633,
+        "HeroId": 1013,
+        "SkillId": 101301,
+        "Order": 103,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101301301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 634,
+        "HeroId": 1013,
+        "SkillId": 101311,
+        "Order": 201,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101302101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 635,
+        "HeroId": 1013,
+        "SkillId": 101311,
+        "Order": 202,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101302201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 636,
+        "HeroId": 1013,
+        "SkillId": 101311,
+        "Order": 203,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101302301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 637,
+        "HeroId": 1013,
+        "SkillId": 101321,
+        "Order": 301,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101303101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 638,
+        "HeroId": 1013,
+        "SkillId": 101321,
+        "Order": 302,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101303201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 639,
+        "HeroId": 1013,
+        "SkillId": 101321,
+        "Order": 303,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101303301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 640,
+        "HeroId": 1013,
+        "SkillId": 101331,
+        "Order": 401,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101304101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 641,
+        "HeroId": 1013,
+        "SkillId": 101331,
+        "Order": 402,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101304201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 642,
+        "HeroId": 1013,
+        "SkillId": 101331,
+        "Order": 403,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101304301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 643,
+        "HeroId": 1013,
+        "SkillId": 101341,
+        "Order": 501,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101305101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 644,
+        "HeroId": 1013,
+        "SkillId": 101341,
+        "Order": 502,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101305201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 645,
+        "HeroId": 1013,
+        "SkillId": 101341,
+        "Order": 503,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101305301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 646,
+        "HeroId": 1018,
+        "SkillId": 101801,
+        "Order": 101,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101801101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 647,
+        "HeroId": 1018,
+        "SkillId": 101801,
+        "Order": 102,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101801201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 648,
+        "HeroId": 1018,
+        "SkillId": 101801,
+        "Order": 103,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101801301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 649,
+        "HeroId": 1018,
+        "SkillId": 101811,
+        "Order": 201,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101802101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 650,
+        "HeroId": 1018,
+        "SkillId": 101811,
+        "Order": 202,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101802201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 651,
+        "HeroId": 1018,
+        "SkillId": 101811,
+        "Order": 203,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101802301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 652,
+        "HeroId": 1018,
+        "SkillId": 101821,
+        "Order": 301,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101803101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 653,
+        "HeroId": 1018,
+        "SkillId": 101821,
+        "Order": 302,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101803201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 654,
+        "HeroId": 1018,
+        "SkillId": 101821,
+        "Order": 303,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101803301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 655,
+        "HeroId": 1018,
+        "SkillId": 101831,
+        "Order": 401,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101804101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 656,
+        "HeroId": 1018,
+        "SkillId": 101831,
+        "Order": 402,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101804201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 657,
+        "HeroId": 1018,
+        "SkillId": 101831,
+        "Order": 403,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101804301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 658,
+        "HeroId": 1018,
+        "SkillId": 101841,
+        "Order": 501,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101805101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 659,
+        "HeroId": 1018,
+        "SkillId": 101841,
+        "Order": 502,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101805201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 660,
+        "HeroId": 1018,
+        "SkillId": 101841,
+        "Order": 503,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101805301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 661,
+        "HeroId": 1012,
+        "SkillId": 101201,
+        "Order": 101,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101201101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 662,
+        "HeroId": 1012,
+        "SkillId": 101201,
+        "Order": 102,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101201201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 663,
+        "HeroId": 1012,
+        "SkillId": 101201,
+        "Order": 103,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101201301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 664,
+        "HeroId": 1012,
+        "SkillId": 101211,
+        "Order": 201,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101202101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 665,
+        "HeroId": 1012,
+        "SkillId": 101211,
+        "Order": 202,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101202201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 666,
+        "HeroId": 1012,
+        "SkillId": 101211,
+        "Order": 203,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101202301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 667,
+        "HeroId": 1012,
+        "SkillId": 101221,
+        "Order": 301,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101203101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 668,
+        "HeroId": 1012,
+        "SkillId": 101221,
+        "Order": 302,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101203201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 669,
+        "HeroId": 1012,
+        "SkillId": 101221,
+        "Order": 303,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101203301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 670,
+        "HeroId": 1012,
+        "SkillId": 101231,
+        "Order": 401,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101204101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 671,
+        "HeroId": 1012,
+        "SkillId": 101231,
+        "Order": 402,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101204201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 672,
+        "HeroId": 1012,
+        "SkillId": 101231,
+        "Order": 403,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101204301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 673,
+        "HeroId": 1012,
+        "SkillId": 101241,
+        "Order": 501,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101205101
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 674,
+        "HeroId": 1012,
+        "SkillId": 101241,
+        "Order": 502,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101205201
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 675,
+        "HeroId": 1012,
+        "SkillId": 101241,
+        "Order": 503,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [
+            101205301
+        ],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 676,
+        "HeroId": 61011,
+        "SkillId": 6101101,
+        "Order": 101,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 677,
+        "HeroId": 61011,
+        "SkillId": 6101101,
+        "Order": 102,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 678,
+        "HeroId": 61011,
+        "SkillId": 6101101,
+        "Order": 103,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 679,
+        "HeroId": 61011,
+        "SkillId": 6101111,
+        "Order": 201,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 680,
+        "HeroId": 61011,
+        "SkillId": 6101111,
+        "Order": 202,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 681,
+        "HeroId": 61011,
+        "SkillId": 6101111,
+        "Order": 203,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 682,
+        "HeroId": 61011,
+        "SkillId": 6101121,
+        "Order": 301,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 683,
+        "HeroId": 61011,
+        "SkillId": 6101121,
+        "Order": 302,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 684,
+        "HeroId": 61011,
+        "SkillId": 6101121,
+        "Order": 303,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 685,
+        "HeroId": 61011,
+        "SkillId": 6101131,
+        "Order": 401,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 686,
+        "HeroId": 61011,
+        "SkillId": 6101131,
+        "Order": 402,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 687,
+        "HeroId": 61011,
+        "SkillId": 6101131,
+        "Order": 403,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 688,
+        "HeroId": 61011,
+        "SkillId": 6101141,
+        "Order": 501,
+        "NeedId": [
+            9120200
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 10000,
+        "Condition": [
+            1
+        ],
+        "ConditionNum": [
+            6
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 689,
+        "HeroId": 61011,
+        "SkillId": 6101141,
+        "Order": 502,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            1
+        ],
+        "NeedGold": 20000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            9,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [],
+        "BattleBuffId": 0,
+        "AttributeId": [],
+        "AttributeNum": []
+    },
+    {
+        "Id": 690,
+        "HeroId": 61011,
+        "SkillId": 6101141,
+        "Order": 503,
+        "NeedId": [
+            9120300
+        ],
+        "NeedNum": [
+            2
+        ],
+        "NeedGold": 30000,
+        "Condition": [
+            1,
+            2
+        ],
+        "ConditionNum": [
+            10,
+            0
+        ],
+        "TinderType": 1,
+        "SkillDesc": "",
+        "BattleValue": [],
+        "BattleBuffId": 0,
         "AttributeId": [],
         "AttributeNum": []
     }

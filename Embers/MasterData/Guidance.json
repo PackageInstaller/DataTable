@@ -22,9 +22,9 @@
         "IsSave": true,
         "NextGuidance": [
             103,
-            111
+            201
         ],
-        "Priority": 10
+        "Priority": 50
     },
     {
         "Id": 103,
@@ -49,13 +49,16 @@
             11105,
             11106,
             11107,
-            11108
+            11108,
+            11109,
+            11110
         ],
         "IsSave": true,
         "NextGuidance": [
-            112
+            351,
+            371
         ],
-        "Priority": 9
+        "Priority": 30
     },
     {
         "Id": 112,
@@ -67,11 +70,7 @@
             11204
         ],
         "IsSave": true,
-        "NextGuidance": [
-            351,
-            122,
-            371
-        ],
+        "NextGuidance": [],
         "Priority": 1
     },
     {
@@ -87,7 +86,7 @@
         ],
         "IsSave": true,
         "NextGuidance": [],
-        "Priority": 8
+        "Priority": 1
     },
     {
         "Id": 121,
@@ -103,13 +102,20 @@
         "Id": 122,
         "Index": 8,
         "GuidanceSteps": [
-            12201
+            12201,
+            12301,
+            12302,
+            12303,
+            11201,
+            11202,
+            11203,
+            11204
         ],
         "IsSave": true,
         "NextGuidance": [
-            123
+            111
         ],
-        "Priority": 1
+        "Priority": 35
     },
     {
         "Id": 123,
@@ -117,22 +123,39 @@
         "GuidanceSteps": [
             12301,
             12302,
-            12403
+            12303
         ],
-        "IsSave": false,
+        "IsSave": true,
         "NextGuidance": [],
         "Priority": 1
+    },
+    {
+        "Id": 131,
+        "Index": 36,
+        "GuidanceSteps": [
+            13101,
+            13102
+        ],
+        "IsSave": true,
+        "NextGuidance": [
+            122
+        ],
+        "Priority": 40
     },
     {
         "Id": 201,
         "Index": 9,
         "GuidanceSteps": [
             20101,
-            20102
+            20102,
+            20103,
+            20104
         ],
         "IsSave": true,
-        "NextGuidance": [],
-        "Priority": 1
+        "NextGuidance": [
+            131
+        ],
+        "Priority": 45
     },
     {
         "Id": 211,

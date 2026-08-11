@@ -11,7 +11,7 @@
             "TeachingPictureEnergy"
         ],
         "Desc": [
-            "技能需消耗<color=#FF961D>耐力</color>，技能结束后耐力会缓慢恢复，<color=#FF961D>普通攻击</color>命中能额外恢复耐力。"
+            "技能需消耗<color=#FF961D>耐力</color>，技能结束后耐力会缓慢恢复，<color=#FF961D>基础普通攻击</color>命中能额外恢复耐力。"
         ],
         "Release": 0,
         "ReleaseConfig": 0
@@ -28,7 +28,7 @@
             "TeachingPictureTenacity"
         ],
         "Desc": [
-            "攻击敌方造成伤害时，会同时削减其<color=#FF961D>韧性</color>，显示在血条下方，当韧性被清空时，敌方会进入<color=#FF961D><击倒></color>状态，受到的伤害显著增加。"
+            "攻击敌方造成伤害时，会同时削减其<color=#FF961D>韧性</color>，显示在血条下方，当韧性被清空时，敌方会进入<color=#FF961D>倒地状态</color>，受到的伤害显著增加。"
         ],
         "Release": 0,
         "ReleaseConfig": 0
@@ -37,15 +37,15 @@
         "Id": 1003,
         "Index": 3,
         "Type": 1,
-        "Name": "破绽条",
+        "Name": "破绽",
         "PageName": [
-            "破绽条"
+            "破绽"
         ],
         "Img": [
             "TeachingPictureWeakness"
         ],
         "Desc": [
-            "辉烬兽在使用强力技能后,会出现转瞬即逝的<color=#FF961D>破绽</color>,注意看破绽条两侧向内收缩的弧形指示器，当指示器变为<color=#FF961D>黄色</color>或<color=#FF961D>红色</color>时命中敌人，会削减大量<color=#FF961D>韧性</color>。"
+            "辉烬兽在使用强力技能后，会出现转瞬即逝的<color=#FF961D>破绽</color>：当弧形指示器变为<color=#FF961D>黄色</color>或<color=#FF961D>红色</color>时敌人处于<color=#FF961D>破绽状态</color>，此时命中会削减大量<color=#FF961D>韧性</color>。"
         ],
         "Release": 0,
         "ReleaseConfig": 0
@@ -71,15 +71,15 @@
         "Id": 1005,
         "Index": 5,
         "Type": 1,
-        "Name": "队员奥义技",
+        "Name": "队友奥义技",
         "PageName": [
-            "队员奥义技"
+            "队友奥义技"
         ],
         "Img": [
             "TeachingPictureAiXpSkill"
         ],
         "Desc": [
-            "队员的<color=#FF961D>奥义技</color>准备就绪时，可以点击<color=#FF961D>队员头像</color>释放。"
+            "队友的<color=#FF961D>奥义技</color>准备就绪时，可以点击<color=#FF961D>队友头像</color>释放。"
         ],
         "Release": 4,
         "ReleaseConfig": 20001
@@ -155,8 +155,8 @@
             "TeachingPictureDeathcoreShock2"
         ],
         "Desc": [
-            "死核辉烬兽周身环绕金色光环，击杀可以触发<color=#FF961D>死核震荡</color>效果。",
-            "击杀死核辉烬兽触发<color=#FF961D>死核震荡</color>，可以将其沿直线击飞并对碰到的辉烬兽造成爆炸范围伤害。"
+            "死核辉烬兽周身环绕金色光环，击倒或击杀可以触发<color=#FF961D>死核震荡</color>效果。",
+            "击倒或击杀死核辉烬兽触发<color=#FF961D>死核震荡</color>，可以将其沿直线击飞并对碰到的辉烬兽造成爆炸范围伤害。"
         ],
         "Release": 4,
         "ReleaseConfig": 20004
@@ -420,6 +420,23 @@
         "ReleaseConfig": 14001
     },
     {
+        "Id": 2016,
+        "Index": 45,
+        "Type": 3,
+        "Name": "自动战斗",
+        "PageName": [
+            "自动战斗说明"
+        ],
+        "Img": [
+            "AutoBattleGuide"
+        ],
+        "Desc": [
+            "在回廊裂隙、暗箱裂隙、碎烬裂隙中，传火者可以开启自动战斗功能；开启自动战斗时，当前烬天使将会自动战斗，手动介入战斗后将退出自动战斗状态。"
+        ],
+        "Release": 0,
+        "ReleaseConfig": 0
+    },
+    {
         "Id": 3001,
         "Index": 25,
         "Type": 3,
@@ -541,15 +558,21 @@
         "Name": "暗箱裂隙",
         "PageName": [
             "暗箱裂隙",
-            "手提箱获取"
+            "遗迹寻猎",
+            "火力试炼",
+            "极限挑战"
         ],
         "Img": [
-            "system30061",
-            "system30062"
+            "SuitGuide1",
+            "SuitGuide2",
+            "SuitGuide3",
+            "SuitGuide4"
         ],
         "Desc": [
-            "暗箱裂隙处于无光颠倒塔下方区域，辉烬兽异常强大，由于乱流的影响，<color=#FF961D>辉烬兽的种类会定期改变</color>。",
-            "暗箱裂隙产出稀有明饰手提箱，推荐<color=#FF961D>多人挑战</color>；进行挑战时，<color=#FF961D>每多一位传火者，获得的奖励都会增加</color>。"
+            "受辉烬浓度影响，暗箱裂隙中的怪物会<color=#FF961D>每周更换</color>。参与<color=#FF961D>遗迹寻猎</color>可以获取<color=#FF961D>特殊明饰-手提箱</color>及其养成材料；参与<color=#FF961D>火力试炼或极限挑战</color>并登上排行榜，有机会获取<color=#FF961D>烬天使专属称号</color>。",
+            "<color=#FF961D>遗迹寻猎</color>为多人玩法，共包含6个难度，<color=#FF961D>每周</color>共可获取<color=#FF961D>2次</color>奖励。次数耗尽后，仍可通过<color=#FF961D>组队挑战难度6</color>，<color=#FF961D>无限</color>获取提箱强化材料-修正密匙。",
+            "<color=#FF961D>火力试炼</color>为单人玩法，在<color=#FF961D>3分钟</color>内与辉烬兽进行战斗，根据造成的伤害计算排名，每位烬天使拥有单独排行榜，根据排名有可能获取<color=#FF961D>烬天使专属称号（动态）</color>奖励。",
+            "<color=#FF961D>极限挑战</color>为单人玩法，根据辉烬兽<color=#FF961D>击杀速度</color>计算排名，每位烬天使拥有单独排行榜，根据排名有可能获取<color=#FF961D>烬天使专属称号</color>奖励。极限挑战中怪物强度较高，建议谨慎挑战。"
         ],
         "Release": 3,
         "ReleaseConfig": 70016

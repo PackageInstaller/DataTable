@@ -65,11 +65,6 @@
         "AssetPath": "Heroes/1708/Paradox/1708AI"
     },
     {
-        "Id": 1204,
-        "Desc": "",
-        "AssetPath": "Paradox/Heros/1204/1204AI"
-    },
-    {
         "Id": 1607,
         "Desc": "青鸟",
         "AssetPath": "Heroes/1607/Paradox/1607AI"
@@ -100,9 +95,19 @@
         "AssetPath": "Heroes/1008/Paradox/1008AI"
     },
     {
+        "Id": 100800,
+        "Desc": "西尔维行为树",
+        "AssetPath": "Heroes/1008/Paradox/100800AI"
+    },
+    {
         "Id": 1001,
         "Desc": "克拉拉行为树",
         "AssetPath": "Heroes/1001/Paradox/1001AI"
+    },
+    {
+        "Id": 1011,
+        "Desc": "索菲娅行为树",
+        "AssetPath": "Heroes/1011/Paradox/1011AI"
     },
     {
         "Id": 5011001,
@@ -260,6 +265,11 @@
         "AssetPath": "Monster_Boss/302210/Paradox/302210AI"
     },
     {
+        "Id": 303010,
+        "Desc": "灰狼",
+        "AssetPath": "Monster_Boss/303010/Paradox/303010AI"
+    },
+    {
         "Id": 302700,
         "Desc": "风封印（下位）",
         "AssetPath": "Monster_Boss/3027/Paradox/302700AI"
@@ -365,6 +375,26 @@
         "AssetPath": "Monster_Boss/3005/Paradox/300500AI"
     },
     {
+        "Id": 3005000,
+        "Desc": "矿石AI",
+        "AssetPath": "Monster_Boss/3005/Paradox/3005000AI"
+    },
+    {
+        "Id": 3005001,
+        "Desc": "幽魂AI",
+        "AssetPath": "Monster_Boss/3005/3005001/Paradox/3005001AI"
+    },
+    {
+        "Id": 3005002,
+        "Desc": "矿工AI",
+        "AssetPath": "Monster_Boss/3005/3005002/Paradox/3005002AI"
+    },
+    {
+        "Id": 3005003,
+        "Desc": "矿工AI",
+        "AssetPath": "Monster_Boss/3005/3005003/Paradox/3005003AI"
+    },
+    {
         "Id": 1015,
         "Desc": "",
         "AssetPath": "Heroes/1015/Paradox/1015AI"
@@ -373,6 +403,26 @@
         "Id": 110301,
         "Desc": "百合碰撞盒AI",
         "AssetPath": "Heroes/1103/Paradox/110301_AI"
+    },
+    {
+        "Id": 1013,
+        "Desc": "",
+        "AssetPath": "Heroes/1013/Paradox/1013AI"
+    },
+    {
+        "Id": 101301,
+        "Desc": "",
+        "AssetPath": "Heroes/1013/Paradox/1013_wind/1013_windAI"
+    },
+    {
+        "Id": 101302,
+        "Desc": "",
+        "AssetPath": "Heroes/1013/Paradox/1013_wind/1013_wind_upAI"
+    },
+    {
+        "Id": 1204,
+        "Desc": "白雪姬",
+        "AssetPath": "Heroes/1204/Paradox/1204AI"
     },
     {
         "Id": 160701,
@@ -390,9 +440,9 @@
         "AssetPath": "Heroes/1004/Paradox/1004AI"
     },
     {
-        "Id": 1010,
-        "Desc": "霜华格蕾丝",
-        "AssetPath": "Heroes/1010/Paradox/1010AI"
+        "Id": 100400,
+        "Desc": "杰西卡完美闪避判定",
+        "AssetPath": "Heroes/1004/Paradox/Summoned/100400AI"
     },
     {
         "Id": 1207,
@@ -408,6 +458,36 @@
         "Id": 120801,
         "Desc": "冰霜女爵行为树",
         "AssetPath": "Heroes/1207/Paradox/120801AI"
+    },
+    {
+        "Id": 1010,
+        "Desc": "霜华格蕾丝",
+        "AssetPath": "Heroes/1010/Paradox/1010AI"
+    },
+    {
+        "Id": 101000,
+        "Desc": "霜华格蕾丝格挡判定",
+        "AssetPath": "Heroes/1010/Paradox/Summoned/101000AI"
+    },
+    {
+        "Id": 101001,
+        "Desc": "霜华格蕾丝琉璃晶体",
+        "AssetPath": "Heroes/1010/Paradox/Summoned/101001AI"
+    },
+    {
+        "Id": 1014,
+        "Desc": "奇米米",
+        "AssetPath": "Heroes/1014/Paradox/1014AI"
+    },
+    {
+        "Id": 12000125,
+        "Desc": "BOSS额外机制：提供远程+治疗角色环境",
+        "AssetPath": "Monster_Boss/MonsterCommon/Paradox/LiveOps/12000125"
+    },
+    {
+        "Id": 12002320,
+        "Desc": "",
+        "AssetPath": "Heroes/HeroesCommon/Paradox/LiveOps/12002320"
     },
     {
         "Id": 303000,
@@ -538,6 +618,11 @@
         "Id": 300300,
         "Desc": "米娅",
         "AssetPath": "Monster_Boss/3003/Paradox/300300AI"
+    },
+    {
+        "Id": 300400,
+        "Desc": "刺胞原质",
+        "AssetPath": "Monster_Boss/3004/Paradox/300400AI"
     },
     {
         "Id": 7003,
@@ -1295,6 +1380,116 @@
         "AssetPath": "MapItem/730102TaiJiTu/Paradox/730102/730102"
     },
     {
+        "Id": 709901,
+        "Desc": "净化裂隙（小怪开启）",
+        "AssetPath": "MapItem/709901Door/Paradox/709901/709901"
+    },
+    {
+        "Id": 799001,
+        "Desc": "【Test】全功能交互物",
+        "AssetPath": "MapItem/7000General/Paradox/799001/799001"
+    },
+    {
+        "Id": 709902,
+        "Desc": "强化石",
+        "AssetPath": "MapItem/7201Senlin_Portal/Paradox/709902/709902"
+    },
+    {
+        "Id": 709903,
+        "Desc": "净化裂隙（小怪关闭）",
+        "AssetPath": "MapItem/709903Door/Paradox/709903/709903"
+    },
+    {
+        "Id": 709906,
+        "Desc": "复制buff新手教学",
+        "AssetPath": "MapItem/7000General/Paradox/709906/709906"
+    },
+    {
+        "Id": 785000,
+        "Desc": "第五章通用交互（消失）",
+        "AssetPath": "MapItem/7000General/Paradox/785000/785000"
+    },
+    {
+        "Id": 785001,
+        "Desc": "第五章通用交互（不消失）",
+        "AssetPath": "MapItem/7000General/Paradox/785001/785001"
+    },
+    {
+        "Id": 785002,
+        "Desc": "第五章室内外传送点",
+        "AssetPath": "MapItem/7000General/Paradox/785002/785002"
+    },
+    {
+        "Id": 785003,
+        "Desc": "第五章梯子",
+        "AssetPath": "MapItem/7000General/Paradox/785003/785003"
+    },
+    {
+        "Id": 785004,
+        "Desc": "第五章传送点",
+        "AssetPath": "MapItem/730502Portal/Paradox/785004/785004"
+    },
+    {
+        "Id": 785005,
+        "Desc": "第五章传送点（已激活）",
+        "AssetPath": "MapItem/730502Portal/Paradox/785005/785005"
+    },
+    {
+        "Id": 785101,
+        "Desc": "【5-1支】封印图腾",
+        "AssetPath": "MapItem/750502fuuinntree/Paradox/785101/785101"
+    },
+    {
+        "Id": 785102,
+        "Desc": "【5-1支】封印点",
+        "AssetPath": "MapItem/750501Altar5-1/Paradox/785102/785102"
+    },
+    {
+        "Id": 785103,
+        "Desc": "【5-1支】石碑",
+        "AssetPath": "MapItem/750503Altar/Paradox/785103/785103"
+    },
+    {
+        "Id": 785104,
+        "Desc": "【5-1】单向梯（4m）",
+        "AssetPath": "MapItem/730501LadderM5/Paradox/785104/785104"
+    },
+    {
+        "Id": 785105,
+        "Desc": "【5-1】单向梯（5m）",
+        "AssetPath": "MapItem/730501LadderM5/Paradox/785105/785105"
+    },
+    {
+        "Id": 785106,
+        "Desc": "【5-1】栅栏门",
+        "AssetPath": "MapItem/785106Size_3_Building_mumen_5_1/Paradox/785106/785106"
+    },
+    {
+        "Id": 785107,
+        "Desc": "【5-2】损坏的围栏",
+        "AssetPath": "MapItem/785107Size_4_Building_dangban_5_1/Paradox/785107/785107"
+    },
+    {
+        "Id": 785108,
+        "Desc": "【5-2】修复的围栏",
+        "AssetPath": "MapItem/785107Size_4_Building_dangban_5_1/Paradox/785108/785108"
+    },
+    {
+        "Id": 785203,
+        "Desc": "【5-2】赤潮镇大灯塔",
+        "AssetPath": "MapItem/730504LightHouse/Paradox/785203/785203"
+    },
+    {
+        "Id": 785204,
+        "Desc": "【5-2】赤潮镇门",
+        "AssetPath": "MapItem/730505Door/Paradox/785204/785204"
+    },
+    {
+        "Id": 785301,
+        "Desc": "【5-3】魔法墙",
+        "AssetPath": "MapItem/730506MagicWall/Paradox/785301/785301"
+    },
+    {
         "Id": 6100700,
         "Desc": "【通用】知世",
         "AssetPath": "Npc/D1007/Paradox/6100700"
@@ -1745,6 +1940,251 @@
         "AssetPath": "Npc/6131/Paradox/613101"
     },
     {
+        "Id": 699001,
+        "Desc": "【Test】全功能NPC",
+        "AssetPath": "Npc/NpcCommon/Paradox/699001"
+    },
+    {
+        "Id": 605001,
+        "Desc": "第五章主线-5-1格洛克",
+        "AssetPath": "Npc/D1606/Paradox/605001"
+    },
+    {
+        "Id": 605002,
+        "Desc": "第五章主线-5-1龙舌兰(暂时)",
+        "AssetPath": "Npc/D1009/Paradox/605002"
+    },
+    {
+        "Id": 605003,
+        "Desc": "第五章主线-5-1杰西卡",
+        "AssetPath": "Npc/D1004/Paradox/605003"
+    },
+    {
+        "Id": 605004,
+        "Desc": "第五章主线-5-1金沙帮成员A",
+        "AssetPath": "Npc/65051/Paradox/605004"
+    },
+    {
+        "Id": 605005,
+        "Desc": "第五章主线-5-1金沙帮成员B",
+        "AssetPath": "Npc/6503/Paradox/605005"
+    },
+    {
+        "Id": 605006,
+        "Desc": "第五章主线-5-1米娅",
+        "AssetPath": "Npc/65062/Paradox/605006"
+    },
+    {
+        "Id": 605007,
+        "Desc": "第五章主线-5-1金沙帮成员？",
+        "AssetPath": "Npc/65042/Paradox/605007"
+    },
+    {
+        "Id": 605008,
+        "Desc": "第五章主线-5-1面具男",
+        "AssetPath": "Npc/65031/Paradox/605008"
+    },
+    {
+        "Id": 605009,
+        "Desc": "第五章主线-5-1瘸腿的男人",
+        "AssetPath": "Npc/6504/Paradox/605009"
+    },
+    {
+        "Id": 605010,
+        "Desc": "第五章主线-5-1小贩",
+        "AssetPath": "Npc/65082/Paradox/605010"
+    },
+    {
+        "Id": 605011,
+        "Desc": "第五章主线-5-1罗纳德",
+        "AssetPath": "Npc/65081/Paradox/605011"
+    },
+    {
+        "Id": 615001,
+        "Desc": "第五章支线-5-1乔伊",
+        "AssetPath": "Npc/65044/Paradox/615001"
+    },
+    {
+        "Id": 615002,
+        "Desc": "第五章支线-5-1金沙帮成员",
+        "AssetPath": "Npc/65032/Paradox/615002"
+    },
+    {
+        "Id": 615003,
+        "Desc": "第五章支线-5-1鬼鬼祟祟的女人",
+        "AssetPath": "Npc/65052/Paradox/615003"
+    },
+    {
+        "Id": 615004,
+        "Desc": "第五章支线-5-1达洛斯",
+        "AssetPath": "Npc/65043/Paradox/615004"
+    },
+    {
+        "Id": 605012,
+        "Desc": "第五章主线-5-2柯尔特",
+        "AssetPath": "Npc/D1206/Paradox/605012"
+    },
+    {
+        "Id": 605013,
+        "Desc": "第五章主线-5-2热情的舞女",
+        "AssetPath": "Npc/65061/Paradox/605013"
+    },
+    {
+        "Id": 605014,
+        "Desc": "第五章主线-5-2疲惫的矿工",
+        "AssetPath": "Npc/65091/Paradox/605014"
+    },
+    {
+        "Id": 605015,
+        "Desc": "第五章主线-5-2年迈的管家",
+        "AssetPath": "Npc/65103/Paradox/605015"
+    },
+    {
+        "Id": 605016,
+        "Desc": "第五章主线-5-2蕾恩",
+        "AssetPath": "Npc/D1020/Paradox/605016"
+    },
+    {
+        "Id": 605017,
+        "Desc": "第五章主线-5-2雅各布",
+        "AssetPath": "Npc/6502/Paradox/605017"
+    },
+    {
+        "Id": 605018,
+        "Desc": "第五章主线-5-2巴兹尔",
+        "AssetPath": "Npc/D1017/Paradox/605018"
+    },
+    {
+        "Id": 605019,
+        "Desc": "第五章主线-5-2矿工A",
+        "AssetPath": "Npc/65091/Paradox/605019"
+    },
+    {
+        "Id": 605020,
+        "Desc": "第五章主线-5-2矿工B",
+        "AssetPath": "Npc/6509/Paradox/605020"
+    },
+    {
+        "Id": 605021,
+        "Desc": "第五章主线-5-2矿工C",
+        "AssetPath": "Npc/65092/Paradox/605021"
+    },
+    {
+        "Id": 605022,
+        "Desc": "第五章主线-5-2格洛克（气泡）",
+        "AssetPath": "Npc/D1606/Paradox/605022"
+    },
+    {
+        "Id": 605023,
+        "Desc": "第五章主线-5-2调酒师",
+        "AssetPath": "Npc/65084/Paradox/605023"
+    },
+    {
+        "Id": 605024,
+        "Desc": "第五章主线-5-2女招待",
+        "AssetPath": "Npc/6506/Paradox/605024"
+    },
+    {
+        "Id": 605025,
+        "Desc": "第五章主线-5-2叼着雪茄的男子",
+        "AssetPath": "Npc/65093/Paradox/605025"
+    },
+    {
+        "Id": 605026,
+        "Desc": "第五章主线-5-2响尾蛇",
+        "AssetPath": "Npc/D1016/Paradox/605026"
+    },
+    {
+        "Id": 605027,
+        "Desc": "第五章主线-5-2薇普",
+        "AssetPath": "Npc/D1012/Paradox/605027"
+    },
+    {
+        "Id": 605028,
+        "Desc": "第五章主线-5-2布朗镇长",
+        "AssetPath": "Npc/6510/Paradox/605028"
+    },
+    {
+        "Id": 605029,
+        "Desc": "第五章主线-5-3通用",
+        "AssetPath": "Npc/NpcCommon/Paradox/605029"
+    },
+    {
+        "Id": 615005,
+        "Desc": "第五章支线-5-2莫莉",
+        "AssetPath": "Npc/6512/Paradox/615005"
+    },
+    {
+        "Id": 615006,
+        "Desc": "第五章支线-5-2山姆",
+        "AssetPath": "Npc/65111/Paradox/615006"
+    },
+    {
+        "Id": 615007,
+        "Desc": "第五章支线-5-2莉莉",
+        "AssetPath": "Npc/65121/Paradox/615007"
+    },
+    {
+        "Id": 615008,
+        "Desc": "第五章支线-5-2施工队队员",
+        "AssetPath": "Npc/6509/Paradox/615008"
+    },
+    {
+        "Id": 615009,
+        "Desc": "第五章支线-5-2柯尔特",
+        "AssetPath": "Npc/D1206/Paradox/615009"
+    },
+    {
+        "Id": 615010,
+        "Desc": "第五章支线-5-2比尔",
+        "AssetPath": "Npc/6511/Paradox/615006"
+    },
+    {
+        "Id": 625001,
+        "Desc": "第五章城镇-惊恐的女人",
+        "AssetPath": "Npc/NpcCommon/Paradox/625001"
+    },
+    {
+        "Id": 625002,
+        "Desc": "第五章城镇-通用",
+        "AssetPath": "Npc/NpcCommon/Paradox/625002"
+    },
+    {
+        "Id": 615011,
+        "Desc": "第五章城镇支线-通用",
+        "AssetPath": "Npc/NpcCommon/Paradox/615011"
+    },
+    {
+        "Id": 615013,
+        "Desc": "第五章城镇支线-5-2魔术师杰克",
+        "AssetPath": "Npc/NpcCommon/Paradox/615013"
+    },
+    {
+        "Id": 625016,
+        "Desc": "第五章城镇支线-5-2疯疯癫癫的女人",
+        "AssetPath": "Npc/NpcCommon/Paradox/625016"
+    },
+    {
+        "Id": 615019,
+        "Desc": "第五章支线-5-3通用",
+        "AssetPath": "Npc/NpcCommon/Paradox/615019"
+    },
+    {
+        "Id": 9800,
+        "Desc": "命中破绽追加子弹",
+        "AssetPath": "Heroes/HeroesCommon/Paradox/Tower/FlawedStyle/T9800"
+    },
+    {
+        "Id": 9801,
+        "Desc": "自动闪避",
+        "AssetPath": "Heroes/HeroesCommon/Paradox/Tower/FlawedStyle/T9801"
+    },
+    {
+        "Id": 9802,
+        "Desc": "满耐力添加无敌",
+        "AssetPath": "Heroes/HeroesCommon/Paradox/Tower/FlawedStyle/T9802"
+    },
+    {
         "Id": 160401,
         "Desc": "菲奥小飞机",
         "AssetPath": "Heroes/1604/Paradox/160401/160401AI"
@@ -1795,6 +2235,56 @@
         "AssetPath": "Heroes/1205/Paradox/1205AI"
     },
     {
+        "Id": 170102,
+        "Desc": "艾达肉鸽行为树",
+        "AssetPath": "Heroes/HeroesCommon_Assets/Paradox/Tower/T1701/T1701AI"
+    },
+    {
+        "Id": 1017,
+        "Desc": "梅伊行为树",
+        "AssetPath": "Heroes/1017/Paradox/1017AI"
+    },
+    {
+        "Id": 101700,
+        "Desc": "梅伊完美闪避状态机",
+        "AssetPath": "Heroes/1017/Paradox/101700AI"
+    },
+    {
+        "Id": 101701,
+        "Desc": "梅伊酒杯行为树",
+        "AssetPath": "Heroes/1017/Paradox/101701AI"
+    },
+    {
+        "Id": 302331,
+        "Desc": "光史莱姆AI",
+        "AssetPath": "Monster_Boss/30233/Paradox/3023300AI"
+    },
+    {
+        "Id": 302713,
+        "Desc": "火封印影骸",
+        "AssetPath": "Monster_Boss/30271/Paradox/302713/302713AI"
+    },
+    {
+        "Id": 3027131,
+        "Desc": "火封印影骸_炸弹",
+        "AssetPath": "Monster_Boss/30271/Paradox/302713/3027131AI"
+    },
+    {
+        "Id": 302111,
+        "Desc": "荒漠猎蜥灰骸",
+        "AssetPath": "Monster_Boss/30211/Paradox/302111AI"
+    },
+    {
+        "Id": 302850,
+        "Desc": "衰变矿工",
+        "AssetPath": "Monster_Boss/30285/Paradox/302850AI"
+    },
+    {
+        "Id": 3028500,
+        "Desc": "衰变矿工石柱",
+        "AssetPath": "Monster_Boss/30285/Paradox/3028500AI"
+    },
+    {
         "Id": 3016,
         "Desc": "雅雯",
         "AssetPath": "Monster_Boss/3016/Paradox/3016AI"
@@ -1815,9 +2305,9 @@
         "AssetPath": "Monster_Boss/30233/Paradox/30233_AI"
     },
     {
-        "Id": 3033,
-        "Desc": "金币本管理者",
-        "AssetPath": "Monster_Boss/3033/Paradox/3033AI"
+        "Id": 300700,
+        "Desc": "血仇",
+        "AssetPath": "Monster_Boss/3007/300700AI"
     },
     {
         "Id": 1000,
@@ -2050,11 +2540,6 @@
         "AssetPath": "Monster_Mobs/3124X/31240/Paradox/31240AI"
     },
     {
-        "Id": 31440,
-        "Desc": "炮恶灵",
-        "AssetPath": "Monster_Mobs/3144X/31440/Paradox/31440AI"
-    },
-    {
         "Id": 311501,
         "Desc": "新手引导-黑灵镰刀",
         "AssetPath": "Monster_Mobs/3115X/311501/Paradox/311501AI"
@@ -2088,6 +2573,91 @@
         "Id": 311301,
         "Desc": "新手引导-巨型史莱姆",
         "AssetPath": "Monster_Mobs/3113X/311301/Paradox/311301AI"
+    },
+    {
+        "Id": 31442,
+        "Desc": "铳拟态",
+        "AssetPath": "Monster_Mobs/3144X/31442/Paradox/31442AI"
+    },
+    {
+        "Id": 31443,
+        "Desc": "铳拟态",
+        "AssetPath": "Monster_Mobs/3144X/31443/Paradox/31443AI"
+    },
+    {
+        "Id": 31271,
+        "Desc": "射手拟态",
+        "AssetPath": "Monster_Mobs/3127X/31271/Paradox/31271AI"
+    },
+    {
+        "Id": 31281,
+        "Desc": "雷兽",
+        "AssetPath": "Monster_Mobs/3128X/31281/Paradox/31281AI"
+    },
+    {
+        "Id": 31340,
+        "Desc": "燃灯萤火",
+        "AssetPath": "Monster_Mobs/3134X/31340/Paradox/31340AI"
+    },
+    {
+        "Id": 31293,
+        "Desc": "大锤拟态",
+        "AssetPath": "Monster_Mobs/3129X/31293/Paradox/31293AI"
+    },
+    {
+        "Id": 31292,
+        "Desc": "大锤拟态",
+        "AssetPath": "Monster_Mobs/3129X/31292/Paradox/31292AI"
+    },
+    {
+        "Id": 31291,
+        "Desc": "大锤拟态",
+        "AssetPath": "Monster_Mobs/3129X/31291/Paradox/31291AI"
+    },
+    {
+        "Id": 31301,
+        "Desc": "大棒拟态",
+        "AssetPath": "Monster_Mobs/3130X/31301/Paradox/31301AI"
+    },
+    {
+        "Id": 31300,
+        "Desc": "大棒拟态",
+        "AssetPath": "Monster_Mobs/3130X/31300/Paradox/31300AI"
+    },
+    {
+        "Id": 31313,
+        "Desc": "双刀拟态",
+        "AssetPath": "Monster_Mobs/3131X/31313/Paradox/31313AI"
+    },
+    {
+        "Id": 31312,
+        "Desc": "双刀拟态",
+        "AssetPath": "Monster_Mobs/3131X/31312/Paradox/31312AI"
+    },
+    {
+        "Id": 31321,
+        "Desc": "长枪拟态",
+        "AssetPath": "Monster_Mobs/3131X/31311/Paradox/31311AI"
+    },
+    {
+        "Id": 31320,
+        "Desc": "长枪拟态",
+        "AssetPath": "Monster_Mobs/3132X/31320/Paradox/31320AI"
+    },
+    {
+        "Id": 31333,
+        "Desc": "海锚拟态",
+        "AssetPath": "Monster_Mobs/3133X/31333/Paradox/31333AI"
+    },
+    {
+        "Id": 31332,
+        "Desc": "海锚拟态",
+        "AssetPath": "Monster_Mobs/3133X/31332/Paradox/31332AI"
+    },
+    {
+        "Id": 312719,
+        "Desc": "射手拟态",
+        "AssetPath": "Monster_Mobs/3127X/312719/Paradox/312719AI"
     },
     {
         "Id": 302800,
@@ -2176,22 +2746,72 @@
     },
     {
         "Id": 303400,
-        "Desc": "北辰",
+        "Desc": "北辰AI",
         "AssetPath": "Monster_Boss/3034/Remake/303400AI"
     },
     {
         "Id": 303402,
-        "Desc": "北辰",
+        "Desc": "北辰AI",
         "AssetPath": "Monster_Boss/3034/Remake/303402AI"
     },
     {
         "Id": 3034000,
-        "Desc": "北辰莲花",
+        "Desc": "北辰莲花AI",
         "AssetPath": "Monster_Boss/3034/Remake/3034001AI"
     },
     {
         "Id": 300200,
-        "Desc": "沙漠蛙AI",
+        "Desc": "旱地长舌蛙AI",
         "AssetPath": "Monster_Boss/3002/Paradox/300200AI"
+    },
+    {
+        "Id": 300210,
+        "Desc": "蚀地巨蛙AI",
+        "AssetPath": "Monster_Boss/30021/Paradox/300210AI"
+    },
+    {
+        "Id": 3002100,
+        "Desc": "蚀地巨蛙墓碑AI",
+        "AssetPath": "Monster_Boss/30021/Paradox/3002100AI"
+    },
+    {
+        "Id": 300600,
+        "Desc": "温斯洛AI",
+        "AssetPath": "Monster_Boss/3006/Paradox/300600AI"
+    },
+    {
+        "Id": 3006000,
+        "Desc": "温斯洛分身1AI",
+        "AssetPath": "Monster_Boss/3006/Paradox/3006000AI"
+    },
+    {
+        "Id": 3006001,
+        "Desc": "温斯洛分身2AI",
+        "AssetPath": "Monster_Boss/3006/Paradox/3006001AI"
+    },
+    {
+        "Id": 3006002,
+        "Desc": "温斯洛分身3AI",
+        "AssetPath": "Monster_Boss/3006/Paradox/3006002AI"
+    },
+    {
+        "Id": 300800,
+        "Desc": "心魔AI",
+        "AssetPath": "Monster_Boss/3008/Paradox/300800AI"
+    },
+    {
+        "Id": 3008000,
+        "Desc": "怪物南星AI",
+        "AssetPath": "Monster_Boss/3008/Paradox/3008000AI"
+    },
+    {
+        "Id": 3008001,
+        "Desc": "怪物欧文AI",
+        "AssetPath": "Monster_Boss/3008/Paradox/3008001AI"
+    },
+    {
+        "Id": 3008002,
+        "Desc": "怪物奥利维亚AI",
+        "AssetPath": "Monster_Boss/3008/Paradox/3008002AI"
     }
 ]

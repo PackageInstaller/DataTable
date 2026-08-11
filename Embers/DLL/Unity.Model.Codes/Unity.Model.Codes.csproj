@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Unity.Model.Codes</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net40</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>Download/DLL/UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Download/DLL/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule" />
+    <Reference Include="UnityEngine.TextRenderingModule" />
+    <Reference Include="UniTask">
+      <HintPath>Download/DLL/UniTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime" />
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>Download/DLL/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="GameFramework">
+      <HintPath>Download/DLL/GameFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>Download/DLL/System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GameFramework.Runtime">
+      <HintPath>Download/DLL/GameFramework.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="YooAsset" />
+    <Reference Include="FMODUnity" />
+    <Reference Include="Unity.TextMeshPro" />
+    <Reference Include="UnityEngine.AnimationModule" />
+    <Reference Include="UnityEngine.UnityWebRequestModule" />
+    <Reference Include="UnityEngine.VideoModule" />
+    <Reference Include="Sirenix.Serialization" />
+    <Reference Include="UniWebView-CSharp" />
+    <Reference Include="UnityEngine.ParticleSystemModule" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Download/DLL/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="I2.Runtime" />
+    <Reference Include="Unity.JahroConsole" />
+    <Reference Include="MemoryPack">
+      <HintPath>Download/DLL/MemoryPack.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween.Modules" />
+    <Reference Include="DOTween">
+      <HintPath>Download/DLL/DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="HybridCLR.Runtime" />
+  </ItemGroup>
+</Project>

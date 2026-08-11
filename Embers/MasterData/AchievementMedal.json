@@ -1328,7 +1328,7 @@
     {
         "Id": 40,
         "Name": "老主顾·IV",
-        "Desc": "在好友灯码处购买物品50次",
+        "Desc": "在好友灯码处购买物品500次",
         "SettlementcheckPamIndex": [],
         "BattleObserverEventEnum": "",
         "Condition": [
@@ -1579,7 +1579,7 @@
         "CompareFlag": [
             0
         ],
-        "Value": 1,
+        "Value": 2,
         "Flag": 0,
         "Rewards": [
             9002
@@ -1613,7 +1613,7 @@
         "CompareFlag": [
             0
         ],
-        "Value": 1,
+        "Value": 2,
         "Flag": 0,
         "Rewards": [
             9002
@@ -1647,7 +1647,7 @@
         "CompareFlag": [
             0
         ],
-        "Value": 1,
+        "Value": 2,
         "Flag": 0,
         "Rewards": [
             9002
@@ -1681,7 +1681,7 @@
         "CompareFlag": [
             0
         ],
-        "Value": 1,
+        "Value": 2,
         "Flag": 0,
         "Rewards": [
             9002
@@ -7560,7 +7560,7 @@
     {
         "Id": 216,
         "Name": "极限DDL",
-        "Desc": "剩余1s通关副本",
+        "Desc": "剩余1秒通关副本",
         "SettlementcheckPamIndex": [],
         "BattleObserverEventEnum": "",
         "Condition": [
@@ -7858,7 +7858,7 @@
             1004
         ],
         "Target": [
-            70001
+            70022
         ],
         "BattleTarget": [],
         "CompareFlag": [
@@ -7892,7 +7892,7 @@
             1004
         ],
         "Target": [
-            70002
+            70023
         ],
         "BattleTarget": [],
         "CompareFlag": [
@@ -7926,7 +7926,7 @@
             1004
         ],
         "Target": [
-            70003
+            70024
         ],
         "BattleTarget": [],
         "CompareFlag": [
@@ -7949,5 +7949,447 @@
         "Rarity": 4,
         "AchievementType": 6,
         "MedalIcon": "achievements_icon_activity_0004"
+    },
+    {
+        "Id": 227,
+        "Name": "液态阳炎",
+        "Desc": "完成熔点之上的所有剧情",
+        "SettlementcheckPamIndex": [],
+        "BattleObserverEventEnum": "",
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            302402
+        ],
+        "BattleTarget": [],
+        "CompareFlag": [
+            0
+        ],
+        "Value": 1,
+        "Flag": 0,
+        "Rewards": [
+            9002
+        ],
+        "RewardsType": [
+            3
+        ],
+        "RewardsNum": [
+            20
+        ],
+        "MedalType": 8001,
+        "MedalId": 69,
+        "Rank": 1,
+        "Rarity": 4,
+        "AchievementType": 6,
+        "MedalIcon": "achievements_icon_activity_0005"
+    },
+    {
+        "Id": 228,
+        "Name": "小黄莺原型",
+        "Desc": "通关熔点之上活动的数据采集-噩梦",
+        "SettlementcheckPamIndex": [],
+        "BattleObserverEventEnum": "",
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            70027
+        ],
+        "BattleTarget": [],
+        "CompareFlag": [
+            0
+        ],
+        "Value": 1,
+        "Flag": 0,
+        "Rewards": [
+            9002
+        ],
+        "RewardsType": [
+            3
+        ],
+        "RewardsNum": [
+            10
+        ],
+        "MedalType": 7001,
+        "MedalId": 70,
+        "Rank": 1,
+        "Rarity": 3,
+        "AchievementType": 6,
+        "MedalIcon": "achievements_icon_activity_0006"
+    },
+    {
+        "Id": 229,
+        "Name": "小黄莺",
+        "Desc": "通关熔点之上活动的故障排查-噩梦",
+        "SettlementcheckPamIndex": [],
+        "BattleObserverEventEnum": "",
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            70030
+        ],
+        "BattleTarget": [],
+        "CompareFlag": [
+            0
+        ],
+        "Value": 1,
+        "Flag": 0,
+        "Rewards": [
+            9002
+        ],
+        "RewardsType": [
+            3
+        ],
+        "RewardsNum": [
+            10
+        ],
+        "MedalType": 7001,
+        "MedalId": 71,
+        "Rank": 1,
+        "Rarity": 3,
+        "AchievementType": 6,
+        "MedalIcon": "achievements_icon_activity_0007"
+    },
+    {
+        "Id": 230,
+        "Name": "气动力棺",
+        "Desc": "通关熔点之上活动的量产试制-噩梦",
+        "SettlementcheckPamIndex": [],
+        "BattleObserverEventEnum": "",
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            70033
+        ],
+        "BattleTarget": [],
+        "CompareFlag": [
+            0
+        ],
+        "Value": 1,
+        "Flag": 0,
+        "Rewards": [
+            9002
+        ],
+        "RewardsType": [
+            3
+        ],
+        "RewardsNum": [
+            20
+        ],
+        "MedalType": 7001,
+        "MedalId": 72,
+        "Rank": 1,
+        "Rarity": 4,
+        "AchievementType": 6,
+        "MedalIcon": "achievements_icon_activity_0008"
+    },
+    {
+        "Id": 231,
+        "Name": "蛟龙得水",
+        "Desc": "完成灯海谣的所有剧情",
+        "SettlementcheckPamIndex": [],
+        "BattleObserverEventEnum": "",
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            303402
+        ],
+        "BattleTarget": [],
+        "CompareFlag": [
+            0
+        ],
+        "Value": 1,
+        "Flag": 0,
+        "Rewards": [
+            9002
+        ],
+        "RewardsType": [
+            3
+        ],
+        "RewardsNum": [
+            20
+        ],
+        "MedalType": 8001,
+        "MedalId": 73,
+        "Rank": 1,
+        "Rarity": 4,
+        "AchievementType": 6,
+        "MedalIcon": "achievements_icon_activity_0009"
+    },
+    {
+        "Id": 232,
+        "Name": "珠还合浦",
+        "Desc": "通关灯海谣活动的驱邪纳福-噩梦",
+        "SettlementcheckPamIndex": [],
+        "BattleObserverEventEnum": "",
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            70015
+        ],
+        "BattleTarget": [],
+        "CompareFlag": [
+            0
+        ],
+        "Value": 1,
+        "Flag": 0,
+        "Rewards": [
+            9002
+        ],
+        "RewardsType": [
+            3
+        ],
+        "RewardsNum": [
+            10
+        ],
+        "MedalType": 7001,
+        "MedalId": 74,
+        "Rank": 1,
+        "Rarity": 3,
+        "AchievementType": 6,
+        "MedalIcon": "achievements_icon_activity_0010"
+    },
+    {
+        "Id": 233,
+        "Name": "风起扇隅",
+        "Desc": "通关灯海谣活动的燃灯寄愿-噩梦",
+        "SettlementcheckPamIndex": [],
+        "BattleObserverEventEnum": "",
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            70018
+        ],
+        "BattleTarget": [],
+        "CompareFlag": [
+            0
+        ],
+        "Value": 1,
+        "Flag": 0,
+        "Rewards": [
+            9002
+        ],
+        "RewardsType": [
+            3
+        ],
+        "RewardsNum": [
+            10
+        ],
+        "MedalType": 7001,
+        "MedalId": 75,
+        "Rank": 1,
+        "Rarity": 3,
+        "AchievementType": 6,
+        "MedalIcon": "achievements_icon_activity_0011"
+    },
+    {
+        "Id": 234,
+        "Name": "千灯照夜",
+        "Desc": "通关灯海谣活动的龙偃沧波-噩梦",
+        "SettlementcheckPamIndex": [],
+        "BattleObserverEventEnum": "",
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            70021
+        ],
+        "BattleTarget": [],
+        "CompareFlag": [
+            0
+        ],
+        "Value": 1,
+        "Flag": 0,
+        "Rewards": [
+            9002
+        ],
+        "RewardsType": [
+            3
+        ],
+        "RewardsNum": [
+            20
+        ],
+        "MedalType": 7001,
+        "MedalId": 76,
+        "Rank": 1,
+        "Rarity": 4,
+        "AchievementType": 6,
+        "MedalIcon": "achievements_icon_activity_0012"
+    },
+    {
+        "Id": 235,
+        "Name": "神殿执钥人",
+        "Desc": "完成极光的彼端的所有剧情",
+        "SettlementcheckPamIndex": [],
+        "BattleObserverEventEnum": "",
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            304402
+        ],
+        "BattleTarget": [],
+        "CompareFlag": [
+            0
+        ],
+        "Value": 1,
+        "Flag": 0,
+        "Rewards": [
+            9002
+        ],
+        "RewardsType": [
+            3
+        ],
+        "RewardsNum": [
+            20
+        ],
+        "MedalType": 8001,
+        "MedalId": 78,
+        "Rank": 1,
+        "Rarity": 4,
+        "AchievementType": 6,
+        "MedalIcon": "achievements_icon_activity_0013"
+    },
+    {
+        "Id": 236,
+        "Name": "雪域迷踪",
+        "Desc": "通关极光的彼端活动的唤灵试炼-噩梦",
+        "SettlementcheckPamIndex": [],
+        "BattleObserverEventEnum": "",
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            70036
+        ],
+        "BattleTarget": [],
+        "CompareFlag": [
+            0
+        ],
+        "Value": 1,
+        "Flag": 0,
+        "Rewards": [
+            9002
+        ],
+        "RewardsType": [
+            3
+        ],
+        "RewardsNum": [
+            10
+        ],
+        "MedalType": 7001,
+        "MedalId": 79,
+        "Rank": 1,
+        "Rarity": 3,
+        "AchievementType": 6,
+        "MedalIcon": "achievements_icon_activity_0014"
+    },
+    {
+        "Id": 237,
+        "Name": "两心相印",
+        "Desc": "通关极光的彼端活动的极光守誓-噩梦",
+        "SettlementcheckPamIndex": [],
+        "BattleObserverEventEnum": "",
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            70039
+        ],
+        "BattleTarget": [],
+        "CompareFlag": [
+            0
+        ],
+        "Value": 1,
+        "Flag": 0,
+        "Rewards": [
+            9002
+        ],
+        "RewardsType": [
+            3
+        ],
+        "RewardsNum": [
+            10
+        ],
+        "MedalType": 7001,
+        "MedalId": 80,
+        "Rank": 1,
+        "Rarity": 3,
+        "AchievementType": 6,
+        "MedalIcon": "achievements_icon_activity_0015"
+    },
+    {
+        "Id": 238,
+        "Name": "白狼之誓",
+        "Desc": "通关极光的彼端活动的未来之征-噩梦",
+        "SettlementcheckPamIndex": [],
+        "BattleObserverEventEnum": "",
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            70042
+        ],
+        "BattleTarget": [],
+        "CompareFlag": [
+            0
+        ],
+        "Value": 1,
+        "Flag": 0,
+        "Rewards": [
+            9002
+        ],
+        "RewardsType": [
+            3
+        ],
+        "RewardsNum": [
+            20
+        ],
+        "MedalType": 7001,
+        "MedalId": 81,
+        "Rank": 1,
+        "Rarity": 4,
+        "AchievementType": 6,
+        "MedalIcon": "achievements_icon_activity_0016"
+    },
+    {
+        "Id": 245,
+        "Name": "玉露金风",
+        "Desc": "获得瑶光幻衣——玉露金风",
+        "SettlementcheckPamIndex": [],
+        "BattleObserverEventEnum": "",
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            170401
+        ],
+        "BattleTarget": [],
+        "CompareFlag": [
+            0
+        ],
+        "Value": 1,
+        "Flag": 0,
+        "Rewards": [
+            9002
+        ],
+        "RewardsType": [
+            3
+        ],
+        "RewardsNum": [
+            20
+        ],
+        "MedalType": 5011,
+        "MedalId": 77,
+        "Rank": 1,
+        "Rarity": 4,
+        "AchievementType": 5,
+        "MedalIcon": "achievements_icon_245"
     }
 ]

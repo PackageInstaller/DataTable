@@ -1,0 +1,1460 @@
+[
+    {
+        "Id": 980010,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 980010,
+        "ParadoxId": 0,
+        "ParadoxName": "角色耐力消耗和消耗修改",
+        "Desc": ""
+    },
+    {
+        "Id": 980020,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 980020,
+        "ParadoxId": 0,
+        "ParadoxName": "添加检测破绽条是否开启",
+        "Desc": ""
+    },
+    {
+        "Id": 980030,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 980030,
+        "ParadoxId": 0,
+        "ParadoxName": "击中破绽开启复制技能",
+        "Desc": "命中破绽后15s内可以复制技能"
+    },
+    {
+        "Id": 980181,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 980181,
+        "ParadoxId": 0,
+        "ParadoxName": "场地扣血buff",
+        "Desc": ""
+    },
+    {
+        "Id": 980500,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 980500,
+        "ParadoxId": 0,
+        "ParadoxName": "釜底抽薪",
+        "Desc": "对倒地状态敌人的伤害增加<color=#E3A871>200%</color>，击中黄色/红色破绽状态敌人的削韧增加<color=#E3A871>125%</color>/<color=#E3A871>150%</color>。"
+    },
+    {
+        "Id": 980506,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 980506,
+        "ParadoxId": 0,
+        "ParadoxName": "七寸之击",
+        "Desc": "角色招式命中致命弱点/弱点时，伤害增加<color=#E3A871>200%</color>/<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 9800300,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 9800300,
+        "ParadoxId": 0,
+        "ParadoxName": "击中倒地的怪物开启复制技能",
+        "Desc": "命中倒地的怪物后15s内可以复制技能"
+    },
+    {
+        "Id": 1200009,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 1200009,
+        "ParadoxId": 0,
+        "ParadoxName": "首通强化",
+        "Desc": "造成的伤害增加30%,受的伤害减少50%。"
+    },
+    {
+        "Id": 1200010,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 1200010,
+        "ParadoxId": 0,
+        "ParadoxName": "刀剑角色强化",
+        "Desc": "斩锋类型的武器伤害提高50%。"
+    },
+    {
+        "Id": 1200011,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 1200011,
+        "ParadoxId": 0,
+        "ParadoxName": "格斗角色强化",
+        "Desc": "强袭类型的武器伤害提高50%。"
+    },
+    {
+        "Id": 1200012,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 1200012,
+        "ParadoxId": 0,
+        "ParadoxName": "弓箭角色强化",
+        "Desc": "翎射类型的武器伤害提高50%。"
+    },
+    {
+        "Id": 1200013,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 1200013,
+        "ParadoxId": 0,
+        "ParadoxName": "枪械角色强化",
+        "Desc": "灵御类型的武器伤害提高50%。"
+    },
+    {
+        "Id": 1200014,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 1200014,
+        "ParadoxId": 0,
+        "ParadoxName": "锤斧角色强化",
+        "Desc": "破势类型的武器伤害提高50%。"
+    },
+    {
+        "Id": 12000117,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12000117,
+        "ParadoxId": 0,
+        "ParadoxName": "霜息共鸣",
+        "Desc": "冰、风属性伤害增加100%。"
+    },
+    {
+        "Id": 12000118,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12000118,
+        "ParadoxId": 0,
+        "ParadoxName": "逐辉律动",
+        "Desc": "风、光属性伤害增加100%。"
+    },
+    {
+        "Id": 12000119,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12000119,
+        "ParadoxId": 0,
+        "ParadoxName": "幽耀脉冲",
+        "Desc": "光、暗属性伤害增加100%。"
+    },
+    {
+        "Id": 12000120,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12000120,
+        "ParadoxId": 0,
+        "ParadoxName": "冥雷契印",
+        "Desc": "暗、雷属性伤害增加100%。"
+    },
+    {
+        "Id": 12000121,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12000121,
+        "ParadoxId": 0,
+        "ParadoxName": "烁焰震流",
+        "Desc": "雷、火属性伤害增加100%。"
+    },
+    {
+        "Id": 12000122,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12000122,
+        "ParadoxId": 0,
+        "ParadoxName": "熔潮回环",
+        "Desc": "火、水属性伤害增加100%。"
+    },
+    {
+        "Id": 12000123,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12000123,
+        "ParadoxId": 0,
+        "ParadoxName": "超重领域",
+        "Desc": "角色无法使用闪避。"
+    },
+    {
+        "Id": 12000125,
+        "EnvironmentType": 1,
+        "TargetType": 2,
+        "BuffId": 0,
+        "ParadoxId": 12000125,
+        "ParadoxName": "高燃立场",
+        "Desc": "周期性对所有角色造成伤害，伤害量会随时间波动；翎射和灵御角色伤害增加<color=#E3A871>60%</color>。"
+    },
+    {
+        "Id": 12001480,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001480,
+        "ParadoxId": 0,
+        "ParadoxName": "西尔维环境Buff",
+        "Desc": "释放<color=#cc5545><削韧技></color>时，获得<暗链协奏>效果。释放<color=#cc5545><派生><削韧技></color>以外的招式时，失去<暗链协奏>。持有<暗链协奏>时，<color=#cc5545><派生></color>招式伤害增加<color=#E3A871>120%</color>。"
+    },
+    {
+        "Id": 12001500,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001500,
+        "ParadoxId": 0,
+        "ParadoxName": "反击韵律",
+        "Desc": "每当<color=#cc5545><精确闪避></color>时，<color=#cc5545><派生></color>技能伤害增加<color=#E3A871>150%</color>，直到释放非<color=#cc5545><派生></color>技能。"
+    },
+    {
+        "Id": 12001520,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001520,
+        "ParadoxId": 0,
+        "ParadoxName": "超限强攻",
+        "Desc": "翎射角色处于觉醒状态时，获得【超限强攻】效果：伤害系数增加<color=#E3A871>120%</color>。"
+    },
+    {
+        "Id": 12001530,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001530,
+        "ParadoxId": 0,
+        "ParadoxName": "破灭狙击",
+        "Desc": "攻击命中时，若目标与角色距离大于6米，则获得1层【破灭狙击】效果：<color=#cc5545><终结技></color>伤害增加<color=#E3A871>12%</color>，持续5秒，至多10层。"
+    },
+    {
+        "Id": 12001540,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001540,
+        "ParadoxId": 0,
+        "ParadoxName": "影焱倍焚",
+        "Desc": "火、暗属性伤害增加<color=#E3A871>100%</color>。"
+    },
+    {
+        "Id": 12001610,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001610,
+        "ParadoxId": 0,
+        "ParadoxName": "焚罪灼刑",
+        "Desc": "敌人受到的<color=#cc5545><削韧技></color>伤害增加<color=#E3A871>80%</color>。<color=#cc5545><叠层></color>技能动作过程中，招式伤害增加<color=#E3A871>150%</color>。"
+    },
+    {
+        "Id": 12001620,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001620,
+        "ParadoxId": 0,
+        "ParadoxName": "执徽迸放",
+        "Desc": "<color=#cc5545><派生></color>技能伤害增加<color=#E3A871>30%</color>。<color=#cc5545><叠层></color>技能释放后，16秒内<color=#cc5545><派生></color>技能伤害额外增加90%。"
+    },
+    {
+        "Id": 12001641,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001641,
+        "ParadoxId": 0,
+        "ParadoxName": "霜火交织",
+        "Desc": "冰、火属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12001660,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001660,
+        "ParadoxId": 0,
+        "ParadoxName": "勠力同心",
+        "Desc": "释放<color=#cc5545><操控召唤物></color>的招式后，暴击增加<color=#E3A871>100%</color>，暴击伤害增加<color=#E3A871>240%</color>，持续16秒。"
+    },
+    {
+        "Id": 12001670,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001670,
+        "ParadoxId": 0,
+        "ParadoxName": "山崩共鸣",
+        "Desc": "<color=#cc5545><派生></color>技能削韧增加<color=#E3A871>50%</color>,<color=#cc5545><操控召唤物></color>的招式伤害增加<color=#E3A871>180%</color>。"
+    },
+    {
+        "Id": 12001680,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001680,
+        "ParadoxId": 0,
+        "ParadoxName": "三源震荡",
+        "Desc": "风、火、雷属性伤害增加<color=#E3A871>100%</color>。"
+    },
+    {
+        "Id": 12001690,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001690,
+        "ParadoxId": 0,
+        "ParadoxName": "三相奔涌",
+        "Desc": "风、火、冰属性伤害增加<color=#E3A871>100%</color>。"
+    },
+    {
+        "Id": 12001700,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001700,
+        "ParadoxId": 0,
+        "ParadoxName": "风雷齐动",
+        "Desc": "风、雷属性伤害增加<color=#E3A871>100%</color>。"
+    },
+    {
+        "Id": 12001712,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001712,
+        "ParadoxId": 0,
+        "ParadoxName": "切风入阵",
+        "Desc": "风属性伤害增加<color=#E3A871>20%</color>，强袭类型的武器伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12001720,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001720,
+        "ParadoxId": 0,
+        "ParadoxName": "致命共舞",
+        "Desc": "怪物韧性大幅度增加，怪物体力值上限大幅度减少；<格挡>成功时，获得【致命共舞】效果：下一个技能（不包括普攻）动作期间招式伤害增加<color=#E3A871>150%</color>。"
+    },
+    {
+        "Id": 12001730,
+        "EnvironmentType": 0,
+        "TargetType": 2,
+        "BuffId": 12001730,
+        "ParadoxId": 0,
+        "ParadoxName": "不屈狂兽",
+        "Desc": "怪物韧性大幅度增加，常态阶段怒气自动增长，体力值上限减少；破绽期间每被命中一次后，0.3秒内受到其来源的招式伤害增加12%，若被削韧技命中则额外增加12%，至多叠加8层。"
+    },
+    {
+        "Id": 12001740,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001740,
+        "ParadoxId": 0,
+        "ParadoxName": "裂阵远击",
+        "Desc": "破势、翎射类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12001741,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001741,
+        "ParadoxId": 0,
+        "ParadoxName": "贯锋崩解",
+        "Desc": "破势、锐贯类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12001742,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001742,
+        "ParadoxId": 0,
+        "ParadoxName": "风焰交扬",
+        "Desc": "风、火属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12001743,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001743,
+        "ParadoxId": 0,
+        "ParadoxName": "暗势偏锋",
+        "Desc": "暗属性伤害增加<color=#E3A871>20%</color>，破势类型的武器伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12001760,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001760,
+        "ParadoxId": 0,
+        "ParadoxName": "压制远射",
+        "Desc": "角色周身6米内不存在怪物时，技能二、普攻、奥义伤害增加<color=#E3A871>120%</color>。"
+    },
+    {
+        "Id": 12001770,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001770,
+        "ParadoxId": 0,
+        "ParadoxName": "秘法破溃",
+        "Desc": "灵御、破势类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12001780,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001780,
+        "ParadoxId": 0,
+        "ParadoxName": "凌空肃正",
+        "Desc": "释放<color=#cc5545><浮空></color>技能时，获得1层【凌空肃正】，每层使招式伤害增加75%，最多2层。 每次释放非<color=#cc5545><浮空></color>技能时，失去1层【凌空肃正】。"
+    },
+    {
+        "Id": 12001800,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001800,
+        "ParadoxId": 0,
+        "ParadoxName": "暗风黑冰",
+        "Desc": "冰、风、暗属性伤害增加<color=#E3A871>100%</color>。"
+    },
+    {
+        "Id": 12001810,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001810,
+        "ParadoxId": 0,
+        "ParadoxName": "混沌冰蚀",
+        "Desc": "冰、光、暗属性伤害增加<color=#E3A871>100%</color>。"
+    },
+    {
+        "Id": 12001820,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001820,
+        "ParadoxId": 0,
+        "ParadoxName": "破狩同轴",
+        "Desc": "破势、灵御类型的武器伤害增加<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 12001822,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001822,
+        "ParadoxId": 0,
+        "ParadoxName": "强弩",
+        "Desc": "强袭、翎射类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12001823,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001823,
+        "ParadoxId": 0,
+        "ParadoxName": "霜电交错",
+        "Desc": "冰、雷属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12001824,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001824,
+        "ParadoxId": 0,
+        "ParadoxName": "破势",
+        "Desc": "破势类型的武器伤害增加<color=#E3A871>35%</color>。"
+    },
+    {
+        "Id": 12001825,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001825,
+        "ParadoxId": 0,
+        "ParadoxName": "强袭破势",
+        "Desc": "破势、强袭类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12001826,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001826,
+        "ParadoxId": 0,
+        "ParadoxName": "冰潮同驱",
+        "Desc": "冰、水属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12001840,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001840,
+        "ParadoxId": 0,
+        "ParadoxName": "双影焚风",
+        "Desc": "每次招式蓄力成功时，获得3层【双影焚风】,至多3层。每次普攻触发<color=#cc5545><精确释放></color>时，消耗1层【双影焚风】；使角色招式伤害提升<color=#E3A871>40%</color>，至多叠加3层，持续20s。"
+    },
+    {
+        "Id": 12001850,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001850,
+        "ParadoxId": 0,
+        "ParadoxName": "银枪逐光",
+        "Desc": "每次触发<color=#cc5545><精确释放></color>时，获得1层【银枪逐光】，持续5秒，至多叠加3层。释放<color=#cc5545><派生></color>技能后，消耗全部【银枪逐光】层数；每层使角色招式伤害提升<color=#E3A871>40%</color>，持续20秒，可叠加3层。"
+    },
+    {
+        "Id": 12001940,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001940,
+        "ParadoxId": 0,
+        "ParadoxName": "正面突破",
+        "Desc": "受到攻击致使体力值下降时，招式伤害增加<color=#E3A871>15%</color>，至多2层，持续8秒。因受击进入硬直时移除加成。"
+    },
+    {
+        "Id": 12002260,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002260,
+        "ParadoxId": 0,
+        "ParadoxName": "三相奔腾",
+        "Desc": "水、雷、冰属性伤害增加<color=#E3A871>100%</color>。"
+    },
+    {
+        "Id": 12002261,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002261,
+        "ParadoxId": 0,
+        "ParadoxName": "三相闪耀",
+        "Desc": "水、雷、光属性伤害增加<color=#E3A871>100%</color>。"
+    },
+    {
+        "Id": 12001950,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001950,
+        "ParadoxId": 0,
+        "ParadoxName": "制胜瞬机",
+        "Desc": ""
+    },
+    {
+        "Id": 12002320,
+        "EnvironmentType": 1,
+        "TargetType": 2,
+        "BuffId": 0,
+        "ParadoxId": 12002320,
+        "ParadoxName": "壮烈酒边生",
+        "Desc": "角色每次进入怪物身边5米内，3秒内招式伤害增加<color=#E3A871>120%</color>。"
+    },
+    {
+        "Id": 12002262,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002262,
+        "ParadoxId": 0,
+        "ParadoxName": "夜霜流辉",
+        "Desc": "冰、暗、光属性伤害增加<color=#E3A871>100%</color>。"
+    },
+    {
+        "Id": 12002263,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002263,
+        "ParadoxId": 0,
+        "ParadoxName": "风雪行川",
+        "Desc": "风、冰、水属性伤害增加<color=#E3A871>100%</color>。"
+    },
+    {
+        "Id": 12001912,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001912,
+        "ParadoxId": 0,
+        "ParadoxName": "职能增幅",
+        "Desc": "斩锋、强袭类型的武器伤害增加<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 12001913,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001913,
+        "ParadoxId": 0,
+        "ParadoxName": "职能增幅",
+        "Desc": "斩锋、灵御类型的武器伤害增加<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 12001914,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001914,
+        "ParadoxId": 0,
+        "ParadoxName": "职能增幅",
+        "Desc": "斩锋、翎射类型的武器伤害增加<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 12001915,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001915,
+        "ParadoxId": 0,
+        "ParadoxName": "职能增幅",
+        "Desc": "斩锋、破势类型的武器伤害增加<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 12001916,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001916,
+        "ParadoxId": 0,
+        "ParadoxName": "职能增幅",
+        "Desc": "斩锋、锐贯类型的武器伤害增加<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 12001923,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001923,
+        "ParadoxId": 0,
+        "ParadoxName": "职能增幅",
+        "Desc": "强袭、灵御类型的武器伤害增加<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 12001924,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001924,
+        "ParadoxId": 0,
+        "ParadoxName": "职能增幅",
+        "Desc": "强袭、翎射类型的武器伤害增加<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 12001925,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001925,
+        "ParadoxId": 0,
+        "ParadoxName": "职能增幅",
+        "Desc": "强袭、破势类型的武器伤害增加<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 12001926,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001926,
+        "ParadoxId": 0,
+        "ParadoxName": "职能增幅",
+        "Desc": "强袭、锐贯类型的武器伤害增加<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 12001934,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001934,
+        "ParadoxId": 0,
+        "ParadoxName": "职能增幅",
+        "Desc": "灵御、翎射类型的武器伤害增加<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 12001935,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001935,
+        "ParadoxId": 0,
+        "ParadoxName": "职能增幅",
+        "Desc": "灵御、破势类型的武器伤害增加<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 12001936,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001936,
+        "ParadoxId": 0,
+        "ParadoxName": "职能增幅",
+        "Desc": "灵御、锐贯类型的武器伤害增加<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 12001945,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001945,
+        "ParadoxId": 0,
+        "ParadoxName": "职能增幅",
+        "Desc": "翎射、破势类型的武器伤害增加<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 12001946,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001946,
+        "ParadoxId": 0,
+        "ParadoxName": "职能增幅",
+        "Desc": "翎射、锐贯类型的武器伤害增加<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 12001956,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12001956,
+        "ParadoxId": 0,
+        "ParadoxName": "职能增幅",
+        "Desc": "破势、锐贯类型的武器伤害增加<color=#E3A871>50%</color>。"
+    },
+    {
+        "Id": 12002012,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002012,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "风、水属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002013,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002013,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "风、火属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002014,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002014,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "风、光属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002015,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002015,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "风、暗属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002016,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002016,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "风、冰属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002017,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002017,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "风、雷属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002023,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002023,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "水、火属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002024,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002024,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "水、光属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002025,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002025,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "水、暗属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002026,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002026,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "水、冰属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002027,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002027,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "水、雷属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002034,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002034,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "火、光属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002035,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002035,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "火、暗属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002036,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002036,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "火、冰属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002037,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002037,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "火、雷属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002045,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002045,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "光、暗属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002046,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002046,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "光、冰属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002047,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002047,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "光、雷属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002056,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002056,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "暗、冰属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002057,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002057,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "暗、雷属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002067,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002067,
+        "ParadoxId": 0,
+        "ParadoxName": "属性亲和",
+        "Desc": "冰、雷属性伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002111,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002111,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "斩锋类型武器伤害增加<color=#E3A871>20%</color>。风属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002112,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002112,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "强袭类型武器伤害增加<color=#E3A871>20%</color>。风属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002113,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002113,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "灵御类型武器伤害增加<color=#E3A871>20%</color>。风属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002114,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002114,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "翎射类型武器伤害增加<color=#E3A871>20%</color>。风属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002115,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002115,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "破势类型武器伤害增加<color=#E3A871>20%</color>。风属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002116,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002116,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "锐贯类型武器伤害增加<color=#E3A871>20%</color>。风属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002121,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002121,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "斩锋类型武器伤害增加<color=#E3A871>20%</color>。水属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002122,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002122,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "强袭类型武器伤害增加<color=#E3A871>20%</color>。水属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002123,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002123,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "灵御类型武器伤害增加<color=#E3A871>20%</color>。水属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002124,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002124,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "翎射类型武器伤害增加<color=#E3A871>20%</color>。水属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002125,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002125,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "破势类型武器伤害增加<color=#E3A871>20%</color>。水属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002126,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002126,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "锐贯类型武器伤害增加<color=#E3A871>20%</color>。水属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002131,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002131,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "斩锋类型武器伤害增加<color=#E3A871>20%</color>。火属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002132,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002132,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "强袭类型武器伤害增加<color=#E3A871>20%</color>。火属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002133,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002133,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "灵御类型武器伤害增加<color=#E3A871>20%</color>。火属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002134,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002134,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "翎射类型武器伤害增加<color=#E3A871>20%</color>。火属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002135,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002135,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "破势类型武器伤害增加<color=#E3A871>20%</color>。火属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002136,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002136,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "锐贯类型武器伤害增加<color=#E3A871>20%</color>。火属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002141,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002141,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "斩锋类型武器伤害增加<color=#E3A871>20%</color>。光属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002142,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002142,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "强袭类型武器伤害增加<color=#E3A871>20%</color>。光属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002143,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002143,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "灵御类型武器伤害增加<color=#E3A871>20%</color>。光属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002144,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002144,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "翎射类型武器伤害增加<color=#E3A871>20%</color>。光属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002145,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002145,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "破势类型武器伤害增加<color=#E3A871>20%</color>。光属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002146,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002146,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "锐贯类型武器伤害增加<color=#E3A871>20%</color>。光属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002151,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002151,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "斩锋类型武器伤害增加<color=#E3A871>20%</color>。暗属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002152,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002152,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "强袭类型武器伤害增加<color=#E3A871>20%</color>。暗属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002153,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002153,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "灵御类型武器伤害增加<color=#E3A871>20%</color>。暗属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002154,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002154,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "翎射类型武器伤害增加<color=#E3A871>20%</color>。暗属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002155,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002155,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "破势类型武器伤害增加<color=#E3A871>20%</color>。暗属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002156,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002156,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "锐贯类型武器伤害增加<color=#E3A871>20%</color>。暗属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002161,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002161,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "斩锋类型武器伤害增加<color=#E3A871>20%</color>。冰属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002162,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002162,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "强袭类型武器伤害增加<color=#E3A871>20%</color>。冰属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002163,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002163,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "灵御类型武器伤害增加<color=#E3A871>20%</color>。冰属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002164,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002164,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "翎射类型武器伤害增加<color=#E3A871>20%</color>。冰属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002165,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002165,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "破势类型武器伤害增加<color=#E3A871>20%</color>。冰属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002166,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002166,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "锐贯类型武器伤害增加<color=#E3A871>20%</color>。冰属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002171,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002171,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "斩锋类型武器伤害增加<color=#E3A871>20%</color>。雷属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002172,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002172,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "强袭类型武器伤害增加<color=#E3A871>20%</color>。雷属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002173,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002173,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "灵御类型武器伤害增加<color=#E3A871>20%</color>。雷属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002174,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002174,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "翎射类型武器伤害增加<color=#E3A871>20%</color>。雷属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002175,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002175,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "破势类型武器伤害增加<color=#E3A871>20%</color>。雷属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002176,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002176,
+        "ParadoxId": 0,
+        "ParadoxName": "精确赋能",
+        "Desc": "锐贯类型武器伤害增加<color=#E3A871>20%</color>。雷属性伤害增加<color=#E3A871>15%</color>。"
+    },
+    {
+        "Id": 12002212,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002212,
+        "ParadoxId": 0,
+        "ParadoxName": "职能强化",
+        "Desc": "斩锋、强袭类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002213,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002213,
+        "ParadoxId": 0,
+        "ParadoxName": "职能强化",
+        "Desc": "斩锋、灵御类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002214,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002214,
+        "ParadoxId": 0,
+        "ParadoxName": "职能强化",
+        "Desc": "斩锋、翎射类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002215,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002215,
+        "ParadoxId": 0,
+        "ParadoxName": "职能强化",
+        "Desc": "斩锋、破势类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002216,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002216,
+        "ParadoxId": 0,
+        "ParadoxName": "职能强化",
+        "Desc": "斩锋、锐贯类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002223,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002223,
+        "ParadoxId": 0,
+        "ParadoxName": "职能强化",
+        "Desc": "强袭、灵御类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002224,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002224,
+        "ParadoxId": 0,
+        "ParadoxName": "职能强化",
+        "Desc": "强袭、翎射类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002225,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002225,
+        "ParadoxId": 0,
+        "ParadoxName": "职能强化",
+        "Desc": "强袭、破势类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002226,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002226,
+        "ParadoxId": 0,
+        "ParadoxName": "职能强化",
+        "Desc": "强袭、锐贯类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002234,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002234,
+        "ParadoxId": 0,
+        "ParadoxName": "职能强化",
+        "Desc": "灵御、翎射类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002235,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002235,
+        "ParadoxId": 0,
+        "ParadoxName": "职能强化",
+        "Desc": "灵御、破势类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002236,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002236,
+        "ParadoxId": 0,
+        "ParadoxName": "职能强化",
+        "Desc": "灵御、锐贯类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002245,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002245,
+        "ParadoxId": 0,
+        "ParadoxName": "职能强化",
+        "Desc": "翎射、破势类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002246,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002246,
+        "ParadoxId": 0,
+        "ParadoxName": "职能强化",
+        "Desc": "翎射、锐贯类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12002256,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002256,
+        "ParadoxId": 0,
+        "ParadoxName": "职能强化",
+        "Desc": "破势、锐贯类型的武器伤害增加<color=#E3A871>30%</color>。"
+    },
+    {
+        "Id": 12009101,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12009101,
+        "ParadoxId": 0,
+        "ParadoxName": "扶摇裂空",
+        "Desc": "风属性伤害增加<color=#E3A871>500%</color>。"
+    },
+    {
+        "Id": 12009102,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12009102,
+        "ParadoxId": 0,
+        "ParadoxName": "沧溟断流",
+        "Desc": "水属性伤害增加<color=#E3A871>500%</color>。"
+    },
+    {
+        "Id": 12009103,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12009103,
+        "ParadoxId": 0,
+        "ParadoxName": "烬灭红莲",
+        "Desc": "火属性伤害增加<color=#E3A871>500%</color>。"
+    },
+    {
+        "Id": 12009104,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12009104,
+        "ParadoxId": 0,
+        "ParadoxName": "净世极耀",
+        "Desc": "光属性伤害增加<color=#E3A871>500%</color>。"
+    },
+    {
+        "Id": 12009105,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12009105,
+        "ParadoxId": 0,
+        "ParadoxName": "无相暗蚀",
+        "Desc": "暗属性伤害增加<color=#E3A871>500%</color>。"
+    },
+    {
+        "Id": 12009106,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12009106,
+        "ParadoxId": 0,
+        "ParadoxName": "凝霜封岳",
+        "Desc": "冰属性伤害增加<color=#E3A871>500%</color>。"
+    },
+    {
+        "Id": 12009107,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12009107,
+        "ParadoxId": 0,
+        "ParadoxName": "紫霄惊霆",
+        "Desc": "雷属性伤害增加<color=#E3A871>500%</color>。"
+    },
+    {
+        "Id": 12002310,
+        "EnvironmentType": 0,
+        "TargetType": 0,
+        "BuffId": 12002310,
+        "ParadoxId": 0,
+        "ParadoxName": "醉影留香",
+        "Desc": "<color=#cc5545><变招></color>释放后，下一个<color=#cc5545><位移></color>技能的招式伤害增加<color=#E3A871>120%</color>。"
+    }
+]

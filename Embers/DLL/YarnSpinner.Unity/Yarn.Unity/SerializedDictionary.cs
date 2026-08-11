@@ -1,0 +1,120 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Yarn.Unity;
+
+[Serializable]
+public class SerializedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollection<KeyValuePair<TKey, TValue>>, IEnumerable<KeyValuePair<TKey, TValue>>, IEnumerable, ISerializationCallbackReceiver
+{
+	[SerializeField]
+	private List<TKey> keys;
+
+	[SerializeField]
+	private List<TValue> values;
+
+	private readonly Dictionary<TKey, TValue> table = new Dictionary<TKey, TValue>();
+
+	public ICollection<TKey> Keys => ((IDictionary<TKey, TValue>)table).Keys;
+
+	public ICollection<TValue> Values => ((IDictionary<TKey, TValue>)table).Values;
+
+	public int Count => ((ICollection<KeyValuePair<TKey, TValue>>)table).Count;
+
+	public bool IsReadOnly => ((ICollection<KeyValuePair<TKey, TValue>>)table).IsReadOnly;
+
+	public TValue this[TKey key]
+	{
+		get
+		{
+			return ((IDictionary<TKey, TValue>)table)[key];
+		}
+		set
+		{
+			((IDictionary<TKey, TValue>)table)[key] = value;
+		}
+	}
+
+	public void Add(TKey key, TValue value)
+	{
+		((IDictionary<TKey, TValue>)table).Add(key, value);
+	}
+
+	public bool ContainsKey(TKey key)
+	{
+		return ((IDictionary<TKey, TValue>)table).ContainsKey(key);
+	}
+
+	public bool Remove(TKey key)
+	{
+		return ((IDictionary<TKey, TValue>)table).Remove(key);
+	}
+
+	public bool TryGetValue(TKey key, out TValue value)
+	{
+		return ((IDictionary<TKey, TValue>)table).TryGetValue(key, out value);
+	}
+
+	public void Add(KeyValuePair<TKey, TValue> item)
+	{
+		((ICollection<KeyValuePair<TKey, TValue>>)table).Add(item);
+	}
+
+	public void Clear()
+	{
+		((ICollection<KeyValuePair<TKey, TValue>>)table).Clear();
+	}
+
+	public bool Contains(KeyValuePair<TKey, TValue> item)
+	{
+		return ((ICollection<KeyValuePair<TKey, TValue>>)table).Contains(item);
+	}
+
+	public void CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
+	{
+		((ICollection<KeyValuePair<TKey, TValue>>)table).CopyTo(array, arrayIndex);
+	}
+
+	public bool Remove(KeyValuePair<TKey, TValue> item)
+	{
+		return ((ICollection<KeyValuePair<TKey, TValue>>)table).Remove(item);
+	}
+
+	public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
+	{
+		return ((IEnumerable<KeyValuePair<TKey, TValue>>)table).GetEnumerator();
+	}
+
+	IEnumerator IEnumerable.GetEnumerator()
+	{
+		return ((IEnumerable)table).GetEnumerator();
+	}
+
+	void ISerializationCallbackReceiver.OnBeforeSerialize()
+	{
+		keys = new List<TKey>();
+		values = new List<TValue>();
+		if (table == null)
+		{
+			return;
+		}
+		foreach (KeyValuePair<TKey, TValue> item in table)
+		{
+			keys.Add(item.Key);
+			values.Add(item.Value);
+		}
+	}
+
+	void ISerializationCallbackReceiver.OnAfterDeserialize()
+	{
+		table.Clear();
+		if (keys != null && values != null)
+		{
+			for (int i = 0; i != Mathf.Min(keys.Count, values.Count); i++)
+			{
+				table.Add(keys[i], values[i]);
+			}
+		}
+	}
+}

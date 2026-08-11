@@ -30,7 +30,7 @@
             ]
         ],
         "TargetValue": 1,
-        "EXP": 200,
+        "EXP": 150,
         "TargetDesc": "通关回廊裂隙1次",
         "TargetWindow": "CopyFirstWindow",
         "WindowParams": 2
@@ -69,6 +69,24 @@
         "EXP": 250,
         "TargetDesc": "累计消耗120点可燃魂",
         "TargetWindow": "",
+        "WindowParams": 0
+    },
+    {
+        "Id": 1005,
+        "TaskType": 1,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                6
+            ]
+        ],
+        "TargetValue": 1,
+        "EXP": 150,
+        "TargetDesc": "通关1次淬炼之间",
+        "TargetWindow": "ActivityEquipView",
         "WindowParams": 0
     },
     {
@@ -119,9 +137,9 @@
                 2
             ]
         ],
-        "TargetValue": 15,
+        "TargetValue": 10,
         "EXP": 800,
-        "TargetDesc": "通关15次回廊裂隙",
+        "TargetDesc": "通关10次回廊裂隙",
         "TargetWindow": "CopyFirstWindow",
         "WindowParams": 2
     },
@@ -213,6 +231,24 @@
         "EXP": 600,
         "TargetDesc": "在余火商的灯码消费3次",
         "TargetWindow": "HomeShopWindow",
+        "WindowParams": 0
+    },
+    {
+        "Id": 2009,
+        "TaskType": 2,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                6
+            ]
+        ],
+        "TargetValue": 10,
+        "EXP": 800,
+        "TargetDesc": "通关10次淬炼之间",
+        "TargetWindow": "ActivityEquipView",
         "WindowParams": 0
     },
     {

@@ -22,10 +22,11 @@
         "ResourceType": [],
         "ResourcePosition": [],
         "InitPos": [],
+        "WorldPosOffset": [],
         "Scale": [
-            0.9,
+            0.6,
             1.0,
-            1.1
+            1.2
         ],
         "ContentScale": 1.0,
         "MatchTeamLevel": 0,
@@ -85,6 +86,7 @@
             500.0,
             350.0
         ],
+        "WorldPosOffset": [],
         "Scale": [
             0.6,
             1.0,
@@ -149,6 +151,7 @@
             540.0,
             1320.0
         ],
+        "WorldPosOffset": [],
         "Scale": [
             0.6,
             1.0,
@@ -209,6 +212,7 @@
             5.0,
             1200.0
         ],
+        "WorldPosOffset": [],
         "Scale": [
             0.6,
             1.0,
@@ -271,6 +275,7 @@
             5.0,
             1200.0
         ],
+        "WorldPosOffset": [],
         "Scale": [
             0.6,
             1.0,
@@ -313,14 +318,80 @@
             0.0,
             0.0
         ],
+        "WorldPosOffset": [],
         "Scale": [
+            0.6,
             1.0,
-            1.2,
-            1.3
+            1.2
         ],
         "ContentScale": 1.2999999523162842,
         "MatchTeamLevel": 0,
         "Open": 4100,
+        "OpenType": 1
+    },
+    {
+        "Id": 500,
+        "MapId": 5,
+        "DisplayPriority": 1,
+        "Name": "赤潮镇",
+        "SceneName": "Level5",
+        "MapSize": [
+            4448.0,
+            4448.0
+        ],
+        "MapGridSize": [
+            556.0,
+            556.0
+        ],
+        "MapPrefabPath": "Map/MapGrid/500.prefab",
+        "MapLoadAssetPath": "Map/500/Altas/smallmap5_default",
+        "AssetPathPrefix": "smallmap5_",
+        "MiniMapPath": "Map/500/smallmap5_mask.png",
+        "DefaultActiveMapMaskId": 1,
+        "TexelSize": [],
+        "MapMaskPath": "Map/500/smallmap5_mask.png",
+        "MaskAlphaPath": "Map/500/smallmap5_alpha.png",
+        "TransferPoint": [
+            50101,
+            50102,
+            50103,
+            50104,
+            50105,
+            50201,
+            50207,
+            50210,
+            50215,
+            50301,
+            50304,
+            50305,
+            50308,
+            50309
+        ],
+        "IncludeCopies": [],
+        "CavernId": [
+            5011,
+            5012,
+            5013
+        ],
+        "MonsterType": [],
+        "ResourceType": [],
+        "ResourcePosition": [],
+        "InitPos": [
+            -1100.0,
+            1200.0
+        ],
+        "WorldPosOffset": [
+            -150.0,
+            -140.0
+        ],
+        "Scale": [
+            0.6,
+            1.0,
+            1.2
+        ],
+        "ContentScale": 1.2999999523162842,
+        "MatchTeamLevel": 0,
+        "Open": 30000,
         "OpenType": 1
     }
 ]

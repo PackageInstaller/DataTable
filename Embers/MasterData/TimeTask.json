@@ -3,18 +3,335 @@
         "Id": 4160700,
         "Timer": 10,
         "TaskText": "倒计时结束前保持灵能在阈值线之上",
-        "FailResetTime": 1.0
+        "FailResetTime": 1.0,
+        "FailAddBuff": []
     },
     {
         "Id": 4110400,
         "Timer": 30,
         "TaskText": "请使用技能一或技能二击中破绽",
-        "FailResetTime": 5.0
+        "FailResetTime": 999.0,
+        "FailAddBuff": [
+            3110406
+        ]
+    },
+    {
+        "Id": 4110401,
+        "Timer": 4294967295,
+        "TaskText": "请持续攻击敌人使刃心值充满",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
     },
     {
         "Id": 4170401,
         "Timer": 4294967295,
         "TaskText": "使用技能二触发<color=#cc5545><精确闪避></color>",
-        "FailResetTime": 0.0
+        "FailResetTime": 0.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4170100,
+        "Timer": 4294967295,
+        "TaskText": "长按技能二超过2秒释放【技能二：极热增压斩】",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4170101,
+        "Timer": 4294967295,
+        "TaskText": "输入移动方向释放技能三触发<color=#cc5545><定向跃迁></color>",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4170102,
+        "Timer": 4294967295,
+        "TaskText": "任意使用闪避、普攻、技能一触发状态保持",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4170103,
+        "Timer": 10,
+        "TaskText": "连续进攻维持超载效果",
+        "FailResetTime": 99999.0,
+        "FailAddBuff": [
+            2170108
+        ]
+    },
+    {
+        "Id": 4100800,
+        "Timer": 4294967295,
+        "TaskText": "触发<color=#cc5545><精确闪避></color>，快速释放普攻第4段",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4100801,
+        "Timer": 4294967295,
+        "TaskText": "【技能一：缄默条令】命中破绽，点击普攻释放普攻第4段",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4100802,
+        "Timer": 4294967295,
+        "TaskText": "请长按技能二释放【技能二：无暇的训诫 · 寂灭】",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4100803,
+        "Timer": 4294967295,
+        "TaskText": "请持续进攻获取心流至满格",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4100804,
+        "Timer": 4294967295,
+        "TaskText": "请持续进攻获取心流至满格",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4100400,
+        "Timer": 4294967295,
+        "TaskText": "使用【技能一：雷殛裂空】命中破绽",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4100401,
+        "Timer": 4294967295,
+        "TaskText": "【被动：雷鸣弹巢】达到6层时，释放【技能一：雷殛裂空】",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4100402,
+        "Timer": 4294967295,
+        "TaskText": "释放【技能二：旋影疾闪】触发<color=#cc5545><精确闪避></color>",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4100900,
+        "Timer": 4294967295,
+        "TaskText": "移动时长按闪避进入【疾行】状态，穿过敌人",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4100901,
+        "Timer": 4294967295,
+        "TaskText": "请积攒刃心值达到上限",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4100902,
+        "Timer": 4294967295,
+        "TaskText": "使用【守护】格挡1次怪物攻击",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4100903,
+        "Timer": 4294967295,
+        "TaskText": "释放【奥义：终极制裁 · FILNAL KICK！】",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101501,
+        "Timer": 4294967295,
+        "TaskText": "使用普攻第4段命中敌人",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101502,
+        "Timer": 4294967295,
+        "TaskText": "使用技能【技能一：游鳞穿浪】命中破绽",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101503,
+        "Timer": 4294967295,
+        "TaskText": "释放【普攻：龙吟回锋】",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101504,
+        "Timer": 4294967295,
+        "TaskText": "输入移动方向调整闪烁位置",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101505,
+        "Timer": 4294967295,
+        "TaskText": "使用技能【技能二：碎玉连星】命中破绽",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101506,
+        "Timer": 15,
+        "TaskText": "在规定时间内快速释放出【普攻：破云贯日】",
+        "FailResetTime": 2.0,
+        "FailAddBuff": [
+            2101511
+        ]
+    },
+    {
+        "Id": 4101507,
+        "Timer": 4294967295,
+        "TaskText": "成功释放一次特殊闪避",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101000,
+        "Timer": 4294967295,
+        "TaskText": "使用【技能一：斩扇·惊鸿掠月】命中破绽",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101001,
+        "Timer": 4294967295,
+        "TaskText": "使用【技能二：铁鹤振翼】<color=#cc5545><格挡></color>敌人攻击",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101002,
+        "Timer": 4294967295,
+        "TaskText": "使用【技能一：万象归隐】消耗满层心流并命中破绽",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101200,
+        "Timer": 4294967295,
+        "TaskText": "使用技能一第一次攻击命中破绽",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101201,
+        "Timer": 4294967295,
+        "TaskText": "使用技能一第一次攻击触发<color=#cc5545><精确闪避></color>",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101202,
+        "Timer": 4294967295,
+        "TaskText": "使用【技能二：追猎的本能】触发<color=#cc5545><精确闪避></color>",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101203,
+        "Timer": 4294967295,
+        "TaskText": "使用【技能二：追猎的本能】命中破绽",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101204,
+        "Timer": 4294967295,
+        "TaskText": "请积攒威势达到上限",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101205,
+        "Timer": 4294967295,
+        "TaskText": "长按【技能三】消耗4格威势",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101206,
+        "Timer": 4294967295,
+        "TaskText": "进入【被动：悬命】状态，长按【技能三】消耗4格威势",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101101,
+        "Timer": 4294967295,
+        "TaskText": "使用【技能一：千面避退·镜中蝶舞】闪避敌人攻击",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101102,
+        "Timer": 4294967295,
+        "TaskText": "使【技能二：在虚影重叠的终章里】叠层达到6层",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101103,
+        "Timer": 4294967295,
+        "TaskText": "释放一次【技能三：反击序曲】",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101400,
+        "Timer": 4294967295,
+        "TaskText": "使用技能一蓄力命中破绽",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101401,
+        "Timer": 4294967295,
+        "TaskText": "使用技能三命中敌人",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101701,
+        "Timer": 4294967295,
+        "TaskText": "使用技能一命中不同弱点等级的部位",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101702,
+        "Timer": 4294967295,
+        "TaskText": "使用【特调】技能，派生出【技能一：旋舞离心】，触发<color=#cc5545><精确闪避></color>。",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101300,
+        "Timer": 4294967295,
+        "TaskText": "使用任意技能一命中破绽",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101301,
+        "Timer": 4294967295,
+        "TaskText": "持续进攻进入觉醒状态",
+        "FailResetTime": 2.0,
+        "FailAddBuff": []
+    },
+    {
+        "Id": 4101302,
+        "Timer": 4294967295,
+        "TaskText": "使用技能1-4引爆技能2-3的风暴",
+        "FailResetTime": 1.0,
+        "FailAddBuff": []
     }
 ]

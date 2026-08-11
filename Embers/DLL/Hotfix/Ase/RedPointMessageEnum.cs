@@ -1,0 +1,38 @@
+namespace Ase;
+
+public enum RedPointMessageEnum
+{
+	None,
+	ServerRed,
+	HeroDestinyEnabled,
+	HaveHeroUpgradeProp,
+	HeroIdsCanBreak,
+	HeroTalentNewLayer,
+	FriendChatUnread,
+	FriendApplicationUnReply,
+	NewAddedPropItem,
+	AnnouncementUnRead,
+	ShopRed,
+	GuildApplicationUnread,
+	GuildBuild,
+	GuildTaskComplete,
+	GuildActiveReward,
+	GuildActivityUnread,
+	TeachingManualUpdate,
+	OpActivityRed,
+	HomelandShopRefreshRed,
+	HomelandFriendShopRefreshRed,
+	HomelandLevelUpgradeRed,
+	HomelandSailRed,
+	HomelandFarmRed,
+	HeroHeadIcon,
+	DrawCard,
+	Passport,
+	GameActivity,
+	TowerAreaUnLock,
+	TowerUpTalent,
+	HeroCardFrame,
+	ChatBubble,
+	BattleEmoji,
+	Indicator
+}

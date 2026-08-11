@@ -1,0 +1,59 @@
+#define ENABLE_ERROR_AND_ABOVE_LOG
+using System;
+using Cysharp.Threading.Tasks;
+using GameFramework;
+using UnityEngine.SceneManagement;
+
+namespace Ase;
+
+public class LoadingSingleViewModel : LoadingBattleViewModelBase
+{
+	private readonly string previousSceneName;
+
+	private readonly bool autoUnloadPreviousScene;
+
+	public LoadingSingleViewModel(string preSceneName, bool autoUnload, WorldData worldData)
+	{
+		base.worldData = worldData;
+		previousSceneName = preSceneName;
+		autoUnloadPreviousScene = autoUnload;
+	}
+
+	public override async void Load()
+	{
+		PreloadBattleData battleData = await CheckPreloadGameData(worldData as BattleWorldData);
+		base.ProgressBar.Enable = true;
+		if (!(await LoadScene(worldData.SceneLoadPath)))
+		{
+			LoadingFinish(success: false);
+			return;
+		}
+		await PreloadGameData(battleData);
+		Game.AddSingleton<GameSystem>();
+		worldData.WorldId = Singleton<GameSystem>.Instance.GenerateWorldId();
+		worldId = await Singleton<GameSystem>.Instance.CreateWorldChannel(WorldType.Battle, SceneManager.GetSceneByName(worldData.WorldName), worldData);
+		if (worldId == 0)
+		{
+			Game.RemoveSingleton<GameSystem>();
+			if (!(await UnloadScene(worldData.SceneLoadPath)))
+			{
+				Log.Error("创建战斗失败. 卸载战斗场景【" + worldData.WorldName + "】失败.");
+			}
+			await UniTask.Delay(TimeSpan.FromSeconds(1.0));
+			LoadingFinish(success: false);
+		}
+		else
+		{
+			if (autoUnloadPreviousScene && !string.IsNullOrEmpty(previousSceneName) && !(await UnloadScene(previousSceneName)))
+			{
+				Log.Error("进入战斗. 卸载前置场景【" + previousSceneName + "】失败.");
+			}
+			LoadingFinish();
+		}
+	}
+
+	protected override async UniTask LoadBanks()
+	{
+		await AudioHelper.LoadBanksByType(2);
+	}
+}

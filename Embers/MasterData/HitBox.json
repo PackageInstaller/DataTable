@@ -4,6 +4,7 @@
         "Name": "无受击盒",
         "Count": 0,
         "Keys": [],
+        "KeysEffect": [],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
@@ -26,10 +27,13 @@
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 1.5,
@@ -75,10 +79,13 @@
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 0.3,
@@ -124,13 +131,16 @@
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
-                1.3,
+                2.0,
                 2.0
             ]
         ],
@@ -167,502 +177,202 @@
         "HitAngle": []
     },
     {
-        "Id": 3023,
-        "Name": "史莱姆王通用",
-        "Count": 4,
-        "Keys": [
-            "B",
-            "HB",
-            "Body",
-            "Body2"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            2,
-            3,
-            1,
-            1
-        ],
-        "DamageRatio": [
-            0.15,
-            0.3,
-            0.0,
-            0.0
-        ],
-        "AffectTenacityRatio": [
-            0.2,
-            0.4,
-            0.0,
-            0.0
-        ],
-        "Weight": [
-            2,
-            3,
-            1,
-            1
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 3016,
-        "Name": "雅雯",
-        "Count": 4,
-        "Keys": [
-            "B",
-            "HB",
-            "Body",
-            "Body2"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            2,
-            3,
-            1,
-            1
-        ],
-        "DamageRatio": [
-            0.15,
-            0.3,
-            0.0,
-            0.0
-        ],
-        "AffectTenacityRatio": [
-            0.2,
-            0.4,
-            0.0,
-            0.0
-        ],
-        "Weight": [
-            2,
-            3,
-            1,
-            1
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 30169,
-        "Name": "雅雯水晶",
+        "Id": 170402,
+        "Name": "瑶光完美闪避判定_灵冠4",
         "Count": 1,
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
+            [
+                2.5,
+                2.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.0
+        ],
+        "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
+        "Id": 101000,
+        "Name": "霜华格蕾丝格挡判定扩大",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                2.0,
+                2.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.0
+        ],
+        "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
+        "Id": 101001,
+        "Name": "霜华格蕾丝3技能冰块",
+        "Count": 3,
+        "Keys": [
+            "Hitbox2",
+            "Hitbox1",
+            "Hitbox3"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.85,
+                2.0,
+                1.0
+            ],
+            [
+                3.33,
+                2.0,
+                1.77
+            ],
             [
                 1.0,
+                2.0,
                 2.0
             ]
         ],
         "CenterOffset": [
             [
-                0.2,
+                1.64,
+                1.0,
+                0.9
+            ],
+            [
                 0.0,
-                0.0
+                1.0,
+                1.18
+            ],
+            [
+                2.6,
+                1.0,
+                -0.61
             ]
         ],
         "RotateOffset": [
             [
                 0.0,
+                44.72,
+                0.0
+            ],
+            [
                 0.0,
+                -18.46,
+                0.0
+            ],
+            [
+                0.0,
+                -19.56,
                 0.0
             ]
         ],
         "HitBoxLevel": [
+            0,
+            0,
             0
         ],
         "DamageRatio": [
-            0.0
+            1.0,
+            1.0,
+            1.0
         ],
         "AffectTenacityRatio": [
-            0.0
+            1.0,
+            1.0,
+            1.0
         ],
         "Weight": [
-            1
-        ],
-        "NormalTough": [
-            0.0
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 3020,
-        "Name": "饕餮",
-        "Count": 5,
-        "Keys": [
-            "Body",
-            "HB",
-            "B",
-            "Body2",
-            "Body3"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            1,
-            3,
-            2,
-            1,
-            1
-        ],
-        "DamageRatio": [
-            0.0,
-            0.3,
-            0.15,
-            0.0,
-            0.0
-        ],
-        "AffectTenacityRatio": [
-            0.0,
-            0.4,
-            0.2,
-            0.0,
-            0.0
-        ],
-        "Weight": [
-            1,
-            3,
-            2,
-            1,
-            1
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.1,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 3021,
-        "Name": "穷奇",
-        "Count": 3,
-        "Keys": [
-            "Body",
-            "B",
-            "HB"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            1,
-            2,
-            3
-        ],
-        "DamageRatio": [
-            0.0,
-            0.15,
-            0.3
-        ],
-        "AffectTenacityRatio": [
-            0.0,
-            0.2,
-            0.4
-        ],
-        "Weight": [
-            1,
-            2,
-            3
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 30211,
-        "Name": "荒漠猎蜥",
-        "Count": 3,
-        "Keys": [
-            "Body",
-            "B",
-            "HB"
-        ],
-        "KeysGroups": [
-            [
-                "Body",
-                "B",
-                "HB"
-            ]
-        ],
-        "DamageInjury": [],
-        "Progressivecoefficient": [
-            0.01,
-            0.01
-        ],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            1,
-            2,
-            3
-        ],
-        "DamageRatio": [
-            0.0,
-            0.15,
-            0.3
-        ],
-        "AffectTenacityRatio": [
-            0.0,
-            0.2,
-            0.4
-        ],
-        "Weight": [
-            1,
-            2,
-            3
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 3022,
-        "Name": "山魁",
-        "Count": 4,
-        "Keys": [
-            "HB",
-            "Body",
-            "B",
-            "B2"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            3,
-            1,
-            2,
-            2
-        ],
-        "DamageRatio": [
-            0.3,
-            0.0,
-            0.15,
-            0.15
-        ],
-        "AffectTenacityRatio": [
-            0.4,
-            0.0,
-            0.2,
-            0.2
-        ],
-        "Weight": [
-            1,
             1,
             1,
             1
         ],
         "NormalTough": [
-            0.1,
-            0.1,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 3024,
-        "Name": "机械蜘蛛",
-        "Count": 4,
-        "Keys": [
-            "HB",
-            "Body",
-            "B",
-            "Body2"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            3,
-            1,
-            2,
-            1
-        ],
-        "DamageRatio": [
-            0.3,
-            0.0,
-            0.15,
-            0.0
-        ],
-        "AffectTenacityRatio": [
-            0.4,
-            0.0,
-            0.2,
-            0.0
-        ],
-        "Weight": [
-            3,
-            1,
-            2,
-            1
-        ],
-        "NormalTough": [
-            0.1,
-            0.0,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 3025,
-        "Name": "废品王",
-        "Count": 4,
-        "Keys": [
-            "HB",
-            "B",
-            "Body",
-            "Body2"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            3,
-            2,
-            1,
-            1
-        ],
-        "DamageRatio": [
-            0.3,
-            0.15,
-            0.0,
-            0.0
-        ],
-        "AffectTenacityRatio": [
-            0.4,
-            0.2,
-            0.0,
-            0.0
-        ],
-        "Weight": [
-            3,
-            2,
-            1,
-            1
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.0,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 30251,
-        "Name": "废品王柱子",
-        "Count": 1,
-        "Keys": [
-            "Body"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [
-            [
-                2.2,
-                5.0
-            ]
-        ],
-        "CenterOffset": [
-            [
-                0.0,
-                3.2,
-                0.0
-            ]
-        ],
-        "RotateOffset": [
-            [
-                0.0,
-                0.0,
-                0.0
-            ]
-        ],
-        "HitBoxLevel": [
-            1
-        ],
-        "DamageRatio": [
-            0.0
-        ],
-        "AffectTenacityRatio": [
-            0.0
-        ],
-        "Weight": [
-            1
-        ],
-        "NormalTough": [
-            0.0
+            1.0,
+            1.0,
+            1.0
         ],
         "DamageCumulativeThreshold": [
             [
@@ -673,119 +383,22 @@
         "HitAngle": []
     },
     {
-        "Id": 3026,
-        "Name": "草木灵通用",
-        "Count": 4,
-        "Keys": [
-            "B",
-            "HB",
-            "Body",
-            "Body2"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            2,
-            3,
-            1,
-            1
-        ],
-        "DamageRatio": [
-            0.15,
-            0.3,
-            0.0,
-            0.0
-        ],
-        "AffectTenacityRatio": [
-            0.2,
-            0.4,
-            0.0,
-            0.0
-        ],
-        "Weight": [
-            2,
-            3,
-            1,
-            1
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 3027,
-        "Name": "封印怪通用",
-        "Count": 4,
-        "Keys": [
-            "Body",
-            "Body2",
-            "B",
-            "HB"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            1,
-            1,
-            2,
-            3
-        ],
-        "DamageRatio": [
-            0.0,
-            0.0,
-            0.15,
-            0.3
-        ],
-        "AffectTenacityRatio": [
-            0.0,
-            0.0,
-            0.2,
-            0.4
-        ],
-        "Weight": [
-            1,
-            1,
-            2,
-            3
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 302727,
-        "Name": "冰锥碰撞盒",
+        "Id": 100800,
+        "Name": "西尔维技能1-2格挡",
         "Count": 1,
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
-                1.5,
+                2.0,
                 2.0
             ]
         ],
@@ -822,25 +435,185 @@
         "HitAngle": []
     },
     {
-        "Id": 3023201,
-        "Name": "史莱姆跳砸",
+        "Id": 100400,
+        "Name": "杰西卡闪避判定",
         "Count": 1,
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
+                1.0,
+                1.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.0
+        ],
+        "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
+        "Id": 101800,
+        "Name": "荧惑南星格挡判定扩大",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                2.0,
+                2.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.0
+        ],
+        "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
+        "Id": 101900,
+        "Name": "布莱尔技能2-1格挡",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                2.0,
+                2.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.0
+        ],
+        "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
+        "Id": 101301,
+        "Name": "娜露露龙卷风",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                3.0,
                 3.0
             ]
         ],
         "CenterOffset": [
             [
                 0.0,
-                0.0,
+                1.0,
                 0.0
             ]
         ],
@@ -870,25 +643,28 @@
         "HitAngle": []
     },
     {
-        "Id": 3023202,
-        "Name": "史莱姆吐息",
+        "Id": 7001,
+        "Name": "交互物通用",
         "Count": 1,
         "Keys": [
-            "Body"
+            "body"
         ],
+        "KeysEffect": [],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "SpherePrimitive"
+        ],
         "PrimitiveParams": [
             [
-                1.5
+                0.8
             ]
         ],
         "CenterOffset": [
             [
                 0.0,
-                0.0,
+                0.5,
                 0.0
             ]
         ],
@@ -903,10 +679,10 @@
             0
         ],
         "DamageRatio": [
-            0.0
+            1.0
         ],
         "AffectTenacityRatio": [
-            0.0
+            1.0
         ],
         "Weight": [
             1
@@ -918,292 +694,30 @@
         "HitAngle": []
     },
     {
-        "Id": 3023203,
-        "Name": "史莱姆冰锥",
+        "Id": 7102,
+        "Name": "大木箱",
         "Count": 1,
         "Keys": [
-            "Body"
+            "body"
         ],
+        "KeysEffect": [],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive"
+        ],
         "PrimitiveParams": [
             [
-                2.25
-            ]
-        ],
-        "CenterOffset": [
-            [
-                0.0,
-                0.0,
-                0.0
-            ]
-        ],
-        "RotateOffset": [
-            [
-                0.0,
-                0.0,
-                0.0
-            ]
-        ],
-        "HitBoxLevel": [
-            0
-        ],
-        "DamageRatio": [
-            0.0
-        ],
-        "AffectTenacityRatio": [
-            0.0
-        ],
-        "Weight": [
-            1
-        ],
-        "NormalTough": [
-            0.0
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 3028,
-        "Name": "巨人通用",
-        "Count": 4,
-        "Keys": [
-            "B",
-            "HB",
-            "Body",
-            "Body2"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            2,
-            3,
-            1,
-            1
-        ],
-        "DamageRatio": [
-            0.15,
-            0.3,
-            0.0,
-            0.0
-        ],
-        "AffectTenacityRatio": [
-            0.2,
-            0.4,
-            0.0,
-            0.0
-        ],
-        "Weight": [
-            1,
-            1,
-            1,
-            1
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 3029,
-        "Name": "黑星",
-        "Count": 4,
-        "Keys": [
-            "HB",
-            "B",
-            "Body",
-            "Body2"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            3,
-            2,
-            1,
-            1
-        ],
-        "DamageRatio": [
-            0.3,
-            0.15,
-            0.0,
-            0.0
-        ],
-        "AffectTenacityRatio": [
-            0.4,
-            0.2,
-            0.0,
-            0.0
-        ],
-        "Weight": [
-            3,
-            2,
-            1,
-            1
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 3030,
-        "Name": "冰原狼",
-        "Count": 4,
-        "Keys": [
-            "Body",
-            "B",
-            "HB",
-            "Body2"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            1,
-            2,
-            3,
-            1
-        ],
-        "DamageRatio": [
-            0.0,
-            0.15,
-            0.3,
-            0.0
-        ],
-        "AffectTenacityRatio": [
-            0.0,
-            0.2,
-            0.4,
-            0.0
-        ],
-        "Weight": [
-            1,
-            2,
-            3,
-            1
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 3031,
-        "Name": "冰龙",
-        "Count": 7,
-        "Keys": [
-            "Body",
-            "HB",
-            "Body2",
-            "Body3",
-            "Body4",
-            "B",
-            "B2"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            1,
-            3,
-            1,
-            1,
-            1,
-            2,
-            2
-        ],
-        "DamageRatio": [
-            0.0,
-            0.3,
-            0.0,
-            0.0,
-            0.0,
-            0.15,
-            0.15
-        ],
-        "AffectTenacityRatio": [
-            0.0,
-            0.4,
-            0.0,
-            0.0,
-            0.0,
-            0.2,
-            0.2
-        ],
-        "Weight": [
-            2,
-            3,
-            2,
-            2,
-            2,
-            1,
-            1
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.1,
-            0.1,
-            0.1,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 30312,
-        "Name": "（冰龙）冰柱",
-        "Count": 1,
-        "Keys": [
-            "Body"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [
-            [
-                1.2,
-                5.0
-            ]
-        ],
-        "CenterOffset": [
-            [
-                0.0,
+                1.27,
                 2.0,
+                1.276
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.6,
                 0.0
             ]
         ],
@@ -1215,93 +729,42 @@
             ]
         ],
         "HitBoxLevel": [
-            1
+            0
         ],
         "DamageRatio": [
-            0.0
+            1.0
         ],
         "AffectTenacityRatio": [
-            0.0
+            1.0
         ],
         "Weight": [
             1
         ],
         "NormalTough": [
             0.0
-        ],
-        "DamageCumulativeThreshold": [
-            [
-                0.0,
-                1.0
-            ]
-        ],
-        "HitAngle": []
-    },
-    {
-        "Id": 3034,
-        "Name": "北辰",
-        "Count": 4,
-        "Keys": [
-            "Hit_Hb",
-            "Hit_B",
-            "Hit_Left",
-            "Hit_Right"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            3,
-            2,
-            1,
-            1
-        ],
-        "DamageRatio": [
-            0.3,
-            0.15,
-            0.0,
-            0.0
-        ],
-        "AffectTenacityRatio": [
-            0.4,
-            0.2,
-            0.0,
-            0.0
-        ],
-        "Weight": [
-            3,
-            2,
-            1,
-            1
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.1,
-            0.1
         ],
         "DamageCumulativeThreshold": [],
         "HitAngle": []
     },
     {
-        "Id": 30341,
-        "Name": "北辰莲花",
+        "Id": 7201,
+        "Name": "用于激光子弹交互",
         "Count": 1,
         "Keys": [
-            "Body"
+            "hit_body"
         ],
+        "KeysEffect": [],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive"
+        ],
         "PrimitiveParams": [
             [
-                1.5,
-                4.0
+                5.0,
+                5.0,
+                1.0
             ]
         ],
         "CenterOffset": [
@@ -1319,7 +782,7 @@
             ]
         ],
         "HitBoxLevel": [
-            1
+            0
         ],
         "DamageRatio": [
             0.0
@@ -1333,346 +796,111 @@
         "NormalTough": [
             0.0
         ],
-        "DamageCumulativeThreshold": [
+        "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
+        "Id": 7109,
+        "Name": "幻影墙",
+        "Count": 1,
+        "Keys": [
+            "body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                3.6,
+                2.0,
+                3.6
+            ]
+        ],
+        "CenterOffset": [
             [
                 0.0,
-                1.0
+                1.0,
+                0.0
             ]
         ],
-        "HitAngle": []
-    },
-    {
-        "Id": 3112,
-        "Name": "蜥蜴怪",
-        "Count": 4,
-        "Keys": [
-            "HB",
-            "B",
-            "Body",
-            "Body2"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            3,
-            2,
-            1,
-            1
-        ],
-        "DamageRatio": [
-            0.3,
-            0.15,
-            0.0,
-            0.0
-        ],
-        "AffectTenacityRatio": [
-            0.4,
-            0.2,
-            0.0,
-            0.0
-        ],
-        "Weight": [
-            1,
-            1,
-            1,
-            1
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 3000,
-        "Name": "风沙",
-        "Count": 4,
-        "Keys": [
-            "B",
-            "HB",
-            "Body",
-            "Body2"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            2,
-            3,
-            1,
-            1
-        ],
-        "DamageRatio": [
-            0.15,
-            0.3,
-            0.0,
-            0.0
-        ],
-        "AffectTenacityRatio": [
-            0.2,
-            0.4,
-            0.0,
-            0.0
-        ],
-        "Weight": [
-            1,
-            1,
-            1,
-            1
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 3001,
-        "Name": "枯魂吊树",
-        "Count": 5,
-        "Keys": [
-            "Body",
-            "B",
-            "HB",
-            "HB2",
-            "B2"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            1,
-            2,
-            3,
-            3,
-            2
-        ],
-        "DamageRatio": [
-            0.0,
-            0.15,
-            0.3,
-            0.3,
-            0.15
-        ],
-        "AffectTenacityRatio": [
-            0.0,
-            0.2,
-            0.4,
-            0.4,
-            0.2
-        ],
-        "Weight": [
-            1,
-            2,
-            3,
-            3,
-            2
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.1,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 3002,
-        "Name": "沙漠蛙",
-        "Count": 7,
-        "Keys": [
-            "HB",
-            "Body",
-            "B",
-            "B2",
-            "HB2",
-            "HB3",
-            "HB4"
-        ],
-        "KeysGroups": [
+        "RotateOffset": [
             [
-                "HB",
-                "Body",
-                "B",
-                "B2",
-                "HB2|HB3",
-                "HB4"
+                0.0,
+                0.0,
+                0.0
             ]
         ],
-        "DamageInjury": [],
-        "Progressivecoefficient": [
-            0.0,
-            0.0
-        ],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
         "HitBoxLevel": [
-            3,
-            1,
-            2,
-            2,
-            3,
-            3,
-            3
+            0
         ],
         "DamageRatio": [
-            0.3,
-            0.0,
-            0.15,
-            0.15,
-            0.3,
-            0.3,
-            0.3
+            1.0
         ],
         "AffectTenacityRatio": [
-            0.4,
-            0.0,
-            0.2,
-            0.2,
-            0.4,
-            0.4,
-            0.4
+            1.0
         ],
         "Weight": [
-            3,
-            1,
-            2,
-            2,
-            4,
-            4,
-            4
+            1
         ],
         "NormalTough": [
-            0.1,
-            0.1,
-            0.1,
-            0.1,
-            0.1,
-            0.1,
-            0.1
+            0.0
         ],
         "DamageCumulativeThreshold": [],
         "HitAngle": []
     },
     {
-        "Id": 3005,
-        "Name": "衰肉之主",
-        "Count": 4,
+        "Id": 7110,
+        "Name": "幻影墙2",
+        "Count": 1,
         "Keys": [
-            "HB",
-            "Body",
-            "B",
-            "Body2"
+            "body"
         ],
+        "KeysEffect": [],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                6.0,
+                3.0,
+                4.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.3,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
         "HitBoxLevel": [
-            3,
-            1,
-            2,
-            1
+            0
         ],
         "DamageRatio": [
-            0.3,
-            0.0,
-            0.15,
-            0.0
+            1.0
         ],
         "AffectTenacityRatio": [
-            0.5,
-            0.0,
-            0.3,
-            0.0
+            1.0
         ],
         "Weight": [
-            3,
-            1,
-            2,
             1
         ],
         "NormalTough": [
-            0.1,
-            0.0,
-            0.1,
-            0.1
-        ],
-        "DamageCumulativeThreshold": [],
-        "HitAngle": []
-    },
-    {
-        "Id": 3003,
-        "Name": "米娅",
-        "Count": 4,
-        "Keys": [
-            "HB",
-            "B",
-            "Body",
-            "Body2"
-        ],
-        "KeysGroups": [],
-        "DamageInjury": [],
-        "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
-        "PrimitiveParams": [],
-        "CenterOffset": [],
-        "RotateOffset": [],
-        "HitBoxLevel": [
-            3,
-            2,
-            1,
-            1
-        ],
-        "DamageRatio": [
-            0.3,
-            0.15,
-            0.0,
             0.0
-        ],
-        "AffectTenacityRatio": [
-            0.4,
-            0.2,
-            0.0,
-            0.0
-        ],
-        "Weight": [
-            3,
-            2,
-            1,
-            1
-        ],
-        "NormalTough": [
-            0.1,
-            0.1,
-            0.1,
-            0.1
         ],
         "DamageCumulativeThreshold": [],
         "HitAngle": []
@@ -1684,10 +912,251 @@
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31010
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.5,
+                5.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.5,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.25
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.5
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 31011,
+        "Name": "小史莱姆系列",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [
+            31011
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.5,
+                5.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.5,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.25
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.5
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 31012,
+        "Name": "小史莱姆系列",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [
+            31012
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.5,
+                5.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.5,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.25
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.5
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 31013,
+        "Name": "小史莱姆系列",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [
+            31013
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.5,
+                5.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.5,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.25
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.5
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 31014,
+        "Name": "小史莱姆系列",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [
+            31014
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 0.5,
@@ -1738,10 +1207,15 @@
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31010
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 0.5,
@@ -1792,10 +1266,15 @@
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31010
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 0.5,
@@ -1841,15 +1320,20 @@
     },
     {
         "Id": 31050,
-        "Name": "尖头树苗系列",
+        "Name": "树苗系列",
         "Count": 1,
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31130
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 0.5,
@@ -1894,16 +1378,21 @@
         "HitAngle": []
     },
     {
-        "Id": 31060,
-        "Name": "圆头树苗系列",
+        "Id": 31052,
+        "Name": "水树苗系列",
         "Count": 1,
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31132
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 0.5,
@@ -1954,10 +1443,15 @@
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31070
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "SpherePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 1.8
@@ -2007,10 +1501,15 @@
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31130
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive"
+        ],
         "PrimitiveParams": [
             [
                 1.0,
@@ -2062,10 +1561,15 @@
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31010
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive"
+        ],
         "PrimitiveParams": [
             [
                 1.0,
@@ -2117,10 +1621,15 @@
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31010
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive"
+        ],
         "PrimitiveParams": [
             [
                 0.8,
@@ -2172,10 +1681,251 @@
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31130
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.8,
+                5.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.8,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.25
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.5
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 31131,
+        "Name": "巨型史莱姆系列",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [
+            31131
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.8,
+                5.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.8,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.25
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.5
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 31132,
+        "Name": "巨型史莱姆系列",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [
+            31132
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.8,
+                5.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.8,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.25
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.5
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 31133,
+        "Name": "巨型史莱姆系列",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [
+            31133
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.8,
+                5.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.8,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.25
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.5
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 31134,
+        "Name": "巨型史莱姆系列",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [
+            31134
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 0.8,
@@ -2221,15 +1971,20 @@
     },
     {
         "Id": 31150,
-        "Name": "镰刀黑灵系列",
+        "Name": "黑灵系列",
         "Count": 1,
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31150
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 1.0,
@@ -2274,16 +2029,21 @@
         "HitAngle": []
     },
     {
-        "Id": 31160,
-        "Name": "巨盾黑灵系列",
+        "Id": 31152,
+        "Name": "水黑灵系列",
         "Count": 1,
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31152
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 1.0,
@@ -2328,16 +2088,21 @@
         "HitAngle": []
     },
     {
-        "Id": 31140,
-        "Name": "长枪卫兵系列",
+        "Id": 31141,
+        "Name": "火长枪兵",
         "Count": 1,
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31140
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 1.0,
@@ -2382,16 +2147,21 @@
         "HitAngle": []
     },
     {
-        "Id": 31170,
-        "Name": "机械炮兵系列",
+        "Id": 31143,
+        "Name": "光长枪兵",
         "Count": 1,
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31140
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 1.0,
@@ -2436,16 +2206,257 @@
         "HitAngle": []
     },
     {
-        "Id": 31180,
-        "Name": "史莱姆骑士系列",
+        "Id": 31144,
+        "Name": "暗长枪兵",
         "Count": 1,
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31140
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0,
+                2.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.25
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.5
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 31171,
+        "Name": "火炮兵",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [
+            31140
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0,
+                2.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.25
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.5
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 31174,
+        "Name": "暗炮兵",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [
+            31140
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0,
+                2.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.25
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.5
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 31181,
+        "Name": "火史莱姆骑士系列",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [
+            31180
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0,
+                2.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.25
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.5
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 31183,
+        "Name": "光史莱姆骑士系列",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [
+            31180
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 1.0,
@@ -2496,10 +2507,15 @@
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31180
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "SpherePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 1.5
@@ -2549,10 +2565,15 @@
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31140
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 1.0,
@@ -2597,16 +2618,80 @@
         "HitAngle": []
     },
     {
-        "Id": 31230,
-        "Name": "盾牌兵系列",
+        "Id": 31233,
+        "Name": "光盾牌兵系列",
         "Count": 1,
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31180
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0,
+                2.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.25
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.5
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 31234,
+        "Name": "暗盾牌兵系列",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [
+            31180
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 1.0,
@@ -2657,10 +2742,15 @@
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31150
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 1.0,
@@ -2711,10 +2801,15 @@
         "Keys": [
             "Body"
         ],
+        "KeysEffect": [
+            31134
+        ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
                 1.0,
@@ -2759,19 +2854,4075 @@
         "HitAngle": []
     },
     {
-        "Id": 7001,
-        "Name": "交互物通用",
-        "Count": 1,
+        "Id": 3023,
+        "Name": "风史莱姆王",
+        "Count": 4,
         "Keys": [
-            "body"
+            "B",
+            "HB",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            30230,
+            30230,
+            30230,
+            30230
         ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
         "PrimitiveParams": [
             [
+                0.5,
+                2.0
+            ],
+            [
+                0.5,
+                2.0
+            ],
+            [
+                1.2,
+                2.0,
                 0.8
+            ],
+            [
+                1.2,
+                2.0,
+                0.8
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.0,
+                -0.6
+            ],
+            [
+                0.0,
+                1.0,
+                0.9
+            ],
+            [
+                0.6,
+                1.0,
+                0.15
+            ],
+            [
+                -0.6,
+                1.0,
+                0.15
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.15,
+            0.3,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.2,
+            0.4,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 30231,
+        "Name": "火史莱姆王",
+        "Count": 4,
+        "Keys": [
+            "B",
+            "HB",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            30231,
+            30231,
+            30231,
+            30231
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.5,
+                2.0
+            ],
+            [
+                0.5,
+                2.0
+            ],
+            [
+                1.2,
+                2.0,
+                0.8
+            ],
+            [
+                1.2,
+                2.0,
+                0.8
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.0,
+                -0.6
+            ],
+            [
+                0.0,
+                1.0,
+                0.9
+            ],
+            [
+                0.6,
+                1.0,
+                0.15
+            ],
+            [
+                -0.6,
+                1.0,
+                0.15
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.15,
+            0.3,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.2,
+            0.4,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 30232,
+        "Name": "冰史莱姆王",
+        "Count": 4,
+        "Keys": [
+            "B",
+            "HB",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            30232,
+            30232,
+            30232,
+            30232
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.5,
+                2.0
+            ],
+            [
+                0.5,
+                2.0
+            ],
+            [
+                1.2,
+                2.0,
+                0.8
+            ],
+            [
+                1.2,
+                2.0,
+                0.8
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.0,
+                -0.6
+            ],
+            [
+                0.0,
+                1.0,
+                0.9
+            ],
+            [
+                0.6,
+                1.0,
+                0.15
+            ],
+            [
+                -0.6,
+                1.0,
+                0.15
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.15,
+            0.3,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.2,
+            0.4,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3016,
+        "Name": "雅雯",
+        "Count": 4,
+        "Keys": [
+            "B",
+            "HB",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.4,
+                2.6,
+                0.2
+            ],
+            [
+                0.4,
+                2.6,
+                0.2
+            ],
+            [
+                0.6,
+                2.6,
+                0.1
+            ],
+            [
+                0.6,
+                2.6,
+                0.1
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.3,
+                -0.3
+            ],
+            [
+                0.0,
+                1.3,
+                0.0
+            ],
+            [
+                0.3,
+                1.3,
+                -0.15
+            ],
+            [
+                -0.3,
+                1.3,
+                -0.15
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.15,
+            0.3,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.2,
+            0.4,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 30169,
+        "Name": "雅雯水晶",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0,
+                2.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.2,
+                0.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.0
+        ],
+        "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
+        "Id": 3020,
+        "Name": "饕餮",
+        "Count": 5,
+        "Keys": [
+            "Body",
+            "HB",
+            "B",
+            "Body2",
+            "Body3"
+        ],
+        "KeysEffect": [
+            1,
+            1,
+            1,
+            1,
+            1
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                2.0,
+                4.0,
+                1.7
+            ],
+            [
+                1.3,
+                4.0,
+                1.0
+            ],
+            [
+                2.0,
+                4.0,
+                0.5
+            ],
+            [
+                1.3,
+                4.0,
+                1.0
+            ],
+            [
+                2.0,
+                4.0,
+                0.5
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                2.0,
+                0.1
+            ],
+            [
+                -1.75,
+                2.0,
+                -0.2
+            ],
+            [
+                0.0,
+                2.0,
+                1.4
+            ],
+            [
+                1.75,
+                2.0,
+                -0.2
+            ],
+            [
+                0.0,
+                2.0,
+                -1.2
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            1,
+            3,
+            2,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.0,
+            0.3,
+            0.15,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0,
+            0.4,
+            0.2,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            1,
+            3,
+            2,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3021,
+        "Name": "穷奇",
+        "Count": 3,
+        "Keys": [
+            "Body",
+            "B",
+            "HB"
+        ],
+        "KeysEffect": [
+            30210,
+            30210,
+            30210
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "SpherePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.5,
+                2.0,
+                2.0
+            ],
+            [
+                1.0,
+                2.0,
+                2.0
+            ],
+            [
+                1.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.8,
+                0.5
+            ],
+            [
+                0.0,
+                0.8,
+                -1.0
+            ],
+            [
+                0.0,
+                1.0,
+                2.5
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            1,
+            2,
+            3
+        ],
+        "DamageRatio": [
+            0.0,
+            0.15,
+            0.3
+        ],
+        "AffectTenacityRatio": [
+            0.0,
+            0.2,
+            0.4
+        ],
+        "Weight": [
+            1,
+            2,
+            3
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 30211,
+        "Name": "荒漠猎蜥",
+        "Count": 3,
+        "Keys": [
+            "Body",
+            "B",
+            "HB"
+        ],
+        "KeysEffect": [
+            30211,
+            30211,
+            30211
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "SpherePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.5,
+                2.0,
+                2.0
+            ],
+            [
+                1.0,
+                2.0,
+                2.0
+            ],
+            [
+                1.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.8,
+                0.5
+            ],
+            [
+                0.0,
+                0.8,
+                -1.0
+            ],
+            [
+                0.0,
+                1.0,
+                2.5
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            1,
+            2,
+            3
+        ],
+        "DamageRatio": [
+            0.0,
+            0.15,
+            0.3
+        ],
+        "AffectTenacityRatio": [
+            0.0,
+            0.2,
+            0.4
+        ],
+        "Weight": [
+            1,
+            2,
+            3
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3022,
+        "Name": "山魁",
+        "Count": 4,
+        "Keys": [
+            "HB",
+            "Body",
+            "B",
+            "B2"
+        ],
+        "KeysEffect": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0,
+                4.0
+            ],
+            [
+                1.0,
+                2.0
+            ],
+            [
+                1.0,
+                4.0
+            ],
+            [
+                1.0,
+                4.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                2.0,
+                0.95
+            ],
+            [
+                0.0,
+                2.0,
+                -0.8
+            ],
+            [
+                2.0,
+                2.0,
+                0.8
+            ],
+            [
+                -2.0,
+                2.0,
+                0.8
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            3,
+            1,
+            2,
+            2
+        ],
+        "DamageRatio": [
+            0.3,
+            0.0,
+            0.15,
+            0.15
+        ],
+        "AffectTenacityRatio": [
+            0.4,
+            0.0,
+            0.2,
+            0.2
+        ],
+        "Weight": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3024,
+        "Name": "机械蜘蛛",
+        "Count": 4,
+        "Keys": [
+            "HB",
+            "Body",
+            "B",
+            "Body2"
+        ],
+        "KeysEffect": [
+            6,
+            6,
+            6,
+            6
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                2.0,
+                3.0,
+                1.0
+            ],
+            [
+                1.2,
+                3.0,
+                3.5
+            ],
+            [
+                1.0,
+                3.0,
+                1.0
+            ],
+            [
+                1.2,
+                3.0,
+                3.5
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.3,
+                1.6
+            ],
+            [
+                -0.6,
+                1.5,
+                0.0
+            ],
+            [
+                0.0,
+                1.5,
+                -1.6
+            ],
+            [
+                0.6,
+                1.5,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            3,
+            1,
+            2,
+            1
+        ],
+        "DamageRatio": [
+            0.3,
+            0.0,
+            0.15,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.4,
+            0.0,
+            0.2,
+            0.0
+        ],
+        "Weight": [
+            3,
+            1,
+            2,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.0,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": [
+            [
+                300.0,
+                60.0
+            ],
+            [
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0
+            ]
+        ]
+    },
+    {
+        "Id": 3025,
+        "Name": "废品王",
+        "Count": 4,
+        "Keys": [
+            "HB",
+            "B",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            6,
+            6,
+            6,
+            6
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.5,
+                3.0
+            ],
+            [
+                0.5,
+                3.0
+            ],
+            [
+                1.2,
+                4.0,
+                1.4
+            ],
+            [
+                1.2,
+                4.0,
+                1.4
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                2.0,
+                0.9
+            ],
+            [
+                0.0,
+                2.0,
+                -0.9
+            ],
+            [
+                0.6,
+                2.0,
+                0.0
+            ],
+            [
+                -0.6,
+                2.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            3,
+            2,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.3,
+            0.15,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.4,
+            0.2,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            3,
+            2,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.0,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 30251,
+        "Name": "废品王柱子",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                2.2,
+                5.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                3.2,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            1
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.0
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3026,
+        "Name": "风草木灵",
+        "Count": 4,
+        "Keys": [
+            "B",
+            "HB",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            30260,
+            30260,
+            30260,
+            30260
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.3,
+                1.9
+            ],
+            [
+                0.5,
+                1.5
+            ],
+            [
+                1.2,
+                2.4,
+                0.3
+            ],
+            [
+                1.2,
+                2.4,
+                0.3
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.25,
+                -0.6
+            ],
+            [
+                0.0,
+                1.25,
+                0.08
+            ],
+            [
+                0.6,
+                1.2,
+                -0.15
+            ],
+            [
+                -0.6,
+                1.2,
+                -0.15
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.15,
+            0.3,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.2,
+            0.4,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 30261,
+        "Name": "火草木灵",
+        "Count": 4,
+        "Keys": [
+            "B",
+            "HB",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            2,
+            2,
+            2,
+            2
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.3,
+                1.9
+            ],
+            [
+                0.5,
+                1.5
+            ],
+            [
+                1.2,
+                2.4,
+                0.3
+            ],
+            [
+                1.2,
+                2.4,
+                0.3
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.25,
+                -0.6
+            ],
+            [
+                0.0,
+                1.25,
+                0.08
+            ],
+            [
+                0.6,
+                1.2,
+                -0.15
+            ],
+            [
+                -0.6,
+                1.2,
+                -0.15
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.15,
+            0.3,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.2,
+            0.4,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 30262,
+        "Name": "冰草木灵",
+        "Count": 4,
+        "Keys": [
+            "B",
+            "HB",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            3,
+            3,
+            3,
+            3
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.3,
+                1.9
+            ],
+            [
+                0.5,
+                1.5
+            ],
+            [
+                1.2,
+                2.4,
+                0.3
+            ],
+            [
+                1.2,
+                2.4,
+                0.3
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.25,
+                -0.6
+            ],
+            [
+                0.0,
+                1.25,
+                0.08
+            ],
+            [
+                0.6,
+                1.2,
+                -0.15
+            ],
+            [
+                -0.6,
+                1.2,
+                -0.15
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.15,
+            0.3,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.2,
+            0.4,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3027,
+        "Name": "风封印怪",
+        "Count": 4,
+        "Keys": [
+            "Body",
+            "Body2",
+            "B",
+            "HB"
+        ],
+        "KeysEffect": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.7,
+                2.5,
+                0.65
+            ],
+            [
+                0.7,
+                2.5,
+                0.65
+            ],
+            [
+                0.35,
+                2.0
+            ],
+            [
+                0.35,
+                2.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                -0.5,
+                1.2,
+                0.0
+            ],
+            [
+                0.5,
+                1.2,
+                0.0
+            ],
+            [
+                0.0,
+                1.2,
+                -0.35
+            ],
+            [
+                0.0,
+                1.2,
+                0.35
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            1,
+            1,
+            2,
+            3
+        ],
+        "DamageRatio": [
+            0.0,
+            0.0,
+            0.15,
+            0.3
+        ],
+        "AffectTenacityRatio": [
+            0.0,
+            0.0,
+            0.2,
+            0.4
+        ],
+        "Weight": [
+            1,
+            1,
+            2,
+            3
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 30271,
+        "Name": "火封印怪",
+        "Count": 4,
+        "Keys": [
+            "Body",
+            "Body2",
+            "B",
+            "HB"
+        ],
+        "KeysEffect": [
+            30271,
+            30271,
+            30271,
+            30271
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.7,
+                2.5,
+                0.65
+            ],
+            [
+                0.7,
+                2.5,
+                0.65
+            ],
+            [
+                0.35,
+                2.0
+            ],
+            [
+                0.35,
+                2.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                -0.5,
+                1.2,
+                0.0
+            ],
+            [
+                0.5,
+                1.2,
+                0.0
+            ],
+            [
+                0.0,
+                1.2,
+                -0.35
+            ],
+            [
+                0.0,
+                1.2,
+                0.35
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            1,
+            1,
+            2,
+            3
+        ],
+        "DamageRatio": [
+            0.0,
+            0.0,
+            0.15,
+            0.3
+        ],
+        "AffectTenacityRatio": [
+            0.0,
+            0.0,
+            0.2,
+            0.4
+        ],
+        "Weight": [
+            1,
+            1,
+            2,
+            3
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3027131,
+        "Name": "火封印怪影骸炸弹",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.7,
+                1.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.0
+        ],
+        "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
+        "Id": 30272,
+        "Name": "冰封印怪",
+        "Count": 4,
+        "Keys": [
+            "Body",
+            "Body2",
+            "B",
+            "HB"
+        ],
+        "KeysEffect": [
+            3,
+            3,
+            3,
+            3
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.7,
+                2.5,
+                0.65
+            ],
+            [
+                0.7,
+                2.5,
+                0.65
+            ],
+            [
+                0.35,
+                2.0
+            ],
+            [
+                0.35,
+                2.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                -0.5,
+                1.2,
+                0.0
+            ],
+            [
+                0.5,
+                1.2,
+                0.0
+            ],
+            [
+                0.0,
+                1.2,
+                -0.35
+            ],
+            [
+                0.0,
+                1.2,
+                0.35
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            1,
+            1,
+            2,
+            3
+        ],
+        "DamageRatio": [
+            0.0,
+            0.0,
+            0.15,
+            0.3
+        ],
+        "AffectTenacityRatio": [
+            0.0,
+            0.0,
+            0.2,
+            0.4
+        ],
+        "Weight": [
+            1,
+            1,
+            2,
+            3
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 302727,
+        "Name": "冰锥碰撞盒",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.5,
+                2.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.0
+        ],
+        "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
+        "Id": 3023201,
+        "Name": "史莱姆跳砸",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "SpherePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                3.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.0
+        ],
+        "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
+        "Id": 3023202,
+        "Name": "史莱姆吐息",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "SpherePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.5
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.0
+        ],
+        "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
+        "Id": 3023203,
+        "Name": "史莱姆冰锥",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "SpherePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                2.25
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.0
+        ],
+        "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
+        "Id": 3028,
+        "Name": "风巨人",
+        "Count": 4,
+        "Keys": [
+            "B",
+            "HB",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0,
+                3.0,
+                1.0
+            ],
+            [
+                1.0,
+                3.0,
+                1.0
+            ],
+            [
+                1.0,
+                2.5,
+                1.0
+            ],
+            [
+                1.0,
+                2.5,
+                1.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.5,
+                -0.6
+            ],
+            [
+                0.0,
+                1.5,
+                0.5
+            ],
+            [
+                1.3,
+                1.5,
+                0.0
+            ],
+            [
+                -1.3,
+                1.5,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.15,
+            0.3,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.2,
+            0.4,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 30281,
+        "Name": "火巨人",
+        "Count": 4,
+        "Keys": [
+            "B",
+            "HB",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            2,
+            2,
+            2,
+            2
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0,
+                3.0,
+                1.0
+            ],
+            [
+                1.0,
+                3.0,
+                1.0
+            ],
+            [
+                1.0,
+                2.5,
+                1.0
+            ],
+            [
+                1.0,
+                2.5,
+                1.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.5,
+                -0.6
+            ],
+            [
+                0.0,
+                1.5,
+                0.5
+            ],
+            [
+                1.3,
+                1.5,
+                0.0
+            ],
+            [
+                -1.3,
+                1.5,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.15,
+            0.3,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.2,
+            0.4,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 30282,
+        "Name": "冰巨人",
+        "Count": 4,
+        "Keys": [
+            "B",
+            "HB",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            3,
+            3,
+            3,
+            3
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0,
+                3.0,
+                1.0
+            ],
+            [
+                1.0,
+                3.0,
+                1.0
+            ],
+            [
+                1.0,
+                2.5,
+                1.0
+            ],
+            [
+                1.0,
+                2.5,
+                1.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.5,
+                -0.6
+            ],
+            [
+                0.0,
+                1.5,
+                0.5
+            ],
+            [
+                1.3,
+                1.5,
+                0.0
+            ],
+            [
+                -1.3,
+                1.5,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.15,
+            0.3,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.2,
+            0.4,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3028500,
+        "Name": "衰变矿工石柱",
+        "Count": 4,
+        "Keys": [
+            "Body",
+            "Body2",
+            "Body3",
+            "Body4"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                2.6,
+                1.0,
+                1.0
+            ],
+            [
+                1.1,
+                1.0,
+                2.73
+            ],
+            [
+                2.8,
+                1.0,
+                1.0
+            ],
+            [
+                1.1,
+                1.0,
+                2.73
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.0,
+                -1.6
+            ],
+            [
+                -1.75,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                1.75
+            ],
+            [
+                1.75,
+                0.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "DamageRatio": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ],
+            [
+                0.0,
+                1.0
+            ],
+            [
+                0.0,
+                1.0
+            ],
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3029,
+        "Name": "黑星",
+        "Count": 4,
+        "Keys": [
+            "HB",
+            "B",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            4,
+            4,
+            4,
+            4
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.25,
+                3.0
+            ],
+            [
+                0.25,
+                3.0
+            ],
+            [
+                0.25,
+                3.0
+            ],
+            [
+                0.25,
+                3.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.5,
+                0.25
+            ],
+            [
+                0.0,
+                1.5,
+                -0.25
+            ],
+            [
+                -0.3,
+                1.5,
+                0.0
+            ],
+            [
+                0.3,
+                1.5,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            3,
+            2,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.3,
+            0.15,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.4,
+            0.2,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            3,
+            2,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3030,
+        "Name": "冰原狼",
+        "Count": 4,
+        "Keys": [
+            "Body",
+            "B",
+            "HB",
+            "Body2"
+        ],
+        "KeysEffect": [
+            30300,
+            30300,
+            30300,
+            30300
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "CapsulePrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.75,
+                2.0,
+                2.5
+            ],
+            [
+                1.0,
+                2.0,
+                2.0
+            ],
+            [
+                1.0,
+                2.8
+            ],
+            [
+                0.75,
+                2.0,
+                2.5
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.375,
+                1.0,
+                0.75
+            ],
+            [
+                0.0,
+                1.0,
+                -1.5
+            ],
+            [
+                0.0,
+                1.9,
+                2.9
+            ],
+            [
+                -0.375,
+                1.0,
+                0.75
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            1,
+            2,
+            3,
+            1
+        ],
+        "DamageRatio": [
+            0.0,
+            0.15,
+            0.3,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0,
+            0.2,
+            0.4,
+            0.0
+        ],
+        "Weight": [
+            1,
+            2,
+            3,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3031,
+        "Name": "冰龙",
+        "Count": 7,
+        "Keys": [
+            "Body",
+            "HB",
+            "Body2",
+            "Body3",
+            "Body4",
+            "B",
+            "B2"
+        ],
+        "KeysEffect": [
+            30310,
+            30310,
+            30310,
+            30310,
+            30310,
+            30310,
+            30310
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "SpherePrimitive",
+            "CapsulePrimitive",
+            "SpherePrimitive",
+            "SpherePrimitive",
+            "SpherePrimitive",
+            "CapsulePrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.5,
+                2.0
+            ],
+            [
+                2.0,
+                3.0
+            ],
+            [
+                1.5
+            ],
+            [
+                0.8
+            ],
+            [
+                0.8
+            ],
+            [
+                1.5,
+                2.0
+            ],
+            [
+                1.1,
+                1.0,
+                8.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                2.0,
+                1.0,
+                2.0
+            ],
+            [
+                0.0,
+                2.0,
+                4.5
+            ],
+            [
+                -2.0,
+                1.0,
+                2.0
+            ],
+            [
+                -0.8,
+                1.0,
+                -0.5
+            ],
+            [
+                0.8,
+                1.0,
+                -0.5
+            ],
+            [
+                0.0,
+                1.0,
+                -1.5
+            ],
+            [
+                0.0,
+                0.5,
+                -1.26
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            1,
+            3,
+            1,
+            1,
+            1,
+            2,
+            2
+        ],
+        "DamageRatio": [
+            0.0,
+            0.3,
+            0.0,
+            0.0,
+            0.0,
+            0.15,
+            0.15
+        ],
+        "AffectTenacityRatio": [
+            0.0,
+            0.4,
+            0.0,
+            0.0,
+            0.0,
+            0.2,
+            0.2
+        ],
+        "Weight": [
+            2,
+            3,
+            2,
+            2,
+            2,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 30312,
+        "Name": "（冰龙）冰柱",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.2,
+                5.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                2.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            1
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.0
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3034,
+        "Name": "北辰",
+        "Count": 4,
+        "Keys": [
+            "HB",
+            "B",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            30340,
+            30340,
+            30340,
+            30340
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.52,
+                3.06
+            ],
+            [
+                0.55,
+                3.0
+            ],
+            [
+                0.5,
+                3.0
+            ],
+            [
+                0.5,
+                3.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.18,
+                1.8,
+                0.84
+            ],
+            [
+                0.15,
+                1.8,
+                -0.18
+            ],
+            [
+                -0.5,
+                1.8,
+                0.3
+            ],
+            [
+                0.89,
+                1.8,
+                0.3
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            3,
+            2,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.3,
+            0.15,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.4,
+            0.2,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            3,
+            2,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 30341,
+        "Name": "北辰莲花",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.5,
+                4.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                2.5,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            1
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.0
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3112,
+        "Name": "守宫",
+        "Count": 4,
+        "Keys": [
+            "HB",
+            "B",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            30120,
+            30120,
+            30120,
+            30120
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "SpherePrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0
+            ],
+            [
+                1.0,
+                2.0,
+                2.0
+            ],
+            [
+                1.0,
+                2.0,
+                2.0
+            ],
+            [
+                1.0,
+                2.0,
+                2.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.0,
+                2.0
+            ],
+            [
+                0.0,
+                1.0,
+                -2.0
+            ],
+            [
+                -0.5,
+                1.0,
+                0.0
+            ],
+            [
+                0.5,
+                1.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            3,
+            2,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.3,
+            0.15,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.4,
+            0.2,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3000,
+        "Name": "风沙",
+        "Count": 4,
+        "Keys": [
+            "B",
+            "HB",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            6,
+            6,
+            6,
+            6
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0,
+                2.5,
+                0.8
+            ],
+            [
+                1.0,
+                2.5,
+                0.8
+            ],
+            [
+                1.0,
+                2.5,
+                0.6
+            ],
+            [
+                1.0,
+                2.5,
+                0.6
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.3,
+                -0.1
+            ],
+            [
+                0.0,
+                1.3,
+                0.7
+            ],
+            [
+                0.7,
+                1.3,
+                0.3
+            ],
+            [
+                -0.7,
+                1.3,
+                0.3
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.15,
+            0.3,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.2,
+            0.4,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 30000,
+        "Name": "风沙召唤物",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.5,
+                5.0
             ]
         ],
         "CenterOffset": [
@@ -2792,43 +6943,118 @@
             0
         ],
         "DamageRatio": [
-            1.0
+            0.0
         ],
         "AffectTenacityRatio": [
-            1.0
+            0.25
         ],
         "Weight": [
             1
         ],
         "NormalTough": [
-            0.0
+            0.5
         ],
-        "DamageCumulativeThreshold": [],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
         "HitAngle": []
     },
     {
-        "Id": 7102,
-        "Name": "大木箱",
-        "Count": 1,
+        "Id": 3001,
+        "Name": "枯魂吊树",
+        "Count": 6,
         "Keys": [
-            "body"
+            "Body",
+            "B",
+            "HB",
+            "HB2",
+            "B2",
+            "HB3"
+        ],
+        "KeysEffect": [
+            30010,
+            30010,
+            30010,
+            30010,
+            30010,
+            30010
         ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
         "PrimitiveParams": [
             [
-                1.27,
                 2.0,
-                1.276
+                4.0,
+                1.7
+            ],
+            [
+                1.5,
+                4.0,
+                1.5
+            ],
+            [
+                2.0,
+                4.0,
+                1.0
+            ],
+            [
+                1.4,
+                4.0,
+                1.5
+            ],
+            [
+                2.0,
+                4.0,
+                0.5
+            ],
+            [
+                2.0,
+                4.0,
+                4.0
             ]
         ],
         "CenterOffset": [
             [
                 0.0,
-                0.6,
-                0.0
+                2.0,
+                -0.25
+            ],
+            [
+                -1.75,
+                2.0,
+                -0.6
+            ],
+            [
+                0.0,
+                2.0,
+                1.0
+            ],
+            [
+                1.75,
+                2.0,
+                -0.58
+            ],
+            [
+                0.0,
+                2.0,
+                -1.35
+            ],
+            [
+                0.0,
+                2.0,
+                1.1
             ]
         ],
         "RotateOffset": [
@@ -2836,42 +7062,726 @@
                 0.0,
                 0.0,
                 0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
             ]
         ],
         "HitBoxLevel": [
-            0
+            1,
+            3,
+            3,
+            2,
+            1,
+            3
         ],
         "DamageRatio": [
-            1.0
+            0.0,
+            0.3,
+            0.3,
+            0.15,
+            0.0,
+            0.3
         ],
         "AffectTenacityRatio": [
-            1.0
+            0.0,
+            0.4,
+            0.4,
+            0.2,
+            0.0,
+            0.4
         ],
         "Weight": [
-            1
+            1,
+            3,
+            3,
+            2,
+            1,
+            3
         ],
         "NormalTough": [
-            0.0
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
         ],
-        "DamageCumulativeThreshold": [],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
         "HitAngle": []
     },
     {
-        "Id": 7201,
-        "Name": "用于激光子弹交互",
+        "Id": 302210,
+        "Name": "赤炎黑甲虫",
+        "Count": 4,
+        "Keys": [
+            "HB",
+            "B",
+            "Body1",
+            "Body2"
+        ],
+        "KeysEffect": [
+            2,
+            2,
+            2,
+            2
+        ],
+        "KeysGroups": [
+            [
+                "HB"
+            ],
+            [
+                "B",
+                "Body1",
+                "Body2"
+            ]
+        ],
+        "DamageInjury": [
+            [
+                0.2,
+                1500.0
+            ],
+            [
+                1.0,
+                1500.0
+            ]
+        ],
+        "Progressivecoefficient": [
+            0.0,
+            0.0
+        ],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0,
+                4.0
+            ],
+            [
+                1.0,
+                2.0
+            ],
+            [
+                1.0,
+                4.0
+            ],
+            [
+                1.0,
+                4.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                2.0,
+                0.95
+            ],
+            [
+                0.0,
+                2.0,
+                -0.8
+            ],
+            [
+                2.0,
+                2.0,
+                0.8
+            ],
+            [
+                -2.0,
+                2.0,
+                0.8
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            3,
+            2,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.3,
+            0.15,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.4,
+            0.2,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            3,
+            2,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3002,
+        "Name": "旱地长舌蛙",
+        "Count": 7,
+        "Keys": [
+            "HB",
+            "Body",
+            "B",
+            "B2",
+            "HB2",
+            "HB3",
+            "HB4"
+        ],
+        "KeysEffect": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+        ],
+        "KeysGroups": [
+            [
+                "HB",
+                "Body",
+                "B",
+                "B2",
+                "HB2"
+            ],
+            [
+                "HB3",
+                "HB4"
+            ]
+        ],
+        "DamageInjury": [
+            [
+                1.0,
+                1500.0
+            ],
+            [
+                0.06,
+                1500.0
+            ]
+        ],
+        "Progressivecoefficient": [
+            0.0,
+            0.0
+        ],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.2,
+                4.0
+            ],
+            [
+                1.5,
+                2.0
+            ],
+            [
+                1.2,
+                4.0
+            ],
+            [
+                1.2,
+                4.0
+            ],
+            [
+                1.2,
+                2.0,
+                4.0
+            ],
+            [
+                1.2,
+                2.0,
+                4.0
+            ],
+            [
+                1.2,
+                2.0,
+                5.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                2.0,
+                1.8
+            ],
+            [
+                0.0,
+                2.0,
+                -0.8
+            ],
+            [
+                2.0,
+                2.0,
+                1.8
+            ],
+            [
+                -2.0,
+                2.0,
+                1.8
+            ],
+            [
+                0.0,
+                1.0,
+                4.0
+            ],
+            [
+                0.0,
+                1.0,
+                4.0
+            ],
+            [
+                0.0,
+                1.0,
+                8.5
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            3,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3
+        ],
+        "DamageRatio": [
+            0.3,
+            0.0,
+            0.15,
+            0.15,
+            0.3,
+            0.3,
+            0.3
+        ],
+        "AffectTenacityRatio": [
+            0.4,
+            0.0,
+            0.2,
+            0.2,
+            0.4,
+            0.4,
+            0.4
+        ],
+        "Weight": [
+            3,
+            1,
+            2,
+            2,
+            4,
+            4,
+            4
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 30021,
+        "Name": "蚀地巨蛙",
+        "Count": 7,
+        "Keys": [
+            "HB",
+            "Body",
+            "B",
+            "B2",
+            "HB2",
+            "HB3",
+            "HB4"
+        ],
+        "KeysEffect": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+        ],
+        "KeysGroups": [
+            [
+                "HB",
+                "Body",
+                "B",
+                "B2",
+                "HB2"
+            ],
+            [
+                "HB3",
+                "HB4"
+            ]
+        ],
+        "DamageInjury": [
+            [
+                1.0,
+                1500.0
+            ],
+            [
+                0.06,
+                1500.0
+            ]
+        ],
+        "Progressivecoefficient": [
+            0.0,
+            0.0
+        ],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.2,
+                4.0
+            ],
+            [
+                1.5,
+                2.0
+            ],
+            [
+                1.2,
+                4.0
+            ],
+            [
+                1.2,
+                4.0
+            ],
+            [
+                1.2,
+                2.0,
+                4.0
+            ],
+            [
+                1.2,
+                2.0,
+                4.0
+            ],
+            [
+                1.2,
+                2.0,
+                5.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                2.0,
+                1.8
+            ],
+            [
+                0.0,
+                2.0,
+                -0.8
+            ],
+            [
+                2.0,
+                2.0,
+                1.8
+            ],
+            [
+                -2.0,
+                2.0,
+                1.8
+            ],
+            [
+                0.0,
+                1.0,
+                4.0
+            ],
+            [
+                0.0,
+                1.0,
+                4.0
+            ],
+            [
+                0.0,
+                1.0,
+                8.5
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            3,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3
+        ],
+        "DamageRatio": [
+            0.3,
+            0.0,
+            0.15,
+            0.15,
+            0.3,
+            0.3,
+            0.3
+        ],
+        "AffectTenacityRatio": [
+            0.4,
+            0.0,
+            0.2,
+            0.2,
+            0.4,
+            0.4,
+            0.4
+        ],
+        "Weight": [
+            3,
+            1,
+            2,
+            2,
+            4,
+            4,
+            4
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 300210,
+        "Name": "湿地巨蛙墓碑",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
+        ],
+        "KeysEffect": [
+            3
         ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
-                5.0,
-                5.0,
-                1.0
+                1.5,
+                4.0
             ]
         ],
         "CenterOffset": [
@@ -2889,7 +7799,7 @@
             ]
         ],
         "HitBoxLevel": [
-            0
+            1
         ],
         "DamageRatio": [
             0.0
@@ -2903,25 +7813,213 @@
         "NormalTough": [
             0.0
         ],
-        "DamageCumulativeThreshold": [],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
         "HitAngle": []
     },
     {
-        "Id": 7109,
-        "Name": "幻影墙",
-        "Count": 1,
+        "Id": 3005,
+        "Name": "衰肉之主",
+        "Count": 6,
         "Keys": [
-            "body"
+            "HB",
+            "Body",
+            "B",
+            "Body2",
+            "B1",
+            "B2"
+        ],
+        "KeysEffect": [
+            30050,
+            30050,
+            30050,
+            30050,
+            30050,
+            30050
         ],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "CapsulePrimitive",
+            "BoxPrimitive",
+            "CapsulePrimitive",
+            "BoxPrimitive"
+        ],
         "PrimitiveParams": [
             [
-                3.6,
+                1.5,
+                3.0,
+                1.0
+            ],
+            [
+                1.3,
+                2.5,
+                3.5
+            ],
+            [
+                0.5,
+                2.0
+            ],
+            [
+                1.3,
+                2.5,
+                3.5
+            ],
+            [
+                0.5,
+                2.0
+            ],
+            [
+                1.5,
+                2.5,
+                0.7
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.3,
+                2.4
+            ],
+            [
+                -0.7,
+                1.5,
+                0.0
+            ],
+            [
+                1.6,
+                1.5,
+                -2.6
+            ],
+            [
+                0.7,
+                1.5,
+                0.0
+            ],
+            [
+                -1.6,
+                1.5,
+                -2.6
+            ],
+            [
+                0.0,
+                1.5,
+                -2.19
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            3,
+            1,
+            2,
+            1,
+            2,
+            2
+        ],
+        "DamageRatio": [
+            0.3,
+            0.0,
+            0.15,
+            0.0,
+            0.15,
+            0.15
+        ],
+        "AffectTenacityRatio": [
+            0.4,
+            0.0,
+            0.2,
+            0.0,
+            0.2,
+            0.2
+        ],
+        "Weight": [
+            4,
+            1,
+            2,
+            1,
+            2,
+            4
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
                 2.0,
-                3.6
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 30051,
+        "Name": "衰肉之主矿石",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0,
+                0.2
             ]
         ],
         "CenterOffset": [
@@ -2939,13 +8037,13 @@
             ]
         ],
         "HitBoxLevel": [
-            0
+            1
         ],
         "DamageRatio": [
-            1.0
+            0.0
         ],
         "AffectTenacityRatio": [
-            1.0
+            0.0
         ],
         "Weight": [
             1
@@ -2953,31 +8051,227 @@
         "NormalTough": [
             0.0
         ],
-        "DamageCumulativeThreshold": [],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
         "HitAngle": []
     },
     {
-        "Id": 7110,
-        "Name": "幻影墙2",
+        "Id": 30052,
+        "Name": "衰肉之主召唤物",
         "Count": 1,
         "Keys": [
-            "body"
+            "Body"
         ],
+        "KeysEffect": [],
         "KeysGroups": [],
         "DamageInjury": [],
         "Progressivecoefficient": [],
-        "PrimitiveEnum": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive"
+        ],
         "PrimitiveParams": [
             [
-                6.0,
-                3.0,
-                4.0
+                0.5,
+                1.0
             ]
         ],
         "CenterOffset": [
             [
                 0.0,
-                1.3,
+                1.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            1
+        ],
+        "DamageRatio": [
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0
+        ],
+        "Weight": [
+            1
+        ],
+        "NormalTough": [
+            0.0
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                0.0,
+                1.0
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3003,
+        "Name": "米娅",
+        "Count": 4,
+        "Keys": [
+            "HB",
+            "B",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            30030,
+            30030,
+            30030,
+            30030
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0,
+                3.0
+            ],
+            [
+                1.0,
+                3.0
+            ],
+            [
+                1.0,
+                3.0
+            ],
+            [
+                1.0,
+                3.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                -0.4,
+                2.0,
+                0.0
+            ],
+            [
+                0.0,
+                2.0,
+                0.1
+            ],
+            [
+                0.4,
+                2.0,
+                0.0
+            ],
+            [
+                0.0,
+                2.0,
+                -0.4
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            3,
+            3,
+            2,
+            1
+        ],
+        "DamageRatio": [
+            0.3,
+            0.3,
+            0.15,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.4,
+            0.4,
+            0.2,
+            0.0
+        ],
+        "Weight": [
+            3,
+            3,
+            2,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 300309,
+        "Name": "米娅靶子",
+        "Count": 1,
+        "Keys": [
+            "Body"
+        ],
+        "KeysEffect": [],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "SpherePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                0.5,
                 0.0
             ]
         ],
@@ -2992,10 +8286,10 @@
             0
         ],
         "DamageRatio": [
-            1.0
+            0.0
         ],
         "AffectTenacityRatio": [
-            1.0
+            0.0
         ],
         "Weight": [
             1
@@ -3004,6 +8298,832 @@
             0.0
         ],
         "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
+        "Id": 301210,
+        "Name": "缝合者雅各布",
+        "Count": 4,
+        "Keys": [
+            "HB",
+            "B",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            6,
+            6,
+            6,
+            6
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "SpherePrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0
+            ],
+            [
+                1.0,
+                2.0,
+                2.0
+            ],
+            [
+                1.0,
+                2.0,
+                2.0
+            ],
+            [
+                1.0,
+                2.0,
+                2.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.0,
+                2.0
+            ],
+            [
+                0.0,
+                1.0,
+                -2.0
+            ],
+            [
+                -0.5,
+                1.0,
+                0.0
+            ],
+            [
+                0.5,
+                1.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            3,
+            2,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.3,
+            0.15,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.4,
+            0.2,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3006,
+        "Name": "浴血绞肉机",
+        "Count": 4,
+        "Keys": [
+            "HB",
+            "B",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            5,
+            5,
+            5,
+            5
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.52,
+                3.06
+            ],
+            [
+                0.55,
+                3.0
+            ],
+            [
+                0.5,
+                3.0
+            ],
+            [
+                0.5,
+                3.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.18,
+                1.8,
+                0.84
+            ],
+            [
+                0.15,
+                1.8,
+                -0.18
+            ],
+            [
+                -0.5,
+                1.8,
+                0.3
+            ],
+            [
+                0.89,
+                1.8,
+                0.3
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            3,
+            2,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.3,
+            0.15,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.4,
+            0.2,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            3,
+            2,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 303010,
+        "Name": "末路恶兽",
+        "Count": 4,
+        "Keys": [
+            "Body",
+            "B",
+            "HB",
+            "Body2"
+        ],
+        "KeysEffect": [
+            5,
+            5,
+            5,
+            5
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "BoxPrimitive",
+            "BoxPrimitive",
+            "CapsulePrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.75,
+                2.0,
+                2.5
+            ],
+            [
+                1.0,
+                2.0,
+                2.0
+            ],
+            [
+                1.0,
+                2.8
+            ],
+            [
+                0.75,
+                2.0,
+                2.5
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.375,
+                1.0,
+                0.75
+            ],
+            [
+                0.0,
+                1.0,
+                -1.5
+            ],
+            [
+                0.0,
+                1.9,
+                2.9
+            ],
+            [
+                -0.375,
+                1.0,
+                0.75
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            1,
+            2,
+            3,
+            1
+        ],
+        "DamageRatio": [
+            0.0,
+            0.15,
+            0.3,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.0,
+            0.2,
+            0.4,
+            0.0
+        ],
+        "Weight": [
+            1,
+            2,
+            3,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3008,
+        "Name": "心魔",
+        "Count": 4,
+        "Keys": [
+            "HB",
+            "B",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            30030,
+            30030,
+            30030,
+            30030
+        ],
+        "KeysGroups": [
+            [
+                "HB"
+            ],
+            [
+                "B",
+                "Body",
+                "Body2"
+            ]
+        ],
+        "DamageInjury": [
+            [
+                1.0,
+                1500.0
+            ],
+            [
+                0.2,
+                1500.0
+            ]
+        ],
+        "Progressivecoefficient": [
+            0.0,
+            0.0
+        ],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.6,
+                3.0
+            ],
+            [
+                0.6,
+                3.0
+            ],
+            [
+                0.6,
+                3.0
+            ],
+            [
+                0.6,
+                3.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                -0.6,
+                2.0,
+                0.0
+            ],
+            [
+                0.0,
+                2.0,
+                0.2
+            ],
+            [
+                0.0,
+                2.0,
+                -0.5
+            ],
+            [
+                0.6,
+                2.0,
+                0.0
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            3,
+            2,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.3,
+            0.15,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.4,
+            0.2,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            3,
+            2,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 3004,
+        "Name": "刺胞原质",
+        "Count": 4,
+        "Keys": [
+            "HB",
+            "B",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            30040,
+            30040,
+            30040,
+            30040
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "CapsulePrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                1.0,
+                3.0
+            ],
+            [
+                1.0,
+                3.0
+            ],
+            [
+                1.0,
+                3.0
+            ],
+            [
+                1.0,
+                3.0
+            ]
+        ],
+        "CenterOffset": [
+            [
+                -0.4,
+                2.0,
+                0.0
+            ],
+            [
+                0.0,
+                2.0,
+                0.5
+            ],
+            [
+                0.4,
+                2.0,
+                0.0
+            ],
+            [
+                0.0,
+                2.0,
+                -0.4
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            2,
+            3,
+            2,
+            1
+        ],
+        "DamageRatio": [
+            0.15,
+            0.3,
+            0.15,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.2,
+            0.4,
+            0.2,
+            0.0
+        ],
+        "Weight": [
+            2,
+            3,
+            2,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
+        "HitAngle": []
+    },
+    {
+        "Id": 30233,
+        "Name": "风史莱姆王",
+        "Count": 4,
+        "Keys": [
+            "B",
+            "HB",
+            "Body",
+            "Body2"
+        ],
+        "KeysEffect": [
+            30233,
+            30233,
+            30233,
+            30233
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [
+            "CapsulePrimitive",
+            "CapsulePrimitive",
+            "BoxPrimitive",
+            "BoxPrimitive"
+        ],
+        "PrimitiveParams": [
+            [
+                0.5,
+                2.0
+            ],
+            [
+                0.5,
+                2.0
+            ],
+            [
+                1.2,
+                2.0,
+                0.8
+            ],
+            [
+                1.2,
+                2.0,
+                0.8
+            ]
+        ],
+        "CenterOffset": [
+            [
+                0.0,
+                1.0,
+                -0.6
+            ],
+            [
+                0.0,
+                1.0,
+                0.9
+            ],
+            [
+                0.6,
+                1.0,
+                0.15
+            ],
+            [
+                -0.6,
+                1.0,
+                0.15
+            ]
+        ],
+        "RotateOffset": [
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "HitBoxLevel": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.15,
+            0.3,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.2,
+            0.4,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            2,
+            3,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.25
+            ],
+            [
+                3.0,
+                1.5
+            ]
+        ],
         "HitAngle": []
     }
 ]

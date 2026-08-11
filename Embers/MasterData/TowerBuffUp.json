@@ -1,0 +1,522 @@
+[
+    {
+        "Id": 9800401,
+        "UpBuff": 98004011,
+        "Bufflv": 1,
+        "BuffIcon": "TowerTalent_1014",
+        "BuffName": "以退为进Ⅰ",
+        "BuffDes": "触发精准闪避后，【烙印回响】会额外触发一次，至多叠加两层，角色招式伤害增加<color=#ff6262>25%</color>，效果可叠加。"
+    },
+    {
+        "Id": 98004011,
+        "UpBuff": 98004012,
+        "Bufflv": 2,
+        "BuffIcon": "TowerTalent_1014",
+        "BuffName": "以退为进Ⅱ",
+        "BuffDes": "触发精准闪避后，【烙印回响】会额外触发一次，至多叠加两层，角色招式伤害增加<color=#ff6262>50%</color>，效果可叠加。"
+    },
+    {
+        "Id": 98004012,
+        "UpBuff": 98004013,
+        "Bufflv": 3,
+        "BuffIcon": "TowerTalent_1014",
+        "BuffName": "以退为进Ⅲ",
+        "BuffDes": "触发精准闪避后，【烙印回响】会额外触发一次，至多叠加两层，角色招式伤害增加<color=#ff6262>75%</color>，效果可叠加。"
+    },
+    {
+        "Id": 98004013,
+        "UpBuff": 980040140,
+        "Bufflv": 4,
+        "BuffIcon": "TowerTalent_1014",
+        "BuffName": "以退为进Ⅳ",
+        "BuffDes": "触发精准闪避后，【烙印回响】会额外触发一次，至多叠加两层，角色招式伤害增加<color=#ff6262>100%</color>，效果可叠加。"
+    },
+    {
+        "Id": 980040140,
+        "UpBuff": 0,
+        "Bufflv": 5,
+        "BuffIcon": "TowerTalent_1014",
+        "BuffName": "以退为进Ⅴ",
+        "BuffDes": "触发精准闪避后，【烙印回响】会额外触发一次，至多叠加三层，角色招式伤害增加<color=#ff6262>125%</color>，效果可叠加。战斗期间每次耐力值恢复至上限时，获得【识破】，期间角色受击会消耗【识破】和500点耐力免疫该次攻击，并触发【以退为进Ⅴ】的效果"
+    },
+    {
+        "Id": 9800411,
+        "UpBuff": 98004111,
+        "Bufflv": 1,
+        "BuffIcon": "TowerTalent_1016",
+        "BuffName": "破釜沉舟Ⅰ",
+        "BuffDes": "触发【烙印回响】会消耗自身体力值上限的5%，使其伤害增加。增加的比例相当于角色已损失体力值百分比的2倍。"
+    },
+    {
+        "Id": 98004111,
+        "UpBuff": 98004112,
+        "Bufflv": 2,
+        "BuffIcon": "TowerTalent_1016",
+        "BuffName": "破釜沉舟Ⅱ",
+        "BuffDes": "触发【烙印回响】会消耗自身体力值上限的5%，使其伤害增加。增加的比例相当于角色已损失体力值百分比的4倍。"
+    },
+    {
+        "Id": 98004112,
+        "UpBuff": 98004113,
+        "Bufflv": 3,
+        "BuffIcon": "TowerTalent_1016",
+        "BuffName": "破釜沉舟Ⅲ",
+        "BuffDes": "触发【烙印回响】会消耗自身体力值上限的5%，使其伤害增加。增加的比例相当于角色已损失体力值百分比的6倍。"
+    },
+    {
+        "Id": 98004113,
+        "UpBuff": 98004114,
+        "Bufflv": 4,
+        "BuffIcon": "TowerTalent_1016",
+        "BuffName": "破釜沉舟Ⅳ",
+        "BuffDes": "触发【烙印回响】会消耗自身体力值上限的5%，使其伤害增加。增加的比例相当于角色已损失体力值百分比的8倍。"
+    },
+    {
+        "Id": 98004114,
+        "UpBuff": 0,
+        "Bufflv": 5,
+        "BuffIcon": "TowerTalent_1016",
+        "BuffName": "破釜沉舟Ⅴ",
+        "BuffDes": "触发【烙印回响】会消耗自身体力值上限的5%，使其伤害增加。增加的比例相当于角色已损失体力值百分比的10倍。"
+    },
+    {
+        "Id": 9800421,
+        "UpBuff": 98004211,
+        "Bufflv": 1,
+        "BuffIcon": "TowerTalent_1023",
+        "BuffName": "洞若观火Ⅰ",
+        "BuffDes": "使用奥义/技能三命中敌人时，触发奥义/技能三的【烙印回响】，此效果激活的【烙印回响】伤害增加<color=#ff6262>50%</color>。"
+    },
+    {
+        "Id": 98004211,
+        "UpBuff": 98004212,
+        "Bufflv": 2,
+        "BuffIcon": "TowerTalent_1023",
+        "BuffName": "洞若观火Ⅱ",
+        "BuffDes": "使用奥义/技能三命中敌人时，触发奥义/技能三的【烙印回响】，此效果激活的【烙印回响】伤害增加<color=#ff6262>200%</color>。"
+    },
+    {
+        "Id": 98004212,
+        "UpBuff": 98004213,
+        "Bufflv": 3,
+        "BuffIcon": "TowerTalent_1023",
+        "BuffName": "洞若观火Ⅲ",
+        "BuffDes": "使用奥义/技能三命中敌人时，触发奥义/技能三的【烙印回响】，此效果激活的【烙印回响】伤害增加<color=#ff6262>350%</color>。"
+    },
+    {
+        "Id": 98004213,
+        "UpBuff": 98004214,
+        "Bufflv": 4,
+        "BuffIcon": "TowerTalent_1023",
+        "BuffName": "洞若观火Ⅳ",
+        "BuffDes": "使用奥义/技能三命中敌人时，触发奥义/技能三的【烙印回响】，此效果激活的【烙印回响】伤害增加<color=#ff6262>500%</color>。"
+    },
+    {
+        "Id": 98004214,
+        "UpBuff": 0,
+        "Bufflv": 5,
+        "BuffIcon": "TowerTalent_1023",
+        "BuffName": "洞若观火Ⅴ",
+        "BuffDes": "使用奥义/技能三命中敌人时，触发奥义/技能三的【烙印回响】，此效果激活的【烙印回响】伤害增加<color=#ff6262>650%</color>。"
+    },
+    {
+        "Id": 9800501,
+        "UpBuff": 98005011,
+        "Bufflv": 1,
+        "BuffIcon": "TowerTalent_1021",
+        "BuffName": "势如破竹Ⅰ",
+        "BuffDes": "触发【烙印回响】后，角色招式伤害增加<color=#ff6262>4%</color>，持续15秒，至多叠加10层。"
+    },
+    {
+        "Id": 98005011,
+        "UpBuff": 98005012,
+        "Bufflv": 2,
+        "BuffIcon": "TowerTalent_1021",
+        "BuffName": "势如破竹Ⅱ",
+        "BuffDes": "触发【烙印回响】后，角色招式伤害增加<color=#ff6262>8%</color>，持续15秒，至多叠加10层。"
+    },
+    {
+        "Id": 98005012,
+        "UpBuff": 98005013,
+        "Bufflv": 3,
+        "BuffIcon": "TowerTalent_1021",
+        "BuffName": "势如破竹Ⅲ",
+        "BuffDes": "触发【烙印回响】后，角色招式伤害增加<color=#ff6262>12%</color>，持续15秒，至多叠加10层。"
+    },
+    {
+        "Id": 98005013,
+        "UpBuff": 98005014,
+        "Bufflv": 4,
+        "BuffIcon": "TowerTalent_1021",
+        "BuffName": "势如破竹Ⅳ",
+        "BuffDes": "触发【烙印回响】后，角色招式伤害增加<color=#ff6262>16%</color>，持续15秒，至多叠加10层。"
+    },
+    {
+        "Id": 98005014,
+        "UpBuff": 0,
+        "Bufflv": 5,
+        "BuffIcon": "TowerTalent_1021",
+        "BuffName": "势如破竹Ⅴ",
+        "BuffDes": "触发【烙印回响】后，角色招式伤害增加<color=#ff6262>20%</color>，持续15秒，至多叠加10层。"
+    },
+    {
+        "Id": 9800521,
+        "UpBuff": 980052110,
+        "Bufflv": 1,
+        "BuffIcon": "TowerTalent_1019",
+        "BuffName": "攻其不备Ⅰ",
+        "BuffDes": "【烙印回响】命中敌人10次后，最后被命中的敌人会立即暴露破绽。"
+    },
+    {
+        "Id": 980052110,
+        "UpBuff": 980052120,
+        "Bufflv": 2,
+        "BuffIcon": "TowerTalent_1019",
+        "BuffName": "攻其不备Ⅱ",
+        "BuffDes": "【烙印回响】命中敌人9次后，最后被命中的敌人会立即暴露破绽。"
+    },
+    {
+        "Id": 980052120,
+        "UpBuff": 980052130,
+        "Bufflv": 3,
+        "BuffIcon": "TowerTalent_1019",
+        "BuffName": "攻其不备Ⅲ",
+        "BuffDes": "【烙印回响】命中敌人8次后，最后被命中的敌人会立即暴露破绽。"
+    },
+    {
+        "Id": 980052130,
+        "UpBuff": 980052140,
+        "Bufflv": 4,
+        "BuffIcon": "TowerTalent_1019",
+        "BuffName": "攻其不备Ⅳ",
+        "BuffDes": "【烙印回响】命中敌人7次后，最后被命中的敌人会立即暴露破绽。"
+    },
+    {
+        "Id": 980052140,
+        "UpBuff": 0,
+        "Bufflv": 5,
+        "BuffIcon": "TowerTalent_1019",
+        "BuffName": "攻其不备Ⅴ",
+        "BuffDes": "【烙印回响】命中敌人5次后，最后被命中的敌人会立即暴露破绽。"
+    },
+    {
+        "Id": 980101,
+        "UpBuff": 980102,
+        "Bufflv": 1,
+        "BuffIcon": "TowerTalent_1013",
+        "BuffName": "过载暴击Ⅰ",
+        "BuffDes": "对破绽状态敌人的伤害增加<color=#ff6262>120%</color>、暴击增加<color=#ff6262>60%</color>。"
+    },
+    {
+        "Id": 980102,
+        "UpBuff": 980103,
+        "Bufflv": 2,
+        "BuffIcon": "TowerTalent_1013",
+        "BuffName": "过载暴击Ⅱ",
+        "BuffDes": "对破绽状态敌人的伤害增加<color=#ff6262>240%</color>、暴击增加<color=#ff6262>70%</color>。"
+    },
+    {
+        "Id": 980103,
+        "UpBuff": 980104,
+        "Bufflv": 3,
+        "BuffIcon": "TowerTalent_1013",
+        "BuffName": "过载暴击Ⅲ",
+        "BuffDes": "对破绽状态敌人的伤害增加<color=#ff6262>360%</color>、暴击增加<color=#ff6262>80%</color>。"
+    },
+    {
+        "Id": 980104,
+        "UpBuff": 980105,
+        "Bufflv": 4,
+        "BuffIcon": "TowerTalent_1013",
+        "BuffName": "过载暴击Ⅳ",
+        "BuffDes": "对破绽状态敌人的伤害增加<color=#ff6262>480%</color>、暴击增加<color=#ff6262>90%</color>。"
+    },
+    {
+        "Id": 980105,
+        "UpBuff": 0,
+        "Bufflv": 5,
+        "BuffIcon": "TowerTalent_1013",
+        "BuffName": "过载暴击Ⅴ",
+        "BuffDes": "对破绽状态敌人的伤害增加<color=#ff6262>600%</color>、暴击增加<color=#ff6262>100%</color>。"
+    },
+    {
+        "Id": 980106,
+        "UpBuff": 980107,
+        "Bufflv": 1,
+        "BuffIcon": "TowerTalent_1022",
+        "BuffName": "柔道高手Ⅰ",
+        "BuffDes": "对倒地状态敌人的伤害增加<color=#ff6262>30%</color>，对破绽状态敌人的削韧增加<color=#ff6262>45%</color>。"
+    },
+    {
+        "Id": 980107,
+        "UpBuff": 980108,
+        "Bufflv": 2,
+        "BuffIcon": "TowerTalent_1022",
+        "BuffName": "柔道高手Ⅱ",
+        "BuffDes": "对倒地状态敌人的伤害增加<color=#ff6262>60%</color>，对破绽状态敌人的削韧增加<color=#ff6262>50%</color>。"
+    },
+    {
+        "Id": 980108,
+        "UpBuff": 980109,
+        "Bufflv": 3,
+        "BuffIcon": "TowerTalent_1022",
+        "BuffName": "柔道高手Ⅲ",
+        "BuffDes": "对倒地状态敌人的伤害增加<color=#ff6262>90%</color>，对破绽状态敌人的削韧增加<color=#ff6262>55%</color>。"
+    },
+    {
+        "Id": 980109,
+        "UpBuff": 980110,
+        "Bufflv": 4,
+        "BuffIcon": "TowerTalent_1022",
+        "BuffName": "柔道高手Ⅳ",
+        "BuffDes": "对倒地状态敌人的伤害增加<color=#ff6262>120%</color>，对破绽状态敌人的削韧增加<color=#ff6262>60%</color>。"
+    },
+    {
+        "Id": 980110,
+        "UpBuff": 0,
+        "Bufflv": 5,
+        "BuffIcon": "TowerTalent_1022",
+        "BuffName": "柔道高手Ⅴ",
+        "BuffDes": "对倒地状态敌人的伤害增加<color=#ff6262>150%</color>，对破绽状态敌人的削韧增加<color=#ff6262>65%</color>。"
+    },
+    {
+        "Id": 980111,
+        "UpBuff": 980112,
+        "Bufflv": 1,
+        "BuffIcon": "TowerTalent_1020",
+        "BuffName": "见微知著Ⅰ",
+        "BuffDes": "削弱你命中的敌人，使其破绽暴露的时间些微增加。"
+    },
+    {
+        "Id": 980112,
+        "UpBuff": 980113,
+        "Bufflv": 2,
+        "BuffIcon": "TowerTalent_1020",
+        "BuffName": "见微知著Ⅱ",
+        "BuffDes": "削弱你命中的敌人，使其破绽暴露的时间小幅增加。"
+    },
+    {
+        "Id": 980113,
+        "UpBuff": 980114,
+        "Bufflv": 3,
+        "BuffIcon": "TowerTalent_1020",
+        "BuffName": "见微知著Ⅲ",
+        "BuffDes": "削弱你命中的敌人，使其破绽暴露的时间中幅增加。"
+    },
+    {
+        "Id": 980114,
+        "UpBuff": 980115,
+        "Bufflv": 4,
+        "BuffIcon": "TowerTalent_1020",
+        "BuffName": "见微知著Ⅳ",
+        "BuffDes": "削弱你命中的敌人，使其破绽暴露的时间大幅增加。"
+    },
+    {
+        "Id": 980115,
+        "UpBuff": 0,
+        "Bufflv": 5,
+        "BuffIcon": "TowerTalent_1020",
+        "BuffName": "见微知著Ⅴ",
+        "BuffDes": "削弱你命中的敌人，使其破绽暴露的时间巨幅增加。"
+    },
+    {
+        "Id": 980116,
+        "UpBuff": 980118,
+        "Bufflv": 1,
+        "BuffIcon": "TowerTalent_1018",
+        "BuffName": "锋芒毕露Ⅰ",
+        "BuffDes": "每次暴露破绽时，角色攻击力增加<color=#ff6262>60%</color>，持续5秒。"
+    },
+    {
+        "Id": 980118,
+        "UpBuff": 980120,
+        "Bufflv": 2,
+        "BuffIcon": "TowerTalent_1018",
+        "BuffName": "锋芒毕露Ⅱ",
+        "BuffDes": "每次暴露破绽时，使攻击力增加<color=#ff6262>120%</color>，持续5秒。"
+    },
+    {
+        "Id": 980120,
+        "UpBuff": 980122,
+        "Bufflv": 3,
+        "BuffIcon": "TowerTalent_1018",
+        "BuffName": "锋芒毕露Ⅲ",
+        "BuffDes": "每次暴露破绽时，使攻击力增加<color=#ff6262>180%</color>，持续5秒。"
+    },
+    {
+        "Id": 980122,
+        "UpBuff": 980124,
+        "Bufflv": 4,
+        "BuffIcon": "TowerTalent_1018",
+        "BuffName": "锋芒毕露Ⅳ",
+        "BuffDes": "每次暴露破绽时，使攻击力增加<color=#ff6262>240%</color>，持续5秒。"
+    },
+    {
+        "Id": 980124,
+        "UpBuff": 0,
+        "Bufflv": 5,
+        "BuffIcon": "TowerTalent_1018",
+        "BuffName": "锋芒毕露Ⅴ",
+        "BuffDes": "每次暴露破绽时，使攻击力增加<color=#ff6262>300%</color>，持续5秒。"
+    },
+    {
+        "Id": 980126,
+        "UpBuff": 980127,
+        "Bufflv": 1,
+        "BuffIcon": "TowerTalent_1017",
+        "BuffName": "愈战愈勇Ⅰ",
+        "BuffDes": "命中破绽后接下来5秒内攻击力增加<color=#ff6262>80%</color>。"
+    },
+    {
+        "Id": 980127,
+        "UpBuff": 980128,
+        "Bufflv": 2,
+        "BuffIcon": "TowerTalent_1017",
+        "BuffName": "愈战愈勇Ⅱ",
+        "BuffDes": "命中破绽后接下来5秒内攻击力增加<color=#ff6262>160%</color>。"
+    },
+    {
+        "Id": 980128,
+        "UpBuff": 980129,
+        "Bufflv": 3,
+        "BuffIcon": "TowerTalent_1017",
+        "BuffName": "愈战愈勇Ⅲ",
+        "BuffDes": "命中破绽后接下来5秒内攻击力增加<color=#ff6262>240%</color>。"
+    },
+    {
+        "Id": 980129,
+        "UpBuff": 980130,
+        "Bufflv": 4,
+        "BuffIcon": "TowerTalent_1017",
+        "BuffName": "愈战愈勇Ⅳ",
+        "BuffDes": "命中破绽后接下来5秒内攻击力增加<color=#ff6262>320%</color>。"
+    },
+    {
+        "Id": 980130,
+        "UpBuff": 0,
+        "Bufflv": 5,
+        "BuffIcon": "TowerTalent_1017",
+        "BuffName": "愈战愈勇Ⅴ",
+        "BuffDes": "命中破绽后接下来5秒内攻击力增加<color=#ff6262>400%</color>。"
+    },
+    {
+        "Id": 980136,
+        "UpBuff": 980137,
+        "Bufflv": 1,
+        "BuffIcon": "TowerTalent_1015",
+        "BuffName": "心如止水Ⅰ",
+        "BuffDes": "命中破绽后接下来5秒内共计回复相当于攻击力<color=#ff6262>12%</color>的体力值。"
+    },
+    {
+        "Id": 980137,
+        "UpBuff": 980138,
+        "Bufflv": 2,
+        "BuffIcon": "TowerTalent_1015",
+        "BuffName": "心如止水Ⅱ",
+        "BuffDes": "命中破绽后接下来5秒内共计回复相当于攻击力<color=#ff6262>24%</color>的体力值。"
+    },
+    {
+        "Id": 980138,
+        "UpBuff": 980139,
+        "Bufflv": 3,
+        "BuffIcon": "TowerTalent_1015",
+        "BuffName": "心如止水Ⅲ",
+        "BuffDes": "命中破绽后接下来5秒内共计回复相当于攻击力<color=#ff6262>60%</color>的体力值。"
+    },
+    {
+        "Id": 980139,
+        "UpBuff": 980140,
+        "Bufflv": 4,
+        "BuffIcon": "TowerTalent_1015",
+        "BuffName": "心如止水Ⅳ",
+        "BuffDes": "命中破绽后接下来10秒内共计回复相当于攻击力<color=#ff6262>110%</color>的体力值。"
+    },
+    {
+        "Id": 980140,
+        "UpBuff": 0,
+        "Bufflv": 5,
+        "BuffIcon": "TowerTalent_1015",
+        "BuffName": "心如止水Ⅴ",
+        "BuffDes": "命中破绽后接下来15秒内共计回复相当于攻击力<color=#ff6262>320%</color>的体力值。"
+    },
+    {
+        "Id": 980176,
+        "UpBuff": 980177,
+        "Bufflv": 1,
+        "BuffIcon": "TowerTalent_1011",
+        "BuffName": "斗志昂扬Ⅰ",
+        "BuffDes": "招式命中红色/黄色破绽时，恢复150/75点耐力，每2秒最多触发1次。"
+    },
+    {
+        "Id": 980177,
+        "UpBuff": 980178,
+        "Bufflv": 2,
+        "BuffIcon": "TowerTalent_1011",
+        "BuffName": "斗志昂扬Ⅱ",
+        "BuffDes": "招式命中红色/黄色破绽时，恢复200/100点耐力，每2秒最多触发1次。"
+    },
+    {
+        "Id": 980178,
+        "UpBuff": 980179,
+        "Bufflv": 3,
+        "BuffIcon": "TowerTalent_1011",
+        "BuffName": "斗志昂扬Ⅲ",
+        "BuffDes": "招式命中红色/黄色破绽时，恢复300/150点耐力，每2秒最多触发1次。"
+    },
+    {
+        "Id": 980179,
+        "UpBuff": 980180,
+        "Bufflv": 4,
+        "BuffIcon": "TowerTalent_1011",
+        "BuffName": "斗志昂扬Ⅳ",
+        "BuffDes": "招式命中红色/黄色破绽时，恢复450/225点耐力，每2秒最多触发1次。"
+    },
+    {
+        "Id": 980180,
+        "UpBuff": 0,
+        "Bufflv": 5,
+        "BuffIcon": "TowerTalent_1011",
+        "BuffName": "斗志昂扬Ⅴ",
+        "BuffDes": "招式命中红色/黄色破绽时，恢复1000/500点耐力，每2秒最多触发1次。"
+    },
+    {
+        "Id": 980182,
+        "UpBuff": 980183,
+        "Bufflv": 1,
+        "BuffIcon": "TowerTalent_1012",
+        "BuffName": "以战养战Ⅰ",
+        "BuffDes": "角色体力值在80%以上时，攻击力增加<color=#ff6262>40%</color>。"
+    },
+    {
+        "Id": 980183,
+        "UpBuff": 980184,
+        "Bufflv": 2,
+        "BuffIcon": "TowerTalent_1012",
+        "BuffName": "以战养战Ⅱ",
+        "BuffDes": "角色体力值在80%以上时，攻击力增加<color=#ff6262>80%</color>。"
+    },
+    {
+        "Id": 980184,
+        "UpBuff": 980185,
+        "Bufflv": 3,
+        "BuffIcon": "TowerTalent_1012",
+        "BuffName": "以战养战Ⅲ",
+        "BuffDes": "角色体力值在80%以上时，攻击力增加<color=#ff6262>120%</color>。"
+    },
+    {
+        "Id": 980185,
+        "UpBuff": 980186,
+        "Bufflv": 4,
+        "BuffIcon": "TowerTalent_1012",
+        "BuffName": "以战养战Ⅳ",
+        "BuffDes": "角色体力值在80%以上时，攻击力增加<color=#ff6262>160%</color>。"
+    },
+    {
+        "Id": 980186,
+        "UpBuff": 0,
+        "Bufflv": 5,
+        "BuffIcon": "TowerTalent_1012",
+        "BuffName": "以战养战Ⅴ",
+        "BuffDes": "角色体力值在80%以上时，攻击力增加<color=#ff6262>200%</color>。"
+    }
+]

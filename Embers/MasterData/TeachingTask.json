@@ -10,7 +10,11 @@
         "SkillChargeTime": [
             5.0
         ],
-        "FailResetTime": 1.0
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按普攻"
+        ],
+        "FailAddBuff": []
     },
     {
         "Id": 3160701,
@@ -23,7 +27,11 @@
         "SkillChargeTime": [
             0.0
         ],
-        "FailResetTime": 1.0
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能一"
+        ],
+        "FailAddBuff": []
     },
     {
         "Id": 3160702,
@@ -39,7 +47,12 @@
             0.0,
             5.0
         ],
-        "FailResetTime": 1.0
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能一",
+            "长按普攻"
+        ],
+        "FailAddBuff": []
     },
     {
         "Id": 3160703,
@@ -52,7 +65,11 @@
         "SkillChargeTime": [
             0.0
         ],
-        "FailResetTime": 1.0
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能三"
+        ],
+        "FailAddBuff": []
     },
     {
         "Id": 3160704,
@@ -68,7 +85,12 @@
             0.0,
             0.0
         ],
-        "FailResetTime": 1.0
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能三",
+            "点击技能三"
+        ],
+        "FailAddBuff": []
     },
     {
         "Id": 3170400,
@@ -93,7 +115,15 @@
             0.0,
             0.0
         ],
-        "FailResetTime": 1.0
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻",
+            "点击普攻",
+            "点击普攻",
+            "点击普攻"
+        ],
+        "FailAddBuff": []
     },
     {
         "Id": 3170401,
@@ -115,7 +145,14 @@
             0.0,
             0.0
         ],
-        "FailResetTime": 1.0
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按普攻",
+            "释放普攻变招",
+            "点击普攻",
+            "点击普攻"
+        ],
+        "FailAddBuff": []
     },
     {
         "Id": 3170402,
@@ -134,7 +171,13 @@
             0.0,
             0.0
         ],
-        "FailResetTime": 1.0
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能一",
+            "点击技能一",
+            "点击技能一"
+        ],
+        "FailAddBuff": []
     },
     {
         "Id": 3170403,
@@ -174,6 +217,2052 @@
             0.0,
             0.0
         ],
-        "FailResetTime": 1.0
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能一",
+            "点击普攻",
+            "点击普攻",
+            "点击技能一",
+            "点击普攻",
+            "点击技能一",
+            "点击普攻",
+            "点击技能一",
+            "点击普攻",
+            "点击技能一"
+        ],
+        "FailAddBuff": []
+    },
+    {
+        "Id": 3170100,
+        "ComboSkillID": [
+            170101,
+            170102,
+            170103
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻",
+            "点击普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3170101,
+        "ComboSkillID": [
+            170101,
+            1701011,
+            1701022,
+            1701033
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按普攻",
+            " ",
+            "长按普攻",
+            "长按普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3170102,
+        "ComboSkillID": [
+            170112,
+            170111
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能一",
+            "拖动技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3170103,
+        "ComboSkillID": [
+            170111,
+            170100,
+            170112,
+            170100
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "拖动技能一",
+            "点击普攻",
+            "点击技能一",
+            "点击普攻",
+            ""
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3170104,
+        "ComboSkillID": [
+            170101,
+            1701011,
+            1701022,
+            1701033,
+            170123
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按普攻",
+            " ",
+            "长按普攻",
+            "长按普攻",
+            "点击技能二"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3170105,
+        "ComboSkillID": [
+            170131,
+            170123
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            60.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按技能三",
+            "点击技能二"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3170106,
+        "ComboSkillID": [
+            170132
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能三"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3170107,
+        "ComboSkillID": [
+            170131
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            40.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按技能三"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100800,
+        "ComboSkillID": [
+            100801,
+            100802,
+            100803,
+            100804
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            5.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻",
+            "点击普攻",
+            "点击普攻",
+            "点击普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100801,
+        "ComboSkillID": [
+            100821
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            40.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按技能二"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100802,
+        "ComboSkillID": [
+            100801,
+            100802,
+            100803,
+            100804
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            5.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻",
+            "点击普攻",
+            "点击普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100803,
+        "ComboSkillID": [
+            100831,
+            100812,
+            100804,
+            100824
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            5.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能三",
+            "点击技能一",
+            "点击普攻",
+            "点击技能二"
+        ],
+        "FailAddBuff": [
+            2100096,
+            100800041
+        ]
+    },
+    {
+        "Id": 3100804,
+        "ComboSkillID": [
+            100832,
+            100812,
+            100804,
+            100824,
+            100833
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            5.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能三",
+            "点击技能一",
+            "点击普攻",
+            "点击技能二",
+            "点击技能三"
+        ],
+        "FailAddBuff": [
+            2100096,
+            100800042
+        ]
+    },
+    {
+        "Id": 3100805,
+        "ComboSkillID": [
+            100834
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能三"
+        ],
+        "FailAddBuff": [
+            2100096,
+            100800043
+        ]
+    },
+    {
+        "Id": 3100400,
+        "ComboSkillID": [
+            100402,
+            100403,
+            100404,
+            100405
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻",
+            "点击普攻",
+            "点击普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100401,
+        "ComboSkillID": [
+            100402,
+            100403,
+            100404,
+            100405,
+            100412
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻",
+            "点击普攻",
+            "点击普攻",
+            "点击技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100402,
+        "ComboSkillID": [
+            100402,
+            100403,
+            100404
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻",
+            "点击普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100403,
+        "ComboSkillID": [
+            100411,
+            100403,
+            100404,
+            100412
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能一",
+            "点击普攻",
+            "点击普攻",
+            "点击技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100404,
+        "ComboSkillID": [
+            100402,
+            100411,
+            100403,
+            100404,
+            100412
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击技能一",
+            "点击普攻",
+            "点击普攻",
+            "点击技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100405,
+        "ComboSkillID": [
+            100411,
+            100414,
+            100414,
+            100414,
+            100414,
+            100414
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能一",
+            "点击技能一",
+            "点击技能一",
+            "点击技能一",
+            "点击技能一",
+            "点击技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100406,
+        "ComboSkillID": [
+            100421,
+            100404,
+            100412
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能二",
+            "点击普攻",
+            "点击技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100407,
+        "ComboSkillID": [
+            100401
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            6.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100408,
+        "ComboSkillID": [
+            100401,
+            100413
+        ],
+        "TimeOutFail": [
+            -1.0,
+            -1.0
+        ],
+        "SkillChargeTime": [
+            6.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按普攻",
+            "点击技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100409,
+        "ComboSkillID": [
+            100401,
+            100422,
+            100404,
+            100412
+        ],
+        "TimeOutFail": [
+            -1.0,
+            -1.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            6.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按普攻",
+            "点击技能二",
+            "点击普攻",
+            "点击技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100410,
+        "ComboSkillID": [
+            100431,
+            100401,
+            100413,
+            100413,
+            100413,
+            100413
+        ],
+        "TimeOutFail": [
+            -1.0,
+            -1.0,
+            -1.0,
+            3.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            6.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能三",
+            "长按普攻",
+            "点击技能一",
+            "点击技能一",
+            "点击技能一",
+            "点击技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100900,
+        "ComboSkillID": [
+            100901,
+            100902,
+            100903,
+            100904
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻",
+            "点击普攻",
+            "点击普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100901,
+        "ComboSkillID": [
+            100911
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100902,
+        "ComboSkillID": [
+            100941,
+            100923,
+            100923,
+            100923,
+            100942
+        ],
+        "TimeOutFail": [
+            -1.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击奥义",
+            "点击技能二",
+            "点击技能二",
+            "点击技能二",
+            "点击奥义"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3100903,
+        "ComboSkillID": [
+            100923,
+            100935
+        ],
+        "TimeOutFail": [
+            -1.0,
+            11.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能二",
+            "点击技能三"
+        ],
+        "FailAddBuff": [
+            2100096,
+            2100910
+        ]
+    },
+    {
+        "Id": 3100904,
+        "ComboSkillID": [
+            100923,
+            100933,
+            100901,
+            100902,
+            100903,
+            100904
+        ],
+        "TimeOutFail": [
+            -1.0,
+            11.0,
+            15.0,
+            3.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能二",
+            "点击技能三",
+            "点击普攻",
+            "点击普攻",
+            "点击普攻",
+            "点击普攻"
+        ],
+        "FailAddBuff": [
+            2100096,
+            2100910
+        ]
+    },
+    {
+        "Id": 3110401,
+        "ComboSkillID": [
+            110401,
+            110400
+        ],
+        "TimeOutFail": [
+            -1.0,
+            -1.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "按住普攻",
+            "释放普攻变招"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3110402,
+        "ComboSkillID": [
+            110411
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            15.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3110403,
+        "ComboSkillID": [
+            110421
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            6.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按技能二"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3110404,
+        "ComboSkillID": [
+            110421,
+            110401,
+            110400,
+            110432
+        ],
+        "TimeOutFail": [
+            -1.0,
+            8.0,
+            -1.0,
+            8.0
+        ],
+        "SkillChargeTime": [
+            6.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按技能二",
+            "按住普攻",
+            "释放普攻变招",
+            "点击技能三"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101500,
+        "ComboSkillID": [
+            101501,
+            101502,
+            101503,
+            101504,
+            101512
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            3.0,
+            6.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻",
+            "点击普攻",
+            "点击普攻",
+            "点击技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101501,
+        "ComboSkillID": [
+            101521,
+            101512,
+            101522
+        ],
+        "TimeOutFail": [
+            -1.0,
+            8.0,
+            8.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能二",
+            "点击技能一",
+            "点击技能二"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101502,
+        "ComboSkillID": [
+            101501,
+            101500
+        ],
+        "TimeOutFail": [
+            -1.0,
+            -1.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按普攻",
+            "释放普攻变招"
+        ],
+        "FailAddBuff": [
+            2100096,
+            2101508
+        ]
+    },
+    {
+        "Id": 3101503,
+        "ComboSkillID": [
+            101531,
+            101512,
+            101522
+        ],
+        "TimeOutFail": [
+            -1.0,
+            8.0,
+            8.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能三",
+            "点击技能一",
+            "点击技能二"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101504,
+        "ComboSkillID": [
+            101532,
+            101512,
+            101522,
+            101512,
+            101522
+        ],
+        "TimeOutFail": [
+            -1.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能三",
+            "点击技能一",
+            "点击技能二",
+            "点击技能一",
+            "点击技能二"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101000,
+        "ComboSkillID": [
+            101001,
+            101002,
+            101003
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻",
+            "点击普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101001,
+        "ComboSkillID": [
+            101051,
+            101004,
+            101003
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击闪避",
+            "点击普攻",
+            "点击普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101002,
+        "ComboSkillID": [
+            101011
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            3.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101003,
+        "ComboSkillID": [
+            101021,
+            101022,
+            101023
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能二",
+            "点击技能二",
+            "点击技能二"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101004,
+        "ComboSkillID": [
+            101031,
+            101013
+        ],
+        "TimeOutFail": [
+            -1.0,
+            -1.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            25.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能三",
+            "长按技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101005,
+        "ComboSkillID": [
+            101021,
+            101051,
+            101004,
+            101022,
+            101011,
+            101023
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            3.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能二",
+            "点击闪避",
+            "点击普攻",
+            "点击技能二",
+            "长按技能一",
+            "点击技能二"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101006,
+        "ComboSkillID": [
+            101031,
+            101051,
+            101004,
+            101013
+        ],
+        "TimeOutFail": [
+            -1.0,
+            5.0,
+            5.0,
+            5.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能三",
+            "点击闪避",
+            "点击普攻",
+            "点击技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101200,
+        "ComboSkillID": [
+            101201,
+            101202
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101201,
+        "ComboSkillID": [
+            101200,
+            101221
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            2.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按普攻",
+            "点击技能二"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101202,
+        "ComboSkillID": [
+            101200,
+            101221,
+            101252,
+            101222,
+            101204
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            2.0,
+            2.0,
+            2.0
+        ],
+        "SkillChargeTime": [
+            2.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按普攻",
+            "点击技能二",
+            "点击闪避",
+            "点击技能二",
+            "点击普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101203,
+        "ComboSkillID": [
+            101212
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            3.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101204,
+        "ComboSkillID": [
+            101211,
+            101221
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点按技能一",
+            "点击技能二"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101205,
+        "ComboSkillID": [
+            101211,
+            101252,
+            101222,
+            101213
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            2.0,
+            2.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点按技能一     命中破绽",
+            "点击闪避",
+            "点击技能二",
+            "点击技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101206,
+        "ComboSkillID": [
+            101211,
+            101221,
+            101222
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            5.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            60.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能一",
+            "点击技能二",
+            "长按技能二"
+        ],
+        "FailAddBuff": [
+            2100096,
+            2101205
+        ]
+    },
+    {
+        "Id": 3101207,
+        "ComboSkillID": [
+            101211,
+            101221,
+            101222,
+            101213
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            2.0,
+            2.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能一",
+            "点击技能二",
+            "点击技能二",
+            "点击技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101208,
+        "ComboSkillID": [
+            101231
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            75.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按技能三"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 31012060,
+        "ComboSkillID": [
+            101211,
+            101221,
+            101222
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            5.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            60.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能一",
+            "点击技能二",
+            "长按技能二"
+        ],
+        "FailAddBuff": [
+            2100096,
+            2101205
+        ]
+    },
+    {
+        "Id": 3101100,
+        "ComboSkillID": [
+            101101,
+            101102,
+            101103
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            10.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻",
+            "长按普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101101,
+        "ComboSkillID": [
+            101101,
+            101102,
+            101103,
+            101104,
+            101105
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            10.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻",
+            "长按普攻",
+            "点击普攻",
+            "点击普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101400,
+        "ComboSkillID": [
+            101401,
+            101402,
+            101403
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻",
+            "点击普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101401,
+        "ComboSkillID": [
+            101421,
+            101401,
+            101422,
+            101402,
+            101423
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能二",
+            "点击普攻",
+            "点击技能二",
+            "点击普攻",
+            "点击技能二"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101402,
+        "ComboSkillID": [
+            101411
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            70.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按技能一"
+        ],
+        "FailAddBuff": [
+            2100096,
+            2101205,
+            101400,
+            2101403
+        ]
+    },
+    {
+        "Id": 3101403,
+        "ComboSkillID": [
+            101401,
+            101413
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101404,
+        "ComboSkillID": [
+            101401,
+            101432
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击技能三"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101700,
+        "ComboSkillID": [
+            101700
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101701,
+        "ComboSkillID": [
+            101711,
+            1017000,
+            101712
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能一",
+            "滑行",
+            "点击技能一"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101702,
+        "ComboSkillID": [
+            101721,
+            101722,
+            101714,
+            1017000,
+            101732
+        ],
+        "TimeOutFail": [
+            -1.0,
+            5.0,
+            3.0,
+            -1.0,
+            5.0
+        ],
+        "SkillChargeTime": [
+            70.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "长按技能二",
+            "进入架势",
+            "点击技能一",
+            "滑行",
+            "点击技能三"
+        ],
+        "FailAddBuff": [
+            2100096,
+            2101701
+        ]
+    },
+    {
+        "Id": 3101300,
+        "ComboSkillID": [
+            101301,
+            101302,
+            101303
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻",
+            "点击普攻"
+        ],
+        "FailAddBuff": [
+            2100096
+        ]
+    },
+    {
+        "Id": 3101301,
+        "ComboSkillID": [
+            101301,
+            101302,
+            101303,
+            101322
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            5.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻",
+            "点击普攻",
+            "点击技能二"
+        ],
+        "FailAddBuff": [
+            2100096,
+            2101306
+        ]
+    },
+    {
+        "Id": 3101302,
+        "ComboSkillID": [
+            101301,
+            101302,
+            101303,
+            101323
+        ],
+        "TimeOutFail": [
+            7.0,
+            3.0,
+            3.0,
+            5.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击普攻",
+            "点击普攻",
+            "点击普攻",
+            "点击技能二"
+        ],
+        "FailAddBuff": [
+            2100096,
+            2101307
+        ]
+    },
+    {
+        "Id": 3101303,
+        "ComboSkillID": [
+            101321,
+            101303,
+            101322,
+            101303,
+            101323
+        ],
+        "TimeOutFail": [
+            -1.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能二",
+            "点击普攻",
+            "点击技能二",
+            "点击普攻",
+            "点击技能二"
+        ],
+        "FailAddBuff": [
+            2100096,
+            2101306
+        ]
+    },
+    {
+        "Id": 3101304,
+        "ComboSkillID": [
+            101331,
+            101332,
+            101332,
+            101332
+        ],
+        "TimeOutFail": [
+            -1.0,
+            5.0,
+            5.0,
+            5.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能三",
+            "点击技能三",
+            "点击技能三",
+            "点击技能三"
+        ],
+        "FailAddBuff": [
+            2100096,
+            2101304
+        ]
+    },
+    {
+        "Id": 3101305,
+        "ComboSkillID": [
+            101323,
+            101303,
+            101322,
+            101303,
+            101314
+        ],
+        "TimeOutFail": [
+            4.0,
+            3.0,
+            4.0,
+            3.0,
+            4.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0,
+        "TaskText": [
+            "点击技能二",
+            "点击普攻",
+            "点击技能二",
+            "点击普攻",
+            "点击技能一"
+        ],
+        "FailAddBuff": [
+            2100096,
+            1013502,
+            10135021,
+            2101309
+        ]
     }
 ]

@@ -2,323 +2,516 @@
     {
         "Id": 1,
         "Desc": "正常",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": false,
         "ImmuneDamage": false,
         "ImmuneCollider": false,
-        "ImmuneHostileHit": false,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [],
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 2,
         "Desc": "伤害免疫",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": false,
         "ImmuneDamage": true,
         "ImmuneCollider": false,
-        "ImmuneHostileHit": false,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [],
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 3,
         "Desc": "无敌（角色无敌帧）",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": true,
         "ImmuneDamage": true,
         "ImmuneCollider": false,
-        "ImmuneHostileHit": true,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [
+            3
+        ],
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": true
+        "ImmuneHitSfx": true,
+        "HideIndicatorRing": false
     },
     {
         "Id": 4,
         "Desc": "不可选中(不被敌方锁定)",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": false,
         "ImmuneDamage": true,
         "ImmuneCollider": true,
-        "ImmuneHostileHit": true,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ImmuneHit": [
+            3
+        ],
         "ImmuneLock": true,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 5,
         "Desc": "绝对霸体",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": false,
         "ImmuneDamage": false,
         "ImmuneCollider": false,
-        "ImmuneHostileHit": true,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [
+            3
+        ],
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 6,
         "Desc": "不可选中(被敌方单位锁定)",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": false,
         "ImmuneDamage": true,
         "ImmuneCollider": false,
-        "ImmuneHostileHit": true,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [
+            3
+        ],
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 7,
         "Desc": "角色击飞受击保护",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": false,
         "ImmuneDamage": true,
         "ImmuneCollider": false,
-        "ImmuneHostileHit": true,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [
+            3
+        ],
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": true
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 8,
         "Desc": "免疫碰撞不免疫受击（怪物冲刺）",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": false,
         "ImmuneDamage": false,
         "ImmuneCollider": true,
-        "ImmuneHostileHit": false,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ImmuneHit": [],
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 9,
         "Desc": "霸体受击保护",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": false,
         "ImmuneDamage": false,
         "ImmuneCollider": false,
-        "ImmuneHostileHit": true,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [
+            3
+        ],
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 10,
         "Desc": "关闭碰撞盒",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": false,
         "ImmuneDamage": true,
         "ImmuneCollider": true,
-        "ImmuneHostileHit": true,
-        "ImmuneNonHostileHit": true,
+        "ImmuneRelationCollider": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ImmuneHit": [
+            1,
+            2,
+            3,
+            4
+        ],
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 11,
         "Desc": "大招无敌免疫碰撞",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": true,
         "ImmuneDamage": true,
         "ImmuneCollider": true,
-        "ImmuneHostileHit": true,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ImmuneHit": [
+            3
+        ],
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": true
+        "ImmuneHitSfx": true,
+        "HideIndicatorRing": false
     },
     {
         "Id": 12,
         "Desc": "怪物击中后不可选中",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": false,
         "ImmuneDamage": true,
         "ImmuneCollider": true,
-        "ImmuneHostileHit": true,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ImmuneHit": [
+            3
+        ],
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 13,
         "Desc": "免疫受击",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": false,
         "ImmuneDamage": true,
         "ImmuneCollider": false,
-        "ImmuneHostileHit": true,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [
+            3
+        ],
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": true
+        "ImmuneHitSfx": true,
+        "HideIndicatorRing": false
     },
     {
         "Id": 14,
         "Desc": "死亡",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": true,
         "ImmuneAbnormalStateIncrease": true,
         "ImmuneDamage": true,
         "ImmuneCollider": true,
-        "ImmuneHostileHit": true,
-        "ImmuneNonHostileHit": true,
+        "ImmuneRelationCollider": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ImmuneHit": [
+            3
+        ],
         "ImmuneLock": true,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 15,
         "Desc": "免锁",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": false,
         "ImmuneDamage": false,
         "ImmuneCollider": false,
-        "ImmuneHostileHit": false,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [],
         "ImmuneLock": true,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 16,
         "Desc": "关闭碰撞盒和锁定",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": false,
         "ImmuneDamage": true,
         "ImmuneCollider": true,
-        "ImmuneHostileHit": true,
-        "ImmuneNonHostileHit": true,
+        "ImmuneRelationCollider": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ImmuneHit": [
+            1,
+            2,
+            3,
+            4
+        ],
         "ImmuneLock": true,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 17,
         "Desc": "锁血",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": false,
         "ImmuneDamage": false,
         "ImmuneCollider": false,
-        "ImmuneHostileHit": false,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [],
         "ImmuneLock": false,
         "LockHp": true,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 18,
         "Desc": "无敌,有受击，免疫状态",
-        "ImmuneState": true,
+        "ImmuneState": 30,
         "ImmuneAbnormalState": true,
         "ImmuneAbnormalStateIncrease": true,
         "ImmuneDamage": true,
         "ImmuneCollider": true,
-        "ImmuneHostileHit": false,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ImmuneHit": [],
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": true
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 19,
         "Desc": "霸体，正常受击",
-        "ImmuneState": true,
+        "ImmuneState": 30,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": false,
         "ImmuneDamage": false,
         "ImmuneCollider": false,
-        "ImmuneHostileHit": false,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [],
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 20,
         "Desc": "幽灵",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": true,
         "ImmuneAbnormalStateIncrease": true,
         "ImmuneDamage": true,
         "ImmuneCollider": true,
-        "ImmuneHostileHit": true,
-        "ImmuneNonHostileHit": true,
+        "ImmuneRelationCollider": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ImmuneHit": [
+            1,
+            2,
+            3,
+            4
+        ],
         "ImmuneLock": true,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 21,
         "Desc": "濒死倒地",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": true,
         "ImmuneAbnormalStateIncrease": true,
         "ImmuneDamage": false,
         "ImmuneCollider": true,
-        "ImmuneHostileHit": false,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ImmuneHit": [],
         "ImmuneLock": true,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 22,
         "Desc": "无敌,不受击",
-        "ImmuneState": true,
+        "ImmuneState": 30,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": false,
         "ImmuneDamage": false,
         "ImmuneCollider": false,
-        "ImmuneHostileHit": true,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [
+            3
+        ],
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     },
     {
         "Id": 33,
         "Desc": "无敌（角色触发完美闪避后的无敌帧）",
-        "ImmuneState": false,
+        "ImmuneState": 0,
         "ImmuneAbnormalState": false,
         "ImmuneAbnormalStateIncrease": true,
         "ImmuneDamage": true,
         "ImmuneCollider": false,
-        "ImmuneHostileHit": true,
-        "ImmuneNonHostileHit": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [
+            3
+        ],
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
+    },
+    {
+        "Id": 34,
+        "Desc": "免疫友方碰撞",
+        "ImmuneState": 0,
+        "ImmuneAbnormalState": false,
+        "ImmuneAbnormalStateIncrease": false,
+        "ImmuneDamage": false,
+        "ImmuneCollider": false,
+        "ImmuneRelationCollider": [
+            1,
+            2,
+            4
+        ],
+        "ImmuneHit": [],
+        "ImmuneLock": false,
+        "LockHp": false,
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
+    },
+    {
+        "Id": 35,
+        "Desc": "忽略攻击者子弹命中特效",
+        "ImmuneState": 0,
+        "ImmuneAbnormalState": false,
+        "ImmuneAbnormalStateIncrease": false,
+        "ImmuneDamage": false,
+        "ImmuneCollider": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [],
+        "ImmuneLock": false,
+        "LockHp": false,
+        "ImmuneHitSfx": true,
+        "HideIndicatorRing": false
+    },
+    {
+        "Id": 36,
+        "Desc": "效果等同于3",
+        "ImmuneState": 0,
+        "ImmuneAbnormalState": false,
+        "ImmuneAbnormalStateIncrease": true,
+        "ImmuneDamage": true,
+        "ImmuneCollider": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [
+            3
+        ],
+        "ImmuneLock": false,
+        "LockHp": false,
+        "ImmuneHitSfx": true,
+        "HideIndicatorRing": false
+    },
+    {
+        "Id": 37,
+        "Desc": "无敌,有受击,免疫状态,不免疫碰撞",
+        "ImmuneState": 30,
+        "ImmuneAbnormalState": true,
+        "ImmuneAbnormalStateIncrease": true,
+        "ImmuneDamage": true,
+        "ImmuneCollider": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [],
+        "ImmuneLock": false,
+        "LockHp": false,
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
+    },
+    {
+        "Id": 38,
+        "Desc": "只免疫异常状态进度增长",
+        "ImmuneState": 0,
+        "ImmuneAbnormalState": false,
+        "ImmuneAbnormalStateIncrease": true,
+        "ImmuneDamage": false,
+        "ImmuneCollider": false,
+        "ImmuneRelationCollider": [],
+        "ImmuneHit": [],
+        "ImmuneLock": false,
+        "LockHp": false,
+        "ImmuneHitSfx": false,
+        "HideIndicatorRing": false
     }
 ]
