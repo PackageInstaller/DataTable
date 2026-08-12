@@ -1,0 +1,542 @@
+[
+ {
+  "missionType": 1,
+  "missionTypeName": "デイリーログイン回数"
+ },
+ {
+  "missionType": 2,
+  "missionTypeName": "時間帯ログイン回数"
+ },
+ {
+  "missionType": 3,
+  "missionTypeName": "ユーザレベル数"
+ },
+ {
+  "missionType": 4,
+  "missionTypeName": "連続ログイン回数"
+ },
+ {
+  "missionType": 11,
+  "missionTypeName": "指定アイテム入手"
+ },
+ {
+  "missionType": 12,
+  "missionTypeName": "指定キャラ入手"
+ },
+ {
+  "missionType": 13,
+  "missionTypeName": "指定戦神入手"
+ },
+ {
+  "missionType": 14,
+  "missionTypeName": "指定装備入手"
+ },
+ {
+  "missionType": 101,
+  "missionTypeName": "キャラ強化回数"
+ },
+ {
+  "missionType": 102,
+  "missionTypeName": "キャラ限界突破回数"
+ },
+ {
+  "missionType": 103,
+  "missionTypeName": "キャラアビリティアップ回数"
+ },
+ {
+  "missionType": 104,
+  "missionTypeName": "キャラレベル達成回数"
+ },
+ {
+  "missionType": 105,
+  "missionTypeName": "キャラ限界突破達成回数"
+ },
+ {
+  "missionType": 106,
+  "missionTypeName": "キャラアビリティレベル達成回数"
+ },
+ {
+  "missionType": 107,
+  "missionTypeName": "キャラ覚醒回数"
+ },
+ {
+  "missionType": 108,
+  "missionTypeName": "キャラ覚醒ツリー取得回数"
+ },
+ {
+  "missionType": 109,
+  "missionTypeName": "キャラレベル達成回数：レアリティ指定"
+ },
+ {
+  "missionType": 110,
+  "missionTypeName": "キャラ限界突破達成回数：レアリティ指定"
+ },
+ {
+  "missionType": 111,
+  "missionTypeName": "キャラアビリティレベル達成回数：レアリティ指定"
+ },
+ {
+  "missionType": 112,
+  "missionTypeName": "キャラ覚醒ツリーページ完了数"
+ },
+ {
+  "missionType": 113,
+  "missionTypeName": "キャラ覚醒ツリーページ完了数：レアリティ指定"
+ },
+ {
+  "missionType": 193,
+  "missionTypeName": "キャラ30レベル達成回数"
+ },
+ {
+  "missionType": 194,
+  "missionTypeName": "キャラ40レベル達成回数"
+ },
+ {
+  "missionType": 195,
+  "missionTypeName": "キャラ50レベル達成回数"
+ },
+ {
+  "missionType": 196,
+  "missionTypeName": "キャラ60レベル達成回数"
+ },
+ {
+  "missionType": 197,
+  "missionTypeName": "キャラ70レベル達成回数"
+ },
+ {
+  "missionType": 198,
+  "missionTypeName": "キャラ80レベル達成回数"
+ },
+ {
+  "missionType": 201,
+  "missionTypeName": "戦神強化回数"
+ },
+ {
+  "missionType": 202,
+  "missionTypeName": "戦神限界突破回数"
+ },
+ {
+  "missionType": 203,
+  "missionTypeName": "戦神スキルアップ回数"
+ },
+ {
+  "missionType": 204,
+  "missionTypeName": "戦神フィールド効果アップ回数"
+ },
+ {
+  "missionType": 205,
+  "missionTypeName": "戦神レベル達成回数"
+ },
+ {
+  "missionType": 206,
+  "missionTypeName": "戦神限界突破達成回数"
+ },
+ {
+  "missionType": 207,
+  "missionTypeName": "戦神スキルレベル達成回数"
+ },
+ {
+  "missionType": 208,
+  "missionTypeName": "戦神フィールド効果レベル達成回数"
+ },
+ {
+  "missionType": 209,
+  "missionTypeName": "戦神レベル達成回数：レアリティ指定"
+ },
+ {
+  "missionType": 210,
+  "missionTypeName": "戦神限界突破達成回数：レアリティ指定"
+ },
+ {
+  "missionType": 211,
+  "missionTypeName": "戦神スキルレベル達成回数：レアリティ指定"
+ },
+ {
+  "missionType": 293,
+  "missionTypeName": "戦神30レベル達成回数"
+ },
+ {
+  "missionType": 294,
+  "missionTypeName": "戦神40レベル達成回数"
+ },
+ {
+  "missionType": 295,
+  "missionTypeName": "戦神50レベル達成回数"
+ },
+ {
+  "missionType": 296,
+  "missionTypeName": "戦神60レベル達成回数"
+ },
+ {
+  "missionType": 297,
+  "missionTypeName": "戦神70レベル達成回数"
+ },
+ {
+  "missionType": 298,
+  "missionTypeName": "戦神80レベル達成回数"
+ },
+ {
+  "missionType": 301,
+  "missionTypeName": "装備強化回数"
+ },
+ {
+  "missionType": 302,
+  "missionTypeName": "装備限界突破回数"
+ },
+ {
+  "missionType": 303,
+  "missionTypeName": "装備レベル達成回数"
+ },
+ {
+  "missionType": 304,
+  "missionTypeName": "装備限界突破達成回数"
+ },
+ {
+  "missionType": 305,
+  "missionTypeName": "装備進化回数：装備ID指定"
+ },
+ {
+  "missionType": 306,
+  "missionTypeName": "装備進化回数：レアリティ指定"
+ },
+ {
+  "missionType": 393,
+  "missionTypeName": "装備30レベル達成回数"
+ },
+ {
+  "missionType": 394,
+  "missionTypeName": "装備40レベル達成回数"
+ },
+ {
+  "missionType": 395,
+  "missionTypeName": "装備50レベル達成回数"
+ },
+ {
+  "missionType": 396,
+  "missionTypeName": "装備60レベル達成回数"
+ },
+ {
+  "missionType": 397,
+  "missionTypeName": "装備70レベル達成回数"
+ },
+ {
+  "missionType": 398,
+  "missionTypeName": "装備80レベル達成回数"
+ },
+ {
+  "missionType": 401,
+  "missionTypeName": "キャラ図鑑数"
+ },
+ {
+  "missionType": 402,
+  "missionTypeName": "戦神図鑑数"
+ },
+ {
+  "missionType": 403,
+  "missionTypeName": "装備図鑑数"
+ },
+ {
+  "missionType": 501,
+  "missionTypeName": "クエストステージ挑戦回数"
+ },
+ {
+  "missionType": 502,
+  "missionTypeName": "クエストステージクリア回数：ステージID指定"
+ },
+ {
+  "missionType": 503,
+  "missionTypeName": "クエストミッション達成数"
+ },
+ {
+  "missionType": 504,
+  "missionTypeName": "クエストミッションコンプリート数"
+ },
+ {
+  "missionType": 505,
+  "missionTypeName": "クエストステージクリア回数：エリアID指定"
+ },
+ {
+  "missionType": 506,
+  "missionTypeName": "クエストステージクリア回数：ワールドID指定"
+ },
+ {
+  "missionType": 507,
+  "missionTypeName": "クエスト編成：属性指定"
+ },
+ {
+  "missionType": 508,
+  "missionTypeName": "クエスト編成：武器種指定"
+ },
+ {
+  "missionType": 509,
+  "missionTypeName": "クエストステージ生存ターン"
+ },
+ {
+  "missionType": 510,
+  "missionTypeName": "クエストステージ累計ダメージ"
+ },
+ {
+  "missionType": 511,
+  "missionTypeName": "クエストステージ最大コンボ数"
+ },
+ {
+  "missionType": 512,
+  "missionTypeName": "クエストステージクリア回数：ステージID指定（合計）"
+ },
+ {
+  "missionType": 513,
+  "missionTypeName": "クエストベストダメージ"
+ },
+ {
+  "missionType": 601,
+  "missionTypeName": "タワーエリア挑戦数"
+ },
+ {
+  "missionType": 602,
+  "missionTypeName": "タワーエリアクリア数"
+ },
+ {
+  "missionType": 603,
+  "missionTypeName": "タワーステージ挑戦回数"
+ },
+ {
+  "missionType": 604,
+  "missionTypeName": "タワーステージクリア回数"
+ },
+ {
+  "missionType": 701,
+  "missionTypeName": "レイド自発ステージ挑戦回数"
+ },
+ {
+  "missionType": 702,
+  "missionTypeName": "レイド自発ステージクリア回数"
+ },
+ {
+  "missionType": 703,
+  "missionTypeName": "レイド救援参戦回数"
+ },
+ {
+  "missionType": 704,
+  "missionTypeName": "レイド救援依頼回数"
+ },
+ {
+  "missionType": 705,
+  "missionTypeName": "レイドステージクリア回数"
+ },
+ {
+  "missionType": 706,
+  "missionTypeName": "レイドステージMVP回数"
+ },
+ {
+  "missionType": 707,
+  "missionTypeName": "レイドステージで総ダメージ○○以上を出す"
+ },
+ {
+  "missionType": 801,
+  "missionTypeName": "フレンド申請回数"
+ },
+ {
+  "missionType": 802,
+  "missionTypeName": "フレンド総数"
+ },
+ {
+  "missionType": 803,
+  "missionTypeName": "ゲスト戦神設定"
+ },
+ {
+  "missionType": 901,
+  "missionTypeName": "ミッションクリア回数"
+ },
+ {
+  "missionType": 902,
+  "missionTypeName": "ガチャ回数"
+ },
+ {
+  "missionType": 903,
+  "missionTypeName": "ショップ購入"
+ },
+ {
+  "missionType": 904,
+  "missionTypeName": "交換所購入"
+ },
+ {
+  "missionType": 905,
+  "missionTypeName": "ピース召喚"
+ },
+ {
+  "missionType": 906,
+  "missionTypeName": "ADV読了"
+ },
+ {
+  "missionType": 907,
+  "missionTypeName": "ミッション詳細クリア回数"
+ },
+ {
+  "missionType": 908,
+  "missionTypeName": "AP消費ミッション"
+ },
+ {
+  "missionType": 909,
+  "missionTypeName": "BP消費ミッション"
+ },
+ {
+  "missionType": 910,
+  "missionTypeName": "ピース召喚"
+ },
+ {
+  "missionType": 911,
+  "missionTypeName": "交換所購入（ExchangeGroupIdで判定）"
+ },
+ {
+  "missionType": 912,
+  "missionTypeName": "ミッション詳細クリア回数"
+ },
+ {
+  "missionType": 913,
+  "missionTypeName": "交換所購入"
+ },
+ {
+  "missionType": 1001,
+  "missionTypeName": "イベントポイント収集"
+ },
+ {
+  "missionType": 1005,
+  "missionTypeName": "キャラレアリティ昇格回数"
+ },
+ {
+  "missionType": 1101,
+  "missionTypeName": "投票所累計投票数"
+ },
+ {
+  "missionType": 1102,
+  "missionTypeName": "投票所累計投票数：コストID指定"
+ },
+ {
+  "missionType": 1107,
+  "missionTypeName": "キャラ戦神継承回数"
+ },
+ {
+  "missionType": 1108,
+  "missionTypeName": "キャラ戦神継承ツリー取得回数"
+ },
+ {
+  "missionType": 1207,
+  "missionTypeName": "キャラ伝承深禍回数"
+ },
+ {
+  "missionType": 2000,
+  "missionTypeName": "ギルド加入"
+ },
+ {
+  "missionType": 2001,
+  "missionTypeName": "ギルド入室回数"
+ },
+ {
+  "missionType": 2002,
+  "missionTypeName": "ギルドタワーステージ挑戦：訓練戦"
+ },
+ {
+  "missionType": 2003,
+  "missionTypeName": "ギルドタワーステージ挑戦：本番戦"
+ },
+ {
+  "missionType": 2004,
+  "missionTypeName": "ギルドタワー編成：属性指定"
+ },
+ {
+  "missionType": 2005,
+  "missionTypeName": "ギルドタワー編成：武器種指定"
+ },
+ {
+  "missionType": 2006,
+  "missionTypeName": "ギルドタワー累計スコア：個人"
+ },
+ {
+  "missionType": 2007,
+  "missionTypeName": "ギルドタワー累計スコア：ギルド全体"
+ },
+ {
+  "missionType": 2008,
+  "missionTypeName": "ギルドタワーステージクリア"
+ },
+ {
+  "missionType": 2009,
+  "missionTypeName": "ギルドタワーフロアクリア"
+ },
+ {
+  "missionType": 2012,
+  "missionTypeName": "ギルドタワーステージ戦闘回数：訓練戦"
+ },
+ {
+  "missionType": 2013,
+  "missionTypeName": "ギルドタワーステージ戦闘回数：本番戦"
+ },
+ {
+  "missionType": 2010,
+  "missionTypeName": "いいね回数"
+ },
+ {
+  "missionType": 2011,
+  "missionTypeName": "ギルドレイド累計スコア：ギルド全体"
+ },
+ {
+  "missionType": 3001,
+  "missionTypeName": "ギルド共有"
+ },
+ {
+  "missionType": 4001,
+  "missionTypeName": "DMM版・アプリ版連携"
+ },
+ {
+  "missionType": 5001,
+  "missionTypeName": "遠征討伐クリア（戦力〇〇以上）"
+ },
+ {
+  "missionType": 6001,
+  "missionTypeName": "編成で総合戦力○○○○以上達成"
+ },
+ {
+  "missionType": 7001,
+  "missionTypeName": "血涙石消費（有償・無償問わない）"
+ },
+ {
+  "missionType": 7002,
+  "missionTypeName": "血涙石消費（有償のみ）"
+ },
+ {
+  "missionType": 7003,
+  "missionTypeName": "血涙石消費（無償のみ）"
+ },
+ {
+  "missionType": 5505,
+  "missionTypeName": "クエストステージクリア回数：エリアID指定かつ、baseMissionId"
+ },
+ {
+  "missionType": 9999,
+  "missionTypeName": "ミナシゴ育成複合ミッション"
+ },
+ {
+  "missionType": 9998,
+  "missionTypeName": "武器育成複合ミッション"
+ },
+ {
+  "missionType": 9997,
+  "missionTypeName": "戦神育成複合ミッション"
+ },
+ {
+  "missionType": 708,
+  "missionTypeName": "レイドイベントコンボミッション"
+ },
+ {
+  "missionType": 1120,
+  "missionTypeName": "ミナシゴの所持ミッション"
+ },
+ {
+  "missionType": 1130,
+  "missionTypeName": "戦神の所持ミッション"
+ },
+ {
+  "missionType": 1140,
+  "missionTypeName": "武器の所持ミッション"
+ }
+]
