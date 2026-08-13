@@ -51,3 +51,4 @@
 |       FyorasSouls       |      芙娅之魂      |            国服 Json            |
 |   StarseedAsniaTrigger   | 星链计划：未来少女 |           国际服 Json           |
 |       OrphansOrder       |     孤儿的工作     |             Dmm Json             |
+|         AzurLane         |      碧蓝航线      |           国服 LuaJIT           |

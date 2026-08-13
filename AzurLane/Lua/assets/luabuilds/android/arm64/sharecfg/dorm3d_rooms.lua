@@ -1,0 +1,1143 @@
+﻿pg = var_0_10000
+
+local var_0_0
+
+var_0_0 = var_0_10000 or {}
+pg = pg
+rawget = var_0_10001
+pg = var_0_10003
+
+local var_0_2
+
+if not var_0_10001(var_0_10003, "dorm3d_rooms") then
+	setmetatable = var_0_2
+
+	local var_0_1 = {
+		__name = "dorm3d_rooms"
+	}
+
+	confNEO = var_4
+	var_0_2 = var_0_2(var_0_1, var_4)
+end
+
+var_0.dorm3d_rooms = var_0_2
+pg = var_0
+
+local var_0_3 = var_0.dorm3d_rooms
+
+var_0_3.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	11,
+	12,
+	14,
+	16,
+	21,
+	26
+}
+pg = var_0_3
+
+local var_0_4 = var_0_3.dorm3d_rooms
+
+var_0_4.get_id_list_by_in_map = {
+	floor_1 = {
+		1,
+		2,
+		3,
+		4,
+		5
+	},
+	floor_2 = {
+		11,
+		12,
+		14,
+		16
+	},
+	floor_3 = {
+		21,
+		26
+	}
+}
+pg = var_0_4
+pg = var_1
+
+local var_0_5
+
+if not var_1.base then
+	var_0_5 = {}
+end
+
+var_0_4.base = var_0_5
+pg = var_0_4
+var_0_4.base.dorm3d_rooms = {}
+
+;(function()
+	pg = var_1_10000
+
+	local var_1_0 = var_1_10000.base.dorm3d_rooms
+
+	var_1_0[1] = {
+		assets_prefix = "Tianlangxing",
+		resource_name = "Tianlangxing_DB",
+		type = 2,
+		id = 1,
+		invite_cost = "",
+		in_map = "floor_1",
+		room = "天狼星",
+		invite_mark = "",
+		tag = "",
+		room_bgm = "story-room-sirius",
+		invite_icon = "",
+		invite_banner = "",
+		room_des = "",
+		scene_info = "map_siriushostel_01|Tianlangxing_DB/SiriusHostel",
+		is_common = 0,
+		character = {
+			20220
+		},
+		character_pay = {},
+		character_welcome = {
+			{
+				20220,
+				2000
+			}
+		},
+		character_range = {
+			1
+		},
+		unlock_item = {},
+		default_zone = {
+			{
+				20220,
+				"Chair"
+			}
+		},
+		furniture_zones = {
+			1001,
+			1002,
+			1003
+		},
+		recall_list = {
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8
+		},
+		ar_anim = {
+			{
+				20220,
+				{
+					1001,
+					1002,
+					1003,
+					1004,
+					1005,
+					1006,
+					1007,
+					1008,
+					1009,
+					1010,
+					1011,
+					1012,
+					1101,
+					1102,
+					1103,
+					1104,
+					1201,
+					1202,
+					1203,
+					1301,
+					1302,
+					1303
+				}
+			}
+		}
+	}
+	pg = var_1_0
+
+	local var_1_1 = var_1_0.base.dorm3d_rooms
+
+	var_1_1[2] = {
+		assets_prefix = "Nengdai",
+		resource_name = "Nengdai_DB",
+		type = 2,
+		id = 2,
+		invite_cost = "",
+		in_map = "floor_1",
+		room = "能代",
+		invite_mark = "",
+		tag = "",
+		room_bgm = "story-room-noshiro",
+		invite_icon = "",
+		invite_banner = "",
+		room_des = "",
+		scene_info = "map_noshirohostel_01|Nengdai_DB/Noshirohostel",
+		is_common = 0,
+		character = {
+			30221
+		},
+		character_pay = {},
+		character_welcome = {
+			{
+				30221,
+				0
+			}
+		},
+		character_range = {
+			1
+		},
+		unlock_item = {},
+		default_zone = {
+			{
+				30221,
+				"Chair"
+			}
+		},
+		furniture_zones = {
+			2001,
+			2002,
+			2003
+		},
+		recall_list = {
+			21,
+			22,
+			23,
+			31,
+			32
+		},
+		ar_anim = {
+			{
+				30221,
+				{
+					2001,
+					2002,
+					2003,
+					2004,
+					2005,
+					2006,
+					2007,
+					2008,
+					2009,
+					2010,
+					2011,
+					2012,
+					2013,
+					2101,
+					2102,
+					2103,
+					2104,
+					2201,
+					2202,
+					2203,
+					2204,
+					2301,
+					2302,
+					2303,
+					2304
+				}
+			}
+		}
+	}
+	pg = var_1_1
+
+	local var_1_2 = var_1_1.base.dorm3d_rooms
+
+	var_1_2[3] = {
+		assets_prefix = "Ankeleiqi",
+		resource_name = "Ankeleiqi_DB",
+		type = 2,
+		id = 3,
+		invite_cost = "",
+		in_map = "floor_1",
+		room = "安克雷奇",
+		invite_mark = "",
+		tag = "",
+		room_bgm = "story-room-anchorage",
+		invite_icon = "",
+		invite_banner = "",
+		room_des = "",
+		scene_info = "map_anchoragehostel_01|Ankeleiqi_DB/Anchoragehostel",
+		is_common = 0,
+		character = {
+			19903
+		},
+		character_pay = {},
+		character_welcome = {
+			{
+				19903,
+				0
+			}
+		},
+		character_range = {
+			1
+		},
+		unlock_item = {},
+		default_zone = {
+			{
+				19903,
+				"Chair"
+			}
+		},
+		furniture_zones = {
+			3001,
+			3002,
+			3003
+		},
+		recall_list = {
+			41,
+			42,
+			43,
+			51,
+			52
+		},
+		ar_anim = {
+			{
+				19903,
+				{
+					3001,
+					3002,
+					3003,
+					3005,
+					3006,
+					3007,
+					3008,
+					3010,
+					3011,
+					3012,
+					3013,
+					3014,
+					3015,
+					3016,
+					3017,
+					3018
+				}
+			}
+		}
+	}
+	pg = var_1_2
+
+	local var_1_3 = var_1_2.base.dorm3d_rooms
+
+	var_1_3[4] = {
+		assets_prefix = "Beach",
+		resource_name = "Beach",
+		type = 1,
+		id = 4,
+		in_map = "floor_1",
+		room = "沙滩",
+		tag = "beach",
+		room_bgm = "story-room-sirius",
+		room_des = "沙滩、泳装、排球……尽情在海风中玩耍吧~",
+		scene_info = "map_beach_01|Beach",
+		is_common = 0,
+		character = {},
+		character_pay = {
+			20220,
+			30221,
+			19903
+		},
+		character_welcome = {
+			{
+				20220,
+				1000
+			},
+			{
+				30221,
+				0
+			},
+			{
+				19903,
+				0
+			}
+		},
+		character_range = {
+			0,
+			3
+		},
+		unlock_item = {
+			{
+				2,
+				15022,
+				1
+			}
+		},
+		default_zone = {
+			{
+				20220,
+				"Tianlangxing"
+			},
+			{
+				30221,
+				"Nengdai"
+			},
+			{
+				19903,
+				"Ankeleiqi"
+			}
+		},
+		furniture_zones = {
+			4005
+		},
+		recall_list = {},
+		invite_cost = {
+			{
+				20220,
+				270110
+			},
+			{
+				30221,
+				270111
+			},
+			{
+				19903,
+				270112
+			}
+		},
+		invite_banner = {
+			{
+				20220,
+				{
+					"banner_beach1",
+					"banner_beach2"
+				}
+			},
+			{
+				30221,
+				{
+					"banner_beach3"
+				}
+			},
+			{
+				19903,
+				{
+					"banner_beach4"
+				}
+			}
+		},
+		invite_icon = {
+			{
+				20220,
+				"dorm3dicon/3Ddrom_invitation"
+			},
+			{
+				30221,
+				"dorm3dicon/3Ddrom_invitation"
+			},
+			{
+				19903,
+				"dorm3dicon/3Ddrom_invitation"
+			}
+		},
+		invite_mark = {
+			{
+				20220,
+				{
+					1,
+					5,
+					6
+				}
+			},
+			{
+				30221,
+				{
+					1,
+					5,
+					6
+				}
+			},
+			{
+				19903,
+				{
+					1,
+					5,
+					6
+				}
+			}
+		},
+		ar_anim = {
+			{
+				20220,
+				{
+					4001,
+					4002,
+					4003,
+					4004,
+					4005
+				}
+			},
+			{
+				30221,
+				{
+					4201,
+					4202,
+					4203,
+					4204,
+					4205
+				}
+			},
+			{
+				19903,
+				{
+					4401,
+					4402,
+					4403,
+					4404,
+					4405
+				}
+			}
+		}
+	}
+	pg = var_1_3
+
+	local var_1_4 = var_1_3.base.dorm3d_rooms
+
+	var_1_4[5] = {
+		furniture_zones = "",
+		assets_prefix = "Bathroom",
+		default_zone = "",
+		resource_name = "Bathroom",
+		type = 1,
+		ar_anim = "",
+		id = 5,
+		recall_list = "",
+		invite_cost = "",
+		in_map = "floor_1",
+		room = "浴室",
+		invite_mark = "",
+		tag = "",
+		room_bgm = "story-room-sirius",
+		invite_icon = "",
+		invite_banner = "",
+		room_des = "",
+		scene_info = "",
+		is_common = 1,
+		character = {
+			20220
+		},
+		character_pay = {},
+		character_welcome = {
+			{
+				20220,
+				1000
+			}
+		},
+		character_range = {
+			0,
+			0
+		},
+		unlock_item = {
+			{
+				2,
+				15022,
+				1
+			}
+		}
+	}
+	pg = var_1_4
+
+	local var_1_5 = var_1_4.base.dorm3d_rooms
+
+	var_1_5[11] = {
+		assets_prefix = "Xinzexi",
+		resource_name = "Xinzexi_DB",
+		type = 2,
+		id = 11,
+		invite_cost = "",
+		in_map = "floor_2",
+		room = "新泽西",
+		invite_mark = "",
+		tag = "",
+		room_bgm = "Story-room-newjersey",
+		invite_icon = "",
+		invite_banner = "",
+		room_des = "",
+		scene_info = "map_newjerseyhostel_01|Xinzexi_DB/Newjerseyhostel",
+		is_common = 0,
+		character = {
+			10517
+		},
+		character_pay = {},
+		character_welcome = {
+			{
+				10517,
+				0
+			}
+		},
+		character_range = {
+			1
+		},
+		unlock_item = {},
+		default_zone = {
+			{
+				10517,
+				"Chair"
+			}
+		},
+		furniture_zones = {
+			11001,
+			11002,
+			11003
+		},
+		recall_list = {
+			101,
+			102,
+			103,
+			104,
+			105
+		},
+		ar_anim = {
+			{
+				10517,
+				{
+					11001,
+					11002,
+					11003,
+					11004,
+					11005,
+					11006,
+					11007,
+					11008,
+					11009,
+					11010,
+					11011,
+					11012,
+					11013,
+					11014
+				}
+			}
+		}
+	}
+	pg = var_1_5
+
+	local var_1_6 = var_1_5.base.dorm3d_rooms
+
+	var_1_6[12] = {
+		assets_prefix = "Dafeng",
+		resource_name = "Dafeng_DB",
+		type = 2,
+		id = 12,
+		invite_cost = "",
+		in_map = "floor_2",
+		room = "大凤",
+		invite_mark = "",
+		tag = "",
+		room_bgm = "story-room-taiho",
+		invite_icon = "",
+		invite_banner = "",
+		room_des = "",
+		scene_info = "map_dafeng_01|Dafeng_DB/Dafenghostel",
+		is_common = 0,
+		character = {
+			30707
+		},
+		character_pay = {},
+		character_welcome = {
+			{
+				30707,
+				0
+			}
+		},
+		character_range = {
+			1
+		},
+		unlock_item = {},
+		default_zone = {
+			{
+				30707,
+				"Chair"
+			}
+		},
+		furniture_zones = {
+			12001,
+			12002,
+			12003
+		},
+		recall_list = {
+			121,
+			122,
+			123,
+			124,
+			125
+		},
+		ar_anim = {
+			{
+				30707,
+				{
+					12001,
+					12002,
+					12003,
+					12004,
+					12005,
+					12006,
+					12007,
+					12008,
+					12009,
+					12010,
+					12011,
+					12012,
+					12013,
+					12014,
+					12015,
+					12016,
+					12017,
+					12018,
+					12019
+				}
+			}
+		}
+	}
+	pg = var_1_6
+
+	local var_1_7 = var_1_6.base.dorm3d_rooms
+
+	var_1_7[14] = {
+		assets_prefix = "Aijier",
+		resource_name = "Aijier_DB",
+		type = 2,
+		id = 14,
+		invite_cost = "",
+		in_map = "floor_2",
+		room = "埃吉尔",
+		invite_mark = "",
+		tag = "",
+		room_bgm = "story-room-agir",
+		invite_icon = "",
+		invite_banner = "",
+		room_des = "",
+		scene_info = "map_aijier_01|Aijier_DB/Aijierhostel",
+		is_common = 0,
+		character = {
+			49905
+		},
+		character_pay = {},
+		character_welcome = {
+			{
+				49905,
+				0
+			}
+		},
+		character_range = {
+			1
+		},
+		unlock_item = {},
+		default_zone = {
+			{
+				49905,
+				"Chair"
+			}
+		},
+		furniture_zones = {
+			14001,
+			14002,
+			14003
+		},
+		recall_list = {
+			141,
+			142,
+			143,
+			144
+		},
+		ar_anim = {
+			{
+				49905,
+				{
+					14001,
+					14002,
+					14003,
+					14004,
+					14005,
+					14006,
+					14007,
+					14008,
+					14009,
+					14010,
+					14011,
+					14012,
+					14013,
+					14014,
+					14015
+				}
+			}
+		}
+	}
+	pg = var_1_7
+
+	local var_1_8 = var_1_7.base.dorm3d_rooms
+
+	var_1_8[16] = {
+		assets_prefix = "Publiccafe",
+		resource_name = "Publiccafe",
+		type = 1,
+		id = 16,
+		in_map = "floor_2",
+		room = "咖啡馆",
+		tag = "cafe",
+		room_bgm = "Story-room-bar",
+		room_des = "优雅与精致，奢华与愉悦。在金色的流光中，经历这一场梦幻奇遇。",
+		scene_info = "map_publiccafe_01|Publiccafe",
+		is_common = 0,
+		character = {},
+		character_pay = {
+			10517,
+			30707,
+			49905,
+			20220
+		},
+		character_welcome = {
+			{
+				10517,
+				0
+			},
+			{
+				30707,
+				0
+			},
+			{
+				49905,
+				0
+			},
+			{
+				20220,
+				0
+			}
+		},
+		character_range = {
+			0,
+			3
+		},
+		unlock_item = {
+			{
+				2,
+				15023,
+				1
+			}
+		},
+		default_zone = {
+			{
+				10517,
+				"xinzexi"
+			},
+			{
+				30707,
+				"dafeng"
+			},
+			{
+				49905,
+				"aijier"
+			},
+			{
+				20220,
+				"tianlangxing"
+			}
+		},
+		furniture_zones = {},
+		recall_list = {},
+		invite_cost = {
+			{
+				10517,
+				270113
+			},
+			{
+				30707,
+				270114
+			},
+			{
+				49905,
+				270115
+			},
+			{
+				20220,
+				270116
+			}
+		},
+		invite_banner = {
+			{
+				10517,
+				{
+					"banner_cafe1"
+				}
+			},
+			{
+				30707,
+				{
+					"banner_cafe2"
+				}
+			},
+			{
+				49905,
+				{
+					"banner_cafe3"
+				}
+			},
+			{
+				20220,
+				{
+					"banner_cafe4"
+				}
+			}
+		},
+		invite_icon = {
+			{
+				10517,
+				"dorm3dicon/3Ddrom_invitation"
+			},
+			{
+				30707,
+				"dorm3dicon/3Ddrom_invitation"
+			},
+			{
+				49905,
+				"dorm3dicon/3Ddrom_invitation"
+			},
+			{
+				20220,
+				"dorm3dicon/3Ddrom_invitation"
+			}
+		},
+		invite_mark = {
+			{
+				10517,
+				{
+					1,
+					5,
+					6
+				}
+			},
+			{
+				30707,
+				{
+					1,
+					5,
+					6
+				}
+			},
+			{
+				49905,
+				{
+					1,
+					5,
+					6
+				}
+			},
+			{
+				20220,
+				{
+					1,
+					5,
+					6
+				}
+			}
+		},
+		ar_anim = {
+			{
+				10517,
+				{
+					16001,
+					16001,
+					16003,
+					16004,
+					16005
+				}
+			},
+			{
+				30707,
+				{
+					16006,
+					16007,
+					16008,
+					16009,
+					16010
+				}
+			},
+			{
+				49905,
+				{
+					16011,
+					16012,
+					16013,
+					16014,
+					16015
+				}
+			},
+			{
+				20220,
+				{
+					16016,
+					16017,
+					16018,
+					16019,
+					16020
+				}
+			}
+		}
+	}
+	pg = var_1_8
+
+	local var_1_9 = var_1_8.base.dorm3d_rooms
+
+	var_1_9[21] = {
+		assets_prefix = "Naximofu",
+		resource_name = "Naximofu_DB",
+		type = 2,
+		id = 21,
+		invite_cost = "",
+		in_map = "floor_3",
+		room = "纳希莫夫海军上将",
+		invite_mark = "",
+		tag = "",
+		room_bgm = "story-room-nakhimov",
+		invite_icon = "",
+		invite_banner = "",
+		room_des = "",
+		scene_info = "map_naximofu_01|Naximofu_DB/Naximofuhostel",
+		is_common = 0,
+		character = {
+			79902
+		},
+		character_pay = {},
+		character_welcome = {
+			{
+				79902,
+				0
+			}
+		},
+		character_range = {
+			1
+		},
+		unlock_item = {},
+		default_zone = {
+			{
+				79902,
+				"Chair"
+			}
+		},
+		furniture_zones = {
+			21001,
+			21002,
+			21003
+		},
+		recall_list = {
+			211,
+			212,
+			213,
+			214
+		},
+		ar_anim = {
+			{
+				79902,
+				{
+					21001,
+					21002,
+					21003,
+					21004,
+					21005,
+					21006,
+					21007,
+					21008,
+					21009,
+					21010,
+					21011,
+					21012,
+					21013,
+					21014,
+					21015
+				}
+			}
+		}
+	}
+	pg = var_1_9
+	var_1_9.base.dorm3d_rooms[26] = {
+		assets_prefix = "Carwash",
+		resource_name = "Carwash",
+		type = 1,
+		id = 26,
+		in_map = "floor_3",
+		room = "维修区工作站",
+		tag = "carwash",
+		room_bgm = "story-room-pit",
+		room_des = "扳手、仪表、零件……在金属的微光里，享受从容的精密时光。",
+		scene_info = "map_carwash_01|Carwash",
+		is_common = 0,
+		character = {},
+		character_pay = {
+			79902
+		},
+		character_welcome = {
+			{
+				79902,
+				0
+			}
+		},
+		character_range = {
+			0,
+			3
+		},
+		unlock_item = {
+			{
+				2,
+				15024,
+				1
+			}
+		},
+		default_zone = {
+			{
+				79902,
+				"Parking"
+			}
+		},
+		furniture_zones = {},
+		recall_list = {},
+		invite_cost = {
+			{
+				79902,
+				270121
+			}
+		},
+		invite_banner = {
+			{
+				79902,
+				{
+					"banner_carwash1"
+				}
+			}
+		},
+		invite_icon = {
+			{
+				79902,
+				"dorm3dicon/3Ddrom_invitation"
+			}
+		},
+		invite_mark = {
+			{
+				79902,
+				{
+					5,
+					6
+				}
+			}
+		},
+		ar_anim = {
+			{
+				79902,
+				{
+					26001,
+					26001,
+					26003,
+					26004,
+					26005
+				}
+			}
+		}
+	}
+
+	return
+end)()
+
+return

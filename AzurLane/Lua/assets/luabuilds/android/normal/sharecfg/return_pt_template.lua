@@ -1,0 +1,1425 @@
+﻿pg = var_0_10000
+
+local var_0_0
+
+var_0_0 = var_0_10000 or {}
+pg = pg
+rawget = var_0_10001
+pg = var_0_10002
+
+local var_0_2
+
+if not var_0_10001(var_0_10002, "return_pt_template") then
+	setmetatable = var_0_2
+
+	local var_0_1 = {
+		__name = "return_pt_template"
+	}
+
+	confNEO = var_3
+	var_0_2 = var_0_2(var_0_1, var_3)
+end
+
+var_0.return_pt_template = var_0_2
+pg = var_0
+
+local var_0_3 = var_0.return_pt_template
+
+var_0_3.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22,
+	23,
+	24,
+	25,
+	26,
+	27,
+	28,
+	29,
+	30
+}
+pg = var_0_3
+pg = var_1
+
+local var_0_4
+
+if not var_1.base then
+	var_0_4 = {}
+end
+
+var_0_3.base = var_0_4
+pg = var_0_3
+var_0_3.base.return_pt_template = {}
+
+;(function()
+	pg = var_1_10000
+
+	local var_1_0 = var_1_10000.base.return_pt_template
+
+	var_1_0[1] = {
+		virtual_item = 59616,
+		pt_require = 50,
+		id = 1,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89401,
+			89431,
+			89461
+		},
+		award_display = {
+			{
+				4,
+				100001,
+				1
+			},
+			{
+				4,
+				100001,
+				1
+			},
+			{
+				4,
+				100001,
+				1
+			}
+		}
+	}
+	pg = var_1_0
+
+	local var_1_1 = var_1_0.base.return_pt_template
+
+	var_1_1[2] = {
+		virtual_item = 59616,
+		pt_require = 100,
+		id = 2,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89402,
+			89432,
+			89462
+		},
+		award_display = {
+			{
+				1,
+				2,
+				2250
+			},
+			{
+				1,
+				2,
+				2600
+			},
+			{
+				1,
+				2,
+				3100
+			}
+		}
+	}
+	pg = var_1_1
+
+	local var_1_2 = var_1_1.base.return_pt_template
+
+	var_1_2[3] = {
+		virtual_item = 59616,
+		pt_require = 150,
+		id = 3,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89403,
+			89433,
+			89463
+		},
+		award_display = {
+			{
+				2,
+				15001,
+				30
+			},
+			{
+				2,
+				15001,
+				50
+			},
+			{
+				2,
+				15001,
+				80
+			}
+		}
+	}
+	pg = var_1_2
+
+	local var_1_3 = var_1_2.base.return_pt_template
+
+	var_1_3[4] = {
+		virtual_item = 59616,
+		pt_require = 200,
+		id = 4,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89404,
+			89434,
+			89464
+		},
+		award_display = {
+			{
+				2,
+				16501,
+				200
+			},
+			{
+				2,
+				16501,
+				250
+			},
+			{
+				2,
+				16501,
+				300
+			}
+		}
+	}
+	pg = var_1_3
+
+	local var_1_4 = var_1_3.base.return_pt_template
+
+	var_1_4[5] = {
+		virtual_item = 59616,
+		pt_require = 250,
+		id = 5,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89405,
+			89435,
+			89465
+		},
+		award_display = {
+			{
+				4,
+				100001,
+				1
+			},
+			{
+				4,
+				100001,
+				1
+			},
+			{
+				4,
+				100001,
+				1
+			}
+		}
+	}
+	pg = var_1_4
+
+	local var_1_5 = var_1_4.base.return_pt_template
+
+	var_1_5[6] = {
+		virtual_item = 59616,
+		pt_require = 300,
+		id = 6,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89406,
+			89436,
+			89466
+		},
+		award_display = {
+			{
+				1,
+				2,
+				1300
+			},
+			{
+				1,
+				2,
+				1650
+			},
+			{
+				1,
+				2,
+				1900
+			}
+		}
+	}
+	pg = var_1_5
+
+	local var_1_6 = var_1_5.base.return_pt_template
+
+	var_1_6[7] = {
+		virtual_item = 59616,
+		pt_require = 350,
+		id = 7,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89407,
+			89437,
+			89467
+		},
+		award_display = {
+			{
+				4,
+				100011,
+				1
+			},
+			{
+				4,
+				100011,
+				1
+			},
+			{
+				4,
+				100011,
+				1
+			}
+		}
+	}
+	pg = var_1_6
+
+	local var_1_7 = var_1_6.base.return_pt_template
+
+	var_1_7[8] = {
+		virtual_item = 59616,
+		pt_require = 400,
+		id = 8,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89408,
+			89438,
+			89468
+		},
+		award_display = {
+			{
+				2,
+				54007,
+				2
+			},
+			{
+				2,
+				54007,
+				3
+			},
+			{
+				2,
+				54007,
+				5
+			}
+		}
+	}
+	pg = var_1_7
+
+	local var_1_8 = var_1_7.base.return_pt_template
+
+	var_1_8[9] = {
+		virtual_item = 59616,
+		pt_require = 460,
+		id = 9,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89409,
+			89439,
+			89469
+		},
+		award_display = {
+			{
+				1,
+				2,
+				1300
+			},
+			{
+				1,
+				2,
+				1650
+			},
+			{
+				1,
+				2,
+				1900
+			}
+		}
+	}
+	pg = var_1_8
+
+	local var_1_9 = var_1_8.base.return_pt_template
+
+	var_1_9[10] = {
+		virtual_item = 59616,
+		pt_require = 520,
+		id = 10,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89410,
+			89440,
+			89470
+		},
+		award_display = {
+			{
+				2,
+				54051,
+				2
+			},
+			{
+				2,
+				54051,
+				3
+			},
+			{
+				2,
+				54051,
+				4
+			}
+		}
+	}
+	pg = var_1_9
+
+	local var_1_10 = var_1_9.base.return_pt_template
+
+	var_1_10[11] = {
+		virtual_item = 59616,
+		pt_require = 580,
+		id = 11,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89411,
+			89441,
+			89471
+		},
+		award_display = {
+			{
+				2,
+				15008,
+				100
+			},
+			{
+				2,
+				15008,
+				350
+			},
+			{
+				2,
+				15008,
+				450
+			}
+		}
+	}
+	pg = var_1_10
+
+	local var_1_11 = var_1_10.base.return_pt_template
+
+	var_1_11[12] = {
+		virtual_item = 59616,
+		pt_require = 640,
+		id = 12,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89412,
+			89442,
+			89472
+		},
+		award_display = {
+			{
+				2,
+				54035,
+				1
+			},
+			{
+				2,
+				54035,
+				1
+			},
+			{
+				2,
+				54035,
+				1
+			}
+		}
+	}
+	pg = var_1_11
+
+	local var_1_12 = var_1_11.base.return_pt_template
+
+	var_1_12[13] = {
+		virtual_item = 59616,
+		pt_require = 700,
+		id = 13,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89413,
+			89443,
+			89473
+		},
+		award_display = {
+			{
+				2,
+				16501,
+				300
+			},
+			{
+				2,
+				16501,
+				375
+			},
+			{
+				2,
+				16501,
+				450
+			}
+		}
+	}
+	pg = var_1_12
+
+	local var_1_13 = var_1_12.base.return_pt_template
+
+	var_1_13[14] = {
+		virtual_item = 59616,
+		pt_require = 780,
+		id = 14,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89414,
+			89444,
+			89474
+		},
+		award_display = {
+			{
+				2,
+				54016,
+				100
+			},
+			{
+				2,
+				54016,
+				120
+			},
+			{
+				2,
+				54016,
+				150
+			}
+		}
+	}
+	pg = var_1_13
+
+	local var_1_14 = var_1_13.base.return_pt_template
+
+	var_1_14[15] = {
+		virtual_item = 59616,
+		pt_require = 860,
+		id = 15,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89415,
+			89445,
+			89475
+		},
+		award_display = {
+			{
+				2,
+				59900,
+				200
+			},
+			{
+				2,
+				59900,
+				250
+			},
+			{
+				2,
+				59900,
+				300
+			}
+		}
+	}
+	pg = var_1_14
+
+	local var_1_15 = var_1_14.base.return_pt_template
+
+	var_1_15[16] = {
+		virtual_item = 59616,
+		pt_require = 940,
+		id = 16,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89416,
+			89446,
+			89476
+		},
+		award_display = {
+			{
+				1,
+				2,
+				1300
+			},
+			{
+				1,
+				2,
+				1650
+			},
+			{
+				1,
+				2,
+				1900
+			}
+		}
+	}
+	pg = var_1_15
+
+	local var_1_16 = var_1_15.base.return_pt_template
+
+	var_1_16[17] = {
+		virtual_item = 59616,
+		pt_require = 1020,
+		id = 17,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89417,
+			89447,
+			89477
+		},
+		award_display = {
+			{
+				1,
+				8,
+				200
+			},
+			{
+				1,
+				8,
+				250
+			},
+			{
+				1,
+				8,
+				300
+			}
+		}
+	}
+	pg = var_1_16
+
+	local var_1_17 = var_1_16.base.return_pt_template
+
+	var_1_17[18] = {
+		virtual_item = 59616,
+		pt_require = 1100,
+		id = 18,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89418,
+			89448,
+			89478
+		},
+		award_display = {
+			{
+				2,
+				54018,
+				10
+			},
+			{
+				2,
+				54018,
+				15
+			},
+			{
+				2,
+				54018,
+				20
+			}
+		}
+	}
+	pg = var_1_17
+
+	local var_1_18 = var_1_17.base.return_pt_template
+
+	var_1_18[19] = {
+		virtual_item = 59616,
+		pt_require = 1200,
+		id = 19,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89419,
+			89449,
+			89479
+		},
+		award_display = {
+			{
+				1,
+				6,
+				80
+			},
+			{
+				1,
+				6,
+				90
+			},
+			{
+				1,
+				6,
+				100
+			}
+		}
+	}
+	pg = var_1_18
+
+	local var_1_19 = var_1_18.base.return_pt_template
+
+	var_1_19[20] = {
+		virtual_item = 59616,
+		pt_require = 1300,
+		id = 20,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89420,
+			89450,
+			89480
+		},
+		award_display = {
+			{
+				2,
+				50006,
+				3
+			},
+			{
+				2,
+				50006,
+				4
+			},
+			{
+				2,
+				50006,
+				5
+			}
+		}
+	}
+	pg = var_1_19
+
+	local var_1_20 = var_1_19.base.return_pt_template
+
+	var_1_20[21] = {
+		virtual_item = 59616,
+		pt_require = 1400,
+		id = 21,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89421,
+			89451,
+			89481
+		},
+		award_display = {
+			{
+				1,
+				3,
+				1900
+			},
+			{
+				1,
+				3,
+				2200
+			},
+			{
+				1,
+				3,
+				2500
+			}
+		}
+	}
+	pg = var_1_20
+
+	local var_1_21 = var_1_20.base.return_pt_template
+
+	var_1_21[22] = {
+		virtual_item = 59616,
+		pt_require = 1500,
+		id = 22,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89422,
+			89452,
+			89482
+		},
+		award_display = {
+			{
+				4,
+				100021,
+				1
+			},
+			{
+				4,
+				100021,
+				1
+			},
+			{
+				4,
+				100021,
+				1
+			}
+		}
+	}
+	pg = var_1_21
+
+	local var_1_22 = var_1_21.base.return_pt_template
+
+	var_1_22[23] = {
+		virtual_item = 59616,
+		pt_require = 1600,
+		id = 23,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89423,
+			89453,
+			89483
+		},
+		award_display = {
+			{
+				2,
+				15001,
+				50
+			},
+			{
+				2,
+				15001,
+				80
+			},
+			{
+				2,
+				15001,
+				120
+			}
+		}
+	}
+	pg = var_1_22
+
+	local var_1_23 = var_1_22.base.return_pt_template
+
+	var_1_23[24] = {
+		virtual_item = 59616,
+		pt_require = 1700,
+		id = 24,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89424,
+			89454,
+			89484
+		},
+		award_display = {
+			{
+				2,
+				15014,
+				3
+			},
+			{
+				2,
+				15014,
+				4
+			},
+			{
+				2,
+				15014,
+				5
+			}
+		}
+	}
+	pg = var_1_23
+
+	local var_1_24 = var_1_23.base.return_pt_template
+
+	var_1_24[25] = {
+		virtual_item = 59616,
+		pt_require = 1800,
+		id = 25,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89425,
+			89455,
+			89485
+		},
+		award_display = {
+			{
+				2,
+				15012,
+				30
+			},
+			{
+				2,
+				15012,
+				40
+			},
+			{
+				2,
+				15012,
+				50
+			}
+		}
+	}
+	pg = var_1_24
+
+	local var_1_25 = var_1_24.base.return_pt_template
+
+	var_1_25[26] = {
+		virtual_item = 59616,
+		pt_require = 1920,
+		id = 26,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89426,
+			89456,
+			89486
+		},
+		award_display = {
+			{
+				2,
+				42036,
+				2
+			},
+			{
+				2,
+				42036,
+				3
+			},
+			{
+				2,
+				42036,
+				5
+			}
+		}
+	}
+	pg = var_1_25
+
+	local var_1_26 = var_1_25.base.return_pt_template
+
+	var_1_26[27] = {
+		virtual_item = 59616,
+		pt_require = 2040,
+		id = 27,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89427,
+			89457,
+			89487
+		},
+		award_display = {
+			{
+				1,
+				1,
+				4000
+			},
+			{
+				1,
+				1,
+				4600
+			},
+			{
+				1,
+				1,
+				5400
+			}
+		}
+	}
+	pg = var_1_26
+
+	local var_1_27 = var_1_26.base.return_pt_template
+
+	var_1_27[28] = {
+		virtual_item = 59616,
+		pt_require = 2160,
+		id = 28,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89428,
+			89458,
+			89488
+		},
+		award_display = {
+			{
+				2,
+				54018,
+				20
+			},
+			{
+				2,
+				54018,
+				25
+			},
+			{
+				2,
+				54018,
+				30
+			}
+		}
+	}
+	pg = var_1_27
+
+	local var_1_28 = var_1_27.base.return_pt_template
+
+	var_1_28[29] = {
+		virtual_item = 59616,
+		pt_require = 2280,
+		id = 29,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89429,
+			89459,
+			89489
+		},
+		award_display = {
+			{
+				1,
+				2,
+				2250
+			},
+			{
+				1,
+				2,
+				2600
+			},
+			{
+				1,
+				2,
+				3100
+			}
+		}
+	}
+	pg = var_1_28
+	var_1_28.base.return_pt_template[30] = {
+		virtual_item = 59616,
+		pt_require = 2400,
+		id = 30,
+		level = {
+			{
+				10,
+				59
+			},
+			{
+				60,
+				94
+			},
+			{
+				95,
+				500
+			}
+		},
+		reward = {
+			89430,
+			89460,
+			89490
+		},
+		award_display = {
+			{
+				2,
+				150002,
+				2
+			},
+			{
+				2,
+				150002,
+				3
+			},
+			{
+				2,
+				150002,
+				5
+			}
+		}
+	}
+
+	return
+end)()
+
+return

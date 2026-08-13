@@ -1,0 +1,62 @@
+﻿class = var_0_10000
+
+local var_0_0 = "PlayRoomStartGameCommand"
+
+pm = var_0_10003
+
+local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
+
+function var_0_1.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+
+	pg = var_1_10003
+
+	local var_1_1 = var_1_10003.ConnectionMgr.GetInstance()
+
+	var_3.Send(var_1_1, 23017, {
+		arg = 1
+	}, 23018, function(arg_2_0)
+		local var_2_1
+
+		if arg_2_0.result == 0 then
+			local var_2_0 = arg_1_0
+
+			var_2_1 = var_2_1.sendNotification
+			GAME = var_2_10004
+
+			var_2_1(var_2_0, var_2_10004.PLAY_ROOM_START_GAME_DONE)
+
+			getProxy = var_2_1
+			PlayRoomProxy = var_2_0
+
+			local var_2_2 = var_2_1(var_2_0)
+
+			var_2_1 = var_2_1.GetRoomData(var_2_2).roomType
+			PlayRoomConst = var_2_10002
+
+			if var_2_1 == var_2_10002.PLAY_ROOM_TYPE.MATCH then
+				getProxy = var_2_1
+				PlayRoomProxy = var_2_2
+
+				local var_2_3 = var_2_1(var_2_2)
+
+				var_2_1.SetStartMatch(var_2_3, true)
+			end
+		else
+			pg = var_2_1
+
+			local var_2_4 = var_2_1.TipsMgr.GetInstance()
+			local var_2_5 = var_1.ShowTips
+
+			errorTip = var_2_10004
+
+			var_2_5(var_2_4, var_2_10004("", arg_2_0.result))
+		end
+
+		return
+	end, false)
+
+	return
+end
+
+return var_0_1

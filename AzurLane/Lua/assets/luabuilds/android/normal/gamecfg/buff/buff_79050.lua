@@ -1,0 +1,53 @@
+﻿return {
+	time = 0,
+	name = "濒死护盾",
+	init_effect = "",
+	picture = "",
+	desc = "战斗对象的血量下降到X%时，生成一个永久存在的护盾",
+	stack = 1,
+	id = 79050,
+	icon = 73800,
+	last_effect = "",
+	effect_list = {
+		{
+			id = 1,
+			type = "BattleBuffShieldWall",
+			trigger = {
+				"onStack",
+				"onUpdate"
+			},
+			arg_list = {
+				effect = "shield03",
+				count = 120,
+				do_when_hit = "reflect",
+				bulletType = 1,
+				cld_list = {
+					{
+						box = {
+							4,
+							6,
+							40
+						},
+						offset = {
+							1.02,
+							0,
+							1.22
+						}
+					}
+				},
+				centerPosFun = function(arg_1_0)
+					local var_1_0 = arg_1_0 * 3
+
+					Vector3 = var_1_10002
+
+					return var_1_10002(3, 0.75, 0)
+				end,
+				rotationFun = function(arg_2_0)
+					Vector3 = var_1_10001
+
+					return var_1_10001(0, 0, 0)
+				end
+			}
+		}
+	}
+}

@@ -1,0 +1,54 @@
+﻿return {
+	id = "ISLAND_GUIDE_1",
+	events = {
+		{
+			alpha = 0,
+			stories = {
+				"ISLAND1001000"
+			}
+		},
+		{
+			is3dDorm = false,
+			alpha = 0,
+			style = {
+				text = "指挥官，请先前往生活区",
+				mode = 2,
+				char = 1,
+				posY = 0,
+				dir = 1,
+				posX = 0,
+				uiset = {}
+			},
+			ui = {
+				pathIndex = -1,
+				dynamicPath = function()
+					getProxy = var_1_10000
+					SettingsProxy = var_1_10001
+
+					local var_1_0 = var_1_10000(var_1_10001)
+
+					if var_0.IsMellowStyle(var_1_0) then
+						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/bottom/frame/live"
+					else
+						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/bottom/liveButton"
+					end
+
+					return
+				end
+			}
+		},
+		{
+			is3dDorm = false,
+			alpha = 0,
+			style = {
+				text = "岛屿计划现已开启，指挥官可随时前往岛屿开发区",
+				mode = 2,
+				char = 1,
+				posY = 200,
+				dir = 1,
+				posX = 0,
+				uiset = {}
+			}
+		}
+	}
+}

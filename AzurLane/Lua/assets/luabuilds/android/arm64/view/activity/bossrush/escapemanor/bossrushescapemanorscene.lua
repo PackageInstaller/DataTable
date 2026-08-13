@@ -1,0 +1,1100 @@
+﻿class = var_0_10000
+
+local var_0_0 = "BossRushEscapeManorScene"
+
+import = var_0_10003
+
+local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
+local var_0_2 = "anim_BRVZ_change"
+
+var_0_1.DISPLAY = {
+	STORY = "Story",
+	BATTLE = "Battle"
+}
+
+function var_0_1.getUIName(arg_1_0)
+	return "BossRushEscapeManorUI"
+end
+
+function var_0_1.init(arg_2_0)
+	local var_2_0 = arg_2_0._tf
+
+	arg_2_0.top = var_1.Find(var_2_0, "Top")
+
+	local var_2_1 = arg_2_0.top
+
+	arg_2_0.ptBtn = var_1.Find(var_2_1, "right/pt")
+
+	local var_2_2 = arg_2_0.ptBtn
+
+	arg_2_0.ptTip = var_1.Find(var_2_2, "tip")
+
+	local var_2_3 = arg_2_0.top
+
+	arg_2_0.rankBtn = var_1.Find(var_2_3, "right/rank")
+	setText = var_1
+
+	local var_2_4 = arg_2_0.rankBtn
+	local var_2_5 = var_3.Find(var_2_4, "Text")
+
+	i18n = var_4
+
+	var_1(var_2_5, var_4("escape_series_rank"))
+
+	local var_2_6 = arg_2_0.top
+
+	arg_2_0.taskBtn = var_1.Find(var_2_6, "right/task")
+	setText = var_1
+
+	local var_2_7 = arg_2_0.taskBtn
+	local var_2_8 = var_3.Find(var_2_7, "Text")
+
+	i18n = var_4
+
+	var_1(var_2_8, var_4("escape_series_task"))
+
+	local var_2_9 = arg_2_0.taskBtn
+
+	arg_2_0.taskTip = var_1.Find(var_2_9, "tip")
+	arg_2_0.seriesNodes = {}
+	eachChild = var_1
+
+	local var_2_10 = arg_2_0._tf
+
+	var_1(var_3.Find(var_2_10, "Battle/Nodes"), function(arg_3_0, arg_3_1)
+		arg_2_0.seriesNodes[arg_3_0.name] = arg_3_0
+
+		return
+	end)
+
+	arg_2_0.nodes = {}
+	eachChild = var_1
+
+	local var_2_11 = arg_2_0._tf
+
+	var_1(var_3.Find(var_2_11, "Story/Nodes"), function(arg_4_0, arg_4_1)
+		arg_2_0.nodes[arg_4_0.name] = arg_4_0
+
+		return
+	end)
+
+	local var_2_12 = arg_2_0.top
+
+	arg_2_0.switchToggle = var_1.Find(var_2_12, "bottom/switch_toggle")
+	arg_2_0.ActionSequence = {}
+
+	arg_2_0:UpdateRatioScale()
+
+	pg = var_1
+
+	local var_2_13 = var_1.CameraFixMgr.GetInstance()
+	local var_2_14 = var_1.bind
+
+	pg = var_4
+	arg_2_0.camEventId = var_2_14(var_2_13, var_4.CameraFixMgr.ASPECT_RATIO_UPDATE, function(arg_5_0, arg_5_1)
+		local var_5_0 = arg_2_0
+
+		var_2.UpdateRatioScale(var_5_0)
+
+		return
+	end)
+
+	local var_2_15 = arg_2_0.top
+
+	arg_2_0.storyAward = var_1.Find(var_2_15, "bottom/Award")
+
+	local var_2_16 = arg_2_0.storyAward
+
+	arg_2_0.progressText = var_1.Find(var_2_16, "desc")
+
+	return
+end
+
+function var_0_1.SetActivity(arg_6_0, arg_6_1)
+	arg_6_0.activity = arg_6_1
+
+	return
+end
+
+function var_0_1.SetPtActivity(arg_7_0, arg_7_1)
+	arg_7_0.ptActivity = arg_7_1
+	ActivityPtData = var_1_10002
+	arg_7_0.ptData = var_1_10002.New(arg_7_0.ptActivity)
+
+	return
+end
+
+function var_0_1.didEnter(arg_8_0)
+	onButton = var_1_10001
+
+	local var_8_0 = arg_8_0
+	local var_8_1 = arg_8_0.top
+	local var_8_2 = var_4.Find(var_8_1, "top/back")
+
+	local function var_8_3()
+		local var_9_0 = arg_8_0
+
+		var_0.closeView(var_9_0)
+
+		return
+	end
+
+	SFX_CANCEL = var_8_1
+
+	var_1_10001(var_8_0, var_8_2, var_8_3, var_8_1)
+
+	onButton = var_1_10001
+
+	local var_8_4 = arg_8_0
+	local var_8_5 = arg_8_0.top
+	local var_8_6 = var_4.Find(var_8_5, "top/home")
+
+	local function var_8_7()
+		local var_10_0 = arg_8_0
+
+		var_0.quickExitFunc(var_10_0)
+
+		return
+	end
+
+	SFX_PANEL = var_8_5
+
+	var_1_10001(var_8_4, var_8_6, var_8_7, var_8_5)
+
+	onButton = var_1_10001
+
+	local var_8_8 = arg_8_0
+	local var_8_9 = arg_8_0.top
+	local var_8_10 = var_4.Find(var_8_9, "top/help")
+
+	local function var_8_11()
+		pg = var_2_10000
+
+		local var_11_0 = var_2_10000.MsgboxMgr.GetInstance()
+		local var_11_1 = var_0.ShowMsgBox
+		local var_11_2 = {}
+
+		MSGBOX_TYPE_HELP = var_2_10004
+		var_11_2.type = var_2_10004
+		i18n = var_2_10004
+		var_11_2.helps = var_2_10004("escape_manor_series_help")
+
+		var_11_1(var_11_0, var_11_2)
+
+		return
+	end
+
+	SFX_PANEL = var_8_9
+
+	var_1_10001(var_8_8, var_8_10, var_8_11, var_8_9)
+
+	onButton = var_1_10001
+
+	local var_8_12 = arg_8_0
+	local var_8_13 = arg_8_0.rankBtn
+
+	local function var_8_14()
+		local var_12_0 = arg_8_0
+		local var_12_1 = var_0.emit
+
+		BossRushEscapeManorMediator = var_2_10003
+
+		var_12_1(var_12_0, var_2_10003.ON_EXTRA_RANK)
+
+		return
+	end
+
+	SFX_PANEL = var_8_9
+
+	var_1_10001(var_8_12, var_8_13, var_8_14, var_8_9)
+
+	onButton = var_1_10001
+
+	local var_8_15 = arg_8_0
+	local var_8_16 = arg_8_0.ptBtn
+
+	local function var_8_17()
+		local var_13_0 = arg_8_0
+		local var_13_1 = var_0.emit
+
+		BossRushEscapeManorMediator = var_2_10003
+
+		local var_13_2 = var_2_10003.GO_SCENE
+
+		SCENE = var_2_10004
+
+		var_13_1(var_13_0, var_13_2, var_2_10004.ACTIVITY, {
+			id = arg_8_0.ptActivity.id
+		})
+
+		return
+	end
+
+	SFX_PANEL = var_8_9
+
+	var_1_10001(var_8_15, var_8_16, var_8_17, var_8_9)
+
+	onButton = var_1_10001
+
+	local var_8_18 = arg_8_0
+	local var_8_19 = arg_8_0.taskBtn
+
+	local function var_8_20()
+		local var_14_0 = arg_8_0
+		local var_14_1 = var_0.emit
+
+		BossRushEscapeManorMediator = var_2_10003
+
+		local var_14_2 = var_2_10003.GO_SCENE
+
+		SCENE = var_2_10004
+
+		var_14_1(var_14_0, var_14_2, var_2_10004.TASK)
+
+		return
+	end
+
+	SFX_PANEL = var_8_9
+
+	var_1_10001(var_8_18, var_8_19, var_8_20, var_8_9)
+
+	onToggle = var_1_10001
+
+	local var_8_21 = arg_8_0
+	local var_8_22 = arg_8_0.switchToggle
+	local var_8_23 = var_4.Find(var_8_22, "Story")
+
+	local function var_8_24(arg_15_0)
+		if arg_15_0 then
+			if arg_8_0.blockAnim then
+				arg_8_0.blockAnim = false
+			end
+
+			local var_15_0 = arg_8_0
+
+			var_1.SetDisplayMode(var_15_0, var_0_1.DISPLAY.STORY)
+		end
+
+		return
+	end
+
+	SFX_PANEL = var_8_22
+
+	var_1_10001(var_8_21, var_8_23, var_8_24, var_8_22)
+
+	onToggle = var_1_10001
+
+	local var_8_25 = arg_8_0
+	local var_8_26 = arg_8_0.switchToggle
+	local var_8_27 = var_4.Find(var_8_26, "Battle")
+
+	local function var_8_28(arg_16_0)
+		if arg_16_0 then
+			if arg_8_0.blockAnim then
+				arg_8_0.blockAnim = false
+			end
+
+			local var_16_0 = arg_8_0
+
+			var_1.SetDisplayMode(var_16_0, var_0_1.DISPLAY.BATTLE)
+		end
+
+		return
+	end
+
+	SFX_PANEL = var_8_26
+
+	var_1_10001(var_8_25, var_8_27, var_8_28, var_8_26)
+
+	arg_8_0.storyNodesDict = {}
+	ipairs = var_1
+
+	local var_8_29 = arg_8_0.activity
+
+	for iter_8_0, iter_8_1 in var_1(var_3.getConfig(var_8_29, "config_client").storys) do
+		local var_8_30 = arg_8_0.storyNodesDict
+
+		BossRushStoryNode = var_7
+		var_8_30[iter_8_1] = var_7.New({
+			id = iter_8_1
+		})
+	end
+
+	arg_8_0.blockAnim = true
+	triggerToggle = var_1
+
+	local var_8_31 = arg_8_0.switchToggle
+	local var_8_32 = var_3.Find
+	local var_8_33
+
+	if not arg_8_0.contextData.displayMode then
+		var_8_33 = var_0_1.DISPLAY.BATTLE
+	end
+
+	var_1(var_8_32(var_8_31, var_8_33), true)
+
+	return
+end
+
+function var_0_1.getBGM(arg_17_0)
+	if arg_17_0.contextData.displayMode ~= var_0_1.DISPLAY.STORY then
+		return var_0_1.super.getBGM(arg_17_0)
+	else
+		local var_17_0 = arg_17_0.activity
+		local var_17_1 = var_1.getConfig(var_17_0, "config_client").storybgm
+
+		pg = var_2
+
+		local var_17_2 = var_2.TimeMgr.GetInstance()
+		local var_17_3 = var_2.GetServerHour(var_17_2)
+		local var_17_4 = var_17_1[#var_17_1][2]
+
+		ipairs = var_17_2
+
+		for iter_17_0, iter_17_1 in var_17_2(var_17_1) do
+			if var_17_3 < iter_17_1[1] then
+				break
+			else
+				var_17_4 = iter_17_1[2]
+			end
+		end
+
+		return var_17_4
+	end
+
+	return
+end
+
+function var_0_1.getBG(arg_18_0)
+	if arg_18_0.contextData.displayMode ~= var_0_1.DISPLAY.STORY then
+		return "bg1"
+	else
+		return "bg2"
+	end
+
+	return
+end
+
+function var_0_1.SetDisplayMode(arg_19_0, arg_19_1)
+	arg_19_0.contextData.displayMode = arg_19_1
+
+	arg_19_0:UpdateView()
+
+	return
+end
+
+function var_0_1.UpdateRatioScale(arg_20_0, arg_20_1)
+	local var_20_0
+
+	ipairs = var_1_10003
+
+	for iter_20_0, iter_20_1 in var_1_10003({
+		"Mask",
+		"Battle",
+		"Story"
+	}) do
+		local var_20_1 = arg_20_0._tf
+		local var_20_2 = var_8.Find(var_20_1, iter_20_1).rect.height
+
+		var_20_0 = var_20_0 or 1440 < var_20_2 and var_20_2 / 1440 or 1
+		setLocalScale = var_20_1
+
+		var_20_1(var_8, {
+			x = var_20_0,
+			y = var_20_0
+		})
+	end
+
+	return
+end
+
+function var_0_1.UpdateView(arg_21_0)
+	local var_21_0 = arg_21_0.contextData.displayMode == var_0_1.DISPLAY.BATTLE
+
+	setActive = var_2
+
+	local var_21_1 = arg_21_0._tf
+
+	var_2(var_4.Find(var_21_1, "Battle"), var_21_0)
+
+	setActive = var_2
+
+	local var_21_2 = arg_21_0._tf
+
+	var_2(var_4.Find(var_21_2, "Story"), not var_21_0)
+
+	setActive = var_2
+
+	var_2(arg_21_0.storyAward, not var_21_0)
+
+	if var_21_0 then
+		arg_21_0:UpdateBattle()
+	else
+		arg_21_0:UpdateStory()
+	end
+
+	arg_21_0:UpdateStoryTask()
+
+	local var_21_3 = arg_21_0:getBG()
+
+	eachChild = var_1_10003
+
+	local var_21_4 = arg_21_0._tf
+
+	var_1_10003(var_5.Find(var_21_4, "Mask"), function(arg_22_0, arg_22_1)
+		setActive = var_2_10002
+
+		var_2_10002(arg_22_0, arg_22_0.name == var_21_3 or arg_22_0.name == "FX")
+
+		return
+	end)
+	arg_21_0:PlayBGM()
+
+	setText = var_3
+
+	local var_21_5 = arg_21_0.ptBtn
+	local var_21_6 = var_5.Find(var_21_5, "Text")
+
+	i18n = var_6
+
+	var_3(var_21_6, var_6("escape_series_pt", arg_21_0.ptActivity.data1))
+
+	setActive = var_3
+
+	local var_21_7 = arg_21_0.ptTip
+
+	Activity = var_6
+
+	var_3(var_21_7, var_6.IsActivityReady(arg_21_0.ptActivity))
+
+	local var_21_8 = arg_21_0.contextData.displayMode
+
+	arg_21_0:addbubbleMsgBoxList({
+		function(arg_23_0)
+			local var_23_0
+
+			if var_21_8 == var_0_1.DISPLAY.BATTLE then
+				local var_23_1 = arg_21_0.activity
+
+				var_23_0 = var_2.getConfig(var_23_1, "config_client").openActivityStory
+			elseif var_21_8 == var_0_1.DISPLAY.STORY then
+				local var_23_2 = arg_21_0.activity
+
+				var_23_0 = var_2.getConfig(var_23_2, "config_client").openStory
+			end
+
+			local var_23_3 = arg_21_0
+
+			var_2.PlayStory(var_23_3, var_23_0, arg_23_0)
+
+			return
+		end,
+		function(arg_24_0)
+			underscore = var_2_10001
+
+			local var_24_0 = var_2_10001.all
+
+			underscore = var_2_10003
+
+			if var_24_0(var_2_10003.values(arg_21_0.storyNodesDict), function(arg_25_0)
+				return arg_25_0:IsReaded()
+			end) and arg_21_0.storyTask then
+				local var_24_1 = arg_21_0.storyTask
+
+				if var_1.getTaskStatus(var_24_1) == 2 then
+					local var_24_2 = arg_21_0.activity
+					local var_24_3 = var_1.getConfig(var_24_2, "config_client").endStory
+					local var_24_4 = arg_21_0
+
+					var_2.PlayStory(var_24_4, var_24_3, arg_24_0)
+
+					goto label_24_0
+				end
+			end
+
+			arg_24_0()
+
+			::label_24_0::
+
+			return
+		end
+	})
+
+	return
+end
+
+function var_0_1.UpdateBattle(arg_26_0)
+	local var_26_0 = arg_26_0.activity
+	local var_26_1 = var_1.GetActiveSeriesIds(var_26_0)
+
+	ipairs = var_1_10003
+
+	for iter_26_0, iter_26_1 in var_1_10003(var_26_1) do
+		local var_26_2 = arg_26_0.seriesNodes
+
+		tostring = var_1_10009
+
+		local var_26_3 = var_26_2[var_1_10009(iter_26_1)]
+
+		BossRushSeriesData = var_1_10009
+
+		local var_26_4 = var_1_10009.New({
+			id = iter_26_1,
+			actId = var_1.id
+		})
+		local var_26_5 = var_1_10009.IsUnlock(var_26_4, var_1)
+
+		setActive = var_11
+
+		var_11(var_26_3, var_26_5)
+
+		local var_26_6 = var_1_10009
+		local var_26_7 = var_1_10009.GetType(var_26_6)
+
+		setActive = var_26_4
+
+		local var_26_8 = var_26_3:Find("blue")
+
+		BossRushSeriesData = var_1_10015
+		var_1_10015 = var_26_7 == var_1_10015.TYPE.NORMAL
+
+		var_26_4(var_26_8, var_1_10015)
+
+		setActive = var_26_4
+
+		local var_26_9 = var_26_3:Find("red")
+
+		BossRushSeriesData = var_1_10015
+		var_1_10015 = var_26_7 ~= var_1_10015.TYPE.NORMAL
+
+		var_26_4(var_26_9, var_1_10015)
+
+		local var_26_10
+
+		BossRushSeriesData = var_26_6
+
+		if var_26_7 == var_26_6.TYPE.NORMAL then
+			var_1_10015 = var_26_3
+			var_26_10 = var_26_3.Find(var_1_10015, "blue")
+		else
+			var_1_10015 = var_26_3
+			var_26_10 = var_26_3.Find(var_1_10015, "red")
+		end
+
+		setText = var_13
+
+		var_13(var_26_10:Find("Text"), var_1_10009:GetName())
+
+		setText = var_13
+		var_1_10015 = var_26_10:Find("diff/Text")
+		switch = var_16
+
+		local var_26_11 = iter_26_1
+		local var_26_12 = {
+			[6001] = function()
+				i18n = var_2_10000
+
+				return var_2_10000("zengke_series_easy")
+			end,
+			[6002] = function()
+				i18n = var_2_10000
+
+				return var_2_10000("zengke_series_normal")
+			end,
+			[6003] = function()
+				i18n = var_2_10000
+
+				return var_2_10000("zengke_series_hard")
+			end,
+			[6004] = function()
+				i18n = var_2_10000
+
+				return var_2_10000("zengke_series_sp")
+			end
+		}
+
+		local function var_26_13()
+			i18n = var_2_10000
+
+			return var_2_10000("zengke_series_ex")
+		end
+
+		var_26_12[6005] = var_26_13
+
+		var_13(var_1_10015, var_16(var_26_11, var_26_12))
+
+		BossRushSeriesData = var_13
+
+		local var_26_14 = var_26_7 == var_13.TYPE.SP
+
+		setActive = var_26_9
+
+		var_26_9(var_26_3:Find("times"), var_26_14)
+
+		local var_26_15 = true
+
+		if var_26_14 then
+			if not var_1:GetUsedBonus()[iter_26_0] then
+				var_1_10015 = 0
+			end
+
+			local var_26_16 = var_1_10009:GetMaxBonusCount() - var_1_10015 > 0
+
+			setText = var_17
+
+			local var_26_17 = var_26_3
+			local var_26_18 = var_26_3.Find(var_26_17, "times/Text")
+
+			i18n = var_26_13
+			var_26_13 = var_26_13("series_enemy_SP_count")
+			setColorStr = var_26_17
+			math = var_1_10023
+
+			var_17(var_26_18, var_26_13 .. var_26_17(var_1_10023.max(0, var_16 - var_1_10015) .. "/" .. var_16, var_26_16 and "#6EE868" or "#7f7f7f"))
+		end
+
+		onButton = var_1_10015
+
+		local var_26_19 = arg_26_0
+		local var_26_20 = var_26_3
+
+		local function var_26_21()
+			if not var_26_5 then
+				local var_32_0 = var_1_10009
+				local var_32_1 = var_0.GetPreSeriesId(var_32_0)
+
+				BossRushSeriesData = var_2_10001
+
+				local var_32_2 = var_2_10001.New({
+					id = var_32_1
+				})
+
+				pg = var_32_0
+
+				local var_32_3 = var_32_0.TipsMgr.GetInstance()
+				local var_32_4 = var_2.ShowTips
+
+				i18n = var_2_10005
+
+				var_32_4(var_32_3, var_2_10005("series_enemy_unlock", var_32_2:GetName()))
+
+				return
+			end
+
+			local var_32_5 = arg_26_0
+			local var_32_6 = var_0.emit
+
+			BossRushEscapeManorMediator = var_2_10003
+
+			var_32_6(var_32_5, var_2_10003.ON_FLEET_SELECT, var_1_10009)
+
+			return
+		end
+
+		SFX_PANEL = var_26_13
+
+		var_1_10015(var_26_19, var_26_20, var_26_21, var_26_13)
+	end
+
+	return
+end
+
+function var_0_1.UpdateStory(arg_33_0)
+	pg = var_1_10001
+
+	local var_33_0 = var_1_10001.NewStoryMgr.GetInstance()
+	local var_33_1 = 0
+	local var_33_2 = 0
+
+	pairs = var_1_10004
+
+	for iter_33_0, iter_33_1 in var_1_10004(arg_33_0.storyNodesDict) do
+		print = var_1_10009
+
+		local var_33_3 = "find node id "
+
+		tostring = var_1_10012
+
+		var_1_10009(var_33_3 .. var_1_10012(iter_33_1.id))
+
+		var_1_10009 = arg_33_0.nodes
+		tostring = var_1_10010
+		var_1_10009 = var_1_10009[var_1_10010(iter_33_1.id)]
+		var_1_10012 = iter_33_1
+		var_1_10010 = iter_33_1.IsActive(var_1_10012, arg_33_0.activity, arg_33_0.ptActivity)
+		setActive = var_11
+
+		var_11(var_1_10009, var_1_10010)
+
+		setText = var_11
+
+		var_11(var_1_10009:Find("main/char/bg/Text"), iter_33_1:GetName())
+
+		var_1_10012 = iter_33_1:IsReaded() and 1 or 0
+		var_33_1 = var_33_1 + var_1_10012
+		var_33_2 = var_33_2 + 1
+		setActive = var_1_10012
+
+		var_1_10012(var_1_10009:Find("main/char"), not var_11)
+
+		setActive = var_1_10012
+
+		var_1_10012(var_1_10009:Find("main/talk"), var_11)
+
+		onButton = var_1_10012
+
+		var_1_10012(arg_33_0, var_1_10009, function()
+			if not var_1_10010 or var_0 then
+				return
+			end
+
+			local var_34_0 = iter_33_1
+			local var_34_1 = var_0.GetStory(var_34_0)
+			local var_34_2 = arg_33_0
+
+			var_1.PlayStory(var_34_2, var_34_1, function()
+				local var_35_0 = arg_33_0
+
+				var_0.UpdateView(var_35_0)
+
+				return
+			end)
+
+			return
+		end)
+	end
+
+	setText = var_4
+
+	local var_33_4 = arg_33_0.progressText
+
+	i18n = iter_33_0
+
+	var_4(var_33_4, iter_33_0("escape_story_reward_count"))
+
+	setText = var_4
+	findTF = var_33_4
+
+	local var_33_5 = var_33_4(arg_33_0.progressText, "progress")
+
+	setColorStr = var_7
+
+	var_4(var_33_5, var_7(var_33_1, "#f34f66") .. "/" .. var_33_2)
+
+	if arg_33_0.storyTask then
+		local var_33_6 = arg_33_0.storyTask
+		local var_33_7 = var_4.getConfig(var_33_6, "award_display")
+
+		Drop = var_5
+
+		local var_33_8 = var_5.Create(var_33_7[1])
+		local var_33_9 = arg_33_0.storyAward
+		local var_33_10 = var_6.Find(var_33_9, "award_bg")
+
+		updateDrop = var_7
+
+		var_7(var_33_10:Find("IconTpl"), var_33_8)
+
+		onButton = var_7
+
+		local var_33_11 = arg_33_0
+		local var_33_12 = var_33_10
+
+		local function var_33_13()
+			local var_36_0 = arg_33_0
+			local var_36_1 = var_0.emit
+
+			BaseUI = var_2_10003
+
+			var_36_1(var_36_0, var_2_10003.ON_DROP, var_33_8)
+
+			return
+		end
+
+		SFX_PANEL = var_12
+
+		var_7(var_33_11, var_33_12, var_33_13, var_12)
+
+		local var_33_14 = arg_33_0.storyTask
+		local var_33_15 = var_7.getTaskStatus(var_33_14)
+
+		setActive = var_33_9
+
+		var_33_9(var_33_10:Find("get"), var_33_15 == 1)
+
+		setActive = var_33_9
+
+		var_33_9(var_33_10:Find("got"), var_33_15 == 2)
+	end
+
+	return
+end
+
+function var_0_1.PlayStory(arg_37_0, arg_37_1, arg_37_2)
+	if not arg_37_1 then
+		existCall = var_1_10003
+
+		return var_1_10003(arg_37_2)
+	end
+
+	pg = var_1_10003
+
+	local var_37_0 = var_1_10003.NewStoryMgr.GetInstance()
+	local var_37_1 = var_3.IsPlayed(var_37_0, arg_37_1)
+
+	seriesAsync = var_1_10005
+
+	var_1_10005({
+		function(arg_38_0)
+			if var_37_1 then
+				return arg_38_0()
+			end
+
+			tonumber = var_1
+
+			if var_1(arg_37_1) and var_1 > 0 then
+				local var_38_0 = arg_37_0
+				local var_38_1 = var_2.emit
+
+				BossRushEscapeManorMediator = var_2_10005
+
+				var_38_1(var_38_0, var_2_10005.ON_PERFORM_COMBAT, var_1)
+			else
+				local var_38_2 = var_0
+
+				var_2.Play(var_38_2, arg_37_1, arg_38_0)
+			end
+
+			return
+		end
+	}, arg_37_2)
+
+	return
+end
+
+function var_0_1.UpdateStoryTask(arg_39_0)
+	local var_39_0 = arg_39_0.activity
+	local var_39_1 = var_1.getConfig(var_39_0, "config_client").tasks[1]
+
+	getProxy = var_1_10002
+	TaskProxy = var_4
+
+	local var_39_2 = var_1_10002(var_4)
+	local var_39_3
+
+	if not var_2.getTaskVO(var_39_2, var_39_1) then
+		Task = var_39_3
+		var_39_3 = var_39_3.New({
+			submit_time = 1,
+			id = var_39_1
+		})
+	end
+
+	arg_39_0.storyTask = var_39_3
+	setActive = var_39_3
+
+	local var_39_4 = arg_39_0.switchToggle
+	local var_39_5 = var_4.Find(var_39_4, "Story/new")
+	local var_39_6, var_39_7
+
+	if arg_39_0.storyTask then
+		var_39_6 = arg_39_0.storyTask
+		var_39_7 = var_5.getTaskStatus(var_39_6) ~= 2
+	end
+
+	var_39_3(var_39_5, var_39_7)
+
+	setActive = var_39_3
+
+	local var_39_8 = arg_39_0.taskTip
+
+	Activity = var_39_7
+
+	local var_39_9 = var_39_7.IsActivityReady
+
+	getProxy = var_39_6
+	ActivityProxy = var_1_10009
+
+	local var_39_10 = var_39_6(var_1_10009)
+	local var_39_11 = var_7.getActivityById
+
+	ActivityConst = var_1_10010
+
+	var_39_3(var_39_8, var_39_9(var_39_11(var_39_10, var_1_10010.ESCAPE_BOSS_RUSH_TASK_ACT_ID)))
+
+	if arg_39_0.storyTask then
+		local var_39_12 = arg_39_0.storyTask
+		local var_39_13 = var_2.getConfig(var_39_12, "award_display")
+
+		Drop = var_39_0
+		var_39_0 = var_39_0.Create(var_39_13[1])
+
+		local var_39_14 = arg_39_0.storyAward
+		local var_39_15 = var_4.Find(var_39_14, "award_bg")
+
+		updateDrop = var_5
+
+		var_5(var_39_15:Find("IconTpl"), var_39_0)
+
+		onButton = var_5
+
+		local var_39_16 = arg_39_0
+		local var_39_17 = var_39_15
+		local var_39_18 = var_39_15.Find(var_39_17, "IconTpl")
+
+		local function var_39_19()
+			local var_40_0 = arg_39_0
+			local var_40_1 = var_0.emit
+
+			BaseUI = var_2_10003
+
+			var_40_1(var_40_0, var_2_10003.ON_DROP, var_39_0)
+
+			return
+		end
+
+		SFX_PANEL = var_39_17
+
+		var_5(var_39_16, var_39_18, var_39_19, var_39_17)
+
+		local var_39_20 = arg_39_0.storyTask
+		local var_39_21 = var_5.getTaskStatus(var_39_20)
+
+		setActive = var_39_14
+
+		var_39_14(var_39_15:Find("get"), var_39_21 == 1)
+
+		setActive = var_39_14
+
+		var_39_14(var_39_15:Find("got"), var_39_21 == 2)
+	end
+
+	local var_39_22 = arg_39_0.storyTask
+	local var_39_23 = var_2.getConfig(var_39_22, "award_display")
+
+	Drop = var_39_0
+
+	local var_39_24 = var_39_0.Create(var_39_23[1])
+	local var_39_25 = arg_39_0.storyAward
+	local var_39_26 = var_4.Find(var_39_25, "award_bg")
+
+	updateDrop = var_5
+
+	var_5(var_39_26:Find("IconTpl"), var_39_24)
+
+	onButton = var_5
+
+	local var_39_27 = arg_39_0
+	local var_39_28 = var_39_26
+
+	local function var_39_29()
+		return
+	end
+
+	SFX_PANEL = var_10
+
+	var_5(var_39_27, var_39_28, var_39_29, var_10)
+
+	local var_39_30 = arg_39_0.storyTask
+	local var_39_31 = var_5.getTaskStatus(var_39_30)
+
+	setActive = var_39_25
+
+	var_39_25(var_39_26:Find("get"), var_39_31 == 1)
+
+	setActive = var_39_25
+
+	var_39_25(var_39_26:Find("got"), var_39_31 == 2)
+
+	if var_39_31 == 1 then
+		local var_39_32 = arg_39_0
+		local var_39_33 = arg_39_0.emit
+
+		BossRushEscapeManorMediator = var_9
+
+		var_39_33(var_39_32, var_9.ON_TASK_SUBMIT, arg_39_0.storyTask)
+	end
+
+	return
+end
+
+function var_0_1.addbubbleMsgBoxList(arg_42_0, arg_42_1)
+	local var_42_0 = #arg_42_0.ActionSequence == 0
+
+	table = var_1_10003
+
+	var_1_10003.insertto(arg_42_0.ActionSequence, arg_42_1)
+
+	if not var_42_0 then
+		return
+	end
+
+	arg_42_0:resumeBubble()
+
+	return
+end
+
+function var_0_1.addbubbleMsgBox(arg_43_0, arg_43_1)
+	local var_43_0 = #arg_43_0.ActionSequence == 0
+
+	table = var_1_10003
+
+	var_1_10003.insert(arg_43_0.ActionSequence, arg_43_1)
+
+	if not var_43_0 then
+		return
+	end
+
+	arg_43_0:resumeBubble()
+
+	return
+end
+
+function var_0_1.resumeBubble(arg_44_0)
+	if #arg_44_0.ActionSequence == 0 then
+		return
+	end
+
+	local var_44_0
+
+	;(function()
+		if arg_44_0.ActionSequence[1] then
+			var_0(function()
+				table = var_3_10000
+
+				var_3_10000.remove(arg_44_0.ActionSequence, 1)
+				var_0()
+
+				return
+			end)
+		end
+
+		return
+	end)()
+
+	return
+end
+
+function var_0_1.CleanBubbleMsgbox(arg_47_0)
+	table = var_1_10001
+
+	var_1_10001.clean(arg_47_0.ActionSequence)
+
+	return
+end
+
+function var_0_1.willExit(arg_48_0)
+	if arg_48_0.camEventId then
+		pg = var_1
+
+		local var_48_0 = var_1.CameraFixMgr.GetInstance()
+
+		var_1.disconnect(var_48_0, arg_48_0.camEventId)
+
+		arg_48_0.camEventId = nil
+	end
+
+	return
+end
+
+return var_0_1

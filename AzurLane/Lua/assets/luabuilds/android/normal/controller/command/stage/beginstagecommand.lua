@@ -1,0 +1,173 @@
+﻿class = var_0_10000
+
+local var_0_0 = "BeginStageCommand"
+
+pm = var_0_10002
+
+local var_0_1 = var_0_10000(var_0_0, var_0_10002.SimpleCommand)
+
+function var_0_1.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().system
+
+	ys = var_1_10004
+
+	var_1_10004.Battle.BattleGate.Gates[var_1_0].Entrance(var_2, arg_1_0)
+
+	return
+end
+
+function var_0_1.RequestFailStandardProcess(arg_2_0, arg_2_1)
+	local var_2_1
+
+	if arg_2_1.result == 10 then
+		pg = var_2_1
+
+		local var_2_0 = var_2_1.TipsMgr.GetInstance()
+
+		var_2_1 = var_2_1.ShowTips
+		ERROR_MESSAGE = var_1_10004
+
+		var_2_1(var_2_0, var_1_10004[10])
+	else
+		pg = var_2_1
+
+		local var_2_2 = var_2_1.TipsMgr.GetInstance()
+		local var_2_3 = var_2.ShowTips
+
+		errorTip = var_1_10004
+
+		var_2_3(var_2_2, var_1_10004("stage_beginStage", arg_2_1.result))
+
+		local var_2_4 = arg_2_0
+		local var_2_5 = arg_2_0.sendNotification
+
+		GAME = var_4
+
+		var_2_5(var_2_4, var_4.BEGIN_STAGE_ERRO, arg_2_1.result)
+	end
+
+	return
+end
+
+function var_0_1.SendRequest(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4, arg_3_5)
+	local var_3_0 = arg_3_5 or {}
+	local var_3_1 = {
+		system = arg_3_0,
+		ship_id_list = arg_3_1,
+		data = arg_3_2[1],
+		data2 = arg_3_2[2],
+		other_ship_id_list = var_3_0
+	}
+
+	pg = var_8
+
+	local var_3_2 = var_8.ConnectionMgr.GetInstance()
+
+	var_8.Send(var_3_2, 40001, var_3_1, 40002, function(arg_4_0)
+		if arg_4_0.result == 0 then
+			arg_3_3(arg_4_0)
+		else
+			arg_3_4(arg_4_0)
+		end
+
+		return
+	end)
+
+	return
+end
+
+function var_0_1.DockOverload()
+	getProxy = var_1_10000
+	PlayerProxy = var_1_10001
+
+	local var_5_0 = var_1_10000(var_1_10001)
+	local var_5_1 = var_0.getData(var_5_0)
+
+	getProxy = var_5_0
+	BayProxy = var_1_10003
+
+	local var_5_2 = var_5_0(var_1_10003)
+	local var_5_3 = var_2.getShipCount(var_5_2)
+	local var_5_4 = var_5_1
+
+	if var_5_1.getMaxShipBag(var_5_4) <= var_5_3 then
+		NoPosMsgBox = var_4
+		i18n = var_5_4
+
+		local var_5_5 = var_5_4("switch_to_shop_tip_noDockyard")
+
+		openDockyardClear = var_6
+		gotoChargeScene = var_1_10007
+		openDockyardIntensify = var_1_10008
+
+		var_4(var_5_5, var_6, var_1_10007, var_1_10008)
+
+		return true
+	end
+
+	return false
+end
+
+function var_0_1.LegalFleet(arg_6_0)
+	getProxy = var_1_10001
+	FleetProxy = var_1_10002
+
+	local var_6_0 = var_1_10001(var_1_10002)
+
+	if var_1.getFleetById(var_6_0, arg_6_0) == nil or var_2:isEmpty() then
+		pg = var_6_0
+
+		local var_6_1 = var_6_0.TipsMgr.GetInstance()
+		local var_6_2 = var_3.ShowTips
+
+		i18n = var_1_10005
+
+		var_6_2(var_6_1, var_1_10005("stage_beginStage_error_fleetEmpty"))
+
+		return false
+	end
+
+	local var_6_3, var_6_4 = var_2:isLegalToFight()
+
+	if var_6_3 ~= true then
+		pg = var_1_10005
+
+		local var_6_5 = var_1_10005.TipsMgr.GetInstance()
+		local var_6_6 = var_5.ShowTips
+
+		i18n = var_1_10007
+
+		local var_6_7 = "stage_beginStage_error_teamEmpty"
+
+		Fleet = var_1_10009
+
+		var_6_6(var_6_5, var_1_10007(var_6_7, var_1_10009.C_TEAM_NAME[var_6_3], var_6_4))
+
+		return false
+	end
+
+	return true
+end
+
+function var_0_1.ShipVertify()
+	getProxy = var_1_10000
+	BayProxy = var_1_10001
+
+	local var_7_0 = var_1_10000(var_1_10001)
+	local var_7_1 = var_0.getRawData(var_7_0)
+
+	pairs = var_7_0
+
+	for iter_7_0, iter_7_1 in var_7_0(var_7_1) do
+		if not iter_7_1:attrVertify() then
+			BattleVertify = var_7
+			var_7.playerShipVertifyFail = true
+
+			break
+		end
+	end
+
+	return
+end
+
+return var_0_1

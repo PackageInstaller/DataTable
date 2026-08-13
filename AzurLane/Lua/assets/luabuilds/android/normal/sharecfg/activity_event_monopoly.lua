@@ -1,0 +1,591 @@
+﻿pg = var_0_10000
+
+local var_0_0
+
+var_0_0 = var_0_10000 or {}
+pg = pg
+rawget = var_0_10001
+pg = var_0_10002
+
+local var_0_2
+
+if not var_0_10001(var_0_10002, "activity_event_monopoly") then
+	setmetatable = var_0_2
+
+	local var_0_1 = {
+		__name = "activity_event_monopoly"
+	}
+
+	confNEO = var_3
+	var_0_2 = var_0_2(var_0_1, var_3)
+end
+
+var_0.activity_event_monopoly = var_0_2
+pg = var_0
+
+local var_0_3 = var_0.activity_event_monopoly
+
+var_0_3.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8
+}
+pg = var_0_3
+pg = var_1
+
+local var_0_4
+
+if not var_1.base then
+	var_0_4 = {}
+end
+
+var_0_3.base = var_0_4
+pg = var_0_3
+var_0_3.base.activity_event_monopoly = {}
+
+;(function()
+	pg = var_1_10000
+
+	local var_1_0 = var_1_10000.base.activity_event_monopoly
+
+	var_1_0[1] = {
+		daily_time = 4,
+		ship_reward = "",
+		effective_times = 0,
+		reward_time = 8,
+		ship_dialog = "",
+		sum_lap_reward_show = "",
+		id = 1,
+		version = 1,
+		map = {
+			1001,
+			1002,
+			1003,
+			1004,
+			1005,
+			1006,
+			1007,
+			1008,
+			1009,
+			1010,
+			1011,
+			1012,
+			1013,
+			1014,
+			1015,
+			1016,
+			1017,
+			1018
+		},
+		reward = {
+			90594,
+			90595,
+			90596,
+			90597,
+			90598,
+			90599,
+			90600
+		},
+		reward_extra = {
+			90601,
+			90602,
+			90603,
+			90604,
+			90605
+		},
+		story = {
+			{
+				0,
+				"DONGHUANGCHUNJIE1"
+			},
+			{
+				6,
+				"DONGHUANGCHUNJIE2"
+			},
+			{
+				12,
+				"DONGHUANGCHUNJIE3"
+			},
+			{
+				18,
+				"DONGHUANGCHUNJIE4"
+			},
+			{
+				24,
+				"DONGHUANGCHUNJIE5"
+			},
+			{
+				30,
+				"DONGHUANGCHUNJIE6"
+			},
+			{
+				36,
+				"DONGHUANGCHUNJIE7"
+			}
+		},
+		drop_times = {}
+	}
+	pg = var_1_0
+
+	local var_1_1 = var_1_0.base.activity_event_monopoly
+
+	var_1_1[2] = {
+		daily_time = 5,
+		ship_reward = "",
+		effective_times = 0,
+		reward_time = 5,
+		ship_dialog = "",
+		sum_lap_reward_show = "",
+		id = 2,
+		version = 1,
+		map = {
+			1001,
+			1002,
+			1003,
+			1004,
+			1005,
+			1006,
+			1007,
+			1008,
+			1009,
+			1010,
+			1011,
+			1012,
+			1013,
+			1014,
+			1015,
+			1016,
+			1017,
+			1018
+		},
+		reward = {},
+		reward_extra = {},
+		story = {
+			{
+				0,
+				"DONGHUANGCHUNJIE1"
+			},
+			{
+				6,
+				"DONGHUANGCHUNJIE2"
+			},
+			{
+				12,
+				"DONGHUANGCHUNJIE3"
+			},
+			{
+				18,
+				"DONGHUANGCHUNJIE4"
+			},
+			{
+				24,
+				"DONGHUANGCHUNJIE5"
+			},
+			{
+				30,
+				"DONGHUANGCHUNJIE6"
+			},
+			{
+				36,
+				"DONGHUANGCHUNJIE7"
+			}
+		},
+		drop_times = {}
+	}
+	pg = var_1_1
+
+	local var_1_2 = var_1_1.base.activity_event_monopoly
+
+	var_1_2[3] = {
+		daily_time = 5,
+		ship_reward = "",
+		effective_times = 0,
+		reward_time = 0,
+		ship_dialog = "",
+		sum_lap_reward_show = "",
+		id = 3,
+		version = 1,
+		map = {
+			2001,
+			2002,
+			2003,
+			2004,
+			2005,
+			2006,
+			2007,
+			2008,
+			2009,
+			2010,
+			2011,
+			2012,
+			2013,
+			2014,
+			2015,
+			2016,
+			2017,
+			2018
+		},
+		reward = {},
+		reward_extra = {},
+		story = {},
+		drop_times = {}
+	}
+	pg = var_1_2
+
+	local var_1_3 = var_1_2.base.activity_event_monopoly
+
+	var_1_3[4] = {
+		daily_time = 5,
+		ship_reward = "",
+		effective_times = 0,
+		reward_time = 5,
+		ship_dialog = "",
+		sum_lap_reward_show = "",
+		id = 4,
+		version = 2,
+		map = {
+			3002,
+			3003,
+			3004,
+			3005,
+			3006,
+			3007,
+			3008,
+			3009,
+			3010,
+			3011,
+			3012,
+			3013,
+			3014,
+			3015,
+			3016,
+			3017,
+			3018
+		},
+		reward = {},
+		reward_extra = {},
+		story = {},
+		drop_times = {
+			35,
+			94598
+		}
+	}
+	pg = var_1_3
+
+	local var_1_4 = var_1_3.base.activity_event_monopoly
+
+	var_1_4[5] = {
+		daily_time = 5,
+		ship_reward = "",
+		effective_times = 0,
+		reward_time = 0,
+		ship_dialog = "",
+		sum_lap_reward_show = "",
+		id = 5,
+		version = 1,
+		map = {
+			4001,
+			4002,
+			4003,
+			4004,
+			4005,
+			4006,
+			4007,
+			4008,
+			4009,
+			4010,
+			4011,
+			4012,
+			4013,
+			4014,
+			4015,
+			4016,
+			4017,
+			4018
+		},
+		reward = {},
+		reward_extra = {},
+		story = {},
+		drop_times = {}
+	}
+	pg = var_1_4
+
+	local var_1_5 = var_1_4.base.activity_event_monopoly
+
+	var_1_5[6] = {
+		daily_time = 5,
+		ship_reward = "",
+		effective_times = 35,
+		reward_time = 5,
+		ship_dialog = "",
+		sum_lap_reward_show = "",
+		id = 6,
+		version = 2,
+		map = {
+			3002,
+			3003,
+			3004,
+			3005,
+			3006,
+			3007,
+			3008,
+			3009,
+			3010,
+			3011,
+			3012,
+			3013,
+			3014,
+			3015,
+			3016,
+			3017,
+			3018
+		},
+		reward = {},
+		reward_extra = {},
+		story = {},
+		drop_times = {
+			35,
+			96859
+		}
+	}
+	pg = var_1_5
+
+	local var_1_6 = var_1_5.base.activity_event_monopoly
+
+	var_1_6[7] = {
+		daily_time = 5,
+		ship_reward = "",
+		effective_times = 0,
+		reward_time = 0,
+		ship_dialog = "",
+		sum_lap_reward_show = "",
+		id = 7,
+		version = 1,
+		map = {
+			5001,
+			5002,
+			5003,
+			5004,
+			5005,
+			5006,
+			5007,
+			5008,
+			5009,
+			5010,
+			5011,
+			5012,
+			5013,
+			5014,
+			5015,
+			5016,
+			5017,
+			5018
+		},
+		reward = {},
+		reward_extra = {},
+		story = {},
+		drop_times = {}
+	}
+	pg = var_1_6
+	var_1_6.base.activity_event_monopoly[8] = {
+		daily_time = 3,
+		effective_times = 0,
+		reward_time = 0,
+		id = 8,
+		version = 4,
+		map = {
+			6001,
+			6002,
+			6003,
+			6004,
+			6005,
+			6006,
+			6007,
+			6008,
+			6009,
+			6010,
+			6011,
+			6012,
+			6013,
+			6014,
+			6015,
+			6016,
+			6017,
+			6018,
+			6019,
+			6020,
+			6021,
+			6022,
+			6023,
+			6024,
+			6025,
+			6026,
+			6027,
+			6028,
+			6029,
+			6030,
+			6031,
+			6032
+		},
+		reward = {},
+		reward_extra = {},
+		story = {},
+		drop_times = {},
+		ship_reward = {
+			{
+				90402,
+				902817
+			},
+			{
+				90701,
+				902819
+			},
+			{
+				40809,
+				902818
+			}
+		},
+		ship_dialog = {
+			{
+				90402,
+				{
+					{
+						1,
+						{
+							104,
+							105
+						}
+					},
+					{
+						2,
+						{
+							106,
+							107
+						}
+					},
+					{
+						3,
+						{
+							108,
+							109
+						}
+					},
+					{
+						4,
+						{
+							102
+						}
+					},
+					{
+						5,
+						{
+							103
+						}
+					}
+				}
+			},
+			{
+				40809,
+				{
+					{
+						1,
+						{
+							114,
+							115
+						}
+					},
+					{
+						2,
+						{
+							116,
+							117
+						}
+					},
+					{
+						3,
+						{
+							118,
+							119
+						}
+					},
+					{
+						4,
+						{
+							112
+						}
+					},
+					{
+						5,
+						{
+							113
+						}
+					}
+				}
+			},
+			{
+				90701,
+				{
+					{
+						1,
+						{
+							124,
+							125
+						}
+					},
+					{
+						2,
+						{
+							126,
+							127
+						}
+					},
+					{
+						3,
+						{
+							128,
+							129
+						}
+					},
+					{
+						4,
+						{
+							122
+						}
+					},
+					{
+						5,
+						{
+							123
+						}
+					}
+				}
+			}
+		},
+		sum_lap_reward_show = {
+			{
+				1,
+				1,
+				2000
+			},
+			{
+				1,
+				2,
+				200
+			},
+			{
+				5,
+				282,
+				1
+			}
+		}
+	}
+
+	return
+end)()
+
+return
