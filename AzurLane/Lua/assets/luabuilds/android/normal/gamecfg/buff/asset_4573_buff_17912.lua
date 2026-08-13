@@ -1,0 +1,21 @@
+﻿return {
+	effect_list = {},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 0,
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 17242,
+	last_effect = "boyixi_guanghuan"
+}

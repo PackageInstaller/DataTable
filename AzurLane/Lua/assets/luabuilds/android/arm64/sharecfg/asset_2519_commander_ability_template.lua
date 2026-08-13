@@ -1,0 +1,7239 @@
+﻿pg = var_0_10000
+
+local var_0_0
+
+var_0_0 = var_0_10000 or {}
+pg = pg
+rawget = var_0_10001
+pg = var_0_10003
+
+local var_0_2
+
+if not var_0_10001(var_0_10003, "commander_ability_template") then
+	setmetatable = var_0_2
+
+	local var_0_1 = {
+		__name = "commander_ability_template"
+	}
+
+	confNEO = var_4
+	var_0_2 = var_0_2(var_0_1, var_4)
+end
+
+var_0.commander_ability_template = var_0_2
+pg = var_0
+
+local var_0_3 = var_0.commander_ability_template
+
+var_0_3.all = {
+	101,
+	102,
+	103,
+	111,
+	112,
+	113,
+	121,
+	122,
+	123,
+	131,
+	132,
+	141,
+	142,
+	151,
+	152,
+	201,
+	202,
+	203,
+	211,
+	212,
+	213,
+	221,
+	222,
+	223,
+	301,
+	302,
+	303,
+	311,
+	312,
+	313,
+	321,
+	322,
+	401,
+	402,
+	403,
+	411,
+	412,
+	413,
+	501,
+	502,
+	503,
+	511,
+	512,
+	513,
+	601,
+	602,
+	603,
+	611,
+	612,
+	613,
+	621,
+	622,
+	623,
+	631,
+	632,
+	633,
+	641,
+	642,
+	643,
+	651,
+	652,
+	653,
+	701,
+	702,
+	703,
+	711,
+	712,
+	713,
+	721,
+	722,
+	723,
+	731,
+	732,
+	733,
+	741,
+	742,
+	743,
+	751,
+	752,
+	753,
+	761,
+	762,
+	763,
+	771,
+	772,
+	773,
+	801,
+	802,
+	803,
+	811,
+	812,
+	813,
+	821,
+	822,
+	823,
+	831,
+	832,
+	833,
+	901,
+	902,
+	903,
+	911,
+	912,
+	913,
+	921,
+	922,
+	923,
+	2001,
+	2002,
+	2003,
+	2011,
+	2012,
+	2013,
+	2021,
+	2022,
+	2023,
+	2031,
+	2032,
+	2033,
+	2041,
+	2042,
+	2043,
+	2111,
+	2112,
+	2113,
+	2121,
+	2122,
+	2123,
+	2131,
+	2132,
+	2133,
+	2141,
+	2142,
+	2143,
+	2151,
+	2152,
+	2153,
+	2171,
+	2172,
+	2173,
+	2181,
+	2182,
+	2183,
+	2191,
+	2192,
+	2193,
+	5011,
+	5021,
+	5031,
+	5041,
+	5051,
+	5061,
+	5071,
+	5081,
+	5091,
+	5101,
+	5111,
+	5121,
+	5131,
+	5141,
+	5151,
+	5161,
+	5171,
+	5181
+}
+pg = var_0_3
+pg = var_1
+
+local var_0_4
+
+if not var_1.base then
+	var_0_4 = {}
+end
+
+var_0_3.base = var_0_4
+pg = var_0_3
+var_0_3.base.commander_ability_template = {}
+
+;(function()
+	pg = var_1_10000
+
+	local var_1_0 = var_1_10000.base.commander_ability_template
+
+	var_1_0[101] = {
+		cost = 0,
+		name = "炮击新手·驱逐",
+		group_id = 10,
+		worth = 1,
+		desc = "<color=#3dc6ff>驱逐</color>炮击提高3点",
+		next = 102,
+		id = 101,
+		icon = "quzhu_paoji_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				2,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<驱逐>炮击",
+				3
+			}
+		}
+	}
+	pg = var_1_0
+
+	local var_1_1 = var_1_0.base.commander_ability_template
+
+	var_1_1[102] = {
+		cost = 0,
+		name = "熟练炮手·驱逐",
+		group_id = 10,
+		worth = 2,
+		desc = "<color=#3dc6ff>驱逐</color>炮击提高4点",
+		next = 103,
+		id = 102,
+		icon = "quzhu_paoji_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				2,
+				4
+			}
+		},
+		add_desc = {
+			{
+				"<驱逐>炮击",
+				4
+			}
+		}
+	}
+	pg = var_1_1
+
+	local var_1_2 = var_1_1.base.commander_ability_template
+
+	var_1_2[103] = {
+		cost = 0,
+		name = "炮术长·驱逐",
+		group_id = 10,
+		worth = 3,
+		desc = "<color=#3dc6ff>驱逐</color>炮击提高6点",
+		next = 0,
+		id = 103,
+		icon = "quzhu_paoji_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				2,
+				6
+			}
+		},
+		add_desc = {
+			{
+				"<驱逐>炮击",
+				6
+			}
+		}
+	}
+	pg = var_1_2
+
+	local var_1_3 = var_1_2.base.commander_ability_template
+
+	var_1_3[111] = {
+		cost = 0,
+		name = "炮击新手·巡洋",
+		group_id = 11,
+		worth = 1,
+		desc = "<color=#3dc6ff>轻巡、重巡、超巡</color>炮击提高5点",
+		next = 112,
+		id = 111,
+		icon = "xunyang_paoji_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				2,
+				5
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>炮击",
+				5
+			},
+			{
+				"<重巡>炮击",
+				5
+			},
+			{
+				"<超巡>炮击",
+				5
+			}
+		}
+	}
+	pg = var_1_3
+
+	local var_1_4 = var_1_3.base.commander_ability_template
+
+	var_1_4[112] = {
+		cost = 0,
+		name = "熟练炮手·巡洋",
+		group_id = 11,
+		worth = 2,
+		desc = "<color=#3dc6ff>轻巡、重巡、超巡</color>炮击提高7点",
+		next = 113,
+		id = 112,
+		icon = "xunyang_paoji_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				2,
+				7
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>炮击",
+				7
+			},
+			{
+				"<重巡>炮击",
+				7
+			},
+			{
+				"<超巡>炮击",
+				7
+			}
+		}
+	}
+	pg = var_1_4
+
+	local var_1_5 = var_1_4.base.commander_ability_template
+
+	var_1_5[113] = {
+		cost = 0,
+		name = "炮术长·巡洋",
+		group_id = 11,
+		worth = 3,
+		desc = "<color=#3dc6ff>轻巡、重巡、超巡</color>炮击提高10点",
+		next = 0,
+		id = 113,
+		icon = "xunyang_paoji_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				2,
+				10
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>炮击",
+				10
+			},
+			{
+				"<重巡>炮击",
+				10
+			},
+			{
+				"<超巡>炮击",
+				10
+			}
+		}
+	}
+	pg = var_1_5
+
+	local var_1_6 = var_1_5.base.commander_ability_template
+
+	var_1_6[121] = {
+		cost = 0,
+		name = "炮击新手·主力",
+		group_id = 12,
+		worth = 1,
+		desc = "<color=#3dc6ff>战巡、战列、航战、重炮、风帆M</color>炮击提高8点",
+		next = 122,
+		id = 121,
+		icon = "zhanlie_paoji_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					10,
+					13,
+					24
+				},
+				2,
+				8
+			}
+		},
+		add_desc = {
+			{
+				"<战列>炮击",
+				8
+			},
+			{
+				"<战巡>炮击",
+				8
+			},
+			{
+				"<航战>炮击",
+				8
+			},
+			{
+				"<重炮>炮击",
+				8
+			},
+			{
+				"<风帆M>炮击",
+				8
+			}
+		}
+	}
+	pg = var_1_6
+
+	local var_1_7 = var_1_6.base.commander_ability_template
+
+	var_1_7[122] = {
+		cost = 0,
+		name = "熟练炮手·主力",
+		group_id = 12,
+		worth = 2,
+		desc = "<color=#3dc6ff>战巡、战列、航战、重炮、风帆M</color>炮击提高11点",
+		next = 123,
+		id = 122,
+		icon = "zhanlie_paoji_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					10,
+					13,
+					24
+				},
+				2,
+				11
+			}
+		},
+		add_desc = {
+			{
+				"<战列>炮击",
+				11
+			},
+			{
+				"<战巡>炮击",
+				11
+			},
+			{
+				"<航战>炮击",
+				11
+			},
+			{
+				"<重炮>炮击",
+				11
+			},
+			{
+				"<风帆M>炮击",
+				11
+			}
+		}
+	}
+	pg = var_1_7
+
+	local var_1_8 = var_1_7.base.commander_ability_template
+
+	var_1_8[123] = {
+		cost = 0,
+		name = "炮术长·主力",
+		group_id = 12,
+		worth = 3,
+		desc = "<color=#3dc6ff>战巡、战列、航战、重炮、风帆M</color>炮击提高16点",
+		next = 0,
+		id = 123,
+		icon = "zhanlie_paoji_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					10,
+					13,
+					24
+				},
+				2,
+				16
+			}
+		},
+		add_desc = {
+			{
+				"<战列>炮击",
+				16
+			},
+			{
+				"<战巡>炮击",
+				16
+			},
+			{
+				"<航战>炮击",
+				16
+			},
+			{
+				"<重炮>炮击",
+				16
+			},
+			{
+				"<风帆M>炮击",
+				16
+			}
+		}
+	}
+	pg = var_1_8
+
+	local var_1_9 = var_1_8.base.commander_ability_template
+
+	var_1_9[131] = {
+		cost = 0,
+		name = "炮火力量·M",
+		group_id = 13,
+		worth = 2,
+		desc = "<color=#3dc6ff>战巡、战列、航战、重炮、风帆</color>炮击提高10点",
+		next = 132,
+		id = 131,
+		icon = "zhanlie_paoji_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					10,
+					13,
+					22,
+					23,
+					24
+				},
+				2,
+				10
+			}
+		},
+		add_desc = {
+			{
+				"<战列>炮击",
+				10
+			},
+			{
+				"<战巡>炮击",
+				10
+			},
+			{
+				"<航战>炮击",
+				10
+			},
+			{
+				"<重炮>炮击",
+				10
+			},
+			{
+				"<风帆>炮击",
+				10
+			}
+		}
+	}
+	pg = var_1_9
+
+	local var_1_10 = var_1_9.base.commander_ability_template
+
+	var_1_10[132] = {
+		cost = 0,
+		name = "炮火覆盖·M",
+		group_id = 13,
+		worth = 3,
+		desc = "<color=#3dc6ff>战巡、战列、航战、重炮、风帆</color>炮击提高14点",
+		next = 0,
+		id = 132,
+		icon = "zhanlie_paoji_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					10,
+					13,
+					22,
+					23,
+					24
+				},
+				2,
+				14
+			}
+		},
+		add_desc = {
+			{
+				"<战列>炮击",
+				14
+			},
+			{
+				"<战巡>炮击",
+				14
+			},
+			{
+				"<航战>炮击",
+				14
+			},
+			{
+				"<重炮>炮击",
+				14
+			},
+			{
+				"<风帆>炮击",
+				14
+			}
+		}
+	}
+	pg = var_1_10
+
+	local var_1_11 = var_1_10.base.commander_ability_template
+
+	var_1_11[141] = {
+		cost = 0,
+		name = "炮火力量·V",
+		group_id = 14,
+		worth = 2,
+		desc = "<color=#3dc6ff>轻巡、重巡、超巡、风帆</color>炮击提高6点",
+		next = 142,
+		id = 141,
+		icon = "xunyang_paoji_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18,
+					22,
+					23,
+					24
+				},
+				2,
+				6
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>炮击",
+				6
+			},
+			{
+				"<重巡>炮击",
+				6
+			},
+			{
+				"<超巡>炮击",
+				6
+			},
+			{
+				"<风帆>炮击",
+				6
+			}
+		}
+	}
+	pg = var_1_11
+
+	local var_1_12 = var_1_11.base.commander_ability_template
+
+	var_1_12[142] = {
+		cost = 0,
+		name = "炮火覆盖·V",
+		group_id = 14,
+		worth = 3,
+		desc = "<color=#3dc6ff>轻巡、重巡、超巡、风帆</color>炮击提高8点",
+		next = 0,
+		id = 142,
+		icon = "xunyang_paoji_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18,
+					22,
+					23,
+					24
+				},
+				2,
+				8
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>炮击",
+				8
+			},
+			{
+				"<重巡>炮击",
+				8
+			},
+			{
+				"<超巡>炮击",
+				8
+			},
+			{
+				"<风帆>炮击",
+				8
+			}
+		}
+	}
+	pg = var_1_12
+
+	local var_1_13 = var_1_12.base.commander_ability_template
+
+	var_1_13[151] = {
+		cost = 0,
+		name = "碧海亲和性·新手",
+		group_id = 15,
+		worth = 2,
+		desc = "舰队成员航空、炮击、雷击提高3点",
+		next = 152,
+		id = 151,
+		icon = "zhanlie_paoji_1",
+		add = {
+			{
+				1,
+				{},
+				{},
+				2,
+				3
+			},
+			{
+				1,
+				{},
+				{},
+				3,
+				3
+			},
+			{
+				1,
+				{},
+				{},
+				5,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"炮击",
+				3
+			},
+			{
+				"雷击",
+				3
+			},
+			{
+				"航空",
+				3
+			}
+		}
+	}
+	pg = var_1_13
+
+	local var_1_14 = var_1_13.base.commander_ability_template
+
+	var_1_14[152] = {
+		cost = 0,
+		name = "碧海亲和性·精锐",
+		group_id = 15,
+		worth = 3,
+		desc = "舰队成员航空、炮击、雷击提高6点",
+		next = 0,
+		id = 152,
+		icon = "zhanlie_paoji_2",
+		add = {
+			{
+				1,
+				{},
+				{},
+				2,
+				6
+			},
+			{
+				1,
+				{},
+				{},
+				3,
+				6
+			},
+			{
+				1,
+				{},
+				{},
+				5,
+				6
+			}
+		},
+		add_desc = {
+			{
+				"炮击",
+				6
+			},
+			{
+				"雷击",
+				6
+			},
+			{
+				"航空",
+				6
+			}
+		}
+	}
+	pg = var_1_14
+
+	local var_1_15 = var_1_14.base.commander_ability_template
+
+	var_1_15[201] = {
+		cost = 0,
+		name = "新人雷击士·潜艇",
+		group_id = 20,
+		worth = 1,
+		desc = "<color=#3dc6ff>潜艇、潜母</color>雷击提高10点",
+		next = 202,
+		id = 201,
+		icon = "qianting_leiji_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				3,
+				10
+			}
+		},
+		add_desc = {
+			{
+				"<潜艇、潜母>雷击",
+				10
+			}
+		}
+	}
+	pg = var_1_15
+
+	local var_1_16 = var_1_15.base.commander_ability_template
+
+	var_1_16[202] = {
+		cost = 0,
+		name = "熟练雷击士·潜艇",
+		group_id = 20,
+		worth = 2,
+		desc = "<color=#3dc6ff>潜艇、潜母</color>雷击提高14点",
+		next = 203,
+		id = 202,
+		icon = "qianting_leiji_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				3,
+				14
+			}
+		},
+		add_desc = {
+			{
+				"<潜艇、潜母>雷击",
+				14
+			}
+		}
+	}
+	pg = var_1_16
+
+	local var_1_17 = var_1_16.base.commander_ability_template
+
+	var_1_17[203] = {
+		cost = 0,
+		name = "雷击长·潜艇",
+		group_id = 20,
+		worth = 3,
+		desc = "<color=#3dc6ff>潜艇、潜母</color>雷击提高20点",
+		next = 0,
+		id = 203,
+		icon = "qianting_leiji_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				3,
+				20
+			}
+		},
+		add_desc = {
+			{
+				"<潜艇、潜母>雷击",
+				20
+			}
+		}
+	}
+	pg = var_1_17
+
+	local var_1_18 = var_1_17.base.commander_ability_template
+
+	var_1_18[211] = {
+		cost = 0,
+		name = "新人雷击士·驱逐",
+		group_id = 21,
+		worth = 1,
+		desc = "<color=#3dc6ff>驱逐</color>雷击提高10点",
+		next = 212,
+		id = 211,
+		icon = "quzhu_leiji_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				3,
+				10
+			}
+		},
+		add_desc = {
+			{
+				"<驱逐>雷击",
+				10
+			}
+		}
+	}
+	pg = var_1_18
+
+	local var_1_19 = var_1_18.base.commander_ability_template
+
+	var_1_19[212] = {
+		cost = 0,
+		name = "熟练雷击士·驱逐",
+		group_id = 21,
+		worth = 2,
+		desc = "<color=#3dc6ff>驱逐</color>雷击提高14点",
+		next = 213,
+		id = 212,
+		icon = "quzhu_leiji_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				3,
+				14
+			}
+		},
+		add_desc = {
+			{
+				"<驱逐>雷击",
+				14
+			}
+		}
+	}
+	pg = var_1_19
+
+	local var_1_20 = var_1_19.base.commander_ability_template
+
+	var_1_20[213] = {
+		cost = 0,
+		name = "雷击长·驱逐",
+		group_id = 21,
+		worth = 3,
+		desc = "<color=#3dc6ff>驱逐</color>雷击提高20点",
+		next = 0,
+		id = 213,
+		icon = "quzhu_leiji_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				3,
+				20
+			}
+		},
+		add_desc = {
+			{
+				"<驱逐>雷击",
+				20
+			}
+		}
+	}
+	pg = var_1_20
+
+	local var_1_21 = var_1_20.base.commander_ability_template
+
+	var_1_21[221] = {
+		cost = 0,
+		name = "新人雷击士·巡洋",
+		group_id = 22,
+		worth = 1,
+		desc = "<color=#3dc6ff>轻巡、重巡</color>雷击提高6点",
+		next = 222,
+		id = 221,
+		icon = "xunyang_leiji_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3
+				},
+				3,
+				6
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>雷击",
+				6
+			},
+			{
+				"<重巡>雷击",
+				6
+			}
+		}
+	}
+	pg = var_1_21
+
+	local var_1_22 = var_1_21.base.commander_ability_template
+
+	var_1_22[222] = {
+		cost = 0,
+		name = "熟练雷击士·巡洋",
+		group_id = 22,
+		worth = 2,
+		desc = "<color=#3dc6ff>轻巡、重巡</color>雷击提高8点",
+		next = 223,
+		id = 222,
+		icon = "xunyang_leiji_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3
+				},
+				3,
+				8
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>雷击",
+				8
+			},
+			{
+				"<重巡>雷击",
+				8
+			}
+		}
+	}
+	pg = var_1_22
+
+	local var_1_23 = var_1_22.base.commander_ability_template
+
+	var_1_23[223] = {
+		cost = 0,
+		name = "雷击长·巡洋",
+		group_id = 22,
+		worth = 3,
+		desc = "<color=#3dc6ff>轻巡、重巡</color>雷击提高12点",
+		next = 0,
+		id = 223,
+		icon = "xunyang_leiji_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3
+				},
+				3,
+				12
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>雷击",
+				12
+			},
+			{
+				"<重巡>雷击",
+				12
+			}
+		}
+	}
+	pg = var_1_23
+
+	local var_1_24 = var_1_23.base.commander_ability_template
+
+	var_1_24[301] = {
+		cost = 0,
+		name = "航空新兵·空母",
+		group_id = 30,
+		worth = 1,
+		desc = "<color=#3dc6ff>轻航、正航</color>航空提高10点",
+		next = 302,
+		id = 301,
+		icon = "hangmu_hangkong_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					6,
+					7
+				},
+				5,
+				10
+			}
+		},
+		add_desc = {
+			{
+				"<轻航>航空",
+				10
+			},
+			{
+				"<正航>航空",
+				10
+			}
+		}
+	}
+	pg = var_1_24
+
+	local var_1_25 = var_1_24.base.commander_ability_template
+
+	var_1_25[302] = {
+		cost = 0,
+		name = "熟练机师·空母",
+		group_id = 30,
+		worth = 2,
+		desc = "<color=#3dc6ff>轻航、正航</color>航空提高14点",
+		next = 303,
+		id = 302,
+		icon = "hangmu_hangkong_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					6,
+					7
+				},
+				5,
+				14
+			}
+		},
+		add_desc = {
+			{
+				"<轻航>航空",
+				14
+			},
+			{
+				"<正航>航空",
+				14
+			}
+		}
+	}
+	pg = var_1_25
+
+	local var_1_26 = var_1_25.base.commander_ability_template
+
+	var_1_26[303] = {
+		cost = 0,
+		name = "空中杀手·空母",
+		group_id = 30,
+		worth = 3,
+		desc = "<color=#3dc6ff>轻航、正航</color>航空提高20点",
+		next = 0,
+		id = 303,
+		icon = "hangmu_hangkong_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					6,
+					7
+				},
+				5,
+				20
+			}
+		},
+		add_desc = {
+			{
+				"<轻航>航空",
+				20
+			},
+			{
+				"<正航>航空",
+				20
+			}
+		}
+	}
+	pg = var_1_26
+
+	local var_1_27 = var_1_26.base.commander_ability_template
+
+	var_1_27[311] = {
+		cost = 0,
+		name = "航空新兵·特殊",
+		group_id = 31,
+		worth = 1,
+		desc = "<color=#3dc6ff>航战</color>航空提高5点",
+		next = 312,
+		id = 311,
+		icon = "teshu_hangkong_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					10
+				},
+				5,
+				5
+			}
+		},
+		add_desc = {
+			{
+				"<航战>航空",
+				5
+			}
+		}
+	}
+	pg = var_1_27
+
+	local var_1_28 = var_1_27.base.commander_ability_template
+
+	var_1_28[312] = {
+		cost = 0,
+		name = "熟练机师·特殊",
+		group_id = 31,
+		worth = 2,
+		desc = "<color=#3dc6ff>航战</color>航空提高7点",
+		next = 313,
+		id = 312,
+		icon = "teshu_hangkong_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					10
+				},
+				5,
+				7
+			}
+		},
+		add_desc = {
+			{
+				"<航战>航空",
+				7
+			}
+		}
+	}
+	pg = var_1_28
+
+	local var_1_29 = var_1_28.base.commander_ability_template
+
+	var_1_29[313] = {
+		cost = 0,
+		name = "空中杀手·特殊",
+		group_id = 31,
+		worth = 3,
+		desc = "<color=#3dc6ff>航战</color>航空提高10点",
+		next = 0,
+		id = 313,
+		icon = "teshu_hangkong_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					10
+				},
+				5,
+				10
+			}
+		},
+		add_desc = {
+			{
+				"<航战>航空",
+				10
+			}
+		}
+	}
+	pg = var_1_29
+
+	local var_1_30 = var_1_29.base.commander_ability_template
+
+	var_1_30[321] = {
+		cost = 0,
+		name = "蓝天亲和性·新手",
+		group_id = 32,
+		worth = 2,
+		desc = "<color=#3dc6ff>轻航、正航</color>航空提高7点，<color=#3dc6ff>风帆M</color>炮击提高7点",
+		next = 322,
+		id = 321,
+		icon = "teshu_hangkong_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					6,
+					7
+				},
+				5,
+				7
+			},
+			{
+				1,
+				{},
+				{
+					24
+				},
+				2,
+				7
+			}
+		},
+		add_desc = {
+			{
+				"<正航、轻航>航空",
+				7
+			},
+			{
+				"<风帆M>炮击",
+				7
+			}
+		}
+	}
+	pg = var_1_30
+
+	local var_1_31 = var_1_30.base.commander_ability_template
+
+	var_1_31[322] = {
+		cost = 0,
+		name = "蓝天亲和性·精锐",
+		group_id = 32,
+		worth = 3,
+		desc = "<color=#3dc6ff>轻航、正航</color>航空提高10点，<color=#3dc6ff>风帆M</color>炮击提高10点",
+		next = 0,
+		id = 322,
+		icon = "teshu_hangkong_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					6,
+					7
+				},
+				5,
+				10
+			},
+			{
+				1,
+				{},
+				{
+					24
+				},
+				2,
+				10
+			}
+		},
+		add_desc = {
+			{
+				"<正航、轻航>航空",
+				10
+			},
+			{
+				"<风帆M>炮击",
+				10
+			}
+		}
+	}
+	pg = var_1_31
+
+	local var_1_32 = var_1_31.base.commander_ability_template
+
+	var_1_32[401] = {
+		cost = 0,
+		name = "对空炮手·先锋",
+		group_id = 40,
+		worth = 1,
+		desc = "<color=#3dc6ff>先锋</color>防空提高8点",
+		next = 402,
+		id = 401,
+		icon = "quzhu_fangkong_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					2,
+					3,
+					18,
+					20,
+					23
+				},
+				4,
+				8
+			}
+		},
+		add_desc = {
+			{
+				"<先锋>防空",
+				8
+			}
+		}
+	}
+	pg = var_1_32
+
+	local var_1_33 = var_1_32.base.commander_ability_template
+
+	var_1_33[402] = {
+		cost = 0,
+		name = "熟练对空炮手·先锋",
+		group_id = 40,
+		worth = 2,
+		desc = "<color=#3dc6ff>先锋</color>防空提高11点",
+		next = 403,
+		id = 402,
+		icon = "quzhu_fangkong_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					2,
+					3,
+					18,
+					20,
+					23
+				},
+				4,
+				11
+			}
+		},
+		add_desc = {
+			{
+				"<先锋>防空",
+				11
+			}
+		}
+	}
+	pg = var_1_33
+
+	local var_1_34 = var_1_33.base.commander_ability_template
+
+	var_1_34[403] = {
+		cost = 0,
+		name = "敌机克星·先锋",
+		group_id = 40,
+		worth = 3,
+		desc = "<color=#3dc6ff>先锋</color>防空提高16点",
+		next = 0,
+		id = 403,
+		icon = "quzhu_fangkong_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					2,
+					3,
+					18,
+					20,
+					23
+				},
+				4,
+				16
+			}
+		},
+		add_desc = {
+			{
+				"<先锋>防空",
+				16
+			}
+		}
+	}
+	pg = var_1_34
+
+	local var_1_35 = var_1_34.base.commander_ability_template
+
+	var_1_35[411] = {
+		cost = 0,
+		name = "对空炮手·主力",
+		group_id = 41,
+		worth = 1,
+		desc = "<color=#3dc6ff>主力</color>防空提高10点",
+		next = 412,
+		id = 411,
+		icon = "zhanlie_fangkong_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					6,
+					7,
+					10,
+					12,
+					13,
+					21,
+					24
+				},
+				4,
+				10
+			}
+		},
+		add_desc = {
+			{
+				"<主力>防空",
+				10
+			}
+		}
+	}
+	pg = var_1_35
+
+	local var_1_36 = var_1_35.base.commander_ability_template
+
+	var_1_36[412] = {
+		cost = 0,
+		name = "熟练对空炮手·主力",
+		group_id = 41,
+		worth = 2,
+		desc = "<color=#3dc6ff>主力</color>防空提高14点",
+		next = 413,
+		id = 412,
+		icon = "zhanlie_fangkong_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					6,
+					7,
+					10,
+					12,
+					13,
+					21,
+					24
+				},
+				4,
+				14
+			}
+		},
+		add_desc = {
+			{
+				"<主力>防空",
+				14
+			}
+		}
+	}
+	pg = var_1_36
+
+	local var_1_37 = var_1_36.base.commander_ability_template
+
+	var_1_37[413] = {
+		cost = 0,
+		name = "敌机克星·主力",
+		group_id = 41,
+		worth = 3,
+		desc = "<color=#3dc6ff>主力</color>防空提高20点",
+		next = 0,
+		id = 413,
+		icon = "zhanlie_fangkong_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					6,
+					7,
+					10,
+					12,
+					13,
+					21,
+					24
+				},
+				4,
+				20
+			}
+		},
+		add_desc = {
+			{
+				"<主力>防空",
+				20
+			}
+		}
+	}
+	pg = var_1_37
+
+	local var_1_38 = var_1_37.base.commander_ability_template
+
+	var_1_38[501] = {
+		cost = 0,
+		name = "声纳兵·先锋",
+		group_id = 50,
+		worth = 1,
+		desc = "<color=#3dc6ff>先锋</color>反潜提高4点",
+		next = 502,
+		id = 501,
+		icon = "quzhu_fanqian_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					2,
+					3,
+					18,
+					20,
+					23
+				},
+				12,
+				4
+			}
+		},
+		add_desc = {
+			{
+				"<先锋>反潜",
+				4
+			}
+		}
+	}
+	pg = var_1_38
+
+	local var_1_39 = var_1_38.base.commander_ability_template
+
+	var_1_39[502] = {
+		cost = 0,
+		name = "熟练声纳兵·先锋",
+		group_id = 50,
+		worth = 2,
+		desc = "<color=#3dc6ff>先锋</color>反潜提高5点",
+		next = 503,
+		id = 502,
+		icon = "quzhu_fanqian_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					2,
+					3,
+					18,
+					20,
+					23
+				},
+				12,
+				5
+			}
+		},
+		add_desc = {
+			{
+				"<先锋>反潜",
+				5
+			}
+		}
+	}
+	pg = var_1_39
+
+	local var_1_40 = var_1_39.base.commander_ability_template
+
+	var_1_40[503] = {
+		cost = 0,
+		name = "人形声纳·先锋",
+		group_id = 50,
+		worth = 3,
+		desc = "<color=#3dc6ff>先锋</color>反潜提高8点",
+		next = 0,
+		id = 503,
+		icon = "quzhu_fanqian_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					2,
+					3,
+					18,
+					20,
+					23
+				},
+				12,
+				8
+			}
+		},
+		add_desc = {
+			{
+				"<先锋>反潜",
+				8
+			}
+		}
+	}
+	pg = var_1_40
+
+	local var_1_41 = var_1_40.base.commander_ability_template
+
+	var_1_41[511] = {
+		cost = 0,
+		name = "声纳兵·主力",
+		group_id = 51,
+		worth = 1,
+		desc = "<color=#3dc6ff>主力</color>反潜提高3点",
+		next = 512,
+		id = 511,
+		icon = "qingmu_fanqian_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					6,
+					7,
+					10,
+					12,
+					13,
+					21,
+					24
+				},
+				12,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<主力>反潜",
+				3
+			}
+		}
+	}
+	pg = var_1_41
+
+	local var_1_42 = var_1_41.base.commander_ability_template
+
+	var_1_42[512] = {
+		cost = 0,
+		name = "熟练声纳兵·主力",
+		group_id = 51,
+		worth = 2,
+		desc = "<color=#3dc6ff>主力</color>反潜提高4点",
+		next = 513,
+		id = 512,
+		icon = "qingmu_fanqian_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					6,
+					7,
+					10,
+					12,
+					13,
+					21,
+					24
+				},
+				12,
+				4
+			}
+		},
+		add_desc = {
+			{
+				"<主力>反潜",
+				4
+			}
+		}
+	}
+	pg = var_1_42
+
+	local var_1_43 = var_1_42.base.commander_ability_template
+
+	var_1_43[513] = {
+		cost = 0,
+		name = "人形声纳·主力",
+		group_id = 51,
+		worth = 3,
+		desc = "<color=#3dc6ff>主力</color>反潜提高6点",
+		next = 0,
+		id = 513,
+		icon = "qingmu_fanqian_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					6,
+					7,
+					10,
+					12,
+					13,
+					21,
+					24
+				},
+				12,
+				6
+			}
+		},
+		add_desc = {
+			{
+				"<主力>反潜",
+				6
+			}
+		}
+	}
+	pg = var_1_43
+
+	local var_1_44 = var_1_43.base.commander_ability_template
+
+	var_1_44[601] = {
+		cost = 0,
+		name = "装填新手·潜艇",
+		group_id = 60,
+		worth = 1,
+		desc = "<color=#3dc6ff>潜艇、潜母</color>装填提高3点",
+		next = 602,
+		id = 601,
+		icon = "qianting_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				6,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<潜艇、潜母>装填",
+				3
+			}
+		}
+	}
+	pg = var_1_44
+
+	local var_1_45 = var_1_44.base.commander_ability_template
+
+	var_1_45[602] = {
+		cost = 0,
+		name = "熟练装填手·潜艇",
+		group_id = 60,
+		worth = 2,
+		desc = "<color=#3dc6ff>潜艇、潜母</color>装填提高4点",
+		next = 603,
+		id = 602,
+		icon = "qianting_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				6,
+				4
+			}
+		},
+		add_desc = {
+			{
+				"<潜艇、潜母>装填",
+				4
+			}
+		}
+	}
+	pg = var_1_45
+
+	local var_1_46 = var_1_45.base.commander_ability_template
+
+	var_1_46[603] = {
+		cost = 0,
+		name = "无影手·潜艇",
+		group_id = 60,
+		worth = 3,
+		desc = "<color=#3dc6ff>潜艇、潜母</color>装填提高6点",
+		next = 0,
+		id = 603,
+		icon = "qianting_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				6,
+				6
+			}
+		},
+		add_desc = {
+			{
+				"<潜艇、潜母>装填",
+				6
+			}
+		}
+	}
+	pg = var_1_46
+
+	local var_1_47 = var_1_46.base.commander_ability_template
+
+	var_1_47[611] = {
+		cost = 0,
+		name = "装填新手·驱逐",
+		group_id = 61,
+		worth = 1,
+		desc = "<color=#3dc6ff>驱逐</color>装填提高5点",
+		next = 612,
+		id = 611,
+		icon = "quzhu_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				6,
+				5
+			}
+		},
+		add_desc = {
+			{
+				"<驱逐>装填",
+				5
+			}
+		}
+	}
+	pg = var_1_47
+
+	local var_1_48 = var_1_47.base.commander_ability_template
+
+	var_1_48[612] = {
+		cost = 0,
+		name = "熟练装填手·驱逐",
+		group_id = 61,
+		worth = 2,
+		desc = "<color=#3dc6ff>驱逐</color>装填提高7点",
+		next = 613,
+		id = 612,
+		icon = "quzhu_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				6,
+				7
+			}
+		},
+		add_desc = {
+			{
+				"<驱逐>装填",
+				7
+			}
+		}
+	}
+	pg = var_1_48
+
+	local var_1_49 = var_1_48.base.commander_ability_template
+
+	var_1_49[613] = {
+		cost = 0,
+		name = "无影手·驱逐",
+		group_id = 61,
+		worth = 3,
+		desc = "<color=#3dc6ff>驱逐</color>装填提高10点",
+		next = 0,
+		id = 613,
+		icon = "quzhu_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				6,
+				10
+			}
+		},
+		add_desc = {
+			{
+				"<驱逐>装填",
+				10
+			}
+		}
+	}
+	pg = var_1_49
+
+	local var_1_50 = var_1_49.base.commander_ability_template
+
+	var_1_50[621] = {
+		cost = 0,
+		name = "装填新手·巡洋",
+		group_id = 62,
+		worth = 1,
+		desc = "<color=#3dc6ff>轻巡、重巡、超巡</color>装填提高4点",
+		next = 622,
+		id = 621,
+		icon = "xunyang_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				6,
+				4
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>装填",
+				4
+			},
+			{
+				"<重巡>装填",
+				4
+			},
+			{
+				"<超巡>装填",
+				4
+			}
+		}
+	}
+	pg = var_1_50
+
+	local var_1_51 = var_1_50.base.commander_ability_template
+
+	var_1_51[622] = {
+		cost = 0,
+		name = "熟练装填手·巡洋",
+		group_id = 62,
+		worth = 2,
+		desc = "<color=#3dc6ff>轻巡、重巡、超巡</color>装填提高5点",
+		next = 623,
+		id = 622,
+		icon = "xunyang_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				6,
+				5
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>装填",
+				5
+			},
+			{
+				"<重巡>装填",
+				5
+			},
+			{
+				"<超巡>装填",
+				5
+			}
+		}
+	}
+	pg = var_1_51
+
+	local var_1_52 = var_1_51.base.commander_ability_template
+
+	var_1_52[623] = {
+		cost = 0,
+		name = "无影手·巡洋",
+		group_id = 62,
+		worth = 3,
+		desc = "<color=#3dc6ff>轻巡、重巡、超巡</color>装填提高8点",
+		next = 0,
+		id = 623,
+		icon = "xunyang_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				6,
+				8
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>装填",
+				8
+			},
+			{
+				"<重巡>装填",
+				8
+			},
+			{
+				"<超巡>装填",
+				8
+			}
+		}
+	}
+	pg = var_1_52
+
+	local var_1_53 = var_1_52.base.commander_ability_template
+
+	var_1_53[631] = {
+		cost = 0,
+		name = "装填新手·战列",
+		group_id = 63,
+		worth = 1,
+		desc = "<color=#3dc6ff>战列、战巡、航战</color>装填提高3点",
+		next = 632,
+		id = 631,
+		icon = "zhanlie_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					10
+				},
+				6,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<战列>装填",
+				3
+			},
+			{
+				"<战巡>装填",
+				3
+			},
+			{
+				"<航战>装填",
+				3
+			}
+		}
+	}
+	pg = var_1_53
+
+	local var_1_54 = var_1_53.base.commander_ability_template
+
+	var_1_54[632] = {
+		cost = 0,
+		name = "熟练装填手·战列",
+		group_id = 63,
+		worth = 2,
+		desc = "<color=#3dc6ff>战列、战巡、航战</color>装填提高4点",
+		next = 633,
+		id = 632,
+		icon = "zhanlie_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					10
+				},
+				6,
+				4
+			}
+		},
+		add_desc = {
+			{
+				"<战列>装填",
+				4
+			},
+			{
+				"<战巡>装填",
+				4
+			},
+			{
+				"<航战>装填",
+				4
+			}
+		}
+	}
+	pg = var_1_54
+
+	local var_1_55 = var_1_54.base.commander_ability_template
+
+	var_1_55[633] = {
+		cost = 0,
+		name = "无影手·战列",
+		group_id = 63,
+		worth = 3,
+		desc = "<color=#3dc6ff>战列、战巡、航战</color>装填提高6点",
+		next = 0,
+		id = 633,
+		icon = "zhanlie_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					10
+				},
+				6,
+				6
+			}
+		},
+		add_desc = {
+			{
+				"<战列>装填",
+				6
+			},
+			{
+				"<战巡>装填",
+				6
+			},
+			{
+				"<航战>装填",
+				6
+			}
+		}
+	}
+	pg = var_1_55
+
+	local var_1_56 = var_1_55.base.commander_ability_template
+
+	var_1_56[641] = {
+		cost = 0,
+		name = "新手整备士",
+		group_id = 64,
+		worth = 1,
+		desc = "<color=#3dc6ff>轻航、正航</color>装填提高3点",
+		next = 642,
+		id = 641,
+		icon = "hangmu_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					6,
+					7
+				},
+				6,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<轻航>装填",
+				3
+			},
+			{
+				"<正航>装填",
+				3
+			}
+		}
+	}
+	pg = var_1_56
+
+	local var_1_57 = var_1_56.base.commander_ability_template
+
+	var_1_57[642] = {
+		cost = 0,
+		name = "熟练技师",
+		group_id = 64,
+		worth = 2,
+		desc = "<color=#3dc6ff>轻航、正航</color>装填提高4点",
+		next = 643,
+		id = 642,
+		icon = "hangmu_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					6,
+					7
+				},
+				6,
+				4
+			}
+		},
+		add_desc = {
+			{
+				"<轻航>装填",
+				4
+			},
+			{
+				"<正航>装填",
+				4
+			}
+		}
+	}
+	pg = var_1_57
+
+	local var_1_58 = var_1_57.base.commander_ability_template
+
+	var_1_58[643] = {
+		cost = 0,
+		name = "格纳库之主",
+		group_id = 64,
+		worth = 3,
+		desc = "<color=#3dc6ff>轻航、正航</color>装填提高6点",
+		next = 0,
+		id = 643,
+		icon = "hangmu_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					6,
+					7
+				},
+				6,
+				6
+			}
+		},
+		add_desc = {
+			{
+				"<轻航>装填",
+				6
+			},
+			{
+				"<正航>装填",
+				6
+			}
+		}
+	}
+	pg = var_1_58
+
+	local var_1_59 = var_1_58.base.commander_ability_template
+
+	var_1_59[651] = {
+		cost = 0,
+		name = "装填新手·特殊",
+		group_id = 65,
+		worth = 1,
+		desc = "<color=#3dc6ff>重炮、维修、运输、风帆</color>装填提高3点",
+		next = 652,
+		id = 651,
+		icon = "teshu_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					12,
+					13,
+					19,
+					22,
+					23,
+					24
+				},
+				6,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<重炮>装填",
+				3
+			},
+			{
+				"<维修>装填",
+				3
+			},
+			{
+				"<运输>装填",
+				3
+			},
+			{
+				"<风帆>装填",
+				3
+			}
+		}
+	}
+	pg = var_1_59
+
+	local var_1_60 = var_1_59.base.commander_ability_template
+
+	var_1_60[652] = {
+		cost = 0,
+		name = "熟练装填手·特殊",
+		group_id = 65,
+		worth = 2,
+		desc = "<color=#3dc6ff>重炮、维修、运输、风帆</color>装填提高4点",
+		next = 653,
+		id = 652,
+		icon = "teshu_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					12,
+					13,
+					19,
+					22,
+					23,
+					24
+				},
+				6,
+				4
+			}
+		},
+		add_desc = {
+			{
+				"<重炮>装填",
+				4
+			},
+			{
+				"<维修>装填",
+				4
+			},
+			{
+				"<运输>装填",
+				4
+			},
+			{
+				"<风帆>装填",
+				4
+			}
+		}
+	}
+	pg = var_1_60
+
+	local var_1_61 = var_1_60.base.commander_ability_template
+
+	var_1_61[653] = {
+		cost = 0,
+		name = "无影手·特殊",
+		group_id = 65,
+		worth = 3,
+		desc = "<color=#3dc6ff>重炮、维修、运输、风帆</color>装填提高6点",
+		next = 0,
+		id = 653,
+		icon = "teshu_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					12,
+					13,
+					19,
+					22,
+					23,
+					24
+				},
+				6,
+				6
+			}
+		},
+		add_desc = {
+			{
+				"<重炮>装填",
+				6
+			},
+			{
+				"<维修>装填",
+				6
+			},
+			{
+				"<运输>装填",
+				6
+			},
+			{
+				"<风帆>装填",
+				6
+			}
+		}
+	}
+	pg = var_1_61
+
+	local var_1_62 = var_1_61.base.commander_ability_template
+
+	var_1_62[701] = {
+		cost = 0,
+		name = "轮机手·潜艇",
+		group_id = 70,
+		worth = 1,
+		desc = "<color=#3dc6ff>潜艇、潜母</color>耐久提高25点",
+		next = 702,
+		id = 701,
+		icon = "qianting_naijiu_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				1,
+				20
+			}
+		},
+		add_desc = {
+			{
+				"<潜艇、潜母>耐久",
+				25
+			}
+		}
+	}
+	pg = var_1_62
+
+	local var_1_63 = var_1_62.base.commander_ability_template
+
+	var_1_63[702] = {
+		cost = 0,
+		name = "熟练轮机手·潜艇",
+		group_id = 70,
+		worth = 2,
+		desc = "<color=#3dc6ff>潜艇、潜母</color>耐久提高35点",
+		next = 703,
+		id = 702,
+		icon = "qianting_naijiu_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				1,
+				35
+			}
+		},
+		add_desc = {
+			{
+				"<潜艇、潜母>耐久",
+				35
+			}
+		}
+	}
+	pg = var_1_63
+
+	local var_1_64 = var_1_63.base.commander_ability_template
+
+	var_1_64[703] = {
+		cost = 0,
+		name = "轮机长·潜艇",
+		group_id = 70,
+		worth = 3,
+		desc = "<color=#3dc6ff>潜艇、潜母</color>耐久提高50点",
+		next = 0,
+		id = 703,
+		icon = "qianting_naijiu_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				1,
+				50
+			}
+		},
+		add_desc = {
+			{
+				"<潜艇、潜母>耐久",
+				50
+			}
+		}
+	}
+	pg = var_1_64
+
+	local var_1_65 = var_1_64.base.commander_ability_template
+
+	var_1_65[711] = {
+		cost = 0,
+		name = "轮机手·驱逐",
+		group_id = 71,
+		worth = 1,
+		desc = "<color=#3dc6ff>驱逐</color>耐久提高30点",
+		next = 712,
+		id = 711,
+		icon = "quzhu_naijiu_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				1,
+				30
+			}
+		},
+		add_desc = {
+			{
+				"<驱逐>耐久",
+				30
+			}
+		}
+	}
+	pg = var_1_65
+
+	local var_1_66 = var_1_65.base.commander_ability_template
+
+	var_1_66[712] = {
+		cost = 0,
+		name = "熟练轮机手·驱逐",
+		group_id = 71,
+		worth = 2,
+		desc = "<color=#3dc6ff>驱逐</color>耐久提高42点",
+		next = 713,
+		id = 712,
+		icon = "quzhu_naijiu_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				1,
+				42
+			}
+		},
+		add_desc = {
+			{
+				"<驱逐>耐久",
+				42
+			}
+		}
+	}
+	pg = var_1_66
+
+	local var_1_67 = var_1_66.base.commander_ability_template
+
+	var_1_67[713] = {
+		cost = 0,
+		name = "轮机长·驱逐",
+		group_id = 71,
+		worth = 3,
+		desc = "<color=#3dc6ff>驱逐</color>耐久提高60点",
+		next = 0,
+		id = 713,
+		icon = "quzhu_naijiu_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				1,
+				60
+			}
+		},
+		add_desc = {
+			{
+				"<驱逐>耐久",
+				60
+			}
+		}
+	}
+	pg = var_1_67
+
+	local var_1_68 = var_1_67.base.commander_ability_template
+
+	var_1_68[721] = {
+		cost = 0,
+		name = "轮机手·巡洋",
+		group_id = 72,
+		worth = 1,
+		desc = "<color=#3dc6ff>轻巡、重巡、超巡</color>耐久提高50点",
+		next = 722,
+		id = 721,
+		icon = "xunyang_naijiu_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				1,
+				50
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>耐久",
+				50
+			},
+			{
+				"<重巡>耐久",
+				50
+			},
+			{
+				"<超巡>耐久",
+				50
+			}
+		}
+	}
+	pg = var_1_68
+
+	local var_1_69 = var_1_68.base.commander_ability_template
+
+	var_1_69[722] = {
+		cost = 0,
+		name = "熟练轮机手·巡洋",
+		group_id = 72,
+		worth = 2,
+		desc = "<color=#3dc6ff>轻巡、重巡、超巡</color>耐久提高70点",
+		next = 723,
+		id = 722,
+		icon = "xunyang_naijiu_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				1,
+				70
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>耐久",
+				70
+			},
+			{
+				"<重巡>耐久",
+				70
+			},
+			{
+				"<超巡>耐久",
+				70
+			}
+		}
+	}
+	pg = var_1_69
+
+	local var_1_70 = var_1_69.base.commander_ability_template
+
+	var_1_70[723] = {
+		cost = 0,
+		name = "轮机长·巡洋",
+		group_id = 72,
+		worth = 3,
+		desc = "<color=#3dc6ff>轻巡、重巡、超巡</color>耐久提高100点",
+		next = 0,
+		id = 723,
+		icon = "xunyang_naijiu_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				1,
+				100
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>耐久",
+				100
+			},
+			{
+				"<重巡>耐久",
+				100
+			},
+			{
+				"<超巡>耐久",
+				100
+			}
+		}
+	}
+	pg = var_1_70
+
+	local var_1_71 = var_1_70.base.commander_ability_template
+
+	var_1_71[731] = {
+		cost = 0,
+		name = "轮机手·战列",
+		group_id = 73,
+		worth = 1,
+		desc = "<color=#3dc6ff>战巡、战列、航战</color>耐久提高75点",
+		next = 732,
+		id = 731,
+		icon = "zhanlie_naijiu_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					10
+				},
+				1,
+				75
+			}
+		},
+		add_desc = {
+			{
+				"<战列>耐久",
+				75
+			},
+			{
+				"<战巡>耐久",
+				75
+			},
+			{
+				"<航战>耐久",
+				75
+			}
+		}
+	}
+	pg = var_1_71
+
+	local var_1_72 = var_1_71.base.commander_ability_template
+
+	var_1_72[732] = {
+		cost = 0,
+		name = "熟练轮机手·战列",
+		group_id = 73,
+		worth = 2,
+		desc = "<color=#3dc6ff>战巡、战列、航战</color>耐久提高105点",
+		next = 733,
+		id = 732,
+		icon = "zhanlie_naijiu_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					10
+				},
+				1,
+				105
+			}
+		},
+		add_desc = {
+			{
+				"<战列>耐久",
+				105
+			},
+			{
+				"<战巡>耐久",
+				105
+			},
+			{
+				"<航战>耐久",
+				105
+			}
+		}
+	}
+	pg = var_1_72
+
+	local var_1_73 = var_1_72.base.commander_ability_template
+
+	var_1_73[733] = {
+		cost = 0,
+		name = "轮机长·战列",
+		group_id = 73,
+		worth = 3,
+		desc = "<color=#3dc6ff>战巡、战列、航战</color>耐久提高150点",
+		next = 0,
+		id = 733,
+		icon = "zhanlie_naijiu_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					10
+				},
+				1,
+				150
+			}
+		},
+		add_desc = {
+			{
+				"<战列>耐久",
+				150
+			},
+			{
+				"<战巡>耐久",
+				150
+			},
+			{
+				"<航战>耐久",
+				150
+			}
+		}
+	}
+	pg = var_1_73
+
+	local var_1_74 = var_1_73.base.commander_ability_template
+
+	var_1_74[741] = {
+		cost = 0,
+		name = "轮机手·空母",
+		group_id = 74,
+		worth = 1,
+		desc = "<color=#3dc6ff>轻航、正航</color>耐久提高50点",
+		next = 742,
+		id = 741,
+		icon = "hangmu_naijiu_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					6,
+					7
+				},
+				1,
+				50
+			}
+		},
+		add_desc = {
+			{
+				"<轻航>耐久",
+				50
+			},
+			{
+				"<正航>耐久",
+				50
+			}
+		}
+	}
+	pg = var_1_74
+
+	local var_1_75 = var_1_74.base.commander_ability_template
+
+	var_1_75[742] = {
+		cost = 0,
+		name = "熟练轮机手·空母",
+		group_id = 74,
+		worth = 2,
+		desc = "<color=#3dc6ff>轻航、正航</color>耐久提高70点",
+		next = 743,
+		id = 742,
+		icon = "hangmu_naijiu_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					6,
+					7
+				},
+				1,
+				70
+			}
+		},
+		add_desc = {
+			{
+				"<轻航>耐久",
+				70
+			},
+			{
+				"<正航>耐久",
+				70
+			}
+		}
+	}
+	pg = var_1_75
+
+	local var_1_76 = var_1_75.base.commander_ability_template
+
+	var_1_76[743] = {
+		cost = 0,
+		name = "轮机长·空母",
+		group_id = 74,
+		worth = 3,
+		desc = "<color=#3dc6ff>轻航、正航</color>耐久提高100点",
+		next = 0,
+		id = 743,
+		icon = "hangmu_naijiu_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					6,
+					7
+				},
+				1,
+				100
+			}
+		},
+		add_desc = {
+			{
+				"<轻航>耐久",
+				100
+			},
+			{
+				"<正航>耐久",
+				100
+			}
+		}
+	}
+	pg = var_1_76
+
+	local var_1_77 = var_1_76.base.commander_ability_template
+
+	var_1_77[751] = {
+		cost = 0,
+		name = "轮机手·特殊",
+		group_id = 75,
+		worth = 1,
+		desc = "<color=#3dc6ff>重炮、维修、运输、风帆</color>耐久提高40点",
+		next = 752,
+		id = 751,
+		icon = "teshu_naijiu_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					12,
+					13,
+					19,
+					22,
+					23,
+					24
+				},
+				1,
+				40
+			}
+		},
+		add_desc = {
+			{
+				"<重炮>耐久",
+				40
+			},
+			{
+				"<维修>耐久",
+				40
+			},
+			{
+				"<运输>耐久",
+				40
+			},
+			{
+				"<风帆>耐久",
+				40
+			}
+		}
+	}
+	pg = var_1_77
+
+	local var_1_78 = var_1_77.base.commander_ability_template
+
+	var_1_78[752] = {
+		cost = 0,
+		name = "熟练轮机手·特殊",
+		group_id = 75,
+		worth = 2,
+		desc = "<color=#3dc6ff>重炮、维修、运输、风帆</color>耐久提高56点",
+		next = 753,
+		id = 752,
+		icon = "teshu_naijiu_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					12,
+					13,
+					19,
+					22,
+					23,
+					24
+				},
+				1,
+				56
+			}
+		},
+		add_desc = {
+			{
+				"<重炮>耐久",
+				56
+			},
+			{
+				"<维修>耐久",
+				56
+			},
+			{
+				"<运输>耐久",
+				56
+			},
+			{
+				"<风帆>耐久",
+				56
+			}
+		}
+	}
+	pg = var_1_78
+
+	local var_1_79 = var_1_78.base.commander_ability_template
+
+	var_1_79[753] = {
+		cost = 0,
+		name = "轮机长·特殊",
+		group_id = 75,
+		worth = 3,
+		desc = "<color=#3dc6ff>重炮、维修、运输、风帆</color>耐久提高80点",
+		next = 0,
+		id = 753,
+		icon = "teshu_naijiu_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					12,
+					13,
+					19,
+					22,
+					23,
+					24
+				},
+				1,
+				80
+			}
+		},
+		add_desc = {
+			{
+				"<重炮>耐久",
+				80
+			},
+			{
+				"<维修>耐久",
+				80
+			},
+			{
+				"<运输>耐久",
+				80
+			},
+			{
+				"<风帆>耐久",
+				80
+			}
+		}
+	}
+	pg = var_1_79
+
+	local var_1_80 = var_1_79.base.commander_ability_template
+
+	var_1_80[761] = {
+		cost = 0,
+		name = "轮机手·小型舰",
+		group_id = 76,
+		worth = 1,
+		desc = "<color=#3dc6ff>潜艇、潜母、驱逐、风帆</color>耐久提高30点",
+		next = 762,
+		id = 761,
+		icon = "teshu_naijiu_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					8,
+					17,
+					20,
+					21,
+					22,
+					23,
+					24
+				},
+				1,
+				30
+			}
+		},
+		add_desc = {
+			{
+				"<小型舰>耐久",
+				30
+			}
+		}
+	}
+	pg = var_1_80
+
+	local var_1_81 = var_1_80.base.commander_ability_template
+
+	var_1_81[762] = {
+		cost = 0,
+		name = "熟练轮机手·小型舰",
+		group_id = 76,
+		worth = 2,
+		desc = "<color=#3dc6ff>潜艇、潜母、驱逐、风帆</color>耐久提高42点",
+		next = 763,
+		id = 762,
+		icon = "teshu_naijiu_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					8,
+					17,
+					20,
+					21,
+					22,
+					23,
+					24
+				},
+				1,
+				42
+			}
+		},
+		add_desc = {
+			{
+				"<小型舰>耐久",
+				42
+			}
+		}
+	}
+	pg = var_1_81
+
+	local var_1_82 = var_1_81.base.commander_ability_template
+
+	var_1_82[763] = {
+		cost = 0,
+		name = "轮机长·小型舰",
+		group_id = 76,
+		worth = 3,
+		desc = "<color=#3dc6ff>潜艇、潜母、驱逐、风帆</color>耐久提高60点",
+		next = 0,
+		id = 763,
+		icon = "teshu_naijiu_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					8,
+					17,
+					20,
+					21,
+					22,
+					23,
+					24
+				},
+				1,
+				60
+			}
+		},
+		add_desc = {
+			{
+				"<小型舰>耐久",
+				60
+			}
+		}
+	}
+	pg = var_1_82
+
+	local var_1_83 = var_1_82.base.commander_ability_template
+
+	var_1_83[771] = {
+		cost = 0,
+		name = "轮机手·先锋",
+		group_id = 77,
+		worth = 1,
+		desc = "<color=#3dc6ff>先锋</color>耐久提高30点",
+		next = 772,
+		id = 771,
+		icon = "quzhu_naijiu_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					2,
+					3,
+					18,
+					20,
+					23
+				},
+				1,
+				30
+			}
+		},
+		add_desc = {
+			{
+				"<先锋>耐久",
+				30
+			}
+		}
+	}
+	pg = var_1_83
+
+	local var_1_84 = var_1_83.base.commander_ability_template
+
+	var_1_84[772] = {
+		cost = 0,
+		name = "熟练轮机手·先锋",
+		group_id = 77,
+		worth = 2,
+		desc = "<color=#3dc6ff>先锋</color>耐久提高42点",
+		next = 773,
+		id = 772,
+		icon = "quzhu_naijiu_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					2,
+					3,
+					18,
+					20,
+					23
+				},
+				1,
+				42
+			}
+		},
+		add_desc = {
+			{
+				"<先锋>耐久",
+				42
+			}
+		}
+	}
+	pg = var_1_84
+
+	local var_1_85 = var_1_84.base.commander_ability_template
+
+	var_1_85[773] = {
+		cost = 0,
+		name = "轮机长·先锋",
+		group_id = 77,
+		worth = 3,
+		desc = "<color=#3dc6ff>先锋</color>耐久提高60点",
+		next = 0,
+		id = 773,
+		icon = "quzhu_naijiu_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					2,
+					3,
+					18,
+					20,
+					23
+				},
+				1,
+				60
+			}
+		},
+		add_desc = {
+			{
+				"<先锋>耐久",
+				60
+			}
+		}
+	}
+	pg = var_1_85
+
+	local var_1_86 = var_1_85.base.commander_ability_template
+
+	var_1_86[801] = {
+		cost = 0,
+		name = "新手观测士·潜艇",
+		group_id = 80,
+		worth = 1,
+		desc = "<color=#3dc6ff>潜艇、潜母</color>命中提高2点",
+		next = 802,
+		id = 801,
+		icon = "qianting_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				8,
+				2
+			}
+		},
+		add_desc = {
+			{
+				"<潜艇、潜母>命中",
+				2
+			}
+		}
+	}
+	pg = var_1_86
+
+	local var_1_87 = var_1_86.base.commander_ability_template
+
+	var_1_87[802] = {
+		cost = 0,
+		name = "熟练观测士·潜艇",
+		group_id = 80,
+		worth = 2,
+		desc = "<color=#3dc6ff>潜艇、潜母</color>命中提高3点",
+		next = 803,
+		id = 802,
+		icon = "qianting_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				8,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<潜艇、潜母>命中",
+				3
+			}
+		}
+	}
+	pg = var_1_87
+
+	local var_1_88 = var_1_87.base.commander_ability_template
+
+	var_1_88[803] = {
+		cost = 0,
+		name = "鹰眼·潜艇",
+		group_id = 80,
+		worth = 3,
+		desc = "<color=#3dc6ff>潜艇、潜母</color>命中提高5点",
+		next = 0,
+		id = 803,
+		icon = "qianting_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				8,
+				5
+			}
+		},
+		add_desc = {
+			{
+				"<潜艇、潜母>命中",
+				5
+			}
+		}
+	}
+	pg = var_1_88
+
+	local var_1_89 = var_1_88.base.commander_ability_template
+
+	var_1_89[811] = {
+		cost = 0,
+		name = "新手观测士·先锋",
+		group_id = 81,
+		worth = 1,
+		desc = "<color=#3dc6ff>先锋</color>命中提高3点",
+		next = 812,
+		id = 811,
+		icon = "quzhu_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					2,
+					3,
+					18,
+					20,
+					23
+				},
+				8,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<先锋>命中",
+				3
+			}
+		}
+	}
+	pg = var_1_89
+
+	local var_1_90 = var_1_89.base.commander_ability_template
+
+	var_1_90[812] = {
+		cost = 0,
+		name = "熟练观测士·先锋",
+		group_id = 81,
+		worth = 2,
+		desc = "<color=#3dc6ff>先锋</color>命中提高4点",
+		next = 813,
+		id = 812,
+		icon = "quzhu_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					2,
+					3,
+					18,
+					20,
+					23
+				},
+				8,
+				4
+			}
+		},
+		add_desc = {
+			{
+				"<先锋>命中",
+				4
+			}
+		}
+	}
+	pg = var_1_90
+
+	local var_1_91 = var_1_90.base.commander_ability_template
+
+	var_1_91[813] = {
+		cost = 0,
+		name = "鹰眼·先锋",
+		group_id = 81,
+		worth = 3,
+		desc = "<color=#3dc6ff>先锋</color>命中提高6点",
+		next = 0,
+		id = 813,
+		icon = "quzhu_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					2,
+					3,
+					18,
+					20,
+					23
+				},
+				8,
+				6
+			}
+		},
+		add_desc = {
+			{
+				"<先锋>命中",
+				6
+			}
+		}
+	}
+	pg = var_1_91
+
+	local var_1_92 = var_1_91.base.commander_ability_template
+
+	var_1_92[821] = {
+		cost = 0,
+		name = "新手观测士·主力",
+		group_id = 82,
+		worth = 1,
+		desc = "<color=#3dc6ff>主力</color>命中提高1点",
+		next = 822,
+		id = 821,
+		icon = "zhanlie_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					6,
+					7,
+					10,
+					12,
+					13,
+					21,
+					24
+				},
+				8,
+				1
+			}
+		},
+		add_desc = {
+			{
+				"<主力>命中",
+				1
+			}
+		}
+	}
+	pg = var_1_92
+
+	local var_1_93 = var_1_92.base.commander_ability_template
+
+	var_1_93[822] = {
+		cost = 0,
+		name = "熟练观测士·主力",
+		group_id = 82,
+		worth = 2,
+		desc = "<color=#3dc6ff>主力</color>命中提高2点",
+		next = 823,
+		id = 822,
+		icon = "zhanlie_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					6,
+					7,
+					10,
+					12,
+					13,
+					21,
+					24
+				},
+				8,
+				2
+			}
+		},
+		add_desc = {
+			{
+				"<主力>命中",
+				2
+			}
+		}
+	}
+	pg = var_1_93
+
+	local var_1_94 = var_1_93.base.commander_ability_template
+
+	var_1_94[823] = {
+		cost = 0,
+		name = "鹰眼·主力",
+		group_id = 82,
+		worth = 3,
+		desc = "<color=#3dc6ff>主力</color>命中提高3点",
+		next = 0,
+		id = 823,
+		icon = "zhanlie_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					6,
+					7,
+					10,
+					12,
+					13,
+					21,
+					24
+				},
+				8,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<主力>命中",
+				3
+			}
+		}
+	}
+	pg = var_1_94
+
+	local var_1_95 = var_1_94.base.commander_ability_template
+
+	var_1_95[831] = {
+		cost = 0,
+		name = "飓风观测士·新手",
+		group_id = 83,
+		worth = 1,
+		desc = "舰队命中提高1点",
+		next = 832,
+		id = 831,
+		icon = "teshu_one_1",
+		add = {
+			{
+				1,
+				{},
+				{},
+				8,
+				1
+			}
+		},
+		add_desc = {
+			{
+				"命中",
+				1
+			}
+		}
+	}
+	pg = var_1_95
+
+	local var_1_96 = var_1_95.base.commander_ability_template
+
+	var_1_96[832] = {
+		cost = 0,
+		name = "飓风观测士·熟练",
+		group_id = 83,
+		worth = 2,
+		desc = "舰队命中提高2点",
+		next = 833,
+		id = 832,
+		icon = "teshu_one_2",
+		add = {
+			{
+				1,
+				{},
+				{},
+				8,
+				2
+			}
+		},
+		add_desc = {
+			{
+				"命中",
+				2
+			}
+		}
+	}
+	pg = var_1_96
+
+	local var_1_97 = var_1_96.base.commander_ability_template
+
+	var_1_97[833] = {
+		cost = 0,
+		name = "飓风之眼",
+		group_id = 83,
+		worth = 3,
+		desc = "舰队命中提高3点",
+		next = 0,
+		id = 833,
+		icon = "teshu_one_3",
+		add = {
+			{
+				1,
+				{},
+				{},
+				8,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"命中",
+				3
+			}
+		}
+	}
+	pg = var_1_97
+
+	local var_1_98 = var_1_97.base.commander_ability_template
+
+	var_1_98[901] = {
+		cost = 0,
+		name = "操舵手·小型舰",
+		group_id = 90,
+		worth = 1,
+		desc = "<color=#3dc6ff>潜艇、潜母、驱逐、风帆</color>机动提高5点",
+		next = 902,
+		id = 901,
+		icon = "quzhu_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					8,
+					17,
+					20,
+					21,
+					22,
+					23,
+					24
+				},
+				9,
+				5
+			}
+		},
+		add_desc = {
+			{
+				"<小型舰>机动",
+				5
+			}
+		}
+	}
+	pg = var_1_98
+	var_1_98.base.commander_ability_template[902] = {
+		cost = 0,
+		name = "熟练舵手·小型舰",
+		group_id = 90,
+		worth = 2,
+		desc = "<color=#3dc6ff>潜艇、潜母、驱逐、风帆</color>机动提高7点",
+		next = 903,
+		id = 902,
+		icon = "quzhu_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					8,
+					17,
+					20,
+					21,
+					22,
+					23,
+					24
+				},
+				9,
+				7
+			}
+		},
+		add_desc = {
+			{
+				"<小型舰>机动",
+				7
+			}
+		}
+	}
+
+	return
+end)()
+;(function()
+	pg = var_1_10000
+
+	local var_2_0 = var_1_10000.base.commander_ability_template
+
+	var_2_0[903] = {
+		cost = 0,
+		name = "航海长·小型舰",
+		group_id = 90,
+		worth = 3,
+		desc = "<color=#3dc6ff>潜艇、潜母、驱逐、风帆</color>机动提高10点",
+		next = 0,
+		id = 903,
+		icon = "quzhu_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					8,
+					17,
+					20,
+					21,
+					22,
+					23,
+					24
+				},
+				9,
+				10
+			}
+		},
+		add_desc = {
+			{
+				"<小型舰>机动",
+				10
+			}
+		}
+	}
+	pg = var_2_0
+
+	local var_2_1 = var_2_0.base.commander_ability_template
+
+	var_2_1[911] = {
+		cost = 0,
+		name = "操舵手·中型舰",
+		group_id = 91,
+		worth = 1,
+		desc = "<color=#3dc6ff>轻巡、重巡、轻航、重炮、维修、运输</color>机动提高3点",
+		next = 912,
+		id = 911,
+		icon = "xunyang_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					6,
+					12,
+					13,
+					19
+				},
+				9,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<中型舰>机动",
+				3
+			}
+		}
+	}
+	pg = var_2_1
+
+	local var_2_2 = var_2_1.base.commander_ability_template
+
+	var_2_2[912] = {
+		cost = 0,
+		name = "熟练舵手·中型舰",
+		group_id = 91,
+		worth = 2,
+		desc = "<color=#3dc6ff>轻巡、重巡、轻航、重炮、维修、运输</color>机动提高4点",
+		next = 913,
+		id = 912,
+		icon = "xunyang_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					6,
+					12,
+					13,
+					19
+				},
+				9,
+				4
+			}
+		},
+		add_desc = {
+			{
+				"<中型舰>机动",
+				4
+			}
+		}
+	}
+	pg = var_2_2
+
+	local var_2_3 = var_2_2.base.commander_ability_template
+
+	var_2_3[913] = {
+		cost = 0,
+		name = "航海长·中型舰",
+		group_id = 91,
+		worth = 3,
+		desc = "<color=#3dc6ff>轻巡、重巡、轻航、重炮、维修、运输</color>机动提高6点",
+		next = 0,
+		id = 913,
+		icon = "xunyang_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					6,
+					12,
+					13,
+					19
+				},
+				9,
+				6
+			}
+		},
+		add_desc = {
+			{
+				"<中型舰>机动",
+				6
+			}
+		}
+	}
+	pg = var_2_3
+
+	local var_2_4 = var_2_3.base.commander_ability_template
+
+	var_2_4[921] = {
+		cost = 0,
+		name = "操舵手·大型舰",
+		group_id = 92,
+		worth = 1,
+		desc = "<color=#3dc6ff>战列、战巡、正航、航战、超巡</color>机动提高1点",
+		next = 922,
+		id = 921,
+		icon = "xunyang_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					7,
+					10,
+					18
+				},
+				9,
+				1
+			}
+		},
+		add_desc = {
+			{
+				"<大型舰>机动",
+				1
+			}
+		}
+	}
+	pg = var_2_4
+
+	local var_2_5 = var_2_4.base.commander_ability_template
+
+	var_2_5[922] = {
+		cost = 0,
+		name = "熟练舵手·大型舰",
+		group_id = 92,
+		worth = 2,
+		desc = "<color=#3dc6ff>战列、战巡、正航、航战、超巡</color>机动提高2点",
+		next = 923,
+		id = 922,
+		icon = "xunyang_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					7,
+					10,
+					18
+				},
+				9,
+				2
+			}
+		},
+		add_desc = {
+			{
+				"<大型舰>机动",
+				2
+			}
+		}
+	}
+	pg = var_2_5
+
+	local var_2_6 = var_2_5.base.commander_ability_template
+
+	var_2_6[923] = {
+		cost = 0,
+		name = "航海长·大型舰",
+		group_id = 92,
+		worth = 3,
+		desc = "<color=#3dc6ff>战列、战巡、正航、航战、超巡</color>机动提高3点",
+		next = 0,
+		id = 923,
+		icon = "xunyang_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					7,
+					10,
+					18
+				},
+				9,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<大型舰>机动",
+				3
+			}
+		}
+	}
+	pg = var_2_6
+
+	local var_2_7 = var_2_6.base.commander_ability_template
+
+	var_2_7[2001] = {
+		cost = 0,
+		name = "新晋指挥官·驱逐",
+		group_id = 200,
+		worth = 1,
+		desc = "<color=#3dc6ff>驱逐</color>雷击提高8点、装填提高4点",
+		next = 2002,
+		id = 2001,
+		icon = "quzhu_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				3,
+				8
+			},
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				6,
+				4
+			}
+		},
+		add_desc = {
+			{
+				"<驱逐>雷击",
+				8
+			},
+			{
+				"<驱逐>装填",
+				4
+			}
+		}
+	}
+	pg = var_2_7
+
+	local var_2_8 = var_2_7.base.commander_ability_template
+
+	var_2_8[2002] = {
+		cost = 0,
+		name = "精锐指挥官·驱逐",
+		group_id = 200,
+		worth = 2,
+		desc = "<color=#3dc6ff>驱逐</color>雷击提高11点、装填提高5点",
+		next = 2003,
+		id = 2002,
+		icon = "quzhu_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				3,
+				11
+			},
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				6,
+				5
+			}
+		},
+		add_desc = {
+			{
+				"<驱逐>雷击",
+				11
+			},
+			{
+				"<驱逐>装填",
+				5
+			}
+		}
+	}
+	pg = var_2_8
+
+	local var_2_9 = var_2_8.base.commander_ability_template
+
+	var_2_9[2003] = {
+		cost = 0,
+		name = "海上先锋",
+		group_id = 200,
+		worth = 3,
+		desc = "<color=#3dc6ff>驱逐</color>雷击提高16点、装填提高8点",
+		next = 0,
+		id = 2003,
+		icon = "quzhu_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				3,
+				16
+			},
+			{
+				1,
+				{},
+				{
+					1,
+					20,
+					21
+				},
+				6,
+				8
+			}
+		},
+		add_desc = {
+			{
+				"<驱逐>雷击",
+				16
+			},
+			{
+				"<驱逐>装填",
+				8
+			}
+		}
+	}
+	pg = var_2_9
+
+	local var_2_10 = var_2_9.base.commander_ability_template
+
+	var_2_10[2011] = {
+		cost = 0,
+		name = "新晋指挥官·巡洋",
+		group_id = 201,
+		worth = 1,
+		desc = "<color=#3dc6ff>轻巡、重巡、超巡</color>炮击提高5点、<color=#3dc6ff>轻巡、重巡</color>雷击提高5点",
+		next = 2012,
+		id = 2011,
+		icon = "xunyang_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				2,
+				5
+			},
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				3,
+				5
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>炮击",
+				5
+			},
+			{
+				"<重巡>炮击",
+				5
+			},
+			{
+				"<超巡>炮击",
+				5
+			},
+			{
+				"<轻巡>雷击",
+				5
+			},
+			{
+				"<重巡>雷击",
+				5
+			}
+		}
+	}
+	pg = var_2_10
+
+	local var_2_11 = var_2_10.base.commander_ability_template
+
+	var_2_11[2012] = {
+		cost = 0,
+		name = "精锐指挥官·巡洋",
+		group_id = 201,
+		worth = 2,
+		desc = "<color=#3dc6ff>轻巡、重巡、超巡</color>炮击提高7点、<color=#3dc6ff>轻巡、重巡</color>雷击提高7点",
+		next = 2013,
+		id = 2012,
+		icon = "xunyang_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				2,
+				7
+			},
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				3,
+				7
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>炮击",
+				7
+			},
+			{
+				"<重巡>炮击",
+				7
+			},
+			{
+				"<超巡>炮击",
+				7
+			},
+			{
+				"<轻巡>雷击",
+				7
+			},
+			{
+				"<重巡>雷击",
+				7
+			}
+		}
+	}
+	pg = var_2_11
+
+	local var_2_12 = var_2_11.base.commander_ability_template
+
+	var_2_12[2013] = {
+		cost = 0,
+		name = "中坚力量",
+		group_id = 201,
+		worth = 3,
+		desc = "<color=#3dc6ff>轻巡、重巡、超巡</color>炮击提高10点、<color=#3dc6ff>轻巡、重巡</color>雷击提高10点",
+		next = 0,
+		id = 2013,
+		icon = "xunyang_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				2,
+				10
+			},
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				3,
+				10
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>炮击",
+				10
+			},
+			{
+				"<重巡>炮击",
+				10
+			},
+			{
+				"<超巡>炮击",
+				10
+			},
+			{
+				"<轻巡>雷击",
+				10
+			},
+			{
+				"<重巡>雷击",
+				10
+			}
+		}
+	}
+	pg = var_2_12
+
+	local var_2_13 = var_2_12.base.commander_ability_template
+
+	var_2_13[2021] = {
+		cost = 0,
+		name = "新晋指挥官·战列",
+		group_id = 202,
+		worth = 1,
+		desc = "<color=#3dc6ff>战巡、战列</color>耐久提高50点、炮击提高8点",
+		next = 2022,
+		id = 2021,
+		icon = "zhanlie_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5
+				},
+				1,
+				50
+			},
+			{
+				1,
+				{},
+				{
+					4,
+					5
+				},
+				2,
+				8
+			}
+		},
+		add_desc = {
+			{
+				"<战巡>耐久",
+				50
+			},
+			{
+				"<战列>耐久",
+				50
+			},
+			{
+				"<战巡>炮击",
+				8
+			},
+			{
+				"<战列>炮击",
+				8
+			}
+		}
+	}
+	pg = var_2_13
+
+	local var_2_14 = var_2_13.base.commander_ability_template
+
+	var_2_14[2022] = {
+		cost = 0,
+		name = "精锐指挥官·战列",
+		group_id = 202,
+		worth = 2,
+		desc = "<color=#3dc6ff>战巡、战列</color>耐久提高70点、炮击提高11点",
+		next = 2023,
+		id = 2022,
+		icon = "zhanlie_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5
+				},
+				1,
+				70
+			},
+			{
+				1,
+				{},
+				{
+					4,
+					5
+				},
+				2,
+				11
+			}
+		},
+		add_desc = {
+			{
+				"<战巡>耐久",
+				70
+			},
+			{
+				"<战列>耐久",
+				70
+			},
+			{
+				"<战巡>炮击",
+				11
+			},
+			{
+				"<战列>炮击",
+				11
+			}
+		}
+	}
+	pg = var_2_14
+
+	local var_2_15 = var_2_14.base.commander_ability_template
+
+	var_2_15[2023] = {
+		cost = 0,
+		name = "钢铁巨兽",
+		group_id = 202,
+		worth = 3,
+		desc = "<color=#3dc6ff>战巡、战列</color>耐久提高100点、炮击提高16点",
+		next = 0,
+		id = 2023,
+		icon = "zhanlie_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5
+				},
+				1,
+				100
+			},
+			{
+				1,
+				{},
+				{
+					4,
+					5
+				},
+				2,
+				16
+			}
+		},
+		add_desc = {
+			{
+				"<战巡>耐久",
+				100
+			},
+			{
+				"<战列>耐久",
+				100
+			},
+			{
+				"<战巡>炮击",
+				16
+			},
+			{
+				"<战列>炮击",
+				16
+			}
+		}
+	}
+	pg = var_2_15
+
+	local var_2_16 = var_2_15.base.commander_ability_template
+
+	var_2_16[2031] = {
+		cost = 0,
+		name = "新晋指挥官·空母",
+		group_id = 203,
+		worth = 1,
+		desc = "<color=#3dc6ff>正航</color>航空提高10点、装填提高3点",
+		next = 2032,
+		id = 2031,
+		icon = "hangmu_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					7
+				},
+				5,
+				10
+			},
+			{
+				1,
+				{},
+				{
+					7
+				},
+				6,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<正航>航空",
+				10
+			},
+			{
+				"<正航>装填",
+				3
+			}
+		}
+	}
+	pg = var_2_16
+
+	local var_2_17 = var_2_16.base.commander_ability_template
+
+	var_2_17[2032] = {
+		cost = 0,
+		name = "精锐指挥官·空母",
+		group_id = 203,
+		worth = 2,
+		desc = "<color=#3dc6ff>正航</color>航空提高14点、装填提高4点",
+		next = 2033,
+		id = 2032,
+		icon = "hangmu_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					7
+				},
+				5,
+				14
+			},
+			{
+				1,
+				{},
+				{
+					7
+				},
+				6,
+				4
+			}
+		},
+		add_desc = {
+			{
+				"<正航>航空",
+				14
+			},
+			{
+				"<正航>装填",
+				4
+			}
+		}
+	}
+	pg = var_2_17
+
+	local var_2_18 = var_2_17.base.commander_ability_template
+
+	var_2_18[2033] = {
+		cost = 0,
+		name = "苍穹猎手",
+		group_id = 203,
+		worth = 3,
+		desc = "<color=#3dc6ff>正航</color>航空提高20点、装填提高6点",
+		next = 0,
+		id = 2033,
+		icon = "hangmu_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					7
+				},
+				5,
+				20
+			},
+			{
+				1,
+				{},
+				{
+					7
+				},
+				6,
+				6
+			}
+		},
+		add_desc = {
+			{
+				"<正航>航空",
+				20
+			},
+			{
+				"<正航>装填",
+				6
+			}
+		}
+	}
+	pg = var_2_18
+
+	local var_2_19 = var_2_18.base.commander_ability_template
+
+	var_2_19[2041] = {
+		cost = 0,
+		name = "新晋指挥官·潜艇",
+		group_id = 204,
+		worth = 1,
+		desc = "<color=#3dc6ff>潜艇、潜母</color>雷击提高10点、装填提高3点",
+		next = 2042,
+		id = 2041,
+		icon = "qianting_one_1",
+		add = {
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				3,
+				10
+			},
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				6,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<潜艇、潜母>雷击",
+				10
+			},
+			{
+				"<潜艇、潜母>装填",
+				3
+			}
+		}
+	}
+	pg = var_2_19
+
+	local var_2_20 = var_2_19.base.commander_ability_template
+
+	var_2_20[2042] = {
+		cost = 0,
+		name = "精锐指挥官·潜艇",
+		group_id = 204,
+		worth = 2,
+		desc = "<color=#3dc6ff>潜艇、潜母</color>雷击提高14点、装填提高4点",
+		next = 2043,
+		id = 2042,
+		icon = "qianting_one_2",
+		add = {
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				3,
+				14
+			},
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				6,
+				4
+			}
+		},
+		add_desc = {
+			{
+				"<潜艇、潜母>雷击",
+				14
+			},
+			{
+				"<潜艇、潜母>装填",
+				4
+			}
+		}
+	}
+	pg = var_2_20
+
+	local var_2_21 = var_2_20.base.commander_ability_template
+
+	var_2_21[2043] = {
+		cost = 0,
+		name = "沉默杀手",
+		group_id = 204,
+		worth = 3,
+		desc = "<color=#3dc6ff>潜艇、潜母</color>雷击提高20点、装填提高6点",
+		next = 0,
+		id = 2043,
+		icon = "qianting_one_3",
+		add = {
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				3,
+				20
+			},
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				6,
+				6
+			}
+		},
+		add_desc = {
+			{
+				"<潜艇、潜母>雷击",
+				20
+			},
+			{
+				"<潜艇、潜母>装填",
+				6
+			}
+		}
+	}
+	pg = var_2_21
+
+	local var_2_22 = var_2_21.base.commander_ability_template
+
+	var_2_22[2111] = {
+		cost = 0,
+		name = "新晋指挥官·白鹰",
+		group_id = 211,
+		worth = 1,
+		desc = "<color=#3dc6ff>白鹰</color>防空提高8点、航空提高8点、装填提高3点",
+		next = 2112,
+		id = 2111,
+		icon = "baiying_two_1",
+		add = {
+			{
+				1,
+				{
+					1
+				},
+				{},
+				4,
+				8
+			},
+			{
+				1,
+				{
+					1
+				},
+				{},
+				5,
+				8
+			},
+			{
+				1,
+				{
+					1
+				},
+				{},
+				6,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<白鹰>防空",
+				8
+			},
+			{
+				"<白鹰>航空",
+				8
+			},
+			{
+				"<白鹰>装填",
+				3
+			}
+		}
+	}
+	pg = var_2_22
+
+	local var_2_23 = var_2_22.base.commander_ability_template
+
+	var_2_23[2112] = {
+		cost = 0,
+		name = "精锐指挥官·白鹰",
+		group_id = 211,
+		worth = 2,
+		desc = "<color=#3dc6ff>白鹰</color>防空提高11点、航空提高11点、装填提高4点",
+		next = 2113,
+		id = 2112,
+		icon = "baiying_two_2",
+		add = {
+			{
+				1,
+				{
+					1
+				},
+				{},
+				4,
+				11
+			},
+			{
+				1,
+				{
+					1
+				},
+				{},
+				5,
+				11
+			},
+			{
+				1,
+				{
+					1
+				},
+				{},
+				6,
+				4
+			}
+		},
+		add_desc = {
+			{
+				"<白鹰>防空",
+				11
+			},
+			{
+				"<白鹰>航空",
+				11
+			},
+			{
+				"<白鹰>装填",
+				4
+			}
+		}
+	}
+	pg = var_2_23
+
+	local var_2_24 = var_2_23.base.commander_ability_template
+
+	var_2_24[2113] = {
+		cost = 0,
+		name = "王牌指挥官·白鹰",
+		group_id = 211,
+		worth = 3,
+		desc = "<color=#3dc6ff>白鹰</color>防空提高16点、航空提高16点、装填提高6点",
+		next = 0,
+		id = 2113,
+		icon = "baiying_two_3",
+		add = {
+			{
+				1,
+				{
+					1
+				},
+				{},
+				4,
+				16
+			},
+			{
+				1,
+				{
+					1
+				},
+				{},
+				5,
+				16
+			},
+			{
+				1,
+				{
+					1
+				},
+				{},
+				6,
+				6
+			}
+		},
+		add_desc = {
+			{
+				"<白鹰>防空",
+				16
+			},
+			{
+				"<白鹰>航空",
+				16
+			},
+			{
+				"<白鹰>装填",
+				6
+			}
+		}
+	}
+	pg = var_2_24
+
+	local var_2_25 = var_2_24.base.commander_ability_template
+
+	var_2_25[2121] = {
+		cost = 0,
+		name = "新晋指挥官·皇家",
+		group_id = 212,
+		worth = 1,
+		desc = "<color=#3dc6ff>皇家</color>炮击提高7点、防空提高8点、机动提高1点",
+		next = 2122,
+		id = 2121,
+		icon = "huangjia_two_1",
+		add = {
+			{
+				1,
+				{
+					2
+				},
+				{},
+				2,
+				7
+			},
+			{
+				1,
+				{
+					2
+				},
+				{},
+				4,
+				8
+			},
+			{
+				1,
+				{
+					2
+				},
+				{},
+				9,
+				1
+			}
+		},
+		add_desc = {
+			{
+				"<皇家>炮击",
+				7
+			},
+			{
+				"<皇家>防空",
+				8
+			},
+			{
+				"<皇家>机动",
+				1
+			}
+		}
+	}
+	pg = var_2_25
+
+	local var_2_26 = var_2_25.base.commander_ability_template
+
+	var_2_26[2122] = {
+		cost = 0,
+		name = "精锐指挥官·皇家",
+		group_id = 212,
+		worth = 2,
+		desc = "<color=#3dc6ff>皇家</color>炮击提高10点、防空提高11点、机动提高2点",
+		next = 2123,
+		id = 2122,
+		icon = "huangjia_two_2",
+		add = {
+			{
+				1,
+				{
+					2
+				},
+				{},
+				2,
+				10
+			},
+			{
+				1,
+				{
+					2
+				},
+				{},
+				4,
+				11
+			},
+			{
+				1,
+				{
+					2
+				},
+				{},
+				9,
+				2
+			}
+		},
+		add_desc = {
+			{
+				"<皇家>炮击",
+				10
+			},
+			{
+				"<皇家>防空",
+				11
+			},
+			{
+				"<皇家>机动",
+				2
+			}
+		}
+	}
+	pg = var_2_26
+
+	local var_2_27 = var_2_26.base.commander_ability_template
+
+	var_2_27[2123] = {
+		cost = 0,
+		name = "王牌指挥官·皇家",
+		group_id = 212,
+		worth = 3,
+		desc = "<color=#3dc6ff>皇家</color>炮击提高14点、防空提高16点、机动提高3点",
+		next = 0,
+		id = 2123,
+		icon = "huangjia_two_3",
+		add = {
+			{
+				1,
+				{
+					2
+				},
+				{},
+				2,
+				14
+			},
+			{
+				1,
+				{
+					2
+				},
+				{},
+				4,
+				16
+			},
+			{
+				1,
+				{
+					2
+				},
+				{},
+				9,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<皇家>炮击",
+				14
+			},
+			{
+				"<皇家>防空",
+				16
+			},
+			{
+				"<皇家>机动",
+				3
+			}
+		}
+	}
+	pg = var_2_27
+
+	local var_2_28 = var_2_27.base.commander_ability_template
+
+	var_2_28[2131] = {
+		cost = 0,
+		name = "新晋指挥官·重樱",
+		group_id = 213,
+		worth = 1,
+		desc = "<color=#3dc6ff>重樱</color>雷击提高8点、航空提高6点、机动提高1点",
+		next = 2132,
+		id = 2131,
+		icon = "chongying_two_1",
+		add = {
+			{
+				1,
+				{
+					3
+				},
+				{},
+				3,
+				8
+			},
+			{
+				1,
+				{
+					3
+				},
+				{},
+				5,
+				6
+			},
+			{
+				1,
+				{
+					3
+				},
+				{},
+				9,
+				1
+			}
+		},
+		add_desc = {
+			{
+				"<重樱>雷击",
+				8
+			},
+			{
+				"<重樱>航空",
+				6
+			},
+			{
+				"<重樱>机动",
+				1
+			}
+		}
+	}
+	pg = var_2_28
+
+	local var_2_29 = var_2_28.base.commander_ability_template
+
+	var_2_29[2132] = {
+		cost = 0,
+		name = "精锐指挥官·重樱",
+		group_id = 213,
+		worth = 2,
+		desc = "<color=#3dc6ff>重樱</color>雷击提高11点、航空提高8点、机动提高2点",
+		next = 2133,
+		id = 2132,
+		icon = "chongying_two_2",
+		add = {
+			{
+				1,
+				{
+					3
+				},
+				{},
+				3,
+				11
+			},
+			{
+				1,
+				{
+					3
+				},
+				{},
+				5,
+				8
+			},
+			{
+				1,
+				{
+					3
+				},
+				{},
+				9,
+				2
+			}
+		},
+		add_desc = {
+			{
+				"<重樱>雷击",
+				11
+			},
+			{
+				"<重樱>航空",
+				8
+			},
+			{
+				"<重樱>机动",
+				2
+			}
+		}
+	}
+	pg = var_2_29
+
+	local var_2_30 = var_2_29.base.commander_ability_template
+
+	var_2_30[2133] = {
+		cost = 0,
+		name = "王牌指挥官·重樱",
+		group_id = 213,
+		worth = 3,
+		desc = "<color=#3dc6ff>重樱</color>雷击提高16点、航空提高12点、机动提高3点",
+		next = 0,
+		id = 2133,
+		icon = "chongying_two_3",
+		add = {
+			{
+				1,
+				{
+					3
+				},
+				{},
+				3,
+				16
+			},
+			{
+				1,
+				{
+					3
+				},
+				{},
+				5,
+				12
+			},
+			{
+				1,
+				{
+					3
+				},
+				{},
+				9,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<重樱>雷击",
+				16
+			},
+			{
+				"<重樱>航空",
+				12
+			},
+			{
+				"<重樱>机动",
+				3
+			}
+		}
+	}
+	pg = var_2_30
+
+	local var_2_31 = var_2_30.base.commander_ability_template
+
+	var_2_31[2141] = {
+		cost = 0,
+		name = "新晋指挥官·铁血",
+		group_id = 214,
+		worth = 1,
+		desc = "<color=#3dc6ff>铁血</color>炮击提高6点、雷击提高7点、命中提高1点",
+		next = 2142,
+		id = 2141,
+		icon = "tiexue_two_1",
+		add = {
+			{
+				1,
+				{
+					4
+				},
+				{},
+				2,
+				6
+			},
+			{
+				1,
+				{
+					4
+				},
+				{},
+				3,
+				7
+			},
+			{
+				1,
+				{},
+				{},
+				8,
+				1
+			}
+		},
+		add_desc = {
+			{
+				"<铁血>炮击",
+				6
+			},
+			{
+				"<铁血>雷击",
+				7
+			},
+			{
+				"<铁血>命中",
+				1
+			}
+		}
+	}
+	pg = var_2_31
+
+	local var_2_32 = var_2_31.base.commander_ability_template
+
+	var_2_32[2142] = {
+		cost = 0,
+		name = "精锐指挥官·铁血",
+		group_id = 214,
+		worth = 2,
+		desc = "<color=#3dc6ff>铁血</color>炮击提高8点、雷击提高10点、命中提高2点",
+		next = 2143,
+		id = 2142,
+		icon = "tiexue_two_2",
+		add = {
+			{
+				1,
+				{
+					4
+				},
+				{},
+				2,
+				8
+			},
+			{
+				1,
+				{
+					4
+				},
+				{},
+				3,
+				10
+			},
+			{
+				1,
+				{},
+				{},
+				8,
+				2
+			}
+		},
+		add_desc = {
+			{
+				"<铁血>炮击",
+				8
+			},
+			{
+				"<铁血>雷击",
+				10
+			},
+			{
+				"<铁血>命中",
+				2
+			}
+		}
+	}
+	pg = var_2_32
+
+	local var_2_33 = var_2_32.base.commander_ability_template
+
+	var_2_33[2143] = {
+		cost = 0,
+		name = "王牌指挥官·铁血",
+		group_id = 214,
+		worth = 3,
+		desc = "<color=#3dc6ff>铁血</color>炮击提高12点、雷击提高14点、命中提高3点",
+		next = 0,
+		id = 2143,
+		icon = "tiexue_two_3",
+		add = {
+			{
+				1,
+				{
+					4
+				},
+				{},
+				2,
+				12
+			},
+			{
+				1,
+				{
+					4
+				},
+				{},
+				3,
+				14
+			},
+			{
+				1,
+				{},
+				{},
+				8,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<铁血>炮击",
+				12
+			},
+			{
+				"<铁血>雷击",
+				14
+			},
+			{
+				"<铁血>命中",
+				3
+			}
+		}
+	}
+	pg = var_2_33
+
+	local var_2_34 = var_2_33.base.commander_ability_template
+
+	var_2_34[2151] = {
+		cost = 0,
+		name = "新晋指挥官·东煌",
+		group_id = 215,
+		worth = 1,
+		desc = "<color=#3dc6ff>东煌</color>炮击提高7点、防空提高8点、装填提高3点",
+		next = 2152,
+		id = 2151,
+		icon = "",
+		add = {
+			{
+				1,
+				{
+					5
+				},
+				{},
+				2,
+				7
+			},
+			{
+				1,
+				{
+					5
+				},
+				{},
+				4,
+				8
+			},
+			{
+				1,
+				{
+					5
+				},
+				{},
+				6,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<东煌>炮击",
+				7
+			},
+			{
+				"<东煌>防空",
+				8
+			},
+			{
+				"<东煌>装填",
+				3
+			}
+		}
+	}
+	pg = var_2_34
+
+	local var_2_35 = var_2_34.base.commander_ability_template
+
+	var_2_35[2152] = {
+		cost = 0,
+		name = "精锐指挥官·东煌",
+		group_id = 215,
+		worth = 2,
+		desc = "<color=#3dc6ff>东煌</color>炮击提高10点、防空提高11点、装填提高4点",
+		next = 2153,
+		id = 2152,
+		icon = "",
+		add = {
+			{
+				1,
+				{
+					5
+				},
+				{},
+				2,
+				10
+			},
+			{
+				1,
+				{
+					5
+				},
+				{},
+				4,
+				11
+			},
+			{
+				1,
+				{
+					5
+				},
+				{},
+				6,
+				4
+			}
+		},
+		add_desc = {
+			{
+				"<东煌>炮击",
+				10
+			},
+			{
+				"<东煌>防空",
+				11
+			},
+			{
+				"<东煌>装填",
+				4
+			}
+		}
+	}
+	pg = var_2_35
+
+	local var_2_36 = var_2_35.base.commander_ability_template
+
+	var_2_36[2153] = {
+		cost = 0,
+		name = "王牌指挥官·东煌",
+		group_id = 215,
+		worth = 3,
+		desc = "<color=#3dc6ff>东煌</color>炮击提高14点、防空提高16点、装填提高6点",
+		next = 0,
+		id = 2153,
+		icon = "",
+		add = {
+			{
+				1,
+				{
+					5
+				},
+				{},
+				2,
+				14
+			},
+			{
+				1,
+				{
+					5
+				},
+				{},
+				4,
+				16
+			},
+			{
+				1,
+				{
+					5
+				},
+				{},
+				6,
+				6
+			}
+		},
+		add_desc = {
+			{
+				"<东煌>炮击",
+				14
+			},
+			{
+				"<东煌>防空",
+				16
+			},
+			{
+				"<东煌>装填",
+				6
+			}
+		}
+	}
+	pg = var_2_36
+
+	local var_2_37 = var_2_36.base.commander_ability_template
+
+	var_2_37[2171] = {
+		cost = 0,
+		name = "新晋指挥官·北联",
+		group_id = 217,
+		worth = 1,
+		desc = "<color=#3dc6ff>北联</color>炮击提高8点、装填提高4点、命中提高1点",
+		next = 2172,
+		id = 2171,
+		icon = "",
+		add = {
+			{
+				1,
+				{
+					7
+				},
+				{},
+				2,
+				8
+			},
+			{
+				1,
+				{
+					7
+				},
+				{},
+				6,
+				4
+			},
+			{
+				1,
+				{
+					7
+				},
+				{},
+				8,
+				1
+			}
+		},
+		add_desc = {
+			{
+				"<北联>炮击",
+				8
+			},
+			{
+				"<北联>装填",
+				4
+			},
+			{
+				"<北联>命中",
+				1
+			}
+		}
+	}
+	pg = var_2_37
+
+	local var_2_38 = var_2_37.base.commander_ability_template
+
+	var_2_38[2172] = {
+		cost = 0,
+		name = "精锐指挥官·北联",
+		group_id = 217,
+		worth = 2,
+		desc = "<color=#3dc6ff>北联</color>炮击提高11点、装填提高5点、命中提高2点",
+		next = 2173,
+		id = 2172,
+		icon = "",
+		add = {
+			{
+				1,
+				{
+					7
+				},
+				{},
+				2,
+				11
+			},
+			{
+				1,
+				{
+					7
+				},
+				{},
+				6,
+				5
+			},
+			{
+				1,
+				{
+					7
+				},
+				{},
+				8,
+				2
+			}
+		},
+		add_desc = {
+			{
+				"<北联>炮击",
+				11
+			},
+			{
+				"<北联>装填",
+				5
+			},
+			{
+				"<北联>命中",
+				2
+			}
+		}
+	}
+	pg = var_2_38
+
+	local var_2_39 = var_2_38.base.commander_ability_template
+
+	var_2_39[2173] = {
+		cost = 0,
+		name = "王牌指挥官·北联",
+		group_id = 217,
+		worth = 3,
+		desc = "<color=#3dc6ff>北联</color>炮击提高16点、装填提高8点、命中提高3点",
+		next = 0,
+		id = 2173,
+		icon = "",
+		add = {
+			{
+				1,
+				{
+					7
+				},
+				{},
+				2,
+				16
+			},
+			{
+				1,
+				{
+					7
+				},
+				{},
+				6,
+				8
+			},
+			{
+				1,
+				{
+					7
+				},
+				{},
+				8,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<北联>炮击",
+				16
+			},
+			{
+				"<北联>装填",
+				8
+			},
+			{
+				"<北联>命中",
+				3
+			}
+		}
+	}
+	pg = var_2_39
+
+	local var_2_40 = var_2_39.base.commander_ability_template
+
+	var_2_40[2181] = {
+		cost = 0,
+		name = "新晋指挥官·鸢尾",
+		group_id = 218,
+		worth = 1,
+		desc = "<color=#3dc6ff>鸢尾</color>炮击提高8点、装填提高3点、机动提高2点",
+		next = 2182,
+		id = 2181,
+		icon = "",
+		add = {
+			{
+				1,
+				{
+					8
+				},
+				{},
+				2,
+				8
+			},
+			{
+				1,
+				{
+					8
+				},
+				{},
+				6,
+				3
+			},
+			{
+				1,
+				{
+					8
+				},
+				{},
+				9,
+				2
+			}
+		},
+		add_desc = {
+			{
+				"<鸢尾>炮击",
+				8
+			},
+			{
+				"<鸢尾>装填",
+				3
+			},
+			{
+				"<鸢尾>机动",
+				2
+			}
+		}
+	}
+	pg = var_2_40
+
+	local var_2_41 = var_2_40.base.commander_ability_template
+
+	var_2_41[2182] = {
+		cost = 0,
+		name = "精锐指挥官·鸢尾",
+		group_id = 218,
+		worth = 2,
+		desc = "<color=#3dc6ff>鸢尾</color>炮击提高11点、装填提高4点、机动提高3点",
+		next = 2183,
+		id = 2182,
+		icon = "",
+		add = {
+			{
+				1,
+				{
+					8
+				},
+				{},
+				2,
+				11
+			},
+			{
+				1,
+				{
+					8
+				},
+				{},
+				6,
+				4
+			},
+			{
+				1,
+				{
+					8
+				},
+				{},
+				9,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<鸢尾>炮击",
+				11
+			},
+			{
+				"<鸢尾>装填",
+				4
+			},
+			{
+				"<鸢尾>机动",
+				3
+			}
+		}
+	}
+	pg = var_2_41
+
+	local var_2_42 = var_2_41.base.commander_ability_template
+
+	var_2_42[2183] = {
+		cost = 0,
+		name = "王牌指挥官·鸢尾",
+		group_id = 218,
+		worth = 3,
+		desc = "<color=#3dc6ff>鸢尾</color>炮击提高16点、装填提高6点、机动提高5点",
+		next = 0,
+		id = 2183,
+		icon = "",
+		add = {
+			{
+				1,
+				{
+					8
+				},
+				{},
+				2,
+				16
+			},
+			{
+				1,
+				{
+					8
+				},
+				{},
+				6,
+				6
+			},
+			{
+				1,
+				{
+					8
+				},
+				{},
+				9,
+				5
+			}
+		},
+		add_desc = {
+			{
+				"<鸢尾>炮击",
+				16
+			},
+			{
+				"<鸢尾>装填",
+				6
+			},
+			{
+				"<鸢尾>机动",
+				5
+			}
+		}
+	}
+	pg = var_2_42
+
+	local var_2_43 = var_2_42.base.commander_ability_template
+
+	var_2_43[2191] = {
+		cost = 0,
+		name = "新晋指挥官·维希",
+		group_id = 219,
+		worth = 1,
+		desc = "<color=#3dc6ff>维希</color>炮击提高8点、装填提高3点、命中提高2点",
+		next = 2192,
+		id = 2191,
+		icon = "",
+		add = {
+			{
+				1,
+				{
+					9
+				},
+				{},
+				2,
+				8
+			},
+			{
+				1,
+				{
+					9
+				},
+				{},
+				6,
+				3
+			},
+			{
+				1,
+				{
+					9
+				},
+				{},
+				8,
+				2
+			}
+		},
+		add_desc = {
+			{
+				"<维希>炮击",
+				8
+			},
+			{
+				"<维希>装填",
+				3
+			},
+			{
+				"<维希>命中",
+				2
+			}
+		}
+	}
+	pg = var_2_43
+
+	local var_2_44 = var_2_43.base.commander_ability_template
+
+	var_2_44[2192] = {
+		cost = 0,
+		name = "精锐指挥官·维希",
+		group_id = 219,
+		worth = 2,
+		desc = "<color=#3dc6ff>维希</color>炮击提高11点、装填提高4点、命中提高3点",
+		next = 2193,
+		id = 2192,
+		icon = "",
+		add = {
+			{
+				1,
+				{
+					9
+				},
+				{},
+				2,
+				11
+			},
+			{
+				1,
+				{
+					9
+				},
+				{},
+				6,
+				4
+			},
+			{
+				1,
+				{
+					9
+				},
+				{},
+				8,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"<维希>炮击",
+				11
+			},
+			{
+				"<维希>装填",
+				4
+			},
+			{
+				"<维希>命中",
+				3
+			}
+		}
+	}
+	pg = var_2_44
+
+	local var_2_45 = var_2_44.base.commander_ability_template
+
+	var_2_45[2193] = {
+		cost = 0,
+		name = "王牌指挥官·维希",
+		group_id = 219,
+		worth = 3,
+		desc = "<color=#3dc6ff>维希</color>炮击提高16点、装填提高6点、命中提高5点",
+		next = 0,
+		id = 2193,
+		icon = "",
+		add = {
+			{
+				1,
+				{
+					9
+				},
+				{},
+				2,
+				16
+			},
+			{
+				1,
+				{
+					9
+				},
+				{},
+				6,
+				6
+			},
+			{
+				1,
+				{
+					9
+				},
+				{},
+				8,
+				5
+			}
+		},
+		add_desc = {
+			{
+				"<维希>炮击",
+				16
+			},
+			{
+				"<维希>装填",
+				6
+			},
+			{
+				"<维希>命中",
+				5
+			}
+		}
+	}
+	pg = var_2_45
+
+	local var_2_46 = var_2_45.base.commander_ability_template
+
+	var_2_46[5011] = {
+		cost = 0,
+		name = "见敌必战",
+		group_id = 501,
+		worth = 1,
+		desc = "<color=#3dc6ff>轻巡、重巡、超巡</color>炮击提高10点，装填提高12点",
+		next = 0,
+		id = 5011,
+		icon = "jiandibizhan",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				2,
+				10
+			},
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				6,
+				12
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>炮击",
+				10
+			},
+			{
+				"<重巡>炮击",
+				10
+			},
+			{
+				"<超巡>炮击",
+				10
+			},
+			{
+				"<轻巡>装填",
+				12
+			},
+			{
+				"<重巡>装填",
+				12
+			},
+			{
+				"<超巡>装填",
+				12
+			}
+		}
+	}
+	pg = var_2_46
+
+	local var_2_47 = var_2_46.base.commander_ability_template
+
+	var_2_47[5021] = {
+		cost = 0,
+		name = "一发入魂",
+		group_id = 502,
+		worth = 1,
+		desc = "<color=#3dc6ff>战巡、战列</color>炮击提高15点，主炮暴击率提高3%",
+		next = 0,
+		id = 5021,
+		icon = "yifaruhun",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5
+				},
+				2,
+				15
+			},
+			{
+				3,
+				{},
+				{},
+				45010,
+				0
+			}
+		},
+		add_desc = {
+			{
+				"<战巡>炮击",
+				15
+			},
+			{
+				"<战列>炮击",
+				15
+			},
+			{
+				"<战巡>主炮暴击率",
+				3,
+				"%"
+			},
+			{
+				"<战列>主炮暴击率",
+				3,
+				"%"
+			}
+		}
+	}
+	pg = var_2_47
+
+	local var_2_48 = var_2_47.base.commander_ability_template
+
+	var_2_48[5031] = {
+		cost = 0,
+		name = "水雷魂",
+		group_id = 503,
+		worth = 1,
+		desc = "<color=#3dc6ff>驱逐、轻巡</color>雷击提高15点，鱼雷暴击率提高3%",
+		next = 0,
+		id = 5031,
+		icon = "shuileihun",
+		add = {
+			{
+				1,
+				{},
+				{
+					1,
+					2,
+					20,
+					21
+				},
+				3,
+				15
+			},
+			{
+				3,
+				{},
+				{},
+				45060,
+				0
+			}
+		},
+		add_desc = {
+			{
+				"<驱逐>雷击",
+				15
+			},
+			{
+				"<轻巡>雷击",
+				15
+			},
+			{
+				"<驱逐>鱼雷暴击率",
+				3,
+				"%"
+			},
+			{
+				"<轻巡>鱼雷暴击率",
+				3,
+				"%"
+			}
+		}
+	}
+	pg = var_2_48
+
+	local var_2_49 = var_2_48.base.commander_ability_template
+
+	var_2_49[5041] = {
+		cost = 0,
+		name = "王牌机师",
+		group_id = 504,
+		worth = 1,
+		desc = "<color=#3dc6ff>正航</color>航空提高15点，装填提高8点",
+		next = 0,
+		id = 5041,
+		icon = "wangpaijishi",
+		add = {
+			{
+				1,
+				{},
+				{
+					7
+				},
+				5,
+				15
+			},
+			{
+				1,
+				{},
+				{
+					7
+				},
+				6,
+				8
+			}
+		},
+		add_desc = {
+			{
+				"<正航>航空",
+				15
+			},
+			{
+				"<正航>装填",
+				8
+			}
+		}
+	}
+	pg = var_2_49
+
+	local var_2_50 = var_2_49.base.commander_ability_template
+
+	var_2_50[5051] = {
+		cost = 0,
+		name = "狼群之首",
+		group_id = 505,
+		worth = 1,
+		desc = "<color=#3dc6ff>潜艇、潜母</color>雷击提高15点，装填提高8点",
+		next = 0,
+		id = 5051,
+		icon = "langqunzhishou",
+		add = {
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				3,
+				15
+			},
+			{
+				1,
+				{},
+				{
+					8,
+					17
+				},
+				6,
+				8
+			}
+		},
+		add_desc = {
+			{
+				"<潜艇、潜母>雷击",
+				15
+			},
+			{
+				"<潜艇、潜母>装填",
+				8
+			}
+		}
+	}
+	pg = var_2_50
+
+	local var_2_51 = var_2_50.base.commander_ability_template
+
+	var_2_51[5061] = {
+		cost = 0,
+		name = "被期待的新星",
+		group_id = 506,
+		worth = 1,
+		desc = "战斗中自身获得的经验值提高10%",
+		next = 0,
+		id = 5061,
+		icon = "special_exp",
+		add = {
+			{
+				2,
+				{},
+				{},
+				201,
+				1000
+			}
+		},
+		add_desc = {}
+	}
+	pg = var_2_51
+
+	local var_2_52 = var_2_51.base.commander_ability_template
+
+	var_2_52[5071] = {
+		cost = 0,
+		name = "最佳玩伴",
+		group_id = 507,
+		worth = 1,
+		desc = "作为陪玩单位时提供经验提高10%",
+		next = 0,
+		id = 5071,
+		icon = "special_exp",
+		add = {
+			{
+				2,
+				{},
+				{},
+				202,
+				1000
+			}
+		},
+		add_desc = {}
+	}
+	pg = var_2_52
+
+	local var_2_53 = var_2_52.base.commander_ability_template
+
+	var_2_53[5081] = {
+		cost = 0,
+		name = "其疾如风",
+		group_id = 508,
+		worth = 1,
+		desc = "舰队航速提高3点",
+		next = 0,
+		id = 5081,
+		icon = "special_one",
+		add = {
+			{
+				1,
+				{},
+				{},
+				10,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"航速",
+				3
+			}
+		}
+	}
+	pg = var_2_53
+
+	local var_2_54 = var_2_53.base.commander_ability_template
+
+	var_2_54[5091] = {
+		cost = 0,
+		name = "其徐如林",
+		group_id = 509,
+		worth = 1,
+		desc = "舰队防空、反潜提高15点，命中、机动提高3点",
+		next = 0,
+		id = 5091,
+		icon = "special_one",
+		add = {
+			{
+				1,
+				{},
+				{},
+				4,
+				15
+			},
+			{
+				1,
+				{},
+				{},
+				12,
+				15
+			},
+			{
+				1,
+				{},
+				{},
+				8,
+				3
+			},
+			{
+				1,
+				{},
+				{},
+				9,
+				3
+			}
+		},
+		add_desc = {
+			{
+				"防空",
+				15
+			},
+			{
+				"反潜",
+				15
+			},
+			{
+				"命中",
+				3
+			},
+			{
+				"机动",
+				3
+			}
+		}
+	}
+	pg = var_2_54
+
+	local var_2_55 = var_2_54.base.commander_ability_template
+
+	var_2_55[5101] = {
+		cost = 0,
+		name = "侵略如火",
+		group_id = 510,
+		worth = 1,
+		desc = "舰队成员造成伤害提高3%",
+		next = 0,
+		id = 5101,
+		icon = "special_one",
+		add = {
+			{
+				3,
+				{},
+				{},
+				45020,
+				0
+			}
+		},
+		add_desc = {
+			{
+				"伤害",
+				3,
+				"%"
+			}
+		}
+	}
+	pg = var_2_55
+
+	local var_2_56 = var_2_55.base.commander_ability_template
+
+	var_2_56[5111] = {
+		cost = 0,
+		name = "不动如山",
+		group_id = 511,
+		worth = 1,
+		desc = "舰队成员受到伤害降低3%",
+		next = 0,
+		id = 5111,
+		icon = "special_one",
+		add = {
+			{
+				3,
+				{},
+				{},
+				45030,
+				0
+			}
+		},
+		add_desc = {
+			{
+				"所受伤害",
+				-3,
+				"%"
+			}
+		}
+	}
+	pg = var_2_56
+
+	local var_2_57 = var_2_56.base.commander_ability_template
+
+	var_2_57[5121] = {
+		cost = 0,
+		name = "小小的奇迹",
+		group_id = 512,
+		worth = 1,
+		desc = "舰队幸运提高5点",
+		next = 0,
+		id = 5121,
+		icon = "special_one",
+		add = {
+			{
+				1,
+				{},
+				{},
+				11,
+				5
+			}
+		},
+		add_desc = {
+			{
+				"幸运",
+				5
+			}
+		}
+	}
+	pg = var_2_57
+
+	local var_2_58 = var_2_57.base.commander_ability_template
+
+	var_2_58[5131] = {
+		cost = 0,
+		name = "既定的命运",
+		group_id = 513,
+		worth = 1,
+		desc = "舰队炮击、雷击、航空提高10点，幸运降低3点",
+		next = 0,
+		id = 5131,
+		icon = "special_one",
+		add = {
+			{
+				1,
+				{},
+				{},
+				11,
+				-3
+			},
+			{
+				1,
+				{},
+				{},
+				2,
+				10
+			},
+			{
+				1,
+				{},
+				{},
+				3,
+				10
+			},
+			{
+				1,
+				{},
+				{},
+				5,
+				10
+			}
+		},
+		add_desc = {
+			{
+				"炮击",
+				10
+			},
+			{
+				"雷击",
+				10
+			},
+			{
+				"航空",
+				10
+			},
+			{
+				"幸运",
+				-3
+			}
+		}
+	}
+	pg = var_2_58
+
+	local var_2_59 = var_2_58.base.commander_ability_template
+
+	var_2_59[5141] = {
+		cost = 0,
+		name = "战备状态",
+		group_id = 514,
+		worth = 1,
+		desc = "<color=#3dc6ff>战巡、战列、风帆M</color>炮击提高25点",
+		next = 0,
+		id = 5141,
+		icon = "special_one",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					22,
+					24
+				},
+				2,
+				25
+			}
+		},
+		add_desc = {
+			{
+				"<战巡>炮击",
+				25
+			},
+			{
+				"<战列>炮击",
+				25
+			},
+			{
+				"<风帆M>炮击",
+				25
+			}
+		}
+	}
+	pg = var_2_59
+
+	local var_2_60 = var_2_59.base.commander_ability_template
+
+	var_2_60[5151] = {
+		cost = 0,
+		name = "展旗扬帆",
+		group_id = 515,
+		worth = 1,
+		desc = "<color=#3dc6ff>轻巡、重巡、超巡、风帆V</color>炮击提高10点，机动提高5点",
+		next = 0,
+		id = 5151,
+		icon = "special_one",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18,
+					23
+				},
+				2,
+				10
+			},
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18,
+					23
+				},
+				9,
+				5
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>炮击",
+				10
+			},
+			{
+				"<重巡>炮击",
+				10
+			},
+			{
+				"<超巡>炮击",
+				10
+			},
+			{
+				"<风帆V>炮击",
+				10
+			},
+			{
+				"<轻巡>机动",
+				5
+			},
+			{
+				"<重巡>机动",
+				5
+			},
+			{
+				"<超巡>机动",
+				5
+			},
+			{
+				"<风帆V>机动",
+				5
+			}
+		}
+	}
+	pg = var_2_60
+
+	local var_2_61 = var_2_60.base.commander_ability_template
+
+	var_2_61[5161] = {
+		cost = 0,
+		name = "攻夺预备",
+		group_id = 516,
+		worth = 1,
+		desc = "<color=#3dc6ff>战巡、战列、风帆M</color>炮击提高20点，<color=#3dc6ff>正航</color>航空提高20点",
+		next = 0,
+		id = 5161,
+		icon = "special_one",
+		add = {
+			{
+				1,
+				{},
+				{
+					4,
+					5,
+					24
+				},
+				2,
+				20
+			},
+			{
+				1,
+				{},
+				{
+					7
+				},
+				5,
+				20
+			}
+		},
+		add_desc = {
+			{
+				"<战巡>炮击",
+				20
+			},
+			{
+				"<战列>炮击",
+				20
+			},
+			{
+				"<风帆M>炮击",
+				20
+			},
+			{
+				"<正航>航空",
+				20
+			}
+		}
+	}
+	pg = var_2_61
+
+	local var_2_62 = var_2_61.base.commander_ability_template
+
+	var_2_62[5171] = {
+		cost = 0,
+		name = "大胆的尝试",
+		group_id = 517,
+		worth = 1,
+		desc = "<color=#3dc6ff>正航</color>航空、装填提高10点，<color=#3dc6ff>风帆</color>炮击提高15点",
+		next = 0,
+		id = 5171,
+		icon = "special_one",
+		add = {
+			{
+				1,
+				{},
+				{
+					7
+				},
+				5,
+				10
+			},
+			{
+				1,
+				{},
+				{
+					7
+				},
+				6,
+				10
+			},
+			{
+				1,
+				{},
+				{
+					22,
+					23,
+					24
+				},
+				2,
+				15
+			}
+		},
+		add_desc = {
+			{
+				"<正航>航空",
+				10
+			},
+			{
+				"<正航>装填",
+				10
+			},
+			{
+				"<风帆>炮击",
+				15
+			}
+		}
+	}
+	pg = var_2_62
+	var_2_62.base.commander_ability_template[5181] = {
+		cost = 0,
+		name = "战旗重扬",
+		group_id = 518,
+		worth = 1,
+		desc = "<color=#3dc6ff>轻巡、重巡、风帆V</color>炮击提高10点，装填提高10点",
+		next = 0,
+		id = 5181,
+		icon = "special_one",
+		add = {
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					23
+				},
+				2,
+				10
+			},
+			{
+				1,
+				{},
+				{
+					2,
+					3,
+					18
+				},
+				6,
+				10
+			}
+		},
+		add_desc = {
+			{
+				"<轻巡>炮击",
+				10
+			},
+			{
+				"<重巡>炮击",
+				10
+			},
+			{
+				"<风帆V>炮击",
+				10
+			},
+			{
+				"<轻巡>装填",
+				10
+			},
+			{
+				"<重巡>装填",
+				10
+			},
+			{
+				"<风帆V>装填",
+				10
+			}
+		}
+	}
+
+	return
+end)()
+
+return

@@ -1,0 +1,3590 @@
+﻿pg = var_0_10000
+
+local var_0_0
+
+var_0_0 = var_0_10000 or {}
+pg = pg
+rawget = var_0_10001
+pg = var_0_10003
+
+local var_0_2
+
+if not var_0_10001(var_0_10003, "medal_template") then
+	setmetatable = var_0_2
+
+	local var_0_1 = {
+		__name = "medal_template"
+	}
+
+	confNEO = var_4
+	var_0_2 = var_0_2(var_0_1, var_4)
+end
+
+var_0.medal_template = var_0_2
+pg = var_0
+
+local var_0_3 = var_0.medal_template
+
+var_0_3.all = {
+	10011,
+	10012,
+	10013,
+	10014,
+	10015,
+	10021,
+	10022,
+	10023,
+	10024,
+	10025,
+	10031,
+	10032,
+	10033,
+	10034,
+	10035,
+	10041,
+	10042,
+	10043,
+	10044,
+	10045,
+	10051,
+	10052,
+	10053,
+	10054,
+	10055,
+	10061,
+	10062,
+	10063,
+	10064,
+	10065,
+	10071,
+	10072,
+	10073,
+	10074,
+	10075,
+	10081,
+	10082,
+	10083,
+	10084,
+	10085,
+	10091,
+	10092,
+	10093,
+	10094,
+	10095,
+	10101,
+	10102,
+	10103,
+	10104,
+	10105,
+	100611,
+	100612,
+	100613,
+	100614,
+	100615,
+	100621,
+	100622,
+	100623,
+	100624,
+	100625,
+	100631,
+	100632,
+	100633,
+	100634,
+	100635,
+	100711,
+	100712,
+	100713,
+	100714,
+	100715,
+	100721,
+	100722,
+	100723,
+	100724,
+	100725,
+	100731,
+	100732,
+	100733,
+	100734,
+	100735,
+	100811,
+	100812,
+	100813,
+	100814,
+	100815,
+	100821,
+	100822,
+	100823,
+	100824,
+	100825,
+	100831,
+	100832,
+	100833,
+	100834,
+	100835,
+	100911,
+	100912,
+	100913,
+	100914,
+	100915,
+	100921,
+	100922,
+	100923,
+	100924,
+	100925,
+	100931,
+	100932,
+	100933,
+	100934,
+	100935,
+	200001,
+	200011,
+	200021,
+	200031,
+	200041,
+	200051,
+	200061,
+	200071,
+	200081,
+	200091,
+	200101,
+	200111,
+	200121,
+	200131,
+	200141,
+	200151,
+	200161,
+	200171,
+	200181,
+	200191,
+	200201,
+	200211
+}
+pg = var_0_3
+pg = var_1
+
+local var_0_4
+
+if not var_1.base then
+	var_0_4 = {}
+end
+
+var_0_3.base = var_0_4
+pg = var_0_3
+var_0_3.base.medal_template = {}
+
+;(function()
+	pg = var_1_10000
+
+	local var_1_0 = var_1_10000.base.medal_template
+
+	var_1_0[10011] = {
+		target_id = "0",
+		name = "海军优秀服役勋章",
+		target_num = 2000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "该勋章授予在服役期间表现优秀的指挥官",
+		next = 10012,
+		icon = "2021",
+		page = 1,
+		target_type = 1022,
+		start = 0,
+		hide = 0,
+		label = "l_201",
+		condition = "舰队出征累积胜利2000次 ",
+		rank = 1,
+		id = 10011,
+		explain1 = "授予在服役期间",
+		explain2 = "表现优秀的指挥官"
+	}
+	pg = var_1_0
+
+	local var_1_1 = var_1_0.base.medal_template
+
+	var_1_1[10012] = {
+		target_id = "0",
+		name = "海军优秀服役勋章",
+		target_num = 4000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "该勋章授予在服役期间表现优秀的指挥官",
+		next = 10013,
+		icon = "2022",
+		page = 1,
+		target_type = 1022,
+		start = 1,
+		hide = 0,
+		label = "l_201",
+		condition = "舰队出征累积胜利4000次 ",
+		rank = 2,
+		id = 10012,
+		explain1 = "授予在服役期间",
+		explain2 = "表现优秀的指挥官"
+	}
+	pg = var_1_1
+
+	local var_1_2 = var_1_1.base.medal_template
+
+	var_1_2[10013] = {
+		target_id = "0",
+		name = "海军优秀服役勋章",
+		target_num = 10000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "该勋章授予在服役期间表现优秀的指挥官",
+		next = 10014,
+		icon = "2023",
+		page = 1,
+		target_type = 1022,
+		start = 1,
+		hide = 0,
+		label = "l_201",
+		condition = "舰队出征累积胜利10000次 ",
+		rank = 3,
+		id = 10013,
+		explain1 = "授予在服役期间",
+		explain2 = "表现优秀的指挥官"
+	}
+	pg = var_1_2
+
+	local var_1_3 = var_1_2.base.medal_template
+
+	var_1_3[10014] = {
+		target_id = "0",
+		name = "海军优秀服役勋章",
+		target_num = 20000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "该勋章授予在服役期间表现优秀的指挥官",
+		next = 10015,
+		icon = "2024",
+		page = 1,
+		target_type = 1022,
+		start = 1,
+		hide = 0,
+		label = "l_201",
+		condition = "舰队出征累积胜利20000次 ",
+		rank = 4,
+		id = 10014,
+		explain1 = "授予在服役期间",
+		explain2 = "表现优秀的指挥官"
+	}
+	pg = var_1_3
+
+	local var_1_4 = var_1_3.base.medal_template
+
+	var_1_4[10015] = {
+		target_id = "0",
+		name = "海军优秀服役勋章",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "该勋章授予在服役期间表现优秀的指挥官",
+		next = 0,
+		icon = "2025",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "l_201",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 10015,
+		explain1 = "授予在服役期间",
+		explain2 = "表现优秀的指挥官"
+	}
+	pg = var_1_4
+
+	local var_1_5 = var_1_4.base.medal_template
+
+	var_1_5[10021] = {
+		target_id = "0",
+		name = "恪尽职守勋章",
+		target_num = 100,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 10022,
+		desc = "该勋章授予在服役期间出色履行职责的指挥官",
+		next = 10022,
+		icon = "2051",
+		page = 1,
+		target_type = 91,
+		start = 0,
+		hide = 0,
+		label = "l_202",
+		condition = "累积完成每日任务100次",
+		rank = 1,
+		id = 10021,
+		explain1 = "授予在服役期间",
+		explain2 = "恪守职责的指挥官"
+	}
+	pg = var_1_5
+
+	local var_1_6 = var_1_5.base.medal_template
+
+	var_1_6[10022] = {
+		target_id = "0",
+		name = "恪尽职守勋章",
+		target_num = 300,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 10023,
+		desc = "该勋章授予在服役期间出色履行职责的指挥官",
+		next = 10023,
+		icon = "2052",
+		page = 1,
+		target_type = 91,
+		start = 1,
+		hide = 0,
+		label = "l_202",
+		condition = "累积完成每日任务300次",
+		rank = 2,
+		id = 10022,
+		explain1 = "授予在服役期间",
+		explain2 = "恪守职责的指挥官"
+	}
+	pg = var_1_6
+
+	local var_1_7 = var_1_6.base.medal_template
+
+	var_1_7[10023] = {
+		target_id = "0",
+		name = "恪尽职守勋章",
+		target_num = 800,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 10024,
+		desc = "该勋章授予在服役期间出色履行职责的指挥官",
+		next = 10024,
+		icon = "2053",
+		page = 1,
+		target_type = 91,
+		start = 1,
+		hide = 0,
+		label = "l_202",
+		condition = "累积完成每日任务800次",
+		rank = 3,
+		id = 10023,
+		explain1 = "授予在服役期间",
+		explain2 = "恪守职责的指挥官"
+	}
+	pg = var_1_7
+
+	local var_1_8 = var_1_7.base.medal_template
+
+	var_1_8[10024] = {
+		target_id = "0",
+		name = "恪尽职守勋章",
+		target_num = 1600,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 10025,
+		desc = "该勋章授予在服役期间出色履行职责的指挥官",
+		next = 10025,
+		icon = "2054",
+		page = 1,
+		target_type = 91,
+		start = 1,
+		hide = 0,
+		label = "l_202",
+		condition = "累积完成每日任务1600次",
+		rank = 4,
+		id = 10024,
+		explain1 = "授予在服役期间",
+		explain2 = "恪守职责的指挥官"
+	}
+	pg = var_1_8
+
+	local var_1_9 = var_1_8.base.medal_template
+
+	var_1_9[10025] = {
+		target_id = "0",
+		name = "恪尽职守勋章",
+		target_num = 3200,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "该勋章授予在服役期间出色履行职责的指挥官",
+		next = 0,
+		icon = "2055",
+		page = 1,
+		target_type = 91,
+		start = 1,
+		hide = 0,
+		label = "l_202",
+		condition = "累积完成每日任务3200次",
+		rank = 5,
+		id = 10025,
+		explain1 = "授予在服役期间",
+		explain2 = "恪守职责的指挥官"
+	}
+	pg = var_1_9
+
+	local var_1_10 = var_1_9.base.medal_template
+
+	var_1_10[10031] = {
+		target_id = "5",
+		name = "海洋探索者勋章",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 10032,
+		desc = "探索不总伴随有收获。该勋章授予拥有坚定信念并持之以恒的指挥官",
+		next = 10032,
+		icon = "2031",
+		page = 1,
+		target_type = 141,
+		start = 0,
+		hide = 0,
+		label = "l_203",
+		condition = "从关卡中累积掉落获得1名超稀有角色",
+		rank = 1,
+		id = 10031,
+		explain1 = "授予在信念坚定",
+		explain2 = "持之以恒的指挥官"
+	}
+	pg = var_1_10
+
+	local var_1_11 = var_1_10.base.medal_template
+
+	var_1_11[10032] = {
+		target_id = "5",
+		name = "海洋探索者勋章",
+		target_num = 3,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 10033,
+		desc = "探索不总伴随有收获。该勋章授予拥有坚定信念并持之以恒的指挥官",
+		next = 10033,
+		icon = "2032",
+		page = 1,
+		target_type = 141,
+		start = 1,
+		hide = 0,
+		label = "l_203",
+		condition = "从关卡中累积掉落获得3名超稀有角色",
+		rank = 2,
+		id = 10032,
+		explain1 = "授予在信念坚定",
+		explain2 = "持之以恒的指挥官"
+	}
+	pg = var_1_11
+
+	local var_1_12 = var_1_11.base.medal_template
+
+	var_1_12[10033] = {
+		target_id = "5",
+		name = "海洋探索者勋章",
+		target_num = 10,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 10034,
+		desc = "探索不总伴随有收获。该勋章授予拥有坚定信念并持之以恒的指挥官",
+		next = 10034,
+		icon = "2033",
+		page = 1,
+		target_type = 141,
+		start = 1,
+		hide = 0,
+		label = "l_203",
+		condition = "从关卡中累积掉落获得10名超稀有角色",
+		rank = 3,
+		id = 10033,
+		explain1 = "授予在信念坚定",
+		explain2 = "持之以恒的指挥官"
+	}
+	pg = var_1_12
+
+	local var_1_13 = var_1_12.base.medal_template
+
+	var_1_13[10034] = {
+		target_id = "5",
+		name = "海洋探索者勋章",
+		target_num = 20,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "探索不总伴随有收获。该勋章授予拥有坚定信念并持之以恒的指挥官",
+		next = 10035,
+		icon = "2034",
+		page = 1,
+		target_type = 141,
+		start = 1,
+		hide = 0,
+		label = "l_203",
+		condition = "从关卡中累积掉落获得20名超稀有角色",
+		rank = 4,
+		id = 10034,
+		explain1 = "授予在信念坚定",
+		explain2 = "持之以恒的指挥官"
+	}
+	pg = var_1_13
+
+	local var_1_14 = var_1_13.base.medal_template
+
+	var_1_14[10035] = {
+		target_id = "0",
+		name = "海洋探索者勋章",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "探索不总伴随有收获。该勋章授予拥有坚定信念并持之以恒的指挥官",
+		next = 0,
+		icon = "2035",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "l_203",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 10035,
+		explain1 = "授予在信念坚定",
+		explain2 = "持之以恒的指挥官"
+	}
+	pg = var_1_14
+
+	local var_1_15 = var_1_14.base.medal_template
+
+	var_1_15[10041] = {
+		target_id = "0",
+		name = "杰出服务勋章",
+		target_num = 3000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "家，甜蜜的家。该勋章授予在港区建设中作出杰出贡献的指挥官",
+		next = 10042,
+		icon = "2041",
+		page = 1,
+		target_type = 133,
+		start = 0,
+		hide = 0,
+		label = "l_204",
+		condition = "累积消耗家具币达到3000枚",
+		rank = 1,
+		id = 10041,
+		explain1 = "授予为港区建设",
+		explain2 = "贡献杰出的指挥官"
+	}
+	pg = var_1_15
+
+	local var_1_16 = var_1_15.base.medal_template
+
+	var_1_16[10042] = {
+		target_id = "0",
+		name = "杰出服务勋章",
+		target_num = 7000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "家，甜蜜的家。该勋章授予在港区建设中作出杰出贡献的指挥官",
+		next = 10043,
+		icon = "2042",
+		page = 1,
+		target_type = 133,
+		start = 1,
+		hide = 0,
+		label = "l_204",
+		condition = "累积消耗家具币达到7000枚",
+		rank = 2,
+		id = 10042,
+		explain1 = "授予为港区建设",
+		explain2 = "贡献杰出的指挥官"
+	}
+	pg = var_1_16
+
+	local var_1_17 = var_1_16.base.medal_template
+
+	var_1_17[10043] = {
+		target_id = "0",
+		name = "杰出服务勋章",
+		target_num = 15000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "家，甜蜜的家。该勋章授予在港区建设中作出杰出贡献的指挥官",
+		next = 10044,
+		icon = "2043",
+		page = 1,
+		target_type = 133,
+		start = 1,
+		hide = 0,
+		label = "l_204",
+		condition = "累积消耗家具币达到15000枚",
+		rank = 3,
+		id = 10043,
+		explain1 = "授予为港区建设",
+		explain2 = "贡献杰出的指挥官"
+	}
+	pg = var_1_17
+
+	local var_1_18 = var_1_17.base.medal_template
+
+	var_1_18[10044] = {
+		target_id = "0",
+		name = "杰出服务勋章",
+		target_num = 30000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "家，甜蜜的家。该勋章授予在港区建设中作出杰出贡献的指挥官",
+		next = 10045,
+		icon = "2044",
+		page = 1,
+		target_type = 133,
+		start = 1,
+		hide = 0,
+		label = "l_204",
+		condition = "累积消耗家具币达到30000枚",
+		rank = 4,
+		id = 10044,
+		explain1 = "授予为港区建设",
+		explain2 = "贡献杰出的指挥官"
+	}
+	pg = var_1_18
+
+	local var_1_19 = var_1_18.base.medal_template
+
+	var_1_19[10045] = {
+		target_id = "0",
+		name = "杰出服务勋章",
+		target_num = 60000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "家，甜蜜的家。该勋章授予在港区建设中作出杰出贡献的指挥官",
+		next = 0,
+		icon = "2045",
+		page = 1,
+		target_type = 133,
+		start = 1,
+		hide = 0,
+		label = "l_204",
+		condition = "累积消耗家具币达到60000枚",
+		rank = 5,
+		id = 10045,
+		explain1 = "授予为港区建设",
+		explain2 = "贡献杰出的指挥官"
+	}
+	pg = var_1_19
+
+	local var_1_20 = var_1_19.base.medal_template
+
+	var_1_20[10051] = {
+		target_id = "10000",
+		name = "玫瑰誓约纪念章",
+		target_num = 10,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "点滴中耕耘的羁绊，如玫瑰般绽放于心间。 ",
+		next = 10052,
+		icon = "2061",
+		page = 1,
+		target_type = 1019,
+		start = 0,
+		hide = 0,
+		label = "l_205",
+		condition = "舰队中好感度大于等于100的舰船达到10艘",
+		rank = 1,
+		id = 10051,
+		explain1 = "点滴中耕耘的羁绊",
+		explain2 = "如玫瑰般绽放于心间 "
+	}
+	pg = var_1_20
+
+	local var_1_21 = var_1_20.base.medal_template
+
+	var_1_21[10052] = {
+		target_id = "10000",
+		name = "玫瑰誓约纪念章",
+		target_num = 20,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "点滴中耕耘的羁绊，如玫瑰般绽放于心间。 ",
+		next = 10053,
+		icon = "2062",
+		page = 1,
+		target_type = 1019,
+		start = 1,
+		hide = 0,
+		label = "l_205",
+		condition = "舰队中好感度大于等于100的舰船达到20艘",
+		rank = 2,
+		id = 10052,
+		explain1 = "点滴中耕耘的羁绊",
+		explain2 = "如玫瑰般绽放于心间 "
+	}
+	pg = var_1_21
+
+	local var_1_22 = var_1_21.base.medal_template
+
+	var_1_22[10053] = {
+		target_id = "10000",
+		name = "玫瑰誓约纪念章",
+		target_num = 50,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "点滴中耕耘的羁绊，如玫瑰般绽放于心间。 ",
+		next = 10054,
+		icon = "2063",
+		page = 1,
+		target_type = 1019,
+		start = 1,
+		hide = 0,
+		label = "l_205",
+		condition = "舰队中好感度大于等于100的舰船达到50艘",
+		rank = 3,
+		id = 10053,
+		explain1 = "点滴中耕耘的羁绊",
+		explain2 = "如玫瑰般绽放于心间 "
+	}
+	pg = var_1_22
+
+	local var_1_23 = var_1_22.base.medal_template
+
+	var_1_23[10054] = {
+		target_id = "10000",
+		name = "玫瑰誓约纪念章",
+		target_num = 100,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "点滴中耕耘的羁绊，如玫瑰般绽放于心间。 ",
+		next = 10055,
+		icon = "2064",
+		page = 1,
+		target_type = 1019,
+		start = 1,
+		hide = 0,
+		label = "l_205",
+		condition = "舰队中好感度大于等于100的舰船达到100艘",
+		rank = 4,
+		id = 10054,
+		explain1 = "点滴中耕耘的羁绊",
+		explain2 = "如玫瑰般绽放于心间 "
+	}
+	pg = var_1_23
+
+	local var_1_24 = var_1_23.base.medal_template
+
+	var_1_24[10055] = {
+		target_id = "10000",
+		name = "玫瑰誓约纪念章",
+		target_num = 200,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "点滴中耕耘的羁绊，如玫瑰般绽放于心间。 ",
+		next = 0,
+		icon = "2065",
+		page = 1,
+		target_type = 1019,
+		start = 1,
+		hide = 0,
+		label = "l_205",
+		condition = "舰队中好感度大于等于100的舰船达到200艘",
+		rank = 5,
+		id = 10055,
+		explain1 = "点滴中耕耘的羁绊",
+		explain2 = "如玫瑰般绽放于心间 "
+	}
+	pg = var_1_24
+
+	local var_1_25 = var_1_24.base.medal_template
+
+	var_1_25[10061] = {
+		name = "白鹰海军荣誉勋章",
+		target_num = 3,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以白鹰之名，授予在白鹰阵营军事行动中作出最杰出贡献的海军指挥官",
+		next = 10062,
+		icon = "1011",
+		page = 1,
+		target_type = 160,
+		start = 0,
+		hide = 0,
+		label = "l_101",
+		condition = "白鹰阵营120级舰船达到12艘，白鹰阵营舰船总好感达成2000点，使用白鹰舰船在任意关卡中获得经验200万点",
+		rank = 1,
+		id = 10061,
+		explain1 = "以白鹰之名授予",
+		explain2 = "最杰出的指挥官",
+		target_id = {
+			100611,
+			100621,
+			100631
+		}
+	}
+	pg = var_1_25
+
+	local var_1_26 = var_1_25.base.medal_template
+
+	var_1_26[10062] = {
+		name = "白鹰海军荣誉勋章",
+		target_num = 3,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以白鹰之名，授予在白鹰阵营军事行动中作出最杰出贡献的海军指挥官",
+		next = 10063,
+		icon = "1012",
+		page = 1,
+		target_type = 160,
+		start = 1,
+		hide = 0,
+		label = "l_101",
+		condition = "白鹰阵营120级舰船达到24艘，白鹰阵营舰船总好感达成4000点，使用白鹰舰船在任意关卡中获得经验200万点",
+		rank = 2,
+		id = 10062,
+		explain1 = "以白鹰之名授予",
+		explain2 = "最杰出的指挥官",
+		target_id = {
+			100612,
+			100622,
+			100632
+		}
+	}
+	pg = var_1_26
+
+	local var_1_27 = var_1_26.base.medal_template
+
+	var_1_27[10063] = {
+		target_id = "0",
+		name = "白鹰海军荣誉勋章",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以白鹰之名，授予在白鹰阵营军事行动中作出最杰出贡献的海军指挥官",
+		next = 10064,
+		icon = "1013",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "l_101",
+		condition = "尚未开放，敬请期待",
+		rank = 3,
+		id = 10063,
+		explain1 = "以白鹰之名授予",
+		explain2 = "最杰出的指挥官"
+	}
+	pg = var_1_27
+
+	local var_1_28 = var_1_27.base.medal_template
+
+	var_1_28[10064] = {
+		target_id = "0",
+		name = "白鹰海军荣誉勋章",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以白鹰之名，授予在白鹰阵营军事行动中作出最杰出贡献的海军指挥官",
+		next = 10065,
+		icon = "1014",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "l_101",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 10064,
+		explain1 = "以白鹰之名授予",
+		explain2 = "最杰出的指挥官"
+	}
+	pg = var_1_28
+
+	local var_1_29 = var_1_28.base.medal_template
+
+	var_1_29[10065] = {
+		target_id = "0",
+		name = "白鹰海军荣誉勋章",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以白鹰之名，授予在白鹰阵营军事行动中作出最杰出贡献的海军指挥官",
+		next = 0,
+		icon = "1015",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "l_101",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 10065,
+		explain1 = "以白鹰之名授予",
+		explain2 = "最杰出的指挥官"
+	}
+	pg = var_1_29
+
+	local var_1_30 = var_1_29.base.medal_template
+
+	var_1_30[10071] = {
+		name = "皇家海军十字勋章",
+		target_num = 3,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以皇家之名，将该荣耀赠予在面对敌人时表现最英勇、最无畏的指挥官",
+		next = 10072,
+		icon = "1021",
+		page = 1,
+		target_type = 160,
+		start = 0,
+		hide = 0,
+		label = "l_102",
+		condition = "皇家阵营120级舰船达到12艘，皇家阵营舰船总好感达成2000点，使用皇家舰船在任意关卡中获得经验200万点",
+		rank = 1,
+		id = 10071,
+		explain1 = "以皇家之名赠予",
+		explain2 = "最英勇的指挥官",
+		target_id = {
+			100711,
+			100721,
+			100731
+		}
+	}
+	pg = var_1_30
+
+	local var_1_31 = var_1_30.base.medal_template
+
+	var_1_31[10072] = {
+		name = "皇家海军十字勋章",
+		target_num = 3,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以皇家之名，将该荣耀赠予在面对敌人时表现最英勇、最无畏的指挥官",
+		next = 10073,
+		icon = "1022",
+		page = 1,
+		target_type = 160,
+		start = 1,
+		hide = 0,
+		label = "l_102",
+		condition = "皇家阵营120级舰船达到24艘，皇家阵营舰船总好感达成4000点，使用皇家舰船在任意关卡中获得经验200万点",
+		rank = 2,
+		id = 10072,
+		explain1 = "以皇家之名赠予",
+		explain2 = "最英勇的指挥官",
+		target_id = {
+			100712,
+			100722,
+			100732
+		}
+	}
+	pg = var_1_31
+
+	local var_1_32 = var_1_31.base.medal_template
+
+	var_1_32[10073] = {
+		target_id = "0",
+		name = "皇家海军十字勋章",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以皇家之名，将该荣耀赠予在面对敌人时表现最英勇、最无畏的指挥官",
+		next = 10074,
+		icon = "1023",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "l_102",
+		condition = "尚未开放，敬请期待",
+		rank = 3,
+		id = 10073,
+		explain1 = "以皇家之名赠予",
+		explain2 = "最英勇的指挥官"
+	}
+	pg = var_1_32
+
+	local var_1_33 = var_1_32.base.medal_template
+
+	var_1_33[10074] = {
+		target_id = "0",
+		name = "皇家海军十字勋章",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以皇家之名，将该荣耀赠予在面对敌人时表现最英勇、最无畏的指挥官",
+		next = 10075,
+		icon = "1024",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "l_102",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 10074,
+		explain1 = "以皇家之名赠予",
+		explain2 = "最英勇的指挥官"
+	}
+	pg = var_1_33
+
+	local var_1_34 = var_1_33.base.medal_template
+
+	var_1_34[10075] = {
+		target_id = "0",
+		name = "皇家海军十字勋章",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以皇家之名，将该荣耀赠予在面对敌人时表现最英勇、最无畏的指挥官",
+		next = 0,
+		icon = "1025",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "l_102",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 10075,
+		explain1 = "以皇家之名赠予",
+		explain2 = "最英勇的指挥官"
+	}
+	pg = var_1_34
+
+	local var_1_35 = var_1_34.base.medal_template
+
+	var_1_35[10081] = {
+		name = "重樱勋位大绶章",
+		target_num = 3,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以重樱之名，授予为重樱海军建设作出最卓越功绩的指挥官阁下",
+		next = 10082,
+		icon = "1031",
+		page = 1,
+		target_type = 160,
+		start = 0,
+		hide = 0,
+		label = "l_103",
+		condition = "重樱阵营120级舰船达到12艘，重樱阵营舰船总好感达成2000点，使用重樱舰船在任意关卡中获得经验200万点",
+		rank = 1,
+		id = 10081,
+		explain1 = "以重樱之名授予",
+		explain2 = "最卓越的指挥官",
+		target_id = {
+			100811,
+			100821,
+			100831
+		}
+	}
+	pg = var_1_35
+
+	local var_1_36 = var_1_35.base.medal_template
+
+	var_1_36[10082] = {
+		name = "重樱勋位大绶章",
+		target_num = 3,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以重樱之名，授予为重樱海军建设作出最卓越功绩的指挥官阁下",
+		next = 10083,
+		icon = "1032",
+		page = 1,
+		target_type = 160,
+		start = 1,
+		hide = 0,
+		label = "l_103",
+		condition = "重樱阵营120级舰船达到24艘，重樱阵营舰船总好感达成4000点，使用重樱舰船在任意关卡中获得经验200万点",
+		rank = 2,
+		id = 10082,
+		explain1 = "以重樱之名授予",
+		explain2 = "最卓越的指挥官",
+		target_id = {
+			100812,
+			100822,
+			100832
+		}
+	}
+	pg = var_1_36
+
+	local var_1_37 = var_1_36.base.medal_template
+
+	var_1_37[10083] = {
+		target_id = "0",
+		name = "重樱勋位大绶章",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以重樱之名，授予为重樱海军建设作出最卓越功绩的指挥官阁下",
+		next = 10084,
+		icon = "1033",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "l_103",
+		condition = "尚未开放，敬请期待",
+		rank = 3,
+		id = 10083,
+		explain1 = "以重樱之名授予",
+		explain2 = "最卓越的指挥官"
+	}
+	pg = var_1_37
+
+	local var_1_38 = var_1_37.base.medal_template
+
+	var_1_38[10084] = {
+		target_id = "0",
+		name = "重樱勋位大绶章",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以重樱之名，授予为重樱海军建设作出最卓越功绩的指挥官阁下",
+		next = 10085,
+		icon = "1034",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "l_103",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 10084,
+		explain1 = "以重樱之名授予",
+		explain2 = "最卓越的指挥官"
+	}
+	pg = var_1_38
+
+	local var_1_39 = var_1_38.base.medal_template
+
+	var_1_39[10085] = {
+		target_id = "0",
+		name = "重樱勋位大绶章",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以重樱之名，授予为重樱海军建设作出最卓越功绩的指挥官阁下",
+		next = 0,
+		icon = "1035",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "l_103",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 10085,
+		explain1 = "以重樱之名授予",
+		explain2 = "最卓越的指挥官"
+	}
+	pg = var_1_39
+
+	local var_1_40 = var_1_39.base.medal_template
+
+	var_1_40[10091] = {
+		name = "铁血海军功勋勋章",
+		target_num = 3,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以铁血之名，奖励在作战中展现了杰出的指挥能力并取得了突出功绩的指挥官",
+		next = 10092,
+		icon = "1041",
+		page = 1,
+		target_type = 160,
+		start = 0,
+		hide = 0,
+		label = "l_104",
+		condition = "铁血阵营120级舰船达到12艘，铁血阵营舰船总好感达成2000点，使用铁血舰船在任意关卡中获得经验200万点",
+		rank = 1,
+		id = 10091,
+		explain1 = "以铁血之名奖励",
+		explain2 = "最出色的指挥官",
+		target_id = {
+			100911,
+			100921,
+			100931
+		}
+	}
+	pg = var_1_40
+
+	local var_1_41 = var_1_40.base.medal_template
+
+	var_1_41[10092] = {
+		name = "铁血海军功勋勋章",
+		target_num = 3,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以铁血之名，奖励在作战中展现了杰出的指挥能力并取得了突出功绩的指挥官",
+		next = 10093,
+		icon = "1042",
+		page = 1,
+		target_type = 160,
+		start = 1,
+		hide = 0,
+		label = "l_104",
+		condition = "铁血阵营120级舰船达到24艘，铁血阵营舰船总好感达成4000点，使用铁血舰船在任意关卡中获得经验200万点",
+		rank = 2,
+		id = 10092,
+		explain1 = "以铁血之名奖励",
+		explain2 = "最出色的指挥官",
+		target_id = {
+			100912,
+			100922,
+			100932
+		}
+	}
+	pg = var_1_41
+
+	local var_1_42 = var_1_41.base.medal_template
+
+	var_1_42[10093] = {
+		target_id = "0",
+		name = "铁血海军功勋勋章",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以铁血之名，奖励在作战中展现了杰出的指挥能力并取得了突出功绩的指挥官",
+		next = 10094,
+		icon = "1043",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "l_104",
+		condition = "尚未开放，敬请期待",
+		rank = 3,
+		id = 10093,
+		explain1 = "以铁血之名奖励",
+		explain2 = "最出色的指挥官"
+	}
+	pg = var_1_42
+
+	local var_1_43 = var_1_42.base.medal_template
+
+	var_1_43[10094] = {
+		target_id = "0",
+		name = "铁血海军功勋勋章",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以铁血之名，奖励在作战中展现了杰出的指挥能力并取得了突出功绩的指挥官",
+		next = 10095,
+		icon = "1044",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "l_104",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 10094,
+		explain1 = "以铁血之名奖励",
+		explain2 = "最出色的指挥官"
+	}
+	pg = var_1_43
+
+	local var_1_44 = var_1_43.base.medal_template
+
+	var_1_44[10095] = {
+		target_id = "0",
+		name = "铁血海军功勋勋章",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "以铁血之名，奖励在作战中展现了杰出的指挥能力并取得了突出功绩的指挥官",
+		next = 0,
+		icon = "1045",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "l_104",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 10095,
+		explain1 = "以铁血之名奖励",
+		explain2 = "最出色的指挥官"
+	}
+	pg = var_1_44
+
+	local var_1_45 = var_1_44.base.medal_template
+
+	var_1_45[10101] = {
+		target_id = "0",
+		name = "海军服役成就奖章 ",
+		target_num = 100,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "奖励致力于舰队扩大建设并有所建树的指挥官 ",
+		next = 10102,
+		icon = "2011",
+		page = 1,
+		target_type = 1044,
+		start = 0,
+		hide = 0,
+		label = "l_206",
+		condition = "图鉴中解锁100种不同舰船",
+		rank = 1,
+		id = 10101,
+		explain1 = "奖励在舰队扩大中",
+		explain2 = "有所建树的指挥官"
+	}
+	pg = var_1_45
+
+	local var_1_46 = var_1_45.base.medal_template
+
+	var_1_46[10102] = {
+		target_id = "0",
+		name = "海军服役成就奖章 ",
+		target_num = 200,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "奖励致力于舰队扩大建设并有所建树的指挥官 ",
+		next = 10103,
+		icon = "2012",
+		page = 1,
+		target_type = 1044,
+		start = 1,
+		hide = 0,
+		label = "l_206",
+		condition = "图鉴中解锁200种不同舰船",
+		rank = 2,
+		id = 10102,
+		explain1 = "奖励在舰队扩大中",
+		explain2 = "有所建树的指挥官"
+	}
+	pg = var_1_46
+
+	local var_1_47 = var_1_46.base.medal_template
+
+	var_1_47[10103] = {
+		target_id = "0",
+		name = "海军服役成就奖章 ",
+		target_num = 300,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "奖励致力于舰队扩大建设并有所建树的指挥官 ",
+		next = 10104,
+		icon = "2013",
+		page = 1,
+		target_type = 1044,
+		start = 1,
+		hide = 0,
+		label = "l_206",
+		condition = "图鉴中解锁300种不同舰船",
+		rank = 3,
+		id = 10103,
+		explain1 = "奖励在舰队扩大中",
+		explain2 = "有所建树的指挥官"
+	}
+	pg = var_1_47
+
+	local var_1_48 = var_1_47.base.medal_template
+
+	var_1_48[10104] = {
+		target_id = "0",
+		name = "海军服役成就奖章 ",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "奖励致力于舰队扩大建设并有所建树的指挥官 ",
+		next = 10105,
+		icon = "2014",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "l_206",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 10104,
+		explain1 = "奖励在舰队扩大中",
+		explain2 = "有所建树的指挥官"
+	}
+	pg = var_1_48
+
+	local var_1_49 = var_1_48.base.medal_template
+
+	var_1_49[10105] = {
+		target_id = "0",
+		name = "海军服役成就奖章 ",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "奖励致力于舰队扩大建设并有所建树的指挥官 ",
+		next = 0,
+		icon = "2015",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "l_206",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 10105,
+		explain1 = "奖励在舰队扩大中",
+		explain2 = "有所建树的指挥官"
+	}
+	pg = var_1_49
+
+	local var_1_50 = var_1_49.base.medal_template
+
+	var_1_50[3] = {
+		name = "白鹰阵营子勋章1",
+		target_num = 12,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1042,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "白鹰阵营120级的舰船达到12艘",
+		rank = 1,
+		id = 100611,
+		explain1 = "",
+		explain2 = "",
+		target_id = {
+			{
+				1,
+				120
+			}
+		}
+	}
+	pg = var_1_50
+
+	local var_1_51 = var_1_50.base.medal_template
+
+	var_1_51[4] = {
+		name = "白鹰阵营子勋章1",
+		target_num = 24,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1042,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "白鹰阵营120级的舰船达到24艘",
+		rank = 2,
+		id = 100612,
+		explain1 = "",
+		explain2 = "",
+		target_id = {
+			{
+				1,
+				120
+			}
+		}
+	}
+	pg = var_1_51
+
+	local var_1_52 = var_1_51.base.medal_template
+
+	var_1_52[5] = {
+		target_id = "0",
+		name = "白鹰阵营子勋章1",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 3,
+		id = 100613,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_52
+
+	local var_1_53 = var_1_52.base.medal_template
+
+	var_1_53[6] = {
+		target_id = "0",
+		name = "白鹰阵营子勋章1",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 100614,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_53
+
+	local var_1_54 = var_1_53.base.medal_template
+
+	var_1_54[7] = {
+		target_id = "0",
+		name = "白鹰阵营子勋章1",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 100615,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_54
+
+	local var_1_55 = var_1_54.base.medal_template
+
+	var_1_55[13] = {
+		target_id = "1",
+		name = "白鹰阵营子勋章2",
+		target_num = 200000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1043,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "白鹰阵营总好感达成2000",
+		rank = 1,
+		id = 100621,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_55
+
+	local var_1_56 = var_1_55.base.medal_template
+
+	var_1_56[14] = {
+		target_id = "1",
+		name = "白鹰阵营子勋章2",
+		target_num = 400000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1043,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "白鹰阵营总好感达成4000",
+		rank = 2,
+		id = 100622,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_56
+
+	local var_1_57 = var_1_56.base.medal_template
+
+	var_1_57[15] = {
+		target_id = "0",
+		name = "白鹰阵营子勋章2",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 3,
+		id = 100623,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_57
+
+	local var_1_58 = var_1_57.base.medal_template
+
+	var_1_58[16] = {
+		target_id = "0",
+		name = "白鹰阵营子勋章2",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 100624,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_58
+
+	local var_1_59 = var_1_58.base.medal_template
+
+	var_1_59[17] = {
+		target_id = "0",
+		name = "白鹰阵营子勋章2",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 100625,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_59
+
+	local var_1_60 = var_1_59.base.medal_template
+
+	var_1_60[23] = {
+		name = "白鹰阵营子勋章3",
+		target_num = 2000000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1041,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "白鹰舰船出征获得经验200万点",
+		rank = 1,
+		id = 100631,
+		explain1 = "",
+		explain2 = "",
+		target_id = {
+			{
+				1,
+				0
+			}
+		}
+	}
+	pg = var_1_60
+
+	local var_1_61 = var_1_60.base.medal_template
+
+	var_1_61[24] = {
+		name = "白鹰阵营子勋章3",
+		target_num = 2000000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1041,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "白鹰舰船出征获得经验200万点",
+		rank = 2,
+		id = 100632,
+		explain1 = "",
+		explain2 = "",
+		target_id = {
+			{
+				1,
+				0
+			}
+		}
+	}
+	pg = var_1_61
+
+	local var_1_62 = var_1_61.base.medal_template
+
+	var_1_62[25] = {
+		target_id = "0",
+		name = "白鹰阵营子勋章3",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 3,
+		id = 100633,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_62
+
+	local var_1_63 = var_1_62.base.medal_template
+
+	var_1_63[26] = {
+		target_id = "0",
+		name = "白鹰阵营子勋章3",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 100634,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_63
+
+	local var_1_64 = var_1_63.base.medal_template
+
+	var_1_64[27] = {
+		target_id = "0",
+		name = "白鹰阵营子勋章3",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 100635,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_64
+
+	local var_1_65 = var_1_64.base.medal_template
+
+	var_1_65[100711] = {
+		name = "皇家阵营子勋章1",
+		target_num = 12,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1042,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "皇家阵营120级的舰船达到12艘",
+		rank = 1,
+		id = 100711,
+		explain1 = "",
+		explain2 = "",
+		target_id = {
+			{
+				2,
+				120
+			}
+		}
+	}
+	pg = var_1_65
+
+	local var_1_66 = var_1_65.base.medal_template
+
+	var_1_66[100712] = {
+		name = "皇家阵营子勋章1",
+		target_num = 24,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1042,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "皇家阵营120级的舰船达到24艘",
+		rank = 2,
+		id = 100712,
+		explain1 = "",
+		explain2 = "",
+		target_id = {
+			{
+				2,
+				120
+			}
+		}
+	}
+	pg = var_1_66
+
+	local var_1_67 = var_1_66.base.medal_template
+
+	var_1_67[100713] = {
+		target_id = "0",
+		name = "皇家阵营子勋章1",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 3,
+		id = 100713,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_67
+
+	local var_1_68 = var_1_67.base.medal_template
+
+	var_1_68[100714] = {
+		target_id = "0",
+		name = "皇家阵营子勋章1",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 100714,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_68
+
+	local var_1_69 = var_1_68.base.medal_template
+
+	var_1_69[100715] = {
+		target_id = "0",
+		name = "皇家阵营子勋章1",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 100715,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_69
+
+	local var_1_70 = var_1_69.base.medal_template
+
+	var_1_70[100721] = {
+		target_id = "2",
+		name = "皇家阵营子勋章2",
+		target_num = 200000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1043,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "皇家阵营总好感达成2000",
+		rank = 1,
+		id = 100721,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_70
+
+	local var_1_71 = var_1_70.base.medal_template
+
+	var_1_71[100722] = {
+		target_id = "2",
+		name = "皇家阵营子勋章2",
+		target_num = 400000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1043,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "皇家阵营总好感达成4000",
+		rank = 2,
+		id = 100722,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_71
+
+	local var_1_72 = var_1_71.base.medal_template
+
+	var_1_72[100723] = {
+		target_id = "0",
+		name = "皇家阵营子勋章2",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 3,
+		id = 100723,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_72
+
+	local var_1_73 = var_1_72.base.medal_template
+
+	var_1_73[100724] = {
+		target_id = "0",
+		name = "皇家阵营子勋章2",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 100724,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_73
+
+	local var_1_74 = var_1_73.base.medal_template
+
+	var_1_74[100725] = {
+		target_id = "0",
+		name = "皇家阵营子勋章2",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 100725,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_74
+
+	local var_1_75 = var_1_74.base.medal_template
+
+	var_1_75[100731] = {
+		name = "皇家阵营子勋章3",
+		target_num = 2000000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1041,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "皇家舰船出征获得经验200万点",
+		rank = 1,
+		id = 100731,
+		explain1 = "",
+		explain2 = "",
+		target_id = {
+			{
+				2,
+				0
+			}
+		}
+	}
+	pg = var_1_75
+
+	local var_1_76 = var_1_75.base.medal_template
+
+	var_1_76[100732] = {
+		name = "皇家阵营子勋章3",
+		target_num = 2000000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1041,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "皇家舰船出征获得经验200万点",
+		rank = 2,
+		id = 100732,
+		explain1 = "",
+		explain2 = "",
+		target_id = {
+			{
+				2,
+				0
+			}
+		}
+	}
+	pg = var_1_76
+
+	local var_1_77 = var_1_76.base.medal_template
+
+	var_1_77[100733] = {
+		target_id = "0",
+		name = "皇家阵营子勋章3",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 3,
+		id = 100733,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_77
+
+	local var_1_78 = var_1_77.base.medal_template
+
+	var_1_78[100734] = {
+		target_id = "0",
+		name = "皇家阵营子勋章3",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 100734,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_78
+
+	local var_1_79 = var_1_78.base.medal_template
+
+	var_1_79[100735] = {
+		target_id = "0",
+		name = "皇家阵营子勋章3",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 100735,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_79
+
+	local var_1_80 = var_1_79.base.medal_template
+
+	var_1_80[100811] = {
+		name = "重樱阵营子勋章1",
+		target_num = 12,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1042,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "重樱阵营120级的舰船达到12艘",
+		rank = 1,
+		id = 100811,
+		explain1 = "",
+		explain2 = "",
+		target_id = {
+			{
+				3,
+				120
+			}
+		}
+	}
+	pg = var_1_80
+
+	local var_1_81 = var_1_80.base.medal_template
+
+	var_1_81[100812] = {
+		name = "重樱阵营子勋章1",
+		target_num = 24,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1042,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "重樱阵营120级的舰船达到24艘",
+		rank = 2,
+		id = 100812,
+		explain1 = "",
+		explain2 = "",
+		target_id = {
+			{
+				3,
+				120
+			}
+		}
+	}
+	pg = var_1_81
+
+	local var_1_82 = var_1_81.base.medal_template
+
+	var_1_82[100813] = {
+		target_id = "0",
+		name = "重樱阵营子勋章1",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 3,
+		id = 100813,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_82
+
+	local var_1_83 = var_1_82.base.medal_template
+
+	var_1_83[100814] = {
+		target_id = "0",
+		name = "重樱阵营子勋章1",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 100814,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_83
+
+	local var_1_84 = var_1_83.base.medal_template
+
+	var_1_84[100815] = {
+		target_id = "0",
+		name = "重樱阵营子勋章1",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 100815,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_84
+
+	local var_1_85 = var_1_84.base.medal_template
+
+	var_1_85[100821] = {
+		target_id = "3",
+		name = "重樱阵营子勋章2",
+		target_num = 200000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1043,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "重樱阵营总好感达成2000",
+		rank = 1,
+		id = 100821,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_85
+
+	local var_1_86 = var_1_85.base.medal_template
+
+	var_1_86[100822] = {
+		target_id = "3",
+		name = "重樱阵营子勋章2",
+		target_num = 400000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1043,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "重樱阵营总好感达成4000",
+		rank = 2,
+		id = 100822,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_86
+
+	local var_1_87 = var_1_86.base.medal_template
+
+	var_1_87[100823] = {
+		target_id = "0",
+		name = "重樱阵营子勋章2",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 3,
+		id = 100823,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_87
+
+	local var_1_88 = var_1_87.base.medal_template
+
+	var_1_88[100824] = {
+		target_id = "0",
+		name = "重樱阵营子勋章2",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 100824,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_88
+
+	local var_1_89 = var_1_88.base.medal_template
+
+	var_1_89[100825] = {
+		target_id = "0",
+		name = "重樱阵营子勋章2",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 100825,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_89
+
+	local var_1_90 = var_1_89.base.medal_template
+
+	var_1_90[100831] = {
+		name = "重樱阵营子勋章3",
+		target_num = 2000000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1041,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "重樱舰船出征获得经验200万点",
+		rank = 1,
+		id = 100831,
+		explain1 = "",
+		explain2 = "",
+		target_id = {
+			{
+				3,
+				0
+			}
+		}
+	}
+	pg = var_1_90
+
+	local var_1_91 = var_1_90.base.medal_template
+
+	var_1_91[100832] = {
+		name = "重樱阵营子勋章3",
+		target_num = 2000000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1041,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "重樱舰船出征获得经验200万点",
+		rank = 2,
+		id = 100832,
+		explain1 = "",
+		explain2 = "",
+		target_id = {
+			{
+				3,
+				0
+			}
+		}
+	}
+	pg = var_1_91
+
+	local var_1_92 = var_1_91.base.medal_template
+
+	var_1_92[100833] = {
+		target_id = "0",
+		name = "重樱阵营子勋章3",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 3,
+		id = 100833,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_92
+
+	local var_1_93 = var_1_92.base.medal_template
+
+	var_1_93[100834] = {
+		target_id = "0",
+		name = "重樱阵营子勋章3",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 100834,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_93
+
+	local var_1_94 = var_1_93.base.medal_template
+
+	var_1_94[100835] = {
+		target_id = "0",
+		name = "重樱阵营子勋章3",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 100835,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_94
+
+	local var_1_95 = var_1_94.base.medal_template
+
+	var_1_95[100911] = {
+		name = "铁血阵营子勋章1",
+		target_num = 12,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1042,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "铁血阵营120级的舰船达到12艘",
+		rank = 1,
+		id = 100911,
+		explain1 = "",
+		explain2 = "",
+		target_id = {
+			{
+				4,
+				120
+			}
+		}
+	}
+	pg = var_1_95
+
+	local var_1_96 = var_1_95.base.medal_template
+
+	var_1_96[100912] = {
+		name = "铁血阵营子勋章1",
+		target_num = 24,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1042,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "铁血阵营120级的舰船达到24艘",
+		rank = 2,
+		id = 100912,
+		explain1 = "",
+		explain2 = "",
+		target_id = {
+			{
+				4,
+				120
+			}
+		}
+	}
+	pg = var_1_96
+
+	local var_1_97 = var_1_96.base.medal_template
+
+	var_1_97[100913] = {
+		target_id = "0",
+		name = "铁血阵营子勋章1",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 3,
+		id = 100913,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_97
+
+	local var_1_98 = var_1_97.base.medal_template
+
+	var_1_98[100914] = {
+		target_id = "0",
+		name = "铁血阵营子勋章1",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 100914,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_1_98
+	var_1_98.base.medal_template[100915] = {
+		target_id = "0",
+		name = "铁血阵营子勋章1",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 100915,
+		explain1 = "",
+		explain2 = ""
+	}
+
+	return
+end)()
+;(function()
+	pg = var_1_10000
+
+	local var_2_0 = var_1_10000.base.medal_template
+
+	var_2_0[100921] = {
+		target_id = "4",
+		name = "铁血阵营子勋章2",
+		target_num = 200000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1043,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "铁血阵营总好感达成2000",
+		rank = 1,
+		id = 100921,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_2_0
+
+	local var_2_1 = var_2_0.base.medal_template
+
+	var_2_1[100922] = {
+		target_id = "4",
+		name = "铁血阵营子勋章2",
+		target_num = 400000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1043,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "铁血阵营总好感达成4000",
+		rank = 2,
+		id = 100922,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_2_1
+
+	local var_2_2 = var_2_1.base.medal_template
+
+	var_2_2[100923] = {
+		target_id = "0",
+		name = "铁血阵营子勋章2",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 3,
+		id = 100923,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_2_2
+
+	local var_2_3 = var_2_2.base.medal_template
+
+	var_2_3[100924] = {
+		target_id = "0",
+		name = "铁血阵营子勋章2",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 100924,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_2_3
+
+	local var_2_4 = var_2_3.base.medal_template
+
+	var_2_4[100925] = {
+		target_id = "0",
+		name = "铁血阵营子勋章2",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 100925,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_2_4
+
+	local var_2_5 = var_2_4.base.medal_template
+
+	var_2_5[100931] = {
+		name = "铁血阵营子勋章3",
+		target_num = 2000000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1041,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "铁血舰船出征获得经验200万点",
+		rank = 1,
+		id = 100931,
+		explain1 = "",
+		explain2 = "",
+		target_id = {
+			{
+				4,
+				0
+			}
+		}
+	}
+	pg = var_2_5
+
+	local var_2_6 = var_2_5.base.medal_template
+
+	var_2_6[100932] = {
+		name = "铁血阵营子勋章3",
+		target_num = 2000000,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 1041,
+		start = 1,
+		hide = 1,
+		label = "",
+		condition = "铁血舰船出征获得经验200万点",
+		rank = 2,
+		id = 100932,
+		explain1 = "",
+		explain2 = "",
+		target_id = {
+			{
+				4,
+				0
+			}
+		}
+	}
+	pg = var_2_6
+
+	local var_2_7 = var_2_6.base.medal_template
+
+	var_2_7[100933] = {
+		target_id = "0",
+		name = "铁血阵营子勋章3",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 3,
+		id = 100933,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_2_7
+
+	local var_2_8 = var_2_7.base.medal_template
+
+	var_2_8[100934] = {
+		target_id = "0",
+		name = "铁血阵营子勋章3",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 4,
+		id = 100934,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_2_8
+
+	local var_2_9 = var_2_8.base.medal_template
+
+	var_2_9[100935] = {
+		target_id = "0",
+		name = "铁血阵营子勋章3",
+		target_num = 1,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "",
+		next = 0,
+		icon = "",
+		page = 1,
+		target_type = 9999,
+		start = 1,
+		hide = 3,
+		label = "",
+		condition = "尚未开放，敬请期待",
+		rank = 5,
+		id = 100935,
+		explain1 = "",
+		explain2 = ""
+	}
+	pg = var_2_9
+
+	local var_2_10 = var_2_9.base.medal_template
+
+	var_2_10[200001] = {
+		target_id = "5711",
+		name = "抵抗之星纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 1,
+		count_inherit = 0,
+		desc = "铁血抵抗军颁发的纪念勋章，纪念那场对抗星之兽的伟大胜利。\n——我们今日不会毁灭，这个世界亦然，致明日。",
+		next = 0,
+		icon = "9001",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9001",
+		condition = "收集8个「星光下的余晖」纪念贴纸。",
+		rank = 1,
+		id = 200001,
+		explain1 = "「星光下的余晖」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_10
+
+	local var_2_11 = var_2_10.base.medal_template
+
+	var_2_11[200011] = {
+		target_id = "5769",
+		name = "华裳巧展纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 1,
+		count_inherit = 0,
+		desc = "虽有波折，终遂人愿。光华流转，一夜霓裳。",
+		next = 0,
+		icon = "9011",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9011",
+		condition = "收集8个「华裳巧展喜事长」纪念贴纸。",
+		rank = 1,
+		id = 200011,
+		explain1 = "「华裳巧展喜事长」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_11
+
+	local var_2_12 = var_2_11.base.medal_template
+
+	var_2_12[200021] = {
+		target_id = "5812",
+		name = "圣翼神光纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 1,
+		count_inherit = 0,
+		desc = "撒丁尼亚联盟颁发的纪念勋章，纪念这场对抗审判机战车的伟大胜利。\n——突破樊笼后，等在前方的是希望与更伟大的辉煌。",
+		next = 0,
+		icon = "9021",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9021",
+		condition = "收集8个「樊笼内的神光」纪念贴纸。",
+		rank = 1,
+		id = 200021,
+		explain1 = "「樊笼内的神光」 ",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_12
+
+	local var_2_13 = var_2_12.base.medal_template
+
+	var_2_13[200031] = {
+		target_id = "5875",
+		name = "深谷病院调查纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 1,
+		count_inherit = 0,
+		desc = "恭喜，你成功调查出了深谷病院的秘密，选择了理想中的结局，此行，你还满意么？",
+		next = 0,
+		icon = "9031",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9031",
+		condition = "收集8个「深谷来信」纪念贴纸。",
+		rank = 1,
+		id = 200031,
+		explain1 = "「深谷来信」 ",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_13
+
+	local var_2_14 = var_2_13.base.medal_template
+
+	var_2_14[200041] = {
+		target_id = "5913",
+		name = "郁金启航纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 1,
+		count_inherit = 0,
+		desc = "郁金王国颁发的纪念勋章，纪念这场保卫王国的战役。\n——新的时代已经来临，一个联合团结互助的时代。",
+		next = 0,
+		icon = "9041",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9041",
+		condition = "收集8个「扬起郁金之旗」 纪念贴纸。",
+		rank = 1,
+		id = 200041,
+		explain1 = "「扬起郁金之旗」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_14
+
+	local var_2_15 = var_2_14.base.medal_template
+
+	var_2_15[200051] = {
+		target_id = "5970",
+		name = "高塔蔷薇纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "高塔走向了毁灭，蔷薇走向了新生。\n此行虽有波折、亦存险阻，所幸终得圆满。可喜可贺，可贺可喜。",
+		next = 0,
+		icon = "9051",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9051",
+		condition = "收集8个「高塔上的蔷薇 纪念贴纸。",
+		rank = 1,
+		id = 200051,
+		explain1 = "「高塔上的蔷薇」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_15
+
+	local var_2_16 = var_2_15.base.medal_template
+
+	var_2_16[200061] = {
+		target_id = "5971",
+		name = "别墅假日纪念勋章",
+		target_num = 7,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "沙滩与烈日、冷饮与空调。尽情享受这场独属于度假别墅岛的独特体验，度过一个完美假期吧~",
+		next = 0,
+		icon = "9061",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9061",
+		condition = "收集7个「夏日重建」纪念贴纸。",
+		rank = 1,
+		id = 200061,
+		explain1 = "「夏日重建」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_16
+
+	local var_2_17 = var_2_16.base.medal_template
+
+	var_2_17[7] = {
+		target_id = "50021",
+		name = "都市寻踪纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "你是最敏锐的解谜人，每一处谜题都因你而解开。恭喜你，迷彩都市的寻踪者！",
+		next = 0,
+		icon = "9071",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9071",
+		condition = "收集8个「迷彩都市的寻踪者」纪念贴纸。",
+		rank = 1,
+		id = 200071,
+		explain1 = "「迷彩都市的寻踪者」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_17
+
+	local var_2_18 = var_2_17.base.medal_template
+
+	var_2_18[17] = {
+		target_id = "50087",
+		name = "奇渊之下纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "你发现了奇渊下的秘密，阻止了灾厄之子的阴谋，我们尊敬的指挥官，希望你在这段冒险中玩得尽兴。\n\n——《大型港区虚拟现实体验计划2.0》制作委员会",
+		next = 0,
+		icon = "9081",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9081",
+		condition = "收集8个「奇渊下的秘密」纪念贴纸。",
+		rank = 1,
+		id = 200081,
+		explain1 = "「奇渊下的秘密」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_18
+
+	local var_2_19 = var_2_18.base.medal_template
+
+	var_2_19[27] = {
+		target_id = "50136",
+		name = "天域天原纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "「天域，乃外域之屏，天原，因天域而定。纵使地崩山摧，浩劫将至。天域天原，亦需永存」\n——欢迎来到天域天原",
+		next = 0,
+		icon = "9091",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9091",
+		condition = "收集8个「起舞于天原之上」纪念贴纸。",
+		rank = 1,
+		id = 200091,
+		explain1 = "「起舞于天原之上」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_19
+
+	local var_2_20 = var_2_19.base.medal_template
+
+	var_2_20[200101] = {
+		target_id = "50209",
+		name = "自由群岛纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "这里是自由群岛，属于所有向往自由之人的群岛，属于自由城邦的群岛。\n——如果你心向自由的话，自由城邦欢迎你。",
+		next = 0,
+		icon = "9101",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9101",
+		condition = "收集8个「飓风与自由群岛」纪念贴纸。",
+		rank = 1,
+		id = 200101,
+		explain1 = "「飓风与自由群岛」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_20
+
+	local var_2_21 = var_2_20.base.medal_template
+
+	var_2_21[200111] = {
+		target_id = "50295",
+		name = "天穹之星纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "仿照安克雷奇国立天文台样式所制作的纪念勋章。\n——你揭开了帷幕，你跨越了天穹\n——过去未来于此刻相连\n——新的时代到来了",
+		next = 0,
+		icon = "9111",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9111",
+		condition = "收集8个「响彻于天穹之音」纪念贴纸。",
+		rank = 1,
+		id = 200111,
+		explain1 = "「响彻于天穹之音」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_21
+
+	local var_2_22 = var_2_21.base.medal_template
+
+	var_2_22[200121] = {
+		target_id = "50359",
+		name = "光影风尚纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "时尚雷达全开，进入拍摄状态！按下快门，捕捉时尚的每一面吧！\n——你就是今日的时尚记录官！",
+		next = 0,
+		icon = "9121",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9121",
+		condition = "收集8个「光影风尚——拍摄进行时！」纪念贴纸。",
+		rank = 1,
+		id = 200121,
+		explain1 = "「光影风尚，拍摄进行时！」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_22
+
+	local var_2_23 = var_2_22.base.medal_template
+
+	var_2_23[200131] = {
+		target_id = "50405",
+		name = "春宴怀玉纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "温润美玉静陈，满庭暗香浮动，一切因缘邂逅，皆待君来。\n步入此间的你，是否就是那位识玉的知音？",
+		next = 0,
+		icon = "9131",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9131",
+		condition = "收集8个「春宴怀玉香满庭」纪念贴纸。",
+		rank = 1,
+		id = 200131,
+		explain1 = "「春宴怀玉香满庭」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_23
+
+	local var_2_24 = var_2_23.base.medal_template
+
+	var_2_24[200141] = {
+		target_id = "50441",
+		name = "春满客栈纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "金樽满，春风醉，招财进宝如意日。\n——今日的客栈就交由您来打点了，尽情享受经营的热闹与乐趣吧~",
+		next = 0,
+		icon = "9141",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9141",
+		condition = "收集8个「春满客栈online」纪念贴纸。",
+		rank = 1,
+		id = 200141,
+		explain1 = "「春满客栈online」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_24
+
+	local var_2_25 = var_2_24.base.medal_template
+
+	var_2_25[200151] = {
+		target_id = "50482",
+		name = "都市漫游纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "霓虹灯牌在头顶闪烁，车流在脚下汇成光河。穿行于不眠的街巷，感受都市的每一次呼吸与脉动。\n——欢迎来到荆棘市~",
+		next = 0,
+		icon = "9151",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9151",
+		condition = "收集8个「漫游者招募计划」纪念贴纸。",
+		rank = 1,
+		id = 200151,
+		explain1 = "「漫游者招募计划」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_25
+
+	local var_2_26 = var_2_25.base.medal_template
+
+	var_2_26[200161] = {
+		target_id = "50607",
+		name = "圣印同盟纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "神圣联合帝国颁发的纪念勋章，纪念这场对抗黑境的伟大胜利。\n——神光于此见证，圣印前的同盟永存。",
+		next = 0,
+		icon = "9161",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9161",
+		condition = "收集8个「圣印前的同盟」纪念贴纸。",
+		rank = 1,
+		id = 200161,
+		explain1 = "「圣印前的同盟」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_26
+
+	local var_2_27 = var_2_26.base.medal_template
+
+	var_2_27[200171] = {
+		target_id = "50616",
+		name = "奢华盛宴纪念勋章",
+		target_num = 7,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "漫游浮金湾，纵情欢乐，这才是假日的正确打开方式~\n——愿你的每一次出游，都满载奢华，收获惊喜！",
+		next = 0,
+		icon = "9171",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9171",
+		condition = "收集7个「奢华！享梦！浮金湾！」纪念贴纸。",
+		rank = 1,
+		id = 200171,
+		explain1 = "「奢华！享梦！浮金湾！」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_27
+
+	local var_2_28 = var_2_27.base.medal_template
+
+	var_2_28[200181] = {
+		target_id = "50659",
+		name = "美梦巡演纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "大幕拉开，灯光亮起，折纸为翼，魔术作笔。欢迎来到这场永不落幕的奇妙巡游~\n——愿你的每一个梦，都如马戏团的夜晚般绚烂！",
+		next = 0,
+		icon = "9181",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9181",
+		condition = "收集8个「美梦巡演奇妙夜」纪念贴纸。",
+		rank = 1,
+		id = 200181,
+		explain1 = "「美梦巡演奇妙夜」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_28
+
+	local var_2_29 = var_2_28.base.medal_template
+
+	var_2_29[200191] = {
+		target_id = "51078",
+		name = "怪谈纪实纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "灯光未熄，铁门紧锁，废弃病院的深处藏着无人知晓的秘密。在怪谈与线索交错之间，找出通往出口的方向吧！\n——欢迎来到白夜山庄~",
+		next = 0,
+		icon = "9191",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9191",
+		condition = "收集8个「怪谈纪实：逃离白夜山庄！」纪念贴纸。",
+		rank = 1,
+		id = 200191,
+		explain1 = "「怪谈纪实：逃离白夜山庄！」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_29
+
+	local var_2_30 = var_2_29.base.medal_template
+
+	var_2_30[9] = {
+		target_id = "51110",
+		name = "星光城纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "迷途的旅人，你见证了星光城的美梦，然后踏碎了它。",
+		next = 0,
+		icon = "9201",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9201",
+		condition = "收集8个「沉溺于星光之城」纪念贴纸。",
+		rank = 1,
+		id = 200201,
+		explain1 = "「沉溺于星光之城」",
+		explain2 = "活动纪念"
+	}
+	pg = var_2_30
+	var_2_30.base.medal_template[19] = {
+		target_id = "51113",
+		name = "滨海极速纪念勋章",
+		target_num = 7,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "引擎轰鸣，轮胎飞转，海风与热浪共同铺开这条闪耀的竞速之路。向着冠军全速前进吧！",
+		next = 0,
+		icon = "9211",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9211",
+		condition = "收集7个「滨海极速」纪念贴纸。",
+		rank = 1,
+		id = 200211,
+		explain1 = "「滨海极速」",
+		explain2 = "活动纪念"
+	}
+
+	return
+end)()
+
+return

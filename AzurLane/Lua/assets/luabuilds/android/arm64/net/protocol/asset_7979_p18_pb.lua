@@ -1,0 +1,1371 @@
+﻿require = var_0_10000
+
+local var_0_0 = var_0_10000("protobuf")
+
+require = var_0_10001
+
+local var_0_1 = var_0_10001("Net.Protocol.common_pb")
+
+module = var_2
+
+local var_0_2 = "p18_pb"
+
+package = var_0_10005
+
+var_2(var_0_2, var_0_10005.seeall)
+
+local var_0_3 = {
+	CS_18001_FIELD_LIST = {},
+	SC_18002_FIELD_LIST = {},
+	CS_18003_FIELD_LIST = {},
+	SC_18004_FIELD_LIST = {},
+	SC_18005_FIELD_LIST = {},
+	CS_18006_FIELD_LIST = {},
+	SC_18007_FIELD_LIST = {},
+	CS_18008_FIELD_LIST = {},
+	SC_18009_FIELD_LIST = {},
+	CS_18100_FIELD_LIST = {},
+	SC_18101_FIELD_LIST = {},
+	CS_18102_FIELD_LIST = {},
+	SC_18103_FIELD_LIST = {},
+	CS_18104_FIELD_LIST = {},
+	SC_18105_FIELD_LIST = {},
+	CS_18201_FIELD_LIST = {},
+	SC_18202_FIELD_LIST = {},
+	CS_18203_FIELD_LIST = {},
+	SC_18204_FIELD_LIST = {},
+	TARGETINFO_FIELD_LIST = {},
+	ARENARANK_FIELD_LIST = {},
+	ARENASHOP_FIELD_LIST = {},
+	RANK_INFO_FIELD_LIST = {}
+}
+local var_0_4 = var_0_0.Descriptor()
+local var_0_5 = CS_18001
+
+var_0_3.CS_18001_FIELD_LIST.CS_18001_TYPE_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_6 = var_0_0.Descriptor()
+local var_0_7 = SC_18002
+
+var_0_3.SC_18002_FIELD_LIST.SC_18002_SCORE_FIELD = var_0_0.FieldDescriptor()
+var_0_3.SC_18002_FIELD_LIST.SC_18002_RANK_FIELD = var_0_0.FieldDescriptor()
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_FIELD = var_0_0.FieldDescriptor()
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_RESET_TIME_FIELD = var_0_0.FieldDescriptor()
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FLASH_TARGET_COUNT_FIELD = var_0_0.FieldDescriptor()
+var_0_3.SC_18002_FIELD_LIST.SC_18002_VANGUARD_SHIP_ID_LIST_FIELD = var_0_0.FieldDescriptor()
+var_0_3.SC_18002_FIELD_LIST.SC_18002_MAIN_SHIP_ID_LIST_FIELD = var_0_0.FieldDescriptor()
+var_0_3.SC_18002_FIELD_LIST.SC_18002_TARGET_LIST_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_8 = var_0_0.Descriptor()
+local var_0_9 = CS_18003
+
+var_0_3.CS_18003_FIELD_LIST.CS_18003_TYPE_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_10 = var_0_0.Descriptor()
+local var_0_11 = SC_18004
+
+var_0_3.SC_18004_FIELD_LIST.SC_18004_RESULT_FIELD = var_0_0.FieldDescriptor()
+var_0_3.SC_18004_FIELD_LIST.SC_18004_TARGET_LIST_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_12 = var_0_0.Descriptor()
+local var_0_13 = SC_18005
+
+var_0_3.SC_18005_FIELD_LIST.SC_18005_SCORE_FIELD = var_0_0.FieldDescriptor()
+var_0_3.SC_18005_FIELD_LIST.SC_18005_RANK_FIELD = var_0_0.FieldDescriptor()
+var_0_3.SC_18005_FIELD_LIST.SC_18005_TARGET_LIST_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_14 = var_0_0.Descriptor()
+local var_0_15 = CS_18006
+
+var_0_3.CS_18006_FIELD_LIST.CS_18006_TYPE_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_16 = var_0_0.Descriptor()
+local var_0_17 = SC_18007
+
+var_0_3.SC_18007_FIELD_LIST.SC_18007_ARENA_RANK_LSIT_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_18 = var_0_0.Descriptor()
+local var_0_19 = CS_18008
+
+var_0_3.CS_18008_FIELD_LIST.CS_18008_VANGUARD_SHIP_ID_LIST_FIELD = var_0_0.FieldDescriptor()
+var_0_3.CS_18008_FIELD_LIST.CS_18008_MAIN_SHIP_ID_LIST_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_20 = var_0_0.Descriptor()
+local var_0_21 = SC_18009
+
+var_0_3.SC_18009_FIELD_LIST.SC_18009_RESULT_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_22 = var_0_0.Descriptor()
+local var_0_23 = CS_18100
+
+var_0_3.CS_18100_FIELD_LIST.CS_18100_TYPE_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_24 = var_0_0.Descriptor()
+local var_0_25 = SC_18101
+
+var_0_3.SC_18101_FIELD_LIST.SC_18101_FLASH_COUNT_FIELD = var_0_0.FieldDescriptor()
+var_0_3.SC_18101_FIELD_LIST.SC_18101_ARENA_SHOP_LIST_FIELD = var_0_0.FieldDescriptor()
+var_0_3.SC_18101_FIELD_LIST.SC_18101_NEXT_FLASH_TIME_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_26 = var_0_0.Descriptor()
+local var_0_27 = CS_18102
+
+var_0_3.CS_18102_FIELD_LIST.CS_18102_TYPE_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_28 = var_0_0.Descriptor()
+local var_0_29 = SC_18103
+
+var_0_3.SC_18103_FIELD_LIST.SC_18103_RESULT_FIELD = var_0_0.FieldDescriptor()
+var_0_3.SC_18103_FIELD_LIST.SC_18103_ARENA_SHOP_LIST_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_30 = var_0_0.Descriptor()
+local var_0_31 = CS_18104
+
+var_0_3.CS_18104_FIELD_LIST.CS_18104_ID_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_32 = var_0_0.Descriptor()
+local var_0_33 = SC_18105
+
+var_0_3.SC_18105_FIELD_LIST.SC_18105_INFO_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_34 = var_0_0.Descriptor()
+local var_0_35 = CS_18201
+
+var_0_3.CS_18201_FIELD_LIST.CS_18201_PAGE_FIELD = var_0_0.FieldDescriptor()
+var_0_3.CS_18201_FIELD_LIST.CS_18201_TYPE_FIELD = var_0_0.FieldDescriptor()
+var_0_3.CS_18201_FIELD_LIST.CS_18201_ACT_ID_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_36 = var_0_0.Descriptor()
+local var_0_37 = SC_18202
+
+var_0_3.SC_18202_FIELD_LIST.SC_18202_LIST_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_38 = var_0_0.Descriptor()
+local var_0_39 = CS_18203
+
+var_0_3.CS_18203_FIELD_LIST.CS_18203_TYPE_FIELD = var_0_0.FieldDescriptor()
+var_0_3.CS_18203_FIELD_LIST.CS_18203_ACT_ID_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_40 = var_0_0.Descriptor()
+local var_0_41 = SC_18204
+
+var_0_3.SC_18204_FIELD_LIST.SC_18204_POINT_FIELD = var_0_0.FieldDescriptor()
+var_0_3.SC_18204_FIELD_LIST.SC_18204_RANK_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_42 = var_0_0.Descriptor()
+local var_0_43 = TARGETINFO
+
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_ID_FIELD = var_0_0.FieldDescriptor()
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_LEVEL_FIELD = var_0_0.FieldDescriptor()
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_NAME_FIELD = var_0_0.FieldDescriptor()
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_SCORE_FIELD = var_0_0.FieldDescriptor()
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_RANK_FIELD = var_0_0.FieldDescriptor()
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_VANGUARD_SHIP_LIST_FIELD = var_0_0.FieldDescriptor()
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_MAIN_SHIP_LIST_FIELD = var_0_0.FieldDescriptor()
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_DISPLAY_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_44 = var_0_0.Descriptor()
+local var_0_45 = ARENARANK
+
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_ID_FIELD = var_0_0.FieldDescriptor()
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_LEVEL_FIELD = var_0_0.FieldDescriptor()
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_NAME_FIELD = var_0_0.FieldDescriptor()
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_SCORE_FIELD = var_0_0.FieldDescriptor()
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_DISPLAY_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_46 = var_0_0.Descriptor()
+local var_0_47 = ARENASHOP
+
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_SHOP_ID_FIELD = var_0_0.FieldDescriptor()
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_COUNT_FIELD = var_0_0.FieldDescriptor()
+
+local var_0_48 = var_0_0.Descriptor()
+local var_0_49 = RANK_INFO
+
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_USER_ID_FIELD = var_0_0.FieldDescriptor()
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_POINT_FIELD = var_0_0.FieldDescriptor()
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_NAME_FIELD = var_0_0.FieldDescriptor()
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_LV_FIELD = var_0_0.FieldDescriptor()
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_ARENA_RANK_FIELD = var_0_0.FieldDescriptor()
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_DISPLAY_FIELD = var_0_0.FieldDescriptor()
+var_0_3.CS_18001_FIELD_LIST.CS_18001_TYPE_FIELD.name = "type"
+var_0_3.CS_18001_FIELD_LIST.CS_18001_TYPE_FIELD.full_name = ".p18.cs_18001.type"
+var_0_3.CS_18001_FIELD_LIST.CS_18001_TYPE_FIELD.number = 1
+var_0_3.CS_18001_FIELD_LIST.CS_18001_TYPE_FIELD.index = 0
+var_0_3.CS_18001_FIELD_LIST.CS_18001_TYPE_FIELD.label = 2
+var_0_3.CS_18001_FIELD_LIST.CS_18001_TYPE_FIELD.has_default_value = false
+var_0_3.CS_18001_FIELD_LIST.CS_18001_TYPE_FIELD.default_value = 0
+var_0_3.CS_18001_FIELD_LIST.CS_18001_TYPE_FIELD.type = 13
+
+local var_0_50 = var_0_3.CS_18001_FIELD_LIST.CS_18001_TYPE_FIELD
+
+var_0_50.cpp_type = 3
+CS_18001 = var_0_50
+var_0_50.name = "cs_18001"
+CS_18001 = var_0_50
+var_0_50.full_name = ".p18.cs_18001"
+CS_18001 = var_0_50
+var_0_50.nested_types = {}
+CS_18001 = var_0_50
+var_0_50.enum_types = {}
+CS_18001 = var_0_50
+var_0_50.fields = {
+	var_0_3.CS_18001_FIELD_LIST.CS_18001_TYPE_FIELD
+}
+CS_18001 = var_0_50
+var_0_50.is_extendable = false
+CS_18001 = var_0_50
+var_0_50.extensions = {}
+var_0_3.SC_18002_FIELD_LIST.SC_18002_SCORE_FIELD.name = "score"
+var_0_3.SC_18002_FIELD_LIST.SC_18002_SCORE_FIELD.full_name = ".p18.sc_18002.score"
+var_0_3.SC_18002_FIELD_LIST.SC_18002_SCORE_FIELD.number = 1
+var_0_3.SC_18002_FIELD_LIST.SC_18002_SCORE_FIELD.index = 0
+var_0_3.SC_18002_FIELD_LIST.SC_18002_SCORE_FIELD.label = 2
+var_0_3.SC_18002_FIELD_LIST.SC_18002_SCORE_FIELD.has_default_value = false
+var_0_3.SC_18002_FIELD_LIST.SC_18002_SCORE_FIELD.default_value = 0
+var_0_3.SC_18002_FIELD_LIST.SC_18002_SCORE_FIELD.type = 13
+var_0_3.SC_18002_FIELD_LIST.SC_18002_SCORE_FIELD.cpp_type = 3
+var_0_3.SC_18002_FIELD_LIST.SC_18002_RANK_FIELD.name = "rank"
+var_0_3.SC_18002_FIELD_LIST.SC_18002_RANK_FIELD.full_name = ".p18.sc_18002.rank"
+var_0_3.SC_18002_FIELD_LIST.SC_18002_RANK_FIELD.number = 2
+var_0_3.SC_18002_FIELD_LIST.SC_18002_RANK_FIELD.index = 1
+var_0_3.SC_18002_FIELD_LIST.SC_18002_RANK_FIELD.label = 2
+var_0_3.SC_18002_FIELD_LIST.SC_18002_RANK_FIELD.has_default_value = false
+var_0_3.SC_18002_FIELD_LIST.SC_18002_RANK_FIELD.default_value = 0
+var_0_3.SC_18002_FIELD_LIST.SC_18002_RANK_FIELD.type = 13
+var_0_3.SC_18002_FIELD_LIST.SC_18002_RANK_FIELD.cpp_type = 3
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_FIELD.name = "fight_count"
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_FIELD.full_name = ".p18.sc_18002.fight_count"
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_FIELD.number = 3
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_FIELD.index = 2
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_FIELD.label = 2
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_FIELD.has_default_value = false
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_FIELD.default_value = 0
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_FIELD.type = 13
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_FIELD.cpp_type = 3
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_RESET_TIME_FIELD.name = "fight_count_reset_time"
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_RESET_TIME_FIELD.full_name = ".p18.sc_18002.fight_count_reset_time"
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_RESET_TIME_FIELD.number = 4
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_RESET_TIME_FIELD.index = 3
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_RESET_TIME_FIELD.label = 2
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_RESET_TIME_FIELD.has_default_value = false
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_RESET_TIME_FIELD.default_value = 0
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_RESET_TIME_FIELD.type = 13
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_RESET_TIME_FIELD.cpp_type = 3
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FLASH_TARGET_COUNT_FIELD.name = "flash_target_count"
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FLASH_TARGET_COUNT_FIELD.full_name = ".p18.sc_18002.flash_target_count"
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FLASH_TARGET_COUNT_FIELD.number = 5
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FLASH_TARGET_COUNT_FIELD.index = 4
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FLASH_TARGET_COUNT_FIELD.label = 2
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FLASH_TARGET_COUNT_FIELD.has_default_value = false
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FLASH_TARGET_COUNT_FIELD.default_value = 0
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FLASH_TARGET_COUNT_FIELD.type = 13
+var_0_3.SC_18002_FIELD_LIST.SC_18002_FLASH_TARGET_COUNT_FIELD.cpp_type = 3
+var_0_3.SC_18002_FIELD_LIST.SC_18002_VANGUARD_SHIP_ID_LIST_FIELD.name = "vanguard_ship_id_list"
+var_0_3.SC_18002_FIELD_LIST.SC_18002_VANGUARD_SHIP_ID_LIST_FIELD.full_name = ".p18.sc_18002.vanguard_ship_id_list"
+var_0_3.SC_18002_FIELD_LIST.SC_18002_VANGUARD_SHIP_ID_LIST_FIELD.number = 6
+var_0_3.SC_18002_FIELD_LIST.SC_18002_VANGUARD_SHIP_ID_LIST_FIELD.index = 5
+var_0_3.SC_18002_FIELD_LIST.SC_18002_VANGUARD_SHIP_ID_LIST_FIELD.label = 3
+var_0_3.SC_18002_FIELD_LIST.SC_18002_VANGUARD_SHIP_ID_LIST_FIELD.has_default_value = false
+var_0_3.SC_18002_FIELD_LIST.SC_18002_VANGUARD_SHIP_ID_LIST_FIELD.default_value = {}
+var_0_3.SC_18002_FIELD_LIST.SC_18002_VANGUARD_SHIP_ID_LIST_FIELD.type = 13
+var_0_3.SC_18002_FIELD_LIST.SC_18002_VANGUARD_SHIP_ID_LIST_FIELD.cpp_type = 3
+var_0_3.SC_18002_FIELD_LIST.SC_18002_MAIN_SHIP_ID_LIST_FIELD.name = "main_ship_id_list"
+var_0_3.SC_18002_FIELD_LIST.SC_18002_MAIN_SHIP_ID_LIST_FIELD.full_name = ".p18.sc_18002.main_ship_id_list"
+var_0_3.SC_18002_FIELD_LIST.SC_18002_MAIN_SHIP_ID_LIST_FIELD.number = 7
+var_0_3.SC_18002_FIELD_LIST.SC_18002_MAIN_SHIP_ID_LIST_FIELD.index = 6
+var_0_3.SC_18002_FIELD_LIST.SC_18002_MAIN_SHIP_ID_LIST_FIELD.label = 3
+var_0_3.SC_18002_FIELD_LIST.SC_18002_MAIN_SHIP_ID_LIST_FIELD.has_default_value = false
+var_0_3.SC_18002_FIELD_LIST.SC_18002_MAIN_SHIP_ID_LIST_FIELD.default_value = {}
+var_0_3.SC_18002_FIELD_LIST.SC_18002_MAIN_SHIP_ID_LIST_FIELD.type = 13
+var_0_3.SC_18002_FIELD_LIST.SC_18002_MAIN_SHIP_ID_LIST_FIELD.cpp_type = 3
+var_0_3.SC_18002_FIELD_LIST.SC_18002_TARGET_LIST_FIELD.name = "target_list"
+var_0_3.SC_18002_FIELD_LIST.SC_18002_TARGET_LIST_FIELD.full_name = ".p18.sc_18002.target_list"
+var_0_3.SC_18002_FIELD_LIST.SC_18002_TARGET_LIST_FIELD.number = 8
+var_0_3.SC_18002_FIELD_LIST.SC_18002_TARGET_LIST_FIELD.index = 7
+var_0_3.SC_18002_FIELD_LIST.SC_18002_TARGET_LIST_FIELD.label = 3
+var_0_3.SC_18002_FIELD_LIST.SC_18002_TARGET_LIST_FIELD.has_default_value = false
+var_0_3.SC_18002_FIELD_LIST.SC_18002_TARGET_LIST_FIELD.default_value = {}
+
+local var_0_51 = var_0_3.SC_18002_FIELD_LIST.SC_18002_TARGET_LIST_FIELD
+
+TARGETINFO = var_4
+var_0_51.message_type = var_4
+var_0_3.SC_18002_FIELD_LIST.SC_18002_TARGET_LIST_FIELD.type = 11
+
+local var_0_52 = var_0_3.SC_18002_FIELD_LIST.SC_18002_TARGET_LIST_FIELD
+
+var_0_52.cpp_type = 10
+SC_18002 = var_0_52
+var_0_52.name = "sc_18002"
+SC_18002 = var_0_52
+var_0_52.full_name = ".p18.sc_18002"
+SC_18002 = var_0_52
+var_0_52.nested_types = {}
+SC_18002 = var_0_52
+var_0_52.enum_types = {}
+SC_18002 = var_0_52
+var_0_52.fields = {
+	var_0_3.SC_18002_FIELD_LIST.SC_18002_SCORE_FIELD,
+	var_0_3.SC_18002_FIELD_LIST.SC_18002_RANK_FIELD,
+	var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_FIELD,
+	var_0_3.SC_18002_FIELD_LIST.SC_18002_FIGHT_COUNT_RESET_TIME_FIELD,
+	var_0_3.SC_18002_FIELD_LIST.SC_18002_FLASH_TARGET_COUNT_FIELD,
+	var_0_3.SC_18002_FIELD_LIST.SC_18002_VANGUARD_SHIP_ID_LIST_FIELD,
+	var_0_3.SC_18002_FIELD_LIST.SC_18002_MAIN_SHIP_ID_LIST_FIELD,
+	var_0_3.SC_18002_FIELD_LIST.SC_18002_TARGET_LIST_FIELD
+}
+SC_18002 = var_0_52
+var_0_52.is_extendable = false
+SC_18002 = var_0_52
+var_0_52.extensions = {}
+var_0_3.CS_18003_FIELD_LIST.CS_18003_TYPE_FIELD.name = "type"
+var_0_3.CS_18003_FIELD_LIST.CS_18003_TYPE_FIELD.full_name = ".p18.cs_18003.type"
+var_0_3.CS_18003_FIELD_LIST.CS_18003_TYPE_FIELD.number = 1
+var_0_3.CS_18003_FIELD_LIST.CS_18003_TYPE_FIELD.index = 0
+var_0_3.CS_18003_FIELD_LIST.CS_18003_TYPE_FIELD.label = 2
+var_0_3.CS_18003_FIELD_LIST.CS_18003_TYPE_FIELD.has_default_value = false
+var_0_3.CS_18003_FIELD_LIST.CS_18003_TYPE_FIELD.default_value = 0
+var_0_3.CS_18003_FIELD_LIST.CS_18003_TYPE_FIELD.type = 13
+
+local var_0_53 = var_0_3.CS_18003_FIELD_LIST.CS_18003_TYPE_FIELD
+
+var_0_53.cpp_type = 3
+CS_18003 = var_0_53
+var_0_53.name = "cs_18003"
+CS_18003 = var_0_53
+var_0_53.full_name = ".p18.cs_18003"
+CS_18003 = var_0_53
+var_0_53.nested_types = {}
+CS_18003 = var_0_53
+var_0_53.enum_types = {}
+CS_18003 = var_0_53
+var_0_53.fields = {
+	var_0_3.CS_18003_FIELD_LIST.CS_18003_TYPE_FIELD
+}
+CS_18003 = var_0_53
+var_0_53.is_extendable = false
+CS_18003 = var_0_53
+var_0_53.extensions = {}
+var_0_3.SC_18004_FIELD_LIST.SC_18004_RESULT_FIELD.name = "result"
+var_0_3.SC_18004_FIELD_LIST.SC_18004_RESULT_FIELD.full_name = ".p18.sc_18004.result"
+var_0_3.SC_18004_FIELD_LIST.SC_18004_RESULT_FIELD.number = 1
+var_0_3.SC_18004_FIELD_LIST.SC_18004_RESULT_FIELD.index = 0
+var_0_3.SC_18004_FIELD_LIST.SC_18004_RESULT_FIELD.label = 2
+var_0_3.SC_18004_FIELD_LIST.SC_18004_RESULT_FIELD.has_default_value = false
+var_0_3.SC_18004_FIELD_LIST.SC_18004_RESULT_FIELD.default_value = 0
+var_0_3.SC_18004_FIELD_LIST.SC_18004_RESULT_FIELD.type = 13
+var_0_3.SC_18004_FIELD_LIST.SC_18004_RESULT_FIELD.cpp_type = 3
+var_0_3.SC_18004_FIELD_LIST.SC_18004_TARGET_LIST_FIELD.name = "target_list"
+var_0_3.SC_18004_FIELD_LIST.SC_18004_TARGET_LIST_FIELD.full_name = ".p18.sc_18004.target_list"
+var_0_3.SC_18004_FIELD_LIST.SC_18004_TARGET_LIST_FIELD.number = 2
+var_0_3.SC_18004_FIELD_LIST.SC_18004_TARGET_LIST_FIELD.index = 1
+var_0_3.SC_18004_FIELD_LIST.SC_18004_TARGET_LIST_FIELD.label = 3
+var_0_3.SC_18004_FIELD_LIST.SC_18004_TARGET_LIST_FIELD.has_default_value = false
+var_0_3.SC_18004_FIELD_LIST.SC_18004_TARGET_LIST_FIELD.default_value = {}
+
+local var_0_54 = var_0_3.SC_18004_FIELD_LIST.SC_18004_TARGET_LIST_FIELD
+
+TARGETINFO = var_4
+var_0_54.message_type = var_4
+var_0_3.SC_18004_FIELD_LIST.SC_18004_TARGET_LIST_FIELD.type = 11
+
+local var_0_55 = var_0_3.SC_18004_FIELD_LIST.SC_18004_TARGET_LIST_FIELD
+
+var_0_55.cpp_type = 10
+SC_18004 = var_0_55
+var_0_55.name = "sc_18004"
+SC_18004 = var_0_55
+var_0_55.full_name = ".p18.sc_18004"
+SC_18004 = var_0_55
+var_0_55.nested_types = {}
+SC_18004 = var_0_55
+var_0_55.enum_types = {}
+SC_18004 = var_0_55
+var_0_55.fields = {
+	var_0_3.SC_18004_FIELD_LIST.SC_18004_RESULT_FIELD,
+	var_0_3.SC_18004_FIELD_LIST.SC_18004_TARGET_LIST_FIELD
+}
+SC_18004 = var_0_55
+var_0_55.is_extendable = false
+SC_18004 = var_0_55
+var_0_55.extensions = {}
+var_0_3.SC_18005_FIELD_LIST.SC_18005_SCORE_FIELD.name = "score"
+var_0_3.SC_18005_FIELD_LIST.SC_18005_SCORE_FIELD.full_name = ".p18.sc_18005.score"
+var_0_3.SC_18005_FIELD_LIST.SC_18005_SCORE_FIELD.number = 1
+var_0_3.SC_18005_FIELD_LIST.SC_18005_SCORE_FIELD.index = 0
+var_0_3.SC_18005_FIELD_LIST.SC_18005_SCORE_FIELD.label = 2
+var_0_3.SC_18005_FIELD_LIST.SC_18005_SCORE_FIELD.has_default_value = false
+var_0_3.SC_18005_FIELD_LIST.SC_18005_SCORE_FIELD.default_value = 0
+var_0_3.SC_18005_FIELD_LIST.SC_18005_SCORE_FIELD.type = 13
+var_0_3.SC_18005_FIELD_LIST.SC_18005_SCORE_FIELD.cpp_type = 3
+var_0_3.SC_18005_FIELD_LIST.SC_18005_RANK_FIELD.name = "rank"
+var_0_3.SC_18005_FIELD_LIST.SC_18005_RANK_FIELD.full_name = ".p18.sc_18005.rank"
+var_0_3.SC_18005_FIELD_LIST.SC_18005_RANK_FIELD.number = 2
+var_0_3.SC_18005_FIELD_LIST.SC_18005_RANK_FIELD.index = 1
+var_0_3.SC_18005_FIELD_LIST.SC_18005_RANK_FIELD.label = 2
+var_0_3.SC_18005_FIELD_LIST.SC_18005_RANK_FIELD.has_default_value = false
+var_0_3.SC_18005_FIELD_LIST.SC_18005_RANK_FIELD.default_value = 0
+var_0_3.SC_18005_FIELD_LIST.SC_18005_RANK_FIELD.type = 13
+var_0_3.SC_18005_FIELD_LIST.SC_18005_RANK_FIELD.cpp_type = 3
+var_0_3.SC_18005_FIELD_LIST.SC_18005_TARGET_LIST_FIELD.name = "target_list"
+var_0_3.SC_18005_FIELD_LIST.SC_18005_TARGET_LIST_FIELD.full_name = ".p18.sc_18005.target_list"
+var_0_3.SC_18005_FIELD_LIST.SC_18005_TARGET_LIST_FIELD.number = 3
+var_0_3.SC_18005_FIELD_LIST.SC_18005_TARGET_LIST_FIELD.index = 2
+var_0_3.SC_18005_FIELD_LIST.SC_18005_TARGET_LIST_FIELD.label = 3
+var_0_3.SC_18005_FIELD_LIST.SC_18005_TARGET_LIST_FIELD.has_default_value = false
+var_0_3.SC_18005_FIELD_LIST.SC_18005_TARGET_LIST_FIELD.default_value = {}
+
+local var_0_56 = var_0_3.SC_18005_FIELD_LIST.SC_18005_TARGET_LIST_FIELD
+
+TARGETINFO = var_4
+var_0_56.message_type = var_4
+var_0_3.SC_18005_FIELD_LIST.SC_18005_TARGET_LIST_FIELD.type = 11
+
+local var_0_57 = var_0_3.SC_18005_FIELD_LIST.SC_18005_TARGET_LIST_FIELD
+
+var_0_57.cpp_type = 10
+SC_18005 = var_0_57
+var_0_57.name = "sc_18005"
+SC_18005 = var_0_57
+var_0_57.full_name = ".p18.sc_18005"
+SC_18005 = var_0_57
+var_0_57.nested_types = {}
+SC_18005 = var_0_57
+var_0_57.enum_types = {}
+SC_18005 = var_0_57
+var_0_57.fields = {
+	var_0_3.SC_18005_FIELD_LIST.SC_18005_SCORE_FIELD,
+	var_0_3.SC_18005_FIELD_LIST.SC_18005_RANK_FIELD,
+	var_0_3.SC_18005_FIELD_LIST.SC_18005_TARGET_LIST_FIELD
+}
+SC_18005 = var_0_57
+var_0_57.is_extendable = false
+SC_18005 = var_0_57
+var_0_57.extensions = {}
+var_0_3.CS_18006_FIELD_LIST.CS_18006_TYPE_FIELD.name = "type"
+var_0_3.CS_18006_FIELD_LIST.CS_18006_TYPE_FIELD.full_name = ".p18.cs_18006.type"
+var_0_3.CS_18006_FIELD_LIST.CS_18006_TYPE_FIELD.number = 1
+var_0_3.CS_18006_FIELD_LIST.CS_18006_TYPE_FIELD.index = 0
+var_0_3.CS_18006_FIELD_LIST.CS_18006_TYPE_FIELD.label = 2
+var_0_3.CS_18006_FIELD_LIST.CS_18006_TYPE_FIELD.has_default_value = false
+var_0_3.CS_18006_FIELD_LIST.CS_18006_TYPE_FIELD.default_value = 0
+var_0_3.CS_18006_FIELD_LIST.CS_18006_TYPE_FIELD.type = 13
+
+local var_0_58 = var_0_3.CS_18006_FIELD_LIST.CS_18006_TYPE_FIELD
+
+var_0_58.cpp_type = 3
+CS_18006 = var_0_58
+var_0_58.name = "cs_18006"
+CS_18006 = var_0_58
+var_0_58.full_name = ".p18.cs_18006"
+CS_18006 = var_0_58
+var_0_58.nested_types = {}
+CS_18006 = var_0_58
+var_0_58.enum_types = {}
+CS_18006 = var_0_58
+var_0_58.fields = {
+	var_0_3.CS_18006_FIELD_LIST.CS_18006_TYPE_FIELD
+}
+CS_18006 = var_0_58
+var_0_58.is_extendable = false
+CS_18006 = var_0_58
+var_0_58.extensions = {}
+var_0_3.SC_18007_FIELD_LIST.SC_18007_ARENA_RANK_LSIT_FIELD.name = "arena_rank_lsit"
+var_0_3.SC_18007_FIELD_LIST.SC_18007_ARENA_RANK_LSIT_FIELD.full_name = ".p18.sc_18007.arena_rank_lsit"
+var_0_3.SC_18007_FIELD_LIST.SC_18007_ARENA_RANK_LSIT_FIELD.number = 1
+var_0_3.SC_18007_FIELD_LIST.SC_18007_ARENA_RANK_LSIT_FIELD.index = 0
+var_0_3.SC_18007_FIELD_LIST.SC_18007_ARENA_RANK_LSIT_FIELD.label = 3
+var_0_3.SC_18007_FIELD_LIST.SC_18007_ARENA_RANK_LSIT_FIELD.has_default_value = false
+var_0_3.SC_18007_FIELD_LIST.SC_18007_ARENA_RANK_LSIT_FIELD.default_value = {}
+
+local var_0_59 = var_0_3.SC_18007_FIELD_LIST.SC_18007_ARENA_RANK_LSIT_FIELD
+
+ARENARANK = var_4
+var_0_59.message_type = var_4
+var_0_3.SC_18007_FIELD_LIST.SC_18007_ARENA_RANK_LSIT_FIELD.type = 11
+
+local var_0_60 = var_0_3.SC_18007_FIELD_LIST.SC_18007_ARENA_RANK_LSIT_FIELD
+
+var_0_60.cpp_type = 10
+SC_18007 = var_0_60
+var_0_60.name = "sc_18007"
+SC_18007 = var_0_60
+var_0_60.full_name = ".p18.sc_18007"
+SC_18007 = var_0_60
+var_0_60.nested_types = {}
+SC_18007 = var_0_60
+var_0_60.enum_types = {}
+SC_18007 = var_0_60
+var_0_60.fields = {
+	var_0_3.SC_18007_FIELD_LIST.SC_18007_ARENA_RANK_LSIT_FIELD
+}
+SC_18007 = var_0_60
+var_0_60.is_extendable = false
+SC_18007 = var_0_60
+var_0_60.extensions = {}
+var_0_3.CS_18008_FIELD_LIST.CS_18008_VANGUARD_SHIP_ID_LIST_FIELD.name = "vanguard_ship_id_list"
+var_0_3.CS_18008_FIELD_LIST.CS_18008_VANGUARD_SHIP_ID_LIST_FIELD.full_name = ".p18.cs_18008.vanguard_ship_id_list"
+var_0_3.CS_18008_FIELD_LIST.CS_18008_VANGUARD_SHIP_ID_LIST_FIELD.number = 1
+var_0_3.CS_18008_FIELD_LIST.CS_18008_VANGUARD_SHIP_ID_LIST_FIELD.index = 0
+var_0_3.CS_18008_FIELD_LIST.CS_18008_VANGUARD_SHIP_ID_LIST_FIELD.label = 3
+var_0_3.CS_18008_FIELD_LIST.CS_18008_VANGUARD_SHIP_ID_LIST_FIELD.has_default_value = false
+var_0_3.CS_18008_FIELD_LIST.CS_18008_VANGUARD_SHIP_ID_LIST_FIELD.default_value = {}
+var_0_3.CS_18008_FIELD_LIST.CS_18008_VANGUARD_SHIP_ID_LIST_FIELD.type = 13
+var_0_3.CS_18008_FIELD_LIST.CS_18008_VANGUARD_SHIP_ID_LIST_FIELD.cpp_type = 3
+var_0_3.CS_18008_FIELD_LIST.CS_18008_MAIN_SHIP_ID_LIST_FIELD.name = "main_ship_id_list"
+var_0_3.CS_18008_FIELD_LIST.CS_18008_MAIN_SHIP_ID_LIST_FIELD.full_name = ".p18.cs_18008.main_ship_id_list"
+var_0_3.CS_18008_FIELD_LIST.CS_18008_MAIN_SHIP_ID_LIST_FIELD.number = 2
+var_0_3.CS_18008_FIELD_LIST.CS_18008_MAIN_SHIP_ID_LIST_FIELD.index = 1
+var_0_3.CS_18008_FIELD_LIST.CS_18008_MAIN_SHIP_ID_LIST_FIELD.label = 3
+var_0_3.CS_18008_FIELD_LIST.CS_18008_MAIN_SHIP_ID_LIST_FIELD.has_default_value = false
+var_0_3.CS_18008_FIELD_LIST.CS_18008_MAIN_SHIP_ID_LIST_FIELD.default_value = {}
+var_0_3.CS_18008_FIELD_LIST.CS_18008_MAIN_SHIP_ID_LIST_FIELD.type = 13
+
+local var_0_61 = var_0_3.CS_18008_FIELD_LIST.CS_18008_MAIN_SHIP_ID_LIST_FIELD
+
+var_0_61.cpp_type = 3
+CS_18008 = var_0_61
+var_0_61.name = "cs_18008"
+CS_18008 = var_0_61
+var_0_61.full_name = ".p18.cs_18008"
+CS_18008 = var_0_61
+var_0_61.nested_types = {}
+CS_18008 = var_0_61
+var_0_61.enum_types = {}
+CS_18008 = var_0_61
+var_0_61.fields = {
+	var_0_3.CS_18008_FIELD_LIST.CS_18008_VANGUARD_SHIP_ID_LIST_FIELD,
+	var_0_3.CS_18008_FIELD_LIST.CS_18008_MAIN_SHIP_ID_LIST_FIELD
+}
+CS_18008 = var_0_61
+var_0_61.is_extendable = false
+CS_18008 = var_0_61
+var_0_61.extensions = {}
+var_0_3.SC_18009_FIELD_LIST.SC_18009_RESULT_FIELD.name = "result"
+var_0_3.SC_18009_FIELD_LIST.SC_18009_RESULT_FIELD.full_name = ".p18.sc_18009.result"
+var_0_3.SC_18009_FIELD_LIST.SC_18009_RESULT_FIELD.number = 1
+var_0_3.SC_18009_FIELD_LIST.SC_18009_RESULT_FIELD.index = 0
+var_0_3.SC_18009_FIELD_LIST.SC_18009_RESULT_FIELD.label = 2
+var_0_3.SC_18009_FIELD_LIST.SC_18009_RESULT_FIELD.has_default_value = false
+var_0_3.SC_18009_FIELD_LIST.SC_18009_RESULT_FIELD.default_value = 0
+var_0_3.SC_18009_FIELD_LIST.SC_18009_RESULT_FIELD.type = 13
+
+local var_0_62 = var_0_3.SC_18009_FIELD_LIST.SC_18009_RESULT_FIELD
+
+var_0_62.cpp_type = 3
+SC_18009 = var_0_62
+var_0_62.name = "sc_18009"
+SC_18009 = var_0_62
+var_0_62.full_name = ".p18.sc_18009"
+SC_18009 = var_0_62
+var_0_62.nested_types = {}
+SC_18009 = var_0_62
+var_0_62.enum_types = {}
+SC_18009 = var_0_62
+var_0_62.fields = {
+	var_0_3.SC_18009_FIELD_LIST.SC_18009_RESULT_FIELD
+}
+SC_18009 = var_0_62
+var_0_62.is_extendable = false
+SC_18009 = var_0_62
+var_0_62.extensions = {}
+var_0_3.CS_18100_FIELD_LIST.CS_18100_TYPE_FIELD.name = "type"
+var_0_3.CS_18100_FIELD_LIST.CS_18100_TYPE_FIELD.full_name = ".p18.cs_18100.type"
+var_0_3.CS_18100_FIELD_LIST.CS_18100_TYPE_FIELD.number = 1
+var_0_3.CS_18100_FIELD_LIST.CS_18100_TYPE_FIELD.index = 0
+var_0_3.CS_18100_FIELD_LIST.CS_18100_TYPE_FIELD.label = 2
+var_0_3.CS_18100_FIELD_LIST.CS_18100_TYPE_FIELD.has_default_value = false
+var_0_3.CS_18100_FIELD_LIST.CS_18100_TYPE_FIELD.default_value = 0
+var_0_3.CS_18100_FIELD_LIST.CS_18100_TYPE_FIELD.type = 13
+
+local var_0_63 = var_0_3.CS_18100_FIELD_LIST.CS_18100_TYPE_FIELD
+
+var_0_63.cpp_type = 3
+CS_18100 = var_0_63
+var_0_63.name = "cs_18100"
+CS_18100 = var_0_63
+var_0_63.full_name = ".p18.cs_18100"
+CS_18100 = var_0_63
+var_0_63.nested_types = {}
+CS_18100 = var_0_63
+var_0_63.enum_types = {}
+CS_18100 = var_0_63
+var_0_63.fields = {
+	var_0_3.CS_18100_FIELD_LIST.CS_18100_TYPE_FIELD
+}
+CS_18100 = var_0_63
+var_0_63.is_extendable = false
+CS_18100 = var_0_63
+var_0_63.extensions = {}
+var_0_3.SC_18101_FIELD_LIST.SC_18101_FLASH_COUNT_FIELD.name = "flash_count"
+var_0_3.SC_18101_FIELD_LIST.SC_18101_FLASH_COUNT_FIELD.full_name = ".p18.sc_18101.flash_count"
+var_0_3.SC_18101_FIELD_LIST.SC_18101_FLASH_COUNT_FIELD.number = 1
+var_0_3.SC_18101_FIELD_LIST.SC_18101_FLASH_COUNT_FIELD.index = 0
+var_0_3.SC_18101_FIELD_LIST.SC_18101_FLASH_COUNT_FIELD.label = 2
+var_0_3.SC_18101_FIELD_LIST.SC_18101_FLASH_COUNT_FIELD.has_default_value = false
+var_0_3.SC_18101_FIELD_LIST.SC_18101_FLASH_COUNT_FIELD.default_value = 0
+var_0_3.SC_18101_FIELD_LIST.SC_18101_FLASH_COUNT_FIELD.type = 13
+var_0_3.SC_18101_FIELD_LIST.SC_18101_FLASH_COUNT_FIELD.cpp_type = 3
+var_0_3.SC_18101_FIELD_LIST.SC_18101_ARENA_SHOP_LIST_FIELD.name = "arena_shop_list"
+var_0_3.SC_18101_FIELD_LIST.SC_18101_ARENA_SHOP_LIST_FIELD.full_name = ".p18.sc_18101.arena_shop_list"
+var_0_3.SC_18101_FIELD_LIST.SC_18101_ARENA_SHOP_LIST_FIELD.number = 2
+var_0_3.SC_18101_FIELD_LIST.SC_18101_ARENA_SHOP_LIST_FIELD.index = 1
+var_0_3.SC_18101_FIELD_LIST.SC_18101_ARENA_SHOP_LIST_FIELD.label = 3
+var_0_3.SC_18101_FIELD_LIST.SC_18101_ARENA_SHOP_LIST_FIELD.has_default_value = false
+var_0_3.SC_18101_FIELD_LIST.SC_18101_ARENA_SHOP_LIST_FIELD.default_value = {}
+
+local var_0_64 = var_0_3.SC_18101_FIELD_LIST.SC_18101_ARENA_SHOP_LIST_FIELD
+
+ARENASHOP = var_4
+var_0_64.message_type = var_4
+var_0_3.SC_18101_FIELD_LIST.SC_18101_ARENA_SHOP_LIST_FIELD.type = 11
+var_0_3.SC_18101_FIELD_LIST.SC_18101_ARENA_SHOP_LIST_FIELD.cpp_type = 10
+var_0_3.SC_18101_FIELD_LIST.SC_18101_NEXT_FLASH_TIME_FIELD.name = "next_flash_time"
+var_0_3.SC_18101_FIELD_LIST.SC_18101_NEXT_FLASH_TIME_FIELD.full_name = ".p18.sc_18101.next_flash_time"
+var_0_3.SC_18101_FIELD_LIST.SC_18101_NEXT_FLASH_TIME_FIELD.number = 3
+var_0_3.SC_18101_FIELD_LIST.SC_18101_NEXT_FLASH_TIME_FIELD.index = 2
+var_0_3.SC_18101_FIELD_LIST.SC_18101_NEXT_FLASH_TIME_FIELD.label = 2
+var_0_3.SC_18101_FIELD_LIST.SC_18101_NEXT_FLASH_TIME_FIELD.has_default_value = false
+var_0_3.SC_18101_FIELD_LIST.SC_18101_NEXT_FLASH_TIME_FIELD.default_value = 0
+var_0_3.SC_18101_FIELD_LIST.SC_18101_NEXT_FLASH_TIME_FIELD.type = 13
+
+local var_0_65 = var_0_3.SC_18101_FIELD_LIST.SC_18101_NEXT_FLASH_TIME_FIELD
+
+var_0_65.cpp_type = 3
+SC_18101 = var_0_65
+var_0_65.name = "sc_18101"
+SC_18101 = var_0_65
+var_0_65.full_name = ".p18.sc_18101"
+SC_18101 = var_0_65
+var_0_65.nested_types = {}
+SC_18101 = var_0_65
+var_0_65.enum_types = {}
+SC_18101 = var_0_65
+var_0_65.fields = {
+	var_0_3.SC_18101_FIELD_LIST.SC_18101_FLASH_COUNT_FIELD,
+	var_0_3.SC_18101_FIELD_LIST.SC_18101_ARENA_SHOP_LIST_FIELD,
+	var_0_3.SC_18101_FIELD_LIST.SC_18101_NEXT_FLASH_TIME_FIELD
+}
+SC_18101 = var_0_65
+var_0_65.is_extendable = false
+SC_18101 = var_0_65
+var_0_65.extensions = {}
+var_0_3.CS_18102_FIELD_LIST.CS_18102_TYPE_FIELD.name = "type"
+var_0_3.CS_18102_FIELD_LIST.CS_18102_TYPE_FIELD.full_name = ".p18.cs_18102.type"
+var_0_3.CS_18102_FIELD_LIST.CS_18102_TYPE_FIELD.number = 1
+var_0_3.CS_18102_FIELD_LIST.CS_18102_TYPE_FIELD.index = 0
+var_0_3.CS_18102_FIELD_LIST.CS_18102_TYPE_FIELD.label = 2
+var_0_3.CS_18102_FIELD_LIST.CS_18102_TYPE_FIELD.has_default_value = false
+var_0_3.CS_18102_FIELD_LIST.CS_18102_TYPE_FIELD.default_value = 0
+var_0_3.CS_18102_FIELD_LIST.CS_18102_TYPE_FIELD.type = 13
+
+local var_0_66 = var_0_3.CS_18102_FIELD_LIST.CS_18102_TYPE_FIELD
+
+var_0_66.cpp_type = 3
+CS_18102 = var_0_66
+var_0_66.name = "cs_18102"
+CS_18102 = var_0_66
+var_0_66.full_name = ".p18.cs_18102"
+CS_18102 = var_0_66
+var_0_66.nested_types = {}
+CS_18102 = var_0_66
+var_0_66.enum_types = {}
+CS_18102 = var_0_66
+var_0_66.fields = {
+	var_0_3.CS_18102_FIELD_LIST.CS_18102_TYPE_FIELD
+}
+CS_18102 = var_0_66
+var_0_66.is_extendable = false
+CS_18102 = var_0_66
+var_0_66.extensions = {}
+var_0_3.SC_18103_FIELD_LIST.SC_18103_RESULT_FIELD.name = "result"
+var_0_3.SC_18103_FIELD_LIST.SC_18103_RESULT_FIELD.full_name = ".p18.sc_18103.result"
+var_0_3.SC_18103_FIELD_LIST.SC_18103_RESULT_FIELD.number = 1
+var_0_3.SC_18103_FIELD_LIST.SC_18103_RESULT_FIELD.index = 0
+var_0_3.SC_18103_FIELD_LIST.SC_18103_RESULT_FIELD.label = 2
+var_0_3.SC_18103_FIELD_LIST.SC_18103_RESULT_FIELD.has_default_value = false
+var_0_3.SC_18103_FIELD_LIST.SC_18103_RESULT_FIELD.default_value = 0
+var_0_3.SC_18103_FIELD_LIST.SC_18103_RESULT_FIELD.type = 13
+var_0_3.SC_18103_FIELD_LIST.SC_18103_RESULT_FIELD.cpp_type = 3
+var_0_3.SC_18103_FIELD_LIST.SC_18103_ARENA_SHOP_LIST_FIELD.name = "arena_shop_list"
+var_0_3.SC_18103_FIELD_LIST.SC_18103_ARENA_SHOP_LIST_FIELD.full_name = ".p18.sc_18103.arena_shop_list"
+var_0_3.SC_18103_FIELD_LIST.SC_18103_ARENA_SHOP_LIST_FIELD.number = 2
+var_0_3.SC_18103_FIELD_LIST.SC_18103_ARENA_SHOP_LIST_FIELD.index = 1
+var_0_3.SC_18103_FIELD_LIST.SC_18103_ARENA_SHOP_LIST_FIELD.label = 3
+var_0_3.SC_18103_FIELD_LIST.SC_18103_ARENA_SHOP_LIST_FIELD.has_default_value = false
+var_0_3.SC_18103_FIELD_LIST.SC_18103_ARENA_SHOP_LIST_FIELD.default_value = {}
+
+local var_0_67 = var_0_3.SC_18103_FIELD_LIST.SC_18103_ARENA_SHOP_LIST_FIELD
+
+ARENASHOP = var_4
+var_0_67.message_type = var_4
+var_0_3.SC_18103_FIELD_LIST.SC_18103_ARENA_SHOP_LIST_FIELD.type = 11
+
+local var_0_68 = var_0_3.SC_18103_FIELD_LIST.SC_18103_ARENA_SHOP_LIST_FIELD
+
+var_0_68.cpp_type = 10
+SC_18103 = var_0_68
+var_0_68.name = "sc_18103"
+SC_18103 = var_0_68
+var_0_68.full_name = ".p18.sc_18103"
+SC_18103 = var_0_68
+var_0_68.nested_types = {}
+SC_18103 = var_0_68
+var_0_68.enum_types = {}
+SC_18103 = var_0_68
+var_0_68.fields = {
+	var_0_3.SC_18103_FIELD_LIST.SC_18103_RESULT_FIELD,
+	var_0_3.SC_18103_FIELD_LIST.SC_18103_ARENA_SHOP_LIST_FIELD
+}
+SC_18103 = var_0_68
+var_0_68.is_extendable = false
+SC_18103 = var_0_68
+var_0_68.extensions = {}
+var_0_3.CS_18104_FIELD_LIST.CS_18104_ID_FIELD.name = "id"
+var_0_3.CS_18104_FIELD_LIST.CS_18104_ID_FIELD.full_name = ".p18.cs_18104.id"
+var_0_3.CS_18104_FIELD_LIST.CS_18104_ID_FIELD.number = 1
+var_0_3.CS_18104_FIELD_LIST.CS_18104_ID_FIELD.index = 0
+var_0_3.CS_18104_FIELD_LIST.CS_18104_ID_FIELD.label = 2
+var_0_3.CS_18104_FIELD_LIST.CS_18104_ID_FIELD.has_default_value = false
+var_0_3.CS_18104_FIELD_LIST.CS_18104_ID_FIELD.default_value = 0
+var_0_3.CS_18104_FIELD_LIST.CS_18104_ID_FIELD.type = 13
+
+local var_0_69 = var_0_3.CS_18104_FIELD_LIST.CS_18104_ID_FIELD
+
+var_0_69.cpp_type = 3
+CS_18104 = var_0_69
+var_0_69.name = "cs_18104"
+CS_18104 = var_0_69
+var_0_69.full_name = ".p18.cs_18104"
+CS_18104 = var_0_69
+var_0_69.nested_types = {}
+CS_18104 = var_0_69
+var_0_69.enum_types = {}
+CS_18104 = var_0_69
+var_0_69.fields = {
+	var_0_3.CS_18104_FIELD_LIST.CS_18104_ID_FIELD
+}
+CS_18104 = var_0_69
+var_0_69.is_extendable = false
+CS_18104 = var_0_69
+var_0_69.extensions = {}
+var_0_3.SC_18105_FIELD_LIST.SC_18105_INFO_FIELD.name = "info"
+var_0_3.SC_18105_FIELD_LIST.SC_18105_INFO_FIELD.full_name = ".p18.sc_18105.info"
+var_0_3.SC_18105_FIELD_LIST.SC_18105_INFO_FIELD.number = 1
+var_0_3.SC_18105_FIELD_LIST.SC_18105_INFO_FIELD.index = 0
+var_0_3.SC_18105_FIELD_LIST.SC_18105_INFO_FIELD.label = 2
+var_0_3.SC_18105_FIELD_LIST.SC_18105_INFO_FIELD.has_default_value = false
+var_0_3.SC_18105_FIELD_LIST.SC_18105_INFO_FIELD.default_value = nil
+
+local var_0_70 = var_0_3.SC_18105_FIELD_LIST.SC_18105_INFO_FIELD
+
+TARGETINFO = var_4
+var_0_70.message_type = var_4
+var_0_3.SC_18105_FIELD_LIST.SC_18105_INFO_FIELD.type = 11
+
+local var_0_71 = var_0_3.SC_18105_FIELD_LIST.SC_18105_INFO_FIELD
+
+var_0_71.cpp_type = 10
+SC_18105 = var_0_71
+var_0_71.name = "sc_18105"
+SC_18105 = var_0_71
+var_0_71.full_name = ".p18.sc_18105"
+SC_18105 = var_0_71
+var_0_71.nested_types = {}
+SC_18105 = var_0_71
+var_0_71.enum_types = {}
+SC_18105 = var_0_71
+var_0_71.fields = {
+	var_0_3.SC_18105_FIELD_LIST.SC_18105_INFO_FIELD
+}
+SC_18105 = var_0_71
+var_0_71.is_extendable = false
+SC_18105 = var_0_71
+var_0_71.extensions = {}
+var_0_3.CS_18201_FIELD_LIST.CS_18201_PAGE_FIELD.name = "page"
+var_0_3.CS_18201_FIELD_LIST.CS_18201_PAGE_FIELD.full_name = ".p18.cs_18201.page"
+var_0_3.CS_18201_FIELD_LIST.CS_18201_PAGE_FIELD.number = 1
+var_0_3.CS_18201_FIELD_LIST.CS_18201_PAGE_FIELD.index = 0
+var_0_3.CS_18201_FIELD_LIST.CS_18201_PAGE_FIELD.label = 2
+var_0_3.CS_18201_FIELD_LIST.CS_18201_PAGE_FIELD.has_default_value = false
+var_0_3.CS_18201_FIELD_LIST.CS_18201_PAGE_FIELD.default_value = 0
+var_0_3.CS_18201_FIELD_LIST.CS_18201_PAGE_FIELD.type = 13
+var_0_3.CS_18201_FIELD_LIST.CS_18201_PAGE_FIELD.cpp_type = 3
+var_0_3.CS_18201_FIELD_LIST.CS_18201_TYPE_FIELD.name = "type"
+var_0_3.CS_18201_FIELD_LIST.CS_18201_TYPE_FIELD.full_name = ".p18.cs_18201.type"
+var_0_3.CS_18201_FIELD_LIST.CS_18201_TYPE_FIELD.number = 2
+var_0_3.CS_18201_FIELD_LIST.CS_18201_TYPE_FIELD.index = 1
+var_0_3.CS_18201_FIELD_LIST.CS_18201_TYPE_FIELD.label = 2
+var_0_3.CS_18201_FIELD_LIST.CS_18201_TYPE_FIELD.has_default_value = false
+var_0_3.CS_18201_FIELD_LIST.CS_18201_TYPE_FIELD.default_value = 0
+var_0_3.CS_18201_FIELD_LIST.CS_18201_TYPE_FIELD.type = 13
+var_0_3.CS_18201_FIELD_LIST.CS_18201_TYPE_FIELD.cpp_type = 3
+var_0_3.CS_18201_FIELD_LIST.CS_18201_ACT_ID_FIELD.name = "act_id"
+var_0_3.CS_18201_FIELD_LIST.CS_18201_ACT_ID_FIELD.full_name = ".p18.cs_18201.act_id"
+var_0_3.CS_18201_FIELD_LIST.CS_18201_ACT_ID_FIELD.number = 3
+var_0_3.CS_18201_FIELD_LIST.CS_18201_ACT_ID_FIELD.index = 2
+var_0_3.CS_18201_FIELD_LIST.CS_18201_ACT_ID_FIELD.label = 1
+var_0_3.CS_18201_FIELD_LIST.CS_18201_ACT_ID_FIELD.has_default_value = false
+var_0_3.CS_18201_FIELD_LIST.CS_18201_ACT_ID_FIELD.default_value = nil
+var_0_3.CS_18201_FIELD_LIST.CS_18201_ACT_ID_FIELD.type = 13
+
+local var_0_72 = var_0_3.CS_18201_FIELD_LIST.CS_18201_ACT_ID_FIELD
+
+var_0_72.cpp_type = 3
+CS_18201 = var_0_72
+var_0_72.name = "cs_18201"
+CS_18201 = var_0_72
+var_0_72.full_name = ".p18.cs_18201"
+CS_18201 = var_0_72
+var_0_72.nested_types = {}
+CS_18201 = var_0_72
+var_0_72.enum_types = {}
+CS_18201 = var_0_72
+var_0_72.fields = {
+	var_0_3.CS_18201_FIELD_LIST.CS_18201_PAGE_FIELD,
+	var_0_3.CS_18201_FIELD_LIST.CS_18201_TYPE_FIELD,
+	var_0_3.CS_18201_FIELD_LIST.CS_18201_ACT_ID_FIELD
+}
+CS_18201 = var_0_72
+var_0_72.is_extendable = false
+CS_18201 = var_0_72
+var_0_72.extensions = {}
+var_0_3.SC_18202_FIELD_LIST.SC_18202_LIST_FIELD.name = "list"
+var_0_3.SC_18202_FIELD_LIST.SC_18202_LIST_FIELD.full_name = ".p18.sc_18202.list"
+var_0_3.SC_18202_FIELD_LIST.SC_18202_LIST_FIELD.number = 1
+var_0_3.SC_18202_FIELD_LIST.SC_18202_LIST_FIELD.index = 0
+var_0_3.SC_18202_FIELD_LIST.SC_18202_LIST_FIELD.label = 3
+var_0_3.SC_18202_FIELD_LIST.SC_18202_LIST_FIELD.has_default_value = false
+var_0_3.SC_18202_FIELD_LIST.SC_18202_LIST_FIELD.default_value = {}
+
+local var_0_73 = var_0_3.SC_18202_FIELD_LIST.SC_18202_LIST_FIELD
+
+RANK_INFO = var_4
+var_0_73.message_type = var_4
+var_0_3.SC_18202_FIELD_LIST.SC_18202_LIST_FIELD.type = 11
+
+local var_0_74 = var_0_3.SC_18202_FIELD_LIST.SC_18202_LIST_FIELD
+
+var_0_74.cpp_type = 10
+SC_18202 = var_0_74
+var_0_74.name = "sc_18202"
+SC_18202 = var_0_74
+var_0_74.full_name = ".p18.sc_18202"
+SC_18202 = var_0_74
+var_0_74.nested_types = {}
+SC_18202 = var_0_74
+var_0_74.enum_types = {}
+SC_18202 = var_0_74
+var_0_74.fields = {
+	var_0_3.SC_18202_FIELD_LIST.SC_18202_LIST_FIELD
+}
+SC_18202 = var_0_74
+var_0_74.is_extendable = false
+SC_18202 = var_0_74
+var_0_74.extensions = {}
+var_0_3.CS_18203_FIELD_LIST.CS_18203_TYPE_FIELD.name = "type"
+var_0_3.CS_18203_FIELD_LIST.CS_18203_TYPE_FIELD.full_name = ".p18.cs_18203.type"
+var_0_3.CS_18203_FIELD_LIST.CS_18203_TYPE_FIELD.number = 1
+var_0_3.CS_18203_FIELD_LIST.CS_18203_TYPE_FIELD.index = 0
+var_0_3.CS_18203_FIELD_LIST.CS_18203_TYPE_FIELD.label = 2
+var_0_3.CS_18203_FIELD_LIST.CS_18203_TYPE_FIELD.has_default_value = false
+var_0_3.CS_18203_FIELD_LIST.CS_18203_TYPE_FIELD.default_value = 0
+var_0_3.CS_18203_FIELD_LIST.CS_18203_TYPE_FIELD.type = 13
+var_0_3.CS_18203_FIELD_LIST.CS_18203_TYPE_FIELD.cpp_type = 3
+var_0_3.CS_18203_FIELD_LIST.CS_18203_ACT_ID_FIELD.name = "act_id"
+var_0_3.CS_18203_FIELD_LIST.CS_18203_ACT_ID_FIELD.full_name = ".p18.cs_18203.act_id"
+var_0_3.CS_18203_FIELD_LIST.CS_18203_ACT_ID_FIELD.number = 2
+var_0_3.CS_18203_FIELD_LIST.CS_18203_ACT_ID_FIELD.index = 1
+var_0_3.CS_18203_FIELD_LIST.CS_18203_ACT_ID_FIELD.label = 1
+var_0_3.CS_18203_FIELD_LIST.CS_18203_ACT_ID_FIELD.has_default_value = false
+var_0_3.CS_18203_FIELD_LIST.CS_18203_ACT_ID_FIELD.default_value = nil
+var_0_3.CS_18203_FIELD_LIST.CS_18203_ACT_ID_FIELD.type = 13
+
+local var_0_75 = var_0_3.CS_18203_FIELD_LIST.CS_18203_ACT_ID_FIELD
+
+var_0_75.cpp_type = 3
+CS_18203 = var_0_75
+var_0_75.name = "cs_18203"
+CS_18203 = var_0_75
+var_0_75.full_name = ".p18.cs_18203"
+CS_18203 = var_0_75
+var_0_75.nested_types = {}
+CS_18203 = var_0_75
+var_0_75.enum_types = {}
+CS_18203 = var_0_75
+var_0_75.fields = {
+	var_0_3.CS_18203_FIELD_LIST.CS_18203_TYPE_FIELD,
+	var_0_3.CS_18203_FIELD_LIST.CS_18203_ACT_ID_FIELD
+}
+CS_18203 = var_0_75
+var_0_75.is_extendable = false
+CS_18203 = var_0_75
+var_0_75.extensions = {}
+var_0_3.SC_18204_FIELD_LIST.SC_18204_POINT_FIELD.name = "point"
+var_0_3.SC_18204_FIELD_LIST.SC_18204_POINT_FIELD.full_name = ".p18.sc_18204.point"
+var_0_3.SC_18204_FIELD_LIST.SC_18204_POINT_FIELD.number = 1
+var_0_3.SC_18204_FIELD_LIST.SC_18204_POINT_FIELD.index = 0
+var_0_3.SC_18204_FIELD_LIST.SC_18204_POINT_FIELD.label = 2
+var_0_3.SC_18204_FIELD_LIST.SC_18204_POINT_FIELD.has_default_value = false
+var_0_3.SC_18204_FIELD_LIST.SC_18204_POINT_FIELD.default_value = 0
+var_0_3.SC_18204_FIELD_LIST.SC_18204_POINT_FIELD.type = 13
+var_0_3.SC_18204_FIELD_LIST.SC_18204_POINT_FIELD.cpp_type = 3
+var_0_3.SC_18204_FIELD_LIST.SC_18204_RANK_FIELD.name = "rank"
+var_0_3.SC_18204_FIELD_LIST.SC_18204_RANK_FIELD.full_name = ".p18.sc_18204.rank"
+var_0_3.SC_18204_FIELD_LIST.SC_18204_RANK_FIELD.number = 2
+var_0_3.SC_18204_FIELD_LIST.SC_18204_RANK_FIELD.index = 1
+var_0_3.SC_18204_FIELD_LIST.SC_18204_RANK_FIELD.label = 2
+var_0_3.SC_18204_FIELD_LIST.SC_18204_RANK_FIELD.has_default_value = false
+var_0_3.SC_18204_FIELD_LIST.SC_18204_RANK_FIELD.default_value = 0
+var_0_3.SC_18204_FIELD_LIST.SC_18204_RANK_FIELD.type = 13
+
+local var_0_76 = var_0_3.SC_18204_FIELD_LIST.SC_18204_RANK_FIELD
+
+var_0_76.cpp_type = 3
+SC_18204 = var_0_76
+var_0_76.name = "sc_18204"
+SC_18204 = var_0_76
+var_0_76.full_name = ".p18.sc_18204"
+SC_18204 = var_0_76
+var_0_76.nested_types = {}
+SC_18204 = var_0_76
+var_0_76.enum_types = {}
+SC_18204 = var_0_76
+var_0_76.fields = {
+	var_0_3.SC_18204_FIELD_LIST.SC_18204_POINT_FIELD,
+	var_0_3.SC_18204_FIELD_LIST.SC_18204_RANK_FIELD
+}
+SC_18204 = var_0_76
+var_0_76.is_extendable = false
+SC_18204 = var_0_76
+var_0_76.extensions = {}
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_ID_FIELD.name = "id"
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_ID_FIELD.full_name = ".p18.targetinfo.id"
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_ID_FIELD.number = 1
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_ID_FIELD.index = 0
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_ID_FIELD.label = 2
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_ID_FIELD.has_default_value = false
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_ID_FIELD.default_value = 0
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_ID_FIELD.type = 13
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_ID_FIELD.cpp_type = 3
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_LEVEL_FIELD.name = "level"
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_LEVEL_FIELD.full_name = ".p18.targetinfo.level"
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_LEVEL_FIELD.number = 2
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_LEVEL_FIELD.index = 1
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_LEVEL_FIELD.label = 2
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_LEVEL_FIELD.has_default_value = false
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_LEVEL_FIELD.default_value = 0
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_LEVEL_FIELD.type = 13
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_LEVEL_FIELD.cpp_type = 3
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_NAME_FIELD.name = "name"
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_NAME_FIELD.full_name = ".p18.targetinfo.name"
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_NAME_FIELD.number = 3
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_NAME_FIELD.index = 2
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_NAME_FIELD.label = 2
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_NAME_FIELD.has_default_value = false
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_NAME_FIELD.default_value = ""
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_NAME_FIELD.type = 9
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_NAME_FIELD.cpp_type = 9
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_SCORE_FIELD.name = "score"
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_SCORE_FIELD.full_name = ".p18.targetinfo.score"
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_SCORE_FIELD.number = 4
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_SCORE_FIELD.index = 3
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_SCORE_FIELD.label = 2
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_SCORE_FIELD.has_default_value = false
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_SCORE_FIELD.default_value = 0
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_SCORE_FIELD.type = 13
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_SCORE_FIELD.cpp_type = 3
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_RANK_FIELD.name = "rank"
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_RANK_FIELD.full_name = ".p18.targetinfo.rank"
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_RANK_FIELD.number = 5
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_RANK_FIELD.index = 4
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_RANK_FIELD.label = 2
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_RANK_FIELD.has_default_value = false
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_RANK_FIELD.default_value = 0
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_RANK_FIELD.type = 13
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_RANK_FIELD.cpp_type = 3
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_VANGUARD_SHIP_LIST_FIELD.name = "vanguard_ship_list"
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_VANGUARD_SHIP_LIST_FIELD.full_name = ".p18.targetinfo.vanguard_ship_list"
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_VANGUARD_SHIP_LIST_FIELD.number = 6
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_VANGUARD_SHIP_LIST_FIELD.index = 5
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_VANGUARD_SHIP_LIST_FIELD.label = 3
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_VANGUARD_SHIP_LIST_FIELD.has_default_value = false
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_VANGUARD_SHIP_LIST_FIELD.default_value = {}
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_VANGUARD_SHIP_LIST_FIELD.message_type = var_0_1.SHIPINFO
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_VANGUARD_SHIP_LIST_FIELD.type = 11
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_VANGUARD_SHIP_LIST_FIELD.cpp_type = 10
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_MAIN_SHIP_LIST_FIELD.name = "main_ship_list"
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_MAIN_SHIP_LIST_FIELD.full_name = ".p18.targetinfo.main_ship_list"
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_MAIN_SHIP_LIST_FIELD.number = 7
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_MAIN_SHIP_LIST_FIELD.index = 6
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_MAIN_SHIP_LIST_FIELD.label = 3
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_MAIN_SHIP_LIST_FIELD.has_default_value = false
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_MAIN_SHIP_LIST_FIELD.default_value = {}
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_MAIN_SHIP_LIST_FIELD.message_type = var_0_1.SHIPINFO
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_MAIN_SHIP_LIST_FIELD.type = 11
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_MAIN_SHIP_LIST_FIELD.cpp_type = 10
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_DISPLAY_FIELD.name = "display"
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_DISPLAY_FIELD.full_name = ".p18.targetinfo.display"
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_DISPLAY_FIELD.number = 8
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_DISPLAY_FIELD.index = 7
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_DISPLAY_FIELD.label = 1
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_DISPLAY_FIELD.has_default_value = false
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_DISPLAY_FIELD.default_value = nil
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_DISPLAY_FIELD.message_type = var_0_1.DISPLAYINFO
+var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_DISPLAY_FIELD.type = 11
+
+local var_0_77 = var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_DISPLAY_FIELD
+
+var_0_77.cpp_type = 10
+TARGETINFO = var_0_77
+var_0_77.name = "targetinfo"
+TARGETINFO = var_0_77
+var_0_77.full_name = ".p18.targetinfo"
+TARGETINFO = var_0_77
+var_0_77.nested_types = {}
+TARGETINFO = var_0_77
+var_0_77.enum_types = {}
+TARGETINFO = var_0_77
+var_0_77.fields = {
+	var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_ID_FIELD,
+	var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_LEVEL_FIELD,
+	var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_NAME_FIELD,
+	var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_SCORE_FIELD,
+	var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_RANK_FIELD,
+	var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_VANGUARD_SHIP_LIST_FIELD,
+	var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_MAIN_SHIP_LIST_FIELD,
+	var_0_3.TARGETINFO_FIELD_LIST.TARGETINFO_DISPLAY_FIELD
+}
+TARGETINFO = var_0_77
+var_0_77.is_extendable = false
+TARGETINFO = var_0_77
+var_0_77.extensions = {}
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_ID_FIELD.name = "id"
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_ID_FIELD.full_name = ".p18.arenarank.id"
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_ID_FIELD.number = 1
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_ID_FIELD.index = 0
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_ID_FIELD.label = 2
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_ID_FIELD.has_default_value = false
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_ID_FIELD.default_value = 0
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_ID_FIELD.type = 13
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_ID_FIELD.cpp_type = 3
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_LEVEL_FIELD.name = "level"
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_LEVEL_FIELD.full_name = ".p18.arenarank.level"
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_LEVEL_FIELD.number = 2
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_LEVEL_FIELD.index = 1
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_LEVEL_FIELD.label = 2
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_LEVEL_FIELD.has_default_value = false
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_LEVEL_FIELD.default_value = 0
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_LEVEL_FIELD.type = 13
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_LEVEL_FIELD.cpp_type = 3
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_NAME_FIELD.name = "name"
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_NAME_FIELD.full_name = ".p18.arenarank.name"
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_NAME_FIELD.number = 3
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_NAME_FIELD.index = 2
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_NAME_FIELD.label = 2
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_NAME_FIELD.has_default_value = false
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_NAME_FIELD.default_value = ""
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_NAME_FIELD.type = 9
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_NAME_FIELD.cpp_type = 9
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_SCORE_FIELD.name = "score"
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_SCORE_FIELD.full_name = ".p18.arenarank.score"
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_SCORE_FIELD.number = 4
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_SCORE_FIELD.index = 3
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_SCORE_FIELD.label = 2
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_SCORE_FIELD.has_default_value = false
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_SCORE_FIELD.default_value = 0
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_SCORE_FIELD.type = 13
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_SCORE_FIELD.cpp_type = 3
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_DISPLAY_FIELD.name = "display"
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_DISPLAY_FIELD.full_name = ".p18.arenarank.display"
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_DISPLAY_FIELD.number = 5
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_DISPLAY_FIELD.index = 4
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_DISPLAY_FIELD.label = 1
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_DISPLAY_FIELD.has_default_value = false
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_DISPLAY_FIELD.default_value = nil
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_DISPLAY_FIELD.message_type = var_0_1.DISPLAYINFO
+var_0_3.ARENARANK_FIELD_LIST.ARENARANK_DISPLAY_FIELD.type = 11
+
+local var_0_78 = var_0_3.ARENARANK_FIELD_LIST.ARENARANK_DISPLAY_FIELD
+
+var_0_78.cpp_type = 10
+ARENARANK = var_0_78
+var_0_78.name = "arenarank"
+ARENARANK = var_0_78
+var_0_78.full_name = ".p18.arenarank"
+ARENARANK = var_0_78
+var_0_78.nested_types = {}
+ARENARANK = var_0_78
+var_0_78.enum_types = {}
+ARENARANK = var_0_78
+var_0_78.fields = {
+	var_0_3.ARENARANK_FIELD_LIST.ARENARANK_ID_FIELD,
+	var_0_3.ARENARANK_FIELD_LIST.ARENARANK_LEVEL_FIELD,
+	var_0_3.ARENARANK_FIELD_LIST.ARENARANK_NAME_FIELD,
+	var_0_3.ARENARANK_FIELD_LIST.ARENARANK_SCORE_FIELD,
+	var_0_3.ARENARANK_FIELD_LIST.ARENARANK_DISPLAY_FIELD
+}
+ARENARANK = var_0_78
+var_0_78.is_extendable = false
+ARENARANK = var_0_78
+var_0_78.extensions = {}
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_SHOP_ID_FIELD.name = "shop_id"
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_SHOP_ID_FIELD.full_name = ".p18.arenashop.shop_id"
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_SHOP_ID_FIELD.number = 1
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_SHOP_ID_FIELD.index = 0
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_SHOP_ID_FIELD.label = 2
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_SHOP_ID_FIELD.has_default_value = false
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_SHOP_ID_FIELD.default_value = 0
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_SHOP_ID_FIELD.type = 13
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_SHOP_ID_FIELD.cpp_type = 3
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_COUNT_FIELD.name = "count"
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_COUNT_FIELD.full_name = ".p18.arenashop.count"
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_COUNT_FIELD.number = 2
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_COUNT_FIELD.index = 1
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_COUNT_FIELD.label = 2
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_COUNT_FIELD.has_default_value = false
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_COUNT_FIELD.default_value = 0
+var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_COUNT_FIELD.type = 13
+
+local var_0_79 = var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_COUNT_FIELD
+
+var_0_79.cpp_type = 3
+ARENASHOP = var_0_79
+var_0_79.name = "arenashop"
+ARENASHOP = var_0_79
+var_0_79.full_name = ".p18.arenashop"
+ARENASHOP = var_0_79
+var_0_79.nested_types = {}
+ARENASHOP = var_0_79
+var_0_79.enum_types = {}
+ARENASHOP = var_0_79
+var_0_79.fields = {
+	var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_SHOP_ID_FIELD,
+	var_0_3.ARENASHOP_FIELD_LIST.ARENASHOP_COUNT_FIELD
+}
+ARENASHOP = var_0_79
+var_0_79.is_extendable = false
+ARENASHOP = var_0_79
+var_0_79.extensions = {}
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_USER_ID_FIELD.name = "user_id"
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_USER_ID_FIELD.full_name = ".p18.rank_info.user_id"
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_USER_ID_FIELD.number = 1
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_USER_ID_FIELD.index = 0
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_USER_ID_FIELD.label = 2
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_USER_ID_FIELD.has_default_value = false
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_USER_ID_FIELD.default_value = 0
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_USER_ID_FIELD.type = 13
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_USER_ID_FIELD.cpp_type = 3
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_POINT_FIELD.name = "point"
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_POINT_FIELD.full_name = ".p18.rank_info.point"
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_POINT_FIELD.number = 2
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_POINT_FIELD.index = 1
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_POINT_FIELD.label = 2
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_POINT_FIELD.has_default_value = false
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_POINT_FIELD.default_value = 0
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_POINT_FIELD.type = 13
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_POINT_FIELD.cpp_type = 3
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_NAME_FIELD.name = "name"
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_NAME_FIELD.full_name = ".p18.rank_info.name"
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_NAME_FIELD.number = 3
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_NAME_FIELD.index = 2
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_NAME_FIELD.label = 2
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_NAME_FIELD.has_default_value = false
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_NAME_FIELD.default_value = ""
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_NAME_FIELD.type = 9
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_NAME_FIELD.cpp_type = 9
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_LV_FIELD.name = "lv"
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_LV_FIELD.full_name = ".p18.rank_info.lv"
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_LV_FIELD.number = 4
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_LV_FIELD.index = 3
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_LV_FIELD.label = 2
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_LV_FIELD.has_default_value = false
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_LV_FIELD.default_value = 0
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_LV_FIELD.type = 13
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_LV_FIELD.cpp_type = 3
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_ARENA_RANK_FIELD.name = "arena_rank"
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_ARENA_RANK_FIELD.full_name = ".p18.rank_info.arena_rank"
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_ARENA_RANK_FIELD.number = 5
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_ARENA_RANK_FIELD.index = 4
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_ARENA_RANK_FIELD.label = 2
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_ARENA_RANK_FIELD.has_default_value = false
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_ARENA_RANK_FIELD.default_value = 0
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_ARENA_RANK_FIELD.type = 13
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_ARENA_RANK_FIELD.cpp_type = 3
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_DISPLAY_FIELD.name = "display"
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_DISPLAY_FIELD.full_name = ".p18.rank_info.display"
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_DISPLAY_FIELD.number = 6
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_DISPLAY_FIELD.index = 5
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_DISPLAY_FIELD.label = 1
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_DISPLAY_FIELD.has_default_value = false
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_DISPLAY_FIELD.default_value = nil
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_DISPLAY_FIELD.message_type = var_0_1.DISPLAYINFO
+var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_DISPLAY_FIELD.type = 11
+
+local var_0_80 = var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_DISPLAY_FIELD
+
+var_0_80.cpp_type = 10
+RANK_INFO = var_0_80
+var_0_80.name = "rank_info"
+RANK_INFO = var_0_80
+var_0_80.full_name = ".p18.rank_info"
+RANK_INFO = var_0_80
+var_0_80.nested_types = {}
+RANK_INFO = var_0_80
+var_0_80.enum_types = {}
+RANK_INFO = var_0_80
+var_0_80.fields = {
+	var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_USER_ID_FIELD,
+	var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_POINT_FIELD,
+	var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_NAME_FIELD,
+	var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_LV_FIELD,
+	var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_ARENA_RANK_FIELD,
+	var_0_3.RANK_INFO_FIELD_LIST.RANK_INFO_DISPLAY_FIELD
+}
+RANK_INFO = var_0_80
+var_0_80.is_extendable = false
+RANK_INFO = var_0_80
+var_0_80.extensions = {}
+
+local var_0_81 = var_0_0.Message
+
+ARENARANK = var_5
+
+local var_0_82 = var_0_81(var_5)
+local var_0_83 = arenarank
+local var_0_84 = var_0_0.Message
+
+ARENASHOP = var_5
+
+local var_0_85 = var_0_84(var_5)
+local var_0_86 = arenashop
+local var_0_87 = var_0_0.Message
+
+CS_18001 = var_5
+
+local var_0_88 = var_0_87(var_5)
+local var_0_89 = cs_18001
+local var_0_90 = var_0_0.Message
+
+CS_18003 = var_5
+
+local var_0_91 = var_0_90(var_5)
+local var_0_92 = cs_18003
+local var_0_93 = var_0_0.Message
+
+CS_18006 = var_5
+
+local var_0_94 = var_0_93(var_5)
+local var_0_95 = cs_18006
+local var_0_96 = var_0_0.Message
+
+CS_18008 = var_5
+
+local var_0_97 = var_0_96(var_5)
+local var_0_98 = cs_18008
+local var_0_99 = var_0_0.Message
+
+CS_18100 = var_5
+
+local var_0_100 = var_0_99(var_5)
+local var_0_101 = cs_18100
+local var_0_102 = var_0_0.Message
+
+CS_18102 = var_5
+
+local var_0_103 = var_0_102(var_5)
+local var_0_104 = cs_18102
+local var_0_105 = var_0_0.Message
+
+CS_18104 = var_5
+
+local var_0_106 = var_0_105(var_5)
+local var_0_107 = cs_18104
+local var_0_108 = var_0_0.Message
+
+CS_18201 = var_5
+
+local var_0_109 = var_0_108(var_5)
+local var_0_110 = cs_18201
+local var_0_111 = var_0_0.Message
+
+CS_18203 = var_5
+
+local var_0_112 = var_0_111(var_5)
+local var_0_113 = cs_18203
+local var_0_114 = var_0_0.Message
+
+RANK_INFO = var_5
+
+local var_0_115 = var_0_114(var_5)
+local var_0_116 = rank_info
+local var_0_117 = var_0_0.Message
+
+SC_18002 = var_5
+
+local var_0_118 = var_0_117(var_5)
+local var_0_119 = sc_18002
+local var_0_120 = var_0_0.Message
+
+SC_18004 = var_5
+
+local var_0_121 = var_0_120(var_5)
+local var_0_122 = sc_18004
+local var_0_123 = var_0_0.Message
+
+SC_18005 = var_5
+
+local var_0_124 = var_0_123(var_5)
+local var_0_125 = sc_18005
+local var_0_126 = var_0_0.Message
+
+SC_18007 = var_5
+
+local var_0_127 = var_0_126(var_5)
+local var_0_128 = sc_18007
+local var_0_129 = var_0_0.Message
+
+SC_18009 = var_5
+
+local var_0_130 = var_0_129(var_5)
+local var_0_131 = sc_18009
+local var_0_132 = var_0_0.Message
+
+SC_18101 = var_5
+
+local var_0_133 = var_0_132(var_5)
+local var_0_134 = sc_18101
+local var_0_135 = var_0_0.Message
+
+SC_18103 = var_5
+
+local var_0_136 = var_0_135(var_5)
+local var_0_137 = sc_18103
+local var_0_138 = var_0_0.Message
+
+SC_18105 = var_5
+
+local var_0_139 = var_0_138(var_5)
+local var_0_140 = sc_18105
+local var_0_141 = var_0_0.Message
+
+SC_18202 = var_5
+
+local var_0_142 = var_0_141(var_5)
+local var_0_143 = sc_18202
+local var_0_144 = var_0_0.Message
+
+SC_18204 = var_5
+
+local var_0_145 = var_0_144(var_5)
+local var_0_146 = sc_18204
+local var_0_147 = var_0_0.Message
+
+TARGETINFO = var_5
+
+local var_0_148 = var_0_147(var_5)
+
+p18_pb = targetinfo
+
+return var_3

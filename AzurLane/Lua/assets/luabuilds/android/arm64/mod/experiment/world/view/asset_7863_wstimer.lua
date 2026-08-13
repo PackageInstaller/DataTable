@@ -1,0 +1,242 @@
+﻿class = var_0_10000
+
+local var_0_0 = "WSTimer"
+
+import = var_0_10003
+
+local var_0_1 = var_0_10000(var_0_0, var_0_10003("...BaseEntity"))
+
+var_0_1.Fields = {
+	inMapTweens = "table",
+	inMapTimers = "table",
+	tweens = "table",
+	timers = "table"
+}
+var_0_1.Listeners = {}
+
+function var_0_1.Setup(arg_1_0)
+	arg_1_0.inMapTimers = {}
+	arg_1_0.timers = {}
+	arg_1_0.inMapTweens = {}
+	arg_1_0.tweens = {}
+
+	return
+end
+
+function var_0_1.Dispose(arg_2_0)
+	arg_2_0:ClearInMapTweens()
+	arg_2_0:ClearInMapTimers()
+	arg_2_0:ClearTweens()
+	arg_2_0:ClearTimers()
+	arg_2_0:Clear()
+
+	return
+end
+
+function var_0_1.AddInMapTimer(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
+	Timer = var_1_10005
+
+	local var_3_0 = var_1_10005.New(arg_3_1, arg_3_2, arg_3_3, arg_3_4)
+
+	table = var_1_10006
+
+	var_1_10006.insert(arg_3_0.inMapTimers, var_3_0)
+
+	return var_3_0
+end
+
+function var_0_1.RemoveInMapTimer(arg_4_0, arg_4_1)
+	arg_4_1:Stop()
+
+	ipairs = var_2
+
+	for iter_4_0, iter_4_1 in var_2(arg_4_0.inMapTimers) do
+		if iter_4_1 == arg_4_1 then
+			table = var_1_10007
+
+			var_1_10007.remove(arg_4_0.inMapTimers, iter_4_0)
+		end
+	end
+
+	return
+end
+
+function var_0_1.ClearInMapTimers(arg_5_0)
+	ipairs = var_1_10001
+
+	for iter_5_0, iter_5_1 in var_1_10001(arg_5_0.inMapTimers) do
+		iter_5_1:Stop()
+	end
+
+	arg_5_0.inMapTimers = {}
+
+	return
+end
+
+function var_0_1.AddTimer(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4)
+	Timer = var_1_10005
+
+	local var_6_0 = var_1_10005.New(arg_6_1, arg_6_2, arg_6_3, arg_6_4)
+
+	table = var_1_10006
+
+	var_1_10006.insert(arg_6_0.timers, var_6_0)
+
+	return var_6_0
+end
+
+function var_0_1.RemoveTimer(arg_7_0, arg_7_1)
+	arg_7_1:Stop()
+
+	ipairs = var_2
+
+	for iter_7_0, iter_7_1 in var_2(arg_7_0.timers) do
+		if iter_7_1 == arg_7_1 then
+			table = var_1_10007
+
+			var_1_10007.remove(arg_7_0.timers, iter_7_0)
+		end
+	end
+
+	return
+end
+
+function var_0_1.ClearTimers(arg_8_0)
+	ipairs = var_1_10001
+
+	for iter_8_0, iter_8_1 in var_1_10001(arg_8_0.timers) do
+		iter_8_1:Stop()
+	end
+
+	arg_8_0.timers = {}
+
+	return
+end
+
+function var_0_1.AddInMapTween(arg_9_0, arg_9_1)
+	assert = var_1_10002
+
+	if arg_9_1 then
+		::label_9_0::
+
+		type = var_1_10004
+		var_1_10004 = var_1_10004(arg_9_1) == "number"
+	end
+
+	var_1_10002(var_1_10004)
+
+	table = var_1_10002
+
+	var_1_10002.insert(arg_9_0.inMapTweens, arg_9_1)
+
+	return
+end
+
+function var_0_1.RemoveInMapTween(arg_10_0, arg_10_1)
+	assert = var_1_10002
+
+	if arg_10_1 then
+		::label_10_0::
+
+		type = var_1_10004
+		var_1_10004 = var_1_10004(arg_10_1) == "number"
+	end
+
+	var_1_10002(var_1_10004)
+
+	LeanTween = var_1_10002
+
+	var_1_10002.cancel(arg_10_1)
+
+	ipairs = var_2
+
+	for iter_10_0, iter_10_1 in var_2(arg_10_0.inMapTweens) do
+		if iter_10_1 == arg_10_1 then
+			table = var_1_10007
+
+			var_1_10007.remove(arg_10_0.inMapTweens, iter_10_0)
+
+			break
+		end
+	end
+
+	return
+end
+
+function var_0_1.ClearInMapTweens(arg_11_0)
+	ipairs = var_1_10001
+
+	for iter_11_0, iter_11_1 in var_1_10001(arg_11_0.inMapTweens) do
+		LeanTween = var_1_10006
+
+		var_1_10006.cancel(iter_11_1)
+	end
+
+	arg_11_0.inMapTweens = {}
+
+	return
+end
+
+function var_0_1.AddTween(arg_12_0, arg_12_1)
+	assert = var_1_10002
+
+	if arg_12_1 then
+		::label_12_0::
+
+		type = var_1_10004
+		var_1_10004 = var_1_10004(arg_12_1) == "number"
+	end
+
+	var_1_10002(var_1_10004)
+
+	table = var_1_10002
+
+	var_1_10002.insert(arg_12_0.tweens, arg_12_1)
+
+	return
+end
+
+function var_0_1.RemoveTween(arg_13_0, arg_13_1)
+	assert = var_1_10002
+
+	if arg_13_1 then
+		::label_13_0::
+
+		type = var_1_10004
+		var_1_10004 = var_1_10004(arg_13_1) == "number"
+	end
+
+	var_1_10002(var_1_10004)
+
+	LeanTween = var_1_10002
+
+	var_1_10002.cancel(arg_13_1)
+
+	ipairs = var_2
+
+	for iter_13_0, iter_13_1 in var_2(arg_13_0.tweens) do
+		if iter_13_1 == arg_13_1 then
+			table = var_1_10007
+
+			var_1_10007.remove(arg_13_0.tweens, iter_13_0)
+		end
+	end
+
+	return
+end
+
+function var_0_1.ClearTweens(arg_14_0)
+	ipairs = var_1_10001
+
+	for iter_14_0, iter_14_1 in var_1_10001(arg_14_0.tweens) do
+		LeanTween = var_1_10006
+
+		var_1_10006.cancel(iter_14_1)
+	end
+
+	arg_14_0.tweens = {}
+
+	return
+end
+
+return var_0_1

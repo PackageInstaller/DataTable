@@ -1,0 +1,6867 @@
+﻿pg = var_0_10000
+
+local var_0_0
+
+var_0_0 = var_0_10000 or {}
+pg = pg
+rawget = var_0_10001
+pg = var_0_10002
+
+local var_0_2
+
+if not var_0_10001(var_0_10002, "benefit_buff_template") then
+	setmetatable = var_0_2
+
+	local var_0_1 = {
+		__name = "benefit_buff_template"
+	}
+
+	confNEO = var_3
+	var_0_2 = var_0_2(var_0_1, var_3)
+end
+
+var_0.benefit_buff_template = var_0_2
+pg = var_0
+
+local var_0_3 = var_0.benefit_buff_template
+
+var_0_3.__namecode__ = true
+pg = var_0_3
+
+local var_0_4 = var_0_3.benefit_buff_template
+
+var_0_4.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22,
+	23,
+	24,
+	25,
+	26,
+	27,
+	28,
+	29,
+	30,
+	31,
+	32,
+	33,
+	34,
+	35,
+	36,
+	37,
+	38,
+	39,
+	40,
+	41,
+	42,
+	43,
+	44,
+	45,
+	46,
+	47,
+	48,
+	49,
+	50,
+	51,
+	52,
+	53,
+	54,
+	55,
+	56,
+	57,
+	58,
+	59,
+	60,
+	61,
+	62,
+	63,
+	64,
+	65,
+	66,
+	67,
+	68,
+	69,
+	70,
+	71,
+	72,
+	73,
+	74,
+	75,
+	76,
+	77,
+	78,
+	79,
+	80,
+	82,
+	83,
+	84,
+	85,
+	86,
+	87,
+	88,
+	89,
+	90,
+	91,
+	92,
+	93,
+	94,
+	95,
+	101,
+	102,
+	103,
+	104,
+	110,
+	111,
+	112,
+	113,
+	114,
+	115,
+	116,
+	117,
+	118,
+	119,
+	120,
+	121,
+	122,
+	123,
+	124,
+	125,
+	126,
+	127,
+	128,
+	129,
+	130,
+	131,
+	132,
+	133,
+	134,
+	135,
+	136,
+	137,
+	138,
+	139,
+	140,
+	141,
+	142,
+	143,
+	144,
+	145,
+	300001,
+	300002,
+	300003,
+	300011,
+	300012,
+	300013,
+	300021,
+	300022,
+	300023,
+	300031,
+	300032,
+	300033,
+	300041,
+	300042,
+	300043,
+	300051,
+	300052,
+	300053,
+	300061,
+	300062,
+	300063,
+	300071,
+	300081,
+	300082,
+	300083,
+	300084,
+	300085,
+	300086,
+	300087,
+	300088,
+	300089,
+	300090,
+	300091,
+	300092,
+	300093,
+	300094,
+	300095,
+	300096,
+	300097,
+	300098,
+	300099,
+	300100,
+	300101,
+	300102,
+	300103,
+	300104,
+	300105,
+	300106,
+	300107,
+	300108,
+	300109,
+	300110,
+	300111,
+	300112,
+	300201,
+	300202,
+	300203,
+	300204,
+	300205,
+	300206,
+	300207,
+	300208,
+	300209,
+	300210,
+	300211,
+	300212,
+	300213,
+	300214,
+	300215,
+	300216,
+	300217,
+	300218,
+	300219,
+	300220,
+	300221,
+	300300,
+	300301,
+	300302,
+	300303,
+	300304,
+	300305,
+	300306,
+	300307,
+	300308,
+	300309,
+	300310,
+	300311,
+	300312,
+	300313,
+	300314,
+	300315,
+	300316,
+	300317,
+	300318,
+	300319,
+	300320,
+	300321,
+	300322,
+	300323,
+	300324,
+	300325,
+	300326,
+	300327
+}
+pg = var_0_4
+
+local var_0_5 = var_0_4.benefit_buff_template
+
+var_0_5.get_id_list_by_benefit_type = {
+	battle_buff = {
+		11,
+		16,
+		17,
+		18,
+		26,
+		27,
+		28,
+		29,
+		30,
+		31,
+		35,
+		36,
+		37,
+		49,
+		50,
+		51,
+		52,
+		53,
+		54,
+		55,
+		56,
+		57,
+		58,
+		59,
+		63,
+		64,
+		68,
+		71,
+		72,
+		74,
+		78,
+		79,
+		82,
+		86,
+		87,
+		89,
+		93,
+		94,
+		114,
+		115,
+		116,
+		117,
+		144,
+		300001,
+		300002,
+		300003,
+		300011,
+		300012,
+		300013,
+		300021,
+		300022,
+		300023,
+		300031,
+		300032,
+		300033,
+		300041,
+		300042,
+		300043,
+		300051,
+		300052,
+		300053,
+		300086,
+		300087,
+		300088,
+		300089,
+		300090,
+		300104,
+		300105,
+		300106,
+		300201,
+		300202,
+		300203,
+		300205,
+		300206,
+		300207,
+		300209,
+		300210,
+		300211,
+		300213,
+		300214,
+		300215,
+		300217,
+		300218,
+		300219,
+		300301,
+		300302,
+		300303,
+		300304,
+		300305,
+		300306,
+		300307,
+		300308,
+		300309,
+		300310,
+		300311,
+		300312,
+		300313,
+		300314,
+		300315,
+		300316,
+		300317,
+		300318,
+		300319,
+		300320,
+		300321,
+		300322,
+		300323,
+		300324,
+		300325,
+		300326,
+		300327
+	},
+	build_buff = {
+		126,
+		127,
+		128,
+		129,
+		130,
+		131,
+		132,
+		133,
+		134,
+		135,
+		136,
+		137,
+		138,
+		139,
+		140,
+		141
+	},
+	chapter_up = {
+		48
+	},
+	character_strengthen_exp = {
+		104
+	},
+	desc = {
+		47,
+		300221,
+		300300
+	},
+	dorm_energy = {
+		73
+	},
+	dorm_exp = {
+		1,
+		2,
+		3,
+		22,
+		23,
+		24,
+		44,
+		45,
+		46,
+		61,
+		62,
+		66,
+		67,
+		76,
+		77,
+		84,
+		85,
+		91,
+		92,
+		102,
+		122,
+		123,
+		124,
+		125,
+		300096,
+		300097,
+		300098,
+		300099,
+		300100,
+		300110,
+		300111,
+		300112
+	},
+	extra_activity_drop = {
+		9
+	},
+	extra_drop = {
+		8
+	},
+	intimacy_up_extra = {
+		12,
+		145
+	},
+	more_oil = {
+		5
+	},
+	rookie_battle_exp = {
+		4,
+		101
+	},
+	ship_battle_exp = {
+		7,
+		13,
+		14,
+		15,
+		32,
+		33,
+		34,
+		41,
+		42,
+		43,
+		60,
+		65,
+		69,
+		70,
+		75,
+		80,
+		83,
+		88,
+		90,
+		95,
+		110,
+		111,
+		112,
+		113,
+		300061,
+		300062,
+		300063,
+		300081,
+		300082,
+		300083,
+		300084,
+		300085,
+		300101,
+		300102,
+		300103
+	},
+	ship_battle_intimacy = {
+		142,
+		300071,
+		300204,
+		300208,
+		300212,
+		300216,
+		300220
+	},
+	skill_learn_time = {
+		103
+	},
+	skill_learncost_up = {
+		10,
+		19,
+		20,
+		21,
+		38,
+		39,
+		40,
+		118,
+		119,
+		120,
+		121,
+		143,
+		300091,
+		300092,
+		300093,
+		300094,
+		300095,
+		300107,
+		300108,
+		300109
+	},
+	urpt_drop_up = {
+		25
+	},
+	user_battle_exp = {
+		6
+	}
+}
+pg = var_0_5
+pg = var_1
+
+local var_0_6
+
+if not var_1.base then
+	var_0_6 = {}
+end
+
+var_0_5.base = var_0_6
+pg = var_0_5
+var_0_5.base.benefit_buff_template = {}
+
+;(function()
+	pg = var_1_10000
+
+	local var_1_0 = var_1_10000.base.benefit_buff_template
+
+	var_1_0[1] = {
+		icon = "Props/haijungali",
+		name = "",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "后宅经验加成提高5%",
+		benefit_effect = "5",
+		id = 1,
+		type_priority = 0,
+		benefit_type = "dorm_exp"
+	}
+	pg = var_1_0
+
+	local var_1_1 = var_1_0.base.benefit_buff_template
+
+	var_1_1[2] = {
+		icon = "Props/huangjialiaoli",
+		name = "",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "后宅经验加成提高10%",
+		benefit_effect = "10",
+		id = 2,
+		type_priority = 0,
+		benefit_type = "dorm_exp"
+	}
+	pg = var_1_1
+
+	local var_1_2 = var_1_1.base.benefit_buff_template
+
+	var_1_2[3] = {
+		icon = "Props/manhanquanxi",
+		name = "",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "后宅经验加成提高20%",
+		benefit_effect = "20",
+		id = 3,
+		type_priority = 0,
+		benefit_type = "dorm_exp"
+	}
+	pg = var_1_2
+
+	local var_1_3 = var_1_2.base.benefit_buff_template
+
+	var_1_3[4] = {
+		icon = "Props/xinshou",
+		name = "经验加成",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "指挥官等级小于80级时，在普通关卡、困难关卡、活动关卡、每日活动中获得的指挥官经验和角色经验提高100%",
+		benefit_effect = "100",
+		id = 4,
+		type_priority = 0,
+		benefit_type = "rookie_battle_exp",
+		benefit_condition = {
+			"lv",
+			"<",
+			80
+		}
+	}
+	pg = var_1_3
+
+	local var_1_4 = var_1_3.base.benefit_buff_template
+
+	var_1_4[5] = {
+		icon = "Props/xinshou",
+		name = "石油消耗增加",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "【高效作战指令书用】普通关卡、困难关卡、活动关卡的油耗增加200%",
+		benefit_effect = "100",
+		id = 5,
+		type_priority = 0,
+		benefit_type = "more_oil"
+	}
+	pg = var_1_4
+
+	local var_1_5 = var_1_4.base.benefit_buff_template
+
+	var_1_5[6] = {
+		icon = "Props/xinshou",
+		name = "指挥官经验加成",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "普通关卡、困难关卡、活动关卡的指挥官经验获取提高200%",
+		benefit_effect = "100",
+		id = 6,
+		type_priority = 0,
+		benefit_type = "user_battle_exp"
+	}
+	pg = var_1_5
+
+	local var_1_6 = var_1_5.base.benefit_buff_template
+
+	var_1_6[7] = {
+		icon = "Props/xinshou",
+		name = "舰娘经验加成",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "普通关卡、困难关卡、活动关卡的角色经验获取提高200%",
+		benefit_effect = "100",
+		id = 7,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp"
+	}
+	pg = var_1_6
+
+	local var_1_7 = var_1_6.base.benefit_buff_template
+
+	var_1_7[8] = {
+		icon = "Props/xinshou",
+		name = "掉落加成",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "【高效作战指令书用】普通关卡、困难关卡、活动关卡额外掉落一次",
+		benefit_effect = "1",
+		id = 8,
+		type_priority = 0,
+		benefit_type = "extra_drop"
+	}
+	pg = var_1_7
+
+	local var_1_8 = var_1_7.base.benefit_buff_template
+
+	var_1_8[9] = {
+		icon = "Props/xinshou",
+		name = "活动掉落加成",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "【高效作战指令书用】活动额外掉落（expedition_activity）   额外掉落一次，不与每日首次掉落叠加",
+		benefit_effect = "1",
+		id = 9,
+		type_priority = 0,
+		benefit_type = "extra_activity_drop"
+	}
+	pg = var_1_8
+
+	local var_1_9 = var_1_8.base.benefit_buff_template
+
+	var_1_9[10] = {
+		icon = "Props/buff_qiaozhong_10",
+		name = "学业",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "战术学院技能学习时间略微减少\n剩余时间:$1",
+		benefit_effect = "300",
+		id = 10,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up"
+	}
+	pg = var_1_9
+
+	local var_1_10 = var_1_9.base.benefit_buff_template
+
+	var_1_10[11] = {
+		icon = "Props/buff_qiaozhong_11",
+		name = "事业",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "主线、困难、作战档案关卡中，我方战斗内造成的伤害略微提高\n剩余时间:$1",
+		benefit_effect = "522",
+		id = 11,
+		type_priority = 0,
+		benefit_type = "battle_buff"
+	}
+	pg = var_1_10
+
+	local var_1_11 = var_1_10.base.benefit_buff_template
+
+	var_1_11[12] = {
+		icon = "Props/buff_qiaozhong_12",
+		name = "姻缘",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "秘书舰好感度提高速度加快\n剩余时间:$1",
+		benefit_effect = "1",
+		id = 12,
+		type_priority = 0,
+		benefit_type = "intimacy_up_extra"
+	}
+	pg = var_1_11
+
+	local var_1_12 = var_1_11.base.benefit_buff_template
+
+	var_1_12[13] = {
+		icon = "Props/xinshou",
+		name = "舰娘经验加成1",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，角色经验获取提高3%",
+		benefit_effect = "3",
+		id = 13,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			4532,
+			{
+				19,
+				1
+			}
+		}
+	}
+	pg = var_1_12
+
+	local var_1_13 = var_1_12.base.benefit_buff_template
+
+	var_1_13[14] = {
+		icon = "Props/xinshou",
+		name = "舰娘经验加成2",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，角色经验获取提高4%",
+		benefit_effect = "4",
+		id = 14,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			4532,
+			{
+				19,
+				2
+			}
+		}
+	}
+	pg = var_1_13
+
+	local var_1_14 = var_1_13.base.benefit_buff_template
+
+	var_1_14[15] = {
+		icon = "Props/xinshou",
+		name = "舰娘经验加成3",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，角色经验获取提高5%",
+		benefit_effect = "5",
+		id = 15,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			4532,
+			{
+				19,
+				3
+			}
+		}
+	}
+	pg = var_1_14
+
+	local var_1_15 = var_1_14.base.benefit_buff_template
+
+	var_1_15[16] = {
+		icon = "Props/buff_minigame_11",
+		name = "战斗伤害加成1",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，造成的伤害提高1%",
+		benefit_effect = "500",
+		id = 16,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4532,
+			{
+				20,
+				1
+			}
+		}
+	}
+	pg = var_1_15
+
+	local var_1_16 = var_1_15.base.benefit_buff_template
+
+	var_1_16[17] = {
+		icon = "Props/buff_minigame_11",
+		name = "战斗伤害加成2",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，造成的伤害提高2%",
+		benefit_effect = "502",
+		id = 17,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4532,
+			{
+				20,
+				2
+			}
+		}
+	}
+	pg = var_1_16
+
+	local var_1_17 = var_1_16.base.benefit_buff_template
+
+	var_1_17[18] = {
+		icon = "Props/buff_minigame_11",
+		name = "战斗伤害加成3",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，造成的伤害提高3%",
+		benefit_effect = "504",
+		id = 18,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4532,
+			{
+				20,
+				3
+			}
+		}
+	}
+	pg = var_1_17
+
+	local var_1_18 = var_1_17.base.benefit_buff_template
+
+	var_1_18[19] = {
+		icon = "Props/buff_minigame_10",
+		name = "战术学院学习时间缩短1",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少3%",
+		benefit_effect = "300",
+		id = 19,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"activity",
+			4532,
+			{
+				21,
+				1
+			}
+		}
+	}
+	pg = var_1_18
+
+	local var_1_19 = var_1_18.base.benefit_buff_template
+
+	var_1_19[20] = {
+		icon = "Props/buff_minigame_10",
+		name = "战术学院学习时间缩短2",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少4%",
+		benefit_effect = "400",
+		id = 20,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"activity",
+			4532,
+			{
+				21,
+				2
+			}
+		}
+	}
+	pg = var_1_19
+
+	local var_1_20 = var_1_19.base.benefit_buff_template
+
+	var_1_20[21] = {
+		icon = "Props/buff_minigame_10",
+		name = "战术学院学习时间缩短3",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少5%",
+		benefit_effect = "500",
+		id = 21,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"activity",
+			4532,
+			{
+				21,
+				3
+			}
+		}
+	}
+	pg = var_1_20
+
+	local var_1_21 = var_1_20.base.benefit_buff_template
+
+	var_1_21[22] = {
+		icon = "Props/buff_minigame_12",
+		name = "后宅经验加成1",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高3%",
+		benefit_effect = "3",
+		id = 22,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			4532,
+			{
+				22,
+				1
+			}
+		}
+	}
+	pg = var_1_21
+
+	local var_1_22 = var_1_21.base.benefit_buff_template
+
+	var_1_22[23] = {
+		icon = "Props/buff_minigame_12",
+		name = "后宅经验加成2",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高4%",
+		benefit_effect = "4",
+		id = 23,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			4532,
+			{
+				22,
+				2
+			}
+		}
+	}
+	pg = var_1_22
+
+	local var_1_23 = var_1_22.base.benefit_buff_template
+
+	var_1_23[24] = {
+		icon = "Props/buff_minigame_12",
+		name = "后宅经验加成3",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高5%",
+		benefit_effect = "5",
+		id = 24,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			4532,
+			{
+				22,
+				3
+			}
+		}
+	}
+	pg = var_1_23
+
+	local var_1_24 = var_1_23.base.benefit_buff_template
+
+	var_1_24[25] = {
+		icon = "Props/buff_urptup",
+		name = "活动关卡特装原型掉落加成",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "通过「蝶海梦花」活动关卡获得的特装原型数量翻倍",
+		benefit_effect = "0",
+		id = 25,
+		type_priority = 0,
+		benefit_type = "urpt_drop_up"
+	}
+	pg = var_1_24
+
+	local var_1_25 = var_1_24.base.benefit_buff_template
+
+	var_1_25[26] = {
+		icon = "Props/yanchangli1",
+		name = "演唱力 ",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，造成的伤害提高1%",
+		benefit_effect = "500",
+		id = 26,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			5308,
+			0
+		}
+	}
+	pg = var_1_25
+
+	local var_1_26 = var_1_25.base.benefit_buff_template
+
+	var_1_26[27] = {
+		icon = "Props/yanchangli2",
+		name = "演唱力 ",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，造成的伤害提高2%",
+		benefit_effect = "502",
+		id = 27,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			5308,
+			0
+		}
+	}
+	pg = var_1_26
+
+	local var_1_27 = var_1_26.base.benefit_buff_template
+
+	var_1_27[28] = {
+		icon = "Props/yanchangli3",
+		name = "演唱力 ",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，造成的伤害提高3%",
+		benefit_effect = "504",
+		id = 28,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			5308,
+			0
+		}
+	}
+	pg = var_1_27
+
+	local var_1_28 = var_1_27.base.benefit_buff_template
+
+	var_1_28[29] = {
+		icon = "Props/wudaoli1",
+		name = "舞蹈力 ",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，受到的伤害减少1%",
+		benefit_effect = "510",
+		id = 29,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			5308,
+			0
+		}
+	}
+	pg = var_1_28
+
+	local var_1_29 = var_1_28.base.benefit_buff_template
+
+	var_1_29[30] = {
+		icon = "Props/wudaoli2",
+		name = "舞蹈力 ",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，受到的伤害减少2%",
+		benefit_effect = "512",
+		id = 30,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			5308,
+			0
+		}
+	}
+	pg = var_1_29
+
+	local var_1_30 = var_1_29.base.benefit_buff_template
+
+	var_1_30[31] = {
+		icon = "Props/wudaoli3",
+		name = "舞蹈力 ",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，受到的伤害减少3%",
+		benefit_effect = "514",
+		id = 31,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			5308,
+			0
+		}
+	}
+	pg = var_1_30
+
+	local var_1_31 = var_1_30.base.benefit_buff_template
+
+	var_1_31[32] = {
+		icon = "Props/biaoyanli1",
+		name = "表演力 ",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，角色经验获取提高3%",
+		benefit_effect = "3",
+		id = 32,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			5308,
+			0
+		}
+	}
+	pg = var_1_31
+
+	local var_1_32 = var_1_31.base.benefit_buff_template
+
+	var_1_32[33] = {
+		icon = "Props/biaoyanli2",
+		name = "表演力 ",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，角色经验获取提高4%",
+		benefit_effect = "4",
+		id = 33,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			5308,
+			0
+		}
+	}
+	pg = var_1_32
+
+	local var_1_33 = var_1_32.base.benefit_buff_template
+
+	var_1_33[34] = {
+		icon = "Props/biaoyanli3",
+		name = "表演力 ",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，角色经验获取提高5%",
+		benefit_effect = "5",
+		id = 34,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			5308,
+			0
+		}
+	}
+	pg = var_1_33
+
+	local var_1_34 = var_1_33.base.benefit_buff_template
+
+	var_1_34[35] = {
+		icon = "Props/yanchangli1",
+		name = "<color=#ff5c5c>力量</color>LV.1：",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，造成的伤害提高1%",
+		benefit_effect = "500",
+		id = 35,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4775,
+			0
+		}
+	}
+	pg = var_1_34
+
+	local var_1_35 = var_1_34.base.benefit_buff_template
+
+	var_1_35[36] = {
+		icon = "Props/yanchangli2",
+		name = "<color=#ff5c5c>力量</color>LV.2：",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，造成的伤害提高2%",
+		benefit_effect = "502",
+		id = 36,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4775,
+			0
+		}
+	}
+	pg = var_1_35
+
+	local var_1_36 = var_1_35.base.benefit_buff_template
+
+	var_1_36[37] = {
+		icon = "Props/yanchangli3",
+		name = "<color=#ff5c5c>力量</color>MAX：",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，造成的伤害提高3%",
+		benefit_effect = "504",
+		id = 37,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4775,
+			0
+		}
+	}
+	pg = var_1_36
+
+	local var_1_37 = var_1_36.base.benefit_buff_template
+
+	var_1_37[38] = {
+		icon = "Props/buff_minigame_10",
+		name = "<color=#00BFFF>技巧</color>LV.1：",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少3%",
+		benefit_effect = "300",
+		id = 38,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"activity",
+			4775,
+			0
+		}
+	}
+	pg = var_1_37
+
+	local var_1_38 = var_1_37.base.benefit_buff_template
+
+	var_1_38[39] = {
+		icon = "Props/buff_minigame_10",
+		name = "<color=#00BFFF>技巧</color>LV.2：",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少4%",
+		benefit_effect = "400",
+		id = 39,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"activity",
+			4775,
+			0
+		}
+	}
+	pg = var_1_38
+
+	local var_1_39 = var_1_38.base.benefit_buff_template
+
+	var_1_39[40] = {
+		icon = "Props/buff_minigame_10",
+		name = "<color=#00BFFF>技巧</color>MAX：",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少5%",
+		benefit_effect = "500",
+		id = 40,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"activity",
+			4775,
+			0
+		}
+	}
+	pg = var_1_39
+
+	local var_1_40 = var_1_39.base.benefit_buff_template
+
+	var_1_40[41] = {
+		icon = "Props/biaoyanli1",
+		name = "<color=#ffde38>体力</color>LV.1：",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，角色经验获取提高3%",
+		benefit_effect = "3",
+		id = 41,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			4775,
+			0
+		}
+	}
+	pg = var_1_40
+
+	local var_1_41 = var_1_40.base.benefit_buff_template
+
+	var_1_41[42] = {
+		icon = "Props/biaoyanli2",
+		name = "<color=#ffde38>体力</color>LV.2：",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，角色经验获取提高4%",
+		benefit_effect = "4",
+		id = 42,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			4775,
+			0
+		}
+	}
+	pg = var_1_41
+
+	local var_1_42 = var_1_41.base.benefit_buff_template
+
+	var_1_42[43] = {
+		icon = "Props/biaoyanli3",
+		name = "<color=#ffde38>体力</color>MAX：",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，角色经验获取提高5%",
+		benefit_effect = "5",
+		id = 43,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			4775,
+			0
+		}
+	}
+	pg = var_1_42
+
+	local var_1_43 = var_1_42.base.benefit_buff_template
+
+	var_1_43[44] = {
+		icon = "Props/buff_minigame_12",
+		name = "<color=#FF69B4>魅力</color>LV.1：",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高3%",
+		benefit_effect = "3",
+		id = 44,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			4775,
+			0
+		}
+	}
+	pg = var_1_43
+
+	local var_1_44 = var_1_43.base.benefit_buff_template
+
+	var_1_44[45] = {
+		icon = "Props/buff_minigame_12",
+		name = "<color=#FF69B4>魅力</color>LV.2：",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高4%",
+		benefit_effect = "4",
+		id = 45,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			4775,
+			0
+		}
+	}
+	pg = var_1_44
+
+	local var_1_45 = var_1_44.base.benefit_buff_template
+
+	var_1_45[46] = {
+		icon = "Props/buff_minigame_12",
+		name = "<color=#FF69B4>魅力</color>MAX：",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高5%",
+		benefit_effect = "5",
+		id = 46,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			4775,
+			0
+		}
+	}
+	pg = var_1_45
+
+	local var_1_46 = var_1_45.base.benefit_buff_template
+
+	var_1_46[47] = {
+		icon = "Props/xinshou",
+		name = "特殊作战加成描述",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		benefit_condition = "61001",
+		desc = "消耗2倍石油\n结算收益2倍",
+		benefit_effect = "0",
+		id = 47,
+		type_priority = 0,
+		benefit_type = "desc"
+	}
+	pg = var_1_46
+
+	local var_1_47 = var_1_46.base.benefit_buff_template
+
+	var_1_47[48] = {
+		icon = "Props/xinshou",
+		name = "特殊作战加成",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "【高效作战指令书用】好感度、心情值、指挥官经验、指挥喵经验、舰船经验加成",
+		benefit_effect = "100",
+		id = 48,
+		type_priority = 0,
+		benefit_type = "chapter_up"
+	}
+	pg = var_1_47
+
+	local var_1_48 = var_1_47.base.benefit_buff_template
+
+	var_1_48[49] = {
+		icon = "Props/yanchangli1",
+		name = "皇家午茶Lv.1",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，受到的伤害减少1%",
+		benefit_effect = "510",
+		id = 49,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4202,
+			0
+		}
+	}
+	pg = var_1_48
+
+	local var_1_49 = var_1_48.base.benefit_buff_template
+
+	var_1_49[50] = {
+		icon = "Props/yanchangli2",
+		name = "皇家午茶Lv.2",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，受到的伤害减少2%",
+		benefit_effect = "512",
+		id = 50,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4202,
+			0
+		}
+	}
+	pg = var_1_49
+
+	local var_1_50 = var_1_49.base.benefit_buff_template
+
+	var_1_50[51] = {
+		icon = "Props/yanchangli3",
+		name = "皇家午茶Lv.3",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，受到的伤害减少3%",
+		benefit_effect = "514",
+		id = 51,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4202,
+			0
+		}
+	}
+	pg = var_1_50
+
+	local var_1_51 = var_1_50.base.benefit_buff_template
+
+	var_1_51[52] = {
+		icon = "Props/yanchangli2",
+		name = "皇家午茶Lv.4",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，受到的伤害减少4%",
+		benefit_effect = "516",
+		id = 52,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4202,
+			0
+		}
+	}
+	pg = var_1_51
+
+	local var_1_52 = var_1_51.base.benefit_buff_template
+
+	var_1_52[53] = {
+		icon = "Props/yanchangli3",
+		name = "皇家午茶Lv.5",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，受到的伤害减少5%",
+		benefit_effect = "518",
+		id = 53,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4202,
+			0
+		}
+	}
+	pg = var_1_52
+
+	local var_1_53 = var_1_52.base.benefit_buff_template
+
+	var_1_53[54] = {
+		icon = "Props/wudaoli1",
+		name = "莱茵咖啡馆Lv.1",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，造成的伤害提高1%",
+		benefit_effect = "500",
+		id = 54,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4202,
+			0
+		}
+	}
+	pg = var_1_53
+
+	local var_1_54 = var_1_53.base.benefit_buff_template
+
+	var_1_54[55] = {
+		icon = "Props/wudaoli2",
+		name = "莱茵咖啡馆Lv.2",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，造成的伤害提高2%",
+		benefit_effect = "502",
+		id = 55,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4202,
+			0
+		}
+	}
+	pg = var_1_54
+
+	local var_1_55 = var_1_54.base.benefit_buff_template
+
+	var_1_55[56] = {
+		icon = "Props/wudaoli3",
+		name = "莱茵咖啡馆Lv.3",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，造成的伤害提高3%",
+		benefit_effect = "504",
+		id = 56,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4202,
+			0
+		}
+	}
+	pg = var_1_55
+
+	local var_1_56 = var_1_55.base.benefit_buff_template
+
+	var_1_56[57] = {
+		icon = "Props/wudaoli2",
+		name = "莱茵咖啡馆Lv.4",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，造成的伤害提高4%",
+		benefit_effect = "506",
+		id = 57,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4202,
+			0
+		}
+	}
+	pg = var_1_56
+
+	local var_1_57 = var_1_56.base.benefit_buff_template
+
+	var_1_57[58] = {
+		icon = "Props/wudaoli3",
+		name = "莱茵咖啡馆Lv.5",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "主线、困难、活动、作战档案关卡中，造成的伤害提高5%",
+		benefit_effect = "508",
+		id = 58,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4202,
+			0
+		}
+	}
+	pg = var_1_57
+
+	local var_1_58 = var_1_57.base.benefit_buff_template
+
+	var_1_58[59] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "鹬的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "鹬的祈愿——主线、困难、活动、作战档案关卡中，受到的伤害减少3%\n剩余时间:$1",
+		benefit_effect = "520",
+		id = 59,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4203,
+			0
+		}
+	}
+	pg = var_1_58
+
+	local var_1_59 = var_1_58.base.benefit_buff_template
+
+	var_1_59[60] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "鹤的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "鹤的祈愿——主线、困难、活动、作战档案关卡中，角色经验获取提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 60,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			4203,
+			0
+		}
+	}
+	pg = var_1_59
+
+	local var_1_60 = var_1_59.base.benefit_buff_template
+
+	var_1_60[61] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "恶毒的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "恶毒的祈愿——后宅经验加成提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 61,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			4203,
+			0
+		}
+	}
+	pg = var_1_60
+
+	local var_1_61 = var_1_60.base.benefit_buff_template
+
+	var_1_61[62] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "胜利的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "胜利的祈愿——后宅经验加成提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 62,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			4203,
+			0
+		}
+	}
+	pg = var_1_61
+
+	local var_1_62 = var_1_61.base.benefit_buff_template
+
+	var_1_62[63] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "{namecode:436}的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "{namecode:436}的祈愿——主线、困难、活动、作战档案关卡中，受到的伤害减少3%\n剩余时间:$1",
+		benefit_effect = "520",
+		id = 63,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4203,
+			0
+		}
+	}
+	pg = var_1_62
+
+	local var_1_63 = var_1_62.base.benefit_buff_template
+
+	var_1_63[64] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "光辉的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "光辉的祈愿——主线、困难、活动、作战档案关卡中，受到的伤害减少3%\n剩余时间:$1",
+		benefit_effect = "520",
+		id = 64,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4203,
+			0
+		}
+	}
+	pg = var_1_63
+
+	local var_1_64 = var_1_63.base.benefit_buff_template
+
+	var_1_64[65] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "埃塞克斯的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "埃塞克斯的祈愿——主线、困难、活动、作战档案关卡中，角色经验获取提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 65,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			4203,
+			0
+		}
+	}
+	pg = var_1_64
+
+	local var_1_65 = var_1_64.base.benefit_buff_template
+
+	var_1_65[66] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "贝尔法斯特的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "贝尔法斯特的祈愿——后宅经验加成提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 66,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			4603,
+			0
+		}
+	}
+	pg = var_1_65
+
+	local var_1_66 = var_1_65.base.benefit_buff_template
+
+	var_1_66[67] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "凯旋的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "凯旋的祈愿——后宅经验加成提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 67,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			4603,
+			0
+		}
+	}
+	pg = var_1_66
+
+	local var_1_67 = var_1_66.base.benefit_buff_template
+
+	var_1_67[68] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "鹬的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "鹬的祈愿——主线、困难、活动、作战档案关卡中，受到的伤害减少3%\n剩余时间:$1",
+		benefit_effect = "520",
+		id = 68,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4603,
+			0
+		}
+	}
+	pg = var_1_67
+
+	local var_1_68 = var_1_67.base.benefit_buff_template
+
+	var_1_68[69] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "南达科他的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "南达科他的祈愿——主线、困难、活动、作战档案关卡中，角色经验获取提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 69,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			4603,
+			0
+		}
+	}
+	pg = var_1_68
+
+	local var_1_69 = var_1_68.base.benefit_buff_template
+
+	var_1_69[70] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "{namecode:437}的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "{namecode:437}的祈愿——主线、困难、活动、作战档案关卡中，角色经验获取提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 70,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			4603,
+			0
+		}
+	}
+	pg = var_1_69
+
+	local var_1_70 = var_1_69.base.benefit_buff_template
+
+	var_1_70[71] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "光辉的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "光辉的祈愿——主线、困难、活动、作战档案关卡中，受到的伤害减少3%\n剩余时间:$1",
+		benefit_effect = "520",
+		id = 71,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4603,
+			0
+		}
+	}
+	pg = var_1_70
+
+	local var_1_71 = var_1_70.base.benefit_buff_template
+
+	var_1_71[72] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "{namecode:526}的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "{namecode:526}的祈愿——主线、困难、活动、作战档案关卡中，受到的伤害减少3%\n剩余时间:$1",
+		benefit_effect = "520",
+		id = 72,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4603,
+			0
+		}
+	}
+	pg = var_1_71
+
+	local var_1_72 = var_1_71.base.benefit_buff_template
+
+	var_1_72[73] = {
+		icon = "Props/60413",
+		name = "夏日运动饮料",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "后宅所有角色心情恢复增加",
+		benefit_effect = "1",
+		id = 73,
+		type_priority = 0,
+		benefit_type = "dorm_energy"
+	}
+	pg = var_1_72
+
+	local var_1_73 = var_1_72.base.benefit_buff_template
+
+	var_1_73[74] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "{namecode:418}的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "{namecode:418}的祈愿——主线、困难、活动、作战档案关卡中，受到的伤害减少3%\n剩余时间:$1",
+		benefit_effect = "520",
+		id = 74,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			5142,
+			0
+		}
+	}
+	pg = var_1_73
+
+	local var_1_74 = var_1_73.base.benefit_buff_template
+
+	var_1_74[75] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "{namecode:203}的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "{namecode:203}的祈愿——主线、困难、活动、作战档案关卡中，角色经验获取提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 75,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			5142,
+			0
+		}
+	}
+	pg = var_1_74
+
+	local var_1_75 = var_1_74.base.benefit_buff_template
+
+	var_1_75[76] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "可畏的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "可畏的祈愿——后宅经验加成提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 76,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			5142,
+			0
+		}
+	}
+	pg = var_1_75
+
+	local var_1_76 = var_1_75.base.benefit_buff_template
+
+	var_1_76[77] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "黎塞留的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "黎塞留的祈愿——后宅经验加成提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 77,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			5142,
+			0
+		}
+	}
+	pg = var_1_76
+
+	local var_1_77 = var_1_76.base.benefit_buff_template
+
+	var_1_77[78] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "塔什干的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "塔什干的祈愿——主线、困难、活动、作战档案关卡中，受到的伤害减少3%\n剩余时间:$1",
+		benefit_effect = "520",
+		id = 78,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			5142,
+			0
+		}
+	}
+	pg = var_1_77
+
+	local var_1_78 = var_1_77.base.benefit_buff_template
+
+	var_1_78[79] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "香格里拉的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "香格里拉的祈愿——主线、困难、活动、作战档案关卡中，受到的伤害减少3%\n剩余时间:$1",
+		benefit_effect = "520",
+		id = 79,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			5142,
+			0
+		}
+	}
+	pg = var_1_78
+
+	local var_1_79 = var_1_78.base.benefit_buff_template
+
+	var_1_79[80] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "{namecode:526}的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "{namecode:526}的祈愿——主线、困难、活动、作战档案关卡中，角色经验获取提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 80,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			5142,
+			0
+		}
+	}
+	pg = var_1_79
+
+	local var_1_80 = var_1_79.base.benefit_buff_template
+
+	var_1_80[82] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "{namecode:437}的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "{namecode:437}的祈愿——主线、困难、活动、作战档案关卡中，受到的伤害减少3%\n剩余时间:$1",
+		benefit_effect = "520",
+		id = 82,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			5720,
+			0
+		}
+	}
+	pg = var_1_80
+
+	local var_1_81 = var_1_80.base.benefit_buff_template
+
+	var_1_81[83] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "贝尔法斯特的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "贝尔法斯特的祈愿——主线、困难、活动、作战档案关卡中，角色经验获取提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 83,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			5720,
+			0
+		}
+	}
+	pg = var_1_81
+
+	local var_1_82 = var_1_81.base.benefit_buff_template
+
+	var_1_82[84] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "南达科他的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "南达科他的祈愿——后宅经验加成提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 84,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			5720,
+			0
+		}
+	}
+	pg = var_1_82
+
+	local var_1_83 = var_1_82.base.benefit_buff_template
+
+	var_1_83[85] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "可畏的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "可畏的祈愿——后宅经验加成提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 85,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			5720,
+			0
+		}
+	}
+	pg = var_1_83
+
+	local var_1_84 = var_1_83.base.benefit_buff_template
+
+	var_1_84[86] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "{namecode:50}的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "{namecode:50}的祈愿——主线、困难、活动、作战档案关卡中，受到的伤害减少3%\n剩余时间:$1",
+		benefit_effect = "520",
+		id = 86,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			5720,
+			0
+		}
+	}
+	pg = var_1_84
+
+	local var_1_85 = var_1_84.base.benefit_buff_template
+
+	var_1_85[87] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "{namecode:435}的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "{namecode:435}的祈愿——主线、困难、活动、作战档案关卡中，受到的伤害减少3%\n剩余时间:$1",
+		benefit_effect = "520",
+		id = 87,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			5720,
+			0
+		}
+	}
+	pg = var_1_85
+
+	local var_1_86 = var_1_85.base.benefit_buff_template
+
+	var_1_86[88] = {
+		icon = "Props/jianchuanqiyuan",
+		name = "黎塞留的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "黎塞留的祈愿——主线、困难、活动、作战档案关卡中，角色经验获取提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 88,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			5720,
+			0
+		}
+	}
+	pg = var_1_86
+
+	local var_1_87 = var_1_86.base.benefit_buff_template
+
+	var_1_87[89] = {
+		icon = "Props/jianchuanxinyuan",
+		name = "{namecode:435}的心愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "{namecode:435}的心愿——主线、困难、活动、作战档案关卡中，受到的伤害减少3%\n剩余时间:$1",
+		benefit_effect = "520",
+		id = 89,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	}
+	pg = var_1_87
+
+	local var_1_88 = var_1_87.base.benefit_buff_template
+
+	var_1_88[90] = {
+		icon = "Props/jianchuanxinyuan",
+		name = "南达科他的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "南达科他的心愿——主线、困难、活动、作战档案关卡中，角色经验获取提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 90,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	}
+	pg = var_1_88
+
+	local var_1_89 = var_1_88.base.benefit_buff_template
+
+	var_1_89[91] = {
+		icon = "Props/jianchuanxinyuan",
+		name = "古比雪夫的心愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "古比雪夫的心愿——后宅经验加成提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 91,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	}
+	pg = var_1_89
+
+	local var_1_90 = var_1_89.base.benefit_buff_template
+
+	var_1_90[92] = {
+		icon = "Props/jianchuanxinyuan",
+		name = "帝国的心愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "帝国的心愿——后宅经验加成提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 92,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	}
+	pg = var_1_90
+
+	local var_1_91 = var_1_90.base.benefit_buff_template
+
+	var_1_91[93] = {
+		icon = "Props/jianchuanxinyuan",
+		name = "贝尔法斯特的心愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "贝尔法斯特的心愿——主线、困难、活动、作战档案关卡中，受到的伤害减少3%\n剩余时间:$1",
+		benefit_effect = "520",
+		id = 93,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	}
+	pg = var_1_91
+
+	local var_1_92 = var_1_91.base.benefit_buff_template
+
+	var_1_92[94] = {
+		icon = "Props/jianchuanxinyuan",
+		name = "黎塞留的心愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "黎塞留的心愿——主线、困难、活动、作战档案关卡中，受到的伤害减少3%\n剩余时间:$1",
+		benefit_effect = "520",
+		id = 94,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	}
+	pg = var_1_92
+
+	local var_1_93 = var_1_92.base.benefit_buff_template
+
+	var_1_93[95] = {
+		icon = "Props/jianchuanxinyuan",
+		name = "{namecode:437}的心愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "{namecode:437}的心愿——主线、困难、活动、作战档案关卡中，角色经验获取提高3%\n剩余时间:$1",
+		benefit_effect = "3",
+		id = 95,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	}
+	pg = var_1_93
+
+	local var_1_94 = var_1_93.base.benefit_buff_template
+
+	var_1_94[101] = {
+		icon = "Props/newserver_xinshou",
+		name = "经验加成",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		desc = "指挥官等级小于100级时，在普通关卡、困难关卡、活动关卡、每日活动中获得的指挥官经验和角色经验提高100%",
+		benefit_effect = "100",
+		id = 101,
+		type_priority = 1,
+		benefit_type = "rookie_battle_exp",
+		benefit_condition = {
+			"lv",
+			"<",
+			100
+		}
+	}
+	pg = var_1_94
+
+	local var_1_95 = var_1_94.base.benefit_buff_template
+
+	var_1_95[102] = {
+		icon = "Props/newserver_backyard",
+		name = "『新服活动』后宅经验buff",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "后宅经验加成提高50%",
+		benefit_effect = "50",
+		id = 102,
+		type_priority = 0,
+		benefit_type = "dorm_exp"
+	}
+	pg = var_1_95
+
+	local var_1_96 = var_1_95.base.benefit_buff_template
+
+	var_1_96[103] = {
+		icon = "Props/newserver_skill",
+		name = "『新服活动』战术学院buff",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "每日战术学院进行教材学习时，可以快速完成10次",
+		benefit_effect = "10",
+		id = 103,
+		type_priority = 0,
+		benefit_type = "skill_learn_time"
+	}
+	pg = var_1_96
+
+	local var_1_97 = var_1_96.base.benefit_buff_template
+
+	var_1_97[104] = {
+		icon = "Props/newserver_upgrade",
+		name = "『新服活动』角色强化经验buff",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "角色属性强化经验提高100%",
+		benefit_effect = "100",
+		id = 104,
+		type_priority = 0,
+		benefit_type = "character_strengthen_exp"
+	}
+	pg = var_1_97
+
+	local var_1_98 = var_1_97.base.benefit_buff_template
+
+	var_1_98[110] = {
+		icon = "Props/xinshou",
+		name = "舰娘经验加成1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中角色经验获取提高2%",
+		benefit_effect = "2",
+		id = 110,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				27,
+				1
+			}
+		}
+	}
+	pg = var_1_98
+	var_1_98.base.benefit_buff_template[111] = {
+		icon = "Props/xinshou",
+		name = "舰娘经验加成2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中角色经验获取提高3%",
+		benefit_effect = "3",
+		id = 111,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				27,
+				2
+			}
+		}
+	}
+
+	return
+end)()
+;(function()
+	pg = var_1_10000
+
+	local var_2_0 = var_1_10000.base.benefit_buff_template
+
+	var_2_0[112] = {
+		icon = "Props/xinshou",
+		name = "舰娘经验加成3",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中角色经验获取提高4%",
+		benefit_effect = "4",
+		id = 112,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				27,
+				3
+			}
+		}
+	}
+	pg = var_2_0
+
+	local var_2_1 = var_2_0.base.benefit_buff_template
+
+	var_2_1[113] = {
+		icon = "Props/xinshou",
+		name = "舰娘经验加成4",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中角色经验获取提高5%",
+		benefit_effect = "5",
+		id = 113,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				27,
+				4
+			}
+		}
+	}
+	pg = var_2_1
+
+	local var_2_2 = var_2_1.base.benefit_buff_template
+
+	var_2_2[114] = {
+		icon = "Props/buff_minigame_11",
+		name = "战斗伤害加成1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中造成的伤害提高2%",
+		benefit_effect = "502",
+		id = 114,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				27,
+				1
+			}
+		}
+	}
+	pg = var_2_2
+
+	local var_2_3 = var_2_2.base.benefit_buff_template
+
+	var_2_3[115] = {
+		icon = "Props/buff_minigame_11",
+		name = "战斗伤害加成2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中造成的伤害提高3%",
+		benefit_effect = "504",
+		id = 115,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				27,
+				2
+			}
+		}
+	}
+	pg = var_2_3
+
+	local var_2_4 = var_2_3.base.benefit_buff_template
+
+	var_2_4[116] = {
+		icon = "Props/buff_minigame_11",
+		name = "战斗伤害加成3",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中造成的伤害提高4%",
+		benefit_effect = "506",
+		id = 116,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				27,
+				3
+			}
+		}
+	}
+	pg = var_2_4
+
+	local var_2_5 = var_2_4.base.benefit_buff_template
+
+	var_2_5[117] = {
+		icon = "Props/buff_minigame_11",
+		name = "战斗伤害加成4",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中造成的伤害提高5%",
+		benefit_effect = "508",
+		id = 117,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				27,
+				4
+			}
+		}
+	}
+	pg = var_2_5
+
+	local var_2_6 = var_2_5.base.benefit_buff_template
+
+	var_2_6[118] = {
+		icon = "Props/buff_minigame_10",
+		name = "战术学院学习时间缩短1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少2%",
+		benefit_effect = "200",
+		id = 118,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				27,
+				1
+			}
+		}
+	}
+	pg = var_2_6
+
+	local var_2_7 = var_2_6.base.benefit_buff_template
+
+	var_2_7[119] = {
+		icon = "Props/buff_minigame_10",
+		name = "战术学院学习时间缩短2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少3%",
+		benefit_effect = "300",
+		id = 119,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				27,
+				2
+			}
+		}
+	}
+	pg = var_2_7
+
+	local var_2_8 = var_2_7.base.benefit_buff_template
+
+	var_2_8[120] = {
+		icon = "Props/buff_minigame_10",
+		name = "战术学院学习时间缩短3",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少4%",
+		benefit_effect = "400",
+		id = 120,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				27,
+				3
+			}
+		}
+	}
+	pg = var_2_8
+
+	local var_2_9 = var_2_8.base.benefit_buff_template
+
+	var_2_9[121] = {
+		icon = "Props/buff_minigame_10",
+		name = "战术学院学习时间缩短4",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少5%",
+		benefit_effect = "500",
+		id = 121,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				27,
+				4
+			}
+		}
+	}
+	pg = var_2_9
+
+	local var_2_10 = var_2_9.base.benefit_buff_template
+
+	var_2_10[122] = {
+		icon = "Props/buff_minigame_12",
+		name = "后宅经验加成1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高2%",
+		benefit_effect = "2",
+		id = 122,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				27,
+				1
+			}
+		}
+	}
+	pg = var_2_10
+
+	local var_2_11 = var_2_10.base.benefit_buff_template
+
+	var_2_11[123] = {
+		icon = "Props/buff_minigame_12",
+		name = "后宅经验加成2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高3%",
+		benefit_effect = "3",
+		id = 123,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				27,
+				2
+			}
+		}
+	}
+	pg = var_2_11
+
+	local var_2_12 = var_2_11.base.benefit_buff_template
+
+	var_2_12[124] = {
+		icon = "Props/buff_minigame_12",
+		name = "后宅经验加成3",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高4%",
+		benefit_effect = "4",
+		id = 124,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				27,
+				3
+			}
+		}
+	}
+	pg = var_2_12
+
+	local var_2_13 = var_2_12.base.benefit_buff_template
+
+	var_2_13[125] = {
+		icon = "Props/buff_minigame_12",
+		name = "后宅经验加成4",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高5%",
+		benefit_effect = "5",
+		id = 125,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				27,
+				4
+			}
+		}
+	}
+	pg = var_2_13
+
+	local var_2_14 = var_2_13.base.benefit_buff_template
+
+	var_2_14[126] = {
+		icon = "Props/xinshou",
+		name = "海岛内建筑lv.1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "据点建设进度+0/探险队每日获取材料+0%",
+		benefit_effect = "0",
+		id = 126,
+		type_priority = 0,
+		benefit_type = "build_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				23,
+				1
+			}
+		}
+	}
+	pg = var_2_14
+
+	local var_2_15 = var_2_14.base.benefit_buff_template
+
+	var_2_15[127] = {
+		icon = "Props/xinshou",
+		name = "海岛内建筑lv.2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "据点建设进度+1/探险队每日获取材料+10%",
+		benefit_effect = "10",
+		id = 127,
+		type_priority = 0,
+		benefit_type = "build_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				23,
+				2
+			}
+		}
+	}
+	pg = var_2_15
+
+	local var_2_16 = var_2_15.base.benefit_buff_template
+
+	var_2_16[128] = {
+		icon = "Props/xinshou",
+		name = "海岛内建筑lv.3",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "据点建设进度+2/探险队每日获取材料+20%",
+		benefit_effect = "20",
+		id = 128,
+		type_priority = 0,
+		benefit_type = "build_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				23,
+				3
+			}
+		}
+	}
+	pg = var_2_16
+
+	local var_2_17 = var_2_16.base.benefit_buff_template
+
+	var_2_17[129] = {
+		icon = "Props/xinshou",
+		name = "海岛内建筑lv.4",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "据点建设进度+3/探险队每日获取材料+30%",
+		benefit_effect = "30",
+		id = 129,
+		type_priority = 0,
+		benefit_type = "build_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				23,
+				4
+			}
+		}
+	}
+	pg = var_2_17
+
+	local var_2_18 = var_2_17.base.benefit_buff_template
+
+	var_2_18[130] = {
+		icon = "Props/xinshou",
+		name = "海岛内建筑lv.1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "据点建设进度+0/探险队每日获取材料+0%",
+		benefit_effect = "0",
+		id = 130,
+		type_priority = 0,
+		benefit_type = "build_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				24,
+				1
+			}
+		}
+	}
+	pg = var_2_18
+
+	local var_2_19 = var_2_18.base.benefit_buff_template
+
+	var_2_19[131] = {
+		icon = "Props/xinshou",
+		name = "海岛内建筑lv.2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "据点建设进度+1/探险队每日获取材料+10%",
+		benefit_effect = "10",
+		id = 131,
+		type_priority = 0,
+		benefit_type = "build_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				24,
+				2
+			}
+		}
+	}
+	pg = var_2_19
+
+	local var_2_20 = var_2_19.base.benefit_buff_template
+
+	var_2_20[132] = {
+		icon = "Props/xinshou",
+		name = "海岛内建筑lv.3",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "据点建设进度+2/探险队每日获取材料+20%",
+		benefit_effect = "20",
+		id = 132,
+		type_priority = 0,
+		benefit_type = "build_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				24,
+				3
+			}
+		}
+	}
+	pg = var_2_20
+
+	local var_2_21 = var_2_20.base.benefit_buff_template
+
+	var_2_21[133] = {
+		icon = "Props/xinshou",
+		name = "海岛内建筑lv.4",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "据点建设进度+3/探险队每日获取材料+30%",
+		benefit_effect = "30",
+		id = 133,
+		type_priority = 0,
+		benefit_type = "build_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				24,
+				4
+			}
+		}
+	}
+	pg = var_2_21
+
+	local var_2_22 = var_2_21.base.benefit_buff_template
+
+	var_2_22[134] = {
+		icon = "Props/xinshou",
+		name = "海岛内建筑lv.1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "据点建设进度+0/探险队每日获取材料+0%",
+		benefit_effect = "0",
+		id = 134,
+		type_priority = 0,
+		benefit_type = "build_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				25,
+				1
+			}
+		}
+	}
+	pg = var_2_22
+
+	local var_2_23 = var_2_22.base.benefit_buff_template
+
+	var_2_23[135] = {
+		icon = "Props/xinshou",
+		name = "海岛内建筑lv.2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "据点建设进度+1/探险队每日获取材料+10%",
+		benefit_effect = "10",
+		id = 135,
+		type_priority = 0,
+		benefit_type = "build_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				25,
+				2
+			}
+		}
+	}
+	pg = var_2_23
+
+	local var_2_24 = var_2_23.base.benefit_buff_template
+
+	var_2_24[136] = {
+		icon = "Props/xinshou",
+		name = "海岛内建筑lv.3",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "据点建设进度+2/探险队每日获取材料+20%",
+		benefit_effect = "20",
+		id = 136,
+		type_priority = 0,
+		benefit_type = "build_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				25,
+				3
+			}
+		}
+	}
+	pg = var_2_24
+
+	local var_2_25 = var_2_24.base.benefit_buff_template
+
+	var_2_25[137] = {
+		icon = "Props/xinshou",
+		name = "海岛内建筑lv.4",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "据点建设进度+3/探险队每日获取材料+30%",
+		benefit_effect = "30",
+		id = 137,
+		type_priority = 0,
+		benefit_type = "build_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				25,
+				4
+			}
+		}
+	}
+	pg = var_2_25
+
+	local var_2_26 = var_2_25.base.benefit_buff_template
+
+	var_2_26[138] = {
+		icon = "Props/xinshou",
+		name = "海岛内建筑lv.1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "据点建设进度+0/探险队每日获取材料+0%",
+		benefit_effect = "0",
+		id = 138,
+		type_priority = 0,
+		benefit_type = "build_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				26,
+				1
+			}
+		}
+	}
+	pg = var_2_26
+
+	local var_2_27 = var_2_26.base.benefit_buff_template
+
+	var_2_27[139] = {
+		icon = "Props/xinshou",
+		name = "海岛内建筑lv.2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "据点建设进度+1/探险队每日获取材料+10%",
+		benefit_effect = "10",
+		id = 139,
+		type_priority = 0,
+		benefit_type = "build_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				26,
+				2
+			}
+		}
+	}
+	pg = var_2_27
+
+	local var_2_28 = var_2_27.base.benefit_buff_template
+
+	var_2_28[140] = {
+		icon = "Props/xinshou",
+		name = "海岛内建筑lv.3",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "据点建设进度+2/探险队每日获取材料+20%",
+		benefit_effect = "20",
+		id = 140,
+		type_priority = 0,
+		benefit_type = "build_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				26,
+				3
+			}
+		}
+	}
+	pg = var_2_28
+
+	local var_2_29 = var_2_28.base.benefit_buff_template
+
+	var_2_29[141] = {
+		icon = "Props/xinshou",
+		name = "海岛内建筑lv.4",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "据点建设进度+3/探险队每日获取材料+30%",
+		benefit_effect = "30",
+		id = 141,
+		type_priority = 0,
+		benefit_type = "build_buff",
+		benefit_condition = {
+			"activity",
+			4850,
+			{
+				26,
+				4
+			}
+		}
+	}
+	pg = var_2_29
+
+	local var_2_30 = var_2_29.base.benefit_buff_template
+
+	var_2_30[142] = {
+		icon = "Props/yanhuiyaoyue",
+		name = "宴会邀约",
+		hide = 1,
+		max_time = 0,
+		act_id = 4964,
+		benefit_condition = "",
+		desc = "活动期间，通过战斗获取的好感度提高。",
+		benefit_effect = "1",
+		id = 142,
+		type_priority = 0,
+		benefit_type = "ship_battle_intimacy"
+	}
+	pg = var_2_30
+
+	local var_2_31 = var_2_30.base.benefit_buff_template
+
+	var_2_31[143] = {
+		icon = "Props/buff_xinyuan_1",
+		name = "学业",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "战术学院技能学习时间略微减少\n剩余时间:$1",
+		benefit_effect = "300",
+		id = 143,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up"
+	}
+	pg = var_2_31
+
+	local var_2_32 = var_2_31.base.benefit_buff_template
+
+	var_2_32[144] = {
+		icon = "Props/buff_xinyuan_2",
+		name = "事业",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "主线、困难、作战档案关卡中，我方战斗内造成的伤害略微提高\n剩余时间:$1",
+		benefit_effect = "522",
+		id = 144,
+		type_priority = 0,
+		benefit_type = "battle_buff"
+	}
+	pg = var_2_32
+
+	local var_2_33 = var_2_32.base.benefit_buff_template
+
+	var_2_33[145] = {
+		icon = "Props/buff_xinyuan_3",
+		name = "缘分",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "秘书舰好感度提高速度加快\n剩余时间:$1",
+		benefit_effect = "1",
+		id = 145,
+		type_priority = 0,
+		benefit_type = "intimacy_up_extra"
+	}
+	pg = var_2_33
+
+	local var_2_34 = var_2_33.base.benefit_buff_template
+
+	var_2_34[300001] = {
+		icon = "Props/300001",
+		name = "输出提升LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，己方角色的炮击、航空、雷击属性值提高3%",
+		benefit_effect = "200150",
+		id = 300001,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_34
+
+	local var_2_35 = var_2_34.base.benefit_buff_template
+
+	var_2_35[300002] = {
+		icon = "Props/300002",
+		name = "输出提升LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，己方角色的炮击、航空、雷击属性值提高4%",
+		benefit_effect = "200151",
+		id = 300002,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_35
+
+	local var_2_36 = var_2_35.base.benefit_buff_template
+
+	var_2_36[300003] = {
+		icon = "Props/300003",
+		name = "输出提升LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，己方角色的炮击、航空、雷击属性值提高5%",
+		benefit_effect = "200152",
+		id = 300003,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_36
+
+	local var_2_37 = var_2_36.base.benefit_buff_template
+
+	var_2_37[300011] = {
+		icon = "Props/300011",
+		name = "防御提升LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，己方角色受到的伤害降低3%",
+		benefit_effect = "200153",
+		id = 300011,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_37
+
+	local var_2_38 = var_2_37.base.benefit_buff_template
+
+	var_2_38[300012] = {
+		icon = "Props/300012",
+		name = "防御提升LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，己方角色受到的伤害降低4%",
+		benefit_effect = "200154",
+		id = 300012,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_38
+
+	local var_2_39 = var_2_38.base.benefit_buff_template
+
+	var_2_39[300013] = {
+		icon = "Props/300013",
+		name = "防御提升LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，己方角色受到的伤害降低5%",
+		benefit_effect = "200155",
+		id = 300013,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_39
+
+	local var_2_40 = var_2_39.base.benefit_buff_template
+
+	var_2_40[300021] = {
+		icon = "Props/300021",
+		name = "缓慢修复LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，己方角色每5秒恢复自身0.1%耐久",
+		benefit_effect = "200156",
+		id = 300021,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_40
+
+	local var_2_41 = var_2_40.base.benefit_buff_template
+
+	var_2_41[300022] = {
+		icon = "Props/300022",
+		name = "缓慢修复LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，己方角色每5秒恢复自身0.2%耐久",
+		benefit_effect = "200157",
+		id = 300022,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_41
+
+	local var_2_42 = var_2_41.base.benefit_buff_template
+
+	var_2_42[300023] = {
+		icon = "Props/300023",
+		name = "缓慢修复LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，己方角色每5秒恢复自身0.3%耐久",
+		benefit_effect = "200158",
+		id = 300023,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_42
+
+	local var_2_43 = var_2_42.base.benefit_buff_template
+
+	var_2_43[300031] = {
+		icon = "Props/300031",
+		name = "损伤管控LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，任意己方角色耐久低于20%时，恢复其10%耐久，每场战斗仅能触发一次",
+		benefit_effect = "200159",
+		id = 300031,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_43
+
+	local var_2_44 = var_2_43.base.benefit_buff_template
+
+	var_2_44[0] = {
+		icon = "Props/300032",
+		name = "损伤管控LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，任意己方角色耐久低于20%时，恢复其15%耐久，每场战斗仅能触发一次",
+		benefit_effect = "200161",
+		id = 300032,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_44
+
+	local var_2_45 = var_2_44.base.benefit_buff_template
+
+	var_2_45[1] = {
+		icon = "Props/300033",
+		name = "损伤管控LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，任意己方角色耐久低于20%时，恢复其20%耐久，每场战斗仅能触发一次",
+		benefit_effect = "200163",
+		id = 300033,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_45
+
+	local var_2_46 = var_2_45.base.benefit_buff_template
+
+	var_2_46[9] = {
+		icon = "Props/300041",
+		name = "点燃支援LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，每过15秒出现一次点燃支援弹幕Lv1。被命中的敌人将会获得点燃效果",
+		benefit_effect = "200165",
+		id = 300041,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_46
+
+	local var_2_47 = var_2_46.base.benefit_buff_template
+
+	var_2_47[10] = {
+		icon = "Props/300042",
+		name = "点燃支援LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，每过15秒出现一次点燃支援弹幕Lv2。被命中的敌人将会获得点燃效果",
+		benefit_effect = "200169",
+		id = 300042,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_47
+
+	local var_2_48 = var_2_47.base.benefit_buff_template
+
+	var_2_48[11] = {
+		icon = "Props/300043",
+		name = "点燃支援LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，每过15秒出现一次点燃支援弹幕Lv3。被命中的敌人将会获得点燃效果",
+		benefit_effect = "200173",
+		id = 300043,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_48
+
+	local var_2_49 = var_2_48.base.benefit_buff_template
+
+	var_2_49[19] = {
+		icon = "Props/300051",
+		name = "易伤支援LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，每过20秒出现一次易伤支援弹幕Lv1。被命中的敌人在接下来的8秒内，受到的伤害提高4%",
+		benefit_effect = "200177",
+		id = 300051,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_49
+
+	local var_2_50 = var_2_49.base.benefit_buff_template
+
+	var_2_50[20] = {
+		icon = "Props/300052",
+		name = "易伤支援LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，每过20秒出现一次易伤支援弹幕Lv2。被命中的敌人在接下来的8秒内，受到的伤害提高7%",
+		benefit_effect = "200181",
+		id = 300052,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_50
+
+	local var_2_51 = var_2_50.base.benefit_buff_template
+
+	var_2_51[21] = {
+		icon = "Props/300053",
+		name = "易伤支援LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，每过20秒出现一次易伤支援弹幕Lv3。被命中的敌人在接下来的8秒内，受到的伤害提高10%",
+		benefit_effect = "200185",
+		id = 300053,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_51
+
+	local var_2_52 = var_2_51.base.benefit_buff_template
+
+	var_2_52[29] = {
+		icon = "Props/300061",
+		name = "经验提升LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，己方角色经验获取提高3%",
+		benefit_effect = "3",
+		id = 300061,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_52
+
+	local var_2_53 = var_2_52.base.benefit_buff_template
+
+	var_2_53[30] = {
+		icon = "Props/300062",
+		name = "经验提升LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，己方角色经验获取提高4%",
+		benefit_effect = "4",
+		id = 300062,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_53
+
+	local var_2_54 = var_2_53.base.benefit_buff_template
+
+	var_2_54[31] = {
+		icon = "Props/300063",
+		name = "经验提升LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，己方角色经验获取提高5%",
+		benefit_effect = "5",
+		id = 300063,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_54
+
+	local var_2_55 = var_2_54.base.benefit_buff_template
+
+	var_2_55[300071] = {
+		icon = "Props/300071",
+		name = "好感提升LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战斗中，己方角色好感度获取提高",
+		benefit_effect = "1",
+		id = 300071,
+		type_priority = 0,
+		benefit_type = "ship_battle_intimacy",
+		benefit_condition = {
+			"chapter",
+			{
+				1690021,
+				1690022,
+				1690023,
+				1690024,
+				1690025,
+				1690041,
+				1690051
+			}
+		}
+	}
+	pg = var_2_55
+
+	local var_2_56 = var_2_55.base.benefit_buff_template
+
+	var_2_56[300081] = {
+		icon = "Props/xinshou",
+		name = "舰娘经验加成1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中角色经验获取提高1%",
+		benefit_effect = "1",
+		id = 300081,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"pt",
+			522,
+			0,
+			1000
+		}
+	}
+	pg = var_2_56
+
+	local var_2_57 = var_2_56.base.benefit_buff_template
+
+	var_2_57[300082] = {
+		icon = "Props/xinshou",
+		name = "舰娘经验加成2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中角色经验获取提高2%",
+		benefit_effect = "2",
+		id = 300082,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"pt",
+			522,
+			1000,
+			2000
+		}
+	}
+	pg = var_2_57
+
+	local var_2_58 = var_2_57.base.benefit_buff_template
+
+	var_2_58[300083] = {
+		icon = "Props/xinshou",
+		name = "舰娘经验加成3",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中角色经验获取提高3%",
+		benefit_effect = "3",
+		id = 300083,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"pt",
+			522,
+			2000,
+			3500
+		}
+	}
+	pg = var_2_58
+
+	local var_2_59 = var_2_58.base.benefit_buff_template
+
+	var_2_59[300084] = {
+		icon = "Props/xinshou",
+		name = "舰娘经验加成4",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中角色经验获取提高4%",
+		benefit_effect = "4",
+		id = 300084,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"pt",
+			522,
+			3500,
+			5000
+		}
+	}
+	pg = var_2_59
+
+	local var_2_60 = var_2_59.base.benefit_buff_template
+
+	var_2_60[300085] = {
+		icon = "Props/xinshou",
+		name = "舰娘经验加成5",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中角色经验获取提高5%",
+		benefit_effect = "5",
+		id = 300085,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"pt",
+			522,
+			5000,
+			1000000000000
+		}
+	}
+	pg = var_2_60
+
+	local var_2_61 = var_2_60.base.benefit_buff_template
+
+	var_2_61[300086] = {
+		icon = "Props/buff_minigame_11",
+		name = "战斗伤害加成1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中造成的伤害提高1%",
+		benefit_effect = "500",
+		id = 300086,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"pt",
+			522,
+			0,
+			1000
+		}
+	}
+	pg = var_2_61
+
+	local var_2_62 = var_2_61.base.benefit_buff_template
+
+	var_2_62[300087] = {
+		icon = "Props/buff_minigame_11",
+		name = "战斗伤害加成2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中造成的伤害提高2%",
+		benefit_effect = "502",
+		id = 300087,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"pt",
+			522,
+			1000,
+			2000
+		}
+	}
+	pg = var_2_62
+
+	local var_2_63 = var_2_62.base.benefit_buff_template
+
+	var_2_63[300088] = {
+		icon = "Props/buff_minigame_11",
+		name = "战斗伤害加成3",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中造成的伤害提高3%",
+		benefit_effect = "504",
+		id = 300088,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"pt",
+			522,
+			2000,
+			3500
+		}
+	}
+	pg = var_2_63
+
+	local var_2_64 = var_2_63.base.benefit_buff_template
+
+	var_2_64[300089] = {
+		icon = "Props/buff_minigame_11",
+		name = "战斗伤害加成4",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中造成的伤害提高4%",
+		benefit_effect = "506",
+		id = 300089,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"pt",
+			522,
+			3500,
+			5000
+		}
+	}
+	pg = var_2_64
+
+	local var_2_65 = var_2_64.base.benefit_buff_template
+
+	var_2_65[300090] = {
+		icon = "Props/buff_minigame_11",
+		name = "战斗伤害加成5",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中造成的伤害提高5%",
+		benefit_effect = "508",
+		id = 300090,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"pt",
+			522,
+			5000,
+			1000000000000
+		}
+	}
+	pg = var_2_65
+
+	local var_2_66 = var_2_65.base.benefit_buff_template
+
+	var_2_66[300091] = {
+		icon = "Props/buff_minigame_10",
+		name = "战术学院学习时间缩短1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少1%",
+		benefit_effect = "100",
+		id = 300091,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"pt",
+			522,
+			0,
+			1000
+		}
+	}
+	pg = var_2_66
+
+	local var_2_67 = var_2_66.base.benefit_buff_template
+
+	var_2_67[300092] = {
+		icon = "Props/buff_minigame_10",
+		name = "战术学院学习时间缩短2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少2%",
+		benefit_effect = "200",
+		id = 300092,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"pt",
+			522,
+			1000,
+			2000
+		}
+	}
+	pg = var_2_67
+
+	local var_2_68 = var_2_67.base.benefit_buff_template
+
+	var_2_68[300093] = {
+		icon = "Props/buff_minigame_10",
+		name = "战术学院学习时间缩短3",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少3%",
+		benefit_effect = "300",
+		id = 300093,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"pt",
+			522,
+			2000,
+			3500
+		}
+	}
+	pg = var_2_68
+
+	local var_2_69 = var_2_68.base.benefit_buff_template
+
+	var_2_69[300094] = {
+		icon = "Props/buff_minigame_10",
+		name = "战术学院学习时间缩短4",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少4%",
+		benefit_effect = "400",
+		id = 300094,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"pt",
+			522,
+			3500,
+			5000
+		}
+	}
+	pg = var_2_69
+
+	local var_2_70 = var_2_69.base.benefit_buff_template
+
+	var_2_70[300095] = {
+		icon = "Props/buff_minigame_10",
+		name = "战术学院学习时间缩短5",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少5%",
+		benefit_effect = "500",
+		id = 300095,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"pt",
+			522,
+			5000,
+			1000000000000
+		}
+	}
+	pg = var_2_70
+
+	local var_2_71 = var_2_70.base.benefit_buff_template
+
+	var_2_71[300096] = {
+		icon = "Props/buff_minigame_12",
+		name = "后宅经验加成1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高1%",
+		benefit_effect = "1",
+		id = 300096,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"pt",
+			522,
+			0,
+			1000
+		}
+	}
+	pg = var_2_71
+
+	local var_2_72 = var_2_71.base.benefit_buff_template
+
+	var_2_72[300097] = {
+		icon = "Props/buff_minigame_12",
+		name = "后宅经验加成2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高2%",
+		benefit_effect = "2",
+		id = 300097,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"pt",
+			522,
+			1000,
+			2000
+		}
+	}
+	pg = var_2_72
+
+	local var_2_73 = var_2_72.base.benefit_buff_template
+
+	var_2_73[300098] = {
+		icon = "Props/buff_minigame_12",
+		name = "后宅经验加成3",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高3%",
+		benefit_effect = "3",
+		id = 300098,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"pt",
+			522,
+			2000,
+			3500
+		}
+	}
+	pg = var_2_73
+
+	local var_2_74 = var_2_73.base.benefit_buff_template
+
+	var_2_74[300099] = {
+		icon = "Props/buff_minigame_12",
+		name = "后宅经验加成4",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高4%",
+		benefit_effect = "4",
+		id = 300099,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"pt",
+			522,
+			3500,
+			5000
+		}
+	}
+	pg = var_2_74
+
+	local var_2_75 = var_2_74.base.benefit_buff_template
+
+	var_2_75[300100] = {
+		icon = "Props/buff_minigame_12",
+		name = "后宅经验加成5",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高5%",
+		benefit_effect = "5",
+		id = 300100,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"pt",
+			522,
+			5000,
+			1000000000000
+		}
+	}
+	pg = var_2_75
+
+	local var_2_76 = var_2_75.base.benefit_buff_template
+
+	var_2_76[300101] = {
+		icon = "Props/xinshou",
+		name = "舰娘经验加成1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中角色经验获取提高2%",
+		benefit_effect = "2",
+		id = 300101,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"pt",
+			381,
+			15,
+			30
+		}
+	}
+	pg = var_2_76
+
+	local var_2_77 = var_2_76.base.benefit_buff_template
+
+	var_2_77[300102] = {
+		icon = "Props/xinshou",
+		name = "舰娘经验加成2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中角色经验获取提高4%",
+		benefit_effect = "4",
+		id = 300102,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"pt",
+			381,
+			30,
+			45
+		}
+	}
+	pg = var_2_77
+
+	local var_2_78 = var_2_77.base.benefit_buff_template
+
+	var_2_78[300103] = {
+		icon = "Props/xinshou",
+		name = "舰娘经验加成3",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中角色经验获取提高5%",
+		benefit_effect = "5",
+		id = 300103,
+		type_priority = 0,
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"pt",
+			381,
+			45,
+			1000
+		}
+	}
+	pg = var_2_78
+
+	local var_2_79 = var_2_78.base.benefit_buff_template
+
+	var_2_79[300104] = {
+		icon = "Props/buff_minigame_11",
+		name = "战斗伤害加成1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中造成的伤害提高1%",
+		benefit_effect = "500",
+		id = 300104,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"pt",
+			381,
+			15,
+			30
+		}
+	}
+	pg = var_2_79
+
+	local var_2_80 = var_2_79.base.benefit_buff_template
+
+	var_2_80[300105] = {
+		icon = "Props/buff_minigame_11",
+		name = "战斗伤害加成2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中造成的伤害提高2%",
+		benefit_effect = "502",
+		id = 300105,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"pt",
+			381,
+			30,
+			45
+		}
+	}
+	pg = var_2_80
+
+	local var_2_81 = var_2_80.base.benefit_buff_template
+
+	var_2_81[300106] = {
+		icon = "Props/buff_minigame_11",
+		name = "战斗伤害加成3",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "关卡中造成的伤害提高3%",
+		benefit_effect = "504",
+		id = 300106,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"pt",
+			381,
+			45,
+			1000
+		}
+	}
+	pg = var_2_81
+
+	local var_2_82 = var_2_81.base.benefit_buff_template
+
+	var_2_82[300107] = {
+		icon = "Props/buff_minigame_10",
+		name = "战术学院学习时间缩短1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少2%",
+		benefit_effect = "200",
+		id = 300107,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"pt",
+			381,
+			15,
+			30
+		}
+	}
+	pg = var_2_82
+
+	local var_2_83 = var_2_82.base.benefit_buff_template
+
+	var_2_83[300108] = {
+		icon = "Props/buff_minigame_10",
+		name = "战术学院学习时间缩短2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少4%",
+		benefit_effect = "400",
+		id = 300108,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"pt",
+			381,
+			30,
+			45
+		}
+	}
+	pg = var_2_83
+
+	local var_2_84 = var_2_83.base.benefit_buff_template
+
+	var_2_84[300109] = {
+		icon = "Props/buff_minigame_10",
+		name = "战术学院学习时间缩短3",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "战术学院技能学习时间减少5%",
+		benefit_effect = "500",
+		id = 300109,
+		type_priority = 0,
+		benefit_type = "skill_learncost_up",
+		benefit_condition = {
+			"pt",
+			381,
+			45,
+			1000
+		}
+	}
+	pg = var_2_84
+
+	local var_2_85 = var_2_84.base.benefit_buff_template
+
+	var_2_85[300110] = {
+		icon = "Props/buff_minigame_12",
+		name = "后宅经验加成1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高2%",
+		benefit_effect = "2",
+		id = 300110,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"pt",
+			381,
+			15,
+			30
+		}
+	}
+	pg = var_2_85
+
+	local var_2_86 = var_2_85.base.benefit_buff_template
+
+	var_2_86[300111] = {
+		icon = "Props/buff_minigame_12",
+		name = "后宅经验加成2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高4%",
+		benefit_effect = "4",
+		id = 300111,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"pt",
+			381,
+			30,
+			45
+		}
+	}
+	pg = var_2_86
+
+	local var_2_87 = var_2_86.base.benefit_buff_template
+
+	var_2_87[300112] = {
+		icon = "Props/buff_minigame_12",
+		name = "后宅经验加成3",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "后宅经验加成提高5%",
+		benefit_effect = "5",
+		id = 300112,
+		type_priority = 0,
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"pt",
+			381,
+			45,
+			1000
+		}
+	}
+	pg = var_2_87
+
+	local var_2_88 = var_2_87.base.benefit_buff_template
+
+	var_2_88[300201] = {
+		icon = "Props/buff_yumia_1",
+		name = "核心等级LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗中，己方角色的炮击、航空、雷击属性值提高3%",
+		benefit_effect = "201455",
+		id = 300201,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1940021
+			}
+		}
+	}
+	pg = var_2_88
+
+	local var_2_89 = var_2_88.base.benefit_buff_template
+
+	var_2_89[300202] = {
+		icon = "Props/buff_yumia_2",
+		name = "核心等级LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗中，每15秒会百分比回复己方当前耐久值最低的角色1%耐久",
+		benefit_effect = "201456",
+		id = 300202,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1940021
+			}
+		}
+	}
+	pg = var_2_89
+
+	local var_2_90 = var_2_89.base.benefit_buff_template
+
+	var_2_90[300203] = {
+		icon = "Props/buff_yumia_3",
+		name = "核心等级LV3",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗开始后第15秒及之后每过20秒释放支援弹幕，造成持续8秒的3%易伤效果",
+		benefit_effect = "201459",
+		id = 300203,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1940021
+			}
+		}
+	}
+	pg = var_2_90
+
+	local var_2_91 = var_2_90.base.benefit_buff_template
+
+	var_2_91[300204] = {
+		icon = "Props/buff_yumia_4",
+		name = "核心等级LV4",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗中，己方角色好感度获取提高",
+		benefit_effect = "1",
+		id = 300204,
+		type_priority = 0,
+		benefit_type = "ship_battle_intimacy",
+		benefit_condition = {
+			"chapter",
+			{
+				1940021
+			}
+		}
+	}
+	pg = var_2_91
+
+	local var_2_92 = var_2_91.base.benefit_buff_template
+
+	var_2_92[300205] = {
+		icon = "Props/buff_yumia_1",
+		name = "核心等级LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗中，己方角色的炮击、航空、雷击属性值提高3%",
+		benefit_effect = "201455",
+		id = 300205,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1940022
+			}
+		}
+	}
+	pg = var_2_92
+
+	local var_2_93 = var_2_92.base.benefit_buff_template
+
+	var_2_93[300206] = {
+		icon = "Props/buff_yumia_2",
+		name = "核心等级LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗中，每15秒会百分比回复己方当前耐久值最低的角色1%耐久",
+		benefit_effect = "201456",
+		id = 300206,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1940022
+			}
+		}
+	}
+	pg = var_2_93
+
+	local var_2_94 = var_2_93.base.benefit_buff_template
+
+	var_2_94[300207] = {
+		icon = "Props/buff_yumia_3",
+		name = "核心等级LV3",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗开始后第15秒及之后每过20秒释放支援弹幕，造成持续8秒的3%易伤效果",
+		benefit_effect = "201459",
+		id = 300207,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1940022
+			}
+		}
+	}
+	pg = var_2_94
+
+	local var_2_95 = var_2_94.base.benefit_buff_template
+
+	var_2_95[300208] = {
+		icon = "Props/buff_yumia_4",
+		name = "核心等级LV4",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗中，己方角色好感度获取提高",
+		benefit_effect = "1",
+		id = 300208,
+		type_priority = 0,
+		benefit_type = "ship_battle_intimacy",
+		benefit_condition = {
+			"chapter",
+			{
+				1940022
+			}
+		}
+	}
+	pg = var_2_95
+
+	local var_2_96 = var_2_95.base.benefit_buff_template
+
+	var_2_96[300209] = {
+		icon = "Props/buff_yumia_1",
+		name = "核心等级LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗中，己方角色的炮击、航空、雷击属性值提高3%",
+		benefit_effect = "201455",
+		id = 300209,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1940023
+			}
+		}
+	}
+	pg = var_2_96
+
+	local var_2_97 = var_2_96.base.benefit_buff_template
+
+	var_2_97[300210] = {
+		icon = "Props/buff_yumia_2",
+		name = "核心等级LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗中，每15秒会百分比回复己方当前耐久值最低的角色1%耐久",
+		benefit_effect = "201456",
+		id = 300210,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1940023
+			}
+		}
+	}
+	pg = var_2_97
+
+	local var_2_98 = var_2_97.base.benefit_buff_template
+
+	var_2_98[300211] = {
+		icon = "Props/buff_yumia_3",
+		name = "核心等级LV3",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗开始后第15秒及之后每过20秒释放支援弹幕，造成持续8秒的3%易伤效果",
+		benefit_effect = "201459",
+		id = 300211,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1940023
+			}
+		}
+	}
+	pg = var_2_98
+	var_2_98.base.benefit_buff_template[300212] = {
+		icon = "Props/buff_yumia_4",
+		name = "核心等级LV4",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗中，己方角色好感度获取提高",
+		benefit_effect = "1",
+		id = 300212,
+		type_priority = 0,
+		benefit_type = "ship_battle_intimacy",
+		benefit_condition = {
+			"chapter",
+			{
+				1940023
+			}
+		}
+	}
+
+	return
+end)()
+;(function()
+	pg = var_1_10000
+
+	local var_3_0 = var_1_10000.base.benefit_buff_template
+
+	var_3_0[300213] = {
+		icon = "Props/buff_yumia_1",
+		name = "核心等级LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗中，己方角色的炮击、航空、雷击属性值提高3%",
+		benefit_effect = "201455",
+		id = 300213,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1940024
+			}
+		}
+	}
+	pg = var_3_0
+
+	local var_3_1 = var_3_0.base.benefit_buff_template
+
+	var_3_1[300214] = {
+		icon = "Props/buff_yumia_2",
+		name = "核心等级LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗中，每15秒会百分比回复己方当前耐久值最低的角色1%耐久",
+		benefit_effect = "201456",
+		id = 300214,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1940024
+			}
+		}
+	}
+	pg = var_3_1
+
+	local var_3_2 = var_3_1.base.benefit_buff_template
+
+	var_3_2[300215] = {
+		icon = "Props/buff_yumia_3",
+		name = "核心等级LV3",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗开始后第15秒及之后每过20秒释放支援弹幕，造成持续8秒的3%易伤效果",
+		benefit_effect = "201459",
+		id = 300215,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1940024
+			}
+		}
+	}
+	pg = var_3_2
+
+	local var_3_3 = var_3_2.base.benefit_buff_template
+
+	var_3_3[300216] = {
+		icon = "Props/buff_yumia_4",
+		name = "核心等级LV4",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗中，己方角色好感度获取提高",
+		benefit_effect = "1",
+		id = 300216,
+		type_priority = 0,
+		benefit_type = "ship_battle_intimacy",
+		benefit_condition = {
+			"chapter",
+			{
+				1940024
+			}
+		}
+	}
+	pg = var_3_3
+
+	local var_3_4 = var_3_3.base.benefit_buff_template
+
+	var_3_4[300217] = {
+		icon = "Props/buff_yumia_1",
+		name = "核心等级LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗中，己方角色的炮击、航空、雷击属性值提高3%",
+		benefit_effect = "201455",
+		id = 300217,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1940025
+			}
+		}
+	}
+	pg = var_3_4
+
+	local var_3_5 = var_3_4.base.benefit_buff_template
+
+	var_3_5[300218] = {
+		icon = "Props/buff_yumia_2",
+		name = "核心等级LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗中，每15秒会百分比回复己方当前耐久值最低的角色1%耐久",
+		benefit_effect = "201456",
+		id = 300218,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1940025
+			}
+		}
+	}
+	pg = var_3_5
+
+	local var_3_6 = var_3_5.base.benefit_buff_template
+
+	var_3_6[300219] = {
+		icon = "Props/buff_yumia_3",
+		name = "核心等级LV3",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗开始后第15秒及之后每过20秒释放支援弹幕，造成持续8秒的3%易伤效果",
+		benefit_effect = "201459",
+		id = 300219,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"chapter",
+			{
+				1940025
+			}
+		}
+	}
+	pg = var_3_6
+
+	local var_3_7 = var_3_6.base.benefit_buff_template
+
+	var_3_7[300220] = {
+		icon = "Props/buff_yumia_4",
+		name = "核心等级LV4",
+		hide = 1,
+		max_time = 0,
+		act_id = 50065,
+		desc = "战斗中，己方角色好感度获取提高",
+		benefit_effect = "1",
+		id = 300220,
+		type_priority = 0,
+		benefit_type = "ship_battle_intimacy",
+		benefit_condition = {
+			"chapter",
+			{
+				1940025
+			}
+		}
+	}
+	pg = var_3_7
+
+	local var_3_8 = var_3_7.base.benefit_buff_template
+
+	var_3_8[300221] = {
+		icon = "Props/buff_yumia_ryzare",
+		name = "「炼金术士与遗迹群岛」特别加成",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "「炼金术士与遗迹群岛」特别作战关卡：「遗迹水晶簇」及调和素材掉落增加200%",
+		benefit_effect = "0",
+		id = 300221,
+		type_priority = 0,
+		benefit_type = "desc"
+	}
+	pg = var_3_8
+
+	local var_3_9 = var_3_8.base.benefit_buff_template
+
+	var_3_9[12] = {
+		icon = "Props/xinshou",
+		name = "无效效果",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "占位用buff",
+		benefit_effect = "0",
+		id = 300300,
+		type_priority = 0,
+		benefit_type = "desc"
+	}
+	pg = var_3_9
+
+	local var_3_10 = var_3_9.base.benefit_buff_template
+
+	var_3_10[13] = {
+		icon = "Props/xinshou",
+		name = "白鹰科技模块LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色单场战斗中累计损失耐久百分比超过40%时，恢复其3%耐久，每个角色限一次",
+		benefit_effect = "201561",
+		id = 300301,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_10
+
+	local var_3_11 = var_3_10.base.benefit_buff_template
+
+	var_3_11[14] = {
+		icon = "Props/xinshou",
+		name = "白鹰科技模块LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色单场战斗中累计损失耐久百分比超过30%时，恢复其3%耐久，每个角色限一次",
+		benefit_effect = "201562",
+		id = 300302,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_11
+
+	local var_3_12 = var_3_11.base.benefit_buff_template
+
+	var_3_12[15] = {
+		icon = "Props/xinshou",
+		name = "白鹰科技模块LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色单场战斗中累计损失耐久百分比超过20%时，恢复其3%耐久，每个角色限一次",
+		benefit_effect = "201563",
+		id = 300303,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_12
+
+	local var_3_13 = var_3_12.base.benefit_buff_template
+
+	var_3_13[16] = {
+		icon = "Props/xinshou",
+		name = "皇家科技模块LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中航空升2%",
+		benefit_effect = "201565",
+		id = 300304,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_13
+
+	local var_3_14 = var_3_13.base.benefit_buff_template
+
+	var_3_14[17] = {
+		icon = "Props/xinshou",
+		name = "皇家科技模块LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中航空升4%",
+		benefit_effect = "201566",
+		id = 300305,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_14
+
+	local var_3_15 = var_3_14.base.benefit_buff_template
+
+	var_3_15[18] = {
+		icon = "Props/xinshou",
+		name = "皇家科技模块LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中航空升6%",
+		benefit_effect = "201567",
+		id = 300306,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_15
+
+	local var_3_16 = var_3_15.base.benefit_buff_template
+
+	var_3_16[19] = {
+		icon = "Props/xinshou",
+		name = "鸢尾科技模块LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中受到的伤害降低1%",
+		benefit_effect = "201568",
+		id = 300307,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_16
+
+	local var_3_17 = var_3_16.base.benefit_buff_template
+
+	var_3_17[20] = {
+		icon = "Props/xinshou",
+		name = "鸢尾科技模块LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中受到的伤害降低2%",
+		benefit_effect = "201569",
+		id = 300308,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_17
+
+	local var_3_18 = var_3_17.base.benefit_buff_template
+
+	var_3_18[21] = {
+		icon = "Props/xinshou",
+		name = "鸢尾科技模块LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中受到的伤害降低3%",
+		benefit_effect = "201570",
+		id = 300309,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_18
+
+	local var_3_19 = var_3_18.base.benefit_buff_template
+
+	var_3_19[22] = {
+		icon = "Props/xinshou",
+		name = "铁血科技模块LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中炮击提升2%",
+		benefit_effect = "201571",
+		id = 300310,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_19
+
+	local var_3_20 = var_3_19.base.benefit_buff_template
+
+	var_3_20[23] = {
+		icon = "Props/xinshou",
+		name = "铁血科技模块LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中炮击提升4%",
+		benefit_effect = "201572",
+		id = 300311,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_20
+
+	local var_3_21 = var_3_20.base.benefit_buff_template
+
+	var_3_21[24] = {
+		icon = "Props/xinshou",
+		name = "铁血科技模块LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中炮击提升6%",
+		benefit_effect = "201573",
+		id = 300312,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_21
+
+	local var_3_22 = var_3_21.base.benefit_buff_template
+
+	var_3_22[25] = {
+		icon = "Props/xinshou",
+		name = "东煌科技模块LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中命中提升2%",
+		benefit_effect = "201586",
+		id = 300313,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_22
+
+	local var_3_23 = var_3_22.base.benefit_buff_template
+
+	var_3_23[26] = {
+		icon = "Props/xinshou",
+		name = "东煌科技模块LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中命中提升4%",
+		benefit_effect = "201587",
+		id = 300314,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_23
+
+	local var_3_24 = var_3_23.base.benefit_buff_template
+
+	var_3_24[27] = {
+		icon = "Props/xinshou",
+		name = "东煌科技模块LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中命中提升6%",
+		benefit_effect = "201588",
+		id = 300315,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_24
+
+	local var_3_25 = var_3_24.base.benefit_buff_template
+
+	var_3_25[28] = {
+		icon = "Props/xinshou",
+		name = "撒丁科技模块LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色在每场战斗开始的前10秒内装填提升15%",
+		benefit_effect = "201574",
+		id = 300316,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_25
+
+	local var_3_26 = var_3_25.base.benefit_buff_template
+
+	var_3_26[29] = {
+		icon = "Props/xinshou",
+		name = "撒丁科技模块LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色在每场战斗开始的前15秒内装填提升15%",
+		benefit_effect = "201575",
+		id = 300317,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_26
+
+	local var_3_27 = var_3_26.base.benefit_buff_template
+
+	var_3_27[30] = {
+		icon = "Props/xinshou",
+		name = "撒丁科技模块LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色在每场战斗开始的前20秒内装填提升15%",
+		benefit_effect = "201576",
+		id = 300318,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_27
+
+	local var_3_28 = var_3_27.base.benefit_buff_template
+
+	var_3_28[31] = {
+		icon = "Props/xinshou",
+		name = "郁金科技模块LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中航速提升2点",
+		benefit_effect = "201580",
+		id = 300319,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_28
+
+	local var_3_29 = var_3_28.base.benefit_buff_template
+
+	var_3_29[300320] = {
+		icon = "Props/xinshou",
+		name = "郁金科技模块LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中航速提升4点",
+		benefit_effect = "201581",
+		id = 300320,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_29
+
+	local var_3_30 = var_3_29.base.benefit_buff_template
+
+	var_3_30[300321] = {
+		icon = "Props/xinshou",
+		name = "郁金科技模块LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中航速提升6点",
+		benefit_effect = "201582",
+		id = 300321,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_30
+
+	local var_3_31 = var_3_30.base.benefit_buff_template
+
+	var_3_31[300322] = {
+		icon = "Props/xinshou",
+		name = "北联科技模块LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中造成的伤害提升1%",
+		benefit_effect = "201577",
+		id = 300322,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_31
+
+	local var_3_32 = var_3_31.base.benefit_buff_template
+
+	var_3_32[300323] = {
+		icon = "Props/xinshou",
+		name = "北联科技模块LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中造成的伤害提升2%",
+		benefit_effect = "201578",
+		id = 300323,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_32
+
+	local var_3_33 = var_3_32.base.benefit_buff_template
+
+	var_3_33[300324] = {
+		icon = "Props/xinshou",
+		name = "北联科技模块LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中造成的伤害提升3%",
+		benefit_effect = "201579",
+		id = 300324,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_33
+
+	local var_3_34 = var_3_33.base.benefit_buff_template
+
+	var_3_34[300325] = {
+		icon = "Props/xinshou",
+		name = "重樱科技模块LV1",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中雷击提升2%",
+		benefit_effect = "201589",
+		id = 300325,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_34
+
+	local var_3_35 = var_3_34.base.benefit_buff_template
+
+	var_3_35[300326] = {
+		icon = "Props/xinshou",
+		name = "重樱科技模块LV2",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中雷击提升4%",
+		benefit_effect = "201590",
+		id = 300326,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+	pg = var_3_35
+	var_3_35.base.benefit_buff_template[300327] = {
+		icon = "Props/xinshou",
+		name = "重樱科技模块LVMAX",
+		hide = 1,
+		max_time = 0,
+		act_id = 0,
+		desc = "我方角色战斗中雷击提升6%",
+		benefit_effect = "201591",
+		id = 300327,
+		type_priority = 0,
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"dungeon",
+			{
+				1980001,
+				1980002,
+				1980101,
+				1980102,
+				1981001,
+				1981002,
+				1981003,
+				1981004,
+				1981005,
+				1981006,
+				1982001,
+				1982002,
+				1982003,
+				1982004,
+				1982005,
+				1982006,
+				1983001,
+				1983002,
+				1983003,
+				1983004,
+				1984001,
+				1984002,
+				1984003,
+				1984004,
+				1981007,
+				1981008,
+				1981009,
+				1981010,
+				1981011,
+				1981012,
+				1981013,
+				1981014,
+				1982007,
+				1982008,
+				1982009,
+				1982010,
+				1982011,
+				1982012,
+				1982013,
+				1982014
+			}
+		}
+	}
+
+	return
+end)()
+
+return

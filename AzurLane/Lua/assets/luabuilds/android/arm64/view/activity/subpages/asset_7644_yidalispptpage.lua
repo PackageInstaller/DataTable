@@ -1,0 +1,43 @@
+﻿class = var_0_10000
+
+local var_0_0 = "YidaliSPPTPage"
+
+import = var_0_10003
+
+local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.PtTemplatePage"))
+
+function var_0_1.OnUpdateFlush(arg_1_0)
+	var_0_1.super.OnUpdateFlush(arg_1_0)
+
+	local var_1_0 = arg_1_0.ptData
+	local var_1_1, var_1_2, var_1_3 = var_1.GetResProgress(var_1_0)
+
+	setText = var_1_10004
+
+	local var_1_4 = arg_1_0.progress
+
+	if 1 <= var_1_3 then
+		setColorStr = var_1_7
+
+		local var_1_5 = var_1_1
+
+		COLOR_GREEN = var_1_10010
+
+		local var_1_7
+
+		if not var_1_7(var_1_5, var_1_10010) then
+			setColorStr = var_1_7
+
+			local var_1_6 = var_1_1
+
+			COLOR_WHITE = var_1_10010
+			var_1_7 = var_1_7(var_1_6, var_1_10010)
+		end
+
+		var_1_10004(var_1_4, var_1_7 .. "/" .. var_1_2)
+
+		return
+	end
+end
+
+return var_0_1

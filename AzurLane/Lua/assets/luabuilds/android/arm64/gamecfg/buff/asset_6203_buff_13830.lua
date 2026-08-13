@@ -1,0 +1,34 @@
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 13830
+			}
+		}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "",
+	init_effect = "",
+	id = 13830,
+	time = 0,
+	picture = "",
+	desc = "",
+	stack = 1,
+	color = "red",
+	icon = 13830,
+	last_effect = ""
+}

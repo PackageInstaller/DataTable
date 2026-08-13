@@ -1,0 +1,297 @@
+﻿class = var_0_10000
+
+local var_0_0 = "IdolMasterStageScene"
+
+import = var_0_10003
+
+local var_0_1 = var_0_10000(var_0_0, var_0_10003("..TemplateMV.BackHillTemplate"))
+
+function var_0_1.getUIName(arg_1_0)
+	return "IdolMasterStageUI"
+end
+
+var_0_1.edge2area = {
+	default = "map_middle"
+}
+
+function var_0_1.init(arg_2_0)
+	local var_2_0 = arg_2_0._tf
+
+	arg_2_0.top = var_1.Find(var_2_0, "top")
+
+	local var_2_1 = arg_2_0._tf
+
+	arg_2_0._map = var_1.Find(var_2_1, "map")
+
+	for iter_2_0 = 0, arg_2_0._map.childCount - 1 do
+		local var_2_2 = arg_2_0._map
+		local var_2_3 = var_5.GetChild(var_2_2, iter_2_0)
+
+		go = var_1_10006
+		var_1_10006 = var_1_10006(var_2_3).name
+		arg_2_0["map_" .. var_1_10006] = var_2_3
+	end
+
+	local var_2_4 = arg_2_0._map
+
+	arg_2_0._shipTpl = var_1.Find(var_2_4, "ship")
+
+	local var_2_5 = arg_2_0._tf
+
+	arg_2_0._upper = var_1.Find(var_2_5, "upper")
+
+	for iter_2_1 = 0, arg_2_0._upper.childCount - 1 do
+		local var_2_6 = arg_2_0._upper
+		local var_2_7 = var_5.GetChild(var_2_6, iter_2_1)
+
+		go = var_1_10006
+		var_1_10006 = var_1_10006(var_2_7).name
+		arg_2_0["upper_" .. var_1_10006] = var_2_7
+	end
+
+	arg_2_0.containers = {
+		arg_2_0.map_middle
+	}
+	GraphPath = var_1
+
+	local var_2_8 = var_1.New
+
+	import = var_3
+	arg_2_0.graphPath = var_2_8(var_3("GameCfg.BackHillGraphs.IdolMasterStageGraph"))
+	AutoLoader = var_1
+	arg_2_0.loader = var_1.New()
+
+	return
+end
+
+function var_0_1.didEnter(arg_3_0)
+	onButton = var_1_10001
+
+	local var_3_0 = arg_3_0
+	local var_3_1 = arg_3_0._tf
+
+	var_1_10001(var_3_0, var_4.Find(var_3_1, "top/return_btn"), function()
+		local var_4_0 = arg_3_0
+
+		var_0.emit(var_4_0, var_0_1.ON_BACK)
+
+		return
+	end)
+
+	onButton = var_1_10001
+
+	local var_3_2 = arg_3_0
+	local var_3_3 = arg_3_0._tf
+
+	var_1_10001(var_3_2, var_4.Find(var_3_3, "top/return_main_btn"), function()
+		local var_5_0 = arg_3_0
+
+		var_0.emit(var_5_0, var_0_1.ON_HOME)
+
+		return
+	end)
+
+	onButton = var_1_10001
+
+	local var_3_4 = arg_3_0
+	local var_3_5 = arg_3_0._tf
+
+	var_1_10001(var_3_4, var_4.Find(var_3_5, "top/help_btn"), function()
+		pg = var_2_10000
+
+		local var_6_0 = var_2_10000.MsgboxMgr.GetInstance()
+		local var_6_1 = var_0.ShowMsgBox
+		local var_6_2 = {}
+
+		MSGBOX_TYPE_HELP = var_2_10004
+		var_6_2.type = var_2_10004
+		pg = var_2_10004
+		var_6_2.helps = var_2_10004.gametip.idolmaster_main.tip
+
+		var_6_1(var_6_0, var_6_2)
+
+		return
+	end)
+
+	getProxy = var_1_10001
+	ActivityProxy = var_3_4
+
+	local var_3_6 = var_1_10001(var_3_4)
+	local var_3_7 = var_1.getActivityByType
+
+	ActivityConst = var_4
+
+	local var_3_8 = var_3_7(var_3_6, var_4.ACTIVITY_TYPE_MINIGAME)
+
+	arg_3_0:InitStudents(var_3_8 and var_3_8.id, 2, 3)
+
+	local var_3_9 = arg_3_0
+
+	arg_3_0.InitFacilityCross(var_3_9, arg_3_0._map, arg_3_0._upper, "jiujiuwoshouhui", function()
+		pg = var_2_10000
+
+		local var_7_0 = var_2_10000.m02
+		local var_7_1 = var_0.sendNotification
+
+		GAME = var_2_10003
+
+		var_7_1(var_7_0, var_2_10003.GO_MINI_GAME, 24)
+
+		return
+	end)
+
+	getProxy = var_2
+	ActivityProxy = var_3_9
+
+	local var_3_10 = var_2(var_3_9)
+	local var_3_11 = var_2.getActivityById
+
+	ActivityConst = var_5
+
+	local var_3_12 = var_3_11(var_3_10, var_5.IDOL_MASTER_PT_ID)
+
+	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "leijijiangli", function()
+		local var_8_0 = arg_3_0
+		local var_8_1 = var_0.emit
+
+		BackHillMediatorTemplate = var_2_10003
+
+		local var_8_2 = var_2_10003.GO_SCENE
+
+		SCENE = var_2_10004
+
+		local var_8_3 = var_2_10004.ACTIVITY
+		local var_8_4 = {}
+		local var_8_5
+
+		if var_3_12 then
+			var_8_5 = var_3_12.id
+		end
+
+		var_8_4.id = var_8_5
+
+		var_8_1(var_8_0, var_8_2, var_8_3, var_8_4)
+
+		return
+	end)
+	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "jinianzhang", function()
+		local var_9_0 = arg_3_0
+		local var_9_1 = var_0.emit
+
+		BackHillMediatorTemplate = var_2_10003
+
+		local var_9_2 = var_2_10003.GO_SCENE
+
+		SCENE = var_2_10004
+
+		var_9_1(var_9_0, var_9_2, var_2_10004.IDOLMASTER_MEDAL_COLLECTION_SCENE)
+
+		return
+	end)
+	arg_3_0:BindItemActivityShop()
+	arg_3_0:BindItemSkinShop()
+	arg_3_0:BindItemBuildShip()
+	arg_3_0:BindItemBattle()
+	arg_3_0:UpdateView()
+
+	return
+end
+
+function var_0_1.UpdateView(arg_10_0)
+	getProxy = var_1_10001
+	ActivityProxy = var_1_10003
+
+	local var_10_0 = var_1_10001(var_1_10003)
+	local var_10_1
+	local var_10_2 = var_10_0
+	local var_10_3 = var_10_0.getActivityByType
+
+	ActivityConst = var_1_10006
+
+	local var_10_4 = var_10_3(var_10_2, var_1_10006.ACTIVITY_TYPE_MINIGAME)
+
+	getProxy = var_1_10004
+	MiniGameProxy = var_6
+
+	local var_10_5 = var_1_10004(var_6)
+	local var_10_6
+
+	if var_10_4 then
+		::label_10_0::
+
+		var_1_10007 = var_10_5
+		var_10_6 = var_10_5.GetHubByHubId(var_1_10007, var_10_4:getConfig("config_id"))
+	end
+
+	local var_10_8
+
+	if var_10_6 then
+		::label_10_1::
+
+		local var_10_7 = var_10_6.count
+
+		var_10_8 = 0 < var_10_7
+	end
+
+	if not var_10_8 then
+		local var_10_9 = var_10_6.usedtime
+
+		var_10_8 = var_10_6:getConfig("reward_need") <= var_10_9 and var_10_6.ultimate == 0
+	end
+
+	local var_10_10 = arg_10_0.upper_jiujiuwoshouhui
+	local var_10_11 = var_6.Find(var_10_10, "tip")
+
+	setActive = var_1_10007
+
+	var_1_10007(var_10_11, var_10_8)
+
+	local var_10_12 = var_10_0
+	local var_10_13 = var_10_0.getActivityById
+
+	ActivityConst = var_10
+
+	local var_10_14 = var_10_13(var_10_12, var_10.IDOL_MASTER_PT_ID)
+	local var_10_15 = arg_10_0.upper_leijijiangli
+	local var_10_16 = var_8.Find(var_10_15, "tip")
+	local var_10_17 = var_10_14 and var_10_14:readyToAchieve()
+
+	setActive = var_10_12
+
+	var_10_12(var_10_16, var_10_17)
+
+	local var_10_18 = arg_10_0.upper_jinianzhang
+	local var_10_19 = var_9.Find(var_10_18, "tip")
+	local var_10_20 = var_0_1.MedalTip()
+
+	setActive = var_10
+
+	var_10(var_10_19, var_10_20)
+
+	return
+end
+
+function var_0_1.MedalTip()
+	getProxy = var_1_10000
+	ActivityProxy = var_1_10002
+
+	local var_11_0 = var_1_10000(var_1_10002)
+	local var_11_1 = var_0.getActivityByType
+
+	ActivityConst = var_1_10003
+
+	local var_11_2 = var_11_1(var_11_0, var_1_10003.ACTIVITY_TYPE_PUZZLA)
+
+	Activity = var_1_10001
+
+	return var_1_10001.IsActivityReady(var_11_2)
+end
+
+function var_0_1.willExit(arg_12_0)
+	arg_12_0:clearStudents()
+	var_0_1.super.willExit(arg_12_0)
+
+	return
+end
+
+return var_0_1

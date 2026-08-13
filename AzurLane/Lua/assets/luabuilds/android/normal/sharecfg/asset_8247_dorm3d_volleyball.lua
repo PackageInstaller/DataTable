@@ -1,0 +1,381 @@
+﻿pg = var_0_10000
+
+local var_0_0
+
+var_0_0 = var_0_10000 or {}
+pg = pg
+rawget = var_0_10001
+pg = var_0_10002
+
+local var_0_2
+
+if not var_0_10001(var_0_10002, "dorm3d_volleyball") then
+	setmetatable = var_0_2
+
+	local var_0_1 = {
+		__name = "dorm3d_volleyball"
+	}
+
+	confNEO = var_3
+	var_0_2 = var_0_2(var_0_1, var_3)
+end
+
+var_0.dorm3d_volleyball = var_0_2
+pg = var_0
+
+local var_0_3 = var_0.dorm3d_volleyball
+
+var_0_3.all = {
+	20220,
+	30221,
+	19903
+}
+pg = var_0_3
+pg = var_1
+
+local var_0_4
+
+if not var_1.base then
+	var_0_4 = {}
+end
+
+var_0_3.base = var_0_4
+pg = var_0_3
+var_0_3.base.dorm3d_volleyball = {}
+
+;(function()
+	pg = var_1_10000
+
+	local var_1_0 = var_1_10000.base.dorm3d_volleyball
+
+	var_1_0[20220] = {
+		scene_name = "TLX_volleyball",
+		endScore = 6,
+		id = 20220,
+		jinchang = {
+			{
+				"pre_Tianlangxing_PQ_jinchang",
+				1
+			}
+		},
+		faqiu = {
+			{
+				"pre_Tianlangxing_PQ_faqiu",
+				1
+			}
+		},
+		fly = {
+			{
+				"pre_Tianlangxing_PQ_volleyball_fly",
+				1
+			}
+		},
+		max_fly = {
+			{
+				"pre_Tianlangxing_PQ_volleyball_MAX_fly",
+				1
+			}
+		},
+		shiqiu = {
+			{
+				"pre_Tianlangxing_PQ_volleyball_miss",
+				1
+			}
+		},
+		jieqiu = {
+			{
+				"pre_Tianlangxing_PQ_jieqiu",
+				1
+			},
+			{
+				"pre_Tianlangxing_PQ_kouqiu",
+				1
+			}
+		},
+		shouji = {
+			{
+				"pre_Tianlangxing_PQ_shouji_xia",
+				1
+			},
+			{
+				"pre_Tianlangxing_PQ_shouji_shang",
+				1
+			}
+		},
+		shengli = {
+			{
+				"pre_Tianlangxing_PQ_shengli",
+				1
+			}
+		},
+		shibai = {
+			{
+				"pre_Tianlangxing_PQ_shibai",
+				1
+			}
+		},
+		daiji = {
+			{
+				"pre_Tianlangxing_PQ_daiji_jiesuan",
+				1
+			}
+		},
+		jiangli = {
+			{
+				"pre_Tianlangxing_PQ_wancheng_jiangli",
+				1
+			}
+		},
+		BallSpeedParam = {
+			0.1,
+			0.01
+		},
+		BallQtePlane = {
+			{
+				0.56,
+				6,
+				11.8
+			},
+			{
+				0,
+				0,
+				30
+			}
+		},
+		BallMissPlane = {
+			{
+				0.22,
+				5.45,
+				11.8
+			},
+			{
+				0,
+				0,
+				30
+			}
+		}
+	}
+	pg = var_1_0
+
+	local var_1_1 = var_1_0.base.dorm3d_volleyball
+
+	var_1_1[30221] = {
+		scene_name = "ND_volleyball",
+		endScore = 6,
+		id = 30221,
+		jinchang = {
+			{
+				"pre_Nengdai_PQ_jinchang",
+				1
+			}
+		},
+		faqiu = {
+			{
+				"pre_Nengdai_PQ_faqiu",
+				1
+			}
+		},
+		fly = {
+			{
+				"pre_Nengdai_PQ_volleyball_fly",
+				1
+			}
+		},
+		max_fly = {
+			{
+				"pre_Nengdai_PQ_volleyball_MAX_fly",
+				1
+			}
+		},
+		shiqiu = {
+			{
+				"pre_Nengdai_PQ_volleyball_miss",
+				1
+			}
+		},
+		jieqiu = {
+			{
+				"pre_Nengdai_PQ_jieqiu",
+				1
+			},
+			{
+				"pre_Nengdai_PQ_kouqiu",
+				1
+			}
+		},
+		shouji = {
+			{
+				"pre_Nengdai_PQ_shouji_xia",
+				1
+			},
+			{
+				"pre_Nengdai_PQ_shouji_shang",
+				1
+			}
+		},
+		shengli = {
+			{
+				"pre_Nengdai_PQ_shengli",
+				1
+			}
+		},
+		shibai = {
+			{
+				"pre_Nengdai_PQ_shibai",
+				1
+			}
+		},
+		daiji = {
+			{
+				"pre_Nengdai_PQ_daiji_jiesuan",
+				1
+			}
+		},
+		jiangli = {
+			{
+				"pre_Nengdai_PQ_wancheng_jiangli",
+				1
+			}
+		},
+		BallSpeedParam = {
+			0.13,
+			0.016
+		},
+		BallQtePlane = {
+			{
+				0.56,
+				6.2,
+				11.8
+			},
+			{
+				0,
+				0,
+				30
+			}
+		},
+		BallMissPlane = {
+			{
+				0.22,
+				5.45,
+				11.8
+			},
+			{
+				0,
+				0,
+				30
+			}
+		}
+	}
+	pg = var_1_1
+	var_1_1.base.dorm3d_volleyball[19903] = {
+		scene_name = "AB_volleyball",
+		endScore = 6,
+		id = 19903,
+		jinchang = {
+			{
+				"pre_ab_PQ_jinchang",
+				1
+			}
+		},
+		faqiu = {
+			{
+				"pre_ab_PQ_faqiu",
+				1
+			}
+		},
+		fly = {
+			{
+				"pre_ab_PQ_volleyball_fly",
+				1
+			}
+		},
+		max_fly = {
+			{
+				"pre_ab_PQ_volleyball_MAX_fly",
+				1
+			}
+		},
+		shiqiu = {
+			{
+				"pre_ab_PQ_volleyball_miss",
+				1
+			}
+		},
+		jieqiu = {
+			{
+				"pre_ab_PQ_jieqiu",
+				1
+			},
+			{
+				"pre_ab_PQ_kouqiu",
+				1
+			}
+		},
+		shouji = {
+			{
+				"pre_ab_PQ_shouji_xia",
+				1
+			},
+			{
+				"pre_ab_PQ_shouji_shang",
+				1
+			}
+		},
+		shengli = {
+			{
+				"pre_ab_PQ_shengli",
+				1
+			}
+		},
+		shibai = {
+			{
+				"pre_ab_PQ_shibai",
+				1
+			}
+		},
+		daiji = {
+			{
+				"pre_ab_PQ_daiji_jiesuan",
+				1
+			}
+		},
+		jiangli = {
+			{
+				"pre_ab_PQ_wancheng_jiangli",
+				1
+			}
+		},
+		BallSpeedParam = {
+			0.13,
+			0.016
+		},
+		BallQtePlane = {
+			{
+				0.56,
+				6.2,
+				11.8
+			},
+			{
+				0,
+				0,
+				30
+			}
+		},
+		BallMissPlane = {
+			{
+				0.22,
+				5.45,
+				11.8
+			},
+			{
+				0,
+				0,
+				30
+			}
+		}
+	}
+
+	return
+end)()
+
+return

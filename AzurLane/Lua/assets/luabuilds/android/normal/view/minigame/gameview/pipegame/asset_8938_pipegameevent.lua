@@ -1,0 +1,57 @@
+﻿class = var_0_10000
+
+local var_0_0 = var_0_10000("PipeGameEvent")
+
+this = this
+var_0.LEVEL_GAME = "leavel game"
+this = var_0
+var_0.PAUSE_GAME = "pause game "
+this = var_0
+var_0.OPEN_PAUSE_UI = "open pause ui"
+this = var_0
+var_0.OPEN_LEVEL_UI = "open leave ui"
+this = var_0
+var_0.BACK_MENU = "back menu"
+this = var_0
+var_0.OPEN_EQUIP_UI = "open equip ui"
+this = var_0
+var_0.ON_HOME = "on home"
+this = var_0
+var_0.CLOSE_GAME = "close game"
+this = var_0
+var_0.SHOW_RULE = "show rule"
+this = var_0
+var_0.SHOW_RANK = "show rank"
+this = var_0
+var_0.READY_START = "ready start"
+this = var_0
+var_0.COUNT_DOWN = "count down"
+this = var_0
+var_0.STORE_SERVER = "store server"
+this = var_0
+var_0.SUBMIT_GAME_SUCCESS = "submit game success"
+this = var_0
+var_0.GAME_OVER = "game over"
+this = var_0
+var_0.REMOVE_RECT_TOP = "remove rect top "
+this = var_0
+var_0.PALY_ANIMATION_COMPLETE = "play animation complete"
+this = var_0
+var_0.SET_TOP_RECT = "set top rect"
+this = var_0
+var_0.START_SETTLEMENT = "start settlement"
+this = var_0
+var_0.ADD_SCORE = "add score"
+this = var_0
+var_0.PLAYER_EVENT_DAMAGE = "player event damage"
+this = var_0
+var_0.BOAT_EVENT_FIRE = "boat event fire"
+this = var_0
+var_0.CREATE_EFFECT = "create effect"
+this = var_0
+var_0.USE_ITEM = "use item"
+this = var_0
+var_0.PLAYER_DEAD = "player dead"
+this = var_0
+
+return var_0
