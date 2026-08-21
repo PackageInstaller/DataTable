@@ -1,0 +1,815 @@
+{
+    "name": "mAccessoryCardSetEffects",
+    "data": [
+        {
+            "id": 1,
+            "name": "聖天使、降臨！",
+            "description": "2つの魔札装備枠を種族【天使】で揃えると、以下の効果を付与する。「自身の防御<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が天使の場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 1,
+            "mDressAbilityId": 6410001,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 2,
+            "name": "スライムさん大盛りで！",
+            "description": "2つの魔札装備枠を種族【スライム】で揃えると、以下の効果を付与する。「自身の最大HP<daeg_pow:1>％増加」「自身の攻撃時、対象の種族がスライムの場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 2,
+            "mDressAbilityId": 6410002,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 3,
+            "name": "ケモノの嗅覚",
+            "description": "2つの魔札装備枠を種族【魔獣】で揃えると、以下の効果を付与する。「自身の攻撃<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が魔獣の場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 3,
+            "mDressAbilityId": 6410003,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 4,
+            "name": "フライハイ",
+            "description": "2つの魔札装備枠を種族【フラーイ】で揃えると、以下の効果を付与する。「自身の敏捷<daeg_pow:1>%増加」「自身の攻撃時、対象の種族がフラーイの場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 4,
+            "mDressAbilityId": 6410004,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 5,
+            "name": "アンチグラビティ",
+            "description": "2つの魔札装備枠を種族【浮遊】で揃えると、以下の効果を付与する。「自身の回避率<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が浮遊の場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 5,
+            "mDressAbilityId": 6410005,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 6,
+            "name": "スイスイ・フロータン",
+            "description": "2つの魔札装備枠を種族【オパール】で揃えると、以下の効果を付与する。「自身の魔力<daeg_pow:1>％増加」「自身の攻撃時、対象の種族がオパールの場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 6,
+            "mDressAbilityId": 6410006,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 7,
+            "name": "縁の下の力持ち",
+            "description": "2つの魔札装備枠を種族【パウワー】で揃えると、以下の効果を付与する。「自身の攻撃<daeg_pow:1>％増加」「自身の攻撃時、対象の種族がパウワーの場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 7,
+            "mDressAbilityId": 6410007,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 8,
+            "name": "メガトンパワー",
+            "description": "2つの魔札装備枠を種族【ゴーレム】で揃えると、以下の効果を付与する。「自身の防御<daeg_pow:1>％増加」「自身の攻撃時、対象の種族がゴーレムの場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 8,
+            "mDressAbilityId": 6410008,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 9,
+            "name": "守護者の領域",
+            "description": "2つの魔札装備枠を種族【ガーディアン】で揃えると、以下の効果を付与する。「自身の最大HP<daeg_pow:1>％増加」「自身の攻撃時、対象の種族がガーディアンの場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 9,
+            "mDressAbilityId": 6410009,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 10,
+            "name": "竜の導き",
+            "description": "2つの魔札装備枠を種族【ドラゴン】で揃えると、以下の効果を付与する。「自身の連撃率<daeg_pow:1>％増加」「自身の攻撃時、対象の種族がドラゴンの場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 10,
+            "mDressAbilityId": 6410010,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 11,
+            "name": "キノコをごちそう",
+            "description": "2つの魔札装備枠を種族【キノコ】で揃えると、以下の効果を付与する。「自身の幸運<daeg_pow:1>％増加」「自身の攻撃時、対象の種族がキノコの場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 11,
+            "mDressAbilityId": 6410011,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 12,
+            "name": "昆虫採集",
+            "description": "2つの魔札装備枠を種族【昆虫】で揃えると、以下の効果を付与する。「自身の命中率<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が昆虫の場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 12,
+            "mDressAbilityId": 6410012,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 13,
+            "name": "エレメンタルハーモニー",
+            "description": "2つの魔札装備枠を種族【エレメント】で揃えると、以下の効果を付与する。「自身の回避率<daeg_pow:1>％増加」「自身の攻撃時、対象の種族がエレメントの場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 13,
+            "mDressAbilityId": 6410013,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 14,
+            "name": "ギギ、チョキ、キュー",
+            "description": "2つの魔札装備枠を種族【海産物】で揃えると、以下の効果を付与する。「自身の命中率<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が海産物の場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 14,
+            "mDressAbilityId": 6410014,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 15,
+            "name": "大空を翔る魔鳥",
+            "description": "2つの魔札装備枠を種族【魔鳥】で揃えると、以下の効果を付与する。「自身の敏捷<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が魔鳥の場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 15,
+            "mDressAbilityId": 6410015,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 16,
+            "name": "人の心を惑わすもの",
+            "description": "2つの魔札装備枠を種族【悪魔】で揃えると、以下の効果を付与する。「自身の連撃率<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が悪魔の場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 16,
+            "mDressAbilityId": 6410016,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 17,
+            "name": "精霊の舞",
+            "description": "2つの魔札装備枠を種族【精霊】で揃えると、以下の効果を付与する。「自身の防御<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が精霊の場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 17,
+            "mDressAbilityId": 6410017,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 18,
+            "name": "聖なる獣の恩寵",
+            "description": "2つの魔札装備枠を種族【聖獣】で揃えると、以下の効果を付与する。「自身の連撃率<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が聖獣の場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 18,
+            "mDressAbilityId": 6410018,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 19,
+            "name": "封印されし禁書",
+            "description": "2つの魔札装備枠を種族【魔導書】で揃えると、以下の効果を付与する。「自身の魔力<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が魔導書の場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 19,
+            "mDressAbilityId": 6410019,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 20,
+            "name": "実体なき者たち",
+            "description": "2つの魔札装備枠を種族【霊体】で揃えると、以下の効果を付与する。「自身の回避率<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が霊体の場合、威力が120％に増加」",
+            "category": 1,
+            "setGroupId": 20,
+            "mDressAbilityId": 6410020,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 21,
+            "name": "聖天使フィーバー",
+            "description": "PT全体で種族【天使】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の防御<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が天使の場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 21,
+            "mDressAbilityId": 6410021,
+            "individualAbilityEffectTriggerIds": "[64100212]"
+        },
+        {
+            "id": 22,
+            "name": "スライムさん超特盛で！！！",
+            "description": "PT全体で種族【スライム】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の最大HP<daeg_pow:1>％増加」「自身の攻撃時、対象の種族がスライムの場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 22,
+            "mDressAbilityId": 6410022,
+            "individualAbilityEffectTriggerIds": "[64100222]"
+        },
+        {
+            "id": 23,
+            "name": "野生の本能",
+            "description": "PT全体で種族【魔獣】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の攻撃<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が魔獣の場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 23,
+            "mDressAbilityId": 6410023,
+            "individualAbilityEffectTriggerIds": "[64100232]"
+        },
+        {
+            "id": 24,
+            "name": "空中戦はお任せあれ！",
+            "description": "PT全体で種族【フラーイ】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の敏捷<daeg_pow:1>％増加」「自身の攻撃時、対象の種族がフラーイの場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 24,
+            "mDressAbilityId": 6410024,
+            "individualAbilityEffectTriggerIds": "[64100242]"
+        },
+        {
+            "id": 25,
+            "name": "無重力地帯",
+            "description": "PT全体で種族【浮遊】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の回避率<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が浮遊の場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 25,
+            "mDressAbilityId": 6410025,
+            "individualAbilityEffectTriggerIds": "[64100252]"
+        },
+        {
+            "id": 26,
+            "name": "ドリフターズ",
+            "description": "PT全体で種族【オパール】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の魔力<daeg_pow:1>％増加」「自身の攻撃時、対象の種族がオパールの場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 26,
+            "mDressAbilityId": 6410026,
+            "individualAbilityEffectTriggerIds": "[64100262]"
+        },
+        {
+            "id": 27,
+            "name": "力こそパウワー",
+            "description": "PT全体で種族【パウワー】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の攻撃<daeg_pow:1>％増加」「自身の攻撃時、対象の種族がパウワーの場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 27,
+            "mDressAbilityId": 6410027,
+            "individualAbilityEffectTriggerIds": "[64100272]"
+        },
+        {
+            "id": 28,
+            "name": "難攻不落",
+            "description": "PT全体で種族【ゴーレム】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の防御<daeg_pow:1>％増加」「自身の攻撃時、対象の種族がゴーレムの場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 28,
+            "mDressAbilityId": 6410028,
+            "individualAbilityEffectTriggerIds": "[64100282]"
+        },
+        {
+            "id": 29,
+            "name": "絶対防御戦線",
+            "description": "PT全体で種族【ガーディアン】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の最大HP<daeg_pow:1>％増加」「自身の攻撃時、対象の種族がガーディアンの場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 29,
+            "mDressAbilityId": 6410029,
+            "individualAbilityEffectTriggerIds": "[64100292]"
+        },
+        {
+            "id": 30,
+            "name": "大いなる竜の力",
+            "description": "PT全体で種族【ドラゴン】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の連撃率<daeg_pow:1>％増加」「自身の攻撃時、対象の種族がドラゴンの場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 30,
+            "mDressAbilityId": 6410030,
+            "individualAbilityEffectTriggerIds": "[64100302]"
+        },
+        {
+            "id": 31,
+            "name": "きのこのこのこ",
+            "description": "PT全体で種族【キノコ】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の幸運<daeg_pow:1>%増加」「自身の攻撃時、対象の種族がキノコの場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 31,
+            "mDressAbilityId": 6410031,
+            "individualAbilityEffectTriggerIds": "[64100312]"
+        },
+        {
+            "id": 32,
+            "name": "一寸のムシにも五分の魂",
+            "description": "PT全体で種族【昆虫】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の命中率<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が昆虫の場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 32,
+            "mDressAbilityId": 6410032,
+            "individualAbilityEffectTriggerIds": "[64100322]"
+        },
+        {
+            "id": 33,
+            "name": "精霊たちの大円舞",
+            "description": "PT全体で種族【エレメント】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の回避率<daeg_pow:1>％増加」「自身の攻撃時、対象の種族がエレメントの場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 33,
+            "mDressAbilityId": 6410033,
+            "individualAbilityEffectTriggerIds": "[64100332]"
+        },
+        {
+            "id": 34,
+            "name": "大海の支配者",
+            "description": "PT全体で種族【海産物】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の命中率<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が海産物の場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 34,
+            "mDressAbilityId": 6410034,
+            "individualAbilityEffectTriggerIds": "[64100342]"
+        },
+        {
+            "id": 35,
+            "name": "魔鳥のはばたき",
+            "description": "PT全体で種族【魔鳥】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の敏捷<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が魔鳥の場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 35,
+            "mDressAbilityId": 6410035,
+            "individualAbilityEffectTriggerIds": "[64100352]"
+        },
+        {
+            "id": 36,
+            "name": "あくまで悪魔",
+            "description": "PT全体で種族【悪魔】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の連撃率<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が悪魔の場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 36,
+            "mDressAbilityId": 6410036,
+            "individualAbilityEffectTriggerIds": "[64100362]"
+        },
+        {
+            "id": 37,
+            "name": "聖域の防人",
+            "description": "PT全体で種族【精霊】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の防御<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が精霊の場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 37,
+            "mDressAbilityId": 6410037,
+            "individualAbilityEffectTriggerIds": "[64100372]"
+        },
+        {
+            "id": 38,
+            "name": "神秘の護り",
+            "description": "PT全体で種族【聖獣】の魔札を合計3枚以上装備時、味方全体に以下の効果を付与する。「自身の連撃率<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が聖獣の場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 38,
+            "mDressAbilityId": 6410038,
+            "individualAbilityEffectTriggerIds": "[64100382]"
+        },
+        {
+            "id": 39,
+            "name": "マジカルライブラリー",
+            "description": "PT全体で種族【魔導書】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の魔力<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が魔導書の場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 39,
+            "mDressAbilityId": 6410039,
+            "individualAbilityEffectTriggerIds": "[64100392]"
+        },
+        {
+            "id": 40,
+            "name": "レヴィナントフォース",
+            "description": "PT全体で種族【霊体】の魔札を3枚以上装備時、味方全体に以下の効果を付与する。「自身の回避率<daeg_pow:1>％増加」「自身の攻撃時、対象の種族が霊体の場合、威力が110％に増加」",
+            "category": 2,
+            "setGroupId": 40,
+            "mDressAbilityId": 6410040,
+            "individualAbilityEffectTriggerIds": "[64100402]"
+        },
+        {
+            "id": 41,
+            "name": "バレンタイン・キッス",
+            "description": "「ショコラスライム」「チョコアニマル」を同時に装備時、以下の効果を付与する。「自身の魅了付与率増加」「ウェーブ開始時、ランダムな敵単体に確率で魅了付与」",
+            "category": 1,
+            "setGroupId": 41,
+            "mDressAbilityId": 6410041,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 42,
+            "name": "偽りの海産物",
+            "description": "「巨大タコ」「クラゲ」を同時に装備時、以下の効果を付与する。「自身の防御と反撃率<daeg_pow:1>%減少」「ターン開始時に自身の萌技ゲージ増加」",
+            "category": 1,
+            "setGroupId": 42,
+            "mDressAbilityId": 6410042,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 43,
+            "name": "鬼の心にも愛",
+            "description": "「鬼スライム」「ラブリー」を同時に装備時、以下の効果を付与する。「自身の幸運<daeg_pow:1>％増加/呪い抵抗と魅了抵抗増加」",
+            "category": 1,
+            "setGroupId": 43,
+            "mDressAbilityId": 6410043,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 44,
+            "name": "夢の中へ",
+            "description": "「ミヌタ・タピルス」「マグナ・タピルス」を同時に装備時、以下の効果を付与する。「萌技・通常攻撃以外の攻撃スキル実行時、対象が睡眠状態の場合、威力が120%に増加」",
+            "category": 1,
+            "setGroupId": 44,
+            "mDressAbilityId": 6410044,
+            "individualAbilityEffectTriggerIds": "[64100441,64100442]"
+        },
+        {
+            "id": 45,
+            "name": "森の聖獣",
+            "description": "「ユニコーン」「<ig_desc_link>深淵</ig_desc_link>を帯びた一角獣」を同時に装備時、以下の効果を付与する。「自身の魔力<daeg_pow:1>％増加」「バトル開始時、自身に深淵付与」",
+            "category": 1,
+            "setGroupId": 45,
+            "mDressAbilityId": 6410045,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 46,
+            "name": "毎日がクリスマス",
+            "description": "「クリスマススライム」「ハッピーサンタ」を同時に装備時、以下の効果を付与する。「自身の幸運<daeg_pow:1>％増加」",
+            "category": 1,
+            "setGroupId": 46,
+            "mDressAbilityId": 6410046,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 47,
+            "name": "埃まみれの本",
+            "description": "「ホコリスライム」「リモワ写本」を同時に装備時、以下の効果を付与する。「通常攻撃時、対象の魔力<daeg_pow:1>%減少」",
+            "category": 1,
+            "setGroupId": 47,
+            "mDressAbilityId": 6410047,
+            "individualAbilityEffectTriggerIds": "[64100471]"
+        },
+        {
+            "id": 48,
+            "name": "もこもこもくもく",
+            "description": "「ゴワモコ」「ダハブ・マ・ジーン」を同時に装備時、以下の効果を付与する。「通常攻撃時、確率で対象の命中率<daeg_pow:1>％減少」",
+            "category": 1,
+            "setGroupId": 48,
+            "mDressAbilityId": 6410048,
+            "individualAbilityEffectTriggerIds": "[64100481]"
+        },
+        {
+            "id": 49,
+            "name": "おひるねタイム",
+            "description": "「ワルムート」「魅惑のコタツスライム」を同時に装備時、以下の効果を付与する。「自身の睡眠付与率増加」「萌技・通常攻撃以外の攻撃スキル実行時、対象が睡眠状態の場合、対象の補助効果を<daeg_pow:3>つ解除」",
+            "category": 1,
+            "setGroupId": 49,
+            "mDressAbilityId": 6410049,
+            "individualAbilityEffectTriggerIds": "[64100492,64100493]"
+        },
+        {
+            "id": 50,
+            "name": "明日から本気出す",
+            "description": "「荒ぶる精霊ユーノ」「ボアドム・ドンムー」を同時に装備時、以下の効果を付与する。「ウェーブ開始時、自身と敵全体に確率で疲労付与」「ターン開始時、自身が疲労状態の場合、自身のHP<daeg_pow:3>%回復」",
+            "category": 1,
+            "setGroupId": 50,
+            "mDressAbilityId": 6410050,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 51,
+            "name": "ジャイアント・アイランド",
+            "description": "「波間をたゆたう島クジラ」「ホワイトアイル」を同時に装備時、以下の効果を付与する。「自身の最大HP<daeg_pow:1>%増加、敏捷<daeg_pow:2>%/回避率<daeg_pow:3>％減少」",
+            "category": 1,
+            "setGroupId": 51,
+            "mDressAbilityId": 6410051,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 52,
+            "name": "一角の獣たち",
+            "description": "「ユニコーン」「ウニコール」を同時に装備時、以下の効果を付与する。「自身の攻撃<daeg_pow:1>％/命中率<daeg_pow:2>％増加」",
+            "category": 1,
+            "setGroupId": 52,
+            "mDressAbilityId": 6410052,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 53,
+            "name": "若竜を従えし祖",
+            "description": "「ジェイドドラゴン」「ガルガンチュア」を同時に装備時、以下の効果を付与する。「ウェーブ開始時、自身に飛行付与」",
+            "category": 1,
+            "setGroupId": 53,
+            "mDressAbilityId": 6410053,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 54,
+            "name": "トリックオアトリート",
+            "description": "「ハロウィンスライム」「ジャック・オー・ウンタマ」を同時に装備時、以下の効果を付与する。「回復魔法を受けた時、自身にバリアー付与」「被ダメージ時、ランダムな敵単体に確率で忘却付与」",
+            "category": 1,
+            "setGroupId": 54,
+            "mDressAbilityId": 6410054,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 55,
+            "name": "ウニ心あれば水心",
+            "description": "「アクアスライム」「ウニコール」を同時に装備時、以下の効果を付与する。「物理攻撃による被ダメージ時、自身の攻撃<daeg_pow:1>％増加」「魔法攻撃による被ダメージ時、自身の魔力<daeg_pow:2>%増加」",
+            "category": 1,
+            "setGroupId": 55,
+            "mDressAbilityId": 6410055,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 56,
+            "name": "恋のキューピット",
+            "description": "「エレ・クピド」「アルマロス」を同時に装備時、以下の効果を付与する。「自身の幸運<daeg_pow:1>%/魅了付与率増加」",
+            "category": 1,
+            "setGroupId": 56,
+            "mDressAbilityId": 6410056,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 57,
+            "name": "愛の大暴走",
+            "description": "「荒ぶる精霊ユーノ」「邪精霊ユーノ」を同時に装備時、以下の効果を付与する。「自身の魔力<daeg_pow:1>%増加」「2ターン毎のターン開始時、自身の魔力<daeg_pow:2>％減少」",
+            "category": 1,
+            "setGroupId": 57,
+            "mDressAbilityId": 6410057,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 58,
+            "name": "天使と悪魔のささやき",
+            "description": "「ラメエル」「エリトロン」を同時に装備時、以下の効果を付与する。「自身の攻撃<daeg_pow:1>％増加」「自身の行動終了時、自身に確率で呪い付与」",
+            "category": 1,
+            "setGroupId": 58,
+            "mDressAbilityId": 6410058,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 59,
+            "name": "禁断の魔術書",
+            "description": "「メタシクロ祭祀書」「タブラ・ラーサ」を同時に装備時、以下の効果を付与する。「自身の魔力<daeg_pow:1>％増加」「3ターン毎のターン開始時、自身に忘却付与」",
+            "category": 1,
+            "setGroupId": 59,
+            "mDressAbilityId": 6410059,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 60,
+            "name": "虹色呪文で大成功",
+            "description": "「七色スライム」「ダーリの篇」を同時に装備時、以下の効果を付与する。「自身の攻撃と防御と敏捷と魔力と幸運<daeg_pow:1>％増加」「ウェーブ開始時、自身に毒付与」",
+            "category": 1,
+            "setGroupId": 60,
+            "mDressAbilityId": 6410060,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 61,
+            "name": "穀倉地帯に住む獣",
+            "description": "「ブモットン」「ストリーカ」を同時に装備時、以下の効果を付与する。「自身の攻撃<daeg_pow:1>％増加」",
+            "category": 1,
+            "setGroupId": 61,
+            "mDressAbilityId": 6410061,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 62,
+            "name": "そびえ立つ山々に潜む影",
+            "description": "「宝石スライム」「ブラッドドラゴン」を同時に装備時、以下の効果を付与する。「自身の防御<daeg_pow:1>％増加」",
+            "category": 1,
+            "setGroupId": 62,
+            "mDressAbilityId": 6410062,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 63,
+            "name": "遺跡に集う御霊",
+            "description": "「ガーネット」「エレ・ヴェント」を同時に装備時、以下の効果を付与する。「自身の幸運<daeg_pow:1>％増加」",
+            "category": 1,
+            "setGroupId": 63,
+            "mDressAbilityId": 6410063,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 64,
+            "name": "神殿を支配せし力",
+            "description": "「亡者の怨念」「バラキエル」を同時に装備時、以下の効果を付与する。「自身の最大HP<daeg_pow:1>％増加」",
+            "category": 1,
+            "setGroupId": 64,
+            "mDressAbilityId": 6410064,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 65,
+            "name": "絶望への誘い",
+            "description": "「キャノンボイル」「アバルティス」を同時に装備時、以下の効果を付与する。「自身の敏捷<daeg_pow:1>％増加」",
+            "category": 1,
+            "setGroupId": 65,
+            "mDressAbilityId": 6410065,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 66,
+            "name": "究極の鍋を求めて",
+            "description": "PT全体で「巨大タコ」「ヤシミカッター」「カーディナル」「ナメスジール」「珍味佳肴のイモタロス」を同時に装備時、以下の効果を付与する。「味方全体の最大HP<daeg_pow:1>%増加」「ウェーブ開始時、味方前衛に再生付与」",
+            "category": 2,
+            "setGroupId": 66,
+            "mDressAbilityId": 6410066,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 67,
+            "name": "森に棲むものたち",
+            "description": "PT全体で「ブモットン」「パウワー」「アマニタン」「キャタルバ」「フンガモンガー」を同時に装備時、以下の効果を付与する。「ウェーブ開始時と4ターン毎のターン開始時、味方後衛にベールと加護付与」",
+            "category": 2,
+            "setGroupId": 67,
+            "mDressAbilityId": 6410067,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 68,
+            "name": "イノシシパニック",
+            "description": "PT全体で「ブモータ」「ブモッフ」「ブモットン」「復讐の獣」「巨大イノシッシ」「ペンタゴアシッシ」を同時に装備時、以下の効果を付与する。「味方全体の攻撃<daeg_pow:1>%増加」「ウェーブ開始時、味方前衛に力溜め付与」",
+            "category": 2,
+            "setGroupId": 68,
+            "mDressAbilityId": 6410068,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 69,
+            "name": "スライムさん山盛りで！！",
+            "description": "PT全体で「スライムボス」「スライムキング」「スライムカイザー」「巨大ハロウィンスライム」を同時に装備時、以下の効果を付与する。「味方全体の最大HP<daeg_pow:1>%増加」「ウェーブ開始時、味方後衛にバリアー付与」",
+            "category": 2,
+            "setGroupId": 69,
+            "mDressAbilityId": 6410069,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 70,
+            "name": "紅白スラスラ合戦",
+            "description": "PT全体で「もちスライム」「紅白スライム」「鬼スライム」「雪スライム」「白熱オーダマスライム」を同時に装備時、以下の効果を付与する。「味方全体の敏捷と幸運<daeg_pow:1>%増加」",
+            "category": 2,
+            "setGroupId": 70,
+            "mDressAbilityId": 6410070,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 71,
+            "name": "†漆黒の堕天使†",
+            "description": "PT全体で「ギザール」「オブシダン」「パニッシャー」「エレ・ダーク」「レムレース」を同時に装備時、以下の効果を付与する。「味方全体の魔力<daeg_pow:1>%増加/味方全体の闇撃ダメージが150%に増加」",
+            "category": 2,
+            "setGroupId": 71,
+            "mDressAbilityId": 6410071,
+            "individualAbilityEffectTriggerIds": "[64100712]"
+        },
+        {
+            "id": 72,
+            "name": "ポイズンバースト",
+            "description": "PT全体で「ベノスポアン」「マゴマーゴ」「べベンジュウガ」を同時に装備時、以下の効果を付与する。「味方全体の毒・猛毒付与率増加」「ウェーブ開始時、敵フィールドにポイズンフィールドを付与」",
+            "category": 2,
+            "setGroupId": 72,
+            "mDressAbilityId": 6410072,
+            "individualAbilityEffectTriggerIds": "[64100721,64100722]"
+        },
+        {
+            "id": 73,
+            "name": "こうごうせい",
+            "description": "PT全体で「双葉スライム」「麦穂スライム」「ホエール」「キャタルバ」を同時に装備時、以下の効果を付与する。「ウェーブ開始時、味方全体のHP回復。ランダムな味方後衛単体に萌芽付与」",
+            "category": 2,
+            "setGroupId": 73,
+            "mDressAbilityId": 6410073,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 74,
+            "name": "きゅんきゅんラブパワー",
+            "description": "PT全体で「ラブリー」「エレ・クピド」「ピュアスライムハート」を同時に装備時、以下の効果を付与する。「味方全体の魅了付与率/魅了抵抗増加」「冥王スキル使用時、ランダムな味方前衛単体に繚乱付与」",
+            "category": 2,
+            "setGroupId": 74,
+            "mDressAbilityId": 6410074,
+            "individualAbilityEffectTriggerIds": "[64100741]"
+        },
+        {
+            "id": 75,
+            "name": "紅一色",
+            "description": "PT全体で「パインヘッド」「プレデター」「ブラッドドラゴン」「エレ・フォーコ」「ギュムノート」「スマラグ」「フラム・ラルヴァ」を同時に装備時、以下の効果を付与する。「味方全体の攻撃<daeg_pow:1>%増加/炎撃ダメージが150%に増加」",
+            "category": 2,
+            "setGroupId": 75,
+            "mDressAbilityId": 6410075,
+            "individualAbilityEffectTriggerIds": "[64100752]"
+        },
+        {
+            "id": 76,
+            "name": "謹賀新年の祝い",
+            "description": "PT全体で「あけおめスライム」「もちスライム」「墨スライム」「べベンジュウガ」「ハフブラッダー」を同時に装備時、以下の効果を付与する。「味方全体の幸運<daeg_pow:1>%増加/光撃ダメージが150%に増加」",
+            "category": 2,
+            "setGroupId": 76,
+            "mDressAbilityId": 6410076,
+            "individualAbilityEffectTriggerIds": "[64100762]"
+        },
+        {
+            "id": 77,
+            "name": "幽霊たちの舞踏会",
+            "description": "PT全体で「亡者」「亡者の怨念」「マカーバ」「レムレース」「フラム・ラルヴァ」を同時に装備時、以下の効果を付与する。「ウェーブ開始時、敵全体の敏捷<daeg_pow:1>%減少」「味方後衛の通常攻撃時、対象に確率で呪い付与」",
+            "category": 2,
+            "setGroupId": 77,
+            "mDressAbilityId": 6410077,
+            "individualAbilityEffectTriggerIds": "[64100772]"
+        },
+        {
+            "id": 78,
+            "name": "トロピカルバカンス★",
+            "description": "PT全体で「砂スライム」「トロピカルスライム」「アクアスライム」「氷ゴーレム」「波間をたゆたう島クジラ」「アル・マーリド」を同時に装備時、以下の効果を付与する。「味方全体の防御<daeg_pow:1>%増加」「ウェーブ開始時、味方後衛のHP回復」",
+            "category": 2,
+            "setGroupId": 78,
+            "mDressAbilityId": 6410078,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 79,
+            "name": "天庭親衛隊",
+            "description": "PT全体で「ジャベリン」「スティンガー」「アルマロス」を同時に装備時、以下の効果を付与する。「味方全体の攻撃<daeg_pow:1>%増加」「味方前衛の攻撃時、対象の種族が人間の場合、威力が200％に増加」",
+            "category": 2,
+            "setGroupId": 79,
+            "mDressAbilityId": 6410079,
+            "individualAbilityEffectTriggerIds": "[64100792]"
+        },
+        {
+            "id": 80,
+            "name": "ビリビリ伝導体",
+            "description": "PT全体で「アイアンゴーレム」「エレ・リヒト」「エレ・トゥオーノ」「ギュムノート」を同時に装備時、以下の効果を付与する。「味方全体の雷撃ダメージが150%に増加」「ウェーブ開始時、敵全体に確率で感電付与」",
+            "category": 2,
+            "setGroupId": 80,
+            "mDressAbilityId": 6410080,
+            "individualAbilityEffectTriggerIds": "[64100801]"
+        },
+        {
+            "id": 81,
+            "name": "闇に飲まれて！",
+            "description": "PT全体で「墨スライム」「オブシダン」「巨大ゴーレム」「エレ・ダーク」を同時に装備時、以下の効果を付与する。「味方全体の回避率が<daeg_pow:1>%増加」「ウェーブ開始時、味方全体に煙幕付与」",
+            "category": 2,
+            "setGroupId": 81,
+            "mDressAbilityId": 6410081,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 82,
+            "name": "鉄壁の砦",
+            "description": "PT全体で「ブリックゴーレム」「アイアンゴーレム」「ジャベリン」「スティンガー」を同時に装備時、以下の効果を付与する。「味方全体の防御<daeg_pow:1>%増加」「ウェーブ開始時、ランダムな味方前衛単体に守護神付与」",
+            "category": 2,
+            "setGroupId": 82,
+            "mDressAbilityId": 6410082,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 83,
+            "name": "飛行訓練開催中",
+            "description": "PT全体で「フラーイ」「ワッハール」「オパール」「カルダもん」を同時に装備時、以下の効果を付与する。「味方全体の敏捷<daeg_pow:1>%増加」「ウェーブ開始時、ランダムな味方前衛単体に飛行付与」",
+            "category": 2,
+            "setGroupId": 83,
+            "mDressAbilityId": 6410083,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 84,
+            "name": "眩い宝石達",
+            "description": "PT全体で「宝石スライム」「水晶スライム」「黄金スライム」「キラキラスライム」「魔晶石」「ボス魔晶石」を同時に装備時、以下の効果を付与する。「味方全体の防御<daeg_pow:1>％増加」「ウェーブ開始時、敵全体の命中率<daeg_pow:2>％減少」",
+            "category": 2,
+            "setGroupId": 84,
+            "mDressAbilityId": 6410084,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 85,
+            "name": "ブラッディファング",
+            "description": "PT全体で「復讐の獣」「禁忌のドラコ・ホリビリス」「エラローヴ」「望滅の凶獣」を同時に装備時、以下の効果を付与する。「味方全体の出血付与率増加」「味方前衛の攻撃時、対象が出血状態の場合、威力が150％に増加」",
+            "category": 2,
+            "setGroupId": 85,
+            "mDressAbilityId": 6410085,
+            "individualAbilityEffectTriggerIds": "[64100851,64100852]"
+        },
+        {
+            "id": 86,
+            "name": "辺り一面雪景色",
+            "description": "PT全体で「雪スライム」「氷ゴーレム」「エレ・クール」「エレ・フリッダ」を同時に装備時、以下の効果を付与する。「味方全体の氷結付与率増加」「味方全体の氷撃ダメージが150%に増加」",
+            "category": 2,
+            "setGroupId": 86,
+            "mDressAbilityId": 6410086,
+            "individualAbilityEffectTriggerIds": "[64100861,64100862]"
+        },
+        {
+            "id": 87,
+            "name": "誰が一番速い？",
+            "description": "PT全体で「ブモータ」「ユニコーン」「フォーゴラシャ」を同時に装備時、以下の効果を付与する。「味方全体の敏捷<daeg_pow:1>％増加」「バトル開始時、一番敏捷が高い味方単体に加速付与」",
+            "category": 2,
+            "setGroupId": 87,
+            "mDressAbilityId": 6410087,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 88,
+            "name": "一石二鳥",
+            "description": "PT全体で「ロックゴーレム」「ぺトレル」「ストリーカ」を同時に装備時、以下の効果を付与する。「味方全体の連撃率<daeg_pow:1>％増加」",
+            "category": 2,
+            "setGroupId": 88,
+            "mDressAbilityId": 6410088,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 89,
+            "name": "ネクロマンサー",
+            "description": "PT全体で「亡者」「エリトロン」「マカーバ」を同時に装備時、以下の効果を付与する。「ウェーブ開始時、ランダムな味方単体を蘇生する」",
+            "category": 2,
+            "setGroupId": 89,
+            "mDressAbilityId": 6410089,
+            "individualAbilityEffectTriggerIds": null
+        },
+        {
+            "id": 90,
+            "name": "殻にこもる",
+            "description": "PT全体で「水晶スライム」「キラキラスライム」「ヤシミカッター」「キャノンボイル」を同時に装備時、以下の効果を付与する。「味方全体の防御<daeg_pow:1>％増加」「ウェーブ開始時、味方前衛に鋼壁付与」",
+            "category": 2,
+            "setGroupId": 90,
+            "mDressAbilityId": 6410090,
+            "individualAbilityEffectTriggerIds": null
+        }
+    ]
+}

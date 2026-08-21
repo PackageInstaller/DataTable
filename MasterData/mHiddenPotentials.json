@@ -1,0 +1,285 @@
+{
+    "name": "mHiddenPotentials",
+    "data": [
+        {
+            "id": 300101,
+            "name": "月下閃く無謬の剣",
+            "description": "自身の攻撃/防御/魔力/敏捷/幸運がデバフ効果による減少の下限値が-50%になる。自身の攻撃スキル威力2000/萌技威力3000増加。",
+            "mUnitId": 1,
+            "abilityId": 6400101,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 300201,
+            "name": "万物癒やす慈愛の抱擁",
+            "description": "自身の回復魔法の回復量が増加。自身がダウンすると、1回のみ自身を除く味方全体を蘇生し999999回復/HP回復/状態異常をすべて解除。",
+            "mUnitId": 2,
+            "abilityId": 6400201,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 300301,
+            "name": "本能叫ぶ剛撃無双",
+            "description": "自身の幸運25%/クリティカル率15%増加。バトル開始時と4ターン毎のターン開始時、自身に見極め付与。",
+            "mUnitId": 3,
+            "abilityId": 6400301,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 300401,
+            "name": "魔を律する秘奥の理",
+            "description": "自身の魔力と幸運20%増加。ウェーブ開始時、自身に過電集積LV1付与。",
+            "mUnitId": 4,
+            "abilityId": 6400401,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 300501,
+            "name": "冥界に捧ぐ闇夜の契り",
+            "description": "ターン開始時、MP1回復。ウェーブ開始時、自身にベアトリーチェの契り付与。",
+            "mUnitId": 5,
+            "abilityId": 6400501,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 300701,
+            "name": "戦友を背負う鉄壁の護り",
+            "description": "防御デバフを無効化。冥王スキル発動時、自身にクレアの護り付与。",
+            "mUnitId": 7,
+            "abilityId": 6400701,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 300801,
+            "name": "満ちる慈愛と無手の加護",
+            "description": "自身の最大HP20%増加。自身の炎撃・氷撃・雷撃・光撃・闇撃ダメージを1.3倍にする。",
+            "mUnitId": 8,
+            "abilityId": 6400801,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 300901,
+            "name": "勝利導く臨戦の舞",
+            "description": "自身の幸運<daeg_pow:64009011>%増加。最大MP10増加。ウェーブ開始時、ランダムな敵単体に確率で魅了付与。",
+            "mUnitId": 9,
+            "abilityId": 6400901,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 301001,
+            "name": "万物流転する大錬金術",
+            "description": "物理攻撃実行時、対象の防御10%減少。魔法攻撃実行時、対象の魔力10%減少。回復魔法実行時、対象に鋼壁付与/状態異常1つ解除。蘇生魔法実行時、対象の最大HP10%増加/再生付与。攻撃・回復・蘇生以外を実行時、味方全体の攻撃/防御/魔力/敏捷/幸運50増加（上限500)。",
+            "mUnitId": 10,
+            "abilityId": 6401001,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 301101,
+            "name": "奇跡生む光采陸離の魔筆",
+            "description": "ターン開始時、自身の幸運10%増加/ヘイト減少。単体攻撃スキル実行時、対象の反撃率10%減少。複数攻撃スキル実行時、対象の魔力と幸運10%減少。",
+            "mUnitId": 11,
+            "abilityId": 6401101,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 301201,
+            "name": "純愛に燃ゆる精霊使い",
+            "description": "自身の炎撃・氷撃・雷撃・光撃・闇撃ダメージを1.2倍にする。冥王スキル発動時、自身に新緑の聖域付与。",
+            "mUnitId": 12,
+            "abilityId": 6401201,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 301401,
+            "name": "赫々たる砲火の戦功",
+            "description": "自身の攻撃<daeg_pow:64014011>%増加。自身の攻撃時、ガードによるダメージ軽減を無視してダメージを与える。",
+            "mUnitId": 14,
+            "abilityId": 6401401,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 301501,
+            "name": "相棒と夢見る楽園の実り",
+            "description": "通常攻撃がファム＆バブーに変化。ウェーブ開始時、自身にファムの実り付与。",
+            "mUnitId": 15,
+            "abilityId": 6401501,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 301601,
+            "name": "刹那奪いし風来の影",
+            "description": "自身の敏捷<daeg_pow:64016011>%増加。敏捷デバフを無効化。ウェーブ開始時、敵全体にまるはだか付与。",
+            "mUnitId": 16,
+            "abilityId": 6401601,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 301701,
+            "name": "瑞星煌めく薬師の激励",
+            "description": "自身の最大HP50%増加。バトル開始時、自身以外の味方全体の最大HP20%増加。ウェーブ開始時、味方全体の状態異常1つ解除。",
+            "mUnitId": 17,
+            "abilityId": 6401701,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 301801,
+            "name": "宵闇に踊る漆黒の翼",
+            "description": "3ターン毎のターン開始時、ランダムな敵単体に蒼史タイプのスキル威力2000の物理攻撃。吸血で自身のHP回復。吸血行動時、確率で自身の最大HP2%増加。敵の攻撃を回避時、自身の攻撃と魔力10%増加。",
+            "mUnitId": 18,
+            "abilityId": 6401801,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 301901,
+            "name": "蒼天の疾き竜の王者",
+            "description": "バトル開始時、自身に高速飛翔付与。ターン開始時、自身が飛行状態の場合、自身に高速飛翔付与。攻撃時、自身が高速飛翔状態の場合、ダメージを150％に増加/対象の飛行解除。",
+            "mUnitId": 19,
+            "abilityId": 6401901,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 302001,
+            "name": "潮汐に揺れる恋歌",
+            "description": "ウェーブ開始時、味方全体のHP回復。自身にウィルの旋律付与。",
+            "mUnitId": 20,
+            "abilityId": 6402001,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 302101,
+            "name": "安寧もたらす太陽の姫",
+            "description": "通常攻撃時、ガードによるダメージ軽減を無視してダメージを与える。自身が平和的交渉状態でない場合、敵の攻撃で被ダメージ時、確率で自身に平和的交渉付与。",
+            "mUnitId": 21,
+            "abilityId": 6402101,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 302201,
+            "name": "戦劫穿つ妹姫の深謀",
+            "description": "バトル開始時、攻撃が一番高い味方前衛単体と、魔力が一番高い味方後衛単体に錦嚢の計付与。自身が前衛にいる場合、味方前衛の攻撃と反撃率15%増加。自身が後衛にいる場合、味方後衛の魔力15%/回避率10%増加。",
+            "mUnitId": 22,
+            "abilityId": 6402201,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 302301,
+            "name": "水天戴く聖なる洗礼",
+            "description": "ターン開始時、自身のHP回復。自身の攻撃実行時、対象の反撃率5%/ガード率2%減少。",
+            "mUnitId": 23,
+            "abilityId": 6402301,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 302401,
+            "name": "深淵操る放埒の剣",
+            "description": "自身に深淵付与時、ギゼリックの臣下付与。自身がスゴ肉状態の場合、自身の攻撃<daeg_pow:64024012>%増加。",
+            "mUnitId": 24,
+            "abilityId": 6402401,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 302501,
+            "name": "深奥に至りし常闇の魔",
+            "description": "ターン開始時、自身が深淵状態の場合、自身の魔力5%増加。4ターン毎のターン開始時、自身が深淵状態の場合、敵全体に刻印付与。自身のHP消費スキル・萌技発動時、自身のHP回復。",
+            "mUnitId": 25,
+            "abilityId": 6402501,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 302601,
+            "name": "森羅を抱く女王の深き愛情",
+            "description": "冥王スキル発動時、自身に緑の聖域付与。通常攻撃を除く複数攻撃スキル・回復スキル・萌技の威力が1000増加。",
+            "mUnitId": 26,
+            "abilityId": 6402601,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 302701,
+            "name": "無間を刻む至高の時辰儀",
+            "description": "ウェーブ開始時、自身に刻の創造付与。投影（単）と投影（複）によるスキル発動時、砂時計を消費しない。",
+            "mUnitId": 27,
+            "abilityId": 6402701,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 302801,
+            "name": "祈念を護る烈風の祝福",
+            "description": "自身が行う蘇生以外の回復効果の回復量が増加。使徒覚醒時、自身の回避率25%/ブリンク発生率増加。",
+            "mUnitId": 28,
+            "abilityId": 6402802,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 302901,
+            "name": "進撃する岩体の魔導兵装",
+            "description": "通常攻撃以外の物理攻撃スキル実行時、自身の装兵ゲージ1増加。通常攻撃以外の魔法攻撃スキル実行時、自身の術兵ゲージ1増加。装兵モード発動時、1度だけ自身に重装付与。術兵モード発動時、1度だけ自身に魔壁付与。",
+            "mUnitId": 29,
+            "abilityId": 6402901,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        },
+        {
+            "id": 303001,
+            "name": "世界が萌ゆる深き花園",
+            "description": "冥王スキル発動時、<ig_desc_link>深淵</ig_desc_link>ゲージ増加。深淵モードの場合、ターン開始時、MP1回復。ウェーブ開始時と自身の行動終了時、深淵の騎士状態の味方にユーの花冠付与。",
+            "mUnitId": 30,
+            "abilityId": 6403001,
+            "needSouryuushi": 2000,
+            "needSeihen": 10,
+            "onOffConfigurableFlag": 1
+        }
+    ]
+}
