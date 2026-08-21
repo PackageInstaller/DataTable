@@ -1,0 +1,26 @@
+{
+  "Lobby_Guide":{
+    "Id":"Lobby_Guide",
+    "UIControllerName":"Root_Lobby",
+    "StartTrigger":"HasGuide",
+    "FocusId":"btn_guide"
+  },
+  "Lobby_Battle":{
+    "Id":"Lobby_Battle",
+    "UIControllerName":"Root_Lobby",
+    "StartTrigger":null,
+    "FocusId":"btn_battle"
+  },
+  "Idle_Reward":{
+    "Id":"Idle_Reward",
+    "UIControllerName":"Root_BattleLobby",
+    "StartTrigger":"HasIdleReward",
+    "FocusId":"btn_idlebox"
+  },
+  "Idle_Battle":{
+    "Id":"Idle_Battle",
+    "UIControllerName":"Root_BattleLobby",
+    "StartTrigger":null,
+    "FocusId":"btn_sector"
+  }
+}

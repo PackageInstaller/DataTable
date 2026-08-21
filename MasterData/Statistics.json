@@ -1,0 +1,752 @@
+{
+  "26":{
+    "Id":"가챠진행",
+    "Type":"TryGacha",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "20":{
+    "Id":"가한피해량",
+    "Type":"InflictedDamage",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "54":{
+    "Id":"검색 - 프록시안 시도",
+    "Type":"TrySelectiveGacha",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "55":{
+    "Id":"검색 - 프록시안 확정",
+    "Type":"ConfirmSelectiveGacha",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "12":{
+    "Id":"계정레벨",
+    "Type":"AcountLv",
+    "RecordType":"Always",
+    "UpdateType":"Max"
+  },
+  "69":{
+    "Id":"교류 대성공",
+    "Type":"CommunicationCritical",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "68":{
+    "Id":"교류 완료",
+    "Type":"CommunicationComplete",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "41":{
+    "Id":"길드가입",
+    "Type":"GuildJoin",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "40":{
+    "Id":"길드개인기여도",
+    "Type":"GuildPlayerExp",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "63":{
+    "Id":"길드기부",
+    "Type":"GuildDonation",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "43":{
+    "Id":"길드소식지",
+    "Type":"GuildNewsCount",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "39":{
+    "Id":"길드출석체크",
+    "Type":"GuildAttendance",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "42":{
+    "Id":"누적길드레벨업",
+    "Type":"GuildLevelUpCount",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "0":{
+    "Id":"누적로그인",
+    "Type":"Login",
+    "RecordType":"DailyOnce",
+    "UpdateType":"Increasement"
+  },
+  "61":{
+    "Id":"대표캐릭터변경",
+    "Type":"ProfileCharacterChange",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "100":{
+    "Id":"도미니언 레벨 그룹 완료",
+    "Type":"DominionLevelGroupClear",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "101":{
+    "Id":"도미니언 에어리어 오픈",
+    "Type":"DominionAreaOpen",
+    "RecordType":"Always",
+    "UpdateType":"Max"
+  },
+  "44":{
+    "Id":"동시길드소식지",
+    "Type":"GuildNewsTriple",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "98":{
+    "Id":"레더 점수 달성",
+    "Type":"LadderScore",
+    "RecordType":"Always",
+    "UpdateType":"Max"
+  },
+  "19":{
+    "Id":"미션포인트",
+    "Type":"MissionPoint",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "58":{
+    "Id":"빠른작전보상획득",
+    "Type":"IdleBattleFastReward",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "16":{
+    "Id":"상점구매",
+    "Type":"ShopPurchase",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "105":{
+    "Id":"상품 구매 포인트",
+    "Type":"BuyPoint",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "53":{
+    "Id":"스킬개방",
+    "Type":"OpenSkill",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "6":{
+    "Id":"스킬레벨업",
+    "Type":"SkillLvUp",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "81":{
+    "Id":"스타시드 건물에 캐릭터 배치",
+    "Type":"ArrangeStarseedChar",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "80":{
+    "Id":"스타시드 시설 강화 완료",
+    "Type":"CompleteFacilityUpgrade",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "2":{
+    "Id":"스테이지클리어",
+    "Type":"StageClear",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "3":{
+    "Id":"스테이지플레이",
+    "Type":"StagePlay",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "51":{
+    "Id":"스토리열람",
+    "Type":"ReadStory",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "64":{
+    "Id":"시드연구",
+    "Type":"ResearchSeed",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "109":{
+    "Id":"시민 의뢰",
+    "Type":"AsniaRequestComplete",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "107":{
+    "Id":"시민 의뢰(교환)",
+    "Type":"AsniaRequestExchange",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "108":{
+    "Id":"시민 의뢰(선물)",
+    "Type":"AsniaRequestGift",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "28":{
+    "Id":"아레나승리",
+    "Type":"ArenaVictory",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "27":{
+    "Id":"아레나플레이",
+    "Type":"ArenaPlay",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "92":{
+    "Id":"아카데미 졸업",
+    "Type":"GraduateAcademy",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "97":{
+    "Id":"특정 등급 이상의 아카데미 칭호 교체",
+    "Type":"SwapAcademyTitle",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "99":{
+    "Id":"액티베이션 센터 활성화",
+    "Type":"ActiveActivationCenter",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "25":{
+    "Id":"연속로그인",
+    "Type":"ContinuedLogin",
+    "RecordType":"DailyOnce",
+    "UpdateType":"Increasement"
+  },
+  "65":{
+    "Id":"용병고용",
+    "Type":"UseMercenary",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "62":{
+    "Id":"용병등록",
+    "Type":"MercenaryRegistration",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "106":{
+    "Id":"이벤트 빙고 달성",
+    "Type":"EventBingo",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "103":{
+    "Id":"이벤트스토리 스코어 달성 수",
+    "Type":"EventStoryScoreReached",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "96":{
+    "Id":"인앱 구매",
+    "Type":"InAppPurchase",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "21":{
+    "Id":"입은피해량",
+    "Type":"SufferedDamage",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "57":{
+    "Id":"자동전투보상획득",
+    "Type":"IdleBattleReward",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "77":{
+    "Id":"장비 레벨 달성 수",
+    "Type":"EquipmentLevelReached",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "91":{
+    "Id":"장비 특정등급이상 착용",
+    "Type":"EquipOverGrade",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "32":{
+    "Id":"장비각인",
+    "Type":"EquipmentEngrave",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "30":{
+    "Id":"장비최대강화",
+    "Type":"MaxEquipmentEnhance",
+    "RecordType":"Always",
+    "UpdateType":"Max"
+  },
+  "60":{
+    "Id":"장비강화",
+    "Type":"TryEquipmentEnhance",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "31":{
+    "Id":"장비초월",
+    "Type":"EquipmentTranscendence",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "29":{
+    "Id":"장비획득",
+    "Type":"GetEquipment",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "88":{
+    "Id":"장착장비최고등급달성치",
+    "Type":"MaxEquipGrade",
+    "RecordType":"Always",
+    "UpdateType":"Max"
+  },
+  "23":{
+    "Id":"재화사용",
+    "Type":"ConsumeCurrency",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "22":{
+    "Id":"재화획득",
+    "Type":"RewardCurrency",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "15":{
+    "Id":"적처치",
+    "Type":"EnemyKill",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "7":{
+    "Id":"채팅하기",
+    "Type":"Chatting",
+    "RecordType":"DailyOnce",
+    "UpdateType":"Increasement"
+  },
+  "1":{
+    "Id":"챕터클리어",
+    "Type":"ChapterClear",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "90":{
+    "Id":"최고스테이지클리어",
+    "Type":"MaxStageClear",
+    "RecordType":"Always",
+    "UpdateType":"Max"
+  },
+  "89":{
+    "Id":"최고스테이지플레이",
+    "Type":"MaxStagePlay",
+    "RecordType":"Always",
+    "UpdateType":"Max"
+  },
+  "36":{
+    "Id":"최적화시도",
+    "Type":"TryOptimization",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "56":{
+    "Id":"친구요청",
+    "Type":"RequestFriend",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "37":{
+    "Id":"파견",
+    "Type":"Dispatch",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "70":{
+    "Id":"파견 대성공",
+    "Type":"SuccessDispatch",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "110":{
+    "Id":"파견 완료",
+    "Type":"DispatchFinish",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "118":{
+    "Id":"특정 등급 이하의 파견 완료",
+    "Type":"DispatchFinishGrade",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "14":{
+    "Id":"프록시안 경험치강화",
+    "Type":"CharacterExpUp",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "85":{
+    "Id":"프록시안 동기화 레벨업",
+    "Type":"CharacterSyncLevel",
+    "RecordType":"Always",
+    "UpdateType":"Max"
+  },
+  "84":{
+    "Id":"프록시안 동기화 배치 변경",
+    "Type":"CharacterSync",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "24":{
+    "Id":"프록시안 등급 달성",
+    "Type":"CharacterGrade",
+    "RecordType":"Always",
+    "UpdateType":"Max"
+  },
+  "73":{
+    "Id":"프록시안 등급 달성 수",
+    "Type":"CharacterGradeReached",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "13":{
+    "Id":"프록시안 레벨 달성",
+    "Type":"CharacterLv",
+    "RecordType":"Always",
+    "UpdateType":"Max"
+  },
+  "72":{
+    "Id":"프록시안 레벨 달성 수",
+    "Type":"CharacterLevelReached",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "49":{
+    "Id":"프록시안 레벨 업",
+    "Type":"CharacterLvUp",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "86":{
+    "Id":"프록시안 링크 활성화",
+    "Type":"CharacterLink",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "18":{
+    "Id":"프록시안 보유",
+    "Type":"CharacterPossess",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "74":{
+    "Id":"프록시안 선물 전달",
+    "Type":"GiveGift",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "50":{
+    "Id":"프록시안 승급",
+    "Type":"CharacterGradeUp",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "87":{
+    "Id":"프록시안 최고 등급 달성치",
+    "Type":"MaxCharacterGradeUp",
+    "RecordType":"Always",
+    "UpdateType":"Max"
+  },
+  "95":{
+    "Id":"프록시안 특정 등급 이상 승급",
+    "Type":"OverCharacterGradeUp",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "104":{
+    "Id":"프록시안 특정 스테이지 플레이",
+    "Type":"CharacterStagePlay",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "67":{
+    "Id":"플러구인연구시작",
+    "Type":"StartPluginDevelopment",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "102":{
+    "Id":"플러그인 레벨 달성 수",
+    "Type":"PluginLevelReached",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "48":{
+    "Id":"플러그인개발",
+    "Type":"PluginDevelopment",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "34":{
+    "Id":"플러그인레벨업",
+    "Type":"PluginLvUp",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "35":{
+    "Id":"플러그인승급",
+    "Type":"PluginPromote",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "33":{
+    "Id":"플러그인획득",
+    "Type":"GetPlugin",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "71":{
+    "Id":"호감도 레벨 상승",
+    "Type":"FavorLevelUp",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "38":{
+    "Id":"?길드 경험치",
+    "Type":"GuildExp",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "4":{
+    "Id":"?스테이지 클리어",
+    "Type":"AccumulateStageClear",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "5":{
+    "Id":"?아이템 장비",
+    "Type":"ItemEquip",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "9":{
+    "Id":"?펫 탐색",
+    "Type":"PetExplore",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "11":{
+    "Id":"?펫 판매",
+    "Type":"PetSell",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "10":{
+    "Id":"?펫 획득",
+    "Type":"PetGet",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "17":{
+    "Id":"?홀로그램 경험치",
+    "Type":"HologramExpUp",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "111":{
+    "Id":"스테이지 클리어 별 달성 수",
+    "Type":"StageClearRating",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "115":{
+    "Id":"프록시안 최초 획득",
+    "Type":"CharacterGetFirst",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "117":{
+    "Id":"특정 등급 이상의 아카데미 칭호 획득",
+    "Type":"GetAcademyTitle",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "112":{
+    "Id":"스테이지 클리어 실패",
+    "Type":"StageClearFailed",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "119":{
+    "Id":"최대 호감도 레벨 달성",
+    "Type":"MaxFavorLevel",
+    "RecordType":"Always",
+    "UpdateType":"Max"
+  },
+  "122":{
+    "Id":"이벤트 퍼즐 조각 선물",
+    "Type":"EventPuzzleSendGift",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "123":{
+    "Id":"아스니아미니게임점수",
+    "Type":"AsniaMiniGameScore",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "124":{
+    "Id":"아스니아미니게임코인",
+    "Type":"AsniaMiniGameCoin",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "125":{
+    "Id":"유리지아 게임센터 점수",
+    "Type":"YuriziaGameScore",
+    "RecordType":"Always",
+    "UpdateType":"Max"
+  },
+  "126":{
+    "Id":"유리지아 게임센터 콤보",
+    "Type":"YuriziaGameCombo",
+    "RecordType":"Always",
+    "UpdateType":"Max"
+  },
+  "127":{
+    "Id":"유리지아 게임센터 플레이",
+    "Type":"YuriziaGamePlay",
+    "RecordType":"DailyOnce",
+    "UpdateType":"Increasement"
+  },
+  "129":{
+    "Id":"플러그인 칩셋 리롤 획수 체크",
+    "Type":"PluginChipsetRerollCount",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "130":{
+    "Id":"플러그인 칩셋 리롤 특정 등급 이상 획득 체크",
+    "Type":"PluginChipsetRerollGradeUpper",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "131":{
+    "Id":"오리진 랜덤 투영",
+    "Type":"OriginRoll",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "133":{
+    "Id":"최대 스킬 레벨 달성",
+    "Type":"MaxSkillLv",
+    "RecordType":"Always",
+    "UpdateType":"Max"
+  },
+  "134":{
+    "Id":"배치 연구",
+    "Type":"PositionResearch",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "135":{
+    "Id":"특정 캐릭터 아스니아 플랜트 생산 완료",
+    "Type":"CharacterAsniaPlant",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "136":{
+    "Id":"이벤트 참여(범용 목적)",
+    "Type":"TryEvent",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "137":{
+    "Id":"인스타시드 외출 활동",
+    "Type":"FavorActivity",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "138":{
+    "Id":"아스니아 플랜트 생산 완료 (담당 캐릭터 무관)",
+    "Type":"AsniaPlantProduction",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "142":{
+    "Id":"프리팹 페이지 방문",
+    "Type":"UIEnter",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "143":{
+    "Id":"캐릭터 해산",
+    "Type":"CharacterFire",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "144":{
+    "Id":"메모리얼 Area 클리어",
+    "Type":"MemorialAreaClear",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "139":{
+    "Id":"세븐 테마즈 장비 장착",
+    "Type":"SevenThemeGearEquip",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "140":{
+    "Id":"시너지 활성화",
+    "Type":"SynergyActive",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "141":{
+    "Id":"시너지 리롤",
+    "Type":"SynergyReroll",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "145":{
+    "Id":"물품 탐색 이벤트 회차 클리어",
+    "Type":"EventScan",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  },
+  "150":{
+    "Id":"캐릭터 획득",
+    "Type":"CharacterGet",
+    "RecordType":"Always",
+    "UpdateType":"Increasement"
+  }
+}

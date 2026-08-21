@@ -1,0 +1,27 @@
+{
+  "1":{
+    "Id":1,
+    "GachaPityType":null,
+    "IncBonusStack":1,
+    "RequiredBonusStack":30,
+    "SSRGainCheck":{}
+  },
+  "2":{
+    "Id":2,
+    "GachaPityType":null,
+    "IncBonusStack":1,
+    "RequiredBonusStack":30,
+    "SSRGainCheck":{
+      "2":"Pickup"
+    }
+  },
+  "3":{
+    "Id":3,
+    "GachaPityType":"ParentAttributePity",
+    "IncBonusStack":1,
+    "RequiredBonusStack":150,
+    "SSRGainCheck":{
+      "1":"Pickup"
+    }
+  }
+}

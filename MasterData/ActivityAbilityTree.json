@@ -1,0 +1,834 @@
+{
+  "ActivityTree.Defender.Health":[
+    {
+      "Id":"ActivityTree.Defender.Health",
+      "Index":1,
+      "Order":1,
+      "StatName":"Name.Tanker.stat.node.01.01",
+      "StatDesc":"설명 스트링1",
+      "Stat":"Tanker.stat.node.01.01",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_normaldamagederate"
+    },
+    {
+      "Id":"ActivityTree.Defender.Health",
+      "Index":2,
+      "Order":2,
+      "StatName":"Name.Tanker.stat.node.02.01",
+      "StatDesc":"설명 스트링2",
+      "Stat":"Tanker.stat.node.02.01",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_activedamagederate"
+    },
+    {
+      "Id":"ActivityTree.Defender.Health",
+      "Index":3,
+      "Order":3,
+      "StatName":"Name.Tanker.stat.node.03.01",
+      "StatDesc":"설명 스트링3",
+      "Stat":"Tanker.stat.node.03.01",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_ultimatedamagederate"
+    },
+    {
+      "Id":"ActivityTree.Defender.Health",
+      "Index":4,
+      "Order":4,
+      "StatName":"Name.Tanker.stat.node.04.01",
+      "StatDesc":"설명 스트링4",
+      "Stat":"Tanker.stat.node.04.01",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_maxhpratio"
+    },
+    {
+      "Id":"ActivityTree.Defender.Health",
+      "Index":5,
+      "Order":5,
+      "StatName":"Name.Tanker.stat.node.05.01",
+      "StatDesc":"설명 스트링5",
+      "Stat":"Tanker.stat.node.05.01",
+      "ReqLevel":5,
+      "Icon":"icon_nodestat_maxhpratio"
+    }
+  ],
+  "ActivityTree.Defender.Strenth":[
+    {
+      "Id":"ActivityTree.Defender.Strenth",
+      "Index":1,
+      "Order":1,
+      "StatName":"Name.Tanker.stat.node.01.02",
+      "StatDesc":"설명 스트링1",
+      "Stat":"Tanker.stat.node.01.02",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_guardreducerate"
+    },
+    {
+      "Id":"ActivityTree.Defender.Strenth",
+      "Index":2,
+      "Order":2,
+      "StatName":"Name.Tanker.stat.node.02.02",
+      "StatDesc":"설명 스트링2",
+      "Stat":"Tanker.stat.node.02.02",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_receiverecoveryrate"
+    },
+    {
+      "Id":"ActivityTree.Defender.Strenth",
+      "Index":3,
+      "Order":3,
+      "StatName":"Name.Tanker.stat.node.03.02",
+      "StatDesc":"설명 스트링3",
+      "Stat":"Tanker.stat.node.03.02",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_criticaldamagederate"
+    },
+    {
+      "Id":"ActivityTree.Defender.Strenth",
+      "Index":4,
+      "Order":4,
+      "StatName":"Name.Tanker.stat.node.04.02",
+      "StatDesc":"설명 스트링4",
+      "Stat":"Tanker.stat.node.04.02",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_defenseratio"
+    },
+    {
+      "Id":"ActivityTree.Defender.Strenth",
+      "Index":5,
+      "Order":5,
+      "StatName":"Name.Tanker.stat.node.05.02",
+      "StatDesc":"설명 스트링5",
+      "Stat":"Tanker.stat.node.05.02",
+      "ReqLevel":5,
+      "Icon":"icon_nodestat_defenseratio"
+    }
+  ],
+  "ActivityTree.Defender.Agility":[
+    {
+      "Id":"ActivityTree.Defender.Agility",
+      "Index":1,
+      "Order":1,
+      "StatName":"Name.Tanker.stat.node.01.03",
+      "StatDesc":"설명 스트링1",
+      "Stat":"Tanker.stat.node.01.03",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_evasionratio"
+    },
+    {
+      "Id":"ActivityTree.Defender.Agility",
+      "Index":2,
+      "Order":2,
+      "StatName":"Name.Tanker.stat.node.02.03",
+      "StatDesc":"설명 스트링2",
+      "Stat":"Tanker.stat.node.02.03",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_guard"
+    },
+    {
+      "Id":"ActivityTree.Defender.Agility",
+      "Index":3,
+      "Order":3,
+      "StatName":"Name.Tanker.stat.node.03.03",
+      "StatDesc":"설명 스트링3",
+      "Stat":"Tanker.stat.node.03.03",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_criticalderate"
+    },
+    {
+      "Id":"ActivityTree.Defender.Agility",
+      "Index":4,
+      "Order":4,
+      "StatName":"Name.Tanker.stat.node.04.03",
+      "StatDesc":"설명 스트링4",
+      "Stat":"Tanker.stat.node.04.03",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_rangedamagederate"
+    },
+    {
+      "Id":"ActivityTree.Defender.Agility",
+      "Index":5,
+      "Order":5,
+      "StatName":"Name.Tanker.stat.node.05.03",
+      "StatDesc":"설명 스트링5",
+      "Stat":"Tanker.stat.node.05.03",
+      "ReqLevel":5,
+      "Icon":"icon_nodestat_guardreducerate"
+    }
+  ],
+  "ActivityTree.Defender.Focus":[
+    {
+      "Id":"ActivityTree.Defender.Focus",
+      "Index":1,
+      "Order":1,
+      "StatName":"Name.Tanker.stat.node.01.04",
+      "StatDesc":"설명 스트링1",
+      "Stat":"Tanker.stat.node.01.04",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_areadamagederate"
+    },
+    {
+      "Id":"ActivityTree.Defender.Focus",
+      "Index":2,
+      "Order":2,
+      "StatName":"Name.Tanker.stat.node.02.04",
+      "StatDesc":"설명 스트링2",
+      "Stat":"Tanker.stat.node.02.04",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_forwarddamgederate"
+    },
+    {
+      "Id":"ActivityTree.Defender.Focus",
+      "Index":3,
+      "Order":3,
+      "StatName":"Name.Tanker.stat.node.03.04",
+      "StatDesc":"설명 스트링3",
+      "Stat":"Tanker.stat.node.03.04",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_accuracyratio"
+    },
+    {
+      "Id":"ActivityTree.Defender.Focus",
+      "Index":4,
+      "Order":4,
+      "StatName":"Name.Tanker.stat.node.04.04",
+      "StatDesc":"설명 스트링4",
+      "Stat":"Tanker.stat.node.04.04",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_defenseratio"
+    },
+    {
+      "Id":"ActivityTree.Defender.Focus",
+      "Index":5,
+      "Order":5,
+      "StatName":"Name.Tanker.stat.node.05.04",
+      "StatDesc":"설명 스트링5",
+      "Stat":"Tanker.stat.node.05.04",
+      "ReqLevel":5,
+      "Icon":"icon_nodestat_evasionratio"
+    }
+  ],
+  "ActivityTree.Attacker.Health":[
+    {
+      "Id":"ActivityTree.Attacker.Health",
+      "Index":1,
+      "Order":1,
+      "StatName":"Name.Attacker.stat.node.01.01",
+      "StatDesc":"설명 스트링1",
+      "Stat":"Attacker.stat.node.01.01",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_normaldamagederate"
+    },
+    {
+      "Id":"ActivityTree.Attacker.Health",
+      "Index":2,
+      "Order":2,
+      "StatName":"Name.Attacker.stat.node.02.01",
+      "StatDesc":"설명 스트링2",
+      "Stat":"Attacker.stat.node.02.01",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_activedamagederate"
+    },
+    {
+      "Id":"ActivityTree.Attacker.Health",
+      "Index":3,
+      "Order":3,
+      "StatName":"Name.Attacker.stat.node.03.01",
+      "StatDesc":"설명 스트링3",
+      "Stat":"Attacker.stat.node.03.01",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_ultimatedamagederate"
+    },
+    {
+      "Id":"ActivityTree.Attacker.Health",
+      "Index":4,
+      "Order":4,
+      "StatName":"Name.Attacker.stat.node.04.01",
+      "StatDesc":"설명 스트링4",
+      "Stat":"Attacker.stat.node.04.01",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_maxhpratio"
+    },
+    {
+      "Id":"ActivityTree.Attacker.Health",
+      "Index":5,
+      "Order":5,
+      "StatName":"Name.Attacker.stat.node.05.01",
+      "StatDesc":"설명 스트링5",
+      "Stat":"Attacker.stat.node.05.01",
+      "ReqLevel":5,
+      "Icon":"icon_nodestat_maxhpratio"
+    }
+  ],
+  "ActivityTree.Attacker.Strenth":[
+    {
+      "Id":"ActivityTree.Attacker.Strenth",
+      "Index":1,
+      "Order":1,
+      "StatName":"Name.Attacker.stat.node.01.02",
+      "StatDesc":"설명 스트링1",
+      "Stat":"Attacker.stat.node.01.02",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_normaldamagerate"
+    },
+    {
+      "Id":"ActivityTree.Attacker.Strenth",
+      "Index":2,
+      "Order":2,
+      "StatName":"Name.Attacker.stat.node.02.02",
+      "StatDesc":"설명 스트링2",
+      "Stat":"Attacker.stat.node.02.02",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_meleedamagerate"
+    },
+    {
+      "Id":"ActivityTree.Attacker.Strenth",
+      "Index":3,
+      "Order":3,
+      "StatName":"Name.Attacker.stat.node.03.02",
+      "StatDesc":"설명 스트링3",
+      "Stat":"Attacker.stat.node.03.02",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_criticaldamagerate"
+    },
+    {
+      "Id":"ActivityTree.Attacker.Strenth",
+      "Index":4,
+      "Order":4,
+      "StatName":"Name.Attacker.stat.node.04.02",
+      "StatDesc":"설명 스트링4",
+      "Stat":"Attacker.stat.node.04.02",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_attackratio"
+    },
+    {
+      "Id":"ActivityTree.Attacker.Strenth",
+      "Index":5,
+      "Order":5,
+      "StatName":"Name.Attacker.stat.node.05.02",
+      "StatDesc":"설명 스트링5",
+      "Stat":"Attacker.stat.node.05.02",
+      "ReqLevel":5,
+      "Icon":"icon_nodestat_attackratio"
+    }
+  ],
+  "ActivityTree.Attacker.Agility":[
+    {
+      "Id":"ActivityTree.Attacker.Agility",
+      "Index":1,
+      "Order":1,
+      "StatName":"Name.Attacker.stat.node.01.03",
+      "StatDesc":"설명 스트링1",
+      "Stat":"Attacker.stat.node.01.03",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_evasionratio"
+    },
+    {
+      "Id":"ActivityTree.Attacker.Agility",
+      "Index":2,
+      "Order":2,
+      "StatName":"Name.Attacker.stat.node.02.03",
+      "StatDesc":"설명 스트링2",
+      "Stat":"Attacker.stat.node.02.03",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_criticalrate"
+    },
+    {
+      "Id":"ActivityTree.Attacker.Agility",
+      "Index":3,
+      "Order":3,
+      "StatName":"Name.Attacker.stat.node.03.03",
+      "StatDesc":"설명 스트링3",
+      "Stat":"Attacker.stat.node.03.03",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_criticalderate"
+    },
+    {
+      "Id":"ActivityTree.Attacker.Agility",
+      "Index":4,
+      "Order":4,
+      "StatName":"Name.Attacker.stat.node.04.03",
+      "StatDesc":"설명 스트링4",
+      "Stat":"Attacker.stat.node.04.03",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_playerdamagerate"
+    },
+    {
+      "Id":"ActivityTree.Attacker.Agility",
+      "Index":5,
+      "Order":5,
+      "StatName":"Name.Attacker.stat.node.05.03",
+      "StatDesc":"설명 스트링5",
+      "Stat":"Attacker.stat.node.05.03",
+      "ReqLevel":5,
+      "Icon":"icon_nodestat_attackspeedrate"
+    }
+  ],
+  "ActivityTree.Attacker.Focus":[
+    {
+      "Id":"ActivityTree.Attacker.Focus",
+      "Index":1,
+      "Order":1,
+      "StatName":"Name.Attacker.stat.node.01.04",
+      "StatDesc":"설명 스트링1",
+      "Stat":"Attacker.stat.node.01.04",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_receiverecoveryrate"
+    },
+    {
+      "Id":"ActivityTree.Attacker.Focus",
+      "Index":2,
+      "Order":2,
+      "StatName":"Name.Attacker.stat.node.02.04",
+      "StatDesc":"설명 스트링2",
+      "Stat":"Attacker.stat.node.02.04",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_criticaldamagerate"
+    },
+    {
+      "Id":"ActivityTree.Attacker.Focus",
+      "Index":3,
+      "Order":3,
+      "StatName":"Name.Attacker.stat.node.03.04",
+      "StatDesc":"설명 스트링3",
+      "Stat":"Attacker.stat.node.03.04",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_accuracyratio"
+    },
+    {
+      "Id":"ActivityTree.Attacker.Focus",
+      "Index":4,
+      "Order":4,
+      "StatName":"Name.Attacker.stat.node.04.04",
+      "StatDesc":"설명 스트링4",
+      "Stat":"Attacker.stat.node.04.04",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_defenseratio"
+    },
+    {
+      "Id":"ActivityTree.Attacker.Focus",
+      "Index":5,
+      "Order":5,
+      "StatName":"Name.Attacker.stat.node.05.04",
+      "StatDesc":"설명 스트링5",
+      "Stat":"Attacker.stat.node.05.04",
+      "ReqLevel":5,
+      "Icon":"icon_nodestat_ignoredefenserate"
+    }
+  ],
+  "ActivityTree.Ranger.Health":[
+    {
+      "Id":"ActivityTree.Ranger.Health",
+      "Index":1,
+      "Order":1,
+      "StatName":"Name.Ranger.stat.node.01.01",
+      "StatDesc":"설명 스트링1",
+      "Stat":"Ranger.stat.node.01.01",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_normaldamagederate"
+    },
+    {
+      "Id":"ActivityTree.Ranger.Health",
+      "Index":2,
+      "Order":2,
+      "StatName":"Name.Ranger.stat.node.02.01",
+      "StatDesc":"설명 스트링2",
+      "Stat":"Ranger.stat.node.02.01",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_activedamagederate"
+    },
+    {
+      "Id":"ActivityTree.Ranger.Health",
+      "Index":3,
+      "Order":3,
+      "StatName":"Name.Ranger.stat.node.03.01",
+      "StatDesc":"설명 스트링3",
+      "Stat":"Ranger.stat.node.03.01",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_ultimatedamagederate"
+    },
+    {
+      "Id":"ActivityTree.Ranger.Health",
+      "Index":4,
+      "Order":4,
+      "StatName":"Name.Ranger.stat.node.04.01",
+      "StatDesc":"설명 스트링4",
+      "Stat":"Ranger.stat.node.04.01",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_maxhpratio"
+    },
+    {
+      "Id":"ActivityTree.Ranger.Health",
+      "Index":5,
+      "Order":5,
+      "StatName":"Name.Ranger.stat.node.05.01",
+      "StatDesc":"설명 스트링5",
+      "Stat":"Ranger.stat.node.05.01",
+      "ReqLevel":5,
+      "Icon":"icon_nodestat_maxhpratio"
+    }
+  ],
+  "ActivityTree.Ranger.Strenth":[
+    {
+      "Id":"ActivityTree.Ranger.Strenth",
+      "Index":1,
+      "Order":1,
+      "StatName":"Name.Ranger.stat.node.01.02",
+      "StatDesc":"설명 스트링1",
+      "Stat":"Ranger.stat.node.01.02",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_normaldamagerate"
+    },
+    {
+      "Id":"ActivityTree.Ranger.Strenth",
+      "Index":2,
+      "Order":2,
+      "StatName":"Name.Ranger.stat.node.02.02",
+      "StatDesc":"설명 스트링2",
+      "Stat":"Ranger.stat.node.02.02",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_rangedamagerate"
+    },
+    {
+      "Id":"ActivityTree.Ranger.Strenth",
+      "Index":3,
+      "Order":3,
+      "StatName":"Name.Ranger.stat.node.03.02",
+      "StatDesc":"설명 스트링3",
+      "Stat":"Ranger.stat.node.03.02",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_criticaldamagerate"
+    },
+    {
+      "Id":"ActivityTree.Ranger.Strenth",
+      "Index":4,
+      "Order":4,
+      "StatName":"Name.Ranger.stat.node.04.02",
+      "StatDesc":"설명 스트링4",
+      "Stat":"Ranger.stat.node.04.02",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_attackratio"
+    },
+    {
+      "Id":"ActivityTree.Ranger.Strenth",
+      "Index":5,
+      "Order":5,
+      "StatName":"Name.Ranger.stat.node.05.02",
+      "StatDesc":"설명 스트링5",
+      "Stat":"Ranger.stat.node.05.02",
+      "ReqLevel":5,
+      "Icon":"icon_nodestat_attackratio"
+    }
+  ],
+  "ActivityTree.Ranger.Agility":[
+    {
+      "Id":"ActivityTree.Ranger.Agility",
+      "Index":1,
+      "Order":1,
+      "StatName":"Name.Ranger.stat.node.01.03",
+      "StatDesc":"설명 스트링1",
+      "Stat":"Ranger.stat.node.01.03",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_evasionratio"
+    },
+    {
+      "Id":"ActivityTree.Ranger.Agility",
+      "Index":2,
+      "Order":2,
+      "StatName":"Name.Ranger.stat.node.02.03",
+      "StatDesc":"설명 스트링2",
+      "Stat":"Ranger.stat.node.02.03",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_criticalrate"
+    },
+    {
+      "Id":"ActivityTree.Ranger.Agility",
+      "Index":3,
+      "Order":3,
+      "StatName":"Name.Ranger.stat.node.03.03",
+      "StatDesc":"설명 스트링3",
+      "Stat":"Ranger.stat.node.03.03",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_criticalderate"
+    },
+    {
+      "Id":"ActivityTree.Ranger.Agility",
+      "Index":4,
+      "Order":4,
+      "StatName":"Name.Ranger.stat.node.04.03",
+      "StatDesc":"설명 스트링4",
+      "Stat":"Ranger.stat.node.04.03",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_playerdamagerate"
+    },
+    {
+      "Id":"ActivityTree.Ranger.Agility",
+      "Index":5,
+      "Order":5,
+      "StatName":"Name.Ranger.stat.node.05.03",
+      "StatDesc":"설명 스트링5",
+      "Stat":"Ranger.stat.node.05.03",
+      "ReqLevel":5,
+      "Icon":"icon_nodestat_attackspeedrate"
+    }
+  ],
+  "ActivityTree.Ranger.Focus":[
+    {
+      "Id":"ActivityTree.Ranger.Focus",
+      "Index":1,
+      "Order":1,
+      "StatName":"Name.Ranger.stat.node.01.04",
+      "StatDesc":"설명 스트링1",
+      "Stat":"Ranger.stat.node.01.04",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_receiverecoveryrate"
+    },
+    {
+      "Id":"ActivityTree.Ranger.Focus",
+      "Index":2,
+      "Order":2,
+      "StatName":"Name.Ranger.stat.node.02.04",
+      "StatDesc":"설명 스트링2",
+      "Stat":"Ranger.stat.node.02.04",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_criticaldamagerate"
+    },
+    {
+      "Id":"ActivityTree.Ranger.Focus",
+      "Index":3,
+      "Order":3,
+      "StatName":"Name.Ranger.stat.node.03.04",
+      "StatDesc":"설명 스트링3",
+      "Stat":"Ranger.stat.node.03.04",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_accuracyratio"
+    },
+    {
+      "Id":"ActivityTree.Ranger.Focus",
+      "Index":4,
+      "Order":4,
+      "StatName":"Name.Ranger.stat.node.04.04",
+      "StatDesc":"설명 스트링4",
+      "Stat":"Ranger.stat.node.04.04",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_defenseratio"
+    },
+    {
+      "Id":"ActivityTree.Ranger.Focus",
+      "Index":5,
+      "Order":5,
+      "StatName":"Name.Ranger.stat.node.05.04",
+      "StatDesc":"설명 스트링5",
+      "Stat":"Ranger.stat.node.05.04",
+      "ReqLevel":5,
+      "Icon":"icon_nodestat_ignoredefenserate"
+    }
+  ],
+  "ActivityTree.Supporter.Health":[
+    {
+      "Id":"ActivityTree.Supporter.Health",
+      "Index":1,
+      "Order":1,
+      "StatName":"Name.Supporter.stat.node.01.01",
+      "StatDesc":"설명 스트링1",
+      "Stat":"Supporter.stat.node.01.01",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_normaldamagederate"
+    },
+    {
+      "Id":"ActivityTree.Supporter.Health",
+      "Index":2,
+      "Order":2,
+      "StatName":"Name.Supporter.stat.node.02.01",
+      "StatDesc":"설명 스트링2",
+      "Stat":"Supporter.stat.node.02.01",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_activedamagederate"
+    },
+    {
+      "Id":"ActivityTree.Supporter.Health",
+      "Index":3,
+      "Order":3,
+      "StatName":"Name.Supporter.stat.node.03.01",
+      "StatDesc":"설명 스트링3",
+      "Stat":"Supporter.stat.node.03.01",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_ultimatedamagederate"
+    },
+    {
+      "Id":"ActivityTree.Supporter.Health",
+      "Index":4,
+      "Order":4,
+      "StatName":"Name.Supporter.stat.node.04.01",
+      "StatDesc":"설명 스트링4",
+      "Stat":"Supporter.stat.node.04.01",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_attackratio"
+    },
+    {
+      "Id":"ActivityTree.Supporter.Health",
+      "Index":5,
+      "Order":5,
+      "StatName":"Name.Supporter.stat.node.05.01",
+      "StatDesc":"설명 스트링5",
+      "Stat":"Supporter.stat.node.05.01",
+      "ReqLevel":5,
+      "Icon":"icon_nodestat_maxhpratio"
+    }
+  ],
+  "ActivityTree.Supporter.Strenth":[
+    {
+      "Id":"ActivityTree.Supporter.Strenth",
+      "Index":1,
+      "Order":1,
+      "StatName":"Name.Supporter.stat.node.01.02",
+      "StatDesc":"설명 스트링1",
+      "Stat":"Supporter.stat.node.01.02",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_meleedamagederate"
+    },
+    {
+      "Id":"ActivityTree.Supporter.Strenth",
+      "Index":2,
+      "Order":2,
+      "StatName":"Name.Supporter.stat.node.02.02",
+      "StatDesc":"설명 스트링2",
+      "Stat":"Supporter.stat.node.02.02",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_receiverecoveryrate"
+    },
+    {
+      "Id":"ActivityTree.Supporter.Strenth",
+      "Index":3,
+      "Order":3,
+      "StatName":"Name.Supporter.stat.node.03.02",
+      "StatDesc":"설명 스트링3",
+      "Stat":"Supporter.stat.node.03.02",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_criticaldamagederate"
+    },
+    {
+      "Id":"ActivityTree.Supporter.Strenth",
+      "Index":4,
+      "Order":4,
+      "StatName":"Name.Supporter.stat.node.04.02",
+      "StatDesc":"설명 스트링4",
+      "Stat":"Supporter.stat.node.04.02",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_attackratio"
+    },
+    {
+      "Id":"ActivityTree.Supporter.Strenth",
+      "Index":5,
+      "Order":5,
+      "StatName":"Name.Supporter.stat.node.05.02",
+      "StatDesc":"설명 스트링5",
+      "Stat":"Supporter.stat.node.05.02",
+      "ReqLevel":5,
+      "Icon":"icon_nodestat_defenseratio"
+    }
+  ],
+  "ActivityTree.Supporter.Agility":[
+    {
+      "Id":"ActivityTree.Supporter.Agility",
+      "Index":1,
+      "Order":1,
+      "StatName":"Name.Supporter.stat.node.01.03",
+      "StatDesc":"설명 스트링1",
+      "Stat":"Supporter.stat.node.01.03",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_evasionratio"
+    },
+    {
+      "Id":"ActivityTree.Supporter.Agility",
+      "Index":2,
+      "Order":2,
+      "StatName":"Name.Supporter.stat.node.02.03",
+      "StatDesc":"설명 스트링2",
+      "Stat":"Supporter.stat.node.02.03",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_recoveryrate"
+    },
+    {
+      "Id":"ActivityTree.Supporter.Agility",
+      "Index":3,
+      "Order":3,
+      "StatName":"Name.Supporter.stat.node.03.03",
+      "StatDesc":"설명 스트링3",
+      "Stat":"Supporter.stat.node.03.03",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_criticalderate"
+    },
+    {
+      "Id":"ActivityTree.Supporter.Agility",
+      "Index":4,
+      "Order":4,
+      "StatName":"Name.Supporter.stat.node.04.03",
+      "StatDesc":"설명 스트링4",
+      "Stat":"Supporter.stat.node.04.03",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_rangedamagederate"
+    },
+    {
+      "Id":"ActivityTree.Supporter.Agility",
+      "Index":5,
+      "Order":5,
+      "StatName":"Name.Supporter.stat.node.05.03",
+      "StatDesc":"설명 스트링5",
+      "Stat":"Supporter.stat.node.05.03",
+      "ReqLevel":5,
+      "Icon":"icon_nodestat_recoveryrate"
+    }
+  ],
+  "ActivityTree.Supporter.Focus":[
+    {
+      "Id":"ActivityTree.Supporter.Focus",
+      "Index":1,
+      "Order":1,
+      "StatName":"Name.Supporter.stat.node.01.04",
+      "StatDesc":"설명 스트링1",
+      "Stat":"Supporter.stat.node.01.04",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_areadamagederate"
+    },
+    {
+      "Id":"ActivityTree.Supporter.Focus",
+      "Index":2,
+      "Order":2,
+      "StatName":"Name.Supporter.stat.node.02.04",
+      "StatDesc":"설명 스트링2",
+      "Stat":"Supporter.stat.node.02.04",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_forwarddamgederate"
+    },
+    {
+      "Id":"ActivityTree.Supporter.Focus",
+      "Index":3,
+      "Order":3,
+      "StatName":"Name.Supporter.stat.node.03.04",
+      "StatDesc":"설명 스트링3",
+      "Stat":"Supporter.stat.node.03.04",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_accuracyratio"
+    },
+    {
+      "Id":"ActivityTree.Supporter.Focus",
+      "Index":4,
+      "Order":4,
+      "StatName":"Name.Supporter.stat.node.04.04",
+      "StatDesc":"설명 스트링4",
+      "Stat":"Supporter.stat.node.04.04",
+      "ReqLevel":1,
+      "Icon":"icon_nodestat_maxhpratio"
+    },
+    {
+      "Id":"ActivityTree.Supporter.Focus",
+      "Index":5,
+      "Order":5,
+      "StatName":"Name.Supporter.stat.node.05.04",
+      "StatDesc":"설명 스트링5",
+      "Stat":"Supporter.stat.node.05.04",
+      "ReqLevel":5,
+      "Icon":"icon_nodestat_evasionratio"
+    }
+  ]
+}
