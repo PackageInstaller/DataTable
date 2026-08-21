@@ -1,0 +1,3 @@
+local Config = {Id=1140,Name="刑天",AbDir="SsUnit/140_XingTian",NewRes=0,HandleBones={"Bip001 R Finger0","Bip001 Head"},UnitScale =1.44,CloseAtkOffset={6.35,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0,31.9,-56.29},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=2084,TotalFrames=100,OnHit=0,OnCutIn=0,OnDamage={34},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=2085,TotalFrames=130,OnHit=0,OnCutIn=0,OnDamage={47,57,67,77,87},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=2086,TotalFrames=250,OnHit=0,OnCutIn=0,OnDamage={19,50,60,70,80,90,150},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

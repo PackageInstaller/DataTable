@@ -1,0 +1,3 @@
+local Config = {Id=1136,Name="地狱蛮兵",AbDir="SsUnit/136_DiYuManBin",NewRes=0,HandleBones={"Bip001"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=2071,TotalFrames=120,OnHit=0,OnCutIn=0,OnDamage={50},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=2072,TotalFrames=170,OnHit=0,OnCutIn=0,OnDamage={95},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

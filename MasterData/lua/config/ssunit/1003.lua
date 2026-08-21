@@ -1,0 +1,3 @@
+local Config = {Id=1003,Name="刘协",AbDir="SsUnit/003_LiuXie",NewRes=1,HandleBones={"Bone722"},UnitScale =1.4,CloseAtkOffset={1.5,0,-0.2},HitPosOffset={0,1.491,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10031,TotalFrames=130,OnHit=0,OnCutIn=0,OnDamage={},OnMissile={69}},Skl01={Name="Skl01",SkillEfxId=10032,TotalFrames=230,OnHit=0,OnCutIn=0,OnDamage={86},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=10033,TotalFrames=480,OnHit=0,OnCutIn=0,OnDamage={350},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

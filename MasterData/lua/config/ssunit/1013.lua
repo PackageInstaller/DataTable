@@ -1,0 +1,3 @@
+local Config = {Id=1013,Name="赵构",AbDir="SsUnit/013_ZhaoGou",NewRes=1,HandleBones={"Dummy002","Bip001 R Hand"},UnitScale =1.44,CloseAtkOffset={1.5,0,-0.2},HitPosOffset={0,1.6848,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10131,TotalFrames=230,OnHit=0,OnCutIn=0,OnDamage={},OnMissile={85,94,103,112}},Skl01={Name="Skl01",SkillEfxId=10132,TotalFrames=290,OnHit=0,OnCutIn=0,OnDamage={100},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10133,TotalFrames=660,OnHit=0,OnCutIn=0,OnDamage={400,410,420,430,440},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

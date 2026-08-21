@@ -1,0 +1,3 @@
+local Config = {Id=1132,Name="借尸鬼",AbDir="SsUnit/132_JieShiGui",NewRes=0,HandleBones={""},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0,23.4,-39.79},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=2055,TotalFrames=150,OnHit=0,OnCutIn=0,OnDamage={26,49,76},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=2056,TotalFrames=140,OnHit=0,OnCutIn=0,OnDamage={59},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=2057,TotalFrames=200,OnHit=0,OnCutIn=0,OnDamage={52,57,62,67,72,77,82,87,92,97,102,107},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

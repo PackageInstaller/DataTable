@@ -1,0 +1,102 @@
+---
+--- 黑龙鳞1
+--- 效果抗性&{Params[1]}%。受到最终伤害-&{Params[2]}%。自身每有一个异常状态使受到的最终伤害提高&{Params[3]}%。
+--- 免疫【沉默】，【遗忘】，【嘲讽】。
+--- 处于【晕眩】，【睡眠】，【冻结】，【石化】，【麻痹】状态时，速度降低&{Params[4]}%，不会无法行动。
+---
+
+local Skill_111812 = BaseClass("Skill_111812", Skill)
+local base = Skill
+
+Skill_111812.LightenBuffList = 
+{
+    BattleBuffType.Stunning,
+    BattleBuffType.Sleeping,
+    BattleBuffType.Freeze,
+    BattleBuffType.Petrification,
+    BattleBuffType.Paralysis,
+}
+
+
+local function __init(self)
+    self.Data.reduceSpeed = 0
+end
+
+local function OnPassiveSkillEnabled(self)
+    base.OnPassiveSkillEnabled(self)
+
+    self.__snc:Inc(NumericType.ERistAdd, self.Params[1])
+    self.__snc:Inc(NumericType.FinalHurtAdd, self.Params[2])
+
+    self.__scc:IncImmuneDeBuff(BattleBuffType.Taunted)
+    self.__scc:IncImmuneDeBuff(BattleBuffType.Silence)
+    self.__scc:IncImmuneDeBuff(BattleBuffType.PassiveDisable)
+end
+
+local function OnPassiveSkillDisabled(self)
+    base.OnPassiveSkillDisabled(self)
+
+    self.__snc:Dec(NumericType.ERistAdd, self.Params[1])
+    self.__snc:Dec(NumericType.FinalHurtAdd, self.Params[2])
+
+    self.__scc:DecImmuneDeBuff(BattleBuffType.Taunted)
+    self.__scc:DecImmuneDeBuff(BattleBuffType.Silence)
+    self.__scc:DecImmuneDeBuff(BattleBuffType.PassiveDisable)
+
+end
+
+local function OnBattleStart(self)
+    base.OnBattleStart(self)
+    self:OnPassiveSkillEnabled()
+end
+
+local function OnBuffAdd(self, buff)
+    base.OnBuffAdd(self, buff)
+
+    if self.IsDisabled then
+        return
+    end
+
+    if buff.IsDeBuff then
+        self.__snc:Inc(NumericType.FinalDamageAddPct, self.Params[3])
+    end
+
+    if table.any(self.LightenBuffList, function(buffId) return buffId == buff.BuffId end) then
+        self.Data.reduceSpeed = self.Data.reduceSpeed + 1
+        self.__scc.UnableAct = self.__scc.UnableAct - 1
+    end
+
+    if self.Data.reduceSpeed == 1 then
+        self.__snc:Dec(NumericType.SpeedPct, self.Params[4])
+    end
+end
+
+local function OnBuffRemove(self, buff)
+    base.OnBuffRemove(self, buff)
+
+    if self.IsDisabled then
+        return
+    end
+
+    if buff.IsDeBuff then
+        self.__snc:Dec(NumericType.FinalDamageAddPct, self.Params[3])
+    end
+
+    if table.any(self.LightenBuffList, function(buffId) return buffId == buff.BuffId end) then
+        self.Data.reduceSpeed = self.Data.reduceSpeed - 1
+        self.__scc.UnableAct = self.__scc.UnableAct + 1
+    end
+
+    if self.Data.reduceSpeed == 0 then
+        self.__snc:Inc(NumericType.SpeedPct, self.Params[4])
+    end
+end
+
+Skill_111812.__init = __init
+Skill_111812.OnPassiveSkillEnabled = OnPassiveSkillEnabled
+Skill_111812.OnPassiveSkillDisabled = OnPassiveSkillDisabled
+Skill_111812.OnBattleStart = OnBattleStart
+Skill_111812.OnBuffAdd = OnBuffAdd
+Skill_111812.OnBuffRemove = OnBuffRemove
+
+return Skill_111812

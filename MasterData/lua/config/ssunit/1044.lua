@@ -1,0 +1,3 @@
+local Config = {Id=1044,Name="钟离权",AbDir="SsUnit/044_ZhongLiQuan",NewRes=1,HandleBones={"Bone089","Bip001"},UnitScale =1.44,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,2.0304,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10441,TotalFrames=170,OnHit=0,OnCutIn=0,OnDamage={67,77,87,97,107},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=10442,TotalFrames=330,OnHit=0,OnCutIn=0,OnDamage={160},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=10443,TotalFrames=750,OnHit=0,OnCutIn=0,OnDamage={155,165,175,185,195,205,215,225,235},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=2,OnCutIn=0,OnDamage={},OnMissile={}},}}
+ return Config

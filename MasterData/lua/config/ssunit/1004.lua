@@ -1,0 +1,3 @@
+local Config = {Id=1004,Name="勾践",AbDir="SsUnit/004_YueWang",NewRes=1,HandleBones={"Dummy_wuqi"},UnitScale =1.44,CloseAtkOffset={2.3,0,-0.2},HitPosOffset={0,1.9008,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10041,TotalFrames=100,OnHit=0,OnCutIn=0,OnDamage={22,36},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=10042,TotalFrames=100,OnHit=0,OnCutIn=0,OnDamage={84},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=10043,TotalFrames=620,OnHit=0,OnCutIn=0,OnDamage={452,472,492,512,532,552,572,592},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

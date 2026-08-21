@@ -1,0 +1,3 @@
+local Config = {Id=1011,Name="李自成",AbDir="SsUnit/011_LiZiCheng",NewRes=1,HandleBones={"Bone001"},UnitScale =1.44,CloseAtkOffset={2.9,0,-0.2},HitPosOffset={0,1.944,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10111,TotalFrames=75,OnHit=0,OnCutIn=0,OnDamage={18,44},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=10112,TotalFrames=136,OnHit=0,OnCutIn=0,OnDamage={18,44,79,102},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10113,TotalFrames=593,OnHit=0,OnCutIn=0,OnDamage={459,503,539},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

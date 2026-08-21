@@ -1,0 +1,3 @@
+local Config = {Id=1117,Name="火龙",AbDir="SsUnit/114_FireDragon",NewRes=0,HandleBones={"Bone030","Bone044","Bip001 Spine1"},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,1.8,0},Position={0},CenterOffset={0,26.1,-46.6},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1120,TotalFrames=235,OnHit=0,OnCutIn=0,OnDamage={110,130,150,160},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=1121,TotalFrames=210,OnHit=0,OnCutIn=0,OnDamage={80,90,100,110,120,130,140,150,160},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=1122,TotalFrames=200,OnHit=0,OnCutIn=0,OnDamage={92,98,104},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

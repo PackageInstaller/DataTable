@@ -1,0 +1,3 @@
+local Config = {Id=1020,Name="爱迪生",AbDir="SsUnit/020_AiDiSheng",NewRes=1,HandleBones={"Bone001","Bone059"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.6632,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10201,TotalFrames=110,OnHit=0,OnCutIn=0,OnDamage={71},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=10202,TotalFrames=190,OnHit=0,OnCutIn=0,OnDamage={95},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10203,TotalFrames=500,OnHit=0,OnCutIn=0,OnDamage={360},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=0,OnHit=2,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

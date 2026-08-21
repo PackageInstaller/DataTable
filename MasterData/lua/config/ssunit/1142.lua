@@ -1,0 +1,3 @@
+local Config = {Id=1142,Name="魔蛛女皇",AbDir="SsUnit/142_MoZhuNh",NewRes=0,HandleBones={""},UnitScale =1.44,CloseAtkOffset={3,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0,24.4,-40.29},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=2092,TotalFrames=120,OnHit=0,OnCutIn=0,OnDamage={28,41,46,51,56,61,66,97},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=2093,TotalFrames=110,OnHit=0,OnCutIn=0,OnDamage={65},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=2094,TotalFrames=160,OnHit=0,OnCutIn=0,OnDamage={75,84,102},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

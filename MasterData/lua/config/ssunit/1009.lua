@@ -1,0 +1,3 @@
+local Config = {Id=1009,Name="上杉谦信",AbDir="SsUnit/009_QianXin",NewRes=1,HandleBones={"Bone142","Bone001"},UnitScale =1.44,CloseAtkOffset={1.72,0,-0.2},HitPosOffset={0,1.944,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10091,TotalFrames=150,OnHit=0,OnCutIn=0,OnDamage={21,41,66,74,83},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=10092,TotalFrames=420,OnHit=0,OnCutIn=0,OnDamage={240,309},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10093,TotalFrames=580,OnHit=0,OnCutIn=0,OnDamage={420},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

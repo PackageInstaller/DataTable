@@ -1,0 +1,3 @@
+local Config = {Id=1010,Name="服部半藏",AbDir="SsUnit/010_BanZang",NewRes=1,HandleBones={"Bip001 R Hand"},UnitScale =1.44,CloseAtkOffset={1.5,0,-0.2},HitPosOffset={0,1.8792,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10101,TotalFrames=140,OnHit=0,OnCutIn=0,OnDamage={11,31,46,57,76},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=10102,TotalFrames=300,OnHit=0,OnCutIn=0,OnDamage={200},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10103,TotalFrames=650,OnHit=0,OnCutIn=0,OnDamage={328,344,360,370,380,400,420,475},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

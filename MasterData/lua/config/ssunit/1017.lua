@@ -1,0 +1,3 @@
+local Config = {Id=1017,Name="彼得一世",AbDir="SsUnit/017_BiDe",NewRes=1,HandleBones={""},UnitScale =0.16,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,1.9008,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10171,TotalFrames=200,OnHit=0,OnCutIn=0,OnDamage={39,57,77,97},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=10172,TotalFrames=460,OnHit=0,OnCutIn=0,OnDamage={},OnMissile={250,275}},Skl02={Name="Skl02",SkillEfxId=10173,TotalFrames=710,OnHit=0,OnCutIn=0,OnDamage={196,365,465,475,485,495,505,515,525},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

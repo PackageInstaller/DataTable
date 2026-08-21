@@ -1,0 +1,3 @@
+local Config = {Id=1035,Name="托宾",AbDir="SsUnit/035_TuoBin",NewRes=1,HandleBones={"Bone001","Bone162"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.9008,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10351,TotalFrames=80,OnHit=0,OnCutIn=0,OnDamage={0},OnMissile={48}},Skl01={Name="Skl01",SkillEfxId=10352,TotalFrames=160,OnHit=0,OnCutIn=0,OnDamage={117},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10353,TotalFrames=850,OnHit=0,OnCutIn=0,OnDamage={800},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

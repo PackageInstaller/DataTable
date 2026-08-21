@@ -1,0 +1,3 @@
+local Config = {Id=1019,Name="罗兰",AbDir="SsUnit/019_LuoLan",NewRes=1,HandleBones={"Bip001 Prop1"},UnitScale =1.44,CloseAtkOffset={2.3,0,-0.2},HitPosOffset={0,1.8144,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10191,TotalFrames=110,OnHit=0,OnCutIn=0,OnDamage={25,50},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=10192,TotalFrames=240,OnHit=0,OnCutIn=0,OnDamage={125},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10193,TotalFrames=400,OnHit=0,OnCutIn=0,OnDamage={395},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=2,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

@@ -1,0 +1,3 @@
+local Config = {Id=1128,Name="火精灵",AbDir="SsUnit/128_HuoJingLing",NewRes=0,HandleBones={"Bip001 L Finger0","Bip001 R Finger0"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=2039,TotalFrames=80,OnHit=0,OnCutIn=0,OnDamage={40},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=2040,TotalFrames=120,OnHit=0,OnCutIn=0,OnDamage={40,50,60,70},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=2041,TotalFrames=190,OnHit=0,OnCutIn=0,OnDamage={60},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

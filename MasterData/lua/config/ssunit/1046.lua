@@ -1,0 +1,3 @@
+local Config = {Id=1046,Name="夏侯",AbDir="SsUnit/046_XiaHou",NewRes=0,HandleBones={""},UnitScale =0.16,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,1.648,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10461,TotalFrames=160,OnHit=0,OnCutIn=0,OnDamage={30,45,100},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=10462,TotalFrames=750,OnHit=0,OnCutIn=0,OnDamage={450,485,520},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=10463,TotalFrames=800,OnHit=0,OnCutIn=0,OnDamage={270,305,340,375,410,445,480,630},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=6,OnCutIn=0,OnDamage={},OnMissile={}},}}
+ return Config

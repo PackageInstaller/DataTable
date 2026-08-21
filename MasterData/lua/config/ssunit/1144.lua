@@ -1,0 +1,3 @@
+local Config = {Id=1144,Name="尸妖",AbDir="SsUnit/144_ShiYao",NewRes=0,HandleBones={"Bip001 R Finger0"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=2100,TotalFrames=110,OnHit=0,OnCutIn=0,OnDamage={56},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=2101,TotalFrames=100,OnHit=0,OnCutIn=0,OnDamage={52},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

@@ -1,0 +1,3 @@
+local Config = {Id=1031,Name="霍格尔",AbDir="SsUnit/031_HuoGeEr",NewRes=1,HandleBones={"Bip001 R Hand"},UnitScale =1.44,CloseAtkOffset={1.8,0,0.02},HitPosOffset={0,1.8792,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10311,TotalFrames=150,OnHit=0,OnCutIn=0,OnDamage={25,46,56},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=10312,TotalFrames=280,OnHit=0,OnCutIn=0,OnDamage={186},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=10313,TotalFrames=520,OnHit=0,OnCutIn=0,OnDamage={320,330,340},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=4,OnCutIn=0,OnDamage={},OnMissile={}},}}
+ return Config

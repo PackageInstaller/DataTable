@@ -1,0 +1,3 @@
+local Config = {Id=1126,Name="狮星界法师",AbDir="SsUnit/126_ShiXingJieFaShi",NewRes=0,HandleBones={"Bone025","Bip001 L Finger0"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=2031,TotalFrames=100,OnHit=0,OnCutIn=0,OnDamage={50},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=2032,TotalFrames=120,OnHit=0,OnCutIn=0,OnDamage={35,50,65,80,95,110},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=2033,TotalFrames=160,OnHit=0,OnCutIn=0,OnDamage={30},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

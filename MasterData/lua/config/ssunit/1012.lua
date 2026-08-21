@@ -1,0 +1,3 @@
+local Config = {Id=1012,Name="王莽",AbDir="SsUnit/012_WangMang",NewRes=1,HandleBones={"Dummy003","Dummy004","Dummy001","Bip001 Spine1"},UnitScale =1.44,CloseAtkOffset={1.5,0,-0.2},HitPosOffset={0,1.62,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10121,TotalFrames=200,OnHit=0,OnCutIn=0,OnDamage={65,72},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=10122,TotalFrames=190,OnHit=0,OnCutIn=0,OnDamage={82},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=10123,TotalFrames=480,OnHit=0,OnCutIn=0,OnDamage={310,320,330,340,350,360,370},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

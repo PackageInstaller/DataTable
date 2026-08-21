@@ -1,0 +1,3 @@
+local Config = {Id=1050,Name="张辽",AbDir="SsUnit/050_ZhangLiao",NewRes=0,HandleBones={""},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,1.6848,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10501,TotalFrames=160,OnHit=0,OnCutIn=0,OnDamage={35,52,69,120},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=10502,TotalFrames=380,OnHit=0,OnCutIn=0,OnDamage={110,138,175,230,255,280,305,330},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=10503,TotalFrames=520,OnHit=0,OnCutIn=0,OnDamage={300,420,430,440},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=6,OnCutIn=0,OnDamage={},OnMissile={}},}}
+ return Config
