@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<root>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item name="銀貨" icon="item001/0003" rare="SSR" category="道具" function="物品"/>
+	<item id="4" name="信用ポイント（対戦）" icon="item002/4" rare="SSR" category="道具" function="物品" description="模擬演習で得られる評価ポイント。他のアイテムと交換することができる。&#xA;&lt;color=#FFFF37&gt;「交換所」でアイテムと交換できる。&lt;/color&gt;"/>
+	<item id="5" name="高速パスキー" icon="item002/5" rare="SR" category="道具" function="物品" get_shop_1="關卡" description="刻印された暗号化磁気バーコードにより快速トンネルが開かれ、行動時間を短縮できる。&#xA;&lt;color=#FFFF37&gt;通常ステージで「★3評価」を獲得すると入手でき、使用すると戦闘をスキップできる。&lt;/color&gt;"/>
+	<item id="6" name="物資チケット" icon="item002/6" rare="SSR" category="道具" function="物品" description="連盟が発行した配給券。動乱の時代を生き抜くためには必要不可欠。&#xA;&lt;color=#FFFF37&gt;「交換所」でアイテムと交換できる。&lt;/color&gt;"/>
+	<item id="7" name="信用ポイント（訓練）" icon="item002/7" rare="SSR" category="道具" function="物品" description="技術を磨くと得られる報酬ポイント。アイテムと交換することができる。&#xA;&lt;color=#FFFF37&gt;「交換所」でアイテムと交換できる。&lt;/color&gt;"/>
+	<item id="8" name="赤色のフォルダ" icon="item002/8" rare="SSR" category="道具" function="物品" description="機関内最高レベルの緊急公文書。これを開いた者は誰であれ無条件で協力・支援しなければならない。&#xA;&lt;color=#FFFF37&gt;「派遣」完了を速めるために使用できる。&lt;/color&gt;"/>
+	<item id="9" name="古代の金貨" icon="item002/9" rare="SSR" category="道具" function="物品" get_shop_1="RAID" description="古代の術士が陣を以て地脈のエネルギーを導くために用いた古い硬貨。非常に価値が高い。&#xA;&lt;color=#FFFF37&gt;「交換所」でアイテムと交換できる。&lt;/color&gt;"/>
+	<item id="10" name="武装コイン" icon="item001/0054" rare="SSR" category="道具" function="物品" description="装備を召喚することができるコイン"/>
+	<item id="11" name="祭壇の鈴" icon="item002/11" rare="SSR" category="道具" function="物品" get_shop_1="召喚" description="澄んだ鈴の音は気の流れを清め、神聖な儀式の始まりを告げる。&#xA;&lt;color=#FFFF37&gt;「交換所」でアイテムと交換できる。&lt;/color&gt;"/>
+	<item id="12" name="儀式用水晶" icon="item002/12" rare="SSR" category="道具" function="物品" get_shop_1="召喚" get_shop_2="一般貨品商店" description="九つの結び目が結ばれた長い縄で、それぞれの結び目には古い願いが封じられている。&#xA;&lt;color=#FFFF37&gt;「交換所」でアイテムと交換できる。&lt;/color&gt;"/>
+	<item id="13" name="武装コイン" icon="item001/0054" rare="SSR" category="道具" function="物品" description="聖騎士を召喚することで獲得できるコイン"/>
+	<item id="14" name="儀式用プレート（木）" icon="item002/14" rare="SSR" category="道具" function="物品" description="五芒星が刻まれた漆塗りの盤。儀式において霊力を大地に定着させるための基盤となる。&#xA;&lt;color=#FFFF37&gt;「SSR魔女確定召喚」で利用できます。&lt;/color&gt;"/>
+	<item id="15" name="魔女のクリスタル" icon="item001/0015" rare="SSR" category="道具" function="物品" description="ランダムで魔女の儀式用水晶が入手できる。"/>
+	<item id="16" name="新規PT" icon="item001/0016" rare="SSR" category="道具" function="物品" description="新規ポイント"/>
+	<item id="17" name="復帰PT" icon="item001/0017" rare="SSR" category="道具" function="物品" get_shop_1="無" description="復帰ポイント"/>
+	<item id="18" name="おπメダル" icon="item001/10182" rare="SSR" category="道具" function="物品" convert_item_id="5" convert_item_num="1" description="「おπの日」でAP、BPを消費した際に獲得できるアイテム。専用交換所でアイテムと交換できます。"/>
+	<item id="20" name="錬金調和剤" icon="item001/10218" rare="SSR" category="道具" function="物品" get_shop_1="無" description="研ぎ澄まされた哲学の塩をすり潰して得られる微光の粉末で、&#xA;衝突する元素を強制的に鎮める力を持つ。&#xA;&lt;b&gt;&lt;color=#8E24AA&gt;素材合成時に使用できる。&lt;/color&gt;&lt;/b&gt;"/>
+	<item id="23" name="解放のダイヤモンド" icon="item001/0054" rare="SSR" category="道具" function="物品" description="秘められた力を解放させるためのアイテム。Lv上限を解放するために必要な素材"/>
+	<item name="ボックスLv1" icon="item001/0011" rare="R" category="道具" function="物品"/>
+	<item name="ボックスLv2" icon="item001/0012" rare="SR" category="道具" function="物品"/>
+	<item name="ボックスLv3" icon="item001/0013" rare="SSR" category="道具" function="物品"/>
+	<item id="28" name="アイテム交換チケット" icon="item001/0028" rare="R" category="道具" function="物品" sell_price="10" description="ショップでアイテムと交換できる特殊なチケット。"/>
+	<item id="70" name="探索欄位" icon="item001/0070" rare="SR" category="道具" function="物品" description="探索欄位"/>
+	<item id="71" name="代金証票" icon="item002/71" rare="SR" category="道具" function="物品" get_shop_1="關卡" description="国から公式の印章が押された代金用切手。物資市場で取引することができる。&#xA;&lt;color=#FFFF37&gt;魔女と魔具の強化に使用できる。&lt;/color&gt;"/>
+	<item id="72" name="共鳴石" icon="item002/72" rare="SSR" category="道具" function="物品" description="逸聞の武器を製造する際に副産物として生成される、きらきらと輝く石。&#xA;さまざまな儀式や研究に利用できるため、非常に価値が高い。&#xA;&lt;color=#FFFF37&gt;魔女契約の締結や、一部商品の購入に使用できる。&lt;/color&gt;"/>
+	<item id="73" name="技師EXP" icon="item002/73" rare="R" category="道具" function="物品" description="フォン・エクマン博士の研究ノート。さまざまな面で役に立つ。&#xA;&lt;color=#FFFF37&gt;技師の経験値を上昇させる。&lt;/color&gt;"/>
+	<item id="74" name="AP" icon="item001/0074" rare="R" category="道具" function="物品" description="一部の地域ステージの戦闘で消費されます。  &#xA;&lt;color=#FFFF37&gt;時間経過、特典、その他の特別な手段で回復・入手できます。&lt;/color&gt;"/>
+	<item id="75" name="華麗な栞" icon="item001/0075" rare="SR" category="道具" function="物品" sell_price="10" description="依頼を報告すると獲得できる"/>
+	<item id="76" name="迷宮ポーション" icon="item001/0076" rare="SSR" category="道具" function="物品" sell_price="10" description="迷宮の挑戦中、味方のHPを回復できる"/>
+	<item id="77" name="魔女EXP" icon="item002/77" rare="R" category="道具" function="物品" description="実戦で積み重ねられた逸聞の知識は、彼女たちが限界を越え成長するのを助ける。&#xA;&lt;color=#FFFF37&gt;魔女の経験値を上昇させる。&lt;/color&gt;"/>
+	<item id="78" name="迷宮チケット" icon="item001/0078" rare="SSR" category="道具" function="物品" sell_price="10" description="迷宮に挑戦するために必要なチケット"/>
+	<item id="79" name="迷宮ギヤ" icon="item001/0079" rare="SSR" category="道具" function="物品" sell_price="10" description="迷宮に挑戦すると獲得できるアイテム"/>
+	<item id="81" name="BP" icon="item001/0081" rare="R" category="道具" function="物品" sell_price="10" description="霊脈強襲および一部の討伐コンテンツで消費されます。  &#xA;&lt;b&gt;&lt;color=#FFFF37&gt;時間経過、またはその他の特別な手段で回復・入手できます。&lt;/color&gt;&lt;/b&gt;"/>
+	<item id="82" name="ふつうのスリッパ" icon="item002/8003" rare="SR" category="道具" function="物品"/>
+	<item id="83" name="かいてきなスリッパ" icon="item002/8004" rare="SSR" category="道具" function="物品"/>
+	<item/>
+	<item/>
+	<item id="100" name="金幣箱" icon="item001/0071" rare="SSR" category="道具" function="道具寶箱" effect_val1="100" effect_val2="1" get_shop_1="無" description="都拿去吧"/>
+	<item id="101" name="魔旅的成長禮包01" rare="SSR" category="道具" function="道具寶箱" effect_val1="101" effect_val2="1" get_shop_1="無" description="健康的成長"/>
+	<item id="102" name="魔旅的成長禮包02" rare="SSR" category="道具" function="道具寶箱" effect_val1="102" effect_val2="1" get_shop_1="無" description="快樂的長大"/>
+	<item id="103" name="魔旅的成長禮包03" rare="SSR" category="道具" function="道具寶箱" effect_val1="103" effect_val2="1" get_shop_1="無" description="吃飽飽歐歐睏"/>
+	<item id="104" name="玩家成長禮包" rare="SSR" category="道具" function="道具寶箱" effect_val1="104" effect_val2="1" get_shop_1="無" description="玩家也要長大"/>
+	<item id="105" name="魔女突破成長道具組合" rare="SSR" category="道具" function="道具寶箱" effect_val1="105" effect_val2="1" get_shop_1="無" description="突破很快樂喔!!"/>
+	<item id="106" name="魔女天賦成長道具組合" rare="SSR" category="道具" function="道具寶箱" effect_val1="106" effect_val2="1" get_shop_1="無" description="天賦成長很快樂喔!!"/>
+	<item id="107" name="測試英雄碎片" icon="TEST/test001" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2071"/>
+	<item id="108" name="測試其他道具" icon="item001/0071" rare="SSR" category="其他" function="追加語音"/>
+	<item id="109" name="測試體力道具" icon="item001/0071" rare="SSR" category="道具" function="AP藥水" effect_val1="10" use_day="7" convert_item_id="10" convert_item_num="100" get_shop_1="無"/>
+	<item id="110" name="裝備突破道具組合" rare="SSR" category="道具" function="指定道具寶箱" effect_val1="107" effect_val2="1" get_shop_1="無"/>
+	<item id="111" name="測試素材交換卷" rare="R" category="道具" get_shop_1="無"/>
+	<item id="112" name="測試碎片交換道具" rare="SSR" category="道具" function="物品"/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item id="501" name="ゼンマイキー" icon="item002/501" rare="SSR" category="道具" function="物品" description="精密な機械レンチ。古風で複雑なディーゼル装置を起動するために使われる。&#xA;&lt;color=#FFFF37&gt;「交換所」でアイテムと交換できる。&lt;/color&gt;"/>
+	<item id="502" name="儀式用プレート（金屬）" icon="item002/502" rare="SSR" category="道具" function="物品" description="五芒星が刻まれた漆塗りの盤。儀式において霊力を大地に定着させるための基盤となる。&#xA;&lt;color=#FFFF37&gt;「SSR魔女確定召喚」で利用できます。&lt;/color&gt;"/>
+	<item id="503" name="出入検査章" icon="item002/503" rare="SSR" category="道具" function="物品" description="パスポートに押された鋼印は、国境を越える許可を得た証。&#xA;&lt;color=#FFFF37&gt;「交換所」でアイテムと交換できる。&lt;/color&gt;"/>
+	<item id="504" name="後方支援ポイント" icon="item002/504" rare="SSR" category="道具" function="物品" description="勤勉に働いた証。ポイントを貯めることで機関が提供する追加の福利と交換できる。&#xA;&lt;color=#FFFF37&gt;「交換所」でアイテムと交換できる。&lt;/color&gt;"/>
+	<item/>
+	<item id="506" name="サブスクPT" icon="item002/506" rare="SSR" category="道具" function="物品" description="サブスクを購入することで蓄積されるポイント。  &#xD;&#xA;&lt;color=#FFFF37&gt;「交換所」で他のアイテムと交換できます。&lt;/color&gt;"/>
+	<item id="507" name="神秘の書" icon="item002/507" rare="R" category="道具" function="物品" description="神秘の書。開いてみるまで中身は分からない。  &#xA;&lt;color=#FFFF37&gt;「交換所」で他のアイテムと交換できます。&lt;/color&gt;"/>
+	<item id="508" name="神秘の薬液" icon="item002/508" rare="R" category="道具" function="物品" description="神秘の薬液。開封して飲んでみるまで効果は分からない。  &#xA;&lt;color=#FFFF37&gt;「交換所」で他のアイテムと交換できます。&lt;/color&gt;"/>
+	<item id="509" name="神秘のサンプル箱" icon="item002/509" rare="R" category="道具" function="物品" description="終末区域から持ち帰られたサンプル。丁寧に封印されている。  &#xA;&lt;color=#FFFF37&gt;「交換所」で他のアイテムと交換できます。&lt;/color&gt;"/>
+	<item/>
+	<item/>
+	<item/>
+	<item id="510" name="代金証票 x 100" icon="item001/0071" rare="SR" category="道具" function="道具寶箱" effect_val1="510" effect_val2="1" get_shop_1="無" description="代金証票 x 100 を獲得できる"/>
+	<item id="511" name="代金証票 x 1000" icon="item001/0071" rare="SR" category="道具" function="道具寶箱" effect_val1="511" effect_val2="1" get_shop_1="無" description="代金証票 x 1000を獲得できる"/>
+	<item id="512" name="代金証票 x 2000" icon="item001/0071" rare="SR" category="道具" function="道具寶箱" effect_val1="512" effect_val2="1" get_shop_1="無" description="代金証票 x 2000を獲得できる"/>
+	<item id="513" name="代金証票 x 5000" icon="item001/0071" rare="SR" category="道具" function="道具寶箱" effect_val1="513" effect_val2="1" get_shop_1="無" description="代金証票 x 5000を獲得できる"/>
+	<item id="514" name="代金証票の箱" icon="item001/0071" rare="SR" category="道具" function="道具寶箱" effect_val1="514" effect_val2="1" get_shop_1="無" description="代金証票 x 10000を獲得できる"/>
+	<item id="515" name="代金証票 x 20000" icon="item001/0071" rare="SR" category="道具" function="道具寶箱" effect_val1="515" effect_val2="1" get_shop_1="無" description="代金証票 x 20000を獲得できる"/>
+	<item id="516" name="代金証票 x 50000" icon="item001/0071" rare="SR" category="道具" function="道具寶箱" effect_val1="516" effect_val2="1" get_shop_1="無" description="代金証票 x 50000を獲得できる"/>
+	<item id="517" name="代金証票 x 100000" icon="item001/0071" rare="SR" category="道具" function="道具寶箱" effect_val1="517" effect_val2="1" get_shop_1="無" description="代金証票 x 100000を獲得できる"/>
+	<item id="518" name="代金証票 x 200000" icon="item001/0071" rare="SR" category="道具" function="道具寶箱" effect_val1="518" effect_val2="1" get_shop_1="無" description="代金証票 x 200000を獲得できる"/>
+	<item id="519" name="代金証票 x 500000" icon="item001/0071" rare="SR" category="道具" function="道具寶箱" effect_val1="519" effect_val2="1" get_shop_1="無" description="代金証票 x 500000を獲得できる"/>
+	<item id="520" name="代金証票 x 900000" icon="item001/0071" rare="SR" category="道具" function="道具寶箱" effect_val1="520" effect_val2="1" get_shop_1="無" description="代金証票 x 900000を獲得できる"/>
+	<item/>
+	<item id="601" name="肉の缶詰（AP+10）" icon="item002/601" rare="R" category="道具" function="AP藥水" effect_val1="10" use_day="7" get_shop_1="無" description="新鮮に封入された細かい肉の塊。味はやや悪いが冷凍品よりも活力がある。&#xA;&lt;color=#FFFF37&gt;時間経過による回復、エロティのブランチ、その他特別な手段で入手できる。&lt;/color&gt;"/>
+	<item id="602" name="肉の缶詰（AP+50）" icon="item002/602" rare="SR" category="道具" function="AP藥水" effect_val1="50" use_day="7" get_shop_1="無" description="選りすぐりの牧場の新鮮な肉で作られた缶詰。終末の世界ではめったに味わえない贅沢な美味。&#xA;&lt;color=#FFFF37&gt;時間経過による回復、エロティのブランチ、その他特別な手段で入手できる。&lt;/color&gt;"/>
+	<item id="603" name="肉の缶詰（AP+100）" icon="item002/603" rare="SSR" category="道具" function="AP藥水" effect_val1="100" use_day="7" get_shop_1="無" description="最高級の調理肉で作られた缶詰。野性的な香りに満ちており、瞬時に闘志をかき立てる。&#xA;&lt;color=#FFFF37&gt;時間経過による回復、エロティのブランチ、その他特別な手段で入手できる。&lt;/color&gt;"/>
+	<item id="604" name="冷凍された肉の缶詰（AP+10）" icon="item002/604" rare="R" category="道具" function="AP藥水" effect_val1="10" get_shop_1="無" description="戦時配給の粗悪なランチョンミート。最低限の満腹感のみ得られる。&#xA;&lt;color=#FFFF37&gt;時間経過による回復、エロティのブランチ、その他の特別な手段で入手できる。&lt;/color&gt;"/>
+	<item id="605" name="冷凍された肉の缶詰（AP+50）" icon="item002/605" rare="SR" category="道具" function="AP藥水" effect_val1="50" get_shop_1="無" description="長期間冷凍されているものの、厚みのある肉質は依然として体力回復の要となる。&#xA;&lt;color=#FFFF37&gt;時間経過による回復、エロティのブランチ、その他特別な手段で入手できる。&lt;/color&gt;"/>
+	<item id="606" name="冷凍された肉の缶詰（AP+100）" icon="item002/606" rare="SSR" category="道具" function="AP藥水" effect_val1="100" get_shop_1="無" description="高級将校向け規格の冷蔵肉。長い戦いによる消耗を素早く補うことができる。&#xA;&lt;color=#FFFF37&gt;時間経過による回復、エロティのブランチ、その他特別な手段で入手できる。&lt;/color&gt;"/>
+	<item/>
+	<item id="611" name="フルーツの缶詰（BP+1）" icon="item002/611" rare="R" category="道具" function="BP藥水" effect_val1="1" use_day="7" get_shop_1="無" description="安価で加工された果肉の缶詰。兵士たちがビタミンを補給するための源。&#xA;&lt;color=#FFFF37&gt;時間経過による回復、その他特別な手段で入手できる。&lt;/color&gt;"/>
+	<item id="612" name="フルーツの缶詰（BP+5）" icon="item002/612" rare="SR" category="道具" function="BP藥水" effect_val1="5" use_day="7" get_shop_1="無" description="旬の果物で作られた糖分がたっぷり詰まった缶詰。持続的かつ安定した体力の補給をもたらす。&#xA;&lt;color=#FFFF37&gt;時間経過による回復、その他特別な手段で入手できる。&lt;/color&gt;"/>
+	<item id="613" name="フルーツの缶詰（BP+10）" icon="item002/613" rare="SSR" category="道具" function="BP藥水" effect_val1="10" use_day="7" get_shop_1="無" description="最高級の果実が詰まった様相はまるで黄金比。採れたてと見紛うフレッシュさが心を潤す。&#xA;&lt;color=#FFFF37&gt;時間経過による回復、その他特別な手段で入手できる。&lt;/color&gt;"/>
+	<item id="614" name="冷凍されたフルーツの缶詰（BP+1）" icon="item002/614" rare="R" category="道具" function="BP藥水" effect_val1="1" get_shop_1="無" description="冷たく干からびた果皮のかけら。ほのかな甘みと工業的な匂いを帯びている。&#xA;&lt;color=#FFFF37&gt;時間経過による回復、その他特別な手段で入手できる。&lt;/color&gt;"/>
+	<item id="615" name="冷凍されたフルーツの缶詰（BP+5）" icon="item002/615" rare="SR" category="道具" function="BP藥水" effect_val1="5" get_shop_1="無" description="シロップに浸された冷凍フルーツのかけら。戦闘による疲労を和らげてくれる。&#xA;&lt;color=#FFFF37&gt;時間経過による回復、その他特別な手段で入手できる。&lt;/color&gt;"/>
+	<item id="616" name="冷凍されたフルーツの缶詰（BP+10）" icon="item002/616" rare="SSR" category="道具" function="BP藥水" effect_val1="10" get_shop_1="無" description="極地技術で保存されたミックス果肉。甘酸っぱい味わいが気分を一新させる。&#xD;&#xA;&lt;color=#FFFF37&gt;時間経過による回復、その他特別な手段で入手できる。&lt;/color&gt;&#xD;"/>
+	<item/>
+	<item id="620" name="無償共鳴石 x 1" icon="item001/0072" rare="SSR" category="道具" function="道具寶箱" effect_val1="620" effect_val2="1" get_shop_1="無" description="無償共鳴石 x 1を獲得できる"/>
+	<item id="621" name="無償共鳴石 x 10" icon="item001/0072" rare="SSR" category="道具" function="道具寶箱" effect_val1="621" effect_val2="1" get_shop_1="無" description="無償共鳴石 x 10を獲得できる"/>
+	<item id="622" name="無償共鳴石 x 20" icon="item001/0072" rare="SSR" category="道具" function="道具寶箱" effect_val1="622" effect_val2="1" get_shop_1="無" description="無償共鳴石 x 20を獲得できる"/>
+	<item id="623" name="無償共鳴石 x 50" icon="item001/0072" rare="SSR" category="道具" function="道具寶箱" effect_val1="623" effect_val2="1" get_shop_1="無" description="無償共鳴石 x 50を獲得できる"/>
+	<item id="624" name="無償共鳴石 x 100" icon="item001/0072" rare="SSR" category="道具" function="道具寶箱" effect_val1="624" effect_val2="1" get_shop_1="無" description="無償共鳴石 x 100を獲得できる"/>
+	<item id="625" name="無償共鳴石 x 200" icon="item001/0072" rare="SSR" category="道具" function="道具寶箱" effect_val1="625" effect_val2="1" get_shop_1="無" description="無償共鳴石 x 200を獲得できる"/>
+	<item id="626" name="無償共鳴石 x 500" icon="item001/0072" rare="SSR" category="道具" function="道具寶箱" effect_val1="626" effect_val2="1" get_shop_1="無" description="無償共鳴石 x 500を獲得できる"/>
+	<item id="627" name="無償共鳴石 x 1000" icon="item001/0072" rare="SSR" category="道具" function="道具寶箱" effect_val1="627" effect_val2="1" get_shop_1="無" description="無償共鳴石 x 1000を獲得できる"/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item id="701" name="調査令（星辰）" icon="item002/701" rare="R" category="道具" function="物品" get_shop_1="無" description="未知の星光が輝く観測令。星辰の霊脈へ向かうためのチケット。&#xA;&lt;color=#FFFF37&gt;指定属性の新たな討伐戦ダンジョンを開放する際に使用する。&lt;/color&gt;"/>
+	<item id="702" name="調査令（命運）" icon="item002/702" rare="R" category="道具" function="物品" get_shop_1="無" description="宿命の紋章が刻まれた許可証。運命属性の霊脈を開くために用いられる。&#xA;&lt;color=#FFFF37&gt;指定属性の新たな討伐戦ダンジョンを開放する際に使用する。&lt;/color&gt;"/>
+	<item id="703" name="調査令（血脈）" icon="item002/703" rare="R" category="道具" function="物品" get_shop_1="無" description="継承の血が染み込んだ通行証。血脈専用の霊脈へ導いてくれる。&#xA;&lt;color=#FFFF37&gt;指定属性の新たな討伐戦ダンジョンを開放する際に使用する。&lt;/color&gt;"/>
+	<item id="704" name="調査令（光輝）" icon="item002/704" rare="R" category="道具" function="物品" get_shop_1="無" description="神聖な力に満ちた認可書。この品を持つものだけが光輝の霊脈へ入ることを許される。&#xA;&lt;color=#FFFF37&gt;指定属性の新たな討伐戦ダンジョンを開放する際に使用する。&lt;/color&gt;"/>
+	<item id="705" name="調査令（暗影）" icon="item002/705" rare="R" category="道具" function="物品" get_shop_1="無" description="深い闇の影に潜む暗号牌。暗影の霊脈へ通じる神秘の証。&#xD;&#xA;&lt;color=#FFFF37&gt;指定属性の新たな討伐戦ダンジョンを開放する際に使用する。&lt;/color&gt;&#xD;"/>
+	<item id="706" name="調査令（霊魂）" icon="item002/706" rare="R" category="道具" function="物品" get_shop_1="無" description="触れると精神が震える感覚を味わえる証。魂の霊脈を調査するための重要な鍵。&#xA;&lt;color=#FFFF37&gt;指定属性の新たな討伐戦ダンジョンを開放する際に使用する。&lt;/color&gt;"/>
+	<item/>
+	<item/>
+	<item id="801" name="フォルダ(中庭)" icon="item002/801" rare="R" category="道具" function="物品" get_shop_1="無" description="機関最高レベルの緊急公文書。これを開いた者は誰であれ無条件で協力・支援しなければならない。&#xA;&lt;color=#FFFF37&gt;指定エリアの「派遣」完了を速めるために使用する。&lt;/color&gt;"/>
+	<item id="802" name="フォルダ(ロビー)" icon="item002/801" rare="R" category="道具" function="物品" get_shop_1="無" description="機関最高レベルの緊急公文書。これを開いた者は誰であれ無条件で協力・支援しなければならない。&#xA;&lt;color=#FFFF37&gt;指定エリアの「派遣」完了を速めるために使用する。&lt;/color&gt;"/>
+	<item id="803" name="フォルダ(浴室)" icon="item002/801" rare="R" category="道具" function="物品" get_shop_1="無" description="機関最高レベルの緊急公文書。これを開いた者は誰であれ無条件で協力・支援しなければならない。&#xA;&lt;color=#FFFF37&gt;指定エリアの「派遣」完了を速めるために使用する。&lt;/color&gt;"/>
+	<item id="804" name="紫色のフォルダ(區域4)" icon="item002/801" rare="R" category="道具" function="物品" get_shop_1="無" description="機関最高レベルの緊急公文書。これを開いた者は誰であれ無条件で協力・支援しなければならない。&#xA;&lt;color=#FFFF37&gt;指定エリアの「派遣」完了を速めるために使用する。&lt;/color&gt;"/>
+	<item id="805" name="紫色のフォルダ(區域5)" icon="item002/801" rare="R" category="道具" function="物品" get_shop_1="無" description="機関最高レベルの緊急公文書。これを開いた者は誰であれ無条件で協力・支援しなければならない。&#xA;&lt;color=#FFFF37&gt;指定エリアの「派遣」完了を速めるために使用する。&lt;/color&gt;"/>
+	<item/>
+	<item id="810" name="機関資料（限定エリア）" icon="item002/810" rare="R" category="道具" function="道具寶箱" effect_val1="810" effect_val2="1" get_shop_1="無" description="期間限定イベントで配布される特種なボックス。期間限定の希少資材が入っている。&#xA;&lt;color=#FFFF37&gt;使用すると機関内のオフィス物資を入手できる。&lt;/color&gt;"/>
+	<item/>
+	<item id="811" name="機関資料（対策機関・中庭）" icon="item002/811" rare="R" category="道具" function="道具寶箱" effect_val1="811" effect_val2="1" get_shop_1="無" description="REVERSEが整理した機密ボックス。各種作戦資源がランダムに封入されている。&#xA;&lt;color=#FFFF37&gt;使用すると機関内のオフィス物資を入手できる。&lt;/color&gt;"/>
+	<item id="812" name="機関資料（対策機関・ロビー）" icon="item002/811" rare="R" category="道具" function="道具寶箱" effect_val1="812" effect_val2="1" get_shop_1="無" description="REVERSEが整理した機密ボックス。各種作戦資源がランダムに封入されている。&#xA;&lt;color=#FFFF37&gt;使用すると機関内のオフィス物資を入手できる。&lt;/color&gt;"/>
+	<item id="813" name="機関資料（対策機関・浴室）" icon="item002/811" rare="R" category="道具" function="道具寶箱" effect_val1="813" effect_val2="1" get_shop_1="無" description="REVERSEが整理した機密ボックス。各種作戦資源がランダムに封入されている。&#xA;&lt;color=#FFFF37&gt;使用すると機関内のオフィス物資を入手できる。&lt;/color&gt;"/>
+	<item id="814" name="機関資料(區域4)" icon="item002/811" rare="R" category="道具" function="道具寶箱" effect_val1="814" effect_val2="1" get_shop_1="無" description="REVERSEが整理した機密ボックス。各種作戦資源がランダムに封入されている。&#xA;&lt;color=#FFFF37&gt;使用すると機関内のオフィス物資を入手できる。&lt;/color&gt;"/>
+	<item id="815" name="機関資料(區域5)" icon="item002/811" rare="R" category="道具" function="道具寶箱" effect_val1="815" effect_val2="1" get_shop_1="無" description="REVERSEが整理した機密ボックス。各種作戦資源がランダムに封入されている。&#xA;&lt;color=#FFFF37&gt;使用すると機関内のオフィス物資を入手できる。&lt;/color&gt;"/>
+	<item/>
+	<item/>
+	<item id="901" name="花" icon="item002/901" rare="R" category="道具" function="好感道具" effect_val1="1" get_shop_1="一般貨品商店" description="愛情を示す花。魅惑的な香りを帯びている。&#xA;&lt;color=#FFFF37&gt;使用すると魔女の好感度1を上昇させる。&lt;/color&gt;"/>
+	<item id="902" name="香水" icon="item002/902" rare="SR" category="道具" function="好感道具" effect_val1="10" get_shop_1="一般貨品商店" description="精巧なボトルに封入された香りでストレスを和らげる。&#xA;&lt;color=#FFFF37&gt;使用すると魔女の好感度10を上昇させる。&lt;/color&gt;"/>
+	<item id="903" name="スカーフ" icon="item002/903" rare="SSR" category="道具" function="好感道具" effect_val1="30" get_shop_1="一般貨品商店" description="織り手の精緻な対称模様が施されたシルクスカーフ。優雅な女性の象徴。&#xA;&lt;color=#FFFF37&gt;使用すると魔女の好感度30を上昇させる。&lt;/color&gt;"/>
+	<item id="904" name="ネックレス" icon="item002/904" rare="SSR" category="道具" function="好感道具" effect_val1="50" get_shop_1="一般貨品商店" description="華やかなデザインのネックレス。社交の場における女性の魅力を引き立てる。&#xA;&lt;color=#FFFF37&gt;使用すると魔女の好感度50を上昇させる。&lt;/color&gt;"/>
+	<item id="905" name="百合の花束" icon="item002/905" rare="SSR" category="道具" function="好感道具" effect_val1="100" get_shop_1="一般貨品商店" description="純潔、恋慕、そして熱い想いを象徴する、想い人へ気持ちを伝えるための贈り物。  &#xA;&lt;color=#FFFF37&gt;使用すると魔女の好感度100を上昇させる。&lt;/color&gt;"/>
+	<item/>
+	<item id="911" name="指輪" icon="item002/911" rare="SSR" category="道具" function="物品" get_shop_1="指定目標商店" description="誓いを象徴する指輪。互いの心を通わせることができる。&#xA;&lt;color=#FFFF37&gt;使用すると魔女の好感度を上昇させる。&lt;/color&gt;"/>
+	<item id="912" name="星光編織の誓い" icon="item002/912" rare="SSR" category="裝備" function="裝備" description="数多の星々を紡ぎ出した翡翠の薔薇は、迷える帰路を優しく照らし出す。&#xA;&lt;color=#FFFF37&gt;星辰属性の魔女との絆の証明。&lt;/color&gt;"/>
+	<item id="913" name="運命注視の誓い" icon="item002/913" rare="SSR" category="裝備" function="裝備" description="運命の悠久たる大河に浮かぶ紺碧の薔薇は、決して逸らされることのない深い守護の眼差し。&#xA;&lt;color=#FFFF37&gt;運命属性の魔女との絆の証明。&lt;/color&gt;"/>
+	<item id="914" name="鎖鎖糾乱の誓い" icon="item002/914" rare="SSR" category="裝備" function="裝備" description="熱く咲き誇る血紅の薔薇を捧げ、互いの絆を静かに繋ぎ止める。&#xA;&lt;color=#FFFF37&gt;血脈属性の魔女との絆の証明。&lt;/color&gt;"/>
+	<item id="915" name="破曉光輝の誓い" icon="item002/915" rare="SSR" category="裝備" function="裝備" description="始まりの黎明を宿した黄金の薔薇は、あらゆる暗雲を音もなく包み込む。&#xA;&lt;color=#FFFF37&gt;光輝属性の魔女との絆の証明。&lt;/color&gt;"/>
+	<item id="916" name="幽冥永夜の誓い" icon="item002/916" rare="SSR" category="裝備" function="裝備" description="静寂なる深夜に咲き誇る紫紺の薔薇は、深淵における最も揺るぎなき寄り代。&#xA;&lt;color=#FFFF37&gt;暗影属性の魔女との絆の証明。&lt;/color&gt;"/>
+	<item id="917" name="歲月編織の誓い" icon="item002/917" rare="SSR" category="裝備" function="裝備" description="悠久の時を経て洗練された薄紅の薔薇は、輪廻を超える不滅の証明。&#xA;&lt;color=#FFFF37&gt;soul属性の魔女との絆の証明。&lt;/color&gt;"/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item id="1001" name="逸聞記録（初級）" icon="item002/1001" rare="R" category="道具" function="經驗藥水" effect_val1="1000" get_shop_1="一般貨品商店" get_shop_2="關卡" description="ひどく古びた紙。歴史のある一片が記されている。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベルを上昇させる。魔女EXP+1000&lt;/color&gt;"/>
+	<item id="1002" name="逸聞記録（中級）" icon="item002/1002" rare="SR" category="道具" function="經驗藥水" effect_val1="5000" get_shop_1="一般貨品商店" get_shop_2="關卡" description="散逸した古い文書。珍しい逸聞が記録されている。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベルを上昇させる。魔女EXP+5000&lt;/color&gt;"/>
+	<item id="1003" name="逸聞記録（高級）" icon="item002/1003" rare="SR" category="道具" function="經驗藥水" effect_val1="10000" get_shop_1="一般貨品商店" get_shop_2="關卡" description="積み重ねられた史料。各地の野史や伝聞が書き写されている。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベルを上昇させる。魔女EXP+10000&lt;/color&gt;"/>
+	<item id="1004" name="逸聞記録（特級）" icon="item002/1004" rare="SSR" category="道具" function="經驗藥水" effect_val1="20000" get_shop_1="一般貨品商店" get_shop_2="關卡" description="一束の文献。古い伝説について詳しく記されている。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベルを上昇させる。魔女EXP+20000&lt;/color&gt;"/>
+	<item/>
+	<item/>
+	<item id="1101" name="魔力メンテ剤（小）" icon="item002/1101" rare="R" category="道具" function="裝備經驗道具" effect_val1="1000" get_shop_1="關卡" description="特殊な配合の液体が入ったビン。武器の性能を修復・強化できる。&#xA;&lt;color=#FFFF37&gt;使用すると魔具のレベルを上昇させる。&lt;/color&gt;"/>
+	<item id="1102" name="魔力メンテ剤（中）" icon="item002/1102" rare="SR" category="道具" function="裝備經驗道具" effect_val1="5000" get_shop_1="關卡" description="特殊な配合の液体が入ったビン。武器の性能を修復・強化できる。&#xA;&lt;color=#FFFF37&gt;使用すると魔具のレベルを上昇させる。&lt;/color&gt;"/>
+	<item id="1103" name="魔力メンテ剤（大）" icon="item002/1103" rare="SR" category="道具" function="裝備經驗道具" effect_val1="10000" get_shop_1="關卡" description="特殊な配合の液体が入ったビン。武器の性能を修復・強化できる。&#xA;&lt;color=#FFFF37&gt;使用すると魔具のレベルを上昇させる。&lt;/color&gt;"/>
+	<item id="1104" name="魔力メンテ剤（特大）" icon="item002/1104" rare="SSR" category="道具" function="裝備經驗道具" effect_val1="20000" get_shop_1="關卡" description="特殊な配合の液体が入ったビン。武器の性能を修復・強化できる。&#xA;&lt;color=#FFFF37&gt;使用すると魔具のレベルを上昇させる。&lt;/color&gt;"/>
+	<item/>
+	<item id="1111" name="普通のワックス" icon="item002/1111" rare="R" category="道具" function="物品" description="何の変哲もない普通のワックス。物品の表面にある小さな亀裂のみを修復することができる。&#xA;&lt;color=#FFFF37&gt;魔具のレベル制限を突破するために使用する。&lt;/color&gt;"/>
+	<item id="1112" name="高級なワックス" icon="item002/1112" rare="SR" category="道具" function="物品" description="品質の良い高価なワックス。物品自体の魔力の流れを安定させることができる。&#xA;&lt;color=#FFFF37&gt;魔具のレベル制限を突破するために使用する。&lt;/color&gt;"/>
+	<item id="1113" name="魔力が込められたワックス" icon="item002/1113" rare="SSR" category="道具" function="物品" description="ヘビノワ重工が開発した特殊な媒体。欠陥を修復するだけでなく、魔力の流動性を強化することができる。&#xD;&#xA;&lt;color=#FFFF37&gt;魔具のレベル制限を突破するために使用する。&lt;/color&gt;&#xD;"/>
+	<item/>
+	<item/>
+	<item id="1201" name="魔法のハンカチ（下級）" icon="item002/1201" rare="R" category="道具" function="飾品經驗道具" effect_val1="50" sell_price="40" description="きめ細やかな質感の魔力織物。非常に貴重なアクセサリーの手入れに使用される。&#xA;&lt;color=#FFFF37&gt;使用すると魔装のレベルを上昇させる。&lt;/color&gt;"/>
+	<item id="1202" name="魔法のハンカチ（中級）" icon="item002/1202" rare="SR" category="道具" function="飾品經驗道具" effect_val1="150" sell_price="200" description="きめ細やかな質感の魔力織物。非常に貴重なアクセサリーの手入れに使用される。&#xA;&lt;color=#FFFF37&gt;使用すると魔装のレベルを上昇させる。&lt;/color&gt;"/>
+	<item id="1203" name="魔法のハンカチ（高級）" icon="item002/1203" rare="SR" category="道具" function="飾品經驗道具" effect_val1="350" sell_price="1000" description="きめ細やかな質感の魔力織物。非常に貴重なアクセサリーの手入れに使用される。&#xA;&lt;color=#FFFF37&gt;使用すると魔装のレベルを上昇させる。&lt;/color&gt;"/>
+	<item id="1204" name="魔法のハンカチ（特級）" icon="item002/1204" rare="SSR" category="道具" function="飾品經驗道具" effect_val1="500" sell_price="2500" description="きめ細やかな質感の魔力織物。非常に貴重なアクセサリーの手入れに使用される。&#xA;&lt;color=#FFFF37&gt;使用すると魔装のレベルを上昇させる。&lt;/color&gt;"/>
+	<item/>
+	<item/>
+	<item id="1301" name="未知なる記録" icon="item002/73" rare="SSR" category="道具" function="玩家經驗道具" effect_val1="50" description="フォン・エクマン博士のノートと所感。あらゆる面で非常に役立つ。&#xA;&lt;color=#FFFF37&gt;技師のEXPを上昇させる。&lt;/color&gt;"/>
+	<item/>
+	<item/>
+	<item id="1401" name="転送チケット（1回分）" icon="item002/1401" rare="SR" category="道具" function="物品" get_shop_1="無" description="転送大広間を通じて行われる戦力の転送機能。&#xA;&lt;color=#FFFF37&gt;魔女契約に使用できる。&lt;/color&gt;"/>
+	<item id="1402" name="転送チケット（10回分）" icon="item002/1402" rare="SSR" category="道具" function="物品" get_shop_1="無" description="転送大広間を通じて行われる戦力の転送機能。&#xA;&lt;color=#FFFF37&gt;魔女契約に使用できる。&lt;/color&gt;"/>
+	<item id="1403" name="SSR確定チケット" icon="item002/1403" rare="SSR" category="道具" function="物品" description="SSR確定召喚が1回できるチケット"/>
+	<item/>
+	<item id="1451" name="後方支援チケット（1回分）" icon="item002/1451" rare="SR" category="道具" function="物品" get_shop_1="無" description="後方支援部へ申請する一度限りの支援。実用的な補助アイテムが手に入る。&#xA;&lt;color=#FFFF37&gt;魔具契約に使用できる。&lt;/color&gt;"/>
+	<item id="1452" name="後方支援チケット（10回分）" icon="item002/1452" rare="SSR" category="道具" function="物品" get_shop_1="無" description="大規模な物資補給申請。1度で小隊全体の支援を充実させる。&#xA;&lt;color=#FFFF37&gt;魔具契約に使用できる。&lt;/color&gt;"/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item id="2021" name="クリスタル（ラヴィナ）" icon="item002/2021" rare="R" category="角色碎片" function="角色碎片" effect_val1="2021" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2022" name="クリスタル（セラフィナ）" icon="item002/2022" rare="R" category="角色碎片" function="角色碎片" effect_val1="2022" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2027" name="クリスタル（藍瑤）" icon="item002/2027" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2027" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2028" name="クリスタル（アメリ―）" icon="item002/2028" rare="SR" category="角色碎片" function="角色碎片" effect_val1="2028" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2029" name="クリスタル（カリスタ）" icon="item002/2029" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2029" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2033" name="クリスタル（ルシア）" icon="item002/2033" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2033" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2035" name="クリスタル（インシュエ）" icon="item002/2035" rare="SR" category="角色碎片" function="角色碎片" effect_val1="2035" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2036" name="クリスタル（マーキュリア）" icon="item002/2036" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2036" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2037" name="クリスタル（エルヴィラ）" icon="item002/2037" rare="SR" category="角色碎片" function="角色碎片" effect_val1="2037" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2040" name="クリスタル（ナフラ）" icon="item002/2040" rare="R" category="角色碎片" function="角色碎片" effect_val1="2040" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2041" name="クリスタル（パンドリア）" icon="item002/2041" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2041" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2042" name="クリスタル（ノラ）" icon="item002/2042" rare="R" category="角色碎片" function="角色碎片" effect_val1="2042" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2043" name="クリスタル（ユウリ）" icon="item002/2043" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2043" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2044" name="クリスタル（アストラ）" icon="item002/2044" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2044" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2045" name="クリスタル（レイラニ）" icon="item002/2045" rare="SR" category="角色碎片" function="角色碎片" effect_val1="2045" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2047" name="クリスタル（ファティマ）" icon="item002/2047" rare="R" category="角色碎片" function="角色碎片" effect_val1="2047" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2049" name="クリスタル（トヴィア）" icon="item002/2049" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2049" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2052" name="クリスタル（アミナ）" icon="item002/2052" rare="SR" category="角色碎片" function="角色碎片" effect_val1="2052" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2054" name="クリスタル（クローニア）" icon="item002/2054" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2054" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2057" name="クリスタル（カロネ）" icon="item002/2057" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2057" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2071" name="クリスタル（イズミ）" icon="item002/2071" rare="SR" category="角色碎片" function="角色碎片" effect_val1="2071" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2072" name="クリスタル（モラ）" icon="item002/2072" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2072" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2073" name="クリスタル（エメシス）" icon="item002/2073" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2073" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2074" name="クリスタル（アイリス）" icon="item002/2074" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2074" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2075" name="クリスタル（ロータ）" icon="item002/2075" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2075" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2076" name="クリスタル（ミナト）" icon="item002/2076" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2076" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2077" name="クリスタル（）" icon="item002/2077" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2077" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2078" name="クリスタル（ノア）" icon="item002/2078" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2078" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2079" name="クリスタル（ユイ）" icon="item002/2079" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2079" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2080" name="クリスタル（シノ）" icon="item002/2080" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2080" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2081" name="クリスタル（セサラ）" icon="item002/2081" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2081" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2082" name="クリスタル（エロティ）" icon="item002/2082" rare="SR" category="角色碎片" function="角色碎片" effect_val1="2082" get_shop_1="召喚" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item id="2083" name="クリスタル（エロティ）" icon="item002/2083" rare="SSR" category="角色碎片" function="角色碎片" effect_val1="2083" get_shop_1="無" description="透き通った儀式専用の球体。魂の深層に隠れた映像を映し出させる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女の奥義レベルを上昇させる。&lt;/color&gt;&#xD;"/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item id="3001" illustration_id="1" name="萌芽の神威" icon="item002/3001" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="フォン・エクマン博士の研究ノートの記載：&#xA;「これらの初期の結晶構造は依然として安定しており、無限の環によって捕えられた最も純粋な神話の残像である。新米魔女が装備するのに適した魔導具である。」&#xA;雄牛の角は絶対的な力を象徴し、神話から捕えられた金色の牛の影であり、魔女に時代の大車輪を動かすための力を授ける。"/>
+	<item id="3002" illustration_id="2" name="萌芽の戦神" icon="item002/3002" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="フォン・エクマン博士の研究ノートの記載：&#xA;「これらの初期の結晶構造は依然として安定しており、無限の環によって捕えられた最も純粋な神話の残像である。新米魔女が装備するのに適した魔導具である。」&#xA;狼の群れは絶対的な戦意を持ち、過去の戦争時に狼の群れが部隊を襲った伝説から来ている。魔女の眠っていた戦闘本能を初歩的に目覚めさせる。"/>
+	<item id="3003" illustration_id="3" name="萌芽の神格" icon="item002/3003" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="フォン・エクマン博士の研究ノートの記載：&#xA;「これらの初期の結晶構造は依然として安定しており、無限の環によって捕えられた最も純粋な神話の残像である。新米魔女が装備するのに適した魔導具である。」&#xA;天使の肖像からかすかに感じられる神聖な気配。溢れ出る微かな神力は、終末がもたらす恐怖を鎮めることができる神聖な防御の媒介である。"/>
+	<item id="3004" illustration_id="4" name="萌芽の財富" icon="item002/3004" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="フォン・エクマン博士の研究ノートの記載：&#xA;「これらの初期の結晶構造は依然として安定しており、無限の環によって捕えられた最も純粋な神話の残像である。新米魔女が装備するのに適した魔導具である。」&#xA;東方神話において財運を象徴する金魚。逸聞によって形成された流動場を通じて周囲に散らばる軼聞の残滓を引き寄せ、魔女に魔力の恵みをもたらす。"/>
+	<item id="3005" illustration_id="5" name="萌芽の颶風" icon="item002/3005" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="フォン・エクマン博士の研究ノートの記載：&#xA;「これらの初期の結晶構造は依然として安定しており、無限の環によって捕えられた最も純粋な神話の残像である。新米魔女が装備するのに適した魔導具である。」&#xA;伝説において暴風を操る龍の残影であり、その内部には神話に由来する気流の力が圧縮されている。これを持つ魔女の身のこなしを風のように軽やかにする。"/>
+	<item id="3006" illustration_id="6" name="萌芽の火種" icon="item002/3006" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="フォン・エクマン博士の研究ノートの記載：&#xA;「これらの初期の結晶構造は依然として安定しており、無限の環によって捕えられた最も純粋な神話の残像である。新米魔女が装備するのに適した魔導具である。」&#xA;東方に伝わる絶えず生まれ変わる鳳凰の伝説に由来し、その余熱は尽きることがない。博士は、文明の始まりを守った火のように、恒常的な熱エネルギーを供給できると考えている。"/>
+	<item id="3007" illustration_id="7" name="萌芽の雷神" icon="item002/3007" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="フォン・エクマン博士の研究ノートの記載：&#xA;「これらの初期の結晶構造は依然として安定しており、無限の環によって捕えられた最も純粋な神話の残像である。新米魔女が装備するのに適した魔導具である。」&#xA;鋭い羊の角が雷を呼び寄せ、ルーンの雷光が原始の雷霆の伝説と共鳴し、武器に電撃ダメージを与える力を付与する。"/>
+	<item id="3008" illustration_id="8" name="萌芽の宇宙" icon="item002/3008" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="フォン・エクマン博士の研究ノートの記載：&#xA;「これらの初期の結晶構造は依然として安定しており、無限の環によって捕えられた最も純粋な神話の残像である。新米魔女が装備するのに適した魔導具である。」&#xA;世界の神話には、ウロボロスが宇宙に噛みつく姿が記されており、時空の流転を示唆している。無限の輪が衝突する中で生まれる奇跡のように、それは終末の侵蝕に抗うことができる。"/>
+	<item id="3009" illustration_id="9" name="萌芽の神秘" icon="item002/3009" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="フォン・エクマン博士の研究ノートの記載：&#xA;「これらの初期の結晶構造は依然として安定しており、無限の環によって捕えられた最も純粋な神話の残像である。新米魔女が装備するのに適した魔導具である。」&#xA;知恵を象徴する生物が魔法の知識を携え、所持者の感覚神経を強化し、現世の次元の外に潜む脅威を垣間見ることを可能にする。"/>
+	<item id="3010" illustration_id="10" name="萌芽の神馬" icon="item002/3010" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="フォン・エクマン博士の研究ノートの記載：&#xA;「これらの初期の結晶構造は依然として安定しており、無限の環によって捕えられた最も純粋な神話の残像である。新米魔女が装備するのに適した魔導具である。」&#xA;駿馬が疾走する意志をもって前進し、行く手を阻むものはない。博士のテストでは、機動力を大幅に強化し、進撃をさらに勢いづけることが示されている。"/>
+	<item id="3011" illustration_id="11" name="観測の神威" icon="item002/3011" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="ヘビノワ重工が開発した戦場解析用のチェスセット。「獣」の生体データと実験素材を融合している。実験記録によれば、&#xA;「木製外殻は初歩的に“逸聞”シグナルの解析機能を備えており、特定職業の逸聞の力を魔女へと導くことができる。性能は依然として安全閾値内にある。」&#xA;木製の牛戦士の駒。純粋な肉体の力を強調しており、敵の物理的弱点を感知し、魔女に素手で岩を砕けるほどの怪力を与える。"/>
+	<item id="3012" illustration_id="12" name="観測の戦神" icon="item002/3012" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="ヘビノワ重工が開発した戦場解析用のチェスセット。「獣」の生体データと実験素材を融合している。実験記録によれば、&#xA;「木製外殻は初歩的に“逸聞”シグナルの解析機能を備えており、特定職業の逸聞の力を魔女へと導くことができる。性能は依然として安全閾値内にある。」&#xA;全身を武装した戦士の姿をかたどり、冷ややかな光を放っている。伝説に語られる「獣」の特性を初歩的に模倣しており、所持する魔女が獣に対抗する術を知る手助けとなる。"/>
+	<item id="3013" illustration_id="13" name="観測の神格" icon="item002/3013" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="ヘビノワ重工が開発した戦場解析用のチェスセット。「獣」の生体データと実験素材を融合している。実験記録によれば、&#xA;「木製外殻は初歩的に“逸聞”シグナルの解析機能を備えており、特定職業の逸聞の力を魔女へと導くことができる。性能は依然として安全閾値内にある。」&#xA;慈愛の女神をかたどった駒で、繁殖と豊穣を象徴している。周囲の生命の波動を感知し、魔女の治癒能力をわずかに強化する。"/>
+	<item id="3014" illustration_id="14" name="観測の財富" icon="item002/3014" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="ヘビノワ重工が開発した戦場解析用のチェスセット。「獣」の生体データと実験素材を融合している。実験記録によれば、&#xA;「木製外殻は初歩的に“逸聞”シグナルの解析機能を備えており、特定職業の逸聞の力を魔女へと導くことができる。性能は依然として安全閾値内にある。」&#xA;金貨が積み重なった意匠が刻まれた駒。戦場に存在する価値を感知し、魔女が戦闘中に資源を効率よく配分・運用できるようにする。"/>
+	<item id="3015" illustration_id="15" name="観測の颶風" icon="item002/3015" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="ヘビノワ重工が開発した戦場解析用のチェスセット。「獣」の生体データと実験素材を融合している。実験記録によれば、&#xA;「木製外殻は初歩的に“逸聞”シグナルの解析機能を備えており、特定職業の逸聞の力を魔女へと導くことができる。性能は依然として安全閾値内にある。」&#xA;弓を引き絞り、今にも放たんとする射手の姿をかたどっている。木製の紋様が気流に残る逸聞の流れを捉え、投擲物の軌道を補正し、魔女の遠距離攻撃をより正確にする。"/>
+	<item id="3016" illustration_id="16" name="観測の火種" icon="item002/3016" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="ヘビノワ重工が開発した戦場解析用のチェスセット。「獣」の生体データと実験素材を融合している。実験記録によれば、&#xA;「木製外殻は初歩的に“逸聞”シグナルの解析機能を備えており、特定職業の逸聞の力を魔女へと導くことができる。性能は依然として安全閾値内にある。」&#xA;松明を模した棋具で、台座には燃焼のルーンが刻まれている。微弱な熱エネルギーを放ち、魔女の攻撃に灼けつくような感覚を付与する。"/>
+	<item id="3017" illustration_id="17" name="観測の雷神" icon="item002/3017" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="ヘビノワ重工が開発した戦場解析用のチェスセット。「獣」の生体データと実験素材を融合している。実験記録によれば、&#xA;「木製外殻は初歩的に“逸聞”シグナルの解析機能を備えており、特定職業の逸聞の力を魔女へと導くことができる。性能は依然として安全閾値内にある。」&#xA;巨大な槌を手にしたソールの駒。雷電の逸聞の律動を捉え、魔女が戦闘中に微弱な静電の火花を引き起こし、敵の行動を妨害する。"/>
+	<item id="3018" illustration_id="18" name="観測の宇宙" icon="item002/3018" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="ヘビノワ重工が開発した戦場解析用のチェスセット。「獣」の生体データと実験素材を融合している。実験記録によれば、&#xA;「木製外殻は初歩的に“逸聞”シグナルの解析機能を備えており、特定職業の逸聞の力を魔女へと導くことができる。性能は依然として安全閾値内にある。」&#xA;世界を象徴する球体の駒。ヘビノワ重工はそれを用いて世界線の変動を観測し、魔女が現実の歪曲現象に適応する力を高める。"/>
+	<item id="3019" illustration_id="19" name="観測の神秘" icon="item002/3019" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="ヘビノワ重工が開発した戦場解析用のチェスセット。「獣」の生体データと実験素材を融合している。実験記録によれば、&#xA;「木製外殻は初歩的に“逸聞”シグナルの解析機能を備えており、特定職業の逸聞の力を魔女へと導くことができる。性能は依然として安全閾値内にある。」&#xA;杖を持つ魔法使いの姿をかたどり、くすんだ宝石がはめ込まれている。魔力の流れを初歩的に整え、魔女が複雑な術式を行使する際の精神集中を保つ手助けをする。"/>
+	<item id="3020" illustration_id="20" name="観測の神馬" icon="item002/3020" rare="R" category="裝備" function="裝備" sell_price="1" get_shop_1="召喚" get_shop_2="關卡" description="ヘビノワ重工が開発した戦場解析用のチェスセット。「獣」の生体データと実験素材を融合している。実験記録によれば、&#xA;「木製外殻は初歩的に“逸聞”シグナルの解析機能を備えており、特定職業の逸聞の力を魔女へと導くことができる。性能は依然として安全閾値内にある。」&#xA;ケンタウロスの射手をかたどった駒。奔襲と遠距離妨害を重視しており、魔女の移動経路を最適化し、疾駆していようとも運動エネルギーを安定して保てるようにする。"/>
+	<item/>
+	<item/>
+	<item/>
+	<item id="3251" illustration_id="1" name="衝突の神威" icon="item002/3251" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「結晶内部のルーン文字が増殖を始めている。封印された神話の残影が現実と激しく摩擦を起こしており、装着者には性格の偏りが生じる可能性がある。」&#xA;雄牛の意志は魔女を頑固で傲慢に変え、紅晶の内部ではエネルギーが激しくうねる。やがて両手には、装甲すら粉砕するほどの恐るべき重圧が宿る。"/>
+	<item id="3252" illustration_id="2" name="衝突の戦神" icon="item002/3252" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「結晶内部のルーン文字が増殖を始めている。封印された神話の残影が現実と激しく摩擦を起こしており、装着者には性格の偏りが生じる可能性がある。」&#xA;狼群の凶暴性は、魔女を戦いの中でより嗜血的にする。この結晶には、数え切れない戦いの経験が記録されている。"/>
+	<item id="3253" illustration_id="3" name="衝突の神格" icon="item002/3253" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「結晶内部のルーン文字が増殖を始めている。封印された神話の残影が現実と激しく摩擦を起こしており、装着者には性格の偏りが生じる可能性がある。」&#xA;神聖な気配が翼に包まれ広がり、敵を強制的に屈服させる。魔女は神性の影響により、冷酷で人情に乏しい性格へと変化する。"/>
+	<item id="3254" illustration_id="4" name="衝突の財富" icon="item002/3254" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「結晶内部のルーン文字が増殖を始めている。封印された神話の残影が現実と激しく摩擦を起こしており、装着者には性格の偏りが生じる可能性がある。」&#xA;さらなる財富を、より重要でより貴重なものを求めるようになる。敵の命を奪うことだけでは足らず、所持者は強い所有欲を示すようになる。"/>
+	<item id="3255" illustration_id="5" name="衝突の颶風" icon="item002/3255" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「結晶内部のルーン文字が増殖を始めている。封印された神話の残影が現実と激しく摩擦を起こしており、装着者には性格の偏りが生じる可能性がある。」&#xA;竜の爪は大気を引き裂き、結晶の周囲には真空に近しい差圧領域が生じる。魔女が手を振るうだけで致命的な風刃となり、性格は気まぐれで移ろいやすくなる。"/>
+	<item id="3256" illustration_id="6" name="衝突の火種" icon="item002/3256" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「結晶内部のルーン文字が増殖を始めている。封印された神話の残影が現実と激しく摩擦を起こしており、装着者には性格の偏りが生じる可能性がある。」&#xA;鳳凰の火は穏やかな温かさから激しい灼熱へと変わる。魔女の攻撃には焼き尽くす意志が宿り、性格は極度に短気になる。"/>
+	<item id="3257" illustration_id="7" name="衝突の雷神" icon="item002/3257" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「結晶内部のルーン文字が増殖を始めている。封印された神話の残影が現実と激しく摩擦を起こしており、装着者には性格の偏りが生じる可能性がある。」&#xA;山羊の角が荒れ狂う雷鳴を導き、高圧の電弧が金属の間を跳ねまわる。魔女の声には雷鳴のような震えが帯び、行動には侵略的な爆発力が満ちる。"/>
+	<item id="3258" illustration_id="8" name="衝突の宇宙" icon="item002/3258" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「結晶内部のルーン文字が増殖を始めている。封印された神話の残影が現実と激しく摩擦を起こしており、装着者には性格の偏りが生じる可能性がある。」&#xA;虚空は光を飲み込み、時空の乱れの影響により、魔女は感情や記憶の混乱に陥ることがある。しかし、行動の意志には影響しない。"/>
+	<item id="3259" illustration_id="9" name="衝突の神秘" icon="item002/3259" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「結晶内部のルーン文字が増殖を始めている。封印された神話の残影が現実と激しく摩擦を起こしており、装着者には性格の偏りが生じる可能性がある。」&#xA;&#xA;晶石は万物の真実を映し出す。フクロウの凝視は魔女に弱点を見抜く力を与えるが、長く続く全知の感覚は彼女を神経質にしていく。"/>
+	<item id="3260" illustration_id="10" name="衝突の神馬" icon="item002/3260" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「結晶内部のルーン文字が増殖を始めている。封印された神話の残影が現実と激しく摩擦を起こしており、装着者には性格の偏りが生じる可能性がある。」&#xA;結晶が激しく輝く。魔女は物理的な限界を超越し、生み出された残像が敵の視界を乱すほどになる。性格は次第に捉えどころのないものへと変わっていく。"/>
+	<item id="3261" illustration_id="11" name="分析の神威" icon="item002/3261" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xA;「銀色のチェスセットには欲望の錬金術が導入されている。魔女の同期率は顕著に向上するが、その性格は次第に駒の職能へと同化していく。」&#xA;銀色のミノタウロスの眼には赤い光が宿る。力への崇拝により、魔女は好戦的になり、両拳は容易く装甲を貫く。"/>
+	<item id="3262" illustration_id="12" name="分析の戦神" icon="item002/3262" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xD;&#xA;「銀色のチェスセットには欲望の錬金術が導入されている。魔女の同期率は顕著に向上するが、その性格は次第に駒の職能へと同化していく。」&#xD;&#xA;銀光を放つ武装戦士。駒は敵の装甲構造を自動解析し、魔女は冷酷かつ効率的になり、兵器としての威力を最大限に発揮する。&#xD;"/>
+	<item id="3263" illustration_id="13" name="分析の神格" icon="item002/3263" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xA;「銀色のチェスセットには欲望の錬金術が導入されている。魔女の同期率は顕著に向上するが、その性格は次第に駒の職能へと同化していく。」&#xA;女神をかたどった像から銀色の光が溢れ出す。魔女は母性的な強い保護欲を抱くようになり、味方を癒やすことができるが、同時に過度に感情的にもなっていく。"/>
+	<item id="3264" illustration_id="14" name="分析の財富" icon="item002/3264" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xD;&#xA;「銀色のチェスセットには欲望の錬金術が導入されている。魔女の同期率は顕著に向上するが、その性格は次第に駒の職能へと同化していく。」&#xD;&#xA;精巧な宝庫の駒。物資の位置を特定するだけでなく、敵の「価値」を分析することもできる。魔女は執拗にあらゆる価値あるものを奪い取ろうとするようになる。&#xD;"/>
+	<item id="3265" illustration_id="15" name="分析の颶風" icon="item002/3265" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xA;「銀色のチェスセットには欲望の錬金術が導入されている。魔女の同期率は顕著に向上するが、その性格は次第に駒の職能へと同化していく。」&#xA;銀製の弓兵は冷気を放つ。魔女の遠距離攻撃は軌道を予測した必中の一撃となり、その性格は冷淡で沈着なものへと変わっていく。"/>
+	<item id="3266" illustration_id="16" name="分析の火種" icon="item002/3266" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xA;「銀色のチェスセットには欲望の錬金術が導入されている。魔女の同期率は顕著に向上するが、その性格は次第に駒の職能へと同化していく。」&#xA;松明の中では水銀のような烈焔が燃え盛っている。魔女の攻撃は高温の爆裂を伴うようになり、炎の意志の影響によって、その性格は極めて短気で激しいものへと変わっていく。"/>
+	<item id="3267" illustration_id="17" name="分析の雷神" icon="item002/3267" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xA;「銀色のチェスセットには欲望の錬金術が導入されている。魔女の同期率は顕著に向上するが、その性格は次第に駒の職能へと同化していく。」&#xA;雷神の槌には銀色の電光が閃く。落雷を精密に誘導し、魔女の言動には雷鳴のような威圧感が宿る。その性格は極めて攻撃的なものへと変わっていく。"/>
+	<item id="3268" illustration_id="18" name="分析の宇宙" icon="item002/3268" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xD;&#xA;「銀色のチェスセットには欲望の錬金術が導入されている。魔女の同期率は顕著に向上するが、その性格は次第に駒の職能へと同化していく。」&#xD;&#xA;銀色の球体の内部には、縮小された星系が収められている。魔女は空間の重なり合う点を即座に分析し、短距離の跳躍を行えるようになるが、現実への認識は次第にずれていく。&#xD;"/>
+	<item id="3269" illustration_id="19" name="分析の神秘" icon="item002/3269" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xA;「銀色のチェスセットには欲望の錬金術が導入されている。魔女の同期率は顕著に向上するが、その性格は次第に駒の職能へと同化していく。」&#xA;魔術師の杖は幽かな光を放つ。魔力構造を深く解析することで、魔女は冗長な儀式を必要とせずに魔法を行使できるようになる。その性格は孤高で、真理を追い求めるものへと変わっていく。"/>
+	<item id="3270" illustration_id="20" name="分析の神馬" icon="item002/3270" rare="SR" category="裝備" function="裝備" sell_price="10" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xD;&#xA;「銀色のチェスセットには欲望の錬金術が導入されている。魔女の同期率は顕著に向上するが、その性格は次第に駒の職能へと同化していく。」&#xD;&#xA;銀のケンタウロスは今にも駆け出しそうだ。戦場の地形と射撃角度を同時に解析し、魔女は高速で突進しながらも正確な狙撃を行えるようになる。その性格は捉えどころのないものへと変わっていく。&#xD;"/>
+	<item/>
+	<item/>
+	<item/>
+	<item id="3501" illustration_id="1" name="狂乱の神威" icon="item002/3501" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「興味深い――実に興味深い結果だ。科学的には説明できるが、どこか決定的な何かが欠けている気がする。結局のところ、それはいったい何なのだろうか。」&#xA;方形の結晶からは不吉な気配が溢れ出す。魔女は破壊の化身と化し、ひとたび放つ一撃が局地的な地震すら引き起こしかねない。装着者は理性と憐憫を失っていく。"/>
+	<item id="3502" illustration_id="2" name="狂乱の戦神" icon="item002/3502" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「興味深い。実に興味深い結果だ。科学的には説明できるが、どこか少し何かが足りないようにも思える。結局のところ、それはいったい何なのだろうか。」&#xA;丸石は幽暗な色へと変わる。狼の意志が完全に主導権を握り、魔女は殺戮そのものを愉しむようになる。戦場では残酷な死の舞を踊る。"/>
+	<item id="3503" illustration_id="3" name="狂乱の神格" icon="item002/3503" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「興味深い。実に興味深い結果だ。科学的には説明できるが、どこか少し何かが足りないようにも思える。結局のところ、それはいったい何なのだろうか。」&#xA;黄晶は砕け、オーロラのような光を放つ。天使の意志が戦場全体を威圧し、魔女は自らを人々を裁く神と見なすようになる。あらゆる非神性の存在を浄化しようとする。"/>
+	<item id="3504" illustration_id="4" name="狂乱の財富" icon="item002/3504" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「興味深い。実に興味深い結果だ。科学的には説明できるが、どこか少し何かが足りないようにも思える。結局のところ、それはいったい何なのだろうか。」&#xA;水滴は無限の渦へと変わり、貪欲に周囲のエネルギーを吸い尽くす。魔女は尽きることのない渇望に陥り、万物は自らが所有すべきものだと見なすようになる。"/>
+	<item id="3505" illustration_id="5" name="狂乱の颶風" icon="item002/3505" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xD;&#xA;「興味深い。実に興味深い結果だ。科学的には説明できるが、どこか少し何かが足りないようにも思える。結局のところ、それはいったい何なのだろうか。」&#xD;&#xA;五芒星は災厄級の気旋を引き起こす。竜の爪が届くところでは万物が引き裂かれ、魔女の笑い声は破滅の嵐の中へと消えていく。&#xD;"/>
+	<item id="3506" illustration_id="6" name="狂乱の火種" icon="item002/3506" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「興味深い。実に興味深い結果だ。科学的には説明できるが、どこか少し何かが足りないようにも思える。結局のところ、それはいったい何なのだろうか。」&#xA;魔女の通った後には、すべてが焦土と化す。彼女は一切を燃料へと変えることを渇望し、ただ一瞬の極致の輝きを得るためだけにすべてを燃やし尽くそうとする。その意志は極めて狂暴である。"/>
+	<item id="3507" illustration_id="7" name="狂乱の雷神" icon="item002/3507" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「興味深い。実に興味深い結果だ。科学的には説明できるが、どこか少し何かが足りないようにも思える。結局のところ、それはいったい何なのだろうか。」&#xA;万雷が降り注ぎ、あらゆる生命を滅ぼす。魔女の意志は天雷と一体となり、伝説に語られる神罰を代行する存在へと変貌する。"/>
+	<item id="3508" illustration_id="8" name="狂乱の宇宙" icon="item002/3508" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xA;「興味深い。実に興味深い結果だ。科学的には説明できるが、どこか少し何かが足りないようにも思える。結局のところ、それはいったい何なのだろうか。」&#xA;&#xA;ウロボロスは紫の楕円を呑み込み、時空の次元は砕け散る。魔女は直視すら許されない禁忌の存在となり、その存在そのものが崩壊をもたらす。&#xA;"/>
+	<item id="3509" illustration_id="9" name="狂乱の神秘" icon="item002/3509" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xD;&#xA;「興味深い。実に興味深い結果だ。科学的には説明できるが、どこか少し何かが足りないようにも思える。結局のところ、それはいったい何なのだろうか。」&#xD;&#xA;神秘は全知の眼へと変わる。魔女は未来を見通す狂気の深淵へと堕ち、死を見つめながら、必然だというように敵を終局へと導いていく。&#xD;"/>
+	<item id="3510" illustration_id="10" name="狂乱の神馬" icon="item002/3510" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="フォン・エクマン博士の研究ノートの記載：&#xD;&#xA;「興味深い。実に興味深い結果だ。科学的には説明できるが、どこか少し何かが足りないようにも思える。結局のところ、それはいったい何なのだろうか。」&#xD;&#xA;質量も重力も無視される。魔女は戦場を駆け抜ける極光となり、敵が反応するよりも前に、すでに幾千幾万もの斬撃を終える。&#xD;"/>
+	<item id="3511" illustration_id="11" name="解明の神威" icon="item002/3511" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xA;「金色の駒は神話の根源的ロジックを解き明かした。魔女は完全に職能の器へと変わり、獣に対抗する力が増幅される。」&#xA;金色のミノタウロスが咆哮を放つ。力の本源が解き明かされ、魔女は阻むことのできない怪力の化身と化す。振るう一撃のすべてが、山をも崩すほどの威力となる。"/>
+	<item id="3512" illustration_id="12" name="解明の戦神" icon="item002/3512" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xA;「金色の駒は神話の根源的ロジックを解き明かした。魔女は完全に職能の器へと変わり、獣に対抗する力が増幅される。」&#xA;金光燦然たる戦神が降臨する。無数の兵器はすべてその指先となり、魔女こそが戦場の支配者となる。絶対の理性を保ち、いかなる痛みも意に介さない。"/>
+	<item id="3513" illustration_id="13" name="解明の神格" icon="item002/3513" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xA;「金色の駒は神話の根源的ロジックを解き明かした。魔女は完全に職能の器へと変わり、獣に対抗する力が増幅される。」&#xA;金色の女神は神聖な熱を放つ。魔女は生命の流動という表層現象へ干渉できるようになり、その性格は俗世を超越したものへと変わっていく。"/>
+	<item id="3514" illustration_id="14" name="解明の財富" icon="item002/3514" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xA;「金色の駒は神話の根源的ロジックを解き明かした。魔女は完全に職能の器へと変わり、獣に対抗する力が増幅される。」&#xA;純金の貨幣は崩れ落ちるほどに積み重なる。等価交換の法則を解き明かし、魔女は敵の生命を利用可能なエネルギー資源へと変換できるようになる。"/>
+	<item id="3515" illustration_id="15" name="解明の颶風" icon="item002/3515" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xD;&#xA;「金色の駒は神話の根源的ロジックを解き明かした。魔女は完全に職能の器へと変わり、獣に対抗する力が増幅される。」&#xD;&#xA;金色の弓手は光の矢を放つ。大気、流体、この世の流るるものはほぼ完全にその支配下に置かれ、矢の届く先では空間が引き裂かれるかのような現象が生じる。&#xD;"/>
+	<item id="3516" illustration_id="16" name="解明の火種" icon="item002/3516" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xD;&#xA;「金色の駒は神話の根源的ロジックを解き明かした。魔女は完全に職能の器へと変わり、獣に対抗する力が増幅される。」&#xD;&#xA;&#xD;&#xA;金色の松明には太陽の炎が燃え上がる。魔女は恒星の縮図のような存在となり、太陽に匹敵する灼熱のエネルギーを放つことができる。その性格はほとんど狂気に近い。&#xD;"/>
+	<item id="3517" illustration_id="17" name="解明の雷神" icon="item002/3517" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xA;「金色の駒は神話の根源的ロジックを解き明かした。魔女は完全に職能の器へと変わり、獣に対抗する力が増幅される。」&#xA;ソールの駒は金色の狂雷を迸らせる。魔女の指が動くだけで雷嵐を呼び寄せ、神話に語られる天罰の光景を再現する。その性格は極めて傲慢なものとなる。"/>
+	<item id="3518" illustration_id="18" name="解明の宇宙" icon="item002/3518" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xD;&#xA;「金色の駒は神話の根源的ロジックを解き明かした。魔女は完全に職能の器へと変わり、獣に対抗する力が増幅される。」&#xD;&#xA;金の球体の内部では宇宙の誕生が演化している。魔女は局所的な現実構造を解明し干渉できるようになり、その存在そのものが解き明かせない迷霧となる。&#xD;"/>
+	<item id="3519" illustration_id="19" name="解明の神秘" icon="item002/3519" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xD;&#xA;「金色の駒は神話の根源的ロジックを解き明かした。魔女は完全に職能の器へと変わり、獣に対抗する力が増幅される。」&#xD;&#xA;&#xD;&#xA;金色の魔術師は星辰を手にしている。あらゆる禁忌の術式を解明し、魔女は魔法そのものの化身となる。既存の術式や現象の作用方式を瞬時に再構築することができる。&#xD;&#xA;"/>
+	<item id="3520" illustration_id="20" name="解明の神馬" icon="item002/3520" rare="SSR" category="裝備" function="裝備" sell_price="100" get_shop_1="召喚" description="ヘビノワ重工が開発した戦場解析チェスセット。「獣」の生体データを金属と融合させている。実験記録によれば、&#xA;「金色の駒は神話の根源的ロジックを解き明かした。魔女は完全に職能の器へと変わり、獣に対抗する力が増幅される。」&#xA;金色のケンタウロスは音速の壁を突破する。質量と慣性の極限を解明し、魔女は戦場を駆ける閃光の軌跡と化す。"/>
+	<item id="3521" illustration_id="21" name="預言の神威" icon="item002/3521" rare="SSR" category="裝備" function="裝備" sell_price="100" description="魔女議会の記録：&#xA;「秘密裏に因果の理を解析することで、魔女の意志は未来と同期する。観測された運命は、やがて実現へと収束していく。」&#xA;権杖には歪んだ螺旋が刻まれている。それは生命融合という禁忌の学問の萌芽を示しており、人類が血肉によって神の領域を再構築しようと試みることを予兆している。"/>
+	<item id="3522" illustration_id="22" name="預言の戦神" icon="item002/3522" rare="SSR" category="裝備" function="裝備" sell_price="100" description="魔女議会の記録：&#xA;「秘密裏に因果の理を解析することで、魔女の意志は未来と同期する。観測された運命は、やがて実現へと収束していく。」&#xA;鋼鉄の戦士は巨大な刃を手にしている。それは工業と幻想の歯車がかみ合い始めたことを象徴している。畏敬は解析と利用へと置き換えられ、兵器の炎はこの時より決して消えることはない。"/>
+	<item id="3523" illustration_id="23" name="預言の神格" icon="item002/3523" rare="SSR" category="裝備" function="裝備" sell_price="100" description="魔女議会の記録：&#xA;「秘密裏に因果の理を解析することで、魔女の意志は未来と同期する。観測された運命は、やがて実現へと収束していく。」&#xA;慈悲なき女神は頭を垂れ、沈黙している。苦難と救済を予言する信仰は廃墟の中で生まれ、人々は沈黙のうちに耐えることを選び、もはや抗おうとはしない。"/>
+	<item id="3524" illustration_id="24" name="預言の財冨" icon="item002/3524" rare="SSR" category="裝備" function="裝備" sell_price="100" description="魔女議会の記録：&#xD;&#xA;「秘密裏に因果の理を解析することで、魔女の意志は未来と同期する。観測された運命は、やがて実現へと収束していく。」&#xD;&#xA;金貨と家畜が網のように絡み合う。それは欲望と交換が国境を越えて広がることを示している。万物には価値が与えられ、魂でさえ例外ではない。&#xD;"/>
+	<item id="3525" illustration_id="25" name="預言の颶風" icon="item002/3525" rare="SSR" category="裝備" function="裝備" sell_price="100" description="魔女議会の記録：&#xD;&#xA;「秘密裏に因果の理を解析することで、魔女の意志は未来と同期する。観測された運命は、やがて実現へと収束していく。」&#xD;&#xA;雹と狂風の中に古き家紋が姿を現す。影に潜む名家が密輸と薬物取引によって台頭し、人間そのものをも取引の体系へと組み込むことを予兆している。&#xD;"/>
+	<item id="3526" illustration_id="26" name="預言の火種" icon="item002/3526" rare="SSR" category="裝備" function="裝備" sell_price="100" description="魔女議会の記録：&#xD;&#xA;「秘密裏に因果の理を解析することで、魔女の意志は未来と同期する。観測された運命は、やがて実現へと収束していく。」&#xD;&#xA;松明は暗き荒野を照らす。破滅に抗う意志が集結することを予言している。人類は残された軼聞の力をもって終末に立ち向かい、絶望の中で最後の希望に火を灯す。&#xD;"/>
+	<item id="3527" illustration_id="27" name="預言の雷神" icon="item002/3527" rare="SSR" category="裝備" function="裝備" sell_price="100" description="魔女議会の記録：&#xA;「秘密裏に因果の理を解析することで、魔女の意志は未来と同期する。観測された運命は、やがて実現へと収束していく。」&#xA;巨人の大槌が偽りの仮面を打ち砕く。それは万年ものあいだ潜み続けてきた古き結社が、ついにその痕跡を現すことを予兆している。彼らが掌握する神話は、もはやただの伝説ではなくなる。"/>
+	<item id="3528" illustration_id="28" name="預言の宇宙" icon="item002/3528" rare="SSR" category="裝備" function="裝備" sell_price="100" description="魔女議会の記録：&#xA;「秘密裏に因果の理を解析することで、魔女の意志は未来と同期する。観測された運命は、やがて実現へと収束していく。」&#xA;空白のカードは星辰を映し出す。それは人類を導いてきた古き集団が、ついに表舞台へ姿を現すことを象徴している。未来への干渉を代償として、もはや引き返すことのできない分岐が開かれる。"/>
+	<item id="3529" illustration_id="29" name="預言の神秘" icon="item002/3529" rare="SSR" category="裝備" function="裝備" sell_price="100" description="魔女議会の記録：&#xA;「秘密裏に因果の理を解析することで、魔女の意志は未来と同期する。観測された運命は、やがて実現へと収束していく。」&#xA;因果の輪は錨の印を刻みつける。それは指し示された者が、やがて降臨することを予言している。その存在そのものが、既定の運命への否定となる。"/>
+	<item id="3530" illustration_id="30" name="預言の神馬" icon="item002/3530" rare="SSR" category="裝備" function="裝備" sell_price="100" description="魔女議会の記録：&#xD;&#xA;「秘密裏に因果の理を解析することで、魔女の意志は未来と同期する。観測された運命は、やがて実現へと収束していく。」&#xD;&#xA;駿馬が駆けるところ、虚空は砕け散る。それは現実の境界が、崩れ始めることを予示している。災厄と異形はもはや既存の法則に従わず、世界線はこの時より終わりなき侵蝕へと陥る。&#xD;"/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item id="4501" illustration_id="1" name="狩りの触媒" icon="item002/4501" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追う際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;素朴な骨製の皮剥ぎ小刀。資源の乏しい野外では、怪物の死骸から素材を採取するための必需品である。"/>
+	<item id="4502" illustration_id="2" name="狩りの頭飾り" icon="item002/4502" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;耐久性の高い革製のフード。魔女特有の魔力反応を遮蔽し、工業都市の裏路地でも容易に身を潜めることができる。"/>
+	<item id="4503" illustration_id="3" name="狩りの襟飾り" icon="item002/4503" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xD;&#xA;厚手の防風ケープ。内側には微細なルーンが埋め込まれており、終末現象によって生じる腐食性の灰が呼吸器へ入り込むのを防ぐ。&#xD;"/>
+	<item id="4504" illustration_id="4" name="狩りの腕飾り" icon="item002/4504" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;強化皮革のガントレット。鋭い爪による引き裂きを防ぐよう設計されており、低位の「獣」による不意の襲撃に対しても腕の安全を確保できる。"/>
+	<item id="4505" illustration_id="5" name="狩りの行装" icon="item002/4505" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xD;&#xA;編み上げ式のハイレザー・ブーツ。靴底には特製の薬剤が塗布されており、泥濘や瓦礫の中でも音を立てずに潜行できる。&#xD;"/>
+	<item id="4506" illustration_id="6" name="狩りの触媒" icon="item002/4506" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追う際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;素朴な骨製の皮剥ぎ小刀。資源の乏しい野外では、怪物の死骸から素材を採取するための必需品である。"/>
+	<item id="4507" illustration_id="7" name="狩りの頭飾り" icon="item002/4507" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;耐久性の高い革製のフード。魔女特有の魔力反応を遮蔽し、工業都市の裏路地でも容易に身を潜めることができる。"/>
+	<item id="4508" illustration_id="8" name="狩りの襟飾り" icon="item002/4508" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xD;&#xA;厚手の防風ケープ。内側には微細なルーンが埋め込まれており、終末現象によって生じる腐食性の灰が呼吸器へ入り込むのを防ぐ。&#xD;"/>
+	<item id="4509" illustration_id="9" name="狩りの腕飾り" icon="item002/4509" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;強化皮革のガントレット。鋭い爪による引き裂きを防ぐよう設計されており、低位の「獣」による不意の襲撃に対しても腕の安全を確保できる。"/>
+	<item id="4510" illustration_id="10" name="狩りの行装" icon="item002/4510" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xD;&#xA;編み上げ式のハイレザー・ブーツ。靴底には特製の薬剤が塗布されており、泥濘や瓦礫の中でも音を立てずに潜行できる。&#xD;"/>
+	<item id="4511" illustration_id="11" name="狩りの触媒" icon="item002/4511" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追う際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;素朴な骨製の皮剥ぎ小刀。資源の乏しい野外では、怪物の死骸から素材を採取するための必需品である。"/>
+	<item id="4512" illustration_id="12" name="狩りの頭飾り" icon="item002/4512" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;耐久性の高い革製のフード。魔女特有の魔力反応を遮蔽し、工業都市の裏路地でも容易に身を潜めることができる。"/>
+	<item id="4513" illustration_id="13" name="狩りの襟飾り" icon="item002/4513" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xD;&#xA;厚手の防風ケープ。内側には微細なルーンが埋め込まれており、終末現象によって生じる腐食性の灰が呼吸器へ入り込むのを防ぐ。&#xD;"/>
+	<item id="4514" illustration_id="14" name="狩りの腕飾り" icon="item002/4514" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;強化皮革のガントレット。鋭い爪による引き裂きを防ぐよう設計されており、低位の「獣」による不意の襲撃に対しても腕の安全を確保できる。"/>
+	<item id="4515" illustration_id="15" name="狩りの行装" icon="item002/4515" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xD;&#xA;編み上げ式のハイレザー・ブーツ。靴底には特製の薬剤が塗布されており、泥濘や瓦礫の中でも音を立てずに潜行できる。&#xD;"/>
+	<item id="4516" illustration_id="16" name="狩りの触媒" icon="item002/4516" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追う際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;素朴な骨製の皮剥ぎ小刀。資源の乏しい野外では、怪物の死骸から素材を採取するための必需品である。"/>
+	<item id="4517" illustration_id="17" name="狩りの頭飾り" icon="item002/4517" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;耐久性の高い革製のフード。魔女特有の魔力反応を遮蔽し、工業都市の裏路地でも容易に身を潜めることができる。"/>
+	<item id="4518" illustration_id="18" name="狩りの襟飾り" icon="item002/4518" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xD;&#xA;厚手の防風ケープ。内側には微細なルーンが埋め込まれており、終末現象によって生じる腐食性の灰が呼吸器へ入り込むのを防ぐ。&#xD;"/>
+	<item id="4519" illustration_id="19" name="狩りの腕飾り" icon="item002/4519" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;強化皮革のガントレット。鋭い爪による引き裂きを防ぐよう設計されており、低位の「獣」による不意の襲撃に対しても腕の安全を確保できる。"/>
+	<item id="4520" illustration_id="20" name="狩りの行装" icon="item002/4520" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xD;&#xA;編み上げ式のハイレザー・ブーツ。靴底には特製の薬剤が塗布されており、泥濘や瓦礫の中でも音を立てずに潜行できる。&#xD;"/>
+	<item id="4521" illustration_id="21" name="狩りの触媒" icon="item002/4521" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追う際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;素朴な骨製の皮剥ぎ小刀。資源の乏しい野外では、怪物の死骸から素材を採取するための必需品である。"/>
+	<item id="4522" illustration_id="22" name="狩りの頭飾り" icon="item002/4522" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;耐久性の高い革製のフード。魔女特有の魔力反応を遮蔽し、工業都市の裏路地でも容易に身を潜めることができる。"/>
+	<item id="4523" illustration_id="23" name="狩りの襟飾り" icon="item002/4523" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xD;&#xA;厚手の防風ケープ。内側には微細なルーンが埋め込まれており、終末現象によって生じる腐食性の灰が呼吸器へ入り込むのを防ぐ。&#xD;"/>
+	<item id="4524" illustration_id="24" name="狩りの腕飾り" icon="item002/4524" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;強化皮革のガントレット。鋭い爪による引き裂きを防ぐよう設計されており、低位の「獣」による不意の襲撃に対しても腕の安全を確保できる。"/>
+	<item id="4525" illustration_id="25" name="狩りの行装" icon="item002/4525" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xD;&#xA;編み上げ式のハイレザー・ブーツ。靴底には特製の薬剤が塗布されており、泥濘や瓦礫の中でも音を立てずに潜行できる。&#xD;"/>
+	<item id="4526" illustration_id="26" name="狩りの触媒" icon="item002/4526" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追う際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;素朴な骨製の皮剥ぎ小刀。資源の乏しい野外では、怪物の死骸から素材を採取するための必需品である。"/>
+	<item id="4527" illustration_id="27" name="狩りの頭飾り" icon="item002/4527" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;耐久性の高い革製のフード。魔女特有の魔力反応を遮蔽し、工業都市の裏路地でも容易に身を潜めることができる。"/>
+	<item id="4528" illustration_id="28" name="狩りの襟飾り" icon="item002/4528" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xD;&#xA;厚手の防風ケープ。内側には微細なルーンが埋め込まれており、終末現象によって生じる腐食性の灰が呼吸器へ入り込むのを防ぐ。&#xD;"/>
+	<item id="4529" illustration_id="29" name="狩りの腕飾り" icon="item002/4529" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;強化皮革のガントレット。鋭い爪による引き裂きを防ぐよう設計されており、低位の「獣」による不意の襲撃に対しても腕の安全を確保できる。"/>
+	<item id="4530" illustration_id="30" name="狩りの行装" icon="item002/4530" rare="R" category="飾品" function="飾品" effect_val1="1202" sell_price="1" get_shop_1="RAID" description="辺境狩装は荒野の辺境で広く用いられている。新人の魔女たちが「獣」の痕跡を追跡する際、入手しやすく扱いやすい素朴な防具であり、機能性と隠密性を重視している。&#xA;編み上げ式のハイレザー・ブーツ。靴底には特製の薬剤が塗布されており、泥濘や瓦礫の中でも音を立てずに潜行できる。"/>
+	<item/>
+	<item/>
+	<item/>
+	<item id="4751" illustration_id="1" name="秘古の触媒" icon="item002/4751" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xA;部族のトーテムが刻まれた祭祀の杖。振るうことで奇妙な共鳴を生み出し、古き自然の霊力を防護の盾へと変換する。"/>
+	<item id="4752" illustration_id="2" name="秘古の頭飾り" icon="item002/4752" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;未知の獣の頭骨から作られた仮面。装着者は万物の魂の震えを感じ取り、終末現象からの侵襲を予見することができる。&#xD;"/>
+	<item id="4753" illustration_id="3" name="秘古の襟飾り" icon="item002/4753" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;獣牙と霊石を嵌め込んだ首飾り。一本一本の獣牙には成功した狩りの記録が刻まれており、魔女に野性的な直感を与える。&#xD;"/>
+	<item id="4754" illustration_id="4" name="秘古の腕飾り" icon="item002/4754" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;粗野に編み込まれた骨の護腕。古い錬金の編纏技術によって、魔女が高位の術式を放つ際の血脈を安定させることができる。&#xD;"/>
+	<item id="4755" illustration_id="5" name="秘古の行装" icon="item002/4755" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;羽根と獣皮で飾られた祭祀の肩掛け。歩みを進めるたびに大地へ呪術の印を残し、魔女の霊的防御を強化する。&#xD;"/>
+	<item id="4756" illustration_id="6" name="秘古の触媒" icon="item002/4756" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xA;部族のトーテムが刻まれた祭祀の杖。振るうことで奇妙な共鳴を生み出し、古き自然の霊力を防護の盾へと変換する。"/>
+	<item id="4757" illustration_id="7" name="秘古の頭飾り" icon="item002/4757" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;未知の獣の頭骨から作られた仮面。装着者は万物の魂の震えを感じ取り、終末現象からの侵襲を予見することができる。&#xD;"/>
+	<item id="4758" illustration_id="8" name="秘古の襟飾り" icon="item002/4758" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;獣牙と霊石を嵌め込んだ首飾り。一本一本の獣牙には成功した狩りの記録が刻まれており、魔女に野性的な直感を与える。&#xD;"/>
+	<item id="4759" illustration_id="9" name="秘古の腕飾り" icon="item002/4759" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;粗野に編み込まれた骨の護腕。古い錬金の編纏技術によって、魔女が高位の術式を放つ際の血脈を安定させることができる。&#xD;"/>
+	<item id="4760" illustration_id="10" name="秘古の行装" icon="item002/4760" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;羽根と獣皮で飾られた祭祀の肩掛け。歩みを進めるたびに大地へ呪術の印を残し、魔女の霊的防御を強化する。&#xD;"/>
+	<item id="4761" illustration_id="11" name="秘古の触媒" icon="item002/4761" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xA;部族のトーテムが刻まれた祭祀の杖。振るうことで奇妙な共鳴を生み出し、古き自然の霊力を防護の盾へと変換する。"/>
+	<item id="4762" illustration_id="12" name="秘古の頭飾り" icon="item002/4762" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;未知の獣の頭骨から作られた仮面。装着者は万物の魂の震えを感じ取り、終末現象からの侵襲を予見することができる。&#xD;"/>
+	<item id="4763" illustration_id="13" name="秘古の襟飾り" icon="item002/4763" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;獣牙と霊石を嵌め込んだ首飾り。一本一本の獣牙には成功した狩りの記録が刻まれており、魔女に野性的な直感を与える。&#xD;"/>
+	<item id="4764" illustration_id="14" name="秘古の腕飾り" icon="item002/4764" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;粗野に編み込まれた骨の護腕。古い錬金の編纏技術によって、魔女が高位の術式を放つ際の血脈を安定させることができる。&#xD;"/>
+	<item id="4765" illustration_id="15" name="秘古の行装" icon="item002/4765" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;羽根と獣皮で飾られた祭祀の肩掛け。歩みを進めるたびに大地へ呪術の印を残し、魔女の霊的防御を強化する。&#xD;"/>
+	<item id="4766" illustration_id="16" name="秘古の触媒" icon="item002/4766" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xA;部族のトーテムが刻まれた祭祀の杖。振るうことで奇妙な共鳴を生み出し、古き自然の霊力を防護の盾へと変換する。"/>
+	<item id="4767" illustration_id="17" name="秘古の頭飾り" icon="item002/4767" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;未知の獣の頭骨から作られた仮面。装着者は万物の魂の震えを感じ取り、終末現象からの侵襲を予見することができる。&#xD;"/>
+	<item id="4768" illustration_id="18" name="秘古の襟飾り" icon="item002/4768" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;獣牙と霊石を嵌め込んだ首飾り。一本一本の獣牙には成功した狩りの記録が刻まれており、魔女に野性的な直感を与える。&#xD;"/>
+	<item id="4769" illustration_id="19" name="秘古の腕飾り" icon="item002/4769" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;粗野に編み込まれた骨の護腕。古い錬金の編纏技術によって、魔女が高位の術式を放つ際の血脈を安定させることができる。&#xD;"/>
+	<item id="4770" illustration_id="20" name="秘古の行装" icon="item002/4770" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;羽根と獣皮で飾られた祭祀の肩掛け。歩みを進めるたびに大地へ呪術の印を残し、魔女の霊的防御を強化する。&#xD;"/>
+	<item id="4771" illustration_id="21" name="秘古の触媒" icon="item002/4771" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xA;部族のトーテムが刻まれた祭祀の杖。振るうことで奇妙な共鳴を生み出し、古き自然の霊力を防護の盾へと変換する。"/>
+	<item id="4772" illustration_id="22" name="秘古の頭飾り" icon="item002/4772" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;未知の獣の頭骨から作られた仮面。装着者は万物の魂の震えを感じ取り、終末現象からの侵襲を予見することができる。&#xD;"/>
+	<item id="4773" illustration_id="23" name="秘古の襟飾り" icon="item002/4773" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;獣牙と霊石を嵌め込んだ首飾り。一本一本の獣牙には成功した狩りの記録が刻まれており、魔女に野性的な直感を与える。&#xD;"/>
+	<item id="4774" illustration_id="24" name="秘古の腕飾り" icon="item002/4774" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;粗野に編み込まれた骨の護腕。古い錬金の編纏技術によって、魔女が高位の術式を放つ際の血脈を安定させることができる。&#xD;"/>
+	<item id="4775" illustration_id="25" name="秘古の行装" icon="item002/4775" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;羽根と獣皮で飾られた祭祀の肩掛け。歩みを進めるたびに大地へ呪術の印を残し、魔女の霊的防御を強化する。&#xD;"/>
+	<item id="4776" illustration_id="26" name="秘古の触媒" icon="item002/4776" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xA;部族のトーテムが刻まれた祭祀の杖。振るうことで奇妙な共鳴を生み出し、古き自然の霊力を防護の盾へと変換する。"/>
+	<item id="4777" illustration_id="27" name="秘古の頭飾り" icon="item002/4777" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;未知の獣の頭骨から作られた仮面。装着者は万物の魂の震えを感じ取り、終末現象からの侵襲を予見することができる。&#xD;"/>
+	<item id="4778" illustration_id="28" name="秘古の襟飾り" icon="item002/4778" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;獣牙と霊石を嵌め込んだ首飾り。一本一本の獣牙には成功した狩りの記録が刻まれており、魔女に野性的な直感を与える。&#xD;"/>
+	<item id="4779" illustration_id="29" name="秘古の腕飾り" icon="item002/4779" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xD;&#xA;粗野に編み込まれた骨の護腕。古い錬金の編纏技術によって、魔女が高位の術式を放つ際の血脈を安定させることができる。&#xD;"/>
+	<item id="4780" illustration_id="30" name="秘古の行装" icon="item002/4780" rare="SR" category="飾品" function="飾品" effect_val1="1203" sell_price="5" get_shop_1="RAID" description="部族の祭装。大戦以前の古き部族から伝わるシャーマンの遺物であり、初期の魔術師たちが残した神秘的な原始の律動を宿している。&#xA;羽根と獣皮で飾られた祭祀の肩掛け。歩みを進めるたびに大地へ呪術の印を残し、魔女の霊的防御を強化する。"/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item id="5001" illustration_id="1" name="神楽の触媒" icon="item002/5001" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;花びらがあしらわれた狐の面。神使との契約を象徴し、魔女が「逸聞」を感知する感度を大きく高める。"/>
+	<item id="5002" illustration_id="2" name="神楽の頭飾り" icon="item002/5002" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;温かな光沢を帯びた勾玉の首飾り。帝国に千年受け継がれてきた守護の霊力を宿し、魂を狙った致命的な一撃を打ち消すことができる。"/>
+	<item id="5003" illustration_id="3" name="神楽の襟飾り" icon="item002/5003" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;家紋が描かれた和傘。優雅な見た目に反し、霊力の嵐を導き流すことができ、攻防の切り替えにも余裕をもって対処できる。"/>
+	<item id="5004" illustration_id="4" name="神楽の腕飾り" icon="item002/5004" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xD;&#xA;華やかな装飾が施されたぽっくり。霊力の節点を踏むと花が咲くような軌跡を残し、巫女の所作に儀式的な趣を与える。&#xD;"/>
+	<item id="5005" illustration_id="5" name="神楽の行装" icon="item002/5005" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;儀式に欠かせない装束。その響きは終末に汚染された精神を洗い清め、巫女が穢れ祓いの儀を執り行う際の中核となる。"/>
+	<item id="5006" illustration_id="6" name="神楽の触媒" icon="item002/5006" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;花びらがあしらわれた狐の面。神使との契約を象徴し、魔女が「逸聞」を感知する感度を大きく高める。"/>
+	<item id="5007" illustration_id="7" name="神楽の頭飾り" icon="item002/5007" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;温かな光沢を帯びた勾玉の首飾り。帝国に千年受け継がれてきた守護の霊力を宿し、魂を狙った致命的な一撃を打ち消すことができる。"/>
+	<item id="5008" illustration_id="8" name="神楽の襟飾り" icon="item002/5008" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;家紋が描かれた和傘。優雅な見た目に反し、霊力の嵐を導き流すことができ、攻防の切り替えにも余裕をもって対処できる。"/>
+	<item id="5009" illustration_id="9" name="神楽の腕飾り" icon="item002/5009" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xD;&#xA;華やかな装飾が施されたぽっくり。霊力の節点を踏むと花が咲くような軌跡を残し、巫女の所作に儀式的な趣を与える。&#xD;"/>
+	<item id="5010" illustration_id="10" name="神楽の行装" icon="item002/5010" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xD;&#xA;儀式に欠かせない装束。その響きは終末に汚染された精神を洗い清め、巫女が穢れ祓いの儀を執り行う際の中核となる。&#xD;"/>
+	<item id="5011" illustration_id="11" name="神楽の触媒" icon="item002/5011" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;花びらがあしらわれた狐の面。神使との契約を象徴し、魔女が「逸聞」を感知する感度を大きく高める。"/>
+	<item id="5012" illustration_id="12" name="神楽の頭飾り" icon="item002/5012" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;温かな光沢を帯びた勾玉の首飾り。帝国に千年受け継がれてきた守護の霊力を宿し、魂を狙った致命的な一撃を打ち消すことができる。"/>
+	<item id="5013" illustration_id="13" name="神楽の襟飾り" icon="item002/5013" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;家紋が描かれた和傘。優雅な見た目に反し、霊力の嵐を導き流すことができ、攻防の切り替えにも余裕をもって対処できる。"/>
+	<item id="5014" illustration_id="14" name="神楽の腕飾り" icon="item002/5014" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xD;&#xA;華やかな装飾が施されたぽっくり。霊力の節点を踏むと花が咲くような軌跡を残し、巫女の所作に儀式的な趣を与える。&#xD;"/>
+	<item id="5015" illustration_id="15" name="神楽の行装" icon="item002/5015" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xD;&#xA;儀式に欠かせない装束。その響きは終末に汚染された精神を洗い清め、巫女が穢れ祓いの儀を執り行う際の中核となる。&#xD;"/>
+	<item id="5016" illustration_id="16" name="神楽の触媒" icon="item002/5016" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;花びらがあしらわれた狐の面。神使との契約を象徴し、魔女が「逸聞」を感知する感度を大きく高める。"/>
+	<item id="5017" illustration_id="17" name="神楽の頭飾り" icon="item002/5017" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;温かな光沢を帯びた勾玉の首飾り。帝国に千年受け継がれてきた守護の霊力を宿し、魂を狙った致命的な一撃を打ち消すことができる。"/>
+	<item id="5018" illustration_id="18" name="神楽の襟飾り" icon="item002/5018" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;家紋が描かれた和傘。優雅な見た目に反し、霊力の嵐を導き流すことができ、攻防の切り替えにも余裕をもって対処できる。"/>
+	<item id="5019" illustration_id="19" name="神楽の腕飾り" icon="item002/5019" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xD;&#xA;華やかな装飾が施されたぽっくり。霊力の節点を踏むと花が咲くような軌跡を残し、巫女の所作に儀式的な趣を与える。&#xD;"/>
+	<item id="5020" illustration_id="20" name="神楽の行装" icon="item002/5020" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xD;&#xA;儀式に欠かせない装束。その響きは終末に汚染された精神を洗い清め、巫女が穢れ祓いの儀を執り行う際の中核となる。&#xD;"/>
+	<item id="5021" illustration_id="21" name="神楽の触媒" icon="item002/5021" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;花びらがあしらわれた狐の面。神使との契約を象徴し、魔女が「逸聞」を感知する感度を大きく高める。"/>
+	<item id="5022" illustration_id="22" name="神楽の頭飾り" icon="item002/5022" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;温かな光沢を帯びた勾玉の首飾り。帝国に千年受け継がれてきた守護の霊力を宿し、魂を狙った致命的な一撃を打ち消すことができる。"/>
+	<item id="5023" illustration_id="23" name="神楽の襟飾り" icon="item002/5023" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;家紋が描かれた和傘。優雅な見た目に反し、霊力の嵐を導き流すことができ、攻防の切り替えにも余裕をもって対処できる。"/>
+	<item id="5024" illustration_id="24" name="神楽の腕飾り" icon="item002/5024" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xD;&#xA;華やかな装飾が施されたぽっくり。霊力の節点を踏むと花が咲くような軌跡を残し、巫女の所作に儀式的な趣を与える。&#xD;"/>
+	<item id="5025" illustration_id="25" name="神楽の行装" icon="item002/5025" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xD;&#xA;儀式に欠かせない装束。その響きは終末に汚染された精神を洗い清め、巫女が穢れ祓いの儀を執り行う際の中核となる。&#xD;"/>
+	<item id="5026" illustration_id="26" name="神楽の触媒" icon="item002/5026" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;花びらがあしらわれた狐の面。神使との契約を象徴し、魔女が「逸聞」を感知する感度を大きく高める。"/>
+	<item id="5027" illustration_id="27" name="神楽の頭飾り" icon="item002/5027" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;温かな光沢を帯びた勾玉の首飾り。帝国に千年受け継がれてきた守護の霊力を宿し、魂を狙った致命的な一撃を打ち消すことができる。"/>
+	<item id="5028" illustration_id="28" name="神楽の襟飾り" icon="item002/5028" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;家紋が描かれた和傘。優雅な見た目に反し、霊力の嵐を導き流すことができ、攻防の切り替えにも余裕をもって対処できる。"/>
+	<item id="5029" illustration_id="29" name="神楽の腕飾り" icon="item002/5029" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xD;&#xA;華やかな装飾が施されたぽっくり。霊力の節点を踏むと花が咲くような軌跡を残し、巫女の所作に儀式的な趣を与える。&#xD;"/>
+	<item id="5030" illustration_id="30" name="神楽の行装" icon="item002/5030" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神楽祭装。清らかな霊力と祭神の儀式を結びつけ、端正で神聖な防御の力を体現している。&#xA;儀式に欠かせない装束。その響きは終末に汚染された精神を洗い清め、巫女が穢れ祓いの儀を執り行う際の中核となる。"/>
+	<item id="5031" illustration_id="31" name="神秘の触媒" icon="item002/5031" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;星の液体が封印された水晶球。その中に現れるのは運命からの贈り物であり、いつでも高濃度の魔力を供給することができる。"/>
+	<item id="5032" illustration_id="32" name="神秘の頭飾り" icon="item002/5032" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;金属の歯車が飾られた広幅の魔術師の帽子。伝統と工業の融合を象徴し、装着者の精神力を効果的に凝縮し、増幅させる。"/>
+	<item id="5033" illustration_id="33" name="神秘の襟飾り" icon="item002/5033" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;レースがあしらわれた優雅な首飾り。その内部には魔女の因果記録が封印されており、呪いと精神的汚染を防ぐ錠前の役割を果たす。"/>
+	<item id="5034" illustration_id="34" name="神秘の腕飾り" icon="item002/5034" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;複雑なルーンの紋様が刺繍された手袋。魔女が原始的な逸聞の材料に触れる際、不安定なエネルギーを精密にフィルタリングすることができる。"/>
+	<item id="5035" illustration_id="35" name="神秘の行装" icon="item002/5035" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;装飾が施された革製のロングブーツ。ブーツのヒール部分には浮遊術式が刻まれており、手練れの魔女であれば戦場でも軽やかな姿勢を保つことができる。"/>
+	<item id="5036" illustration_id="36" name="神秘の触媒" icon="item002/5036" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;星の液体が封印された水晶球。その中に現れるのは運命からの贈り物であり、いつでも高濃度の魔力を供給することができる。"/>
+	<item id="5037" illustration_id="37" name="神秘の頭飾り" icon="item002/5037" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;金属の歯車が飾られた広幅の魔術師の帽子。伝統と工業の融合を象徴し、装着者の精神力を効果的に凝縮し、増幅させる。"/>
+	<item id="5038" illustration_id="38" name="神秘の襟飾り" icon="item002/5038" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;レースがあしらわれた優雅な首飾り。その内部には魔女の因果記録が封印されており、呪いと精神的汚染を防ぐ錠前の役割を果たす。"/>
+	<item id="5039" illustration_id="39" name="神秘の腕飾り" icon="item002/5039" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;複雑なルーンの紋様が刺繍された手袋。魔女が原始的な逸聞の材料に触れる際、不安定なエネルギーを精密にフィルタリングすることができる。"/>
+	<item id="5040" illustration_id="40" name="神秘の行装" icon="item002/5040" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;装飾が施された革製のロングブーツ。ブーツのヒール部分には浮遊術式が刻まれており、手練れの魔女であれば戦場でも軽やかな姿勢を保つことができる。"/>
+	<item id="5041" illustration_id="41" name="神秘の触媒" icon="item002/5041" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;星の液体が封印された水晶球。その中に現れるのは運命からの贈り物であり、いつでも高濃度の魔力を供給することができる。"/>
+	<item id="5042" illustration_id="42" name="神秘の頭飾り" icon="item002/5042" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;金属の歯車が飾られた広幅の魔術師の帽子。伝統と工業の融合を象徴し、装着者の精神力を効果的に凝縮し、増幅させる。"/>
+	<item id="5043" illustration_id="43" name="神秘の襟飾り" icon="item002/5043" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;レースがあしらわれた優雅な首飾り。その内部には魔女の因果記録が封印されており、呪いと精神的汚染を防ぐ錠前の役割を果たす。"/>
+	<item id="5044" illustration_id="44" name="神秘の腕飾り" icon="item002/5044" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;複雑なルーンの紋様が刺繍された手袋。魔女が原始的な逸聞の材料に触れる際、不安定なエネルギーを精密にフィルタリングすることができる。"/>
+	<item id="5045" illustration_id="45" name="神秘の行装" icon="item002/5045" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;装飾が施された革製のロングブーツ。ブーツのヒール部分には浮遊術式が刻まれており、手練れの魔女であれば戦場でも軽やかな姿勢を保つことができる。"/>
+	<item id="5046" illustration_id="46" name="神秘の触媒" icon="item002/5046" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;星の液体が封印された水晶球。その中に現れるのは運命からの贈り物であり、いつでも高濃度の魔力を供給することができる。"/>
+	<item id="5047" illustration_id="47" name="神秘の頭飾り" icon="item002/5047" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;金属の歯車が飾られた広幅の魔術師の帽子。伝統と工業の融合を象徴し、装着者の精神力を効果的に凝縮し、増幅させる。"/>
+	<item id="5048" illustration_id="48" name="神秘の襟飾り" icon="item002/5048" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;レースがあしらわれた優雅な首飾り。その内部には魔女の因果記録が封印されており、呪いと精神的汚染を防ぐ錠前の役割を果たす。"/>
+	<item id="5049" illustration_id="49" name="神秘の腕飾り" icon="item002/5049" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;複雑なルーンの紋様が刺繍された手袋。魔女が原始的な逸聞の材料に触れる際、不安定なエネルギーを精密にフィルタリングすることができる。"/>
+	<item id="5050" illustration_id="50" name="神秘の行装" icon="item002/5050" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;装飾が施された革製のロングブーツ。ブーツのヒール部分には浮遊術式が刻まれており、手練れの魔女であれば戦場でも軽やかな姿勢を保つことができる。"/>
+	<item id="5051" illustration_id="51" name="神秘の触媒" icon="item002/5051" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;星の液体が封印された水晶球。その中に現れるのは運命からの贈り物であり、いつでも高濃度の魔力を供給することができる。"/>
+	<item id="5052" illustration_id="52" name="神秘の頭飾り" icon="item002/5052" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;金属の歯車が飾られた広幅の魔術師の帽子。伝統と工業の融合を象徴し、装着者の精神力を効果的に凝縮し、増幅させる。"/>
+	<item id="5053" illustration_id="53" name="神秘の襟飾り" icon="item002/5053" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;レースがあしらわれた優雅な首飾り。その内部には魔女の因果記録が封印されており、呪いと精神的汚染を防ぐ錠前の役割を果たす。"/>
+	<item id="5054" illustration_id="54" name="神秘の腕飾り" icon="item002/5054" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;複雑なルーンの紋様が刺繍された手袋。魔女が原始的な逸聞の材料に触れる際、不安定なエネルギーを精密にフィルタリングすることができる。"/>
+	<item id="5055" illustration_id="55" name="神秘の行装" icon="item002/5055" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;装飾が施された革製のロングブーツ。ブーツのヒール部分には浮遊術式が刻まれており、手練れの魔女であれば戦場でも軽やかな姿勢を保つことができる。"/>
+	<item id="5056" illustration_id="56" name="神秘の触媒" icon="item002/5056" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;星の液体が封印された水晶球。その中に現れるのは運命からの贈り物であり、いつでも高濃度の魔力を供給することができる。"/>
+	<item id="5057" illustration_id="57" name="神秘の頭飾り" icon="item002/5057" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;金属の歯車が飾られた広幅の魔術師の帽子。伝統と工業の融合を象徴し、装着者の精神力を効果的に凝縮し、増幅させる。"/>
+	<item id="5058" illustration_id="58" name="神秘の襟飾り" icon="item002/5058" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;レースがあしらわれた優雅な首飾り。その内部には魔女の因果記録が封印されており、呪いと精神的汚染を防ぐ錠前の役割を果たす。"/>
+	<item id="5059" illustration_id="59" name="神秘の腕飾り" icon="item002/5059" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;複雑なルーンの紋様が刺繍された手袋。魔女が原始的な逸聞の材料に触れる際、不安定なエネルギーを精密にフィルタリングすることができる。"/>
+	<item id="5060" illustration_id="60" name="神秘の行装" icon="item002/5060" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="錬金の際に用いられる魔具。伝統的な錬金術と魔術師の美学を融合させ、魔力の絶対的な純度を追求している。&#xA;装飾が施された革製のロングブーツ。ブーツのヒール部分には浮遊術式が刻まれており、手練れの魔女であれば戦場でも軽やかな姿勢を保つことができる。"/>
+	<item id="5061" illustration_id="61" name="真理の触媒" icon="item002/5061" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;高性能魔力薬剤を充填した注射器。魔女の体内に眠る潜在能力を瞬時に強制発露させ、不可逆的な負荷の蓄積を伴う。"/>
+	<item id="5062" illustration_id="62" name="真理の頭飾り" icon="item002/5062" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xD;&#xA;優雅な女性用イヤリング。その内部には微型の受信装置が隠されており、ヘビノワ重工が解析した戦場の信号を即座に受信することができる。&#xD;"/>
+	<item id="5063" illustration_id="63" name="真理の襟飾り" icon="item002/5063" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;大きなサファイアが嵌め込まれたネックレス。宝石は高圧処理が施され、変換された雷属性の魔力エネルギーを蓄えることができる。"/>
+	<item id="5064" illustration_id="64" name="真理の腕飾り" icon="item002/5064" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;精緻な機械式懐中時計。時間の分岐点を正確に記録し、魔女が混乱した戦場でも常にテンポを把握できるようにする。"/>
+	<item id="5065" illustration_id="65" name="真理の行装" icon="item002/5065" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具、ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xD;&#xA;金属製のヒール付きハイヒール。靴底には重力緩衝術式と推進機構が統合されており、上流社会のファッションセンスと実用的な戦略的価値を兼ね備えている。&#xD;"/>
+	<item id="5066" illustration_id="66" name="真理の触媒" icon="item002/5066" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;高性能魔力薬剤を充填した注射器。魔女の体内に眠る潜在能力を瞬時に強制発露させ、不可逆的な負荷の蓄積を伴う。"/>
+	<item id="5067" illustration_id="67" name="真理の頭飾り" icon="item002/5067" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xD;&#xA;優雅な女性用イヤリング。その内部には微型の受信装置が隠されており、ヘビノワ重工が解析した戦場の信号を即座に受信することができる。&#xD;"/>
+	<item id="5068" illustration_id="68" name="真理の襟飾り" icon="item002/5068" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;大きなサファイアが嵌め込まれたネックレス。宝石は高圧処理が施され、変換された雷属性の魔力エネルギーを蓄えることができる。"/>
+	<item id="5069" illustration_id="69" name="真理の腕飾り" icon="item002/5069" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;精緻な機械式懐中時計。時間の分岐点を正確に記録し、魔女が混乱した戦場でも常にテンポを把握できるようにする。"/>
+	<item id="5070" illustration_id="70" name="真理の行装" icon="item002/5070" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具、ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xD;&#xA;金属製のヒール付きハイヒール。靴底には重力緩衝術式と推進機構が統合されており、上流社会のファッションセンスと実用的な戦略的価値を兼ね備えている。&#xD;"/>
+	<item id="5071" illustration_id="71" name="真理の触媒" icon="item002/5071" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;高性能魔力薬剤を充填した注射器。魔女の体内に眠る潜在能力を瞬時に強制発露させ、不可逆的な負荷の蓄積を伴う。"/>
+	<item id="5072" illustration_id="72" name="真理の頭飾り" icon="item002/5072" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xD;&#xA;優雅な女性用イヤリング。その内部には微型の受信装置が隠されており、ヘビノワ重工が解析した戦場の信号を即座に受信することができる。&#xD;"/>
+	<item id="5073" illustration_id="73" name="真理の襟飾り" icon="item002/5073" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;大きなサファイアが嵌め込まれたネックレス。宝石は高圧処理が施され、変換された雷属性の魔力エネルギーを蓄えることができる。"/>
+	<item id="5074" illustration_id="74" name="真理の腕飾り" icon="item002/5074" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;精緻な機械式懐中時計。時間の分岐点を正確に記録し、魔女が混乱した戦場でも常にテンポを把握できるようにする。"/>
+	<item id="5075" illustration_id="75" name="真理の行装" icon="item002/5075" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具、ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xD;&#xA;金属製のヒール付きハイヒール。靴底には重力緩衝術式と推進機構が統合されており、上流社会のファッションセンスと実用的な戦略的価値を兼ね備えている。&#xD;"/>
+	<item id="5076" illustration_id="76" name="真理の触媒" icon="item002/5076" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;高性能魔力薬剤を充填した注射器。魔女の体内に眠る潜在能力を瞬時に強制発露させ、不可逆的な負荷の蓄積を伴う。"/>
+	<item id="5077" illustration_id="77" name="真理の頭飾り" icon="item002/5077" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xD;&#xA;優雅な女性用イヤリング。その内部には微型の受信装置が隠されており、ヘビノワ重工が解析した戦場の信号を即座に受信することができる。&#xD;"/>
+	<item id="5078" illustration_id="78" name="真理の襟飾り" icon="item002/5078" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;大きなサファイアが嵌め込まれたネックレス。宝石は高圧処理が施され、変換された雷属性の魔力エネルギーを蓄えることができる。"/>
+	<item id="5079" illustration_id="79" name="真理の腕飾り" icon="item002/5079" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;精緻な機械式懐中時計。時間の分岐点を正確に記録し、魔女が混乱した戦場でも常にテンポを把握できるようにする。"/>
+	<item id="5080" illustration_id="80" name="真理の行装" icon="item002/5080" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具、ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xD;&#xA;金属製のヒール付きハイヒール。靴底には重力緩衝術式と推進機構が統合されており、上流社会のファッションセンスと実用的な戦略的価値を兼ね備えている。&#xD;"/>
+	<item id="5081" illustration_id="81" name="真理の触媒" icon="item002/5081" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;高性能魔力薬剤を充填した注射器。魔女の体内に眠る潜在能力を瞬時に強制発露させ、不可逆的な負荷の蓄積を伴う。"/>
+	<item id="5082" illustration_id="82" name="真理の頭飾り" icon="item002/5082" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xD;&#xA;優雅な女性用イヤリング。その内部には微型の受信装置が隠されており、ヘビノワ重工が解析した戦場の信号を即座に受信することができる。&#xD;"/>
+	<item id="5083" illustration_id="83" name="真理の襟飾り" icon="item002/5083" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;大きなサファイアが嵌め込まれたネックレス。宝石は高圧処理が施され、変換された雷属性の魔力エネルギーを蓄えることができる。"/>
+	<item id="5084" illustration_id="84" name="真理の腕飾り" icon="item002/5084" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;精緻な機械式懐中時計。時間の分岐点を正確に記録し、魔女が混乱した戦場でも常にテンポを把握できるようにする。"/>
+	<item id="5085" illustration_id="85" name="真理の行装" icon="item002/5085" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具、ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xD;&#xA;金属製のヒール付きハイヒール。靴底には重力緩衝術式と推進機構が統合されており、上流社会のファッションセンスと実用的な戦略的価値を兼ね備えている。&#xD;"/>
+	<item id="5086" illustration_id="86" name="真理の触媒" icon="item002/5086" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;高性能魔力薬剤を充填した注射器。魔女の体内に眠る潜在能力を瞬時に強制発露させ、不可逆的な負荷の蓄積を伴う。"/>
+	<item id="5087" illustration_id="87" name="真理の頭飾り" icon="item002/5087" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xD;&#xA;優雅な女性用イヤリング。その内部には微型の受信装置が隠されており、ヘビノワ重工が解析した戦場の信号を即座に受信することができる。&#xD;"/>
+	<item id="5088" illustration_id="88" name="真理の襟飾り" icon="item002/5088" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;大きなサファイアが嵌め込まれたネックレス。宝石は高圧処理が施され、変換された雷属性の魔力エネルギーを蓄えることができる。"/>
+	<item id="5089" illustration_id="89" name="真理の腕飾り" icon="item002/5089" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具。ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xA;精緻な機械式懐中時計。時間の分岐点を正確に記録し、魔女が混乱した戦場でも常にテンポを把握できるようにする。"/>
+	<item id="5090" illustration_id="90" name="真理の行装" icon="item002/5090" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="重工魔具、ヘビノワ重工が開発した新概念の魔装で、新時代の魔女が科学的真理を追求する象徴である。&#xD;&#xA;金属製のヒール付きハイヒール。靴底には重力緩衝術式と推進機構が統合されており、上流社会のファッションセンスと実用的な戦略的価値を兼ね備えている。&#xD;"/>
+	<item id="5091" illustration_id="91" name="千年の触媒" icon="item002/5091" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;天秤の審判を象徴する魔力の心臓。物体の罪の重さを精密に測定し、それを等しい強度の魔力に変換することができる。&#xD;"/>
+	<item id="5092" illustration_id="92" name="千年の頭飾り" icon="item002/5092" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;流光溢彩の金属製イヤリング。嵌め込まれたルビーは神話から由来し、身につけた者に時空の隙間を洞察する真理の眼を授ける。&#xD;"/>
+	<item id="5093" illustration_id="93" name="千年の襟飾り" icon="item002/5093" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;重厚な黄金でできた広めのネックレス。各金葉には古代の取引契約が刻まれており、魔女の「獣」に対する抑制力を強化する。&#xD;"/>
+	<item id="5094" illustration_id="94" name="千年の腕飾り" icon="item002/5094" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xA;純金で作られた螺旋状のアームレット。ウロボロスの姿を模しており、無限のエネルギー循環を象徴し、魔力消費を大幅に減少させる。"/>
+	<item id="5095" illustration_id="95" name="千年の行装" icon="item002/5095" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;精緻な足首の飾り。地脈の流れに影響を与え、魔女は乾燥した砂漠でも平地を歩くかのように軽快に進むことができる。&#xD;"/>
+	<item id="5096" illustration_id="96" name="千年の触媒" icon="item002/5096" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;天秤の審判を象徴する魔力の心臓。物体の罪の重さを精密に測定し、それを等しい強度の魔力に変換することができる。&#xD;"/>
+	<item id="5097" illustration_id="97" name="千年の頭飾り" icon="item002/5097" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;流光溢彩の金属製イヤリング。嵌め込まれたルビーは神話から由来し、身につけた者に時空の隙間を洞察する真理の眼を授ける。&#xD;"/>
+	<item id="5098" illustration_id="98" name="千年の襟飾り" icon="item002/5098" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;重厚な黄金でできた広めのネックレス。各金葉には古代の取引契約が刻まれており、魔女の「獣」に対する抑制力を強化する。&#xD;"/>
+	<item id="5099" illustration_id="99" name="千年の腕飾り" icon="item002/5099" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xA;純金で作られた螺旋状のアームレット。ウロボロスの姿を模しており、無限のエネルギー循環を象徴し、魔力消費を大幅に減少させる。"/>
+	<item id="5100" illustration_id="100" name="千年の行装" icon="item002/5100" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;精緻な足首の飾り。地脈の流れに影響を与え、魔女は乾燥した砂漠でも平地を歩くかのように軽快に進むことができる。&#xD;"/>
+	<item id="5101" illustration_id="101" name="千年の触媒" icon="item002/5101" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;天秤の審判を象徴する魔力の心臓。物体の罪の重さを精密に測定し、それを等しい強度の魔力に変換することができる。&#xD;"/>
+	<item id="5102" illustration_id="102" name="千年の頭飾り" icon="item002/5102" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;流光溢彩の金属製イヤリング。嵌め込まれたルビーは神話から由来し、身につけた者に時空の隙間を洞察する真理の眼を授ける。&#xD;"/>
+	<item id="5103" illustration_id="103" name="千年の襟飾り" icon="item002/5103" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;重厚な黄金でできた広めのネックレス。各金葉には古代の取引契約が刻まれており、魔女の「獣」に対する抑制力を強化する。&#xD;"/>
+	<item id="5104" illustration_id="104" name="千年の腕飾り" icon="item002/5104" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xA;純金で作られた螺旋状のアームレット。ウロボロスの姿を模しており、無限のエネルギー循環を象徴し、魔力消費を大幅に減少させる。"/>
+	<item id="5105" illustration_id="105" name="千年の行装" icon="item002/5105" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;精緻な足首の飾り。地脈の流れに影響を与え、魔女は乾燥した砂漠でも平地を歩くかのように軽快に進むことができる。&#xD;"/>
+	<item id="5106" illustration_id="106" name="千年の触媒" icon="item002/5106" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;天秤の審判を象徴する魔力の心臓。物体の罪の重さを精密に測定し、それを等しい強度の魔力に変換することができる。&#xD;"/>
+	<item id="5107" illustration_id="107" name="千年の頭飾り" icon="item002/5107" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;流光溢彩の金属製イヤリング。嵌め込まれたルビーは神話から由来し、身につけた者に時空の隙間を洞察する真理の眼を授ける。&#xD;"/>
+	<item id="5108" illustration_id="108" name="千年の襟飾り" icon="item002/5108" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;重厚な黄金でできた広めのネックレス。各金葉には古代の取引契約が刻まれており、魔女の「獣」に対する抑制力を強化する。&#xD;"/>
+	<item id="5109" illustration_id="109" name="千年の腕飾り" icon="item002/5109" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xA;純金で作られた螺旋状のアームレット。ウロボロスの姿を模しており、無限のエネルギー循環を象徴し、魔力消費を大幅に減少させる。"/>
+	<item id="5110" illustration_id="110" name="千年の行装" icon="item002/5110" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;精緻な足首の飾り。地脈の流れに影響を与え、魔女は乾燥した砂漠でも平地を歩くかのように軽快に進むことができる。&#xD;"/>
+	<item id="5111" illustration_id="111" name="千年の触媒" icon="item002/5111" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;天秤の審判を象徴する魔力の心臓。物体の罪の重さを精密に測定し、それを等しい強度の魔力に変換することができる。&#xD;"/>
+	<item id="5112" illustration_id="112" name="千年の頭飾り" icon="item002/5112" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;流光溢彩の金属製イヤリング。嵌め込まれたルビーは神話から由来し、身につけた者に時空の隙間を洞察する真理の眼を授ける。&#xD;"/>
+	<item id="5113" illustration_id="113" name="千年の襟飾り" icon="item002/5113" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;重厚な黄金でできた広めのネックレス。各金葉には古代の取引契約が刻まれており、魔女の「獣」に対する抑制力を強化する。&#xD;"/>
+	<item id="5114" illustration_id="114" name="千年の腕飾り" icon="item002/5114" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xA;純金で作られた螺旋状のアームレット。ウロボロスの姿を模しており、無限のエネルギー循環を象徴し、魔力消費を大幅に減少させる。"/>
+	<item id="5115" illustration_id="115" name="千年の行装" icon="item002/5115" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xA;精緻な足首の飾り。地脈の流れに影響を与え、魔女は乾燥した砂漠でも平地を歩くかのように軽快に進むことができる。"/>
+	<item id="5116" illustration_id="116" name="千年の触媒" icon="item002/5116" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;天秤の審判を象徴する魔力の心臓。物体の罪の重さを精密に測定し、それを等しい強度の魔力に変換することができる。&#xD;"/>
+	<item id="5117" illustration_id="117" name="千年の頭飾り" icon="item002/5117" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;流光溢彩の金属製イヤリング。嵌め込まれたルビーは神話から由来し、身につけた者に時空の隙間を洞察する真理の眼を授ける。&#xD;"/>
+	<item id="5118" illustration_id="118" name="千年の襟飾り" icon="item002/5118" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xD;&#xA;重厚な黄金でできた広めのネックレス。各金葉には古代の取引契約が刻まれており、魔女の「獣」に対する抑制力を強化する。&#xD;"/>
+	<item id="5119" illustration_id="119" name="千年の腕飾り" icon="item002/5119" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xA;純金で作られた螺旋状のアームレット。ウロボロスの姿を模しており、無限のエネルギー循環を象徴し、魔力消費を大幅に減少させる。"/>
+	<item id="5120" illustration_id="120" name="千年の行装" icon="item002/5120" rare="SSR" category="飾品" function="飾品" effect_val1="1204" sell_price="50" get_shop_1="RAID" description="神示魔装。マーズ商会を通じて流通する異域の魔装。千年を超える古代の媒介で、古代文明の歴史を秘めている。&#xA;精緻な足首の飾り。地脈の流れに影響を与え、魔女は乾燥した砂漠でも平地を歩くかのように軽快に進むことができる。"/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item id="6501" name="星辰の書（初級）" icon="item002/6501" rare="R" category="素材" function="突破書籍" fusion_id="6502" fusion_need_number="3" get_shop_1="關卡" description="星の軌跡が描かれた星図。未来の可能性を予測する扉を開く。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6502" name="星辰の書（中級）" icon="item002/6502" rare="SR" category="素材" function="突破書籍" fusion_id="6503" fusion_need_number="3" get_shop_1="關卡" get_shop_2="素材合成" description="流星を捕える星儀。運命の軌跡に影響を与える力を増す。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6503" name="星辰の書（高級）" icon="item002/6503" rare="SSR" category="素材" function="突破書籍" get_shop_1="關卡" get_shop_2="素材合成" description="群星を司る星暦。運命を覆す導きを象徴する。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限の突破に役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="6551" name="命運の書（初級）" icon="item002/6551" rare="R" category="素材" function="突破書籍" fusion_id="6552" fusion_need_number="3" get_shop_1="關卡" description="断片的な宿命を記した古書。魔女が初めて因果を垣間見る手引きとなる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限の突破に役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="6552" name="命運の書（中級）" icon="item002/6552" rare="SR" category="素材" function="突破書籍" fusion_id="6553" fusion_need_number="3" get_shop_1="關卡" get_shop_2="素材合成" description="歴史の潮流を記した巻物。運命の力をより安定させる。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6553" name="命運の書（高級）" icon="item002/6553" rare="SSR" category="素材" function="突破書籍" get_shop_1="關卡" get_shop_2="素材合成" description="終焉の予言を明かす秘典。魔女に宿命を書き換える可能性をもたらす。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6601" name="血脈の書（初級）" icon="item002/6601" rare="R" category="素材" function="突破書籍" fusion_id="6602" fusion_need_number="3" get_shop_1="關卡" description="家族の紋章が記された残頁。血脈に潜む記憶を呼び覚ます。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6602" name="血脈の書（中級）" icon="item002/6602" rare="SR" category="素材" function="突破書籍" fusion_id="6603" fusion_need_number="3" get_shop_1="關卡" get_shop_2="素材合成" description="錬金術の秘奥を収めた典籍。血脈の力の継承を強化する。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6603" name="血脈の書（高級）" icon="item002/6603" rare="SSR" category="素材" function="突破書籍" get_shop_1="關卡" get_shop_2="素材合成" description="古き名家の誓約に由来するもの。古き血脈の栄光を成し遂げる。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6651" name="光輝の書（初級）" icon="item002/6651" rare="R" category="素材" function="突破書籍" fusion_id="6652" fusion_need_number="3" get_shop_1="關卡" description="柔らかな光を放つ聖歌集。神聖な魔法を一時的に集める。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6652" name="光輝の書（中級）" icon="item002/6652" rare="SR" category="素材" function="突破書籍" fusion_id="6653" fusion_need_number="3" get_shop_1="關卡" get_shop_2="素材合成" description="純粋なエネルギーに満ちあふれた福音。光輝の威力を大きく高める。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6653" name="光輝の書（高級）" icon="item002/6653" rare="SSR" category="素材" function="突破書籍" get_shop_1="關卡" get_shop_2="素材合成" description="太陽の恩恵を象徴する聖典。光が世の闇を照らし尽くす。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6701" name="暗影の書（初級）" icon="item002/6701" rare="R" category="素材" function="突破書籍" fusion_id="6702" fusion_need_number="3" get_shop_1="關卡" description="影の中を潜行する心得。内面の強靭さを鍛える。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6702" name="暗影の書（中級）" icon="item002/6702" rare="SR" category="素材" function="突破書籍" fusion_id="6703" fusion_need_number="3" get_shop_1="關卡" get_shop_2="素材合成" description="光を呑み込む手稿。生命の本質を融合させる媒介。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6703" name="暗影の書（高級）" icon="item002/6703" rare="SSR" category="素材" function="突破書籍" get_shop_1="關卡" get_shop_2="素材合成" description="恐怖を封じる指示書。己の儀式へと昇華する。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6751" name="霊魂の書（初級）" icon="item002/6751" rare="R" category="素材" function="突破書籍" fusion_id="6752" fusion_need_number="3" get_shop_1="關卡" description="心の波動を映し出す霊核。精神世界の構想を感じ取る。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6752" name="霊魂の書（中級）" icon="item002/6752" rare="SR" category="素材" function="突破書籍" fusion_id="6753" fusion_need_number="3" get_shop_1="關卡" get_shop_2="素材合成" description="魂と共鳴する楽章。生命エネルギーへの支配力を強める。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6753" name="霊魂の書（高級）" icon="item002/6753" rare="SSR" category="素材" function="突破書籍" get_shop_1="關卡" get_shop_2="素材合成" description="知恵の結晶である詩篇。霊と肉の合一という境地に至る。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6801" name="儀式の石板" icon="item002/6801" rare="SSR" category="素材" function="突破素材" get_shop_1="RAID" description="古の知恵が刻まれた石碑。限界を越えるための儀式が記されている。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="6802" name="儀式の記録" icon="item002/6802" rare="SSR" category="素材" function="突破素材" get_shop_1="指定目標商店" get_shop_2="地城" description="フィルムに封じられた魔力の映像。覚醒の瞬間を再現する重要な記録。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item/>
+	<item/>
+	<item id="6851" name="HP上昇ポーション（小）" icon="item002/6851" rare="R" category="素材" function="天賦素材" fusion_id="6852" fusion_need_number="3" sell_price="100" get_shop_1="關卡" get_shop_2="指定目標商店" get_target_2="7003" description="正円の瓶に入った生命の霊薬。共鳴時の体力を増幅させる。&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6852" name="HP上昇ポーション（中）" icon="item002/6852" rare="R" category="素材" function="天賦素材" fusion_id="6853" fusion_need_number="3" sell_price="200" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="正円の瓶に入った生命の霊薬。共鳴時の体力を増幅させる。&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6853" name="HP上昇ポーション（大）" icon="item002/6853" rare="SR" category="素材" function="天賦素材" fusion_id="6854" fusion_need_number="3" sell_price="400" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="正円の瓶に入った生命の霊薬。共鳴時の体力を増幅させる。&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6854" name="HP上昇ポーション（特大）" icon="item002/6854" rare="SR" category="素材" function="天賦素材" sell_price="800" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="正円の瓶に入った生命の霊薬。共鳴時の体力を増幅させる。&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6901" name="物理攻撃上昇ポーション（小）" icon="item002/6901" rare="R" category="素材" function="天賦素材" fusion_id="6902" fusion_need_number="3" sell_price="100" get_shop_1="關卡" get_shop_2="指定目標商店" get_target_2="7003" description="正三角形の薬瓶。共鳴によって鋭い物理的破壊力に転化する。&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6902" name="物理攻撃上昇ポーション（中）" icon="item002/6902" rare="R" category="素材" function="天賦素材" fusion_id="6903" fusion_need_number="3" sell_price="200" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="正三角形の薬瓶。共鳴によって鋭い物理的破壊力に転化する。&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6903" name="物理攻撃上昇ポーション（大）" icon="item002/6903" rare="SR" category="素材" function="天賦素材" fusion_id="6904" fusion_need_number="3" sell_price="400" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="正三角形の薬瓶。共鳴によって鋭い物理的破壊力に転化する。&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6904" name="物理攻撃上昇ポーション（特大）" icon="item002/6904" rare="SR" category="素材" function="天賦素材" sell_price="800" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="正三角形の薬瓶。共鳴によって鋭い物理的破壊力に転化する。&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6951" name="物理防御上昇ポーション（小）" icon="item002/6951" rare="R" category="素材" function="天賦素材" fusion_id="6952" fusion_need_number="3" sell_price="100" get_shop_1="關卡" get_shop_2="指定目標商店" get_target_2="7003" description="安定した四角形の瓶。共鳴時の肉体の強靭さを向上させる。&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6952" name="物理防御上昇ポーション（中）" icon="item002/6952" rare="R" category="素材" function="天賦素材" fusion_id="6953" fusion_need_number="3" sell_price="200" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="安定した四角形の瓶。共鳴時の肉体の強靭さを向上させる。&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6953" name="物理防御上昇ポーション（大）" icon="item002/6953" rare="SR" category="素材" function="天賦素材" fusion_id="6954" fusion_need_number="3" sell_price="400" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="安定した四角形の瓶。共鳴時の肉体の強靭さを向上させる。&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="6954" name="物理防御上昇ポーション（特大）" icon="item002/6954" rare="SR" category="素材" function="天賦素材" sell_price="800" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="安定した四角形の瓶。共鳴時の肉体の強靭さを向上させる。&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="7001" name="魔法攻撃上昇ポーション（小）" icon="item002/7001" rare="R" category="素材" function="天賦素材" fusion_id="7002" fusion_need_number="3" sell_price="100" get_shop_1="關卡" get_shop_2="指定目標商店" get_target_2="7003" description="ひし形の薬瓶。共鳴時の魔力の流れを拡張し、魔法の威力を強化する。&#xD;&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7002" name="魔法攻撃上昇ポーション（中）" icon="item002/7002" rare="R" category="素材" function="天賦素材" fusion_id="7003" fusion_need_number="3" sell_price="200" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="ひし形の薬瓶。共鳴時の魔力の流れを拡張し、魔法の威力を強化する。&#xD;&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7003" name="魔法攻撃上昇ポーション（大）" icon="item002/7003" rare="SR" category="素材" function="天賦素材" fusion_id="7004" fusion_need_number="3" sell_price="400" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="ひし形の薬瓶。共鳴時の魔力の流れを拡張し、魔法の威力を強化する。&#xD;&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7004" name="魔法攻撃上昇ポーション（特大）" icon="item002/7004" rare="SR" category="素材" function="天賦素材" sell_price="800" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="ひし形の薬瓶。共鳴時の魔力の流れを拡張し、魔法の威力を強化する。&#xD;&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7051" name="魔法防御上昇ポーション（小）" icon="item002/7051" rare="R" category="素材" function="天賦素材" fusion_id="7052" fusion_need_number="3" sell_price="100" get_shop_1="關卡" get_shop_2="指定目標商店" get_target_2="7003" description="瓶身が長い薬剤。共鳴者の外部エネルギーへの抵抗力を強化する。&#xD;&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7052" name="魔法防御上昇ポーション（中）" icon="item002/7052" rare="R" category="素材" function="天賦素材" fusion_id="7053" fusion_need_number="3" sell_price="200" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="瓶身が長い薬剤。共鳴者の外部エネルギーへの抵抗力を強化する。&#xD;&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7053" name="魔法防御上昇ポーション（大）" icon="item002/7053" rare="SR" category="素材" function="天賦素材" fusion_id="7054" fusion_need_number="3" sell_price="400" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="瓶身が長い薬剤。共鳴者の外部エネルギーへの抵抗力を強化する。&#xD;&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7054" name="魔法防御上昇ポーション（特大）" icon="item002/7054" rare="SR" category="素材" function="天賦素材" sell_price="800" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="瓶身が長い薬剤。共鳴者の外部エネルギーへの抵抗力を強化する。&#xD;&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7101" name="SP上昇ポーション（小）" icon="item002/7101" rare="R" category="素材" function="天賦素材" fusion_id="7102" fusion_need_number="3" sell_price="100" get_shop_1="關卡" get_shop_2="指定目標商店" get_target_2="7003" description="五角形の薬瓶。魂の共鳴を深め、エネルギー蓄積効率を高める。&#xD;&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7102" name="SP上昇ポーション（中）" icon="item002/7102" rare="R" category="素材" function="天賦素材" fusion_id="7103" fusion_need_number="3" sell_price="200" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="五角形の薬瓶。魂の共鳴を深め、エネルギー蓄積効率を高める。&#xD;&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7103" name="SP上昇ポーション（大）" icon="item002/7103" rare="SR" category="素材" function="天賦素材" fusion_id="7104" fusion_need_number="3" sell_price="400" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="五角形の薬瓶。魂の共鳴を深め、エネルギー蓄積効率を高める。&#xD;&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7104" name="SP上昇ポーション（特大）" icon="item002/7104" rare="SR" category="素材" function="天賦素材" sell_price="800" get_shop_1="關卡" get_shop_2="素材合成" get_shop_3="指定目標商店" get_target_3="7003" description="五角形の薬瓶。魂の共鳴を深め、エネルギー蓄積効率を高める。&#xD;&#xA;&lt;color=#FFFF37&gt;使用後、魔女の能力を向上させ、グレード制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item/>
+	<item/>
+	<item/>
+	<item id="7151" name="欲望の結晶" icon="item002/7151" rare="R" category="素材" function="魔女遺物" fusion_id="7351" fusion_need_number="3" get_shop_1="關卡" description="幽かな青い光を放つ鉱石。未知の獣の残滓。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7152" name="霊性の粉" icon="item002/7152" rare="R" category="素材" function="魔女遺物" fusion_id="7352" fusion_need_number="3" get_shop_1="關卡" description="細かな青い燐光。空気中の魔力の流れをわずかに乱す。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="7153" name="純粋な液体" icon="item002/7153" rare="R" category="素材" function="魔女遺物" fusion_id="7353" fusion_need_number="3" get_shop_1="關卡" description="幽かな光を放つ青い薬剤。生命の本質を融合させるための基礎溶媒。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="7154" name="獣の血" icon="item002/7154" rare="R" category="素材" function="魔女遺物" fusion_id="7354" fusion_need_number="3" get_shop_1="關卡" description="獣から採取された青い血液。進化の法則を研究するための貴重なサンプル。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="7155" name="絶叫の殻" icon="item002/7155" rare="R" category="素材" function="魔女遺物" fusion_id="7355" fusion_need_number="3" get_shop_1="關卡" description="絶えず咆哮が響く青い貝殻。戦いの最中の叫びが記録されている。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="7156" name="呪術の痕" icon="item002/7156" rare="R" category="素材" function="魔女遺物" fusion_id="7356" fusion_need_number="3" get_shop_1="關卡" description="残存する魔力が付着した青い陶片。古い呪文の存在を証している。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item/>
+	<item/>
+	<item id="7351" name="災禍の結晶" icon="item002/7351" rare="SR" category="素材" function="魔女遺物" fusion_id="7551" fusion_need_number="3" get_shop_1="關卡" description="抑圧的な気配が漂う結晶。終末が訪れたときに残された残り火。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7352" name="魔法の粉" icon="item002/7352" rare="SR" category="素材" function="魔女遺物" fusion_id="7552" fusion_need_number="3" get_shop_1="關卡" description="深い紫色を帯びた強力な触媒。高位魔法を調合する際に必要な物質。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7353" name="濃縮溶液" icon="item002/7353" rare="SR" category="素材" function="魔女遺物" fusion_id="7553" fusion_need_number="3" get_shop_1="關卡" description="濃い紫色をした液体。非常に高い活性を持つ魔力伝導物質に満ちている。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item id="7354" name="獣の毒" icon="item002/7354" rare="SR" category="素材" function="魔女遺物" fusion_id="7554" fusion_need_number="3" get_shop_1="關卡" description="猛毒の液体。異なる遺伝子鎖を腐食し分解する。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7355" name="呪詛の声" icon="item002/7355" rare="SR" category="素材" function="魔女遺物" fusion_id="7555" fusion_need_number="3" get_shop_1="關卡" description="冷たいささやきが聞こえる貝殻。その執念は致命的な霊感へと変わる。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7356" name="魔法の痕" icon="item002/7356" rare="SR" category="素材" function="魔女遺物" fusion_id="7556" fusion_need_number="3" get_shop_1="關卡" description="魔力の刻まれた跡が残されている陶片。詠唱の瞬間のエネルギーの脈動が記録されている。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item/>
+	<item/>
+	<item id="7551" name="未知の結晶" icon="item002/7551" rare="SSR" category="素材" function="魔女遺物" get_shop_1="關卡" description="異様な熱を放つ鉱物。この世界のものではない高次元のエネルギーを宿している。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7552" name="神聖の粉" icon="item002/7552" rare="SSR" category="素材" function="魔女遺物" get_shop_1="關卡" description="金色に輝く純粋な粉塵。汚染を浄化し霊力を増幅する特性を持つ。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7553" name="原初の水" icon="item002/7553" rare="SSR" category="素材" function="魔女遺物" get_shop_1="關卡" description="奇跡の水。万物が誕生した始まりの時に流れていた源泉だと伝えられている。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7554" name="獣の髄液" icon="item002/7554" rare="SSR" category="素材" function="魔女遺物" get_shop_1="關卡" description="獣の骨髄から採れた濃厚な液体。個体の進化の潜在力を大きく強化する。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7555" name="悲哀の声" icon="item002/7555" rare="SSR" category="素材" function="魔女遺物" get_shop_1="關卡" description="悲しい旋律が流れる貝殻。魂に触れて共鳴を生み出す。&#xD;&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;&#xD;"/>
+	<item id="7556" name="神示の痕" icon="item002/7556" rare="SSR" category="素材" function="魔女遺物" get_shop_1="關卡" description="金色の光を放つ神秘的な陶片。現代科学では解明できない奇跡が記されている。&#xA;&lt;color=#FFFF37&gt;使用すると魔女のレベル制限を突破するのに役立つ。&lt;/color&gt;"/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item id="8001" name="R装備ランダムBOX" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8001" effect_val2="1" get_shop_1="無"/>
+	<item id="8002" name="SR装備ランダムBOX" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8002" effect_val2="1" get_shop_1="無"/>
+	<item id="8003" name="SSR装備ランダムBOX" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8003" effect_val2="1" get_shop_1="無"/>
+	<item id="8004" name="[分類1]R装備ランダムBOX" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8004" effect_val2="1" get_shop_1="無"/>
+	<item id="8005" name="[分類1]SR装備ランダムBOX" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8005" effect_val2="1" get_shop_1="無"/>
+	<item id="8006" name="[分類1]SSR装備ランダムBOX" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8006" effect_val2="1" get_shop_1="無"/>
+	<item id="8007" name="[分類2]R装備ランダムBOX" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8007" effect_val2="1" get_shop_1="無"/>
+	<item id="8008" name="[分類2]SR装備ランダムBOX" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8008" effect_val2="1" get_shop_1="無"/>
+	<item id="8009" name="[分類2]SSR装備ランダムBOX" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8009" effect_val2="1" get_shop_1="無"/>
+	<item id="8010" name="[分類3]R装備ランダムBOX" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8010" effect_val2="1" get_shop_1="無"/>
+	<item id="8011" name="[分類3]SR装備ランダムBOX" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8011" effect_val2="1" get_shop_1="無"/>
+	<item id="8012" name="[分類3]SSR装備ランダムBOX" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8012" effect_val2="1" get_shop_1="無"/>
+	<item id="8013" name="[分類4]R装備ランダムBOX" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8013" effect_val2="1" get_shop_1="無"/>
+	<item id="8014" name="[分類4]SR装備ランダムBOX" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8014" effect_val2="1" get_shop_1="無"/>
+	<item id="8015" name="[分類4]SSR装備ランダムBOX" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8015" effect_val2="1" get_shop_1="無"/>
+	<item id="8016" name="[分類5]R装備ランダムBOX" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8016" effect_val2="1" get_shop_1="無"/>
+	<item id="8017" name="[分類5]SR装備ランダムBOX" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8017" effect_val2="1" get_shop_1="無"/>
+	<item id="8018" name="[分類5]SSR装備ランダムBOX" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8018" effect_val2="1" get_shop_1="無"/>
+	<item id="8019" name="[物理]R装備ランダムBOX" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8019" effect_val2="1" get_shop_1="無"/>
+	<item id="8020" name="[物理]SR装備ランダムBOX" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8020" effect_val2="1" get_shop_1="無"/>
+	<item id="8021" name="[物理]SSR装備ランダムBOX" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8021" effect_val2="1" get_shop_1="無"/>
+	<item id="8022" name="[魔法]R装備ランダムBOX" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8022" effect_val2="1" get_shop_1="無"/>
+	<item id="8023" name="[魔法]SR装備ランダムBOX" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8023" effect_val2="1" get_shop_1="無"/>
+	<item id="8024" name="[魔法]SSR装備ランダムBOX" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8024" effect_val2="1" get_shop_1="無"/>
+	<item id="8025" name="R装備ランダムBOX" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8025" effect_val2="1" get_shop_1="無"/>
+	<item id="8026" name="SR装備ランダムBOX" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8026" effect_val2="1" get_shop_1="無"/>
+	<item id="8027" name="SSR装備ランダムBOX" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8027" effect_val2="1" get_shop_1="無"/>
+	<item/>
+	<item id="8101" name="指定SSR裝備BOX" icon="item002/8004" rare="SSR" category="道具" function="指定道具寶箱" effect_val1="8101" effect_val2="1" get_shop_1="無"/>
+	<item id="8102" name="指定SR裝備BOX" icon="item002/8002" rare="R" category="道具" function="指定道具寶箱" effect_val1="8025" effect_val2="1" get_shop_1="無"/>
+	<item id="8103" name="指定R裝備BOX" icon="item002/8003" rare="SR" category="道具" function="指定道具寶箱" effect_val1="8026" effect_val2="1" get_shop_1="無"/>
+	<item/>
+	<item/>
+	<item id="8201" name="RアクセサリーランダムBOX" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8201" effect_val2="1" get_shop_1="無"/>
+	<item id="8202" name="SRアクセサリーランダムBOX" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8202" effect_val2="1" get_shop_1="無"/>
+	<item id="8203" name="SSRアクセサリーランダムBOX" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8203" effect_val2="1" get_shop_1="無"/>
+	<item id="8204" name="[セット1]アクセサリーランダムBOX" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8204" effect_val2="1" get_shop_1="無"/>
+	<item id="8205" name="[セット2]アクセサリーランダムBOX" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8205" effect_val2="1" get_shop_1="無"/>
+	<item id="8206" name="[セット3]アクセサリーランダムBOX" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8206" effect_val2="1" get_shop_1="無"/>
+	<item/>
+	<item/>
+	<item id="8401" name="書素材ランダム(小)補給箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8401" effect_val2="1" get_shop_1="無"/>
+	<item id="8402" name="書素材ランダム(中)補給箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8402" effect_val2="1" get_shop_1="無"/>
+	<item id="8403" name="書素材ランダム(大)補給箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8403" effect_val2="1" get_shop_1="無"/>
+	<item/>
+	<item id="8441" name="書素材セレクト(小)補給箱" icon="item002/8002" rare="R" category="道具" function="指定道具寶箱" effect_val1="8441" effect_val2="1" get_shop_1="無"/>
+	<item id="8442" name="書素材セレクト(中)補給箱" icon="item002/8003" rare="SR" category="道具" function="指定道具寶箱" effect_val1="8442" effect_val2="1" get_shop_1="無"/>
+	<item id="8443" name="書素材セレクト(大)補給箱" icon="item002/8004" rare="SSR" category="道具" function="指定道具寶箱" effect_val1="8443" effect_val2="1" get_shop_1="無"/>
+	<item/>
+	<item id="8481" name="書素材(小)補給箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8481" effect_val2="0" get_shop_1="無"/>
+	<item id="8482" name="書素材(中)補給箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8482" effect_val2="0" get_shop_1="無"/>
+	<item id="8483" name="書素材(大)補給箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8483" effect_val2="0" get_shop_1="無"/>
+	<item/>
+	<item/>
+	<item id="8501" name="クエストR素材ランダム補給箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8501" effect_val2="1" get_shop_1="無"/>
+	<item id="8502" name="クエストSR素材ランダム補給箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8502" effect_val2="1" get_shop_1="無"/>
+	<item id="8503" name="クエストSSR素材ランダム補給箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8503" effect_val2="1" get_shop_1="無"/>
+	<item/>
+	<item id="8551" name="クエストR素材セレクト補給箱" icon="item002/8002" rare="R" category="道具" function="指定道具寶箱" effect_val1="8551" effect_val2="1" get_shop_1="無"/>
+	<item id="8552" name="クエストSR素材セレクト補給箱" icon="item002/8003" rare="SR" category="道具" function="指定道具寶箱" effect_val1="8552" effect_val2="1" get_shop_1="無"/>
+	<item id="8553" name="クエストSSR素材セレクト補給箱" icon="item002/8004" rare="SSR" category="道具" function="指定道具寶箱" effect_val1="8553" effect_val2="1" get_shop_1="無"/>
+	<item/>
+	<item/>
+	<item id="8601" name="ポーションランダム(小)の補給箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8601" effect_val2="1" get_shop_1="無"/>
+	<item id="8602" name="ポーションランダム(中)の補給箱" icon="item002/8003" rare="R" category="道具" function="道具寶箱" effect_val1="8602" effect_val2="1" get_shop_1="無"/>
+	<item id="8603" name="ポーションランダム(大)の補給箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8603" effect_val2="1" get_shop_1="無"/>
+	<item id="8604" name="ポーションランダム(特)の補給箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8604" effect_val2="1" get_shop_1="無"/>
+	<item/>
+	<item id="8641" name="ポーションセレクト(小)の補給箱" icon="item002/8002" rare="R" category="道具" function="指定道具寶箱" effect_val1="8641" effect_val2="1" get_shop_1="無"/>
+	<item id="8642" name="ポーションセレクト(中)の補給箱" icon="item002/8003" rare="R" category="道具" function="指定道具寶箱" effect_val1="8642" effect_val2="1" get_shop_1="無"/>
+	<item id="8643" name="ポーションセレクト(大)の補給箱" icon="item002/8003" rare="SR" category="道具" function="指定道具寶箱" effect_val1="8643" effect_val2="1" get_shop_1="無"/>
+	<item id="8644" name="ポーションセレクト(特)の補給箱" icon="item002/8004" rare="SSR" category="道具" function="指定道具寶箱" effect_val1="8644" effect_val2="1" get_shop_1="無"/>
+	<item/>
+	<item id="8681" name="ポーション(小)の補給箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8681" effect_val2="0" get_shop_1="無"/>
+	<item id="8682" name="ポーション(中)の補給箱" icon="item002/8003" rare="R" category="道具" function="道具寶箱" effect_val1="8682" effect_val2="0" get_shop_1="無"/>
+	<item id="8683" name="ポーション(大)の補給箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8683" effect_val2="0" get_shop_1="無"/>
+	<item id="8684" name="ポーション(特)の補給箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8684" effect_val2="0" get_shop_1="無"/>
+	<item/>
+	<item/>
+	<item id="8701" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="8701" effect_val2="1" get_shop_1="無"/>
+	<item id="8702" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8702" effect_val2="1" get_shop_1="無"/>
+	<item id="8703" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8703" effect_val2="1" get_shop_1="無"/>
+	<item id="8704" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8704" effect_val2="1" get_shop_1="無"/>
+	<item id="8705" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="8705" effect_val2="1" get_shop_1="無"/>
+	<item id="8706" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8706" effect_val2="1" get_shop_1="無"/>
+	<item id="8707" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8707" effect_val2="1" get_shop_1="無"/>
+	<item id="8708" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8708" effect_val2="1" get_shop_1="無"/>
+	<item id="8709" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="8709" effect_val2="1" get_shop_1="無"/>
+	<item id="8710" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8710" effect_val2="1" get_shop_1="無"/>
+	<item id="8711" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8711" effect_val2="1" get_shop_1="無"/>
+	<item id="8712" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8712" effect_val2="1" get_shop_1="無"/>
+	<item id="8801" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="8801" effect_val2="1" get_shop_1="無"/>
+	<item id="8802" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8802" effect_val2="1" get_shop_1="無"/>
+	<item id="8803" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8803" effect_val2="1" get_shop_1="無"/>
+	<item id="8804" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8804" effect_val2="1" get_shop_1="無"/>
+	<item id="8805" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="8805" effect_val2="1" get_shop_1="無"/>
+	<item id="8806" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8806" effect_val2="1" get_shop_1="無"/>
+	<item id="8807" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8807" effect_val2="1" get_shop_1="無"/>
+	<item id="8808" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8808" effect_val2="1" get_shop_1="無"/>
+	<item id="8809" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="8809" effect_val2="1" get_shop_1="無"/>
+	<item id="8810" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8810" effect_val2="1" get_shop_1="無"/>
+	<item id="8811" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8811" effect_val2="1" get_shop_1="無"/>
+	<item id="8812" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8812" effect_val2="1" get_shop_1="無"/>
+	<item id="8901" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="8901" effect_val2="1" get_shop_1="無"/>
+	<item id="8902" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8902" effect_val2="1" get_shop_1="無"/>
+	<item id="8903" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8903" effect_val2="1" get_shop_1="無"/>
+	<item id="8904" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8904" effect_val2="1" get_shop_1="無"/>
+	<item id="8905" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="8905" effect_val2="1" get_shop_1="無"/>
+	<item id="8906" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8906" effect_val2="1" get_shop_1="無"/>
+	<item id="8907" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8907" effect_val2="1" get_shop_1="無"/>
+	<item id="8908" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8908" effect_val2="1" get_shop_1="無"/>
+	<item id="8909" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="8909" effect_val2="1" get_shop_1="無"/>
+	<item id="8910" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="8910" effect_val2="1" get_shop_1="無"/>
+	<item id="8911" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="8911" effect_val2="1" get_shop_1="無"/>
+	<item id="8912" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="8912" effect_val2="1" get_shop_1="無"/>
+	<item id="9001" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="9001" effect_val2="1" get_shop_1="無"/>
+	<item id="9002" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="9002" effect_val2="1" get_shop_1="無"/>
+	<item id="9003" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="9003" effect_val2="1" get_shop_1="無"/>
+	<item id="9004" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="9004" effect_val2="1" get_shop_1="無"/>
+	<item id="9005" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="9005" effect_val2="1" get_shop_1="無"/>
+	<item id="9006" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="9006" effect_val2="1" get_shop_1="無"/>
+	<item id="9007" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="9007" effect_val2="1" get_shop_1="無"/>
+	<item id="9008" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="9008" effect_val2="1" get_shop_1="無"/>
+	<item id="9009" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="9009" effect_val2="1" get_shop_1="無"/>
+	<item id="9010" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="9010" effect_val2="1" get_shop_1="無"/>
+	<item id="9011" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="9011" effect_val2="1" get_shop_1="無"/>
+	<item id="9012" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="9012" effect_val2="1" get_shop_1="無"/>
+	<item id="9101" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="9101" effect_val2="1" get_shop_1="無"/>
+	<item id="9102" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="9102" effect_val2="1" get_shop_1="無"/>
+	<item id="9103" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="9103" effect_val2="1" get_shop_1="無"/>
+	<item id="9104" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="9104" effect_val2="1" get_shop_1="無"/>
+	<item id="9105" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="9105" effect_val2="1" get_shop_1="無"/>
+	<item id="9106" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="9106" effect_val2="1" get_shop_1="無"/>
+	<item id="9107" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="9107" effect_val2="1" get_shop_1="無"/>
+	<item id="9108" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="9108" effect_val2="1" get_shop_1="無"/>
+	<item id="9109" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="9109" effect_val2="1" get_shop_1="無"/>
+	<item id="9110" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="9110" effect_val2="1" get_shop_1="無"/>
+	<item id="9111" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="9111" effect_val2="1" get_shop_1="無"/>
+	<item id="9112" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="9112" effect_val2="1" get_shop_1="無"/>
+	<item id="9200" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="9200" effect_val2="1" get_shop_1="無"/>
+	<item id="9201" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="9201" effect_val2="1" get_shop_1="無"/>
+	<item id="9202" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="9202" effect_val2="1" get_shop_1="無"/>
+	<item id="9203" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="9203" effect_val2="1" get_shop_1="無"/>
+	<item id="9204" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="9204" effect_val2="1" get_shop_1="無"/>
+	<item id="9205" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="9205" effect_val2="1" get_shop_1="無"/>
+	<item id="9206" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="9206" effect_val2="1" get_shop_1="無"/>
+	<item id="9207" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="9207" effect_val2="1" get_shop_1="無"/>
+	<item id="9208" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="9208" effect_val2="1" get_shop_1="無"/>
+	<item id="9209" name="木箱" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="9209" effect_val2="1" get_shop_1="無"/>
+	<item id="9210" name="銀箱" icon="item002/8002" rare="R" category="道具" function="道具寶箱" effect_val1="9210" effect_val2="1" get_shop_1="無"/>
+	<item id="9211" name="金箱" icon="item002/8003" rare="SR" category="道具" function="道具寶箱" effect_val1="9211" effect_val2="1" get_shop_1="無"/>
+	<item id="9212" name="虹箱" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="9212" effect_val2="1" get_shop_1="無"/>
+	<item/>
+	<item/>
+	<item id="9901" name="ランダム調査令BOX" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="9901" effect_val2="1" get_shop_1="無" description="各地に散在する戦場物資。「霊脈強襲」の討伐令を獲得できる。"/>
+	<item id="9902" name="全調査令BOX" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="9902" effect_val2="1" get_shop_1="無" description="各地に散在する戦場物資。「霊脈強襲」の討伐令を獲得できる。"/>
+	<item id="9903" name="AP消費BOX" icon="item002/8001" rare="R" category="道具" function="道具寶箱" effect_val1="9903" effect_val2="1" get_shop_1="無" description="各地に散在する戦場物資。「霊脈強襲」の討伐令や魔女の好感度アイテムが封入されている。"/>
+	<item/>
+	<item id="9904" name="BP滿級BOX" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="9904" effect_val2="1" get_shop_1="無" description="様々なアイテムをランダムで獲得できます。&#xA;&lt;color=#FFFF37&gt;タップでラインナップを確認。&lt;/color&gt;"/>
+	<item/>
+	<item id="9905" name="落とし物の配送箱" icon="item002/8011" rare="R" category="道具" function="道具寶箱" effect_val1="9905" effect_val2="1" get_shop_1="無" description="各地に散在する戦場物資。魔装やその他の補給アイテムがランダムで手に入る。"/>
+	<item id="9906" name="ランダムLv突破素材BOX" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="9906" effect_val2="1" description="各地に散在する戦場物資。使用すると、魔女のレベル制限を解放する素材をランダムで獲得できます。"/>
+	<item id="9907" name="ランダムポーション素材BOX" icon="item002/8004" rare="SSR" category="道具" function="道具寶箱" effect_val1="9907" effect_val2="1" description="各地に散在する戦場物資。使用すると、魔女のグレード制限を突破する素材をランダムで獲得できます。"/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item id="15001" name="鋒矢陣" icon="item002/15001" rare="SR" category="道具" function="陣型" effect_val1="1" description="ゴーレム紳士によって精密に調整され、陣形は均衡へと導かれる。整然とした秩序は、味方全体の物理攻撃・防御力および耐久性を強化する。&#xA;&lt;b&gt;&lt;color=#FFFF37&gt;入手後、編成画面で使用できます。&lt;/color&gt;&lt;/b&gt;"/>
+	<item id="15002" name="偃月陣" icon="item002/15002" rare="SR" category="道具" function="陣型" effect_val1="2" description="半透明の浮遊精霊が側で守護し、魔力の脈動に従い浮力を調整する。緩慢とした動きながらも、魔法の効果を高めることができる。&#xA;&lt;b&gt;&lt;color=#FFFF37&gt;入手後、編成画面で使用できます。&lt;/color&gt;&lt;/b&gt;"/>
+	<item id="15003" name="四方陣" icon="item002/15003" rare="SR" category="道具" function="陣型" effect_val1="3" description="油圧装甲により、小柄な機械騎士が堅牢な要塞を構築する。機動力は犠牲となるが、信頼性の高い防御戦術を得る。&#xA;&lt;b&gt;&lt;color=#FFFF37&gt;入手後、編成画面で使用できます。&lt;/color&gt;&lt;/b&gt;"/>
+	<item id="15004" name="刺鋒陣" icon="item002/15004" rare="SR" category="道具" function="陣型" effect_val1="4" description="軽やかな翼の下には捕食者としての原始的本能が潜んでいる。金色の精霊が偽装状態に入ることで、味方全体に速度と防御の加護を付与する。&#xA;&lt;b&gt;&lt;color=#FFFF37&gt;入手後、編成画面で使用できます。&lt;/color&gt;&lt;/b&gt;"/>
+	<item id="15005" name="秘ノ鍵陣" icon="item002/15005" rare="SR" category="道具" function="陣型" effect_val1="5" description="精霊の、気流に対する鋭敏な直感を利用し、チームを最短の突撃ルートへと導く。防御・ブロック性能を捨てる代わりに、高速行動を実現する。&#xA;&lt;b&gt;&lt;color=#FFFF37&gt;入手後、編成画面で使用できます。&lt;/color&gt;&lt;/b&gt;"/>
+	<item id="15006" name="法之間" icon="item002/15006" rare="SR" category="道具" function="陣型" effect_val1="6"/>
+	<item id="15007" name="雁形" icon="item002/15007" rare="SR" category="道具" function="陣型" effect_val1="7"/>
+	<item id="15008" name="玄襄" icon="item002/15008" rare="SR" category="道具" function="陣型" effect_val1="8"/>
+	<item id="15009" name="前鋒" icon="item002/15009" rare="SR" category="道具" function="陣型" effect_val1="9"/>
+	<item id="15010" name="常陣" icon="item002/15010" rare="SR" category="道具" function="陣型" effect_val1="10"/>
+	<item id="15011" name="長蛇" icon="item002/15011" rare="SR" category="道具" function="陣型" effect_val1="11"/>
+	<item id="15012" name="衝軛" icon="item002/15012" rare="SR" category="道具" function="陣型" effect_val1="12"/>
+	<item id="15013" name="逆衝軛" icon="item002/15013" rare="SR" category="道具" function="陣型" effect_val1="13"/>
+	<item id="15014" name="天轟" icon="item002/15014" rare="SR" category="道具" function="陣型" effect_val1="14"/>
+	<item id="15015" name="長弓" icon="item002/15015" rare="SR" category="道具" function="陣型" effect_val1="15"/>
+	<item id="15016" name="太極" icon="item002/15016" rare="SR" category="道具" function="陣型" effect_val1="16"/>
+	<item id="15017" name="天蠍" icon="item002/15017" rare="SR" category="道具" function="陣型" effect_val1="17"/>
+	<item id="15018" name="星芒" icon="item002/15018" rare="SR" category="道具" function="陣型" effect_val1="18"/>
+	<item id="15019" name="長刃" icon="item002/15019" rare="SR" category="道具" function="陣型" effect_val1="19"/>
+	<item id="15020" name="劍" icon="item002/15020" rare="SR" category="道具" function="陣型" effect_val1="20"/>
+	<item id="15021" name="聚靈" icon="item002/15021" rare="SR" category="道具" function="陣型" effect_val1="21"/>
+	<item id="15022" name="幻尾" icon="item002/15022" rare="SR" category="道具" function="陣型" effect_val1="22"/>
+	<item id="15023" name="真尾" icon="item002/15023" rare="SR" category="道具" function="陣型" effect_val1="23"/>
+	<item id="15024" name="烈陽" icon="item002/15024" rare="SR" category="道具" function="陣型" effect_val1="24"/>
+	<item id="15025" name="戰車" icon="item002/15025" rare="SR" category="道具" function="陣型" effect_val1="25"/>
+	<item id="15026" name="流馬" icon="item002/15026" rare="SR" category="道具" function="陣型" effect_val1="26"/>
+	<item id="15027" name="日葵" icon="item002/15027" rare="SR" category="道具" function="陣型" effect_val1="27"/>
+	<item id="15028" name="太白" icon="item002/15028" rare="SR" category="道具" function="陣型" effect_val1="28"/>
+	<item id="15029" name="大囂" icon="item002/15029" rare="SR" category="道具" function="陣型" effect_val1="29"/>
+	<item id="15030" name="晨星" icon="item002/15030" rare="SR" category="道具" function="陣型" effect_val1="30"/>
+	<item id="15031" name="鎮日" icon="item002/15031" rare="SR" category="道具" function="陣型" effect_val1="31"/>
+	<item id="15032" name="信星" icon="item002/15032" rare="SR" category="道具" function="陣型" effect_val1="32"/>
+	<item id="15033" name="歲星" icon="item002/15033" rare="SR" category="道具" function="陣型" effect_val1="33"/>
+	<item id="15034" name="重華" icon="item002/15034" rare="SR" category="道具" function="陣型" effect_val1="34"/>
+	<item id="15035" name="敗日" icon="item002/15035" rare="SR" category="道具" function="陣型" effect_val1="35"/>
+	<item id="15036" name="巨石" icon="item002/15036" rare="SR" category="道具" function="陣型" effect_val1="36"/>
+	<item id="15037" name="斧" icon="item002/15037" rare="SR" category="道具" function="陣型" effect_val1="37"/>
+	<item id="15038" name="君王" icon="item002/15038" rare="SR" category="道具" function="陣型" effect_val1="38"/>
+	<item id="15039" name="蟲魚" icon="item002/15039" rare="SR" category="道具" function="陣型" effect_val1="39"/>
+	<item id="15040" name="尖塔" icon="item002/15040" rare="SR" category="道具" function="陣型" effect_val1="40"/>
+	<item id="15041" name="須守" icon="item002/15041" rare="SR" category="道具" function="陣型" effect_val1="41"/>
+	<item id="15042" name="八風" icon="item002/15042" rare="SR" category="道具" function="陣型" effect_val1="42"/>
+	<item id="15043" name="曲劍" icon="item002/15043" rare="SR" category="道具" function="陣型" effect_val1="43"/>
+	<item id="15044" name="霜首" icon="item002/15044" rare="SR" category="道具" function="陣型" effect_val1="44"/>
+	<item id="15045" name="禹步" icon="item002/15045" rare="SR" category="道具" function="陣型" effect_val1="45"/>
+	<item id="15046" name="背水" icon="item002/15046" rare="SR" category="道具" function="陣型" effect_val1="46"/>
+	<item id="15047" name="昇華" icon="item002/15047" rare="SR" category="道具" function="陣型" effect_val1="47"/>
+	<item id="15048" name="天火" icon="item002/15048" rare="SR" category="道具" function="陣型" effect_val1="48"/>
+	<item id="15049" name="交換" icon="item002/15049" rare="SR" category="道具" function="陣型" effect_val1="49"/>
+	<item id="15050" name="奇" icon="item002/15050" rare="SR" category="道具" function="陣型" effect_val1="50"/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item id="20001" name="BOSS挑戰道具" icon="item001/20001" rare="R" category="道具" function="物品" end_date="2026/10/12 11:00:00" convert_item_id="5" convert_item_num="1" get_shop_1="無"/>
+	<item id="20002" name="單抽道具" icon="item001/20002" rare="SR" category="道具" function="物品" end_date="2026/10/12 11:00:00" convert_item_id="5" convert_item_num="1" get_shop_1="無"/>
+	<item id="20003" name="十抽道具" icon="item001/20003" rare="SSR" category="道具" function="物品" end_date="2026/10/12 11:00:00" convert_item_id="5" convert_item_num="10" get_shop_1="無"/>
+	<item id="20004" name="BOSS掉落道具" icon="item001/20004" rare="R" category="道具" function="物品" end_date="2026/10/12 11:00:00" convert_item_id="5" convert_item_num="1" get_shop_1="無"/>
+	<item id="20005" name="天井道具" icon="item001/20005" rare="R" category="道具" function="物品" end_date="2026/10/12 11:00:00" convert_item_id="5" convert_item_num="1" get_shop_1="無"/>
+	<item/>
+	<item id="20006" name="ガソリン瓶" icon="item001/20006" rare="R" category="道具" function="物品" end_date="2026/06/10 11:00:00" convert_item_id="5" convert_item_num="1" get_shop_1="無" description="濁ったガソリンが入った瓶。&#xA;非常に引火しやすく、取り扱いには注意が必要。"/>
+	<item id="20007" name="【魔女は忙しい・前半】転送チケット（10回分）" icon="item001/20007" rare="SSR" category="道具" function="物品" end_date="2026/06/03 11:00:00" convert_item_id="5" convert_item_num="10" get_shop_1="無" description="転送大広間を通じて行われる戦力の転送機能。&#xA;&lt;color=#FFFF37&gt;【魔女は忙しい・前半】イベント魔女契約に使用できる。&lt;/color&gt;"/>
+	<item id="20008" name="魔女の衣服" icon="item001/20008" rare="R" category="道具" function="物品" end_date="2026/06/03 11:00:00" convert_item_id="5" convert_item_num="1" get_shop_1="無" description="激しい戦闘の末に落ちてしまった衣服……&#xA;取り戻すためには、手段を選んでいられない！"/>
+	<item id="20009" name="帳簿" icon="item001/20009" rare="R" category="道具" function="物品" end_date="2026/06/10 11:00:00" convert_item_id="5" convert_item_num="1" get_shop_1="無" description="びっしりと数字や単位が書き込まれた記録帳。&#xA;どうやら公にできない秘密が記されているようだ。"/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+	<item/>
+</root>

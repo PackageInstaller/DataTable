@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<root>
+	<system def="玩家AP回復間隔秒數" val="180"/>
+	<system def="玩家AP每間隔回復數值" val="1"/>
+	<system def="額外獲得AP上限" val="999"/>
+	<system/>
+	<system def="玩家BP回復間隔秒數" val="3600"/>
+	<system def="玩家BP每間隔回復數值" val="1"/>
+	<system def="玩家BP上限" val="20"/>
+	<system def="玩家升級獲得BP" val="1"/>
+	<system/>
+	<system def="客戶端遊戲幣最大顯示數" val="999999999"/>
+	<system/>
+	<system/>
+	<system def="R級角色初始等級上限" val="30"/>
+	<system def="SR級角色初始等級上限" val="40"/>
+	<system def="SSR級角色初始等級上限" val="50"/>
+	<system def="初始突破次數" val="4"/>
+	<system def="最大突破次數" val="4"/>
+	<system def="突破後增加的等級上限" val="10"/>
+	<system def="覺醒後增加的等級上限" val="10"/>
+	<system/>
+	<system def="GP等級突破階段1等級" val="4"/>
+	<system def="GP等級突破階段2等級" val="9"/>
+	<system def="最大GP等級" val="10"/>
+	<system/>
+	<system def="目前最大GRADE" val="10"/>
+	<system def="裝備RankUp提升等級上限" val="10"/>
+	<system def="裝備強化每經驗消耗遊戲幣" val="0"/>
+	<system def="裝備持有數量限制" val="500"/>
+	<system def="商品購買上限" val="10000"/>
+	<system def="裝備套組新增上限" val="20"/>
+	<system/>
+	<system def="好友人數上限" val="40"/>
+	<system def="贈與好友遊戲幣" val="1000"/>
+	<system def="按讚好友獲得AP值" val="1"/>
+	<system def="黑名單人數上限" val="30"/>
+	<system/>
+	<system def="玩家開啟Raid數量上限" val="3"/>
+	<system def="Raid排行最大頁數" val="20"/>
+	<system def="Raid戰英雄奧義傷害加成倍數" val="2"/>
+	<system/>
+	<system def="任務每日隨機數量" val="4"/>
+	<system def="活躍任務每日隨機數量" val="30"/>
+	<system def="每日活躍度獎勵特殊數值ID" val="2301"/>
+	<system/>
+	<system def="戰鬥通行證隨機每日數量" val="10"/>
+	<system def="戰鬥通行證等級商品群組" val="2401"/>
+	<system/>
+	<system def="關卡掃蕩道具ID" val="5"/>
+	<system def="公會硬幣道具ID" val="6"/>
+	<system def="通用角色碎片道具ID" val="12"/>
+	<system def="商城1抽轉蛋卷道具ID" val="1401"/>
+	<system def="商城10抽轉蛋卷道具ID" val="1402"/>
+	<system def="遊戲幣道具ID" val="71"/>
+	<system def="商城幣道具ID" val="72"/>
+	<system def="玩家經驗道具ID" val="73"/>
+	<system def="AP道具ID" val="74"/>
+	<system def="BP道具ID" val="81"/>
+	<system def="PVP硬幣道具ID" val="4"/>
+	<system def="大型PVP硬幣道具ID" val="4"/>
+	<system def="空之玉道具ID" val="76"/>
+	<system def="古代硬幣道具ID" val="7"/>
+	<system def="角色經驗道具ID" val="77"/>
+	<system def="活動爬塔次數道具ID" val="78"/>
+	<system def="裝備幣道具ID" val="514"/>
+	<system def="探索欄位道具ID" val="70"/>
+	<system def="資源收集探索票道具ID" val="101"/>
+	<system def="通用R裝備RANK提升道具ID" val="1111"/>
+	<system def="通用SR裝備RANK提升道具ID" val="1112"/>
+	<system def="通用SSR裝備RANK提升道具ID" val="1113"/>
+	<system def="通用R裝備RANK提升合成特殊數值" val="2031"/>
+	<system def="通用SR裝備RANK提升合成特殊數值" val="2032"/>
+	<system def="通用SSR裝備RANK提升合成特殊數值" val="2033"/>
+	<system def="探索掉落角色碎片說明道具ID" val="15"/>
+	<system def="回歸活動新手點數道具ID" val="16"/>
+	<system def="回歸活動回歸點數道具ID" val="17"/>
+	<system def="解放記錄章節英雄道具ID" val="19"/>
+	<system def="素材轉換安定劑道具ID" val="20"/>
+	<system def="特殊突破道具ID" val="6802"/>
+	<system/>
+	<system def="碎片溢出時轉換道具ID" val="11"/>
+	<system def="R級角色碎片溢出轉換比" val="1"/>
+	<system def="SR級角色碎片溢出轉換比" val="5"/>
+	<system def="SSR級角色碎片溢出轉換比" val="25"/>
+	<system/>
+	<system def="SKIN道具天數轉換比" val="100"/>
+	<system/>
+	<system def="自選PU召喚獲得額外碎片數" val="50"/>
+	<system def="自選PU交換所獲得額外碎片數" val="100"/>
+	<system/>
+	<system def="基礎角色數限制" val="150"/>
+	<system def="基礎道具數限制" val="1000"/>
+	<system/>
+	<system/>
+	<system def="AP回復商品群組" val="101"/>
+	<system def="AP回復優惠開始時間" val="2025/09/19 03:00:00"/>
+	<system def="AP回復優惠結束時間" val="2025/09/26 03:00:00"/>
+	<system def="AP回復優惠商品群組" val="102"/>
+	<system def="AP回復優惠額度" val="50"/>
+	<system/>
+	<system def="BP回復商品群組" val="201"/>
+	<system def="BP回復優惠開始時間" val="2025/09/19 03:00:00"/>
+	<system def="BP回復優惠結束時間" val="2025/09/26 03:00:00"/>
+	<system def="BP回復優惠商品群組" val="202"/>
+	<system def="BP回復優惠額度" val="50"/>
+	<system/>
+	<system def="道具欄位擴充商品群組" val="1101"/>
+	<system def="裝備持有數擴充商品群組" val="1111"/>
+	<system def="飾品持有數擴充商品群組" val="1121"/>
+	<system def="斬裝備套組擴充商品群組" val="1131"/>
+	<system def="打裝備套組擴充商品群組" val="1136"/>
+	<system def="突裝備套組擴充商品群組" val="1141"/>
+	<system def="射裝備套組擴充商品群組" val="1146"/>
+	<system def="投裝備套組擴充商品群組" val="1151"/>
+	<system def="共通裝備套組擴充商品群組" val="1156"/>
+	<system/>
+	<system def="資源收集重置商品群組" val="501"/>
+	<system def="資源收集重置優惠開始時間" val="2025/09/05 03:00:00"/>
+	<system def="資源收集重置優惠結束時間" val="2025/09/12 03:00:00"/>
+	<system def="資源收集重置優惠商品群組" val="502"/>
+	<system def="資源收集重置優惠額度" val="50"/>
+	<system/>
+	<system def="遊戲幣購買商品群組" val="701"/>
+	<system def="簽到簿補簽商品群組" val="2201"/>
+	<system def="簽到簿月卡補簽商品群組" val="2211"/>
+	<system def="簽到簿無月卡補簽商品群組" val="2221"/>
+	<system def="遺跡重置商品群組" val="601"/>
+	<system def="探索加速商品編號" val="1601"/>
+	<system def="PVP次數商品群組" val="1801"/>
+	<system def="大型PVP次數商品群組" val="1901"/>
+	<system def="期間PVP次數商品群組" val="2001"/>
+	<system def="期間大型PVP次數商品群組" val="2101"/>
+	<system def="限界戰次數商品群組" val="2301"/>
+	<system def="無雙模式次數商品群組" val="2601"/>
+	<system def="頭目連戰次數商品群組" val="2701"/>
+	<system def="寶藏獵人次數商品群組" val="2701"/>
+	<system def="遠征加速商品編號" val="1601"/>
+	<system/>
+	<system def="每日登入禮ID" val="1"/>
+	<system def="每日登入禮重製天數" val="7"/>
+	<system/>
+	<system def="簽到簿補簽開關" val="true"/>
+	<system/>
+	<system/>
+	<system def="資源收集最大重置次數" val="3"/>
+	<system def="遺跡最大重置次數" val="3"/>
+	<system/>
+	<system/>
+	<system def="Grade限制_主動技能1" val="0"/>
+	<system def="Grade限制_主動技能2" val="0"/>
+	<system def="UB限制_被動技能1" val="3"/>
+	<system def="UB限制_被動技能2" val="5"/>
+	<system/>
+	<system def="UB等級上限" val="5"/>
+	<system def="覺醒提升UB等級上限" val="1"/>
+	<system/>
+	<system def="記憶解放Lv1升2需求量" val="50"/>
+	<system def="記憶解放Lv2升3需求量" val="100"/>
+	<system def="記憶解放Lv3升4需求量" val="200"/>
+	<system def="記憶解放Lv4升5需求量" val="350"/>
+	<system def="記憶解放Lv5升6需求道具ID" val="12"/>
+	<system def="記憶解放Lv5升6需求量" val="5000"/>
+	<system/>
+	<system def="吸血基礎參數" val="100"/>
+	<system def="吸血敵方等級參數" val="6"/>
+	<system/>
+	<system def="物理坦克_五角換算參數_HP" val="0.0015625"/>
+	<system def="物理坦克_五角換算參數_物攻" val="0.022321"/>
+	<system def="物理坦克_五角換算參數_物防" val="0.078125"/>
+	<system def="物理坦克_五角換算參數_魔防" val="0.078125"/>
+	<system def="物理坦克_五角換算參數_格擋" val="0.15625"/>
+	<system def="物理坦克_五角換算參數_速度" val="0.15625"/>
+	<system/>
+	<system def="魔法坦克_五角換算參數_HP" val="0.0015625"/>
+	<system def="魔法坦克_五角換算參數_魔攻" val="0.022321"/>
+	<system def="魔法坦克_五角換算參數_物防" val="0.078125"/>
+	<system def="魔法坦克_五角換算參數_魔防" val="0.078125"/>
+	<system def="魔法坦克_五角換算參數_格擋" val="0.15625"/>
+	<system def="魔法坦克_五角換算參數_速度" val="0.15625"/>
+	<system/>
+	<system def="物理輸出_五角換算參數_HP" val="0.0026785"/>
+	<system def="物理輸出_五角換算參數_物攻" val="0.013392"/>
+	<system def="物理輸出_五角換算參數_物爆" val="0.059593"/>
+	<system def="物理輸出_五角換算參數_MP回復" val="0.313"/>
+	<system def="物理輸出_五角換算參數_格檔" val="0.15625"/>
+	<system def="物理輸出_五角換算參數_速度" val="0.15625"/>
+	<system/>
+	<system def="魔法輸出_五角換算參數_HP" val="0.0026785"/>
+	<system def="魔法輸出_五角換算參數_魔攻" val="0.013392"/>
+	<system def="魔法輸出_五角換算參數_魔爆" val="0.059593"/>
+	<system def="魔法輸出_五角換算參數_MP回復" val="0.313"/>
+	<system def="魔法輸出_五角換算參數_格檔" val="0.15625"/>
+	<system def="魔法輸出_五角換算參數_速度" val="0.15625"/>
+	<system/>
+	<system def="物理輔助_五角換算參數_HP" val="0.0026785"/>
+	<system def="物理輔助_五角換算參數_物攻" val="0.023437"/>
+	<system def="物理輔助_五角換算參數_治癒" val="0.134928"/>
+	<system def="物理輔助_五角換算參數_MP回復" val="0.208"/>
+	<system def="物理輔助_五角換算參數_格檔" val="0.15625"/>
+	<system def="物理輔助_五角換算參數_速度" val="0.15625"/>
+	<system/>
+	<system def="魔法輔助_五角換算參數_HP" val="0.0026785"/>
+	<system def="魔法輔助_五角換算參數_魔攻" val="0.023437"/>
+	<system def="魔法輔助_五角換算參數_治癒" val="0.134928"/>
+	<system def="魔法輔助_五角換算參數_MP回復" val="0.208"/>
+	<system def="魔法輔助_五角換算參數_格檔" val="0.15625"/>
+	<system def="魔法輔助_五角換算參數_速度" val="0.15625"/>
+	<system/>
+	<system def="敵人物理_五角換算參數_格檔" val="0.2678571"/>
+	<system def="敵人物理_五角換算參數_物攻" val="0.0234375"/>
+	<system def="敵人物理_五角換算參數_物爆" val="0.09375"/>
+	<system def="敵人物理_五角換算參數_物防" val="0.0234375"/>
+	<system def="敵人物理_五角換算參數_魔防" val="0.0234375"/>
+	<system def="敵人物理_五角換算參數_速度" val="0.15625"/>
+	<system/>
+	<system def="敵人魔法_五角換算參數_格檔" val="0.2678571"/>
+	<system def="敵人魔法_五角換算參數_魔攻" val="0.0234375"/>
+	<system def="敵人魔法_五角換算參數_魔爆" val="0.09375"/>
+	<system def="敵人魔法_五角換算參數_物防" val="0.0234375"/>
+	<system def="敵人魔法_五角換算參數_魔防" val="0.0234375"/>
+	<system def="敵人魔法_五角換算參數_速度" val="0.15625"/>
+	<system/>
+	<system def="戰力計算調整參數_HP" val="0.1"/>
+	<system def="戰力計算調整參數_攻擊" val="0.6"/>
+	<system def="戰力計算調整參數_防禦" val="2"/>
+	<system def="戰力計算調整參數_速度" val="1"/>
+	<system def="戰力計算調整參數_命中" val="2"/>
+	<system def="戰力計算調整參數_迴避" val="4"/>
+	<system def="戰力計算調整參數_爆擊" val="0.5"/>
+	<system def="戰力計算調整參數_HP波數回復" val="0.1"/>
+	<system def="戰力計算調整參數_MP波數回復" val="0.3"/>
+	<system def="戰力計算調整參數_HP吸收" val="4.5"/>
+	<system def="戰力計算調整參數_治癒力" val="1"/>
+	<system def="戰力計算調整參數_MP回復" val="1.5"/>
+	<system def="戰力計算調整參數_MP消耗減輕" val="3"/>
+	<system def="戰力計算調整參數_技能等級合計" val="10"/>
+	<system def="戰力計算調整參數_突破達4時" val="150"/>
+	<system/>
+	<system/>
+	<system def="公會退出限制分鐘數" val="360"/>
+	<system def="公會創建遊戲幣" val="100000"/>
+	<system def="公會申請加入數限制" val="20"/>
+	<system def="公會邀請加入數限制" val="20"/>
+	<system def="公會戰每日戰鬥次數" val="3"/>
+	<system def="公會戰加成傷害狀態ID" val="5"/>
+	<system def="公會戰減傷傷害狀態ID" val="4"/>
+	<system def="公會戰硬幣加成倍率" val="0.1"/>
+	<system def="公會戰排行最大頁數" val="20"/>
+	<system def="公會訊息捐贈每人數量上限" val="2"/>
+	<system def="公會訊息捐贈總數量上限" val="10"/>
+	<system def="公會訊息捐贈獎勵道具ID" val="0"/>
+	<system/>
+	<system/>
+	<system def="神秘商店出現機率" val="0"/>
+	<system def="神秘商店出現機率累加值" val="0.01"/>
+	<system def="神秘商店關閉時間" val="30"/>
+	<system def="神秘商店每日出現次數上限" val="5"/>
+	<system/>
+	<system/>
+	<system def="創角背景" val="mainbg-1/背景_主介面"/>
+	<system def="創角英雄群組ID" val="42"/>
+	<system def="導引轉蛋ID" val="3"/>
+	<system/>
+	<system/>
+	<system def="紀錄英雄群組ID" val="2014"/>
+	<system/>
+	<system/>
+	<system def="首次戰敗贈送道具特殊數值ID" val="2401"/>
+	<system def="裝備強化贈送道具特殊數值ID" val="101"/>
+	<system/>
+	<system/>
+	<system def="好感度道具ID1" val="901"/>
+	<system def="好感度道具ID2" val="902"/>
+	<system def="好感度道具ID3" val="903"/>
+	<system def="好感度道具ID4" val="904"/>
+	<system def="好感度道具ID5" val="905"/>
+	<system/>
+	<system/>
+	<system def="引繼碼有效時間長度" val="6"/>
+	<system/>
+	<system def="PVP戰鬥背景" val="Map1014/Map1014_daylight"/>
+	<system def="期間限定PVP戰鬥背景" val="Map1014/Map1014_daylight"/>
+	<system def="大型PVP戰鬥背景" val="Map1014/Map1014_evening"/>
+	<system def="期間限定大型PVP戰鬥背景" val="Map1014/Map1014_evening"/>
+	<system def="PVP編隊背景" val="WorldMapBG/WorldMapBG1014/WorldMapBG1014_Daylight"/>
+	<system def="PVP戰鬥編號" val="1"/>
+	<system def="PVP防禦冷卻分鐘數" val="5"/>
+	<system def="PVP勝利基本積分" val="200"/>
+	<system def="PVP勝利排名積分係數" val="1"/>
+	<system def="PVP勝利積分補償係數" val="0.01"/>
+	<system def="PVP失敗基本積分" val="100"/>
+	<system def="PVP失敗排名積分係數" val="0"/>
+	<system def="PVP防禦失敗基本積分" val="-30"/>
+	<system def="PVP防禦失敗排名積分係數" val="0"/>
+	<system def="PVP防禦失敗積分每日次數" val="5"/>
+	<system def="PVP防禦勝利硬幣數量" val="1"/>
+	<system def="PVP排行最大頁數" val="20"/>
+	<system/>
+	<system/>
+	<system def="PVP的預設限制" val="0"/>
+	<system def="PVP無限制的下次限制" val="0"/>
+	<system def="PVP只能物理的下次限制" val="0"/>
+	<system def="PVP只能魔法的下次限制" val="0"/>
+	<system/>
+	<system/>
+	<system def="PVP每日戰鬥次數" val="5"/>
+	<system def="大型PVP每日戰鬥次數" val="5"/>
+	<system def="PVP的SKIP功能開關" val="true"/>
+	<system/>
+	<system def="好友支援次數遊戲幣" val="1000"/>
+	<system def="好友支援分鐘遊戲幣" val="5"/>
+	<system def="好友支援獲得遊戲幣上限" val="150000"/>
+	<system def="每日好友支援次數限制" val="10"/>
+	<system/>
+	<system/>
+	<system def="每日回報玩家次數" val="3"/>
+	<system/>
+	<system/>
+	<system def="首儲禮包圖示"/>
+	<system def="首儲禮包任意額度獎勵英雄編號" val="2040"/>
+	<system def="首儲禮包任意額度獎勵道具編號1" val="3402"/>
+	<system def="首儲禮包任意額度獎勵道具數量1" val="3"/>
+	<system def="首儲禮包任意額度獎勵道具編號2" val="71"/>
+	<system def="首儲禮包任意額度獎勵道具數量2" val="30000"/>
+	<system def="首儲禮包任意額度獎勵道具編號3" val="3003"/>
+	<system def="首儲禮包任意額度獎勵道具數量3" val="3"/>
+	<system def="首儲禮包目標額度" val="120"/>
+	<system def="首儲禮包目標額度獎勵月卡編號" val="103"/>
+	<system/>
+	<system/>
+	<system def="月卡額外有效時數" val="2"/>
+	<system def="AP購買提示儲值月卡" val="com.userjoy.lm4_w"/>
+	<system def="一般提示儲值月卡" val="com.userjoy.lm4_m"/>
+	<system def="升星提示儲值月卡" val="com.userjoy.lm4_hm"/>
+	<system def="月卡續費時間限制" val="24"/>
+	<system/>
+	<system/>
+	<system def="Rank提升歸還強化道具編號" val="3801/3802/3803/3804"/>
+	<system def="Rank提升歸還強化經驗比率" val="0.8"/>
+	<system/>
+	<system/>
+	<system def="冒險者基本探索度" val="3"/>
+	<system def="角色1星額外加探索度" val="10"/>
+	<system def="角色2星額外加探索度" val="15"/>
+	<system def="角色3星額外加探索度" val="35"/>
+	<system def="角色4星額外加探索度" val="45"/>
+	<system def="角色5星額外加探索度" val="55"/>
+	<system def="探索加速經驗加倍" val="1.5"/>
+	<system/>
+	<system def="屬性遺跡關卡區域編號" val="200101/200102/200103/200104/200105/200106"/>
+	<system def="天賦遺跡關卡區域編號" val="200121/200122/200123/200124/200125/200126"/>
+	<system def="經驗藥水遺跡關卡區域編號" val="200141"/>
+	<system def="金幣遺跡關卡區域編號" val="200161"/>
+	<system def="裝備藥水遺跡關卡區域編號" val="200181"/>
+	<system/>
+	<system def="屬性遺跡消耗道具ID" val="0"/>
+	<system def="天賦遺跡消耗道具ID" val="0"/>
+	<system def="經驗藥水遺跡消耗道具ID" val="0"/>
+	<system def="金幣遺跡消耗道具ID" val="0"/>
+	<system def="裝備藥水遺跡消耗道具ID" val="0"/>
+	<system/>
+	<system def="經驗之路關卡區域編號" val="300151"/>
+	<system def="金幣之路關卡區域編號" val="300101"/>
+	<system/>
+	<system def="降臨BOSS排行最大頁數" val="10"/>
+	<system def="活動爬塔排行最大頁數" val="10"/>
+	<system def="限界排行最大頁數" val="10"/>
+	<system def="頭目連戰排行最大頁數" val="10"/>
+	<system/>
+	<system def="角色蒐集排行最大頁數" val="20"/>
+	<system def="記憶最大解放排行最大頁數" val="20"/>
+	<system def="戰力排行最大頁數" val="20"/>
+	<system/>
+	<system def="屬性相剋倍率" val="0.25"/>
+	<system/>
+	<system def="初始角色ID1" val="2042"/>
+	<system def="初始角色ID2" val="2040"/>
+	<system def="初始角色ID3" val="2022"/>
+	<system def="初始角色ID4" val="0"/>
+	<system def="初始角色ID5" val="0"/>
+	<system def="初始角色ID6" val="0"/>
+	<system/>
+	<system def="初始陣型1" val="1"/>
+	<system def="初始陣型2" val="0"/>
+	<system def="初始陣型3" val="0"/>
+	<system def="初始陣型4" val="0"/>
+	<system def="初始陣型5" val="0"/>
+	<system/>
+	<system def="初始副官英雄群組ID" val="2054"/>
+	<system def="初始玩家技能ID" val="80101"/>
+	<system/>
+	<system def="PVP分組數量" val="10"/>
+	<system def="PVP排名群組" val="201"/>
+	<system def="大型PVP分組數量" val="10"/>
+	<system def="大型PVP排名群組" val="204"/>
+	<system def="公會戰排名群組" val="110"/>
+	<system def="PVP歷史積分群組" val="202"/>
+	<system def="PVP積分群組" val="203"/>
+	<system def="大型PVP歷史積分群組" val="205"/>
+	<system def="大型PVP積分群組" val="206"/>
+	<system/>
+	<system/>
+	<system def="飾品副屬性最大數量" val="4"/>
+	<system def="飾品強化等級上限" val="20"/>
+	<system def="飾品副屬性強化等級量" val="4"/>
+	<system def="飾品強化經驗轉換比" val="0.75"/>
+	<system def="飾品持有數量限制" val="1000"/>
+	<system/>
+	<system def="每日重置時間" val="03:00"/>
+	<system/>
+	<system def="無雙排行最大頁數" val="10"/>
+	<system def="無雙每隊戰鬥時間" val="120"/>
+	<system/>
+	<system def="有償點數到期天數" val="180"/>
+	<system/>
+	<system/>
+	<system def="壓測模式開關" val="false"/>
+	<system/>
+	<system def="第二裝備開關" val="false"/>
+	<system def="PSkill鍛練開關" val="false"/>
+	<system def="公會戰開關" val=" false"/>
+	<system def="RAID自動周回開關" val="true"/>
+	<system def="公會戰測試開關" val="false"/>
+	<system def="公會戰等待時間" val="0"/>
+	<system def="公會戰補償回合數" val="10"/>
+	<system/>
+	<system def="預設前半稱號ID" val="1"/>
+	<system def="預設後半稱號ID" val="2"/>
+	<system def="預設單獨稱號ID" val="3"/>
+	<system def="稱號圖片" val="item001/0001"/>
+	<system/>
+	<system def="SSR募集背景" val="drawbg3/夕方"/>
+	<system def="募集背景1" val="drawbg4/夜"/>
+	<system def="募集背景2" val="drawbg5/夜(月明り)"/>
+	<system def="募集背景3" val="drawbg6/昼"/>
+	<system def="轉彩機率" val="0.1"/>
+	<system def="必中機率判定基數" val="10"/>
+	<system/>
+	<system/>
+	<system def="新手導引戰鬥關卡ID" val="10010100"/>
+	<system def="新手導引好感度角色" val="2022"/>
+	<system/>
+	<system def="機率提升時間" val="2027/08/10 00:00:00"/>
+	<system/>
+	<system def="演出敵方角色編號" val="2029"/>
+	<system def="演出我方角色編號" val="2029"/>
+	<system/>
+	<system def="普攻傷害加成add上限" val="0"/>
+	<system def="普攻傷害加成scale上限" val="60"/>
+	<system/>
+	<system def="技能傷害加成add上限" val="0"/>
+	<system def="技能傷害加成scale上限" val="60"/>
+	<system/>
+	<system def="奧義傷害加成add上限" val="0"/>
+	<system def="奧義傷害加成scale上限" val="60"/>
+	<system/>
+	<system/>
+	<system def="突破Lv0升1需求玩家等級" val="10"/>
+	<system def="突破Lv1升2需求玩家等級" val="20"/>
+	<system def="突破Lv2升3需求玩家等級" val="30"/>
+	<system def="突破Lv3升4需求玩家等級" val="40"/>
+	<system def="突破Lv4升5需求玩家等級" val="50"/>
+	<system def="突破Lv5升6需求玩家等級" val="60"/>
+	<system/>
+	<system def="上限突破R火屬性素材特殊數值ID" val="9000001"/>
+	<system def="上限突破SR火屬性素材特殊數值ID" val="9000002"/>
+	<system def="上限突破SSR火屬性素材特殊數值ID" val="9000003"/>
+	<system/>
+	<system def="上限突破R水屬性素材特殊數值ID" val="9000011"/>
+	<system def="上限突破SR水屬性素材特殊數值ID" val="9000012"/>
+	<system def="上限突破SSR水屬性素材特殊數值ID" val="9000013"/>
+	<system/>
+	<system def="上限突破R風屬性素材特殊數值ID" val="9000021"/>
+	<system def="上限突破SR風屬性素材特殊數值ID" val="9000022"/>
+	<system def="上限突破SSR風屬性素材特殊數值ID" val="9000023"/>
+	<system/>
+	<system def="上限突破R聖屬性素材特殊數值ID" val="9000031"/>
+	<system def="上限突破SR聖屬性素材特殊數值ID" val="9000032"/>
+	<system def="上限突破SSR聖屬性素材特殊數值ID" val="9000033"/>
+	<system/>
+	<system def="上限突破R魔屬性素材特殊數值ID" val="9000041"/>
+	<system def="上限突破SR魔屬性素材特殊數值ID" val="9000042"/>
+	<system def="上限突破SSR魔屬性素材特殊數值ID" val="9000043"/>
+	<system/>
+	<system def="上限突破R想屬性素材特殊數值ID" val="9000051"/>
+	<system def="上限突破SR想屬性素材特殊數值ID" val="9000052"/>
+	<system def="上限突破SSR想屬性素材特殊數值ID" val="9000053"/>
+	<system/>
+	<system/>
+	<system def="裝備開放需求英雄等級" val="31"/>
+	<system/>
+	<system def="飾品2格開放需求英雄等級" val="41"/>
+	<system def="飾品4格開放需求英雄等級" val="51"/>
+	<system def="飾品5格開放需求英雄等級" val="61"/>
+	<system/>
+	<system def="新角色影片名稱" val="PS8_hero_2251.mp4"/>
+	<system def="新角色影片更換時間"/>
+	<system def="新角色影片更換名稱"/>
+	<system/>
+	<system/>
+	<system def="特典序號圖示" val="item001/redemption_icon"/>
+	<system/>
+	<system def="事前活動總登入數獎勵特殊數值ID" val="70001"/>
+	<system def="事前活動總召喚數獎勵特殊數值ID" val="70002"/>
+	<system def="DGP首次登入獎勵特殊數值ID" val="70003"/>
+	<system/>
+	<system/>
+	<system def="戰鬥通行證升級按鈕顯示天數" val="30"/>
+	<system def="RAID戰撤退按鈕顯示秒數" val="30"/>
+	<system/>
+	<system def="活動通行證購買PASS提醒天數" val="3"/>
+	<system def="活動通行證解鎖獎勵功能顯示天數" val="7"/>
+	<system def="活動通行證解鎖獎勵商品群組" val="2801"/>
+	<system/>
+	<system def="回歸活動商店關閉天數" val="7"/>
+	<system def="回歸活動撈取玩家數量" val="100"/>
+	<system def="回歸活動玩家列表數量" val="15"/>
+	<system def="回歸活動撈取玩家間隔" val="5"/>
+	<system/>
+	<system def="合成頁面分類水晶素材_小_特殊數值" val="2000"/>
+	<system def="合成頁面分類水晶素材_中_特殊數值" val="2001"/>
+	<system def="合成頁面分類水晶素材_大_特殊數值" val="2002"/>
+	<system def="合成頁面分類主線素材_低_特殊數值" val="2010"/>
+	<system def="合成頁面分類主線素材_中_特殊數值" val="2011"/>
+	<system def="合成頁面分類主線素材_高_特殊數值" val="2012"/>
+	<system def="合成頁面分類天賦素材_XS_特殊數值" val="2020"/>
+	<system def="合成頁面分類天賦素材_S_特殊數值" val="2021"/>
+	<system def="合成頁面分類天賦素材_M_特殊數值" val="2022"/>
+	<system def="合成頁面分類天賦素材_L_特殊數值" val="2023"/>
+	<system/>
+	<system def="合成頁面分類水晶素材_素材變換率" val="3"/>
+	<system def="合成頁面分類水晶素材_安定劑消耗率" val="1"/>
+	<system def="合成頁面分類主線素材_素材變換率" val="3"/>
+	<system def="合成頁面分類主線素材_安定劑消耗率" val="1"/>
+	<system def="合成頁面分類天賦素材_素材變換率" val="3"/>
+	<system def="合成頁面分類天賦素材_安定劑消耗率" val="3"/>
+	<system/>
+	<system/>
+	<system def="HP天賦素材特殊數值ID" val="9100001"/>
+	<system def="物理攻擊天賦素材特殊數值ID" val="9100002"/>
+	<system def="魔法攻擊天賦素材特殊數值ID" val="9100003"/>
+	<system def="物理防禦天賦素材特殊數值ID" val="9100004"/>
+	<system def="魔法防禦天賦素材特殊數值ID" val="9100005"/>
+	<system def="SP天賦素材特殊數值ID" val="9100006"/>
+	<system/>
+	<system/>
+	<system/>
+	<system/>
+	<system def="商店背景圖路徑" val="shopbg-1/shop_bg"/>
+	<system def="商店背景英雄ID" val="2037"/>
+	<system/>
+	<system def="活動清單背景圖路徑" val="bg/bg_1_01_02_001/bg_1_01_02_001_1_00"/>
+	<system def="活動清單封面角色編號" val="2068"/>
+	<system/>
+	<system def="劇情提示開關" val="false"/>
+	<system def="劇情提示章節名稱" val="序章"/>
+	<system/>
+	<system def="巨乳日"/>
+	<system def="巨乳日補償" val="2025-08-09 00:00:00"/>
+	<system/>
+	<system def="巨乳日轉換道具ID" val="18"/>
+	<system def="巨乳日轉道道具到期時間" val="-1"/>
+	<system def="巨乳日轉換AP比率" val="1"/>
+	<system def="巨乳日轉換BP比率" val="10"/>
+	<system/>
+	<system def="巨乳日RAID增加箱數" val="1"/>
+	<system def="一括消費BP虹箱道具ID" val="9200"/>
+	<system/>
+	<system def="巨乳日每日定時體力額外倍率" val="1"/>
+	<system def="巨乳日額外倍率" val="1"/>
+	<system def="巨乳日養成優待倍率" val="0.1"/>
+	<system def="巨乳日贈送禮物群組" val="35"/>
+	<system def="巨乳日開放活動編號" val="2000"/>
+	<system def="巨乳日開放卡池編號" val="80/81/82"/>
+	<system def="巨乳日開放禮包編號" val="kyoweb_oppai_gacha1/kyoweb_oppai_gacha2/kyoweb_oppai_gacha3"/>
+	<system def="巨乳日開放BANNER編號" val="1/2/3/4/5/6/7"/>
+	<system/>
+	<system def="巨乳日資源收集重置優惠商品群組" val="502"/>
+	<system def="巨乳日資源收集重置優惠額度" val="50"/>
+	<system/>
+	<system def="巨乳日AP回復優惠商品群組" val="102"/>
+	<system def="巨乳日AP回復優惠額度" val="50"/>
+	<system/>
+	<system def="巨乳日BP回復優惠商品群組" val="202"/>
+	<system def="巨乳日BP回復優惠額度" val="50"/>
+	<system/>
+	<system def="地城EX關卡重置日期" val="1/15"/>
+	<system def="地城排行榜獎勵配布日期" val="1"/>
+	<system def="地城排行最大頁數" val="10"/>
+	<system/>
+	<system/>
+	<system def="活動巨乳月開始時間" val="2025-08-01 00:00:00"/>
+	<system def="活動巨乳月後半開始時間" val="2025-08-16 00:00:00"/>
+	<system def="活動巨乳月結束時間" val="2025-09-01 00:00:00"/>
+	<system def="活動巨乳月轉換道具ID" val="25"/>
+	<system def="活動巨乳月轉換AP比率" val="1"/>
+	<system def="活動巨乳月轉換BP比率" val="20"/>
+	<system def="活動巨乳月開放活動編號" val="3002"/>
+	<system def="活動巨乳月開放商店編號" val="5991"/>
+	<system def="活動巨乳月開放商店編號2" val="5990"/>
+	<system def="活動巨乳月道具排行獎勵ID" val="999993"/>
+	<system def="活動巨乳月後半道具排行獎勵ID" val="999994"/>
+	<system def="活動巨乳月開放任務編號" val="915"/>
+	<system def="活動巨乳月後半開放任務編號" val="916"/>
+	<system def="活動巨乳月額外倍率" val="1"/>
+	<system def="活動巨乳月養成優待倍率" val="0.2"/>
+	<system def="活動巨乳月角色養成優待上限" val="0.3"/>
+	<system def="活動巨乳月每日定時體力額外倍率" val="1"/>
+	<system/>
+	<system def="資源收集重置優惠商品群組_巨乳月加日" val="503"/>
+	<system def="資源收集重置優惠額度_巨乳月加日" val="75"/>
+	<system/>
+	<system def="AP回復優惠商品群組_巨乳月加日" val="103"/>
+	<system def="AP回復優惠額度_巨乳月加日" val="75"/>
+	<system/>
+	<system def="BP回復優惠商品群組_巨乳月加日" val="203"/>
+	<system def="BP回復優惠額度_巨乳月加日" val="75"/>
+	<system/>
+	<system def="額外倍率_巨乳月加日" val="2"/>
+	<system/>
+	<system def="召喚選擇轉盤活動編號" val="707"/>
+	<system/>
+	<system def="投票晶石使用比率" val="2"/>
+	<system def="投票晶石最低消耗量" val="5"/>
+	<system def="投票晶石投票額外倍率" val="1"/>
+	<system def="投票預測更換消耗晶石" val="50"/>
+	<system def="投票預測積分獎勵表格ID"/>
+	<system def="投票預測開始時間" val="2024-11-13 00:00:00"/>
+	<system def="投票預測結束時間" val="2024-11-16 01:00:00"/>
+	<system/>
+	<system/>
+	<system def="覺醒需求英雄等級" val="100"/>
+	<system def="覺醒需求英雄Grade" val="10"/>
+	<system def="覺醒需求英雄好感度" val="4"/>
+	<system/>
+	<system/>
+	<system def="儲值表特殊頁籤開始時間" val="2025-09-10 11:00:00"/>
+	<system def="儲值表特殊頁籤結束時間" val="2025-09-25 11:00:00"/>
+	<system/>
+	<system/>
+	<system def="RAID救援額外增加箱數" val="1"/>
+	<system def="RAID救援額外增加箱數開始時間" val="2025-04-24 11:00:00"/>
+	<system def="RAID救援額外增加箱數結束時間" val="2025-05-08 11:00:00"/>
+	<system/>
+	<system def="重置加值消耗道具ID"/>
+	<system def="重置加值消耗道具數量"/>
+	<system/>
+	<system def="愚人節招募ID" val="9999999"/>
+	<system/>
+	<system def="遠征同時可派出隊伍數量" val="3"/>
+	<system def="遠征基礎COST" val="10"/>
+	<system def="遠征屬性克制增傷倍率" val="10"/>
+	<system def="遠征屬性非克制減傷倍率" val="0"/>
+	<system def="遠征屬性被克制減傷倍率" val="10"/>
+	<system def="整隊同屬性增傷倍率" val="10"/>
+	<system def="整隊同攻擊類型增傷倍率" val="10"/>
+	<system/>
+	<system def="屬性塔重置週期" val="星期一"/>
+	<system def="屬性塔角色使用次數上限" val="1"/>
+	<system def="常駐屬性塔開放時間" val="星期五/星期六/星期日"/>
+	<system def="常駐屬性塔" val="910001"/>
+</root>

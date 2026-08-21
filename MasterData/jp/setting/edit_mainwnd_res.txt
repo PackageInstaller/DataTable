@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<root>
+	<edit_mainwnd_res id="1" name="主人公領館　外観" res_type="背景" res_path1="mainset-bg001/bg_1_01_01_001_1_00" res_path2="bg/bg_1_01_01_001/bg_1_01_01_001_1_00" open="true"/>
+	<edit_mainwnd_res id="2" name="主人公領館　領主の部屋" res_type="背景" res_path1="mainset-bg001/bg_1_01_01_002_1_00" res_path2="bg/bg_1_01_01_002/bg_1_01_01_002_1_00" open="true"/>
+	<edit_mainwnd_res id="3" name="主人公領館　大広間" res_type="背景" res_path1="mainset-bg001/bg_1_01_01_003_1_00" res_path2="bg/bg_1_01_01_003/bg_1_01_01_003_1_00" open="true"/>
+	<edit_mainwnd_res id="4" name="主人公領館　応接間" res_type="背景" res_path1="mainset-bg001/bg_1_01_01_004_1_00" res_path2="bg/bg_1_01_01_004/bg_1_01_01_004_1_00" open="true"/>
+	<edit_mainwnd_res id="5" name="主人公領館　廊下" res_type="背景" res_path1="mainset-bg001/bg_1_01_01_009_1_00" res_path2="bg/bg_1_01_01_009/bg_1_01_01_009_1_00" open="true"/>
+	<edit_mainwnd_res id="6" name="商都ヴェルン　城　遠景" res_type="背景" res_path1="mainset-bg001/bg_1_01_02_001_1_00" res_path2="bg/bg_1_01_02_001/bg_1_01_02_001_1_00" open="false"/>
+	<edit_mainwnd_res id="7" name="商都ヴェルン　城　謁見の間" res_type="背景" res_path1="mainset-bg001/bg_1_01_02_002_1_00" res_path2="bg/bg_1_01_02_002/bg_1_01_02_002_1_00" open="false"/>
+	<edit_mainwnd_res id="8" name="商都ヴェルン　城下町" res_type="背景" res_path1="mainset-bg001/bg_1_01_02_003_1_00" res_path2="bg/bg_1_01_02_003/bg_1_01_02_003_1_00" open="false"/>
+	<edit_mainwnd_res id="9" name="武都ディミニオン　城　遠景" res_type="背景" res_path1="mainset-bg001/bg_1_01_03_001_1_00" res_path2="bg/bg_1_01_03_001/bg_1_01_03_001_1_00" open="false"/>
+	<edit_mainwnd_res id="10" name="武都ディミニオン　城　謁見の間" res_type="背景" res_path1="mainset-bg001/bg_1_01_03_002_1_00" res_path2="bg/bg_1_01_03_002/bg_1_01_03_002_1_00" open="false"/>
+	<edit_mainwnd_res id="11" name="武都ディミニオン　城下町" res_type="背景" res_path1="mainset-bg001/bg_1_01_03_003_1_00" res_path2="bg/bg_1_01_03_003/bg_1_01_03_003_1_00" open="false"/>
+	<edit_mainwnd_res id="12" name="聖都ノルン　遠景" res_type="背景" res_path1="mainset-bg001/bg_1_01_04_001_1_00" res_path2="bg/bg_1_01_04_001/bg_1_01_04_001_1_00" open="false"/>
+	<edit_mainwnd_res id="13" name="聖都ノルン　大神殿　謁見の間" res_type="背景" res_path1="mainset-bg001/bg_1_01_04_002_1_00" res_path2="bg/bg_1_01_04_002/bg_1_01_04_002_1_00" open="false"/>
+	<edit_mainwnd_res id="14" name="聖都ノルン　街中" res_type="背景" res_path1="mainset-bg001/bg_1_01_04_003_1_00" res_path2="bg/bg_1_01_04_003/bg_1_01_04_003_1_00" open="false"/>
+	<edit_mainwnd_res id="15" name="鉱都ガルカ　首都　遠景" res_type="背景" res_path1="mainset-bg001/bg_1_01_05_001_1_00" res_path2="bg/bg_1_01_05_001/bg_1_01_05_001_1_00" open="false"/>
+	<edit_mainwnd_res id="16" name="鉱都ガルカ　ギルドハウス広間" res_type="背景" res_path1="mainset-bg001/bg_1_01_05_002_1_00" res_path2="bg/bg_1_01_05_002/bg_1_01_05_002_1_00" open="false"/>
+	<edit_mainwnd_res id="17" name="鉱都ガルカ　首都　街中" res_type="背景" res_path1="mainset-bg001/bg_1_01_05_003_1_00" res_path2="bg/bg_1_01_05_003/bg_1_01_05_003_1_00" open="false"/>
+	<edit_mainwnd_res id="18" name="牧都ラクティス　首都　遠景" res_type="背景" res_path1="mainset-bg001/bg_1_01_06_001_1_00" res_path2="bg/bg_1_01_06_001/bg_1_01_06_001_1_00" open="false"/>
+	<edit_mainwnd_res id="19" name="牧都ラクティス　ギルドハウス広間" res_type="背景" res_path1="mainset-bg001/bg_1_01_06_002_1_00" res_path2="bg/bg_1_01_06_002/bg_1_01_06_002_1_00" open="false"/>
+	<edit_mainwnd_res id="20" name="牧都ラクティス　首都　街中" res_type="背景" res_path1="mainset-bg001/bg_1_01_06_003_1_00" res_path2="bg/bg_1_01_06_003/bg_1_01_06_003_1_00" open="false"/>
+	<edit_mainwnd_res id="21" name="農都ファエ　首都　遠景" res_type="背景" res_path1="mainset-bg001/bg_1_01_07_001_1_00" res_path2="bg/bg_1_01_07_001/bg_1_01_07_001_1_00" open="false"/>
+	<edit_mainwnd_res id="22" name="農都ファエ　ギルドハウス広間" res_type="背景" res_path1="mainset-bg001/bg_1_01_07_002_1_00" res_path2="bg/bg_1_01_07_002/bg_1_01_07_002_1_00" open="false"/>
+	<edit_mainwnd_res id="23" name="農都ファエ　首都　街中" res_type="背景" res_path1="mainset-bg001/bg_1_01_07_003_1_00" res_path2="bg/bg_1_01_07_003/bg_1_01_07_003_1_00" open="false"/>
+	<edit_mainwnd_res id="24" name="教会" res_type="背景" res_path1="mainset-bg001/bg_2_01_01_001_1_00" res_path2="bg/bg_2_01_01_001/bg_2_01_01_001_1_00" open="false"/>
+	<edit_mainwnd_res id="25" name="砂浜" res_type="背景" res_path1="mainset-bg001/bg_2_01_01_002_2_00" res_path2="bg/bg_2_01_01_002/bg_2_01_01_002_2_00" open="false"/>
+	<edit_mainwnd_res id="26" name="平原の川" res_type="背景" res_path1="mainset-bg001/bg_2_01_01_005_1_00" res_path2="bg/bg_2_01_01_005/bg_2_01_01_005_1_00" open="false"/>
+	<edit_mainwnd_res id="27" name="密林の滝" res_type="背景" res_path1="mainset-bg001/bg_2_01_01_018_1_00" res_path2="bg/bg_2_01_01_018/bg_2_01_01_018_1_00" open="false"/>
+	<edit_mainwnd_res id="28" name="港" res_type="背景" res_path1="mainset-bg001/bg_2_01_01_027_1_00" res_path2="bg/bg_2_01_01_027/bg_2_01_01_027_1_00" open="false"/>
+	<edit_mainwnd_res id="29" name="酒場" res_type="背景" res_path1="mainset-bg001/bg_2_01_01_036_3_00" res_path2="bg/bg_2_01_01_036/bg_2_01_01_036_3_00" open="false"/>
+	<edit_mainwnd_res id="30" name="日当たりが良い森" res_type="背景" res_path1="mainset-bg001/bg_2_01_01_039_1_00" res_path2="bg/bg_2_01_01_039/bg_2_01_01_039_1_00" open="false"/>
+	<edit_mainwnd_res id="31" name="主人公領付近の街道" res_type="背景" res_path1="mainset-bg001/bg_2_01_01_042_1_00" res_path2="bg/bg_2_01_01_042/bg_2_01_01_042_1_00" open="false"/>
+	<edit_mainwnd_res id="32" name="主人公領の村" res_type="背景" res_path1="mainset-bg001/bg_2_01_01_044_1_00" res_path2="bg/bg_2_01_01_044/bg_2_01_01_044_1_00" open="false"/>
+	<edit_mainwnd_res id="33" name="主人公領の町　教会" res_type="背景" res_path1="mainset-bg001/bg_2_01_01_052_1_00" res_path2="bg/bg_2_01_01_052/bg_2_01_01_052_1_00" open="false"/>
+	<edit_mainwnd_res id="34" name="城の廊下" res_type="背景" res_path1="mainset-bg001/bg_2_01_01_056_1_00" res_path2="bg/bg_2_01_01_056/bg_2_01_01_056_1_00" open="false"/>
+	<edit_mainwnd_res id="35" name="平原" res_type="背景" res_path1="mainset-bg001/bg_2_01_01_058_1_00" res_path2="bg/bg_2_01_01_058/bg_2_01_01_058_1_00" open="false"/>
+	<edit_mainwnd_res id="36" name="森の奥地" res_type="背景" res_path1="mainset-bg001/bg_2_01_01_059_1_00" res_path2="bg/bg_2_01_01_059/bg_2_01_01_059_1_00" open="false"/>
+	<edit_mainwnd_res id="37" name="エーデルラント王宮前" res_type="背景" res_path1="mainset-bg001/bg_4_02_01_001_5_00" res_path2="bg/bg_4_02_01_001/bg_4_02_01_001_5_00" open="false"/>
+	<edit_mainwnd_res id="38" name="エーデルラント王宮　謁見の間" res_type="背景" res_path1="mainset-bg001/bg_4_02_01_003_1_00" res_path2="bg/bg_4_02_01_003/bg_4_02_01_003_1_00" open="false"/>
+	<edit_mainwnd_res id="39" name="エーデルラント王宮　王の部屋" res_type="背景" res_path1="mainset-bg001/bg_4_02_01_004_1_00" res_path2="bg/bg_4_02_01_004/bg_4_02_01_004_1_00" open="false"/>
+	<edit_mainwnd_res id="40" name="エーデルラント王宮　王女のプール" res_type="背景" res_path1="mainset-bg001/bg_4_02_01_005_1_00" res_path2="bg/bg_4_02_01_005/bg_4_02_01_005_1_00" open="false"/>
+	<edit_mainwnd_res id="41" name="エーデルラント王宮　リュートの部屋" res_type="背景" res_path1="mainset-bg001/bg_4_02_01_007_1_00" res_path2="bg/bg_4_02_01_007/bg_4_02_01_007_1_00" open="false"/>
+	<edit_mainwnd_res id="42" name="ボーアン城　大広間" res_type="背景" res_path1="mainset-bg001/bg_4_02_01_010_1_00" res_path2="bg/bg_4_02_01_010/bg_4_02_01_010_1_00" open="false"/>
+	<edit_mainwnd_res id="43" name="ボーアン城　リュートの部屋" res_type="背景" res_path1="mainset-bg001/bg_4_02_01_014_1_00" res_path2="bg/bg_4_02_01_014/bg_4_02_01_014_1_00" open="false"/>
+	<edit_mainwnd_res id="44" name="ビュステンハルター城　遠景" res_type="背景" res_path1="mainset-bg001/bg_4_02_01_016_1_00" res_path2="bg/bg_4_02_01_016/bg_4_02_01_016_1_00" open="false"/>
+	<edit_mainwnd_res id="45" name="ビュステンハルター城　大広間" res_type="背景" res_path1="mainset-bg001/bg_4_02_01_018_1_00" res_path2="bg/bg_4_02_01_018/bg_4_02_01_018_1_00" open="false"/>
+	<edit_mainwnd_res id="46" name="ビュステンハルター城　リュートの部屋" res_type="背景" res_path1="mainset-bg001/bg_4_02_01_020_1_00" res_path2="bg/bg_4_02_01_020/bg_4_02_01_020_1_00" open="false"/>
+	<edit_mainwnd_res id="47" name="ビュステンハルター　町中" res_type="背景" res_path1="mainset-bg001/bg_4_02_01_021_1_00" res_path2="bg/bg_4_02_01_021/bg_4_02_01_021_1_00" open="false"/>
+	<edit_mainwnd_res id="48" name="オスタシア王宮　謁見の間" res_type="背景" res_path1="mainset-bg001/bg_4_02_02_001_1_00" res_path2="bg/bg_4_02_02_001/bg_4_02_02_001_1_00" open="false"/>
+	<edit_mainwnd_res id="49" name="オスタシア王宮　全景" res_type="背景" res_path1="mainset-bg001/bg_4_02_02_003_1_00" res_path2="bg/bg_4_02_02_003/bg_4_02_02_003_1_00" open="false"/>
+	<edit_mainwnd_res id="50" name="東方教会オスタシア大聖堂" res_type="背景" res_path1="mainset-bg001/bg_4_02_02_005_1_00" res_path2="bg/bg_4_02_02_005/bg_4_02_02_005_1_00" open="false"/>
+	<edit_mainwnd_res id="51" name="東方教会オスタシア大聖堂　内部" res_type="背景" res_path1="mainset-bg001/bg_4_02_02_006_1_00" res_path2="bg/bg_4_02_02_006/bg_4_02_02_006_1_00" open="false"/>
+	<edit_mainwnd_res id="52" name="スルタン帝国宮殿　謁見の間" res_type="背景" res_path1="mainset-bg001/bg_4_02_03_002_1_00" res_path2="bg/bg_4_02_03_002/bg_4_02_03_002_1_00" open="false"/>
+	<edit_mainwnd_res id="53" name="リンゴバルト宮殿　全景" res_type="背景" res_path1="mainset-bg001/bg_4_02_04_001_1_00" res_path2="bg/bg_4_02_04_001/bg_4_02_04_001_1_00" open="false"/>
+	<edit_mainwnd_res id="54" name="リンゴバルト宮殿　国王の部屋" res_type="背景" res_path1="mainset-bg001/bg_4_02_04_002_1_00" res_path2="bg/bg_4_02_04_002/bg_4_02_04_002_1_00" open="false"/>
+	<edit_mainwnd_res id="55" name="ヒルズランド海賊船　甲板" res_type="背景" res_path1="mainset-bg001/bg_4_02_05_004_1_00" res_path2="bg/bg_4_02_05_004/bg_4_02_05_004_1_00" open="false"/>
+	<edit_mainwnd_res id="56" name="バカチン教国本部　大聖堂" res_type="背景" res_path1="mainset-bg001/bg_4_02_06_001_1_00" res_path2="bg/bg_4_02_06_001/bg_4_02_06_001_1_00" open="false"/>
+	<edit_mainwnd_res id="57" name="デセール宮殿　全景" res_type="背景" res_path1="mainset-bg001/bg_4_02_07_001_1_00" res_path2="bg/bg_4_02_07_001/bg_4_02_07_001_1_00" open="false"/>
+	<edit_mainwnd_res id="58" name="デセール宮殿　謁見の間" res_type="背景" res_path1="mainset-bg001/bg_4_02_07_004_1_00" res_path2="bg/bg_4_02_07_004/bg_4_02_07_004_1_00" open="false"/>
+	<edit_mainwnd_res id="59" name="ノルドラント王宮　全景" res_type="背景" res_path1="mainset-bg001/bg_4_02_08_001_1_00" res_path2="bg/bg_4_02_08_001/bg_4_02_08_001_1_00" open="false"/>
+	<edit_mainwnd_res id="60" name="ノルドラント王宮　謁見の間" res_type="背景" res_path1="mainset-bg001/bg_4_02_08_002_1_00" res_path2="bg/bg_4_02_08_002/bg_4_02_08_002_1_00" open="false"/>
+	<edit_mainwnd_res id="61" name="ノルドラント王宮　女王の部屋" res_type="背景" res_path1="mainset-bg001/bg_4_02_08_003_1_00" res_path2="bg/bg_4_02_08_003/bg_4_02_08_003_1_00" open="false"/>
+	<edit_mainwnd_res id="62" name="イベリア王宮　全景" res_type="背景" res_path1="mainset-bg001/bg_4_02_09_001_1_00" res_path2="bg/bg_4_02_09_001/bg_4_02_09_001_1_00" open="false"/>
+	<edit_mainwnd_res id="63" name="イベリア王宮　謁見の間" res_type="背景" res_path1="mainset-bg001/bg_4_02_09_003_1_00" res_path2="bg/bg_4_02_09_003/bg_4_02_09_003_1_00" open="false"/>
+	<edit_mainwnd_res id="64" name="ボインバラ城　広間" res_type="背景" res_path1="mainset-bg001/bg_4_03_01_004_1_00" res_path2="bg/bg_4_03_01_004/bg_4_03_01_004_1_00" open="false"/>
+	<edit_mainwnd_res id="65" name="ボインバラ城　ルインの部屋" res_type="背景" res_path1="mainset-bg001/bg_4_03_01_006_1_00" res_path2="bg/bg_4_03_01_006/bg_4_03_01_006_1_00" open="false"/>
+	<edit_mainwnd_res id="66" name="モルグレー城　広間" res_type="背景" res_path1="mainset-bg001/bg_4_03_02_005_1_00" res_path2="bg/bg_4_03_02_005/bg_4_03_02_005_1_00" open="false"/>
+	<edit_mainwnd_res id="67" name="モルグレー城　ルインの部屋" res_type="背景" res_path1="mainset-bg001/bg_4_03_02_006_1_00" res_path2="bg/bg_4_03_02_006/bg_4_03_02_006_1_00" open="false"/>
+	<edit_mainwnd_res id="68" name="サキュバラ城　謁見の間" res_type="背景" res_path1="mainset-bg001/bg_4_03_02_009_1_00" res_path2="bg/bg_4_03_02_009/bg_4_03_02_009_1_00" open="false"/>
+	<edit_mainwnd_res id="69" name="シャハルの部屋" res_type="背景" res_path1="mainset-bg001/bg_4_03_02_010_1_00" res_path2="bg/bg_4_03_02_010/bg_4_03_02_010_1_00" open="false"/>
+	<edit_mainwnd_res id="70" name="グランベリー王宮前" res_type="背景" res_path1="mainset-bg001/bg_4_03_03_001_1_00" res_path2="bg/bg_4_03_03_001/bg_4_03_03_001_1_00" open="false"/>
+	<edit_mainwnd_res id="71" name="グランベリー王宮　謁見の間" res_type="背景" res_path1="mainset-bg001/bg_4_03_03_003_1_00" res_path2="bg/bg_4_03_03_003/bg_4_03_03_003_1_00" open="false"/>
+	<edit_mainwnd_res id="72" name="バスティントン　町中のトンネル" res_type="背景" res_path1="mainset-bg001/bg_4_03_06_001_1_00" res_path2="bg/bg_4_03_06_001/bg_4_03_06_001_1_00" open="false"/>
+	<edit_mainwnd_res id="73" name="バスティントン大聖堂　内部" res_type="背景" res_path1="mainset-bg001/bg_4_03_06_003_1_00" res_path2="bg/bg_4_03_06_003/bg_4_03_06_003_1_00" open="false"/>
+	<edit_mainwnd_res id="74" name="バスティントン城　大広間" res_type="背景" res_path1="mainset-bg001/bg_4_03_06_005_1_00" res_path2="bg/bg_4_03_06_005/bg_4_03_06_005_1_00" open="false"/>
+	<edit_mainwnd_res id="75" name="バスティントン城　ルインの部屋" res_type="背景" res_path1="mainset-bg001/bg_4_03_06_009_1_00" res_path2="bg/bg_4_03_06_009/bg_4_03_06_009_1_00" open="false"/>
+	<edit_mainwnd_res id="76" name="剣闘士訓練場" res_type="背景" res_path1="mainset-bg001/bg_4_04_01_006_1_00" res_path2="bg/bg_4_04_01_006/bg_4_04_01_006_1_00" open="false"/>
+	<edit_mainwnd_res id="77" name="属州都市円形闘技場地下通路" res_type="背景" res_path1="mainset-bg001/bg_4_04_01_007_1_00" res_path2="bg/bg_4_04_01_007/bg_4_04_01_007_1_00" open="false"/>
+	<edit_mainwnd_res id="78" name="属州都市円形闘技場観客席" res_type="背景" res_path1="mainset-bg001/bg_4_04_01_009_1_00" res_path2="bg/bg_4_04_01_009/bg_4_04_01_009_1_00" open="false"/>
+	<edit_mainwnd_res id="79" name="属州都市円形闘技場外観" res_type="背景" res_path1="mainset-bg001/bg_4_04_01_010_1_00" res_path2="bg/bg_4_04_01_010/bg_4_04_01_010_1_00" open="false"/>
+	<edit_mainwnd_res id="80" name="カネコネ邸　アトリウム" res_type="背景" res_path1="mainset-bg001/bg_4_04_01_013_1_00" res_path2="bg/bg_4_04_01_013/bg_4_04_01_013_1_00" open="false"/>
+	<edit_mainwnd_res id="81" name="ドロニウム大浴場" res_type="背景" res_path1="mainset-bg001/bg_4_04_01_019_1_00" res_path2="bg/bg_4_04_01_019/bg_4_04_01_019_1_00" open="false"/>
+	<edit_mainwnd_res id="82" name="ドロニウム　ユリナス神殿" res_type="背景" res_path1="mainset-bg001/bg_4_04_01_020_1_00" res_path2="bg/bg_4_04_01_020/bg_4_04_01_020_1_00" open="false"/>
+	<edit_mainwnd_res id="83" name="ユリナス神の内部" res_type="背景" res_path1="mainset-bg001/bg_4_04_01_021_1_00" res_path2="bg/bg_4_04_01_021/bg_4_04_01_021_1_00" open="false"/>
+	<edit_mainwnd_res id="84" name="ローマ　ユリナス神殿" res_type="背景" res_path1="mainset-bg001/bg_4_04_01_022_1_00" res_path2="bg/bg_4_04_01_022/bg_4_04_01_022_1_00" open="false"/>
+	<edit_mainwnd_res id="85" name="コンスタンツィア屋敷　トリクリニウム" res_type="背景" res_path1="mainset-bg001/bg_4_04_02_002_1_00" res_path2="bg/bg_4_04_02_002/bg_4_04_02_002_1_00" open="false"/>
+	<edit_mainwnd_res id="86" name="帝都フォロ・ロマーノ" res_type="背景" res_path1="mainset-bg001/bg_4_04_05_003_1_00" res_path2="bg/bg_4_04_05_003/bg_4_04_05_003_1_00" open="false"/>
+	<edit_mainwnd_res id="87" name="皇帝宮殿　謁見の間" res_type="背景" res_path1="mainset-bg001/bg_4_04_05_007_1_00" res_path2="bg/bg_4_04_05_007/bg_4_04_05_007_1_00" open="false"/>
+	<edit_mainwnd_res id="88" name="皇宮殿敷　プール" res_type="背景" res_path1="mainset-bg001/bg_4_04_05_008_1_00" res_path2="bg/bg_4_04_05_008/bg_4_04_05_008_1_00" open="false"/>
+	<edit_mainwnd_res id="89" name="アテナ屋敷の寝室１" res_type="背景" res_path1="mainset-bg001/bg_4_04_06_005_1_00" res_path2="bg/bg_4_04_06_005/bg_4_04_06_005_1_00" open="false"/>
+	<edit_mainwnd_res id="90" name="アテナ屋敷の寝室２" res_type="背景" res_path1="mainset-bg001/bg_4_04_06_006_1_00" res_path2="bg/bg_4_04_06_006/bg_4_04_06_006_1_00" open="false"/>
+	<edit_mainwnd_res id="91" name="天界のユリナスのプール" res_type="背景" res_path1="mainset-bg001/bg_4_04_06_007_1_00" res_path2="bg/bg_4_04_06_007/bg_4_04_06_007_1_00" open="false"/>
+	<edit_mainwnd_res id="92" name="天界のユリナスの寝室" res_type="背景" res_path1="mainset-bg001/bg_4_04_06_008_1_00" res_path2="bg/bg_4_04_06_008/bg_4_04_06_008_1_00" open="false"/>
+	<edit_mainwnd_res id="93" name="ウェヌス住居への桟橋" res_type="背景" res_path1="mainset-bg001/bg_4_04_06_010_1_00" res_path2="bg/bg_4_04_06_010/bg_4_04_06_010_1_00" open="false"/>
+	<edit_mainwnd_res id="94" name="ウェヌスの海中寝室" res_type="背景" res_path1="mainset-bg001/bg_4_04_06_011_1_00" res_path2="bg/bg_4_04_06_011/bg_4_04_06_011_1_00" open="false"/>
+	<edit_mainwnd_res id="95" name="タルタロス" res_type="背景" res_path1="mainset-bg001/bg_4_04_06_012_1_00" res_path2="bg/bg_4_04_06_012/bg_4_04_06_012_1_00" open="false"/>
+	<edit_mainwnd_res id="96" name="天界の崖" res_type="背景" res_path1="mainset-bg001/bg_4_04_06_013_1_00" res_path2="bg/bg_4_04_06_013/bg_4_04_06_013_1_00" open="false"/>
+	<edit_mainwnd_res id="97" name="冥界" res_type="背景" res_path1="mainset-bg001/bg_4_04_07_001_1_00" res_path2="bg/bg_4_04_07_001/bg_4_04_07_001_1_00" open="false"/>
+	<edit_mainwnd_res id="98" name="メデューサ　自宅" res_type="背景" res_path1="mainset-bg001/bg_4_04_07_003_1_00" res_path2="bg/bg_4_04_07_003/bg_4_04_07_003_1_00" open="false"/>
+	<edit_mainwnd_res id="99" name="豪華なユリナス自宅" res_type="背景" res_path1="mainset-bg001/bg_4_04_07_005_1_00" res_path2="bg/bg_4_04_07_005/bg_4_04_07_005_1_00" open="false"/>
+	<edit_mainwnd_res id="100" name="冥界宮殿・廊下" res_type="背景" res_path1="mainset-bg001/bg_4_04_07_008_1_00" res_path2="bg/bg_4_04_07_008/bg_4_04_07_008_1_00" open="false"/>
+	<edit_mainwnd_res id="101" name="修道院・聖堂" res_type="背景" res_path1="mainset-bg001/bg_4_05_01_003_1_00" res_path2="bg/bg_4_05_01_003/bg_4_05_01_003_1_00" open="false"/>
+	<edit_mainwnd_res id="102" name="修道院・写字室" res_type="背景" res_path1="mainset-bg001/bg_4_05_01_006_1_00" res_path2="bg/bg_4_05_01_006/bg_4_05_01_006_1_00" open="false"/>
+	<edit_mainwnd_res id="103" name="州長官屋敷　執務室" res_type="背景" res_path1="mainset-bg001/bg_4_05_05_003_1_00" res_path2="bg/bg_4_05_05_003/bg_4_05_05_003_1_00" open="false"/>
+	<edit_mainwnd_res id="104" name="セルギア州　アストルの屋敷前" res_type="背景" res_path1="mainset-bg001/bg_4_05_05_005_1_00" res_path2="bg/bg_4_05_05_005/bg_4_05_05_005_1_00" open="false"/>
+	<edit_mainwnd_res id="105" name="セルギア州　アストルの屋敷中庭" res_type="背景" res_path1="mainset-bg001/bg_4_05_05_006_1_00" res_path2="bg/bg_4_05_05_006/bg_4_05_05_006_1_00" open="false"/>
+	<edit_mainwnd_res id="106" name="セルギア州　アストルの部屋" res_type="背景" res_path1="mainset-bg001/bg_4_05_05_007_1_00" res_path2="bg/bg_4_05_05_007/bg_4_05_05_007_1_00" open="false"/>
+	<edit_mainwnd_res id="107" name="リガ女子修道院中庭前" res_type="背景" res_path1="mainset-bg001/bg_4_05_05_009_1_00" res_path2="bg/bg_4_05_05_009/bg_4_05_05_009_1_00" open="false"/>
+	<edit_mainwnd_res id="108" name="リトヴィア宮殿　礼拝堂" res_type="背景" res_path1="mainset-bg001/bg_4_05_06_004_1_00" res_path2="bg/bg_4_05_06_004/bg_4_05_06_004_1_00" open="false"/>
+	<edit_mainwnd_res id="109" name="リトヴィア宮殿　寝室" res_type="背景" res_path1="mainset-bg001/bg_4_05_06_008_1_00" res_path2="bg/bg_4_05_06_008/bg_4_05_06_008_1_00" open="false"/>
+	<edit_mainwnd_res id="110" name="リトヴィア宮殿　プール" res_type="背景" res_path1="mainset-bg001/bg_4_05_06_009_1_00" res_path2="bg/bg_4_05_06_009/bg_4_05_06_009_1_00" open="false"/>
+	<edit_mainwnd_res id="111" name="アルメキア謁見の間" res_type="背景" res_path1="mainset-bg001/bg_4_05_08_002_1_00" res_path2="bg/bg_4_05_08_002/bg_4_05_08_002_1_00" open="false"/>
+	<edit_mainwnd_res id="112" name="屋根裏部屋" res_type="背景" res_path1="mainset-bg001/bg_4_06_01_001_1_00" res_path2="bg/bg_4_06_01_001/bg_4_06_01_001_1_00" open="false"/>
+	<edit_mainwnd_res id="113" name="聖詩流の部屋" res_type="背景" res_path1="mainset-bg001/bg_4_06_01_005_1_00" res_path2="bg/bg_4_06_01_005/bg_4_06_01_005_1_00" open="false"/>
+	<edit_mainwnd_res id="114" name="優里亜の部屋" res_type="背景" res_path1="mainset-bg001/bg_4_06_01_006_1_00" res_path2="bg/bg_4_06_01_006/bg_4_06_01_006_1_00" open="false"/>
+	<edit_mainwnd_res id="115" name="豪邸のファサード" res_type="背景" res_path1="mainset-bg001/bg_4_06_01_008_1_00" res_path2="bg/bg_4_06_01_008/bg_4_06_01_008_1_00" open="false"/>
+	<edit_mainwnd_res id="116" name="学校の教室" res_type="背景" res_path1="mainset-bg001/bg_4_06_02_001_1_00" res_path2="bg/bg_4_06_02_001/bg_4_06_02_001_1_00" open="false"/>
+	<edit_mainwnd_res id="117" name="学校の正門" res_type="背景" res_path1="mainset-bg001/bg_4_06_02_005_1_00" res_path2="bg/bg_4_06_02_005/bg_4_06_02_005_1_00" open="false"/>
+	<edit_mainwnd_res id="118" name="学校の教会内部" res_type="背景" res_path1="mainset-bg001/bg_4_06_02_006_1_00" res_path2="bg/bg_4_06_02_006/bg_4_06_02_006_1_00" open="false"/>
+	<edit_mainwnd_res open="false"/>
+	<edit_mainwnd_res open="false"/>
+	<edit_mainwnd_res open="false"/>
+	<edit_mainwnd_res id="1001" name="騎士的日常" res_type="背景音樂" res_path2="KF1_bgm01" open="true"/>
+	<edit_mainwnd_res id="1002" name="物思い＆しんみり" res_type="背景音樂" res_path2="KF1_bgm02" open="true"/>
+	<edit_mainwnd_res id="1003" name="勇壮" res_type="背景音樂" res_path2="KF1_bgm03" open="true"/>
+	<edit_mainwnd_res id="1004" name="プレイボーイのテーマ" res_type="背景音樂" res_path2="KF1_bgm04" open="true"/>
+	<edit_mainwnd_res id="1005" name="ずっこけ＆ドタバタ" res_type="背景音樂" res_path2="KF1_bgm05" open="true"/>
+	<edit_mainwnd_res id="1006" name="離別" res_type="背景音樂" res_path2="KF1_bgm06" open="false"/>
+	<edit_mainwnd_res id="1007" name="ミステリー＆陰鬱" res_type="背景音樂" res_path2="KF1_bgm07" open="false"/>
+	<edit_mainwnd_res id="1008" name="密林探索" res_type="背景音樂" res_path2="KF1_bgm08" open="false"/>
+	<edit_mainwnd_res id="1009" name="遺跡探索" res_type="背景音樂" res_path2="KF1_bgm09" open="false"/>
+	<edit_mainwnd_res id="1010" name="処刑の朝" res_type="背景音樂" res_path2="KF1_bgm10" open="false"/>
+	<edit_mainwnd_res id="1011" name="決戦" res_type="背景音樂" res_path2="KF1_bgm11" open="false"/>
+	<edit_mainwnd_res id="1012" name="女騎士のテーマ" res_type="背景音樂" res_path2="KF1_bgm12" open="false"/>
+	<edit_mainwnd_res id="1013" name="お姫様のテーマ" res_type="背景音樂" res_path2="KF1_bgm13" open="false"/>
+	<edit_mainwnd_res id="1014" name="夢魔のテーマ" res_type="背景音樂" res_path2="KF1_bgm14" open="false"/>
+	<edit_mainwnd_res id="1015" name="エッチシーン" res_type="背景音樂" res_path2="KF1_bgm15" open="false"/>
+	<edit_mainwnd_res id="1016" name="母性的ラブラブのテーマ" res_type="背景音樂" res_path2="KF1_bgm16" open="false"/>
+	<edit_mainwnd_res id="1017" name="女王のテーマ" res_type="背景音樂" res_path2="KF1G_bgm17" open="false"/>
+	<edit_mainwnd_res id="1018" name="女魔術師のテーマ" res_type="背景音樂" res_path2="KF1G_bgm18" open="false"/>
+	<edit_mainwnd_res id="1019" name="枢機卿のテーマ" res_type="背景音樂" res_path2="KF1G_bgm19" open="false"/>
+	<edit_mainwnd_res id="1020" name="アルジャンのテーマ" res_type="背景音樂" res_path2="KF1G_bgm20" open="false"/>
+	<edit_mainwnd_res id="1021" name="ドタバタ２" res_type="背景音樂" res_path2="KF1G_bgm21" open="false"/>
+	<edit_mainwnd_res id="1022" name="バザルト１世のテーマ" res_type="背景音樂" res_path2="KF1G_bgm22" open="false"/>
+	<edit_mainwnd_res id="1023" name="ロッシュのテーマ" res_type="背景音樂" res_path2="KF1G_bgm23" open="false"/>
+	<edit_mainwnd_res id="1024" name="エッチシーンのテーマ２" res_type="背景音樂" res_path2="KF1G_bgm24" open="false"/>
+	<edit_mainwnd_res id="1025" name="巨乳ファンタジーのテーマ" res_type="背景音樂" res_path2="KF1G_bgm25" open="false"/>
+	<edit_mainwnd_res id="1026" name="人魚のテーマ" res_type="背景音樂" res_path2="KF1G2_bgm26" open="false"/>
+	<edit_mainwnd_res id="1027" name="エストリアのテーマ" res_type="背景音樂" res_path2="KF1G2_bgm27" open="false"/>
+	<edit_mainwnd_res id="1028" name="イベリアのテーマ" res_type="背景音樂" res_path2="KF1G2_bgm28" open="false"/>
+	<edit_mainwnd_res id="1029" name="海賊のテーマ" res_type="背景音樂" res_path2="KF1G2_bgm29" open="false"/>
+	<edit_mainwnd_res id="1030" name="スルタン帝国のテーマ" res_type="背景音樂" res_path2="KF1G2A_bgm30" open="false"/>
+	<edit_mainwnd_res id="1031" name="イリーナのテーマ" res_type="背景音樂" res_path2="KF1G2A_bgm31" open="false"/>
+	<edit_mainwnd_res id="1032" name="武官と文官" res_type="背景音樂" res_path2="KF2_bgm01" open="false"/>
+	<edit_mainwnd_res id="1033" name="中世の夜" res_type="背景音樂" res_path2="KF2_bgm02" open="false"/>
+	<edit_mainwnd_res id="1034" name="王妃のテーマ" res_type="背景音樂" res_path2="KF2_bgm03" open="false"/>
+	<edit_mainwnd_res id="1035" name="ゼビアのテーマ" res_type="背景音樂" res_path2="KF2_bgm04" open="false"/>
+	<edit_mainwnd_res id="1036" name="エリュシアのテーマ" res_type="背景音樂" res_path2="KF2_bgm06" open="false"/>
+	<edit_mainwnd_res id="1037" name="シャハルのテーマ" res_type="背景音樂" res_path2="KF2_bgm07" open="false"/>
+	<edit_mainwnd_res id="1038" name="ハイネスとゼミナリオのテーマ" res_type="背景音樂" res_path2="KF2_bgm08" open="false"/>
+	<edit_mainwnd_res id="1039" name="王の風格" res_type="背景音樂" res_path2="KF2_bgm09" open="false"/>
+	<edit_mainwnd_res id="1040" name="厳粛な異世界" res_type="背景音樂" res_path2="KF2_bgm10" open="false"/>
+	<edit_mainwnd_res id="1041" name="中世喜劇" res_type="背景音樂" res_path2="KF2_bgm11" open="false"/>
+	<edit_mainwnd_res id="1042" name="陰謀の闇" res_type="背景音樂" res_path2="KF2_bgm12" open="false"/>
+	<edit_mainwnd_res id="1043" name="悪しき予感" res_type="背景音樂" res_path2="KF2_bgm13" open="false"/>
+	<edit_mainwnd_res id="1044" name="左遷の悲劇" res_type="背景音樂" res_path2="KF2_bgm14" open="false"/>
+	<edit_mainwnd_res id="1045" name="処刑" res_type="背景音樂" res_path2="KF2_bgm15" open="false"/>
+	<edit_mainwnd_res id="1046" name="激戦" res_type="背景音樂" res_path2="KF2_bgm16" open="false"/>
+	<edit_mainwnd_res id="1047" name="夜のロマンス" res_type="背景音樂" res_path2="KF2_bgm17" open="false"/>
+	<edit_mainwnd_res id="1048" name="ルイン１世の凱歌" res_type="背景音樂" res_path2="KF2_bgm18" open="false"/>
+	<edit_mainwnd_res id="1049" name="踊りのテーマ" res_type="背景音樂" res_path2="KF2I_bgm19" open="false"/>
+	<edit_mainwnd_res id="1050" name="メッセリア" res_type="背景音樂" res_path2="KF2I_bgm20" open="false"/>
+	<edit_mainwnd_res id="1051" name="ソブリナ" res_type="背景音樂" res_path2="KF2I_bgm21" open="false"/>
+	<edit_mainwnd_res id="1052" name="背徳のエロス" res_type="背景音樂" res_path2="KF2I_bgm22" open="false"/>
+	<edit_mainwnd_res id="1053" name="開放のエロス" res_type="背景音樂" res_path2="KF2I_bgm23" open="false"/>
+	<edit_mainwnd_res id="1054" name="武官と文官　アレンジver" res_type="背景音樂" res_path2="KF2I_bgm24" open="false"/>
+	<edit_mainwnd_res id="1055" name="中世の夜　アレンジver" res_type="背景音樂" res_path2="KF2I_bgm25" open="false"/>
+	<edit_mainwnd_res id="1056" name="王妃のテーマ" res_type="背景音樂" res_path2="KF2I_bgm26" open="false"/>
+	<edit_mainwnd_res id="1057" name="ゼビアのテーマ　アレンジver" res_type="背景音樂" res_path2="KF2I_bgm27" open="false"/>
+	<edit_mainwnd_res id="1058" name="人魚のテーマ" res_type="背景音樂" res_path2="KF2I_bgm28" open="false"/>
+	<edit_mainwnd_res id="1059" name="エリュシアのテーマ　アレンジver" res_type="背景音樂" res_path2="KF2I_bgm29" open="false"/>
+	<edit_mainwnd_res id="1060" name="シャハルのテーマ" res_type="背景音樂" res_path2="KF2I_bgm30" open="false"/>
+	<edit_mainwnd_res id="1061" name="ハイネスとゼミナリオのテーマ　アレンジver" res_type="背景音樂" res_path2="KF2I_bgm31" open="false"/>
+	<edit_mainwnd_res id="1062" name="王の風格　アレンジver" res_type="背景音樂" res_path2="KF2I_bgm32" open="false"/>
+	<edit_mainwnd_res id="1063" name="厳粛な異世界　アレンジver" res_type="背景音樂" res_path2="KF2I_bgm33" open="false"/>
+	<edit_mainwnd_res id="1064" name="中世喜劇　アレンジver" res_type="背景音樂" res_path2="KF2I_bgm34" open="false"/>
+	<edit_mainwnd_res id="1065" name="陰謀の闇　アレンジver" res_type="背景音樂" res_path2="KF2I_bgm35" open="false"/>
+	<edit_mainwnd_res id="1066" name="悪しき予感　アレンジver" res_type="背景音樂" res_path2="KF2I_bgm36" open="false"/>
+	<edit_mainwnd_res id="1067" name="左遷の悲劇　アレンジver" res_type="背景音樂" res_path2="KF2I_bgm37" open="false"/>
+	<edit_mainwnd_res id="1068" name="処刑　アレンジver" res_type="背景音樂" res_path2="KF2I_bgm38" open="false"/>
+	<edit_mainwnd_res id="1069" name="激戦　アレンジver" res_type="背景音樂" res_path2="KF2I_bgm39" open="false"/>
+	<edit_mainwnd_res id="1070" name="夜のロマンス　アレンジver" res_type="背景音樂" res_path2="KF2I_bgm40" open="false"/>
+	<edit_mainwnd_res id="1071" name="ルイン１世の凱歌　アレンジver" res_type="背景音樂" res_path2="KF2I_bgm41" open="false"/>
+	<edit_mainwnd_res id="1072" name="パイアのテーマ" res_type="背景音樂" res_path2="KF3_bgm01" open="false"/>
+	<edit_mainwnd_res id="1073" name="アジュラのテーマ" res_type="背景音樂" res_path2="KF3_bgm02" open="false"/>
+	<edit_mainwnd_res id="1074" name="ゾーエのテーマ" res_type="背景音樂" res_path2="KF3_bgm03" open="false"/>
+	<edit_mainwnd_res id="1075" name="コンスタンツィアのテーマ" res_type="背景音樂" res_path2="KF3_bgm04" open="false"/>
+	<edit_mainwnd_res id="1076" name="ファルネリアのテーマ" res_type="背景音樂" res_path2="KF3_bgm05" open="false"/>
+	<edit_mainwnd_res id="1077" name="日常のロマニア" res_type="背景音樂" res_path2="KF3_bgm06" open="false"/>
+	<edit_mainwnd_res id="1078" name="軍団基地" res_type="背景音樂" res_path2="KF3_bgm07" open="false"/>
+	<edit_mainwnd_res id="1079" name="帝都ロマニウム" res_type="背景音樂" res_path2="KF3_bgm08" open="false"/>
+	<edit_mainwnd_res id="1080" name="ロマニア皇帝" res_type="背景音樂" res_path2="KF3_bgm09" open="false"/>
+	<edit_mainwnd_res id="1081" name="神の物思い" res_type="背景音樂" res_path2="KF3_bgm10" open="false"/>
+	<edit_mainwnd_res id="1082" name="人間の涙" res_type="背景音樂" res_path2="KF3_bgm11" open="false"/>
+	<edit_mainwnd_res id="1083" name="神聖喜劇" res_type="背景音樂" res_path2="KF3_bgm12" open="false"/>
+	<edit_mainwnd_res id="1084" name="ミノタウロス・ミステリー" res_type="背景音樂" res_path2="KF3_bgm13" open="false"/>
+	<edit_mainwnd_res id="1085" name="コロセウム" res_type="背景音樂" res_path2="KF3_bgm14" open="false"/>
+	<edit_mainwnd_res id="1086" name="グラディアトール" res_type="背景音樂" res_path2="KF3_bgm15" open="false"/>
+	<edit_mainwnd_res id="1087" name="アルス・アマトリアⅠ" res_type="背景音樂" res_path2="KF3_bgm16" open="false"/>
+	<edit_mainwnd_res id="1088" name="アルス・アマトリアⅡ" res_type="背景音樂" res_path2="KF3_bgm17" open="false"/>
+	<edit_mainwnd_res id="1089" name="幸せよ永遠に" res_type="背景音樂" res_path2="KF3_bgm18" open="false"/>
+	<edit_mainwnd_res id="1090" name="ユリナス凱旋" res_type="背景音樂" res_path2="KF3_bgm19" open="false"/>
+	<edit_mainwnd_res id="1091" name="冥界のテーマ" res_type="背景音樂" res_path2="KF3I_bgm20" open="false"/>
+	<edit_mainwnd_res id="1092" name="天界のテーマ" res_type="背景音樂" res_path2="KF3I_bgm21" open="false"/>
+	<edit_mainwnd_res id="1093" name="ハデスのテーマ" res_type="背景音樂" res_path2="KF3I_bgm22" open="false"/>
+	<edit_mainwnd_res id="1094" name="ユピテルのテーマ" res_type="背景音樂" res_path2="KF3I_bgm23" open="false"/>
+	<edit_mainwnd_res id="1095" name="アポロンのテーマ" res_type="背景音樂" res_path2="KF3I_bgm24" open="false"/>
+	<edit_mainwnd_res id="1096" name="マルスのテーマ" res_type="背景音樂" res_path2="KF3I_bgm25" open="false"/>
+	<edit_mainwnd_res id="1097" name="ヘルメスのテーマ" res_type="背景音樂" res_path2="KF3I_bgm26" open="false"/>
+	<edit_mainwnd_res id="1098" name="アテナのテーマ" res_type="背景音樂" res_path2="KF3I_bgm27" open="false"/>
+	<edit_mainwnd_res id="1099" name="ウェヌスのテーマ" res_type="背景音樂" res_path2="KF3I_bgm28" open="false"/>
+	<edit_mainwnd_res id="1100" name="ペルセポネーのテーマ" res_type="背景音樂" res_path2="KF3I_bgm29" open="false"/>
+	<edit_mainwnd_res id="1101" name="メデューサのテーマ" res_type="背景音樂" res_path2="KF3I_bgm30" open="false"/>
+	<edit_mainwnd_res id="1102" name="アルテミスのテーマ" res_type="背景音樂" res_path2="KF3IG_bgm31" open="false"/>
+	<edit_mainwnd_res id="1103" name="聖十字教徒ローマ派のテーマ" res_type="背景音樂" res_path2="KF3IG_bgm32" open="false"/>
+	<edit_mainwnd_res id="1104" name="聖十字教徒ゲルマニア派のテーマ" res_type="背景音樂" res_path2="KF3IG_bgm33" open="false"/>
+	<edit_mainwnd_res id="1105" name="巨乳ファンタジー４のテーマ" res_type="背景音樂" res_path2="KF4_bgm01" open="false"/>
+	<edit_mainwnd_res id="1106" name="修道院のテーマ" res_type="背景音樂" res_path2="KF4_bgm02" open="false"/>
+	<edit_mainwnd_res id="1107" name="出世してからの日常のテーマ" res_type="背景音樂" res_path2="KF4_bgm03" open="false"/>
+	<edit_mainwnd_res id="1108" name="物思い＆しんみり" res_type="背景音樂" res_path2="KF4_bgm04" open="false"/>
+	<edit_mainwnd_res id="1109" name="夜の物思い" res_type="背景音樂" res_path2="KF4_bgm05" open="false"/>
+	<edit_mainwnd_res id="1110" name="ずっこけ＆ドタバタ" res_type="背景音樂" res_path2="KF4_bgm06" open="false"/>
+	<edit_mainwnd_res id="1111" name="号泣" res_type="背景音樂" res_path2="KF4_bgm07" open="false"/>
+	<edit_mainwnd_res id="1112" name="ミステリー" res_type="背景音樂" res_path2="KF4_bgm08" open="false"/>
+	<edit_mainwnd_res id="1113" name="ピンチ" res_type="背景音樂" res_path2="KF4_bgm09" open="false"/>
+	<edit_mainwnd_res id="1114" name="急転直下" res_type="背景音樂" res_path2="KF4_bgm10" open="false"/>
+	<edit_mainwnd_res id="1115" name="作戦会議" res_type="背景音樂" res_path2="KF4_bgm11" open="false"/>
+	<edit_mainwnd_res id="1116" name="決戦（戦争）" res_type="背景音樂" res_path2="KF4_bgm12" open="false"/>
+	<edit_mainwnd_res id="1117" name="勝利のテーマ" res_type="背景音樂" res_path2="KF4_bgm13" open="false"/>
+	<edit_mainwnd_res id="1118" name="宴" res_type="背景音樂" res_path2="KF4_bgm14" open="false"/>
+	<edit_mainwnd_res id="1119" name="エッチシーンのテーマ" res_type="背景音樂" res_path2="KF4_bgm15" open="false"/>
+	<edit_mainwnd_res id="1120" name="らぶらぶ＆母性" res_type="背景音樂" res_path2="KF4_bgm16" open="false"/>
+	<edit_mainwnd_res id="1121" name="エンディングテーマ" res_type="背景音樂" res_path2="KF4_bgm17" open="false"/>
+	<edit_mainwnd_res id="1122" name="リーゼルのテーマ" res_type="背景音樂" res_path2="KF4_bgm18" open="false"/>
+	<edit_mainwnd_res id="1123" name="イシュトヴィアのテーマ" res_type="背景音樂" res_path2="KF4_bgm19" open="false"/>
+	<edit_mainwnd_res id="1124" name="ベロニカのテーマ" res_type="背景音樂" res_path2="KF4_bgm20" open="false"/>
+	<edit_mainwnd_res id="1125" name="グネヴィアのテーマ" res_type="背景音樂" res_path2="KF4_bgm21" open="false"/>
+	<edit_mainwnd_res id="1126" name="エルフ女王のテーマ" res_type="背景音樂" res_path2="KF4_bgm22" open="false"/>
+	<edit_mainwnd_res id="1127" name="ダンディル伯爵のテーマ" res_type="背景音樂" res_path2="KF4_bgm23" open="false"/>
+	<edit_mainwnd_res id="1128" name="小悪党のテーマ" res_type="背景音樂" res_path2="KF4_bgm24" open="false"/>
+	<edit_mainwnd_res id="1129" name="ミノタウロス族のテーマ" res_type="背景音樂" res_path2="KF4_bgm25" open="false"/>
+	<edit_mainwnd_res id="1130" name="部族長のテーマ" res_type="背景音樂" res_path2="KF4_bgm26" open="false"/>
+	<edit_mainwnd_res id="1131" name="アルメキア王国のテーマ" res_type="背景音樂" res_path2="KF4_bgm27" open="false"/>
+	<edit_mainwnd_res open="false"/>
+	<edit_mainwnd_res id="2001" res_type="角色" res_path1="mainset-hero001/2001" res_path1_normal="mainset-hero001/12001" open="true"/>
+	<edit_mainwnd_res id="2002" res_type="角色" res_path1="mainset-hero001/2002" open="true"/>
+	<edit_mainwnd_res id="2003" res_type="角色" res_path1="mainset-hero001/2003" res_path1_normal="mainset-hero001/12003" open="true"/>
+	<edit_mainwnd_res id="2004" res_type="角色" res_path1="mainset-hero001/2004" res_path1_normal="mainset-hero001/12004" open="true"/>
+	<edit_mainwnd_res id="2005" res_type="角色" res_path1="mainset-hero001/2005" res_path1_normal="mainset-hero001/12005" open="true"/>
+	<edit_mainwnd_res id="2006" res_type="角色" res_path1="mainset-hero001/2006" res_path1_normal="mainset-hero001/12006" open="true"/>
+	<edit_mainwnd_res id="2007" res_type="角色" res_path1="mainset-hero001/2007" res_path1_normal="mainset-hero001/12007" open="true"/>
+	<edit_mainwnd_res id="2008" res_type="角色" res_path1="mainset-hero001/2008" open="true"/>
+	<edit_mainwnd_res id="2009" res_type="角色" res_path1="mainset-hero001/2009" res_path1_normal="mainset-hero001/12009" open="true"/>
+	<edit_mainwnd_res id="2010" res_type="角色" res_path1="mainset-hero001/2010" res_path1_normal="mainset-hero001/12010" open="true"/>
+	<edit_mainwnd_res id="2011" res_type="角色" res_path1="mainset-hero001/2011" open="true"/>
+	<edit_mainwnd_res id="2012" res_type="角色" res_path1="mainset-hero001/2012" open="true"/>
+	<edit_mainwnd_res id="2013" res_type="角色" res_path1="mainset-hero001/2013" res_path1_normal="mainset-hero001/12013" open="true"/>
+	<edit_mainwnd_res id="2014" res_type="角色" res_path1="mainset-hero001/2014" open="true"/>
+	<edit_mainwnd_res id="2015" res_type="角色" res_path1="mainset-hero001/2015" open="true"/>
+	<edit_mainwnd_res id="2016" res_type="角色" res_path1="mainset-hero001/2016" open="true"/>
+	<edit_mainwnd_res id="2017" res_type="角色" res_path1="mainset-hero001/2017" open="true"/>
+	<edit_mainwnd_res id="2018" res_type="角色" res_path1="mainset-hero001/2018" res_path1_normal="mainset-hero001/12018" open="true"/>
+	<edit_mainwnd_res id="2019" res_type="角色" res_path1="mainset-hero001/2019" res_path1_normal="mainset-hero001/12019" open="true"/>
+	<edit_mainwnd_res id="2020" res_type="角色" res_path1="mainset-hero001/2020" open="true"/>
+	<edit_mainwnd_res id="2021" res_type="角色" res_path1="mainset-hero001/2021" open="true"/>
+	<edit_mainwnd_res id="2022" res_type="角色" res_path1="mainset-hero001/2022" open="true"/>
+	<edit_mainwnd_res id="2023" res_type="角色" res_path1="mainset-hero001/2023" open="true"/>
+	<edit_mainwnd_res id="2024" res_type="角色" res_path1="mainset-hero001/2024" open="true"/>
+	<edit_mainwnd_res id="2025" res_type="角色" res_path1="mainset-hero001/2025" res_path1_normal="mainset-hero001/12025" open="true"/>
+	<edit_mainwnd_res id="2026" res_type="角色" res_path1="mainset-hero001/2026" res_path1_normal="mainset-hero001/12026" open="true"/>
+	<edit_mainwnd_res id="2027" res_type="角色" res_path1="mainset-hero001/2027" open="true"/>
+	<edit_mainwnd_res id="2028" res_type="角色" res_path1="mainset-hero001/2028" res_path1_normal="mainset-hero001/12028" open="true"/>
+	<edit_mainwnd_res id="2029" res_type="角色" res_path1="mainset-hero001/2029" open="true"/>
+	<edit_mainwnd_res id="2030" res_type="角色" res_path1="mainset-hero001/2030" open="true"/>
+	<edit_mainwnd_res id="2031" res_type="角色" res_path1="mainset-hero001/2031" open="true"/>
+	<edit_mainwnd_res id="2032" res_type="角色" res_path1="mainset-hero001/2032" open="true"/>
+	<edit_mainwnd_res id="2033" res_type="角色" res_path1="mainset-hero001/2033" res_path1_normal="mainset-hero001/12033" open="true"/>
+	<edit_mainwnd_res open="false"/>
+	<edit_mainwnd_res id="2035" res_type="角色" res_path1="mainset-hero001/2035" open="true"/>
+	<edit_mainwnd_res id="2036" res_type="角色" res_path1="mainset-hero001/2036" res_path1_normal="mainset-hero001/12036" open="true"/>
+	<edit_mainwnd_res id="2037" res_type="角色" res_path1="mainset-hero001/2037" open="true"/>
+	<edit_mainwnd_res id="2038" res_type="角色" res_path1="mainset-hero001/2038" res_path1_normal="mainset-hero001/12038" open="true"/>
+	<edit_mainwnd_res id="2039" res_type="角色" res_path1="mainset-hero001/2039" res_path1_normal="mainset-hero001/12039" open="true"/>
+	<edit_mainwnd_res id="2040" res_type="角色" res_path1="mainset-hero001/2040" res_path1_normal="mainset-hero001/12040" open="true"/>
+	<edit_mainwnd_res id="2041" res_type="角色" res_path1="mainset-hero001/2041" res_path1_normal="mainset-hero001/12041" open="true"/>
+	<edit_mainwnd_res id="2042" res_type="角色" res_path1="mainset-hero001/2042" res_path1_normal="mainset-hero001/12042" open="true"/>
+	<edit_mainwnd_res id="2043" res_type="角色" res_path1="mainset-hero001/2043" res_path1_normal="mainset-hero001/12043" open="true"/>
+	<edit_mainwnd_res id="2044" res_type="角色" res_path1="mainset-hero001/2044" res_path1_normal="mainset-hero001/12044" open="true"/>
+	<edit_mainwnd_res id="2045" res_type="角色" res_path1="mainset-hero001/2045" open="true"/>
+	<edit_mainwnd_res id="2046" res_type="角色" res_path1="mainset-hero001/2046" open="true"/>
+	<edit_mainwnd_res id="2047" res_type="角色" res_path1="mainset-hero001/2047" open="true"/>
+	<edit_mainwnd_res id="2048" res_type="角色" res_path1="mainset-hero001/2048" open="true"/>
+	<edit_mainwnd_res id="2049" res_type="角色" res_path1="mainset-hero001/2049" open="true"/>
+	<edit_mainwnd_res id="2050" res_type="角色" res_path1="mainset-hero001/2050" open="true"/>
+	<edit_mainwnd_res id="2051" res_type="角色" res_path1="mainset-hero001/2051" open="true"/>
+	<edit_mainwnd_res id="2052" res_type="角色" res_path1="mainset-hero001/2052" res_path1_normal="mainset-hero001/12052" open="true"/>
+	<edit_mainwnd_res id="2053" res_type="角色" res_path1="mainset-hero001/2053" open="true"/>
+	<edit_mainwnd_res id="2054" res_type="角色" res_path1="mainset-hero001/2054" res_path1_normal="mainset-hero001/12054" open="true"/>
+	<edit_mainwnd_res id="2055" res_type="角色" res_path1="mainset-hero001/2055" open="true"/>
+	<edit_mainwnd_res id="2056" res_type="角色" res_path1="mainset-hero001/2056" open="true"/>
+	<edit_mainwnd_res id="2057" res_type="角色" res_path1="mainset-hero001/2057" res_path1_normal="mainset-hero001/12057" open="true"/>
+	<edit_mainwnd_res id="2058" res_type="角色" res_path1="mainset-hero001/2058" open="true"/>
+	<edit_mainwnd_res id="2059" res_type="角色" res_path1="mainset-hero001/2059" open="true"/>
+	<edit_mainwnd_res id="2060" res_type="角色" res_path1="mainset-hero001/2060" res_path1_normal="mainset-hero001/12060" open="true"/>
+	<edit_mainwnd_res id="2061" res_type="角色" res_path1="mainset-hero001/2061" open="true"/>
+	<edit_mainwnd_res id="2062" res_type="角色" res_path1="mainset-hero001/2062" open="true"/>
+	<edit_mainwnd_res id="2063" res_type="角色" res_path1="mainset-hero001/2063" open="true"/>
+	<edit_mainwnd_res id="2064" res_type="角色" res_path1="mainset-hero001/2064" open="true"/>
+	<edit_mainwnd_res id="2065" res_type="角色" res_path1="mainset-hero001/2065" res_path1_normal="mainset-hero001/12065" open="true"/>
+	<edit_mainwnd_res id="2066" res_type="角色" res_path1="mainset-hero001/2066" open="true"/>
+	<edit_mainwnd_res id="2067" res_type="角色" res_path1="mainset-hero001/2067" open="true"/>
+	<edit_mainwnd_res id="2068" res_type="角色" res_path1="mainset-hero001/2068" open="true"/>
+	<edit_mainwnd_res id="2069" res_type="角色" res_path1="mainset-hero001/2069" open="true"/>
+	<edit_mainwnd_res id="2070" res_type="角色" res_path1="mainset-hero001/2070" open="true"/>
+	<edit_mainwnd_res id="2071" res_type="角色" res_path1="mainset-hero001/2071" res_path1_normal="mainset-hero001/12071" open="true"/>
+	<edit_mainwnd_res id="2072" res_type="角色" res_path1="mainset-hero001/2072" open="true"/>
+	<edit_mainwnd_res id="2073" res_type="角色" res_path1="mainset-hero001/2073" open="true"/>
+	<edit_mainwnd_res id="2074" res_type="角色" res_path1="mainset-hero001/2074" res_path1_normal="mainset-hero001/12074" open="true"/>
+	<edit_mainwnd_res id="2075" res_type="角色" res_path1="mainset-hero001/2075" open="true"/>
+	<edit_mainwnd_res id="2076" res_type="角色" res_path1="mainset-hero001/2076" open="true"/>
+	<edit_mainwnd_res id="2077" res_type="角色" res_path1="mainset-hero001/2077" res_path1_normal="mainset-hero001/12077" open="true"/>
+	<edit_mainwnd_res id="2078" res_type="角色" res_path1="mainset-hero001/2078" open="true"/>
+	<edit_mainwnd_res id="2079" res_type="角色" res_path1="mainset-hero001/2079" open="true"/>
+	<edit_mainwnd_res id="2080" res_type="角色" res_path1="mainset-hero001/2080" open="true"/>
+	<edit_mainwnd_res id="2081" res_type="角色" res_path1="mainset-hero001/2081" open="true"/>
+	<edit_mainwnd_res id="2082" res_type="角色" res_path1="mainset-hero001/2082" open="true"/>
+	<edit_mainwnd_res id="2083" res_type="角色" res_path1="mainset-hero001/2083" open="true"/>
+	<edit_mainwnd_res id="2084" res_type="角色" res_path1="mainset-hero001/2084" open="true"/>
+	<edit_mainwnd_res id="2085" res_type="角色" res_path1="mainset-hero001/2085" open="true"/>
+	<edit_mainwnd_res id="2086" res_type="角色" res_path1="mainset-hero001/2086" open="true"/>
+	<edit_mainwnd_res id="2087" res_type="角色" res_path1="mainset-hero001/2087" open="true"/>
+	<edit_mainwnd_res id="2088" res_type="角色" res_path1="mainset-hero001/2088" open="true"/>
+	<edit_mainwnd_res id="2089" res_type="角色" res_path1="mainset-hero001/2089" open="true"/>
+	<edit_mainwnd_res id="2090" res_type="角色" res_path1="mainset-hero001/2090" open="true"/>
+	<edit_mainwnd_res id="2091" res_type="角色" res_path1="mainset-hero001/2091" open="true"/>
+	<edit_mainwnd_res id="2092" res_type="角色" res_path1="mainset-hero001/2092" open="true"/>
+	<edit_mainwnd_res id="2093" res_type="角色" res_path1="mainset-hero001/2093" open="true"/>
+	<edit_mainwnd_res id="2094" res_type="角色" res_path1="mainset-hero001/2094" open="true"/>
+	<edit_mainwnd_res id="2095" res_type="角色" res_path1="mainset-hero001/2095" open="true"/>
+	<edit_mainwnd_res id="2096" res_type="角色" res_path1="mainset-hero001/2096" res_path1_normal="mainset-hero001/12096" open="true"/>
+	<edit_mainwnd_res id="2097" res_type="角色" res_path1="mainset-hero001/2097" res_path1_normal="mainset-hero001/12097" open="true"/>
+	<edit_mainwnd_res id="2098" res_type="角色" res_path1="mainset-hero001/2098" res_path1_normal="mainset-hero001/12098" open="true"/>
+	<edit_mainwnd_res id="2099" res_type="角色" res_path1="mainset-hero001/2099" open="true"/>
+	<edit_mainwnd_res id="2100" res_type="角色" res_path1="mainset-hero001/2100" res_path1_normal="mainset-hero001/12100" open="true"/>
+	<edit_mainwnd_res id="2101" res_type="角色" res_path1="mainset-hero001/2101" open="true"/>
+	<edit_mainwnd_res id="2102" res_type="角色" res_path1="mainset-hero001/2102" res_path1_normal="mainset-hero001/12102" open="true"/>
+	<edit_mainwnd_res id="2103" res_type="角色" res_path1="mainset-hero001/2103" open="true"/>
+	<edit_mainwnd_res id="2104" res_type="角色" res_path1="mainset-hero001/2104" open="true"/>
+	<edit_mainwnd_res id="2105" res_type="角色" res_path1="mainset-hero001/2105" open="true"/>
+	<edit_mainwnd_res id="2106" res_type="角色" res_path1="mainset-hero001/2106" open="true"/>
+	<edit_mainwnd_res id="2107" res_type="角色" res_path1="mainset-hero001/2107" open="true"/>
+	<edit_mainwnd_res id="2108" res_type="角色" res_path1="mainset-hero001/2108" res_path1_normal="mainset-hero001/12108" open="true"/>
+	<edit_mainwnd_res id="2109" res_type="角色" res_path1="mainset-hero001/2109" open="true"/>
+	<edit_mainwnd_res id="2110" res_type="角色" res_path1="mainset-hero001/2110" res_path1_normal="mainset-hero001/12110" open="true"/>
+	<edit_mainwnd_res id="2111" res_type="角色" res_path1="mainset-hero001/2111" open="true"/>
+	<edit_mainwnd_res id="2112" res_type="角色" res_path1="mainset-hero001/2112" open="true"/>
+	<edit_mainwnd_res id="2113" res_type="角色" res_path1="mainset-hero001/2113" open="true"/>
+	<edit_mainwnd_res id="2114" res_type="角色" res_path1="mainset-hero001/2114" open="true"/>
+	<edit_mainwnd_res id="2115" res_type="角色" res_path1="mainset-hero001/2115" open="true"/>
+	<edit_mainwnd_res id="2116" res_type="角色" res_path1="mainset-hero001/2116" open="true"/>
+	<edit_mainwnd_res id="2117" res_type="角色" res_path1="mainset-hero001/2117" open="true"/>
+	<edit_mainwnd_res id="2118" res_type="角色" res_path1="mainset-hero001/2118" open="true"/>
+	<edit_mainwnd_res id="2119" res_type="角色" res_path1="mainset-hero001/2119" res_path1_normal="mainset-hero001/12119" open="true"/>
+	<edit_mainwnd_res id="2120" res_type="角色" res_path1="mainset-hero001/2120" open="true"/>
+	<edit_mainwnd_res id="2121" res_type="角色" res_path1="mainset-hero001/2121" open="true"/>
+	<edit_mainwnd_res id="2122" res_type="角色" res_path1="mainset-hero001/2122" open="true"/>
+	<edit_mainwnd_res id="2123" res_type="角色" res_path1="mainset-hero001/2123" open="true"/>
+	<edit_mainwnd_res id="2124" res_type="角色" res_path1="mainset-hero001/2124" open="true"/>
+	<edit_mainwnd_res id="2125" res_type="角色" res_path1="mainset-hero001/2125" res_path1_normal="mainset-hero001/12125" open="true"/>
+	<edit_mainwnd_res id="2126" res_type="角色" res_path1="mainset-hero001/2126" open="true"/>
+	<edit_mainwnd_res id="2127" res_type="角色" res_path1="mainset-hero001/2127" open="true"/>
+	<edit_mainwnd_res id="2128" res_type="角色" res_path1="mainset-hero001/2128" open="true"/>
+	<edit_mainwnd_res id="2129" res_type="角色" res_path1="mainset-hero001/2129" open="true"/>
+	<edit_mainwnd_res id="2130" res_type="角色" res_path1="mainset-hero001/2130" res_path1_normal="mainset-hero001/12130" open="true"/>
+	<edit_mainwnd_res id="2131" res_type="角色" res_path1="mainset-hero001/2131" open="true"/>
+	<edit_mainwnd_res id="2132" res_type="角色" res_path1="mainset-hero001/2132" open="true"/>
+	<edit_mainwnd_res id="2133" res_type="角色" res_path1="mainset-hero001/2133" open="true"/>
+	<edit_mainwnd_res id="2134" res_type="角色" res_path1="mainset-hero001/2134" open="true"/>
+	<edit_mainwnd_res id="2135" res_type="角色" res_path1="mainset-hero001/2135" res_path1_normal="mainset-hero001/12135" open="true"/>
+	<edit_mainwnd_res id="2136" res_type="角色" res_path1="mainset-hero001/2136" open="true"/>
+	<edit_mainwnd_res id="2137" res_type="角色" res_path1="mainset-hero001/2137" open="true"/>
+	<edit_mainwnd_res id="2138" res_type="角色" res_path1="mainset-hero001/2138" res_path1_normal="mainset-hero001/12138" open="true"/>
+	<edit_mainwnd_res id="2139" res_type="角色" res_path1="mainset-hero001/2139" res_path1_normal="mainset-hero001/12139" open="true"/>
+	<edit_mainwnd_res id="2140" res_type="角色" res_path1="mainset-hero001/2140" open="true"/>
+	<edit_mainwnd_res id="2141" res_type="角色" res_path1="mainset-hero001/2141" open="true"/>
+	<edit_mainwnd_res id="2142" res_type="角色" res_path1="mainset-hero001/2142" open="true"/>
+	<edit_mainwnd_res id="2143" res_type="角色" res_path1="mainset-hero001/2143" open="true"/>
+	<edit_mainwnd_res id="2144" res_type="角色" res_path1="mainset-hero001/2144" open="true"/>
+	<edit_mainwnd_res id="2145" res_type="角色" res_path1="mainset-hero001/2145" open="true"/>
+	<edit_mainwnd_res id="2146" res_type="角色" res_path1="mainset-hero001/2146" open="true"/>
+	<edit_mainwnd_res id="2147" res_type="角色" res_path1="mainset-hero001/2147" open="true"/>
+	<edit_mainwnd_res id="2148" res_type="角色" res_path1="mainset-hero001/2148" res_path1_normal="mainset-hero001/12148" open="true"/>
+	<edit_mainwnd_res id="2149" res_type="角色" res_path1="mainset-hero001/2149" open="true"/>
+	<edit_mainwnd_res id="2150" res_type="角色" res_path1="mainset-hero001/2150" open="true"/>
+	<edit_mainwnd_res id="2151" res_type="角色" res_path1="mainset-hero001/2151" open="true"/>
+	<edit_mainwnd_res id="2152" res_type="角色" res_path1="mainset-hero001/2152" open="true"/>
+	<edit_mainwnd_res id="2153" res_type="角色" res_path1="mainset-hero001/2153" res_path1_normal="mainset-hero001/12153" open="true"/>
+	<edit_mainwnd_res id="2154" res_type="角色" res_path1="mainset-hero001/2154" res_path1_normal="mainset-hero001/12154" open="true"/>
+	<edit_mainwnd_res id="2155" res_type="角色" res_path1="mainset-hero001/2155" open="true"/>
+	<edit_mainwnd_res id="2156" res_type="角色" res_path1="mainset-hero001/2156" open="true"/>
+	<edit_mainwnd_res id="2157" res_type="角色" res_path1="mainset-hero001/2157" open="true"/>
+	<edit_mainwnd_res id="2158" res_type="角色" res_path1="mainset-hero001/2158" open="true"/>
+	<edit_mainwnd_res id="2159" res_type="角色" res_path1="mainset-hero001/2159" res_path1_normal="mainset-hero001/12159" open="true"/>
+	<edit_mainwnd_res id="2160" res_type="角色" res_path1="mainset-hero001/2160" res_path1_normal="mainset-hero001/12160" open="true"/>
+	<edit_mainwnd_res id="2161" res_type="角色" res_path1="mainset-hero001/2161" res_path1_normal="mainset-hero001/12161" open="true"/>
+	<edit_mainwnd_res id="2162" res_type="角色" res_path1="mainset-hero001/2162" res_path1_normal="mainset-hero001/12162" open="true"/>
+	<edit_mainwnd_res id="2163" res_type="角色" res_path1="mainset-hero001/2163" open="true"/>
+	<edit_mainwnd_res id="2164" res_type="角色" res_path1="mainset-hero001/2164" res_path1_normal="mainset-hero001/12164" open="true"/>
+	<edit_mainwnd_res id="2165" res_type="角色" res_path1="mainset-hero001/2165" open="true"/>
+	<edit_mainwnd_res id="2166" res_type="角色" res_path1="mainset-hero001/2166" res_path1_normal="mainset-hero001/12166" open="true"/>
+	<edit_mainwnd_res id="2167" res_type="角色" res_path1="mainset-hero001/2167" res_path1_normal="mainset-hero001/12167" open="true"/>
+	<edit_mainwnd_res id="2168" res_type="角色" res_path1="mainset-hero001/2168" open="true"/>
+	<edit_mainwnd_res id="2169" res_type="角色" res_path1="mainset-hero001/2169" open="true"/>
+	<edit_mainwnd_res id="2170" res_type="角色" res_path1="mainset-hero001/2170" open="true"/>
+	<edit_mainwnd_res id="2171" res_type="角色" res_path1="mainset-hero001/2171" open="true"/>
+	<edit_mainwnd_res id="2172" res_type="角色" res_path1="mainset-hero001/2172" res_path1_normal="mainset-hero001/12172" open="true"/>
+	<edit_mainwnd_res id="2173" res_type="角色" res_path1="mainset-hero001/2173" open="true"/>
+	<edit_mainwnd_res id="2174" res_type="角色" res_path1="mainset-hero001/2174" open="true"/>
+	<edit_mainwnd_res id="2175" res_type="角色" res_path1="mainset-hero001/2175" open="true"/>
+	<edit_mainwnd_res id="2176" res_type="角色" res_path1="mainset-hero001/2176" res_path1_normal="mainset-hero001/12176" open="true"/>
+	<edit_mainwnd_res id="2177" res_type="角色" res_path1="mainset-hero001/2177" res_path1_normal="mainset-hero001/12177" open="true"/>
+	<edit_mainwnd_res id="2178" res_type="角色" res_path1="mainset-hero001/2178" res_path1_normal="mainset-hero001/12178" open="true"/>
+	<edit_mainwnd_res id="2179" res_type="角色" res_path1="mainset-hero001/2179" open="true"/>
+	<edit_mainwnd_res id="2180" res_type="角色" res_path1="mainset-hero001/2180" open="true"/>
+	<edit_mainwnd_res id="2181" res_type="角色" res_path1="mainset-hero001/2181" open="true"/>
+	<edit_mainwnd_res id="2182" res_type="角色" res_path1="mainset-hero001/2182" res_path1_normal="mainset-hero001/12182" open="true"/>
+	<edit_mainwnd_res id="2183" res_type="角色" res_path1="mainset-hero001/2183" open="true"/>
+	<edit_mainwnd_res id="2184" res_type="角色" res_path1="mainset-hero001/2184" open="true"/>
+	<edit_mainwnd_res id="2185" res_type="角色" res_path1="mainset-hero001/2185" res_path1_normal="mainset-hero001/12185" open="true"/>
+	<edit_mainwnd_res id="2186" res_type="角色" res_path1="mainset-hero001/2186" open="true"/>
+	<edit_mainwnd_res id="2187" res_type="角色" res_path1="mainset-hero001/2187" open="true"/>
+	<edit_mainwnd_res id="2188" res_type="角色" res_path1="mainset-hero001/2188" open="true"/>
+	<edit_mainwnd_res id="2189" res_type="角色" res_path1="mainset-hero001/2189" open="true"/>
+	<edit_mainwnd_res id="2190" res_type="角色" res_path1="mainset-hero001/2190" open="true"/>
+	<edit_mainwnd_res id="2191" res_type="角色" res_path1="mainset-hero001/2191" res_path1_normal="mainset-hero001/12191" open="true"/>
+	<edit_mainwnd_res id="2192" res_type="角色" res_path1="mainset-hero001/2192" open="true"/>
+	<edit_mainwnd_res id="2193" res_type="角色" res_path1="mainset-hero001/2193" open="true"/>
+	<edit_mainwnd_res id="2194" res_type="角色" res_path1="mainset-hero001/2194" open="true"/>
+	<edit_mainwnd_res id="2195" res_type="角色" res_path1="mainset-hero001/2195" open="true"/>
+	<edit_mainwnd_res id="2196" res_type="角色" res_path1="mainset-hero001/2196" res_path1_normal="mainset-hero001/12196" open="true"/>
+	<edit_mainwnd_res id="2197" res_type="角色" res_path1="mainset-hero001/2197" res_path1_normal="mainset-hero001/12197" open="true"/>
+	<edit_mainwnd_res id="2198" res_type="角色" res_path1="mainset-hero001/2198" open="true"/>
+	<edit_mainwnd_res id="2199" res_type="角色" res_path1="mainset-hero001/2199" open="true"/>
+	<edit_mainwnd_res id="2200" res_type="角色" res_path1="mainset-hero001/2200" open="true"/>
+	<edit_mainwnd_res id="2201" res_type="角色" res_path1="mainset-hero001/2201" open="true"/>
+	<edit_mainwnd_res id="2202" res_type="角色" res_path1="mainset-hero001/2202" open="true"/>
+	<edit_mainwnd_res id="2203" res_type="角色" res_path1="mainset-hero001/2203" open="true"/>
+	<edit_mainwnd_res id="2204" res_type="角色" res_path1="mainset-hero001/2204" open="true"/>
+	<edit_mainwnd_res id="2205" res_type="角色" res_path1="mainset-hero001/2205" open="true"/>
+	<edit_mainwnd_res id="2206" res_type="角色" res_path1="mainset-hero001/2206" open="true"/>
+	<edit_mainwnd_res id="2207" res_type="角色" res_path1="mainset-hero001/2207" open="true"/>
+	<edit_mainwnd_res id="2208" res_type="角色" res_path1="mainset-hero001/2208" open="true"/>
+	<edit_mainwnd_res id="2209" res_type="角色" res_path1="mainset-hero001/2209" res_path1_normal="mainset-hero001/12209" open="true"/>
+	<edit_mainwnd_res id="2210" res_type="角色" res_path1="mainset-hero001/2210" open="true"/>
+	<edit_mainwnd_res id="2211" res_type="角色" res_path1="mainset-hero001/2211" open="true"/>
+	<edit_mainwnd_res id="2212" res_type="角色" res_path1="mainset-hero001/2212" res_path1_normal="mainset-hero001/12212" open="true"/>
+	<edit_mainwnd_res id="2213" res_type="角色" res_path1="mainset-hero001/2213" open="true"/>
+	<edit_mainwnd_res id="2214" res_type="角色" res_path1="mainset-hero001/2214" open="true"/>
+	<edit_mainwnd_res id="2215" res_type="角色" res_path1="mainset-hero001/2215" open="true"/>
+	<edit_mainwnd_res id="2216" res_type="角色" res_path1="mainset-hero001/2216" open="true"/>
+	<edit_mainwnd_res id="2217" res_type="角色" res_path1="mainset-hero001/2217" open="true"/>
+	<edit_mainwnd_res id="2218" res_type="角色" res_path1="mainset-hero001/2218" res_path1_normal="mainset-hero001/12218" open="true"/>
+	<edit_mainwnd_res id="2219" res_type="角色" res_path1="mainset-hero001/2219" open="true"/>
+	<edit_mainwnd_res id="2220" res_type="角色" res_path1="mainset-hero001/2220" res_path1_normal="mainset-hero001/12220" open="true"/>
+	<edit_mainwnd_res id="2221" res_type="角色" res_path1="mainset-hero001/2221" open="true"/>
+	<edit_mainwnd_res id="2222" res_type="角色" res_path1="mainset-hero001/2222" open="true"/>
+	<edit_mainwnd_res id="2223" res_type="角色" res_path1="mainset-hero001/2223" open="true"/>
+	<edit_mainwnd_res id="2224" res_type="角色" res_path1="mainset-hero001/2224" res_path1_normal="mainset-hero001/12224" open="true"/>
+	<edit_mainwnd_res id="2225" res_type="角色" res_path1="mainset-hero001/2225" res_path1_normal="mainset-hero001/12225" open="true"/>
+	<edit_mainwnd_res id="2226" res_type="角色" res_path1="mainset-hero001/2226" open="true"/>
+	<edit_mainwnd_res id="2227" res_type="角色" res_path1="mainset-hero001/2227" open="true"/>
+	<edit_mainwnd_res id="2228" res_type="角色" res_path1="mainset-hero001/2228" open="true"/>
+	<edit_mainwnd_res id="2229" res_type="角色" res_path1="mainset-hero001/2229" open="true"/>
+	<edit_mainwnd_res id="2230" res_type="角色" res_path1="mainset-hero001/2230" res_path1_normal="mainset-hero001/12230" open="true"/>
+	<edit_mainwnd_res id="2231" res_type="角色" res_path1="mainset-hero001/2231" open="true"/>
+	<edit_mainwnd_res id="2232" res_type="角色" res_path1="mainset-hero001/2232" open="true"/>
+	<edit_mainwnd_res id="2233" res_type="角色" res_path1="mainset-hero001/2233" res_path1_normal="mainset-hero001/12233" open="true"/>
+	<edit_mainwnd_res id="2234" res_type="角色" res_path1="mainset-hero001/2234" res_path1_normal="mainset-hero001/12234" open="true"/>
+	<edit_mainwnd_res id="2235" res_type="角色" res_path1="mainset-hero001/2235" open="true"/>
+	<edit_mainwnd_res id="2236" res_type="角色" res_path1="mainset-hero001/2236" res_path1_normal="mainset-hero001/12236" open="true"/>
+	<edit_mainwnd_res id="2237" res_type="角色" res_path1="mainset-hero001/2237" res_path1_normal="mainset-hero001/12237" open="true"/>
+	<edit_mainwnd_res id="2238" res_type="角色" res_path1="mainset-hero001/2238" open="true"/>
+	<edit_mainwnd_res id="2239" res_type="角色" res_path1="mainset-hero001/2239" res_path1_normal="mainset-hero001/12239" open="true"/>
+	<edit_mainwnd_res id="2240" res_type="角色" res_path1="mainset-hero001/2240" res_path1_normal="mainset-hero001/12240" open="true"/>
+	<edit_mainwnd_res id="2241" res_type="角色" res_path1="mainset-hero001/2241" open="true"/>
+	<edit_mainwnd_res id="2242" res_type="角色" res_path1="mainset-hero001/2242" open="true"/>
+	<edit_mainwnd_res id="2243" res_type="角色" res_path1="mainset-hero001/2243" res_path1_normal="mainset-hero001/12243" open="true"/>
+	<edit_mainwnd_res id="2244" res_type="角色" res_path1="mainset-hero001/2244" open="true"/>
+	<edit_mainwnd_res id="2245" res_type="角色" res_path1="mainset-hero001/2245" open="true"/>
+	<edit_mainwnd_res id="2246" res_type="角色" res_path1="mainset-hero001/2246" open="true"/>
+	<edit_mainwnd_res id="2247" res_type="角色" res_path1="mainset-hero001/2247" open="true"/>
+	<edit_mainwnd_res id="2248" res_type="角色" res_path1="mainset-hero001/2248" open="true"/>
+	<edit_mainwnd_res id="2249" res_type="角色" res_path1="mainset-hero001/2249" open="true"/>
+	<edit_mainwnd_res id="2250" res_type="角色" res_path1="mainset-hero001/2250" open="true"/>
+	<edit_mainwnd_res id="2251" res_type="角色" res_path1="mainset-hero001/2251" open="true"/>
+	<edit_mainwnd_res id="2252" res_type="角色" res_path1="mainset-hero001/2252" open="true"/>
+	<edit_mainwnd_res id="2253" res_type="角色" res_path1="mainset-hero001/2253" open="true"/>
+	<edit_mainwnd_res id="2254" res_type="角色" res_path1="mainset-hero001/2254" open="true"/>
+	<edit_mainwnd_res id="2255" res_type="角色" res_path1="mainset-hero001/2255" open="true"/>
+	<edit_mainwnd_res id="2256" res_type="角色" res_path1="mainset-hero001/2256" open="true"/>
+	<edit_mainwnd_res id="2257" res_type="角色" res_path1="mainset-hero001/2257" open="true"/>
+	<edit_mainwnd_res id="2258" res_type="角色" res_path1="mainset-hero001/2258" open="true"/>
+	<edit_mainwnd_res id="2259" res_type="角色" res_path1="mainset-hero001/2259" open="true"/>
+	<edit_mainwnd_res id="2260" res_type="角色" res_path1="mainset-hero001/2260" open="true"/>
+	<edit_mainwnd_res id="2261" res_type="角色" res_path1="mainset-hero001/2261" open="true"/>
+	<edit_mainwnd_res id="2262" res_type="角色" res_path1="mainset-hero001/2262" open="true"/>
+	<edit_mainwnd_res id="2263" res_type="角色" res_path1="mainset-hero001/2263" open="true"/>
+	<edit_mainwnd_res id="2264" res_type="角色" res_path1="mainset-hero001/2264" open="true"/>
+	<edit_mainwnd_res id="2265" res_type="角色" res_path1="mainset-hero001/2265" open="true"/>
+	<edit_mainwnd_res id="2266" res_type="角色" res_path1="mainset-hero001/2266" open="true"/>
+	<edit_mainwnd_res id="2267" res_type="角色" res_path1="mainset-hero001/2267" open="true"/>
+	<edit_mainwnd_res id="2268" res_type="角色" res_path1="mainset-hero001/2268" open="true"/>
+	<edit_mainwnd_res id="2269" res_type="角色" res_path1="mainset-hero001/2269" open="true"/>
+	<edit_mainwnd_res id="2270" res_type="角色" res_path1="mainset-hero001/2270" open="true"/>
+	<edit_mainwnd_res id="2271" res_type="角色" res_path1="mainset-hero001/2271" open="true"/>
+	<edit_mainwnd_res id="2272" res_type="角色" res_path1="mainset-hero001/2272" open="true"/>
+	<edit_mainwnd_res id="2273" res_type="角色" res_path1="mainset-hero001/2273" open="true"/>
+	<edit_mainwnd_res id="2274" res_type="角色" res_path1="mainset-hero001/2274" open="true"/>
+	<edit_mainwnd_res id="2275" res_type="角色" res_path1="mainset-hero001/2275" open="true"/>
+	<edit_mainwnd_res id="2276" res_type="角色" res_path1="mainset-hero001/2276" open="true"/>
+	<edit_mainwnd_res id="2277" res_type="角色" res_path1="mainset-hero001/2277" open="true"/>
+	<edit_mainwnd_res id="2278" res_type="角色" res_path1="mainset-hero001/2278" open="true"/>
+	<edit_mainwnd_res id="2279" res_type="角色" res_path1="mainset-hero001/2279" open="true"/>
+	<edit_mainwnd_res id="2280" res_type="角色" res_path1="mainset-hero001/2280" open="true"/>
+	<edit_mainwnd_res id="2281" res_type="角色" res_path1="mainset-hero001/2281" open="true"/>
+	<edit_mainwnd_res id="2282" res_type="角色" res_path1="mainset-hero001/2282" open="true"/>
+	<edit_mainwnd_res id="2283" res_type="角色" res_path1="mainset-hero001/2283" open="true"/>
+	<edit_mainwnd_res id="2284" res_type="角色" res_path1="mainset-hero001/2284" open="true"/>
+	<edit_mainwnd_res id="2285" res_type="角色" res_path1="mainset-hero001/2285" open="true"/>
+	<edit_mainwnd_res id="2286" res_type="角色" res_path1="mainset-hero001/2286" open="true"/>
+	<edit_mainwnd_res id="2287" res_type="角色" res_path1="mainset-hero001/2287" open="true"/>
+	<edit_mainwnd_res id="2288" res_type="角色" res_path1="mainset-hero001/2288" open="true"/>
+	<edit_mainwnd_res id="2289" res_type="角色" res_path1="mainset-hero001/2289" open="true"/>
+	<edit_mainwnd_res id="2290" res_type="角色" res_path1="mainset-hero001/2290" open="true"/>
+	<edit_mainwnd_res id="2291" res_type="角色" res_path1="mainset-hero001/2291" open="true"/>
+	<edit_mainwnd_res id="2292" res_type="角色" res_path1="mainset-hero001/2292" open="true"/>
+</root>

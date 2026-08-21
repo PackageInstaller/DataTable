@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<root>
+	<formation>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="1" name="鋒矢陣" icon="formation001/Formation0001" formation_icon="formation002/15001" formation_type="五人" tenacity="100" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="ゴーレム紳士によって精密に調整され、陣形は均衡へと導かれる。整然とした秩序は、味方全体の物理攻撃・防御力および耐久性を強化する。">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="2" name="偃月陣" icon="formation001/Formation0002" formation_icon="formation002/15002" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="半透明の浮遊精霊が側で守護し、魔力の脈動に従い浮力を調整する。緩慢とした動きながらも、魔法の効果を高めることができる。">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="3" name="四方陣" icon="formation001/Formation0003" formation_icon="formation002/15003" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="油圧装甲により、小柄な機械騎士が堅牢な要塞を構築する。機動力は犠牲となるが、信頼性の高い防御戦術を得る。">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="4" name="刺鋒陣" icon="formation001/Formation0004" formation_icon="formation002/15004" formation_type="五人" tenacity="100" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="軽やかな翼の下には捕食者としての原始的本能が潜んでいる。金色の精霊が偽装状態に入ることで、味方全体に速度と防御の加護を付与する。">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="5" name="秘ノ鍵陣" icon="formation001/Formation0005" formation_icon="formation002/15005" formation_type="五人" tenacity="100" tenacity_grow="1" loop_cd="5" break_max_hp_percent_dmg="15" formation_info="精霊の、気流に対する鋭敏な直感を利用し、チームを最短の突撃ルートへと導く。防御・ブロック性能を捨てる代わりに、高速行動を実現する。">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="6" name="法之間" icon="formation001/Formation0006" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="5" break_max_hp_percent_dmg="15" formation_info="法之間">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="7" name="雁形" icon="formation001/Formation0007" formation_type="五人" tenacity="100" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="雁形">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="8" name="玄襄" icon="formation001/Formation0008" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="玄襄">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="9" name="前鋒" icon="formation001/Formation0009" formation_type="五人" tenacity="100" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="前鋒">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="10" name="常陣" icon="formation001/Formation0010" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="常陣">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="11" name="長蛇" icon="formation001/Formation0011" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="長蛇">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="12" name="衝軛" icon="formation001/Formation0012" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="衝軛">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="13" name="逆衝軛" icon="formation001/Formation0013" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="逆衝軛">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="14" name="天轟" icon="formation001/Formation0014" formation_type="五人" tenacity="100" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="天轟">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="15" name="長弓" icon="formation001/Formation0015" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="長弓">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="16" name="太極" icon="formation001/Formation0016" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="太極">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="17" name="天蠍" icon="formation001/Formation0017" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="5" break_max_hp_percent_dmg="15" formation_info="天蠍">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="18" name="星芒" icon="formation001/Formation0018" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="5" break_max_hp_percent_dmg="15" formation_info="星芒">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="19" name="長刃" icon="formation001/Formation0019" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="長刃">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="20" name="劍" icon="formation001/Formation0020" formation_type="五人" tenacity="100" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="劍">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="21" name="聚靈" icon="formation001/Formation0021" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="5" break_max_hp_percent_dmg="15" formation_info="聚靈">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="22" name="幻尾" icon="formation001/Formation0022" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="幻尾">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="23" name="真尾" icon="formation001/Formation0023" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="真尾">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="24" name="烈陽" icon="formation001/Formation0024" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="烈陽">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="25" name="戰車" icon="formation001/Formation0025" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="戰車">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="26" name="流馬" icon="formation001/Formation0026" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="流馬">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="27" name="日葵" icon="formation001/Formation0027" formation_type="五人" tenacity="100" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="日葵">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="28" name="太白" icon="formation001/Formation0028" formation_type="五人" tenacity="100" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="太白">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="29" name="大囂" icon="formation001/Formation0029" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="大囂">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="30" name="晨星" icon="formation001/Formation0030" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="5" break_max_hp_percent_dmg="15" formation_info="晨星">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="31" name="鎮日" icon="formation001/Formation0031" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="鎮日">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="32" name="信星" icon="formation001/Formation0032" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="信星">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="33" name="歲星" icon="formation001/Formation0033" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="歲星">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="34" name="重華" icon="formation001/Formation0034" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="重華">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="35" name="敗日" icon="formation001/Formation0035" formation_type="五人" tenacity="100" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="敗日">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="36" name="巨石" icon="formation001/Formation0036" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="5" break_max_hp_percent_dmg="15" formation_info="巨石">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="37" name="斧" icon="formation001/Formation0037" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="斧">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="38" name="君王" icon="formation001/Formation0038" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="5" break_max_hp_percent_dmg="15" formation_info="君王">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="39" name="蟲魚" icon="formation001/Formation0039" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="5" break_max_hp_percent_dmg="15" formation_info="蟲魚">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="40" name="尖塔" icon="formation001/Formation0040" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="尖塔">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="41" name="須守" icon="formation001/Formation0041" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="5" break_max_hp_percent_dmg="15" formation_info="須守">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="42" name="八風" icon="formation001/Formation0042" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="八風">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="43" name="曲劍" icon="formation001/Formation0043" formation_type="五人" tenacity="100" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="曲劍">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="44" name="霜首" icon="formation001/Formation0044" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="霜首">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="45" name="禹步" icon="formation001/Formation0045" formation_type="五人" tenacity="200" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="禹步">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="46" name="背水" icon="formation001/Formation0046" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="5" break_max_hp_percent_dmg="15" formation_info="背水">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="47" name="昇華" icon="formation001/Formation0047" formation_type="五人" tenacity="100" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="昇華">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="48" name="天火" icon="formation001/Formation0048" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="天火">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="49" name="交換" icon="formation001/Formation0049" formation_type="五人" tenacity="100" tenacity_grow="1" loop_cd="4" break_max_hp_percent_dmg="15" formation_info="交換">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="50" name="奇" icon="formation001/Formation0050" formation_type="五人" tenacity="150" tenacity_grow="1" loop_cd="3" break_max_hp_percent_dmg="15" formation_info="奇">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="10000" name="常備陣" icon="formation001/Formation002" formation_type="五人" tenacity="50" loop_cd="7" formation_info="獣が群れで狩りを行う際の頻度を模倣し、移動速度と殲滅効率を高める。">
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="10001" name="常備陣" icon="formation001/Formation002" formation_type="五人" tenacity="400" loop_cd="7" break_max_hp_percent_dmg="15" formation_info="獣が群れで狩りを行う際の頻度を模倣し、移動速度と殲滅効率を高める。">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="10002" name="大常備陣" icon="formation001/Formation002" formation_type="五人" tenacity="600" loop_cd="7" break_max_hp_percent_dmg="15" formation_info="獣の凶暴性を高度に凝縮し、暴力的な連撃の中で、より精密かつ致命的な破壊力をチームにもたらす。">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="10003" name="方陣" icon="formation001/Formation002" formation_type="五人" tenacity="500" loop_cd="7" break_max_hp_percent_dmg="15" formation_info="速度を犠牲に堅固な防御陣形を得ることで、鋼鉄の要塞のように敵の進攻経路を封鎖する。">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="10004" name="甲殻陣" icon="formation001/Formation002" formation_type="五人" tenacity="600" loop_cd="7" break_max_hp_percent_dmg="15" formation_info="進化した生体防御により、血肉をあらゆる物理衝撃に耐えるレベルまで強化するが、その代償として機動力はやや低下する。">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="10005" name="イカロスの翼" icon="formation001/Formation002" formation_type="五人" tenacity="600" loop_cd="7" break_max_hp_percent_dmg="15" formation_info="飛禽が急降下する瞬間の力学と速度を模倣し、墜落するような加速の中で対象を切り裂く攻撃力を獲得する。">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="10006" name="龍牙" icon="formation001/Formation002" formation_type="五人" tenacity="350" loop_cd="7" break_max_hp_percent_dmg="15" formation_info="攻守が極端に偏った狂暴な型。防御の隙を代償に極限の咬合力を得る様は、まるで巨龍が口を開くようにすべてを吞み込む。">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="10007" name="残星" icon="formation001/Formation002" formation_type="五人" tenacity="500" loop_cd="7" break_max_hp_percent_dmg="15" formation_info="星辰が墜落する際の魔力残滓を捕捉し、防御性能を削り魔力制御の精密性を獲得する。">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="10008" name="雷鎚" icon="formation001/Formation002" formation_type="五人" tenacity="600" loop_cd="7" break_max_hp_percent_dmg="15" formation_info="万鈞の雷霆を受け止める重圧制御。強力な自己修復力と防護性能を備え、戦場を突き進む。">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="10009" name="二叉槍" icon="formation001/Formation002" formation_type="五人" tenacity="450" loop_cd="7" break_max_hp_percent_dmg="15" formation_info="毒蛇の刺突陣形を模倣し、物理的弱点への精密な貫通に特化することで、恐るべき致命的ダメージを与える。">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="10010" name="牙突" icon="formation001/Formation002" formation_type="五人" tenacity="550" loop_cd="7" break_max_hp_percent_dmg="15" formation_info="凶獣の捕食時に見られる高速突進。速度と命中率を融合させ、一瞬で回避不能の咬殺力を実現する。">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+	<formation id="10011" name="フーガ" icon="formation001/Formation002" formation_type="五人" tenacity="400" loop_cd="7" break_max_hp_percent_dmg="15" formation_info="複雑に変化する生体磁場の共鳴を利用し、同期周波数によって異常侵蝕を防ぎながら、各機能が協調して行動力を維持する。">
+		<break_buff_id>11352</break_buff_id>
+		<break_buff_dur>2</break_buff_dur>
+		<break_buff_id>0</break_buff_id>
+		<break_buff_dur>0</break_buff_dur>
+	</formation>
+</root>
