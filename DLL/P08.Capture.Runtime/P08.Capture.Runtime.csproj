@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>P08.Capture.Runtime</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net40</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.ToLua">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.ToLua.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.Base">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="P08.RenderPipeline">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/P08.RenderPipeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

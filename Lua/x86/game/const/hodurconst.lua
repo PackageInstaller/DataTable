@@ -1,0 +1,33 @@
+﻿return {
+	SPECIAL_AFFIX_ID = 80486,
+	BOSS_IMG_PATH = "TextureConfig/BossAttribute_new/",
+	CHALLENGE_CHAPTER_ID = 4,
+	CHAPTER_TYPE = {
+		CHALLENGE = 2,
+		MAINLINE = 1
+	},
+	COMMON_STATE = {
+		PASS = 3,
+		LOCK = 1,
+		UNLOCK = 2
+	},
+	STAGE_ITEM_POS = {
+		TOP = 1,
+		DOWN = 2,
+		OTHER = 3
+	},
+	INFO_VIEW_TYPE = {
+		STAGE = 1,
+		EVENT = 2
+	},
+	TRAIL_DIC = {
+		[113703] = 113704,
+		[115608] = 115607,
+		[124805] = 124804
+	},
+	TRAIL_DIC_SPE = {
+		[124804] = 124805,
+		[113704] = 113703,
+		[115607] = 115608
+	}
+}

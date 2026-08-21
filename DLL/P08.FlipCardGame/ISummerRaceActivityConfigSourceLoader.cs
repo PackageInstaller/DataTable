@@ -1,0 +1,4 @@
+public interface ISummerRaceActivityConfigSourceLoader
+{
+	SummerRaceActivityCatalogSourceData LoadSourceData(SummerRaceActivityLoadContext context);
+}

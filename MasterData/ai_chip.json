@@ -1,0 +1,6190 @@
+[
+  {
+    "id": 1,
+    "ID": 1,
+    "TypeId": 1,
+    "SuitName": "弥洁儿",
+    "PictureId": "1",
+    "Portrait": "1",
+    "NewCondition": 4025,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect1.asset"
+    ],
+    "Desc": "作为队友的修正者将不再进行闪避和受身，获得硬直效果。",
+    "Profile": "第五只被研发出来的弥弥尔猫型AI，非常擅长清洁和整理。\n管理着整栋深空之眼大楼的后勤清洁系统，有比较严重的洁癖，本人也是打扫清洁的好手。",
+    "Story": "第五只被研发出来的弥弥尔猫型AI，非常擅长清洁和整理。\n管理着整栋深空之眼大楼的后勤清洁系统，有比较严重的洁癖，本人也是打扫清洁的好手。\n不过性格比较冒失和胆小，经常在犯错和道歉中度日。"
+  },
+  {
+    "id": 2,
+    "ID": 2,
+    "TypeId": 1,
+    "SuitName": "弥可可",
+    "PictureId": "2",
+    "Portrait": "2",
+    "NewCondition": 4030,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect2.asset"
+    ],
+    "Desc": "触发闪避效果时，全队伍恢复3%的生命值。",
+    "Profile": "第六只被研发出来的弥弥尔猫型AI，非常擅长料理研究，负责深空之眼的食堂管理。\n会因为成员们不好好吃饭而生气，被夸奖菜品好吃时会非常感动。",
+    "Story": "第六只被研发出来的弥弥尔猫型AI，非常擅长料理研究，负责深空之眼的食堂管理。\n传闻是因为成员们抱怨菜色太单一而被研发出来，梦想是每天都能研究出不同的料理，让深空之眼的所有人都能为美味的食物而感动。\n会因为成员们不好好吃饭而生气，被夸奖菜品好吃时会非常感动。"
+  },
+  {
+    "id": 3,
+    "ID": 3,
+    "TypeId": 1,
+    "SuitName": "弥特尔",
+    "PictureId": "3",
+    "Portrait": "3",
+    "NewCondition": 30114,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect3.asset"
+    ],
+    "Desc": "修正模式的持续时间延长3秒。",
+    "Profile": "第二只被研发出来的弥弥尔猫型AI，也是算力最接近弥弥尔的一型。\n目前在隐科组协助大国主和海姆达尔的研究，是大量实验数据的记录员。",
+    "Story": "第二只被研发出来的弥弥尔猫型AI，也是算力最接近弥弥尔的一型。\n与性格恶劣的弥弥尔截然相反，弥特尔更像是弥弥尔设计预想的摸样——沉默寡言，却总能准确无误地完成总部交代的任务。\n目前在隐科组协助大国主和海姆达尔的研究，是大量实验数据的记录员。"
+  },
+  {
+    "id": 4,
+    "ID": 4,
+    "TypeId": 1,
+    "SuitName": "弥摇摇",
+    "PictureId": "4",
+    "Portrait": "4",
+    "NewCondition": 22101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect4.asset"
+    ],
+    "Desc": "作为队友的修正者触发闪避效果时，队长获得机制值（20点怒气、20点能量、1个印记、20点神能、20点协律）。",
+    "Profile": "第四只被研发出来的弥弥尔猫型AI，是所有型号中最吵闹的一只。\n所到之处总是播放着富有节奏感的音乐，头部跟着律动摇摆，甚至连说话的声音都是电音。",
+    "Story": "第四只被研发出来的弥弥尔猫型AI，是所有型号中最吵闹的一只。\n所到之处总是播放着富有节奏感的音乐，头部跟着律动摇摆，甚至连说话的声音都是电音。\n负责着深空之眼内所有的音像品管理，当作为辅助AI参与作战时，似乎更倾向于灵巧、高机动性的战术。"
+  },
+  {
+    "id": 5,
+    "ID": 5,
+    "TypeId": 1,
+    "SuitName": "弥之助",
+    "PictureId": "5",
+    "Portrait": "5",
+    "NewCondition": 4035,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect5.asset"
+    ],
+    "Desc": "修正等级为Ω级时，作为队友的修正者会心率提高10%，队友造成会心时获得1%的奥义值。",
+    "Profile": "第十只被研发出来的弥弥尔猫型AI，与此前所有的型号不同，弥之助兼具了一定的作战功能。性格较为害羞内敛，经常以「在下」自称。",
+    "Story": "第十只被研发出来的弥弥尔猫型AI，与此前所有的型号不同，弥之助兼具了一定的作战功能。性格较为害羞内敛，经常以「在下」自称。\n它是为了雉小队前往笹波执行特殊任务而研发的，形象参考了笹波一种名叫「潜行者」的古老职业，在设计时参考了国常立许多的意见。\n值得一提的是弥之助的侦察与反侦察能力得到了特向的强化，全身上下都采用了特殊的可隐形材质，不仅可以长时间消失在肉眼的视线内，连红外线、热感应等仪器都难以侦测到它。"
+  },
+  {
+    "id": 6,
+    "ID": 6,
+    "TypeId": 1,
+    "SuitName": "弥芙尔",
+    "PictureId": "6",
+    "Portrait": "6",
+    "NewCondition": 4001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect6.asset"
+    ],
+    "Desc": "作为队友的修正者受到致命伤害会立即恢复至生命值上限，但伤害和治疗效果降低10%，降低效果最多叠加5层，持续至本场战斗结束。",
+    "Profile": "第三只被研发出来的弥弥尔猫型AI，这次是难得一见的女性人格。\n在设计时反省了弥弥尔变成霸道肥宅的失败，弥芙尔将所有人性美好的品质集于一身。",
+    "Story": "第三只被研发出来的弥弥尔猫型AI，这次是难得一见的女性人格。\n在设计时反省了弥弥尔变成霸道肥宅的失败，弥芙尔将所有人性美好的品质集于一身。\n她像修正者和管理员的大姐姐一样，比起作战成功更关心大家的平安，哪怕在平时的生活中也会关心成员们衣食住行的小事，被大家形容是善良的天使。\n称呼「弥弥尔」为哥哥，会在弥弥尔欺负新人时为新人打抱不平，也因此总和弥弥尔吵架，性格较为认真，最终总是能让怕麻烦的弥弥尔落在下风。\n数据处理能力偏弱，经常出没于训练室、餐厅还有游戏室，提醒大家不要过度劳累，健康三餐，早睡早起。"
+  },
+  {
+    "id": 101,
+    "ID": 101,
+    "TypeId": 2,
+    "SuitName": "战术集结",
+    "PictureId": "101",
+    "NewCondition": 23101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的修正者会围绕队长进行战斗。",
+    "Story": "故事略7"
+  },
+  {
+    "id": 102,
+    "ID": 102,
+    "TypeId": 2,
+    "SuitName": "强击援护",
+    "PictureId": "102",
+    "NewCondition": 2314,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect102.asset"
+    ],
+    "Desc": "作为队友的修正者在施放持续释放类技能时，受到的伤害降低50%。",
+    "Story": "故事略8"
+  },
+  {
+    "id": 103,
+    "ID": 103,
+    "TypeId": 2,
+    "SuitName": "反馈力场",
+    "PictureId": "103",
+    "NewCondition": 4040,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect103.asset"
+    ],
+    "Desc": "作为队友的修正者在施放前置准备类技能时，受到的伤害降低50%。",
+    "Story": "故事略9"
+  },
+  {
+    "id": 104,
+    "ID": 104,
+    "TypeId": 2,
+    "SuitName": "裂隙涌动",
+    "PictureId": "104",
+    "NewCondition": 22201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect104.asset"
+    ],
+    "Desc": "作为队友的修正者进行受身或闪避成功时的无敌时间延长1秒。",
+    "Story": "故事略10"
+  },
+  {
+    "id": 105,
+    "ID": 105,
+    "TypeId": 2,
+    "SuitName": "紧急救援",
+    "PictureId": "105",
+    "NewCondition": 2324,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect105.asset"
+    ],
+    "Desc": "作为队友的修正者受击时仅一次受到的伤害降低50%，之后消耗闪避2.5倍的闪避值，该效果每30秒最多触发一次。",
+    "Story": "故事略11"
+  },
+  {
+    "id": 106,
+    "ID": 106,
+    "TypeId": 2,
+    "SuitName": "潜影猎手",
+    "PictureId": "106",
+    "NewCondition": 2325,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect106.asset"
+    ],
+    "Desc": "作为队友的修正者触发的零时空间的持续时间延长1秒。",
+    "Story": "故事略12"
+  },
+  {
+    "id": 107,
+    "ID": 107,
+    "TypeId": 2,
+    "SuitName": "战场支配",
+    "PictureId": "107",
+    "NewCondition": 22202,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect107.asset"
+    ],
+    "Desc": "作为队友的修正者攻击力提高，场上每存在1个敌人攻击力提高5%，该效果提供的攻击力提高最高为20%。",
+    "Story": "故事略13"
+  },
+  {
+    "id": 108,
+    "ID": 108,
+    "TypeId": 2,
+    "SuitName": "挑战者",
+    "PictureId": "108",
+    "NewCondition": 4045,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect108.asset"
+    ],
+    "Desc": "作为队友的修正者防御力提高，场上敌人数量为1时，防御力提高25%，场上每增加1个敌人，防御力提高加成降低5%。"
+  },
+  {
+    "id": 109,
+    "ID": 109,
+    "TypeId": 2,
+    "SuitName": "突陷攻势",
+    "PictureId": "109",
+    "NewCondition": 20220,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect109.asset"
+    ],
+    "Desc": "自身或者队友每施放一次奥义，队友攻击力提高2%、防御力提高2%，最多可叠加5层。"
+  },
+  {
+    "id": 110,
+    "ID": 110,
+    "TypeId": 2,
+    "SuitName": "边际效益",
+    "PictureId": "110",
+    "NewCondition": 30115,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect110.asset"
+    ],
+    "Desc": "作为队友的修正者处于零时空间或修正模式时，伤害提高15%。"
+  },
+  {
+    "id": 111,
+    "ID": 111,
+    "TypeId": 2,
+    "SuitName": "护卫防壁",
+    "PictureId": "111",
+    "NewCondition": 2313,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect111.asset"
+    ],
+    "Desc": "作为队友的修正者受到异常状态的时间缩短一半。异常状态：冰冻、麻痹、眩晕、禁锢、石化、受创、灼烧。"
+  },
+  {
+    "id": 112,
+    "ID": 112,
+    "TypeId": 2,
+    "SuitName": "反制指令",
+    "PictureId": "112",
+    "NewCondition": 23103,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect112.asset"
+    ],
+    "Desc": "作为队友的修正者附加的冰冻、麻痹、眩晕、禁锢、混乱状态的持续时间延长1秒。"
+  },
+  {
+    "id": 113,
+    "ID": 113,
+    "TypeId": 2,
+    "SuitName": "重装核心",
+    "PictureId": "113",
+    "NewCondition": 4050,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect113.asset"
+    ],
+    "Desc": "作为队友的修正者在施放持续蓄力类技能时，受到的伤害降低50%。"
+  },
+  {
+    "id": 101101,
+    "ID": 101101,
+    "TypeId": 3,
+    "SpecChar": 1011,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5101101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的雏心·奥西里斯，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 101102,
+    "ID": 101102,
+    "TypeId": 3,
+    "SpecChar": 1011,
+    "SuitName": "封伐",
+    "PictureId": "101102",
+    "NewCondition": 5101102,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的雏心·奥西里斯，会优先在普通攻击第二段后衔接施放技能一「禁忌灾刃」。"
+  },
+  {
+    "id": 101103,
+    "ID": 101103,
+    "TypeId": 3,
+    "SpecChar": 1011,
+    "SuitName": "铭咒",
+    "PictureId": "101103",
+    "NewCondition": 5101102,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的雏心·奥西里斯，会优先在普通攻击第四段后衔接施放技能一「禁忌灾刃」。"
+  },
+  {
+    "id": 101104,
+    "ID": 101104,
+    "TypeId": 3,
+    "SpecChar": 1011,
+    "SuitName": "冥光",
+    "PictureId": "101104",
+    "NewCondition": 5101102,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的雏心·奥西里斯，会优先在技能二「狱镰回旋」后衔接施放技能一「禁忌灾刃」。"
+  },
+  {
+    "id": 101105,
+    "ID": 101105,
+    "TypeId": 3,
+    "SpecChar": 1011,
+    "SuitName": "噬罪",
+    "PictureId": "101105",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的雏心·奥西里斯，仅会在生命值低于75%时施放技能三「断罪之镰」。（不安装芯片时，不判断生命值阈值）"
+  },
+  {
+    "id": 101106,
+    "ID": 101106,
+    "TypeId": 3,
+    "SpecChar": 1011,
+    "SuitName": "双重禁忌",
+    "PictureId": "101106",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的雏心·奥西里斯，在生命值高于15%时，会在技能一「禁忌灾刃」冷却时再次施放该技能。（不安装芯片时，生命判断阈值默认为50%）"
+  },
+  {
+    "id": 101107,
+    "ID": 101107,
+    "TypeId": 3,
+    "SpecChar": 1011,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5101101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的雏心·奥西里斯，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 101108,
+    "ID": 101108,
+    "TypeId": 3,
+    "SpecChar": 1011,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5101101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的雏心·奥西里斯，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 101201,
+    "ID": 101201,
+    "TypeId": 3,
+    "SpecChar": 1012,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5101201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的天诫·白泽，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 101202,
+    "ID": 101202,
+    "TypeId": 3,
+    "SpecChar": 1012,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5101201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的天诫·白泽，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 101203,
+    "ID": 101203,
+    "TypeId": 3,
+    "SpecChar": 1012,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5101201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的天诫·白泽，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 101301,
+    "ID": 101301,
+    "TypeId": 3,
+    "SpecChar": 1013,
+    "SuitName": "续炎 ",
+    "PictureId": "101301",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的障月·阿修罗，于施放技能的间隔中，会衔接施放较少次数的普通攻击「炎拳千崩」。"
+  },
+  {
+    "id": 101302,
+    "ID": 101302,
+    "TypeId": 3,
+    "SpecChar": 1013,
+    "SuitName": "烈拳",
+    "PictureId": "101302",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的障月·阿修罗，于施放技能的间隔中，会衔接施放较多次数的普通攻击「炎拳千崩」。"
+  },
+  {
+    "id": 101303,
+    "ID": 101303,
+    "TypeId": 3,
+    "SpecChar": 1013,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5101301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的障月·阿修罗，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 101304,
+    "ID": 101304,
+    "TypeId": 3,
+    "SpecChar": 1013,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5101301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的障月·阿修罗，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 101305,
+    "ID": 101305,
+    "TypeId": 3,
+    "SpecChar": 1013,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5101301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的障月·阿修罗，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 101501,
+    "ID": 101501,
+    "TypeId": 3,
+    "SpecChar": 1015,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5101501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的狂狮·塞赫麦特，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 101502,
+    "ID": 101502,
+    "TypeId": 3,
+    "SpecChar": 1015,
+    "SuitName": "掩护",
+    "PictureId": "107602",
+    "NewCondition": 5101501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的狂狮·塞赫麦特，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 101503,
+    "ID": 101503,
+    "TypeId": 3,
+    "SpecChar": 1015,
+    "SuitName": "破雄 ",
+    "PictureId": "107603",
+    "NewCondition": 5101501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的狂狮·塞赫麦特，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 101504,
+    "ID": 101504,
+    "TypeId": 3,
+    "SpecChar": 1015,
+    "SuitName": "追从",
+    "PictureId": "113801",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的狂狮·塞赫麦特，当神格「战争母狮·统军」被激活时，「潜能解放」固定对队长生效。"
+  },
+  {
+    "id": 101505,
+    "ID": 101505,
+    "TypeId": 3,
+    "SpecChar": 1015,
+    "SuitName": "协力",
+    "PictureId": "113802",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的狂狮·塞赫麦特，当神格「战争母狮·统军」被激活时，「潜能解放」固定对另一个队友生效。"
+  },
+  {
+    "id": 101506,
+    "ID": 101506,
+    "TypeId": 3,
+    "SpecChar": 1015,
+    "SuitName": "当先",
+    "PictureId": "113803",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的狂狮·塞赫麦特，当神格「战争母狮·统军」被激活时，「潜能解放」固定对自身生效。"
+  },
+  {
+    "id": 101601,
+    "ID": 101601,
+    "TypeId": 3,
+    "SpecChar": 1016,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5101601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的荒獠·金固，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 101602,
+    "ID": 101602,
+    "TypeId": 3,
+    "SpecChar": 1016,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5101601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的荒獠·金固，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 101603,
+    "ID": 101603,
+    "TypeId": 3,
+    "SpecChar": 1016,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5101601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的荒獠·金固，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 101701,
+    "ID": 101701,
+    "TypeId": 3,
+    "SpecChar": 1017,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5101701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的灵猫·芭丝特，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 101702,
+    "ID": 101702,
+    "TypeId": 3,
+    "SpecChar": 1017,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5101701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的灵猫·芭丝特，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 101703,
+    "ID": 101703,
+    "TypeId": 3,
+    "SpecChar": 1017,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5101701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的灵猫·芭丝特，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 101901,
+    "ID": 101901,
+    "TypeId": 3,
+    "SpecChar": 1019,
+    "SuitName": "穿云",
+    "PictureId": "101901",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的疾风之枪·休，在战斗中会主动施放闪避来尝试召唤「风神之柱」。"
+  },
+  {
+    "id": 101902,
+    "ID": 101902,
+    "TypeId": 3,
+    "SpecChar": 1019,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5101901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的疾风之枪·休，会优先攻击队长锁定的敌人。 "
+  },
+  {
+    "id": 101903,
+    "ID": 101903,
+    "TypeId": 3,
+    "SpecChar": 1019,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5101901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的疾风之枪·休，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 101904,
+    "ID": 101904,
+    "TypeId": 3,
+    "SpecChar": 1019,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5101901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的疾风之枪·休，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 102001,
+    "ID": 102001,
+    "TypeId": 3,
+    "SpecChar": 1020,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5102001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的三相·梵天，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 102002,
+    "ID": 102002,
+    "TypeId": 3,
+    "SpecChar": 1020,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5102001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的三相·梵天，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 102003,
+    "ID": 102003,
+    "TypeId": 3,
+    "SpecChar": 1020,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5102001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的三相·梵天，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 102101,
+    "ID": 102101,
+    "TypeId": 3,
+    "SpecChar": 1021,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5102101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的曦光·阿尔忒弥斯，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 102102,
+    "ID": 102102,
+    "TypeId": 3,
+    "SpecChar": 1021,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5102101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的曦光·阿尔忒弥斯，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 102103,
+    "ID": 102103,
+    "TypeId": 3,
+    "SpecChar": 1021,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5102101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的曦光·阿尔忒弥斯，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 102201,
+    "ID": 102201,
+    "TypeId": 3,
+    "SpecChar": 1022,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5102201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的幽月·塞勒涅，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 102202,
+    "ID": 102202,
+    "TypeId": 3,
+    "SpecChar": 1022,
+    "SuitName": "掩护",
+    "PictureId": "107602",
+    "NewCondition": 5102201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的幽月·塞勒涅，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 102203,
+    "ID": 102203,
+    "TypeId": 3,
+    "SpecChar": 1022,
+    "SuitName": "破雄 ",
+    "PictureId": "107603",
+    "NewCondition": 5102201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的幽月·塞勒涅，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 102401,
+    "ID": 102401,
+    "TypeId": 3,
+    "SpecChar": 1024,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5102401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的胡狼·阿努比斯，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 102402,
+    "ID": 102402,
+    "TypeId": 3,
+    "SpecChar": 1024,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5102401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的胡狼·阿努比斯，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 102403,
+    "ID": 102403,
+    "TypeId": 3,
+    "SpecChar": 1024,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5102401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的胡狼·阿努比斯，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 102601,
+    "ID": 102601,
+    "TypeId": 3,
+    "SpecChar": 1026,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5102601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的银臂·努阿达，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 102602,
+    "ID": 102602,
+    "TypeId": 3,
+    "SpecChar": 1026,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5102601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的银臂·努阿达，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 102603,
+    "ID": 102603,
+    "TypeId": 3,
+    "SpecChar": 1026,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5102601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的银臂·努阿达，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 102701,
+    "ID": 102701,
+    "TypeId": 3,
+    "SpecChar": 1027,
+    "SuitName": "冰掣",
+    "PictureId": "102701",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的低吹雪·利维坦，技能一「冒失猛撞」仅会对处于冰冻状态下的敌人施放。"
+  },
+  {
+    "id": 102702,
+    "ID": 102702,
+    "TypeId": 3,
+    "SpecChar": 1027,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5102701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的低吹雪·利维坦，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 102703,
+    "ID": 102703,
+    "TypeId": 3,
+    "SpecChar": 1027,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5102701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的低吹雪·利维坦，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 102704,
+    "ID": 102704,
+    "TypeId": 3,
+    "SpecChar": 1027,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5102701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的低吹雪·利维坦，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 102801,
+    "ID": 102801,
+    "TypeId": 3,
+    "SpecChar": 1028,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5102801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的轰雷·托尔，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 102802,
+    "ID": 102802,
+    "TypeId": 3,
+    "SpecChar": 1028,
+    "SuitName": "止鸣 ",
+    "PictureId": "102802",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          200
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的轰雷·托尔，施放一技能「大地的奔雷」后，不会再使用其衍生技能「奔雷击」。"
+  },
+  {
+    "id": 102803,
+    "ID": 102803,
+    "TypeId": 3,
+    "SpecChar": 1028,
+    "SuitName": "息雷 ",
+    "PictureId": "102803",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          200
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的轰雷·托尔，施放二技能「远海的风雷」后，不会再使用其衍生技能「风雷击」。"
+  },
+  {
+    "id": 102804,
+    "ID": 102804,
+    "TypeId": 3,
+    "SpecChar": 1028,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5102801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的轰雷·托尔，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 102805,
+    "ID": 102805,
+    "TypeId": 3,
+    "SpecChar": 1028,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5102801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的轰雷·托尔，会优先攻击精英级敌人。"
+  },
+  {
+    "id": 103201,
+    "ID": 103201,
+    "TypeId": 3,
+    "SpecChar": 1032,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5103201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的熯天·提尔，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 103202,
+    "ID": 103202,
+    "TypeId": 3,
+    "SpecChar": 1032,
+    "SuitName": "同翼强攻",
+    "PictureId": "103202",
+    "NewCondition": 5103202,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的熯天·提尔，仅会在巨剑类型是「巨剑·皇后」时施放技能三「同翼互攻」。 "
+  },
+  {
+    "id": 103203,
+    "ID": 103203,
+    "TypeId": 3,
+    "SpecChar": 1032,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5103201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的熯天·提尔，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 103204,
+    "ID": 103204,
+    "TypeId": 3,
+    "SpecChar": 1032,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5103201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的熯天·提尔，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 103301,
+    "ID": 103301,
+    "TypeId": 3,
+    "SpecChar": 1033,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5103301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的启明·海姆达尔，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 103302,
+    "ID": 103302,
+    "TypeId": 3,
+    "SpecChar": 1033,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5103301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的启明·海姆达尔，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 103303,
+    "ID": 103303,
+    "TypeId": 3,
+    "SpecChar": 1033,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5103301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的启明·海姆达尔，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 103501,
+    "ID": 103501,
+    "TypeId": 3,
+    "SpecChar": 1035,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5103501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的狂鳄·索贝克，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 103502,
+    "ID": 103502,
+    "TypeId": 3,
+    "SpecChar": 1035,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5103501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的狂鳄·索贝克，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 103503,
+    "ID": 103503,
+    "TypeId": 3,
+    "SpecChar": 1035,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5103501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的狂鳄·索贝克，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 103701,
+    "ID": 103701,
+    "TypeId": 3,
+    "SpecChar": 1037,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5103701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的夜之寄生·霍德尔，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 103702,
+    "ID": 103702,
+    "TypeId": 3,
+    "SpecChar": 1037,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5103701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的夜之寄生·霍德尔，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 103703,
+    "ID": 103703,
+    "TypeId": 3,
+    "SpecChar": 1037,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5103701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的夜之寄生·霍德尔，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 103801,
+    "ID": 103801,
+    "TypeId": 3,
+    "SpecChar": 1038,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5103801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的羽灼·赫拉，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 103802,
+    "ID": 103802,
+    "TypeId": 3,
+    "SpecChar": 1038,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5103801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的羽灼·赫拉，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 103803,
+    "ID": 103803,
+    "TypeId": 3,
+    "SpecChar": 1038,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5103801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的羽灼·赫拉，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 103901,
+    "ID": 103901,
+    "TypeId": 3,
+    "SpecChar": 1039,
+    "SuitName": "星泽",
+    "PictureId": "103901",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          200
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的潮音·波塞冬，不会在神能为满的情况下施放技能三「激流浪涌」。"
+  },
+  {
+    "id": 103902,
+    "ID": 103902,
+    "TypeId": 3,
+    "SpecChar": 1039,
+    "SuitName": "海脉",
+    "PictureId": "103902",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          200
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的潮音·波塞冬，不会在神能为满的情况下施放技能二「星离雨散」。"
+  },
+  {
+    "id": 103903,
+    "ID": 103903,
+    "TypeId": 3,
+    "SpecChar": 1039,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5103902,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的潮音·波塞冬，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 103904,
+    "ID": 103904,
+    "TypeId": 3,
+    "SpecChar": 1039,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5103902,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的潮音·波塞冬，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 103905,
+    "ID": 103905,
+    "TypeId": 3,
+    "SpecChar": 1039,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5103902,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的潮音·波塞冬，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 104101,
+    "ID": 104101,
+    "TypeId": 3,
+    "SpecChar": 1041,
+    "SuitName": "心韵和鸣",
+    "PictureId": "104101",
+    "NewCondition": 5104101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "隐藏铃兰之弦·雅典娜的「谐律判定」指示条。"
+  },
+  {
+    "id": 104102,
+    "ID": 104102,
+    "TypeId": 3,
+    "SpecChar": 1041,
+    "SuitName": "心韵谐律",
+    "PictureId": "104102",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          300
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "将铃兰之弦·雅典娜的「谐律判定」指示条替换为特殊的屏幕效果。"
+  },
+  {
+    "id": 104103,
+    "ID": 104103,
+    "TypeId": 3,
+    "SpecChar": 1041,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5104102,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的铃兰之弦·雅典娜，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 104104,
+    "ID": 104104,
+    "TypeId": 3,
+    "SpecChar": 1041,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5104102,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的铃兰之弦·雅典娜，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 104105,
+    "ID": 104105,
+    "TypeId": 3,
+    "SpecChar": 1041,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5104102,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的铃兰之弦·雅典娜，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 104201,
+    "ID": 104201,
+    "TypeId": 3,
+    "SpecChar": 1042,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5104201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的操偶师·哈迪斯，会优先攻击队长锁定的敌人。 "
+  },
+  {
+    "id": 104202,
+    "ID": 104202,
+    "TypeId": 3,
+    "SpecChar": 1042,
+    "SuitName": "轮舞曲 ",
+    "PictureId": "104202",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          200
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的操偶师·哈迪斯，进入共舞状态时会优先攻击精英级敌人。"
+  },
+  {
+    "id": 104203,
+    "ID": 104203,
+    "TypeId": 3,
+    "SpecChar": 1042,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5104201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的操偶师·哈迪斯，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 104204,
+    "ID": 104204,
+    "TypeId": 3,
+    "SpecChar": 1042,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5104201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的操偶师·哈迪斯，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 104301,
+    "ID": 104301,
+    "TypeId": 3,
+    "SpecChar": 1043,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5104301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的隐夜·伊里伽尔，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 104302,
+    "ID": 104302,
+    "TypeId": 3,
+    "SpecChar": 1043,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5104301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的隐夜·伊里伽尔，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 104303,
+    "ID": 104303,
+    "TypeId": 3,
+    "SpecChar": 1043,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5104301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的隐夜·伊里伽尔，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 104501,
+    "ID": 104501,
+    "TypeId": 3,
+    "SpecChar": 1045,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5104501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的赤音·亚莉莎，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 104502,
+    "ID": 104502,
+    "TypeId": 3,
+    "SpecChar": 1045,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5104501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的赤音·亚莉莎，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 104503,
+    "ID": 104503,
+    "TypeId": 3,
+    "SpecChar": 1045,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5104501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的赤音·亚莉莎，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 104401,
+    "ID": 104401,
+    "TypeId": 3,
+    "SpecChar": 1044,
+    "SuitName": "协击",
+    "PictureId": "100011",
+    "NewCondition": 5104401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的不灭王权·荷鲁斯，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 104402,
+    "ID": 104402,
+    "TypeId": 3,
+    "SpecChar": 1044,
+    "SuitName": "掩护",
+    "PictureId": "100012",
+    "NewCondition": 5104401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的不灭王权·荷鲁斯，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 104403,
+    "ID": 104403,
+    "TypeId": 3,
+    "SpecChar": 1044,
+    "SuitName": "破雄",
+    "PictureId": "100013",
+    "NewCondition": 5104401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的不灭王权·荷鲁斯，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 104601,
+    "ID": 104601,
+    "TypeId": 3,
+    "SpecChar": 1046,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5104601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的血弹·雪儿，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 104602,
+    "ID": 104602,
+    "TypeId": 3,
+    "SpecChar": 1046,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5104601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的血弹·雪儿，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 104603,
+    "ID": 104603,
+    "TypeId": 3,
+    "SpecChar": 1046,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5104601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的血弹·雪儿，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 104701,
+    "ID": 104701,
+    "TypeId": 3,
+    "SpecChar": 1047,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5104701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的裁暗之锋·塞尔凯特，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 104702,
+    "ID": 104702,
+    "TypeId": 3,
+    "SpecChar": 1047,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5104701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的裁暗之锋·塞尔凯特，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 104703,
+    "ID": 104703,
+    "TypeId": 3,
+    "SpecChar": 1047,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5104701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的裁暗之锋·塞尔凯特，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 104801,
+    "ID": 104801,
+    "TypeId": 3,
+    "SpecChar": 1048,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5104801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的彗光·前鬼坊天狗，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 104802,
+    "ID": 104802,
+    "TypeId": 3,
+    "SpecChar": 1048,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5104801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的彗光·前鬼坊天狗，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 104803,
+    "ID": 104803,
+    "TypeId": 3,
+    "SpecChar": 1048,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5104801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的彗光·前鬼坊天狗，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 104901,
+    "ID": 104901,
+    "TypeId": 3,
+    "SpecChar": 1049,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5104901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的镜花黄泉·伊邪那美，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 104902,
+    "ID": 104902,
+    "TypeId": 3,
+    "SpecChar": 1049,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5104901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的镜花黄泉·伊邪那美，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 104903,
+    "ID": 104903,
+    "TypeId": 3,
+    "SpecChar": 1049,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5104901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的镜花黄泉·伊邪那美，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 105001,
+    "ID": 105001,
+    "TypeId": 3,
+    "SpecChar": 1050,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5105001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的真红·丰前坊天狗，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 105002,
+    "ID": 105002,
+    "TypeId": 3,
+    "SpecChar": 1050,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5105001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的真红·丰前坊天狗，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 105003,
+    "ID": 105003,
+    "TypeId": 3,
+    "SpecChar": 1050,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5105001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的真红·丰前坊天狗，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 105201,
+    "ID": 105201,
+    "TypeId": 3,
+    "SpecChar": 1052,
+    "SuitName": "咆吼蓄势",
+    "PictureId": "105201",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          200
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的怒蛇·马尔杜克，在施放普通攻击「暴风突击」第三段时上膛。"
+  },
+  {
+    "id": 105202,
+    "ID": 105202,
+    "TypeId": 3,
+    "SpecChar": 1052,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5105201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的怒蛇·马尔杜克，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 105203,
+    "ID": 105203,
+    "TypeId": 3,
+    "SpecChar": 1052,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5105201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的怒蛇·马尔杜克，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 105204,
+    "ID": 105204,
+    "TypeId": 3,
+    "SpecChar": 1052,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5105201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的怒蛇·马尔杜克，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 105301,
+    "ID": 105301,
+    "TypeId": 3,
+    "SpecChar": 1053,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5105301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的怀阳·羲和，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 105302,
+    "ID": 105302,
+    "TypeId": 3,
+    "SpecChar": 1053,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5105301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的怀阳·羲和，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 105303,
+    "ID": 105303,
+    "TypeId": 3,
+    "SpecChar": 1053,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5105301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的怀阳·羲和，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 105401,
+    "ID": 105401,
+    "TypeId": 3,
+    "SpecChar": 1054,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5105401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的双司镇命·无常，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 105402,
+    "ID": 105402,
+    "TypeId": 3,
+    "SpecChar": 1054,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5105401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的双司镇命·无常，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 105403,
+    "ID": 105403,
+    "TypeId": 3,
+    "SpecChar": 1054,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5105401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的双司镇命·无常，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 105404,
+    "ID": 105404,
+    "TypeId": 3,
+    "SpecChar": 1054,
+    "SuitName": "裁决 ",
+    "PictureId": "109404",
+    "NewCondition": 5105401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的双司镇命·无常，会优先攻击非精英级敌人。 "
+  },
+  {
+    "id": 105501,
+    "ID": 105501,
+    "TypeId": 3,
+    "SpecChar": 1055,
+    "SuitName": "拥霜",
+    "PictureId": "105501",
+    "NewCondition": 5105501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的霜影·暗御津羽，「凝寒」固定对队长生效。当神格「天之羽的寒意·寒极」被激活时，该芯片效果失效。"
+  },
+  {
+    "id": 105502,
+    "ID": 105502,
+    "TypeId": 3,
+    "SpecChar": 1055,
+    "SuitName": "寒芒",
+    "PictureId": "105502",
+    "NewCondition": 5105502,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的霜影·暗御津羽，「凝寒」固定对另一个队友生效。当神格「天之羽的寒意·寒极」被激活时，该芯片效果失效。"
+  },
+  {
+    "id": 105503,
+    "ID": 105503,
+    "TypeId": 3,
+    "SpecChar": 1055,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5105503,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的霜影·暗御津羽，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 105504,
+    "ID": 105504,
+    "TypeId": 3,
+    "SpecChar": 1055,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5105503,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的霜影·暗御津羽，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 105505,
+    "ID": 105505,
+    "TypeId": 3,
+    "SpecChar": 1055,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5105503,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的霜影·暗御津羽，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 105601,
+    "ID": 105601,
+    "TypeId": 3,
+    "SpecChar": 1056,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5105601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的雷獠·伽梨，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 105602,
+    "ID": 105602,
+    "TypeId": 3,
+    "SpecChar": 1056,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5105601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的雷獠·伽梨，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 105603,
+    "ID": 105603,
+    "TypeId": 3,
+    "SpecChar": 1056,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5105601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的雷獠·伽梨，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 105801,
+    "ID": 105801,
+    "TypeId": 3,
+    "SpecChar": 1058,
+    "SuitName": "定鸿",
+    "PictureId": "105801",
+    "NewCondition": 5105801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的龙切·迦具土，在生命值高于30%时不会进行闪避。 "
+  },
+  {
+    "id": 105802,
+    "ID": 105802,
+    "TypeId": 3,
+    "SpecChar": 1058,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5105802,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的龙切·迦具土，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 105803,
+    "ID": 105803,
+    "TypeId": 3,
+    "SpecChar": 1058,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5105802,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的龙切·迦具土，会优先攻击队长附近的敌人。 "
+  },
+  {
+    "id": 105804,
+    "ID": 105804,
+    "TypeId": 3,
+    "SpecChar": 1058,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5105802,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的龙切·迦具土，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 105901,
+    "ID": 105901,
+    "TypeId": 3,
+    "SpecChar": 1059,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5105901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的光煌·阿波罗，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 105902,
+    "ID": 105902,
+    "TypeId": 3,
+    "SpecChar": 1059,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5105901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的光煌·阿波罗，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 105903,
+    "ID": 105903,
+    "TypeId": 3,
+    "SpecChar": 1059,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5105901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的光煌·阿波罗，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 106001,
+    "ID": 106001,
+    "TypeId": 3,
+    "SpecChar": 1060,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5106001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的九司·陆吾，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 106002,
+    "ID": 106002,
+    "TypeId": 3,
+    "SpecChar": 1060,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5106001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的九司·陆吾，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 106003,
+    "ID": 106003,
+    "TypeId": 3,
+    "SpecChar": 1060,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5106001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的九司·陆吾，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 106101,
+    "ID": 106101,
+    "TypeId": 3,
+    "SpecChar": 1061,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5106101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的玄机·执明，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 106102,
+    "ID": 106102,
+    "TypeId": 3,
+    "SpecChar": 1061,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5106101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的玄机·执明，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 106103,
+    "ID": 106103,
+    "TypeId": 3,
+    "SpecChar": 1061,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5106101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的玄机·执明，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 106601,
+    "ID": 106601,
+    "TypeId": 3,
+    "SpecChar": 1066,
+    "SuitName": "激进",
+    "PictureId": "106601",
+    "NewCondition": 5106601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的早樱·大国主，在任何情况下都不会抽取卡牌「恋人」，而是按顺序依次抽取卡牌「死神」和「战车」。"
+  },
+  {
+    "id": 106602,
+    "ID": 106602,
+    "TypeId": 3,
+    "SpecChar": 1066,
+    "SuitName": "博爱",
+    "PictureId": "106602",
+    "NewCondition": 5106601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的早樱·大国主，当我方有生命值低于80%时，会抽取卡牌「恋人」，其他时候会按顺序依次抽取三种卡牌。当神格「出云国魂·审判」被激活时，该芯片效果失效。（不安装芯片时，生命值判断阈值默认为60%）"
+  },
+  {
+    "id": 106603,
+    "ID": 106603,
+    "TypeId": 3,
+    "SpecChar": 1066,
+    "SuitName": "温柔",
+    "PictureId": "106603",
+    "NewCondition": 5106601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的早樱·大国主，当我方有生命值低于40%时，会抽取卡牌「恋人」，其他时候会按顺序依次抽取三种卡牌。当神格「出云国魂·审判」被激活时，该芯片效果失效。（不安装芯片时，生命值判断阈值默认为60%）"
+  },
+  {
+    "id": 106604,
+    "ID": 106604,
+    "TypeId": 3,
+    "SpecChar": 1066,
+    "SuitName": "仁慈",
+    "PictureId": "106604",
+    "NewCondition": 5106602,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的早樱·大国主，当我方有生命值低于20%时，会抽取卡牌「恋人」，其他时候会按顺序依次抽取三种卡牌。当神格「出云国魂·审判」被激活时，该芯片效果失效。（不安装芯片时，生命值判断阈值默认为60%）"
+  },
+  {
+    "id": 106605,
+    "ID": 106605,
+    "TypeId": 3,
+    "SpecChar": 1066,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5106603,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的早樱·大国主，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 106606,
+    "ID": 106606,
+    "TypeId": 3,
+    "SpecChar": 1066,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5106603,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的早樱·大国主，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 106607,
+    "ID": 106607,
+    "TypeId": 3,
+    "SpecChar": 1066,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5106603,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的早樱·大国主，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 106701,
+    "ID": 106701,
+    "TypeId": 3,
+    "SpecChar": 1067,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5106701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的流转之洋·欧申纳斯，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 106702,
+    "ID": 106702,
+    "TypeId": 3,
+    "SpecChar": 1067,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5106701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的流转之洋·欧申纳斯，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 106703,
+    "ID": 106703,
+    "TypeId": 3,
+    "SpecChar": 1067,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5106701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的流转之洋·欧申纳斯，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 106801,
+    "ID": 106801,
+    "TypeId": 3,
+    "SpecChar": 1068,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5106801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的沐风·恩利尔，会优先攻击队长锁定的敌人。 "
+  },
+  {
+    "id": 106802,
+    "ID": 106802,
+    "TypeId": 3,
+    "SpecChar": 1068,
+    "SuitName": "紊流",
+    "PictureId": "106802",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的沐风·恩利尔，会优先施放技能一「疾风冲击」。"
+  },
+  {
+    "id": 106803,
+    "ID": 106803,
+    "TypeId": 3,
+    "SpecChar": 1068,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5106801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的沐风·恩利尔，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 106804,
+    "ID": 106804,
+    "TypeId": 3,
+    "SpecChar": 1068,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5106801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的沐风·恩利尔，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 107001,
+    "ID": 107001,
+    "TypeId": 3,
+    "SpecChar": 1070,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5107001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的十曜·金乌，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 107002,
+    "ID": 107002,
+    "TypeId": 3,
+    "SpecChar": 1070,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5107001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的十耀·金乌，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 107003,
+    "ID": 107003,
+    "TypeId": 3,
+    "SpecChar": 1070,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5107001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的十耀·金乌，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 107101,
+    "ID": 107101,
+    "TypeId": 3,
+    "SpecChar": 1071,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5107101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的青君·孟章，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 107102,
+    "ID": 107102,
+    "TypeId": 3,
+    "SpecChar": 1071,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5107101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的青君·孟章，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 107103,
+    "ID": 107103,
+    "TypeId": 3,
+    "SpecChar": 1071,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5107101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的青君·孟章，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 107201,
+    "ID": 107201,
+    "TypeId": 3,
+    "SpecChar": 1072,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5107201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的百解·禄良，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 107202,
+    "ID": 107202,
+    "TypeId": 3,
+    "SpecChar": 1072,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5107201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的百解·禄良，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 107203,
+    "ID": 107203,
+    "TypeId": 3,
+    "SpecChar": 1072,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5107201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的百解·禄良，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 107301,
+    "ID": 107301,
+    "TypeId": 3,
+    "SpecChar": 1073,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5107301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的巧构·麟钰，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 107302,
+    "ID": 107302,
+    "TypeId": 3,
+    "SpecChar": 1073,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5107301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的巧构·麟钰，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 107303,
+    "ID": 107303,
+    "TypeId": 3,
+    "SpecChar": 1073,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5107301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的巧构·麟钰，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 107401,
+    "ID": 107401,
+    "TypeId": 3,
+    "SpecChar": 1074,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5107401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的巡天·英招，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 107402,
+    "ID": 107402,
+    "TypeId": 3,
+    "SpecChar": 1074,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5107401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的巡天·英招，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 107403,
+    "ID": 107403,
+    "TypeId": 3,
+    "SpecChar": 1074,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5107401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的巡天·英招，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 107501,
+    "ID": 107501,
+    "TypeId": 3,
+    "SpecChar": 1075,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5107501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的澄心·陵光，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 107502,
+    "ID": 107502,
+    "TypeId": 3,
+    "SpecChar": 1075,
+    "SuitName": "烈幕",
+    "PictureId": "107502",
+    "NewCondition": 5107502,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的澄心·陵光，当队长未持有「炫铠」时，会施放技能一「离行不息」之「烈式」，其他时候会施放技能三「天同人和」之「烈式」。当神格「炽离神君·孤火」被激活时，该芯片效果失效。"
+  },
+  {
+    "id": 107503,
+    "ID": 107503,
+    "TypeId": 3,
+    "SpecChar": 1075,
+    "SuitName": "燃华",
+    "PictureId": "107503",
+    "NewCondition": 5107502,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的澄心·陵光，当队长生命值低于30%时，会施放技能一「离行不息」之「烈式」，其他时候会施放技能二「晋照升明」之「烈式」。当神格「炽离神君·孤火」被激活时，该芯片效果失效。"
+  },
+  {
+    "id": 107504,
+    "ID": 107504,
+    "TypeId": 3,
+    "SpecChar": 1075,
+    "SuitName": "掩护",
+    "PictureId": "107602",
+    "NewCondition": 5107501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的澄心·陵光，会优先攻击队长附近的敌人。 "
+  },
+  {
+    "id": 107505,
+    "ID": 107505,
+    "TypeId": 3,
+    "SpecChar": 1075,
+    "SuitName": "破雄",
+    "PictureId": "107603",
+    "NewCondition": 5107501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的澄心·陵光，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 107601,
+    "ID": 107601,
+    "TypeId": 3,
+    "SpecChar": 1076,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5107601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的太一·庚辰，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 107602,
+    "ID": 107602,
+    "TypeId": 3,
+    "SpecChar": 1076,
+    "SuitName": "掩护",
+    "PictureId": "107602",
+    "NewCondition": 5107601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的太一·庚辰，会优先攻击队长附近的敌人。 "
+  },
+  {
+    "id": 107603,
+    "ID": 107603,
+    "TypeId": 3,
+    "SpecChar": 1076,
+    "SuitName": "破雄",
+    "PictureId": "107603",
+    "NewCondition": 5107601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的太一·庚辰，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 107604,
+    "ID": 107604,
+    "TypeId": 3,
+    "SpecChar": 1076,
+    "SuitName": "星陨",
+    "PictureId": "107604",
+    "NewCondition": 5107601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的太一·庚辰，会优先施放技能一「冀野星陨」。"
+  },
+  {
+    "id": 107605,
+    "ID": 107605,
+    "TypeId": 3,
+    "SpecChar": 1076,
+    "SuitName": "云合",
+    "PictureId": "107605",
+    "NewCondition": 5107601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的太一·庚辰，会优先施放技能二「黎丘云合」。"
+  },
+  {
+    "id": 107606,
+    "ID": 107606,
+    "TypeId": 3,
+    "SpecChar": 1076,
+    "SuitName": "海鸣",
+    "PictureId": "107606",
+    "NewCondition": 5107601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的太一·庚辰，会优先施放技能三「南极海鸣」。"
+  },
+  {
+    "id": 107607,
+    "ID": 107607,
+    "TypeId": 3,
+    "SpecChar": 1076,
+    "SuitName": "翔天",
+    "PictureId": "107607",
+    "NewCondition": 5107601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的太一·庚辰，施放普通攻击时仅会攻击前四段。"
+  },
+  {
+    "id": 107608,
+    "ID": 107608,
+    "TypeId": 3,
+    "SpecChar": 1076,
+    "SuitName": "震风",
+    "PictureId": "107608",
+    "NewCondition": 5107601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的太一·庚辰，施放普通攻击时会尝试攻击完最后一段。"
+  },
+  {
+    "id": 107701,
+    "ID": 107701,
+    "TypeId": 3,
+    "SpecChar": 1077,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5107701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的锻玉·武罗，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 107702,
+    "ID": 107702,
+    "TypeId": 3,
+    "SpecChar": 1077,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5107701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的锻玉·武罗，会优先攻击队长附近的敌人。 "
+  },
+  {
+    "id": 107703,
+    "ID": 107703,
+    "TypeId": 3,
+    "SpecChar": 1077,
+    "SuitName": "破雄",
+    "PictureId": "108104",
+    "NewCondition": 5107701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的锻玉·武罗，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 108001,
+    "ID": 108001,
+    "TypeId": 3,
+    "SpecChar": 1080,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5108001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的寒霜之牙·维达尔会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 108002,
+    "ID": 108002,
+    "TypeId": 3,
+    "SpecChar": 1080,
+    "SuitName": "极寒 ",
+    "PictureId": "108002",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的寒霜之牙·维达尔，不会对处于冰冻状态下的敌人施放技能一「永冻净土」。"
+  },
+  {
+    "id": 108003,
+    "ID": 108003,
+    "TypeId": 3,
+    "SpecChar": 1080,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5108001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的寒霜·维达尔，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 108004,
+    "ID": 108004,
+    "TypeId": 3,
+    "SpecChar": 1080,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5108001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的寒霜·维达尔，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 108101,
+    "ID": 108101,
+    "TypeId": 3,
+    "SpecChar": 1081,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5108101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的斩浪·丝卡蒂，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 108102,
+    "ID": 108102,
+    "TypeId": 3,
+    "SpecChar": 1081,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5108101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的斩浪·丝卡蒂，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 108103,
+    "ID": 108103,
+    "TypeId": 3,
+    "SpecChar": 1081,
+    "SuitName": "重装",
+    "PictureId": "108103",
+    "NewCondition": 5108101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的斩浪·丝卡蒂，在任何情况下都不会施放「巡航模式」。"
+  },
+  {
+    "id": 108104,
+    "ID": 108104,
+    "TypeId": 3,
+    "SpecChar": 1081,
+    "SuitName": "破雄",
+    "PictureId": "108104",
+    "NewCondition": 5108101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的斩浪·丝卡蒂，会优先攻击精英级敌人。"
+  },
+  {
+    "id": 108301,
+    "ID": 108301,
+    "TypeId": 3,
+    "SpecChar": 1083,
+    "SuitName": "协击",
+    "PictureId": "100011",
+    "NewCondition": 5108301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的硝芒·埃克什瓦，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 108302,
+    "ID": 108302,
+    "TypeId": 3,
+    "SpecChar": 1083,
+    "SuitName": "掩护",
+    "PictureId": "100012",
+    "NewCondition": 5108301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的硝芒·埃克什瓦，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 108303,
+    "ID": 108303,
+    "TypeId": 3,
+    "SpecChar": 1083,
+    "SuitName": "破雄",
+    "PictureId": "100013",
+    "NewCondition": 5108301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的硝芒·埃克什瓦，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 108401,
+    "ID": 108401,
+    "TypeId": 3,
+    "SpecChar": 1084,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5108401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的朝约·薇儿丹蒂，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 108402,
+    "ID": 108402,
+    "TypeId": 3,
+    "SpecChar": 1084,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5108401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的朝约·薇儿丹蒂，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 108403,
+    "ID": 108403,
+    "TypeId": 3,
+    "SpecChar": 1084,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5108401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的朝约·薇儿丹蒂，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 108501,
+    "ID": 108501,
+    "TypeId": 3,
+    "SpecChar": 1085,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5108501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的绮望·诗蔻蒂，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 108502,
+    "ID": 108502,
+    "TypeId": 3,
+    "SpecChar": 1085,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5108501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的绮望·诗蔻蒂，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 108503,
+    "ID": 108503,
+    "TypeId": 3,
+    "SpecChar": 1085,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5108501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的绮望·诗蔻蒂，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 108901,
+    "ID": 108901,
+    "TypeId": 3,
+    "SpecChar": 1089,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5108901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的焚轮·帕尔瓦蒂，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 108902,
+    "ID": 108902,
+    "TypeId": 3,
+    "SpecChar": 1089,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5108901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的焚轮·帕尔瓦蒂，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 108903,
+    "ID": 108903,
+    "TypeId": 3,
+    "SpecChar": 1089,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5108901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的焚轮·帕尔瓦蒂，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 109301,
+    "ID": 109301,
+    "TypeId": 3,
+    "SpecChar": 1093,
+    "SuitName": "铁雨",
+    "PictureId": "109301",
+    "NewCondition": 5109301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的觅影·国常立，固定施放奥义「真无合参·雨」。（不安装芯片时，默认随机施放四种奥义之一）"
+  },
+  {
+    "id": 109302,
+    "ID": 109302,
+    "TypeId": 3,
+    "SpecChar": 1093,
+    "SuitName": "镰风",
+    "PictureId": "109302",
+    "NewCondition": 5109301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的觅影·国常立，固定施放奥义「真无合参·风」。（不安装芯片时，默认随机施放四种奥义之一）"
+  },
+  {
+    "id": 109303,
+    "ID": 109303,
+    "TypeId": 3,
+    "SpecChar": 1093,
+    "SuitName": "惊雷",
+    "PictureId": "109303",
+    "NewCondition": 5109301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的觅影·国常立，固定施放奥义「真无合参·雷」。（不安装芯片时，默认随机施放四种奥义之一）"
+  },
+  {
+    "id": 109304,
+    "ID": 109304,
+    "TypeId": 3,
+    "SpecChar": 1093,
+    "SuitName": "地火",
+    "PictureId": "109304",
+    "NewCondition": 5109301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的觅影·国常立，固定施放奥义「真无合参·火」。（不安装芯片时，默认随机施放四种奥义之一）"
+  },
+  {
+    "id": 109305,
+    "ID": 109305,
+    "TypeId": 3,
+    "SpecChar": 1093,
+    "SuitName": "万法 ",
+    "PictureId": "109305",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的觅影·国常立，会优先施放不同于上一个的「忍法」技能。\n当神格「辟天之初·忍道」被激活时：出场时风属性伤害不低于雷属性伤害时，会顺序循环施放「苦无时雨」、「镰鼬旋风」、「地爆界法」；出场时风属性伤害低于雷属性伤害时，会顺序循环施放「地爆界法」、「般若惊雷」、「苦无时雨」。"
+  },
+  {
+    "id": 109306,
+    "ID": 109306,
+    "TypeId": 3,
+    "SpecChar": 1093,
+    "SuitName": "疾风迅雷 ",
+    "PictureId": "109306",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的觅影·国常立，出场时风属性伤害不低于雷属性伤害时，仅会施放「镰鼬旋风」；出场时风属性伤害低于雷属性伤害时，仅会施放「般若惊雷」。",
+    "Profile": "作为队友的觅影·国常立，会优先施放「般若惊雷」、「镰鼬旋风」。"
+  },
+  {
+    "id": 109307,
+    "ID": 109307,
+    "TypeId": 3,
+    "SpecChar": 1093,
+    "SuitName": "天雨地界 ",
+    "PictureId": "109307",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的觅影·国常立，出场时物理属性伤害不低于火属性伤害时，仅会施放「苦无时雨」；出场时物理属性伤害低于火属性伤害时，仅会施放「地爆界法」。",
+    "Profile": "作为队友的觅影·国常立，会优先施放「苦无时雨」、「地爆界法」。"
+  },
+  {
+    "id": 109308,
+    "ID": 109308,
+    "TypeId": 3,
+    "SpecChar": 1093,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5109302,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的觅影·国常立，会优先攻击队长锁定的敌人。 "
+  },
+  {
+    "id": 109309,
+    "ID": 109309,
+    "TypeId": 3,
+    "SpecChar": 1093,
+    "SuitName": "掩护 ",
+    "PictureId": "108102",
+    "NewCondition": 5109302,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的觅影·国常立，会优先攻击队长附近的敌人。 "
+  },
+  {
+    "id": 109310,
+    "ID": 109310,
+    "TypeId": 3,
+    "SpecChar": 1093,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5109302,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的觅影·国常立，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 109401,
+    "ID": 109401,
+    "TypeId": 3,
+    "SpecChar": 1094,
+    "SuitName": "魔弹狂嚎",
+    "PictureId": "109401",
+    "NewCondition": 5109401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的暗星·海拉，炮台转速大幅提升。"
+  },
+  {
+    "id": 109402,
+    "ID": 109402,
+    "TypeId": 3,
+    "SpecChar": 1094,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5109402,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的暗星·海拉，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 109403,
+    "ID": 109403,
+    "TypeId": 3,
+    "SpecChar": 1094,
+    "SuitName": "魔弹速攻",
+    "PictureId": "109403",
+    "NewCondition": 5109403,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的暗星·海拉，在神能高于60时就会施放技能三「归灭裁定」。 "
+  },
+  {
+    "id": 109404,
+    "ID": 109404,
+    "TypeId": 3,
+    "SpecChar": 1094,
+    "SuitName": "裁决 ",
+    "PictureId": "109404",
+    "NewCondition": 5109402,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的暗星·海拉，会优先攻击非精英级敌人。 "
+  },
+  {
+    "id": 109405,
+    "ID": 109405,
+    "TypeId": 3,
+    "SpecChar": 1094,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5109402,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的暗星·海拉，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 109501,
+    "ID": 109501,
+    "TypeId": 3,
+    "SpecChar": 1095,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5109501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的苍鹭·托特，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 109502,
+    "ID": 109502,
+    "TypeId": 3,
+    "SpecChar": 1095,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5109501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的苍鹭·托特，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 109503,
+    "ID": 109503,
+    "TypeId": 3,
+    "SpecChar": 1095,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5109501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的苍鹭·托特，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 109601,
+    "ID": 109601,
+    "TypeId": 3,
+    "SpecChar": 1096,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5109601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的风行·赫尔墨斯，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 109602,
+    "ID": 109602,
+    "TypeId": 3,
+    "SpecChar": 1096,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5109601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的风行·赫尔墨斯，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 109603,
+    "ID": 109603,
+    "TypeId": 3,
+    "SpecChar": 1096,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5109601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的风行·赫尔墨斯，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 109701,
+    "ID": 109701,
+    "TypeId": 3,
+    "SpecChar": 1097,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5109701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的小困·俄尼里伊，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 109702,
+    "ID": 109702,
+    "TypeId": 3,
+    "SpecChar": 1097,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5109701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的小困·俄尼里伊，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 109703,
+    "ID": 109703,
+    "TypeId": 3,
+    "SpecChar": 1097,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5109701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的小困·俄尼里伊，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 109901,
+    "ID": 109901,
+    "TypeId": 3,
+    "SpecChar": 1099,
+    "SuitName": "蚀月",
+    "PictureId": "109901",
+    "NewCondition": 5109901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的朔望·月读，当神能为满值时，固定施放「望·月蚀」。"
+  },
+  {
+    "id": 109902,
+    "ID": 109902,
+    "TypeId": 3,
+    "SpecChar": 1099,
+    "SuitName": "见月",
+    "PictureId": "109902",
+    "NewCondition": 5109901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的朔望·月读，当神能为满值时，固定施放「望·月夜见」或「望·末月」。"
+  },
+  {
+    "id": 109903,
+    "ID": 109903,
+    "TypeId": 3,
+    "SpecChar": 1099,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5109902,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的朔望·月读，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 109904,
+    "ID": 109904,
+    "TypeId": 3,
+    "SpecChar": 1099,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5109902,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的朔望·月读，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 109905,
+    "ID": 109905,
+    "TypeId": 3,
+    "SpecChar": 1099,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5109902,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的朔望·月读，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 111101,
+    "ID": 111101,
+    "TypeId": 3,
+    "SpecChar": 1111,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5111101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的生魂·奥西里斯，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 111102,
+    "ID": 111102,
+    "TypeId": 3,
+    "SpecChar": 1111,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5111101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的生魂·奥西里斯，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 111103,
+    "ID": 111103,
+    "TypeId": 3,
+    "SpecChar": 1111,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5111101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的生魂·奥西里斯，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 111901,
+    "ID": 111901,
+    "TypeId": 3,
+    "SpecChar": 1119,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5111901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的流萤岚雾·休，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 111902,
+    "ID": 111902,
+    "TypeId": 3,
+    "SpecChar": 1119,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5111901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的流萤岚雾·休，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 111903,
+    "ID": 111903,
+    "TypeId": 3,
+    "SpecChar": 1119,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5111901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的流萤岚雾·休，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 112701,
+    "ID": 112701,
+    "TypeId": 3,
+    "SpecChar": 1127,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5112701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的逆潮·利维坦，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 112702,
+    "ID": 112702,
+    "TypeId": 3,
+    "SpecChar": 1127,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5112701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的逆潮·利维坦，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 112703,
+    "ID": 112703,
+    "TypeId": 3,
+    "SpecChar": 1127,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5112701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的逆潮·利维坦，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 113201,
+    "ID": 113201,
+    "TypeId": 3,
+    "SpecChar": 1132,
+    "SuitName": "火铠",
+    "PictureId": "113201",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的烙焰·提尔，会优先保持「炽甲」状态。"
+  },
+  {
+    "id": 113202,
+    "ID": 113202,
+    "TypeId": 3,
+    "SpecChar": 1132,
+    "SuitName": "焰爆",
+    "PictureId": "113202",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          200
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的烙焰·提尔，仅会在怒气高于80时施放「炽甲」状态下的「爆裂强攻」。"
+  },
+  {
+    "id": 113203,
+    "ID": 113203,
+    "TypeId": 3,
+    "SpecChar": 1132,
+    "SuitName": "炽决",
+    "PictureId": "113203",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          200
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的烙焰·提尔，携带「妖精·亚伦格林」时，仅会在「烙印」高于80时施放「炽甲」状态下的「爆裂强攻」。"
+  },
+  {
+    "id": 113204,
+    "ID": 113204,
+    "TypeId": 3,
+    "SpecChar": 1132,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5113201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的烙焰·提尔，会优先攻击队长锁定的敌人。 "
+  },
+  {
+    "id": 113205,
+    "ID": 113205,
+    "TypeId": 3,
+    "SpecChar": 1132,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5113201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的烙焰·提尔，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 113206,
+    "ID": 113206,
+    "TypeId": 3,
+    "SpecChar": 1132,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5113201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的烙焰·提尔，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 113301,
+    "ID": 113301,
+    "TypeId": 3,
+    "SpecChar": 1133,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5113301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的天卫·海姆达尔，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 113302,
+    "ID": 113302,
+    "TypeId": 3,
+    "SpecChar": 1133,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5113301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的天卫·海姆达尔，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 113303,
+    "ID": 113303,
+    "TypeId": 3,
+    "SpecChar": 1133,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5113301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的天卫·海姆达尔，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 113701,
+    "ID": 113701,
+    "TypeId": 3,
+    "SpecChar": 1137,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5113701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的谧光之刻·霍德尔，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 113702,
+    "ID": 113702,
+    "TypeId": 3,
+    "SpecChar": 1137,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5113701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的谧光之刻·霍德尔，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 113703,
+    "ID": 113703,
+    "TypeId": 3,
+    "SpecChar": 1137,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5113701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的谧光之刻·霍德尔，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 113801,
+    "ID": 113801,
+    "TypeId": 3,
+    "SpecChar": 1138,
+    "SuitName": "追从",
+    "PictureId": "113801",
+    "NewCondition": 5113801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的黎幻·赫拉，「曙光祈愿」固定对队长生效。"
+  },
+  {
+    "id": 113802,
+    "ID": 113802,
+    "TypeId": 3,
+    "SpecChar": 1138,
+    "SuitName": "协力",
+    "PictureId": "113802",
+    "NewCondition": 5113802,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的黎幻·赫拉，「曙光祈愿」固定对另一个队友生效。"
+  },
+  {
+    "id": 113803,
+    "ID": 113803,
+    "TypeId": 3,
+    "SpecChar": 1138,
+    "SuitName": "当先",
+    "PictureId": "113803",
+    "NewCondition": 5113803,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的黎幻·赫拉，「曙光祈愿」固定对自身生效；当神格「极光咏叹·无瑕」被激活时，该芯片效果失效。"
+  },
+  {
+    "id": 113804,
+    "ID": 113804,
+    "TypeId": 3,
+    "SpecChar": 1138,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5113804,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的黎幻·赫拉，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 113805,
+    "ID": 113805,
+    "TypeId": 3,
+    "SpecChar": 1138,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5113804,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的黎幻·赫拉，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 113806,
+    "ID": 113806,
+    "TypeId": 3,
+    "SpecChar": 1138,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5113804,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的黎幻·赫拉，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 113901,
+    "ID": 113901,
+    "TypeId": 3,
+    "SpecChar": 1139,
+    "SuitName": "霜华",
+    "PictureId": "113901",
+    "NewCondition": 5113901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的冰渊·波塞冬，不会主动施放技能一「零度寒芒」的「追加吟唱」，不会用「银雪回响」重复施放「零度寒芒」。"
+  },
+  {
+    "id": 113902,
+    "ID": 113902,
+    "TypeId": 3,
+    "SpecChar": 1139,
+    "SuitName": "凝晶",
+    "PictureId": "113902",
+    "NewCondition": 5113902,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的冰渊·波塞冬，不会主动施放技能二「事象冰封」的「追加吟唱」，不会用「银雪回响」重复施放「事象冰封」。"
+  },
+  {
+    "id": 113903,
+    "ID": 113903,
+    "TypeId": 3,
+    "SpecChar": 1139,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5113901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的冰渊·波塞冬，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 113904,
+    "ID": 113904,
+    "TypeId": 3,
+    "SpecChar": 1139,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5113901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的冰渊·波塞冬，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 113905,
+    "ID": 113905,
+    "TypeId": 3,
+    "SpecChar": 1139,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5113901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的冰渊·波塞冬，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 114801,
+    "ID": 114801,
+    "TypeId": 3,
+    "SpecChar": 1148,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5114801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的追炎·前鬼坊天狗，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 114802,
+    "ID": 114802,
+    "TypeId": 3,
+    "SpecChar": 1148,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5114801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的追炎·前鬼坊天狗，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 114803,
+    "ID": 114803,
+    "TypeId": 3,
+    "SpecChar": 1148,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5114801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的追炎·前鬼坊天狗，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 115001,
+    "ID": 115001,
+    "TypeId": 3,
+    "SpecChar": 1150,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5115001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的绯染·丰前坊天狗，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 115002,
+    "ID": 115002,
+    "TypeId": 3,
+    "SpecChar": 1150,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5115001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的绯染·丰前坊天狗，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 115003,
+    "ID": 115003,
+    "TypeId": 3,
+    "SpecChar": 1150,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5115001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的绯染·丰前坊天狗，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 115601,
+    "ID": 115601,
+    "TypeId": 3,
+    "SpecChar": 1156,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5115601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的伐灭·伽梨，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 115602,
+    "ID": 115602,
+    "TypeId": 3,
+    "SpecChar": 1156,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5115601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的伐灭·伽梨，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 115603,
+    "ID": 115603,
+    "TypeId": 3,
+    "SpecChar": 1156,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5115601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的伐灭·伽梨，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 115801,
+    "ID": 115801,
+    "TypeId": 3,
+    "SpecChar": 1158,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5115801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的惑火灼心·迦具土，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 115802,
+    "ID": 115802,
+    "TypeId": 3,
+    "SpecChar": 1158,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5115801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的惑火灼心·迦具土，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 115803,
+    "ID": 115803,
+    "TypeId": 3,
+    "SpecChar": 1158,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5115801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的惑火灼心·迦具土，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 116601,
+    "ID": 116601,
+    "TypeId": 3,
+    "SpecChar": 1166,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5116601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的星仪·大国主，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 116602,
+    "ID": 116602,
+    "TypeId": 3,
+    "SpecChar": 1166,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5116601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的星仪·大国主，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 116603,
+    "ID": 116603,
+    "TypeId": 3,
+    "SpecChar": 1166,
+    "SuitName": "破雄",
+    "PictureId": "108104",
+    "NewCondition": 5116601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的星仪·大国主，会优先攻击精英级敌人。"
+  },
+  {
+    "id": 116611,
+    "ID": 116611,
+    "TypeId": 3,
+    "SpecChar": 1166,
+    "SuitName": "洛希极限",
+    "PictureId": "116611",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "激活神格「本位·中天·群星」时，改变为由「秘仪：蚀象」替换为「秘仪：星煌」。（激活该神格且未装备该芯片时，由「秘仪：天底」替换为「秘仪：星煌」）"
+  },
+  {
+    "id": 116631,
+    "ID": 116631,
+    "TypeId": 3,
+    "SpecChar": 1166,
+    "SuitName": "引星",
+    "PictureId": "116631",
+    "NewCondition": 5116602,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队长的星仪·大国主，在施放「群星倾落」期间输入方向键，会尝试向输入的方向进行移动闪避。"
+  },
+  {
+    "id": 117001,
+    "ID": 117001,
+    "TypeId": 3,
+    "SpecChar": 1170,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5117001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的昭阳·金乌，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 117002,
+    "ID": 117002,
+    "TypeId": 3,
+    "SpecChar": 1170,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5117001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的昭阳·金乌，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 117003,
+    "ID": 117003,
+    "TypeId": 3,
+    "SpecChar": 1170,
+    "SuitName": "破雄",
+    "PictureId": "108104",
+    "NewCondition": 5117001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的昭阳·金乌，会优先攻击精英级敌人。"
+  },
+  {
+    "id": 118401,
+    "ID": 118401,
+    "TypeId": 3,
+    "SpecChar": 1184,
+    "SuitName": "闪电",
+    "PictureId": "118401",
+    "NewCondition": 5118401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的旧誓·薇儿丹蒂，会在「信念守护」冷却结束后立即施放。（不安装芯片时，默认在50点神能时便会施放「信念守护」）"
+  },
+  {
+    "id": 118402,
+    "ID": 118402,
+    "TypeId": 3,
+    "SpecChar": 1184,
+    "SuitName": "鸣雷",
+    "PictureId": "118402",
+    "NewCondition": 5118401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的旧誓·薇儿丹蒂，会在神能为满值时才施放「信念守护」。（不安装芯片时，默认在50点神能时便会施放「信念守护」）"
+  },
+  {
+    "id": 118403,
+    "ID": 118403,
+    "TypeId": 3,
+    "SpecChar": 1184,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5118402,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的旧誓·薇儿丹蒂，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 118404,
+    "ID": 118404,
+    "TypeId": 3,
+    "SpecChar": 1184,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5118402,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的旧誓·薇儿丹蒂，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 118405,
+    "ID": 118405,
+    "TypeId": 3,
+    "SpecChar": 1184,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5118402,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的旧誓·薇儿丹蒂，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 119401,
+    "ID": 119401,
+    "TypeId": 3,
+    "SpecChar": 1194,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5119401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的悼亡之蝶·海拉，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 119402,
+    "ID": 119402,
+    "TypeId": 3,
+    "SpecChar": 1194,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5119401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的悼亡之蝶·海拉，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 119403,
+    "ID": 119403,
+    "TypeId": 3,
+    "SpecChar": 1194,
+    "SuitName": "破雄",
+    "PictureId": "108104",
+    "NewCondition": 5119401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的悼亡之蝶·海拉，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 119701,
+    "ID": 119701,
+    "TypeId": 3,
+    "SpecChar": 1197,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5119701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的梦影·俄尼里伊，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 119702,
+    "ID": 119702,
+    "TypeId": 3,
+    "SpecChar": 1197,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5119701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的梦影·俄尼里伊，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 119703,
+    "ID": 119703,
+    "TypeId": 3,
+    "SpecChar": 1197,
+    "SuitName": "破雄",
+    "PictureId": "108104",
+    "NewCondition": 5119701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的梦影·俄尼里伊，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 119901,
+    "ID": 119901,
+    "TypeId": 3,
+    "SpecChar": 1199,
+    "SuitName": "怒殛",
+    "PictureId": "119901",
+    "NewCondition": 5119901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的震离·月读，仅会在怒气高于80时施放技能三「雷殛·荒天」第三式。 \n目标为低危险等级时该芯片不生效。"
+  },
+  {
+    "id": 119902,
+    "ID": 119902,
+    "TypeId": 3,
+    "SpecChar": 1199,
+    "SuitName": "瞬电",
+    "PictureId": "119902",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的震离·月读，会对处于「雷殛之印」状态下的目标施放「雷殛·烈光」，且会优先施放「雷殛·烈光」。（不安装芯片时，优先施放「雷殛·双流」）"
+  },
+  {
+    "id": 119903,
+    "ID": 119903,
+    "TypeId": 3,
+    "SpecChar": 1199,
+    "SuitName": "荒雷",
+    "PictureId": "119903",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的震离·月读，技能三「雷殛·荒天」第三式仅会选择攻击自身附近处于「雷殛之印」状态的敌人。"
+  },
+  {
+    "id": 119904,
+    "ID": 119904,
+    "TypeId": 3,
+    "SpecChar": 1199,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5119901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的震离·月读，会优先攻击队长锁定的敌人。 "
+  },
+  {
+    "id": 119905,
+    "ID": 119905,
+    "TypeId": 3,
+    "SpecChar": 1199,
+    "SuitName": "掩护 ",
+    "PictureId": "108102",
+    "NewCondition": 5119901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的震离·月读，会优先攻击队长附近的敌人。 "
+  },
+  {
+    "id": 119906,
+    "ID": 119906,
+    "TypeId": 3,
+    "SpecChar": 1199,
+    "SuitName": "破雄 ",
+    "PictureId": "108104",
+    "NewCondition": 5119901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的震离·月读，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 119907,
+    "ID": 119907,
+    "TypeId": 3,
+    "SpecChar": 1199,
+    "SuitName": "雷兆 ",
+    "PictureId": "119907",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          200
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的震离·月读，施放技能一「雷殛·烈光」与技能二「雷殛·双流」时，优先选择附近没有处于「雷殛之印」状态的敌人。"
+  },
+  {
+    "id": 121101,
+    "ID": 121101,
+    "TypeId": 3,
+    "SpecChar": 1211,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5121101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的魂羽·奥西里斯，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 121102,
+    "ID": 121102,
+    "TypeId": 3,
+    "SpecChar": 1211,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5121101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的魂羽·奥西里斯，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 121103,
+    "ID": 121103,
+    "TypeId": 3,
+    "SpecChar": 1211,
+    "SuitName": "破雄",
+    "PictureId": "108104",
+    "NewCondition": 5121101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的魂羽·奥西里斯，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 124801,
+    "ID": 124801,
+    "TypeId": 3,
+    "SpecChar": 1248,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5124801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的神威·前鬼坊天狗，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 124802,
+    "ID": 124802,
+    "TypeId": 3,
+    "SpecChar": 1248,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5124801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的神威·前鬼坊天狗，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 124803,
+    "ID": 124803,
+    "TypeId": 3,
+    "SpecChar": 1248,
+    "SuitName": "破雄",
+    "PictureId": "108104",
+    "NewCondition": 5124801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的神威·前鬼坊天狗，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 128401,
+    "ID": 128401,
+    "TypeId": 3,
+    "SpecChar": 1284,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5128401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的黯耀·薇儿丹蒂，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 128402,
+    "ID": 128402,
+    "TypeId": 3,
+    "SpecChar": 1284,
+    "SuitName": "掩护",
+    "PictureId": "108102",
+    "NewCondition": 5128401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的黯耀·薇儿丹蒂，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 128403,
+    "ID": 128403,
+    "TypeId": 3,
+    "SpecChar": 1284,
+    "SuitName": "破雄",
+    "PictureId": "108104",
+    "NewCondition": 5128401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的黯耀·薇儿丹蒂，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 101199,
+    "ID": 101199,
+    "TypeId": 3,
+    "SpecChar": 1011,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5101101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的雏心·奥西里斯，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 101299,
+    "ID": 101299,
+    "TypeId": 3,
+    "SpecChar": 1012,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5101201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的天诫·白泽，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 101399,
+    "ID": 101399,
+    "TypeId": 3,
+    "SpecChar": 1013,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5101301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的障月·阿修罗，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 101599,
+    "ID": 101599,
+    "TypeId": 3,
+    "SpecChar": 1015,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5101501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的狂狮·塞赫麦特，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 101699,
+    "ID": 101699,
+    "TypeId": 3,
+    "SpecChar": 1016,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5101601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的荒獠·金固，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 101799,
+    "ID": 101799,
+    "TypeId": 3,
+    "SpecChar": 1017,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5101701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的灵猫·芭丝特，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 101999,
+    "ID": 101999,
+    "TypeId": 3,
+    "SpecChar": 1019,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5101901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的疾风之枪·休，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 102099,
+    "ID": 102099,
+    "TypeId": 3,
+    "SpecChar": 1020,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5102001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的三相·梵天，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 102199,
+    "ID": 102199,
+    "TypeId": 3,
+    "SpecChar": 1021,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5102101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的曦光·阿尔忒弥斯，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 102299,
+    "ID": 102299,
+    "TypeId": 3,
+    "SpecChar": 1022,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5102201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的幽月·塞勒涅，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 102499,
+    "ID": 102499,
+    "TypeId": 3,
+    "SpecChar": 1024,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5102401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的胡狼·阿努比斯，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 102699,
+    "ID": 102699,
+    "TypeId": 3,
+    "SpecChar": 1026,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5102601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的银臂·努阿达，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 102799,
+    "ID": 102799,
+    "TypeId": 3,
+    "SpecChar": 1027,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5102701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的低吹雪·利维坦，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 102899,
+    "ID": 102899,
+    "TypeId": 3,
+    "SpecChar": 1028,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5102801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的轰雷·托尔，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 103299,
+    "ID": 103299,
+    "TypeId": 3,
+    "SpecChar": 1032,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5103201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的熯天·提尔，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 103399,
+    "ID": 103399,
+    "TypeId": 3,
+    "SpecChar": 1033,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5103301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的启明·海姆达尔，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 103599,
+    "ID": 103599,
+    "TypeId": 3,
+    "SpecChar": 1035,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5103501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的狂鳄·索贝克，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 103799,
+    "ID": 103799,
+    "TypeId": 3,
+    "SpecChar": 1037,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5103701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的夜之寄生·霍德尔，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 103899,
+    "ID": 103899,
+    "TypeId": 3,
+    "SpecChar": 1038,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5103801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的羽灼·赫拉，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 103999,
+    "ID": 103999,
+    "TypeId": 3,
+    "SpecChar": 1039,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5103902,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的潮音·波塞冬，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 104199,
+    "ID": 104199,
+    "TypeId": 3,
+    "SpecChar": 1041,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5104102,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的铃兰之弦·雅典娜，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 104299,
+    "ID": 104299,
+    "TypeId": 3,
+    "SpecChar": 1042,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5104201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的操偶师·哈迪斯，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 104399,
+    "ID": 104399,
+    "TypeId": 3,
+    "SpecChar": 1043,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5104301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的隐夜·伊里伽尔，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 104499,
+    "ID": 104499,
+    "TypeId": 3,
+    "SpecChar": 1044,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5104401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的不灭王权·荷鲁斯，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 104599,
+    "ID": 104599,
+    "TypeId": 3,
+    "SpecChar": 1045,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5104501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的赤音·亚莉莎，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 104699,
+    "ID": 104699,
+    "TypeId": 3,
+    "SpecChar": 1046,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5104601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的血弹·雪儿，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 104799,
+    "ID": 104799,
+    "TypeId": 3,
+    "SpecChar": 1047,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5104701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的裁暗之锋·塞尔凯特，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 104899,
+    "ID": 104899,
+    "TypeId": 3,
+    "SpecChar": 1048,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5104801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的彗光·前鬼坊天狗，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 104999,
+    "ID": 104999,
+    "TypeId": 3,
+    "SpecChar": 1049,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5104901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的镜花黄泉·伊邪那美，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 105099,
+    "ID": 105099,
+    "TypeId": 3,
+    "SpecChar": 1050,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5105001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的真红·丰前坊天狗，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 105299,
+    "ID": 105299,
+    "TypeId": 3,
+    "SpecChar": 1052,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5105201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的怒蛇·马尔杜克，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 105399,
+    "ID": 105399,
+    "TypeId": 3,
+    "SpecChar": 1053,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5105301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的怀阳·羲和，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 105499,
+    "ID": 105499,
+    "TypeId": 3,
+    "SpecChar": 1054,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5105401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的双司镇命·无常，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 105599,
+    "ID": 105599,
+    "TypeId": 3,
+    "SpecChar": 1055,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5105503,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的霜影·暗御津羽，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 105699,
+    "ID": 105699,
+    "TypeId": 3,
+    "SpecChar": 1056,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5105601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的雷獠·伽梨，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 105899,
+    "ID": 105899,
+    "TypeId": 3,
+    "SpecChar": 1058,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5105802,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的龙切·迦具土，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 105999,
+    "ID": 105999,
+    "TypeId": 3,
+    "SpecChar": 1059,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5105901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的光煌·阿波罗，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 106099,
+    "ID": 106099,
+    "TypeId": 3,
+    "SpecChar": 1060,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5106001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的九司·陆吾，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 106199,
+    "ID": 106199,
+    "TypeId": 3,
+    "SpecChar": 1061,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5106101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的玄机·执明，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 106699,
+    "ID": 106699,
+    "TypeId": 3,
+    "SpecChar": 1066,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5106603,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的早樱·大国主，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 106799,
+    "ID": 106799,
+    "TypeId": 3,
+    "SpecChar": 1067,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5106701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的流转之洋·欧申纳斯，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 106899,
+    "ID": 106899,
+    "TypeId": 3,
+    "SpecChar": 1068,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5106801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的沐风·恩利尔，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 107099,
+    "ID": 107099,
+    "TypeId": 3,
+    "SpecChar": 1070,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5107001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的十曜·金乌，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 107199,
+    "ID": 107199,
+    "TypeId": 3,
+    "SpecChar": 1071,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5107101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的青君·孟章，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 107299,
+    "ID": 107299,
+    "TypeId": 3,
+    "SpecChar": 1072,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5107201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的百解·禄良，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 107399,
+    "ID": 107399,
+    "TypeId": 3,
+    "SpecChar": 1073,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5107301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的巧构·麟钰，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 107499,
+    "ID": 107499,
+    "TypeId": 3,
+    "SpecChar": 1074,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5107401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的巡天·英招，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 107599,
+    "ID": 107599,
+    "TypeId": 3,
+    "SpecChar": 1075,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5107501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的澄心·陵光，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 107699,
+    "ID": 107699,
+    "TypeId": 3,
+    "SpecChar": 1076,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5107601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的太一·庚辰，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 107799,
+    "ID": 107799,
+    "TypeId": 3,
+    "SpecChar": 1077,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5107701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的锻玉·武罗，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 108099,
+    "ID": 108099,
+    "TypeId": 3,
+    "SpecChar": 1080,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5108001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的寒霜之牙·维达尔，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 108199,
+    "ID": 108199,
+    "TypeId": 3,
+    "SpecChar": 1081,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5108101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的斩浪·丝卡蒂，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 108399,
+    "ID": 108399,
+    "TypeId": 3,
+    "SpecChar": 1083,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5108301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的硝芒·埃克什瓦，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 108499,
+    "ID": 108499,
+    "TypeId": 3,
+    "SpecChar": 1084,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5108401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的朝约·薇儿丹蒂，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 108599,
+    "ID": 108599,
+    "TypeId": 3,
+    "SpecChar": 1085,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5108501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的绮望·诗蔻蒂，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 108999,
+    "ID": 108999,
+    "TypeId": 3,
+    "SpecChar": 1089,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5108901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的焚轮·帕尔瓦蒂，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 109399,
+    "ID": 109399,
+    "TypeId": 3,
+    "SpecChar": 1093,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5109302,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的觅影·国常立，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 109499,
+    "ID": 109499,
+    "TypeId": 3,
+    "SpecChar": 1094,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5109402,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的暗星·海拉，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 109599,
+    "ID": 109599,
+    "TypeId": 3,
+    "SpecChar": 1095,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5109501,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的苍鹭·托特，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 109699,
+    "ID": 109699,
+    "TypeId": 3,
+    "SpecChar": 1096,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5109601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的风行·赫尔墨斯，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 109799,
+    "ID": 109799,
+    "TypeId": 3,
+    "SpecChar": 1097,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5109701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的小困·俄尼里伊，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 109999,
+    "ID": 109999,
+    "TypeId": 3,
+    "SpecChar": 1099,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5109902,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的朔望·月读，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 111199,
+    "ID": 111199,
+    "TypeId": 3,
+    "SpecChar": 1111,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5111101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的生魂·奥西里斯，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 111999,
+    "ID": 111999,
+    "TypeId": 3,
+    "SpecChar": 1119,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5111901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的流萤岚雾·休，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 112799,
+    "ID": 112799,
+    "TypeId": 3,
+    "SpecChar": 1127,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5112701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的逆潮·利维坦，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 113299,
+    "ID": 113299,
+    "TypeId": 3,
+    "SpecChar": 1132,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5113201,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的烙焰·提尔，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 113399,
+    "ID": 113399,
+    "TypeId": 3,
+    "SpecChar": 1133,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5113301,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的天卫·海姆达尔，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 113799,
+    "ID": 113799,
+    "TypeId": 3,
+    "SpecChar": 1137,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5113701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的谧光之刻·霍德尔，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 113899,
+    "ID": 113899,
+    "TypeId": 3,
+    "SpecChar": 1138,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5113804,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的黎幻·赫拉，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 113999,
+    "ID": 113999,
+    "TypeId": 3,
+    "SpecChar": 1139,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5113901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的冰渊·波塞冬，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 114899,
+    "ID": 114899,
+    "TypeId": 3,
+    "SpecChar": 1148,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5114801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的追炎·前鬼坊天狗，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 115099,
+    "ID": 115099,
+    "TypeId": 3,
+    "SpecChar": 1150,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5115001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的绯染·丰前坊天狗，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 115699,
+    "ID": 115699,
+    "TypeId": 3,
+    "SpecChar": 1156,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5115601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的伐灭·伽梨，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 115899,
+    "ID": 115899,
+    "TypeId": 3,
+    "SpecChar": 1158,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5115801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的惑火灼心·迦具土，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 116699,
+    "ID": 116699,
+    "TypeId": 3,
+    "SpecChar": 1166,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5116601,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的星仪·大国主，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 117099,
+    "ID": 117099,
+    "TypeId": 3,
+    "SpecChar": 1170,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5117001,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的昭阳·金乌，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 118499,
+    "ID": 118499,
+    "TypeId": 3,
+    "SpecChar": 1184,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5118402,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的旧誓·薇儿丹蒂，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 119499,
+    "ID": 119499,
+    "TypeId": 3,
+    "SpecChar": 1194,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5119401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的悼亡之蝶·海拉，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 119799,
+    "ID": 119799,
+    "TypeId": 3,
+    "SpecChar": 1197,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5119701,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的梦影·俄尼里伊，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 119999,
+    "ID": 119999,
+    "TypeId": 3,
+    "SpecChar": 1199,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5119901,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的震离·月读，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 121199,
+    "ID": 121199,
+    "TypeId": 3,
+    "SpecChar": 1211,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5121101,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的魂羽·奥西里斯，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 124899,
+    "ID": 124899,
+    "TypeId": 3,
+    "SpecChar": 1248,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5124801,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的神威·前鬼坊天狗，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 128499,
+    "ID": 128499,
+    "TypeId": 3,
+    "SpecChar": 1284,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5128401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的黯耀·薇儿丹蒂，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 103401,
+    "ID": 103401,
+    "TypeId": 3,
+    "SpecChar": 1034,
+    "SuitName": "协击",
+    "PictureId": "103201",
+    "NewCondition": 5103401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的潜蛇·瓦吉特，会优先攻击队长锁定的敌人。"
+  },
+  {
+    "id": 103402,
+    "ID": 103402,
+    "TypeId": 3,
+    "SpecChar": 1034,
+    "SuitName": "掩护",
+    "PictureId": "107602",
+    "NewCondition": 5103401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的潜蛇·瓦吉特，会优先攻击队长附近的敌人。"
+  },
+  {
+    "id": 103403,
+    "ID": 103403,
+    "TypeId": 3,
+    "SpecChar": 1034,
+    "SuitName": "破雄 ",
+    "PictureId": "107603",
+    "NewCondition": 5103401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的潜蛇·瓦吉特，会优先攻击精英级敌人。 "
+  },
+  {
+    "id": 103404,
+    "ID": 103404,
+    "TypeId": 3,
+    "SpecChar": 1034,
+    "SuitName": "追从",
+    "PictureId": "113801",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的潜蛇·瓦吉特，当神格「烈毒主宰·摄目」被激活时，「洞悉之目」固定对队长生效。"
+  },
+  {
+    "id": 103405,
+    "ID": 103405,
+    "TypeId": 3,
+    "SpecChar": 1034,
+    "SuitName": "协力",
+    "PictureId": "113802",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的潜蛇·瓦吉特，当神格「烈毒主宰·摄目」被激活时，「洞悉之目」固定对另一个队友生效。"
+  },
+  {
+    "id": 103406,
+    "ID": 103406,
+    "TypeId": 3,
+    "SpecChar": 1034,
+    "SuitName": "当先",
+    "PictureId": "113803",
+    "CostCondition": [
+      {
+        "Data": [
+          47,
+          100
+        ]
+      }
+    ],
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的潜蛇·瓦吉特，当神格「烈毒主宰·摄目」被激活时，「洞悉之目」固定对自身生效。"
+  },
+  {
+    "id": 103499,
+    "ID": 103499,
+    "TypeId": 3,
+    "SpecChar": 1034,
+    "SuitName": "惊澜",
+    "PictureId": "100015",
+    "NewCondition": 5103401,
+    "FlowName": [
+      "FlowScript/AIChipEffect/AIChipEffect101.asset"
+    ],
+    "Desc": "作为队友的潜蛇·瓦吉特，奥义值为满后会自动施放奥义。\n与另一位队友组合连携奥义时，也会自动施放。\n与主控修正者组合连携奥义时，不会自动施放。"
+  },
+  {
+    "id": 128451,
+    "ID": 128451,
+    "TypeId": 4,
+    "SpecChar": 1284,
+    "SuitName": "黯耀",
+    "PictureId": "1284",
+    "FlowName": [
+      "FlowScript/AIChipEffect/MasterSkill/AIChipEffect1284.asset"
+    ],
+    "Desc": "全队伍光属性伤害提高12%，持续25秒。",
+    "CooldownFirst": 20,
+    "CooldownCom": 20
+  },
+  {
+    "id": 128452,
+    "ID": 128452,
+    "TypeId": 4,
+    "SpecChar": 128451,
+    "PictureId": "1284",
+    "Desc": "队长和与队长机制值类型相同的修正者队员光属性伤害提高9%；光属性修正者队员造成会心后获得1%的奥义值。"
+  },
+  {
+    "id": 128453,
+    "ID": 128453,
+    "TypeId": 4,
+    "SpecChar": 128451,
+    "PictureId": "1284",
+    "Desc": "队长修正系数不低于200%的攻击命中时，伤害提高15%，持续12秒。"
+  },
+  {
+    "id": 106651,
+    "ID": 106651,
+    "TypeId": 4,
+    "SpecChar": 1066,
+    "SuitName": "早樱",
+    "PictureId": "1066",
+    "FlowName": [
+      "FlowScript/AIChipEffect/MasterSkill/AIChipEffect1066.asset"
+    ],
+    "Desc": "队长攻击力提高15%，持续25秒。",
+    "CooldownFirst": 20,
+    "CooldownCom": 20
+  },
+  {
+    "id": 106652,
+    "ID": 106652,
+    "TypeId": 4,
+    "SpecChar": 106651,
+    "PictureId": "1066",
+    "Desc": "队员会心率提高8%，造成会心后获得1%的奥义值。"
+  },
+  {
+    "id": 106653,
+    "ID": 106653,
+    "TypeId": 4,
+    "SpecChar": 106651,
+    "PictureId": "1066",
+    "Desc": "队长伤害提高10%。"
+  },
+  {
+    "id": 113951,
+    "ID": 113951,
+    "TypeId": 4,
+    "SpecChar": 1139,
+    "SuitName": "冰渊",
+    "PictureId": "1139",
+    "FlowName": [
+      "FlowScript/AIChipEffect/MasterSkill/AIChipEffect1139.asset"
+    ],
+    "Desc": "对全场敌人附加冰冻状态，持续4秒。",
+    "CooldownFirst": 5,
+    "CooldownCom": 20
+  },
+  {
+    "id": 113952,
+    "ID": 113952,
+    "TypeId": 4,
+    "SpecChar": 113951,
+    "PictureId": "1139",
+    "Desc": "队长冰属性伤害提高12%、能量消耗降低10%。"
+  },
+  {
+    "id": 113953,
+    "ID": 113953,
+    "TypeId": 4,
+    "SpecChar": 113951,
+    "PictureId": "1139",
+    "Desc": "冰属性修正者队长伤害提高12%。"
+  },
+  {
+    "id": 101351,
+    "ID": 101351,
+    "TypeId": 4,
+    "SpecChar": 1013,
+    "SuitName": "障月",
+    "PictureId": "1013",
+    "FlowName": [
+      "FlowScript/AIChipEffect/MasterSkill/AIChipEffect1013.asset",
+      "FlowScript/AIChipEffect/MasterSkill/AIChipEffect1013Render.asset"
+    ],
+    "Desc": "在锁定的敌人位置施放力场球束缚范围内的敌人，持续3.5秒。",
+    "CooldownFirst": 5,
+    "CooldownCom": 20
+  },
+  {
+    "id": 101352,
+    "ID": 101352,
+    "TypeId": 4,
+    "SpecChar": 101351,
+    "PictureId": "1013",
+    "Desc": "队长火属性伤害提高12%；火属性修正者队员造成会心后获得1%的奥义值。"
+  },
+  {
+    "id": 101353,
+    "ID": 101353,
+    "TypeId": 4,
+    "SpecChar": 101351,
+    "PictureId": "1013",
+    "Desc": "火属性修正者队长伤害提高12%。"
+  },
+  {
+    "id": 111151,
+    "ID": 111151,
+    "TypeId": 4,
+    "SpecChar": 1111,
+    "SuitName": "生魂",
+    "PictureId": "1111",
+    "FlowName": [
+      "FlowScript/AIChipEffect/MasterSkill/AIChipEffect1111.asset"
+    ],
+    "Desc": "队长伤害提高20%，持续25秒。",
+    "CooldownFirst": 20,
+    "CooldownCom": 20
+  },
+  {
+    "id": 111152,
+    "ID": 111152,
+    "TypeId": 4,
+    "SpecChar": 111151,
+    "PictureId": "1111",
+    "Desc": "队长施放奥义或连携奥义后，全队伍获得20%的奥义值。"
+  },
+  {
+    "id": 111153,
+    "ID": 111153,
+    "TypeId": 4,
+    "SpecChar": 111151,
+    "PictureId": "1111",
+    "Desc": "风、光属性修正者队长生命值越低攻击命中瞬间近战伤害提高越高，该效果提供的近战伤害提高最高为10%"
+  },
+  {
+    "id": 109451,
+    "ID": 109451,
+    "TypeId": 4,
+    "SpecChar": 1094,
+    "SuitName": "暗星",
+    "PictureId": "1094",
+    "FlowName": [
+      "FlowScript/AIChipEffect/MasterSkill/AIChipEffect1094.asset"
+    ],
+    "Desc": "对全场敌人附加破甲状态，防御力降低8%，持续25秒。",
+    "CooldownFirst": 5,
+    "CooldownCom": 20
+  },
+  {
+    "id": 109452,
+    "ID": 109452,
+    "TypeId": 4,
+    "SpecChar": 109451,
+    "PictureId": "1094",
+    "Desc": "出场时，神能型修正者队长机制值上限每比100多1点，恢复2%的奥义值。"
+  },
+  {
+    "id": 109453,
+    "ID": 109453,
+    "TypeId": 4,
+    "SpecChar": 109451,
+    "PictureId": "1094",
+    "Desc": "出场时，圣树神系修正者队长机制值上限每比100点高1点，攻击力提高1.2%，该效果提供的攻击力提高最高为24%。"
+  },
+  {
+    "id": 113851,
+    "ID": 113851,
+    "TypeId": 4,
+    "SpecChar": 1138,
+    "SuitName": "黎幻",
+    "PictureId": "1138",
+    "FlowName": [
+      "FlowScript/AIChipEffect/MasterSkill/AIChipEffect1138.asset"
+    ],
+    "Desc": "触发零时空间，持续2秒。",
+    "CooldownFirst": 20,
+    "CooldownCom": 20
+  },
+  {
+    "id": 113852,
+    "ID": 113852,
+    "TypeId": 4,
+    "SpecChar": 113851,
+    "PictureId": "1138",
+    "Desc": "队员触发的零时空间持续时间延长1秒；触发零时空间时，队长获得6%的奥义值，该效果每0.5秒最多触发一次。"
+  },
+  {
+    "id": 113853,
+    "ID": 113853,
+    "TypeId": 4,
+    "SpecChar": 113851,
+    "PictureId": "1138",
+    "Desc": "处于零时空间时，全队伍伤害提高15%。"
+  },
+  {
+    "id": 102851,
+    "ID": 102851,
+    "TypeId": 4,
+    "SpecChar": 1028,
+    "SuitName": "轰雷",
+    "PictureId": "1028",
+    "FlowName": [
+      "FlowScript/AIChipEffect/MasterSkill/AIChipEffect1028.asset"
+    ],
+    "Desc": "全队伍雷属性伤害提高12%，持续25秒。",
+    "CooldownFirst": 20,
+    "CooldownCom": 20
+  },
+  {
+    "id": 102852,
+    "ID": 102852,
+    "TypeId": 4,
+    "SpecChar": 102851,
+    "PictureId": "1028",
+    "Desc": "攻击命中处于雷属性抗性降低状态的敌人时，攻击命中瞬间伤害提高6%；雷属性修正者队员造成会心后获得1%的奥义值。"
+  },
+  {
+    "id": 102853,
+    "ID": 102853,
+    "TypeId": 4,
+    "SpecChar": 102851,
+    "PictureId": "1028",
+    "Desc": "雷属性修正者队长伤害提高12%。"
+  },
+  {
+    "id": 109351,
+    "ID": 109351,
+    "TypeId": 4,
+    "SpecChar": 1093,
+    "SuitName": "觅影",
+    "PictureId": "1093",
+    "FlowName": [
+      "FlowScript/AIChipEffect/MasterSkill/AIChipEffect1093.asset"
+    ],
+    "Desc": "全队伍技能伤害提高10%，持续25秒。",
+    "CooldownFirst": 20,
+    "CooldownCom": 20
+  },
+  {
+    "id": 109352,
+    "ID": 109352,
+    "TypeId": 4,
+    "SpecChar": 109351,
+    "PictureId": "1093",
+    "Desc": "队长施放奥义或连携奥义后，全队伍奥义获得率提高30%，持续25秒，全队伍获得10%的奥义值。"
+  },
+  {
+    "id": 109353,
+    "ID": 109353,
+    "TypeId": 4,
+    "SpecChar": 109351,
+    "PictureId": "1093",
+    "Desc": "队长消耗神能不低于100点时，伤害提高12%，持续25秒。"
+  },
+  {
+    "id": 119951,
+    "ID": 119951,
+    "TypeId": 4,
+    "SpecChar": 1199,
+    "SuitName": "震离",
+    "PictureId": "1199",
+    "FlowName": [
+      "FlowScript/AIChipEffect/MasterSkill/AIChipEffect1199.asset"
+    ],
+    "Desc": "队长雷属性伤害提高15%，持续25秒。",
+    "CooldownFirst": 20,
+    "CooldownCom": 20
+  },
+  {
+    "id": 119952,
+    "ID": 119952,
+    "TypeId": 4,
+    "SpecChar": 119951,
+    "PictureId": "1199",
+    "Desc": "雷属性修正者怒气获得率提高10%，消耗100点怒气时，若闪避效果不处于冷却状态，则会触发闪避效果。"
+  },
+  {
+    "id": 119953,
+    "ID": 119953,
+    "TypeId": 4,
+    "SpecChar": 119951,
+    "PictureId": "1199",
+    "Desc": "真樱神系修正者队长机制值达到满时，伤害提高15%，持续20秒。"
+  },
+  {
+    "id": 112751,
+    "ID": 112751,
+    "TypeId": 4,
+    "SpecChar": 1127,
+    "SuitName": "逆潮",
+    "PictureId": "1127",
+    "FlowName": [
+      "FlowScript/AIChipEffect/MasterSkill/AIChipEffect1127.asset"
+    ],
+    "Desc": "全队伍恢复10%的生命值，若生命值为满值，则改变为获得水属性伤害提高15%，持续25秒。",
+    "CooldownFirst": 20,
+    "CooldownCom": 20
+  },
+  {
+    "id": 112752,
+    "ID": 112752,
+    "TypeId": 4,
+    "SpecChar": 112751,
+    "PictureId": "1127",
+    "Desc": "队员受到致命伤时会立即恢复至生命值上限，伤害、治疗效果降低10%，最多叠加5层。"
+  },
+  {
+    "id": 112753,
+    "ID": 112753,
+    "TypeId": 4,
+    "SpecChar": 112751,
+    "PictureId": "1127",
+    "Desc": "水属性修正者队长技能伤害提高12%、伤害提高9%、每秒获得6%的奥义值。"
+  },
+  {
+    "id": 111951,
+    "ID": 111951,
+    "TypeId": 4,
+    "SpecChar": 1119,
+    "SuitName": "流萤岚雾",
+    "PictureId": "1119",
+    "FlowName": [
+      "FlowScript/AIChipEffect/MasterSkill/AIChipEffect1119.asset"
+    ],
+    "Desc": "队长获得无敌效果，持续0.5秒，效果期间受击时，攻击力提高16%，持续15秒，并且剩余冷却时间缩短9秒。",
+    "CooldownFirst": 3,
+    "CooldownCom": 20
+  },
+  {
+    "id": 111952,
+    "ID": 111952,
+    "TypeId": 4,
+    "SpecChar": 111951,
+    "PictureId": "1119",
+    "Desc": "队长怒气消耗降低20%。"
+  },
+  {
+    "id": 111953,
+    "ID": 111953,
+    "TypeId": 4,
+    "SpecChar": 111951,
+    "PictureId": "1119",
+    "Desc": "仅队长单人出战时才可触发，成功格挡攻击时，护甲穿透提高16%，最多可叠加5层，受击并损失生命值时，移除该效果。"
+  },
+  {
+    "id": 104151,
+    "ID": 104151,
+    "TypeId": 4,
+    "SpecChar": 1041,
+    "SuitName": "铃兰之弦",
+    "PictureId": "1041",
+    "FlowName": [
+      "FlowScript/AIChipEffect/MasterSkill/AIChipEffect1041.asset"
+    ],
+    "Desc": "对锁定的敌人附加眩晕状态，持续3秒，对全场敌人附加破甲状态，防御力降低7%，持续25秒。",
+    "CooldownFirst": 20,
+    "CooldownCom": 20
+  },
+  {
+    "id": 104152,
+    "ID": 104152,
+    "TypeId": 4,
+    "SpecChar": 104151,
+    "PictureId": "1041",
+    "Desc": "队伍每有1种机制值类型，物理属性修正者会心率提高3%、伤害提高5%、每秒获得0.5%的奥义值。"
+  },
+  {
+    "id": 104153,
+    "ID": 104153,
+    "TypeId": 4,
+    "SpecChar": 104151,
+    "PictureId": "1041",
+    "Desc": "物理属性修正者普通攻击伤害提高28%。"
+  },
+  {
+    "id": 107051,
+    "ID": 107051,
+    "TypeId": 4,
+    "SpecChar": 1070,
+    "SuitName": "十曜",
+    "PictureId": "1070",
+    "FlowName": [
+      "FlowScript/AIChipEffect/MasterSkill/AIChipEffect1070.asset"
+    ],
+    "Desc": "全队伍会心率提高9%，持续25秒。",
+    "CooldownFirst": 15,
+    "CooldownCom": 20
+  },
+  {
+    "id": 107052,
+    "ID": 107052,
+    "TypeId": 4,
+    "SpecChar": 107051,
+    "PictureId": "1070",
+    "Desc": "天垣神系修正者造成会心后获得1%的奥义值。"
+  },
+  {
+    "id": 107053,
+    "ID": 107053,
+    "TypeId": 4,
+    "SpecChar": 107051,
+    "PictureId": "1070",
+    "Desc": "队长和与队长预组合连携奥义的修正者消耗机制值高于100点时，伤害提高30%，持续25秒。"
+  },
+  {
+    "id": 104951,
+    "ID": 104951,
+    "TypeId": 4,
+    "SpecChar": 1049,
+    "SuitName": "镜花黄泉",
+    "PictureId": "1049",
+    "FlowName": [
+      "FlowScript/AIChipEffect/MasterSkill/AIChipEffect1049.asset"
+    ],
+    "Desc": "队长冰属性伤害提高15%，持续25秒。",
+    "CooldownFirst": 20,
+    "CooldownCom": 20
+  },
+  {
+    "id": 104952,
+    "ID": 104952,
+    "TypeId": 4,
+    "SpecChar": 104951,
+    "PictureId": "1049",
+    "Desc": "队长治疗自身时，攻击力提高4%，持续14秒，全队伍获得4%的奥义值，该效果每1秒最多触发一次。"
+  },
+  {
+    "id": 104953,
+    "ID": 104953,
+    "TypeId": 4,
+    "SpecChar": 104951,
+    "PictureId": "1049",
+    "Desc": "真樱神系冰属性修正者队长触发零时空间时，技能伤害提高15%、伤害提高15%，持续25秒。"
+  }
+]

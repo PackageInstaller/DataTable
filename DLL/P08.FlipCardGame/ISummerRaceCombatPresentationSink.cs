@@ -1,0 +1,12 @@
+public interface ISummerRaceCombatPresentationSink
+{
+	void HandleWeaponPresentation(SummerRaceWeaponPresentationEvent presentationEvent);
+
+	void HandleWeaponOverloadPresentation(SummerRaceWeaponOverloadPresentationEvent presentationEvent);
+
+	void HandleEquipPresentation(SummerRaceEquipPresentationEvent presentationEvent);
+
+	void HandleProjectilePresentation(SummerRaceProjectilePresentationEvent presentationEvent);
+
+	float HandleDefeatPresentation(SummerRaceDefeatPresentationEvent presentationEvent);
+}

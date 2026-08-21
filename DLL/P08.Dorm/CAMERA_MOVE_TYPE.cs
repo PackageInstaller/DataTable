@@ -1,0 +1,5 @@
+public enum CAMERA_MOVE_TYPE
+{
+	RESTAURANT,
+	DORM
+}

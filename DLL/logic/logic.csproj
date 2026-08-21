@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>logic</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net45</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="Entitas">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Entitas.dll</HintPath>
+    </Reference>
+    <Reference Include="common">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/common.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.CodeGeneration.Attributes">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Entitas.CodeGeneration.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="network">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/network.dll</HintPath>
+    </Reference>
+    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="Pathfinding.ClipperLib">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Pathfinding.ClipperLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Pathfinding.Poly2Tri">
+      <HintPath>../../../../../../../tmp/ag_decompile_1t3uzm9t/ref/Pathfinding.Poly2Tri.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,26 @@
+﻿return {
+	FOUNDED_TYPE = {
+		FOUNDED = 2,
+		RECOMMEND = 1
+	},
+	MEMBER_LIST_TYPE = {
+		WEEK_CONTRIBUTE = 2,
+		CONTRIBUTE = 4,
+		MEMBER = 1,
+		REQUEST = 3
+	},
+	MANAGER_LIST_TYPE = {
+		MEMBER = 1,
+		REQUEST = 2
+	},
+	WELFARE_TYPE = {
+		DEEP = 2,
+		COMMON = 1
+	},
+	GUILD_POST = {
+		TRAINEE = 4,
+		DEPUTY = 2,
+		MEMBER = 3,
+		CAPTAIN = 1
+	}
+}

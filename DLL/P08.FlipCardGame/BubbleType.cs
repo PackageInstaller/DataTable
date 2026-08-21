@@ -1,0 +1,7 @@
+public enum BubbleType
+{
+	ENEMYSKILL = 1,
+	DEBATESUCCESS,
+	ENEMYAPPEAR,
+	DEBATE
+}

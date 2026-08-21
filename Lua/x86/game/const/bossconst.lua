@@ -1,0 +1,7 @@
+﻿return {
+	MODE_HARD = 2,
+	TYPE_STAGE = 1,
+	MODE_NONE = 0,
+	MODE_NORMAL = 1,
+	TYPE_AFFIX = 3
+}

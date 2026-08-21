@@ -1,0 +1,6 @@
+namespace UnityEngine.UI;
+
+public interface LoopScrollSizeHelper
+{
+	Vector2 GetItemsSize(int itemsCount);
+}

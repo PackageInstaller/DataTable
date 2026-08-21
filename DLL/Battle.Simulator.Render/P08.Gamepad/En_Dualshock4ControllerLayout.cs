@@ -1,0 +1,36 @@
+namespace P08.Gamepad;
+
+public enum En_Dualshock4ControllerLayout
+{
+	None,
+	LeftStick,
+	L3Button,
+	RightStick,
+	R3Button,
+	DirectionalButtons,
+	TriangleButton,
+	CrossButton,
+	SquareButton,
+	CircleButton,
+	ShareButton,
+	OpetionsButton,
+	L1Button,
+	R1Button,
+	L2Button,
+	R2Button,
+	TouchPad,
+	TouchPadButton,
+	PSButton,
+	LeftStickUp,
+	LeftStickDown,
+	LeftStickLeft,
+	LeftStickRight,
+	RightStickUp,
+	RightStickDown,
+	RightStickLeft,
+	RightStickRight,
+	DirectionalButtonsUp,
+	DirectionalButtonsDown,
+	DirectionalButtonsLeft,
+	DirectionalButtonsRight
+}

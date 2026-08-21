@@ -1,0 +1,368 @@
+[
+  {
+    "id": 0,
+    "ActivityId": 101591,
+    "Type": 18446744073709551615,
+    "Icon": "0",
+    "Name": "0",
+    "Desc": "0",
+    "IconBattle": "0",
+    "SubArray": [
+      1001,
+      1009
+    ],
+    "Title": "选择无人机类型 "
+  },
+  {
+    "id": 1001,
+    "ID": 1001,
+    "ActivityId": 101591,
+    "Icon": "TextureConfig/MardukUI/boss/snakeactive/1001",
+    "Name": "控制型-A",
+    "Desc": "射程<color=#FF9500>10</color>m，每隔<color=#FF9500>3</color>秒，造成一次<color=#FF9500>230%</color>的单体伤害，被命中的敌人移速降低<color=#FF9500>35%</color>，持续<color=#FF9500>2.5</color>秒",
+    "IconBattle": "TextureConfig/MardukUI/boss/snakeactive_buff02/1001",
+    "DescBattle": [
+      "\"较低伤害，减速\""
+    ],
+    "UpgradeCost": 160,
+    "DismantleReturn": 160,
+    "SubType": 1,
+    "MiniTip": "分支 ",
+    "SubArray": [
+      1002
+    ],
+    "Title": "           强化无人机 ",
+    "RoleId": 6082,
+    "AttackRange": 10000
+  },
+  {
+    "id": 1002,
+    "ID": 1002,
+    "ActivityId": 101591,
+    "Icon": "TextureConfig/MardukUI/boss/snakeactive/1002",
+    "Name": "控制型-A1",
+    "Desc": "射程<color=#FF9500>12</color>m，每隔<color=#FF9500>3</color>秒，造成一次<color=#FF9500>350%</color>的单体伤害，使命中的敌人移速降低<color=#FF9500>35%</color>，持续<color=#FF9500>2.5</color>秒",
+    "IconBattle": "TextureConfig/MardukUI/boss/snakeactive_buff02/1002",
+    "DescBattle": [
+      "\"中等伤害，减速\""
+    ],
+    "UpgradeCost": 250,
+    "DismantleReturn": 250,
+    "SubType": 1,
+    "MiniTip": "强化 ",
+    "SubArray": [
+      1003,
+      1004
+    ],
+    "Title": "选择无人机分支路线 ",
+    "BuffConfigId": 608200001
+  },
+  {
+    "id": 1003,
+    "ID": 1003,
+    "ActivityId": 101591,
+    "Icon": "TextureConfig/MardukUI/boss/snakeactive/1003",
+    "Name": "群伤型分支",
+    "Desc": "射程<color=#FF9500>12</color>m，每秒造成<color=#FF9500>50%</color>的范围伤害，范围内的敌人移速降低<color=#FF9500>35%</color>，持续<color=#FF9500>2.5</color>秒",
+    "Condition": 101601,
+    "IconBattle": "TextureConfig/MardukUI/boss/snakeactive_buff02/1003",
+    "DescBattle": [
+      "\"范围伤害，减速\""
+    ],
+    "UpgradeCost": 300,
+    "DismantleReturn": 300,
+    "SubType": 1,
+    "MiniTip": "分支 ",
+    "SubArray": [
+      1005,
+      1006
+    ],
+    "Title": "选择无人机武器进行强化 ",
+    "BuffConfigId": 608200002
+  },
+  {
+    "id": 1004,
+    "ID": 1004,
+    "ActivityId": 101591,
+    "Icon": "TextureConfig/MardukUI/boss/snakeactive/1004",
+    "Name": "冰冻型分支",
+    "Desc": "射程<color=#FF9500>12</color>m，每隔<color=#FF9500>8</color>秒，发射一枚冰冻弹，命中时在半径<color=#FF9500>4</color>m内造成<color=#FF9500>500%</color>的范围伤害，冰冻被命中的敌人，持续<color=#FF9500>3</color>秒",
+    "Condition": 101602,
+    "IconBattle": "TextureConfig/MardukUI/boss/snakeactive_buff02/1004",
+    "DescBattle": [
+      "\"发射冰冻弹\""
+    ],
+    "UpgradeCost": 300,
+    "DismantleReturn": 300,
+    "SubType": 1,
+    "MiniTip": "分支 ",
+    "SubArray": [
+      1007,
+      1008
+    ],
+    "Title": "选择无人机武器进行强化 ",
+    "BuffConfigId": 608200003
+  },
+  {
+    "id": 1005,
+    "ID": 1005,
+    "ActivityId": 101591,
+    "Icon": "TextureConfig/MardukUI/boss/snakeactive/1005",
+    "Name": "溶解装置",
+    "Desc": "装置等级上限<color=#FF9500>3</color>，敌人生命值越低造成的伤害越高，敌人每损失<color=#FF9500>1%</color>的血量，额外受到<color=#FF9500>1%</color>、<color=#FF9500>2%</color>、<color=#FF9500>3%</color>伤害",
+    "Condition": 101601,
+    "IconBattle": "TextureConfig/MardukUI/boss/snakeactive_buff02/1005",
+    "DescBattle": [
+      "\"血量越低伤害越高\"",
+      "\"血量越低伤害越高\"",
+      "\"血量越低伤害越高\""
+    ],
+    "UpgradeCost": 200,
+    "DismantleReturn": 200,
+    "SubType": 2,
+    "MiniTip": "LV{0}",
+    "BuffConfigId": 608200004,
+    "UpgradeCountLimit": 3
+  },
+  {
+    "id": 1006,
+    "ID": 1006,
+    "ActivityId": 101591,
+    "Icon": "TextureConfig/MardukUI/boss/snakeactive/1006",
+    "Name": "混乱装置",
+    "Desc": "装置等级上限<color=#FF9500>2</color>，每隔<color=#FF9500>25</color>、<color=#FF9500>15</color>秒，使范围内的敌人混乱，持续<color=#FF9500>5</color>秒",
+    "Condition": 101601,
+    "IconBattle": "TextureConfig/MardukUI/boss/snakeactive_buff02/1006",
+    "DescBattle": [
+      "\"每25秒混乱敌人\"",
+      "\"每15秒混乱敌人\""
+    ],
+    "UpgradeCost": 300,
+    "DismantleReturn": 300,
+    "SubType": 2,
+    "MiniTip": "LV{0}",
+    "BuffConfigId": 608200005,
+    "UpgradeCountLimit": 2
+  },
+  {
+    "id": 1007,
+    "ID": 1007,
+    "ActivityId": 101591,
+    "Icon": "TextureConfig/MardukUI/boss/snakeactive/1007",
+    "Name": "碎冰装置",
+    "Desc": "装置等级上限<color=#FF9500>3</color>，解除冰冻时，额外受到<color=#FF9500>300%</color>、<color=#FF9500>600%</color>、<color=#FF9500>900%</color>伤害",
+    "Condition": 101602,
+    "IconBattle": "TextureConfig/MardukUI/boss/snakeactive_buff02/1007",
+    "DescBattle": [
+      "\"解冻时受中等伤害\"",
+      "\"解冻时受较高伤害\"",
+      "\"解冻时受高额伤害\""
+    ],
+    "UpgradeCost": 200,
+    "DismantleReturn": 200,
+    "SubType": 2,
+    "MiniTip": "LV{0}",
+    "BuffConfigId": 608200006,
+    "UpgradeCountLimit": 3
+  },
+  {
+    "id": 1008,
+    "ID": 1008,
+    "ActivityId": 101591,
+    "Icon": "TextureConfig/MardukUI/boss/snakeactive/1008",
+    "Name": "极寒装置",
+    "Desc": "装置等级上限<color=#FF9500>2</color>，冰冻弹的影响范围扩大至<color=#FF9500>6</color>m、<color=#FF9500>8</color>m",
+    "Condition": 101602,
+    "IconBattle": "TextureConfig/MardukUI/boss/snakeactive_buff02/1008",
+    "DescBattle": [
+      "\"冰冻范围小幅提升\"",
+      "\"冰冻范围大幅提升\""
+    ],
+    "UpgradeCost": 300,
+    "DismantleReturn": 300,
+    "SubType": 2,
+    "MiniTip": "LV{0}",
+    "BuffConfigId": 608200007,
+    "UpgradeCountLimit": 2
+  },
+  {
+    "id": 1009,
+    "ID": 1009,
+    "ActivityId": 101591,
+    "Type": 1,
+    "Icon": "TextureConfig/MardukUI/boss/snakeactive/1009",
+    "Name": "攻击型-B",
+    "Desc": "射程<color=#FF9500>10</color>m，每隔<color=#FF9500>1.5</color>秒，造成一次<color=#FF9500>180%</color>的单体伤害",
+    "IconBattle": "TextureConfig/MardukUI/boss/snakeactive_buff02/1009",
+    "DescBattle": [
+      "\"中等伤害\""
+    ],
+    "UpgradeCost": 110,
+    "DismantleReturn": 110,
+    "SubType": 1,
+    "MiniTip": "分支 ",
+    "SubArray": [
+      1010
+    ],
+    "Title": "           强化无人机 ",
+    "RoleId": 6083,
+    "AttackRange": 10000
+  },
+  {
+    "id": 1010,
+    "ID": 1010,
+    "ActivityId": 101591,
+    "Type": 1,
+    "Icon": "TextureConfig/MardukUI/boss/snakeactive/1010",
+    "Name": "攻击型-B1",
+    "Desc": "射程<color=#FF9500>12</color>m，每隔<color=#FF9500>1.5</color>秒，造成一次<color=#FF9500>250%</color>的单体伤害",
+    "IconBattle": "TextureConfig/MardukUI/boss/snakeactive_buff02/1010",
+    "DescBattle": [
+      "\"较高伤害\""
+    ],
+    "UpgradeCost": 160,
+    "DismantleReturn": 160,
+    "SubType": 1,
+    "MiniTip": "强化 ",
+    "SubArray": [
+      1011,
+      1012
+    ],
+    "Title": "选择无人机分支路线",
+    "BuffConfigId": 608300001
+  },
+  {
+    "id": 1011,
+    "ID": 1011,
+    "ActivityId": 101591,
+    "Type": 1,
+    "Icon": "TextureConfig/MardukUI/boss/snakeactive/1011",
+    "Name": "火焰型分支",
+    "Desc": "射程<color=#FF9500>12</color>m，每隔<color=#FF9500>6</color>秒，发射一枚火焰弹，命中时在半径<color=#FF9500>5</color>m内造成<color=#FF9500>500%</color>的范围伤害",
+    "Condition": 101601,
+    "IconBattle": "TextureConfig/MardukUI/boss/snakeactive_buff02/1011",
+    "DescBattle": [
+      "\"发射火焰弹\""
+    ],
+    "UpgradeCost": 230,
+    "DismantleReturn": 230,
+    "SubType": 1,
+    "MiniTip": "分支 ",
+    "SubArray": [
+      1013,
+      1014
+    ],
+    "Title": "选择无人机武器进行强化",
+    "BuffConfigId": 608300002
+  },
+  {
+    "id": 1012,
+    "ID": 1012,
+    "ActivityId": 101591,
+    "Type": 1,
+    "Icon": "TextureConfig/MardukUI/boss/snakeactive/1012",
+    "Name": "狙击型分支",
+    "Desc": "射程<color=#FF9500>20</color>m，每隔<color=#FF9500>8</color>秒，狙击敌人，优先选择精英目标，造成一次<color=#FF9500>2000%</color>的单体伤害",
+    "Condition": 101602,
+    "IconBattle": "TextureConfig/MardukUI/boss/snakeactive_buff02/1012",
+    "DescBattle": [
+      "\"低频高攻超远射程\""
+    ],
+    "UpgradeCost": 275,
+    "DismantleReturn": 275,
+    "SubType": 1,
+    "MiniTip": "分支 ",
+    "SubArray": [
+      1015,
+      1016
+    ],
+    "Title": "选择无人机武器进行强化",
+    "BuffConfigId": 608300003
+  },
+  {
+    "id": 1013,
+    "ID": 1013,
+    "ActivityId": 101591,
+    "Type": 1,
+    "Icon": "TextureConfig/MardukUI/boss/snakeactive/1013",
+    "Name": "燃烧装置",
+    "Desc": "装置等级上限<color=#FF9500>3</color>，火焰弹命中敌人时，附加<color=#FF9500>1</color>、<color=#FF9500>2</color>、<color=#FF9500>3</color>级灼烧，持续<color=#FF9500>12</color>秒",
+    "Condition": 101601,
+    "IconBattle": "TextureConfig/MardukUI/boss/snakeactive_buff02/1013",
+    "DescBattle": [
+      "\"命中附加1级灼烧\"",
+      "\"命中附加2级灼烧\"",
+      "\"命中附加3级灼烧\""
+    ],
+    "UpgradeCost": 200,
+    "DismantleReturn": 200,
+    "SubType": 2,
+    "MiniTip": "LV{0}",
+    "BuffConfigId": 608300004,
+    "UpgradeCountLimit": 3
+  },
+  {
+    "id": 1014,
+    "ID": 1014,
+    "ActivityId": 101591,
+    "Type": 1,
+    "Icon": "TextureConfig/MardukUI/boss/snakeactive/1014",
+    "Name": "多发装置",
+    "Desc": "装置等级上限<color=#FF9500>2</color>，额外发射<color=#FF9500>1</color>、<color=#FF9500>2</color>个火焰弹",
+    "Condition": 101601,
+    "IconBattle": "TextureConfig/MardukUI/boss/snakeactive_buff02/1014",
+    "DescBattle": [
+      "\"发射2枚火焰弹\"",
+      "\"发射3枚火焰弹\""
+    ],
+    "UpgradeCost": 300,
+    "DismantleReturn": 300,
+    "SubType": 2,
+    "MiniTip": "LV{0}",
+    "BuffConfigId": 608300005,
+    "UpgradeCountLimit": 2
+  },
+  {
+    "id": 1015,
+    "ID": 1015,
+    "ActivityId": 101591,
+    "Type": 1,
+    "Icon": "TextureConfig/MardukUI/boss/snakeactive/1015",
+    "Name": "过载装置",
+    "Desc": "装置等级上限<color=#FF9500>3</color>，提升狙击速度，攻击间隔改为<color=#FF9500>7</color>、<color=#FF9500>6</color>、<color=#FF9500>5</color>秒",
+    "Condition": 101602,
+    "IconBattle": "TextureConfig/MardukUI/boss/snakeactive_buff02/1015",
+    "DescBattle": [
+      "\"提升射速\"",
+      "\"提升射速\"",
+      "\"提升射速\""
+    ],
+    "UpgradeCost": 200,
+    "DismantleReturn": 200,
+    "SubType": 2,
+    "MiniTip": "LV{0}",
+    "BuffConfigId": 608300006,
+    "UpgradeCountLimit": 3
+  },
+  {
+    "id": 1016,
+    "ID": 1016,
+    "ActivityId": 101591,
+    "Type": 1,
+    "Icon": "TextureConfig/MardukUI/boss/snakeactive/1016",
+    "Name": "标记装置",
+    "Desc": "装置等级上限<color=#FF9500>2</color>，攻击会标记目标，使其受到的伤害提升<color=#FF9500>50%</color>、<color=#FF9500>100%</color>，持续<color=#FF9500>3</color>秒",
+    "Condition": 101602,
+    "IconBattle": "TextureConfig/MardukUI/boss/snakeactive_buff02/1016",
+    "DescBattle": [
+      "\"使目标50%易伤\"",
+      "\"使目标100%易伤\""
+    ],
+    "UpgradeCost": 300,
+    "DismantleReturn": 300,
+    "SubType": 2,
+    "MiniTip": "LV{0}",
+    "BuffConfigId": 608300007,
+    "UpgradeCountLimit": 2
+  }
+]

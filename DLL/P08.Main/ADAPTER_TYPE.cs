@@ -1,0 +1,6 @@
+public enum ADAPTER_TYPE
+{
+	NULL,
+	FLEXIBLE_ITEM_NUM,
+	FIXED_ITEM_NUM
+}

@@ -1,0 +1,236 @@
+using System.Collections.Generic;
+using MessagePack;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace FlowCanvas.Nodes;
+
+[Name("显示按键教学UI", 0)]
+[Category("Render/UI")]
+[Description("显示按键教学UI")]
+public class ShowTeachSkillUI : FlowNode
+{
+	public string targetPath = "ScreenAdjustContainer/TeachSkills";
+
+	public string instName = "TeachSkills";
+
+	public string prefabPath = "UI/TeachSkills";
+
+	public string parentPath = "ScreenAdjustContainer";
+
+	private TeachSkills com;
+
+	public override void OnSerializeHandler(ref MessagePackWriter writer, MessagePackSerializerOptions options)
+	{
+		writer.Write(targetPath);
+		writer.Write(instName);
+		writer.Write(prefabPath);
+		writer.Write(parentPath);
+	}
+
+	public override void OnDeserializeHandler(ref MessagePackReader reader, MessagePackSerializerOptions options)
+	{
+		targetPath = reader.ReadString();
+		instName = reader.ReadString();
+		prefabPath = reader.ReadString();
+		parentPath = reader.ReadString();
+	}
+
+	private void SetActive(GameObject go, bool flag)
+	{
+		if (go.activeSelf != flag)
+		{
+			go.SetActive(flag);
+		}
+	}
+
+	private void GetTeachSkillsCom()
+	{
+		Transform transform = ((com != null) ? com.transform : null);
+		if (transform == null)
+		{
+			BattleScene battleScene = NScene.GetCurrentScene() as BattleScene;
+			if (battleScene != null && battleScene.battlePanelGameObject != null)
+			{
+				Transform transform2 = battleScene.battlePanelGameObject.transform;
+				transform = transform2.Find(targetPath);
+				if (transform == null)
+				{
+					GameObject gameObject = Asset.InstantiateWithoutCache(prefabPath, transform2.Find(parentPath));
+					gameObject.name = instName;
+					transform = gameObject.transform;
+				}
+			}
+		}
+		if (transform == null)
+		{
+			Debug.LogError("显示按键教学UI 节点, 找不到对应预制体");
+			return;
+		}
+		SetActive(transform.gameObject, flag: true);
+		if (com == null)
+		{
+			com = transform.GetComponent<TeachSkills>();
+		}
+		if (com == null)
+		{
+			Debug.LogError(prefabPath + ", 找不到对应TeachSkills组件");
+		}
+	}
+
+	private float GetTimeProgressPercent(int buffClassID)
+	{
+		BattleScene battleScene = NScene.GetCurrentScene() as BattleScene;
+		if (battleScene == null)
+		{
+			Debug.LogError("battleScene 为空");
+			return 0f;
+		}
+		int mPlayerAgentID = (NScene.GetCurrentScene() as BattleScene).GetAgentManager().mPlayerAgentID;
+		List<BuffState> buffList = null;
+		if (!battleScene.GetBuffManager().TryGetBuffListByAgentID(mPlayerAgentID, out buffList))
+		{
+			Debug.LogError("buff 为空");
+			return 0f;
+		}
+		float result = 0f;
+		for (int i = 0; i < buffList.Count; i++)
+		{
+			if (buffList[i].mBuffClassID == buffClassID)
+			{
+				result = 1f - (float)buffList[i].mDuring / (float)buffList[i].mBuffKeepTime;
+				break;
+			}
+		}
+		return result;
+	}
+
+	protected override void RegisterPorts()
+	{
+		ValueInput<List<int>> bufflogicIDInput = AddValueInput<List<int>>("长按的buff处理逻辑ID");
+		ValueInput<List<bool>> clickTypeInput = AddValueInput<List<bool>>("是否长按");
+		ValueInput<string> atlsNameInput = AddValueInput<string>("图集名");
+		ValueInput<List<string>> atlsNamesInput = AddValueInput<List<string>>("图集名列表(要用多个图集的时候用)");
+		ValueInput<List<string>> spritesNameInput = AddValueInput<List<string>>("图片名");
+		ValueInput<List<int>> skillsNameInput = AddValueInput<List<int>>("技能名");
+		ValueInput<bool> useLoopInput = AddValueInput<bool>("图片是否闪烁").SetDefaultAndSerializedValue(v: true);
+		FlowOutput output = AddFlowOutput("");
+		FlowOutput trueOutput = AddFlowOutput("成功");
+		FlowOutput falseOutput = AddFlowOutput("失败");
+		FlowOutput fullOutput = AddFlowOutput("进度完成");
+		AddFlowInput("初始化", delegate(Flow f)
+		{
+			GetTeachSkillsCom();
+			if (com == null)
+			{
+				Debug.LogError(prefabPath + ", 找不到对应TeachSkills组件");
+			}
+			else
+			{
+				List<int> value = bufflogicIDInput.value;
+				List<bool> value2 = clickTypeInput.value;
+				List<string> value3 = spritesNameInput.value;
+				string atlasName = atlsNameInput.value;
+				List<int> value4 = skillsNameInput.value;
+				List<string> value5 = atlsNamesInput.value;
+				if (value == null || value2 == null || value.Count != value2.Count)
+				{
+					Debug.LogError("显示按键教学UI 节点, 列表为空");
+				}
+				else if (value3 == null || value.Count != value3.Count)
+				{
+					Debug.LogError("显示按键教学UI 节点, 图片名列表有问题");
+				}
+				else
+				{
+					com.Init();
+					com.useLoop = useLoopInput.value;
+					for (int i = 0; i < value.Count; i++)
+					{
+						TeachSkillItem teachSkillItem = com.AddSkillItem();
+						if (value5 != null && value5.Count > i)
+						{
+							atlasName = value5[i];
+						}
+						Sprite sprite = AtlasManager.GetSprite(atlasName, value3[i]);
+						string text = "";
+						if (value4 != null && i < value4.Count)
+						{
+							text = WorldStateManager.GetTipsContent(value4[i]);
+						}
+						teachSkillItem.Init(sprite, value2[i], value[i], text);
+					}
+					output.Call(f);
+				}
+			}
+		});
+		AddFlowInput("完成一个", delegate(Flow f)
+		{
+			GetTeachSkillsCom();
+			if (com == null)
+			{
+				Debug.LogError("显示按键教学UI 没有初始化");
+			}
+			else
+			{
+				com.FinishCurrent(success: true);
+				if (com.GetCurrent() == null)
+				{
+					trueOutput.Call(f);
+				}
+			}
+		});
+		AddFlowInput("失败一个", delegate(Flow f)
+		{
+			GetTeachSkillsCom();
+			if (com == null)
+			{
+				Debug.LogError("显示按键教学UI 没有初始化");
+			}
+			else
+			{
+				com.FinishCurrent(success: false);
+				falseOutput.Call(f);
+			}
+		});
+		AddFlowInput("Miss一个", delegate(Flow f)
+		{
+			GetTeachSkillsCom();
+			if (com == null)
+			{
+				Debug.LogError("显示按键教学UI 没有初始化");
+			}
+			else
+			{
+				com.FinishCurrent(success: false, miss: true);
+				falseOutput.Call(f);
+			}
+		});
+		AddFlowInput("更新进度", delegate(Flow f)
+		{
+			GetTeachSkillsCom();
+			if (com == null)
+			{
+				Debug.LogError("显示按键教学UI 没有初始化");
+			}
+			else
+			{
+				TeachSkillItem current = com.GetCurrent();
+				_ = bufflogicIDInput.value;
+				if (current == null)
+				{
+					Debug.LogError("显示按键教学UI 没有初始化");
+				}
+				else
+				{
+					float timeProgressPercent = GetTimeProgressPercent(current.index);
+					current.progress.fillAmount = timeProgressPercent;
+					if (timeProgressPercent.AlmostEquals(1f, 0.01f))
+					{
+						fullOutput.Call(f);
+					}
+				}
+			}
+		});
+	}
+}

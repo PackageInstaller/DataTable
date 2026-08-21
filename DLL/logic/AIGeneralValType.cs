@@ -1,0 +1,6 @@
+public enum AIGeneralValType
+{
+	AVGT_ATTACK_TARGET = 1,
+	AGVT_SELF_ENTITY,
+	AGVT_COMMON_TARGET
+}

@@ -1,0 +1,22 @@
+﻿local var_0_0 = import("game.views.autoChess.battle.logic.actionLink.actionNode.AutoChessActionBaseNode")
+local var_0_1 = class("AutoChessRefreshBuffNode", var_0_0)
+
+function var_0_1.OnEnter(arg_1_0)
+	for iter_1_0, iter_1_1 in ipairs(arg_1_0.actionData.refreshBuffDataList) do
+		AutoChessData:RefreshBuff(iter_1_1)
+	end
+
+	arg_1_0.rendererId = AutoChessBattleRenderer.GetInstance():RenderAction(arg_1_0.actionData)
+end
+
+function var_0_1.OnExecute(arg_2_0)
+	if arg_2_0:IsRenderEnd() then
+		arg_2_0.status = AutoChessConst.ACTION_NODE_STATUS.FINISH
+	end
+end
+
+function var_0_1.IsRenderEnd(arg_3_0)
+	return true
+end
+
+return var_0_1
