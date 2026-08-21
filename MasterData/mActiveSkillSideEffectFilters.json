@@ -1,0 +1,578 @@
+[
+    {
+        "id": 1,
+        "ml_name": [
+            "即死",
+            ""
+        ],
+        "order": 1,
+        "effect_types": "1"
+    },
+    {
+        "id": 2,
+        "ml_name": [
+            "再行動",
+            ""
+        ],
+        "order": 2,
+        "effect_types": "2|60"
+    },
+    {
+        "id": 3,
+        "ml_name": [
+            "弾き飛ばし",
+            ""
+        ],
+        "order": 3,
+        "effect_types": "3"
+    },
+    {
+        "id": 4,
+        "ml_name": [
+            "引き寄せ",
+            ""
+        ],
+        "order": 4,
+        "effect_types": "4|59"
+    },
+    {
+        "id": 5,
+        "ml_name": [
+            "位置入れ替え",
+            ""
+        ],
+        "order": 5,
+        "effect_types": "5"
+    },
+    {
+        "id": 6,
+        "ml_name": [
+            "吸収",
+            ""
+        ],
+        "order": 6,
+        "effect_types": "6"
+    },
+    {
+        "id": 7,
+        "ml_name": [
+            "体力消費",
+            ""
+        ],
+        "order": 7,
+        "effect_types": "7"
+    },
+    {
+        "id": 8,
+        "ml_name": [
+            "系統特攻",
+            ""
+        ],
+        "order": 8,
+        "effect_types": "8"
+    },
+    {
+        "id": 9,
+        "ml_name": [
+            "オブジェクト召喚",
+            ""
+        ],
+        "order": 9,
+        "effect_types": "9"
+    },
+    {
+        "id": 10,
+        "ml_name": [
+            "フォーム付与",
+            ""
+        ],
+        "order": 10,
+        "effect_types": "10"
+    },
+    {
+        "id": 11,
+        "ml_name": [
+            "天賦/補助効果/状態異常付与",
+            ""
+        ],
+        "order": 11,
+        "effect_types": "11"
+    },
+    {
+        "id": 12,
+        "ml_name": [
+            "弱点付与",
+            ""
+        ],
+        "order": 12,
+        "effect_types": "12"
+    },
+    {
+        "id": 13,
+        "ml_name": [
+            "バフ",
+            ""
+        ],
+        "order": 13,
+        "effect_types": "13|14"
+    },
+    {
+        "id": 14,
+        "ml_name": [
+            "入魂ゲージ/熱情増加",
+            ""
+        ],
+        "order": 14,
+        "effect_types": "15"
+    },
+    {
+        "id": 15,
+        "ml_name": [
+            "デバフ",
+            ""
+        ],
+        "order": 15,
+        "effect_types": "16|17"
+    },
+    {
+        "id": 16,
+        "ml_name": [
+            "入魂ゲージ/熱情減少",
+            ""
+        ],
+        "order": 16,
+        "effect_types": "18"
+    },
+    {
+        "id": 17,
+        "ml_name": [
+            "補助効果解除",
+            ""
+        ],
+        "order": 17,
+        "effect_types": "19"
+    },
+    {
+        "id": 18,
+        "ml_name": [
+            "状態異常解除",
+            ""
+        ],
+        "order": 18,
+        "effect_types": "20"
+    },
+    {
+        "id": 19,
+        "ml_name": [
+            "弱点付与解除",
+            ""
+        ],
+        "order": 19,
+        "effect_types": "21"
+    },
+    {
+        "id": 20,
+        "ml_name": [
+            "バフ解除",
+            ""
+        ],
+        "order": 20,
+        "effect_types": "22"
+    },
+    {
+        "id": 21,
+        "ml_name": [
+            "デバフ解除",
+            ""
+        ],
+        "order": 21,
+        "effect_types": "23"
+    },
+    {
+        "id": 22,
+        "ml_name": [
+            "バフ/デバフ解除",
+            ""
+        ],
+        "order": 22,
+        "effect_types": "24"
+    },
+    {
+        "id": 23,
+        "ml_name": [
+            "追加移動",
+            ""
+        ],
+        "order": 23,
+        "effect_types": "25"
+    },
+    {
+        "id": 24,
+        "ml_name": [
+            "クールタイム短縮",
+            ""
+        ],
+        "order": 24,
+        "effect_types": "26|72"
+    },
+    {
+        "id": 25,
+        "ml_name": [
+            "蘇生",
+            ""
+        ],
+        "order": 25,
+        "effect_types": "27"
+    },
+    {
+        "id": 26,
+        "ml_name": [
+            "熱情補正",
+            ""
+        ],
+        "order": 26,
+        "effect_types": "28"
+    },
+    {
+        "id": 27,
+        "ml_name": [
+            "エレメントダメージ増加",
+            ""
+        ],
+        "order": 27,
+        "effect_types": "30"
+    },
+    {
+        "id": 28,
+        "ml_name": [
+            "ダメージ増加",
+            ""
+        ],
+        "order": 28,
+        "effect_types": "32"
+    },
+    {
+        "id": 29,
+        "ml_name": [
+            "追加行動",
+            ""
+        ],
+        "order": 29,
+        "effect_types": "33"
+    },
+    {
+        "id": 30,
+        "ml_name": [
+            "回復",
+            ""
+        ],
+        "order": 30,
+        "effect_types": "34|35"
+    },
+    {
+        "id": 31,
+        "ml_name": [
+            "オブジェクト特攻",
+            ""
+        ],
+        "order": 31,
+        "effect_types": "36"
+    },
+    {
+        "id": 32,
+        "ml_name": [
+            "ソウル効果増加",
+            ""
+        ],
+        "order": 32,
+        "effect_types": "37"
+    },
+    {
+        "id": 33,
+        "ml_name": [
+            "オブジェクト破壊回復",
+            ""
+        ],
+        "order": 33,
+        "effect_types": "38"
+    },
+    {
+        "id": 34,
+        "ml_name": [
+            "属性有利増加",
+            ""
+        ],
+        "order": 34,
+        "effect_types": "39"
+    },
+    {
+        "id": 35,
+        "ml_name": [
+            "属性有利減少",
+            ""
+        ],
+        "order": 35,
+        "effect_types": "40"
+    },
+    {
+        "id": 36,
+        "ml_name": [
+            "エネミー召喚",
+            ""
+        ],
+        "order": 36,
+        "effect_types": "41"
+    },
+    {
+        "id": 37,
+        "ml_name": [
+            "入魂ゲージ増加補正",
+            ""
+        ],
+        "order": 37,
+        "effect_types": "42"
+    },
+    {
+        "id": 38,
+        "ml_name": [
+            "位置移動",
+            ""
+        ],
+        "order": 38,
+        "effect_types": "43|50"
+    },
+    {
+        "id": 39,
+        "ml_name": [
+            "状態異常特攻",
+            ""
+        ],
+        "order": 39,
+        "effect_types": "44"
+    },
+    {
+        "id": 40,
+        "ml_name": [
+            "猛毒ダメージ減少",
+            ""
+        ],
+        "order": 40,
+        "effect_types": "45"
+    },
+    {
+        "id": 41,
+        "ml_name": [
+            "弾き飛ばしダメージ軽減",
+            ""
+        ],
+        "order": 41,
+        "effect_types": "46"
+    },
+    {
+        "id": 42,
+        "ml_name": [
+            "状態異常短縮",
+            ""
+        ],
+        "order": 42,
+        "effect_types": "47"
+    },
+    {
+        "id": 43,
+        "ml_name": [
+            "バフ(重複可)",
+            ""
+        ],
+        "order": 43,
+        "effect_types": "48|49"
+    },
+    {
+        "id": 44,
+        "ml_name": [
+            "弱点付与状態特攻",
+            ""
+        ],
+        "order": 44,
+        "effect_types": "54"
+    },
+    {
+        "id": 45,
+        "ml_name": [
+            "攻撃対象数威力補正",
+            ""
+        ],
+        "order": 45,
+        "effect_types": "55"
+    },
+    {
+        "id": 46,
+        "ml_name": [
+            "シールド付与",
+            ""
+        ],
+        "order": 46,
+        "effect_types": "56"
+    },
+    {
+        "id": 47,
+        "ml_name": [
+            "絶技後威力上昇",
+            ""
+        ],
+        "order": 47,
+        "effect_types": "57"
+    },
+    {
+        "id": 48,
+        "ml_name": [
+            "敵撃破時に入魂発動",
+            ""
+        ],
+        "order": 48,
+        "effect_types": "58"
+    },
+    {
+        "id": 49,
+        "ml_name": [
+            "オブジェクト生成回数威力上昇",
+            ""
+        ],
+        "order": 49,
+        "effect_types": "63"
+    },
+    {
+        "id": 50,
+        "ml_name": [
+            "吸収バフ変換",
+            ""
+        ],
+        "order": 50,
+        "effect_types": "64"
+    },
+    {
+        "id": 51,
+        "ml_name": [
+            "エレメント弱点回数威力上昇",
+            ""
+        ],
+        "order": 51,
+        "effect_types": "65"
+    },
+    {
+        "id": 52,
+        "ml_name": [
+            "フォーム付与回数威力上昇",
+            ""
+        ],
+        "order": 52,
+        "effect_types": "67"
+    },
+    {
+        "id": 53,
+        "ml_name": [
+            "ソウル回収",
+            ""
+        ],
+        "order": 53,
+        "effect_types": "61"
+    },
+    {
+        "id": 54,
+        "ml_name": [
+            "天賦/補助効果を未所持に威力上昇",
+            ""
+        ],
+        "order": 54,
+        "effect_types": "66"
+    },
+    {
+        "id": 55,
+        "ml_name": [
+            "シールド解除",
+            ""
+        ],
+        "order": 55,
+        "effect_types": "68"
+    },
+    {
+        "id": 56,
+        "ml_name": [
+            "マス効果付与\t",
+            ""
+        ],
+        "order": 56,
+        "effect_types": "69"
+    },
+    {
+        "id": 57,
+        "ml_name": [
+            "マス効果付与解除\t",
+            ""
+        ],
+        "order": 57,
+        "effect_types": "70"
+    },
+    {
+        "id": 58,
+        "ml_name": [
+            "ボス特攻",
+            ""
+        ],
+        "order": 58,
+        "effect_types": "71"
+    },
+    {
+        "id": 59,
+        "ml_name": [
+            "消去不可バフ",
+            ""
+        ],
+        "order": 59,
+        "effect_types": "73"
+    },
+    {
+        "id": 60,
+        "ml_name": [
+            "反動発動回数威力上昇",
+            ""
+        ],
+        "order": 60,
+        "effect_types": "74"
+    },
+    {
+        "id": 61,
+        "ml_name": [
+            "天賦解除",
+            ""
+        ],
+        "order": 61,
+        "effect_types": "75"
+    },
+    {
+        "id": 62,
+        "ml_name": [
+            "天賦解除無効",
+            ""
+        ],
+        "order": 62,
+        "effect_types": "76"
+    },
+    {
+        "id": 63,
+        "ml_name": [
+            "技法変化",
+            ""
+        ],
+        "order": 63,
+        "effect_types": "77"
+    },
+    {
+        "id": 64,
+        "ml_name": [
+            "主効果攻撃回数威力上昇",
+            ""
+        ],
+        "order": 64,
+        "effect_types": "78"
+    }
+]

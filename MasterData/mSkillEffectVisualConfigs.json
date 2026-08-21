@@ -1,0 +1,2537 @@
+[
+    {
+        "id": 1,
+        "effect_type": 10,
+        "effect_attributes": 1,
+        "ml_name": [
+            "物理フォーム",
+            ""
+        ],
+        "image_index": 3002,
+        "invoke_effect_id": 12000,
+        "invoke_unit_color": "#ff9900",
+        "view_unit_type": 2
+    },
+    {
+        "id": 2,
+        "effect_type": 10,
+        "effect_attributes": 2,
+        "ml_name": [
+            "炎フォーム",
+            ""
+        ],
+        "image_index": 3003,
+        "invoke_effect_id": 12001,
+        "invoke_unit_color": "#ff4000",
+        "view_unit_type": 2
+    },
+    {
+        "id": 3,
+        "effect_type": 10,
+        "effect_attributes": 3,
+        "ml_name": [
+            "水フォーム",
+            ""
+        ],
+        "image_index": 3004,
+        "invoke_effect_id": 12002,
+        "invoke_unit_color": "#0060ff",
+        "view_unit_type": 2
+    },
+    {
+        "id": 4,
+        "effect_type": 10,
+        "effect_attributes": 4,
+        "ml_name": [
+            "風フォーム",
+            ""
+        ],
+        "image_index": 3005,
+        "invoke_effect_id": 12003,
+        "invoke_unit_color": "#47ff47",
+        "view_unit_type": 2
+    },
+    {
+        "id": 5,
+        "effect_type": 10,
+        "effect_attributes": 5,
+        "ml_name": [
+            "雷フォーム",
+            ""
+        ],
+        "image_index": 3006,
+        "invoke_effect_id": 12004,
+        "invoke_unit_color": "#ffff4d",
+        "view_unit_type": 2
+    },
+    {
+        "id": 6,
+        "effect_type": 11,
+        "effect_attributes": 1,
+        "ml_name": [
+            "気炎",
+            ""
+        ],
+        "image_index": 3007,
+        "invoke_effect_id": 14000,
+        "invoke_unit_color": "#ff4000",
+        "view_unit_type": 2
+    },
+    {
+        "id": 7,
+        "effect_type": 11,
+        "effect_attributes": 2,
+        "ml_name": [
+            "水月",
+            ""
+        ],
+        "image_index": 3008,
+        "invoke_effect_id": 13000,
+        "invoke_unit_color": "#0060ff",
+        "view_unit_type": 2
+    },
+    {
+        "id": 8,
+        "effect_type": 11,
+        "effect_attributes": 3,
+        "ml_name": [
+            "疾風",
+            ""
+        ],
+        "image_index": 3009,
+        "invoke_effect_id": 15000,
+        "invoke_unit_color": "#47ff47",
+        "view_unit_type": 2
+    },
+    {
+        "id": 9,
+        "effect_type": 11,
+        "effect_attributes": 4,
+        "ml_name": [
+            "迅雷",
+            ""
+        ],
+        "image_index": 3010,
+        "invoke_effect_id": 16000,
+        "invoke_unit_color": "#ffff4d",
+        "view_unit_type": 2
+    },
+    {
+        "id": 10,
+        "effect_type": 11,
+        "effect_attributes": 5,
+        "ml_name": [
+            "火傷",
+            ""
+        ],
+        "image_index": 4001,
+        "invoke_effect_id": 17000,
+        "invoke_unit_color": "#800400",
+        "view_unit_type": 1
+    },
+    {
+        "id": 11,
+        "effect_type": 11,
+        "effect_attributes": 6,
+        "ml_name": [
+            "猛毒",
+            ""
+        ],
+        "image_index": 4002,
+        "invoke_effect_id": 18000,
+        "invoke_unit_color": "#600080",
+        "view_unit_type": 1
+    },
+    {
+        "id": 12,
+        "effect_type": 11,
+        "effect_attributes": 7,
+        "ml_name": [
+            "影縫",
+            ""
+        ],
+        "image_index": 4003,
+        "invoke_effect_id": 19000,
+        "invoke_unit_color": "#288000",
+        "view_unit_type": 1
+    },
+    {
+        "id": 13,
+        "effect_type": 11,
+        "effect_attributes": 8,
+        "ml_name": [
+            "感電",
+            ""
+        ],
+        "image_index": 4004,
+        "invoke_effect_id": 20000,
+        "invoke_unit_color": "#807300",
+        "view_unit_type": 1
+    },
+    {
+        "id": 14,
+        "effect_type": 12,
+        "effect_attributes": 2,
+        "ml_name": [
+            "炎弱点",
+            ""
+        ],
+        "image_index": 4005,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 15,
+        "effect_type": 12,
+        "effect_attributes": 3,
+        "ml_name": [
+            "水弱点",
+            ""
+        ],
+        "image_index": 4006,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 16,
+        "effect_type": 12,
+        "effect_attributes": 4,
+        "ml_name": [
+            "風弱点",
+            ""
+        ],
+        "image_index": 4007,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 17,
+        "effect_type": 12,
+        "effect_attributes": 5,
+        "ml_name": [
+            "雷弱点",
+            ""
+        ],
+        "image_index": 4008,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 18,
+        "effect_type": 13,
+        "effect_attributes": 1,
+        "ml_name": [
+            "体力アップ",
+            ""
+        ],
+        "image_index": 1001,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 19,
+        "effect_type": 13,
+        "effect_attributes": 2,
+        "ml_name": [
+            "攻撃アップ",
+            ""
+        ],
+        "image_index": 1002,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 20,
+        "effect_type": 13,
+        "effect_attributes": 3,
+        "ml_name": [
+            "精神アップ",
+            ""
+        ],
+        "image_index": 1003,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 21,
+        "effect_type": 13,
+        "effect_attributes": 4,
+        "ml_name": [
+            "防御アップ",
+            ""
+        ],
+        "image_index": 1004,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 22,
+        "effect_type": 13,
+        "effect_attributes": 5,
+        "ml_name": [
+            "器用アップ",
+            ""
+        ],
+        "image_index": 1005,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 23,
+        "effect_type": 13,
+        "effect_attributes": 6,
+        "ml_name": [
+            "敏捷アップ",
+            ""
+        ],
+        "image_index": 1006,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 24,
+        "effect_type": 13,
+        "effect_attributes": 7,
+        "ml_name": [
+            "幸運アップ",
+            ""
+        ],
+        "image_index": 1007,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 25,
+        "effect_type": 13,
+        "effect_attributes": 8,
+        "ml_name": [
+            "移動アップ",
+            ""
+        ],
+        "image_index": 1008,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 26,
+        "effect_type": 14,
+        "effect_attributes": 1,
+        "ml_name": [
+            "体力アップ",
+            ""
+        ],
+        "image_index": 1001,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 27,
+        "effect_type": 14,
+        "effect_attributes": 2,
+        "ml_name": [
+            "攻撃アップ",
+            ""
+        ],
+        "image_index": 1002,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 28,
+        "effect_type": 14,
+        "effect_attributes": 3,
+        "ml_name": [
+            "精神アップ",
+            ""
+        ],
+        "image_index": 1003,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 29,
+        "effect_type": 14,
+        "effect_attributes": 4,
+        "ml_name": [
+            "防御アップ",
+            ""
+        ],
+        "image_index": 1004,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 30,
+        "effect_type": 14,
+        "effect_attributes": 5,
+        "ml_name": [
+            "器用アップ",
+            ""
+        ],
+        "image_index": 1005,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 31,
+        "effect_type": 14,
+        "effect_attributes": 6,
+        "ml_name": [
+            "敏捷アップ",
+            ""
+        ],
+        "image_index": 1006,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 32,
+        "effect_type": 14,
+        "effect_attributes": 7,
+        "ml_name": [
+            "幸運アップ",
+            ""
+        ],
+        "image_index": 1007,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 33,
+        "effect_type": 14,
+        "effect_attributes": 8,
+        "ml_name": [
+            "移動アップ",
+            ""
+        ],
+        "image_index": 1008,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 34,
+        "effect_type": 15,
+        "effect_attributes": 1,
+        "ml_name": [
+            "熱情増加",
+            ""
+        ],
+        "image_index": 1000,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 35,
+        "effect_type": 15,
+        "effect_attributes": 2,
+        "ml_name": [
+            "入魂ゲージ増加",
+            ""
+        ],
+        "image_index": 1000,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 36,
+        "effect_type": 15,
+        "effect_attributes": 3,
+        "ml_name": [
+            "熱情入魂増加",
+            ""
+        ],
+        "image_index": 1000,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 37,
+        "effect_type": 16,
+        "effect_attributes": 1,
+        "ml_name": [
+            "体力ダウン",
+            ""
+        ],
+        "image_index": 2001,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 38,
+        "effect_type": 16,
+        "effect_attributes": 2,
+        "ml_name": [
+            "攻撃ダウン",
+            ""
+        ],
+        "image_index": 2002,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 39,
+        "effect_type": 16,
+        "effect_attributes": 3,
+        "ml_name": [
+            "精神ダウン",
+            ""
+        ],
+        "image_index": 2003,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 40,
+        "effect_type": 16,
+        "effect_attributes": 4,
+        "ml_name": [
+            "防御ダウン",
+            ""
+        ],
+        "image_index": 2004,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 41,
+        "effect_type": 16,
+        "effect_attributes": 5,
+        "ml_name": [
+            "器用ダウン",
+            ""
+        ],
+        "image_index": 2005,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 42,
+        "effect_type": 16,
+        "effect_attributes": 6,
+        "ml_name": [
+            "敏捷ダウン",
+            ""
+        ],
+        "image_index": 2006,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 43,
+        "effect_type": 16,
+        "effect_attributes": 7,
+        "ml_name": [
+            "幸運ダウン",
+            ""
+        ],
+        "image_index": 2007,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 44,
+        "effect_type": 16,
+        "effect_attributes": 8,
+        "ml_name": [
+            "移動ダウン",
+            ""
+        ],
+        "image_index": 2008,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 45,
+        "effect_type": 17,
+        "effect_attributes": 1,
+        "ml_name": [
+            "体力ダウン",
+            ""
+        ],
+        "image_index": 2001,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 46,
+        "effect_type": 17,
+        "effect_attributes": 2,
+        "ml_name": [
+            "攻撃ダウン",
+            ""
+        ],
+        "image_index": 2002,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 47,
+        "effect_type": 17,
+        "effect_attributes": 3,
+        "ml_name": [
+            "精神ダウン",
+            ""
+        ],
+        "image_index": 2003,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 48,
+        "effect_type": 17,
+        "effect_attributes": 4,
+        "ml_name": [
+            "防御ダウン",
+            ""
+        ],
+        "image_index": 2004,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 49,
+        "effect_type": 17,
+        "effect_attributes": 5,
+        "ml_name": [
+            "器用ダウン",
+            ""
+        ],
+        "image_index": 2005,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 50,
+        "effect_type": 17,
+        "effect_attributes": 6,
+        "ml_name": [
+            "敏捷ダウン",
+            ""
+        ],
+        "image_index": 2006,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 51,
+        "effect_type": 17,
+        "effect_attributes": 7,
+        "ml_name": [
+            "幸運ダウン",
+            ""
+        ],
+        "image_index": 2007,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 52,
+        "effect_type": 17,
+        "effect_attributes": 8,
+        "ml_name": [
+            "移動ダウン",
+            ""
+        ],
+        "image_index": 2008,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 53,
+        "effect_type": 18,
+        "effect_attributes": 1,
+        "ml_name": [
+            "熱情減少",
+            ""
+        ],
+        "image_index": 2000,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 54,
+        "effect_type": 18,
+        "effect_attributes": 2,
+        "ml_name": [
+            "入魂ゲージ減少",
+            ""
+        ],
+        "image_index": 2000,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 55,
+        "effect_type": 18,
+        "effect_attributes": 3,
+        "ml_name": [
+            "熱情入魂減少",
+            ""
+        ],
+        "image_index": 2000,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 56,
+        "effect_type": 11,
+        "effect_attributes": 9,
+        "ml_name": [
+            "忍耐",
+            ""
+        ],
+        "image_index": 3011,
+        "invoke_effect_id": 26000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 57,
+        "effect_type": 11,
+        "effect_attributes": 10,
+        "ml_name": [
+            "幻影",
+            ""
+        ],
+        "image_index": 3012,
+        "invoke_effect_id": 31000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 58,
+        "effect_type": 11,
+        "effect_attributes": 11,
+        "ml_name": [
+            "奮起",
+            ""
+        ],
+        "image_index": 3013,
+        "invoke_effect_id": 29000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 59,
+        "effect_type": 11,
+        "effect_attributes": 12,
+        "ml_name": [
+            "再生",
+            ""
+        ],
+        "image_index": 3014,
+        "invoke_effect_id": 27000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 60,
+        "effect_type": 11,
+        "effect_attributes": 13,
+        "ml_name": [
+            "天啓",
+            ""
+        ],
+        "image_index": 3015,
+        "invoke_effect_id": 28000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 61,
+        "effect_type": 11,
+        "effect_attributes": 14,
+        "ml_name": [
+            "俊足",
+            ""
+        ],
+        "image_index": 3016,
+        "invoke_effect_id": 30000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 62,
+        "effect_type": 11,
+        "effect_attributes": 15,
+        "ml_name": [
+            "不動",
+            ""
+        ],
+        "image_index": 3017,
+        "invoke_effect_id": 32000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 63,
+        "effect_type": 29,
+        "effect_attributes": 13,
+        "ml_name": [
+            "火傷抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 64,
+        "effect_type": 29,
+        "effect_attributes": 14,
+        "ml_name": [
+            "猛毒抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 65,
+        "effect_type": 29,
+        "effect_attributes": 15,
+        "ml_name": [
+            "影縫抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 66,
+        "effect_type": 29,
+        "effect_attributes": 16,
+        "ml_name": [
+            "感電抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 67,
+        "effect_type": 25,
+        "effect_attributes": 0,
+        "ml_name": [
+            "追加移動",
+            ""
+        ],
+        "image_index": 1000,
+        "invoke_effect_id": 36000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 68,
+        "effect_type": 12,
+        "effect_attributes": 1,
+        "ml_name": [
+            "物理弱点",
+            ""
+        ],
+        "image_index": 4009,
+        "invoke_effect_id": 23000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 69,
+        "effect_type": 26,
+        "effect_attributes": 0,
+        "ml_name": [
+            "クールタイム減少",
+            ""
+        ],
+        "image_index": 1000,
+        "invoke_effect_id": 28000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 70,
+        "effect_type": 13,
+        "effect_attributes": 10,
+        "ml_name": [
+            "必殺アップ",
+            ""
+        ],
+        "image_index": 1010,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 71,
+        "effect_type": 14,
+        "effect_attributes": 10,
+        "ml_name": [
+            "必殺アップ",
+            ""
+        ],
+        "image_index": 1010,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 72,
+        "effect_type": 47,
+        "effect_attributes": 0,
+        "ml_name": [
+            "状態異常ターン短縮",
+            ""
+        ],
+        "image_index": 1000,
+        "invoke_effect_id": 24000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 73,
+        "effect_type": 47,
+        "effect_attributes": 5,
+        "ml_name": [
+            "火傷ターン短縮",
+            ""
+        ],
+        "image_index": 1000,
+        "invoke_effect_id": 24000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 74,
+        "effect_type": 47,
+        "effect_attributes": 6,
+        "ml_name": [
+            "猛毒ターン短縮",
+            ""
+        ],
+        "image_index": 1000,
+        "invoke_effect_id": 24000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 75,
+        "effect_type": 47,
+        "effect_attributes": 7,
+        "ml_name": [
+            "影縫ターン短縮",
+            ""
+        ],
+        "image_index": 1000,
+        "invoke_effect_id": 24000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 76,
+        "effect_type": 47,
+        "effect_attributes": 8,
+        "ml_name": [
+            "感電ターン短縮",
+            ""
+        ],
+        "image_index": 1000,
+        "invoke_effect_id": 24000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 77,
+        "effect_type": 48,
+        "effect_attributes": 1,
+        "ml_name": [
+            "体力アップ",
+            ""
+        ],
+        "image_index": 1001,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 78,
+        "effect_type": 48,
+        "effect_attributes": 2,
+        "ml_name": [
+            "攻撃アップ",
+            ""
+        ],
+        "image_index": 1002,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 79,
+        "effect_type": 48,
+        "effect_attributes": 3,
+        "ml_name": [
+            "精神アップ",
+            ""
+        ],
+        "image_index": 1003,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 80,
+        "effect_type": 48,
+        "effect_attributes": 4,
+        "ml_name": [
+            "防御アップ",
+            ""
+        ],
+        "image_index": 1004,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 81,
+        "effect_type": 48,
+        "effect_attributes": 5,
+        "ml_name": [
+            "器用アップ",
+            ""
+        ],
+        "image_index": 1005,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 82,
+        "effect_type": 48,
+        "effect_attributes": 6,
+        "ml_name": [
+            "敏捷アップ",
+            ""
+        ],
+        "image_index": 1006,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 83,
+        "effect_type": 48,
+        "effect_attributes": 7,
+        "ml_name": [
+            "幸運アップ",
+            ""
+        ],
+        "image_index": 1007,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 84,
+        "effect_type": 48,
+        "effect_attributes": 8,
+        "ml_name": [
+            "移動アップ",
+            ""
+        ],
+        "image_index": 1008,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 85,
+        "effect_type": 49,
+        "effect_attributes": 1,
+        "ml_name": [
+            "体力アップ",
+            ""
+        ],
+        "image_index": 1001,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 86,
+        "effect_type": 49,
+        "effect_attributes": 2,
+        "ml_name": [
+            "攻撃アップ",
+            ""
+        ],
+        "image_index": 1002,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 87,
+        "effect_type": 49,
+        "effect_attributes": 3,
+        "ml_name": [
+            "精神アップ",
+            ""
+        ],
+        "image_index": 1003,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 88,
+        "effect_type": 49,
+        "effect_attributes": 4,
+        "ml_name": [
+            "防御アップ",
+            ""
+        ],
+        "image_index": 1004,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 89,
+        "effect_type": 49,
+        "effect_attributes": 5,
+        "ml_name": [
+            "器用アップ",
+            ""
+        ],
+        "image_index": 1005,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 90,
+        "effect_type": 49,
+        "effect_attributes": 6,
+        "ml_name": [
+            "敏捷アップ",
+            ""
+        ],
+        "image_index": 1006,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 91,
+        "effect_type": 49,
+        "effect_attributes": 7,
+        "ml_name": [
+            "幸運アップ",
+            ""
+        ],
+        "image_index": 1007,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 92,
+        "effect_type": 49,
+        "effect_attributes": 8,
+        "ml_name": [
+            "移動アップ",
+            ""
+        ],
+        "image_index": 1008,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 93,
+        "effect_type": 11,
+        "effect_attributes": 16,
+        "ml_name": [
+            "気絶",
+            ""
+        ],
+        "image_index": 4010,
+        "invoke_effect_id": 54000,
+        "invoke_unit_color": "#909050",
+        "view_unit_type": 1
+    },
+    {
+        "id": 94,
+        "effect_type": 11,
+        "effect_attributes": 17,
+        "ml_name": [
+            "睡眠",
+            ""
+        ],
+        "image_index": 4012,
+        "invoke_effect_id": 55000,
+        "invoke_unit_color": "#d0e0f0",
+        "view_unit_type": 1
+    },
+    {
+        "id": 95,
+        "effect_type": 11,
+        "effect_attributes": 18,
+        "ml_name": [
+            "誘惑",
+            ""
+        ],
+        "image_index": 4011,
+        "invoke_effect_id": 56000,
+        "invoke_unit_color": "#f40080",
+        "view_unit_type": 1
+    },
+    {
+        "id": 96,
+        "effect_type": 11,
+        "effect_attributes": 19,
+        "ml_name": [
+            "集中",
+            ""
+        ],
+        "image_index": 3019,
+        "invoke_effect_id": 57000,
+        "invoke_unit_color": "#fff9bf",
+        "view_unit_type": 2
+    },
+    {
+        "id": 97,
+        "effect_type": 60,
+        "effect_attributes": 0,
+        "ml_name": [
+            "再行動",
+            ""
+        ],
+        "image_index": 1000,
+        "invoke_effect_id": 36000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 98,
+        "effect_type": 29,
+        "effect_attributes": 17,
+        "ml_name": [
+            "気絶抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 99,
+        "effect_type": 29,
+        "effect_attributes": 18,
+        "ml_name": [
+            "睡眠抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 100,
+        "effect_type": 29,
+        "effect_attributes": 19,
+        "ml_name": [
+            "誘惑抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 0
+    },
+    {
+        "id": 101,
+        "effect_type": 49,
+        "effect_attributes": 13,
+        "ml_name": [
+            "火傷抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 102,
+        "effect_type": 49,
+        "effect_attributes": 14,
+        "ml_name": [
+            "猛毒抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 103,
+        "effect_type": 49,
+        "effect_attributes": 15,
+        "ml_name": [
+            "影縫抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 104,
+        "effect_type": 49,
+        "effect_attributes": 16,
+        "ml_name": [
+            "感電抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 105,
+        "effect_type": 49,
+        "effect_attributes": 17,
+        "ml_name": [
+            "気絶抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 106,
+        "effect_type": 49,
+        "effect_attributes": 18,
+        "ml_name": [
+            "睡眠抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 107,
+        "effect_type": 49,
+        "effect_attributes": 19,
+        "ml_name": [
+            "誘惑抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 108,
+        "effect_type": 48,
+        "effect_attributes": 13,
+        "ml_name": [
+            "火傷抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 109,
+        "effect_type": 48,
+        "effect_attributes": 14,
+        "ml_name": [
+            "猛毒抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 110,
+        "effect_type": 48,
+        "effect_attributes": 15,
+        "ml_name": [
+            "影縫抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 111,
+        "effect_type": 48,
+        "effect_attributes": 16,
+        "ml_name": [
+            "感電抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 112,
+        "effect_type": 48,
+        "effect_attributes": 17,
+        "ml_name": [
+            "気絶抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 113,
+        "effect_type": 48,
+        "effect_attributes": 18,
+        "ml_name": [
+            "睡眠抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 114,
+        "effect_type": 48,
+        "effect_attributes": 19,
+        "ml_name": [
+            "誘惑抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 115,
+        "effect_type": 13,
+        "effect_attributes": 13,
+        "ml_name": [
+            "火傷抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 116,
+        "effect_type": 13,
+        "effect_attributes": 14,
+        "ml_name": [
+            "猛毒抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 117,
+        "effect_type": 13,
+        "effect_attributes": 15,
+        "ml_name": [
+            "影縫抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 118,
+        "effect_type": 13,
+        "effect_attributes": 16,
+        "ml_name": [
+            "感電抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 119,
+        "effect_type": 13,
+        "effect_attributes": 17,
+        "ml_name": [
+            "気絶抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 120,
+        "effect_type": 13,
+        "effect_attributes": 18,
+        "ml_name": [
+            "睡眠抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 121,
+        "effect_type": 13,
+        "effect_attributes": 19,
+        "ml_name": [
+            "誘惑抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 122,
+        "effect_type": 14,
+        "effect_attributes": 13,
+        "ml_name": [
+            "火傷抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 123,
+        "effect_type": 14,
+        "effect_attributes": 14,
+        "ml_name": [
+            "猛毒抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 124,
+        "effect_type": 14,
+        "effect_attributes": 15,
+        "ml_name": [
+            "影縫抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 125,
+        "effect_type": 14,
+        "effect_attributes": 16,
+        "ml_name": [
+            "感電抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 126,
+        "effect_type": 14,
+        "effect_attributes": 17,
+        "ml_name": [
+            "気絶抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 127,
+        "effect_type": 14,
+        "effect_attributes": 18,
+        "ml_name": [
+            "睡眠抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 128,
+        "effect_type": 14,
+        "effect_attributes": 19,
+        "ml_name": [
+            "誘惑抵抗アップ",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 129,
+        "effect_type": 16,
+        "effect_attributes": 13,
+        "ml_name": [
+            "火傷抵抗ダウン",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 130,
+        "effect_type": 16,
+        "effect_attributes": 14,
+        "ml_name": [
+            "猛毒抵抗ダウン",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 131,
+        "effect_type": 16,
+        "effect_attributes": 15,
+        "ml_name": [
+            "影縫抵抗ダウン",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 132,
+        "effect_type": 16,
+        "effect_attributes": 16,
+        "ml_name": [
+            "感電抵抗ダウン",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 133,
+        "effect_type": 16,
+        "effect_attributes": 17,
+        "ml_name": [
+            "気絶抵抗ダウン",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 134,
+        "effect_type": 16,
+        "effect_attributes": 18,
+        "ml_name": [
+            "睡眠抵抗ダウン",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 135,
+        "effect_type": 16,
+        "effect_attributes": 19,
+        "ml_name": [
+            "誘惑抵抗ダウン",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 136,
+        "effect_type": 17,
+        "effect_attributes": 13,
+        "ml_name": [
+            "火傷抵抗ダウン",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 137,
+        "effect_type": 17,
+        "effect_attributes": 14,
+        "ml_name": [
+            "猛毒抵抗ダウン",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 138,
+        "effect_type": 17,
+        "effect_attributes": 15,
+        "ml_name": [
+            "影縫抵抗ダウン",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 139,
+        "effect_type": 17,
+        "effect_attributes": 16,
+        "ml_name": [
+            "感電抵抗ダウン",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 140,
+        "effect_type": 17,
+        "effect_attributes": 17,
+        "ml_name": [
+            "気絶抵抗ダウン",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 141,
+        "effect_type": 17,
+        "effect_attributes": 18,
+        "ml_name": [
+            "睡眠抵抗ダウン",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 142,
+        "effect_type": 17,
+        "effect_attributes": 19,
+        "ml_name": [
+            "誘惑抵抗ダウン",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 143,
+        "effect_type": 11,
+        "effect_attributes": 20,
+        "ml_name": [
+            "加護",
+            ""
+        ],
+        "image_index": 3020,
+        "invoke_effect_id": 58000,
+        "invoke_unit_color": "#b8b661",
+        "view_unit_type": 2
+    },
+    {
+        "id": 144,
+        "effect_type": 11,
+        "effect_attributes": 21,
+        "ml_name": [
+            "拒絶",
+            ""
+        ],
+        "image_index": 3021,
+        "invoke_effect_id": 59000,
+        "invoke_unit_color": "#6d65bf",
+        "view_unit_type": 2
+    },
+    {
+        "id": 145,
+        "effect_type": 11,
+        "effect_attributes": 22,
+        "ml_name": [
+            "不変",
+            ""
+        ],
+        "image_index": 3022,
+        "invoke_effect_id": 60000,
+        "invoke_unit_color": "#a7bcd1",
+        "view_unit_type": 2
+    },
+    {
+        "id": 146,
+        "effect_type": 51,
+        "effect_attributes": 1,
+        "ml_name": [
+            "体力アップ",
+            ""
+        ],
+        "image_index": 1001,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 147,
+        "effect_type": 51,
+        "effect_attributes": 2,
+        "ml_name": [
+            "攻撃アップ",
+            ""
+        ],
+        "image_index": 1002,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 148,
+        "effect_type": 51,
+        "effect_attributes": 3,
+        "ml_name": [
+            "精神アップ",
+            ""
+        ],
+        "image_index": 1003,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 149,
+        "effect_type": 51,
+        "effect_attributes": 4,
+        "ml_name": [
+            "防御アップ",
+            ""
+        ],
+        "image_index": 1004,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 150,
+        "effect_type": 51,
+        "effect_attributes": 5,
+        "ml_name": [
+            "器用アップ",
+            ""
+        ],
+        "image_index": 1005,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 151,
+        "effect_type": 51,
+        "effect_attributes": 6,
+        "ml_name": [
+            "敏捷アップ",
+            ""
+        ],
+        "image_index": 1006,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 152,
+        "effect_type": 51,
+        "effect_attributes": 7,
+        "ml_name": [
+            "幸運アップ",
+            ""
+        ],
+        "image_index": 1007,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 153,
+        "effect_type": 51,
+        "effect_attributes": 8,
+        "ml_name": [
+            "移動アップ",
+            ""
+        ],
+        "image_index": 1008,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 154,
+        "effect_type": 52,
+        "effect_attributes": 1,
+        "ml_name": [
+            "体力アップ",
+            ""
+        ],
+        "image_index": 1001,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 155,
+        "effect_type": 52,
+        "effect_attributes": 2,
+        "ml_name": [
+            "攻撃アップ",
+            ""
+        ],
+        "image_index": 1002,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 156,
+        "effect_type": 52,
+        "effect_attributes": 3,
+        "ml_name": [
+            "精神アップ",
+            ""
+        ],
+        "image_index": 1003,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 157,
+        "effect_type": 52,
+        "effect_attributes": 4,
+        "ml_name": [
+            "防御アップ",
+            ""
+        ],
+        "image_index": 1004,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 158,
+        "effect_type": 52,
+        "effect_attributes": 5,
+        "ml_name": [
+            "器用アップ",
+            ""
+        ],
+        "image_index": 1005,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 159,
+        "effect_type": 52,
+        "effect_attributes": 6,
+        "ml_name": [
+            "敏捷アップ",
+            ""
+        ],
+        "image_index": 1006,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 160,
+        "effect_type": 52,
+        "effect_attributes": 7,
+        "ml_name": [
+            "幸運アップ",
+            ""
+        ],
+        "image_index": 1007,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 161,
+        "effect_type": 52,
+        "effect_attributes": 8,
+        "ml_name": [
+            "移動アップ",
+            ""
+        ],
+        "image_index": 1008,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 2
+    },
+    {
+        "id": 162,
+        "effect_type": 11,
+        "effect_attributes": 23,
+        "ml_name": [
+            "再誕",
+            ""
+        ],
+        "image_index": 3023,
+        "invoke_effect_id": 61000,
+        "invoke_unit_color": "#a3a86d",
+        "view_unit_type": 2
+    },
+    {
+        "id": 163,
+        "effect_type": 11,
+        "effect_attributes": 24,
+        "ml_name": [
+            "物理の刻印",
+            ""
+        ],
+        "image_index": 4013,
+        "invoke_effect_id": 62000,
+        "invoke_unit_color": "#ff9900",
+        "view_unit_type": 1
+    },
+    {
+        "id": 164,
+        "effect_type": 11,
+        "effect_attributes": 25,
+        "ml_name": [
+            "炎の刻印",
+            ""
+        ],
+        "image_index": 4014,
+        "invoke_effect_id": 62001,
+        "invoke_unit_color": "#ff4000",
+        "view_unit_type": 1
+    },
+    {
+        "id": 165,
+        "effect_type": 11,
+        "effect_attributes": 26,
+        "ml_name": [
+            "水の刻印",
+            ""
+        ],
+        "image_index": 4015,
+        "invoke_effect_id": 62002,
+        "invoke_unit_color": "#0060ff",
+        "view_unit_type": 1
+    },
+    {
+        "id": 166,
+        "effect_type": 11,
+        "effect_attributes": 27,
+        "ml_name": [
+            "風の刻印",
+            ""
+        ],
+        "image_index": 4016,
+        "invoke_effect_id": 62003,
+        "invoke_unit_color": "#47ff47",
+        "view_unit_type": 1
+    },
+    {
+        "id": 167,
+        "effect_type": 11,
+        "effect_attributes": 28,
+        "ml_name": [
+            "雷の刻印",
+            ""
+        ],
+        "image_index": 4017,
+        "invoke_effect_id": 62004,
+        "invoke_unit_color": "#ffff4d",
+        "view_unit_type": 1
+    },
+    {
+        "id": 168,
+        "effect_type": 11,
+        "effect_attributes": 29,
+        "ml_name": [
+            "真眼",
+            ""
+        ],
+        "image_index": 3024,
+        "invoke_effect_id": 64000,
+        "invoke_unit_color": "#c48282",
+        "view_unit_type": 2
+    },
+    {
+        "id": 169,
+        "effect_type": 13,
+        "effect_attributes": 11,
+        "ml_name": [
+            "回避アップ",
+            ""
+        ],
+        "image_index": 1011,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 170,
+        "effect_type": 14,
+        "effect_attributes": 11,
+        "ml_name": [
+            "回避アップ",
+            ""
+        ],
+        "image_index": 1011,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 171,
+        "effect_type": 48,
+        "effect_attributes": 11,
+        "ml_name": [
+            "回避アップ",
+            ""
+        ],
+        "image_index": 1011,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 172,
+        "effect_type": 49,
+        "effect_attributes": 11,
+        "ml_name": [
+            "回避アップ",
+            ""
+        ],
+        "image_index": 1011,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 173,
+        "effect_type": 51,
+        "effect_attributes": 11,
+        "ml_name": [
+            "回避アップ",
+            ""
+        ],
+        "image_index": 1011,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 174,
+        "effect_type": 52,
+        "effect_attributes": 11,
+        "ml_name": [
+            "回避アップ",
+            ""
+        ],
+        "image_index": 1011,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 175,
+        "effect_type": 48,
+        "effect_attributes": 10,
+        "ml_name": [
+            "必殺アップ",
+            ""
+        ],
+        "image_index": 1010,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 176,
+        "effect_type": 49,
+        "effect_attributes": 10,
+        "ml_name": [
+            "必殺アップ",
+            ""
+        ],
+        "image_index": 1010,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 177,
+        "effect_type": 51,
+        "effect_attributes": 10,
+        "ml_name": [
+            "必殺アップ",
+            ""
+        ],
+        "image_index": 1010,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 178,
+        "effect_type": 52,
+        "effect_attributes": 10,
+        "ml_name": [
+            "必殺アップ",
+            ""
+        ],
+        "image_index": 1010,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 179,
+        "effect_type": 73,
+        "effect_attributes": 1,
+        "ml_name": [
+            "体力アップ（解除不可）",
+            ""
+        ],
+        "image_index": 1001,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 180,
+        "effect_type": 73,
+        "effect_attributes": 2,
+        "ml_name": [
+            "攻撃アップ（解除不可）",
+            ""
+        ],
+        "image_index": 1002,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 181,
+        "effect_type": 73,
+        "effect_attributes": 3,
+        "ml_name": [
+            "精神アップ（解除不可）",
+            ""
+        ],
+        "image_index": 1003,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 182,
+        "effect_type": 73,
+        "effect_attributes": 4,
+        "ml_name": [
+            "防御アップ（解除不可）",
+            ""
+        ],
+        "image_index": 1004,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 183,
+        "effect_type": 73,
+        "effect_attributes": 5,
+        "ml_name": [
+            "器用アップ（解除不可）",
+            ""
+        ],
+        "image_index": 1005,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 184,
+        "effect_type": 73,
+        "effect_attributes": 6,
+        "ml_name": [
+            "敏捷アップ（解除不可）",
+            ""
+        ],
+        "image_index": 1006,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 185,
+        "effect_type": 73,
+        "effect_attributes": 7,
+        "ml_name": [
+            "幸運アップ（解除不可）",
+            ""
+        ],
+        "image_index": 1007,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 186,
+        "effect_type": 73,
+        "effect_attributes": 8,
+        "ml_name": [
+            "移動アップ（解除不可）",
+            ""
+        ],
+        "image_index": 1008,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 187,
+        "effect_type": 73,
+        "effect_attributes": 10,
+        "ml_name": [
+            "必殺アップ（解除不可）",
+            ""
+        ],
+        "image_index": 1010,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 188,
+        "effect_type": 73,
+        "effect_attributes": 11,
+        "ml_name": [
+            "回避アップ（解除不可）",
+            ""
+        ],
+        "image_index": 1011,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 189,
+        "effect_type": 73,
+        "effect_attributes": 13,
+        "ml_name": [
+            "火傷抵抗アップ（解除不可）",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 190,
+        "effect_type": 73,
+        "effect_attributes": 14,
+        "ml_name": [
+            "猛毒抵抗アップ（解除不可）",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 191,
+        "effect_type": 73,
+        "effect_attributes": 15,
+        "ml_name": [
+            "影縫抵抗アップ（解除不可）",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 192,
+        "effect_type": 73,
+        "effect_attributes": 16,
+        "ml_name": [
+            "感電抵抗アップ（解除不可）",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 193,
+        "effect_type": 73,
+        "effect_attributes": 17,
+        "ml_name": [
+            "気絶抵抗アップ（解除不可）",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 194,
+        "effect_type": 73,
+        "effect_attributes": 18,
+        "ml_name": [
+            "睡眠抵抗アップ（解除不可）",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    },
+    {
+        "id": 195,
+        "effect_type": 73,
+        "effect_attributes": 19,
+        "ml_name": [
+            "誘惑抵抗アップ（解除不可）",
+            ""
+        ],
+        "image_index": 3018,
+        "invoke_effect_id": 22000,
+        "invoke_unit_color": "",
+        "view_unit_type": 1
+    }
+]
