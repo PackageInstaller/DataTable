@@ -88,22 +88,7 @@ scope 在前**：`ResolutionScope(2) @0, Name(4) @2, Namespace(4) @6`。
 5. 生成两节 PE 头（.clihdr + .text），CLI 头落在节内满足
    ilspycmd/System.Reflection.Metadata。
 
-## 四、反编译验证
-
-1. **签名 100% 合法**：原始 blob + 原始 #~ 重建后，
-   System.Reflection.Metadata 对 MethodDef/Field/Property/MemberRef/
-   TypeSpec/MethodSpec/StandAloneSig 全部 30,891 个签名解码 **0 失败**。
-   （`fix_blob_signatures.py` 曾试图把压缩整数转 2 字节，该方案
-   基于错误前提，已废弃。）
-2. **"Unknown result type" 全部为缺引用**：12,274 条警告（303 文件）
-   在 ilspycmd 能解析 `dll/` 内全部引用后降为 8 条；
-3. `Queue`1/Stack`1` 的 TypeRef 指向 System，但本机 System.dll
-   副本缺这两个类型（mscorlib 有完整实现含嵌套 Enumerator）——
-   `patch_system_refs.py` 把这两个 TypeRef 改指 mscorlib 后
-   **0 警告**（1025 文件全干净）。
-4. `0x69 = conv.i4`（非 shl），游戏 IL 合法。
-
-## 五、复现反编译
+## 四、复现反编译
 
 ```bash
 cd dll_reverse
