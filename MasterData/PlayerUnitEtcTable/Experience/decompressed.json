@@ -1,0 +1,784 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 150,
+    "record_size": 12,
+    "custom_id": 1953527909
+  },
+  "_fields": [
+    {
+      "name": "Level",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "RequiredExp",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "TotalExp",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Level": 1,
+      "RequiredExp": 0,
+      "TotalExp": 0
+    },
+    {
+      "Level": 2,
+      "RequiredExp": 10,
+      "TotalExp": 10
+    },
+    {
+      "Level": 3,
+      "RequiredExp": 25,
+      "TotalExp": 35
+    },
+    {
+      "Level": 4,
+      "RequiredExp": 45,
+      "TotalExp": 80
+    },
+    {
+      "Level": 5,
+      "RequiredExp": 70,
+      "TotalExp": 150
+    },
+    {
+      "Level": 6,
+      "RequiredExp": 100,
+      "TotalExp": 250
+    },
+    {
+      "Level": 7,
+      "RequiredExp": 135,
+      "TotalExp": 385
+    },
+    {
+      "Level": 8,
+      "RequiredExp": 175,
+      "TotalExp": 560
+    },
+    {
+      "Level": 9,
+      "RequiredExp": 220,
+      "TotalExp": 780
+    },
+    {
+      "Level": 10,
+      "RequiredExp": 270,
+      "TotalExp": 1050
+    },
+    {
+      "Level": 11,
+      "RequiredExp": 330,
+      "TotalExp": 1380
+    },
+    {
+      "Level": 12,
+      "RequiredExp": 400,
+      "TotalExp": 1780
+    },
+    {
+      "Level": 13,
+      "RequiredExp": 480,
+      "TotalExp": 2260
+    },
+    {
+      "Level": 14,
+      "RequiredExp": 570,
+      "TotalExp": 2830
+    },
+    {
+      "Level": 15,
+      "RequiredExp": 670,
+      "TotalExp": 3500
+    },
+    {
+      "Level": 16,
+      "RequiredExp": 780,
+      "TotalExp": 4280
+    },
+    {
+      "Level": 17,
+      "RequiredExp": 900,
+      "TotalExp": 5180
+    },
+    {
+      "Level": 18,
+      "RequiredExp": 1030,
+      "TotalExp": 6210
+    },
+    {
+      "Level": 19,
+      "RequiredExp": 1170,
+      "TotalExp": 7380
+    },
+    {
+      "Level": 20,
+      "RequiredExp": 1320,
+      "TotalExp": 8700
+    },
+    {
+      "Level": 21,
+      "RequiredExp": 1480,
+      "TotalExp": 10180
+    },
+    {
+      "Level": 22,
+      "RequiredExp": 1650,
+      "TotalExp": 11830
+    },
+    {
+      "Level": 23,
+      "RequiredExp": 1830,
+      "TotalExp": 13660
+    },
+    {
+      "Level": 24,
+      "RequiredExp": 2020,
+      "TotalExp": 15680
+    },
+    {
+      "Level": 25,
+      "RequiredExp": 2220,
+      "TotalExp": 17900
+    },
+    {
+      "Level": 26,
+      "RequiredExp": 2430,
+      "TotalExp": 20330
+    },
+    {
+      "Level": 27,
+      "RequiredExp": 2650,
+      "TotalExp": 22980
+    },
+    {
+      "Level": 28,
+      "RequiredExp": 2880,
+      "TotalExp": 25860
+    },
+    {
+      "Level": 29,
+      "RequiredExp": 3120,
+      "TotalExp": 28980
+    },
+    {
+      "Level": 30,
+      "RequiredExp": 3370,
+      "TotalExp": 32350
+    },
+    {
+      "Level": 31,
+      "RequiredExp": 3650,
+      "TotalExp": 36000
+    },
+    {
+      "Level": 32,
+      "RequiredExp": 3960,
+      "TotalExp": 39960
+    },
+    {
+      "Level": 33,
+      "RequiredExp": 4300,
+      "TotalExp": 44260
+    },
+    {
+      "Level": 34,
+      "RequiredExp": 4670,
+      "TotalExp": 48930
+    },
+    {
+      "Level": 35,
+      "RequiredExp": 5070,
+      "TotalExp": 54000
+    },
+    {
+      "Level": 36,
+      "RequiredExp": 5500,
+      "TotalExp": 59500
+    },
+    {
+      "Level": 37,
+      "RequiredExp": 5960,
+      "TotalExp": 65460
+    },
+    {
+      "Level": 38,
+      "RequiredExp": 6450,
+      "TotalExp": 71910
+    },
+    {
+      "Level": 39,
+      "RequiredExp": 6970,
+      "TotalExp": 78880
+    },
+    {
+      "Level": 40,
+      "RequiredExp": 7520,
+      "TotalExp": 86400
+    },
+    {
+      "Level": 41,
+      "RequiredExp": 8100,
+      "TotalExp": 94500
+    },
+    {
+      "Level": 42,
+      "RequiredExp": 8700,
+      "TotalExp": 103200
+    },
+    {
+      "Level": 43,
+      "RequiredExp": 9300,
+      "TotalExp": 112500
+    },
+    {
+      "Level": 44,
+      "RequiredExp": 9900,
+      "TotalExp": 122400
+    },
+    {
+      "Level": 45,
+      "RequiredExp": 10500,
+      "TotalExp": 132900
+    },
+    {
+      "Level": 46,
+      "RequiredExp": 11200,
+      "TotalExp": 144100
+    },
+    {
+      "Level": 47,
+      "RequiredExp": 11900,
+      "TotalExp": 156000
+    },
+    {
+      "Level": 48,
+      "RequiredExp": 12600,
+      "TotalExp": 168600
+    },
+    {
+      "Level": 49,
+      "RequiredExp": 13300,
+      "TotalExp": 181900
+    },
+    {
+      "Level": 50,
+      "RequiredExp": 14000,
+      "TotalExp": 195900
+    },
+    {
+      "Level": 51,
+      "RequiredExp": 14800,
+      "TotalExp": 210700
+    },
+    {
+      "Level": 52,
+      "RequiredExp": 15600,
+      "TotalExp": 226300
+    },
+    {
+      "Level": 53,
+      "RequiredExp": 16400,
+      "TotalExp": 242700
+    },
+    {
+      "Level": 54,
+      "RequiredExp": 17200,
+      "TotalExp": 259900
+    },
+    {
+      "Level": 55,
+      "RequiredExp": 18000,
+      "TotalExp": 277900
+    },
+    {
+      "Level": 56,
+      "RequiredExp": 18800,
+      "TotalExp": 296700
+    },
+    {
+      "Level": 57,
+      "RequiredExp": 19600,
+      "TotalExp": 316300
+    },
+    {
+      "Level": 58,
+      "RequiredExp": 20400,
+      "TotalExp": 336700
+    },
+    {
+      "Level": 59,
+      "RequiredExp": 21200,
+      "TotalExp": 357900
+    },
+    {
+      "Level": 60,
+      "RequiredExp": 22000,
+      "TotalExp": 379900
+    },
+    {
+      "Level": 61,
+      "RequiredExp": 23000,
+      "TotalExp": 402900
+    },
+    {
+      "Level": 62,
+      "RequiredExp": 24000,
+      "TotalExp": 426900
+    },
+    {
+      "Level": 63,
+      "RequiredExp": 25000,
+      "TotalExp": 451900
+    },
+    {
+      "Level": 64,
+      "RequiredExp": 26000,
+      "TotalExp": 477900
+    },
+    {
+      "Level": 65,
+      "RequiredExp": 27000,
+      "TotalExp": 504900
+    },
+    {
+      "Level": 66,
+      "RequiredExp": 28000,
+      "TotalExp": 532900
+    },
+    {
+      "Level": 67,
+      "RequiredExp": 29000,
+      "TotalExp": 561900
+    },
+    {
+      "Level": 68,
+      "RequiredExp": 30000,
+      "TotalExp": 591900
+    },
+    {
+      "Level": 69,
+      "RequiredExp": 31000,
+      "TotalExp": 622900
+    },
+    {
+      "Level": 70,
+      "RequiredExp": 32000,
+      "TotalExp": 654900
+    },
+    {
+      "Level": 71,
+      "RequiredExp": 33500,
+      "TotalExp": 688400
+    },
+    {
+      "Level": 72,
+      "RequiredExp": 35000,
+      "TotalExp": 723400
+    },
+    {
+      "Level": 73,
+      "RequiredExp": 36500,
+      "TotalExp": 759900
+    },
+    {
+      "Level": 74,
+      "RequiredExp": 38000,
+      "TotalExp": 797900
+    },
+    {
+      "Level": 75,
+      "RequiredExp": 39500,
+      "TotalExp": 837400
+    },
+    {
+      "Level": 76,
+      "RequiredExp": 41000,
+      "TotalExp": 878400
+    },
+    {
+      "Level": 77,
+      "RequiredExp": 42500,
+      "TotalExp": 920900
+    },
+    {
+      "Level": 78,
+      "RequiredExp": 44000,
+      "TotalExp": 964900
+    },
+    {
+      "Level": 79,
+      "RequiredExp": 45500,
+      "TotalExp": 1010400
+    },
+    {
+      "Level": 80,
+      "RequiredExp": 47000,
+      "TotalExp": 1057400
+    },
+    {
+      "Level": 81,
+      "RequiredExp": 49000,
+      "TotalExp": 1106400
+    },
+    {
+      "Level": 82,
+      "RequiredExp": 51000,
+      "TotalExp": 1157400
+    },
+    {
+      "Level": 83,
+      "RequiredExp": 53000,
+      "TotalExp": 1210400
+    },
+    {
+      "Level": 84,
+      "RequiredExp": 55000,
+      "TotalExp": 1265400
+    },
+    {
+      "Level": 85,
+      "RequiredExp": 57000,
+      "TotalExp": 1322400
+    },
+    {
+      "Level": 86,
+      "RequiredExp": 59000,
+      "TotalExp": 1381400
+    },
+    {
+      "Level": 87,
+      "RequiredExp": 61000,
+      "TotalExp": 1442400
+    },
+    {
+      "Level": 88,
+      "RequiredExp": 63000,
+      "TotalExp": 1505400
+    },
+    {
+      "Level": 89,
+      "RequiredExp": 65000,
+      "TotalExp": 1570400
+    },
+    {
+      "Level": 90,
+      "RequiredExp": 67000,
+      "TotalExp": 1637400
+    },
+    {
+      "Level": 91,
+      "RequiredExp": 69500,
+      "TotalExp": 1706900
+    },
+    {
+      "Level": 92,
+      "RequiredExp": 72000,
+      "TotalExp": 1778900
+    },
+    {
+      "Level": 93,
+      "RequiredExp": 74500,
+      "TotalExp": 1853400
+    },
+    {
+      "Level": 94,
+      "RequiredExp": 77000,
+      "TotalExp": 1930400
+    },
+    {
+      "Level": 95,
+      "RequiredExp": 79500,
+      "TotalExp": 2009900
+    },
+    {
+      "Level": 96,
+      "RequiredExp": 82000,
+      "TotalExp": 2091900
+    },
+    {
+      "Level": 97,
+      "RequiredExp": 84500,
+      "TotalExp": 2176400
+    },
+    {
+      "Level": 98,
+      "RequiredExp": 87000,
+      "TotalExp": 2263400
+    },
+    {
+      "Level": 99,
+      "RequiredExp": 89500,
+      "TotalExp": 2352900
+    },
+    {
+      "Level": 100,
+      "RequiredExp": 92000,
+      "TotalExp": 2444900
+    },
+    {
+      "Level": 101,
+      "RequiredExp": 99000,
+      "TotalExp": 2543900
+    },
+    {
+      "Level": 102,
+      "RequiredExp": 99000,
+      "TotalExp": 2642900
+    },
+    {
+      "Level": 103,
+      "RequiredExp": 99000,
+      "TotalExp": 2741900
+    },
+    {
+      "Level": 104,
+      "RequiredExp": 99000,
+      "TotalExp": 2840900
+    },
+    {
+      "Level": 105,
+      "RequiredExp": 99000,
+      "TotalExp": 2939900
+    },
+    {
+      "Level": 106,
+      "RequiredExp": 99000,
+      "TotalExp": 3038900
+    },
+    {
+      "Level": 107,
+      "RequiredExp": 99000,
+      "TotalExp": 3137900
+    },
+    {
+      "Level": 108,
+      "RequiredExp": 99000,
+      "TotalExp": 3236900
+    },
+    {
+      "Level": 109,
+      "RequiredExp": 99000,
+      "TotalExp": 3335900
+    },
+    {
+      "Level": 110,
+      "RequiredExp": 99000,
+      "TotalExp": 3434900
+    },
+    {
+      "Level": 111,
+      "RequiredExp": 99000,
+      "TotalExp": 3533900
+    },
+    {
+      "Level": 112,
+      "RequiredExp": 99000,
+      "TotalExp": 3632900
+    },
+    {
+      "Level": 113,
+      "RequiredExp": 99000,
+      "TotalExp": 3731900
+    },
+    {
+      "Level": 114,
+      "RequiredExp": 99000,
+      "TotalExp": 3830900
+    },
+    {
+      "Level": 115,
+      "RequiredExp": 99000,
+      "TotalExp": 3929900
+    },
+    {
+      "Level": 116,
+      "RequiredExp": 99000,
+      "TotalExp": 4028900
+    },
+    {
+      "Level": 117,
+      "RequiredExp": 99000,
+      "TotalExp": 4127900
+    },
+    {
+      "Level": 118,
+      "RequiredExp": 99000,
+      "TotalExp": 4226900
+    },
+    {
+      "Level": 119,
+      "RequiredExp": 99000,
+      "TotalExp": 4325900
+    },
+    {
+      "Level": 120,
+      "RequiredExp": 99000,
+      "TotalExp": 4424900
+    },
+    {
+      "Level": 121,
+      "RequiredExp": 99000,
+      "TotalExp": 4523900
+    },
+    {
+      "Level": 122,
+      "RequiredExp": 99000,
+      "TotalExp": 4622900
+    },
+    {
+      "Level": 123,
+      "RequiredExp": 99000,
+      "TotalExp": 4721900
+    },
+    {
+      "Level": 124,
+      "RequiredExp": 99000,
+      "TotalExp": 4820900
+    },
+    {
+      "Level": 125,
+      "RequiredExp": 99000,
+      "TotalExp": 4919900
+    },
+    {
+      "Level": 126,
+      "RequiredExp": 120000,
+      "TotalExp": 5039900
+    },
+    {
+      "Level": 127,
+      "RequiredExp": 120000,
+      "TotalExp": 5159900
+    },
+    {
+      "Level": 128,
+      "RequiredExp": 120000,
+      "TotalExp": 5279900
+    },
+    {
+      "Level": 129,
+      "RequiredExp": 120000,
+      "TotalExp": 5399900
+    },
+    {
+      "Level": 130,
+      "RequiredExp": 120000,
+      "TotalExp": 5519900
+    },
+    {
+      "Level": 131,
+      "RequiredExp": 120000,
+      "TotalExp": 5639900
+    },
+    {
+      "Level": 132,
+      "RequiredExp": 120000,
+      "TotalExp": 5759900
+    },
+    {
+      "Level": 133,
+      "RequiredExp": 120000,
+      "TotalExp": 5879900
+    },
+    {
+      "Level": 134,
+      "RequiredExp": 120000,
+      "TotalExp": 5999900
+    },
+    {
+      "Level": 135,
+      "RequiredExp": 120000,
+      "TotalExp": 6119900
+    },
+    {
+      "Level": 136,
+      "RequiredExp": 120000,
+      "TotalExp": 6239900
+    },
+    {
+      "Level": 137,
+      "RequiredExp": 120000,
+      "TotalExp": 6359900
+    },
+    {
+      "Level": 138,
+      "RequiredExp": 120000,
+      "TotalExp": 6479900
+    },
+    {
+      "Level": 139,
+      "RequiredExp": 120000,
+      "TotalExp": 6599900
+    },
+    {
+      "Level": 140,
+      "RequiredExp": 120000,
+      "TotalExp": 6719900
+    },
+    {
+      "Level": 141,
+      "RequiredExp": 120000,
+      "TotalExp": 6839900
+    },
+    {
+      "Level": 142,
+      "RequiredExp": 120000,
+      "TotalExp": 6959900
+    },
+    {
+      "Level": 143,
+      "RequiredExp": 120000,
+      "TotalExp": 7079900
+    },
+    {
+      "Level": 144,
+      "RequiredExp": 120000,
+      "TotalExp": 7199900
+    },
+    {
+      "Level": 145,
+      "RequiredExp": 120000,
+      "TotalExp": 7319900
+    },
+    {
+      "Level": 146,
+      "RequiredExp": 120000,
+      "TotalExp": 7439900
+    },
+    {
+      "Level": 147,
+      "RequiredExp": 120000,
+      "TotalExp": 7559900
+    },
+    {
+      "Level": 148,
+      "RequiredExp": 120000,
+      "TotalExp": 7679900
+    },
+    {
+      "Level": 149,
+      "RequiredExp": 120000,
+      "TotalExp": 7799900
+    },
+    {
+      "Level": 150,
+      "RequiredExp": 120000,
+      "TotalExp": 7919900
+    }
+  ]
+}

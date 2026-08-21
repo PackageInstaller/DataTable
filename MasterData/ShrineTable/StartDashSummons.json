@@ -1,0 +1,191 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 1,
+    "record_size": 88,
+    "custom_id": 1651729523
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Title",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "LimitDays",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Times",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "Index",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "CardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "MainSummonsDefinitionType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "MainSummonsType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "SubSummonsDefinitionType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "SubSummonsVersion",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 36,
+      "size": 4
+    },
+    {
+      "name": "Sub2SummonsDefinitionType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 40,
+      "size": 4
+    },
+    {
+      "name": "Sub2SummonsVersion",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 44,
+      "size": 4
+    },
+    {
+      "name": "BonusType1",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 48,
+      "size": 4
+    },
+    {
+      "name": "BonusParam1",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 52,
+      "size": 4
+    },
+    {
+      "name": "BonusType2",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 56,
+      "size": 4
+    },
+    {
+      "name": "BonusParam2",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 60,
+      "size": 4
+    },
+    {
+      "name": "BonusType3",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 64,
+      "size": 4
+    },
+    {
+      "name": "BonusParam3",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 68,
+      "size": 4
+    },
+    {
+      "name": "BonusType4",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 72,
+      "size": 4
+    },
+    {
+      "name": "BonusParam4",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 76,
+      "size": 4
+    },
+    {
+      "name": "BonusType5",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 80,
+      "size": 4
+    },
+    {
+      "name": "BonusParam5",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 84,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 11,
+      "Title": "異伝スタートダッシュ招城セット",
+      "LimitDays": 15,
+      "Times": 1,
+      "Index": 1,
+      "CardID": 3046,
+      "MainSummonsDefinitionType": 14,
+      "MainSummonsType": 2,
+      "SubSummonsDefinitionType": 12,
+      "SubSummonsVersion": 1,
+      "Sub2SummonsDefinitionType": 12,
+      "Sub2SummonsVersion": 0,
+      "BonusType1": 5,
+      "BonusParam1": "ID:3046 Value:1",
+      "BonusType2": 5,
+      "BonusParam2": "ID:8009 Value:2",
+      "BonusType3": 5,
+      "BonusParam3": "ID:8007 Value:2",
+      "BonusType4": 5,
+      "BonusParam4": "ID:8018 Value:2",
+      "BonusType5": 0,
+      "BonusParam5": ""
+    }
+  ]
+}

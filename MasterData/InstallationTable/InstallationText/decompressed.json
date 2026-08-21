@@ -1,0 +1,4763 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 787,
+    "record_size": 16,
+    "custom_id": 1953787497
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Explanation",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "ListingCondition",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1000,
+      "Name": "冠木門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n屋根がなく鏡柱に冠木\nを渡しただけの簡素な\n作りの門。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1010,
+      "Name": "冠木門(近接)",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n改良された冠木門。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1020,
+      "Name": "冠木門(遠隔)",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n改良された冠木門。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1100,
+      "Name": "棟門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n控柱がなく鏡柱の上に\n屋根を載せた門。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1110,
+      "Name": "棟門(近接)",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n改良された棟門。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1120,
+      "Name": "棟門(遠隔)",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n改良された棟門。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1200,
+      "Name": "薬医門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n鏡柱と控柱を切妻屋根\nで覆った門。一説には\n医者の家で使われた事\nに由来するとされる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1210,
+      "Name": "薬医門(近接)",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n改良された薬医門。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1220,
+      "Name": "薬医門(遠隔)",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n改良された薬医門。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1400,
+      "Name": "石川門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n金沢城の搦手に備えら\nれた枡形門。白漆喰塗\nの壁の下側は海鼠壁が\n施され、通称白門と呼\nばれる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1401,
+      "Name": "ジョージⅣ世門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nウィンザー城の南に備\nえられた門。外側には\nロングウォークと言う\n全長約5kmの並木道が\n伸びる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1402,
+      "Name": "野牛門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n長篠城本丸の南に位置\nする門。2つの水堀に\n囲まれている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1403,
+      "Name": "孔雀の門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nチャンドラ・マハルの\n中庭に存在する門。\n5体の孔雀の像によっ\nて美しく彩られている。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1404,
+      "Name": "歓会門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n琉球御城に存在する門。\n歓迎する意味が込めら\nれており、あまえ御門\nと呼ばれることもある。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1405,
+      "Name": "竜宮の門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n竜宮城に存在する門。\n浦島太郎はここで乙姫\nと対面したとされる。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1406,
+      "Name": "赤煉瓦の門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nノイシュヴァンシュタ\nイン城にある門。唯一\n赤煉瓦が用いられてい\nる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1407,
+      "Name": "上り立ち門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n日本最大級の薬医門。\n藤堂高虎の手によって\n建造された。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1408,
+      "Name": "追手門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n宇和島城に備えられた\n巨大な櫓門。御多門\nとも呼ばれる。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1409,
+      "Name": "鶴丸城御楼門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n鶴丸城の本丸に備えら\nれた大手門。二階建て\nの楼門と呼ばれる構造\nとなっている。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1410,
+      "Name": "獅子の門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nエステンセ城にある門。\n二重の門と吊橋が水堀\nの上にかけられている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1411,
+      "Name": "グニパヘリル",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nヘルヘイムへ続く洞窟。\n入口は切り立った岩で\n囲まれ、侵入者を阻む。\n%c[ffd700]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1412,
+      "Name": "シャンボール城城門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nシャンボール城に存在\nする門。門の先には豪\n奢な尖塔が華やかに並\nんでいる。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1413,
+      "Name": "大徳寺唐門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n聚楽第から大徳寺に\n移築された唐門。\n桃山三唐門の一つに\n数えられている。\n%c[ffd700]近畿城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1414,
+      "Name": "天若日子門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n天稚彦の館の門。\n門前に止まった雉が\n高天原からの言葉を\n伝えたという。\n%c[ffd700]弓城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1415,
+      "Name": "コーブルク城正門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nコーブルク城の正門。\n三重環状城壁の最も\n外縁に位置する。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1416,
+      "Name": "守礼門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n首里城に存在する門。\n美しい門の意を持つ\n上の綾門という名で\nも呼ばれていた。\n%c[ffd700]九州・沖縄城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1417,
+      "Name": "ヴァーフェン門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nホッホオスターヴィ\nッツ城に存在する門。\n武器の門を意味する\n名を持つ。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1418,
+      "Name": "迎薫門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n平遥古城の正門。\n門の上には四層の楼閣\nが建てられている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1419,
+      "Name": "常盤木門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n小峯城の本丸にある門。\n本丸の正門にあたり、\n堅固な造りを持つ。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1420,
+      "Name": "冠木御門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n雨城の本丸にある正門。\n門の内側が枡形虎口と\nなっている。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1421,
+      "Name": "鎮守府政庁殿門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n胆沢城の政庁正殿の前\nにある門。政庁が鎮守\n府の中核を担っていた。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1422,
+      "Name": "極楽橋唐門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n大坂城内の極楽橋に設\nけられた唐門。豪華な\n装飾が施されている。\n%c[ff0000]他の施設と効果の\n一部が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1423,
+      "Name": "下之橋御門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n福岡城に存在する大手\n門。渦見門の名でも呼\nばれる。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1424,
+      "Name": "ハドリアヌスの門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nゼウス神殿の前にある\n凱旋門。ローマ皇帝ハ\nドリアヌスを称える門\nとして建てられた。\n%c[ffd700]投剣城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1425,
+      "Name": "山手渡櫓門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n甲府城にある渡櫓門。\n山手門と合わせて、\n山手御門と総称される。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1426,
+      "Name": "ｱﾄﾞﾐﾗﾙﾃｨ･ｱｰﾁ",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nロンドンに存在するア\nーチ。海軍本部に隣接\nしているためその名が\n付けられた。\n%c[ffd700]鞭城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1427,
+      "Name": "称念寺山門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n称念寺にある山門。\nかつては十河城の\n城門であったと伝\nえられている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1428,
+      "Name": "仰高門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n湯島聖堂にある門。\n論語の一節より仰高\n門の名が付けられた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1429,
+      "Name": "学校門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n足利学校にある門。\n「學校」と書かれた\n扁額が掲げられている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1430,
+      "Name": "金亀赤鬼門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n金亀城が率いるバレ\nー部室の入口。金亀\n城の猛烈な練習風景\nから、赤鬼門の呼び\n名がついた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1431,
+      "Name": "大宰府朱雀門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n大宰府にある門。\n大宰府の正門として\nの役割を持っていた。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1432,
+      "Name": "京橋口門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n彦根城に存在する門。\n重厚な構えの枡形門と\nなっている。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1433,
+      "Name": "桃山門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n二条亭に存在する門。\n本丸と二の丸をつな\nぐ通路の南端に位置\nしている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1434,
+      "Name": "本能寺表門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n本能寺の表門。\n建立以来、幾度かの\n焼失と再建を経ている。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1435,
+      "Name": "車橋門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n前橋城にある城門。\n酒井忠清の手によっ\nて改築された。\n%c[ffd700]関東・甲信越城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1436,
+      "Name": "揚城戸",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n岩殿山城にある門。\n自然石を利用した\n城門\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1437,
+      "Name": "タルタロスの門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n冥界の入口にある青銅\nの門。ポセイドンの手\nによって築かれた。\n%c[ffd700]鎌城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1438,
+      "Name": "ジャイ・ポール",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nメヘラーンガル城に\nある門。「勝利の門」\nを意味する。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1439,
+      "Name": "地獄の門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n地獄の入口となる門。\n地獄へと赴く者へ\n向けた銘文が刻ま\nれている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1440,
+      "Name": "ｴﾙﾐﾀｰｼﾞｭ･ｱﾄﾗﾝﾃｽ",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nエルミタージュ\n美術館の柱廊玄関。\n巨人が柱を支える\n意匠となっている。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1441,
+      "Name": "一文字門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n霞城の本丸にある門。\n横長の櫓門が一文字櫓\nの名で呼ばれ、門にも\n一文字門の名が付いた。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1442,
+      "Name": "御香宮表門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n御香宮神社にある門。\n徳川頼房の寄進により、\n徳川伏見城の大手門が\n移築された。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1443,
+      "Name": "本丸表二之門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n名古屋城にある門。\n本丸南西に位置し、\n南二之門の名でも\n呼ばれていた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1444,
+      "Name": "佐和山赤門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n佐和山城の大手門。\n後に宗安寺に移築\nされたと伝わる。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1445,
+      "Name": "鳴子門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n二条城にある薬医門\n形式の門。本丸と\n二の丸をつなぐ通路の\n北端に位置する。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1446,
+      "Name": "ペリカンの凱旋門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nペリカン飾りのつい\nた立派な門。マーチ\nバンド演奏会の入場\n門として使われる。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1447,
+      "Name": "銅の鳥居",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n吉野山にある、銅を\n用いて建立された鳥居。\n奈良大仏鋳造の余りの\n銅が使われたという。\n%c[ffd700]近畿城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1448,
+      "Name": "江戸大手門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n江戸城の大手門。\n桁行き40メートル\nに及ぶ大きさを誇る。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1449,
+      "Name": "曹丞相府門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n許昌城にある、曹丞\n相府の門。曹操が\n政務を執り行った。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1450,
+      "Name": "椎木門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n佐倉城にある門。\n前方には馬出しが\n設けられていた。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1451,
+      "Name": "ジャングルの受付",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nデジタルアニマル達の\nジャングルに続く受付。\n息づく植物とデジタル\nアートの滝が出迎える。\n%c[ffd700]歌舞城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1452,
+      "Name": "鷲の門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nホーエンツォレルン城\nの門。騎馬兵士の彫刻\nが刻まれている。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1453,
+      "Name": "馬出門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n小田原城にある門。\n門の先は馬屋曲輪に\n続いている。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1454,
+      "Name": "川越喰違虎口門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n川越城にある虎口門。\n城門へと続く道を\n折り曲げることで\n防衛力を強化した。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1455,
+      "Name": "インティプンク",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nマチュ・ピチュにある\n太陽の名を冠する門。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1456,
+      "Name": "三ノ丸大手御門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n駿府城への入城門。\n三ノ丸へ続くこの門は\n多くの身分高い者が\n利用した。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1457,
+      "Name": "今治鉄御門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n今治城にある門。\n鉄製の重厚な門と\n桝形虎口によって\n侵入者を撃退した。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1458,
+      "Name": "ヨハネの正門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nｸﾞﾗﾝﾄﾞ･ﾏｽﾀｰ宮殿の門。\nヨハネ聖騎士団の\n拠点として多くの\n騎士が往来した。\n%c[ffd700]戦棍城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1459,
+      "Name": "ガンジル門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nガンジルに存在する門。\n七つの門と人食い河を\n超えた先に冥界がある\nとされる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1460,
+      "Name": "石山門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n岡山城の門。\n富山城の大手門が\n岡山城に移築された。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1461,
+      "Name": "枉死城門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n亡者の魂を封じ込め\nている枉死城の門。\n門を開くことで現世の\n祟りを除くとされる。\n%c[ffd700]鞭城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1462,
+      "Name": "クラウンワーク門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nクロンボー城の城門。\n数世紀に渡り、改修が\n幾度となく行われた。\n%c[ffd700]鉄砲城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1463,
+      "Name": "イシュタル門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n高さ14メートルを\n誇る門。\n門には神話上の動物\nが描かれている。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1464,
+      "Name": "随神門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n羽黒山の参詣の入り口\nにある山門。神域に\n立ち入る魔を祓う神が\n祀られている。\n%c[ffd700]北海道・東北城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1465,
+      "Name": "杏壇門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n湯島聖堂にある門。\n周囲に杏が植えられ\nていることから\n名が付けられた。\n%c[ffd700]本城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1466,
+      "Name": "会場前の入場ゲート",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nチケットの確認と\n危険物チェックを行う\n入場ゲート。時々\n武器が押収される。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1467,
+      "Name": "千早門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n高取城にある門。\n複数の門と共に\n高取城を守護していた。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1468,
+      "Name": "小倉城槻門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n小倉城にある門。\n近くの石垣に\n家臣が模様を\n掘った跡がある。\n%c[ffd700]大砲城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1469,
+      "Name": "敦賀城中門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n敦賀城にある門。\n敦賀城の中門としての\n役割を持っていた。\n%c[ffd700]平/水城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1470,
+      "Name": "潮入門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n長門指月城・二の丸の\n東側にある門。\n主に海への脱出や\n物資の搬入に使用された。\n%c[ffd700]弓城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1471,
+      "Name": "水手御門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n高松城を守る門。\n海に向かって\n建てられており\n舟を使って直接海に\n出ることが出来た。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1472,
+      "Name": "南内門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n弘前城を守る門。\nその分厚い門は\n鉄壁の防御を誇る。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1473,
+      "Name": "東内門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n南内門と対をなす門。\n弘前城を守り\n侵入者を許さなかった。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1474,
+      "Name": "応天門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n平安京の朱雀大路のさらに\n奥にある門。正庁である\n朝堂院の入口であり\n平安京三大門のひとつ。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1475,
+      "Name": "桜田門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n江戸城にある門。\n桜田の名称はこの地が\n桜田郷と呼ばれていた\nことに由来する。\n%c[ffd700]関東・甲信越城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1476,
+      "Name": "アンプオブバビロン",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nクリンタ城の声が\n大きく鳴り響く。\n「もっとあたしを\n褒めたたえなさーい！」\n%c[ffd700]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1477,
+      "Name": "三ノ丸御殿裏門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n高島城にある門。\nかつては御川渡御門とも\n呼ばれ、ここから湖の舟に\n乗ることが出来た。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1478,
+      "Name": "春日山千貫門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n春日山城にあった門の\nうちのひとつ。\n周囲が土塁と土手に囲まれ\nている。\n%c[ffd700]双剣城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1479,
+      "Name": "柳原総門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n兵庫城の入り口として\n扇の要と言える場所にあり\n包み込むように、\n福海寺が配置され枡形を\n構成している。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1480,
+      "Name": "門司口門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n小倉城近郊の門司往還の\n出入り口に設置された門。\n参勤交代の時に使われた\n街道に立つ。\n%c[ffd700]九州・沖縄城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1481,
+      "Name": "半蔵門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n江戸城の門の1つ｡\n正門にあたる大手門とは\n正反対の位置にある。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1482,
+      "Name": "洛陽玄武門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n洛陽城にある門。\n門道の天井を木の柱と梁で\n支える単門道過梁式構造。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1483,
+      "Name": "石灰岩の門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nチャフティツェ城の\n石灰岩でできた城壁の門。\n城の伯爵夫人は数々の\n残虐行為を行った。\n%c[ffd700]鞭城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1484,
+      "Name": "漢昭烈廟大門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n成都武侯祠にある大門。\n「漢昭烈廟」と金色の\n文字で書かれた大きな\n扁額が掲げらている。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1485,
+      "Name": "菊花の大手門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n仙台城の大手門。\n菊の紋の装飾物が\n門に飾られている。\n%c[ffd700]北海道・東北城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1486,
+      "Name": "イサベル2世門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nイントラムロスの複数の\n門のうちの1つ。\n街への入り口は門に\nなっている。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1487,
+      "Name": "エリーザベト門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nハイデルベルク城にある\nフリードリヒ5世が妻の\nエリザベス・ステュアート\nの栄誉のために建立した門。\n%c[ffd700]歌舞城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1488,
+      "Name": "黒金門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n安土城の中心部に入る\n最初の入り口。\n防御性を高めるため\n巨石を集めて頑強な構造と\nなっている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1489,
+      "Name": "冥界の門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nあの世へ続くと\n言われている門。\nとある伝説では\n頭が三つある番犬が\n門番をしていると伝わる。\n%c[ffd700]架空城城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1490,
+      "Name": "ビフレスト",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n神々の国と地上を結ぶ\n虹の橋｡\n普段は橋の袂で光の神が\n門番をしている｡",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1491,
+      "Name": "銅門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n小早川城の本丸へと繋がる\n銅板の装飾が施された門。\n他の門や土塀で敵を囲み\n集中攻撃を加える枡形門\n構造の一端を担っている。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1492,
+      "Name": "淑順門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n国王に仕える女官が\n使用する門。\n女性がすべてを\n取り仕切る世界へと\n通じる門だと伝わる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1493,
+      "Name": "吉田惣門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n吉田城の正面に位置し\n防御を担っていた門。\n現在では、移築され惣門\nとして伝わる。\n%c[ff0000]他の施設と効果の\n一部が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1494,
+      "Name": "ルルイエの石門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n異界の島にある\n石造都市の門｡\nいずれ邪神が目覚め地上を\n支配すると伝わる｡",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1495,
+      "Name": "臼杵大門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n臼杵城の二の丸の正門。\n臼杵藩の藩主である稲葉氏が\n入城直後に建てられた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 1496,
+      "Name": "久能山一ノ門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n久能山城の大手門\n豪華な彫刻や\n華美な装飾などで\n豪華に飾られていた\nとされている。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 1
+    },
+    {
+      "ID": 2000,
+      "Name": "空壕",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n外敵の侵入を阻む為に\n掘られた溝。水は張ら\nれていない。中世の城\nや山城で多く用いられ\nる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2010,
+      "Name": "空壕(近接)",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n改良された空壕。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2020,
+      "Name": "空壕(遠隔)",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n改良された空壕。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2100,
+      "Name": "水濠",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n水を引き込んだ堀。\n平城や平山城で多く用\nいられる。鉄砲の普及\nに伴い幅が広くなった。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2110,
+      "Name": "水濠(近接)",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n改良された水濠。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2120,
+      "Name": "水濠(遠隔)",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n改良された水濠。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2200,
+      "Name": "薬研堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n底が鋭く窪んだ形の堀。\n薬研という漢方薬等の\n調合に用いる器具に由\n来する。掘り方で更に\n細分化される。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2210,
+      "Name": "薬研堀(近接)",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n改良された薬研堀。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2220,
+      "Name": "薬研堀(遠隔)",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n改良された薬研堀。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2400,
+      "Name": "大通院谷",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n吉田郡山城の一部と\nみられる薬研堀で\n国内最長とされている。\n毛利元就、輝元時代に\n造られた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2401,
+      "Name": "中ノ門堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n川越城に存在する堀。\n城壁側の斜面が急であ\nるため、防衛性能に長\nけている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2402,
+      "Name": "伏見城北堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n木幡山伏見城の北側に\n存在する外堀。\n水堀だったとされる。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2403,
+      "Name": "小峯御鐘ノ台大堀切",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n小田原に存在する\n日本最大級の堀切。\n東堀、中堀、西堀、\n三本の大堀切の総称。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2404,
+      "Name": "吹揚城海水堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n吹揚城に存在する水堀。\n海水を引いている為、\n潮で水位が上下する。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2405,
+      "Name": "扇城薬研堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n扇城に存在する水堀。\n中津川から引かれた水\nが堀を満たしている。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2406,
+      "Name": "足利氏館方形土塁",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n足利氏館に存在する堀。\n方形の土塁と水堀が\n四方を囲っている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2407,
+      "Name": "七間濠",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n黒井城の下館に存在\nする水堀。赤井直正の\n手によって設けられた。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2408,
+      "Name": "ファランダ・フォラズ",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nエーリューズニルの敷\n居。「落下の危険」の\n意味を指す名を持つ。\n%c[ffd700]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2409,
+      "Name": "五色沼",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n仙台城に存在する水堀。\n三の丸の北面に面して\nいる。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2410,
+      "Name": "要害山城畝状竪堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n要害山城に存在する堀。\n連続した空堀で構成さ\nれ、高い堅固さを持つ。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2411,
+      "Name": "伊豆下田城障子堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n伊豆下田城に存在する\n堀。障子の様な形状は\n移動を大きく阻害する。\n%c[ffd700]拳城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2412,
+      "Name": "内金水河",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n紫禁城の周囲を囲む\n水堀。金水河の水を\n引き入れて作られた。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2413,
+      "Name": "ムール渓谷",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nモースハム城のある\n渓谷。ムール川が谷\nに沿って流れている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2414,
+      "Name": "リーメス",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nローマ帝国の国境に築\nかれた防塁。ローマの\n版図の広がりに伴い、\n長大な物となった。\n%c[ffd700]盾城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2415,
+      "Name": "八反堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n備中高松城の水堀。\n堀の中に船を並べ、\n船橋として利用した。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2416,
+      "Name": "鯔堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n津城の外堀の一部。\n川から流入した魚が\n多く泳いでいた為に、\n鯔堀の名で呼ばれた。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2417,
+      "Name": "ギョッル",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nヘルヘイムを流れる川。\nエーリューズニルの\nそばを通り流れている。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2418,
+      "Name": "アダマント・プレート",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nアダマントで構成され\nた巨大な一枚岩。\nラピュータの浮力の源\nとなっている。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2419,
+      "Name": "行屋川",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n真岡城の傍を流れる川。\n堀としても利用された。\n%c[ffd700]関東・甲信越城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2420,
+      "Name": "バラッド川",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nヴァスルイの戦いの舞\n台となった、バラッド\n渓谷を流れる川。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2421,
+      "Name": "鹿の堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nプラハ城に存在する堀。\n堀の中で狩猟用の鹿が\n飼われていた。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2422,
+      "Name": "草ヶ江",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n福岡城の西に広がる干\n潟。広大な池沼堀とし\nて利用された。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2423,
+      "Name": "小谷大堀切",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n小谷城に存在する堀切。\n主郭部を二分する巨大\nな堀となっている。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2424,
+      "Name": "千体川堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n与板城に存在する堀。\n城内に流れる千体川\nを内壕として利用し\nている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2425,
+      "Name": "山ノ神堀切",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n小田原城に存在する\n長大な堀切。丘陵を\n東西に分断している。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2426,
+      "Name": "監物堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n蜂ヶ峰城の東側に位置\nする堀。その全長は\n約1.2kmにも及ぶ。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2427,
+      "Name": "仙台堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n天下普請によって作ら\nれた江戸城の堀の一部。\n仙台藩が工事を担った\nためその名前が付いた。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2428,
+      "Name": "オールドホールベイ",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nダノター城の南面の\n崖下にある湾。北海\nが広がっている。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2429,
+      "Name": "西の丸大堀切",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n彦根城の西の丸にある\n大堀切。堀切の上には\n三重櫓が築かれている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2430,
+      "Name": "詰ノ段切岸",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n岡豊城に存在する切岸。\n本丸にあたる詰の段を\n守っている。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2431,
+      "Name": "ｼｬﾝﾃｨｲ城大運河",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nシャンティイ城の庭園\nにある大運河。総長は\n約2.5キロにも及ぶ。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2432,
+      "Name": "モーゼル渓谷",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nエルツ城のある渓谷。\n城の周囲は深い森に\n囲まれている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2433,
+      "Name": "ペラート峡谷",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nノイシュヴァンシュタ\nイン城の傍にある峡谷。\n城を一望できる橋がか\nけられている。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2434,
+      "Name": "チンワントの橋",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n死を迎えた者が渡る橋。\n善人の魂のみが橋を渡\nり、天国へ向かう事が\nできる。\n%c[ffd700]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2435,
+      "Name": "天神山堀切",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n天神山城にある堀切。\n天神山の尾根を分断\nする形で掘られている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2436,
+      "Name": "信長公居館空堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n小牧山にある館を囲む\n堀。館は織田信長が居\n館として使用していた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2437,
+      "Name": "埋田堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n坂戸城にある堀。\n魚野川を天然の外堀\nとして、内堀として\n掘られている。\n%c[ffd700]関東・甲信越城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2438,
+      "Name": "芋洗坂",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n六本木にある坂。\nその名の通り、\n江戸時代には坂下で\n芋が売られていた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2439,
+      "Name": "三岐濠",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n会津若松城にある濠。\n名の通り、堀が三叉に\n分岐している。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2440,
+      "Name": "鳩の谷",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nウチヒサル城近くの谷。\nその名の通り、多くの\n鳩が生息している。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2441,
+      "Name": "エラゼムの洞窟 ",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nプレッドヤマ城の後背\nの崖の中にある洞窟。\n城から洞窟内へ直接\n移動することが出来る。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2442,
+      "Name": "九鬼式バリケード",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nサバイバルゲームの\n為に作られた障害物。\n精巧に作られており、\n実戦にも使用出来る。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2443,
+      "Name": "風呂谷",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n金剛山城の四方を囲む、\n深い谷の一つ。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2444,
+      "Name": "馬出し空濠",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n佐倉城にある空堀。\n城門前に堀を設ける\nことで、防御力を\n高めている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2445,
+      "Name": "ポンテ・アラゴネーゼ",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nイスキア島とアラゴ\nネーゼ城をつなぐ橋。\n城へ続く唯一の道と\nなっている。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2446,
+      "Name": "ふあん坂",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n玉縄城に続く坂。\n久成寺にも続くため、\n久成寺坂とも呼ばれる。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2447,
+      "Name": "大垣四重堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n大垣城にある水堀。\n川の水を引き入れ、\n周囲を四重にも巡り\n掘られていた。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2448,
+      "Name": "黄泉比良坂",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n黄泉国と現世を結ぶ坂。\nイザナミとイザナギの\n離縁の地として伝わる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2449,
+      "Name": "クルウィド川堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nリズラン城の川堀。\nクルウィド川の水を\n利用して作られた。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2450,
+      "Name": "大手濠",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n寛永江戸城にある水濠。\n大手濠の前には\n最も信頼のある家臣が\n屋敷を構えていた。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2451,
+      "Name": "長島水堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n川の水を引いた水堀。\n長島城脇を流れる\n木曾川を含む河川は\n伊勢湾に注いでいる。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2452,
+      "Name": "帰らずの谷",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nブロセリアンドの森に\nあるという、多くの\n騎士を惑わせた深い谷。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2453,
+      "Name": "真田丸不定曲輪",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n真田丸にある曲輪。\n不定形の曲輪は\n攻めの起点となった。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2454,
+      "Name": "柳川堀割",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n柳川城の掘割。\n城下町中に水路が\n張り巡らされている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2455,
+      "Name": "真田丸南惣構堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n真田丸の地形を利用\nした堀。谷底は掘り\n窪められ高低差の\n有利を作り出した。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2456,
+      "Name": "紫川堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n勝野城にある堀。\nそばを流れる紫川を\n天然の堀として\n活かした造り。\n%c[ffd700]九州・沖縄城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2457,
+      "Name": "上関空堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n上関城にある堀。\n城の内部を分断する\n形で掘られている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2458,
+      "Name": "毒榎平北堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n小早川城にある堀\nその深さは\n30尺にも及ぶ。\n%c[ffd700]関東・甲信越城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2459,
+      "Name": "山中畝堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n山中城にある堀。\n堀の中に区画を設け\n侵入してくる敵を\n容易に撃退できる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2460,
+      "Name": "多気城横堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n多気城にある堀。\n長大な長さの堀で\n三つの郭を囲っている。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2461,
+      "Name": "シナイア渓谷",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nペレシュ城のある渓谷。\n壮大な自然の中に\n美しい城が佇み、\n見るものを魅了する。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2462,
+      "Name": "廿日堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n岡山城の石垣。\n多くの人々を動員し\n二十日で完成させた為\nこの名が付いた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2463,
+      "Name": "尾崎丸堀切",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n吉田郡山城の堀。\n長さ42m、幅20mと\n曲輪群の中で最大の\n規模を誇る。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2464,
+      "Name": "宇土水堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n宇土城を囲う水堀。\n広大な水堀で宇土城\nを守っていた。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2465,
+      "Name": "鹿島堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n館山城を守る水堀。\n城山を囲うように\n掘られており大規模\nなものであった。\n%c[ffd700]刀城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2466,
+      "Name": "獅子ヶ崎土塁",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n古河城を守る堀。\n土塁が堀に突き出す\n構造をしていた。\n%c[ffd700]関東・甲信越城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2467,
+      "Name": "佐土原堀切",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n佐土原城に\n存在する堀切。\n天守を守る巨大な堀\nとなっている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2468,
+      "Name": "おかこい山",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n中津城近くにある土塁。\n堀を掘った土を再利用\nしており、複数の\nおかこい山が存在する。\n%c[ffd700]鉄砲城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2469,
+      "Name": "馬場堀切",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n馬場城を守護する堀切。\nかなり深く掘られており\n突破は困難を極めた。\n%c[ffd700]刀城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2470,
+      "Name": "アルジェシュ渓谷",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nポエナリ城を支えている\n渓谷。その絶壁は\n天然の城壁となり\n攻略を困難にした。\n%c[ffd700]陣貝城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2471,
+      "Name": "御土居",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n都を守る高さ3メートルの\n巨大な土塁。\n類似した土塁が連なり\n高い防御力を誇った。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2472,
+      "Name": "勢隠曲輪",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n姫路城を守護する曲輪。\n城を取り巻くように\n湾曲しており\n高い防御力を誇った。\n%c[ffd700]鉄砲城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2473,
+      "Name": "かもう坂通り往還",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n佐和山城の\n近くにある切通し。\n城から北へ向かう\n道には多くの旅人が\n行き来した。\n%c[ffd700]槍城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2474,
+      "Name": "鹿野水堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n鹿野城に存在する水堀。\n水谷川の水を\n引き入れて作られた。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2475,
+      "Name": "勝竜寺帯曲輪",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n勝竜寺城と沼田丸の\n間にある曲輪。\n沼田丸と合わせ\n本丸まで辿り着くのは\n困難だった。\n%c[ffd700]歌舞城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2476,
+      "Name": "山中障子堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n山中城にある網目状の堀。\n石を使わない防御の仕掛け\nとして、土手を掘り障壁と\nしたもの。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2477,
+      "Name": "忍城本丸土塁",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n忍城本丸に築かれた土塁。\nかつては二の丸や土蔵曲輪と\n橋で結ばれていた。\n%c[ffd700]刀城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2478,
+      "Name": "ポセイドンの円堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n海の神の名を冠する\n大量の海水に守られた\n円形の堀。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2479,
+      "Name": "京風ホログラムセット",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nステージを煌びやかに飾る\nホログラムを出現させる。\n宿縁のアイドルユニットを\n鮮やかに彩る。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2480,
+      "Name": "半月堡",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n五稜郭にある正面入り口を\n防御するための出塁。\n刎ね出しのある石垣で\n囲まれている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2481,
+      "Name": "日暮本丸空堀",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n日暮城本丸大手前の空堀。\n本丸を島のように籠城し、\n幕府軍と戦闘を\n繰り広げた。\n%c[ffd700]杖城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2482,
+      "Name": "喜糖岬",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nゲシュペンスト島の端に\nある豊かな緑の岬。\n白黒の獣がおいしそうに\n草を食べている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2483,
+      "Name": "マーリンの洞窟",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\nティンタジェル城の下に\n引き潮の時にのみ近づける\n洞窟｡マーリンがここで\n乳児アーサーを保護した\nと伝わる。\n%c[ffd700]ランス城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2484,
+      "Name": "小田障子掘",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n小田城にある格子状に\n仕切った堀｡\n強い防衛性能を持つ｡\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2485,
+      "Name": "白鳥濠",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n江戸城を守るようにして\n掘られた濠。\n雨水の他に湧き水を\n濠を湛える水としている。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2486,
+      "Name": "鐙坂",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n臼杵城の城壁に\n挟まれた狭い堀。\n外敵を防ぐため、\n岩を掘り切って作られた。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 2487,
+      "Name": "杖衝坂",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n伊吹山との戦いで\n病に倒れたヤマトタケルが\n剣を杖代わりに上った坂。\n東海道の道筋で\nかなりの急坂である。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3000,
+      "Name": "石塁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n石を積み上げて作った\n防御用の壁。簡易的な\nものであるが石なので\n頑丈。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3010,
+      "Name": "石塁(近接)",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n改良された石塁。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3020,
+      "Name": "石塁(遠隔)",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n改良された石塁。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3100,
+      "Name": "野面積み",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n石を加工せずに積み上\nげて作った石垣。排水\n性に優れる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3110,
+      "Name": "野面積み(近接)",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n改良された野面積み。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3120,
+      "Name": "野面積み(遠隔)",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n改良された野面積み。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3200,
+      "Name": "打込接ぎ",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n石の角を叩き、石同士\nの隙間を小さくして積\nみ上げた石垣。多くの\n城で用いられている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3210,
+      "Name": "打込接ぎ(近接)",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n改良された打込接ぎ。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3220,
+      "Name": "打込接ぎ(遠隔)",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n改良された打込接ぎ。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3400,
+      "Name": "聚楽第石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n聚楽第の石垣。\n切り石ではなく、\n巨大な自然石だけを\n積み上げて築かれた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3401,
+      "Name": "ファニの城壁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n修道院西側の倉庫を\n守るために築かれた\n軍事要塞であった。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3402,
+      "Name": "安順廊橋",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n成都の錦江に存在する\n橋。橋の上に楼閣が建\nてられている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3403,
+      "Name": "ピジョンバレー",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nカッパドキアに存在す\nる谷。洞窟の壁に穴を\n掘り、鳩を飼っていた\nことに由来する。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3404,
+      "Name": "歩行者天国",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nアキバに存在する地盤。\n石より硬い物質に、白\nい模様が描かれている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3405,
+      "Name": "大手道石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n安土城の大手道に存在\nする石垣。\n石垣とともに武家屋敷\nが建ち並んでいた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3406,
+      "Name": "亀居城石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n亀居城の石垣。\n刻印が刻まれており、\nその種類の多さは他に\n類を見ない。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3407,
+      "Name": "賽の石積み",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n冥土の子供が積む石塚。\n石一つ一つに親を偲ぶ\n心が込められている。\n%c[ffd700]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3408,
+      "Name": "平安京羅城築垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n平安京正門の羅生門の\n両翼に伸びる築垣。\n築地塀とも呼ばれる。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3409,
+      "Name": "ﾆｭｰﾙﾝﾍﾞﾙｸ市壁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nニュールンベルクを囲\nむ長大な城壁。総長は\n5キロメートルに及ぶ。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3410,
+      "Name": "ダノターの断崖",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nダノター城の周囲を\n囲む断崖。約50メー\nトルもの高さを持つ。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3411,
+      "Name": "高島城石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n高島城に存在する石垣。\n筏状に組んだ木材の\n上に積み上げられた。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3412,
+      "Name": "白石城本丸石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n白石城の本丸を囲む\n石垣。北側と南側で\n異なる石積みを持つ。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3413,
+      "Name": "八重垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n周囲を幾重にも囲む\n垣根。八雲が空にた\nなびく様を思わせる。\n%c[ffd700]刀城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3414,
+      "Name": "飢えの壁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nストラホフ修道院の傍\nにある防壁。飢えた人\n々に仕事と食事を与え\nる為に作られた。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3415,
+      "Name": "新田金山城石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n新田金山城にある石垣。\nアゴ止め石と呼ばれる\n下部がせり出した構造\nとなっている。\n%c[ffd701]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3416,
+      "Name": "延岡城石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n延岡城にある石垣。\n礎石を外すと岩が\n崩れ落ち、千人の\n敵を倒せるという。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3417,
+      "Name": "いかすみ石",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n津軽鷹岡城にある天守\n台の隅石。その独特な\n形状からいかすみ石と\n名付けられた。\n%c[ffd700]北海道・東北城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3418,
+      "Name": "ゴトビキ岩",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n神倉神社にある巨石。\nゴトビキは新宮の方言\nでヒキガエルを指す。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3419,
+      "Name": "ブラン城盾壁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nブラン城にある城壁。\n一側面だけを高く構え、\n特定の方向に対して堅\n牢な造りとなっている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3420,
+      "Name": "北京城壁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n永楽帝が北京に築いた\n城壁。城壁の高さは\n11メートルに達した。\n%c[ffd700]鉄砲城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3421,
+      "Name": "坂下門石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n甲府城に存在する石垣。\n作られた時代によって\n石垣の積み方が異なる\n箇所がある。\n%c[ffd700]関東・甲信越城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3422,
+      "Name": "スピシュ城丘",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nスピシュ城が築かれた\n巨大な丘。スピシュ城\nの名が冠されている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3423,
+      "Name": "豊臣石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n大坂城に存在する石垣。\n自然石を用いた野面積\nみで築かれている。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3424,
+      "Name": "成都城壁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n成都城を囲む城壁。\n非常に長い城壁であり、\n城門毎に小堡が築かれ\nていた。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3425,
+      "Name": "中之門石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n寛永江戸城にある石垣。\n城内にある石垣の中で\nも最大の巨石を用いて\n築かれている。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3426,
+      "Name": "足利学校築地塀",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n足利学校にある塀。\n大成殿を囲むように\nして築かれている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3427,
+      "Name": "三日月の花壇",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n岡城が沢山の花を育\nてている花壇。花壇\nの隅には、小さな三\n日月が彫られている。\n%c[ffd701]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3428,
+      "Name": "舞鶴山切崖",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n天童城に備えられた\n人工の崖。段状の郭\nを形成している。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3429,
+      "Name": "ﾁｬﾌﾃｨﾂｪ城壁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nチャフティツェ城の\n城壁。三方を急斜面\nに囲まれている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3430,
+      "Name": "三ノ段土塁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n岡豊城の三の段にある\n土塁。石積みで築かれ\nている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3431,
+      "Name": "一二三段石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n津山城にある石垣。\n段状に形成された石垣\nは、一二三段の名で呼\nばれる。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3432,
+      "Name": "隅欠石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n鹿児島城にある石垣。\n鬼門除けとして、北東\nの角が切り取られた形\nになっている。\n%c[ffd700]九州・沖縄城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3433,
+      "Name": "ダマーヴァンド山",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nアジアで最も高い山。\nアジ・ダハーカが山の\n地下深くに幽閉されて\nいたという。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3434,
+      "Name": "大宰府築地塀",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n大宰府の政庁を囲む\n築地塀。大宰府には\n19の官衙が設けられ\nていた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3435,
+      "Name": "ｷｬｯｽﾙ･ﾛｯｸ",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nノッティンガム城が\n建てられた高台。\n40mの断崖を持つ。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3436,
+      "Name": "関屋土塁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n基肄城から連なる\n土塁。大宰府防衛の\n一環として築かれた。\n%c[ffd700]九州城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3437,
+      "Name": "パリ城壁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nパリを囲んでいた城壁。\nシテ島の周囲を囲む壁\nが徐々に拡大して構築\nされていった。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3438,
+      "Name": "坂本湖中石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n坂本城の石垣。\n湖に面して築かれて\nいた為、石垣の底部は\n湖中に積まれている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3439,
+      "Name": "小牧山墨書石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n小牧山にある石垣。\n美濃攻めを行った時代\nの織田信長の家臣の名\nが墨で記されている。\n%c[ffd700]遠隔城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3440,
+      "Name": "六本木の丘",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n六本木にある丘。\n丘の上には多彩な\n施設が立ち並ぶ。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3441,
+      "Name": "引田高石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n引田城にある高石垣。\n讃岐の国では初めて\n総石垣の城として\n築かれた。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3442,
+      "Name": "盛岡はばき石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n盛岡城にある石垣。\n石垣の崩落を防ぐため\nの工夫が施されている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3443,
+      "Name": "ミティカスの峰",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nオリュンポス山の山頂\nに続く、険しい断崖。\nギリシアで最も天に\n近い地に座している。\n%c[ffd701]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3444,
+      "Name": "桜馬場石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n七尾城にある石垣。\n野面積みの石垣が\n五段に連なっている。\n%c[ffd701]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3445,
+      "Name": "波打つ長机",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nDMMオフィスにある\n長机。波打ちながら\n続く机の全長は\n1キロにも及ぶ。\n%c[ffd701]歌舞城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3446,
+      "Name": "大見城平土塁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n松倉城にある土塁。\n大見城平には家臣達の\n屋敷が構えられていた。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3447,
+      "Name": "四代目江戸天守台",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n四代目江戸城の天守台。\n天守台は万治元年に\n完成したものの、\n天守普請は幻と消えた。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3448,
+      "Name": "ｻﾞﾝｸﾄ・ﾐﾋｬｴﾙ稜堡",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nホーエンツォレルン城\nの稜堡。稜堡内には\nプロイセンの王族が\n埋葬されている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3449,
+      "Name": "二様の石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n熊本城にある石垣。\n異なる二種の石垣を\n同時に眺める事が\n出来る。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3450,
+      "Name": "大高坂山石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n大高坂山城にある石垣。\n高知城の石垣の礎と\nなっている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3451,
+      "Name": "観音寺大石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n観音寺城の強固な石垣。\n総石垣の城の中では\n最初期に築かれた。\n%c[ffd701]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3452,
+      "Name": "立花山石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n立花山城の石垣。\n石垣を構成する石は、\n後に福岡城の石垣\nとして使用された。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3453,
+      "Name": "王城の城壁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n遥かな昔から王城を\n守ってきた歴史ある\n強固な城壁。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3454,
+      "Name": "吉野ヶ里土塁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n吉野ヶ里の周囲を囲う\n土塁。堀や柵と\n合わせることで\n高い防御性を誇る。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3455,
+      "Name": "鬼ノ城版築土塁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n鬼ノ城にある土塁。\n2.8kmにも及ぶ\n直線的な土塁が\n敵の侵入を拒む。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3456,
+      "Name": "姫の丸石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n吉田郡山城の石垣。\n一日一力一心の文字\nが刻まれた礎石が\n埋められている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3457,
+      "Name": "イバノヲの石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n立花山の峠にある石垣。\n谷を監視するように\n曲輪群が広がっている。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3458,
+      "Name": "巻石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n鳥取城にある丸い\n特殊な石垣。\n他の石垣が崩れない\nように建てられた。\n%c[ffd700]中国・四国城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3459,
+      "Name": "潜龍院石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n岩櫃山下に存在した\n潜龍院の石垣。\n岩櫃城の一部として\n使われた。\n%c[ffd700]槍城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3460,
+      "Name": "アイドルステージ！",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n煌びやかなステージに\n照らされるアイドル達。\n共に作り上げよう！\n最高のステージを！",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3461,
+      "Name": "とうれぎ土塁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n大宰府を守護する土塁。\n関屋土塁と共に大宰府を\n守護していた。\n%c[ffd700]刀城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3462,
+      "Name": "京極丸土塁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n小谷城を守護する\n京極丸の土塁。\n小谷城の中では最大の\n規模を誇った。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3463,
+      "Name": "武者返し",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n熊本城にある\n反り返りが激しい石垣。\n忍者でさえ登ることが\n困難だった。\n%c[ffd700]九州・沖縄城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3464,
+      "Name": "姥が石",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n乾小天守の天守台の石垣。\nその石垣を支える一つの石は\n城下に住む貧しい老婆が\n自分が使っている\n石臼を差し出したと\nいわれている。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3465,
+      "Name": "脇本土塁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n脇本城にある土塁。\n脇本城の内館は\n大土塁を設けて\n複数の段に分かれている。\n%c[ffd700]槍城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3466,
+      "Name": "沼田丸",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n勝竜寺城にある土塁\n回りは土塁に\n囲まれていた。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3467,
+      "Name": "アーケシュフース城壁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n幾度も包囲され、その度に\n撃退を繰り返してきた\nアーケシュフース城の歴史\nを知る城壁。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3468,
+      "Name": "ﾌｧﾙｹﾝｼｭﾀｲﾝ山崖",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nファルケンシュタイン城の\n周囲を囲む山崖。\n標高の高い山々は自然の\n要塞となる。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3469,
+      "Name": "平城宮大垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n平城京を取り囲む大垣。\n12の門が置かれたが、立ち入\nりを許されたのは皇族や役人\nなど限られた者だけだった。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3470,
+      "Name": "ミュルクヴィズ",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n神々の国と火の国との間に\nあるとされる、陰気で暗く\n恐ろしい闇の森。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3471,
+      "Name": "千賀地氏城土塁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n千賀地氏城にあった土塁。\n東西北の三方にあり\n北の土塁には見張り台が\nあった。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3472,
+      "Name": "野牛曲輪土塁",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n長篠城の防衛の要で\n武田軍の攻撃を防ぎ\n織田信長と徳川家康の\n連合軍が勝利するのに\n貢献した土塁。\n%c[ffd700]北陸・東海城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3473,
+      "Name": "ロンドン・ウォール",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n城塞都市ロンディニウムの\n防御壁。\nシティ・オブ・ロンドンの\n境界線となった。\n%c[ffd700]ランス城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3474,
+      "Name": "地図石",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n熊本城の縄張りを\n表していると言われた\n不思議な石組。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3475,
+      "Name": "立花本丸石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n立花城本丸にある石垣。\n戦国末期には約4万の侵攻に\n徹底抗戦した。\n%c[ffd700]九州城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3476,
+      "Name": "夜泣石",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n高天神城近郊の\n小夜の中山峠にある石。\n妊婦の霊が石に乗り移り\n夜毎に泣いたため\n里人からおそれられた。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3477,
+      "Name": "天童曲輪群",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n天童城にある曲輪群。\n東側虎口の曲輪は\n建物が建つほどの\n広さを持つ場所がある。\n%c[ff0000]他の施設と効果の\n一部が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3478,
+      "Name": "金柑丸",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n吉田城本丸と三の丸の\n間にある南北に\n長い曲輪。\n%c[ffd700]北陸・東海城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3479,
+      "Name": "権現曲輪",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n韮山城にある曲輪｡\n近くに熊野権現を祀る\n神社がある｡\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3480,
+      "Name": "千引の石",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n千人いればなんとか動く\nとても巨大な石｡\nあの世と現世を隔てる\n境界として伝わる｡",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3481,
+      "Name": "フィレリモスの丘",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nロードス島北部にある丘｡\n丘の展望台からは美しい\n絶景が望める｡\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3482,
+      "Name": "大宰府玉石垣",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n自然に存在する丸みを帯びた\n石を積んで作られる石垣。\n大宰府天満宮の周辺に\n存在したと伝わる。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 3483,
+      "Name": "ﾋﾞｭｰﾏﾘｽｶｰﾃﾝｳｫｰﾙ",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\nビューマリス城を守る\n8面のカーテンウォール。\n多くの矢狭間や\n弓兵の射撃場所がある。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4000,
+      "Name": "槍狭間",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n近づいた敵を槍で攻撃\nするための狭間。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4010,
+      "Name": "槍狭間(近接)",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n改良された槍狭間。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4020,
+      "Name": "槍狭間(遠隔)",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n改良された槍狭間。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4100,
+      "Name": "矢狭間",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n弓で攻撃しやすいよう\n縦長の長方形になって\nいる狭間。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4110,
+      "Name": "矢狭間(近接)",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n改良された矢狭間。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4120,
+      "Name": "矢狭間(遠隔)",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n改良された矢狭間。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4200,
+      "Name": "鉄砲狭間",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n鉄砲を撃つための狭間。\n丸、三角、正方形等の\n形がある。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4210,
+      "Name": "鉄砲狭間(近接)",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n改良された鉄砲狭間。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4220,
+      "Name": "鉄砲狭間(遠隔)",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n改良された鉄砲狭間。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4400,
+      "Name": "ベンホルムの宿",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\nダノター城の西側に位\n置する建物。銃眼が３\n段にわたり設けられて\nいる。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4401,
+      "Name": "南走長屋狭間",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n天守の南にある長屋。\n屋根は赤瓦で飾られ、\n迎撃の為の銃眼が\n連なっている。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4402,
+      "Name": "ブークル塔",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\nﾓﾝ･ｻﾝ=ﾐｯｼｪﾙにある\n円塔。塔の周りは\n銃眼付きの城壁で\n囲まれている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4403,
+      "Name": "クヌートタワー",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\nアーケシュフース城に\n存在する塔。砲台と銃\n眼を共に備えている。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4404,
+      "Name": "黄金小路",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\nプラハ城内にある小路。\n外壁に面する建物には、\n銃眼が備えられている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4405,
+      "Name": "ヌオーヴォ城壁銃眼",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\nカステル・ヌオーヴォ\nを囲む城壁に設けられ\nた迎撃用の銃眼。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4406,
+      "Name": "天浮橋",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n高天原から下界に向け\nて伸びる橋。立てば\n地上の全てを見晴す\n事ができる。\n%c[ffd700]槍城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4407,
+      "Name": "ｱｲﾘｰﾝ･ﾄﾞﾅﾝ城胸壁銃眼",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\nアイリーン・ドナン城\nの胸壁にある銃眼。丸\nく張り出した構造はバ\nルティザンと呼ばれる。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4408,
+      "Name": "安平小砲台",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n安平古堡の傍にある小\n砲台。安平海岸の防衛\n施設として清国に建造\nされた。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4409,
+      "Name": "ヴィルヘルム塔",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\nリヒテンシュタイン城\nにある塔。城主の名に\nちなんで名付けられた。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4410,
+      "Name": "バイワードタワー",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\nロンドン塔の正門に\nある塔。銃眼を備え、\n城門の役割を持つ。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4411,
+      "Name": "四稜砲座",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n四稜郭に備えられた砲\n座。四隅の稜角にそれ\nぞれ大砲が配置されて\nいた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4412,
+      "Name": "七飯砲台",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n七飯台場にある砲台。\n北方に向けて砲台を\n据える為のスロープ\nが造成されている。\n%c[ffd700]北海道・東北城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4413,
+      "Name": "マルクの塔",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\nシュノンソー城にある\n矢狭間が備えられた塔。\n元はマルク家の要塞の\n一部をなしていた。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4414,
+      "Name": "彦根隠狭間",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n彦根城にある狭間。\n外側が漆喰で塗り固\nめられ、狭間の位置\nが隠されている。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4415,
+      "Name": "西大砲台",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n伊予松山城にある砲台。\n城内で最も高い高石垣\nの上に築かれている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4416,
+      "Name": "ﾌｫﾝ･ｼｮﾙﾃﾝ･ﾗｳﾞﾘﾝ",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\nクロンボー城にある\n台場。設計者の名前が\n冠されている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4417,
+      "Name": "南蛮たたき鉄砲狭間",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n名古屋城にある練塀の\n鉄砲狭間。塀が｢南蛮\nたたき｣という手法で\n堅固に固められている。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4418,
+      "Name": "庠主の顕微鏡",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n科学部の備品の\n顕微鏡。足利学校\nお気に入りの\n実験器具の一つ。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4419,
+      "Name": "泰山玉皇頂",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n下界を見晴らす泰山\nの頂上。麓から山頂\nまでの長い石畳が\n続いている。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4420,
+      "Name": "東御門狭間",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n駿府城の東御門の狭間。\n石垣に沿って設置され\n多方向への攻撃を\n可能としている。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4421,
+      "Name": "真田丸二段狭間塀",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n真田丸にある二段構え\nの狭間。内側には\n武者走りを設けて兵士\nの移動を可能とした。\n%c[ffd700]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4422,
+      "Name": "東門土塁狭間",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n忍城にある狭間\n鉄砲用の丸狭間と\n弓用の四角狭間がある。\n%c[ffd700]関東・甲信越城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4423,
+      "Name": "屏風折れ土塀狭間",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n霞城にある狭間。\n折れ曲がった土塀に\n攻撃穴が開いている\n特殊な構造をしていた。\n%c[ffd700]北海道・東北城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4424,
+      "Name": "監物櫓石落とし",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n熊本城を守護する\n妨害用の狭間。\n武者返しと合わせて\n鉄壁の防御を誇る。\n%c[ffd700]刀城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4425,
+      "Name": "御殿山下砲台",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n黒船襲来を受けて築造が\n行なわれた6基の砲台のうち\nのひとつ。\n築造された砲台のうち唯一\n陸続きの場所に造られた。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4426,
+      "Name": "井楼矢倉",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n飯沼城にあった矢倉。\n物見櫓として敵を監視する\n目的のために使用された。\n見た目よりも堅固に\n作られている。\n%c[ffd700]投剣城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4427,
+      "Name": "射鮫台",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n始皇帝の命令により\n作られた儀式用の台。\n岩で出来た台であり\n鮫を射たとされる。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4428,
+      "Name": "山科グッズ物販ブース",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\nアイドルのグッズが\n販売されている場所。\nグッズを買うと山科本願寺\nの手紙がついてくる。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 4429,
+      "Name": "五稜郭稜堡",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n五稜郭にある防衛施設の\nひとつ。\n大砲を据え付けるため\n幅が広く作られている。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5000,
+      "Name": "水がめ",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n有事に備え城内に蓄え\nられた水。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5010,
+      "Name": "水がめ(近接)",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n改良された水がめ。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5020,
+      "Name": "水がめ(遠隔)",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n改良された水がめ。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5100,
+      "Name": "井戸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n生命線となる水を確保\nする為の井戸。通常、\n城には複数の井戸が掘\nられていた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5110,
+      "Name": "井戸(近接)",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n改良された井戸。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5120,
+      "Name": "井戸(遠隔)",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n改良された井戸。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5200,
+      "Name": "大井戸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n大きな井戸。形は様々\nだが総じて水量が豊か。\n汲んでも汲んでも枯れ\nないと伝わるものもあ\nる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5210,
+      "Name": "大井戸(近接)",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n改良された大井戸。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5220,
+      "Name": "大井戸(遠隔)",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n改良された大井戸。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5400,
+      "Name": "ネプチューンの泉",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nシェーンブルン宮殿の\n庭園内にある噴水。\nギリシャ神話の神が\n祀られている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5401,
+      "Name": "ｳﾞｨｳﾞｨｱﾝの湖",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n妖精ヴィヴィアンが住\nむ湖。アーサー王はこ\nこでエクスカリバーを\n授かったとされている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5402,
+      "Name": "千貫井",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n佐和山城にある井戸。\n城中の飲料水として利\n用され、千貫に値する\nことから命名された。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5403,
+      "Name": "いたずらの噴水",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nペテルゴフ宮殿にある\n噴水。突然水が飛び出\nすユニークな仕掛けが\n備わっている。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5404,
+      "Name": "リンドスの入り江",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nリンドスにあるハート\nの形をした入り江。\n水面はエメラルド色の\n輝きを放っている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5405,
+      "Name": "梅雨の井",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n聚楽第にある井戸。\n西陣の名水とも言われ、\n梅雨の時期に水が溢れ\n出たという言い伝えが\nある。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5406,
+      "Name": "木彫りの大船",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n大木を切り抜いて\n作られた300もの木船。\n中に水や兵糧を貯蓄し、\n兵糧攻めの対策とした。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5407,
+      "Name": "次田の湯",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n大宰府の官人も通った\nという温泉。その名は\n万葉集に詠われている。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5408,
+      "Name": "冥土通いの井戸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n六道珍皇寺の井戸。\n底はとても深く、果て\nは地獄に達するという。\n%c[ffd700]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5409,
+      "Name": "美しの泉",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nニュールンベルクに存\n在する噴水。柵の中の\n輪を回せば、願い事が\n叶うという。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5410,
+      "Name": "釣井の段",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n新高山城にある井戸廓。\n多くの井戸が掘られ、\n城内の生活を支えた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5411,
+      "Name": "龍樋",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n首里城に存在する泉。\n竜頭から流れ出す\n清水を湛えている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5412,
+      "Name": "ﾃﾞｨﾜﾆ･ｶｰｽの銀壺",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nチャンドラ・マハル\nにある巨大な銀の壺。\nガンジス川の水を持\nち運ぶ為に作られた。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5413,
+      "Name": "太閤水",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n太閤の名を持つ井戸。\n豊臣秀吉が清水を求め\nた事により作られた。\n%c[ffd700]九州・沖縄城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5414,
+      "Name": "カザマタク",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nエゲル城の地下に存在\nする通路。籠城時には\n防衛や水や食料等の物\n資運搬に使用された。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5415,
+      "Name": "天神洗足の井水",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n川越城に存在する井水。\n天神の導きによって\n見つけ出されたという。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5416,
+      "Name": "かんかん井戸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n三木城にある井戸。石\nを投げ込んだ時の音に\nちなんでかんかん井戸\nと名付けられた。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5417,
+      "Name": "ログ湖",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nスルーズヴァンガルに\nある湖。湖のほとりに\nはトールの居館があっ\nたという。\n%c[ffd700]槌城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5418,
+      "Name": "アポロンの泉水",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nヴェルサイユ宮殿にあ\nる泉。噴水と彫刻でア\nポロンが天に昇る姿が\n表現されている。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5419,
+      "Name": "魚躍沼",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n彦根城に存在する池。\n井伊直興が造営した、\n玄宮園の中にある。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5420,
+      "Name": "ヘルナッド川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nスピシュ城の近くを流\nれる川。支流としてド\nナウ川に通じている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5421,
+      "Name": "ネプチューンの噴水",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nフレデリクスボー城に\n存在する噴水。中央に\nネプチューンの彫刻が\n据えられている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5422,
+      "Name": "馬洗池",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n小谷城にある池。\n池の傍に御馬屋が\n建てられていた。\n%c[ffd700]槍城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5423,
+      "Name": "釜無川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n甲府盆地を流れる川。\n一説には釜の様な深い\n淵が無いためにその名\nが付いたと言われる。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5424,
+      "Name": "愛宕沼",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n天童城が築かれた舞鶴\n山にある沼。天童城本\n丸には愛宕神社が鎮座\nしている。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5425,
+      "Name": "バラントンの泉",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nブロセリアンドの森の\n中にある泉。湖の乙女\nとマーリンが邂逅した\n場所と伝えられている。\n%c[ffd700]架空城城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5426,
+      "Name": "レイエ川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nグラーフェンステーン\nの傍を流れる川。川の\n水を引き込み、堀の水\n源として利用している。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5427,
+      "Name": "お菊井戸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n白鷺城に存在する井戸。\n夜な夜な井戸の底から\n恨めしい声が聞こえて\nくるという。\n%c[ffd700]近畿城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5428,
+      "Name": "金明水場",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n聚楽城たちの練習場\n近くにある水飲み場。\n部活後の水は金銀を\n飲み干す如くと言う。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5429,
+      "Name": "小田原早川上水",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n小峯城の城下を流れ\nる水道。北条氏康の\n治世に作られた。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5430,
+      "Name": "クホンニ・プルド",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nエカテリーナ宮殿に\n存在する池。台所の\n池という意味を持つ",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5431,
+      "Name": "衆楽園池泉",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n津山藩の大名庭園にあ\nる池。藩主の森長継の\n命によって造られた。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5432,
+      "Name": "ノネット川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nシャンティイ城の庭園\nの水源となっている川。\nオワーズ川より枝分か\nれしている支流の一つ。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5433,
+      "Name": "鯱鉾池",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n肥前名護屋城にある池。\n鯱鉾の尾の様な形状を\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5434,
+      "Name": "メーヌ川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nアンジェ城の傍を\n流れる川。ロワール\n川を本流としている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5435,
+      "Name": "御笠川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n大宰府の東を流れる川。\n四神相応においては\n青龍の地形に当たる\nとされる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5436,
+      "Name": "高城川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n耳川の戦いの合戦場\nとなった、高城川原\nを流れる川。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5437,
+      "Name": "百貫井戸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n天神山城にある井戸。\n豊富な水量を例えて\nその名がつけられた。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5438,
+      "Name": "ステュクス沼",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n地獄の中にある沼。\n沼の中は黒々とした\n泥水で満たされてる。\n%c[ffd700]盾城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5439,
+      "Name": "ネヴァ川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n冬宮殿の傍を流れる川。\n川幅が広く、交易では\n重要な役割を持つ。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5440,
+      "Name": "毛利邸瓢箪池",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n毛利庭園内にある池。\nその名の通り、\nひょうたんの形を\nしている。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5441,
+      "Name": "エントランスの滝",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nエントランスの壁\n一面を流れる映像の滝。\nせせらぐ水の流れが\n涼やかな印象を与える。\n%c[ffd700]歌舞城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5442,
+      "Name": "おせん清水",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n与板城にある井戸。\n直江兼続の正室が\n用いたことにより、\nその名が付けられた。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5443,
+      "Name": "七飯大沼",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n七飯台場近くの湖。\nアイヌ語を由来として\n大沼の名が付けられて\nいる。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5444,
+      "Name": "化粧池",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n引田城にある池。\n女中たちが化粧の際に\n利用していた。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5445,
+      "Name": "観蔵井",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n太田七井の一つ。\n名水として、太田御殿\nでも用いられた。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5446,
+      "Name": "マルドナーダの港",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nバルニバービ国にある\n港。ラグナグ島や、\n魔法使い達の島への\n船が出ている。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5447,
+      "Name": "樋の水",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n七尾城にある水源。\n水が尽きる事なく\n湧き出すと伝えられ\nている。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5448,
+      "Name": "桂川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n淀城の傍を流れる川。\n淀川を構成する河川\nの一つ。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5449,
+      "Name": "御前清水",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n春日山城にある水源。\n上杉謙信が出陣する\n際には、この清水を\n飲んだと伝えられる。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5450,
+      "Name": "ソルジェート湾",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nアラゴネーゼ城の\n近くにある湾。\n海の中から温泉が\n湧き出している。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5451,
+      "Name": "丸亀二ノ丸井戸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n丸亀城の二ノ丸にある\n井戸。石垣を築いた職\n人が、井戸の中で暗殺\nされたとも伝えられる。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5452,
+      "Name": "コンウィ川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nコンウィ城の傍を\n流れる川。コンウィの\n名は古いウェールズ語\nに由来している。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5453,
+      "Name": "レーテー",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n冥府を流れる川。\n川の水を飲んだものは\n完璧な忘却を体験する。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5454,
+      "Name": "龍王社祀溜井",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n龍王山城南城の水源。\n水に恵まれていたのは\n龍王社を祀るための\n溜井のおかげである。\n%c[ffd700]近畿城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5455,
+      "Name": "江戸湾",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n江戸氏館から見渡す\nことのできる湾。\n豊富な資源と堅牢な\n防衛の要であった。\n%c[ffd700]関東・甲信越城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5456,
+      "Name": "厳島瀬戸内海岸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n厳島を臨む海岸。\n島そのものが神として\n崇められている。\n%c[ff0000]他の施設と効果の\n一部が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5457,
+      "Name": "アルジェシュ川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nポエナリ城の傍を\n流れる川。\nヴラド最初の妻が\n身を投げたといわれる。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5458,
+      "Name": "太夫殿井戸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n観音寺城の井戸。\n本丸の北側に\n設けられている。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5459,
+      "Name": "肱川河川敷",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n比志城行きつけの良く\n釣れると評判の河川敷。\n清掃が行き渡っており\n散策地としても人気。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5460,
+      "Name": "セノーテ",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nシバルバーへの入り口\nと言われる神秘の泉。\n儀式のために無数の\n生贄が捧げられた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5461,
+      "Name": "味原池",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n真田丸の南堀付近の池。\n合戦時には敵の進行を\n妨げる役割を果たした。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5462,
+      "Name": "広瀬川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n千代城の近くにある川。\n城の防衛線でもあり、\n川をはさんだ東側には\n城下町が広がっている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5463,
+      "Name": "王国の噴水",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n王城に存在する噴水。\n清らかに澄んだ水が\n流れている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5464,
+      "Name": "玉の井",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n神話の時代からあると\nされる古い井戸。\n竜宮城の門前の井戸だ\nったと伝えられている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5465,
+      "Name": "女木港",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n桃太郎の伝説が\n残る島の港。\n無数の鬼が住まう\nと伝わる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5466,
+      "Name": "忍沼",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n忍城を囲う沼。\n広い沼地を\n利用する事により、\n強固な守りを実現した。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5467,
+      "Name": "カナートス",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n神々の女王ヘラの\n若返りの泉。\n労苦や負の念を\n洗い流すことができる。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5468,
+      "Name": "アブズ",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nヌンから最初に生まれ\nたという原初の海。\nアプスの名でも\n呼ばれる。\n%c[ffd700]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5469,
+      "Name": "白兎海岸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n鹿野城の傍にある海岸。\nウサギを縁結びの象徴\nとして祀った白兎神社\nが建っている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5470,
+      "Name": "基肄つつみ",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n基山の最頂部にある\n窪地。水資源確保\nの為作られた。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5471,
+      "Name": "ヴァイタルナ",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n死後に存在する罪人が\n渡る川。何かを犠牲に\nしなければ渡ること\nは出来ない。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5472,
+      "Name": "中津川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n中津城の傍を流れる川。\n中津城の西方に位置し\n強固な守りを実現した。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5473,
+      "Name": "悲恋の噴水",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n学園内にある噴水。\nここでは悲恋の物語が\nカステル・ヴェッキオ\nによって幾度も\n繰り返されている。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5474,
+      "Name": "笙の川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n敦賀城の近くを\n流れている川。\n名前は川に生えている\n細竹が笙の材料となった\n事が由来となっている。\n%c[ffd700]刀城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5475,
+      "Name": "姫の井戸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n武田信玄の居住にある井戸。\n武田信玄の娘が誕生した際\n産湯として使用され\nその名が付いたと言われる。\n%c[ffd700]戦棍城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5476,
+      "Name": "水谷川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n鹿野城の横を流れる川。\n水谷川を利用して\n水堀が作られた。\n%c[ffd700]槍城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5477,
+      "Name": "湯釜薬師",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n長きに渡って使用された\n日本最古の湯釜。\n現在は湯釜薬師として\n祀られている。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5478,
+      "Name": "ロクヴァ川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nプレッドヤマ城の傍を\n流れる川。\nその川は秘密の通路が眠る\n鍾乳洞へと続いている。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5479,
+      "Name": "三ノ丸井戸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n肥前名護屋城の三ノ丸に\nあった井戸。\n自然の割石を積み上げて\n造られた石組となっている。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5480,
+      "Name": "ガルボダカ",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n幾重にも重なる地下世界の\n最深部に存在する広大な海。\n宇宙の底とも表現される。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5481,
+      "Name": "アケロン河",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n地獄との境界にある河。\n渡し守がこの河を越えて\n冥府へと死者の魂を運ぶ\nとされる。\n%c[ffd700]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5482,
+      "Name": "キーム湖",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nヘレンキームゼー城を\n囲む大きな湖。\nその美しさから多くの\n画家が筆を執った。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5483,
+      "Name": "盃井戸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n長篠城近郊にあり\n武田軍の重臣たちが\n大通寺の泉の水で別れの\n水盃を交わしたと伝え\nられている泉。\n%c[ffd700]鉄砲城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5484,
+      "Name": "ナスール湖",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n「眼の湖」を意味する湖。\n勇者がバロルをたぶらかし\n目を潰してできたと\n伝わる。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5485,
+      "Name": "殿井手",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n三刀屋城の水の手として\n作られた水路｡\n山の中腹を掘って\n川上から水を引いている｡\n%c[ffd700]中国・四国城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5486,
+      "Name": "血湧きの井戸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n元和江戸城の\n七不思議のひとつ。\n井戸から御湯殿へと水を\n汲むと真赤な色に変わった。\n新たに井戸を掘っても繰り\n返したため､遠くの井戸から\n水を運ぶようになった。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5487,
+      "Name": "刻詩の井戸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n水源の無かった城塞都市\nルシュノフの中に掘られた\n井戸｡井戸の奥には宝物が\nあるという逸話がある。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5488,
+      "Name": "摩訶池",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n成都城近郊にある池。\n庭園景観としてだけ\nではなく､生活用水の確保\nという機能も備えていた。\n%c[ff0000]他の施設と効果の\n一部が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5489,
+      "Name": "人吉温泉",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n人吉城近郊の球磨川沿いに\n分布する温泉地。\n相良為続が湯治の為に\n立ち寄ったとされる。\n%c[ffd700]刀城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5490,
+      "Name": "聖杯の井戸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\nグラストンベリー近郊に\nある井戸。\n湧き続ける水は聖なる水\nとして癒しの力も持つと\nいわれる。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5491,
+      "Name": "金銘水",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n稲葉山城にある軍用井戸。\n雨水を貯めるための\n貯水池のような役割を\n果たす。\n%c[ffd700]刀城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5492,
+      "Name": "常夏の海",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n夏の日差しにあてられて\nキラキラと輝く海。\nその青さに全ての人が\n暑さを忘れる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5493,
+      "Name": "変若水の井戸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n若返りの水があると\n言われている井戸｡\n月の神が持っており\n霊薬としても伝わる｡",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5494,
+      "Name": "抜堤川",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n鹿野城の城下を流れる川。\n時の城主によりインドの\n仏跡に因み名付けられた\nことで知られる。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5495,
+      "Name": "城沼",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n館林城が天然の要害として\n利用していた沼。\n季節ごとに様々な花が咲き\n花見処としても伝わる。\n%c[ff0000]他の施設と効果の\n一部が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5496,
+      "Name": "スクサイ海岸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n異界のモンスターと協力\nするものが､ならず者たち\nを追い払ったとされる海岸｡",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 5497,
+      "Name": "首洗いの井戸",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n討ち取った名のある武士の\n首を洗うために作られた\n郡上八幡城の井戸。\n清められた後は\n首実検に供されたという。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 1
+    },
+    {
+      "ID": 6000,
+      "Name": "木造鯱",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n木製の鯱瓦。火除けの\nおまじないとされる。\n%c[ffd700]計略持ち以外装備不可%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6010,
+      "Name": "木造鯱(近接)",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n改良された木造鯱。制\n限が加わった代わりに、\n性能が向上している。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6020,
+      "Name": "木造鯱(遠隔)",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n改良された木造鯱。制\n限が加わった代わりに、\n性能が向上している。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6100,
+      "Name": "鯱瓦",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n大棟の両端などに付け\nられる想像上の動物を\n象った瓦。\n%c[ffd700]計略持ち以外装備不可%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6110,
+      "Name": "鯱瓦(近接)",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n改良された鯱瓦。制限\nが加わった代わりに、\n性能が向上している。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6120,
+      "Name": "鯱瓦(遠隔)",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n改良された鯱瓦。制限\nが加わった代わりに、\n性能が向上している。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6200,
+      "Name": "銅板張木造鯱",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n銅板を張る事で内部の\n腐食を防いだ鯱。耐久\n性に優れていた。\n%c[ffd700]計略持ち以外装備不可%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6210,
+      "Name": "銅板張木造鯱(近接)",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n改良された銅板張木造\n鯱。装備制限の代わり\nに性能が向上している。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6220,
+      "Name": "銅板張木造鯱(遠隔)",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n改良された銅板張木造\n鯱。装備制限の代わり\nに性能が向上している。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6201,
+      "Name": "銅鯱(九州･沖縄)",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n青銅で鋳造された鯱。\n雨風で劣化しにくい\n性質を持つ。\n%c[ffd700]九州・沖縄城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6202,
+      "Name": "銅鯱(中国･四国)",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n青銅で鋳造された鯱。\n雨風で劣化しにくい\n性質を持つ。\n%c[ffd700]中国・四国城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6203,
+      "Name": "銅鯱(近畿)",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n青銅で鋳造された鯱。\n雨風で劣化しにくい\n性質を持つ。\n%c[ffd700]近畿城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6204,
+      "Name": "銅鯱(北海道･東北)",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n青銅で鋳造された鯱。\n雨風で劣化しにくい\n性質を持つ。\n%c[ffd700]北海道・東北城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6205,
+      "Name": "銅鯱(関東･甲信越)",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n青銅で鋳造された鯱。\n雨風で劣化しにくい\n性質を持つ。\n%c[ffd700]関東・甲信越城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6206,
+      "Name": "銅鯱(北陸･東海)",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n青銅で鋳造された鯱。\n雨風で劣化しにくい\n性質を持つ。\n%c[ffd700]北陸・東海城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6400,
+      "Name": "名古屋金鯱",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n名古屋城天守にある鯱。\n純金製で、雌雄一対に\nなっている。\n%c[ffd700]計略持ち以外装備不可%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6401,
+      "Name": "大極殿金色鴟尾",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n大極殿の屋根の両端を\n飾る鴟尾。青銅の上に\n金箔が押されている。\n%c[ffd700]計略持ち以外装備不可%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6402,
+      "Name": "姫路城鯱瓦",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n姫路城天守にある鯱。\n黒瓦とも呼ばれる、い\nぶし瓦で造られている。\n%c[ffd700]計略持ち以外装備不可%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6403,
+      "Name": "日主祠鴟吻",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n成山頭にある祠に備え\nられた鴟吻。龍の一種\nを模している。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6404,
+      "Name": "金箔赤彩人形付鬼瓦",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n甲府城に用いられた金\n箔瓦。魔除けの人形が\nあしらわれている。\n%c[ffd700]関東・甲信越城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6405,
+      "Name": "白竜賞杯",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n白竜が象られた、燦\n然と輝く賞杯。苗木\n城たちの勝利の証。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6406,
+      "Name": "四代目江戸金鯱",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n四代目江戸城の鯱。\n天守に戴く鯱は、\n金色に輝いている。\n%c[ffd700]架空城のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6407,
+      "Name": "犬山桃瓦",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n犬山城の天守を飾る、\n桃を象った瓦。桃は\n邪気を払うとされる。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6408,
+      "Name": "トリトン像",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\nペーナ宮殿の守護像。\n海神トリトンが門の\n上部から見守っている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6409,
+      "Name": "ライブ用大型モニター",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\nアイドル達が大きく\n映し出されるモニター。\nアイドル達の笑顔が\nよく見える。\n%c[ffd700]計略持ち以外装備不可%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6410,
+      "Name": "佐土原金箔鯱瓦",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n佐土原城天守に\n存在した鯱瓦。\n金箔で装飾が\nされている。\n%c[ffd700]槌城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6411,
+      "Name": "FUSHIMIﾐﾗｰﾎﾞｰﾙ",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\nアイドル達を眩く\n照らすミラーボール。\nその光は伏見城三姉妹を\nより美しく輝かせる。\n%c[ffd700]計略持ち以外装備不可%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6412,
+      "Name": "金烏鯱瓦",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n金烏城の天守に飾られる鯱。\n火災から城を守るお守りの\n役割と、権威の象徴\nとしての役割を担っている。\n%c[ffd700]中国・四国城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6413,
+      "Name": "千鳥木造鯱",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n千鳥城の天守閣を飾る\n木彫り銅板張りの鯱｡\n向かって左の雄は\n鱗が荒い｡\n%c[ffd700]計略持ち以外装備不可%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6414,
+      "Name": "安土金鯱瓦",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n安土城の天主に設置された\n鯱｡火事の際に水を噴き出し\n火を消すという伝説が\n伝わる。\n%c[ffd700]近畿城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6415,
+      "Name": "絢爛花瓦",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n豪華絢爛な装飾が\n施された花瓦｡\n魔除けとして\nとても重宝されている｡\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 6416,
+      "Name": "パーソンズ・タービン",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\nドレッドノートに搭載\nされたタービン。\nイギリスの技術者が\n開発した蒸気タービンを\n元としている。\n%c[ffd700]計略持ち以外装備不可%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7100,
+      "Name": "木祠",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n木で造られた祠。\n神や先人を祀っている\n小さなやしろ。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7101,
+      "Name": "古祠(九州･沖縄)",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n九州・沖縄地域に\n点在する祠。厄災の\n往来を防ぐ道祖神が\n祀られている。\n%c[ffd700]九州・沖縄城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7102,
+      "Name": "古祠(中国･四国)",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n中国・四国地域に\n点在する祠。厄災の\n往来を防ぐ道祖神が\n祀られている。\n%c[ffd700]中国・四国城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7103,
+      "Name": "古祠(近畿)",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n近畿地域に\n点在する祠。厄災の\n往来を防ぐ道祖神が\n祀られている。\n%c[ffd700]近畿城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7104,
+      "Name": "古祠(北海道･東北)",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n北海道・東北地域に\n点在する祠。厄災の\n往来を防ぐ道祖神が\n祀られている。\n%c[ffd700]北海道・東北城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7105,
+      "Name": "古祠(関東･甲信越)",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n関東・甲信越地域に\n点在する祠。厄災の\n往来を防ぐ道祖神が\n祀られている。\n%c[ffd700]関東・甲信越城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7106,
+      "Name": "古祠(北陸･東海)",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n北陸・東海地域に\n点在する祠。厄災の\n往来を防ぐ道祖神が\n祀られている。\n%c[ffd700]北陸・東海城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7110,
+      "Name": "木祠(近接)",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n改良された木祠。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7120,
+      "Name": "木祠(遠隔)",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n改良された木祠。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7200,
+      "Name": "石祠",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n石で造られた祠。\n屋根の形や入口の位置\nに違いが見られる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7210,
+      "Name": "石祠(近接)",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n改良された石祠。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7220,
+      "Name": "石祠(遠隔)",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n改良された石祠。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7400,
+      "Name": "聖ヴィート大聖堂",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nプラハ城内に建つ教会。\n街のどこからでも見え\nる程高い尖塔がある。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7401,
+      "Name": "聖ピーター礼拝堂",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nロンドン塔内にある礼\n拝堂。タワー・グリー\nンで処刑された人々が\n埋葬されている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7402,
+      "Name": "サン・ピエトロ大聖堂",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n聖ペテロを祀る大聖堂。\nサンタンジェロ城と秘\n密の通路で繋がってい\nる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7403,
+      "Name": "摠見寺三重塔",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n安土城の百々橋口にあ\nる塔。摠見寺の創建時\nに甲賀から移築された。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7404,
+      "Name": "薬師寺東塔",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n薬師寺に存在する木造\nの三重塔。その造りは\n凍れる音楽と評される。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7405,
+      "Name": "鑁阿寺本堂",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n足利義兼によって建立\nされた寺院。大日如来\nを本尊としている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7406,
+      "Name": "パルテノン神殿",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nアテナイ・アクロポリ\nスにある神殿。アテナ\nイの守護神であるアテ\nナが祀られている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7407,
+      "Name": "蛭子堂",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n足利氏館にある御霊屋。\n足利義兼の正室である\n北条時子が祀られて\nいる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7408,
+      "Name": "アレクサンドルの円柱",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n冬宮殿の広場に存在す\nる記念碑。アレクサン\nドル1世を称えて建造\nされた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7409,
+      "Name": "ｼｬﾝﾃｨｲ城礼拝堂",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nシャンティイ城の\n中にある礼拝堂。\n礼拝堂の奥には、\nコンデ家の墓標が\n安置されている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7410,
+      "Name": "武侯祠",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n諸葛亮を祀った廟。\n廟の名は諸葛亮の諡で\nある忠武侯に由来する。\n%c[ffd700]石弓城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7411,
+      "Name": "ホルガー・ダンスク像",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nクロンボー城の地下\nにある英雄の石像。\n国が危機に瀕した時\nに目覚めると伝えら\nれている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7412,
+      "Name": "隧道の礼拝堂",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nアラゴネーゼ城のト\nンネルにある礼拝堂。\nイスキア島の聖人が\n祀られている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7413,
+      "Name": "白帝廟",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n白帝城にある廟。\n公孫述が祀られていた\nが、後に劉備を祀る廟\nとなった。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7414,
+      "Name": "ﾏｰﾁｬｰｼｭ聖堂",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nブダ城内に建てられた\n聖堂。増築を命じた\nマーチャーシュ1世に\nちなんで呼ばれている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7415,
+      "Name": "明智塚",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n明智光秀を弔う塚。\n光秀が愛用した脇差が\n共に埋められていると\n伝えられている。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7416,
+      "Name": "富士権現堂",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n坂戸城の山頂に建て\nられた、富士権現\nを祀る社。\n%c[ffd700]北海道・東北城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7417,
+      "Name": "石田群霊碑",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n石田三成の為の慰霊碑。\n彦根藩11代藩主の\n意向により、佐和山に\n建立された。\n%c[ffd700]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7418,
+      "Name": "林檎の教会",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n岩山を掘って造られた、\n岩窟教会。入口に林檎\nが植えてあった事から\n林檎の教会と呼ばれる\nようになった。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7419,
+      "Name": "エアブズ",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n水の家を意味する寺院。\nメソポタミアの神が\n祀られていた。\n%c[ffd700]戦棍城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7420,
+      "Name": "天童殿",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n天童山にある祠。\n天から二人の童子が\n降り立ち、天童山の\n名が付いたという。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7421,
+      "Name": "東嶽廟",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n泰山の神である、\n東嶽大帝を祀る廟。\n泰山には死者の魂が\n集うという。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7422,
+      "Name": "オシレイオン",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nオシリス神を祀る\n神殿。オシリス神の\n空墓として建築された。\n%c[ffd700]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7423,
+      "Name": "二十六夜神社",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n烏城の天守にある社。\n二十六夜神が\n祀られている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7424,
+      "Name": "松倉八幡堂社殿",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n松倉城にある祠。\n本丸の南の曲輪に\n座している。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7425,
+      "Name": "小田原天守八尊像",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n天守閣に祀られた像。\n箱根山を神仏に見立て\n祭祀空間となっている。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7426,
+      "Name": "足利大成殿",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n足利学校の中にある廟。\n儒教の始祖である、\n孔子が祀られている。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7427,
+      "Name": "東京分祠",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n六本木に位置する、\n出雲大社の分祠。\n%c[ffd700]関東・甲信越城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7428,
+      "Name": "卜全塚",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n長嶋一向一揆にて殿を\n務めた氏家卜全の墓。\n長島門徒の反撃により\n敗走した。\n%c[ffd700]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7429,
+      "Name": "選定の岩",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n王の資格を持たない者\nには、決して抜けない\n聖剣が刺さっていた岩。\n%c[ffd700]架空城のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7430,
+      "Name": "ｼｭｳﾞｪﾘｰﾝ城礼拝堂",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nシュヴェリーン城内の\n礼拝堂。精巧な彫刻や\n夜空のような天井に\n心奪われる。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7431,
+      "Name": "夜泣き観音",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n立花山の麓にある祠。\n子供の夜泣きを抑えた\n観音が祀られている。\n%c[ff0000]他の施設と効果の\n一部が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7432,
+      "Name": "プレーンライン表彰棚",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n城塞都市ﾛｰﾃﾝﾌﾞﾙｸが\n得た表彰盾が置かれて\nいる。多様な栄光が\n並ぶ様は宝石箱のよう。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7433,
+      "Name": "花御所門守祠",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n室町第にある祠。\n鬼門の方角を守るため\nに造られた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7434,
+      "Name": "ソッチィ・ハ",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nシバルバーにある館。\n英雄の首をも切断する\n残忍なコウモリの神が\n住まう。\n%c[ffd700]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7435,
+      "Name": "光り輝く竹",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n夜、辺りが暗くなると\n神々しい光を放つ\nなんとも不思議な竹。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7436,
+      "Name": "エンキ神殿",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n獣神を奉る神殿。\n神殿内部は迷宮のよう\nに入り組んでおり様々\nな試練が待ち受ける。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7437,
+      "Name": "竜宮洞穴",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n富士山麓にある洞穴。\n洞穴内の祠では、竜宮\nに住まう豊玉姫命が\n祀られている\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7438,
+      "Name": "成都武侯祠",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n蓉城にある祠。\n諸葛亮を祀る\n霊廟としての\n役割をもつ。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7439,
+      "Name": "鬼ヶ島天満宮",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n女木島にある祠\n鬼の犠牲となった\n人々の魂が\n祀られている。\n%c[ffd700]架空城のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7440,
+      "Name": "三王墓",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n王への敵討ちの歴史を\n持つ墓。横暴な王と\n刀鍛冶の子、旅人の\n3人が埋められている。\n%c[ffd700]双剣城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7441,
+      "Name": "多気阿弥陀堂",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n多気城にある阿弥陀堂。\n中央堂とその東西に\n翼廊がある。\n%c[ffd700]石弓城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7442,
+      "Name": "デルポイの三脚台",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n神の神託を伝える\nために巫女が座る三脚。\n巫女が不在の時は\n月桂樹の枝が置かれた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7443,
+      "Name": "百万一心石碑",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n吉田郡山城の石碑。\n巨石には百万一心\nと彫られている。\n%c[ffd700]双剣城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7444,
+      "Name": "大杉様",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n犬山城にある大杉。\n落雷や台風から\n犬山城を守り続けた。\n%c[ffd700]北陸・東海城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7445,
+      "Name": "黄大仙祠",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n九龍地区にある寺院。\n病気や平癒祈願の\n寺院として信仰を\n集めている。\n%c[ffd700]拳城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7446,
+      "Name": "里見忠義主従之廟",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n境内にある廟。\n里見忠義公の終焉の\n地に建てられた。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7447,
+      "Name": "長谷堂観音",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n長谷堂の本尊として\n祀られている観音像。\n胎内仏として、木像が\n納められている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7448,
+      "Name": "カルパヴリクシャ",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nアマ―ラーヴァティに\nあるとされる神木。\nあらゆる願いを叶える\nと伝えられている。\n%c[ffd700]架空城のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7449,
+      "Name": "獣神の祠",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n獣神を祀っている祠。\n神々しいオーラを\n放っており、中には\n獣神が眠っている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7450,
+      "Name": "大宰府漏刻",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n太宰府にある水時計。\n時を守り\n民に伝えていた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7451,
+      "Name": "四つ鬼のアンプ",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n四つ鬼のステッカーが\n貼られた、千方窟が\n使用しているアンプ。\n使いすぎて偶に\nガリが出てしまう。\n%c[ffd700]投剣城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7452,
+      "Name": "安陽王祠",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nコーロア城を築城した\n王の祠。\n金色の亀の力を借りて\n城を築いた。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7453,
+      "Name": "山中念仏石",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n大きく突き出した石と\nその前に建てられた碑。\n旅の行き倒れを宗閑寺が\n供養し、建てられた。\n%c[ffd700]槌城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7454,
+      "Name": "雑賀妙見堂",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n雑賀衆が拠点とした\n妙見山の頂上にある御堂。\n妙見菩薩が祀られている。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7455,
+      "Name": "ブリリアント鍾乳石",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nポストイナのダイヤモンド\nとも言われる巨大な鍾乳石。\n真っ白な表面がキラキラと\n輝く姿は見る者を魅了する。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7456,
+      "Name": "長岡宮宝幢",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n政治の中心となった大極殿前\nにある宝幢。七つある宝幢に\nは四神の絵がはためき華やか\nな飾りが付けられていた。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7457,
+      "Name": "火焔の孔",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n永劫に燃え盛る地獄の炎が\n噴き出し続ける紅蓮の孔。\nその業火には堕天使さえも\n近づけない。\n%c[ffd700]盾城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7458,
+      "Name": "知恵の樹",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n楽園の中央に2本ある木の\nうちのひとつ。\nこの木の果実を食べた\nとある男女は、後に楽園を\n追放されてしまった。\n%c[ff0000]他の施設と効果の\n一部が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7459,
+      "Name": "鏡の回廊",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nヘレンキームゼー城にある\n巨大な回廊。\n張り巡らされた鏡や豪華な\n装飾が優雅さを漂わせる。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7460,
+      "Name": "始皇廟",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n秦の始皇帝が眠る\nとされる場所。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7461,
+      "Name": "大楠王将",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n将棋部が部活で使用する\n巨大な将棋の駒。\n普段から持ち上げている\nため将棋部の足腰は強い。\n%c[ffd700]拳城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7462,
+      "Name": "天主閣セット",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nステージの真ん中に立つ\n天主閣を模したセット。\nあづにゃんもーどで\n天下統一の時代を築く。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7463,
+      "Name": "黄金の筏",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n新たに族長になった者が\n体に金粉をまぶし\n神官と共に筏で\n湖の中心に進み\n儀礼を行っていたと伝わる。\n%c[ffd700]鞭城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7464,
+      "Name": "ダノター礼拝堂",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nダノター城にある礼拝堂。\n聖ニニアンによって\n設立されたと伝わる。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7465,
+      "Name": "三日月石",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n人吉城の築城の際に\n出土した三日月模様の石。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7466,
+      "Name": "マニラ大聖堂",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nイントラムロス内部にある\n1571年創建の大聖堂。\nアジア最大級のパイプ\nオルガンを擁する。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7467,
+      "Name": "長岡京朝堂院",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n長岡京の宮の中心にある\n国家の政務・儀式を行う\n場所｡\n%c[ffd700]近畿城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7468,
+      "Name": "迎春門松",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n正月に家の門前などに\n立てられる松や竹を用いた\n正月飾り｡",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7469,
+      "Name": "フラウエン教会",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n城塞都市ﾆｭｰﾙﾝﾍﾞﾙｸにある\n教会｡カール4世と7人の\n選帝候を象った仕掛け時計\nが設けられている｡\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7470,
+      "Name": "冬のかまくら",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n真っ白な新雪で作られた\n立派なかまくら。\n地域によっては\n水神様を祀る祭壇としての\n用途もある。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7471,
+      "Name": "ハギア・ソフィア大聖堂",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\nコンスタンティノープルに\n建てられた大聖堂｡\n「聖なる叡智」を意味する｡\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7472,
+      "Name": "アダマス像",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n異界の女神をかたどった\nとされる石像｡\n人々の祈りによって\n女神の似姿に変化すると\n伝わる｡",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7473,
+      "Name": "后土祠",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n幽都の統治者をまつる祠｡\nその配下は幽都の門の\n監視を務めており､邪悪な\n人間を追いかけ､角で刺す\nと伝わる｡\n%c[ff0000]他の施設と効果の\n一部が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 7474,
+      "Name": "金の成る木",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n家康公が富貴を\n得られる木として\n久能山城に祀られている祠。\n枝一つ一つに\n意味が込められている。\n%c[ff0000]他の施設と効果の\n一部が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8300,
+      "Name": "潮見櫓",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の回復が上昇%c[ffffff]\n福岡城三の丸北西角に\n備えられた櫓。玄界灘、\n博多湾を監視する役割\nを持っていたとされる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8301,
+      "Name": "辰巳附櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\n松本城天守群のうちの\n一棟。南東に造られた\nため、辰巳の名称が付\nけられた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8302,
+      "Name": "宇土櫓",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\n熊本城に存在する櫓。\n「三の天守」と呼ばれ\nるほどの高さを誇る。\n%c[ffd700]九州・沖縄城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8303,
+      "Name": "二重櫓",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の防御が上昇%c[ffffff]\n二層構造の櫓。最も基\n本的な造りで、矢を収\nめたり射る場所として\n利用されていた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8304,
+      "Name": "三重櫓",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の防御が上昇%c[ffffff]\n三層構造の櫓。二重櫓\nよりも風格があり、天\n守の代わりとして利用\nされることもあった。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8305,
+      "Name": "台所櫓",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の回復が上昇%c[ffffff]\n大洲城に存在する櫓。\n籠城時の台所として利\n用されていた。\n%c[ffd700]中国・四国城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8306,
+      "Name": "彦根天秤櫓",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n彦根城に存在する櫓。\n２方向を見張るため、\n両隅に櫓が設けてある。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8307,
+      "Name": "千貫櫓",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n落とした者に千貫文を\n与えると言われたこと\nが由来の重要な櫓。\n%c[ffd700]近畿城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8308,
+      "Name": "弘前辰巳櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の防御が上昇%c[ffffff]\n弘前城に存在する櫓。\n藩主が山車行列を観覧\nする際にも利用された。\n%c[ffd700]北海道・東北城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8309,
+      "Name": "ガイの塔",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃が上昇%c[ffffff]\nウォリック城にある塔。\n有名な物語の騎士にち\nなんで命名された。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8310,
+      "Name": "西川手櫓",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\n上田城に存在する櫓。\n尼ヶ淵からの浸食を防\nぐための石垣がある。\n%c[ffd700]関東・甲信越城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8311,
+      "Name": "橋爪門続櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\n金沢城にある物見櫓。\n二の丸へ向かう人を監\n視するため利用された。\n%c[ffd700]北陸・東海城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8312,
+      "Name": "化粧櫓",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の防御が上昇%c[ffffff]\n姫路城に存在する櫓。\n徳川家康の孫、千姫\nのために建てられた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8313,
+      "Name": "UPX",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\nアキバに存在する建築\n物。塔のように高く、\n透明な壁が張り巡らさ\nれている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8314,
+      "Name": "井戸櫓",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n%c[afeeee]城娘の回復が上昇%c[ffffff]\n姫路城にある櫓。\n内部に井戸が存在し、\n籠城の際に活用したと\nされる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8315,
+      "Name": "火薬塔",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の防御が上昇%c[ffffff]\nプラハ城にある塔。\n火薬の保管所として使\nわれ、プラハ城への道\nは王の道と呼ばれる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8316,
+      "Name": "名古屋未申櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n名古屋城西南隅の櫓。\n二重櫓に見えるが、\n三階構造となっている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8317,
+      "Name": "名古屋辰巳櫓",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n%c[afeeee]城娘の回復が上昇%c[ffffff]\n名古屋城東南隅の櫓。\n見事な破風の装飾と、\n風格ある構えを持つ。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8318,
+      "Name": "名古屋戌亥櫓",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の防御が上昇%c[ffffff]\n名古屋城西北隅の櫓。\n名古屋城にある中で\n最も大きな櫓。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8319,
+      "Name": "肥前名護屋城能舞台",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\n肥前名護屋城に存在し\nた能舞台。豊臣秀吉自\nらが能を舞ったという。\n%c[ffd700]歌舞城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8320,
+      "Name": "鮫ヶ尾城米蔵",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の回復が上昇%c[ffffff]\n鮫ヶ尾城にある米蔵。\n兵糧米が大量に貯蔵\nされている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8321,
+      "Name": "ダノター城城塔",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\nダノター城にある城塔。\n城主が居住する部屋が\n備えられていた。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8322,
+      "Name": "太鼓門櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の回復が上昇%c[ffffff]\n彦根城にある門櫓。櫓\nの背面の壁が解放され\nた珍しい構造を持つ。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8323,
+      "Name": "正倉院正倉",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n東大寺にある正倉。\n天平時代に設けられた。\n%c[ffd700]法術城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8324,
+      "Name": "トロイツカヤ塔",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\nクレムリンにある塔。\nクレムリンの中で最高\nの高さを持つ。\n%c[ffd701]大砲城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8325,
+      "Name": "鑁阿寺鐘楼",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n足利氏館にある鐘楼。\n禅宗様の特徴を持つ。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8326,
+      "Name": "井戸の塔",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の回復が上昇%c[ffffff]\nカルルシュテイン城に\nある塔。塔内には深い\n井戸が備えられている。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8327,
+      "Name": "多聞櫓(九州･沖縄)",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n長屋状の建物で構築\nされた櫓。石垣の上\nに築かれている。\n%c[ffd700]九州・沖縄城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8328,
+      "Name": "多聞櫓(中国･四国)",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n長屋状の建物で構築\nされた櫓。石垣の上\nに築かれている。\n%c[ffd700]中国・四国城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8329,
+      "Name": "多聞櫓(近畿)",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n長屋状の建物で構築\nされた櫓。石垣の上\nに築かれている。\n%c[ffd700]近畿城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8330,
+      "Name": "多聞櫓(北海･東北)",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n長屋状の建物で構築\nされた櫓。石垣の上\nに築かれている。\n%c[ffd700]北海道・東北城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8331,
+      "Name": "多聞櫓(関東･甲越)",
+      "Explanation": "%c[afeeee]城娘の回復が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n長屋状の建物で構築\nされた櫓。石垣の上\nに築かれている。\n%c[ffd700]関東・甲信越城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8332,
+      "Name": "多聞櫓(北陸･東海)",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n長屋状の建物で構築\nされた櫓。\n%c[ffd700]北陸・東海城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8333,
+      "Name": "富士見櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\n江戸城にある櫓。\n天守の代わりとして\nも使用された。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8334,
+      "Name": "舟入櫓",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\n三原城にある櫓。\n海に面した城の為、\n舟入が設けられていた。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8335,
+      "Name": "のっぽのヘルマン",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の回復が上昇%c[ffffff]\nトームペア城にある塔。\n塔の頂上には国旗が\n掲げられている。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8336,
+      "Name": "芳流閣",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n滸我御所にある櫓。\n三層の楼閣であり、\n利根川に面している。\n%c[ffd700]架空城のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8337,
+      "Name": "アヌのジッグラト",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n城塞都市ウルクに\nある巨大な聖塔。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8338,
+      "Name": "オランダ櫓",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n鹿野城の櫓。朱印船貿\n易の影響で名が付いた。\n%c[ffd700]中国・四国城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8339,
+      "Name": "姫路櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n淀城にある櫓。\n姫路城の櫓が移築\nされたと伝わる。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8340,
+      "Name": "鶴ヶ岡御隅櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n鶴ヶ岡城にある櫓。\n2か所に御隅櫓が\n設けられていた。\n%c[ffd700]北海道・東北城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8341,
+      "Name": "パン焼きの塔",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\nコンウィ城にある、\n海岸に向けた監視塔。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8342,
+      "Name": "鞠智鼓楼",
+      "Explanation": "%c[afeeee]城娘の防御が上昇%c[ffffff]\n%c[afeeee]城娘の回復が上昇%c[ffffff]\n鞠智城の太鼓櫓。\n太鼓の音色は見張りや\n時計として使われた。\n%c[ffd700]九州・沖縄城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8343,
+      "Name": "江戸伏見櫓",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の防御が上昇%c[ffffff]\n元和江戸城の二重櫓。\n両横に大規模な多聞\nをもち防御に優れる。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8344,
+      "Name": "清明台櫓",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n宇都宮城の櫓。\n天守の代用として\n扱われていた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8345,
+      "Name": "お茶ヶ崎物見櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n長屋状の建物で構築\nされた櫓。石垣の上\nに築かれている。\n%c[ffd700]北陸・東海城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8346,
+      "Name": "着見櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n小倉城にある櫓。\n渡航船を監視する\nために設置された。\n%c[ffd700]九州・沖縄城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8347,
+      "Name": "御金櫓",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n今治城にある櫓\n大砲を発射するための\n大狭間がある。\n%c[ffd700]中国・四国城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8348,
+      "Name": "天童物見櫓",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n天童城の物見櫓。\n敵や入城者を探る\nために利用された。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8349,
+      "Name": "桜田巽櫓",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\n四代目江戸城の櫓。\n本丸から見て辰巳の\n濠の角にあることから\n名付けられた。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8350,
+      "Name": "名誉の塔",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\nチットールガル\nフォートにある塔。\nティールタンカラの像\nが彫られている。\n%c[ffd700]双剣城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8351,
+      "Name": "鷲の塔",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の防御が上昇%c[ffffff]\nカーナヴォン城の塔。\n鷲の塔からは\nカーナーヴォンの街を\n一望することができる。\n%c[ffd700]盾城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8352,
+      "Name": "東寺五重塔",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n東寺にある五重塔。\n内部には金剛界四仏像\nと八大菩薩像が安置\nされている。\n%c[ffd700]槍城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8353,
+      "Name": "グラント・タワー",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\nアーカート城の北端を\n守っている塔。\n5階建てになっており\n見張りに利用された。\n%c[ffd700]陣貝城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8354,
+      "Name": "国見櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n高取城にある櫓。\n国見櫓からは\n奈良盆地を一望\nすることができる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8355,
+      "Name": "大宰府東楼",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n大宰府政庁に\n存在した東楼。\n大宰府と民の\n安静を保った。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8356,
+      "Name": "鳴り響く体育館",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n菩提山城が太鼓を\n練習している体育館。\n力強い音は聴く者を\n鼓舞する力を持つ。\n%c[ffd700]法術城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8357,
+      "Name": "飯田丸五階櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\n熊本城を守護する櫓。\n規模は小さいが\n水堀で固められており\n堅牢な造りだった。\n%c[ffd700]九州・沖縄城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8358,
+      "Name": "バロルの巨塔",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\nトーリー島にある巨塔\nと呼ばれる大岩。\nバロルは巨塔に娘を\n幽閉した。\n%c[ffd700]戦棍城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8359,
+      "Name": "鯛崎出丸",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\n能島城の南にある小島。\n海からの侵入を防いだ。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8360,
+      "Name": "松本月見櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\n松本城にある月見櫓。\n夜空には美しき\n月が映る。\n%c[ffd700]平城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8361,
+      "Name": "稲荷櫓",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n甲府城を守護する櫓。\n鬼門である北東に\n位置していた。\n%c[ff0000]他の施設と効果が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8362,
+      "Name": "数寄屋櫓",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n甲府城の南東に\n構築された櫓。\n見張りなどに使われた。\n%c[ffd700]本城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8363,
+      "Name": "魔女の塔",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\nコッヘム・ライヒスブルク\n城にある階段塔。\n何度か城が破壊されるなか\n当時の姿を保っている。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8364,
+      "Name": "墨俣一夜舞台",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\nチアリーディング部が\n設営した舞台。\n設営は一晩のうちに\n終わったという。\n%c[ffd700]祓串城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8365,
+      "Name": "千賀地氏城見張台",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n千賀地氏城にあった\n土塁の上に作られた\n見張台。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8366,
+      "Name": "持方月櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\n高島城に3つあった櫓のうち\nのひとつ。\n横矢掛かりであり攻め込む\n敵に対して側面からの\n攻撃を可能とした。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8367,
+      "Name": "十河四方櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\n十河城の防衛を担った櫓。\n攻め入る敵に対し\n四方の櫓から攻撃し、\n敵の作道を止めた。\n%c[ffd700]投剣城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8368,
+      "Name": "洛陽天堂",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n洛陽城の敷地内にある天堂。\n天堂の三階に登れば、\n明堂を俯瞰できる程の\n高さがある。\n%c[ffd700]拳城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8369,
+      "Name": "駿府坤櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の防御が上昇%c[ffffff]\n駿府城の二ノ丸の南西の\n方角に位置する櫓。\n方位に干支が用いられ\n未と申の間であることから\n坤櫓と呼ばれた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8370,
+      "Name": "ウォータートン館",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\nダノター城の城主が\n長男夫婦のために作った\nとされる建物。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8371,
+      "Name": "吉田本丸鉄櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の防御が上昇%c[ffffff]\n吉田城の本丸にある鉄櫓。\n天守と勘違いされがちだが\nあくまで櫓である。\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8372,
+      "Name": "志波築地塀上櫓",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n志波城のにある櫓｡\n外郭築地塀を跨ぐように\n建てられている｡\n%c[ffd700]法術城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8373,
+      "Name": "小早川平櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\n小早川城の二の丸に\n設けられた平櫓｡\n総石垣造りの城であり\n関東の城では特殊な造り\nとなっている。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8374,
+      "Name": "西片菱櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の防御が上昇%c[ffffff]\n大坂城に建てられた15基の\n二重櫓の内の1基。\n城の防御を担う重要な\n拠点として伝わる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8375,
+      "Name": "蟠龍櫓",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の防御が上昇%c[ffffff]\n桑名城の守る櫓の一つ。\n天に昇る前の龍をかたどった\n瓦が置かれていたことから\n蟠龍櫓と呼ばれたと伝わる。\n%c[ff0000]他の施設と効果の\n一部が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8376,
+      "Name": "松ノ丸隅櫓",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n青山幸道が城主になる前は\n郡上八幡城の本丸として\n使われた隅櫓。\n凌霜隊の顕彰碑が\n建てられている。\n%c[ffd700]北陸・東海城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 8377,
+      "Name": "釈迦塔",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の防御が上昇%c[ffffff]\n世界古代史上最高層の\n木造建築の塔。\n仏塔としてだけでなく\n監視塔としても使われる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9301,
+      "Name": "弦月形前立",
+      "Explanation": "%c[afeeee]攻撃、防御が上昇%c[ffffff]\n黄金色に輝く、\n弦月形の前立。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9302,
+      "Name": "紺小札錣",
+      "Explanation": "%c[afeeee]回復、射程が上昇%c[ffffff]\n紺色に染められた\n小札の錣。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9303,
+      "Name": "竹雀紋吹返",
+      "Explanation": "%c[afeeee]耐久が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n竹に雀の家紋が\n刻まれた兜の吹返。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9304,
+      "Name": "紺色忍緒",
+      "Explanation": "%c[afeeee]攻撃速度が上昇%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n紺に染められた兜の緒。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9305,
+      "Name": "小田原鉢",
+      "Explanation": "%c[afeeee]防御、回復が上昇%c[ffffff]\n筋兜の形式の一つ。\n相模国で作られていた。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9306,
+      "Name": "翠色小札錣",
+      "Explanation": "%c[afeeee]耐久、攻撃が上昇%c[ffffff]\n翠色に染められた\n小札の錣。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9307,
+      "Name": "三鱗据金物付吹返",
+      "Explanation": "%c[afeeee]攻撃速度が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n北条鱗を象った装飾が\n施されている吹返。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9308,
+      "Name": "翠色忍緒",
+      "Explanation": "%c[afeeee]攻撃、射程が上昇%c[ffffff]\n翠色に染められた\n兜の緒。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9309,
+      "Name": "白狐大鍬前立",
+      "Explanation": "%c[afeeee]攻撃、回復が上昇%c[ffffff]\n中心に狐が座している、\n大鍬形の前立。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9310,
+      "Name": "紅白色小札錣",
+      "Explanation": "%c[afeeee]耐久、防御が上昇%c[ffffff]\n紅白に染められた\n小札の錣。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9311,
+      "Name": "島津十文字紋吹返",
+      "Explanation": "%c[afeeee]攻撃速度が上昇%c[ffffff]\n%c[afeeee]攻撃後の隙が短縮%c[ffffff]\n丸に十字の家紋が\n刻まれた兜の吹返。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9312,
+      "Name": "紅白忍緒",
+      "Explanation": "%c[afeeee]射程が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n紅白の紐がより合わせ\nられた兜の緒。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9313,
+      "Name": "桔梗紋吹返",
+      "Explanation": "%c[afeeee]耐久が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n桔梗紋が刻まれた\n兜の吹返。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9314,
+      "Name": "紅糸毛引縅",
+      "Explanation": "%c[afeeee]攻撃速度が上昇%c[ffffff]\n%c[afeeee]攻撃が上昇%c[ffffff]\n紅色に染められた\n毛引縅。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9315,
+      "Name": "三鈷剣前立",
+      "Explanation": "%c[afeeee]射程が上昇%c[ffffff]\n%c[afeeee]攻撃後の隙が短縮%c[ffffff]\n黄金色に輝く\n三鈷剣の前立て\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9316,
+      "Name": "黒色忍緒",
+      "Explanation": "%c[afeeee]防御が上昇%c[ffffff]\n%c[afeeee]回復が上昇%c[ffffff]\n黒色に染められた忍緒\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9317,
+      "Name": "織田木瓜紋前立",
+      "Explanation": "%c[afeeee]攻撃、防御が上昇%c[ffffff]\n織田信長が用いた兜。\n前立ての織田木瓜紋は\n敵から大変恐れられた。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9318,
+      "Name": "金箔押天衝脇立",
+      "Explanation": "%c[afeeee]攻撃、射程が上昇%c[ffffff]\n金色に輝く、\n天に向け伸びる脇立。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9319,
+      "Name": "馬藺後立",
+      "Explanation": "%c[afeeee]攻撃速度が上昇%c[ffffff]\n%c[afeeee]射程が上昇%c[ffffff]\n豊臣秀吉が用いた兜の後立。\n馬藺を模した形状は\n後光の差す姿にも似る。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9320,
+      "Name": "不動明王剣前立",
+      "Explanation": "%c[afeeee]射程が上昇%c[ffffff]\n%c[afeeee]回復が上昇%c[ffffff]\n不動明王の持つ利剣を\n模した前立。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9321,
+      "Name": "鍍金鍬形前立",
+      "Explanation": "%c[afeeee]攻撃が上昇%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n鍍金が施された鍬形城の\n立派な前立。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9322,
+      "Name": "大鹿角脇立",
+      "Explanation": "%c[afeeee]攻撃が上昇%c[ffffff]\n%c[afeeee]攻撃後の隙が短縮%c[ffffff]\n兜の両端から伸びる\n鹿の角を模した脇立。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]絢爛城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9323,
+      "Name": "歯朶前立",
+      "Explanation": "%c[afeeee]防御、射程が上昇%c[ffffff]\n徳川家康が用いた兜の前立。\n歯朶の葉を模した形状は\n戦への勝利を約束し\n新しい時代へと導く。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9324,
+      "Name": "金角獅子前立",
+      "Explanation": "%c[afeeee]攻撃、防御が上昇%c[ffffff]\n武田信玄が用いた兜の前立。\n獅子を彷彿とさせる金角と\n白色の毛は､軍神の加護を\n宿し､勝利へと導く｡\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9325,
+      "Name": "日輪弦月前立",
+      "Explanation": "%c[afeeee]攻撃速度が上昇%c[ffffff]\n%c[afeeee]攻撃後の隙が短縮%c[ffffff]\n上杉謙信が用いた兜の前立。\n太陽と月を模した前立は\n戦神の加護を受け\n勝利へと進む｡\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]兜娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9326,
+      "Name": "金剛力士形兜",
+      "Explanation": "%c[afeeee]攻撃、防御が上昇%c[ffffff]\n力士さながらの風貌が\n特徴の兜｡渾身の張り手で\n立ち塞がる者をねじ伏せる｡\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]無属性のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9401,
+      "Name": "金箔押熨斗烏帽子形兜",
+      "Explanation": "%c[afeeee]耐久、攻撃が上昇%c[ffffff]\n烏帽子を模した形状を\nしており、華やかな\n金色に輝いている。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9402,
+      "Name": "黒漆塗唐冠形纓脇立兜",
+      "Explanation": "%c[afeeee]防御、回復が上昇%c[ffffff]\n漆黒に塗られた兜。\n兜の左右から伸びた、\n長い脇立が目を引く。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9403,
+      "Name": "黒漆塗桃形大水牛脇立兜",
+      "Explanation": "%c[afeeee]耐久、回復が上昇%c[ffffff]\n黒田長政が用いた兜。\n左右から水牛を模した、\n猛々しい角が伸びる。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9404,
+      "Name": "黒漆塗燕尾形兜",
+      "Explanation": "%c[afeeee]耐久、防御が上昇%c[ffffff]\n蒲生氏郷が用いた兜。\n燕尾を模した形状で、\n鯰尾兜とも呼ばれる。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9405,
+      "Name": "黒漆塗総覆輪筋兜",
+      "Explanation": "%c[afeeee]防御が上昇%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n毛利元就が用いた兜。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9406,
+      "Name": "神符八日月前立筋兜",
+      "Explanation": "%c[afeeee]回復が上昇%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n片倉小十郎が用いた兜。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9407,
+      "Name": "弦月形前立黒漆筋鉢兜",
+      "Explanation": "%c[afeeee]攻撃が上昇%c[ffffff]\n%c[afeeee]防御が上昇%c[ffffff]\n伊達政宗が用いた兜。\n三日月型の前立を持つ。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9408,
+      "Name": "乱髪天衝脇立兜",
+      "Explanation": "%c[afeeee]攻撃、回復が上昇%c[ffffff]\n石田三成が用いた兜。\n毛髪で装飾を施された\n総髪兜の一つ。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9409,
+      "Name": "朱塗大天衝桃形兜",
+      "Explanation": "%c[afeeee]攻撃が上昇%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n山県昌景が用いた兜。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9410,
+      "Name": "銀箔押一ノ谷形兜",
+      "Explanation": "%c[afeeee]耐久が上昇%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n福島正則が用いた兜。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd701]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9411,
+      "Name": "モルドヴァ大公冠",
+      "Explanation": "%c[afeeee]耐久、防御が上昇%c[ffffff]\nシュテファン3世が用\nいた大公の証の冠。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd702]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9412,
+      "Name": "三鱗据金物付十二間筋兜",
+      "Explanation": "%c[afeeee]防御が上昇%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n北条氏康が用いた兜。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9413,
+      "Name": "桔梗紋六十二間筋兜",
+      "Explanation": "%c[afeeee]射程が上昇%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n明智光秀が用いた兜。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9414,
+      "Name": "閻魔大王冠",
+      "Explanation": "%c[afeeee]耐久、攻撃が上昇%c[ffffff]\n閻魔大王が用いる冠。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd701]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9415,
+      "Name": "白狐大鍬前立兜",
+      "Explanation": "%c[afeeee]攻撃、回復が上昇%c[ffffff]\n島津義弘が用いた兜。\n前立に白狐の装飾が\n備えられている。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9416,
+      "Name": "ヘルスコール",
+      "Explanation": "%c[afeeee]回復、射程が上昇%c[ffffff]\n冥界へと旅立つ\n死者に贈られる靴。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd701]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9417,
+      "Name": "愛の字雲前立六十二間筋",
+      "Explanation": "%c[afeeee]耐久、防御が上昇%c[ffffff]\n直江兼続が用いた兜。\n巨大な愛の字の前立\nを持つ。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9418,
+      "Name": "阿吽瑞鳥前立付兜",
+      "Explanation": "%c[afeeee]回復、射程が上昇%c[ffffff]\n上杉景勝が用いた兜。\n金色の瑞鳥が向かい\n合った意匠を持つ。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9419,
+      "Name": "アテフ冠",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n冥界の王である\nオシリス神が戴く冠。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd701]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9420,
+      "Name": "蛇目紋長烏帽子形兜",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\n加藤清正が\n用いていた兜。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9421,
+      "Name": "六文深紅鹿角兜",
+      "Explanation": "%c[afeeee]回復、防御が上昇%c[ffffff]\n真田幸村が用いた兜。\n鹿の角を模した脇立と\n深紅の色が象徴。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9422,
+      "Name": "毛虫前立鳥毛脇立兜",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n佐竹義重が用いた兜。\n前立は毛虫の習性から\n用いられた。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]水城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9423,
+      "Name": "諏訪法性兜",
+      "Explanation": "%c[afeeee]攻撃、射程が上昇%c[ffffff]\n武田信玄が用いた兜。\n金色の角と赤い鬼の前立は\n白く長い毛に覆われている。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9424,
+      "Name": "烏帽子形白綾頭巾",
+      "Explanation": "%c[afeeee]攻撃後の隙が短縮%c[ffffff]\n%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n上杉謙信が用いた白頭巾。\n兜の上から被って使用した\nとされている。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 9425,
+      "Name": "聖エドワード王冠",
+      "Explanation": "%c[afeeee]耐久、攻撃が上昇%c[ffffff]\nリチャード1世が用いた\n戴冠用の王冠｡\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10000,
+      "Name": "野点傘",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n野外で茶会を行う\n際に用いられる傘。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10010,
+      "Name": "野点傘(近接)",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n改良された野点傘。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10020,
+      "Name": "野点傘(遠隔)",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n改良された野点傘。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10100,
+      "Name": "数寄屋",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n素朴な意匠で建てられ\nた茶室。重厚で格式\n高い造りとは趣向を\n逆にしている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10110,
+      "Name": "数寄屋(近接)",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n改良された数寄屋。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10120,
+      "Name": "数寄屋(遠隔)",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n改良された数寄屋。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10200,
+      "Name": "草庵",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n草庵を模した茶室。\n千利休の手によって\nその形式が完成した。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10210,
+      "Name": "草庵(近接)",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n改良された草庵。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10220,
+      "Name": "草庵(遠隔)",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n改良された草庵。\n装備に制限が加わった\n代わりに、性能が向上\nしている。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10400,
+      "Name": "ライオンの部屋",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\nデジタルアニマルの\nライオンが導く部屋。\nにじり口の先には落ち\n着いた空間が広がる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10401,
+      "Name": "黄金の茶室",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n豊臣秀吉が造らせた、\n黄金に彩られた意匠\nの茶室。組み立て式\nで持ち運びが可能。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10402,
+      "Name": "麟閣",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n会津若松城にある茶室。\n蒲生氏郷が匿った茶人\nが、氏郷の為に造った\nと伝えられている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10403,
+      "Name": "字降の図書室",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n学園内にある図書室。\n足利学校推薦の図書\nが収められている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10404,
+      "Name": "ホイッグス・ヴォールト",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n元は「王の寝室」と呼\nばれた丸天井の部屋。\nホイッグ党派の幽閉に\n使われた事で、その名\nが付けられた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10405,
+      "Name": "夜行応援部ロッカー",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n阿波一宮城の応援部の\n部室にあるロッカー。\n受け継がれた団服には\n夜行の力が宿るという。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10406,
+      "Name": "王妃のアトリエ",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n優れた芸術家でも\nあった王妃の工房。\n屋型天井のアトリエで\n様々な作品を遺した。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10407,
+      "Name": "諏訪の茶屋",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n江戸城の傍にある茶室。\n茶室とは思えない重層\nな造りをしている。\n%c[ffd700]刀城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10408,
+      "Name": "小倉城御下屋敷",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n小倉城にある屋敷。\n娯楽や接待の場所\nとして使われていた。\n%c[ffd700]九州・沖縄城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10409,
+      "Name": "楊貴妃の間",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n多聞山城の城郭は\n有数の至宝である絵や\n茶道具が集められていた。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10410,
+      "Name": "宇治の間",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n元和江戸城の\n七不思議のひとつ。\n綱吉毒殺の風説以来\n絶対に開けてはならぬ\n「明かずの間」とされ\n恐れられた。\n%c[ffd700]遠隔城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10411,
+      "Name": "神仙郷",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n元始天尊を長とする\n仙人の一勢力の地。\n一度邪仙郷の手に落ちたが\n異国の王子らの協力もあり\n奪還に成功した。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10412,
+      "Name": "パオリーナの間",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\nパウルス3世が造らせた\nｻﾝﾀﾝｼﾞｪﾛ城にある部屋｡\n壁がだまし絵技法の\nフレスコ画に覆われている。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10413,
+      "Name": "秋暁の茶室",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n季節が秋に変わり\n澄んだ空気が満ちた茶室。\n茶を点てずとも凛とした\n雰囲気を醸し出している。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10414,
+      "Name": "紙銭の宝物庫",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n枉死城の中にある宝物庫。\n供物として贈られる金銭を\n一時的に保管しておく所で\n城を去る際に保管してある\n金銭を受け取れると伝わる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 10415,
+      "Name": "埋木舎",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n彦根城主が過ごした屋敷\n茶室もあり整然とした\n雰囲気が漂う｡\n%c[ff0000]他の施設と効果の\n一部が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11000,
+      "Name": "露地",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n茶室の傍に備えられた\n小さな庭園。茶庭とも\n呼ばれる",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11100,
+      "Name": "坪庭",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n塀や垣根で囲われた\n小規模な庭。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11200,
+      "Name": "枯山水",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n水を用いずに造られて\nいる庭園。砂や岩のみ\nで自然の風景が表現\nされている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11400,
+      "Name": "動物のジャングル",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n多種多様なデジタル\nアニマルが住む通路。\n来訪者を賑やかに\n迎え入れる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11401,
+      "Name": "西の丸庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n錦城の西の丸を用い\nて造られた庭園。\n春には多くの桜が\n咲き乱れる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11402,
+      "Name": "騎士団の広間",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\nクラック・デ・シュ\nヴァリエにある広間。\n中庭に面している。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11403,
+      "Name": "浮舟のコート",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n都於郡城率いる\nバスケットチーム\n「伊東四十八城」が\n練習に使用している。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11404,
+      "Name": "ヘレンキームゼー庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\nヘレンキームゼー城に\nある庭園。ヴェルサイ\nユ宮殿の庭園を模し\nて作られている。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11405,
+      "Name": "玄宮園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n彦根城にある庭園。\n近江八景の要素を\n取り入れて造られ\nたと伝わる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11406,
+      "Name": "ルネサンスの庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\nイタリア式庭園の形式\nの一つ。ルネサンス\n文化の隆盛と共に\n形作られていった。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11407,
+      "Name": "ブロセリアンド",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n伝説にある魔法の森。\n騎士ランスロットの\n冒険の地の一つとし\nても伝えられている。\n%c[ffd700]架空城城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11408,
+      "Name": "原初の丘",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\nヌンから最初に生まれ\nたという原初の大地。\nベンベンの名でも\n呼ばれる\n%c[ffd700]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11409,
+      "Name": "玉縄蹴鞠場",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n玉縄城にある蹴鞠場。\n城主たちが蹴鞠を\n楽しんでいた。\n%c[ff0000]他の施設と効果の\n一部が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11410,
+      "Name": "八角形の中庭",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\nカステル・デル・モン\nテの中庭。頭上には\n八角形に切り取られた\n空が見える。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11411,
+      "Name": "ヴィクトリア塔庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\nｳｪｽﾄﾐﾝｽﾀｰ宮殿の庭園。\n鳴り響く鐘の音は\n人々を癒す。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11412,
+      "Name": "毛利庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n毛利甲斐守邸にある\n庭園。ひょうたん池を\n中心として構成され\nている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11413,
+      "Name": "吹上御庭",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n江戸城にある庭園。\n庭園内には、徳川\n御三家の大名屋敷が\n建てられていた。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11414,
+      "Name": "イオラニ庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\nイオラニ宮殿の庭園。\nハワイ特有の植物が\n多数存在している。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11415,
+      "Name": "立花氏庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n柳川城にある庭園。\n大小の島を配した庭景\nは大海を表現している。\n%c[ffd700]絢爛城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11416,
+      "Name": "ラグナグ実験場",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n試作品の実験場。\n部屋の隅には失敗作の\n残骸が溢れている。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11417,
+      "Name": "花の御所庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n室町第にある庭園。\n四季の花木が植えられ、\n足利将軍家の庭として\n豪華に彩られていた。\n%c[ffd700]水城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11418,
+      "Name": "魔女の庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\nリーガースブルク城内\nの魔女が手掛けたとも\nされる花が美しい庭園。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11419,
+      "Name": "ヴァイクンタ庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n神の住まう天国の門。\n眩いばかりの\n黄金と甘美な香りの\n果実の庭園が広がる。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11420,
+      "Name": "バビロンの空中庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n建物の屋上に建てら\nれた庭園。\n多くの兵隊が宮殿内\nで暮らしていた。\n%c[ffd700]大砲城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11421,
+      "Name": "ナンダナの庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n宮殿ヴァイジャヤンタ\nにある庭園。\n庭園ではアプサラスと\n呼ばれる天女達が\n踊っている。\n%c[ffd700]投剣城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11422,
+      "Name": "舞鶴グラウンド",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n柳川城が球技を\n練習している公園。\n抉れた地面は\n努力の証。\n%c[ffd700]石弓城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11423,
+      "Name": "チリンガム庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\nチリンガム城にある\n庭園。夜には幽霊が\n見えるとか。\n%c[ffd700]鎌城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11424,
+      "Name": "トウ利天",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n須弥山の頂上には\nトウ利天が存在し\n神々が住んでいる。\n%c[ffd700]法術城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11425,
+      "Name": "地下球戯場",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n地の奥に存在する\n巨大な球戯場。\nかつて神々に挑んだ\n2人の行方は\n誰も知らない。\n%c[ffd700]双剣城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11426,
+      "Name": "松山水琴窟",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n松山城にある水琴窟。\n竹筒に耳を当てると\n水滴が空洞に響く神秘的な\n音を聴くことが出来る。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11427,
+      "Name": "鎖之間庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n懇談の場に用いられた庭園。\n鎖之間と一体となった魅力的\nな造りに招かれた冊封使は\n詩を詠むほどだった。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11428,
+      "Name": "東院庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n皇族が宴会や儀式を催したと\nされる平城京東にある庭園。\n築山石組や池泉の形状が\n魅力的でとても美しい。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11429,
+      "Name": "エーリュシオン",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n死後に善人のみが迎えられ\nるといわれる楽園。\nハデスが管理する冥界の\nうちのひとつ。\n%c[ffd700]地獄城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11430,
+      "Name": "妙見の将棋盤",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n将棋部が使用する\n巨大な将棋盤。\n溝にほこりがたまりやすい。\n%c[ffd700]山城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11431,
+      "Name": "打城握手会ブース",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n多くの魂がアイドルとの\n握手を求めて集う場所。\nブースの裏では枉死城が\nサボ……休憩している。\n%c[ffd700]架空城城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11432,
+      "Name": "萩の東園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n萩城の二之丸内に造られた\n池泉回遊式庭園。\n庭内の各所に装飾が\n施されたと伝わる。\n%c[ffd700]鉄砲城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11433,
+      "Name": "オランジュリー庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\nｳﾞｪﾙｻｲﾕ宮殿の中にある\n温室。\n絶対君主の威光を示すため\n壮大なスケールで\n構想され建築された。\n%c[ffd700]杖城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11434,
+      "Name": "神殿の森",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n女神の神殿の近くにある森。\n異界の王子が\n父王の遺言を果たすため\nこの森を通り抜け\n女神の神殿へと向かった。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11435,
+      "Name": "御薬園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n鶴ヶ城近郊にある\n代々会津領主が\n愛した別荘地。\n%c[ffd700]法術城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11436,
+      "Name": "ミルク牧場",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n多くのホルスタインが\n生息している牧場。\nたまにホルスタインが\n暴走するが、抑えることで\nお礼にEXPミルクが貰える。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11437,
+      "Name": "ストラホフ庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\nストラホフ修道院にある\n庭園｡その広大さはブドウ園\nなどに適していると\nされている。\n%c[ffd700]平城城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11438,
+      "Name": "ライオンの中庭",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n両脇を守るライオンの\n彫刻があるブダ城の中庭。\n%c[ffd700]海外・その他城娘のみ%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11439,
+      "Name": "シュトックガルテン",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\nハイデルベルク城の西の\nテラス｡\n元々はルートヴィヒ5世に\nより設営された大砲を\n備えた施設だった。\n%c[ffd700]平山城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11440,
+      "Name": "春迎庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n麗かな春を迎えるのに\n相応しい庭園。\n常に暖かな日差しが\n降り注いでいる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11441,
+      "Name": "下御深井御庭",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n名古屋城の北側にあった池。\n職人たちが釉薬を使用した\n淡緑色の陶器を造っていた。\n%c[ffd700]槌城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 11442,
+      "Name": "へスぺリデスの園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n世界の西の果てにいる\n精霊たちの住まう庭園。\n庭園には果樹園があり\nそこには黄金の林檎が成る。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 90001,
+      "Name": "施設　☆～☆☆",
+      "Explanation": "",
+      "ListingCondition": 1
+    },
+    {
+      "ID": 90002,
+      "Name": "施設　☆☆☆",
+      "Explanation": "",
+      "ListingCondition": 1
+    },
+    {
+      "ID": 99001,
+      "Name": "王子の執務室",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n執務を行うための部屋。\n内装には上品な装飾が\n施されている。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99002,
+      "Name": "剛炎の装甲",
+      "Explanation": "%c[afeeee]攻撃、防御が上昇%c[ffffff]\n剛炎をまとう魔神を模\nした装甲。燃え立つ様\nな力を与える。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd701]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99003,
+      "Name": "玄関ホール",
+      "Explanation": "%c[afeeee]再出撃時間が短縮%c[ffffff]\n希望ヶ峰学園の玄関\nホール。出入口は\n厳重に封鎖され、学園\nは外界と隔絶している。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99004,
+      "Name": "学級裁判所",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\nコロシアイ学園生活で\nクロを決める場所。\n%c[ff0000]他の施設と効果が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99005,
+      "Name": "城びとのシローくん",
+      "Explanation": "%c[afeeee]城娘の耐久が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の防御が上昇%c[ffffff]\n%c[afeeee]城娘の射程が上昇%c[ffffff]\nお城にとても詳しい、\n城びとの案内人。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99006,
+      "Name": "スフィンクスの像",
+      "Explanation": "%c[afeeee]配置時の消費気が減少%c[ffffff]\n神獣を象った石像。\n本物ではないので\n動き出すことはない。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99007,
+      "Name": "れきしクン形兜",
+      "Explanation": "%c[afeeee]攻撃、防御が上昇%c[ffffff]\n%c[afeeee]射程、回復が上昇%c[ffffff]\nれきしクンが愛用\nしている赤い兜。\n%c[ff0000]他の施設と効果が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99008,
+      "Name": "ブリタニア基地滑走路",
+      "Explanation": "%c[afeeee]隙短縮、配置気が減少%c[ffffff]\nブリタニア基地に\nある滑走路。\n魔法陣が敷かれている。\n%c[afeeee][魔女]対象の\n効果を受ける%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99009,
+      "Name": "ブリタニア基地格納庫",
+      "Explanation": "%c[afeeee]再出撃時間が短縮%c[ffffff]\nブリタニア基地の格納\n庫。ストライカーユニ\nットが格納されている。\n%c[afeeee][魔女]対象の\n効果を受ける%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99010,
+      "Name": "ジャバウォック像",
+      "Explanation": "%c[afeeee]城娘の射程が上昇%c[ffffff]\n%c[afeeee]配置時の消費気が減少%c[ffffff]\nジャバウォック島の\n広場の中心にある彫像。\n%c[ff0000]他の施設と効果が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99011,
+      "Name": "モノモノヤシーン",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\nジャバウォック島の\nビーチに生えている\n不思議なヤシ。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99012,
+      "Name": "王城の門",
+      "Explanation": "%c[afeeee]城娘の攻撃が上昇%c[ffffff]\n王城の由緒ある正門。\n長い歴史の中で様々な\n苦難を乗り越えてきた。\n%c[ff0000]他の施設と効果が重複%c[ffffff]\n%c[ffd700]近接城娘のみ装備可能%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99013,
+      "Name": "天下統一の鯱",
+      "Explanation": "%c[afeeee]計略の初回使用までの\n時間を短縮%c[ffffff]\n所領の天守の上にある\n鯱。天下を平穏に導く\n祈りが込められている。\n%c[ff0000]他の施設と効果が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99014,
+      "Name": "歩く教会",
+      "Explanation": "%c[afeeee]防御が上昇%c[ffffff]\n純白の修道服。\n強固な防護結界が\n施されている。\n%c[afeeee][魔術師]対象の\n効果を受ける%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99015,
+      "Name": "自販機",
+      "Explanation": "%c[afeeee]配置気が減少%c[ffffff]\n学園都市に設置\nされている自販機。\n蹴ると壊れるので注意。\n%c[afeeee][能力者]対象の\n効果を受ける%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99016,
+      "Name": "王城の庭園",
+      "Explanation": "%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n王城に古くから存在\nする、澄み切った風が\n心地よい庭園。\n%c[ff0000]他の施設と効果が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99017,
+      "Name": "ゲシュペンス島の浜辺",
+      "Explanation": "%c[afeeee]攻撃、射程、回復上昇%c[ffffff]\n異世界の様々な生物が\n暮らす島の浜辺。\n時折、漂着物が流れて\nくることがある。\n%c[ff0000]他の施設と効果が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99018,
+      "Name": "立体機動装置",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\n調査兵団の基本装備。\n立体機動を実現するが、\n扱いは非常に難しい。\n%c[ff0000]他の施設と効果が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99019,
+      "Name": "ウォール・マリア外門",
+      "Explanation": "%c[afeeee]攻撃、射程が上昇%c[ffffff]\nウォール・マリアの\n外門。超大型巨人に\n破られる日まで長い\n平和をもたらした。\n%c[ff0000]他の施設と効果が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99020,
+      "Name": "魔界の門",
+      "Explanation": "%c[afeeee]再出撃時間が短縮%c[ffffff]\n魔界へと繋がる門。\nひとたび開かれた門の\n中からは、悪魔達が\n続々と現れる。",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99021,
+      "Name": "ムスタバッル溶岩",
+      "Explanation": "%c[afeeee]城娘の攻撃速度が上昇%c[ffffff]\n%c[afeeee]城娘の攻撃後の隙短縮%c[ffffff]\nゲシュペンス島にある\n溶岩地帯。溶岩の中に\n落ちてしまうと\n恐ろしい呪いに\nかかるという……",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99022,
+      "Name": "ホテル・ミライ",
+      "Explanation": "%c[afeeee]計略の初回使用時間を短縮%c[ffffff]\n%c[afeeee]攻撃、防御、射程が上昇%c[ffffff]\nジャバウォック島にある\n宿泊施設。南国の夏を\n満喫するための設備が\n充実している。\n%c[ff0000]他の施設と効果が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99023,
+      "Name": "ルーンカード",
+      "Explanation": "%c[afeeee]攻撃が上昇%c[ffffff]\nルーン文字と呼ばれる\n魔術言語が書かれたカード｡\n現代の魔術師はこのカード\nをコピー印刷し簡略化を\n行っている。\n%c[afeeee][魔術師]対象の効果を受ける%c[ffffff]\n%c[ff0000]他の施設と効果が重複%c[ffffff]",
+      "ListingCondition": 0
+    },
+    {
+      "ID": 99024,
+      "Name": "常盤台中学正門",
+      "Explanation": "%c[afeeee]計略の初回使用時間を短縮%c[ffffff]\n常盤台中学の正門。\n学校自体は「学舎の園」の\n中央に位置し､強固な\nセキュリティ体制により\n守られている。\n%c[afeeee][能力者]対象の効果を受ける%c[ffffff]\n%c[ff0000]他の施設と効果が重複%c[ffffff]",
+      "ListingCondition": 0
+    }
+  ]
+}

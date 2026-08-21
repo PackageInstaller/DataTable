@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 5,
+    "record_size": 24,
+    "custom_id": 1701994866
+  },
+  "_fields": [
+    {
+      "name": "RarityID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "StrengtheningCap",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "StrengtheningCostGold",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "SalePrice",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "EvolutionCostGold",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "EvolutionCostYakumodama",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "RarityID": 1,
+      "StrengtheningCap": 10,
+      "StrengtheningCostGold": 200,
+      "SalePrice": 100,
+      "EvolutionCostGold": 0,
+      "EvolutionCostYakumodama": 0
+    },
+    {
+      "RarityID": 2,
+      "StrengtheningCap": 10,
+      "StrengtheningCostGold": 300,
+      "SalePrice": 300,
+      "EvolutionCostGold": 0,
+      "EvolutionCostYakumodama": 0
+    },
+    {
+      "RarityID": 3,
+      "StrengtheningCap": 10,
+      "StrengtheningCostGold": 400,
+      "SalePrice": 1500,
+      "EvolutionCostGold": 0,
+      "EvolutionCostYakumodama": 0
+    },
+    {
+      "RarityID": 4,
+      "StrengtheningCap": 10,
+      "StrengtheningCostGold": 500,
+      "SalePrice": 5000,
+      "EvolutionCostGold": 100000,
+      "EvolutionCostYakumodama": 1000
+    },
+    {
+      "RarityID": 5,
+      "StrengtheningCap": 10,
+      "StrengtheningCostGold": 600,
+      "SalePrice": 10000,
+      "EvolutionCostGold": 0,
+      "EvolutionCostYakumodama": 0
+    }
+  ]
+}

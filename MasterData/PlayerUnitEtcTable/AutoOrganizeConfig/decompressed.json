@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 8,
+    "record_size": 8,
+    "custom_id": 1701015393
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Value",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "Value": 1
+    },
+    {
+      "ID": 2,
+      "Value": 3
+    },
+    {
+      "ID": 3,
+      "Value": 2
+    },
+    {
+      "ID": 4,
+      "Value": 2
+    },
+    {
+      "ID": 5,
+      "Value": 10
+    },
+    {
+      "ID": 6,
+      "Value": 100
+    },
+    {
+      "ID": 7,
+      "Value": 100
+    },
+    {
+      "ID": 8,
+      "Value": 100
+    }
+  ]
+}

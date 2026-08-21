@@ -1,0 +1,521 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 51,
+    "record_size": 28,
+    "custom_id": 1651273843
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "EffectType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Param1",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "Param2",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "Param3",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "ExchangeRate",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 100,
+      "Type": 8,
+      "EffectType": 0,
+      "Param1": 1,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 15
+    },
+    {
+      "ID": 101,
+      "Type": 8,
+      "EffectType": 0,
+      "Param1": 2,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 30
+    },
+    {
+      "ID": 102,
+      "Type": 8,
+      "EffectType": 0,
+      "Param1": 3,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 90
+    },
+    {
+      "ID": 103,
+      "Type": 8,
+      "EffectType": 0,
+      "Param1": 4,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 120
+    },
+    {
+      "ID": 104,
+      "Type": 8,
+      "EffectType": 0,
+      "Param1": 5,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 150
+    },
+    {
+      "ID": 200,
+      "Type": 2,
+      "EffectType": 1001,
+      "Param1": 2,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 15
+    },
+    {
+      "ID": 201,
+      "Type": 2,
+      "EffectType": 1001,
+      "Param1": 5,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 30
+    },
+    {
+      "ID": 202,
+      "Type": 2,
+      "EffectType": 1001,
+      "Param1": 8,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 90
+    },
+    {
+      "ID": 203,
+      "Type": 2,
+      "EffectType": 1001,
+      "Param1": 10,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 120
+    },
+    {
+      "ID": 204,
+      "Type": 2,
+      "EffectType": 1001,
+      "Param1": 12,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 150
+    },
+    {
+      "ID": 300,
+      "Type": 3,
+      "EffectType": 3010,
+      "Param1": 25,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 15
+    },
+    {
+      "ID": 301,
+      "Type": 3,
+      "EffectType": 3010,
+      "Param1": 50,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 30
+    },
+    {
+      "ID": 302,
+      "Type": 3,
+      "EffectType": 3010,
+      "Param1": 100,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 90
+    },
+    {
+      "ID": 303,
+      "Type": 3,
+      "EffectType": 3010,
+      "Param1": 125,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 120
+    },
+    {
+      "ID": 304,
+      "Type": 3,
+      "EffectType": 3010,
+      "Param1": 150,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 150
+    },
+    {
+      "ID": 400,
+      "Type": 4,
+      "EffectType": 3012,
+      "Param1": 25,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 15
+    },
+    {
+      "ID": 401,
+      "Type": 4,
+      "EffectType": 3012,
+      "Param1": 50,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 30
+    },
+    {
+      "ID": 402,
+      "Type": 4,
+      "EffectType": 3012,
+      "Param1": 100,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 90
+    },
+    {
+      "ID": 403,
+      "Type": 4,
+      "EffectType": 3012,
+      "Param1": 125,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 120
+    },
+    {
+      "ID": 404,
+      "Type": 4,
+      "EffectType": 3012,
+      "Param1": 150,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 150
+    },
+    {
+      "ID": 500,
+      "Type": 6,
+      "EffectType": 3004,
+      "Param1": 1,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 15
+    },
+    {
+      "ID": 501,
+      "Type": 6,
+      "EffectType": 3004,
+      "Param1": 3,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 30
+    },
+    {
+      "ID": 502,
+      "Type": 6,
+      "EffectType": 3004,
+      "Param1": 5,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 90
+    },
+    {
+      "ID": 503,
+      "Type": 6,
+      "EffectType": 3004,
+      "Param1": 7,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 120
+    },
+    {
+      "ID": 504,
+      "Type": 6,
+      "EffectType": 3004,
+      "Param1": 10,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 150
+    },
+    {
+      "ID": 600,
+      "Type": 5,
+      "EffectType": 0,
+      "Param1": 5,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 15
+    },
+    {
+      "ID": 601,
+      "Type": 5,
+      "EffectType": 0,
+      "Param1": 10,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 30
+    },
+    {
+      "ID": 602,
+      "Type": 5,
+      "EffectType": 0,
+      "Param1": 20,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 90
+    },
+    {
+      "ID": 603,
+      "Type": 5,
+      "EffectType": 0,
+      "Param1": 25,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 120
+    },
+    {
+      "ID": 604,
+      "Type": 5,
+      "EffectType": 0,
+      "Param1": 30,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 150
+    },
+    {
+      "ID": 701,
+      "Type": 1,
+      "EffectType": 0,
+      "Param1": 5,
+      "Param2": 1,
+      "Param3": 0,
+      "ExchangeRate": 15
+    },
+    {
+      "ID": 702,
+      "Type": 1,
+      "EffectType": 0,
+      "Param1": 10,
+      "Param2": 1,
+      "Param3": 0,
+      "ExchangeRate": 30
+    },
+    {
+      "ID": 703,
+      "Type": 1,
+      "EffectType": 0,
+      "Param1": 20,
+      "Param2": 1,
+      "Param3": 0,
+      "ExchangeRate": 90
+    },
+    {
+      "ID": 800,
+      "Type": 7,
+      "EffectType": 92003,
+      "Param1": 3000,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 15
+    },
+    {
+      "ID": 801,
+      "Type": 7,
+      "EffectType": 92003,
+      "Param1": 8000,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 30
+    },
+    {
+      "ID": 802,
+      "Type": 7,
+      "EffectType": 92003,
+      "Param1": 8000,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 90
+    },
+    {
+      "ID": 900,
+      "Type": 9,
+      "EffectType": 0,
+      "Param1": 97000,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 1
+    },
+    {
+      "ID": 901,
+      "Type": 9,
+      "EffectType": 0,
+      "Param1": 97001,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 1
+    },
+    {
+      "ID": 902,
+      "Type": 9,
+      "EffectType": 0,
+      "Param1": 97002,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 1
+    },
+    {
+      "ID": 903,
+      "Type": 9,
+      "EffectType": 0,
+      "Param1": 97003,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 1
+    },
+    {
+      "ID": 904,
+      "Type": 9,
+      "EffectType": 0,
+      "Param1": 97004,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 1
+    },
+    {
+      "ID": 905,
+      "Type": 9,
+      "EffectType": 0,
+      "Param1": 97005,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 1
+    },
+    {
+      "ID": 906,
+      "Type": 9,
+      "EffectType": 0,
+      "Param1": 97006,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 1
+    },
+    {
+      "ID": 907,
+      "Type": 9,
+      "EffectType": 0,
+      "Param1": 97007,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 1
+    },
+    {
+      "ID": 908,
+      "Type": 9,
+      "EffectType": 0,
+      "Param1": 97008,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 1
+    },
+    {
+      "ID": 909,
+      "Type": 9,
+      "EffectType": 0,
+      "Param1": 97009,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 1
+    },
+    {
+      "ID": 910,
+      "Type": 9,
+      "EffectType": 0,
+      "Param1": 97010,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 1
+    },
+    {
+      "ID": 911,
+      "Type": 9,
+      "EffectType": 0,
+      "Param1": 97011,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 1
+    },
+    {
+      "ID": 912,
+      "Type": 9,
+      "EffectType": 0,
+      "Param1": 97012,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 1
+    },
+    {
+      "ID": 913,
+      "Type": 9,
+      "EffectType": 0,
+      "Param1": 97013,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 1
+    },
+    {
+      "ID": 914,
+      "Type": 9,
+      "EffectType": 0,
+      "Param1": 97014,
+      "Param2": 0,
+      "Param3": 0,
+      "ExchangeRate": 1
+    }
+  ]
+}

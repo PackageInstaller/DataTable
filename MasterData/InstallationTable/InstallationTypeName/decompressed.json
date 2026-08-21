@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 16,
+    "record_size": 8,
+    "custom_id": 1853124201
+  },
+  "_fields": [
+    {
+      "name": "Type",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Type": 0,
+      "Name": "無効値"
+    },
+    {
+      "Type": 1,
+      "Name": "門"
+    },
+    {
+      "Type": 2,
+      "Name": "堀"
+    },
+    {
+      "Type": 3,
+      "Name": "石垣"
+    },
+    {
+      "Type": 4,
+      "Name": "狭間"
+    },
+    {
+      "Type": 5,
+      "Name": "水源"
+    },
+    {
+      "Type": 6,
+      "Name": "鯱"
+    },
+    {
+      "Type": 7,
+      "Name": "祠"
+    },
+    {
+      "Type": 8,
+      "Name": "櫓"
+    },
+    {
+      "Type": 9,
+      "Name": "鎧兜"
+    },
+    {
+      "Type": 10,
+      "Name": "茶室"
+    },
+    {
+      "Type": 11,
+      "Name": "庭園"
+    },
+    {
+      "Type": 12,
+      "Name": "橋"
+    },
+    {
+      "Type": 13,
+      "Name": "虎口"
+    },
+    {
+      "Type": 14,
+      "Name": "曲輪"
+    },
+    {
+      "Type": 100,
+      "Name": "特殊"
+    }
+  ]
+}

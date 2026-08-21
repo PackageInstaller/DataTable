@@ -1,0 +1,335 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 7,
+    "record_size": 88,
+    "custom_id": 1852142177
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Caption",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "DailyReward",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 8,
+      "size": 1
+    },
+    {
+      "name": "ExchangeCaption",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "ExchangeSerif",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "StartDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "EndDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "ExchangeEndDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "CardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "CardDisplayIndex",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 36,
+      "size": 4
+    },
+    {
+      "name": "BGID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 40,
+      "size": 4
+    },
+    {
+      "name": "SystemVoiceID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 44,
+      "size": 4
+    },
+    {
+      "name": "BGMID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 48,
+      "size": 4
+    },
+    {
+      "name": "PrologueEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 52,
+      "size": 4
+    },
+    {
+      "name": "TutorialEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 56,
+      "size": 4
+    },
+    {
+      "name": "NormalEpilogueEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 60,
+      "size": 4
+    },
+    {
+      "name": "HardEpilogueEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 64,
+      "size": 4
+    },
+    {
+      "name": "VeryHardEpilogueEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 68,
+      "size": 4
+    },
+    {
+      "name": "OpenDifficultyQuestID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 72,
+      "size": 4
+    },
+    {
+      "name": "NormalBattleNum",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 76,
+      "size": 4
+    },
+    {
+      "name": "HardBattleNum",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 80,
+      "size": 4
+    },
+    {
+      "name": "VeryHardBattleNum",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 84,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Caption": "",
+      "DailyReward": false,
+      "ExchangeCaption": "",
+      "ExchangeSerif": "",
+      "StartDate": "",
+      "EndDate": "",
+      "ExchangeEndDate": "",
+      "CardID": 0,
+      "CardDisplayIndex": 0,
+      "BGID": 0,
+      "SystemVoiceID": 0,
+      "BGMID": 0,
+      "PrologueEventID": 0,
+      "TutorialEventID": 0,
+      "NormalEpilogueEventID": 0,
+      "HardEpilogueEventID": 0,
+      "VeryHardEpilogueEventID": 0,
+      "OpenDifficultyQuestID": 0,
+      "NormalBattleNum": 0,
+      "HardBattleNum": 0,
+      "VeryHardBattleNum": 0
+    },
+    {
+      "ID": 1,
+      "Caption": "閻魔",
+      "DailyReward": true,
+      "ExchangeCaption": "閻魔庁",
+      "ExchangeSerif": "地獄の沙汰も霊魂次第。\nここでなら、おぬしの求めるものが、\nきっと見つかるはずじゃ。",
+      "StartDate": "2023/01/31 13:30:00",
+      "EndDate": "2099/01/01 00:00:00",
+      "ExchangeEndDate": "",
+      "CardID": 439,
+      "CardDisplayIndex": 3,
+      "BGID": 1,
+      "SystemVoiceID": 431,
+      "BGMID": 22,
+      "PrologueEventID": 101,
+      "TutorialEventID": 102,
+      "NormalEpilogueEventID": 103,
+      "HardEpilogueEventID": 104,
+      "VeryHardEpilogueEventID": 105,
+      "OpenDifficultyQuestID": 30041,
+      "NormalBattleNum": 6,
+      "HardBattleNum": 10,
+      "VeryHardBattleNum": 10
+    },
+    {
+      "ID": 2,
+      "Caption": "ヘル",
+      "DailyReward": true,
+      "ExchangeCaption": "エーリューズニル",
+      "ExchangeSerif": "魂を導く手伝いをしてくれるというのなら、\n当然、ご褒美が必要よね。\n貴方はどういうものが欲しいの？",
+      "StartDate": "2023/01/31 13:30:00",
+      "EndDate": "2099/01/01 00:00:00",
+      "ExchangeEndDate": "",
+      "CardID": 509,
+      "CardDisplayIndex": 3,
+      "BGID": 2,
+      "SystemVoiceID": 529,
+      "BGMID": 32,
+      "PrologueEventID": 111,
+      "TutorialEventID": 112,
+      "NormalEpilogueEventID": 113,
+      "HardEpilogueEventID": 114,
+      "VeryHardEpilogueEventID": 115,
+      "OpenDifficultyQuestID": 31041,
+      "NormalBattleNum": 6,
+      "HardBattleNum": 10,
+      "VeryHardBattleNum": 10
+    },
+    {
+      "ID": 3,
+      "Caption": "サタン",
+      "DailyReward": true,
+      "ExchangeCaption": "ドゥアト",
+      "ExchangeSerif": "何を選び……どのように使うか。\nその決断も、汝の魂に深く刻まられることだろう。\n審判の日に悔いることがなきよう、大いに悩め。",
+      "StartDate": "2022/10/25 13:30:00",
+      "EndDate": "2099/01/01 00:00:00",
+      "ExchangeEndDate": "",
+      "CardID": 734,
+      "CardDisplayIndex": 3,
+      "BGID": 3,
+      "SystemVoiceID": 720,
+      "BGMID": 62,
+      "PrologueEventID": 121,
+      "TutorialEventID": 122,
+      "NormalEpilogueEventID": 123,
+      "HardEpilogueEventID": 124,
+      "VeryHardEpilogueEventID": 125,
+      "OpenDifficultyQuestID": 32041,
+      "NormalBattleNum": 6,
+      "HardBattleNum": 10,
+      "VeryHardBattleNum": 10
+    },
+    {
+      "ID": 4,
+      "Caption": "感謝祭",
+      "DailyReward": false,
+      "ExchangeCaption": "[絢爛]郡上八幡城",
+      "ExchangeSerif": "へっあ～！　いらっしゃい、殿。　ここにあるのは\nどれもこれも郡上八幡の魅力が詰まった物ばかりよ。\n踊る阿呆も選らばにゃソンソン、なんだから♪",
+      "StartDate": "2026/04/28 13:30:00",
+      "EndDate": "2026/05/12 14:00:00",
+      "ExchangeEndDate": "2026/05/19 14:00:00",
+      "CardID": 3115,
+      "CardDisplayIndex": 3,
+      "BGID": 4,
+      "SystemVoiceID": 1068,
+      "BGMID": 42,
+      "PrologueEventID": 319,
+      "TutorialEventID": 320,
+      "NormalEpilogueEventID": 0,
+      "HardEpilogueEventID": 0,
+      "VeryHardEpilogueEventID": 321,
+      "OpenDifficultyQuestID": 0,
+      "NormalBattleNum": 0,
+      "HardBattleNum": 0,
+      "VeryHardBattleNum": 4
+    },
+    {
+      "ID": 5,
+      "Caption": "ハデス",
+      "DailyReward": false,
+      "ExchangeCaption": "エレボス",
+      "ExchangeSerif": "はいはい、寄ってら見てらー。オススメは\nレテの水だし、何もかもキレーに忘れら\nれるぞー。ほれ、試しに一杯飲んでみー？",
+      "StartDate": "2025/02/04 13:30:00",
+      "EndDate": "2099/01/01 00:00:00",
+      "ExchangeEndDate": "",
+      "CardID": 964,
+      "CardDisplayIndex": 3,
+      "BGID": 5,
+      "SystemVoiceID": 960,
+      "BGMID": 101,
+      "PrologueEventID": 141,
+      "TutorialEventID": 142,
+      "NormalEpilogueEventID": 0,
+      "HardEpilogueEventID": 0,
+      "VeryHardEpilogueEventID": 0,
+      "OpenDifficultyQuestID": 0,
+      "NormalBattleNum": 6,
+      "HardBattleNum": 10,
+      "VeryHardBattleNum": 10
+    },
+    {
+      "ID": 6,
+      "Caption": "絢爛復刻1",
+      "DailyReward": false,
+      "ExchangeCaption": "",
+      "ExchangeSerif": "",
+      "StartDate": "2025/04/30 13:30:00",
+      "EndDate": "2099/01/01 00:00:00",
+      "ExchangeEndDate": "",
+      "CardID": 889,
+      "CardDisplayIndex": 1,
+      "BGID": 6,
+      "SystemVoiceID": 960,
+      "BGMID": 42,
+      "PrologueEventID": 0,
+      "TutorialEventID": 152,
+      "NormalEpilogueEventID": 0,
+      "HardEpilogueEventID": 0,
+      "VeryHardEpilogueEventID": 0,
+      "OpenDifficultyQuestID": 0,
+      "NormalBattleNum": 0,
+      "HardBattleNum": 0,
+      "VeryHardBattleNum": 0
+    }
+  ]
+}

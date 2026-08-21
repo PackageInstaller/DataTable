@@ -1,0 +1,2389 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 232,
+    "record_size": 32,
+    "custom_id": 2036689011
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Param",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "PuchaseNum",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "StartDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "EndDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "ConsumeNum",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "KPITitle",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 28,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 607,
+      "Type": 6,
+      "Param": "ID:1051",
+      "PuchaseNum": 1,
+      "StartDate": "2026/04/02",
+      "EndDate": "2026/04/13",
+      "ConsumeNum": 100,
+      "KPITitle": "魔剣アンサラー"
+    },
+    {
+      "ID": 608,
+      "Type": 6,
+      "Param": "ID:98111",
+      "PuchaseNum": 1,
+      "StartDate": "2026/04/02",
+      "EndDate": "2026/04/13",
+      "ConsumeNum": 100,
+      "KPITitle": "疾風の扇"
+    },
+    {
+      "ID": 609,
+      "Type": 6,
+      "Param": "ID:98141",
+      "PuchaseNum": 1,
+      "StartDate": "2026/04/02",
+      "EndDate": "2026/04/13",
+      "ConsumeNum": 100,
+      "KPITitle": "冥界の儀杖"
+    },
+    {
+      "ID": 610,
+      "Type": 6,
+      "Param": "ID:98173",
+      "PuchaseNum": 1,
+      "StartDate": "2026/04/02",
+      "EndDate": "2026/04/13",
+      "ConsumeNum": 100,
+      "KPITitle": "ゴブリンの棍棒"
+    },
+    {
+      "ID": 611,
+      "Type": 6,
+      "Param": "ID:98181",
+      "PuchaseNum": 1,
+      "StartDate": "2026/04/02",
+      "EndDate": "2026/04/13",
+      "ConsumeNum": 100,
+      "KPITitle": "デュラハンの盾"
+    },
+    {
+      "ID": 612,
+      "Type": 6,
+      "Param": "ID:98212",
+      "PuchaseNum": 1,
+      "StartDate": "2026/04/02",
+      "EndDate": "2026/04/13",
+      "ConsumeNum": 100,
+      "KPITitle": "レイスの魂鎌"
+    },
+    {
+      "ID": 613,
+      "Type": 6,
+      "Param": "ID:98211",
+      "PuchaseNum": 1,
+      "StartDate": "2026/04/02",
+      "EndDate": "2026/04/13",
+      "ConsumeNum": 100,
+      "KPITitle": "ｼﾞｵ･ﾍﾟﾝﾃﾞｭﾗﾑ"
+    },
+    {
+      "ID": 614,
+      "Type": 6,
+      "Param": "ID:98221",
+      "PuchaseNum": 1,
+      "StartDate": "2026/04/02",
+      "EndDate": "2026/04/13",
+      "ConsumeNum": 100,
+      "KPITitle": "創華の神棍"
+    },
+    {
+      "ID": 615,
+      "Type": 6,
+      "Param": "ID:98233",
+      "PuchaseNum": 1,
+      "StartDate": "2026/04/02",
+      "EndDate": "2026/04/13",
+      "ConsumeNum": 100,
+      "KPITitle": "雷撃の魔導書"
+    },
+    {
+      "ID": 1206,
+      "Type": 5,
+      "Param": "ID:8025",
+      "PuchaseNum": 1,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeNum": 50,
+      "KPITitle": "ススキ＆羅紗"
+    },
+    {
+      "ID": 1202,
+      "Type": 5,
+      "Param": "ID:8007",
+      "PuchaseNum": 1,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeNum": 750,
+      "KPITitle": "羅紗[改壱]"
+    },
+    {
+      "ID": 1001,
+      "Type": 5,
+      "Param": "ID:8015",
+      "PuchaseNum": 1,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeNum": 200,
+      "KPITitle": "羅紗[改零]（お得ver）"
+    },
+    {
+      "ID": 1101,
+      "Type": 5,
+      "Param": "ID:8015",
+      "PuchaseNum": 5,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeNum": 250,
+      "KPITitle": "羅紗[改零]"
+    },
+    {
+      "ID": 1205,
+      "Type": 5,
+      "Param": "ID:8336",
+      "PuchaseNum": 2,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeNum": 200,
+      "KPITitle": "羅紗[★6/兜娘]"
+    },
+    {
+      "ID": 1203,
+      "Type": 5,
+      "Param": "ID:8009",
+      "PuchaseNum": 1,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeNum": 750,
+      "KPITitle": "ススキ[改壱]"
+    },
+    {
+      "ID": 1002,
+      "Type": 5,
+      "Param": "ID:8016",
+      "PuchaseNum": 1,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeNum": 200,
+      "KPITitle": "ススキ[改零]（お得ver）"
+    },
+    {
+      "ID": 1102,
+      "Type": 5,
+      "Param": "ID:8016",
+      "PuchaseNum": 5,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeNum": 250,
+      "KPITitle": "ススキ[改零]"
+    },
+    {
+      "ID": 1204,
+      "Type": 5,
+      "Param": "ID:8018",
+      "PuchaseNum": 1,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeNum": 250,
+      "KPITitle": "ミズチ"
+    },
+    {
+      "ID": 1200,
+      "Type": 5,
+      "Param": "ID:305",
+      "PuchaseNum": 1,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeNum": 300,
+      "KPITitle": "柳生城"
+    },
+    {
+      "ID": 1201,
+      "Type": 21,
+      "Param": "Value:1",
+      "PuchaseNum": 5,
+      "StartDate": "",
+      "EndDate": "",
+      "ConsumeNum": 15,
+      "KPITitle": "抜刀珠"
+    },
+    {
+      "ID": 542,
+      "Type": 5,
+      "Param": "ID:350",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 1000,
+      "KPITitle": "烏城"
+    },
+    {
+      "ID": 543,
+      "Type": 5,
+      "Param": "ID:731",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 1000,
+      "KPITitle": "[絢爛]七尾城"
+    },
+    {
+      "ID": 544,
+      "Type": 5,
+      "Param": "ID:805",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 1000,
+      "KPITitle": "[絢爛]観音寺城"
+    },
+    {
+      "ID": 801,
+      "Type": 5,
+      "Param": "ID:309",
+      "PuchaseNum": 1,
+      "StartDate": "2024/09/03",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 500,
+      "KPITitle": "銀杏城"
+    },
+    {
+      "ID": 802,
+      "Type": 5,
+      "Param": "ID:417",
+      "PuchaseNum": 1,
+      "StartDate": "2024/09/03",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 500,
+      "KPITitle": "館山城"
+    },
+    {
+      "ID": 803,
+      "Type": 5,
+      "Param": "ID:932",
+      "PuchaseNum": 1,
+      "StartDate": "2026/03/24",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 500,
+      "KPITitle": "ビューマリス城"
+    },
+    {
+      "ID": 545,
+      "Type": 5,
+      "Param": "ID:362",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 500,
+      "KPITitle": "[端午]多賀城"
+    },
+    {
+      "ID": 546,
+      "Type": 5,
+      "Param": "ID:342",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 300,
+      "KPITitle": "[節分]鬼ヶ城"
+    },
+    {
+      "ID": 414,
+      "Type": 5,
+      "Param": "ID:7735",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/16",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 500,
+      "KPITitle": "蒲生氏郷"
+    },
+    {
+      "ID": 409,
+      "Type": 5,
+      "Param": "ID:7725",
+      "PuchaseNum": 1,
+      "StartDate": "2023/10/31",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 500,
+      "KPITitle": "山県 昌景"
+    },
+    {
+      "ID": 408,
+      "Type": 5,
+      "Param": "ID:7721",
+      "PuchaseNum": 1,
+      "StartDate": "2022/11/29",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 500,
+      "KPITitle": "上杉景勝"
+    },
+    {
+      "ID": 407,
+      "Type": 5,
+      "Param": "ID:7719",
+      "PuchaseNum": 1,
+      "StartDate": "2022/07/26",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 500,
+      "KPITitle": "片倉小十郎"
+    },
+    {
+      "ID": 406,
+      "Type": 5,
+      "Param": "ID:7715",
+      "PuchaseNum": 1,
+      "StartDate": "2022/05/24",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 500,
+      "KPITitle": "福島正則"
+    },
+    {
+      "ID": 405,
+      "Type": 5,
+      "Param": "ID:7711",
+      "PuchaseNum": 1,
+      "StartDate": "2022/01/25",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 500,
+      "KPITitle": "石田三成"
+    },
+    {
+      "ID": 404,
+      "Type": 5,
+      "Param": "ID:7707",
+      "PuchaseNum": 1,
+      "StartDate": "2021/07/27",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 500,
+      "KPITitle": "シュテファン"
+    },
+    {
+      "ID": 403,
+      "Type": 5,
+      "Param": "ID:7705",
+      "PuchaseNum": 1,
+      "StartDate": "2021/04/27",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 500,
+      "KPITitle": "毛利元就"
+    },
+    {
+      "ID": 402,
+      "Type": 5,
+      "Param": "ID:7703",
+      "PuchaseNum": 1,
+      "StartDate": "2021/01/26",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 500,
+      "KPITitle": "黒田長政"
+    },
+    {
+      "ID": 401,
+      "Type": 5,
+      "Param": "ID:7701",
+      "PuchaseNum": 1,
+      "StartDate": "2020/10/20",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 500,
+      "KPITitle": "前田利家"
+    },
+    {
+      "ID": 413,
+      "Type": 5,
+      "Param": "ID:7801",
+      "PuchaseNum": 1,
+      "StartDate": "2024/01/30",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 200,
+      "KPITitle": "桃形兜"
+    },
+    {
+      "ID": 500,
+      "Type": 6,
+      "Param": "ID:1048",
+      "PuchaseNum": 1,
+      "StartDate": "2022/10/11",
+      "EndDate": "2022/10/25",
+      "ConsumeNum": 100,
+      "KPITitle": "ラム・ド・ソルシエール"
+    },
+    {
+      "ID": 501,
+      "Type": 6,
+      "Param": "ID:18012",
+      "PuchaseNum": 1,
+      "StartDate": "2022/10/11",
+      "EndDate": "2022/10/25",
+      "ConsumeNum": 100,
+      "KPITitle": "ヴォルフスハント"
+    },
+    {
+      "ID": 502,
+      "Type": 6,
+      "Param": "ID:1040",
+      "PuchaseNum": 1,
+      "StartDate": "2022/10/11",
+      "EndDate": "2022/10/25",
+      "ConsumeNum": 100,
+      "KPITitle": "ｼﾞｬｯｸ･ｵｰ･ﾌﾚｲﾑ"
+    },
+    {
+      "ID": 503,
+      "Type": 6,
+      "Param": "ID:10024",
+      "PuchaseNum": 1,
+      "StartDate": "2022/11/08",
+      "EndDate": "2022/11/22",
+      "ConsumeNum": 100,
+      "KPITitle": "レッドスコーピオン"
+    },
+    {
+      "ID": 504,
+      "Type": 6,
+      "Param": "ID:6030",
+      "PuchaseNum": 1,
+      "StartDate": "2022/11/08",
+      "EndDate": "2022/11/22",
+      "ConsumeNum": 100,
+      "KPITitle": "桃花じょうろ"
+    },
+    {
+      "ID": 505,
+      "Type": 6,
+      "Param": "ID:4048",
+      "PuchaseNum": 1,
+      "StartDate": "2022/11/08",
+      "EndDate": "2022/11/22",
+      "ConsumeNum": 100,
+      "KPITitle": "EＸマサムネガン"
+    },
+    {
+      "ID": 506,
+      "Type": 6,
+      "Param": "ID:4044",
+      "PuchaseNum": 1,
+      "StartDate": "2022/11/29",
+      "EndDate": "2022/12/13",
+      "ConsumeNum": 100,
+      "KPITitle": "白狐の霜筒"
+    },
+    {
+      "ID": 507,
+      "Type": 6,
+      "Param": "ID:1051",
+      "PuchaseNum": 1,
+      "StartDate": "2022/12/13",
+      "EndDate": "2022/12/30",
+      "ConsumeNum": 90,
+      "KPITitle": "魔剣アンサラー"
+    },
+    {
+      "ID": 508,
+      "Type": 6,
+      "Param": "ID:10017",
+      "PuchaseNum": 1,
+      "StartDate": "2022/12/30",
+      "EndDate": "2023/01/24",
+      "ConsumeNum": 100,
+      "KPITitle": "門松平蜘蛛砲"
+    },
+    {
+      "ID": 509,
+      "Type": 6,
+      "Param": "ID:2019",
+      "PuchaseNum": 1,
+      "StartDate": "2022/12/30",
+      "EndDate": "2023/01/24",
+      "ConsumeNum": 50,
+      "KPITitle": "門松寿槍"
+    },
+    {
+      "ID": 510,
+      "Type": 6,
+      "Param": "ID:2033",
+      "PuchaseNum": 1,
+      "StartDate": "2023/02/14",
+      "EndDate": "2023/02/28",
+      "ConsumeNum": 100,
+      "KPITitle": "ｸﾚｰﾑ･ﾗ･ﾄｩｰﾙ"
+    },
+    {
+      "ID": 511,
+      "Type": 6,
+      "Param": "ID:15008",
+      "PuchaseNum": 1,
+      "StartDate": "2023/02/14",
+      "EndDate": "2023/02/28",
+      "ConsumeNum": 100,
+      "KPITitle": "夜叉の甘杓"
+    },
+    {
+      "ID": 512,
+      "Type": 6,
+      "Param": "ID:4047",
+      "PuchaseNum": 1,
+      "StartDate": "2023/02/14",
+      "EndDate": "2023/02/28",
+      "ConsumeNum": 100,
+      "KPITitle": "甘撃の鶴筒"
+    },
+    {
+      "ID": 513,
+      "Type": 5,
+      "Param": "ID:362",
+      "PuchaseNum": 1,
+      "StartDate": "2023/05/02",
+      "EndDate": "2023/05/16",
+      "ConsumeNum": 500,
+      "KPITitle": "[端午]多賀城"
+    },
+    {
+      "ID": 514,
+      "Type": 6,
+      "Param": "ID:6016",
+      "PuchaseNum": 1,
+      "StartDate": "2023/05/02",
+      "EndDate": "2023/05/16",
+      "ConsumeNum": 100,
+      "KPITitle": "緋鯉の弩"
+    },
+    {
+      "ID": 515,
+      "Type": 6,
+      "Param": "ID:2042",
+      "PuchaseNum": 1,
+      "StartDate": "2023/05/30",
+      "EndDate": "2023/06/13",
+      "ConsumeNum": 100,
+      "KPITitle": "花葵の祝槍"
+    },
+    {
+      "ID": 516,
+      "Type": 6,
+      "Param": "ID:1054",
+      "PuchaseNum": 1,
+      "StartDate": "2023/05/30",
+      "EndDate": "2023/06/13",
+      "ConsumeNum": 100,
+      "KPITitle": "祝婚兼光"
+    },
+    {
+      "ID": 517,
+      "Type": 6,
+      "Param": "ID:98111",
+      "PuchaseNum": 1,
+      "StartDate": "2023/06/13",
+      "EndDate": "2023/06/27",
+      "ConsumeNum": 100,
+      "KPITitle": "疾風の扇"
+    },
+    {
+      "ID": 518,
+      "Type": 6,
+      "Param": "ID:5026",
+      "PuchaseNum": 1,
+      "StartDate": "2023/06/27",
+      "EndDate": "2023/07/18",
+      "ConsumeNum": 100,
+      "KPITitle": "黄金の渚弓"
+    },
+    {
+      "ID": 519,
+      "Type": 6,
+      "Param": "ID:4033",
+      "PuchaseNum": 1,
+      "StartDate": "2023/06/27",
+      "EndDate": "2023/07/18",
+      "ConsumeNum": 100,
+      "KPITitle": "朱威流水砲"
+    },
+    {
+      "ID": 520,
+      "Type": 6,
+      "Param": "ID:11024",
+      "PuchaseNum": 1,
+      "StartDate": "2023/06/27",
+      "EndDate": "2023/07/18",
+      "ConsumeNum": 100,
+      "KPITitle": "蒼玉の騎士盾"
+    },
+    {
+      "ID": 521,
+      "Type": 6,
+      "Param": "ID:4040",
+      "PuchaseNum": 1,
+      "StartDate": "2023/06/27",
+      "EndDate": "2023/07/18",
+      "ConsumeNum": 100,
+      "KPITitle": "八咫千鳥筒"
+    },
+    {
+      "ID": 522,
+      "Type": 6,
+      "Param": "ID:9019",
+      "PuchaseNum": 1,
+      "StartDate": "2023/08/08",
+      "EndDate": "2023/08/22",
+      "ConsumeNum": 100,
+      "KPITitle": "幽魂番傘"
+    },
+    {
+      "ID": 523,
+      "Type": 6,
+      "Param": "ID:9024",
+      "PuchaseNum": 1,
+      "StartDate": "2023/08/08",
+      "EndDate": "2023/08/22",
+      "ConsumeNum": 100,
+      "KPITitle": "秋狸の筆"
+    },
+    {
+      "ID": 524,
+      "Type": 6,
+      "Param": "ID:2043",
+      "PuchaseNum": 1,
+      "StartDate": "2023/08/08",
+      "EndDate": "2023/08/22",
+      "ConsumeNum": 100,
+      "KPITitle": "黙嗟の幽槍"
+    },
+    {
+      "ID": 525,
+      "Type": 6,
+      "Param": "ID:2049",
+      "PuchaseNum": 1,
+      "StartDate": "2023/08/08",
+      "EndDate": "2023/08/22",
+      "ConsumeNum": 100,
+      "KPITitle": "塔婆散魂槍"
+    },
+    {
+      "ID": 526,
+      "Type": 6,
+      "Param": "ID:1048",
+      "PuchaseNum": 1,
+      "StartDate": "2023/10/17",
+      "EndDate": "2023/10/31",
+      "ConsumeNum": 100,
+      "KPITitle": "ラム・ド・ソルシエール"
+    },
+    {
+      "ID": 527,
+      "Type": 6,
+      "Param": "ID:18012",
+      "PuchaseNum": 1,
+      "StartDate": "2023/10/17",
+      "EndDate": "2023/10/31",
+      "ConsumeNum": 100,
+      "KPITitle": "ヴォルフスハント"
+    },
+    {
+      "ID": 528,
+      "Type": 6,
+      "Param": "ID:1040",
+      "PuchaseNum": 1,
+      "StartDate": "2023/10/17",
+      "EndDate": "2023/10/31",
+      "ConsumeNum": 100,
+      "KPITitle": "ｼﾞｬｯｸ･ｵｰ･ﾌﾚｲﾑ"
+    },
+    {
+      "ID": 529,
+      "Type": 6,
+      "Param": "ID:3035",
+      "PuchaseNum": 1,
+      "StartDate": "2023/10/17",
+      "EndDate": "2023/10/31",
+      "ConsumeNum": 100,
+      "KPITitle": "パンプキン・ハンマー"
+    },
+    {
+      "ID": 530,
+      "Type": 6,
+      "Param": "ID:4044",
+      "PuchaseNum": 1,
+      "StartDate": "2023/11/28",
+      "EndDate": "2023/12/12",
+      "ConsumeNum": 100,
+      "KPITitle": "白狐の霜筒"
+    },
+    {
+      "ID": 531,
+      "Type": 6,
+      "Param": "ID:1059",
+      "PuchaseNum": 1,
+      "StartDate": "2023/11/28",
+      "EndDate": "2023/12/12",
+      "ConsumeNum": 100,
+      "KPITitle": "ワンダーステッキ"
+    },
+    {
+      "ID": 532,
+      "Type": 6,
+      "Param": "ID:6023",
+      "PuchaseNum": 1,
+      "StartDate": "2023/12/26",
+      "EndDate": "2024/01/16",
+      "ConsumeNum": 100,
+      "KPITitle": "迎春羽子弩"
+    },
+    {
+      "ID": 533,
+      "Type": 6,
+      "Param": "ID:10017",
+      "PuchaseNum": 1,
+      "StartDate": "2023/12/26",
+      "EndDate": "2024/01/16",
+      "ConsumeNum": 100,
+      "KPITitle": "門松平蜘蛛砲"
+    },
+    {
+      "ID": 534,
+      "Type": 6,
+      "Param": "ID:18017",
+      "PuchaseNum": 1,
+      "StartDate": "2023/12/26",
+      "EndDate": "2024/01/16",
+      "ConsumeNum": 100,
+      "KPITitle": "寛永の注連縄"
+    },
+    {
+      "ID": 535,
+      "Type": 6,
+      "Param": "ID:1060",
+      "PuchaseNum": 1,
+      "StartDate": "2023/12/26",
+      "EndDate": "2024/01/16",
+      "ConsumeNum": 100,
+      "KPITitle": "謹賀・ソハヤノツルキ"
+    },
+    {
+      "ID": 536,
+      "Type": 6,
+      "Param": "ID:5039",
+      "PuchaseNum": 1,
+      "StartDate": "2023/12/26",
+      "EndDate": "2024/01/16",
+      "ConsumeNum": 100,
+      "KPITitle": "初夢三破魔矢"
+    },
+    {
+      "ID": 537,
+      "Type": 6,
+      "Param": "ID:2033",
+      "PuchaseNum": 1,
+      "StartDate": "2024/02/13",
+      "EndDate": "2024/02/27",
+      "ConsumeNum": 100,
+      "KPITitle": "ｸﾚｰﾑ･ﾗ･ﾄｩｰﾙ"
+    },
+    {
+      "ID": 538,
+      "Type": 6,
+      "Param": "ID:15008",
+      "PuchaseNum": 1,
+      "StartDate": "2024/02/13",
+      "EndDate": "2024/02/27",
+      "ConsumeNum": 100,
+      "KPITitle": "夜叉の甘杓"
+    },
+    {
+      "ID": 539,
+      "Type": 6,
+      "Param": "ID:4047",
+      "PuchaseNum": 1,
+      "StartDate": "2024/02/13",
+      "EndDate": "2024/02/27",
+      "ConsumeNum": 100,
+      "KPITitle": "甘撃の鶴筒"
+    },
+    {
+      "ID": 540,
+      "Type": 6,
+      "Param": "ID:98111",
+      "PuchaseNum": 1,
+      "StartDate": "2024/02/27",
+      "EndDate": "2024/03/12",
+      "ConsumeNum": 100,
+      "KPITitle": "疾風の扇"
+    },
+    {
+      "ID": 541,
+      "Type": 6,
+      "Param": "ID:98141",
+      "PuchaseNum": 1,
+      "StartDate": "2024/02/27",
+      "EndDate": "2024/03/12",
+      "ConsumeNum": 100,
+      "KPITitle": "冥界の儀杖"
+    },
+    {
+      "ID": 600,
+      "Type": 6,
+      "Param": "ID:1051",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/30",
+      "EndDate": "2025/10/14",
+      "ConsumeNum": 100,
+      "KPITitle": "魔剣アンサラー"
+    },
+    {
+      "ID": 601,
+      "Type": 6,
+      "Param": "ID:98111",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/30",
+      "EndDate": "2025/10/14",
+      "ConsumeNum": 100,
+      "KPITitle": "疾風の扇"
+    },
+    {
+      "ID": 602,
+      "Type": 6,
+      "Param": "ID:98141",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/30",
+      "EndDate": "2025/10/14",
+      "ConsumeNum": 100,
+      "KPITitle": "冥界の儀杖"
+    },
+    {
+      "ID": 603,
+      "Type": 6,
+      "Param": "ID:98173",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/30",
+      "EndDate": "2025/10/14",
+      "ConsumeNum": 100,
+      "KPITitle": "ゴブリンの棍棒"
+    },
+    {
+      "ID": 604,
+      "Type": 6,
+      "Param": "ID:98181",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/30",
+      "EndDate": "2025/10/14",
+      "ConsumeNum": 100,
+      "KPITitle": "デュラハンの盾"
+    },
+    {
+      "ID": 605,
+      "Type": 6,
+      "Param": "ID:98212",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/30",
+      "EndDate": "2025/10/14",
+      "ConsumeNum": 100,
+      "KPITitle": "レイスの魂鎌"
+    },
+    {
+      "ID": 606,
+      "Type": 6,
+      "Param": "ID:98211",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/30",
+      "EndDate": "2025/10/14",
+      "ConsumeNum": 100,
+      "KPITitle": "ｼﾞｵ･ﾍﾟﾝﾃﾞｭﾗﾑ"
+    },
+    {
+      "ID": 587,
+      "Type": 6,
+      "Param": "ID:1079",
+      "PuchaseNum": 1,
+      "StartDate": "2024/09/03",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 180,
+      "KPITitle": "天剣・童子切安綱"
+    },
+    {
+      "ID": 201,
+      "Type": 6,
+      "Param": "ID:1036",
+      "PuchaseNum": 1,
+      "StartDate": "2023/03/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 180,
+      "KPITitle": "天叢雲剣"
+    },
+    {
+      "ID": 209,
+      "Type": 6,
+      "Param": "ID:1038",
+      "PuchaseNum": 1,
+      "StartDate": "2022/07/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 90,
+      "KPITitle": "琉陽千代金丸"
+    },
+    {
+      "ID": 207,
+      "Type": 6,
+      "Param": "ID:2037",
+      "PuchaseNum": 1,
+      "StartDate": "2022/06/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 180,
+      "KPITitle": "天之瓊矛"
+    },
+    {
+      "ID": 215,
+      "Type": 6,
+      "Param": "ID:3021",
+      "PuchaseNum": 1,
+      "StartDate": "2022/10/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 180,
+      "KPITitle": "ミョルニル"
+    },
+    {
+      "ID": 213,
+      "Type": 6,
+      "Param": "ID:11023",
+      "PuchaseNum": 1,
+      "StartDate": "2022/09/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 180,
+      "KPITitle": "アンキレー"
+    },
+    {
+      "ID": 221,
+      "Type": 6,
+      "Param": "ID:15311",
+      "PuchaseNum": 1,
+      "StartDate": "2023/01/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 180,
+      "KPITitle": "ケラウノス"
+    },
+    {
+      "ID": 223,
+      "Type": 6,
+      "Param": "ID:18008",
+      "PuchaseNum": 1,
+      "StartDate": "2023/02/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 180,
+      "KPITitle": "九尾の猫鞭"
+    },
+    {
+      "ID": 225,
+      "Type": 6,
+      "Param": "ID:19013",
+      "PuchaseNum": 1,
+      "StartDate": "2022/10/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 180,
+      "KPITitle": "タナトスの鎌"
+    },
+    {
+      "ID": 276,
+      "Type": 6,
+      "Param": "ID:20010",
+      "PuchaseNum": 1,
+      "StartDate": "2023/03/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 180,
+      "KPITitle": "シャルル"
+    },
+    {
+      "ID": 290,
+      "Type": 6,
+      "Param": "ID:21015",
+      "PuchaseNum": 1,
+      "StartDate": "2023/08/22",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 180,
+      "KPITitle": "トゥンカル"
+    },
+    {
+      "ID": 292,
+      "Type": 6,
+      "Param": "ID:22012",
+      "PuchaseNum": 1,
+      "StartDate": "2023/08/29",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 180,
+      "KPITitle": "干将・莫邪"
+    },
+    {
+      "ID": 205,
+      "Type": 6,
+      "Param": "ID:5029",
+      "PuchaseNum": 1,
+      "StartDate": "2022/05/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 180,
+      "KPITitle": "天之麻迦古弓"
+    },
+    {
+      "ID": 217,
+      "Type": 6,
+      "Param": "ID:4030",
+      "PuchaseNum": 1,
+      "StartDate": "2022/11/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 180,
+      "KPITitle": "五雷神機"
+    },
+    {
+      "ID": 219,
+      "Type": 6,
+      "Param": "ID:6024",
+      "PuchaseNum": 1,
+      "StartDate": "2022/12/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 180,
+      "KPITitle": "元戎"
+    },
+    {
+      "ID": 211,
+      "Type": 6,
+      "Param": "ID:10022",
+      "PuchaseNum": 1,
+      "StartDate": "2022/08/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 180,
+      "KPITitle": "ﾂｧｰﾘ･ﾌﾟｰｼｭｶ"
+    },
+    {
+      "ID": 203,
+      "Type": 6,
+      "Param": "ID:9022",
+      "PuchaseNum": 1,
+      "StartDate": "2022/04/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 180,
+      "KPITitle": "天平宝物筆"
+    },
+    {
+      "ID": 206,
+      "Type": 14,
+      "Param": "ID:1414",
+      "PuchaseNum": 1,
+      "StartDate": "2022/05/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 45,
+      "KPITitle": "天若日子門"
+    },
+    {
+      "ID": 210,
+      "Type": 14,
+      "Param": "ID:1416",
+      "PuchaseNum": 1,
+      "StartDate": "2022/07/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 22,
+      "KPITitle": "守礼門"
+    },
+    {
+      "ID": 222,
+      "Type": 14,
+      "Param": "ID:1424",
+      "PuchaseNum": 1,
+      "StartDate": "2023/01/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 45,
+      "KPITitle": "ハドリアヌスの門"
+    },
+    {
+      "ID": 224,
+      "Type": 14,
+      "Param": "ID:1426",
+      "PuchaseNum": 1,
+      "StartDate": "2023/02/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 45,
+      "KPITitle": "アドミナルティ"
+    },
+    {
+      "ID": 226,
+      "Type": 14,
+      "Param": "ID:1437",
+      "PuchaseNum": 1,
+      "StartDate": "2022/10/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 45,
+      "KPITitle": "タルタロスの門"
+    },
+    {
+      "ID": 214,
+      "Type": 14,
+      "Param": "ID:2414",
+      "PuchaseNum": 1,
+      "StartDate": "2022/09/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 45,
+      "KPITitle": "リーメス"
+    },
+    {
+      "ID": 202,
+      "Type": 14,
+      "Param": "ID:3413",
+      "PuchaseNum": 1,
+      "StartDate": "2023/03/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 45,
+      "KPITitle": "八重垣"
+    },
+    {
+      "ID": 218,
+      "Type": 14,
+      "Param": "ID:3420",
+      "PuchaseNum": 1,
+      "StartDate": "2022/11/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 45,
+      "KPITitle": "北京城壁"
+    },
+    {
+      "ID": 208,
+      "Type": 14,
+      "Param": "ID:4406",
+      "PuchaseNum": 1,
+      "StartDate": "2022/06/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 45,
+      "KPITitle": "天浮橋"
+    },
+    {
+      "ID": 216,
+      "Type": 14,
+      "Param": "ID:5417",
+      "PuchaseNum": 1,
+      "StartDate": "2022/10/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 45,
+      "KPITitle": "ログ湖"
+    },
+    {
+      "ID": 220,
+      "Type": 14,
+      "Param": "ID:7410",
+      "PuchaseNum": 1,
+      "StartDate": "2022/12/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 45,
+      "KPITitle": "武侯祠"
+    },
+    {
+      "ID": 277,
+      "Type": 14,
+      "Param": "ID:7419",
+      "PuchaseNum": 1,
+      "StartDate": "2023/03/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 45,
+      "KPITitle": "エアブズ"
+    },
+    {
+      "ID": 293,
+      "Type": 14,
+      "Param": "ID:7440",
+      "PuchaseNum": 1,
+      "StartDate": "2023/08/29",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 45,
+      "KPITitle": "三王墓"
+    },
+    {
+      "ID": 204,
+      "Type": 14,
+      "Param": "ID:8323",
+      "PuchaseNum": 1,
+      "StartDate": "2022/04/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 45,
+      "KPITitle": "正倉院正倉"
+    },
+    {
+      "ID": 212,
+      "Type": 14,
+      "Param": "ID:8324",
+      "PuchaseNum": 1,
+      "StartDate": "2022/08/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 45,
+      "KPITitle": "トロイツカヤ塔"
+    },
+    {
+      "ID": 291,
+      "Type": 14,
+      "Param": "ID:11419",
+      "PuchaseNum": 1,
+      "StartDate": "2023/08/22",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 45,
+      "KPITitle": "ヴァイクンタ庭園"
+    },
+    {
+      "ID": 278,
+      "Type": 6,
+      "Param": "ID:10024",
+      "PuchaseNum": 1,
+      "StartDate": "2022/04/12",
+      "EndDate": "2022/04/26",
+      "ConsumeNum": 100,
+      "KPITitle": "レッドスコーピオン"
+    },
+    {
+      "ID": 279,
+      "Type": 6,
+      "Param": "ID:6030",
+      "PuchaseNum": 1,
+      "StartDate": "2022/04/12",
+      "EndDate": "2022/04/26",
+      "ConsumeNum": 100,
+      "KPITitle": "桃花じょうろ"
+    },
+    {
+      "ID": 270,
+      "Type": 6,
+      "Param": "ID:6023",
+      "PuchaseNum": 1,
+      "StartDate": "2021/12/28",
+      "EndDate": "2022/01/18",
+      "ConsumeNum": 100,
+      "KPITitle": "迎春羽子弩"
+    },
+    {
+      "ID": 271,
+      "Type": 6,
+      "Param": "ID:10017",
+      "PuchaseNum": 1,
+      "StartDate": "2021/12/28",
+      "EndDate": "2022/01/18",
+      "ConsumeNum": 100,
+      "KPITitle": "門松平蜘蛛砲"
+    },
+    {
+      "ID": 268,
+      "Type": 6,
+      "Param": "ID:10024",
+      "PuchaseNum": 1,
+      "StartDate": "2021/11/16",
+      "EndDate": "2021/11/23",
+      "ConsumeNum": 100,
+      "KPITitle": "レッドスコーピオン"
+    },
+    {
+      "ID": 269,
+      "Type": 6,
+      "Param": "ID:6030",
+      "PuchaseNum": 1,
+      "StartDate": "2021/11/16",
+      "EndDate": "2021/11/23",
+      "ConsumeNum": 100,
+      "KPITitle": "桃花じょうろ"
+    },
+    {
+      "ID": 265,
+      "Type": 6,
+      "Param": "ID:9025",
+      "PuchaseNum": 1,
+      "StartDate": "2021/09/21",
+      "EndDate": "2021/09/28",
+      "ConsumeNum": 100,
+      "KPITitle": "太陰の光錫"
+    },
+    {
+      "ID": 253,
+      "Type": 6,
+      "Param": "ID:9019",
+      "PuchaseNum": 1,
+      "StartDate": "2021/08/10",
+      "EndDate": "2021/08/24",
+      "ConsumeNum": 100,
+      "KPITitle": "幽魂番傘"
+    },
+    {
+      "ID": 254,
+      "Type": 6,
+      "Param": "ID:9024",
+      "PuchaseNum": 1,
+      "StartDate": "2021/08/10",
+      "EndDate": "2021/08/24",
+      "ConsumeNum": 100,
+      "KPITitle": "秋狸の筆"
+    },
+    {
+      "ID": 285,
+      "Type": 6,
+      "Param": "ID:9019",
+      "PuchaseNum": 1,
+      "StartDate": "2022/08/16",
+      "EndDate": "2022/08/30",
+      "ConsumeNum": 100,
+      "KPITitle": "幽魂番傘"
+    },
+    {
+      "ID": 286,
+      "Type": 6,
+      "Param": "ID:9024",
+      "PuchaseNum": 1,
+      "StartDate": "2022/08/16",
+      "EndDate": "2022/08/30",
+      "ConsumeNum": 100,
+      "KPITitle": "秋狸の筆"
+    },
+    {
+      "ID": 287,
+      "Type": 6,
+      "Param": "ID:2043",
+      "PuchaseNum": 1,
+      "StartDate": "2022/08/16",
+      "EndDate": "2022/08/30",
+      "ConsumeNum": 100,
+      "KPITitle": "黙嗟の幽槍"
+    },
+    {
+      "ID": 283,
+      "Type": 6,
+      "Param": "ID:11024",
+      "PuchaseNum": 1,
+      "StartDate": "2022/06/28",
+      "EndDate": "2022/07/19",
+      "ConsumeNum": 100,
+      "KPITitle": "蒼玉の騎士盾"
+    },
+    {
+      "ID": 284,
+      "Type": 6,
+      "Param": "ID:4040",
+      "PuchaseNum": 1,
+      "StartDate": "2022/06/28",
+      "EndDate": "2022/07/19",
+      "ConsumeNum": 100,
+      "KPITitle": "八咫千鳥筒"
+    },
+    {
+      "ID": 251,
+      "Type": 6,
+      "Param": "ID:5026",
+      "PuchaseNum": 1,
+      "StartDate": "2022/06/28",
+      "EndDate": "2022/07/19",
+      "ConsumeNum": 100,
+      "KPITitle": "黄金の渚弓"
+    },
+    {
+      "ID": 252,
+      "Type": 6,
+      "Param": "ID:4033",
+      "PuchaseNum": 1,
+      "StartDate": "2022/06/28",
+      "EndDate": "2022/07/19",
+      "ConsumeNum": 100,
+      "KPITitle": "朱威流水砲"
+    },
+    {
+      "ID": 282,
+      "Type": 6,
+      "Param": "ID:2042",
+      "PuchaseNum": 1,
+      "StartDate": "2022/06/07",
+      "EndDate": "2022/06/21",
+      "ConsumeNum": 100,
+      "KPITitle": "花葵の祝槍"
+    },
+    {
+      "ID": 589,
+      "Type": 6,
+      "Param": "ID:6043",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/16",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "エースの白鶴弩"
+    },
+    {
+      "ID": 590,
+      "Type": 6,
+      "Param": "ID:19021",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/16",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "青花の魂鎌"
+    },
+    {
+      "ID": 591,
+      "Type": 6,
+      "Param": "ID:21019",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/16",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "潮騒のオカリナ"
+    },
+    {
+      "ID": 592,
+      "Type": 6,
+      "Param": "ID:18022",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/16",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "願護の錨鞭"
+    },
+    {
+      "ID": 593,
+      "Type": 6,
+      "Param": "ID:4063",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/16",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "禍ツ黒ノ恐銃"
+    },
+    {
+      "ID": 594,
+      "Type": 6,
+      "Param": "ID:24006",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/16",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "真紅の騎槍"
+    },
+    {
+      "ID": 595,
+      "Type": 6,
+      "Param": "ID:2058",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/16",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "月輪の双槍"
+    },
+    {
+      "ID": 596,
+      "Type": 6,
+      "Param": "ID:3044",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/16",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "湯堀の赤槌"
+    },
+    {
+      "ID": 597,
+      "Type": 6,
+      "Param": "ID:2061",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/16",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "双華の朱槍"
+    },
+    {
+      "ID": 598,
+      "Type": 6,
+      "Param": "ID:10031",
+      "PuchaseNum": 1,
+      "StartDate": "2025/09/16",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "ﾖﾄｩﾝ･ﾗｲﾝｽﾃﾞｨﾙ"
+    },
+    {
+      "ID": 585,
+      "Type": 6,
+      "Param": "ID:15010",
+      "PuchaseNum": 1,
+      "StartDate": "2024/07/30",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 50,
+      "KPITitle": "兎形兜の苦無"
+    },
+    {
+      "ID": 586,
+      "Type": 6,
+      "Param": "ID:2039",
+      "PuchaseNum": 1,
+      "StartDate": "2024/09/03",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 50,
+      "KPITitle": "桃形兜の槍"
+    },
+    {
+      "ID": 588,
+      "Type": 6,
+      "Param": "ID:9044",
+      "PuchaseNum": 1,
+      "StartDate": "2025/05/13",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 50,
+      "KPITitle": "烏天狗形兜の錫杖"
+    },
+    {
+      "ID": 700,
+      "Type": 6,
+      "Param": "ID:5051",
+      "PuchaseNum": 1,
+      "StartDate": "2025/11/25",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 50,
+      "KPITitle": "ケトルハット兜の長弓"
+    },
+    {
+      "ID": 547,
+      "Type": 6,
+      "Param": "ID:15206",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "クーゲルン"
+    },
+    {
+      "ID": 548,
+      "Type": 6,
+      "Param": "ID:15108",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "四鬼手裏剣"
+    },
+    {
+      "ID": 549,
+      "Type": 6,
+      "Param": "ID:21012",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "串刺公の竜笛"
+    },
+    {
+      "ID": 550,
+      "Type": 6,
+      "Param": "ID:1053",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "アロンダイト"
+    },
+    {
+      "ID": 551,
+      "Type": 6,
+      "Param": "ID:2047",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "七尾天龍槍"
+    },
+    {
+      "ID": 552,
+      "Type": 6,
+      "Param": "ID:6039",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "観音羅刹弩"
+    },
+    {
+      "ID": 553,
+      "Type": 6,
+      "Param": "ID:6023",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "迎春羽子弩"
+    },
+    {
+      "ID": 554,
+      "Type": 6,
+      "Param": "ID:18017",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "寛永の注連縄"
+    },
+    {
+      "ID": 555,
+      "Type": 6,
+      "Param": "ID:1060",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "謹賀・ソハヤノツルキ"
+    },
+    {
+      "ID": 556,
+      "Type": 6,
+      "Param": "ID:5039",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "初夢三破魔矢"
+    },
+    {
+      "ID": 557,
+      "Type": 6,
+      "Param": "ID:10017",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "門松平蜘蛛砲"
+    },
+    {
+      "ID": 558,
+      "Type": 6,
+      "Param": "ID:2033",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "ｸﾚｰﾑ･ﾗ･ﾄｩｰﾙ"
+    },
+    {
+      "ID": 559,
+      "Type": 6,
+      "Param": "ID:15008",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "夜叉の甘杓"
+    },
+    {
+      "ID": 560,
+      "Type": 6,
+      "Param": "ID:4047",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "甘撃の鶴筒"
+    },
+    {
+      "ID": 561,
+      "Type": 6,
+      "Param": "ID:3012",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "魔滅の金棒"
+    },
+    {
+      "ID": 562,
+      "Type": 6,
+      "Param": "ID:6030",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "桃花じょうろ"
+    },
+    {
+      "ID": 563,
+      "Type": 6,
+      "Param": "ID:10024",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "レッドスコーピオン"
+    },
+    {
+      "ID": 564,
+      "Type": 6,
+      "Param": "ID:4048",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "EＸマサムネガン"
+    },
+    {
+      "ID": 565,
+      "Type": 6,
+      "Param": "ID:6016",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "緋鯉の弩"
+    },
+    {
+      "ID": 566,
+      "Type": 6,
+      "Param": "ID:2042",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "花葵の祝槍"
+    },
+    {
+      "ID": 567,
+      "Type": 6,
+      "Param": "ID:1054",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "祝婚兼光"
+    },
+    {
+      "ID": 568,
+      "Type": 6,
+      "Param": "ID:20013",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "魔女のブーケ"
+    },
+    {
+      "ID": 569,
+      "Type": 6,
+      "Param": "ID:4033",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "朱威流水砲"
+    },
+    {
+      "ID": 570,
+      "Type": 6,
+      "Param": "ID:4040",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "八咫千鳥筒"
+    },
+    {
+      "ID": 571,
+      "Type": 6,
+      "Param": "ID:5026",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "黄金の渚弓"
+    },
+    {
+      "ID": 572,
+      "Type": 6,
+      "Param": "ID:11024",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "蒼玉の騎士盾"
+    },
+    {
+      "ID": 573,
+      "Type": 6,
+      "Param": "ID:9019",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "幽魂番傘"
+    },
+    {
+      "ID": 574,
+      "Type": 6,
+      "Param": "ID:9024",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "秋狸の筆"
+    },
+    {
+      "ID": 575,
+      "Type": 6,
+      "Param": "ID:2049",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "塔婆散魂槍"
+    },
+    {
+      "ID": 576,
+      "Type": 6,
+      "Param": "ID:2043",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "黙嗟の幽槍"
+    },
+    {
+      "ID": 577,
+      "Type": 6,
+      "Param": "ID:9028",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "千鳥天神錫"
+    },
+    {
+      "ID": 578,
+      "Type": 6,
+      "Param": "ID:1040",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "ｼﾞｬｯｸ･ｵｰ･ﾌﾚｲﾑ"
+    },
+    {
+      "ID": 579,
+      "Type": 6,
+      "Param": "ID:1048",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "ラム・ド・ソルシエール"
+    },
+    {
+      "ID": 580,
+      "Type": 6,
+      "Param": "ID:18012",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "ヴォルフスハント"
+    },
+    {
+      "ID": 581,
+      "Type": 6,
+      "Param": "ID:3035",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "パンプキン・ハンマー"
+    },
+    {
+      "ID": 582,
+      "Type": 6,
+      "Param": "ID:9025",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "太陰の光錫"
+    },
+    {
+      "ID": 583,
+      "Type": 6,
+      "Param": "ID:4044",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "白狐の霜筒"
+    },
+    {
+      "ID": 584,
+      "Type": 6,
+      "Param": "ID:1059",
+      "PuchaseNum": 1,
+      "StartDate": "2024/04/23",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 100,
+      "KPITitle": "ワンダーステッキ"
+    },
+    {
+      "ID": 142,
+      "Type": 751,
+      "Param": "ID:232 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2023/09/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "吉田郡山城特殊ボイス"
+    },
+    {
+      "ID": 141,
+      "Type": 751,
+      "Param": "ID:112 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2023/08/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "備中高松城特殊ボイス"
+    },
+    {
+      "ID": 140,
+      "Type": 751,
+      "Param": "ID:826 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2023/06/27",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 60,
+      "KPITitle": "[夏]吉野ケ里特殊ボイス"
+    },
+    {
+      "ID": 139,
+      "Type": 751,
+      "Param": "ID:113 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2023/07/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "三原城の特殊ボイス"
+    },
+    {
+      "ID": 138,
+      "Type": 751,
+      "Param": "ID:325 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2023/06/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "小倉城の特殊ボイス"
+    },
+    {
+      "ID": 137,
+      "Type": 751,
+      "Param": "ID:319 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2023/03/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "大洲城の特殊ボイス"
+    },
+    {
+      "ID": 136,
+      "Type": 751,
+      "Param": "ID:146 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2023/02/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "佐賀城の特殊ボイス"
+    },
+    {
+      "ID": 135,
+      "Type": 751,
+      "Param": "ID:168 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2023/01/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "一乗谷城の特殊ボイス"
+    },
+    {
+      "ID": 134,
+      "Type": 751,
+      "Param": "ID:308 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2022/12/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "青葉城の特殊ボイス"
+    },
+    {
+      "ID": 133,
+      "Type": 751,
+      "Param": "ID:96 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2022/11/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "龍王山城の特殊ボイス"
+    },
+    {
+      "ID": 132,
+      "Type": 751,
+      "Param": "ID:505 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2022/10/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "都於郡城の特殊ボイス"
+    },
+    {
+      "ID": 131,
+      "Type": 751,
+      "Param": "ID:9 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2022/09/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "仙台城の特殊ボイス"
+    },
+    {
+      "ID": 130,
+      "Type": 751,
+      "Param": "ID:207 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2022/08/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "岡豊城の特殊ボイス"
+    },
+    {
+      "ID": 129,
+      "Type": 751,
+      "Param": "ID:297 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2022/07/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "古河城の特殊ボイス"
+    },
+    {
+      "ID": 128,
+      "Type": 751,
+      "Param": "ID:153 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2022/06/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "飫肥城の特殊ボイス"
+    },
+    {
+      "ID": 127,
+      "Type": 751,
+      "Param": "ID:178 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2022/05/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "鳥羽城の特殊ボイス"
+    },
+    {
+      "ID": 126,
+      "Type": 751,
+      "Param": "ID:347 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2022/04/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "天童城の特殊ボイス"
+    },
+    {
+      "ID": 125,
+      "Type": 751,
+      "Param": "ID:86 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2022/03/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "佐和山城の特殊ボイス"
+    },
+    {
+      "ID": 124,
+      "Type": 751,
+      "Param": "ID:128 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2022/02/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "引田城の特殊ボイス"
+    },
+    {
+      "ID": 123,
+      "Type": 751,
+      "Param": "ID:21 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2022/01/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "大宝寺城の特殊ボイス"
+    },
+    {
+      "ID": 122,
+      "Type": 751,
+      "Param": "ID:66 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2021/12/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "坂戸城の特殊ボイス"
+    },
+    {
+      "ID": 121,
+      "Type": 751,
+      "Param": "ID:282 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2021/11/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "岩殿山城の特殊ボイス"
+    },
+    {
+      "ID": 120,
+      "Type": 751,
+      "Param": "ID:373 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2021/10/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "十河城の特殊ボイス"
+    },
+    {
+      "ID": 119,
+      "Type": 751,
+      "Param": "ID:15 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2021/09/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "山形城の特殊ボイス"
+    },
+    {
+      "ID": 118,
+      "Type": 751,
+      "Param": "ID:13 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2021/08/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "会津若松城の特殊ボイス"
+    },
+    {
+      "ID": 117,
+      "Type": 751,
+      "Param": "ID:400 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2021/07/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "琉球御城の特殊ボイス"
+    },
+    {
+      "ID": 116,
+      "Type": 751,
+      "Param": "ID:304 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2021/06/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "新田金山城の特殊ボイス"
+    },
+    {
+      "ID": 115,
+      "Type": 751,
+      "Param": "ID:264 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2021/05/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "指月伏見城の特殊ボイス"
+    },
+    {
+      "ID": 114,
+      "Type": 751,
+      "Param": "ID:280 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2021/04/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "姫路城の特殊ボイス"
+    },
+    {
+      "ID": 113,
+      "Type": 751,
+      "Param": "ID:5 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2021/03/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "盛岡城の特殊ボイス"
+    },
+    {
+      "ID": 112,
+      "Type": 751,
+      "Param": "ID:329 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2021/02/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "長門指月城の特殊ボイス"
+    },
+    {
+      "ID": 111,
+      "Type": 751,
+      "Param": "ID:99 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2021/01/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "大坂城の特殊ボイス"
+    },
+    {
+      "ID": 110,
+      "Type": 751,
+      "Param": "ID:161 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2020/12/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "小谷城の特殊ボイス"
+    },
+    {
+      "ID": 109,
+      "Type": 751,
+      "Param": "ID:440 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2020/11/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "大宰府の特殊ボイス"
+    },
+    {
+      "ID": 108,
+      "Type": 751,
+      "Param": "ID:262 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2020/10/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "熊本城の特殊ボイス"
+    },
+    {
+      "ID": 107,
+      "Type": 751,
+      "Param": "ID:206 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2020/09/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "萩城の特殊ボイス"
+    },
+    {
+      "ID": 106,
+      "Type": 751,
+      "Param": "ID:419 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2020/08/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "金鯱城の特殊ボイス"
+    },
+    {
+      "ID": 105,
+      "Type": 751,
+      "Param": "ID:156 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2020/07/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 60,
+      "KPITitle": "首里城の特殊ボイス"
+    },
+    {
+      "ID": 104,
+      "Type": 751,
+      "Param": "ID:299 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2020/06/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "松江城の特殊ボイス"
+    },
+    {
+      "ID": 103,
+      "Type": 751,
+      "Param": "ID:249 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2020/05/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "聚楽第の特殊ボイス"
+    },
+    {
+      "ID": 101,
+      "Type": 751,
+      "Param": "ID:200 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2020/03/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "柳川城の特殊ボイス"
+    },
+    {
+      "ID": 102,
+      "Type": 751,
+      "Param": "ID:61 Type:1",
+      "PuchaseNum": 1,
+      "StartDate": "2020/03/01",
+      "EndDate": "2035/12/31",
+      "ConsumeNum": 120,
+      "KPITitle": "名古屋城の特殊ボイス"
+    }
+  ]
+}

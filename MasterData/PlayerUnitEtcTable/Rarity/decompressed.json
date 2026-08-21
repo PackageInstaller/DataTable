@@ -1,0 +1,207 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 9,
+    "record_size": 44,
+    "custom_id": 1701994866
+  },
+  "_fields": [
+    {
+      "name": "RarityID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "LevelCap",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "GrowUpLimit",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "CombiningExp",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "SalePrice",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "ExpBonus",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "GainableYakumodama",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "GainableRenovationPoint",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "RequiredRenovationPoint",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "AutoOrganizeRarityAdjust",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 36,
+      "size": 4
+    },
+    {
+      "name": "AutoOrganizeRenovationAdjust",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 40,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "RarityID": 1,
+      "LevelCap": 50,
+      "GrowUpLimit": 3,
+      "CombiningExp": 120,
+      "SalePrice": 100,
+      "ExpBonus": 5,
+      "GainableYakumodama": 1,
+      "GainableRenovationPoint": 1,
+      "RequiredRenovationPoint": 30,
+      "AutoOrganizeRarityAdjust": 0,
+      "AutoOrganizeRenovationAdjust": 0
+    },
+    {
+      "RarityID": 2,
+      "LevelCap": 55,
+      "GrowUpLimit": 3,
+      "CombiningExp": 210,
+      "SalePrice": 300,
+      "ExpBonus": 10,
+      "GainableYakumodama": 2,
+      "GainableRenovationPoint": 1,
+      "RequiredRenovationPoint": 20,
+      "AutoOrganizeRarityAdjust": 5,
+      "AutoOrganizeRenovationAdjust": 2
+    },
+    {
+      "RarityID": 3,
+      "LevelCap": 60,
+      "GrowUpLimit": 4,
+      "CombiningExp": 450,
+      "SalePrice": 1000,
+      "ExpBonus": 15,
+      "GainableYakumodama": 5,
+      "GainableRenovationPoint": 1,
+      "RequiredRenovationPoint": 15,
+      "AutoOrganizeRarityAdjust": 10,
+      "AutoOrganizeRenovationAdjust": 4
+    },
+    {
+      "RarityID": 4,
+      "LevelCap": 65,
+      "GrowUpLimit": 4,
+      "CombiningExp": 750,
+      "SalePrice": 2000,
+      "ExpBonus": 20,
+      "GainableYakumodama": 50,
+      "GainableRenovationPoint": 1,
+      "RequiredRenovationPoint": 7,
+      "AutoOrganizeRarityAdjust": 15,
+      "AutoOrganizeRenovationAdjust": 6
+    },
+    {
+      "RarityID": 5,
+      "LevelCap": 70,
+      "GrowUpLimit": 4,
+      "CombiningExp": 1500,
+      "SalePrice": 5000,
+      "ExpBonus": 25,
+      "GainableYakumodama": 200,
+      "GainableRenovationPoint": 1,
+      "RequiredRenovationPoint": 5,
+      "AutoOrganizeRarityAdjust": 20,
+      "AutoOrganizeRenovationAdjust": 8
+    },
+    {
+      "RarityID": 6,
+      "LevelCap": 75,
+      "GrowUpLimit": 5,
+      "CombiningExp": 3000,
+      "SalePrice": 15000,
+      "ExpBonus": 30,
+      "GainableYakumodama": 600,
+      "GainableRenovationPoint": 1,
+      "RequiredRenovationPoint": 3,
+      "AutoOrganizeRarityAdjust": 30,
+      "AutoOrganizeRenovationAdjust": 10
+    },
+    {
+      "RarityID": 7,
+      "LevelCap": 80,
+      "GrowUpLimit": 5,
+      "CombiningExp": 4500,
+      "SalePrice": 25000,
+      "ExpBonus": 40,
+      "GainableYakumodama": 2000,
+      "GainableRenovationPoint": 1,
+      "RequiredRenovationPoint": 1,
+      "AutoOrganizeRarityAdjust": 40,
+      "AutoOrganizeRenovationAdjust": 12
+    },
+    {
+      "RarityID": 8,
+      "LevelCap": 85,
+      "GrowUpLimit": 5,
+      "CombiningExp": 7500,
+      "SalePrice": 40000,
+      "ExpBonus": 55,
+      "GainableYakumodama": 6000,
+      "GainableRenovationPoint": 1,
+      "RequiredRenovationPoint": 0,
+      "AutoOrganizeRarityAdjust": 0,
+      "AutoOrganizeRenovationAdjust": 15
+    },
+    {
+      "RarityID": 9,
+      "LevelCap": 110,
+      "GrowUpLimit": 5,
+      "CombiningExp": 10000,
+      "SalePrice": 60000,
+      "ExpBonus": 70,
+      "GainableYakumodama": 9000,
+      "GainableRenovationPoint": 0,
+      "RequiredRenovationPoint": 0,
+      "AutoOrganizeRarityAdjust": 0,
+      "AutoOrganizeRenovationAdjust": 20
+    }
+  ]
+}

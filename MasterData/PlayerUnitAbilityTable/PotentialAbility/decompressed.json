@@ -1,0 +1,998 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 104,
+    "record_size": 28,
+    "custom_id": 1650553968
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "LimitBreakIndex",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "EffectType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "EffectValue",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "DurationInMillis",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "Description",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 24,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "Name": "潜在強化(汎用)",
+      "LimitBreakIndex": 1,
+      "EffectType": 1001,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "耐久が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 2,
+      "Name": "潜在強化(アイギス・モン娘汎用)",
+      "LimitBreakIndex": 1,
+      "EffectType": 4043,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "配置気が1軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が1軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4043,
+      "EffectValue": 3,
+      "DurationInMillis": 0,
+      "Description": "配置気が1軽減"
+    },
+    {
+      "ID": 100,
+      "Name": "潜在強化(刀)",
+      "LimitBreakIndex": 1,
+      "EffectType": 1001,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "耐久が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 200,
+      "Name": "潜在強化(槍)",
+      "LimitBreakIndex": 1,
+      "EffectType": 1021,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "防御が10％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 300,
+      "Name": "潜在強化(槌)",
+      "LimitBreakIndex": 1,
+      "EffectType": 1001,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "耐久が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 400,
+      "Name": "潜在強化(盾)",
+      "LimitBreakIndex": 1,
+      "EffectType": 1021,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "防御が10％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 500,
+      "Name": "潜在強化(拳)",
+      "LimitBreakIndex": 1,
+      "EffectType": 1001,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "耐久が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 600,
+      "Name": "潜在強化(投剣)",
+      "LimitBreakIndex": 1,
+      "EffectType": 3011,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "攻撃速度が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 700,
+      "Name": "潜在強化(鞭)",
+      "LimitBreakIndex": 1,
+      "EffectType": 3011,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "攻撃速度が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 800,
+      "Name": "潜在強化(鎌)",
+      "LimitBreakIndex": 1,
+      "EffectType": 3011,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "攻撃速度が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 900,
+      "Name": "潜在強化(戦棍)",
+      "LimitBreakIndex": 1,
+      "EffectType": 1001,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "耐久が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 1000,
+      "Name": "潜在強化(陣貝)",
+      "LimitBreakIndex": 1,
+      "EffectType": 1021,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "防御が10％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4043,
+      "EffectValue": 4,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 1100,
+      "Name": "潜在強化(双剣)",
+      "LimitBreakIndex": 1,
+      "EffectType": 3011,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "攻撃速度が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 1200,
+      "Name": "潜在強化(軍船)",
+      "LimitBreakIndex": 1,
+      "EffectType": 1001,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "耐久が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 1300,
+      "Name": "潜在強化(ランス)",
+      "LimitBreakIndex": 1,
+      "EffectType": 1021,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "防御が10％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 1400,
+      "Name": "潜在強化(茶器)",
+      "LimitBreakIndex": 1,
+      "EffectType": 1001,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "耐久が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 10100,
+      "Name": "潜在強化(弓)",
+      "LimitBreakIndex": 1,
+      "EffectType": 3011,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "攻撃速度が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 10200,
+      "Name": "潜在強化(鉄砲)",
+      "LimitBreakIndex": 1,
+      "EffectType": 3011,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "攻撃速度が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 10300,
+      "Name": "潜在強化(石弓)",
+      "LimitBreakIndex": 1,
+      "EffectType": 1021,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "防御が10％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 10400,
+      "Name": "潜在強化(大砲)",
+      "LimitBreakIndex": 1,
+      "EffectType": 1001,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "耐久が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 10500,
+      "Name": "潜在強化(歌舞)",
+      "LimitBreakIndex": 1,
+      "EffectType": 1001,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "耐久が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 10600,
+      "Name": "潜在強化(法術)",
+      "LimitBreakIndex": 1,
+      "EffectType": 3011,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "攻撃速度が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 10700,
+      "Name": "潜在強化(鈴)",
+      "LimitBreakIndex": 1,
+      "EffectType": 3011,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "攻撃速度が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 10800,
+      "Name": "潜在強化(杖)",
+      "LimitBreakIndex": 1,
+      "EffectType": 3011,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "攻撃速度が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 10900,
+      "Name": "潜在強化(祓串)",
+      "LimitBreakIndex": 1,
+      "EffectType": 1001,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "耐久が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4042,
+      "EffectValue": 1,
+      "DurationInMillis": 0,
+      "Description": "巨大化気が1軽減"
+    },
+    {
+      "ID": 11000,
+      "Name": "潜在強化(本)",
+      "LimitBreakIndex": 1,
+      "EffectType": 1001,
+      "EffectValue": 10,
+      "DurationInMillis": 0,
+      "Description": "耐久が10%上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 2,
+      "EffectType": 4043,
+      "EffectValue": 2,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 3,
+      "EffectType": 1011,
+      "EffectValue": 5,
+      "DurationInMillis": 0,
+      "Description": "攻撃が5％上昇"
+    },
+    {
+      "ID": 0,
+      "Name": "",
+      "LimitBreakIndex": 4,
+      "EffectType": 4043,
+      "EffectValue": 4,
+      "DurationInMillis": 0,
+      "Description": "配置気が2軽減"
+    }
+  ]
+}

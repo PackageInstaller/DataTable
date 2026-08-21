@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 5,
+    "record_size": 8,
+    "custom_id": 2037542505
+  },
+  "_fields": [
+    {
+      "name": "RarityID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "SellingPrice",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "RarityID": 1,
+      "SellingPrice": 100
+    },
+    {
+      "RarityID": 2,
+      "SellingPrice": 300
+    },
+    {
+      "RarityID": 3,
+      "SellingPrice": 1500
+    },
+    {
+      "RarityID": 4,
+      "SellingPrice": 5000
+    },
+    {
+      "RarityID": 5,
+      "SellingPrice": 10000
+    }
+  ]
+}

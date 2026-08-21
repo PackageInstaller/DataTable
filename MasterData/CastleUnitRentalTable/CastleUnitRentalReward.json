@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 16,
+    "custom_id": 1920103779
+  },
+  "_fields": [
+    {
+      "name": "RewardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "AttainedLevel",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Param",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "RewardID": 1,
+      "AttainedLevel": 25,
+      "Type": 6,
+      "Param": "ID:1021"
+    },
+    {
+      "RewardID": 1,
+      "AttainedLevel": 35,
+      "Type": 6,
+      "Param": "ID:100001 Plus:1 Value:2"
+    },
+    {
+      "RewardID": 1,
+      "AttainedLevel": 45,
+      "Type": 6,
+      "Param": "ID:100001 Plus:1 Value:2"
+    },
+    {
+      "RewardID": 1,
+      "AttainedLevel": 55,
+      "Type": 6,
+      "Param": "ID:100001 Plus:1 Value:2"
+    }
+  ]
+}

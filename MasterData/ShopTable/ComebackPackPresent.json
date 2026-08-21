@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 5,
+    "record_size": 12,
+    "custom_id": 1953522275
+  },
+  "_fields": [
+    {
+      "name": "PresentID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Param",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "PresentID": 1,
+      "Type": 5,
+      "Param": "ID:8007 Value:2"
+    },
+    {
+      "PresentID": 1,
+      "Type": 5,
+      "Param": "ID:8018 Value:1"
+    },
+    {
+      "PresentID": 1,
+      "Type": 5,
+      "Param": "ID:8011 Value:5"
+    },
+    {
+      "PresentID": 2,
+      "Type": 5,
+      "Param": "ID:8009 Value:1"
+    },
+    {
+      "PresentID": 2,
+      "Type": 5,
+      "Param": "ID:8011 Value:3"
+    }
+  ]
+}

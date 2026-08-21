@@ -1,0 +1,3240 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 456,
+    "record_size": 20,
+    "custom_id": 2003985780
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "TowerTypeID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Score",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "Param",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "TowerTypeID": 1,
+      "Score": 1,
+      "Type": 601,
+      "Param": "ID:1841"
+    },
+    {
+      "ID": 2,
+      "TowerTypeID": 1,
+      "Score": 2,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 3,
+      "TowerTypeID": 1,
+      "Score": 3,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 4,
+      "TowerTypeID": 1,
+      "Score": 4,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 5,
+      "TowerTypeID": 1,
+      "Score": 5,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 6,
+      "TowerTypeID": 1,
+      "Score": 6,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 7,
+      "TowerTypeID": 1,
+      "Score": 7,
+      "Type": 5,
+      "Param": "ID:8012"
+    },
+    {
+      "ID": 8,
+      "TowerTypeID": 1,
+      "Score": 8,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 9,
+      "TowerTypeID": 1,
+      "Score": 9,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 10,
+      "TowerTypeID": 1,
+      "Score": 10,
+      "Type": 405,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 11,
+      "TowerTypeID": 1,
+      "Score": 11,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 12,
+      "TowerTypeID": 1,
+      "Score": 12,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 13,
+      "TowerTypeID": 1,
+      "Score": 13,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 14,
+      "TowerTypeID": 1,
+      "Score": 14,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 15,
+      "TowerTypeID": 1,
+      "Score": 15,
+      "Type": 5,
+      "Param": "ID:8019"
+    },
+    {
+      "ID": 16,
+      "TowerTypeID": 1,
+      "Score": 16,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 17,
+      "TowerTypeID": 1,
+      "Score": 17,
+      "Type": 5,
+      "Param": "ID:8020 Value:10"
+    },
+    {
+      "ID": 18,
+      "TowerTypeID": 1,
+      "Score": 18,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 19,
+      "TowerTypeID": 1,
+      "Score": 19,
+      "Type": 8,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 20,
+      "TowerTypeID": 1,
+      "Score": 20,
+      "Type": 5,
+      "Param": "ID:8011"
+    },
+    {
+      "ID": 21,
+      "TowerTypeID": 1,
+      "Score": 21,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 22,
+      "TowerTypeID": 1,
+      "Score": 22,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 23,
+      "TowerTypeID": 1,
+      "Score": 23,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 24,
+      "TowerTypeID": 1,
+      "Score": 24,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 25,
+      "TowerTypeID": 1,
+      "Score": 25,
+      "Type": 5,
+      "Param": "ID:8121"
+    },
+    {
+      "ID": 26,
+      "TowerTypeID": 1,
+      "Score": 26,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 27,
+      "TowerTypeID": 1,
+      "Score": 27,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 28,
+      "TowerTypeID": 1,
+      "Score": 28,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 29,
+      "TowerTypeID": 1,
+      "Score": 29,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 30,
+      "TowerTypeID": 1,
+      "Score": 30,
+      "Type": 602,
+      "Param": "ID:1001"
+    },
+    {
+      "ID": 31,
+      "TowerTypeID": 1,
+      "Score": 31,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 32,
+      "TowerTypeID": 1,
+      "Score": 32,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 33,
+      "TowerTypeID": 1,
+      "Score": 33,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 34,
+      "TowerTypeID": 1,
+      "Score": 34,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 35,
+      "TowerTypeID": 1,
+      "Score": 35,
+      "Type": 5,
+      "Param": "ID:8006"
+    },
+    {
+      "ID": 36,
+      "TowerTypeID": 1,
+      "Score": 36,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 37,
+      "TowerTypeID": 1,
+      "Score": 37,
+      "Type": 5,
+      "Param": "ID:8008"
+    },
+    {
+      "ID": 38,
+      "TowerTypeID": 1,
+      "Score": 38,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 39,
+      "TowerTypeID": 1,
+      "Score": 39,
+      "Type": 8,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 40,
+      "TowerTypeID": 1,
+      "Score": 40,
+      "Type": 406,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 41,
+      "TowerTypeID": 1,
+      "Score": 41,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 42,
+      "TowerTypeID": 1,
+      "Score": 42,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 43,
+      "TowerTypeID": 1,
+      "Score": 43,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 44,
+      "TowerTypeID": 1,
+      "Score": 44,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 45,
+      "TowerTypeID": 1,
+      "Score": 45,
+      "Type": 5,
+      "Param": "ID:8013"
+    },
+    {
+      "ID": 46,
+      "TowerTypeID": 1,
+      "Score": 46,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 47,
+      "TowerTypeID": 1,
+      "Score": 47,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 48,
+      "TowerTypeID": 1,
+      "Score": 48,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 49,
+      "TowerTypeID": 1,
+      "Score": 49,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 50,
+      "TowerTypeID": 1,
+      "Score": 50,
+      "Type": 5,
+      "Param": "ID:8011"
+    },
+    {
+      "ID": 51,
+      "TowerTypeID": 1,
+      "Score": 51,
+      "Type": 5,
+      "Param": "ID:8017"
+    },
+    {
+      "ID": 52,
+      "TowerTypeID": 1,
+      "Score": 52,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 53,
+      "TowerTypeID": 1,
+      "Score": 53,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 54,
+      "TowerTypeID": 1,
+      "Score": 54,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 55,
+      "TowerTypeID": 1,
+      "Score": 55,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 56,
+      "TowerTypeID": 1,
+      "Score": 56,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 57,
+      "TowerTypeID": 1,
+      "Score": 57,
+      "Type": 5,
+      "Param": "ID:8012"
+    },
+    {
+      "ID": 58,
+      "TowerTypeID": 1,
+      "Score": 58,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 59,
+      "TowerTypeID": 1,
+      "Score": 59,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 60,
+      "TowerTypeID": 1,
+      "Score": 60,
+      "Type": 405,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 61,
+      "TowerTypeID": 1,
+      "Score": 61,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 62,
+      "TowerTypeID": 1,
+      "Score": 62,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 63,
+      "TowerTypeID": 1,
+      "Score": 63,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 64,
+      "TowerTypeID": 1,
+      "Score": 64,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 65,
+      "TowerTypeID": 1,
+      "Score": 65,
+      "Type": 5,
+      "Param": "ID:8019"
+    },
+    {
+      "ID": 66,
+      "TowerTypeID": 1,
+      "Score": 66,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 67,
+      "TowerTypeID": 1,
+      "Score": 67,
+      "Type": 5,
+      "Param": "ID:8020 Value:10"
+    },
+    {
+      "ID": 68,
+      "TowerTypeID": 1,
+      "Score": 68,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 69,
+      "TowerTypeID": 1,
+      "Score": 69,
+      "Type": 8,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 70,
+      "TowerTypeID": 1,
+      "Score": 70,
+      "Type": 5,
+      "Param": "ID:8011"
+    },
+    {
+      "ID": 71,
+      "TowerTypeID": 1,
+      "Score": 71,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 72,
+      "TowerTypeID": 1,
+      "Score": 72,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 73,
+      "TowerTypeID": 1,
+      "Score": 73,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 74,
+      "TowerTypeID": 1,
+      "Score": 74,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 75,
+      "TowerTypeID": 1,
+      "Score": 75,
+      "Type": 5,
+      "Param": "ID:8121"
+    },
+    {
+      "ID": 76,
+      "TowerTypeID": 1,
+      "Score": 76,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 77,
+      "TowerTypeID": 1,
+      "Score": 77,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 78,
+      "TowerTypeID": 1,
+      "Score": 78,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 79,
+      "TowerTypeID": 1,
+      "Score": 79,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 80,
+      "TowerTypeID": 1,
+      "Score": 80,
+      "Type": 602,
+      "Param": "ID:1001"
+    },
+    {
+      "ID": 81,
+      "TowerTypeID": 1,
+      "Score": 81,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 82,
+      "TowerTypeID": 1,
+      "Score": 82,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 83,
+      "TowerTypeID": 1,
+      "Score": 83,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 84,
+      "TowerTypeID": 1,
+      "Score": 84,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 85,
+      "TowerTypeID": 1,
+      "Score": 85,
+      "Type": 5,
+      "Param": "ID:8006"
+    },
+    {
+      "ID": 86,
+      "TowerTypeID": 1,
+      "Score": 86,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 87,
+      "TowerTypeID": 1,
+      "Score": 87,
+      "Type": 5,
+      "Param": "ID:8008"
+    },
+    {
+      "ID": 88,
+      "TowerTypeID": 1,
+      "Score": 88,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 89,
+      "TowerTypeID": 1,
+      "Score": 89,
+      "Type": 8,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 90,
+      "TowerTypeID": 1,
+      "Score": 90,
+      "Type": 406,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 91,
+      "TowerTypeID": 1,
+      "Score": 91,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 92,
+      "TowerTypeID": 1,
+      "Score": 92,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 93,
+      "TowerTypeID": 1,
+      "Score": 93,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 94,
+      "TowerTypeID": 1,
+      "Score": 94,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 95,
+      "TowerTypeID": 1,
+      "Score": 95,
+      "Type": 5,
+      "Param": "ID:8013"
+    },
+    {
+      "ID": 96,
+      "TowerTypeID": 1,
+      "Score": 96,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 97,
+      "TowerTypeID": 1,
+      "Score": 97,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 98,
+      "TowerTypeID": 1,
+      "Score": 98,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 99,
+      "TowerTypeID": 1,
+      "Score": 99,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 100,
+      "TowerTypeID": 1,
+      "Score": 100,
+      "Type": 5,
+      "Param": "ID:8011"
+    },
+    {
+      "ID": 101,
+      "TowerTypeID": 1,
+      "Score": 101,
+      "Type": 5,
+      "Param": "ID:8017"
+    },
+    {
+      "ID": 102,
+      "TowerTypeID": 1,
+      "Score": 102,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 103,
+      "TowerTypeID": 1,
+      "Score": 103,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 104,
+      "TowerTypeID": 1,
+      "Score": 104,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 105,
+      "TowerTypeID": 1,
+      "Score": 105,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 106,
+      "TowerTypeID": 1,
+      "Score": 106,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 107,
+      "TowerTypeID": 1,
+      "Score": 107,
+      "Type": 5,
+      "Param": "ID:8012"
+    },
+    {
+      "ID": 108,
+      "TowerTypeID": 1,
+      "Score": 108,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 109,
+      "TowerTypeID": 1,
+      "Score": 109,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 110,
+      "TowerTypeID": 1,
+      "Score": 110,
+      "Type": 405,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 111,
+      "TowerTypeID": 1,
+      "Score": 111,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 112,
+      "TowerTypeID": 1,
+      "Score": 112,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 113,
+      "TowerTypeID": 1,
+      "Score": 113,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 114,
+      "TowerTypeID": 1,
+      "Score": 114,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 115,
+      "TowerTypeID": 1,
+      "Score": 115,
+      "Type": 5,
+      "Param": "ID:8019"
+    },
+    {
+      "ID": 116,
+      "TowerTypeID": 1,
+      "Score": 116,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 117,
+      "TowerTypeID": 1,
+      "Score": 117,
+      "Type": 5,
+      "Param": "ID:8020 Value:10"
+    },
+    {
+      "ID": 118,
+      "TowerTypeID": 1,
+      "Score": 118,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 119,
+      "TowerTypeID": 1,
+      "Score": 119,
+      "Type": 8,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 120,
+      "TowerTypeID": 1,
+      "Score": 120,
+      "Type": 5,
+      "Param": "ID:8011"
+    },
+    {
+      "ID": 121,
+      "TowerTypeID": 1,
+      "Score": 121,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 122,
+      "TowerTypeID": 1,
+      "Score": 122,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 123,
+      "TowerTypeID": 1,
+      "Score": 123,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 124,
+      "TowerTypeID": 1,
+      "Score": 124,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 125,
+      "TowerTypeID": 1,
+      "Score": 125,
+      "Type": 5,
+      "Param": "ID:8121"
+    },
+    {
+      "ID": 126,
+      "TowerTypeID": 1,
+      "Score": 126,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 127,
+      "TowerTypeID": 1,
+      "Score": 127,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 128,
+      "TowerTypeID": 1,
+      "Score": 128,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 129,
+      "TowerTypeID": 1,
+      "Score": 129,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 130,
+      "TowerTypeID": 1,
+      "Score": 130,
+      "Type": 602,
+      "Param": "ID:1001"
+    },
+    {
+      "ID": 131,
+      "TowerTypeID": 1,
+      "Score": 131,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 132,
+      "TowerTypeID": 1,
+      "Score": 132,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 133,
+      "TowerTypeID": 1,
+      "Score": 133,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 134,
+      "TowerTypeID": 1,
+      "Score": 134,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 135,
+      "TowerTypeID": 1,
+      "Score": 135,
+      "Type": 5,
+      "Param": "ID:8006"
+    },
+    {
+      "ID": 136,
+      "TowerTypeID": 1,
+      "Score": 136,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 137,
+      "TowerTypeID": 1,
+      "Score": 137,
+      "Type": 5,
+      "Param": "ID:8008"
+    },
+    {
+      "ID": 138,
+      "TowerTypeID": 1,
+      "Score": 138,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 139,
+      "TowerTypeID": 1,
+      "Score": 139,
+      "Type": 8,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 140,
+      "TowerTypeID": 1,
+      "Score": 140,
+      "Type": 406,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 141,
+      "TowerTypeID": 1,
+      "Score": 141,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 142,
+      "TowerTypeID": 1,
+      "Score": 142,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 143,
+      "TowerTypeID": 1,
+      "Score": 143,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 144,
+      "TowerTypeID": 1,
+      "Score": 144,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 145,
+      "TowerTypeID": 1,
+      "Score": 145,
+      "Type": 5,
+      "Param": "ID:8013"
+    },
+    {
+      "ID": 146,
+      "TowerTypeID": 1,
+      "Score": 146,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 147,
+      "TowerTypeID": 1,
+      "Score": 147,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 148,
+      "TowerTypeID": 1,
+      "Score": 148,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 149,
+      "TowerTypeID": 1,
+      "Score": 149,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 150,
+      "TowerTypeID": 1,
+      "Score": 150,
+      "Type": 5,
+      "Param": "ID:8011"
+    },
+    {
+      "ID": 151,
+      "TowerTypeID": 1,
+      "Score": 151,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 152,
+      "TowerTypeID": 1,
+      "Score": 152,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 153,
+      "TowerTypeID": 1,
+      "Score": 153,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 154,
+      "TowerTypeID": 1,
+      "Score": 154,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 155,
+      "TowerTypeID": 1,
+      "Score": 155,
+      "Type": 5,
+      "Param": "ID:8013"
+    },
+    {
+      "ID": 156,
+      "TowerTypeID": 1,
+      "Score": 156,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 157,
+      "TowerTypeID": 1,
+      "Score": 157,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 158,
+      "TowerTypeID": 1,
+      "Score": 158,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 159,
+      "TowerTypeID": 1,
+      "Score": 159,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 160,
+      "TowerTypeID": 1,
+      "Score": 160,
+      "Type": 5,
+      "Param": "ID:8011"
+    },
+    {
+      "ID": 161,
+      "TowerTypeID": 1,
+      "Score": 161,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 162,
+      "TowerTypeID": 1,
+      "Score": 162,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 163,
+      "TowerTypeID": 1,
+      "Score": 163,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 164,
+      "TowerTypeID": 1,
+      "Score": 164,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 165,
+      "TowerTypeID": 1,
+      "Score": 165,
+      "Type": 5,
+      "Param": "ID:8019"
+    },
+    {
+      "ID": 166,
+      "TowerTypeID": 1,
+      "Score": 166,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 167,
+      "TowerTypeID": 1,
+      "Score": 167,
+      "Type": 5,
+      "Param": "ID:8020 Value:10"
+    },
+    {
+      "ID": 168,
+      "TowerTypeID": 1,
+      "Score": 168,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 169,
+      "TowerTypeID": 1,
+      "Score": 169,
+      "Type": 8,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 170,
+      "TowerTypeID": 1,
+      "Score": 170,
+      "Type": 5,
+      "Param": "ID:8011"
+    },
+    {
+      "ID": 171,
+      "TowerTypeID": 1,
+      "Score": 171,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 172,
+      "TowerTypeID": 1,
+      "Score": 172,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 173,
+      "TowerTypeID": 1,
+      "Score": 173,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 174,
+      "TowerTypeID": 1,
+      "Score": 174,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 175,
+      "TowerTypeID": 1,
+      "Score": 175,
+      "Type": 5,
+      "Param": "ID:8121"
+    },
+    {
+      "ID": 176,
+      "TowerTypeID": 1,
+      "Score": 176,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 177,
+      "TowerTypeID": 1,
+      "Score": 177,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 178,
+      "TowerTypeID": 1,
+      "Score": 178,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 179,
+      "TowerTypeID": 1,
+      "Score": 179,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 180,
+      "TowerTypeID": 1,
+      "Score": 180,
+      "Type": 602,
+      "Param": "ID:1001"
+    },
+    {
+      "ID": 181,
+      "TowerTypeID": 1,
+      "Score": 181,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 182,
+      "TowerTypeID": 1,
+      "Score": 182,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 183,
+      "TowerTypeID": 1,
+      "Score": 183,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 184,
+      "TowerTypeID": 1,
+      "Score": 184,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 185,
+      "TowerTypeID": 1,
+      "Score": 185,
+      "Type": 5,
+      "Param": "ID:8006"
+    },
+    {
+      "ID": 186,
+      "TowerTypeID": 1,
+      "Score": 186,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 187,
+      "TowerTypeID": 1,
+      "Score": 187,
+      "Type": 5,
+      "Param": "ID:8008"
+    },
+    {
+      "ID": 188,
+      "TowerTypeID": 1,
+      "Score": 188,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 189,
+      "TowerTypeID": 1,
+      "Score": 189,
+      "Type": 8,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 190,
+      "TowerTypeID": 1,
+      "Score": 190,
+      "Type": 406,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 191,
+      "TowerTypeID": 1,
+      "Score": 191,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 192,
+      "TowerTypeID": 1,
+      "Score": 192,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 193,
+      "TowerTypeID": 1,
+      "Score": 193,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 194,
+      "TowerTypeID": 1,
+      "Score": 194,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 195,
+      "TowerTypeID": 1,
+      "Score": 195,
+      "Type": 5,
+      "Param": "ID:8013"
+    },
+    {
+      "ID": 196,
+      "TowerTypeID": 1,
+      "Score": 196,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 197,
+      "TowerTypeID": 1,
+      "Score": 197,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 198,
+      "TowerTypeID": 1,
+      "Score": 198,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 199,
+      "TowerTypeID": 1,
+      "Score": 199,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 200,
+      "TowerTypeID": 1,
+      "Score": 200,
+      "Type": 5,
+      "Param": "ID:8011"
+    },
+    {
+      "ID": 201,
+      "TowerTypeID": 1,
+      "Score": 201,
+      "Type": 5,
+      "Param": "ID:8017"
+    },
+    {
+      "ID": 202,
+      "TowerTypeID": 1,
+      "Score": 202,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 203,
+      "TowerTypeID": 1,
+      "Score": 203,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 204,
+      "TowerTypeID": 1,
+      "Score": 204,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 205,
+      "TowerTypeID": 1,
+      "Score": 205,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 206,
+      "TowerTypeID": 1,
+      "Score": 206,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 207,
+      "TowerTypeID": 1,
+      "Score": 207,
+      "Type": 5,
+      "Param": "ID:8012"
+    },
+    {
+      "ID": 208,
+      "TowerTypeID": 1,
+      "Score": 208,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 209,
+      "TowerTypeID": 1,
+      "Score": 209,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 210,
+      "TowerTypeID": 1,
+      "Score": 210,
+      "Type": 405,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 211,
+      "TowerTypeID": 1,
+      "Score": 211,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 212,
+      "TowerTypeID": 1,
+      "Score": 212,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 213,
+      "TowerTypeID": 1,
+      "Score": 213,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 214,
+      "TowerTypeID": 1,
+      "Score": 214,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 215,
+      "TowerTypeID": 1,
+      "Score": 215,
+      "Type": 5,
+      "Param": "ID:8019"
+    },
+    {
+      "ID": 216,
+      "TowerTypeID": 1,
+      "Score": 216,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 217,
+      "TowerTypeID": 1,
+      "Score": 217,
+      "Type": 5,
+      "Param": "ID:8020 Value:10"
+    },
+    {
+      "ID": 218,
+      "TowerTypeID": 1,
+      "Score": 218,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 219,
+      "TowerTypeID": 1,
+      "Score": 219,
+      "Type": 8,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 220,
+      "TowerTypeID": 1,
+      "Score": 220,
+      "Type": 5,
+      "Param": "ID:8011"
+    },
+    {
+      "ID": 221,
+      "TowerTypeID": 1,
+      "Score": 221,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 222,
+      "TowerTypeID": 1,
+      "Score": 222,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 223,
+      "TowerTypeID": 1,
+      "Score": 223,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 224,
+      "TowerTypeID": 1,
+      "Score": 224,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 225,
+      "TowerTypeID": 1,
+      "Score": 225,
+      "Type": 5,
+      "Param": "ID:8121"
+    },
+    {
+      "ID": 226,
+      "TowerTypeID": 1,
+      "Score": 226,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 227,
+      "TowerTypeID": 1,
+      "Score": 227,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 228,
+      "TowerTypeID": 1,
+      "Score": 228,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 229,
+      "TowerTypeID": 1,
+      "Score": 229,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 230,
+      "TowerTypeID": 1,
+      "Score": 230,
+      "Type": 602,
+      "Param": "ID:1001"
+    },
+    {
+      "ID": 231,
+      "TowerTypeID": 1,
+      "Score": 231,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 232,
+      "TowerTypeID": 1,
+      "Score": 232,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 233,
+      "TowerTypeID": 1,
+      "Score": 233,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 234,
+      "TowerTypeID": 1,
+      "Score": 234,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 235,
+      "TowerTypeID": 1,
+      "Score": 235,
+      "Type": 5,
+      "Param": "ID:8006"
+    },
+    {
+      "ID": 236,
+      "TowerTypeID": 1,
+      "Score": 236,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 237,
+      "TowerTypeID": 1,
+      "Score": 237,
+      "Type": 5,
+      "Param": "ID:8008"
+    },
+    {
+      "ID": 238,
+      "TowerTypeID": 1,
+      "Score": 238,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 239,
+      "TowerTypeID": 1,
+      "Score": 239,
+      "Type": 8,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 240,
+      "TowerTypeID": 1,
+      "Score": 240,
+      "Type": 406,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 241,
+      "TowerTypeID": 1,
+      "Score": 241,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 242,
+      "TowerTypeID": 1,
+      "Score": 242,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 243,
+      "TowerTypeID": 1,
+      "Score": 243,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 244,
+      "TowerTypeID": 1,
+      "Score": 244,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 245,
+      "TowerTypeID": 1,
+      "Score": 245,
+      "Type": 5,
+      "Param": "ID:8013"
+    },
+    {
+      "ID": 246,
+      "TowerTypeID": 1,
+      "Score": 246,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 247,
+      "TowerTypeID": 1,
+      "Score": 247,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 248,
+      "TowerTypeID": 1,
+      "Score": 248,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 249,
+      "TowerTypeID": 1,
+      "Score": 249,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 250,
+      "TowerTypeID": 1,
+      "Score": 250,
+      "Type": 5,
+      "Param": "ID:8011"
+    },
+    {
+      "ID": 251,
+      "TowerTypeID": 1,
+      "Score": 251,
+      "Type": 5,
+      "Param": "ID:8017"
+    },
+    {
+      "ID": 252,
+      "TowerTypeID": 1,
+      "Score": 252,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 253,
+      "TowerTypeID": 1,
+      "Score": 253,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 254,
+      "TowerTypeID": 1,
+      "Score": 254,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 255,
+      "TowerTypeID": 1,
+      "Score": 255,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 256,
+      "TowerTypeID": 1,
+      "Score": 256,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 257,
+      "TowerTypeID": 1,
+      "Score": 257,
+      "Type": 5,
+      "Param": "ID:8012"
+    },
+    {
+      "ID": 258,
+      "TowerTypeID": 1,
+      "Score": 258,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 259,
+      "TowerTypeID": 1,
+      "Score": 259,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 260,
+      "TowerTypeID": 1,
+      "Score": 260,
+      "Type": 405,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 261,
+      "TowerTypeID": 1,
+      "Score": 261,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 262,
+      "TowerTypeID": 1,
+      "Score": 262,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 263,
+      "TowerTypeID": 1,
+      "Score": 263,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 264,
+      "TowerTypeID": 1,
+      "Score": 264,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 265,
+      "TowerTypeID": 1,
+      "Score": 265,
+      "Type": 5,
+      "Param": "ID:8019"
+    },
+    {
+      "ID": 266,
+      "TowerTypeID": 1,
+      "Score": 266,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 267,
+      "TowerTypeID": 1,
+      "Score": 267,
+      "Type": 5,
+      "Param": "ID:8020 Value:10"
+    },
+    {
+      "ID": 268,
+      "TowerTypeID": 1,
+      "Score": 268,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 269,
+      "TowerTypeID": 1,
+      "Score": 269,
+      "Type": 8,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 270,
+      "TowerTypeID": 1,
+      "Score": 270,
+      "Type": 5,
+      "Param": "ID:8011"
+    },
+    {
+      "ID": 271,
+      "TowerTypeID": 1,
+      "Score": 271,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 272,
+      "TowerTypeID": 1,
+      "Score": 272,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 273,
+      "TowerTypeID": 1,
+      "Score": 273,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 274,
+      "TowerTypeID": 1,
+      "Score": 274,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 275,
+      "TowerTypeID": 1,
+      "Score": 275,
+      "Type": 5,
+      "Param": "ID:8121"
+    },
+    {
+      "ID": 276,
+      "TowerTypeID": 1,
+      "Score": 276,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 277,
+      "TowerTypeID": 1,
+      "Score": 277,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 278,
+      "TowerTypeID": 1,
+      "Score": 278,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 279,
+      "TowerTypeID": 1,
+      "Score": 279,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 280,
+      "TowerTypeID": 1,
+      "Score": 280,
+      "Type": 602,
+      "Param": "ID:1001"
+    },
+    {
+      "ID": 281,
+      "TowerTypeID": 1,
+      "Score": 281,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 282,
+      "TowerTypeID": 1,
+      "Score": 282,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 283,
+      "TowerTypeID": 1,
+      "Score": 283,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 284,
+      "TowerTypeID": 1,
+      "Score": 284,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 285,
+      "TowerTypeID": 1,
+      "Score": 285,
+      "Type": 5,
+      "Param": "ID:8006"
+    },
+    {
+      "ID": 286,
+      "TowerTypeID": 1,
+      "Score": 286,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 287,
+      "TowerTypeID": 1,
+      "Score": 287,
+      "Type": 5,
+      "Param": "ID:8008"
+    },
+    {
+      "ID": 288,
+      "TowerTypeID": 1,
+      "Score": 288,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 289,
+      "TowerTypeID": 1,
+      "Score": 289,
+      "Type": 8,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 290,
+      "TowerTypeID": 1,
+      "Score": 290,
+      "Type": 406,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 291,
+      "TowerTypeID": 1,
+      "Score": 291,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 292,
+      "TowerTypeID": 1,
+      "Score": 292,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 293,
+      "TowerTypeID": 1,
+      "Score": 293,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 294,
+      "TowerTypeID": 1,
+      "Score": 294,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 295,
+      "TowerTypeID": 1,
+      "Score": 295,
+      "Type": 5,
+      "Param": "ID:8013"
+    },
+    {
+      "ID": 296,
+      "TowerTypeID": 1,
+      "Score": 296,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 297,
+      "TowerTypeID": 1,
+      "Score": 297,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 298,
+      "TowerTypeID": 1,
+      "Score": 298,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 299,
+      "TowerTypeID": 1,
+      "Score": 299,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 300,
+      "TowerTypeID": 1,
+      "Score": 300,
+      "Type": 5,
+      "Param": "ID:8011"
+    },
+    {
+      "ID": 301,
+      "TowerTypeID": 1,
+      "Score": 301,
+      "Type": 5,
+      "Param": "ID:8017"
+    },
+    {
+      "ID": 302,
+      "TowerTypeID": 1,
+      "Score": 302,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 303,
+      "TowerTypeID": 1,
+      "Score": 303,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 304,
+      "TowerTypeID": 1,
+      "Score": 304,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 305,
+      "TowerTypeID": 1,
+      "Score": 305,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 306,
+      "TowerTypeID": 1,
+      "Score": 306,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 307,
+      "TowerTypeID": 1,
+      "Score": 307,
+      "Type": 5,
+      "Param": "ID:8012"
+    },
+    {
+      "ID": 308,
+      "TowerTypeID": 1,
+      "Score": 308,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 309,
+      "TowerTypeID": 1,
+      "Score": 309,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 310,
+      "TowerTypeID": 1,
+      "Score": 310,
+      "Type": 405,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 311,
+      "TowerTypeID": 1,
+      "Score": 311,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 312,
+      "TowerTypeID": 1,
+      "Score": 312,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 313,
+      "TowerTypeID": 1,
+      "Score": 313,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 314,
+      "TowerTypeID": 1,
+      "Score": 314,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 315,
+      "TowerTypeID": 1,
+      "Score": 315,
+      "Type": 5,
+      "Param": "ID:8019"
+    },
+    {
+      "ID": 316,
+      "TowerTypeID": 1,
+      "Score": 316,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 317,
+      "TowerTypeID": 1,
+      "Score": 317,
+      "Type": 5,
+      "Param": "ID:8020 Value:10"
+    },
+    {
+      "ID": 318,
+      "TowerTypeID": 1,
+      "Score": 318,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 319,
+      "TowerTypeID": 1,
+      "Score": 319,
+      "Type": 8,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 320,
+      "TowerTypeID": 1,
+      "Score": 320,
+      "Type": 5,
+      "Param": "ID:8011"
+    },
+    {
+      "ID": 321,
+      "TowerTypeID": 1,
+      "Score": 321,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 322,
+      "TowerTypeID": 1,
+      "Score": 322,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 323,
+      "TowerTypeID": 1,
+      "Score": 323,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 324,
+      "TowerTypeID": 1,
+      "Score": 324,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 325,
+      "TowerTypeID": 1,
+      "Score": 325,
+      "Type": 5,
+      "Param": "ID:8121"
+    },
+    {
+      "ID": 326,
+      "TowerTypeID": 1,
+      "Score": 326,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 327,
+      "TowerTypeID": 1,
+      "Score": 327,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 328,
+      "TowerTypeID": 1,
+      "Score": 328,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 329,
+      "TowerTypeID": 1,
+      "Score": 329,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 330,
+      "TowerTypeID": 1,
+      "Score": 330,
+      "Type": 602,
+      "Param": "ID:1001"
+    },
+    {
+      "ID": 331,
+      "TowerTypeID": 1,
+      "Score": 331,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 332,
+      "TowerTypeID": 1,
+      "Score": 332,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 333,
+      "TowerTypeID": 1,
+      "Score": 333,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 334,
+      "TowerTypeID": 1,
+      "Score": 334,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 335,
+      "TowerTypeID": 1,
+      "Score": 335,
+      "Type": 5,
+      "Param": "ID:8006"
+    },
+    {
+      "ID": 336,
+      "TowerTypeID": 1,
+      "Score": 336,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 337,
+      "TowerTypeID": 1,
+      "Score": 337,
+      "Type": 5,
+      "Param": "ID:8008"
+    },
+    {
+      "ID": 338,
+      "TowerTypeID": 1,
+      "Score": 338,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 339,
+      "TowerTypeID": 1,
+      "Score": 339,
+      "Type": 8,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 340,
+      "TowerTypeID": 1,
+      "Score": 340,
+      "Type": 406,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 341,
+      "TowerTypeID": 1,
+      "Score": 341,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 342,
+      "TowerTypeID": 1,
+      "Score": 342,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 343,
+      "TowerTypeID": 1,
+      "Score": 343,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 344,
+      "TowerTypeID": 1,
+      "Score": 344,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 345,
+      "TowerTypeID": 1,
+      "Score": 345,
+      "Type": 5,
+      "Param": "ID:8013"
+    },
+    {
+      "ID": 346,
+      "TowerTypeID": 1,
+      "Score": 346,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 347,
+      "TowerTypeID": 1,
+      "Score": 347,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 348,
+      "TowerTypeID": 1,
+      "Score": 348,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 349,
+      "TowerTypeID": 1,
+      "Score": 349,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 350,
+      "TowerTypeID": 1,
+      "Score": 350,
+      "Type": 5,
+      "Param": "ID:8011"
+    },
+    {
+      "ID": 351,
+      "TowerTypeID": 1,
+      "Score": 351,
+      "Type": 5,
+      "Param": "ID:8017"
+    },
+    {
+      "ID": 352,
+      "TowerTypeID": 1,
+      "Score": 352,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 353,
+      "TowerTypeID": 1,
+      "Score": 353,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 354,
+      "TowerTypeID": 1,
+      "Score": 354,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 355,
+      "TowerTypeID": 1,
+      "Score": 355,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 356,
+      "TowerTypeID": 1,
+      "Score": 356,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 357,
+      "TowerTypeID": 1,
+      "Score": 357,
+      "Type": 5,
+      "Param": "ID:8012"
+    },
+    {
+      "ID": 358,
+      "TowerTypeID": 1,
+      "Score": 358,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 359,
+      "TowerTypeID": 1,
+      "Score": 359,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 360,
+      "TowerTypeID": 1,
+      "Score": 360,
+      "Type": 405,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 361,
+      "TowerTypeID": 1,
+      "Score": 361,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 362,
+      "TowerTypeID": 1,
+      "Score": 362,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 363,
+      "TowerTypeID": 1,
+      "Score": 363,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 364,
+      "TowerTypeID": 1,
+      "Score": 364,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 365,
+      "TowerTypeID": 1,
+      "Score": 365,
+      "Type": 5,
+      "Param": "ID:8019"
+    },
+    {
+      "ID": 366,
+      "TowerTypeID": 1,
+      "Score": 366,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 367,
+      "TowerTypeID": 1,
+      "Score": 367,
+      "Type": 5,
+      "Param": "ID:8020 Value:10"
+    },
+    {
+      "ID": 368,
+      "TowerTypeID": 1,
+      "Score": 368,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 369,
+      "TowerTypeID": 1,
+      "Score": 369,
+      "Type": 8,
+      "Param": "Value:1"
+    },
+    {
+      "ID": 370,
+      "TowerTypeID": 1,
+      "Score": 370,
+      "Type": 5,
+      "Param": "ID:8011"
+    },
+    {
+      "ID": 371,
+      "TowerTypeID": 1,
+      "Score": 371,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 372,
+      "TowerTypeID": 1,
+      "Score": 372,
+      "Type": 4,
+      "Param": "Type:1 Value:1"
+    },
+    {
+      "ID": 373,
+      "TowerTypeID": 1,
+      "Score": 373,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 374,
+      "TowerTypeID": 1,
+      "Score": 374,
+      "Type": 4,
+      "Param": "Type:4 Value:1"
+    },
+    {
+      "ID": 375,
+      "TowerTypeID": 1,
+      "Score": 375,
+      "Type": 5,
+      "Param": "ID:8121"
+    },
+    {
+      "ID": 376,
+      "TowerTypeID": 1,
+      "Score": 376,
+      "Type": 4,
+      "Param": "Type:7 Value:1"
+    },
+    {
+      "ID": 10001,
+      "TowerTypeID": 2,
+      "Score": 1,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 2,
+      "Type": 5,
+      "Param": "ID:8201"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 3,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 4,
+      "Type": 5,
+      "Param": "ID:8202"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 5,
+      "Type": 5,
+      "Param": "ID:8019"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 6,
+      "Type": 5,
+      "Param": "ID:8203"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 7,
+      "Type": 5,
+      "Param": "ID:8020 Value:10"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 8,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 9,
+      "Type": 5,
+      "Param": "ID:8202 Value:3"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 10,
+      "Type": 5,
+      "Param": "ID:8209"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 11,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 12,
+      "Type": 5,
+      "Param": "ID:8201 Value:2"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 13,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 14,
+      "Type": 5,
+      "Param": "ID:8202 Value:2"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 15,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 16,
+      "Type": 5,
+      "Param": "ID:8203 Value:2"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 17,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 18,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 19,
+      "Type": 5,
+      "Param": "ID:8202 Value:5"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 20,
+      "Type": 5,
+      "Param": "ID:8209"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 21,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 22,
+      "Type": 5,
+      "Param": "ID:8210"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 23,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 24,
+      "Type": 5,
+      "Param": "ID:8204"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 25,
+      "Type": 5,
+      "Param": "ID:8019"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 26,
+      "Type": 5,
+      "Param": "ID:8220"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 27,
+      "Type": 5,
+      "Param": "ID:8020 Value:10"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 28,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 29,
+      "Type": 5,
+      "Param": "ID:8204 Value:3"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 30,
+      "Type": 5,
+      "Param": "ID:8216"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 31,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 32,
+      "Type": 5,
+      "Param": "ID:8210 Value:2"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 33,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 34,
+      "Type": 5,
+      "Param": "ID:8204 Value:2"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 35,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 36,
+      "Type": 5,
+      "Param": "ID:8220 Value:2"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 37,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 38,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 39,
+      "Type": 5,
+      "Param": "ID:8204 Value:5"
+    },
+    {
+      "ID": 0,
+      "TowerTypeID": 2,
+      "Score": 40,
+      "Type": 5,
+      "Param": "ID:8216"
+    },
+    {
+      "ID": 10041,
+      "TowerTypeID": 2,
+      "Score": 41,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 10042,
+      "TowerTypeID": 2,
+      "Score": 42,
+      "Type": 5,
+      "Param": "ID:8206"
+    },
+    {
+      "ID": 10043,
+      "TowerTypeID": 2,
+      "Score": 43,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 10044,
+      "TowerTypeID": 2,
+      "Score": 44,
+      "Type": 5,
+      "Param": "ID:8205"
+    },
+    {
+      "ID": 10045,
+      "TowerTypeID": 2,
+      "Score": 45,
+      "Type": 5,
+      "Param": "ID:8019"
+    },
+    {
+      "ID": 10046,
+      "TowerTypeID": 2,
+      "Score": 46,
+      "Type": 5,
+      "Param": "ID:8206"
+    },
+    {
+      "ID": 10047,
+      "TowerTypeID": 2,
+      "Score": 47,
+      "Type": 5,
+      "Param": "ID:8020 Value:10"
+    },
+    {
+      "ID": 10048,
+      "TowerTypeID": 2,
+      "Score": 48,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 10049,
+      "TowerTypeID": 2,
+      "Score": 49,
+      "Type": 5,
+      "Param": "ID:8205 Value:3"
+    },
+    {
+      "ID": 10050,
+      "TowerTypeID": 2,
+      "Score": 50,
+      "Type": 5,
+      "Param": "ID:8217"
+    },
+    {
+      "ID": 10051,
+      "TowerTypeID": 2,
+      "Score": 51,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 10052,
+      "TowerTypeID": 2,
+      "Score": 52,
+      "Type": 5,
+      "Param": "ID:8206 Value:2"
+    },
+    {
+      "ID": 10053,
+      "TowerTypeID": 2,
+      "Score": 53,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 10054,
+      "TowerTypeID": 2,
+      "Score": 54,
+      "Type": 5,
+      "Param": "ID:8205 Value:2"
+    },
+    {
+      "ID": 10055,
+      "TowerTypeID": 2,
+      "Score": 55,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 10056,
+      "TowerTypeID": 2,
+      "Score": 56,
+      "Type": 5,
+      "Param": "ID:8206 Value:2"
+    },
+    {
+      "ID": 10057,
+      "TowerTypeID": 2,
+      "Score": 57,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 10058,
+      "TowerTypeID": 2,
+      "Score": 58,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 10059,
+      "TowerTypeID": 2,
+      "Score": 59,
+      "Type": 5,
+      "Param": "ID:8205 Value:5"
+    },
+    {
+      "ID": 10060,
+      "TowerTypeID": 2,
+      "Score": 60,
+      "Type": 5,
+      "Param": "ID:8217"
+    },
+    {
+      "ID": 10061,
+      "TowerTypeID": 2,
+      "Score": 61,
+      "Type": 5,
+      "Param": "ID:8003"
+    },
+    {
+      "ID": 10062,
+      "TowerTypeID": 2,
+      "Score": 62,
+      "Type": 5,
+      "Param": "ID:8208"
+    },
+    {
+      "ID": 10063,
+      "TowerTypeID": 2,
+      "Score": 63,
+      "Type": 5,
+      "Param": "ID:8005"
+    },
+    {
+      "ID": 10064,
+      "TowerTypeID": 2,
+      "Score": 64,
+      "Type": 5,
+      "Param": "ID:8212"
+    },
+    {
+      "ID": 10065,
+      "TowerTypeID": 2,
+      "Score": 65,
+      "Type": 5,
+      "Param": "ID:8019"
+    },
+    {
+      "ID": 10066,
+      "TowerTypeID": 2,
+      "Score": 66,
+      "Type": 5,
+      "Param": "ID:8208"
+    },
+    {
+      "ID": 10067,
+      "TowerTypeID": 2,
+      "Score": 67,
+      "Type": 5,
+      "Param": "ID:8020 Value:10"
+    },
+    {
+      "ID": 10068,
+      "TowerTypeID": 2,
+      "Score": 68,
+      "Type": 2,
+      "Param": "Value:20"
+    },
+    {
+      "ID": 10069,
+      "TowerTypeID": 2,
+      "Score": 69,
+      "Type": 5,
+      "Param": "ID:8212 Value:3"
+    },
+    {
+      "ID": 10070,
+      "TowerTypeID": 2,
+      "Score": 70,
+      "Type": 5,
+      "Param": "ID:8213"
+    },
+    {
+      "ID": 10071,
+      "TowerTypeID": 2,
+      "Score": 71,
+      "Type": 4,
+      "Param": "Type:2 Value:1"
+    },
+    {
+      "ID": 10072,
+      "TowerTypeID": 2,
+      "Score": 72,
+      "Type": 5,
+      "Param": "ID:8208 Value:2"
+    },
+    {
+      "ID": 10073,
+      "TowerTypeID": 2,
+      "Score": 73,
+      "Type": 4,
+      "Param": "Type:5 Value:1"
+    },
+    {
+      "ID": 10074,
+      "TowerTypeID": 2,
+      "Score": 74,
+      "Type": 5,
+      "Param": "ID:8212 Value:2"
+    },
+    {
+      "ID": 10075,
+      "TowerTypeID": 2,
+      "Score": 75,
+      "Type": 4,
+      "Param": "Type:8 Value:1"
+    },
+    {
+      "ID": 10076,
+      "TowerTypeID": 2,
+      "Score": 76,
+      "Type": 5,
+      "Param": "ID:8208 Value:2"
+    },
+    {
+      "ID": 10077,
+      "TowerTypeID": 2,
+      "Score": 77,
+      "Type": 5,
+      "Param": "ID:8010"
+    },
+    {
+      "ID": 10078,
+      "TowerTypeID": 2,
+      "Score": 78,
+      "Type": 6,
+      "Param": "ID:100001 Plus:5"
+    },
+    {
+      "ID": 10079,
+      "TowerTypeID": 2,
+      "Score": 79,
+      "Type": 5,
+      "Param": "ID:8212 Value:5"
+    },
+    {
+      "ID": 10080,
+      "TowerTypeID": 2,
+      "Score": 80,
+      "Type": 5,
+      "Param": "ID:8213"
+    }
+  ]
+}

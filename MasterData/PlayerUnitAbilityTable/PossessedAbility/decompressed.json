@@ -1,0 +1,1187 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 125,
+    "record_size": 28,
+    "custom_id": 1650552688
+  },
+  "_fields": [
+    {
+      "name": "AbilityID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "AbilityType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "AbilityTypeDetail",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "AbilityAreaType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "AbilityTargetType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "StatusModifierType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "EffectValue",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "AbilityID": 9001,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 1,
+      "EffectValue": 10
+    },
+    {
+      "AbilityID": 1101,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 1,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 11,
+      "StatusModifierType": 0,
+      "EffectValue": 10
+    },
+    {
+      "AbilityID": 1102,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 1,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 11,
+      "StatusModifierType": 0,
+      "EffectValue": 15
+    },
+    {
+      "AbilityID": 1201,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 2,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 10
+    },
+    {
+      "AbilityID": 1202,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 2,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 15
+    },
+    {
+      "AbilityID": 1301,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 3,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 5
+    },
+    {
+      "AbilityID": 1302,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 3,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 10
+    },
+    {
+      "AbilityID": 1401,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 4,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 15
+    },
+    {
+      "AbilityID": 1402,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 4,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 20
+    },
+    {
+      "AbilityID": 98,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 1,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 11,
+      "StatusModifierType": 0,
+      "EffectValue": 8
+    },
+    {
+      "AbilityID": 11098,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 1,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 11,
+      "StatusModifierType": 0,
+      "EffectValue": 20
+    },
+    {
+      "AbilityID": 11251,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 2,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 30
+    },
+    {
+      "AbilityID": 11305,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 3,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 20
+    },
+    {
+      "AbilityID": 486,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 4,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 5
+    },
+    {
+      "AbilityID": 9486,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 4,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 7
+    },
+    {
+      "AbilityID": 461,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 2,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 30
+    },
+    {
+      "AbilityID": 9461,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 2,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 35
+    },
+    {
+      "AbilityID": 10461,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 2,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 45
+    },
+    {
+      "AbilityID": 530,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 3,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 7
+    },
+    {
+      "AbilityID": 578,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 5,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 10
+    },
+    {
+      "AbilityID": 9578,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 5,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 15
+    },
+    {
+      "AbilityID": 599,
+      "AbilityType": 20,
+      "AbilityTypeDetail": 103,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 11,
+      "StatusModifierType": 0,
+      "EffectValue": 8
+    },
+    {
+      "AbilityID": 9599,
+      "AbilityType": 20,
+      "AbilityTypeDetail": 103,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 11,
+      "StatusModifierType": 0,
+      "EffectValue": 10
+    },
+    {
+      "AbilityID": 604,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 607,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 605,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 401,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 606,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 302,
+      "StatusModifierType": 211,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 609,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 4,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 8
+    },
+    {
+      "AbilityID": 9609,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 4,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 10
+    },
+    {
+      "AbilityID": 626,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 4,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 25
+    },
+    {
+      "AbilityID": 9626,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 4,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 30
+    },
+    {
+      "AbilityID": 627,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 3,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 15
+    },
+    {
+      "AbilityID": 9627,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 3,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 1,
+      "StatusModifierType": 0,
+      "EffectValue": 20
+    },
+    {
+      "AbilityID": 642,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 302,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 643,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 609,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 644,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 303,
+      "StatusModifierType": 101,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 660,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 5,
+      "AbilityTargetType": 4,
+      "StatusModifierType": 3,
+      "EffectValue": 2
+    },
+    {
+      "AbilityID": 9660,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 5,
+      "AbilityTargetType": 4,
+      "StatusModifierType": 3,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 661,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 5,
+      "AbilityTargetType": 4,
+      "StatusModifierType": 103,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 682,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 5,
+      "AbilityTargetType": 4,
+      "StatusModifierType": 73,
+      "EffectValue": 2
+    },
+    {
+      "AbilityID": 9682,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 5,
+      "AbilityTargetType": 4,
+      "StatusModifierType": 73,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 683,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 5,
+      "AbilityTargetType": 4,
+      "StatusModifierType": 33,
+      "EffectValue": 2
+    },
+    {
+      "AbilityID": 9683,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 5,
+      "AbilityTargetType": 4,
+      "StatusModifierType": 33,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 684,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 5,
+      "AbilityTargetType": 4,
+      "StatusModifierType": 103,
+      "EffectValue": 1
+    },
+    {
+      "AbilityID": 9684,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 5,
+      "AbilityTargetType": 4,
+      "StatusModifierType": 103,
+      "EffectValue": 2
+    },
+    {
+      "AbilityID": 702,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 303,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 703,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 602,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 704,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 405,
+      "StatusModifierType": 211,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 705,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 5,
+      "AbilityTargetType": 4,
+      "StatusModifierType": 3,
+      "EffectValue": 1
+    },
+    {
+      "AbilityID": 9705,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 5,
+      "AbilityTargetType": 4,
+      "StatusModifierType": 3,
+      "EffectValue": 2
+    },
+    {
+      "AbilityID": 731,
+      "AbilityType": 20,
+      "AbilityTypeDetail": 103,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 11,
+      "StatusModifierType": 0,
+      "EffectValue": 15
+    },
+    {
+      "AbilityID": 0,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 1,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 11,
+      "StatusModifierType": 0,
+      "EffectValue": 15
+    },
+    {
+      "AbilityID": 9731,
+      "AbilityType": 20,
+      "AbilityTypeDetail": 103,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 11,
+      "StatusModifierType": 0,
+      "EffectValue": 20
+    },
+    {
+      "AbilityID": 0,
+      "AbilityType": 4,
+      "AbilityTypeDetail": 1,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 11,
+      "StatusModifierType": 0,
+      "EffectValue": 20
+    },
+    {
+      "AbilityID": 732,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 505,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 733,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 505,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 734,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 5,
+      "AbilityTargetType": 4,
+      "StatusModifierType": 73,
+      "EffectValue": 1
+    },
+    {
+      "AbilityID": 9734,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 5,
+      "AbilityTargetType": 4,
+      "StatusModifierType": 73,
+      "EffectValue": 2
+    },
+    {
+      "AbilityID": 980,
+      "AbilityType": 20,
+      "AbilityTypeDetail": 103,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 11,
+      "StatusModifierType": 0,
+      "EffectValue": 5
+    },
+    {
+      "AbilityID": 9980,
+      "AbilityType": 20,
+      "AbilityTypeDetail": 103,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 11,
+      "StatusModifierType": 0,
+      "EffectValue": 8
+    },
+    {
+      "AbilityID": 749,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 603,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 750,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 405,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 751,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 301,
+      "StatusModifierType": 101,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 752,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 612,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 766,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 505,
+      "StatusModifierType": 101,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 767,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 820,
+      "StatusModifierType": 241,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 768,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 5,
+      "AbilityTargetType": 4,
+      "StatusModifierType": 33,
+      "EffectValue": 1
+    },
+    {
+      "AbilityID": 787,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 306,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 788,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 505,
+      "StatusModifierType": 211,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 789,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 408,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 802,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 610,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 803,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 404,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 804,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 606,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 805,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 401,
+      "StatusModifierType": 211,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 814,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 505,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 815,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 307,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 816,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 505,
+      "StatusModifierType": 211,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 823,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 802,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 824,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 306,
+      "StatusModifierType": 211,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 825,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 309,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 846,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 402,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 847,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 301,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 848,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 401,
+      "StatusModifierType": 211,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 856,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 827,
+      "StatusModifierType": 1,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 857,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 401,
+      "StatusModifierType": 16,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 858,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 505,
+      "StatusModifierType": 31,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 871,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 806,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 872,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 806,
+      "StatusModifierType": 211,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 873,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 806,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 877,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 400,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 878,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 308,
+      "StatusModifierType": 1,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 887,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 816,
+      "StatusModifierType": 1,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 888,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 610,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 889,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 405,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 890,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 402,
+      "StatusModifierType": 211,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 908,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 402,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 914,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 802,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 915,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 802,
+      "StatusModifierType": 1,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 916,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 802,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 920,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 405,
+      "StatusModifierType": 1,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 936,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 400,
+      "StatusModifierType": 1,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 937,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 409,
+      "StatusModifierType": 1,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 938,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 607,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 960,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 304,
+      "StatusModifierType": 211,
+      "EffectValue": 5
+    },
+    {
+      "AbilityID": 961,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 806,
+      "StatusModifierType": 1,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 962,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 311,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 963,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 505,
+      "StatusModifierType": 10141,
+      "EffectValue": 10
+    },
+    {
+      "AbilityID": 964,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 505,
+      "StatusModifierType": 71,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 3019,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 403,
+      "StatusModifierType": 1,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 3020,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 306,
+      "StatusModifierType": 10141,
+      "EffectValue": 10
+    },
+    {
+      "AbilityID": 3021,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 406,
+      "StatusModifierType": 31,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 3038,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 310,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 3039,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 309,
+      "StatusModifierType": 1,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 3069,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 400,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 3070,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 406,
+      "StatusModifierType": 1,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 3071,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 305,
+      "StatusModifierType": 71,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 3072,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 410,
+      "StatusModifierType": 101,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 3111,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 505,
+      "StatusModifierType": 265,
+      "EffectValue": 10
+    },
+    {
+      "AbilityID": 3112,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 403,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 3113,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 612,
+      "StatusModifierType": 201,
+      "EffectValue": 10
+    },
+    {
+      "AbilityID": 3114,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 408,
+      "StatusModifierType": 31,
+      "EffectValue": 5
+    },
+    {
+      "AbilityID": 3115,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 303,
+      "StatusModifierType": 31,
+      "EffectValue": 4
+    },
+    {
+      "AbilityID": 981,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 513,
+      "StatusModifierType": 1,
+      "EffectValue": 3
+    },
+    {
+      "AbilityID": 3999,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 11,
+      "StatusModifierType": 1,
+      "EffectValue": 10
+    },
+    {
+      "AbilityID": 93999,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 11,
+      "StatusModifierType": 1,
+      "EffectValue": 20
+    },
+    {
+      "AbilityID": 103999,
+      "AbilityType": 1,
+      "AbilityTypeDetail": 0,
+      "AbilityAreaType": 4,
+      "AbilityTargetType": 11,
+      "StatusModifierType": 1,
+      "EffectValue": 30
+    }
+  ]
+}

@@ -1,0 +1,609 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 54,
+    "record_size": 32,
+    "custom_id": 1735945335
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "ItemType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Param",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "ExchangeNum",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "MonthlyReset",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 16,
+      "size": 1
+    },
+    {
+      "name": "ConsumeNum",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "DispOrder",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "ClearQuestID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "ItemType": 23,
+      "Param": "ID:900 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 0,
+      "DispOrder": 10,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 2,
+      "ItemType": 23,
+      "Param": "ID:901 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 900,
+      "DispOrder": 20,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 3,
+      "ItemType": 23,
+      "Param": "ID:902 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1800,
+      "DispOrder": 30,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 4,
+      "ItemType": 23,
+      "Param": "ID:903 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1500,
+      "DispOrder": 40,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 5,
+      "ItemType": 23,
+      "Param": "ID:904 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1500,
+      "DispOrder": 50,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 6,
+      "ItemType": 23,
+      "Param": "ID:905 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1500,
+      "DispOrder": 60,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 7,
+      "ItemType": 5,
+      "Param": "ID:762 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 600,
+      "DispOrder": 100,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 8,
+      "ItemType": 6,
+      "Param": "ID:23005 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1200,
+      "DispOrder": 110,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 9,
+      "ItemType": 5,
+      "Param": "ID:786 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 600,
+      "DispOrder": 120,
+      "ClearQuestID": 60011
+    },
+    {
+      "ID": 10,
+      "ItemType": 6,
+      "Param": "ID:21011 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1200,
+      "DispOrder": 130,
+      "ClearQuestID": 60012
+    },
+    {
+      "ID": 11,
+      "ItemType": 23,
+      "Param": "ID:906 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1500,
+      "DispOrder": 140,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 12,
+      "ItemType": 23,
+      "Param": "ID:907 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1500,
+      "DispOrder": 150,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 13,
+      "ItemType": 23,
+      "Param": "ID:908 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1500,
+      "DispOrder": 160,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 14,
+      "ItemType": 23,
+      "Param": "ID:909 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1500,
+      "DispOrder": 170,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 15,
+      "ItemType": 23,
+      "Param": "ID:910 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1500,
+      "DispOrder": 180,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 16,
+      "ItemType": 5,
+      "Param": "ID:831 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 600,
+      "DispOrder": 190,
+      "ClearQuestID": 60021
+    },
+    {
+      "ID": 17,
+      "ItemType": 23,
+      "Param": "ID:911 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1500,
+      "DispOrder": 200,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 18,
+      "ItemType": 6,
+      "Param": "ID:23003 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1200,
+      "DispOrder": 210,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 19,
+      "ItemType": 6,
+      "Param": "ID:23004 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1200,
+      "DispOrder": 220,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 20,
+      "ItemType": 6,
+      "Param": "ID:23006 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1200,
+      "DispOrder": 230,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 21,
+      "ItemType": 5,
+      "Param": "ID:903 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 600,
+      "DispOrder": 240,
+      "ClearQuestID": 60033
+    },
+    {
+      "ID": 22,
+      "ItemType": 6,
+      "Param": "ID:11034 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1200,
+      "DispOrder": 250,
+      "ClearQuestID": 60033
+    },
+    {
+      "ID": 23,
+      "ItemType": 23,
+      "Param": "ID:912 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1500,
+      "DispOrder": 260,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 24,
+      "ItemType": 23,
+      "Param": "ID:913 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1500,
+      "DispOrder": 270,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 25,
+      "ItemType": 6,
+      "Param": "ID:23007 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1200,
+      "DispOrder": 280,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 26,
+      "ItemType": 5,
+      "Param": "ID:3004 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 600,
+      "DispOrder": 290,
+      "ClearQuestID": 60042
+    },
+    {
+      "ID": 27,
+      "ItemType": 6,
+      "Param": "ID:23014 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1200,
+      "DispOrder": 300,
+      "ClearQuestID": 60042
+    },
+    {
+      "ID": 28,
+      "ItemType": 6,
+      "Param": "ID:23009 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1200,
+      "DispOrder": 310,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 29,
+      "ItemType": 23,
+      "Param": "ID:914 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1500,
+      "DispOrder": 320,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 30,
+      "ItemType": 5,
+      "Param": "ID:3064 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 600,
+      "DispOrder": 330,
+      "ClearQuestID": 60052
+    },
+    {
+      "ID": 31,
+      "ItemType": 6,
+      "Param": "ID:23010 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 1200,
+      "DispOrder": 340,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 32,
+      "ItemType": 5,
+      "Param": "ID:3065 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": false,
+      "ConsumeNum": 600,
+      "DispOrder": 350,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 101,
+      "ItemType": 5,
+      "Param": "ID:8011 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": true,
+      "ConsumeNum": 900,
+      "DispOrder": 350,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 102,
+      "ItemType": 5,
+      "Param": "ID:8010 Value:1",
+      "ExchangeNum": 30,
+      "MonthlyReset": true,
+      "ConsumeNum": 130,
+      "DispOrder": 360,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 103,
+      "ItemType": 5,
+      "Param": "ID:8003 Value:1",
+      "ExchangeNum": 50,
+      "MonthlyReset": true,
+      "ConsumeNum": 25,
+      "DispOrder": 370,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 104,
+      "ItemType": 5,
+      "Param": "ID:8002 Value:1",
+      "ExchangeNum": 99,
+      "MonthlyReset": true,
+      "ConsumeNum": 5,
+      "DispOrder": 380,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 111,
+      "ItemType": 5,
+      "Param": "ID:8015 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": true,
+      "ConsumeNum": 3000,
+      "DispOrder": 390,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 112,
+      "ItemType": 5,
+      "Param": "ID:8006 Value:1",
+      "ExchangeNum": 5,
+      "MonthlyReset": true,
+      "ConsumeNum": 1200,
+      "DispOrder": 400,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 113,
+      "ItemType": 5,
+      "Param": "ID:8019 Value:1",
+      "ExchangeNum": 8,
+      "MonthlyReset": true,
+      "ConsumeNum": 30,
+      "DispOrder": 410,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 121,
+      "ItemType": 5,
+      "Param": "ID:8016 Value:1",
+      "ExchangeNum": 1,
+      "MonthlyReset": true,
+      "ConsumeNum": 3000,
+      "DispOrder": 420,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 122,
+      "ItemType": 5,
+      "Param": "ID:8008 Value:1",
+      "ExchangeNum": 5,
+      "MonthlyReset": true,
+      "ConsumeNum": 1200,
+      "DispOrder": 430,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 123,
+      "ItemType": 5,
+      "Param": "ID:8020 Value:1",
+      "ExchangeNum": 30,
+      "MonthlyReset": true,
+      "ConsumeNum": 30,
+      "DispOrder": 440,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 201,
+      "ItemType": 6,
+      "Param": "ID:100001 Plus:3",
+      "ExchangeNum": 5,
+      "MonthlyReset": true,
+      "ConsumeNum": 350,
+      "DispOrder": 450,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 202,
+      "ItemType": 6,
+      "Param": "ID:100001 Plus:1",
+      "ExchangeNum": 10,
+      "MonthlyReset": true,
+      "ConsumeNum": 120,
+      "DispOrder": 460,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 301,
+      "ItemType": 4,
+      "Param": "Type:2 Value:1",
+      "ExchangeNum": 5,
+      "MonthlyReset": true,
+      "ConsumeNum": 9,
+      "DispOrder": 470,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 302,
+      "ItemType": 4,
+      "Param": "Type:1 Value:1",
+      "ExchangeNum": 20,
+      "MonthlyReset": true,
+      "ConsumeNum": 5,
+      "DispOrder": 480,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 303,
+      "ItemType": 4,
+      "Param": "Type:5 Value:1",
+      "ExchangeNum": 5,
+      "MonthlyReset": true,
+      "ConsumeNum": 9,
+      "DispOrder": 490,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 304,
+      "ItemType": 4,
+      "Param": "Type:4 Value:1",
+      "ExchangeNum": 20,
+      "MonthlyReset": true,
+      "ConsumeNum": 5,
+      "DispOrder": 500,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 305,
+      "ItemType": 4,
+      "Param": "Type:8 Value:1",
+      "ExchangeNum": 5,
+      "MonthlyReset": true,
+      "ConsumeNum": 9,
+      "DispOrder": 510,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 306,
+      "ItemType": 4,
+      "Param": "Type:7 Value:1",
+      "ExchangeNum": 20,
+      "MonthlyReset": true,
+      "ConsumeNum": 5,
+      "DispOrder": 520,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 401,
+      "ItemType": 651,
+      "Param": "Value:30",
+      "ExchangeNum": 3,
+      "MonthlyReset": true,
+      "ConsumeNum": 280,
+      "DispOrder": 530,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 402,
+      "ItemType": 651,
+      "Param": "Value:3",
+      "ExchangeNum": 30,
+      "MonthlyReset": true,
+      "ConsumeNum": 30,
+      "DispOrder": 540,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 501,
+      "ItemType": 2,
+      "Param": "Value:50",
+      "ExchangeNum": 50,
+      "MonthlyReset": true,
+      "ConsumeNum": 60,
+      "DispOrder": 550,
+      "ClearQuestID": 0
+    },
+    {
+      "ID": 10091,
+      "ItemType": 1,
+      "Param": "Value:100",
+      "ExchangeNum": 9999,
+      "MonthlyReset": true,
+      "ConsumeNum": 1,
+      "DispOrder": 1000,
+      "ClearQuestID": 0
+    }
+  ]
+}

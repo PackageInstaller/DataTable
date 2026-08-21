@@ -1,0 +1,293 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 14,
+    "record_size": 40,
+    "custom_id": 1936946547
+  },
+  "_fields": [
+    {
+      "name": "Type",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "MaxStep",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "StepsPerLoop",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Benefit",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "SpiritBead",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "SpiritBeadNormal",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "SpiritBeadStep1",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "SpiritBeadStep3",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "TerminateRarity",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "NoFirstOnlyBonus",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 36,
+      "size": 1
+    },
+    {
+      "name": "NoLoop",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 37,
+      "size": 1
+    },
+    {
+      "name": "FreeDraw",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 38,
+      "size": 1
+    }
+  ],
+  "records": [
+    {
+      "Type": 1,
+      "MaxStep": 2,
+      "StepsPerLoop": 0,
+      "Benefit": 0,
+      "SpiritBead": 25,
+      "SpiritBeadNormal": 50,
+      "SpiritBeadStep1": 0,
+      "SpiritBeadStep3": 0,
+      "TerminateRarity": 0,
+      "NoFirstOnlyBonus": false,
+      "NoLoop": false,
+      "FreeDraw": false
+    },
+    {
+      "Type": 2,
+      "MaxStep": 5,
+      "StepsPerLoop": 0,
+      "Benefit": 101,
+      "SpiritBead": 50,
+      "SpiritBeadNormal": 50,
+      "SpiritBeadStep1": 25,
+      "SpiritBeadStep3": 25,
+      "TerminateRarity": 0,
+      "NoFirstOnlyBonus": true,
+      "NoLoop": false,
+      "FreeDraw": false
+    },
+    {
+      "Type": 3,
+      "MaxStep": 2,
+      "StepsPerLoop": 0,
+      "Benefit": 0,
+      "SpiritBead": 50,
+      "SpiritBeadNormal": 50,
+      "SpiritBeadStep1": 0,
+      "SpiritBeadStep3": 0,
+      "TerminateRarity": 0,
+      "NoFirstOnlyBonus": false,
+      "NoLoop": false,
+      "FreeDraw": false
+    },
+    {
+      "Type": 4,
+      "MaxStep": 5,
+      "StepsPerLoop": 0,
+      "Benefit": 101,
+      "SpiritBead": 50,
+      "SpiritBeadNormal": 50,
+      "SpiritBeadStep1": 25,
+      "SpiritBeadStep3": 25,
+      "TerminateRarity": 0,
+      "NoFirstOnlyBonus": true,
+      "NoLoop": false,
+      "FreeDraw": false
+    },
+    {
+      "Type": 5,
+      "MaxStep": 50,
+      "StepsPerLoop": 0,
+      "Benefit": 1001,
+      "SpiritBead": 3,
+      "SpiritBeadNormal": 3,
+      "SpiritBeadStep1": 0,
+      "SpiritBeadStep3": 0,
+      "TerminateRarity": 7,
+      "NoFirstOnlyBonus": false,
+      "NoLoop": true,
+      "FreeDraw": false
+    },
+    {
+      "Type": 6,
+      "MaxStep": 4,
+      "StepsPerLoop": 0,
+      "Benefit": 2018,
+      "SpiritBead": 0,
+      "SpiritBeadNormal": 0,
+      "SpiritBeadStep1": 0,
+      "SpiritBeadStep3": 0,
+      "TerminateRarity": 0,
+      "NoFirstOnlyBonus": true,
+      "NoLoop": true,
+      "FreeDraw": false
+    },
+    {
+      "Type": 7,
+      "MaxStep": 2,
+      "StepsPerLoop": 0,
+      "Benefit": 3001,
+      "SpiritBead": 25,
+      "SpiritBeadNormal": 50,
+      "SpiritBeadStep1": 0,
+      "SpiritBeadStep3": 0,
+      "TerminateRarity": 0,
+      "NoFirstOnlyBonus": false,
+      "NoLoop": false,
+      "FreeDraw": false
+    },
+    {
+      "Type": 8,
+      "MaxStep": 5,
+      "StepsPerLoop": 0,
+      "Benefit": 101,
+      "SpiritBead": 50,
+      "SpiritBeadNormal": 50,
+      "SpiritBeadStep1": 25,
+      "SpiritBeadStep3": 25,
+      "TerminateRarity": 0,
+      "NoFirstOnlyBonus": true,
+      "NoLoop": false,
+      "FreeDraw": false
+    },
+    {
+      "Type": 9,
+      "MaxStep": 5,
+      "StepsPerLoop": 0,
+      "Benefit": 101,
+      "SpiritBead": 50,
+      "SpiritBeadNormal": 50,
+      "SpiritBeadStep1": 25,
+      "SpiritBeadStep3": 25,
+      "TerminateRarity": 0,
+      "NoFirstOnlyBonus": true,
+      "NoLoop": false,
+      "FreeDraw": false
+    },
+    {
+      "Type": 10,
+      "MaxStep": 4,
+      "StepsPerLoop": 0,
+      "Benefit": 2021,
+      "SpiritBead": 0,
+      "SpiritBeadNormal": 0,
+      "SpiritBeadStep1": 0,
+      "SpiritBeadStep3": 0,
+      "TerminateRarity": 0,
+      "NoFirstOnlyBonus": true,
+      "NoLoop": true,
+      "FreeDraw": false
+    },
+    {
+      "Type": 11,
+      "MaxStep": 5,
+      "StepsPerLoop": 0,
+      "Benefit": 101,
+      "SpiritBead": 50,
+      "SpiritBeadNormal": 50,
+      "SpiritBeadStep1": 25,
+      "SpiritBeadStep3": 25,
+      "TerminateRarity": 0,
+      "NoFirstOnlyBonus": true,
+      "NoLoop": false,
+      "FreeDraw": false
+    },
+    {
+      "Type": 12,
+      "MaxStep": 2,
+      "StepsPerLoop": 0,
+      "Benefit": 4001,
+      "SpiritBead": 25,
+      "SpiritBeadNormal": 50,
+      "SpiritBeadStep1": 0,
+      "SpiritBeadStep3": 0,
+      "TerminateRarity": 0,
+      "NoFirstOnlyBonus": false,
+      "NoLoop": false,
+      "FreeDraw": false
+    },
+    {
+      "Type": 13,
+      "MaxStep": 5,
+      "StepsPerLoop": 0,
+      "Benefit": 101,
+      "SpiritBead": 50,
+      "SpiritBeadNormal": 50,
+      "SpiritBeadStep1": 25,
+      "SpiritBeadStep3": 25,
+      "TerminateRarity": 0,
+      "NoFirstOnlyBonus": true,
+      "NoLoop": false,
+      "FreeDraw": false
+    },
+    {
+      "Type": 14,
+      "MaxStep": 5,
+      "StepsPerLoop": 0,
+      "Benefit": 101,
+      "SpiritBead": 50,
+      "SpiritBeadNormal": 50,
+      "SpiritBeadStep1": 25,
+      "SpiritBeadStep3": 25,
+      "TerminateRarity": 0,
+      "NoFirstOnlyBonus": true,
+      "NoLoop": false,
+      "FreeDraw": false
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 2,
+    "record_size": 36,
+    "custom_id": 1986355815
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Caption",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "EventStatusType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "StartDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "EndDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "PrologueEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "TutorialEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "EpilogueParameter",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "QuestParameter",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 32,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "Caption": "復刻大討伐",
+      "EventStatusType": 26,
+      "StartDate": "2026/03/24 13:00:00",
+      "EndDate": "2026/04/21 14:00:00",
+      "PrologueEventID": 700,
+      "TutorialEventID": 709,
+      "EpilogueParameter": "1:0:701,2:0:702,3:0:703,4:0:704,5:0:705",
+      "QuestParameter": ""
+    },
+    {
+      "ID": 2,
+      "Caption": "復刻大討伐",
+      "EventStatusType": 0,
+      "StartDate": "2025/10/07 13:00:00",
+      "EndDate": "2025/10/14 14:00:00",
+      "PrologueEventID": 710,
+      "TutorialEventID": 719,
+      "EpilogueParameter": "1:0:711,2:0:712,3:0:713,4:0:714,5:0:715",
+      "QuestParameter": ""
+    }
+  ]
+}

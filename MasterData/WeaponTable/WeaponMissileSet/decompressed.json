@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x00",
+    "record_count": 5,
+    "record_size": 12,
+    "custom_id": null
+  },
+  "_fields": [
+    {
+      "name": "MissileSetID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "MissileID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Probability",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "MissileSetID": 99056,
+      "MissileID": 92006,
+      "Probability": 24
+    },
+    {
+      "MissileSetID": 0,
+      "MissileID": 92007,
+      "Probability": 24
+    },
+    {
+      "MissileSetID": 0,
+      "MissileID": 92008,
+      "Probability": 23
+    },
+    {
+      "MissileSetID": 0,
+      "MissileID": 92009,
+      "Probability": 23
+    },
+    {
+      "MissileSetID": 0,
+      "MissileID": 92010,
+      "Probability": 6
+    }
+  ]
+}

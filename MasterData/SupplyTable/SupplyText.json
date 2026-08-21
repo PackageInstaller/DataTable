@@ -1,0 +1,347 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 51,
+    "record_size": 16,
+    "custom_id": 1701605491
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Overview",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Explanation",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 100,
+      "Name": "近隣の地図",
+      "Overview": "銀貨+1",
+      "Explanation": "貿易銀貨の獲得数+1"
+    },
+    {
+      "ID": 101,
+      "Name": "かすれた地図",
+      "Overview": "銀貨+2",
+      "Explanation": "貿易銀貨の獲得数+2"
+    },
+    {
+      "ID": 102,
+      "Name": "古い地図",
+      "Overview": "銀貨+3",
+      "Explanation": "貿易銀貨の獲得数+3"
+    },
+    {
+      "ID": 103,
+      "Name": "天竺への地図",
+      "Overview": "銀貨+4",
+      "Explanation": "貿易銀貨の獲得数+4"
+    },
+    {
+      "ID": 104,
+      "Name": "皮の地図",
+      "Overview": "銀貨+5",
+      "Explanation": "貿易銀貨の獲得数+5"
+    },
+    {
+      "ID": 200,
+      "Name": "小ぶりなおにぎり",
+      "Overview": "耐久+2%",
+      "Explanation": "味方全体の耐久+2%"
+    },
+    {
+      "ID": 201,
+      "Name": "普通のおにぎり",
+      "Overview": "耐久+5%",
+      "Explanation": "味方全体の耐久+5%"
+    },
+    {
+      "ID": 202,
+      "Name": "巨大なおにぎり",
+      "Overview": "耐久+8%",
+      "Explanation": "味方全体の耐久+8%"
+    },
+    {
+      "ID": 203,
+      "Name": "黄金炒飯",
+      "Overview": "耐久+10%",
+      "Explanation": "味方全体の耐久+10%"
+    },
+    {
+      "ID": 204,
+      "Name": "特大小麦パン",
+      "Overview": "耐久+12%",
+      "Explanation": "味方全体の耐久+12%"
+    },
+    {
+      "ID": 300,
+      "Name": "干し肉",
+      "Overview": "攻撃+25",
+      "Explanation": "味方全体の攻撃+25"
+    },
+    {
+      "ID": 301,
+      "Name": "熟成した干し肉",
+      "Overview": "攻撃+50",
+      "Explanation": "味方全体の攻撃+50"
+    },
+    {
+      "ID": 302,
+      "Name": "牛肉の味噌漬け",
+      "Overview": "攻撃+100",
+      "Explanation": "味方全体の\n攻撃+100"
+    },
+    {
+      "ID": 303,
+      "Name": "紅焼肉",
+      "Overview": "攻撃+125",
+      "Explanation": "味方全体の\n攻撃+125"
+    },
+    {
+      "ID": 304,
+      "Name": "ジビエの干し肉",
+      "Overview": "攻撃+150",
+      "Explanation": "味方全体の\n攻撃+150"
+    },
+    {
+      "ID": 400,
+      "Name": "一夜漬けの干物",
+      "Overview": "防御+25",
+      "Explanation": "味方全体の防御+25"
+    },
+    {
+      "ID": 401,
+      "Name": "熟成した干物",
+      "Overview": "防御+50",
+      "Explanation": "味方全体の防御+50"
+    },
+    {
+      "ID": 402,
+      "Name": "秘蔵の干物",
+      "Overview": "防御+100",
+      "Explanation": "味方全体の\n防御+100"
+    },
+    {
+      "ID": 403,
+      "Name": "海老ワンタン",
+      "Overview": "防御+125",
+      "Explanation": "味方全体の\n防御+125"
+    },
+    {
+      "ID": 404,
+      "Name": "海獣の燻製",
+      "Overview": "防御+150",
+      "Explanation": "味方全体の\n防御+150"
+    },
+    {
+      "ID": 500,
+      "Name": "おはぎ",
+      "Overview": "隙短縮+1%",
+      "Explanation": "味方全体の\n攻撃後の隙を1%短縮"
+    },
+    {
+      "ID": 501,
+      "Name": "大きなおはぎ",
+      "Overview": "隙短縮+3%",
+      "Explanation": "味方全体の\n攻撃後の隙を3%短縮"
+    },
+    {
+      "ID": 502,
+      "Name": "秘伝のおはぎ",
+      "Overview": "隙短縮+5%",
+      "Explanation": "味方全体の\n攻撃後の隙を5%短縮"
+    },
+    {
+      "ID": 503,
+      "Name": "杏仁豆腐",
+      "Overview": "隙短縮+7%",
+      "Explanation": "味方全体の\n攻撃後の隙を7%短縮"
+    },
+    {
+      "ID": 504,
+      "Name": "ガレット",
+      "Overview": "隙短縮+10%",
+      "Explanation": "味方全体の\n攻撃後の隙を10%短縮"
+    },
+    {
+      "ID": 600,
+      "Name": "旗印",
+      "Overview": "初期気+5",
+      "Explanation": "開戦時の初期気+5"
+    },
+    {
+      "ID": 601,
+      "Name": "小馬印",
+      "Overview": "初期気+10",
+      "Explanation": "開戦時の初期気+10"
+    },
+    {
+      "ID": 602,
+      "Name": "大馬印",
+      "Overview": "初期気+20",
+      "Explanation": "開戦時の初期気+20"
+    },
+    {
+      "ID": 603,
+      "Name": "黄龍旗",
+      "Overview": "初期気+25",
+      "Explanation": "開戦時の初期気+25"
+    },
+    {
+      "ID": 604,
+      "Name": "王家の旗",
+      "Overview": "初期気+30",
+      "Explanation": "開戦時の初期気+30"
+    },
+    {
+      "ID": 701,
+      "Name": "古銭",
+      "Overview": "金+5%",
+      "Explanation": "勝利時に\n獲得報酬金+5%"
+    },
+    {
+      "ID": 702,
+      "Name": "備蓄銭",
+      "Overview": "金+10%",
+      "Explanation": "勝利時に\n獲得報酬金+10%"
+    },
+    {
+      "ID": 703,
+      "Name": "埋納金",
+      "Overview": "金+20%",
+      "Explanation": "勝利時に\n獲得報酬金+20%"
+    },
+    {
+      "ID": 800,
+      "Name": "古びたお守り",
+      "Overview": "殿障壁+3000",
+      "Explanation": "殿への攻撃を\n3000ダメージまで\n無効化する"
+    },
+    {
+      "ID": 801,
+      "Name": "神秘的な護符",
+      "Overview": "殿障壁+8000",
+      "Explanation": "殿への攻撃を\n8000ダメージまで\n無効化する"
+    },
+    {
+      "ID": 802,
+      "Name": "神秘的な護符",
+      "Overview": "殿障壁+8000",
+      "Explanation": "殿への攻撃を\n8000ダメージまで\n無効化する"
+    },
+    {
+      "ID": 900,
+      "Name": "海戦の書・筏",
+      "Overview": "筏配置",
+      "Explanation": "城娘/伏兵を配置可能\nな筏を配置\n使用可能回数：12"
+    },
+    {
+      "ID": 901,
+      "Name": "海戦の書・ボロ舟",
+      "Overview": "ボロ舟配置",
+      "Explanation": "城娘/伏兵を配置可能\nなボロ舟を配置\n水上マス間を移動可能\n使用可能回数：8"
+    },
+    {
+      "ID": 902,
+      "Name": "海戦の書・小舟",
+      "Overview": "小舟配置",
+      "Explanation": "城娘/伏兵を配置可能\nな小舟を配置\n水上マス間を移動可能\n移動消費気を少し軽減\n使用可能回数：8"
+    },
+    {
+      "ID": 903,
+      "Name": "火遁の術書",
+      "Overview": "火遁の術",
+      "Explanation": "範囲内の敵に\n火属性ダメージ\n(範囲:大)\n使用可能回数：5"
+    },
+    {
+      "ID": 904,
+      "Name": "風遁の術書",
+      "Overview": "風遁の術",
+      "Explanation": "範囲内の敵に\nダメージを与え\n後退させる\n(範囲:中)\n使用可能回数：5"
+    },
+    {
+      "ID": 905,
+      "Name": "雷遁の術書",
+      "Overview": "雷遁の術",
+      "Explanation": "範囲内の敵に\n雷属性の術ダメージ\n(範囲:小)\n使用可能回数：5"
+    },
+    {
+      "ID": 906,
+      "Name": "氷結の術書",
+      "Overview": "氷結の術",
+      "Explanation": "範囲内の敵に\n術ダメージを与え\n10秒間「氷結」にする\n(範囲:中)\n使用可能回数：3"
+    },
+    {
+      "ID": 907,
+      "Name": "攻陣の兵法書",
+      "Overview": "攻撃方陣",
+      "Explanation": "範囲内の城娘の\n攻撃が30秒間1.5倍\n(範囲:大）\n使用可能回数：3"
+    },
+    {
+      "ID": 908,
+      "Name": "防陣の兵法書",
+      "Overview": "防御方陣",
+      "Explanation": "範囲内の城娘の\n防御が30秒間1.5倍\n(範囲:大）\n使用可能回数：3"
+    },
+    {
+      "ID": 909,
+      "Name": "鋒矢陣の兵法書",
+      "Overview": "鋒矢の陣",
+      "Explanation": "範囲内の城娘の\n攻撃が30秒間2倍\n防御が40%低下\n(範囲:大)\n使用可能回数：3"
+    },
+    {
+      "ID": 910,
+      "Name": "方円陣の兵法書",
+      "Overview": "方円の陣",
+      "Explanation": "範囲内の城娘の\n防御が25秒間2倍\n被ダメージが25%低下\n(範囲:大)\n使用可能回数：3"
+    },
+    {
+      "ID": 911,
+      "Name": "鶴翼陣の兵法書",
+      "Overview": "鶴翼の陣",
+      "Explanation": "範囲内の城娘の\n撃破気が15秒間1増加\n(範囲:大。重複なし）\n使用可能回数：3"
+    },
+    {
+      "ID": 912,
+      "Name": "海戦の書・砲撃舟",
+      "Overview": "砲撃舟配置",
+      "Explanation": "配置した城娘は攻撃を\n行わず特殊攻撃発動可\n大砲/鉄砲城娘を強化\n近接城娘の攻撃が低下\n使用可能回数：5"
+    },
+    {
+      "ID": 913,
+      "Name": "海戦の書・水蜘蛛",
+      "Overview": "水蜘蛛配置",
+      "Explanation": "敵から狙われず\n城娘/伏兵を配置可能\nな水蜘蛛を配置\n配置した拳/投剣城娘\nは敵から狙われない\n使用可能回数：5"
+    },
+    {
+      "ID": 914,
+      "Name": "地脈の書・赤",
+      "Overview": "地脈強化・赤",
+      "Explanation": "近接配置マスを強化\n配置した城娘の防御と\n耐久が20%上昇\n巨大化気を10%軽減\n(属性強化マスと重複しない)\n使用可能回数：5"
+    }
+  ]
+}

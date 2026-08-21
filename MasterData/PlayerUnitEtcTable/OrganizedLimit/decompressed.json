@@ -1,0 +1,39 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 3,
+    "record_size": 8,
+    "custom_id": 1952738415
+  },
+  "_fields": [
+    {
+      "name": "OrganizedLimitID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Num",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "OrganizedLimitID": 0,
+      "Num": 0
+    },
+    {
+      "OrganizedLimitID": 1,
+      "Num": 1
+    },
+    {
+      "OrganizedLimitID": 2,
+      "Num": 1
+    }
+  ]
+}

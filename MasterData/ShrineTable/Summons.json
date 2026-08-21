@@ -1,0 +1,206 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 16,
+    "record_size": 28,
+    "custom_id": 1936618867
+  },
+  "_fields": [
+    {
+      "name": "Type",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Active",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 4,
+      "size": 1
+    },
+    {
+      "name": "EndDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "FreeOnceDraw1",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 12,
+      "size": 1
+    },
+    {
+      "name": "SenkodamaType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "ListVersion",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "BenefitCardIDs",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 24,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Type": 5,
+      "Active": true,
+      "EndDate": "2026/05/12 13:30:00",
+      "FreeOnceDraw1": true,
+      "SenkodamaType": 0,
+      "ListVersion": 0,
+      "BenefitCardIDs": ""
+    },
+    {
+      "Type": 9,
+      "Active": true,
+      "EndDate": "2026/05/06 13:30:00",
+      "FreeOnceDraw1": false,
+      "SenkodamaType": 0,
+      "ListVersion": 0,
+      "BenefitCardIDs": ""
+    },
+    {
+      "Type": 0,
+      "Active": false,
+      "EndDate": "2024/08/27 13:30:00",
+      "FreeOnceDraw1": false,
+      "SenkodamaType": 0,
+      "ListVersion": 0,
+      "BenefitCardIDs": ""
+    },
+    {
+      "Type": 1,
+      "Active": false,
+      "EndDate": "2024/07/16 13:30:00",
+      "FreeOnceDraw1": false,
+      "SenkodamaType": 0,
+      "ListVersion": 0,
+      "BenefitCardIDs": ""
+    },
+    {
+      "Type": 2,
+      "Active": true,
+      "EndDate": "",
+      "FreeOnceDraw1": false,
+      "SenkodamaType": 0,
+      "ListVersion": 0,
+      "BenefitCardIDs": ""
+    },
+    {
+      "Type": 3,
+      "Active": false,
+      "EndDate": "2026/04/28 13:30:00",
+      "FreeOnceDraw1": false,
+      "SenkodamaType": 0,
+      "ListVersion": 0,
+      "BenefitCardIDs": ""
+    },
+    {
+      "Type": 4,
+      "Active": true,
+      "EndDate": "2026/05/04 04:00:00",
+      "FreeOnceDraw1": false,
+      "SenkodamaType": 0,
+      "ListVersion": 0,
+      "BenefitCardIDs": ""
+    },
+    {
+      "Type": 6,
+      "Active": false,
+      "EndDate": "2025/02/18 13:30:00",
+      "FreeOnceDraw1": false,
+      "SenkodamaType": 0,
+      "ListVersion": 0,
+      "BenefitCardIDs": ""
+    },
+    {
+      "Type": 7,
+      "Active": true,
+      "EndDate": "",
+      "FreeOnceDraw1": false,
+      "SenkodamaType": 0,
+      "ListVersion": 0,
+      "BenefitCardIDs": "3040"
+    },
+    {
+      "Type": 11,
+      "Active": true,
+      "EndDate": "",
+      "FreeOnceDraw1": true,
+      "SenkodamaType": 0,
+      "ListVersion": 111,
+      "BenefitCardIDs": ""
+    },
+    {
+      "Type": 12,
+      "Active": false,
+      "EndDate": "2026/04/28 13:30:00",
+      "FreeOnceDraw1": false,
+      "SenkodamaType": 0,
+      "ListVersion": 0,
+      "BenefitCardIDs": ""
+    },
+    {
+      "Type": 13,
+      "Active": true,
+      "EndDate": "2026/05/12 13:30:00",
+      "FreeOnceDraw1": false,
+      "SenkodamaType": 0,
+      "ListVersion": 0,
+      "BenefitCardIDs": ""
+    },
+    {
+      "Type": 14,
+      "Active": false,
+      "EndDate": "2026/04/13 13:30:00",
+      "FreeOnceDraw1": false,
+      "SenkodamaType": 0,
+      "ListVersion": 0,
+      "BenefitCardIDs": ""
+    },
+    {
+      "Type": 15,
+      "Active": true,
+      "EndDate": "",
+      "FreeOnceDraw1": true,
+      "SenkodamaType": 0,
+      "ListVersion": 115,
+      "BenefitCardIDs": ""
+    },
+    {
+      "Type": 16,
+      "Active": false,
+      "EndDate": "2026/04/13 13:30:00",
+      "FreeOnceDraw1": false,
+      "SenkodamaType": 0,
+      "ListVersion": 0,
+      "BenefitCardIDs": ""
+    },
+    {
+      "Type": 17,
+      "Active": false,
+      "EndDate": "2026/04/13 13:30:00",
+      "FreeOnceDraw1": false,
+      "SenkodamaType": 0,
+      "ListVersion": 0,
+      "BenefitCardIDs": ""
+    }
+  ]
+}

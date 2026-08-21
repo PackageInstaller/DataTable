@@ -1,0 +1,215 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 20,
+    "record_size": 24,
+    "custom_id": 1685217895
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Category",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Score",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "Param",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "Conditions",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "Category": 1,
+      "Score": "100",
+      "Type": 5,
+      "Param": "ID:8006 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 1,
+      "Category": 1,
+      "Score": "200",
+      "Type": 5,
+      "Param": "ID:8008 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 1,
+      "Category": 1,
+      "Score": "300",
+      "Type": 5,
+      "Param": "ID:8010 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 1,
+      "Category": 1,
+      "Score": "400",
+      "Type": 5,
+      "Param": "ID:8017 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 1,
+      "Category": 1,
+      "Score": "500",
+      "Type": 5,
+      "Param": "ID:8011 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 1,
+      "Category": 2,
+      "Score": "500",
+      "Type": 5,
+      "Param": "ID:8003 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 1,
+      "Category": 2,
+      "Score": "1000",
+      "Type": 5,
+      "Param": "ID:8005 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 1,
+      "Category": 2,
+      "Score": "1500",
+      "Type": 5,
+      "Param": "ID:8006 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 1,
+      "Category": 2,
+      "Score": "2000",
+      "Type": 5,
+      "Param": "ID:8008 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 1,
+      "Category": 2,
+      "Score": "2500",
+      "Type": 5,
+      "Param": "ID:8017 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 2,
+      "Category": 1,
+      "Score": "100",
+      "Type": 5,
+      "Param": "ID:8006 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 2,
+      "Category": 1,
+      "Score": "200",
+      "Type": 5,
+      "Param": "ID:8008 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 2,
+      "Category": 1,
+      "Score": "300",
+      "Type": 5,
+      "Param": "ID:8010 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 2,
+      "Category": 1,
+      "Score": "400",
+      "Type": 5,
+      "Param": "ID:8017 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 2,
+      "Category": 1,
+      "Score": "500",
+      "Type": 5,
+      "Param": "ID:8011 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 2,
+      "Category": 2,
+      "Score": "500",
+      "Type": 5,
+      "Param": "ID:8003 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 2,
+      "Category": 2,
+      "Score": "1000",
+      "Type": 5,
+      "Param": "ID:8005 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 2,
+      "Category": 2,
+      "Score": "1500",
+      "Type": 5,
+      "Param": "ID:8006 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 2,
+      "Category": 2,
+      "Score": "2000",
+      "Type": 5,
+      "Param": "ID:8008 Value:1",
+      "Conditions": 0
+    },
+    {
+      "ID": 2,
+      "Category": 2,
+      "Score": "2500",
+      "Type": 5,
+      "Param": "ID:8017 Value:1",
+      "Conditions": 0
+    }
+  ]
+}

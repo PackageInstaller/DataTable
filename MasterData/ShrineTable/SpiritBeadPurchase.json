@@ -1,0 +1,194 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 52,
+    "custom_id": 1701864051
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "PayNum",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "FreeNum",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "WithBonusCount",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "BonusNum",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "BonusType1",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "BonusParam1",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "BonusType2",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "BonusParam2",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "BonusType3",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 36,
+      "size": 4
+    },
+    {
+      "name": "BonusParam3",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 40,
+      "size": 4
+    },
+    {
+      "name": "StartDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 44,
+      "size": 4
+    },
+    {
+      "name": "EndDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 48,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "PayNum": 1,
+      "FreeNum": 0,
+      "WithBonusCount": 0,
+      "BonusNum": 0,
+      "BonusType1": 0,
+      "BonusParam1": "",
+      "BonusType2": 0,
+      "BonusParam2": "",
+      "BonusType3": 0,
+      "BonusParam3": "",
+      "StartDate": "",
+      "EndDate": ""
+    },
+    {
+      "ID": 1,
+      "PayNum": 7,
+      "FreeNum": 0,
+      "WithBonusCount": 0,
+      "BonusNum": 0,
+      "BonusType1": 0,
+      "BonusParam1": "",
+      "BonusType2": 0,
+      "BonusParam2": "",
+      "BonusType3": 0,
+      "BonusParam3": "",
+      "StartDate": "",
+      "EndDate": ""
+    },
+    {
+      "ID": 2,
+      "PayNum": 15,
+      "FreeNum": 0,
+      "WithBonusCount": 1,
+      "BonusNum": 0,
+      "BonusType1": 6,
+      "BonusParam1": "ID:23010",
+      "BonusType2": 5,
+      "BonusParam2": "ID:8011 Value:1",
+      "BonusType3": 601,
+      "BonusParam3": "ID:1",
+      "StartDate": "2023/11/21 13:30:00",
+      "EndDate": "2023/11/28 13:00:00"
+    },
+    {
+      "ID": 3,
+      "PayNum": 46,
+      "FreeNum": 0,
+      "WithBonusCount": 3,
+      "BonusNum": 0,
+      "BonusType1": 5,
+      "BonusParam1": "ID:8011 Value:2",
+      "BonusType2": 405,
+      "BonusParam2": "Value:1",
+      "BonusType3": 5,
+      "BonusParam3": "ID:8006 Value:2",
+      "StartDate": "2023/10/31 13:30:00",
+      "EndDate": "2023/11/14 13:00:00"
+    },
+    {
+      "ID": 4,
+      "PayNum": 80,
+      "FreeNum": 0,
+      "WithBonusCount": 2,
+      "BonusNum": 0,
+      "BonusType1": 5,
+      "BonusParam1": "ID:8011 Value:3",
+      "BonusType2": 406,
+      "BonusParam2": "Value:1",
+      "BonusType3": 5,
+      "BonusParam3": "ID:8015 Value:2",
+      "StartDate": "2023/10/31 13:30:00",
+      "EndDate": "2023/11/14 13:00:00"
+    },
+    {
+      "ID": 5,
+      "PayNum": 165,
+      "FreeNum": 0,
+      "WithBonusCount": 1,
+      "BonusNum": 0,
+      "BonusType1": 5,
+      "BonusParam1": "ID:8011 Value:5",
+      "BonusType2": 407,
+      "BonusParam2": "Value:1",
+      "BonusType3": 5,
+      "BonusParam3": "ID:8007 Value:2",
+      "StartDate": "2023/10/31 13:30:00",
+      "EndDate": "2023/11/14 13:00:00"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 10,
+    "record_size": 20,
+    "custom_id": 1952802166
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Title",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "RewardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "PrologueEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "TutorialEventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "Title": "第一回人気投票",
+      "RewardID": 1,
+      "PrologueEventID": 0,
+      "TutorialEventID": 0
+    },
+    {
+      "ID": 2,
+      "Title": "第二回人気投票",
+      "RewardID": 2,
+      "PrologueEventID": 0,
+      "TutorialEventID": 0
+    },
+    {
+      "ID": 3,
+      "Title": "第三回人気投票",
+      "RewardID": 3,
+      "PrologueEventID": 0,
+      "TutorialEventID": 0
+    },
+    {
+      "ID": 4,
+      "Title": "第四回人気投票",
+      "RewardID": 4,
+      "PrologueEventID": 0,
+      "TutorialEventID": 0
+    },
+    {
+      "ID": 5,
+      "Title": "第五回人気投票",
+      "RewardID": 5,
+      "PrologueEventID": 0,
+      "TutorialEventID": 0
+    },
+    {
+      "ID": 6,
+      "Title": "第六回人気投票",
+      "RewardID": 6,
+      "PrologueEventID": 61,
+      "TutorialEventID": 62
+    },
+    {
+      "ID": 7,
+      "Title": "第七回人気投票",
+      "RewardID": 7,
+      "PrologueEventID": 71,
+      "TutorialEventID": 72
+    },
+    {
+      "ID": 8,
+      "Title": "第八回人気投票",
+      "RewardID": 8,
+      "PrologueEventID": 81,
+      "TutorialEventID": 82
+    },
+    {
+      "ID": 9,
+      "Title": "第九回人気投票",
+      "RewardID": 9,
+      "PrologueEventID": 131,
+      "TutorialEventID": 132
+    },
+    {
+      "ID": 10,
+      "Title": "第十回人気投票",
+      "RewardID": 10,
+      "PrologueEventID": 171,
+      "TutorialEventID": 172
+    }
+  ]
+}
