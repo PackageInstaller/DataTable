@@ -1,0 +1,922 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -2195584510539435343
+  },
+  "m_Name": "Ev1065011Nml.book",
+  "importVersion": 0,
+  "importGridList": [
+    {
+      "rows": [
+        {
+          "rowIndex": 0,
+          "strings": [
+            "",
+            "Command",
+            "Arg1",
+            "Arg2",
+            "Arg3",
+            "Arg4",
+            "Arg5",
+            "Arg6",
+            "WaitType",
+            "Text",
+            "PageCtrl",
+            "Voice",
+            "WindowType",
+            "Arg7"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 1,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "0.1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 2,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 3,
+          "strings": [
+            "",
+            "BgEvent",
+            "TD祭り05_b",
+            "",
+            "layer_R18",
+            "",
+            "",
+            "0"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 4,
+          "strings": [
+            "",
+            "Bgm",
+            "BGM_1017"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 5,
+          "strings": [
+            "",
+            "FadeIn",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 6,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 7,
+          "strings": [
+            "",
+            "",
+            "アンナ",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "――まさか、ハロウィンパーティの会場を、\nそのまま迎撃拠点に流用することになるとは。\nそれも、世界消滅の危機だなんて……。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 8,
+          "strings": [
+            "",
+            "",
+            "コハル",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "世界の危機なんざよくあることさ。\n事前に察知できただけ儲けものだよ。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 9,
+          "strings": [
+            "",
+            "",
+            "T.O.W.E.R.",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "テスト、テスト……。\n皆さま、通信状況はいかがですか？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 10,
+          "strings": [
+            "",
+            "",
+            "コハル",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "おっ、良好良好。\nいいね、頭に直接たわーの声が聞こえる感じだ。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 11,
+          "strings": [
+            "",
+            "",
+            "T.O.W.E.R.",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "良かった！\nなにぶん古いシステムなので、\nちゃんと機能するか心配だったのです。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 12,
+          "strings": [
+            "",
+            "",
+            "T.O.W.E.R.",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "それでは早速ですが、現在の状況と、\n今後の作戦について説明いたしますね。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 13,
+          "strings": [
+            "",
+            "",
+            "T.O.W.E.R.",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "これから皆さまには各世界の拠点にて、\n現在次元間を高速で航行中の、\nホロウクルスの眷属を迎撃してもらいます。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 14,
+          "strings": [
+            "",
+            "",
+            "T.O.W.E.R.",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "先遣隊ではありますが、かなりの大軍です。\nまずは緒戦にてこれに打ち勝ち、\n敵の戦力を減らさぬことには話になりません。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 15,
+          "strings": [
+            "",
+            "",
+            "T.O.W.E.R.",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "皆さまの世界の命運は、\nこの戦いに懸かっていると言えるのです。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 16,
+          "strings": [
+            "",
+            "",
+            "ディフォーラ",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "世界の危機……ですか。\nイケオジが滅んだ世界に意味はありません。\nそれだけは、なんとしても阻止しなければ。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 17,
+          "strings": [
+            "",
+            "",
+            "ビビ神",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "これはまた……何かと物騒ですね。\nしかし、すべての世界の勇士たちが集まれば、\n怖いものはありません。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 18,
+          "strings": [
+            "",
+            "",
+            "九龍城砦",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "モウバンファーラ。仕方ないわね。\nこんなところで死ぬわけにはいかないし、\n子どもたち、少しだけハロウィンは我慢して。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 19,
+          "strings": [
+            "",
+            "",
+            "千狐",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "コンッ！？　アレはなんなの！？\nみなさん！　見てください！\n空に謎の巨大な影がっ……！！"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 20,
+          "strings": [
+            "",
+            "",
+            "アンナ",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "あれが、ホロウクルス……なのですか？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 21,
+          "strings": [
+            "",
+            "",
+            "T.O.W.E.R.",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "いいえ、あれはホロウクルスの幻影。\n莫大な情報量を保有する彼奴は、\n次元間の移動にも時間を要するのです。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 22,
+          "strings": [
+            "",
+            "",
+            "T.O.W.E.R.",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "しかし、あまりにも強すぎるエネルギーが、\n歪みとして各世界に顕現しているのでしょう。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 23,
+          "strings": [
+            "",
+            "",
+            "コハル",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ふぅん、要するに陽炎みたいなものだね。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 24,
+          "strings": [
+            "",
+            "",
+            "ビビ神",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "なぜカボチャの姿なのでしょう……？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 25,
+          "strings": [
+            "",
+            "",
+            "千狐",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "確かに……よく見ると、いえ、よく見なくても、\n頭がカボチャになってるの……。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 26,
+          "strings": [
+            "",
+            "",
+            "T.O.W.E.R.",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "おそらくは皆さまの世界の情報を吸収し、\n学習したものかと思われます。\n今回の場合は、ハロウィンパーティーですね。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 27,
+          "strings": [
+            "",
+            "",
+            "T.O.W.E.R.",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "全てはあらゆる環境に適応するため。\n超次元生命体は異世界へと侵攻するに際し、\n最適な形態へと己の身体を再構築するのです。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 28,
+          "strings": [
+            "",
+            "",
+            "コハル",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "はろうぃんを楽しむためにかい？\nそいつはちょいと笑えない冗談だ。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 29,
+          "strings": [
+            "",
+            "",
+            "T.O.W.E.R.",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "いいえ、それだけではありません。\n取り込んだ現地生命体に自身の情報を上書きし、\n己の支配下とする能力も備えているのです。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 30,
+          "strings": [
+            "",
+            "",
+            "アンナ",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "それほどまでに危険な存在だったなんて……\nこの戦い、絶対に負けるわけにはいきません！"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 31,
+          "strings": [
+            "",
+            "",
+            "アンナ",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "皆さん、迎撃準備を！"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 32,
+          "strings": [
+            "",
+            "StopSound",
+            "Bgm,Se,Ambience",
+            "",
+            "",
+            "",
+            "",
+            "2"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 33,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 34,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 35,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.5"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 36,
+          "strings": [
+            "",
+            "BgEventOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 37,
+          "strings": [
+            "",
+            "",
+            "ホロウクルス",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "情報体の転送と再構築の所要時間を計測中──。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 38,
+          "strings": [
+            "",
+            "",
+            "ホロウクルス",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "次元間航行に不明なエラーを確認。\n目標地点到達までの時刻を修正──。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 39,
+          "strings": [
+            "",
+            "",
+            "ホロウクルス",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "先行偵察ビーコンによる現地調査を開始する。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 40,
+          "strings": [
+            "",
+            "Bg",
+            "背景_草原",
+            "",
+            "レイヤー_背景",
+            "",
+            "",
+            "0"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 41,
+          "strings": [
+            "",
+            "FadeIn",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "0.8"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 42,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 43,
+          "strings": [
+            "",
+            "Bgm",
+            "BGM_1011",
+            "",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 44,
+          "strings": [
+            "",
+            "",
+            "ビビ神",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ご主人さま、私たちも準備しましょう。\nいつも以上にパンツの紐を引き締めて挑んでくださいね。",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 45,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "いつも緩んでいるような言い方はやめてくださいよ……。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 46,
+          "strings": [
+            "",
+            "",
+            "ビビ神",
+            "Emt3_Gla",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "最近、モンスター娘たちにパンツを引っ張られ過ぎて、\n紐がゆるゆるだって、嘆いていたと聞きましたが？",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 47,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "…………っ！\nちょ、皆さんが聞いているんですから、\nそんな暴露はしなくていいです！"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 48,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "気を取り直して……皆さん！　迎え撃ちましょう！"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 49,
+          "strings": [
+            "",
+            "StopSound",
+            "All",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 50,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 51,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 52,
+          "strings": [
+            "",
+            "LayerReset",
+            "レイヤー_マスク全画面",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        }
+      ],
+      "name": "Assets/AdvScene/ScenarioExcel/event/1065/Ev1065011Nml.xlsx:Ev1065011Nml",
+      "type": 1,
+      "textLength": 1968,
+      "headerRow": 0,
+      "entityIndexTbl": [],
+      "entityDataList": []
+    }
+  ]
+}

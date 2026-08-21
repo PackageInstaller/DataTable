@@ -1,0 +1,101 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 7352624068168785887
+  },
+  "m_Name": "buff_field",
+  "table": [
+    {
+      "id": 1,
+      "isOwnerLostNoDestroy": 1,
+      "range": 1,
+      "talentList": [
+        {
+          "talentId": 1146,
+          "param": [
+            {
+              "num": [
+                9
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "isOwnerLostNoDestroy": 1,
+      "range": 1,
+      "talentList": [
+        {
+          "talentId": 1146,
+          "param": [
+            {
+              "num": [
+                10
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "isOwnerLostNoDestroy": 1,
+      "range": 1,
+      "talentList": [
+        {
+          "talentId": 1146,
+          "param": [
+            {
+              "num": [
+                10000
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ]
+    }
+  ]
+}

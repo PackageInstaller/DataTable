@@ -1,0 +1,323 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 3710414753736647713
+  },
+  "m_Name": "endless_challenge_buff",
+  "table": [
+    {
+      "id": 1,
+      "buffList": [
+        {
+          "buffList": [
+            {
+              "buffType": 1,
+              "buffParam": 20
+            }
+          ],
+          "text": "敵のHPが増加！"
+        }
+      ],
+      "waveBuffList": [
+        {
+          "isMul": 0,
+          "buffList": [
+            {
+              "buffType": 21,
+              "buffParam": 20
+            },
+            {
+              "buffType": 26,
+              "buffParam": 20
+            },
+            {
+              "buffType": 32,
+              "buffParam": 20
+            }
+          ],
+          "assignList": [
+            41
+          ],
+          "text": "敵の移動速度・攻撃速度が増加！"
+        }
+      ],
+      "countBuffList": [
+        {
+          "isMul": 1,
+          "buffList": [
+            {
+              "buffType": 6,
+              "buffParam": 20
+            }
+          ],
+          "assignList": [
+            2
+          ],
+          "text": "敵の攻撃力が増加！"
+        },
+        {
+          "isMul": 1,
+          "buffList": [
+            {
+              "buffType": 11,
+              "buffParam": 50
+            },
+            {
+              "buffType": 16,
+              "buffParam": 50
+            }
+          ],
+          "assignList": [
+            5
+          ],
+          "text": "敵の物理防御力・魔法防御力が増加！"
+        },
+        {
+          "isMul": 1,
+          "buffList": [
+            {
+              "buffType": 1,
+              "buffParam": 500
+            },
+            {
+              "buffType": 6,
+              "buffParam": 250
+            }
+          ],
+          "assignList": [
+            10
+          ],
+          "text": "敵のHP・攻撃力が大幅に増加！"
+        },
+        {
+          "isMul": 1,
+          "buffList": [
+            {
+              "buffType": 11,
+              "buffParam": 200
+            },
+            {
+              "buffType": 16,
+              "buffParam": 200
+            }
+          ],
+          "assignList": [
+            20
+          ],
+          "text": "敵の物理防御力・魔法防御力が大幅に増加！"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "buffList": [
+        {
+          "buffList": [
+            {
+              "buffType": 1,
+              "buffParam": 20
+            }
+          ],
+          "text": "敵のHPが増加！"
+        }
+      ],
+      "waveBuffList": [
+        {
+          "isMul": 0,
+          "buffList": [
+            {
+              "buffType": 21,
+              "buffParam": 30
+            },
+            {
+              "buffType": 26,
+              "buffParam": 30
+            },
+            {
+              "buffType": 32,
+              "buffParam": 30
+            }
+          ],
+          "assignList": [
+            31
+          ],
+          "text": "敵の移動速度・攻撃速度が増加！"
+        }
+      ],
+      "countBuffList": [
+        {
+          "isMul": 1,
+          "buffList": [
+            {
+              "buffType": 6,
+              "buffParam": 50
+            }
+          ],
+          "assignList": [
+            2
+          ],
+          "text": "敵の攻撃力が増加！"
+        },
+        {
+          "isMul": 1,
+          "buffList": [
+            {
+              "buffType": 11,
+              "buffParam": 50
+            },
+            {
+              "buffType": 16,
+              "buffParam": 50
+            }
+          ],
+          "assignList": [
+            5
+          ],
+          "text": "敵の物理防御力・魔法防御力が増加！"
+        },
+        {
+          "isMul": 1,
+          "buffList": [
+            {
+              "buffType": 1,
+              "buffParam": 200
+            },
+            {
+              "buffType": 6,
+              "buffParam": 500
+            }
+          ],
+          "assignList": [
+            10
+          ],
+          "text": "敵のHP・攻撃力が大幅に増加！"
+        },
+        {
+          "isMul": 1,
+          "buffList": [
+            {
+              "buffType": 11,
+              "buffParam": 100
+            },
+            {
+              "buffType": 16,
+              "buffParam": 100
+            }
+          ],
+          "assignList": [
+            20
+          ],
+          "text": "敵の物理防御力・魔法防御力が大幅に増加！"
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "buffList": [
+        {
+          "buffList": [
+            {
+              "buffType": 1,
+              "buffParam": 50
+            }
+          ],
+          "text": "敵のHPが増加！"
+        }
+      ],
+      "waveBuffList": [
+        {
+          "isMul": 0,
+          "buffList": [
+            {
+              "buffType": 21,
+              "buffParam": 30
+            },
+            {
+              "buffType": 26,
+              "buffParam": 30
+            },
+            {
+              "buffType": 32,
+              "buffParam": 30
+            }
+          ],
+          "assignList": [
+            31
+          ],
+          "text": "敵の移動速度・攻撃速度が増加！"
+        }
+      ],
+      "countBuffList": [
+        {
+          "isMul": 1,
+          "buffList": [
+            {
+              "buffType": 6,
+              "buffParam": 50
+            }
+          ],
+          "assignList": [
+            2
+          ],
+          "text": "敵の攻撃力が増加！"
+        },
+        {
+          "isMul": 1,
+          "buffList": [
+            {
+              "buffType": 11,
+              "buffParam": 100
+            },
+            {
+              "buffType": 16,
+              "buffParam": 100
+            }
+          ],
+          "assignList": [
+            5
+          ],
+          "text": "敵の物理防御力・魔法防御力が増加！"
+        },
+        {
+          "isMul": 1,
+          "buffList": [
+            {
+              "buffType": 1,
+              "buffParam": 500
+            },
+            {
+              "buffType": 6,
+              "buffParam": 500
+            }
+          ],
+          "assignList": [
+            10
+          ],
+          "text": "敵のHP・攻撃力が大幅に増加！"
+        },
+        {
+          "isMul": 1,
+          "buffList": [
+            {
+              "buffType": 11,
+              "buffParam": 200
+            },
+            {
+              "buffType": 16,
+              "buffParam": 200
+            }
+          ],
+          "assignList": [
+            20
+          ],
+          "text": "敵の物理防御力・魔法防御力が大幅に増加！"
+        }
+      ]
+    }
+  ]
+}
