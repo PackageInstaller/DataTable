@@ -18,8 +18,6 @@ python scripts/fetch_lua.py --output ./Lua --arch 64
 反编译工具为 Linux 原生版（C++23 + CMake），已安装为系统命令
 `luajit-decompiler`。源码与变更记录见 fork：
 [PackageInstaller/luajit-decompiler](https://github.com/PackageInstaller/luajit-decompiler)
-（上游 [marsinator358/luajit-decompiler-v2](https://github.com/marsinator358/luajit-decompiler-v2)
-为 Win32 版，本 fork 做了 Linux 移植与 LuaJIT 2.1 兼容性修正）。
 
 直接反编译（输入可以是单个 `.lua.bytes` 或目录，`-o` 指定输出目录）：
 
